@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -385,18 +385,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductCode 产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductCode() const;
 
                     /**
                      * 设置产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productCode 产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductCode(const std::string& _productCode);
@@ -452,18 +448,14 @@ namespace TencentCloud
 
                     /**
                      * 获取退费公式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Formula 退费公式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFormula() const;
 
                     /**
                      * 设置退费公式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _formula 退费公式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFormula(const std::string& _formula);
@@ -477,18 +469,14 @@ namespace TencentCloud
 
                     /**
                      * 获取退费涉及订单信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RefReturnDeals 退费涉及订单信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRefReturnDeals() const;
 
                     /**
                      * 设置退费涉及订单信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _refReturnDeals 退费涉及订单信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRefReturnDeals(const std::string& _refReturnDeals);
@@ -535,7 +523,6 @@ preMoveIn 包年包月迁入资源
 preToPost 预付费转后付费
 postMoveOut 按量计费迁出资源
 postMoveIn 按量计费迁入资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Action 交易类型
 modifyNetworkMode 调整带宽模式
 modifyNetworkSize 调整带宽大小
@@ -549,7 +536,6 @@ preMoveIn 包年包月迁入资源
 preToPost 预付费转后付费
 postMoveOut 按量计费迁出资源
 postMoveIn 按量计费迁入资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAction() const;
@@ -568,7 +554,6 @@ preMoveIn 包年包月迁入资源
 preToPost 预付费转后付费
 postMoveOut 按量计费迁出资源
 postMoveIn 按量计费迁入资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _action 交易类型
 modifyNetworkMode 调整带宽模式
 modifyNetworkSize 调整带宽大小
@@ -582,7 +567,6 @@ preMoveIn 包年包月迁入资源
 preToPost 预付费转后付费
 postMoveOut 按量计费迁出资源
 postMoveIn 按量计费迁入资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAction(const std::string& _action);
@@ -596,18 +580,14 @@ postMoveIn 按量计费迁入资源
 
                     /**
                      * 获取产品编码中文名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductName 产品编码中文名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductName() const;
 
                     /**
                      * 设置产品编码中文名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productName 产品编码中文名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductName(const std::string& _productName);
@@ -621,18 +601,14 @@ postMoveIn 按量计费迁入资源
 
                     /**
                      * 获取子产品编码中文名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubProductName 子产品编码中文名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubProductName() const;
 
                     /**
                      * 设置子产品编码中文名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subProductName 子产品编码中文名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubProductName(const std::string& _subProductName);
@@ -769,7 +745,6 @@ postMoveIn 按量计费迁入资源
 
                     /**
                      * 产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productCode;
                     bool m_productCodeHasBeenSet;
@@ -788,14 +763,12 @@ postMoveIn 按量计费迁入资源
 
                     /**
                      * 退费公式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_formula;
                     bool m_formulaHasBeenSet;
 
                     /**
                      * 退费涉及订单信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_refReturnDeals;
                     bool m_refReturnDealsHasBeenSet;
@@ -820,21 +793,18 @@ preMoveIn 包年包月迁入资源
 preToPost 预付费转后付费
 postMoveOut 按量计费迁出资源
 postMoveIn 按量计费迁入资源
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_action;
                     bool m_actionHasBeenSet;
 
                     /**
                      * 产品编码中文名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productName;
                     bool m_productNameHasBeenSet;
 
                     /**
                      * 子产品编码中文名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subProductName;
                     bool m_subProductNameHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,8 @@ RansomDefenseStrategyMachineDetail::RansomDefenseStrategyMachineDetail() :
     m_strategyIdHasBeenSet(false),
     m_diskInfoHasBeenSet(false),
     m_hostVersionHasBeenSet(false),
-    m_strategyNameHasBeenSet(false)
+    m_strategyNameHasBeenSet(false),
+    m_machineTypeHasBeenSet(false)
 {
 }
 
@@ -210,6 +211,16 @@ CoreInternalOutcome RansomDefenseStrategyMachineDetail::Deserialize(const rapidj
         m_strategyNameHasBeenSet = true;
     }
 
+    if (value.HasMember("MachineType") && !value["MachineType"].IsNull())
+    {
+        if (!value["MachineType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RansomDefenseStrategyMachineDetail.MachineType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_machineType = string(value["MachineType"].GetString());
+        m_machineTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -342,6 +353,14 @@ void RansomDefenseStrategyMachineDetail::ToJsonObject(rapidjson::Value &value, r
         string key = "StrategyName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_strategyName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_machineTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -569,5 +588,21 @@ void RansomDefenseStrategyMachineDetail::SetStrategyName(const string& _strategy
 bool RansomDefenseStrategyMachineDetail::StrategyNameHasBeenSet() const
 {
     return m_strategyNameHasBeenSet;
+}
+
+string RansomDefenseStrategyMachineDetail::GetMachineType() const
+{
+    return m_machineType;
+}
+
+void RansomDefenseStrategyMachineDetail::SetMachineType(const string& _machineType)
+{
+    m_machineType = _machineType;
+    m_machineTypeHasBeenSet = true;
+}
+
+bool RansomDefenseStrategyMachineDetail::MachineTypeHasBeenSet() const
+{
+    return m_machineTypeHasBeenSet;
 }
 

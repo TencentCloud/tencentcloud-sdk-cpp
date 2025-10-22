@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -155,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分析任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Output 分析任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AiAnalysisResult> GetOutput() const;
 
                     /**
                      * 设置分析任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _output 分析任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutput(const std::vector<AiAnalysisResult>& _output);
@@ -180,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BeginProcessTime 任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBeginProcessTime() const;
 
                     /**
                      * 设置任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _beginProcessTime 任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBeginProcessTime(const std::string& _beginProcessTime);
@@ -205,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FinishTime 任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFinishTime() const;
 
                     /**
                      * 设置任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _finishTime 任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFinishTime(const std::string& _finishTime);
@@ -262,21 +250,18 @@ namespace TencentCloud
 
                     /**
                      * 分析任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AiAnalysisResult> m_output;
                     bool m_outputHasBeenSet;
 
                     /**
                      * 任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_beginProcessTime;
                     bool m_beginProcessTimeHasBeenSet;
 
                     /**
                      * 任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_finishTime;
                     bool m_finishTimeHasBeenSet;

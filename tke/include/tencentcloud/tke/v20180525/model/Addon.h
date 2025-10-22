@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取addon的参数，是一个json格式的base64转码后的字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RawValues addon的参数，是一个json格式的base64转码后的字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRawValues() const;
 
                     /**
                      * 设置addon的参数，是一个json格式的base64转码后的字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rawValues addon的参数，是一个json格式的base64转码后的字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRawValues(const std::string& _rawValues);
@@ -114,19 +110,39 @@ namespace TencentCloud
                     bool RawValuesHasBeenSet() const;
 
                     /**
-                     * 获取addon的状态
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Phase addon的状态
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取addon的状态：
+- Installing：安装中
+- Upgrading：升级中
+- Terminating：删除中
+- Succeeded：安装/升级成功
+- InstallFailed：安装失败
+- UpgradFailed：升级失败
+                     * @return Phase addon的状态：
+- Installing：安装中
+- Upgrading：升级中
+- Terminating：删除中
+- Succeeded：安装/升级成功
+- InstallFailed：安装失败
+- UpgradFailed：升级失败
                      * 
                      */
                     std::string GetPhase() const;
 
                     /**
-                     * 设置addon的状态
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _phase addon的状态
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置addon的状态：
+- Installing：安装中
+- Upgrading：升级中
+- Terminating：删除中
+- Succeeded：安装/升级成功
+- InstallFailed：安装失败
+- UpgradFailed：升级失败
+                     * @param _phase addon的状态：
+- Installing：安装中
+- Upgrading：升级中
+- Terminating：删除中
+- Succeeded：安装/升级成功
+- InstallFailed：安装失败
+- UpgradFailed：升级失败
                      * 
                      */
                     void SetPhase(const std::string& _phase);
@@ -140,18 +156,14 @@ namespace TencentCloud
 
                     /**
                      * 获取addon失败的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Reason addon失败的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 设置addon失败的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reason addon失败的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReason(const std::string& _reason);
@@ -162,6 +174,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ReasonHasBeenSet() const;
+
+                    /**
+                     * 获取addon的创建时间
+                     * @return CreateTime addon的创建时间
+                     * 
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置addon的创建时间
+                     * @param _createTime addon的创建时间
+                     * 
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
 
                 private:
 
@@ -179,24 +212,33 @@ namespace TencentCloud
 
                     /**
                      * addon的参数，是一个json格式的base64转码后的字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_rawValues;
                     bool m_rawValuesHasBeenSet;
 
                     /**
-                     * addon的状态
-注意：此字段可能返回 null，表示取不到有效值。
+                     * addon的状态：
+- Installing：安装中
+- Upgrading：升级中
+- Terminating：删除中
+- Succeeded：安装/升级成功
+- InstallFailed：安装失败
+- UpgradFailed：升级失败
                      */
                     std::string m_phase;
                     bool m_phaseHasBeenSet;
 
                     /**
                      * addon失败的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reason;
                     bool m_reasonHasBeenSet;
+
+                    /**
+                     * addon的创建时间
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                 };
             }

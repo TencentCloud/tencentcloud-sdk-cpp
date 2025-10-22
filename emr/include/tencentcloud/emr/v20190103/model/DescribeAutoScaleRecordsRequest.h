@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,15 +65,31 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取记录过滤参数，目前仅能为“StartTime”,“EndTime”和“StrategyName”。StartTime和EndTime支持2006-01-02 15:04:05 或者2006/01/02 15:04:05的时间格式
-                     * @return Filters 记录过滤参数，目前仅能为“StartTime”,“EndTime”和“StrategyName”。StartTime和EndTime支持2006-01-02 15:04:05 或者2006/01/02 15:04:05的时间格式
+                     * 获取记录过滤参数，目前仅能为“StartTime”,“EndTime”和“StrategyName”、ActionStatus、ScaleAction。
+StartTime和EndTime支持2006-01-02 15:04:05 或者2006/01/02 15:04:05的时间格式
+ActionStatus：0:INITED,1:SUCCESS, 2:FAILED,3:LIMITED_SUCCESSED,4:IN_PROCESS,5:IN_RETRY
+ScaleAction：1:扩容  2:缩容
+
+                     * @return Filters 记录过滤参数，目前仅能为“StartTime”,“EndTime”和“StrategyName”、ActionStatus、ScaleAction。
+StartTime和EndTime支持2006-01-02 15:04:05 或者2006/01/02 15:04:05的时间格式
+ActionStatus：0:INITED,1:SUCCESS, 2:FAILED,3:LIMITED_SUCCESSED,4:IN_PROCESS,5:IN_RETRY
+ScaleAction：1:扩容  2:缩容
+
                      * 
                      */
                     std::vector<KeyValue> GetFilters() const;
 
                     /**
-                     * 设置记录过滤参数，目前仅能为“StartTime”,“EndTime”和“StrategyName”。StartTime和EndTime支持2006-01-02 15:04:05 或者2006/01/02 15:04:05的时间格式
-                     * @param _filters 记录过滤参数，目前仅能为“StartTime”,“EndTime”和“StrategyName”。StartTime和EndTime支持2006-01-02 15:04:05 或者2006/01/02 15:04:05的时间格式
+                     * 设置记录过滤参数，目前仅能为“StartTime”,“EndTime”和“StrategyName”、ActionStatus、ScaleAction。
+StartTime和EndTime支持2006-01-02 15:04:05 或者2006/01/02 15:04:05的时间格式
+ActionStatus：0:INITED,1:SUCCESS, 2:FAILED,3:LIMITED_SUCCESSED,4:IN_PROCESS,5:IN_RETRY
+ScaleAction：1:扩容  2:缩容
+
+                     * @param _filters 记录过滤参数，目前仅能为“StartTime”,“EndTime”和“StrategyName”、ActionStatus、ScaleAction。
+StartTime和EndTime支持2006-01-02 15:04:05 或者2006/01/02 15:04:05的时间格式
+ActionStatus：0:INITED,1:SUCCESS, 2:FAILED,3:LIMITED_SUCCESSED,4:IN_PROCESS,5:IN_RETRY
+ScaleAction：1:扩容  2:缩容
+
                      * 
                      */
                     void SetFilters(const std::vector<KeyValue>& _filters);
@@ -148,6 +164,27 @@ namespace TencentCloud
                      */
                     bool RecordSourceHasBeenSet() const;
 
+                    /**
+                     * 获取是否升序，1:升序，0:降序
+                     * @return Asc 是否升序，1:升序，0:降序
+                     * 
+                     */
+                    int64_t GetAsc() const;
+
+                    /**
+                     * 设置是否升序，1:升序，0:降序
+                     * @param _asc 是否升序，1:升序，0:降序
+                     * 
+                     */
+                    void SetAsc(const int64_t& _asc);
+
+                    /**
+                     * 判断参数 Asc 是否已赋值
+                     * @return Asc 是否已赋值
+                     * 
+                     */
+                    bool AscHasBeenSet() const;
+
                 private:
 
                     /**
@@ -157,7 +194,11 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 记录过滤参数，目前仅能为“StartTime”,“EndTime”和“StrategyName”。StartTime和EndTime支持2006-01-02 15:04:05 或者2006/01/02 15:04:05的时间格式
+                     * 记录过滤参数，目前仅能为“StartTime”,“EndTime”和“StrategyName”、ActionStatus、ScaleAction。
+StartTime和EndTime支持2006-01-02 15:04:05 或者2006/01/02 15:04:05的时间格式
+ActionStatus：0:INITED,1:SUCCESS, 2:FAILED,3:LIMITED_SUCCESSED,4:IN_PROCESS,5:IN_RETRY
+ScaleAction：1:扩容  2:缩容
+
                      */
                     std::vector<KeyValue> m_filters;
                     bool m_filtersHasBeenSet;
@@ -179,6 +220,12 @@ namespace TencentCloud
                      */
                     int64_t m_recordSource;
                     bool m_recordSourceHasBeenSet;
+
+                    /**
+                     * 是否升序，1:升序，0:降序
+                     */
+                    int64_t m_asc;
+                    bool m_ascHasBeenSet;
 
                 };
             }

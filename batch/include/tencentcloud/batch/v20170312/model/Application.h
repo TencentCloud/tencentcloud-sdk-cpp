@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用程序的交付方式，包括PACKAGE、LOCAL 两种取值，分别指远程存储的软件包、计算环境本地。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeliveryForm 应用程序的交付方式，包括PACKAGE、LOCAL 两种取值，分别指远程存储的软件包、计算环境本地。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeliveryForm() const;
 
                     /**
                      * 设置应用程序的交付方式，包括PACKAGE、LOCAL 两种取值，分别指远程存储的软件包、计算环境本地。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deliveryForm 应用程序的交付方式，包括PACKAGE、LOCAL 两种取值，分别指远程存储的软件包、计算环境本地。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeliveryForm(const std::string& _deliveryForm);
@@ -74,19 +70,15 @@ namespace TencentCloud
                     bool DeliveryFormHasBeenSet() const;
 
                     /**
-                     * 获取任务执行命令。与Commands不能同时指定。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Command 任务执行命令。与Commands不能同时指定。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取松耦合任务执行命令。与Commands不能同时指定，一般使用Command字段提交任务。
+                     * @return Command 松耦合任务执行命令。与Commands不能同时指定，一般使用Command字段提交任务。
                      * 
                      */
                     std::string GetCommand() const;
 
                     /**
-                     * 设置任务执行命令。与Commands不能同时指定。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _command 任务执行命令。与Commands不能同时指定。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置松耦合任务执行命令。与Commands不能同时指定，一般使用Command字段提交任务。
+                     * @param _command 松耦合任务执行命令。与Commands不能同时指定，一般使用Command字段提交任务。
                      * 
                      */
                     void SetCommand(const std::string& _command);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用程序软件包的远程存储路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackagePath 应用程序软件包的远程存储路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPackagePath() const;
 
                     /**
                      * 设置应用程序软件包的远程存储路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packagePath 应用程序软件包的远程存储路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackagePath(const std::string& _packagePath);
@@ -125,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用使用Docker的相关配置。在使用Docker配置的情况下，DeliveryForm 为 LOCAL 表示直接使用Docker镜像内部的应用软件，通过Docker方式运行；DeliveryForm 为 PACKAGE，表示将远程应用包注入到Docker镜像后，通过Docker方式运行。为避免Docker不同版本的兼容性问题，Docker安装包及相关依赖由Batch统一负责，对于已安装Docker的自定义镜像，请卸载后再使用Docker特性。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Docker 应用使用Docker的相关配置。在使用Docker配置的情况下，DeliveryForm 为 LOCAL 表示直接使用Docker镜像内部的应用软件，通过Docker方式运行；DeliveryForm 为 PACKAGE，表示将远程应用包注入到Docker镜像后，通过Docker方式运行。为避免Docker不同版本的兼容性问题，Docker安装包及相关依赖由Batch统一负责，对于已安装Docker的自定义镜像，请卸载后再使用Docker特性。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Docker GetDocker() const;
 
                     /**
                      * 设置应用使用Docker的相关配置。在使用Docker配置的情况下，DeliveryForm 为 LOCAL 表示直接使用Docker镜像内部的应用软件，通过Docker方式运行；DeliveryForm 为 PACKAGE，表示将远程应用包注入到Docker镜像后，通过Docker方式运行。为避免Docker不同版本的兼容性问题，Docker安装包及相关依赖由Batch统一负责，对于已安装Docker的自定义镜像，请卸载后再使用Docker特性。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _docker 应用使用Docker的相关配置。在使用Docker配置的情况下，DeliveryForm 为 LOCAL 表示直接使用Docker镜像内部的应用软件，通过Docker方式运行；DeliveryForm 为 PACKAGE，表示将远程应用包注入到Docker镜像后，通过Docker方式运行。为避免Docker不同版本的兼容性问题，Docker安装包及相关依赖由Batch统一负责，对于已安装Docker的自定义镜像，请卸载后再使用Docker特性。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDocker(const Docker& _docker);
@@ -149,19 +133,15 @@ namespace TencentCloud
                     bool DockerHasBeenSet() const;
 
                     /**
-                     * 获取任务执行命令信息。与Command不能同时指定。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Commands 任务执行命令信息。与Command不能同时指定。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取紧耦合任务执行命令信息。与Command不能同时指定。Command和Commands必须指定一个。
+                     * @return Commands 紧耦合任务执行命令信息。与Command不能同时指定。Command和Commands必须指定一个。
                      * 
                      */
                     std::vector<CommandLine> GetCommands() const;
 
                     /**
-                     * 设置任务执行命令信息。与Command不能同时指定。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _commands 任务执行命令信息。与Command不能同时指定。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置紧耦合任务执行命令信息。与Command不能同时指定。Command和Commands必须指定一个。
+                     * @param _commands 紧耦合任务执行命令信息。与Command不能同时指定。Command和Commands必须指定一个。
                      * 
                      */
                     void SetCommands(const std::vector<CommandLine>& _commands);
@@ -177,35 +157,30 @@ namespace TencentCloud
 
                     /**
                      * 应用程序的交付方式，包括PACKAGE、LOCAL 两种取值，分别指远程存储的软件包、计算环境本地。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deliveryForm;
                     bool m_deliveryFormHasBeenSet;
 
                     /**
-                     * 任务执行命令。与Commands不能同时指定。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 松耦合任务执行命令。与Commands不能同时指定，一般使用Command字段提交任务。
                      */
                     std::string m_command;
                     bool m_commandHasBeenSet;
 
                     /**
                      * 应用程序软件包的远程存储路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packagePath;
                     bool m_packagePathHasBeenSet;
 
                     /**
                      * 应用使用Docker的相关配置。在使用Docker配置的情况下，DeliveryForm 为 LOCAL 表示直接使用Docker镜像内部的应用软件，通过Docker方式运行；DeliveryForm 为 PACKAGE，表示将远程应用包注入到Docker镜像后，通过Docker方式运行。为避免Docker不同版本的兼容性问题，Docker安装包及相关依赖由Batch统一负责，对于已安装Docker的自定义镜像，请卸载后再使用Docker特性。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Docker m_docker;
                     bool m_dockerHasBeenSet;
 
                     /**
-                     * 任务执行命令信息。与Command不能同时指定。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 紧耦合任务执行命令信息。与Command不能同时指定。Command和Commands必须指定一个。
                      */
                     std::vector<CommandLine> m_commands;
                     bool m_commandsHasBeenSet;

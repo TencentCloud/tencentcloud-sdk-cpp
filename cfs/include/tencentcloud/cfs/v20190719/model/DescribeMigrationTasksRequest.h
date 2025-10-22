@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -86,71 +86,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取<br><li> taskId
-
-按照【迁移任务id】进行过滤。
-类型：String
-
-必选：否
-
-<br><li> taskName
-
-按照【迁移任务名字】进行模糊搜索过滤。
-类型：String
-
-必选：否
-
-每次请求的Filters的上限为10，Filter.Values的上限为100。
-                     * @return Filters <br><li> taskId
-
-按照【迁移任务id】进行过滤。
-类型：String
-
-必选：否
-
-<br><li> taskName
-
-按照【迁移任务名字】进行模糊搜索过滤。
-类型：String
-
-必选：否
-
-每次请求的Filters的上限为10，Filter.Values的上限为100。
+                     * 获取<br><li> taskId按照【迁移任务id】进行过滤。类型：String必选：否<br></li><br><li>  taskName按照【迁移任务名字】进行模糊搜索过滤。类型：String必选：否每次请求的Filters的上限为10，Filter.Values的上限为100。</li>
+                     * @return Filters <br><li> taskId按照【迁移任务id】进行过滤。类型：String必选：否<br></li><br><li>  taskName按照【迁移任务名字】进行模糊搜索过滤。类型：String必选：否每次请求的Filters的上限为10，Filter.Values的上限为100。</li>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置<br><li> taskId
-
-按照【迁移任务id】进行过滤。
-类型：String
-
-必选：否
-
-<br><li> taskName
-
-按照【迁移任务名字】进行模糊搜索过滤。
-类型：String
-
-必选：否
-
-每次请求的Filters的上限为10，Filter.Values的上限为100。
-                     * @param _filters <br><li> taskId
-
-按照【迁移任务id】进行过滤。
-类型：String
-
-必选：否
-
-<br><li> taskName
-
-按照【迁移任务名字】进行模糊搜索过滤。
-类型：String
-
-必选：否
-
-每次请求的Filters的上限为10，Filter.Values的上限为100。
+                     * 设置<br><li> taskId按照【迁移任务id】进行过滤。类型：String必选：否<br></li><br><li>  taskName按照【迁移任务名字】进行模糊搜索过滤。类型：String必选：否每次请求的Filters的上限为10，Filter.Values的上限为100。</li>
+                     * @param _filters <br><li> taskId按照【迁移任务id】进行过滤。类型：String必选：否<br></li><br><li>  taskName按照【迁移任务名字】进行模糊搜索过滤。类型：String必选：否每次请求的Filters的上限为10，Filter.Values的上限为100。</li>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -177,21 +121,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * <br><li> taskId
-
-按照【迁移任务id】进行过滤。
-类型：String
-
-必选：否
-
-<br><li> taskName
-
-按照【迁移任务名字】进行模糊搜索过滤。
-类型：String
-
-必选：否
-
-每次请求的Filters的上限为10，Filter.Values的上限为100。
+                     * <br><li> taskId按照【迁移任务id】进行过滤。类型：String必选：否<br></li><br><li>  taskName按照【迁移任务名字】进行模糊搜索过滤。类型：String必选：否每次请求的Filters的上限为10，Filter.Values的上限为100。</li>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

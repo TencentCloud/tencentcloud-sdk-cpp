@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@
 #include <tencentcloud/dlc/v20210125/model/SmartOptimizerWrittenPolicy.h>
 #include <tencentcloud/dlc/v20210125/model/SmartOptimizerLifecyclePolicy.h>
 #include <tencentcloud/dlc/v20210125/model/SmartOptimizerIndexPolicy.h>
+#include <tencentcloud/dlc/v20210125/model/SmartOptimizerChangeTablePolicy.h>
 
 
 namespace TencentCloud
@@ -52,18 +53,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否继承
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Inherit 是否继承
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInherit() const;
 
                     /**
                      * 设置是否继承
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _inherit 是否继承
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInherit(const std::string& _inherit);
@@ -175,11 +172,35 @@ namespace TencentCloud
                      */
                     bool IndexHasBeenSet() const;
 
+                    /**
+                     * 获取SmartOptimizerChangeTablePolicy
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ChangeTable SmartOptimizerChangeTablePolicy
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    SmartOptimizerChangeTablePolicy GetChangeTable() const;
+
+                    /**
+                     * 设置SmartOptimizerChangeTablePolicy
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _changeTable SmartOptimizerChangeTablePolicy
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetChangeTable(const SmartOptimizerChangeTablePolicy& _changeTable);
+
+                    /**
+                     * 判断参数 ChangeTable 是否已赋值
+                     * @return ChangeTable 是否已赋值
+                     * 
+                     */
+                    bool ChangeTableHasBeenSet() const;
+
                 private:
 
                     /**
                      * 是否继承
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_inherit;
                     bool m_inheritHasBeenSet;
@@ -211,6 +232,13 @@ namespace TencentCloud
                      */
                     SmartOptimizerIndexPolicy m_index;
                     bool m_indexHasBeenSet;
+
+                    /**
+                     * SmartOptimizerChangeTablePolicy
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SmartOptimizerChangeTablePolicy m_changeTable;
+                    bool m_changeTableHasBeenSet;
 
                 };
             }

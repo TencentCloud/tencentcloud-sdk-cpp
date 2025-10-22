@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -426,15 +426,15 @@ namespace TencentCloud
                     bool RuleCategoryHasBeenSet() const;
 
                     /**
-                     * 获取自动生成的正则表达式
-                     * @return RegexBashCmd 自动生成的正则表达式
+                     * 获取转义后的正则表达式
+                     * @return RegexBashCmd 转义后的正则表达式
                      * 
                      */
                     std::string GetRegexBashCmd() const;
 
                     /**
-                     * 设置自动生成的正则表达式
-                     * @param _regexBashCmd 自动生成的正则表达式
+                     * 设置转义后的正则表达式
+                     * @param _regexBashCmd 转义后的正则表达式
                      * 
                      */
                     void SetRegexBashCmd(const std::string& _regexBashCmd);
@@ -445,6 +445,27 @@ namespace TencentCloud
                      * 
                      */
                     bool RegexBashCmdHasBeenSet() const;
+
+                    /**
+                     * 获取转义后的正则表达式
+                     * @return RegexExe 转义后的正则表达式
+                     * 
+                     */
+                    std::string GetRegexExe() const;
+
+                    /**
+                     * 设置转义后的正则表达式
+                     * @param _regexExe 转义后的正则表达式
+                     * 
+                     */
+                    void SetRegexExe(const std::string& _regexExe);
+
+                    /**
+                     * 判断参数 RegexExe 是否已赋值
+                     * @return RegexExe 是否已赋值
+                     * 
+                     */
+                    bool RegexExeHasBeenSet() const;
 
                     /**
                      * 获取0:普通 1:专业版 2:旗舰版
@@ -599,10 +620,16 @@ namespace TencentCloud
                     bool m_ruleCategoryHasBeenSet;
 
                     /**
-                     * 自动生成的正则表达式
+                     * 转义后的正则表达式
                      */
                     std::string m_regexBashCmd;
                     bool m_regexBashCmdHasBeenSet;
+
+                    /**
+                     * 转义后的正则表达式
+                     */
+                    std::string m_regexExe;
+                    bool m_regexExeHasBeenSet;
 
                     /**
                      * 0:普通 1:专业版 2:旗舰版

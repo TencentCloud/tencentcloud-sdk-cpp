@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取负载均衡唯一ID，例如：lb-12345678。
-                     * @return LoadBalancerId 负载均衡唯一ID，例如：lb-12345678。
+                     * 获取负载均衡唯一ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口查询。例如：lb-12345678。
+                     * @return LoadBalancerId 负载均衡唯一ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口查询。例如：lb-12345678。
                      * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
-                     * 设置负载均衡唯一ID，例如：lb-12345678。
-                     * @param _loadBalancerId 负载均衡唯一ID，例如：lb-12345678。
+                     * 设置负载均衡唯一ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口查询。例如：lb-12345678。
+                     * @param _loadBalancerId 负载均衡唯一ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口查询。例如：lb-12345678。
                      * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
-                     * 获取删除SnatIp地址数组。
-                     * @return Ips 删除SnatIp地址数组。
+                     * 获取删除SnatIp地址数组，最大支持删除数量为20个。
+                     * @return Ips 删除SnatIp地址数组，最大支持删除数量为20个。
                      * 
                      */
                     std::vector<std::string> GetIps() const;
 
                     /**
-                     * 设置删除SnatIp地址数组。
-                     * @param _ips 删除SnatIp地址数组。
+                     * 设置删除SnatIp地址数组，最大支持删除数量为20个。
+                     * @param _ips 删除SnatIp地址数组，最大支持删除数量为20个。
                      * 
                      */
                     void SetIps(const std::vector<std::string>& _ips);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 负载均衡唯一ID，例如：lb-12345678。
+                     * 负载均衡唯一ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口查询。例如：lb-12345678。
                      */
                     std::string m_loadBalancerId;
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
-                     * 删除SnatIp地址数组。
+                     * 删除SnatIp地址数组，最大支持删除数量为20个。
                      */
                     std::vector<std::string> m_ips;
                     bool m_ipsHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -237,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备份ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupId 备份ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBackupId() const;
 
                     /**
                      * 设置备份ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _backupId 备份ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBackupId(const int64_t& _backupId);
@@ -262,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取快照类型，可选值：full，全量；increment，增量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SnapShotType 快照类型，可选值：full，全量；increment，增量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSnapShotType() const;
 
                     /**
                      * 设置快照类型，可选值：full，全量；increment，增量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _snapShotType 快照类型，可选值：full，全量；increment，增量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSnapShotType(const std::string& _snapShotType);
@@ -287,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备份文件备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupName 备份文件备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBackupName() const;
 
                     /**
                      * 设置备份文件备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _backupName 备份文件备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBackupName(const std::string& _backupName);
@@ -368,21 +356,18 @@ namespace TencentCloud
 
                     /**
                      * 备份ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_backupId;
                     bool m_backupIdHasBeenSet;
 
                     /**
                      * 快照类型，可选值：full，全量；increment，增量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_snapShotType;
                     bool m_snapShotTypeHasBeenSet;
 
                     /**
                      * 备份文件备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_backupName;
                     bool m_backupNameHasBeenSet;

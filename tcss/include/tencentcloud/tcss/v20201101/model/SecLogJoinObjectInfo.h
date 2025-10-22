@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostName 主机名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHostName() const;
 
                     /**
                      * 设置主机名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostName 主机名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostName(const std::string& _hostName);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostIP 主机IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHostIP() const;
 
                     /**
                      * 设置主机IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostIP 主机IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostIP(const std::string& _hostIP);
@@ -140,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterID 集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterID() const;
 
                     /**
                      * 设置集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterID 集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterID(const std::string& _clusterID);
@@ -165,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterName 集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 设置集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterName 集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterName(const std::string& _clusterName);
@@ -190,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取外网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicIP 外网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublicIP() const;
 
                     /**
                      * 设置外网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publicIP 外网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublicIP(const std::string& _publicIP);
@@ -236,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterVersion 集群版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterVersion() const;
 
                     /**
                      * 设置集群版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterVersion 集群版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterVersion(const std::string& _clusterVersion);
@@ -324,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterStatus 集群状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterStatus() const;
 
                     /**
                      * 设置集群状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterStatus 集群状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterStatus(const std::string& _clusterStatus);
@@ -357,14 +329,12 @@ namespace TencentCloud
 
                     /**
                      * 主机名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostName;
                     bool m_hostNameHasBeenSet;
 
                     /**
                      * 主机IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostIP;
                     bool m_hostIPHasBeenSet;
@@ -377,21 +347,18 @@ namespace TencentCloud
 
                     /**
                      * 集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterID;
                     bool m_clusterIDHasBeenSet;
 
                     /**
                      * 集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
 
                     /**
                      * 外网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publicIP;
                     bool m_publicIPHasBeenSet;
@@ -404,7 +371,6 @@ namespace TencentCloud
 
                     /**
                      * 集群版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterVersion;
                     bool m_clusterVersionHasBeenSet;
@@ -429,7 +395,6 @@ namespace TencentCloud
 
                     /**
                      * 集群状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterStatus;
                     bool m_clusterStatusHasBeenSet;

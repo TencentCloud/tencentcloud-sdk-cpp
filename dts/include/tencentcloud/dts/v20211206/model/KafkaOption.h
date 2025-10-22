@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 目标端为kakfa时添加的同步选项字段
+                * 目标端为kafka时添加的同步选项字段
                 */
                 class KafkaOption : public AbstractModel
                 {
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取投递到kafka的数据类型，如Avro,Json,canal-pb,canal-json
-                     * @return DataType 投递到kafka的数据类型，如Avro,Json,canal-pb,canal-json
+                     * 获取投递到kafka的数据类型，如Avro,Json,canal-pb,canal-json,debezium
+                     * @return DataType 投递到kafka的数据类型，如Avro,Json,canal-pb,canal-json,debezium
                      * 
                      */
                     std::string GetDataType() const;
 
                     /**
-                     * 设置投递到kafka的数据类型，如Avro,Json,canal-pb,canal-json
-                     * @param _dataType 投递到kafka的数据类型，如Avro,Json,canal-pb,canal-json
+                     * 设置投递到kafka的数据类型，如Avro,Json,canal-pb,canal-json,debezium
+                     * @param _dataType 投递到kafka的数据类型，如Avro,Json,canal-pb,canal-json,debezium
                      * 
                      */
                     void SetDataType(const std::string& _dataType);
@@ -134,7 +134,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 投递到kafka的数据类型，如Avro,Json,canal-pb,canal-json
+                     * 投递到kafka的数据类型，如Avro,Json,canal-pb,canal-json,debezium
                      */
                     std::string m_dataType;
                     bool m_dataTypeHasBeenSet;

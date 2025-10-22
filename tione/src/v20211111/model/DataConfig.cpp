@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ using namespace std;
 
 DataConfig::DataConfig() :
     m_mappingPathHasBeenSet(false),
+    m_dataSourceUsageHasBeenSet(false),
     m_dataSourceTypeHasBeenSet(false),
     m_dataSetSourceHasBeenSet(false),
     m_cOSSourceHasBeenSet(false),
@@ -30,7 +31,8 @@ DataConfig::DataConfig() :
     m_gooseFSSourceHasBeenSet(false),
     m_cFSTurboSourceHasBeenSet(false),
     m_localDiskSourceHasBeenSet(false),
-    m_cBSSourceHasBeenSet(false)
+    m_cBSSourceHasBeenSet(false),
+    m_hostPathSourceHasBeenSet(false)
 {
 }
 
@@ -47,6 +49,16 @@ CoreInternalOutcome DataConfig::Deserialize(const rapidjson::Value &value)
         }
         m_mappingPath = string(value["MappingPath"].GetString());
         m_mappingPathHasBeenSet = true;
+    }
+
+    if (value.HasMember("DataSourceUsage") && !value["DataSourceUsage"].IsNull())
+    {
+        if (!value["DataSourceUsage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataConfig.DataSourceUsage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataSourceUsage = string(value["DataSourceUsage"].GetString());
+        m_dataSourceUsageHasBeenSet = true;
     }
 
     if (value.HasMember("DataSourceType") && !value["DataSourceType"].IsNull())
@@ -195,6 +207,23 @@ CoreInternalOutcome DataConfig::Deserialize(const rapidjson::Value &value)
         m_cBSSourceHasBeenSet = true;
     }
 
+    if (value.HasMember("HostPathSource") && !value["HostPathSource"].IsNull())
+    {
+        if (!value["HostPathSource"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataConfig.HostPathSource` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_hostPathSource.Deserialize(value["HostPathSource"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_hostPathSourceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -208,6 +237,14 @@ void DataConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "MappingPath";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_mappingPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataSourceUsageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataSourceUsage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dataSourceUsage.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dataSourceTypeHasBeenSet)
@@ -290,6 +327,15 @@ void DataConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         m_cBSSource.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_hostPathSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostPathSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_hostPathSource.ToJsonObject(value[key.c_str()], allocator);
+    }
+
 }
 
 
@@ -307,6 +353,22 @@ void DataConfig::SetMappingPath(const string& _mappingPath)
 bool DataConfig::MappingPathHasBeenSet() const
 {
     return m_mappingPathHasBeenSet;
+}
+
+string DataConfig::GetDataSourceUsage() const
+{
+    return m_dataSourceUsage;
+}
+
+void DataConfig::SetDataSourceUsage(const string& _dataSourceUsage)
+{
+    m_dataSourceUsage = _dataSourceUsage;
+    m_dataSourceUsageHasBeenSet = true;
+}
+
+bool DataConfig::DataSourceUsageHasBeenSet() const
+{
+    return m_dataSourceUsageHasBeenSet;
 }
 
 string DataConfig::GetDataSourceType() const
@@ -451,5 +513,21 @@ void DataConfig::SetCBSSource(const CBSConfig& _cBSSource)
 bool DataConfig::CBSSourceHasBeenSet() const
 {
     return m_cBSSourceHasBeenSet;
+}
+
+HostPath DataConfig::GetHostPathSource() const
+{
+    return m_hostPathSource;
+}
+
+void DataConfig::SetHostPathSource(const HostPath& _hostPathSource)
+{
+    m_hostPathSource = _hostPathSource;
+    m_hostPathSourceHasBeenSet = true;
+}
+
+bool DataConfig::HostPathSourceHasBeenSet() const
+{
+    return m_hostPathSourceHasBeenSet;
 }
 

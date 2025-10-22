@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取手术史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SurgeryHistory 手术史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SurgeryHistory GetSurgeryHistory() const;
 
                     /**
                      * 设置手术史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _surgeryHistory 手术史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSurgeryHistory(const SurgeryHistory& _surgeryHistory);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取其他信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OtherInfo 其他信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     OtherInfo GetOtherInfo() const;
 
                     /**
                      * 设置其他信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _otherInfo 其他信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOtherInfo(const OtherInfo& _otherInfo);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Page 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPage() const;
 
                     /**
                      * 设置数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _page 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPage(const int64_t& _page);
@@ -127,21 +115,18 @@ namespace TencentCloud
 
                     /**
                      * 手术史
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SurgeryHistory m_surgeryHistory;
                     bool m_surgeryHistoryHasBeenSet;
 
                     /**
                      * 其他信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OtherInfo m_otherInfo;
                     bool m_otherInfoHasBeenSet;
 
                     /**
                      * 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_page;
                     bool m_pageHasBeenSet;

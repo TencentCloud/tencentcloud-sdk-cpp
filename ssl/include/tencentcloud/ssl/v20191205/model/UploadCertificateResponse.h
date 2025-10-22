@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,10 +58,8 @@ namespace TencentCloud
                     bool CertificateIdHasBeenSet() const;
 
                     /**
-                     * 获取重复证书的ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RepeatCertId 重复证书的ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取当入参Repeatable为false的时候 返回的重复证书的ID，注意当用户上传相同的证书超过5000张的时候，当前接口会无视入参Repeatable，直接返回重复证书的ID。
+                     * @return RepeatCertId 当入参Repeatable为false的时候 返回的重复证书的ID，注意当用户上传相同的证书超过5000张的时候，当前接口会无视入参Repeatable，直接返回重复证书的ID。
                      * 
                      */
                     std::string GetRepeatCertId() const;
@@ -82,8 +80,7 @@ namespace TencentCloud
                     bool m_certificateIdHasBeenSet;
 
                     /**
-                     * 重复证书的ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 当入参Repeatable为false的时候 返回的重复证书的ID，注意当用户上传相同的证书超过5000张的时候，当前接口会无视入参Repeatable，直接返回重复证书的ID。
                      */
                     std::string m_repeatCertId;
                     bool m_repeatCertIdHasBeenSet;

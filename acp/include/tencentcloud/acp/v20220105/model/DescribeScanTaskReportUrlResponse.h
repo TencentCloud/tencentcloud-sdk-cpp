@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取诊断报告/堆栈信息/报告json结果下载链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportUrl 诊断报告/堆栈信息/报告json结果下载链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReportUrl() const;
@@ -75,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取诊断报告/堆栈/报告json结果的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportTitle 诊断报告/堆栈/报告json结果的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReportTitle() const;
@@ -91,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取诊断json结果内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportResult 诊断json结果内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReportResult() const;
@@ -115,21 +109,18 @@ namespace TencentCloud
 
                     /**
                      * 诊断报告/堆栈信息/报告json结果下载链接
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reportUrl;
                     bool m_reportUrlHasBeenSet;
 
                     /**
                      * 诊断报告/堆栈/报告json结果的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reportTitle;
                     bool m_reportTitleHasBeenSet;
 
                     /**
                      * 诊断json结果内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reportResult;
                     bool m_reportResultHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -208,15 +208,15 @@ drop：拒绝
                     bool RuleActionHasBeenSet() const;
 
                     /**
-                     * 获取描述
-                     * @return Description 描述
+                     * 获取规则描述 用于规则使用或者场景的描述，最多支持50个字符
+                     * @return Description 规则描述 用于规则使用或者场景的描述，最多支持50个字符
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述
-                     * @param _description 描述
+                     * 设置规则描述 用于规则使用或者场景的描述，最多支持50个字符
+                     * @param _description 规则描述 用于规则使用或者场景的描述，最多支持50个字符
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -250,15 +250,15 @@ drop：拒绝
                     bool OrderIndexHasBeenSet() const;
 
                     /**
-                     * 获取协议；TCP/UDP/ICMP/ANY
-                     * @return Protocol 协议；TCP/UDP/ICMP/ANY
+                     * 获取协议；TCP/UDP/ICMP/ICMPv6/ANY
+                     * @return Protocol 协议；TCP/UDP/ICMP/ICMPv6/ANY
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置协议；TCP/UDP/ICMP/ANY
-                     * @param _protocol 协议；TCP/UDP/ICMP/ANY
+                     * 设置协议；TCP/UDP/ICMP/ICMPv6/ANY
+                     * @param _protocol 协议；TCP/UDP/ICMP/ICMPv6/ANY
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -342,18 +342,18 @@ drop：拒绝
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取（入参时、Enable已弃用；由通用配置中新增规则启用状态控制）
+                     * 获取（入参时Enable无意义；由通用配置中新增规则启用状态控制）
 规则状态，true表示启用，false表示禁用
-                     * @return Enable （入参时、Enable已弃用；由通用配置中新增规则启用状态控制）
+                     * @return Enable （入参时Enable无意义；由通用配置中新增规则启用状态控制）
 规则状态，true表示启用，false表示禁用
                      * 
                      */
                     std::string GetEnable() const;
 
                     /**
-                     * 设置（入参时、Enable已弃用；由通用配置中新增规则启用状态控制）
+                     * 设置（入参时Enable无意义；由通用配置中新增规则启用状态控制）
 规则状态，true表示启用，false表示禁用
-                     * @param _enable （入参时、Enable已弃用；由通用配置中新增规则启用状态控制）
+                     * @param _enable （入参时Enable无意义；由通用配置中新增规则启用状态控制）
 规则状态，true表示启用，false表示禁用
                      * 
                      */
@@ -434,7 +434,7 @@ drop：拒绝
                     bool m_ruleActionHasBeenSet;
 
                     /**
-                     * 描述
+                     * 规则描述 用于规则使用或者场景的描述，最多支持50个字符
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
@@ -446,7 +446,7 @@ drop：拒绝
                     bool m_orderIndexHasBeenSet;
 
                     /**
-                     * 协议；TCP/UDP/ICMP/ANY
+                     * 协议；TCP/UDP/ICMP/ICMPv6/ANY
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
@@ -472,7 +472,7 @@ drop：拒绝
                     bool m_idHasBeenSet;
 
                     /**
-                     * （入参时、Enable已弃用；由通用配置中新增规则启用状态控制）
+                     * （入参时Enable无意义；由通用配置中新增规则启用状态控制）
 规则状态，true表示启用，false表示禁用
                      */
                     std::string m_enable;

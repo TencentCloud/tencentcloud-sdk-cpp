@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurDeadline 到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCurDeadline() const;
 
                     /**
                      * 设置到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _curDeadline 到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCurDeadline(const std::string& _curDeadline);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取付费方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayMode 付费方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPayMode() const;
 
                     /**
                      * 设置付费方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _payMode 付费方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPayMode(const std::string& _payMode);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自动付费标识：0:默认未设置 1:自动续费 2 不自动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoRenewFlag 自动付费标识：0:默认未设置 1:自动续费 2 不自动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAutoRenewFlag() const;
 
                     /**
                      * 设置自动付费标识：0:默认未设置 1:自动续费 2 不自动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _autoRenewFlag 自动付费标识：0:默认未设置 1:自动续费 2 不自动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceId 资源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置资源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceId 资源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_curDeadline;
                     bool m_curDeadlineHasBeenSet;
 
                     /**
                      * 付费方式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
                      * 自动付费标识：0:默认未设置 1:自动续费 2 不自动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
 
                     /**
                      * 资源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间。
-                     * @return EndTime 结束时间。
+                     * 获取结束时间。查询时间范围（`EndTime` - `StartTime`）需小于等于 31 天。
+                     * @return EndTime 结束时间。查询时间范围（`EndTime` - `StartTime`）需小于等于 31 天。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间。
-                     * @param _endTime 结束时间。
+                     * 设置结束时间。查询时间范围（`EndTime` - `StartTime`）需小于等于 31 天。
+                     * @param _endTime 结束时间。查询时间范围（`EndTime` - `StartTime`）需小于等于 31 天。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -130,15 +130,15 @@ namespace TencentCloud
                     bool MetricNameHasBeenSet() const;
 
                     /**
-                     * 获取站点ID集合，此参数必填。
-                     * @return ZoneIds 站点ID集合，此参数必填。
+                     * 获取站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。
+                     * @return ZoneIds 站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。
                      * 
                      */
                     std::vector<std::string> GetZoneIds() const;
 
                     /**
-                     * 设置站点ID集合，此参数必填。
-                     * @param _zoneIds 站点ID集合，此参数必填。
+                     * 设置站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。
+                     * @param _zoneIds 站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。
                      * 
                      */
                     void SetZoneIds(const std::vector<std::string>& _zoneIds);
@@ -317,7 +317,7 @@ namespace TencentCloud
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间。
+                     * 结束时间。查询时间范围（`EndTime` - `StartTime`）需小于等于 31 天。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -335,7 +335,7 @@ namespace TencentCloud
                     bool m_metricNameHasBeenSet;
 
                     /**
-                     * 站点ID集合，此参数必填。
+                     * 站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。
                      */
                     std::vector<std::string> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;

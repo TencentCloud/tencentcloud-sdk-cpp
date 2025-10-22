@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BigDealId 订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBigDealId() const;
 
                     /**
                      * 设置订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bigDealId 订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBigDealId(const std::string& _bigDealId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DealName 子订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDealName() const;
 
                     /**
                      * 设置子订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dealName 子订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDealName(const std::string& _dealName);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bigDealId;
                     bool m_bigDealIdHasBeenSet;
 
                     /**
                      * 子订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dealName;
                     bool m_dealNameHasBeenSet;

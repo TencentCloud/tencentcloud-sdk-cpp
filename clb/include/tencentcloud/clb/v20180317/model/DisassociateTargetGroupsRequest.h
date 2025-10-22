@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待解绑的规则关系数组。
-                     * @return Associations 待解绑的规则关系数组。
+                     * 获取待解绑的规则关系数组，支持批量解绑多个监听器，单次批量解除最多20个。
+                     * @return Associations 待解绑的规则关系数组，支持批量解绑多个监听器，单次批量解除最多20个。
                      * 
                      */
                     std::vector<TargetGroupAssociation> GetAssociations() const;
 
                     /**
-                     * 设置待解绑的规则关系数组。
-                     * @param _associations 待解绑的规则关系数组。
+                     * 设置待解绑的规则关系数组，支持批量解绑多个监听器，单次批量解除最多20个。
+                     * @param _associations 待解绑的规则关系数组，支持批量解绑多个监听器，单次批量解除最多20个。
                      * 
                      */
                     void SetAssociations(const std::vector<TargetGroupAssociation>& _associations);
@@ -67,7 +67,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 待解绑的规则关系数组。
+                     * 待解绑的规则关系数组，支持批量解绑多个监听器，单次批量解除最多20个。
                      */
                     std::vector<TargetGroupAssociation> m_associations;
                     bool m_associationsHasBeenSet;

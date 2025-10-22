@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tse/v20201207/model/ConfigFilePersistent.h>
 
 
 namespace TencentCloud
@@ -48,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置文件发布id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 配置文件发布id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置配置文件发布id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 配置文件发布id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const uint64_t& _id);
@@ -73,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置文件发布名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 配置文件发布名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置配置文件发布名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 配置文件发布名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -98,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置文件发布命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Namespace 配置文件发布命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置配置文件发布命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _namespace 配置文件发布命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNamespace(const std::string& _namespace);
@@ -123,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置文件发布组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Group 配置文件发布组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroup() const;
 
                     /**
                      * 设置配置文件发布组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _group 配置文件发布组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroup(const std::string& _group);
@@ -148,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置文件发布文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileName 配置文件发布文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileName() const;
 
                     /**
                      * 设置配置文件发布文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileName 配置文件发布文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileName(const std::string& _fileName);
@@ -173,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置文件发布内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 配置文件发布内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置配置文件发布内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _content 配置文件发布内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContent(const std::string& _content);
@@ -198,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置文件发布注释
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Comment 配置文件发布注释
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComment() const;
 
                     /**
                      * 设置配置文件发布注释
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _comment 配置文件发布注释
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComment(const std::string& _comment);
@@ -223,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置文件发布Md5
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Md5 配置文件发布Md5
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMd5() const;
 
                     /**
                      * 设置配置文件发布Md5
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _md5 配置文件发布Md5
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMd5(const std::string& _md5);
@@ -248,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置文件发布版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 配置文件发布版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetVersion() const;
 
                     /**
                      * 设置配置文件发布版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _version 配置文件发布版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersion(const uint64_t& _version);
@@ -273,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置文件发布创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 配置文件发布创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置配置文件发布创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 配置文件发布创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -298,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置文件发布创建者
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateBy 配置文件发布创建者
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateBy() const;
 
                     /**
                      * 设置配置文件发布创建者
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createBy 配置文件发布创建者
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateBy(const std::string& _createBy);
@@ -323,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置文件发布修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyTime 配置文件发布修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置配置文件发布修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyTime 配置文件发布修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -348,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置文件发布修改者
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyBy 配置文件发布修改者
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyBy() const;
 
                     /**
                      * 设置配置文件发布修改者
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyBy 配置文件发布修改者
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyBy(const std::string& _modifyBy);
@@ -373,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取发布描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReleaseDescription 发布描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReleaseDescription() const;
 
                     /**
                      * 设置发布描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _releaseDescription 发布描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReleaseDescription(const std::string& _releaseDescription);
@@ -398,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Active 是否生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetActive() const;
 
                     /**
                      * 设置是否生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _active 是否生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActive(const bool& _active);
@@ -423,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Format 格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFormat() const;
 
                     /**
                      * 设置格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _format 格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFormat(const std::string& _format);
@@ -446,119 +383,184 @@ namespace TencentCloud
                      */
                     bool FormatHasBeenSet() const;
 
+                    /**
+                     * 获取配置文件ID
+                     * @return ConfigFileId 配置文件ID
+                     * 
+                     */
+                    std::string GetConfigFileId() const;
+
+                    /**
+                     * 设置配置文件ID
+                     * @param _configFileId 配置文件ID
+                     * 
+                     */
+                    void SetConfigFileId(const std::string& _configFileId);
+
+                    /**
+                     * 判断参数 ConfigFileId 是否已赋值
+                     * @return ConfigFileId 是否已赋值
+                     * 
+                     */
+                    bool ConfigFileIdHasBeenSet() const;
+
+                    /**
+                     * 获取配置文件类型
+                     * @return ConfigFileSupportedClient 配置文件类型
+                     * 
+                     */
+                    int64_t GetConfigFileSupportedClient() const;
+
+                    /**
+                     * 设置配置文件类型
+                     * @param _configFileSupportedClient 配置文件类型
+                     * 
+                     */
+                    void SetConfigFileSupportedClient(const int64_t& _configFileSupportedClient);
+
+                    /**
+                     * 判断参数 ConfigFileSupportedClient 是否已赋值
+                     * @return ConfigFileSupportedClient 是否已赋值
+                     * 
+                     */
+                    bool ConfigFileSupportedClientHasBeenSet() const;
+
+                    /**
+                     * 获取配置文件持久化
+                     * @return ConfigFilePersistent 配置文件持久化
+                     * 
+                     */
+                    ConfigFilePersistent GetConfigFilePersistent() const;
+
+                    /**
+                     * 设置配置文件持久化
+                     * @param _configFilePersistent 配置文件持久化
+                     * 
+                     */
+                    void SetConfigFilePersistent(const ConfigFilePersistent& _configFilePersistent);
+
+                    /**
+                     * 判断参数 ConfigFilePersistent 是否已赋值
+                     * @return ConfigFilePersistent 是否已赋值
+                     * 
+                     */
+                    bool ConfigFilePersistentHasBeenSet() const;
+
                 private:
 
                     /**
                      * 配置文件发布id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 配置文件发布名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 配置文件发布命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
 
                     /**
                      * 配置文件发布组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_group;
                     bool m_groupHasBeenSet;
 
                     /**
                      * 配置文件发布文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
 
                     /**
                      * 配置文件发布内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
 
                     /**
                      * 配置文件发布注释
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
 
                     /**
                      * 配置文件发布Md5
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_md5;
                     bool m_md5HasBeenSet;
 
                     /**
                      * 配置文件发布版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_version;
                     bool m_versionHasBeenSet;
 
                     /**
                      * 配置文件发布创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 配置文件发布创建者
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createBy;
                     bool m_createByHasBeenSet;
 
                     /**
                      * 配置文件发布修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
                      * 配置文件发布修改者
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyBy;
                     bool m_modifyByHasBeenSet;
 
                     /**
                      * 发布描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_releaseDescription;
                     bool m_releaseDescriptionHasBeenSet;
 
                     /**
                      * 是否生效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_active;
                     bool m_activeHasBeenSet;
 
                     /**
                      * 格式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_format;
                     bool m_formatHasBeenSet;
+
+                    /**
+                     * 配置文件ID
+                     */
+                    std::string m_configFileId;
+                    bool m_configFileIdHasBeenSet;
+
+                    /**
+                     * 配置文件类型
+                     */
+                    int64_t m_configFileSupportedClient;
+                    bool m_configFileSupportedClientHasBeenSet;
+
+                    /**
+                     * 配置文件持久化
+                     */
+                    ConfigFilePersistent m_configFilePersistent;
+                    bool m_configFilePersistentHasBeenSet;
 
                 };
             }

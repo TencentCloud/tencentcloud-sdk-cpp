@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用ID
-                     * @return BotBizId 应用ID
+                     * 获取应用ID，参数非必填不代表不需要填写，下面不同的参数组合会获取到不同的权限，具体请参考 https://cloud.tencent.com/document/product/1759/116238
+                     * @return BotBizId 应用ID，参数非必填不代表不需要填写，下面不同的参数组合会获取到不同的权限，具体请参考 https://cloud.tencent.com/document/product/1759/116238
                      * 
                      */
                     std::string GetBotBizId() const;
 
                     /**
-                     * 设置应用ID
-                     * @param _botBizId 应用ID
+                     * 设置应用ID，参数非必填不代表不需要填写，下面不同的参数组合会获取到不同的权限，具体请参考 https://cloud.tencent.com/document/product/1759/116238
+                     * @param _botBizId 应用ID，参数非必填不代表不需要填写，下面不同的参数组合会获取到不同的权限，具体请参考 https://cloud.tencent.com/document/product/1759/116238
                      * 
                      */
                     void SetBotBizId(const std::string& _botBizId);
@@ -85,15 +85,19 @@ namespace TencentCloud
                     bool FileTypeHasBeenSet() const;
 
                     /**
-                     * 获取IsPublic用于上传文件时选择场景，当上传为对话端文件时IsPublic为true，上传文档库文件时场景IsPublic为false
-                     * @return IsPublic IsPublic用于上传文件时选择场景，当上传为对话端文件时IsPublic为true，上传文档库文件时场景IsPublic为false
+                     * 获取IsPublic用于上传文件或图片时选择场景，当上传对话端图片时IsPublic为true，上传文件（包括文档库文件/图片等和对话端文件）时IsPublic为false
+
+                     * @return IsPublic IsPublic用于上传文件或图片时选择场景，当上传对话端图片时IsPublic为true，上传文件（包括文档库文件/图片等和对话端文件）时IsPublic为false
+
                      * 
                      */
                     bool GetIsPublic() const;
 
                     /**
-                     * 设置IsPublic用于上传文件时选择场景，当上传为对话端文件时IsPublic为true，上传文档库文件时场景IsPublic为false
-                     * @param _isPublic IsPublic用于上传文件时选择场景，当上传为对话端文件时IsPublic为true，上传文档库文件时场景IsPublic为false
+                     * 设置IsPublic用于上传文件或图片时选择场景，当上传对话端图片时IsPublic为true，上传文件（包括文档库文件/图片等和对话端文件）时IsPublic为false
+
+                     * @param _isPublic IsPublic用于上传文件或图片时选择场景，当上传对话端图片时IsPublic为true，上传文件（包括文档库文件/图片等和对话端文件）时IsPublic为false
+
                      * 
                      */
                     void SetIsPublic(const bool& _isPublic);
@@ -129,7 +133,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用ID
+                     * 应用ID，参数非必填不代表不需要填写，下面不同的参数组合会获取到不同的权限，具体请参考 https://cloud.tencent.com/document/product/1759/116238
                      */
                     std::string m_botBizId;
                     bool m_botBizIdHasBeenSet;
@@ -141,7 +145,8 @@ namespace TencentCloud
                     bool m_fileTypeHasBeenSet;
 
                     /**
-                     * IsPublic用于上传文件时选择场景，当上传为对话端文件时IsPublic为true，上传文档库文件时场景IsPublic为false
+                     * IsPublic用于上传文件或图片时选择场景，当上传对话端图片时IsPublic为true，上传文件（包括文档库文件/图片等和对话端文件）时IsPublic为false
+
                      */
                     bool m_isPublic;
                     bool m_isPublicHasBeenSet;

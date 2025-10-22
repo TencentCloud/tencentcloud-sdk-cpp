@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取使用记录细节
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsageDetails 使用记录细节
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<UsageDetails> GetUsageDetails() const;
 
                     /**
                      * 设置使用记录细节
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _usageDetails 使用记录细节
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUsageDetails(const std::vector<UsageDetails>& _usageDetails);
@@ -137,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取查询的券id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VoucherId 查询的券id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVoucherId() const;
 
                     /**
                      * 设置查询的券id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _voucherId 查询的券id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVoucherId(const std::string& _voucherId);
@@ -162,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取交易场景：（adjust：调账、common：正常交易场景）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayScene 交易场景：（adjust：调账、common：正常交易场景）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPayScene() const;
 
                     /**
                      * 设置交易场景：（adjust：调账、common：正常交易场景）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _payScene 交易场景：（adjust：调账、common：正常交易场景）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPayScene(const std::string& _payScene);
@@ -187,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取唯一id,对应交易:预付费的dealName,调账/后付费的outTradeNo
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SeqId 唯一id,对应交易:预付费的dealName,调账/后付费的outTradeNo
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSeqId() const;
 
                     /**
                      * 设置唯一id,对应交易:预付费的dealName,调账/后付费的outTradeNo
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _seqId 唯一id,对应交易:预付费的dealName,调账/后付费的outTradeNo
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSeqId(const std::string& _seqId);
@@ -226,7 +210,6 @@ namespace TencentCloud
 
                     /**
                      * 使用记录细节
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<UsageDetails> m_usageDetails;
                     bool m_usageDetailsHasBeenSet;
@@ -239,21 +222,18 @@ namespace TencentCloud
 
                     /**
                      * 查询的券id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_voucherId;
                     bool m_voucherIdHasBeenSet;
 
                     /**
                      * 交易场景：（adjust：调账、common：正常交易场景）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_payScene;
                     bool m_paySceneHasBeenSet;
 
                     /**
                      * 唯一id,对应交易:预付费的dealName,调账/后付费的outTradeNo
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_seqId;
                     bool m_seqIdHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,14 +85,18 @@ namespace TencentCloud
 
                     /**
                      * 获取实例所属项目的 ID，可在账号中心下的项目管理页面查询。
+说明：此项为必填。
                      * @return NewProjectId 实例所属项目的 ID，可在账号中心下的项目管理页面查询。
+说明：此项为必填。
                      * 
                      */
                     int64_t GetNewProjectId() const;
 
                     /**
                      * 设置实例所属项目的 ID，可在账号中心下的项目管理页面查询。
+说明：此项为必填。
                      * @param _newProjectId 实例所属项目的 ID，可在账号中心下的项目管理页面查询。
+说明：此项为必填。
                      * 
                      */
                     void SetNewProjectId(const int64_t& _newProjectId);
@@ -119,6 +123,7 @@ namespace TencentCloud
 
                     /**
                      * 实例所属项目的 ID，可在账号中心下的项目管理页面查询。
+说明：此项为必填。
                      */
                     int64_t m_newProjectId;
                     bool m_newProjectIdHasBeenSet;

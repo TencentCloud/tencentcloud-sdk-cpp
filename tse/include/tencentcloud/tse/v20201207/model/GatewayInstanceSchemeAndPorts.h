@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取端口协议，可选HTTP、HTTPS、TCP和UDP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Scheme 端口协议，可选HTTP、HTTPS、TCP和UDP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScheme() const;
 
                     /**
                      * 设置端口协议，可选HTTP、HTTPS、TCP和UDP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scheme 端口协议，可选HTTP、HTTPS、TCP和UDP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScheme(const std::string& _scheme);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取端口列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PortList 端口列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<uint64_t> GetPortList() const;
 
                     /**
                      * 设置端口列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _portList 端口列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPortList(const std::vector<uint64_t>& _portList);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 端口协议，可选HTTP、HTTPS、TCP和UDP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scheme;
                     bool m_schemeHasBeenSet;
 
                     /**
                      * 端口列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<uint64_t> m_portList;
                     bool m_portListHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,9 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tsf/v20180326/model/ConfigMapOption.h>
+#include <tencentcloud/tsf/v20180326/model/EmptyDirOption.h>
+#include <tencentcloud/tsf/v20180326/model/VolumeClaimTemplatesOption.h>
 
 
 namespace TencentCloud
@@ -109,6 +112,69 @@ namespace TencentCloud
                      */
                     bool VolumeConfigHasBeenSet() const;
 
+                    /**
+                     * 获取-
+                     * @return ConfigMapOptions -
+                     * 
+                     */
+                    std::vector<ConfigMapOption> GetConfigMapOptions() const;
+
+                    /**
+                     * 设置-
+                     * @param _configMapOptions -
+                     * 
+                     */
+                    void SetConfigMapOptions(const std::vector<ConfigMapOption>& _configMapOptions);
+
+                    /**
+                     * 判断参数 ConfigMapOptions 是否已赋值
+                     * @return ConfigMapOptions 是否已赋值
+                     * 
+                     */
+                    bool ConfigMapOptionsHasBeenSet() const;
+
+                    /**
+                     * 获取-
+                     * @return EmptyDirOption -
+                     * 
+                     */
+                    EmptyDirOption GetEmptyDirOption() const;
+
+                    /**
+                     * 设置-
+                     * @param _emptyDirOption -
+                     * 
+                     */
+                    void SetEmptyDirOption(const EmptyDirOption& _emptyDirOption);
+
+                    /**
+                     * 判断参数 EmptyDirOption 是否已赋值
+                     * @return EmptyDirOption 是否已赋值
+                     * 
+                     */
+                    bool EmptyDirOptionHasBeenSet() const;
+
+                    /**
+                     * 获取数据卷PVC声明模板
+                     * @return VolumeClaimTemplateOption 数据卷PVC声明模板
+                     * 
+                     */
+                    VolumeClaimTemplatesOption GetVolumeClaimTemplateOption() const;
+
+                    /**
+                     * 设置数据卷PVC声明模板
+                     * @param _volumeClaimTemplateOption 数据卷PVC声明模板
+                     * 
+                     */
+                    void SetVolumeClaimTemplateOption(const VolumeClaimTemplatesOption& _volumeClaimTemplateOption);
+
+                    /**
+                     * 判断参数 VolumeClaimTemplateOption 是否已赋值
+                     * @return VolumeClaimTemplateOption 是否已赋值
+                     * 
+                     */
+                    bool VolumeClaimTemplateOptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +194,24 @@ namespace TencentCloud
                      */
                     std::string m_volumeConfig;
                     bool m_volumeConfigHasBeenSet;
+
+                    /**
+                     * -
+                     */
+                    std::vector<ConfigMapOption> m_configMapOptions;
+                    bool m_configMapOptionsHasBeenSet;
+
+                    /**
+                     * -
+                     */
+                    EmptyDirOption m_emptyDirOption;
+                    bool m_emptyDirOptionHasBeenSet;
+
+                    /**
+                     * 数据卷PVC声明模板
+                     */
+                    VolumeClaimTemplatesOption m_volumeClaimTemplateOption;
+                    bool m_volumeClaimTemplateOptionHasBeenSet;
 
                 };
             }

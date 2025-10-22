@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -127,6 +127,27 @@ namespace TencentCloud
                      */
                     bool EnvPropsHasBeenSet() const;
 
+                    /**
+                     * 获取数据目录信息
+                     * @return DatasourceConnectionName 数据目录信息
+                     * 
+                     */
+                    std::string GetDatasourceConnectionName() const;
+
+                    /**
+                     * 设置数据目录信息
+                     * @param _datasourceConnectionName 数据目录信息
+                     * 
+                     */
+                    void SetDatasourceConnectionName(const std::string& _datasourceConnectionName);
+
+                    /**
+                     * 判断参数 DatasourceConnectionName 是否已赋值
+                     * @return DatasourceConnectionName 是否已赋值
+                     * 
+                     */
+                    bool DatasourceConnectionNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -152,6 +173,12 @@ namespace TencentCloud
                      */
                     KVPair m_envProps;
                     bool m_envPropsHasBeenSet;
+
+                    /**
+                     * 数据目录信息
+                     */
+                    std::string m_datasourceConnectionName;
+                    bool m_datasourceConnectionNameHasBeenSet;
 
                 };
             }

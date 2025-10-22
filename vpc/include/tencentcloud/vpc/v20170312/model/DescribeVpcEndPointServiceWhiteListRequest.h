@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,22 +87,26 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤条件。
-<li> user-uin String - （过滤条件）用户UIN。</li>
-<li> end-point-service-id String - （过滤条件）终端节点服务ID。</li>
+<li> user-uin String - （过滤条件）用户UIN。登录 腾讯云账号中心控制台 获取。</li>
+<li> end-point-service-id String - （过滤条件）终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。
+</li>
                      * @return Filters 过滤条件。
-<li> user-uin String - （过滤条件）用户UIN。</li>
-<li> end-point-service-id String - （过滤条件）终端节点服务ID。</li>
+<li> user-uin String - （过滤条件）用户UIN。登录 腾讯云账号中心控制台 获取。</li>
+<li> end-point-service-id String - （过滤条件）终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。
+</li>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤条件。
-<li> user-uin String - （过滤条件）用户UIN。</li>
-<li> end-point-service-id String - （过滤条件）终端节点服务ID。</li>
+<li> user-uin String - （过滤条件）用户UIN。登录 腾讯云账号中心控制台 获取。</li>
+<li> end-point-service-id String - （过滤条件）终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。
+</li>
                      * @param _filters 过滤条件。
-<li> user-uin String - （过滤条件）用户UIN。</li>
-<li> end-point-service-id String - （过滤条件）终端节点服务ID。</li>
+<li> user-uin String - （过滤条件）用户UIN。登录 腾讯云账号中心控制台 获取。</li>
+<li> end-point-service-id String - （过滤条件）终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。
+</li>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -130,8 +134,9 @@ namespace TencentCloud
 
                     /**
                      * 过滤条件。
-<li> user-uin String - （过滤条件）用户UIN。</li>
-<li> end-point-service-id String - （过滤条件）终端节点服务ID。</li>
+<li> user-uin String - （过滤条件）用户UIN。登录 腾讯云账号中心控制台 获取。</li>
+<li> end-point-service-id String - （过滤条件）终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。
+</li>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

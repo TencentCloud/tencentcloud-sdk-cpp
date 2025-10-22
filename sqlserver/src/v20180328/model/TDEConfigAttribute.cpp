@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,9 @@ using namespace std;
 TDEConfigAttribute::TDEConfigAttribute() :
     m_encryptionHasBeenSet(false),
     m_certificateAttributionHasBeenSet(false),
-    m_quoteUinHasBeenSet(false)
+    m_quoteUinHasBeenSet(false),
+    m_cMKIdHasBeenSet(false),
+    m_cMKRegionHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,26 @@ CoreInternalOutcome TDEConfigAttribute::Deserialize(const rapidjson::Value &valu
         m_quoteUinHasBeenSet = true;
     }
 
+    if (value.HasMember("CMKId") && !value["CMKId"].IsNull())
+    {
+        if (!value["CMKId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TDEConfigAttribute.CMKId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cMKId = string(value["CMKId"].GetString());
+        m_cMKIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("CMKRegion") && !value["CMKRegion"].IsNull())
+    {
+        if (!value["CMKRegion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TDEConfigAttribute.CMKRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cMKRegion = string(value["CMKRegion"].GetString());
+        m_cMKRegionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +113,22 @@ void TDEConfigAttribute::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "QuoteUin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_quoteUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cMKIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CMKId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cMKId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cMKRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CMKRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cMKRegion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +180,37 @@ void TDEConfigAttribute::SetQuoteUin(const string& _quoteUin)
 bool TDEConfigAttribute::QuoteUinHasBeenSet() const
 {
     return m_quoteUinHasBeenSet;
+}
+
+string TDEConfigAttribute::GetCMKId() const
+{
+    return m_cMKId;
+}
+
+void TDEConfigAttribute::SetCMKId(const string& _cMKId)
+{
+    m_cMKId = _cMKId;
+    m_cMKIdHasBeenSet = true;
+}
+
+bool TDEConfigAttribute::CMKIdHasBeenSet() const
+{
+    return m_cMKIdHasBeenSet;
+}
+
+string TDEConfigAttribute::GetCMKRegion() const
+{
+    return m_cMKRegion;
+}
+
+void TDEConfigAttribute::SetCMKRegion(const string& _cMKRegion)
+{
+    m_cMKRegion = _cMKRegion;
+    m_cMKRegionHasBeenSet = true;
+}
+
+bool TDEConfigAttribute::CMKRegionHasBeenSet() const
+{
+    return m_cMKRegionHasBeenSet;
 }
 

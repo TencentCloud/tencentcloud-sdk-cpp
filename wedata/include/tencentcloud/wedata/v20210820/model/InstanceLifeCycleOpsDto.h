@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/wedata/v20210820/model/InstanceLifeDetailDto.h>
 #include <tencentcloud/wedata/v20210820/model/InstanceLogInfo.h>
+#include <tencentcloud/wedata/v20210820/model/TaskTypeOpsDto.h>
 
 
 namespace TencentCloud
@@ -72,6 +73,31 @@ namespace TencentCloud
                      * 
                      */
                     bool TaskIdHasBeenSet() const;
+
+                    /**
+                     * 获取任务名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskName 任务名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTaskName() const;
+
+                    /**
+                     * 设置任务名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _taskName 任务名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTaskName(const std::string& _taskName);
+
+                    /**
+                     * 判断参数 TaskName 是否已赋值
+                     * @return TaskName 是否已赋值
+                     * 
+                     */
+                    bool TaskNameHasBeenSet() const;
 
                     /**
                      * 获取数据时间
@@ -398,6 +424,77 @@ namespace TencentCloud
                      */
                     bool InstanceRunTypeHasBeenSet() const;
 
+                    /**
+                     * 获取实例当前总生命周期数
+                     * @return TotalLifeRound 实例当前总生命周期数
+                     * 
+                     */
+                    int64_t GetTotalLifeRound() const;
+
+                    /**
+                     * 设置实例当前总生命周期数
+                     * @param _totalLifeRound 实例当前总生命周期数
+                     * 
+                     */
+                    void SetTotalLifeRound(const int64_t& _totalLifeRound);
+
+                    /**
+                     * 判断参数 TotalLifeRound 是否已赋值
+                     * @return TotalLifeRound 是否已赋值
+                     * 
+                     */
+                    bool TotalLifeRoundHasBeenSet() const;
+
+                    /**
+                     * 获取任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskType 任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    TaskTypeOpsDto GetTaskType() const;
+
+                    /**
+                     * 设置任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _taskType 任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTaskType(const TaskTypeOpsDto& _taskType);
+
+                    /**
+                     * 判断参数 TaskType 是否已赋值
+                     * @return TaskType 是否已赋值
+                     * 
+                     */
+                    bool TaskTypeHasBeenSet() const;
+
+                    /**
+                     * 获取资源组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceGroup 资源组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetResourceGroup() const;
+
+                    /**
+                     * 设置资源组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _resourceGroup 资源组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetResourceGroup(const std::string& _resourceGroup);
+
+                    /**
+                     * 判断参数 ResourceGroup 是否已赋值
+                     * @return ResourceGroup 是否已赋值
+                     * 
+                     */
+                    bool ResourceGroupHasBeenSet() const;
+
                 private:
 
                     /**
@@ -406,6 +503,13 @@ namespace TencentCloud
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
+
+                    /**
+                     * 任务名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_taskName;
+                    bool m_taskNameHasBeenSet;
 
                     /**
                      * 数据时间
@@ -497,6 +601,26 @@ namespace TencentCloud
                      */
                     uint64_t m_instanceRunType;
                     bool m_instanceRunTypeHasBeenSet;
+
+                    /**
+                     * 实例当前总生命周期数
+                     */
+                    int64_t m_totalLifeRound;
+                    bool m_totalLifeRoundHasBeenSet;
+
+                    /**
+                     * 任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TaskTypeOpsDto m_taskType;
+                    bool m_taskTypeHasBeenSet;
+
+                    /**
+                     * 资源组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_resourceGroup;
+                    bool m_resourceGroupHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,18 +51,14 @@ namespace TencentCloud
 
                     /**
                      * 获取（旧参数，请使用ProxyId）通道实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId （旧参数，请使用ProxyId）通道实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置（旧参数，请使用ProxyId）通道实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId （旧参数，请使用ProxyId）通道实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -355,18 +351,14 @@ MOVING表示迁移中。
 
                     /**
                      * 获取（新参数）通道实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyId （新参数）通道实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProxyId() const;
 
                     /**
                      * 设置（新参数）通道实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _proxyId （新参数）通道实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProxyId(const std::string& _proxyId);
@@ -472,18 +464,14 @@ MOVING表示迁移中。
 
                     /**
                      * 获取接入地域详细信息，包括地域ID和地域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccessRegionInfo 接入地域详细信息，包括地域ID和地域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RegionDetail GetAccessRegionInfo() const;
 
                     /**
                      * 设置接入地域详细信息，包括地域ID和地域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accessRegionInfo 接入地域详细信息，包括地域ID和地域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccessRegionInfo(const RegionDetail& _accessRegionInfo);
@@ -497,18 +485,14 @@ MOVING表示迁移中。
 
                     /**
                      * 获取源站地域详细信息，包括地域ID和地域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealServerRegionInfo 源站地域详细信息，包括地域ID和地域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RegionDetail GetRealServerRegionInfo() const;
 
                     /**
                      * 设置源站地域详细信息，包括地域ID和地域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _realServerRegionInfo 源站地域详细信息，包括地域ID和地域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRealServerRegionInfo(const RegionDetail& _realServerRegionInfo);
@@ -543,18 +527,14 @@ MOVING表示迁移中。
 
                     /**
                      * 获取标签列表，不存在标签时，该字段为空列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagSet 标签列表，不存在标签时，该字段为空列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TagPair> GetTagSet() const;
 
                     /**
                      * 设置标签列表，不存在标签时，该字段为空列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tagSet 标签列表，不存在标签时，该字段为空列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTagSet(const std::vector<TagPair>& _tagSet);
@@ -568,18 +548,14 @@ MOVING表示迁移中。
 
                     /**
                      * 获取是否支持安全组配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportSecurity 是否支持安全组配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSupportSecurity() const;
 
                     /**
                      * 设置是否支持安全组配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _supportSecurity 是否支持安全组配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSupportSecurity(const int64_t& _supportSecurity);
@@ -593,18 +569,14 @@ MOVING表示迁移中。
 
                     /**
                      * 获取计费类型: 0表示按带宽计费  1表示按流量计费。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BillingType 计费类型: 0表示按带宽计费  1表示按流量计费。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBillingType() const;
 
                     /**
                      * 设置计费类型: 0表示按带宽计费  1表示按流量计费。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _billingType 计费类型: 0表示按带宽计费  1表示按流量计费。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBillingType(const int64_t& _billingType);
@@ -618,18 +590,14 @@ MOVING表示迁移中。
 
                     /**
                      * 获取关联了解析的域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RelatedGlobalDomains 关联了解析的域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetRelatedGlobalDomains() const;
 
                     /**
                      * 设置关联了解析的域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _relatedGlobalDomains 关联了解析的域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRelatedGlobalDomains(const std::vector<std::string>& _relatedGlobalDomains);
@@ -668,18 +636,14 @@ MOVING表示迁移中。
 
                     /**
                      * 获取通道类型，100表示THUNDER通道，103表示微软合作通道
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyType 通道类型，100表示THUNDER通道，103表示微软合作通道
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetProxyType() const;
 
                     /**
                      * 设置通道类型，100表示THUNDER通道，103表示微软合作通道
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _proxyType 通道类型，100表示THUNDER通道，103表示微软合作通道
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProxyType(const uint64_t& _proxyType);
@@ -693,18 +657,14 @@ MOVING表示迁移中。
 
                     /**
                      * 获取通道获取客户端IP的方式，0表示TOA，1表示Proxy Protocol
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientIPMethod 通道获取客户端IP的方式，0表示TOA，1表示Proxy Protocol
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetClientIPMethod() const;
 
                     /**
                      * 设置通道获取客户端IP的方式，0表示TOA，1表示Proxy Protocol
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clientIPMethod 通道获取客户端IP的方式，0表示TOA，1表示Proxy Protocol
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClientIPMethod(const std::vector<int64_t>& _clientIPMethod);
@@ -718,18 +678,14 @@ MOVING表示迁移中。
 
                     /**
                      * 获取IP版本：IPv4、IPv6
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IPAddressVersion IP版本：IPv4、IPv6
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIPAddressVersion() const;
 
                     /**
                      * 设置IP版本：IPv4、IPv6
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iPAddressVersion IP版本：IPv4、IPv6
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIPAddressVersion(const std::string& _iPAddressVersion);
@@ -743,18 +699,14 @@ MOVING表示迁移中。
 
                     /**
                      * 获取网络类型：normal表示常规BGP，cn2表示精品BGP，triple表示三网，secure_eip表示定制安全EIP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetworkType 网络类型：normal表示常规BGP，cn2表示精品BGP，triple表示三网，secure_eip表示定制安全EIP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNetworkType() const;
 
                     /**
                      * 设置网络类型：normal表示常规BGP，cn2表示精品BGP，triple表示三网，secure_eip表示定制安全EIP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _networkType 网络类型：normal表示常规BGP，cn2表示精品BGP，triple表示三网，secure_eip表示定制安全EIP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNetworkType(const std::string& _networkType);
@@ -769,10 +721,8 @@ MOVING表示迁移中。
                     /**
                      * 获取通道套餐类型：Thunder表示标准通道，Accelerator表示银牌加速通道，
 CrossBorder表示跨境通道。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageType 通道套餐类型：Thunder表示标准通道，Accelerator表示银牌加速通道，
 CrossBorder表示跨境通道。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPackageType() const;
@@ -780,10 +730,8 @@ CrossBorder表示跨境通道。
                     /**
                      * 设置通道套餐类型：Thunder表示标准通道，Accelerator表示银牌加速通道，
 CrossBorder表示跨境通道。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packageType 通道套餐类型：Thunder表示标准通道，Accelerator表示银牌加速通道，
 CrossBorder表示跨境通道。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackageType(const std::string& _packageType);
@@ -797,18 +745,14 @@ CrossBorder表示跨境通道。
 
                     /**
                      * 获取封禁解封状态：BANNED表示已封禁，RECOVER表示已解封或未封禁，BANNING表示封禁中，RECOVERING表示解封中，BAN_FAILED表示封禁失败，RECOVER_FAILED表示解封失败。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BanStatus 封禁解封状态：BANNED表示已封禁，RECOVER表示已解封或未封禁，BANNING表示封禁中，RECOVERING表示解封中，BAN_FAILED表示封禁失败，RECOVER_FAILED表示解封失败。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBanStatus() const;
 
                     /**
                      * 设置封禁解封状态：BANNED表示已封禁，RECOVER表示已解封或未封禁，BANNING表示封禁中，RECOVERING表示解封中，BAN_FAILED表示封禁失败，RECOVER_FAILED表示解封失败。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _banStatus 封禁解封状态：BANNED表示已封禁，RECOVER表示已解封或未封禁，BANNING表示封禁中，RECOVERING表示解封中，BAN_FAILED表示封禁失败，RECOVER_FAILED表示解封失败。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBanStatus(const std::string& _banStatus);
@@ -822,18 +766,14 @@ CrossBorder表示跨境通道。
 
                     /**
                      * 获取IP列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IPList IP列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<IPDetail> GetIPList() const;
 
                     /**
                      * 设置IP列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iPList IP列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIPList(const std::vector<IPDetail>& _iPList);
@@ -849,11 +789,9 @@ CrossBorder表示跨境通道。
                      * 获取支持Http3协议的标识，其中：
 0表示关闭；
 1表示启用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Http3Supported 支持Http3协议的标识，其中：
 0表示关闭；
 1表示启用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHttp3Supported() const;
@@ -862,11 +800,9 @@ CrossBorder表示跨境通道。
                      * 设置支持Http3协议的标识，其中：
 0表示关闭；
 1表示启用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _http3Supported 支持Http3协议的标识，其中：
 0表示关闭；
 1表示启用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHttp3Supported(const int64_t& _http3Supported);
@@ -880,18 +816,14 @@ CrossBorder表示跨境通道。
 
                     /**
                      * 获取是否在封禁黑名单中，其中：0表示不在黑名单中，1表示在黑名单中。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InBanBlacklist 是否在封禁黑名单中，其中：0表示不在黑名单中，1表示在黑名单中。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInBanBlacklist() const;
 
                     /**
                      * 设置是否在封禁黑名单中，其中：0表示不在黑名单中，1表示在黑名单中。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _inBanBlacklist 是否在封禁黑名单中，其中：0表示不在黑名单中，1表示在黑名单中。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInBanBlacklist(const int64_t& _inBanBlacklist);
@@ -916,7 +848,6 @@ CrossBorder表示跨境通道。
 第6个bit，支持三网接入；
 第7个bit，支持接入段Qos加速。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FeatureBitmap 特性位图，每个bit位代表一种特性，其中：
 0，表示不支持该特性；
 1，表示支持该特性。
@@ -928,7 +859,6 @@ CrossBorder表示跨境通道。
 第5个bit，支持精品BGP接入；
 第6个bit，支持三网接入；
 第7个bit，支持接入段Qos加速。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -947,7 +877,6 @@ CrossBorder表示跨境通道。
 第6个bit，支持三网接入；
 第7个bit，支持接入段Qos加速。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _featureBitmap 特性位图，每个bit位代表一种特性，其中：
 0，表示不支持该特性；
 1，表示支持该特性。
@@ -959,7 +888,6 @@ CrossBorder表示跨境通道。
 第5个bit，支持精品BGP接入；
 第6个bit，支持三网接入；
 第7个bit，支持接入段Qos加速。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -974,18 +902,14 @@ CrossBorder表示跨境通道。
 
                     /**
                      * 获取是否是开启了auto scale的通道，0表示否，1表示是。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsAutoScaleProxy 是否是开启了auto scale的通道，0表示否，1表示是。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsAutoScaleProxy() const;
 
                     /**
                      * 设置是否是开启了auto scale的通道，0表示否，1表示是。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isAutoScaleProxy 是否是开启了auto scale的通道，0表示否，1表示是。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsAutoScaleProxy(const int64_t& _isAutoScaleProxy);
@@ -1001,11 +925,9 @@ CrossBorder表示跨境通道。
                      * 获取是否允许设置TLS配置
 0表示不支持；
 1表示支持。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsSupportTLSChoice 是否允许设置TLS配置
 0表示不支持；
 1表示支持。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsSupportTLSChoice() const;
@@ -1014,11 +936,9 @@ CrossBorder表示跨境通道。
                      * 设置是否允许设置TLS配置
 0表示不支持；
 1表示支持。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isSupportTLSChoice 是否允许设置TLS配置
 0表示不支持；
 1表示支持。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsSupportTLSChoice(const int64_t& _isSupportTLSChoice);
@@ -1034,7 +954,6 @@ CrossBorder表示跨境通道。
 
                     /**
                      * （旧参数，请使用ProxyId）通道实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -1119,7 +1038,6 @@ MOVING表示迁移中。
 
                     /**
                      * （新参数）通道实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_proxyId;
                     bool m_proxyIdHasBeenSet;
@@ -1152,14 +1070,12 @@ MOVING表示迁移中。
 
                     /**
                      * 接入地域详细信息，包括地域ID和地域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RegionDetail m_accessRegionInfo;
                     bool m_accessRegionInfoHasBeenSet;
 
                     /**
                      * 源站地域详细信息，包括地域ID和地域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RegionDetail m_realServerRegionInfo;
                     bool m_realServerRegionInfoHasBeenSet;
@@ -1172,28 +1088,24 @@ MOVING表示迁移中。
 
                     /**
                      * 标签列表，不存在标签时，该字段为空列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TagPair> m_tagSet;
                     bool m_tagSetHasBeenSet;
 
                     /**
                      * 是否支持安全组配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_supportSecurity;
                     bool m_supportSecurityHasBeenSet;
 
                     /**
                      * 计费类型: 0表示按带宽计费  1表示按流量计费。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_billingType;
                     bool m_billingTypeHasBeenSet;
 
                     /**
                      * 关联了解析的域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_relatedGlobalDomains;
                     bool m_relatedGlobalDomainsHasBeenSet;
@@ -1207,28 +1119,24 @@ MOVING表示迁移中。
 
                     /**
                      * 通道类型，100表示THUNDER通道，103表示微软合作通道
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_proxyType;
                     bool m_proxyTypeHasBeenSet;
 
                     /**
                      * 通道获取客户端IP的方式，0表示TOA，1表示Proxy Protocol
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_clientIPMethod;
                     bool m_clientIPMethodHasBeenSet;
 
                     /**
                      * IP版本：IPv4、IPv6
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_iPAddressVersion;
                     bool m_iPAddressVersionHasBeenSet;
 
                     /**
                      * 网络类型：normal表示常规BGP，cn2表示精品BGP，triple表示三网，secure_eip表示定制安全EIP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_networkType;
                     bool m_networkTypeHasBeenSet;
@@ -1236,21 +1144,18 @@ MOVING表示迁移中。
                     /**
                      * 通道套餐类型：Thunder表示标准通道，Accelerator表示银牌加速通道，
 CrossBorder表示跨境通道。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packageType;
                     bool m_packageTypeHasBeenSet;
 
                     /**
                      * 封禁解封状态：BANNED表示已封禁，RECOVER表示已解封或未封禁，BANNING表示封禁中，RECOVERING表示解封中，BAN_FAILED表示封禁失败，RECOVER_FAILED表示解封失败。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_banStatus;
                     bool m_banStatusHasBeenSet;
 
                     /**
                      * IP列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<IPDetail> m_iPList;
                     bool m_iPListHasBeenSet;
@@ -1259,14 +1164,12 @@ CrossBorder表示跨境通道。
                      * 支持Http3协议的标识，其中：
 0表示关闭；
 1表示启用。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_http3Supported;
                     bool m_http3SupportedHasBeenSet;
 
                     /**
                      * 是否在封禁黑名单中，其中：0表示不在黑名单中，1表示在黑名单中。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_inBanBlacklist;
                     bool m_inBanBlacklistHasBeenSet;
@@ -1284,14 +1187,12 @@ CrossBorder表示跨境通道。
 第6个bit，支持三网接入；
 第7个bit，支持接入段Qos加速。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_featureBitmap;
                     bool m_featureBitmapHasBeenSet;
 
                     /**
                      * 是否是开启了auto scale的通道，0表示否，1表示是。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isAutoScaleProxy;
                     bool m_isAutoScaleProxyHasBeenSet;
@@ -1300,7 +1201,6 @@ CrossBorder表示跨境通道。
                      * 是否允许设置TLS配置
 0表示不支持；
 1表示支持。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isSupportTLSChoice;
                     bool m_isSupportTLSChoiceHasBeenSet;

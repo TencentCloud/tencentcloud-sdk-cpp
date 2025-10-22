@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cvm/v20170312/model/TagSpecification.h>
 
 
 namespace TencentCloud
@@ -105,6 +106,48 @@ namespace TencentCloud
                      */
                     bool ClientTokenHasBeenSet() const;
 
+                    /**
+                     * 获取置放群组的亲和度，在置放群组的实例会按该亲和度分布，亲和度的取值范围是：1-10，默认为1
+                     * @return Affinity 置放群组的亲和度，在置放群组的实例会按该亲和度分布，亲和度的取值范围是：1-10，默认为1
+                     * 
+                     */
+                    int64_t GetAffinity() const;
+
+                    /**
+                     * 设置置放群组的亲和度，在置放群组的实例会按该亲和度分布，亲和度的取值范围是：1-10，默认为1
+                     * @param _affinity 置放群组的亲和度，在置放群组的实例会按该亲和度分布，亲和度的取值范围是：1-10，默认为1
+                     * 
+                     */
+                    void SetAffinity(const int64_t& _affinity);
+
+                    /**
+                     * 判断参数 Affinity 是否已赋值
+                     * @return Affinity 是否已赋值
+                     * 
+                     */
+                    bool AffinityHasBeenSet() const;
+
+                    /**
+                     * 获取标签描述列表。通过指定该参数可以绑定标签到置放群组。
+                     * @return TagSpecification 标签描述列表。通过指定该参数可以绑定标签到置放群组。
+                     * 
+                     */
+                    std::vector<TagSpecification> GetTagSpecification() const;
+
+                    /**
+                     * 设置标签描述列表。通过指定该参数可以绑定标签到置放群组。
+                     * @param _tagSpecification 标签描述列表。通过指定该参数可以绑定标签到置放群组。
+                     * 
+                     */
+                    void SetTagSpecification(const std::vector<TagSpecification>& _tagSpecification);
+
+                    /**
+                     * 判断参数 TagSpecification 是否已赋值
+                     * @return TagSpecification 是否已赋值
+                     * 
+                     */
+                    bool TagSpecificationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +167,18 @@ namespace TencentCloud
                      */
                     std::string m_clientToken;
                     bool m_clientTokenHasBeenSet;
+
+                    /**
+                     * 置放群组的亲和度，在置放群组的实例会按该亲和度分布，亲和度的取值范围是：1-10，默认为1
+                     */
+                    int64_t m_affinity;
+                    bool m_affinityHasBeenSet;
+
+                    /**
+                     * 标签描述列表。通过指定该参数可以绑定标签到置放群组。
+                     */
+                    std::vector<TagSpecification> m_tagSpecification;
+                    bool m_tagSpecificationHasBeenSet;
 
                 };
             }

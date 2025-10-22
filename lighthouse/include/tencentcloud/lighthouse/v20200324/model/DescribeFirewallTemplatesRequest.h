@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,6 +75,7 @@ namespace TencentCloud
 <li>template-type</li>按照【防火墙模板的类型】进行过滤。
 类型：String
 必选：否
+取值: "PRIVATE"(个人模板)
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 TemplateIds 和 Filters。
                      * @return Filters 过滤器列表。
 <li>template-id</li>按照【防火墙模板所属的ID】进行过滤。
@@ -86,6 +87,7 @@ namespace TencentCloud
 <li>template-type</li>按照【防火墙模板的类型】进行过滤。
 类型：String
 必选：否
+取值: "PRIVATE"(个人模板)
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 TemplateIds 和 Filters。
                      * 
                      */
@@ -102,6 +104,7 @@ namespace TencentCloud
 <li>template-type</li>按照【防火墙模板的类型】进行过滤。
 类型：String
 必选：否
+取值: "PRIVATE"(个人模板)
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 TemplateIds 和 Filters。
                      * @param _filters 过滤器列表。
 <li>template-id</li>按照【防火墙模板所属的ID】进行过滤。
@@ -113,6 +116,7 @@ namespace TencentCloud
 <li>template-type</li>按照【防火墙模板的类型】进行过滤。
 类型：String
 必选：否
+取值: "PRIVATE"(个人模板)
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 TemplateIds 和 Filters。
                      * 
                      */
@@ -186,6 +190,7 @@ namespace TencentCloud
 <li>template-type</li>按照【防火墙模板的类型】进行过滤。
 类型：String
 必选：否
+取值: "PRIVATE"(个人模板)
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 TemplateIds 和 Filters。
                      */
                     std::vector<Filter> m_filters;

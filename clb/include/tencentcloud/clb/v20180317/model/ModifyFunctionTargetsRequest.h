@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool ListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取要修改的后端云函数服务列表。
-                     * @return FunctionTargets 要修改的后端云函数服务列表。
+                     * 获取要修改的后端云函数服务列表，仅支持 Event 函数类型。
+                     * @return FunctionTargets 要修改的后端云函数服务列表，仅支持 Event 函数类型。
                      * 
                      */
                     std::vector<FunctionTarget> GetFunctionTargets() const;
 
                     /**
-                     * 设置要修改的后端云函数服务列表。
-                     * @param _functionTargets 要修改的后端云函数服务列表。
+                     * 设置要修改的后端云函数服务列表，仅支持 Event 函数类型。
+                     * @param _functionTargets 要修改的后端云函数服务列表，仅支持 Event 函数类型。
                      * 
                      */
                     void SetFunctionTargets(const std::vector<FunctionTarget>& _functionTargets);
@@ -184,7 +184,7 @@ namespace TencentCloud
                     bool m_listenerIdHasBeenSet;
 
                     /**
-                     * 要修改的后端云函数服务列表。
+                     * 要修改的后端云函数服务列表，仅支持 Event 函数类型。
                      */
                     std::vector<FunctionTarget> m_functionTargets;
                     bool m_functionTargetsHasBeenSet;

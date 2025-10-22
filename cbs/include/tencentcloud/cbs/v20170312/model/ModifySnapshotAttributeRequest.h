@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取快照ID, 可通过[DescribeSnapshots](/document/product/362/15647)查询。
-                     * @return SnapshotId 快照ID, 可通过[DescribeSnapshots](/document/product/362/15647)查询。
+                     * 获取快照ID, 可通过[DescribeSnapshots](https://cloud.tencent.com/document/api/362/15647)查询。
+                     * @return SnapshotId 快照ID, 可通过[DescribeSnapshots](https://cloud.tencent.com/document/api/362/15647)查询。
                      * 
                      */
                     std::string GetSnapshotId() const;
 
                     /**
-                     * 设置快照ID, 可通过[DescribeSnapshots](/document/product/362/15647)查询。
-                     * @param _snapshotId 快照ID, 可通过[DescribeSnapshots](/document/product/362/15647)查询。
+                     * 设置快照ID, 可通过[DescribeSnapshots](https://cloud.tencent.com/document/api/362/15647)查询。
+                     * @param _snapshotId 快照ID, 可通过[DescribeSnapshots](https://cloud.tencent.com/document/api/362/15647)查询。
                      * 
                      */
                     void SetSnapshotId(const std::string& _snapshotId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool SnapshotNameHasBeenSet() const;
 
                     /**
-                     * 获取快照的到期时间；设置好快照将会被同时设置为非永久保留方式；超过到期时间后快照将会被自动删除。
-                     * @return Deadline 快照的到期时间；设置好快照将会被同时设置为非永久保留方式；超过到期时间后快照将会被自动删除。
+                     * 获取快照的到期时间；设置好快照将会被同时设置为非永久保留方式；超过到期时间后快照将会被自动删除。注：该参数仅在参数IsPermanent为False时生效。
+                     * @return Deadline 快照的到期时间；设置好快照将会被同时设置为非永久保留方式；超过到期时间后快照将会被自动删除。注：该参数仅在参数IsPermanent为False时生效。
                      * 
                      */
                     std::string GetDeadline() const;
 
                     /**
-                     * 设置快照的到期时间；设置好快照将会被同时设置为非永久保留方式；超过到期时间后快照将会被自动删除。
-                     * @param _deadline 快照的到期时间；设置好快照将会被同时设置为非永久保留方式；超过到期时间后快照将会被自动删除。
+                     * 设置快照的到期时间；设置好快照将会被同时设置为非永久保留方式；超过到期时间后快照将会被自动删除。注：该参数仅在参数IsPermanent为False时生效。
+                     * @param _deadline 快照的到期时间；设置好快照将会被同时设置为非永久保留方式；超过到期时间后快照将会被自动删除。注：该参数仅在参数IsPermanent为False时生效。
                      * 
                      */
                     void SetDeadline(const std::string& _deadline);
@@ -129,7 +129,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 快照ID, 可通过[DescribeSnapshots](/document/product/362/15647)查询。
+                     * 快照ID, 可通过[DescribeSnapshots](https://cloud.tencent.com/document/api/362/15647)查询。
                      */
                     std::string m_snapshotId;
                     bool m_snapshotIdHasBeenSet;
@@ -147,7 +147,7 @@ namespace TencentCloud
                     bool m_snapshotNameHasBeenSet;
 
                     /**
-                     * 快照的到期时间；设置好快照将会被同时设置为非永久保留方式；超过到期时间后快照将会被自动删除。
+                     * 快照的到期时间；设置好快照将会被同时设置为非永久保留方式；超过到期时间后快照将会被自动删除。注：该参数仅在参数IsPermanent为False时生效。
                      */
                     std::string m_deadline;
                     bool m_deadlineHasBeenSet;

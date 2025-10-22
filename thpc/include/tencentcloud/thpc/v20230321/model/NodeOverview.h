@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,6 +45,27 @@ namespace TencentCloud
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
+
+                    /**
+                     * 获取集群ID
+                     * @return ClusterId 集群ID
+                     * 
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 设置集群ID
+                     * @param _clusterId 集群ID
+                     * 
+                     */
+                    void SetClusterId(const std::string& _clusterId);
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     * 
+                     */
+                    bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取节点实例ID。
@@ -246,7 +267,76 @@ namespace TencentCloud
                      */
                     bool NodeIdHasBeenSet() const;
 
+                    /**
+                     * 获取节点的工作状态
+                     * @return NodeAllocateState 节点的工作状态
+                     * 
+                     */
+                    std::string GetNodeAllocateState() const;
+
+                    /**
+                     * 设置节点的工作状态
+                     * @param _nodeAllocateState 节点的工作状态
+                     * 
+                     */
+                    void SetNodeAllocateState(const std::string& _nodeAllocateState);
+
+                    /**
+                     * 判断参数 NodeAllocateState 是否已赋值
+                     * @return NodeAllocateState 是否已赋值
+                     * 
+                     */
+                    bool NodeAllocateStateHasBeenSet() const;
+
+                    /**
+                     * 获取节点的名称
+                     * @return NodeName 节点的名称
+                     * 
+                     */
+                    std::string GetNodeName() const;
+
+                    /**
+                     * 设置节点的名称
+                     * @param _nodeName 节点的名称
+                     * 
+                     */
+                    void SetNodeName(const std::string& _nodeName);
+
+                    /**
+                     * 判断参数 NodeName 是否已赋值
+                     * @return NodeName 是否已赋值
+                     * 
+                     */
+                    bool NodeNameHasBeenSet() const;
+
+                    /**
+                     * 获取节点的创建时间
+                     * @return CreateTime 节点的创建时间
+                     * 
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置节点的创建时间
+                     * @param _createTime 节点的创建时间
+                     * 
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 集群ID
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
 
                     /**
                      * 节点实例ID。
@@ -303,6 +393,24 @@ namespace TencentCloud
                      */
                     std::string m_nodeId;
                     bool m_nodeIdHasBeenSet;
+
+                    /**
+                     * 节点的工作状态
+                     */
+                    std::string m_nodeAllocateState;
+                    bool m_nodeAllocateStateHasBeenSet;
+
+                    /**
+                     * 节点的名称
+                     */
+                    std::string m_nodeName;
+                    bool m_nodeNameHasBeenSet;
+
+                    /**
+                     * 节点的创建时间
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                 };
             }

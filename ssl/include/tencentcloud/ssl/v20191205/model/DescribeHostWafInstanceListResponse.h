@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/ssl/v20191205/model/LiveInstanceDetail.h>
+#include <tencentcloud/ssl/v20191205/model/WafInstanceDetail.h>
 
 
 namespace TencentCloud
@@ -45,13 +45,11 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取WAF实例列表
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceList WAF实例列表
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取WAF实例列表，如果没有取到值返回空数组
+                     * @return InstanceList WAF实例列表，如果没有取到值返回空数组
                      * 
                      */
-                    std::vector<LiveInstanceDetail> GetInstanceList() const;
+                    std::vector<WafInstanceDetail> GetInstanceList() const;
 
                     /**
                      * 判断参数 InstanceList 是否已赋值
@@ -63,10 +61,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * WAF实例列表
-注意：此字段可能返回 null，表示取不到有效值。
+                     * WAF实例列表，如果没有取到值返回空数组
                      */
-                    std::vector<LiveInstanceDetail> m_instanceList;
+                    std::vector<WafInstanceDetail> m_instanceList;
                     bool m_instanceListHasBeenSet;
 
                 };

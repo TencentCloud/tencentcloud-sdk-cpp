@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ DescribeConfigFileReleaseVersionsRequest::DescribeConfigFileReleaseVersionsReque
     m_instanceIdHasBeenSet(false),
     m_namespaceHasBeenSet(false),
     m_groupHasBeenSet(false),
-    m_fileNameHasBeenSet(false)
+    m_fileNameHasBeenSet(false),
+    m_configFileIdHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string DescribeConfigFileReleaseVersionsRequest::ToJsonString() const
         string key = "FileName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_fileName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_configFileIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigFileId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_configFileId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void DescribeConfigFileReleaseVersionsRequest::SetFileName(const string& _fileNa
 bool DescribeConfigFileReleaseVersionsRequest::FileNameHasBeenSet() const
 {
     return m_fileNameHasBeenSet;
+}
+
+string DescribeConfigFileReleaseVersionsRequest::GetConfigFileId() const
+{
+    return m_configFileId;
+}
+
+void DescribeConfigFileReleaseVersionsRequest::SetConfigFileId(const string& _configFileId)
+{
+    m_configFileId = _configFileId;
+    m_configFileIdHasBeenSet = true;
+}
+
+bool DescribeConfigFileReleaseVersionsRequest::ConfigFileIdHasBeenSet() const
+{
+    return m_configFileIdHasBeenSet;
 }
 
 

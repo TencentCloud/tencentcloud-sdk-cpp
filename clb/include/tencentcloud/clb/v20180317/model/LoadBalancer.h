@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -98,18 +98,18 @@ namespace TencentCloud
 
                     /**
                      * 获取负载均衡实例的网络类型：
-OPEN：公网属性， INTERNAL：内网属性。
+OPEN：公网属性， INTERNAL：内网属性；对于内网属性的负载均衡，可通过绑定EIP出公网，具体可参考EIP文档[绑定弹性公网IP](https://cloud.tencent.com/document/product/215/16700)。
                      * @return LoadBalancerType 负载均衡实例的网络类型：
-OPEN：公网属性， INTERNAL：内网属性。
+OPEN：公网属性， INTERNAL：内网属性；对于内网属性的负载均衡，可通过绑定EIP出公网，具体可参考EIP文档[绑定弹性公网IP](https://cloud.tencent.com/document/product/215/16700)。
                      * 
                      */
                     std::string GetLoadBalancerType() const;
 
                     /**
                      * 设置负载均衡实例的网络类型：
-OPEN：公网属性， INTERNAL：内网属性。
+OPEN：公网属性， INTERNAL：内网属性；对于内网属性的负载均衡，可通过绑定EIP出公网，具体可参考EIP文档[绑定弹性公网IP](https://cloud.tencent.com/document/product/215/16700)。
                      * @param _loadBalancerType 负载均衡实例的网络类型：
-OPEN：公网属性， INTERNAL：内网属性。
+OPEN：公网属性， INTERNAL：内网属性；对于内网属性的负载均衡，可通过绑定EIP出公网，具体可参考EIP文档[绑定弹性公网IP](https://cloud.tencent.com/document/product/215/16700)。
                      * 
                      */
                     void SetLoadBalancerType(const std::string& _loadBalancerType);
@@ -144,18 +144,14 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 获取负载均衡实例的域名，仅公网传统型和域名型负载均衡实例才提供该字段。逐步下线中，建议用LoadBalancerDomain替代。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 负载均衡实例的域名，仅公网传统型和域名型负载均衡实例才提供该字段。逐步下线中，建议用LoadBalancerDomain替代。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置负载均衡实例的域名，仅公网传统型和域名型负载均衡实例才提供该字段。逐步下线中，建议用LoadBalancerDomain替代。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domain 负载均衡实例的域名，仅公网传统型和域名型负载均衡实例才提供该字段。逐步下线中，建议用LoadBalancerDomain替代。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -169,18 +165,14 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 获取负载均衡实例的 VIP 列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoadBalancerVips 负载均衡实例的 VIP 列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetLoadBalancerVips() const;
 
                     /**
                      * 设置负载均衡实例的 VIP 列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _loadBalancerVips 负载均衡实例的 VIP 列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLoadBalancerVips(const std::vector<std::string>& _loadBalancerVips);
@@ -195,10 +187,8 @@ OPEN：公网属性， INTERNAL：内网属性。
                     /**
                      * 获取负载均衡实例的状态，包括
 0：创建中，1：正常运行。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 负载均衡实例的状态，包括
 0：创建中，1：正常运行。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStatus() const;
@@ -206,10 +196,8 @@ OPEN：公网属性， INTERNAL：内网属性。
                     /**
                      * 设置负载均衡实例的状态，包括
 0：创建中，1：正常运行。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 负载均衡实例的状态，包括
 0：创建中，1：正常运行。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -223,18 +211,18 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 获取负载均衡实例的创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
+格式：YYYY-MM-DD HH:mm:ss
                      * @return CreateTime 负载均衡实例的创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
+格式：YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置负载均衡实例的创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
+格式：YYYY-MM-DD HH:mm:ss
                      * @param _createTime 负载均衡实例的创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
+格式：YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -248,18 +236,18 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 获取负载均衡实例的上次状态转换时间。
-注意：此字段可能返回 null，表示取不到有效值。
+格式：YYYY-MM-DD HH:mm:ss
                      * @return StatusTime 负载均衡实例的上次状态转换时间。
-注意：此字段可能返回 null，表示取不到有效值。
+格式：YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetStatusTime() const;
 
                     /**
                      * 设置负载均衡实例的上次状态转换时间。
-注意：此字段可能返回 null，表示取不到有效值。
+格式：YYYY-MM-DD HH:mm:ss
                      * @param _statusTime 负载均衡实例的上次状态转换时间。
-注意：此字段可能返回 null，表示取不到有效值。
+格式：YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     void SetStatusTime(const std::string& _statusTime);
@@ -294,18 +282,14 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 获取私有网络的 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId 私有网络的 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络的 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId 私有网络的 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -319,18 +303,14 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 获取高防 LB 的标识，1：高防负载均衡 0：非高防负载均衡。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OpenBgp 高防 LB 的标识，1：高防负载均衡 0：非高防负载均衡。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetOpenBgp() const;
 
                     /**
                      * 设置高防 LB 的标识，1：高防负载均衡 0：非高防负载均衡。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _openBgp 高防 LB 的标识，1：高防负载均衡 0：非高防负载均衡。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOpenBgp(const uint64_t& _openBgp);
@@ -343,19 +323,15 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool OpenBgpHasBeenSet() const;
 
                     /**
-                     * 获取在 2016 年 12 月份之前的传统型内网负载均衡都是开启了 snat 的。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Snat 在 2016 年 12 月份之前的传统型内网负载均衡都是开启了 snat 的。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取是否开启 SNAT，在 2016 年 12 月份之前的传统型内网负载均衡都是开启了 SNAT 的。
+                     * @return Snat 是否开启 SNAT，在 2016 年 12 月份之前的传统型内网负载均衡都是开启了 SNAT 的。
                      * 
                      */
                     bool GetSnat() const;
 
                     /**
-                     * 设置在 2016 年 12 月份之前的传统型内网负载均衡都是开启了 snat 的。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _snat 在 2016 年 12 月份之前的传统型内网负载均衡都是开启了 snat 的。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置是否开启 SNAT，在 2016 年 12 月份之前的传统型内网负载均衡都是开启了 SNAT 的。
+                     * @param _snat 是否开启 SNAT，在 2016 年 12 月份之前的传统型内网负载均衡都是开启了 SNAT 的。
                      * 
                      */
                     void SetSnat(const bool& _snat);
@@ -368,19 +344,15 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool SnatHasBeenSet() const;
 
                     /**
-                     * 获取0：表示未被隔离，1：表示被隔离。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Isolation 0：表示未被隔离，1：表示被隔离。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取是否被隔离，0：表示未被隔离，1：表示被隔离。
+                     * @return Isolation 是否被隔离，0：表示未被隔离，1：表示被隔离。
                      * 
                      */
                     uint64_t GetIsolation() const;
 
                     /**
-                     * 设置0：表示未被隔离，1：表示被隔离。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isolation 0：表示未被隔离，1：表示被隔离。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置是否被隔离，0：表示未被隔离，1：表示被隔离。
+                     * @param _isolation 是否被隔离，0：表示未被隔离，1：表示被隔离。
                      * 
                      */
                     void SetIsolation(const uint64_t& _isolation);
@@ -419,18 +391,14 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 获取负载均衡实例所在的子网（仅对内网VPC型LB有意义）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 负载均衡实例所在的子网（仅对内网VPC型LB有意义）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置负载均衡实例所在的子网（仅对内网VPC型LB有意义）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetId 负载均衡实例所在的子网（仅对内网VPC型LB有意义）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -444,18 +412,14 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 获取负载均衡实例的标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 负载均衡实例的标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TagInfo> GetTags() const;
 
                     /**
                      * 设置负载均衡实例的标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 负载均衡实例的标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<TagInfo>& _tags);
@@ -469,18 +433,14 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 获取负载均衡实例的安全组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecureGroups 负载均衡实例的安全组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSecureGroups() const;
 
                     /**
                      * 设置负载均衡实例的安全组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _secureGroups 负载均衡实例的安全组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecureGroups(const std::vector<std::string>& _secureGroups);
@@ -494,18 +454,14 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 获取负载均衡实例绑定的后端设备的基本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetRegionInfo 负载均衡实例绑定的后端设备的基本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TargetRegionInfo GetTargetRegionInfo() const;
 
                     /**
                      * 设置负载均衡实例绑定的后端设备的基本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _targetRegionInfo 负载均衡实例绑定的后端设备的基本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTargetRegionInfo(const TargetRegionInfo& _targetRegionInfo);
@@ -519,18 +475,14 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 获取anycast负载均衡的发布域，对于非anycast的负载均衡，此字段返回为空字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AnycastZone anycast负载均衡的发布域，对于非anycast的负载均衡，此字段返回为空字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAnycastZone() const;
 
                     /**
                      * 设置anycast负载均衡的发布域，对于非anycast的负载均衡，此字段返回为空字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _anycastZone anycast负载均衡的发布域，对于非anycast的负载均衡，此字段返回为空字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAnycastZone(const std::string& _anycastZone);
@@ -544,18 +496,14 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 获取IP版本，ipv4 | ipv6
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddressIPVersion IP版本，ipv4 | ipv6
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAddressIPVersion() const;
 
                     /**
                      * 设置IP版本，ipv4 | ipv6
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _addressIPVersion IP版本，ipv4 | ipv6
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddressIPVersion(const std::string& _addressIPVersion);
@@ -568,19 +516,15 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool AddressIPVersionHasBeenSet() const;
 
                     /**
-                     * 获取数值形式的私有网络 ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NumericalVpcId 数值形式的私有网络 ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取数值形式的私有网络 ID，可以通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取。
+                     * @return NumericalVpcId 数值形式的私有网络 ID，可以通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取。
                      * 
                      */
                     uint64_t GetNumericalVpcId() const;
 
                     /**
-                     * 设置数值形式的私有网络 ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _numericalVpcId 数值形式的私有网络 ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置数值形式的私有网络 ID，可以通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取。
+                     * @param _numericalVpcId 数值形式的私有网络 ID，可以通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取。
                      * 
                      */
                     void SetNumericalVpcId(const uint64_t& _numericalVpcId);
@@ -593,18 +537,38 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool NumericalVpcIdHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡IP地址所属的运营商。取值范围（BGP、CMCC、CTCC、CUCC）
+                     * 获取负载均衡IP地址所属的运营商。
+
+- BGP :  BGP（多线）
+- CMCC：中国移动单线
+- CTCC：中国电信单线
+- CUCC：中国联通单线
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VipIsp 负载均衡IP地址所属的运营商。取值范围（BGP、CMCC、CTCC、CUCC）
+                     * @return VipIsp 负载均衡IP地址所属的运营商。
+
+- BGP :  BGP（多线）
+- CMCC：中国移动单线
+- CTCC：中国电信单线
+- CUCC：中国联通单线
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVipIsp() const;
 
                     /**
-                     * 设置负载均衡IP地址所属的运营商。取值范围（BGP、CMCC、CTCC、CUCC）
+                     * 设置负载均衡IP地址所属的运营商。
+
+- BGP :  BGP（多线）
+- CMCC：中国移动单线
+- CTCC：中国电信单线
+- CUCC：中国联通单线
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _vipIsp 负载均衡IP地址所属的运营商。取值范围（BGP、CMCC、CTCC、CUCC）
+                     * @param _vipIsp 负载均衡IP地址所属的运营商。
+
+- BGP :  BGP（多线）
+- CMCC：中国移动单线
+- CTCC：中国电信单线
+- CUCC：中国联通单线
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -668,18 +632,22 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool BackupZoneSetHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡实例被隔离的时间
+                     * 获取负载均衡实例被隔离的时间。
+格式：YYYY-MM-DD HH:mm:ss
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsolatedTime 负载均衡实例被隔离的时间
+                     * @return IsolatedTime 负载均衡实例被隔离的时间。
+格式：YYYY-MM-DD HH:mm:ss
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIsolatedTime() const;
 
                     /**
-                     * 设置负载均衡实例被隔离的时间
+                     * 设置负载均衡实例被隔离的时间。
+格式：YYYY-MM-DD HH:mm:ss
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isolatedTime 负载均衡实例被隔离的时间
+                     * @param _isolatedTime 负载均衡实例被隔离的时间。
+格式：YYYY-MM-DD HH:mm:ss
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -693,18 +661,22 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool IsolatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡实例的过期时间，仅对预付费负载均衡生效
+                     * 获取负载均衡实例的过期时间，仅对预付费负载均衡生效。
+格式：YYYY-MM-DD HH:mm:ss
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExpireTime 负载均衡实例的过期时间，仅对预付费负载均衡生效
+                     * @return ExpireTime 负载均衡实例的过期时间，仅对预付费负载均衡生效。
+格式：YYYY-MM-DD HH:mm:ss
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
-                     * 设置负载均衡实例的过期时间，仅对预付费负载均衡生效
+                     * 设置负载均衡实例的过期时间，仅对预付费负载均衡生效。
+格式：YYYY-MM-DD HH:mm:ss
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _expireTime 负载均衡实例的过期时间，仅对预付费负载均衡生效
+                     * @param _expireTime 负载均衡实例的过期时间，仅对预付费负载均衡生效。
+格式：YYYY-MM-DD HH:mm:ss
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -768,18 +740,18 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool NetworkAttributesHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡实例的预付费相关属性
+                     * 获取负载均衡实例的预付费相关属性，仅在 ChargeType=PREPAID 时显示。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PrepaidAttributes 负载均衡实例的预付费相关属性
+                     * @return PrepaidAttributes 负载均衡实例的预付费相关属性，仅在 ChargeType=PREPAID 时显示。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     LBChargePrepaid GetPrepaidAttributes() const;
 
                     /**
-                     * 设置负载均衡实例的预付费相关属性
+                     * 设置负载均衡实例的预付费相关属性，仅在 ChargeType=PREPAID 时显示。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _prepaidAttributes 负载均衡实例的预付费相关属性
+                     * @param _prepaidAttributes 负载均衡实例的预付费相关属性，仅在 ChargeType=PREPAID 时显示。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -794,18 +766,14 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 获取负载均衡日志服务(CLS)的日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogSetId 负载均衡日志服务(CLS)的日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogSetId() const;
 
                     /**
                      * 设置负载均衡日志服务(CLS)的日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logSetId 负载均衡日志服务(CLS)的日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogSetId(const std::string& _logSetId);
@@ -819,18 +787,14 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 获取负载均衡日志服务(CLS)的日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogTopicId 负载均衡日志服务(CLS)的日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogTopicId() const;
 
                     /**
                      * 设置负载均衡日志服务(CLS)的日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logTopicId 负载均衡日志服务(CLS)的日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogTopicId(const std::string& _logTopicId);
@@ -894,18 +858,14 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 获取是否可绑定高防包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsDDos 是否可绑定高防包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsDDos() const;
 
                     /**
                      * 设置是否可绑定高防包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isDDos 是否可绑定高防包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsDDos(const bool& _isDDos);
@@ -919,18 +879,14 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 获取负载均衡维度的个性化配置ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigId 负载均衡维度的个性化配置ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConfigId() const;
 
                     /**
                      * 设置负载均衡维度的个性化配置ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configId 负载均衡维度的个性化配置ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigId(const std::string& _configId);
@@ -944,18 +900,14 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 获取后端服务是否放通来自LB的流量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoadBalancerPassToTarget 后端服务是否放通来自LB的流量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetLoadBalancerPassToTarget() const;
 
                     /**
                      * 设置后端服务是否放通来自LB的流量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _loadBalancerPassToTarget 后端服务是否放通来自LB的流量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLoadBalancerPassToTarget(const bool& _loadBalancerPassToTarget);
@@ -969,18 +921,14 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 获取内网独占集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExclusiveCluster 内网独占集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ExclusiveCluster GetExclusiveCluster() const;
 
                     /**
                      * 设置内网独占集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _exclusiveCluster 内网独占集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExclusiveCluster(const ExclusiveCluster& _exclusiveCluster);
@@ -993,18 +941,26 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool ExclusiveClusterHasBeenSet() const;
 
                     /**
-                     * 获取IP地址版本为ipv6时此字段有意义， IPv6Nat64 | IPv6FullChain
+                     * 获取IP地址版本为ipv6时此字段有意义，IPv6Nat64 | IPv6FullChain。
+IPv6Nat64: 基于 NAT64 IPv6 过渡技术实现的负载均衡器。
+IPv6FullChain：基于 IPv6 单栈技术实现的负载均衡。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IPv6Mode IP地址版本为ipv6时此字段有意义， IPv6Nat64 | IPv6FullChain
+                     * @return IPv6Mode IP地址版本为ipv6时此字段有意义，IPv6Nat64 | IPv6FullChain。
+IPv6Nat64: 基于 NAT64 IPv6 过渡技术实现的负载均衡器。
+IPv6FullChain：基于 IPv6 单栈技术实现的负载均衡。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIPv6Mode() const;
 
                     /**
-                     * 设置IP地址版本为ipv6时此字段有意义， IPv6Nat64 | IPv6FullChain
+                     * 设置IP地址版本为ipv6时此字段有意义，IPv6Nat64 | IPv6FullChain。
+IPv6Nat64: 基于 NAT64 IPv6 过渡技术实现的负载均衡器。
+IPv6FullChain：基于 IPv6 单栈技术实现的负载均衡。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _iPv6Mode IP地址版本为ipv6时此字段有意义， IPv6Nat64 | IPv6FullChain
+                     * @param _iPv6Mode IP地址版本为ipv6时此字段有意义，IPv6Nat64 | IPv6FullChain。
+IPv6Nat64: 基于 NAT64 IPv6 过渡技术实现的负载均衡器。
+IPv6FullChain：基于 IPv6 单栈技术实现的负载均衡。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1019,18 +975,14 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 获取是否开启SnatPro。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SnatPro 是否开启SnatPro。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSnatPro() const;
 
                     /**
                      * 设置是否开启SnatPro。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _snatPro 是否开启SnatPro。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSnatPro(const bool& _snatPro);
@@ -1044,18 +996,14 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 获取开启SnatPro负载均衡后，SnatIp列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SnatIps 开启SnatPro负载均衡后，SnatIp列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SnatIp> GetSnatIps() const;
 
                     /**
                      * 设置开启SnatPro负载均衡后，SnatIp列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _snatIps 开启SnatPro负载均衡后，SnatIp列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSnatIps(const std::vector<SnatIp>& _snatIps);
@@ -1069,18 +1017,14 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 获取性能容量型规格。<ul><li> clb.c1.small：简约型规格 </li><li> clb.c2.medium：标准型规格 </li><li> clb.c3.small：高阶型1规格 </li><li> clb.c3.medium：高阶型2规格 </li><li> clb.c4.small：超强型1规格 </li><li> clb.c4.medium：超强型2规格 </li><li> clb.c4.large：超强型3规格 </li><li> clb.c4.xlarge：超强型4规格 </li><li>""：非性能容量型实例</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SlaType 性能容量型规格。<ul><li> clb.c1.small：简约型规格 </li><li> clb.c2.medium：标准型规格 </li><li> clb.c3.small：高阶型1规格 </li><li> clb.c3.medium：高阶型2规格 </li><li> clb.c4.small：超强型1规格 </li><li> clb.c4.medium：超强型2规格 </li><li> clb.c4.large：超强型3规格 </li><li> clb.c4.xlarge：超强型4规格 </li><li>""：非性能容量型实例</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSlaType() const;
 
                     /**
                      * 设置性能容量型规格。<ul><li> clb.c1.small：简约型规格 </li><li> clb.c2.medium：标准型规格 </li><li> clb.c3.small：高阶型1规格 </li><li> clb.c3.medium：高阶型2规格 </li><li> clb.c4.small：超强型1规格 </li><li> clb.c4.medium：超强型2规格 </li><li> clb.c4.large：超强型3规格 </li><li> clb.c4.xlarge：超强型4规格 </li><li>""：非性能容量型实例</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _slaType 性能容量型规格。<ul><li> clb.c1.small：简约型规格 </li><li> clb.c2.medium：标准型规格 </li><li> clb.c3.small：高阶型1规格 </li><li> clb.c3.medium：高阶型2规格 </li><li> clb.c4.small：超强型1规格 </li><li> clb.c4.medium：超强型2规格 </li><li> clb.c4.large：超强型3规格 </li><li> clb.c4.xlarge：超强型4规格 </li><li>""：非性能容量型实例</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSlaType(const std::string& _slaType);
@@ -1094,18 +1038,14 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 获取vip是否被封堵
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsBlock vip是否被封堵
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsBlock() const;
 
                     /**
                      * 设置vip是否被封堵
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isBlock vip是否被封堵
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsBlock(const bool& _isBlock);
@@ -1118,19 +1058,19 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool IsBlockHasBeenSet() const;
 
                     /**
-                     * 获取封堵或解封时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsBlockTime 封堵或解封时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取封堵或解封时间。
+格式：YYYY-MM-DD HH:mm:ss。
+                     * @return IsBlockTime 封堵或解封时间。
+格式：YYYY-MM-DD HH:mm:ss。
                      * 
                      */
                     std::string GetIsBlockTime() const;
 
                     /**
-                     * 设置封堵或解封时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isBlockTime 封堵或解封时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置封堵或解封时间。
+格式：YYYY-MM-DD HH:mm:ss。
+                     * @param _isBlockTime 封堵或解封时间。
+格式：YYYY-MM-DD HH:mm:ss。
                      * 
                      */
                     void SetIsBlockTime(const std::string& _isBlockTime);
@@ -1144,18 +1084,14 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 获取IP类型是否是本地BGP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LocalBgp IP类型是否是本地BGP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetLocalBgp() const;
 
                     /**
                      * 设置IP类型是否是本地BGP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _localBgp IP类型是否是本地BGP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLocalBgp(const bool& _localBgp);
@@ -1194,18 +1130,14 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 获取开启IPv6FullChain负载均衡7层监听器支持混绑IPv4/IPv6目标功能。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MixIpTarget 开启IPv6FullChain负载均衡7层监听器支持混绑IPv4/IPv6目标功能。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetMixIpTarget() const;
 
                     /**
                      * 设置开启IPv6FullChain负载均衡7层监听器支持混绑IPv4/IPv6目标功能。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mixIpTarget 开启IPv6FullChain负载均衡7层监听器支持混绑IPv4/IPv6目标功能。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMixIpTarget(const bool& _mixIpTarget);
@@ -1269,18 +1201,14 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 获取负载均衡日志服务(CLS)的健康检查日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HealthLogSetId 负载均衡日志服务(CLS)的健康检查日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHealthLogSetId() const;
 
                     /**
                      * 设置负载均衡日志服务(CLS)的健康检查日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _healthLogSetId 负载均衡日志服务(CLS)的健康检查日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHealthLogSetId(const std::string& _healthLogSetId);
@@ -1294,18 +1222,14 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 获取负载均衡日志服务(CLS)的健康检查日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HealthLogTopicId 负载均衡日志服务(CLS)的健康检查日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHealthLogTopicId() const;
 
                     /**
                      * 设置负载均衡日志服务(CLS)的健康检查日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _healthLogTopicId 负载均衡日志服务(CLS)的健康检查日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHealthLogTopicId(const std::string& _healthLogTopicId);
@@ -1343,19 +1267,103 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool ClusterIdsHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡的属性
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AttributeFlags 负载均衡的属性
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取负载均衡的属性，传入字符串数组来决定是否开启
+DeleteProtect: 删除保护，开启后防止负载均衡被误删除。 
+UserInVisible: 用户不可见，控制负载均衡对用户的可见性。 
+BlockStatus: 阻塞状态，用于限制负载均衡的某些操作或流量。 
+NoLBNat: 禁用负载均衡的NAT功能，用于特定场景下的流量直接转发。 
+BanStatus: 封禁状态，用于暂停负载均衡服务或限制访问。 
+ShiftupFlag: 升配标志，用于标识负载均衡需要升级配置或性能。 
+Stop: 停止状态，开启后负载均衡暂停服务。 
+NoVpcGw: 不使用VPC网关，用于绕过VPC网关直接处理流量。 
+SgInTgw: 安全组在TGW（Transit Gateway）中，涉及网络安全策略配置。 
+SharedLimitFlag: 共享限制标志，用于控制负载均衡的共享资源限制。 
+WafFlag: Web应用防火墙（WAF）标志，开启后启用WAF保护。 
+IsDomainCLB: 域名型负载均衡，标识负载均衡是否基于域名进行流量分发。 
+IPv6Snat: IPv6源地址转换（SNAT），用于IPv6网络的源地址处理。 
+HideDomain: 隐藏域名，用于隐私保护或特定场景下不暴露域名。 
+JumboFrame: 巨型帧支持，开启后支持更大的数据帧以提高网络效率。 
+NoLBNatL4IPdc: 四层IP直连无NAT，用于四层负载均衡直接转发IP流量。 
+VpcGwL3Service: VPC网关三层服务，涉及三层网络服务的网关功能。 
+Ipv62Flag: IPv6扩展标志，用于特定的IPv6功能支持。 
+Ipv62ExclusiveFlag: IPv6独占标志，用于专属IPv6流量处理。 
+BgpPro: BGP Pro 支持。 
+ToaClean: TOA（TCP Option Address）清理，清除TCP选项中的地址信息。 
+
+                     * @return AttributeFlags 负载均衡的属性，传入字符串数组来决定是否开启
+DeleteProtect: 删除保护，开启后防止负载均衡被误删除。 
+UserInVisible: 用户不可见，控制负载均衡对用户的可见性。 
+BlockStatus: 阻塞状态，用于限制负载均衡的某些操作或流量。 
+NoLBNat: 禁用负载均衡的NAT功能，用于特定场景下的流量直接转发。 
+BanStatus: 封禁状态，用于暂停负载均衡服务或限制访问。 
+ShiftupFlag: 升配标志，用于标识负载均衡需要升级配置或性能。 
+Stop: 停止状态，开启后负载均衡暂停服务。 
+NoVpcGw: 不使用VPC网关，用于绕过VPC网关直接处理流量。 
+SgInTgw: 安全组在TGW（Transit Gateway）中，涉及网络安全策略配置。 
+SharedLimitFlag: 共享限制标志，用于控制负载均衡的共享资源限制。 
+WafFlag: Web应用防火墙（WAF）标志，开启后启用WAF保护。 
+IsDomainCLB: 域名型负载均衡，标识负载均衡是否基于域名进行流量分发。 
+IPv6Snat: IPv6源地址转换（SNAT），用于IPv6网络的源地址处理。 
+HideDomain: 隐藏域名，用于隐私保护或特定场景下不暴露域名。 
+JumboFrame: 巨型帧支持，开启后支持更大的数据帧以提高网络效率。 
+NoLBNatL4IPdc: 四层IP直连无NAT，用于四层负载均衡直接转发IP流量。 
+VpcGwL3Service: VPC网关三层服务，涉及三层网络服务的网关功能。 
+Ipv62Flag: IPv6扩展标志，用于特定的IPv6功能支持。 
+Ipv62ExclusiveFlag: IPv6独占标志，用于专属IPv6流量处理。 
+BgpPro: BGP Pro 支持。 
+ToaClean: TOA（TCP Option Address）清理，清除TCP选项中的地址信息。 
+
                      * 
                      */
                     std::vector<std::string> GetAttributeFlags() const;
 
                     /**
-                     * 设置负载均衡的属性
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _attributeFlags 负载均衡的属性
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置负载均衡的属性，传入字符串数组来决定是否开启
+DeleteProtect: 删除保护，开启后防止负载均衡被误删除。 
+UserInVisible: 用户不可见，控制负载均衡对用户的可见性。 
+BlockStatus: 阻塞状态，用于限制负载均衡的某些操作或流量。 
+NoLBNat: 禁用负载均衡的NAT功能，用于特定场景下的流量直接转发。 
+BanStatus: 封禁状态，用于暂停负载均衡服务或限制访问。 
+ShiftupFlag: 升配标志，用于标识负载均衡需要升级配置或性能。 
+Stop: 停止状态，开启后负载均衡暂停服务。 
+NoVpcGw: 不使用VPC网关，用于绕过VPC网关直接处理流量。 
+SgInTgw: 安全组在TGW（Transit Gateway）中，涉及网络安全策略配置。 
+SharedLimitFlag: 共享限制标志，用于控制负载均衡的共享资源限制。 
+WafFlag: Web应用防火墙（WAF）标志，开启后启用WAF保护。 
+IsDomainCLB: 域名型负载均衡，标识负载均衡是否基于域名进行流量分发。 
+IPv6Snat: IPv6源地址转换（SNAT），用于IPv6网络的源地址处理。 
+HideDomain: 隐藏域名，用于隐私保护或特定场景下不暴露域名。 
+JumboFrame: 巨型帧支持，开启后支持更大的数据帧以提高网络效率。 
+NoLBNatL4IPdc: 四层IP直连无NAT，用于四层负载均衡直接转发IP流量。 
+VpcGwL3Service: VPC网关三层服务，涉及三层网络服务的网关功能。 
+Ipv62Flag: IPv6扩展标志，用于特定的IPv6功能支持。 
+Ipv62ExclusiveFlag: IPv6独占标志，用于专属IPv6流量处理。 
+BgpPro: BGP Pro 支持。 
+ToaClean: TOA（TCP Option Address）清理，清除TCP选项中的地址信息。 
+
+                     * @param _attributeFlags 负载均衡的属性，传入字符串数组来决定是否开启
+DeleteProtect: 删除保护，开启后防止负载均衡被误删除。 
+UserInVisible: 用户不可见，控制负载均衡对用户的可见性。 
+BlockStatus: 阻塞状态，用于限制负载均衡的某些操作或流量。 
+NoLBNat: 禁用负载均衡的NAT功能，用于特定场景下的流量直接转发。 
+BanStatus: 封禁状态，用于暂停负载均衡服务或限制访问。 
+ShiftupFlag: 升配标志，用于标识负载均衡需要升级配置或性能。 
+Stop: 停止状态，开启后负载均衡暂停服务。 
+NoVpcGw: 不使用VPC网关，用于绕过VPC网关直接处理流量。 
+SgInTgw: 安全组在TGW（Transit Gateway）中，涉及网络安全策略配置。 
+SharedLimitFlag: 共享限制标志，用于控制负载均衡的共享资源限制。 
+WafFlag: Web应用防火墙（WAF）标志，开启后启用WAF保护。 
+IsDomainCLB: 域名型负载均衡，标识负载均衡是否基于域名进行流量分发。 
+IPv6Snat: IPv6源地址转换（SNAT），用于IPv6网络的源地址处理。 
+HideDomain: 隐藏域名，用于隐私保护或特定场景下不暴露域名。 
+JumboFrame: 巨型帧支持，开启后支持更大的数据帧以提高网络效率。 
+NoLBNatL4IPdc: 四层IP直连无NAT，用于四层负载均衡直接转发IP流量。 
+VpcGwL3Service: VPC网关三层服务，涉及三层网络服务的网关功能。 
+Ipv62Flag: IPv6扩展标志，用于特定的IPv6功能支持。 
+Ipv62ExclusiveFlag: IPv6独占标志，用于专属IPv6流量处理。 
+BgpPro: BGP Pro 支持。 
+ToaClean: TOA（TCP Option Address）清理，清除TCP选项中的地址信息。 
+
                      * 
                      */
                     void SetAttributeFlags(const std::vector<std::string>& _attributeFlags);
@@ -1369,18 +1377,14 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 获取负载均衡实例的域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoadBalancerDomain 负载均衡实例的域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLoadBalancerDomain() const;
 
                     /**
                      * 设置负载均衡实例的域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _loadBalancerDomain 负载均衡实例的域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLoadBalancerDomain(const std::string& _loadBalancerDomain);
@@ -1394,18 +1398,14 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 获取网络出口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Egress 网络出口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEgress() const;
 
                     /**
                      * 设置网络出口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _egress 网络出口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEgress(const std::string& _egress);
@@ -1442,6 +1442,48 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     bool ExclusiveHasBeenSet() const;
 
+                    /**
+                     * 获取已绑定的后端服务数量。
+                     * @return TargetCount 已绑定的后端服务数量。
+                     * 
+                     */
+                    uint64_t GetTargetCount() const;
+
+                    /**
+                     * 设置已绑定的后端服务数量。
+                     * @param _targetCount 已绑定的后端服务数量。
+                     * 
+                     */
+                    void SetTargetCount(const uint64_t& _targetCount);
+
+                    /**
+                     * 判断参数 TargetCount 是否已赋值
+                     * @return TargetCount 是否已赋值
+                     * 
+                     */
+                    bool TargetCountHasBeenSet() const;
+
+                    /**
+                     * 获取负载均衡实例关联的Endpoint id。
+                     * @return AssociateEndpoint 负载均衡实例关联的Endpoint id。
+                     * 
+                     */
+                    std::string GetAssociateEndpoint() const;
+
+                    /**
+                     * 设置负载均衡实例关联的Endpoint id。
+                     * @param _associateEndpoint 负载均衡实例关联的Endpoint id。
+                     * 
+                     */
+                    void SetAssociateEndpoint(const std::string& _associateEndpoint);
+
+                    /**
+                     * 判断参数 AssociateEndpoint 是否已赋值
+                     * @return AssociateEndpoint 是否已赋值
+                     * 
+                     */
+                    bool AssociateEndpointHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1458,7 +1500,7 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 负载均衡实例的网络类型：
-OPEN：公网属性， INTERNAL：内网属性。
+OPEN：公网属性， INTERNAL：内网属性；对于内网属性的负载均衡，可通过绑定EIP出公网，具体可参考EIP文档[绑定弹性公网IP](https://cloud.tencent.com/document/product/215/16700)。
                      */
                     std::string m_loadBalancerType;
                     bool m_loadBalancerTypeHasBeenSet;
@@ -1471,14 +1513,12 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 负载均衡实例的域名，仅公网传统型和域名型负载均衡实例才提供该字段。逐步下线中，建议用LoadBalancerDomain替代。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
                      * 负载均衡实例的 VIP 列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_loadBalancerVips;
                     bool m_loadBalancerVipsHasBeenSet;
@@ -1486,21 +1526,20 @@ OPEN：公网属性， INTERNAL：内网属性。
                     /**
                      * 负载均衡实例的状态，包括
 0：创建中，1：正常运行。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 负载均衡实例的创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
+格式：YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 负载均衡实例的上次状态转换时间。
-注意：此字段可能返回 null，表示取不到有效值。
+格式：YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_statusTime;
                     bool m_statusTimeHasBeenSet;
@@ -1513,28 +1552,24 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 私有网络的 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * 高防 LB 的标识，1：高防负载均衡 0：非高防负载均衡。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_openBgp;
                     bool m_openBgpHasBeenSet;
 
                     /**
-                     * 在 2016 年 12 月份之前的传统型内网负载均衡都是开启了 snat 的。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 是否开启 SNAT，在 2016 年 12 月份之前的传统型内网负载均衡都是开启了 SNAT 的。
                      */
                     bool m_snat;
                     bool m_snatHasBeenSet;
 
                     /**
-                     * 0：表示未被隔离，1：表示被隔离。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 是否被隔离，0：表示未被隔离，1：表示被隔离。
                      */
                     uint64_t m_isolation;
                     bool m_isolationHasBeenSet;
@@ -1548,55 +1583,53 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 负载均衡实例所在的子网（仅对内网VPC型LB有意义）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
                      * 负载均衡实例的标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TagInfo> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
                      * 负载均衡实例的安全组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_secureGroups;
                     bool m_secureGroupsHasBeenSet;
 
                     /**
                      * 负载均衡实例绑定的后端设备的基本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TargetRegionInfo m_targetRegionInfo;
                     bool m_targetRegionInfoHasBeenSet;
 
                     /**
                      * anycast负载均衡的发布域，对于非anycast的负载均衡，此字段返回为空字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_anycastZone;
                     bool m_anycastZoneHasBeenSet;
 
                     /**
                      * IP版本，ipv4 | ipv6
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_addressIPVersion;
                     bool m_addressIPVersionHasBeenSet;
 
                     /**
-                     * 数值形式的私有网络 ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 数值形式的私有网络 ID，可以通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取。
                      */
                     uint64_t m_numericalVpcId;
                     bool m_numericalVpcIdHasBeenSet;
 
                     /**
-                     * 负载均衡IP地址所属的运营商。取值范围（BGP、CMCC、CTCC、CUCC）
+                     * 负载均衡IP地址所属的运营商。
+
+- BGP :  BGP（多线）
+- CMCC：中国移动单线
+- CTCC：中国电信单线
+- CUCC：中国联通单线
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vipIsp;
@@ -1617,14 +1650,16 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_backupZoneSetHasBeenSet;
 
                     /**
-                     * 负载均衡实例被隔离的时间
+                     * 负载均衡实例被隔离的时间。
+格式：YYYY-MM-DD HH:mm:ss
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_isolatedTime;
                     bool m_isolatedTimeHasBeenSet;
 
                     /**
-                     * 负载均衡实例的过期时间，仅对预付费负载均衡生效
+                     * 负载均衡实例的过期时间，仅对预付费负载均衡生效。
+格式：YYYY-MM-DD HH:mm:ss
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expireTime;
@@ -1645,7 +1680,7 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_networkAttributesHasBeenSet;
 
                     /**
-                     * 负载均衡实例的预付费相关属性
+                     * 负载均衡实例的预付费相关属性，仅在 ChargeType=PREPAID 时显示。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     LBChargePrepaid m_prepaidAttributes;
@@ -1653,14 +1688,12 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 负载均衡日志服务(CLS)的日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logSetId;
                     bool m_logSetIdHasBeenSet;
 
                     /**
                      * 负载均衡日志服务(CLS)的日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logTopicId;
                     bool m_logTopicIdHasBeenSet;
@@ -1681,34 +1714,32 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 是否可绑定高防包
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isDDos;
                     bool m_isDDosHasBeenSet;
 
                     /**
                      * 负载均衡维度的个性化配置ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_configId;
                     bool m_configIdHasBeenSet;
 
                     /**
                      * 后端服务是否放通来自LB的流量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_loadBalancerPassToTarget;
                     bool m_loadBalancerPassToTargetHasBeenSet;
 
                     /**
                      * 内网独占集群
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ExclusiveCluster m_exclusiveCluster;
                     bool m_exclusiveClusterHasBeenSet;
 
                     /**
-                     * IP地址版本为ipv6时此字段有意义， IPv6Nat64 | IPv6FullChain
+                     * IP地址版本为ipv6时此字段有意义，IPv6Nat64 | IPv6FullChain。
+IPv6Nat64: 基于 NAT64 IPv6 过渡技术实现的负载均衡器。
+IPv6FullChain：基于 IPv6 单栈技术实现的负载均衡。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_iPv6Mode;
@@ -1716,42 +1747,37 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 是否开启SnatPro。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_snatPro;
                     bool m_snatProHasBeenSet;
 
                     /**
                      * 开启SnatPro负载均衡后，SnatIp列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SnatIp> m_snatIps;
                     bool m_snatIpsHasBeenSet;
 
                     /**
                      * 性能容量型规格。<ul><li> clb.c1.small：简约型规格 </li><li> clb.c2.medium：标准型规格 </li><li> clb.c3.small：高阶型1规格 </li><li> clb.c3.medium：高阶型2规格 </li><li> clb.c4.small：超强型1规格 </li><li> clb.c4.medium：超强型2规格 </li><li> clb.c4.large：超强型3规格 </li><li> clb.c4.xlarge：超强型4规格 </li><li>""：非性能容量型实例</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_slaType;
                     bool m_slaTypeHasBeenSet;
 
                     /**
                      * vip是否被封堵
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isBlock;
                     bool m_isBlockHasBeenSet;
 
                     /**
-                     * 封堵或解封时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 封堵或解封时间。
+格式：YYYY-MM-DD HH:mm:ss。
                      */
                     std::string m_isBlockTime;
                     bool m_isBlockTimeHasBeenSet;
 
                     /**
                      * IP类型是否是本地BGP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_localBgp;
                     bool m_localBgpHasBeenSet;
@@ -1765,7 +1791,6 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 开启IPv6FullChain负载均衡7层监听器支持混绑IPv4/IPv6目标功能。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_mixIpTarget;
                     bool m_mixIpTargetHasBeenSet;
@@ -1786,14 +1811,12 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 负载均衡日志服务(CLS)的健康检查日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_healthLogSetId;
                     bool m_healthLogSetIdHasBeenSet;
 
                     /**
                      * 负载均衡日志服务(CLS)的健康检查日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_healthLogTopicId;
                     bool m_healthLogTopicIdHasBeenSet;
@@ -1806,22 +1829,41 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_clusterIdsHasBeenSet;
 
                     /**
-                     * 负载均衡的属性
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 负载均衡的属性，传入字符串数组来决定是否开启
+DeleteProtect: 删除保护，开启后防止负载均衡被误删除。 
+UserInVisible: 用户不可见，控制负载均衡对用户的可见性。 
+BlockStatus: 阻塞状态，用于限制负载均衡的某些操作或流量。 
+NoLBNat: 禁用负载均衡的NAT功能，用于特定场景下的流量直接转发。 
+BanStatus: 封禁状态，用于暂停负载均衡服务或限制访问。 
+ShiftupFlag: 升配标志，用于标识负载均衡需要升级配置或性能。 
+Stop: 停止状态，开启后负载均衡暂停服务。 
+NoVpcGw: 不使用VPC网关，用于绕过VPC网关直接处理流量。 
+SgInTgw: 安全组在TGW（Transit Gateway）中，涉及网络安全策略配置。 
+SharedLimitFlag: 共享限制标志，用于控制负载均衡的共享资源限制。 
+WafFlag: Web应用防火墙（WAF）标志，开启后启用WAF保护。 
+IsDomainCLB: 域名型负载均衡，标识负载均衡是否基于域名进行流量分发。 
+IPv6Snat: IPv6源地址转换（SNAT），用于IPv6网络的源地址处理。 
+HideDomain: 隐藏域名，用于隐私保护或特定场景下不暴露域名。 
+JumboFrame: 巨型帧支持，开启后支持更大的数据帧以提高网络效率。 
+NoLBNatL4IPdc: 四层IP直连无NAT，用于四层负载均衡直接转发IP流量。 
+VpcGwL3Service: VPC网关三层服务，涉及三层网络服务的网关功能。 
+Ipv62Flag: IPv6扩展标志，用于特定的IPv6功能支持。 
+Ipv62ExclusiveFlag: IPv6独占标志，用于专属IPv6流量处理。 
+BgpPro: BGP Pro 支持。 
+ToaClean: TOA（TCP Option Address）清理，清除TCP选项中的地址信息。 
+
                      */
                     std::vector<std::string> m_attributeFlags;
                     bool m_attributeFlagsHasBeenSet;
 
                     /**
                      * 负载均衡实例的域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_loadBalancerDomain;
                     bool m_loadBalancerDomainHasBeenSet;
 
                     /**
                      * 网络出口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_egress;
                     bool m_egressHasBeenSet;
@@ -1832,6 +1874,18 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     uint64_t m_exclusive;
                     bool m_exclusiveHasBeenSet;
+
+                    /**
+                     * 已绑定的后端服务数量。
+                     */
+                    uint64_t m_targetCount;
+                    bool m_targetCountHasBeenSet;
+
+                    /**
+                     * 负载均衡实例关联的Endpoint id。
+                     */
+                    std::string m_associateEndpoint;
+                    bool m_associateEndpointHasBeenSet;
 
                 };
             }

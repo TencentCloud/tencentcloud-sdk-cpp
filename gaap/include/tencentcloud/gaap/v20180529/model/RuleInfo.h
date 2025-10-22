@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -260,10 +260,10 @@ namespace TencentCloud
 
                     /**
                      * 获取源站的服务状态，0表示异常，1表示正常。
-未开启健康检查时，该状态始终未正常。
+未开启健康检查时，该状态始终为正常。
 只要有一个源站健康状态为异常时，该状态为异常，具体源站的状态请查看RealServerSet。
                      * @return BindStatus 源站的服务状态，0表示异常，1表示正常。
-未开启健康检查时，该状态始终未正常。
+未开启健康检查时，该状态始终为正常。
 只要有一个源站健康状态为异常时，该状态为异常，具体源站的状态请查看RealServerSet。
                      * 
                      */
@@ -271,10 +271,10 @@ namespace TencentCloud
 
                     /**
                      * 设置源站的服务状态，0表示异常，1表示正常。
-未开启健康检查时，该状态始终未正常。
+未开启健康检查时，该状态始终为正常。
 只要有一个源站健康状态为异常时，该状态为异常，具体源站的状态请查看RealServerSet。
                      * @param _bindStatus 源站的服务状态，0表示异常，1表示正常。
-未开启健康检查时，该状态始终未正常。
+未开启健康检查时，该状态始终为正常。
 只要有一个源站健康状态为异常时，该状态为异常，具体源站的状态请查看RealServerSet。
                      * 
                      */
@@ -289,18 +289,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通道转发到源站的请求所携带的host，其中default表示直接转发接收到的host。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ForwardHost 通道转发到源站的请求所携带的host，其中default表示直接转发接收到的host。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetForwardHost() const;
 
                     /**
                      * 设置通道转发到源站的请求所携带的host，其中default表示直接转发接收到的host。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _forwardHost 通道转发到源站的请求所携带的host，其中default表示直接转发接收到的host。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetForwardHost(const std::string& _forwardHost);
@@ -315,9 +311,7 @@ namespace TencentCloud
                     /**
                      * 获取服务器名称指示（ServerNameIndication，简称SNI）开关。ON表示开启，OFF表示关闭。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServerNameIndicationSwitch 服务器名称指示（ServerNameIndication，简称SNI）开关。ON表示开启，OFF表示关闭。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -326,9 +320,7 @@ namespace TencentCloud
                     /**
                      * 设置服务器名称指示（ServerNameIndication，简称SNI）开关。ON表示开启，OFF表示关闭。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serverNameIndicationSwitch 服务器名称指示（ServerNameIndication，简称SNI）开关。ON表示开启，OFF表示关闭。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -344,9 +336,7 @@ namespace TencentCloud
                     /**
                      * 获取服务器名称指示（ServerNameIndication，简称SNI），当SNI开关打开时，该字段必填。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServerNameIndication 服务器名称指示（ServerNameIndication，简称SNI），当SNI开关打开时，该字段必填。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -355,9 +345,7 @@ namespace TencentCloud
                     /**
                      * 设置服务器名称指示（ServerNameIndication，简称SNI），当SNI开关打开时，该字段必填。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serverNameIndication 服务器名称指示（ServerNameIndication，简称SNI），当SNI开关打开时，该字段必填。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -394,6 +382,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ForcedRedirectHasBeenSet() const;
+
+                    /**
+                     * 获取七层转发规则的回源协议类型
+                     * @return ForwardProtocol 七层转发规则的回源协议类型
+                     * 
+                     */
+                    std::string GetForwardProtocol() const;
+
+                    /**
+                     * 设置七层转发规则的回源协议类型
+                     * @param _forwardProtocol 七层转发规则的回源协议类型
+                     * 
+                     */
+                    void SetForwardProtocol(const std::string& _forwardProtocol);
+
+                    /**
+                     * 判断参数 ForwardProtocol 是否已赋值
+                     * @return ForwardProtocol 是否已赋值
+                     * 
+                     */
+                    bool ForwardProtocolHasBeenSet() const;
 
                 private:
 
@@ -459,7 +468,7 @@ namespace TencentCloud
 
                     /**
                      * 源站的服务状态，0表示异常，1表示正常。
-未开启健康检查时，该状态始终未正常。
+未开启健康检查时，该状态始终为正常。
 只要有一个源站健康状态为异常时，该状态为异常，具体源站的状态请查看RealServerSet。
                      */
                     uint64_t m_bindStatus;
@@ -467,7 +476,6 @@ namespace TencentCloud
 
                     /**
                      * 通道转发到源站的请求所携带的host，其中default表示直接转发接收到的host。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_forwardHost;
                     bool m_forwardHostHasBeenSet;
@@ -475,14 +483,12 @@ namespace TencentCloud
                     /**
                      * 服务器名称指示（ServerNameIndication，简称SNI）开关。ON表示开启，OFF表示关闭。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serverNameIndicationSwitch;
                     bool m_serverNameIndicationSwitchHasBeenSet;
 
                     /**
                      * 服务器名称指示（ServerNameIndication，简称SNI），当SNI开关打开时，该字段必填。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serverNameIndication;
@@ -494,6 +500,12 @@ namespace TencentCloud
                      */
                     std::string m_forcedRedirect;
                     bool m_forcedRedirectHasBeenSet;
+
+                    /**
+                     * 七层转发规则的回源协议类型
+                     */
+                    std::string m_forwardProtocol;
+                    bool m_forwardProtocolHasBeenSet;
 
                 };
             }

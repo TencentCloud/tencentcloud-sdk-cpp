@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -321,15 +321,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取包年包月计费的续费模式。<ul><li>0：默认状态，指手动续费。</li><li>1：自动续费。</li><li>2：到期不再续费。</ul>
-                     * @return AutoRenew 包年包月计费的续费模式。<ul><li>0：默认状态，指手动续费。</li><li>1：自动续费。</li><li>2：到期不再续费。</ul>
+                     * 获取续费模式。- 0：手动续费。- 1：自动续费。- 2：到期不再续费。
+                     * @return AutoRenew 续费模式。- 0：手动续费。- 1：自动续费。- 2：到期不再续费。
                      * 
                      */
                     std::vector<int64_t> GetAutoRenew() const;
 
                     /**
-                     * 设置包年包月计费的续费模式。<ul><li>0：默认状态，指手动续费。</li><li>1：自动续费。</li><li>2：到期不再续费。</ul>
-                     * @param _autoRenew 包年包月计费的续费模式。<ul><li>0：默认状态，指手动续费。</li><li>1：自动续费。</li><li>2：到期不再续费。</ul>
+                     * 设置续费模式。- 0：手动续费。- 1：自动续费。- 2：到期不再续费。
+                     * @param _autoRenew 续费模式。- 0：手动续费。- 1：自动续费。- 2：到期不再续费。
                      * 
                      */
                     void SetAutoRenew(const std::vector<int64_t>& _autoRenew);
@@ -447,23 +447,23 @@ namespace TencentCloud
                     bool MonitorVersionHasBeenSet() const;
 
                     /**
-                     * 获取根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。
-                     * @return InstanceTags 根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。
-                     * 
+                     * 获取废弃字段。请使用TagList传参。
+                     * @return InstanceTags 废弃字段。请使用TagList传参。
+                     * @deprecated
                      */
                     InstanceTagInfo GetInstanceTags() const;
 
                     /**
-                     * 设置根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。
-                     * @param _instanceTags 根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。
-                     * 
+                     * 设置废弃字段。请使用TagList传参。
+                     * @param _instanceTags 废弃字段。请使用TagList传参。
+                     * @deprecated
                      */
                     void SetInstanceTags(const InstanceTagInfo& _instanceTags);
 
                     /**
                      * 判断参数 InstanceTags 是否已赋值
                      * @return InstanceTags 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool InstanceTagsHasBeenSet() const;
 
@@ -487,6 +487,27 @@ namespace TencentCloud
                      * 
                      */
                     bool TagKeysHasBeenSet() const;
+
+                    /**
+                     * 获取根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。
+                     * @return TagList 根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。
+                     * 
+                     */
+                    std::vector<InstanceTagInfo> GetTagList() const;
+
+                    /**
+                     * 设置根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。
+                     * @param _tagList 根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。
+                     * 
+                     */
+                    void SetTagList(const std::vector<InstanceTagInfo>& _tagList);
+
+                    /**
+                     * 判断参数 TagList 是否已赋值
+                     * @return TagList 是否已赋值
+                     * 
+                     */
+                    bool TagListHasBeenSet() const;
 
                 private:
 
@@ -570,7 +591,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 包年包月计费的续费模式。<ul><li>0：默认状态，指手动续费。</li><li>1：自动续费。</li><li>2：到期不再续费。</ul>
+                     * 续费模式。- 0：手动续费。- 1：自动续费。- 2：到期不再续费。
                      */
                     std::vector<int64_t> m_autoRenew;
                     bool m_autoRenewHasBeenSet;
@@ -606,7 +627,7 @@ namespace TencentCloud
                     bool m_monitorVersionHasBeenSet;
 
                     /**
-                     * 根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。
+                     * 废弃字段。请使用TagList传参。
                      */
                     InstanceTagInfo m_instanceTags;
                     bool m_instanceTagsHasBeenSet;
@@ -616,6 +637,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_tagKeys;
                     bool m_tagKeysHasBeenSet;
+
+                    /**
+                     * 根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。
+                     */
+                    std::vector<InstanceTagInfo> m_tagList;
+                    bool m_tagListHasBeenSet;
 
                 };
             }

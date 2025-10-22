@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -132,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取置放群组亲和性策略，目前仅支持策略1，即在物理机纬度打散实例的分布。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Affinity 置放群组亲和性策略，目前仅支持策略1，即在物理机纬度打散实例的分布。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAffinity() const;
 
                     /**
                      * 设置置放群组亲和性策略，目前仅支持策略1，即在物理机纬度打散实例的分布。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _affinity 置放群组亲和性策略，目前仅支持策略1，即在物理机纬度打散实例的分布。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAffinity(const std::string& _affinity);
@@ -157,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取置放群组亲和性策略1中，同台物理机上同个置放群组实例的限制个数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LimitNum 置放群组亲和性策略1中，同台物理机上同个置放群组实例的限制个数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLimitNum() const;
 
                     /**
                      * 设置置放群组亲和性策略1中，同台物理机上同个置放群组实例的限制个数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _limitNum 置放群组亲和性策略1中，同台物理机上同个置放群组实例的限制个数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLimitNum(const int64_t& _limitNum);
@@ -203,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取置放群组物理机型属性。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DevClass 置放群组物理机型属性。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDevClass() const;
 
                     /**
                      * 设置置放群组物理机型属性。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _devClass 置放群组物理机型属性。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDevClass(const std::string& _devClass);
@@ -254,14 +242,12 @@ namespace TencentCloud
 
                     /**
                      * 置放群组亲和性策略，目前仅支持策略1，即在物理机纬度打散实例的分布。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_affinity;
                     bool m_affinityHasBeenSet;
 
                     /**
                      * 置放群组亲和性策略1中，同台物理机上同个置放群组实例的限制个数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_limitNum;
                     bool m_limitNumHasBeenSet;
@@ -274,7 +260,6 @@ namespace TencentCloud
 
                     /**
                      * 置放群组物理机型属性。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_devClass;
                     bool m_devClassHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -893,6 +893,49 @@ VodClient::CreateJustInTimeTranscodeTemplateOutcomeCallable VodClient::CreateJus
         [this, request]()
         {
             return this->CreateJustInTimeTranscodeTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::CreateMPSTemplateOutcome VodClient::CreateMPSTemplate(const CreateMPSTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMPSTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMPSTemplateResponse rsp = CreateMPSTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMPSTemplateOutcome(rsp);
+        else
+            return CreateMPSTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMPSTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateMPSTemplateAsync(const CreateMPSTemplateRequest& request, const CreateMPSTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateMPSTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::CreateMPSTemplateOutcomeCallable VodClient::CreateMPSTemplateCallable(const CreateMPSTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateMPSTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateMPSTemplate(request);
         }
     );
 
@@ -2054,6 +2097,49 @@ VodClient::DeleteJustInTimeTranscodeTemplateOutcomeCallable VodClient::DeleteJus
         [this, request]()
         {
             return this->DeleteJustInTimeTranscodeTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::DeleteMPSTemplateOutcome VodClient::DeleteMPSTemplate(const DeleteMPSTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteMPSTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteMPSTemplateResponse rsp = DeleteMPSTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteMPSTemplateOutcome(rsp);
+        else
+            return DeleteMPSTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteMPSTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DeleteMPSTemplateAsync(const DeleteMPSTemplateRequest& request, const DeleteMPSTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteMPSTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DeleteMPSTemplateOutcomeCallable VodClient::DeleteMPSTemplateCallable(const DeleteMPSTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteMPSTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteMPSTemplate(request);
         }
     );
 
@@ -3946,6 +4032,49 @@ VodClient::DescribeLicenseUsageDataOutcomeCallable VodClient::DescribeLicenseUsa
         [this, request]()
         {
             return this->DescribeLicenseUsageData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::DescribeMPSTemplatesOutcome VodClient::DescribeMPSTemplates(const DescribeMPSTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMPSTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMPSTemplatesResponse rsp = DescribeMPSTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMPSTemplatesOutcome(rsp);
+        else
+            return DescribeMPSTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMPSTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeMPSTemplatesAsync(const DescribeMPSTemplatesRequest& request, const DescribeMPSTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMPSTemplates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DescribeMPSTemplatesOutcomeCallable VodClient::DescribeMPSTemplatesCallable(const DescribeMPSTemplatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMPSTemplatesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMPSTemplates(request);
         }
     );
 
@@ -6060,6 +6189,49 @@ VodClient::ModifyJustInTimeTranscodeTemplateOutcomeCallable VodClient::ModifyJus
     return task->get_future();
 }
 
+VodClient::ModifyMPSTemplateOutcome VodClient::ModifyMPSTemplate(const ModifyMPSTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyMPSTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyMPSTemplateResponse rsp = ModifyMPSTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyMPSTemplateOutcome(rsp);
+        else
+            return ModifyMPSTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyMPSTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ModifyMPSTemplateAsync(const ModifyMPSTemplateRequest& request, const ModifyMPSTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyMPSTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::ModifyMPSTemplateOutcomeCallable VodClient::ModifyMPSTemplateCallable(const ModifyMPSTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyMPSTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyMPSTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::ModifyMediaInfoOutcome VodClient::ModifyMediaInfo(const ModifyMediaInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyMediaInfo");
@@ -6913,6 +7085,49 @@ VodClient::ProcessMediaOutcomeCallable VodClient::ProcessMediaCallable(const Pro
         [this, request]()
         {
             return this->ProcessMedia(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::ProcessMediaByMPSOutcome VodClient::ProcessMediaByMPS(const ProcessMediaByMPSRequest &request)
+{
+    auto outcome = MakeRequest(request, "ProcessMediaByMPS");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ProcessMediaByMPSResponse rsp = ProcessMediaByMPSResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ProcessMediaByMPSOutcome(rsp);
+        else
+            return ProcessMediaByMPSOutcome(o.GetError());
+    }
+    else
+    {
+        return ProcessMediaByMPSOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ProcessMediaByMPSAsync(const ProcessMediaByMPSRequest& request, const ProcessMediaByMPSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ProcessMediaByMPS(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::ProcessMediaByMPSOutcomeCallable VodClient::ProcessMediaByMPSCallable(const ProcessMediaByMPSRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ProcessMediaByMPSOutcome()>>(
+        [this, request]()
+        {
+            return this->ProcessMediaByMPS(request);
         }
     );
 

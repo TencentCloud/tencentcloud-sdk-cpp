@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取为签署方经办人在签署合同中的参与方ID，与控件绑定，是控件的归属方，ID为32位字符串。与入参中补充的签署人角色ID对应，批量补充部分失败返回对应的错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecipientId 为签署方经办人在签署合同中的参与方ID，与控件绑定，是控件的归属方，ID为32位字符串。与入参中补充的签署人角色ID对应，批量补充部分失败返回对应的错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRecipientId() const;
 
                     /**
                      * 设置为签署方经办人在签署合同中的参与方ID，与控件绑定，是控件的归属方，ID为32位字符串。与入参中补充的签署人角色ID对应，批量补充部分失败返回对应的错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recipientId 为签署方经办人在签署合同中的参与方ID，与控件绑定，是控件的归属方，ID为32位字符串。与入参中补充的签署人角色ID对应，批量补充部分失败返回对应的错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecipientId(const std::string& _recipientId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取补充失败错误说明
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrMessage 补充失败错误说明
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrMessage() const;
 
                     /**
                      * 设置补充失败错误说明
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errMessage 补充失败错误说明
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrMessage(const std::string& _errMessage);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取合同流程ID，为32位字符串。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowId 合同流程ID，为32位字符串。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlowId() const;
 
                     /**
                      * 设置合同流程ID，为32位字符串。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _flowId 合同流程ID，为32位字符串。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFlowId(const std::string& _flowId);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 为签署方经办人在签署合同中的参与方ID，与控件绑定，是控件的归属方，ID为32位字符串。与入参中补充的签署人角色ID对应，批量补充部分失败返回对应的错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_recipientId;
                     bool m_recipientIdHasBeenSet;
 
                     /**
                      * 补充失败错误说明
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errMessage;
                     bool m_errMessageHasBeenSet;
 
                     /**
                      * 合同流程ID，为32位字符串。	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;

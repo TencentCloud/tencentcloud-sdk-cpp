@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取设备当前固件版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurrentVersion 设备当前固件版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCurrentVersion() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取固件可升级版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DstVersion 固件可升级版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDstVersion() const;
@@ -79,14 +75,12 @@ namespace TencentCloud
 
                     /**
                      * 设备当前固件版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_currentVersion;
                     bool m_currentVersionHasBeenSet;
 
                     /**
                      * 固件可升级版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dstVersion;
                     bool m_dstVersionHasBeenSet;

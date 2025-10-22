@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取消息保留时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Retention 消息保留时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取消息保留时间，单位ms。
+                     * @return Retention 消息保留时间，单位ms。
                      * 
                      */
                     int64_t GetRetention() const;
 
                     /**
-                     * 设置消息保留时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _retention 消息保留时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置消息保留时间，单位ms。
+                     * @param _retention 消息保留时间，单位ms。
                      * 
                      */
                     void SetRetention(const int64_t& _retention);
@@ -126,18 +122,18 @@ delete：日志按保存时间删除；compact：日志按 key 压缩；compact,
                     bool CleanUpPolicyHasBeenSet() const;
 
                     /**
-                     * 获取Segment 分片滚动的时长
+                     * 获取Segment 分片滚动的时长，单位ms。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SegmentMs Segment 分片滚动的时长
+                     * @return SegmentMs Segment 分片滚动的时长，单位ms。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSegmentMs() const;
 
                     /**
-                     * 设置Segment 分片滚动的时长
+                     * 设置Segment 分片滚动的时长，单位ms。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _segmentMs Segment 分片滚动的时长
+                     * @param _segmentMs Segment 分片滚动的时长，单位ms。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -176,18 +172,18 @@ delete：日志按保存时间删除；compact：日志按 key 压缩；compact,
                     bool UncleanLeaderElectionEnableHasBeenSet() const;
 
                     /**
-                     * 获取Segment 分片滚动的字节数
+                     * 获取Segment 分片滚动的字节数，单位bytes
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SegmentBytes Segment 分片滚动的字节数
+                     * @return SegmentBytes Segment 分片滚动的字节数，单位bytes
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSegmentBytes() const;
 
                     /**
-                     * 设置Segment 分片滚动的字节数
+                     * 设置Segment 分片滚动的字节数，单位bytes
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _segmentBytes Segment 分片滚动的字节数
+                     * @param _segmentBytes Segment 分片滚动的字节数，单位bytes
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -201,18 +197,18 @@ delete：日志按保存时间删除；compact：日志按 key 压缩；compact,
                     bool SegmentBytesHasBeenSet() const;
 
                     /**
-                     * 获取最大消息字节数
+                     * 获取最大消息字节数，单位bytes
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxMessageBytes 最大消息字节数
+                     * @return MaxMessageBytes 最大消息字节数，单位bytes
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxMessageBytes() const;
 
                     /**
-                     * 设置最大消息字节数
+                     * 设置最大消息字节数，单位bytes
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _maxMessageBytes 最大消息字节数
+                     * @param _maxMessageBytes 最大消息字节数，单位bytes
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -226,18 +222,18 @@ delete：日志按保存时间删除；compact：日志按 key 压缩；compact,
                     bool MaxMessageBytesHasBeenSet() const;
 
                     /**
-                     * 获取消息保留文件大小
+                     * 获取消息保留文件大小，单位Bytes
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RetentionBytes 消息保留文件大小
+                     * @return RetentionBytes 消息保留文件大小，单位Bytes
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRetentionBytes() const;
 
                     /**
-                     * 设置消息保留文件大小
+                     * 设置消息保留文件大小，单位Bytes
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _retentionBytes 消息保留文件大小
+                     * @param _retentionBytes 消息保留文件大小，单位Bytes
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -250,11 +246,35 @@ delete：日志按保存时间删除；compact：日志按 key 压缩；compact,
                      */
                     bool RetentionBytesHasBeenSet() const;
 
+                    /**
+                     * 获取消息保存的时间类型，CreateTime表示生产者创建这条消息的时间;LogAppendTime表示broker接收到消息的时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LogMsgTimestampType 消息保存的时间类型，CreateTime表示生产者创建这条消息的时间;LogAppendTime表示broker接收到消息的时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLogMsgTimestampType() const;
+
+                    /**
+                     * 设置消息保存的时间类型，CreateTime表示生产者创建这条消息的时间;LogAppendTime表示broker接收到消息的时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _logMsgTimestampType 消息保存的时间类型，CreateTime表示生产者创建这条消息的时间;LogAppendTime表示broker接收到消息的时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLogMsgTimestampType(const std::string& _logMsgTimestampType);
+
+                    /**
+                     * 判断参数 LogMsgTimestampType 是否已赋值
+                     * @return LogMsgTimestampType 是否已赋值
+                     * 
+                     */
+                    bool LogMsgTimestampTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 消息保留时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 消息保留时间，单位ms。
                      */
                     int64_t m_retention;
                     bool m_retentionHasBeenSet;
@@ -275,7 +295,7 @@ delete：日志按保存时间删除；compact：日志按 key 压缩；compact,
                     bool m_cleanUpPolicyHasBeenSet;
 
                     /**
-                     * Segment 分片滚动的时长
+                     * Segment 分片滚动的时长，单位ms。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_segmentMs;
@@ -289,25 +309,32 @@ delete：日志按保存时间删除；compact：日志按 key 压缩；compact,
                     bool m_uncleanLeaderElectionEnableHasBeenSet;
 
                     /**
-                     * Segment 分片滚动的字节数
+                     * Segment 分片滚动的字节数，单位bytes
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_segmentBytes;
                     bool m_segmentBytesHasBeenSet;
 
                     /**
-                     * 最大消息字节数
+                     * 最大消息字节数，单位bytes
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxMessageBytes;
                     bool m_maxMessageBytesHasBeenSet;
 
                     /**
-                     * 消息保留文件大小
+                     * 消息保留文件大小，单位Bytes
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_retentionBytes;
                     bool m_retentionBytesHasBeenSet;
+
+                    /**
+                     * 消息保存的时间类型，CreateTime表示生产者创建这条消息的时间;LogAppendTime表示broker接收到消息的时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_logMsgTimestampType;
+                    bool m_logMsgTimestampTypeHasBeenSet;
 
                 };
             }

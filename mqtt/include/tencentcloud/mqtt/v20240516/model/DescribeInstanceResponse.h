@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,13 +44,11 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例类型，
-EXPERIMENT 体验版
+                     * 获取实例类型
 BASIC 基础版
 PRO  专业版
 PLATINUM 铂金版
-                     * @return InstanceType 实例类型，
-EXPERIMENT 体验版
+                     * @return InstanceType 实例类型
 BASIC 基础版
 PRO  专业版
 PLATINUM 铂金版
@@ -164,8 +162,8 @@ PLATINUM 铂金版
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取实例状态
-                     * @return InstanceStatus 实例状态
+                     * 获取实例状态， RUNNING, 运行中 MAINTAINING，维护中 ABNORMAL，异常 OVERDUE，欠费 DESTROYED，已删除 CREATING，创建中 MODIFYING，变配中 CREATE_FAILURE，创建失败 MODIFY_FAILURE，变配失败 DELETING，删除中
+                     * @return InstanceStatus 实例状态， RUNNING, 运行中 MAINTAINING，维护中 ABNORMAL，异常 OVERDUE，欠费 DESTROYED，已删除 CREATING，创建中 MODIFYING，变配中 CREATE_FAILURE，创建失败 MODIFY_FAILURE，变配失败 DELETING，删除中
                      * 
                      */
                     std::string GetInstanceStatus() const;
@@ -234,8 +232,12 @@ PLATINUM 铂金版
                     bool ClientNumLimitHasBeenSet() const;
 
                     /**
-                     * 获取客户端证书注册方式：JITP，API
-                     * @return DeviceCertificateProvisionType 客户端证书注册方式：JITP，API
+                     * 获取客户端证书注册方式：
+JITP：自动注册
+API：通过API手动注册
+                     * @return DeviceCertificateProvisionType 客户端证书注册方式：
+JITP：自动注册
+API：通过API手动注册
                      * 
                      */
                     std::string GetDeviceCertificateProvisionType() const;
@@ -262,8 +264,8 @@ PLATINUM 铂金版
                     bool AutomaticActivationHasBeenSet() const;
 
                     /**
-                     * 获取是否自动续费
-                     * @return RenewFlag 是否自动续费
+                     * 获取是否自动续费。仅包年包月集群生效。 1:自动续费 0:非自动续费
+                     * @return RenewFlag 是否自动续费。仅包年包月集群生效。 1:自动续费 0:非自动续费
                      * 
                      */
                     int64_t GetRenewFlag() const;
@@ -290,8 +292,8 @@ PLATINUM 铂金版
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取到期时间，秒为单位
-                     * @return ExpiryTime 到期时间，秒为单位
+                     * 获取到期时间，毫秒级时间戳
+                     * @return ExpiryTime 到期时间，毫秒级时间戳
                      * 
                      */
                     int64_t GetExpiryTime() const;
@@ -304,8 +306,8 @@ PLATINUM 铂金版
                     bool ExpiryTimeHasBeenSet() const;
 
                     /**
-                     * 获取预销毁时间
-                     * @return DestroyTime 预销毁时间
+                     * 获取预销毁时间，毫秒级时间戳
+                     * @return DestroyTime 预销毁时间，毫秒级时间戳
                      * 
                      */
                     int64_t GetDestroyTime() const;
@@ -318,12 +320,8 @@ PLATINUM 铂金版
                     bool DestroyTimeHasBeenSet() const;
 
                     /**
-                     * 获取    TLS,单向认证
-    mTLS,双向认证
-    BYOC;一机一证
-                     * @return X509Mode     TLS,单向认证
-    mTLS,双向认证
-    BYOC;一机一证
+                     * 获取TLS,单向认证    mTLS,双向认证    BYOC;一机一证
+                     * @return X509Mode TLS,单向认证    mTLS,双向认证    BYOC;一机一证
                      * 
                      */
                     std::string GetX509Mode() const;
@@ -377,11 +375,164 @@ PLATINUM 铂金版
                      */
                     bool MaxSubscriptionHasBeenSet() const;
 
+                    /**
+                     * 获取授权策略开关
+                     * @return AuthorizationPolicy 授权策略开关
+                     * 
+                     */
+                    bool GetAuthorizationPolicy() const;
+
+                    /**
+                     * 判断参数 AuthorizationPolicy 是否已赋值
+                     * @return AuthorizationPolicy 是否已赋值
+                     * 
+                     */
+                    bool AuthorizationPolicyHasBeenSet() const;
+
+                    /**
+                     * 获取共享订阅组数最大限制
+                     * @return SharedSubscriptionGroupLimit 共享订阅组数最大限制
+                     * 
+                     */
+                    int64_t GetSharedSubscriptionGroupLimit() const;
+
+                    /**
+                     * 判断参数 SharedSubscriptionGroupLimit 是否已赋值
+                     * @return SharedSubscriptionGroupLimit 是否已赋值
+                     * 
+                     */
+                    bool SharedSubscriptionGroupLimitHasBeenSet() const;
+
+                    /**
+                     * 获取单个共享订阅组TopicFilter数限制
+                     * @return MaxTopicFilterPerSharedSubscriptionGroup 单个共享订阅组TopicFilter数限制
+                     * 
+                     */
+                    int64_t GetMaxTopicFilterPerSharedSubscriptionGroup() const;
+
+                    /**
+                     * 判断参数 MaxTopicFilterPerSharedSubscriptionGroup 是否已赋值
+                     * @return MaxTopicFilterPerSharedSubscriptionGroup 是否已赋值
+                     * 
+                     */
+                    bool MaxTopicFilterPerSharedSubscriptionGroupHasBeenSet() const;
+
+                    /**
+                     * 获取自动订阅规则条数限制
+                     * @return AutoSubscriptionPolicyLimit 自动订阅规则条数限制
+                     * 
+                     */
+                    int64_t GetAutoSubscriptionPolicyLimit() const;
+
+                    /**
+                     * 判断参数 AutoSubscriptionPolicyLimit 是否已赋值
+                     * @return AutoSubscriptionPolicyLimit 是否已赋值
+                     * 
+                     */
+                    bool AutoSubscriptionPolicyLimitHasBeenSet() const;
+
+                    /**
+                     * 获取单条自动订阅规则TopicFilter数限制
+                     * @return MaxTopicFilterPerAutoSubscriptionPolicy 单条自动订阅规则TopicFilter数限制
+                     * 
+                     */
+                    int64_t GetMaxTopicFilterPerAutoSubscriptionPolicy() const;
+
+                    /**
+                     * 判断参数 MaxTopicFilterPerAutoSubscriptionPolicy 是否已赋值
+                     * @return MaxTopicFilterPerAutoSubscriptionPolicy 是否已赋值
+                     * 
+                     */
+                    bool MaxTopicFilterPerAutoSubscriptionPolicyHasBeenSet() const;
+
+                    /**
+                     * 获取是否使用默认的服务端证书
+                     * @return UseDefaultServerCert 是否使用默认的服务端证书
+                     * 
+                     */
+                    bool GetUseDefaultServerCert() const;
+
+                    /**
+                     * 判断参数 UseDefaultServerCert 是否已赋值
+                     * @return UseDefaultServerCert 是否已赋值
+                     * 
+                     */
+                    bool UseDefaultServerCertHasBeenSet() const;
+
+                    /**
+                     * 获取服务端CA最大数量
+                     * @return TrustedCaLimit 服务端CA最大数量
+                     * 
+                     */
+                    int64_t GetTrustedCaLimit() const;
+
+                    /**
+                     * 判断参数 TrustedCaLimit 是否已赋值
+                     * @return TrustedCaLimit 是否已赋值
+                     * 
+                     */
+                    bool TrustedCaLimitHasBeenSet() const;
+
+                    /**
+                     * 获取服务端证书最大数量
+                     * @return ServerCertLimit 服务端证书最大数量
+                     * 
+                     */
+                    int64_t GetServerCertLimit() const;
+
+                    /**
+                     * 判断参数 ServerCertLimit 是否已赋值
+                     * @return ServerCertLimit 是否已赋值
+                     * 
+                     */
+                    bool ServerCertLimitHasBeenSet() const;
+
+                    /**
+                     * 获取topic前缀最大层级
+                     * @return TopicPrefixSlashLimit topic前缀最大层级
+                     * 
+                     */
+                    int64_t GetTopicPrefixSlashLimit() const;
+
+                    /**
+                     * 判断参数 TopicPrefixSlashLimit 是否已赋值
+                     * @return TopicPrefixSlashLimit 是否已赋值
+                     * 
+                     */
+                    bool TopicPrefixSlashLimitHasBeenSet() const;
+
+                    /**
+                     * 获取单客户端发送消息限速，单位 条/秒
+                     * @return MessageRate 单客户端发送消息限速，单位 条/秒
+                     * 
+                     */
+                    int64_t GetMessageRate() const;
+
+                    /**
+                     * 判断参数 MessageRate 是否已赋值
+                     * @return MessageRate 是否已赋值
+                     * 
+                     */
+                    bool MessageRateHasBeenSet() const;
+
+                    /**
+                     * 获取服务端tls支持的协议，使用“,”分割。例如：TLSv1.3,TLSv1.2,TLSv1.1,TLSv1
+                     * @return TransportLayerSecurity 服务端tls支持的协议，使用“,”分割。例如：TLSv1.3,TLSv1.2,TLSv1.1,TLSv1
+                     * 
+                     */
+                    std::string GetTransportLayerSecurity() const;
+
+                    /**
+                     * 判断参数 TransportLayerSecurity 是否已赋值
+                     * @return TransportLayerSecurity 是否已赋值
+                     * 
+                     */
+                    bool TransportLayerSecurityHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例类型，
-EXPERIMENT 体验版
+                     * 实例类型
 BASIC 基础版
 PRO  专业版
 PLATINUM 铂金版
@@ -432,7 +583,7 @@ PLATINUM 铂金版
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 实例状态
+                     * 实例状态， RUNNING, 运行中 MAINTAINING，维护中 ABNORMAL，异常 OVERDUE，欠费 DESTROYED，已删除 CREATING，创建中 MODIFYING，变配中 CREATE_FAILURE，创建失败 MODIFY_FAILURE，变配失败 DELETING，删除中
                      */
                     std::string m_instanceStatus;
                     bool m_instanceStatusHasBeenSet;
@@ -462,7 +613,9 @@ PLATINUM 铂金版
                     bool m_clientNumLimitHasBeenSet;
 
                     /**
-                     * 客户端证书注册方式：JITP，API
+                     * 客户端证书注册方式：
+JITP：自动注册
+API：通过API手动注册
                      */
                     std::string m_deviceCertificateProvisionType;
                     bool m_deviceCertificateProvisionTypeHasBeenSet;
@@ -474,7 +627,7 @@ PLATINUM 铂金版
                     bool m_automaticActivationHasBeenSet;
 
                     /**
-                     * 是否自动续费
+                     * 是否自动续费。仅包年包月集群生效。 1:自动续费 0:非自动续费
                      */
                     int64_t m_renewFlag;
                     bool m_renewFlagHasBeenSet;
@@ -486,21 +639,19 @@ PLATINUM 铂金版
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 到期时间，秒为单位
+                     * 到期时间，毫秒级时间戳
                      */
                     int64_t m_expiryTime;
                     bool m_expiryTimeHasBeenSet;
 
                     /**
-                     * 预销毁时间
+                     * 预销毁时间，毫秒级时间戳
                      */
                     int64_t m_destroyTime;
                     bool m_destroyTimeHasBeenSet;
 
                     /**
-                     *     TLS,单向认证
-    mTLS,双向认证
-    BYOC;一机一证
+                     * TLS,单向认证    mTLS,双向认证    BYOC;一机一证
                      */
                     std::string m_x509Mode;
                     bool m_x509ModeHasBeenSet;
@@ -522,6 +673,72 @@ PLATINUM 铂金版
                      */
                     int64_t m_maxSubscription;
                     bool m_maxSubscriptionHasBeenSet;
+
+                    /**
+                     * 授权策略开关
+                     */
+                    bool m_authorizationPolicy;
+                    bool m_authorizationPolicyHasBeenSet;
+
+                    /**
+                     * 共享订阅组数最大限制
+                     */
+                    int64_t m_sharedSubscriptionGroupLimit;
+                    bool m_sharedSubscriptionGroupLimitHasBeenSet;
+
+                    /**
+                     * 单个共享订阅组TopicFilter数限制
+                     */
+                    int64_t m_maxTopicFilterPerSharedSubscriptionGroup;
+                    bool m_maxTopicFilterPerSharedSubscriptionGroupHasBeenSet;
+
+                    /**
+                     * 自动订阅规则条数限制
+                     */
+                    int64_t m_autoSubscriptionPolicyLimit;
+                    bool m_autoSubscriptionPolicyLimitHasBeenSet;
+
+                    /**
+                     * 单条自动订阅规则TopicFilter数限制
+                     */
+                    int64_t m_maxTopicFilterPerAutoSubscriptionPolicy;
+                    bool m_maxTopicFilterPerAutoSubscriptionPolicyHasBeenSet;
+
+                    /**
+                     * 是否使用默认的服务端证书
+                     */
+                    bool m_useDefaultServerCert;
+                    bool m_useDefaultServerCertHasBeenSet;
+
+                    /**
+                     * 服务端CA最大数量
+                     */
+                    int64_t m_trustedCaLimit;
+                    bool m_trustedCaLimitHasBeenSet;
+
+                    /**
+                     * 服务端证书最大数量
+                     */
+                    int64_t m_serverCertLimit;
+                    bool m_serverCertLimitHasBeenSet;
+
+                    /**
+                     * topic前缀最大层级
+                     */
+                    int64_t m_topicPrefixSlashLimit;
+                    bool m_topicPrefixSlashLimitHasBeenSet;
+
+                    /**
+                     * 单客户端发送消息限速，单位 条/秒
+                     */
+                    int64_t m_messageRate;
+                    bool m_messageRateHasBeenSet;
+
+                    /**
+                     * 服务端tls支持的协议，使用“,”分割。例如：TLSv1.3,TLSv1.2,TLSv1.1,TLSv1
+                     */
+                    std::string m_transportLayerSecurity;
+                    bool m_transportLayerSecurityHasBeenSet;
 
                 };
             }

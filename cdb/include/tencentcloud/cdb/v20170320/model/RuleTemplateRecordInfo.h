@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTaskId() const;
 
                     /**
                      * 设置任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskId 任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskId(const int64_t& _taskId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修改前规则模板的详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyBeforeInfo 修改前规则模板的详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RuleTemplateInfo GetModifyBeforeInfo() const;
 
                     /**
                      * 设置修改前规则模板的详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyBeforeInfo 修改前规则模板的详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyBeforeInfo(const RuleTemplateInfo& _modifyBeforeInfo);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修改后规则模板的详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyAfterInfo 修改后规则模板的详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RuleTemplateInfo GetModifyAfterInfo() const;
 
                     /**
                      * 设置修改后规则模板的详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyAfterInfo 修改后规则模板的详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyAfterInfo(const RuleTemplateInfo& _modifyAfterInfo);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取影响的实例。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AffectedInstances 影响的实例。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAffectedInstances() const;
 
                     /**
                      * 设置影响的实例。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _affectedInstances 影响的实例。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAffectedInstances(const std::vector<std::string>& _affectedInstances);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取操作人，账号uin。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Operator 操作人，账号uin。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置操作人，账号uin。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _operator 操作人，账号uin。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOperator(const std::string& _operator);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取变更的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 变更的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置变更的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 变更的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -201,42 +177,36 @@ namespace TencentCloud
 
                     /**
                      * 任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
                      * 修改前规则模板的详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RuleTemplateInfo m_modifyBeforeInfo;
                     bool m_modifyBeforeInfoHasBeenSet;
 
                     /**
                      * 修改后规则模板的详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RuleTemplateInfo m_modifyAfterInfo;
                     bool m_modifyAfterInfoHasBeenSet;
 
                     /**
                      * 影响的实例。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_affectedInstances;
                     bool m_affectedInstancesHasBeenSet;
 
                     /**
                      * 操作人，账号uin。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
                      * 变更的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

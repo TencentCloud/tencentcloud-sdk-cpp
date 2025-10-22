@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,10 @@ using namespace std;
 STTConfig::STTConfig() :
     m_languageHasBeenSet(false),
     m_alternativeLanguageHasBeenSet(false),
-    m_vadSilenceTimeHasBeenSet(false)
+    m_customParamHasBeenSet(false),
+    m_vadSilenceTimeHasBeenSet(false),
+    m_hotWordListHasBeenSet(false),
+    m_vadLevelHasBeenSet(false)
 {
 }
 
@@ -55,6 +58,16 @@ CoreInternalOutcome STTConfig::Deserialize(const rapidjson::Value &value)
         m_alternativeLanguageHasBeenSet = true;
     }
 
+    if (value.HasMember("CustomParam") && !value["CustomParam"].IsNull())
+    {
+        if (!value["CustomParam"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `STTConfig.CustomParam` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_customParam = string(value["CustomParam"].GetString());
+        m_customParamHasBeenSet = true;
+    }
+
     if (value.HasMember("VadSilenceTime") && !value["VadSilenceTime"].IsNull())
     {
         if (!value["VadSilenceTime"].IsUint64())
@@ -63,6 +76,26 @@ CoreInternalOutcome STTConfig::Deserialize(const rapidjson::Value &value)
         }
         m_vadSilenceTime = value["VadSilenceTime"].GetUint64();
         m_vadSilenceTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("HotWordList") && !value["HotWordList"].IsNull())
+    {
+        if (!value["HotWordList"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `STTConfig.HotWordList` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hotWordList = string(value["HotWordList"].GetString());
+        m_hotWordListHasBeenSet = true;
+    }
+
+    if (value.HasMember("VadLevel") && !value["VadLevel"].IsNull())
+    {
+        if (!value["VadLevel"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `STTConfig.VadLevel` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_vadLevel = value["VadLevel"].GetUint64();
+        m_vadLevelHasBeenSet = true;
     }
 
 
@@ -93,12 +126,36 @@ void STTConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         }
     }
 
+    if (m_customParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomParam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customParam.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_vadSilenceTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VadSilenceTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vadSilenceTime, allocator);
+    }
+
+    if (m_hotWordListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HotWordList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hotWordList.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vadLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VadLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vadLevel, allocator);
     }
 
 }
@@ -136,6 +193,22 @@ bool STTConfig::AlternativeLanguageHasBeenSet() const
     return m_alternativeLanguageHasBeenSet;
 }
 
+string STTConfig::GetCustomParam() const
+{
+    return m_customParam;
+}
+
+void STTConfig::SetCustomParam(const string& _customParam)
+{
+    m_customParam = _customParam;
+    m_customParamHasBeenSet = true;
+}
+
+bool STTConfig::CustomParamHasBeenSet() const
+{
+    return m_customParamHasBeenSet;
+}
+
 uint64_t STTConfig::GetVadSilenceTime() const
 {
     return m_vadSilenceTime;
@@ -150,5 +223,37 @@ void STTConfig::SetVadSilenceTime(const uint64_t& _vadSilenceTime)
 bool STTConfig::VadSilenceTimeHasBeenSet() const
 {
     return m_vadSilenceTimeHasBeenSet;
+}
+
+string STTConfig::GetHotWordList() const
+{
+    return m_hotWordList;
+}
+
+void STTConfig::SetHotWordList(const string& _hotWordList)
+{
+    m_hotWordList = _hotWordList;
+    m_hotWordListHasBeenSet = true;
+}
+
+bool STTConfig::HotWordListHasBeenSet() const
+{
+    return m_hotWordListHasBeenSet;
+}
+
+uint64_t STTConfig::GetVadLevel() const
+{
+    return m_vadLevel;
+}
+
+void STTConfig::SetVadLevel(const uint64_t& _vadLevel)
+{
+    m_vadLevel = _vadLevel;
+    m_vadLevelHasBeenSet = true;
+}
+
+bool STTConfig::VadLevelHasBeenSet() const
+{
+    return m_vadLevelHasBeenSet;
 }
 

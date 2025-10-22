@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取sn信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SN sn信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSN() const;
 
                     /**
                      * 设置sn信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sN sn信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSN(const std::string& _sN);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取票据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SNTicket 票据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSNTicket() const;
 
                     /**
                      * 设置票据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sNTicket 票据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSNTicket(const std::string& _sNTicket);
@@ -97,19 +89,15 @@ namespace TencentCloud
                     bool SNTicketHasBeenSet() const;
 
                     /**
-                     * 获取模版ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ModelId 模版ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取模板ID
+                     * @return ModelId 模板ID
                      * 
                      */
                     std::string GetModelId() const;
 
                     /**
-                     * 设置模版ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _modelId 模版ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置模板ID
+                     * @param _modelId 模板ID
                      * 
                      */
                     void SetModelId(const std::string& _modelId);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * sn信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sN;
                     bool m_sNHasBeenSet;
 
                     /**
                      * 票据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sNTicket;
                     bool m_sNTicketHasBeenSet;
 
                     /**
-                     * 模版ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 模板ID
                      */
                     std::string m_modelId;
                     bool m_modelIdHasBeenSet;

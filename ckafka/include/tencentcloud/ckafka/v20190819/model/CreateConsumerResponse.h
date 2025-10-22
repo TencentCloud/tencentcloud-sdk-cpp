@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取创建group描述
-                     * @return Result 创建group描述
+                     * 获取创建消费者组返回结果
+                     * @return Result 创建消费者组返回结果
                      * 
                      */
                     JgwOperateResponse GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 创建group描述
+                     * 创建消费者组返回结果
                      */
                     JgwOperateResponse m_result;
                     bool m_resultHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool GatewayDeployGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取搜索关键字，支持分组名称或API Path
-                     * @return SearchWord 搜索关键字，支持分组名称或API Path
+                     * 获取搜索关键字，支持命名空间名称或服务名称
+                     * @return SearchWord 搜索关键字，支持命名空间名称或服务名称
                      * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
-                     * 设置搜索关键字，支持分组名称或API Path
-                     * @param _searchWord 搜索关键字，支持分组名称或API Path
+                     * 设置搜索关键字，支持命名空间名称或服务名称
+                     * @param _searchWord 搜索关键字，支持命名空间名称或服务名称
                      * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_gatewayDeployGroupIdHasBeenSet;
 
                     /**
-                     * 搜索关键字，支持分组名称或API Path
+                     * 搜索关键字，支持命名空间名称或服务名称
                      */
                     std::string m_searchWord;
                     bool m_searchWordHasBeenSet;

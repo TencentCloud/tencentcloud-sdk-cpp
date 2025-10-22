@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/hunyuan/v20230901/model/Message.h>
 #include <tencentcloud/hunyuan/v20230901/model/Tool.h>
+#include <tencentcloud/hunyuan/v20230901/model/WebSearchOptions.h>
 
 
 namespace TencentCloud
@@ -45,31 +46,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模型名称，可选值包括 hunyuan-lite、hunyuan-standard、hunyuan-standard-256K、hunyuan-pro、 hunyuan-code、 hunyuan-role、 hunyuan-functioncall、 hunyuan-vision、 hunyuan-turbo、 hunyuan-turbo-latest、 hunyuan-large。
-各模型介绍请阅读 [产品概述](https://cloud.tencent.com/document/product/1729/104753) 中的说明。
-
-注意：
-不同的模型计费不同，请根据 [购买指南](https://cloud.tencent.com/document/product/1729/97731) 按需调用。
-                     * @return Model 模型名称，可选值包括 hunyuan-lite、hunyuan-standard、hunyuan-standard-256K、hunyuan-pro、 hunyuan-code、 hunyuan-role、 hunyuan-functioncall、 hunyuan-vision、 hunyuan-turbo、 hunyuan-turbo-latest、 hunyuan-large。
-各模型介绍请阅读 [产品概述](https://cloud.tencent.com/document/product/1729/104753) 中的说明。
-
-注意：
-不同的模型计费不同，请根据 [购买指南](https://cloud.tencent.com/document/product/1729/97731) 按需调用。
+                     * 获取模型名称，可选值参考 [产品概述](https://cloud.tencent.com/document/product/1729/104753) 中混元生文模型列表。
+示例值：hunyuan-turbos-latest
+各模型介绍请阅读 [产品概述](https://cloud.tencent.com/document/product/1729/104753) 中的说明。注意：不同的模型计费不同，请根据 [购买指南](https://cloud.tencent.com/document/product/1729/97731) 按需调用。
+                     * @return Model 模型名称，可选值参考 [产品概述](https://cloud.tencent.com/document/product/1729/104753) 中混元生文模型列表。
+示例值：hunyuan-turbos-latest
+各模型介绍请阅读 [产品概述](https://cloud.tencent.com/document/product/1729/104753) 中的说明。注意：不同的模型计费不同，请根据 [购买指南](https://cloud.tencent.com/document/product/1729/97731) 按需调用。
                      * 
                      */
                     std::string GetModel() const;
 
                     /**
-                     * 设置模型名称，可选值包括 hunyuan-lite、hunyuan-standard、hunyuan-standard-256K、hunyuan-pro、 hunyuan-code、 hunyuan-role、 hunyuan-functioncall、 hunyuan-vision、 hunyuan-turbo、 hunyuan-turbo-latest、 hunyuan-large。
-各模型介绍请阅读 [产品概述](https://cloud.tencent.com/document/product/1729/104753) 中的说明。
-
-注意：
-不同的模型计费不同，请根据 [购买指南](https://cloud.tencent.com/document/product/1729/97731) 按需调用。
-                     * @param _model 模型名称，可选值包括 hunyuan-lite、hunyuan-standard、hunyuan-standard-256K、hunyuan-pro、 hunyuan-code、 hunyuan-role、 hunyuan-functioncall、 hunyuan-vision、 hunyuan-turbo、 hunyuan-turbo-latest、 hunyuan-large。
-各模型介绍请阅读 [产品概述](https://cloud.tencent.com/document/product/1729/104753) 中的说明。
-
-注意：
-不同的模型计费不同，请根据 [购买指南](https://cloud.tencent.com/document/product/1729/97731) 按需调用。
+                     * 设置模型名称，可选值参考 [产品概述](https://cloud.tencent.com/document/product/1729/104753) 中混元生文模型列表。
+示例值：hunyuan-turbos-latest
+各模型介绍请阅读 [产品概述](https://cloud.tencent.com/document/product/1729/104753) 中的说明。注意：不同的模型计费不同，请根据 [购买指南](https://cloud.tencent.com/document/product/1729/97731) 按需调用。
+                     * @param _model 模型名称，可选值参考 [产品概述](https://cloud.tencent.com/document/product/1729/104753) 中混元生文模型列表。
+示例值：hunyuan-turbos-latest
+各模型介绍请阅读 [产品概述](https://cloud.tencent.com/document/product/1729/104753) 中的说明。注意：不同的模型计费不同，请根据 [购买指南](https://cloud.tencent.com/document/product/1729/97731) 按需调用。
                      * 
                      */
                     void SetModel(const std::string& _model);
@@ -298,15 +291,17 @@ namespace TencentCloud
                      * 获取功能增强（如搜索）开关。
 说明：
 1. hunyuan-lite 无功能增强（如搜索）能力，该参数对 hunyuan-lite 版本不生效。
-2. 未传值时默认打开开关。
+2. 未传值时默认关闭开关。
 3. 关闭时将直接由主模型生成回复内容，可以降低响应时延（对于流式输出时的首字时延尤为明显）。但在少数场景里，回复效果可能会下降。
 4. 安全审核能力不属于功能增强范围，不受此字段影响。
+5. 2025-04-20 00:00:00起，由默认开启状态转为默认关闭状态。
                      * @return EnableEnhancement 功能增强（如搜索）开关。
 说明：
 1. hunyuan-lite 无功能增强（如搜索）能力，该参数对 hunyuan-lite 版本不生效。
-2. 未传值时默认打开开关。
+2. 未传值时默认关闭开关。
 3. 关闭时将直接由主模型生成回复内容，可以降低响应时延（对于流式输出时的首字时延尤为明显）。但在少数场景里，回复效果可能会下降。
 4. 安全审核能力不属于功能增强范围，不受此字段影响。
+5. 2025-04-20 00:00:00起，由默认开启状态转为默认关闭状态。
                      * 
                      */
                     bool GetEnableEnhancement() const;
@@ -315,15 +310,17 @@ namespace TencentCloud
                      * 设置功能增强（如搜索）开关。
 说明：
 1. hunyuan-lite 无功能增强（如搜索）能力，该参数对 hunyuan-lite 版本不生效。
-2. 未传值时默认打开开关。
+2. 未传值时默认关闭开关。
 3. 关闭时将直接由主模型生成回复内容，可以降低响应时延（对于流式输出时的首字时延尤为明显）。但在少数场景里，回复效果可能会下降。
 4. 安全审核能力不属于功能增强范围，不受此字段影响。
+5. 2025-04-20 00:00:00起，由默认开启状态转为默认关闭状态。
                      * @param _enableEnhancement 功能增强（如搜索）开关。
 说明：
 1. hunyuan-lite 无功能增强（如搜索）能力，该参数对 hunyuan-lite 版本不生效。
-2. 未传值时默认打开开关。
+2. 未传值时默认关闭开关。
 3. 关闭时将直接由主模型生成回复内容，可以降低响应时延（对于流式输出时的首字时延尤为明显）。但在少数场景里，回复效果可能会下降。
 4. 安全审核能力不属于功能增强范围，不受此字段影响。
+5. 2025-04-20 00:00:00起，由默认开启状态转为默认关闭状态。
                      * 
                      */
                     void SetEnableEnhancement(const bool& _enableEnhancement);
@@ -336,15 +333,15 @@ namespace TencentCloud
                     bool EnableEnhancementHasBeenSet() const;
 
                     /**
-                     * 获取可调用的工具列表，仅对 hunyuan-pro、hunyuan-turbo、hunyuan-functioncall 模型生效。
-                     * @return Tools 可调用的工具列表，仅对 hunyuan-pro、hunyuan-turbo、hunyuan-functioncall 模型生效。
+                     * 获取可调用的工具列表，仅对 hunyuan-turbos、hunyuan-t1、hunyuan-functioncall 模型生效。
+                     * @return Tools 可调用的工具列表，仅对 hunyuan-turbos、hunyuan-t1、hunyuan-functioncall 模型生效。
                      * 
                      */
                     std::vector<Tool> GetTools() const;
 
                     /**
-                     * 设置可调用的工具列表，仅对 hunyuan-pro、hunyuan-turbo、hunyuan-functioncall 模型生效。
-                     * @param _tools 可调用的工具列表，仅对 hunyuan-pro、hunyuan-turbo、hunyuan-functioncall 模型生效。
+                     * 设置可调用的工具列表，仅对 hunyuan-turbos、hunyuan-t1、hunyuan-functioncall 模型生效。
+                     * @param _tools 可调用的工具列表，仅对 hunyuan-turbos、hunyuan-t1、hunyuan-functioncall 模型生效。
                      * 
                      */
                     void SetTools(const std::vector<Tool>& _tools);
@@ -357,31 +354,15 @@ namespace TencentCloud
                     bool ToolsHasBeenSet() const;
 
                     /**
-                     * 获取工具使用选项，可选值包括 none、auto、custom。
-说明：
-1. 仅对 hunyuan-pro、hunyuan-turbo、hunyuan-functioncall 模型生效。
-2. none：不调用工具；auto：模型自行选择生成回复或调用工具；custom：强制模型调用指定的工具。
-3. 未设置时，默认值为auto
-                     * @return ToolChoice 工具使用选项，可选值包括 none、auto、custom。
-说明：
-1. 仅对 hunyuan-pro、hunyuan-turbo、hunyuan-functioncall 模型生效。
-2. none：不调用工具；auto：模型自行选择生成回复或调用工具；custom：强制模型调用指定的工具。
-3. 未设置时，默认值为auto
+                     * 获取工具使用选项，可选值包括 none、auto、custom。说明：1. 仅对 hunyuan-turbo、hunyuan-functioncall 模型生效。2. none：不调用工具；auto：模型自行选择生成回复或调用工具；custom：强制模型调用指定的工具。3. 未设置时，默认值为auto
+                     * @return ToolChoice 工具使用选项，可选值包括 none、auto、custom。说明：1. 仅对 hunyuan-turbo、hunyuan-functioncall 模型生效。2. none：不调用工具；auto：模型自行选择生成回复或调用工具；custom：强制模型调用指定的工具。3. 未设置时，默认值为auto
                      * 
                      */
                     std::string GetToolChoice() const;
 
                     /**
-                     * 设置工具使用选项，可选值包括 none、auto、custom。
-说明：
-1. 仅对 hunyuan-pro、hunyuan-turbo、hunyuan-functioncall 模型生效。
-2. none：不调用工具；auto：模型自行选择生成回复或调用工具；custom：强制模型调用指定的工具。
-3. 未设置时，默认值为auto
-                     * @param _toolChoice 工具使用选项，可选值包括 none、auto、custom。
-说明：
-1. 仅对 hunyuan-pro、hunyuan-turbo、hunyuan-functioncall 模型生效。
-2. none：不调用工具；auto：模型自行选择生成回复或调用工具；custom：强制模型调用指定的工具。
-3. 未设置时，默认值为auto
+                     * 设置工具使用选项，可选值包括 none、auto、custom。说明：1. 仅对 hunyuan-turbo、hunyuan-functioncall 模型生效。2. none：不调用工具；auto：模型自行选择生成回复或调用工具；custom：强制模型调用指定的工具。3. 未设置时，默认值为auto
+                     * @param _toolChoice 工具使用选项，可选值包括 none、auto、custom。说明：1. 仅对 hunyuan-turbo、hunyuan-functioncall 模型生效。2. none：不调用工具；auto：模型自行选择生成回复或调用工具；custom：强制模型调用指定的工具。3. 未设置时，默认值为auto
                      * 
                      */
                     void SetToolChoice(const std::string& _toolChoice);
@@ -584,14 +565,211 @@ namespace TencentCloud
                      */
                     bool SeedHasBeenSet() const;
 
+                    /**
+                     * 获取强制搜索增强开关。
+说明：
+1. 未传值时默认关闭。
+2. 开启后，将强制走AI搜索，当AI搜索结果为空时，由大模型回复兜底话术。
+                     * @return ForceSearchEnhancement 强制搜索增强开关。
+说明：
+1. 未传值时默认关闭。
+2. 开启后，将强制走AI搜索，当AI搜索结果为空时，由大模型回复兜底话术。
+                     * 
+                     */
+                    bool GetForceSearchEnhancement() const;
+
+                    /**
+                     * 设置强制搜索增强开关。
+说明：
+1. 未传值时默认关闭。
+2. 开启后，将强制走AI搜索，当AI搜索结果为空时，由大模型回复兜底话术。
+                     * @param _forceSearchEnhancement 强制搜索增强开关。
+说明：
+1. 未传值时默认关闭。
+2. 开启后，将强制走AI搜索，当AI搜索结果为空时，由大模型回复兜底话术。
+                     * 
+                     */
+                    void SetForceSearchEnhancement(const bool& _forceSearchEnhancement);
+
+                    /**
+                     * 判断参数 ForceSearchEnhancement 是否已赋值
+                     * @return ForceSearchEnhancement 是否已赋值
+                     * 
+                     */
+                    bool ForceSearchEnhancementHasBeenSet() const;
+
+                    /**
+                     * 获取自定义结束生成字符串
+
+调用 OpenAI 的接口时，如果您指定了 `stop` 参数, 模型会停止在匹配到 `stop` 的内容之前。
+在调用混元接口时，会停止在匹配到 `stop` 的内容之后。
+
+**说明：**
+未来我们可能会修改此行为以便和 OpenAI 保持一致。
+但是目前有使用该参数的情况下，开发者需要注意该参数是否会对应用造成影响，以及未来该行为调整时带来的影响。
+                     * @return Stop 自定义结束生成字符串
+
+调用 OpenAI 的接口时，如果您指定了 `stop` 参数, 模型会停止在匹配到 `stop` 的内容之前。
+在调用混元接口时，会停止在匹配到 `stop` 的内容之后。
+
+**说明：**
+未来我们可能会修改此行为以便和 OpenAI 保持一致。
+但是目前有使用该参数的情况下，开发者需要注意该参数是否会对应用造成影响，以及未来该行为调整时带来的影响。
+                     * 
+                     */
+                    std::vector<std::string> GetStop() const;
+
+                    /**
+                     * 设置自定义结束生成字符串
+
+调用 OpenAI 的接口时，如果您指定了 `stop` 参数, 模型会停止在匹配到 `stop` 的内容之前。
+在调用混元接口时，会停止在匹配到 `stop` 的内容之后。
+
+**说明：**
+未来我们可能会修改此行为以便和 OpenAI 保持一致。
+但是目前有使用该参数的情况下，开发者需要注意该参数是否会对应用造成影响，以及未来该行为调整时带来的影响。
+                     * @param _stop 自定义结束生成字符串
+
+调用 OpenAI 的接口时，如果您指定了 `stop` 参数, 模型会停止在匹配到 `stop` 的内容之前。
+在调用混元接口时，会停止在匹配到 `stop` 的内容之后。
+
+**说明：**
+未来我们可能会修改此行为以便和 OpenAI 保持一致。
+但是目前有使用该参数的情况下，开发者需要注意该参数是否会对应用造成影响，以及未来该行为调整时带来的影响。
+                     * 
+                     */
+                    void SetStop(const std::vector<std::string>& _stop);
+
+                    /**
+                     * 判断参数 Stop 是否已赋值
+                     * @return Stop 是否已赋值
+                     * 
+                     */
+                    bool StopHasBeenSet() const;
+
+                    /**
+                     * 获取推荐问答开关。
+说明：
+1. 未传值时默认关闭。
+2. 开启后，在返回值的最后一个包中会增加 RecommendedQuestions 字段表示推荐问答， 最多返回3条。
+                     * @return EnableRecommendedQuestions 推荐问答开关。
+说明：
+1. 未传值时默认关闭。
+2. 开启后，在返回值的最后一个包中会增加 RecommendedQuestions 字段表示推荐问答， 最多返回3条。
+                     * 
+                     */
+                    bool GetEnableRecommendedQuestions() const;
+
+                    /**
+                     * 设置推荐问答开关。
+说明：
+1. 未传值时默认关闭。
+2. 开启后，在返回值的最后一个包中会增加 RecommendedQuestions 字段表示推荐问答， 最多返回3条。
+                     * @param _enableRecommendedQuestions 推荐问答开关。
+说明：
+1. 未传值时默认关闭。
+2. 开启后，在返回值的最后一个包中会增加 RecommendedQuestions 字段表示推荐问答， 最多返回3条。
+                     * 
+                     */
+                    void SetEnableRecommendedQuestions(const bool& _enableRecommendedQuestions);
+
+                    /**
+                     * 判断参数 EnableRecommendedQuestions 是否已赋值
+                     * @return EnableRecommendedQuestions 是否已赋值
+                     * 
+                     */
+                    bool EnableRecommendedQuestionsHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启深度阅读，默认是false，在值为true时，会返回深度阅读的结果信息。说明:1.深度阅读需要开启插件增强,即设置EnableEnhancement为true,当设置EnableDeepRead为true时EnableEnhancement默认为true；2.目前暂时只支持单文档单轮的深度阅读；3.深度阅读功能的文件上传可以使用FilesUploads接口，具体参数详见FilesUploads接口文档
+                     * @return EnableDeepRead 是否开启深度阅读，默认是false，在值为true时，会返回深度阅读的结果信息。说明:1.深度阅读需要开启插件增强,即设置EnableEnhancement为true,当设置EnableDeepRead为true时EnableEnhancement默认为true；2.目前暂时只支持单文档单轮的深度阅读；3.深度阅读功能的文件上传可以使用FilesUploads接口，具体参数详见FilesUploads接口文档
+                     * 
+                     */
+                    bool GetEnableDeepRead() const;
+
+                    /**
+                     * 设置是否开启深度阅读，默认是false，在值为true时，会返回深度阅读的结果信息。说明:1.深度阅读需要开启插件增强,即设置EnableEnhancement为true,当设置EnableDeepRead为true时EnableEnhancement默认为true；2.目前暂时只支持单文档单轮的深度阅读；3.深度阅读功能的文件上传可以使用FilesUploads接口，具体参数详见FilesUploads接口文档
+                     * @param _enableDeepRead 是否开启深度阅读，默认是false，在值为true时，会返回深度阅读的结果信息。说明:1.深度阅读需要开启插件增强,即设置EnableEnhancement为true,当设置EnableDeepRead为true时EnableEnhancement默认为true；2.目前暂时只支持单文档单轮的深度阅读；3.深度阅读功能的文件上传可以使用FilesUploads接口，具体参数详见FilesUploads接口文档
+                     * 
+                     */
+                    void SetEnableDeepRead(const bool& _enableDeepRead);
+
+                    /**
+                     * 判断参数 EnableDeepRead 是否已赋值
+                     * @return EnableDeepRead 是否已赋值
+                     * 
+                     */
+                    bool EnableDeepReadHasBeenSet() const;
+
+                    /**
+                     * 获取知识注入相关的参数信息
+                     * @return WebSearchOptions 知识注入相关的参数信息
+                     * 
+                     */
+                    WebSearchOptions GetWebSearchOptions() const;
+
+                    /**
+                     * 设置知识注入相关的参数信息
+                     * @param _webSearchOptions 知识注入相关的参数信息
+                     * 
+                     */
+                    void SetWebSearchOptions(const WebSearchOptions& _webSearchOptions);
+
+                    /**
+                     * 判断参数 WebSearchOptions 是否已赋值
+                     * @return WebSearchOptions 是否已赋值
+                     * 
+                     */
+                    bool WebSearchOptionsHasBeenSet() const;
+
+                    /**
+                     * 获取用户传入Topic
+                     * @return TopicChoice 用户传入Topic
+                     * 
+                     */
+                    std::string GetTopicChoice() const;
+
+                    /**
+                     * 设置用户传入Topic
+                     * @param _topicChoice 用户传入Topic
+                     * 
+                     */
+                    void SetTopicChoice(const std::string& _topicChoice);
+
+                    /**
+                     * 判断参数 TopicChoice 是否已赋值
+                     * @return TopicChoice 是否已赋值
+                     * 
+                     */
+                    bool TopicChoiceHasBeenSet() const;
+
+                    /**
+                     * 获取模型思维链开关 说明： 1. 未传值时默认开启，打开模型思维链推理能力。 2. 关闭后，关闭模型思维链推理能力。  开关当前仅对hunyuan-a13b模型生效 示例值：ture
+                     * @return EnableThinking 模型思维链开关 说明： 1. 未传值时默认开启，打开模型思维链推理能力。 2. 关闭后，关闭模型思维链推理能力。  开关当前仅对hunyuan-a13b模型生效 示例值：ture
+                     * 
+                     */
+                    bool GetEnableThinking() const;
+
+                    /**
+                     * 设置模型思维链开关 说明： 1. 未传值时默认开启，打开模型思维链推理能力。 2. 关闭后，关闭模型思维链推理能力。  开关当前仅对hunyuan-a13b模型生效 示例值：ture
+                     * @param _enableThinking 模型思维链开关 说明： 1. 未传值时默认开启，打开模型思维链推理能力。 2. 关闭后，关闭模型思维链推理能力。  开关当前仅对hunyuan-a13b模型生效 示例值：ture
+                     * 
+                     */
+                    void SetEnableThinking(const bool& _enableThinking);
+
+                    /**
+                     * 判断参数 EnableThinking 是否已赋值
+                     * @return EnableThinking 是否已赋值
+                     * 
+                     */
+                    bool EnableThinkingHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 模型名称，可选值包括 hunyuan-lite、hunyuan-standard、hunyuan-standard-256K、hunyuan-pro、 hunyuan-code、 hunyuan-role、 hunyuan-functioncall、 hunyuan-vision、 hunyuan-turbo、 hunyuan-turbo-latest、 hunyuan-large。
-各模型介绍请阅读 [产品概述](https://cloud.tencent.com/document/product/1729/104753) 中的说明。
-
-注意：
-不同的模型计费不同，请根据 [购买指南](https://cloud.tencent.com/document/product/1729/97731) 按需调用。
+                     * 模型名称，可选值参考 [产品概述](https://cloud.tencent.com/document/product/1729/104753) 中混元生文模型列表。
+示例值：hunyuan-turbos-latest
+各模型介绍请阅读 [产品概述](https://cloud.tencent.com/document/product/1729/104753) 中的说明。注意：不同的模型计费不同，请根据 [购买指南](https://cloud.tencent.com/document/product/1729/97731) 按需调用。
                      */
                     std::string m_model;
                     bool m_modelHasBeenSet;
@@ -657,25 +835,22 @@ namespace TencentCloud
                      * 功能增强（如搜索）开关。
 说明：
 1. hunyuan-lite 无功能增强（如搜索）能力，该参数对 hunyuan-lite 版本不生效。
-2. 未传值时默认打开开关。
+2. 未传值时默认关闭开关。
 3. 关闭时将直接由主模型生成回复内容，可以降低响应时延（对于流式输出时的首字时延尤为明显）。但在少数场景里，回复效果可能会下降。
 4. 安全审核能力不属于功能增强范围，不受此字段影响。
+5. 2025-04-20 00:00:00起，由默认开启状态转为默认关闭状态。
                      */
                     bool m_enableEnhancement;
                     bool m_enableEnhancementHasBeenSet;
 
                     /**
-                     * 可调用的工具列表，仅对 hunyuan-pro、hunyuan-turbo、hunyuan-functioncall 模型生效。
+                     * 可调用的工具列表，仅对 hunyuan-turbos、hunyuan-t1、hunyuan-functioncall 模型生效。
                      */
                     std::vector<Tool> m_tools;
                     bool m_toolsHasBeenSet;
 
                     /**
-                     * 工具使用选项，可选值包括 none、auto、custom。
-说明：
-1. 仅对 hunyuan-pro、hunyuan-turbo、hunyuan-functioncall 模型生效。
-2. none：不调用工具；auto：模型自行选择生成回复或调用工具；custom：强制模型调用指定的工具。
-3. 未设置时，默认值为auto
+                     * 工具使用选项，可选值包括 none、auto、custom。说明：1. 仅对 hunyuan-turbo、hunyuan-functioncall 模型生效。2. none：不调用工具；auto：模型自行选择生成回复或调用工具；custom：强制模型调用指定的工具。3. 未设置时，默认值为auto
                      */
                     std::string m_toolChoice;
                     bool m_toolChoiceHasBeenSet;
@@ -732,6 +907,61 @@ namespace TencentCloud
                      */
                     int64_t m_seed;
                     bool m_seedHasBeenSet;
+
+                    /**
+                     * 强制搜索增强开关。
+说明：
+1. 未传值时默认关闭。
+2. 开启后，将强制走AI搜索，当AI搜索结果为空时，由大模型回复兜底话术。
+                     */
+                    bool m_forceSearchEnhancement;
+                    bool m_forceSearchEnhancementHasBeenSet;
+
+                    /**
+                     * 自定义结束生成字符串
+
+调用 OpenAI 的接口时，如果您指定了 `stop` 参数, 模型会停止在匹配到 `stop` 的内容之前。
+在调用混元接口时，会停止在匹配到 `stop` 的内容之后。
+
+**说明：**
+未来我们可能会修改此行为以便和 OpenAI 保持一致。
+但是目前有使用该参数的情况下，开发者需要注意该参数是否会对应用造成影响，以及未来该行为调整时带来的影响。
+                     */
+                    std::vector<std::string> m_stop;
+                    bool m_stopHasBeenSet;
+
+                    /**
+                     * 推荐问答开关。
+说明：
+1. 未传值时默认关闭。
+2. 开启后，在返回值的最后一个包中会增加 RecommendedQuestions 字段表示推荐问答， 最多返回3条。
+                     */
+                    bool m_enableRecommendedQuestions;
+                    bool m_enableRecommendedQuestionsHasBeenSet;
+
+                    /**
+                     * 是否开启深度阅读，默认是false，在值为true时，会返回深度阅读的结果信息。说明:1.深度阅读需要开启插件增强,即设置EnableEnhancement为true,当设置EnableDeepRead为true时EnableEnhancement默认为true；2.目前暂时只支持单文档单轮的深度阅读；3.深度阅读功能的文件上传可以使用FilesUploads接口，具体参数详见FilesUploads接口文档
+                     */
+                    bool m_enableDeepRead;
+                    bool m_enableDeepReadHasBeenSet;
+
+                    /**
+                     * 知识注入相关的参数信息
+                     */
+                    WebSearchOptions m_webSearchOptions;
+                    bool m_webSearchOptionsHasBeenSet;
+
+                    /**
+                     * 用户传入Topic
+                     */
+                    std::string m_topicChoice;
+                    bool m_topicChoiceHasBeenSet;
+
+                    /**
+                     * 模型思维链开关 说明： 1. 未传值时默认开启，打开模型思维链推理能力。 2. 关闭后，关闭模型思维链推理能力。  开关当前仅对hunyuan-a13b模型生效 示例值：ture
+                     */
+                    bool m_enableThinking;
+                    bool m_enableThinkingHasBeenSet;
 
                 };
             }

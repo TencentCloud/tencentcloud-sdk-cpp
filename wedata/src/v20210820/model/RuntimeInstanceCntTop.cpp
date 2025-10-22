@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ RuntimeInstanceCntTop::RuntimeInstanceCntTop() :
     m_stateHasBeenSet(false),
     m_runTimeHasBeenSet(false),
     m_curRunTimeHasBeenSet(false),
-    m_waitScheduleTimeHasBeenSet(false)
+    m_waitScheduleTimeHasBeenSet(false),
+    m_projectIdHasBeenSet(false),
+    m_projectNameHasBeenSet(false)
 {
 }
 
@@ -117,6 +119,26 @@ CoreInternalOutcome RuntimeInstanceCntTop::Deserialize(const rapidjson::Value &v
         m_waitScheduleTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ProjectId") && !value["ProjectId"].IsNull())
+    {
+        if (!value["ProjectId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuntimeInstanceCntTop.ProjectId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_projectId = string(value["ProjectId"].GetString());
+        m_projectIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProjectName") && !value["ProjectName"].IsNull())
+    {
+        if (!value["ProjectName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuntimeInstanceCntTop.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_projectName = string(value["ProjectName"].GetString());
+        m_projectNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +208,22 @@ void RuntimeInstanceCntTop::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "WaitScheduleTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_waitScheduleTime, allocator);
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_projectName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +355,37 @@ void RuntimeInstanceCntTop::SetWaitScheduleTime(const uint64_t& _waitScheduleTim
 bool RuntimeInstanceCntTop::WaitScheduleTimeHasBeenSet() const
 {
     return m_waitScheduleTimeHasBeenSet;
+}
+
+string RuntimeInstanceCntTop::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void RuntimeInstanceCntTop::SetProjectId(const string& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool RuntimeInstanceCntTop::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
+}
+
+string RuntimeInstanceCntTop::GetProjectName() const
+{
+    return m_projectName;
+}
+
+void RuntimeInstanceCntTop::SetProjectName(const string& _projectName)
+{
+    m_projectName = _projectName;
+    m_projectNameHasBeenSet = true;
+}
+
+bool RuntimeInstanceCntTop::ProjectNameHasBeenSet() const
+{
+    return m_projectNameHasBeenSet;
 }
 

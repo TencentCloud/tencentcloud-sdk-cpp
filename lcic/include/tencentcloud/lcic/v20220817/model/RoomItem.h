@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取房间ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoomId 房间ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRoomId() const;
 
                     /**
                      * 设置房间ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _roomId 房间ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRoomId(const uint64_t& _roomId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取房间状态。0 未开始 ；1进行中  ；2 已结束；3已过期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 房间状态。0 未开始 ；1进行中  ；2 已结束；3已过期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置房间状态。0 未开始 ；1进行中  ；2 已结束；3已过期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 房间状态。0 未开始 ；1进行中  ；2 已结束；3已过期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
                      * 设置开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTime 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
                      * 设置结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实际开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealStartTime 实际开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRealStartTime() const;
 
                     /**
                      * 设置实际开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _realStartTime 实际开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRealStartTime(const uint64_t& _realStartTime);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实际结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealEndTime 实际结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRealEndTime() const;
 
                     /**
                      * 设置实际结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _realEndTime 实际结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRealEndTime(const uint64_t& _realEndTime);
@@ -222,27 +194,27 @@ namespace TencentCloud
                     bool RealEndTimeHasBeenSet() const;
 
                     /**
-                     * 获取分辨率。1 标清
+                     * 获取头像区域，摄像头视频画面的分辨率。可以有如下取值：
+1 标清
 2 高清
 3 全高清
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Resolution 分辨率。1 标清
+                     * @return Resolution 头像区域，摄像头视频画面的分辨率。可以有如下取值：
+1 标清
 2 高清
 3 全高清
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetResolution() const;
 
                     /**
-                     * 设置分辨率。1 标清
+                     * 设置头像区域，摄像头视频画面的分辨率。可以有如下取值：
+1 标清
 2 高清
 3 全高清
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _resolution 分辨率。1 标清
+                     * @param _resolution 头像区域，摄像头视频画面的分辨率。可以有如下取值：
+1 标清
 2 高清
 3 全高清
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResolution(const uint64_t& _resolution);
@@ -256,18 +228,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最大允许连麦人数。已废弃，使用字段 MaxMicNumber
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxRTCMember 最大允许连麦人数。已废弃，使用字段 MaxMicNumber
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMaxRTCMember() const;
 
                     /**
                      * 设置最大允许连麦人数。已废弃，使用字段 MaxMicNumber
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxRTCMember 最大允许连麦人数。已废弃，使用字段 MaxMicNumber
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxRTCMember(const uint64_t& _maxRTCMember);
@@ -281,18 +249,14 @@ namespace TencentCloud
 
                     /**
                      * 获取房间录制地址。已废弃，使用新字段 RecordUrl
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReplayUrl 房间录制地址。已废弃，使用新字段 RecordUrl
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReplayUrl() const;
 
                     /**
                      * 设置房间录制地址。已废弃，使用新字段 RecordUrl
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _replayUrl 房间录制地址。已废弃，使用新字段 RecordUrl
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReplayUrl(const std::string& _replayUrl);
@@ -306,18 +270,14 @@ namespace TencentCloud
 
                     /**
                      * 获取录制地址（协议为https)。仅在房间结束后存在。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordUrl 录制地址（协议为https)。仅在房间结束后存在。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRecordUrl() const;
 
                     /**
                      * 设置录制地址（协议为https)。仅在房间结束后存在。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recordUrl 录制地址（协议为https)。仅在房间结束后存在。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecordUrl(const std::string& _recordUrl);
@@ -331,18 +291,14 @@ namespace TencentCloud
 
                     /**
                      * 获取课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxMicNumber 课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMaxMicNumber() const;
 
                     /**
                      * 设置课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxMicNumber 课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxMicNumber(const uint64_t& _maxMicNumber);
@@ -356,18 +312,14 @@ namespace TencentCloud
 
                     /**
                      * 获取打开学生麦克风/摄像头的授权开关 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableDirectControl 打开学生麦克风/摄像头的授权开关 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetEnableDirectControl() const;
 
                     /**
                      * 设置打开学生麦克风/摄像头的授权开关 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableDirectControl 打开学生麦克风/摄像头的授权开关 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableDirectControl(const uint64_t& _enableDirectControl);
@@ -381,18 +333,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开启专注模式。 0 收看全部角色音视频(默认) 1 只看老师和助教
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InteractionMode 开启专注模式。 0 收看全部角色音视频(默认) 1 只看老师和助教
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInteractionMode() const;
 
                     /**
                      * 设置开启专注模式。 0 收看全部角色音视频(默认) 1 只看老师和助教
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _interactionMode 开启专注模式。 0 收看全部角色音视频(默认) 1 只看老师和助教
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInteractionMode(const int64_t& _interactionMode);
@@ -406,18 +354,14 @@ namespace TencentCloud
 
                     /**
                      * 获取横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VideoOrientation 横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetVideoOrientation() const;
 
                     /**
                      * 设置横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _videoOrientation 横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVideoOrientation(const int64_t& _videoOrientation);
@@ -431,18 +375,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开启课后评分。 0：不开启(默认)  1：开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsGradingRequiredPostClass 开启课后评分。 0：不开启(默认)  1：开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsGradingRequiredPostClass() const;
 
                     /**
                      * 设置开启课后评分。 0：不开启(默认)  1：开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isGradingRequiredPostClass 开启课后评分。 0：不开启(默认)  1：开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsGradingRequiredPostClass(const int64_t& _isGradingRequiredPostClass);
@@ -457,10 +397,8 @@ namespace TencentCloud
                     /**
                      * 获取房间类型。0:小班课（默认值）；1:大班课；2:1V1（后续扩展）
 注：大班课的布局(layout)只有三分屏
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoomType 房间类型。0:小班课（默认值）；1:大班课；2:1V1（后续扩展）
 注：大班课的布局(layout)只有三分屏
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRoomType() const;
@@ -468,10 +406,8 @@ namespace TencentCloud
                     /**
                      * 设置房间类型。0:小班课（默认值）；1:大班课；2:1V1（后续扩展）
 注：大班课的布局(layout)只有三分屏
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _roomType 房间类型。0:小班课（默认值）；1:大班课；2:1V1（后续扩展）
 注：大班课的布局(layout)只有三分屏
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRoomType(const int64_t& _roomType);
@@ -485,18 +421,14 @@ namespace TencentCloud
 
                     /**
                      * 获取拖堂时间：单位分钟，0为不限制(默认值), -1为不能拖堂，大于0为拖堂的时间，最大值120分钟
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndDelayTime 拖堂时间：单位分钟，0为不限制(默认值), -1为不能拖堂，大于0为拖堂的时间，最大值120分钟
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEndDelayTime() const;
 
                     /**
                      * 设置拖堂时间：单位分钟，0为不限制(默认值), -1为不能拖堂，大于0为拖堂的时间，最大值120分钟
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endDelayTime 拖堂时间：单位分钟，0为不限制(默认值), -1为不能拖堂，大于0为拖堂的时间，最大值120分钟
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndDelayTime(const int64_t& _endDelayTime);
@@ -510,18 +442,14 @@ namespace TencentCloud
 
                     /**
                      * 获取直播类型：0 常规（默认）1 伪直播
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LiveType 直播类型：0 常规（默认）1 伪直播
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLiveType() const;
 
                     /**
                      * 设置直播类型：0 常规（默认）1 伪直播
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _liveType 直播类型：0 常规（默认）1 伪直播
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLiveType(const uint64_t& _liveType);
@@ -535,18 +463,14 @@ namespace TencentCloud
 
                     /**
                      * 获取伪直播回放链接	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordLiveUrl 伪直播回放链接	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRecordLiveUrl() const;
 
                     /**
                      * 设置伪直播回放链接	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recordLiveUrl 伪直播回放链接	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecordLiveUrl(const std::string& _recordLiveUrl);
@@ -560,18 +484,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1的时候有效	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableAutoStart 是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1的时候有效	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetEnableAutoStart() const;
 
                     /**
                      * 设置是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1的时候有效	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableAutoStart 是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1的时候有效	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableAutoStart(const uint64_t& _enableAutoStart);
@@ -585,18 +505,14 @@ namespace TencentCloud
 
                     /**
                      * 获取录制文件背景图片，支持png、jpg、jpeg、bmp格式，暂不支持透明通道
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordBackground 录制文件背景图片，支持png、jpg、jpeg、bmp格式，暂不支持透明通道
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRecordBackground() const;
 
                     /**
                      * 设置录制文件背景图片，支持png、jpg、jpeg、bmp格式，暂不支持透明通道
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recordBackground 录制文件背景图片，支持png、jpg、jpeg、bmp格式，暂不支持透明通道
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecordBackground(const std::string& _recordBackground);
@@ -610,18 +526,14 @@ namespace TencentCloud
 
                     /**
                      * 获取录制自定义场景，仅recordlayout=9的时候此参数有效,数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordScene 录制自定义场景，仅recordlayout=9的时候此参数有效,数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRecordScene() const;
 
                     /**
                      * 设置录制自定义场景，仅recordlayout=9的时候此参数有效,数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recordScene 录制自定义场景，仅recordlayout=9的时候此参数有效,数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecordScene(const std::string& _recordScene);
@@ -654,118 +566,145 @@ namespace TencentCloud
                      */
                     bool RecordLangHasBeenSet() const;
 
+                    /**
+                     * 获取板书截图生成类型。0 不生成板书；1 全量模式；2 单页去重模式
+                     * @return WhiteBoardSnapshotMode 板书截图生成类型。0 不生成板书；1 全量模式；2 单页去重模式
+                     * 
+                     */
+                    uint64_t GetWhiteBoardSnapshotMode() const;
+
+                    /**
+                     * 设置板书截图生成类型。0 不生成板书；1 全量模式；2 单页去重模式
+                     * @param _whiteBoardSnapshotMode 板书截图生成类型。0 不生成板书；1 全量模式；2 单页去重模式
+                     * 
+                     */
+                    void SetWhiteBoardSnapshotMode(const uint64_t& _whiteBoardSnapshotMode);
+
+                    /**
+                     * 判断参数 WhiteBoardSnapshotMode 是否已赋值
+                     * @return WhiteBoardSnapshotMode 是否已赋值
+                     * 
+                     */
+                    bool WhiteBoardSnapshotModeHasBeenSet() const;
+
+                    /**
+                     * 获取字幕转写功能开关：0关闭，1开启，默认关闭
+                     * @return SubtitlesTranscription 字幕转写功能开关：0关闭，1开启，默认关闭
+                     * 
+                     */
+                    uint64_t GetSubtitlesTranscription() const;
+
+                    /**
+                     * 设置字幕转写功能开关：0关闭，1开启，默认关闭
+                     * @param _subtitlesTranscription 字幕转写功能开关：0关闭，1开启，默认关闭
+                     * 
+                     */
+                    void SetSubtitlesTranscription(const uint64_t& _subtitlesTranscription);
+
+                    /**
+                     * 判断参数 SubtitlesTranscription 是否已赋值
+                     * @return SubtitlesTranscription 是否已赋值
+                     * 
+                     */
+                    bool SubtitlesTranscriptionHasBeenSet() const;
+
                 private:
 
                     /**
                      * 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 房间ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_roomId;
                     bool m_roomIdHasBeenSet;
 
                     /**
                      * 房间状态。0 未开始 ；1进行中  ；2 已结束；3已过期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
                      * 实际开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_realStartTime;
                     bool m_realStartTimeHasBeenSet;
 
                     /**
                      * 实际结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_realEndTime;
                     bool m_realEndTimeHasBeenSet;
 
                     /**
-                     * 分辨率。1 标清
+                     * 头像区域，摄像头视频画面的分辨率。可以有如下取值：
+1 标清
 2 高清
 3 全高清
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_resolution;
                     bool m_resolutionHasBeenSet;
 
                     /**
                      * 最大允许连麦人数。已废弃，使用字段 MaxMicNumber
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxRTCMember;
                     bool m_maxRTCMemberHasBeenSet;
 
                     /**
                      * 房间录制地址。已废弃，使用新字段 RecordUrl
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_replayUrl;
                     bool m_replayUrlHasBeenSet;
 
                     /**
                      * 录制地址（协议为https)。仅在房间结束后存在。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_recordUrl;
                     bool m_recordUrlHasBeenSet;
 
                     /**
                      * 课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxMicNumber;
                     bool m_maxMicNumberHasBeenSet;
 
                     /**
                      * 打开学生麦克风/摄像头的授权开关 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_enableDirectControl;
                     bool m_enableDirectControlHasBeenSet;
 
                     /**
                      * 开启专注模式。 0 收看全部角色音视频(默认) 1 只看老师和助教
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_interactionMode;
                     bool m_interactionModeHasBeenSet;
 
                     /**
                      * 横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_videoOrientation;
                     bool m_videoOrientationHasBeenSet;
 
                     /**
                      * 开启课后评分。 0：不开启(默认)  1：开启
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isGradingRequiredPostClass;
                     bool m_isGradingRequiredPostClassHasBeenSet;
@@ -773,49 +712,42 @@ namespace TencentCloud
                     /**
                      * 房间类型。0:小班课（默认值）；1:大班课；2:1V1（后续扩展）
 注：大班课的布局(layout)只有三分屏
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_roomType;
                     bool m_roomTypeHasBeenSet;
 
                     /**
                      * 拖堂时间：单位分钟，0为不限制(默认值), -1为不能拖堂，大于0为拖堂的时间，最大值120分钟
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_endDelayTime;
                     bool m_endDelayTimeHasBeenSet;
 
                     /**
                      * 直播类型：0 常规（默认）1 伪直播
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_liveType;
                     bool m_liveTypeHasBeenSet;
 
                     /**
                      * 伪直播回放链接	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_recordLiveUrl;
                     bool m_recordLiveUrlHasBeenSet;
 
                     /**
                      * 是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1的时候有效	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_enableAutoStart;
                     bool m_enableAutoStartHasBeenSet;
 
                     /**
                      * 录制文件背景图片，支持png、jpg、jpeg、bmp格式，暂不支持透明通道
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_recordBackground;
                     bool m_recordBackgroundHasBeenSet;
 
                     /**
                      * 录制自定义场景，仅recordlayout=9的时候此参数有效,数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_recordScene;
                     bool m_recordSceneHasBeenSet;
@@ -825,6 +757,18 @@ namespace TencentCloud
                      */
                     std::string m_recordLang;
                     bool m_recordLangHasBeenSet;
+
+                    /**
+                     * 板书截图生成类型。0 不生成板书；1 全量模式；2 单页去重模式
+                     */
+                    uint64_t m_whiteBoardSnapshotMode;
+                    bool m_whiteBoardSnapshotModeHasBeenSet;
+
+                    /**
+                     * 字幕转写功能开关：0关闭，1开启，默认关闭
+                     */
+                    uint64_t m_subtitlesTranscription;
+                    bool m_subtitlesTranscriptionHasBeenSet;
 
                 };
             }

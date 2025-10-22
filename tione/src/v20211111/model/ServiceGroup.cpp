@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,13 @@ ServiceGroup::ServiceGroup() :
     m_createSourceHasBeenSet(false),
     m_weightUpdateStatusHasBeenSet(false),
     m_replicasCountHasBeenSet(false),
-    m_availableReplicasCountHasBeenSet(false)
+    m_availableReplicasCountHasBeenSet(false),
+    m_subUinHasBeenSet(false),
+    m_appIdHasBeenSet(false),
+    m_authorizationEnableHasBeenSet(false),
+    m_authTokensHasBeenSet(false),
+    m_monitorSourceHasBeenSet(false),
+    m_subUinNameHasBeenSet(false)
 {
 }
 
@@ -247,6 +253,76 @@ CoreInternalOutcome ServiceGroup::Deserialize(const rapidjson::Value &value)
         m_availableReplicasCountHasBeenSet = true;
     }
 
+    if (value.HasMember("SubUin") && !value["SubUin"].IsNull())
+    {
+        if (!value["SubUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceGroup.SubUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subUin = string(value["SubUin"].GetString());
+        m_subUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("AppId") && !value["AppId"].IsNull())
+    {
+        if (!value["AppId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceGroup.AppId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_appId = value["AppId"].GetInt64();
+        m_appIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("AuthorizationEnable") && !value["AuthorizationEnable"].IsNull())
+    {
+        if (!value["AuthorizationEnable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceGroup.AuthorizationEnable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_authorizationEnable = value["AuthorizationEnable"].GetBool();
+        m_authorizationEnableHasBeenSet = true;
+    }
+
+    if (value.HasMember("AuthTokens") && !value["AuthTokens"].IsNull())
+    {
+        if (!value["AuthTokens"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ServiceGroup.AuthTokens` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AuthTokens"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AuthToken item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_authTokens.push_back(item);
+        }
+        m_authTokensHasBeenSet = true;
+    }
+
+    if (value.HasMember("MonitorSource") && !value["MonitorSource"].IsNull())
+    {
+        if (!value["MonitorSource"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceGroup.MonitorSource` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_monitorSource = string(value["MonitorSource"].GetString());
+        m_monitorSourceHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubUinName") && !value["SubUinName"].IsNull())
+    {
+        if (!value["SubUinName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceGroup.SubUinName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subUinName = string(value["SubUinName"].GetString());
+        m_subUinNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -410,6 +486,61 @@ void ServiceGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "AvailableReplicasCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_availableReplicasCount, allocator);
+    }
+
+    if (m_subUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_appId, allocator);
+    }
+
+    if (m_authorizationEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthorizationEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_authorizationEnable, allocator);
+    }
+
+    if (m_authTokensHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthTokens";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_authTokens.begin(); itr != m_authTokens.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_monitorSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MonitorSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_monitorSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subUinNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubUinName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subUinName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -701,5 +832,101 @@ void ServiceGroup::SetAvailableReplicasCount(const uint64_t& _availableReplicasC
 bool ServiceGroup::AvailableReplicasCountHasBeenSet() const
 {
     return m_availableReplicasCountHasBeenSet;
+}
+
+string ServiceGroup::GetSubUin() const
+{
+    return m_subUin;
+}
+
+void ServiceGroup::SetSubUin(const string& _subUin)
+{
+    m_subUin = _subUin;
+    m_subUinHasBeenSet = true;
+}
+
+bool ServiceGroup::SubUinHasBeenSet() const
+{
+    return m_subUinHasBeenSet;
+}
+
+int64_t ServiceGroup::GetAppId() const
+{
+    return m_appId;
+}
+
+void ServiceGroup::SetAppId(const int64_t& _appId)
+{
+    m_appId = _appId;
+    m_appIdHasBeenSet = true;
+}
+
+bool ServiceGroup::AppIdHasBeenSet() const
+{
+    return m_appIdHasBeenSet;
+}
+
+bool ServiceGroup::GetAuthorizationEnable() const
+{
+    return m_authorizationEnable;
+}
+
+void ServiceGroup::SetAuthorizationEnable(const bool& _authorizationEnable)
+{
+    m_authorizationEnable = _authorizationEnable;
+    m_authorizationEnableHasBeenSet = true;
+}
+
+bool ServiceGroup::AuthorizationEnableHasBeenSet() const
+{
+    return m_authorizationEnableHasBeenSet;
+}
+
+vector<AuthToken> ServiceGroup::GetAuthTokens() const
+{
+    return m_authTokens;
+}
+
+void ServiceGroup::SetAuthTokens(const vector<AuthToken>& _authTokens)
+{
+    m_authTokens = _authTokens;
+    m_authTokensHasBeenSet = true;
+}
+
+bool ServiceGroup::AuthTokensHasBeenSet() const
+{
+    return m_authTokensHasBeenSet;
+}
+
+string ServiceGroup::GetMonitorSource() const
+{
+    return m_monitorSource;
+}
+
+void ServiceGroup::SetMonitorSource(const string& _monitorSource)
+{
+    m_monitorSource = _monitorSource;
+    m_monitorSourceHasBeenSet = true;
+}
+
+bool ServiceGroup::MonitorSourceHasBeenSet() const
+{
+    return m_monitorSourceHasBeenSet;
+}
+
+string ServiceGroup::GetSubUinName() const
+{
+    return m_subUinName;
+}
+
+void ServiceGroup::SetSubUinName(const string& _subUinName)
+{
+    m_subUinName = _subUinName;
+    m_subUinNameHasBeenSet = true;
+}
+
+bool ServiceGroup::SubUinNameHasBeenSet() const
+{
+    return m_subUinNameHasBeenSet;
 }
 

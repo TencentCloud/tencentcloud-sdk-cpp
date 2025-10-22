@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间。
-                     * @return EndTime 结束时间。
+                     * 获取结束时间。查询时间范围（`EndTime` - `StartTime`）需小于等于 31 天。
+                     * @return EndTime 结束时间。查询时间范围（`EndTime` - `StartTime`）需小于等于 31 天。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间。
-                     * @param _endTime 结束时间。
+                     * 设置结束时间。查询时间范围（`EndTime` - `StartTime`）需小于等于 31 天。
+                     * @param _endTime 结束时间。查询时间范围（`EndTime` - `StartTime`）需小于等于 31 天。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -87,30 +87,38 @@ namespace TencentCloud
 
                     /**
                      * 获取查询指标，取值有：
-<li>l4Flow_connections: 访问连接数；</li>
+<li>l4Flow_connections: 访问并发连接数；</li>
 <li>l4Flow_flux: 访问总流量；</li>
 <li>l4Flow_inFlux: 访问入流量；</li>
-<li>l4Flow_outFlux: 访问出流量。</li>
+<li>l4Flow_outFlux: 访问出流量；</li>
+<li>l4Flow_inBandwidth: 访问入向带宽峰值；</li>
+<li>l4Flow_outBandwidth: 访问出向带宽峰值。</li>
                      * @return MetricNames 查询指标，取值有：
-<li>l4Flow_connections: 访问连接数；</li>
+<li>l4Flow_connections: 访问并发连接数；</li>
 <li>l4Flow_flux: 访问总流量；</li>
 <li>l4Flow_inFlux: 访问入流量；</li>
-<li>l4Flow_outFlux: 访问出流量。</li>
+<li>l4Flow_outFlux: 访问出流量；</li>
+<li>l4Flow_inBandwidth: 访问入向带宽峰值；</li>
+<li>l4Flow_outBandwidth: 访问出向带宽峰值。</li>
                      * 
                      */
                     std::vector<std::string> GetMetricNames() const;
 
                     /**
                      * 设置查询指标，取值有：
-<li>l4Flow_connections: 访问连接数；</li>
+<li>l4Flow_connections: 访问并发连接数；</li>
 <li>l4Flow_flux: 访问总流量；</li>
 <li>l4Flow_inFlux: 访问入流量；</li>
-<li>l4Flow_outFlux: 访问出流量。</li>
+<li>l4Flow_outFlux: 访问出流量；</li>
+<li>l4Flow_inBandwidth: 访问入向带宽峰值；</li>
+<li>l4Flow_outBandwidth: 访问出向带宽峰值。</li>
                      * @param _metricNames 查询指标，取值有：
-<li>l4Flow_connections: 访问连接数；</li>
+<li>l4Flow_connections: 访问并发连接数；</li>
 <li>l4Flow_flux: 访问总流量；</li>
 <li>l4Flow_inFlux: 访问入流量；</li>
-<li>l4Flow_outFlux: 访问出流量。</li>
+<li>l4Flow_outFlux: 访问出流量；</li>
+<li>l4Flow_inBandwidth: 访问入向带宽峰值；</li>
+<li>l4Flow_outBandwidth: 访问出向带宽峰值。</li>
                      * 
                      */
                     void SetMetricNames(const std::vector<std::string>& _metricNames);
@@ -123,15 +131,15 @@ namespace TencentCloud
                     bool MetricNamesHasBeenSet() const;
 
                     /**
-                     * 获取站点 ID 集合，此参数必填。
-                     * @return ZoneIds 站点 ID 集合，此参数必填。
+                     * 获取站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。
+                     * @return ZoneIds 站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。
                      * 
                      */
                     std::vector<std::string> GetZoneIds() const;
 
                     /**
-                     * 设置站点 ID 集合，此参数必填。
-                     * @param _zoneIds 站点 ID 集合，此参数必填。
+                     * 设置站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。
+                     * @param _zoneIds 站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。
                      * 
                      */
                     void SetZoneIds(const std::vector<std::string>& _zoneIds);
@@ -231,27 +239,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取数据归属地区，取值有：
-<li>overseas：全球（除中国大陆地区）数据；</li>
-<li>mainland：中国大陆地区数据；</li>
-<li>global：全球数据。</li>不填默认取值为global。
-                     * @return Area 数据归属地区，取值有：
-<li>overseas：全球（除中国大陆地区）数据；</li>
-<li>mainland：中国大陆地区数据；</li>
-<li>global：全球数据。</li>不填默认取值为global。
+                     * 获取数据归属地区。该参数已废弃。请在 Filters.country 中按客户端地域过滤数据。
+                     * @return Area 数据归属地区。该参数已废弃。请在 Filters.country 中按客户端地域过滤数据。
                      * 
                      */
                     std::string GetArea() const;
 
                     /**
-                     * 设置数据归属地区，取值有：
-<li>overseas：全球（除中国大陆地区）数据；</li>
-<li>mainland：中国大陆地区数据；</li>
-<li>global：全球数据。</li>不填默认取值为global。
-                     * @param _area 数据归属地区，取值有：
-<li>overseas：全球（除中国大陆地区）数据；</li>
-<li>mainland：中国大陆地区数据；</li>
-<li>global：全球数据。</li>不填默认取值为global。
+                     * 设置数据归属地区。该参数已废弃。请在 Filters.country 中按客户端地域过滤数据。
+                     * @param _area 数据归属地区。该参数已废弃。请在 Filters.country 中按客户端地域过滤数据。
                      * 
                      */
                     void SetArea(const std::string& _area);
@@ -272,23 +268,25 @@ namespace TencentCloud
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间。
+                     * 结束时间。查询时间范围（`EndTime` - `StartTime`）需小于等于 31 天。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
                      * 查询指标，取值有：
-<li>l4Flow_connections: 访问连接数；</li>
+<li>l4Flow_connections: 访问并发连接数；</li>
 <li>l4Flow_flux: 访问总流量；</li>
 <li>l4Flow_inFlux: 访问入流量；</li>
-<li>l4Flow_outFlux: 访问出流量。</li>
+<li>l4Flow_outFlux: 访问出流量；</li>
+<li>l4Flow_inBandwidth: 访问入向带宽峰值；</li>
+<li>l4Flow_outBandwidth: 访问出向带宽峰值。</li>
                      */
                     std::vector<std::string> m_metricNames;
                     bool m_metricNamesHasBeenSet;
 
                     /**
-                     * 站点 ID 集合，此参数必填。
+                     * 站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。
                      */
                     std::vector<std::string> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;
@@ -318,10 +316,7 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 数据归属地区，取值有：
-<li>overseas：全球（除中国大陆地区）数据；</li>
-<li>mainland：中国大陆地区数据；</li>
-<li>global：全球数据。</li>不填默认取值为global。
+                     * 数据归属地区。该参数已废弃。请在 Filters.country 中按客户端地域过滤数据。
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;

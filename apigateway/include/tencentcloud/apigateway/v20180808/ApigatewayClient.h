@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,6 +45,8 @@
 #include <tencentcloud/apigateway/v20180808/model/CreateApiAppResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/CreateApiKeyRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/CreateApiKeyResponse.h>
+#include <tencentcloud/apigateway/v20180808/model/CreateExclusiveInstancesRequest.h>
+#include <tencentcloud/apigateway/v20180808/model/CreateExclusiveInstancesResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/CreateIPStrategyRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/CreateIPStrategyResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/CreatePluginRequest.h>
@@ -119,6 +121,8 @@
 #include <tencentcloud/apigateway/v20180808/model/DescribeIPStrategyApisStatusResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeIPStrategysStatusRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeIPStrategysStatusResponse.h>
+#include <tencentcloud/apigateway/v20180808/model/DescribeInstancesNetworkConfigRequest.h>
+#include <tencentcloud/apigateway/v20180808/model/DescribeInstancesNetworkConfigResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeLogSearchRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeLogSearchResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribePluginRequest.h>
@@ -264,6 +268,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateApiKeyResponse> CreateApiKeyOutcome;
                 typedef std::future<CreateApiKeyOutcome> CreateApiKeyOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::CreateApiKeyRequest&, CreateApiKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateApiKeyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateExclusiveInstancesResponse> CreateExclusiveInstancesOutcome;
+                typedef std::future<CreateExclusiveInstancesOutcome> CreateExclusiveInstancesOutcomeCallable;
+                typedef std::function<void(const ApigatewayClient*, const Model::CreateExclusiveInstancesRequest&, CreateExclusiveInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateExclusiveInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateIPStrategyResponse> CreateIPStrategyOutcome;
                 typedef std::future<CreateIPStrategyOutcome> CreateIPStrategyOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::CreateIPStrategyRequest&, CreateIPStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIPStrategyAsyncHandler;
@@ -375,6 +382,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIPStrategysStatusResponse> DescribeIPStrategysStatusOutcome;
                 typedef std::future<DescribeIPStrategysStatusOutcome> DescribeIPStrategysStatusOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::DescribeIPStrategysStatusRequest&, DescribeIPStrategysStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIPStrategysStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstancesNetworkConfigResponse> DescribeInstancesNetworkConfigOutcome;
+                typedef std::future<DescribeInstancesNetworkConfigOutcome> DescribeInstancesNetworkConfigOutcomeCallable;
+                typedef std::function<void(const ApigatewayClient*, const Model::DescribeInstancesNetworkConfigRequest&, DescribeInstancesNetworkConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesNetworkConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLogSearchResponse> DescribeLogSearchOutcome;
                 typedef std::future<DescribeLogSearchOutcome> DescribeLogSearchOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::DescribeLogSearchRequest&, DescribeLogSearchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogSearchAsyncHandler;
@@ -627,6 +637,15 @@ API 网关中每个服务都会提供一个默认的域名供用户调用，但�
                 CreateApiKeyOutcome CreateApiKey(const Model::CreateApiKeyRequest &request);
                 void CreateApiKeyAsync(const Model::CreateApiKeyRequest& request, const CreateApiKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateApiKeyOutcomeCallable CreateApiKeyCallable(const Model::CreateApiKeyRequest& request);
+
+                /**
+                 *创建专享实例
+                 * @param req CreateExclusiveInstancesRequest
+                 * @return CreateExclusiveInstancesOutcome
+                 */
+                CreateExclusiveInstancesOutcome CreateExclusiveInstances(const Model::CreateExclusiveInstancesRequest &request);
+                void CreateExclusiveInstancesAsync(const Model::CreateExclusiveInstancesRequest& request, const CreateExclusiveInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateExclusiveInstancesOutcomeCallable CreateExclusiveInstancesCallable(const Model::CreateExclusiveInstancesRequest& request);
 
                 /**
                  *本接口（CreateIPStrategy）用于创建服务IP策略。
@@ -968,6 +987,15 @@ API 网关使用的最大单元为服务，每个服务中可创建多个 API �
                 DescribeIPStrategysStatusOutcome DescribeIPStrategysStatus(const Model::DescribeIPStrategysStatusRequest &request);
                 void DescribeIPStrategysStatusAsync(const Model::DescribeIPStrategysStatusRequest& request, const DescribeIPStrategysStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeIPStrategysStatusOutcomeCallable DescribeIPStrategysStatusCallable(const Model::DescribeIPStrategysStatusRequest& request);
+
+                /**
+                 *获取专享实例网络配置列表
+                 * @param req DescribeInstancesNetworkConfigRequest
+                 * @return DescribeInstancesNetworkConfigOutcome
+                 */
+                DescribeInstancesNetworkConfigOutcome DescribeInstancesNetworkConfig(const Model::DescribeInstancesNetworkConfigRequest &request);
+                void DescribeInstancesNetworkConfigAsync(const Model::DescribeInstancesNetworkConfigRequest& request, const DescribeInstancesNetworkConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstancesNetworkConfigOutcomeCallable DescribeInstancesNetworkConfigCallable(const Model::DescribeInstancesNetworkConfigRequest& request);
 
                 /**
                  *本接口DescribeLogSearch用于搜索日志

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@
 #include <tencentcloud/tione/v20211111/model/CFSTurbo.h>
 #include <tencentcloud/tione/v20211111/model/LocalDisk.h>
 #include <tencentcloud/tione/v20211111/model/CBSConfig.h>
+#include <tencentcloud/tione/v20211111/model/HostPath.h>
 
 
 namespace TencentCloud
@@ -74,6 +75,35 @@ namespace TencentCloud
                      * 
                      */
                     bool MappingPathHasBeenSet() const;
+
+                    /**
+                     * 获取存储用途
+可选值为 BUILTIN_CODE, BUILTIN_DATA, BUILTIN_MODEL, USER_DATA, USER_CODE, USER_MODEL, OUTPUT, OTHER
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DataSourceUsage 存储用途
+可选值为 BUILTIN_CODE, BUILTIN_DATA, BUILTIN_MODEL, USER_DATA, USER_CODE, USER_MODEL, OUTPUT, OTHER
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDataSourceUsage() const;
+
+                    /**
+                     * 设置存储用途
+可选值为 BUILTIN_CODE, BUILTIN_DATA, BUILTIN_MODEL, USER_DATA, USER_CODE, USER_MODEL, OUTPUT, OTHER
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dataSourceUsage 存储用途
+可选值为 BUILTIN_CODE, BUILTIN_DATA, BUILTIN_MODEL, USER_DATA, USER_CODE, USER_MODEL, OUTPUT, OTHER
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDataSourceUsage(const std::string& _dataSourceUsage);
+
+                    /**
+                     * 判断参数 DataSourceUsage 是否已赋值
+                     * @return DataSourceUsage 是否已赋值
+                     * 
+                     */
+                    bool DataSourceUsageHasBeenSet() const;
 
                     /**
                      * 获取DATASET、COS、CFS、CFSTurbo、GooseFSx、HDFS、WEDATA_HDFS
@@ -300,6 +330,27 @@ namespace TencentCloud
                      */
                     bool CBSSourceHasBeenSet() const;
 
+                    /**
+                     * 获取主机路径信息
+                     * @return HostPathSource 主机路径信息
+                     * 
+                     */
+                    HostPath GetHostPathSource() const;
+
+                    /**
+                     * 设置主机路径信息
+                     * @param _hostPathSource 主机路径信息
+                     * 
+                     */
+                    void SetHostPathSource(const HostPath& _hostPathSource);
+
+                    /**
+                     * 判断参数 HostPathSource 是否已赋值
+                     * @return HostPathSource 是否已赋值
+                     * 
+                     */
+                    bool HostPathSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -307,6 +358,14 @@ namespace TencentCloud
                      */
                     std::string m_mappingPath;
                     bool m_mappingPathHasBeenSet;
+
+                    /**
+                     * 存储用途
+可选值为 BUILTIN_CODE, BUILTIN_DATA, BUILTIN_MODEL, USER_DATA, USER_CODE, USER_MODEL, OUTPUT, OTHER
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dataSourceUsage;
+                    bool m_dataSourceUsageHasBeenSet;
 
                     /**
                      * DATASET、COS、CFS、CFSTurbo、GooseFSx、HDFS、WEDATA_HDFS
@@ -370,6 +429,12 @@ namespace TencentCloud
                      */
                     CBSConfig m_cBSSource;
                     bool m_cBSSourceHasBeenSet;
+
+                    /**
+                     * 主机路径信息
+                     */
+                    HostPath m_hostPathSource;
+                    bool m_hostPathSourceHasBeenSet;
 
                 };
             }

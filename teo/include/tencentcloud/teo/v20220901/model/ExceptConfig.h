@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -78,18 +78,14 @@ namespace TencentCloud
 
                     /**
                      * 获取例外规则详情。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExceptUserRules 例外规则详情。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ExceptUserRule> GetExceptUserRules() const;
 
                     /**
                      * 设置例外规则详情。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _exceptUserRules 例外规则详情。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExceptUserRules(const std::vector<ExceptUserRule>& _exceptUserRules);
@@ -113,7 +109,6 @@ namespace TencentCloud
 
                     /**
                      * 例外规则详情。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ExceptUserRule> m_exceptUserRules;
                     bool m_exceptUserRulesHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Database 数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDatabase() const;
 
                     /**
                      * 设置数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _database 数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDatabase(const std::string& _database);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表名称列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tables 表名称列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetTables() const;
 
                     /**
                      * 设置表名称列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tables 表名称列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTables(const std::vector<std::string>& _tables);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_database;
                     bool m_databaseHasBeenSet;
 
                     /**
                      * 表名称列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_tables;
                     bool m_tablesHasBeenSet;

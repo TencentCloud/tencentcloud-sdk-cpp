@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,25 +46,21 @@ namespace TencentCloud
 
                     /**
                      * 获取设备激活返回数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceList 设备激活返回数据
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::vector<DeviceActiveResult> GetDeviceList() const;
 
                     /**
                      * 判断参数 DeviceList 是否已赋值
                      * @return DeviceList 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DeviceListHasBeenSet() const;
 
                     /**
                      * 获取设备激活失败返回数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailureList 设备激活失败返回数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DeviceActiveResult> GetFailureList() const;
@@ -78,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取设备激活成功返回数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuccessList 设备激活成功返回数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DeviceActiveResult> GetSuccessList() const;
@@ -96,21 +90,18 @@ namespace TencentCloud
 
                     /**
                      * 设备激活返回数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DeviceActiveResult> m_deviceList;
                     bool m_deviceListHasBeenSet;
 
                     /**
                      * 设备激活失败返回数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DeviceActiveResult> m_failureList;
                     bool m_failureListHasBeenSet;
 
                     /**
                      * 设备激活成功返回数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DeviceActiveResult> m_successList;
                     bool m_successListHasBeenSet;

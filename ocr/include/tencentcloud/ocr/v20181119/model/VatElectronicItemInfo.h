@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -403,6 +403,90 @@ namespace TencentCloud
                      */
                     bool AreaUnitHasBeenSet() const;
 
+                    /**
+                     * 获取出行人，仅旅客运输服务发票返回
+                     * @return Traveler 出行人，仅旅客运输服务发票返回
+                     * 
+                     */
+                    std::string GetTraveler() const;
+
+                    /**
+                     * 设置出行人，仅旅客运输服务发票返回
+                     * @param _traveler 出行人，仅旅客运输服务发票返回
+                     * 
+                     */
+                    void SetTraveler(const std::string& _traveler);
+
+                    /**
+                     * 判断参数 Traveler 是否已赋值
+                     * @return Traveler 是否已赋值
+                     * 
+                     */
+                    bool TravelerHasBeenSet() const;
+
+                    /**
+                     * 获取有效身份证件号，仅旅客运输服务发票返回
+                     * @return TravelerID 有效身份证件号，仅旅客运输服务发票返回
+                     * 
+                     */
+                    std::string GetTravelerID() const;
+
+                    /**
+                     * 设置有效身份证件号，仅旅客运输服务发票返回
+                     * @param _travelerID 有效身份证件号，仅旅客运输服务发票返回
+                     * 
+                     */
+                    void SetTravelerID(const std::string& _travelerID);
+
+                    /**
+                     * 判断参数 TravelerID 是否已赋值
+                     * @return TravelerID 是否已赋值
+                     * 
+                     */
+                    bool TravelerIDHasBeenSet() const;
+
+                    /**
+                     * 获取出行日期，仅旅客运输服务发票返回
+                     * @return TravelDate 出行日期，仅旅客运输服务发票返回
+                     * 
+                     */
+                    std::string GetTravelDate() const;
+
+                    /**
+                     * 设置出行日期，仅旅客运输服务发票返回
+                     * @param _travelDate 出行日期，仅旅客运输服务发票返回
+                     * 
+                     */
+                    void SetTravelDate(const std::string& _travelDate);
+
+                    /**
+                     * 判断参数 TravelDate 是否已赋值
+                     * @return TravelDate 是否已赋值
+                     * 
+                     */
+                    bool TravelDateHasBeenSet() const;
+
+                    /**
+                     * 获取等级，仅旅客运输服务发票返回
+                     * @return TravelLevel 等级，仅旅客运输服务发票返回
+                     * 
+                     */
+                    std::string GetTravelLevel() const;
+
+                    /**
+                     * 设置等级，仅旅客运输服务发票返回
+                     * @param _travelLevel 等级，仅旅客运输服务发票返回
+                     * 
+                     */
+                    void SetTravelLevel(const std::string& _travelLevel);
+
+                    /**
+                     * 判断参数 TravelLevel 是否已赋值
+                     * @return TravelLevel 是否已赋值
+                     * 
+                     */
+                    bool TravelLevelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -506,6 +590,30 @@ namespace TencentCloud
                      */
                     std::string m_areaUnit;
                     bool m_areaUnitHasBeenSet;
+
+                    /**
+                     * 出行人，仅旅客运输服务发票返回
+                     */
+                    std::string m_traveler;
+                    bool m_travelerHasBeenSet;
+
+                    /**
+                     * 有效身份证件号，仅旅客运输服务发票返回
+                     */
+                    std::string m_travelerID;
+                    bool m_travelerIDHasBeenSet;
+
+                    /**
+                     * 出行日期，仅旅客运输服务发票返回
+                     */
+                    std::string m_travelDate;
+                    bool m_travelDateHasBeenSet;
+
+                    /**
+                     * 等级，仅旅客运输服务发票返回
+                     */
+                    std::string m_travelLevel;
+                    bool m_travelLevelHasBeenSet;
 
                 };
             }

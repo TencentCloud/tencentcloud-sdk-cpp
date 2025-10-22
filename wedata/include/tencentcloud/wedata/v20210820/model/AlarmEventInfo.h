@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -685,6 +685,81 @@ namespace TencentCloud
                      */
                     bool AlarmReasonHasBeenSet() const;
 
+                    /**
+                     * 获取近范围值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IndicatorTimeRangeValue 近范围值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetIndicatorTimeRangeValue() const;
+
+                    /**
+                     * 设置近范围值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _indicatorTimeRangeValue 近范围值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIndicatorTimeRangeValue(const int64_t& _indicatorTimeRangeValue);
+
+                    /**
+                     * 判断参数 IndicatorTimeRangeValue 是否已赋值
+                     * @return IndicatorTimeRangeValue 是否已赋值
+                     * 
+                     */
+                    bool IndicatorTimeRangeValueHasBeenSet() const;
+
+                    /**
+                     * 获取近范围单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IndicatorTimeRangeUnit 近范围单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetIndicatorTimeRangeUnit() const;
+
+                    /**
+                     * 设置近范围单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _indicatorTimeRangeUnit 近范围单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIndicatorTimeRangeUnit(const std::string& _indicatorTimeRangeUnit);
+
+                    /**
+                     * 判断参数 IndicatorTimeRangeUnit 是否已赋值
+                     * @return IndicatorTimeRangeUnit 是否已赋值
+                     * 
+                     */
+                    bool IndicatorTimeRangeUnitHasBeenSet() const;
+
+                    /**
+                     * 获取同步类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SyncType 同步类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetSyncType() const;
+
+                    /**
+                     * 设置同步类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _syncType 同步类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSyncType(const int64_t& _syncType);
+
+                    /**
+                     * 判断参数 SyncType 是否已赋值
+                     * @return SyncType 是否已赋值
+                     * 
+                     */
+                    bool SyncTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -866,6 +941,27 @@ namespace TencentCloud
                      */
                     std::string m_alarmReason;
                     bool m_alarmReasonHasBeenSet;
+
+                    /**
+                     * 近范围值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_indicatorTimeRangeValue;
+                    bool m_indicatorTimeRangeValueHasBeenSet;
+
+                    /**
+                     * 近范围单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_indicatorTimeRangeUnit;
+                    bool m_indicatorTimeRangeUnitHasBeenSet;
+
+                    /**
+                     * 同步类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_syncType;
+                    bool m_syncTypeHasBeenSet;
 
                 };
             }

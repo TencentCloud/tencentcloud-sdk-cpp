@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,8 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/apm/v20210622/model/Filter.h>
 #include <tencentcloud/apm/v20210622/model/QueryMetricItem.h>
+#include <tencentcloud/apm/v20210622/model/Filter.h>
 #include <tencentcloud/apm/v20210622/model/OrderBy.h>
 
 
@@ -46,25 +46,25 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取过滤条件
-                     * @return Filters 过滤条件
+                     * 获取业务系统 ID
+                     * @return InstanceId 业务系统 ID
                      * 
                      */
-                    std::vector<Filter> GetFilters() const;
+                    std::string GetInstanceId() const;
 
                     /**
-                     * 设置过滤条件
-                     * @param _filters 过滤条件
+                     * 设置业务系统 ID
+                     * @param _instanceId 业务系统 ID
                      * 
                      */
-                    void SetFilters(const std::vector<Filter>& _filters);
+                    void SetInstanceId(const std::string& _instanceId);
 
                     /**
-                     * 判断参数 Filters 是否已赋值
-                     * @return Filters 是否已赋值
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
                      * 
                      */
-                    bool FiltersHasBeenSet() const;
+                    bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取指标列表
@@ -88,6 +88,48 @@ namespace TencentCloud
                     bool MetricsHasBeenSet() const;
 
                     /**
+                     * 获取开始时间（单位为秒）
+                     * @return StartTime 开始时间（单位为秒）
+                     * 
+                     */
+                    uint64_t GetStartTime() const;
+
+                    /**
+                     * 设置开始时间（单位为秒）
+                     * @param _startTime 开始时间（单位为秒）
+                     * 
+                     */
+                    void SetStartTime(const uint64_t& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     * 
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取结束时间（单位为秒）
+                     * @return EndTime 结束时间（单位为秒）
+                     * 
+                     */
+                    uint64_t GetEndTime() const;
+
+                    /**
+                     * 设置结束时间（单位为秒）
+                     * @param _endTime 结束时间（单位为秒）
+                     * 
+                     */
+                    void SetEndTime(const uint64_t& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     * 
+                     */
+                    bool EndTimeHasBeenSet() const;
+
+                    /**
                      * 获取聚合维度
                      * @return GroupBy 聚合维度
                      * 
@@ -109,15 +151,97 @@ namespace TencentCloud
                     bool GroupByHasBeenSet() const;
 
                     /**
+                     * 获取过滤条件
+                     * @return Filters 过滤条件
+                     * 
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置过滤条件
+                     * @param _filters 过滤条件
+                     * 
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
+
+                    /**
+                     * 获取Or 过滤条件
+                     * @return OrFilters Or 过滤条件
+                     * 
+                     */
+                    std::vector<Filter> GetOrFilters() const;
+
+                    /**
+                     * 设置Or 过滤条件
+                     * @param _orFilters Or 过滤条件
+                     * 
+                     */
+                    void SetOrFilters(const std::vector<Filter>& _orFilters);
+
+                    /**
+                     * 判断参数 OrFilters 是否已赋值
+                     * @return OrFilters 是否已赋值
+                     * 
+                     */
+                    bool OrFiltersHasBeenSet() const;
+
+                    /**
                      * 获取排序
+现支持的 Key 有：
+
+- startTime(开始时间)
+- endTime(结束时间)
+- duration(响应时间)
+
+现支持的 Value 有：
+
+- desc(降序排序)
+- asc(升序排序)
                      * @return OrderBy 排序
+现支持的 Key 有：
+
+- startTime(开始时间)
+- endTime(结束时间)
+- duration(响应时间)
+
+现支持的 Value 有：
+
+- desc(降序排序)
+- asc(升序排序)
                      * 
                      */
                     OrderBy GetOrderBy() const;
 
                     /**
                      * 设置排序
+现支持的 Key 有：
+
+- startTime(开始时间)
+- endTime(结束时间)
+- duration(响应时间)
+
+现支持的 Value 有：
+
+- desc(降序排序)
+- asc(升序排序)
                      * @param _orderBy 排序
+现支持的 Key 有：
+
+- startTime(开始时间)
+- endTime(结束时间)
+- duration(响应时间)
+
+现支持的 Value 有：
+
+- desc(降序排序)
+- asc(升序排序)
                      * 
                      */
                     void SetOrderBy(const OrderBy& _orderBy);
@@ -130,36 +254,57 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取业务名称，控制台用户请填写taw。
+                     * @return BusinessName 业务名称，控制台用户请填写taw。
                      * 
                      */
-                    std::string GetInstanceId() const;
+                    std::string GetBusinessName() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置业务名称，控制台用户请填写taw。
+                     * @param _businessName 业务名称，控制台用户请填写taw。
                      * 
                      */
-                    void SetInstanceId(const std::string& _instanceId);
+                    void SetBusinessName(const std::string& _businessName);
 
                     /**
-                     * 判断参数 InstanceId 是否已赋值
-                     * @return InstanceId 是否已赋值
+                     * 判断参数 BusinessName 是否已赋值
+                     * @return BusinessName 是否已赋值
                      * 
                      */
-                    bool InstanceIdHasBeenSet() const;
+                    bool BusinessNameHasBeenSet() const;
 
                     /**
-                     * 获取每页大小
-                     * @return Limit 每页大小
+                     * 获取特殊处理查询结果
+                     * @return Type 特殊处理查询结果
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置特殊处理查询结果
+                     * @param _type 特殊处理查询结果
+                     * 
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取每页大小，默认为1000，合法取值范围为0~1000
+                     * @return Limit 每页大小，默认为1000，合法取值范围为0~1000
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置每页大小
-                     * @param _limit 每页大小
+                     * 设置每页大小，默认为1000，合法取值范围为0~1000
+                     * @param _limit 每页大小，默认为1000，合法取值范围为0~1000
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -170,27 +315,6 @@ namespace TencentCloud
                      * 
                      */
                     bool LimitHasBeenSet() const;
-
-                    /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
-                     * 
-                     */
-                    uint64_t GetStartTime() const;
-
-                    /**
-                     * 设置开始时间
-                     * @param _startTime 开始时间
-                     * 
-                     */
-                    void SetStartTime(const uint64_t& _startTime);
-
-                    /**
-                     * 判断参数 StartTime 是否已赋值
-                     * @return StartTime 是否已赋值
-                     * 
-                     */
-                    bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取分页起始点
@@ -212,48 +336,6 @@ namespace TencentCloud
                      * 
                      */
                     bool OffsetHasBeenSet() const;
-
-                    /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
-                     * 
-                     */
-                    uint64_t GetEndTime() const;
-
-                    /**
-                     * 设置结束时间
-                     * @param _endTime 结束时间
-                     * 
-                     */
-                    void SetEndTime(const uint64_t& _endTime);
-
-                    /**
-                     * 判断参数 EndTime 是否已赋值
-                     * @return EndTime 是否已赋值
-                     * 
-                     */
-                    bool EndTimeHasBeenSet() const;
-
-                    /**
-                     * 获取业务名称（默认值：taw）
-                     * @return BusinessName 业务名称（默认值：taw）
-                     * 
-                     */
-                    std::string GetBusinessName() const;
-
-                    /**
-                     * 设置业务名称（默认值：taw）
-                     * @param _businessName 业务名称（默认值：taw）
-                     * 
-                     */
-                    void SetBusinessName(const std::string& _businessName);
-
-                    /**
-                     * 判断参数 BusinessName 是否已赋值
-                     * @return BusinessName 是否已赋值
-                     * 
-                     */
-                    bool BusinessNameHasBeenSet() const;
 
                     /**
                      * 获取页码
@@ -297,55 +379,13 @@ namespace TencentCloud
                      */
                     bool PageSizeHasBeenSet() const;
 
-                    /**
-                     * 获取Or过滤条件
-                     * @return OrFilters Or过滤条件
-                     * 
-                     */
-                    std::vector<Filter> GetOrFilters() const;
-
-                    /**
-                     * 设置Or过滤条件
-                     * @param _orFilters Or过滤条件
-                     * 
-                     */
-                    void SetOrFilters(const std::vector<Filter>& _orFilters);
-
-                    /**
-                     * 判断参数 OrFilters 是否已赋值
-                     * @return OrFilters 是否已赋值
-                     * 
-                     */
-                    bool OrFiltersHasBeenSet() const;
-
-                    /**
-                     * 获取数据来源
-                     * @return Type 数据来源
-                     * 
-                     */
-                    std::string GetType() const;
-
-                    /**
-                     * 设置数据来源
-                     * @param _type 数据来源
-                     * 
-                     */
-                    void SetType(const std::string& _type);
-
-                    /**
-                     * 判断参数 Type 是否已赋值
-                     * @return Type 是否已赋值
-                     * 
-                     */
-                    bool TypeHasBeenSet() const;
-
                 private:
 
                     /**
-                     * 过滤条件
+                     * 业务系统 ID
                      */
-                    std::vector<Filter> m_filters;
-                    bool m_filtersHasBeenSet;
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
 
                     /**
                      * 指标列表
@@ -354,52 +394,74 @@ namespace TencentCloud
                     bool m_metricsHasBeenSet;
 
                     /**
+                     * 开始时间（单位为秒）
+                     */
+                    uint64_t m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * 结束时间（单位为秒）
+                     */
+                    uint64_t m_endTime;
+                    bool m_endTimeHasBeenSet;
+
+                    /**
                      * 聚合维度
                      */
                     std::vector<std::string> m_groupBy;
                     bool m_groupByHasBeenSet;
 
                     /**
+                     * 过滤条件
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
+
+                    /**
+                     * Or 过滤条件
+                     */
+                    std::vector<Filter> m_orFilters;
+                    bool m_orFiltersHasBeenSet;
+
+                    /**
                      * 排序
+现支持的 Key 有：
+
+- startTime(开始时间)
+- endTime(结束时间)
+- duration(响应时间)
+
+现支持的 Value 有：
+
+- desc(降序排序)
+- asc(升序排序)
                      */
                     OrderBy m_orderBy;
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * 业务名称，控制台用户请填写taw。
                      */
-                    std::string m_instanceId;
-                    bool m_instanceIdHasBeenSet;
+                    std::string m_businessName;
+                    bool m_businessNameHasBeenSet;
 
                     /**
-                     * 每页大小
+                     * 特殊处理查询结果
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
+
+                    /**
+                     * 每页大小，默认为1000，合法取值范围为0~1000
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
-
-                    /**
-                     * 开始时间
-                     */
-                    uint64_t m_startTime;
-                    bool m_startTimeHasBeenSet;
 
                     /**
                      * 分页起始点
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
-
-                    /**
-                     * 结束时间
-                     */
-                    uint64_t m_endTime;
-                    bool m_endTimeHasBeenSet;
-
-                    /**
-                     * 业务名称（默认值：taw）
-                     */
-                    std::string m_businessName;
-                    bool m_businessNameHasBeenSet;
 
                     /**
                      * 页码
@@ -412,18 +474,6 @@ namespace TencentCloud
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
-
-                    /**
-                     * Or过滤条件
-                     */
-                    std::vector<Filter> m_orFilters;
-                    bool m_orFiltersHasBeenSet;
-
-                    /**
-                     * 数据来源
-                     */
-                    std::string m_type;
-                    bool m_typeHasBeenSet;
 
                 };
             }

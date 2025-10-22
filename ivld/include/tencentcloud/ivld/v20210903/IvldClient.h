@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -229,7 +229,6 @@ Bucket的格式参考为 `bucketName-123456.cos.ap-shanghai.myqcloud.com`
 输入人物名称，基本信息，分类信息与人脸图片，创建自定义人物
 
 人脸图片可使用图片数据(base64编码的图片数据)或者图片URL(推荐使用COS以减少下载时间，其他地址也支持)，原始图片优先，也即如果同时指定了图片数据和图片URL，接口将仅使用图片数据
-
                  * @param req CreateCustomPersonRequest
                  * @return CreateCustomPersonOutcome
                  */
@@ -250,7 +249,6 @@ Bucket的格式参考为 `bucketName-123456.cos.ap-shanghai.myqcloud.com`
                  *创建智能标签任务。
 
 请注意，本接口为异步接口，**返回TaskId只代表任务创建成功，不代表任务执行成功**。
-
                  * @param req CreateTaskRequest
                  * @return CreateTaskOutcome
                  */
@@ -371,8 +369,6 @@ Bucket的格式参考为 `bucketName-123456.cos.ap-shanghai.myqcloud.com`
 
                 /**
                  *批量描述自定义人物
-
-
                  * @param req DescribeCustomPersonsRequest
                  * @return DescribeCustomPersonsOutcome
                  */
@@ -408,8 +404,6 @@ Bucket的格式参考为 `bucketName-123456.cos.ap-shanghai.myqcloud.com`
                  *描述智能标签任务进度。
 
 请注意，**此接口仅返回任务执行状态信息，不返回任务执行结果**
-
-
                  * @param req DescribeTaskRequest
                  * @return DescribeTaskOutcome
                  */
@@ -465,7 +459,6 @@ URL字段推荐您使用COS地址，其形式为`https://${Bucket}-${AppId}.cos.
 另外，目前产品也支持使用外部URL地址，但是当传入URL为非COS地址时，需要您指定额外的WriteBackCosPath以供产品回写结果数据。
 
 分析完成后，本产品将在您的`${Bucket}`桶内创建名为`${ObjectKey}_${task-create-time}`的目录(`task-create-time`形式为1970-01-01T08:08:08)并将分析结果将回传回该目录，也即，结构化分析结果(包括图片，JSON等数据)将会写回`https://${Bucket}-${AppId}.cos.${Region}.myqcloud.com/${ObjectKey}_${task-create-time}`目录
-
                  * @param req ImportMediaRequest
                  * @return ImportMediaOutcome
                  */

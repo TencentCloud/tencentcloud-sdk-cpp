@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ AlterDMSPartitionRequest::AlterDMSPartitionRequest() :
     m_currentDbNameHasBeenSet(false),
     m_currentTableNameHasBeenSet(false),
     m_currentValuesHasBeenSet(false),
-    m_partitionHasBeenSet(false)
+    m_partitionHasBeenSet(false),
+    m_datasourceConnectionNameHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string AlterDMSPartitionRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_partition.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_datasourceConnectionNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceConnectionName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_datasourceConnectionName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -140,6 +149,22 @@ void AlterDMSPartitionRequest::SetPartition(const DMSPartition& _partition)
 bool AlterDMSPartitionRequest::PartitionHasBeenSet() const
 {
     return m_partitionHasBeenSet;
+}
+
+string AlterDMSPartitionRequest::GetDatasourceConnectionName() const
+{
+    return m_datasourceConnectionName;
+}
+
+void AlterDMSPartitionRequest::SetDatasourceConnectionName(const string& _datasourceConnectionName)
+{
+    m_datasourceConnectionName = _datasourceConnectionName;
+    m_datasourceConnectionNameHasBeenSet = true;
+}
+
+bool AlterDMSPartitionRequest::DatasourceConnectionNameHasBeenSet() const
+{
+    return m_datasourceConnectionNameHasBeenSet;
 }
 
 

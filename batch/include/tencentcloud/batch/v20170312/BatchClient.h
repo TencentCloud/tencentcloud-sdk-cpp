@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,6 @@
 #include <tencentcloud/batch/v20170312/model/AttachInstancesResponse.h>
 #include <tencentcloud/batch/v20170312/model/CreateComputeEnvRequest.h>
 #include <tencentcloud/batch/v20170312/model/CreateComputeEnvResponse.h>
-#include <tencentcloud/batch/v20170312/model/CreateCpmComputeEnvRequest.h>
-#include <tencentcloud/batch/v20170312/model/CreateCpmComputeEnvResponse.h>
 #include <tencentcloud/batch/v20170312/model/CreateTaskTemplateRequest.h>
 #include <tencentcloud/batch/v20170312/model/CreateTaskTemplateResponse.h>
 #include <tencentcloud/batch/v20170312/model/DeleteComputeEnvRequest.h>
@@ -49,14 +47,14 @@
 #include <tencentcloud/batch/v20170312/model/DescribeComputeEnvCreateInfosResponse.h>
 #include <tencentcloud/batch/v20170312/model/DescribeComputeEnvsRequest.h>
 #include <tencentcloud/batch/v20170312/model/DescribeComputeEnvsResponse.h>
-#include <tencentcloud/batch/v20170312/model/DescribeCpmOsInfoRequest.h>
-#include <tencentcloud/batch/v20170312/model/DescribeCpmOsInfoResponse.h>
 #include <tencentcloud/batch/v20170312/model/DescribeCvmZoneInstanceConfigInfosRequest.h>
 #include <tencentcloud/batch/v20170312/model/DescribeCvmZoneInstanceConfigInfosResponse.h>
 #include <tencentcloud/batch/v20170312/model/DescribeInstanceCategoriesRequest.h>
 #include <tencentcloud/batch/v20170312/model/DescribeInstanceCategoriesResponse.h>
 #include <tencentcloud/batch/v20170312/model/DescribeJobRequest.h>
 #include <tencentcloud/batch/v20170312/model/DescribeJobResponse.h>
+#include <tencentcloud/batch/v20170312/model/DescribeJobMonitorDataRequest.h>
+#include <tencentcloud/batch/v20170312/model/DescribeJobMonitorDataResponse.h>
 #include <tencentcloud/batch/v20170312/model/DescribeJobSubmitInfoRequest.h>
 #include <tencentcloud/batch/v20170312/model/DescribeJobSubmitInfoResponse.h>
 #include <tencentcloud/batch/v20170312/model/DescribeJobsRequest.h>
@@ -105,9 +103,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateComputeEnvResponse> CreateComputeEnvOutcome;
                 typedef std::future<CreateComputeEnvOutcome> CreateComputeEnvOutcomeCallable;
                 typedef std::function<void(const BatchClient*, const Model::CreateComputeEnvRequest&, CreateComputeEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateComputeEnvAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateCpmComputeEnvResponse> CreateCpmComputeEnvOutcome;
-                typedef std::future<CreateCpmComputeEnvOutcome> CreateCpmComputeEnvOutcomeCallable;
-                typedef std::function<void(const BatchClient*, const Model::CreateCpmComputeEnvRequest&, CreateCpmComputeEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCpmComputeEnvAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTaskTemplateResponse> CreateTaskTemplateOutcome;
                 typedef std::future<CreateTaskTemplateOutcome> CreateTaskTemplateOutcomeCallable;
                 typedef std::function<void(const BatchClient*, const Model::CreateTaskTemplateRequest&, CreateTaskTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTaskTemplateAsyncHandler;
@@ -138,9 +133,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeComputeEnvsResponse> DescribeComputeEnvsOutcome;
                 typedef std::future<DescribeComputeEnvsOutcome> DescribeComputeEnvsOutcomeCallable;
                 typedef std::function<void(const BatchClient*, const Model::DescribeComputeEnvsRequest&, DescribeComputeEnvsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeComputeEnvsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeCpmOsInfoResponse> DescribeCpmOsInfoOutcome;
-                typedef std::future<DescribeCpmOsInfoOutcome> DescribeCpmOsInfoOutcomeCallable;
-                typedef std::function<void(const BatchClient*, const Model::DescribeCpmOsInfoRequest&, DescribeCpmOsInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCpmOsInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCvmZoneInstanceConfigInfosResponse> DescribeCvmZoneInstanceConfigInfosOutcome;
                 typedef std::future<DescribeCvmZoneInstanceConfigInfosOutcome> DescribeCvmZoneInstanceConfigInfosOutcomeCallable;
                 typedef std::function<void(const BatchClient*, const Model::DescribeCvmZoneInstanceConfigInfosRequest&, DescribeCvmZoneInstanceConfigInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCvmZoneInstanceConfigInfosAsyncHandler;
@@ -150,6 +142,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeJobResponse> DescribeJobOutcome;
                 typedef std::future<DescribeJobOutcome> DescribeJobOutcomeCallable;
                 typedef std::function<void(const BatchClient*, const Model::DescribeJobRequest&, DescribeJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeJobMonitorDataResponse> DescribeJobMonitorDataOutcome;
+                typedef std::future<DescribeJobMonitorDataOutcome> DescribeJobMonitorDataOutcomeCallable;
+                typedef std::function<void(const BatchClient*, const Model::DescribeJobMonitorDataRequest&, DescribeJobMonitorDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobMonitorDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeJobSubmitInfoResponse> DescribeJobSubmitInfoOutcome;
                 typedef std::future<DescribeJobSubmitInfoOutcome> DescribeJobSubmitInfoOutcomeCallable;
                 typedef std::function<void(const BatchClient*, const Model::DescribeJobSubmitInfoRequest&, DescribeJobSubmitInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobSubmitInfoAsyncHandler;
@@ -218,15 +213,6 @@ namespace TencentCloud
                 CreateComputeEnvOutcome CreateComputeEnv(const Model::CreateComputeEnvRequest &request);
                 void CreateComputeEnvAsync(const Model::CreateComputeEnvRequest& request, const CreateComputeEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateComputeEnvOutcomeCallable CreateComputeEnvCallable(const Model::CreateComputeEnvRequest& request);
-
-                /**
-                 *创建黑石计算环境
-                 * @param req CreateCpmComputeEnvRequest
-                 * @return CreateCpmComputeEnvOutcome
-                 */
-                CreateCpmComputeEnvOutcome CreateCpmComputeEnv(const Model::CreateCpmComputeEnvRequest &request);
-                void CreateCpmComputeEnvAsync(const Model::CreateCpmComputeEnvRequest& request, const CreateCpmComputeEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateCpmComputeEnvOutcomeCallable CreateCpmComputeEnvCallable(const Model::CreateCpmComputeEnvRequest& request);
 
                 /**
                  *用于创建任务模板
@@ -321,15 +307,6 @@ namespace TencentCloud
                 DescribeComputeEnvsOutcomeCallable DescribeComputeEnvsCallable(const Model::DescribeComputeEnvsRequest& request);
 
                 /**
-                 *创建黑石计算环境时，查询批量计算环境支持的黑石操作系统信息
-                 * @param req DescribeCpmOsInfoRequest
-                 * @return DescribeCpmOsInfoOutcome
-                 */
-                DescribeCpmOsInfoOutcome DescribeCpmOsInfo(const Model::DescribeCpmOsInfoRequest &request);
-                void DescribeCpmOsInfoAsync(const Model::DescribeCpmOsInfoRequest& request, const DescribeCpmOsInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeCpmOsInfoOutcomeCallable DescribeCpmOsInfoCallable(const Model::DescribeCpmOsInfoRequest& request);
-
-                /**
                  *获取批量计算可用区机型配置信息
                  * @param req DescribeCvmZoneInstanceConfigInfosRequest
                  * @return DescribeCvmZoneInstanceConfigInfosOutcome
@@ -355,6 +332,15 @@ namespace TencentCloud
                 DescribeJobOutcome DescribeJob(const Model::DescribeJobRequest &request);
                 void DescribeJobAsync(const Model::DescribeJobRequest& request, const DescribeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeJobOutcomeCallable DescribeJobCallable(const Model::DescribeJobRequest& request);
+
+                /**
+                 *查询作业任务实例的资源使用监控信息。当前只支持查询弹性节点任务并且Job未删除；暂不支持计算环境类任务；该接口只支持查询作业实例时间范围之内的资源使用情况。
+                 * @param req DescribeJobMonitorDataRequest
+                 * @return DescribeJobMonitorDataOutcome
+                 */
+                DescribeJobMonitorDataOutcome DescribeJobMonitorData(const Model::DescribeJobMonitorDataRequest &request);
+                void DescribeJobMonitorDataAsync(const Model::DescribeJobMonitorDataRequest& request, const DescribeJobMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeJobMonitorDataOutcomeCallable DescribeJobMonitorDataCallable(const Model::DescribeJobMonitorDataRequest& request);
 
                 /**
                  *用于查询指定作业的提交信息，其返回内容包括 JobId 和 SubmitJob 接口中作为输入参数的作业提交信息
@@ -430,7 +416,7 @@ namespace TencentCloud
 
                 /**
                  *用于重试作业中失败的任务实例。
-当且仅当作业处于“FAILED”状态，支持重试操作。重试操作成功后，作业会按照“DAG”中指定的任务依赖关系，依次重试各个任务中失败的任务实例。任务实例的历史信息将被重置，如同首次运行一样，参与后续的调度和执行。
+仅当作业处于“FAILED”状态，支持重试操作。重试操作成功后，作业会按照有向无环图中指定的任务依赖关系，依次重试各个任务中失败的任务实例。任务实例的历史信息将被重置，如同首次运行一样，参与后续的调度和执行。
                  * @param req RetryJobsRequest
                  * @return RetryJobsOutcome
                  */
@@ -469,7 +455,7 @@ namespace TencentCloud
                 /**
                  *用于终止作业。
 当作业处于“SUBMITTED”状态时，禁止终止操作；当作业处于“SUCCEED”状态时，终止操作不会生效。
-终止作业是一个异步过程。整个终止过程的耗时和任务总数成正比。终止的效果相当于所含的所有任务实例进行TerminateTaskInstance操作。具体效果和用法可参考TerminateTaskInstance。
+终止作业是一个异步过程。整个终止过程的耗时和任务总数成正比。终止的效果相当于所含的所有任务实例进行[TerminateTaskInstance](https://cloud.tencent.com/document/product/599/15908)操作。具体效果和用法可参考[TerminateTaskInstance](https://cloud.tencent.com/document/product/599/15908)。
                  * @param req TerminateJobRequest
                  * @return TerminateJobOutcome
                  */
@@ -481,7 +467,7 @@ namespace TencentCloud
                  *用于终止任务实例。
 对于状态已经为“SUCCEED”和“FAILED”的任务实例，不做处理。
 对于状态为“SUBMITTED”、“PENDING”、“RUNNABLE”的任务实例，状态将置为“FAILED”状态。
-对于状态为“STARTING”、“RUNNING”、“FAILED_INTERRUPTED”的任务实例，分区两种情况：如果未显示指定计算环境，会先销毁CVM服务器，然后将状态置为“FAILED”，具有一定耗时；如果指定了计算环境EnvId，任务实例状态置为“FAILED”，并重启执行该任务的CVM服务器，具有一定的耗时。
+对于状态为“STARTING”、“RUNNING”、“FAILED_INTERRUPTED”的任务实例，区分两种情况：如果未显示指定计算环境，会先销毁CVM服务器，然后将状态置为“FAILED”，具有一定耗时；如果指定了计算环境EnvId，任务实例状态置为“FAILED”，并重启执行该任务的CVM服务器，具有一定的耗时。
 对于状态为“FAILED_INTERRUPTED”的任务实例，终止操作实际成功之后，相关资源和配额才会释放。
                  * @param req TerminateTaskInstanceRequest
                  * @return TerminateTaskInstanceOutcome

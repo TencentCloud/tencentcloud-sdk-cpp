@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -101,18 +101,18 @@ off：关闭
                     bool AccessKeyHasBeenSet() const;
 
                     /**
-                     * 获取密钥。
+                     * 获取密钥，字段位脱敏返回。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SecretKey 密钥。
+                     * @return SecretKey 密钥，字段位脱敏返回。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSecretKey() const;
 
                     /**
-                     * 设置密钥。
+                     * 设置密钥，字段位脱敏返回。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _secretKey 密钥。
+                     * @param _secretKey 密钥，字段位脱敏返回。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -193,7 +193,7 @@ off：关闭
                     bool m_accessKeyHasBeenSet;
 
                     /**
-                     * 密钥。
+                     * 密钥，字段位脱敏返回。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_secretKey;

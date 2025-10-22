@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -113,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否创建新的cos桶，默认为False。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateNewCos 是否创建新的cos桶，默认为False。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetCreateNewCos() const;
 
                     /**
                      * 设置是否创建新的cos桶，默认为False。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createNewCos 是否创建新的cos桶，默认为False。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateNewCos(const bool& _createNewCos);
@@ -201,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时间备份策略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupPolicies 时间备份策略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BackupPolicy> GetBackupPolicies() const;
 
                     /**
                      * 设置时间备份策略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _backupPolicies 时间备份策略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBackupPolicies(const std::vector<BackupPolicy>& _backupPolicies);
@@ -247,18 +239,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -272,18 +260,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签键值对。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagSet 标签键值对。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTagSet() const;
 
                     /**
                      * 设置标签键值对。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tagSet 标签键值对。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTagSet(const std::vector<Tag>& _tagSet);
@@ -317,7 +301,6 @@ namespace TencentCloud
 
                     /**
                      * 是否创建新的cos桶，默认为False。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_createNewCos;
                     bool m_createNewCosHasBeenSet;
@@ -342,7 +325,6 @@ namespace TencentCloud
 
                     /**
                      * 时间备份策略。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BackupPolicy> m_backupPolicies;
                     bool m_backupPoliciesHasBeenSet;
@@ -355,14 +337,12 @@ namespace TencentCloud
 
                     /**
                      * 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 标签键值对。	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tagSet;
                     bool m_tagSetHasBeenSet;

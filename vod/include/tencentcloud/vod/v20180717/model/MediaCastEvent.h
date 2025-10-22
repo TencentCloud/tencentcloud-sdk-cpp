@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,13 +73,11 @@ namespace TencentCloud
 <li>Scheduled ：等待定时时间到达后启动；</li>
 <li>Stopped ：已经停止转推；</li>
 <li>Idle ：空闲。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 转推状态，取值有：
 <li>Working ：运行中；</li>
 <li>Scheduled ：等待定时时间到达后启动；</li>
 <li>Stopped ：已经停止转推；</li>
 <li>Idle ：空闲。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
@@ -90,13 +88,11 @@ namespace TencentCloud
 <li>Scheduled ：等待定时时间到达后启动；</li>
 <li>Stopped ：已经停止转推；</li>
 <li>Idle ：空闲。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 转推状态，取值有：
 <li>Working ：运行中；</li>
 <li>Scheduled ：等待定时时间到达后启动；</li>
 <li>Stopped ：已经停止转推；</li>
 <li>Idle ：空闲。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -122,7 +118,6 @@ namespace TencentCloud
 <li>Scheduled ：等待定时时间到达后启动；</li>
 <li>Stopped ：已经停止转推；</li>
 <li>Idle ：空闲。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

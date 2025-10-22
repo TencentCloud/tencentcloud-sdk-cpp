@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取工作空间ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WorkspaceId 工作空间ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWorkspaceId() const;
 
                     /**
                      * 设置工作空间ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _workspaceId 工作空间ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWorkspaceId(const std::string& _workspaceId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取工作空间名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WorkspaceName 工作空间名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWorkspaceName() const;
 
                     /**
                      * 设置工作空间名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _workspaceName 工作空间名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWorkspaceName(const std::string& _workspaceName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取楼栋数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BuildingCount 楼栋数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetBuildingCount() const;
 
                     /**
                      * 设置楼栋数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _buildingCount 楼栋数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBuildingCount(const uint64_t& _buildingCount);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取建筑面积
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BuildingArea 建筑面积
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetBuildingArea() const;
 
                     /**
                      * 设置建筑面积
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _buildingArea 建筑面积
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBuildingArea(const double& _buildingArea);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 工作空间ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_workspaceId;
                     bool m_workspaceIdHasBeenSet;
 
                     /**
                      * 工作空间名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_workspaceName;
                     bool m_workspaceNameHasBeenSet;
 
                     /**
                      * 楼栋数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_buildingCount;
                     bool m_buildingCountHasBeenSet;
 
                     /**
                      * 建筑面积
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_buildingArea;
                     bool m_buildingAreaHasBeenSet;

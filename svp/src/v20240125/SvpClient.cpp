@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,6 +76,49 @@ SvpClient::CreateSavingPlanOrderOutcomeCallable SvpClient::CreateSavingPlanOrder
         [this, request]()
         {
             return this->CreateSavingPlanOrder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SvpClient::DescribeSavingPlanCoverageOutcome SvpClient::DescribeSavingPlanCoverage(const DescribeSavingPlanCoverageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSavingPlanCoverage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSavingPlanCoverageResponse rsp = DescribeSavingPlanCoverageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSavingPlanCoverageOutcome(rsp);
+        else
+            return DescribeSavingPlanCoverageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSavingPlanCoverageOutcome(outcome.GetError());
+    }
+}
+
+void SvpClient::DescribeSavingPlanCoverageAsync(const DescribeSavingPlanCoverageRequest& request, const DescribeSavingPlanCoverageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSavingPlanCoverage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SvpClient::DescribeSavingPlanCoverageOutcomeCallable SvpClient::DescribeSavingPlanCoverageCallable(const DescribeSavingPlanCoverageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSavingPlanCoverageOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSavingPlanCoverage(request);
         }
     );
 

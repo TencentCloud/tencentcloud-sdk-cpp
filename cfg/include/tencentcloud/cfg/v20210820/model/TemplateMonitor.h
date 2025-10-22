@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监控指标ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetricId 监控指标ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMetricId() const;
 
                     /**
                      * 设置监控指标ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _metricId 监控指标ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMetricId(const int64_t& _metricId);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取中文指标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetricChineseName 中文指标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMetricChineseName() const;
 
                     /**
                      * 设置中文指标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _metricChineseName 中文指标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMetricChineseName(const std::string& _metricChineseName);
@@ -169,7 +161,6 @@ namespace TencentCloud
 
                     /**
                      * 监控指标ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_metricId;
                     bool m_metricIdHasBeenSet;
@@ -188,7 +179,6 @@ namespace TencentCloud
 
                     /**
                      * 中文指标
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_metricChineseName;
                     bool m_metricChineseNameHasBeenSet;

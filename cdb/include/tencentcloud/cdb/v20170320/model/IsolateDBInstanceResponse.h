@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,17 +45,15 @@ namespace TencentCloud
 
                     /**
                      * 获取异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。(该返回字段目前已废弃，可以通过 DescribeDBInstances 接口查询实例的隔离状态)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AsyncRequestId 异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。(该返回字段目前已废弃，可以通过 DescribeDBInstances 接口查询实例的隔离状态)
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetAsyncRequestId() const;
 
                     /**
                      * 判断参数 AsyncRequestId 是否已赋值
                      * @return AsyncRequestId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AsyncRequestIdHasBeenSet() const;
 
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。(该返回字段目前已废弃，可以通过 DescribeDBInstances 接口查询实例的隔离状态)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_asyncRequestId;
                     bool m_asyncRequestIdHasBeenSet;

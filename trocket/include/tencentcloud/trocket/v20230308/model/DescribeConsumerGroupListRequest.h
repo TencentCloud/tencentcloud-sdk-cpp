@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return InstanceId 集群ID
+                     * 获取腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。
+                     * @return InstanceId 腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _instanceId 集群ID
+                     * 设置腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。
+                     * @param _instanceId 腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取查询条件列表
-                     * @return Filters 查询条件列表
+                     * 获取过滤查询条件列表，请在引用此参数的API说明中了解使用方法。
+                     * @return Filters 过滤查询条件列表，请在引用此参数的API说明中了解使用方法。
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置查询条件列表
-                     * @param _filters 查询条件列表
+                     * 设置过滤查询条件列表，请在引用此参数的API说明中了解使用方法。
+                     * @param _filters 过滤查询条件列表，请在引用此参数的API说明中了解使用方法。
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取查询起始位置
-                     * @return Offset 查询起始位置
+                     * 获取查询起始位置，默认为0。
+                     * @return Offset 查询起始位置，默认为0。
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置查询起始位置
-                     * @param _offset 查询起始位置
+                     * 设置查询起始位置，默认为0。
+                     * @param _offset 查询起始位置，默认为0。
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取查询结果限制数量
-                     * @return Limit 查询结果限制数量
+                     * 获取查询结果限制数量，默认20。
+                     * @return Limit 查询结果限制数量，默认20。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置查询结果限制数量
-                     * @param _limit 查询结果限制数量
+                     * 设置查询结果限制数量，默认20。
+                     * @param _limit 查询结果限制数量，默认20。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -148,28 +148,86 @@ namespace TencentCloud
                      */
                     bool FromTopicHasBeenSet() const;
 
+                    /**
+                     * 获取按照指定字段排序，枚举值如下：
+- subscribeNum：订阅 Topic 个数
+                     * @return SortedBy 按照指定字段排序，枚举值如下：
+- subscribeNum：订阅 Topic 个数
+                     * 
+                     */
+                    std::string GetSortedBy() const;
+
+                    /**
+                     * 设置按照指定字段排序，枚举值如下：
+- subscribeNum：订阅 Topic 个数
+                     * @param _sortedBy 按照指定字段排序，枚举值如下：
+- subscribeNum：订阅 Topic 个数
+                     * 
+                     */
+                    void SetSortedBy(const std::string& _sortedBy);
+
+                    /**
+                     * 判断参数 SortedBy 是否已赋值
+                     * @return SortedBy 是否已赋值
+                     * 
+                     */
+                    bool SortedByHasBeenSet() const;
+
+                    /**
+                     * 获取按升序或降序排列，枚举值如下：
+
+- asc：升序
+- desc：降序
+                     * @return SortOrder 按升序或降序排列，枚举值如下：
+
+- asc：升序
+- desc：降序
+                     * 
+                     */
+                    std::string GetSortOrder() const;
+
+                    /**
+                     * 设置按升序或降序排列，枚举值如下：
+
+- asc：升序
+- desc：降序
+                     * @param _sortOrder 按升序或降序排列，枚举值如下：
+
+- asc：升序
+- desc：降序
+                     * 
+                     */
+                    void SetSortOrder(const std::string& _sortOrder);
+
+                    /**
+                     * 判断参数 SortOrder 是否已赋值
+                     * @return SortOrder 是否已赋值
+                     * 
+                     */
+                    bool SortOrderHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 集群ID
+                     * 腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 查询条件列表
+                     * 过滤查询条件列表，请在引用此参数的API说明中了解使用方法。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 查询起始位置
+                     * 查询起始位置，默认为0。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 查询结果限制数量
+                     * 查询结果限制数量，默认20。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -179,6 +237,22 @@ namespace TencentCloud
                      */
                     std::string m_fromTopic;
                     bool m_fromTopicHasBeenSet;
+
+                    /**
+                     * 按照指定字段排序，枚举值如下：
+- subscribeNum：订阅 Topic 个数
+                     */
+                    std::string m_sortedBy;
+                    bool m_sortedByHasBeenSet;
+
+                    /**
+                     * 按升序或降序排列，枚举值如下：
+
+- asc：升序
+- desc：降序
+                     */
+                    std::string m_sortOrder;
+                    bool m_sortOrderHasBeenSet;
 
                 };
             }

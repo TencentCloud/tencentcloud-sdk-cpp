@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,7 +62,9 @@ Disk::Disk() :
     m_instanceTypeHasBeenSet(false),
     m_lastAttachInsIdHasBeenSet(false),
     m_errorPromptHasBeenSet(false),
-    m_burstPerformanceHasBeenSet(false)
+    m_burstPerformanceHasBeenSet(false),
+    m_encryptTypeHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -514,6 +516,26 @@ CoreInternalOutcome Disk::Deserialize(const rapidjson::Value &value)
         m_burstPerformanceHasBeenSet = true;
     }
 
+    if (value.HasMember("EncryptType") && !value["EncryptType"].IsNull())
+    {
+        if (!value["EncryptType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Disk.EncryptType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_encryptType = string(value["EncryptType"].GetString());
+        m_encryptTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("KmsKeyId") && !value["KmsKeyId"].IsNull())
+    {
+        if (!value["KmsKeyId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Disk.KmsKeyId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kmsKeyId = string(value["KmsKeyId"].GetString());
+        m_kmsKeyIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -873,6 +895,22 @@ void Disk::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "BurstPerformance";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_burstPerformance, allocator);
+    }
+
+    if (m_encryptTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_encryptType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kmsKeyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KmsKeyId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kmsKeyId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1548,5 +1586,37 @@ void Disk::SetBurstPerformance(const bool& _burstPerformance)
 bool Disk::BurstPerformanceHasBeenSet() const
 {
     return m_burstPerformanceHasBeenSet;
+}
+
+string Disk::GetEncryptType() const
+{
+    return m_encryptType;
+}
+
+void Disk::SetEncryptType(const string& _encryptType)
+{
+    m_encryptType = _encryptType;
+    m_encryptTypeHasBeenSet = true;
+}
+
+bool Disk::EncryptTypeHasBeenSet() const
+{
+    return m_encryptTypeHasBeenSet;
+}
+
+string Disk::GetKmsKeyId() const
+{
+    return m_kmsKeyId;
+}
+
+void Disk::SetKmsKeyId(const string& _kmsKeyId)
+{
+    m_kmsKeyId = _kmsKeyId;
+    m_kmsKeyIdHasBeenSet = true;
+}
+
+bool Disk::KmsKeyIdHasBeenSet() const
+{
+    return m_kmsKeyIdHasBeenSet;
 }
 

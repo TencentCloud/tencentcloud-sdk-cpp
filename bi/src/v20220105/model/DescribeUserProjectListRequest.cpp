@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,10 @@ DescribeUserProjectListRequest::DescribeUserProjectListRequest() :
     m_projectIdHasBeenSet(false),
     m_allPageHasBeenSet(false),
     m_pageNoHasBeenSet(false),
-    m_pageSizeHasBeenSet(false)
+    m_pageSizeHasBeenSet(false),
+    m_isFilterPerAuthUserHasBeenSet(false),
+    m_isFilterCurrentUserHasBeenSet(false),
+    m_keywordHasBeenSet(false)
 {
 }
 
@@ -67,6 +70,30 @@ string DescribeUserProjectListRequest::ToJsonString() const
         string key = "PageSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pageSize, allocator);
+    }
+
+    if (m_isFilterPerAuthUserHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsFilterPerAuthUser";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isFilterPerAuthUser, allocator);
+    }
+
+    if (m_isFilterCurrentUserHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsFilterCurrentUser";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isFilterCurrentUser, allocator);
+    }
+
+    if (m_keywordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Keyword";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_keyword.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +166,54 @@ void DescribeUserProjectListRequest::SetPageSize(const int64_t& _pageSize)
 bool DescribeUserProjectListRequest::PageSizeHasBeenSet() const
 {
     return m_pageSizeHasBeenSet;
+}
+
+bool DescribeUserProjectListRequest::GetIsFilterPerAuthUser() const
+{
+    return m_isFilterPerAuthUser;
+}
+
+void DescribeUserProjectListRequest::SetIsFilterPerAuthUser(const bool& _isFilterPerAuthUser)
+{
+    m_isFilterPerAuthUser = _isFilterPerAuthUser;
+    m_isFilterPerAuthUserHasBeenSet = true;
+}
+
+bool DescribeUserProjectListRequest::IsFilterPerAuthUserHasBeenSet() const
+{
+    return m_isFilterPerAuthUserHasBeenSet;
+}
+
+bool DescribeUserProjectListRequest::GetIsFilterCurrentUser() const
+{
+    return m_isFilterCurrentUser;
+}
+
+void DescribeUserProjectListRequest::SetIsFilterCurrentUser(const bool& _isFilterCurrentUser)
+{
+    m_isFilterCurrentUser = _isFilterCurrentUser;
+    m_isFilterCurrentUserHasBeenSet = true;
+}
+
+bool DescribeUserProjectListRequest::IsFilterCurrentUserHasBeenSet() const
+{
+    return m_isFilterCurrentUserHasBeenSet;
+}
+
+string DescribeUserProjectListRequest::GetKeyword() const
+{
+    return m_keyword;
+}
+
+void DescribeUserProjectListRequest::SetKeyword(const string& _keyword)
+{
+    m_keyword = _keyword;
+    m_keywordHasBeenSet = true;
+}
+
+bool DescribeUserProjectListRequest::KeywordHasBeenSet() const
+{
+    return m_keywordHasBeenSet;
 }
 
 

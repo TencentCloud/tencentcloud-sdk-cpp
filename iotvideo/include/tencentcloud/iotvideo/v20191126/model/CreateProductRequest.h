@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -182,14 +182,12 @@ China-Mainland（中国大陆）
 China-Hong Kong, Macao and Taiwan（港澳台地区）
 America（美国）
 Europe（欧洲）
-India（印度）
 Other-Overseas（其他境外地区）
                      * @return ProductRegion 地域：
 China-Mainland（中国大陆）
 China-Hong Kong, Macao and Taiwan（港澳台地区）
 America（美国）
 Europe（欧洲）
-India（印度）
 Other-Overseas（其他境外地区）
                      * 
                      */
@@ -201,14 +199,12 @@ China-Mainland（中国大陆）
 China-Hong Kong, Macao and Taiwan（港澳台地区）
 America（美国）
 Europe（欧洲）
-India（印度）
 Other-Overseas（其他境外地区）
                      * @param _productRegion 地域：
 China-Mainland（中国大陆）
 China-Hong Kong, Macao and Taiwan（港澳台地区）
 America（美国）
 Europe（欧洲）
-India（印度）
 Other-Overseas（其他境外地区）
                      * 
                      */
@@ -351,7 +347,6 @@ China-Mainland（中国大陆）
 China-Hong Kong, Macao and Taiwan（港澳台地区）
 America（美国）
 Europe（欧洲）
-India（印度）
 Other-Overseas（其他境外地区）
                      */
                     std::string m_productRegion;

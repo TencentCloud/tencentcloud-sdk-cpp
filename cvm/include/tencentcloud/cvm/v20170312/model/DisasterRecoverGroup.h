@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cvm/v20170312/model/Tag.h>
 
 
 namespace TencentCloud
@@ -165,18 +166,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分散置放群组内，云服务器id列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceIds 分散置放群组内，云服务器id列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置分散置放群组内，云服务器id列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceIds 分散置放群组内，云服务器id列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -189,19 +186,15 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取分散置放群组创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 分散置放群组创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取分散置放群组创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+                     * @return CreateTime 分散置放群组创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置分散置放群组创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTime 分散置放群组创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置分散置放群组创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+                     * @param _createTime 分散置放群组创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -212,6 +205,48 @@ namespace TencentCloud
                      * 
                      */
                     bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取置放群组亲和度
+                     * @return Affinity 置放群组亲和度
+                     * 
+                     */
+                    int64_t GetAffinity() const;
+
+                    /**
+                     * 设置置放群组亲和度
+                     * @param _affinity 置放群组亲和度
+                     * 
+                     */
+                    void SetAffinity(const int64_t& _affinity);
+
+                    /**
+                     * 判断参数 Affinity 是否已赋值
+                     * @return Affinity 是否已赋值
+                     * 
+                     */
+                    bool AffinityHasBeenSet() const;
+
+                    /**
+                     * 获取置放群组关联的标签列表。
+                     * @return Tags 置放群组关联的标签列表。
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置置放群组关联的标签列表。
+                     * @param _tags 置放群组关联的标签列表。
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
 
                 private:
 
@@ -250,17 +285,27 @@ namespace TencentCloud
 
                     /**
                      * 分散置放群组内，云服务器id列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 分散置放群组创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 分散置放群组创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 置放群组亲和度
+                     */
+                    int64_t m_affinity;
+                    bool m_affinityHasBeenSet;
+
+                    /**
+                     * 置放群组关联的标签列表。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

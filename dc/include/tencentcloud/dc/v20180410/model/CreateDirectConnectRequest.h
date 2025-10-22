@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,18 +66,18 @@ namespace TencentCloud
 
                     /**
                      * 获取物理专线所在的接入点。
-您可以通过调用 DescribeAccessPoints接口获取地域ID。所选择的接入点必须存在且处于可接入的状态。
+您可以通过调用[DescribeAccessPoints](https://cloud.tencent.com/document/product/216/34827)接口获取接入点ID。
                      * @return AccessPointId 物理专线所在的接入点。
-您可以通过调用 DescribeAccessPoints接口获取地域ID。所选择的接入点必须存在且处于可接入的状态。
+您可以通过调用[DescribeAccessPoints](https://cloud.tencent.com/document/product/216/34827)接口获取接入点ID。
                      * 
                      */
                     std::string GetAccessPointId() const;
 
                     /**
                      * 设置物理专线所在的接入点。
-您可以通过调用 DescribeAccessPoints接口获取地域ID。所选择的接入点必须存在且处于可接入的状态。
+您可以通过调用[DescribeAccessPoints](https://cloud.tencent.com/document/product/216/34827)接口获取接入点ID。
                      * @param _accessPointId 物理专线所在的接入点。
-您可以通过调用 DescribeAccessPoints接口获取地域ID。所选择的接入点必须存在且处于可接入的状态。
+您可以通过调用[DescribeAccessPoints](https://cloud.tencent.com/document/product/216/34827)接口获取接入点ID。
                      * 
                      */
                     void SetAccessPointId(const std::string& _accessPointId);
@@ -428,6 +428,27 @@ ChinaOther：中国其他；
                     bool FaultReportContactNumberHasBeenSet() const;
 
                     /**
+                     * 获取报障联系邮箱。
+                     * @return FaultReportContactEmail 报障联系邮箱。
+                     * 
+                     */
+                    std::string GetFaultReportContactEmail() const;
+
+                    /**
+                     * 设置报障联系邮箱。
+                     * @param _faultReportContactEmail 报障联系邮箱。
+                     * 
+                     */
+                    void SetFaultReportContactEmail(const std::string& _faultReportContactEmail);
+
+                    /**
+                     * 判断参数 FaultReportContactEmail 是否已赋值
+                     * @return FaultReportContactEmail 是否已赋值
+                     * 
+                     */
+                    bool FaultReportContactEmailHasBeenSet() const;
+
+                    /**
                      * 获取物理专线申请者是否签署了用户使用协议。默认已签署。
                      * @return SignLaw 物理专线申请者是否签署了用户使用协议。默认已签署。
                      * 
@@ -469,6 +490,27 @@ ChinaOther：中国其他；
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取是否MACsec需求
+                     * @return IsMacSec 是否MACsec需求
+                     * 
+                     */
+                    bool GetIsMacSec() const;
+
+                    /**
+                     * 设置是否MACsec需求
+                     * @param _isMacSec 是否MACsec需求
+                     * 
+                     */
+                    void SetIsMacSec(const bool& _isMacSec);
+
+                    /**
+                     * 判断参数 IsMacSec 是否已赋值
+                     * @return IsMacSec 是否已赋值
+                     * 
+                     */
+                    bool IsMacSecHasBeenSet() const;
+
                 private:
 
                     /**
@@ -479,7 +521,7 @@ ChinaOther：中国其他；
 
                     /**
                      * 物理专线所在的接入点。
-您可以通过调用 DescribeAccessPoints接口获取地域ID。所选择的接入点必须存在且处于可接入的状态。
+您可以通过调用[DescribeAccessPoints](https://cloud.tencent.com/document/product/216/34827)接口获取接入点ID。
                      */
                     std::string m_accessPointId;
                     bool m_accessPointIdHasBeenSet;
@@ -580,6 +622,12 @@ ChinaOther：中国其他；
                     bool m_faultReportContactNumberHasBeenSet;
 
                     /**
+                     * 报障联系邮箱。
+                     */
+                    std::string m_faultReportContactEmail;
+                    bool m_faultReportContactEmailHasBeenSet;
+
+                    /**
                      * 物理专线申请者是否签署了用户使用协议。默认已签署。
                      */
                     bool m_signLaw;
@@ -590,6 +638,12 @@ ChinaOther：中国其他；
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 是否MACsec需求
+                     */
+                    bool m_isMacSec;
+                    bool m_isMacSecHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/omics/v20221128/model/GitInfo.h>
+#include <tencentcloud/omics/v20221128/model/CosFileInfo.h>
 
 
 namespace TencentCloud
@@ -49,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取版本类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 版本类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置版本类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 版本类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -74,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取版本ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationVersionId 版本ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplicationVersionId() const;
 
                     /**
                      * 设置版本ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationVersionId 版本ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationVersionId(const std::string& _applicationVersionId);
@@ -99,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取发布名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 发布名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置发布名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 发布名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -124,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取发布描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 发布描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置发布描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 发布描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -149,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取入口文件。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Entrypoint 入口文件。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEntrypoint() const;
 
                     /**
                      * 设置入口文件。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _entrypoint 入口文件。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEntrypoint(const std::string& _entrypoint);
@@ -174,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -199,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建者名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatorName 创建者名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatorName() const;
 
                     /**
                      * 设置创建者名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _creatorName 创建者名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatorName(const std::string& _creatorName);
@@ -224,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建者ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatorId 创建者ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatorId() const;
 
                     /**
                      * 设置创建者ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _creatorId 创建者ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatorId(const std::string& _creatorId);
@@ -249,18 +218,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Git信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GitInfo Git信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @deprecated
                      */
                     std::string GetGitInfo() const;
 
                     /**
                      * 设置Git信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gitInfo Git信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @deprecated
                      */
                     void SetGitInfo(const std::string& _gitInfo);
@@ -274,18 +239,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Git信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GitSource Git信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     GitInfo GetGitSource() const;
 
                     /**
                      * 设置Git信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gitSource Git信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGitSource(const GitInfo& _gitSource);
@@ -297,77 +258,94 @@ namespace TencentCloud
                      */
                     bool GitSourceHasBeenSet() const;
 
+                    /**
+                     * 获取COS信息。
+                     * @return CosSource COS信息。
+                     * 
+                     */
+                    CosFileInfo GetCosSource() const;
+
+                    /**
+                     * 设置COS信息。
+                     * @param _cosSource COS信息。
+                     * 
+                     */
+                    void SetCosSource(const CosFileInfo& _cosSource);
+
+                    /**
+                     * 判断参数 CosSource 是否已赋值
+                     * @return CosSource 是否已赋值
+                     * 
+                     */
+                    bool CosSourceHasBeenSet() const;
+
                 private:
 
                     /**
                      * 版本类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 版本ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applicationVersionId;
                     bool m_applicationVersionIdHasBeenSet;
 
                     /**
                      * 发布名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 发布描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 入口文件。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_entrypoint;
                     bool m_entrypointHasBeenSet;
 
                     /**
                      * 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 创建者名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_creatorName;
                     bool m_creatorNameHasBeenSet;
 
                     /**
                      * 创建者ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_creatorId;
                     bool m_creatorIdHasBeenSet;
 
                     /**
                      * Git信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gitInfo;
                     bool m_gitInfoHasBeenSet;
 
                     /**
                      * Git信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     GitInfo m_gitSource;
                     bool m_gitSourceHasBeenSet;
+
+                    /**
+                     * COS信息。
+                     */
+                    CosFileInfo m_cosSource;
+                    bool m_cosSourceHasBeenSet;
 
                 };
             }

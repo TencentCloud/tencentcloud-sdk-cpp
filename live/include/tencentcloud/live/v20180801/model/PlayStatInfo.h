@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取带宽/流量/请求数/并发连接数/下载速度的值，若没数据返回时该值为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 带宽/流量/请求数/并发连接数/下载速度的值，若没数据返回时该值为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetValue() const;
 
                     /**
                      * 设置带宽/流量/请求数/并发连接数/下载速度的值，若没数据返回时该值为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 带宽/流量/请求数/并发连接数/下载速度的值，若没数据返回时该值为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const double& _value);
@@ -102,7 +98,6 @@ namespace TencentCloud
 
                     /**
                      * 带宽/流量/请求数/并发连接数/下载速度的值，若没数据返回时该值为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_value;
                     bool m_valueHasBeenSet;

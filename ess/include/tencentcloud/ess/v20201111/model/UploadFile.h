@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,15 +68,23 @@ namespace TencentCloud
                     bool FileBodyHasBeenSet() const;
 
                     /**
-                     * 获取文件名，最大长度不超过200字符
-                     * @return FileName 文件名，最大长度不超过200字符
+                     * 获取文件的名字。
+文件名的最大长度应不超过200个字符，并且文件名的后缀必须反映其文件类型。
+例如，PDF文件应以“.pdf”结尾，如“XXX.pdf”，而Word文件应以“.doc”或“.docx”结尾，如“XXX.doc”或“XXX.docx”。
+                     * @return FileName 文件的名字。
+文件名的最大长度应不超过200个字符，并且文件名的后缀必须反映其文件类型。
+例如，PDF文件应以“.pdf”结尾，如“XXX.pdf”，而Word文件应以“.doc”或“.docx”结尾，如“XXX.doc”或“XXX.docx”。
                      * 
                      */
                     std::string GetFileName() const;
 
                     /**
-                     * 设置文件名，最大长度不超过200字符
-                     * @param _fileName 文件名，最大长度不超过200字符
+                     * 设置文件的名字。
+文件名的最大长度应不超过200个字符，并且文件名的后缀必须反映其文件类型。
+例如，PDF文件应以“.pdf”结尾，如“XXX.pdf”，而Word文件应以“.doc”或“.docx”结尾，如“XXX.doc”或“XXX.docx”。
+                     * @param _fileName 文件的名字。
+文件名的最大长度应不超过200个字符，并且文件名的后缀必须反映其文件类型。
+例如，PDF文件应以“.pdf”结尾，如“XXX.pdf”，而Word文件应以“.doc”或“.docx”结尾，如“XXX.doc”或“XXX.docx”。
                      * 
                      */
                     void SetFileName(const std::string& _fileName);
@@ -97,7 +105,9 @@ namespace TencentCloud
                     bool m_fileBodyHasBeenSet;
 
                     /**
-                     * 文件名，最大长度不超过200字符
+                     * 文件的名字。
+文件名的最大长度应不超过200个字符，并且文件名的后缀必须反映其文件类型。
+例如，PDF文件应以“.pdf”结尾，如“XXX.pdf”，而Word文件应以“.doc”或“.docx”结尾，如“XXX.doc”或“XXX.docx”。
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;

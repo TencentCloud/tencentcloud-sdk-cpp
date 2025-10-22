@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -88,6 +88,27 @@ namespace TencentCloud
                      */
                     bool SlaveZoneNameHasBeenSet() const;
 
+                    /**
+                     * 获取备机资源ID
+                     * @return DrInstanceId 备机资源ID
+                     * 
+                     */
+                    std::string GetDrInstanceId() const;
+
+                    /**
+                     * 设置备机资源ID
+                     * @param _drInstanceId 备机资源ID
+                     * 
+                     */
+                    void SetDrInstanceId(const std::string& _drInstanceId);
+
+                    /**
+                     * 判断参数 DrInstanceId 是否已赋值
+                     * @return DrInstanceId 是否已赋值
+                     * 
+                     */
+                    bool DrInstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +122,12 @@ namespace TencentCloud
                      */
                     std::string m_slaveZoneName;
                     bool m_slaveZoneNameHasBeenSet;
+
+                    /**
+                     * 备机资源ID
+                     */
+                    std::string m_drInstanceId;
+                    bool m_drInstanceIdHasBeenSet;
 
                 };
             }

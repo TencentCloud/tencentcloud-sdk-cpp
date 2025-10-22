@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -155,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云产品标识，主题由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssumerName 云产品标识，主题由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAssumerName() const;
 
                     /**
                      * 设置云产品标识，主题由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _assumerName 云产品标识，主题由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAssumerName(const std::string& _assumerName);
@@ -180,14 +176,18 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      * @return CreateTime 创建时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      * @param _createTime 创建时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -230,18 +230,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主题绑定的标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 主题绑定的标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置主题绑定的标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 主题绑定的标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -255,18 +251,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该主题是否开启自动分裂
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoSplit 该主题是否开启自动分裂
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetAutoSplit() const;
 
                     /**
                      * 设置该主题是否开启自动分裂
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _autoSplit 该主题是否开启自动分裂
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAutoSplit(const bool& _autoSplit);
@@ -280,18 +272,14 @@ namespace TencentCloud
 
                     /**
                      * 获取若开启自动分裂的话，该主题能够允许的最大分区数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxSplitPartitions 若开启自动分裂的话，该主题能够允许的最大分区数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxSplitPartitions() const;
 
                     /**
                      * 设置若开启自动分裂的话，该主题能够允许的最大分区数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxSplitPartitions 若开启自动分裂的话，该主题能够允许的最大分区数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxSplitPartitions(const int64_t& _maxSplitPartitions);
@@ -305,18 +293,26 @@ namespace TencentCloud
 
                     /**
                      * 获取主题的存储类型
-注意：此字段可能返回 null，表示取不到有效值。
+
+- hot: 标准存储
+- cold: 低频存储
                      * @return StorageType 主题的存储类型
-注意：此字段可能返回 null，表示取不到有效值。
+
+- hot: 标准存储
+- cold: 低频存储
                      * 
                      */
                     std::string GetStorageType() const;
 
                     /**
                      * 设置主题的存储类型
-注意：此字段可能返回 null，表示取不到有效值。
+
+- hot: 标准存储
+- cold: 低频存储
                      * @param _storageType 主题的存储类型
-注意：此字段可能返回 null，表示取不到有效值。
+
+- hot: 标准存储
+- cold: 低频存储
                      * 
                      */
                     void SetStorageType(const std::string& _storageType);
@@ -330,18 +326,14 @@ namespace TencentCloud
 
                     /**
                      * 获取生命周期，单位天，可取值范围1~3600。取值为3640时代表永久保存
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Period 生命周期，单位天，可取值范围1~3600。取值为3640时代表永久保存
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
                      * 设置生命周期，单位天，可取值范围1~3600。取值为3640时代表永久保存
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _period 生命周期，单位天，可取值范围1~3600。取值为3640时代表永久保存
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPeriod(const int64_t& _period);
@@ -355,18 +347,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云产品二级标识，日志主题由其它云产品创建时，该字段会显示云产品名称及其日志类型的二级分类，例如TKE-Audit、TKE-Event。部分云产品仅有云产品标识(AssumerName)，无该字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubAssumerName 云产品二级标识，日志主题由其它云产品创建时，该字段会显示云产品名称及其日志类型的二级分类，例如TKE-Audit、TKE-Event。部分云产品仅有云产品标识(AssumerName)，无该字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubAssumerName() const;
 
                     /**
                      * 设置云产品二级标识，日志主题由其它云产品创建时，该字段会显示云产品名称及其日志类型的二级分类，例如TKE-Audit、TKE-Event。部分云产品仅有云产品标识(AssumerName)，无该字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subAssumerName 云产品二级标识，日志主题由其它云产品创建时，该字段会显示云产品名称及其日志类型的二级分类，例如TKE-Audit、TKE-Event。部分云产品仅有云产品标识(AssumerName)，无该字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubAssumerName(const std::string& _subAssumerName);
@@ -380,18 +368,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主题描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Describes 主题描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescribes() const;
 
                     /**
                      * 设置主题描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _describes 主题描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescribes(const std::string& _describes);
@@ -407,11 +391,9 @@ namespace TencentCloud
                      * 获取开启日志沉降，标准存储的生命周期， hotPeriod < Period。
 标准存储为 hotPeriod, 低频存储则为 Period-hotPeriod。（主题类型需为日志主题）
 HotPeriod=0为没有开启日志沉降。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HotPeriod 开启日志沉降，标准存储的生命周期， hotPeriod < Period。
 标准存储为 hotPeriod, 低频存储则为 Period-hotPeriod。（主题类型需为日志主题）
 HotPeriod=0为没有开启日志沉降。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetHotPeriod() const;
@@ -420,11 +402,9 @@ HotPeriod=0为没有开启日志沉降。
                      * 设置开启日志沉降，标准存储的生命周期， hotPeriod < Period。
 标准存储为 hotPeriod, 低频存储则为 Period-hotPeriod。（主题类型需为日志主题）
 HotPeriod=0为没有开启日志沉降。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hotPeriod 开启日志沉降，标准存储的生命周期， hotPeriod < Period。
 标准存储为 hotPeriod, 低频存储则为 Period-hotPeriod。（主题类型需为日志主题）
 HotPeriod=0为没有开启日志沉降。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHotPeriod(const uint64_t& _hotPeriod);
@@ -440,11 +420,9 @@ HotPeriod=0为没有开启日志沉降。
                      * 获取主题类型。
 - 0: 日志主题 
 - 1: 指标主题
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BizType 主题类型。
 - 0: 日志主题 
 - 1: 指标主题
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetBizType() const;
@@ -453,11 +431,9 @@ HotPeriod=0为没有开启日志沉降。
                      * 设置主题类型。
 - 0: 日志主题 
 - 1: 指标主题
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bizType 主题类型。
 - 0: 日志主题 
 - 1: 指标主题
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBizType(const uint64_t& _bizType);
@@ -472,10 +448,8 @@ HotPeriod=0为没有开启日志沉降。
                     /**
                      * 获取免鉴权开关。 false：关闭； true：开启。
 开启后将支持指定操作匿名访问该日志主题。详情请参见[日志主题](https://cloud.tencent.com/document/product/614/41035)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsWebTracking 免鉴权开关。 false：关闭； true：开启。
 开启后将支持指定操作匿名访问该日志主题。详情请参见[日志主题](https://cloud.tencent.com/document/product/614/41035)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsWebTracking() const;
@@ -483,10 +457,8 @@ HotPeriod=0为没有开启日志沉降。
                     /**
                      * 设置免鉴权开关。 false：关闭； true：开启。
 开启后将支持指定操作匿名访问该日志主题。详情请参见[日志主题](https://cloud.tencent.com/document/product/614/41035)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isWebTracking 免鉴权开关。 false：关闭； true：开启。
 开启后将支持指定操作匿名访问该日志主题。详情请参见[日志主题](https://cloud.tencent.com/document/product/614/41035)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsWebTracking(const bool& _isWebTracking);
@@ -500,18 +472,14 @@ HotPeriod=0为没有开启日志沉降。
 
                     /**
                      * 获取日志主题扩展信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Extends 日志主题扩展信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TopicExtendInfo GetExtends() const;
 
                     /**
                      * 设置日志主题扩展信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _extends 日志主题扩展信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExtends(const TopicExtendInfo& _extends);
@@ -525,18 +493,14 @@ HotPeriod=0为没有开启日志沉降。
 
                     /**
                      * 获取异步迁移任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicAsyncTaskID 异步迁移任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicAsyncTaskID() const;
 
                     /**
                      * 设置异步迁移任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicAsyncTaskID 异步迁移任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicAsyncTaskID(const std::string& _topicAsyncTaskID);
@@ -550,18 +514,30 @@ HotPeriod=0为没有开启日志沉降。
 
                     /**
                      * 获取异步迁移状态
-注意：此字段可能返回 null，表示取不到有效值。
+- 1：进行中
+- 2：已完成
+- 3：失败
+- 4：已取消
                      * @return MigrationStatus 异步迁移状态
-注意：此字段可能返回 null，表示取不到有效值。
+- 1：进行中
+- 2：已完成
+- 3：失败
+- 4：已取消
                      * 
                      */
                     uint64_t GetMigrationStatus() const;
 
                     /**
                      * 设置异步迁移状态
-注意：此字段可能返回 null，表示取不到有效值。
+- 1：进行中
+- 2：已完成
+- 3：失败
+- 4：已取消
                      * @param _migrationStatus 异步迁移状态
-注意：此字段可能返回 null，表示取不到有效值。
+- 1：进行中
+- 2：已完成
+- 3：失败
+- 4：已取消
                      * 
                      */
                     void SetMigrationStatus(const uint64_t& _migrationStatus);
@@ -575,18 +551,18 @@ HotPeriod=0为没有开启日志沉降。
 
                     /**
                      * 获取异步迁移完成后，预计生效日期
-注意：此字段可能返回 null，表示取不到有效值。
+时间格式：yyyy-MM-dd HH:mm:ss
                      * @return EffectiveDate 异步迁移完成后，预计生效日期
-注意：此字段可能返回 null，表示取不到有效值。
+时间格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetEffectiveDate() const;
 
                     /**
                      * 设置异步迁移完成后，预计生效日期
-注意：此字段可能返回 null，表示取不到有效值。
+时间格式：yyyy-MM-dd HH:mm:ss
                      * @param _effectiveDate 异步迁移完成后，预计生效日期
-注意：此字段可能返回 null，表示取不到有效值。
+时间格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     void SetEffectiveDate(const std::string& _effectiveDate);
@@ -632,13 +608,13 @@ HotPeriod=0为没有开启日志沉降。
 
                     /**
                      * 云产品标识，主题由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_assumerName;
                     bool m_assumerNameHasBeenSet;
 
                     /**
                      * 创建时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
@@ -653,49 +629,45 @@ HotPeriod=0为没有开启日志沉降。
 
                     /**
                      * 主题绑定的标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
                      * 该主题是否开启自动分裂
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_autoSplit;
                     bool m_autoSplitHasBeenSet;
 
                     /**
                      * 若开启自动分裂的话，该主题能够允许的最大分区数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxSplitPartitions;
                     bool m_maxSplitPartitionsHasBeenSet;
 
                     /**
                      * 主题的存储类型
-注意：此字段可能返回 null，表示取不到有效值。
+
+- hot: 标准存储
+- cold: 低频存储
                      */
                     std::string m_storageType;
                     bool m_storageTypeHasBeenSet;
 
                     /**
                      * 生命周期，单位天，可取值范围1~3600。取值为3640时代表永久保存
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;
 
                     /**
                      * 云产品二级标识，日志主题由其它云产品创建时，该字段会显示云产品名称及其日志类型的二级分类，例如TKE-Audit、TKE-Event。部分云产品仅有云产品标识(AssumerName)，无该字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subAssumerName;
                     bool m_subAssumerNameHasBeenSet;
 
                     /**
                      * 主题描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_describes;
                     bool m_describesHasBeenSet;
@@ -704,7 +676,6 @@ HotPeriod=0为没有开启日志沉降。
                      * 开启日志沉降，标准存储的生命周期， hotPeriod < Period。
 标准存储为 hotPeriod, 低频存储则为 Period-hotPeriod。（主题类型需为日志主题）
 HotPeriod=0为没有开启日志沉降。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_hotPeriod;
                     bool m_hotPeriodHasBeenSet;
@@ -713,7 +684,6 @@ HotPeriod=0为没有开启日志沉降。
                      * 主题类型。
 - 0: 日志主题 
 - 1: 指标主题
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_bizType;
                     bool m_bizTypeHasBeenSet;
@@ -721,35 +691,35 @@ HotPeriod=0为没有开启日志沉降。
                     /**
                      * 免鉴权开关。 false：关闭； true：开启。
 开启后将支持指定操作匿名访问该日志主题。详情请参见[日志主题](https://cloud.tencent.com/document/product/614/41035)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isWebTracking;
                     bool m_isWebTrackingHasBeenSet;
 
                     /**
                      * 日志主题扩展信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TopicExtendInfo m_extends;
                     bool m_extendsHasBeenSet;
 
                     /**
                      * 异步迁移任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicAsyncTaskID;
                     bool m_topicAsyncTaskIDHasBeenSet;
 
                     /**
                      * 异步迁移状态
-注意：此字段可能返回 null，表示取不到有效值。
+- 1：进行中
+- 2：已完成
+- 3：失败
+- 4：已取消
                      */
                     uint64_t m_migrationStatus;
                     bool m_migrationStatusHasBeenSet;
 
                     /**
                      * 异步迁移完成后，预计生效日期
-注意：此字段可能返回 null，表示取不到有效值。
+时间格式：yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_effectiveDate;
                     bool m_effectiveDateHasBeenSet;

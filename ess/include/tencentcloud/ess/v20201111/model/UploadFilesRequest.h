@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,27 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件对应业务类型,可以选择的类型如下
-<ul><li> **TEMPLATE** : 此上传的文件用户生成合同模板，文件类型支持.pdf/.doc/.docx/.html格式，如果非pdf文件需要通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi" target="_blank">创建文件转换任务</a>转换后才能使用</li>
-<li> **DOCUMENT** : 此文件用来发起合同流程，文件类型支持.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html，如果非pdf文件需要通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi" target="_blank">创建文件转换任务</a>转换后才能使用</li>
-<li> **SEAL** : 此文件用于印章的生成，文件类型支持.jpg/.jpeg/.png</li></ul>
-                     * @return BusinessType 文件对应业务类型,可以选择的类型如下
-<ul><li> **TEMPLATE** : 此上传的文件用户生成合同模板，文件类型支持.pdf/.doc/.docx/.html格式，如果非pdf文件需要通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi" target="_blank">创建文件转换任务</a>转换后才能使用</li>
-<li> **DOCUMENT** : 此文件用来发起合同流程，文件类型支持.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html，如果非pdf文件需要通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi" target="_blank">创建文件转换任务</a>转换后才能使用</li>
-<li> **SEAL** : 此文件用于印章的生成，文件类型支持.jpg/.jpeg/.png</li></ul>
+                     * 获取文件对应业务类型,可以选择的类型如下<ul><li> **TEMPLATE** : 此上传的文件用户生成合同模板，文件类型支持.pdf/.doc/.docx/.html格式，如果非pdf文件需要通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi" target="_blank">创建文件转换任务</a>转换后才能使用</li><li> **DOCUMENT** : 此文件用来发起合同流程，文件类型支持.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html。如果上传的是非pdf文件，用来发起流程，还需要通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi" target="_blank">创建文件转换任务</a>转换后得到的pdf文件才能用于发起合同接口。如果上传的文件不是用来发起合同，直接上传后使用返回的文件资源Id即可</li><li> **SEAL** : 此文件用于印章的生成，文件类型支持.jpg/.jpeg/.png</li></ul>   ["yDRSRUUgygj6rq2wUuO4zjEyBZ2NHiyT"]
+                     * @return BusinessType 文件对应业务类型,可以选择的类型如下<ul><li> **TEMPLATE** : 此上传的文件用户生成合同模板，文件类型支持.pdf/.doc/.docx/.html格式，如果非pdf文件需要通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi" target="_blank">创建文件转换任务</a>转换后才能使用</li><li> **DOCUMENT** : 此文件用来发起合同流程，文件类型支持.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html。如果上传的是非pdf文件，用来发起流程，还需要通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi" target="_blank">创建文件转换任务</a>转换后得到的pdf文件才能用于发起合同接口。如果上传的文件不是用来发起合同，直接上传后使用返回的文件资源Id即可</li><li> **SEAL** : 此文件用于印章的生成，文件类型支持.jpg/.jpeg/.png</li></ul>   ["yDRSRUUgygj6rq2wUuO4zjEyBZ2NHiyT"]
                      * 
                      */
                     std::string GetBusinessType() const;
 
                     /**
-                     * 设置文件对应业务类型,可以选择的类型如下
-<ul><li> **TEMPLATE** : 此上传的文件用户生成合同模板，文件类型支持.pdf/.doc/.docx/.html格式，如果非pdf文件需要通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi" target="_blank">创建文件转换任务</a>转换后才能使用</li>
-<li> **DOCUMENT** : 此文件用来发起合同流程，文件类型支持.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html，如果非pdf文件需要通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi" target="_blank">创建文件转换任务</a>转换后才能使用</li>
-<li> **SEAL** : 此文件用于印章的生成，文件类型支持.jpg/.jpeg/.png</li></ul>
-                     * @param _businessType 文件对应业务类型,可以选择的类型如下
-<ul><li> **TEMPLATE** : 此上传的文件用户生成合同模板，文件类型支持.pdf/.doc/.docx/.html格式，如果非pdf文件需要通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi" target="_blank">创建文件转换任务</a>转换后才能使用</li>
-<li> **DOCUMENT** : 此文件用来发起合同流程，文件类型支持.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html，如果非pdf文件需要通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi" target="_blank">创建文件转换任务</a>转换后才能使用</li>
-<li> **SEAL** : 此文件用于印章的生成，文件类型支持.jpg/.jpeg/.png</li></ul>
+                     * 设置文件对应业务类型,可以选择的类型如下<ul><li> **TEMPLATE** : 此上传的文件用户生成合同模板，文件类型支持.pdf/.doc/.docx/.html格式，如果非pdf文件需要通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi" target="_blank">创建文件转换任务</a>转换后才能使用</li><li> **DOCUMENT** : 此文件用来发起合同流程，文件类型支持.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html。如果上传的是非pdf文件，用来发起流程，还需要通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi" target="_blank">创建文件转换任务</a>转换后得到的pdf文件才能用于发起合同接口。如果上传的文件不是用来发起合同，直接上传后使用返回的文件资源Id即可</li><li> **SEAL** : 此文件用于印章的生成，文件类型支持.jpg/.jpeg/.png</li></ul>   ["yDRSRUUgygj6rq2wUuO4zjEyBZ2NHiyT"]
+                     * @param _businessType 文件对应业务类型,可以选择的类型如下<ul><li> **TEMPLATE** : 此上传的文件用户生成合同模板，文件类型支持.pdf/.doc/.docx/.html格式，如果非pdf文件需要通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi" target="_blank">创建文件转换任务</a>转换后才能使用</li><li> **DOCUMENT** : 此文件用来发起合同流程，文件类型支持.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html。如果上传的是非pdf文件，用来发起流程，还需要通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi" target="_blank">创建文件转换任务</a>转换后得到的pdf文件才能用于发起合同接口。如果上传的文件不是用来发起合同，直接上传后使用返回的文件资源Id即可</li><li> **SEAL** : 此文件用于印章的生成，文件类型支持.jpg/.jpeg/.png</li></ul>   ["yDRSRUUgygj6rq2wUuO4zjEyBZ2NHiyT"]
                      * 
                      */
                     void SetBusinessType(const std::string& _businessType);
@@ -104,15 +92,23 @@ namespace TencentCloud
                     bool CallerHasBeenSet() const;
 
                     /**
-                     * 获取上传文件内容数组，最多支持上传20个文件。
-                     * @return FileInfos 上传文件内容数组，最多支持上传20个文件。
+                     * 获取请上传文件内容数组，最多可上传20个文件。
+
+<b>所有文件必须符合<font color="red">FileType</font>指定的文件类型。</b>
+                     * @return FileInfos 请上传文件内容数组，最多可上传20个文件。
+
+<b>所有文件必须符合<font color="red">FileType</font>指定的文件类型。</b>
                      * 
                      */
                     std::vector<UploadFile> GetFileInfos() const;
 
                     /**
-                     * 设置上传文件内容数组，最多支持上传20个文件。
-                     * @param _fileInfos 上传文件内容数组，最多支持上传20个文件。
+                     * 设置请上传文件内容数组，最多可上传20个文件。
+
+<b>所有文件必须符合<font color="red">FileType</font>指定的文件类型。</b>
+                     * @param _fileInfos 请上传文件内容数组，最多可上传20个文件。
+
+<b>所有文件必须符合<font color="red">FileType</font>指定的文件类型。</b>
                      * 
                      */
                     void SetFileInfos(const std::vector<UploadFile>& _fileInfos);
@@ -227,23 +223,15 @@ namespace TencentCloud
                     bool CoverRectHasBeenSet() const;
 
                     /**
-                     * 获取用户自定义ID数组，与上传文件一一对应
-
-注: `历史遗留问题，已经废弃，调用接口时不用赋值`
-                     * @return CustomIds 用户自定义ID数组，与上传文件一一对应
-
-注: `历史遗留问题，已经废弃，调用接口时不用赋值`
+                     * 获取该字段已不再使用
+                     * @return CustomIds 该字段已不再使用
                      * 
                      */
                     std::vector<std::string> GetCustomIds() const;
 
                     /**
-                     * 设置用户自定义ID数组，与上传文件一一对应
-
-注: `历史遗留问题，已经废弃，调用接口时不用赋值`
-                     * @param _customIds 用户自定义ID数组，与上传文件一一对应
-
-注: `历史遗留问题，已经废弃，调用接口时不用赋值`
+                     * 设置该字段已不再使用
+                     * @param _customIds 该字段已不再使用
                      * 
                      */
                     void SetCustomIds(const std::vector<std::string>& _customIds);
@@ -304,10 +292,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件对应业务类型,可以选择的类型如下
-<ul><li> **TEMPLATE** : 此上传的文件用户生成合同模板，文件类型支持.pdf/.doc/.docx/.html格式，如果非pdf文件需要通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi" target="_blank">创建文件转换任务</a>转换后才能使用</li>
-<li> **DOCUMENT** : 此文件用来发起合同流程，文件类型支持.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html，如果非pdf文件需要通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi" target="_blank">创建文件转换任务</a>转换后才能使用</li>
-<li> **SEAL** : 此文件用于印章的生成，文件类型支持.jpg/.jpeg/.png</li></ul>
+                     * 文件对应业务类型,可以选择的类型如下<ul><li> **TEMPLATE** : 此上传的文件用户生成合同模板，文件类型支持.pdf/.doc/.docx/.html格式，如果非pdf文件需要通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi" target="_blank">创建文件转换任务</a>转换后才能使用</li><li> **DOCUMENT** : 此文件用来发起合同流程，文件类型支持.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html。如果上传的是非pdf文件，用来发起流程，还需要通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi" target="_blank">创建文件转换任务</a>转换后得到的pdf文件才能用于发起合同接口。如果上传的文件不是用来发起合同，直接上传后使用返回的文件资源Id即可</li><li> **SEAL** : 此文件用于印章的生成，文件类型支持.jpg/.jpeg/.png</li></ul>   ["yDRSRUUgygj6rq2wUuO4zjEyBZ2NHiyT"]
                      */
                     std::string m_businessType;
                     bool m_businessTypeHasBeenSet;
@@ -320,7 +305,9 @@ namespace TencentCloud
                     bool m_callerHasBeenSet;
 
                     /**
-                     * 上传文件内容数组，最多支持上传20个文件。
+                     * 请上传文件内容数组，最多可上传20个文件。
+
+<b>所有文件必须符合<font color="red">FileType</font>指定的文件类型。</b>
                      */
                     std::vector<UploadFile> m_fileInfos;
                     bool m_fileInfosHasBeenSet;
@@ -353,9 +340,7 @@ namespace TencentCloud
                     bool m_coverRectHasBeenSet;
 
                     /**
-                     * 用户自定义ID数组，与上传文件一一对应
-
-注: `历史遗留问题，已经废弃，调用接口时不用赋值`
+                     * 该字段已不再使用
                      */
                     std::vector<std::string> m_customIds;
                     bool m_customIdsHasBeenSet;

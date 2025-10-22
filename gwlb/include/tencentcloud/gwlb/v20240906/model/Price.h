@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述了实例价格。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstancePrice 描述了实例价格。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ItemPrice GetInstancePrice() const;
 
                     /**
                      * 设置描述了实例价格。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instancePrice 描述了实例价格。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstancePrice(const ItemPrice& _instancePrice);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述了GLCU的价格。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LcuPrice 描述了GLCU的价格。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ItemPrice GetLcuPrice() const;
 
                     /**
                      * 设置描述了GLCU的价格。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lcuPrice 描述了GLCU的价格。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLcuPrice(const ItemPrice& _lcuPrice);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 描述了实例价格。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ItemPrice m_instancePrice;
                     bool m_instancePriceHasBeenSet;
 
                     /**
                      * 描述了GLCU的价格。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ItemPrice m_lcuPrice;
                     bool m_lcuPriceHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主病史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MainDiseaseHistory 主病史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMainDiseaseHistory() const;
 
                     /**
                      * 设置主病史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mainDiseaseHistory 主病史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMainDiseaseHistory(const std::string& _mainDiseaseHistory);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取过敏史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AllergyHistory 过敏史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAllergyHistory() const;
 
                     /**
                      * 设置过敏史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _allergyHistory 过敏史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAllergyHistory(const std::string& _allergyHistory);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取传染疾病史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InfectHistory 传染疾病史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInfectHistory() const;
 
                     /**
                      * 设置传染疾病史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _infectHistory 传染疾病史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInfectHistory(const std::string& _infectHistory);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取手术史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperationHistory 手术史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperationHistory() const;
 
                     /**
                      * 设置手术史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _operationHistory 手术史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOperationHistory(const std::string& _operationHistory);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取输血史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransfusionHistory 输血史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTransfusionHistory() const;
 
                     /**
                      * 设置输血史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _transfusionHistory 输血史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTransfusionHistory(const std::string& _transfusionHistory);
@@ -171,42 +151,64 @@ namespace TencentCloud
                      */
                     bool TransfusionHistoryHasBeenSet() const;
 
+                    /**
+                     * 获取现病史
+                     * @return DiseasePresent 现病史
+                     * 
+                     */
+                    std::string GetDiseasePresent() const;
+
+                    /**
+                     * 设置现病史
+                     * @param _diseasePresent 现病史
+                     * 
+                     */
+                    void SetDiseasePresent(const std::string& _diseasePresent);
+
+                    /**
+                     * 判断参数 DiseasePresent 是否已赋值
+                     * @return DiseasePresent 是否已赋值
+                     * 
+                     */
+                    bool DiseasePresentHasBeenSet() const;
+
                 private:
 
                     /**
                      * 主病史
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mainDiseaseHistory;
                     bool m_mainDiseaseHistoryHasBeenSet;
 
                     /**
                      * 过敏史
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_allergyHistory;
                     bool m_allergyHistoryHasBeenSet;
 
                     /**
                      * 传染疾病史
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_infectHistory;
                     bool m_infectHistoryHasBeenSet;
 
                     /**
                      * 手术史
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operationHistory;
                     bool m_operationHistoryHasBeenSet;
 
                     /**
                      * 输血史
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_transfusionHistory;
                     bool m_transfusionHistoryHasBeenSet;
+
+                    /**
+                     * 现病史
+                     */
+                    std::string m_diseasePresent;
+                    bool m_diseasePresentHasBeenSet;
 
                 };
             }

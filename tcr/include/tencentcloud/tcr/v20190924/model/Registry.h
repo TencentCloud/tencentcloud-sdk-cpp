@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,15 +111,59 @@ namespace TencentCloud
                     bool RegistryTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例状态
-                     * @return Status 实例状态
+                     * 获取实例状态。有以下状态：
+Pending, 初始化中
+Deploying, 创建中
+Running, 运行中
+Unhealthy, 状态异常
+FailedCreated, 创建失败
+FailedUpdated, 更新失败
+Bucket-Error, 存储桶异常
+Isolate, 待回收
+Deleting, 删除中
+DeleteBucketFailed, 实例删除存储桶失败
+DeleteFailed, 实例删除失败
+                     * @return Status 实例状态。有以下状态：
+Pending, 初始化中
+Deploying, 创建中
+Running, 运行中
+Unhealthy, 状态异常
+FailedCreated, 创建失败
+FailedUpdated, 更新失败
+Bucket-Error, 存储桶异常
+Isolate, 待回收
+Deleting, 删除中
+DeleteBucketFailed, 实例删除存储桶失败
+DeleteFailed, 实例删除失败
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置实例状态
-                     * @param _status 实例状态
+                     * 设置实例状态。有以下状态：
+Pending, 初始化中
+Deploying, 创建中
+Running, 运行中
+Unhealthy, 状态异常
+FailedCreated, 创建失败
+FailedUpdated, 更新失败
+Bucket-Error, 存储桶异常
+Isolate, 待回收
+Deleting, 删除中
+DeleteBucketFailed, 实例删除存储桶失败
+DeleteFailed, 实例删除失败
+                     * @param _status 实例状态。有以下状态：
+Pending, 初始化中
+Deploying, 创建中
+Running, 运行中
+Unhealthy, 状态异常
+FailedCreated, 创建失败
+FailedUpdated, 更新失败
+Bucket-Error, 存储桶异常
+Isolate, 待回收
+Deleting, 删除中
+DeleteBucketFailed, 实例删除存储桶失败
+DeleteFailed, 实例删除失败
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -280,18 +324,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例云标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagSpecification 实例云标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TagSpecification GetTagSpecification() const;
 
                     /**
                      * 设置实例云标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tagSpecification 实例云标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTagSpecification(const TagSpecification& _tagSpecification);
@@ -305,18 +345,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例过期时间（预付费）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpiredAt 实例过期时间（预付费）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpiredAt() const;
 
                     /**
                      * 设置实例过期时间（预付费）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expiredAt 实例过期时间（预付费）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpiredAt(const std::string& _expiredAt);
@@ -330,18 +366,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例付费类型，0表示后付费，1表示预付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayMod 实例付费类型，0表示后付费，1表示预付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPayMod() const;
 
                     /**
                      * 设置实例付费类型，0表示后付费，1表示预付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _payMod 实例付费类型，0表示后付费，1表示预付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPayMod(const int64_t& _payMod);
@@ -355,18 +387,14 @@ namespace TencentCloud
 
                     /**
                      * 获取预付费续费标识，0表示手动续费，1表示自动续费，2不续费并且不通知
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RenewFlag 预付费续费标识，0表示手动续费，1表示自动续费，2不续费并且不通知
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRenewFlag() const;
 
                     /**
                      * 设置预付费续费标识，0表示手动续费，1表示自动续费，2不续费并且不通知
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _renewFlag 预付费续费标识，0表示手动续费，1表示自动续费，2不续费并且不通知
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRenewFlag(const int64_t& _renewFlag);
@@ -420,7 +448,18 @@ namespace TencentCloud
                     bool m_registryTypeHasBeenSet;
 
                     /**
-                     * 实例状态
+                     * 实例状态。有以下状态：
+Pending, 初始化中
+Deploying, 创建中
+Running, 运行中
+Unhealthy, 状态异常
+FailedCreated, 创建失败
+FailedUpdated, 更新失败
+Bucket-Error, 存储桶异常
+Isolate, 待回收
+Deleting, 删除中
+DeleteBucketFailed, 实例删除存储桶失败
+DeleteFailed, 实例删除失败
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
@@ -469,28 +508,24 @@ namespace TencentCloud
 
                     /**
                      * 实例云标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TagSpecification m_tagSpecification;
                     bool m_tagSpecificationHasBeenSet;
 
                     /**
                      * 实例过期时间（预付费）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expiredAt;
                     bool m_expiredAtHasBeenSet;
 
                     /**
                      * 实例付费类型，0表示后付费，1表示预付费
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_payMod;
                     bool m_payModHasBeenSet;
 
                     /**
                      * 预付费续费标识，0表示手动续费，1表示自动续费，2不续费并且不通知
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_renewFlag;
                     bool m_renewFlagHasBeenSet;

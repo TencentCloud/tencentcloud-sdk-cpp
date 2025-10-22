@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,7 +40,13 @@ NotebookSessionInfo::NotebookSessionInfo() :
     m_createTimeHasBeenSet(false),
     m_appInfoHasBeenSet(false),
     m_sparkUiUrlHasBeenSet(false),
-    m_executorMaxNumbersHasBeenSet(false)
+    m_executorMaxNumbersHasBeenSet(false),
+    m_sessionTypeHasBeenSet(false),
+    m_dataEngineIdHasBeenSet(false),
+    m_resourceGroupIdHasBeenSet(false),
+    m_resourceGroupNameHasBeenSet(false),
+    m_podSizeHasBeenSet(false),
+    m_podNumbersHasBeenSet(false)
 {
 }
 
@@ -281,6 +287,66 @@ CoreInternalOutcome NotebookSessionInfo::Deserialize(const rapidjson::Value &val
         m_executorMaxNumbersHasBeenSet = true;
     }
 
+    if (value.HasMember("SessionType") && !value["SessionType"].IsNull())
+    {
+        if (!value["SessionType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NotebookSessionInfo.SessionType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionType = string(value["SessionType"].GetString());
+        m_sessionTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DataEngineId") && !value["DataEngineId"].IsNull())
+    {
+        if (!value["DataEngineId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NotebookSessionInfo.DataEngineId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataEngineId = string(value["DataEngineId"].GetString());
+        m_dataEngineIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResourceGroupId") && !value["ResourceGroupId"].IsNull())
+    {
+        if (!value["ResourceGroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NotebookSessionInfo.ResourceGroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceGroupId = string(value["ResourceGroupId"].GetString());
+        m_resourceGroupIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResourceGroupName") && !value["ResourceGroupName"].IsNull())
+    {
+        if (!value["ResourceGroupName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NotebookSessionInfo.ResourceGroupName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceGroupName = string(value["ResourceGroupName"].GetString());
+        m_resourceGroupNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("PodSize") && !value["PodSize"].IsNull())
+    {
+        if (!value["PodSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NotebookSessionInfo.PodSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_podSize = value["PodSize"].GetInt64();
+        m_podSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("PodNumbers") && !value["PodNumbers"].IsNull())
+    {
+        if (!value["PodNumbers"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NotebookSessionInfo.PodNumbers` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_podNumbers = value["PodNumbers"].GetInt64();
+        m_podNumbersHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -480,6 +546,54 @@ void NotebookSessionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "ExecutorMaxNumbers";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_executorMaxNumbers, allocator);
+    }
+
+    if (m_sessionTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sessionType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataEngineIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataEngineId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dataEngineId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceGroupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceGroupName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_podSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PodSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_podSize, allocator);
+    }
+
+    if (m_podNumbersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PodNumbers";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_podNumbers, allocator);
     }
 
 }
@@ -803,5 +917,101 @@ void NotebookSessionInfo::SetExecutorMaxNumbers(const uint64_t& _executorMaxNumb
 bool NotebookSessionInfo::ExecutorMaxNumbersHasBeenSet() const
 {
     return m_executorMaxNumbersHasBeenSet;
+}
+
+string NotebookSessionInfo::GetSessionType() const
+{
+    return m_sessionType;
+}
+
+void NotebookSessionInfo::SetSessionType(const string& _sessionType)
+{
+    m_sessionType = _sessionType;
+    m_sessionTypeHasBeenSet = true;
+}
+
+bool NotebookSessionInfo::SessionTypeHasBeenSet() const
+{
+    return m_sessionTypeHasBeenSet;
+}
+
+string NotebookSessionInfo::GetDataEngineId() const
+{
+    return m_dataEngineId;
+}
+
+void NotebookSessionInfo::SetDataEngineId(const string& _dataEngineId)
+{
+    m_dataEngineId = _dataEngineId;
+    m_dataEngineIdHasBeenSet = true;
+}
+
+bool NotebookSessionInfo::DataEngineIdHasBeenSet() const
+{
+    return m_dataEngineIdHasBeenSet;
+}
+
+string NotebookSessionInfo::GetResourceGroupId() const
+{
+    return m_resourceGroupId;
+}
+
+void NotebookSessionInfo::SetResourceGroupId(const string& _resourceGroupId)
+{
+    m_resourceGroupId = _resourceGroupId;
+    m_resourceGroupIdHasBeenSet = true;
+}
+
+bool NotebookSessionInfo::ResourceGroupIdHasBeenSet() const
+{
+    return m_resourceGroupIdHasBeenSet;
+}
+
+string NotebookSessionInfo::GetResourceGroupName() const
+{
+    return m_resourceGroupName;
+}
+
+void NotebookSessionInfo::SetResourceGroupName(const string& _resourceGroupName)
+{
+    m_resourceGroupName = _resourceGroupName;
+    m_resourceGroupNameHasBeenSet = true;
+}
+
+bool NotebookSessionInfo::ResourceGroupNameHasBeenSet() const
+{
+    return m_resourceGroupNameHasBeenSet;
+}
+
+int64_t NotebookSessionInfo::GetPodSize() const
+{
+    return m_podSize;
+}
+
+void NotebookSessionInfo::SetPodSize(const int64_t& _podSize)
+{
+    m_podSize = _podSize;
+    m_podSizeHasBeenSet = true;
+}
+
+bool NotebookSessionInfo::PodSizeHasBeenSet() const
+{
+    return m_podSizeHasBeenSet;
+}
+
+int64_t NotebookSessionInfo::GetPodNumbers() const
+{
+    return m_podNumbers;
+}
+
+void NotebookSessionInfo::SetPodNumbers(const int64_t& _podNumbers)
+{
+    m_podNumbers = _podNumbers;
+    m_podNumbersHasBeenSet = true;
+}
+
+bool NotebookSessionInfo::PodNumbersHasBeenSet() const
+{
+    return m_podNumbersHasBeenSet;
 }
 

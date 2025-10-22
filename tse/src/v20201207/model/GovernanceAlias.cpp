@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,8 @@ GovernanceAlias::GovernanceAlias() :
     m_createTimeHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_editableHasBeenSet(false)
+    m_editableHasBeenSet(false),
+    m_metadatasHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,26 @@ CoreInternalOutcome GovernanceAlias::Deserialize(const rapidjson::Value &value)
         m_editableHasBeenSet = true;
     }
 
+    if (value.HasMember("Metadatas") && !value["Metadatas"].IsNull())
+    {
+        if (!value["Metadatas"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `GovernanceAlias.Metadatas` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Metadatas"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Metadata item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_metadatas.push_back(item);
+        }
+        m_metadatasHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +226,21 @@ void GovernanceAlias::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Editable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_editable, allocator);
+    }
+
+    if (m_metadatasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Metadatas";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_metadatas.begin(); itr != m_metadatas.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -352,5 +388,21 @@ void GovernanceAlias::SetEditable(const bool& _editable)
 bool GovernanceAlias::EditableHasBeenSet() const
 {
     return m_editableHasBeenSet;
+}
+
+vector<Metadata> GovernanceAlias::GetMetadatas() const
+{
+    return m_metadatas;
+}
+
+void GovernanceAlias::SetMetadatas(const vector<Metadata>& _metadatas)
+{
+    m_metadatas = _metadatas;
+    m_metadatasHasBeenSet = true;
+}
+
+bool GovernanceAlias::MetadatasHasBeenSet() const
+{
+    return m_metadatasHasBeenSet;
 }
 

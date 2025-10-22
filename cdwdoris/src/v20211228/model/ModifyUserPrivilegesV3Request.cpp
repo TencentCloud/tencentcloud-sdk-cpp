@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,11 @@ ModifyUserPrivilegesV3Request::ModifyUserPrivilegesV3Request() :
     m_instanceIdHasBeenSet(false),
     m_userNameHasBeenSet(false),
     m_userPrivilegesHasBeenSet(false),
-    m_whiteHostHasBeenSet(false)
+    m_whiteHostHasBeenSet(false),
+    m_updateTypeHasBeenSet(false),
+    m_updateComputeGroupsHasBeenSet(false),
+    m_defaultComputeGroupHasBeenSet(false),
+    m_computeGroupTypeHasBeenSet(false)
 {
 }
 
@@ -68,6 +72,43 @@ string ModifyUserPrivilegesV3Request::ToJsonString() const
         string key = "WhiteHost";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_whiteHost.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_updateType, allocator);
+    }
+
+    if (m_updateComputeGroupsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateComputeGroups";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_updateComputeGroups.begin(); itr != m_updateComputeGroups.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_defaultComputeGroupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultComputeGroup";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_defaultComputeGroup.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_computeGroupTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComputeGroupType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_computeGroupType, allocator);
     }
 
 
@@ -140,6 +181,70 @@ void ModifyUserPrivilegesV3Request::SetWhiteHost(const string& _whiteHost)
 bool ModifyUserPrivilegesV3Request::WhiteHostHasBeenSet() const
 {
     return m_whiteHostHasBeenSet;
+}
+
+int64_t ModifyUserPrivilegesV3Request::GetUpdateType() const
+{
+    return m_updateType;
+}
+
+void ModifyUserPrivilegesV3Request::SetUpdateType(const int64_t& _updateType)
+{
+    m_updateType = _updateType;
+    m_updateTypeHasBeenSet = true;
+}
+
+bool ModifyUserPrivilegesV3Request::UpdateTypeHasBeenSet() const
+{
+    return m_updateTypeHasBeenSet;
+}
+
+vector<string> ModifyUserPrivilegesV3Request::GetUpdateComputeGroups() const
+{
+    return m_updateComputeGroups;
+}
+
+void ModifyUserPrivilegesV3Request::SetUpdateComputeGroups(const vector<string>& _updateComputeGroups)
+{
+    m_updateComputeGroups = _updateComputeGroups;
+    m_updateComputeGroupsHasBeenSet = true;
+}
+
+bool ModifyUserPrivilegesV3Request::UpdateComputeGroupsHasBeenSet() const
+{
+    return m_updateComputeGroupsHasBeenSet;
+}
+
+string ModifyUserPrivilegesV3Request::GetDefaultComputeGroup() const
+{
+    return m_defaultComputeGroup;
+}
+
+void ModifyUserPrivilegesV3Request::SetDefaultComputeGroup(const string& _defaultComputeGroup)
+{
+    m_defaultComputeGroup = _defaultComputeGroup;
+    m_defaultComputeGroupHasBeenSet = true;
+}
+
+bool ModifyUserPrivilegesV3Request::DefaultComputeGroupHasBeenSet() const
+{
+    return m_defaultComputeGroupHasBeenSet;
+}
+
+int64_t ModifyUserPrivilegesV3Request::GetComputeGroupType() const
+{
+    return m_computeGroupType;
+}
+
+void ModifyUserPrivilegesV3Request::SetComputeGroupType(const int64_t& _computeGroupType)
+{
+    m_computeGroupType = _computeGroupType;
+    m_computeGroupTypeHasBeenSet = true;
+}
+
+bool ModifyUserPrivilegesV3Request::ComputeGroupTypeHasBeenSet() const
+{
+    return m_computeGroupTypeHasBeenSet;
 }
 
 

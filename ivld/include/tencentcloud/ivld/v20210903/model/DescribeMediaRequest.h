@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取导入媒资返回的媒资ID，最长32B
-                     * @return MediaId 导入媒资返回的媒资ID，最长32B
+                     * 获取导入媒资返回的媒资ID
+                     * @return MediaId 导入媒资返回的媒资ID
                      * 
                      */
                     std::string GetMediaId() const;
 
                     /**
-                     * 设置导入媒资返回的媒资ID，最长32B
-                     * @param _mediaId 导入媒资返回的媒资ID，最长32B
+                     * 设置导入媒资返回的媒资ID
+                     * @param _mediaId 导入媒资返回的媒资ID
                      * 
                      */
                     void SetMediaId(const std::string& _mediaId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 导入媒资返回的媒资ID，最长32B
+                     * 导入媒资返回的媒资ID
                      */
                     std::string m_mediaId;
                     bool m_mediaIdHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取终端节点ID。
-                     * @return EndPointId 终端节点ID。
+                     * 获取终端节点ID。可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679) 获取。
+                     * @return EndPointId 终端节点ID。可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679) 获取。
                      * 
                      */
                     std::string GetEndPointId() const;
 
                     /**
-                     * 设置终端节点ID。
-                     * @param _endPointId 终端节点ID。
+                     * 设置终端节点ID。可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679) 获取。
+                     * @param _endPointId 终端节点ID。可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679) 获取。
                      * 
                      */
                     void SetEndPointId(const std::string& _endPointId);
@@ -63,13 +63,40 @@ namespace TencentCloud
                      */
                     bool EndPointIdHasBeenSet() const;
 
+                    /**
+                     * 获取协议类型，支持 Ipv4，Ipv6，默认 Ipv4。
+                     * @return IpAddressType 协议类型，支持 Ipv4，Ipv6，默认 Ipv4。
+                     * 
+                     */
+                    std::string GetIpAddressType() const;
+
+                    /**
+                     * 设置协议类型，支持 Ipv4，Ipv6，默认 Ipv4。
+                     * @param _ipAddressType 协议类型，支持 Ipv4，Ipv6，默认 Ipv4。
+                     * 
+                     */
+                    void SetIpAddressType(const std::string& _ipAddressType);
+
+                    /**
+                     * 判断参数 IpAddressType 是否已赋值
+                     * @return IpAddressType 是否已赋值
+                     * 
+                     */
+                    bool IpAddressTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 终端节点ID。
+                     * 终端节点ID。可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679) 获取。
                      */
                     std::string m_endPointId;
                     bool m_endPointIdHasBeenSet;
+
+                    /**
+                     * 协议类型，支持 Ipv4，Ipv6，默认 Ipv4。
+                     */
+                    std::string m_ipAddressType;
+                    bool m_ipAddressTypeHasBeenSet;
 
                 };
             }

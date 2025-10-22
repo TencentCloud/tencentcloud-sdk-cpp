@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -398,18 +398,18 @@ namespace TencentCloud
                     bool SecurityOnHasBeenSet() const;
 
                     /**
-                     * 获取安全组名称
+                     * 获取集群初始安全组id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SecurityGroup 安全组名称
+                     * @return SecurityGroup 集群初始安全组id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSecurityGroup() const;
 
                     /**
-                     * 设置安全组名称
+                     * 设置集群初始安全组id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _securityGroup 安全组名称
+                     * @param _securityGroup 集群初始安全组id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -473,18 +473,18 @@ namespace TencentCloud
                     bool ApplicationRoleHasBeenSet() const;
 
                     /**
-                     * 获取安全组
+                     * 获取安全组id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SecurityGroups 安全组
+                     * @return SecurityGroups 安全组id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSecurityGroups() const;
 
                     /**
-                     * 设置安全组
+                     * 设置安全组id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _securityGroups 安全组
+                     * @param _securityGroups 安全组id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -623,7 +623,7 @@ namespace TencentCloud
                     bool m_securityOnHasBeenSet;
 
                     /**
-                     * 安全组名称
+                     * 集群初始安全组id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_securityGroup;
@@ -644,7 +644,7 @@ namespace TencentCloud
                     bool m_applicationRoleHasBeenSet;
 
                     /**
-                     * 安全组
+                     * 安全组id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_securityGroups;

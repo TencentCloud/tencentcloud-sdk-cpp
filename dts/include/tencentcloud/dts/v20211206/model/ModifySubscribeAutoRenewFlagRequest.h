@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取订阅实例ID
-                     * @return SubscribeId 订阅实例ID
+                     * 获取订阅实例ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。
+                     * @return SubscribeId 订阅实例ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。
                      * 
                      */
                     std::string GetSubscribeId() const;
 
                     /**
-                     * 设置订阅实例ID
-                     * @param _subscribeId 订阅实例ID
+                     * 设置订阅实例ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。
+                     * @param _subscribeId 订阅实例ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。
                      * 
                      */
                     void SetSubscribeId(const std::string& _subscribeId);
@@ -87,7 +87,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 订阅实例ID
+                     * 订阅实例ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。
                      */
                     std::string m_subscribeId;
                     bool m_subscribeIdHasBeenSet;

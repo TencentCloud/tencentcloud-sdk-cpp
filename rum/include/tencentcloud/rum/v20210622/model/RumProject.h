@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/rum/v20210622/model/Kafka.h>
 
 
 namespace TencentCloud
@@ -153,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取项目仓库地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Repo 项目仓库地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRepo() const;
 
                     /**
                      * 设置项目仓库地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _repo 项目仓库地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRepo(const std::string& _repo);
@@ -178,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取项目网址地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return URL 项目网址地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetURL() const;
 
                     /**
                      * 设置项目网址地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uRL 项目网址地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetURL(const std::string& _uRL);
@@ -329,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取项目描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Desc 项目描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDesc() const;
 
                     /**
                      * 设置项目描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _desc 项目描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDesc(const std::string& _desc);
@@ -354,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否星标  1:是 0:否
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsStar 是否星标  1:是 0:否
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsStar() const;
 
                     /**
                      * 设置是否星标  1:是 0:否
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isStar 是否星标  1:是 0:否
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsStar(const int64_t& _isStar);
@@ -379,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取项目状态(1 创建中，2 运行中，3 异常，4 重启中，5 停止中，6 已停止， 7 销毁中，8 已销毁)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectStatus 项目状态(1 创建中，2 运行中，3 异常，4 重启中，5 停止中，6 已停止， 7 销毁中，8 已销毁)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetProjectStatus() const;
 
                     /**
                      * 设置项目状态(1 创建中，2 运行中，3 异常，4 重启中，5 停止中，6 已停止， 7 销毁中，8 已销毁)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _projectStatus 项目状态(1 创建中，2 运行中，3 异常，4 重启中，5 停止中，6 已停止， 7 销毁中，8 已销毁)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProjectStatus(const int64_t& _projectStatus);
@@ -404,18 +385,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志接入点，用户忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccessPoint 日志接入点，用户忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccessPoint() const;
 
                     /**
                      * 设置日志接入点，用户忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accessPoint 日志接入点，用户忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccessPoint(const std::string& _accessPoint);
@@ -426,6 +403,27 @@ namespace TencentCloud
                      * 
                      */
                     bool AccessPointHasBeenSet() const;
+
+                    /**
+                     * 获取kafka旁路配置信息
+                     * @return Kafka kafka旁路配置信息
+                     * 
+                     */
+                    Kafka GetKafka() const;
+
+                    /**
+                     * 设置kafka旁路配置信息
+                     * @param _kafka kafka旁路配置信息
+                     * 
+                     */
+                    void SetKafka(const Kafka& _kafka);
+
+                    /**
+                     * 判断参数 Kafka 是否已赋值
+                     * @return Kafka 是否已赋值
+                     * 
+                     */
+                    bool KafkaHasBeenSet() const;
 
                 private:
 
@@ -461,14 +459,12 @@ namespace TencentCloud
 
                     /**
                      * 项目仓库地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_repo;
                     bool m_repoHasBeenSet;
 
                     /**
                      * 项目网址地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uRL;
                     bool m_uRLHasBeenSet;
@@ -511,31 +507,33 @@ namespace TencentCloud
 
                     /**
                      * 项目描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_desc;
                     bool m_descHasBeenSet;
 
                     /**
                      * 是否星标  1:是 0:否
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isStar;
                     bool m_isStarHasBeenSet;
 
                     /**
                      * 项目状态(1 创建中，2 运行中，3 异常，4 重启中，5 停止中，6 已停止， 7 销毁中，8 已销毁)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_projectStatus;
                     bool m_projectStatusHasBeenSet;
 
                     /**
                      * 日志接入点，用户忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accessPoint;
                     bool m_accessPointHasBeenSet;
+
+                    /**
+                     * kafka旁路配置信息
+                     */
+                    Kafka m_kafka;
+                    bool m_kafkaHasBeenSet;
 
                 };
             }

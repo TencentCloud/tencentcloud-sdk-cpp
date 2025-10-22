@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -153,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取屏蔽规则，当Type为2时必填。规则填写方式详见[产品文档](https://cloud.tencent.com/document/product/614/103178#rule)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rule 屏蔽规则，当Type为2时必填。规则填写方式详见[产品文档](https://cloud.tencent.com/document/product/614/103178#rule)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRule() const;
 
                     /**
                      * 设置屏蔽规则，当Type为2时必填。规则填写方式详见[产品文档](https://cloud.tencent.com/document/product/614/103178#rule)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rule 屏蔽规则，当Type为2时必填。规则填写方式详见[产品文档](https://cloud.tencent.com/document/product/614/103178#rule)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRule(const std::string& _rule);
@@ -269,15 +265,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取规则创建时间。
-                     * @return CreateTime 规则创建时间。
+                     * 获取规则创建时间。秒级时间戳(s)
+                     * @return CreateTime 规则创建时间。秒级时间戳(s)
                      * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
-                     * 设置规则创建时间。
-                     * @param _createTime 规则创建时间。
+                     * 设置规则创建时间。秒级时间戳(s)
+                     * @param _createTime 规则创建时间。秒级时间戳(s)
                      * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
@@ -290,15 +286,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取规则更新时间。
-                     * @return UpdateTime 规则更新时间。
+                     * 获取规则更新时间。秒级时间戳(s)
+                     * @return UpdateTime 规则更新时间。秒级时间戳(s)
                      * 
                      */
                     uint64_t GetUpdateTime() const;
 
                     /**
-                     * 设置规则更新时间。
-                     * @param _updateTime 规则更新时间。
+                     * 设置规则更新时间。秒级时间戳(s)
+                     * @param _updateTime 规则更新时间。秒级时间戳(s)
                      * 
                      */
                     void SetUpdateTime(const uint64_t& _updateTime);
@@ -344,7 +340,6 @@ namespace TencentCloud
 
                     /**
                      * 屏蔽规则，当Type为2时必填。规则填写方式详见[产品文档](https://cloud.tencent.com/document/product/614/103178#rule)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_rule;
                     bool m_ruleHasBeenSet;
@@ -376,13 +371,13 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 规则创建时间。
+                     * 规则创建时间。秒级时间戳(s)
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 规则更新时间。
+                     * 规则更新时间。秒级时间戳(s)
                      */
                     uint64_t m_updateTime;
                     bool m_updateTimeHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取统计值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 统计值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetValue() const;
 
                     /**
                      * 设置统计值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 统计值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const double& _value);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取统计时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Time 统计时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTime() const;
 
                     /**
                      * 设置统计时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _time 统计时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTime(const int64_t& _time);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 统计值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_value;
                     bool m_valueHasBeenSet;
 
                     /**
                      * 统计时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_time;
                     bool m_timeHasBeenSet;

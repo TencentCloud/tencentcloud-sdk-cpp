@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,18 +74,14 @@ namespace TencentCloud
 
                     /**
                      * 获取运行时类型，支持"docker"和"containerd"，默认为docker
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Runtime 运行时类型，支持"docker"和"containerd"，默认为docker
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuntime() const;
 
                     /**
                      * 设置运行时类型，支持"docker"和"containerd"，默认为docker
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _runtime 运行时类型，支持"docker"和"containerd"，默认为docker
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuntime(const std::string& _runtime);
@@ -99,18 +95,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群kube-proxy转发模式，支持"iptables"和"ipvs"，默认为iptables
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyMode 集群kube-proxy转发模式，支持"iptables"和"ipvs"，默认为iptables
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProxyMode() const;
 
                     /**
                      * 设置集群kube-proxy转发模式，支持"iptables"和"ipvs"，默认为iptables
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _proxyMode 集群kube-proxy转发模式，支持"iptables"和"ipvs"，默认为iptables
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProxyMode(const std::string& _proxyMode);
@@ -133,14 +125,12 @@ namespace TencentCloud
 
                     /**
                      * 运行时类型，支持"docker"和"containerd"，默认为docker
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_runtime;
                     bool m_runtimeHasBeenSet;
 
                     /**
                      * 集群kube-proxy转发模式，支持"iptables"和"ipvs"，默认为iptables
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_proxyMode;
                     bool m_proxyModeHasBeenSet;

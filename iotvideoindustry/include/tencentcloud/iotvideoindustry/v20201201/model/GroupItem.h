@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupName 分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupName 分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取父分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParentId 父分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParentId() const;
 
                     /**
                      * 设置父分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _parentId 父分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParentId(const std::string& _parentId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId 分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupId 分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分组路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupPath 分组路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupPath() const;
 
                     /**
                      * 设置分组路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupPath 分组路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupPath(const std::string& _groupPath);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分组描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupDescribe 分组描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupDescribe() const;
 
                     /**
                      * 设置分组描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupDescribe 分组描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupDescribe(const std::string& _groupDescribe);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分组绑定设备数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceNum 分组绑定设备数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDeviceNum() const;
 
                     /**
                      * 设置分组绑定设备数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceNum 分组绑定设备数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceNum(const int64_t& _deviceNum);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子分组数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubGroupNum 子分组数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSubGroupNum() const;
 
                     /**
                      * 设置子分组数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subGroupNum 子分组数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubGroupNum(const int64_t& _subGroupNum);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分组附加信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtraInformation 分组附加信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExtraInformation() const;
 
                     /**
                      * 设置分组附加信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _extraInformation 分组附加信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExtraInformation(const std::string& _extraInformation);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分组类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupType 分组类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupType() const;
 
                     /**
                      * 设置分组类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupType 分组类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupType(const std::string& _groupType);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分组状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupStatus 分组状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetGroupStatus() const;
 
                     /**
                      * 设置分组状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupStatus 分组状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupStatus(const int64_t& _groupStatus);
@@ -325,77 +281,66 @@ namespace TencentCloud
 
                     /**
                      * 分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
                      * 父分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_parentId;
                     bool m_parentIdHasBeenSet;
 
                     /**
                      * 分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
                      * 分组路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupPath;
                     bool m_groupPathHasBeenSet;
 
                     /**
                      * 分组描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupDescribe;
                     bool m_groupDescribeHasBeenSet;
 
                     /**
                      * 分组绑定设备数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_deviceNum;
                     bool m_deviceNumHasBeenSet;
 
                     /**
                      * 子分组数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_subGroupNum;
                     bool m_subGroupNumHasBeenSet;
 
                     /**
                      * 分组附加信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_extraInformation;
                     bool m_extraInformationHasBeenSet;
 
                     /**
                      * 分组类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupType;
                     bool m_groupTypeHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 分组状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_groupStatus;
                     bool m_groupStatusHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -132,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取制品类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Kind 制品类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKind() const;
 
                     /**
                      * 设置制品类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _kind 制品类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKind(const std::string& _kind);
@@ -157,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取KMS 签名信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KmsSignature KMS 签名信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKmsSignature() const;
 
                     /**
                      * 设置KMS 签名信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _kmsSignature KMS 签名信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKmsSignature(const std::string& _kmsSignature);
@@ -208,14 +200,12 @@ namespace TencentCloud
 
                     /**
                      * 制品类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_kind;
                     bool m_kindHasBeenSet;
 
                     /**
                      * KMS 签名信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_kmsSignature;
                     bool m_kmsSignatureHasBeenSet;

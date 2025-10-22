@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool TagIdsHasBeenSet() const;
 
                     /**
-                     * 获取命令有效期，非腾讯云时必填
-                     * @return ExpireDate 命令有效期，非腾讯云时必填
+                     * 获取命令有效期，非腾讯云时必填（已废弃，命令永久生效）
+                     * @return ExpireDate 命令有效期，非腾讯云时必填（已废弃，命令永久生效）
                      * 
                      */
                     std::string GetExpireDate() const;
 
                     /**
-                     * 设置命令有效期，非腾讯云时必填
-                     * @param _expireDate 命令有效期，非腾讯云时必填
+                     * 设置命令有效期，非腾讯云时必填（已废弃，命令永久生效）
+                     * @param _expireDate 命令有效期，非腾讯云时必填（已废弃，命令永久生效）
                      * 
                      */
                     void SetExpireDate(const std::string& _expireDate);
@@ -222,7 +222,7 @@ namespace TencentCloud
                     bool m_tagIdsHasBeenSet;
 
                     /**
-                     * 命令有效期，非腾讯云时必填
+                     * 命令有效期，非腾讯云时必填（已废弃，命令永久生效）
                      */
                     std::string m_expireDate;
                     bool m_expireDateHasBeenSet;

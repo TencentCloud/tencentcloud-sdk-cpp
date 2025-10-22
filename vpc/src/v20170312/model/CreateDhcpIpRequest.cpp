@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ CreateDhcpIpRequest::CreateDhcpIpRequest() :
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_dhcpIpNameHasBeenSet(false),
-    m_secondaryPrivateIpAddressCountHasBeenSet(false)
+    m_secondaryPrivateIpAddressCountHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,21 @@ string CreateDhcpIpRequest::ToJsonString() const
         string key = "SecondaryPrivateIpAddressCount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_secondaryPrivateIpAddressCount, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -139,6 +155,22 @@ void CreateDhcpIpRequest::SetSecondaryPrivateIpAddressCount(const uint64_t& _sec
 bool CreateDhcpIpRequest::SecondaryPrivateIpAddressCountHasBeenSet() const
 {
     return m_secondaryPrivateIpAddressCountHasBeenSet;
+}
+
+vector<Tag> CreateDhcpIpRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateDhcpIpRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateDhcpIpRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

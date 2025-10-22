@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,18 +73,14 @@ namespace TencentCloud
 
                     /**
                      * 获取回调 URL
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return URL 回调 URL
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetURL() const;
 
                     /**
                      * 设置回调 URL
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uRL 回调 URL
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetURL(const std::string& _uRL);
@@ -107,7 +103,6 @@ namespace TencentCloud
 
                     /**
                      * 回调 URL
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uRL;
                     bool m_uRLHasBeenSet;

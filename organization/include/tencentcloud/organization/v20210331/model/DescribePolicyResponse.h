@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取策略名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyName 策略名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPolicyName() const;
@@ -89,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取策略描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 策略描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
@@ -105,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取策略文档。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyDocument 策略文档。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPolicyDocument() const;
@@ -121,9 +115,7 @@ namespace TencentCloud
 
                     /**
                      * 获取策略更新时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 策略更新时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
@@ -137,9 +129,7 @@ namespace TencentCloud
 
                     /**
                      * 获取策略创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddTime 策略创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAddTime() const;
@@ -161,7 +151,6 @@ namespace TencentCloud
 
                     /**
                      * 策略名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_policyName;
                     bool m_policyNameHasBeenSet;
@@ -174,28 +163,24 @@ namespace TencentCloud
 
                     /**
                      * 策略描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 策略文档。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_policyDocument;
                     bool m_policyDocumentHasBeenSet;
 
                     /**
                      * 策略更新时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
                      * 策略创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_addTime;
                     bool m_addTimeHasBeenSet;

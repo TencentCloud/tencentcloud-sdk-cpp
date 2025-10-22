@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取路由的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 路由的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置路由的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 路由的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取路由的 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 路由的 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置路由的 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 路由的 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取 路由是否开启 WAF 防护
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status  路由是否开启 WAF 防护
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置 路由是否开启 WAF 防护
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status  路由是否开启 WAF 防护
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取方法
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Methods 方法
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetMethods() const;
 
                     /**
                      * 设置方法
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _methods 方法
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMethods(const std::vector<std::string>& _methods);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Paths 路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetPaths() const;
 
                     /**
                      * 设置路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _paths 路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPaths(const std::vector<std::string>& _paths);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Hosts 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetHosts() const;
 
                     /**
                      * 设置域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hosts 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHosts(const std::vector<std::string>& _hosts);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取路由对应服务的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceName 路由对应服务的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceName() const;
 
                     /**
                      * 设置路由对应服务的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceName 路由对应服务的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceName(const std::string& _serviceName);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取路由对应服务的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceId 路由对应服务的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 设置路由对应服务的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceId 路由对应服务的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceId(const std::string& _serviceId);
@@ -250,56 +218,48 @@ namespace TencentCloud
 
                     /**
                      * 路由的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 路由的 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      *  路由是否开启 WAF 防护
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 方法
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_methods;
                     bool m_methodsHasBeenSet;
 
                     /**
                      * 路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_paths;
                     bool m_pathsHasBeenSet;
 
                     /**
                      * 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_hosts;
                     bool m_hostsHasBeenSet;
 
                     /**
                      * 路由对应服务的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceName;
                     bool m_serviceNameHasBeenSet;
 
                     /**
                      * 路由对应服务的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceId;
                     bool m_serviceIdHasBeenSet;

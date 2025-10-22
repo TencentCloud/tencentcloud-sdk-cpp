@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@
 #include <tencentcloud/tke/v20220501/model/ManagementConfig.h>
 #include <tencentcloud/tke/v20220501/model/LifecycleConfig.h>
 #include <tencentcloud/tke/v20220501/model/DataDisk.h>
+#include <tencentcloud/tke/v20220501/model/GPUConfig.h>
 
 
 namespace TencentCloud
@@ -464,6 +465,27 @@ namespace TencentCloud
                      */
                     bool KeyIdsHasBeenSet() const;
 
+                    /**
+                     * 获取节点池 GPU 配置
+                     * @return GPUConfigs 节点池 GPU 配置
+                     * 
+                     */
+                    std::vector<GPUConfig> GetGPUConfigs() const;
+
+                    /**
+                     * 设置节点池 GPU 配置
+                     * @param _gPUConfigs 节点池 GPU 配置
+                     * 
+                     */
+                    void SetGPUConfigs(const std::vector<GPUConfig>& _gPUConfigs);
+
+                    /**
+                     * 判断参数 GPUConfigs 是否已赋值
+                     * @return GPUConfigs 是否已赋值
+                     * 
+                     */
+                    bool GPUConfigsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -582,6 +604,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_keyIds;
                     bool m_keyIdsHasBeenSet;
+
+                    /**
+                     * 节点池 GPU 配置
+                     */
+                    std::vector<GPUConfig> m_gPUConfigs;
+                    bool m_gPUConfigsHasBeenSet;
 
                 };
             }

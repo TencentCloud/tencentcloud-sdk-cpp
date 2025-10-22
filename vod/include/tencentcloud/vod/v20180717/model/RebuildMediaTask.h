@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -197,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取音画质重生任务的输入。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Input 音画质重生任务的输入。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RebuildMediaTaskInput GetInput() const;
 
                     /**
                      * 设置音画质重生任务的输入。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _input 音画质重生任务的输入。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInput(const RebuildMediaTaskInput& _input);
@@ -222,18 +218,14 @@ namespace TencentCloud
 
                     /**
                      * 获取音画质重生任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Output 音画质重生任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RebuildMediaTaskOutput GetOutput() const;
 
                     /**
                      * 设置音画质重生任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _output 音画质重生任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutput(const RebuildMediaTaskOutput& _output);
@@ -247,18 +239,14 @@ namespace TencentCloud
 
                     /**
                      * 获取音画质重生输出视频的元信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetaData 音画质重生输出视频的元信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MediaMetaData GetMetaData() const;
 
                     /**
                      * 设置音画质重生输出视频的元信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _metaData 音画质重生输出视频的元信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMetaData(const MediaMetaData& _metaData);
@@ -357,21 +345,18 @@ namespace TencentCloud
 
                     /**
                      * 音画质重生任务的输入。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RebuildMediaTaskInput m_input;
                     bool m_inputHasBeenSet;
 
                     /**
                      * 音画质重生任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RebuildMediaTaskOutput m_output;
                     bool m_outputHasBeenSet;
 
                     /**
                      * 音画质重生输出视频的元信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaMetaData m_metaData;
                     bool m_metaDataHasBeenSet;

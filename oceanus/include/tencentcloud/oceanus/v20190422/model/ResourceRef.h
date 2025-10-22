@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取资源版本ID，-1表示使用最新版本
-                     * @return Version 资源版本ID，-1表示使用最新版本
+                     * 获取0-引用 JAR 程序包，1-主程序包，2-引用配置文件，3-Python程序包，4-Python数据文件
+                     * @return Version 0-引用 JAR 程序包，1-主程序包，2-引用配置文件，3-Python程序包，4-Python数据文件
                      * 
                      */
                     int64_t GetVersion() const;
 
                     /**
-                     * 设置资源版本ID，-1表示使用最新版本
-                     * @param _version 资源版本ID，-1表示使用最新版本
+                     * 设置0-引用 JAR 程序包，1-主程序包，2-引用配置文件，3-Python程序包，4-Python数据文件
+                     * @param _version 0-引用 JAR 程序包，1-主程序包，2-引用配置文件，3-Python程序包，4-Python数据文件
                      * 
                      */
                     void SetVersion(const int64_t& _version);
@@ -118,7 +118,7 @@ namespace TencentCloud
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 资源版本ID，-1表示使用最新版本
+                     * 0-引用 JAR 程序包，1-主程序包，2-引用配置文件，3-Python程序包，4-Python数据文件
                      */
                     int64_t m_version;
                     bool m_versionHasBeenSet;

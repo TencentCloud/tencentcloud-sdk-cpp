@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取用户参与应用的统计指标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppCounter 用户参与应用的统计指标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ResourceCounterData GetAppCounter() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取用户部署应用的统计指标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserCounter 用户部署应用的统计指标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ResourceCounterData GetUserCounter() const;
@@ -78,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取用户参与的应用总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppCnt 用户参与的应用总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAppCnt() const;
@@ -94,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取用户部署的应用总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeployCnt 用户部署的应用总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDeployCnt() const;
@@ -110,9 +102,7 @@ namespace TencentCloud
 
                     /**
                      * 获取部署网络子链总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChainCnt 部署网络子链总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetChainCnt() const;
@@ -128,35 +118,30 @@ namespace TencentCloud
 
                     /**
                      * 用户参与应用的统计指标
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ResourceCounterData m_appCounter;
                     bool m_appCounterHasBeenSet;
 
                     /**
                      * 用户部署应用的统计指标
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ResourceCounterData m_userCounter;
                     bool m_userCounterHasBeenSet;
 
                     /**
                      * 用户参与的应用总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_appCnt;
                     bool m_appCntHasBeenSet;
 
                     /**
                      * 用户部署的应用总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_deployCnt;
                     bool m_deployCntHasBeenSet;
 
                     /**
                      * 部署网络子链总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_chainCnt;
                     bool m_chainCntHasBeenSet;

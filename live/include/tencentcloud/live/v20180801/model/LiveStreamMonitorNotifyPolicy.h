@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,9 @@ namespace TencentCloud
                      * 获取通知策略类型：范围[0,1]
 0:代表不使用任何通知策略
 1:代表使用全局回调策略，所有事件通知到CallbackUrl。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NotifyPolicyType 通知策略类型：范围[0,1]
 0:代表不使用任何通知策略
 1:代表使用全局回调策略，所有事件通知到CallbackUrl。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetNotifyPolicyType() const;
@@ -63,11 +61,9 @@ namespace TencentCloud
                      * 设置通知策略类型：范围[0,1]
 0:代表不使用任何通知策略
 1:代表使用全局回调策略，所有事件通知到CallbackUrl。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _notifyPolicyType 通知策略类型：范围[0,1]
 0:代表不使用任何通知策略
 1:代表使用全局回调策略，所有事件通知到CallbackUrl。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNotifyPolicyType(const uint64_t& _notifyPolicyType);
@@ -82,10 +78,8 @@ namespace TencentCloud
                     /**
                      * 获取回调URL：长度[0,512]
 只支持http和https类型的url。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CallbackUrl 回调URL：长度[0,512]
 只支持http和https类型的url。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCallbackUrl() const;
@@ -93,10 +87,8 @@ namespace TencentCloud
                     /**
                      * 设置回调URL：长度[0,512]
 只支持http和https类型的url。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _callbackUrl 回调URL：长度[0,512]
 只支持http和https类型的url。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCallbackUrl(const std::string& _callbackUrl);
@@ -114,7 +106,6 @@ namespace TencentCloud
                      * 通知策略类型：范围[0,1]
 0:代表不使用任何通知策略
 1:代表使用全局回调策略，所有事件通知到CallbackUrl。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_notifyPolicyType;
                     bool m_notifyPolicyTypeHasBeenSet;
@@ -122,7 +113,6 @@ namespace TencentCloud
                     /**
                      * 回调URL：长度[0,512]
 只支持http和https类型的url。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_callbackUrl;
                     bool m_callbackUrlHasBeenSet;

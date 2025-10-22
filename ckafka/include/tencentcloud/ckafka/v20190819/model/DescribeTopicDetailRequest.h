@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ckafka/v20190819/model/Filter.h>
 
 
 namespace TencentCloud
@@ -43,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例id
-                     * @return InstanceId 实例id
+                     * 获取ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
+                     * @return InstanceId ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例id
-                     * @param _instanceId 实例id
+                     * 设置ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
+                     * @param _instanceId ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -106,15 +107,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，不填则默认 10，最大值20，取值要大于0
-                     * @return Limit 返回数量，不填则默认 10，最大值20，取值要大于0
+                     * 获取返回数量，不填则默认 20，取值要大于0
+                     * @return Limit 返回数量，不填则默认 20，取值要大于0
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，不填则默认 10，最大值20，取值要大于0
-                     * @param _limit 返回数量，不填则默认 10，最大值20，取值要大于0
+                     * 设置返回数量，不填则默认 20，取值要大于0
+                     * @param _limit 返回数量，不填则默认 20，取值要大于0
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -147,10 +148,73 @@ namespace TencentCloud
                      */
                     bool AclRuleNameHasBeenSet() const;
 
+                    /**
+                     * 获取根据特定的属性排序(目前支持PartitionNum/CreateTime)，默认值为CreateTime。
+                     * @return OrderBy 根据特定的属性排序(目前支持PartitionNum/CreateTime)，默认值为CreateTime。
+                     * 
+                     */
+                    std::string GetOrderBy() const;
+
+                    /**
+                     * 设置根据特定的属性排序(目前支持PartitionNum/CreateTime)，默认值为CreateTime。
+                     * @param _orderBy 根据特定的属性排序(目前支持PartitionNum/CreateTime)，默认值为CreateTime。
+                     * 
+                     */
+                    void SetOrderBy(const std::string& _orderBy);
+
+                    /**
+                     * 判断参数 OrderBy 是否已赋值
+                     * @return OrderBy 是否已赋值
+                     * 
+                     */
+                    bool OrderByHasBeenSet() const;
+
+                    /**
+                     * 获取0-顺序、1-倒序，默认值为0。
+                     * @return OrderType 0-顺序、1-倒序，默认值为0。
+                     * 
+                     */
+                    int64_t GetOrderType() const;
+
+                    /**
+                     * 设置0-顺序、1-倒序，默认值为0。
+                     * @param _orderType 0-顺序、1-倒序，默认值为0。
+                     * 
+                     */
+                    void SetOrderType(const int64_t& _orderType);
+
+                    /**
+                     * 判断参数 OrderType 是否已赋值
+                     * @return OrderType 是否已赋值
+                     * 
+                     */
+                    bool OrderTypeHasBeenSet() const;
+
+                    /**
+                     * 获取目前支持 ReplicaNum （副本数）筛选
+                     * @return Filters 目前支持 ReplicaNum （副本数）筛选
+                     * 
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置目前支持 ReplicaNum （副本数）筛选
+                     * @param _filters 目前支持 ReplicaNum （副本数）筛选
+                     * 
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例id
+                     * ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -168,7 +232,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量，不填则默认 10，最大值20，取值要大于0
+                     * 返回数量，不填则默认 20，取值要大于0
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -178,6 +242,24 @@ namespace TencentCloud
                      */
                     std::string m_aclRuleName;
                     bool m_aclRuleNameHasBeenSet;
+
+                    /**
+                     * 根据特定的属性排序(目前支持PartitionNum/CreateTime)，默认值为CreateTime。
+                     */
+                    std::string m_orderBy;
+                    bool m_orderByHasBeenSet;
+
+                    /**
+                     * 0-顺序、1-倒序，默认值为0。
+                     */
+                    int64_t m_orderType;
+                    bool m_orderTypeHasBeenSet;
+
+                    /**
+                     * 目前支持 ReplicaNum （副本数）筛选
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                 };
             }

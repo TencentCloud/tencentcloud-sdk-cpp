@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取码规则名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 码规则名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置码规则名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 码规则名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -95,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取企业ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CorpId 企业ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCorpId() const;
 
                     /**
                      * 设置企业ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _corpId 企业ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCorpId(const uint64_t& _corpId);
@@ -120,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取商户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MerchantId 商户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMerchantId() const;
 
                     /**
                      * 设置商户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _merchantId 商户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMerchantId(const std::string& _merchantId);
@@ -258,21 +246,18 @@ namespace TencentCloud
 
                     /**
                      * 码规则名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 企业ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_corpId;
                     bool m_corpIdHasBeenSet;
 
                     /**
                      * 商户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_merchantId;
                     bool m_merchantIdHasBeenSet;

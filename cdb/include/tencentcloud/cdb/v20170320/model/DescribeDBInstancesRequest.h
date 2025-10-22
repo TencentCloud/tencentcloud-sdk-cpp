@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -233,15 +233,15 @@ namespace TencentCloud
                     bool InstanceNamesHasBeenSet() const;
 
                     /**
-                     * 获取实例任务状态，可能取值：<br>0 - 没有任务<br>1 - 升级中<br>2 - 数据导入中<br>3 - 开放Slave中<br>4 - 外网访问开通中<br>5 - 批量操作执行中<br>6 - 回档中<br>7 - 外网访问关闭中<br>8 - 密码修改中<br>9 - 实例名修改中<br>10 - 重启中<br>12 - 自建迁移中<br>13 - 删除库表中<br>14 - 灾备实例创建同步中<br>15 - 升级待切换<br>16 - 升级切换中<br>17 - 升级切换完成<br>19 - 参数设置待执行
-                     * @return TaskStatus 实例任务状态，可能取值：<br>0 - 没有任务<br>1 - 升级中<br>2 - 数据导入中<br>3 - 开放Slave中<br>4 - 外网访问开通中<br>5 - 批量操作执行中<br>6 - 回档中<br>7 - 外网访问关闭中<br>8 - 密码修改中<br>9 - 实例名修改中<br>10 - 重启中<br>12 - 自建迁移中<br>13 - 删除库表中<br>14 - 灾备实例创建同步中<br>15 - 升级待切换<br>16 - 升级切换中<br>17 - 升级切换完成<br>19 - 参数设置待执行
+                     * 获取实例任务状态，可能取值：<br>0 - 没有任务<br>1 - 升级中<br>2 - 数据导入中<br>3 - 开放Slave中<br>4 - 外网访问开通中<br>5 - 批量操作执行中<br>6 - 回档中<br>7 - 外网访问关闭中<br>8 - 密码修改中<br>9 - 实例名修改中<br>10 - 重启中<br>12 - 自建迁移中<br>13 - 删除库表中<br>14 - 灾备实例创建同步中<br>15 - 升级待切换<br>16 - 升级切换中<br>17 - 升级切换完成<br>19 - 参数设置待执行<br>34 - 原地升级待执行
+                     * @return TaskStatus 实例任务状态，可能取值：<br>0 - 没有任务<br>1 - 升级中<br>2 - 数据导入中<br>3 - 开放Slave中<br>4 - 外网访问开通中<br>5 - 批量操作执行中<br>6 - 回档中<br>7 - 外网访问关闭中<br>8 - 密码修改中<br>9 - 实例名修改中<br>10 - 重启中<br>12 - 自建迁移中<br>13 - 删除库表中<br>14 - 灾备实例创建同步中<br>15 - 升级待切换<br>16 - 升级切换中<br>17 - 升级切换完成<br>19 - 参数设置待执行<br>34 - 原地升级待执行
                      * 
                      */
                     std::vector<uint64_t> GetTaskStatus() const;
 
                     /**
-                     * 设置实例任务状态，可能取值：<br>0 - 没有任务<br>1 - 升级中<br>2 - 数据导入中<br>3 - 开放Slave中<br>4 - 外网访问开通中<br>5 - 批量操作执行中<br>6 - 回档中<br>7 - 外网访问关闭中<br>8 - 密码修改中<br>9 - 实例名修改中<br>10 - 重启中<br>12 - 自建迁移中<br>13 - 删除库表中<br>14 - 灾备实例创建同步中<br>15 - 升级待切换<br>16 - 升级切换中<br>17 - 升级切换完成<br>19 - 参数设置待执行
-                     * @param _taskStatus 实例任务状态，可能取值：<br>0 - 没有任务<br>1 - 升级中<br>2 - 数据导入中<br>3 - 开放Slave中<br>4 - 外网访问开通中<br>5 - 批量操作执行中<br>6 - 回档中<br>7 - 外网访问关闭中<br>8 - 密码修改中<br>9 - 实例名修改中<br>10 - 重启中<br>12 - 自建迁移中<br>13 - 删除库表中<br>14 - 灾备实例创建同步中<br>15 - 升级待切换<br>16 - 升级切换中<br>17 - 升级切换完成<br>19 - 参数设置待执行
+                     * 设置实例任务状态，可能取值：<br>0 - 没有任务<br>1 - 升级中<br>2 - 数据导入中<br>3 - 开放Slave中<br>4 - 外网访问开通中<br>5 - 批量操作执行中<br>6 - 回档中<br>7 - 外网访问关闭中<br>8 - 密码修改中<br>9 - 实例名修改中<br>10 - 重启中<br>12 - 自建迁移中<br>13 - 删除库表中<br>14 - 灾备实例创建同步中<br>15 - 升级待切换<br>16 - 升级切换中<br>17 - 升级切换完成<br>19 - 参数设置待执行<br>34 - 原地升级待执行
+                     * @param _taskStatus 实例任务状态，可能取值：<br>0 - 没有任务<br>1 - 升级中<br>2 - 数据导入中<br>3 - 开放Slave中<br>4 - 外网访问开通中<br>5 - 批量操作执行中<br>6 - 回档中<br>7 - 外网访问关闭中<br>8 - 密码修改中<br>9 - 实例名修改中<br>10 - 重启中<br>12 - 自建迁移中<br>13 - 删除库表中<br>14 - 灾备实例创建同步中<br>15 - 升级待切换<br>16 - 升级切换中<br>17 - 升级切换完成<br>19 - 参数设置待执行<br>34 - 原地升级待执行
                      * 
                      */
                     void SetTaskStatus(const std::vector<uint64_t>& _taskStatus);
@@ -380,15 +380,15 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取返回结果集排序方式，目前支持："ASC" 或者 "DESC"。
-                     * @return OrderDirection 返回结果集排序方式，目前支持："ASC" 或者 "DESC"。
+                     * 获取返回结果集排序方式。目前支持值："ASC" - 表示升序，"DESC" - 表示降序，默认为 "DESC"。
+                     * @return OrderDirection 返回结果集排序方式。目前支持值："ASC" - 表示升序，"DESC" - 表示降序，默认为 "DESC"。
                      * 
                      */
                     std::string GetOrderDirection() const;
 
                     /**
-                     * 设置返回结果集排序方式，目前支持："ASC" 或者 "DESC"。
-                     * @param _orderDirection 返回结果集排序方式，目前支持："ASC" 或者 "DESC"。
+                     * 设置返回结果集排序方式。目前支持值："ASC" - 表示升序，"DESC" - 表示降序，默认为 "DESC"。
+                     * @param _orderDirection 返回结果集排序方式。目前支持值："ASC" - 表示升序，"DESC" - 表示降序，默认为 "DESC"。
                      * 
                      */
                     void SetOrderDirection(const std::string& _orderDirection);
@@ -402,14 +402,18 @@ namespace TencentCloud
 
                     /**
                      * 获取是否以安全组 ID 为过滤条件。
+说明：0表示否，1表示是。
                      * @return WithSecurityGroup 是否以安全组 ID 为过滤条件。
+说明：0表示否，1表示是。
                      * 
                      */
                     int64_t GetWithSecurityGroup() const;
 
                     /**
                      * 设置是否以安全组 ID 为过滤条件。
+说明：0表示否，1表示是。
                      * @param _withSecurityGroup 是否以安全组 ID 为过滤条件。
+说明：0表示否，1表示是。
                      * 
                      */
                     void SetWithSecurityGroup(const int64_t& _withSecurityGroup);
@@ -696,14 +700,18 @@ namespace TencentCloud
 
                     /**
                      * 获取标签键值
+请注意，创建中的实例无法查询到标签。
                      * @return Tags 标签键值
+请注意，创建中的实例无法查询到标签。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置标签键值
+请注意，创建中的实例无法查询到标签。
                      * @param _tags 标签键值
+请注意，创建中的实例无法查询到标签。
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -758,15 +766,15 @@ namespace TencentCloud
                     bool ProxyIdsHasBeenSet() const;
 
                     /**
-                     * 获取数据库引擎类型。
-                     * @return EngineTypes 数据库引擎类型。
+                     * 获取数据库引擎类型。可选值为：InnoDB、RocksDB。
+                     * @return EngineTypes 数据库引擎类型。可选值为：InnoDB、RocksDB。
                      * 
                      */
                     std::vector<std::string> GetEngineTypes() const;
 
                     /**
-                     * 设置数据库引擎类型。
-                     * @param _engineTypes 数据库引擎类型。
+                     * 设置数据库引擎类型。可选值为：InnoDB、RocksDB。
+                     * @param _engineTypes 数据库引擎类型。可选值为：InnoDB、RocksDB。
                      * 
                      */
                     void SetEngineTypes(const std::vector<std::string>& _engineTypes);
@@ -779,15 +787,15 @@ namespace TencentCloud
                     bool EngineTypesHasBeenSet() const;
 
                     /**
-                     * 获取是否获取集群版实例节点信息，可填：true或false
-                     * @return QueryClusterInfo 是否获取集群版实例节点信息，可填：true或false
+                     * 获取是否获取集群版实例节点信息，可填：true 或 false。默认为 false。
+                     * @return QueryClusterInfo 是否获取集群版实例节点信息，可填：true 或 false。默认为 false。
                      * 
                      */
                     bool GetQueryClusterInfo() const;
 
                     /**
-                     * 设置是否获取集群版实例节点信息，可填：true或false
-                     * @param _queryClusterInfo 是否获取集群版实例节点信息，可填：true或false
+                     * 设置是否获取集群版实例节点信息，可填：true 或 false。默认为 false。
+                     * @param _queryClusterInfo 是否获取集群版实例节点信息，可填：true 或 false。默认为 false。
                      * 
                      */
                     void SetQueryClusterInfo(const bool& _queryClusterInfo);
@@ -856,7 +864,7 @@ namespace TencentCloud
                     bool m_instanceNamesHasBeenSet;
 
                     /**
-                     * 实例任务状态，可能取值：<br>0 - 没有任务<br>1 - 升级中<br>2 - 数据导入中<br>3 - 开放Slave中<br>4 - 外网访问开通中<br>5 - 批量操作执行中<br>6 - 回档中<br>7 - 外网访问关闭中<br>8 - 密码修改中<br>9 - 实例名修改中<br>10 - 重启中<br>12 - 自建迁移中<br>13 - 删除库表中<br>14 - 灾备实例创建同步中<br>15 - 升级待切换<br>16 - 升级切换中<br>17 - 升级切换完成<br>19 - 参数设置待执行
+                     * 实例任务状态，可能取值：<br>0 - 没有任务<br>1 - 升级中<br>2 - 数据导入中<br>3 - 开放Slave中<br>4 - 外网访问开通中<br>5 - 批量操作执行中<br>6 - 回档中<br>7 - 外网访问关闭中<br>8 - 密码修改中<br>9 - 实例名修改中<br>10 - 重启中<br>12 - 自建迁移中<br>13 - 删除库表中<br>14 - 灾备实例创建同步中<br>15 - 升级待切换<br>16 - 升级切换中<br>17 - 升级切换完成<br>19 - 参数设置待执行<br>34 - 原地升级待执行
                      */
                     std::vector<uint64_t> m_taskStatus;
                     bool m_taskStatusHasBeenSet;
@@ -898,13 +906,14 @@ namespace TencentCloud
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 返回结果集排序方式，目前支持："ASC" 或者 "DESC"。
+                     * 返回结果集排序方式。目前支持值："ASC" - 表示升序，"DESC" - 表示降序，默认为 "DESC"。
                      */
                     std::string m_orderDirection;
                     bool m_orderDirectionHasBeenSet;
 
                     /**
                      * 是否以安全组 ID 为过滤条件。
+说明：0表示否，1表示是。
                      */
                     int64_t m_withSecurityGroup;
                     bool m_withSecurityGroupHasBeenSet;
@@ -989,6 +998,7 @@ namespace TencentCloud
 
                     /**
                      * 标签键值
+请注意，创建中的实例无法查询到标签。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
@@ -1006,13 +1016,13 @@ namespace TencentCloud
                     bool m_proxyIdsHasBeenSet;
 
                     /**
-                     * 数据库引擎类型。
+                     * 数据库引擎类型。可选值为：InnoDB、RocksDB。
                      */
                     std::vector<std::string> m_engineTypes;
                     bool m_engineTypesHasBeenSet;
 
                     /**
-                     * 是否获取集群版实例节点信息，可填：true或false
+                     * 是否获取集群版实例节点信息，可填：true 或 false。默认为 false。
                      */
                     bool m_queryClusterInfo;
                     bool m_queryClusterInfoHasBeenSet;

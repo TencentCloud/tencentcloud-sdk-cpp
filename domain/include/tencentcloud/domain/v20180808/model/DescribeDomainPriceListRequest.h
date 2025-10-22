@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询价格的后缀列表。默认则为全部后缀
-                     * @return TldList 查询价格的后缀列表。默认则为全部后缀
+                     * 获取查询指定域名后缀的域名价格列表，若不指定域名后缀，默认查询所有后缀的域名价格列表。
+                     * @return TldList 查询指定域名后缀的域名价格列表，若不指定域名后缀，默认查询所有后缀的域名价格列表。
                      * 
                      */
                     std::vector<std::string> GetTldList() const;
 
                     /**
-                     * 设置查询价格的后缀列表。默认则为全部后缀
-                     * @param _tldList 查询价格的后缀列表。默认则为全部后缀
+                     * 设置查询指定域名后缀的域名价格列表，若不指定域名后缀，默认查询所有后缀的域名价格列表。
+                     * @param _tldList 查询指定域名后缀的域名价格列表，若不指定域名后缀，默认查询所有后缀的域名价格列表。
                      * 
                      */
                     void SetTldList(const std::vector<std::string>& _tldList);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TldListHasBeenSet() const;
 
                     /**
-                     * 获取查询购买的年份，默认会列出所有年份的价格
-                     * @return Year 查询购买的年份，默认会列出所有年份的价格
+                     * 获取查询购买的年份，默认会列出所有年份的价格，可选值【1,10】
+                     * @return Year 查询购买的年份，默认会列出所有年份的价格，可选值【1,10】
                      * 
                      */
                     std::vector<int64_t> GetYear() const;
 
                     /**
-                     * 设置查询购买的年份，默认会列出所有年份的价格
-                     * @param _year 查询购买的年份，默认会列出所有年份的价格
+                     * 设置查询购买的年份，默认会列出所有年份的价格，可选值【1,10】
+                     * @param _year 查询购买的年份，默认会列出所有年份的价格，可选值【1,10】
                      * 
                      */
                     void SetYear(const std::vector<int64_t>& _year);
@@ -85,15 +85,31 @@ namespace TencentCloud
                     bool YearHasBeenSet() const;
 
                     /**
-                     * 获取域名的购买类型：new  新购，renew 续费，redem 赎回，tran 转入
-                     * @return Operation 域名的购买类型：new  新购，renew 续费，redem 赎回，tran 转入
+                     * 获取域名的购买类型：
+new  新购
+renew 续费
+redem 赎回
+tran 转入
+                     * @return Operation 域名的购买类型：
+new  新购
+renew 续费
+redem 赎回
+tran 转入
                      * 
                      */
                     std::vector<std::string> GetOperation() const;
 
                     /**
-                     * 设置域名的购买类型：new  新购，renew 续费，redem 赎回，tran 转入
-                     * @param _operation 域名的购买类型：new  新购，renew 续费，redem 赎回，tran 转入
+                     * 设置域名的购买类型：
+new  新购
+renew 续费
+redem 赎回
+tran 转入
+                     * @param _operation 域名的购买类型：
+new  新购
+renew 续费
+redem 赎回
+tran 转入
                      * 
                      */
                     void SetOperation(const std::vector<std::string>& _operation);
@@ -108,19 +124,23 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询价格的后缀列表。默认则为全部后缀
+                     * 查询指定域名后缀的域名价格列表，若不指定域名后缀，默认查询所有后缀的域名价格列表。
                      */
                     std::vector<std::string> m_tldList;
                     bool m_tldListHasBeenSet;
 
                     /**
-                     * 查询购买的年份，默认会列出所有年份的价格
+                     * 查询购买的年份，默认会列出所有年份的价格，可选值【1,10】
                      */
                     std::vector<int64_t> m_year;
                     bool m_yearHasBeenSet;
 
                     /**
-                     * 域名的购买类型：new  新购，renew 续费，redem 赎回，tran 转入
+                     * 域名的购买类型：
+new  新购
+renew 续费
+redem 赎回
+tran 转入
                      */
                     std::vector<std::string> m_operation;
                     bool m_operationHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例的创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedTime 实例的创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置实例的创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdTime 实例的创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -95,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例的过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpiredTime 实例的过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpiredTime() const;
 
                     /**
                      * 设置实例的过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expiredTime 实例的过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpiredTime(const std::string& _expiredTime);
@@ -120,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取带宽实例的唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionFlowControlId 带宽实例的唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegionFlowControlId() const;
 
                     /**
                      * 设置带宽实例的唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionFlowControlId 带宽实例的唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionFlowControlId(const std::string& _regionFlowControlId);
@@ -145,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取带宽是否自动续费的标记。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RenewFlag 带宽是否自动续费的标记。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRenewFlag() const;
 
                     /**
                      * 设置带宽是否自动续费的标记。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _renewFlag 带宽是否自动续费的标记。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRenewFlag(const std::string& _renewFlag);
@@ -170,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述带宽的地域和限速上限信息。在地域间限速的情况下才会返回参数，出口限速模式不返回。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CcnRegionBandwidthLimit 描述带宽的地域和限速上限信息。在地域间限速的情况下才会返回参数，出口限速模式不返回。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CcnRegionBandwidthLimitInfo GetCcnRegionBandwidthLimit() const;
 
                     /**
                      * 设置描述带宽的地域和限速上限信息。在地域间限速的情况下才会返回参数，出口限速模式不返回。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ccnRegionBandwidthLimit 描述带宽的地域和限速上限信息。在地域间限速的情况下才会返回参数，出口限速模式不返回。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCcnRegionBandwidthLimit(const CcnRegionBandwidthLimitInfo& _ccnRegionBandwidthLimit);
@@ -195,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云市场实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MarketId 云市场实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMarketId() const;
 
                     /**
                      * 设置云市场实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _marketId 云市场实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMarketId(const std::string& _marketId);
@@ -220,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例所属用户主账号ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserAccountID 实例所属用户主账号ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserAccountID() const;
 
                     /**
                      * 设置实例所属用户主账号ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userAccountID 实例所属用户主账号ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserAccountID(const std::string& _userAccountID);
@@ -245,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否跨境，`true`表示跨境，反之不跨境。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsCrossBorder 是否跨境，`true`表示跨境，反之不跨境。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsCrossBorder() const;
 
                     /**
                      * 设置是否跨境，`true`表示跨境，反之不跨境。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isCrossBorder 是否跨境，`true`表示跨境，反之不跨境。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsCrossBorder(const bool& _isCrossBorder);
@@ -270,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取`true`表示封禁，地域间流量不通，`false`解禁，地域间流量正常
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsSecurityLock `true`表示封禁，地域间流量不通，`false`解禁，地域间流量正常
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsSecurityLock() const;
 
                     /**
                      * 设置`true`表示封禁，地域间流量不通，`false`解禁，地域间流量正常
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isSecurityLock `true`表示封禁，地域间流量不通，`false`解禁，地域间流量正常
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsSecurityLock(const bool& _isSecurityLock);
@@ -295,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取`POSTPAID`表示后付费，`PREPAID`表示预付费。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceChargeType `POSTPAID`表示后付费，`PREPAID`表示预付费。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceChargeType() const;
 
                     /**
                      * 设置`POSTPAID`表示后付费，`PREPAID`表示预付费。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceChargeType `POSTPAID`表示后付费，`PREPAID`表示预付费。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
@@ -320,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 实例更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置实例更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 实例更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -353,77 +309,66 @@ namespace TencentCloud
 
                     /**
                      * 实例的创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
                      * 实例的过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expiredTime;
                     bool m_expiredTimeHasBeenSet;
 
                     /**
                      * 带宽实例的唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regionFlowControlId;
                     bool m_regionFlowControlIdHasBeenSet;
 
                     /**
                      * 带宽是否自动续费的标记。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_renewFlag;
                     bool m_renewFlagHasBeenSet;
 
                     /**
                      * 描述带宽的地域和限速上限信息。在地域间限速的情况下才会返回参数，出口限速模式不返回。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CcnRegionBandwidthLimitInfo m_ccnRegionBandwidthLimit;
                     bool m_ccnRegionBandwidthLimitHasBeenSet;
 
                     /**
                      * 云市场实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_marketId;
                     bool m_marketIdHasBeenSet;
 
                     /**
                      * 实例所属用户主账号ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userAccountID;
                     bool m_userAccountIDHasBeenSet;
 
                     /**
                      * 是否跨境，`true`表示跨境，反之不跨境。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isCrossBorder;
                     bool m_isCrossBorderHasBeenSet;
 
                     /**
                      * `true`表示封禁，地域间流量不通，`false`解禁，地域间流量正常
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isSecurityLock;
                     bool m_isSecurityLockHasBeenSet;
 
                     /**
                      * `POSTPAID`表示后付费，`PREPAID`表示预付费。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceChargeType;
                     bool m_instanceChargeTypeHasBeenSet;
 
                     /**
                      * 实例更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

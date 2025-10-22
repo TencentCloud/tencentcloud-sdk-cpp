@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,7 +49,9 @@ LogstashInstanceInfo::LogstashInstanceInfo() :
     m_operationDurationHasBeenSet(false),
     m_cpuNumHasBeenSet(false),
     m_tagListHasBeenSet(false),
-    m_memSizeHasBeenSet(false)
+    m_memSizeHasBeenSet(false),
+    m_deployModeHasBeenSet(false),
+    m_multiZoneInfoHasBeenSet(false)
 {
 }
 
@@ -385,6 +387,36 @@ CoreInternalOutcome LogstashInstanceInfo::Deserialize(const rapidjson::Value &va
         m_memSizeHasBeenSet = true;
     }
 
+    if (value.HasMember("DeployMode") && !value["DeployMode"].IsNull())
+    {
+        if (!value["DeployMode"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LogstashInstanceInfo.DeployMode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deployMode = value["DeployMode"].GetUint64();
+        m_deployModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("MultiZoneInfo") && !value["MultiZoneInfo"].IsNull())
+    {
+        if (!value["MultiZoneInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LogstashInstanceInfo.MultiZoneInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["MultiZoneInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ZoneDetail item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_multiZoneInfo.push_back(item);
+        }
+        m_multiZoneInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -644,6 +676,29 @@ void LogstashInstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "MemSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_memSize, allocator);
+    }
+
+    if (m_deployModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeployMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deployMode, allocator);
+    }
+
+    if (m_multiZoneInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MultiZoneInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_multiZoneInfo.begin(); itr != m_multiZoneInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1111,5 +1166,37 @@ void LogstashInstanceInfo::SetMemSize(const uint64_t& _memSize)
 bool LogstashInstanceInfo::MemSizeHasBeenSet() const
 {
     return m_memSizeHasBeenSet;
+}
+
+uint64_t LogstashInstanceInfo::GetDeployMode() const
+{
+    return m_deployMode;
+}
+
+void LogstashInstanceInfo::SetDeployMode(const uint64_t& _deployMode)
+{
+    m_deployMode = _deployMode;
+    m_deployModeHasBeenSet = true;
+}
+
+bool LogstashInstanceInfo::DeployModeHasBeenSet() const
+{
+    return m_deployModeHasBeenSet;
+}
+
+vector<ZoneDetail> LogstashInstanceInfo::GetMultiZoneInfo() const
+{
+    return m_multiZoneInfo;
+}
+
+void LogstashInstanceInfo::SetMultiZoneInfo(const vector<ZoneDetail>& _multiZoneInfo)
+{
+    m_multiZoneInfo = _multiZoneInfo;
+    m_multiZoneInfoHasBeenSet = true;
+}
+
+bool LogstashInstanceInfo::MultiZoneInfoHasBeenSet() const
+{
+    return m_multiZoneInfoHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool DiskChargePrepaidsHasBeenSet() const;
 
                     /**
-                     * 获取指定云盘新的到期时间，形式如：2017-12-17 00:00:00。参数`NewDeadline`和`DiskChargePrepaids`是两种指定询价时长的方式，两者必传一个。
-                     * @return NewDeadline 指定云盘新的到期时间，形式如：2017-12-17 00:00:00。参数`NewDeadline`和`DiskChargePrepaids`是两种指定询价时长的方式，两者必传一个。
+                     * 获取指定云硬盘新的到期时间，形式如：2017-12-17 00:00:00。参数`NewDeadline`和`DiskChargePrepaids`是两种指定询价时长的方式，两者必传一个。
+                     * @return NewDeadline 指定云硬盘新的到期时间，形式如：2017-12-17 00:00:00。参数`NewDeadline`和`DiskChargePrepaids`是两种指定询价时长的方式，两者必传一个。
                      * 
                      */
                     std::string GetNewDeadline() const;
 
                     /**
-                     * 设置指定云盘新的到期时间，形式如：2017-12-17 00:00:00。参数`NewDeadline`和`DiskChargePrepaids`是两种指定询价时长的方式，两者必传一个。
-                     * @param _newDeadline 指定云盘新的到期时间，形式如：2017-12-17 00:00:00。参数`NewDeadline`和`DiskChargePrepaids`是两种指定询价时长的方式，两者必传一个。
+                     * 设置指定云硬盘新的到期时间，形式如：2017-12-17 00:00:00。参数`NewDeadline`和`DiskChargePrepaids`是两种指定询价时长的方式，两者必传一个。
+                     * @param _newDeadline 指定云硬盘新的到期时间，形式如：2017-12-17 00:00:00。参数`NewDeadline`和`DiskChargePrepaids`是两种指定询价时长的方式，两者必传一个。
                      * 
                      */
                     void SetNewDeadline(const std::string& _newDeadline);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool NewDeadlineHasBeenSet() const;
 
                     /**
-                     * 获取云盘所属项目ID。 如传入则仅用于鉴权。
-                     * @return ProjectId 云盘所属项目ID。 如传入则仅用于鉴权。
+                     * 获取云硬盘所属项目ID。该参数可以通过调用[DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 projectId 字段来获取。 如传入则仅用于鉴权。
+                     * @return ProjectId 云硬盘所属项目ID。该参数可以通过调用[DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 projectId 字段来获取。 如传入则仅用于鉴权。
                      * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
-                     * 设置云盘所属项目ID。 如传入则仅用于鉴权。
-                     * @param _projectId 云盘所属项目ID。 如传入则仅用于鉴权。
+                     * 设置云硬盘所属项目ID。该参数可以通过调用[DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 projectId 字段来获取。 如传入则仅用于鉴权。
+                     * @param _projectId 云硬盘所属项目ID。该参数可以通过调用[DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 projectId 字段来获取。 如传入则仅用于鉴权。
                      * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
@@ -142,13 +142,13 @@ namespace TencentCloud
                     bool m_diskChargePrepaidsHasBeenSet;
 
                     /**
-                     * 指定云盘新的到期时间，形式如：2017-12-17 00:00:00。参数`NewDeadline`和`DiskChargePrepaids`是两种指定询价时长的方式，两者必传一个。
+                     * 指定云硬盘新的到期时间，形式如：2017-12-17 00:00:00。参数`NewDeadline`和`DiskChargePrepaids`是两种指定询价时长的方式，两者必传一个。
                      */
                     std::string m_newDeadline;
                     bool m_newDeadlineHasBeenSet;
 
                     /**
-                     * 云盘所属项目ID。 如传入则仅用于鉴权。
+                     * 云硬盘所属项目ID。该参数可以通过调用[DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 projectId 字段来获取。 如传入则仅用于鉴权。
                      */
                     uint64_t m_projectId;
                     bool m_projectIdHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取占用ip地址的资源信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IpAddressStates 占用ip地址的资源信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<IpAddressStates> GetIpAddressStates() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取返回占用资源的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 返回占用资源的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 占用ip地址的资源信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<IpAddressStates> m_ipAddressStates;
                     bool m_ipAddressStatesHasBeenSet;
 
                     /**
                      * 返回占用资源的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

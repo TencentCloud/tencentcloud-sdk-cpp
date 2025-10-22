@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool FileNameHasBeenSet() const;
 
                     /**
-                     * 获取0集群维度 1节点维度
-                     * @return ClusterConfigType 0集群维度 1节点维度
+                     * 获取0集群维度 1节点维度 2启动脚本 3计算组维度
+                     * @return ClusterConfigType 0集群维度 1节点维度 2启动脚本 3计算组维度
                      * 
                      */
                     int64_t GetClusterConfigType() const;
 
                     /**
-                     * 设置0集群维度 1节点维度
-                     * @param _clusterConfigType 0集群维度 1节点维度
+                     * 设置0集群维度 1节点维度 2启动脚本 3计算组维度
+                     * @param _clusterConfigType 0集群维度 1节点维度 2启动脚本 3计算组维度
                      * 
                      */
                     void SetClusterConfigType(const int64_t& _clusterConfigType);
@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool IPAddressHasBeenSet() const;
 
+                    /**
+                     * 获取计算组id
+                     * @return ComputeGroupId 计算组id
+                     * 
+                     */
+                    std::string GetComputeGroupId() const;
+
+                    /**
+                     * 设置计算组id
+                     * @param _computeGroupId 计算组id
+                     * 
+                     */
+                    void SetComputeGroupId(const std::string& _computeGroupId);
+
+                    /**
+                     * 判断参数 ComputeGroupId 是否已赋值
+                     * @return ComputeGroupId 是否已赋值
+                     * 
+                     */
+                    bool ComputeGroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -168,7 +189,7 @@ namespace TencentCloud
                     bool m_fileNameHasBeenSet;
 
                     /**
-                     * 0集群维度 1节点维度
+                     * 0集群维度 1节点维度 2启动脚本 3计算组维度
                      */
                     int64_t m_clusterConfigType;
                     bool m_clusterConfigTypeHasBeenSet;
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     std::string m_iPAddress;
                     bool m_iPAddressHasBeenSet;
+
+                    /**
+                     * 计算组id
+                     */
+                    std::string m_computeGroupId;
+                    bool m_computeGroupIdHasBeenSet;
 
                 };
             }

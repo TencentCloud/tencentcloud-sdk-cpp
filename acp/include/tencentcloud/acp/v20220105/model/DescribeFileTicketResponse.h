@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取上传url鉴权信息(任务来源为1时上传需要, Authorization参数值)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UploadSign 上传url鉴权信息(任务来源为1时上传需要, Authorization参数值)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUploadSign() const;
@@ -89,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取上传文件ID(任务来源为1时提交诊断任务需要)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FildID 上传文件ID(任务来源为1时提交诊断任务需要)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFildID() const;
@@ -119,14 +115,12 @@ namespace TencentCloud
 
                     /**
                      * 上传url鉴权信息(任务来源为1时上传需要, Authorization参数值)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uploadSign;
                     bool m_uploadSignHasBeenSet;
 
                     /**
                      * 上传文件ID(任务来源为1时提交诊断任务需要)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fildID;
                     bool m_fildIDHasBeenSet;

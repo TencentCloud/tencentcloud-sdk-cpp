@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,8 @@ ModifyInstanceRequest::ModifyInstanceRequest() :
     m_scaledTpsEnabledHasBeenSet(false),
     m_aclEnabledHasBeenSet(false),
     m_maxTopicNumHasBeenSet(false),
-    m_extraTopicNumHasBeenSet(false)
+    m_extraTopicNumHasBeenSet(false),
+    m_enableDeletionProtectionHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,14 @@ string ModifyInstanceRequest::ToJsonString() const
         string key = "ExtraTopicNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_extraTopicNum.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableDeletionProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableDeletionProtection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableDeletionProtection, allocator);
     }
 
 
@@ -289,6 +298,22 @@ void ModifyInstanceRequest::SetExtraTopicNum(const string& _extraTopicNum)
 bool ModifyInstanceRequest::ExtraTopicNumHasBeenSet() const
 {
     return m_extraTopicNumHasBeenSet;
+}
+
+bool ModifyInstanceRequest::GetEnableDeletionProtection() const
+{
+    return m_enableDeletionProtection;
+}
+
+void ModifyInstanceRequest::SetEnableDeletionProtection(const bool& _enableDeletionProtection)
+{
+    m_enableDeletionProtection = _enableDeletionProtection;
+    m_enableDeletionProtectionHasBeenSet = true;
+}
+
+bool ModifyInstanceRequest::EnableDeletionProtectionHasBeenSet() const
+{
+    return m_enableDeletionProtectionHasBeenSet;
 }
 
 

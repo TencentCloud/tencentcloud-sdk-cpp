@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,9 +47,7 @@ namespace TencentCloud
 
                     /**
                      * 获取代理配置数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 代理配置数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCount() const;
@@ -63,25 +61,21 @@ namespace TencentCloud
 
                     /**
                      * 获取代理配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomConf 代理配置
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     CustomConfig GetCustomConf() const;
 
                     /**
                      * 判断参数 CustomConf 是否已赋值
                      * @return CustomConf 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool CustomConfHasBeenSet() const;
 
                     /**
                      * 获取权重限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WeightRule 权重限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Rule GetWeightRule() const;
@@ -93,28 +87,45 @@ namespace TencentCloud
                      */
                     bool WeightRuleHasBeenSet() const;
 
+                    /**
+                     * 获取代理配置
+                     * @return CustomConfInfo 代理配置
+                     * 
+                     */
+                    std::vector<CustomConfig> GetCustomConfInfo() const;
+
+                    /**
+                     * 判断参数 CustomConfInfo 是否已赋值
+                     * @return CustomConfInfo 是否已赋值
+                     * 
+                     */
+                    bool CustomConfInfoHasBeenSet() const;
+
                 private:
 
                     /**
                      * 代理配置数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_count;
                     bool m_countHasBeenSet;
 
                     /**
                      * 代理配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CustomConfig m_customConf;
                     bool m_customConfHasBeenSet;
 
                     /**
                      * 权重限制
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Rule m_weightRule;
                     bool m_weightRuleHasBeenSet;
+
+                    /**
+                     * 代理配置
+                     */
+                    std::vector<CustomConfig> m_customConfInfo;
+                    bool m_customConfInfoHasBeenSet;
 
                 };
             }

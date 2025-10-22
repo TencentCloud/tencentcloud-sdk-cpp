@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称。
-                     * @return InstanceName 实例名称。
+                     * 获取实例名称。请登录 [Redis 控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例名称。
+                     * @return InstanceName 实例名称。请登录 [Redis 控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例名称。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称。
-                     * @param _instanceName 实例名称。
+                     * 设置实例名称。请登录 [Redis 控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例名称。
+                     * @param _instanceName 实例名称。请登录 [Redis 控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例名称。
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
-                     * @return Offset 分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
+                     * 获取分页偏移量。取值需为 Limit 的整数倍：offset=limit*(页码-1)，默认值为0。
+                     * @return Offset 分页偏移量。取值需为 Limit 的整数倍：offset=limit*(页码-1)，默认值为0。
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
-                     * @param _offset 分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
+                     * 设置分页偏移量。取值需为 Limit 的整数倍：offset=limit*(页码-1)，默认值为0。
+                     * @param _offset 分页偏移量。取值需为 Limit 的整数倍：offset=limit*(页码-1)，默认值为0。
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -127,23 +127,23 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取项目 ID。登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在右上角的账号信息下拉菜单中，选择**项目管理**，即可获取对应的项目 ID。
-                     * @return ProjectIds 项目 ID。登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在右上角的账号信息下拉菜单中，选择**项目管理**，即可获取对应的项目 ID。
-                     * 
+                     * 获取该字段已废弃, 请忽略, 项目 ID
+                     * @return ProjectIds 该字段已废弃, 请忽略, 项目 ID
+                     * @deprecated
                      */
                     std::vector<int64_t> GetProjectIds() const;
 
                     /**
-                     * 设置项目 ID。登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在右上角的账号信息下拉菜单中，选择**项目管理**，即可获取对应的项目 ID。
-                     * @param _projectIds 项目 ID。登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在右上角的账号信息下拉菜单中，选择**项目管理**，即可获取对应的项目 ID。
-                     * 
+                     * 设置该字段已废弃, 请忽略, 项目 ID
+                     * @param _projectIds 该字段已废弃, 请忽略, 项目 ID
+                     * @deprecated
                      */
                     void SetProjectIds(const std::vector<int64_t>& _projectIds);
 
                     /**
                      * 判断参数 ProjectIds 是否已赋值
                      * @return ProjectIds 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ProjectIdsHasBeenSet() const;
 
@@ -176,7 +176,7 @@ namespace TencentCloud
 - FLOW_MODIFYINSTANCEPARAMS："034"，修改实例参数。
 - FLOW_MODIFYINSTANCEPASSWORDFREE："035"，设置免密。
 - FLOW_SWITCHINSTANCEVIP："036"，实例VIP切换。
-- FLOW_MODIFYINSTANCEACCOUNT："037"，实例帐号变更。
+- FLOW_MODIFYINSTANCEACCOUNT："037"，实例账号变更。
 - FLOW_MODIFYINSTANCEBANDWIDTH："038"，实例带宽变更。
 - FLOW_ENABLEINSTANCE_REPLICATE："039"，开启副本只读。
 - FLOW_DISABLEINSTANCE_REPLICATE："040"，关闭副本只读。
@@ -197,7 +197,7 @@ namespace TencentCloud
 - FLOW_CODE_CHANGE_INSTANCE_ROLE： "057"，更改复制组实例角色。
 - FLOW_MIGRATE_NODE："058"，迁移节点。
 - FLOW_SWITCH_NODE："059"，切换节点。
-- FLOW_UPGRADE_SMALL_VERSION："060"，升级 Redi s版本。
+- FLOW_UPGRADE_SMALL_VERSION："060"，升级 Redis版本。
 - FLOW_UPGRADE_PROXY_VERSION："061"，升级 Proxy 版本。
 - FLOW_MODIFY_INSTANCE_NETWORK： "062"，实例修改网络。
 - FLOW_MIGRATE_PROXY_NODE："063"，迁移proxy节点。
@@ -233,7 +233,7 @@ namespace TencentCloud
 - FLOW_MODIFYINSTANCEPARAMS："034"，修改实例参数。
 - FLOW_MODIFYINSTANCEPASSWORDFREE："035"，设置免密。
 - FLOW_SWITCHINSTANCEVIP："036"，实例VIP切换。
-- FLOW_MODIFYINSTANCEACCOUNT："037"，实例帐号变更。
+- FLOW_MODIFYINSTANCEACCOUNT："037"，实例账号变更。
 - FLOW_MODIFYINSTANCEBANDWIDTH："038"，实例带宽变更。
 - FLOW_ENABLEINSTANCE_REPLICATE："039"，开启副本只读。
 - FLOW_DISABLEINSTANCE_REPLICATE："040"，关闭副本只读。
@@ -254,7 +254,7 @@ namespace TencentCloud
 - FLOW_CODE_CHANGE_INSTANCE_ROLE： "057"，更改复制组实例角色。
 - FLOW_MIGRATE_NODE："058"，迁移节点。
 - FLOW_SWITCH_NODE："059"，切换节点。
-- FLOW_UPGRADE_SMALL_VERSION："060"，升级 Redi s版本。
+- FLOW_UPGRADE_SMALL_VERSION："060"，升级 Redis版本。
 - FLOW_UPGRADE_PROXY_VERSION："061"，升级 Proxy 版本。
 - FLOW_MODIFY_INSTANCE_NETWORK： "062"，实例修改网络。
 - FLOW_MIGRATE_PROXY_NODE："063"，迁移proxy节点。
@@ -295,7 +295,7 @@ namespace TencentCloud
 - FLOW_MODIFYINSTANCEPARAMS："034"，修改实例参数。
 - FLOW_MODIFYINSTANCEPASSWORDFREE："035"，设置免密。
 - FLOW_SWITCHINSTANCEVIP："036"，实例VIP切换。
-- FLOW_MODIFYINSTANCEACCOUNT："037"，实例帐号变更。
+- FLOW_MODIFYINSTANCEACCOUNT："037"，实例账号变更。
 - FLOW_MODIFYINSTANCEBANDWIDTH："038"，实例带宽变更。
 - FLOW_ENABLEINSTANCE_REPLICATE："039"，开启副本只读。
 - FLOW_DISABLEINSTANCE_REPLICATE："040"，关闭副本只读。
@@ -316,7 +316,7 @@ namespace TencentCloud
 - FLOW_CODE_CHANGE_INSTANCE_ROLE： "057"，更改复制组实例角色。
 - FLOW_MIGRATE_NODE："058"，迁移节点。
 - FLOW_SWITCH_NODE："059"，切换节点。
-- FLOW_UPGRADE_SMALL_VERSION："060"，升级 Redi s版本。
+- FLOW_UPGRADE_SMALL_VERSION："060"，升级 Redis版本。
 - FLOW_UPGRADE_PROXY_VERSION："061"，升级 Proxy 版本。
 - FLOW_MODIFY_INSTANCE_NETWORK： "062"，实例修改网络。
 - FLOW_MIGRATE_PROXY_NODE："063"，迁移proxy节点。
@@ -352,7 +352,7 @@ namespace TencentCloud
 - FLOW_MODIFYINSTANCEPARAMS："034"，修改实例参数。
 - FLOW_MODIFYINSTANCEPASSWORDFREE："035"，设置免密。
 - FLOW_SWITCHINSTANCEVIP："036"，实例VIP切换。
-- FLOW_MODIFYINSTANCEACCOUNT："037"，实例帐号变更。
+- FLOW_MODIFYINSTANCEACCOUNT："037"，实例账号变更。
 - FLOW_MODIFYINSTANCEBANDWIDTH："038"，实例带宽变更。
 - FLOW_ENABLEINSTANCE_REPLICATE："039"，开启副本只读。
 - FLOW_DISABLEINSTANCE_REPLICATE："040"，关闭副本只读。
@@ -373,7 +373,7 @@ namespace TencentCloud
 - FLOW_CODE_CHANGE_INSTANCE_ROLE： "057"，更改复制组实例角色。
 - FLOW_MIGRATE_NODE："058"，迁移节点。
 - FLOW_SWITCH_NODE："059"，切换节点。
-- FLOW_UPGRADE_SMALL_VERSION："060"，升级 Redi s版本。
+- FLOW_UPGRADE_SMALL_VERSION："060"，升级 Redis版本。
 - FLOW_UPGRADE_PROXY_VERSION："061"，升级 Proxy 版本。
 - FLOW_MODIFY_INSTANCE_NETWORK： "062"，实例修改网络。
 - FLOW_MIGRATE_PROXY_NODE："063"，迁移proxy节点。
@@ -495,21 +495,21 @@ namespace TencentCloud
                     /**
                      * 获取该字段已废弃，使用OperateUin代替，请忽略。
                      * @return OperatorUin 该字段已废弃，使用OperateUin代替，请忽略。
-                     * 
+                     * @deprecated
                      */
                     std::vector<int64_t> GetOperatorUin() const;
 
                     /**
                      * 设置该字段已废弃，使用OperateUin代替，请忽略。
                      * @param _operatorUin 该字段已废弃，使用OperateUin代替，请忽略。
-                     * 
+                     * @deprecated
                      */
                     void SetOperatorUin(const std::vector<int64_t>& _operatorUin);
 
                     /**
                      * 判断参数 OperatorUin 是否已赋值
                      * @return OperatorUin 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool OperatorUinHasBeenSet() const;
 
@@ -543,7 +543,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例名称。
+                     * 实例名称。请登录 [Redis 控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例名称。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
@@ -555,13 +555,13 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
+                     * 分页偏移量。取值需为 Limit 的整数倍：offset=limit*(页码-1)，默认值为0。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 项目 ID。登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在右上角的账号信息下拉菜单中，选择**项目管理**，即可获取对应的项目 ID。
+                     * 该字段已废弃, 请忽略, 项目 ID
                      */
                     std::vector<int64_t> m_projectIds;
                     bool m_projectIdsHasBeenSet;
@@ -595,7 +595,7 @@ namespace TencentCloud
 - FLOW_MODIFYINSTANCEPARAMS："034"，修改实例参数。
 - FLOW_MODIFYINSTANCEPASSWORDFREE："035"，设置免密。
 - FLOW_SWITCHINSTANCEVIP："036"，实例VIP切换。
-- FLOW_MODIFYINSTANCEACCOUNT："037"，实例帐号变更。
+- FLOW_MODIFYINSTANCEACCOUNT："037"，实例账号变更。
 - FLOW_MODIFYINSTANCEBANDWIDTH："038"，实例带宽变更。
 - FLOW_ENABLEINSTANCE_REPLICATE："039"，开启副本只读。
 - FLOW_DISABLEINSTANCE_REPLICATE："040"，关闭副本只读。
@@ -616,7 +616,7 @@ namespace TencentCloud
 - FLOW_CODE_CHANGE_INSTANCE_ROLE： "057"，更改复制组实例角色。
 - FLOW_MIGRATE_NODE："058"，迁移节点。
 - FLOW_SWITCH_NODE："059"，切换节点。
-- FLOW_UPGRADE_SMALL_VERSION："060"，升级 Redi s版本。
+- FLOW_UPGRADE_SMALL_VERSION："060"，升级 Redis版本。
 - FLOW_UPGRADE_PROXY_VERSION："061"，升级 Proxy 版本。
 - FLOW_MODIFY_INSTANCE_NETWORK： "062"，实例修改网络。
 - FLOW_MIGRATE_PROXY_NODE："063"，迁移proxy节点。

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取原始总金额，浮点型参数，精确到小数点后两位，如：2000.99
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCost 原始总金额，浮点型参数，精确到小数点后两位，如：2000.99
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetTotalCost() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取购买的实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GoodsNum 购买的实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetGoodsNum() const;
@@ -77,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取商品的时间大小，整型参数，举例：当TimeSpan为1，TImeUnit为m时，表示询价购买时长为1个月时的价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeSpan 商品的时间大小，整型参数，举例：当TimeSpan为1，TImeUnit为m时，表示询价购买时长为1个月时的价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTimeSpan() const;
@@ -93,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取商品的时间单位，m表示月，y表示年
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeUnit 商品的时间单位，m表示月，y表示年
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTimeUnit() const;
@@ -109,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取应付总金额，浮点型参数，精确到小数点后两位，如：2000.99
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginalCost 应付总金额，浮点型参数，精确到小数点后两位，如：2000.99
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetOriginalCost() const;
@@ -127,35 +117,30 @@ namespace TencentCloud
 
                     /**
                      * 原始总金额，浮点型参数，精确到小数点后两位，如：2000.99
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_totalCost;
                     bool m_totalCostHasBeenSet;
 
                     /**
                      * 购买的实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_goodsNum;
                     bool m_goodsNumHasBeenSet;
 
                     /**
                      * 商品的时间大小，整型参数，举例：当TimeSpan为1，TImeUnit为m时，表示询价购买时长为1个月时的价格
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timeSpan;
                     bool m_timeSpanHasBeenSet;
 
                     /**
                      * 商品的时间单位，m表示月，y表示年
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timeUnit;
                     bool m_timeUnitHasBeenSet;
 
                     /**
                      * 应付总金额，浮点型参数，精确到小数点后两位，如：2000.99
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_originalCost;
                     bool m_originalCostHasBeenSet;

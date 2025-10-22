@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,43 +64,15 @@ namespace TencentCloud
                     bool EventIdSetHasBeenSet() const;
 
                     /**
-                     * 获取标记事件的状态，   
-    EVENT_DEALED:事件处理
-    EVENT_INGNORE"：事件忽略
-    EVENT_DEL:事件删除
-    EVENT_ADD_WHITE:事件加白
-    EVENT_PENDING: 事件待处理
-	EVENT_ISOLATE_CONTAINER: 隔离容器
-	EVENT_RESOTRE_CONTAINER: 恢复容器
-                     * @return Status 标记事件的状态，   
-    EVENT_DEALED:事件处理
-    EVENT_INGNORE"：事件忽略
-    EVENT_DEL:事件删除
-    EVENT_ADD_WHITE:事件加白
-    EVENT_PENDING: 事件待处理
-	EVENT_ISOLATE_CONTAINER: 隔离容器
-	EVENT_RESOTRE_CONTAINER: 恢复容器
+                     * 获取标记事件的状态，       EVENT_DEALED:事件处理    EVENT_IGNORE"：事件忽略    EVENT_DEL:事件删除    EVENT_ADD_WHITE:事件加白    EVENT_PENDING: 事件待处理	EVENT_ISOLATE_CONTAINER: 隔离容器	EVENT_RESOTRE_CONTAINER: 恢复容器
+                     * @return Status 标记事件的状态，       EVENT_DEALED:事件处理    EVENT_IGNORE"：事件忽略    EVENT_DEL:事件删除    EVENT_ADD_WHITE:事件加白    EVENT_PENDING: 事件待处理	EVENT_ISOLATE_CONTAINER: 隔离容器	EVENT_RESOTRE_CONTAINER: 恢复容器
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置标记事件的状态，   
-    EVENT_DEALED:事件处理
-    EVENT_INGNORE"：事件忽略
-    EVENT_DEL:事件删除
-    EVENT_ADD_WHITE:事件加白
-    EVENT_PENDING: 事件待处理
-	EVENT_ISOLATE_CONTAINER: 隔离容器
-	EVENT_RESOTRE_CONTAINER: 恢复容器
-                     * @param _status 标记事件的状态，   
-    EVENT_DEALED:事件处理
-    EVENT_INGNORE"：事件忽略
-    EVENT_DEL:事件删除
-    EVENT_ADD_WHITE:事件加白
-    EVENT_PENDING: 事件待处理
-	EVENT_ISOLATE_CONTAINER: 隔离容器
-	EVENT_RESOTRE_CONTAINER: 恢复容器
+                     * 设置标记事件的状态，       EVENT_DEALED:事件处理    EVENT_IGNORE"：事件忽略    EVENT_DEL:事件删除    EVENT_ADD_WHITE:事件加白    EVENT_PENDING: 事件待处理	EVENT_ISOLATE_CONTAINER: 隔离容器	EVENT_RESOTRE_CONTAINER: 恢复容器
+                     * @param _status 标记事件的状态，       EVENT_DEALED:事件处理    EVENT_IGNORE"：事件忽略    EVENT_DEL:事件删除    EVENT_ADD_WHITE:事件加白    EVENT_PENDING: 事件待处理	EVENT_ISOLATE_CONTAINER: 隔离容器	EVENT_RESOTRE_CONTAINER: 恢复容器
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -163,14 +135,7 @@ namespace TencentCloud
                     bool m_eventIdSetHasBeenSet;
 
                     /**
-                     * 标记事件的状态，   
-    EVENT_DEALED:事件处理
-    EVENT_INGNORE"：事件忽略
-    EVENT_DEL:事件删除
-    EVENT_ADD_WHITE:事件加白
-    EVENT_PENDING: 事件待处理
-	EVENT_ISOLATE_CONTAINER: 隔离容器
-	EVENT_RESOTRE_CONTAINER: 恢复容器
+                     * 标记事件的状态，       EVENT_DEALED:事件处理    EVENT_IGNORE"：事件忽略    EVENT_DEL:事件删除    EVENT_ADD_WHITE:事件加白    EVENT_PENDING: 事件待处理	EVENT_ISOLATE_CONTAINER: 隔离容器	EVENT_RESOTRE_CONTAINER: 恢复容器
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

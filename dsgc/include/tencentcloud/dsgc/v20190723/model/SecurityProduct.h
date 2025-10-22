@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductName 产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductName() const;
 
                     /**
                      * 设置产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productName 产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductName(const std::string& _productName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReferUrl 产品链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReferUrl() const;
 
                     /**
                      * 设置产品链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _referUrl 产品链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReferUrl(const std::string& _referUrl);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productName;
                     bool m_productNameHasBeenSet;
 
                     /**
                      * 产品链接
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_referUrl;
                     bool m_referUrlHasBeenSet;

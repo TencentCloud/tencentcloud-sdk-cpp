@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,9 @@ RegionInfo::RegionInfo() :
     m_zonesHasBeenSet(false),
     m_countHasBeenSet(false),
     m_isInternationalSiteHasBeenSet(false),
-    m_bucketHasBeenSet(false)
+    m_bucketHasBeenSet(false),
+    m_sSCCountHasBeenSet(false),
+    m_enableSSCHasBeenSet(false)
 {
 }
 
@@ -116,6 +118,26 @@ CoreInternalOutcome RegionInfo::Deserialize(const rapidjson::Value &value)
         m_bucketHasBeenSet = true;
     }
 
+    if (value.HasMember("SSCCount") && !value["SSCCount"].IsNull())
+    {
+        if (!value["SSCCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegionInfo.SSCCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sSCCount = value["SSCCount"].GetInt64();
+        m_sSCCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableSSC") && !value["EnableSSC"].IsNull())
+    {
+        if (!value["EnableSSC"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegionInfo.EnableSSC` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableSSC = value["EnableSSC"].GetBool();
+        m_enableSSCHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +206,22 @@ void RegionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Bucket";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_bucket.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sSCCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SSCCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sSCCount, allocator);
+    }
+
+    if (m_enableSSCHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableSSC";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableSSC, allocator);
     }
 
 }
@@ -299,5 +337,37 @@ void RegionInfo::SetBucket(const string& _bucket)
 bool RegionInfo::BucketHasBeenSet() const
 {
     return m_bucketHasBeenSet;
+}
+
+int64_t RegionInfo::GetSSCCount() const
+{
+    return m_sSCCount;
+}
+
+void RegionInfo::SetSSCCount(const int64_t& _sSCCount)
+{
+    m_sSCCount = _sSCCount;
+    m_sSCCountHasBeenSet = true;
+}
+
+bool RegionInfo::SSCCountHasBeenSet() const
+{
+    return m_sSCCountHasBeenSet;
+}
+
+bool RegionInfo::GetEnableSSC() const
+{
+    return m_enableSSC;
+}
+
+void RegionInfo::SetEnableSSC(const bool& _enableSSC)
+{
+    m_enableSSC = _enableSSC;
+    m_enableSSCHasBeenSet = true;
+}
+
+bool RegionInfo::EnableSSCHasBeenSet() const
+{
+    return m_enableSSCHasBeenSet;
 }
 

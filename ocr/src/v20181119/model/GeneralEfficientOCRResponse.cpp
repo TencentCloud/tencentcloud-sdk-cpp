@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ using namespace std;
 
 GeneralEfficientOCRResponse::GeneralEfficientOCRResponse() :
     m_textDetectionsHasBeenSet(false),
-    m_angelHasBeenSet(false)
+    m_angelHasBeenSet(false),
+    m_angleHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,16 @@ CoreInternalOutcome GeneralEfficientOCRResponse::Deserialize(const string &paylo
         m_angelHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Angle") && !rsp["Angle"].IsNull())
+    {
+        if (!rsp["Angle"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `Angle` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_angle = rsp["Angle"].GetDouble();
+        m_angleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,11 +137,19 @@ string GeneralEfficientOCRResponse::ToJsonString() const
         value.AddMember(iKey, m_angel, allocator);
     }
 
+    if (m_angleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Angle";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_angle, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -156,6 +175,16 @@ double GeneralEfficientOCRResponse::GetAngel() const
 bool GeneralEfficientOCRResponse::AngelHasBeenSet() const
 {
     return m_angelHasBeenSet;
+}
+
+double GeneralEfficientOCRResponse::GetAngle() const
+{
+    return m_angle;
+}
+
+bool GeneralEfficientOCRResponse::AngleHasBeenSet() const
+{
+    return m_angleHasBeenSet;
 }
 
 

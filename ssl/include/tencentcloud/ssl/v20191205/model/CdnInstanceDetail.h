@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool CertIdHasBeenSet() const;
 
                     /**
-                     * 获取域名状态
-                     * @return Status 域名状态
+                     * 获取域名状态 rejected：域名审核未通过，域名备案过期/被注销导致，processing：部署中，online：已启动，offline：已关闭
+                     * @return Status 域名状态 rejected：域名审核未通过，域名备案过期/被注销导致，processing：部署中，online：已启动，offline：已关闭
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置域名状态
-                     * @param _status 域名状态
+                     * 设置域名状态 rejected：域名审核未通过，域名备案过期/被注销导致，processing：部署中，online：已启动，offline：已关闭
+                     * @param _status 域名状态 rejected：域名审核未通过，域名备案过期/被注销导致，processing：部署中，online：已启动，offline：已关闭
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取域名计费状态
-                     * @return HttpsBillingSwitch 域名计费状态
+                     * 获取域名计费状态，on表示开启，off表示关闭。
+                     * @return HttpsBillingSwitch 域名计费状态，on表示开启，off表示关闭。
                      * 
                      */
                     std::string GetHttpsBillingSwitch() const;
 
                     /**
-                     * 设置域名计费状态
-                     * @param _httpsBillingSwitch 域名计费状态
+                     * 设置域名计费状态，on表示开启，off表示关闭。
+                     * @param _httpsBillingSwitch 域名计费状态，on表示开启，off表示关闭。
                      * 
                      */
                     void SetHttpsBillingSwitch(const std::string& _httpsBillingSwitch);
@@ -145,13 +145,13 @@ namespace TencentCloud
                     bool m_certIdHasBeenSet;
 
                     /**
-                     * 域名状态
+                     * 域名状态 rejected：域名审核未通过，域名备案过期/被注销导致，processing：部署中，online：已启动，offline：已关闭
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 域名计费状态
+                     * 域名计费状态，on表示开启，off表示关闭。
                      */
                     std::string m_httpsBillingSwitch;
                     bool m_httpsBillingSwitchHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -175,39 +175,15 @@ namespace TencentCloud
                     bool NamespacesHasBeenSet() const;
 
                     /**
-                     * 获取告警对象列表，JSON 字符串。外层数组，对应多个实例，内层为对象的维度。例如“云服务器-基础监控”可写为：
-`[ {"Dimensions": {"unInstanceId": "ins-qr8d555g"}}, {"Dimensions": {"unInstanceId": "ins-qr8d555h"}} ]`
-具体也可以参考下方的示例 2。
-
-不同云产品参数示例详见 [维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)
-
-注意：如果NeedCorrespondence传入1，即需要返回策略与实例对应关系，请传入不多于20个告警对象维度，否则容易请求超时
-                     * @return Dimensions 告警对象列表，JSON 字符串。外层数组，对应多个实例，内层为对象的维度。例如“云服务器-基础监控”可写为：
-`[ {"Dimensions": {"unInstanceId": "ins-qr8d555g"}}, {"Dimensions": {"unInstanceId": "ins-qr8d555h"}} ]`
-具体也可以参考下方的示例 2。
-
-不同云产品参数示例详见 [维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)
-
-注意：如果NeedCorrespondence传入1，即需要返回策略与实例对应关系，请传入不多于20个告警对象维度，否则容易请求超时
+                     * 获取告警对象列表，JSON 字符串。外层数组，对应多个实例，内层为对象的维度。例如“云服务器-基础监控”可写为：`[[{"name":"unInstanceId","value":"ins-qr888845g"}]]`具体也可以参考下方的示例 2。不同云产品参数示例详见 [维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)注意：如果NeedCorrespondence传入1，即需要返回策略与实例对应关系，请传入不多于20个告警对象维度，否则容易请求超时
+                     * @return Dimensions 告警对象列表，JSON 字符串。外层数组，对应多个实例，内层为对象的维度。例如“云服务器-基础监控”可写为：`[[{"name":"unInstanceId","value":"ins-qr888845g"}]]`具体也可以参考下方的示例 2。不同云产品参数示例详见 [维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)注意：如果NeedCorrespondence传入1，即需要返回策略与实例对应关系，请传入不多于20个告警对象维度，否则容易请求超时
                      * 
                      */
                     std::string GetDimensions() const;
 
                     /**
-                     * 设置告警对象列表，JSON 字符串。外层数组，对应多个实例，内层为对象的维度。例如“云服务器-基础监控”可写为：
-`[ {"Dimensions": {"unInstanceId": "ins-qr8d555g"}}, {"Dimensions": {"unInstanceId": "ins-qr8d555h"}} ]`
-具体也可以参考下方的示例 2。
-
-不同云产品参数示例详见 [维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)
-
-注意：如果NeedCorrespondence传入1，即需要返回策略与实例对应关系，请传入不多于20个告警对象维度，否则容易请求超时
-                     * @param _dimensions 告警对象列表，JSON 字符串。外层数组，对应多个实例，内层为对象的维度。例如“云服务器-基础监控”可写为：
-`[ {"Dimensions": {"unInstanceId": "ins-qr8d555g"}}, {"Dimensions": {"unInstanceId": "ins-qr8d555h"}} ]`
-具体也可以参考下方的示例 2。
-
-不同云产品参数示例详见 [维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)
-
-注意：如果NeedCorrespondence传入1，即需要返回策略与实例对应关系，请传入不多于20个告警对象维度，否则容易请求超时
+                     * 设置告警对象列表，JSON 字符串。外层数组，对应多个实例，内层为对象的维度。例如“云服务器-基础监控”可写为：`[[{"name":"unInstanceId","value":"ins-qr888845g"}]]`具体也可以参考下方的示例 2。不同云产品参数示例详见 [维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)注意：如果NeedCorrespondence传入1，即需要返回策略与实例对应关系，请传入不多于20个告警对象维度，否则容易请求超时
+                     * @param _dimensions 告警对象列表，JSON 字符串。外层数组，对应多个实例，内层为对象的维度。例如“云服务器-基础监控”可写为：`[[{"name":"unInstanceId","value":"ins-qr888845g"}]]`具体也可以参考下方的示例 2。不同云产品参数示例详见 [维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)注意：如果NeedCorrespondence传入1，即需要返回策略与实例对应关系，请传入不多于20个告警对象维度，否则容易请求超时
                      * 
                      */
                     void SetDimensions(const std::string& _dimensions);
@@ -626,6 +602,48 @@ namespace TencentCloud
                      */
                     bool ReceiverOnCallFormIDsHasBeenSet() const;
 
+                    /**
+                     * 获取通知内容模板ID筛选
+                     * @return NoticeContentTmplIDs 通知内容模板ID筛选
+                     * 
+                     */
+                    std::vector<std::string> GetNoticeContentTmplIDs() const;
+
+                    /**
+                     * 设置通知内容模板ID筛选
+                     * @param _noticeContentTmplIDs 通知内容模板ID筛选
+                     * 
+                     */
+                    void SetNoticeContentTmplIDs(const std::vector<std::string>& _noticeContentTmplIDs);
+
+                    /**
+                     * 判断参数 NoticeContentTmplIDs 是否已赋值
+                     * @return NoticeContentTmplIDs 是否已赋值
+                     * 
+                     */
+                    bool NoticeContentTmplIDsHasBeenSet() const;
+
+                    /**
+                     * 获取是否为预设策略，1是，0否
+                     * @return IsPredefined 是否为预设策略，1是，0否
+                     * 
+                     */
+                    int64_t GetIsPredefined() const;
+
+                    /**
+                     * 设置是否为预设策略，1是，0否
+                     * @param _isPredefined 是否为预设策略，1是，0否
+                     * 
+                     */
+                    void SetIsPredefined(const int64_t& _isPredefined);
+
+                    /**
+                     * 判断参数 IsPredefined 是否已赋值
+                     * @return IsPredefined 是否已赋值
+                     * 
+                     */
+                    bool IsPredefinedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -666,13 +684,7 @@ namespace TencentCloud
                     bool m_namespacesHasBeenSet;
 
                     /**
-                     * 告警对象列表，JSON 字符串。外层数组，对应多个实例，内层为对象的维度。例如“云服务器-基础监控”可写为：
-`[ {"Dimensions": {"unInstanceId": "ins-qr8d555g"}}, {"Dimensions": {"unInstanceId": "ins-qr8d555h"}} ]`
-具体也可以参考下方的示例 2。
-
-不同云产品参数示例详见 [维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)
-
-注意：如果NeedCorrespondence传入1，即需要返回策略与实例对应关系，请传入不多于20个告警对象维度，否则容易请求超时
+                     * 告警对象列表，JSON 字符串。外层数组，对应多个实例，内层为对象的维度。例如“云服务器-基础监控”可写为：`[[{"name":"unInstanceId","value":"ins-qr888845g"}]]`具体也可以参考下方的示例 2。不同云产品参数示例详见 [维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)注意：如果NeedCorrespondence传入1，即需要返回策略与实例对应关系，请传入不多于20个告警对象维度，否则容易请求超时
                      */
                     std::string m_dimensions;
                     bool m_dimensionsHasBeenSet;
@@ -792,6 +804,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_receiverOnCallFormIDs;
                     bool m_receiverOnCallFormIDsHasBeenSet;
+
+                    /**
+                     * 通知内容模板ID筛选
+                     */
+                    std::vector<std::string> m_noticeContentTmplIDs;
+                    bool m_noticeContentTmplIDsHasBeenSet;
+
+                    /**
+                     * 是否为预设策略，1是，0否
+                     */
+                    int64_t m_isPredefined;
+                    bool m_isPredefinedHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool AutoSnapshotPolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取要解绑定期快照策略的云盘ID列表。
-                     * @return DiskIds 要解绑定期快照策略的云盘ID列表。
+                     * 获取要解绑定期快照策略的云盘ID列表。此参数与 InstanceIds 参数至少需要传入一个。
+                     * @return DiskIds 要解绑定期快照策略的云盘ID列表。此参数与 InstanceIds 参数至少需要传入一个。
                      * 
                      */
                     std::vector<std::string> GetDiskIds() const;
 
                     /**
-                     * 设置要解绑定期快照策略的云盘ID列表。
-                     * @param _diskIds 要解绑定期快照策略的云盘ID列表。
+                     * 设置要解绑定期快照策略的云盘ID列表。此参数与 InstanceIds 参数至少需要传入一个。
+                     * @param _diskIds 要解绑定期快照策略的云盘ID列表。此参数与 InstanceIds 参数至少需要传入一个。
                      * 
                      */
                     void SetDiskIds(const std::vector<std::string>& _diskIds);
@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool DiskIdsHasBeenSet() const;
 
+                    /**
+                     * 获取要解绑定期快照策略的实例ID列表。此参数与 DiskIds 参数至少需要传入一个。
+                     * @return InstanceIds 要解绑定期快照策略的实例ID列表。此参数与 DiskIds 参数至少需要传入一个。
+                     * 
+                     */
+                    std::vector<std::string> GetInstanceIds() const;
+
+                    /**
+                     * 设置要解绑定期快照策略的实例ID列表。此参数与 DiskIds 参数至少需要传入一个。
+                     * @param _instanceIds 要解绑定期快照策略的实例ID列表。此参数与 DiskIds 参数至少需要传入一个。
+                     * 
+                     */
+                    void SetInstanceIds(const std::vector<std::string>& _instanceIds);
+
+                    /**
+                     * 判断参数 InstanceIds 是否已赋值
+                     * @return InstanceIds 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -93,10 +114,16 @@ namespace TencentCloud
                     bool m_autoSnapshotPolicyIdHasBeenSet;
 
                     /**
-                     * 要解绑定期快照策略的云盘ID列表。
+                     * 要解绑定期快照策略的云盘ID列表。此参数与 InstanceIds 参数至少需要传入一个。
                      */
                     std::vector<std::string> m_diskIds;
                     bool m_diskIdsHasBeenSet;
+
+                    /**
+                     * 要解绑定期快照策略的实例ID列表。此参数与 DiskIds 参数至少需要传入一个。
+                     */
+                    std::vector<std::string> m_instanceIds;
+                    bool m_instanceIdsHasBeenSet;
 
                 };
             }

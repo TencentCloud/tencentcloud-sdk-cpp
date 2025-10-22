@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool TsVersionHasBeenSet() const;
 
                     /**
-                     * 获取规则详情
-                     * @return Options 规则详情
+                     * 获取key为匹配字段；args为base64编码后的参数，等于号前为匹配参数，等于号后为匹配内容；match为逻辑符号；encodeflag为参数内容是否编码
+                     * @return Options key为匹配字段；args为base64编码后的参数，等于号前为匹配参数，等于号后为匹配内容；match为逻辑符号；encodeflag为参数内容是否编码
                      * 
                      */
                     std::string GetOptions() const;
 
                     /**
-                     * 设置规则详情
-                     * @param _options 规则详情
+                     * 设置key为匹配字段；args为base64编码后的参数，等于号前为匹配参数，等于号后为匹配内容；match为逻辑符号；encodeflag为参数内容是否编码
+                     * @param _options key为匹配字段；args为base64编码后的参数，等于号前为匹配参数，等于号后为匹配内容；match为逻辑符号；encodeflag为参数内容是否编码
                      * 
                      */
                     void SetOptions(const std::string& _options);
@@ -382,6 +382,111 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取限频方式
+                     * @return LimitMethod 限频方式
+                     * 
+                     */
+                    std::string GetLimitMethod() const;
+
+                    /**
+                     * 设置限频方式
+                     * @param _limitMethod 限频方式
+                     * 
+                     */
+                    void SetLimitMethod(const std::string& _limitMethod);
+
+                    /**
+                     * 判断参数 LimitMethod 是否已赋值
+                     * @return LimitMethod 是否已赋值
+                     * 
+                     */
+                    bool LimitMethodHasBeenSet() const;
+
+                    /**
+                     * 获取cel表达式
+                     * @return CelRule cel表达式
+                     * 
+                     */
+                    std::string GetCelRule() const;
+
+                    /**
+                     * 设置cel表达式
+                     * @param _celRule cel表达式
+                     * 
+                     */
+                    void SetCelRule(const std::string& _celRule);
+
+                    /**
+                     * 判断参数 CelRule 是否已赋值
+                     * @return CelRule 是否已赋值
+                     * 
+                     */
+                    bool CelRuleHasBeenSet() const;
+
+                    /**
+                     * 获取逻辑操作符
+                     * @return LogicalOp 逻辑操作符
+                     * 
+                     */
+                    std::string GetLogicalOp() const;
+
+                    /**
+                     * 设置逻辑操作符
+                     * @param _logicalOp 逻辑操作符
+                     * 
+                     */
+                    void SetLogicalOp(const std::string& _logicalOp);
+
+                    /**
+                     * 判断参数 LogicalOp 是否已赋值
+                     * @return LogicalOp 是否已赋值
+                     * 
+                     */
+                    bool LogicalOpHasBeenSet() const;
+
+                    /**
+                     * 获取页面ID
+                     * @return PageId 页面ID
+                     * 
+                     */
+                    std::string GetPageId() const;
+
+                    /**
+                     * 设置页面ID
+                     * @param _pageId 页面ID
+                     * 
+                     */
+                    void SetPageId(const std::string& _pageId);
+
+                    /**
+                     * 判断参数 PageId 是否已赋值
+                     * @return PageId 是否已赋值
+                     * 
+                     */
+                    bool PageIdHasBeenSet() const;
+
+                    /**
+                     * 获取动作灰度比例，默认值100
+                     * @return ActionRatio 动作灰度比例，默认值100
+                     * 
+                     */
+                    uint64_t GetActionRatio() const;
+
+                    /**
+                     * 设置动作灰度比例，默认值100
+                     * @param _actionRatio 动作灰度比例，默认值100
+                     * 
+                     */
+                    void SetActionRatio(const uint64_t& _actionRatio);
+
+                    /**
+                     * 判断参数 ActionRatio 是否已赋值
+                     * @return ActionRatio 是否已赋值
+                     * 
+                     */
+                    bool ActionRatioHasBeenSet() const;
+
                 private:
 
                     /**
@@ -451,7 +556,7 @@ namespace TencentCloud
                     bool m_tsVersionHasBeenSet;
 
                     /**
-                     * 规则详情
+                     * key为匹配字段；args为base64编码后的参数，等于号前为匹配参数，等于号后为匹配内容；match为逻辑符号；encodeflag为参数内容是否编码
                      */
                     std::string m_options;
                     bool m_optionsHasBeenSet;
@@ -479,6 +584,36 @@ namespace TencentCloud
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 限频方式
+                     */
+                    std::string m_limitMethod;
+                    bool m_limitMethodHasBeenSet;
+
+                    /**
+                     * cel表达式
+                     */
+                    std::string m_celRule;
+                    bool m_celRuleHasBeenSet;
+
+                    /**
+                     * 逻辑操作符
+                     */
+                    std::string m_logicalOp;
+                    bool m_logicalOpHasBeenSet;
+
+                    /**
+                     * 页面ID
+                     */
+                    std::string m_pageId;
+                    bool m_pageIdHasBeenSet;
+
+                    /**
+                     * 动作灰度比例，默认值100
+                     */
+                    uint64_t m_actionRatio;
+                    bool m_actionRatioHasBeenSet;
 
                 };
             }

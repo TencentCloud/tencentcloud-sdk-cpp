@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -113,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取后端服务的信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Targets 后端服务的信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Backend> GetTargets() const;
 
                     /**
                      * 设置后端服务的信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _targets 后端服务的信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTargets(const std::vector<Backend>& _targets);
@@ -138,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取后端云函数的信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FunctionTargets 后端云函数的信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FunctionTarget> GetFunctionTargets() const;
 
                     /**
                      * 设置后端云函数的信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _functionTargets 后端云函数的信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFunctionTargets(const std::vector<FunctionTarget>& _functionTargets);
@@ -183,14 +175,12 @@ namespace TencentCloud
 
                     /**
                      * 后端服务的信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Backend> m_targets;
                     bool m_targetsHasBeenSet;
 
                     /**
                      * 后端云函数的信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FunctionTarget> m_functionTargets;
                     bool m_functionTargetsHasBeenSet;

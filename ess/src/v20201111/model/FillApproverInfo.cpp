@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,8 @@ FillApproverInfo::FillApproverInfo() :
     m_organizationNameHasBeenSet(false),
     m_approverIdCardTypeHasBeenSet(false),
     m_approverIdCardNumberHasBeenSet(false),
-    m_flowIdHasBeenSet(false)
+    m_flowIdHasBeenSet(false),
+    m_notifyTypeHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome FillApproverInfo::Deserialize(const rapidjson::Value &value)
         m_flowIdHasBeenSet = true;
     }
 
+    if (value.HasMember("NotifyType") && !value["NotifyType"].IsNull())
+    {
+        if (!value["NotifyType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FillApproverInfo.NotifyType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_notifyType = string(value["NotifyType"].GetString());
+        m_notifyTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void FillApproverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "FlowId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_flowId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_notifyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NotifyType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_notifyType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void FillApproverInfo::SetFlowId(const string& _flowId)
 bool FillApproverInfo::FlowIdHasBeenSet() const
 {
     return m_flowIdHasBeenSet;
+}
+
+string FillApproverInfo::GetNotifyType() const
+{
+    return m_notifyType;
+}
+
+void FillApproverInfo::SetNotifyType(const string& _notifyType)
+{
+    m_notifyType = _notifyType;
+    m_notifyTypeHasBeenSet = true;
+}
+
+bool FillApproverInfo::NotifyTypeHasBeenSet() const
+{
+    return m_notifyTypeHasBeenSet;
 }
 

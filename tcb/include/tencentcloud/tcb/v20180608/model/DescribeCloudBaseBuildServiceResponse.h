@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -102,9 +102,7 @@ namespace TencentCloud
 
                     /**
                      * 获取下载链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DownloadUrl 下载链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDownloadUrl() const;
@@ -118,9 +116,7 @@ namespace TencentCloud
 
                     /**
                      * 获取下载Httpheader
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DownloadHeaders 下载Httpheader
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<KVPair> GetDownloadHeaders() const;
@@ -134,9 +130,7 @@ namespace TencentCloud
 
                     /**
                      * 获取下载链接是否过期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutDate 下载链接是否过期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetOutDate() const;
@@ -176,21 +170,18 @@ namespace TencentCloud
 
                     /**
                      * 下载链接
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_downloadUrl;
                     bool m_downloadUrlHasBeenSet;
 
                     /**
                      * 下载Httpheader
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<KVPair> m_downloadHeaders;
                     bool m_downloadHeadersHasBeenSet;
 
                     /**
                      * 下载链接是否过期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_outDate;
                     bool m_outDateHasBeenSet;

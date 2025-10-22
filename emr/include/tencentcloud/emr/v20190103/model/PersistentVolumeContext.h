@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取磁盘大小，单位为GB。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskSize 磁盘大小，单位为GB。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDiskSize() const;
 
                     /**
                      * 设置磁盘大小，单位为GB。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diskSize 磁盘大小，单位为GB。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiskSize(const uint64_t& _diskSize);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取磁盘类型。CLOUD_PREMIUM;CLOUD_SSD
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskType 磁盘类型。CLOUD_PREMIUM;CLOUD_SSD
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
                      * 设置磁盘类型。CLOUD_PREMIUM;CLOUD_SSD
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diskType 磁盘类型。CLOUD_PREMIUM;CLOUD_SSD
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取磁盘数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskNum 磁盘数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDiskNum() const;
 
                     /**
                      * 设置磁盘数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diskNum 磁盘数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiskNum(const int64_t& _diskNum);
@@ -121,28 +109,52 @@ namespace TencentCloud
                      */
                     bool DiskNumHasBeenSet() const;
 
+                    /**
+                     * 获取云盘额外性能
+                     * @return ExtraPerformance 云盘额外性能
+                     * 
+                     */
+                    int64_t GetExtraPerformance() const;
+
+                    /**
+                     * 设置云盘额外性能
+                     * @param _extraPerformance 云盘额外性能
+                     * 
+                     */
+                    void SetExtraPerformance(const int64_t& _extraPerformance);
+
+                    /**
+                     * 判断参数 ExtraPerformance 是否已赋值
+                     * @return ExtraPerformance 是否已赋值
+                     * 
+                     */
+                    bool ExtraPerformanceHasBeenSet() const;
+
                 private:
 
                     /**
                      * 磁盘大小，单位为GB。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
 
                     /**
                      * 磁盘类型。CLOUD_PREMIUM;CLOUD_SSD
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
 
                     /**
                      * 磁盘数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_diskNum;
                     bool m_diskNumHasBeenSet;
+
+                    /**
+                     * 云盘额外性能
+                     */
+                    int64_t m_extraPerformance;
+                    bool m_extraPerformanceHasBeenSet;
 
                 };
             }

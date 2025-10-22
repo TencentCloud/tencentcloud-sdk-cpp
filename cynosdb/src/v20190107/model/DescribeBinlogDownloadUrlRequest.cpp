@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeBinlogDownloadUrlRequest::DescribeBinlogDownloadUrlRequest() :
     m_clusterIdHasBeenSet(false),
-    m_binlogIdHasBeenSet(false)
+    m_binlogIdHasBeenSet(false),
+    m_downloadRestrictionHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,15 @@ string DescribeBinlogDownloadUrlRequest::ToJsonString() const
         string key = "BinlogId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_binlogId, allocator);
+    }
+
+    if (m_downloadRestrictionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DownloadRestriction";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_downloadRestriction.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -89,6 +99,22 @@ void DescribeBinlogDownloadUrlRequest::SetBinlogId(const int64_t& _binlogId)
 bool DescribeBinlogDownloadUrlRequest::BinlogIdHasBeenSet() const
 {
     return m_binlogIdHasBeenSet;
+}
+
+BackupLimitRestriction DescribeBinlogDownloadUrlRequest::GetDownloadRestriction() const
+{
+    return m_downloadRestriction;
+}
+
+void DescribeBinlogDownloadUrlRequest::SetDownloadRestriction(const BackupLimitRestriction& _downloadRestriction)
+{
+    m_downloadRestriction = _downloadRestriction;
+    m_downloadRestrictionHasBeenSet = true;
+}
+
+bool DescribeBinlogDownloadUrlRequest::DownloadRestrictionHasBeenSet() const
+{
+    return m_downloadRestrictionHasBeenSet;
 }
 
 

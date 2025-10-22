@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取登录用户名，由字母、数字、下划线和连字符组成，长度为1~32位。
-                     * @return UserName 登录用户名，由字母、数字、下划线和连字符组成，长度为1~32位。
+                     * 获取账号名，账号名需要1-32个字符，由字母、数字或特殊字符组成；以字母开头；特殊字符为_-
+                     * @return UserName 账号名，账号名需要1-32个字符，由字母、数字或特殊字符组成；以字母开头；特殊字符为_-
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置登录用户名，由字母、数字、下划线和连字符组成，长度为1~32位。
-                     * @param _userName 登录用户名，由字母、数字、下划线和连字符组成，长度为1~32位。
+                     * 设置账号名，账号名需要1-32个字符，由字母、数字或特殊字符组成；以字母开头；特殊字符为_-
+                     * @param _userName 账号名，账号名需要1-32个字符，由字母、数字或特殊字符组成；以字母开头；特殊字符为_-
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool HostHasBeenSet() const;
 
                     /**
-                     * 获取账号密码，密码需要 8-32 个字符，不能以 '/' 开头，并且必须包含小写字母、大写字母、数字和符号()~!@#$%^&*-+=_|{}[]:<>,.?/。
-                     * @return Password 账号密码，密码需要 8-32 个字符，不能以 '/' 开头，并且必须包含小写字母、大写字母、数字和符号()~!@#$%^&*-+=_|{}[]:<>,.?/。
+                     * 获取账号密码，密码需要 8\~32 个字符，不能以 '/' 开头，并且至少包含字母、数字和特殊字符 ()~!@#$%^&*-+=_|{}[]:<>,.?/ 中的两项
+                     * @return Password 账号密码，密码需要 8\~32 个字符，不能以 '/' 开头，并且至少包含字母、数字和特殊字符 ()~!@#$%^&*-+=_|{}[]:<>,.?/ 中的两项
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置账号密码，密码需要 8-32 个字符，不能以 '/' 开头，并且必须包含小写字母、大写字母、数字和符号()~!@#$%^&*-+=_|{}[]:<>,.?/。
-                     * @param _password 账号密码，密码需要 8-32 个字符，不能以 '/' 开头，并且必须包含小写字母、大写字母、数字和符号()~!@#$%^&*-+=_|{}[]:<>,.?/。
+                     * 设置账号密码，密码需要 8\~32 个字符，不能以 '/' 开头，并且至少包含字母、数字和特殊字符 ()~!@#$%^&*-+=_|{}[]:<>,.?/ 中的两项
+                     * @param _password 账号密码，密码需要 8\~32 个字符，不能以 '/' 开头，并且至少包含字母、数字和特殊字符 ()~!@#$%^&*-+=_|{}[]:<>,.?/ 中的两项
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool ReadOnlyHasBeenSet() const;
 
                     /**
-                     * 获取账号备注，可以包含中文、英文字符、常见符号和数字，长度为0~256字符
-                     * @return Description 账号备注，可以包含中文、英文字符、常见符号和数字，长度为0~256字符
+                     * 获取账号备注，可以包含中文、英文字符、常见符号和数字，最多256个字符
+                     * @return Description 账号备注，可以包含中文、英文字符、常见符号和数字，最多256个字符
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置账号备注，可以包含中文、英文字符、常见符号和数字，长度为0~256字符
-                     * @param _description 账号备注，可以包含中文、英文字符、常见符号和数字，长度为0~256字符
+                     * 设置账号备注，可以包含中文、英文字符、常见符号和数字，最多256个字符
+                     * @param _description 账号备注，可以包含中文、英文字符、常见符号和数字，最多256个字符
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -261,7 +261,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 登录用户名，由字母、数字、下划线和连字符组成，长度为1~32位。
+                     * 账号名，账号名需要1-32个字符，由字母、数字或特殊字符组成；以字母开头；特殊字符为_-
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
@@ -273,7 +273,7 @@ namespace TencentCloud
                     bool m_hostHasBeenSet;
 
                     /**
-                     * 账号密码，密码需要 8-32 个字符，不能以 '/' 开头，并且必须包含小写字母、大写字母、数字和符号()~!@#$%^&*-+=_|{}[]:<>,.?/。
+                     * 账号密码，密码需要 8\~32 个字符，不能以 '/' 开头，并且至少包含字母、数字和特殊字符 ()~!@#$%^&*-+=_|{}[]:<>,.?/ 中的两项
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
@@ -285,7 +285,7 @@ namespace TencentCloud
                     bool m_readOnlyHasBeenSet;
 
                     /**
-                     * 账号备注，可以包含中文、英文字符、常见符号和数字，长度为0~256字符
+                     * 账号备注，可以包含中文、英文字符、常见符号和数字，最多256个字符
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,13 @@ DescribeDBInstancesAttributeResponse::DescribeDBInstancesAttributeResponse() :
     m_tDEConfigHasBeenSet(false),
     m_sSLConfigHasBeenSet(false),
     m_drReadableInfoHasBeenSet(false),
-    m_oldVipListHasBeenSet(false)
+    m_oldVipListHasBeenSet(false),
+    m_xEventStatusHasBeenSet(false),
+    m_multiDrReadableInfoHasBeenSet(false),
+    m_isDiskEncryptFlagHasBeenSet(false),
+    m_isSafetyLimitedHasBeenSet(false),
+    m_isSupportSAHasBeenSet(false),
+    m_slowLogThresholdHasBeenSet(false)
 {
 }
 
@@ -224,6 +230,76 @@ CoreInternalOutcome DescribeDBInstancesAttributeResponse::Deserialize(const stri
         m_oldVipListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("XEventStatus") && !rsp["XEventStatus"].IsNull())
+    {
+        if (!rsp["XEventStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `XEventStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_xEventStatus = string(rsp["XEventStatus"].GetString());
+        m_xEventStatusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("MultiDrReadableInfo") && !rsp["MultiDrReadableInfo"].IsNull())
+    {
+        if (!rsp["MultiDrReadableInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `MultiDrReadableInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["MultiDrReadableInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DrReadableInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_multiDrReadableInfo.push_back(item);
+        }
+        m_multiDrReadableInfoHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("IsDiskEncryptFlag") && !rsp["IsDiskEncryptFlag"].IsNull())
+    {
+        if (!rsp["IsDiskEncryptFlag"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsDiskEncryptFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDiskEncryptFlag = rsp["IsDiskEncryptFlag"].GetInt64();
+        m_isDiskEncryptFlagHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("IsSafetyLimited") && !rsp["IsSafetyLimited"].IsNull())
+    {
+        if (!rsp["IsSafetyLimited"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsSafetyLimited` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSafetyLimited = rsp["IsSafetyLimited"].GetUint64();
+        m_isSafetyLimitedHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("IsSupportSA") && !rsp["IsSupportSA"].IsNull())
+    {
+        if (!rsp["IsSupportSA"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsSupportSA` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSupportSA = rsp["IsSupportSA"].GetUint64();
+        m_isSupportSAHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SlowLogThreshold") && !rsp["SlowLogThreshold"].IsNull())
+    {
+        if (!rsp["SlowLogThreshold"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SlowLogThreshold` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_slowLogThreshold = rsp["SlowLogThreshold"].GetInt64();
+        m_slowLogThresholdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -340,11 +416,66 @@ string DescribeDBInstancesAttributeResponse::ToJsonString() const
         }
     }
 
+    if (m_xEventStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "XEventStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_xEventStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_multiDrReadableInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MultiDrReadableInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_multiDrReadableInfo.begin(); itr != m_multiDrReadableInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_isDiskEncryptFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDiskEncryptFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDiskEncryptFlag, allocator);
+    }
+
+    if (m_isSafetyLimitedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSafetyLimited";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSafetyLimited, allocator);
+    }
+
+    if (m_isSupportSAHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSupportSA";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSupportSA, allocator);
+    }
+
+    if (m_slowLogThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SlowLogThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_slowLogThreshold, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -470,6 +601,66 @@ vector<OldVip> DescribeDBInstancesAttributeResponse::GetOldVipList() const
 bool DescribeDBInstancesAttributeResponse::OldVipListHasBeenSet() const
 {
     return m_oldVipListHasBeenSet;
+}
+
+string DescribeDBInstancesAttributeResponse::GetXEventStatus() const
+{
+    return m_xEventStatus;
+}
+
+bool DescribeDBInstancesAttributeResponse::XEventStatusHasBeenSet() const
+{
+    return m_xEventStatusHasBeenSet;
+}
+
+vector<DrReadableInfo> DescribeDBInstancesAttributeResponse::GetMultiDrReadableInfo() const
+{
+    return m_multiDrReadableInfo;
+}
+
+bool DescribeDBInstancesAttributeResponse::MultiDrReadableInfoHasBeenSet() const
+{
+    return m_multiDrReadableInfoHasBeenSet;
+}
+
+int64_t DescribeDBInstancesAttributeResponse::GetIsDiskEncryptFlag() const
+{
+    return m_isDiskEncryptFlag;
+}
+
+bool DescribeDBInstancesAttributeResponse::IsDiskEncryptFlagHasBeenSet() const
+{
+    return m_isDiskEncryptFlagHasBeenSet;
+}
+
+uint64_t DescribeDBInstancesAttributeResponse::GetIsSafetyLimited() const
+{
+    return m_isSafetyLimited;
+}
+
+bool DescribeDBInstancesAttributeResponse::IsSafetyLimitedHasBeenSet() const
+{
+    return m_isSafetyLimitedHasBeenSet;
+}
+
+uint64_t DescribeDBInstancesAttributeResponse::GetIsSupportSA() const
+{
+    return m_isSupportSA;
+}
+
+bool DescribeDBInstancesAttributeResponse::IsSupportSAHasBeenSet() const
+{
+    return m_isSupportSAHasBeenSet;
+}
+
+int64_t DescribeDBInstancesAttributeResponse::GetSlowLogThreshold() const
+{
+    return m_slowLogThreshold;
+}
+
+bool DescribeDBInstancesAttributeResponse::SlowLogThresholdHasBeenSet() const
+{
+    return m_slowLogThresholdHasBeenSet;
 }
 
 

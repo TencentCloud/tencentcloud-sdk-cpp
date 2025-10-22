@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -133,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取as-path操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperateAsPath as-path操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperateAsPath() const;
 
                     /**
                      * 设置as-path操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _operateAsPath as-path操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOperateAsPath(const std::string& _operateAsPath);
@@ -158,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取as-path操作模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AsPathOperateMode as-path操作模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAsPathOperateMode() const;
 
                     /**
                      * 设置as-path操作模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _asPathOperateMode as-path操作模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAsPathOperateMode(const std::string& _asPathOperateMode);
@@ -183,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取community操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperateCommunitySet community操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetOperateCommunitySet() const;
 
                     /**
                      * 设置community操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _operateCommunitySet community操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOperateCommunitySet(const std::vector<std::string>& _operateCommunitySet);
@@ -208,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取community操作模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CommunityOperateMode community操作模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCommunityOperateMode() const;
 
                     /**
                      * 设置community操作模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _communityOperateMode community操作模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCommunityOperateMode(const std::string& _communityOperateMode);
@@ -259,28 +243,24 @@ namespace TencentCloud
 
                     /**
                      * as-path操作
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operateAsPath;
                     bool m_operateAsPathHasBeenSet;
 
                     /**
                      * as-path操作模式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_asPathOperateMode;
                     bool m_asPathOperateModeHasBeenSet;
 
                     /**
                      * community操作
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_operateCommunitySet;
                     bool m_operateCommunitySetHasBeenSet;
 
                     /**
                      * community操作模式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_communityOperateMode;
                     bool m_communityOperateModeHasBeenSet;

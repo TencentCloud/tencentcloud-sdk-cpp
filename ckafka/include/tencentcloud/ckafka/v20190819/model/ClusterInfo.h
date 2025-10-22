@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群最大磁盘 单位GB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxDiskSize 集群最大磁盘 单位GB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxDiskSize() const;
 
                     /**
                      * 设置集群最大磁盘 单位GB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxDiskSize 集群最大磁盘 单位GB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxDiskSize(const int64_t& _maxDiskSize);
@@ -115,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群最大带宽 单位MB/s
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxBandWidth 集群最大带宽 单位MB/s
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxBandWidth() const;
 
                     /**
                      * 设置集群最大带宽 单位MB/s
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxBandWidth 集群最大带宽 单位MB/s
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxBandWidth(const int64_t& _maxBandWidth);
@@ -140,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群当前可用磁盘  单位GB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AvailableDiskSize 集群当前可用磁盘  单位GB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAvailableDiskSize() const;
 
                     /**
                      * 设置集群当前可用磁盘  单位GB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _availableDiskSize 集群当前可用磁盘  单位GB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAvailableDiskSize(const int64_t& _availableDiskSize);
@@ -165,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群当前可用带宽 单位MB/s
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AvailableBandWidth 集群当前可用带宽 单位MB/s
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAvailableBandWidth() const;
 
                     /**
                      * 设置集群当前可用带宽 单位MB/s
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _availableBandWidth 集群当前可用带宽 单位MB/s
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAvailableBandWidth(const int64_t& _availableBandWidth);
@@ -190,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群所属可用区，表明集群归属的可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneId 集群所属可用区，表明集群归属的可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
                      * 设置集群所属可用区，表明集群归属的可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zoneId 集群所属可用区，表明集群归属的可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZoneId(const int64_t& _zoneId);
@@ -215,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群节点所在的可用区，若该集群为跨可用区集群，则包含该集群节点所在的多个可用区。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneIds 集群节点所在的可用区，若该集群为跨可用区集群，则包含该集群节点所在的多个可用区。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetZoneIds() const;
 
                     /**
                      * 设置集群节点所在的可用区，若该集群为跨可用区集群，则包含该集群节点所在的多个可用区。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zoneIds 集群节点所在的可用区，若该集群为跨可用区集群，则包含该集群节点所在的多个可用区。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZoneIds(const std::vector<int64_t>& _zoneIds);
@@ -254,42 +230,36 @@ namespace TencentCloud
 
                     /**
                      * 集群最大磁盘 单位GB
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxDiskSize;
                     bool m_maxDiskSizeHasBeenSet;
 
                     /**
                      * 集群最大带宽 单位MB/s
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxBandWidth;
                     bool m_maxBandWidthHasBeenSet;
 
                     /**
                      * 集群当前可用磁盘  单位GB
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_availableDiskSize;
                     bool m_availableDiskSizeHasBeenSet;
 
                     /**
                      * 集群当前可用带宽 单位MB/s
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_availableBandWidth;
                     bool m_availableBandWidthHasBeenSet;
 
                     /**
                      * 集群所属可用区，表明集群归属的可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
                      * 集群节点所在的可用区，若该集群为跨可用区集群，则包含该集群节点所在的多个可用区。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;

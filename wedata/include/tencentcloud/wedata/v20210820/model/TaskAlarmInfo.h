@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/wedata/v20210820/model/AlarmIndicatorInfo.h>
 #include <tencentcloud/wedata/v20210820/model/QuietPeriod.h>
+#include <tencentcloud/wedata/v20210820/model/AlarmReceiverGroup.h>
 
 
 namespace TencentCloud
@@ -841,6 +842,131 @@ namespace TencentCloud
                      */
                     bool DingDingWebHooksHasBeenSet() const;
 
+                    /**
+                     * 获取业务类型, 0-非默认, 1-默认
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BusinessType 业务类型, 0-非默认, 1-默认
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetBusinessType() const;
+
+                    /**
+                     * 设置业务类型, 0-非默认, 1-默认
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _businessType 业务类型, 0-非默认, 1-默认
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBusinessType(const int64_t& _businessType);
+
+                    /**
+                     * 判断参数 BusinessType 是否已赋值
+                     * @return BusinessType 是否已赋值
+                     * 
+                     */
+                    bool BusinessTypeHasBeenSet() const;
+
+                    /**
+                     * 获取alarm message rule
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlarmMessageRule alarm message rule
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAlarmMessageRule() const;
+
+                    /**
+                     * 设置alarm message rule
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _alarmMessageRule alarm message rule
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAlarmMessageRule(const std::string& _alarmMessageRule);
+
+                    /**
+                     * 判断参数 AlarmMessageRule 是否已赋值
+                     * @return AlarmMessageRule 是否已赋值
+                     * 
+                     */
+                    bool AlarmMessageRuleHasBeenSet() const;
+
+                    /**
+                     * 获取 0- wedata, 1-inlong
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReportTarget  0- wedata, 1-inlong
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetReportTarget() const;
+
+                    /**
+                     * 设置 0- wedata, 1-inlong
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _reportTarget  0- wedata, 1-inlong
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetReportTarget(const int64_t& _reportTarget);
+
+                    /**
+                     * 判断参数 ReportTarget 是否已赋值
+                     * @return ReportTarget 是否已赋值
+                     * 
+                     */
+                    bool ReportTargetHasBeenSet() const;
+
+                    /**
+                     * 获取告警接收组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlarmReceiverGroups 告警接收组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<AlarmReceiverGroup> GetAlarmReceiverGroups() const;
+
+                    /**
+                     * 设置告警接收组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _alarmReceiverGroups 告警接收组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAlarmReceiverGroups(const std::vector<AlarmReceiverGroup>& _alarmReceiverGroups);
+
+                    /**
+                     * 判断参数 AlarmReceiverGroups 是否已赋值
+                     * @return AlarmReceiverGroups 是否已赋值
+                     * 
+                     */
+                    bool AlarmReceiverGroupsHasBeenSet() const;
+
+                    /**
+                     * 获取告警接收组标记，0代表历史版本，1代表新版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlarmReceiverGroupFlag 告警接收组标记，0代表历史版本，1代表新版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetAlarmReceiverGroupFlag() const;
+
+                    /**
+                     * 设置告警接收组标记，0代表历史版本，1代表新版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _alarmReceiverGroupFlag 告警接收组标记，0代表历史版本，1代表新版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAlarmReceiverGroupFlag(const uint64_t& _alarmReceiverGroupFlag);
+
+                    /**
+                     * 判断参数 AlarmReceiverGroupFlag 是否已赋值
+                     * @return AlarmReceiverGroupFlag 是否已赋值
+                     * 
+                     */
+                    bool AlarmReceiverGroupFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1065,6 +1191,41 @@ namespace TencentCloud
                      */
                     std::string m_dingDingWebHooks;
                     bool m_dingDingWebHooksHasBeenSet;
+
+                    /**
+                     * 业务类型, 0-非默认, 1-默认
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_businessType;
+                    bool m_businessTypeHasBeenSet;
+
+                    /**
+                     * alarm message rule
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_alarmMessageRule;
+                    bool m_alarmMessageRuleHasBeenSet;
+
+                    /**
+                     *  0- wedata, 1-inlong
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_reportTarget;
+                    bool m_reportTargetHasBeenSet;
+
+                    /**
+                     * 告警接收组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AlarmReceiverGroup> m_alarmReceiverGroups;
+                    bool m_alarmReceiverGroupsHasBeenSet;
+
+                    /**
+                     * 告警接收组标记，0代表历史版本，1代表新版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_alarmReceiverGroupFlag;
+                    bool m_alarmReceiverGroupFlagHasBeenSet;
 
                 };
             }

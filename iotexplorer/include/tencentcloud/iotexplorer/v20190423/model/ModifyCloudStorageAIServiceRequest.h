@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DiarySHLConfig.h>
 
 
 namespace TencentCloud
@@ -88,9 +89,11 @@ namespace TencentCloud
                      * 获取云存 AI 服务类型。可选值：
 - `RealtimeObjectDetect`：目标检测
 - `Highlight`：视频浓缩
+- `SimpleHighlight`：TrueX SimpleHighlight
                      * @return ServiceType 云存 AI 服务类型。可选值：
 - `RealtimeObjectDetect`：目标检测
 - `Highlight`：视频浓缩
+- `SimpleHighlight`：TrueX SimpleHighlight
                      * 
                      */
                     std::string GetServiceType() const;
@@ -99,9 +102,11 @@ namespace TencentCloud
                      * 设置云存 AI 服务类型。可选值：
 - `RealtimeObjectDetect`：目标检测
 - `Highlight`：视频浓缩
+- `SimpleHighlight`：TrueX SimpleHighlight
                      * @param _serviceType 云存 AI 服务类型。可选值：
 - `RealtimeObjectDetect`：目标检测
 - `Highlight`：视频浓缩
+- `SimpleHighlight`：TrueX SimpleHighlight
                      * 
                      */
                     void SetServiceType(const std::string& _serviceType);
@@ -176,6 +181,27 @@ namespace TencentCloud
                      */
                     bool ConfigHasBeenSet() const;
 
+                    /**
+                     * 获取SimpleHighlight 算法配置参数
+                     * @return SHLConfig SimpleHighlight 算法配置参数
+                     * 
+                     */
+                    DiarySHLConfig GetSHLConfig() const;
+
+                    /**
+                     * 设置SimpleHighlight 算法配置参数
+                     * @param _sHLConfig SimpleHighlight 算法配置参数
+                     * 
+                     */
+                    void SetSHLConfig(const DiarySHLConfig& _sHLConfig);
+
+                    /**
+                     * 判断参数 SHLConfig 是否已赋值
+                     * @return SHLConfig 是否已赋值
+                     * 
+                     */
+                    bool SHLConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -194,6 +220,7 @@ namespace TencentCloud
                      * 云存 AI 服务类型。可选值：
 - `RealtimeObjectDetect`：目标检测
 - `Highlight`：视频浓缩
+- `SimpleHighlight`：TrueX SimpleHighlight
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;
@@ -215,6 +242,12 @@ namespace TencentCloud
                      */
                     std::string m_config;
                     bool m_configHasBeenSet;
+
+                    /**
+                     * SimpleHighlight 算法配置参数
+                     */
+                    DiarySHLConfig m_sHLConfig;
+                    bool m_sHLConfigHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务ID，根据任务ID查询绑定云资源结果， 最大支持100个
-                     * @return TaskIds 任务ID，根据任务ID查询绑定云资源结果， 最大支持100个
+                     * 获取任务ID，根据CreateCertificateBindResourceSyncTask得到的任务ID查询绑定云资源结果， 最大支持100个
+                     * @return TaskIds 任务ID，根据CreateCertificateBindResourceSyncTask得到的任务ID查询绑定云资源结果， 最大支持100个
                      * 
                      */
                     std::vector<std::string> GetTaskIds() const;
 
                     /**
-                     * 设置任务ID，根据任务ID查询绑定云资源结果， 最大支持100个
-                     * @param _taskIds 任务ID，根据任务ID查询绑定云资源结果， 最大支持100个
+                     * 设置任务ID，根据CreateCertificateBindResourceSyncTask得到的任务ID查询绑定云资源结果， 最大支持100个
+                     * @param _taskIds 任务ID，根据CreateCertificateBindResourceSyncTask得到的任务ID查询绑定云资源结果， 最大支持100个
                      * 
                      */
                     void SetTaskIds(const std::vector<std::string>& _taskIds);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务ID，根据任务ID查询绑定云资源结果， 最大支持100个
+                     * 任务ID，根据CreateCertificateBindResourceSyncTask得到的任务ID查询绑定云资源结果， 最大支持100个
                      */
                     std::vector<std::string> m_taskIds;
                     bool m_taskIdsHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CLB监听器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Listeners CLB监听器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ClbListener> GetListeners() const;
 
                     /**
                      * 设置CLB监听器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _listeners CLB监听器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetListeners(const std::vector<ClbListener>& _listeners);
@@ -113,6 +109,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ListenersHasBeenSet() const;
+
+                    /**
+                     * 获取负载均衡类型，0 传统型负载均衡； 1 应用型负载均衡
+                     * @return Forward 负载均衡类型，0 传统型负载均衡； 1 应用型负载均衡
+                     * 
+                     */
+                    int64_t GetForward() const;
+
+                    /**
+                     * 设置负载均衡类型，0 传统型负载均衡； 1 应用型负载均衡
+                     * @param _forward 负载均衡类型，0 传统型负载均衡； 1 应用型负载均衡
+                     * 
+                     */
+                    void SetForward(const int64_t& _forward);
+
+                    /**
+                     * 判断参数 Forward 是否已赋值
+                     * @return Forward 是否已赋值
+                     * 
+                     */
+                    bool ForwardHasBeenSet() const;
 
                 private:
 
@@ -130,10 +147,15 @@ namespace TencentCloud
 
                     /**
                      * CLB监听器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ClbListener> m_listeners;
                     bool m_listenersHasBeenSet;
+
+                    /**
+                     * 负载均衡类型，0 传统型负载均衡； 1 应用型负载均衡
+                     */
+                    int64_t m_forward;
+                    bool m_forwardHasBeenSet;
 
                 };
             }

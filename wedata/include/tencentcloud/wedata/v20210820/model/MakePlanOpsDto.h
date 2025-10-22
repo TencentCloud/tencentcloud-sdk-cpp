@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -685,6 +685,156 @@ namespace TencentCloud
                      */
                     bool CheckParentTypeHasBeenSet() const;
 
+                    /**
+                     * 获取是否和原任务保持相同工作流自依赖属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SameSelfWorkflowDependType 是否和原任务保持相同工作流自依赖属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetSameSelfWorkflowDependType() const;
+
+                    /**
+                     * 设置是否和原任务保持相同工作流自依赖属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sameSelfWorkflowDependType 是否和原任务保持相同工作流自依赖属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSameSelfWorkflowDependType(const bool& _sameSelfWorkflowDependType);
+
+                    /**
+                     * 判断参数 SameSelfWorkflowDependType 是否已赋值
+                     * @return SameSelfWorkflowDependType 是否已赋值
+                     * 
+                     */
+                    bool SameSelfWorkflowDependTypeHasBeenSet() const;
+
+                    /**
+                     * 获取工作流自依赖类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SelfWorkflowDependency 工作流自依赖类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSelfWorkflowDependency() const;
+
+                    /**
+                     * 设置工作流自依赖类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _selfWorkflowDependency 工作流自依赖类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSelfWorkflowDependency(const std::string& _selfWorkflowDependency);
+
+                    /**
+                     * 判断参数 SelfWorkflowDependency 是否已赋值
+                     * @return SelfWorkflowDependency 是否已赋值
+                     * 
+                     */
+                    bool SelfWorkflowDependencyHasBeenSet() const;
+
+                    /**
+                     * 获取补录时间顺序
+NORMAL： 正常
+ORDER ： 按照实例时间顺序执行
+REVERSE： 实例数据时间逆序
+                     * @return MakeDataTimeOrder 补录时间顺序
+NORMAL： 正常
+ORDER ： 按照实例时间顺序执行
+REVERSE： 实例数据时间逆序
+                     * 
+                     */
+                    std::string GetMakeDataTimeOrder() const;
+
+                    /**
+                     * 设置补录时间顺序
+NORMAL： 正常
+ORDER ： 按照实例时间顺序执行
+REVERSE： 实例数据时间逆序
+                     * @param _makeDataTimeOrder 补录时间顺序
+NORMAL： 正常
+ORDER ： 按照实例时间顺序执行
+REVERSE： 实例数据时间逆序
+                     * 
+                     */
+                    void SetMakeDataTimeOrder(const std::string& _makeDataTimeOrder);
+
+                    /**
+                     * 判断参数 MakeDataTimeOrder 是否已赋值
+                     * @return MakeDataTimeOrder 是否已赋值
+                     * 
+                     */
+                    bool MakeDataTimeOrderHasBeenSet() const;
+
+                    /**
+                     * 获取补录时间范围的时区
+                     * @return ScheduleTimeZone 补录时间范围的时区
+                     * 
+                     */
+                    std::string GetScheduleTimeZone() const;
+
+                    /**
+                     * 设置补录时间范围的时区
+                     * @param _scheduleTimeZone 补录时间范围的时区
+                     * 
+                     */
+                    void SetScheduleTimeZone(const std::string& _scheduleTimeZone);
+
+                    /**
+                     * 判断参数 ScheduleTimeZone 是否已赋值
+                     * @return ScheduleTimeZone 是否已赋值
+                     * 
+                     */
+                    bool ScheduleTimeZoneHasBeenSet() const;
+
+                    /**
+                     * 获取执行应用参数
+                     * @return AppParam 执行应用参数
+                     * 
+                     */
+                    std::string GetAppParam() const;
+
+                    /**
+                     * 设置执行应用参数
+                     * @param _appParam 执行应用参数
+                     * 
+                     */
+                    void SetAppParam(const std::string& _appParam);
+
+                    /**
+                     * 判断参数 AppParam 是否已赋值
+                     * @return AppParam 是否已赋值
+                     * 
+                     */
+                    bool AppParamHasBeenSet() const;
+
+                    /**
+                     * 获取补录计划时间范围的类型： 
+DATA_TIME：实例数据时间；SCHEDULE_TIME 计划调度时间
+                     * @return TimeType 补录计划时间范围的类型： 
+DATA_TIME：实例数据时间；SCHEDULE_TIME 计划调度时间
+                     * 
+                     */
+                    std::string GetTimeType() const;
+
+                    /**
+                     * 设置补录计划时间范围的类型： 
+DATA_TIME：实例数据时间；SCHEDULE_TIME 计划调度时间
+                     * @param _timeType 补录计划时间范围的类型： 
+DATA_TIME：实例数据时间；SCHEDULE_TIME 计划调度时间
+                     * 
+                     */
+                    void SetTimeType(const std::string& _timeType);
+
+                    /**
+                     * 判断参数 TimeType 是否已赋值
+                     * @return TimeType 是否已赋值
+                     * 
+                     */
+                    bool TimeTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -864,6 +1014,48 @@ namespace TencentCloud
                      */
                     std::string m_checkParentType;
                     bool m_checkParentTypeHasBeenSet;
+
+                    /**
+                     * 是否和原任务保持相同工作流自依赖属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_sameSelfWorkflowDependType;
+                    bool m_sameSelfWorkflowDependTypeHasBeenSet;
+
+                    /**
+                     * 工作流自依赖类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_selfWorkflowDependency;
+                    bool m_selfWorkflowDependencyHasBeenSet;
+
+                    /**
+                     * 补录时间顺序
+NORMAL： 正常
+ORDER ： 按照实例时间顺序执行
+REVERSE： 实例数据时间逆序
+                     */
+                    std::string m_makeDataTimeOrder;
+                    bool m_makeDataTimeOrderHasBeenSet;
+
+                    /**
+                     * 补录时间范围的时区
+                     */
+                    std::string m_scheduleTimeZone;
+                    bool m_scheduleTimeZoneHasBeenSet;
+
+                    /**
+                     * 执行应用参数
+                     */
+                    std::string m_appParam;
+                    bool m_appParamHasBeenSet;
+
+                    /**
+                     * 补录计划时间范围的类型： 
+DATA_TIME：实例数据时间；SCHEDULE_TIME 计划调度时间
+                     */
+                    std::string m_timeType;
+                    bool m_timeTypeHasBeenSet;
 
                 };
             }

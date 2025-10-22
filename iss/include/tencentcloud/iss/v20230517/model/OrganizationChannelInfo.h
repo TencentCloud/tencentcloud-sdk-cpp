@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备通道所属的设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceName 设备通道所属的设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备通道所属的设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceName 设备通道所属的设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
@@ -115,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备通道名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelName 设备通道名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetChannelName() const;
 
                     /**
                      * 设置设备通道名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _channelName 设备通道名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChannelName(const std::string& _channelName);
@@ -169,7 +161,6 @@ namespace TencentCloud
 
                     /**
                      * 设备通道所属的设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceName;
                     bool m_deviceNameHasBeenSet;
@@ -182,7 +173,6 @@ namespace TencentCloud
 
                     /**
                      * 设备通道名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_channelName;
                     bool m_channelNameHasBeenSet;

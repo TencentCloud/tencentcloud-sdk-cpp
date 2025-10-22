@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,14 +48,14 @@ namespace TencentCloud
                     /**
                      * 获取状态: audit: 审核中 ok: 审核通过 invalid: 失效 expiring: 即将过期 expired: 已过期
                      * @return Status 状态: audit: 审核中 ok: 审核通过 invalid: 失效 expiring: 即将过期 expired: 已过期
-                     * 
+                     * @deprecated
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool StatusHasBeenSet() const;
 
@@ -315,6 +315,62 @@ namespace TencentCloud
                      */
                     bool StatusInfoHasBeenSet() const;
 
+                    /**
+                     * 获取管理员证件类型，SFZ代表身份证，HZ代表护照
+                     * @return ManagerIdType 管理员证件类型，SFZ代表身份证，HZ代表护照
+                     * 
+                     */
+                    std::string GetManagerIdType() const;
+
+                    /**
+                     * 判断参数 ManagerIdType 是否已赋值
+                     * @return ManagerIdType 是否已赋值
+                     * 
+                     */
+                    bool ManagerIdTypeHasBeenSet() const;
+
+                    /**
+                     * 获取管理员证件号码
+                     * @return ManagerIdNumber 管理员证件号码
+                     * 
+                     */
+                    std::string GetManagerIdNumber() const;
+
+                    /**
+                     * 判断参数 ManagerIdNumber 是否已赋值
+                     * @return ManagerIdNumber 是否已赋值
+                     * 
+                     */
+                    bool ManagerIdNumberHasBeenSet() const;
+
+                    /**
+                     * 获取联系人证件类型，SFZ代表身份证，HZ代表护照
+                     * @return ContactIdType 联系人证件类型，SFZ代表身份证，HZ代表护照
+                     * 
+                     */
+                    std::string GetContactIdType() const;
+
+                    /**
+                     * 判断参数 ContactIdType 是否已赋值
+                     * @return ContactIdType 是否已赋值
+                     * 
+                     */
+                    bool ContactIdTypeHasBeenSet() const;
+
+                    /**
+                     * 获取联系人证件号码
+                     * @return ContactIdNumber 联系人证件号码
+                     * 
+                     */
+                    std::string GetContactIdNumber() const;
+
+                    /**
+                     * 判断参数 ContactIdNumber 是否已赋值
+                     * @return ContactIdNumber 是否已赋值
+                     * 
+                     */
+                    bool ContactIdNumberHasBeenSet() const;
+
                 private:
 
                     /**
@@ -432,6 +488,30 @@ namespace TencentCloud
                      */
                     std::vector<ManagerStatusInfo> m_statusInfo;
                     bool m_statusInfoHasBeenSet;
+
+                    /**
+                     * 管理员证件类型，SFZ代表身份证，HZ代表护照
+                     */
+                    std::string m_managerIdType;
+                    bool m_managerIdTypeHasBeenSet;
+
+                    /**
+                     * 管理员证件号码
+                     */
+                    std::string m_managerIdNumber;
+                    bool m_managerIdNumberHasBeenSet;
+
+                    /**
+                     * 联系人证件类型，SFZ代表身份证，HZ代表护照
+                     */
+                    std::string m_contactIdType;
+                    bool m_contactIdTypeHasBeenSet;
+
+                    /**
+                     * 联系人证件号码
+                     */
+                    std::string m_contactIdNumber;
+                    bool m_contactIdNumberHasBeenSet;
 
                 };
             }

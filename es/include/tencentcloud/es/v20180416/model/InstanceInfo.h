@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,6 +37,7 @@
 #include <tencentcloud/es/v20180416/model/OperationDuration.h>
 #include <tencentcloud/es/v20180416/model/OptionalWebServiceInfo.h>
 #include <tencentcloud/es/v20180416/model/OutboundPublicAcl.h>
+#include <tencentcloud/es/v20180416/model/EnableScheduleOperationDuration.h>
 
 
 namespace TencentCloud
@@ -2210,6 +2211,123 @@ RENEW_FLAG_DEFAULT：不自动续费
                      */
                     bool ReadWriteModeHasBeenSet() const;
 
+                    /**
+                     * 获取是否有置放群组异步调度任务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableScheduleRecoverGroup 是否有置放群组异步调度任务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetEnableScheduleRecoverGroup() const;
+
+                    /**
+                     * 设置是否有置放群组异步调度任务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _enableScheduleRecoverGroup 是否有置放群组异步调度任务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEnableScheduleRecoverGroup(const bool& _enableScheduleRecoverGroup);
+
+                    /**
+                     * 判断参数 EnableScheduleRecoverGroup 是否已赋值
+                     * @return EnableScheduleRecoverGroup 是否已赋值
+                     * 
+                     */
+                    bool EnableScheduleRecoverGroupHasBeenSet() const;
+
+                    /**
+                     * 获取异步调度任务的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableScheduleOperationDuration 异步调度任务的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    EnableScheduleOperationDuration GetEnableScheduleOperationDuration() const;
+
+                    /**
+                     * 设置异步调度任务的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _enableScheduleOperationDuration 异步调度任务的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEnableScheduleOperationDuration(const EnableScheduleOperationDuration& _enableScheduleOperationDuration);
+
+                    /**
+                     * 判断参数 EnableScheduleOperationDuration 是否已赋值
+                     * @return EnableScheduleOperationDuration 是否已赋值
+                     * 
+                     */
+                    bool EnableScheduleOperationDurationHasBeenSet() const;
+
+                    /**
+                     * 获取开启集群保护：OPEN-开启，CLOSE-关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableDestroyProtection 开启集群保护：OPEN-开启，CLOSE-关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEnableDestroyProtection() const;
+
+                    /**
+                     * 设置开启集群保护：OPEN-开启，CLOSE-关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _enableDestroyProtection 开启集群保护：OPEN-开启，CLOSE-关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEnableDestroyProtection(const std::string& _enableDestroyProtection);
+
+                    /**
+                     * 判断参数 EnableDestroyProtection 是否已赋值
+                     * @return EnableDestroyProtection 是否已赋值
+                     * 
+                     */
+                    bool EnableDestroyProtectionHasBeenSet() const;
+
+                    /**
+                     * 获取kibana内网访问地址
+                     * @return ShowKibanaIpPort kibana内网访问地址
+                     * 
+                     */
+                    std::string GetShowKibanaIpPort() const;
+
+                    /**
+                     * 设置kibana内网访问地址
+                     * @param _showKibanaIpPort kibana内网访问地址
+                     * 
+                     */
+                    void SetShowKibanaIpPort(const std::string& _showKibanaIpPort);
+
+                    /**
+                     * 判断参数 ShowKibanaIpPort 是否已赋值
+                     * @return ShowKibanaIpPort 是否已赋值
+                     * 
+                     */
+                    bool ShowKibanaIpPortHasBeenSet() const;
+
+                    /**
+                     * 获取是否为CDZLite可用区
+                     * @return IsCdzLite 是否为CDZLite可用区
+                     * 
+                     */
+                    bool GetIsCdzLite() const;
+
+                    /**
+                     * 设置是否为CDZLite可用区
+                     * @param _isCdzLite 是否为CDZLite可用区
+                     * 
+                     */
+                    void SetIsCdzLite(const bool& _isCdzLite);
+
+                    /**
+                     * 判断参数 IsCdzLite 是否已赋值
+                     * @return IsCdzLite 是否已赋值
+                     * 
+                     */
+                    bool IsCdzLiteHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2817,6 +2935,39 @@ RENEW_FLAG_DEFAULT：不自动续费
                      */
                     int64_t m_readWriteMode;
                     bool m_readWriteModeHasBeenSet;
+
+                    /**
+                     * 是否有置放群组异步调度任务
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_enableScheduleRecoverGroup;
+                    bool m_enableScheduleRecoverGroupHasBeenSet;
+
+                    /**
+                     * 异步调度任务的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    EnableScheduleOperationDuration m_enableScheduleOperationDuration;
+                    bool m_enableScheduleOperationDurationHasBeenSet;
+
+                    /**
+                     * 开启集群保护：OPEN-开启，CLOSE-关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_enableDestroyProtection;
+                    bool m_enableDestroyProtectionHasBeenSet;
+
+                    /**
+                     * kibana内网访问地址
+                     */
+                    std::string m_showKibanaIpPort;
+                    bool m_showKibanaIpPortHasBeenSet;
+
+                    /**
+                     * 是否为CDZLite可用区
+                     */
+                    bool m_isCdzLite;
+                    bool m_isCdzLiteHasBeenSet;
 
                 };
             }

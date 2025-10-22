@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,14 +44,18 @@ namespace TencentCloud
 
                     /**
                      * 获取页码
+默认值1
                      * @return PageNumber 页码
+默认值1
                      * 
                      */
                     uint64_t GetPageNumber() const;
 
                     /**
                      * 设置页码
+默认值1
                      * @param _pageNumber 页码
+默认值1
                      * 
                      */
                     void SetPageNumber(const uint64_t& _pageNumber);
@@ -65,14 +69,18 @@ namespace TencentCloud
 
                     /**
                      * 获取每页数量
+默认：20 取值范围[1，200]
                      * @return PageSize 每页数量
+默认：20 取值范围[1，200]
                      * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
                      * 设置每页数量
+默认：20 取值范围[1，200]
                      * @param _pageSize 每页数量
+默认：20 取值范围[1，200]
                      * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
@@ -106,15 +114,19 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取状态： 1 已预约 9 预约持有者索回
-                     * @return Status 状态： 1 已预约 9 预约持有者索回
+                     * 获取状态：
+1 已预约，2 竞价中，3 等待出价 4 竞价失败 5 等待支付 6 等待转移，7 转移中 8 交易成功 9 预约持有者赎回 10 竞价持有者赎回 11 其他阶段持有者赎回 12 违约
+                     * @return Status 状态：
+1 已预约，2 竞价中，3 等待出价 4 竞价失败 5 等待支付 6 等待转移，7 转移中 8 交易成功 9 预约持有者赎回 10 竞价持有者赎回 11 其他阶段持有者赎回 12 违约
                      * 
                      */
                     std::vector<uint64_t> GetStatus() const;
 
                     /**
-                     * 设置状态： 1 已预约 9 预约持有者索回
-                     * @param _status 状态： 1 已预约 9 预约持有者索回
+                     * 设置状态：
+1 已预约，2 竞价中，3 等待出价 4 竞价失败 5 等待支付 6 等待转移，7 转移中 8 交易成功 9 预约持有者赎回 10 竞价持有者赎回 11 其他阶段持有者赎回 12 违约
+                     * @param _status 状态：
+1 已预约，2 竞价中，3 等待出价 4 竞价失败 5 等待支付 6 等待转移，7 转移中 8 交易成功 9 预约持有者赎回 10 竞价持有者赎回 11 其他阶段持有者赎回 12 违约
                      * 
                      */
                     void SetStatus(const std::vector<uint64_t>& _status);
@@ -127,15 +139,35 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取排序字段：AppointEndTime 预约结束时间
-                     * @return SortField 排序字段：AppointEndTime 预约结束时间
+                     * 获取排序字段：
+默认<空>，不排序
+可选值：
+AppointEndTime 预约结束时间
+BiddingPrice 竞价保证金
+BiddingEndTime 竞价结束时间
+                     * @return SortField 排序字段：
+默认<空>，不排序
+可选值：
+AppointEndTime 预约结束时间
+BiddingPrice 竞价保证金
+BiddingEndTime 竞价结束时间
                      * 
                      */
                     std::string GetSortField() const;
 
                     /**
-                     * 设置排序字段：AppointEndTime 预约结束时间
-                     * @param _sortField 排序字段：AppointEndTime 预约结束时间
+                     * 设置排序字段：
+默认<空>，不排序
+可选值：
+AppointEndTime 预约结束时间
+BiddingPrice 竞价保证金
+BiddingEndTime 竞价结束时间
+                     * @param _sortField 排序字段：
+默认<空>，不排序
+可选值：
+AppointEndTime 预约结束时间
+BiddingPrice 竞价保证金
+BiddingEndTime 竞价结束时间
                      * 
                      */
                     void SetSortField(const std::string& _sortField);
@@ -148,15 +180,27 @@ namespace TencentCloud
                     bool SortFieldHasBeenSet() const;
 
                     /**
-                     * 获取排序规则：asc升序，desc降序
-                     * @return SortOrder 排序规则：asc升序，desc降序
+                     * 获取排序规则：
+asc:升序
+desc:降序
+默认：asc
+                     * @return SortOrder 排序规则：
+asc:升序
+desc:降序
+默认：asc
                      * 
                      */
                     std::string GetSortOrder() const;
 
                     /**
-                     * 设置排序规则：asc升序，desc降序
-                     * @param _sortOrder 排序规则：asc升序，desc降序
+                     * 设置排序规则：
+asc:升序
+desc:降序
+默认：asc
+                     * @param _sortOrder 排序规则：
+asc:升序
+desc:降序
+默认：asc
                      * 
                      */
                     void SetSortOrder(const std::string& _sortOrder);
@@ -172,12 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 页码
+默认值1
                      */
                     uint64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
                      * 每页数量
+默认：20 取值范围[1，200]
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
@@ -189,19 +235,28 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 状态： 1 已预约 9 预约持有者索回
+                     * 状态：
+1 已预约，2 竞价中，3 等待出价 4 竞价失败 5 等待支付 6 等待转移，7 转移中 8 交易成功 9 预约持有者赎回 10 竞价持有者赎回 11 其他阶段持有者赎回 12 违约
                      */
                     std::vector<uint64_t> m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 排序字段：AppointEndTime 预约结束时间
+                     * 排序字段：
+默认<空>，不排序
+可选值：
+AppointEndTime 预约结束时间
+BiddingPrice 竞价保证金
+BiddingEndTime 竞价结束时间
                      */
                     std::string m_sortField;
                     bool m_sortFieldHasBeenSet;
 
                     /**
-                     * 排序规则：asc升序，desc降序
+                     * 排序规则：
+asc:升序
+desc:降序
+默认：asc
                      */
                     std::string m_sortOrder;
                     bool m_sortOrderHasBeenSet;

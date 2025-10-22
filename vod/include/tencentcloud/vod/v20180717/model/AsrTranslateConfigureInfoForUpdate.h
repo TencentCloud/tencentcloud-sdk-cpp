@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 语音翻译控制参数
+                * 语音翻译识别控制参数
                 */
                 class AsrTranslateConfigureInfoForUpdate : public AbstractModel
                 {
@@ -48,23 +48,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取语音翻译任务开关，可选值：
+                     * 获取语音翻译识别任务开关，可选值：
 <li>ON：开启；</li>
-<li>OFF：关闭。</li>
-                     * @return Switch 语音翻译任务开关，可选值：
+<li>OFF：关闭。</li><font color=red>注意：</font>语音翻译识别任务本身会返回 ASR 全文识别结果，为避免重复收费，因此禁止同时开启语音翻译识别和 ASR 全文识别功能项。
+                     * @return Switch 语音翻译识别任务开关，可选值：
 <li>ON：开启；</li>
-<li>OFF：关闭。</li>
+<li>OFF：关闭。</li><font color=red>注意：</font>语音翻译识别任务本身会返回 ASR 全文识别结果，为避免重复收费，因此禁止同时开启语音翻译识别和 ASR 全文识别功能项。
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置语音翻译任务开关，可选值：
+                     * 设置语音翻译识别任务开关，可选值：
 <li>ON：开启；</li>
-<li>OFF：关闭。</li>
-                     * @param _switch 语音翻译任务开关，可选值：
+<li>OFF：关闭。</li><font color=red>注意：</font>语音翻译识别任务本身会返回 ASR 全文识别结果，为避免重复收费，因此禁止同时开启语音翻译识别和 ASR 全文识别功能项。
+                     * @param _switch 语音翻译识别任务开关，可选值：
 <li>ON：开启；</li>
-<li>OFF：关闭。</li>
+<li>OFF：关闭。</li><font color=red>注意：</font>语音翻译识别任务本身会返回 ASR 全文识别结果，为避免重复收费，因此禁止同时开启语音翻译识别和 ASR 全文识别功能项。
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -151,6 +151,8 @@ namespace TencentCloud
 
                     /**
                      * 获取翻译目标语言。
+若此参数填写空字符串，则表示只进行语音全文识别，不进行翻译（计费项与 AsrFullTextConfigure 语音全文识别一致）；
+否则，此参数的取值范围分为如下几种情况：
 当 SrcLanguage 为 zh（中文）时，取值范围：
 <li>en：英文；</li>
 <li>ja：日文；</li>
@@ -233,6 +235,8 @@ namespace TencentCloud
 <li>ru：俄语；</li>
 <li>pt：葡萄牙语。</li>
                      * @return DstLanguage 翻译目标语言。
+若此参数填写空字符串，则表示只进行语音全文识别，不进行翻译（计费项与 AsrFullTextConfigure 语音全文识别一致）；
+否则，此参数的取值范围分为如下几种情况：
 当 SrcLanguage 为 zh（中文）时，取值范围：
 <li>en：英文；</li>
 <li>ja：日文；</li>
@@ -320,6 +324,8 @@ namespace TencentCloud
 
                     /**
                      * 设置翻译目标语言。
+若此参数填写空字符串，则表示只进行语音全文识别，不进行翻译（计费项与 AsrFullTextConfigure 语音全文识别一致）；
+否则，此参数的取值范围分为如下几种情况：
 当 SrcLanguage 为 zh（中文）时，取值范围：
 <li>en：英文；</li>
 <li>ja：日文；</li>
@@ -402,6 +408,8 @@ namespace TencentCloud
 <li>ru：俄语；</li>
 <li>pt：葡萄牙语。</li>
                      * @param _dstLanguage 翻译目标语言。
+若此参数填写空字符串，则表示只进行语音全文识别，不进行翻译（计费项与 AsrFullTextConfigure 语音全文识别一致）；
+否则，此参数的取值范围分为如下几种情况：
 当 SrcLanguage 为 zh（中文）时，取值范围：
 <li>en：英文；</li>
 <li>ja：日文；</li>
@@ -539,9 +547,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 语音翻译任务开关，可选值：
+                     * 语音翻译识别任务开关，可选值：
 <li>ON：开启；</li>
-<li>OFF：关闭。</li>
+<li>OFF：关闭。</li><font color=red>注意：</font>语音翻译识别任务本身会返回 ASR 全文识别结果，为避免重复收费，因此禁止同时开启语音翻译识别和 ASR 全文识别功能项。
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
@@ -567,6 +575,8 @@ namespace TencentCloud
 
                     /**
                      * 翻译目标语言。
+若此参数填写空字符串，则表示只进行语音全文识别，不进行翻译（计费项与 AsrFullTextConfigure 语音全文识别一致）；
+否则，此参数的取值范围分为如下几种情况：
 当 SrcLanguage 为 zh（中文）时，取值范围：
 <li>en：英文；</li>
 <li>ja：日文；</li>

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -132,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组件漏洞数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulCount 组件漏洞数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetVulCount() const;
 
                     /**
                      * 设置组件漏洞数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vulCount 组件漏洞数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVulCount(const uint64_t& _vulCount);
@@ -157,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageID 镜像ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetImageID() const;
 
                     /**
                      * 设置镜像ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _imageID 镜像ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImageID(const std::string& _imageID);
@@ -208,14 +200,12 @@ namespace TencentCloud
 
                     /**
                      * 组件漏洞数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_vulCount;
                     bool m_vulCountHasBeenSet;
 
                     /**
                      * 镜像ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_imageID;
                     bool m_imageIDHasBeenSet;

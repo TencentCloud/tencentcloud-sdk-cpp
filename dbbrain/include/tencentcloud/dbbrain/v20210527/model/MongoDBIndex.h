@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -155,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取推荐索引列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IndexesToBuild 推荐索引列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<IndexesToBuild> GetIndexesToBuild() const;
 
                     /**
                      * 设置推荐索引列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _indexesToBuild 推荐索引列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIndexesToBuild(const std::vector<IndexesToBuild>& _indexesToBuild);
@@ -180,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取无效索引列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IndexesToDrop 无效索引列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<IndexesToDrop> GetIndexesToDrop() const;
 
                     /**
                      * 设置无效索引列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _indexesToDrop 无效索引列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIndexesToDrop(const std::vector<IndexesToDrop>& _indexesToDrop);
@@ -237,14 +229,12 @@ namespace TencentCloud
 
                     /**
                      * 推荐索引列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<IndexesToBuild> m_indexesToBuild;
                     bool m_indexesToBuildHasBeenSet;
 
                     /**
                      * 无效索引列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<IndexesToDrop> m_indexesToDrop;
                     bool m_indexesToDropHasBeenSet;

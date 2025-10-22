@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -89,6 +89,27 @@ namespace TencentCloud
                      */
                     bool CertListHasBeenSet() const;
 
+                    /**
+                     * 获取双向认证时，是否开启客户端认证，ON:开启，OPTIONAL:自适应，默认ON
+                     * @return SSLVerifyClient 双向认证时，是否开启客户端认证，ON:开启，OPTIONAL:自适应，默认ON
+                     * 
+                     */
+                    std::string GetSSLVerifyClient() const;
+
+                    /**
+                     * 设置双向认证时，是否开启客户端认证，ON:开启，OPTIONAL:自适应，默认ON
+                     * @param _sSLVerifyClient 双向认证时，是否开启客户端认证，ON:开启，OPTIONAL:自适应，默认ON
+                     * 
+                     */
+                    void SetSSLVerifyClient(const std::string& _sSLVerifyClient);
+
+                    /**
+                     * 判断参数 SSLVerifyClient 是否已赋值
+                     * @return SSLVerifyClient 是否已赋值
+                     * 
+                     */
+                    bool SSLVerifyClientHasBeenSet() const;
+
                 private:
 
                     /**
@@ -102,6 +123,12 @@ namespace TencentCloud
                      */
                     std::vector<CertInfo> m_certList;
                     bool m_certListHasBeenSet;
+
+                    /**
+                     * 双向认证时，是否开启客户端认证，ON:开启，OPTIONAL:自适应，默认ON
+                     */
+                    std::string m_sSLVerifyClient;
+                    bool m_sSLVerifyClientHasBeenSet;
 
                 };
             }

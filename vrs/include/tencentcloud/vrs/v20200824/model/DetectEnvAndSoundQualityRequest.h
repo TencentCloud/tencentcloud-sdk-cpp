@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -160,23 +160,15 @@ namespace TencentCloud
                     bool SampleRateHasBeenSet() const;
 
                     /**
-                     * 获取复刻类型。
-0 - 轻量版声音复刻（默认）;
-5 - 一句话声音复刻。
-                     * @return TaskType 复刻类型。
-0 - 轻量版声音复刻（默认）;
-5 - 一句话声音复刻。
+                     * 获取复刻类型。5 - 一句话声音复刻。
+                     * @return TaskType 复刻类型。5 - 一句话声音复刻。
                      * 
                      */
                     int64_t GetTaskType() const;
 
                     /**
-                     * 设置复刻类型。
-0 - 轻量版声音复刻（默认）;
-5 - 一句话声音复刻。
-                     * @param _taskType 复刻类型。
-0 - 轻量版声音复刻（默认）;
-5 - 一句话声音复刻。
+                     * 设置复刻类型。5 - 一句话声音复刻。
+                     * @param _taskType 复刻类型。5 - 一句话声音复刻。
                      * 
                      */
                     void SetTaskType(const int64_t& _taskType);
@@ -224,9 +216,7 @@ namespace TencentCloud
                     bool m_sampleRateHasBeenSet;
 
                     /**
-                     * 复刻类型。
-0 - 轻量版声音复刻（默认）;
-5 - 一句话声音复刻。
+                     * 复刻类型。5 - 一句话声音复刻。
                      */
                     int64_t m_taskType;
                     bool m_taskTypeHasBeenSet;

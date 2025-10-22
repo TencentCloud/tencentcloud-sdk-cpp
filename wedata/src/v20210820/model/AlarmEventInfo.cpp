@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,7 +47,10 @@ AlarmEventInfo::AlarmEventInfo() :
     m_monitorObjectIdHasBeenSet(false),
     m_monitorObjectNameHasBeenSet(false),
     m_thresholdHasBeenSet(false),
-    m_alarmReasonHasBeenSet(false)
+    m_alarmReasonHasBeenSet(false),
+    m_indicatorTimeRangeValueHasBeenSet(false),
+    m_indicatorTimeRangeUnitHasBeenSet(false),
+    m_syncTypeHasBeenSet(false)
 {
 }
 
@@ -326,6 +329,36 @@ CoreInternalOutcome AlarmEventInfo::Deserialize(const rapidjson::Value &value)
         m_alarmReasonHasBeenSet = true;
     }
 
+    if (value.HasMember("IndicatorTimeRangeValue") && !value["IndicatorTimeRangeValue"].IsNull())
+    {
+        if (!value["IndicatorTimeRangeValue"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmEventInfo.IndicatorTimeRangeValue` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_indicatorTimeRangeValue = value["IndicatorTimeRangeValue"].GetInt64();
+        m_indicatorTimeRangeValueHasBeenSet = true;
+    }
+
+    if (value.HasMember("IndicatorTimeRangeUnit") && !value["IndicatorTimeRangeUnit"].IsNull())
+    {
+        if (!value["IndicatorTimeRangeUnit"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmEventInfo.IndicatorTimeRangeUnit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_indicatorTimeRangeUnit = string(value["IndicatorTimeRangeUnit"].GetString());
+        m_indicatorTimeRangeUnitHasBeenSet = true;
+    }
+
+    if (value.HasMember("SyncType") && !value["SyncType"].IsNull())
+    {
+        if (!value["SyncType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmEventInfo.SyncType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_syncType = value["SyncType"].GetInt64();
+        m_syncTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -547,6 +580,30 @@ void AlarmEventInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "AlarmReason";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_alarmReason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_indicatorTimeRangeValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IndicatorTimeRangeValue";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_indicatorTimeRangeValue, allocator);
+    }
+
+    if (m_indicatorTimeRangeUnitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IndicatorTimeRangeUnit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_indicatorTimeRangeUnit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_syncTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_syncType, allocator);
     }
 
 }
@@ -982,5 +1039,53 @@ void AlarmEventInfo::SetAlarmReason(const string& _alarmReason)
 bool AlarmEventInfo::AlarmReasonHasBeenSet() const
 {
     return m_alarmReasonHasBeenSet;
+}
+
+int64_t AlarmEventInfo::GetIndicatorTimeRangeValue() const
+{
+    return m_indicatorTimeRangeValue;
+}
+
+void AlarmEventInfo::SetIndicatorTimeRangeValue(const int64_t& _indicatorTimeRangeValue)
+{
+    m_indicatorTimeRangeValue = _indicatorTimeRangeValue;
+    m_indicatorTimeRangeValueHasBeenSet = true;
+}
+
+bool AlarmEventInfo::IndicatorTimeRangeValueHasBeenSet() const
+{
+    return m_indicatorTimeRangeValueHasBeenSet;
+}
+
+string AlarmEventInfo::GetIndicatorTimeRangeUnit() const
+{
+    return m_indicatorTimeRangeUnit;
+}
+
+void AlarmEventInfo::SetIndicatorTimeRangeUnit(const string& _indicatorTimeRangeUnit)
+{
+    m_indicatorTimeRangeUnit = _indicatorTimeRangeUnit;
+    m_indicatorTimeRangeUnitHasBeenSet = true;
+}
+
+bool AlarmEventInfo::IndicatorTimeRangeUnitHasBeenSet() const
+{
+    return m_indicatorTimeRangeUnitHasBeenSet;
+}
+
+int64_t AlarmEventInfo::GetSyncType() const
+{
+    return m_syncType;
+}
+
+void AlarmEventInfo::SetSyncType(const int64_t& _syncType)
+{
+    m_syncType = _syncType;
+    m_syncTypeHasBeenSet = true;
+}
+
+bool AlarmEventInfo::SyncTypeHasBeenSet() const
+{
+    return m_syncTypeHasBeenSet;
 }
 

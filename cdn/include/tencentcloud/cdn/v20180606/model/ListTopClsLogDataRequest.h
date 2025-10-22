@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -202,15 +202,15 @@ namespace TencentCloud
                     bool ChannelHasBeenSet() const;
 
                     /**
-                     * 获取要查询的Top条数，最大值为100，默认为10
-                     * @return Limit 要查询的Top条数，最大值为100，默认为10
+                     * 获取要查询的Top条数，建议最大值100，默认为10
+                     * @return Limit 要查询的Top条数，建议最大值100，默认为10
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置要查询的Top条数，最大值为100，默认为10
-                     * @param _limit 要查询的Top条数，最大值为100，默认为10
+                     * 设置要查询的Top条数，建议最大值100，默认为10
+                     * @param _limit 要查询的Top条数，建议最大值100，默认为10
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -291,7 +291,7 @@ namespace TencentCloud
                     bool m_channelHasBeenSet;
 
                     /**
-                     * 要查询的Top条数，最大值为100，默认为10
+                     * 要查询的Top条数，建议最大值100，默认为10
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

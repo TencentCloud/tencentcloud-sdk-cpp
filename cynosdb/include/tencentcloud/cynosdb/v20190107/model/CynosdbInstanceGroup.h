@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -176,15 +176,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取实例组类型。ha-ha组；ro-只读组
-                     * @return Type 实例组类型。ha-ha组；ro-只读组
+                     * 获取实例组（网络）类型。ha-ha组；ro-只读组；proxy-代理；singleRo-只读实例独占
+                     * @return Type 实例组（网络）类型。ha-ha组；ro-只读组；proxy-代理；singleRo-只读实例独占
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置实例组类型。ha-ha组；ro-只读组
-                     * @param _type 实例组类型。ha-ha组；ro-只读组
+                     * 设置实例组（网络）类型。ha-ha组；ro-只读组；proxy-代理；singleRo-只读实例独占
+                     * @param _type 实例组（网络）类型。ha-ha组；ro-只读组；proxy-代理；singleRo-只读实例独占
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -366,18 +366,14 @@ namespace TencentCloud
 
                     /**
                      * 获取VPC的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UniqVpcId VPC的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
                      * 设置VPC的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uniqVpcId VPC的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
@@ -391,18 +387,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UniqSubnetId 子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUniqSubnetId() const;
 
                     /**
                      * 设置子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uniqSubnetId 子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUniqSubnetId(const std::string& _uniqSubnetId);
@@ -416,18 +408,14 @@ namespace TencentCloud
 
                     /**
                      * 获取正在回收IP信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OldAddrInfo 正在回收IP信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     OldAddrInfo GetOldAddrInfo() const;
 
                     /**
                      * 设置正在回收IP信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _oldAddrInfo 正在回收IP信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOldAddrInfo(const OldAddrInfo& _oldAddrInfo);
@@ -541,7 +529,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 实例组类型。ha-ha组；ro-只读组
+                     * 实例组（网络）类型。ha-ha组；ro-只读组；proxy-代理；singleRo-只读实例独占
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -596,21 +584,18 @@ namespace TencentCloud
 
                     /**
                      * VPC的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uniqVpcId;
                     bool m_uniqVpcIdHasBeenSet;
 
                     /**
                      * 子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uniqSubnetId;
                     bool m_uniqSubnetIdHasBeenSet;
 
                     /**
                      * 正在回收IP信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OldAddrInfo m_oldAddrInfo;
                     bool m_oldAddrInfoHasBeenSet;

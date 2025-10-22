@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取汇总数。在线（正常+故障） + 离线
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 汇总数。在线（正常+故障） + 离线
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 设置汇总数。在线（正常+故障） + 离线
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _total 汇总数。在线（正常+故障） + 离线
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotal(const int64_t& _total);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取正常数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NormalSum 正常数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNormalSum() const;
 
                     /**
                      * 设置正常数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _normalSum 正常数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNormalSum(const int64_t& _normalSum);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取离线数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OfflineSum 离线数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOfflineSum() const;
 
                     /**
                      * 设置离线数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _offlineSum 离线数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOfflineSum(const int64_t& _offlineSum);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取故障数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FaultSum 故障数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFaultSum() const;
 
                     /**
                      * 设置故障数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _faultSum 故障数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFaultSum(const int64_t& _faultSum);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取空间id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpaceCode 空间id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSpaceCode() const;
 
                     /**
                      * 设置空间id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _spaceCode 空间id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSpaceCode(const std::string& _spaceCode);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备类型统计列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatDeviceTypeSet 设备类型统计列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<StatDeviceType> GetStatDeviceTypeSet() const;
 
                     /**
                      * 设置设备类型统计列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _statDeviceTypeSet 设备类型统计列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatDeviceTypeSet(const std::vector<StatDeviceType>& _statDeviceTypeSet);
@@ -201,42 +177,36 @@ namespace TencentCloud
 
                     /**
                      * 汇总数。在线（正常+故障） + 离线
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
                      * 正常数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_normalSum;
                     bool m_normalSumHasBeenSet;
 
                     /**
                      * 离线数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_offlineSum;
                     bool m_offlineSumHasBeenSet;
 
                     /**
                      * 故障数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_faultSum;
                     bool m_faultSumHasBeenSet;
 
                     /**
                      * 空间id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_spaceCode;
                     bool m_spaceCodeHasBeenSet;
 
                     /**
                      * 设备类型统计列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<StatDeviceType> m_statDeviceTypeSet;
                     bool m_statDeviceTypeSetHasBeenSet;

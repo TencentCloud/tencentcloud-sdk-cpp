@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,46 +19,58 @@ set(tmt_public_header
   )
 
 set(tmt_public_header_model
-  include/tencentcloud/tmt/v20180321/model/TextTranslateResponse.h
-  include/tencentcloud/tmt/v20180321/model/ImageTranslateRequest.h
-  include/tencentcloud/tmt/v20180321/model/GetFileTranslateData.h
-  include/tencentcloud/tmt/v20180321/model/SpeechTranslateResponse.h
-  include/tencentcloud/tmt/v20180321/model/ImageRecord.h
   include/tencentcloud/tmt/v20180321/model/ImageTranslateResponse.h
+  include/tencentcloud/tmt/v20180321/model/SpeechTranslateResponse.h
+  include/tencentcloud/tmt/v20180321/model/Task.h
+  include/tencentcloud/tmt/v20180321/model/ItemValue.h
+  include/tencentcloud/tmt/v20180321/model/GetFileTranslateRequest.h
+  include/tencentcloud/tmt/v20180321/model/FileTranslateRequest.h
+  include/tencentcloud/tmt/v20180321/model/ImageTranslateLLMRequest.h
+  include/tencentcloud/tmt/v20180321/model/ImageRecord.h
   include/tencentcloud/tmt/v20180321/model/LanguageDetectRequest.h
   include/tencentcloud/tmt/v20180321/model/TextTranslateBatchResponse.h
-  include/tencentcloud/tmt/v20180321/model/TextTranslateBatchRequest.h
-  include/tencentcloud/tmt/v20180321/model/Task.h
+  include/tencentcloud/tmt/v20180321/model/TransDetail.h
   include/tencentcloud/tmt/v20180321/model/LanguageDetectResponse.h
-  include/tencentcloud/tmt/v20180321/model/GetFileTranslateResponse.h
   include/tencentcloud/tmt/v20180321/model/SpeechTranslateRequest.h
+  include/tencentcloud/tmt/v20180321/model/RotateParagraphRect.h
+  include/tencentcloud/tmt/v20180321/model/TextTranslateBatchRequest.h
+  include/tencentcloud/tmt/v20180321/model/Coord.h
+  include/tencentcloud/tmt/v20180321/model/GetFileTranslateResponse.h
   include/tencentcloud/tmt/v20180321/model/FileTranslateResponse.h
-  include/tencentcloud/tmt/v20180321/model/FileTranslateRequest.h
+  include/tencentcloud/tmt/v20180321/model/GetFileTranslateData.h
   include/tencentcloud/tmt/v20180321/model/TextTranslateRequest.h
-  include/tencentcloud/tmt/v20180321/model/GetFileTranslateRequest.h
-  include/tencentcloud/tmt/v20180321/model/ItemValue.h
+  include/tencentcloud/tmt/v20180321/model/BoundingBox.h
+  include/tencentcloud/tmt/v20180321/model/TextTranslateResponse.h
+  include/tencentcloud/tmt/v20180321/model/ImageTranslateRequest.h
+  include/tencentcloud/tmt/v20180321/model/ImageTranslateLLMResponse.h
   )
 
 set(tmt_src
   src/v20180321/TmtClient.cpp
-  src/v20180321/model/TextTranslateResponse.cpp
-  src/v20180321/model/ImageTranslateRequest.cpp
-  src/v20180321/model/GetFileTranslateData.cpp
-  src/v20180321/model/SpeechTranslateResponse.cpp
-  src/v20180321/model/ImageRecord.cpp
   src/v20180321/model/ImageTranslateResponse.cpp
+  src/v20180321/model/SpeechTranslateResponse.cpp
+  src/v20180321/model/Task.cpp
+  src/v20180321/model/ItemValue.cpp
+  src/v20180321/model/GetFileTranslateRequest.cpp
+  src/v20180321/model/FileTranslateRequest.cpp
+  src/v20180321/model/ImageTranslateLLMRequest.cpp
+  src/v20180321/model/ImageRecord.cpp
   src/v20180321/model/LanguageDetectRequest.cpp
   src/v20180321/model/TextTranslateBatchResponse.cpp
-  src/v20180321/model/TextTranslateBatchRequest.cpp
-  src/v20180321/model/Task.cpp
+  src/v20180321/model/TransDetail.cpp
   src/v20180321/model/LanguageDetectResponse.cpp
-  src/v20180321/model/GetFileTranslateResponse.cpp
   src/v20180321/model/SpeechTranslateRequest.cpp
+  src/v20180321/model/RotateParagraphRect.cpp
+  src/v20180321/model/TextTranslateBatchRequest.cpp
+  src/v20180321/model/Coord.cpp
+  src/v20180321/model/GetFileTranslateResponse.cpp
   src/v20180321/model/FileTranslateResponse.cpp
-  src/v20180321/model/FileTranslateRequest.cpp
+  src/v20180321/model/GetFileTranslateData.cpp
   src/v20180321/model/TextTranslateRequest.cpp
-  src/v20180321/model/GetFileTranslateRequest.cpp
-  src/v20180321/model/ItemValue.cpp
+  src/v20180321/model/BoundingBox.cpp
+  src/v20180321/model/TextTranslateResponse.cpp
+  src/v20180321/model/ImageTranslateRequest.cpp
+  src/v20180321/model/ImageTranslateLLMResponse.cpp
   )
 
 set(tmt_include

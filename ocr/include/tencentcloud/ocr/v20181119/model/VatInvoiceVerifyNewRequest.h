@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool InvoiceDateHasBeenSet() const;
 
                     /**
-                     * 获取发票代码（10或12 位），全电发票为空。查验未成功超过5次后当日无法再查。
-                     * @return InvoiceCode 发票代码（10或12 位），全电发票为空。查验未成功超过5次后当日无法再查。
+                     * 获取发票代码（10或12 位），全电发票为空。查验超过5次后当日无法再查。
+                     * @return InvoiceCode 发票代码（10或12 位），全电发票为空。查验超过5次后当日无法再查。
                      * 
                      */
                     std::string GetInvoiceCode() const;
 
                     /**
-                     * 设置发票代码（10或12 位），全电发票为空。查验未成功超过5次后当日无法再查。
-                     * @param _invoiceCode 发票代码（10或12 位），全电发票为空。查验未成功超过5次后当日无法再查。
+                     * 设置发票代码（10或12 位），全电发票为空。查验超过5次后当日无法再查。
+                     * @param _invoiceCode 发票代码（10或12 位），全电发票为空。查验超过5次后当日无法再查。
                      * 
                      */
                     void SetInvoiceCode(const std::string& _invoiceCode);
@@ -240,23 +240,15 @@ namespace TencentCloud
                     bool EnableCommonElectronicHasBeenSet() const;
 
                     /**
-                     * 获取是否允许查验当日发票，默认值为false。
-
-请注意，发票从开具到录入税局需要一定的时间来更新和验证发票信息，打开后仅支持查验已成功录入到税局中的发票。
-                     * @return EnableTodayInvoice 是否允许查验当日发票，默认值为false。
-
-请注意，发票从开具到录入税局需要一定的时间来更新和验证发票信息，打开后仅支持查验已成功录入到税局中的发票。
+                     * 获取是否允许查验当日发票，默认值为false。请注意，发票从开具到录入税局需要一定的时间来更新和验证发票信息，打开后仅支持查验已成功录入到税局中的当日发票。
+                     * @return EnableTodayInvoice 是否允许查验当日发票，默认值为false。请注意，发票从开具到录入税局需要一定的时间来更新和验证发票信息，打开后仅支持查验已成功录入到税局中的当日发票。
                      * 
                      */
                     bool GetEnableTodayInvoice() const;
 
                     /**
-                     * 设置是否允许查验当日发票，默认值为false。
-
-请注意，发票从开具到录入税局需要一定的时间来更新和验证发票信息，打开后仅支持查验已成功录入到税局中的发票。
-                     * @param _enableTodayInvoice 是否允许查验当日发票，默认值为false。
-
-请注意，发票从开具到录入税局需要一定的时间来更新和验证发票信息，打开后仅支持查验已成功录入到税局中的发票。
+                     * 设置是否允许查验当日发票，默认值为false。请注意，发票从开具到录入税局需要一定的时间来更新和验证发票信息，打开后仅支持查验已成功录入到税局中的当日发票。
+                     * @param _enableTodayInvoice 是否允许查验当日发票，默认值为false。请注意，发票从开具到录入税局需要一定的时间来更新和验证发票信息，打开后仅支持查验已成功录入到税局中的当日发票。
                      * 
                      */
                     void SetEnableTodayInvoice(const bool& _enableTodayInvoice);
@@ -283,7 +275,7 @@ namespace TencentCloud
                     bool m_invoiceDateHasBeenSet;
 
                     /**
-                     * 发票代码（10或12 位），全电发票为空。查验未成功超过5次后当日无法再查。
+                     * 发票代码（10或12 位），全电发票为空。查验超过5次后当日无法再查。
                      */
                     std::string m_invoiceCode;
                     bool m_invoiceCodeHasBeenSet;
@@ -327,9 +319,7 @@ namespace TencentCloud
                     bool m_enableCommonElectronicHasBeenSet;
 
                     /**
-                     * 是否允许查验当日发票，默认值为false。
-
-请注意，发票从开具到录入税局需要一定的时间来更新和验证发票信息，打开后仅支持查验已成功录入到税局中的发票。
+                     * 是否允许查验当日发票，默认值为false。请注意，发票从开具到录入税局需要一定的时间来更新和验证发票信息，打开后仅支持查验已成功录入到税局中的当日发票。
                      */
                     bool m_enableTodayInvoice;
                     bool m_enableTodayInvoiceHasBeenSet;

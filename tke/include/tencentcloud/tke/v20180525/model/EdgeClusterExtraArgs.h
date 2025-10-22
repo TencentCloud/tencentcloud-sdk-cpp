@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取kube-apiserver自定义参数，参数格式为["k1=v1", "k1=v2"]， 例如["max-requests-inflight=500","feature-gates=PodShareProcessNamespace=true,DynamicKubeletConfig=true"]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KubeAPIServer kube-apiserver自定义参数，参数格式为["k1=v1", "k1=v2"]， 例如["max-requests-inflight=500","feature-gates=PodShareProcessNamespace=true,DynamicKubeletConfig=true"]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetKubeAPIServer() const;
 
                     /**
                      * 设置kube-apiserver自定义参数，参数格式为["k1=v1", "k1=v2"]， 例如["max-requests-inflight=500","feature-gates=PodShareProcessNamespace=true,DynamicKubeletConfig=true"]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _kubeAPIServer kube-apiserver自定义参数，参数格式为["k1=v1", "k1=v2"]， 例如["max-requests-inflight=500","feature-gates=PodShareProcessNamespace=true,DynamicKubeletConfig=true"]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKubeAPIServer(const std::vector<std::string>& _kubeAPIServer);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取kube-controller-manager自定义参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KubeControllerManager kube-controller-manager自定义参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetKubeControllerManager() const;
 
                     /**
                      * 设置kube-controller-manager自定义参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _kubeControllerManager kube-controller-manager自定义参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKubeControllerManager(const std::vector<std::string>& _kubeControllerManager);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取kube-scheduler自定义参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KubeScheduler kube-scheduler自定义参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetKubeScheduler() const;
 
                     /**
                      * 设置kube-scheduler自定义参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _kubeScheduler kube-scheduler自定义参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKubeScheduler(const std::vector<std::string>& _kubeScheduler);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * kube-apiserver自定义参数，参数格式为["k1=v1", "k1=v2"]， 例如["max-requests-inflight=500","feature-gates=PodShareProcessNamespace=true,DynamicKubeletConfig=true"]
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_kubeAPIServer;
                     bool m_kubeAPIServerHasBeenSet;
 
                     /**
                      * kube-controller-manager自定义参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_kubeControllerManager;
                     bool m_kubeControllerManagerHasBeenSet;
 
                     /**
                      * kube-scheduler自定义参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_kubeScheduler;
                     bool m_kubeSchedulerHasBeenSet;

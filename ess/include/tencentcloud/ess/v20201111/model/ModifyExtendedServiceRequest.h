@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -79,10 +79,14 @@ namespace TencentCloud
 <li>HIDE_OPERATOR_DISPLAY：隐藏合同经办人姓名</li>
 <li>ORGANIZATION_OCR_FALLBACK：正楷临摹签名失败后更换其他签名类型</li>
 <li>ORGANIZATION_FLOW_NOTIFY_TYPE：短信通知签署方</li>
-<li>HIDE_ONE_KEY_SIGN：个人签署方手动签字</li>
+<li>HIDE_ONE_KEY_SIGN：个人签署方手写签名时需逐个手写</li>
+<li>SIGN_SIGNATURE_DEFAULT_SET_HANDWRITE：个人签署方手动签名</li>
 <li>ORGANIZATION_FLOW_EMAIL_NOTIFY：邮件通知签署方</li>
 <li>FLOW_APPROVAL：合同审批强制开启</li>
-<li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li></ul>
+<li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li>
+<li>APP_LOGIN：限制企业员工小程序端登录</li>
+<li>PC_LOGIN：限制企业员工网页端登录</li>
+</ul>
                      * @return ServiceType 要管理的拓展服务类型。
 <ul><li>OPEN_SERVER_SIGN：企业自动签署</li>
 <li>AUTO_SIGN_CAN_FILL_IN：本企业自动签合同支持签前内容补充</li>
@@ -92,10 +96,14 @@ namespace TencentCloud
 <li>HIDE_OPERATOR_DISPLAY：隐藏合同经办人姓名</li>
 <li>ORGANIZATION_OCR_FALLBACK：正楷临摹签名失败后更换其他签名类型</li>
 <li>ORGANIZATION_FLOW_NOTIFY_TYPE：短信通知签署方</li>
-<li>HIDE_ONE_KEY_SIGN：个人签署方手动签字</li>
+<li>HIDE_ONE_KEY_SIGN：个人签署方手写签名时需逐个手写</li>
+<li>SIGN_SIGNATURE_DEFAULT_SET_HANDWRITE：个人签署方手动签名</li>
 <li>ORGANIZATION_FLOW_EMAIL_NOTIFY：邮件通知签署方</li>
 <li>FLOW_APPROVAL：合同审批强制开启</li>
-<li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li></ul>
+<li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li>
+<li>APP_LOGIN：限制企业员工小程序端登录</li>
+<li>PC_LOGIN：限制企业员工网页端登录</li>
+</ul>
                      * 
                      */
                     std::string GetServiceType() const;
@@ -110,10 +118,14 @@ namespace TencentCloud
 <li>HIDE_OPERATOR_DISPLAY：隐藏合同经办人姓名</li>
 <li>ORGANIZATION_OCR_FALLBACK：正楷临摹签名失败后更换其他签名类型</li>
 <li>ORGANIZATION_FLOW_NOTIFY_TYPE：短信通知签署方</li>
-<li>HIDE_ONE_KEY_SIGN：个人签署方手动签字</li>
+<li>HIDE_ONE_KEY_SIGN：个人签署方手写签名时需逐个手写</li>
+<li>SIGN_SIGNATURE_DEFAULT_SET_HANDWRITE：个人签署方手动签名</li>
 <li>ORGANIZATION_FLOW_EMAIL_NOTIFY：邮件通知签署方</li>
 <li>FLOW_APPROVAL：合同审批强制开启</li>
-<li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li></ul>
+<li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li>
+<li>APP_LOGIN：限制企业员工小程序端登录</li>
+<li>PC_LOGIN：限制企业员工网页端登录</li>
+</ul>
                      * @param _serviceType 要管理的拓展服务类型。
 <ul><li>OPEN_SERVER_SIGN：企业自动签署</li>
 <li>AUTO_SIGN_CAN_FILL_IN：本企业自动签合同支持签前内容补充</li>
@@ -123,10 +135,14 @@ namespace TencentCloud
 <li>HIDE_OPERATOR_DISPLAY：隐藏合同经办人姓名</li>
 <li>ORGANIZATION_OCR_FALLBACK：正楷临摹签名失败后更换其他签名类型</li>
 <li>ORGANIZATION_FLOW_NOTIFY_TYPE：短信通知签署方</li>
-<li>HIDE_ONE_KEY_SIGN：个人签署方手动签字</li>
+<li>HIDE_ONE_KEY_SIGN：个人签署方手写签名时需逐个手写</li>
+<li>SIGN_SIGNATURE_DEFAULT_SET_HANDWRITE：个人签署方手动签名</li>
 <li>ORGANIZATION_FLOW_EMAIL_NOTIFY：邮件通知签署方</li>
 <li>FLOW_APPROVAL：合同审批强制开启</li>
-<li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li></ul>
+<li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li>
+<li>APP_LOGIN：限制企业员工小程序端登录</li>
+<li>PC_LOGIN：限制企业员工网页端登录</li>
+</ul>
                      * 
                      */
                     void SetServiceType(const std::string& _serviceType);
@@ -260,10 +276,14 @@ namespace TencentCloud
 <li>HIDE_OPERATOR_DISPLAY：隐藏合同经办人姓名</li>
 <li>ORGANIZATION_OCR_FALLBACK：正楷临摹签名失败后更换其他签名类型</li>
 <li>ORGANIZATION_FLOW_NOTIFY_TYPE：短信通知签署方</li>
-<li>HIDE_ONE_KEY_SIGN：个人签署方手动签字</li>
+<li>HIDE_ONE_KEY_SIGN：个人签署方手写签名时需逐个手写</li>
+<li>SIGN_SIGNATURE_DEFAULT_SET_HANDWRITE：个人签署方手动签名</li>
 <li>ORGANIZATION_FLOW_EMAIL_NOTIFY：邮件通知签署方</li>
 <li>FLOW_APPROVAL：合同审批强制开启</li>
-<li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li></ul>
+<li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li>
+<li>APP_LOGIN：限制企业员工小程序端登录</li>
+<li>PC_LOGIN：限制企业员工网页端登录</li>
+</ul>
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;

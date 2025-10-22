@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -344,15 +344,15 @@ namespace TencentCloud
                     bool CpuLoadHasBeenSet() const;
 
                     /**
-                     * 获取防护级别：0基础版，1专业版，2旗舰版，3普惠版
-                     * @return ProtectLevel 防护级别：0基础版，1专业版，2旗舰版，3普惠版
+                     * 获取防护级别：0基础版，1专业版，2旗舰版，3轻量版
+                     * @return ProtectLevel 防护级别：0基础版，1专业版，2旗舰版，3轻量版
                      * 
                      */
                     uint64_t GetProtectLevel() const;
 
                     /**
-                     * 设置防护级别：0基础版，1专业版，2旗舰版，3普惠版
-                     * @param _protectLevel 防护级别：0基础版，1专业版，2旗舰版，3普惠版
+                     * 设置防护级别：0基础版，1专业版，2旗舰版，3轻量版
+                     * @param _protectLevel 防护级别：0基础版，1专业版，2旗舰版，3轻量版
                      * 
                      */
                     void SetProtectLevel(const uint64_t& _protectLevel);
@@ -934,7 +934,7 @@ namespace TencentCloud
                     bool m_cpuLoadHasBeenSet;
 
                     /**
-                     * 防护级别：0基础版，1专业版，2旗舰版，3普惠版
+                     * 防护级别：0基础版，1专业版，2旗舰版，3轻量版
                      */
                     uint64_t m_protectLevel;
                     bool m_protectLevelHasBeenSet;

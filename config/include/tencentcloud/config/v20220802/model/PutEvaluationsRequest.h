@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取回调令牌。从自定义规则所选的scf云函数Context中取参数ResultToken值
-                     * @return ResultToken 回调令牌。从自定义规则所选的scf云函数Context中取参数ResultToken值
+                     * 获取回调令牌。从自定义规则所选的scf云函数入参中取参数ResultToken值
+<a href="https://cloud.tencent.com/document/product/583/9210#.E5.87.BD.E6.95.B0.E5.85.A5.E5.8F.82.3Ca-id.3D.22input.22.3E.3C.2Fa.3E" target="_blank">云函数入参说明</a>
+                     * @return ResultToken 回调令牌。从自定义规则所选的scf云函数入参中取参数ResultToken值
+<a href="https://cloud.tencent.com/document/product/583/9210#.E5.87.BD.E6.95.B0.E5.85.A5.E5.8F.82.3Ca-id.3D.22input.22.3E.3C.2Fa.3E" target="_blank">云函数入参说明</a>
                      * 
                      */
                     std::string GetResultToken() const;
 
                     /**
-                     * 设置回调令牌。从自定义规则所选的scf云函数Context中取参数ResultToken值
-                     * @param _resultToken 回调令牌。从自定义规则所选的scf云函数Context中取参数ResultToken值
+                     * 设置回调令牌。从自定义规则所选的scf云函数入参中取参数ResultToken值
+<a href="https://cloud.tencent.com/document/product/583/9210#.E5.87.BD.E6.95.B0.E5.85.A5.E5.8F.82.3Ca-id.3D.22input.22.3E.3C.2Fa.3E" target="_blank">云函数入参说明</a>
+                     * @param _resultToken 回调令牌。从自定义规则所选的scf云函数入参中取参数ResultToken值
+<a href="https://cloud.tencent.com/document/product/583/9210#.E5.87.BD.E6.95.B0.E5.85.A5.E5.8F.82.3Ca-id.3D.22input.22.3E.3C.2Fa.3E" target="_blank">云函数入参说明</a>
                      * 
                      */
                     void SetResultToken(const std::string& _resultToken);
@@ -88,7 +92,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 回调令牌。从自定义规则所选的scf云函数Context中取参数ResultToken值
+                     * 回调令牌。从自定义规则所选的scf云函数入参中取参数ResultToken值
+<a href="https://cloud.tencent.com/document/product/583/9210#.E5.87.BD.E6.95.B0.E5.85.A5.E5.8F.82.3Ca-id.3D.22input.22.3E.3C.2Fa.3E" target="_blank">云函数入参说明</a>
                      */
                     std::string m_resultToken;
                     bool m_resultTokenHasBeenSet;

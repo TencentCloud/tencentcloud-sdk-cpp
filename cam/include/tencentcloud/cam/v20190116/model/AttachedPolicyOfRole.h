@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略类型，User表示自定义策略，QCS表示预设策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyType 策略类型，User表示自定义策略，QCS表示预设策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPolicyType() const;
 
                     /**
                      * 设置策略类型，User表示自定义策略，QCS表示预设策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _policyType 策略类型，User表示自定义策略，QCS表示预设策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPolicyType(const std::string& _policyType);
@@ -157,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否已下线(0:否 1:是)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Deactived 是否已下线(0:否 1:是)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDeactived() const;
 
                     /**
                      * 设置是否已下线(0:否 1:是)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deactived 是否已下线(0:否 1:是)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeactived(const uint64_t& _deactived);
@@ -182,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已下线的产品列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeactivedDetail 已下线的产品列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetDeactivedDetail() const;
 
                     /**
                      * 设置已下线的产品列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deactivedDetail 已下线的产品列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeactivedDetail(const std::vector<std::string>& _deactivedDetail);
@@ -207,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 策略描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置策略描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 策略描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -252,7 +236,6 @@ namespace TencentCloud
 
                     /**
                      * 策略类型，User表示自定义策略，QCS表示预设策略
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_policyType;
                     bool m_policyTypeHasBeenSet;
@@ -265,21 +248,18 @@ namespace TencentCloud
 
                     /**
                      * 是否已下线(0:否 1:是)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_deactived;
                     bool m_deactivedHasBeenSet;
 
                     /**
                      * 已下线的产品列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_deactivedDetail;
                     bool m_deactivedDetailHasBeenSet;
 
                     /**
                      * 策略描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

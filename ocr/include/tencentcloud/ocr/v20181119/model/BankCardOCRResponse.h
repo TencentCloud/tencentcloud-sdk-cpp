@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -189,6 +189,20 @@ namespace TencentCloud
                      */
                     bool QualityValueHasBeenSet() const;
 
+                    /**
+                     * 获取卡类别， 如： 标准实体银行卡、电子银行卡信息截图
+                     * @return CardCategory 卡类别， 如： 标准实体银行卡、电子银行卡信息截图
+                     * 
+                     */
+                    std::string GetCardCategory() const;
+
+                    /**
+                     * 判断参数 CardCategory 是否已赋值
+                     * @return CardCategory 是否已赋值
+                     * 
+                     */
+                    bool CardCategoryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -254,6 +268,12 @@ namespace TencentCloud
                      */
                     int64_t m_qualityValue;
                     bool m_qualityValueHasBeenSet;
+
+                    /**
+                     * 卡类别， 如： 标准实体银行卡、电子银行卡信息截图
+                     */
+                    std::string m_cardCategory;
+                    bool m_cardCategoryHasBeenSet;
 
                 };
             }

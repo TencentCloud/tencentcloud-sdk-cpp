@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,19 @@ TargetGroupInfo::TargetGroupInfo() :
     m_portHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_updatedTimeHasBeenSet(false),
-    m_associatedRuleHasBeenSet(false)
+    m_associatedRuleHasBeenSet(false),
+    m_protocolHasBeenSet(false),
+    m_scheduleAlgorithmHasBeenSet(false),
+    m_healthCheckHasBeenSet(false),
+    m_targetGroupTypeHasBeenSet(false),
+    m_associatedRuleCountHasBeenSet(false),
+    m_registeredInstancesCountHasBeenSet(false),
+    m_tagHasBeenSet(false),
+    m_weightHasBeenSet(false),
+    m_fullListenSwitchHasBeenSet(false),
+    m_keepaliveEnableHasBeenSet(false),
+    m_sessionExpireTimeHasBeenSet(false),
+    m_ipVersionHasBeenSet(false)
 {
 }
 
@@ -116,6 +128,143 @@ CoreInternalOutcome TargetGroupInfo::Deserialize(const rapidjson::Value &value)
         m_associatedRuleHasBeenSet = true;
     }
 
+    if (value.HasMember("Protocol") && !value["Protocol"].IsNull())
+    {
+        if (!value["Protocol"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_protocol = string(value["Protocol"].GetString());
+        m_protocolHasBeenSet = true;
+    }
+
+    if (value.HasMember("ScheduleAlgorithm") && !value["ScheduleAlgorithm"].IsNull())
+    {
+        if (!value["ScheduleAlgorithm"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.ScheduleAlgorithm` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scheduleAlgorithm = string(value["ScheduleAlgorithm"].GetString());
+        m_scheduleAlgorithmHasBeenSet = true;
+    }
+
+    if (value.HasMember("HealthCheck") && !value["HealthCheck"].IsNull())
+    {
+        if (!value["HealthCheck"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.HealthCheck` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_healthCheck.Deserialize(value["HealthCheck"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_healthCheckHasBeenSet = true;
+    }
+
+    if (value.HasMember("TargetGroupType") && !value["TargetGroupType"].IsNull())
+    {
+        if (!value["TargetGroupType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.TargetGroupType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetGroupType = string(value["TargetGroupType"].GetString());
+        m_targetGroupTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AssociatedRuleCount") && !value["AssociatedRuleCount"].IsNull())
+    {
+        if (!value["AssociatedRuleCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.AssociatedRuleCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_associatedRuleCount = value["AssociatedRuleCount"].GetInt64();
+        m_associatedRuleCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("RegisteredInstancesCount") && !value["RegisteredInstancesCount"].IsNull())
+    {
+        if (!value["RegisteredInstancesCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.RegisteredInstancesCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_registeredInstancesCount = value["RegisteredInstancesCount"].GetInt64();
+        m_registeredInstancesCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("Tag") && !value["Tag"].IsNull())
+    {
+        if (!value["Tag"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.Tag` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tag"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TagInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tag.push_back(item);
+        }
+        m_tagHasBeenSet = true;
+    }
+
+    if (value.HasMember("Weight") && !value["Weight"].IsNull())
+    {
+        if (!value["Weight"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.Weight` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_weight = value["Weight"].GetUint64();
+        m_weightHasBeenSet = true;
+    }
+
+    if (value.HasMember("FullListenSwitch") && !value["FullListenSwitch"].IsNull())
+    {
+        if (!value["FullListenSwitch"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.FullListenSwitch` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_fullListenSwitch = value["FullListenSwitch"].GetBool();
+        m_fullListenSwitchHasBeenSet = true;
+    }
+
+    if (value.HasMember("KeepaliveEnable") && !value["KeepaliveEnable"].IsNull())
+    {
+        if (!value["KeepaliveEnable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.KeepaliveEnable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_keepaliveEnable = value["KeepaliveEnable"].GetBool();
+        m_keepaliveEnableHasBeenSet = true;
+    }
+
+    if (value.HasMember("SessionExpireTime") && !value["SessionExpireTime"].IsNull())
+    {
+        if (!value["SessionExpireTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.SessionExpireTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionExpireTime = value["SessionExpireTime"].GetInt64();
+        m_sessionExpireTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("IpVersion") && !value["IpVersion"].IsNull())
+    {
+        if (!value["IpVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.IpVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ipVersion = string(value["IpVersion"].GetString());
+        m_ipVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +333,110 @@ void TargetGroupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_protocolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Protocol";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scheduleAlgorithmHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleAlgorithm";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scheduleAlgorithm.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_healthCheckHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthCheck";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_healthCheck.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_targetGroupTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetGroupType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetGroupType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_associatedRuleCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssociatedRuleCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_associatedRuleCount, allocator);
+    }
+
+    if (m_registeredInstancesCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegisteredInstancesCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_registeredInstancesCount, allocator);
+    }
+
+    if (m_tagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tag.begin(); itr != m_tag.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_weightHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Weight";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_weight, allocator);
+    }
+
+    if (m_fullListenSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FullListenSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fullListenSwitch, allocator);
+    }
+
+    if (m_keepaliveEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeepaliveEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_keepaliveEnable, allocator);
+    }
+
+    if (m_sessionExpireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sessionExpireTime, allocator);
+    }
+
+    if (m_ipVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ipVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -299,5 +552,197 @@ void TargetGroupInfo::SetAssociatedRule(const vector<AssociationItem>& _associat
 bool TargetGroupInfo::AssociatedRuleHasBeenSet() const
 {
     return m_associatedRuleHasBeenSet;
+}
+
+string TargetGroupInfo::GetProtocol() const
+{
+    return m_protocol;
+}
+
+void TargetGroupInfo::SetProtocol(const string& _protocol)
+{
+    m_protocol = _protocol;
+    m_protocolHasBeenSet = true;
+}
+
+bool TargetGroupInfo::ProtocolHasBeenSet() const
+{
+    return m_protocolHasBeenSet;
+}
+
+string TargetGroupInfo::GetScheduleAlgorithm() const
+{
+    return m_scheduleAlgorithm;
+}
+
+void TargetGroupInfo::SetScheduleAlgorithm(const string& _scheduleAlgorithm)
+{
+    m_scheduleAlgorithm = _scheduleAlgorithm;
+    m_scheduleAlgorithmHasBeenSet = true;
+}
+
+bool TargetGroupInfo::ScheduleAlgorithmHasBeenSet() const
+{
+    return m_scheduleAlgorithmHasBeenSet;
+}
+
+TargetGroupHealthCheck TargetGroupInfo::GetHealthCheck() const
+{
+    return m_healthCheck;
+}
+
+void TargetGroupInfo::SetHealthCheck(const TargetGroupHealthCheck& _healthCheck)
+{
+    m_healthCheck = _healthCheck;
+    m_healthCheckHasBeenSet = true;
+}
+
+bool TargetGroupInfo::HealthCheckHasBeenSet() const
+{
+    return m_healthCheckHasBeenSet;
+}
+
+string TargetGroupInfo::GetTargetGroupType() const
+{
+    return m_targetGroupType;
+}
+
+void TargetGroupInfo::SetTargetGroupType(const string& _targetGroupType)
+{
+    m_targetGroupType = _targetGroupType;
+    m_targetGroupTypeHasBeenSet = true;
+}
+
+bool TargetGroupInfo::TargetGroupTypeHasBeenSet() const
+{
+    return m_targetGroupTypeHasBeenSet;
+}
+
+int64_t TargetGroupInfo::GetAssociatedRuleCount() const
+{
+    return m_associatedRuleCount;
+}
+
+void TargetGroupInfo::SetAssociatedRuleCount(const int64_t& _associatedRuleCount)
+{
+    m_associatedRuleCount = _associatedRuleCount;
+    m_associatedRuleCountHasBeenSet = true;
+}
+
+bool TargetGroupInfo::AssociatedRuleCountHasBeenSet() const
+{
+    return m_associatedRuleCountHasBeenSet;
+}
+
+int64_t TargetGroupInfo::GetRegisteredInstancesCount() const
+{
+    return m_registeredInstancesCount;
+}
+
+void TargetGroupInfo::SetRegisteredInstancesCount(const int64_t& _registeredInstancesCount)
+{
+    m_registeredInstancesCount = _registeredInstancesCount;
+    m_registeredInstancesCountHasBeenSet = true;
+}
+
+bool TargetGroupInfo::RegisteredInstancesCountHasBeenSet() const
+{
+    return m_registeredInstancesCountHasBeenSet;
+}
+
+vector<TagInfo> TargetGroupInfo::GetTag() const
+{
+    return m_tag;
+}
+
+void TargetGroupInfo::SetTag(const vector<TagInfo>& _tag)
+{
+    m_tag = _tag;
+    m_tagHasBeenSet = true;
+}
+
+bool TargetGroupInfo::TagHasBeenSet() const
+{
+    return m_tagHasBeenSet;
+}
+
+uint64_t TargetGroupInfo::GetWeight() const
+{
+    return m_weight;
+}
+
+void TargetGroupInfo::SetWeight(const uint64_t& _weight)
+{
+    m_weight = _weight;
+    m_weightHasBeenSet = true;
+}
+
+bool TargetGroupInfo::WeightHasBeenSet() const
+{
+    return m_weightHasBeenSet;
+}
+
+bool TargetGroupInfo::GetFullListenSwitch() const
+{
+    return m_fullListenSwitch;
+}
+
+void TargetGroupInfo::SetFullListenSwitch(const bool& _fullListenSwitch)
+{
+    m_fullListenSwitch = _fullListenSwitch;
+    m_fullListenSwitchHasBeenSet = true;
+}
+
+bool TargetGroupInfo::FullListenSwitchHasBeenSet() const
+{
+    return m_fullListenSwitchHasBeenSet;
+}
+
+bool TargetGroupInfo::GetKeepaliveEnable() const
+{
+    return m_keepaliveEnable;
+}
+
+void TargetGroupInfo::SetKeepaliveEnable(const bool& _keepaliveEnable)
+{
+    m_keepaliveEnable = _keepaliveEnable;
+    m_keepaliveEnableHasBeenSet = true;
+}
+
+bool TargetGroupInfo::KeepaliveEnableHasBeenSet() const
+{
+    return m_keepaliveEnableHasBeenSet;
+}
+
+int64_t TargetGroupInfo::GetSessionExpireTime() const
+{
+    return m_sessionExpireTime;
+}
+
+void TargetGroupInfo::SetSessionExpireTime(const int64_t& _sessionExpireTime)
+{
+    m_sessionExpireTime = _sessionExpireTime;
+    m_sessionExpireTimeHasBeenSet = true;
+}
+
+bool TargetGroupInfo::SessionExpireTimeHasBeenSet() const
+{
+    return m_sessionExpireTimeHasBeenSet;
+}
+
+string TargetGroupInfo::GetIpVersion() const
+{
+    return m_ipVersion;
+}
+
+void TargetGroupInfo::SetIpVersion(const string& _ipVersion)
+{
+    m_ipVersion = _ipVersion;
+    m_ipVersionHasBeenSet = true;
+}
+
+bool TargetGroupInfo::IpVersionHasBeenSet() const
+{
+    return m_ipVersionHasBeenSet;
 }
 

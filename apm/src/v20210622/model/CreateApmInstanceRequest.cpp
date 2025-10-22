@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ CreateApmInstanceRequest::CreateApmInstanceRequest() :
     m_traceDurationHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_spanDailyCountersHasBeenSet(false),
-    m_payModeHasBeenSet(false)
+    m_payModeHasBeenSet(false),
+    m_freeHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,14 @@ string CreateApmInstanceRequest::ToJsonString() const
         string key = "PayMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_payMode, allocator);
+    }
+
+    if (m_freeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Free";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_free, allocator);
     }
 
 
@@ -196,6 +205,22 @@ void CreateApmInstanceRequest::SetPayMode(const int64_t& _payMode)
 bool CreateApmInstanceRequest::PayModeHasBeenSet() const
 {
     return m_payModeHasBeenSet;
+}
+
+int64_t CreateApmInstanceRequest::GetFree() const
+{
+    return m_free;
+}
+
+void CreateApmInstanceRequest::SetFree(const int64_t& _free)
+{
+    m_free = _free;
+    m_freeHasBeenSet = true;
+}
+
+bool CreateApmInstanceRequest::FreeHasBeenSet() const
+{
+    return m_freeHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cynosdb/v20190107/model/LogicBackupConfigInfo.h>
 
 
 namespace TencentCloud
@@ -87,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupFreq 备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetBackupFreq() const;
@@ -103,9 +102,7 @@ namespace TencentCloud
 
                     /**
                      * 获取备份方式，logic-逻辑备份，snapshot-快照备份
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupType 备份方式，logic-逻辑备份，snapshot-快照备份
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBackupType() const;
@@ -119,9 +116,7 @@ namespace TencentCloud
 
                     /**
                      * 获取跨地域逻辑备份配置修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogicCrossRegionsConfigUpdateTime 跨地域逻辑备份配置修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogicCrossRegionsConfigUpdateTime() const;
@@ -132,6 +127,20 @@ namespace TencentCloud
                      * 
                      */
                     bool LogicCrossRegionsConfigUpdateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取自动逻辑备份配置
+                     * @return LogicBackupConfig 自动逻辑备份配置
+                     * 
+                     */
+                    LogicBackupConfigInfo GetLogicBackupConfig() const;
+
+                    /**
+                     * 判断参数 LogicBackupConfig 是否已赋值
+                     * @return LogicBackupConfig 是否已赋值
+                     * 
+                     */
+                    bool LogicBackupConfigHasBeenSet() const;
 
                 private:
 
@@ -155,24 +164,27 @@ namespace TencentCloud
 
                     /**
                      * 备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_backupFreq;
                     bool m_backupFreqHasBeenSet;
 
                     /**
                      * 备份方式，logic-逻辑备份，snapshot-快照备份
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_backupType;
                     bool m_backupTypeHasBeenSet;
 
                     /**
                      * 跨地域逻辑备份配置修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logicCrossRegionsConfigUpdateTime;
                     bool m_logicCrossRegionsConfigUpdateTimeHasBeenSet;
+
+                    /**
+                     * 自动逻辑备份配置
+                     */
+                    LogicBackupConfigInfo m_logicBackupConfig;
+                    bool m_logicBackupConfigHasBeenSet;
 
                 };
             }

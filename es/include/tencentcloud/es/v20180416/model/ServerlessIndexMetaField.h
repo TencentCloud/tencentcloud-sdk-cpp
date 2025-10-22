@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -99,6 +99,31 @@ namespace TencentCloud
                      * 
                      */
                     bool IndexNameHasBeenSet() const;
+
+                    /**
+                     * 获取索引元数据JSON
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IndexMetaJson 索引元数据JSON
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetIndexMetaJson() const;
+
+                    /**
+                     * 设置索引元数据JSON
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _indexMetaJson 索引元数据JSON
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIndexMetaJson(const std::string& _indexMetaJson);
+
+                    /**
+                     * 判断参数 IndexMetaJson 是否已赋值
+                     * @return IndexMetaJson 是否已赋值
+                     * 
+                     */
+                    bool IndexMetaJsonHasBeenSet() const;
 
                     /**
                      * 获取索引文档数
@@ -472,18 +497,18 @@ namespace TencentCloud
                     bool TagListHasBeenSet() const;
 
                     /**
-                     * 获取3782478.47
+                     * 获取索引流量，单位byte
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IndexTraffic 3782478.47
+                     * @return IndexTraffic 索引流量，单位byte
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetIndexTraffic() const;
 
                     /**
-                     * 设置3782478.47
+                     * 设置索引流量，单位byte
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _indexTraffic 3782478.47
+                     * @param _indexTraffic 索引流量，单位byte
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -511,6 +536,13 @@ namespace TencentCloud
                      */
                     std::string m_indexName;
                     bool m_indexNameHasBeenSet;
+
+                    /**
+                     * 索引元数据JSON
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_indexMetaJson;
+                    bool m_indexMetaJsonHasBeenSet;
 
                     /**
                      * 索引文档数
@@ -617,7 +649,7 @@ namespace TencentCloud
                     bool m_tagListHasBeenSet;
 
                     /**
-                     * 3782478.47
+                     * 索引流量，单位byte
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_indexTraffic;

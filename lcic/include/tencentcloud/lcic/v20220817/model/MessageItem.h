@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消息类型。0表示文本消息，1表示图片消息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MessageType 消息类型。0表示文本消息，1表示图片消息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMessageType() const;
 
                     /**
                      * 设置消息类型。0表示文本消息，1表示图片消息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _messageType 消息类型。0表示文本消息，1表示图片消息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMessageType(const int64_t& _messageType);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文本消息内容。message type为0时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TextMessage 文本消息内容。message type为0时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTextMessage() const;
 
                     /**
                      * 设置文本消息内容。message type为0时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _textMessage 文本消息内容。message type为0时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTextMessage(const std::string& _textMessage);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取图片消息URL。 message type为1时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageMessage 图片消息URL。 message type为1时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetImageMessage() const;
 
                     /**
                      * 设置图片消息URL。 message type为1时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _imageMessage 图片消息URL。 message type为1时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImageMessage(const std::string& _imageMessage);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义消息内容。message type为2时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomMessage 自定义消息内容。message type为2时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CustomMsgContent GetCustomMessage() const;
 
                     /**
                      * 设置自定义消息内容。message type为2时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _customMessage 自定义消息内容。message type为2时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCustomMessage(const CustomMsgContent& _customMessage);
@@ -151,28 +135,24 @@ namespace TencentCloud
 
                     /**
                      * 消息类型。0表示文本消息，1表示图片消息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_messageType;
                     bool m_messageTypeHasBeenSet;
 
                     /**
                      * 文本消息内容。message type为0时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_textMessage;
                     bool m_textMessageHasBeenSet;
 
                     /**
                      * 图片消息URL。 message type为1时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_imageMessage;
                     bool m_imageMessageHasBeenSet;
 
                     /**
                      * 自定义消息内容。message type为2时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CustomMsgContent m_customMessage;
                     bool m_customMessageHasBeenSet;

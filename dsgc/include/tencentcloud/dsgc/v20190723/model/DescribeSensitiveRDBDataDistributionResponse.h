@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,9 +47,7 @@ namespace TencentCloud
 
                     /**
                      * 获取分级分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LevelDistribution 分级分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Note> GetLevelDistribution() const;
@@ -63,9 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 获取分类分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CategoryDistribution 分类分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Note> GetCategoryDistribution() const;
@@ -79,9 +75,7 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感规则分布详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleDistribution 敏感规则分布详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RuleDistribution> GetRuleDistribution() const;
@@ -95,9 +89,7 @@ namespace TencentCloud
 
                     /**
                      * 获取计算占比字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SensitiveDataNum 计算占比字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSensitiveDataNum() const;
@@ -113,28 +105,24 @@ namespace TencentCloud
 
                     /**
                      * 分级分布
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Note> m_levelDistribution;
                     bool m_levelDistributionHasBeenSet;
 
                     /**
                      * 分类分布
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Note> m_categoryDistribution;
                     bool m_categoryDistributionHasBeenSet;
 
                     /**
                      * 敏感规则分布详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RuleDistribution> m_ruleDistribution;
                     bool m_ruleDistributionHasBeenSet;
 
                     /**
                      * 计算占比字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sensitiveDataNum;
                     bool m_sensitiveDataNumHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,8 @@ UserDetailInfo::UserDetailInfo() :
     m_workGroupInfoHasBeenSet(false),
     m_userAliasHasBeenSet(false),
     m_rowFilterInfoHasBeenSet(false),
-    m_accountTypeHasBeenSet(false)
+    m_accountTypeHasBeenSet(false),
+    m_catalogPolicyInfoHasBeenSet(false)
 {
 }
 
@@ -167,6 +168,23 @@ CoreInternalOutcome UserDetailInfo::Deserialize(const rapidjson::Value &value)
         m_accountTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("CatalogPolicyInfo") && !value["CatalogPolicyInfo"].IsNull())
+    {
+        if (!value["CatalogPolicyInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserDetailInfo.CatalogPolicyInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_catalogPolicyInfo.Deserialize(value["CatalogPolicyInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_catalogPolicyInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -256,6 +274,15 @@ void UserDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "AccountType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_accountType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_catalogPolicyInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CatalogPolicyInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_catalogPolicyInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -419,5 +446,21 @@ void UserDetailInfo::SetAccountType(const string& _accountType)
 bool UserDetailInfo::AccountTypeHasBeenSet() const
 {
     return m_accountTypeHasBeenSet;
+}
+
+Policys UserDetailInfo::GetCatalogPolicyInfo() const
+{
+    return m_catalogPolicyInfo;
+}
+
+void UserDetailInfo::SetCatalogPolicyInfo(const Policys& _catalogPolicyInfo)
+{
+    m_catalogPolicyInfo = _catalogPolicyInfo;
+    m_catalogPolicyInfoHasBeenSet = true;
+}
+
+bool UserDetailInfo::CatalogPolicyInfoHasBeenSet() const
+{
+    return m_catalogPolicyInfoHasBeenSet;
 }
 

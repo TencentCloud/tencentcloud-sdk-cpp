@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -385,18 +385,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务分级：PT、AU、AG。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QosLevel 服务分级：PT、AU、AG。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQosLevel() const;
 
                     /**
                      * 设置服务分级：PT、AU、AG。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _qosLevel 服务分级：PT、AU、AG。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQosLevel(const std::string& _qosLevel);
@@ -410,18 +406,14 @@ namespace TencentCloud
 
                     /**
                      * 获取互通类型，VPC_PEER：VPC间互通；VPC_BM_PEER：VPC与黑石网络互通。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 互通类型，VPC_PEER：VPC间互通；VPC_BM_PEER：VPC与黑石网络互通。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置互通类型，VPC_PEER：VPC间互通；VPC_BM_PEER：VPC与黑石网络互通。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 互通类型，VPC_PEER：VPC间互通；VPC_BM_PEER：VPC与黑石网络互通。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -432,6 +424,27 @@ namespace TencentCloud
                      * 
                      */
                     bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取对端VPC唯一ID。
+                     * @return DestinationVpcId 对端VPC唯一ID。
+                     * 
+                     */
+                    std::string GetDestinationVpcId() const;
+
+                    /**
+                     * 设置对端VPC唯一ID。
+                     * @param _destinationVpcId 对端VPC唯一ID。
+                     * 
+                     */
+                    void SetDestinationVpcId(const std::string& _destinationVpcId);
+
+                    /**
+                     * 判断参数 DestinationVpcId 是否已赋值
+                     * @return DestinationVpcId 是否已赋值
+                     * 
+                     */
+                    bool DestinationVpcIdHasBeenSet() const;
 
                 private:
 
@@ -533,17 +546,21 @@ namespace TencentCloud
 
                     /**
                      * 服务分级：PT、AU、AG。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_qosLevel;
                     bool m_qosLevelHasBeenSet;
 
                     /**
                      * 互通类型，VPC_PEER：VPC间互通；VPC_BM_PEER：VPC与黑石网络互通。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * 对端VPC唯一ID。
+                     */
+                    std::string m_destinationVpcId;
+                    bool m_destinationVpcIdHasBeenSet;
 
                 };
             }

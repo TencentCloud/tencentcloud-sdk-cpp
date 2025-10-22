@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取微信小程序openid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Openid 微信小程序openid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOpenid() const;
 
                     /**
                      * 设置微信小程序openid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _openid 微信小程序openid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOpenid(const std::string& _openid);
@@ -157,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取商户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MerchantId 商户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMerchantId() const;
 
                     /**
                      * 设置商户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _merchantId 商户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMerchantId(const std::string& _merchantId);
@@ -182,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取商品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductId 商品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置商品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productId 商品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductId(const std::string& _productId);
@@ -207,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取批次ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BatchId 批次ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBatchId() const;
 
                     /**
                      * 设置批次ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _batchId 批次ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBatchId(const std::string& _batchId);
@@ -232,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取省份
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Province 省份
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProvince() const;
 
                     /**
                      * 设置省份
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _province 省份
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProvince(const std::string& _province);
@@ -257,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地市
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return City 地市
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCity() const;
 
                     /**
                      * 设置地市
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _city 地市
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCity(const std::string& _city);
@@ -282,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取区/县
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return District 区/县
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDistrict() const;
 
                     /**
                      * 设置区/县
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _district 区/县
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDistrict(const std::string& _district);
@@ -315,7 +287,6 @@ namespace TencentCloud
 
                     /**
                      * 微信小程序openid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_openid;
                     bool m_openidHasBeenSet;
@@ -340,42 +311,36 @@ namespace TencentCloud
 
                     /**
                      * 商户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_merchantId;
                     bool m_merchantIdHasBeenSet;
 
                     /**
                      * 商品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productId;
                     bool m_productIdHasBeenSet;
 
                     /**
                      * 批次ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_batchId;
                     bool m_batchIdHasBeenSet;
 
                     /**
                      * 省份
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_province;
                     bool m_provinceHasBeenSet;
 
                     /**
                      * 地市
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_city;
                     bool m_cityHasBeenSet;
 
                     /**
                      * 区/县
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_district;
                     bool m_districtHasBeenSet;

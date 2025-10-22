@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,12 @@ TreeJobSets::TreeJobSets() :
     m_nameHasBeenSet(false),
     m_jobTypeHasBeenSet(false),
     m_runningCuHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_scalingTypeHasBeenSet(false),
+    m_runningCpuHasBeenSet(false),
+    m_runningMemHasBeenSet(false),
+    m_decodeSqlCodeHasBeenSet(false),
+    m_publishedJobConfigIdHasBeenSet(false)
 {
 }
 
@@ -84,6 +89,56 @@ CoreInternalOutcome TreeJobSets::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("ScalingType") && !value["ScalingType"].IsNull())
+    {
+        if (!value["ScalingType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TreeJobSets.ScalingType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_scalingType = value["ScalingType"].GetInt64();
+        m_scalingTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RunningCpu") && !value["RunningCpu"].IsNull())
+    {
+        if (!value["RunningCpu"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `TreeJobSets.RunningCpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_runningCpu = value["RunningCpu"].GetDouble();
+        m_runningCpuHasBeenSet = true;
+    }
+
+    if (value.HasMember("RunningMem") && !value["RunningMem"].IsNull())
+    {
+        if (!value["RunningMem"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `TreeJobSets.RunningMem` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_runningMem = value["RunningMem"].GetDouble();
+        m_runningMemHasBeenSet = true;
+    }
+
+    if (value.HasMember("DecodeSqlCode") && !value["DecodeSqlCode"].IsNull())
+    {
+        if (!value["DecodeSqlCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TreeJobSets.DecodeSqlCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_decodeSqlCode = string(value["DecodeSqlCode"].GetString());
+        m_decodeSqlCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("PublishedJobConfigId") && !value["PublishedJobConfigId"].IsNull())
+    {
+        if (!value["PublishedJobConfigId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TreeJobSets.PublishedJobConfigId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_publishedJobConfigId = value["PublishedJobConfigId"].GetInt64();
+        m_publishedJobConfigIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +184,46 @@ void TreeJobSets::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_scalingTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScalingType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scalingType, allocator);
+    }
+
+    if (m_runningCpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunningCpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_runningCpu, allocator);
+    }
+
+    if (m_runningMemHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunningMem";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_runningMem, allocator);
+    }
+
+    if (m_decodeSqlCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DecodeSqlCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_decodeSqlCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publishedJobConfigIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublishedJobConfigId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_publishedJobConfigId, allocator);
     }
 
 }
@@ -212,5 +307,85 @@ void TreeJobSets::SetStatus(const int64_t& _status)
 bool TreeJobSets::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+int64_t TreeJobSets::GetScalingType() const
+{
+    return m_scalingType;
+}
+
+void TreeJobSets::SetScalingType(const int64_t& _scalingType)
+{
+    m_scalingType = _scalingType;
+    m_scalingTypeHasBeenSet = true;
+}
+
+bool TreeJobSets::ScalingTypeHasBeenSet() const
+{
+    return m_scalingTypeHasBeenSet;
+}
+
+double TreeJobSets::GetRunningCpu() const
+{
+    return m_runningCpu;
+}
+
+void TreeJobSets::SetRunningCpu(const double& _runningCpu)
+{
+    m_runningCpu = _runningCpu;
+    m_runningCpuHasBeenSet = true;
+}
+
+bool TreeJobSets::RunningCpuHasBeenSet() const
+{
+    return m_runningCpuHasBeenSet;
+}
+
+double TreeJobSets::GetRunningMem() const
+{
+    return m_runningMem;
+}
+
+void TreeJobSets::SetRunningMem(const double& _runningMem)
+{
+    m_runningMem = _runningMem;
+    m_runningMemHasBeenSet = true;
+}
+
+bool TreeJobSets::RunningMemHasBeenSet() const
+{
+    return m_runningMemHasBeenSet;
+}
+
+string TreeJobSets::GetDecodeSqlCode() const
+{
+    return m_decodeSqlCode;
+}
+
+void TreeJobSets::SetDecodeSqlCode(const string& _decodeSqlCode)
+{
+    m_decodeSqlCode = _decodeSqlCode;
+    m_decodeSqlCodeHasBeenSet = true;
+}
+
+bool TreeJobSets::DecodeSqlCodeHasBeenSet() const
+{
+    return m_decodeSqlCodeHasBeenSet;
+}
+
+int64_t TreeJobSets::GetPublishedJobConfigId() const
+{
+    return m_publishedJobConfigId;
+}
+
+void TreeJobSets::SetPublishedJobConfigId(const int64_t& _publishedJobConfigId)
+{
+    m_publishedJobConfigId = _publishedJobConfigId;
+    m_publishedJobConfigIdHasBeenSet = true;
+}
+
+bool TreeJobSets::PublishedJobConfigIdHasBeenSet() const
+{
+    return m_publishedJobConfigIdHasBeenSet;
 }
 

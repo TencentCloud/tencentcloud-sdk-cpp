@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,21 +48,25 @@ namespace TencentCloud
 - 收费结果码：
 0: 查询成功
 -1: 未查到信息
+-5: 卡号无效
 
 - 不收费结果码：
 -2：验证中心服务繁忙
 -3：银行卡不存在
 -4：认证次数超过当日限制，请次日重试
+-6:   暂不支持该银行卡种
 
                      * @return Result 认证结果码，收费情况如下。
 - 收费结果码：
 0: 查询成功
 -1: 未查到信息
+-5: 卡号无效
 
 - 不收费结果码：
 -2：验证中心服务繁忙
 -3：银行卡不存在
 -4：认证次数超过当日限制，请次日重试
+-6:   暂不支持该银行卡种
 
                      * 
                      */
@@ -134,11 +138,13 @@ namespace TencentCloud
 - 收费结果码：
 0: 查询成功
 -1: 未查到信息
+-5: 卡号无效
 
 - 不收费结果码：
 -2：验证中心服务繁忙
 -3：银行卡不存在
 -4：认证次数超过当日限制，请次日重试
+-6:   暂不支持该银行卡种
 
                      */
                     std::string m_result;

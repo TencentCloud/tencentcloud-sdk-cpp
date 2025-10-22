@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool FileNameHasBeenSet() const;
 
+                    /**
+                     * 获取配置文件ID
+                     * @return ConfigFileId 配置文件ID
+                     * 
+                     */
+                    std::string GetConfigFileId() const;
+
+                    /**
+                     * 设置配置文件ID
+                     * @param _configFileId 配置文件ID
+                     * 
+                     */
+                    void SetConfigFileId(const std::string& _configFileId);
+
+                    /**
+                     * 判断参数 ConfigFileId 是否已赋值
+                     * @return ConfigFileId 是否已赋值
+                     * 
+                     */
+                    bool ConfigFileIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
+
+                    /**
+                     * 配置文件ID
+                     */
+                    std::string m_configFileId;
+                    bool m_configFileIdHasBeenSet;
 
                 };
             }

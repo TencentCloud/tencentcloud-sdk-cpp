@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool RecordIdHasBeenSet() const;
 
                     /**
-                     * 获取记录线路，通过 API 记录线路获得，中文，比如：默认。
-                     * @return RecordLine 记录线路，通过 API 记录线路获得，中文，比如：默认。
+                     * 获取记录线路，中文，比如：默认。
+                     * @return RecordLine 记录线路，中文，比如：默认。
                      * 
                      */
                     std::string GetRecordLine() const;
 
                     /**
-                     * 设置记录线路，通过 API 记录线路获得，中文，比如：默认。
-                     * @param _recordLine 记录线路，通过 API 记录线路获得，中文，比如：默认。
+                     * 设置记录线路，中文，比如：默认。
+                     * @param _recordLine 记录线路，中文，比如：默认。
                      * 
                      */
                     void SetRecordLine(const std::string& _recordLine);
@@ -106,36 +106,15 @@ namespace TencentCloud
                     bool RecordLineHasBeenSet() const;
 
                     /**
-                     * 获取记录值，如 IP : 200.200.200.200， CNAME : cname.dnspod.com.， MX : mail.dnspod.com.。
-                     * @return Value 记录值，如 IP : 200.200.200.200， CNAME : cname.dnspod.com.， MX : mail.dnspod.com.。
-                     * 
-                     */
-                    std::string GetValue() const;
-
-                    /**
-                     * 设置记录值，如 IP : 200.200.200.200， CNAME : cname.dnspod.com.， MX : mail.dnspod.com.。
-                     * @param _value 记录值，如 IP : 200.200.200.200， CNAME : cname.dnspod.com.， MX : mail.dnspod.com.。
-                     * 
-                     */
-                    void SetValue(const std::string& _value);
-
-                    /**
-                     * 判断参数 Value 是否已赋值
-                     * @return Value 是否已赋值
-                     * 
-                     */
-                    bool ValueHasBeenSet() const;
-
-                    /**
-                     * 获取域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
-                     * @return DomainId 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * 获取域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。
+                     * @return DomainId 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。
                      * 
                      */
                     uint64_t GetDomainId() const;
 
                     /**
-                     * 设置域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
-                     * @param _domainId 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * 设置域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。
+                     * @param _domainId 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。
                      * 
                      */
                     void SetDomainId(const uint64_t& _domainId);
@@ -169,15 +148,15 @@ namespace TencentCloud
                     bool SubDomainHasBeenSet() const;
 
                     /**
-                     * 获取线路的 ID，通过 API 记录线路获得，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
-                     * @return RecordLineId 线路的 ID，通过 API 记录线路获得，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
+                     * 获取线路的 ID，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
+                     * @return RecordLineId 线路的 ID，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
                      * 
                      */
                     std::string GetRecordLineId() const;
 
                     /**
-                     * 设置线路的 ID，通过 API 记录线路获得，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
-                     * @param _recordLineId 线路的 ID，通过 API 记录线路获得，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
+                     * 设置线路的 ID，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
+                     * @param _recordLineId 线路的 ID，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
                      * 
                      */
                     void SetRecordLineId(const std::string& _recordLineId);
@@ -188,6 +167,27 @@ namespace TencentCloud
                      * 
                      */
                     bool RecordLineIdHasBeenSet() const;
+
+                    /**
+                     * 获取IP 地址，支持 IPv4、IPv6，例如 119.29.29.29 或者 2402:4e00::
+                     * @return Value IP 地址，支持 IPv4、IPv6，例如 119.29.29.29 或者 2402:4e00::
+                     * 
+                     */
+                    std::string GetValue() const;
+
+                    /**
+                     * 设置IP 地址，支持 IPv4、IPv6，例如 119.29.29.29 或者 2402:4e00::
+                     * @param _value IP 地址，支持 IPv4、IPv6，例如 119.29.29.29 或者 2402:4e00::
+                     * 
+                     */
+                    void SetValue(const std::string& _value);
+
+                    /**
+                     * 判断参数 Value 是否已赋值
+                     * @return Value 是否已赋值
+                     * 
+                     */
+                    bool ValueHasBeenSet() const;
 
                     /**
                      * 获取TTL值，如果不传，默认为域名的TTL值。
@@ -225,19 +225,13 @@ namespace TencentCloud
                     bool m_recordIdHasBeenSet;
 
                     /**
-                     * 记录线路，通过 API 记录线路获得，中文，比如：默认。
+                     * 记录线路，中文，比如：默认。
                      */
                     std::string m_recordLine;
                     bool m_recordLineHasBeenSet;
 
                     /**
-                     * 记录值，如 IP : 200.200.200.200， CNAME : cname.dnspod.com.， MX : mail.dnspod.com.。
-                     */
-                    std::string m_value;
-                    bool m_valueHasBeenSet;
-
-                    /**
-                     * 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。
                      */
                     uint64_t m_domainId;
                     bool m_domainIdHasBeenSet;
@@ -249,10 +243,16 @@ namespace TencentCloud
                     bool m_subDomainHasBeenSet;
 
                     /**
-                     * 线路的 ID，通过 API 记录线路获得，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
+                     * 线路的 ID，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
                      */
                     std::string m_recordLineId;
                     bool m_recordLineIdHasBeenSet;
+
+                    /**
+                     * IP 地址，支持 IPv4、IPv6，例如 119.29.29.29 或者 2402:4e00::
+                     */
+                    std::string m_value;
+                    bool m_valueHasBeenSet;
 
                     /**
                      * TTL值，如果不传，默认为域名的TTL值。

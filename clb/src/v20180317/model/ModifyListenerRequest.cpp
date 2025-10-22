@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,9 @@ ModifyListenerRequest::ModifyListenerRequest() :
     m_maxConnHasBeenSet(false),
     m_maxCpsHasBeenSet(false),
     m_idleConnectTimeoutHasBeenSet(false),
-    m_snatEnableHasBeenSet(false)
+    m_proxyProtocolHasBeenSet(false),
+    m_snatEnableHasBeenSet(false),
+    m_dataCompressModeHasBeenSet(false)
 {
 }
 
@@ -181,12 +183,28 @@ string ModifyListenerRequest::ToJsonString() const
         d.AddMember(iKey, m_idleConnectTimeout, allocator);
     }
 
+    if (m_proxyProtocolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyProtocol";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_proxyProtocol, allocator);
+    }
+
     if (m_snatEnableHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SnatEnable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_snatEnable, allocator);
+    }
+
+    if (m_dataCompressModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataCompressMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dataCompressMode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -453,6 +471,22 @@ bool ModifyListenerRequest::IdleConnectTimeoutHasBeenSet() const
     return m_idleConnectTimeoutHasBeenSet;
 }
 
+bool ModifyListenerRequest::GetProxyProtocol() const
+{
+    return m_proxyProtocol;
+}
+
+void ModifyListenerRequest::SetProxyProtocol(const bool& _proxyProtocol)
+{
+    m_proxyProtocol = _proxyProtocol;
+    m_proxyProtocolHasBeenSet = true;
+}
+
+bool ModifyListenerRequest::ProxyProtocolHasBeenSet() const
+{
+    return m_proxyProtocolHasBeenSet;
+}
+
 bool ModifyListenerRequest::GetSnatEnable() const
 {
     return m_snatEnable;
@@ -467,6 +501,22 @@ void ModifyListenerRequest::SetSnatEnable(const bool& _snatEnable)
 bool ModifyListenerRequest::SnatEnableHasBeenSet() const
 {
     return m_snatEnableHasBeenSet;
+}
+
+string ModifyListenerRequest::GetDataCompressMode() const
+{
+    return m_dataCompressMode;
+}
+
+void ModifyListenerRequest::SetDataCompressMode(const string& _dataCompressMode)
+{
+    m_dataCompressMode = _dataCompressMode;
+    m_dataCompressModeHasBeenSet = true;
+}
+
+bool ModifyListenerRequest::DataCompressModeHasBeenSet() const
+{
+    return m_dataCompressModeHasBeenSet;
 }
 
 

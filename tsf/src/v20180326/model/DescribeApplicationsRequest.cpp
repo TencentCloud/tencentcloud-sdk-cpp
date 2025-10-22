@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,8 @@ DescribeApplicationsRequest::DescribeApplicationsRequest() :
     m_applicationTypeHasBeenSet(false),
     m_microserviceTypeHasBeenSet(false),
     m_applicationResourceTypeListHasBeenSet(false),
-    m_applicationIdListHasBeenSet(false)
+    m_applicationIdListHasBeenSet(false),
+    m_microserviceTypeListHasBeenSet(false)
 {
 }
 
@@ -119,6 +120,19 @@ string DescribeApplicationsRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_applicationIdList.begin(); itr != m_applicationIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_microserviceTypeListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MicroserviceTypeList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_microserviceTypeList.begin(); itr != m_microserviceTypeList.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -274,6 +288,22 @@ void DescribeApplicationsRequest::SetApplicationIdList(const vector<string>& _ap
 bool DescribeApplicationsRequest::ApplicationIdListHasBeenSet() const
 {
     return m_applicationIdListHasBeenSet;
+}
+
+vector<string> DescribeApplicationsRequest::GetMicroserviceTypeList() const
+{
+    return m_microserviceTypeList;
+}
+
+void DescribeApplicationsRequest::SetMicroserviceTypeList(const vector<string>& _microserviceTypeList)
+{
+    m_microserviceTypeList = _microserviceTypeList;
+    m_microserviceTypeListHasBeenSet = true;
+}
+
+bool DescribeApplicationsRequest::MicroserviceTypeListHasBeenSet() const
+{
+    return m_microserviceTypeListHasBeenSet;
 }
 
 

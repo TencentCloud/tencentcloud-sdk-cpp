@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,6 +39,92 @@ ClbClient::ClbClient(const Credential &credential, const string &region, const C
 {
 }
 
+
+ClbClient::AddCustomizedConfigOutcome ClbClient::AddCustomizedConfig(const AddCustomizedConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddCustomizedConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddCustomizedConfigResponse rsp = AddCustomizedConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddCustomizedConfigOutcome(rsp);
+        else
+            return AddCustomizedConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return AddCustomizedConfigOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::AddCustomizedConfigAsync(const AddCustomizedConfigRequest& request, const AddCustomizedConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddCustomizedConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::AddCustomizedConfigOutcomeCallable ClbClient::AddCustomizedConfigCallable(const AddCustomizedConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddCustomizedConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->AddCustomizedConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClbClient::AssociateCustomizedConfigOutcome ClbClient::AssociateCustomizedConfig(const AssociateCustomizedConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "AssociateCustomizedConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AssociateCustomizedConfigResponse rsp = AssociateCustomizedConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AssociateCustomizedConfigOutcome(rsp);
+        else
+            return AssociateCustomizedConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return AssociateCustomizedConfigOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::AssociateCustomizedConfigAsync(const AssociateCustomizedConfigRequest& request, const AssociateCustomizedConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AssociateCustomizedConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::AssociateCustomizedConfigOutcomeCallable ClbClient::AssociateCustomizedConfigCallable(const AssociateCustomizedConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AssociateCustomizedConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->AssociateCustomizedConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
 
 ClbClient::AssociateTargetGroupsOutcome ClbClient::AssociateTargetGroups(const AssociateTargetGroupsRequest &request)
 {
@@ -635,6 +721,49 @@ ClbClient::CreateTopicOutcomeCallable ClbClient::CreateTopicCallable(const Creat
         [this, request]()
         {
             return this->CreateTopic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClbClient::DeleteCustomizedConfigOutcome ClbClient::DeleteCustomizedConfig(const DeleteCustomizedConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCustomizedConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCustomizedConfigResponse rsp = DeleteCustomizedConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCustomizedConfigOutcome(rsp);
+        else
+            return DeleteCustomizedConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCustomizedConfigOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DeleteCustomizedConfigAsync(const DeleteCustomizedConfigRequest& request, const DeleteCustomizedConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCustomizedConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::DeleteCustomizedConfigOutcomeCallable ClbClient::DeleteCustomizedConfigCallable(const DeleteCustomizedConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCustomizedConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCustomizedConfig(request);
         }
     );
 
@@ -1717,6 +1846,49 @@ ClbClient::DescribeLBListenersOutcomeCallable ClbClient::DescribeLBListenersCall
     return task->get_future();
 }
 
+ClbClient::DescribeLBOperateProtectOutcome ClbClient::DescribeLBOperateProtect(const DescribeLBOperateProtectRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLBOperateProtect");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLBOperateProtectResponse rsp = DescribeLBOperateProtectResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLBOperateProtectOutcome(rsp);
+        else
+            return DescribeLBOperateProtectOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLBOperateProtectOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeLBOperateProtectAsync(const DescribeLBOperateProtectRequest& request, const DescribeLBOperateProtectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLBOperateProtect(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::DescribeLBOperateProtectOutcomeCallable ClbClient::DescribeLBOperateProtectCallable(const DescribeLBOperateProtectRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLBOperateProtectOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLBOperateProtect(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClbClient::DescribeListenersOutcome ClbClient::DescribeListeners(const DescribeListenersRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeListeners");
@@ -2362,6 +2534,49 @@ ClbClient::DescribeTaskStatusOutcomeCallable ClbClient::DescribeTaskStatusCallab
     return task->get_future();
 }
 
+ClbClient::DisassociateCustomizedConfigOutcome ClbClient::DisassociateCustomizedConfig(const DisassociateCustomizedConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisassociateCustomizedConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisassociateCustomizedConfigResponse rsp = DisassociateCustomizedConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisassociateCustomizedConfigOutcome(rsp);
+        else
+            return DisassociateCustomizedConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DisassociateCustomizedConfigOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DisassociateCustomizedConfigAsync(const DisassociateCustomizedConfigRequest& request, const DisassociateCustomizedConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisassociateCustomizedConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::DisassociateCustomizedConfigOutcomeCallable ClbClient::DisassociateCustomizedConfigCallable(const DisassociateCustomizedConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisassociateCustomizedConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DisassociateCustomizedConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClbClient::DisassociateTargetGroupsOutcome ClbClient::DisassociateTargetGroups(const DisassociateTargetGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "DisassociateTargetGroups");
@@ -2699,6 +2914,49 @@ ClbClient::ModifyBlockIPListOutcomeCallable ClbClient::ModifyBlockIPListCallable
         [this, request]()
         {
             return this->ModifyBlockIPList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClbClient::ModifyCustomizedConfigOutcome ClbClient::ModifyCustomizedConfig(const ModifyCustomizedConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCustomizedConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCustomizedConfigResponse rsp = ModifyCustomizedConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCustomizedConfigOutcome(rsp);
+        else
+            return ModifyCustomizedConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCustomizedConfigOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::ModifyCustomizedConfigAsync(const ModifyCustomizedConfigRequest& request, const ModifyCustomizedConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCustomizedConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::ModifyCustomizedConfigOutcomeCallable ClbClient::ModifyCustomizedConfigCallable(const ModifyCustomizedConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCustomizedConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCustomizedConfig(request);
         }
     );
 

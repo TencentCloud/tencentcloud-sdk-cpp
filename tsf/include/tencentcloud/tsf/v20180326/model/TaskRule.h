@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取触发规则类型, Cron/Repeat
-                     * @return RuleType 触发规则类型, Cron/Repeat
+                     * 获取触发规则类型，枚举值。一共3个值，Cron：定时触发，Repeat：周期触发，WorkFlow：工作流触发
+                     * @return RuleType 触发规则类型，枚举值。一共3个值，Cron：定时触发，Repeat：周期触发，WorkFlow：工作流触发
                      * 
                      */
                     std::string GetRuleType() const;
 
                     /**
-                     * 设置触发规则类型, Cron/Repeat
-                     * @param _ruleType 触发规则类型, Cron/Repeat
+                     * 设置触发规则类型，枚举值。一共3个值，Cron：定时触发，Repeat：周期触发，WorkFlow：工作流触发
+                     * @param _ruleType 触发规则类型，枚举值。一共3个值，Cron：定时触发，Repeat：周期触发，WorkFlow：工作流触发
                      * 
                      */
                     void SetRuleType(const std::string& _ruleType);
@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Cron类型规则，cron表达式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Expression Cron类型规则，cron表达式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpression() const;
 
                     /**
                      * 设置Cron类型规则，cron表达式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expression Cron类型规则，cron表达式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpression(const std::string& _expression);
@@ -120,14 +116,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 触发规则类型, Cron/Repeat
+                     * 触发规则类型，枚举值。一共3个值，Cron：定时触发，Repeat：周期触发，WorkFlow：工作流触发
                      */
                     std::string m_ruleType;
                     bool m_ruleTypeHasBeenSet;
 
                     /**
                      * Cron类型规则，cron表达式。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expression;
                     bool m_expressionHasBeenSet;

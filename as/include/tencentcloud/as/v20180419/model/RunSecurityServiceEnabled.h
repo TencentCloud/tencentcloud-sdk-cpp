@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,12 +51,10 @@ namespace TencentCloud
 <li>TRUE：表示开启云安全服务</li>
 <li>FALSE：表示不开启云安全服务</li>
 默认取值：TRUE。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Enabled 是否开启[云安全](https://cloud.tencent.com/document/product/296)服务。取值范围：
 <li>TRUE：表示开启云安全服务</li>
 <li>FALSE：表示不开启云安全服务</li>
 默认取值：TRUE。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnabled() const;
@@ -66,12 +64,10 @@ namespace TencentCloud
 <li>TRUE：表示开启云安全服务</li>
 <li>FALSE：表示不开启云安全服务</li>
 默认取值：TRUE。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enabled 是否开启[云安全](https://cloud.tencent.com/document/product/296)服务。取值范围：
 <li>TRUE：表示开启云安全服务</li>
 <li>FALSE：表示不开启云安全服务</li>
 默认取值：TRUE。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnabled(const bool& _enabled);
@@ -90,7 +86,6 @@ namespace TencentCloud
 <li>TRUE：表示开启云安全服务</li>
 <li>FALSE：表示不开启云安全服务</li>
 默认取值：TRUE。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enabled;
                     bool m_enabledHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID。
-                     * @return InstanceId 实例ID。
+                     * 获取实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @return InstanceId 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID。
-                     * @param _instanceId 实例ID。
+                     * 设置实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @param _instanceId 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -130,23 +130,23 @@ namespace TencentCloud
                     bool AggregationConditionsHasBeenSet() const;
 
                     /**
-                     * 获取已废弃。该过滤条件下的审计日志结果集作为分析日志。
-                     * @return AuditLogFilter 已废弃。该过滤条件下的审计日志结果集作为分析日志。
-                     * 
+                     * 获取已废弃。
+                     * @return AuditLogFilter 已废弃。
+                     * @deprecated
                      */
                     AuditLogFilter GetAuditLogFilter() const;
 
                     /**
-                     * 设置已废弃。该过滤条件下的审计日志结果集作为分析日志。
-                     * @param _auditLogFilter 已废弃。该过滤条件下的审计日志结果集作为分析日志。
-                     * 
+                     * 设置已废弃。
+                     * @param _auditLogFilter 已废弃。
+                     * @deprecated
                      */
                     void SetAuditLogFilter(const AuditLogFilter& _auditLogFilter);
 
                     /**
                      * 判断参数 AuditLogFilter 是否已赋值
                      * @return AuditLogFilter 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AuditLogFilterHasBeenSet() const;
 
@@ -174,7 +174,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID。
+                     * 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -198,7 +198,7 @@ namespace TencentCloud
                     bool m_aggregationConditionsHasBeenSet;
 
                     /**
-                     * 已废弃。该过滤条件下的审计日志结果集作为分析日志。
+                     * 已废弃。
                      */
                     AuditLogFilter m_auditLogFilter;
                     bool m_auditLogFilterHasBeenSet;

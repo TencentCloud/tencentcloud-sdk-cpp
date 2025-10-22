@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ using namespace std;
 
 CreateAlertCenterOmitRequest::CreateAlertCenterOmitRequest() :
     m_handleIdListHasBeenSet(false),
-    m_tableTypeHasBeenSet(false)
+    m_tableTypeHasBeenSet(false),
+    m_handleEventIdListHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,19 @@ string CreateAlertCenterOmitRequest::ToJsonString() const
         string key = "TableType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_tableType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_handleEventIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HandleEventIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_handleEventIdList.begin(); itr != m_handleEventIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -94,6 +108,22 @@ void CreateAlertCenterOmitRequest::SetTableType(const string& _tableType)
 bool CreateAlertCenterOmitRequest::TableTypeHasBeenSet() const
 {
     return m_tableTypeHasBeenSet;
+}
+
+vector<string> CreateAlertCenterOmitRequest::GetHandleEventIdList() const
+{
+    return m_handleEventIdList;
+}
+
+void CreateAlertCenterOmitRequest::SetHandleEventIdList(const vector<string>& _handleEventIdList)
+{
+    m_handleEventIdList = _handleEventIdList;
+    m_handleEventIdListHasBeenSet = true;
+}
+
+bool CreateAlertCenterOmitRequest::HandleEventIdListHasBeenSet() const
+{
+    return m_handleEventIdListHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@
 #include <tencentcloud/hunyuan/v20230901/model/ErrorMsg.h>
 #include <tencentcloud/hunyuan/v20230901/model/SearchInfo.h>
 #include <tencentcloud/hunyuan/v20230901/model/Replace.h>
+#include <tencentcloud/hunyuan/v20230901/model/Processes.h>
 
 
 namespace TencentCloud
@@ -141,14 +142,14 @@ namespace TencentCloud
                     /**
                      * 获取多轮会话风险审核，值为1时，表明存在信息安全风险，建议终止客户多轮会话。
                      * @return ModerationLevel 多轮会话风险审核，值为1时，表明存在信息安全风险，建议终止客户多轮会话。
-                     * 
+                     * @deprecated
                      */
                     std::string GetModerationLevel() const;
 
                     /**
                      * 判断参数 ModerationLevel 是否已赋值
                      * @return ModerationLevel 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ModerationLevelHasBeenSet() const;
 
@@ -185,6 +186,34 @@ namespace TencentCloud
                      * 
                      */
                     bool ReplacesHasBeenSet() const;
+
+                    /**
+                     * 获取推荐问答。
+                     * @return RecommendedQuestions 推荐问答。
+                     * 
+                     */
+                    std::vector<std::string> GetRecommendedQuestions() const;
+
+                    /**
+                     * 判断参数 RecommendedQuestions 是否已赋值
+                     * @return RecommendedQuestions 是否已赋值
+                     * 
+                     */
+                    bool RecommendedQuestionsHasBeenSet() const;
+
+                    /**
+                     * 获取AI搜索返回状态
+                     * @return Processes AI搜索返回状态
+                     * 
+                     */
+                    Processes GetProcesses() const;
+
+                    /**
+                     * 判断参数 Processes 是否已赋值
+                     * @return Processes 是否已赋值
+                     * 
+                     */
+                    bool ProcessesHasBeenSet() const;
 
                 private:
 
@@ -247,6 +276,18 @@ namespace TencentCloud
                      */
                     std::vector<Replace> m_replaces;
                     bool m_replacesHasBeenSet;
+
+                    /**
+                     * 推荐问答。
+                     */
+                    std::vector<std::string> m_recommendedQuestions;
+                    bool m_recommendedQuestionsHasBeenSet;
+
+                    /**
+                     * AI搜索返回状态
+                     */
+                    Processes m_processes;
+                    bool m_processesHasBeenSet;
 
                 };
             }

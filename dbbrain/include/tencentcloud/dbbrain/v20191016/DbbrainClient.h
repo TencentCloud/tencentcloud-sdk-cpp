@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,6 +55,8 @@
 #include <tencentcloud/dbbrain/v20191016/model/DescribeHealthScoreResponse.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeMailProfileRequest.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeMailProfileResponse.h>
+#include <tencentcloud/dbbrain/v20191016/model/DescribeMySqlProcessListRequest.h>
+#include <tencentcloud/dbbrain/v20191016/model/DescribeMySqlProcessListResponse.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeSecurityAuditLogDownloadUrlsRequest.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeSecurityAuditLogDownloadUrlsResponse.h>
 #include <tencentcloud/dbbrain/v20191016/model/DescribeSecurityAuditLogExportTasksRequest.h>
@@ -139,6 +141,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMailProfileResponse> DescribeMailProfileOutcome;
                 typedef std::future<DescribeMailProfileOutcome> DescribeMailProfileOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeMailProfileRequest&, DescribeMailProfileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMailProfileAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMySqlProcessListResponse> DescribeMySqlProcessListOutcome;
+                typedef std::future<DescribeMySqlProcessListOutcome> DescribeMySqlProcessListOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeMySqlProcessListRequest&, DescribeMySqlProcessListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMySqlProcessListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSecurityAuditLogDownloadUrlsResponse> DescribeSecurityAuditLogDownloadUrlsOutcome;
                 typedef std::future<DescribeSecurityAuditLogDownloadUrlsOutcome> DescribeSecurityAuditLogDownloadUrlsOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeSecurityAuditLogDownloadUrlsRequest&, DescribeSecurityAuditLogDownloadUrlsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityAuditLogDownloadUrlsAsyncHandler;
@@ -318,6 +323,15 @@ namespace TencentCloud
                 DescribeMailProfileOutcome DescribeMailProfile(const Model::DescribeMailProfileRequest &request);
                 void DescribeMailProfileAsync(const Model::DescribeMailProfileRequest& request, const DescribeMailProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeMailProfileOutcomeCallable DescribeMailProfileCallable(const Model::DescribeMailProfileRequest& request);
+
+                /**
+                 *查询关系型数据库的实时线程列表。
+                 * @param req DescribeMySqlProcessListRequest
+                 * @return DescribeMySqlProcessListOutcome
+                 */
+                DescribeMySqlProcessListOutcome DescribeMySqlProcessList(const Model::DescribeMySqlProcessListRequest &request);
+                void DescribeMySqlProcessListAsync(const Model::DescribeMySqlProcessListRequest& request, const DescribeMySqlProcessListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMySqlProcessListOutcomeCallable DescribeMySqlProcessListCallable(const Model::DescribeMySqlProcessListRequest& request);
 
                 /**
                  *查询安全审计日志导出文件下载链接。目前日志文件下载仅提供腾讯云内网地址，请通过广州地域的腾讯云服务器进行下载。

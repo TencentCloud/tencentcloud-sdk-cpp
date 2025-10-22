@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志集 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogsetId 日志集 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogsetId() const;
 
                     /**
                      * 设置日志集 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logsetId 日志集 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogsetId(const std::string& _logsetId);
@@ -116,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志主题 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicId 日志主题 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置日志主题 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicId 日志主题 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -162,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取首行正则表达式，当 LogType 为多行全文、多行正则时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BeginningRegex 首行正则表达式，当 LogType 为多行全文、多行正则时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBeginningRegex() const;
 
                     /**
                      * 设置首行正则表达式，当 LogType 为多行全文、多行正则时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _beginningRegex 首行正则表达式，当 LogType 为多行全文、多行正则时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBeginningRegex(const std::string& _beginningRegex);
@@ -187,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取收集文件目录，当 InputType=container_file 时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogPath 收集文件目录，当 InputType=container_file 时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogPath() const;
 
                     /**
                      * 设置收集文件目录，当 InputType=container_file 时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logPath 收集文件目录，当 InputType=container_file 时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogPath(const std::string& _logPath);
@@ -212,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取收集文件名模式，当 InputType=container_file 时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FilePattern 收集文件名模式，当 InputType=container_file 时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFilePattern() const;
 
                     /**
                      * 设置收集文件名模式，当 InputType=container_file 时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _filePattern 收集文件名模式，当 InputType=container_file 时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFilePattern(const std::string& _filePattern);
@@ -237,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateDate 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateDate() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createDate 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateDate(const std::string& _createDate);
@@ -262,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyDate 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyDate() const;
 
                     /**
                      * 设置更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyDate 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyDate(const std::string& _modifyDate);
@@ -287,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationId 应用 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置应用 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationId 应用 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
@@ -312,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationName 应用名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplicationName() const;
 
                     /**
                      * 设置应用名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationName 应用名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationName(const std::string& _applicationName);
@@ -337,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取导出规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtractRule 导出规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     LogConfigExtractRule GetExtractRule() const;
 
                     /**
                      * 设置导出规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _extractRule 导出规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExtractRule(const LogConfigExtractRule& _extractRule);
@@ -376,14 +336,12 @@ namespace TencentCloud
 
                     /**
                      * 日志集 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logsetId;
                     bool m_logsetIdHasBeenSet;
 
                     /**
                      * 日志主题 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
@@ -396,56 +354,48 @@ namespace TencentCloud
 
                     /**
                      * 首行正则表达式，当 LogType 为多行全文、多行正则时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_beginningRegex;
                     bool m_beginningRegexHasBeenSet;
 
                     /**
                      * 收集文件目录，当 InputType=container_file 时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logPath;
                     bool m_logPathHasBeenSet;
 
                     /**
                      * 收集文件名模式，当 InputType=container_file 时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_filePattern;
                     bool m_filePatternHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createDate;
                     bool m_createDateHasBeenSet;
 
                     /**
                      * 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyDate;
                     bool m_modifyDateHasBeenSet;
 
                     /**
                      * 应用 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applicationId;
                     bool m_applicationIdHasBeenSet;
 
                     /**
                      * 应用名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applicationName;
                     bool m_applicationNameHasBeenSet;
 
                     /**
                      * 导出规则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     LogConfigExtractRule m_extractRule;
                     bool m_extractRuleHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取入院时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdmissionTime 入院时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAdmissionTime() const;
 
                     /**
                      * 设置入院时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _admissionTime 入院时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdmissionTime(const std::string& _admissionTime);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出院时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DischargeTime 出院时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDischargeTime() const;
 
                     /**
                      * 设置出院时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dischargeTime 出院时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDischargeTime(const std::string& _dischargeTime);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取住院天数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdmissionDays 住院天数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAdmissionDays() const;
 
                     /**
                      * 设置住院天数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _admissionDays 住院天数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdmissionDays(const std::string& _admissionDays);
@@ -148,18 +136,14 @@ namespace TencentCloud
 
                     /**
                      * 获取入院情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdmissionCondition 入院情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAdmissionCondition() const;
 
                     /**
                      * 设置入院情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _admissionCondition 入院情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdmissionCondition(const std::string& _admissionCondition);
@@ -173,18 +157,14 @@ namespace TencentCloud
 
                     /**
                      * 获取诊疗经过
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiagnosisTreatment 诊疗经过
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDiagnosisTreatment() const;
 
                     /**
                      * 设置诊疗经过
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diagnosisTreatment 诊疗经过
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiagnosisTreatment(const std::string& _diagnosisTreatment);
@@ -198,18 +178,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DischargeDiagnosis 出院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDischargeDiagnosis() const;
 
                     /**
                      * 设置出院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dischargeDiagnosis 出院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDischargeDiagnosis(const std::string& _dischargeDiagnosis);
@@ -223,18 +199,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出院医嘱
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DischargeInstruction 出院医嘱
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDischargeInstruction() const;
 
                     /**
                      * 设置出院医嘱
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dischargeInstruction 出院医嘱
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDischargeInstruction(const std::string& _dischargeInstruction);
@@ -248,18 +220,14 @@ namespace TencentCloud
 
                     /**
                      * 获取入院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdmissionDiagnosis 入院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAdmissionDiagnosis() const;
 
                     /**
                      * 设置入院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _admissionDiagnosis 入院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdmissionDiagnosis(const std::string& _admissionDiagnosis);
@@ -273,18 +241,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Page 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPage() const;
 
                     /**
                      * 设置数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _page 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPage(const int64_t& _page);
@@ -300,21 +264,18 @@ namespace TencentCloud
 
                     /**
                      * 入院时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_admissionTime;
                     bool m_admissionTimeHasBeenSet;
 
                     /**
                      * 出院时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dischargeTime;
                     bool m_dischargeTimeHasBeenSet;
 
                     /**
                      * 住院天数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_admissionDays;
                     bool m_admissionDaysHasBeenSet;
@@ -328,42 +289,36 @@ namespace TencentCloud
 
                     /**
                      * 入院情况
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_admissionCondition;
                     bool m_admissionConditionHasBeenSet;
 
                     /**
                      * 诊疗经过
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_diagnosisTreatment;
                     bool m_diagnosisTreatmentHasBeenSet;
 
                     /**
                      * 出院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dischargeDiagnosis;
                     bool m_dischargeDiagnosisHasBeenSet;
 
                     /**
                      * 出院医嘱
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dischargeInstruction;
                     bool m_dischargeInstructionHasBeenSet;
 
                     /**
                      * 入院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_admissionDiagnosis;
                     bool m_admissionDiagnosisHasBeenSet;
 
                     /**
                      * 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_page;
                     bool m_pageHasBeenSet;

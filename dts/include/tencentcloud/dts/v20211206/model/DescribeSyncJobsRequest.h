@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取同步任务id，如sync-werwfs23
-                     * @return JobId 同步任务id，如sync-werwfs23
+                     * 获取同步任务id，如sync-werwfs23，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
+
+                     * @return JobId 同步任务id，如sync-werwfs23，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
+
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
-                     * 设置同步任务id，如sync-werwfs23
-                     * @param _jobId 同步任务id，如sync-werwfs23
+                     * 设置同步任务id，如sync-werwfs23，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
+
+                     * @param _jobId 同步任务id，如sync-werwfs23，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
+
                      * 
                      */
                     void SetJobId(const std::string& _jobId);
@@ -63,6 +67,27 @@ namespace TencentCloud
                      * 
                      */
                     bool JobIdHasBeenSet() const;
+
+                    /**
+                     * 获取同步任务id列表，如["sync-n3gh7md9"]
+                     * @return JobIds 同步任务id列表，如["sync-n3gh7md9"]
+                     * 
+                     */
+                    std::vector<std::string> GetJobIds() const;
+
+                    /**
+                     * 设置同步任务id列表，如["sync-n3gh7md9"]
+                     * @param _jobIds 同步任务id列表，如["sync-n3gh7md9"]
+                     * 
+                     */
+                    void SetJobIds(const std::vector<std::string>& _jobIds);
+
+                    /**
+                     * 判断参数 JobIds 是否已赋值
+                     * @return JobIds 是否已赋值
+                     * 
+                     */
+                    bool JobIdsHasBeenSet() const;
 
                     /**
                      * 获取同步任务名
@@ -86,15 +111,15 @@ namespace TencentCloud
                     bool JobNameHasBeenSet() const;
 
                     /**
-                     * 获取排序字段，可以取值为CreateTime
-                     * @return Order 排序字段，可以取值为CreateTime
+                     * 获取排序字段，目前仅支持CreateTime字段排序
+                     * @return Order 排序字段，目前仅支持CreateTime字段排序
                      * 
                      */
                     std::string GetOrder() const;
 
                     /**
-                     * 设置排序字段，可以取值为CreateTime
-                     * @param _order 排序字段，可以取值为CreateTime
+                     * 设置排序字段，目前仅支持CreateTime字段排序
+                     * @param _order 排序字段，目前仅支持CreateTime字段排序
                      * 
                      */
                     void SetOrder(const std::string& _order);
@@ -170,15 +195,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取状态集合，如Initialized,CheckPass,Running,ResumableErr,Stopped
-                     * @return Status 状态集合，如Initialized,CheckPass,Running,ResumableErr,Stopped
+                     * 获取状态集合，如Initialized(初始化),CheckPass(校验通过),Running(运行中),ResumableErr(恢复中),Stopped(已结束)
+                     * @return Status 状态集合，如Initialized(初始化),CheckPass(校验通过),Running(运行中),ResumableErr(恢复中),Stopped(已结束)
                      * 
                      */
                     std::vector<std::string> GetStatus() const;
 
                     /**
-                     * 设置状态集合，如Initialized,CheckPass,Running,ResumableErr,Stopped
-                     * @param _status 状态集合，如Initialized,CheckPass,Running,ResumableErr,Stopped
+                     * 设置状态集合，如Initialized(初始化),CheckPass(校验通过),Running(运行中),ResumableErr(恢复中),Stopped(已结束)
+                     * @param _status 状态集合，如Initialized(初始化),CheckPass(校验通过),Running(运行中),ResumableErr(恢复中),Stopped(已结束)
                      * 
                      */
                     void SetStatus(const std::vector<std::string>& _status);
@@ -212,15 +237,15 @@ namespace TencentCloud
                     bool RunModeHasBeenSet() const;
 
                     /**
-                     * 获取任务类型，如mysql2mysql：msyql同步到mysql
-                     * @return JobType 任务类型，如mysql2mysql：msyql同步到mysql
+                     * 获取任务类型，如mysql2mysql：msyql同步到mysql;可取值有mysql2mysql、mysql2kafka、tdsqlmysql2kafka、tdsqlmysql2tdsqlmysql、tdsqlmysql2mysql、mysql2tdsqlmysql、mysql2mariadb、mariadb2mariadb、mariadb2kafka、cynosdbmysql2kafka、cynosdbmysql2cynosdbmysql、cynosdbmysql2mysql、mysql2cynosdbmysql、mariadb2tdsqlmysql、tdsqlmysql2cynosdbmysql、cynosdbmysql2tdsqlmysql、tdstore2mysql、tdstore2percona、tdstore2mariadb、tdstore2cynosdbmysql、cynosdbmysql2mariadb、mariadb2cynosdbmysql、tdsqlmysql2mariadb、mariadb2mysql、percona2mariadb、postgresql2postgresql、tdstore2tdsqlmysql、mongodb2mongodb
+                     * @return JobType 任务类型，如mysql2mysql：msyql同步到mysql;可取值有mysql2mysql、mysql2kafka、tdsqlmysql2kafka、tdsqlmysql2tdsqlmysql、tdsqlmysql2mysql、mysql2tdsqlmysql、mysql2mariadb、mariadb2mariadb、mariadb2kafka、cynosdbmysql2kafka、cynosdbmysql2cynosdbmysql、cynosdbmysql2mysql、mysql2cynosdbmysql、mariadb2tdsqlmysql、tdsqlmysql2cynosdbmysql、cynosdbmysql2tdsqlmysql、tdstore2mysql、tdstore2percona、tdstore2mariadb、tdstore2cynosdbmysql、cynosdbmysql2mariadb、mariadb2cynosdbmysql、tdsqlmysql2mariadb、mariadb2mysql、percona2mariadb、postgresql2postgresql、tdstore2tdsqlmysql、mongodb2mongodb
                      * 
                      */
                     std::string GetJobType() const;
 
                     /**
-                     * 设置任务类型，如mysql2mysql：msyql同步到mysql
-                     * @param _jobType 任务类型，如mysql2mysql：msyql同步到mysql
+                     * 设置任务类型，如mysql2mysql：msyql同步到mysql;可取值有mysql2mysql、mysql2kafka、tdsqlmysql2kafka、tdsqlmysql2tdsqlmysql、tdsqlmysql2mysql、mysql2tdsqlmysql、mysql2mariadb、mariadb2mariadb、mariadb2kafka、cynosdbmysql2kafka、cynosdbmysql2cynosdbmysql、cynosdbmysql2mysql、mysql2cynosdbmysql、mariadb2tdsqlmysql、tdsqlmysql2cynosdbmysql、cynosdbmysql2tdsqlmysql、tdstore2mysql、tdstore2percona、tdstore2mariadb、tdstore2cynosdbmysql、cynosdbmysql2mariadb、mariadb2cynosdbmysql、tdsqlmysql2mariadb、mariadb2mysql、percona2mariadb、postgresql2postgresql、tdstore2tdsqlmysql、mongodb2mongodb
+                     * @param _jobType 任务类型，如mysql2mysql：msyql同步到mysql;可取值有mysql2mysql、mysql2kafka、tdsqlmysql2kafka、tdsqlmysql2tdsqlmysql、tdsqlmysql2mysql、mysql2tdsqlmysql、mysql2mariadb、mariadb2mariadb、mariadb2kafka、cynosdbmysql2kafka、cynosdbmysql2cynosdbmysql、cynosdbmysql2mysql、mysql2cynosdbmysql、mariadb2tdsqlmysql、tdsqlmysql2cynosdbmysql、cynosdbmysql2tdsqlmysql、tdstore2mysql、tdstore2percona、tdstore2mariadb、tdstore2cynosdbmysql、cynosdbmysql2mariadb、mariadb2cynosdbmysql、tdsqlmysql2mariadb、mariadb2mysql、percona2mariadb、postgresql2postgresql、tdstore2tdsqlmysql、mongodb2mongodb
                      * 
                      */
                     void SetJobType(const std::string& _jobType);
@@ -274,13 +299,62 @@ namespace TencentCloud
                      */
                     bool TagFiltersHasBeenSet() const;
 
+                    /**
+                     * 获取源端数据库连接信息，可以输入实例ID或者IP等
+                     * @return SrcInfoPattern 源端数据库连接信息，可以输入实例ID或者IP等
+                     * 
+                     */
+                    std::string GetSrcInfoPattern() const;
+
+                    /**
+                     * 设置源端数据库连接信息，可以输入实例ID或者IP等
+                     * @param _srcInfoPattern 源端数据库连接信息，可以输入实例ID或者IP等
+                     * 
+                     */
+                    void SetSrcInfoPattern(const std::string& _srcInfoPattern);
+
+                    /**
+                     * 判断参数 SrcInfoPattern 是否已赋值
+                     * @return SrcInfoPattern 是否已赋值
+                     * 
+                     */
+                    bool SrcInfoPatternHasBeenSet() const;
+
+                    /**
+                     * 获取目标端数据库连接信息，可以输入实例ID或者IP等
+                     * @return DstInfoPattern 目标端数据库连接信息，可以输入实例ID或者IP等
+                     * 
+                     */
+                    std::string GetDstInfoPattern() const;
+
+                    /**
+                     * 设置目标端数据库连接信息，可以输入实例ID或者IP等
+                     * @param _dstInfoPattern 目标端数据库连接信息，可以输入实例ID或者IP等
+                     * 
+                     */
+                    void SetDstInfoPattern(const std::string& _dstInfoPattern);
+
+                    /**
+                     * 判断参数 DstInfoPattern 是否已赋值
+                     * @return DstInfoPattern 是否已赋值
+                     * 
+                     */
+                    bool DstInfoPatternHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 同步任务id，如sync-werwfs23
+                     * 同步任务id，如sync-werwfs23，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
+
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
+
+                    /**
+                     * 同步任务id列表，如["sync-n3gh7md9"]
+                     */
+                    std::vector<std::string> m_jobIds;
+                    bool m_jobIdsHasBeenSet;
 
                     /**
                      * 同步任务名
@@ -289,7 +363,7 @@ namespace TencentCloud
                     bool m_jobNameHasBeenSet;
 
                     /**
-                     * 排序字段，可以取值为CreateTime
+                     * 排序字段，目前仅支持CreateTime字段排序
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
@@ -313,7 +387,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 状态集合，如Initialized,CheckPass,Running,ResumableErr,Stopped
+                     * 状态集合，如Initialized(初始化),CheckPass(校验通过),Running(运行中),ResumableErr(恢复中),Stopped(已结束)
                      */
                     std::vector<std::string> m_status;
                     bool m_statusHasBeenSet;
@@ -325,7 +399,7 @@ namespace TencentCloud
                     bool m_runModeHasBeenSet;
 
                     /**
-                     * 任务类型，如mysql2mysql：msyql同步到mysql
+                     * 任务类型，如mysql2mysql：msyql同步到mysql;可取值有mysql2mysql、mysql2kafka、tdsqlmysql2kafka、tdsqlmysql2tdsqlmysql、tdsqlmysql2mysql、mysql2tdsqlmysql、mysql2mariadb、mariadb2mariadb、mariadb2kafka、cynosdbmysql2kafka、cynosdbmysql2cynosdbmysql、cynosdbmysql2mysql、mysql2cynosdbmysql、mariadb2tdsqlmysql、tdsqlmysql2cynosdbmysql、cynosdbmysql2tdsqlmysql、tdstore2mysql、tdstore2percona、tdstore2mariadb、tdstore2cynosdbmysql、cynosdbmysql2mariadb、mariadb2cynosdbmysql、tdsqlmysql2mariadb、mariadb2mysql、percona2mariadb、postgresql2postgresql、tdstore2tdsqlmysql、mongodb2mongodb
                      */
                     std::string m_jobType;
                     bool m_jobTypeHasBeenSet;
@@ -341,6 +415,18 @@ namespace TencentCloud
                      */
                     std::vector<TagFilter> m_tagFilters;
                     bool m_tagFiltersHasBeenSet;
+
+                    /**
+                     * 源端数据库连接信息，可以输入实例ID或者IP等
+                     */
+                    std::string m_srcInfoPattern;
+                    bool m_srcInfoPatternHasBeenSet;
+
+                    /**
+                     * 目标端数据库连接信息，可以输入实例ID或者IP等
+                     */
+                    std::string m_dstInfoPattern;
+                    bool m_dstInfoPatternHasBeenSet;
 
                 };
             }

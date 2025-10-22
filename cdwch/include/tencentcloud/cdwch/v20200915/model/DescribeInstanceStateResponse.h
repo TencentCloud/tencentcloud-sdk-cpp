@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取集群操作创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowCreateTime 集群操作创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlowCreateTime() const;
@@ -75,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取集群操作名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowName 集群操作名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlowName() const;
@@ -91,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取集群操作进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowProgress 集群操作进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetFlowProgress() const;
@@ -107,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取集群状态描述，例如：运行中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceStateDesc 集群状态描述，例如：运行中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceStateDesc() const;
@@ -123,9 +115,7 @@ namespace TencentCloud
 
                     /**
                      * 获取集群流程错误信息，例如：“创建失败，资源不足”
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowMsg 集群流程错误信息，例如：“创建失败，资源不足”
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlowMsg() const;
@@ -137,6 +127,34 @@ namespace TencentCloud
                      */
                     bool FlowMsgHasBeenSet() const;
 
+                    /**
+                     * 获取当前步骤的名称，例如：”购买资源中“
+                     * @return ProcessName 当前步骤的名称，例如：”购买资源中“
+                     * 
+                     */
+                    std::string GetProcessName() const;
+
+                    /**
+                     * 判断参数 ProcessName 是否已赋值
+                     * @return ProcessName 是否已赋值
+                     * 
+                     */
+                    bool ProcessNameHasBeenSet() const;
+
+                    /**
+                     * 获取当前步骤的名称，例如：”购买资源中“
+                     * @return ProcessSubName 当前步骤的名称，例如：”购买资源中“
+                     * 
+                     */
+                    std::string GetProcessSubName() const;
+
+                    /**
+                     * 判断参数 ProcessSubName 是否已赋值
+                     * @return ProcessSubName 是否已赋值
+                     * 
+                     */
+                    bool ProcessSubNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -147,38 +165,45 @@ namespace TencentCloud
 
                     /**
                      * 集群操作创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowCreateTime;
                     bool m_flowCreateTimeHasBeenSet;
 
                     /**
                      * 集群操作名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowName;
                     bool m_flowNameHasBeenSet;
 
                     /**
                      * 集群操作进度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_flowProgress;
                     bool m_flowProgressHasBeenSet;
 
                     /**
                      * 集群状态描述，例如：运行中
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceStateDesc;
                     bool m_instanceStateDescHasBeenSet;
 
                     /**
                      * 集群流程错误信息，例如：“创建失败，资源不足”
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowMsg;
                     bool m_flowMsgHasBeenSet;
+
+                    /**
+                     * 当前步骤的名称，例如：”购买资源中“
+                     */
+                    std::string m_processName;
+                    bool m_processNameHasBeenSet;
+
+                    /**
+                     * 当前步骤的名称，例如：”购买资源中“
+                     */
+                    std::string m_processSubName;
+                    bool m_processSubNameHasBeenSet;
 
                 };
             }

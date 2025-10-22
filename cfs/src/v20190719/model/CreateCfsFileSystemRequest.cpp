@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,9 @@ CreateCfsFileSystemRequest::CreateCfsFileSystemRequest() :
     m_capacityHasBeenSet(false),
     m_snapshotIdHasBeenSet(false),
     m_autoSnapshotPolicyIdHasBeenSet(false),
-    m_enableAutoScaleUpHasBeenSet(false)
+    m_enableAutoScaleUpHasBeenSet(false),
+    m_cfsVersionHasBeenSet(false),
+    m_metaTypeHasBeenSet(false)
 {
 }
 
@@ -191,6 +193,22 @@ string CreateCfsFileSystemRequest::ToJsonString() const
         string key = "EnableAutoScaleUp";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableAutoScaleUp, allocator);
+    }
+
+    if (m_cfsVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CfsVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cfsVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_metaTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetaType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_metaType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -471,6 +489,38 @@ void CreateCfsFileSystemRequest::SetEnableAutoScaleUp(const bool& _enableAutoSca
 bool CreateCfsFileSystemRequest::EnableAutoScaleUpHasBeenSet() const
 {
     return m_enableAutoScaleUpHasBeenSet;
+}
+
+string CreateCfsFileSystemRequest::GetCfsVersion() const
+{
+    return m_cfsVersion;
+}
+
+void CreateCfsFileSystemRequest::SetCfsVersion(const string& _cfsVersion)
+{
+    m_cfsVersion = _cfsVersion;
+    m_cfsVersionHasBeenSet = true;
+}
+
+bool CreateCfsFileSystemRequest::CfsVersionHasBeenSet() const
+{
+    return m_cfsVersionHasBeenSet;
+}
+
+string CreateCfsFileSystemRequest::GetMetaType() const
+{
+    return m_metaType;
+}
+
+void CreateCfsFileSystemRequest::SetMetaType(const string& _metaType)
+{
+    m_metaType = _metaType;
+    m_metaTypeHasBeenSet = true;
+}
+
+bool CreateCfsFileSystemRequest::MetaTypeHasBeenSet() const
+{
+    return m_metaTypeHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,14 +25,20 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/apm/v20210622/model/CreateApmInstanceRequest.h>
 #include <tencentcloud/apm/v20210622/model/CreateApmInstanceResponse.h>
+#include <tencentcloud/apm/v20210622/model/CreateProfileTaskRequest.h>
+#include <tencentcloud/apm/v20210622/model/CreateProfileTaskResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeApmAgentRequest.h>
 #include <tencentcloud/apm/v20210622/model/DescribeApmAgentResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeApmInstancesRequest.h>
 #include <tencentcloud/apm/v20210622/model/DescribeApmInstancesResponse.h>
+#include <tencentcloud/apm/v20210622/model/DescribeApmServiceMetricRequest.h>
+#include <tencentcloud/apm/v20210622/model/DescribeApmServiceMetricResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeGeneralApmApplicationConfigRequest.h>
 #include <tencentcloud/apm/v20210622/model/DescribeGeneralApmApplicationConfigResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeGeneralMetricDataRequest.h>
 #include <tencentcloud/apm/v20210622/model/DescribeGeneralMetricDataResponse.h>
+#include <tencentcloud/apm/v20210622/model/DescribeGeneralOTSpanListRequest.h>
+#include <tencentcloud/apm/v20210622/model/DescribeGeneralOTSpanListResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeGeneralSpanListRequest.h>
 #include <tencentcloud/apm/v20210622/model/DescribeGeneralSpanListResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeMetricRecordsRequest.h>
@@ -64,18 +70,27 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateApmInstanceResponse> CreateApmInstanceOutcome;
                 typedef std::future<CreateApmInstanceOutcome> CreateApmInstanceOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::CreateApmInstanceRequest&, CreateApmInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateApmInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateProfileTaskResponse> CreateProfileTaskOutcome;
+                typedef std::future<CreateProfileTaskOutcome> CreateProfileTaskOutcomeCallable;
+                typedef std::function<void(const ApmClient*, const Model::CreateProfileTaskRequest&, CreateProfileTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProfileTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeApmAgentResponse> DescribeApmAgentOutcome;
                 typedef std::future<DescribeApmAgentOutcome> DescribeApmAgentOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::DescribeApmAgentRequest&, DescribeApmAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApmAgentAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeApmInstancesResponse> DescribeApmInstancesOutcome;
                 typedef std::future<DescribeApmInstancesOutcome> DescribeApmInstancesOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::DescribeApmInstancesRequest&, DescribeApmInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApmInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeApmServiceMetricResponse> DescribeApmServiceMetricOutcome;
+                typedef std::future<DescribeApmServiceMetricOutcome> DescribeApmServiceMetricOutcomeCallable;
+                typedef std::function<void(const ApmClient*, const Model::DescribeApmServiceMetricRequest&, DescribeApmServiceMetricOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApmServiceMetricAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeGeneralApmApplicationConfigResponse> DescribeGeneralApmApplicationConfigOutcome;
                 typedef std::future<DescribeGeneralApmApplicationConfigOutcome> DescribeGeneralApmApplicationConfigOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::DescribeGeneralApmApplicationConfigRequest&, DescribeGeneralApmApplicationConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGeneralApmApplicationConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeGeneralMetricDataResponse> DescribeGeneralMetricDataOutcome;
                 typedef std::future<DescribeGeneralMetricDataOutcome> DescribeGeneralMetricDataOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::DescribeGeneralMetricDataRequest&, DescribeGeneralMetricDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGeneralMetricDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGeneralOTSpanListResponse> DescribeGeneralOTSpanListOutcome;
+                typedef std::future<DescribeGeneralOTSpanListOutcome> DescribeGeneralOTSpanListOutcomeCallable;
+                typedef std::function<void(const ApmClient*, const Model::DescribeGeneralOTSpanListRequest&, DescribeGeneralOTSpanListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGeneralOTSpanListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeGeneralSpanListResponse> DescribeGeneralSpanListOutcome;
                 typedef std::future<DescribeGeneralSpanListOutcome> DescribeGeneralSpanListOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::DescribeGeneralSpanListRequest&, DescribeGeneralSpanListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGeneralSpanListAsyncHandler;
@@ -101,7 +116,7 @@ namespace TencentCloud
 
 
                 /**
-                 *业务购买APM实例，调用该接口创建
+                 *业务购买 APM 业务系统，调用该接口创建
                  * @param req CreateApmInstanceRequest
                  * @return CreateApmInstanceOutcome
                  */
@@ -110,7 +125,16 @@ namespace TencentCloud
                 CreateApmInstanceOutcomeCallable CreateApmInstanceCallable(const Model::CreateApmInstanceRequest& request);
 
                 /**
-                 *获取APM Agent信息
+                 *创建事件任务
+                 * @param req CreateProfileTaskRequest
+                 * @return CreateProfileTaskOutcome
+                 */
+                CreateProfileTaskOutcome CreateProfileTask(const Model::CreateProfileTaskRequest &request);
+                void CreateProfileTaskAsync(const Model::CreateProfileTaskRequest& request, const CreateProfileTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateProfileTaskOutcomeCallable CreateProfileTaskCallable(const Model::CreateProfileTaskRequest& request);
+
+                /**
+                 *获取 APM 接入点
                  * @param req DescribeApmAgentRequest
                  * @return DescribeApmAgentOutcome
                  */
@@ -119,13 +143,22 @@ namespace TencentCloud
                 DescribeApmAgentOutcomeCallable DescribeApmAgentCallable(const Model::DescribeApmAgentRequest& request);
 
                 /**
-                 *APM实例列表拉取
+                 *获取 APM 业务系统列表
                  * @param req DescribeApmInstancesRequest
                  * @return DescribeApmInstancesOutcome
                  */
                 DescribeApmInstancesOutcome DescribeApmInstances(const Model::DescribeApmInstancesRequest &request);
                 void DescribeApmInstancesAsync(const Model::DescribeApmInstancesRequest& request, const DescribeApmInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeApmInstancesOutcomeCallable DescribeApmInstancesCallable(const Model::DescribeApmInstancesRequest& request);
+
+                /**
+                 *获取 APM 应用指标列表
+                 * @param req DescribeApmServiceMetricRequest
+                 * @return DescribeApmServiceMetricOutcome
+                 */
+                DescribeApmServiceMetricOutcome DescribeApmServiceMetric(const Model::DescribeApmServiceMetricRequest &request);
+                void DescribeApmServiceMetricAsync(const Model::DescribeApmServiceMetricRequest& request, const DescribeApmServiceMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeApmServiceMetricOutcomeCallable DescribeApmServiceMetricCallable(const Model::DescribeApmServiceMetricRequest& request);
 
                 /**
                  *查询应用配置信息
@@ -147,6 +180,15 @@ namespace TencentCloud
                 DescribeGeneralMetricDataOutcomeCallable DescribeGeneralMetricDataCallable(const Model::DescribeGeneralMetricDataRequest& request);
 
                 /**
+                 *通用查询 OpenTelemetry 调用链列表
+                 * @param req DescribeGeneralOTSpanListRequest
+                 * @return DescribeGeneralOTSpanListOutcome
+                 */
+                DescribeGeneralOTSpanListOutcome DescribeGeneralOTSpanList(const Model::DescribeGeneralOTSpanListRequest &request);
+                void DescribeGeneralOTSpanListAsync(const Model::DescribeGeneralOTSpanListRequest& request, const DescribeGeneralOTSpanListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGeneralOTSpanListOutcomeCallable DescribeGeneralOTSpanListCallable(const Model::DescribeGeneralOTSpanListRequest& request);
+
+                /**
                  *通用查询调用链列表
                  * @param req DescribeGeneralSpanListRequest
                  * @return DescribeGeneralSpanListOutcome
@@ -156,7 +198,7 @@ namespace TencentCloud
                 DescribeGeneralSpanListOutcomeCallable DescribeGeneralSpanListCallable(const Model::DescribeGeneralSpanListRequest& request);
 
                 /**
-                 *拉取通用指标列表
+                 *查询指标列表接口，查询指标更推荐使用DescribeGeneralMetricData接口
                  * @param req DescribeMetricRecordsRequest
                  * @return DescribeMetricRecordsOutcome
                  */
@@ -165,7 +207,7 @@ namespace TencentCloud
                 DescribeMetricRecordsOutcomeCallable DescribeMetricRecordsCallable(const Model::DescribeMetricRecordsRequest& request);
 
                 /**
-                 *服务概览数据拉取
+                 *应用概览数据拉取
                  * @param req DescribeServiceOverviewRequest
                  * @return DescribeServiceOverviewOutcome
                  */
@@ -183,7 +225,7 @@ namespace TencentCloud
                 DescribeTagValuesOutcomeCallable DescribeTagValuesCallable(const Model::DescribeTagValuesRequest& request);
 
                 /**
-                 *修改APM实例接口
+                 *修改APM业务系统接口
                  * @param req ModifyApmInstanceRequest
                  * @return ModifyApmInstanceOutcome
                  */
@@ -201,7 +243,7 @@ namespace TencentCloud
                 ModifyGeneralApmApplicationConfigOutcomeCallable ModifyGeneralApmApplicationConfigCallable(const Model::ModifyGeneralApmApplicationConfigRequest& request);
 
                 /**
-                 *apm销毁实例
+                 *销毁 APM 业务系统
                  * @param req TerminateApmInstanceRequest
                  * @return TerminateApmInstanceOutcome
                  */

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ ObjectType::ObjectType() :
     m_objectTypeJsonParseHasBeenSet(false),
     m_objectHasNewActionHasBeenSet(false),
     m_objectPlatformNameHasBeenSet(false),
-    m_objectSupportTypeHasBeenSet(false)
+    m_objectSupportTypeHasBeenSet(false),
+    m_archLayerHasBeenSet(false),
+    m_isArchSvgHasBeenSet(false)
 {
 }
 
@@ -131,6 +133,26 @@ CoreInternalOutcome ObjectType::Deserialize(const rapidjson::Value &value)
         m_objectSupportTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ArchLayer") && !value["ArchLayer"].IsNull())
+    {
+        if (!value["ArchLayer"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ObjectType.ArchLayer` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_archLayer = value["ArchLayer"].GetInt64();
+        m_archLayerHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsArchSvg") && !value["IsArchSvg"].IsNull())
+    {
+        if (!value["IsArchSvg"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ObjectType.IsArchSvg` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isArchSvg = value["IsArchSvg"].GetBool();
+        m_isArchSvgHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -202,6 +224,22 @@ void ObjectType::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "ObjectSupportType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_objectSupportType, allocator);
+    }
+
+    if (m_archLayerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ArchLayer";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_archLayer, allocator);
+    }
+
+    if (m_isArchSvgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsArchSvg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isArchSvg, allocator);
     }
 
 }
@@ -333,5 +371,37 @@ void ObjectType::SetObjectSupportType(const int64_t& _objectSupportType)
 bool ObjectType::ObjectSupportTypeHasBeenSet() const
 {
     return m_objectSupportTypeHasBeenSet;
+}
+
+int64_t ObjectType::GetArchLayer() const
+{
+    return m_archLayer;
+}
+
+void ObjectType::SetArchLayer(const int64_t& _archLayer)
+{
+    m_archLayer = _archLayer;
+    m_archLayerHasBeenSet = true;
+}
+
+bool ObjectType::ArchLayerHasBeenSet() const
+{
+    return m_archLayerHasBeenSet;
+}
+
+bool ObjectType::GetIsArchSvg() const
+{
+    return m_isArchSvg;
+}
+
+void ObjectType::SetIsArchSvg(const bool& _isArchSvg)
+{
+    m_isArchSvg = _isArchSvg;
+    m_isArchSvgHasBeenSet = true;
+}
+
+bool ObjectType::IsArchSvgHasBeenSet() const
+{
+    return m_isArchSvgHasBeenSet;
 }
 

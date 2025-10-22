@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消息时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timestamp 消息时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTimestamp() const;
 
                     /**
                      * 设置消息时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timestamp 消息时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimestamp(const int64_t& _timestamp);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消息发送者
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FromAccount 消息发送者
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFromAccount() const;
 
                     /**
                      * 设置消息发送者
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fromAccount 消息发送者
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFromAccount(const std::string& _fromAccount);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消息序列号，当前课堂内唯一且单调递增
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Seq 消息序列号，当前课堂内唯一且单调递增
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSeq() const;
 
                     /**
                      * 设置消息序列号，当前课堂内唯一且单调递增
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _seq 消息序列号，当前课堂内唯一且单调递增
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSeq(const int64_t& _seq);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取历史消息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MessageBody 历史消息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<MessageItem> GetMessageBody() const;
 
                     /**
                      * 设置历史消息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _messageBody 历史消息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMessageBody(const std::vector<MessageItem>& _messageBody);
@@ -151,28 +135,24 @@ namespace TencentCloud
 
                     /**
                      * 消息时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_timestamp;
                     bool m_timestampHasBeenSet;
 
                     /**
                      * 消息发送者
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fromAccount;
                     bool m_fromAccountHasBeenSet;
 
                     /**
                      * 消息序列号，当前课堂内唯一且单调递增
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_seq;
                     bool m_seqHasBeenSet;
 
                     /**
                      * 历史消息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MessageItem> m_messageBody;
                     bool m_messageBodyHasBeenSet;

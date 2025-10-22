@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/waf/v20180125/model/PortInfo.h>
+#include <tencentcloud/waf/v20180125/model/UpstreamRule.h>
 
 
 namespace TencentCloud
@@ -331,23 +332,23 @@ namespace TencentCloud
                     bool IsCdnHasBeenSet() const;
 
                     /**
-                     * 获取是否开启灰度，已废弃。
-                     * @return IsGray 是否开启灰度，已废弃。
-                     * 
+                     * 获取是否开启灰度。
+                     * @return IsGray 是否开启灰度。
+                     * @deprecated
                      */
                     uint64_t GetIsGray() const;
 
                     /**
-                     * 设置是否开启灰度，已废弃。
-                     * @param _isGray 是否开启灰度，已废弃。
-                     * 
+                     * 设置是否开启灰度。
+                     * @param _isGray 是否开启灰度。
+                     * @deprecated
                      */
                     void SetIsGray(const uint64_t& _isGray);
 
                     /**
                      * 判断参数 IsGray 是否已赋值
                      * @return IsGray 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool IsGrayHasBeenSet() const;
 
@@ -855,6 +856,27 @@ https：使用https协议回源
                     bool CipherTemplateHasBeenSet() const;
 
                     /**
+                     * 获取WAF与源站的连接超时，默认10s。
+                     * @return ProxyConnectTimeout WAF与源站的连接超时，默认10s。
+                     * 
+                     */
+                    int64_t GetProxyConnectTimeout() const;
+
+                    /**
+                     * 设置WAF与源站的连接超时，默认10s。
+                     * @param _proxyConnectTimeout WAF与源站的连接超时，默认10s。
+                     * 
+                     */
+                    void SetProxyConnectTimeout(const int64_t& _proxyConnectTimeout);
+
+                    /**
+                     * 判断参数 ProxyConnectTimeout 是否已赋值
+                     * @return ProxyConnectTimeout 是否已赋值
+                     * 
+                     */
+                    bool ProxyConnectTimeoutHasBeenSet() const;
+
+                    /**
                      * 获取WAF与源站的读超时时间，默认300s。
                      * @return ProxyReadTimeout WAF与源站的读超时时间，默认300s。
                      * 
@@ -1277,6 +1299,119 @@ https：使用https协议回源
                      */
                     bool LabelsHasBeenSet() const;
 
+                    /**
+                     * 获取拨测状态。 0: 禁用拨测, 1: 启用拨测
+                     * @return ProbeStatus 拨测状态。 0: 禁用拨测, 1: 启用拨测
+                     * 
+                     */
+                    int64_t GetProbeStatus() const;
+
+                    /**
+                     * 设置拨测状态。 0: 禁用拨测, 1: 启用拨测
+                     * @param _probeStatus 拨测状态。 0: 禁用拨测, 1: 启用拨测
+                     * 
+                     */
+                    void SetProbeStatus(const int64_t& _probeStatus);
+
+                    /**
+                     * 判断参数 ProbeStatus 是否已赋值
+                     * @return ProbeStatus 是否已赋值
+                     * 
+                     */
+                    bool ProbeStatusHasBeenSet() const;
+
+                    /**
+                     * 获取回源策略。
+0：负载均衡回源
+1：分流回源
+                     * @return UpstreamPolicy 回源策略。
+0：负载均衡回源
+1：分流回源
+                     * 
+                     */
+                    int64_t GetUpstreamPolicy() const;
+
+                    /**
+                     * 设置回源策略。
+0：负载均衡回源
+1：分流回源
+                     * @param _upstreamPolicy 回源策略。
+0：负载均衡回源
+1：分流回源
+                     * 
+                     */
+                    void SetUpstreamPolicy(const int64_t& _upstreamPolicy);
+
+                    /**
+                     * 判断参数 UpstreamPolicy 是否已赋值
+                     * @return UpstreamPolicy 是否已赋值
+                     * 
+                     */
+                    bool UpstreamPolicyHasBeenSet() const;
+
+                    /**
+                     * 获取分流回源策略
+                     * @return UpstreamRules 分流回源策略
+                     * 
+                     */
+                    std::vector<UpstreamRule> GetUpstreamRules() const;
+
+                    /**
+                     * 设置分流回源策略
+                     * @param _upstreamRules 分流回源策略
+                     * 
+                     */
+                    void SetUpstreamRules(const std::vector<UpstreamRule>& _upstreamRules);
+
+                    /**
+                     * 判断参数 UpstreamRules 是否已赋值
+                     * @return UpstreamRules 是否已赋值
+                     * 
+                     */
+                    bool UpstreamRulesHasBeenSet() const;
+
+                    /**
+                     * 获取业务场景。0：默认值，表示常规业务场景 1：大模型业务场景
+                     * @return UseCase 业务场景。0：默认值，表示常规业务场景 1：大模型业务场景
+                     * 
+                     */
+                    int64_t GetUseCase() const;
+
+                    /**
+                     * 设置业务场景。0：默认值，表示常规业务场景 1：大模型业务场景
+                     * @param _useCase 业务场景。0：默认值，表示常规业务场景 1：大模型业务场景
+                     * 
+                     */
+                    void SetUseCase(const int64_t& _useCase);
+
+                    /**
+                     * 判断参数 UseCase 是否已赋值
+                     * @return UseCase 是否已赋值
+                     * 
+                     */
+                    bool UseCaseHasBeenSet() const;
+
+                    /**
+                     * 获取gzip开关。0：关闭 1：默认值，打开。
+                     * @return Gzip gzip开关。0：关闭 1：默认值，打开。
+                     * 
+                     */
+                    int64_t GetGzip() const;
+
+                    /**
+                     * 设置gzip开关。0：关闭 1：默认值，打开。
+                     * @param _gzip gzip开关。0：关闭 1：默认值，打开。
+                     * 
+                     */
+                    void SetGzip(const int64_t& _gzip);
+
+                    /**
+                     * 判断参数 Gzip 是否已赋值
+                     * @return Gzip 是否已赋值
+                     * 
+                     */
+                    bool GzipHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1359,7 +1494,7 @@ https：使用https协议回源
                     bool m_isCdnHasBeenSet;
 
                     /**
-                     * 是否开启灰度，已废弃。
+                     * 是否开启灰度。
                      */
                     uint64_t m_isGray;
                     bool m_isGrayHasBeenSet;
@@ -1505,6 +1640,12 @@ https：使用https协议回源
                     bool m_cipherTemplateHasBeenSet;
 
                     /**
+                     * WAF与源站的连接超时，默认10s。
+                     */
+                    int64_t m_proxyConnectTimeout;
+                    bool m_proxyConnectTimeoutHasBeenSet;
+
+                    /**
                      * WAF与源站的读超时时间，默认300s。
                      */
                     int64_t m_proxyReadTimeout;
@@ -1623,6 +1764,38 @@ https：使用https协议回源
                      */
                     std::vector<std::string> m_labels;
                     bool m_labelsHasBeenSet;
+
+                    /**
+                     * 拨测状态。 0: 禁用拨测, 1: 启用拨测
+                     */
+                    int64_t m_probeStatus;
+                    bool m_probeStatusHasBeenSet;
+
+                    /**
+                     * 回源策略。
+0：负载均衡回源
+1：分流回源
+                     */
+                    int64_t m_upstreamPolicy;
+                    bool m_upstreamPolicyHasBeenSet;
+
+                    /**
+                     * 分流回源策略
+                     */
+                    std::vector<UpstreamRule> m_upstreamRules;
+                    bool m_upstreamRulesHasBeenSet;
+
+                    /**
+                     * 业务场景。0：默认值，表示常规业务场景 1：大模型业务场景
+                     */
+                    int64_t m_useCase;
+                    bool m_useCaseHasBeenSet;
+
+                    /**
+                     * gzip开关。0：关闭 1：默认值，打开。
+                     */
+                    int64_t m_gzip;
+                    bool m_gzipHasBeenSet;
 
                 };
             }

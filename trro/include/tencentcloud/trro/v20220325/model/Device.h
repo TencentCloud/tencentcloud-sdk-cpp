@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceId 设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceId 设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceName 设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceName 设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已经绑定license数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LicenseCount 已经绑定license数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLicenseCount() const;
 
                     /**
                      * 设置已经绑定license数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _licenseCount 已经绑定license数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLicenseCount(const int64_t& _licenseCount);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取剩余天数：天
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemainDay 剩余天数：天
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRemainDay() const;
 
                     /**
                      * 设置剩余天数：天
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remainDay 剩余天数：天
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemainDay(const int64_t& _remainDay);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取过期时间：s
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireTime 过期时间：s
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置过期时间：s
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expireTime 过期时间：s
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务时长：s
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Duration 服务时长：s
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDuration() const;
 
                     /**
                      * 设置服务时长：s
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _duration 服务时长：s
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDuration(const std::string& _duration);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已经绑定licenseId列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LicenseIds 已经绑定licenseId列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetLicenseIds() const;
 
                     /**
                      * 设置已经绑定licenseId列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _licenseIds 已经绑定licenseId列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLicenseIds(const std::vector<std::string>& _licenseIds);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取每月license的限定时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MonthlyRemainTime 每月license的限定时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMonthlyRemainTime() const;
 
                     /**
                      * 设置每月license的限定时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _monthlyRemainTime 每月license的限定时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMonthlyRemainTime(const int64_t& _monthlyRemainTime);
@@ -246,63 +214,82 @@ namespace TencentCloud
                      */
                     bool MonthlyRemainTimeHasBeenSet() const;
 
+                    /**
+                     * 获取月封顶时长（分钟)
+                     * @return LimitedTime 月封顶时长（分钟)
+                     * 
+                     */
+                    int64_t GetLimitedTime() const;
+
+                    /**
+                     * 设置月封顶时长（分钟)
+                     * @param _limitedTime 月封顶时长（分钟)
+                     * 
+                     */
+                    void SetLimitedTime(const int64_t& _limitedTime);
+
+                    /**
+                     * 判断参数 LimitedTime 是否已赋值
+                     * @return LimitedTime 是否已赋值
+                     * 
+                     */
+                    bool LimitedTimeHasBeenSet() const;
+
                 private:
 
                     /**
                      * 设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;
 
                     /**
                      * 设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceName;
                     bool m_deviceNameHasBeenSet;
 
                     /**
                      * 已经绑定license数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_licenseCount;
                     bool m_licenseCountHasBeenSet;
 
                     /**
                      * 剩余天数：天
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_remainDay;
                     bool m_remainDayHasBeenSet;
 
                     /**
                      * 过期时间：s
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
                      * 服务时长：s
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_duration;
                     bool m_durationHasBeenSet;
 
                     /**
                      * 已经绑定licenseId列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_licenseIds;
                     bool m_licenseIdsHasBeenSet;
 
                     /**
                      * 每月license的限定时长
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_monthlyRemainTime;
                     bool m_monthlyRemainTimeHasBeenSet;
+
+                    /**
+                     * 月封顶时长（分钟)
+                     */
+                    int64_t m_limitedTime;
+                    bool m_limitedTimeHasBeenSet;
 
                 };
             }

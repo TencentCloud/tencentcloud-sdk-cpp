@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,8 @@ CreateTaskRequest::CreateTaskRequest() :
     m_databaseNameHasBeenSet(false),
     m_datasourceConnectionNameHasBeenSet(false),
     m_dataEngineNameHasBeenSet(false),
-    m_resourceGroupNameHasBeenSet(false)
+    m_resourceGroupNameHasBeenSet(false),
+    m_sourceInfoHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,21 @@ string CreateTaskRequest::ToJsonString() const
         string key = "ResourceGroupName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_resourceGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_sourceInfo.begin(); itr != m_sourceInfo.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -165,6 +181,22 @@ void CreateTaskRequest::SetResourceGroupName(const string& _resourceGroupName)
 bool CreateTaskRequest::ResourceGroupNameHasBeenSet() const
 {
     return m_resourceGroupNameHasBeenSet;
+}
+
+vector<KVPair> CreateTaskRequest::GetSourceInfo() const
+{
+    return m_sourceInfo;
+}
+
+void CreateTaskRequest::SetSourceInfo(const vector<KVPair>& _sourceInfo)
+{
+    m_sourceInfo = _sourceInfo;
+    m_sourceInfoHasBeenSet = true;
+}
+
+bool CreateTaskRequest::SourceInfoHasBeenSet() const
+{
+    return m_sourceInfoHasBeenSet;
 }
 
 

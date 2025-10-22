@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取响应结果，“OK”为成功，其他为失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 响应结果，“OK”为成功，其他为失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId 分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupId() const;
@@ -79,14 +75,12 @@ namespace TencentCloud
 
                     /**
                      * 响应结果，“OK”为成功，其他为失败
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;

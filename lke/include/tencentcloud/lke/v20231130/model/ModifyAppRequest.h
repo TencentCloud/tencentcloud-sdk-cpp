@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool AppBizIdHasBeenSet() const;
 
                     /**
-                     * 获取应用类型；knowledge_qa-知识问答管理；summary-知识摘要；classifys-知识标签提取
-                     * @return AppType 应用类型；knowledge_qa-知识问答管理；summary-知识摘要；classifys-知识标签提取
+                     * 获取应用类型；knowledge_qa-知识问答管理；summary-知识摘要；classify-知识标签提取
+                     * @return AppType 应用类型；knowledge_qa-知识问答管理；summary-知识摘要；classify-知识标签提取
                      * 
                      */
                     std::string GetAppType() const;
 
                     /**
-                     * 设置应用类型；knowledge_qa-知识问答管理；summary-知识摘要；classifys-知识标签提取
-                     * @param _appType 应用类型；knowledge_qa-知识问答管理；summary-知识摘要；classifys-知识标签提取
+                     * 设置应用类型；knowledge_qa-知识问答管理；summary-知识摘要；classify-知识标签提取
+                     * @param _appType 应用类型；knowledge_qa-知识问答管理；summary-知识摘要；classify-知识标签提取
                      * 
                      */
                     void SetAppType(const std::string& _appType);
@@ -108,27 +108,6 @@ namespace TencentCloud
                     bool BaseConfigHasBeenSet() const;
 
                     /**
-                     * 获取登录用户子账号(集成商模式必填)	
-                     * @return LoginSubAccountUin 登录用户子账号(集成商模式必填)	
-                     * 
-                     */
-                    std::string GetLoginSubAccountUin() const;
-
-                    /**
-                     * 设置登录用户子账号(集成商模式必填)	
-                     * @param _loginSubAccountUin 登录用户子账号(集成商模式必填)	
-                     * 
-                     */
-                    void SetLoginSubAccountUin(const std::string& _loginSubAccountUin);
-
-                    /**
-                     * 判断参数 LoginSubAccountUin 是否已赋值
-                     * @return LoginSubAccountUin 是否已赋值
-                     * 
-                     */
-                    bool LoginSubAccountUinHasBeenSet() const;
-
-                    /**
                      * 获取应用配置
                      * @return AppConfig 应用配置
                      * 
@@ -149,6 +128,27 @@ namespace TencentCloud
                      */
                     bool AppConfigHasBeenSet() const;
 
+                    /**
+                     * 获取登录用户子账号(集成商模式必填)	
+                     * @return LoginSubAccountUin 登录用户子账号(集成商模式必填)	
+                     * 
+                     */
+                    std::string GetLoginSubAccountUin() const;
+
+                    /**
+                     * 设置登录用户子账号(集成商模式必填)	
+                     * @param _loginSubAccountUin 登录用户子账号(集成商模式必填)	
+                     * 
+                     */
+                    void SetLoginSubAccountUin(const std::string& _loginSubAccountUin);
+
+                    /**
+                     * 判断参数 LoginSubAccountUin 是否已赋值
+                     * @return LoginSubAccountUin 是否已赋值
+                     * 
+                     */
+                    bool LoginSubAccountUinHasBeenSet() const;
+
                 private:
 
                     /**
@@ -158,7 +158,7 @@ namespace TencentCloud
                     bool m_appBizIdHasBeenSet;
 
                     /**
-                     * 应用类型；knowledge_qa-知识问答管理；summary-知识摘要；classifys-知识标签提取
+                     * 应用类型；knowledge_qa-知识问答管理；summary-知识摘要；classify-知识标签提取
                      */
                     std::string m_appType;
                     bool m_appTypeHasBeenSet;
@@ -170,16 +170,16 @@ namespace TencentCloud
                     bool m_baseConfigHasBeenSet;
 
                     /**
-                     * 登录用户子账号(集成商模式必填)	
-                     */
-                    std::string m_loginSubAccountUin;
-                    bool m_loginSubAccountUinHasBeenSet;
-
-                    /**
                      * 应用配置
                      */
                     AppConfig m_appConfig;
                     bool m_appConfigHasBeenSet;
+
+                    /**
+                     * 登录用户子账号(集成商模式必填)	
+                     */
+                    std::string m_loginSubAccountUin;
+                    bool m_loginSubAccountUinHasBeenSet;
 
                 };
             }

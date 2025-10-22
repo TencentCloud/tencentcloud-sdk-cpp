@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,7 +51,14 @@ DataSourceDetail::DataSourceDetail() :
     m_publishViewIdHasBeenSet(false),
     m_subTypeHasBeenSet(false),
     m_authStatusHasBeenSet(false),
-    m_authInfoHasBeenSet(false)
+    m_authInfoHasBeenSet(false),
+    m_publishStatusHasBeenSet(false),
+    m_updateVersionHasBeenSet(false),
+    m_relationFieldListHasBeenSet(false),
+    m_dbInstanceTypeHasBeenSet(false),
+    m_previewTableNameHasBeenSet(false),
+    m_publishedTableNameHasBeenSet(false),
+    m_dbSourceTypeHasBeenSet(false)
 {
 }
 
@@ -393,6 +400,86 @@ CoreInternalOutcome DataSourceDetail::Deserialize(const rapidjson::Value &value)
         m_authInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("PublishStatus") && !value["PublishStatus"].IsNull())
+    {
+        if (!value["PublishStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataSourceDetail.PublishStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_publishStatus = value["PublishStatus"].GetInt64();
+        m_publishStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdateVersion") && !value["UpdateVersion"].IsNull())
+    {
+        if (!value["UpdateVersion"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataSourceDetail.UpdateVersion` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateVersion = value["UpdateVersion"].GetInt64();
+        m_updateVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("RelationFieldList") && !value["RelationFieldList"].IsNull())
+    {
+        if (!value["RelationFieldList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DataSourceDetail.RelationFieldList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RelationFieldList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RelationField item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_relationFieldList.push_back(item);
+        }
+        m_relationFieldListHasBeenSet = true;
+    }
+
+    if (value.HasMember("DbInstanceType") && !value["DbInstanceType"].IsNull())
+    {
+        if (!value["DbInstanceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataSourceDetail.DbInstanceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dbInstanceType = string(value["DbInstanceType"].GetString());
+        m_dbInstanceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("PreviewTableName") && !value["PreviewTableName"].IsNull())
+    {
+        if (!value["PreviewTableName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataSourceDetail.PreviewTableName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_previewTableName = string(value["PreviewTableName"].GetString());
+        m_previewTableNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("PublishedTableName") && !value["PublishedTableName"].IsNull())
+    {
+        if (!value["PublishedTableName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataSourceDetail.PublishedTableName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_publishedTableName = string(value["PublishedTableName"].GetString());
+        m_publishedTableNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("DbSourceType") && !value["DbSourceType"].IsNull())
+    {
+        if (!value["DbSourceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataSourceDetail.DbSourceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dbSourceType = string(value["DbSourceType"].GetString());
+        m_dbSourceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -664,6 +751,69 @@ void DataSourceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_authInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_publishStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublishStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_publishStatus, allocator);
+    }
+
+    if (m_updateVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_updateVersion, allocator);
+    }
+
+    if (m_relationFieldListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RelationFieldList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_relationFieldList.begin(); itr != m_relationFieldList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_dbInstanceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DbInstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dbInstanceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_previewTableNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreviewTableName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_previewTableName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publishedTableNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublishedTableName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publishedTableName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dbSourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DbSourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dbSourceType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1163,5 +1313,117 @@ void DataSourceDetail::SetAuthInfo(const TicketAuthInfo& _authInfo)
 bool DataSourceDetail::AuthInfoHasBeenSet() const
 {
     return m_authInfoHasBeenSet;
+}
+
+int64_t DataSourceDetail::GetPublishStatus() const
+{
+    return m_publishStatus;
+}
+
+void DataSourceDetail::SetPublishStatus(const int64_t& _publishStatus)
+{
+    m_publishStatus = _publishStatus;
+    m_publishStatusHasBeenSet = true;
+}
+
+bool DataSourceDetail::PublishStatusHasBeenSet() const
+{
+    return m_publishStatusHasBeenSet;
+}
+
+int64_t DataSourceDetail::GetUpdateVersion() const
+{
+    return m_updateVersion;
+}
+
+void DataSourceDetail::SetUpdateVersion(const int64_t& _updateVersion)
+{
+    m_updateVersion = _updateVersion;
+    m_updateVersionHasBeenSet = true;
+}
+
+bool DataSourceDetail::UpdateVersionHasBeenSet() const
+{
+    return m_updateVersionHasBeenSet;
+}
+
+vector<RelationField> DataSourceDetail::GetRelationFieldList() const
+{
+    return m_relationFieldList;
+}
+
+void DataSourceDetail::SetRelationFieldList(const vector<RelationField>& _relationFieldList)
+{
+    m_relationFieldList = _relationFieldList;
+    m_relationFieldListHasBeenSet = true;
+}
+
+bool DataSourceDetail::RelationFieldListHasBeenSet() const
+{
+    return m_relationFieldListHasBeenSet;
+}
+
+string DataSourceDetail::GetDbInstanceType() const
+{
+    return m_dbInstanceType;
+}
+
+void DataSourceDetail::SetDbInstanceType(const string& _dbInstanceType)
+{
+    m_dbInstanceType = _dbInstanceType;
+    m_dbInstanceTypeHasBeenSet = true;
+}
+
+bool DataSourceDetail::DbInstanceTypeHasBeenSet() const
+{
+    return m_dbInstanceTypeHasBeenSet;
+}
+
+string DataSourceDetail::GetPreviewTableName() const
+{
+    return m_previewTableName;
+}
+
+void DataSourceDetail::SetPreviewTableName(const string& _previewTableName)
+{
+    m_previewTableName = _previewTableName;
+    m_previewTableNameHasBeenSet = true;
+}
+
+bool DataSourceDetail::PreviewTableNameHasBeenSet() const
+{
+    return m_previewTableNameHasBeenSet;
+}
+
+string DataSourceDetail::GetPublishedTableName() const
+{
+    return m_publishedTableName;
+}
+
+void DataSourceDetail::SetPublishedTableName(const string& _publishedTableName)
+{
+    m_publishedTableName = _publishedTableName;
+    m_publishedTableNameHasBeenSet = true;
+}
+
+bool DataSourceDetail::PublishedTableNameHasBeenSet() const
+{
+    return m_publishedTableNameHasBeenSet;
+}
+
+string DataSourceDetail::GetDbSourceType() const
+{
+    return m_dbSourceType;
+}
+
+void DataSourceDetail::SetDbSourceType(const string& _dbSourceType)
+{
+    m_dbSourceType = _dbSourceType;
+    m_dbSourceTypeHasBeenSet = true;
+}
+
+bool DataSourceDetail::DbSourceTypeHasBeenSet() const
+{
+    return m_dbSourceTypeHasBeenSet;
 }
 

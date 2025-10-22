@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Component 组件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @deprecated
                      */
                     std::string GetComponent() const;
 
                     /**
                      * 设置组件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _component 组件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @deprecated
                      */
                     void SetComponent(const std::string& _component);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组件版本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 组件版本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置组件版本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _version 组件版本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可修复版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FixedVersion 可修复版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFixedVersion() const;
 
                     /**
                      * 设置可修复版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fixedVersion 可修复版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFixedVersion(const std::string& _fixedVersion);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Path 路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _path 路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPath(const std::string& _path);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 组件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置组件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 组件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * 组件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_component;
                     bool m_componentHasBeenSet;
 
                     /**
                      * 组件版本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
                      * 可修复版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fixedVersion;
                     bool m_fixedVersionHasBeenSet;
 
                     /**
                      * 路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
 
                     /**
                      * 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 组件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

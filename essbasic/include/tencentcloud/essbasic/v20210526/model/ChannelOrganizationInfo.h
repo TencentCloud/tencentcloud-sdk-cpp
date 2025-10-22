@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -375,15 +375,15 @@ namespace TencentCloud
                     bool ActiveStatusHasBeenSet() const;
 
                     /**
-                     * 获取账号过期时间，时间戳
-                     * @return LicenseExpireTime 账号过期时间，时间戳
+                     * 获取账号到期时间，时间戳
+                     * @return LicenseExpireTime 账号到期时间，时间戳
                      * 
                      */
                     int64_t GetLicenseExpireTime() const;
 
                     /**
-                     * 设置账号过期时间，时间戳
-                     * @param _licenseExpireTime 账号过期时间，时间戳
+                     * 设置账号到期时间，时间戳
+                     * @param _licenseExpireTime 账号到期时间，时间戳
                      * 
                      */
                     void SetLicenseExpireTime(const int64_t& _licenseExpireTime);
@@ -489,7 +489,7 @@ namespace TencentCloud
                     bool m_activeStatusHasBeenSet;
 
                     /**
-                     * 账号过期时间，时间戳
+                     * 账号到期时间，时间戳
                      */
                     int64_t m_licenseExpireTime;
                     bool m_licenseExpireTimeHasBeenSet;

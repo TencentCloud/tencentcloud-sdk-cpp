@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取node可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone node可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置node可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zone node可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取node子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId node子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置node子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetId node子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -119,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用IP数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AvailableIpCount 可用IP数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAvailableIpCount() const;
 
                     /**
                      * 设置可用IP数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _availableIpCount 可用IP数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAvailableIpCount(const std::string& _availableIpCount);
@@ -144,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cidr块
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cidr cidr块
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCidr() const;
 
                     /**
                      * 设置cidr块
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cidr cidr块
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCidr(const std::string& _cidr);
@@ -177,28 +161,24 @@ namespace TencentCloud
 
                     /**
                      * node可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
                      * node子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
                      * 可用IP数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_availableIpCount;
                     bool m_availableIpCountHasBeenSet;
 
                     /**
                      * cidr块
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cidr;
                     bool m_cidrHasBeenSet;

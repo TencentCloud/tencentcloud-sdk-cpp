@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domain 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -72,19 +68,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取预订倒计时
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReservationTime 预订倒计时
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取预订倒计时(YYYY-MM-DD hh:mm:ss)
+                     * @return ReservationTime 预订倒计时(YYYY-MM-DD hh:mm:ss)
                      * 
                      */
                     std::string GetReservationTime() const;
 
                     /**
-                     * 设置预订倒计时
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _reservationTime 预订倒计时
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置预订倒计时(YYYY-MM-DD hh:mm:ss)
+                     * @param _reservationTime 预订倒计时(YYYY-MM-DD hh:mm:ss)
                      * 
                      */
                     void SetReservationTime(const std::string& _reservationTime);
@@ -97,19 +89,15 @@ namespace TencentCloud
                     bool ReservationTimeHasBeenSet() const;
 
                     /**
-                     * 获取域名注册时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RegTime 域名注册时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取域名注册时间(YYYY-MM-DD hh:mm:ss)
+                     * @return RegTime 域名注册时间(YYYY-MM-DD hh:mm:ss)
                      * 
                      */
                     std::string GetRegTime() const;
 
                     /**
-                     * 设置域名注册时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _regTime 域名注册时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置域名注册时间(YYYY-MM-DD hh:mm:ss)
+                     * @param _regTime 域名注册时间(YYYY-MM-DD hh:mm:ss)
                      * 
                      */
                     void SetRegTime(const std::string& _regTime);
@@ -122,19 +110,15 @@ namespace TencentCloud
                     bool RegTimeHasBeenSet() const;
 
                     /**
-                     * 获取域名删除时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DelTime 域名删除时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取域名删除时间(YYYY-MM-DD hh:mm:ss)
+                     * @return DelTime 域名删除时间(YYYY-MM-DD hh:mm:ss)
                      * 
                      */
                     std::string GetDelTime() const;
 
                     /**
-                     * 设置域名删除时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _delTime 域名删除时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置域名删除时间(YYYY-MM-DD hh:mm:ss)
+                     * @param _delTime 域名删除时间(YYYY-MM-DD hh:mm:ss)
                      * 
                      */
                     void SetDelTime(const std::string& _delTime);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前人数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurrentPeople 当前人数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCurrentPeople() const;
 
                     /**
                      * 设置当前人数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _currentPeople 当前人数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCurrentPeople(const int64_t& _currentPeople);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Price 当前价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetPrice() const;
 
                     /**
                      * 设置当前价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _price 当前价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrice(const double& _price);
@@ -198,18 +174,22 @@ namespace TencentCloud
 
                     /**
                      * 获取是否收藏
-注意：此字段可能返回 null，表示取不到有效值。
+true：收藏
+false：未收藏
                      * @return IsFollow 是否收藏
-注意：此字段可能返回 null，表示取不到有效值。
+true：收藏
+false：未收藏
                      * 
                      */
                     bool GetIsFollow() const;
 
                     /**
                      * 设置是否收藏
-注意：此字段可能返回 null，表示取不到有效值。
+true：收藏
+false：未收藏
                      * @param _isFollow 是否收藏
-注意：此字段可能返回 null，表示取不到有效值。
+true：收藏
+false：未收藏
                      * 
                      */
                     void SetIsFollow(const bool& _isFollow);
@@ -223,18 +203,22 @@ namespace TencentCloud
 
                     /**
                      * 获取是否已经预约
-注意：此字段可能返回 null，表示取不到有效值。
+true：预约
+false：未预约
                      * @return IsAppoint 是否已经预约
-注意：此字段可能返回 null，表示取不到有效值。
+true：预约
+false：未预约
                      * 
                      */
                     bool GetIsAppoint() const;
 
                     /**
                      * 设置是否已经预约
-注意：此字段可能返回 null，表示取不到有效值。
+true：预约
+false：未预约
                      * @param _isAppoint 是否已经预约
-注意：此字段可能返回 null，表示取不到有效值。
+true：预约
+false：未预约
                      * 
                      */
                     void SetIsAppoint(const bool& _isAppoint);
@@ -248,18 +232,14 @@ namespace TencentCloud
 
                     /**
                      * 获取业务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BusinessId 业务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBusinessId() const;
 
                     /**
                      * 设置业务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _businessId 业务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBusinessId(const std::string& _businessId);
@@ -273,18 +253,22 @@ namespace TencentCloud
 
                     /**
                      * 获取是否为原持有者
-注意：此字段可能返回 null，表示取不到有效值。
+true：是原持有人
+false：非原持有人
                      * @return IsDomainUser 是否为原持有者
-注意：此字段可能返回 null，表示取不到有效值。
+true：是原持有人
+false：非原持有人
                      * 
                      */
                     bool GetIsDomainUser() const;
 
                     /**
                      * 设置是否为原持有者
-注意：此字段可能返回 null，表示取不到有效值。
+true：是原持有人
+false：非原持有人
                      * @param _isDomainUser 是否为原持有者
-注意：此字段可能返回 null，表示取不到有效值。
+true：是原持有人
+false：非原持有人
                      * 
                      */
                     void SetIsDomainUser(const bool& _isDomainUser);
@@ -300,70 +284,66 @@ namespace TencentCloud
 
                     /**
                      * 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 预订倒计时
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 预订倒计时(YYYY-MM-DD hh:mm:ss)
                      */
                     std::string m_reservationTime;
                     bool m_reservationTimeHasBeenSet;
 
                     /**
-                     * 域名注册时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 域名注册时间(YYYY-MM-DD hh:mm:ss)
                      */
                     std::string m_regTime;
                     bool m_regTimeHasBeenSet;
 
                     /**
-                     * 域名删除时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 域名删除时间(YYYY-MM-DD hh:mm:ss)
                      */
                     std::string m_delTime;
                     bool m_delTimeHasBeenSet;
 
                     /**
                      * 当前人数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_currentPeople;
                     bool m_currentPeopleHasBeenSet;
 
                     /**
                      * 当前价格
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_price;
                     bool m_priceHasBeenSet;
 
                     /**
                      * 是否收藏
-注意：此字段可能返回 null，表示取不到有效值。
+true：收藏
+false：未收藏
                      */
                     bool m_isFollow;
                     bool m_isFollowHasBeenSet;
 
                     /**
                      * 是否已经预约
-注意：此字段可能返回 null，表示取不到有效值。
+true：预约
+false：未预约
                      */
                     bool m_isAppoint;
                     bool m_isAppointHasBeenSet;
 
                     /**
                      * 业务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_businessId;
                     bool m_businessIdHasBeenSet;
 
                     /**
                      * 是否为原持有者
-注意：此字段可能返回 null，表示取不到有效值。
+true：是原持有人
+false：非原持有人
                      */
                     bool m_isDomainUser;
                     bool m_isDomainUserHasBeenSet;

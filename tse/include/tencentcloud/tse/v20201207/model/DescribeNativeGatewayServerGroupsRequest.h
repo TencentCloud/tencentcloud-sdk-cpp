@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool GatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取翻页从第几个开始获取
-                     * @return Offset 翻页从第几个开始获取
+                     * 获取偏移量，默认为 0。
+                     * @return Offset 偏移量，默认为 0。
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置翻页从第几个开始获取
-                     * @param _offset 翻页从第几个开始获取
+                     * 设置偏移量，默认为 0。
+                     * @param _offset 偏移量，默认为 0。
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取翻页获取多少个
-                     * @return Limit 翻页获取多少个
+                     * 获取返回数量，默认为 20。
+                     * @return Limit 返回数量，默认为 20。
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置翻页获取多少个
-                     * @param _limit 翻页获取多少个
+                     * 设置返回数量，默认为 20。
+                     * @param _limit 返回数量，默认为 20。
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取过滤参数
-                     * @return Filters 过滤参数
+                     * 获取过滤参数，支持按照分组名称、分组ID（Name、GroupId）筛选
+                     * @return Filters 过滤参数，支持按照分组名称、分组ID（Name、GroupId）筛选
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤参数
-                     * @param _filters 过滤参数
+                     * 设置过滤参数，支持按照分组名称、分组ID（Name、GroupId）筛选
+                     * @param _filters 过滤参数，支持按照分组名称、分组ID（Name、GroupId）筛选
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -136,19 +136,19 @@ namespace TencentCloud
                     bool m_gatewayIdHasBeenSet;
 
                     /**
-                     * 翻页从第几个开始获取
+                     * 偏移量，默认为 0。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 翻页获取多少个
+                     * 返回数量，默认为 20。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 过滤参数
+                     * 过滤参数，支持按照分组名称、分组ID（Name、GroupId）筛选
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

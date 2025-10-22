@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,7 +73,9 @@ namespace TencentCloud
 
                     /**
                      * 获取竞价开始时间
+格式:YYYY-MM-DD HH:mm:ss
                      * @return BiddingStartTime 竞价开始时间
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetBiddingStartTime() const;
@@ -87,7 +89,9 @@ namespace TencentCloud
 
                     /**
                      * 获取竞价结束时间
+格式:YYYY-MM-DD HH:mm:ss
                      * @return BiddingEndTime 竞价结束时间
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetBiddingEndTime() const;
@@ -101,7 +105,9 @@ namespace TencentCloud
 
                     /**
                      * 获取 注册时间
+格式:YYYY-MM-DD HH:mm:ss
                      * @return RegTime  注册时间
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetRegTime() const;
@@ -115,7 +121,9 @@ namespace TencentCloud
 
                     /**
                      * 获取过期时间
+格式:YYYY-MM-DD HH:mm:ss
                      * @return ExpireTime 过期时间
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetExpireTime() const;
@@ -129,7 +137,9 @@ namespace TencentCloud
 
                     /**
                      * 获取删除时间
+格式:YYYY-MM-DD HH:mm:ss
                      * @return DeleteTime 删除时间
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetDeleteTime() const;
@@ -142,8 +152,8 @@ namespace TencentCloud
                     bool DeleteTimeHasBeenSet() const;
 
                     /**
-                     * 获取当前价格
-                     * @return CurrentPrice 当前价格
+                     * 获取当前价格 单位元
+                     * @return CurrentPrice 当前价格 单位元
                      * 
                      */
                     uint64_t GetCurrentPrice() const;
@@ -170,8 +180,8 @@ namespace TencentCloud
                     bool CurrentNicknameHasBeenSet() const;
 
                     /**
-                     * 获取竞价保证金
-                     * @return BiddingBondPrice 竞价保证金
+                     * 获取竞价保证金 单位元
+                     * @return BiddingBondPrice 竞价保证金 单位元
                      * 
                      */
                     uint64_t GetBiddingBondPrice() const;
@@ -226,8 +236,8 @@ namespace TencentCloud
                     bool BiddingBondRefundHasBeenSet() const;
 
                     /**
-                     * 获取我的出价
-                     * @return BiddingPrice 我的出价
+                     * 获取我的出价 单位元
+                     * @return BiddingPrice 我的出价 单位元
                      * 
                      */
                     uint64_t GetBiddingPrice() const;
@@ -255,36 +265,41 @@ namespace TencentCloud
 
                     /**
                      * 竞价开始时间
+格式:YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_biddingStartTime;
                     bool m_biddingStartTimeHasBeenSet;
 
                     /**
                      * 竞价结束时间
+格式:YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_biddingEndTime;
                     bool m_biddingEndTimeHasBeenSet;
 
                     /**
                      *  注册时间
+格式:YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_regTime;
                     bool m_regTimeHasBeenSet;
 
                     /**
                      * 过期时间
+格式:YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
                      * 删除时间
+格式:YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_deleteTime;
                     bool m_deleteTimeHasBeenSet;
 
                     /**
-                     * 当前价格
+                     * 当前价格 单位元
                      */
                     uint64_t m_currentPrice;
                     bool m_currentPriceHasBeenSet;
@@ -296,7 +311,7 @@ namespace TencentCloud
                     bool m_currentNicknameHasBeenSet;
 
                     /**
-                     * 竞价保证金
+                     * 竞价保证金 单位元
                      */
                     uint64_t m_biddingBondPrice;
                     bool m_biddingBondPriceHasBeenSet;
@@ -320,7 +335,7 @@ namespace TencentCloud
                     bool m_biddingBondRefundHasBeenSet;
 
                     /**
-                     * 我的出价
+                     * 我的出价 单位元
                      */
                     uint64_t m_biddingPrice;
                     bool m_biddingPriceHasBeenSet;

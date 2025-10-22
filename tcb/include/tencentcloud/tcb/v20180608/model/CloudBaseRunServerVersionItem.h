@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -117,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -142,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdatedTime() const;
 
                     /**
                      * 设置更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updatedTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdatedTime(const std::string& _updatedTime);
@@ -167,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取构建ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BuildId 构建ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBuildId() const;
 
                     /**
                      * 设置构建ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _buildId 构建ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBuildId(const int64_t& _buildId);
@@ -192,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取构建方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UploadType 构建方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUploadType() const;
 
                     /**
                      * 设置构建方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uploadType 构建方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUploadType(const std::string& _uploadType);
@@ -217,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -242,18 +218,14 @@ namespace TencentCloud
 
                     /**
                      * 获取url中的参数路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UrlParam url中的参数路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ObjectKV GetUrlParam() const;
 
                     /**
                      * 设置url中的参数路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _urlParam url中的参数路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUrlParam(const ObjectKV& _urlParam);
@@ -267,18 +239,14 @@ namespace TencentCloud
 
                     /**
                      * 获取优先级（数值越小，优先级越高）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Priority 优先级（数值越小，优先级越高）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPriority() const;
 
                     /**
                      * 设置优先级（数值越小，优先级越高）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _priority 优先级（数值越小，优先级越高）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPriority(const int64_t& _priority);
@@ -292,18 +260,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否是默认兜底版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsDefaultPriority 是否是默认兜底版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsDefaultPriority() const;
 
                     /**
                      * 设置是否是默认兜底版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isDefaultPriority 是否是默认兜底版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsDefaultPriority(const bool& _isDefaultPriority);
@@ -342,18 +306,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最小副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MinReplicas 最小副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMinReplicas() const;
 
                     /**
                      * 设置最小副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _minReplicas 最小副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMinReplicas(const int64_t& _minReplicas);
@@ -367,18 +327,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最大副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxReplicas 最大副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxReplicas() const;
 
                     /**
                      * 设置最大副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxReplicas 最大副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxReplicas(const int64_t& _maxReplicas);
@@ -392,18 +348,14 @@ namespace TencentCloud
 
                     /**
                      * 获取操作记录id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RunId 操作记录id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRunId() const;
 
                     /**
                      * 设置操作记录id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _runId 操作记录id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRunId(const std::string& _runId);
@@ -417,18 +369,14 @@ namespace TencentCloud
 
                     /**
                      * 获取进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Percent 进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPercent() const;
 
                     /**
                      * 设置进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _percent 进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPercent(const int64_t& _percent);
@@ -442,18 +390,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurrentReplicas 当前副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCurrentReplicas() const;
 
                     /**
                      * 设置当前副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _currentReplicas 当前副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCurrentReplicas(const int64_t& _currentReplicas);
@@ -467,18 +411,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Monolithic，Microservice
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Architecture Monolithic，Microservice
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetArchitecture() const;
 
                     /**
                      * 设置Monolithic，Microservice
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _architecture Monolithic，Microservice
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetArchitecture(const std::string& _architecture);
@@ -500,7 +440,6 @@ namespace TencentCloud
 
                     /**
                      * 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
@@ -513,56 +452,48 @@ namespace TencentCloud
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
                      * 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updatedTime;
                     bool m_updatedTimeHasBeenSet;
 
                     /**
                      * 构建ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_buildId;
                     bool m_buildIdHasBeenSet;
 
                     /**
                      * 构建方式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uploadType;
                     bool m_uploadTypeHasBeenSet;
 
                     /**
                      * 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
                      * url中的参数路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ObjectKV m_urlParam;
                     bool m_urlParamHasBeenSet;
 
                     /**
                      * 优先级（数值越小，优先级越高）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_priority;
                     bool m_priorityHasBeenSet;
 
                     /**
                      * 是否是默认兜底版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isDefaultPriority;
                     bool m_isDefaultPriorityHasBeenSet;
@@ -576,42 +507,36 @@ namespace TencentCloud
 
                     /**
                      * 最小副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_minReplicas;
                     bool m_minReplicasHasBeenSet;
 
                     /**
                      * 最大副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxReplicas;
                     bool m_maxReplicasHasBeenSet;
 
                     /**
                      * 操作记录id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_runId;
                     bool m_runIdHasBeenSet;
 
                     /**
                      * 进度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_percent;
                     bool m_percentHasBeenSet;
 
                     /**
                      * 当前副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_currentReplicas;
                     bool m_currentReplicasHasBeenSet;
 
                     /**
                      * Monolithic，Microservice
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_architecture;
                     bool m_architectureHasBeenSet;

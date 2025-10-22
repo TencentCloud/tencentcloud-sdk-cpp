@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取生效周期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EffectivePeriod 生效周期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEffectivePeriod() const;
 
                     /**
                      * 设置生效周期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _effectivePeriod 生效周期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEffectivePeriod(const std::string& _effectivePeriod);
@@ -76,16 +72,18 @@ namespace TencentCloud
 Day-天
 Week-周
 Month-月
+Quarter-季度
+Year-年
 Once-单次
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScheduleType 调度类型，不传该参数时为立即执行：
 Day-天
 Week-周
 Month-月
+Quarter-季度
+Year-年
 Once-单次
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScheduleType() const;
@@ -95,16 +93,18 @@ Once-单次
 Day-天
 Week-周
 Month-月
+Quarter-季度
+Year-年
 Once-单次
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scheduleType 调度类型，不传该参数时为立即执行：
 Day-天
 Week-周
 Month-月
+Quarter-季度
+Year-年
 Once-单次
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScheduleType(const std::string& _scheduleType);
@@ -119,10 +119,8 @@ Once-单次
                     /**
                      * 获取执行调度的日期。调度类型为周和月时以英文逗号分隔；
 调度类型为单次时，该值是个日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScheduleData 执行调度的日期。调度类型为周和月时以英文逗号分隔；
 调度类型为单次时，该值是个日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScheduleData() const;
@@ -130,10 +128,8 @@ Once-单次
                     /**
                      * 设置执行调度的日期。调度类型为周和月时以英文逗号分隔；
 调度类型为单次时，该值是个日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scheduleData 执行调度的日期。调度类型为周和月时以英文逗号分隔；
 调度类型为单次时，该值是个日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScheduleData(const std::string& _scheduleData);
@@ -147,18 +143,14 @@ Once-单次
 
                     /**
                      * 获取执行时间：时
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScheduleHour 执行时间：时
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScheduleHour() const;
 
                     /**
                      * 设置执行时间：时
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scheduleHour 执行时间：时
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScheduleHour(const int64_t& _scheduleHour);
@@ -172,18 +164,14 @@ Once-单次
 
                     /**
                      * 获取执行时间：分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScheduleMin 执行时间：分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScheduleMin() const;
 
                     /**
                      * 设置执行时间：分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scheduleMin 执行时间：分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScheduleMin(const int64_t& _scheduleMin);
@@ -200,12 +188,10 @@ Once-单次
 All-全量
 Database-按库
 Table-按表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupScope 备份粒度：
 All-全量
 Database-按库
 Table-按表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBackupScope() const;
@@ -215,12 +201,10 @@ Table-按表
 All-全量
 Database-按库
 Table-按表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _backupScope 备份粒度：
 All-全量
 Database-按库
 Table-按表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBackupScope(const std::string& _backupScope);
@@ -234,18 +218,14 @@ Table-按表
 
                     /**
                      * 获取备份库：如果是按库备份，则需要该字段，库之间用英文逗号分割
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupDatabase 备份库：如果是按库备份，则需要该字段，库之间用英文逗号分割
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBackupDatabase() const;
 
                     /**
                      * 设置备份库：如果是按库备份，则需要该字段，库之间用英文逗号分割
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _backupDatabase 备份库：如果是按库备份，则需要该字段，库之间用英文逗号分割
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBackupDatabase(const std::string& _backupDatabase);
@@ -261,7 +241,6 @@ Table-按表
 
                     /**
                      * 生效周期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_effectivePeriod;
                     bool m_effectivePeriodHasBeenSet;
@@ -271,9 +250,10 @@ Table-按表
 Day-天
 Week-周
 Month-月
+Quarter-季度
+Year-年
 Once-单次
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scheduleType;
                     bool m_scheduleTypeHasBeenSet;
@@ -281,21 +261,18 @@ Once-单次
                     /**
                      * 执行调度的日期。调度类型为周和月时以英文逗号分隔；
 调度类型为单次时，该值是个日期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scheduleData;
                     bool m_scheduleDataHasBeenSet;
 
                     /**
                      * 执行时间：时
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_scheduleHour;
                     bool m_scheduleHourHasBeenSet;
 
                     /**
                      * 执行时间：分
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_scheduleMin;
                     bool m_scheduleMinHasBeenSet;
@@ -305,14 +282,12 @@ Once-单次
 All-全量
 Database-按库
 Table-按表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_backupScope;
                     bool m_backupScopeHasBeenSet;
 
                     /**
                      * 备份库：如果是按库备份，则需要该字段，库之间用英文逗号分割
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_backupDatabase;
                     bool m_backupDatabaseHasBeenSet;

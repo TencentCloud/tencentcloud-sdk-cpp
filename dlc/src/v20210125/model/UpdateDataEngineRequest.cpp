@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,8 @@ UpdateDataEngineRequest::UpdateDataEngineRequest() :
     m_autoSuspendTimeHasBeenSet(false),
     m_elasticSwitchHasBeenSet(false),
     m_elasticLimitHasBeenSet(false),
-    m_sessionResourceTemplateHasBeenSet(false)
+    m_sessionResourceTemplateHasBeenSet(false),
+    m_scheduleElasticityConfHasBeenSet(false)
 {
 }
 
@@ -168,6 +169,15 @@ string UpdateDataEngineRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_sessionResourceTemplate.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_scheduleElasticityConfHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleElasticityConf";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_scheduleElasticityConf.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -416,6 +426,22 @@ void UpdateDataEngineRequest::SetSessionResourceTemplate(const SessionResourceTe
 bool UpdateDataEngineRequest::SessionResourceTemplateHasBeenSet() const
 {
     return m_sessionResourceTemplateHasBeenSet;
+}
+
+ScheduleElasticityConf UpdateDataEngineRequest::GetScheduleElasticityConf() const
+{
+    return m_scheduleElasticityConf;
+}
+
+void UpdateDataEngineRequest::SetScheduleElasticityConf(const ScheduleElasticityConf& _scheduleElasticityConf)
+{
+    m_scheduleElasticityConf = _scheduleElasticityConf;
+    m_scheduleElasticityConfHasBeenSet = true;
+}
+
+bool UpdateDataEngineRequest::ScheduleElasticityConfHasBeenSet() const
+{
+    return m_scheduleElasticityConfHasBeenSet;
 }
 
 

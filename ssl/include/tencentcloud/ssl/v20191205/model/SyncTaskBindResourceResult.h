@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联云资源结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BindResourceResult 关联云资源结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BindResourceResult> GetBindResourceResult() const;
 
                     /**
                      * 设置关联云资源结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bindResourceResult 关联云资源结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBindResourceResult(const std::vector<BindResourceResult>& _bindResourceResult);
@@ -171,7 +167,6 @@ namespace TencentCloud
 
                     /**
                      * 关联云资源结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BindResourceResult> m_bindResourceResult;
                     bool m_bindResourceResultHasBeenSet;

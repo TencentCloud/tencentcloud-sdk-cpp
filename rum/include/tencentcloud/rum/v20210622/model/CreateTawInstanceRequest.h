@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -295,6 +295,48 @@ namespace TencentCloud
                      */
                     bool InstanceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取自动续费类型
+                     * @return AutoRenewalType 自动续费类型
+                     * 
+                     */
+                    int64_t GetAutoRenewalType() const;
+
+                    /**
+                     * 设置自动续费类型
+                     * @param _autoRenewalType 自动续费类型
+                     * 
+                     */
+                    void SetAutoRenewalType(const int64_t& _autoRenewalType);
+
+                    /**
+                     * 判断参数 AutoRenewalType 是否已赋值
+                     * @return AutoRenewalType 是否已赋值
+                     * 
+                     */
+                    bool AutoRenewalTypeHasBeenSet() const;
+
+                    /**
+                     * 获取自动续费阈值
+                     * @return AutoRenewalThreshold 自动续费阈值
+                     * 
+                     */
+                    int64_t GetAutoRenewalThreshold() const;
+
+                    /**
+                     * 设置自动续费阈值
+                     * @param _autoRenewalThreshold 自动续费阈值
+                     * 
+                     */
+                    void SetAutoRenewalThreshold(const int64_t& _autoRenewalThreshold);
+
+                    /**
+                     * 判断参数 AutoRenewalThreshold 是否已赋值
+                     * @return AutoRenewalThreshold 是否已赋值
+                     * 
+                     */
+                    bool AutoRenewalThresholdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -368,6 +410,18 @@ namespace TencentCloud
                      */
                     int64_t m_instanceType;
                     bool m_instanceTypeHasBeenSet;
+
+                    /**
+                     * 自动续费类型
+                     */
+                    int64_t m_autoRenewalType;
+                    bool m_autoRenewalTypeHasBeenSet;
+
+                    /**
+                     * 自动续费阈值
+                     */
+                    int64_t m_autoRenewalThreshold;
+                    bool m_autoRenewalThresholdHasBeenSet;
 
                 };
             }

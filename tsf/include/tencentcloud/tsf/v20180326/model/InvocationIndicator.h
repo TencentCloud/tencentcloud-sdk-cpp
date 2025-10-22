@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -124,18 +124,14 @@ namespace TencentCloud
 
                     /**
                      * 获取成功请求数时间分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InvocationSuccessDistribution 成功请求数时间分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<IndicatorCoord> GetInvocationSuccessDistribution() const;
 
                     /**
                      * 设置成功请求数时间分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _invocationSuccessDistribution 成功请求数时间分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInvocationSuccessDistribution(const std::vector<IndicatorCoord>& _invocationSuccessDistribution);
@@ -149,18 +145,14 @@ namespace TencentCloud
 
                     /**
                      * 获取失败请求数时间分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InvocationFailedDistribution 失败请求数时间分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<IndicatorCoord> GetInvocationFailedDistribution() const;
 
                     /**
                      * 设置失败请求数时间分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _invocationFailedDistribution 失败请求数时间分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInvocationFailedDistribution(const std::vector<IndicatorCoord>& _invocationFailedDistribution);
@@ -174,18 +166,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态码分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InvocationStatusDistribution 状态码分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<IndicatorCoord> GetInvocationStatusDistribution() const;
 
                     /**
                      * 设置状态码分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _invocationStatusDistribution 状态码分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInvocationStatusDistribution(const std::vector<IndicatorCoord>& _invocationStatusDistribution);
@@ -199,18 +187,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时延分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InvocationDurationDistribution 时延分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<IndicatorCoord> GetInvocationDurationDistribution() const;
 
                     /**
                      * 设置时延分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _invocationDurationDistribution 时延分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInvocationDurationDistribution(const std::vector<IndicatorCoord>& _invocationDurationDistribution);
@@ -224,18 +208,14 @@ namespace TencentCloud
 
                     /**
                      * 获取并发请求次数时间分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InvocationQuantityDistribution 并发请求次数时间分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<IndicatorCoord> GetInvocationQuantityDistribution() const;
 
                     /**
                      * 设置并发请求次数时间分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _invocationQuantityDistribution 并发请求次数时间分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInvocationQuantityDistribution(const std::vector<IndicatorCoord>& _invocationQuantityDistribution);
@@ -272,35 +252,30 @@ namespace TencentCloud
 
                     /**
                      * 成功请求数时间分布
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<IndicatorCoord> m_invocationSuccessDistribution;
                     bool m_invocationSuccessDistributionHasBeenSet;
 
                     /**
                      * 失败请求数时间分布
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<IndicatorCoord> m_invocationFailedDistribution;
                     bool m_invocationFailedDistributionHasBeenSet;
 
                     /**
                      * 状态码分布
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<IndicatorCoord> m_invocationStatusDistribution;
                     bool m_invocationStatusDistributionHasBeenSet;
 
                     /**
                      * 时延分布
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<IndicatorCoord> m_invocationDurationDistribution;
                     bool m_invocationDurationDistributionHasBeenSet;
 
                     /**
                      * 并发请求次数时间分布
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<IndicatorCoord> m_invocationQuantityDistribution;
                     bool m_invocationQuantityDistributionHasBeenSet;

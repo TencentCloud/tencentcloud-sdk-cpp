@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,9 @@ DescribeInstanceStateResponse::DescribeInstanceStateResponse() :
     m_flowNameHasBeenSet(false),
     m_flowProgressHasBeenSet(false),
     m_instanceStateDescHasBeenSet(false),
-    m_flowMsgHasBeenSet(false)
+    m_flowMsgHasBeenSet(false),
+    m_processIdHasBeenSet(false),
+    m_jobNameHasBeenSet(false)
 {
 }
 
@@ -127,6 +129,26 @@ CoreInternalOutcome DescribeInstanceStateResponse::Deserialize(const string &pay
         m_flowMsgHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ProcessId") && !rsp["ProcessId"].IsNull())
+    {
+        if (!rsp["ProcessId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProcessId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_processId = string(rsp["ProcessId"].GetString());
+        m_processIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("JobName") && !rsp["JobName"].IsNull())
+    {
+        if (!rsp["JobName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_jobName = string(rsp["JobName"].GetString());
+        m_jobNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -185,11 +207,27 @@ string DescribeInstanceStateResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_flowMsg.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_processIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_processId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_jobName.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -255,6 +293,26 @@ string DescribeInstanceStateResponse::GetFlowMsg() const
 bool DescribeInstanceStateResponse::FlowMsgHasBeenSet() const
 {
     return m_flowMsgHasBeenSet;
+}
+
+string DescribeInstanceStateResponse::GetProcessId() const
+{
+    return m_processId;
+}
+
+bool DescribeInstanceStateResponse::ProcessIdHasBeenSet() const
+{
+    return m_processIdHasBeenSet;
+}
+
+string DescribeInstanceStateResponse::GetJobName() const
+{
+    return m_jobName;
+}
+
+bool DescribeInstanceStateResponse::JobNameHasBeenSet() const
+{
+    return m_jobNameHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规则ID
-                     * @return Id 规则ID
+                     * 获取策略规则ID
+                     * @return Id 策略规则ID
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置规则ID
-                     * @param _id 规则ID
+                     * 设置策略规则ID
+                     * @param _id 策略规则ID
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取集群ID
-                     * @return InstanceId 集群ID
+                     * 获取MQTT集群ID
+                     * @return InstanceId MQTT集群ID
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _instanceId 集群ID
+                     * 设置MQTT集群ID
+                     * @param _instanceId MQTT集群ID
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -89,19 +89,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取规则名
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PolicyName 规则名
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取策略规则名
+                     * @return PolicyName 策略规则名
                      * 
                      */
                     std::string GetPolicyName() const;
 
                     /**
-                     * 设置规则名
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _policyName 规则名
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置策略规则名
+                     * @param _policyName 策略规则名
                      * 
                      */
                     void SetPolicyName(const std::string& _policyName);
@@ -114,19 +110,15 @@ namespace TencentCloud
                     bool PolicyNameHasBeenSet() const;
 
                     /**
-                     * 获取规则语法版本
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Version 规则语法版本
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取规则语法版本，当前仅支持1，默认为1
+                     * @return Version 规则语法版本，当前仅支持1，默认为1
                      * 
                      */
                     int64_t GetVersion() const;
 
                     /**
-                     * 设置规则语法版本
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _version 规则语法版本
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置规则语法版本，当前仅支持1，默认为1
+                     * @param _version 规则语法版本，当前仅支持1，默认为1
                      * 
                      */
                     void SetVersion(const int64_t& _version);
@@ -139,19 +131,15 @@ namespace TencentCloud
                     bool VersionHasBeenSet() const;
 
                     /**
-                     * 获取越小越优先
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Priority 越小越优先
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取策略优先级，优先级ID越小表示策略越优先检查生效。可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
+                     * @return Priority 策略优先级，优先级ID越小表示策略越优先检查生效。可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      * 
                      */
                     int64_t GetPriority() const;
 
                     /**
-                     * 设置越小越优先
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _priority 越小越优先
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置策略优先级，优先级ID越小表示策略越优先检查生效。可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
+                     * @param _priority 策略优先级，优先级ID越小表示策略越优先检查生效。可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      * 
                      */
                     void SetPriority(const int64_t& _priority);
@@ -164,19 +152,27 @@ namespace TencentCloud
                     bool PriorityHasBeenSet() const;
 
                     /**
-                     * 获取allow/deny
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Effect allow/deny
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取决策
+allow：允许符合该策略的设备的访问请求。
+deny：拒绝覆盖该策略的设备的访问请求。
+可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
+                     * @return Effect 决策
+allow：允许符合该策略的设备的访问请求。
+deny：拒绝覆盖该策略的设备的访问请求。
+可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      * 
                      */
                     std::string GetEffect() const;
 
                     /**
-                     * 设置allow/deny
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _effect allow/deny
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置决策
+allow：允许符合该策略的设备的访问请求。
+deny：拒绝覆盖该策略的设备的访问请求。
+可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
+                     * @param _effect 决策
+allow：允许符合该策略的设备的访问请求。
+deny：拒绝覆盖该策略的设备的访问请求。
+可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      * 
                      */
                     void SetEffect(const std::string& _effect);
@@ -189,19 +185,31 @@ namespace TencentCloud
                     bool EffectHasBeenSet() const;
 
                     /**
-                     * 获取connect、pub、sub
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Actions connect、pub、sub
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取操作
+connect：连接
+pub：发布mqtt消息
+sub：订阅mqtt消息
+可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
+                     * @return Actions 操作
+connect：连接
+pub：发布mqtt消息
+sub：订阅mqtt消息
+可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      * 
                      */
                     std::string GetActions() const;
 
                     /**
-                     * 设置connect、pub、sub
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _actions connect、pub、sub
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置操作
+connect：连接
+pub：发布mqtt消息
+sub：订阅mqtt消息
+可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
+                     * @param _actions 操作
+connect：连接
+pub：发布mqtt消息
+sub：订阅mqtt消息
+可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      * 
                      */
                     void SetActions(const std::string& _actions);
@@ -214,19 +222,15 @@ namespace TencentCloud
                     bool ActionsHasBeenSet() const;
 
                     /**
-                     * 获取资源
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Resources 资源
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取资源，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
+                     * @return Resources 资源，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      * 
                      */
                     std::string GetResources() const;
 
                     /**
-                     * 设置资源
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _resources 资源
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置资源，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
+                     * @param _resources 资源，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      * 
                      */
                     void SetResources(const std::string& _resources);
@@ -239,19 +243,15 @@ namespace TencentCloud
                     bool ResourcesHasBeenSet() const;
 
                     /**
-                     * 获取client
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClientId client
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取条件-连接设备ID，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
+                     * @return ClientId 条件-连接设备ID，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      * 
                      */
                     std::string GetClientId() const;
 
                     /**
-                     * 设置client
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _clientId client
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置条件-连接设备ID，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
+                     * @param _clientId 条件-连接设备ID，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      * 
                      */
                     void SetClientId(const std::string& _clientId);
@@ -264,19 +264,15 @@ namespace TencentCloud
                     bool ClientIdHasBeenSet() const;
 
                     /**
-                     * 获取用户
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Username 用户
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取条件-用户名，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
+                     * @return Username 条件-用户名，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      * 
                      */
                     std::string GetUsername() const;
 
                     /**
-                     * 设置用户
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _username 用户
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置条件-用户名，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
+                     * @param _username 条件-用户名，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      * 
                      */
                     void SetUsername(const std::string& _username);
@@ -289,19 +285,15 @@ namespace TencentCloud
                     bool UsernameHasBeenSet() const;
 
                     /**
-                     * 获取IP地址
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Ip IP地址
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取条件-客户端IP地址，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
+                     * @return Ip 条件-客户端IP地址，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置IP地址
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ip IP地址
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置条件-客户端IP地址，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
+                     * @param _ip 条件-客户端IP地址，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -314,19 +306,15 @@ namespace TencentCloud
                     bool IpHasBeenSet() const;
 
                     /**
-                     * 获取0，1，2
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Qos 0，1，2
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取条件-服务质量，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
+                     * @return Qos 条件-服务质量，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      * 
                      */
                     std::string GetQos() const;
 
                     /**
-                     * 设置0，1，2
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _qos 0，1，2
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置条件-服务质量，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
+                     * @param _qos 条件-服务质量，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      * 
                      */
                     void SetQos(const std::string& _qos);
@@ -339,27 +327,27 @@ namespace TencentCloud
                     bool QosHasBeenSet() const;
 
                     /**
-                     * 获取1：表示匹配retain消息
+                     * 获取条件-保留消息，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
+1：表示匹配retain消息
 2：表示匹配非retain消息
 3：表示匹配retain和非retain消息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Retain 1：表示匹配retain消息
+                     * @return Retain 条件-保留消息，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
+1：表示匹配retain消息
 2：表示匹配非retain消息
 3：表示匹配retain和非retain消息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRetain() const;
 
                     /**
-                     * 设置1：表示匹配retain消息
+                     * 设置条件-保留消息，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
+1：表示匹配retain消息
 2：表示匹配非retain消息
 3：表示匹配retain和非retain消息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _retain 1：表示匹配retain消息
+                     * @param _retain 条件-保留消息，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
+1：表示匹配retain消息
 2：表示匹配非retain消息
 3：表示匹配retain和非retain消息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRetain(const int64_t& _retain);
@@ -372,19 +360,15 @@ namespace TencentCloud
                     bool RetainHasBeenSet() const;
 
                     /**
-                     * 获取描述
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Remark 描述
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取备注，长度不超过128个字符。
+                     * @return Remark 备注，长度不超过128个字符。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置描述
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _remark 描述
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置备注，长度不超过128个字符。
+                     * @param _remark 备注，长度不超过128个字符。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -397,15 +381,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取1713164969433
-                     * @return CreatedTime 1713164969433
+                     * 获取创建时间。毫秒级时间戳 。
+                     * @return CreatedTime 创建时间。毫秒级时间戳 。
                      * 
                      */
                     int64_t GetCreatedTime() const;
 
                     /**
-                     * 设置1713164969433
-                     * @param _createdTime 1713164969433
+                     * 设置创建时间。毫秒级时间戳 。
+                     * @param _createdTime 创建时间。毫秒级时间戳 。
                      * 
                      */
                     void SetCreatedTime(const int64_t& _createdTime);
@@ -418,15 +402,15 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取1713164969433
-                     * @return UpdateTime 1713164969433
+                     * 获取更新时间。毫秒级时间戳 。
+                     * @return UpdateTime 更新时间。毫秒级时间戳 。
                      * 
                      */
                     int64_t GetUpdateTime() const;
 
                     /**
-                     * 设置1713164969433
-                     * @param _updateTime 1713164969433
+                     * 设置更新时间。毫秒级时间戳 。
+                     * @param _updateTime 更新时间。毫秒级时间戳 。
                      * 
                      */
                     void SetUpdateTime(const int64_t& _updateTime);
@@ -441,111 +425,107 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 规则ID
+                     * 策略规则ID
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 集群ID
+                     * MQTT集群ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 规则名
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 策略规则名
                      */
                     std::string m_policyName;
                     bool m_policyNameHasBeenSet;
 
                     /**
-                     * 规则语法版本
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 规则语法版本，当前仅支持1，默认为1
                      */
                     int64_t m_version;
                     bool m_versionHasBeenSet;
 
                     /**
-                     * 越小越优先
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 策略优先级，优先级ID越小表示策略越优先检查生效。可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      */
                     int64_t m_priority;
                     bool m_priorityHasBeenSet;
 
                     /**
-                     * allow/deny
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 决策
+allow：允许符合该策略的设备的访问请求。
+deny：拒绝覆盖该策略的设备的访问请求。
+可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      */
                     std::string m_effect;
                     bool m_effectHasBeenSet;
 
                     /**
-                     * connect、pub、sub
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 操作
+connect：连接
+pub：发布mqtt消息
+sub：订阅mqtt消息
+可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      */
                     std::string m_actions;
                     bool m_actionsHasBeenSet;
 
                     /**
-                     * 资源
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 资源，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      */
                     std::string m_resources;
                     bool m_resourcesHasBeenSet;
 
                     /**
-                     * client
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 条件-连接设备ID，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      */
                     std::string m_clientId;
                     bool m_clientIdHasBeenSet;
 
                     /**
-                     * 用户
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 条件-用户名，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      */
                     std::string m_username;
                     bool m_usernameHasBeenSet;
 
                     /**
-                     * IP地址
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 条件-客户端IP地址，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
-                     * 0，1，2
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 条件-服务质量，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
                      */
                     std::string m_qos;
                     bool m_qosHasBeenSet;
 
                     /**
-                     * 1：表示匹配retain消息
+                     * 条件-保留消息，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
+1：表示匹配retain消息
 2：表示匹配非retain消息
 3：表示匹配retain和非retain消息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_retain;
                     bool m_retainHasBeenSet;
 
                     /**
-                     * 描述
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 备注，长度不超过128个字符。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 1713164969433
+                     * 创建时间。毫秒级时间戳 。
                      */
                     int64_t m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 1713164969433
+                     * 更新时间。毫秒级时间戳 。
                      */
                     int64_t m_updateTime;
                     bool m_updateTimeHasBeenSet;

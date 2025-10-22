@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取复制组ID
-                     * @return GroupId 复制组ID
+                     * 获取复制组 ID。例如：crs-rpl-m3zt****。请登录[Redis 控制台](https://console.cloud.tencent.com/redis/replication)的全球复制组列表获取复制组 ID。
+
+                     * @return GroupId 复制组 ID。例如：crs-rpl-m3zt****。请登录[Redis 控制台](https://console.cloud.tencent.com/redis/replication)的全球复制组列表获取复制组 ID。
+
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置复制组ID
-                     * @param _groupId 复制组ID
+                     * 设置复制组 ID。例如：crs-rpl-m3zt****。请登录[Redis 控制台](https://console.cloud.tencent.com/redis/replication)的全球复制组列表获取复制组 ID。
+
+                     * @param _groupId 复制组 ID。例如：crs-rpl-m3zt****。请登录[Redis 控制台](https://console.cloud.tencent.com/redis/replication)的全球复制组列表获取复制组 ID。
+
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -64,15 +68,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
+                     * @return InstanceId 指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
+                     * @param _instanceId 指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -85,15 +89,23 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取数据同步类型，true:需要数据强同步,false:不需要强同步，仅限删除主实例
-                     * @return SyncType 数据同步类型，true:需要数据强同步,false:不需要强同步，仅限删除主实例
+                     * 获取数据同步类型。
+- true：需数据强同步。
+- false：无需强同步，仅限删除主实例。
+                     * @return SyncType 数据同步类型。
+- true：需数据强同步。
+- false：无需强同步，仅限删除主实例。
                      * 
                      */
                     bool GetSyncType() const;
 
                     /**
-                     * 设置数据同步类型，true:需要数据强同步,false:不需要强同步，仅限删除主实例
-                     * @param _syncType 数据同步类型，true:需要数据强同步,false:不需要强同步，仅限删除主实例
+                     * 设置数据同步类型。
+- true：需数据强同步。
+- false：无需强同步，仅限删除主实例。
+                     * @param _syncType 数据同步类型。
+- true：需数据强同步。
+- false：无需强同步，仅限删除主实例。
                      * 
                      */
                     void SetSyncType(const bool& _syncType);
@@ -108,19 +120,22 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 复制组ID
+                     * 复制组 ID。例如：crs-rpl-m3zt****。请登录[Redis 控制台](https://console.cloud.tencent.com/redis/replication)的全球复制组列表获取复制组 ID。
+
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * 指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 数据同步类型，true:需要数据强同步,false:不需要强同步，仅限删除主实例
+                     * 数据同步类型。
+- true：需数据强同步。
+- false：无需强同步，仅限删除主实例。
                      */
                     bool m_syncType;
                     bool m_syncTypeHasBeenSet;

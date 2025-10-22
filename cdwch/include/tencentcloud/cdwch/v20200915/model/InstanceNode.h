@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -217,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取VPC IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rip VPC IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRip() const;
 
                     /**
                      * 设置VPC IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rip VPC IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRip(const std::string& _rip);
@@ -242,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ture的时候表示该节点上部署了chproxy进程
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsCHProxy ture的时候表示该节点上部署了chproxy进程
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsCHProxy() const;
 
                     /**
                      * 设置ture的时候表示该节点上部署了chproxy进程
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isCHProxy ture的时候表示该节点上部署了chproxy进程
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsCHProxy(const bool& _isCHProxy);
@@ -264,6 +256,111 @@ namespace TencentCloud
                      * 
                      */
                     bool IsCHProxyHasBeenSet() const;
+
+                    /**
+                     * 获取节点状态
+                     * @return Status 节点状态
+                     * 
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置节点状态
+                     * @param _status 节点状态
+                     * 
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取节点uuid
+                     * @return UUID 节点uuid
+                     * 
+                     */
+                    std::string GetUUID() const;
+
+                    /**
+                     * 设置节点uuid
+                     * @param _uUID 节点uuid
+                     * 
+                     */
+                    void SetUUID(const std::string& _uUID);
+
+                    /**
+                     * 判断参数 UUID 是否已赋值
+                     * @return UUID 是否已赋值
+                     * 
+                     */
+                    bool UUIDHasBeenSet() const;
+
+                    /**
+                     * 获取区
+                     * @return Zone 区
+                     * 
+                     */
+                    std::string GetZone() const;
+
+                    /**
+                     * 设置区
+                     * @param _zone 区
+                     * 
+                     */
+                    void SetZone(const std::string& _zone);
+
+                    /**
+                     * 判断参数 Zone 是否已赋值
+                     * @return Zone 是否已赋值
+                     * 
+                     */
+                    bool ZoneHasBeenSet() const;
+
+                    /**
+                     * 获取区描述
+                     * @return ZoneDesc 区描述
+                     * 
+                     */
+                    std::string GetZoneDesc() const;
+
+                    /**
+                     * 设置区描述
+                     * @param _zoneDesc 区描述
+                     * 
+                     */
+                    void SetZoneDesc(const std::string& _zoneDesc);
+
+                    /**
+                     * 判断参数 ZoneDesc 是否已赋值
+                     * @return ZoneDesc 是否已赋值
+                     * 
+                     */
+                    bool ZoneDescHasBeenSet() const;
+
+                    /**
+                     * 获取真实资源id
+                     * @return RealResourceId 真实资源id
+                     * 
+                     */
+                    std::string GetRealResourceId() const;
+
+                    /**
+                     * 设置真实资源id
+                     * @param _realResourceId 真实资源id
+                     * 
+                     */
+                    void SetRealResourceId(const std::string& _realResourceId);
+
+                    /**
+                     * 判断参数 RealResourceId 是否已赋值
+                     * @return RealResourceId 是否已赋值
+                     * 
+                     */
+                    bool RealResourceIdHasBeenSet() const;
 
                 private:
 
@@ -317,17 +414,45 @@ namespace TencentCloud
 
                     /**
                      * VPC IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_rip;
                     bool m_ripHasBeenSet;
 
                     /**
                      * ture的时候表示该节点上部署了chproxy进程
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isCHProxy;
                     bool m_isCHProxyHasBeenSet;
+
+                    /**
+                     * 节点状态
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 节点uuid
+                     */
+                    std::string m_uUID;
+                    bool m_uUIDHasBeenSet;
+
+                    /**
+                     * 区
+                     */
+                    std::string m_zone;
+                    bool m_zoneHasBeenSet;
+
+                    /**
+                     * 区描述
+                     */
+                    std::string m_zoneDesc;
+                    bool m_zoneDescHasBeenSet;
+
+                    /**
+                     * 真实资源id
+                     */
+                    std::string m_realResourceId;
+                    bool m_realResourceIdHasBeenSet;
 
                 };
             }

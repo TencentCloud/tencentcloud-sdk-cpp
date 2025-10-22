@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zone 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取项目，默认是0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectId 项目，默认是0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
                      * 设置项目，默认是0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _projectId 项目，默认是0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
                      * 项目，默认是0
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_projectId;
                     bool m_projectIdHasBeenSet;

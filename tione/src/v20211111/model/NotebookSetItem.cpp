@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,7 +47,10 @@ NotebookSetItem::NotebookSetItem() :
     m_messageHasBeenSet(false),
     m_userTypesHasBeenSet(false),
     m_sSHConfigHasBeenSet(false),
-    m_volumeSourceGooseFSHasBeenSet(false)
+    m_volumeSourceGooseFSHasBeenSet(false),
+    m_subUinHasBeenSet(false),
+    m_subUinNameHasBeenSet(false),
+    m_appIdHasBeenSet(false)
 {
 }
 
@@ -370,6 +373,36 @@ CoreInternalOutcome NotebookSetItem::Deserialize(const rapidjson::Value &value)
         m_volumeSourceGooseFSHasBeenSet = true;
     }
 
+    if (value.HasMember("SubUin") && !value["SubUin"].IsNull())
+    {
+        if (!value["SubUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NotebookSetItem.SubUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subUin = string(value["SubUin"].GetString());
+        m_subUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubUinName") && !value["SubUinName"].IsNull())
+    {
+        if (!value["SubUinName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NotebookSetItem.SubUinName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subUinName = string(value["SubUinName"].GetString());
+        m_subUinNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("AppId") && !value["AppId"].IsNull())
+    {
+        if (!value["AppId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NotebookSetItem.AppId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_appId = string(value["AppId"].GetString());
+        m_appIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -612,6 +645,30 @@ void NotebookSetItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_volumeSourceGooseFS.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_subUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subUinNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubUinName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subUinName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1047,5 +1104,53 @@ void NotebookSetItem::SetVolumeSourceGooseFS(const GooseFS& _volumeSourceGooseFS
 bool NotebookSetItem::VolumeSourceGooseFSHasBeenSet() const
 {
     return m_volumeSourceGooseFSHasBeenSet;
+}
+
+string NotebookSetItem::GetSubUin() const
+{
+    return m_subUin;
+}
+
+void NotebookSetItem::SetSubUin(const string& _subUin)
+{
+    m_subUin = _subUin;
+    m_subUinHasBeenSet = true;
+}
+
+bool NotebookSetItem::SubUinHasBeenSet() const
+{
+    return m_subUinHasBeenSet;
+}
+
+string NotebookSetItem::GetSubUinName() const
+{
+    return m_subUinName;
+}
+
+void NotebookSetItem::SetSubUinName(const string& _subUinName)
+{
+    m_subUinName = _subUinName;
+    m_subUinNameHasBeenSet = true;
+}
+
+bool NotebookSetItem::SubUinNameHasBeenSet() const
+{
+    return m_subUinNameHasBeenSet;
+}
+
+string NotebookSetItem::GetAppId() const
+{
+    return m_appId;
+}
+
+void NotebookSetItem::SetAppId(const string& _appId)
+{
+    m_appId = _appId;
+    m_appIdHasBeenSet = true;
+}
+
+bool NotebookSetItem::AppIdHasBeenSet() const
+{
+    return m_appIdHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取处理状态 0-待审核 1-已经审核并提交任务 2-已驳回
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationStatus 处理状态 0-待审核 1-已经审核并提交任务 2-已驳回
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetApplicationStatus() const;
 
                     /**
                      * 设置处理状态 0-待审核 1-已经审核并提交任务 2-已驳回
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationStatus 处理状态 0-待审核 1-已经审核并提交任务 2-已驳回
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationStatus(const int64_t& _applicationStatus);
@@ -116,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已提交的任务Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 已提交的任务Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置已提交的任务Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskId 已提交的任务Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -141,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Error 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ErrorInfo GetError() const;
 
                     /**
                      * 设置错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _error 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetError(const ErrorInfo& _error);
@@ -180,21 +168,18 @@ namespace TencentCloud
 
                     /**
                      * 处理状态 0-待审核 1-已经审核并提交任务 2-已驳回
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_applicationStatus;
                     bool m_applicationStatusHasBeenSet;
 
                     /**
                      * 已提交的任务Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
                      * 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ErrorInfo m_error;
                     bool m_errorHasBeenSet;

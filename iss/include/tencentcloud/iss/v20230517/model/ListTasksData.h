@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return List 任务列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TaskData> GetList() const;
 
                     /**
                      * 设置任务列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _list 任务列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetList(const std::vector<TaskData>& _list);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 任务数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置任务数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalCount 任务数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 任务列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TaskData> m_list;
                     bool m_listHasBeenSet;
 
                     /**
                      * 任务数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

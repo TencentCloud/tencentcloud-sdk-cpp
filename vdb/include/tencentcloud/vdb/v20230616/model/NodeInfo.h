@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 实例pod信息，仅包含 pod 名称
+                * 实例pod信息， pod 名称
                 */
                 class NodeInfo : public AbstractModel
                 {
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Pod名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name Pod名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置Pod名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name Pod名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -71,14 +67,40 @@ namespace TencentCloud
                      */
                     bool NameHasBeenSet() const;
 
+                    /**
+                     * 获取pod状态
+                     * @return Status pod状态
+                     * 
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置pod状态
+                     * @param _status pod状态
+                     * 
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
                      * Pod名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
+
+                    /**
+                     * pod状态
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

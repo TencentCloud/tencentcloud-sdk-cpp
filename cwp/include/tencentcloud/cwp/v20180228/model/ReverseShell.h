@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -530,6 +530,27 @@ namespace TencentCloud
                      */
                     bool RiskLevelHasBeenSet() const;
 
+                    /**
+                     * 获取命令详情的转义后内容，供正则加白全字符串匹配使用	
+                     * @return CmdLineQuote 命令详情的转义后内容，供正则加白全字符串匹配使用	
+                     * 
+                     */
+                    std::string GetCmdLineQuote() const;
+
+                    /**
+                     * 设置命令详情的转义后内容，供正则加白全字符串匹配使用	
+                     * @param _cmdLineQuote 命令详情的转义后内容，供正则加白全字符串匹配使用	
+                     * 
+                     */
+                    void SetCmdLineQuote(const std::string& _cmdLineQuote);
+
+                    /**
+                     * 判断参数 CmdLineQuote 是否已赋值
+                     * @return CmdLineQuote 是否已赋值
+                     * 
+                     */
+                    bool CmdLineQuoteHasBeenSet() const;
+
                 private:
 
                     /**
@@ -669,6 +690,12 @@ namespace TencentCloud
                      */
                     uint64_t m_riskLevel;
                     bool m_riskLevelHasBeenSet;
+
+                    /**
+                     * 命令详情的转义后内容，供正则加白全字符串匹配使用	
+                     */
+                    std::string m_cmdLineQuote;
+                    bool m_cmdLineQuoteHasBeenSet;
 
                 };
             }

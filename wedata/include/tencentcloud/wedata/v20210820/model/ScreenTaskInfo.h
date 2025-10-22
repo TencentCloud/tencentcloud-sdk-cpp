@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -193,6 +193,31 @@ namespace TencentCloud
                     bool FrozenNumHasBeenSet() const;
 
                     /**
+                     * 获取无效任务数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InvalidNum 无效任务数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetInvalidNum() const;
+
+                    /**
+                     * 设置无效任务数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _invalidNum 无效任务数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInvalidNum(const uint64_t& _invalidNum);
+
+                    /**
+                     * 判断参数 InvalidNum 是否已赋值
+                     * @return InvalidNum 是否已赋值
+                     * 
+                     */
+                    bool InvalidNumHasBeenSet() const;
+
+                    /**
                      * 获取年任务
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return YearNum 年任务
@@ -342,6 +367,27 @@ namespace TencentCloud
                      */
                     bool MinuteNumHasBeenSet() const;
 
+                    /**
+                     * 获取工作流总数
+                     * @return WorkflowNum 工作流总数
+                     * 
+                     */
+                    uint64_t GetWorkflowNum() const;
+
+                    /**
+                     * 设置工作流总数
+                     * @param _workflowNum 工作流总数
+                     * 
+                     */
+                    void SetWorkflowNum(const uint64_t& _workflowNum);
+
+                    /**
+                     * 判断参数 WorkflowNum 是否已赋值
+                     * @return WorkflowNum 是否已赋值
+                     * 
+                     */
+                    bool WorkflowNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -386,6 +432,13 @@ namespace TencentCloud
                     bool m_frozenNumHasBeenSet;
 
                     /**
+                     * 无效任务数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_invalidNum;
+                    bool m_invalidNumHasBeenSet;
+
+                    /**
                      * 年任务
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -426,6 +479,12 @@ namespace TencentCloud
                      */
                     uint64_t m_minuteNum;
                     bool m_minuteNumHasBeenSet;
+
+                    /**
+                     * 工作流总数
+                     */
+                    uint64_t m_workflowNum;
+                    bool m_workflowNumHasBeenSet;
 
                 };
             }

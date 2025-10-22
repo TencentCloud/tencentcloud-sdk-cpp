@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -151,17 +151,19 @@ SourceType为点播（PullVodPushLive）可以填多个，上限30个。
                      * 获取结束时间，注意：
 1. 结束时间必须大于开始时间；
 2. 结束时间和开始时间必须大于当前时间；
-3. 结束时间 和 开始时间 间隔必须小于七天。
+3. 结束时间 和 开始时间 间隔必须小于30天。
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#I)。
+4. 只修改EndTime进行续期， 不会影响正在进行中的任务。
                      * @return EndTime 结束时间，注意：
 1. 结束时间必须大于开始时间；
 2. 结束时间和开始时间必须大于当前时间；
-3. 结束时间 和 开始时间 间隔必须小于七天。
+3. 结束时间 和 开始时间 间隔必须小于30天。
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#I)。
+4. 只修改EndTime进行续期， 不会影响正在进行中的任务。
                      * 
                      */
                     std::string GetEndTime() const;
@@ -170,17 +172,19 @@ SourceType为点播（PullVodPushLive）可以填多个，上限30个。
                      * 设置结束时间，注意：
 1. 结束时间必须大于开始时间；
 2. 结束时间和开始时间必须大于当前时间；
-3. 结束时间 和 开始时间 间隔必须小于七天。
+3. 结束时间 和 开始时间 间隔必须小于30天。
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#I)。
+4. 只修改EndTime进行续期， 不会影响正在进行中的任务。
                      * @param _endTime 结束时间，注意：
 1. 结束时间必须大于开始时间；
 2. 结束时间和开始时间必须大于当前时间；
-3. 结束时间 和 开始时间 间隔必须小于七天。
+3. 结束时间 和 开始时间 间隔必须小于30天。
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#I)。
+4. 只修改EndTime进行续期， 不会影响正在进行中的任务。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -727,10 +731,11 @@ SourceType为点播（PullVodPushLive）可以填多个，上限30个。
                      * 结束时间，注意：
 1. 结束时间必须大于开始时间；
 2. 结束时间和开始时间必须大于当前时间；
-3. 结束时间 和 开始时间 间隔必须小于七天。
+3. 结束时间 和 开始时间 间隔必须小于30天。
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#I)。
+4. 只修改EndTime进行续期， 不会影响正在进行中的任务。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

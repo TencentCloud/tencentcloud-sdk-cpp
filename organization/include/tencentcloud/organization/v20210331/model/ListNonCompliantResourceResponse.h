@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取资源及标签合规信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 资源及标签合规信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ResourceTagMapping> GetItems() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取获取的下一页的Token值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PaginationToken 获取的下一页的Token值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPaginationToken() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 资源及标签合规信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ResourceTagMapping> m_items;
                     bool m_itemsHasBeenSet;
 
                     /**
                      * 获取的下一页的Token值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_paginationToken;
                     bool m_paginationTokenHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,10 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalCount 总数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取总数,如果取不到返回0
+                     * @return TotalCount 总数,如果取不到返回0
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -61,10 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取证书部署记录列表
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RecordDetailList 证书部署记录列表
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取证书部署记录列表，如果取不到值返回空数组
+                     * @return RecordDetailList 证书部署记录列表，如果取不到值返回空数组
                      * 
                      */
                     std::vector<UpdateRecordDetails> GetRecordDetailList() const;
@@ -77,10 +73,8 @@ namespace TencentCloud
                     bool RecordDetailListHasBeenSet() const;
 
                     /**
-                     * 获取成功总数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SuccessTotalCount 成功总数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取成功总数,如果取不到返回0
+                     * @return SuccessTotalCount 成功总数,如果取不到返回0
                      * 
                      */
                     int64_t GetSuccessTotalCount() const;
@@ -93,10 +87,8 @@ namespace TencentCloud
                     bool SuccessTotalCountHasBeenSet() const;
 
                     /**
-                     * 获取失败总数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FailedTotalCount 失败总数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取失败总数,如果取不到返回0
+                     * @return FailedTotalCount 失败总数,如果取不到返回0
                      * 
                      */
                     int64_t GetFailedTotalCount() const;
@@ -109,10 +101,8 @@ namespace TencentCloud
                     bool FailedTotalCountHasBeenSet() const;
 
                     /**
-                     * 获取部署中总数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RunningTotalCount 部署中总数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取部署中总数,如果取不到返回0
+                     * @return RunningTotalCount 部署中总数,如果取不到返回0
                      * 
                      */
                     int64_t GetRunningTotalCount() const;
@@ -124,42 +114,57 @@ namespace TencentCloud
                      */
                     bool RunningTotalCountHasBeenSet() const;
 
+                    /**
+                     * 获取待部署总数
+                     * @return PendingTotalCount 待部署总数
+                     * 
+                     */
+                    int64_t GetPendingTotalCount() const;
+
+                    /**
+                     * 判断参数 PendingTotalCount 是否已赋值
+                     * @return PendingTotalCount 是否已赋值
+                     * 
+                     */
+                    bool PendingTotalCountHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 总数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 总数,如果取不到返回0
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 证书部署记录列表
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 证书部署记录列表，如果取不到值返回空数组
                      */
                     std::vector<UpdateRecordDetails> m_recordDetailList;
                     bool m_recordDetailListHasBeenSet;
 
                     /**
-                     * 成功总数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 成功总数,如果取不到返回0
                      */
                     int64_t m_successTotalCount;
                     bool m_successTotalCountHasBeenSet;
 
                     /**
-                     * 失败总数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 失败总数,如果取不到返回0
                      */
                     int64_t m_failedTotalCount;
                     bool m_failedTotalCountHasBeenSet;
 
                     /**
-                     * 部署中总数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 部署中总数,如果取不到返回0
                      */
                     int64_t m_runningTotalCount;
                     bool m_runningTotalCountHasBeenSet;
+
+                    /**
+                     * 待部署总数
+                     */
+                    int64_t m_pendingTotalCount;
+                    bool m_pendingTotalCountHasBeenSet;
 
                 };
             }

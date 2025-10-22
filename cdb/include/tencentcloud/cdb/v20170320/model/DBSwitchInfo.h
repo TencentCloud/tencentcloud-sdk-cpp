@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取切换时间，格式为：2017-09-03 01:34:31
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SwitchTime 切换时间，格式为：2017-09-03 01:34:31
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSwitchTime() const;
 
                     /**
                      * 设置切换时间，格式为：2017-09-03 01:34:31
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _switchTime 切换时间，格式为：2017-09-03 01:34:31
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSwitchTime(const std::string& _switchTime);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取切换类型，可能的返回值为：TRANSFER - 数据迁移；MASTER2SLAVE - 主备切换；RECOVERY - 主从恢复
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SwitchType 切换类型，可能的返回值为：TRANSFER - 数据迁移；MASTER2SLAVE - 主备切换；RECOVERY - 主从恢复
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSwitchType() const;
 
                     /**
                      * 设置切换类型，可能的返回值为：TRANSFER - 数据迁移；MASTER2SLAVE - 主备切换；RECOVERY - 主从恢复
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _switchType 切换类型，可能的返回值为：TRANSFER - 数据迁移；MASTER2SLAVE - 主备切换；RECOVERY - 主从恢复
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSwitchType(const std::string& _switchType);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 切换时间，格式为：2017-09-03 01:34:31
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_switchTime;
                     bool m_switchTimeHasBeenSet;
 
                     /**
                      * 切换类型，可能的返回值为：TRANSFER - 数据迁移；MASTER2SLAVE - 主备切换；RECOVERY - 主从恢复
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_switchType;
                     bool m_switchTypeHasBeenSet;

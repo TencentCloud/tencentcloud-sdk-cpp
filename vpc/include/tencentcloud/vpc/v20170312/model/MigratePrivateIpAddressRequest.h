@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取当内网IP绑定的弹性网卡实例ID，例如：eni-m6dyj72l。
-                     * @return SourceNetworkInterfaceId 当内网IP绑定的弹性网卡实例ID，例如：eni-m6dyj72l。
+                     * 获取当内网IP绑定的弹性网卡实例ID，例如：eni-m6dyj72l。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
+
+                     * @return SourceNetworkInterfaceId 当内网IP绑定的弹性网卡实例ID，例如：eni-m6dyj72l。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
+
                      * 
                      */
                     std::string GetSourceNetworkInterfaceId() const;
 
                     /**
-                     * 设置当内网IP绑定的弹性网卡实例ID，例如：eni-m6dyj72l。
-                     * @param _sourceNetworkInterfaceId 当内网IP绑定的弹性网卡实例ID，例如：eni-m6dyj72l。
+                     * 设置当内网IP绑定的弹性网卡实例ID，例如：eni-m6dyj72l。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
+
+                     * @param _sourceNetworkInterfaceId 当内网IP绑定的弹性网卡实例ID，例如：eni-m6dyj72l。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
+
                      * 
                      */
                     void SetSourceNetworkInterfaceId(const std::string& _sourceNetworkInterfaceId);
@@ -64,15 +68,19 @@ namespace TencentCloud
                     bool SourceNetworkInterfaceIdHasBeenSet() const;
 
                     /**
-                     * 获取待迁移的目的弹性网卡实例ID。
-                     * @return DestinationNetworkInterfaceId 待迁移的目的弹性网卡实例ID。
+                     * 获取待迁移的目的弹性网卡实例ID。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
+
+                     * @return DestinationNetworkInterfaceId 待迁移的目的弹性网卡实例ID。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
+
                      * 
                      */
                     std::string GetDestinationNetworkInterfaceId() const;
 
                     /**
-                     * 设置待迁移的目的弹性网卡实例ID。
-                     * @param _destinationNetworkInterfaceId 待迁移的目的弹性网卡实例ID。
+                     * 设置待迁移的目的弹性网卡实例ID。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
+
+                     * @param _destinationNetworkInterfaceId 待迁移的目的弹性网卡实例ID。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
+
                      * 
                      */
                     void SetDestinationNetworkInterfaceId(const std::string& _destinationNetworkInterfaceId);
@@ -108,13 +116,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 当内网IP绑定的弹性网卡实例ID，例如：eni-m6dyj72l。
+                     * 当内网IP绑定的弹性网卡实例ID，例如：eni-m6dyj72l。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
+
                      */
                     std::string m_sourceNetworkInterfaceId;
                     bool m_sourceNetworkInterfaceIdHasBeenSet;
 
                     /**
-                     * 待迁移的目的弹性网卡实例ID。
+                     * 待迁移的目的弹性网卡实例ID。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
+
                      */
                     std::string m_destinationNetworkInterfaceId;
                     bool m_destinationNetworkInterfaceIdHasBeenSet;

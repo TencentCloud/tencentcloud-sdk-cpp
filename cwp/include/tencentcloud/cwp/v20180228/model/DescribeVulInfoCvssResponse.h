@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -281,6 +281,20 @@ namespace TencentCloud
                      */
                     bool FixSwitchHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持防御： 0-不支持 1-支持
+                     * @return SupportDefence 是否支持防御： 0-不支持 1-支持
+                     * 
+                     */
+                    int64_t GetSupportDefence() const;
+
+                    /**
+                     * 判断参数 SupportDefence 是否已赋值
+                     * @return SupportDefence 是否已赋值
+                     * 
+                     */
+                    bool SupportDefenceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -384,6 +398,12 @@ namespace TencentCloud
                      */
                     int64_t m_fixSwitch;
                     bool m_fixSwitchHasBeenSet;
+
+                    /**
+                     * 是否支持防御： 0-不支持 1-支持
+                     */
+                    int64_t m_supportDefence;
+                    bool m_supportDefenceHasBeenSet;
 
                 };
             }

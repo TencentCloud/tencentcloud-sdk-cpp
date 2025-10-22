@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,8 @@ using namespace std;
 
 Message::Message() :
     m_roleHasBeenSet(false),
-    m_contentHasBeenSet(false)
+    m_contentHasBeenSet(false),
+    m_multiModalContentsHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,26 @@ CoreInternalOutcome Message::Deserialize(const rapidjson::Value &value)
         m_contentHasBeenSet = true;
     }
 
+    if (value.HasMember("MultiModalContents") && !value["MultiModalContents"].IsNull())
+    {
+        if (!value["MultiModalContents"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Message.MultiModalContents` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["MultiModalContents"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            MultiModalContent item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_multiModalContents.push_back(item);
+        }
+        m_multiModalContentsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +93,21 @@ void Message::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "Content";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_content.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_multiModalContentsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MultiModalContents";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_multiModalContents.begin(); itr != m_multiModalContents.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -107,5 +143,21 @@ void Message::SetContent(const string& _content)
 bool Message::ContentHasBeenSet() const
 {
     return m_contentHasBeenSet;
+}
+
+vector<MultiModalContent> Message::GetMultiModalContents() const
+{
+    return m_multiModalContents;
+}
+
+void Message::SetMultiModalContents(const vector<MultiModalContent>& _multiModalContents)
+{
+    m_multiModalContents = _multiModalContents;
+    m_multiModalContentsHasBeenSet = true;
+}
+
+bool Message::MultiModalContentsHasBeenSet() const
+{
+    return m_multiModalContentsHasBeenSet;
 }
 

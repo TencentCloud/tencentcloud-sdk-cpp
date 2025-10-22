@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,11 @@ TaskInnerInfo::TaskInnerInfo() :
     m_cycleTypeHasBeenSet(false),
     m_virtualTaskIdHasBeenSet(false),
     m_virtualFlagHasBeenSet(false),
-    m_realWorkflowIdHasBeenSet(false)
+    m_realWorkflowIdHasBeenSet(false),
+    m_cycleStepHasBeenSet(false),
+    m_taskActionHasBeenSet(false),
+    m_dependencyRelHasBeenSet(false),
+    m_dependencyWorkflowHasBeenSet(false)
 {
 }
 
@@ -106,6 +110,46 @@ CoreInternalOutcome TaskInnerInfo::Deserialize(const rapidjson::Value &value)
         m_realWorkflowIdHasBeenSet = true;
     }
 
+    if (value.HasMember("CycleStep") && !value["CycleStep"].IsNull())
+    {
+        if (!value["CycleStep"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskInnerInfo.CycleStep` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cycleStep = value["CycleStep"].GetInt64();
+        m_cycleStepHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaskAction") && !value["TaskAction"].IsNull())
+    {
+        if (!value["TaskAction"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskInnerInfo.TaskAction` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskAction = string(value["TaskAction"].GetString());
+        m_taskActionHasBeenSet = true;
+    }
+
+    if (value.HasMember("DependencyRel") && !value["DependencyRel"].IsNull())
+    {
+        if (!value["DependencyRel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskInnerInfo.DependencyRel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dependencyRel = string(value["DependencyRel"].GetString());
+        m_dependencyRelHasBeenSet = true;
+    }
+
+    if (value.HasMember("DependencyWorkflow") && !value["DependencyWorkflow"].IsNull())
+    {
+        if (!value["DependencyWorkflow"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskInnerInfo.DependencyWorkflow` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dependencyWorkflow = string(value["DependencyWorkflow"].GetString());
+        m_dependencyWorkflowHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +211,38 @@ void TaskInnerInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "RealWorkflowId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_realWorkflowId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cycleStepHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CycleStep";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cycleStep, allocator);
+    }
+
+    if (m_taskActionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskAction";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskAction.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dependencyRelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DependencyRel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dependencyRel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dependencyWorkflowHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DependencyWorkflow";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dependencyWorkflow.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +358,69 @@ void TaskInnerInfo::SetRealWorkflowId(const string& _realWorkflowId)
 bool TaskInnerInfo::RealWorkflowIdHasBeenSet() const
 {
     return m_realWorkflowIdHasBeenSet;
+}
+
+int64_t TaskInnerInfo::GetCycleStep() const
+{
+    return m_cycleStep;
+}
+
+void TaskInnerInfo::SetCycleStep(const int64_t& _cycleStep)
+{
+    m_cycleStep = _cycleStep;
+    m_cycleStepHasBeenSet = true;
+}
+
+bool TaskInnerInfo::CycleStepHasBeenSet() const
+{
+    return m_cycleStepHasBeenSet;
+}
+
+string TaskInnerInfo::GetTaskAction() const
+{
+    return m_taskAction;
+}
+
+void TaskInnerInfo::SetTaskAction(const string& _taskAction)
+{
+    m_taskAction = _taskAction;
+    m_taskActionHasBeenSet = true;
+}
+
+bool TaskInnerInfo::TaskActionHasBeenSet() const
+{
+    return m_taskActionHasBeenSet;
+}
+
+string TaskInnerInfo::GetDependencyRel() const
+{
+    return m_dependencyRel;
+}
+
+void TaskInnerInfo::SetDependencyRel(const string& _dependencyRel)
+{
+    m_dependencyRel = _dependencyRel;
+    m_dependencyRelHasBeenSet = true;
+}
+
+bool TaskInnerInfo::DependencyRelHasBeenSet() const
+{
+    return m_dependencyRelHasBeenSet;
+}
+
+string TaskInnerInfo::GetDependencyWorkflow() const
+{
+    return m_dependencyWorkflow;
+}
+
+void TaskInnerInfo::SetDependencyWorkflow(const string& _dependencyWorkflow)
+{
+    m_dependencyWorkflow = _dependencyWorkflow;
+    m_dependencyWorkflowHasBeenSet = true;
+}
+
+bool TaskInnerInfo::DependencyWorkflowHasBeenSet() const
+{
+    return m_dependencyWorkflowHasBeenSet;
 }
 

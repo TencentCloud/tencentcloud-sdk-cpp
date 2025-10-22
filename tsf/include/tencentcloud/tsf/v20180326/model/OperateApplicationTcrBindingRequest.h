@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取bind 或 unbind
-                     * @return Command bind 或 unbind
+                     * 获取指定操作类型，目前支持：
+- `bind`：绑定（默认）
+- `unbind`：解除绑定
+                     * @return Command 指定操作类型，目前支持：
+- `bind`：绑定（默认）
+- `unbind`：解除绑定
                      * 
                      */
                     std::string GetCommand() const;
 
                     /**
-                     * 设置bind 或 unbind
-                     * @param _command bind 或 unbind
+                     * 设置指定操作类型，目前支持：
+- `bind`：绑定（默认）
+- `unbind`：解除绑定
+                     * @param _command 指定操作类型，目前支持：
+- `bind`：绑定（默认）
+- `unbind`：解除绑定
                      * 
                      */
                     void SetCommand(const std::string& _command);
@@ -65,15 +73,15 @@ namespace TencentCloud
                     bool CommandHasBeenSet() const;
 
                     /**
-                     * 获取应用id
-                     * @return ApplicationId 应用id
+                     * 获取应用ID，可通过调用[DescribeApplications](https://cloud.tencent.com/document/api/649/36090)查询已创建的应用列表或登录控制台进行查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/api/649/36094)创建新的应用。
+                     * @return ApplicationId 应用ID，可通过调用[DescribeApplications](https://cloud.tencent.com/document/api/649/36090)查询已创建的应用列表或登录控制台进行查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/api/649/36094)创建新的应用。
                      * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
-                     * 设置应用id
-                     * @param _applicationId 应用id
+                     * 设置应用ID，可通过调用[DescribeApplications](https://cloud.tencent.com/document/api/649/36090)查询已创建的应用列表或登录控制台进行查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/api/649/36094)创建新的应用。
+                     * @param _applicationId 应用ID，可通过调用[DescribeApplications](https://cloud.tencent.com/document/api/649/36090)查询已创建的应用列表或登录控制台进行查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/api/649/36094)创建新的应用。
                      * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
@@ -109,13 +117,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * bind 或 unbind
+                     * 指定操作类型，目前支持：
+- `bind`：绑定（默认）
+- `unbind`：解除绑定
                      */
                     std::string m_command;
                     bool m_commandHasBeenSet;
 
                     /**
-                     * 应用id
+                     * 应用ID，可通过调用[DescribeApplications](https://cloud.tencent.com/document/api/649/36090)查询已创建的应用列表或登录控制台进行查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/api/649/36094)创建新的应用。
                      */
                     std::string m_applicationId;
                     bool m_applicationIdHasBeenSet;

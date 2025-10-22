@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,11 @@ DescribeUserRoleProjectListRequest::DescribeUserRoleProjectListRequest() :
     m_pageNoHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_isOnlyBindAppUserHasBeenSet(false)
+    m_isOnlyBindAppUserHasBeenSet(false),
+    m_allPageHasBeenSet(false),
+    m_roleCodeHasBeenSet(false),
+    m_userIdListHasBeenSet(false),
+    m_keywordHasBeenSet(false)
 {
 }
 
@@ -67,6 +71,43 @@ string DescribeUserRoleProjectListRequest::ToJsonString() const
         string key = "IsOnlyBindAppUser";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isOnlyBindAppUser, allocator);
+    }
+
+    if (m_allPageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllPage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_allPage, allocator);
+    }
+
+    if (m_roleCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoleCode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_roleCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_userIdList.begin(); itr != m_userIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_keywordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Keyword";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_keyword.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +180,70 @@ void DescribeUserRoleProjectListRequest::SetIsOnlyBindAppUser(const bool& _isOnl
 bool DescribeUserRoleProjectListRequest::IsOnlyBindAppUserHasBeenSet() const
 {
     return m_isOnlyBindAppUserHasBeenSet;
+}
+
+bool DescribeUserRoleProjectListRequest::GetAllPage() const
+{
+    return m_allPage;
+}
+
+void DescribeUserRoleProjectListRequest::SetAllPage(const bool& _allPage)
+{
+    m_allPage = _allPage;
+    m_allPageHasBeenSet = true;
+}
+
+bool DescribeUserRoleProjectListRequest::AllPageHasBeenSet() const
+{
+    return m_allPageHasBeenSet;
+}
+
+string DescribeUserRoleProjectListRequest::GetRoleCode() const
+{
+    return m_roleCode;
+}
+
+void DescribeUserRoleProjectListRequest::SetRoleCode(const string& _roleCode)
+{
+    m_roleCode = _roleCode;
+    m_roleCodeHasBeenSet = true;
+}
+
+bool DescribeUserRoleProjectListRequest::RoleCodeHasBeenSet() const
+{
+    return m_roleCodeHasBeenSet;
+}
+
+vector<string> DescribeUserRoleProjectListRequest::GetUserIdList() const
+{
+    return m_userIdList;
+}
+
+void DescribeUserRoleProjectListRequest::SetUserIdList(const vector<string>& _userIdList)
+{
+    m_userIdList = _userIdList;
+    m_userIdListHasBeenSet = true;
+}
+
+bool DescribeUserRoleProjectListRequest::UserIdListHasBeenSet() const
+{
+    return m_userIdListHasBeenSet;
+}
+
+string DescribeUserRoleProjectListRequest::GetKeyword() const
+{
+    return m_keyword;
+}
+
+void DescribeUserRoleProjectListRequest::SetKeyword(const string& _keyword)
+{
+    m_keyword = _keyword;
+    m_keywordHasBeenSet = true;
+}
+
+bool DescribeUserRoleProjectListRequest::KeywordHasBeenSet() const
+{
+    return m_keywordHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群实例Id
-                     * @return InstanceId 集群实例Id
+                     * 获取实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
+                     * @return InstanceId 实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置集群实例Id
-                     * @param _instanceId 集群实例Id
+                     * 设置实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
+                     * @param _instanceId 实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 用户描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置用户描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 用户描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户标签，用于决定改用户访问RabbitMQ Management的权限范围
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 用户标签，用于决定改用户访问RabbitMQ Management的权限范围
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
                      * 设置用户标签，用于决定改用户访问RabbitMQ Management的权限范围
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 用户标签，用于决定改用户访问RabbitMQ Management的权限范围
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
@@ -272,10 +264,52 @@ namespace TencentCloud
                      */
                     bool MaxChannelsHasBeenSet() const;
 
+                    /**
+                     * 获取创建时间时间戳
+                     * @return CreateTs 创建时间时间戳
+                     * 
+                     */
+                    uint64_t GetCreateTs() const;
+
+                    /**
+                     * 设置创建时间时间戳
+                     * @param _createTs 创建时间时间戳
+                     * 
+                     */
+                    void SetCreateTs(const uint64_t& _createTs);
+
+                    /**
+                     * 判断参数 CreateTs 是否已赋值
+                     * @return CreateTs 是否已赋值
+                     * 
+                     */
+                    bool CreateTsHasBeenSet() const;
+
+                    /**
+                     * 获取修改时间时间戳
+                     * @return ModifyTs 修改时间时间戳
+                     * 
+                     */
+                    uint64_t GetModifyTs() const;
+
+                    /**
+                     * 设置修改时间时间戳
+                     * @param _modifyTs 修改时间时间戳
+                     * 
+                     */
+                    void SetModifyTs(const uint64_t& _modifyTs);
+
+                    /**
+                     * 判断参数 ModifyTs 是否已赋值
+                     * @return ModifyTs 是否已赋值
+                     * 
+                     */
+                    bool ModifyTsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 集群实例Id
+                     * 实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -294,14 +328,12 @@ namespace TencentCloud
 
                     /**
                      * 用户描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 用户标签，用于决定改用户访问RabbitMQ Management的权限范围
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_tags;
                     bool m_tagsHasBeenSet;
@@ -337,6 +369,18 @@ namespace TencentCloud
                      */
                     int64_t m_maxChannels;
                     bool m_maxChannelsHasBeenSet;
+
+                    /**
+                     * 创建时间时间戳
+                     */
+                    uint64_t m_createTs;
+                    bool m_createTsHasBeenSet;
+
+                    /**
+                     * 修改时间时间戳
+                     */
+                    uint64_t m_modifyTs;
+                    bool m_modifyTsHasBeenSet;
 
                 };
             }

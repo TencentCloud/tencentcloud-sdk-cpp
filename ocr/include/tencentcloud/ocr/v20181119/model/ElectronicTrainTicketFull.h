@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -466,6 +466,27 @@ namespace TencentCloud
                      */
                     bool OriginalNumberHasBeenSet() const;
 
+                    /**
+                     * 获取标识信息
+                     * @return IDInfo 标识信息
+                     * 
+                     */
+                    std::string GetIDInfo() const;
+
+                    /**
+                     * 设置标识信息
+                     * @param _iDInfo 标识信息
+                     * 
+                     */
+                    void SetIDInfo(const std::string& _iDInfo);
+
+                    /**
+                     * 判断参数 IDInfo 是否已赋值
+                     * @return IDInfo 是否已赋值
+                     * 
+                     */
+                    bool IDInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -587,6 +608,12 @@ namespace TencentCloud
                      */
                     std::string m_originalNumber;
                     bool m_originalNumberHasBeenSet;
+
+                    /**
+                     * 标识信息
+                     */
+                    std::string m_iDInfo;
+                    bool m_iDInfoHasBeenSet;
 
                 };
             }

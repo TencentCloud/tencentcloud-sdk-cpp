@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -216,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取类型，分live和vod两种。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 类型，分live和vod两种。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型，分live和vod两种。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 类型，分live和vod两种。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -241,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StreamName 流ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStreamName() const;
 
                     /**
                      * 设置流ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _streamName 流ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStreamName(const std::string& _streamName);
@@ -266,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取AppId。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId AppId。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppId() const;
 
                     /**
                      * 设置AppId。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appId AppId。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppId(const std::string& _appId);
@@ -341,21 +329,18 @@ namespace TencentCloud
 
                     /**
                      * 类型，分live和vod两种。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 流ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_streamName;
                     bool m_streamNameHasBeenSet;
 
                     /**
                      * AppId。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;

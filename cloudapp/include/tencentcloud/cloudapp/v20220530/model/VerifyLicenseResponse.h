@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,6 +58,34 @@ namespace TencentCloud
                      */
                     bool LicenseHasBeenSet() const;
 
+                    /**
+                     * 获取当前请求服务端的时间戳，格式为RFC3339
+                     * @return Timestamp 当前请求服务端的时间戳，格式为RFC3339
+                     * 
+                     */
+                    std::string GetTimestamp() const;
+
+                    /**
+                     * 判断参数 Timestamp 是否已赋值
+                     * @return Timestamp 是否已赋值
+                     * 
+                     */
+                    bool TimestampHasBeenSet() const;
+
+                    /**
+                     * 获取对License字段对应的json数据的签名
+                     * @return Signature 对License字段对应的json数据的签名
+                     * 
+                     */
+                    std::string GetSignature() const;
+
+                    /**
+                     * 判断参数 Signature 是否已赋值
+                     * @return Signature 是否已赋值
+                     * 
+                     */
+                    bool SignatureHasBeenSet() const;
+
                 private:
 
                     /**
@@ -65,6 +93,18 @@ namespace TencentCloud
                      */
                     License m_license;
                     bool m_licenseHasBeenSet;
+
+                    /**
+                     * 当前请求服务端的时间戳，格式为RFC3339
+                     */
+                    std::string m_timestamp;
+                    bool m_timestampHasBeenSet;
+
+                    /**
+                     * 对License字段对应的json数据的签名
+                     */
+                    std::string m_signature;
+                    bool m_signatureHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool KeyNameHasBeenSet() const;
 
                     /**
-                     * 获取密钥对所属的项目`ID`。
-                     * @return ProjectId 密钥对所属的项目`ID`。
+                     * 获取密钥对所属的项目 `ID`，ProjectId 为 0 时表示默认项目。
+                     * @return ProjectId 密钥对所属的项目 `ID`，ProjectId 为 0 时表示默认项目。
                      * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置密钥对所属的项目`ID`。
-                     * @param _projectId 密钥对所属的项目`ID`。
+                     * 设置密钥对所属的项目 `ID`，ProjectId 为 0 时表示默认项目。
+                     * @param _projectId 密钥对所属的项目 `ID`，ProjectId 为 0 时表示默认项目。
                      * 
                      */
                     void SetProjectId(const int64_t& _projectId);
@@ -217,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取密钥关联的标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 密钥关联的标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置密钥关联的标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 密钥关联的标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -255,7 +251,7 @@ namespace TencentCloud
                     bool m_keyNameHasBeenSet;
 
                     /**
-                     * 密钥对所属的项目`ID`。
+                     * 密钥对所属的项目 `ID`，ProjectId 为 0 时表示默认项目。
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
@@ -292,7 +288,6 @@ namespace TencentCloud
 
                     /**
                      * 密钥关联的标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;

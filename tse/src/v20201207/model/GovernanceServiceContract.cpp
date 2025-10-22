@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,8 @@ GovernanceServiceContract::GovernanceServiceContract() :
     m_contentHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
-    m_interfacesHasBeenSet(false)
+    m_interfacesHasBeenSet(false),
+    m_metadatasHasBeenSet(false)
 {
 }
 
@@ -160,6 +161,26 @@ CoreInternalOutcome GovernanceServiceContract::Deserialize(const rapidjson::Valu
         m_interfacesHasBeenSet = true;
     }
 
+    if (value.HasMember("Metadatas") && !value["Metadatas"].IsNull())
+    {
+        if (!value["Metadatas"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `GovernanceServiceContract.Metadatas` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Metadatas"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Metadata item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_metadatas.push_back(item);
+        }
+        m_metadatasHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -256,6 +277,21 @@ void GovernanceServiceContract::ToJsonObject(rapidjson::Value &value, rapidjson:
 
         int i=0;
         for (auto itr = m_interfaces.begin(); itr != m_interfaces.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_metadatasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Metadatas";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_metadatas.begin(); itr != m_metadatas.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -439,5 +475,21 @@ void GovernanceServiceContract::SetInterfaces(const vector<GovernanceInterfaceDe
 bool GovernanceServiceContract::InterfacesHasBeenSet() const
 {
     return m_interfacesHasBeenSet;
+}
+
+vector<Metadata> GovernanceServiceContract::GetMetadatas() const
+{
+    return m_metadatas;
+}
+
+void GovernanceServiceContract::SetMetadatas(const vector<Metadata>& _metadatas)
+{
+    m_metadatas = _metadatas;
+    m_metadatasHasBeenSet = true;
+}
+
+bool GovernanceServiceContract::MetadatasHasBeenSet() const
+{
+    return m_metadatasHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/QualityControlItemConfig.h>
+#include <tencentcloud/mps/v20190612/model/QualityControlStrategy.h>
 
 
 namespace TencentCloud
@@ -106,6 +107,52 @@ namespace TencentCloud
                      */
                     bool CommentHasBeenSet() const;
 
+                    /**
+                     * 获取录制文件格式。可选值：
+<li>PNG: PNG图片</li>
+                     * @return RecordFormat 录制文件格式。可选值：
+<li>PNG: PNG图片</li>
+                     * 
+                     */
+                    std::string GetRecordFormat() const;
+
+                    /**
+                     * 设置录制文件格式。可选值：
+<li>PNG: PNG图片</li>
+                     * @param _recordFormat 录制文件格式。可选值：
+<li>PNG: PNG图片</li>
+                     * 
+                     */
+                    void SetRecordFormat(const std::string& _recordFormat);
+
+                    /**
+                     * 判断参数 RecordFormat 是否已赋值
+                     * @return RecordFormat 是否已赋值
+                     * 
+                     */
+                    bool RecordFormatHasBeenSet() const;
+
+                    /**
+                     * 获取媒体质检抽检策略。
+                     * @return Strategy 媒体质检抽检策略。
+                     * 
+                     */
+                    QualityControlStrategy GetStrategy() const;
+
+                    /**
+                     * 设置媒体质检抽检策略。
+                     * @param _strategy 媒体质检抽检策略。
+                     * 
+                     */
+                    void SetStrategy(const QualityControlStrategy& _strategy);
+
+                    /**
+                     * 判断参数 Strategy 是否已赋值
+                     * @return Strategy 是否已赋值
+                     * 
+                     */
+                    bool StrategyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +172,19 @@ namespace TencentCloud
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
+
+                    /**
+                     * 录制文件格式。可选值：
+<li>PNG: PNG图片</li>
+                     */
+                    std::string m_recordFormat;
+                    bool m_recordFormatHasBeenSet;
+
+                    /**
+                     * 媒体质检抽检策略。
+                     */
+                    QualityControlStrategy m_strategy;
+                    bool m_strategyHasBeenSet;
 
                 };
             }

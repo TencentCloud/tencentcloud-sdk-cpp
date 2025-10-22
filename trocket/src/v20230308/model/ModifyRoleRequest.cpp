@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,9 @@ ModifyRoleRequest::ModifyRoleRequest() :
     m_roleHasBeenSet(false),
     m_permReadHasBeenSet(false),
     m_permWriteHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_permTypeHasBeenSet(false),
+    m_remarkHasBeenSet(false),
+    m_detailedPermsHasBeenSet(false)
 {
 }
 
@@ -70,12 +72,35 @@ string ModifyRoleRequest::ToJsonString() const
         d.AddMember(iKey, m_permWrite, allocator);
     }
 
+    if (m_permTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PermType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_permType.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_remarkHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_detailedPermsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DetailedPerms";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_detailedPerms.begin(); itr != m_detailedPerms.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -150,6 +175,22 @@ bool ModifyRoleRequest::PermWriteHasBeenSet() const
     return m_permWriteHasBeenSet;
 }
 
+string ModifyRoleRequest::GetPermType() const
+{
+    return m_permType;
+}
+
+void ModifyRoleRequest::SetPermType(const string& _permType)
+{
+    m_permType = _permType;
+    m_permTypeHasBeenSet = true;
+}
+
+bool ModifyRoleRequest::PermTypeHasBeenSet() const
+{
+    return m_permTypeHasBeenSet;
+}
+
 string ModifyRoleRequest::GetRemark() const
 {
     return m_remark;
@@ -164,6 +205,22 @@ void ModifyRoleRequest::SetRemark(const string& _remark)
 bool ModifyRoleRequest::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+vector<DetailedRolePerm> ModifyRoleRequest::GetDetailedPerms() const
+{
+    return m_detailedPerms;
+}
+
+void ModifyRoleRequest::SetDetailedPerms(const vector<DetailedRolePerm>& _detailedPerms)
+{
+    m_detailedPerms = _detailedPerms;
+    m_detailedPermsHasBeenSet = true;
+}
+
+bool ModifyRoleRequest::DetailedPermsHasBeenSet() const
+{
+    return m_detailedPermsHasBeenSet;
 }
 
 

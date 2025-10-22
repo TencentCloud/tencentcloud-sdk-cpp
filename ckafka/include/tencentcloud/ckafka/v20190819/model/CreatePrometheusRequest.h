@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ckafka实例id
-                     * @return InstanceId ckafka实例id
+                     * 获取ckafka集群实例Id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
+                     * @return InstanceId ckafka集群实例Id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置ckafka实例id
-                     * @param _instanceId ckafka实例id
+                     * 设置ckafka集群实例Id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
+                     * @param _instanceId ckafka集群实例Id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,19 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取vpc地址
-                     * @return VpcId vpc地址
+                     * 获取私有网络Id,可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取
+
+                     * @return VpcId 私有网络Id,可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取
+
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置vpc地址
-                     * @param _vpcId vpc地址
+                     * 设置私有网络Id,可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取
+
+                     * @param _vpcId 私有网络Id,可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取
+
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -85,15 +89,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网地址
-                     * @return SubnetId 子网地址
+                     * 获取子网Id,可通过[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)接口获取
+                     * @return SubnetId 子网Id,可通过[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)接口获取
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网地址
-                     * @param _subnetId 子网地址
+                     * 设置子网Id,可通过[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)接口获取
+                     * @param _subnetId 子网Id,可通过[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)接口获取
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -108,19 +112,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ckafka实例id
+                     * ckafka集群实例Id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * vpc地址
+                     * 私有网络Id,可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取
+
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 子网地址
+                     * 子网Id,可通过[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)接口获取
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;

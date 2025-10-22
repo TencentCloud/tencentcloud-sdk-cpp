@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点池最小副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MinReplicas 节点池最小副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMinReplicas() const;
 
                     /**
                      * 设置节点池最小副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _minReplicas 节点池最小副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMinReplicas(const int64_t& _minReplicas);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点池最大副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxReplicas 节点池最大副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxReplicas() const;
 
                     /**
                      * 设置节点池最大副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxReplicas 节点池最大副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxReplicas(const int64_t& _maxReplicas);
@@ -125,14 +117,12 @@ namespace TencentCloud
 
                     /**
                      * 节点池最小副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_minReplicas;
                     bool m_minReplicasHasBeenSet;
 
                     /**
                      * 节点池最大副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxReplicas;
                     bool m_maxReplicasHasBeenSet;

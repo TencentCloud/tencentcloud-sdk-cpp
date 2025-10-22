@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -315,18 +315,14 @@ NONEXTHOP：无下一跳；
 
                     /**
                      * 获取下一跳网关名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NextHopName 下一跳网关名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNextHopName() const;
 
                     /**
                      * 设置下一跳网关名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nextHopName 下一跳网关名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNextHopName(const std::string& _nextHopName);
@@ -340,18 +336,14 @@ NONEXTHOP：无下一跳；
 
                     /**
                      * 获取网络探测描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetDetectDescription 网络探测描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNetDetectDescription() const;
 
                     /**
                      * 设置网络探测描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _netDetectDescription 网络探测描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNetDetectDescription(const std::string& _netDetectDescription);
@@ -365,18 +357,14 @@ NONEXTHOP：无下一跳；
 
                     /**
                      * 获取创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -390,18 +378,14 @@ NONEXTHOP：无下一跳；
 
                     /**
                      * 获取标签键值对。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagSet 标签键值对。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTagSet() const;
 
                     /**
                      * 设置标签键值对。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tagSet 标签键值对。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTagSet(const std::vector<Tag>& _tagSet);
@@ -491,28 +475,24 @@ NONEXTHOP：无下一跳；
 
                     /**
                      * 下一跳网关名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nextHopName;
                     bool m_nextHopNameHasBeenSet;
 
                     /**
                      * 网络探测描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_netDetectDescription;
                     bool m_netDetectDescriptionHasBeenSet;
 
                     /**
                      * 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 标签键值对。	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tagSet;
                     bool m_tagSetHasBeenSet;

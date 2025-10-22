@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取本端网段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LocalCidrBlock 本端网段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLocalCidrBlock() const;
 
                     /**
                      * 设置本端网段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _localCidrBlock 本端网段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLocalCidrBlock(const std::string& _localCidrBlock);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对端网段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemoteCidrBlock 对端网段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetRemoteCidrBlock() const;
 
                     /**
                      * 设置对端网段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remoteCidrBlock 对端网段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemoteCidrBlock(const std::vector<std::string>& _remoteCidrBlock);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 本端网段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_localCidrBlock;
                     bool m_localCidrBlockHasBeenSet;
 
                     /**
                      * 对端网段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_remoteCidrBlock;
                     bool m_remoteCidrBlockHasBeenSet;

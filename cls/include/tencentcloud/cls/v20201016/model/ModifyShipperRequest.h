@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,15 +46,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取投递规则ID
-                     * @return ShipperId 投递规则ID
+                     * 获取投递规则Id。
+
+- 通过 [获取投递任务列表](https://cloud.tencent.com/document/product/614/58745)获取ShipperId。
+                     * @return ShipperId 投递规则Id。
+
+- 通过 [获取投递任务列表](https://cloud.tencent.com/document/product/614/58745)获取ShipperId。
                      * 
                      */
                     std::string GetShipperId() const;
 
                     /**
-                     * 设置投递规则ID
-                     * @param _shipperId 投递规则ID
+                     * 设置投递规则Id。
+
+- 通过 [获取投递任务列表](https://cloud.tencent.com/document/product/614/58745)获取ShipperId。
+                     * @param _shipperId 投递规则Id。
+
+- 通过 [获取投递任务列表](https://cloud.tencent.com/document/product/614/58745)获取ShipperId。
                      * 
                      */
                     void SetShipperId(const std::string& _shipperId);
@@ -67,15 +75,23 @@ namespace TencentCloud
                     bool ShipperIdHasBeenSet() const;
 
                     /**
-                     * 获取COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。
-                     * @return Bucket COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。
+                     * 获取COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。	
+
+- 通过[GET Service（List Buckets）](https://cloud.tencent.com/document/product/436/8291)获取COS存储桶。
+                     * @return Bucket COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。	
+
+- 通过[GET Service（List Buckets）](https://cloud.tencent.com/document/product/436/8291)获取COS存储桶。
                      * 
                      */
                     std::string GetBucket() const;
 
                     /**
-                     * 设置COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。
-                     * @param _bucket COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。
+                     * 设置COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。	
+
+- 通过[GET Service（List Buckets）](https://cloud.tencent.com/document/product/436/8291)获取COS存储桶。
+                     * @param _bucket COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。	
+
+- 通过[GET Service（List Buckets）](https://cloud.tencent.com/document/product/436/8291)获取COS存储桶。
                      * 
                      */
                     void SetBucket(const std::string& _bucket);
@@ -306,47 +322,55 @@ namespace TencentCloud
                     bool FilenameModeHasBeenSet() const;
 
                     /**
-                     * 获取cos桶存储类型。支持：STANDARD_IA、ARCHIVE、DEEP_ARCHIVE、STANDARD、MAZ_STANDARD、MAZ_STANDARD_IA、INTELLIGENT_TIERING。
+                     * 获取对象存储类型，默认值为 STANDARD。枚举值请参见[ 存储类型概述](https://cloud.tencent.com/document/product/436/33417) 文档。
+参考值有：
 
-1. STANDARD_IA：低频存储；
-2. ARCHIVE：归档存储；
-3. DEEP_ARCHIVE：深度归档存储；
-4. STANDARD：标准存储；
-5. MAZ_STANDARD：标准存储（多 AZ）；
-6. MAZ_STANDARD_IA：低频存储（多 AZ）；
-7. INTELLIGENT_TIERING：智能分层存储。
-                     * @return StorageType cos桶存储类型。支持：STANDARD_IA、ARCHIVE、DEEP_ARCHIVE、STANDARD、MAZ_STANDARD、MAZ_STANDARD_IA、INTELLIGENT_TIERING。
+- STANDARD：标准存储
+- STANDARD_IA：低频存储
+- ARCHIVE：归档存储
+- DEEP_ARCHIVE：深度归档存储
+- MAZ_STANDARD：标准存储（多 AZ）
+- MAZ_STANDARD_IA：低频存储（多 AZ）
+- INTELLIGENT_TIERING：智能分层存储
+- MAZ_INTELLIGENT_TIERING：智能分层存储（多 AZ）
+                     * @return StorageType 对象存储类型，默认值为 STANDARD。枚举值请参见[ 存储类型概述](https://cloud.tencent.com/document/product/436/33417) 文档。
+参考值有：
 
-1. STANDARD_IA：低频存储；
-2. ARCHIVE：归档存储；
-3. DEEP_ARCHIVE：深度归档存储；
-4. STANDARD：标准存储；
-5. MAZ_STANDARD：标准存储（多 AZ）；
-6. MAZ_STANDARD_IA：低频存储（多 AZ）；
-7. INTELLIGENT_TIERING：智能分层存储。
+- STANDARD：标准存储
+- STANDARD_IA：低频存储
+- ARCHIVE：归档存储
+- DEEP_ARCHIVE：深度归档存储
+- MAZ_STANDARD：标准存储（多 AZ）
+- MAZ_STANDARD_IA：低频存储（多 AZ）
+- INTELLIGENT_TIERING：智能分层存储
+- MAZ_INTELLIGENT_TIERING：智能分层存储（多 AZ）
                      * 
                      */
                     std::string GetStorageType() const;
 
                     /**
-                     * 设置cos桶存储类型。支持：STANDARD_IA、ARCHIVE、DEEP_ARCHIVE、STANDARD、MAZ_STANDARD、MAZ_STANDARD_IA、INTELLIGENT_TIERING。
+                     * 设置对象存储类型，默认值为 STANDARD。枚举值请参见[ 存储类型概述](https://cloud.tencent.com/document/product/436/33417) 文档。
+参考值有：
 
-1. STANDARD_IA：低频存储；
-2. ARCHIVE：归档存储；
-3. DEEP_ARCHIVE：深度归档存储；
-4. STANDARD：标准存储；
-5. MAZ_STANDARD：标准存储（多 AZ）；
-6. MAZ_STANDARD_IA：低频存储（多 AZ）；
-7. INTELLIGENT_TIERING：智能分层存储。
-                     * @param _storageType cos桶存储类型。支持：STANDARD_IA、ARCHIVE、DEEP_ARCHIVE、STANDARD、MAZ_STANDARD、MAZ_STANDARD_IA、INTELLIGENT_TIERING。
+- STANDARD：标准存储
+- STANDARD_IA：低频存储
+- ARCHIVE：归档存储
+- DEEP_ARCHIVE：深度归档存储
+- MAZ_STANDARD：标准存储（多 AZ）
+- MAZ_STANDARD_IA：低频存储（多 AZ）
+- INTELLIGENT_TIERING：智能分层存储
+- MAZ_INTELLIGENT_TIERING：智能分层存储（多 AZ）
+                     * @param _storageType 对象存储类型，默认值为 STANDARD。枚举值请参见[ 存储类型概述](https://cloud.tencent.com/document/product/436/33417) 文档。
+参考值有：
 
-1. STANDARD_IA：低频存储；
-2. ARCHIVE：归档存储；
-3. DEEP_ARCHIVE：深度归档存储；
-4. STANDARD：标准存储；
-5. MAZ_STANDARD：标准存储（多 AZ）；
-6. MAZ_STANDARD_IA：低频存储（多 AZ）；
-7. INTELLIGENT_TIERING：智能分层存储。
+- STANDARD：标准存储
+- STANDARD_IA：低频存储
+- ARCHIVE：归档存储
+- DEEP_ARCHIVE：深度归档存储
+- MAZ_STANDARD：标准存储（多 AZ）
+- MAZ_STANDARD_IA：低频存储（多 AZ）
+- INTELLIGENT_TIERING：智能分层存储
+- MAZ_INTELLIGENT_TIERING：智能分层存储（多 AZ）
                      * 
                      */
                     void SetStorageType(const std::string& _storageType);
@@ -361,13 +385,17 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 投递规则ID
+                     * 投递规则Id。
+
+- 通过 [获取投递任务列表](https://cloud.tencent.com/document/product/614/58745)获取ShipperId。
                      */
                     std::string m_shipperId;
                     bool m_shipperIdHasBeenSet;
 
                     /**
-                     * COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。
+                     * COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。	
+
+- 通过[GET Service（List Buckets）](https://cloud.tencent.com/document/product/436/8291)获取COS存储桶。
                      */
                     std::string m_bucket;
                     bool m_bucketHasBeenSet;
@@ -435,15 +463,17 @@ namespace TencentCloud
                     bool m_filenameModeHasBeenSet;
 
                     /**
-                     * cos桶存储类型。支持：STANDARD_IA、ARCHIVE、DEEP_ARCHIVE、STANDARD、MAZ_STANDARD、MAZ_STANDARD_IA、INTELLIGENT_TIERING。
+                     * 对象存储类型，默认值为 STANDARD。枚举值请参见[ 存储类型概述](https://cloud.tencent.com/document/product/436/33417) 文档。
+参考值有：
 
-1. STANDARD_IA：低频存储；
-2. ARCHIVE：归档存储；
-3. DEEP_ARCHIVE：深度归档存储；
-4. STANDARD：标准存储；
-5. MAZ_STANDARD：标准存储（多 AZ）；
-6. MAZ_STANDARD_IA：低频存储（多 AZ）；
-7. INTELLIGENT_TIERING：智能分层存储。
+- STANDARD：标准存储
+- STANDARD_IA：低频存储
+- ARCHIVE：归档存储
+- DEEP_ARCHIVE：深度归档存储
+- MAZ_STANDARD：标准存储（多 AZ）
+- MAZ_STANDARD_IA：低频存储（多 AZ）
+- INTELLIGENT_TIERING：智能分层存储
+- MAZ_INTELLIGENT_TIERING：智能分层存储（多 AZ）
                      */
                     std::string m_storageType;
                     bool m_storageTypeHasBeenSet;

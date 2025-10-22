@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,7 +49,11 @@ CreateLaunchTemplateRequest::CreateLaunchTemplateRequest() :
     m_hpcClusterIdHasBeenSet(false),
     m_instanceChargeTypeHasBeenSet(false),
     m_instanceChargePrepaidHasBeenSet(false),
-    m_disableApiTerminationHasBeenSet(false)
+    m_disableApiTerminationHasBeenSet(false),
+    m_enableJumboFrameHasBeenSet(false),
+    m_launchTemplateTagSpecificationHasBeenSet(false),
+    m_metadataHasBeenSet(false),
+    m_templateDataModifyActionHasBeenSet(false)
 {
 }
 
@@ -307,6 +311,46 @@ string CreateLaunchTemplateRequest::ToJsonString() const
         string key = "DisableApiTermination";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_disableApiTermination, allocator);
+    }
+
+    if (m_enableJumboFrameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableJumboFrame";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableJumboFrame, allocator);
+    }
+
+    if (m_launchTemplateTagSpecificationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LaunchTemplateTagSpecification";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_launchTemplateTagSpecification.begin(); itr != m_launchTemplateTagSpecification.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_metadataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Metadata";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_metadata.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_templateDataModifyActionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateDataModifyAction";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_templateDataModifyAction.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -747,6 +791,70 @@ void CreateLaunchTemplateRequest::SetDisableApiTermination(const bool& _disableA
 bool CreateLaunchTemplateRequest::DisableApiTerminationHasBeenSet() const
 {
     return m_disableApiTerminationHasBeenSet;
+}
+
+bool CreateLaunchTemplateRequest::GetEnableJumboFrame() const
+{
+    return m_enableJumboFrame;
+}
+
+void CreateLaunchTemplateRequest::SetEnableJumboFrame(const bool& _enableJumboFrame)
+{
+    m_enableJumboFrame = _enableJumboFrame;
+    m_enableJumboFrameHasBeenSet = true;
+}
+
+bool CreateLaunchTemplateRequest::EnableJumboFrameHasBeenSet() const
+{
+    return m_enableJumboFrameHasBeenSet;
+}
+
+vector<TagSpecification> CreateLaunchTemplateRequest::GetLaunchTemplateTagSpecification() const
+{
+    return m_launchTemplateTagSpecification;
+}
+
+void CreateLaunchTemplateRequest::SetLaunchTemplateTagSpecification(const vector<TagSpecification>& _launchTemplateTagSpecification)
+{
+    m_launchTemplateTagSpecification = _launchTemplateTagSpecification;
+    m_launchTemplateTagSpecificationHasBeenSet = true;
+}
+
+bool CreateLaunchTemplateRequest::LaunchTemplateTagSpecificationHasBeenSet() const
+{
+    return m_launchTemplateTagSpecificationHasBeenSet;
+}
+
+Metadata CreateLaunchTemplateRequest::GetMetadata() const
+{
+    return m_metadata;
+}
+
+void CreateLaunchTemplateRequest::SetMetadata(const Metadata& _metadata)
+{
+    m_metadata = _metadata;
+    m_metadataHasBeenSet = true;
+}
+
+bool CreateLaunchTemplateRequest::MetadataHasBeenSet() const
+{
+    return m_metadataHasBeenSet;
+}
+
+string CreateLaunchTemplateRequest::GetTemplateDataModifyAction() const
+{
+    return m_templateDataModifyAction;
+}
+
+void CreateLaunchTemplateRequest::SetTemplateDataModifyAction(const string& _templateDataModifyAction)
+{
+    m_templateDataModifyAction = _templateDataModifyAction;
+    m_templateDataModifyActionHasBeenSet = true;
+}
+
+bool CreateLaunchTemplateRequest::TemplateDataModifyActionHasBeenSet() const
+{
+    return m_templateDataModifyActionHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Alias 镜像别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置镜像别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _alias 镜像别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAlias(const std::string& _alias);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取操作系统名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OsName 操作系统名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOsName() const;
 
                     /**
                      * 设置操作系统名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _osName 操作系统名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOsName(const std::string& _osName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageId 镜像ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetImageId() const;
 
                     /**
                      * 设置镜像ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _imageId 镜像ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImageId(const std::string& _imageId);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取容器的镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OsCustomizeType 容器的镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOsCustomizeType() const;
 
                     /**
                      * 设置容器的镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _osCustomizeType 容器的镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOsCustomizeType(const std::string& _osCustomizeType);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 镜像别名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_alias;
                     bool m_aliasHasBeenSet;
 
                     /**
                      * 操作系统名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_osName;
                     bool m_osNameHasBeenSet;
 
                     /**
                      * 镜像ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_imageId;
                     bool m_imageIdHasBeenSet;
 
                     /**
                      * 容器的镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_osCustomizeType;
                     bool m_osCustomizeTypeHasBeenSet;

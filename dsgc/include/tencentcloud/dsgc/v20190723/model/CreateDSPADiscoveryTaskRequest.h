@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -127,27 +127,6 @@ namespace TencentCloud
                     bool EnableHasBeenSet() const;
 
                     /**
-                     * 获取通用规则集开关，0 关闭，1 启用
-                     * @return GeneralRuleSetEnable 通用规则集开关，0 关闭，1 启用
-                     * 
-                     */
-                    int64_t GetGeneralRuleSetEnable() const;
-
-                    /**
-                     * 设置通用规则集开关，0 关闭，1 启用
-                     * @param _generalRuleSetEnable 通用规则集开关，0 关闭，1 启用
-                     * 
-                     */
-                    void SetGeneralRuleSetEnable(const int64_t& _generalRuleSetEnable);
-
-                    /**
-                     * 判断参数 GeneralRuleSetEnable 是否已赋值
-                     * @return GeneralRuleSetEnable 是否已赋值
-                     * 
-                     */
-                    bool GeneralRuleSetEnableHasBeenSet() const;
-
-                    /**
                      * 获取执行计划， 0立即 1定时，选择“立即”时，扫描周期只能选择单次
                      * @return Plan 执行计划， 0立即 1定时，选择“立即”时，扫描周期只能选择单次
                      * 
@@ -260,6 +239,27 @@ selfbuilt-db 表示自建数据库
                     bool DataSourceTypeHasBeenSet() const;
 
                     /**
+                     * 获取通用规则集开关，0 关闭，1 启用
+                     * @return GeneralRuleSetEnable 通用规则集开关，0 关闭，1 启用
+                     * @deprecated
+                     */
+                    int64_t GetGeneralRuleSetEnable() const;
+
+                    /**
+                     * 设置通用规则集开关，0 关闭，1 启用
+                     * @param _generalRuleSetEnable 通用规则集开关，0 关闭，1 启用
+                     * @deprecated
+                     */
+                    void SetGeneralRuleSetEnable(const int64_t& _generalRuleSetEnable);
+
+                    /**
+                     * 判断参数 GeneralRuleSetEnable 是否已赋值
+                     * @return GeneralRuleSetEnable 是否已赋值
+                     * @deprecated
+                     */
+                    bool GeneralRuleSetEnableHasBeenSet() const;
+
+                    /**
                      * 获取任务描述，最大长度为1024个字符
                      * @return Description 任务描述，最大长度为1024个字符
                      * 
@@ -302,15 +302,15 @@ selfbuilt-db 表示自建数据库
                     bool ConditionHasBeenSet() const;
 
                     /**
-                     * 获取合规组ID列表，最多支持添加5个
-                     * @return ComplianceGroupIds 合规组ID列表，最多支持添加5个
+                     * 获取此参数必选。合规组ID列表，最多支持添加5个
+                     * @return ComplianceGroupIds 此参数必选。合规组ID列表，最多支持添加5个
                      * 
                      */
                     std::vector<int64_t> GetComplianceGroupIds() const;
 
                     /**
-                     * 设置合规组ID列表，最多支持添加5个
-                     * @param _complianceGroupIds 合规组ID列表，最多支持添加5个
+                     * 设置此参数必选。合规组ID列表，最多支持添加5个
+                     * @param _complianceGroupIds 此参数必选。合规组ID列表，最多支持添加5个
                      * 
                      */
                     void SetComplianceGroupIds(const std::vector<int64_t>& _complianceGroupIds);
@@ -410,6 +410,27 @@ selfbuilt-db 表示自建数据库
                      */
                     bool GlobalOrderFieldHasBeenSet() const;
 
+                    /**
+                     * 获取full:全量扫描 incre:变更扫描
+                     * @return ScanRange full:全量扫描 incre:变更扫描
+                     * 
+                     */
+                    std::string GetScanRange() const;
+
+                    /**
+                     * 设置full:全量扫描 incre:变更扫描
+                     * @param _scanRange full:全量扫描 incre:变更扫描
+                     * 
+                     */
+                    void SetScanRange(const std::string& _scanRange);
+
+                    /**
+                     * 判断参数 ScanRange 是否已赋值
+                     * @return ScanRange 是否已赋值
+                     * 
+                     */
+                    bool ScanRangeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -435,12 +456,6 @@ selfbuilt-db 表示自建数据库
                      */
                     int64_t m_enable;
                     bool m_enableHasBeenSet;
-
-                    /**
-                     * 通用规则集开关，0 关闭，1 启用
-                     */
-                    int64_t m_generalRuleSetEnable;
-                    bool m_generalRuleSetEnableHasBeenSet;
 
                     /**
                      * 执行计划， 0立即 1定时，选择“立即”时，扫描周期只能选择单次
@@ -474,6 +489,12 @@ selfbuilt-db 表示自建数据库
                     bool m_dataSourceTypeHasBeenSet;
 
                     /**
+                     * 通用规则集开关，0 关闭，1 启用
+                     */
+                    int64_t m_generalRuleSetEnable;
+                    bool m_generalRuleSetEnableHasBeenSet;
+
+                    /**
                      * 任务描述，最大长度为1024个字符
                      */
                     std::string m_description;
@@ -486,7 +507,7 @@ selfbuilt-db 表示自建数据库
                     bool m_conditionHasBeenSet;
 
                     /**
-                     * 合规组ID列表，最多支持添加5个
+                     * 此参数必选。合规组ID列表，最多支持添加5个
                      */
                     std::vector<int64_t> m_complianceGroupIds;
                     bool m_complianceGroupIdsHasBeenSet;
@@ -515,6 +536,12 @@ selfbuilt-db 表示自建数据库
                      */
                     std::string m_globalOrderField;
                     bool m_globalOrderFieldHasBeenSet;
+
+                    /**
+                     * full:全量扫描 incre:变更扫描
+                     */
+                    std::string m_scanRange;
+                    bool m_scanRangeHasBeenSet;
 
                 };
             }

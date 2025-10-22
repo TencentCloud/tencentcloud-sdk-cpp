@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取账户的名称
-                     * @return User 账户的名称
+                     * 获取账户的名称。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。
+                     * @return User 账户的名称。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。
                      * 
                      */
                     std::string GetUser() const;
 
                     /**
-                     * 设置账户的名称
-                     * @param _user 账户的名称
+                     * 设置账户的名称。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。
+                     * @param _user 账户的名称。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。
                      * 
                      */
                     void SetUser(const std::string& _user);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool UserHasBeenSet() const;
 
                     /**
-                     * 获取账户的旧主机
-                     * @return Host 账户的旧主机
+                     * 获取账户的旧主机。格式：IP 形式，支持单个 IP 地址或者%。
+                     * @return Host 账户的旧主机。格式：IP 形式，支持单个 IP 地址或者%。
                      * 
                      */
                     std::string GetHost() const;
 
                     /**
-                     * 设置账户的旧主机
-                     * @param _host 账户的旧主机
+                     * 设置账户的旧主机。格式：IP 形式，支持单个 IP 地址或者%。
+                     * @param _host 账户的旧主机。格式：IP 形式，支持单个 IP 地址或者%。
                      * 
                      */
                     void SetHost(const std::string& _host);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool HostHasBeenSet() const;
 
                     /**
-                     * 获取账户的新主机
-                     * @return NewHost 账户的新主机
+                     * 获取账户的新主机。格式：IP 形式，支持单个 IP 地址或者%。
+                     * @return NewHost 账户的新主机。格式：IP 形式，支持单个 IP 地址或者%。
                      * 
                      */
                     std::string GetNewHost() const;
 
                     /**
-                     * 设置账户的新主机
-                     * @param _newHost 账户的新主机
+                     * 设置账户的新主机。格式：IP 形式，支持单个 IP 地址或者%。
+                     * @param _newHost 账户的新主机。格式：IP 形式，支持单个 IP 地址或者%。
                      * 
                      */
                     void SetNewHost(const std::string& _newHost);
@@ -135,19 +135,19 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 账户的名称
+                     * 账户的名称。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。
                      */
                     std::string m_user;
                     bool m_userHasBeenSet;
 
                     /**
-                     * 账户的旧主机
+                     * 账户的旧主机。格式：IP 形式，支持单个 IP 地址或者%。
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;
 
                     /**
-                     * 账户的新主机
+                     * 账户的新主机。格式：IP 形式，支持单个 IP 地址或者%。
                      */
                     std::string m_newHost;
                     bool m_newHostHasBeenSet;

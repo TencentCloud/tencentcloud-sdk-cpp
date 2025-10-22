@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计划ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PlanId 计划ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPlanId() const;
 
                     /**
                      * 设置计划ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _planId 计划ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPlanId(const std::string& _planId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计划名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 计划名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置计划名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 计划名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时间模板ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeTemplateId 时间模板ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTimeTemplateId() const;
 
                     /**
                      * 设置时间模板ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeTemplateId 时间模板ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeTemplateId(const std::string& _timeTemplateId);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时间模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeTemplateName 时间模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTimeTemplateName() const;
 
                     /**
                      * 设置时间模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeTemplateName 时间模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeTemplateName(const std::string& _timeTemplateName);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取绑定的通道列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Channels 绑定的通道列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ChannelItem> GetChannels() const;
 
                     /**
                      * 设置绑定的通道列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _channels 绑定的通道列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChannels(const std::vector<ChannelItem>& _channels);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取存储周期（天）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordStorageTime 存储周期（天）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRecordStorageTime() const;
 
                     /**
                      * 设置存储周期（天）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recordStorageTime 存储周期（天）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecordStorageTime(const int64_t& _recordStorageTime);
@@ -201,42 +177,36 @@ namespace TencentCloud
 
                     /**
                      * 计划ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_planId;
                     bool m_planIdHasBeenSet;
 
                     /**
                      * 计划名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 时间模板ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timeTemplateId;
                     bool m_timeTemplateIdHasBeenSet;
 
                     /**
                      * 时间模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timeTemplateName;
                     bool m_timeTemplateNameHasBeenSet;
 
                     /**
                      * 绑定的通道列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ChannelItem> m_channels;
                     bool m_channelsHasBeenSet;
 
                     /**
                      * 存储周期（天）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_recordStorageTime;
                     bool m_recordStorageTimeHasBeenSet;

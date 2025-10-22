@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -143,22 +143,18 @@ namespace TencentCloud
                     bool NationalityHasBeenSet() const;
 
                     /**
-                     * 获取告警码：
--9103	证照翻拍告警
--9102	证照复印件告警（包括黑白复印件、彩色复印件）
--9106       证件遮挡告警
-                     * @return Warn 告警码：
--9103	证照翻拍告警
--9102	证照复印件告警（包括黑白复印件、彩色复印件）
--9106       证件遮挡告警
-                     * 
+                     * 获取该字段已废弃， 将固定返回空数组，不建议使用。
+
+                     * @return Warn 该字段已废弃， 将固定返回空数组，不建议使用。
+
+                     * @deprecated
                      */
                     std::vector<int64_t> GetWarn() const;
 
                     /**
                      * 判断参数 Warn 是否已赋值
                      * @return Warn 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool WarnHasBeenSet() const;
 
@@ -177,32 +173,18 @@ namespace TencentCloud
                     bool ImageHasBeenSet() const;
 
                     /**
-                     * 获取扩展字段:
-{
-    ID:{
-        Confidence:0.9999
-    },
-    Name:{
-        Confidence:0.9996
-    }
-}
-                     * @return AdvancedInfo 扩展字段:
-{
-    ID:{
-        Confidence:0.9999
-    },
-    Name:{
-        Confidence:0.9996
-    }
-}
-                     * 
+                     * 获取该字段已废弃， 将固定返回"1"，不建议使用。
+
+                     * @return AdvancedInfo 该字段已废弃， 将固定返回"1"，不建议使用。
+
+                     * @deprecated
                      */
                     std::string GetAdvancedInfo() const;
 
                     /**
                      * 判断参数 AdvancedInfo 是否已赋值
                      * @return AdvancedInfo 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AdvancedInfoHasBeenSet() const;
 
@@ -322,6 +304,20 @@ namespace TencentCloud
                      */
                     bool WarnCardInfosHasBeenSet() const;
 
+                    /**
+                     * 获取输入图片中的卡证数量（仅请求曼谷地域[ap-bangkok]返回）
+                     * @return CardCount 输入图片中的卡证数量（仅请求曼谷地域[ap-bangkok]返回）
+                     * 
+                     */
+                    int64_t GetCardCount() const;
+
+                    /**
+                     * 判断参数 CardCount 是否已赋值
+                     * @return CardCount 是否已赋值
+                     * 
+                     */
+                    bool CardCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -367,10 +363,8 @@ namespace TencentCloud
                     bool m_nationalityHasBeenSet;
 
                     /**
-                     * 告警码：
--9103	证照翻拍告警
--9102	证照复印件告警（包括黑白复印件、彩色复印件）
--9106       证件遮挡告警
+                     * 该字段已废弃， 将固定返回空数组，不建议使用。
+
                      */
                     std::vector<int64_t> m_warn;
                     bool m_warnHasBeenSet;
@@ -382,15 +376,8 @@ namespace TencentCloud
                     bool m_imageHasBeenSet;
 
                     /**
-                     * 扩展字段:
-{
-    ID:{
-        Confidence:0.9999
-    },
-    Name:{
-        Confidence:0.9996
-    }
-}
+                     * 该字段已废弃， 将固定返回"1"，不建议使用。
+
                      */
                     std::string m_advancedInfo;
                     bool m_advancedInfoHasBeenSet;
@@ -445,6 +432,12 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_warnCardInfos;
                     bool m_warnCardInfosHasBeenSet;
+
+                    /**
+                     * 输入图片中的卡证数量（仅请求曼谷地域[ap-bangkok]返回）
+                     */
+                    int64_t m_cardCount;
+                    bool m_cardCountHasBeenSet;
 
                 };
             }

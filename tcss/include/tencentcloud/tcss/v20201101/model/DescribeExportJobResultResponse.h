@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取返回下载URL
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DownloadURL 返回下载URL
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDownloadURL() const;
@@ -75,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取当ExportStatus为RUNNING时，返回导出进度。0~100范围的浮点数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExportProgress 当ExportStatus为RUNNING时，返回导出进度。0~100范围的浮点数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetExportProgress() const;
@@ -91,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailureMsg 失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFailureMsg() const;
@@ -115,21 +109,18 @@ namespace TencentCloud
 
                     /**
                      * 返回下载URL
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_downloadURL;
                     bool m_downloadURLHasBeenSet;
 
                     /**
                      * 当ExportStatus为RUNNING时，返回导出进度。0~100范围的浮点数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_exportProgress;
                     bool m_exportProgressHasBeenSet;
 
                     /**
                      * 失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_failureMsg;
                     bool m_failureMsgHasBeenSet;

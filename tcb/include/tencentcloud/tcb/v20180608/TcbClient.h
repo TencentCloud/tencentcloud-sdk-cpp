@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,8 +59,6 @@
 #include <tencentcloud/tcb/v20180608/model/DeleteGatewayVersionResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteWxGatewayRouteRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteWxGatewayRouteResponse.h>
-#include <tencentcloud/tcb/v20180608/model/DescribeActivityInfoRequest.h>
-#include <tencentcloud/tcb/v20180608/model/DescribeActivityInfoResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeActivityRecordRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeActivityRecordResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeAuthDomainsRequest.h>
@@ -167,6 +165,8 @@
 #include <tencentcloud/tcb/v20180608/model/DestroyStandaloneGatewayResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DestroyStaticStoreRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DestroyStaticStoreResponse.h>
+#include <tencentcloud/tcb/v20180608/model/EditAuthConfigRequest.h>
+#include <tencentcloud/tcb/v20180608/model/EditAuthConfigResponse.h>
 #include <tencentcloud/tcb/v20180608/model/EstablishCloudBaseRunServerRequest.h>
 #include <tencentcloud/tcb/v20180608/model/EstablishCloudBaseRunServerResponse.h>
 #include <tencentcloud/tcb/v20180608/model/EstablishWxGatewayRouteRequest.h>
@@ -269,9 +269,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteWxGatewayRouteResponse> DeleteWxGatewayRouteOutcome;
                 typedef std::future<DeleteWxGatewayRouteOutcome> DeleteWxGatewayRouteOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DeleteWxGatewayRouteRequest&, DeleteWxGatewayRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWxGatewayRouteAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeActivityInfoResponse> DescribeActivityInfoOutcome;
-                typedef std::future<DescribeActivityInfoOutcome> DescribeActivityInfoOutcomeCallable;
-                typedef std::function<void(const TcbClient*, const Model::DescribeActivityInfoRequest&, DescribeActivityInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeActivityInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeActivityRecordResponse> DescribeActivityRecordOutcome;
                 typedef std::future<DescribeActivityRecordOutcome> DescribeActivityRecordOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeActivityRecordRequest&, DescribeActivityRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeActivityRecordAsyncHandler;
@@ -431,6 +428,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DestroyStaticStoreResponse> DestroyStaticStoreOutcome;
                 typedef std::future<DestroyStaticStoreOutcome> DestroyStaticStoreOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DestroyStaticStoreRequest&, DestroyStaticStoreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyStaticStoreAsyncHandler;
+                typedef Outcome<Core::Error, Model::EditAuthConfigResponse> EditAuthConfigOutcome;
+                typedef std::future<EditAuthConfigOutcome> EditAuthConfigOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::EditAuthConfigRequest&, EditAuthConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EditAuthConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::EstablishCloudBaseRunServerResponse> EstablishCloudBaseRunServerOutcome;
                 typedef std::future<EstablishCloudBaseRunServerOutcome> EstablishCloudBaseRunServerOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::EstablishCloudBaseRunServerRequest&, EstablishCloudBaseRunServerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EstablishCloudBaseRunServerAsyncHandler;
@@ -648,15 +648,6 @@ namespace TencentCloud
                 DeleteWxGatewayRouteOutcomeCallable DeleteWxGatewayRouteCallable(const Model::DeleteWxGatewayRouteRequest& request);
 
                 /**
-                 *查询活动信息
-                 * @param req DescribeActivityInfoRequest
-                 * @return DescribeActivityInfoOutcome
-                 */
-                DescribeActivityInfoOutcome DescribeActivityInfo(const Model::DescribeActivityInfoRequest &request);
-                void DescribeActivityInfoAsync(const Model::DescribeActivityInfoRequest& request, const DescribeActivityInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeActivityInfoOutcomeCallable DescribeActivityInfoCallable(const Model::DescribeActivityInfoRequest& request);
-
-                /**
                  *查询活动记录信息
                  * @param req DescribeActivityRecordRequest
                  * @return DescribeActivityRecordOutcome
@@ -765,7 +756,7 @@ namespace TencentCloud
                 DescribeCloudBaseRunOperationTypesOutcomeCallable DescribeCloudBaseRunOperationTypesCallable(const Model::DescribeCloudBaseRunOperationTypesRequest& request);
 
                 /**
-                 *查询云应用服务版本容器列表
+                 *查询云托管服务版本容器列表
                  * @param req DescribeCloudBaseRunPodListRequest
                  * @return DescribeCloudBaseRunPodListOutcome
                  */
@@ -1094,7 +1085,6 @@ namespace TencentCloud
 
                 /**
                  *查看安全网关路由
-
                  * @param req DescribeWxGatewayRoutesRequest
                  * @return DescribeWxGatewayRoutesOutcome
                  */
@@ -1137,6 +1127,15 @@ namespace TencentCloud
                 DestroyStaticStoreOutcome DestroyStaticStore(const Model::DestroyStaticStoreRequest &request);
                 void DestroyStaticStoreAsync(const Model::DestroyStaticStoreRequest& request, const DestroyStaticStoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DestroyStaticStoreOutcomeCallable DestroyStaticStoreCallable(const Model::DestroyStaticStoreRequest& request);
+
+                /**
+                 *修改登录配置
+                 * @param req EditAuthConfigRequest
+                 * @return EditAuthConfigOutcome
+                 */
+                EditAuthConfigOutcome EditAuthConfig(const Model::EditAuthConfigRequest &request);
+                void EditAuthConfigAsync(const Model::EditAuthConfigRequest& request, const EditAuthConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EditAuthConfigOutcomeCallable EditAuthConfigCallable(const Model::EditAuthConfigRequest& request);
 
                 /**
                  *创建云应用服务

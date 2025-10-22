@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,6 +39,49 @@ TdsClient::TdsClient(const Credential &credential, const string &region, const C
 {
 }
 
+
+TdsClient::DescribeFinanceFraudUltimateOutcome TdsClient::DescribeFinanceFraudUltimate(const DescribeFinanceFraudUltimateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFinanceFraudUltimate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFinanceFraudUltimateResponse rsp = DescribeFinanceFraudUltimateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFinanceFraudUltimateOutcome(rsp);
+        else
+            return DescribeFinanceFraudUltimateOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFinanceFraudUltimateOutcome(outcome.GetError());
+    }
+}
+
+void TdsClient::DescribeFinanceFraudUltimateAsync(const DescribeFinanceFraudUltimateRequest& request, const DescribeFinanceFraudUltimateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFinanceFraudUltimate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdsClient::DescribeFinanceFraudUltimateOutcomeCallable TdsClient::DescribeFinanceFraudUltimateCallable(const DescribeFinanceFraudUltimateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFinanceFraudUltimateOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFinanceFraudUltimate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
 
 TdsClient::DescribeFraudBaseOutcome TdsClient::DescribeFraudBase(const DescribeFraudBaseRequest &request)
 {

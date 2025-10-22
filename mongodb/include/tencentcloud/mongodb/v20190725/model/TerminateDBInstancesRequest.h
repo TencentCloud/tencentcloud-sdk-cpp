@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取指定预隔离实例ID。格式如：cmgo-p8vnipr5。
-                     * @return InstanceId 指定预隔离实例ID。格式如：cmgo-p8vnipr5。
+                     * 获取指定预隔离实例 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制预隔离实例 ID。
+                     * @return InstanceId 指定预隔离实例 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制预隔离实例 ID。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置指定预隔离实例ID。格式如：cmgo-p8vnipr5。
-                     * @param _instanceId 指定预隔离实例ID。格式如：cmgo-p8vnipr5。
+                     * 设置指定预隔离实例 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制预隔离实例 ID。
+                     * @param _instanceId 指定预隔离实例 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制预隔离实例 ID。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 指定预隔离实例ID。格式如：cmgo-p8vnipr5。
+                     * 指定预隔离实例 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制预隔离实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

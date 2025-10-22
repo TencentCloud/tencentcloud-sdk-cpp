@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群所在的主可用区。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MasterZone 集群所在的主可用区。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetMasterZone() const;
 
                     /**
                      * 设置集群所在的主可用区。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _masterZone 集群所在的主可用区。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMasterZone(const std::vector<std::string>& _masterZone);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群所在的备可用区。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SlaveZone 集群所在的备可用区。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSlaveZone() const;
 
                     /**
                      * 设置集群所在的备可用区。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _slaveZone 集群所在的备可用区。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSlaveZone(const std::vector<std::string>& _slaveZone);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 集群所在的主可用区。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_masterZone;
                     bool m_masterZoneHasBeenSet;
 
                     /**
                      * 集群所在的备可用区。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_slaveZone;
                     bool m_slaveZoneHasBeenSet;

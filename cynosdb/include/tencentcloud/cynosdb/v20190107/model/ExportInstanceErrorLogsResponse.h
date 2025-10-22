@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取错误日志导出内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorLogItems 错误日志导出内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ErrorLogItemExport> GetErrorLogItems() const;
@@ -60,14 +58,33 @@ namespace TencentCloud
                      */
                     bool ErrorLogItemsHasBeenSet() const;
 
+                    /**
+                     * 获取错误日志字符串
+                     * @return FileContent 错误日志字符串
+                     * 
+                     */
+                    std::string GetFileContent() const;
+
+                    /**
+                     * 判断参数 FileContent 是否已赋值
+                     * @return FileContent 是否已赋值
+                     * 
+                     */
+                    bool FileContentHasBeenSet() const;
+
                 private:
 
                     /**
                      * 错误日志导出内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ErrorLogItemExport> m_errorLogItems;
                     bool m_errorLogItemsHasBeenSet;
+
+                    /**
+                     * 错误日志字符串
+                     */
+                    std::string m_fileContent;
+                    bool m_fileContentHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,9 @@ using namespace std;
 
 ExportJavaMemShellsRequest::ExportJavaMemShellsRequest() :
     m_filtersHasBeenSet(false),
-    m_whereHasBeenSet(false)
+    m_whereHasBeenSet(false),
+    m_orderHasBeenSet(false),
+    m_byHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,22 @@ string ExportJavaMemShellsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_orderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Order";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_order.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_byHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "By";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_by.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -101,6 +119,38 @@ void ExportJavaMemShellsRequest::SetWhere(const vector<string>& _where)
 bool ExportJavaMemShellsRequest::WhereHasBeenSet() const
 {
     return m_whereHasBeenSet;
+}
+
+string ExportJavaMemShellsRequest::GetOrder() const
+{
+    return m_order;
+}
+
+void ExportJavaMemShellsRequest::SetOrder(const string& _order)
+{
+    m_order = _order;
+    m_orderHasBeenSet = true;
+}
+
+bool ExportJavaMemShellsRequest::OrderHasBeenSet() const
+{
+    return m_orderHasBeenSet;
+}
+
+string ExportJavaMemShellsRequest::GetBy() const
+{
+    return m_by;
+}
+
+void ExportJavaMemShellsRequest::SetBy(const string& _by)
+{
+    m_by = _by;
+    m_byHasBeenSet = true;
+}
+
+bool ExportJavaMemShellsRequest::ByHasBeenSet() const
+{
+    return m_byHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -156,18 +156,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户独占集群信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterInfo 用户独占集群信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ClusterInfo> GetClusterInfo() const;
 
                     /**
                      * 设置用户独占集群信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterInfo 用户独占集群信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterInfo(const std::vector<ClusterInfo>& _clusterInfo);
@@ -181,18 +177,14 @@ namespace TencentCloud
 
                     /**
                      * 获取购买标准版配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Standard 购买标准版配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStandard() const;
 
                     /**
                      * 设置购买标准版配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _standard 购买标准版配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStandard(const std::string& _standard);
@@ -206,18 +198,14 @@ namespace TencentCloud
 
                     /**
                      * 获取购买标准版S2配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StandardS2 购买标准版S2配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStandardS2() const;
 
                     /**
                      * 设置购买标准版S2配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _standardS2 购买标准版S2配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStandardS2(const std::string& _standardS2);
@@ -231,18 +219,14 @@ namespace TencentCloud
 
                     /**
                      * 获取购买专业版配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Profession 购买专业版配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProfession() const;
 
                     /**
                      * 设置购买专业版配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _profession 购买专业版配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProfession(const std::string& _profession);
@@ -256,18 +240,14 @@ namespace TencentCloud
 
                     /**
                      * 获取购买物理独占版配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Physical 购买物理独占版配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPhysical() const;
 
                     /**
                      * 设置购买物理独占版配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _physical 购买物理独占版配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPhysical(const std::string& _physical);
@@ -280,19 +260,15 @@ namespace TencentCloud
                     bool PhysicalHasBeenSet() const;
 
                     /**
-                     * 获取公网带宽
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PublicNetwork 公网带宽
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写   已废弃,无实际意义
+                     * @return PublicNetwork 公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写   已废弃,无实际意义
                      * 
                      */
                     std::string GetPublicNetwork() const;
 
                     /**
-                     * 设置公网带宽
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _publicNetwork 公网带宽
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写   已废弃,无实际意义
+                     * @param _publicNetwork 公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写   已废弃,无实际意义
                      * 
                      */
                     void SetPublicNetwork(const std::string& _publicNetwork);
@@ -306,18 +282,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公网带宽配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicNetworkLimit 公网带宽配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublicNetworkLimit() const;
 
                     /**
                      * 设置公网带宽配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publicNetworkLimit 公网带宽配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublicNetworkLimit(const std::string& _publicNetworkLimit);
@@ -330,19 +302,15 @@ namespace TencentCloud
                     bool PublicNetworkLimitHasBeenSet() const;
 
                     /**
-                     * 获取请求ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RequestId 请求ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取请求Id
+                     * @return RequestId 请求Id
                      * 
                      */
                     std::string GetRequestId() const;
 
                     /**
-                     * 设置请求ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _requestId 请求ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置请求Id
+                     * @param _requestId 请求Id
                      * 
                      */
                     void SetRequestId(const std::string& _requestId);
@@ -355,44 +323,15 @@ namespace TencentCloud
                     bool RequestIdHasBeenSet() const;
 
                     /**
-                     * 获取版本
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Version 版本
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetVersion() const;
-
-                    /**
-                     * 设置版本
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _version 版本
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetVersion(const std::string& _version);
-
-                    /**
-                     * 判断参数 Version 是否已赋值
-                     * @return Version 是否已赋值
-                     * 
-                     */
-                    bool VersionHasBeenSet() const;
-
-                    /**
                      * 获取分页offset
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Offset 分页offset
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页offset
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _offset 分页offset
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -406,18 +345,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分页limit
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Limit 分页limit
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页limit
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _limit 分页limit
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -431,18 +366,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否必须录入tag
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ForceCheckTag 是否必须录入tag
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetForceCheckTag() const;
 
                     /**
                      * 设置是否必须录入tag
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _forceCheckTag 是否必须录入tag
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetForceCheckTag(const bool& _forceCheckTag);
@@ -488,84 +419,66 @@ namespace TencentCloud
 
                     /**
                      * 用户独占集群信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ClusterInfo> m_clusterInfo;
                     bool m_clusterInfoHasBeenSet;
 
                     /**
                      * 购买标准版配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_standard;
                     bool m_standardHasBeenSet;
 
                     /**
                      * 购买标准版S2配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_standardS2;
                     bool m_standardS2HasBeenSet;
 
                     /**
                      * 购买专业版配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_profession;
                     bool m_professionHasBeenSet;
 
                     /**
                      * 购买物理独占版配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_physical;
                     bool m_physicalHasBeenSet;
 
                     /**
-                     * 公网带宽
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写   已废弃,无实际意义
                      */
                     std::string m_publicNetwork;
                     bool m_publicNetworkHasBeenSet;
 
                     /**
                      * 公网带宽配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publicNetworkLimit;
                     bool m_publicNetworkLimitHasBeenSet;
 
                     /**
-                     * 请求ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 请求Id
                      */
                     std::string m_requestId;
                     bool m_requestIdHasBeenSet;
 
                     /**
-                     * 版本
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_version;
-                    bool m_versionHasBeenSet;
-
-                    /**
                      * 分页offset
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
                      * 分页limit
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
                      * 是否必须录入tag
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_forceCheckTag;
                     bool m_forceCheckTagHasBeenSet;

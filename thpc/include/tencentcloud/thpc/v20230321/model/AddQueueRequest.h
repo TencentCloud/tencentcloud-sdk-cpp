@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取队列名称。<br><li>最多支持32个字符。
-                     * @return QueueName 队列名称。<br><li>最多支持32个字符。
+                     * 获取队列名称。<br><li>最多支持32个字符。</li>
+                     * @return QueueName 队列名称。<br><li>最多支持32个字符。</li>
                      * 
                      */
                     std::string GetQueueName() const;
 
                     /**
-                     * 设置队列名称。<br><li>最多支持32个字符。
-                     * @param _queueName 队列名称。<br><li>最多支持32个字符。
+                     * 设置队列名称。<br><li>最多支持32个字符。</li>
+                     * @param _queueName 队列名称。<br><li>最多支持32个字符。</li>
                      * 
                      */
                     void SetQueueName(const std::string& _queueName);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 队列名称。<br><li>最多支持32个字符。
+                     * 队列名称。<br><li>最多支持32个字符。</li>
                      */
                     std::string m_queueName;
                     bool m_queueNameHasBeenSet;

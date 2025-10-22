@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool ModelNameHasBeenSet() const;
 
                     /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
+                     * 获取开始时间戳, 单位为秒(废弃)
+                     * @return StartTime 开始时间戳, 单位为秒(废弃)
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param _startTime 开始时间
+                     * 设置开始时间戳, 单位为秒(废弃)
+                     * @param _startTime 开始时间戳, 单位为秒(废弃)
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取结束时间戳, 单位为秒(废弃)
+                     * @return EndTime 结束时间戳, 单位为秒(废弃)
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param _endTime 结束时间
+                     * 设置结束时间戳, 单位为秒(废弃)
+                     * @param _endTime 结束时间戳, 单位为秒(废弃)
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -209,6 +209,69 @@ namespace TencentCloud
                      * 
                      */
                     bool AppBizIdsHasBeenSet() const;
+
+                    /**
+                     * 获取空间id
+                     * @return SpaceId 空间id
+                     * 
+                     */
+                    std::string GetSpaceId() const;
+
+                    /**
+                     * 设置空间id
+                     * @param _spaceId 空间id
+                     * 
+                     */
+                    void SetSpaceId(const std::string& _spaceId);
+
+                    /**
+                     * 判断参数 SpaceId 是否已赋值
+                     * @return SpaceId 是否已赋值
+                     * 
+                     */
+                    bool SpaceIdHasBeenSet() const;
+
+                    /**
+                     * 获取开始时间戳, 单位为秒
+                     * @return StatStartTime 开始时间戳, 单位为秒
+                     * 
+                     */
+                    int64_t GetStatStartTime() const;
+
+                    /**
+                     * 设置开始时间戳, 单位为秒
+                     * @param _statStartTime 开始时间戳, 单位为秒
+                     * 
+                     */
+                    void SetStatStartTime(const int64_t& _statStartTime);
+
+                    /**
+                     * 判断参数 StatStartTime 是否已赋值
+                     * @return StatStartTime 是否已赋值
+                     * 
+                     */
+                    bool StatStartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取结束时间戳, 单位为秒
+                     * @return StatEndTime 结束时间戳, 单位为秒
+                     * 
+                     */
+                    int64_t GetStatEndTime() const;
+
+                    /**
+                     * 设置结束时间戳, 单位为秒
+                     * @param _statEndTime 结束时间戳, 单位为秒
+                     * 
+                     */
+                    void SetStatEndTime(const int64_t& _statEndTime);
+
+                    /**
+                     * 判断参数 StatEndTime 是否已赋值
+                     * @return StatEndTime 是否已赋值
+                     * 
+                     */
+                    bool StatEndTimeHasBeenSet() const;
 
                 private:
 
@@ -243,13 +306,13 @@ namespace TencentCloud
                     bool m_modelNameHasBeenSet;
 
                     /**
-                     * 开始时间
+                     * 开始时间戳, 单位为秒(废弃)
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * 结束时间戳, 单位为秒(废弃)
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -259,6 +322,24 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_appBizIds;
                     bool m_appBizIdsHasBeenSet;
+
+                    /**
+                     * 空间id
+                     */
+                    std::string m_spaceId;
+                    bool m_spaceIdHasBeenSet;
+
+                    /**
+                     * 开始时间戳, 单位为秒
+                     */
+                    int64_t m_statStartTime;
+                    bool m_statStartTimeHasBeenSet;
+
+                    /**
+                     * 结束时间戳, 单位为秒
+                     */
+                    int64_t m_statEndTime;
+                    bool m_statEndTimeHasBeenSet;
 
                 };
             }

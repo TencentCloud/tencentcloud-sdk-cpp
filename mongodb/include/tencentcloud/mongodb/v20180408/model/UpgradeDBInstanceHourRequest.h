@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID，格式如：cmgo-p8vnipr5
-                     * @return InstanceId 实例ID，格式如：cmgo-p8vnipr5
+                     * 获取实例ID，格式如：cmgo-iga0****
+                     * @return InstanceId 实例ID，格式如：cmgo-iga0****
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID，格式如：cmgo-p8vnipr5
-                     * @param _instanceId 实例ID，格式如：cmgo-p8vnipr5
+                     * 设置实例ID，格式如：cmgo-iga0****
+                     * @param _instanceId 实例ID，格式如：cmgo-iga0****
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -129,7 +129,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID，格式如：cmgo-p8vnipr5
+                     * 实例ID，格式如：cmgo-iga0****
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

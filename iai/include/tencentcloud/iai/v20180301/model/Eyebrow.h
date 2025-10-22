@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,18 @@ namespace TencentCloud
 
                     /**
                      * 获取眉毛浓密。
-AttributeItem对应的Type为 —— 0：淡眉，1：浓眉。
+- AttributeItem对应的Type为 —— 0：淡眉，1：浓眉。
                      * @return EyebrowDensity 眉毛浓密。
-AttributeItem对应的Type为 —— 0：淡眉，1：浓眉。
+- AttributeItem对应的Type为 —— 0：淡眉，1：浓眉。
                      * 
                      */
                     AttributeItem GetEyebrowDensity() const;
 
                     /**
                      * 设置眉毛浓密。
-AttributeItem对应的Type为 —— 0：淡眉，1：浓眉。
+- AttributeItem对应的Type为 —— 0：淡眉，1：浓眉。
                      * @param _eyebrowDensity 眉毛浓密。
-AttributeItem对应的Type为 —— 0：淡眉，1：浓眉。
+- AttributeItem对应的Type为 —— 0：淡眉，1：浓眉。
                      * 
                      */
                     void SetEyebrowDensity(const AttributeItem& _eyebrowDensity);
@@ -74,18 +74,18 @@ AttributeItem对应的Type为 —— 0：淡眉，1：浓眉。
 
                     /**
                      * 获取眉毛弯曲。
-AttributeItem对应的Type为 —— 0：不弯，1：弯眉。
+- AttributeItem对应的Type为  —— 0：不弯，1：弯眉。
                      * @return EyebrowCurve 眉毛弯曲。
-AttributeItem对应的Type为 —— 0：不弯，1：弯眉。
+- AttributeItem对应的Type为  —— 0：不弯，1：弯眉。
                      * 
                      */
                     AttributeItem GetEyebrowCurve() const;
 
                     /**
                      * 设置眉毛弯曲。
-AttributeItem对应的Type为 —— 0：不弯，1：弯眉。
+- AttributeItem对应的Type为  —— 0：不弯，1：弯眉。
                      * @param _eyebrowCurve 眉毛弯曲。
-AttributeItem对应的Type为 —— 0：不弯，1：弯眉。
+- AttributeItem对应的Type为  —— 0：不弯，1：弯眉。
                      * 
                      */
                     void SetEyebrowCurve(const AttributeItem& _eyebrowCurve);
@@ -99,18 +99,18 @@ AttributeItem对应的Type为 —— 0：不弯，1：弯眉。
 
                     /**
                      * 获取眉毛长短。
-AttributeItem对应的Type为 —— 0：短眉毛，1：长眉毛。
+- AttributeItem对应的Type为 —— 0：短眉毛，1：长眉毛。
                      * @return EyebrowLength 眉毛长短。
-AttributeItem对应的Type为 —— 0：短眉毛，1：长眉毛。
+- AttributeItem对应的Type为 —— 0：短眉毛，1：长眉毛。
                      * 
                      */
                     AttributeItem GetEyebrowLength() const;
 
                     /**
                      * 设置眉毛长短。
-AttributeItem对应的Type为 —— 0：短眉毛，1：长眉毛。
+- AttributeItem对应的Type为 —— 0：短眉毛，1：长眉毛。
                      * @param _eyebrowLength 眉毛长短。
-AttributeItem对应的Type为 —— 0：短眉毛，1：长眉毛。
+- AttributeItem对应的Type为 —— 0：短眉毛，1：长眉毛。
                      * 
                      */
                     void SetEyebrowLength(const AttributeItem& _eyebrowLength);
@@ -126,21 +126,21 @@ AttributeItem对应的Type为 —— 0：短眉毛，1：长眉毛。
 
                     /**
                      * 眉毛浓密。
-AttributeItem对应的Type为 —— 0：淡眉，1：浓眉。
+- AttributeItem对应的Type为 —— 0：淡眉，1：浓眉。
                      */
                     AttributeItem m_eyebrowDensity;
                     bool m_eyebrowDensityHasBeenSet;
 
                     /**
                      * 眉毛弯曲。
-AttributeItem对应的Type为 —— 0：不弯，1：弯眉。
+- AttributeItem对应的Type为  —— 0：不弯，1：弯眉。
                      */
                     AttributeItem m_eyebrowCurve;
                     bool m_eyebrowCurveHasBeenSet;
 
                     /**
                      * 眉毛长短。
-AttributeItem对应的Type为 —— 0：短眉毛，1：长眉毛。
+- AttributeItem对应的Type为 —— 0：短眉毛，1：长眉毛。
                      */
                     AttributeItem m_eyebrowLength;
                     bool m_eyebrowLengthHasBeenSet;

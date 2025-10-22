@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取构件概要信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ElementProfile 构件概要信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ElementProfile GetElementProfile() const;
 
                     /**
                      * 设置构件概要信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _elementProfile 构件概要信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetElementProfile(const ElementProfile& _elementProfile);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Children 子节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ElementProfileTreeNode> GetChildren() const;
 
                     /**
                      * 设置子节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _children 子节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChildren(const std::vector<ElementProfileTreeNode>& _children);
@@ -102,14 +94,12 @@ namespace TencentCloud
 
                     /**
                      * 构件概要信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ElementProfile m_elementProfile;
                     bool m_elementProfileHasBeenSet;
 
                     /**
                      * 子节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ElementProfileTreeNode> m_children;
                     bool m_childrenHasBeenSet;

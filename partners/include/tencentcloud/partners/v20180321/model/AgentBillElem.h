@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -258,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取客户类型：可以为new(自拓)/assign(指定)/old(官网)/direct(直销)/direct_newopp(直销(新商机))/空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientType 客户类型：可以为new(自拓)/assign(指定)/old(官网)/direct(直销)/direct_newopp(直销(新商机))/空
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClientType() const;
 
                     /**
                      * 设置客户类型：可以为new(自拓)/assign(指定)/old(官网)/direct(直销)/direct_newopp(直销(新商机))/空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clientType 客户类型：可以为new(自拓)/assign(指定)/old(官网)/direct(直销)/direct_newopp(直销(新商机))/空
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClientType(const std::string& _clientType);
@@ -283,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取项目类型：可以为self(自拓项目)/platform(合作项目)/repeat(复算项目  )/空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectType 项目类型：可以为self(自拓项目)/platform(合作项目)/repeat(复算项目  )/空
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectType() const;
 
                     /**
                      * 设置项目类型：可以为self(自拓项目)/platform(合作项目)/repeat(复算项目  )/空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _projectType 项目类型：可以为self(自拓项目)/platform(合作项目)/repeat(复算项目  )/空
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProjectType(const std::string& _projectType);
@@ -308,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取活动ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActivityId 活动ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetActivityId() const;
 
                     /**
                      * 设置活动ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _activityId 活动ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActivityId(const std::string& _activityId);
@@ -395,21 +383,18 @@ namespace TencentCloud
 
                     /**
                      * 客户类型：可以为new(自拓)/assign(指定)/old(官网)/direct(直销)/direct_newopp(直销(新商机))/空
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clientType;
                     bool m_clientTypeHasBeenSet;
 
                     /**
                      * 项目类型：可以为self(自拓项目)/platform(合作项目)/repeat(复算项目  )/空
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectType;
                     bool m_projectTypeHasBeenSet;
 
                     /**
                      * 活动ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_activityId;
                     bool m_activityIdHasBeenSet;

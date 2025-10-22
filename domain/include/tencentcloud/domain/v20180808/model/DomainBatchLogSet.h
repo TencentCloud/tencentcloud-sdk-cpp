@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -201,6 +201,48 @@ done 执行完成。
                      */
                     bool FailedHasBeenSet() const;
 
+                    /**
+                     * 获取是否付费
+                     * @return PayStatus 是否付费
+                     * 
+                     */
+                    bool GetPayStatus() const;
+
+                    /**
+                     * 设置是否付费
+                     * @param _payStatus 是否付费
+                     * 
+                     */
+                    void SetPayStatus(const bool& _payStatus);
+
+                    /**
+                     * 判断参数 PayStatus 是否已赋值
+                     * @return PayStatus 是否已赋值
+                     * 
+                     */
+                    bool PayStatusHasBeenSet() const;
+
+                    /**
+                     * 获取大订单ID
+                     * @return BigDealId 大订单ID
+                     * 
+                     */
+                    std::string GetBigDealId() const;
+
+                    /**
+                     * 设置大订单ID
+                     * @param _bigDealId 大订单ID
+                     * 
+                     */
+                    void SetBigDealId(const std::string& _bigDealId);
+
+                    /**
+                     * 判断参数 BigDealId 是否已赋值
+                     * @return BigDealId 是否已赋值
+                     * 
+                     */
+                    bool BigDealIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -246,6 +288,18 @@ done 执行完成。
                      */
                     int64_t m_failed;
                     bool m_failedHasBeenSet;
+
+                    /**
+                     * 是否付费
+                     */
+                    bool m_payStatus;
+                    bool m_payStatusHasBeenSet;
+
+                    /**
+                     * 大订单ID
+                     */
+                    std::string m_bigDealId;
+                    bool m_bigDealIdHasBeenSet;
 
                 };
             }

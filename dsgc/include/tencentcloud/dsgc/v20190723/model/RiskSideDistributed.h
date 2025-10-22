@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取风险面
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssessmentRiskSide 风险面
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Note GetAssessmentRiskSide() const;
 
                     /**
                      * 设置风险面
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _assessmentRiskSide 风险面
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAssessmentRiskSide(const Note& _assessmentRiskSide);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取风险类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssessmentRisk 风险类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Note> GetAssessmentRisk() const;
 
                     /**
                      * 设置风险类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _assessmentRisk 风险类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAssessmentRisk(const std::vector<Note>& _assessmentRisk);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 风险面
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Note m_assessmentRiskSide;
                     bool m_assessmentRiskSideHasBeenSet;
 
                     /**
                      * 风险类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Note> m_assessmentRisk;
                     bool m_assessmentRiskHasBeenSet;

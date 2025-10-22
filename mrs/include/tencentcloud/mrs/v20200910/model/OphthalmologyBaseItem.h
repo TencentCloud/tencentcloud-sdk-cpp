@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,18 +54,14 @@ namespace TencentCloud
 
                     /**
                      * 获取裸眼视力
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BareEyeSight 裸眼视力
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     OphthalmologyBareEyeSight GetBareEyeSight() const;
 
                     /**
                      * 设置裸眼视力
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bareEyeSight 裸眼视力
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBareEyeSight(const OphthalmologyBareEyeSight& _bareEyeSight);
@@ -79,18 +75,14 @@ namespace TencentCloud
 
                     /**
                      * 获取矫正视力
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CorrectedVisualAcuity 矫正视力
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     OphthalmologyCorrectedVisualAcuity GetCorrectedVisualAcuity() const;
 
                     /**
                      * 设置矫正视力
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _correctedVisualAcuity 矫正视力
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCorrectedVisualAcuity(const OphthalmologyCorrectedVisualAcuity& _correctedVisualAcuity);
@@ -104,18 +96,14 @@ namespace TencentCloud
 
                     /**
                      * 获取色觉
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ColourVision 色觉
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     OphthalmologyColourVision GetColourVision() const;
 
                     /**
                      * 设置色觉
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _colourVision 色觉
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetColourVision(const OphthalmologyColourVision& _colourVision);
@@ -129,18 +117,14 @@ namespace TencentCloud
 
                     /**
                      * 获取眼底
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Fundoscopy 眼底
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     OphthalmologyFundoscopy GetFundoscopy() const;
 
                     /**
                      * 设置眼底
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fundoscopy 眼底
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFundoscopy(const OphthalmologyFundoscopy& _fundoscopy);
@@ -154,18 +138,14 @@ namespace TencentCloud
 
                     /**
                      * 获取眼科其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Others 眼科其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<KeyValueItem> GetOthers() const;
 
                     /**
                      * 设置眼科其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _others 眼科其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOthers(const std::vector<KeyValueItem>& _others);
@@ -179,18 +159,14 @@ namespace TencentCloud
 
                     /**
                      * 获取眼科小结
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BriefSummary 眼科小结
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     OphthalmologyBriefSummary GetBriefSummary() const;
 
                     /**
                      * 设置眼科小结
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _briefSummary 眼科小结
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBriefSummary(const OphthalmologyBriefSummary& _briefSummary);
@@ -206,42 +182,36 @@ namespace TencentCloud
 
                     /**
                      * 裸眼视力
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OphthalmologyBareEyeSight m_bareEyeSight;
                     bool m_bareEyeSightHasBeenSet;
 
                     /**
                      * 矫正视力
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OphthalmologyCorrectedVisualAcuity m_correctedVisualAcuity;
                     bool m_correctedVisualAcuityHasBeenSet;
 
                     /**
                      * 色觉
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OphthalmologyColourVision m_colourVision;
                     bool m_colourVisionHasBeenSet;
 
                     /**
                      * 眼底
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OphthalmologyFundoscopy m_fundoscopy;
                     bool m_fundoscopyHasBeenSet;
 
                     /**
                      * 眼科其他
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<KeyValueItem> m_others;
                     bool m_othersHasBeenSet;
 
                     /**
                      * 眼科小结
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OphthalmologyBriefSummary m_briefSummary;
                     bool m_briefSummaryHasBeenSet;

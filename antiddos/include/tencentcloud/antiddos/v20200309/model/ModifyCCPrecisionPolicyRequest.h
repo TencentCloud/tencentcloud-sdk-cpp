@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool PolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取策略方式。可取值：alg、drop。alg指返回验证码方式验证，drop表示该访问丢弃。
-                     * @return PolicyAction 策略方式。可取值：alg、drop。alg指返回验证码方式验证，drop表示该访问丢弃。
+                     * 获取策略方式。可取值：alg、drop、trans。alg指返回验证码方式验证，drop表示该访问丢弃，trans表示该访问放行。
+                     * @return PolicyAction 策略方式。可取值：alg、drop、trans。alg指返回验证码方式验证，drop表示该访问丢弃，trans表示该访问放行。
                      * 
                      */
                     std::string GetPolicyAction() const;
 
                     /**
-                     * 设置策略方式。可取值：alg、drop。alg指返回验证码方式验证，drop表示该访问丢弃。
-                     * @param _policyAction 策略方式。可取值：alg、drop。alg指返回验证码方式验证，drop表示该访问丢弃。
+                     * 设置策略方式。可取值：alg、drop、trans。alg指返回验证码方式验证，drop表示该访问丢弃，trans表示该访问放行。
+                     * @param _policyAction 策略方式。可取值：alg、drop、trans。alg指返回验证码方式验证，drop表示该访问丢弃，trans表示该访问放行。
                      * 
                      */
                     void SetPolicyAction(const std::string& _policyAction);
@@ -142,7 +142,7 @@ namespace TencentCloud
                     bool m_policyIdHasBeenSet;
 
                     /**
-                     * 策略方式。可取值：alg、drop。alg指返回验证码方式验证，drop表示该访问丢弃。
+                     * 策略方式。可取值：alg、drop、trans。alg指返回验证码方式验证，drop表示该访问丢弃，trans表示该访问放行。
                      */
                     std::string m_policyAction;
                     bool m_policyActionHasBeenSet;

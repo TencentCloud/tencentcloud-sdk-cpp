@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -263,15 +263,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取伸缩活动开始时间。
-                     * @return StartTime 伸缩活动开始时间。
+                     * 获取伸缩活动开始时间，为 `UTC` 标准时间。
+                     * @return StartTime 伸缩活动开始时间，为 `UTC` 标准时间。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置伸缩活动开始时间。
-                     * @param _startTime 伸缩活动开始时间。
+                     * 设置伸缩活动开始时间，为 `UTC` 标准时间。
+                     * @param _startTime 伸缩活动开始时间，为 `UTC` 标准时间。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -284,15 +284,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取伸缩活动结束时间。
-                     * @return EndTime 伸缩活动结束时间。
+                     * 获取伸缩活动结束时间，为 `UTC` 标准时间。
+                     * @return EndTime 伸缩活动结束时间，为 `UTC` 标准时间。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置伸缩活动结束时间。
-                     * @param _endTime 伸缩活动结束时间。
+                     * 设置伸缩活动结束时间，为 `UTC` 标准时间。
+                     * @param _endTime 伸缩活动结束时间，为 `UTC` 标准时间。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -305,15 +305,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取伸缩活动创建时间。
-                     * @return CreatedTime 伸缩活动创建时间。
+                     * 获取伸缩活动创建时间，为 `UTC` 标准时间。
+                     * @return CreatedTime 伸缩活动创建时间，为 `UTC` 标准时间。
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置伸缩活动创建时间。
-                     * @param _createdTime 伸缩活动创建时间。
+                     * 设置伸缩活动创建时间，为 `UTC` 标准时间。
+                     * @param _createdTime 伸缩活动创建时间，为 `UTC` 标准时间。
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -512,19 +512,19 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 伸缩活动开始时间。
+                     * 伸缩活动开始时间，为 `UTC` 标准时间。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 伸缩活动结束时间。
+                     * 伸缩活动结束时间，为 `UTC` 标准时间。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 伸缩活动创建时间。
+                     * 伸缩活动创建时间，为 `UTC` 标准时间。
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;

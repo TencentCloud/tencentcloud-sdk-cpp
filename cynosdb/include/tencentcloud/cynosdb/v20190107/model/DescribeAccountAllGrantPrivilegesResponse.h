@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,9 +47,7 @@ namespace TencentCloud
 
                     /**
                      * 获取权限语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrivilegeStatements 权限语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetPrivilegeStatements() const;
@@ -63,9 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 获取全局权限
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GlobalPrivileges 全局权限
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetGlobalPrivileges() const;
@@ -79,9 +75,7 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库权限
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatabasePrivileges 数据库权限
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DatabasePrivileges> GetDatabasePrivileges() const;
@@ -95,9 +89,7 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库表权限
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TablePrivileges 数据库表权限
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TablePrivileges> GetTablePrivileges() const;
@@ -113,28 +105,24 @@ namespace TencentCloud
 
                     /**
                      * 权限语句
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_privilegeStatements;
                     bool m_privilegeStatementsHasBeenSet;
 
                     /**
                      * 全局权限
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_globalPrivileges;
                     bool m_globalPrivilegesHasBeenSet;
 
                     /**
                      * 数据库权限
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DatabasePrivileges> m_databasePrivileges;
                     bool m_databasePrivilegesHasBeenSet;
 
                     /**
                      * 数据库表权限
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TablePrivileges> m_tablePrivileges;
                     bool m_tablePrivilegesHasBeenSet;

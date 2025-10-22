@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取TWecall类型： 0-测试激活码； 1-家庭安防场景； 2-穿戴类场景； 3-生活娱乐场景； 4-对讲及其它场景
-                     * @return PkgType TWecall类型： 0-测试激活码； 1-家庭安防场景； 2-穿戴类场景； 3-生活娱乐场景； 4-对讲及其它场景
+                     * 获取TWecall类型：0-体验套餐；1-基础版；3-高级版；
+                     * @return PkgType TWecall类型：0-体验套餐；1-基础版；3-高级版；
                      * 
                      */
                     int64_t GetPkgType() const;
 
                     /**
-                     * 设置TWecall类型： 0-测试激活码； 1-家庭安防场景； 2-穿戴类场景； 3-生活娱乐场景； 4-对讲及其它场景
-                     * @param _pkgType TWecall类型： 0-测试激活码； 1-家庭安防场景； 2-穿戴类场景； 3-生活娱乐场景； 4-对讲及其它场景
+                     * 设置TWecall类型：0-体验套餐；1-基础版；3-高级版；
+                     * @param _pkgType TWecall类型：0-体验套餐；1-基础版；3-高级版；
                      * 
                      */
                     void SetPkgType(const int64_t& _pkgType);
@@ -65,23 +65,23 @@ namespace TencentCloud
                     bool PkgTypeHasBeenSet() const;
 
                     /**
-                     * 获取appId
-                     * @return MiniProgramAppId appId
-                     * 
+                     * 获取参数已弃用，不用传参
+                     * @return MiniProgramAppId 参数已弃用，不用传参
+                     * @deprecated
                      */
                     std::string GetMiniProgramAppId() const;
 
                     /**
-                     * 设置appId
-                     * @param _miniProgramAppId appId
-                     * 
+                     * 设置参数已弃用，不用传参
+                     * @param _miniProgramAppId 参数已弃用，不用传参
+                     * @deprecated
                      */
                     void SetMiniProgramAppId(const std::string& _miniProgramAppId);
 
                     /**
                      * 判断参数 MiniProgramAppId 是否已赋值
                      * @return MiniProgramAppId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool MiniProgramAppIdHasBeenSet() const;
 
@@ -109,13 +109,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * TWecall类型： 0-测试激活码； 1-家庭安防场景； 2-穿戴类场景； 3-生活娱乐场景； 4-对讲及其它场景
+                     * TWecall类型：0-体验套餐；1-基础版；3-高级版；
                      */
                     int64_t m_pkgType;
                     bool m_pkgTypeHasBeenSet;
 
                     /**
-                     * appId
+                     * 参数已弃用，不用传参
                      */
                     std::string m_miniProgramAppId;
                     bool m_miniProgramAppIdHasBeenSet;

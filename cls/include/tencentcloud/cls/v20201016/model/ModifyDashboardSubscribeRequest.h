@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取仪表盘订阅id。
-                     * @return Id 仪表盘订阅id。
+                     * 获取仪表盘订阅id。通过 [获取仪表盘订阅列表](https://cloud.tencent.com/document/api/614/105779)接口获取Id。
+                     * @return Id 仪表盘订阅id。通过 [获取仪表盘订阅列表](https://cloud.tencent.com/document/api/614/105779)接口获取Id。
                      * 
                      */
                     uint64_t GetId() const;
 
                     /**
-                     * 设置仪表盘订阅id。
-                     * @param _id 仪表盘订阅id。
+                     * 设置仪表盘订阅id。通过 [获取仪表盘订阅列表](https://cloud.tencent.com/document/api/614/105779)接口获取Id。
+                     * @param _id 仪表盘订阅id。通过 [获取仪表盘订阅列表](https://cloud.tencent.com/document/api/614/105779)接口获取Id。
                      * 
                      */
                     void SetId(const uint64_t& _id);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取仪表盘id。
-                     * @return DashboardId 仪表盘id。
+                     * 获取仪表盘id。通过 [获取仪表盘](https://cloud.tencent.com/document/api/614/95636)接口获取DashboardId。
+                     * @return DashboardId 仪表盘id。通过 [获取仪表盘](https://cloud.tencent.com/document/api/614/95636)接口获取DashboardId。
                      * 
                      */
                     std::string GetDashboardId() const;
 
                     /**
-                     * 设置仪表盘id。
-                     * @param _dashboardId 仪表盘id。
+                     * 设置仪表盘id。通过 [获取仪表盘](https://cloud.tencent.com/document/api/614/95636)接口获取DashboardId。
+                     * @param _dashboardId 仪表盘id。通过 [获取仪表盘](https://cloud.tencent.com/document/api/614/95636)接口获取DashboardId。
                      * 
                      */
                     void SetDashboardId(const std::string& _dashboardId);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool DashboardIdHasBeenSet() const;
 
                     /**
-                     * 获取仪表盘订阅名称。
-                     * @return Name 仪表盘订阅名称。
+                     * 获取仪表盘订阅名称。最大支持128个字符，且不支持'|'字符。
+                     * @return Name 仪表盘订阅名称。最大支持128个字符，且不支持'|'字符。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置仪表盘订阅名称。
-                     * @param _name 仪表盘订阅名称。
+                     * 设置仪表盘订阅名称。最大支持128个字符，且不支持'|'字符。
+                     * @param _name 仪表盘订阅名称。最大支持128个字符，且不支持'|'字符。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -151,19 +151,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 仪表盘订阅id。
+                     * 仪表盘订阅id。通过 [获取仪表盘订阅列表](https://cloud.tencent.com/document/api/614/105779)接口获取Id。
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 仪表盘id。
+                     * 仪表盘id。通过 [获取仪表盘](https://cloud.tencent.com/document/api/614/95636)接口获取DashboardId。
                      */
                     std::string m_dashboardId;
                     bool m_dashboardIdHasBeenSet;
 
                     /**
-                     * 仪表盘订阅名称。
+                     * 仪表盘订阅名称。最大支持128个字符，且不支持'|'字符。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

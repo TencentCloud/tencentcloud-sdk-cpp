@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取私有域ID, zone-xxxxxx
-                     * @return ZoneId 私有域ID, zone-xxxxxx
+                     * 获取私有域ID, zone-12e45ds6
+                     * @return ZoneId 私有域ID, zone-12e45ds6
                      * 
                      */
                     std::string GetZoneId() const;
@@ -90,7 +90,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 私有域ID, zone-xxxxxx
+                     * 私有域ID, zone-12e45ds6
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;

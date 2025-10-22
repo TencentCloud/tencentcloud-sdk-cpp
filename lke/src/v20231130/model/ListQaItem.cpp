@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,10 @@ ListQaItem::ListQaItem() :
     m_expireEndHasBeenSet(false),
     m_attrRangeHasBeenSet(false),
     m_attrLabelsHasBeenSet(false),
-    m_similarQuestionNumHasBeenSet(false)
+    m_similarQuestionNumHasBeenSet(false),
+    m_similarQuestionTipsHasBeenSet(false),
+    m_isDisabledHasBeenSet(false),
+    m_staffNameHasBeenSet(false)
 {
 }
 
@@ -270,6 +273,36 @@ CoreInternalOutcome ListQaItem::Deserialize(const rapidjson::Value &value)
         m_similarQuestionNumHasBeenSet = true;
     }
 
+    if (value.HasMember("SimilarQuestionTips") && !value["SimilarQuestionTips"].IsNull())
+    {
+        if (!value["SimilarQuestionTips"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ListQaItem.SimilarQuestionTips` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_similarQuestionTips = string(value["SimilarQuestionTips"].GetString());
+        m_similarQuestionTipsHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsDisabled") && !value["IsDisabled"].IsNull())
+    {
+        if (!value["IsDisabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ListQaItem.IsDisabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDisabled = value["IsDisabled"].GetBool();
+        m_isDisabledHasBeenSet = true;
+    }
+
+    if (value.HasMember("StaffName") && !value["StaffName"].IsNull())
+    {
+        if (!value["StaffName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ListQaItem.StaffName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_staffName = string(value["StaffName"].GetString());
+        m_staffNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -450,6 +483,30 @@ void ListQaItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "SimilarQuestionNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_similarQuestionNum, allocator);
+    }
+
+    if (m_similarQuestionTipsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SimilarQuestionTips";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_similarQuestionTips.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isDisabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDisabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDisabled, allocator);
+    }
+
+    if (m_staffNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StaffName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_staffName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -789,5 +846,53 @@ void ListQaItem::SetSimilarQuestionNum(const uint64_t& _similarQuestionNum)
 bool ListQaItem::SimilarQuestionNumHasBeenSet() const
 {
     return m_similarQuestionNumHasBeenSet;
+}
+
+string ListQaItem::GetSimilarQuestionTips() const
+{
+    return m_similarQuestionTips;
+}
+
+void ListQaItem::SetSimilarQuestionTips(const string& _similarQuestionTips)
+{
+    m_similarQuestionTips = _similarQuestionTips;
+    m_similarQuestionTipsHasBeenSet = true;
+}
+
+bool ListQaItem::SimilarQuestionTipsHasBeenSet() const
+{
+    return m_similarQuestionTipsHasBeenSet;
+}
+
+bool ListQaItem::GetIsDisabled() const
+{
+    return m_isDisabled;
+}
+
+void ListQaItem::SetIsDisabled(const bool& _isDisabled)
+{
+    m_isDisabled = _isDisabled;
+    m_isDisabledHasBeenSet = true;
+}
+
+bool ListQaItem::IsDisabledHasBeenSet() const
+{
+    return m_isDisabledHasBeenSet;
+}
+
+string ListQaItem::GetStaffName() const
+{
+    return m_staffName;
+}
+
+void ListQaItem::SetStaffName(const string& _staffName)
+{
+    m_staffName = _staffName;
+    m_staffNameHasBeenSet = true;
+}
+
+bool ListQaItem::StaffNameHasBeenSet() const
+{
+    return m_staffNameHasBeenSet;
 }
 

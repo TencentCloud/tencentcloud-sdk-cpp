@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 事件备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置事件备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 事件备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -179,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件最后一次处理的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperationTime 事件最后一次处理的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperationTime() const;
 
                     /**
                      * 设置事件最后一次处理的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _operationTime 事件最后一次处理的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOperationTime(const std::string& _operationTime);
@@ -204,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupName 命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupName 命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -243,7 +231,6 @@ namespace TencentCloud
 
                     /**
                      * 事件备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
@@ -268,14 +255,12 @@ namespace TencentCloud
 
                     /**
                      * 事件最后一次处理的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operationTime;
                     bool m_operationTimeHasBeenSet;
 
                     /**
                      * 命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;

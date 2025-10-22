@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取复制组ID。
-                     * @return GroupId 复制组ID。
+                     * 获取复制组ID。请登录[Redis控制台的全球复制](https://console.cloud.tencent.com/redis/replication)页面获取复制组 ID。
+                     * @return GroupId 复制组ID。请登录[Redis控制台的全球复制](https://console.cloud.tencent.com/redis/replication)页面获取复制组 ID。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置复制组ID。
-                     * @param _groupId 复制组ID。
+                     * 设置复制组ID。请登录[Redis控制台的全球复制](https://console.cloud.tencent.com/redis/replication)页面获取复制组 ID。
+                     * @param _groupId 复制组ID。请登录[Redis控制台的全球复制](https://console.cloud.tencent.com/redis/replication)页面获取复制组 ID。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -65,14 +65,26 @@ namespace TencentCloud
 
                     /**
                      * 获取实例ID。
+- 添加复制组实例有地域与可用区限制。具体信息，请参见[使用限制](https://cloud.tencent.com/document/product/239/71934)。
+- 当前仅4.0、5.0 Redis 版集群架构的实例支持加入复制组。
+- 请登录 [Redis 控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制需加入复制组的实例 ID。
                      * @return InstanceId 实例ID。
+- 添加复制组实例有地域与可用区限制。具体信息，请参见[使用限制](https://cloud.tencent.com/document/product/239/71934)。
+- 当前仅4.0、5.0 Redis 版集群架构的实例支持加入复制组。
+- 请登录 [Redis 控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制需加入复制组的实例 ID。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID。
+- 添加复制组实例有地域与可用区限制。具体信息，请参见[使用限制](https://cloud.tencent.com/document/product/239/71934)。
+- 当前仅4.0、5.0 Redis 版集群架构的实例支持加入复制组。
+- 请登录 [Redis 控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制需加入复制组的实例 ID。
                      * @param _instanceId 实例ID。
+- 添加复制组实例有地域与可用区限制。具体信息，请参见[使用限制](https://cloud.tencent.com/document/product/239/71934)。
+- 当前仅4.0、5.0 Redis 版集群架构的实例支持加入复制组。
+- 请登录 [Redis 控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制需加入复制组的实例 ID。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -108,13 +120,16 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 复制组ID。
+                     * 复制组ID。请登录[Redis控制台的全球复制](https://console.cloud.tencent.com/redis/replication)页面获取复制组 ID。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
                      * 实例ID。
+- 添加复制组实例有地域与可用区限制。具体信息，请参见[使用限制](https://cloud.tencent.com/document/product/239/71934)。
+- 当前仅4.0、5.0 Redis 版集群架构的实例支持加入复制组。
+- 请登录 [Redis 控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制需加入复制组的实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

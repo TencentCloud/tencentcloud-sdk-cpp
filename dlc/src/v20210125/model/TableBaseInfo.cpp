@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,8 @@ TableBaseInfo::TableBaseInfo() :
     m_userSubUinHasBeenSet(false),
     m_governPolicyHasBeenSet(false),
     m_dbGovernPolicyIsDisableHasBeenSet(false),
-    m_smartPolicyHasBeenSet(false)
+    m_smartPolicyHasBeenSet(false),
+    m_primaryKeysHasBeenSet(false)
 {
 }
 
@@ -164,6 +165,19 @@ CoreInternalOutcome TableBaseInfo::Deserialize(const rapidjson::Value &value)
         m_smartPolicyHasBeenSet = true;
     }
 
+    if (value.HasMember("PrimaryKeys") && !value["PrimaryKeys"].IsNull())
+    {
+        if (!value["PrimaryKeys"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TableBaseInfo.PrimaryKeys` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PrimaryKeys"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_primaryKeys.push_back((*itr).GetString());
+        }
+        m_primaryKeysHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -259,6 +273,19 @@ void TableBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_smartPolicy.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_primaryKeysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PrimaryKeys";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_primaryKeys.begin(); itr != m_primaryKeys.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -438,5 +465,21 @@ void TableBaseInfo::SetSmartPolicy(const SmartPolicy& _smartPolicy)
 bool TableBaseInfo::SmartPolicyHasBeenSet() const
 {
     return m_smartPolicyHasBeenSet;
+}
+
+vector<string> TableBaseInfo::GetPrimaryKeys() const
+{
+    return m_primaryKeys;
+}
+
+void TableBaseInfo::SetPrimaryKeys(const vector<string>& _primaryKeys)
+{
+    m_primaryKeys = _primaryKeys;
+    m_primaryKeysHasBeenSet = true;
+}
+
+bool TableBaseInfo::PrimaryKeysHasBeenSet() const
+{
+    return m_primaryKeysHasBeenSet;
 }
 

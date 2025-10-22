@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -130,6 +130,48 @@ namespace TencentCloud
                      */
                     bool NameEnHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持自动修复 0:不支持 >0: 支持
+                     * @return SupportFix 是否支持自动修复 0:不支持 >0: 支持
+                     * 
+                     */
+                    int64_t GetSupportFix() const;
+
+                    /**
+                     * 设置是否支持自动修复 0:不支持 >0: 支持
+                     * @param _supportFix 是否支持自动修复 0:不支持 >0: 支持
+                     * 
+                     */
+                    void SetSupportFix(const int64_t& _supportFix);
+
+                    /**
+                     * 判断参数 SupportFix 是否已赋值
+                     * @return SupportFix 是否已赋值
+                     * 
+                     */
+                    bool SupportFixHasBeenSet() const;
+
+                    /**
+                     * 获取是否支持自动防御 0:不支持 1:支持
+                     * @return SupportDefense 是否支持自动防御 0:不支持 1:支持
+                     * 
+                     */
+                    int64_t GetSupportDefense() const;
+
+                    /**
+                     * 设置是否支持自动防御 0:不支持 1:支持
+                     * @param _supportDefense 是否支持自动防御 0:不支持 1:支持
+                     * 
+                     */
+                    void SetSupportDefense(const int64_t& _supportDefense);
+
+                    /**
+                     * 判断参数 SupportDefense 是否已赋值
+                     * @return SupportDefense 是否已赋值
+                     * 
+                     */
+                    bool SupportDefenseHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +197,18 @@ namespace TencentCloud
                      */
                     std::string m_nameEn;
                     bool m_nameEnHasBeenSet;
+
+                    /**
+                     * 是否支持自动修复 0:不支持 >0: 支持
+                     */
+                    int64_t m_supportFix;
+                    bool m_supportFixHasBeenSet;
+
+                    /**
+                     * 是否支持自动防御 0:不支持 1:支持
+                     */
+                    int64_t m_supportDefense;
+                    bool m_supportDefenseHasBeenSet;
 
                 };
             }

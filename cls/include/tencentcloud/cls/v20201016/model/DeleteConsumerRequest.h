@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取投递任务绑定的日志主题 ID
-                     * @return TopicId 投递任务绑定的日志主题 ID
+                     * 获取投递任务绑定的日志主题Id。
+- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
+- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
+                     * @return TopicId 投递任务绑定的日志主题Id。
+- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
+- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置投递任务绑定的日志主题 ID
-                     * @param _topicId 投递任务绑定的日志主题 ID
+                     * 设置投递任务绑定的日志主题Id。
+- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
+- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
+                     * @param _topicId 投递任务绑定的日志主题Id。
+- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
+- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -66,7 +74,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 投递任务绑定的日志主题 ID
+                     * 投递任务绑定的日志主题Id。
+- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
+- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;

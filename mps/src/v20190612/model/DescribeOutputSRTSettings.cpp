@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,8 @@ DescribeOutputSRTSettings::DescribeOutputSRTSettings() :
     m_passphraseHasBeenSet(false),
     m_pbKeyLenHasBeenSet(false),
     m_modeHasBeenSet(false),
-    m_sourceAddressesHasBeenSet(false)
+    m_sourceAddressesHasBeenSet(false),
+    m_fECHasBeenSet(false)
 {
 }
 
@@ -159,6 +160,23 @@ CoreInternalOutcome DescribeOutputSRTSettings::Deserialize(const rapidjson::Valu
         m_sourceAddressesHasBeenSet = true;
     }
 
+    if (value.HasMember("FEC") && !value["FEC"].IsNull())
+    {
+        if (!value["FEC"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeOutputSRTSettings.FEC` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_fEC.Deserialize(value["FEC"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_fECHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -258,6 +276,15 @@ void DescribeOutputSRTSettings::ToJsonObject(rapidjson::Value &value, rapidjson:
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_fECHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FEC";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_fEC.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -421,5 +448,21 @@ void DescribeOutputSRTSettings::SetSourceAddresses(const vector<OutputSRTSourceA
 bool DescribeOutputSRTSettings::SourceAddressesHasBeenSet() const
 {
     return m_sourceAddressesHasBeenSet;
+}
+
+SRTFECFullOptions DescribeOutputSRTSettings::GetFEC() const
+{
+    return m_fEC;
+}
+
+void DescribeOutputSRTSettings::SetFEC(const SRTFECFullOptions& _fEC)
+{
+    m_fEC = _fEC;
+    m_fECHasBeenSet = true;
+}
+
+bool DescribeOutputSRTSettings::FECHasBeenSet() const
+{
+    return m_fECHasBeenSet;
 }
 

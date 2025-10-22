@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,6 +68,27 @@ namespace TencentCloud
                     bool SSLModeHasBeenSet() const;
 
                     /**
+                     * 获取是否开启客户端证书验证，只在双向认证时生效。
+                     * @return SSLVerifyClient 是否开启客户端证书验证，只在双向认证时生效。
+                     * 
+                     */
+                    std::string GetSSLVerifyClient() const;
+
+                    /**
+                     * 设置是否开启客户端证书验证，只在双向认证时生效。
+                     * @param _sSLVerifyClient 是否开启客户端证书验证，只在双向认证时生效。
+                     * 
+                     */
+                    void SetSSLVerifyClient(const std::string& _sSLVerifyClient);
+
+                    /**
+                     * 判断参数 SSLVerifyClient 是否已赋值
+                     * @return SSLVerifyClient 是否已赋值
+                     * 
+                     */
+                    bool SSLVerifyClientHasBeenSet() const;
+
+                    /**
                      * 获取服务端证书的ID。
                      * @return CertId 服务端证书的ID。
                      * 
@@ -90,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取客户端证书的 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertCaId 客户端证书的 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCertCaId() const;
 
                     /**
                      * 设置客户端证书的 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _certCaId 客户端证书的 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCertCaId(const std::string& _certCaId);
@@ -115,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取多本服务器证书场景扩展的服务器证书ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtCertIds 多本服务器证书场景扩展的服务器证书ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetExtCertIds() const;
 
                     /**
                      * 设置多本服务器证书场景扩展的服务器证书ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _extCertIds 多本服务器证书场景扩展的服务器证书ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExtCertIds(const std::vector<std::string>& _extCertIds);
@@ -147,6 +160,12 @@ namespace TencentCloud
                     bool m_sSLModeHasBeenSet;
 
                     /**
+                     * 是否开启客户端证书验证，只在双向认证时生效。
+                     */
+                    std::string m_sSLVerifyClient;
+                    bool m_sSLVerifyClientHasBeenSet;
+
+                    /**
                      * 服务端证书的ID。
                      */
                     std::string m_certId;
@@ -154,14 +173,12 @@ namespace TencentCloud
 
                     /**
                      * 客户端证书的 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_certCaId;
                     bool m_certCaIdHasBeenSet;
 
                     /**
                      * 多本服务器证书场景扩展的服务器证书ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_extCertIds;
                     bool m_extCertIdsHasBeenSet;

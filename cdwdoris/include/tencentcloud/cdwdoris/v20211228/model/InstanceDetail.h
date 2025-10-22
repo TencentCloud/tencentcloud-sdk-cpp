@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警策略是否可用	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableAlarmStrategy 告警策略是否可用	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableAlarmStrategy() const;
 
                     /**
                      * 设置告警策略是否可用	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableAlarmStrategy 告警策略是否可用	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableAlarmStrategy(const bool& _enableAlarmStrategy);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * 告警策略是否可用	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableAlarmStrategy;
                     bool m_enableAlarmStrategyHasBeenSet;

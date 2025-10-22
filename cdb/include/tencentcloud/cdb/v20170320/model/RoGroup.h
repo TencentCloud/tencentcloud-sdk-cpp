@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,14 +70,18 @@ namespace TencentCloud
 
                     /**
                      * 获取只读组 ID。
+说明：若此数据结构在购买实例操作中被使用，则当只读组模式选择 join 时，此项为必填。
                      * @return RoGroupId 只读组 ID。
+说明：若此数据结构在购买实例操作中被使用，则当只读组模式选择 join 时，此项为必填。
                      * 
                      */
                     std::string GetRoGroupId() const;
 
                     /**
                      * 设置只读组 ID。
+说明：若此数据结构在购买实例操作中被使用，则当只读组模式选择 join 时，此项为必填。
                      * @param _roGroupId 只读组 ID。
+说明：若此数据结构在购买实例操作中被使用，则当只读组模式选择 join 时，此项为必填。
                      * 
                      */
                     void SetRoGroupId(const std::string& _roGroupId);
@@ -132,15 +136,15 @@ namespace TencentCloud
                     bool RoOfflineDelayHasBeenSet() const;
 
                     /**
-                     * 获取延迟阈值。
-                     * @return RoMaxDelayTime 延迟阈值。
+                     * 获取延迟阈值。单位：秒。值范围：1-10000，整数。
+                     * @return RoMaxDelayTime 延迟阈值。单位：秒。值范围：1-10000，整数。
                      * 
                      */
                     int64_t GetRoMaxDelayTime() const;
 
                     /**
-                     * 设置延迟阈值。
-                     * @param _roMaxDelayTime 延迟阈值。
+                     * 设置延迟阈值。单位：秒。值范围：1-10000，整数。
+                     * @param _roMaxDelayTime 延迟阈值。单位：秒。值范围：1-10000，整数。
                      * 
                      */
                     void SetRoMaxDelayTime(const int64_t& _roMaxDelayTime);
@@ -280,18 +284,14 @@ namespace TencentCloud
 
                     /**
                      * 获取私有网络 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UniqVpcId 私有网络 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
                      * 设置私有网络 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uniqVpcId 私有网络 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
@@ -305,18 +305,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UniqSubnetId 子网 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUniqSubnetId() const;
 
                     /**
                      * 设置子网 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uniqSubnetId 子网 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUniqSubnetId(const std::string& _uniqSubnetId);
@@ -330,18 +326,14 @@ namespace TencentCloud
 
                     /**
                      * 获取只读组所在的地域。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoGroupRegion 只读组所在的地域。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRoGroupRegion() const;
 
                     /**
                      * 设置只读组所在的地域。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _roGroupRegion 只读组所在的地域。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRoGroupRegion(const std::string& _roGroupRegion);
@@ -355,18 +347,14 @@ namespace TencentCloud
 
                     /**
                      * 获取只读组所在的可用区。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoGroupZone 只读组所在的可用区。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRoGroupZone() const;
 
                     /**
                      * 设置只读组所在的可用区。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _roGroupZone 只读组所在的可用区。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRoGroupZone(const std::string& _roGroupZone);
@@ -379,19 +367,15 @@ namespace TencentCloud
                     bool RoGroupZoneHasBeenSet() const;
 
                     /**
-                     * 获取延迟复制时间。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DelayReplicationTime 延迟复制时间。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取延迟复制时间。单位：秒。值范围：1-259200，整数。
+                     * @return DelayReplicationTime 延迟复制时间。单位：秒。值范围：1-259200，整数。
                      * 
                      */
                     int64_t GetDelayReplicationTime() const;
 
                     /**
-                     * 设置延迟复制时间。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _delayReplicationTime 延迟复制时间。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置延迟复制时间。单位：秒。值范围：1-259200，整数。
+                     * @param _delayReplicationTime 延迟复制时间。单位：秒。值范围：1-259200，整数。
                      * 
                      */
                     void SetDelayReplicationTime(const int64_t& _delayReplicationTime);
@@ -413,6 +397,7 @@ namespace TencentCloud
 
                     /**
                      * 只读组 ID。
+说明：若此数据结构在购买实例操作中被使用，则当只读组模式选择 join 时，此项为必填。
                      */
                     std::string m_roGroupId;
                     bool m_roGroupIdHasBeenSet;
@@ -430,7 +415,7 @@ namespace TencentCloud
                     bool m_roOfflineDelayHasBeenSet;
 
                     /**
-                     * 延迟阈值。
+                     * 延迟阈值。单位：秒。值范围：1-10000，整数。
                      */
                     int64_t m_roMaxDelayTime;
                     bool m_roMaxDelayTimeHasBeenSet;
@@ -473,35 +458,30 @@ namespace TencentCloud
 
                     /**
                      * 私有网络 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uniqVpcId;
                     bool m_uniqVpcIdHasBeenSet;
 
                     /**
                      * 子网 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uniqSubnetId;
                     bool m_uniqSubnetIdHasBeenSet;
 
                     /**
                      * 只读组所在的地域。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_roGroupRegion;
                     bool m_roGroupRegionHasBeenSet;
 
                     /**
                      * 只读组所在的可用区。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_roGroupZone;
                     bool m_roGroupZoneHasBeenSet;
 
                     /**
-                     * 延迟复制时间。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 延迟复制时间。单位：秒。值范围：1-259200，整数。
                      */
                     int64_t m_delayReplicationTime;
                     bool m_delayReplicationTimeHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -193,6 +193,69 @@ namespace TencentCloud
                      */
                     bool CustomDomainNamesHasBeenSet() const;
 
+                    /**
+                     * 获取服务类型: function 云函数2.0；container 容器服务
+                     * @return ServerType 服务类型: function 云函数2.0；container 容器服务
+                     * 
+                     */
+                    std::string GetServerType() const;
+
+                    /**
+                     * 设置服务类型: function 云函数2.0；container 容器服务
+                     * @param _serverType 服务类型: function 云函数2.0；container 容器服务
+                     * 
+                     */
+                    void SetServerType(const std::string& _serverType);
+
+                    /**
+                     * 判断参数 ServerType 是否已赋值
+                     * @return ServerType 是否已赋值
+                     * 
+                     */
+                    bool ServerTypeHasBeenSet() const;
+
+                    /**
+                     * 获取流量类型，目前只有 FLOW
+                     * @return TrafficType 流量类型，目前只有 FLOW
+                     * 
+                     */
+                    std::string GetTrafficType() const;
+
+                    /**
+                     * 设置流量类型，目前只有 FLOW
+                     * @param _trafficType 流量类型，目前只有 FLOW
+                     * 
+                     */
+                    void SetTrafficType(const std::string& _trafficType);
+
+                    /**
+                     * 判断参数 TrafficType 是否已赋值
+                     * @return TrafficType 是否已赋值
+                     * 
+                     */
+                    bool TrafficTypeHasBeenSet() const;
+
+                    /**
+                     * 获取创建时间
+                     * @return CreateTime 创建时间
+                     * 
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置创建时间
+                     * @param _createTime 创建时间
+                     * 
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +299,24 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_customDomainNames;
                     bool m_customDomainNamesHasBeenSet;
+
+                    /**
+                     * 服务类型: function 云函数2.0；container 容器服务
+                     */
+                    std::string m_serverType;
+                    bool m_serverTypeHasBeenSet;
+
+                    /**
+                     * 流量类型，目前只有 FLOW
+                     */
+                    std::string m_trafficType;
+                    bool m_trafficTypeHasBeenSet;
+
+                    /**
+                     * 创建时间
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                 };
             }

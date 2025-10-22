@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,15 +45,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务 Id
-                     * @return JobId 任务 Id
+                     * 获取任务 Id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。
+
+                     * @return JobId 任务 Id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。
+
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
-                     * 设置任务 Id
-                     * @param _jobId 任务 Id
+                     * 设置任务 Id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。
+
+                     * @param _jobId 任务 Id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。
+
                      * 
                      */
                     void SetJobId(const std::string& _jobId);
@@ -66,15 +70,19 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取对比任务 ID，形如：dts-8yv4w2i1-cmp-37skmii9
-                     * @return CompareTaskId 对比任务 ID，形如：dts-8yv4w2i1-cmp-37skmii9
+                     * 获取对比任务 ID，形如：dts-8yv4w2i1-cmp-37skmii9，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。
+
+                     * @return CompareTaskId 对比任务 ID，形如：dts-8yv4w2i1-cmp-37skmii9，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。
+
                      * 
                      */
                     std::string GetCompareTaskId() const;
 
                     /**
-                     * 设置对比任务 ID，形如：dts-8yv4w2i1-cmp-37skmii9
-                     * @param _compareTaskId 对比任务 ID，形如：dts-8yv4w2i1-cmp-37skmii9
+                     * 设置对比任务 ID，形如：dts-8yv4w2i1-cmp-37skmii9，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。
+
+                     * @param _compareTaskId 对比任务 ID，形如：dts-8yv4w2i1-cmp-37skmii9，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。
+
                      * 
                      */
                     void SetCompareTaskId(const std::string& _compareTaskId);
@@ -173,13 +181,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务 Id
+                     * 任务 Id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。
+
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 对比任务 ID，形如：dts-8yv4w2i1-cmp-37skmii9
+                     * 对比任务 ID，形如：dts-8yv4w2i1-cmp-37skmii9，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。
+
                      */
                     std::string m_compareTaskId;
                     bool m_compareTaskIdHasBeenSet;

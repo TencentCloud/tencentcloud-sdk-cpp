@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取房间列表
-                     * @return Rooms 房间列表
+                     * 获取课堂列表
+                     * @return Rooms 课堂列表
                      * 
                      */
                     std::vector<RoomItem> GetRooms() const;
@@ -81,7 +81,7 @@ namespace TencentCloud
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 房间列表
+                     * 课堂列表
                      */
                     std::vector<RoomItem> m_rooms;
                     bool m_roomsHasBeenSet;

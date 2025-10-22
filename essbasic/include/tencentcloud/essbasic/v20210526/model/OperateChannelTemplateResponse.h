@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取第三方应用平台的应用ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId 第三方应用平台的应用ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppId() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取合同模板ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TemplateId 合同模板ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTemplateId() const;
@@ -83,14 +79,12 @@ namespace TencentCloud
 <li>part-success: 部分成功,失败的会在FailMessageList中展示</li>
 <li>fail:全部失败, 失败的会在FailMessageList中展示</li>
 </ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperateResult 描述模板可见性更改的结果。
 <ul>
 <li>all-success: 全部成功</li>
 <li>part-success: 部分成功,失败的会在FailMessageList中展示</li>
 <li>fail:全部失败, 失败的会在FailMessageList中展示</li>
 </ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperateResult() const;
@@ -106,11 +100,9 @@ namespace TencentCloud
                      * 获取模板可见范围:
 **all**: 所有本第三方应用合作企业可见
 **part**: 指定的本第三方应用合作企业
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthTag 模板可见范围:
 **all**: 所有本第三方应用合作企业可见
 **part**: 指定的本第三方应用合作企业
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAuthTag() const;
@@ -124,9 +116,7 @@ namespace TencentCloud
 
                     /**
                      * 获取第三方平台子客企业标识列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyOrganizationOpenIds 第三方平台子客企业标识列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetProxyOrganizationOpenIds() const;
@@ -140,9 +130,7 @@ namespace TencentCloud
 
                     /**
                      * 获取操作失败信息数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailMessageList 操作失败信息数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AuthFailMessage> GetFailMessageList() const;
@@ -158,14 +146,12 @@ namespace TencentCloud
 
                     /**
                      * 第三方应用平台的应用ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
                      * 合同模板ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
@@ -177,7 +163,6 @@ namespace TencentCloud
 <li>part-success: 部分成功,失败的会在FailMessageList中展示</li>
 <li>fail:全部失败, 失败的会在FailMessageList中展示</li>
 </ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operateResult;
                     bool m_operateResultHasBeenSet;
@@ -186,21 +171,18 @@ namespace TencentCloud
                      * 模板可见范围:
 **all**: 所有本第三方应用合作企业可见
 **part**: 指定的本第三方应用合作企业
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_authTag;
                     bool m_authTagHasBeenSet;
 
                     /**
                      * 第三方平台子客企业标识列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_proxyOrganizationOpenIds;
                     bool m_proxyOrganizationOpenIdsHasBeenSet;
 
                     /**
                      * 操作失败信息数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AuthFailMessage> m_failMessageList;
                     bool m_failMessageListHasBeenSet;

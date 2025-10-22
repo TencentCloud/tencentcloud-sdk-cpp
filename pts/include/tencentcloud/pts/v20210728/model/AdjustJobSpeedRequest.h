@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,6 +84,48 @@ namespace TencentCloud
                      */
                     bool TargetRequestsPerSecondHasBeenSet() const;
 
+                    /**
+                     * 获取压测项目ID
+                     * @return ProjectId 压测项目ID
+                     * 
+                     */
+                    std::string GetProjectId() const;
+
+                    /**
+                     * 设置压测项目ID
+                     * @param _projectId 压测项目ID
+                     * 
+                     */
+                    void SetProjectId(const std::string& _projectId);
+
+                    /**
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
+                     * 
+                     */
+                    bool ProjectIdHasBeenSet() const;
+
+                    /**
+                     * 获取测试场景ID
+                     * @return ScenarioId 测试场景ID
+                     * 
+                     */
+                    std::string GetScenarioId() const;
+
+                    /**
+                     * 设置测试场景ID
+                     * @param _scenarioId 测试场景ID
+                     * 
+                     */
+                    void SetScenarioId(const std::string& _scenarioId);
+
+                    /**
+                     * 判断参数 ScenarioId 是否已赋值
+                     * @return ScenarioId 是否已赋值
+                     * 
+                     */
+                    bool ScenarioIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +139,18 @@ namespace TencentCloud
                      */
                     int64_t m_targetRequestsPerSecond;
                     bool m_targetRequestsPerSecondHasBeenSet;
+
+                    /**
+                     * 压测项目ID
+                     */
+                    std::string m_projectId;
+                    bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 测试场景ID
+                     */
+                    std::string m_scenarioId;
+                    bool m_scenarioIdHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例价格信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstancePrice 实例价格信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ItemPrice GetInstancePrice() const;
 
                     /**
                      * 设置实例价格信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instancePrice 实例价格信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstancePrice(const ItemPrice& _instancePrice);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云盘价格信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CloudDiskPrice 云盘价格信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ItemPrice GetCloudDiskPrice() const;
 
                     /**
                      * 设置云盘价格信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cloudDiskPrice 云盘价格信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCloudDiskPrice(const ItemPrice& _cloudDiskPrice);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分实例价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PriceDetailSet 分实例价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ItemPriceDetail> GetPriceDetailSet() const;
 
                     /**
                      * 设置分实例价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _priceDetailSet 分实例价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPriceDetailSet(const std::vector<ItemPriceDetail>& _priceDetailSet);
@@ -127,21 +115,18 @@ namespace TencentCloud
 
                     /**
                      * 实例价格信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ItemPrice m_instancePrice;
                     bool m_instancePriceHasBeenSet;
 
                     /**
                      * 云盘价格信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ItemPrice m_cloudDiskPrice;
                     bool m_cloudDiskPriceHasBeenSet;
 
                     /**
                      * 分实例价格
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ItemPriceDetail> m_priceDetailSet;
                     bool m_priceDetailSetHasBeenSet;

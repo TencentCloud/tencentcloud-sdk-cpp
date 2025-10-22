@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,10 @@ ModifyTopicRequest::ModifyTopicRequest() :
     m_partitionsHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_msgTTLHasBeenSet(false)
+    m_msgTTLHasBeenSet(false),
+    m_unackPolicyHasBeenSet(false),
+    m_isolateConsumerEnableHasBeenSet(false),
+    m_ackTimeOutHasBeenSet(false)
 {
 }
 
@@ -85,6 +88,30 @@ string ModifyTopicRequest::ToJsonString() const
         string key = "MsgTTL";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_msgTTL, allocator);
+    }
+
+    if (m_unackPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UnackPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_unackPolicy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isolateConsumerEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsolateConsumerEnable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isolateConsumerEnable, allocator);
+    }
+
+    if (m_ackTimeOutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AckTimeOut";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ackTimeOut, allocator);
     }
 
 
@@ -189,6 +216,54 @@ void ModifyTopicRequest::SetMsgTTL(const uint64_t& _msgTTL)
 bool ModifyTopicRequest::MsgTTLHasBeenSet() const
 {
     return m_msgTTLHasBeenSet;
+}
+
+string ModifyTopicRequest::GetUnackPolicy() const
+{
+    return m_unackPolicy;
+}
+
+void ModifyTopicRequest::SetUnackPolicy(const string& _unackPolicy)
+{
+    m_unackPolicy = _unackPolicy;
+    m_unackPolicyHasBeenSet = true;
+}
+
+bool ModifyTopicRequest::UnackPolicyHasBeenSet() const
+{
+    return m_unackPolicyHasBeenSet;
+}
+
+bool ModifyTopicRequest::GetIsolateConsumerEnable() const
+{
+    return m_isolateConsumerEnable;
+}
+
+void ModifyTopicRequest::SetIsolateConsumerEnable(const bool& _isolateConsumerEnable)
+{
+    m_isolateConsumerEnable = _isolateConsumerEnable;
+    m_isolateConsumerEnableHasBeenSet = true;
+}
+
+bool ModifyTopicRequest::IsolateConsumerEnableHasBeenSet() const
+{
+    return m_isolateConsumerEnableHasBeenSet;
+}
+
+int64_t ModifyTopicRequest::GetAckTimeOut() const
+{
+    return m_ackTimeOut;
+}
+
+void ModifyTopicRequest::SetAckTimeOut(const int64_t& _ackTimeOut)
+{
+    m_ackTimeOut = _ackTimeOut;
+    m_ackTimeOutHasBeenSet = true;
+}
+
+bool ModifyTopicRequest::AckTimeOutHasBeenSet() const
+{
+    return m_ackTimeOutHasBeenSet;
 }
 
 

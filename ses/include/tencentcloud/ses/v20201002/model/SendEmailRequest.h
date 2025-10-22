@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -151,15 +151,15 @@ namespace TencentCloud
                     bool CcHasBeenSet() const;
 
                     /**
-                     * 获取密送人邮箱地址，最多支持抄送20人。
-                     * @return Bcc 密送人邮箱地址，最多支持抄送20人。
+                     * 获取密送人邮箱地址，最多支持抄送20人,Bcc和Destination不能重复。
+                     * @return Bcc 密送人邮箱地址，最多支持抄送20人,Bcc和Destination不能重复。
                      * 
                      */
                     std::vector<std::string> GetBcc() const;
 
                     /**
-                     * 设置密送人邮箱地址，最多支持抄送20人。
-                     * @param _bcc 密送人邮箱地址，最多支持抄送20人。
+                     * 设置密送人邮箱地址，最多支持抄送20人,Bcc和Destination不能重复。
+                     * @param _bcc 密送人邮箱地址，最多支持抄送20人,Bcc和Destination不能重复。
                      * 
                      */
                     void SetBcc(const std::vector<std::string>& _bcc);
@@ -326,6 +326,27 @@ namespace TencentCloud
                      */
                     bool SmtpHeadersHasBeenSet() const;
 
+                    /**
+                     * 获取smtp头中的from字段，建议域名与FromEmailAddress保持一致
+                     * @return HeaderFrom smtp头中的from字段，建议域名与FromEmailAddress保持一致
+                     * 
+                     */
+                    std::string GetHeaderFrom() const;
+
+                    /**
+                     * 设置smtp头中的from字段，建议域名与FromEmailAddress保持一致
+                     * @param _headerFrom smtp头中的from字段，建议域名与FromEmailAddress保持一致
+                     * 
+                     */
+                    void SetHeaderFrom(const std::string& _headerFrom);
+
+                    /**
+                     * 判断参数 HeaderFrom 是否已赋值
+                     * @return HeaderFrom 是否已赋值
+                     * 
+                     */
+                    bool HeaderFromHasBeenSet() const;
+
                 private:
 
                     /**
@@ -359,7 +380,7 @@ namespace TencentCloud
                     bool m_ccHasBeenSet;
 
                     /**
-                     * 密送人邮箱地址，最多支持抄送20人。
+                     * 密送人邮箱地址，最多支持抄送20人,Bcc和Destination不能重复。
                      */
                     std::vector<std::string> m_bcc;
                     bool m_bccHasBeenSet;
@@ -407,6 +428,12 @@ namespace TencentCloud
                      */
                     std::string m_smtpHeaders;
                     bool m_smtpHeadersHasBeenSet;
+
+                    /**
+                     * smtp头中的from字段，建议域名与FromEmailAddress保持一致
+                     */
+                    std::string m_headerFrom;
+                    bool m_headerFromHasBeenSet;
 
                 };
             }

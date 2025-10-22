@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取签署方经办人在合同流程中的参与方ID，与控件绑定，是控件的归属方
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecipientId 签署方经办人在合同流程中的参与方ID，与控件绑定，是控件的归属方
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRecipientId() const;
 
                     /**
                      * 设置签署方经办人在合同流程中的参与方ID，与控件绑定，是控件的归属方
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recipientId 签署方经办人在合同流程中的参与方ID，与控件绑定，是控件的归属方
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecipientId(const std::string& _recipientId);
@@ -79,14 +75,12 @@ namespace TencentCloud
 <li>**0**:  未填写, 表示此参与方还没有填写合同的填写控件</li>
 <li>**1**:  已填写, 表示此参与方已经填写所有的填写控件</li></ul>
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecipientFillStatus 参与方填写状态
 <ul>
 <li>**空值** : 此参与方没有填写控件</li>
 <li>**0**:  未填写, 表示此参与方还没有填写合同的填写控件</li>
 <li>**1**:  已填写, 表示此参与方已经填写所有的填写控件</li></ul>
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRecipientFillStatus() const;
@@ -98,14 +92,12 @@ namespace TencentCloud
 <li>**0**:  未填写, 表示此参与方还没有填写合同的填写控件</li>
 <li>**1**:  已填写, 表示此参与方已经填写所有的填写控件</li></ul>
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recipientFillStatus 参与方填写状态
 <ul>
 <li>**空值** : 此参与方没有填写控件</li>
 <li>**0**:  未填写, 表示此参与方还没有填写合同的填写控件</li>
 <li>**1**:  已填写, 表示此参与方已经填写所有的填写控件</li></ul>
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecipientFillStatus(const std::string& _recipientFillStatus);
@@ -121,11 +113,9 @@ namespace TencentCloud
                      * 获取是否为发起方
 <ul><li>true-发起方</li>
 <li>false-参与方</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsPromoter 是否为发起方
 <ul><li>true-发起方</li>
 <li>false-参与方</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsPromoter() const;
@@ -134,11 +124,9 @@ namespace TencentCloud
                      * 设置是否为发起方
 <ul><li>true-发起方</li>
 <li>false-参与方</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isPromoter 是否为发起方
 <ul><li>true-发起方</li>
 <li>false-参与方</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsPromoter(const bool& _isPromoter);
@@ -152,18 +140,14 @@ namespace TencentCloud
 
                     /**
                      * 获取改参与方填写控件信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Components 改参与方填写控件信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FilledComponent> GetComponents() const;
 
                     /**
                      * 设置改参与方填写控件信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _components 改参与方填写控件信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComponents(const std::vector<FilledComponent>& _components);
@@ -179,7 +163,6 @@ namespace TencentCloud
 
                     /**
                      * 签署方经办人在合同流程中的参与方ID，与控件绑定，是控件的归属方
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_recipientId;
                     bool m_recipientIdHasBeenSet;
@@ -191,7 +174,6 @@ namespace TencentCloud
 <li>**0**:  未填写, 表示此参与方还没有填写合同的填写控件</li>
 <li>**1**:  已填写, 表示此参与方已经填写所有的填写控件</li></ul>
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_recipientFillStatus;
                     bool m_recipientFillStatusHasBeenSet;
@@ -200,14 +182,12 @@ namespace TencentCloud
                      * 是否为发起方
 <ul><li>true-发起方</li>
 <li>false-参与方</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isPromoter;
                     bool m_isPromoterHasBeenSet;
 
                     /**
                      * 改参与方填写控件信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FilledComponent> m_components;
                     bool m_componentsHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取定制错误ID列表,最多支持10个
-                     * @return ErrorPageIds 定制错误ID列表,最多支持10个
+                     * 获取定制错误ID列表，最多支持10个
+                     * @return ErrorPageIds 定制错误ID列表，最多支持10个
                      * 
                      */
                     std::vector<std::string> GetErrorPageIds() const;
 
                     /**
-                     * 设置定制错误ID列表,最多支持10个
-                     * @param _errorPageIds 定制错误ID列表,最多支持10个
+                     * 设置定制错误ID列表，最多支持10个
+                     * @param _errorPageIds 定制错误ID列表，最多支持10个
                      * 
                      */
                     void SetErrorPageIds(const std::vector<std::string>& _errorPageIds);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 定制错误ID列表,最多支持10个
+                     * 定制错误ID列表，最多支持10个
                      */
                     std::vector<std::string> m_errorPageIds;
                     bool m_errorPageIdsHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -95,18 +95,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Topic 消息堆积/占用磁盘排行
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicMessageHeap Topic 消息堆积/占用磁盘排行
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TopicMessageHeapRanking> GetTopicMessageHeap() const;
 
                     /**
                      * 设置Topic 消息堆积/占用磁盘排行
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicMessageHeap Topic 消息堆积/占用磁盘排行
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicMessageHeap(const std::vector<TopicMessageHeapRanking>& _topicMessageHeap);
@@ -120,18 +116,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Broker Ip 列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BrokerIp Broker Ip 列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetBrokerIp() const;
 
                     /**
                      * 设置Broker Ip 列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _brokerIp Broker Ip 列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBrokerIp(const std::vector<std::string>& _brokerIp);
@@ -145,18 +137,14 @@ namespace TencentCloud
 
                     /**
                      * 获取单个broker 节点 Topic占用的数据大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BrokerTopicData 单个broker 节点 Topic占用的数据大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BrokerTopicData> GetBrokerTopicData() const;
 
                     /**
                      * 设置单个broker 节点 Topic占用的数据大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _brokerTopicData 单个broker 节点 Topic占用的数据大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBrokerTopicData(const std::vector<BrokerTopicData>& _brokerTopicData);
@@ -205,21 +193,18 @@ namespace TencentCloud
 
                     /**
                      * Topic 消息堆积/占用磁盘排行
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TopicMessageHeapRanking> m_topicMessageHeap;
                     bool m_topicMessageHeapHasBeenSet;
 
                     /**
                      * Broker Ip 列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_brokerIp;
                     bool m_brokerIpHasBeenSet;
 
                     /**
                      * 单个broker 节点 Topic占用的数据大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BrokerTopicData> m_brokerTopicData;
                     bool m_brokerTopicDataHasBeenSet;

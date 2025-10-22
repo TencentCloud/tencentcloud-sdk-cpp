@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取部署状态
-                     * @return Status 部署状态
+                     * 获取部署状态:0 未开始， 1 成功， 2 失败
+                     * @return Status 部署状态:0 未开始， 1 成功， 2 失败
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置部署状态
-                     * @param _status 部署状态
+                     * 设置部署状态:0 未开始， 1 成功， 2 失败
+                     * @param _status 部署状态:0 未开始， 1 成功， 2 失败
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -220,7 +220,7 @@ namespace TencentCloud
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 部署状态
+                     * 部署状态:0 未开始， 1 成功， 2 失败
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;

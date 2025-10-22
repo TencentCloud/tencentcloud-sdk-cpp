@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取处于等待切换状态中的实例ID
-                     * @return DBInstanceId 处于等待切换状态中的实例ID
+                     * 获取处于等待切换状态中的实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * @return DBInstanceId 处于等待切换状态中的实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
-                     * 设置处于等待切换状态中的实例ID
-                     * @param _dBInstanceId 处于等待切换状态中的实例ID
+                     * 设置处于等待切换状态中的实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * @param _dBInstanceId 处于等待切换状态中的实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
@@ -87,7 +87,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 处于等待切换状态中的实例ID
+                     * 处于等待切换状态中的实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      */
                     std::string m_dBInstanceId;
                     bool m_dBInstanceIdHasBeenSet;

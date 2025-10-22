@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool BotBizIdHasBeenSet() const;
 
                     /**
-                     * 获取文档ID
-                     * @return SegBizId 文档ID
+                     * 获取文档片段ID
+                     * @return SegBizId 文档片段ID
                      * 
                      */
                     std::vector<std::string> GetSegBizId() const;
 
                     /**
-                     * 设置文档ID
-                     * @param _segBizId 文档ID
+                     * 设置文档片段ID
+                     * @param _segBizId 文档片段ID
                      * 
                      */
                     void SetSegBizId(const std::vector<std::string>& _segBizId);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_botBizIdHasBeenSet;
 
                     /**
-                     * 文档ID
+                     * 文档片段ID
                      */
                     std::vector<std::string> m_segBizId;
                     bool m_segBizIdHasBeenSet;

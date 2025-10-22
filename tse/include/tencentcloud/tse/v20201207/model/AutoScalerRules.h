@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取稳定窗口时间，扩容时默认0，缩容时默认300
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StabilizationWindowSeconds 稳定窗口时间，扩容时默认0，缩容时默认300
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStabilizationWindowSeconds() const;
 
                     /**
                      * 设置稳定窗口时间，扩容时默认0，缩容时默认300
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stabilizationWindowSeconds 稳定窗口时间，扩容时默认0，缩容时默认300
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStabilizationWindowSeconds(const int64_t& _stabilizationWindowSeconds);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取选择策略依据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SelectPolicy 选择策略依据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSelectPolicy() const;
 
                     /**
                      * 设置选择策略依据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _selectPolicy 选择策略依据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSelectPolicy(const std::string& _selectPolicy);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扩缩容策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Policies 扩缩容策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AutoScalerPolicy> GetPolicies() const;
 
                     /**
                      * 设置扩缩容策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _policies 扩缩容策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPolicies(const std::vector<AutoScalerPolicy>& _policies);
@@ -126,21 +114,18 @@ namespace TencentCloud
 
                     /**
                      * 稳定窗口时间，扩容时默认0，缩容时默认300
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_stabilizationWindowSeconds;
                     bool m_stabilizationWindowSecondsHasBeenSet;
 
                     /**
                      * 选择策略依据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_selectPolicy;
                     bool m_selectPolicyHasBeenSet;
 
                     /**
                      * 扩缩容策略
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AutoScalerPolicy> m_policies;
                     bool m_policiesHasBeenSet;

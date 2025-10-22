@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,10 +50,8 @@ namespace TencentCloud
                     /**
                      * 获取告警处理记录id
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 告警处理记录id
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
@@ -61,10 +59,8 @@ namespace TencentCloud
                     /**
                      * 设置告警处理记录id
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 告警处理记录id
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -78,18 +74,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -103,18 +95,14 @@ namespace TencentCloud
 
                     /**
                      * 获取名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -128,18 +116,14 @@ namespace TencentCloud
 
                     /**
                      * 获取操作类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperationType 操作类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperationType() const;
 
                     /**
                      * 设置操作类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _operationType 操作类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOperationType(const std::string& _operationType);
@@ -153,18 +137,14 @@ namespace TencentCloud
 
                     /**
                      * 获取处理时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Time 处理时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTime() const;
 
                     /**
                      * 设置处理时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _time 处理时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTime(const std::string& _time);
@@ -178,18 +158,14 @@ namespace TencentCloud
 
                     /**
                      * 获取类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -204,10 +180,8 @@ namespace TencentCloud
                     /**
                      * 获取文件列表
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileSet 文件列表
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FileInfo> GetFileSet() const;
@@ -215,10 +189,8 @@ namespace TencentCloud
                     /**
                      * 设置文件列表
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileSet 文件列表
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileSet(const std::vector<FileInfo>& _fileSet);
@@ -232,18 +204,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId 应用appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAppId() const;
 
                     /**
                      * 设置应用appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appId 应用appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppId(const int64_t& _appId);
@@ -258,10 +226,8 @@ namespace TencentCloud
                     /**
                      * 获取扩展字段1，存非孪生中台用户id
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtendOne 扩展字段1，存非孪生中台用户id
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExtendOne() const;
@@ -269,10 +235,8 @@ namespace TencentCloud
                     /**
                      * 设置扩展字段1，存非孪生中台用户id
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _extendOne 扩展字段1，存非孪生中台用户id
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExtendOne(const std::string& _extendOne);
@@ -289,42 +253,36 @@ namespace TencentCloud
                     /**
                      * 告警处理记录id
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 操作类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operationType;
                     bool m_operationTypeHasBeenSet;
 
                     /**
                      * 处理时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_time;
                     bool m_timeHasBeenSet;
 
                     /**
                      * 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -332,14 +290,12 @@ namespace TencentCloud
                     /**
                      * 文件列表
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FileInfo> m_fileSet;
                     bool m_fileSetHasBeenSet;
 
                     /**
                      * 应用appid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
@@ -347,7 +303,6 @@ namespace TencentCloud
                     /**
                      * 扩展字段1，存非孪生中台用户id
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_extendOne;
                     bool m_extendOneHasBeenSet;

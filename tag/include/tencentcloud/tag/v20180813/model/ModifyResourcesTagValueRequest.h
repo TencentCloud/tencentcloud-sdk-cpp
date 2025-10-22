@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取业务类型，示例 cvm 。资源所属业务名称（资源六段式中的第三段）
-                     * @return ServiceType 业务类型，示例 cvm 。资源所属业务名称（资源六段式中的第三段）
+                     * 获取业务类型，示例 cvm。资源所属业务名称（资源六段式中的第三段）
+                     * @return ServiceType 业务类型，示例 cvm。资源所属业务名称（资源六段式中的第三段）
                      * 
                      */
                     std::string GetServiceType() const;
 
                     /**
-                     * 设置业务类型，示例 cvm 。资源所属业务名称（资源六段式中的第三段）
-                     * @param _serviceType 业务类型，示例 cvm 。资源所属业务名称（资源六段式中的第三段）
+                     * 设置业务类型，示例 cvm。资源所属业务名称（资源六段式中的第三段）
+                     * @param _serviceType 业务类型，示例 cvm。资源所属业务名称（资源六段式中的第三段）
                      * 
                      */
                     void SetServiceType(const std::string& _serviceType);
@@ -171,7 +171,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 业务类型，示例 cvm 。资源所属业务名称（资源六段式中的第三段）
+                     * 业务类型，示例 cvm。资源所属业务名称（资源六段式中的第三段）
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;

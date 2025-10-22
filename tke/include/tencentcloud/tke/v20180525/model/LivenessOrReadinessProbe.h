@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,8 +25,8 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tke/v20180525/model/Probe.h>
-#include <tencentcloud/tke/v20180525/model/HttpGet.h>
 #include <tencentcloud/tke/v20180525/model/Exec.h>
+#include <tencentcloud/tke/v20180525/model/HttpGet.h>
 #include <tencentcloud/tke/v20180525/model/TcpSocket.h>
 
 
@@ -52,18 +52,14 @@ namespace TencentCloud
 
                     /**
                      * 获取探针参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Probe 探针参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Probe GetProbe() const;
 
                     /**
                      * 设置探针参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _probe 探针参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProbe(const Probe& _probe);
@@ -74,31 +70,6 @@ namespace TencentCloud
                      * 
                      */
                     bool ProbeHasBeenSet() const;
-
-                    /**
-                     * 获取HttpGet检测参数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HttpGet HttpGet检测参数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    HttpGet GetHttpGet() const;
-
-                    /**
-                     * 设置HttpGet检测参数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _httpGet HttpGet检测参数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetHttpGet(const HttpGet& _httpGet);
-
-                    /**
-                     * 判断参数 HttpGet 是否已赋值
-                     * @return HttpGet 是否已赋值
-                     * 
-                     */
-                    bool HttpGetHasBeenSet() const;
 
                     /**
                      * 获取容器内检测命令参数
@@ -124,6 +95,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ExecHasBeenSet() const;
+
+                    /**
+                     * 获取HttpGet检测参数
+                     * @return HttpGet HttpGet检测参数
+                     * 
+                     */
+                    HttpGet GetHttpGet() const;
+
+                    /**
+                     * 设置HttpGet检测参数
+                     * @param _httpGet HttpGet检测参数
+                     * 
+                     */
+                    void SetHttpGet(const HttpGet& _httpGet);
+
+                    /**
+                     * 判断参数 HttpGet 是否已赋值
+                     * @return HttpGet 是否已赋值
+                     * 
+                     */
+                    bool HttpGetHasBeenSet() const;
 
                     /**
                      * 获取TcpSocket检测的端口参数
@@ -154,17 +146,9 @@ namespace TencentCloud
 
                     /**
                      * 探针参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Probe m_probe;
                     bool m_probeHasBeenSet;
-
-                    /**
-                     * HttpGet检测参数
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    HttpGet m_httpGet;
-                    bool m_httpGetHasBeenSet;
 
                     /**
                      * 容器内检测命令参数
@@ -172,6 +156,12 @@ namespace TencentCloud
                      */
                     Exec m_exec;
                     bool m_execHasBeenSet;
+
+                    /**
+                     * HttpGet检测参数
+                     */
+                    HttpGet m_httpGet;
+                    bool m_httpGetHasBeenSet;
 
                     /**
                      * TcpSocket检测的端口参数

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取查询数目上限，默认20
-                     * @return Limit 查询数目上限，默认20
+                     * 获取查询数目上限，默认 20
+                     * @return Limit 查询数目上限，默认 20
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置查询数目上限，默认20
-                     * @param _limit 查询数目上限，默认20
+                     * 设置查询数目上限，默认 20
+                     * @param _limit 查询数目上限，默认 20
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取查询起始位置
-                     * @return Offset 查询起始位置
+                     * 获取查询起始位置，默认 0
+                     * @return Offset 查询起始位置，默认 0
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置查询起始位置
-                     * @param _offset 查询起始位置
+                     * 设置查询起始位置，默认 0
+                     * @param _offset 查询起始位置，默认 0
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -115,13 +115,13 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 查询数目上限，默认20
+                     * 查询数目上限，默认 20
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 查询起始位置
+                     * 查询起始位置，默认 0
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

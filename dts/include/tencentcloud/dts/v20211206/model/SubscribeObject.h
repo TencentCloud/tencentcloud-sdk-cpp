@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取订阅数据的类型，枚举值：database-数据库，table-数据库的表(如果 DatabaseType 为 mongodb，则表示集合)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObjectType 订阅数据的类型，枚举值：database-数据库，table-数据库的表(如果 DatabaseType 为 mongodb，则表示集合)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetObjectType() const;
 
                     /**
                      * 设置订阅数据的类型，枚举值：database-数据库，table-数据库的表(如果 DatabaseType 为 mongodb，则表示集合)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _objectType 订阅数据的类型，枚举值：database-数据库，table-数据库的表(如果 DatabaseType 为 mongodb，则表示集合)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetObjectType(const std::string& _objectType);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取订阅的数据库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Database 订阅的数据库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDatabase() const;
 
                     /**
                      * 设置订阅的数据库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _database 订阅的数据库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDatabase(const std::string& _database);
@@ -125,14 +117,12 @@ namespace TencentCloud
 
                     /**
                      * 订阅数据的类型，枚举值：database-数据库，table-数据库的表(如果 DatabaseType 为 mongodb，则表示集合)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_objectType;
                     bool m_objectTypeHasBeenSet;
 
                     /**
                      * 订阅的数据库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_database;
                     bool m_databaseHasBeenSet;

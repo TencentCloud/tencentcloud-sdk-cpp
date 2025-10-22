@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云硬盘ID。
-                     * @return DiskId 云硬盘ID。
+                     * 获取云硬盘ID。可通过[DescribeDisks](/document/product/362/16315)接口查询。
+                     * @return DiskId 云硬盘ID。可通过[DescribeDisks](/document/product/362/16315)接口查询。
                      * 
                      */
                     std::string GetDiskId() const;
 
                     /**
-                     * 设置云硬盘ID。
-                     * @param _diskId 云硬盘ID。
+                     * 设置云硬盘ID。可通过[DescribeDisks](/document/product/362/16315)接口查询。
+                     * @param _diskId 云硬盘ID。可通过[DescribeDisks](/document/product/362/16315)接口查询。
                      * 
                      */
                     void SetDiskId(const std::string& _diskId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DiskIdHasBeenSet() const;
 
                     /**
-                     * 获取调整之后的云硬盘备份点配额。
-                     * @return DiskBackupQuota 调整之后的云硬盘备份点配额。
+                     * 获取调整之后的云硬盘备份点配额。取值范围为1 ~ 1024。
+                     * @return DiskBackupQuota 调整之后的云硬盘备份点配额。取值范围为1 ~ 1024。
                      * 
                      */
                     uint64_t GetDiskBackupQuota() const;
 
                     /**
-                     * 设置调整之后的云硬盘备份点配额。
-                     * @param _diskBackupQuota 调整之后的云硬盘备份点配额。
+                     * 设置调整之后的云硬盘备份点配额。取值范围为1 ~ 1024。
+                     * @param _diskBackupQuota 调整之后的云硬盘备份点配额。取值范围为1 ~ 1024。
                      * 
                      */
                     void SetDiskBackupQuota(const uint64_t& _diskBackupQuota);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 云硬盘ID。
+                     * 云硬盘ID。可通过[DescribeDisks](/document/product/362/16315)接口查询。
                      */
                     std::string m_diskId;
                     bool m_diskIdHasBeenSet;
 
                     /**
-                     * 调整之后的云硬盘备份点配额。
+                     * 调整之后的云硬盘备份点配额。取值范围为1 ~ 1024。
                      */
                     uint64_t m_diskBackupQuota;
                     bool m_diskBackupQuotaHasBeenSet;

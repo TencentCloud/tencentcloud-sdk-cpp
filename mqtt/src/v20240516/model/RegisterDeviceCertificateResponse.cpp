@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,10 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mqtt::V20240516::Model;
 using namespace std;
 
-RegisterDeviceCertificateResponse::RegisterDeviceCertificateResponse()
+RegisterDeviceCertificateResponse::RegisterDeviceCertificateResponse() :
+    m_instanceIdHasBeenSet(false),
+    m_caSnHasBeenSet(false),
+    m_deviceCertificateSnHasBeenSet(false)
 {
 }
 
@@ -61,6 +64,36 @@ CoreInternalOutcome RegisterDeviceCertificateResponse::Deserialize(const string 
     }
 
 
+    if (rsp.HasMember("InstanceId") && !rsp["InstanceId"].IsNull())
+    {
+        if (!rsp["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(rsp["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CaSn") && !rsp["CaSn"].IsNull())
+    {
+        if (!rsp["CaSn"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CaSn` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_caSn = string(rsp["CaSn"].GetString());
+        m_caSnHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("DeviceCertificateSn") && !rsp["DeviceCertificateSn"].IsNull())
+    {
+        if (!rsp["DeviceCertificateSn"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceCertificateSn` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deviceCertificateSn = string(rsp["DeviceCertificateSn"].GetString());
+        m_deviceCertificateSnHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -71,16 +104,70 @@ string RegisterDeviceCertificateResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_caSnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CaSn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_caSn.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceCertificateSnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceCertificateSn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceCertificateSn.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
     return buffer.GetString();
 }
 
+
+string RegisterDeviceCertificateResponse::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+bool RegisterDeviceCertificateResponse::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+string RegisterDeviceCertificateResponse::GetCaSn() const
+{
+    return m_caSn;
+}
+
+bool RegisterDeviceCertificateResponse::CaSnHasBeenSet() const
+{
+    return m_caSnHasBeenSet;
+}
+
+string RegisterDeviceCertificateResponse::GetDeviceCertificateSn() const
+{
+    return m_deviceCertificateSn;
+}
+
+bool RegisterDeviceCertificateResponse::DeviceCertificateSnHasBeenSet() const
+{
+    return m_deviceCertificateSnHasBeenSet;
+}
 
 

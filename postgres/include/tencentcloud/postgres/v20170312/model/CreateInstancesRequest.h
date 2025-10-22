@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool SpecCodeHasBeenSet() const;
 
                     /**
-                     * 获取实例容量大小，单位：GB。
-                     * @return Storage 实例容量大小，单位：GB。
+                     * 获取实例磁盘容量大小，单位：GB。该参数的设置步长为10。
+                     * @return Storage 实例磁盘容量大小，单位：GB。该参数的设置步长为10。
                      * 
                      */
                     uint64_t GetStorage() const;
 
                     /**
-                     * 设置实例容量大小，单位：GB。
-                     * @param _storage 实例容量大小，单位：GB。
+                     * 设置实例磁盘容量大小，单位：GB。该参数的设置步长为10。
+                     * @param _storage 实例磁盘容量大小，单位：GB。该参数的设置步长为10。
                      * 
                      */
                     void SetStorage(const uint64_t& _storage);
@@ -531,15 +531,15 @@ namespace TencentCloud
                     bool VoucherIdsHasBeenSet() const;
 
                     /**
-                     * 获取项目ID。
-                     * @return ProjectId 项目ID。
+                     * 获取项目ID。默认取之为0，表示归属默认项目。
+                     * @return ProjectId 项目ID。默认取之为0，表示归属默认项目。
                      * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置项目ID。
-                     * @param _projectId 项目ID。
+                     * 设置项目ID。默认取之为0，表示归属默认项目。
+                     * @param _projectId 项目ID。默认取之为0，表示归属默认项目。
                      * 
                      */
                     void SetProjectId(const int64_t& _projectId);
@@ -731,6 +731,27 @@ KMSRegion相关介绍参考[开启透明数据加密](https://cloud.tencent.com/
                     bool KMSRegionHasBeenSet() const;
 
                     /**
+                     * 获取指定KMS服务的集群，KMSClusterId为空使用默认集群的KMS，若选择指定KMS集群，则需要传入KMSClusterId。 KMSClusterId相关介绍参考开启透明数据加密
+                     * @return KMSClusterId 指定KMS服务的集群，KMSClusterId为空使用默认集群的KMS，若选择指定KMS集群，则需要传入KMSClusterId。 KMSClusterId相关介绍参考开启透明数据加密
+                     * 
+                     */
+                    std::string GetKMSClusterId() const;
+
+                    /**
+                     * 设置指定KMS服务的集群，KMSClusterId为空使用默认集群的KMS，若选择指定KMS集群，则需要传入KMSClusterId。 KMSClusterId相关介绍参考开启透明数据加密
+                     * @param _kMSClusterId 指定KMS服务的集群，KMSClusterId为空使用默认集群的KMS，若选择指定KMS集群，则需要传入KMSClusterId。 KMSClusterId相关介绍参考开启透明数据加密
+                     * 
+                     */
+                    void SetKMSClusterId(const std::string& _kMSClusterId);
+
+                    /**
+                     * 判断参数 KMSClusterId 是否已赋值
+                     * @return KMSClusterId 是否已赋值
+                     * 
+                     */
+                    bool KMSClusterIdHasBeenSet() const;
+
+                    /**
                      * 获取数据库引擎，支持：
 <li>postgresql：云数据库PostgreSQL</li>
 <li>mssql_compatible：MSSQL兼容-云数据库PostgreSQL</li>
@@ -898,7 +919,7 @@ mssql_compatible引擎：
                     bool m_specCodeHasBeenSet;
 
                     /**
-                     * 实例容量大小，单位：GB。
+                     * 实例磁盘容量大小，单位：GB。该参数的设置步长为10。
                      */
                     uint64_t m_storage;
                     bool m_storageHasBeenSet;
@@ -1020,7 +1041,7 @@ mssql_compatible引擎：
                     bool m_voucherIdsHasBeenSet;
 
                     /**
-                     * 项目ID。
+                     * 项目ID。默认取之为0，表示归属默认项目。
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
@@ -1074,6 +1095,12 @@ KMSRegion相关介绍参考[开启透明数据加密](https://cloud.tencent.com/
                      */
                     std::string m_kMSRegion;
                     bool m_kMSRegionHasBeenSet;
+
+                    /**
+                     * 指定KMS服务的集群，KMSClusterId为空使用默认集群的KMS，若选择指定KMS集群，则需要传入KMSClusterId。 KMSClusterId相关介绍参考开启透明数据加密
+                     */
+                    std::string m_kMSClusterId;
+                    bool m_kMSClusterIdHasBeenSet;
 
                     /**
                      * 数据库引擎，支持：

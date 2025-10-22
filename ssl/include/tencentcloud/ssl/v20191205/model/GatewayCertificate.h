@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网关证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 网关证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置网关证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 网关证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网关证书名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 网关证书名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置网关证书名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 网关证书名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取绑定域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BindDomains 绑定域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetBindDomains() const;
 
                     /**
                      * 设置绑定域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bindDomains 绑定域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBindDomains(const std::vector<std::string>& _bindDomains);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证书来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertSource 证书来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCertSource() const;
 
                     /**
                      * 设置证书来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _certSource 证书来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCertSource(const std::string& _certSource);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前绑定的SSL证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertId 当前绑定的SSL证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCertId() const;
 
                     /**
                      * 设置当前绑定的SSL证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _certId 当前绑定的SSL证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCertId(const std::string& _certId);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 网关证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 网关证书名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 绑定域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_bindDomains;
                     bool m_bindDomainsHasBeenSet;
 
                     /**
                      * 证书来源
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_certSource;
                     bool m_certSourceHasBeenSet;
 
                     /**
                      * 当前绑定的SSL证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_certId;
                     bool m_certIdHasBeenSet;

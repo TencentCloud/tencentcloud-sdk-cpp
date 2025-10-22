@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@
 #include <tencentcloud/as/v20180419/model/IPv6InternetAccessible.h>
 #include <tencentcloud/as/v20180419/model/LoginSettings.h>
 #include <tencentcloud/as/v20180419/model/InstanceTag.h>
+#include <tencentcloud/as/v20180419/model/Metadata.h>
 
 
 namespace TencentCloud
@@ -54,15 +55,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取启动配置ID
-                     * @return LaunchConfigurationId 启动配置ID
+                     * 获取启动配置ID。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/config) 或调用接口 [DescribeLaunchConfigurations](https://cloud.tencent.com/document/api/377/20445) ，取返回信息中的 LaunchConfigurationId 获取启动配置ID。
+                     * @return LaunchConfigurationId 启动配置ID。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/config) 或调用接口 [DescribeLaunchConfigurations](https://cloud.tencent.com/document/api/377/20445) ，取返回信息中的 LaunchConfigurationId 获取启动配置ID。
                      * 
                      */
                     std::string GetLaunchConfigurationId() const;
 
                     /**
-                     * 设置启动配置ID
-                     * @param _launchConfigurationId 启动配置ID
+                     * 设置启动配置ID。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/config) 或调用接口 [DescribeLaunchConfigurations](https://cloud.tencent.com/document/api/377/20445) ，取返回信息中的 LaunchConfigurationId 获取启动配置ID。
+                     * @param _launchConfigurationId 启动配置ID。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/config) 或调用接口 [DescribeLaunchConfigurations](https://cloud.tencent.com/document/api/377/20445) ，取返回信息中的 LaunchConfigurationId 获取启动配置ID。
                      * 
                      */
                     void SetLaunchConfigurationId(const std::string& _launchConfigurationId);
@@ -97,18 +98,18 @@ namespace TencentCloud
 
                     /**
                      * 获取实例类型列表，不同实例机型指定了不同的资源规格，最多支持10种实例机型。
-InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定多实例类型，并使原有的InstanceType失效。
+InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定多实例类型，并使原有的InstanceType失效。具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格描述](https://cloud.tencent.com/document/product/213/11518)。
                      * @return InstanceTypes 实例类型列表，不同实例机型指定了不同的资源规格，最多支持10种实例机型。
-InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定多实例类型，并使原有的InstanceType失效。
+InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定多实例类型，并使原有的InstanceType失效。具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格描述](https://cloud.tencent.com/document/product/213/11518)。
                      * 
                      */
                     std::vector<std::string> GetInstanceTypes() const;
 
                     /**
                      * 设置实例类型列表，不同实例机型指定了不同的资源规格，最多支持10种实例机型。
-InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定多实例类型，并使原有的InstanceType失效。
+InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定多实例类型，并使原有的InstanceType失效。具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格描述](https://cloud.tencent.com/document/product/213/11518)。
                      * @param _instanceTypes 实例类型列表，不同实例机型指定了不同的资源规格，最多支持10种实例机型。
-InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定多实例类型，并使原有的InstanceType失效。
+InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定多实例类型，并使原有的InstanceType失效。具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格描述](https://cloud.tencent.com/document/product/213/11518)。
                      * 
                      */
                     void SetInstanceTypes(const std::vector<std::string>& _instanceTypes);
@@ -254,10 +255,12 @@ InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定�
 <li>POSTPAID_BY_HOUR：按小时后付费</li>
 <li>SPOTPAID：竞价付费</li>
 <li>PREPAID：预付费，即包年包月</li>
+<li>CDCPAID：专用集群付费</li>
                      * @return InstanceChargeType 实例计费类型。具体取值范围如下：
 <li>POSTPAID_BY_HOUR：按小时后付费</li>
 <li>SPOTPAID：竞价付费</li>
 <li>PREPAID：预付费，即包年包月</li>
+<li>CDCPAID：专用集群付费</li>
                      * 
                      */
                     std::string GetInstanceChargeType() const;
@@ -267,10 +270,12 @@ InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定�
 <li>POSTPAID_BY_HOUR：按小时后付费</li>
 <li>SPOTPAID：竞价付费</li>
 <li>PREPAID：预付费，即包年包月</li>
+<li>CDCPAID：专用集群付费</li>
                      * @param _instanceChargeType 实例计费类型。具体取值范围如下：
 <li>POSTPAID_BY_HOUR：按小时后付费</li>
 <li>SPOTPAID：竞价付费</li>
 <li>PREPAID：预付费，即包年包月</li>
+<li>CDCPAID：专用集群付费</li>
                      * 
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
@@ -431,9 +436,11 @@ InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定�
                      * 获取云服务器主机名（HostName）的相关设置。
 不支持windows实例设置主机名。
 新增该属性时，必须传递云服务器的主机名，其它未传递字段会设置为默认值。
+会校验主机名(如果存在后缀则加上后缀)是否超过最大位数46。
                      * @return HostNameSettings 云服务器主机名（HostName）的相关设置。
 不支持windows实例设置主机名。
 新增该属性时，必须传递云服务器的主机名，其它未传递字段会设置为默认值。
+会校验主机名(如果存在后缀则加上后缀)是否超过最大位数46。
                      * 
                      */
                     HostNameSettings GetHostNameSettings() const;
@@ -442,9 +449,11 @@ InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定�
                      * 设置云服务器主机名（HostName）的相关设置。
 不支持windows实例设置主机名。
 新增该属性时，必须传递云服务器的主机名，其它未传递字段会设置为默认值。
+会校验主机名(如果存在后缀则加上后缀)是否超过最大位数46。
                      * @param _hostNameSettings 云服务器主机名（HostName）的相关设置。
 不支持windows实例设置主机名。
 新增该属性时，必须传递云服务器的主机名，其它未传递字段会设置为默认值。
+会校验主机名(如果存在后缀则加上后缀)是否超过最大位数46。
                      * 
                      */
                     void SetHostNameSettings(const HostNameSettings& _hostNameSettings);
@@ -460,9 +469,11 @@ InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定�
                      * 获取云服务器（InstanceName）实例名的相关设置。 
 如果用户在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 参照此字段进行设置，并传递给 CVM；如果用户未在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 按照“as-{{ 伸缩组AutoScalingGroupName }}”进行设置，并传递给 CVM。
 新增该属性时，必须传递云服务器的实例名称，其它未传递字段会设置为默认值。
+会校验实例名(如果存在后缀则加上后缀)是否超过最大位数108。
                      * @return InstanceNameSettings 云服务器（InstanceName）实例名的相关设置。 
 如果用户在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 参照此字段进行设置，并传递给 CVM；如果用户未在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 按照“as-{{ 伸缩组AutoScalingGroupName }}”进行设置，并传递给 CVM。
 新增该属性时，必须传递云服务器的实例名称，其它未传递字段会设置为默认值。
+会校验实例名(如果存在后缀则加上后缀)是否超过最大位数108。
                      * 
                      */
                     InstanceNameSettings GetInstanceNameSettings() const;
@@ -471,9 +482,11 @@ InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定�
                      * 设置云服务器（InstanceName）实例名的相关设置。 
 如果用户在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 参照此字段进行设置，并传递给 CVM；如果用户未在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 按照“as-{{ 伸缩组AutoScalingGroupName }}”进行设置，并传递给 CVM。
 新增该属性时，必须传递云服务器的实例名称，其它未传递字段会设置为默认值。
+会校验实例名(如果存在后缀则加上后缀)是否超过最大位数108。
                      * @param _instanceNameSettings 云服务器（InstanceName）实例名的相关设置。 
 如果用户在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 参照此字段进行设置，并传递给 CVM；如果用户未在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 按照“as-{{ 伸缩组AutoScalingGroupName }}”进行设置，并传递给 CVM。
 新增该属性时，必须传递云服务器的实例名称，其它未传递字段会设置为默认值。
+会校验实例名(如果存在后缀则加上后缀)是否超过最大位数108。
                      * 
                      */
                     void SetInstanceNameSettings(const InstanceNameSettings& _instanceNameSettings);
@@ -507,15 +520,15 @@ InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定�
                     bool EnhancedServiceHasBeenSet() const;
 
                     /**
-                     * 获取CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。
-                     * @return CamRoleName CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。
+                     * 获取CAM角色名称。可通过[DescribeRoleList](https://cloud.tencent.com/document/product/598/36223)接口返回值中的roleName获取。
+                     * @return CamRoleName CAM角色名称。可通过[DescribeRoleList](https://cloud.tencent.com/document/product/598/36223)接口返回值中的roleName获取。
                      * 
                      */
                     std::string GetCamRoleName() const;
 
                     /**
-                     * 设置CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。
-                     * @param _camRoleName CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。
+                     * 设置CAM角色名称。可通过[DescribeRoleList](https://cloud.tencent.com/document/product/598/36223)接口返回值中的roleName获取。
+                     * @param _camRoleName CAM角色名称。可通过[DescribeRoleList](https://cloud.tencent.com/document/product/598/36223)接口返回值中的roleName获取。
                      * 
                      */
                     void SetCamRoleName(const std::string& _camRoleName);
@@ -528,18 +541,18 @@ InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定�
                     bool CamRoleNameHasBeenSet() const;
 
                     /**
-                     * 获取高性能计算集群ID。<br>
+                     * 获取高性能计算集群ID。可通过调用[DescribeHpcClusters](https://cloud.tencent.com/document/product/213/83220)接口获取该参数。
 注意：此字段默认为空。
-                     * @return HpcClusterId 高性能计算集群ID。<br>
+                     * @return HpcClusterId 高性能计算集群ID。可通过调用[DescribeHpcClusters](https://cloud.tencent.com/document/product/213/83220)接口获取该参数。
 注意：此字段默认为空。
                      * 
                      */
                     std::string GetHpcClusterId() const;
 
                     /**
-                     * 设置高性能计算集群ID。<br>
+                     * 设置高性能计算集群ID。可通过调用[DescribeHpcClusters](https://cloud.tencent.com/document/product/213/83220)接口获取该参数。
 注意：此字段默认为空。
-                     * @param _hpcClusterId 高性能计算集群ID。<br>
+                     * @param _hpcClusterId 高性能计算集群ID。可通过调用[DescribeHpcClusters](https://cloud.tencent.com/document/product/213/83220)接口获取该参数。
 注意：此字段默认为空。
                      * 
                      */
@@ -574,15 +587,15 @@ InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定�
                     bool IPv6InternetAccessibleHasBeenSet() const;
 
                     /**
-                     * 获取置放群组id，仅支持指定一个。
-                     * @return DisasterRecoverGroupIds 置放群组id，仅支持指定一个。
+                     * 获取置放群组id，仅支持指定一个。可通过调用[DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/product/213/17810)接口获取该参数。
+                     * @return DisasterRecoverGroupIds 置放群组id，仅支持指定一个。可通过调用[DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/product/213/17810)接口获取该参数。
                      * 
                      */
                     std::vector<std::string> GetDisasterRecoverGroupIds() const;
 
                     /**
-                     * 设置置放群组id，仅支持指定一个。
-                     * @param _disasterRecoverGroupIds 置放群组id，仅支持指定一个。
+                     * 设置置放群组id，仅支持指定一个。可通过调用[DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/product/213/17810)接口获取该参数。
+                     * @param _disasterRecoverGroupIds 置放群组id，仅支持指定一个。可通过调用[DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/product/213/17810)接口获取该参数。
                      * 
                      */
                     void SetDisasterRecoverGroupIds(const std::vector<std::string>& _disasterRecoverGroupIds);
@@ -641,15 +654,15 @@ InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定�
                     bool InstanceTagsHasBeenSet() const;
 
                     /**
-                     * 获取镜像族名称。
-                     * @return ImageFamily 镜像族名称。
+                     * 获取镜像族名称。可通过调用[DescribeImages](https://cloud.tencent.com/document/product/213/15715)接口获取该参数。
+                     * @return ImageFamily 镜像族名称。可通过调用[DescribeImages](https://cloud.tencent.com/document/product/213/15715)接口获取该参数。
                      * 
                      */
                     std::string GetImageFamily() const;
 
                     /**
-                     * 设置镜像族名称。
-                     * @param _imageFamily 镜像族名称。
+                     * 设置镜像族名称。可通过调用[DescribeImages](https://cloud.tencent.com/document/product/213/15715)接口获取该参数。
+                     * @param _imageFamily 镜像族名称。可通过调用[DescribeImages](https://cloud.tencent.com/document/product/213/15715)接口获取该参数。
                      * 
                      */
                     void SetImageFamily(const std::string& _imageFamily);
@@ -661,10 +674,52 @@ InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定�
                      */
                     bool ImageFamilyHasBeenSet() const;
 
+                    /**
+                     * 获取本地专用集群ID。
+                     * @return DedicatedClusterId 本地专用集群ID。
+                     * 
+                     */
+                    std::string GetDedicatedClusterId() const;
+
+                    /**
+                     * 设置本地专用集群ID。
+                     * @param _dedicatedClusterId 本地专用集群ID。
+                     * 
+                     */
+                    void SetDedicatedClusterId(const std::string& _dedicatedClusterId);
+
+                    /**
+                     * 判断参数 DedicatedClusterId 是否已赋值
+                     * @return DedicatedClusterId 是否已赋值
+                     * 
+                     */
+                    bool DedicatedClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取自定义metadata。
+                     * @return Metadata 自定义metadata。
+                     * 
+                     */
+                    Metadata GetMetadata() const;
+
+                    /**
+                     * 设置自定义metadata。
+                     * @param _metadata 自定义metadata。
+                     * 
+                     */
+                    void SetMetadata(const Metadata& _metadata);
+
+                    /**
+                     * 判断参数 Metadata 是否已赋值
+                     * @return Metadata 是否已赋值
+                     * 
+                     */
+                    bool MetadataHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 启动配置ID
+                     * 启动配置ID。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/config) 或调用接口 [DescribeLaunchConfigurations](https://cloud.tencent.com/document/api/377/20445) ，取返回信息中的 LaunchConfigurationId 获取启动配置ID。
                      */
                     std::string m_launchConfigurationId;
                     bool m_launchConfigurationIdHasBeenSet;
@@ -677,7 +732,7 @@ InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定�
 
                     /**
                      * 实例类型列表，不同实例机型指定了不同的资源规格，最多支持10种实例机型。
-InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定多实例类型，并使原有的InstanceType失效。
+InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定多实例类型，并使原有的InstanceType失效。具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格描述](https://cloud.tencent.com/document/product/213/11518)。
                      */
                     std::vector<std::string> m_instanceTypes;
                     bool m_instanceTypesHasBeenSet;
@@ -723,6 +778,7 @@ InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定�
 <li>POSTPAID_BY_HOUR：按小时后付费</li>
 <li>SPOTPAID：竞价付费</li>
 <li>PREPAID：预付费，即包年包月</li>
+<li>CDCPAID：专用集群付费</li>
                      */
                     std::string m_instanceChargeType;
                     bool m_instanceChargeTypeHasBeenSet;
@@ -771,6 +827,7 @@ InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定�
                      * 云服务器主机名（HostName）的相关设置。
 不支持windows实例设置主机名。
 新增该属性时，必须传递云服务器的主机名，其它未传递字段会设置为默认值。
+会校验主机名(如果存在后缀则加上后缀)是否超过最大位数46。
                      */
                     HostNameSettings m_hostNameSettings;
                     bool m_hostNameSettingsHasBeenSet;
@@ -779,6 +836,7 @@ InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定�
                      * 云服务器（InstanceName）实例名的相关设置。 
 如果用户在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 参照此字段进行设置，并传递给 CVM；如果用户未在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 按照“as-{{ 伸缩组AutoScalingGroupName }}”进行设置，并传递给 CVM。
 新增该属性时，必须传递云服务器的实例名称，其它未传递字段会设置为默认值。
+会校验实例名(如果存在后缀则加上后缀)是否超过最大位数108。
                      */
                     InstanceNameSettings m_instanceNameSettings;
                     bool m_instanceNameSettingsHasBeenSet;
@@ -790,13 +848,13 @@ InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定�
                     bool m_enhancedServiceHasBeenSet;
 
                     /**
-                     * CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。
+                     * CAM角色名称。可通过[DescribeRoleList](https://cloud.tencent.com/document/product/598/36223)接口返回值中的roleName获取。
                      */
                     std::string m_camRoleName;
                     bool m_camRoleNameHasBeenSet;
 
                     /**
-                     * 高性能计算集群ID。<br>
+                     * 高性能计算集群ID。可通过调用[DescribeHpcClusters](https://cloud.tencent.com/document/product/213/83220)接口获取该参数。
 注意：此字段默认为空。
                      */
                     std::string m_hpcClusterId;
@@ -809,7 +867,7 @@ InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定�
                     bool m_iPv6InternetAccessibleHasBeenSet;
 
                     /**
-                     * 置放群组id，仅支持指定一个。
+                     * 置放群组id，仅支持指定一个。可通过调用[DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/product/213/17810)接口获取该参数。
                      */
                     std::vector<std::string> m_disasterRecoverGroupIds;
                     bool m_disasterRecoverGroupIdsHasBeenSet;
@@ -828,10 +886,22 @@ InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定�
                     bool m_instanceTagsHasBeenSet;
 
                     /**
-                     * 镜像族名称。
+                     * 镜像族名称。可通过调用[DescribeImages](https://cloud.tencent.com/document/product/213/15715)接口获取该参数。
                      */
                     std::string m_imageFamily;
                     bool m_imageFamilyHasBeenSet;
+
+                    /**
+                     * 本地专用集群ID。
+                     */
+                    std::string m_dedicatedClusterId;
+                    bool m_dedicatedClusterIdHasBeenSet;
+
+                    /**
+                     * 自定义metadata。
+                     */
+                    Metadata m_metadata;
+                    bool m_metadataHasBeenSet;
 
                 };
             }

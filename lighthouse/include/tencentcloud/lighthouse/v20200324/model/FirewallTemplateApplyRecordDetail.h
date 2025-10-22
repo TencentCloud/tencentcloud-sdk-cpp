@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,14 +70,30 @@ namespace TencentCloud
 
                     /**
                      * 获取防火墙模板应用状态。
+
+- SUCCESS：成功
+- FAILED：失败
+- RUNNING：运行中
                      * @return ApplyState 防火墙模板应用状态。
+
+- SUCCESS：成功
+- FAILED：失败
+- RUNNING：运行中
                      * 
                      */
                     std::string GetApplyState() const;
 
                     /**
                      * 设置防火墙模板应用状态。
+
+- SUCCESS：成功
+- FAILED：失败
+- RUNNING：运行中
                      * @param _applyState 防火墙模板应用状态。
+
+- SUCCESS：成功
+- FAILED：失败
+- RUNNING：运行中
                      * 
                      */
                     void SetApplyState(const std::string& _applyState);
@@ -120,6 +136,10 @@ namespace TencentCloud
 
                     /**
                      * 防火墙模板应用状态。
+
+- SUCCESS：成功
+- FAILED：失败
+- RUNNING：运行中
                      */
                     std::string m_applyState;
                     bool m_applyStateHasBeenSet;

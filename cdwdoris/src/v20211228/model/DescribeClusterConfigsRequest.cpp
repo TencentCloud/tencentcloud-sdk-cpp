@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,8 @@ DescribeClusterConfigsRequest::DescribeClusterConfigsRequest() :
     m_configTypeHasBeenSet(false),
     m_fileNameHasBeenSet(false),
     m_clusterConfigTypeHasBeenSet(false),
-    m_iPAddressHasBeenSet(false)
+    m_iPAddressHasBeenSet(false),
+    m_computeGroupIdHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string DescribeClusterConfigsRequest::ToJsonString() const
         string key = "IPAddress";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_iPAddress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_computeGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComputeGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_computeGroupId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +173,22 @@ void DescribeClusterConfigsRequest::SetIPAddress(const string& _iPAddress)
 bool DescribeClusterConfigsRequest::IPAddressHasBeenSet() const
 {
     return m_iPAddressHasBeenSet;
+}
+
+string DescribeClusterConfigsRequest::GetComputeGroupId() const
+{
+    return m_computeGroupId;
+}
+
+void DescribeClusterConfigsRequest::SetComputeGroupId(const string& _computeGroupId)
+{
+    m_computeGroupId = _computeGroupId;
+    m_computeGroupIdHasBeenSet = true;
+}
+
+bool DescribeClusterConfigsRequest::ComputeGroupIdHasBeenSet() const
+{
+    return m_computeGroupIdHasBeenSet;
 }
 
 

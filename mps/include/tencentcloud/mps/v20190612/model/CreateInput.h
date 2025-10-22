@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,8 @@
 #include <tencentcloud/mps/v20190612/model/CreateInputRTSPPullSettings.h>
 #include <tencentcloud/mps/v20190612/model/CreateInputHLSPullSettings.h>
 #include <tencentcloud/mps/v20190612/model/ResilientStreamConf.h>
+#include <tencentcloud/mps/v20190612/model/CreateInputRISTSettings.h>
+#include <tencentcloud/mps/v20190612/model/FailOverOption.h>
 
 
 namespace TencentCloud
@@ -74,15 +76,15 @@ namespace TencentCloud
                     bool InputNameHasBeenSet() const;
 
                     /**
-                     * 获取输入的协议，可选[SRT|RTP|RTMP|RTMP_PULL]。
-                     * @return Protocol 输入的协议，可选[SRT|RTP|RTMP|RTMP_PULL]。
+                     * 获取输入的协议，可选[SRT|RTP|RTMP|RTMP_PULL|RTSP_PULL|RIST]。
+                     * @return Protocol 输入的协议，可选[SRT|RTP|RTMP|RTMP_PULL|RTSP_PULL|RIST]。
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置输入的协议，可选[SRT|RTP|RTMP|RTMP_PULL]。
-                     * @param _protocol 输入的协议，可选[SRT|RTP|RTMP|RTMP_PULL]。
+                     * 设置输入的协议，可选[SRT|RTP|RTMP|RTMP_PULL|RTSP_PULL|RIST]。
+                     * @param _protocol 输入的协议，可选[SRT|RTP|RTMP|RTMP_PULL|RTSP_PULL|RIST]。
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -325,6 +327,69 @@ namespace TencentCloud
                      */
                     bool ZonesHasBeenSet() const;
 
+                    /**
+                     * 获取输入的RIST配置信息。
+                     * @return RISTSettings 输入的RIST配置信息。
+                     * 
+                     */
+                    CreateInputRISTSettings GetRISTSettings() const;
+
+                    /**
+                     * 设置输入的RIST配置信息。
+                     * @param _rISTSettings 输入的RIST配置信息。
+                     * 
+                     */
+                    void SetRISTSettings(const CreateInputRISTSettings& _rISTSettings);
+
+                    /**
+                     * 判断参数 RISTSettings 是否已赋值
+                     * @return RISTSettings 是否已赋值
+                     * 
+                     */
+                    bool RISTSettingsHasBeenSet() const;
+
+                    /**
+                     * 获取输入节点的地区
+                     * @return InputRegion 输入节点的地区
+                     * 
+                     */
+                    std::string GetInputRegion() const;
+
+                    /**
+                     * 设置输入节点的地区
+                     * @param _inputRegion 输入节点的地区
+                     * 
+                     */
+                    void SetInputRegion(const std::string& _inputRegion);
+
+                    /**
+                     * 判断参数 InputRegion 是否已赋值
+                     * @return InputRegion 是否已赋值
+                     * 
+                     */
+                    bool InputRegionHasBeenSet() const;
+
+                    /**
+                     * 获取冷热备相关
+                     * @return FailOverOption 冷热备相关
+                     * 
+                     */
+                    FailOverOption GetFailOverOption() const;
+
+                    /**
+                     * 设置冷热备相关
+                     * @param _failOverOption 冷热备相关
+                     * 
+                     */
+                    void SetFailOverOption(const FailOverOption& _failOverOption);
+
+                    /**
+                     * 判断参数 FailOverOption 是否已赋值
+                     * @return FailOverOption 是否已赋值
+                     * 
+                     */
+                    bool FailOverOptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -334,7 +399,7 @@ namespace TencentCloud
                     bool m_inputNameHasBeenSet;
 
                     /**
-                     * 输入的协议，可选[SRT|RTP|RTMP|RTMP_PULL]。
+                     * 输入的协议，可选[SRT|RTP|RTMP|RTMP_PULL|RTSP_PULL|RIST]。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
@@ -404,6 +469,24 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_zones;
                     bool m_zonesHasBeenSet;
+
+                    /**
+                     * 输入的RIST配置信息。
+                     */
+                    CreateInputRISTSettings m_rISTSettings;
+                    bool m_rISTSettingsHasBeenSet;
+
+                    /**
+                     * 输入节点的地区
+                     */
+                    std::string m_inputRegion;
+                    bool m_inputRegionHasBeenSet;
+
+                    /**
+                     * 冷热备相关
+                     */
+                    FailOverOption m_failOverOption;
+                    bool m_failOverOptionHasBeenSet;
 
                 };
             }

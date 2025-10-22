@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取VpcId： vpc-xadsafsdasd
-                     * @return UniqVpcId VpcId： vpc-xadsafsdasd
+                     * 获取VpcId
+                     * @return UniqVpcId VpcId
                      * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
-                     * 设置VpcId： vpc-xadsafsdasd
-                     * @param _uniqVpcId VpcId： vpc-xadsafsdasd
+                     * 设置VpcId
+                     * @param _uniqVpcId VpcId
                      * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
@@ -91,7 +91,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * VpcId： vpc-xadsafsdasd
+                     * VpcId
                      */
                     std::string m_uniqVpcId;
                     bool m_uniqVpcIdHasBeenSet;

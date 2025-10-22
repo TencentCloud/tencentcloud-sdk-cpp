@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,35 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源名称，目前有"COMMAND","REGISTER_CODE" 这两个指标
-                     * @return ResourceNames 资源名称，目前有"COMMAND","REGISTER_CODE" 这两个指标
+                     * 获取资源名称
+
+取值为：
+
+- COMMAND：命令
+- REGISTER_CODE：托管实例注册码
+                     * @return ResourceNames 资源名称
+
+取值为：
+
+- COMMAND：命令
+- REGISTER_CODE：托管实例注册码
                      * 
                      */
                     std::vector<std::string> GetResourceNames() const;
 
                     /**
-                     * 设置资源名称，目前有"COMMAND","REGISTER_CODE" 这两个指标
-                     * @param _resourceNames 资源名称，目前有"COMMAND","REGISTER_CODE" 这两个指标
+                     * 设置资源名称
+
+取值为：
+
+- COMMAND：命令
+- REGISTER_CODE：托管实例注册码
+                     * @param _resourceNames 资源名称
+
+取值为：
+
+- COMMAND：命令
+- REGISTER_CODE：托管实例注册码
                      * 
                      */
                     void SetResourceNames(const std::vector<std::string>& _resourceNames);
@@ -66,7 +86,12 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源名称，目前有"COMMAND","REGISTER_CODE" 这两个指标
+                     * 资源名称
+
+取值为：
+
+- COMMAND：命令
+- REGISTER_CODE：托管实例注册码
                      */
                     std::vector<std::string> m_resourceNames;
                     bool m_resourceNamesHasBeenSet;

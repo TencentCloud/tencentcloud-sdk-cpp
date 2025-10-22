@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -196,7 +196,7 @@ namespace TencentCloud
 默认是"geoip,cc,owasp,ai,antileakage"
                      * @return Bypass 放行时是否继续执行其它检查逻辑，继续执行地域封禁防护：geoip、继续执行CC策略防护：cc、继续执行WEB应用防护：owasp、继续执行AI引擎防护：ai、继续执行信息防泄漏防护：antileakage。如果多个勾选那么以,串接。
 默认是"geoip,cc,owasp,ai,antileakage"
-                     * 
+                     * @deprecated
                      */
                     std::string GetBypass() const;
 
@@ -205,14 +205,14 @@ namespace TencentCloud
 默认是"geoip,cc,owasp,ai,antileakage"
                      * @param _bypass 放行时是否继续执行其它检查逻辑，继续执行地域封禁防护：geoip、继续执行CC策略防护：cc、继续执行WEB应用防护：owasp、继续执行AI引擎防护：ai、继续执行信息防泄漏防护：antileakage。如果多个勾选那么以,串接。
 默认是"geoip,cc,owasp,ai,antileakage"
-                     * 
+                     * @deprecated
                      */
                     void SetBypass(const std::string& _bypass);
 
                     /**
                      * 判断参数 Bypass 是否已赋值
                      * @return Bypass 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool BypassHasBeenSet() const;
 
@@ -371,6 +371,48 @@ namespace TencentCloud
                      */
                     bool PageIdHasBeenSet() const;
 
+                    /**
+                     * 获取匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系
+                     * @return LogicalOp 匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系
+                     * 
+                     */
+                    std::string GetLogicalOp() const;
+
+                    /**
+                     * 设置匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系
+                     * @param _logicalOp 匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系
+                     * 
+                     */
+                    void SetLogicalOp(const std::string& _logicalOp);
+
+                    /**
+                     * 判断参数 LogicalOp 是否已赋值
+                     * @return LogicalOp 是否已赋值
+                     * 
+                     */
+                    bool LogicalOpHasBeenSet() const;
+
+                    /**
+                     * 获取规则生效比例
+                     * @return ActionRatio 规则生效比例
+                     * 
+                     */
+                    uint64_t GetActionRatio() const;
+
+                    /**
+                     * 设置规则生效比例
+                     * @param _actionRatio 规则生效比例
+                     * 
+                     */
+                    void SetActionRatio(const uint64_t& _actionRatio);
+
+                    /**
+                     * 判断参数 ActionRatio 是否已赋值
+                     * @return ActionRatio 是否已赋值
+                     * 
+                     */
+                    bool ActionRatioHasBeenSet() const;
+
                 private:
 
                     /**
@@ -465,6 +507,18 @@ namespace TencentCloud
                      */
                     std::string m_pageId;
                     bool m_pageIdHasBeenSet;
+
+                    /**
+                     * 匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系
+                     */
+                    std::string m_logicalOp;
+                    bool m_logicalOpHasBeenSet;
+
+                    /**
+                     * 规则生效比例
+                     */
+                    uint64_t m_actionRatio;
+                    bool m_actionRatioHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,18 +74,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Master节点个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MasterNodeSize Master节点个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMasterNodeSize() const;
 
                     /**
                      * 设置Master节点个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _masterNodeSize Master节点个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMasterNodeSize(const int64_t& _masterNodeSize);
@@ -99,18 +95,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Core节点个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CoreNodeSize Core节点个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCoreNodeSize() const;
 
                     /**
                      * 设置Core节点个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _coreNodeSize Core节点个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCoreNodeSize(const int64_t& _coreNodeSize);
@@ -124,18 +116,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Task节点个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskNodeSize Task节点个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTaskNodeSize() const;
 
                     /**
                      * 设置Task节点个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskNodeSize Task节点个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskNodeSize(const int64_t& _taskNodeSize);
@@ -149,18 +137,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Common节点个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComNodeSize Common节点个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetComNodeSize() const;
 
                     /**
                      * 设置Common节点个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _comNodeSize Common节点个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComNodeSize(const int64_t& _comNodeSize);
@@ -274,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否使用COS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OnCos 是否使用COS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetOnCos() const;
 
                     /**
                      * 设置是否使用COS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _onCos 是否使用COS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOnCos(const bool& _onCos);
@@ -299,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取收费类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChargeType 收费类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetChargeType() const;
 
                     /**
                      * 设置收费类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _chargeType 收费类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChargeType(const int64_t& _chargeType);
@@ -324,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Router节点个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RouterNodeSize Router节点个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRouterNodeSize() const;
 
                     /**
                      * 设置Router节点个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _routerNodeSize Router节点个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRouterNodeSize(const int64_t& _routerNodeSize);
@@ -349,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否支持HA
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportHA 是否支持HA
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSupportHA() const;
 
                     /**
                      * 设置是否支持HA
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _supportHA 是否支持HA
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSupportHA(const bool& _supportHA);
@@ -374,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否支持安全模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecurityOn 是否支持安全模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSecurityOn() const;
 
                     /**
                      * 设置是否支持安全模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _securityOn 是否支持安全模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecurityOn(const bool& _securityOn);
@@ -399,18 +363,14 @@ namespace TencentCloud
 
                     /**
                      * 获取安全组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecurityGroup 安全组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSecurityGroup() const;
 
                     /**
                      * 设置安全组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _securityGroup 安全组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecurityGroup(const std::string& _securityGroup);
@@ -424,18 +384,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启Cbs加密
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CbsEncrypt 是否开启Cbs加密
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCbsEncrypt() const;
 
                     /**
                      * 设置是否开启Cbs加密
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cbsEncrypt 是否开启Cbs加密
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCbsEncrypt(const int64_t& _cbsEncrypt);
@@ -449,18 +405,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义应用角色。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationRole 自定义应用角色。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplicationRole() const;
 
                     /**
                      * 设置自定义应用角色。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationRole 自定义应用角色。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationRole(const std::string& _applicationRole);
@@ -499,18 +451,14 @@ namespace TencentCloud
 
                     /**
                      * 获取SSH密钥Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicKeyId SSH密钥Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublicKeyId() const;
 
                     /**
                      * 设置SSH密钥Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publicKeyId SSH密钥Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublicKeyId(const std::string& _publicKeyId);
@@ -533,28 +481,24 @@ namespace TencentCloud
 
                     /**
                      * Master节点个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_masterNodeSize;
                     bool m_masterNodeSizeHasBeenSet;
 
                     /**
                      * Core节点个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_coreNodeSize;
                     bool m_coreNodeSizeHasBeenSet;
 
                     /**
                      * Task节点个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_taskNodeSize;
                     bool m_taskNodeSizeHasBeenSet;
 
                     /**
                      * Common节点个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_comNodeSize;
                     bool m_comNodeSizeHasBeenSet;
@@ -589,56 +533,48 @@ namespace TencentCloud
 
                     /**
                      * 是否使用COS
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_onCos;
                     bool m_onCosHasBeenSet;
 
                     /**
                      * 收费类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_chargeType;
                     bool m_chargeTypeHasBeenSet;
 
                     /**
                      * Router节点个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_routerNodeSize;
                     bool m_routerNodeSizeHasBeenSet;
 
                     /**
                      * 是否支持HA
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_supportHA;
                     bool m_supportHAHasBeenSet;
 
                     /**
                      * 是否支持安全模式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_securityOn;
                     bool m_securityOnHasBeenSet;
 
                     /**
                      * 安全组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_securityGroup;
                     bool m_securityGroupHasBeenSet;
 
                     /**
                      * 是否开启Cbs加密
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cbsEncrypt;
                     bool m_cbsEncryptHasBeenSet;
 
                     /**
                      * 自定义应用角色。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applicationRole;
                     bool m_applicationRoleHasBeenSet;
@@ -652,7 +588,6 @@ namespace TencentCloud
 
                     /**
                      * SSH密钥Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publicKeyId;
                     bool m_publicKeyIdHasBeenSet;

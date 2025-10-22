@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取数据对比任务 ID，形如：dts-8yv4w2i1-cmp-37skmii9
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompareTaskId 数据对比任务 ID，形如：dts-8yv4w2i1-cmp-37skmii9
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCompareTaskId() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 数据对比任务 ID，形如：dts-8yv4w2i1-cmp-37skmii9
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_compareTaskId;
                     bool m_compareTaskIdHasBeenSet;

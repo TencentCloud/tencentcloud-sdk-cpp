@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -164,21 +164,21 @@ namespace TencentCloud
                     /**
                      * 获取已废弃。
                      * @return Filter 已废弃。
-                     * 
+                     * @deprecated
                      */
                     AuditLogFilter GetFilter() const;
 
                     /**
                      * 设置已废弃。
                      * @param _filter 已废弃。
-                     * 
+                     * @deprecated
                      */
                     void SetFilter(const AuditLogFilter& _filter);
 
                     /**
                      * 判断参数 Filter 是否已赋值
                      * @return Filter 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool FilterHasBeenSet() const;
 
@@ -202,6 +202,27 @@ namespace TencentCloud
                      * 
                      */
                     bool LogFilterHasBeenSet() const;
+
+                    /**
+                     * 获取审计日志列
+                     * @return ColumnFilter 审计日志列
+                     * 
+                     */
+                    std::vector<std::string> GetColumnFilter() const;
+
+                    /**
+                     * 设置审计日志列
+                     * @param _columnFilter 审计日志列
+                     * 
+                     */
+                    void SetColumnFilter(const std::vector<std::string>& _columnFilter);
+
+                    /**
+                     * 判断参数 ColumnFilter 是否已赋值
+                     * @return ColumnFilter 是否已赋值
+                     * 
+                     */
+                    bool ColumnFilterHasBeenSet() const;
 
                 private:
 
@@ -249,6 +270,12 @@ namespace TencentCloud
                      */
                     std::vector<InstanceAuditLogFilter> m_logFilter;
                     bool m_logFilterHasBeenSet;
+
+                    /**
+                     * 审计日志列
+                     */
+                    std::vector<std::string> m_columnFilter;
+                    bool m_columnFilterHasBeenSet;
 
                 };
             }

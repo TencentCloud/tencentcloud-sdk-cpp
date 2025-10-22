@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool InvokerIdHasBeenSet() const;
 
                     /**
-                     * 获取执行时间。
-                     * @return InvokeTime 执行时间。
+                     * 获取执行时间。格式为：YYYY-MM-DDThh:mm:ssZ
+                     * @return InvokeTime 执行时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      * 
                      */
                     std::string GetInvokeTime() const;
 
                     /**
-                     * 设置执行时间。
-                     * @param _invokeTime 执行时间。
+                     * 设置执行时间。格式为：YYYY-MM-DDThh:mm:ssZ
+                     * @param _invokeTime 执行时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      * 
                      */
                     void SetInvokeTime(const std::string& _invokeTime);
@@ -132,14 +132,54 @@ namespace TencentCloud
 
                     /**
                      * 获取触发结果。
+
+- PENDING：等待下发
+- RUNNING：命令运行中
+- CANCELLING：取消中
+- SUCCESS：命令成功
+- TIMEOUT：命令超时
+- FAILED：命令失败
+- CANCELLED：命令全部取消
+- PARTIAL_FAILED：命令部分失败
+- PARTIAL_CANCELLED：命令部分取消
                      * @return Result 触发结果。
+
+- PENDING：等待下发
+- RUNNING：命令运行中
+- CANCELLING：取消中
+- SUCCESS：命令成功
+- TIMEOUT：命令超时
+- FAILED：命令失败
+- CANCELLED：命令全部取消
+- PARTIAL_FAILED：命令部分失败
+- PARTIAL_CANCELLED：命令部分取消
                      * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 设置触发结果。
+
+- PENDING：等待下发
+- RUNNING：命令运行中
+- CANCELLING：取消中
+- SUCCESS：命令成功
+- TIMEOUT：命令超时
+- FAILED：命令失败
+- CANCELLED：命令全部取消
+- PARTIAL_FAILED：命令部分失败
+- PARTIAL_CANCELLED：命令部分取消
                      * @param _result 触发结果。
+
+- PENDING：等待下发
+- RUNNING：命令运行中
+- CANCELLING：取消中
+- SUCCESS：命令成功
+- TIMEOUT：命令超时
+- FAILED：命令失败
+- CANCELLED：命令全部取消
+- PARTIAL_FAILED：命令部分失败
+- PARTIAL_CANCELLED：命令部分取消
                      * 
                      */
                     void SetResult(const std::string& _result);
@@ -160,7 +200,7 @@ namespace TencentCloud
                     bool m_invokerIdHasBeenSet;
 
                     /**
-                     * 执行时间。
+                     * 执行时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      */
                     std::string m_invokeTime;
                     bool m_invokeTimeHasBeenSet;
@@ -179,6 +219,16 @@ namespace TencentCloud
 
                     /**
                      * 触发结果。
+
+- PENDING：等待下发
+- RUNNING：命令运行中
+- CANCELLING：取消中
+- SUCCESS：命令成功
+- TIMEOUT：命令超时
+- FAILED：命令失败
+- CANCELLED：命令全部取消
+- PARTIAL_FAILED：命令部分失败
+- PARTIAL_CANCELLED：命令部分取消
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;

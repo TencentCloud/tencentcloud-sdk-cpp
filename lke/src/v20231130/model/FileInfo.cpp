@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ FileInfo::FileInfo() :
     m_fileSizeHasBeenSet(false),
     m_fileUrlHasBeenSet(false),
     m_fileTypeHasBeenSet(false),
-    m_docIdHasBeenSet(false)
+    m_docIdHasBeenSet(false),
+    m_createdAtHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome FileInfo::Deserialize(const rapidjson::Value &value)
         m_docIdHasBeenSet = true;
     }
 
+    if (value.HasMember("CreatedAt") && !value["CreatedAt"].IsNull())
+    {
+        if (!value["CreatedAt"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileInfo.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createdAt = string(value["CreatedAt"].GetString());
+        m_createdAtHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void FileInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "DocId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_docId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createdAtHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreatedAt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdAt.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void FileInfo::SetDocId(const string& _docId)
 bool FileInfo::DocIdHasBeenSet() const
 {
     return m_docIdHasBeenSet;
+}
+
+string FileInfo::GetCreatedAt() const
+{
+    return m_createdAt;
+}
+
+void FileInfo::SetCreatedAt(const string& _createdAt)
+{
+    m_createdAt = _createdAt;
+    m_createdAtHasBeenSet = true;
+}
+
+bool FileInfo::CreatedAtHasBeenSet() const
+{
+    return m_createdAtHasBeenSet;
 }
 

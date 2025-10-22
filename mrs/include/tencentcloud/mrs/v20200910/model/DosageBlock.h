@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取单次计量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SingleMeasurement 单次计量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSingleMeasurement() const;
 
                     /**
                      * 设置单次计量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _singleMeasurement 单次计量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSingleMeasurement(const std::string& _singleMeasurement);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取频次
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Frequency 频次
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFrequency() const;
 
                     /**
                      * 设置频次
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _frequency 频次
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFrequency(const std::string& _frequency);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取给药途径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DrugDeliveryRoute 给药途径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDrugDeliveryRoute() const;
 
                     /**
                      * 设置给药途径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _drugDeliveryRoute 给药途径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDrugDeliveryRoute(const std::string& _drugDeliveryRoute);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
 
                     /**
                      * 单次计量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_singleMeasurement;
                     bool m_singleMeasurementHasBeenSet;
 
                     /**
                      * 频次
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_frequency;
                     bool m_frequencyHasBeenSet;
 
                     /**
                      * 给药途径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_drugDeliveryRoute;
                     bool m_drugDeliveryRouteHasBeenSet;

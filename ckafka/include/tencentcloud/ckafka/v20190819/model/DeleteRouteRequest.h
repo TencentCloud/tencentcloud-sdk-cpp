@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例唯一id
-                     * @return InstanceId 实例唯一id
+                     * 获取ckafka集群实例Id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
+                     * @return InstanceId ckafka集群实例Id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例唯一id
-                     * @param _instanceId 实例唯一id
+                     * 设置ckafka集群实例Id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
+                     * @param _instanceId ckafka集群实例Id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取路由id
-                     * @return RouteId 路由id
+                     * 获取路由id,可通过[DescribeRoute](https://cloud.tencent.com/document/product/597/45484)接口获取
+                     * @return RouteId 路由id,可通过[DescribeRoute](https://cloud.tencent.com/document/product/597/45484)接口获取
                      * 
                      */
                     int64_t GetRouteId() const;
 
                     /**
-                     * 设置路由id
-                     * @param _routeId 路由id
+                     * 设置路由id,可通过[DescribeRoute](https://cloud.tencent.com/document/product/597/45484)接口获取
+                     * @param _routeId 路由id,可通过[DescribeRoute](https://cloud.tencent.com/document/product/597/45484)接口获取
                      * 
                      */
                     void SetRouteId(const int64_t& _routeId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool CallerAppidHasBeenSet() const;
 
                     /**
-                     * 获取删除路由时间
-                     * @return DeleteRouteTime 删除路由时间
+                     * 获取设置定时删除路由时间,仅类型为公网路由支持定时删除,可选择未来的24小时的任意时间
+                     * @return DeleteRouteTime 设置定时删除路由时间,仅类型为公网路由支持定时删除,可选择未来的24小时的任意时间
                      * 
                      */
                     std::string GetDeleteRouteTime() const;
 
                     /**
-                     * 设置删除路由时间
-                     * @param _deleteRouteTime 删除路由时间
+                     * 设置设置定时删除路由时间,仅类型为公网路由支持定时删除,可选择未来的24小时的任意时间
+                     * @param _deleteRouteTime 设置定时删除路由时间,仅类型为公网路由支持定时删除,可选择未来的24小时的任意时间
                      * 
                      */
                     void SetDeleteRouteTime(const std::string& _deleteRouteTime);
@@ -129,13 +129,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例唯一id
+                     * ckafka集群实例Id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 路由id
+                     * 路由id,可通过[DescribeRoute](https://cloud.tencent.com/document/product/597/45484)接口获取
                      */
                     int64_t m_routeId;
                     bool m_routeIdHasBeenSet;
@@ -147,7 +147,7 @@ namespace TencentCloud
                     bool m_callerAppidHasBeenSet;
 
                     /**
-                     * 删除路由时间
+                     * 设置定时删除路由时间,仅类型为公网路由支持定时删除,可选择未来的24小时的任意时间
                      */
                     std::string m_deleteRouteTime;
                     bool m_deleteRouteTimeHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,10 @@ RawTranscodeParameter::RawTranscodeParameter() :
     m_removeAudioHasBeenSet(false),
     m_videoTemplateHasBeenSet(false),
     m_audioTemplateHasBeenSet(false),
-    m_tEHDConfigHasBeenSet(false)
+    m_tEHDConfigHasBeenSet(false),
+    m_stdExtInfoHasBeenSet(false),
+    m_enhanceConfigHasBeenSet(false),
+    m_subtitleTemplateHasBeenSet(false)
 {
 }
 
@@ -116,6 +119,50 @@ CoreInternalOutcome RawTranscodeParameter::Deserialize(const rapidjson::Value &v
         m_tEHDConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("StdExtInfo") && !value["StdExtInfo"].IsNull())
+    {
+        if (!value["StdExtInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RawTranscodeParameter.StdExtInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_stdExtInfo = string(value["StdExtInfo"].GetString());
+        m_stdExtInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnhanceConfig") && !value["EnhanceConfig"].IsNull())
+    {
+        if (!value["EnhanceConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RawTranscodeParameter.EnhanceConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_enhanceConfig.Deserialize(value["EnhanceConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_enhanceConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubtitleTemplate") && !value["SubtitleTemplate"].IsNull())
+    {
+        if (!value["SubtitleTemplate"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RawTranscodeParameter.SubtitleTemplate` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_subtitleTemplate.Deserialize(value["SubtitleTemplate"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_subtitleTemplateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -172,6 +219,32 @@ void RawTranscodeParameter::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_tEHDConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_stdExtInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StdExtInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_stdExtInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enhanceConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnhanceConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_enhanceConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_subtitleTemplateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitleTemplate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_subtitleTemplate.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -271,5 +344,53 @@ void RawTranscodeParameter::SetTEHDConfig(const TEHDConfig& _tEHDConfig)
 bool RawTranscodeParameter::TEHDConfigHasBeenSet() const
 {
     return m_tEHDConfigHasBeenSet;
+}
+
+string RawTranscodeParameter::GetStdExtInfo() const
+{
+    return m_stdExtInfo;
+}
+
+void RawTranscodeParameter::SetStdExtInfo(const string& _stdExtInfo)
+{
+    m_stdExtInfo = _stdExtInfo;
+    m_stdExtInfoHasBeenSet = true;
+}
+
+bool RawTranscodeParameter::StdExtInfoHasBeenSet() const
+{
+    return m_stdExtInfoHasBeenSet;
+}
+
+EnhanceConfig RawTranscodeParameter::GetEnhanceConfig() const
+{
+    return m_enhanceConfig;
+}
+
+void RawTranscodeParameter::SetEnhanceConfig(const EnhanceConfig& _enhanceConfig)
+{
+    m_enhanceConfig = _enhanceConfig;
+    m_enhanceConfigHasBeenSet = true;
+}
+
+bool RawTranscodeParameter::EnhanceConfigHasBeenSet() const
+{
+    return m_enhanceConfigHasBeenSet;
+}
+
+SubtitleTemplate RawTranscodeParameter::GetSubtitleTemplate() const
+{
+    return m_subtitleTemplate;
+}
+
+void RawTranscodeParameter::SetSubtitleTemplate(const SubtitleTemplate& _subtitleTemplate)
+{
+    m_subtitleTemplate = _subtitleTemplate;
+    m_subtitleTemplateHasBeenSet = true;
+}
+
+bool RawTranscodeParameter::SubtitleTemplateHasBeenSet() const
+{
+    return m_subtitleTemplateHasBeenSet;
 }
 

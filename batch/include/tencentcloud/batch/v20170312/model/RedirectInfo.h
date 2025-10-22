@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,6 @@ namespace TencentCloud
             {
                 /**
                 * 重定向信息
-
                 */
                 class RedirectInfo : public AbstractModel
                 {
@@ -48,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取标准输出重定向路径
-                     * @return StdoutRedirectPath 标准输出重定向路径
+                     * 获取标准输出重定向路径; 
+                     * @return StdoutRedirectPath 标准输出重定向路径; 
                      * 
                      */
                     std::string GetStdoutRedirectPath() const;
 
                     /**
-                     * 设置标准输出重定向路径
-                     * @param _stdoutRedirectPath 标准输出重定向路径
+                     * 设置标准输出重定向路径; 
+                     * @param _stdoutRedirectPath 标准输出重定向路径; 
                      * 
                      */
                     void SetStdoutRedirectPath(const std::string& _stdoutRedirectPath);
@@ -134,7 +133,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 标准输出重定向路径
+                     * 标准输出重定向路径; 
                      */
                     std::string m_stdoutRedirectPath;
                     bool m_stdoutRedirectPathHasBeenSet;

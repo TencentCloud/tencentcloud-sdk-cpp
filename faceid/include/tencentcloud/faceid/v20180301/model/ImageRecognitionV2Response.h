@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,8 +44,12 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取相似度，取值范围 [0.00, 100.00]。推荐相似度大于等于70时可判断为同一人，可根据具体场景自行调整阈值（阈值70的误通过率为千分之一，阈值80的误通过率是万分之一）
-                     * @return Sim 相似度，取值范围 [0.00, 100.00]。推荐相似度大于等于70时可判断为同一人，可根据具体场景自行调整阈值（阈值70的误通过率为千分之一，阈值80的误通过率是万分之一）
+                     * 获取相似度。
+- 取值范围 [0.00, 100.00]。
+- 推荐相似度大于等于70时可判断为同一人，可根据具体场景自行调整阈值（阈值70的误通过率为千分之一，阈值80的误通过率是万分之一）
+                     * @return Sim 相似度。
+- 取值范围 [0.00, 100.00]。
+- 推荐相似度大于等于70时可判断为同一人，可根据具体场景自行调整阈值（阈值70的误通过率为千分之一，阈值80的误通过率是万分之一）
                      * 
                      */
                     double GetSim() const;
@@ -58,8 +62,12 @@ namespace TencentCloud
                     bool SimHasBeenSet() const;
 
                     /**
-                     * 获取业务错误码，成功情况返回Success, 错误情况请参考下方错误码 列表中FailedOperation部分
-                     * @return Result 业务错误码，成功情况返回Success, 错误情况请参考下方错误码 列表中FailedOperation部分
+                     * 获取业务错误码。
+- 成功情况返回Success。
+- 错误情况请参考下方错误码 列表中FailedOperation部分
+                     * @return Result 业务错误码。
+- 成功情况返回Success。
+- 错误情况请参考下方错误码 列表中FailedOperation部分
                      * 
                      */
                     std::string GetResult() const;
@@ -85,16 +93,34 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取调用接口中自定义的描述字段。
+                     * @return Extra 调用接口中自定义的描述字段。
+                     * 
+                     */
+                    std::string GetExtra() const;
+
+                    /**
+                     * 判断参数 Extra 是否已赋值
+                     * @return Extra 是否已赋值
+                     * 
+                     */
+                    bool ExtraHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 相似度，取值范围 [0.00, 100.00]。推荐相似度大于等于70时可判断为同一人，可根据具体场景自行调整阈值（阈值70的误通过率为千分之一，阈值80的误通过率是万分之一）
+                     * 相似度。
+- 取值范围 [0.00, 100.00]。
+- 推荐相似度大于等于70时可判断为同一人，可根据具体场景自行调整阈值（阈值70的误通过率为千分之一，阈值80的误通过率是万分之一）
                      */
                     double m_sim;
                     bool m_simHasBeenSet;
 
                     /**
-                     * 业务错误码，成功情况返回Success, 错误情况请参考下方错误码 列表中FailedOperation部分
+                     * 业务错误码。
+- 成功情况返回Success。
+- 错误情况请参考下方错误码 列表中FailedOperation部分
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;
@@ -104,6 +130,12 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 调用接口中自定义的描述字段。
+                     */
+                    std::string m_extra;
+                    bool m_extraHasBeenSet;
 
                 };
             }

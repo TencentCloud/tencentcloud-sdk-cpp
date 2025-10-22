@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取错误详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorMessage 错误详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrorMessage() const;
 
                     /**
                      * 设置错误详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errorMessage 错误详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrorMessage(const std::string& _errorMessage);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户组关联的应用信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppAssociatedUserGroupIds 用户组关联的应用信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AppAssociatedUserGroupIds> GetAppAssociatedUserGroupIds() const;
 
                     /**
                      * 设置用户组关联的应用信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appAssociatedUserGroupIds 用户组关联的应用信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppAssociatedUserGroupIds(const std::vector<AppAssociatedUserGroupIds>& _appAssociatedUserGroupIds);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 错误详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorMessage;
                     bool m_errorMessageHasBeenSet;
 
                     /**
                      * 用户组关联的应用信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AppAssociatedUserGroupIds> m_appAssociatedUserGroupIds;
                     bool m_appAssociatedUserGroupIdsHasBeenSet;

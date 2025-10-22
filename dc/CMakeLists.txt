@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -72,6 +72,7 @@ set(dc_public_header_model
   include/tencentcloud/dc/v20180410/model/DescribeDirectConnectTunnelsResponse.h
   include/tencentcloud/dc/v20180410/model/CloudAttachInfo.h
   include/tencentcloud/dc/v20180410/model/RouteFilterPrefix.h
+  include/tencentcloud/dc/v20180410/model/PortSpecification.h
   include/tencentcloud/dc/v20180410/model/DescribeInternetAddressStatisticsResponse.h
   include/tencentcloud/dc/v20180410/model/NQAInfo.h
   include/tencentcloud/dc/v20180410/model/DescribeInternetAddressRequest.h
@@ -137,6 +138,7 @@ set(dc_src
   src/v20180410/model/DescribeDirectConnectTunnelsResponse.cpp
   src/v20180410/model/CloudAttachInfo.cpp
   src/v20180410/model/RouteFilterPrefix.cpp
+  src/v20180410/model/PortSpecification.cpp
   src/v20180410/model/DescribeInternetAddressStatisticsResponse.cpp
   src/v20180410/model/NQAInfo.cpp
   src/v20180410/model/DescribeInternetAddressRequest.cpp

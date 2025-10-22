@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -961,7 +961,7 @@ namespace TencentCloud
                 CreateReadOnlyDBInstancesOutcomeCallable CreateReadOnlyDBInstancesCallable(const Model::CreateReadOnlyDBInstancesRequest& request);
 
                 /**
-                 *本接口(CutXEvents)用于手动切割阻塞日志和死锁日志。
+                 *本接口（CutXEvents）用于手动切割阻塞日志和死锁日志。
                  * @param req CutXEventsRequest
                  * @return CutXEventsOutcome
                  */
@@ -1087,7 +1087,7 @@ namespace TencentCloud
                 DescribeBackupCommandOutcomeCallable DescribeBackupCommandCallable(const Model::DescribeBackupCommandRequest& request);
 
                 /**
-                 *本接口(DescribeBackupFiles)用于查询单库备份明细
+                 *本接口（DescribeBackupFiles）用于查询单库备份明细。
                  * @param req DescribeBackupFilesRequest
                  * @return DescribeBackupFilesOutcome
                  */
@@ -1213,7 +1213,7 @@ namespace TencentCloud
                 DescribeDBInstanceInterOutcomeCallable DescribeDBInstanceInterCallable(const Model::DescribeDBInstanceInterRequest& request);
 
                 /**
-                 *本接口(DescribeDBInstances)用于查询实例列表。
+                 *本接口（DescribeDBInstances）用于查询实例列表。
                  * @param req DescribeDBInstancesRequest
                  * @return DescribeDBInstancesOutcome
                  */
@@ -1375,7 +1375,7 @@ namespace TencentCloud
                 DescribeInstanceTasksOutcomeCallable DescribeInstanceTasksCallable(const Model::DescribeInstanceTasksRequest& request);
 
                 /**
-                 *本接口（DescribeInstanceTradeParameter）用于查询实例的计费参数，当前接口默认返回创建实例时需要的计费参数。内部接口用于活动页售卖场景。
+                 *本接口（DescribeInstanceTradeParameter）用于查询实例的计费参数
                  * @param req DescribeInstanceTradeParameterRequest
                  * @return DescribeInstanceTradeParameterOutcome
                  */
@@ -1429,7 +1429,7 @@ namespace TencentCloud
                 DescribeOrdersOutcomeCallable DescribeOrdersCallable(const Model::DescribeOrdersRequest& request);
 
                 /**
-                 *本接口 (DescribeProductConfig) 用于查询售卖规格配置。
+                 *本接口（DescribeProductConfig）用于查询售卖规格配置。
                  * @param req DescribeProductConfigRequest
                  * @return DescribeProductConfigOutcome
                  */
@@ -1600,7 +1600,7 @@ namespace TencentCloud
                 DescribeXEventsOutcomeCallable DescribeXEventsCallable(const Model::DescribeXEventsRequest& request);
 
                 /**
-                 *本接口 (DescribeZones) 用于查询当前可售卖的可用区信息。
+                 *本接口（DescribeZones）用于查询当前可售卖的可用区信息。
                  * @param req DescribeZonesRequest
                  * @return DescribeZonesOutcome
                  */
@@ -1843,7 +1843,7 @@ namespace TencentCloud
                 ModifyDatabasePrivilegeOutcomeCallable ModifyDatabasePrivilegeCallable(const Model::ModifyDatabasePrivilegeRequest& request);
 
                 /**
-                 *本接口(ModifyDatabaseShrinkDMF)用于收缩数据库mdf(Shrink mdf)。
+                 *本接口（ModifyDatabaseShrinkMDF）用于收缩数据库 mdf（Shrink mdf）。
                  * @param req ModifyDatabaseShrinkMDFRequest
                  * @return ModifyDatabaseShrinkMDFOutcome
                  */

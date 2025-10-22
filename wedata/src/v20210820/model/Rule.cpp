@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,7 +70,11 @@ Rule::Rule() :
     m_schemaNameHasBeenSet(false),
     m_targetSchemaNameHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_projectNameHasBeenSet(false)
+    m_projectNameHasBeenSet(false),
+    m_updateTimeHasBeenSet(false),
+    m_datasourceNameHasBeenSet(false),
+    m_databaseNameHasBeenSet(false),
+    m_failMsgHasBeenSet(false)
 {
 }
 
@@ -610,6 +614,46 @@ CoreInternalOutcome Rule::Deserialize(const rapidjson::Value &value)
         m_projectNameHasBeenSet = true;
     }
 
+    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
+    {
+        if (!value["UpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Rule.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = string(value["UpdateTime"].GetString());
+        m_updateTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DatasourceName") && !value["DatasourceName"].IsNull())
+    {
+        if (!value["DatasourceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Rule.DatasourceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_datasourceName = string(value["DatasourceName"].GetString());
+        m_datasourceNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("DatabaseName") && !value["DatabaseName"].IsNull())
+    {
+        if (!value["DatabaseName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Rule.DatabaseName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_databaseName = string(value["DatabaseName"].GetString());
+        m_databaseNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("FailMsg") && !value["FailMsg"].IsNull())
+    {
+        if (!value["FailMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Rule.FailMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_failMsg = string(value["FailMsg"].GetString());
+        m_failMsgHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1024,6 +1068,38 @@ void Rule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "ProjectName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_projectName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_datasourceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_datasourceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_databaseNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatabaseName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_databaseName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_failMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_failMsg.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1827,5 +1903,69 @@ void Rule::SetProjectName(const string& _projectName)
 bool Rule::ProjectNameHasBeenSet() const
 {
     return m_projectNameHasBeenSet;
+}
+
+string Rule::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+void Rule::SetUpdateTime(const string& _updateTime)
+{
+    m_updateTime = _updateTime;
+    m_updateTimeHasBeenSet = true;
+}
+
+bool Rule::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
+}
+
+string Rule::GetDatasourceName() const
+{
+    return m_datasourceName;
+}
+
+void Rule::SetDatasourceName(const string& _datasourceName)
+{
+    m_datasourceName = _datasourceName;
+    m_datasourceNameHasBeenSet = true;
+}
+
+bool Rule::DatasourceNameHasBeenSet() const
+{
+    return m_datasourceNameHasBeenSet;
+}
+
+string Rule::GetDatabaseName() const
+{
+    return m_databaseName;
+}
+
+void Rule::SetDatabaseName(const string& _databaseName)
+{
+    m_databaseName = _databaseName;
+    m_databaseNameHasBeenSet = true;
+}
+
+bool Rule::DatabaseNameHasBeenSet() const
+{
+    return m_databaseNameHasBeenSet;
+}
+
+string Rule::GetFailMsg() const
+{
+    return m_failMsg;
+}
+
+void Rule::SetFailMsg(const string& _failMsg)
+{
+    m_failMsg = _failMsg;
+    m_failMsgHasBeenSet = true;
+}
+
+bool Rule::FailMsgHasBeenSet() const
+{
+    return m_failMsgHasBeenSet;
 }
 

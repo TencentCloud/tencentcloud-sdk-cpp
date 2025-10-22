@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,22 +48,26 @@ namespace TencentCloud
 
                     /**
                      * 获取执行策略：
-<br><li>ONCE：单次执行
-<br><li>RECURRENCE：周期执行
+
+- ONCE：单次执行
+- RECURRENCE：周期执行
                      * @return Policy 执行策略：
-<br><li>ONCE：单次执行
-<br><li>RECURRENCE：周期执行
+
+- ONCE：单次执行
+- RECURRENCE：周期执行
                      * 
                      */
                     std::string GetPolicy() const;
 
                     /**
                      * 设置执行策略：
-<br><li>ONCE：单次执行
-<br><li>RECURRENCE：周期执行
+
+- ONCE：单次执行
+- RECURRENCE：周期执行
                      * @param _policy 执行策略：
-<br><li>ONCE：单次执行
-<br><li>RECURRENCE：周期执行
+
+- ONCE：单次执行
+- RECURRENCE：周期执行
                      * 
                      */
                     void SetPolicy(const std::string& _policy);
@@ -98,14 +102,22 @@ namespace TencentCloud
 
                     /**
                      * 获取执行器下次执行时间。Policy 为 ONCE 时，需要指定此字段。
+
+时间格式为：YYYY-MM-DDThh:mm:ssZ
                      * @return InvokeTime 执行器下次执行时间。Policy 为 ONCE 时，需要指定此字段。
+
+时间格式为：YYYY-MM-DDThh:mm:ssZ
                      * 
                      */
                     std::string GetInvokeTime() const;
 
                     /**
                      * 设置执行器下次执行时间。Policy 为 ONCE 时，需要指定此字段。
+
+时间格式为：YYYY-MM-DDThh:mm:ssZ
                      * @param _invokeTime 执行器下次执行时间。Policy 为 ONCE 时，需要指定此字段。
+
+时间格式为：YYYY-MM-DDThh:mm:ssZ
                      * 
                      */
                     void SetInvokeTime(const std::string& _invokeTime);
@@ -121,8 +133,9 @@ namespace TencentCloud
 
                     /**
                      * 执行策略：
-<br><li>ONCE：单次执行
-<br><li>RECURRENCE：周期执行
+
+- ONCE：单次执行
+- RECURRENCE：周期执行
                      */
                     std::string m_policy;
                     bool m_policyHasBeenSet;
@@ -135,6 +148,8 @@ namespace TencentCloud
 
                     /**
                      * 执行器下次执行时间。Policy 为 ONCE 时，需要指定此字段。
+
+时间格式为：YYYY-MM-DDThh:mm:ssZ
                      */
                     std::string m_invokeTime;
                     bool m_invokeTimeHasBeenSet;

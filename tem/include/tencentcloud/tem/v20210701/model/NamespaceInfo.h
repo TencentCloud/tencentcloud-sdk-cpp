@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -196,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取环境名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnvironmentName 环境名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEnvironmentName() const;
 
                     /**
                      * 设置环境名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _environmentName 环境名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnvironmentName(const std::string& _environmentName);
@@ -221,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取APM 资源 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApmInstanceId APM 资源 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApmInstanceId() const;
 
                     /**
                      * 设置APM 资源 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _apmInstanceId APM 资源 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApmInstanceId(const std::string& _apmInstanceId);
@@ -246,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取环境是否上锁，1为上锁，0则未上锁
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Locked 环境是否上锁，1为上锁，0则未上锁
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLocked() const;
 
                     /**
                      * 设置环境是否上锁，1为上锁，0则未上锁
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _locked 环境是否上锁，1为上锁，0则未上锁
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLocked(const int64_t& _locked);
@@ -271,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -296,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取环境类型：test、pre、prod
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnvType 环境类型：test、pre、prod
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEnvType() const;
 
                     /**
                      * 设置环境类型：test、pre、prod
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _envType 环境类型：test、pre、prod
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnvType(const std::string& _envType);
@@ -365,35 +345,30 @@ namespace TencentCloud
 
                     /**
                      * 环境名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_environmentName;
                     bool m_environmentNameHasBeenSet;
 
                     /**
                      * APM 资源 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_apmInstanceId;
                     bool m_apmInstanceIdHasBeenSet;
 
                     /**
                      * 环境是否上锁，1为上锁，0则未上锁
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_locked;
                     bool m_lockedHasBeenSet;
 
                     /**
                      * 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
                      * 环境类型：test、pre、prod
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_envType;
                     bool m_envTypeHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ DropDMSPartitionsRequest::DropDMSPartitionsRequest() :
     m_tableNameHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_valuesHasBeenSet(false),
-    m_deleteDataHasBeenSet(false)
+    m_deleteDataHasBeenSet(false),
+    m_datasourceConnectionNameHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,14 @@ string DropDMSPartitionsRequest::ToJsonString() const
         string key = "DeleteData";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_deleteData, allocator);
+    }
+
+    if (m_datasourceConnectionNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceConnectionName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_datasourceConnectionName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -194,6 +203,22 @@ void DropDMSPartitionsRequest::SetDeleteData(const bool& _deleteData)
 bool DropDMSPartitionsRequest::DeleteDataHasBeenSet() const
 {
     return m_deleteDataHasBeenSet;
+}
+
+string DropDMSPartitionsRequest::GetDatasourceConnectionName() const
+{
+    return m_datasourceConnectionName;
+}
+
+void DropDMSPartitionsRequest::SetDatasourceConnectionName(const string& _datasourceConnectionName)
+{
+    m_datasourceConnectionName = _datasourceConnectionName;
+    m_datasourceConnectionNameHasBeenSet = true;
+}
+
+bool DropDMSPartitionsRequest::DatasourceConnectionNameHasBeenSet() const
+{
+    return m_datasourceConnectionNameHasBeenSet;
 }
 
 

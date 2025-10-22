@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Apm通用KV结构
+                * APM 通用 KV 结构
                 */
                 class APMKVItem : public AbstractModel
                 {
@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Key值定义
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Key Key值定义
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取Key 值定义
+                     * @return Key Key 值定义
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置Key值定义
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _key Key值定义
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置Key 值定义
+                     * @param _key Key 值定义
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -72,19 +68,15 @@ namespace TencentCloud
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取Value值定义
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Value Value值定义
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取Value 值定义
+                     * @return Value Value 值定义
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置Value值定义
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _value Value值定义
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置Value 值定义
+                     * @param _value Value 值定义
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -99,15 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Key值定义
-注意：此字段可能返回 null，表示取不到有效值。
+                     * Key 值定义
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
-                     * Value值定义
-注意：此字段可能返回 null，表示取不到有效值。
+                     * Value 值定义
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

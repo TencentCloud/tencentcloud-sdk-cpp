@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool ImageNameHasBeenSet() const;
 
                     /**
-                     * 获取关联的主机数
-                     * @return HostCount 关联的主机数
+                     * 获取关联的主机数(包含普通节点数和超级节点数)
+                     * @return HostCount 关联的主机数(包含普通节点数和超级节点数)
                      * 
                      */
                     int64_t GetHostCount() const;
 
                     /**
-                     * 设置关联的主机数
-                     * @param _hostCount 关联的主机数
+                     * 设置关联的主机数(包含普通节点数和超级节点数)
+                     * @param _hostCount 关联的主机数(包含普通节点数和超级节点数)
                      * 
                      */
                     void SetHostCount(const int64_t& _hostCount);
@@ -109,6 +109,27 @@ namespace TencentCloud
                      * 
                      */
                     bool HostCountHasBeenSet() const;
+
+                    /**
+                     * 获取关联的超级节点数
+                     * @return SuperNodeCount 关联的超级节点数
+                     * 
+                     */
+                    int64_t GetSuperNodeCount() const;
+
+                    /**
+                     * 设置关联的超级节点数
+                     * @param _superNodeCount 关联的超级节点数
+                     * 
+                     */
+                    void SetSuperNodeCount(const int64_t& _superNodeCount);
+
+                    /**
+                     * 判断参数 SuperNodeCount 是否已赋值
+                     * @return SuperNodeCount 是否已赋值
+                     * 
+                     */
+                    bool SuperNodeCountHasBeenSet() const;
 
                     /**
                      * 获取关联的容器数
@@ -167,10 +188,16 @@ namespace TencentCloud
                     bool m_imageNameHasBeenSet;
 
                     /**
-                     * 关联的主机数
+                     * 关联的主机数(包含普通节点数和超级节点数)
                      */
                     int64_t m_hostCount;
                     bool m_hostCountHasBeenSet;
+
+                    /**
+                     * 关联的超级节点数
+                     */
+                    int64_t m_superNodeCount;
+                    bool m_superNodeCountHasBeenSet;
 
                     /**
                      * 关联的容器数

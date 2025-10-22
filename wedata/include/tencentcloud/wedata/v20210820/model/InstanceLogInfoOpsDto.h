@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/wedata/v20210820/model/PairDto.h>
 
 
 namespace TencentCloud
@@ -271,6 +272,48 @@ namespace TencentCloud
                      */
                     bool FileSizeHasBeenSet() const;
 
+                    /**
+                     * 获取日志匹配节点信息
+                     * @return MatchedBrokerIp 日志匹配节点信息
+                     * 
+                     */
+                    std::string GetMatchedBrokerIp() const;
+
+                    /**
+                     * 设置日志匹配节点信息
+                     * @param _matchedBrokerIp 日志匹配节点信息
+                     * 
+                     */
+                    void SetMatchedBrokerIp(const std::string& _matchedBrokerIp);
+
+                    /**
+                     * 判断参数 MatchedBrokerIp 是否已赋值
+                     * @return MatchedBrokerIp 是否已赋值
+                     * 
+                     */
+                    bool MatchedBrokerIpHasBeenSet() const;
+
+                    /**
+                     * 获取执行平台通用协议
+                     * @return ExecutionExtendedProps 执行平台通用协议
+                     * 
+                     */
+                    std::vector<PairDto> GetExecutionExtendedProps() const;
+
+                    /**
+                     * 设置执行平台通用协议
+                     * @param _executionExtendedProps 执行平台通用协议
+                     * 
+                     */
+                    void SetExecutionExtendedProps(const std::vector<PairDto>& _executionExtendedProps);
+
+                    /**
+                     * 判断参数 ExecutionExtendedProps 是否已赋值
+                     * @return ExecutionExtendedProps 是否已赋值
+                     * 
+                     */
+                    bool ExecutionExtendedPropsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -335,6 +378,18 @@ namespace TencentCloud
                      */
                     std::string m_fileSize;
                     bool m_fileSizeHasBeenSet;
+
+                    /**
+                     * 日志匹配节点信息
+                     */
+                    std::string m_matchedBrokerIp;
+                    bool m_matchedBrokerIpHasBeenSet;
+
+                    /**
+                     * 执行平台通用协议
+                     */
+                    std::vector<PairDto> m_executionExtendedProps;
+                    bool m_executionExtendedPropsHasBeenSet;
 
                 };
             }

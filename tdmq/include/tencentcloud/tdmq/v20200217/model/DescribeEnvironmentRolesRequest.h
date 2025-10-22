@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,36 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取必填字段，环境（命名空间）名称。
-                     * @return EnvironmentId 必填字段，环境（命名空间）名称。
+                     * 获取Pulsar 集群的ID
+                     * @return ClusterId Pulsar 集群的ID
+                     * 
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 设置Pulsar 集群的ID
+                     * @param _clusterId Pulsar 集群的ID
+                     * 
+                     */
+                    void SetClusterId(const std::string& _clusterId);
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     * 
+                     */
+                    bool ClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取环境（命名空间）名称。
+                     * @return EnvironmentId 环境（命名空间）名称。
                      * 
                      */
                     std::string GetEnvironmentId() const;
 
                     /**
-                     * 设置必填字段，环境（命名空间）名称。
-                     * @param _environmentId 必填字段，环境（命名空间）名称。
+                     * 设置环境（命名空间）名称。
+                     * @param _environmentId 环境（命名空间）名称。
                      * 
                      */
                     void SetEnvironmentId(const std::string& _environmentId);
@@ -105,27 +126,6 @@ namespace TencentCloud
                      * 
                      */
                     bool LimitHasBeenSet() const;
-
-                    /**
-                     * 获取必填字段，Pulsar 集群的ID
-                     * @return ClusterId 必填字段，Pulsar 集群的ID
-                     * 
-                     */
-                    std::string GetClusterId() const;
-
-                    /**
-                     * 设置必填字段，Pulsar 集群的ID
-                     * @param _clusterId 必填字段，Pulsar 集群的ID
-                     * 
-                     */
-                    void SetClusterId(const std::string& _clusterId);
-
-                    /**
-                     * 判断参数 ClusterId 是否已赋值
-                     * @return ClusterId 是否已赋值
-                     * 
-                     */
-                    bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取角色名称
@@ -184,7 +184,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 必填字段，环境（命名空间）名称。
+                     * Pulsar 集群的ID
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * 环境（命名空间）名称。
                      */
                     std::string m_environmentId;
                     bool m_environmentIdHasBeenSet;
@@ -200,12 +206,6 @@ namespace TencentCloud
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
-
-                    /**
-                     * 必填字段，Pulsar 集群的ID
-                     */
-                    std::string m_clusterId;
-                    bool m_clusterIdHasBeenSet;
 
                     /**
                      * 角色名称

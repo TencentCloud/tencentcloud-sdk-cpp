@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ using namespace std;
 DescribeDataEngineEventsRequest::DescribeDataEngineEventsRequest() :
     m_dataEngineNameHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_sessionIdHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeDataEngineEventsRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_sessionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeDataEngineEventsRequest::SetOffset(const int64_t& _offset)
 bool DescribeDataEngineEventsRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string DescribeDataEngineEventsRequest::GetSessionId() const
+{
+    return m_sessionId;
+}
+
+void DescribeDataEngineEventsRequest::SetSessionId(const string& _sessionId)
+{
+    m_sessionId = _sessionId;
+    m_sessionIdHasBeenSet = true;
+}
+
+bool DescribeDataEngineEventsRequest::SessionIdHasBeenSet() const
+{
+    return m_sessionIdHasBeenSet;
 }
 
 

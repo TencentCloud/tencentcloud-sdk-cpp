@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,8 +48,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取计算环境ID
-                     * @return EnvId 计算环境ID
+                     * 获取计算环境ID，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。
+                     * @return EnvId 计算环境ID，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。
                      * 
                      */
                     std::string GetEnvId() const;
@@ -146,8 +146,8 @@ namespace TencentCloud
                     bool DesiredComputeNodeCountHasBeenSet() const;
 
                     /**
-                     * 获取计算环境类型
-                     * @return EnvType 计算环境类型
+                     * 获取计算环境管理类型，枚举如下： MANAGED: 由客户在Batch平台主动创建； THPC_QUEUE: 由thpc平台创建，关联thpc平台集群队列。
+                     * @return EnvType 计算环境管理类型，枚举如下： MANAGED: 由客户在Batch平台主动创建； THPC_QUEUE: 由thpc平台创建，关联thpc平台集群队列。
                      * 
                      */
                     std::string GetEnvType() const;
@@ -174,8 +174,8 @@ namespace TencentCloud
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取下一步动作
-                     * @return NextAction 下一步动作
+                     * 获取下一步的动作，枚举如下： DELETING: 删除中
+                     * @return NextAction 下一步的动作，枚举如下： DELETING: 删除中
                      * 
                      */
                     std::string GetNextAction() const;
@@ -220,7 +220,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 计算环境ID
+                     * 计算环境ID，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。
                      */
                     std::string m_envId;
                     bool m_envIdHasBeenSet;
@@ -262,7 +262,7 @@ namespace TencentCloud
                     bool m_desiredComputeNodeCountHasBeenSet;
 
                     /**
-                     * 计算环境类型
+                     * 计算环境管理类型，枚举如下： MANAGED: 由客户在Batch平台主动创建； THPC_QUEUE: 由thpc平台创建，关联thpc平台集群队列。
                      */
                     std::string m_envType;
                     bool m_envTypeHasBeenSet;
@@ -274,7 +274,7 @@ namespace TencentCloud
                     bool m_resourceTypeHasBeenSet;
 
                     /**
-                     * 下一步动作
+                     * 下一步的动作，枚举如下： DELETING: 删除中
                      */
                     std::string m_nextAction;
                     bool m_nextActionHasBeenSet;

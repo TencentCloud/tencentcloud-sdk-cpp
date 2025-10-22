@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询的云硬盘备份点ID列表。最大支持 100 个。参数不支持同时指定 DiskBackupIds 和 Filters。
-                     * @return DiskBackupIds 查询的云硬盘备份点ID列表。最大支持 100 个。参数不支持同时指定 DiskBackupIds 和 Filters。
+                     * 获取查询的云硬盘备份点ID列表。可通过[DescribeDiskBackups](https://cloud.tencent.com/document/product/1207/84379)接口返回值字段DiskBackupSet获取。列表长度最大值为100。参数不支持同时指定 DiskBackupIds 和 Filters。
+                     * @return DiskBackupIds 查询的云硬盘备份点ID列表。可通过[DescribeDiskBackups](https://cloud.tencent.com/document/product/1207/84379)接口返回值字段DiskBackupSet获取。列表长度最大值为100。参数不支持同时指定 DiskBackupIds 和 Filters。
                      * 
                      */
                     std::vector<std::string> GetDiskBackupIds() const;
 
                     /**
-                     * 设置查询的云硬盘备份点ID列表。最大支持 100 个。参数不支持同时指定 DiskBackupIds 和 Filters。
-                     * @param _diskBackupIds 查询的云硬盘备份点ID列表。最大支持 100 个。参数不支持同时指定 DiskBackupIds 和 Filters。
+                     * 设置查询的云硬盘备份点ID列表。可通过[DescribeDiskBackups](https://cloud.tencent.com/document/product/1207/84379)接口返回值字段DiskBackupSet获取。列表长度最大值为100。参数不支持同时指定 DiskBackupIds 和 Filters。
+                     * @param _diskBackupIds 查询的云硬盘备份点ID列表。可通过[DescribeDiskBackups](https://cloud.tencent.com/document/product/1207/84379)接口返回值字段DiskBackupSet获取。列表长度最大值为100。参数不支持同时指定 DiskBackupIds 和 Filters。
                      * 
                      */
                     void SetDiskBackupIds(const std::vector<std::string>& _diskBackupIds);
@@ -75,12 +75,19 @@ namespace TencentCloud
 <li>disk-backup-state</li>按照【云硬盘备份点状态】进行过滤。
 类型：String
 必选：否
-取值：参考数据结构 
-<a href="https://cloud.tencent.com/document/product/1207/47576#DiskBackup">DescribeSnapshots</a> 下的DiskBackupState取值。
+取值：参考数据结构 [DiskBackup](https://cloud.tencent.com/document/product/1207/47576#DiskBackup) 下的DiskBackupState取值。
 <li>disk-usage</li>按照【云硬盘类型】进行过滤。
 类型：String
 必选：否
-取值：SYSTEM_DISK或DATA_DISK
+取值：
+- SYSTEM_DISK - 系统盘
+- DATA_DISK - 数据盘
+<li>tag-key</li>
+按照【标签键】进行过滤。 类型：String 必选：否
+<li>tag-value</li>
+按照【标签值】进行过滤。 类型：String 必选：否
+<li>tag:tag-key</li>
+按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为5。参数不支持同时指定DiskBackupIds 和 Filters。
                      * @return Filters 过滤器列表。
 <li>disk-backup-id</li>按照【云硬盘备份点 ID】进行过滤。
@@ -92,12 +99,19 @@ namespace TencentCloud
 <li>disk-backup-state</li>按照【云硬盘备份点状态】进行过滤。
 类型：String
 必选：否
-取值：参考数据结构 
-<a href="https://cloud.tencent.com/document/product/1207/47576#DiskBackup">DescribeSnapshots</a> 下的DiskBackupState取值。
+取值：参考数据结构 [DiskBackup](https://cloud.tencent.com/document/product/1207/47576#DiskBackup) 下的DiskBackupState取值。
 <li>disk-usage</li>按照【云硬盘类型】进行过滤。
 类型：String
 必选：否
-取值：SYSTEM_DISK或DATA_DISK
+取值：
+- SYSTEM_DISK - 系统盘
+- DATA_DISK - 数据盘
+<li>tag-key</li>
+按照【标签键】进行过滤。 类型：String 必选：否
+<li>tag-value</li>
+按照【标签值】进行过滤。 类型：String 必选：否
+<li>tag:tag-key</li>
+按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为5。参数不支持同时指定DiskBackupIds 和 Filters。
                      * 
                      */
@@ -114,12 +128,19 @@ namespace TencentCloud
 <li>disk-backup-state</li>按照【云硬盘备份点状态】进行过滤。
 类型：String
 必选：否
-取值：参考数据结构 
-<a href="https://cloud.tencent.com/document/product/1207/47576#DiskBackup">DescribeSnapshots</a> 下的DiskBackupState取值。
+取值：参考数据结构 [DiskBackup](https://cloud.tencent.com/document/product/1207/47576#DiskBackup) 下的DiskBackupState取值。
 <li>disk-usage</li>按照【云硬盘类型】进行过滤。
 类型：String
 必选：否
-取值：SYSTEM_DISK或DATA_DISK
+取值：
+- SYSTEM_DISK - 系统盘
+- DATA_DISK - 数据盘
+<li>tag-key</li>
+按照【标签键】进行过滤。 类型：String 必选：否
+<li>tag-value</li>
+按照【标签值】进行过滤。 类型：String 必选：否
+<li>tag:tag-key</li>
+按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为5。参数不支持同时指定DiskBackupIds 和 Filters。
                      * @param _filters 过滤器列表。
 <li>disk-backup-id</li>按照【云硬盘备份点 ID】进行过滤。
@@ -131,12 +152,19 @@ namespace TencentCloud
 <li>disk-backup-state</li>按照【云硬盘备份点状态】进行过滤。
 类型：String
 必选：否
-取值：参考数据结构 
-<a href="https://cloud.tencent.com/document/product/1207/47576#DiskBackup">DescribeSnapshots</a> 下的DiskBackupState取值。
+取值：参考数据结构 [DiskBackup](https://cloud.tencent.com/document/product/1207/47576#DiskBackup) 下的DiskBackupState取值。
 <li>disk-usage</li>按照【云硬盘类型】进行过滤。
 类型：String
 必选：否
-取值：SYSTEM_DISK或DATA_DISK
+取值：
+- SYSTEM_DISK - 系统盘
+- DATA_DISK - 数据盘
+<li>tag-key</li>
+按照【标签键】进行过滤。 类型：String 必选：否
+<li>tag-value</li>
+按照【标签值】进行过滤。 类型：String 必选：否
+<li>tag:tag-key</li>
+按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为5。参数不支持同时指定DiskBackupIds 和 Filters。
                      * 
                      */
@@ -194,7 +222,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询的云硬盘备份点ID列表。最大支持 100 个。参数不支持同时指定 DiskBackupIds 和 Filters。
+                     * 查询的云硬盘备份点ID列表。可通过[DescribeDiskBackups](https://cloud.tencent.com/document/product/1207/84379)接口返回值字段DiskBackupSet获取。列表长度最大值为100。参数不支持同时指定 DiskBackupIds 和 Filters。
                      */
                     std::vector<std::string> m_diskBackupIds;
                     bool m_diskBackupIdsHasBeenSet;
@@ -210,12 +238,19 @@ namespace TencentCloud
 <li>disk-backup-state</li>按照【云硬盘备份点状态】进行过滤。
 类型：String
 必选：否
-取值：参考数据结构 
-<a href="https://cloud.tencent.com/document/product/1207/47576#DiskBackup">DescribeSnapshots</a> 下的DiskBackupState取值。
+取值：参考数据结构 [DiskBackup](https://cloud.tencent.com/document/product/1207/47576#DiskBackup) 下的DiskBackupState取值。
 <li>disk-usage</li>按照【云硬盘类型】进行过滤。
 类型：String
 必选：否
-取值：SYSTEM_DISK或DATA_DISK
+取值：
+- SYSTEM_DISK - 系统盘
+- DATA_DISK - 数据盘
+<li>tag-key</li>
+按照【标签键】进行过滤。 类型：String 必选：否
+<li>tag-value</li>
+按照【标签值】进行过滤。 类型：String 必选：否
+<li>tag:tag-key</li>
+按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为5。参数不支持同时指定DiskBackupIds 和 Filters。
                      */
                     std::vector<Filter> m_filters;

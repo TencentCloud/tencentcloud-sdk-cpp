@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -195,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取操作人appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId 操作人appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAppId() const;
 
                     /**
                      * 设置操作人appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appId 操作人appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppId(const int64_t& _appId);
@@ -241,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyId 策略id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPolicyId() const;
 
                     /**
                      * 设置策略id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _policyId 策略id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPolicyId(const uint64_t& _policyId);
@@ -310,7 +302,6 @@ namespace TencentCloud
 
                     /**
                      * 操作人appid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
@@ -323,7 +314,6 @@ namespace TencentCloud
 
                     /**
                      * 策略id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_policyId;
                     bool m_policyIdHasBeenSet;

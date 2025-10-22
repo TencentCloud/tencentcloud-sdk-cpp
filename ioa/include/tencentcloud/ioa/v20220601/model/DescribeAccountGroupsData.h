@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -466,6 +466,27 @@ namespace TencentCloud
                      */
                     bool LatestSyncTimeHasBeenSet() const;
 
+                    /**
+                     * 获取分组名称数组
+                     * @return NamePathArr 分组名称数组
+                     * 
+                     */
+                    std::vector<std::string> GetNamePathArr() const;
+
+                    /**
+                     * 设置分组名称数组
+                     * @param _namePathArr 分组名称数组
+                     * 
+                     */
+                    void SetNamePathArr(const std::vector<std::string>& _namePathArr);
+
+                    /**
+                     * 判断参数 NamePathArr 是否已赋值
+                     * @return NamePathArr 是否已赋值
+                     * 
+                     */
+                    bool NamePathArrHasBeenSet() const;
+
                 private:
 
                     /**
@@ -587,6 +608,12 @@ namespace TencentCloud
                      */
                     std::string m_latestSyncTime;
                     bool m_latestSyncTimeHasBeenSet;
+
+                    /**
+                     * 分组名称数组
+                     */
+                    std::vector<std::string> m_namePathArr;
+                    bool m_namePathArrHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
+                     * @return InstanceId 实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
+                     * @param _instanceId 实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取当前redis版本
-                     * @return CurrentRedisVersion 当前redis版本
+                     * 获取当前 Redis 小版本。小版本信息，请参见[升级实例版本](https://cloud.tencent.com/document/product/239/46457)。
+                     * @return CurrentRedisVersion 当前 Redis 小版本。小版本信息，请参见[升级实例版本](https://cloud.tencent.com/document/product/239/46457)。
                      * 
                      */
                     std::string GetCurrentRedisVersion() const;
 
                     /**
-                     * 设置当前redis版本
-                     * @param _currentRedisVersion 当前redis版本
+                     * 设置当前 Redis 小版本。小版本信息，请参见[升级实例版本](https://cloud.tencent.com/document/product/239/46457)。
+                     * @param _currentRedisVersion 当前 Redis 小版本。小版本信息，请参见[升级实例版本](https://cloud.tencent.com/document/product/239/46457)。
                      * 
                      */
                     void SetCurrentRedisVersion(const std::string& _currentRedisVersion);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool CurrentRedisVersionHasBeenSet() const;
 
                     /**
-                     * 获取可升级的redis版本
-                     * @return UpgradeRedisVersion 可升级的redis版本
+                     * 获取升级后的 Redis 小版本。小版本信息，请参见[升级实例版本](https://cloud.tencent.com/document/product/239/46457)。
+                     * @return UpgradeRedisVersion 升级后的 Redis 小版本。小版本信息，请参见[升级实例版本](https://cloud.tencent.com/document/product/239/46457)。
                      * 
                      */
                     std::string GetUpgradeRedisVersion() const;
 
                     /**
-                     * 设置可升级的redis版本
-                     * @param _upgradeRedisVersion 可升级的redis版本
+                     * 设置升级后的 Redis 小版本。小版本信息，请参见[升级实例版本](https://cloud.tencent.com/document/product/239/46457)。
+                     * @param _upgradeRedisVersion 升级后的 Redis 小版本。小版本信息，请参见[升级实例版本](https://cloud.tencent.com/document/product/239/46457)。
                      * 
                      */
                     void SetUpgradeRedisVersion(const std::string& _upgradeRedisVersion);
@@ -106,15 +106,23 @@ namespace TencentCloud
                     bool UpgradeRedisVersionHasBeenSet() const;
 
                     /**
-                     * 获取1-立即升级   0-维护时间窗口升级
-                     * @return InstanceTypeUpgradeNow 1-立即升级   0-维护时间窗口升级
+                     * 获取指定是否立即升级。
+- 1：立即升级。
+- 0：维护时间窗口升级。
+                     * @return InstanceTypeUpgradeNow 指定是否立即升级。
+- 1：立即升级。
+- 0：维护时间窗口升级。
                      * 
                      */
                     int64_t GetInstanceTypeUpgradeNow() const;
 
                     /**
-                     * 设置1-立即升级   0-维护时间窗口升级
-                     * @param _instanceTypeUpgradeNow 1-立即升级   0-维护时间窗口升级
+                     * 设置指定是否立即升级。
+- 1：立即升级。
+- 0：维护时间窗口升级。
+                     * @param _instanceTypeUpgradeNow 指定是否立即升级。
+- 1：立即升级。
+- 0：维护时间窗口升级。
                      * 
                      */
                     void SetInstanceTypeUpgradeNow(const int64_t& _instanceTypeUpgradeNow);
@@ -129,25 +137,27 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * 实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 当前redis版本
+                     * 当前 Redis 小版本。小版本信息，请参见[升级实例版本](https://cloud.tencent.com/document/product/239/46457)。
                      */
                     std::string m_currentRedisVersion;
                     bool m_currentRedisVersionHasBeenSet;
 
                     /**
-                     * 可升级的redis版本
+                     * 升级后的 Redis 小版本。小版本信息，请参见[升级实例版本](https://cloud.tencent.com/document/product/239/46457)。
                      */
                     std::string m_upgradeRedisVersion;
                     bool m_upgradeRedisVersionHasBeenSet;
 
                     /**
-                     * 1-立即升级   0-维护时间窗口升级
+                     * 指定是否立即升级。
+- 1：立即升级。
+- 0：维护时间窗口升级。
                      */
                     int64_t m_instanceTypeUpgradeNow;
                     bool m_instanceTypeUpgradeNowHasBeenSet;

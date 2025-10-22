@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -131,14 +131,26 @@ namespace TencentCloud
                     /**
                      * 获取流程签署人列表，其中结构体的ApproverType必传。
 若为个人签署方或saas企业签署方，则Name，Mobile必传。OrganizationName 传对应企业名称。
-若为子客企业签署方则需传OpenId、OrganizationOpenId，其他可不传。
+若为子客企业签署方则需传OpenId、OrganizationOpenId、OrganizationName， 其他可不传。（如果对应OrganizationOpenId 子客已经认证激活了，则可以省去OrganizationName）
+
+此结构体和发起接口参与方结构体复用，除了上述参数外，可传递的参数有：
+1. RecipientId: 发起合同会返回，可以直接用于指定需要生成链接的签署方。
+2. ApproverSignTypes: 指定签署方签署时候的认证方式，仅此链接生效。
+3. SignTypeSelector: 可以指定签署方签署合同的认证校验方式的选择模式。
+4. Intention: 指定H5签署视频核身的意图配置，仅视频签署需要使用。
 
 注:
 `1. 签署人只能有手写签名、时间类型、印章类型、签批类型的签署控件和内容填写控件，其他类型的签署控件暂时未支持。`
 `2. 生成发起方预览链接时，该字段（FlowApproverInfos）传空或者不传`
                      * @return FlowApproverInfos 流程签署人列表，其中结构体的ApproverType必传。
 若为个人签署方或saas企业签署方，则Name，Mobile必传。OrganizationName 传对应企业名称。
-若为子客企业签署方则需传OpenId、OrganizationOpenId，其他可不传。
+若为子客企业签署方则需传OpenId、OrganizationOpenId、OrganizationName， 其他可不传。（如果对应OrganizationOpenId 子客已经认证激活了，则可以省去OrganizationName）
+
+此结构体和发起接口参与方结构体复用，除了上述参数外，可传递的参数有：
+1. RecipientId: 发起合同会返回，可以直接用于指定需要生成链接的签署方。
+2. ApproverSignTypes: 指定签署方签署时候的认证方式，仅此链接生效。
+3. SignTypeSelector: 可以指定签署方签署合同的认证校验方式的选择模式。
+4. Intention: 指定H5签署视频核身的意图配置，仅视频签署需要使用。
 
 注:
 `1. 签署人只能有手写签名、时间类型、印章类型、签批类型的签署控件和内容填写控件，其他类型的签署控件暂时未支持。`
@@ -150,14 +162,26 @@ namespace TencentCloud
                     /**
                      * 设置流程签署人列表，其中结构体的ApproverType必传。
 若为个人签署方或saas企业签署方，则Name，Mobile必传。OrganizationName 传对应企业名称。
-若为子客企业签署方则需传OpenId、OrganizationOpenId，其他可不传。
+若为子客企业签署方则需传OpenId、OrganizationOpenId、OrganizationName， 其他可不传。（如果对应OrganizationOpenId 子客已经认证激活了，则可以省去OrganizationName）
+
+此结构体和发起接口参与方结构体复用，除了上述参数外，可传递的参数有：
+1. RecipientId: 发起合同会返回，可以直接用于指定需要生成链接的签署方。
+2. ApproverSignTypes: 指定签署方签署时候的认证方式，仅此链接生效。
+3. SignTypeSelector: 可以指定签署方签署合同的认证校验方式的选择模式。
+4. Intention: 指定H5签署视频核身的意图配置，仅视频签署需要使用。
 
 注:
 `1. 签署人只能有手写签名、时间类型、印章类型、签批类型的签署控件和内容填写控件，其他类型的签署控件暂时未支持。`
 `2. 生成发起方预览链接时，该字段（FlowApproverInfos）传空或者不传`
                      * @param _flowApproverInfos 流程签署人列表，其中结构体的ApproverType必传。
 若为个人签署方或saas企业签署方，则Name，Mobile必传。OrganizationName 传对应企业名称。
-若为子客企业签署方则需传OpenId、OrganizationOpenId，其他可不传。
+若为子客企业签署方则需传OpenId、OrganizationOpenId、OrganizationName， 其他可不传。（如果对应OrganizationOpenId 子客已经认证激活了，则可以省去OrganizationName）
+
+此结构体和发起接口参与方结构体复用，除了上述参数外，可传递的参数有：
+1. RecipientId: 发起合同会返回，可以直接用于指定需要生成链接的签署方。
+2. ApproverSignTypes: 指定签署方签署时候的认证方式，仅此链接生效。
+3. SignTypeSelector: 可以指定签署方签署合同的认证校验方式的选择模式。
+4. Intention: 指定H5签署视频核身的意图配置，仅视频签署需要使用。
 
 注:
 `1. 签署人只能有手写签名、时间类型、印章类型、签批类型的签署控件和内容填写控件，其他类型的签署控件暂时未支持。`
@@ -308,7 +332,13 @@ namespace TencentCloud
                     /**
                      * 流程签署人列表，其中结构体的ApproverType必传。
 若为个人签署方或saas企业签署方，则Name，Mobile必传。OrganizationName 传对应企业名称。
-若为子客企业签署方则需传OpenId、OrganizationOpenId，其他可不传。
+若为子客企业签署方则需传OpenId、OrganizationOpenId、OrganizationName， 其他可不传。（如果对应OrganizationOpenId 子客已经认证激活了，则可以省去OrganizationName）
+
+此结构体和发起接口参与方结构体复用，除了上述参数外，可传递的参数有：
+1. RecipientId: 发起合同会返回，可以直接用于指定需要生成链接的签署方。
+2. ApproverSignTypes: 指定签署方签署时候的认证方式，仅此链接生效。
+3. SignTypeSelector: 可以指定签署方签署合同的认证校验方式的选择模式。
+4. Intention: 指定H5签署视频核身的意图配置，仅视频签署需要使用。
 
 注:
 `1. 签署人只能有手写签名、时间类型、印章类型、签批类型的签署控件和内容填写控件，其他类型的签署控件暂时未支持。`

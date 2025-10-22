@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@
 #include <tencentcloud/emr/v20190103/model/PodSpecInfo.h>
 #include <tencentcloud/emr/v20190103/model/NodeResourceSpec.h>
 #include <tencentcloud/emr/v20190103/model/ScaleOutServiceConfGroupsInfo.h>
+#include <tencentcloud/emr/v20190103/model/NodeMark.h>
 
 
 namespace TencentCloud
@@ -276,15 +277,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取扩容所选资源类型，可选范围为"host","pod"，host为普通的CVM资源，Pod为TKE集群或EKS集群提供的资源
-                     * @return HardwareSourceType 扩容所选资源类型，可选范围为"host","pod"，host为普通的CVM资源，Pod为TKE集群或EKS集群提供的资源
+                     * 获取扩容所选资源类型，可选范围为"HOST","POD","MNode"，HOST为普通的CVM资源，POD为TKE集群或EKS集群提供的资源,MNode为全托管资源类型
+                     * @return HardwareSourceType 扩容所选资源类型，可选范围为"HOST","POD","MNode"，HOST为普通的CVM资源，POD为TKE集群或EKS集群提供的资源,MNode为全托管资源类型
                      * 
                      */
                     std::string GetHardwareSourceType() const;
 
                     /**
-                     * 设置扩容所选资源类型，可选范围为"host","pod"，host为普通的CVM资源，Pod为TKE集群或EKS集群提供的资源
-                     * @param _hardwareSourceType 扩容所选资源类型，可选范围为"host","pod"，host为普通的CVM资源，Pod为TKE集群或EKS集群提供的资源
+                     * 设置扩容所选资源类型，可选范围为"HOST","POD","MNode"，HOST为普通的CVM资源，POD为TKE集群或EKS集群提供的资源,MNode为全托管资源类型
+                     * @param _hardwareSourceType 扩容所选资源类型，可选范围为"HOST","POD","MNode"，HOST为普通的CVM资源，POD为TKE集群或EKS集群提供的资源,MNode为全托管资源类型
                      * 
                      */
                     void SetHardwareSourceType(const std::string& _hardwareSourceType);
@@ -493,6 +494,48 @@ namespace TencentCloud
                      */
                     bool ScaleOutServiceConfGroupsInfoHasBeenSet() const;
 
+                    /**
+                     * 获取节点标记信息，当前只提供给tf平台使用
+                     * @return NodeMarks 节点标记信息，当前只提供给tf平台使用
+                     * 
+                     */
+                    NodeMark GetNodeMarks() const;
+
+                    /**
+                     * 设置节点标记信息，当前只提供给tf平台使用
+                     * @param _nodeMarks 节点标记信息，当前只提供给tf平台使用
+                     * 
+                     */
+                    void SetNodeMarks(const NodeMark& _nodeMarks);
+
+                    /**
+                     * 判断参数 NodeMarks 是否已赋值
+                     * @return NodeMarks 是否已赋值
+                     * 
+                     */
+                    bool NodeMarksHasBeenSet() const;
+
+                    /**
+                     * 获取扩容指定计算组名称
+                     * @return WarehouseName 扩容指定计算组名称
+                     * 
+                     */
+                    std::string GetWarehouseName() const;
+
+                    /**
+                     * 设置扩容指定计算组名称
+                     * @param _warehouseName 扩容指定计算组名称
+                     * 
+                     */
+                    void SetWarehouseName(const std::string& _warehouseName);
+
+                    /**
+                     * 判断参数 WarehouseName 是否已赋值
+                     * @return WarehouseName 是否已赋值
+                     * 
+                     */
+                    bool WarehouseNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -560,7 +603,7 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 扩容所选资源类型，可选范围为"host","pod"，host为普通的CVM资源，Pod为TKE集群或EKS集群提供的资源
+                     * 扩容所选资源类型，可选范围为"HOST","POD","MNode"，HOST为普通的CVM资源，POD为TKE集群或EKS集群提供的资源,MNode为全托管资源类型
                      */
                     std::string m_hardwareSourceType;
                     bool m_hardwareSourceTypeHasBeenSet;
@@ -620,6 +663,18 @@ namespace TencentCloud
                      */
                     std::vector<ScaleOutServiceConfGroupsInfo> m_scaleOutServiceConfGroupsInfo;
                     bool m_scaleOutServiceConfGroupsInfoHasBeenSet;
+
+                    /**
+                     * 节点标记信息，当前只提供给tf平台使用
+                     */
+                    NodeMark m_nodeMarks;
+                    bool m_nodeMarksHasBeenSet;
+
+                    /**
+                     * 扩容指定计算组名称
+                     */
+                    std::string m_warehouseName;
+                    bool m_warehouseNameHasBeenSet;
 
                 };
             }

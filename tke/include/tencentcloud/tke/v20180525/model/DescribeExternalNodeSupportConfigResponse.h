@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取用于分配集群容器和服务 IP 的 CIDR，不得与 VPC CIDR 冲突，也不得与同 VPC 内其他集群 CIDR 冲突。且网段范围必须在内网网段内，例如:10.1.0.0/14, 192.168.0.1/18,172.16.0.0/16。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterCIDR 用于分配集群容器和服务 IP 的 CIDR，不得与 VPC CIDR 冲突，也不得与同 VPC 内其他集群 CIDR 冲突。且网段范围必须在内网网段内，例如:10.1.0.0/14, 192.168.0.1/18,172.16.0.0/16。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterCIDR() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取集群网络插件类型，支持：CiliumBGP、CiliumVXLan
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetworkType 集群网络插件类型，支持：CiliumBGP、CiliumVXLan
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNetworkType() const;
@@ -78,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetId() const;
@@ -94,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启第三方节点专线连接支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Enabled 是否开启第三方节点专线连接支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnabled() const;
@@ -110,9 +102,7 @@ namespace TencentCloud
 
                     /**
                      * 获取节点所属交换机的BGP AS 号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AS 节点所属交换机的BGP AS 号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAS() const;
@@ -126,9 +116,7 @@ namespace TencentCloud
 
                     /**
                      * 获取节点所属交换机的交换机 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SwitchIP 节点所属交换机的交换机 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSwitchIP() const;
@@ -156,9 +144,7 @@ namespace TencentCloud
 
                     /**
                      * 获取如果开启失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedReason 如果开启失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFailedReason() const;
@@ -172,9 +158,7 @@ namespace TencentCloud
 
                     /**
                      * 获取内网访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Master 内网访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMaster() const;
@@ -188,9 +172,7 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像仓库代理地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Proxy 镜像仓库代理地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProxy() const;
@@ -248,9 +230,7 @@ namespace TencentCloud
 
                     /**
                      * 获取注册节点公网版自定义域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicCustomDomain 注册节点公网版自定义域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublicCustomDomain() const;
@@ -266,42 +246,36 @@ namespace TencentCloud
 
                     /**
                      * 用于分配集群容器和服务 IP 的 CIDR，不得与 VPC CIDR 冲突，也不得与同 VPC 内其他集群 CIDR 冲突。且网段范围必须在内网网段内，例如:10.1.0.0/14, 192.168.0.1/18,172.16.0.0/16。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterCIDR;
                     bool m_clusterCIDRHasBeenSet;
 
                     /**
                      * 集群网络插件类型，支持：CiliumBGP、CiliumVXLan
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_networkType;
                     bool m_networkTypeHasBeenSet;
 
                     /**
                      * 子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
                      * 是否开启第三方节点专线连接支持
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enabled;
                     bool m_enabledHasBeenSet;
 
                     /**
                      * 节点所属交换机的BGP AS 号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_aS;
                     bool m_aSHasBeenSet;
 
                     /**
                      * 节点所属交换机的交换机 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_switchIP;
                     bool m_switchIPHasBeenSet;
@@ -314,21 +288,18 @@ namespace TencentCloud
 
                     /**
                      * 如果开启失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_failedReason;
                     bool m_failedReasonHasBeenSet;
 
                     /**
                      * 内网访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_master;
                     bool m_masterHasBeenSet;
 
                     /**
                      * 镜像仓库代理地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_proxy;
                     bool m_proxyHasBeenSet;
@@ -354,7 +325,6 @@ namespace TencentCloud
 
                     /**
                      * 注册节点公网版自定义域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publicCustomDomain;
                     bool m_publicCustomDomainHasBeenSet;

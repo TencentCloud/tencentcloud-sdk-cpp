@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,9 @@ CreateSchemeUrlRequest::CreateSchemeUrlRequest() :
     m_agentHasBeenSet(false),
     m_hidesHasBeenSet(false),
     m_recipientIdHasBeenSet(false),
-    m_flowGroupUrlInfoHasBeenSet(false)
+    m_flowGroupUrlInfoHasBeenSet(false),
+    m_urlUseEnvHasBeenSet(false),
+    m_pickUpAfterJoinedHasBeenSet(false)
 {
 }
 
@@ -174,6 +176,22 @@ string CreateSchemeUrlRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_flowGroupUrlInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_urlUseEnvHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UrlUseEnv";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_urlUseEnv.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pickUpAfterJoinedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PickUpAfterJoined";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pickUpAfterJoined, allocator);
     }
 
 
@@ -422,6 +440,38 @@ void CreateSchemeUrlRequest::SetFlowGroupUrlInfo(const FlowGroupUrlInfo& _flowGr
 bool CreateSchemeUrlRequest::FlowGroupUrlInfoHasBeenSet() const
 {
     return m_flowGroupUrlInfoHasBeenSet;
+}
+
+string CreateSchemeUrlRequest::GetUrlUseEnv() const
+{
+    return m_urlUseEnv;
+}
+
+void CreateSchemeUrlRequest::SetUrlUseEnv(const string& _urlUseEnv)
+{
+    m_urlUseEnv = _urlUseEnv;
+    m_urlUseEnvHasBeenSet = true;
+}
+
+bool CreateSchemeUrlRequest::UrlUseEnvHasBeenSet() const
+{
+    return m_urlUseEnvHasBeenSet;
+}
+
+bool CreateSchemeUrlRequest::GetPickUpAfterJoined() const
+{
+    return m_pickUpAfterJoined;
+}
+
+void CreateSchemeUrlRequest::SetPickUpAfterJoined(const bool& _pickUpAfterJoined)
+{
+    m_pickUpAfterJoined = _pickUpAfterJoined;
+    m_pickUpAfterJoinedHasBeenSet = true;
+}
+
+bool CreateSchemeUrlRequest::PickUpAfterJoinedHasBeenSet() const
+{
+    return m_pickUpAfterJoinedHasBeenSet;
 }
 
 

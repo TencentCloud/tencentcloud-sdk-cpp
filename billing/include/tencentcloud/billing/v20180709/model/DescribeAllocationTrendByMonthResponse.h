@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,9 +47,7 @@ namespace TencentCloud
 
                     /**
                      * 获取当月费用信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Current 当月费用信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AllocationBillTrendDetail GetCurrent() const;
@@ -63,9 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 获取之前月份费用信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Previous 之前月份费用信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AllocationBillTrendDetail> GetPrevious() const;
@@ -79,9 +75,7 @@ namespace TencentCloud
 
                     /**
                      * 获取费用统计信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Stat 费用统计信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AllocationStat GetStat() const;
@@ -97,21 +91,18 @@ namespace TencentCloud
 
                     /**
                      * 当月费用信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AllocationBillTrendDetail m_current;
                     bool m_currentHasBeenSet;
 
                     /**
                      * 之前月份费用信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AllocationBillTrendDetail> m_previous;
                     bool m_previousHasBeenSet;
 
                     /**
                      * 费用统计信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AllocationStat m_stat;
                     bool m_statHasBeenSet;

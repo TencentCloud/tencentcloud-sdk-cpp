@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取低频存储容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TieringSizeInBytes 低频存储容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTieringSizeInBytes() const;
 
                     /**
                      * 设置低频存储容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tieringSizeInBytes 低频存储容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTieringSizeInBytes(const int64_t& _tieringSizeInBytes);
@@ -71,14 +67,40 @@ namespace TencentCloud
                      */
                     bool TieringSizeInBytesHasBeenSet() const;
 
+                    /**
+                     * 获取冷存储容量
+                     * @return SecondaryTieringSizeInBytes 冷存储容量
+                     * 
+                     */
+                    int64_t GetSecondaryTieringSizeInBytes() const;
+
+                    /**
+                     * 设置冷存储容量
+                     * @param _secondaryTieringSizeInBytes 冷存储容量
+                     * 
+                     */
+                    void SetSecondaryTieringSizeInBytes(const int64_t& _secondaryTieringSizeInBytes);
+
+                    /**
+                     * 判断参数 SecondaryTieringSizeInBytes 是否已赋值
+                     * @return SecondaryTieringSizeInBytes 是否已赋值
+                     * 
+                     */
+                    bool SecondaryTieringSizeInBytesHasBeenSet() const;
+
                 private:
 
                     /**
                      * 低频存储容量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_tieringSizeInBytes;
                     bool m_tieringSizeInBytesHasBeenSet;
+
+                    /**
+                     * 冷存储容量
+                     */
+                    int64_t m_secondaryTieringSizeInBytes;
+                    bool m_secondaryTieringSizeInBytesHasBeenSet;
 
                 };
             }

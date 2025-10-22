@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -151,12 +151,10 @@ namespace TencentCloud
 <li>sum-month:以月为单位抵扣</li>
 <li>sum-day:以天为单位抵扣</li>
 <li>totalize:总容量抵扣</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeductType 免费量抵扣周期
 <li>sum-month:以月为单位抵扣</li>
 <li>sum-day:以天为单位抵扣</li>
 <li>totalize:总容量抵扣</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeductType() const;
@@ -166,12 +164,10 @@ namespace TencentCloud
 <li>sum-month:以月为单位抵扣</li>
 <li>sum-day:以天为单位抵扣</li>
 <li>totalize:总容量抵扣</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deductType 免费量抵扣周期
 <li>sum-month:以月为单位抵扣</li>
 <li>sum-day:以天为单位抵扣</li>
 <li>totalize:总容量抵扣</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeductType(const std::string& _deductType);
@@ -186,10 +182,8 @@ namespace TencentCloud
                     /**
                      * 获取免费量类型
 <li>basic:通用量抵扣</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FreeQuotaType 免费量类型
 <li>basic:通用量抵扣</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFreeQuotaType() const;
@@ -197,10 +191,8 @@ namespace TencentCloud
                     /**
                      * 设置免费量类型
 <li>basic:通用量抵扣</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _freeQuotaType 免费量类型
 <li>basic:通用量抵扣</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFreeQuotaType(const std::string& _freeQuotaType);
@@ -247,7 +239,6 @@ namespace TencentCloud
 <li>sum-month:以月为单位抵扣</li>
 <li>sum-day:以天为单位抵扣</li>
 <li>totalize:总容量抵扣</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deductType;
                     bool m_deductTypeHasBeenSet;
@@ -255,7 +246,6 @@ namespace TencentCloud
                     /**
                      * 免费量类型
 <li>basic:通用量抵扣</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_freeQuotaType;
                     bool m_freeQuotaTypeHasBeenSet;

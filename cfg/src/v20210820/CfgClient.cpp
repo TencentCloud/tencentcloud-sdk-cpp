@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,6 +76,49 @@ CfgClient::CreateTaskFromActionOutcomeCallable CfgClient::CreateTaskFromActionCa
         [this, request]()
         {
             return this->CreateTaskFromAction(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfgClient::CreateTaskFromMultiActionOutcome CfgClient::CreateTaskFromMultiAction(const CreateTaskFromMultiActionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTaskFromMultiAction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTaskFromMultiActionResponse rsp = CreateTaskFromMultiActionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTaskFromMultiActionOutcome(rsp);
+        else
+            return CreateTaskFromMultiActionOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTaskFromMultiActionOutcome(outcome.GetError());
+    }
+}
+
+void CfgClient::CreateTaskFromMultiActionAsync(const CreateTaskFromMultiActionRequest& request, const CreateTaskFromMultiActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateTaskFromMultiAction(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfgClient::CreateTaskFromMultiActionOutcomeCallable CfgClient::CreateTaskFromMultiActionCallable(const CreateTaskFromMultiActionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateTaskFromMultiActionOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateTaskFromMultiAction(request);
         }
     );
 

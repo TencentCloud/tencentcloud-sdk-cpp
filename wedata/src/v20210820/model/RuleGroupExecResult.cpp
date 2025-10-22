@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,7 +46,9 @@ RuleGroupExecResult::RuleGroupExecResult() :
     m_projectNameHasBeenSet(false),
     m_instanceStatusHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_finishTimeHasBeenSet(false)
+    m_finishTimeHasBeenSet(false),
+    m_ruleGroupNameHasBeenSet(false),
+    m_ruleGroupExistHasBeenSet(false)
 {
 }
 
@@ -325,6 +327,26 @@ CoreInternalOutcome RuleGroupExecResult::Deserialize(const rapidjson::Value &val
         m_finishTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("RuleGroupName") && !value["RuleGroupName"].IsNull())
+    {
+        if (!value["RuleGroupName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroupExecResult.RuleGroupName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleGroupName = string(value["RuleGroupName"].GetString());
+        m_ruleGroupNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("RuleGroupExist") && !value["RuleGroupExist"].IsNull())
+    {
+        if (!value["RuleGroupExist"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroupExecResult.RuleGroupExist` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleGroupExist = string(value["RuleGroupExist"].GetString());
+        m_ruleGroupExistHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -545,6 +567,22 @@ void RuleGroupExecResult::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "FinishTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_finishTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleGroupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleGroupName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleGroupExistHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleGroupExist";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleGroupExist.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -964,5 +1002,37 @@ void RuleGroupExecResult::SetFinishTime(const string& _finishTime)
 bool RuleGroupExecResult::FinishTimeHasBeenSet() const
 {
     return m_finishTimeHasBeenSet;
+}
+
+string RuleGroupExecResult::GetRuleGroupName() const
+{
+    return m_ruleGroupName;
+}
+
+void RuleGroupExecResult::SetRuleGroupName(const string& _ruleGroupName)
+{
+    m_ruleGroupName = _ruleGroupName;
+    m_ruleGroupNameHasBeenSet = true;
+}
+
+bool RuleGroupExecResult::RuleGroupNameHasBeenSet() const
+{
+    return m_ruleGroupNameHasBeenSet;
+}
+
+string RuleGroupExecResult::GetRuleGroupExist() const
+{
+    return m_ruleGroupExist;
+}
+
+void RuleGroupExecResult::SetRuleGroupExist(const string& _ruleGroupExist)
+{
+    m_ruleGroupExist = _ruleGroupExist;
+    m_ruleGroupExistHasBeenSet = true;
+}
+
+bool RuleGroupExecResult::RuleGroupExistHasBeenSet() const
+{
+    return m_ruleGroupExistHasBeenSet;
 }
 

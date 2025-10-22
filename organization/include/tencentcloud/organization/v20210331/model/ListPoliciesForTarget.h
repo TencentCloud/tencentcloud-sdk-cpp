@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -157,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddTime 策略创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAddTime() const;
 
                     /**
                      * 设置策略创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _addTime 策略创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddTime(const std::string& _addTime);
@@ -182,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 策略更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置策略更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 策略更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -207,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部门名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 部门名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置部门名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 部门名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -232,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略绑定时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttachTime 策略绑定时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAttachTime() const;
 
                     /**
                      * 设置策略绑定时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _attachTime 策略绑定时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAttachTime(const std::string& _attachTime);
@@ -271,7 +251,6 @@ namespace TencentCloud
 
                     /**
                      * 备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
@@ -290,28 +269,24 @@ namespace TencentCloud
 
                     /**
                      * 策略创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_addTime;
                     bool m_addTimeHasBeenSet;
 
                     /**
                      * 策略更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
                      * 部门名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 策略绑定时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_attachTime;
                     bool m_attachTimeHasBeenSet;

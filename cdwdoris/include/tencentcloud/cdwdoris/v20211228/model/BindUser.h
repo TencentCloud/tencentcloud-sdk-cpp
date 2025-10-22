@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserName 用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userName 用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Host 主机信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHost() const;
 
                     /**
                      * 设置主机信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _host 主机信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHost(const std::string& _host);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
                      * 主机信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;

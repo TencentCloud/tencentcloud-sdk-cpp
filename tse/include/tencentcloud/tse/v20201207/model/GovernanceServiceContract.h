@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tse/v20201207/model/GovernanceInterfaceDescription.h>
+#include <tencentcloud/tse/v20201207/model/Metadata.h>
 
 
 namespace TencentCloud
@@ -49,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取契约名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 契约名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置契约名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 契约名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -74,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所属服务命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Namespace 所属服务命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置所属服务命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _namespace 所属服务命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNamespace(const std::string& _namespace);
@@ -99,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocol 协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _protocol 协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -124,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取契约ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ID 契约ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetID() const;
 
                     /**
                      * 设置契约ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iD 契约ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetID(const std::string& _iD);
@@ -149,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所属服务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Service 所属服务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetService() const;
 
                     /**
                      * 设置所属服务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _service 所属服务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetService(const std::string& _service);
@@ -174,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _version 版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -199,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取信息摘要
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Revision 信息摘要
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRevision() const;
 
                     /**
                      * 设置信息摘要
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _revision 信息摘要
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRevision(const std::string& _revision);
@@ -224,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取额外内容描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 额外内容描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置额外内容描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _content 额外内容描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContent(const std::string& _content);
@@ -249,18 +218,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -274,18 +239,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyTime 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyTime 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -299,18 +260,14 @@ namespace TencentCloud
 
                     /**
                      * 获取契约接口列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Interfaces 契约接口列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<GovernanceInterfaceDescription> GetInterfaces() const;
 
                     /**
                      * 设置契约接口列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _interfaces 契约接口列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInterfaces(const std::vector<GovernanceInterfaceDescription>& _interfaces);
@@ -322,84 +279,105 @@ namespace TencentCloud
                      */
                     bool InterfacesHasBeenSet() const;
 
+                    /**
+                     * 获取元数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Metadatas 元数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<Metadata> GetMetadatas() const;
+
+                    /**
+                     * 设置元数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _metadatas 元数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMetadatas(const std::vector<Metadata>& _metadatas);
+
+                    /**
+                     * 判断参数 Metadatas 是否已赋值
+                     * @return Metadatas 是否已赋值
+                     * 
+                     */
+                    bool MetadatasHasBeenSet() const;
+
                 private:
 
                     /**
                      * 契约名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 所属服务命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
 
                     /**
                      * 协议
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
                      * 契约ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
                      * 所属服务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_service;
                     bool m_serviceHasBeenSet;
 
                     /**
                      * 版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
                      * 信息摘要
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_revision;
                     bool m_revisionHasBeenSet;
 
                     /**
                      * 额外内容描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
                      * 契约接口列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<GovernanceInterfaceDescription> m_interfaces;
                     bool m_interfacesHasBeenSet;
+
+                    /**
+                     * 元数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Metadata> m_metadatas;
+                    bool m_metadatasHasBeenSet;
 
                 };
             }

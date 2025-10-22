@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云硬盘扩容后的大小，单位为GB，不得小于当前云硬盘大小。云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。
-                     * @return DiskSize 云硬盘扩容后的大小，单位为GB，不得小于当前云硬盘大小。云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。
+                     * 获取云硬盘扩容后的大小，单位为GiB，不得小于当前云硬盘大小。云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。
+                     * @return DiskSize 云硬盘扩容后的大小，单位为GiB，不得小于当前云硬盘大小。云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。
                      * 
                      */
                     uint64_t GetDiskSize() const;
 
                     /**
-                     * 设置云硬盘扩容后的大小，单位为GB，不得小于当前云硬盘大小。云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。
-                     * @param _diskSize 云硬盘扩容后的大小，单位为GB，不得小于当前云硬盘大小。云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。
+                     * 设置云硬盘扩容后的大小，单位为GiB，不得小于当前云硬盘大小。云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。
+                     * @param _diskSize 云硬盘扩容后的大小，单位为GiB，不得小于当前云硬盘大小。云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。
                      * 
                      */
                     void SetDiskSize(const uint64_t& _diskSize);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。
-                     * @return DiskId 云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。
+                     * 获取云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。与参数DiskIds互斥。
+                     * @return DiskId 云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。与参数DiskIds互斥。
                      * 
                      */
                     std::string GetDiskId() const;
 
                     /**
-                     * 设置云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。
-                     * @param _diskId 云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。
+                     * 设置云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。与参数DiskIds互斥。
+                     * @param _diskId 云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。与参数DiskIds互斥。
                      * 
                      */
                     void SetDiskId(const std::string& _diskId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool DiskIdHasBeenSet() const;
 
                     /**
-                     * 获取云盘所属项目ID。 如传入则仅用于鉴权。
-                     * @return ProjectId 云盘所属项目ID。 如传入则仅用于鉴权。
+                     * 获取云硬盘所属项目ID。该参数可以通过调用[DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 projectId 字段来获取。 如传入则仅用于鉴权。
+                     * @return ProjectId 云硬盘所属项目ID。该参数可以通过调用[DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 projectId 字段来获取。 如传入则仅用于鉴权。
                      * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
-                     * 设置云盘所属项目ID。 如传入则仅用于鉴权。
-                     * @param _projectId 云盘所属项目ID。 如传入则仅用于鉴权。
+                     * 设置云硬盘所属项目ID。该参数可以通过调用[DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 projectId 字段来获取。 如传入则仅用于鉴权。
+                     * @param _projectId 云硬盘所属项目ID。该参数可以通过调用[DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 projectId 字段来获取。 如传入则仅用于鉴权。
                      * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
@@ -105,25 +105,52 @@ namespace TencentCloud
                      */
                     bool ProjectIdHasBeenSet() const;
 
+                    /**
+                     * 获取云硬盘ID列表， 通过[DescribeDisks](/document/product/362/16315)接口查询。与参数DiskId互斥。
+                     * @return DiskIds 云硬盘ID列表， 通过[DescribeDisks](/document/product/362/16315)接口查询。与参数DiskId互斥。
+                     * 
+                     */
+                    std::vector<std::string> GetDiskIds() const;
+
+                    /**
+                     * 设置云硬盘ID列表， 通过[DescribeDisks](/document/product/362/16315)接口查询。与参数DiskId互斥。
+                     * @param _diskIds 云硬盘ID列表， 通过[DescribeDisks](/document/product/362/16315)接口查询。与参数DiskId互斥。
+                     * 
+                     */
+                    void SetDiskIds(const std::vector<std::string>& _diskIds);
+
+                    /**
+                     * 判断参数 DiskIds 是否已赋值
+                     * @return DiskIds 是否已赋值
+                     * 
+                     */
+                    bool DiskIdsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 云硬盘扩容后的大小，单位为GB，不得小于当前云硬盘大小。云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。
+                     * 云硬盘扩容后的大小，单位为GiB，不得小于当前云硬盘大小。云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。
                      */
                     uint64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
 
                     /**
-                     * 云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。
+                     * 云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。与参数DiskIds互斥。
                      */
                     std::string m_diskId;
                     bool m_diskIdHasBeenSet;
 
                     /**
-                     * 云盘所属项目ID。 如传入则仅用于鉴权。
+                     * 云硬盘所属项目ID。该参数可以通过调用[DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 projectId 字段来获取。 如传入则仅用于鉴权。
                      */
                     uint64_t m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 云硬盘ID列表， 通过[DescribeDisks](/document/product/362/16315)接口查询。与参数DiskId互斥。
+                     */
+                    std::vector<std::string> m_diskIds;
+                    bool m_diskIdsHasBeenSet;
 
                 };
             }

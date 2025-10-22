@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件发生的房间号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoomId 事件发生的房间号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRoomId() const;
 
                     /**
                      * 设置事件发生的房间号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _roomId 事件发生的房间号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRoomId(const uint64_t& _roomId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件发生的用户。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserId 事件发生的用户。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置事件发生的用户。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userId 事件发生的用户。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户设备类型。0: Unknown; 1: Windows; 2: macOS; 3: Android; 4: iOS; 5: Web; 6: Mobile webpage; 7: Weixin Mini Program.
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Device 用户设备类型。0: Unknown; 1: Windows; 2: macOS; 3: Android; 4: iOS; 5: Web; 6: Mobile webpage; 7: Weixin Mini Program.
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDevice() const;
 
                     /**
                      * 设置用户设备类型。0: Unknown; 1: Windows; 2: macOS; 3: Android; 4: iOS; 5: Web; 6: Mobile webpage; 7: Weixin Mini Program.
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _device 用户设备类型。0: Unknown; 1: Windows; 2: macOS; 3: Android; 4: iOS; 5: Web; 6: Mobile webpage; 7: Weixin Mini Program.
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDevice(const uint64_t& _device);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取录制时长。单位：秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Duration 录制时长。单位：秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDuration() const;
 
                     /**
                      * 设置录制时长。单位：秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _duration 录制时长。单位：秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDuration(const uint64_t& _duration);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取录制文件大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordSize 录制文件大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRecordSize() const;
 
                     /**
                      * 设置录制文件大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recordSize 录制文件大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecordSize(const uint64_t& _recordSize);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取录制url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordUrl 录制url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRecordUrl() const;
 
                     /**
                      * 设置录制url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recordUrl 录制url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecordUrl(const std::string& _recordUrl);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * 事件发生的房间号。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_roomId;
                     bool m_roomIdHasBeenSet;
 
                     /**
                      * 事件发生的用户。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
                      * 用户设备类型。0: Unknown; 1: Windows; 2: macOS; 3: Android; 4: iOS; 5: Web; 6: Mobile webpage; 7: Weixin Mini Program.
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_device;
                     bool m_deviceHasBeenSet;
 
                     /**
                      * 录制时长。单位：秒
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_duration;
                     bool m_durationHasBeenSet;
 
                     /**
                      * 录制文件大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_recordSize;
                     bool m_recordSizeHasBeenSet;
 
                     /**
                      * 录制url
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_recordUrl;
                     bool m_recordUrlHasBeenSet;

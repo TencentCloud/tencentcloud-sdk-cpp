@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Category 标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCategory() const;
 
                     /**
                      * 设置标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _category 标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCategory(const std::string& _category);
@@ -156,7 +152,6 @@ namespace TencentCloud
 
                     /**
                      * 标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_category;
                     bool m_categoryHasBeenSet;

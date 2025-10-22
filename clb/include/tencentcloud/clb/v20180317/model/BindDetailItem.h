@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置绑定的监听器ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ListenerId 配置绑定的监听器ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetListenerId() const;
 
                     /**
                      * 设置配置绑定的监听器ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _listenerId 配置绑定的监听器ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetListenerId(const std::string& _listenerId);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置绑定的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 配置绑定的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置配置绑定的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domain 配置绑定的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -119,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置绑定的规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LocationId 配置绑定的规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLocationId() const;
 
                     /**
                      * 设置配置绑定的规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _locationId 配置绑定的规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLocationId(const std::string& _locationId);
@@ -144,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监听器名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ListenerName 监听器名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetListenerName() const;
 
                     /**
                      * 设置监听器名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _listenerName 监听器名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetListenerName(const std::string& _listenerName);
@@ -169,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监听器协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocol 监听器协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置监听器协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _protocol 监听器协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -194,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监听器端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vport 监听器端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetVport() const;
 
                     /**
                      * 设置监听器端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vport 监听器端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVport(const int64_t& _vport);
@@ -244,18 +220,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UconfigId 配置ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUconfigId() const;
 
                     /**
                      * 设置配置ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uconfigId 配置ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUconfigId(const std::string& _uconfigId);
@@ -277,42 +249,36 @@ namespace TencentCloud
 
                     /**
                      * 配置绑定的监听器ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_listenerId;
                     bool m_listenerIdHasBeenSet;
 
                     /**
                      * 配置绑定的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
                      * 配置绑定的规则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_locationId;
                     bool m_locationIdHasBeenSet;
 
                     /**
                      * 监听器名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_listenerName;
                     bool m_listenerNameHasBeenSet;
 
                     /**
                      * 监听器协议
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
                      * 监听器端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_vport;
                     bool m_vportHasBeenSet;
@@ -326,7 +292,6 @@ namespace TencentCloud
 
                     /**
                      * 配置ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uconfigId;
                     bool m_uconfigIdHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID。
-                     * @return DBInstanceId 实例ID。
+                     * 获取实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * @return DBInstanceId 实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
-                     * 设置实例ID。
-                     * @param _dBInstanceId 实例ID。
+                     * 设置实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * @param _dBInstanceId 实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取目标内核版本号，可以通过API DescribeDBVersions获取可以升级的目标内核版本号。
-                     * @return TargetDBKernelVersion 目标内核版本号，可以通过API DescribeDBVersions获取可以升级的目标内核版本号。
+                     * 获取目标内核版本号，可以通过API [DescribeDBVersions](https://cloud.tencent.com/document/product/409/89018)获取可以升级的目标内核版本号。
+                     * @return TargetDBKernelVersion 目标内核版本号，可以通过API [DescribeDBVersions](https://cloud.tencent.com/document/product/409/89018)获取可以升级的目标内核版本号。
                      * 
                      */
                     std::string GetTargetDBKernelVersion() const;
 
                     /**
-                     * 设置目标内核版本号，可以通过API DescribeDBVersions获取可以升级的目标内核版本号。
-                     * @param _targetDBKernelVersion 目标内核版本号，可以通过API DescribeDBVersions获取可以升级的目标内核版本号。
+                     * 设置目标内核版本号，可以通过API [DescribeDBVersions](https://cloud.tencent.com/document/product/409/89018)获取可以升级的目标内核版本号。
+                     * @param _targetDBKernelVersion 目标内核版本号，可以通过API [DescribeDBVersions](https://cloud.tencent.com/document/product/409/89018)获取可以升级的目标内核版本号。
                      * 
                      */
                     void SetTargetDBKernelVersion(const std::string& _targetDBKernelVersion);
@@ -290,13 +290,13 @@ UpgradeCheck为True时，此参数无效。
                 private:
 
                     /**
-                     * 实例ID。
+                     * 实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      */
                     std::string m_dBInstanceId;
                     bool m_dBInstanceIdHasBeenSet;
 
                     /**
-                     * 目标内核版本号，可以通过API DescribeDBVersions获取可以升级的目标内核版本号。
+                     * 目标内核版本号，可以通过API [DescribeDBVersions](https://cloud.tencent.com/document/product/409/89018)获取可以升级的目标内核版本号。
                      */
                     std::string m_targetDBKernelVersion;
                     bool m_targetDBKernelVersionHasBeenSet;

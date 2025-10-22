@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,6 @@ namespace TencentCloud
 <li>51200: 50TB流量，有效期一个月</li>
 <li>60: 60GB流量，有效期半年</li>
 <li>300: 300GB流量，有效期半年</li>
-<li>600: 600GB流量，有效期半年</li>
 <li>3072: 3TB流量，有效期半年</li>
 <li>6144: 6TB流量，有效期半年</li>
 <li>30720: 30TB流量，有效期半年</li>
@@ -67,7 +66,6 @@ namespace TencentCloud
 <li>51200: 50TB流量，有效期一个月</li>
 <li>60: 60GB流量，有效期半年</li>
 <li>300: 300GB流量，有效期半年</li>
-<li>600: 600GB流量，有效期半年</li>
 <li>3072: 3TB流量，有效期半年</li>
 <li>6144: 6TB流量，有效期半年</li>
 <li>30720: 30TB流量，有效期半年</li>
@@ -87,7 +85,6 @@ namespace TencentCloud
 <li>51200: 50TB流量，有效期一个月</li>
 <li>60: 60GB流量，有效期半年</li>
 <li>300: 300GB流量，有效期半年</li>
-<li>600: 600GB流量，有效期半年</li>
 <li>3072: 3TB流量，有效期半年</li>
 <li>6144: 6TB流量，有效期半年</li>
 <li>30720: 30TB流量，有效期半年</li>
@@ -102,7 +99,6 @@ namespace TencentCloud
 <li>51200: 50TB流量，有效期一个月</li>
 <li>60: 60GB流量，有效期半年</li>
 <li>300: 300GB流量，有效期半年</li>
-<li>600: 600GB流量，有效期半年</li>
 <li>3072: 3TB流量，有效期半年</li>
 <li>6144: 6TB流量，有效期半年</li>
 <li>30720: 30TB流量，有效期半年</li>
@@ -140,6 +136,35 @@ namespace TencentCloud
                      */
                     bool TrafficPackageCountHasBeenSet() const;
 
+                    /**
+                     * 获取抵扣类型，默认为 FULL_TIME，可选值: 
+<li>FULL_TIME: 全时流量包</li>
+<li>IDLE_TIME: 闲时流量包</li>
+                     * @return DeductType 抵扣类型，默认为 FULL_TIME，可选值: 
+<li>FULL_TIME: 全时流量包</li>
+<li>IDLE_TIME: 闲时流量包</li>
+                     * 
+                     */
+                    std::string GetDeductType() const;
+
+                    /**
+                     * 设置抵扣类型，默认为 FULL_TIME，可选值: 
+<li>FULL_TIME: 全时流量包</li>
+<li>IDLE_TIME: 闲时流量包</li>
+                     * @param _deductType 抵扣类型，默认为 FULL_TIME，可选值: 
+<li>FULL_TIME: 全时流量包</li>
+<li>IDLE_TIME: 闲时流量包</li>
+                     * 
+                     */
+                    void SetDeductType(const std::string& _deductType);
+
+                    /**
+                     * 判断参数 DeductType 是否已赋值
+                     * @return DeductType 是否已赋值
+                     * 
+                     */
+                    bool DeductTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -152,7 +177,6 @@ namespace TencentCloud
 <li>51200: 50TB流量，有效期一个月</li>
 <li>60: 60GB流量，有效期半年</li>
 <li>300: 300GB流量，有效期半年</li>
-<li>600: 600GB流量，有效期半年</li>
 <li>3072: 3TB流量，有效期半年</li>
 <li>6144: 6TB流量，有效期半年</li>
 <li>30720: 30TB流量，有效期半年</li>
@@ -167,6 +191,14 @@ namespace TencentCloud
                      */
                     uint64_t m_trafficPackageCount;
                     bool m_trafficPackageCountHasBeenSet;
+
+                    /**
+                     * 抵扣类型，默认为 FULL_TIME，可选值: 
+<li>FULL_TIME: 全时流量包</li>
+<li>IDLE_TIME: 闲时流量包</li>
+                     */
+                    std::string m_deductType;
+                    bool m_deductTypeHasBeenSet;
 
                 };
             }

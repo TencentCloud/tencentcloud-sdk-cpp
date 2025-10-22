@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -212,7 +212,7 @@ namespace TencentCloud
 该字段已经废弃，请使用具体项目输入中的 AspectRatio 字段。
                      * @return AspectRatio 画布宽高比。
 该字段已经废弃，请使用具体项目输入中的 AspectRatio 字段。
-                     * 
+                     * @deprecated
                      */
                     std::string GetAspectRatio() const;
 
@@ -221,14 +221,14 @@ namespace TencentCloud
 该字段已经废弃，请使用具体项目输入中的 AspectRatio 字段。
                      * @param _aspectRatio 画布宽高比。
 该字段已经废弃，请使用具体项目输入中的 AspectRatio 字段。
-                     * 
+                     * @deprecated
                      */
                     void SetAspectRatio(const std::string& _aspectRatio);
 
                     /**
                      * 判断参数 AspectRatio 是否已赋值
                      * @return AspectRatio 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AspectRatioHasBeenSet() const;
 

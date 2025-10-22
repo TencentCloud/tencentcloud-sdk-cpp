@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,31 +47,43 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取仪表盘通知方式。<br>
-<li/>Uin：腾讯云用户<br>
-<li/>Group：腾讯云用户组<br>
-<li/>Email：自定义Email<br>
-<li/>WeCom: 企业微信回调
-                     * @return ReceiverType 仪表盘通知方式。<br>
-<li/>Uin：腾讯云用户<br>
-<li/>Group：腾讯云用户组<br>
-<li/>Email：自定义Email<br>
-<li/>WeCom: 企业微信回调
+                     * 获取仪表盘通知方式。
+
+- Uin：腾讯云用户
+- Group：腾讯云用户组
+- WeCom：企业微信回调
+- Email：自定义邮件
+- DingTalk：钉钉
+- Lark：飞书
+                     * @return ReceiverType 仪表盘通知方式。
+
+- Uin：腾讯云用户
+- Group：腾讯云用户组
+- WeCom：企业微信回调
+- Email：自定义邮件
+- DingTalk：钉钉
+- Lark：飞书
                      * 
                      */
                     std::string GetReceiverType() const;
 
                     /**
-                     * 设置仪表盘通知方式。<br>
-<li/>Uin：腾讯云用户<br>
-<li/>Group：腾讯云用户组<br>
-<li/>Email：自定义Email<br>
-<li/>WeCom: 企业微信回调
-                     * @param _receiverType 仪表盘通知方式。<br>
-<li/>Uin：腾讯云用户<br>
-<li/>Group：腾讯云用户组<br>
-<li/>Email：自定义Email<br>
-<li/>WeCom: 企业微信回调
+                     * 设置仪表盘通知方式。
+
+- Uin：腾讯云用户
+- Group：腾讯云用户组
+- WeCom：企业微信回调
+- Email：自定义邮件
+- DingTalk：钉钉
+- Lark：飞书
+                     * @param _receiverType 仪表盘通知方式。
+
+- Uin：腾讯云用户
+- Group：腾讯云用户组
+- WeCom：企业微信回调
+- Email：自定义邮件
+- DingTalk：钉钉
+- Lark：飞书
                      * 
                      */
                     void SetReceiverType(const std::string& _receiverType);
@@ -85,18 +97,34 @@ namespace TencentCloud
 
                     /**
                      * 获取知方式对应的值。
-<br> <li/> 当ReceiverType不是 Wecom 时，Values必填。
+- 当ReceiverType为：`WeCom`、`DingTalk`、`Lark` 时，Values必须为空，且Url字段必填。
+- 当ReceiverType为：`Uin`、`Group`、`Email` 时，Values必填，且Url字段必须为空。
+- 当ReceiverType为：`Uin ` 时，Values为用户id，通过 [拉取子用户](https://cloud.tencent.com/document/product/598/34587) 获取子用户 UID 。
+- 当ReceiverType为：`Group` 时，Values为用户组id，通过 [查询用户组列表](https://cloud.tencent.com/document/product/598/34589) 获取用户组 ID 。
+- 当ReceiverType为：`Email` 时，Values为用户邮箱信息。
                      * @return Values 知方式对应的值。
-<br> <li/> 当ReceiverType不是 Wecom 时，Values必填。
+- 当ReceiverType为：`WeCom`、`DingTalk`、`Lark` 时，Values必须为空，且Url字段必填。
+- 当ReceiverType为：`Uin`、`Group`、`Email` 时，Values必填，且Url字段必须为空。
+- 当ReceiverType为：`Uin ` 时，Values为用户id，通过 [拉取子用户](https://cloud.tencent.com/document/product/598/34587) 获取子用户 UID 。
+- 当ReceiverType为：`Group` 时，Values为用户组id，通过 [查询用户组列表](https://cloud.tencent.com/document/product/598/34589) 获取用户组 ID 。
+- 当ReceiverType为：`Email` 时，Values为用户邮箱信息。
                      * 
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
                      * 设置知方式对应的值。
-<br> <li/> 当ReceiverType不是 Wecom 时，Values必填。
+- 当ReceiverType为：`WeCom`、`DingTalk`、`Lark` 时，Values必须为空，且Url字段必填。
+- 当ReceiverType为：`Uin`、`Group`、`Email` 时，Values必填，且Url字段必须为空。
+- 当ReceiverType为：`Uin ` 时，Values为用户id，通过 [拉取子用户](https://cloud.tencent.com/document/product/598/34587) 获取子用户 UID 。
+- 当ReceiverType为：`Group` 时，Values为用户组id，通过 [查询用户组列表](https://cloud.tencent.com/document/product/598/34589) 获取用户组 ID 。
+- 当ReceiverType为：`Email` 时，Values为用户邮箱信息。
                      * @param _values 知方式对应的值。
-<br> <li/> 当ReceiverType不是 Wecom 时，Values必填。
+- 当ReceiverType为：`WeCom`、`DingTalk`、`Lark` 时，Values必须为空，且Url字段必填。
+- 当ReceiverType为：`Uin`、`Group`、`Email` 时，Values必填，且Url字段必须为空。
+- 当ReceiverType为：`Uin ` 时，Values为用户id，通过 [拉取子用户](https://cloud.tencent.com/document/product/598/34587) 获取子用户 UID 。
+- 当ReceiverType为：`Group` 时，Values为用户组id，通过 [查询用户组列表](https://cloud.tencent.com/document/product/598/34589) 获取用户组 ID 。
+- 当ReceiverType为：`Email` 时，Values为用户邮箱信息。
                      * 
                      */
                     void SetValues(const std::vector<std::string>& _values);
@@ -110,12 +138,14 @@ namespace TencentCloud
 
                     /**
                      * 获取仪表盘通知渠道。
-<br><li/> 支持：["Email","Sms","WeChat","Phone"]。
-<br><li/> 当ReceiverType是 Email 或 Wecom 时，ReceiverChannels不能赋值。
+
+-  支持：["Email","Sms","WeChat","Phone"]。
+-  当ReceiverType为 `Email` 或 `WeCom` 时，ReceiverChannels无效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReceiverChannels 仪表盘通知渠道。
-<br><li/> 支持：["Email","Sms","WeChat","Phone"]。
-<br><li/> 当ReceiverType是 Email 或 Wecom 时，ReceiverChannels不能赋值。
+
+-  支持：["Email","Sms","WeChat","Phone"]。
+-  当ReceiverType为 `Email` 或 `WeCom` 时，ReceiverChannels无效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -123,12 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 设置仪表盘通知渠道。
-<br><li/> 支持：["Email","Sms","WeChat","Phone"]。
-<br><li/> 当ReceiverType是 Email 或 Wecom 时，ReceiverChannels不能赋值。
+
+-  支持：["Email","Sms","WeChat","Phone"]。
+-  当ReceiverType为 `Email` 或 `WeCom` 时，ReceiverChannels无效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _receiverChannels 仪表盘通知渠道。
-<br><li/> 支持：["Email","Sms","WeChat","Phone"]。
-<br><li/> 当ReceiverType是 Email 或 Wecom 时，ReceiverChannels不能赋值。
+
+-  支持：["Email","Sms","WeChat","Phone"]。
+-  当ReceiverType为 `Email` 或 `WeCom` 时，ReceiverChannels无效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -142,27 +174,35 @@ namespace TencentCloud
                     bool ReceiverChannelsHasBeenSet() const;
 
                     /**
-                     * 获取回调Url。
-<br><li/> 当ReceiverType是 Wecom 时，Url必填。
-<br><li/> 当ReceiverType不是 Wecom 时，Url不能填写。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Url 回调Url。
-<br><li/> 当ReceiverType是 Wecom 时，Url必填。
-<br><li/> 当ReceiverType不是 Wecom 时，Url不能填写。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取订阅方式	- 回调地址。
+- 当ReceiverType为：`WeCom`、`DingTalk`、`Lark` 时，Url字段必填为各渠道的回调地址。
+    - 为：`WeCom` 时，Url为 企业微信回调地址。
+    - 为：`DingTalk` 时，Url为 钉钉机器人Webhook地址。
+    - 为：`Lark` 时，Url为 飞书机器人Webhook地址。
+- 当ReceiverType为：`Uin`、`Group`、`Email` 时，Url字段必须为空。
+                     * @return Url 订阅方式	- 回调地址。
+- 当ReceiverType为：`WeCom`、`DingTalk`、`Lark` 时，Url字段必填为各渠道的回调地址。
+    - 为：`WeCom` 时，Url为 企业微信回调地址。
+    - 为：`DingTalk` 时，Url为 钉钉机器人Webhook地址。
+    - 为：`Lark` 时，Url为 飞书机器人Webhook地址。
+- 当ReceiverType为：`Uin`、`Group`、`Email` 时，Url字段必须为空。
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置回调Url。
-<br><li/> 当ReceiverType是 Wecom 时，Url必填。
-<br><li/> 当ReceiverType不是 Wecom 时，Url不能填写。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _url 回调Url。
-<br><li/> 当ReceiverType是 Wecom 时，Url必填。
-<br><li/> 当ReceiverType不是 Wecom 时，Url不能填写。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置订阅方式	- 回调地址。
+- 当ReceiverType为：`WeCom`、`DingTalk`、`Lark` 时，Url字段必填为各渠道的回调地址。
+    - 为：`WeCom` 时，Url为 企业微信回调地址。
+    - 为：`DingTalk` 时，Url为 钉钉机器人Webhook地址。
+    - 为：`Lark` 时，Url为 飞书机器人Webhook地址。
+- 当ReceiverType为：`Uin`、`Group`、`Email` 时，Url字段必须为空。
+                     * @param _url 订阅方式	- 回调地址。
+- 当ReceiverType为：`WeCom`、`DingTalk`、`Lark` 时，Url字段必填为各渠道的回调地址。
+    - 为：`WeCom` 时，Url为 企业微信回调地址。
+    - 为：`DingTalk` 时，Url为 钉钉机器人Webhook地址。
+    - 为：`Lark` 时，Url为 飞书机器人Webhook地址。
+- 当ReceiverType为：`Uin`、`Group`、`Email` 时，Url字段必须为空。
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -177,36 +217,46 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 仪表盘通知方式。<br>
-<li/>Uin：腾讯云用户<br>
-<li/>Group：腾讯云用户组<br>
-<li/>Email：自定义Email<br>
-<li/>WeCom: 企业微信回调
+                     * 仪表盘通知方式。
+
+- Uin：腾讯云用户
+- Group：腾讯云用户组
+- WeCom：企业微信回调
+- Email：自定义邮件
+- DingTalk：钉钉
+- Lark：飞书
                      */
                     std::string m_receiverType;
                     bool m_receiverTypeHasBeenSet;
 
                     /**
                      * 知方式对应的值。
-<br> <li/> 当ReceiverType不是 Wecom 时，Values必填。
+- 当ReceiverType为：`WeCom`、`DingTalk`、`Lark` 时，Values必须为空，且Url字段必填。
+- 当ReceiverType为：`Uin`、`Group`、`Email` 时，Values必填，且Url字段必须为空。
+- 当ReceiverType为：`Uin ` 时，Values为用户id，通过 [拉取子用户](https://cloud.tencent.com/document/product/598/34587) 获取子用户 UID 。
+- 当ReceiverType为：`Group` 时，Values为用户组id，通过 [查询用户组列表](https://cloud.tencent.com/document/product/598/34589) 获取用户组 ID 。
+- 当ReceiverType为：`Email` 时，Values为用户邮箱信息。
                      */
                     std::vector<std::string> m_values;
                     bool m_valuesHasBeenSet;
 
                     /**
                      * 仪表盘通知渠道。
-<br><li/> 支持：["Email","Sms","WeChat","Phone"]。
-<br><li/> 当ReceiverType是 Email 或 Wecom 时，ReceiverChannels不能赋值。
+
+-  支持：["Email","Sms","WeChat","Phone"]。
+-  当ReceiverType为 `Email` 或 `WeCom` 时，ReceiverChannels无效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_receiverChannels;
                     bool m_receiverChannelsHasBeenSet;
 
                     /**
-                     * 回调Url。
-<br><li/> 当ReceiverType是 Wecom 时，Url必填。
-<br><li/> 当ReceiverType不是 Wecom 时，Url不能填写。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 订阅方式	- 回调地址。
+- 当ReceiverType为：`WeCom`、`DingTalk`、`Lark` 时，Url字段必填为各渠道的回调地址。
+    - 为：`WeCom` 时，Url为 企业微信回调地址。
+    - 为：`DingTalk` 时，Url为 钉钉机器人Webhook地址。
+    - 为：`Lark` 时，Url为 飞书机器人Webhook地址。
+- 当ReceiverType为：`Uin`、`Group`、`Email` 时，Url字段必须为空。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;

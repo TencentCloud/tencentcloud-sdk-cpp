@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,10 @@ DspaDiscoveryTaskDbResult::DspaDiscoveryTaskDbResult() :
     m_errorInfoHasBeenSet(false),
     m_resourceRegionHasBeenSet(false),
     m_sensitiveFieldHasBeenSet(false),
-    m_totalFieldHasBeenSet(false)
+    m_totalFieldHasBeenSet(false),
+    m_taskInstanceIdHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_scanRangeHasBeenSet(false)
 {
 }
 
@@ -194,6 +197,36 @@ CoreInternalOutcome DspaDiscoveryTaskDbResult::Deserialize(const rapidjson::Valu
         m_totalFieldHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskInstanceId") && !value["TaskInstanceId"].IsNull())
+    {
+        if (!value["TaskInstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspaDiscoveryTaskDbResult.TaskInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskInstanceId = string(value["TaskInstanceId"].GetString());
+        m_taskInstanceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("StartTime") && !value["StartTime"].IsNull())
+    {
+        if (!value["StartTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspaDiscoveryTaskDbResult.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_startTime = string(value["StartTime"].GetString());
+        m_startTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ScanRange") && !value["ScanRange"].IsNull())
+    {
+        if (!value["ScanRange"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspaDiscoveryTaskDbResult.ScanRange` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scanRange = string(value["ScanRange"].GetString());
+        m_scanRangeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +352,30 @@ void DspaDiscoveryTaskDbResult::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "TotalField";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalField, allocator);
+    }
+
+    if (m_taskInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scanRangeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScanRange";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scanRange.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -562,5 +619,53 @@ void DspaDiscoveryTaskDbResult::SetTotalField(const int64_t& _totalField)
 bool DspaDiscoveryTaskDbResult::TotalFieldHasBeenSet() const
 {
     return m_totalFieldHasBeenSet;
+}
+
+string DspaDiscoveryTaskDbResult::GetTaskInstanceId() const
+{
+    return m_taskInstanceId;
+}
+
+void DspaDiscoveryTaskDbResult::SetTaskInstanceId(const string& _taskInstanceId)
+{
+    m_taskInstanceId = _taskInstanceId;
+    m_taskInstanceIdHasBeenSet = true;
+}
+
+bool DspaDiscoveryTaskDbResult::TaskInstanceIdHasBeenSet() const
+{
+    return m_taskInstanceIdHasBeenSet;
+}
+
+string DspaDiscoveryTaskDbResult::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void DspaDiscoveryTaskDbResult::SetStartTime(const string& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool DspaDiscoveryTaskDbResult::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
+}
+
+string DspaDiscoveryTaskDbResult::GetScanRange() const
+{
+    return m_scanRange;
+}
+
+void DspaDiscoveryTaskDbResult::SetScanRange(const string& _scanRange)
+{
+    m_scanRange = _scanRange;
+    m_scanRangeHasBeenSet = true;
+}
+
+bool DspaDiscoveryTaskDbResult::ScanRangeHasBeenSet() const
+{
+    return m_scanRangeHasBeenSet;
 }
 

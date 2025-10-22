@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,27 +106,6 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取主题名称
-                     * @return Topic 主题名称
-                     * 
-                     */
-                    std::string GetTopic() const;
-
-                    /**
-                     * 设置主题名称
-                     * @param _topic 主题名称
-                     * 
-                     */
-                    void SetTopic(const std::string& _topic);
-
-                    /**
-                     * 判断参数 Topic 是否已赋值
-                     * @return Topic 是否已赋值
-                     * 
-                     */
-                    bool TopicHasBeenSet() const;
-
-                    /**
                      * 获取重置方式，0表示从最新位点开始，1表示从指定时间点开始
                      * @return Type 重置方式，0表示从最新位点开始，1表示从指定时间点开始
                      * 
@@ -146,6 +125,27 @@ namespace TencentCloud
                      * 
                      */
                     bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取主题名称
+                     * @return Topic 主题名称
+                     * 
+                     */
+                    std::string GetTopic() const;
+
+                    /**
+                     * 设置主题名称
+                     * @param _topic 主题名称
+                     * 
+                     */
+                    void SetTopic(const std::string& _topic);
+
+                    /**
+                     * 判断参数 Topic 是否已赋值
+                     * @return Topic 是否已赋值
+                     * 
+                     */
+                    bool TopicHasBeenSet() const;
 
                     /**
                      * 获取重置指定的时间戳，仅在 Type 为1是生效，以毫秒为单位
@@ -168,6 +168,27 @@ namespace TencentCloud
                      */
                     bool ResetTimestampHasBeenSet() const;
 
+                    /**
+                     * 获取重置的是否是retry topic
+                     * @return RetryFlag 重置的是否是retry topic
+                     * 
+                     */
+                    bool GetRetryFlag() const;
+
+                    /**
+                     * 设置重置的是否是retry topic
+                     * @param _retryFlag 重置的是否是retry topic
+                     * 
+                     */
+                    void SetRetryFlag(const bool& _retryFlag);
+
+                    /**
+                     * 判断参数 RetryFlag 是否已赋值
+                     * @return RetryFlag 是否已赋值
+                     * 
+                     */
+                    bool RetryFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -189,22 +210,28 @@ namespace TencentCloud
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 主题名称
-                     */
-                    std::string m_topic;
-                    bool m_topicHasBeenSet;
-
-                    /**
                      * 重置方式，0表示从最新位点开始，1表示从指定时间点开始
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
+                     * 主题名称
+                     */
+                    std::string m_topic;
+                    bool m_topicHasBeenSet;
+
+                    /**
                      * 重置指定的时间戳，仅在 Type 为1是生效，以毫秒为单位
                      */
                     uint64_t m_resetTimestamp;
                     bool m_resetTimestampHasBeenSet;
+
+                    /**
+                     * 重置的是否是retry topic
+                     */
+                    bool m_retryFlag;
+                    bool m_retryFlagHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备接入总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceTotal 设备接入总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDeviceTotal() const;
 
                     /**
                      * 设置设备接入总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceTotal 设备接入总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceTotal(const int64_t& _deviceTotal);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备在线数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceOnline 设备在线数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDeviceOnline() const;
 
                     /**
                      * 设置设备在线数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceOnline 设备在线数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceOnline(const int64_t& _deviceOnline);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备离线数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceOffline 设备离线数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDeviceOffline() const;
 
                     /**
                      * 设置设备离线数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceOffline 设备离线数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceOffline(const int64_t& _deviceOffline);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取视频通道总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelTotal 视频通道总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetChannelTotal() const;
 
                     /**
                      * 设置视频通道总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _channelTotal 视频通道总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChannelTotal(const int64_t& _channelTotal);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取视频通道在线数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelOnline 视频通道在线数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetChannelOnline() const;
 
                     /**
                      * 设置视频通道在线数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _channelOnline 视频通道在线数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChannelOnline(const int64_t& _channelOnline);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取视频通道离线数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelOffline 视频通道离线数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetChannelOffline() const;
 
                     /**
                      * 设置视频通道离线数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _channelOffline 视频通道离线数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChannelOffline(const int64_t& _channelOffline);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网关上行流量,单位kbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpFlow 网关上行流量,单位kbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUpFlow() const;
 
                     /**
                      * 设置网关上行流量,单位kbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _upFlow 网关上行流量,单位kbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpFlow(const int64_t& _upFlow);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流在传输中的通道数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelPull 流在传输中的通道数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetChannelPull() const;
 
                     /**
                      * 设置流在传输中的通道数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _channelPull 流在传输中的通道数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChannelPull(const int64_t& _channelPull);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流未传输中的通道数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelUnPull 流未传输中的通道数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetChannelUnPull() const;
 
                     /**
                      * 设置流未传输中的通道数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _channelUnPull 流未传输中的通道数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChannelUnPull(const int64_t& _channelUnPull);
@@ -275,63 +239,54 @@ namespace TencentCloud
 
                     /**
                      * 设备接入总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_deviceTotal;
                     bool m_deviceTotalHasBeenSet;
 
                     /**
                      * 设备在线数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_deviceOnline;
                     bool m_deviceOnlineHasBeenSet;
 
                     /**
                      * 设备离线数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_deviceOffline;
                     bool m_deviceOfflineHasBeenSet;
 
                     /**
                      * 视频通道总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_channelTotal;
                     bool m_channelTotalHasBeenSet;
 
                     /**
                      * 视频通道在线数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_channelOnline;
                     bool m_channelOnlineHasBeenSet;
 
                     /**
                      * 视频通道离线数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_channelOffline;
                     bool m_channelOfflineHasBeenSet;
 
                     /**
                      * 网关上行流量,单位kbps
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_upFlow;
                     bool m_upFlowHasBeenSet;
 
                     /**
                      * 流在传输中的通道数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_channelPull;
                     bool m_channelPullHasBeenSet;
 
                     /**
                      * 流未传输中的通道数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_channelUnPull;
                     bool m_channelUnPullHasBeenSet;

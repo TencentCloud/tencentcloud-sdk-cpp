@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取课堂iD
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoomId 课堂iD
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRoomId() const;
 
                     /**
                      * 设置课堂iD
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _roomId 课堂iD
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRoomId(const uint64_t& _roomId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserId 用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userId 用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取评分时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 评分时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
                      * 设置评分时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 评分时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取课堂评分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Score 课堂评分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetScore() const;
 
                     /**
                      * 设置课堂评分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _score 课堂评分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScore(const uint64_t& _score);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取课堂评价
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScoreMsg 课堂评价
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScoreMsg() const;
 
                     /**
                      * 设置课堂评价
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scoreMsg 课堂评价
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScoreMsg(const std::string& _scoreMsg);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 课堂iD
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_roomId;
                     bool m_roomIdHasBeenSet;
 
                     /**
                      * 用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
                      * 评分时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 课堂评分
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_score;
                     bool m_scoreHasBeenSet;
 
                     /**
                      * 课堂评价
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scoreMsg;
                     bool m_scoreMsgHasBeenSet;

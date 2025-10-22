@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ ModifyFlowLogAttributeRequest::ModifyFlowLogAttributeRequest() :
     m_flowLogIdHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_flowLogNameHasBeenSet(false),
-    m_flowLogDescriptionHasBeenSet(false)
+    m_flowLogDescriptionHasBeenSet(false),
+    m_periodHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string ModifyFlowLogAttributeRequest::ToJsonString() const
         string key = "FlowLogDescription";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_flowLogDescription.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_periodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Period";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_period, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void ModifyFlowLogAttributeRequest::SetFlowLogDescription(const string& _flowLog
 bool ModifyFlowLogAttributeRequest::FlowLogDescriptionHasBeenSet() const
 {
     return m_flowLogDescriptionHasBeenSet;
+}
+
+uint64_t ModifyFlowLogAttributeRequest::GetPeriod() const
+{
+    return m_period;
+}
+
+void ModifyFlowLogAttributeRequest::SetPeriod(const uint64_t& _period)
+{
+    m_period = _period;
+    m_periodHasBeenSet = true;
+}
+
+bool ModifyFlowLogAttributeRequest::PeriodHasBeenSet() const
+{
+    return m_periodHasBeenSet;
 }
 
 

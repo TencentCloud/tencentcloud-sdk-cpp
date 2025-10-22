@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该字段用于返回音频文件识别出的对应文本内容，最大支持**前1000个字符**。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 该字段用于返回音频文件识别出的对应文本内容，最大支持**前1000个字符**。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置该字段用于返回音频文件识别出的对应文本内容，最大支持**前1000个字符**。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _text 该字段用于返回音频文件识别出的对应文本内容，最大支持**前1000个字符**。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetText(const std::string& _text);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该字段用于返回被查询任务创建的时间，格式采用 ISO 8601标准。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedAt 该字段用于返回被查询任务创建的时间，格式采用 ISO 8601标准。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
                      * 设置该字段用于返回被查询任务创建的时间，格式采用 ISO 8601标准。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdAt 该字段用于返回被查询任务创建的时间，格式采用 ISO 8601标准。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedAt(const std::string& _createdAt);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 该字段用于返回音频文件识别出的对应文本内容，最大支持**前1000个字符**。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;
 
                     /**
                      * 该字段用于返回被查询任务创建的时间，格式采用 ISO 8601标准。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdAt;
                     bool m_createdAtHasBeenSet;

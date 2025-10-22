@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例升级类型。
-                     * @return UpgradeType 实例升级类型。
+                     * 获取实例升级类型。Trsf - 迁移升级，InPlace - 原地升级，Topology - 架构升级。
+                     * @return UpgradeType 实例升级类型。Trsf - 迁移升级，InPlace - 原地升级，Topology - 架构升级。
                      * 
                      */
                     std::string GetUpgradeType() const;
@@ -80,7 +80,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例升级类型。
+                     * 实例升级类型。Trsf - 迁移升级，InPlace - 原地升级，Topology - 架构升级。
                      */
                     std::string m_upgradeType;
                     bool m_upgradeTypeHasBeenSet;

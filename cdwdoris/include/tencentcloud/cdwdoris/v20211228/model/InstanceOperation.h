@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -277,6 +277,27 @@ namespace TencentCloud
                      */
                     bool OperationDetailHasBeenSet() const;
 
+                    /**
+                     * 获取计算组id
+                     * @return ComputerGroupId 计算组id
+                     * 
+                     */
+                    std::string GetComputerGroupId() const;
+
+                    /**
+                     * 设置计算组id
+                     * @param _computerGroupId 计算组id
+                     * 
+                     */
+                    void SetComputerGroupId(const std::string& _computerGroupId);
+
+                    /**
+                     * 判断参数 ComputerGroupId 是否已赋值
+                     * @return ComputerGroupId 是否已赋值
+                     * 
+                     */
+                    bool ComputerGroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -344,6 +365,12 @@ namespace TencentCloud
                      */
                     std::string m_operationDetail;
                     bool m_operationDetailHasBeenSet;
+
+                    /**
+                     * 计算组id
+                     */
+                    std::string m_computerGroupId;
+                    bool m_computerGroupIdHasBeenSet;
 
                 };
             }

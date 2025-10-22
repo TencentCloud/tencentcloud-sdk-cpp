@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -83,6 +83,92 @@ TrtcClient::ControlAIConversationOutcomeCallable TrtcClient::ControlAIConversati
     return task->get_future();
 }
 
+TrtcClient::CreateBasicModerationOutcome TrtcClient::CreateBasicModeration(const CreateBasicModerationRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBasicModeration");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBasicModerationResponse rsp = CreateBasicModerationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBasicModerationOutcome(rsp);
+        else
+            return CreateBasicModerationOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBasicModerationOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::CreateBasicModerationAsync(const CreateBasicModerationRequest& request, const CreateBasicModerationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBasicModeration(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::CreateBasicModerationOutcomeCallable TrtcClient::CreateBasicModerationCallable(const CreateBasicModerationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBasicModerationOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBasicModeration(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrtcClient::CreateCloudModerationOutcome TrtcClient::CreateCloudModeration(const CreateCloudModerationRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCloudModeration");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCloudModerationResponse rsp = CreateCloudModerationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCloudModerationOutcome(rsp);
+        else
+            return CreateCloudModerationOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCloudModerationOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::CreateCloudModerationAsync(const CreateCloudModerationRequest& request, const CreateCloudModerationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCloudModeration(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::CreateCloudModerationOutcomeCallable TrtcClient::CreateCloudModerationCallable(const CreateCloudModerationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCloudModerationOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCloudModeration(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrtcClient::CreateCloudRecordingOutcome TrtcClient::CreateCloudRecording(const CreateCloudRecordingRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCloudRecording");
@@ -119,6 +205,49 @@ TrtcClient::CreateCloudRecordingOutcomeCallable TrtcClient::CreateCloudRecording
         [this, request]()
         {
             return this->CreateCloudRecording(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrtcClient::CreateCloudSliceTaskOutcome TrtcClient::CreateCloudSliceTask(const CreateCloudSliceTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCloudSliceTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCloudSliceTaskResponse rsp = CreateCloudSliceTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCloudSliceTaskOutcome(rsp);
+        else
+            return CreateCloudSliceTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCloudSliceTaskOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::CreateCloudSliceTaskAsync(const CreateCloudSliceTaskRequest& request, const CreateCloudSliceTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCloudSliceTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::CreateCloudSliceTaskOutcomeCallable TrtcClient::CreateCloudSliceTaskCallable(const CreateCloudSliceTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCloudSliceTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCloudSliceTask(request);
         }
     );
 
@@ -169,6 +298,92 @@ TrtcClient::CreatePictureOutcomeCallable TrtcClient::CreatePictureCallable(const
     return task->get_future();
 }
 
+TrtcClient::DeleteBasicModerationOutcome TrtcClient::DeleteBasicModeration(const DeleteBasicModerationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteBasicModeration");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteBasicModerationResponse rsp = DeleteBasicModerationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteBasicModerationOutcome(rsp);
+        else
+            return DeleteBasicModerationOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteBasicModerationOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DeleteBasicModerationAsync(const DeleteBasicModerationRequest& request, const DeleteBasicModerationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteBasicModeration(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::DeleteBasicModerationOutcomeCallable TrtcClient::DeleteBasicModerationCallable(const DeleteBasicModerationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteBasicModerationOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteBasicModeration(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrtcClient::DeleteCloudModerationOutcome TrtcClient::DeleteCloudModeration(const DeleteCloudModerationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCloudModeration");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCloudModerationResponse rsp = DeleteCloudModerationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCloudModerationOutcome(rsp);
+        else
+            return DeleteCloudModerationOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCloudModerationOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DeleteCloudModerationAsync(const DeleteCloudModerationRequest& request, const DeleteCloudModerationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCloudModeration(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::DeleteCloudModerationOutcomeCallable TrtcClient::DeleteCloudModerationCallable(const DeleteCloudModerationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCloudModerationOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCloudModeration(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrtcClient::DeleteCloudRecordingOutcome TrtcClient::DeleteCloudRecording(const DeleteCloudRecordingRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCloudRecording");
@@ -212,6 +427,49 @@ TrtcClient::DeleteCloudRecordingOutcomeCallable TrtcClient::DeleteCloudRecording
     return task->get_future();
 }
 
+TrtcClient::DeleteCloudSliceTaskOutcome TrtcClient::DeleteCloudSliceTask(const DeleteCloudSliceTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCloudSliceTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCloudSliceTaskResponse rsp = DeleteCloudSliceTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCloudSliceTaskOutcome(rsp);
+        else
+            return DeleteCloudSliceTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCloudSliceTaskOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DeleteCloudSliceTaskAsync(const DeleteCloudSliceTaskRequest& request, const DeleteCloudSliceTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCloudSliceTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::DeleteCloudSliceTaskOutcomeCallable TrtcClient::DeleteCloudSliceTaskCallable(const DeleteCloudSliceTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCloudSliceTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCloudSliceTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrtcClient::DeletePictureOutcome TrtcClient::DeletePicture(const DeletePictureRequest &request)
 {
     auto outcome = MakeRequest(request, "DeletePicture");
@@ -248,6 +506,49 @@ TrtcClient::DeletePictureOutcomeCallable TrtcClient::DeletePictureCallable(const
         [this, request]()
         {
             return this->DeletePicture(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrtcClient::DeleteVoicePrintOutcome TrtcClient::DeleteVoicePrint(const DeleteVoicePrintRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteVoicePrint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteVoicePrintResponse rsp = DeleteVoicePrintResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteVoicePrintOutcome(rsp);
+        else
+            return DeleteVoicePrintOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteVoicePrintOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DeleteVoicePrintAsync(const DeleteVoicePrintRequest& request, const DeleteVoicePrintAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteVoicePrint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::DeleteVoicePrintOutcomeCallable TrtcClient::DeleteVoicePrintCallable(const DeleteVoicePrintRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteVoicePrintOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteVoicePrint(request);
         }
     );
 
@@ -384,6 +685,49 @@ TrtcClient::DescribeCallDetailInfoOutcomeCallable TrtcClient::DescribeCallDetail
     return task->get_future();
 }
 
+TrtcClient::DescribeCloudModerationOutcome TrtcClient::DescribeCloudModeration(const DescribeCloudModerationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudModeration");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudModerationResponse rsp = DescribeCloudModerationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudModerationOutcome(rsp);
+        else
+            return DescribeCloudModerationOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudModerationOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeCloudModerationAsync(const DescribeCloudModerationRequest& request, const DescribeCloudModerationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudModeration(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::DescribeCloudModerationOutcomeCallable TrtcClient::DescribeCloudModerationCallable(const DescribeCloudModerationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudModerationOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudModeration(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrtcClient::DescribeCloudRecordingOutcome TrtcClient::DescribeCloudRecording(const DescribeCloudRecordingRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCloudRecording");
@@ -420,6 +764,49 @@ TrtcClient::DescribeCloudRecordingOutcomeCallable TrtcClient::DescribeCloudRecor
         [this, request]()
         {
             return this->DescribeCloudRecording(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrtcClient::DescribeCloudSliceTaskOutcome TrtcClient::DescribeCloudSliceTask(const DescribeCloudSliceTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudSliceTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudSliceTaskResponse rsp = DescribeCloudSliceTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudSliceTaskOutcome(rsp);
+        else
+            return DescribeCloudSliceTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudSliceTaskOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeCloudSliceTaskAsync(const DescribeCloudSliceTaskRequest& request, const DescribeCloudSliceTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudSliceTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::DescribeCloudSliceTaskOutcomeCallable TrtcClient::DescribeCloudSliceTaskCallable(const DescribeCloudSliceTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudSliceTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudSliceTask(request);
         }
     );
 
@@ -1373,6 +1760,49 @@ TrtcClient::DescribeUserInfoOutcomeCallable TrtcClient::DescribeUserInfoCallable
     return task->get_future();
 }
 
+TrtcClient::DescribeVoicePrintOutcome TrtcClient::DescribeVoicePrint(const DescribeVoicePrintRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVoicePrint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVoicePrintResponse rsp = DescribeVoicePrintResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVoicePrintOutcome(rsp);
+        else
+            return DescribeVoicePrintOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVoicePrintOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeVoicePrintAsync(const DescribeVoicePrintRequest& request, const DescribeVoicePrintAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVoicePrint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::DescribeVoicePrintOutcomeCallable TrtcClient::DescribeVoicePrintCallable(const DescribeVoicePrintRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVoicePrintOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVoicePrint(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrtcClient::DescribeWebRecordOutcome TrtcClient::DescribeWebRecord(const DescribeWebRecordRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeWebRecord");
@@ -1502,6 +1932,49 @@ TrtcClient::DismissRoomByStrRoomIdOutcomeCallable TrtcClient::DismissRoomByStrRo
     return task->get_future();
 }
 
+TrtcClient::ModifyCloudModerationOutcome TrtcClient::ModifyCloudModeration(const ModifyCloudModerationRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCloudModeration");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCloudModerationResponse rsp = ModifyCloudModerationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCloudModerationOutcome(rsp);
+        else
+            return ModifyCloudModerationOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCloudModerationOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::ModifyCloudModerationAsync(const ModifyCloudModerationRequest& request, const ModifyCloudModerationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCloudModeration(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::ModifyCloudModerationOutcomeCallable TrtcClient::ModifyCloudModerationCallable(const ModifyCloudModerationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCloudModerationOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCloudModeration(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrtcClient::ModifyCloudRecordingOutcome TrtcClient::ModifyCloudRecording(const ModifyCloudRecordingRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyCloudRecording");
@@ -1545,6 +2018,49 @@ TrtcClient::ModifyCloudRecordingOutcomeCallable TrtcClient::ModifyCloudRecording
     return task->get_future();
 }
 
+TrtcClient::ModifyCloudSliceTaskOutcome TrtcClient::ModifyCloudSliceTask(const ModifyCloudSliceTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCloudSliceTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCloudSliceTaskResponse rsp = ModifyCloudSliceTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCloudSliceTaskOutcome(rsp);
+        else
+            return ModifyCloudSliceTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCloudSliceTaskOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::ModifyCloudSliceTaskAsync(const ModifyCloudSliceTaskRequest& request, const ModifyCloudSliceTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCloudSliceTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::ModifyCloudSliceTaskOutcomeCallable TrtcClient::ModifyCloudSliceTaskCallable(const ModifyCloudSliceTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCloudSliceTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCloudSliceTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrtcClient::ModifyPictureOutcome TrtcClient::ModifyPicture(const ModifyPictureRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyPicture");
@@ -1581,6 +2097,49 @@ TrtcClient::ModifyPictureOutcomeCallable TrtcClient::ModifyPictureCallable(const
         [this, request]()
         {
             return this->ModifyPicture(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrtcClient::RegisterVoicePrintOutcome TrtcClient::RegisterVoicePrint(const RegisterVoicePrintRequest &request)
+{
+    auto outcome = MakeRequest(request, "RegisterVoicePrint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RegisterVoicePrintResponse rsp = RegisterVoicePrintResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RegisterVoicePrintOutcome(rsp);
+        else
+            return RegisterVoicePrintOutcome(o.GetError());
+    }
+    else
+    {
+        return RegisterVoicePrintOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::RegisterVoicePrintAsync(const RegisterVoicePrintRequest& request, const RegisterVoicePrintAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RegisterVoicePrint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::RegisterVoicePrintOutcomeCallable TrtcClient::RegisterVoicePrintCallable(const RegisterVoicePrintRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RegisterVoicePrintOutcome()>>(
+        [this, request]()
+        {
+            return this->RegisterVoicePrint(request);
         }
     );
 
@@ -2276,6 +2835,92 @@ TrtcClient::StopWebRecordOutcomeCallable TrtcClient::StopWebRecordCallable(const
     return task->get_future();
 }
 
+TrtcClient::TextToSpeechOutcome TrtcClient::TextToSpeech(const TextToSpeechRequest &request)
+{
+    auto outcome = MakeRequest(request, "TextToSpeech");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TextToSpeechResponse rsp = TextToSpeechResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TextToSpeechOutcome(rsp);
+        else
+            return TextToSpeechOutcome(o.GetError());
+    }
+    else
+    {
+        return TextToSpeechOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::TextToSpeechAsync(const TextToSpeechRequest& request, const TextToSpeechAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TextToSpeech(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::TextToSpeechOutcomeCallable TrtcClient::TextToSpeechCallable(const TextToSpeechRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TextToSpeechOutcome()>>(
+        [this, request]()
+        {
+            return this->TextToSpeech(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrtcClient::TextToSpeechSSEOutcome TrtcClient::TextToSpeechSSE(const TextToSpeechSSERequest &request)
+{
+    auto outcome = MakeRequest(request, "TextToSpeechSSE");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TextToSpeechSSEResponse rsp = TextToSpeechSSEResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TextToSpeechSSEOutcome(rsp);
+        else
+            return TextToSpeechSSEOutcome(o.GetError());
+    }
+    else
+    {
+        return TextToSpeechSSEOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::TextToSpeechSSEAsync(const TextToSpeechSSERequest& request, const TextToSpeechSSEAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TextToSpeechSSE(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::TextToSpeechSSEOutcomeCallable TrtcClient::TextToSpeechSSECallable(const TextToSpeechSSERequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TextToSpeechSSEOutcome()>>(
+        [this, request]()
+        {
+            return this->TextToSpeechSSE(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrtcClient::UpdateAIConversationOutcome TrtcClient::UpdateAIConversation(const UpdateAIConversationRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateAIConversation");
@@ -2398,6 +3043,92 @@ TrtcClient::UpdateStreamIngestOutcomeCallable TrtcClient::UpdateStreamIngestCall
         [this, request]()
         {
             return this->UpdateStreamIngest(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrtcClient::UpdateVoicePrintOutcome TrtcClient::UpdateVoicePrint(const UpdateVoicePrintRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateVoicePrint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateVoicePrintResponse rsp = UpdateVoicePrintResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateVoicePrintOutcome(rsp);
+        else
+            return UpdateVoicePrintOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateVoicePrintOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::UpdateVoicePrintAsync(const UpdateVoicePrintRequest& request, const UpdateVoicePrintAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateVoicePrint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::UpdateVoicePrintOutcomeCallable TrtcClient::UpdateVoicePrintCallable(const UpdateVoicePrintRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateVoicePrintOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateVoicePrint(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrtcClient::VoiceCloneOutcome TrtcClient::VoiceClone(const VoiceCloneRequest &request)
+{
+    auto outcome = MakeRequest(request, "VoiceClone");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        VoiceCloneResponse rsp = VoiceCloneResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return VoiceCloneOutcome(rsp);
+        else
+            return VoiceCloneOutcome(o.GetError());
+    }
+    else
+    {
+        return VoiceCloneOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::VoiceCloneAsync(const VoiceCloneRequest& request, const VoiceCloneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->VoiceClone(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::VoiceCloneOutcomeCallable TrtcClient::VoiceCloneCallable(const VoiceCloneRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<VoiceCloneOutcome()>>(
+        [this, request]()
+        {
+            return this->VoiceClone(request);
         }
     );
 

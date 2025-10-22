@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取E证通流程的唯一标识，调用GetEidToken接口时生成。
-                     * @return EidToken E证通流程的唯一标识，调用GetEidToken接口时生成。
+                     * 获取E证通流程的唯一标识，调用[GetEidToken](https://cloud.tencent.com/document/product/1007/54089)接口时生成。
+                     * @return EidToken E证通流程的唯一标识，调用[GetEidToken](https://cloud.tencent.com/document/product/1007/54089)接口时生成。
                      * 
                      */
                     std::string GetEidToken() const;
 
                     /**
-                     * 设置E证通流程的唯一标识，调用GetEidToken接口时生成。
-                     * @param _eidToken E证通流程的唯一标识，调用GetEidToken接口时生成。
+                     * 设置E证通流程的唯一标识，调用[GetEidToken](https://cloud.tencent.com/document/product/1007/54089)接口时生成。
+                     * @param _eidToken E证通流程的唯一标识，调用[GetEidToken](https://cloud.tencent.com/document/product/1007/54089)接口时生成。
                      * 
                      */
                     void SetEidToken(const std::string& _eidToken);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * E证通流程的唯一标识，调用GetEidToken接口时生成。
+                     * E证通流程的唯一标识，调用[GetEidToken](https://cloud.tencent.com/document/product/1007/54089)接口时生成。
                      */
                     std::string m_eidToken;
                     bool m_eidTokenHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrategyId 规则ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStrategyId() const;
 
                     /**
                      * 设置规则ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _strategyId 规则ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStrategyId(const int64_t& _strategyId);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrategyName 规则名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStrategyName() const;
 
                     /**
                      * 设置规则名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _strategyName 规则名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStrategyName(const std::string& _strategyName);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则生效冷却时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CalmDownTime 规则生效冷却时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCalmDownTime() const;
 
                     /**
                      * 设置规则生效冷却时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _calmDownTime 规则生效冷却时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCalmDownTime(const int64_t& _calmDownTime);
@@ -125,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扩缩容动作，1表示扩容，2表示缩容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScaleAction 扩缩容动作，1表示扩容，2表示缩容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScaleAction() const;
 
                     /**
                      * 设置扩缩容动作，1表示扩容，2表示缩容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scaleAction 扩缩容动作，1表示扩容，2表示缩容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScaleAction(const int64_t& _scaleAction);
@@ -150,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取每次规则生效时的扩缩容数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScaleNum 每次规则生效时的扩缩容数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScaleNum() const;
 
                     /**
                      * 设置每次规则生效时的扩缩容数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scaleNum 每次规则生效时的扩缩容数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScaleNum(const int64_t& _scaleNum);
@@ -175,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取指标处理方法，1表示MAX，2表示MIN，3表示AVG。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProcessMethod 指标处理方法，1表示MAX，2表示MIN，3表示AVG。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetProcessMethod() const;
 
                     /**
                      * 设置指标处理方法，1表示MAX，2表示MIN，3表示AVG。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _processMethod 指标处理方法，1表示MAX，2表示MIN，3表示AVG。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProcessMethod(const int64_t& _processMethod);
@@ -200,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则优先级，添加时无效，默认为自增。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Priority 规则优先级，添加时无效，默认为自增。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPriority() const;
 
                     /**
                      * 设置规则优先级，添加时无效，默认为自增。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _priority 规则优先级，添加时无效，默认为自增。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPriority(const int64_t& _priority);
@@ -225,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则状态，1表示启动，3表示禁用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrategyStatus 规则状态，1表示启动，3表示禁用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStrategyStatus() const;
 
                     /**
                      * 设置规则状态，1表示启动，3表示禁用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _strategyStatus 规则状态，1表示启动，3表示禁用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStrategyStatus(const int64_t& _strategyStatus);
@@ -250,18 +218,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则扩容指定 yarn node label
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return YarnNodeLabel 规则扩容指定 yarn node label
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetYarnNodeLabel() const;
 
                     /**
                      * 设置规则扩容指定 yarn node label
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _yarnNodeLabel 规则扩容指定 yarn node label
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetYarnNodeLabel(const std::string& _yarnNodeLabel);
@@ -337,6 +301,27 @@ namespace TencentCloud
                     bool GraceDownTimeHasBeenSet() const;
 
                     /**
+                     * 获取是否开启任务保护
+                     * @return GraceDownProtectFlag 是否开启任务保护
+                     * 
+                     */
+                    bool GetGraceDownProtectFlag() const;
+
+                    /**
+                     * 设置是否开启任务保护
+                     * @param _graceDownProtectFlag 是否开启任务保护
+                     * 
+                     */
+                    void SetGraceDownProtectFlag(const bool& _graceDownProtectFlag);
+
+                    /**
+                     * 判断参数 GraceDownProtectFlag 是否已赋值
+                     * @return GraceDownProtectFlag 是否已赋值
+                     * 
+                     */
+                    bool GraceDownProtectFlagHasBeenSet() const;
+
+                    /**
                      * 获取绑定标签列表
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 绑定标签列表
@@ -363,18 +348,14 @@ namespace TencentCloud
 
                     /**
                      * 获取预设配置组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigGroupAssigned 预设配置组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConfigGroupAssigned() const;
 
                     /**
                      * 设置预设配置组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configGroupAssigned 预设配置组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigGroupAssigned(const std::string& _configGroupAssigned);
@@ -392,13 +373,11 @@ namespace TencentCloud
 "INSTANCE"表示按照节点计算，默认方式。
 "CPU"表示按照机器的核数计算。
 "MEMORYGB"表示按照机器内存数计算。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MeasureMethod 扩容资源计算方法，"DEFAULT","INSTANCE", "CPU", "MEMORYGB"。
 "DEFAULT"表示默认方式，与"INSTANCE"意义相同。
 "INSTANCE"表示按照节点计算，默认方式。
 "CPU"表示按照机器的核数计算。
 "MEMORYGB"表示按照机器内存数计算。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMeasureMethod() const;
@@ -409,13 +388,11 @@ namespace TencentCloud
 "INSTANCE"表示按照节点计算，默认方式。
 "CPU"表示按照机器的核数计算。
 "MEMORYGB"表示按照机器内存数计算。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _measureMethod 扩容资源计算方法，"DEFAULT","INSTANCE", "CPU", "MEMORYGB"。
 "DEFAULT"表示默认方式，与"INSTANCE"意义相同。
 "INSTANCE"表示按照节点计算，默认方式。
 "CPU"表示按照机器的核数计算。
 "MEMORYGB"表示按照机器内存数计算。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMeasureMethod(const std::string& _measureMethod);
@@ -426,6 +403,102 @@ namespace TencentCloud
                      * 
                      */
                     bool MeasureMethodHasBeenSet() const;
+
+                    /**
+                     * 获取节点部署服务列表，例如["HDFS-3.1.2","YARN-3.1.2"]。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SoftDeployDesc 节点部署服务列表，例如["HDFS-3.1.2","YARN-3.1.2"]。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetSoftDeployDesc() const;
+
+                    /**
+                     * 设置节点部署服务列表，例如["HDFS-3.1.2","YARN-3.1.2"]。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _softDeployDesc 节点部署服务列表，例如["HDFS-3.1.2","YARN-3.1.2"]。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSoftDeployDesc(const std::vector<std::string>& _softDeployDesc);
+
+                    /**
+                     * 判断参数 SoftDeployDesc 是否已赋值
+                     * @return SoftDeployDesc 是否已赋值
+                     * 
+                     */
+                    bool SoftDeployDescHasBeenSet() const;
+
+                    /**
+                     * 获取启动进程列表，例如["NodeManager"]。
+                     * @return ServiceNodeDesc 启动进程列表，例如["NodeManager"]。
+                     * 
+                     */
+                    std::string GetServiceNodeDesc() const;
+
+                    /**
+                     * 设置启动进程列表，例如["NodeManager"]。
+                     * @param _serviceNodeDesc 启动进程列表，例如["NodeManager"]。
+                     * 
+                     */
+                    void SetServiceNodeDesc(const std::string& _serviceNodeDesc);
+
+                    /**
+                     * 判断参数 ServiceNodeDesc 是否已赋值
+                     * @return ServiceNodeDesc 是否已赋值
+                     * 
+                     */
+                    bool ServiceNodeDescHasBeenSet() const;
+
+                    /**
+                     * 获取启动进程列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ServiceNodeInfo 启动进程列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<int64_t> GetServiceNodeInfo() const;
+
+                    /**
+                     * 设置启动进程列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _serviceNodeInfo 启动进程列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetServiceNodeInfo(const std::vector<int64_t>& _serviceNodeInfo);
+
+                    /**
+                     * 判断参数 ServiceNodeInfo 是否已赋值
+                     * @return ServiceNodeInfo 是否已赋值
+                     * 
+                     */
+                    bool ServiceNodeInfoHasBeenSet() const;
+
+                    /**
+                     * 获取节点部署服务列表。部署服务仅填写HDFS、YARN。[组件名对应的映射关系表](https://cloud.tencent.com/document/product/589/98760)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SoftDeployInfo 节点部署服务列表。部署服务仅填写HDFS、YARN。[组件名对应的映射关系表](https://cloud.tencent.com/document/product/589/98760)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<int64_t> GetSoftDeployInfo() const;
+
+                    /**
+                     * 设置节点部署服务列表。部署服务仅填写HDFS、YARN。[组件名对应的映射关系表](https://cloud.tencent.com/document/product/589/98760)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _softDeployInfo 节点部署服务列表。部署服务仅填写HDFS、YARN。[组件名对应的映射关系表](https://cloud.tencent.com/document/product/589/98760)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSoftDeployInfo(const std::vector<int64_t>& _softDeployInfo);
+
+                    /**
+                     * 判断参数 SoftDeployInfo 是否已赋值
+                     * @return SoftDeployInfo 是否已赋值
+                     * 
+                     */
+                    bool SoftDeployInfoHasBeenSet() const;
 
                     /**
                      * 获取多指标触发条件
@@ -452,67 +525,100 @@ namespace TencentCloud
                      */
                     bool LoadMetricsConditionsHasBeenSet() const;
 
+                    /**
+                     * 获取伸缩组Id
+                     * @return GroupId 伸缩组Id
+                     * 
+                     */
+                    int64_t GetGroupId() const;
+
+                    /**
+                     * 设置伸缩组Id
+                     * @param _groupId 伸缩组Id
+                     * 
+                     */
+                    void SetGroupId(const int64_t& _groupId);
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     * 
+                     */
+                    bool GroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取soft例如yarn
+                     * @return Soft soft例如yarn
+                     * 
+                     */
+                    std::string GetSoft() const;
+
+                    /**
+                     * 设置soft例如yarn
+                     * @param _soft soft例如yarn
+                     * 
+                     */
+                    void SetSoft(const std::string& _soft);
+
+                    /**
+                     * 判断参数 Soft 是否已赋值
+                     * @return Soft 是否已赋值
+                     * 
+                     */
+                    bool SoftHasBeenSet() const;
+
                 private:
 
                     /**
                      * 规则ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_strategyId;
                     bool m_strategyIdHasBeenSet;
 
                     /**
                      * 规则名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_strategyName;
                     bool m_strategyNameHasBeenSet;
 
                     /**
                      * 规则生效冷却时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_calmDownTime;
                     bool m_calmDownTimeHasBeenSet;
 
                     /**
                      * 扩缩容动作，1表示扩容，2表示缩容。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_scaleAction;
                     bool m_scaleActionHasBeenSet;
 
                     /**
                      * 每次规则生效时的扩缩容数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_scaleNum;
                     bool m_scaleNumHasBeenSet;
 
                     /**
                      * 指标处理方法，1表示MAX，2表示MIN，3表示AVG。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_processMethod;
                     bool m_processMethodHasBeenSet;
 
                     /**
                      * 规则优先级，添加时无效，默认为自增。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_priority;
                     bool m_priorityHasBeenSet;
 
                     /**
                      * 规则状态，1表示启动，3表示禁用。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_strategyStatus;
                     bool m_strategyStatusHasBeenSet;
 
                     /**
                      * 规则扩容指定 yarn node label
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_yarnNodeLabel;
                     bool m_yarnNodeLabelHasBeenSet;
@@ -536,6 +642,12 @@ namespace TencentCloud
                     bool m_graceDownTimeHasBeenSet;
 
                     /**
+                     * 是否开启任务保护
+                     */
+                    bool m_graceDownProtectFlag;
+                    bool m_graceDownProtectFlagHasBeenSet;
+
+                    /**
                      * 绑定标签列表
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -544,7 +656,6 @@ namespace TencentCloud
 
                     /**
                      * 预设配置组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_configGroupAssigned;
                     bool m_configGroupAssignedHasBeenSet;
@@ -555,10 +666,36 @@ namespace TencentCloud
 "INSTANCE"表示按照节点计算，默认方式。
 "CPU"表示按照机器的核数计算。
 "MEMORYGB"表示按照机器内存数计算。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_measureMethod;
                     bool m_measureMethodHasBeenSet;
+
+                    /**
+                     * 节点部署服务列表，例如["HDFS-3.1.2","YARN-3.1.2"]。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_softDeployDesc;
+                    bool m_softDeployDescHasBeenSet;
+
+                    /**
+                     * 启动进程列表，例如["NodeManager"]。
+                     */
+                    std::string m_serviceNodeDesc;
+                    bool m_serviceNodeDescHasBeenSet;
+
+                    /**
+                     * 启动进程列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_serviceNodeInfo;
+                    bool m_serviceNodeInfoHasBeenSet;
+
+                    /**
+                     * 节点部署服务列表。部署服务仅填写HDFS、YARN。[组件名对应的映射关系表](https://cloud.tencent.com/document/product/589/98760)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_softDeployInfo;
+                    bool m_softDeployInfoHasBeenSet;
 
                     /**
                      * 多指标触发条件
@@ -566,6 +703,18 @@ namespace TencentCloud
                      */
                     LoadMetricsConditions m_loadMetricsConditions;
                     bool m_loadMetricsConditionsHasBeenSet;
+
+                    /**
+                     * 伸缩组Id
+                     */
+                    int64_t m_groupId;
+                    bool m_groupIdHasBeenSet;
+
+                    /**
+                     * soft例如yarn
+                     */
+                    std::string m_soft;
+                    bool m_softHasBeenSet;
 
                 };
             }

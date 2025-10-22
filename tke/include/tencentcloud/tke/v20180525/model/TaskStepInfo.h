@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,18 +106,14 @@ failed: 步骤失败
 
                     /**
                      * 获取步骤开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartAt 步骤开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartAt() const;
 
                     /**
                      * 设置步骤开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startAt 步骤开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartAt(const std::string& _startAt);
@@ -131,18 +127,14 @@ failed: 步骤失败
 
                     /**
                      * 获取步骤结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndAt 步骤结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndAt() const;
 
                     /**
                      * 设置步骤结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endAt 步骤结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndAt(const std::string& _endAt);
@@ -156,18 +148,14 @@ failed: 步骤失败
 
                     /**
                      * 获取若步骤生命周期为failed,则此字段显示错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedMsg 若步骤生命周期为failed,则此字段显示错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFailedMsg() const;
 
                     /**
                      * 设置若步骤生命周期为failed,则此字段显示错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _failedMsg 若步骤生命周期为failed,则此字段显示错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFailedMsg(const std::string& _failedMsg);
@@ -199,21 +187,18 @@ failed: 步骤失败
 
                     /**
                      * 步骤开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startAt;
                     bool m_startAtHasBeenSet;
 
                     /**
                      * 步骤结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endAt;
                     bool m_endAtHasBeenSet;
 
                     /**
                      * 若步骤生命周期为failed,则此字段显示错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_failedMsg;
                     bool m_failedMsgHasBeenSet;

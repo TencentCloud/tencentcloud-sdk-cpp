@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,10 +49,8 @@ namespace TencentCloud
                     /**
                      * 获取规则内容，可以是正则规则，关键词，
 忽略词扥
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleContent 规则内容，可以是正则规则，关键词，
 忽略词扥
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleContent() const;
@@ -60,10 +58,8 @@ namespace TencentCloud
                     /**
                      * 设置规则内容，可以是正则规则，关键词，
 忽略词扥
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleContent 规则内容，可以是正则规则，关键词，
 忽略词扥
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleContent(const std::string& _ruleContent);
@@ -79,11 +75,9 @@ namespace TencentCloud
                      * 获取是否区分大小写
 false: 不区分大小写
 true:区分大小写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsIgnoreCase 是否区分大小写
 false: 不区分大小写
 true:区分大小写
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsIgnoreCase() const;
@@ -92,11 +86,9 @@ true:区分大小写
                      * 设置是否区分大小写
 false: 不区分大小写
 true:区分大小写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isIgnoreCase 是否区分大小写
 false: 不区分大小写
 true:区分大小写
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsIgnoreCase(const bool& _isIgnoreCase);
@@ -113,7 +105,6 @@ true:区分大小写
                     /**
                      * 规则内容，可以是正则规则，关键词，
 忽略词扥
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleContent;
                     bool m_ruleContentHasBeenSet;
@@ -122,7 +113,6 @@ true:区分大小写
                      * 是否区分大小写
 false: 不区分大小写
 true:区分大小写
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isIgnoreCase;
                     bool m_isIgnoreCaseHasBeenSet;

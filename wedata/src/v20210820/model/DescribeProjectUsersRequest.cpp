@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ using namespace TencentCloud::Wedata::V20210820::Model;
 using namespace std;
 
 DescribeProjectUsersRequest::DescribeProjectUsersRequest() :
+    m_projectIdHasBeenSet(false),
     m_pageNumberHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
     m_filtersHasBeenSet(false),
@@ -37,6 +38,14 @@ string DescribeProjectUsersRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_pageNumberHasBeenSet)
     {
@@ -99,6 +108,22 @@ string DescribeProjectUsersRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeProjectUsersRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void DescribeProjectUsersRequest::SetProjectId(const string& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool DescribeProjectUsersRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
+}
 
 uint64_t DescribeProjectUsersRequest::GetPageNumber() const
 {

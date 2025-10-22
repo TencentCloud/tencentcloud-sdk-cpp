@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -420,49 +420,6 @@ TbaasClient::GetInvokeTxOutcomeCallable TbaasClient::GetInvokeTxCallable(const G
         [this, request]()
         {
             return this->GetInvokeTx(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TbaasClient::GetLatesdTransactionListOutcome TbaasClient::GetLatesdTransactionList(const GetLatesdTransactionListRequest &request)
-{
-    auto outcome = MakeRequest(request, "GetLatesdTransactionList");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        GetLatesdTransactionListResponse rsp = GetLatesdTransactionListResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return GetLatesdTransactionListOutcome(rsp);
-        else
-            return GetLatesdTransactionListOutcome(o.GetError());
-    }
-    else
-    {
-        return GetLatesdTransactionListOutcome(outcome.GetError());
-    }
-}
-
-void TbaasClient::GetLatesdTransactionListAsync(const GetLatesdTransactionListRequest& request, const GetLatesdTransactionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetLatesdTransactionList(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TbaasClient::GetLatesdTransactionListOutcomeCallable TbaasClient::GetLatesdTransactionListCallable(const GetLatesdTransactionListRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<GetLatesdTransactionListOutcome()>>(
-        [this, request]()
-        {
-            return this->GetLatesdTransactionList(request);
         }
     );
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -196,6 +196,56 @@ namespace TencentCloud
                      */
                     bool FormatHasBeenSet() const;
 
+                    /**
+                     * 获取Audio Bit Depth: 16/24 bit .etc
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BitDepth Audio Bit Depth: 16/24 bit .etc
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetBitDepth() const;
+
+                    /**
+                     * 设置Audio Bit Depth: 16/24 bit .etc
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _bitDepth Audio Bit Depth: 16/24 bit .etc
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBitDepth(const int64_t& _bitDepth);
+
+                    /**
+                     * 判断参数 BitDepth 是否已赋值
+                     * @return BitDepth 是否已赋值
+                     * 
+                     */
+                    bool BitDepthHasBeenSet() const;
+
+                    /**
+                     * 获取封装格式短后缀
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ShortFormat 封装格式短后缀
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetShortFormat() const;
+
+                    /**
+                     * 设置封装格式短后缀
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _shortFormat 封装格式短后缀
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetShortFormat(const std::string& _shortFormat);
+
+                    /**
+                     * 判断参数 ShortFormat 是否已赋值
+                     * @return ShortFormat 是否已赋值
+                     * 
+                     */
+                    bool ShortFormatHasBeenSet() const;
+
                 private:
 
                     /**
@@ -239,6 +289,20 @@ namespace TencentCloud
                      */
                     std::string m_format;
                     bool m_formatHasBeenSet;
+
+                    /**
+                     * Audio Bit Depth: 16/24 bit .etc
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_bitDepth;
+                    bool m_bitDepthHasBeenSet;
+
+                    /**
+                     * 封装格式短后缀
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_shortFormat;
+                    bool m_shortFormatHasBeenSet;
 
                 };
             }

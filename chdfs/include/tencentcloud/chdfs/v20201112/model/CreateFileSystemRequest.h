@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,27 +65,6 @@ namespace TencentCloud
                     bool FileSystemNameHasBeenSet() const;
 
                     /**
-                     * 获取文件系统容量（byte），下限为1GB，上限为1PB，且必须是1GB的整数倍
-                     * @return CapacityQuota 文件系统容量（byte），下限为1GB，上限为1PB，且必须是1GB的整数倍
-                     * 
-                     */
-                    uint64_t GetCapacityQuota() const;
-
-                    /**
-                     * 设置文件系统容量（byte），下限为1GB，上限为1PB，且必须是1GB的整数倍
-                     * @param _capacityQuota 文件系统容量（byte），下限为1GB，上限为1PB，且必须是1GB的整数倍
-                     * 
-                     */
-                    void SetCapacityQuota(const uint64_t& _capacityQuota);
-
-                    /**
-                     * 判断参数 CapacityQuota 是否已赋值
-                     * @return CapacityQuota 是否已赋值
-                     * 
-                     */
-                    bool CapacityQuotaHasBeenSet() const;
-
-                    /**
                      * 获取是否校验POSIX ACL
                      * @return PosixAcl 是否校验POSIX ACL
                      * 
@@ -126,6 +105,27 @@ namespace TencentCloud
                      * 
                      */
                     bool DescriptionHasBeenSet() const;
+
+                    /**
+                     * 获取文件系统容量（byte），下限为1GB，上限为1PB，且必须是1GB的整数倍
+                     * @return CapacityQuota 文件系统容量（byte），下限为1GB，上限为1PB，且必须是1GB的整数倍
+                     * 
+                     */
+                    uint64_t GetCapacityQuota() const;
+
+                    /**
+                     * 设置文件系统容量（byte），下限为1GB，上限为1PB，且必须是1GB的整数倍
+                     * @param _capacityQuota 文件系统容量（byte），下限为1GB，上限为1PB，且必须是1GB的整数倍
+                     * 
+                     */
+                    void SetCapacityQuota(const uint64_t& _capacityQuota);
+
+                    /**
+                     * 判断参数 CapacityQuota 是否已赋值
+                     * @return CapacityQuota 是否已赋值
+                     * 
+                     */
+                    bool CapacityQuotaHasBeenSet() const;
 
                     /**
                      * 获取超级用户名列表，默认为空数组
@@ -262,12 +262,6 @@ namespace TencentCloud
                     bool m_fileSystemNameHasBeenSet;
 
                     /**
-                     * 文件系统容量（byte），下限为1GB，上限为1PB，且必须是1GB的整数倍
-                     */
-                    uint64_t m_capacityQuota;
-                    bool m_capacityQuotaHasBeenSet;
-
-                    /**
                      * 是否校验POSIX ACL
                      */
                     bool m_posixAcl;
@@ -278,6 +272,12 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 文件系统容量（byte），下限为1GB，上限为1PB，且必须是1GB的整数倍
+                     */
+                    uint64_t m_capacityQuota;
+                    bool m_capacityQuotaHasBeenSet;
 
                     /**
                      * 超级用户名列表，默认为空数组

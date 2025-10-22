@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取使用的安全组，只有外网访问需要传递（开启外网访问时必传）
-                     * @return SecurityGroup 使用的安全组，只有外网访问需要传递（开启外网访问时必传）
+                     * 获取使用的安全组，只有外网访问需要传递（开启外网访问且不使用已有clb时必传）
+                     * @return SecurityGroup 使用的安全组，只有外网访问需要传递（开启外网访问且不使用已有clb时必传）
                      * 
                      */
                     std::string GetSecurityGroup() const;
 
                     /**
-                     * 设置使用的安全组，只有外网访问需要传递（开启外网访问时必传）
-                     * @param _securityGroup 使用的安全组，只有外网访问需要传递（开启外网访问时必传）
+                     * 设置使用的安全组，只有外网访问需要传递（开启外网访问且不使用已有clb时必传）
+                     * @param _securityGroup 使用的安全组，只有外网访问需要传递（开启外网访问且不使用已有clb时必传）
                      * 
                      */
                     void SetSecurityGroup(const std::string& _securityGroup);
@@ -188,6 +188,27 @@ BandwidthPackageId含义：带宽包ID，指定此参数时，网络计费方式
                      */
                     bool ExtensiveParametersHasBeenSet() const;
 
+                    /**
+                     * 获取使用已有clb开启内网或外网访问
+                     * @return ExistedLoadBalancerId 使用已有clb开启内网或外网访问
+                     * 
+                     */
+                    std::string GetExistedLoadBalancerId() const;
+
+                    /**
+                     * 设置使用已有clb开启内网或外网访问
+                     * @param _existedLoadBalancerId 使用已有clb开启内网或外网访问
+                     * 
+                     */
+                    void SetExistedLoadBalancerId(const std::string& _existedLoadBalancerId);
+
+                    /**
+                     * 判断参数 ExistedLoadBalancerId 是否已赋值
+                     * @return ExistedLoadBalancerId 是否已赋值
+                     * 
+                     */
+                    bool ExistedLoadBalancerIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -215,7 +236,7 @@ BandwidthPackageId含义：带宽包ID，指定此参数时，网络计费方式
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 使用的安全组，只有外网访问需要传递（开启外网访问时必传）
+                     * 使用的安全组，只有外网访问需要传递（开启外网访问且不使用已有clb时必传）
                      */
                     std::string m_securityGroup;
                     bool m_securityGroupHasBeenSet;
@@ -230,6 +251,12 @@ BandwidthPackageId含义：带宽包ID，指定此参数时，网络计费方式
                      */
                     std::string m_extensiveParameters;
                     bool m_extensiveParametersHasBeenSet;
+
+                    /**
+                     * 使用已有clb开启内网或外网访问
+                     */
+                    std::string m_existedLoadBalancerId;
+                    bool m_existedLoadBalancerIdHasBeenSet;
 
                 };
             }

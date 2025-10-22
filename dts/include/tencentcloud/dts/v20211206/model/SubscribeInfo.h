@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -93,18 +93,14 @@ namespace TencentCloud
 
                     /**
                      * 获取订阅实例发送数据的kafka topic
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Topic 订阅实例发送数据的kafka topic
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopic() const;
 
                     /**
                      * 设置订阅实例发送数据的kafka topic
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topic 订阅实例发送数据的kafka topic
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopic(const std::string& _topic);
@@ -139,18 +135,14 @@ namespace TencentCloud
 
                     /**
                      * 获取订阅的数据库实例ID（如果订阅的是云数据库）如果实例不是腾讯云上的，此值为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 订阅的数据库实例ID（如果订阅的是云数据库）如果实例不是腾讯云上的，此值为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置订阅的数据库实例ID（如果订阅的是云数据库）如果实例不是腾讯云上的，此值为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 订阅的数据库实例ID（如果订阅的是云数据库）如果实例不是腾讯云上的，此值为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -164,18 +156,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云数据库状态：running 运行中，isolated 已隔离，offline 已下线。如果不是云上，此值为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceStatus 云数据库状态：running 运行中，isolated 已隔离，offline 已下线。如果不是云上，此值为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceStatus() const;
 
                     /**
                      * 设置云数据库状态：running 运行中，isolated 已隔离，offline 已下线。如果不是云上，此值为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceStatus 云数据库状态：running 运行中，isolated 已隔离，offline 已下线。如果不是云上，此值为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceStatus(const std::string& _instanceStatus);
@@ -231,18 +219,14 @@ namespace TencentCloud
 
                     /**
                      * 获取上次修改时间，时间格式如：Y-m-d h:m:s
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyTime 上次修改时间，时间格式如：Y-m-d h:m:s
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置上次修改时间，时间格式如：Y-m-d h:m:s
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyTime 上次修改时间，时间格式如：Y-m-d h:m:s
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -256,18 +240,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间，时间格式如：Y-m-d h:m:s
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间，时间格式如：Y-m-d h:m:s
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间，时间格式如：Y-m-d h:m:s
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间，时间格式如：Y-m-d h:m:s
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -281,18 +261,14 @@ namespace TencentCloud
 
                     /**
                      * 获取隔离时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsolateTime 隔离时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIsolateTime() const;
 
                     /**
                      * 设置隔离时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isolateTime 隔离时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsolateTime(const std::string& _isolateTime);
@@ -306,18 +282,14 @@ namespace TencentCloud
 
                     /**
                      * 获取包年包月任务的到期时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireTime 包年包月任务的到期时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置包年包月任务的到期时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expireTime 包年包月任务的到期时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -331,18 +303,14 @@ namespace TencentCloud
 
                     /**
                      * 获取下线时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OfflineTime 下线时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOfflineTime() const;
 
                     /**
                      * 设置下线时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _offlineTime 下线时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOfflineTime(const std::string& _offlineTime);
@@ -419,18 +387,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接入方式。枚举值：extranet(公网) vpncloud(vpn接入) dcg(专线接入) ccn(云联网) cdb(云数据库) cvm(云主机自建) intranet(自研上云) vpc(私有网络vpc)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccessType 接入方式。枚举值：extranet(公网) vpncloud(vpn接入) dcg(专线接入) ccn(云联网) cdb(云数据库) cvm(云主机自建) intranet(自研上云) vpc(私有网络vpc)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccessType() const;
 
                     /**
                      * 设置接入方式。枚举值：extranet(公网) vpncloud(vpn接入) dcg(专线接入) ccn(云联网) cdb(云数据库) cvm(云主机自建) intranet(自研上云) vpc(私有网络vpc)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accessType 接入方式。枚举值：extranet(公网) vpncloud(vpn接入) dcg(专线接入) ccn(云联网) cdb(云数据库) cvm(云主机自建) intranet(自研上云) vpc(私有网络vpc)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccessType(const std::string& _accessType);
@@ -444,18 +408,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Endpoints 数据库节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<EndpointItem> GetEndpoints() const;
 
                     /**
                      * 设置数据库节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endpoints 数据库节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndpoints(const std::vector<EndpointItem>& _endpoints);
@@ -468,19 +428,15 @@ namespace TencentCloud
                     bool EndpointsHasBeenSet() const;
 
                     /**
-                     * 获取数据订阅版本, 当前只支持 kafka 版本。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SubscribeVersion 数据订阅版本, 当前只支持 kafka 版本。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取数据订阅版本, 当前支持kafka和kafkaPro（专业版）
+                     * @return SubscribeVersion 数据订阅版本, 当前支持kafka和kafkaPro（专业版）
                      * 
                      */
                     std::string GetSubscribeVersion() const;
 
                     /**
-                     * 设置数据订阅版本, 当前只支持 kafka 版本。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _subscribeVersion 数据订阅版本, 当前只支持 kafka 版本。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置数据订阅版本, 当前支持kafka和kafkaPro（专业版）
+                     * @param _subscribeVersion 数据订阅版本, 当前支持kafka和kafkaPro（专业版）
                      * 
                      */
                     void SetSubscribeVersion(const std::string& _subscribeVersion);
@@ -542,6 +498,27 @@ namespace TencentCloud
                      */
                     bool ErrorsHasBeenSet() const;
 
+                    /**
+                     * 获取订阅实例规格
+                     * @return InstanceClass 订阅实例规格
+                     * 
+                     */
+                    std::string GetInstanceClass() const;
+
+                    /**
+                     * 设置订阅实例规格
+                     * @param _instanceClass 订阅实例规格
+                     * 
+                     */
+                    void SetInstanceClass(const std::string& _instanceClass);
+
+                    /**
+                     * 判断参数 InstanceClass 是否已赋值
+                     * @return InstanceClass 是否已赋值
+                     * 
+                     */
+                    bool InstanceClassHasBeenSet() const;
+
                 private:
 
                     /**
@@ -558,7 +535,6 @@ namespace TencentCloud
 
                     /**
                      * 订阅实例发送数据的kafka topic
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topic;
                     bool m_topicHasBeenSet;
@@ -571,14 +547,12 @@ namespace TencentCloud
 
                     /**
                      * 订阅的数据库实例ID（如果订阅的是云数据库）如果实例不是腾讯云上的，此值为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 云数据库状态：running 运行中，isolated 已隔离，offline 已下线。如果不是云上，此值为空
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceStatus;
                     bool m_instanceStatusHasBeenSet;
@@ -597,35 +571,30 @@ namespace TencentCloud
 
                     /**
                      * 上次修改时间，时间格式如：Y-m-d h:m:s
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
                      * 创建时间，时间格式如：Y-m-d h:m:s
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 隔离时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_isolateTime;
                     bool m_isolateTimeHasBeenSet;
 
                     /**
                      * 包年包月任务的到期时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
                      * 下线时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_offlineTime;
                     bool m_offlineTimeHasBeenSet;
@@ -650,21 +619,18 @@ namespace TencentCloud
 
                     /**
                      * 接入方式。枚举值：extranet(公网) vpncloud(vpn接入) dcg(专线接入) ccn(云联网) cdb(云数据库) cvm(云主机自建) intranet(自研上云) vpc(私有网络vpc)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accessType;
                     bool m_accessTypeHasBeenSet;
 
                     /**
                      * 数据库节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<EndpointItem> m_endpoints;
                     bool m_endpointsHasBeenSet;
 
                     /**
-                     * 数据订阅版本, 当前只支持 kafka 版本。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 数据订阅版本, 当前支持kafka和kafkaPro（专业版）
                      */
                     std::string m_subscribeVersion;
                     bool m_subscribeVersionHasBeenSet;
@@ -682,6 +648,12 @@ namespace TencentCloud
                      */
                     std::vector<SubsErr> m_errors;
                     bool m_errorsHasBeenSet;
+
+                    /**
+                     * 订阅实例规格
+                     */
+                    std::string m_instanceClass;
+                    bool m_instanceClassHasBeenSet;
 
                 };
             }

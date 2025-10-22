@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取私有网络ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VPCId 私有网络ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVPCId() const;
 
                     /**
                      * 设置私有网络ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vPCId 私有网络ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVPCId(const std::string& _vPCId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 子网ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetId 子网ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取安全组ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecurityGroupId 安全组ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSecurityGroupId() const;
 
                     /**
                      * 设置安全组ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _securityGroupId 安全组ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecurityGroupId(const std::string& _securityGroupId);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取TDSQL-C Mysql版数据库ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TDSQLCId TDSQL-C Mysql版数据库ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTDSQLCId() const;
 
                     /**
                      * 设置TDSQL-C Mysql版数据库ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tDSQLCId TDSQL-C Mysql版数据库ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTDSQLCId(const std::string& _tDSQLCId);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件存储ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CFSId 文件存储ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCFSId() const;
 
                     /**
                      * 设置文件存储ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cFSId 文件存储ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCFSId(const std::string& _cFSId);
@@ -177,13 +157,11 @@ namespace TencentCloud
 - HP：通用性能型
 - TB：turbo标准型
 - TP：turbo性能型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CFSStorageType 文件存储类型：取值范围：
 - SD：通用标准型
 - HP：通用性能型
 - TB：turbo标准型
 - TP：turbo性能型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCFSStorageType() const;
@@ -194,13 +172,11 @@ namespace TencentCloud
 - HP：通用性能型
 - TB：turbo标准型
 - TP：turbo性能型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cFSStorageType 文件存储类型：取值范围：
 - SD：通用标准型
 - HP：通用性能型
 - TB：turbo标准型
 - TP：turbo性能型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCFSStorageType(const std::string& _cFSStorageType);
@@ -214,18 +190,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云服务器ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CVMId 云服务器ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCVMId() const;
 
                     /**
                      * 设置云服务器ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cVMId 云服务器ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCVMId(const std::string& _cVMId);
@@ -239,18 +211,14 @@ namespace TencentCloud
 
                     /**
                      * 获取弹性容器集群ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EKSId 弹性容器集群ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEKSId() const;
 
                     /**
                      * 设置弹性容器集群ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eKSId 弹性容器集群ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEKSId(const std::string& _eKSId);
@@ -262,39 +230,76 @@ namespace TencentCloud
                      */
                     bool EKSIdHasBeenSet() const;
 
+                    /**
+                     * 获取TKE容器集群ID。
+                     * @return TKEId TKE容器集群ID。
+                     * 
+                     */
+                    std::string GetTKEId() const;
+
+                    /**
+                     * 设置TKE容器集群ID。
+                     * @param _tKEId TKE容器集群ID。
+                     * 
+                     */
+                    void SetTKEId(const std::string& _tKEId);
+
+                    /**
+                     * 判断参数 TKEId 是否已赋值
+                     * @return TKEId 是否已赋值
+                     * 
+                     */
+                    bool TKEIdHasBeenSet() const;
+
+                    /**
+                     * 获取TKE系统节点池ID。
+                     * @return TKESystemNodePoolId TKE系统节点池ID。
+                     * 
+                     */
+                    std::string GetTKESystemNodePoolId() const;
+
+                    /**
+                     * 设置TKE系统节点池ID。
+                     * @param _tKESystemNodePoolId TKE系统节点池ID。
+                     * 
+                     */
+                    void SetTKESystemNodePoolId(const std::string& _tKESystemNodePoolId);
+
+                    /**
+                     * 判断参数 TKESystemNodePoolId 是否已赋值
+                     * @return TKESystemNodePoolId 是否已赋值
+                     * 
+                     */
+                    bool TKESystemNodePoolIdHasBeenSet() const;
+
                 private:
 
                     /**
                      * 私有网络ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vPCId;
                     bool m_vPCIdHasBeenSet;
 
                     /**
                      * 子网ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
                      * 安全组ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_securityGroupId;
                     bool m_securityGroupIdHasBeenSet;
 
                     /**
                      * TDSQL-C Mysql版数据库ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tDSQLCId;
                     bool m_tDSQLCIdHasBeenSet;
 
                     /**
                      * 文件存储ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cFSId;
                     bool m_cFSIdHasBeenSet;
@@ -305,24 +310,33 @@ namespace TencentCloud
 - HP：通用性能型
 - TB：turbo标准型
 - TP：turbo性能型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cFSStorageType;
                     bool m_cFSStorageTypeHasBeenSet;
 
                     /**
                      * 云服务器ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cVMId;
                     bool m_cVMIdHasBeenSet;
 
                     /**
                      * 弹性容器集群ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_eKSId;
                     bool m_eKSIdHasBeenSet;
+
+                    /**
+                     * TKE容器集群ID。
+                     */
+                    std::string m_tKEId;
+                    bool m_tKEIdHasBeenSet;
+
+                    /**
+                     * TKE系统节点池ID。
+                     */
+                    std::string m_tKESystemNodePoolId;
+                    bool m_tKESystemNodePoolIdHasBeenSet;
 
                 };
             }

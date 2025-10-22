@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取SQL任务唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId SQL任务唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置SQL任务唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskId SQL任务唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取SQL内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SQL SQL内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSQL() const;
 
                     /**
                      * 设置SQL内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sQL SQL内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSQL(const std::string& _sQL);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * SQL任务唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
                      * SQL内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sQL;
                     bool m_sQLHasBeenSet;

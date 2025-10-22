@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -123,18 +123,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件大小，单位为 KB。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileSize 文件大小，单位为 KB。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFileSize() const;
 
                     /**
                      * 设置文件大小，单位为 KB。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileSize 文件大小，单位为 KB。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileSize(const int64_t& _fileSize);
@@ -148,18 +144,14 @@ namespace TencentCloud
 
                     /**
                      * 获取审计日志下载地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DownloadUrl 审计日志下载地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDownloadUrl() const;
 
                     /**
                      * 设置审计日志下载地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _downloadUrl 审计日志下载地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDownloadUrl(const std::string& _downloadUrl);
@@ -173,18 +165,14 @@ namespace TencentCloud
 
                     /**
                      * 获取错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrMsg 错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrMsg() const;
 
                     /**
                      * 设置错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errMsg 错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrMsg(const std::string& _errMsg);
@@ -221,21 +209,18 @@ namespace TencentCloud
 
                     /**
                      * 文件大小，单位为 KB。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_fileSize;
                     bool m_fileSizeHasBeenSet;
 
                     /**
                      * 审计日志下载地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_downloadUrl;
                     bool m_downloadUrlHasBeenSet;
 
                     /**
                      * 错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errMsg;
                     bool m_errMsgHasBeenSet;

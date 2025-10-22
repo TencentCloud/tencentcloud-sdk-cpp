@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/waf/v20180125/model/SpartaProtectionPort.h>
+#include <tencentcloud/waf/v20180125/model/UpstreamRule.h>
 
 
 namespace TencentCloud
@@ -409,23 +410,23 @@ https：使用https协议回源
                     bool LoadBalanceHasBeenSet() const;
 
                     /**
-                     * 获取待废弃，可不填。是否开启灰度，0表示不开启灰度。
-                     * @return IsGray 待废弃，可不填。是否开启灰度，0表示不开启灰度。
-                     * 
+                     * 获取是否开启灰度，0表示不开启灰度。
+                     * @return IsGray 是否开启灰度，0表示不开启灰度。
+                     * @deprecated
                      */
                     int64_t GetIsGray() const;
 
                     /**
-                     * 设置待废弃，可不填。是否开启灰度，0表示不开启灰度。
-                     * @param _isGray 待废弃，可不填。是否开启灰度，0表示不开启灰度。
-                     * 
+                     * 设置是否开启灰度，0表示不开启灰度。
+                     * @param _isGray 是否开启灰度，0表示不开启灰度。
+                     * @deprecated
                      */
                     void SetIsGray(const int64_t& _isGray);
 
                     /**
                      * 判断参数 IsGray 是否已赋值
                      * @return IsGray 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool IsGrayHasBeenSet() const;
 
@@ -493,23 +494,23 @@ https：使用https协议回源
                     bool IsKeepAliveHasBeenSet() const;
 
                     /**
-                     * 获取待废弃。目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
-                     * @return Anycast 待废弃。目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
-                     * 
+                     * 获取目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
+                     * @return Anycast 目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
+                     * @deprecated
                      */
                     int64_t GetAnycast() const;
 
                     /**
-                     * 设置待废弃。目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
-                     * @param _anycast 待废弃。目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
-                     * 
+                     * 设置目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
+                     * @param _anycast 目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
+                     * @deprecated
                      */
                     void SetAnycast(const int64_t& _anycast);
 
                     /**
                      * 判断参数 Anycast 是否已赋值
                      * @return Anycast 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AnycastHasBeenSet() const;
 
@@ -617,6 +618,27 @@ https：使用https协议回源
                      * 
                      */
                     bool CipherTemplateHasBeenSet() const;
+
+                    /**
+                     * 获取WAF与源站的连接超时时间，默认10s。
+                     * @return ProxyConnectTimeout WAF与源站的连接超时时间，默认10s。
+                     * 
+                     */
+                    int64_t GetProxyConnectTimeout() const;
+
+                    /**
+                     * 设置WAF与源站的连接超时时间，默认10s。
+                     * @param _proxyConnectTimeout WAF与源站的连接超时时间，默认10s。
+                     * 
+                     */
+                    void SetProxyConnectTimeout(const int64_t& _proxyConnectTimeout);
+
+                    /**
+                     * 判断参数 ProxyConnectTimeout 是否已赋值
+                     * @return ProxyConnectTimeout 是否已赋值
+                     * 
+                     */
+                    bool ProxyConnectTimeoutHasBeenSet() const;
 
                     /**
                      * 获取WAF与源站的读超时时间，默认300s。
@@ -991,6 +1013,90 @@ https：使用https协议回源
                      */
                     bool GmSSLIdHasBeenSet() const;
 
+                    /**
+                     * 获取回源策略，支持负载均衡回源和分流回源两种方式。0：默认值，负载均衡回源；1：分流回源
+                     * @return UpstreamPolicy 回源策略，支持负载均衡回源和分流回源两种方式。0：默认值，负载均衡回源；1：分流回源
+                     * 
+                     */
+                    int64_t GetUpstreamPolicy() const;
+
+                    /**
+                     * 设置回源策略，支持负载均衡回源和分流回源两种方式。0：默认值，负载均衡回源；1：分流回源
+                     * @param _upstreamPolicy 回源策略，支持负载均衡回源和分流回源两种方式。0：默认值，负载均衡回源；1：分流回源
+                     * 
+                     */
+                    void SetUpstreamPolicy(const int64_t& _upstreamPolicy);
+
+                    /**
+                     * 判断参数 UpstreamPolicy 是否已赋值
+                     * @return UpstreamPolicy 是否已赋值
+                     * 
+                     */
+                    bool UpstreamPolicyHasBeenSet() const;
+
+                    /**
+                     * 获取分流回源时生效，分流回源的规则。
+                     * @return UpstreamRules 分流回源时生效，分流回源的规则。
+                     * 
+                     */
+                    std::vector<UpstreamRule> GetUpstreamRules() const;
+
+                    /**
+                     * 设置分流回源时生效，分流回源的规则。
+                     * @param _upstreamRules 分流回源时生效，分流回源的规则。
+                     * 
+                     */
+                    void SetUpstreamRules(const std::vector<UpstreamRule>& _upstreamRules);
+
+                    /**
+                     * 判断参数 UpstreamRules 是否已赋值
+                     * @return UpstreamRules 是否已赋值
+                     * 
+                     */
+                    bool UpstreamRulesHasBeenSet() const;
+
+                    /**
+                     * 获取业务场景。0：默认值，表示常规业务场景 1：大模型业务场景
+                     * @return UseCase 业务场景。0：默认值，表示常规业务场景 1：大模型业务场景
+                     * 
+                     */
+                    int64_t GetUseCase() const;
+
+                    /**
+                     * 设置业务场景。0：默认值，表示常规业务场景 1：大模型业务场景
+                     * @param _useCase 业务场景。0：默认值，表示常规业务场景 1：大模型业务场景
+                     * 
+                     */
+                    void SetUseCase(const int64_t& _useCase);
+
+                    /**
+                     * 判断参数 UseCase 是否已赋值
+                     * @return UseCase 是否已赋值
+                     * 
+                     */
+                    bool UseCaseHasBeenSet() const;
+
+                    /**
+                     * 获取gzip开关。0：关闭 1：默认值，打开
+                     * @return Gzip gzip开关。0：关闭 1：默认值，打开
+                     * 
+                     */
+                    int64_t GetGzip() const;
+
+                    /**
+                     * 设置gzip开关。0：关闭 1：默认值，打开
+                     * @param _gzip gzip开关。0：关闭 1：默认值，打开
+                     * 
+                     */
+                    void SetGzip(const int64_t& _gzip);
+
+                    /**
+                     * 判断参数 Gzip 是否已赋值
+                     * @return Gzip 是否已赋值
+                     * 
+                     */
+                    bool GzipHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1098,7 +1204,7 @@ https：使用https协议回源
                     bool m_loadBalanceHasBeenSet;
 
                     /**
-                     * 待废弃，可不填。是否开启灰度，0表示不开启灰度。
+                     * 是否开启灰度，0表示不开启灰度。
                      */
                     int64_t m_isGray;
                     bool m_isGrayHasBeenSet;
@@ -1122,7 +1228,7 @@ https：使用https协议回源
                     bool m_isKeepAliveHasBeenSet;
 
                     /**
-                     * 待废弃。目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
+                     * 目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
                      */
                     int64_t m_anycast;
                     bool m_anycastHasBeenSet;
@@ -1156,6 +1262,12 @@ https：使用https协议回源
                      */
                     int64_t m_cipherTemplate;
                     bool m_cipherTemplateHasBeenSet;
+
+                    /**
+                     * WAF与源站的连接超时时间，默认10s。
+                     */
+                    int64_t m_proxyConnectTimeout;
+                    bool m_proxyConnectTimeoutHasBeenSet;
 
                     /**
                      * WAF与源站的读超时时间，默认300s。
@@ -1262,6 +1374,30 @@ https：使用https协议回源
                      */
                     std::string m_gmSSLId;
                     bool m_gmSSLIdHasBeenSet;
+
+                    /**
+                     * 回源策略，支持负载均衡回源和分流回源两种方式。0：默认值，负载均衡回源；1：分流回源
+                     */
+                    int64_t m_upstreamPolicy;
+                    bool m_upstreamPolicyHasBeenSet;
+
+                    /**
+                     * 分流回源时生效，分流回源的规则。
+                     */
+                    std::vector<UpstreamRule> m_upstreamRules;
+                    bool m_upstreamRulesHasBeenSet;
+
+                    /**
+                     * 业务场景。0：默认值，表示常规业务场景 1：大模型业务场景
+                     */
+                    int64_t m_useCase;
+                    bool m_useCaseHasBeenSet;
+
+                    /**
+                     * gzip开关。0：关闭 1：默认值，打开
+                     */
+                    int64_t m_gzip;
+                    bool m_gzipHasBeenSet;
 
                 };
             }

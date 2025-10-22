@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取场景id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SceneId 场景id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSceneId() const;
 
                     /**
                      * 设置场景id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sceneId 场景id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSceneId(const std::string& _sceneId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取场景名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SceneName 场景名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSceneName() const;
 
                     /**
                      * 设置场景名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sceneName 场景名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSceneName(const std::string& _sceneName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取场景版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 场景版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置场景版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _version 场景版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 场景id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sceneId;
                     bool m_sceneIdHasBeenSet;
 
                     /**
                      * 场景名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sceneName;
                     bool m_sceneNameHasBeenSet;
 
                     /**
                      * 场景版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;

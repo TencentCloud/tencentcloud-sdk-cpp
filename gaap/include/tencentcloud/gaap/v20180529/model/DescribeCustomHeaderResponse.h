@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取规则id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleId 规则id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleId() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义header列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Headers 自定义header列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<HttpHeaderParam> GetHeaders() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 规则id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;
 
                     /**
                      * 自定义header列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<HttpHeaderParam> m_headers;
                     bool m_headersHasBeenSet;

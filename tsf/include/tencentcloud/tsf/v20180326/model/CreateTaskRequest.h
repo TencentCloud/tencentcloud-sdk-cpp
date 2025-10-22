@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -88,15 +88,15 @@ namespace TencentCloud
                     bool TaskContentHasBeenSet() const;
 
                     /**
-                     * 获取执行类型，unicast/broadcast
-                     * @return ExecuteType 执行类型，unicast/broadcast
+                     * 获取任务执行方式，unicast：随机单节点执行，broadcast：广播执行，shard：分片执行
+                     * @return ExecuteType 任务执行方式，unicast：随机单节点执行，broadcast：广播执行，shard：分片执行
                      * 
                      */
                     std::string GetExecuteType() const;
 
                     /**
-                     * 设置执行类型，unicast/broadcast
-                     * @param _executeType 执行类型，unicast/broadcast
+                     * 设置任务执行方式，unicast：随机单节点执行，broadcast：广播执行，shard：分片执行
+                     * @param _executeType 任务执行方式，unicast：随机单节点执行，broadcast：广播执行，shard：分片执行
                      * 
                      */
                     void SetExecuteType(const std::string& _executeType);
@@ -109,15 +109,15 @@ namespace TencentCloud
                     bool ExecuteTypeHasBeenSet() const;
 
                     /**
-                     * 获取任务类型,java
-                     * @return TaskType 任务类型,java
+                     * 获取任务类型。当前只支持一种任务类型。枚举值，java：Java类任务
+                     * @return TaskType 任务类型。当前只支持一种任务类型。枚举值，java：Java类任务
                      * 
                      */
                     std::string GetTaskType() const;
 
                     /**
-                     * 设置任务类型,java
-                     * @param _taskType 任务类型,java
+                     * 设置任务类型。当前只支持一种任务类型。枚举值，java：Java类任务
+                     * @param _taskType 任务类型。当前只支持一种任务类型。枚举值，java：Java类任务
                      * 
                      */
                     void SetTaskType(const std::string& _taskType);
@@ -130,15 +130,15 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取任务超时时间， 时间单位 ms
-                     * @return TimeOut 任务超时时间， 时间单位 ms
+                     * 获取任务超时时间，取值大于0，单位：毫秒（ms）
+                     * @return TimeOut 任务超时时间，取值大于0，单位：毫秒（ms）
                      * 
                      */
                     uint64_t GetTimeOut() const;
 
                     /**
-                     * 设置任务超时时间， 时间单位 ms
-                     * @param _timeOut 任务超时时间， 时间单位 ms
+                     * 设置任务超时时间，取值大于0，单位：毫秒（ms）
+                     * @param _timeOut 任务超时时间，取值大于0，单位：毫秒（ms）
                      * 
                      */
                     void SetTimeOut(const uint64_t& _timeOut);
@@ -151,15 +151,15 @@ namespace TencentCloud
                     bool TimeOutHasBeenSet() const;
 
                     /**
-                     * 获取部署组ID
-                     * @return GroupId 部署组ID
+                     * 获取部署组ID。在[应用管理](https://console.cloud.tencent.com/tsf/app?rid=1)，点击应用ID进入应用部署页查看部署组ID。
+                     * @return GroupId 部署组ID。在[应用管理](https://console.cloud.tencent.com/tsf/app?rid=1)，点击应用ID进入应用部署页查看部署组ID。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置部署组ID
-                     * @param _groupId 部署组ID
+                     * 设置部署组ID。在[应用管理](https://console.cloud.tencent.com/tsf/app?rid=1)，点击应用ID进入应用部署页查看部署组ID。
+                     * @param _groupId 部署组ID。在[应用管理](https://console.cloud.tencent.com/tsf/app?rid=1)，点击应用ID进入应用部署页查看部署组ID。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -235,15 +235,15 @@ namespace TencentCloud
                     bool RetryIntervalHasBeenSet() const;
 
                     /**
-                     * 获取分片数量
-                     * @return ShardCount 分片数量
+                     * 获取分片数量，仅当任务执行方式为分片执行时需要设置该值，取值范围2~1000
+                     * @return ShardCount 分片数量，仅当任务执行方式为分片执行时需要设置该值，取值范围2~1000
                      * 
                      */
                     int64_t GetShardCount() const;
 
                     /**
-                     * 设置分片数量
-                     * @param _shardCount 分片数量
+                     * 设置分片数量，仅当任务执行方式为分片执行时需要设置该值，取值范围2~1000
+                     * @param _shardCount 分片数量，仅当任务执行方式为分片执行时需要设置该值，取值范围2~1000
                      * 
                      */
                     void SetShardCount(const int64_t& _shardCount);
@@ -361,15 +361,15 @@ namespace TencentCloud
                     bool TaskArgumentHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return ProgramIdList 无
+                     * 获取数据集列表
+                     * @return ProgramIdList 数据集列表
                      * 
                      */
                     std::vector<std::string> GetProgramIdList() const;
 
                     /**
-                     * 设置无
-                     * @param _programIdList 无
+                     * 设置数据集列表
+                     * @param _programIdList 数据集列表
                      * 
                      */
                     void SetProgramIdList(const std::vector<std::string>& _programIdList);
@@ -396,25 +396,25 @@ namespace TencentCloud
                     bool m_taskContentHasBeenSet;
 
                     /**
-                     * 执行类型，unicast/broadcast
+                     * 任务执行方式，unicast：随机单节点执行，broadcast：广播执行，shard：分片执行
                      */
                     std::string m_executeType;
                     bool m_executeTypeHasBeenSet;
 
                     /**
-                     * 任务类型,java
+                     * 任务类型。当前只支持一种任务类型。枚举值，java：Java类任务
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 任务超时时间， 时间单位 ms
+                     * 任务超时时间，取值大于0，单位：毫秒（ms）
                      */
                     uint64_t m_timeOut;
                     bool m_timeOutHasBeenSet;
 
                     /**
-                     * 部署组ID
+                     * 部署组ID。在[应用管理](https://console.cloud.tencent.com/tsf/app?rid=1)，点击应用ID进入应用部署页查看部署组ID。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
@@ -438,7 +438,7 @@ namespace TencentCloud
                     bool m_retryIntervalHasBeenSet;
 
                     /**
-                     * 分片数量
+                     * 分片数量，仅当任务执行方式为分片执行时需要设置该值，取值范围2~1000
                      */
                     int64_t m_shardCount;
                     bool m_shardCountHasBeenSet;
@@ -474,7 +474,7 @@ namespace TencentCloud
                     bool m_taskArgumentHasBeenSet;
 
                     /**
-                     * 无
+                     * 数据集列表
                      */
                     std::vector<std::string> m_programIdList;
                     bool m_programIdListHasBeenSet;

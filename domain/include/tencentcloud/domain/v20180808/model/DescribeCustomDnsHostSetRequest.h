@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取域名实例ID(域名基本信息或我的域名列表接口可获取)
-                     * @return DomainId 域名实例ID(域名基本信息或我的域名列表接口可获取)
+                     * 获取域名实例ID
+可通过[DescribeDomainNameList](https://cloud.tencent.com/document/api/242/48941)接口获取
+                     * @return DomainId 域名实例ID
+可通过[DescribeDomainNameList](https://cloud.tencent.com/document/api/242/48941)接口获取
                      * 
                      */
                     std::string GetDomainId() const;
 
                     /**
-                     * 设置域名实例ID(域名基本信息或我的域名列表接口可获取)
-                     * @param _domainId 域名实例ID(域名基本信息或我的域名列表接口可获取)
+                     * 设置域名实例ID
+可通过[DescribeDomainNameList](https://cloud.tencent.com/document/api/242/48941)接口获取
+                     * @param _domainId 域名实例ID
+可通过[DescribeDomainNameList](https://cloud.tencent.com/document/api/242/48941)接口获取
                      * 
                      */
                     void SetDomainId(const std::string& _domainId);
@@ -108,7 +112,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 域名实例ID(域名基本信息或我的域名列表接口可获取)
+                     * 域名实例ID
+可通过[DescribeDomainNameList](https://cloud.tencent.com/document/api/242/48941)接口获取
                      */
                     std::string m_domainId;
                     bool m_domainIdHasBeenSet;

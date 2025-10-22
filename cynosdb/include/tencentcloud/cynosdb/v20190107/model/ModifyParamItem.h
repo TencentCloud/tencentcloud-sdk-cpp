@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数旧值（只在出参时有用）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OldValue 参数旧值（只在出参时有用）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOldValue() const;
 
                     /**
                      * 设置参数旧值（只在出参时有用）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _oldValue 参数旧值（只在出参时有用）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOldValue(const std::string& _oldValue);
@@ -112,6 +108,27 @@ namespace TencentCloud
                      * 
                      */
                     bool OldValueHasBeenSet() const;
+
+                    /**
+                     * 获取libra组件类型
+                     * @return Component libra组件类型
+                     * 
+                     */
+                    std::string GetComponent() const;
+
+                    /**
+                     * 设置libra组件类型
+                     * @param _component libra组件类型
+                     * 
+                     */
+                    void SetComponent(const std::string& _component);
+
+                    /**
+                     * 判断参数 Component 是否已赋值
+                     * @return Component 是否已赋值
+                     * 
+                     */
+                    bool ComponentHasBeenSet() const;
 
                 private:
 
@@ -129,10 +146,15 @@ namespace TencentCloud
 
                     /**
                      * 参数旧值（只在出参时有用）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_oldValue;
                     bool m_oldValueHasBeenSet;
+
+                    /**
+                     * libra组件类型
+                     */
+                    std::string m_component;
+                    bool m_componentHasBeenSet;
 
                 };
             }

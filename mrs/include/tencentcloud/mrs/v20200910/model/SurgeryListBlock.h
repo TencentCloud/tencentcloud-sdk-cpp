@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Time 时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTime() const;
 
                     /**
                      * 设置时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _time 时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTime(const std::string& _time);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeType 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTimeType() const;
 
                     /**
                      * 设置类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeType 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeType(const std::string& _timeType);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetName() const;
 
                     /**
                      * 设置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::vector<std::string>& _name);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Part 部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPart() const;
 
                     /**
                      * 设置部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _part 部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPart(const std::string& _part);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_time;
                     bool m_timeHasBeenSet;
 
                     /**
                      * 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timeType;
                     bool m_timeTypeHasBeenSet;
 
                     /**
                      * 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 部位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_part;
                     bool m_partHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ TeoInstanceDetail::TeoInstanceDetail() :
     m_hostHasBeenSet(false),
     m_certIdHasBeenSet(false),
     m_zoneIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_algorithmHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome TeoInstanceDetail::Deserialize(const rapidjson::Value &value
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("Algorithm") && !value["Algorithm"].IsNull())
+    {
+        if (!value["Algorithm"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TeoInstanceDetail.Algorithm` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_algorithm = string(value["Algorithm"].GetString());
+        m_algorithmHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void TeoInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_algorithmHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Algorithm";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_algorithm.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void TeoInstanceDetail::SetStatus(const string& _status)
 bool TeoInstanceDetail::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string TeoInstanceDetail::GetAlgorithm() const
+{
+    return m_algorithm;
+}
+
+void TeoInstanceDetail::SetAlgorithm(const string& _algorithm)
+{
+    m_algorithm = _algorithm;
+    m_algorithmHasBeenSet = true;
+}
+
+bool TeoInstanceDetail::AlgorithmHasBeenSet() const
+{
+    return m_algorithmHasBeenSet;
 }
 

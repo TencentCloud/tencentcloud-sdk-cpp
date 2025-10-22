@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,7 +53,8 @@ DescribeInstanceResponse::DescribeInstanceResponse() :
     m_roleNumLimitHasBeenSet(false),
     m_aclEnabledHasBeenSet(false),
     m_topicNumLowerLimitHasBeenSet(false),
-    m_topicNumUpperLimitHasBeenSet(false)
+    m_topicNumUpperLimitHasBeenSet(false),
+    m_zoneIdsHasBeenSet(false)
 {
 }
 
@@ -411,6 +412,19 @@ CoreInternalOutcome DescribeInstanceResponse::Deserialize(const string &payload)
         m_topicNumUpperLimitHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ZoneIds") && !rsp["ZoneIds"].IsNull())
+    {
+        if (!rsp["ZoneIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ZoneIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ZoneIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_zoneIds.push_back((*itr).GetInt64());
+        }
+        m_zoneIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -675,11 +689,24 @@ string DescribeInstanceResponse::ToJsonString() const
         value.AddMember(iKey, m_topicNumUpperLimit, allocator);
     }
 
+    if (m_zoneIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_zoneIds.begin(); itr != m_zoneIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -985,6 +1012,16 @@ int64_t DescribeInstanceResponse::GetTopicNumUpperLimit() const
 bool DescribeInstanceResponse::TopicNumUpperLimitHasBeenSet() const
 {
     return m_topicNumUpperLimitHasBeenSet;
+}
+
+vector<int64_t> DescribeInstanceResponse::GetZoneIds() const
+{
+    return m_zoneIds;
+}
+
+bool DescribeInstanceResponse::ZoneIdsHasBeenSet() const
+{
+    return m_zoneIdsHasBeenSet;
 }
 
 

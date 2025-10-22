@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -92,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取私网网关关联`VPC`实例`ID`。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId 私网网关关联`VPC`实例`ID`。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私网网关关联`VPC`实例`ID`。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId 私网网关关联`VPC`实例`ID`。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -180,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签键值对。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagSet 标签键值对。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTagSet() const;
 
                     /**
                      * 设置标签键值对。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tagSet 标签键值对。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTagSet(const std::vector<Tag>& _tagSet);
@@ -205,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取专线网关唯一`ID`
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DirectConnectGatewayIds 专线网关唯一`ID`
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetDirectConnectGatewayIds() const;
 
                     /**
                      * 设置专线网关唯一`ID`
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _directConnectGatewayIds 专线网关唯一`ID`
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDirectConnectGatewayIds(const std::vector<std::string>& _directConnectGatewayIds);
@@ -230,18 +218,14 @@ namespace TencentCloud
 
                     /**
                      * 获取私网网关类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NatType 私网网关类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNatType() const;
 
                     /**
                      * 设置私网网关类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _natType 私网网关类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNatType(const std::string& _natType);
@@ -255,18 +239,14 @@ namespace TencentCloud
 
                     /**
                      * 获取私网NAT跨域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CrossDomainInfo 私网NAT跨域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PrivateNatCrossDomainInfo GetCrossDomainInfo() const;
 
                     /**
                      * 设置私网NAT跨域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _crossDomainInfo 私网NAT跨域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCrossDomainInfo(const PrivateNatCrossDomainInfo& _crossDomainInfo);
@@ -280,18 +260,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否VPC型私网网关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcType 是否VPC型私网网关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetVpcType() const;
 
                     /**
                      * 设置是否VPC型私网网关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcType 是否VPC型私网网关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcType(const bool& _vpcType);
@@ -305,18 +281,14 @@ namespace TencentCloud
 
                     /**
                      * 获取跨域私网NAT关联的云联网ID	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CcnId 跨域私网NAT关联的云联网ID	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCcnId() const;
 
                     /**
                      * 设置跨域私网NAT关联的云联网ID	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ccnId 跨域私网NAT关联的云联网ID	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCcnId(const std::string& _ccnId);
@@ -327,6 +299,27 @@ namespace TencentCloud
                      * 
                      */
                     bool CcnIdHasBeenSet() const;
+
+                    /**
+                     * 获取私网NAT是否开启删除保护
+                     * @return DeletionProtectionEnabled 私网NAT是否开启删除保护
+                     * 
+                     */
+                    bool GetDeletionProtectionEnabled() const;
+
+                    /**
+                     * 设置私网NAT是否开启删除保护
+                     * @param _deletionProtectionEnabled 私网NAT是否开启删除保护
+                     * 
+                     */
+                    void SetDeletionProtectionEnabled(const bool& _deletionProtectionEnabled);
+
+                    /**
+                     * 判断参数 DeletionProtectionEnabled 是否已赋值
+                     * @return DeletionProtectionEnabled 是否已赋值
+                     * 
+                     */
+                    bool DeletionProtectionEnabledHasBeenSet() const;
 
                 private:
 
@@ -344,7 +337,6 @@ namespace TencentCloud
 
                     /**
                      * 私网网关关联`VPC`实例`ID`。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
@@ -369,45 +361,45 @@ namespace TencentCloud
 
                     /**
                      * 标签键值对。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tagSet;
                     bool m_tagSetHasBeenSet;
 
                     /**
                      * 专线网关唯一`ID`
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_directConnectGatewayIds;
                     bool m_directConnectGatewayIdsHasBeenSet;
 
                     /**
                      * 私网网关类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_natType;
                     bool m_natTypeHasBeenSet;
 
                     /**
                      * 私网NAT跨域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PrivateNatCrossDomainInfo m_crossDomainInfo;
                     bool m_crossDomainInfoHasBeenSet;
 
                     /**
                      * 是否VPC型私网网关
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_vpcType;
                     bool m_vpcTypeHasBeenSet;
 
                     /**
                      * 跨域私网NAT关联的云联网ID	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ccnId;
                     bool m_ccnIdHasBeenSet;
+
+                    /**
+                     * 私网NAT是否开启删除保护
+                     */
+                    bool m_deletionProtectionEnabled;
+                    bool m_deletionProtectionEnabledHasBeenSet;
 
                 };
             }

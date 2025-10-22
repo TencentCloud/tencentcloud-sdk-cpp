@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,7 +56,7 @@ namespace TencentCloud
 
 
                 /**
-                 *确认视频翻译结果
+                 *确认视频转译结果
                  * @param req ConfirmVideoTranslateJobRequest
                  * @return ConfirmVideoTranslateJobOutcome
                  */
@@ -65,7 +65,7 @@ namespace TencentCloud
                 ConfirmVideoTranslateJobOutcomeCallable ConfirmVideoTranslateJobCallable(const Model::ConfirmVideoTranslateJobRequest& request);
 
                 /**
-                 *查询视频翻译任务
+                 *查询视频转译任务
                  * @param req DescribeVideoTranslateJobRequest
                  * @return DescribeVideoTranslateJobOutcome
                  */

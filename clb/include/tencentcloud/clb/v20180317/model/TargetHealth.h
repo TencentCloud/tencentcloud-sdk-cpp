@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool TargetIdHasBeenSet() const;
 
                     /**
-                     * 获取当前健康状态的详细信息。如：Alive、Dead、Unknown。Alive状态为健康，Dead状态为异常，Unknown状态包括尚未开始探测、探测中、状态未知。
-                     * @return HealthStatusDetail 当前健康状态的详细信息。如：Alive、Dead、Unknown。Alive状态为健康，Dead状态为异常，Unknown状态包括尚未开始探测、探测中、状态未知。
+                     * 获取当前健康状态的详细信息。如：Alive、Dead、Unknown、Close。Alive状态为健康，Dead状态为异常，Unknown状态包括尚未开始探测、探测中、状态未知，Close表示健康检查关闭或监听器状态停止。
+                     * @return HealthStatusDetail 当前健康状态的详细信息。如：Alive、Dead、Unknown、Close。Alive状态为健康，Dead状态为异常，Unknown状态包括尚未开始探测、探测中、状态未知，Close表示健康检查关闭或监听器状态停止。
                      * 
                      */
                     std::string GetHealthStatusDetail() const;
 
                     /**
-                     * 设置当前健康状态的详细信息。如：Alive、Dead、Unknown。Alive状态为健康，Dead状态为异常，Unknown状态包括尚未开始探测、探测中、状态未知。
-                     * @param _healthStatusDetail 当前健康状态的详细信息。如：Alive、Dead、Unknown。Alive状态为健康，Dead状态为异常，Unknown状态包括尚未开始探测、探测中、状态未知。
+                     * 设置当前健康状态的详细信息。如：Alive、Dead、Unknown、Close。Alive状态为健康，Dead状态为异常，Unknown状态包括尚未开始探测、探测中、状态未知，Close表示健康检查关闭或监听器状态停止。
+                     * @param _healthStatusDetail 当前健康状态的详细信息。如：Alive、Dead、Unknown、Close。Alive状态为健康，Dead状态为异常，Unknown状态包括尚未开始探测、探测中、状态未知，Close表示健康检查关闭或监听器状态停止。
                      * 
                      */
                     void SetHealthStatusDetail(const std::string& _healthStatusDetail);
@@ -172,6 +172,48 @@ namespace TencentCloud
                      */
                     bool HealthStatusDetialHasBeenSet() const;
 
+                    /**
+                     * 获取目标组唯一ID。
+                     * @return TargetGroupId 目标组唯一ID。
+                     * 
+                     */
+                    std::string GetTargetGroupId() const;
+
+                    /**
+                     * 设置目标组唯一ID。
+                     * @param _targetGroupId 目标组唯一ID。
+                     * 
+                     */
+                    void SetTargetGroupId(const std::string& _targetGroupId);
+
+                    /**
+                     * 判断参数 TargetGroupId 是否已赋值
+                     * @return TargetGroupId 是否已赋值
+                     * 
+                     */
+                    bool TargetGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取Target的权重。
+                     * @return Weight Target的权重。
+                     * 
+                     */
+                    uint64_t GetWeight() const;
+
+                    /**
+                     * 设置Target的权重。
+                     * @param _weight Target的权重。
+                     * 
+                     */
+                    void SetWeight(const uint64_t& _weight);
+
+                    /**
+                     * 判断参数 Weight 是否已赋值
+                     * @return Weight 是否已赋值
+                     * 
+                     */
+                    bool WeightHasBeenSet() const;
+
                 private:
 
                     /**
@@ -199,7 +241,7 @@ namespace TencentCloud
                     bool m_targetIdHasBeenSet;
 
                     /**
-                     * 当前健康状态的详细信息。如：Alive、Dead、Unknown。Alive状态为健康，Dead状态为异常，Unknown状态包括尚未开始探测、探测中、状态未知。
+                     * 当前健康状态的详细信息。如：Alive、Dead、Unknown、Close。Alive状态为健康，Dead状态为异常，Unknown状态包括尚未开始探测、探测中、状态未知，Close表示健康检查关闭或监听器状态停止。
                      */
                     std::string m_healthStatusDetail;
                     bool m_healthStatusDetailHasBeenSet;
@@ -209,6 +251,18 @@ namespace TencentCloud
                      */
                     std::string m_healthStatusDetial;
                     bool m_healthStatusDetialHasBeenSet;
+
+                    /**
+                     * 目标组唯一ID。
+                     */
+                    std::string m_targetGroupId;
+                    bool m_targetGroupIdHasBeenSet;
+
+                    /**
+                     * Target的权重。
+                     */
+                    uint64_t m_weight;
+                    bool m_weightHasBeenSet;
 
                 };
             }

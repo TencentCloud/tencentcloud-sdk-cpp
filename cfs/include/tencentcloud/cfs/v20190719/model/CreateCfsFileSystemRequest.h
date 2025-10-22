@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool NetInterfaceHasBeenSet() const;
 
                     /**
-                     * 获取权限组 ID
-                     * @return PGroupId 权限组 ID
+                     * 获取权限组 ID,pgroupbasic 是默认权限组，通过控制查询权限组列表接口获取[DescribeCfsPGroups](https://cloud.tencent.com/document/product/582/38157)
+                     * @return PGroupId 权限组 ID,pgroupbasic 是默认权限组，通过控制查询权限组列表接口获取[DescribeCfsPGroups](https://cloud.tencent.com/document/product/582/38157)
                      * 
                      */
                     std::string GetPGroupId() const;
 
                     /**
-                     * 设置权限组 ID
-                     * @param _pGroupId 权限组 ID
+                     * 设置权限组 ID,pgroupbasic 是默认权限组，通过控制查询权限组列表接口获取[DescribeCfsPGroups](https://cloud.tencent.com/document/product/582/38157)
+                     * @param _pGroupId 权限组 ID,pgroupbasic 是默认权限组，通过控制查询权限组列表接口获取[DescribeCfsPGroups](https://cloud.tencent.com/document/product/582/38157)
                      * 
                      */
                     void SetPGroupId(const std::string& _pGroupId);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool PGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取文件系统协议类型， 值为 NFS、CIFS、TURBO ; 若留空则默认为 NFS协议，turbo系列必须选择turbo，不支持NFS、CIFS
-                     * @return Protocol 文件系统协议类型， 值为 NFS、CIFS、TURBO ; 若留空则默认为 NFS协议，turbo系列必须选择turbo，不支持NFS、CIFS
+                     * 获取文件系统协议类型， 值为 NFS、CIFS、TURBO ; 若留空则默认为 NFS协议，turbo系列必须选择TURBO，不支持NFS、CIFS
+                     * @return Protocol 文件系统协议类型， 值为 NFS、CIFS、TURBO ; 若留空则默认为 NFS协议，turbo系列必须选择TURBO，不支持NFS、CIFS
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置文件系统协议类型， 值为 NFS、CIFS、TURBO ; 若留空则默认为 NFS协议，turbo系列必须选择turbo，不支持NFS、CIFS
-                     * @param _protocol 文件系统协议类型， 值为 NFS、CIFS、TURBO ; 若留空则默认为 NFS协议，turbo系列必须选择turbo，不支持NFS、CIFS
+                     * 设置文件系统协议类型， 值为 NFS、CIFS、TURBO ; 若留空则默认为 NFS协议，turbo系列必须选择TURBO，不支持NFS、CIFS
+                     * @param _protocol 文件系统协议类型， 值为 NFS、CIFS、TURBO ; 若留空则默认为 NFS协议，turbo系列必须选择TURBO，不支持NFS、CIFS
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -149,15 +149,19 @@ namespace TencentCloud
                     bool StorageTypeHasBeenSet() const;
 
                     /**
-                     * 获取私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填。
-                     * @return VpcId 私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填。
+                     * 获取私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填.通过查询私有网络接口获取，
+[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)
+                     * @return VpcId 私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填.通过查询私有网络接口获取，
+[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填。
-                     * @param _vpcId 私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填。
+                     * 设置私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填.通过查询私有网络接口获取，
+[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)
+                     * @param _vpcId 私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填.通过查询私有网络接口获取，
+[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -170,15 +174,19 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网 ID，若网络类型选择的是VPC，该字段为必填。
-                     * @return SubnetId 子网 ID，若网络类型选择的是VPC，该字段为必填。
+                     * 获取子网 ID，若网络类型选择的是VPC，该字段为必填。通过查询子网接口获取，
+[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)
+                     * @return SubnetId 子网 ID，若网络类型选择的是VPC，该字段为必填。通过查询子网接口获取，
+[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网 ID，若网络类型选择的是VPC，该字段为必填。
-                     * @param _subnetId 子网 ID，若网络类型选择的是VPC，该字段为必填。
+                     * 设置子网 ID，若网络类型选择的是VPC，该字段为必填。通过查询子网接口获取，
+[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)
+                     * @param _subnetId 子网 ID，若网络类型选择的是VPC，该字段为必填。通过查询子网接口获取，
+[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -275,15 +283,23 @@ namespace TencentCloud
                     bool ClientTokenHasBeenSet() const;
 
                     /**
-                     * 获取云联网ID， 若网络类型选择的是CCN，该字段为必填
-                     * @return CcnId 云联网ID， 若网络类型选择的是CCN，该字段为必填
+                     * 获取云联网ID， 若网络类型选择的是CCN，该字段为必填;通过查询云联网列表接口获取，通过接口
+[DescribeCcns](https://cloud.tencent.com/document/product/215/19199)
+
+                     * @return CcnId 云联网ID， 若网络类型选择的是CCN，该字段为必填;通过查询云联网列表接口获取，通过接口
+[DescribeCcns](https://cloud.tencent.com/document/product/215/19199)
+
                      * 
                      */
                     std::string GetCcnId() const;
 
                     /**
-                     * 设置云联网ID， 若网络类型选择的是CCN，该字段为必填
-                     * @param _ccnId 云联网ID， 若网络类型选择的是CCN，该字段为必填
+                     * 设置云联网ID， 若网络类型选择的是CCN，该字段为必填;通过查询云联网列表接口获取，通过接口
+[DescribeCcns](https://cloud.tencent.com/document/product/215/19199)
+
+                     * @param _ccnId 云联网ID， 若网络类型选择的是CCN，该字段为必填;通过查询云联网列表接口获取，通过接口
+[DescribeCcns](https://cloud.tencent.com/document/product/215/19199)
+
                      * 
                      */
                     void SetCcnId(const std::string& _ccnId);
@@ -317,15 +333,15 @@ namespace TencentCloud
                     bool CidrBlockHasBeenSet() const;
 
                     /**
-                     * 获取文件系统容量，turbo系列必填，单位为GiB。 turbo标准型单位GB，起售20TiB，即20480 GiB；扩容步长20TiB，即20480 GiB。turbo性能型起售10TiB，即10240 GiB；扩容步长10TiB，10240 GiB。
-                     * @return Capacity 文件系统容量，turbo系列必填，单位为GiB。 turbo标准型单位GB，起售20TiB，即20480 GiB；扩容步长20TiB，即20480 GiB。turbo性能型起售10TiB，即10240 GiB；扩容步长10TiB，10240 GiB。
+                     * 获取文件系统容量，turbo系列必填，单位为GiB。 turbo标准型单位GB，起售20TiB，即20480 GiB；扩容步长10TiB，即10240 GiB。turbo性能型起售10TiB，即10240 GiB；扩容步长10TiB，10240 GiB。
+                     * @return Capacity 文件系统容量，turbo系列必填，单位为GiB。 turbo标准型单位GB，起售20TiB，即20480 GiB；扩容步长10TiB，即10240 GiB。turbo性能型起售10TiB，即10240 GiB；扩容步长10TiB，10240 GiB。
                      * 
                      */
                     uint64_t GetCapacity() const;
 
                     /**
-                     * 设置文件系统容量，turbo系列必填，单位为GiB。 turbo标准型单位GB，起售20TiB，即20480 GiB；扩容步长20TiB，即20480 GiB。turbo性能型起售10TiB，即10240 GiB；扩容步长10TiB，10240 GiB。
-                     * @param _capacity 文件系统容量，turbo系列必填，单位为GiB。 turbo标准型单位GB，起售20TiB，即20480 GiB；扩容步长20TiB，即20480 GiB。turbo性能型起售10TiB，即10240 GiB；扩容步长10TiB，10240 GiB。
+                     * 设置文件系统容量，turbo系列必填，单位为GiB。 turbo标准型单位GB，起售20TiB，即20480 GiB；扩容步长10TiB，即10240 GiB。turbo性能型起售10TiB，即10240 GiB；扩容步长10TiB，10240 GiB。
+                     * @param _capacity 文件系统容量，turbo系列必填，单位为GiB。 turbo标准型单位GB，起售20TiB，即20480 GiB；扩容步长10TiB，即10240 GiB。turbo性能型起售10TiB，即10240 GiB；扩容步长10TiB，10240 GiB。
                      * 
                      */
                     void SetCapacity(const uint64_t& _capacity);
@@ -338,15 +354,19 @@ namespace TencentCloud
                     bool CapacityHasBeenSet() const;
 
                     /**
-                     * 获取文件系统快照ID
-                     * @return SnapshotId 文件系统快照ID
+                     * 获取文件系统快照ID，通过查询快照列表获取该参数，
+[DescribeCfsSnapshots](https://cloud.tencent.com/document/product/582/80206)
+                     * @return SnapshotId 文件系统快照ID，通过查询快照列表获取该参数，
+[DescribeCfsSnapshots](https://cloud.tencent.com/document/product/582/80206)
                      * 
                      */
                     std::string GetSnapshotId() const;
 
                     /**
-                     * 设置文件系统快照ID
-                     * @param _snapshotId 文件系统快照ID
+                     * 设置文件系统快照ID，通过查询快照列表获取该参数，
+[DescribeCfsSnapshots](https://cloud.tencent.com/document/product/582/80206)
+                     * @param _snapshotId 文件系统快照ID，通过查询快照列表获取该参数，
+[DescribeCfsSnapshots](https://cloud.tencent.com/document/product/582/80206)
                      * 
                      */
                     void SetSnapshotId(const std::string& _snapshotId);
@@ -359,15 +379,19 @@ namespace TencentCloud
                     bool SnapshotIdHasBeenSet() const;
 
                     /**
-                     * 获取定期快照策略ID
-                     * @return AutoSnapshotPolicyId 定期快照策略ID
+                     * 获取定期快照策略ID，通过查询快照策略信息获取,
+[DescribeAutoSnapshotPolicies](https://cloud.tencent.com/document/product/582/38157)
+                     * @return AutoSnapshotPolicyId 定期快照策略ID，通过查询快照策略信息获取,
+[DescribeAutoSnapshotPolicies](https://cloud.tencent.com/document/product/582/38157)
                      * 
                      */
                     std::string GetAutoSnapshotPolicyId() const;
 
                     /**
-                     * 设置定期快照策略ID
-                     * @param _autoSnapshotPolicyId 定期快照策略ID
+                     * 设置定期快照策略ID，通过查询快照策略信息获取,
+[DescribeAutoSnapshotPolicies](https://cloud.tencent.com/document/product/582/38157)
+                     * @param _autoSnapshotPolicyId 定期快照策略ID，通过查询快照策略信息获取,
+[DescribeAutoSnapshotPolicies](https://cloud.tencent.com/document/product/582/38157)
                      * 
                      */
                     void SetAutoSnapshotPolicyId(const std::string& _autoSnapshotPolicyId);
@@ -380,15 +404,15 @@ namespace TencentCloud
                     bool AutoSnapshotPolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取是否开启默认扩容，仅Turbo类型文件存储支持
-                     * @return EnableAutoScaleUp 是否开启默认扩容，仅Turbo类型文件存储支持
+                     * 获取是否开启默认扩容，仅turbo类型文件存储支持
+                     * @return EnableAutoScaleUp 是否开启默认扩容，仅turbo类型文件存储支持
                      * 
                      */
                     bool GetEnableAutoScaleUp() const;
 
                     /**
-                     * 设置是否开启默认扩容，仅Turbo类型文件存储支持
-                     * @param _enableAutoScaleUp 是否开启默认扩容，仅Turbo类型文件存储支持
+                     * 设置是否开启默认扩容，仅turbo类型文件存储支持
+                     * @param _enableAutoScaleUp 是否开启默认扩容，仅turbo类型文件存储支持
                      * 
                      */
                     void SetEnableAutoScaleUp(const bool& _enableAutoScaleUp);
@@ -399,6 +423,64 @@ namespace TencentCloud
                      * 
                      */
                     bool EnableAutoScaleUpHasBeenSet() const;
+
+                    /**
+                     * 获取v1.5：创建普通版的通用文件系统；
+v3.1：创建增强版的通用文件系统
+说明：增强版的通用系统需要开通白名单才能使用，如有需要请提交工单与我们联系。
+                     * @return CfsVersion v1.5：创建普通版的通用文件系统；
+v3.1：创建增强版的通用文件系统
+说明：增强版的通用系统需要开通白名单才能使用，如有需要请提交工单与我们联系。
+                     * 
+                     */
+                    std::string GetCfsVersion() const;
+
+                    /**
+                     * 设置v1.5：创建普通版的通用文件系统；
+v3.1：创建增强版的通用文件系统
+说明：增强版的通用系统需要开通白名单才能使用，如有需要请提交工单与我们联系。
+                     * @param _cfsVersion v1.5：创建普通版的通用文件系统；
+v3.1：创建增强版的通用文件系统
+说明：增强版的通用系统需要开通白名单才能使用，如有需要请提交工单与我们联系。
+                     * 
+                     */
+                    void SetCfsVersion(const std::string& _cfsVersion);
+
+                    /**
+                     * 判断参数 CfsVersion 是否已赋值
+                     * @return CfsVersion 是否已赋值
+                     * 
+                     */
+                    bool CfsVersionHasBeenSet() const;
+
+                    /**
+                     * 获取turbo文件系统元数据属性
+basic：创建标准型的元数据
+enhanced：创建增强型的元数据
+                     * @return MetaType turbo文件系统元数据属性
+basic：创建标准型的元数据
+enhanced：创建增强型的元数据
+                     * 
+                     */
+                    std::string GetMetaType() const;
+
+                    /**
+                     * 设置turbo文件系统元数据属性
+basic：创建标准型的元数据
+enhanced：创建增强型的元数据
+                     * @param _metaType turbo文件系统元数据属性
+basic：创建标准型的元数据
+enhanced：创建增强型的元数据
+                     * 
+                     */
+                    void SetMetaType(const std::string& _metaType);
+
+                    /**
+                     * 判断参数 MetaType 是否已赋值
+                     * @return MetaType 是否已赋值
+                     * 
+                     */
+                    bool MetaTypeHasBeenSet() const;
 
                 private:
 
@@ -415,13 +497,13 @@ namespace TencentCloud
                     bool m_netInterfaceHasBeenSet;
 
                     /**
-                     * 权限组 ID
+                     * 权限组 ID,pgroupbasic 是默认权限组，通过控制查询权限组列表接口获取[DescribeCfsPGroups](https://cloud.tencent.com/document/product/582/38157)
                      */
                     std::string m_pGroupId;
                     bool m_pGroupIdHasBeenSet;
 
                     /**
-                     * 文件系统协议类型， 值为 NFS、CIFS、TURBO ; 若留空则默认为 NFS协议，turbo系列必须选择turbo，不支持NFS、CIFS
+                     * 文件系统协议类型， 值为 NFS、CIFS、TURBO ; 若留空则默认为 NFS协议，turbo系列必须选择TURBO，不支持NFS、CIFS
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
@@ -433,13 +515,15 @@ namespace TencentCloud
                     bool m_storageTypeHasBeenSet;
 
                     /**
-                     * 私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填。
+                     * 私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填.通过查询私有网络接口获取，
+[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 子网 ID，若网络类型选择的是VPC，该字段为必填。
+                     * 子网 ID，若网络类型选择的是VPC，该字段为必填。通过查询子网接口获取，
+[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
@@ -469,7 +553,9 @@ namespace TencentCloud
                     bool m_clientTokenHasBeenSet;
 
                     /**
-                     * 云联网ID， 若网络类型选择的是CCN，该字段为必填
+                     * 云联网ID， 若网络类型选择的是CCN，该字段为必填;通过查询云联网列表接口获取，通过接口
+[DescribeCcns](https://cloud.tencent.com/document/product/215/19199)
+
                      */
                     std::string m_ccnId;
                     bool m_ccnIdHasBeenSet;
@@ -481,28 +567,46 @@ namespace TencentCloud
                     bool m_cidrBlockHasBeenSet;
 
                     /**
-                     * 文件系统容量，turbo系列必填，单位为GiB。 turbo标准型单位GB，起售20TiB，即20480 GiB；扩容步长20TiB，即20480 GiB。turbo性能型起售10TiB，即10240 GiB；扩容步长10TiB，10240 GiB。
+                     * 文件系统容量，turbo系列必填，单位为GiB。 turbo标准型单位GB，起售20TiB，即20480 GiB；扩容步长10TiB，即10240 GiB。turbo性能型起售10TiB，即10240 GiB；扩容步长10TiB，10240 GiB。
                      */
                     uint64_t m_capacity;
                     bool m_capacityHasBeenSet;
 
                     /**
-                     * 文件系统快照ID
+                     * 文件系统快照ID，通过查询快照列表获取该参数，
+[DescribeCfsSnapshots](https://cloud.tencent.com/document/product/582/80206)
                      */
                     std::string m_snapshotId;
                     bool m_snapshotIdHasBeenSet;
 
                     /**
-                     * 定期快照策略ID
+                     * 定期快照策略ID，通过查询快照策略信息获取,
+[DescribeAutoSnapshotPolicies](https://cloud.tencent.com/document/product/582/38157)
                      */
                     std::string m_autoSnapshotPolicyId;
                     bool m_autoSnapshotPolicyIdHasBeenSet;
 
                     /**
-                     * 是否开启默认扩容，仅Turbo类型文件存储支持
+                     * 是否开启默认扩容，仅turbo类型文件存储支持
                      */
                     bool m_enableAutoScaleUp;
                     bool m_enableAutoScaleUpHasBeenSet;
+
+                    /**
+                     * v1.5：创建普通版的通用文件系统；
+v3.1：创建增强版的通用文件系统
+说明：增强版的通用系统需要开通白名单才能使用，如有需要请提交工单与我们联系。
+                     */
+                    std::string m_cfsVersion;
+                    bool m_cfsVersionHasBeenSet;
+
+                    /**
+                     * turbo文件系统元数据属性
+basic：创建标准型的元数据
+enhanced：创建增强型的元数据
+                     */
+                    std::string m_metaType;
+                    bool m_metaTypeHasBeenSet;
 
                 };
             }

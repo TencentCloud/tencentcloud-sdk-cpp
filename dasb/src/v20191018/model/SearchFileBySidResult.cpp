@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,8 @@ SearchFileBySidResult::SearchFileBySidResult() :
     m_fileCurrHasBeenSet(false),
     m_fileNewHasBeenSet(false),
     m_sizeHasBeenSet(false),
-    m_actionHasBeenSet(false)
+    m_actionHasBeenSet(false),
+    m_signValueHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome SearchFileBySidResult::Deserialize(const rapidjson::Value &v
         m_actionHasBeenSet = true;
     }
 
+    if (value.HasMember("SignValue") && !value["SignValue"].IsNull())
+    {
+        if (!value["SignValue"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SearchFileBySidResult.SignValue` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_signValue = string(value["SignValue"].GetString());
+        m_signValueHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void SearchFileBySidResult::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "Action";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_action, allocator);
+    }
+
+    if (m_signValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignValue";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_signValue.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void SearchFileBySidResult::SetAction(const int64_t& _action)
 bool SearchFileBySidResult::ActionHasBeenSet() const
 {
     return m_actionHasBeenSet;
+}
+
+string SearchFileBySidResult::GetSignValue() const
+{
+    return m_signValue;
+}
+
+void SearchFileBySidResult::SetSignValue(const string& _signValue)
+{
+    m_signValue = _signValue;
+    m_signValueHasBeenSet = true;
+}
+
+bool SearchFileBySidResult::SignValueHasBeenSet() const
+{
+    return m_signValueHasBeenSet;
 }
 

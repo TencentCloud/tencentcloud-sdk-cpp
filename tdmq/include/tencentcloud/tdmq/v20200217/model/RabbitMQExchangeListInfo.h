@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取exchange 名
-                     * @return ExchangeName exchange 名
+                     * 获取exchange 名称
+                     * @return ExchangeName exchange 名称
                      * 
                      */
                     std::string GetExchangeName() const;
 
                     /**
-                     * 设置exchange 名
-                     * @param _exchangeName exchange 名
+                     * 设置exchange 名称
+                     * @param _exchangeName exchange 名称
                      * 
                      */
                     void SetExchangeName(const std::string& _exchangeName);
@@ -114,19 +114,15 @@ namespace TencentCloud
                     bool ExchangeTypeHasBeenSet() const;
 
                     /**
-                     * 获取VHost参数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VirtualHost VHost参数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取交换机所属 Virtual Host 名称
+                     * @return VirtualHost 交换机所属 Virtual Host 名称
                      * 
                      */
                     std::string GetVirtualHost() const;
 
                     /**
-                     * 设置VHost参数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _virtualHost VHost参数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置交换机所属 Virtual Host 名称
+                     * @param _virtualHost 交换机所属 Virtual Host 名称
                      * 
                      */
                     void SetVirtualHost(const std::string& _virtualHost);
@@ -140,18 +136,14 @@ namespace TencentCloud
 
                     /**
                      * 获取exchange 创建者, "system":"系统创建", "user":"用户创建"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExchangeCreator exchange 创建者, "system":"系统创建", "user":"用户创建"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExchangeCreator() const;
 
                     /**
                      * 设置exchange 创建者, "system":"系统创建", "user":"用户创建"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _exchangeCreator exchange 创建者, "system":"系统创建", "user":"用户创建"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExchangeCreator(const std::string& _exchangeCreator);
@@ -165,18 +157,14 @@ namespace TencentCloud
 
                     /**
                      * 获取exchange 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTimeStamp exchange 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTimeStamp() const;
 
                     /**
                      * 设置exchange 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTimeStamp exchange 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTimeStamp(const std::string& _createTimeStamp);
@@ -190,18 +178,14 @@ namespace TencentCloud
 
                     /**
                      * 获取exchange 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModTimeStamp exchange 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModTimeStamp() const;
 
                     /**
                      * 设置exchange 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modTimeStamp exchange 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModTimeStamp(const std::string& _modTimeStamp);
@@ -265,18 +249,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否为持久化交换机，true 为持久化，false 为非持久化
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Durable 是否为持久化交换机，true 为持久化，false 为非持久化
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetDurable() const;
 
                     /**
                      * 设置是否为持久化交换机，true 为持久化，false 为非持久化
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _durable 是否为持久化交换机，true 为持久化，false 为非持久化
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDurable(const bool& _durable);
@@ -290,18 +270,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否为自动删除交换机，true 为自动删除，false 为非自动删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoDelete 是否为自动删除交换机，true 为自动删除，false 为非自动删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetAutoDelete() const;
 
                     /**
                      * 设置是否为自动删除交换机，true 为自动删除，false 为非自动删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _autoDelete 是否为自动删除交换机，true 为自动删除，false 为非自动删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAutoDelete(const bool& _autoDelete);
@@ -315,18 +291,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否为内部交换机，true 为内部交换机
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Internal 是否为内部交换机，true 为内部交换机
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetInternal() const;
 
                     /**
                      * 设置是否为内部交换机，true 为内部交换机
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _internal 是否为内部交换机，true 为内部交换机
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInternal(const bool& _internal);
@@ -340,18 +312,14 @@ namespace TencentCloud
 
                     /**
                      * 获取交换机所属实例 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 交换机所属实例 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置交换机所属实例 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 交换机所属实例 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -390,18 +358,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扩展参数 key-value 对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Arguments 扩展参数 key-value 对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetArguments() const;
 
                     /**
                      * 设置扩展参数 key-value 对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _arguments 扩展参数 key-value 对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetArguments(const std::string& _arguments);
@@ -438,10 +402,52 @@ namespace TencentCloud
                      */
                     bool MessagesDelayedHasBeenSet() const;
 
+                    /**
+                     * 获取创建时间时间戳
+                     * @return CreateTs 创建时间时间戳
+                     * 
+                     */
+                    uint64_t GetCreateTs() const;
+
+                    /**
+                     * 设置创建时间时间戳
+                     * @param _createTs 创建时间时间戳
+                     * 
+                     */
+                    void SetCreateTs(const uint64_t& _createTs);
+
+                    /**
+                     * 判断参数 CreateTs 是否已赋值
+                     * @return CreateTs 是否已赋值
+                     * 
+                     */
+                    bool CreateTsHasBeenSet() const;
+
+                    /**
+                     * 获取修改时间时间戳
+                     * @return ModifyTs 修改时间时间戳
+                     * 
+                     */
+                    uint64_t GetModifyTs() const;
+
+                    /**
+                     * 设置修改时间时间戳
+                     * @param _modifyTs 修改时间时间戳
+                     * 
+                     */
+                    void SetModifyTs(const uint64_t& _modifyTs);
+
+                    /**
+                     * 判断参数 ModifyTs 是否已赋值
+                     * @return ModifyTs 是否已赋值
+                     * 
+                     */
+                    bool ModifyTsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * exchange 名
+                     * exchange 名称
                      */
                     std::string m_exchangeName;
                     bool m_exchangeNameHasBeenSet;
@@ -460,29 +466,25 @@ namespace TencentCloud
                     bool m_exchangeTypeHasBeenSet;
 
                     /**
-                     * VHost参数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 交换机所属 Virtual Host 名称
                      */
                     std::string m_virtualHost;
                     bool m_virtualHostHasBeenSet;
 
                     /**
                      * exchange 创建者, "system":"系统创建", "user":"用户创建"
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_exchangeCreator;
                     bool m_exchangeCreatorHasBeenSet;
 
                     /**
                      * exchange 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTimeStamp;
                     bool m_createTimeStampHasBeenSet;
 
                     /**
                      * exchange 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modTimeStamp;
                     bool m_modTimeStampHasBeenSet;
@@ -503,28 +505,24 @@ namespace TencentCloud
 
                     /**
                      * 是否为持久化交换机，true 为持久化，false 为非持久化
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_durable;
                     bool m_durableHasBeenSet;
 
                     /**
                      * 是否为自动删除交换机，true 为自动删除，false 为非自动删除
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_autoDelete;
                     bool m_autoDeleteHasBeenSet;
 
                     /**
                      * 是否为内部交换机，true 为内部交换机
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_internal;
                     bool m_internalHasBeenSet;
 
                     /**
                      * 交换机所属实例 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -538,7 +536,6 @@ namespace TencentCloud
 
                     /**
                      * 扩展参数 key-value 对象
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_arguments;
                     bool m_argumentsHasBeenSet;
@@ -549,6 +546,18 @@ namespace TencentCloud
                      */
                     uint64_t m_messagesDelayed;
                     bool m_messagesDelayedHasBeenSet;
+
+                    /**
+                     * 创建时间时间戳
+                     */
+                    uint64_t m_createTs;
+                    bool m_createTsHasBeenSet;
+
+                    /**
+                     * 修改时间时间戳
+                     */
+                    uint64_t m_modifyTs;
+                    bool m_modifyTsHasBeenSet;
 
                 };
             }

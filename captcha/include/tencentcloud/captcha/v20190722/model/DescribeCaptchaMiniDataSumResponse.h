@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取请求总量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GetSum 请求总量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetGetSum() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取请求验证成功量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VfySuccSum 请求验证成功量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetVfySuccSum() const;
@@ -77,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取请求验证量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VfySum 请求验证量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetVfySum() const;
@@ -93,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取拦截攻击量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttackSum 拦截攻击量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAttackSum() const;
@@ -109,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取返回信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CaptchaMsg 返回信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCaptchaMsg() const;
@@ -125,9 +115,7 @@ namespace TencentCloud
 
                     /**
                      * 获取成功返回0  其它失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CaptchaCode 成功返回0  其它失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCaptchaCode() const;
@@ -141,9 +129,7 @@ namespace TencentCloud
 
                     /**
                      * 获取票据校验总量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckTicketSum 票据校验总量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCheckTicketSum() const;
@@ -157,9 +143,7 @@ namespace TencentCloud
 
                     /**
                      * 获取票据验证通过量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TicketThroughputSum 票据验证通过量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTicketThroughputSum() const;
@@ -173,9 +157,7 @@ namespace TencentCloud
 
                     /**
                      * 获取票据验证拦截量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TicketInterceptSum 票据验证拦截量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTicketInterceptSum() const;
@@ -191,63 +173,54 @@ namespace TencentCloud
 
                     /**
                      * 请求总量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_getSum;
                     bool m_getSumHasBeenSet;
 
                     /**
                      * 请求验证成功量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_vfySuccSum;
                     bool m_vfySuccSumHasBeenSet;
 
                     /**
                      * 请求验证量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_vfySum;
                     bool m_vfySumHasBeenSet;
 
                     /**
                      * 拦截攻击量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_attackSum;
                     bool m_attackSumHasBeenSet;
 
                     /**
                      * 返回信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_captchaMsg;
                     bool m_captchaMsgHasBeenSet;
 
                     /**
                      * 成功返回0  其它失败
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_captchaCode;
                     bool m_captchaCodeHasBeenSet;
 
                     /**
                      * 票据校验总量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_checkTicketSum;
                     bool m_checkTicketSumHasBeenSet;
 
                     /**
                      * 票据验证通过量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ticketThroughputSum;
                     bool m_ticketThroughputSumHasBeenSet;
 
                     /**
                      * 票据验证拦截量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ticketInterceptSum;
                     bool m_ticketInterceptSumHasBeenSet;

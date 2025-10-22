@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -130,15 +130,15 @@ namespace TencentCloud
                     bool WafConfigHasBeenSet() const;
 
                     /**
-                     * 获取	路由配置
-                     * @return EndpointsConfig 	路由配置
+                     * 获取路由配置
+                     * @return EndpointsConfig 路由配置
                      * 
                      */
                     std::vector<EndpointsConf> GetEndpointsConfig() const;
 
                     /**
-                     * 设置	路由配置
-                     * @param _endpointsConfig 	路由配置
+                     * 设置路由配置
+                     * @param _endpointsConfig 路由配置
                      * 
                      */
                     void SetEndpointsConfig(const std::vector<EndpointsConf>& _endpointsConfig);
@@ -177,7 +177,7 @@ namespace TencentCloud
                     bool m_wafConfigHasBeenSet;
 
                     /**
-                     * 	路由配置
+                     * 路由配置
                      */
                     std::vector<EndpointsConf> m_endpointsConfig;
                     bool m_endpointsConfigHasBeenSet;

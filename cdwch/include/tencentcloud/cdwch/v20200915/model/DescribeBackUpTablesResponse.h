@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,6 +58,20 @@ namespace TencentCloud
                      */
                     bool AvailableTablesHasBeenSet() const;
 
+                    /**
+                     * 获取错误描述
+                     * @return ErrorMsg 错误描述
+                     * 
+                     */
+                    std::string GetErrorMsg() const;
+
+                    /**
+                     * 判断参数 ErrorMsg 是否已赋值
+                     * @return ErrorMsg 是否已赋值
+                     * 
+                     */
+                    bool ErrorMsgHasBeenSet() const;
+
                 private:
 
                     /**
@@ -65,6 +79,12 @@ namespace TencentCloud
                      */
                     std::vector<BackupTableContent> m_availableTables;
                     bool m_availableTablesHasBeenSet;
+
+                    /**
+                     * 错误描述
+                     */
+                    std::string m_errorMsg;
+                    bool m_errorMsgHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取成员uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemberUin 成员uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMemberUin() const;
 
                     /**
                      * 设置成员uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _memberUin 成员uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMemberUin(const int64_t& _memberUin);
@@ -72,19 +68,15 @@ namespace TencentCloud
                     bool MemberUinHasBeenSet() const;
 
                     /**
-                     * 获取成员名称j
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MemberName 成员名称j
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取成员名称
+                     * @return MemberName 成员名称
                      * 
                      */
                     std::string GetMemberName() const;
 
                     /**
-                     * 设置成员名称j
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _memberName 成员名称j
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置成员名称
+                     * @param _memberName 成员名称
                      * 
                      */
                     void SetMemberName(const std::string& _memberName);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 成员uin
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_memberUin;
                     bool m_memberUinHasBeenSet;
 
                     /**
-                     * 成员名称j
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 成员名称
                      */
                     std::string m_memberName;
                     bool m_memberNameHasBeenSet;

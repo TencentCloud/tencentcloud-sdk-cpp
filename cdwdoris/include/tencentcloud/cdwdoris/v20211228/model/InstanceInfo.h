@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,19 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群实例ID, "cdw-xxxx" 字符串类型
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceId 集群实例ID, "cdw-xxxx" 字符串类型
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取集群实例ID, "cdwdoris-xxxx" 字符串类型
+                     * @return InstanceId 集群实例ID, "cdwdoris-xxxx" 字符串类型
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置集群实例ID, "cdw-xxxx" 字符串类型
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceId 集群实例ID, "cdw-xxxx" 字符串类型
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置集群实例ID, "cdwdoris-xxxx" 字符串类型
+                     * @param _instanceId 集群实例ID, "cdwdoris-xxxx" 字符串类型
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -76,18 +72,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceName 集群实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置集群实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceName 集群实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -101,30 +93,30 @@ namespace TencentCloud
 
                     /**
                      * 获取状态,
-Init 创建中; Serving 运行中； 
-Deleted已销毁；Deleting 销毁中；
-Modify 集群变更中；
-注意：此字段可能返回 null，表示取不到有效值。
+Init  创建中
+Serving   运行中
+Isolated   已隔离
+Changing  变更中
                      * @return Status 状态,
-Init 创建中; Serving 运行中； 
-Deleted已销毁；Deleting 销毁中；
-Modify 集群变更中；
-注意：此字段可能返回 null，表示取不到有效值。
+Init  创建中
+Serving   运行中
+Isolated   已隔离
+Changing  变更中
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态,
-Init 创建中; Serving 运行中； 
-Deleted已销毁；Deleting 销毁中；
-Modify 集群变更中；
-注意：此字段可能返回 null，表示取不到有效值。
+Init  创建中
+Serving   运行中
+Isolated   已隔离
+Changing  变更中
                      * @param _status 状态,
-Init 创建中; Serving 运行中； 
-Deleted已销毁；Deleting 销毁中；
-Modify 集群变更中；
-注意：此字段可能返回 null，表示取不到有效值。
+Init  创建中
+Serving   运行中
+Isolated   已隔离
+Changing  变更中
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -138,18 +130,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _version 版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -163,18 +151,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取地域, ap-guangzhou
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域, ap-guangzhou
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域, ap-guangzhou
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 地域, ap-guangzhou
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -188,18 +172,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取可用区， ap-guangzhou-3
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 可用区， ap-guangzhou-3
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区， ap-guangzhou-3
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zone 可用区， ap-guangzhou-3
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -213,18 +193,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取私有网络名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId 私有网络名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId 私有网络名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -238,18 +214,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取子网名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 子网名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetId 子网名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -263,18 +235,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取付费类型，"hour", "prepay"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayMode 付费类型，"hour", "prepay"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPayMode() const;
 
                     /**
                      * 设置付费类型，"hour", "prepay"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _payMode 付费类型，"hour", "prepay"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPayMode(const std::string& _payMode);
@@ -288,18 +256,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -313,18 +277,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireTime 过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expireTime 过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -338,18 +298,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取数据节点描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MasterSummary 数据节点描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     NodesSummary GetMasterSummary() const;
 
                     /**
                      * 设置数据节点描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _masterSummary 数据节点描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMasterSummary(const NodesSummary& _masterSummary);
@@ -363,18 +319,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取zookeeper节点描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CoreSummary zookeeper节点描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     NodesSummary GetCoreSummary() const;
 
                     /**
                      * 设置zookeeper节点描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _coreSummary zookeeper节点描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCoreSummary(const NodesSummary& _coreSummary);
@@ -387,19 +339,15 @@ Modify 集群变更中；
                     bool CoreSummaryHasBeenSet() const;
 
                     /**
-                     * 获取高可用，“true" "false"
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HA 高可用，“true" "false"
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取高可用，"true" "false"
+                     * @return HA 高可用，"true" "false"
                      * 
                      */
                     std::string GetHA() const;
 
                     /**
-                     * 设置高可用，“true" "false"
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hA 高可用，“true" "false"
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置高可用，"true" "false"
+                     * @param _hA 高可用，"true" "false"
                      * 
                      */
                     void SetHA(const std::string& _hA);
@@ -416,12 +364,10 @@ Modify 集群变更中；
 0：非高可用
 1：读高可用
 2：读写高可用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HaType 高可用类型：
 0：非高可用
 1：读高可用
 2：读写高可用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHaType() const;
@@ -431,12 +377,10 @@ Modify 集群变更中；
 0：非高可用
 1：读高可用
 2：读写高可用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _haType 高可用类型：
 0：非高可用
 1：读高可用
 2：读写高可用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHaType(const int64_t& _haType);
@@ -450,18 +394,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取访问地址，例如 "10.0.0.1:9000"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccessInfo 访问地址，例如 "10.0.0.1:9000"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccessInfo() const;
 
                     /**
                      * 设置访问地址，例如 "10.0.0.1:9000"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accessInfo 访问地址，例如 "10.0.0.1:9000"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccessInfo(const std::string& _accessInfo);
@@ -475,18 +415,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取记录ID，数值型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 记录ID，数值型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置记录ID，数值型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 记录ID，数值型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -500,18 +436,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取regionId, 表示地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionId regionId, 表示地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRegionId() const;
 
                     /**
                      * 设置regionId, 表示地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionId regionId, 表示地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionId(const int64_t& _regionId);
@@ -524,19 +456,15 @@ Modify 集群变更中；
                     bool RegionIdHasBeenSet() const;
 
                     /**
-                     * 获取可用区说明，例如 "广州二区"
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ZoneDesc 可用区说明，例如 "广州二区"
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取可用区说明，例如 "广州三区"
+                     * @return ZoneDesc 可用区说明，例如 "广州三区"
                      * 
                      */
                     std::string GetZoneDesc() const;
 
                     /**
-                     * 设置可用区说明，例如 "广州二区"
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _zoneDesc 可用区说明，例如 "广州二区"
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置可用区说明，例如 "广州三区"
+                     * @param _zoneDesc 可用区说明，例如 "广州三区"
                      * 
                      */
                     void SetZoneDesc(const std::string& _zoneDesc);
@@ -550,18 +478,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取错误流程说明信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowMsg 错误流程说明信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlowMsg() const;
 
                     /**
                      * 设置错误流程说明信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _flowMsg 错误流程说明信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFlowMsg(const std::string& _flowMsg);
@@ -575,18 +499,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取状态描述，例如“运行中”等
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatusDesc 状态描述，例如“运行中”等
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatusDesc() const;
 
                     /**
                      * 设置状态描述，例如“运行中”等
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _statusDesc 状态描述，例如“运行中”等
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatusDesc(const std::string& _statusDesc);
@@ -600,18 +520,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取自动续费标记
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RenewFlag 自动续费标记
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetRenewFlag() const;
 
                     /**
                      * 设置自动续费标记
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _renewFlag 自动续费标记
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRenewFlag(const bool& _renewFlag);
@@ -625,18 +541,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -650,18 +562,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取监控信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Monitor 监控信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMonitor() const;
 
                     /**
                      * 设置监控信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _monitor 监控信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMonitor(const std::string& _monitor);
@@ -675,18 +583,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取是否开通日志
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HasClsTopic 是否开通日志
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetHasClsTopic() const;
 
                     /**
                      * 设置是否开通日志
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hasClsTopic 是否开通日志
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHasClsTopic(const bool& _hasClsTopic);
@@ -700,18 +604,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClsTopicId 日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClsTopicId() const;
 
                     /**
                      * 设置日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clsTopicId 日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClsTopicId(const std::string& _clsTopicId);
@@ -725,18 +625,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClsLogSetId 日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClsLogSetId() const;
 
                     /**
                      * 设置日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clsLogSetId 日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClsLogSetId(const std::string& _clsLogSetId);
@@ -750,18 +646,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取是否支持xml配置管理
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableXMLConfig 是否支持xml配置管理
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEnableXMLConfig() const;
 
                     /**
                      * 设置是否支持xml配置管理
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableXMLConfig 是否支持xml配置管理
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableXMLConfig(const int64_t& _enableXMLConfig);
@@ -775,18 +667,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取区域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionDesc 区域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegionDesc() const;
 
                     /**
                      * 设置区域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionDesc 区域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionDesc(const std::string& _regionDesc);
@@ -800,18 +688,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取弹性网卡地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Eip 弹性网卡地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEip() const;
 
                     /**
                      * 设置弹性网卡地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eip 弹性网卡地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEip(const std::string& _eip);
@@ -825,18 +709,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取冷热分层系数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CosMoveFactor 冷热分层系数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCosMoveFactor() const;
 
                     /**
                      * 设置冷热分层系数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cosMoveFactor 冷热分层系数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCosMoveFactor(const int64_t& _cosMoveFactor);
@@ -850,18 +730,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取external/local/yunti
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Kind external/local/yunti
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKind() const;
 
                     /**
                      * 设置external/local/yunti
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _kind external/local/yunti
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKind(const std::string& _kind);
@@ -875,18 +751,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取cos桶
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CosBucketName cos桶
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCosBucketName() const;
 
                     /**
                      * 设置cos桶
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cosBucketName cos桶
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCosBucketName(const std::string& _cosBucketName);
@@ -900,18 +772,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取cbs
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CanAttachCbs cbs
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetCanAttachCbs() const;
 
                     /**
                      * 设置cbs
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _canAttachCbs cbs
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCanAttachCbs(const bool& _canAttachCbs);
@@ -925,18 +793,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取小版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BuildVersion 小版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBuildVersion() const;
 
                     /**
                      * 设置小版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _buildVersion 小版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBuildVersion(const std::string& _buildVersion);
@@ -951,10 +815,8 @@ Modify 集群变更中；
                     /**
                      * 获取组件信息
 注：这里返回类型实际为map[string]struct类型，并非显示的string类型，可以参考“示例值”进行数据的解析。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Components 组件信息
 注：这里返回类型实际为map[string]struct类型，并非显示的string类型，可以参考“示例值”进行数据的解析。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComponents() const;
@@ -962,10 +824,8 @@ Modify 集群变更中；
                     /**
                      * 设置组件信息
 注：这里返回类型实际为map[string]struct类型，并非显示的string类型，可以参考“示例值”进行数据的解析。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _components 组件信息
 注：这里返回类型实际为map[string]struct类型，并非显示的string类型，可以参考“示例值”进行数据的解析。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComponents(const std::string& _components);
@@ -1004,18 +864,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取页面特性，用于前端屏蔽一些页面入口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Characteristic 页面特性，用于前端屏蔽一些页面入口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetCharacteristic() const;
 
                     /**
                      * 设置页面特性，用于前端屏蔽一些页面入口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _characteristic 页面特性，用于前端屏蔽一些页面入口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCharacteristic(const std::vector<std::string>& _characteristic);
@@ -1029,18 +885,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取超时时间 单位s
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RestartTimeout 超时时间 单位s
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRestartTimeout() const;
 
                     /**
                      * 设置超时时间 单位s
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _restartTimeout 超时时间 单位s
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRestartTimeout(const std::string& _restartTimeout);
@@ -1054,18 +906,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取内核优雅重启超时时间，如果为-1说明未设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GraceShutdownWaitSeconds 内核优雅重启超时时间，如果为-1说明未设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGraceShutdownWaitSeconds() const;
 
                     /**
                      * 设置内核优雅重启超时时间，如果为-1说明未设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _graceShutdownWaitSeconds 内核优雅重启超时时间，如果为-1说明未设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGraceShutdownWaitSeconds(const std::string& _graceShutdownWaitSeconds);
@@ -1079,18 +927,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取表名大小写是否敏感，0：敏感；1：不敏感，以小写进行比较；2：不敏感，表名改为以小写存储
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CaseSensitive 表名大小写是否敏感，0：敏感；1：不敏感，以小写进行比较；2：不敏感，表名改为以小写存储
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCaseSensitive() const;
 
                     /**
                      * 设置表名大小写是否敏感，0：敏感；1：不敏感，以小写进行比较；2：不敏感，表名改为以小写存储
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _caseSensitive 表名大小写是否敏感，0：敏感；1：不敏感，以小写进行比较；2：不敏感，表名改为以小写存储
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCaseSensitive(const int64_t& _caseSensitive);
@@ -1104,18 +948,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取用户是否可以绑定安全组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsWhiteSGs 用户是否可以绑定安全组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsWhiteSGs() const;
 
                     /**
                      * 设置用户是否可以绑定安全组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isWhiteSGs 用户是否可以绑定安全组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsWhiteSGs(const bool& _isWhiteSGs);
@@ -1129,18 +969,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取已绑定的安全组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BindSGs 已绑定的安全组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetBindSGs() const;
 
                     /**
                      * 设置已绑定的安全组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bindSGs 已绑定的安全组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBindSGs(const std::vector<std::string>& _bindSGs);
@@ -1154,18 +990,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取是否为多可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableMultiZones 是否为多可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableMultiZones() const;
 
                     /**
                      * 设置是否为多可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableMultiZones 是否为多可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableMultiZones(const bool& _enableMultiZones);
@@ -1179,18 +1011,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取用户可用区和子网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserNetworkInfos 用户可用区和子网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserNetworkInfos() const;
 
                     /**
                      * 设置用户可用区和子网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userNetworkInfos 用户可用区和子网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserNetworkInfos(const std::string& _userNetworkInfos);
@@ -1204,18 +1032,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取是否启用冷热分层。0：未开启 1：已开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableCoolDown 是否启用冷热分层。0：未开启 1：已开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEnableCoolDown() const;
 
                     /**
                      * 设置是否启用冷热分层。0：未开启 1：已开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableCoolDown 是否启用冷热分层。0：未开启 1：已开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableCoolDown(const int64_t& _enableCoolDown);
@@ -1229,18 +1053,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取冷热分层使用COS桶
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CoolDownBucket 冷热分层使用COS桶
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCoolDownBucket() const;
 
                     /**
                      * 设置冷热分层使用COS桶
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _coolDownBucket 冷热分层使用COS桶
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCoolDownBucket(const std::string& _coolDownBucket);
@@ -1254,18 +1074,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取实例扩展信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Details 实例扩展信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     InstanceDetail GetDetails() const;
 
                     /**
                      * 设置实例扩展信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _details 实例扩展信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDetails(const InstanceDetail& _details);
@@ -1279,18 +1095,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取是否启用DLC 0:关闭 1:开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableDlc 是否启用DLC 0:关闭 1:开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEnableDlc() const;
 
                     /**
                      * 设置是否启用DLC 0:关闭 1:开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableDlc 是否启用DLC 0:关闭 1:开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableDlc(const int64_t& _enableDlc);
@@ -1304,18 +1116,14 @@ Modify 集群变更中；
 
                     /**
                      * 获取账户类型 0:普通用户 1:CAM用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccountType 账户类型 0:普通用户 1:CAM用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAccountType() const;
 
                     /**
                      * 设置账户类型 0:普通用户 1:CAM用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accountType 账户类型 0:普通用户 1:CAM用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccountType(const int64_t& _accountType);
@@ -1327,105 +1135,239 @@ Modify 集群变更中；
                      */
                     bool AccountTypeHasBeenSet() const;
 
+                    /**
+                     * 获取监控模式 0: 老监控 1：新监控
+                     * @return MonitorMode 监控模式 0: 老监控 1：新监控
+                     * 
+                     */
+                    int64_t GetMonitorMode() const;
+
+                    /**
+                     * 设置监控模式 0: 老监控 1：新监控
+                     * @param _monitorMode 监控模式 0: 老监控 1：新监控
+                     * 
+                     */
+                    void SetMonitorMode(const int64_t& _monitorMode);
+
+                    /**
+                     * 判断参数 MonitorMode 是否已赋值
+                     * @return MonitorMode 是否已赋值
+                     * 
+                     */
+                    bool MonitorModeHasBeenSet() const;
+
+                    /**
+                     * 获取cn节点信息
+                     * @return CNSummary cn节点信息
+                     * 
+                     */
+                    NodesSummary GetCNSummary() const;
+
+                    /**
+                     * 设置cn节点信息
+                     * @param _cNSummary cn节点信息
+                     * 
+                     */
+                    void SetCNSummary(const NodesSummary& _cNSummary);
+
+                    /**
+                     * 判断参数 CNSummary 是否已赋值
+                     * @return CNSummary 是否已赋值
+                     * 
+                     */
+                    bool CNSummaryHasBeenSet() const;
+
+                    /**
+                     * 获取计算组个数
+                     * @return ComputeGroupCount 计算组个数
+                     * 
+                     */
+                    int64_t GetComputeGroupCount() const;
+
+                    /**
+                     * 设置计算组个数
+                     * @param _computeGroupCount 计算组个数
+                     * 
+                     */
+                    void SetComputeGroupCount(const int64_t& _computeGroupCount);
+
+                    /**
+                     * 判断参数 ComputeGroupCount 是否已赋值
+                     * @return ComputeGroupCount 是否已赋值
+                     * 
+                     */
+                    bool ComputeGroupCountHasBeenSet() const;
+
+                    /**
+                     * 获取存算分离cos存储数据
+                     * @return CosStorageSize 存算分离cos存储数据
+                     * 
+                     */
+                    double GetCosStorageSize() const;
+
+                    /**
+                     * 设置存算分离cos存储数据
+                     * @param _cosStorageSize 存算分离cos存储数据
+                     * 
+                     */
+                    void SetCosStorageSize(const double& _cosStorageSize);
+
+                    /**
+                     * 判断参数 CosStorageSize 是否已赋值
+                     * @return CosStorageSize 是否已赋值
+                     * 
+                     */
+                    bool CosStorageSizeHasBeenSet() const;
+
+                    /**
+                     * 获取存算分离的指标 当是true 不支持新建计算组
+                     * @return IsMasterNonVM 存算分离的指标 当是true 不支持新建计算组
+                     * 
+                     */
+                    bool GetIsMasterNonVM() const;
+
+                    /**
+                     * 设置存算分离的指标 当是true 不支持新建计算组
+                     * @param _isMasterNonVM 存算分离的指标 当是true 不支持新建计算组
+                     * 
+                     */
+                    void SetIsMasterNonVM(const bool& _isMasterNonVM);
+
+                    /**
+                     * 判断参数 IsMasterNonVM 是否已赋值
+                     * @return IsMasterNonVM 是否已赋值
+                     * 
+                     */
+                    bool IsMasterNonVMHasBeenSet() const;
+
+                    /**
+                     * 获取Cos容量包大小
+                     * @return CosPkgCapacity Cos容量包大小
+                     * 
+                     */
+                    int64_t GetCosPkgCapacity() const;
+
+                    /**
+                     * 设置Cos容量包大小
+                     * @param _cosPkgCapacity Cos容量包大小
+                     * 
+                     */
+                    void SetCosPkgCapacity(const int64_t& _cosPkgCapacity);
+
+                    /**
+                     * 判断参数 CosPkgCapacity 是否已赋值
+                     * @return CosPkgCapacity 是否已赋值
+                     * 
+                     */
+                    bool CosPkgCapacityHasBeenSet() const;
+
+                    /**
+                     * 获取集群是否使用托管桶
+                     * @return UseManagedBucket 集群是否使用托管桶
+                     * 
+                     */
+                    bool GetUseManagedBucket() const;
+
+                    /**
+                     * 设置集群是否使用托管桶
+                     * @param _useManagedBucket 集群是否使用托管桶
+                     * 
+                     */
+                    void SetUseManagedBucket(const bool& _useManagedBucket);
+
+                    /**
+                     * 判断参数 UseManagedBucket 是否已赋值
+                     * @return UseManagedBucket 是否已赋值
+                     * 
+                     */
+                    bool UseManagedBucketHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 集群实例ID, "cdw-xxxx" 字符串类型
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 集群实例ID, "cdwdoris-xxxx" 字符串类型
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 集群实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
                      * 状态,
-Init 创建中; Serving 运行中； 
-Deleted已销毁；Deleting 销毁中；
-Modify 集群变更中；
-注意：此字段可能返回 null，表示取不到有效值。
+Init  创建中
+Serving   运行中
+Isolated   已隔离
+Changing  变更中
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
                      * 地域, ap-guangzhou
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * 可用区， ap-guangzhou-3
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
                      * 私有网络名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * 子网名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
                      * 付费类型，"hour", "prepay"
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
                      * 数据节点描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     NodesSummary m_masterSummary;
                     bool m_masterSummaryHasBeenSet;
 
                     /**
                      * zookeeper节点描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     NodesSummary m_coreSummary;
                     bool m_coreSummaryHasBeenSet;
 
                     /**
-                     * 高可用，“true" "false"
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 高可用，"true" "false"
                      */
                     std::string m_hA;
                     bool m_hAHasBeenSet;
@@ -1435,147 +1377,126 @@ Modify 集群变更中；
 0：非高可用
 1：读高可用
 2：读写高可用。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_haType;
                     bool m_haTypeHasBeenSet;
 
                     /**
                      * 访问地址，例如 "10.0.0.1:9000"
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accessInfo;
                     bool m_accessInfoHasBeenSet;
 
                     /**
                      * 记录ID，数值型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * regionId, 表示地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_regionId;
                     bool m_regionIdHasBeenSet;
 
                     /**
-                     * 可用区说明，例如 "广州二区"
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 可用区说明，例如 "广州三区"
                      */
                     std::string m_zoneDesc;
                     bool m_zoneDescHasBeenSet;
 
                     /**
                      * 错误流程说明信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowMsg;
                     bool m_flowMsgHasBeenSet;
 
                     /**
                      * 状态描述，例如“运行中”等
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_statusDesc;
                     bool m_statusDescHasBeenSet;
 
                     /**
                      * 自动续费标记
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_renewFlag;
                     bool m_renewFlagHasBeenSet;
 
                     /**
                      * 标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
                      * 监控信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_monitor;
                     bool m_monitorHasBeenSet;
 
                     /**
                      * 是否开通日志
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_hasClsTopic;
                     bool m_hasClsTopicHasBeenSet;
 
                     /**
                      * 日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clsTopicId;
                     bool m_clsTopicIdHasBeenSet;
 
                     /**
                      * 日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clsLogSetId;
                     bool m_clsLogSetIdHasBeenSet;
 
                     /**
                      * 是否支持xml配置管理
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_enableXMLConfig;
                     bool m_enableXMLConfigHasBeenSet;
 
                     /**
                      * 区域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regionDesc;
                     bool m_regionDescHasBeenSet;
 
                     /**
                      * 弹性网卡地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_eip;
                     bool m_eipHasBeenSet;
 
                     /**
                      * 冷热分层系数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cosMoveFactor;
                     bool m_cosMoveFactorHasBeenSet;
 
                     /**
                      * external/local/yunti
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_kind;
                     bool m_kindHasBeenSet;
 
                     /**
                      * cos桶
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cosBucketName;
                     bool m_cosBucketNameHasBeenSet;
 
                     /**
                      * cbs
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_canAttachCbs;
                     bool m_canAttachCbsHasBeenSet;
 
                     /**
                      * 小版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_buildVersion;
                     bool m_buildVersionHasBeenSet;
@@ -1583,7 +1504,6 @@ Modify 集群变更中；
                     /**
                      * 组件信息
 注：这里返回类型实际为map[string]struct类型，并非显示的string类型，可以参考“示例值”进行数据的解析。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_components;
                     bool m_componentsHasBeenSet;
@@ -1597,94 +1517,123 @@ Modify 集群变更中；
 
                     /**
                      * 页面特性，用于前端屏蔽一些页面入口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_characteristic;
                     bool m_characteristicHasBeenSet;
 
                     /**
                      * 超时时间 单位s
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_restartTimeout;
                     bool m_restartTimeoutHasBeenSet;
 
                     /**
                      * 内核优雅重启超时时间，如果为-1说明未设置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_graceShutdownWaitSeconds;
                     bool m_graceShutdownWaitSecondsHasBeenSet;
 
                     /**
                      * 表名大小写是否敏感，0：敏感；1：不敏感，以小写进行比较；2：不敏感，表名改为以小写存储
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_caseSensitive;
                     bool m_caseSensitiveHasBeenSet;
 
                     /**
                      * 用户是否可以绑定安全组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isWhiteSGs;
                     bool m_isWhiteSGsHasBeenSet;
 
                     /**
                      * 已绑定的安全组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_bindSGs;
                     bool m_bindSGsHasBeenSet;
 
                     /**
                      * 是否为多可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableMultiZones;
                     bool m_enableMultiZonesHasBeenSet;
 
                     /**
                      * 用户可用区和子网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userNetworkInfos;
                     bool m_userNetworkInfosHasBeenSet;
 
                     /**
                      * 是否启用冷热分层。0：未开启 1：已开启
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_enableCoolDown;
                     bool m_enableCoolDownHasBeenSet;
 
                     /**
                      * 冷热分层使用COS桶
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_coolDownBucket;
                     bool m_coolDownBucketHasBeenSet;
 
                     /**
                      * 实例扩展信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InstanceDetail m_details;
                     bool m_detailsHasBeenSet;
 
                     /**
                      * 是否启用DLC 0:关闭 1:开启
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_enableDlc;
                     bool m_enableDlcHasBeenSet;
 
                     /**
                      * 账户类型 0:普通用户 1:CAM用户
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_accountType;
                     bool m_accountTypeHasBeenSet;
+
+                    /**
+                     * 监控模式 0: 老监控 1：新监控
+                     */
+                    int64_t m_monitorMode;
+                    bool m_monitorModeHasBeenSet;
+
+                    /**
+                     * cn节点信息
+                     */
+                    NodesSummary m_cNSummary;
+                    bool m_cNSummaryHasBeenSet;
+
+                    /**
+                     * 计算组个数
+                     */
+                    int64_t m_computeGroupCount;
+                    bool m_computeGroupCountHasBeenSet;
+
+                    /**
+                     * 存算分离cos存储数据
+                     */
+                    double m_cosStorageSize;
+                    bool m_cosStorageSizeHasBeenSet;
+
+                    /**
+                     * 存算分离的指标 当是true 不支持新建计算组
+                     */
+                    bool m_isMasterNonVM;
+                    bool m_isMasterNonVMHasBeenSet;
+
+                    /**
+                     * Cos容量包大小
+                     */
+                    int64_t m_cosPkgCapacity;
+                    bool m_cosPkgCapacityHasBeenSet;
+
+                    /**
+                     * 集群是否使用托管桶
+                     */
+                    bool m_useManagedBucket;
+                    bool m_useManagedBucketHasBeenSet;
 
                 };
             }

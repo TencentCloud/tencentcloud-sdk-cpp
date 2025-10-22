@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,10 @@ using namespace std;
 RegisterInfo::RegisterInfo() :
     m_legalNameHasBeenSet(false),
     m_usccHasBeenSet(false),
-    m_unifiedSocialCreditCodeHasBeenSet(false)
+    m_unifiedSocialCreditCodeHasBeenSet(false),
+    m_organizationAddressHasBeenSet(false),
+    m_authorizationTypesHasBeenSet(false),
+    m_authorizationTypeHasBeenSet(false)
 {
 }
 
@@ -62,6 +65,39 @@ CoreInternalOutcome RegisterInfo::Deserialize(const rapidjson::Value &value)
         m_unifiedSocialCreditCodeHasBeenSet = true;
     }
 
+    if (value.HasMember("OrganizationAddress") && !value["OrganizationAddress"].IsNull())
+    {
+        if (!value["OrganizationAddress"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegisterInfo.OrganizationAddress` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_organizationAddress = string(value["OrganizationAddress"].GetString());
+        m_organizationAddressHasBeenSet = true;
+    }
+
+    if (value.HasMember("AuthorizationTypes") && !value["AuthorizationTypes"].IsNull())
+    {
+        if (!value["AuthorizationTypes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RegisterInfo.AuthorizationTypes` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AuthorizationTypes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_authorizationTypes.push_back((*itr).GetUint64());
+        }
+        m_authorizationTypesHasBeenSet = true;
+    }
+
+    if (value.HasMember("AuthorizationType") && !value["AuthorizationType"].IsNull())
+    {
+        if (!value["AuthorizationType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegisterInfo.AuthorizationType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_authorizationType = value["AuthorizationType"].GetInt64();
+        m_authorizationTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +127,35 @@ void RegisterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "UnifiedSocialCreditCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_unifiedSocialCreditCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_organizationAddressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrganizationAddress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_organizationAddress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_authorizationTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthorizationTypes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_authorizationTypes.begin(); itr != m_authorizationTypes.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
+    if (m_authorizationTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthorizationType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_authorizationType, allocator);
     }
 
 }
@@ -142,5 +207,53 @@ void RegisterInfo::SetUnifiedSocialCreditCode(const string& _unifiedSocialCredit
 bool RegisterInfo::UnifiedSocialCreditCodeHasBeenSet() const
 {
     return m_unifiedSocialCreditCodeHasBeenSet;
+}
+
+string RegisterInfo::GetOrganizationAddress() const
+{
+    return m_organizationAddress;
+}
+
+void RegisterInfo::SetOrganizationAddress(const string& _organizationAddress)
+{
+    m_organizationAddress = _organizationAddress;
+    m_organizationAddressHasBeenSet = true;
+}
+
+bool RegisterInfo::OrganizationAddressHasBeenSet() const
+{
+    return m_organizationAddressHasBeenSet;
+}
+
+vector<uint64_t> RegisterInfo::GetAuthorizationTypes() const
+{
+    return m_authorizationTypes;
+}
+
+void RegisterInfo::SetAuthorizationTypes(const vector<uint64_t>& _authorizationTypes)
+{
+    m_authorizationTypes = _authorizationTypes;
+    m_authorizationTypesHasBeenSet = true;
+}
+
+bool RegisterInfo::AuthorizationTypesHasBeenSet() const
+{
+    return m_authorizationTypesHasBeenSet;
+}
+
+int64_t RegisterInfo::GetAuthorizationType() const
+{
+    return m_authorizationType;
+}
+
+void RegisterInfo::SetAuthorizationType(const int64_t& _authorizationType)
+{
+    m_authorizationType = _authorizationType;
+    m_authorizationTypeHasBeenSet = true;
+}
+
+bool RegisterInfo::AuthorizationTypeHasBeenSet() const
+{
+    return m_authorizationTypeHasBeenSet;
 }
 

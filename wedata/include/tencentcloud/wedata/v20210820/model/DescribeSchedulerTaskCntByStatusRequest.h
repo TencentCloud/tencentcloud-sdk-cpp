@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -147,6 +147,48 @@ namespace TencentCloud
                      */
                     bool WorkflowIdHasBeenSet() const;
 
+                    /**
+                     * 获取项目ID列表，如果传了 ProjectIds ，ProjectId 不会生效
+                     * @return ProjectIds 项目ID列表，如果传了 ProjectIds ，ProjectId 不会生效
+                     * 
+                     */
+                    std::vector<std::string> GetProjectIds() const;
+
+                    /**
+                     * 设置项目ID列表，如果传了 ProjectIds ，ProjectId 不会生效
+                     * @param _projectIds 项目ID列表，如果传了 ProjectIds ，ProjectId 不会生效
+                     * 
+                     */
+                    void SetProjectIds(const std::vector<std::string>& _projectIds);
+
+                    /**
+                     * 判断参数 ProjectIds 是否已赋值
+                     * @return ProjectIds 是否已赋值
+                     * 
+                     */
+                    bool ProjectIdsHasBeenSet() const;
+
+                    /**
+                     * 获取资源组ID筛选
+                     * @return ResourceGroupIds 资源组ID筛选
+                     * 
+                     */
+                    std::vector<std::string> GetResourceGroupIds() const;
+
+                    /**
+                     * 设置资源组ID筛选
+                     * @param _resourceGroupIds 资源组ID筛选
+                     * 
+                     */
+                    void SetResourceGroupIds(const std::vector<std::string>& _resourceGroupIds);
+
+                    /**
+                     * 判断参数 ResourceGroupIds 是否已赋值
+                     * @return ResourceGroupIds 是否已赋值
+                     * 
+                     */
+                    bool ResourceGroupIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +220,18 @@ namespace TencentCloud
                      */
                     std::string m_workflowId;
                     bool m_workflowIdHasBeenSet;
+
+                    /**
+                     * 项目ID列表，如果传了 ProjectIds ，ProjectId 不会生效
+                     */
+                    std::vector<std::string> m_projectIds;
+                    bool m_projectIdsHasBeenSet;
+
+                    /**
+                     * 资源组ID筛选
+                     */
+                    std::vector<std::string> m_resourceGroupIds;
+                    bool m_resourceGroupIdsHasBeenSet;
 
                 };
             }

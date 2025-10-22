@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -294,6 +294,90 @@ namespace TencentCloud
                      */
                     bool CatalogNameHasBeenSet() const;
 
+                    /**
+                     * 获取排序字段
+                     * @return SortField 排序字段
+                     * 
+                     */
+                    std::string GetSortField() const;
+
+                    /**
+                     * 设置排序字段
+                     * @param _sortField 排序字段
+                     * 
+                     */
+                    void SetSortField(const std::string& _sortField);
+
+                    /**
+                     * 判断参数 SortField 是否已赋值
+                     * @return SortField 是否已赋值
+                     * 
+                     */
+                    bool SortFieldHasBeenSet() const;
+
+                    /**
+                     * 获取排序方式
+                     * @return SortOrder 排序方式
+                     * 
+                     */
+                    std::string GetSortOrder() const;
+
+                    /**
+                     * 设置排序方式
+                     * @param _sortOrder 排序方式
+                     * 
+                     */
+                    void SetSortOrder(const std::string& _sortOrder);
+
+                    /**
+                     * 判断参数 SortOrder 是否已赋值
+                     * @return SortOrder 是否已赋值
+                     * 
+                     */
+                    bool SortOrderHasBeenSet() const;
+
+                    /**
+                     * 获取user
+                     * @return UserName user
+                     * 
+                     */
+                    std::string GetUserName() const;
+
+                    /**
+                     * 设置user
+                     * @param _userName user
+                     * 
+                     */
+                    void SetUserName(const std::string& _userName);
+
+                    /**
+                     * 判断参数 UserName 是否已赋值
+                     * @return UserName 是否已赋值
+                     * 
+                     */
+                    bool UserNameHasBeenSet() const;
+
+                    /**
+                     * 获取计算组列表
+                     * @return ComputeGroups 计算组列表
+                     * 
+                     */
+                    std::vector<std::string> GetComputeGroups() const;
+
+                    /**
+                     * 设置计算组列表
+                     * @param _computeGroups 计算组列表
+                     * 
+                     */
+                    void SetComputeGroups(const std::vector<std::string>& _computeGroups);
+
+                    /**
+                     * 判断参数 ComputeGroups 是否已赋值
+                     * @return ComputeGroups 是否已赋值
+                     * 
+                     */
+                    bool ComputeGroupsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -367,6 +451,30 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_catalogName;
                     bool m_catalogNameHasBeenSet;
+
+                    /**
+                     * 排序字段
+                     */
+                    std::string m_sortField;
+                    bool m_sortFieldHasBeenSet;
+
+                    /**
+                     * 排序方式
+                     */
+                    std::string m_sortOrder;
+                    bool m_sortOrderHasBeenSet;
+
+                    /**
+                     * user
+                     */
+                    std::string m_userName;
+                    bool m_userNameHasBeenSet;
+
+                    /**
+                     * 计算组列表
+                     */
+                    std::vector<std::string> m_computeGroups;
+                    bool m_computeGroupsHasBeenSet;
 
                 };
             }

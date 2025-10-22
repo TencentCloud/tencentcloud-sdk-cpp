@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例id
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceId 实例id
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取ckafka集群实例Id
+                     * @return InstanceId ckafka集群实例Id
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例id
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceId 实例id
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置ckafka集群实例Id
+                     * @param _instanceId ckafka集群实例Id
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -72,19 +68,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取topic名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TopicName topic名称
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取主题名
+                     * @return TopicName 主题名
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
-                     * 设置topic名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _topicName topic名称
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置主题名
+                     * @param _topicName 主题名
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -97,19 +89,15 @@ namespace TencentCloud
                     bool TopicNameHasBeenSet() const;
 
                     /**
-                     * 获取状态码
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReturnCode 状态码
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取操作返回码
+                     * @return ReturnCode 操作返回码
                      * 
                      */
                     std::string GetReturnCode() const;
 
                     /**
-                     * 设置状态码
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _returnCode 状态码
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置操作返回码
+                     * @param _returnCode 操作返回码
                      * 
                      */
                     void SetReturnCode(const std::string& _returnCode);
@@ -122,15 +110,15 @@ namespace TencentCloud
                     bool ReturnCodeHasBeenSet() const;
 
                     /**
-                     * 获取状态消息
-                     * @return Message 状态消息
+                     * 获取操作返回信息
+                     * @return Message 操作返回信息
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
-                     * 设置状态消息
-                     * @param _message 状态消息
+                     * 设置操作返回信息
+                     * @param _message 操作返回信息
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -145,28 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例id
-注意：此字段可能返回 null，表示取不到有效值。
+                     * ckafka集群实例Id
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * topic名称
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 主题名
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
 
                     /**
-                     * 状态码
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 操作返回码
                      */
                     std::string m_returnCode;
                     bool m_returnCodeHasBeenSet;
 
                     /**
-                     * 状态消息
+                     * 操作返回信息
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,11 +24,14 @@ using namespace std;
 
 SubmitHunyuanImageJobRequest::SubmitHunyuanImageJobRequest() :
     m_promptHasBeenSet(false),
+    m_negativePromptHasBeenSet(false),
     m_styleHasBeenSet(false),
     m_resolutionHasBeenSet(false),
     m_numHasBeenSet(false),
-    m_seedHasBeenSet(false),
+    m_clarityHasBeenSet(false),
+    m_contentImageHasBeenSet(false),
     m_reviseHasBeenSet(false),
+    m_seedHasBeenSet(false),
     m_logoAddHasBeenSet(false),
     m_logoParamHasBeenSet(false)
 {
@@ -47,6 +50,14 @@ string SubmitHunyuanImageJobRequest::ToJsonString() const
         string key = "Prompt";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_prompt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_negativePromptHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NegativePrompt";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_negativePrompt.c_str(), allocator).Move(), allocator);
     }
 
     if (m_styleHasBeenSet)
@@ -73,12 +84,21 @@ string SubmitHunyuanImageJobRequest::ToJsonString() const
         d.AddMember(iKey, m_num, allocator);
     }
 
-    if (m_seedHasBeenSet)
+    if (m_clarityHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Seed";
+        string key = "Clarity";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_seed, allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clarity.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_contentImageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContentImage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_contentImage.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_reviseHasBeenSet)
@@ -87,6 +107,14 @@ string SubmitHunyuanImageJobRequest::ToJsonString() const
         string key = "Revise";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_revise, allocator);
+    }
+
+    if (m_seedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Seed";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_seed, allocator);
     }
 
     if (m_logoAddHasBeenSet)
@@ -128,6 +156,22 @@ void SubmitHunyuanImageJobRequest::SetPrompt(const string& _prompt)
 bool SubmitHunyuanImageJobRequest::PromptHasBeenSet() const
 {
     return m_promptHasBeenSet;
+}
+
+string SubmitHunyuanImageJobRequest::GetNegativePrompt() const
+{
+    return m_negativePrompt;
+}
+
+void SubmitHunyuanImageJobRequest::SetNegativePrompt(const string& _negativePrompt)
+{
+    m_negativePrompt = _negativePrompt;
+    m_negativePromptHasBeenSet = true;
+}
+
+bool SubmitHunyuanImageJobRequest::NegativePromptHasBeenSet() const
+{
+    return m_negativePromptHasBeenSet;
 }
 
 string SubmitHunyuanImageJobRequest::GetStyle() const
@@ -178,20 +222,36 @@ bool SubmitHunyuanImageJobRequest::NumHasBeenSet() const
     return m_numHasBeenSet;
 }
 
-int64_t SubmitHunyuanImageJobRequest::GetSeed() const
+string SubmitHunyuanImageJobRequest::GetClarity() const
 {
-    return m_seed;
+    return m_clarity;
 }
 
-void SubmitHunyuanImageJobRequest::SetSeed(const int64_t& _seed)
+void SubmitHunyuanImageJobRequest::SetClarity(const string& _clarity)
 {
-    m_seed = _seed;
-    m_seedHasBeenSet = true;
+    m_clarity = _clarity;
+    m_clarityHasBeenSet = true;
 }
 
-bool SubmitHunyuanImageJobRequest::SeedHasBeenSet() const
+bool SubmitHunyuanImageJobRequest::ClarityHasBeenSet() const
 {
-    return m_seedHasBeenSet;
+    return m_clarityHasBeenSet;
+}
+
+Image SubmitHunyuanImageJobRequest::GetContentImage() const
+{
+    return m_contentImage;
+}
+
+void SubmitHunyuanImageJobRequest::SetContentImage(const Image& _contentImage)
+{
+    m_contentImage = _contentImage;
+    m_contentImageHasBeenSet = true;
+}
+
+bool SubmitHunyuanImageJobRequest::ContentImageHasBeenSet() const
+{
+    return m_contentImageHasBeenSet;
 }
 
 int64_t SubmitHunyuanImageJobRequest::GetRevise() const
@@ -208,6 +268,22 @@ void SubmitHunyuanImageJobRequest::SetRevise(const int64_t& _revise)
 bool SubmitHunyuanImageJobRequest::ReviseHasBeenSet() const
 {
     return m_reviseHasBeenSet;
+}
+
+int64_t SubmitHunyuanImageJobRequest::GetSeed() const
+{
+    return m_seed;
+}
+
+void SubmitHunyuanImageJobRequest::SetSeed(const int64_t& _seed)
+{
+    m_seed = _seed;
+    m_seedHasBeenSet = true;
+}
+
+bool SubmitHunyuanImageJobRequest::SeedHasBeenSet() const
+{
+    return m_seedHasBeenSet;
 }
 
 int64_t SubmitHunyuanImageJobRequest::GetLogoAdd() const

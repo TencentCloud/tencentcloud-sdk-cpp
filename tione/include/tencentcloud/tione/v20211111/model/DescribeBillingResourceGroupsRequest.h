@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,27 +74,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取Filter.Name: 枚举值: ResourceGroupId (资源组id列表)
-                    ResourceGroupName (资源组名称列表)
-Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询
-每次请求的Filters的上限为5，Filter.Values的上限为100
-                     * @return Filters Filter.Name: 枚举值: ResourceGroupId (资源组id列表)
-                    ResourceGroupName (资源组名称列表)
-Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询
-每次请求的Filters的上限为5，Filter.Values的上限为100
+                     * 获取Filter.Name: 枚举值: ResourceGroupId (资源组id列表)                    ResourceGroupName (资源组名称列表)                    AvailableNodeCount（资源组中可用节点数量）Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询每次请求的Filters的上限为5，Filter.Values的上限为100
+                     * @return Filters Filter.Name: 枚举值: ResourceGroupId (资源组id列表)                    ResourceGroupName (资源组名称列表)                    AvailableNodeCount（资源组中可用节点数量）Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询每次请求的Filters的上限为5，Filter.Values的上限为100
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置Filter.Name: 枚举值: ResourceGroupId (资源组id列表)
-                    ResourceGroupName (资源组名称列表)
-Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询
-每次请求的Filters的上限为5，Filter.Values的上限为100
-                     * @param _filters Filter.Name: 枚举值: ResourceGroupId (资源组id列表)
-                    ResourceGroupName (资源组名称列表)
-Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询
-每次请求的Filters的上限为5，Filter.Values的上限为100
+                     * 设置Filter.Name: 枚举值: ResourceGroupId (资源组id列表)                    ResourceGroupName (资源组名称列表)                    AvailableNodeCount（资源组中可用节点数量）Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询每次请求的Filters的上限为5，Filter.Values的上限为100
+                     * @param _filters Filter.Name: 枚举值: ResourceGroupId (资源组id列表)                    ResourceGroupName (资源组名称列表)                    AvailableNodeCount（资源组中可用节点数量）Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询每次请求的Filters的上限为5，Filter.Values的上限为100
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -230,10 +218,7 @@ true: 不展示，false 展示；
                     bool m_typeHasBeenSet;
 
                     /**
-                     * Filter.Name: 枚举值: ResourceGroupId (资源组id列表)
-                    ResourceGroupName (资源组名称列表)
-Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询
-每次请求的Filters的上限为5，Filter.Values的上限为100
+                     * Filter.Name: 枚举值: ResourceGroupId (资源组id列表)                    ResourceGroupName (资源组名称列表)                    AvailableNodeCount（资源组中可用节点数量）Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询每次请求的Filters的上限为5，Filter.Values的上限为100
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

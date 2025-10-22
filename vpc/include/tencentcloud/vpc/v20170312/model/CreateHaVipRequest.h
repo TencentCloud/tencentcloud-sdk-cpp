@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vpc/v20170312/model/Tag.h>
+#include <tencentcloud/vpc/v20170312/model/HaVipAssociation.h>
 
 
 namespace TencentCloud
@@ -168,6 +170,69 @@ namespace TencentCloud
                      */
                     bool CheckAssociateHasBeenSet() const;
 
+                    /**
+                     * 获取指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     * @return Tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     * @param _tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
+                    /**
+                     * 获取HaVip绑定的子机或网卡。最多支持10个实例。
+                     * @return HaVipAssociationSet HaVip绑定的子机或网卡。最多支持10个实例。
+                     * 
+                     */
+                    std::vector<HaVipAssociation> GetHaVipAssociationSet() const;
+
+                    /**
+                     * 设置HaVip绑定的子机或网卡。最多支持10个实例。
+                     * @param _haVipAssociationSet HaVip绑定的子机或网卡。最多支持10个实例。
+                     * 
+                     */
+                    void SetHaVipAssociationSet(const std::vector<HaVipAssociation>& _haVipAssociationSet);
+
+                    /**
+                     * 判断参数 HaVipAssociationSet 是否已赋值
+                     * @return HaVipAssociationSet 是否已赋值
+                     * 
+                     */
+                    bool HaVipAssociationSetHasBeenSet() const;
+
+                    /**
+                     * 获取用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
+                     * @return ClientToken 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
+                     * 
+                     */
+                    std::string GetClientToken() const;
+
+                    /**
+                     * 设置用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
+                     * @param _clientToken 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
+                     * 
+                     */
+                    void SetClientToken(const std::string& _clientToken);
+
+                    /**
+                     * 判断参数 ClientToken 是否已赋值
+                     * @return ClientToken 是否已赋值
+                     * 
+                     */
+                    bool ClientTokenHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +270,24 @@ namespace TencentCloud
                      */
                     bool m_checkAssociate;
                     bool m_checkAssociateHasBeenSet;
+
+                    /**
+                     * 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
+
+                    /**
+                     * HaVip绑定的子机或网卡。最多支持10个实例。
+                     */
+                    std::vector<HaVipAssociation> m_haVipAssociationSet;
+                    bool m_haVipAssociationSetHasBeenSet;
+
+                    /**
+                     * 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
+                     */
+                    std::string m_clientToken;
+                    bool m_clientTokenHasBeenSet;
 
                 };
             }

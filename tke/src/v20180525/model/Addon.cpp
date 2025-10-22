@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ Addon::Addon() :
     m_addonVersionHasBeenSet(false),
     m_rawValuesHasBeenSet(false),
     m_phaseHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+    m_reasonHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome Addon::Deserialize(const rapidjson::Value &value)
         m_reasonHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Addon.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void Addon::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "Reason";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_reason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void Addon::SetReason(const string& _reason)
 bool Addon::ReasonHasBeenSet() const
 {
     return m_reasonHasBeenSet;
+}
+
+string Addon::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void Addon::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool Addon::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 

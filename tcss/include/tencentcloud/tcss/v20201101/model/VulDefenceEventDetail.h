@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -490,18 +490,14 @@ namespace TencentCloud
 
                     /**
                      * 获取进程PID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PID 进程PID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPID() const;
 
                     /**
                      * 设置进程PID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pID 进程PID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPID(const int64_t& _pID);
@@ -515,18 +511,14 @@ namespace TencentCloud
 
                     /**
                      * 获取进程主类名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MainClass 进程主类名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMainClass() const;
 
                     /**
                      * 设置进程主类名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mainClass 进程主类名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMainClass(const std::string& _mainClass);
@@ -540,18 +532,14 @@ namespace TencentCloud
 
                     /**
                      * 获取堆栈信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StackTrace 堆栈信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStackTrace() const;
 
                     /**
                      * 设置堆栈信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stackTrace 堆栈信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStackTrace(const std::string& _stackTrace);
@@ -565,18 +553,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监听账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServerAccount 监听账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServerAccount() const;
 
                     /**
                      * 设置监听账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serverAccount 监听账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServerAccount(const std::string& _serverAccount);
@@ -590,18 +574,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监听端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServerPort 监听端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServerPort() const;
 
                     /**
                      * 设置监听端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serverPort 监听端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServerPort(const std::string& _serverPort);
@@ -615,18 +595,14 @@ namespace TencentCloud
 
                     /**
                      * 获取进程路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServerExe 进程路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServerExe() const;
 
                     /**
                      * 设置进程路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serverExe 进程路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServerExe(const std::string& _serverExe);
@@ -640,18 +616,14 @@ namespace TencentCloud
 
                     /**
                      * 获取进程命令行参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServerArg 进程命令行参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServerArg() const;
 
                     /**
                      * 设置进程命令行参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serverArg 进程命令行参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServerArg(const std::string& _serverArg);
@@ -665,18 +637,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机QUUID/超级节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QUUID 主机QUUID/超级节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQUUID() const;
 
                     /**
                      * 设置主机QUUID/超级节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _qUUID 主机QUUID/超级节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQUUID(const std::string& _qUUID);
@@ -696,7 +664,6 @@ namespace TencentCloud
 隔离失败	ISOLATE_FAILED
 解除隔离中  RESTORING
 解除隔离失败 RESTORE_FAILED
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerNetStatus 隔离状态
 未隔离  	NORMAL
 已隔离		ISOLATED
@@ -704,7 +671,6 @@ namespace TencentCloud
 隔离失败	ISOLATE_FAILED
 解除隔离中  RESTORING
 解除隔离失败 RESTORE_FAILED
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContainerNetStatus() const;
@@ -717,7 +683,6 @@ namespace TencentCloud
 隔离失败	ISOLATE_FAILED
 解除隔离中  RESTORING
 解除隔离失败 RESTORE_FAILED
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _containerNetStatus 隔离状态
 未隔离  	NORMAL
 已隔离		ISOLATED
@@ -725,7 +690,6 @@ namespace TencentCloud
 隔离失败	ISOLATE_FAILED
 解除隔离中  RESTORING
 解除隔离失败 RESTORE_FAILED
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContainerNetStatus(const std::string& _containerNetStatus);
@@ -746,7 +710,6 @@ namespace TencentCloud
 	"SHARED_HOST"         // 容器与主机共享网络
 	"RESOURCE_LIMIT"      //隔离操作资源超限
 	"UNKNOW"              // 原因未知
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerNetSubStatus 容器子状态
 "AGENT_OFFLINE"       //Agent离线
 	"NODE_DESTROYED"      //节点已销毁
@@ -755,7 +718,6 @@ namespace TencentCloud
 	"SHARED_HOST"         // 容器与主机共享网络
 	"RESOURCE_LIMIT"      //隔离操作资源超限
 	"UNKNOW"              // 原因未知
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContainerNetSubStatus() const;
@@ -769,7 +731,6 @@ namespace TencentCloud
 	"SHARED_HOST"         // 容器与主机共享网络
 	"RESOURCE_LIMIT"      //隔离操作资源超限
 	"UNKNOW"              // 原因未知
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _containerNetSubStatus 容器子状态
 "AGENT_OFFLINE"       //Agent离线
 	"NODE_DESTROYED"      //节点已销毁
@@ -778,7 +739,6 @@ namespace TencentCloud
 	"SHARED_HOST"         // 容器与主机共享网络
 	"RESOURCE_LIMIT"      //隔离操作资源超限
 	"UNKNOW"              // 原因未知
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContainerNetSubStatus(const std::string& _containerNetSubStatus);
@@ -792,18 +752,14 @@ namespace TencentCloud
 
                     /**
                      * 获取容器隔离操作来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerIsolateOperationSrc 容器隔离操作来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContainerIsolateOperationSrc() const;
 
                     /**
                      * 设置容器隔离操作来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _containerIsolateOperationSrc 容器隔离操作来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContainerIsolateOperationSrc(const std::string& _containerIsolateOperationSrc);
@@ -824,7 +780,6 @@ namespace TencentCloud
 已经销毁: DESTROYED
 正在重启中: RESTARTING
 迁移中: REMOVING
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerStatus 容器状态
 正在运行: RUNNING
 暂停: PAUSED
@@ -833,7 +788,6 @@ namespace TencentCloud
 已经销毁: DESTROYED
 正在重启中: RESTARTING
 迁移中: REMOVING
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContainerStatus() const;
@@ -847,7 +801,6 @@ namespace TencentCloud
 已经销毁: DESTROYED
 正在重启中: RESTARTING
 迁移中: REMOVING
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _containerStatus 容器状态
 正在运行: RUNNING
 暂停: PAUSED
@@ -856,7 +809,6 @@ namespace TencentCloud
 已经销毁: DESTROYED
 正在重启中: RESTARTING
 迁移中: REMOVING
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContainerStatus(const std::string& _containerStatus);
@@ -870,18 +822,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接口Url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JNDIUrl 接口Url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJNDIUrl() const;
 
                     /**
                      * 设置接口Url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _jNDIUrl 接口Url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJNDIUrl(const std::string& _jNDIUrl);
@@ -895,18 +843,14 @@ namespace TencentCloud
 
                     /**
                      * 获取rasp detail
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RaspDetail rasp detail
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RaspInfo> GetRaspDetail() const;
 
                     /**
                      * 设置rasp detail
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _raspDetail rasp detail
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRaspDetail(const std::vector<RaspInfo>& _raspDetail);
@@ -1279,56 +1223,48 @@ namespace TencentCloud
 
                     /**
                      * 进程PID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_pID;
                     bool m_pIDHasBeenSet;
 
                     /**
                      * 进程主类名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mainClass;
                     bool m_mainClassHasBeenSet;
 
                     /**
                      * 堆栈信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stackTrace;
                     bool m_stackTraceHasBeenSet;
 
                     /**
                      * 监听账号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serverAccount;
                     bool m_serverAccountHasBeenSet;
 
                     /**
                      * 监听端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serverPort;
                     bool m_serverPortHasBeenSet;
 
                     /**
                      * 进程路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serverExe;
                     bool m_serverExeHasBeenSet;
 
                     /**
                      * 进程命令行参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serverArg;
                     bool m_serverArgHasBeenSet;
 
                     /**
                      * 主机QUUID/超级节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_qUUID;
                     bool m_qUUIDHasBeenSet;
@@ -1341,7 +1277,6 @@ namespace TencentCloud
 隔离失败	ISOLATE_FAILED
 解除隔离中  RESTORING
 解除隔离失败 RESTORE_FAILED
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_containerNetStatus;
                     bool m_containerNetStatusHasBeenSet;
@@ -1355,14 +1290,12 @@ namespace TencentCloud
 	"SHARED_HOST"         // 容器与主机共享网络
 	"RESOURCE_LIMIT"      //隔离操作资源超限
 	"UNKNOW"              // 原因未知
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_containerNetSubStatus;
                     bool m_containerNetSubStatusHasBeenSet;
 
                     /**
                      * 容器隔离操作来源
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_containerIsolateOperationSrc;
                     bool m_containerIsolateOperationSrcHasBeenSet;
@@ -1376,21 +1309,18 @@ namespace TencentCloud
 已经销毁: DESTROYED
 正在重启中: RESTARTING
 迁移中: REMOVING
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_containerStatus;
                     bool m_containerStatusHasBeenSet;
 
                     /**
                      * 接口Url
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_jNDIUrl;
                     bool m_jNDIUrlHasBeenSet;
 
                     /**
                      * rasp detail
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RaspInfo> m_raspDetail;
                     bool m_raspDetailHasBeenSet;

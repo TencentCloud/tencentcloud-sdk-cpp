@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Git地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GitHttpPath Git地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGitHttpPath() const;
 
                     /**
                      * 设置Git地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gitHttpPath Git地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGitHttpPath(const std::string& _gitHttpPath);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Git用户名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GitUserName Git用户名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGitUserName() const;
 
                     /**
                      * 设置Git用户名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gitUserName Git用户名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGitUserName(const std::string& _gitUserName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Git密码或者Token。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GitTokenOrPassword Git密码或者Token。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGitTokenOrPassword() const;
 
                     /**
                      * 设置Git密码或者Token。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gitTokenOrPassword Git密码或者Token。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGitTokenOrPassword(const std::string& _gitTokenOrPassword);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分支。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Branch 分支。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBranch() const;
 
                     /**
                      * 设置分支。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _branch 分支。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBranch(const std::string& _branch);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tag 标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTag() const;
 
                     /**
                      * 设置标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tag 标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTag(const std::string& _tag);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * Git地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gitHttpPath;
                     bool m_gitHttpPathHasBeenSet;
 
                     /**
                      * Git用户名。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gitUserName;
                     bool m_gitUserNameHasBeenSet;
 
                     /**
                      * Git密码或者Token。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gitTokenOrPassword;
                     bool m_gitTokenOrPasswordHasBeenSet;
 
                     /**
                      * 分支。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_branch;
                     bool m_branchHasBeenSet;
 
                     /**
                      * 标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tag;
                     bool m_tagHasBeenSet;

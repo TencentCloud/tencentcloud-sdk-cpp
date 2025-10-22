@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -128,18 +128,18 @@ namespace TencentCloud
 
                     /**
                      * 获取成员财务权限ID列表。PermissionIds不为空，PolicyType不能为空。
-取值：1-查看账单、2-查看余额、3-资金划拨、4-合并出账、5-开票、6-优惠继承、7-代付费、8-成本分析，如果有值，1、2 默认必须
+取值：1-查看账单、2-查看余额、3-资金划拨（若需要开启资金划拨权限，请联系您的商务经理内部开通。）、4-合并出账、5-开票、6-优惠继承、7-代付费、8-成本分析、9-预算管理、10-信用额度设置（若需要开启信用额度设置权限，请联系您的商务经理内部开通。），1、2 默认必须
                      * @return PermissionIds 成员财务权限ID列表。PermissionIds不为空，PolicyType不能为空。
-取值：1-查看账单、2-查看余额、3-资金划拨、4-合并出账、5-开票、6-优惠继承、7-代付费、8-成本分析，如果有值，1、2 默认必须
+取值：1-查看账单、2-查看余额、3-资金划拨（若需要开启资金划拨权限，请联系您的商务经理内部开通。）、4-合并出账、5-开票、6-优惠继承、7-代付费、8-成本分析、9-预算管理、10-信用额度设置（若需要开启信用额度设置权限，请联系您的商务经理内部开通。），1、2 默认必须
                      * 
                      */
                     std::vector<uint64_t> GetPermissionIds() const;
 
                     /**
                      * 设置成员财务权限ID列表。PermissionIds不为空，PolicyType不能为空。
-取值：1-查看账单、2-查看余额、3-资金划拨、4-合并出账、5-开票、6-优惠继承、7-代付费、8-成本分析，如果有值，1、2 默认必须
+取值：1-查看账单、2-查看余额、3-资金划拨（若需要开启资金划拨权限，请联系您的商务经理内部开通。）、4-合并出账、5-开票、6-优惠继承、7-代付费、8-成本分析、9-预算管理、10-信用额度设置（若需要开启信用额度设置权限，请联系您的商务经理内部开通。），1、2 默认必须
                      * @param _permissionIds 成员财务权限ID列表。PermissionIds不为空，PolicyType不能为空。
-取值：1-查看账单、2-查看余额、3-资金划拨、4-合并出账、5-开票、6-优惠继承、7-代付费、8-成本分析，如果有值，1、2 默认必须
+取值：1-查看账单、2-查看余额、3-资金划拨（若需要开启资金划拨权限，请联系您的商务经理内部开通。）、4-合并出账、5-开票、6-优惠继承、7-代付费、8-成本分析、9-预算管理、10-信用额度设置（若需要开启信用额度设置权限，请联系您的商务经理内部开通。），1、2 默认必须
                      * 
                      */
                     void SetPermissionIds(const std::vector<uint64_t>& _permissionIds);
@@ -193,6 +193,27 @@ namespace TencentCloud
                      */
                     bool PayUinHasBeenSet() const;
 
+                    /**
+                     * 获取是否同步组织成员名称到成员账号昵称。取值： 1-同步 0-不同步
+                     * @return IsModifyNickName 是否同步组织成员名称到成员账号昵称。取值： 1-同步 0-不同步
+                     * 
+                     */
+                    uint64_t GetIsModifyNickName() const;
+
+                    /**
+                     * 设置是否同步组织成员名称到成员账号昵称。取值： 1-同步 0-不同步
+                     * @param _isModifyNickName 是否同步组织成员名称到成员账号昵称。取值： 1-同步 0-不同步
+                     * 
+                     */
+                    void SetIsModifyNickName(const uint64_t& _isModifyNickName);
+
+                    /**
+                     * 判断参数 IsModifyNickName 是否已赋值
+                     * @return IsModifyNickName 是否已赋值
+                     * 
+                     */
+                    bool IsModifyNickNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -221,7 +242,7 @@ namespace TencentCloud
 
                     /**
                      * 成员财务权限ID列表。PermissionIds不为空，PolicyType不能为空。
-取值：1-查看账单、2-查看余额、3-资金划拨、4-合并出账、5-开票、6-优惠继承、7-代付费、8-成本分析，如果有值，1、2 默认必须
+取值：1-查看账单、2-查看余额、3-资金划拨（若需要开启资金划拨权限，请联系您的商务经理内部开通。）、4-合并出账、5-开票、6-优惠继承、7-代付费、8-成本分析、9-预算管理、10-信用额度设置（若需要开启信用额度设置权限，请联系您的商务经理内部开通。），1、2 默认必须
                      */
                     std::vector<uint64_t> m_permissionIds;
                     bool m_permissionIdsHasBeenSet;
@@ -237,6 +258,12 @@ namespace TencentCloud
                      */
                     std::string m_payUin;
                     bool m_payUinHasBeenSet;
+
+                    /**
+                     * 是否同步组织成员名称到成员账号昵称。取值： 1-同步 0-不同步
+                     */
+                    uint64_t m_isModifyNickName;
+                    bool m_isModifyNickNameHasBeenSet;
 
                 };
             }

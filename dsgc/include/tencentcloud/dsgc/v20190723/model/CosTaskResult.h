@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取错误信息描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrDescription 错误信息描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ErrDescription GetErrDescription() const;
 
                     /**
                      * 设置错误信息描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errDescription 错误信息描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrDescription(const ErrDescription& _errDescription);
@@ -151,7 +147,6 @@ namespace TencentCloud
 
                     /**
                      * 错误信息描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ErrDescription m_errDescription;
                     bool m_errDescriptionHasBeenSet;

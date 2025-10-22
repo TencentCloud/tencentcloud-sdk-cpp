@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取产品筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Business 产品筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BillBusiness> GetBusiness() const;
@@ -76,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取子产品筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Product 子产品筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BillProduct> GetProduct() const;
@@ -92,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取组件名称筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Item 组件名称筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BillItem> GetItem() const;
@@ -108,9 +102,7 @@ namespace TencentCloud
 
                     /**
                      * 获取地域筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BillRegion> GetRegion() const;
@@ -124,9 +116,7 @@ namespace TencentCloud
 
                     /**
                      * 获取实例类型筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType 实例类型筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BillInstanceType> GetInstanceType() const;
@@ -140,9 +130,7 @@ namespace TencentCloud
 
                     /**
                      * 获取计费模式筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayMode 计费模式筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BillPayMode> GetPayMode() const;
@@ -156,9 +144,7 @@ namespace TencentCloud
 
                     /**
                      * 获取项目筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Project 项目筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BillProject> GetProject() const;
@@ -172,9 +158,7 @@ namespace TencentCloud
 
                     /**
                      * 获取标签筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tag 标签筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BillTag> GetTag() const;
@@ -188,9 +172,7 @@ namespace TencentCloud
 
                     /**
                      * 获取使用者 UIN 筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OwnerUin 使用者 UIN 筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BillOwnerUin> GetOwnerUin() const;
@@ -204,9 +186,7 @@ namespace TencentCloud
 
                     /**
                      * 获取操作者 UIN 筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperateUin 操作者 UIN 筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BillOperateUin> GetOperateUin() const;
@@ -220,9 +200,7 @@ namespace TencentCloud
 
                     /**
                      * 获取日期筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BillDay 日期筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BillDays> GetBillDay() const;
@@ -236,9 +214,7 @@ namespace TencentCloud
 
                     /**
                      * 获取交易类型筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActionType 交易类型筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BillActionType> GetActionType() const;
@@ -252,9 +228,7 @@ namespace TencentCloud
 
                     /**
                      * 获取组件类型筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Component 组件类型筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BillComponent> GetComponent() const;
@@ -268,9 +242,7 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 可用区筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BillZoneId> GetZone() const;
@@ -284,9 +256,7 @@ namespace TencentCloud
 
                     /**
                      * 获取分账单元筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AllocationTreeNode 分账单元筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AllocationTreeNode> GetAllocationTreeNode() const;
@@ -300,9 +270,7 @@ namespace TencentCloud
 
                     /**
                      * 获取分账标签键
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagKey 分账标签键
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetTagKey() const;
@@ -318,112 +286,96 @@ namespace TencentCloud
 
                     /**
                      * 产品筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BillBusiness> m_business;
                     bool m_businessHasBeenSet;
 
                     /**
                      * 子产品筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BillProduct> m_product;
                     bool m_productHasBeenSet;
 
                     /**
                      * 组件名称筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BillItem> m_item;
                     bool m_itemHasBeenSet;
 
                     /**
                      * 地域筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BillRegion> m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * 实例类型筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BillInstanceType> m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
                      * 计费模式筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BillPayMode> m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
                      * 项目筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BillProject> m_project;
                     bool m_projectHasBeenSet;
 
                     /**
                      * 标签筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BillTag> m_tag;
                     bool m_tagHasBeenSet;
 
                     /**
                      * 使用者 UIN 筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BillOwnerUin> m_ownerUin;
                     bool m_ownerUinHasBeenSet;
 
                     /**
                      * 操作者 UIN 筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BillOperateUin> m_operateUin;
                     bool m_operateUinHasBeenSet;
 
                     /**
                      * 日期筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BillDays> m_billDay;
                     bool m_billDayHasBeenSet;
 
                     /**
                      * 交易类型筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BillActionType> m_actionType;
                     bool m_actionTypeHasBeenSet;
 
                     /**
                      * 组件类型筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BillComponent> m_component;
                     bool m_componentHasBeenSet;
 
                     /**
                      * 可用区筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BillZoneId> m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
                      * 分账单元筛选列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AllocationTreeNode> m_allocationTreeNode;
                     bool m_allocationTreeNodeHasBeenSet;
 
                     /**
                      * 分账标签键
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_tagKey;
                     bool m_tagKeyHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotvideoindustry::V20201201::Model;
 using namespace std;
 
-DeleteWarningResponse::DeleteWarningResponse()
+DeleteWarningResponse::DeleteWarningResponse() :
+    m_cntHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome DeleteWarningResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("Cnt") && !rsp["Cnt"].IsNull())
+    {
+        if (!rsp["Cnt"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cnt` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cnt = rsp["Cnt"].GetInt64();
+        m_cntHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -71,16 +82,34 @@ string DeleteWarningResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
+    if (m_cntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Cnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cnt, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
     return buffer.GetString();
 }
 
+
+int64_t DeleteWarningResponse::GetCnt() const
+{
+    return m_cnt;
+}
+
+bool DeleteWarningResponse::CntHasBeenSet() const
+{
+    return m_cntHasBeenSet;
+}
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/wedata/v20210820/model/InstanceLifeDetailDto.h>
 
 
 namespace TencentCloud
@@ -231,6 +232,111 @@ namespace TencentCloud
                      */
                     bool ExecutionFileTypeHasBeenSet() const;
 
+                    /**
+                     * 获取生命周期为基础数据进行日志匹配。Dynamic=true动态获取日志链路中使用
+                     * @return InstanceLifeDetailDtoList 生命周期为基础数据进行日志匹配。Dynamic=true动态获取日志链路中使用
+                     * 
+                     */
+                    std::vector<InstanceLifeDetailDto> GetInstanceLifeDetailDtoList() const;
+
+                    /**
+                     * 设置生命周期为基础数据进行日志匹配。Dynamic=true动态获取日志链路中使用
+                     * @param _instanceLifeDetailDtoList 生命周期为基础数据进行日志匹配。Dynamic=true动态获取日志链路中使用
+                     * 
+                     */
+                    void SetInstanceLifeDetailDtoList(const std::vector<InstanceLifeDetailDto>& _instanceLifeDetailDtoList);
+
+                    /**
+                     * 判断参数 InstanceLifeDetailDtoList 是否已赋值
+                     * @return InstanceLifeDetailDtoList 是否已赋值
+                     * 
+                     */
+                    bool InstanceLifeDetailDtoListHasBeenSet() const;
+
+                    /**
+                     * 获取当前生命周期数
+                     * @return CurrentLifeRound 当前生命周期数
+                     * 
+                     */
+                    int64_t GetCurrentLifeRound() const;
+
+                    /**
+                     * 设置当前生命周期数
+                     * @param _currentLifeRound 当前生命周期数
+                     * 
+                     */
+                    void SetCurrentLifeRound(const int64_t& _currentLifeRound);
+
+                    /**
+                     * 判断参数 CurrentLifeRound 是否已赋值
+                     * @return CurrentLifeRound 是否已赋值
+                     * 
+                     */
+                    bool CurrentLifeRoundHasBeenSet() const;
+
+                    /**
+                     * 获取最大生命周期数
+                     * @return MaxLifeRound 最大生命周期数
+                     * 
+                     */
+                    int64_t GetMaxLifeRound() const;
+
+                    /**
+                     * 设置最大生命周期数
+                     * @param _maxLifeRound 最大生命周期数
+                     * 
+                     */
+                    void SetMaxLifeRound(const int64_t& _maxLifeRound);
+
+                    /**
+                     * 判断参数 MaxLifeRound 是否已赋值
+                     * @return MaxLifeRound 是否已赋值
+                     * 
+                     */
+                    bool MaxLifeRoundHasBeenSet() const;
+
+                    /**
+                     * 获取当前生命周期重试次数
+                     * @return Tries 当前生命周期重试次数
+                     * 
+                     */
+                    int64_t GetTries() const;
+
+                    /**
+                     * 设置当前生命周期重试次数
+                     * @param _tries 当前生命周期重试次数
+                     * 
+                     */
+                    void SetTries(const int64_t& _tries);
+
+                    /**
+                     * 判断参数 Tries 是否已赋值
+                     * @return Tries 是否已赋值
+                     * 
+                     */
+                    bool TriesHasBeenSet() const;
+
+                    /**
+                     * 获取动态获取日志信息标识
+                     * @return Dynamic 动态获取日志信息标识
+                     * 
+                     */
+                    bool GetDynamic() const;
+
+                    /**
+                     * 设置动态获取日志信息标识
+                     * @param _dynamic 动态获取日志信息标识
+                     * 
+                     */
+                    void SetDynamic(const bool& _dynamic);
+
+                    /**
+                     * 判断参数 Dynamic 是否已赋值
+                     * @return Dynamic 是否已赋值
+                     * 
+                     */
+                    bool DynamicHasBeenSet() const;
+
                 private:
 
                     /**
@@ -286,6 +392,36 @@ namespace TencentCloud
                      */
                     std::string m_executionFileType;
                     bool m_executionFileTypeHasBeenSet;
+
+                    /**
+                     * 生命周期为基础数据进行日志匹配。Dynamic=true动态获取日志链路中使用
+                     */
+                    std::vector<InstanceLifeDetailDto> m_instanceLifeDetailDtoList;
+                    bool m_instanceLifeDetailDtoListHasBeenSet;
+
+                    /**
+                     * 当前生命周期数
+                     */
+                    int64_t m_currentLifeRound;
+                    bool m_currentLifeRoundHasBeenSet;
+
+                    /**
+                     * 最大生命周期数
+                     */
+                    int64_t m_maxLifeRound;
+                    bool m_maxLifeRoundHasBeenSet;
+
+                    /**
+                     * 当前生命周期重试次数
+                     */
+                    int64_t m_tries;
+                    bool m_triesHasBeenSet;
+
+                    /**
+                     * 动态获取日志信息标识
+                     */
+                    bool m_dynamic;
+                    bool m_dynamicHasBeenSet;
 
                 };
             }

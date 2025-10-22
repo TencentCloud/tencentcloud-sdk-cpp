@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分账单元唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TreeNodeUniqKey 分账单元唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTreeNodeUniqKey() const;
 
                     /**
                      * 设置分账单元唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _treeNodeUniqKey 分账单元唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTreeNodeUniqKey(const std::string& _treeNodeUniqKey);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分账单元名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TreeNodeUniqKeyName 分账单元名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTreeNodeUniqKeyName() const;
 
                     /**
                      * 设置分账单元名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _treeNodeUniqKeyName 分账单元名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTreeNodeUniqKeyName(const std::string& _treeNodeUniqKeyName);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 分账单元唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_treeNodeUniqKey;
                     bool m_treeNodeUniqKeyHasBeenSet;
 
                     /**
                      * 分账单元名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_treeNodeUniqKeyName;
                     bool m_treeNodeUniqKeyNameHasBeenSet;

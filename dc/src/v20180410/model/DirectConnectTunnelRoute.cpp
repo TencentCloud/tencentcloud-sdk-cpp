@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,9 @@ DirectConnectTunnelRoute::DirectConnectTunnelRoute() :
     m_routeTypeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_aSPathHasBeenSet(false),
-    m_nextHopHasBeenSet(false)
+    m_nextHopHasBeenSet(false),
+    m_updateTimeHasBeenSet(false),
+    m_applyOnTunnelEnableHasBeenSet(false)
 {
 }
 
@@ -98,6 +100,26 @@ CoreInternalOutcome DirectConnectTunnelRoute::Deserialize(const rapidjson::Value
         m_nextHopHasBeenSet = true;
     }
 
+    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
+    {
+        if (!value["UpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DirectConnectTunnelRoute.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = string(value["UpdateTime"].GetString());
+        m_updateTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApplyOnTunnelEnable") && !value["ApplyOnTunnelEnable"].IsNull())
+    {
+        if (!value["ApplyOnTunnelEnable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DirectConnectTunnelRoute.ApplyOnTunnelEnable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_applyOnTunnelEnable = value["ApplyOnTunnelEnable"].GetBool();
+        m_applyOnTunnelEnableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -156,6 +178,22 @@ void DirectConnectTunnelRoute::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "NextHop";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_nextHop.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applyOnTunnelEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplyOnTunnelEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_applyOnTunnelEnable, allocator);
     }
 
 }
@@ -255,5 +293,37 @@ void DirectConnectTunnelRoute::SetNextHop(const string& _nextHop)
 bool DirectConnectTunnelRoute::NextHopHasBeenSet() const
 {
     return m_nextHopHasBeenSet;
+}
+
+string DirectConnectTunnelRoute::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+void DirectConnectTunnelRoute::SetUpdateTime(const string& _updateTime)
+{
+    m_updateTime = _updateTime;
+    m_updateTimeHasBeenSet = true;
+}
+
+bool DirectConnectTunnelRoute::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
+}
+
+bool DirectConnectTunnelRoute::GetApplyOnTunnelEnable() const
+{
+    return m_applyOnTunnelEnable;
+}
+
+void DirectConnectTunnelRoute::SetApplyOnTunnelEnable(const bool& _applyOnTunnelEnable)
+{
+    m_applyOnTunnelEnable = _applyOnTunnelEnable;
+    m_applyOnTunnelEnableHasBeenSet = true;
+}
+
+bool DirectConnectTunnelRoute::ApplyOnTunnelEnableHasBeenSet() const
+{
+    return m_applyOnTunnelEnableHasBeenSet;
 }
 

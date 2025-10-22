@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,11 @@ DescribeSlowQueryRecordsRequest::DescribeSlowQueryRecordsRequest() :
     m_sqlHasBeenSet(false),
     m_readRowsHasBeenSet(false),
     m_resultBytesHasBeenSet(false),
-    m_memoryUsageHasBeenSet(false)
+    m_memoryUsageHasBeenSet(false),
+    m_sortFieldHasBeenSet(false),
+    m_sortOrderHasBeenSet(false),
+    m_userNameHasBeenSet(false),
+    m_computeGroupsHasBeenSet(false)
 {
 }
 
@@ -167,6 +171,43 @@ string DescribeSlowQueryRecordsRequest::ToJsonString() const
         string key = "MemoryUsage";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_memoryUsage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sortFieldHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SortField";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sortField.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sortOrderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SortOrder";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sortOrder.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_computeGroupsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComputeGroups";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_computeGroups.begin(); itr != m_computeGroups.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -399,6 +440,70 @@ void DescribeSlowQueryRecordsRequest::SetMemoryUsage(const string& _memoryUsage)
 bool DescribeSlowQueryRecordsRequest::MemoryUsageHasBeenSet() const
 {
     return m_memoryUsageHasBeenSet;
+}
+
+string DescribeSlowQueryRecordsRequest::GetSortField() const
+{
+    return m_sortField;
+}
+
+void DescribeSlowQueryRecordsRequest::SetSortField(const string& _sortField)
+{
+    m_sortField = _sortField;
+    m_sortFieldHasBeenSet = true;
+}
+
+bool DescribeSlowQueryRecordsRequest::SortFieldHasBeenSet() const
+{
+    return m_sortFieldHasBeenSet;
+}
+
+string DescribeSlowQueryRecordsRequest::GetSortOrder() const
+{
+    return m_sortOrder;
+}
+
+void DescribeSlowQueryRecordsRequest::SetSortOrder(const string& _sortOrder)
+{
+    m_sortOrder = _sortOrder;
+    m_sortOrderHasBeenSet = true;
+}
+
+bool DescribeSlowQueryRecordsRequest::SortOrderHasBeenSet() const
+{
+    return m_sortOrderHasBeenSet;
+}
+
+string DescribeSlowQueryRecordsRequest::GetUserName() const
+{
+    return m_userName;
+}
+
+void DescribeSlowQueryRecordsRequest::SetUserName(const string& _userName)
+{
+    m_userName = _userName;
+    m_userNameHasBeenSet = true;
+}
+
+bool DescribeSlowQueryRecordsRequest::UserNameHasBeenSet() const
+{
+    return m_userNameHasBeenSet;
+}
+
+vector<string> DescribeSlowQueryRecordsRequest::GetComputeGroups() const
+{
+    return m_computeGroups;
+}
+
+void DescribeSlowQueryRecordsRequest::SetComputeGroups(const vector<string>& _computeGroups)
+{
+    m_computeGroups = _computeGroups;
+    m_computeGroupsHasBeenSet = true;
+}
+
+bool DescribeSlowQueryRecordsRequest::ComputeGroupsHasBeenSet() const
+{
+    return m_computeGroupsHasBeenSet;
 }
 
 

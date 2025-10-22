@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool BotBizIdHasBeenSet() const;
 
                     /**
-                     * 获取文档ID
-                     * @return DocBizId 文档ID
+                     * 获取废弃
+                     * @return DocBizId 废弃
                      * 
                      */
                     std::string GetDocBizId() const;
 
                     /**
-                     * 设置文档ID
-                     * @param _docBizId 文档ID
+                     * 设置废弃
+                     * @param _docBizId 废弃
                      * 
                      */
                     void SetDocBizId(const std::string& _docBizId);
@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool DocBizIdHasBeenSet() const;
 
+                    /**
+                     * 获取集合最大上限50个，DocBizIds有值使用DocBizIds，为空时则使用DocBizId(兼容废弃字段)
+                     * @return DocBizIds 集合最大上限50个，DocBizIds有值使用DocBizIds，为空时则使用DocBizId(兼容废弃字段)
+                     * 
+                     */
+                    std::vector<std::string> GetDocBizIds() const;
+
+                    /**
+                     * 设置集合最大上限50个，DocBizIds有值使用DocBizIds，为空时则使用DocBizId(兼容废弃字段)
+                     * @param _docBizIds 集合最大上限50个，DocBizIds有值使用DocBizIds，为空时则使用DocBizId(兼容废弃字段)
+                     * 
+                     */
+                    void SetDocBizIds(const std::vector<std::string>& _docBizIds);
+
+                    /**
+                     * 判断参数 DocBizIds 是否已赋值
+                     * @return DocBizIds 是否已赋值
+                     * 
+                     */
+                    bool DocBizIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -93,10 +114,16 @@ namespace TencentCloud
                     bool m_botBizIdHasBeenSet;
 
                     /**
-                     * 文档ID
+                     * 废弃
                      */
                     std::string m_docBizId;
                     bool m_docBizIdHasBeenSet;
+
+                    /**
+                     * 集合最大上限50个，DocBizIds有值使用DocBizIds，为空时则使用DocBizId(兼容废弃字段)
+                     */
+                    std::vector<std::string> m_docBizIds;
+                    bool m_docBizIdsHasBeenSet;
 
                 };
             }

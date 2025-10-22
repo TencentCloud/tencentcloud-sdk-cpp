@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取保留源Key，默认为false不保留
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeepOriginalKey 保留源Key，默认为false不保留
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKeepOriginalKey() const;
 
                     /**
                      * 设置保留源Key，默认为false不保留
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _keepOriginalKey 保留源Key，默认为false不保留
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKeepOriginalKey(const std::string& _keepOriginalKey);
@@ -129,7 +125,6 @@ namespace TencentCloud
 
                     /**
                      * 保留源Key，默认为false不保留
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_keepOriginalKey;
                     bool m_keepOriginalKeyHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Src 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSrc() const;
 
                     /**
                      * 设置原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _src 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrc(const std::string& _src);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取手术列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Surgerylist 手术列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SurgeryListBlock> GetSurgerylist() const;
 
                     /**
                      * 设置手术列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _surgerylist 手术列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSurgerylist(const std::vector<SurgeryListBlock>& _surgerylist);
@@ -151,28 +135,24 @@ namespace TencentCloud
 
                     /**
                      * 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_src;
                     bool m_srcHasBeenSet;
 
                     /**
                      * 值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
 
                     /**
                      * 手术列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SurgeryListBlock> m_surgerylist;
                     bool m_surgerylistHasBeenSet;

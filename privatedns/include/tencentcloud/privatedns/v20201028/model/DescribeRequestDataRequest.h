@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,6 +106,27 @@ namespace TencentCloud
                      */
                     bool TimeRangeEndHasBeenSet() const;
 
+                    /**
+                     * 获取是否导出：true导出，false不导出
+                     * @return Export 是否导出：true导出，false不导出
+                     * 
+                     */
+                    bool GetExport() const;
+
+                    /**
+                     * 设置是否导出：true导出，false不导出
+                     * @param _export 是否导出：true导出，false不导出
+                     * 
+                     */
+                    void SetExport(const bool& _export);
+
+                    /**
+                     * 判断参数 Export 是否已赋值
+                     * @return Export 是否已赋值
+                     * 
+                     */
+                    bool ExportHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +146,12 @@ namespace TencentCloud
                      */
                     std::string m_timeRangeEnd;
                     bool m_timeRangeEndHasBeenSet;
+
+                    /**
+                     * 是否导出：true导出，false不导出
+                     */
+                    bool m_export;
+                    bool m_exportHasBeenSet;
 
                 };
             }

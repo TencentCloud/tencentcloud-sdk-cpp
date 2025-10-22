@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取企业ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CorpId 企业ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCorpId() const;
 
                     /**
                      * 设置企业ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _corpId 企业ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCorpId(const uint64_t& _corpId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取商户配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FactoryCnt 商户配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFactoryCnt() const;
 
                     /**
                      * 设置商户配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _factoryCnt 商户配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFactoryCnt(const int64_t& _factoryCnt);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取商品数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ItemCnt 商品数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetItemCnt() const;
 
                     /**
                      * 设置商品数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _itemCnt 商品数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetItemCnt(const int64_t& _itemCnt);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取溯源码量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrackCnt 溯源码量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTrackCnt() const;
 
                     /**
                      * 设置溯源码量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _trackCnt 溯源码量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTrackCnt(const int64_t& _trackCnt);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取营销码额度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SaleCnt 营销码额度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSaleCnt() const;
 
                     /**
                      * 设置营销码额度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _saleCnt 营销码额度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSaleCnt(const int64_t& _saleCnt);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取区块链上链次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChainCnt 区块链上链次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetChainCnt() const;
 
                     /**
                      * 设置区块链上链次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _chainCnt 区块链上链次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChainCnt(const int64_t& _chainCnt);
@@ -223,18 +199,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -250,42 +222,36 @@ namespace TencentCloud
 
                     /**
                      * 企业ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_corpId;
                     bool m_corpIdHasBeenSet;
 
                     /**
                      * 商户配额
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_factoryCnt;
                     bool m_factoryCntHasBeenSet;
 
                     /**
                      * 商品数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_itemCnt;
                     bool m_itemCntHasBeenSet;
 
                     /**
                      * 溯源码量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_trackCnt;
                     bool m_trackCntHasBeenSet;
 
                     /**
                      * 营销码额度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_saleCnt;
                     bool m_saleCntHasBeenSet;
 
                     /**
                      * 区块链上链次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_chainCnt;
                     bool m_chainCntHasBeenSet;
@@ -299,7 +265,6 @@ namespace TencentCloud
 
                     /**
                      * 时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

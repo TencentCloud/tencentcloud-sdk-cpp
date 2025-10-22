@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * CNAME 接入，使用文件验证时所需的信息。
+                * 站点 CNAME 模式接入验证归属权或域名申请免费证书时，使用 HTTP 访问验证文件时所需的信息。
                 */
                 class FileVerification : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取EdgeOne 后台服务器将通过 Scheme + Host + URL Path 的格式（例如 https://www.example.com/.well-known/teo-verification/z12h416twn.txt）获取文件验证信息。该字段为您需要创建的 URL Path 部分。
-                     * @return Path EdgeOne 后台服务器将通过 Scheme + Host + URL Path 的格式（例如 https://www.example.com/.well-known/teo-verification/z12h416twn.txt）获取文件验证信息。该字段为您需要创建的 URL Path 部分。
+                     * 获取EdgeOne 后台服务器将通过 http://{Host}{URL Path} 的格式（例如 http://www.example.com/.well-known/teo-verification/z12h416twn.txt）获取文件验证信息。其中，本字段为您需要创建的 URL Path 部分，Host 为当前加速域名。
+                     * @return Path EdgeOne 后台服务器将通过 http://{Host}{URL Path} 的格式（例如 http://www.example.com/.well-known/teo-verification/z12h416twn.txt）获取文件验证信息。其中，本字段为您需要创建的 URL Path 部分，Host 为当前加速域名。
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
-                     * 设置EdgeOne 后台服务器将通过 Scheme + Host + URL Path 的格式（例如 https://www.example.com/.well-known/teo-verification/z12h416twn.txt）获取文件验证信息。该字段为您需要创建的 URL Path 部分。
-                     * @param _path EdgeOne 后台服务器将通过 Scheme + Host + URL Path 的格式（例如 https://www.example.com/.well-known/teo-verification/z12h416twn.txt）获取文件验证信息。该字段为您需要创建的 URL Path 部分。
+                     * 设置EdgeOne 后台服务器将通过 http://{Host}{URL Path} 的格式（例如 http://www.example.com/.well-known/teo-verification/z12h416twn.txt）获取文件验证信息。其中，本字段为您需要创建的 URL Path 部分，Host 为当前加速域名。
+                     * @param _path EdgeOne 后台服务器将通过 http://{Host}{URL Path} 的格式（例如 http://www.example.com/.well-known/teo-verification/z12h416twn.txt）获取文件验证信息。其中，本字段为您需要创建的 URL Path 部分，Host 为当前加速域名。
                      * 
                      */
                     void SetPath(const std::string& _path);
@@ -91,7 +91,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * EdgeOne 后台服务器将通过 Scheme + Host + URL Path 的格式（例如 https://www.example.com/.well-known/teo-verification/z12h416twn.txt）获取文件验证信息。该字段为您需要创建的 URL Path 部分。
+                     * EdgeOne 后台服务器将通过 http://{Host}{URL Path} 的格式（例如 http://www.example.com/.well-known/teo-verification/z12h416twn.txt）获取文件验证信息。其中，本字段为您需要创建的 URL Path 部分，Host 为当前加速域名。
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;

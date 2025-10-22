@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -207,18 +207,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部署方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeployMode 部署方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeployMode() const;
 
                     /**
                      * 设置部署方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deployMode 部署方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeployMode(const std::string& _deployMode);
@@ -232,18 +228,14 @@ namespace TencentCloud
 
                     /**
                      * 获取建构任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BuildTaskId 建构任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBuildTaskId() const;
 
                     /**
                      * 设置建构任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _buildTaskId 建构任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBuildTaskId(const std::string& _buildTaskId);
@@ -257,18 +249,14 @@ namespace TencentCloud
 
                     /**
                      * 获取环境ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnvironmentId 环境ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEnvironmentId() const;
 
                     /**
                      * 设置环境ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _environmentId 环境ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnvironmentId(const std::string& _environmentId);
@@ -282,18 +270,14 @@ namespace TencentCloud
 
                     /**
                      * 获取环境name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnvironmentName 环境name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEnvironmentName() const;
 
                     /**
                      * 设置环境name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _environmentName 环境name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnvironmentName(const std::string& _environmentName);
@@ -307,18 +291,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationId 服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationId 服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
@@ -332,18 +312,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationName 服务name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplicationName() const;
 
                     /**
                      * 设置服务name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationName 服务name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationName(const std::string& _applicationName);
@@ -382,18 +358,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分批次部署状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BatchDeployStatus 分批次部署状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBatchDeployStatus() const;
 
                     /**
                      * 设置分批次部署状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _batchDeployStatus 分批次部署状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBatchDeployStatus(const std::string& _batchDeployStatus);
@@ -407,18 +379,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zones 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetZones() const;
 
                     /**
                      * 设置可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zones 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZones(const std::vector<std::string>& _zones);
@@ -432,18 +400,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeInfos 节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<NodeInfo> GetNodeInfos() const;
 
                     /**
                      * 设置节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodeInfos 节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodeInfos(const std::vector<NodeInfo>& _nodeInfos);
@@ -507,18 +471,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateDate 创建日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateDate() const;
 
                     /**
                      * 设置创建日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createDate 创建日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateDate(const std::string& _createDate);
@@ -532,18 +492,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionId 地域id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegionId() const;
 
                     /**
                      * 设置地域id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionId 地域id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionId(const std::string& _regionId);
@@ -603,42 +559,36 @@ namespace TencentCloud
 
                     /**
                      * 部署方式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deployMode;
                     bool m_deployModeHasBeenSet;
 
                     /**
                      * 建构任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_buildTaskId;
                     bool m_buildTaskIdHasBeenSet;
 
                     /**
                      * 环境ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_environmentId;
                     bool m_environmentIdHasBeenSet;
 
                     /**
                      * 环境name
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_environmentName;
                     bool m_environmentNameHasBeenSet;
 
                     /**
                      * 服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applicationId;
                     bool m_applicationIdHasBeenSet;
 
                     /**
                      * 服务name
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applicationName;
                     bool m_applicationNameHasBeenSet;
@@ -652,21 +602,18 @@ namespace TencentCloud
 
                     /**
                      * 分批次部署状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_batchDeployStatus;
                     bool m_batchDeployStatusHasBeenSet;
 
                     /**
                      * 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_zones;
                     bool m_zonesHasBeenSet;
 
                     /**
                      * 节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NodeInfo> m_nodeInfos;
                     bool m_nodeInfosHasBeenSet;
@@ -687,14 +634,12 @@ namespace TencentCloud
 
                     /**
                      * 创建日期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createDate;
                     bool m_createDateHasBeenSet;
 
                     /**
                      * 地域id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regionId;
                     bool m_regionIdHasBeenSet;

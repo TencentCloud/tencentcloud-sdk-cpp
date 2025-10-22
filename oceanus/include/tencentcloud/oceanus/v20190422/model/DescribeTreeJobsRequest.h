@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取筛选条件字段
-                     * @return Filters 筛选条件字段
+                     * 获取筛选条件字段，使用了筛选字段后不支持分页，最多返回2000条记录
+                     * @return Filters 筛选条件字段，使用了筛选字段后不支持分页，最多返回2000条记录
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置筛选条件字段
-                     * @param _filters 筛选条件字段
+                     * 设置筛选条件字段，使用了筛选字段后不支持分页，最多返回2000条记录
+                     * @param _filters 筛选条件字段，使用了筛选字段后不支持分页，最多返回2000条记录
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -88,7 +88,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 筛选条件字段
+                     * 筛选条件字段，使用了筛选字段后不支持分页，最多返回2000条记录
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

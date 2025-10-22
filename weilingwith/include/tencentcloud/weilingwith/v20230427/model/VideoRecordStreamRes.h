@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取FLV协议格式视频流
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FLV FLV协议格式视频流
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFLV() const;
 
                     /**
                      * 设置FLV协议格式视频流
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fLV FLV协议格式视频流
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFLV(const std::string& _fLV);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取RTMP协议格式视频流
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RTMP RTMP协议格式视频流
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRTMP() const;
 
                     /**
                      * 设置RTMP协议格式视频流
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rTMP RTMP协议格式视频流
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRTMP(const std::string& _rTMP);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取HLS协议格式视频流
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HLS HLS协议格式视频流
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHLS() const;
 
                     /**
                      * 设置HLS协议格式视频流
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hLS HLS协议格式视频流
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHLS(const std::string& _hLS);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取WebRtc协议格式视频流
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WebRTC WebRtc协议格式视频流
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWebRTC() const;
 
                     /**
                      * 设置WebRtc协议格式视频流
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _webRTC WebRtc协议格式视频流
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWebRTC(const std::string& _webRTC);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取RAW协议格式视频流
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RAW RAW协议格式视频流
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RawInfo GetRAW() const;
 
                     /**
                      * 设置RAW协议格式视频流
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rAW RAW协议格式视频流
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRAW(const RawInfo& _rAW);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取视频流的唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Stream 视频流的唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStream() const;
 
                     /**
                      * 设置视频流的唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stream 视频流的唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStream(const std::string& _stream);
@@ -201,42 +177,36 @@ namespace TencentCloud
 
                     /**
                      * FLV协议格式视频流
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fLV;
                     bool m_fLVHasBeenSet;
 
                     /**
                      * RTMP协议格式视频流
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_rTMP;
                     bool m_rTMPHasBeenSet;
 
                     /**
                      * HLS协议格式视频流
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hLS;
                     bool m_hLSHasBeenSet;
 
                     /**
                      * WebRtc协议格式视频流
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_webRTC;
                     bool m_webRTCHasBeenSet;
 
                     /**
                      * RAW协议格式视频流
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RawInfo m_rAW;
                     bool m_rAWHasBeenSet;
 
                     /**
                      * 视频流的唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stream;
                     bool m_streamHasBeenSet;

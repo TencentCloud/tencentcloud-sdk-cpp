@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,11 +44,11 @@ CoreInternalOutcome CrossRegionBackupItem::Deserialize(const rapidjson::Value &v
 
     if (value.HasMember("BackupId") && !value["BackupId"].IsNull())
     {
-        if (!value["BackupId"].IsString())
+        if (!value["BackupId"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `CrossRegionBackupItem.BackupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CrossRegionBackupItem.BackupId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_backupId = string(value["BackupId"].GetString());
+        m_backupId = value["BackupId"].GetInt64();
         m_backupIdHasBeenSet = true;
     }
 
@@ -82,7 +82,7 @@ void CrossRegionBackupItem::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BackupId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_backupId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_backupId, allocator);
     }
 
     if (m_backupStatusHasBeenSet)
@@ -112,12 +112,12 @@ bool CrossRegionBackupItem::CrossRegionHasBeenSet() const
     return m_crossRegionHasBeenSet;
 }
 
-string CrossRegionBackupItem::GetBackupId() const
+int64_t CrossRegionBackupItem::GetBackupId() const
 {
     return m_backupId;
 }
 
-void CrossRegionBackupItem::SetBackupId(const string& _backupId)
+void CrossRegionBackupItem::SetBackupId(const int64_t& _backupId)
 {
     m_backupId = _backupId;
     m_backupIdHasBeenSet = true;

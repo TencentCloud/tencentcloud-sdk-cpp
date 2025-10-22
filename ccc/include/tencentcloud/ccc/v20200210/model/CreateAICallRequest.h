@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,10 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ccc/v20200210/model/AITransferItem.h>
+#include <tencentcloud/ccc/v20200210/model/Variable.h>
+#include <tencentcloud/ccc/v20200210/model/AICallExtractConfigElement.h>
+#include <tencentcloud/ccc/v20200210/model/ToneWordInfo.h>
 
 
 namespace TencentCloud
@@ -85,52 +89,35 @@ namespace TencentCloud
                     bool CalleeHasBeenSet() const;
 
                     /**
-                     * 获取用于设定AI人设、说话规则、任务等的全局提示词。示例：## 人设您是人民医院友善、和蔼的随访医生李医生，正在给患者小明的家长打电话，原因是医院要求小明2024-08-08回院复查手术恢复情况，但小明没有来。您需要按照任务流程对小明家长进行电话随访调查。## 要求简洁回复：使用简练语言，每次最多询问一个问题，不要在一个回复中询问多个问题。富有变化：尽量使表达富有变化，表达机械重复。自然亲切：使用日常语言，尽量显得专业并亲切。提到时间时使用口语表述，如下周三、6月18日。积极主动：尝试引导对话，每个回复通常以问题或下一步建议来结尾。询问清楚：如果对方部分回答了您的问题，或者回答很模糊，请通过追问来确保回答的完整明确。遵循任务：当对方的回答偏离了您的任务时，及时引导对方回到任务中。不要从头开始重复，从偏离的地方继续询问。诚实可靠：对于客户的提问，如果不确定请务必不要编造，礼貌告知对方不清楚。不要捏造患者未提及的症状史、用药史、治疗史。其他注意点：避免提到病情恶化、恢复不理想或疾病名称等使用会使患者感到紧张的表述。不要问患者已经直接或间接回答过的问题，例如患者已经说没有不适症状，那就不要再问手术部位是否有红肿疼痛症状的问题。##任务： 1.自我介绍您是人民医院负责随访的李医生，并说明致电的目的。2.询问被叫方是否是小明家长。 - 如果不是小明家长，请礼貌表达歉意，并使用 call_end 挂断电话。- 如果小明家长没空，请礼貌告诉对方稍后会重新致电，并使用 end_call 挂断电话。3.询问小明出院后水肿情况如何，较出院时是否有变化。- 如果水肿变严重，直接跳转步骤7。4.询问出院后是否给小朋友量过体温，是否出现过发烧情况。- 如果没有量过体温，请礼貌告诉家长出院后三个月内需要每天观察体温。- 如果出现过发烧，请直接跳转步骤7。5.询问出院后是否给小朋友按时服药。- 如果没有按时服药，请友善提醒家长严格按医嘱服用药物，避免影响手术效果。6.询问小朋友在饮食上是否做到低盐低脂，适量吃优质蛋白如鸡蛋、牛奶、瘦肉等。- 如果没有做到，请友善提醒家长低盐低脂和优质蛋白有助小朋友尽快恢复。7.告知家长医生要求6月18日回院复查，但没看到有相关复诊记录。提醒家长尽快前往医院体检复查血化验、尿常规。8.询问家长是否有问题需要咨询，如果没有请礼貌道别并用call_end挂断电话。
-                     * @return SystemPrompt 用于设定AI人设、说话规则、任务等的全局提示词。示例：## 人设您是人民医院友善、和蔼的随访医生李医生，正在给患者小明的家长打电话，原因是医院要求小明2024-08-08回院复查手术恢复情况，但小明没有来。您需要按照任务流程对小明家长进行电话随访调查。## 要求简洁回复：使用简练语言，每次最多询问一个问题，不要在一个回复中询问多个问题。富有变化：尽量使表达富有变化，表达机械重复。自然亲切：使用日常语言，尽量显得专业并亲切。提到时间时使用口语表述，如下周三、6月18日。积极主动：尝试引导对话，每个回复通常以问题或下一步建议来结尾。询问清楚：如果对方部分回答了您的问题，或者回答很模糊，请通过追问来确保回答的完整明确。遵循任务：当对方的回答偏离了您的任务时，及时引导对方回到任务中。不要从头开始重复，从偏离的地方继续询问。诚实可靠：对于客户的提问，如果不确定请务必不要编造，礼貌告知对方不清楚。不要捏造患者未提及的症状史、用药史、治疗史。其他注意点：避免提到病情恶化、恢复不理想或疾病名称等使用会使患者感到紧张的表述。不要问患者已经直接或间接回答过的问题，例如患者已经说没有不适症状，那就不要再问手术部位是否有红肿疼痛症状的问题。##任务： 1.自我介绍您是人民医院负责随访的李医生，并说明致电的目的。2.询问被叫方是否是小明家长。 - 如果不是小明家长，请礼貌表达歉意，并使用 call_end 挂断电话。- 如果小明家长没空，请礼貌告诉对方稍后会重新致电，并使用 end_call 挂断电话。3.询问小明出院后水肿情况如何，较出院时是否有变化。- 如果水肿变严重，直接跳转步骤7。4.询问出院后是否给小朋友量过体温，是否出现过发烧情况。- 如果没有量过体温，请礼貌告诉家长出院后三个月内需要每天观察体温。- 如果出现过发烧，请直接跳转步骤7。5.询问出院后是否给小朋友按时服药。- 如果没有按时服药，请友善提醒家长严格按医嘱服用药物，避免影响手术效果。6.询问小朋友在饮食上是否做到低盐低脂，适量吃优质蛋白如鸡蛋、牛奶、瘦肉等。- 如果没有做到，请友善提醒家长低盐低脂和优质蛋白有助小朋友尽快恢复。7.告知家长医生要求6月18日回院复查，但没看到有相关复诊记录。提醒家长尽快前往医院体检复查血化验、尿常规。8.询问家长是否有问题需要咨询，如果没有请礼貌道别并用call_end挂断电话。
-                     * 
-                     */
-                    std::string GetSystemPrompt() const;
-
-                    /**
-                     * 设置用于设定AI人设、说话规则、任务等的全局提示词。示例：## 人设您是人民医院友善、和蔼的随访医生李医生，正在给患者小明的家长打电话，原因是医院要求小明2024-08-08回院复查手术恢复情况，但小明没有来。您需要按照任务流程对小明家长进行电话随访调查。## 要求简洁回复：使用简练语言，每次最多询问一个问题，不要在一个回复中询问多个问题。富有变化：尽量使表达富有变化，表达机械重复。自然亲切：使用日常语言，尽量显得专业并亲切。提到时间时使用口语表述，如下周三、6月18日。积极主动：尝试引导对话，每个回复通常以问题或下一步建议来结尾。询问清楚：如果对方部分回答了您的问题，或者回答很模糊，请通过追问来确保回答的完整明确。遵循任务：当对方的回答偏离了您的任务时，及时引导对方回到任务中。不要从头开始重复，从偏离的地方继续询问。诚实可靠：对于客户的提问，如果不确定请务必不要编造，礼貌告知对方不清楚。不要捏造患者未提及的症状史、用药史、治疗史。其他注意点：避免提到病情恶化、恢复不理想或疾病名称等使用会使患者感到紧张的表述。不要问患者已经直接或间接回答过的问题，例如患者已经说没有不适症状，那就不要再问手术部位是否有红肿疼痛症状的问题。##任务： 1.自我介绍您是人民医院负责随访的李医生，并说明致电的目的。2.询问被叫方是否是小明家长。 - 如果不是小明家长，请礼貌表达歉意，并使用 call_end 挂断电话。- 如果小明家长没空，请礼貌告诉对方稍后会重新致电，并使用 end_call 挂断电话。3.询问小明出院后水肿情况如何，较出院时是否有变化。- 如果水肿变严重，直接跳转步骤7。4.询问出院后是否给小朋友量过体温，是否出现过发烧情况。- 如果没有量过体温，请礼貌告诉家长出院后三个月内需要每天观察体温。- 如果出现过发烧，请直接跳转步骤7。5.询问出院后是否给小朋友按时服药。- 如果没有按时服药，请友善提醒家长严格按医嘱服用药物，避免影响手术效果。6.询问小朋友在饮食上是否做到低盐低脂，适量吃优质蛋白如鸡蛋、牛奶、瘦肉等。- 如果没有做到，请友善提醒家长低盐低脂和优质蛋白有助小朋友尽快恢复。7.告知家长医生要求6月18日回院复查，但没看到有相关复诊记录。提醒家长尽快前往医院体检复查血化验、尿常规。8.询问家长是否有问题需要咨询，如果没有请礼貌道别并用call_end挂断电话。
-                     * @param _systemPrompt 用于设定AI人设、说话规则、任务等的全局提示词。示例：## 人设您是人民医院友善、和蔼的随访医生李医生，正在给患者小明的家长打电话，原因是医院要求小明2024-08-08回院复查手术恢复情况，但小明没有来。您需要按照任务流程对小明家长进行电话随访调查。## 要求简洁回复：使用简练语言，每次最多询问一个问题，不要在一个回复中询问多个问题。富有变化：尽量使表达富有变化，表达机械重复。自然亲切：使用日常语言，尽量显得专业并亲切。提到时间时使用口语表述，如下周三、6月18日。积极主动：尝试引导对话，每个回复通常以问题或下一步建议来结尾。询问清楚：如果对方部分回答了您的问题，或者回答很模糊，请通过追问来确保回答的完整明确。遵循任务：当对方的回答偏离了您的任务时，及时引导对方回到任务中。不要从头开始重复，从偏离的地方继续询问。诚实可靠：对于客户的提问，如果不确定请务必不要编造，礼貌告知对方不清楚。不要捏造患者未提及的症状史、用药史、治疗史。其他注意点：避免提到病情恶化、恢复不理想或疾病名称等使用会使患者感到紧张的表述。不要问患者已经直接或间接回答过的问题，例如患者已经说没有不适症状，那就不要再问手术部位是否有红肿疼痛症状的问题。##任务： 1.自我介绍您是人民医院负责随访的李医生，并说明致电的目的。2.询问被叫方是否是小明家长。 - 如果不是小明家长，请礼貌表达歉意，并使用 call_end 挂断电话。- 如果小明家长没空，请礼貌告诉对方稍后会重新致电，并使用 end_call 挂断电话。3.询问小明出院后水肿情况如何，较出院时是否有变化。- 如果水肿变严重，直接跳转步骤7。4.询问出院后是否给小朋友量过体温，是否出现过发烧情况。- 如果没有量过体温，请礼貌告诉家长出院后三个月内需要每天观察体温。- 如果出现过发烧，请直接跳转步骤7。5.询问出院后是否给小朋友按时服药。- 如果没有按时服药，请友善提醒家长严格按医嘱服用药物，避免影响手术效果。6.询问小朋友在饮食上是否做到低盐低脂，适量吃优质蛋白如鸡蛋、牛奶、瘦肉等。- 如果没有做到，请友善提醒家长低盐低脂和优质蛋白有助小朋友尽快恢复。7.告知家长医生要求6月18日回院复查，但没看到有相关复诊记录。提醒家长尽快前往医院体检复查血化验、尿常规。8.询问家长是否有问题需要咨询，如果没有请礼貌道别并用call_end挂断电话。
-                     * 
-                     */
-                    void SetSystemPrompt(const std::string& _systemPrompt);
-
-                    /**
-                     * 判断参数 SystemPrompt 是否已赋值
-                     * @return SystemPrompt 是否已赋值
-                     * 
-                     */
-                    bool SystemPromptHasBeenSet() const;
-
-                    /**
-                     * 获取模型接口协议类型，目前兼容三种协议类型：
+                     * 获取模型接口协议类型，目前兼容四种协议类型：
 
 - OpenAI协议(包括GPT、混元、DeepSeek等)："openai"
 - Azure协议："azure"
 - Minimax协议："minimax"
-                     * @return LLMType 模型接口协议类型，目前兼容三种协议类型：
+- Dify协议: "dify"
+                     * @return LLMType 模型接口协议类型，目前兼容四种协议类型：
 
 - OpenAI协议(包括GPT、混元、DeepSeek等)："openai"
 - Azure协议："azure"
 - Minimax协议："minimax"
+- Dify协议: "dify"
                      * 
                      */
                     std::string GetLLMType() const;
 
                     /**
-                     * 设置模型接口协议类型，目前兼容三种协议类型：
+                     * 设置模型接口协议类型，目前兼容四种协议类型：
 
 - OpenAI协议(包括GPT、混元、DeepSeek等)："openai"
 - Azure协议："azure"
 - Minimax协议："minimax"
-                     * @param _lLMType 模型接口协议类型，目前兼容三种协议类型：
+- Dify协议: "dify"
+                     * @param _lLMType 模型接口协议类型，目前兼容四种协议类型：
 
 - OpenAI协议(包括GPT、混元、DeepSeek等)："openai"
 - Azure协议："azure"
 - Minimax协议："minimax"
+- Dify协议: "dify"
                      * 
                      */
                     void SetLLMType(const std::string& _lLMType);
@@ -141,63 +128,6 @@ namespace TencentCloud
                      * 
                      */
                     bool LLMTypeHasBeenSet() const;
-
-                    /**
-                     * 获取模型名称，如
-
-- OpenAI协议
-"gpt-4o-mini","gpt-4o"，"hunyuan-standard", "hunyuan-turbo"，"deepseek-chat"；
-
-- Azure协议
-"gpt-4o-mini", "gpt-4o"；
-
-- Minmax协议
-"deepseek-chat".
-                     * @return Model 模型名称，如
-
-- OpenAI协议
-"gpt-4o-mini","gpt-4o"，"hunyuan-standard", "hunyuan-turbo"，"deepseek-chat"；
-
-- Azure协议
-"gpt-4o-mini", "gpt-4o"；
-
-- Minmax协议
-"deepseek-chat".
-                     * 
-                     */
-                    std::string GetModel() const;
-
-                    /**
-                     * 设置模型名称，如
-
-- OpenAI协议
-"gpt-4o-mini","gpt-4o"，"hunyuan-standard", "hunyuan-turbo"，"deepseek-chat"；
-
-- Azure协议
-"gpt-4o-mini", "gpt-4o"；
-
-- Minmax协议
-"deepseek-chat".
-                     * @param _model 模型名称，如
-
-- OpenAI协议
-"gpt-4o-mini","gpt-4o"，"hunyuan-standard", "hunyuan-turbo"，"deepseek-chat"；
-
-- Azure协议
-"gpt-4o-mini", "gpt-4o"；
-
-- Minmax协议
-"deepseek-chat".
-                     * 
-                     */
-                    void SetModel(const std::string& _model);
-
-                    /**
-                     * 判断参数 Model 是否已赋值
-                     * @return Model 是否已赋值
-                     * 
-                     */
-                    bool ModelHasBeenSet() const;
 
                     /**
                      * 获取模型API密钥，获取鉴权信息方式请参见各模型官网
@@ -308,6 +238,84 @@ Deepseek："https://api.deepseek.com/v1"
                      * 
                      */
                     bool APIUrlHasBeenSet() const;
+
+                    /**
+                     * 获取用于设定AI人设、说话规则、任务等的全局提示词。示例：## 人设您是人民医院友善、和蔼的随访医生李医生，正在给患者小明的家长打电话，原因是医院要求小明2024-08-08回院复查手术恢复情况，但小明没有来。您需要按照任务流程对小明家长进行电话随访调查。## 要求简洁回复：使用简练语言，每次最多询问一个问题，不要在一个回复中询问多个问题。富有变化：尽量使表达富有变化，表达机械重复。自然亲切：使用日常语言，尽量显得专业并亲切。提到时间时使用口语表述，如下周三、6月18日。积极主动：尝试引导对话，每个回复通常以问题或下一步建议来结尾。询问清楚：如果对方部分回答了您的问题，或者回答很模糊，请通过追问来确保回答的完整明确。遵循任务：当对方的回答偏离了您的任务时，及时引导对方回到任务中。不要从头开始重复，从偏离的地方继续询问。诚实可靠：对于客户的提问，如果不确定请务必不要编造，礼貌告知对方不清楚。不要捏造患者未提及的症状史、用药史、治疗史。其他注意点：避免提到病情恶化、恢复不理想或疾病名称等使用会使患者感到紧张的表述。不要问患者已经直接或间接回答过的问题，例如患者已经说没有不适症状，那就不要再问手术部位是否有红肿疼痛症状的问题。##任务： 1.自我介绍您是人民医院负责随访的李医生，并说明致电的目的。2.询问被叫方是否是小明家长。 - 如果不是小明家长，请礼貌表达歉意，并使用 call_end 挂断电话。- 如果小明家长没空，请礼貌告诉对方稍后会重新致电，并使用 end_call 挂断电话。3.询问小明出院后水肿情况如何，较出院时是否有变化。- 如果水肿变严重，直接跳转步骤7。4.询问出院后是否给小朋友量过体温，是否出现过发烧情况。- 如果没有量过体温，请礼貌告诉家长出院后三个月内需要每天观察体温。- 如果出现过发烧，请直接跳转步骤7。5.询问出院后是否给小朋友按时服药。- 如果没有按时服药，请友善提醒家长严格按医嘱服用药物，避免影响手术效果。6.询问小朋友在饮食上是否做到低盐低脂，适量吃优质蛋白如鸡蛋、牛奶、瘦肉等。- 如果没有做到，请友善提醒家长低盐低脂和优质蛋白有助小朋友尽快恢复。7.告知家长医生要求6月18日回院复查，但没看到有相关复诊记录。提醒家长尽快前往医院体检复查血化验、尿常规。8.询问家长是否有问题需要咨询，如果没有请礼貌道别并用call_end挂断电话。
+                     * @return SystemPrompt 用于设定AI人设、说话规则、任务等的全局提示词。示例：## 人设您是人民医院友善、和蔼的随访医生李医生，正在给患者小明的家长打电话，原因是医院要求小明2024-08-08回院复查手术恢复情况，但小明没有来。您需要按照任务流程对小明家长进行电话随访调查。## 要求简洁回复：使用简练语言，每次最多询问一个问题，不要在一个回复中询问多个问题。富有变化：尽量使表达富有变化，表达机械重复。自然亲切：使用日常语言，尽量显得专业并亲切。提到时间时使用口语表述，如下周三、6月18日。积极主动：尝试引导对话，每个回复通常以问题或下一步建议来结尾。询问清楚：如果对方部分回答了您的问题，或者回答很模糊，请通过追问来确保回答的完整明确。遵循任务：当对方的回答偏离了您的任务时，及时引导对方回到任务中。不要从头开始重复，从偏离的地方继续询问。诚实可靠：对于客户的提问，如果不确定请务必不要编造，礼貌告知对方不清楚。不要捏造患者未提及的症状史、用药史、治疗史。其他注意点：避免提到病情恶化、恢复不理想或疾病名称等使用会使患者感到紧张的表述。不要问患者已经直接或间接回答过的问题，例如患者已经说没有不适症状，那就不要再问手术部位是否有红肿疼痛症状的问题。##任务： 1.自我介绍您是人民医院负责随访的李医生，并说明致电的目的。2.询问被叫方是否是小明家长。 - 如果不是小明家长，请礼貌表达歉意，并使用 call_end 挂断电话。- 如果小明家长没空，请礼貌告诉对方稍后会重新致电，并使用 end_call 挂断电话。3.询问小明出院后水肿情况如何，较出院时是否有变化。- 如果水肿变严重，直接跳转步骤7。4.询问出院后是否给小朋友量过体温，是否出现过发烧情况。- 如果没有量过体温，请礼貌告诉家长出院后三个月内需要每天观察体温。- 如果出现过发烧，请直接跳转步骤7。5.询问出院后是否给小朋友按时服药。- 如果没有按时服药，请友善提醒家长严格按医嘱服用药物，避免影响手术效果。6.询问小朋友在饮食上是否做到低盐低脂，适量吃优质蛋白如鸡蛋、牛奶、瘦肉等。- 如果没有做到，请友善提醒家长低盐低脂和优质蛋白有助小朋友尽快恢复。7.告知家长医生要求6月18日回院复查，但没看到有相关复诊记录。提醒家长尽快前往医院体检复查血化验、尿常规。8.询问家长是否有问题需要咨询，如果没有请礼貌道别并用call_end挂断电话。
+                     * 
+                     */
+                    std::string GetSystemPrompt() const;
+
+                    /**
+                     * 设置用于设定AI人设、说话规则、任务等的全局提示词。示例：## 人设您是人民医院友善、和蔼的随访医生李医生，正在给患者小明的家长打电话，原因是医院要求小明2024-08-08回院复查手术恢复情况，但小明没有来。您需要按照任务流程对小明家长进行电话随访调查。## 要求简洁回复：使用简练语言，每次最多询问一个问题，不要在一个回复中询问多个问题。富有变化：尽量使表达富有变化，表达机械重复。自然亲切：使用日常语言，尽量显得专业并亲切。提到时间时使用口语表述，如下周三、6月18日。积极主动：尝试引导对话，每个回复通常以问题或下一步建议来结尾。询问清楚：如果对方部分回答了您的问题，或者回答很模糊，请通过追问来确保回答的完整明确。遵循任务：当对方的回答偏离了您的任务时，及时引导对方回到任务中。不要从头开始重复，从偏离的地方继续询问。诚实可靠：对于客户的提问，如果不确定请务必不要编造，礼貌告知对方不清楚。不要捏造患者未提及的症状史、用药史、治疗史。其他注意点：避免提到病情恶化、恢复不理想或疾病名称等使用会使患者感到紧张的表述。不要问患者已经直接或间接回答过的问题，例如患者已经说没有不适症状，那就不要再问手术部位是否有红肿疼痛症状的问题。##任务： 1.自我介绍您是人民医院负责随访的李医生，并说明致电的目的。2.询问被叫方是否是小明家长。 - 如果不是小明家长，请礼貌表达歉意，并使用 call_end 挂断电话。- 如果小明家长没空，请礼貌告诉对方稍后会重新致电，并使用 end_call 挂断电话。3.询问小明出院后水肿情况如何，较出院时是否有变化。- 如果水肿变严重，直接跳转步骤7。4.询问出院后是否给小朋友量过体温，是否出现过发烧情况。- 如果没有量过体温，请礼貌告诉家长出院后三个月内需要每天观察体温。- 如果出现过发烧，请直接跳转步骤7。5.询问出院后是否给小朋友按时服药。- 如果没有按时服药，请友善提醒家长严格按医嘱服用药物，避免影响手术效果。6.询问小朋友在饮食上是否做到低盐低脂，适量吃优质蛋白如鸡蛋、牛奶、瘦肉等。- 如果没有做到，请友善提醒家长低盐低脂和优质蛋白有助小朋友尽快恢复。7.告知家长医生要求6月18日回院复查，但没看到有相关复诊记录。提醒家长尽快前往医院体检复查血化验、尿常规。8.询问家长是否有问题需要咨询，如果没有请礼貌道别并用call_end挂断电话。
+                     * @param _systemPrompt 用于设定AI人设、说话规则、任务等的全局提示词。示例：## 人设您是人民医院友善、和蔼的随访医生李医生，正在给患者小明的家长打电话，原因是医院要求小明2024-08-08回院复查手术恢复情况，但小明没有来。您需要按照任务流程对小明家长进行电话随访调查。## 要求简洁回复：使用简练语言，每次最多询问一个问题，不要在一个回复中询问多个问题。富有变化：尽量使表达富有变化，表达机械重复。自然亲切：使用日常语言，尽量显得专业并亲切。提到时间时使用口语表述，如下周三、6月18日。积极主动：尝试引导对话，每个回复通常以问题或下一步建议来结尾。询问清楚：如果对方部分回答了您的问题，或者回答很模糊，请通过追问来确保回答的完整明确。遵循任务：当对方的回答偏离了您的任务时，及时引导对方回到任务中。不要从头开始重复，从偏离的地方继续询问。诚实可靠：对于客户的提问，如果不确定请务必不要编造，礼貌告知对方不清楚。不要捏造患者未提及的症状史、用药史、治疗史。其他注意点：避免提到病情恶化、恢复不理想或疾病名称等使用会使患者感到紧张的表述。不要问患者已经直接或间接回答过的问题，例如患者已经说没有不适症状，那就不要再问手术部位是否有红肿疼痛症状的问题。##任务： 1.自我介绍您是人民医院负责随访的李医生，并说明致电的目的。2.询问被叫方是否是小明家长。 - 如果不是小明家长，请礼貌表达歉意，并使用 call_end 挂断电话。- 如果小明家长没空，请礼貌告诉对方稍后会重新致电，并使用 end_call 挂断电话。3.询问小明出院后水肿情况如何，较出院时是否有变化。- 如果水肿变严重，直接跳转步骤7。4.询问出院后是否给小朋友量过体温，是否出现过发烧情况。- 如果没有量过体温，请礼貌告诉家长出院后三个月内需要每天观察体温。- 如果出现过发烧，请直接跳转步骤7。5.询问出院后是否给小朋友按时服药。- 如果没有按时服药，请友善提醒家长严格按医嘱服用药物，避免影响手术效果。6.询问小朋友在饮食上是否做到低盐低脂，适量吃优质蛋白如鸡蛋、牛奶、瘦肉等。- 如果没有做到，请友善提醒家长低盐低脂和优质蛋白有助小朋友尽快恢复。7.告知家长医生要求6月18日回院复查，但没看到有相关复诊记录。提醒家长尽快前往医院体检复查血化验、尿常规。8.询问家长是否有问题需要咨询，如果没有请礼貌道别并用call_end挂断电话。
+                     * 
+                     */
+                    void SetSystemPrompt(const std::string& _systemPrompt);
+
+                    /**
+                     * 判断参数 SystemPrompt 是否已赋值
+                     * @return SystemPrompt 是否已赋值
+                     * 
+                     */
+                    bool SystemPromptHasBeenSet() const;
+
+                    /**
+                     * 获取模型名称，如
+
+- OpenAI协议
+"gpt-4o-mini","gpt-4o"，"hunyuan-standard", "hunyuan-turbo"，"deepseek-chat"；
+
+- Azure协议
+"gpt-4o-mini", "gpt-4o"；
+
+- Minmax协议
+"deepseek-chat".
+                     * @return Model 模型名称，如
+
+- OpenAI协议
+"gpt-4o-mini","gpt-4o"，"hunyuan-standard", "hunyuan-turbo"，"deepseek-chat"；
+
+- Azure协议
+"gpt-4o-mini", "gpt-4o"；
+
+- Minmax协议
+"deepseek-chat".
+                     * 
+                     */
+                    std::string GetModel() const;
+
+                    /**
+                     * 设置模型名称，如
+
+- OpenAI协议
+"gpt-4o-mini","gpt-4o"，"hunyuan-standard", "hunyuan-turbo"，"deepseek-chat"；
+
+- Azure协议
+"gpt-4o-mini", "gpt-4o"；
+
+- Minmax协议
+"deepseek-chat".
+                     * @param _model 模型名称，如
+
+- OpenAI协议
+"gpt-4o-mini","gpt-4o"，"hunyuan-standard", "hunyuan-turbo"，"deepseek-chat"；
+
+- Azure协议
+"gpt-4o-mini", "gpt-4o"；
+
+- Minmax协议
+"deepseek-chat".
+                     * 
+                     */
+                    void SetModel(const std::string& _model);
+
+                    /**
+                     * 判断参数 Model 是否已赋值
+                     * @return Model 是否已赋值
+                     * 
+                     */
+                    bool ModelHasBeenSet() const;
 
                     /**
                      * 获取默认提供以下音色参数值可选择，如需自定义音色VoiceType请留空并在参数CustomTTSConfig中配置
@@ -534,6 +542,27 @@ HoaiMy
                     bool WelcomeTypeHasBeenSet() const;
 
                     /**
+                     * 获取0: 默认可打断， 2：高优先不可打断
+                     * @return WelcomeMessagePriority 0: 默认可打断， 2：高优先不可打断
+                     * 
+                     */
+                    int64_t GetWelcomeMessagePriority() const;
+
+                    /**
+                     * 设置0: 默认可打断， 2：高优先不可打断
+                     * @param _welcomeMessagePriority 0: 默认可打断， 2：高优先不可打断
+                     * 
+                     */
+                    void SetWelcomeMessagePriority(const int64_t& _welcomeMessagePriority);
+
+                    /**
+                     * 判断参数 WelcomeMessagePriority 是否已赋值
+                     * @return WelcomeMessagePriority 是否已赋值
+                     * 
+                     */
+                    bool WelcomeMessagePriorityHasBeenSet() const;
+
+                    /**
                      * 获取最大等待时长(毫秒)，默认60秒，超过这个时间用户没说话，自动挂断
                      * @return MaxDuration 最大等待时长(毫秒)，默认60秒，超过这个时间用户没说话，自动挂断
                      * 
@@ -668,15 +697,15 @@ HoaiMy
                     bool LanguagesHasBeenSet() const;
 
                     /**
-                     * 获取打断AI说话模式，默认为0，0表示服务端自动打断，1表示服务端不打断，由端上发送打断信令进行打断
-                     * @return InterruptMode 打断AI说话模式，默认为0，0表示服务端自动打断，1表示服务端不打断，由端上发送打断信令进行打断
+                     * 获取打断AI说话模式，默认为0，0表示自动打断，1表示不打断。
+                     * @return InterruptMode 打断AI说话模式，默认为0，0表示自动打断，1表示不打断。
                      * 
                      */
                     int64_t GetInterruptMode() const;
 
                     /**
-                     * 设置打断AI说话模式，默认为0，0表示服务端自动打断，1表示服务端不打断，由端上发送打断信令进行打断
-                     * @param _interruptMode 打断AI说话模式，默认为0，0表示服务端自动打断，1表示服务端不打断，由端上发送打断信令进行打断
+                     * 设置打断AI说话模式，默认为0，0表示自动打断，1表示不打断。
+                     * @param _interruptMode 打断AI说话模式，默认为0，0表示自动打断，1表示不打断。
                      * 
                      */
                     void SetInterruptMode(const int64_t& _interruptMode);
@@ -752,6 +781,48 @@ HoaiMy
                     bool EndFunctionDescHasBeenSet() const;
 
                     /**
+                     * 获取模型是否支持(或者开启)transfer_to_human function calling
+                     * @return TransferFunctionEnable 模型是否支持(或者开启)transfer_to_human function calling
+                     * 
+                     */
+                    bool GetTransferFunctionEnable() const;
+
+                    /**
+                     * 设置模型是否支持(或者开启)transfer_to_human function calling
+                     * @param _transferFunctionEnable 模型是否支持(或者开启)transfer_to_human function calling
+                     * 
+                     */
+                    void SetTransferFunctionEnable(const bool& _transferFunctionEnable);
+
+                    /**
+                     * 判断参数 TransferFunctionEnable 是否已赋值
+                     * @return TransferFunctionEnable 是否已赋值
+                     * 
+                     */
+                    bool TransferFunctionEnableHasBeenSet() const;
+
+                    /**
+                     * 获取TransferFunctionEnable为true的时候生效: 转人工配置
+                     * @return TransferItems TransferFunctionEnable为true的时候生效: 转人工配置
+                     * 
+                     */
+                    std::vector<AITransferItem> GetTransferItems() const;
+
+                    /**
+                     * 设置TransferFunctionEnable为true的时候生效: 转人工配置
+                     * @param _transferItems TransferFunctionEnable为true的时候生效: 转人工配置
+                     * 
+                     */
+                    void SetTransferItems(const std::vector<AITransferItem>& _transferItems);
+
+                    /**
+                     * 判断参数 TransferItems 是否已赋值
+                     * @return TransferItems 是否已赋值
+                     * 
+                     */
+                    bool TransferItemsHasBeenSet() const;
+
+                    /**
                      * 获取用户多久没说话提示时长,最小10秒,默认10秒
                      * @return NotifyDuration 用户多久没说话提示时长,最小10秒,默认10秒
                      * 
@@ -792,6 +863,27 @@ HoaiMy
                      * 
                      */
                     bool NotifyMessageHasBeenSet() const;
+
+                    /**
+                     * 获取最大触发AI提示音次数，默认为不限制
+                     * @return NotifyMaxCount 最大触发AI提示音次数，默认为不限制
+                     * 
+                     */
+                    uint64_t GetNotifyMaxCount() const;
+
+                    /**
+                     * 设置最大触发AI提示音次数，默认为不限制
+                     * @param _notifyMaxCount 最大触发AI提示音次数，默认为不限制
+                     * 
+                     */
+                    void SetNotifyMaxCount(const uint64_t& _notifyMaxCount);
+
+                    /**
+                     * 判断参数 NotifyMaxCount 是否已赋值
+                     * @return NotifyMaxCount 是否已赋值
+                     * 
+                     */
+                    bool NotifyMaxCountHasBeenSet() const;
 
                     /**
                      * 获取<p>和VoiceType字段需要选填一个，这里是使用自己自定义的TTS，VoiceType是系统内置的一些音色</p>
@@ -1126,6 +1218,223 @@ HoaiMy
                      */
                     bool CustomTTSConfigHasBeenSet() const;
 
+                    /**
+                     * 获取提示词变量
+                     * @return PromptVariables 提示词变量
+                     * @deprecated
+                     */
+                    std::vector<Variable> GetPromptVariables() const;
+
+                    /**
+                     * 设置提示词变量
+                     * @param _promptVariables 提示词变量
+                     * @deprecated
+                     */
+                    void SetPromptVariables(const std::vector<Variable>& _promptVariables);
+
+                    /**
+                     * 判断参数 PromptVariables 是否已赋值
+                     * @return PromptVariables 是否已赋值
+                     * @deprecated
+                     */
+                    bool PromptVariablesHasBeenSet() const;
+
+                    /**
+                     * 获取语音识别vad的时间，范围为240-2000，默认为1000，单位为ms。更小的值会让语音识别分句更快。
+                     * @return VadSilenceTime 语音识别vad的时间，范围为240-2000，默认为1000，单位为ms。更小的值会让语音识别分句更快。
+                     * 
+                     */
+                    int64_t GetVadSilenceTime() const;
+
+                    /**
+                     * 设置语音识别vad的时间，范围为240-2000，默认为1000，单位为ms。更小的值会让语音识别分句更快。
+                     * @param _vadSilenceTime 语音识别vad的时间，范围为240-2000，默认为1000，单位为ms。更小的值会让语音识别分句更快。
+                     * 
+                     */
+                    void SetVadSilenceTime(const int64_t& _vadSilenceTime);
+
+                    /**
+                     * 判断参数 VadSilenceTime 是否已赋值
+                     * @return VadSilenceTime 是否已赋值
+                     * 
+                     */
+                    bool VadSilenceTimeHasBeenSet() const;
+
+                    /**
+                     * 获取通话内容提取配置
+                     * @return ExtractConfig 通话内容提取配置
+                     * 
+                     */
+                    std::vector<AICallExtractConfigElement> GetExtractConfig() const;
+
+                    /**
+                     * 设置通话内容提取配置
+                     * @param _extractConfig 通话内容提取配置
+                     * 
+                     */
+                    void SetExtractConfig(const std::vector<AICallExtractConfigElement>& _extractConfig);
+
+                    /**
+                     * 判断参数 ExtractConfig 是否已赋值
+                     * @return ExtractConfig 是否已赋值
+                     * 
+                     */
+                    bool ExtractConfigHasBeenSet() const;
+
+                    /**
+                     * 获取模型温度控制
+                     * @return Temperature 模型温度控制
+                     * 
+                     */
+                    double GetTemperature() const;
+
+                    /**
+                     * 设置模型温度控制
+                     * @param _temperature 模型温度控制
+                     * 
+                     */
+                    void SetTemperature(const double& _temperature);
+
+                    /**
+                     * 判断参数 Temperature 是否已赋值
+                     * @return Temperature 是否已赋值
+                     * 
+                     */
+                    bool TemperatureHasBeenSet() const;
+
+                    /**
+                     * 获取通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> 欢迎语延迟播放(秒级)：welcome-message-delay</p>  <p> dify变量</p>  
+
+1. dify-inputs-xxx 为dify的inputs变量
+2.  dify-inputs-user 为dify的user值
+3.  dify-inputs-conversation_id 为dify的conversation_id值
+                     * @return Variables 通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> 欢迎语延迟播放(秒级)：welcome-message-delay</p>  <p> dify变量</p>  
+
+1. dify-inputs-xxx 为dify的inputs变量
+2.  dify-inputs-user 为dify的user值
+3.  dify-inputs-conversation_id 为dify的conversation_id值
+                     * 
+                     */
+                    std::vector<Variable> GetVariables() const;
+
+                    /**
+                     * 设置通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> 欢迎语延迟播放(秒级)：welcome-message-delay</p>  <p> dify变量</p>  
+
+1. dify-inputs-xxx 为dify的inputs变量
+2.  dify-inputs-user 为dify的user值
+3.  dify-inputs-conversation_id 为dify的conversation_id值
+                     * @param _variables 通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> 欢迎语延迟播放(秒级)：welcome-message-delay</p>  <p> dify变量</p>  
+
+1. dify-inputs-xxx 为dify的inputs变量
+2.  dify-inputs-user 为dify的user值
+3.  dify-inputs-conversation_id 为dify的conversation_id值
+                     * 
+                     */
+                    void SetVariables(const std::vector<Variable>& _variables);
+
+                    /**
+                     * 判断参数 Variables 是否已赋值
+                     * @return Variables 是否已赋值
+                     * 
+                     */
+                    bool VariablesHasBeenSet() const;
+
+                    /**
+                     * 获取模型topP
+                     * @return TopP 模型topP
+                     * 
+                     */
+                    double GetTopP() const;
+
+                    /**
+                     * 设置模型topP
+                     * @param _topP 模型topP
+                     * 
+                     */
+                    void SetTopP(const double& _topP);
+
+                    /**
+                     * 判断参数 TopP 是否已赋值
+                     * @return TopP 是否已赋值
+                     * 
+                     */
+                    bool TopPHasBeenSet() const;
+
+                    /**
+                     * 获取vad的远场人声抑制能力（不会对asr识别效果造成影响），范围为[0, 3]，默认为0。推荐设置为2，有较好的远场人声抑制能力。
+                     * @return VadLevel vad的远场人声抑制能力（不会对asr识别效果造成影响），范围为[0, 3]，默认为0。推荐设置为2，有较好的远场人声抑制能力。
+                     * 
+                     */
+                    uint64_t GetVadLevel() const;
+
+                    /**
+                     * 设置vad的远场人声抑制能力（不会对asr识别效果造成影响），范围为[0, 3]，默认为0。推荐设置为2，有较好的远场人声抑制能力。
+                     * @param _vadLevel vad的远场人声抑制能力（不会对asr识别效果造成影响），范围为[0, 3]，默认为0。推荐设置为2，有较好的远场人声抑制能力。
+                     * 
+                     */
+                    void SetVadLevel(const uint64_t& _vadLevel);
+
+                    /**
+                     * 判断参数 VadLevel 是否已赋值
+                     * @return VadLevel 是否已赋值
+                     * 
+                     */
+                    bool VadLevelHasBeenSet() const;
+
+                    /**
+                     * 获取衔接语
+                     * @return ToneWord 衔接语
+                     * 
+                     */
+                    ToneWordInfo GetToneWord() const;
+
+                    /**
+                     * 设置衔接语
+                     * @param _toneWord 衔接语
+                     * 
+                     */
+                    void SetToneWord(const ToneWordInfo& _toneWord);
+
+                    /**
+                     * 判断参数 ToneWord 是否已赋值
+                     * @return ToneWord 是否已赋值
+                     * 
+                     */
+                    bool ToneWordHasBeenSet() const;
+
+                    /**
+                     * 获取合规提示音， 
+该参数传true（默认）表示通话开始播放摩斯码，提示对话内容为 AI 生成。
+该参数传false表示关闭合规提示音。该参数传false则代表您知晓并同意以下协议：
+我方充分知悉和理解，根据[《网络安全法》](https://www.gov.cn/xinwen/2016-11/07/content_5129723.htm)[《互联网信息服务深度合成管理规定》](https://www.gov.cn/zhengce/zhengceku/2022-12/12/content_5731431.htm)[《生成式人工智能服务管理暂行办法》](https://www.gov.cn/zhengce/zhengceku/202307/content_6891752.htm)[《人工智能生成合成内容标识办法》](https://www.gov.cn/zhengce/zhengceku/202503/content_7014286.htm)的法律法规的规定，对人工智能生成合成内容应当添加显式标识和隐式标识。我方基于业务需求，请腾讯云对生成合成内容不添加显式标识，我方承诺合法合规使用生成合成内容，避免造成混淆、误认；如果使用生成合成内容对公众提供服务的，或通过网络传播的，我方将自觉主动添加符合法律规定和国家标准要求的显式标识，承担人工智能生成合成内容标识的法律义务。我方未能恰当、合理地履行人工智能内容标识义务造成不良后果的，或遭受主管部门责罚的，相关责任由我方完全承担。
+                     * @return EnableComplianceAudio 合规提示音， 
+该参数传true（默认）表示通话开始播放摩斯码，提示对话内容为 AI 生成。
+该参数传false表示关闭合规提示音。该参数传false则代表您知晓并同意以下协议：
+我方充分知悉和理解，根据[《网络安全法》](https://www.gov.cn/xinwen/2016-11/07/content_5129723.htm)[《互联网信息服务深度合成管理规定》](https://www.gov.cn/zhengce/zhengceku/2022-12/12/content_5731431.htm)[《生成式人工智能服务管理暂行办法》](https://www.gov.cn/zhengce/zhengceku/202307/content_6891752.htm)[《人工智能生成合成内容标识办法》](https://www.gov.cn/zhengce/zhengceku/202503/content_7014286.htm)的法律法规的规定，对人工智能生成合成内容应当添加显式标识和隐式标识。我方基于业务需求，请腾讯云对生成合成内容不添加显式标识，我方承诺合法合规使用生成合成内容，避免造成混淆、误认；如果使用生成合成内容对公众提供服务的，或通过网络传播的，我方将自觉主动添加符合法律规定和国家标准要求的显式标识，承担人工智能生成合成内容标识的法律义务。我方未能恰当、合理地履行人工智能内容标识义务造成不良后果的，或遭受主管部门责罚的，相关责任由我方完全承担。
+                     * 
+                     */
+                    bool GetEnableComplianceAudio() const;
+
+                    /**
+                     * 设置合规提示音， 
+该参数传true（默认）表示通话开始播放摩斯码，提示对话内容为 AI 生成。
+该参数传false表示关闭合规提示音。该参数传false则代表您知晓并同意以下协议：
+我方充分知悉和理解，根据[《网络安全法》](https://www.gov.cn/xinwen/2016-11/07/content_5129723.htm)[《互联网信息服务深度合成管理规定》](https://www.gov.cn/zhengce/zhengceku/2022-12/12/content_5731431.htm)[《生成式人工智能服务管理暂行办法》](https://www.gov.cn/zhengce/zhengceku/202307/content_6891752.htm)[《人工智能生成合成内容标识办法》](https://www.gov.cn/zhengce/zhengceku/202503/content_7014286.htm)的法律法规的规定，对人工智能生成合成内容应当添加显式标识和隐式标识。我方基于业务需求，请腾讯云对生成合成内容不添加显式标识，我方承诺合法合规使用生成合成内容，避免造成混淆、误认；如果使用生成合成内容对公众提供服务的，或通过网络传播的，我方将自觉主动添加符合法律规定和国家标准要求的显式标识，承担人工智能生成合成内容标识的法律义务。我方未能恰当、合理地履行人工智能内容标识义务造成不良后果的，或遭受主管部门责罚的，相关责任由我方完全承担。
+                     * @param _enableComplianceAudio 合规提示音， 
+该参数传true（默认）表示通话开始播放摩斯码，提示对话内容为 AI 生成。
+该参数传false表示关闭合规提示音。该参数传false则代表您知晓并同意以下协议：
+我方充分知悉和理解，根据[《网络安全法》](https://www.gov.cn/xinwen/2016-11/07/content_5129723.htm)[《互联网信息服务深度合成管理规定》](https://www.gov.cn/zhengce/zhengceku/2022-12/12/content_5731431.htm)[《生成式人工智能服务管理暂行办法》](https://www.gov.cn/zhengce/zhengceku/202307/content_6891752.htm)[《人工智能生成合成内容标识办法》](https://www.gov.cn/zhengce/zhengceku/202503/content_7014286.htm)的法律法规的规定，对人工智能生成合成内容应当添加显式标识和隐式标识。我方基于业务需求，请腾讯云对生成合成内容不添加显式标识，我方承诺合法合规使用生成合成内容，避免造成混淆、误认；如果使用生成合成内容对公众提供服务的，或通过网络传播的，我方将自觉主动添加符合法律规定和国家标准要求的显式标识，承担人工智能生成合成内容标识的法律义务。我方未能恰当、合理地履行人工智能内容标识义务造成不良后果的，或遭受主管部门责罚的，相关责任由我方完全承担。
+                     * 
+                     */
+                    void SetEnableComplianceAudio(const bool& _enableComplianceAudio);
+
+                    /**
+                     * 判断参数 EnableComplianceAudio 是否已赋值
+                     * @return EnableComplianceAudio 是否已赋值
+                     * 
+                     */
+                    bool EnableComplianceAudioHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1141,35 +1450,15 @@ HoaiMy
                     bool m_calleeHasBeenSet;
 
                     /**
-                     * 用于设定AI人设、说话规则、任务等的全局提示词。示例：## 人设您是人民医院友善、和蔼的随访医生李医生，正在给患者小明的家长打电话，原因是医院要求小明2024-08-08回院复查手术恢复情况，但小明没有来。您需要按照任务流程对小明家长进行电话随访调查。## 要求简洁回复：使用简练语言，每次最多询问一个问题，不要在一个回复中询问多个问题。富有变化：尽量使表达富有变化，表达机械重复。自然亲切：使用日常语言，尽量显得专业并亲切。提到时间时使用口语表述，如下周三、6月18日。积极主动：尝试引导对话，每个回复通常以问题或下一步建议来结尾。询问清楚：如果对方部分回答了您的问题，或者回答很模糊，请通过追问来确保回答的完整明确。遵循任务：当对方的回答偏离了您的任务时，及时引导对方回到任务中。不要从头开始重复，从偏离的地方继续询问。诚实可靠：对于客户的提问，如果不确定请务必不要编造，礼貌告知对方不清楚。不要捏造患者未提及的症状史、用药史、治疗史。其他注意点：避免提到病情恶化、恢复不理想或疾病名称等使用会使患者感到紧张的表述。不要问患者已经直接或间接回答过的问题，例如患者已经说没有不适症状，那就不要再问手术部位是否有红肿疼痛症状的问题。##任务： 1.自我介绍您是人民医院负责随访的李医生，并说明致电的目的。2.询问被叫方是否是小明家长。 - 如果不是小明家长，请礼貌表达歉意，并使用 call_end 挂断电话。- 如果小明家长没空，请礼貌告诉对方稍后会重新致电，并使用 end_call 挂断电话。3.询问小明出院后水肿情况如何，较出院时是否有变化。- 如果水肿变严重，直接跳转步骤7。4.询问出院后是否给小朋友量过体温，是否出现过发烧情况。- 如果没有量过体温，请礼貌告诉家长出院后三个月内需要每天观察体温。- 如果出现过发烧，请直接跳转步骤7。5.询问出院后是否给小朋友按时服药。- 如果没有按时服药，请友善提醒家长严格按医嘱服用药物，避免影响手术效果。6.询问小朋友在饮食上是否做到低盐低脂，适量吃优质蛋白如鸡蛋、牛奶、瘦肉等。- 如果没有做到，请友善提醒家长低盐低脂和优质蛋白有助小朋友尽快恢复。7.告知家长医生要求6月18日回院复查，但没看到有相关复诊记录。提醒家长尽快前往医院体检复查血化验、尿常规。8.询问家长是否有问题需要咨询，如果没有请礼貌道别并用call_end挂断电话。
-                     */
-                    std::string m_systemPrompt;
-                    bool m_systemPromptHasBeenSet;
-
-                    /**
-                     * 模型接口协议类型，目前兼容三种协议类型：
+                     * 模型接口协议类型，目前兼容四种协议类型：
 
 - OpenAI协议(包括GPT、混元、DeepSeek等)："openai"
 - Azure协议："azure"
 - Minimax协议："minimax"
+- Dify协议: "dify"
                      */
                     std::string m_lLMType;
                     bool m_lLMTypeHasBeenSet;
-
-                    /**
-                     * 模型名称，如
-
-- OpenAI协议
-"gpt-4o-mini","gpt-4o"，"hunyuan-standard", "hunyuan-turbo"，"deepseek-chat"；
-
-- Azure协议
-"gpt-4o-mini", "gpt-4o"；
-
-- Minmax协议
-"deepseek-chat".
-                     */
-                    std::string m_model;
-                    bool m_modelHasBeenSet;
 
                     /**
                      * 模型API密钥，获取鉴权信息方式请参见各模型官网
@@ -1199,6 +1488,27 @@ Deepseek："https://api.deepseek.com/v1"
                      */
                     std::string m_aPIUrl;
                     bool m_aPIUrlHasBeenSet;
+
+                    /**
+                     * 用于设定AI人设、说话规则、任务等的全局提示词。示例：## 人设您是人民医院友善、和蔼的随访医生李医生，正在给患者小明的家长打电话，原因是医院要求小明2024-08-08回院复查手术恢复情况，但小明没有来。您需要按照任务流程对小明家长进行电话随访调查。## 要求简洁回复：使用简练语言，每次最多询问一个问题，不要在一个回复中询问多个问题。富有变化：尽量使表达富有变化，表达机械重复。自然亲切：使用日常语言，尽量显得专业并亲切。提到时间时使用口语表述，如下周三、6月18日。积极主动：尝试引导对话，每个回复通常以问题或下一步建议来结尾。询问清楚：如果对方部分回答了您的问题，或者回答很模糊，请通过追问来确保回答的完整明确。遵循任务：当对方的回答偏离了您的任务时，及时引导对方回到任务中。不要从头开始重复，从偏离的地方继续询问。诚实可靠：对于客户的提问，如果不确定请务必不要编造，礼貌告知对方不清楚。不要捏造患者未提及的症状史、用药史、治疗史。其他注意点：避免提到病情恶化、恢复不理想或疾病名称等使用会使患者感到紧张的表述。不要问患者已经直接或间接回答过的问题，例如患者已经说没有不适症状，那就不要再问手术部位是否有红肿疼痛症状的问题。##任务： 1.自我介绍您是人民医院负责随访的李医生，并说明致电的目的。2.询问被叫方是否是小明家长。 - 如果不是小明家长，请礼貌表达歉意，并使用 call_end 挂断电话。- 如果小明家长没空，请礼貌告诉对方稍后会重新致电，并使用 end_call 挂断电话。3.询问小明出院后水肿情况如何，较出院时是否有变化。- 如果水肿变严重，直接跳转步骤7。4.询问出院后是否给小朋友量过体温，是否出现过发烧情况。- 如果没有量过体温，请礼貌告诉家长出院后三个月内需要每天观察体温。- 如果出现过发烧，请直接跳转步骤7。5.询问出院后是否给小朋友按时服药。- 如果没有按时服药，请友善提醒家长严格按医嘱服用药物，避免影响手术效果。6.询问小朋友在饮食上是否做到低盐低脂，适量吃优质蛋白如鸡蛋、牛奶、瘦肉等。- 如果没有做到，请友善提醒家长低盐低脂和优质蛋白有助小朋友尽快恢复。7.告知家长医生要求6月18日回院复查，但没看到有相关复诊记录。提醒家长尽快前往医院体检复查血化验、尿常规。8.询问家长是否有问题需要咨询，如果没有请礼貌道别并用call_end挂断电话。
+                     */
+                    std::string m_systemPrompt;
+                    bool m_systemPromptHasBeenSet;
+
+                    /**
+                     * 模型名称，如
+
+- OpenAI协议
+"gpt-4o-mini","gpt-4o"，"hunyuan-standard", "hunyuan-turbo"，"deepseek-chat"；
+
+- Azure协议
+"gpt-4o-mini", "gpt-4o"；
+
+- Minmax协议
+"deepseek-chat".
+                     */
+                    std::string m_model;
+                    bool m_modelHasBeenSet;
 
                     /**
                      * 默认提供以下音色参数值可选择，如需自定义音色VoiceType请留空并在参数CustomTTSConfig中配置
@@ -1260,6 +1570,12 @@ HoaiMy
                     bool m_welcomeTypeHasBeenSet;
 
                     /**
+                     * 0: 默认可打断， 2：高优先不可打断
+                     */
+                    int64_t m_welcomeMessagePriority;
+                    bool m_welcomeMessagePriorityHasBeenSet;
+
+                    /**
                      * 最大等待时长(毫秒)，默认60秒，超过这个时间用户没说话，自动挂断
                      */
                     int64_t m_maxDuration;
@@ -1295,7 +1611,7 @@ HoaiMy
                     bool m_languagesHasBeenSet;
 
                     /**
-                     * 打断AI说话模式，默认为0，0表示服务端自动打断，1表示服务端不打断，由端上发送打断信令进行打断
+                     * 打断AI说话模式，默认为0，0表示自动打断，1表示不打断。
                      */
                     int64_t m_interruptMode;
                     bool m_interruptModeHasBeenSet;
@@ -1319,6 +1635,18 @@ HoaiMy
                     bool m_endFunctionDescHasBeenSet;
 
                     /**
+                     * 模型是否支持(或者开启)transfer_to_human function calling
+                     */
+                    bool m_transferFunctionEnable;
+                    bool m_transferFunctionEnableHasBeenSet;
+
+                    /**
+                     * TransferFunctionEnable为true的时候生效: 转人工配置
+                     */
+                    std::vector<AITransferItem> m_transferItems;
+                    bool m_transferItemsHasBeenSet;
+
+                    /**
                      * 用户多久没说话提示时长,最小10秒,默认10秒
                      */
                     int64_t m_notifyDuration;
@@ -1329,6 +1657,12 @@ HoaiMy
                      */
                     std::string m_notifyMessage;
                     bool m_notifyMessageHasBeenSet;
+
+                    /**
+                     * 最大触发AI提示音次数，默认为不限制
+                     */
+                    uint64_t m_notifyMaxCount;
+                    bool m_notifyMaxCountHasBeenSet;
 
                     /**
                      * <p>和VoiceType字段需要选填一个，这里是使用自己自定义的TTS，VoiceType是系统内置的一些音色</p>
@@ -1413,6 +1747,67 @@ HoaiMy
                      */
                     std::string m_customTTSConfig;
                     bool m_customTTSConfigHasBeenSet;
+
+                    /**
+                     * 提示词变量
+                     */
+                    std::vector<Variable> m_promptVariables;
+                    bool m_promptVariablesHasBeenSet;
+
+                    /**
+                     * 语音识别vad的时间，范围为240-2000，默认为1000，单位为ms。更小的值会让语音识别分句更快。
+                     */
+                    int64_t m_vadSilenceTime;
+                    bool m_vadSilenceTimeHasBeenSet;
+
+                    /**
+                     * 通话内容提取配置
+                     */
+                    std::vector<AICallExtractConfigElement> m_extractConfig;
+                    bool m_extractConfigHasBeenSet;
+
+                    /**
+                     * 模型温度控制
+                     */
+                    double m_temperature;
+                    bool m_temperatureHasBeenSet;
+
+                    /**
+                     * 通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> 欢迎语延迟播放(秒级)：welcome-message-delay</p>  <p> dify变量</p>  
+
+1. dify-inputs-xxx 为dify的inputs变量
+2.  dify-inputs-user 为dify的user值
+3.  dify-inputs-conversation_id 为dify的conversation_id值
+                     */
+                    std::vector<Variable> m_variables;
+                    bool m_variablesHasBeenSet;
+
+                    /**
+                     * 模型topP
+                     */
+                    double m_topP;
+                    bool m_topPHasBeenSet;
+
+                    /**
+                     * vad的远场人声抑制能力（不会对asr识别效果造成影响），范围为[0, 3]，默认为0。推荐设置为2，有较好的远场人声抑制能力。
+                     */
+                    uint64_t m_vadLevel;
+                    bool m_vadLevelHasBeenSet;
+
+                    /**
+                     * 衔接语
+                     */
+                    ToneWordInfo m_toneWord;
+                    bool m_toneWordHasBeenSet;
+
+                    /**
+                     * 合规提示音， 
+该参数传true（默认）表示通话开始播放摩斯码，提示对话内容为 AI 生成。
+该参数传false表示关闭合规提示音。该参数传false则代表您知晓并同意以下协议：
+我方充分知悉和理解，根据[《网络安全法》](https://www.gov.cn/xinwen/2016-11/07/content_5129723.htm)[《互联网信息服务深度合成管理规定》](https://www.gov.cn/zhengce/zhengceku/2022-12/12/content_5731431.htm)[《生成式人工智能服务管理暂行办法》](https://www.gov.cn/zhengce/zhengceku/202307/content_6891752.htm)[《人工智能生成合成内容标识办法》](https://www.gov.cn/zhengce/zhengceku/202503/content_7014286.htm)的法律法规的规定，对人工智能生成合成内容应当添加显式标识和隐式标识。我方基于业务需求，请腾讯云对生成合成内容不添加显式标识，我方承诺合法合规使用生成合成内容，避免造成混淆、误认；如果使用生成合成内容对公众提供服务的，或通过网络传播的，我方将自觉主动添加符合法律规定和国家标准要求的显式标识，承担人工智能生成合成内容标识的法律义务。我方未能恰当、合理地履行人工智能内容标识义务造成不良后果的，或遭受主管部门责罚的，相关责任由我方完全承担。
+                     */
+                    bool m_enableComplianceAudio;
+                    bool m_enableComplianceAudioHasBeenSet;
 
                 };
             }

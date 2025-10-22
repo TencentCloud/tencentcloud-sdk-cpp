@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -196,6 +196,31 @@ namespace TencentCloud
                      */
                     bool WeekdayHasBeenSet() const;
 
+                    /**
+                     * 获取组名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GroupMembers 组名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetGroupMembers() const;
+
+                    /**
+                     * 设置组名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _groupMembers 组名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGroupMembers(const std::string& _groupMembers);
+
+                    /**
+                     * 判断参数 GroupMembers 是否已赋值
+                     * @return GroupMembers 是否已赋值
+                     * 
+                     */
+                    bool GroupMembersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -239,6 +264,13 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_weekday;
                     bool m_weekdayHasBeenSet;
+
+                    /**
+                     * 组名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_groupMembers;
+                    bool m_groupMembersHasBeenSet;
 
                 };
             }

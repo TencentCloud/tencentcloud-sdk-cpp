@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -474,15 +474,15 @@ namespace TencentCloud
                     bool BackupSuccessCountHasBeenSet() const;
 
                     /**
-                     * 获取版本信息：0-基础版 1-专业版 2-旗舰版 3-普惠版
-                     * @return HostVersion 版本信息：0-基础版 1-专业版 2-旗舰版 3-普惠版
+                     * 获取版本信息：0-基础版 1-专业版 2-旗舰版 3-轻量版
+                     * @return HostVersion 版本信息：0-基础版 1-专业版 2-旗舰版 3-轻量版
                      * 
                      */
                     uint64_t GetHostVersion() const;
 
                     /**
-                     * 设置版本信息：0-基础版 1-专业版 2-旗舰版 3-普惠版
-                     * @param _hostVersion 版本信息：0-基础版 1-专业版 2-旗舰版 3-普惠版
+                     * 设置版本信息：0-基础版 1-专业版 2-旗舰版 3-轻量版
+                     * @param _hostVersion 版本信息：0-基础版 1-专业版 2-旗舰版 3-轻量版
                      * 
                      */
                     void SetHostVersion(const uint64_t& _hostVersion);
@@ -493,6 +493,27 @@ namespace TencentCloud
                      * 
                      */
                     bool HostVersionHasBeenSet() const;
+
+                    /**
+                     * 获取机器所属专区类型 CVM 云服务器, BM 黑石, ECM 边缘计算, LH 轻量应用服务器 ,Other 混合云专区
+                     * @return MachineType 机器所属专区类型 CVM 云服务器, BM 黑石, ECM 边缘计算, LH 轻量应用服务器 ,Other 混合云专区
+                     * 
+                     */
+                    std::string GetMachineType() const;
+
+                    /**
+                     * 设置机器所属专区类型 CVM 云服务器, BM 黑石, ECM 边缘计算, LH 轻量应用服务器 ,Other 混合云专区
+                     * @param _machineType 机器所属专区类型 CVM 云服务器, BM 黑石, ECM 边缘计算, LH 轻量应用服务器 ,Other 混合云专区
+                     * 
+                     */
+                    void SetMachineType(const std::string& _machineType);
+
+                    /**
+                     * 判断参数 MachineType 是否已赋值
+                     * @return MachineType 是否已赋值
+                     * 
+                     */
+                    bool MachineTypeHasBeenSet() const;
 
                 private:
 
@@ -618,10 +639,16 @@ namespace TencentCloud
                     bool m_backupSuccessCountHasBeenSet;
 
                     /**
-                     * 版本信息：0-基础版 1-专业版 2-旗舰版 3-普惠版
+                     * 版本信息：0-基础版 1-专业版 2-旗舰版 3-轻量版
                      */
                     uint64_t m_hostVersion;
                     bool m_hostVersionHasBeenSet;
+
+                    /**
+                     * 机器所属专区类型 CVM 云服务器, BM 黑石, ECM 边缘计算, LH 轻量应用服务器 ,Other 混合云专区
+                     */
+                    std::string m_machineType;
+                    bool m_machineTypeHasBeenSet;
 
                 };
             }

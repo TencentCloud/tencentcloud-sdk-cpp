@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Pull总共的次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PullCount Pull总共的次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPullCount() const;
 
                     /**
                      * 设置Pull总共的次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pullCount Pull总共的次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPullCount(const int64_t& _pullCount);
@@ -115,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取仓库收藏次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FavorCount 仓库收藏次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFavorCount() const;
 
                     /**
                      * 设置仓库收藏次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _favorCount 仓库收藏次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFavorCount(const int64_t& _favorCount);
@@ -140,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取仓库是否公开
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Public 仓库是否公开
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPublic() const;
 
                     /**
                      * 设置仓库是否公开
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _public 仓库是否公开
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublic(const int64_t& _public);
@@ -165,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否为官方所有
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsQcloudOfficial 是否为官方所有
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsQcloudOfficial() const;
 
                     /**
                      * 设置是否为官方所有
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isQcloudOfficial 是否为官方所有
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsQcloudOfficial(const bool& _isQcloudOfficial);
@@ -190,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取仓库Tag的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagCount 仓库Tag的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTagCount() const;
 
                     /**
                      * 设置仓库Tag的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tagCount 仓库Tag的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTagCount(const int64_t& _tagCount);
@@ -215,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Logo
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Logo Logo
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogo() const;
 
                     /**
                      * 设置Logo
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logo Logo
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogo(const std::string& _logo);
@@ -296,42 +272,36 @@ namespace TencentCloud
 
                     /**
                      * Pull总共的次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_pullCount;
                     bool m_pullCountHasBeenSet;
 
                     /**
                      * 仓库收藏次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_favorCount;
                     bool m_favorCountHasBeenSet;
 
                     /**
                      * 仓库是否公开
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_public;
                     bool m_publicHasBeenSet;
 
                     /**
                      * 是否为官方所有
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isQcloudOfficial;
                     bool m_isQcloudOfficialHasBeenSet;
 
                     /**
                      * 仓库Tag的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_tagCount;
                     bool m_tagCountHasBeenSet;
 
                     /**
                      * Logo
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logo;
                     bool m_logoHasBeenSet;

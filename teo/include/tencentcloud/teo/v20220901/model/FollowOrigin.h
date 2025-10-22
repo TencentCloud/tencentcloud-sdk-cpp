@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,27 +76,23 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取源站未返回 Cache-Control 头时，缓存/不缓存开关。当 Switch 为 on 时，此字段必填，否则此字段不生效。取值有：
+                     * 获取源站未返回 Cache-Control 头时，缓存/不缓存开关。当 Switch 为 on 时，此字段必填，当 Switch 为 off 时，无需填写此字段，若填写则不生效。取值有：
 <li>on：缓存；</li>
 <li>off：不缓存。</li>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DefaultCache 源站未返回 Cache-Control 头时，缓存/不缓存开关。当 Switch 为 on 时，此字段必填，否则此字段不生效。取值有：
+                     * @return DefaultCache 源站未返回 Cache-Control 头时，缓存/不缓存开关。当 Switch 为 on 时，此字段必填，当 Switch 为 off 时，无需填写此字段，若填写则不生效。取值有：
 <li>on：缓存；</li>
 <li>off：不缓存。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDefaultCache() const;
 
                     /**
-                     * 设置源站未返回 Cache-Control 头时，缓存/不缓存开关。当 Switch 为 on 时，此字段必填，否则此字段不生效。取值有：
+                     * 设置源站未返回 Cache-Control 头时，缓存/不缓存开关。当 Switch 为 on 时，此字段必填，当 Switch 为 off 时，无需填写此字段，若填写则不生效。取值有：
 <li>on：缓存；</li>
 <li>off：不缓存。</li>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _defaultCache 源站未返回 Cache-Control 头时，缓存/不缓存开关。当 Switch 为 on 时，此字段必填，否则此字段不生效。取值有：
+                     * @param _defaultCache 源站未返回 Cache-Control 头时，缓存/不缓存开关。当 Switch 为 on 时，此字段必填，当 Switch 为 off 时，无需填写此字段，若填写则不生效。取值有：
 <li>on：缓存；</li>
 <li>off：不缓存。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefaultCache(const std::string& _defaultCache);
@@ -112,11 +108,9 @@ namespace TencentCloud
                      * 获取源站未返回 Cache-Control 头时，使用/不使用默认缓存策略开关。当 DefaultCache 为 on 时，此字段必填，否则此字段不生效；当 DefaultCacheTime 不为 0 时，此字段必须为 off。取值有：
 <li>on：使用默认缓存策略；</li>
 <li>off：不使用默认缓存策略。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefaultCacheStrategy 源站未返回 Cache-Control 头时，使用/不使用默认缓存策略开关。当 DefaultCache 为 on 时，此字段必填，否则此字段不生效；当 DefaultCacheTime 不为 0 时，此字段必须为 off。取值有：
 <li>on：使用默认缓存策略；</li>
 <li>off：不使用默认缓存策略。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDefaultCacheStrategy() const;
@@ -125,11 +119,9 @@ namespace TencentCloud
                      * 设置源站未返回 Cache-Control 头时，使用/不使用默认缓存策略开关。当 DefaultCache 为 on 时，此字段必填，否则此字段不生效；当 DefaultCacheTime 不为 0 时，此字段必须为 off。取值有：
 <li>on：使用默认缓存策略；</li>
 <li>off：不使用默认缓存策略。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _defaultCacheStrategy 源站未返回 Cache-Control 头时，使用/不使用默认缓存策略开关。当 DefaultCache 为 on 时，此字段必填，否则此字段不生效；当 DefaultCacheTime 不为 0 时，此字段必须为 off。取值有：
 <li>on：使用默认缓存策略；</li>
 <li>off：不使用默认缓存策略。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefaultCacheStrategy(const std::string& _defaultCacheStrategy);
@@ -142,19 +134,15 @@ namespace TencentCloud
                     bool DefaultCacheStrategyHasBeenSet() const;
 
                     /**
-                     * 获取源站未返回 Cache-Control 头时，表示默认的缓存时间，单位为秒，取值：0～315360000。当 DefaultCache 为 on 时，此字段必填，否则此字段不生效；当 DefaultCacheStrategy 为 on 时， 此字段必须为 0。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DefaultCacheTime 源站未返回 Cache-Control 头时，表示默认的缓存时间，单位为秒，取值：0～315360000。当 DefaultCache 为 on 时，此字段必填，否则此字段不生效；当 DefaultCacheStrategy 为 on 时， 此字段必须为 0。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取源站未返回 Cache-Control 头时，表示默认的缓存时间，单位为秒，取值：0-315360000。当 DefaultCache 为 on 时，此字段必填，否则此字段不生效；当 DefaultCacheStrategy 为 on 时， 此字段必须为 0。
+                     * @return DefaultCacheTime 源站未返回 Cache-Control 头时，表示默认的缓存时间，单位为秒，取值：0-315360000。当 DefaultCache 为 on 时，此字段必填，否则此字段不生效；当 DefaultCacheStrategy 为 on 时， 此字段必须为 0。
                      * 
                      */
                     int64_t GetDefaultCacheTime() const;
 
                     /**
-                     * 设置源站未返回 Cache-Control 头时，表示默认的缓存时间，单位为秒，取值：0～315360000。当 DefaultCache 为 on 时，此字段必填，否则此字段不生效；当 DefaultCacheStrategy 为 on 时， 此字段必须为 0。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _defaultCacheTime 源站未返回 Cache-Control 头时，表示默认的缓存时间，单位为秒，取值：0～315360000。当 DefaultCache 为 on 时，此字段必填，否则此字段不生效；当 DefaultCacheStrategy 为 on 时， 此字段必须为 0。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置源站未返回 Cache-Control 头时，表示默认的缓存时间，单位为秒，取值：0-315360000。当 DefaultCache 为 on 时，此字段必填，否则此字段不生效；当 DefaultCacheStrategy 为 on 时， 此字段必须为 0。
+                     * @param _defaultCacheTime 源站未返回 Cache-Control 头时，表示默认的缓存时间，单位为秒，取值：0-315360000。当 DefaultCache 为 on 时，此字段必填，否则此字段不生效；当 DefaultCacheStrategy 为 on 时， 此字段必须为 0。
                      * 
                      */
                     void SetDefaultCacheTime(const int64_t& _defaultCacheTime);
@@ -177,10 +165,9 @@ namespace TencentCloud
                     bool m_switchHasBeenSet;
 
                     /**
-                     * 源站未返回 Cache-Control 头时，缓存/不缓存开关。当 Switch 为 on 时，此字段必填，否则此字段不生效。取值有：
+                     * 源站未返回 Cache-Control 头时，缓存/不缓存开关。当 Switch 为 on 时，此字段必填，当 Switch 为 off 时，无需填写此字段，若填写则不生效。取值有：
 <li>on：缓存；</li>
 <li>off：不缓存。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_defaultCache;
                     bool m_defaultCacheHasBeenSet;
@@ -189,14 +176,12 @@ namespace TencentCloud
                      * 源站未返回 Cache-Control 头时，使用/不使用默认缓存策略开关。当 DefaultCache 为 on 时，此字段必填，否则此字段不生效；当 DefaultCacheTime 不为 0 时，此字段必须为 off。取值有：
 <li>on：使用默认缓存策略；</li>
 <li>off：不使用默认缓存策略。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_defaultCacheStrategy;
                     bool m_defaultCacheStrategyHasBeenSet;
 
                     /**
-                     * 源站未返回 Cache-Control 头时，表示默认的缓存时间，单位为秒，取值：0～315360000。当 DefaultCache 为 on 时，此字段必填，否则此字段不生效；当 DefaultCacheStrategy 为 on 时， 此字段必须为 0。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 源站未返回 Cache-Control 头时，表示默认的缓存时间，单位为秒，取值：0-315360000。当 DefaultCache 为 on 时，此字段必填，否则此字段不生效；当 DefaultCacheStrategy 为 on 时， 此字段必须为 0。
                      */
                     int64_t m_defaultCacheTime;
                     bool m_defaultCacheTimeHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取操作符，支持等于(eq)、不等于(ne)，以及in
-                     * @return Operator 操作符，支持等于(eq)、不等于(ne)，以及in
+                     * 获取操作符，支持=、in
+                     * @return Operator 操作符，支持=、in
                      * 
                      */
                     std::string GetOperator() const;
 
                     /**
-                     * 设置操作符，支持等于(eq)、不等于(ne)，以及in
-                     * @param _operator 操作符，支持等于(eq)、不等于(ne)，以及in
+                     * 设置操作符，支持=、in
+                     * @param _operator 操作符，支持=、in
                      * 
                      */
                     void SetOperator(const std::string& _operator);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取维度值，当Op是eq、ne时，只使用第一个元素
-                     * @return Value 维度值，当Op是eq、ne时，只使用第一个元素
+                     * 获取维度值，当Op是=时，只使用第一个元素
+                     * @return Value 维度值，当Op是=时，只使用第一个元素
                      * 
                      */
                     std::vector<std::string> GetValue() const;
 
                     /**
-                     * 设置维度值，当Op是eq、ne时，只使用第一个元素
-                     * @param _value 维度值，当Op是eq、ne时，只使用第一个元素
+                     * 设置维度值，当Op是=时，只使用第一个元素
+                     * @param _value 维度值，当Op是=时，只使用第一个元素
                      * 
                      */
                     void SetValue(const std::vector<std::string>& _value);
@@ -118,13 +118,13 @@ namespace TencentCloud
                     bool m_keyHasBeenSet;
 
                     /**
-                     * 操作符，支持等于(eq)、不等于(ne)，以及in
+                     * 操作符，支持=、in
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 维度值，当Op是eq、ne时，只使用第一个元素
+                     * 维度值，当Op是=时，只使用第一个元素
                      */
                     std::vector<std::string> m_value;
                     bool m_valueHasBeenSet;

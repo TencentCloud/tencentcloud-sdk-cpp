@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,18 +58,14 @@ namespace TencentCloud
 
                     /**
                      * 获取体检报告-外科-头颈部
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HeadNeck 体检报告-外科-头颈部
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SurgeryHeadNeck GetHeadNeck() const;
 
                     /**
                      * 设置体检报告-外科-头颈部
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _headNeck 体检报告-外科-头颈部
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHeadNeck(const SurgeryHeadNeck& _headNeck);
@@ -83,18 +79,14 @@ namespace TencentCloud
 
                     /**
                      * 获取体检报告-外科-甲状腺
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Thyroid 体检报告-外科-甲状腺
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SurgeryThyroid GetThyroid() const;
 
                     /**
                      * 设置体检报告-外科-甲状腺
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _thyroid 体检报告-外科-甲状腺
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetThyroid(const SurgeryThyroid& _thyroid);
@@ -108,18 +100,14 @@ namespace TencentCloud
 
                     /**
                      * 获取体检报告-外科-乳房
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Breast 体检报告-外科-乳房
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SurgeryBreast GetBreast() const;
 
                     /**
                      * 设置体检报告-外科-乳房
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _breast 体检报告-外科-乳房
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBreast(const SurgeryBreast& _breast);
@@ -133,18 +121,14 @@ namespace TencentCloud
 
                     /**
                      * 获取体检报告-外科-浅表淋巴结
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LymphNode 体检报告-外科-浅表淋巴结
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SurgeryLymphNode GetLymphNode() const;
 
                     /**
                      * 设置体检报告-外科-浅表淋巴结
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lymphNode 体检报告-外科-浅表淋巴结
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLymphNode(const SurgeryLymphNode& _lymphNode);
@@ -158,18 +142,14 @@ namespace TencentCloud
 
                     /**
                      * 获取体检报告-外科-脊柱
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpinalExtremities 体检报告-外科-脊柱
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SurgerySpinalExtremities GetSpinalExtremities() const;
 
                     /**
                      * 设置体检报告-外科-脊柱
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _spinalExtremities 体检报告-外科-脊柱
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSpinalExtremities(const SurgerySpinalExtremities& _spinalExtremities);
@@ -183,18 +163,14 @@ namespace TencentCloud
 
                     /**
                      * 获取体检报告-外科-皮肤
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Skin 体检报告-外科-皮肤
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SurgerySkin GetSkin() const;
 
                     /**
                      * 设置体检报告-外科-皮肤
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _skin 体检报告-外科-皮肤
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSkin(const SurgerySkin& _skin);
@@ -208,18 +184,14 @@ namespace TencentCloud
 
                     /**
                      * 获取体检报告-外科-肛门直肠
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Anorectal 体检报告-外科-肛门直肠
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SurgeryAnorectal GetAnorectal() const;
 
                     /**
                      * 设置体检报告-外科-肛门直肠
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _anorectal 体检报告-外科-肛门直肠
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAnorectal(const SurgeryAnorectal& _anorectal);
@@ -233,18 +205,14 @@ namespace TencentCloud
 
                     /**
                      * 获取体检报告-外科-泌尿生殖系统
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UrogenitalSystem 体检报告-外科-泌尿生殖系统
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SurgeryUrogenitalSystem GetUrogenitalSystem() const;
 
                     /**
                      * 设置体检报告-外科-泌尿生殖系统
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _urogenitalSystem 体检报告-外科-泌尿生殖系统
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUrogenitalSystem(const SurgeryUrogenitalSystem& _urogenitalSystem);
@@ -258,18 +226,14 @@ namespace TencentCloud
 
                     /**
                      * 获取体检报告-外科-外科其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Others 体检报告-外科-外科其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<KeyValueItem> GetOthers() const;
 
                     /**
                      * 设置体检报告-外科-外科其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _others 体检报告-外科-外科其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOthers(const std::vector<KeyValueItem>& _others);
@@ -283,18 +247,14 @@ namespace TencentCloud
 
                     /**
                      * 获取体检报告-外科-小结
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BriefSummary 体检报告-外科-小结
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SurgeryBriefSummary GetBriefSummary() const;
 
                     /**
                      * 设置体检报告-外科-小结
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _briefSummary 体检报告-外科-小结
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBriefSummary(const SurgeryBriefSummary& _briefSummary);
@@ -310,70 +270,60 @@ namespace TencentCloud
 
                     /**
                      * 体检报告-外科-头颈部
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SurgeryHeadNeck m_headNeck;
                     bool m_headNeckHasBeenSet;
 
                     /**
                      * 体检报告-外科-甲状腺
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SurgeryThyroid m_thyroid;
                     bool m_thyroidHasBeenSet;
 
                     /**
                      * 体检报告-外科-乳房
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SurgeryBreast m_breast;
                     bool m_breastHasBeenSet;
 
                     /**
                      * 体检报告-外科-浅表淋巴结
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SurgeryLymphNode m_lymphNode;
                     bool m_lymphNodeHasBeenSet;
 
                     /**
                      * 体检报告-外科-脊柱
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SurgerySpinalExtremities m_spinalExtremities;
                     bool m_spinalExtremitiesHasBeenSet;
 
                     /**
                      * 体检报告-外科-皮肤
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SurgerySkin m_skin;
                     bool m_skinHasBeenSet;
 
                     /**
                      * 体检报告-外科-肛门直肠
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SurgeryAnorectal m_anorectal;
                     bool m_anorectalHasBeenSet;
 
                     /**
                      * 体检报告-外科-泌尿生殖系统
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SurgeryUrogenitalSystem m_urogenitalSystem;
                     bool m_urogenitalSystemHasBeenSet;
 
                     /**
                      * 体检报告-外科-外科其他
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<KeyValueItem> m_others;
                     bool m_othersHasBeenSet;
 
                     /**
                      * 体检报告-外科-小结
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SurgeryBriefSummary m_briefSummary;
                     bool m_briefSummaryHasBeenSet;

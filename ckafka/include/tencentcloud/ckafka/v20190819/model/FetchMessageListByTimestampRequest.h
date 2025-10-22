@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例Id
-                     * @return InstanceId 实例Id
+                     * 获取ckafka集群实例Id
+                     * @return InstanceId ckafka集群实例Id
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例Id
-                     * @param _instanceId 实例Id
+                     * 设置ckafka集群实例Id
+                     * @param _instanceId ckafka集群实例Id
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取最大查询条数，默认20，最大20
-                     * @return SinglePartitionRecordNumber 最大查询条数，默认20，最大20
+                     * 获取最大查询条数，默认20，最大20, 最小1
+                     * @return SinglePartitionRecordNumber 最大查询条数，默认20，最大20, 最小1
                      * 
                      */
                     int64_t GetSinglePartitionRecordNumber() const;
 
                     /**
-                     * 设置最大查询条数，默认20，最大20
-                     * @param _singlePartitionRecordNumber 最大查询条数，默认20，最大20
+                     * 设置最大查询条数，默认20，最大20, 最小1
+                     * @param _singlePartitionRecordNumber 最大查询条数，默认20，最大20, 最小1
                      * 
                      */
                     void SetSinglePartitionRecordNumber(const int64_t& _singlePartitionRecordNumber);
@@ -150,7 +150,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例Id
+                     * ckafka集群实例Id
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -174,7 +174,7 @@ namespace TencentCloud
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 最大查询条数，默认20，最大20
+                     * 最大查询条数，默认20，最大20, 最小1
                      */
                     int64_t m_singlePartitionRecordNumber;
                     bool m_singlePartitionRecordNumberHasBeenSet;

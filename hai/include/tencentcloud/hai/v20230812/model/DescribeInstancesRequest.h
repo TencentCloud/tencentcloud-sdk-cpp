@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例元组
-                     * @return InstanceIds 实例元组
+                     * 获取实例元组，数量上限100
+                     * @return InstanceIds 实例元组，数量上限100
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置实例元组
-                     * @param _instanceIds 实例元组
+                     * 设置实例元组，数量上限100
+                     * @param _instanceIds 实例元组，数量上限100
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取描述键值对过滤器，用于条件过滤查询。目前支持的过滤器有：instance-id，实例id；instance-state，实例状态；charge-type，付费方式；public-ip-address，公网IP过滤
-                     * @return Filters 描述键值对过滤器，用于条件过滤查询。目前支持的过滤器有：instance-id，实例id；instance-state，实例状态；charge-type，付费方式；public-ip-address，公网IP过滤
+                     * 获取描述键值对过滤器，用于条件过滤查询。目前支持的过滤器有： instance-id，实例id； instance-state，实例状态：RUNNING，PENDING，STOPPED，ARREARS，STOPPED_NO_CHARGE； charge-type，付费方式：PREPAID_BY_MONTH，POSTPAID_BY_HOUR； public-ip-address，公网IP过滤
+                     * @return Filters 描述键值对过滤器，用于条件过滤查询。目前支持的过滤器有： instance-id，实例id； instance-state，实例状态：RUNNING，PENDING，STOPPED，ARREARS，STOPPED_NO_CHARGE； charge-type，付费方式：PREPAID_BY_MONTH，POSTPAID_BY_HOUR； public-ip-address，公网IP过滤
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置描述键值对过滤器，用于条件过滤查询。目前支持的过滤器有：instance-id，实例id；instance-state，实例状态；charge-type，付费方式；public-ip-address，公网IP过滤
-                     * @param _filters 描述键值对过滤器，用于条件过滤查询。目前支持的过滤器有：instance-id，实例id；instance-state，实例状态；charge-type，付费方式；public-ip-address，公网IP过滤
+                     * 设置描述键值对过滤器，用于条件过滤查询。目前支持的过滤器有： instance-id，实例id； instance-state，实例状态：RUNNING，PENDING，STOPPED，ARREARS，STOPPED_NO_CHARGE； charge-type，付费方式：PREPAID_BY_MONTH，POSTPAID_BY_HOUR； public-ip-address，公网IP过滤
+                     * @param _filters 描述键值对过滤器，用于条件过滤查询。目前支持的过滤器有： instance-id，实例id； instance-state，实例状态：RUNNING，PENDING，STOPPED，ARREARS，STOPPED_NO_CHARGE； charge-type，付费方式：PREPAID_BY_MONTH，POSTPAID_BY_HOUR； public-ip-address，公网IP过滤
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -86,19 +86,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为0
-
-                     * @return Offset 偏移量，默认为0
-
+                     * 获取偏移量，默认为0，不得大于100
+                     * @return Offset 偏移量，默认为0，不得大于100
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为0
-
-                     * @param _offset 偏移量，默认为0
-
+                     * 设置偏移量，默认为0，不得大于100
+                     * @param _offset 偏移量，默认为0，不得大于100
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -111,15 +107,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回量，默认为20
-                     * @return Limit 返回量，默认为20
+                     * 获取返回量，默认为20，不能小于0
+                     * @return Limit 返回量，默认为20，不能小于0
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回量，默认为20
-                     * @param _limit 返回量，默认为20
+                     * 设置返回量，默认为20，不能小于0
+                     * @param _limit 返回量，默认为20，不能小于0
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -134,26 +130,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例元组
+                     * 实例元组，数量上限100
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 描述键值对过滤器，用于条件过滤查询。目前支持的过滤器有：instance-id，实例id；instance-state，实例状态；charge-type，付费方式；public-ip-address，公网IP过滤
+                     * 描述键值对过滤器，用于条件过滤查询。目前支持的过滤器有： instance-id，实例id； instance-state，实例状态：RUNNING，PENDING，STOPPED，ARREARS，STOPPED_NO_CHARGE； charge-type，付费方式：PREPAID_BY_MONTH，POSTPAID_BY_HOUR； public-ip-address，公网IP过滤
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 偏移量，默认为0
-
+                     * 偏移量，默认为0，不得大于100
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回量，默认为20
+                     * 返回量，默认为20，不能小于0
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ FusionUltraParam::FusionUltraParam() :
     m_enhanceRadioHasBeenSet(false),
     m_mpRadioHasBeenSet(false),
     m_blurRadioHasBeenSet(false),
-    m_teethEnhanceRadioHasBeenSet(false)
+    m_teethEnhanceRadioHasBeenSet(false),
+    m_makeupTransferRadioHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome FusionUltraParam::Deserialize(const rapidjson::Value &value)
         m_teethEnhanceRadioHasBeenSet = true;
     }
 
+    if (value.HasMember("MakeupTransferRadio") && !value["MakeupTransferRadio"].IsNull())
+    {
+        if (!value["MakeupTransferRadio"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `FusionUltraParam.MakeupTransferRadio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_makeupTransferRadio = value["MakeupTransferRadio"].GetDouble();
+        m_makeupTransferRadioHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void FusionUltraParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "TeethEnhanceRadio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_teethEnhanceRadio, allocator);
+    }
+
+    if (m_makeupTransferRadioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MakeupTransferRadio";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_makeupTransferRadio, allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void FusionUltraParam::SetTeethEnhanceRadio(const double& _teethEnhanceRadio)
 bool FusionUltraParam::TeethEnhanceRadioHasBeenSet() const
 {
     return m_teethEnhanceRadioHasBeenSet;
+}
+
+double FusionUltraParam::GetMakeupTransferRadio() const
+{
+    return m_makeupTransferRadio;
+}
+
+void FusionUltraParam::SetMakeupTransferRadio(const double& _makeupTransferRadio)
+{
+    m_makeupTransferRadio = _makeupTransferRadio;
+    m_makeupTransferRadioHasBeenSet = true;
+}
+
+bool FusionUltraParam::MakeupTransferRadioHasBeenSet() const
+{
+    return m_makeupTransferRadioHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,44 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取HaVip实例唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HaVipId HaVip实例唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetHaVipId() const;
-
-                    /**
-                     * 设置HaVip实例唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _haVipId HaVip实例唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetHaVipId(const std::string& _haVipId);
-
-                    /**
-                     * 判断参数 HaVipId 是否已赋值
-                     * @return HaVipId 是否已赋值
-                     * 
-                     */
-                    bool HaVipIdHasBeenSet() const;
-
-                    /**
                      * 获取HaVip绑定的子机或网卡唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId HaVip绑定的子机或网卡唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置HaVip绑定的子机或网卡唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId HaVip绑定的子机或网卡唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -97,19 +68,36 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
+                     * 获取HaVip实例唯一ID。
+                     * @return HaVipId HaVip实例唯一ID。
+                     * 
+                     */
+                    std::string GetHaVipId() const;
+
+                    /**
+                     * 设置HaVip实例唯一ID。
+                     * @param _haVipId HaVip实例唯一ID。
+                     * 
+                     */
+                    void SetHaVipId(const std::string& _haVipId);
+
+                    /**
+                     * 判断参数 HaVipId 是否已赋值
+                     * @return HaVipId 是否已赋值
+                     * 
+                     */
+                    bool HaVipIdHasBeenSet() const;
+
+                    /**
                      * 获取HaVip绑定的类型。取值:CVM, ENI。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType HaVip绑定的类型。取值:CVM, ENI。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置HaVip绑定的类型。取值:CVM, ENI。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceType HaVip绑定的类型。取值:CVM, ENI。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -124,22 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * HaVip实例唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_haVipId;
-                    bool m_haVipIdHasBeenSet;
-
-                    /**
                      * HaVip绑定的子机或网卡唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
+                     * HaVip实例唯一ID。
+                     */
+                    std::string m_haVipId;
+                    bool m_haVipIdHasBeenSet;
+
+                    /**
                      * HaVip绑定的类型。取值:CVM, ENI。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;

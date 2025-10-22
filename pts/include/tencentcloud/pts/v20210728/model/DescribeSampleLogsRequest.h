@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。过期时间1小时
-                     * @return Context 加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。过期时间1小时
+                     * 获取加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。过期时间1小时，不与 Offset  参数同时使用
+                     * @return Context 加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。过期时间1小时，不与 Offset  参数同时使用
                      * 
                      */
                     std::string GetContext() const;
 
                     /**
-                     * 设置加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。过期时间1小时
-                     * @param _context 加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。过期时间1小时
+                     * 设置加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。过期时间1小时，不与 Offset  参数同时使用
+                     * @param _context 加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。过期时间1小时，不与 Offset  参数同时使用
                      * 
                      */
                     void SetContext(const std::string& _context);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool SeverityTextHasBeenSet() const;
 
                     /**
-                     * 获取ap-shanghai, ap-guangzhou
-                     * @return InstanceRegion ap-shanghai, ap-guangzhou
+                     * 获取地域
+                     * @return InstanceRegion 地域
                      * 
                      */
                     std::string GetInstanceRegion() const;
 
                     /**
-                     * 设置ap-shanghai, ap-guangzhou
-                     * @param _instanceRegion ap-shanghai, ap-guangzhou
+                     * 设置地域
+                     * @param _instanceRegion 地域
                      * 
                      */
                     void SetInstanceRegion(const std::string& _instanceRegion);
@@ -233,15 +233,15 @@ namespace TencentCloud
                     bool InstanceHasBeenSet() const;
 
                     /**
-                     * 获取request 代表采样日志,可为不填
-                     * @return LogType request 代表采样日志,可为不填
+                     * 获取request 代表采样日志,engine 代表引擎日志，console 代表用户打印日志
+                     * @return LogType request 代表采样日志,engine 代表引擎日志，console 代表用户打印日志
                      * 
                      */
                     std::string GetLogType() const;
 
                     /**
-                     * 设置request 代表采样日志,可为不填
-                     * @param _logType request 代表采样日志,可为不填
+                     * 设置request 代表采样日志,engine 代表引擎日志，console 代表用户打印日志
+                     * @param _logType request 代表采样日志,engine 代表引擎日志，console 代表用户打印日志
                      * 
                      */
                     void SetLogType(const std::string& _logType);
@@ -252,6 +252,27 @@ namespace TencentCloud
                      * 
                      */
                     bool LogTypeHasBeenSet() const;
+
+                    /**
+                     * 获取日志偏移量，不与Context 参数同时使用
+                     * @return Offset 日志偏移量，不与Context 参数同时使用
+                     * 
+                     */
+                    int64_t GetOffset() const;
+
+                    /**
+                     * 设置日志偏移量，不与Context 参数同时使用
+                     * @param _offset 日志偏移量，不与Context 参数同时使用
+                     * 
+                     */
+                    void SetOffset(const int64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     * 
+                     */
+                    bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回日志条数，最大100
@@ -400,7 +421,7 @@ namespace TencentCloud
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。过期时间1小时
+                     * 加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。过期时间1小时，不与 Offset  参数同时使用
                      */
                     std::string m_context;
                     bool m_contextHasBeenSet;
@@ -424,7 +445,7 @@ namespace TencentCloud
                     bool m_severityTextHasBeenSet;
 
                     /**
-                     * ap-shanghai, ap-guangzhou
+                     * 地域
                      */
                     std::string m_instanceRegion;
                     bool m_instanceRegionHasBeenSet;
@@ -436,10 +457,16 @@ namespace TencentCloud
                     bool m_instanceHasBeenSet;
 
                     /**
-                     * request 代表采样日志,可为不填
+                     * request 代表采样日志,engine 代表引擎日志，console 代表用户打印日志
                      */
                     std::string m_logType;
                     bool m_logTypeHasBeenSet;
+
+                    /**
+                     * 日志偏移量，不与Context 参数同时使用
+                     */
+                    int64_t m_offset;
+                    bool m_offsetHasBeenSet;
 
                     /**
                      * 返回日志条数，最大100

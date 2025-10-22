@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,19 +84,19 @@ namespace TencentCloud
                     bool CodecHasBeenSet() const;
 
                     /**
-                     * 获取视频流的码率，取值范围：0 和 [128, 35000]，单位：kbps。
-当取值为 0 或不填时，表示自动选择最佳视频码率。
-                     * @return Bitrate 视频流的码率，取值范围：0 和 [128, 35000]，单位：kbps。
-当取值为 0 或不填时，表示自动选择最佳视频码率。
+                     * 获取视频流的码率，取值范围：0 和 [128, 100000]，单位：kbps。
+当取值为 0 或不填时，表示由云点播自动设置码率。
+                     * @return Bitrate 视频流的码率，取值范围：0 和 [128, 100000]，单位：kbps。
+当取值为 0 或不填时，表示由云点播自动设置码率。
                      * 
                      */
                     uint64_t GetBitrate() const;
 
                     /**
-                     * 设置视频流的码率，取值范围：0 和 [128, 35000]，单位：kbps。
-当取值为 0 或不填时，表示自动选择最佳视频码率。
-                     * @param _bitrate 视频流的码率，取值范围：0 和 [128, 35000]，单位：kbps。
-当取值为 0 或不填时，表示自动选择最佳视频码率。
+                     * 设置视频流的码率，取值范围：0 和 [128, 100000]，单位：kbps。
+当取值为 0 或不填时，表示由云点播自动设置码率。
+                     * @param _bitrate 视频流的码率，取值范围：0 和 [128, 100000]，单位：kbps。
+当取值为 0 或不填时，表示由云点播自动设置码率。
                      * 
                      */
                     void SetBitrate(const uint64_t& _bitrate);
@@ -265,8 +265,8 @@ namespace TencentCloud
                     bool m_codecHasBeenSet;
 
                     /**
-                     * 视频流的码率，取值范围：0 和 [128, 35000]，单位：kbps。
-当取值为 0 或不填时，表示自动选择最佳视频码率。
+                     * 视频流的码率，取值范围：0 和 [128, 100000]，单位：kbps。
+当取值为 0 或不填时，表示由云点播自动设置码率。
                      */
                     uint64_t m_bitrate;
                     bool m_bitrateHasBeenSet;

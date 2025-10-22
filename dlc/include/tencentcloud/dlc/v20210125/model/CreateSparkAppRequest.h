@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dlc/v20210125/model/DependencyPackage.h>
 
 
 namespace TencentCloud
@@ -651,6 +652,27 @@ namespace TencentCloud
                      */
                     bool IsSessionStartedHasBeenSet() const;
 
+                    /**
+                     * 获取依赖包信息
+                     * @return DependencyPackages 依赖包信息
+                     * 
+                     */
+                    std::vector<DependencyPackage> GetDependencyPackages() const;
+
+                    /**
+                     * 设置依赖包信息
+                     * @param _dependencyPackages 依赖包信息
+                     * 
+                     */
+                    void SetDependencyPackages(const std::vector<DependencyPackage>& _dependencyPackages);
+
+                    /**
+                     * 判断参数 DependencyPackages 是否已赋值
+                     * @return DependencyPackages 是否已赋值
+                     * 
+                     */
+                    bool DependencyPackagesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -826,6 +848,12 @@ namespace TencentCloud
                      */
                     bool m_isSessionStarted;
                     bool m_isSessionStartedHasBeenSet;
+
+                    /**
+                     * 依赖包信息
+                     */
+                    std::vector<DependencyPackage> m_dependencyPackages;
+                    bool m_dependencyPackagesHasBeenSet;
 
                 };
             }

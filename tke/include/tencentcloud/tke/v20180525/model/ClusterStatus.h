@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -195,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群已关机的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterClosedNodeNum 集群已关机的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetClusterClosedNodeNum() const;
 
                     /**
                      * 设置集群已关机的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterClosedNodeNum 集群已关机的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterClosedNodeNum(const int64_t& _clusterClosedNodeNum);
@@ -220,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群关机中的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterClosingNodeNum 集群关机中的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetClusterClosingNodeNum() const;
 
                     /**
                      * 设置集群关机中的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterClosingNodeNum 集群关机中的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterClosingNodeNum(const int64_t& _clusterClosingNodeNum);
@@ -245,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群是否开启删除保护
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterDeletionProtection 集群是否开启删除保护
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetClusterDeletionProtection() const;
 
                     /**
                      * 设置集群是否开启删除保护
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterDeletionProtection 集群是否开启删除保护
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterDeletionProtection(const bool& _clusterDeletionProtection);
@@ -270,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群是否可审计
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterAuditEnabled 集群是否可审计
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetClusterAuditEnabled() const;
 
                     /**
                      * 设置集群是否可审计
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterAuditEnabled 集群是否可审计
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterAuditEnabled(const bool& _clusterAuditEnabled);
@@ -339,28 +323,24 @@ namespace TencentCloud
 
                     /**
                      * 集群已关机的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_clusterClosedNodeNum;
                     bool m_clusterClosedNodeNumHasBeenSet;
 
                     /**
                      * 集群关机中的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_clusterClosingNodeNum;
                     bool m_clusterClosingNodeNumHasBeenSet;
 
                     /**
                      * 集群是否开启删除保护
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_clusterDeletionProtection;
                     bool m_clusterDeletionProtectionHasBeenSet;
 
                     /**
                      * 集群是否可审计
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_clusterAuditEnabled;
                     bool m_clusterAuditEnabledHasBeenSet;

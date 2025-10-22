@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -126,6 +126,43 @@ namespace TencentCloud
                      */
                     bool WorkflowDescHasBeenSet() const;
 
+                    /**
+                     * 获取工作流类型,取值示例
+
+- cycle 周期工作流
+- manual 手动工作流
+
+                     * @return WorkflowType 工作流类型,取值示例
+
+- cycle 周期工作流
+- manual 手动工作流
+
+                     * 
+                     */
+                    std::string GetWorkflowType() const;
+
+                    /**
+                     * 设置工作流类型,取值示例
+
+- cycle 周期工作流
+- manual 手动工作流
+
+                     * @param _workflowType 工作流类型,取值示例
+
+- cycle 周期工作流
+- manual 手动工作流
+
+                     * 
+                     */
+                    void SetWorkflowType(const std::string& _workflowType);
+
+                    /**
+                     * 判断参数 WorkflowType 是否已赋值
+                     * @return WorkflowType 是否已赋值
+                     * 
+                     */
+                    bool WorkflowTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +188,16 @@ namespace TencentCloud
                      */
                     std::string m_workflowDesc;
                     bool m_workflowDescHasBeenSet;
+
+                    /**
+                     * 工作流类型,取值示例
+
+- cycle 周期工作流
+- manual 手动工作流
+
+                     */
+                    std::string m_workflowType;
+                    bool m_workflowTypeHasBeenSet;
 
                 };
             }

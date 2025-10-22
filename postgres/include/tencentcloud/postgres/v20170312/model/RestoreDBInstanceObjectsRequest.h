@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID。
-                     * @return DBInstanceId 实例ID。
+                     * 获取实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * @return DBInstanceId 实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
-                     * 设置实例ID。
-                     * @param _dBInstanceId 实例ID。
+                     * 设置实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * @param _dBInstanceId 实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取需要恢复的对象列表。假设需要恢复的对象名为test，则恢复后的名称为test_bak_${LinuxTime}。${LinuxTime}无法指定，由系统根据任务发起的linux时间设定。
-                     * @return RestoreObjects 需要恢复的对象列表。假设需要恢复的对象名为test，则恢复后的名称为test_bak_${LinuxTime}。${LinuxTime}无法指定，由系统根据任务发起的linux时间设定。
+                     * 获取需要恢复的对象列表。假设需要恢复的对象名为user，则恢复后的名称为user_bak_${LinuxTime}。${LinuxTime}无法指定，由系统根据任务发起的linux时间设定。
+                     * @return RestoreObjects 需要恢复的对象列表。假设需要恢复的对象名为user，则恢复后的名称为user_bak_${LinuxTime}。${LinuxTime}无法指定，由系统根据任务发起的linux时间设定。
                      * 
                      */
                     std::vector<std::string> GetRestoreObjects() const;
 
                     /**
-                     * 设置需要恢复的对象列表。假设需要恢复的对象名为test，则恢复后的名称为test_bak_${LinuxTime}。${LinuxTime}无法指定，由系统根据任务发起的linux时间设定。
-                     * @param _restoreObjects 需要恢复的对象列表。假设需要恢复的对象名为test，则恢复后的名称为test_bak_${LinuxTime}。${LinuxTime}无法指定，由系统根据任务发起的linux时间设定。
+                     * 设置需要恢复的对象列表。假设需要恢复的对象名为user，则恢复后的名称为user_bak_${LinuxTime}。${LinuxTime}无法指定，由系统根据任务发起的linux时间设定。
+                     * @param _restoreObjects 需要恢复的对象列表。假设需要恢复的对象名为user，则恢复后的名称为user_bak_${LinuxTime}。${LinuxTime}无法指定，由系统根据任务发起的linux时间设定。
                      * 
                      */
                     void SetRestoreObjects(const std::vector<std::string>& _restoreObjects);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool RestoreObjectsHasBeenSet() const;
 
                     /**
-                     * 获取恢复所用备份集。BackupSetId与RestoreTargetTime有且只能传一个。
-                     * @return BackupSetId 恢复所用备份集。BackupSetId与RestoreTargetTime有且只能传一个。
+                     * 获取恢复所用备份集。BackupSetId与RestoreTargetTime有且只能传一个。可通过[DescribeBaseBackups](https://cloud.tencent.com/document/api/409/89022)接口获取
+                     * @return BackupSetId 恢复所用备份集。BackupSetId与RestoreTargetTime有且只能传一个。可通过[DescribeBaseBackups](https://cloud.tencent.com/document/api/409/89022)接口获取
                      * 
                      */
                     std::string GetBackupSetId() const;
 
                     /**
-                     * 设置恢复所用备份集。BackupSetId与RestoreTargetTime有且只能传一个。
-                     * @param _backupSetId 恢复所用备份集。BackupSetId与RestoreTargetTime有且只能传一个。
+                     * 设置恢复所用备份集。BackupSetId与RestoreTargetTime有且只能传一个。可通过[DescribeBaseBackups](https://cloud.tencent.com/document/api/409/89022)接口获取
+                     * @param _backupSetId 恢复所用备份集。BackupSetId与RestoreTargetTime有且只能传一个。可通过[DescribeBaseBackups](https://cloud.tencent.com/document/api/409/89022)接口获取
                      * 
                      */
                     void SetBackupSetId(const std::string& _backupSetId);
@@ -129,19 +129,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID。
+                     * 实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      */
                     std::string m_dBInstanceId;
                     bool m_dBInstanceIdHasBeenSet;
 
                     /**
-                     * 需要恢复的对象列表。假设需要恢复的对象名为test，则恢复后的名称为test_bak_${LinuxTime}。${LinuxTime}无法指定，由系统根据任务发起的linux时间设定。
+                     * 需要恢复的对象列表。假设需要恢复的对象名为user，则恢复后的名称为user_bak_${LinuxTime}。${LinuxTime}无法指定，由系统根据任务发起的linux时间设定。
                      */
                     std::vector<std::string> m_restoreObjects;
                     bool m_restoreObjectsHasBeenSet;
 
                     /**
-                     * 恢复所用备份集。BackupSetId与RestoreTargetTime有且只能传一个。
+                     * 恢复所用备份集。BackupSetId与RestoreTargetTime有且只能传一个。可通过[DescribeBaseBackups](https://cloud.tencent.com/document/api/409/89022)接口获取
                      */
                     std::string m_backupSetId;
                     bool m_backupSetIdHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,6 +76,49 @@ ApmClient::CreateApmInstanceOutcomeCallable ApmClient::CreateApmInstanceCallable
         [this, request]()
         {
             return this->CreateApmInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ApmClient::CreateProfileTaskOutcome ApmClient::CreateProfileTask(const CreateProfileTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateProfileTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateProfileTaskResponse rsp = CreateProfileTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateProfileTaskOutcome(rsp);
+        else
+            return CreateProfileTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateProfileTaskOutcome(outcome.GetError());
+    }
+}
+
+void ApmClient::CreateProfileTaskAsync(const CreateProfileTaskRequest& request, const CreateProfileTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateProfileTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApmClient::CreateProfileTaskOutcomeCallable ApmClient::CreateProfileTaskCallable(const CreateProfileTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateProfileTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateProfileTask(request);
         }
     );
 
@@ -169,6 +212,49 @@ ApmClient::DescribeApmInstancesOutcomeCallable ApmClient::DescribeApmInstancesCa
     return task->get_future();
 }
 
+ApmClient::DescribeApmServiceMetricOutcome ApmClient::DescribeApmServiceMetric(const DescribeApmServiceMetricRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApmServiceMetric");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApmServiceMetricResponse rsp = DescribeApmServiceMetricResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApmServiceMetricOutcome(rsp);
+        else
+            return DescribeApmServiceMetricOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApmServiceMetricOutcome(outcome.GetError());
+    }
+}
+
+void ApmClient::DescribeApmServiceMetricAsync(const DescribeApmServiceMetricRequest& request, const DescribeApmServiceMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeApmServiceMetric(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApmClient::DescribeApmServiceMetricOutcomeCallable ApmClient::DescribeApmServiceMetricCallable(const DescribeApmServiceMetricRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeApmServiceMetricOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeApmServiceMetric(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ApmClient::DescribeGeneralApmApplicationConfigOutcome ApmClient::DescribeGeneralApmApplicationConfig(const DescribeGeneralApmApplicationConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeGeneralApmApplicationConfig");
@@ -248,6 +334,49 @@ ApmClient::DescribeGeneralMetricDataOutcomeCallable ApmClient::DescribeGeneralMe
         [this, request]()
         {
             return this->DescribeGeneralMetricData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ApmClient::DescribeGeneralOTSpanListOutcome ApmClient::DescribeGeneralOTSpanList(const DescribeGeneralOTSpanListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGeneralOTSpanList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGeneralOTSpanListResponse rsp = DescribeGeneralOTSpanListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGeneralOTSpanListOutcome(rsp);
+        else
+            return DescribeGeneralOTSpanListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGeneralOTSpanListOutcome(outcome.GetError());
+    }
+}
+
+void ApmClient::DescribeGeneralOTSpanListAsync(const DescribeGeneralOTSpanListRequest& request, const DescribeGeneralOTSpanListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGeneralOTSpanList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApmClient::DescribeGeneralOTSpanListOutcomeCallable ApmClient::DescribeGeneralOTSpanListCallable(const DescribeGeneralOTSpanListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGeneralOTSpanListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGeneralOTSpanList(request);
         }
     );
 

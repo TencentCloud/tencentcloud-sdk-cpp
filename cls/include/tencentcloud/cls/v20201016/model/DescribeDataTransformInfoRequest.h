@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,56 +48,80 @@ namespace TencentCloud
 按照【加工任务名称】进行过滤。
 类型：String
 必选：否
+示例：test-task
 
 - taskId
 按照【加工任务id】进行过滤。
 类型：String
 必选：否
+示例：a3622556-6402-4942-b4ff-5ae32ec29810
+数据加工任务ID- 通过[获取数据加工任务列表基本信息](https://cloud.tencent.com/document/product/614/72182)获取数据加工任务Id。
 
 - topicId
 按照【源topicId】进行过滤。
 类型：String
 必选：否
+示例：756cec3e-a0a5-44c3-85a8-090870582000
+日志主题ID
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+
 - status
 按照【 任务运行状态】进行过滤。 1：准备中，2：运行中，3：停止中，4：已停止
 类型：String
 必选：否
+示例：1
+
 - hasServiceLog
 按照【是否开启服务日志】进行过滤。 1：未开启，2：已开启
 类型：String
 必选：否
+示例：1
+
 - dstTopicType
 按照【目标topic类型】进行过滤。  1：固定，2：动态
 类型：String
 必选：否
+示例：1
 
 每次请求的Filters的上限为10，Filter.Values的上限为100。
                      * @return Filters - taskName
 按照【加工任务名称】进行过滤。
 类型：String
 必选：否
+示例：test-task
 
 - taskId
 按照【加工任务id】进行过滤。
 类型：String
 必选：否
+示例：a3622556-6402-4942-b4ff-5ae32ec29810
+数据加工任务ID- 通过[获取数据加工任务列表基本信息](https://cloud.tencent.com/document/product/614/72182)获取数据加工任务Id。
 
 - topicId
 按照【源topicId】进行过滤。
 类型：String
 必选：否
+示例：756cec3e-a0a5-44c3-85a8-090870582000
+日志主题ID
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+
 - status
 按照【 任务运行状态】进行过滤。 1：准备中，2：运行中，3：停止中，4：已停止
 类型：String
 必选：否
+示例：1
+
 - hasServiceLog
 按照【是否开启服务日志】进行过滤。 1：未开启，2：已开启
 类型：String
 必选：否
+示例：1
+
 - dstTopicType
 按照【目标topic类型】进行过滤。  1：固定，2：动态
 类型：String
 必选：否
+示例：1
 
 每次请求的Filters的上限为10，Filter.Values的上限为100。
                      * 
@@ -109,56 +133,80 @@ namespace TencentCloud
 按照【加工任务名称】进行过滤。
 类型：String
 必选：否
+示例：test-task
 
 - taskId
 按照【加工任务id】进行过滤。
 类型：String
 必选：否
+示例：a3622556-6402-4942-b4ff-5ae32ec29810
+数据加工任务ID- 通过[获取数据加工任务列表基本信息](https://cloud.tencent.com/document/product/614/72182)获取数据加工任务Id。
 
 - topicId
 按照【源topicId】进行过滤。
 类型：String
 必选：否
+示例：756cec3e-a0a5-44c3-85a8-090870582000
+日志主题ID
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+
 - status
 按照【 任务运行状态】进行过滤。 1：准备中，2：运行中，3：停止中，4：已停止
 类型：String
 必选：否
+示例：1
+
 - hasServiceLog
 按照【是否开启服务日志】进行过滤。 1：未开启，2：已开启
 类型：String
 必选：否
+示例：1
+
 - dstTopicType
 按照【目标topic类型】进行过滤。  1：固定，2：动态
 类型：String
 必选：否
+示例：1
 
 每次请求的Filters的上限为10，Filter.Values的上限为100。
                      * @param _filters - taskName
 按照【加工任务名称】进行过滤。
 类型：String
 必选：否
+示例：test-task
 
 - taskId
 按照【加工任务id】进行过滤。
 类型：String
 必选：否
+示例：a3622556-6402-4942-b4ff-5ae32ec29810
+数据加工任务ID- 通过[获取数据加工任务列表基本信息](https://cloud.tencent.com/document/product/614/72182)获取数据加工任务Id。
 
 - topicId
 按照【源topicId】进行过滤。
 类型：String
 必选：否
+示例：756cec3e-a0a5-44c3-85a8-090870582000
+日志主题ID
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+
 - status
 按照【 任务运行状态】进行过滤。 1：准备中，2：运行中，3：停止中，4：已停止
 类型：String
 必选：否
+示例：1
+
 - hasServiceLog
 按照【是否开启服务日志】进行过滤。 1：未开启，2：已开启
 类型：String
 必选：否
+示例：1
+
 - dstTopicType
 按照【目标topic类型】进行过滤。  1：固定，2：动态
 类型：String
 必选：否
+示例：1
 
 每次请求的Filters的上限为10，Filter.Values的上限为100。
                      * 
@@ -237,14 +285,18 @@ namespace TencentCloud
 
                     /**
                      * 获取Type为1， 此参数必填
+数据加工任务ID- 通过[获取数据加工任务列表基本信息](https://cloud.tencent.com/document/product/614/72182)获取数据加工任务Id。
                      * @return TaskId Type为1， 此参数必填
+数据加工任务ID- 通过[获取数据加工任务列表基本信息](https://cloud.tencent.com/document/product/614/72182)获取数据加工任务Id。
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置Type为1， 此参数必填
+数据加工任务ID- 通过[获取数据加工任务列表基本信息](https://cloud.tencent.com/document/product/614/72182)获取数据加工任务Id。
                      * @param _taskId Type为1， 此参数必填
+数据加工任务ID- 通过[获取数据加工任务列表基本信息](https://cloud.tencent.com/document/product/614/72182)获取数据加工任务Id。
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -263,28 +315,40 @@ namespace TencentCloud
 按照【加工任务名称】进行过滤。
 类型：String
 必选：否
+示例：test-task
 
 - taskId
 按照【加工任务id】进行过滤。
 类型：String
 必选：否
+示例：a3622556-6402-4942-b4ff-5ae32ec29810
+数据加工任务ID- 通过[获取数据加工任务列表基本信息](https://cloud.tencent.com/document/product/614/72182)获取数据加工任务Id。
 
 - topicId
 按照【源topicId】进行过滤。
 类型：String
 必选：否
+示例：756cec3e-a0a5-44c3-85a8-090870582000
+日志主题ID
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+
 - status
 按照【 任务运行状态】进行过滤。 1：准备中，2：运行中，3：停止中，4：已停止
 类型：String
 必选：否
+示例：1
+
 - hasServiceLog
 按照【是否开启服务日志】进行过滤。 1：未开启，2：已开启
 类型：String
 必选：否
+示例：1
+
 - dstTopicType
 按照【目标topic类型】进行过滤。  1：固定，2：动态
 类型：String
 必选：否
+示例：1
 
 每次请求的Filters的上限为10，Filter.Values的上限为100。
                      */
@@ -311,6 +375,7 @@ namespace TencentCloud
 
                     /**
                      * Type为1， 此参数必填
+数据加工任务ID- 通过[获取数据加工任务列表基本信息](https://cloud.tencent.com/document/product/614/72182)获取数据加工任务Id。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

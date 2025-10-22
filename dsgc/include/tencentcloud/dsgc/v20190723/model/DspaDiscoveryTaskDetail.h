@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 任务描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置任务描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 任务描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -159,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取元数据对象信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataSourceInfo 元数据对象信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DspaDiscoveryTaskDataSource GetDataSourceInfo() const;
 
                     /**
                      * 设置元数据对象信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataSourceInfo 元数据对象信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataSourceInfo(const DspaDiscoveryTaskDataSource& _dataSourceInfo);
@@ -184,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通用规则集开关，0 关闭，1 启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GeneralRuleSetEnable 通用规则集开关，0 关闭，1 启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetGeneralRuleSetEnable() const;
 
                     /**
                      * 设置通用规则集开关，0 关闭，1 启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _generalRuleSetEnable 通用规则集开关，0 关闭，1 启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGeneralRuleSetEnable(const int64_t& _generalRuleSetEnable);
@@ -209,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当创建任务时，用户打开了通用规则集开关，则该字段就会保存默认合规组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefaultComplianceInfo 当创建任务时，用户打开了通用规则集开关，则该字段就会保存默认合规组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ScanTaskComplianceInfo> GetDefaultComplianceInfo() const;
 
                     /**
                      * 设置当创建任务时，用户打开了通用规则集开关，则该字段就会保存默认合规组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _defaultComplianceInfo 当创建任务时，用户打开了通用规则集开关，则该字段就会保存默认合规组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefaultComplianceInfo(const std::vector<ScanTaskComplianceInfo>& _defaultComplianceInfo);
@@ -234,18 +218,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该任务中用户选择的合规组信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomComplianceInfo 该任务中用户选择的合规组信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ScanTaskComplianceInfo> GetCustomComplianceInfo() const;
 
                     /**
                      * 设置该任务中用户选择的合规组信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _customComplianceInfo 该任务中用户选择的合规组信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCustomComplianceInfo(const std::vector<ScanTaskComplianceInfo>& _customComplianceInfo);
@@ -259,18 +239,14 @@ namespace TencentCloud
 
                     /**
                      * 获取定时开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimingStartTime 定时开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTimingStartTime() const;
 
                     /**
                      * 设置定时开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timingStartTime 定时开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimingStartTime(const std::string& _timingStartTime);
@@ -282,6 +258,27 @@ namespace TencentCloud
                      */
                     bool TimingStartTimeHasBeenSet() const;
 
+                    /**
+                     * 获取full:全量扫描 incre:变更扫描
+                     * @return ScanRange full:全量扫描 incre:变更扫描
+                     * 
+                     */
+                    std::string GetScanRange() const;
+
+                    /**
+                     * 设置full:全量扫描 incre:变更扫描
+                     * @param _scanRange full:全量扫描 incre:变更扫描
+                     * 
+                     */
+                    void SetScanRange(const std::string& _scanRange);
+
+                    /**
+                     * 判断参数 ScanRange 是否已赋值
+                     * @return ScanRange 是否已赋值
+                     * 
+                     */
+                    bool ScanRangeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -292,7 +289,6 @@ namespace TencentCloud
 
                     /**
                      * 任务描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
@@ -317,38 +313,39 @@ namespace TencentCloud
 
                     /**
                      * 元数据对象信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DspaDiscoveryTaskDataSource m_dataSourceInfo;
                     bool m_dataSourceInfoHasBeenSet;
 
                     /**
                      * 通用规则集开关，0 关闭，1 启用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_generalRuleSetEnable;
                     bool m_generalRuleSetEnableHasBeenSet;
 
                     /**
                      * 当创建任务时，用户打开了通用规则集开关，则该字段就会保存默认合规组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ScanTaskComplianceInfo> m_defaultComplianceInfo;
                     bool m_defaultComplianceInfoHasBeenSet;
 
                     /**
                      * 该任务中用户选择的合规组信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ScanTaskComplianceInfo> m_customComplianceInfo;
                     bool m_customComplianceInfoHasBeenSet;
 
                     /**
                      * 定时开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timingStartTime;
                     bool m_timingStartTimeHasBeenSet;
+
+                    /**
+                     * full:全量扫描 incre:变更扫描
+                     */
+                    std::string m_scanRange;
+                    bool m_scanRangeHasBeenSet;
 
                 };
             }

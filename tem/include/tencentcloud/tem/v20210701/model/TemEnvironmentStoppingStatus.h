@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取需要停止的应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationNumNeedToStop 需要停止的应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetApplicationNumNeedToStop() const;
 
                     /**
                      * 设置需要停止的应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationNumNeedToStop 需要停止的应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationNumNeedToStop(const int64_t& _applicationNumNeedToStop);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已经停止的应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StoppedApplicationNum 已经停止的应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStoppedApplicationNum() const;
 
                     /**
                      * 设置已经停止的应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stoppedApplicationNum 已经停止的应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStoppedApplicationNum(const int64_t& _stoppedApplicationNum);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取停止失败的应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StopFailedApplicationNum 停止失败的应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStopFailedApplicationNum() const;
 
                     /**
                      * 设置停止失败的应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stopFailedApplicationNum 停止失败的应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStopFailedApplicationNum(const int64_t& _stopFailedApplicationNum);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 需要停止的应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_applicationNumNeedToStop;
                     bool m_applicationNumNeedToStopHasBeenSet;
 
                     /**
                      * 已经停止的应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_stoppedApplicationNum;
                     bool m_stoppedApplicationNumHasBeenSet;
 
                     /**
                      * 停止失败的应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_stopFailedApplicationNum;
                     bool m_stopFailedApplicationNumHasBeenSet;

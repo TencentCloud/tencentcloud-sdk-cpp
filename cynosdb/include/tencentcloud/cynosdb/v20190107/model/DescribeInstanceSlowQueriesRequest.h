@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -252,6 +252,27 @@ namespace TencentCloud
                      */
                     bool OrderByTypeHasBeenSet() const;
 
+                    /**
+                     * 获取sql语句
+                     * @return SqlText sql语句
+                     * 
+                     */
+                    std::string GetSqlText() const;
+
+                    /**
+                     * 设置sql语句
+                     * @param _sqlText sql语句
+                     * 
+                     */
+                    void SetSqlText(const std::string& _sqlText);
+
+                    /**
+                     * 判断参数 SqlText 是否已赋值
+                     * @return SqlText 是否已赋值
+                     * 
+                     */
+                    bool SqlTextHasBeenSet() const;
+
                 private:
 
                     /**
@@ -313,6 +334,12 @@ namespace TencentCloud
                      */
                     std::string m_orderByType;
                     bool m_orderByTypeHasBeenSet;
+
+                    /**
+                     * sql语句
+                     */
+                    std::string m_sqlText;
+                    bool m_sqlTextHasBeenSet;
 
                 };
             }

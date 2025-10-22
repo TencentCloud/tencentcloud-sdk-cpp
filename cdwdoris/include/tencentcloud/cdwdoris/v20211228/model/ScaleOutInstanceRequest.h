@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool HaTypeHasBeenSet() const;
 
+                    /**
+                     * 获取前端鉴权使用
+                     * @return CheckAuth 前端鉴权使用
+                     * 
+                     */
+                    bool GetCheckAuth() const;
+
+                    /**
+                     * 设置前端鉴权使用
+                     * @param _checkAuth 前端鉴权使用
+                     * 
+                     */
+                    void SetCheckAuth(const bool& _checkAuth);
+
+                    /**
+                     * 判断参数 CheckAuth 是否已赋值
+                     * @return CheckAuth 是否已赋值
+                     * 
+                     */
+                    bool CheckAuthHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     int64_t m_haType;
                     bool m_haTypeHasBeenSet;
+
+                    /**
+                     * 前端鉴权使用
+                     */
+                    bool m_checkAuth;
+                    bool m_checkAuthHasBeenSet;
 
                 };
             }

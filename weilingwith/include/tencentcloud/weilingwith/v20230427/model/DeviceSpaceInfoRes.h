@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取建筑id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BuildingId 建筑id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBuildingId() const;
 
                     /**
                      * 设置建筑id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _buildingId 建筑id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBuildingId(const std::string& _buildingId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取构件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ElementId 构件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetElementId() const;
 
                     /**
                      * 设置构件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _elementId 构件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetElementId(const std::string& _elementId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取构件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EntityType 构件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEntityType() const;
 
                     /**
                      * 设置构件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _entityType 构件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEntityType(const std::string& _entityType);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取构件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ElementName 构件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetElementName() const;
 
                     /**
                      * 设置构件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _elementName 构件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetElementName(const std::string& _elementName);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取构件级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 构件级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLevel() const;
 
                     /**
                      * 设置构件级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _level 构件级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevel(const uint64_t& _level);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取底部标高（单位mm）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BottomHeight 底部标高（单位mm）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBottomHeight() const;
 
                     /**
                      * 设置底部标高（单位mm）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bottomHeight 底部标高（单位mm）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBottomHeight(const int64_t& _bottomHeight);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取空间编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpaceCode 空间编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSpaceCode() const;
 
                     /**
                      * 设置空间编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _spaceCode 空间编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSpaceCode(const std::string& _spaceCode);
@@ -225,49 +197,42 @@ namespace TencentCloud
 
                     /**
                      * 建筑id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_buildingId;
                     bool m_buildingIdHasBeenSet;
 
                     /**
                      * 构件id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_elementId;
                     bool m_elementIdHasBeenSet;
 
                     /**
                      * 构件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_entityType;
                     bool m_entityTypeHasBeenSet;
 
                     /**
                      * 构件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_elementName;
                     bool m_elementNameHasBeenSet;
 
                     /**
                      * 构件级别
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_level;
                     bool m_levelHasBeenSet;
 
                     /**
                      * 底部标高（单位mm）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_bottomHeight;
                     bool m_bottomHeightHasBeenSet;
 
                     /**
                      * 空间编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_spaceCode;
                     bool m_spaceCodeHasBeenSet;

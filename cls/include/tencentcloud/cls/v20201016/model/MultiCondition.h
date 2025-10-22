@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取触发条件。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Condition 触发条件。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCondition() const;
 
                     /**
                      * 设置触发条件。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _condition 触发条件。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCondition(const std::string& _condition);
@@ -73,22 +69,22 @@ namespace TencentCloud
 
                     /**
                      * 获取告警级别。0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)。
-<li> 不填则默认为0。
-注意：此字段可能返回 null，表示取不到有效值。
+
+- 不填则默认为0。
                      * @return AlarmLevel 告警级别。0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)。
-<li> 不填则默认为0。
-注意：此字段可能返回 null，表示取不到有效值。
+
+- 不填则默认为0。
                      * 
                      */
                     uint64_t GetAlarmLevel() const;
 
                     /**
                      * 设置告警级别。0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)。
-<li> 不填则默认为0。
-注意：此字段可能返回 null，表示取不到有效值。
+
+- 不填则默认为0。
                      * @param _alarmLevel 告警级别。0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)。
-<li> 不填则默认为0。
-注意：此字段可能返回 null，表示取不到有效值。
+
+- 不填则默认为0。
                      * 
                      */
                     void SetAlarmLevel(const uint64_t& _alarmLevel);
@@ -104,15 +100,14 @@ namespace TencentCloud
 
                     /**
                      * 触发条件。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_condition;
                     bool m_conditionHasBeenSet;
 
                     /**
                      * 告警级别。0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)。
-<li> 不填则默认为0。
-注意：此字段可能返回 null，表示取不到有效值。
+
+- 不填则默认为0。
                      */
                     uint64_t m_alarmLevel;
                     bool m_alarmLevelHasBeenSet;

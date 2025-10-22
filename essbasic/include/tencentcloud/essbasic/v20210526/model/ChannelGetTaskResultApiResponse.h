@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -126,10 +126,8 @@ namespace TencentCloud
                     /**
                      * 获取预览文件Url，有效期30分钟 
 当前字段返回为空，发起的时候，将ResourceId 放入发起即可
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PreviewUrl 预览文件Url，有效期30分钟 
 当前字段返回为空，发起的时候，将ResourceId 放入发起即可
-注意：此字段可能返回 null，表示取不到有效值。
                      * @deprecated
                      */
                     std::string GetPreviewUrl() const;
@@ -182,7 +180,6 @@ namespace TencentCloud
                     /**
                      * 预览文件Url，有效期30分钟 
 当前字段返回为空，发起的时候，将ResourceId 放入发起即可
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_previewUrl;
                     bool m_previewUrlHasBeenSet;

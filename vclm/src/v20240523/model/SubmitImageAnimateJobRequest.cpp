@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,8 @@ SubmitImageAnimateJobRequest::SubmitImageAnimateJobRequest() :
     m_enableBodyJoinsHasBeenSet(false),
     m_enableSegmentHasBeenSet(false),
     m_logoAddHasBeenSet(false),
-    m_logoParamHasBeenSet(false)
+    m_logoParamHasBeenSet(false),
+    m_enableFaceHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,14 @@ string SubmitImageAnimateJobRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_logoParam.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_enableFaceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableFace";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableFace, allocator);
     }
 
 
@@ -240,6 +249,22 @@ void SubmitImageAnimateJobRequest::SetLogoParam(const LogoParam& _logoParam)
 bool SubmitImageAnimateJobRequest::LogoParamHasBeenSet() const
 {
     return m_logoParamHasBeenSet;
+}
+
+bool SubmitImageAnimateJobRequest::GetEnableFace() const
+{
+    return m_enableFace;
+}
+
+void SubmitImageAnimateJobRequest::SetEnableFace(const bool& _enableFace)
+{
+    m_enableFace = _enableFace;
+    m_enableFaceHasBeenSet = true;
+}
+
+bool SubmitImageAnimateJobRequest::EnableFaceHasBeenSet() const
+{
+    return m_enableFaceHasBeenSet;
 }
 
 

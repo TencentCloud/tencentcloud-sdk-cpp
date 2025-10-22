@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool DstResourceHasBeenSet() const;
 
                     /**
-                     * 获取任务创建时间
-                     * @return CreateTime 任务创建时间
+                     * 获取任务创建时间。格式：yyyy-MM-dd HH:mm:ss
+                     * @return CreateTime 任务创建时间。格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置任务创建时间
-                     * @param _createTime 任务创建时间
+                     * 设置任务创建时间。格式：yyyy-MM-dd HH:mm:ss
+                     * @param _createTime 任务创建时间。格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务更新时间
-                     * @return UpdateTime 任务更新时间
+                     * 获取任务更新时间，格式：yyyy-MM-dd HH:mm:ss
+                     * @return UpdateTime 任务更新时间，格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置任务更新时间
-                     * @param _updateTime 任务更新时间
+                     * 设置任务更新时间，格式：yyyy-MM-dd HH:mm:ss
+                     * @param _updateTime 任务更新时间，格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -266,15 +266,15 @@ namespace TencentCloud
                     bool ScheduledSqlContentHasBeenSet() const;
 
                     /**
-                     * 获取调度开始时间
-                     * @return ProcessStartTime 调度开始时间
+                     * 获取调度开始时间，格式：yyyy-MM-dd HH:mm:ss
+                     * @return ProcessStartTime 调度开始时间，格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetProcessStartTime() const;
 
                     /**
-                     * 设置调度开始时间
-                     * @param _processStartTime 调度开始时间
+                     * 设置调度开始时间，格式：yyyy-MM-dd HH:mm:ss
+                     * @param _processStartTime 调度开始时间，格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     void SetProcessStartTime(const std::string& _processStartTime);
@@ -308,15 +308,15 @@ namespace TencentCloud
                     bool ProcessTypeHasBeenSet() const;
 
                     /**
-                     * 获取调度结束时间，当process_type=2时为必传字段
-                     * @return ProcessEndTime 调度结束时间，当process_type=2时为必传字段
+                     * 获取调度结束时间，格式：yyyy-MM-dd HH:mm:ss，当process_type=2时为必传字段
+                     * @return ProcessEndTime 调度结束时间，格式：yyyy-MM-dd HH:mm:ss，当process_type=2时为必传字段
                      * 
                      */
                     std::string GetProcessEndTime() const;
 
                     /**
-                     * 设置调度结束时间，当process_type=2时为必传字段
-                     * @param _processEndTime 调度结束时间，当process_type=2时为必传字段
+                     * 设置调度结束时间，格式：yyyy-MM-dd HH:mm:ss，当process_type=2时为必传字段
+                     * @param _processEndTime 调度结束时间，格式：yyyy-MM-dd HH:mm:ss，当process_type=2时为必传字段
                      * 
                      */
                     void SetProcessEndTime(const std::string& _processEndTime);
@@ -329,15 +329,15 @@ namespace TencentCloud
                     bool ProcessEndTimeHasBeenSet() const;
 
                     /**
-                     * 获取调度周期(分钟)
-                     * @return ProcessPeriod 调度周期(分钟)
+                     * 获取调度周期(分钟)，1~1440分钟
+                     * @return ProcessPeriod 调度周期(分钟)，1~1440分钟
                      * 
                      */
                     int64_t GetProcessPeriod() const;
 
                     /**
-                     * 设置调度周期(分钟)
-                     * @param _processPeriod 调度周期(分钟)
+                     * 设置调度周期(分钟)，1~1440分钟
+                     * @param _processPeriod 调度周期(分钟)，1~1440分钟
                      * 
                      */
                     void SetProcessPeriod(const int64_t& _processPeriod);
@@ -371,15 +371,15 @@ namespace TencentCloud
                     bool ProcessTimeWindowHasBeenSet() const;
 
                     /**
-                     * 获取执行延迟(秒)
-                     * @return ProcessDelay 执行延迟(秒)
+                     * 获取执行延迟(秒)，0~120秒，默认60秒
+                     * @return ProcessDelay 执行延迟(秒)，0~120秒，默认60秒
                      * 
                      */
                     int64_t GetProcessDelay() const;
 
                     /**
-                     * 设置执行延迟(秒)
-                     * @param _processDelay 执行延迟(秒)
+                     * 设置执行延迟(秒)，0~120秒，默认60秒
+                     * @param _processDelay 执行延迟(秒)，0~120秒，默认60秒
                      * 
                      */
                     void SetProcessDelay(const int64_t& _processDelay);
@@ -392,15 +392,15 @@ namespace TencentCloud
                     bool ProcessDelayHasBeenSet() const;
 
                     /**
-                     * 获取源topicId的地域信息
-                     * @return SrcTopicRegion 源topicId的地域信息
+                     * 获取源topicId的地域信息，支持地域见 [地域列表](https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) 文档。
+                     * @return SrcTopicRegion 源topicId的地域信息，支持地域见 [地域列表](https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) 文档。
                      * 
                      */
                     std::string GetSrcTopicRegion() const;
 
                     /**
-                     * 设置源topicId的地域信息
-                     * @param _srcTopicRegion 源topicId的地域信息
+                     * 设置源topicId的地域信息，支持地域见 [地域列表](https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) 文档。
+                     * @param _srcTopicRegion 源topicId的地域信息，支持地域见 [地域列表](https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) 文档。
                      * 
                      */
                     void SetSrcTopicRegion(const std::string& _srcTopicRegion);
@@ -414,18 +414,14 @@ namespace TencentCloud
 
                     /**
                      * 获取语法规则，0：Lucene语法，1：CQL语法
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SyntaxRule 语法规则，0：Lucene语法，1：CQL语法
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSyntaxRule() const;
 
                     /**
                      * 设置语法规则，0：Lucene语法，1：CQL语法
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _syntaxRule 语法规则，0：Lucene语法，1：CQL语法
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSyntaxRule(const uint64_t& _syntaxRule);
@@ -439,18 +435,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启投递服务日志。1：关闭，2：开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HasServicesLog 是否开启投递服务日志。1：关闭，2：开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetHasServicesLog() const;
 
                     /**
                      * 设置是否开启投递服务日志。1：关闭，2：开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hasServicesLog 是否开启投递服务日志。1：关闭，2：开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHasServicesLog(const uint64_t& _hasServicesLog);
@@ -461,6 +453,27 @@ namespace TencentCloud
                      * 
                      */
                     bool HasServicesLogHasBeenSet() const;
+
+                    /**
+                     * 获取全文检索标记。1：关闭，2：打开。
+                     * @return FullQuery 全文检索标记。1：关闭，2：打开。
+                     * 
+                     */
+                    uint64_t GetFullQuery() const;
+
+                    /**
+                     * 设置全文检索标记。1：关闭，2：打开。
+                     * @param _fullQuery 全文检索标记。1：关闭，2：打开。
+                     * 
+                     */
+                    void SetFullQuery(const uint64_t& _fullQuery);
+
+                    /**
+                     * 判断参数 FullQuery 是否已赋值
+                     * @return FullQuery 是否已赋值
+                     * 
+                     */
+                    bool FullQueryHasBeenSet() const;
 
                 private:
 
@@ -495,13 +508,13 @@ namespace TencentCloud
                     bool m_dstResourceHasBeenSet;
 
                     /**
-                     * 任务创建时间
+                     * 任务创建时间。格式：yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 任务更新时间
+                     * 任务更新时间，格式：yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
@@ -527,7 +540,7 @@ namespace TencentCloud
                     bool m_scheduledSqlContentHasBeenSet;
 
                     /**
-                     * 调度开始时间
+                     * 调度开始时间，格式：yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_processStartTime;
                     bool m_processStartTimeHasBeenSet;
@@ -539,13 +552,13 @@ namespace TencentCloud
                     bool m_processTypeHasBeenSet;
 
                     /**
-                     * 调度结束时间，当process_type=2时为必传字段
+                     * 调度结束时间，格式：yyyy-MM-dd HH:mm:ss，当process_type=2时为必传字段
                      */
                     std::string m_processEndTime;
                     bool m_processEndTimeHasBeenSet;
 
                     /**
-                     * 调度周期(分钟)
+                     * 调度周期(分钟)，1~1440分钟
                      */
                     int64_t m_processPeriod;
                     bool m_processPeriodHasBeenSet;
@@ -557,30 +570,34 @@ namespace TencentCloud
                     bool m_processTimeWindowHasBeenSet;
 
                     /**
-                     * 执行延迟(秒)
+                     * 执行延迟(秒)，0~120秒，默认60秒
                      */
                     int64_t m_processDelay;
                     bool m_processDelayHasBeenSet;
 
                     /**
-                     * 源topicId的地域信息
+                     * 源topicId的地域信息，支持地域见 [地域列表](https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) 文档。
                      */
                     std::string m_srcTopicRegion;
                     bool m_srcTopicRegionHasBeenSet;
 
                     /**
                      * 语法规则，0：Lucene语法，1：CQL语法
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_syntaxRule;
                     bool m_syntaxRuleHasBeenSet;
 
                     /**
                      * 是否开启投递服务日志。1：关闭，2：开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_hasServicesLog;
                     bool m_hasServicesLogHasBeenSet;
+
+                    /**
+                     * 全文检索标记。1：关闭，2：打开。
+                     */
+                    uint64_t m_fullQuery;
+                    bool m_fullQueryHasBeenSet;
 
                 };
             }

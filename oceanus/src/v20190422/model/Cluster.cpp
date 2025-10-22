@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,7 +67,17 @@ Cluster::Cluster() :
     m_agentSerialIdHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_billingResourceModeHasBeenSet(false),
-    m_memRatioHasBeenSet(false)
+    m_memRatioHasBeenSet(false),
+    m_crossTenantEniModeHasBeenSet(false),
+    m_totalCpuHasBeenSet(false),
+    m_totalMemHasBeenSet(false),
+    m_runningCpuHasBeenSet(false),
+    m_runningMemHasBeenSet(false),
+    m_setatsHasBeenSet(false),
+    m_yarnsHasBeenSet(false),
+    m_deploymentModeHasBeenSet(false),
+    m_slaveZonesHasBeenSet(false),
+    m_logCOSBucketHasBeenSet(false)
 {
 }
 
@@ -620,6 +630,133 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         m_memRatioHasBeenSet = true;
     }
 
+    if (value.HasMember("CrossTenantEniMode") && !value["CrossTenantEniMode"].IsNull())
+    {
+        if (!value["CrossTenantEniMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.CrossTenantEniMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_crossTenantEniMode = value["CrossTenantEniMode"].GetInt64();
+        m_crossTenantEniModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TotalCpu") && !value["TotalCpu"].IsNull())
+    {
+        if (!value["TotalCpu"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.TotalCpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCpu = value["TotalCpu"].GetDouble();
+        m_totalCpuHasBeenSet = true;
+    }
+
+    if (value.HasMember("TotalMem") && !value["TotalMem"].IsNull())
+    {
+        if (!value["TotalMem"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.TotalMem` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalMem = value["TotalMem"].GetDouble();
+        m_totalMemHasBeenSet = true;
+    }
+
+    if (value.HasMember("RunningCpu") && !value["RunningCpu"].IsNull())
+    {
+        if (!value["RunningCpu"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.RunningCpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_runningCpu = value["RunningCpu"].GetDouble();
+        m_runningCpuHasBeenSet = true;
+    }
+
+    if (value.HasMember("RunningMem") && !value["RunningMem"].IsNull())
+    {
+        if (!value["RunningMem"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.RunningMem` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_runningMem = value["RunningMem"].GetDouble();
+        m_runningMemHasBeenSet = true;
+    }
+
+    if (value.HasMember("Setats") && !value["Setats"].IsNull())
+    {
+        if (!value["Setats"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.Setats` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_setats.Deserialize(value["Setats"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_setatsHasBeenSet = true;
+    }
+
+    if (value.HasMember("Yarns") && !value["Yarns"].IsNull())
+    {
+        if (!value["Yarns"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Cluster.Yarns` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Yarns"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            HadoopYarnItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_yarns.push_back(item);
+        }
+        m_yarnsHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeploymentMode") && !value["DeploymentMode"].IsNull())
+    {
+        if (!value["DeploymentMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.DeploymentMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deploymentMode = value["DeploymentMode"].GetInt64();
+        m_deploymentModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SlaveZones") && !value["SlaveZones"].IsNull())
+    {
+        if (!value["SlaveZones"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Cluster.SlaveZones` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SlaveZones"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SlaveZone item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_slaveZones.push_back(item);
+        }
+        m_slaveZonesHasBeenSet = true;
+    }
+
+    if (value.HasMember("LogCOSBucket") && !value["LogCOSBucket"].IsNull())
+    {
+        if (!value["LogCOSBucket"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.LogCOSBucket` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logCOSBucket = string(value["LogCOSBucket"].GetString());
+        m_logCOSBucketHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1045,6 +1182,101 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "MemRatio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_memRatio, allocator);
+    }
+
+    if (m_crossTenantEniModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CrossTenantEniMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_crossTenantEniMode, allocator);
+    }
+
+    if (m_totalCpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCpu, allocator);
+    }
+
+    if (m_totalMemHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalMem";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalMem, allocator);
+    }
+
+    if (m_runningCpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunningCpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_runningCpu, allocator);
+    }
+
+    if (m_runningMemHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunningMem";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_runningMem, allocator);
+    }
+
+    if (m_setatsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Setats";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_setats.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_yarnsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Yarns";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_yarns.begin(); itr != m_yarns.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_deploymentModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeploymentMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deploymentMode, allocator);
+    }
+
+    if (m_slaveZonesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SlaveZones";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_slaveZones.begin(); itr != m_slaveZones.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_logCOSBucketHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogCOSBucket";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logCOSBucket.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1800,5 +2032,165 @@ void Cluster::SetMemRatio(const int64_t& _memRatio)
 bool Cluster::MemRatioHasBeenSet() const
 {
     return m_memRatioHasBeenSet;
+}
+
+int64_t Cluster::GetCrossTenantEniMode() const
+{
+    return m_crossTenantEniMode;
+}
+
+void Cluster::SetCrossTenantEniMode(const int64_t& _crossTenantEniMode)
+{
+    m_crossTenantEniMode = _crossTenantEniMode;
+    m_crossTenantEniModeHasBeenSet = true;
+}
+
+bool Cluster::CrossTenantEniModeHasBeenSet() const
+{
+    return m_crossTenantEniModeHasBeenSet;
+}
+
+double Cluster::GetTotalCpu() const
+{
+    return m_totalCpu;
+}
+
+void Cluster::SetTotalCpu(const double& _totalCpu)
+{
+    m_totalCpu = _totalCpu;
+    m_totalCpuHasBeenSet = true;
+}
+
+bool Cluster::TotalCpuHasBeenSet() const
+{
+    return m_totalCpuHasBeenSet;
+}
+
+double Cluster::GetTotalMem() const
+{
+    return m_totalMem;
+}
+
+void Cluster::SetTotalMem(const double& _totalMem)
+{
+    m_totalMem = _totalMem;
+    m_totalMemHasBeenSet = true;
+}
+
+bool Cluster::TotalMemHasBeenSet() const
+{
+    return m_totalMemHasBeenSet;
+}
+
+double Cluster::GetRunningCpu() const
+{
+    return m_runningCpu;
+}
+
+void Cluster::SetRunningCpu(const double& _runningCpu)
+{
+    m_runningCpu = _runningCpu;
+    m_runningCpuHasBeenSet = true;
+}
+
+bool Cluster::RunningCpuHasBeenSet() const
+{
+    return m_runningCpuHasBeenSet;
+}
+
+double Cluster::GetRunningMem() const
+{
+    return m_runningMem;
+}
+
+void Cluster::SetRunningMem(const double& _runningMem)
+{
+    m_runningMem = _runningMem;
+    m_runningMemHasBeenSet = true;
+}
+
+bool Cluster::RunningMemHasBeenSet() const
+{
+    return m_runningMemHasBeenSet;
+}
+
+Setats Cluster::GetSetats() const
+{
+    return m_setats;
+}
+
+void Cluster::SetSetats(const Setats& _setats)
+{
+    m_setats = _setats;
+    m_setatsHasBeenSet = true;
+}
+
+bool Cluster::SetatsHasBeenSet() const
+{
+    return m_setatsHasBeenSet;
+}
+
+vector<HadoopYarnItem> Cluster::GetYarns() const
+{
+    return m_yarns;
+}
+
+void Cluster::SetYarns(const vector<HadoopYarnItem>& _yarns)
+{
+    m_yarns = _yarns;
+    m_yarnsHasBeenSet = true;
+}
+
+bool Cluster::YarnsHasBeenSet() const
+{
+    return m_yarnsHasBeenSet;
+}
+
+int64_t Cluster::GetDeploymentMode() const
+{
+    return m_deploymentMode;
+}
+
+void Cluster::SetDeploymentMode(const int64_t& _deploymentMode)
+{
+    m_deploymentMode = _deploymentMode;
+    m_deploymentModeHasBeenSet = true;
+}
+
+bool Cluster::DeploymentModeHasBeenSet() const
+{
+    return m_deploymentModeHasBeenSet;
+}
+
+vector<SlaveZone> Cluster::GetSlaveZones() const
+{
+    return m_slaveZones;
+}
+
+void Cluster::SetSlaveZones(const vector<SlaveZone>& _slaveZones)
+{
+    m_slaveZones = _slaveZones;
+    m_slaveZonesHasBeenSet = true;
+}
+
+bool Cluster::SlaveZonesHasBeenSet() const
+{
+    return m_slaveZonesHasBeenSet;
+}
+
+string Cluster::GetLogCOSBucket() const
+{
+    return m_logCOSBucket;
+}
+
+void Cluster::SetLogCOSBucket(const string& _logCOSBucket)
+{
+    m_logCOSBucket = _logCOSBucket;
+    m_logCOSBucketHasBeenSet = true;
+}
+
+bool Cluster::LogCOSBucketHasBeenSet() const
+{
+    return m_logCOSBucketHasBeenSet;
 }
 

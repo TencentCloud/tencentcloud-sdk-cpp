@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -336,18 +336,14 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
 
                     /**
                      * 获取绑定的NAT网关ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NatGatewayId 绑定的NAT网关ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNatGatewayId() const;
 
                     /**
                      * 设置绑定的NAT网关ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _natGatewayId 绑定的NAT网关ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNatGatewayId(const std::string& _natGatewayId);
@@ -361,18 +357,14 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
 
                     /**
                      * 获取专线网关是否支持VXLAN架构
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VXLANSupport 专线网关是否支持VXLAN架构
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<bool> GetVXLANSupport() const;
 
                     /**
                      * 设置专线网关是否支持VXLAN架构
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vXLANSupport 专线网关是否支持VXLAN架构
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVXLANSupport(const std::vector<bool>& _vXLANSupport);
@@ -386,18 +378,14 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
 
                     /**
                      * 获取云联网路由发布模式：`standard`（标准模式）、`exquisite`（精细模式）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModeType 云联网路由发布模式：`standard`（标准模式）、`exquisite`（精细模式）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModeType() const;
 
                     /**
                      * 设置云联网路由发布模式：`standard`（标准模式）、`exquisite`（精细模式）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modeType 云联网路由发布模式：`standard`（标准模式）、`exquisite`（精细模式）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModeType(const std::string& _modeType);
@@ -411,18 +399,14 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
 
                     /**
                      * 获取是否为localZone专线网关。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LocalZone 是否为localZone专线网关。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetLocalZone() const;
 
                     /**
                      * 设置是否为localZone专线网关。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _localZone 是否为localZone专线网关。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLocalZone(const bool& _localZone);
@@ -436,18 +420,14 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
 
                     /**
                      * 获取专线网关所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 专线网关所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置专线网关所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zone 专线网关所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -463,11 +443,9 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
                      * 获取网关流控明细启用状态：
 0：关闭
 1：开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableFlowDetails 网关流控明细启用状态：
 0：关闭
 1：开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetEnableFlowDetails() const;
@@ -476,11 +454,9 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
                      * 设置网关流控明细启用状态：
 0：关闭
 1：开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableFlowDetails 网关流控明细启用状态：
 0：关闭
 1：开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableFlowDetails(const uint64_t& _enableFlowDetails);
@@ -494,18 +470,14 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
 
                     /**
                      * 获取开启、关闭网关流控明细时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowDetailsUpdateTime 开启、关闭网关流控明细时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlowDetailsUpdateTime() const;
 
                     /**
                      * 设置开启、关闭网关流控明细时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _flowDetailsUpdateTime 开启、关闭网关流控明细时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFlowDetailsUpdateTime(const std::string& _flowDetailsUpdateTime);
@@ -521,11 +493,9 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
                      * 获取是否支持开启网关流控明细
 0：不支持
 1：支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NewAfc 是否支持开启网关流控明细
 0：不支持
 1：支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetNewAfc() const;
@@ -534,11 +504,9 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
                      * 设置是否支持开启网关流控明细
 0：不支持
 1：支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _newAfc 是否支持开启网关流控明细
 0：不支持
 1：支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNewAfc(const uint64_t& _newAfc);
@@ -555,12 +523,10 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
 <li>`VXLAN` - VXLAN类型。</li>
 <li>`MPLS` - MPLS类型。</li>
 <li>`Hybrid` - Hybrid类型。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccessNetworkType 专线网关接入网络类型：
 <li>`VXLAN` - VXLAN类型。</li>
 <li>`MPLS` - MPLS类型。</li>
 <li>`Hybrid` - Hybrid类型。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccessNetworkType() const;
@@ -570,12 +536,10 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
 <li>`VXLAN` - VXLAN类型。</li>
 <li>`MPLS` - MPLS类型。</li>
 <li>`Hybrid` - Hybrid类型。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accessNetworkType 专线网关接入网络类型：
 <li>`VXLAN` - VXLAN类型。</li>
 <li>`MPLS` - MPLS类型。</li>
 <li>`Hybrid` - Hybrid类型。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccessNetworkType(const std::string& _accessNetworkType);
@@ -589,18 +553,14 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
 
                     /**
                      * 获取跨可用区容灾专线网关的可用区列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HaZoneList 跨可用区容灾专线网关的可用区列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetHaZoneList() const;
 
                     /**
                      * 设置跨可用区容灾专线网关的可用区列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _haZoneList 跨可用区容灾专线网关的可用区列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHaZoneList(const std::vector<std::string>& _haZoneList);
@@ -611,6 +571,27 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
                      * 
                      */
                     bool HaZoneListHasBeenSet() const;
+
+                    /**
+                     * 获取专线网关自定义ASN
+                     * @return GatewayAsn 专线网关自定义ASN
+                     * 
+                     */
+                    uint64_t GetGatewayAsn() const;
+
+                    /**
+                     * 设置专线网关自定义ASN
+                     * @param _gatewayAsn 专线网关自定义ASN
+                     * 
+                     */
+                    void SetGatewayAsn(const uint64_t& _gatewayAsn);
+
+                    /**
+                     * 判断参数 GatewayAsn 是否已赋值
+                     * @return GatewayAsn 是否已赋值
+                     * 
+                     */
+                    bool GatewayAsnHasBeenSet() const;
 
                 private:
 
@@ -697,35 +678,30 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
 
                     /**
                      * 绑定的NAT网关ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_natGatewayId;
                     bool m_natGatewayIdHasBeenSet;
 
                     /**
                      * 专线网关是否支持VXLAN架构
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<bool> m_vXLANSupport;
                     bool m_vXLANSupportHasBeenSet;
 
                     /**
                      * 云联网路由发布模式：`standard`（标准模式）、`exquisite`（精细模式）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modeType;
                     bool m_modeTypeHasBeenSet;
 
                     /**
                      * 是否为localZone专线网关。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_localZone;
                     bool m_localZoneHasBeenSet;
 
                     /**
                      * 专线网关所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
@@ -734,14 +710,12 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
                      * 网关流控明细启用状态：
 0：关闭
 1：开启
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_enableFlowDetails;
                     bool m_enableFlowDetailsHasBeenSet;
 
                     /**
                      * 开启、关闭网关流控明细时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowDetailsUpdateTime;
                     bool m_flowDetailsUpdateTimeHasBeenSet;
@@ -750,7 +724,6 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
                      * 是否支持开启网关流控明细
 0：不支持
 1：支持
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_newAfc;
                     bool m_newAfcHasBeenSet;
@@ -760,17 +733,21 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
 <li>`VXLAN` - VXLAN类型。</li>
 <li>`MPLS` - MPLS类型。</li>
 <li>`Hybrid` - Hybrid类型。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accessNetworkType;
                     bool m_accessNetworkTypeHasBeenSet;
 
                     /**
                      * 跨可用区容灾专线网关的可用区列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_haZoneList;
                     bool m_haZoneListHasBeenSet;
+
+                    /**
+                     * 专线网关自定义ASN
+                     */
+                    uint64_t m_gatewayAsn;
+                    bool m_gatewayAsnHasBeenSet;
 
                 };
             }

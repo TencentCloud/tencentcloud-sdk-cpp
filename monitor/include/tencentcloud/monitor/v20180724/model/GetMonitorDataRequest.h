@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取返回多种统计方式数据。avg, max, min (1,2,4)可以自由组合
-                     * @return SpecifyStatistics 返回多种统计方式数据。avg, max, min (1,2,4)可以自由组合
+                     * 获取返回多种统计方式数据。avg, max, min (1,2,4)可以自由组合。特别说明：建议查询时严格参考API配置文档中提供的统计方式。如选择其他未提供的统计方式，可能有数据统计误差。
+                     * @return SpecifyStatistics 返回多种统计方式数据。avg, max, min (1,2,4)可以自由组合。特别说明：建议查询时严格参考API配置文档中提供的统计方式。如选择其他未提供的统计方式，可能有数据统计误差。
                      * 
                      */
                     int64_t GetSpecifyStatistics() const;
 
                     /**
-                     * 设置返回多种统计方式数据。avg, max, min (1,2,4)可以自由组合
-                     * @param _specifyStatistics 返回多种统计方式数据。avg, max, min (1,2,4)可以自由组合
+                     * 设置返回多种统计方式数据。avg, max, min (1,2,4)可以自由组合。特别说明：建议查询时严格参考API配置文档中提供的统计方式。如选择其他未提供的统计方式，可能有数据统计误差。
+                     * @param _specifyStatistics 返回多种统计方式数据。avg, max, min (1,2,4)可以自由组合。特别说明：建议查询时严格参考API配置文档中提供的统计方式。如选择其他未提供的统计方式，可能有数据统计误差。
                      * 
                      */
                     void SetSpecifyStatistics(const int64_t& _specifyStatistics);
@@ -229,7 +229,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 返回多种统计方式数据。avg, max, min (1,2,4)可以自由组合
+                     * 返回多种统计方式数据。avg, max, min (1,2,4)可以自由组合。特别说明：建议查询时严格参考API配置文档中提供的统计方式。如选择其他未提供的统计方式，可能有数据统计误差。
                      */
                     int64_t m_specifyStatistics;
                     bool m_specifyStatisticsHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ccc/v20200210/model/StaffStatusExtra.h>
+#include <tencentcloud/ccc/v20200210/model/ClientInfo.h>
 
 
 namespace TencentCloud
@@ -391,6 +392,27 @@ namespace TencentCloud
                      */
                     bool LastStatusTimestampHasBeenSet() const;
 
+                    /**
+                     * 获取客服登录的端信息
+                     * @return ClientInfo 客服登录的端信息
+                     * 
+                     */
+                    std::vector<ClientInfo> GetClientInfo() const;
+
+                    /**
+                     * 设置客服登录的端信息
+                     * @param _clientInfo 客服登录的端信息
+                     * 
+                     */
+                    void SetClientInfo(const std::vector<ClientInfo>& _clientInfo);
+
+                    /**
+                     * 判断参数 ClientInfo 是否已赋值
+                     * @return ClientInfo 是否已赋值
+                     * 
+                     */
+                    bool ClientInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -490,6 +512,12 @@ namespace TencentCloud
                      */
                     int64_t m_lastStatusTimestamp;
                     bool m_lastStatusTimestampHasBeenSet;
+
+                    /**
+                     * 客服登录的端信息
+                     */
+                    std::vector<ClientInfo> m_clientInfo;
+                    bool m_clientInfoHasBeenSet;
 
                 };
             }

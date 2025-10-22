@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -468,6 +468,48 @@ namespace TencentCloud
                      */
                     bool DomainHasBeenSet() const;
 
+                    /**
+                     * 获取匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系
+                     * @return LogicalOp 匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系
+                     * 
+                     */
+                    std::string GetLogicalOp() const;
+
+                    /**
+                     * 设置匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系
+                     * @param _logicalOp 匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系
+                     * 
+                     */
+                    void SetLogicalOp(const std::string& _logicalOp);
+
+                    /**
+                     * 判断参数 LogicalOp 是否已赋值
+                     * @return LogicalOp 是否已赋值
+                     * 
+                     */
+                    bool LogicalOpHasBeenSet() const;
+
+                    /**
+                     * 获取规则灰度的比例，默认是100，不灰度
+                     * @return ActionRatio 规则灰度的比例，默认是100，不灰度
+                     * 
+                     */
+                    uint64_t GetActionRatio() const;
+
+                    /**
+                     * 设置规则灰度的比例，默认是100，不灰度
+                     * @param _actionRatio 规则灰度的比例，默认是100，不灰度
+                     * 
+                     */
+                    void SetActionRatio(const uint64_t& _actionRatio);
+
+                    /**
+                     * 判断参数 ActionRatio 是否已赋值
+                     * @return ActionRatio 是否已赋值
+                     * 
+                     */
+                    bool ActionRatioHasBeenSet() const;
+
                 private:
 
                     /**
@@ -589,6 +631,18 @@ namespace TencentCloud
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
+
+                    /**
+                     * 匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系
+                     */
+                    std::string m_logicalOp;
+                    bool m_logicalOpHasBeenSet;
+
+                    /**
+                     * 规则灰度的比例，默认是100，不灰度
+                     */
+                    uint64_t m_actionRatio;
+                    bool m_actionRatioHasBeenSet;
 
                 };
             }

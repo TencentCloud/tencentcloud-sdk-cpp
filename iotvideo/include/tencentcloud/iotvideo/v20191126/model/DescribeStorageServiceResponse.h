@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -165,8 +165,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取云存定单列表
-                     * @return Data 云存定单列表
+                     * 获取云存订单列表
+                     * @return Data 云存订单列表
                      * 
                      */
                     std::vector<StorageOrder> GetData() const;
@@ -233,7 +233,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 云存定单列表
+                     * 云存订单列表
                      */
                     std::vector<StorageOrder> m_data;
                     bool m_dataHasBeenSet;

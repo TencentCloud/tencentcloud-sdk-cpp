@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vip IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vip IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVip(const std::string& _vip);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vport 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetVport() const;
 
                     /**
                      * 设置端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vport 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVport(const int64_t& _vport);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取期望执行回收时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReturnTime 期望执行回收时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReturnTime() const;
 
                     /**
                      * 设置期望执行回收时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _returnTime 期望执行回收时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReturnTime(const std::string& _returnTime);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
 
                     /**
                      * 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_vport;
                     bool m_vportHasBeenSet;
 
                     /**
                      * 期望执行回收时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_returnTime;
                     bool m_returnTimeHasBeenSet;

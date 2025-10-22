@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool CauseHasBeenSet() const;
 
                     /**
-                     * 获取活动状态
-                     * @return ActivityState 活动状态
+                     * 获取活动状态。取值范围：<br><li>SUBMITTED：已提交</li><li>PROCESSING：处理中</li><li>SUCCEED：成功</li><li>FAILED：失败</li>
+                     * @return ActivityState 活动状态。取值范围：<br><li>SUBMITTED：已提交</li><li>PROCESSING：处理中</li><li>SUCCEED：成功</li><li>FAILED：失败</li>
                      * 
                      */
                     std::string GetActivityState() const;
 
                     /**
-                     * 设置活动状态
-                     * @param _activityState 活动状态
+                     * 设置活动状态。取值范围：<br><li>SUBMITTED：已提交</li><li>PROCESSING：处理中</li><li>SUCCEED：成功</li><li>FAILED：失败</li>
+                     * @param _activityState 活动状态。取值范围：<br><li>SUBMITTED：已提交</li><li>PROCESSING：处理中</li><li>SUCCEED：成功</li><li>FAILED：失败</li>
                      * 
                      */
                     void SetActivityState(const std::string& _activityState);
@@ -216,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取活动结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 活动结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置活动结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 活动结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -241,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云服务器实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 云服务器实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置云服务器实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 云服务器实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -297,7 +289,7 @@ namespace TencentCloud
                     bool m_causeHasBeenSet;
 
                     /**
-                     * 活动状态
+                     * 活动状态。取值范围：<br><li>SUBMITTED：已提交</li><li>PROCESSING：处理中</li><li>SUCCEED：成功</li><li>FAILED：失败</li>
                      */
                     std::string m_activityState;
                     bool m_activityStateHasBeenSet;
@@ -316,14 +308,12 @@ namespace TencentCloud
 
                     /**
                      * 活动结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
                      * 云服务器实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

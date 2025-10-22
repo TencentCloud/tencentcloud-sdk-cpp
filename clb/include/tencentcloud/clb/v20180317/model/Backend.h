@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取后端服务的类型，可取：CVM、ENI、CCN
-                     * @return Type 后端服务的类型，可取：CVM、ENI、CCN
+                     * 获取后端服务的类型，可取：CVM、ENI、CCN、EVM、GLOBALROUTE、NAT、SRV等
+                     * @return Type 后端服务的类型，可取：CVM、ENI、CCN、EVM、GLOBALROUTE、NAT、SRV等
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置后端服务的类型，可取：CVM、ENI、CCN
-                     * @param _type 后端服务的类型，可取：CVM、ENI、CCN
+                     * 设置后端服务的类型，可取：CVM、ENI、CCN、EVM、GLOBALROUTE、NAT、SRV等
+                     * @param _type 后端服务的类型，可取：CVM、ENI、CCN、EVM、GLOBALROUTE、NAT、SRV等
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取后端服务的监听端口
-                     * @return Port 后端服务的监听端口
+                     * 获取后端服务的监听端口，如果是全端口段监听器绑定的全监听目标组场景，此端口返回0，表示无效端口，绑定的后端服务的端口随监听器端口。
+                     * @return Port 后端服务的监听端口，如果是全端口段监听器绑定的全监听目标组场景，此端口返回0，表示无效端口，绑定的后端服务的端口随监听器端口。
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
-                     * 设置后端服务的监听端口
-                     * @param _port 后端服务的监听端口
+                     * 设置后端服务的监听端口，如果是全端口段监听器绑定的全监听目标组场景，此端口返回0，表示无效端口，绑定的后端服务的端口随监听器端口。
+                     * @param _port 后端服务的监听端口，如果是全端口段监听器绑定的全监听目标组场景，此端口返回0，表示无效端口，绑定的后端服务的端口随监听器端口。
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -157,18 +157,14 @@ namespace TencentCloud
 
                     /**
                      * 获取后端服务的内网 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrivateIpAddresses 后端服务的内网 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetPrivateIpAddresses() const;
 
                     /**
                      * 设置后端服务的内网 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _privateIpAddresses 后端服务的内网 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrivateIpAddresses(const std::vector<std::string>& _privateIpAddresses);
@@ -207,18 +203,14 @@ namespace TencentCloud
 
                     /**
                      * 获取后端服务被绑定的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegisteredTime 后端服务被绑定的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegisteredTime() const;
 
                     /**
                      * 设置后端服务被绑定的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _registeredTime 后端服务被绑定的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegisteredTime(const std::string& _registeredTime);
@@ -257,18 +249,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tag 标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTag() const;
 
                     /**
                      * 设置标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tag 标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTag(const std::string& _tag);
@@ -283,7 +271,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 后端服务的类型，可取：CVM、ENI、CCN
+                     * 后端服务的类型，可取：CVM、ENI、CCN、EVM、GLOBALROUTE、NAT、SRV等
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -295,7 +283,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 后端服务的监听端口
+                     * 后端服务的监听端口，如果是全端口段监听器绑定的全监听目标组场景，此端口返回0，表示无效端口，绑定的后端服务的端口随监听器端口。
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
@@ -315,7 +303,6 @@ namespace TencentCloud
 
                     /**
                      * 后端服务的内网 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_privateIpAddresses;
                     bool m_privateIpAddressesHasBeenSet;
@@ -329,7 +316,6 @@ namespace TencentCloud
 
                     /**
                      * 后端服务被绑定的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_registeredTime;
                     bool m_registeredTimeHasBeenSet;
@@ -343,7 +329,6 @@ namespace TencentCloud
 
                     /**
                      * 标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tag;
                     bool m_tagHasBeenSet;

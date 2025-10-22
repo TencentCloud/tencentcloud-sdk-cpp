@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ using namespace std;
 DropDMSDatabaseRequest::DropDMSDatabaseRequest() :
     m_nameHasBeenSet(false),
     m_deleteDataHasBeenSet(false),
-    m_cascadeHasBeenSet(false)
+    m_cascadeHasBeenSet(false),
+    m_datasourceConnectionNameHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DropDMSDatabaseRequest::ToJsonString() const
         string key = "Cascade";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_cascade, allocator);
+    }
+
+    if (m_datasourceConnectionNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceConnectionName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_datasourceConnectionName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DropDMSDatabaseRequest::SetCascade(const bool& _cascade)
 bool DropDMSDatabaseRequest::CascadeHasBeenSet() const
 {
     return m_cascadeHasBeenSet;
+}
+
+string DropDMSDatabaseRequest::GetDatasourceConnectionName() const
+{
+    return m_datasourceConnectionName;
+}
+
+void DropDMSDatabaseRequest::SetDatasourceConnectionName(const string& _datasourceConnectionName)
+{
+    m_datasourceConnectionName = _datasourceConnectionName;
+    m_datasourceConnectionNameHasBeenSet = true;
+}
+
+bool DropDMSDatabaseRequest::DatasourceConnectionNameHasBeenSet() const
+{
+    return m_datasourceConnectionNameHasBeenSet;
 }
 
 

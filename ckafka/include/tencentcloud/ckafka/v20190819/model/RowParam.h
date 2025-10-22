@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取key和value间的分隔符
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeyValueDelimiter key和value间的分隔符
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKeyValueDelimiter() const;
 
                     /**
                      * 设置key和value间的分隔符
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _keyValueDelimiter key和value间的分隔符
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKeyValueDelimiter(const std::string& _keyValueDelimiter);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取元素建的分隔符
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EntryDelimiter 元素建的分隔符
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEntryDelimiter() const;
 
                     /**
                      * 设置元素建的分隔符
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _entryDelimiter 元素建的分隔符
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEntryDelimiter(const std::string& _entryDelimiter);
@@ -127,14 +119,12 @@ namespace TencentCloud
 
                     /**
                      * key和value间的分隔符
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_keyValueDelimiter;
                     bool m_keyValueDelimiterHasBeenSet;
 
                     /**
                      * 元素建的分隔符
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_entryDelimiter;
                     bool m_entryDelimiterHasBeenSet;

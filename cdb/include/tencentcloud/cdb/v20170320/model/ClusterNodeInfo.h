@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 集群版实例节点信息
+                * 云盘版实例节点信息
                 */
                 class ClusterNodeInfo : public AbstractModel
                 {
@@ -132,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 节点状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置节点状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 节点状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -183,7 +179,6 @@ namespace TencentCloud
 
                     /**
                      * 节点状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

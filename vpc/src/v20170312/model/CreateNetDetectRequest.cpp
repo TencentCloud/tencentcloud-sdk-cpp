@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,8 @@ CreateNetDetectRequest::CreateNetDetectRequest() :
     m_detectDestinationIpHasBeenSet(false),
     m_nextHopTypeHasBeenSet(false),
     m_nextHopDestinationHasBeenSet(false),
-    m_netDetectDescriptionHasBeenSet(false)
+    m_netDetectDescriptionHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -99,6 +100,21 @@ string CreateNetDetectRequest::ToJsonString() const
         string key = "NetDetectDescription";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_netDetectDescription.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -219,6 +235,22 @@ void CreateNetDetectRequest::SetNetDetectDescription(const string& _netDetectDes
 bool CreateNetDetectRequest::NetDetectDescriptionHasBeenSet() const
 {
     return m_netDetectDescriptionHasBeenSet;
+}
+
+vector<Tag> CreateNetDetectRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateNetDetectRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateNetDetectRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

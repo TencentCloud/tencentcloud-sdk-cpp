@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -235,15 +235,15 @@ namespace TencentCloud
                     bool BackgroundImageUrlHasBeenSet() const;
 
                     /**
-                     * 获取设置为1时代表启用占位图功能，0时代表不启用占位图功能，默认为0。启用占位图功能时，在预设位置的用户没有上行视频时可显示对应的占位图。
-                     * @return PlaceHolderMode 设置为1时代表启用占位图功能，0时代表不启用占位图功能，默认为0。启用占位图功能时，在预设位置的用户没有上行视频时可显示对应的占位图。
+                     * 获取设置为1时代表启用占位图功能，0时代表不启用占位图功能，默认为0。启用占位图功能时，在预设位置的用户没有上行音视频时可显示对应的占位图。
+                     * @return PlaceHolderMode 设置为1时代表启用占位图功能，0时代表不启用占位图功能，默认为0。启用占位图功能时，在预设位置的用户没有上行音视频时可显示对应的占位图。
                      * 
                      */
                     uint64_t GetPlaceHolderMode() const;
 
                     /**
-                     * 设置设置为1时代表启用占位图功能，0时代表不启用占位图功能，默认为0。启用占位图功能时，在预设位置的用户没有上行视频时可显示对应的占位图。
-                     * @param _placeHolderMode 设置为1时代表启用占位图功能，0时代表不启用占位图功能，默认为0。启用占位图功能时，在预设位置的用户没有上行视频时可显示对应的占位图。
+                     * 设置设置为1时代表启用占位图功能，0时代表不启用占位图功能，默认为0。启用占位图功能时，在预设位置的用户没有上行音视频时可显示对应的占位图。
+                     * @param _placeHolderMode 设置为1时代表启用占位图功能，0时代表不启用占位图功能，默认为0。启用占位图功能时，在预设位置的用户没有上行音视频时可显示对应的占位图。
                      * 
                      */
                     void SetPlaceHolderMode(const uint64_t& _placeHolderMode);
@@ -256,15 +256,15 @@ namespace TencentCloud
                     bool PlaceHolderModeHasBeenSet() const;
 
                     /**
-                     * 获取背景画面宽高比不一致的时候处理方案，与MixLayoufList定义的RenderMode一致。
-                     * @return BackgroundImageRenderMode 背景画面宽高比不一致的时候处理方案，与MixLayoufList定义的RenderMode一致。
+                     * 获取背景画面宽高比不一致的时候处理方案，与MixLayoutList定义的RenderMode一致。
+                     * @return BackgroundImageRenderMode 背景画面宽高比不一致的时候处理方案，与MixLayoutList定义的RenderMode一致。
                      * 
                      */
                     uint64_t GetBackgroundImageRenderMode() const;
 
                     /**
-                     * 设置背景画面宽高比不一致的时候处理方案，与MixLayoufList定义的RenderMode一致。
-                     * @param _backgroundImageRenderMode 背景画面宽高比不一致的时候处理方案，与MixLayoufList定义的RenderMode一致。
+                     * 设置背景画面宽高比不一致的时候处理方案，与MixLayoutList定义的RenderMode一致。
+                     * @param _backgroundImageRenderMode 背景画面宽高比不一致的时候处理方案，与MixLayoutList定义的RenderMode一致。
                      * 
                      */
                     void SetBackgroundImageRenderMode(const uint64_t& _backgroundImageRenderMode);
@@ -319,15 +319,15 @@ namespace TencentCloud
                     bool WaterMarkListHasBeenSet() const;
 
                     /**
-                     * 获取模板布局下，背景画面宽高比不一致的时候处理方案。自定义布局不生效，与MixLayoufList定义的RenderMode一致。
-                     * @return RenderMode 模板布局下，背景画面宽高比不一致的时候处理方案。自定义布局不生效，与MixLayoufList定义的RenderMode一致。
+                     * 获取模板布局下，背景画面宽高比不一致的时候处理方案。自定义布局不生效，与MixLayoutList定义的RenderMode一致。
+                     * @return RenderMode 模板布局下，背景画面宽高比不一致的时候处理方案。自定义布局不生效，与MixLayoutList定义的RenderMode一致。
                      * 
                      */
                     uint64_t GetRenderMode() const;
 
                     /**
-                     * 设置模板布局下，背景画面宽高比不一致的时候处理方案。自定义布局不生效，与MixLayoufList定义的RenderMode一致。
-                     * @param _renderMode 模板布局下，背景画面宽高比不一致的时候处理方案。自定义布局不生效，与MixLayoufList定义的RenderMode一致。
+                     * 设置模板布局下，背景画面宽高比不一致的时候处理方案。自定义布局不生效，与MixLayoutList定义的RenderMode一致。
+                     * @param _renderMode 模板布局下，背景画面宽高比不一致的时候处理方案。自定义布局不生效，与MixLayoutList定义的RenderMode一致。
                      * 
                      */
                     void SetRenderMode(const uint64_t& _renderMode);
@@ -414,13 +414,13 @@ namespace TencentCloud
                     bool m_backgroundImageUrlHasBeenSet;
 
                     /**
-                     * 设置为1时代表启用占位图功能，0时代表不启用占位图功能，默认为0。启用占位图功能时，在预设位置的用户没有上行视频时可显示对应的占位图。
+                     * 设置为1时代表启用占位图功能，0时代表不启用占位图功能，默认为0。启用占位图功能时，在预设位置的用户没有上行音视频时可显示对应的占位图。
                      */
                     uint64_t m_placeHolderMode;
                     bool m_placeHolderModeHasBeenSet;
 
                     /**
-                     * 背景画面宽高比不一致的时候处理方案，与MixLayoufList定义的RenderMode一致。
+                     * 背景画面宽高比不一致的时候处理方案，与MixLayoutList定义的RenderMode一致。
                      */
                     uint64_t m_backgroundImageRenderMode;
                     bool m_backgroundImageRenderModeHasBeenSet;
@@ -438,7 +438,7 @@ namespace TencentCloud
                     bool m_waterMarkListHasBeenSet;
 
                     /**
-                     * 模板布局下，背景画面宽高比不一致的时候处理方案。自定义布局不生效，与MixLayoufList定义的RenderMode一致。
+                     * 模板布局下，背景画面宽高比不一致的时候处理方案。自定义布局不生效，与MixLayoutList定义的RenderMode一致。
                      */
                     uint64_t m_renderMode;
                     bool m_renderModeHasBeenSet;

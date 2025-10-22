@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -295,15 +295,15 @@ namespace TencentCloud
                     bool IpHasBeenSet() const;
 
                     /**
-                     * 获取生效状态
-                     * @return ValidStatus 生效状态
+                     * 获取生效状态，1表示生效中，2表示过期，0表示全部
+                     * @return ValidStatus 生效状态，1表示生效中，2表示过期，0表示全部
                      * 
                      */
                     int64_t GetValidStatus() const;
 
                     /**
-                     * 设置生效状态
-                     * @param _validStatus 生效状态
+                     * 设置生效状态，1表示生效中，2表示过期，0表示全部
+                     * @param _validStatus 生效状态，1表示生效中，2表示过期，0表示全部
                      * 
                      */
                     void SetValidStatus(const int64_t& _validStatus);
@@ -379,15 +379,15 @@ namespace TencentCloud
                     bool RuleIdHasBeenSet() const;
 
                     /**
-                     * 获取定时任务类型筛选0 1 2 3 4
-                     * @return TimerType 定时任务类型筛选0 1 2 3 4
+                     * 获取0表示全部，1表示永久生效，2表示定时生效，3表示周粒度生效，4表示月粒度生效
+                     * @return TimerType 0表示全部，1表示永久生效，2表示定时生效，3表示周粒度生效，4表示月粒度生效
                      * 
                      */
                     int64_t GetTimerType() const;
 
                     /**
-                     * 设置定时任务类型筛选0 1 2 3 4
-                     * @param _timerType 定时任务类型筛选0 1 2 3 4
+                     * 设置0表示全部，1表示永久生效，2表示定时生效，3表示周粒度生效，4表示月粒度生效
+                     * @param _timerType 0表示全部，1表示永久生效，2表示定时生效，3表示周粒度生效，4表示月粒度生效
                      * 
                      */
                     void SetTimerType(const int64_t& _timerType);
@@ -474,7 +474,7 @@ namespace TencentCloud
                     bool m_ipHasBeenSet;
 
                     /**
-                     * 生效状态
+                     * 生效状态，1表示生效中，2表示过期，0表示全部
                      */
                     int64_t m_validStatus;
                     bool m_validStatusHasBeenSet;
@@ -498,7 +498,7 @@ namespace TencentCloud
                     bool m_ruleIdHasBeenSet;
 
                     /**
-                     * 定时任务类型筛选0 1 2 3 4
+                     * 0表示全部，1表示永久生效，2表示定时生效，3表示周粒度生效，4表示月粒度生效
                      */
                     int64_t m_timerType;
                     bool m_timerTypeHasBeenSet;

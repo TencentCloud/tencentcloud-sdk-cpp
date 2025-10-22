@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分页游标，再下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空
+                     * 获取分页游标，在下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NextCursor 分页游标，再下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空
+                     * @return NextCursor 分页游标，在下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -79,7 +79,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 分页游标，再下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空
+                     * 分页游标，在下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nextCursor;

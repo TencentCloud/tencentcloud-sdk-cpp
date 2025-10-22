@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取处理文本用的正则表达式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Regex 处理文本用的正则表达式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegex() const;
 
                     /**
                      * 设置处理文本用的正则表达式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regex 处理文本用的正则表达式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegex(const std::string& _regex);
@@ -102,7 +98,6 @@ namespace TencentCloud
 
                     /**
                      * 处理文本用的正则表达式。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regex;
                     bool m_regexHasBeenSet;

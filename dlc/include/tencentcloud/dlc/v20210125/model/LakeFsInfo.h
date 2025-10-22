@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -132,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否是用户默认桶，0：默认桶，1：非默认桶
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefaultBucket 是否是用户默认桶，0：默认桶，1：非默认桶
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDefaultBucket() const;
 
                     /**
                      * 设置是否是用户默认桶，0：默认桶，1：非默认桶
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _defaultBucket 是否是用户默认桶，0：默认桶，1：非默认桶
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefaultBucket(const int64_t& _defaultBucket);
@@ -157,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取托管存储short name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ShortName 托管存储short name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetShortName() const;
 
                     /**
                      * 设置托管存储short name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _shortName 托管存储short name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetShortName(const std::string& _shortName);
@@ -182,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取桶描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 桶描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置桶描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 桶描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -207,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取托管桶状态，当前取值为：creating、bind、readOnly、isolate
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 托管桶状态，当前取值为：creating、bind、readOnly、isolate
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置托管桶状态，当前取值为：creating、bind、readOnly、isolate
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 托管桶状态，当前取值为：creating、bind、readOnly、isolate
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -258,28 +242,24 @@ namespace TencentCloud
 
                     /**
                      * 是否是用户默认桶，0：默认桶，1：非默认桶
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_defaultBucket;
                     bool m_defaultBucketHasBeenSet;
 
                     /**
                      * 托管存储short name
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_shortName;
                     bool m_shortNameHasBeenSet;
 
                     /**
                      * 桶描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 托管桶状态，当前取值为：creating、bind、readOnly、isolate
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

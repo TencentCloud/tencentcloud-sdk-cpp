@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ using namespace std;
 
 DeleteSpartaProtectionRequest::DeleteSpartaProtectionRequest() :
     m_domainsHasBeenSet(false),
-    m_editionHasBeenSet(false),
-    m_instanceIDHasBeenSet(false)
+    m_instanceIDHasBeenSet(false),
+    m_editionHasBeenSet(false)
 {
 }
 
@@ -49,20 +49,20 @@ string DeleteSpartaProtectionRequest::ToJsonString() const
         }
     }
 
-    if (m_editionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Edition";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_edition.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_instanceIDHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceID";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_editionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Edition";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_edition.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,22 +89,6 @@ bool DeleteSpartaProtectionRequest::DomainsHasBeenSet() const
     return m_domainsHasBeenSet;
 }
 
-string DeleteSpartaProtectionRequest::GetEdition() const
-{
-    return m_edition;
-}
-
-void DeleteSpartaProtectionRequest::SetEdition(const string& _edition)
-{
-    m_edition = _edition;
-    m_editionHasBeenSet = true;
-}
-
-bool DeleteSpartaProtectionRequest::EditionHasBeenSet() const
-{
-    return m_editionHasBeenSet;
-}
-
 string DeleteSpartaProtectionRequest::GetInstanceID() const
 {
     return m_instanceID;
@@ -119,6 +103,22 @@ void DeleteSpartaProtectionRequest::SetInstanceID(const string& _instanceID)
 bool DeleteSpartaProtectionRequest::InstanceIDHasBeenSet() const
 {
     return m_instanceIDHasBeenSet;
+}
+
+string DeleteSpartaProtectionRequest::GetEdition() const
+{
+    return m_edition;
+}
+
+void DeleteSpartaProtectionRequest::SetEdition(const string& _edition)
+{
+    m_edition = _edition;
+    m_editionHasBeenSet = true;
+}
+
+bool DeleteSpartaProtectionRequest::EditionHasBeenSet() const
+{
+    return m_editionHasBeenSet;
 }
 
 

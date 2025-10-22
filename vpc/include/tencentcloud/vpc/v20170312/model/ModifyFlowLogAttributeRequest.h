@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取流日志唯一ID。
-                     * @return FlowLogId 流日志唯一ID。
+                     * 获取流日志唯一ID。可通过[CreateFlowLog](https://cloud.tencent.com/document/product/215/35015)接口创建；可通过[DescribeFlowLogs](https://cloud.tencent.com/document/product/215/35012)接口获取。
+                     * @return FlowLogId 流日志唯一ID。可通过[CreateFlowLog](https://cloud.tencent.com/document/product/215/35015)接口创建；可通过[DescribeFlowLogs](https://cloud.tencent.com/document/product/215/35012)接口获取。
                      * 
                      */
                     std::string GetFlowLogId() const;
 
                     /**
-                     * 设置流日志唯一ID。
-                     * @param _flowLogId 流日志唯一ID。
+                     * 设置流日志唯一ID。可通过[CreateFlowLog](https://cloud.tencent.com/document/product/215/35015)接口创建；可通过[DescribeFlowLogs](https://cloud.tencent.com/document/product/215/35012)接口获取。
+                     * @param _flowLogId 流日志唯一ID。可通过[CreateFlowLog](https://cloud.tencent.com/document/product/215/35015)接口创建；可通过[DescribeFlowLogs](https://cloud.tencent.com/document/product/215/35012)接口获取。
                      * 
                      */
                     void SetFlowLogId(const std::string& _flowLogId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool FlowLogIdHasBeenSet() const;
 
                     /**
-                     * 获取私用网络ID或者统一ID，建议使用统一ID，修改云联网流日志属性时可不填，其他流日志类型必填。
-                     * @return VpcId 私用网络ID或者统一ID，建议使用统一ID，修改云联网流日志属性时可不填，其他流日志类型必填。
+                     * 获取私用网络唯一ID。修改云联网流日志属性时可不填，其他流日志类型必填。
+                     * @return VpcId 私用网络唯一ID。修改云联网流日志属性时可不填，其他流日志类型必填。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私用网络ID或者统一ID，建议使用统一ID，修改云联网流日志属性时可不填，其他流日志类型必填。
-                     * @param _vpcId 私用网络ID或者统一ID，建议使用统一ID，修改云联网流日志属性时可不填，其他流日志类型必填。
+                     * 设置私用网络唯一ID。修改云联网流日志属性时可不填，其他流日志类型必填。
+                     * @param _vpcId 私用网络唯一ID。修改云联网流日志属性时可不填，其他流日志类型必填。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取流日志实例名字。
-                     * @return FlowLogName 流日志实例名字。
+                     * 获取流日志实例名称。长度为不超过60字符。
+                     * @return FlowLogName 流日志实例名称。长度为不超过60字符。
                      * 
                      */
                     std::string GetFlowLogName() const;
 
                     /**
-                     * 设置流日志实例名字。
-                     * @param _flowLogName 流日志实例名字。
+                     * 设置流日志实例名称。长度为不超过60字符。
+                     * @param _flowLogName 流日志实例名称。长度为不超过60字符。
                      * 
                      */
                     void SetFlowLogName(const std::string& _flowLogName);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool FlowLogNameHasBeenSet() const;
 
                     /**
-                     * 获取流日志实例描述。
-                     * @return FlowLogDescription 流日志实例描述。
+                     * 获取流日志实例描述。长度为不超过512个字符。
+                     * @return FlowLogDescription 流日志实例描述。长度为不超过512个字符。
                      * 
                      */
                     std::string GetFlowLogDescription() const;
 
                     /**
-                     * 设置流日志实例描述。
-                     * @param _flowLogDescription 流日志实例描述。
+                     * 设置流日志实例描述。长度为不超过512个字符。
+                     * @param _flowLogDescription 流日志实例描述。长度为不超过512个字符。
                      * 
                      */
                     void SetFlowLogDescription(const std::string& _flowLogDescription);
@@ -126,31 +126,58 @@ namespace TencentCloud
                      */
                     bool FlowLogDescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取流日志采集周期，只支持CCN类型流日志。 取值范围（单位s）：60， 300， 600。
+                     * @return Period 流日志采集周期，只支持CCN类型流日志。 取值范围（单位s）：60， 300， 600。
+                     * 
+                     */
+                    uint64_t GetPeriod() const;
+
+                    /**
+                     * 设置流日志采集周期，只支持CCN类型流日志。 取值范围（单位s）：60， 300， 600。
+                     * @param _period 流日志采集周期，只支持CCN类型流日志。 取值范围（单位s）：60， 300， 600。
+                     * 
+                     */
+                    void SetPeriod(const uint64_t& _period);
+
+                    /**
+                     * 判断参数 Period 是否已赋值
+                     * @return Period 是否已赋值
+                     * 
+                     */
+                    bool PeriodHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 流日志唯一ID。
+                     * 流日志唯一ID。可通过[CreateFlowLog](https://cloud.tencent.com/document/product/215/35015)接口创建；可通过[DescribeFlowLogs](https://cloud.tencent.com/document/product/215/35012)接口获取。
                      */
                     std::string m_flowLogId;
                     bool m_flowLogIdHasBeenSet;
 
                     /**
-                     * 私用网络ID或者统一ID，建议使用统一ID，修改云联网流日志属性时可不填，其他流日志类型必填。
+                     * 私用网络唯一ID。修改云联网流日志属性时可不填，其他流日志类型必填。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 流日志实例名字。
+                     * 流日志实例名称。长度为不超过60字符。
                      */
                     std::string m_flowLogName;
                     bool m_flowLogNameHasBeenSet;
 
                     /**
-                     * 流日志实例描述。
+                     * 流日志实例描述。长度为不超过512个字符。
                      */
                     std::string m_flowLogDescription;
                     bool m_flowLogDescriptionHasBeenSet;
+
+                    /**
+                     * 流日志采集周期，只支持CCN类型流日志。 取值范围（单位s）：60， 300， 600。
+                     */
+                    uint64_t m_period;
+                    bool m_periodHasBeenSet;
 
                 };
             }

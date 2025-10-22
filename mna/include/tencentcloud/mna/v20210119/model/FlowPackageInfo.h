@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -164,18 +164,14 @@ DEVICE_5_FLOW_500G，分别代表20G、50G、100G、500G档位的流量包。
 
                     /**
                      * 获取购买时间，Unix时间戳格式，单位：秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 购买时间，Unix时间戳格式，单位：秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
                      * 设置购买时间，Unix时间戳格式，单位：秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 购买时间，Unix时间戳格式，单位：秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
@@ -412,7 +408,6 @@ DEVICE_5_FLOW_500G，分别代表20G、50G、100G、500G档位的流量包。
 
                     /**
                      * 购买时间，Unix时间戳格式，单位：秒
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_createTime;
                     bool m_createTimeHasBeenSet;

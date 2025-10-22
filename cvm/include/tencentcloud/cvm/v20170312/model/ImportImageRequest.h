@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,15 +45,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取导入镜像的操作系统架构，`x86_64` 或 `i386`
-                     * @return Architecture 导入镜像的操作系统架构，`x86_64` 或 `i386`
+                     * 获取导入镜像的操作系统架构。
+取值范围包括：`x86_64` 、`i386`、`arm_64`
+                     * @return Architecture 导入镜像的操作系统架构。
+取值范围包括：`x86_64` 、`i386`、`arm_64`
                      * 
                      */
                     std::string GetArchitecture() const;
 
                     /**
-                     * 设置导入镜像的操作系统架构，`x86_64` 或 `i386`
-                     * @param _architecture 导入镜像的操作系统架构，`x86_64` 或 `i386`
+                     * 设置导入镜像的操作系统架构。
+取值范围包括：`x86_64` 、`i386`、`arm_64`
+                     * @param _architecture 导入镜像的操作系统架构。
+取值范围包括：`x86_64` 、`i386`、`arm_64`
                      * 
                      */
                     void SetArchitecture(const std::string& _architecture);
@@ -66,15 +70,19 @@ namespace TencentCloud
                     bool ArchitectureHasBeenSet() const;
 
                     /**
-                     * 获取导入镜像的操作系统类型，通过`DescribeImportImageOs`获取
-                     * @return OsType 导入镜像的操作系统类型，通过`DescribeImportImageOs`获取
+                     * 获取导入镜像的操作系统类型 。
+可通过 [DescribeImportImageOs](https://cloud.tencent.com/document/api/213/15718) 接口返回值中的`ImportImageOsListSupported`获取。
+                     * @return OsType 导入镜像的操作系统类型 。
+可通过 [DescribeImportImageOs](https://cloud.tencent.com/document/api/213/15718) 接口返回值中的`ImportImageOsListSupported`获取。
                      * 
                      */
                     std::string GetOsType() const;
 
                     /**
-                     * 设置导入镜像的操作系统类型，通过`DescribeImportImageOs`获取
-                     * @param _osType 导入镜像的操作系统类型，通过`DescribeImportImageOs`获取
+                     * 设置导入镜像的操作系统类型 。
+可通过 [DescribeImportImageOs](https://cloud.tencent.com/document/api/213/15718) 接口返回值中的`ImportImageOsListSupported`获取。
+                     * @param _osType 导入镜像的操作系统类型 。
+可通过 [DescribeImportImageOs](https://cloud.tencent.com/document/api/213/15718) 接口返回值中的`ImportImageOsListSupported`获取。
                      * 
                      */
                     void SetOsType(const std::string& _osType);
@@ -87,15 +95,19 @@ namespace TencentCloud
                     bool OsTypeHasBeenSet() const;
 
                     /**
-                     * 获取导入镜像的操作系统版本，通过`DescribeImportImageOs`获取
-                     * @return OsVersion 导入镜像的操作系统版本，通过`DescribeImportImageOs`获取
+                     * 获取导入镜像的操作系统版本。
+可通过 [DescribeImportImageOs](https://cloud.tencent.com/document/api/213/15718) 接口返回值中的`ImportImageOsVersionSet`获取。
+                     * @return OsVersion 导入镜像的操作系统版本。
+可通过 [DescribeImportImageOs](https://cloud.tencent.com/document/api/213/15718) 接口返回值中的`ImportImageOsVersionSet`获取。
                      * 
                      */
                     std::string GetOsVersion() const;
 
                     /**
-                     * 设置导入镜像的操作系统版本，通过`DescribeImportImageOs`获取
-                     * @param _osVersion 导入镜像的操作系统版本，通过`DescribeImportImageOs`获取
+                     * 设置导入镜像的操作系统版本。
+可通过 [DescribeImportImageOs](https://cloud.tencent.com/document/api/213/15718) 接口返回值中的`ImportImageOsVersionSet`获取。
+                     * @param _osVersion 导入镜像的操作系统版本。
+可通过 [DescribeImportImageOs](https://cloud.tencent.com/document/api/213/15718) 接口返回值中的`ImportImageOsVersionSet`获取。
                      * 
                      */
                     void SetOsVersion(const std::string& _osVersion);
@@ -129,15 +141,19 @@ namespace TencentCloud
                     bool ImageUrlHasBeenSet() const;
 
                     /**
-                     * 获取镜像名称
-                     * @return ImageName 镜像名称
+                     * 获取镜像名称。
+最多支持 60 个字符。
+                     * @return ImageName 镜像名称。
+最多支持 60 个字符。
                      * 
                      */
                     std::string GetImageName() const;
 
                     /**
-                     * 设置镜像名称
-                     * @param _imageName 镜像名称
+                     * 设置镜像名称。
+最多支持 60 个字符。
+                     * @param _imageName 镜像名称。
+最多支持 60 个字符。
                      * 
                      */
                     void SetImageName(const std::string& _imageName);
@@ -150,15 +166,19 @@ namespace TencentCloud
                     bool ImageNameHasBeenSet() const;
 
                     /**
-                     * 获取镜像描述
-                     * @return ImageDescription 镜像描述
+                     * 获取镜像描述。
+最多支持 256 个字符。
+                     * @return ImageDescription 镜像描述。
+最多支持 256 个字符。
                      * 
                      */
                     std::string GetImageDescription() const;
 
                     /**
-                     * 设置镜像描述
-                     * @param _imageDescription 镜像描述
+                     * 设置镜像描述。
+最多支持 256 个字符。
+                     * @param _imageDescription 镜像描述。
+最多支持 256 个字符。
                      * 
                      */
                     void SetImageDescription(const std::string& _imageDescription);
@@ -171,15 +191,19 @@ namespace TencentCloud
                     bool ImageDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取只检查参数，不执行任务
-                     * @return DryRun 只检查参数，不执行任务
+                     * 获取只检查参数，不执行任务。
+默认值：false
+                     * @return DryRun 只检查参数，不执行任务。
+默认值：false
                      * 
                      */
                     bool GetDryRun() const;
 
                     /**
-                     * 设置只检查参数，不执行任务
-                     * @param _dryRun 只检查参数，不执行任务
+                     * 设置只检查参数，不执行任务。
+默认值：false
+                     * @param _dryRun 只检查参数，不执行任务。
+默认值：false
                      * 
                      */
                     void SetDryRun(const bool& _dryRun);
@@ -193,14 +217,18 @@ namespace TencentCloud
 
                     /**
                      * 获取是否强制导入，参考[强制导入镜像](https://cloud.tencent.com/document/product/213/12849)
+默认值：false
                      * @return Force 是否强制导入，参考[强制导入镜像](https://cloud.tencent.com/document/product/213/12849)
+默认值：false
                      * 
                      */
                     bool GetForce() const;
 
                     /**
                      * 设置是否强制导入，参考[强制导入镜像](https://cloud.tencent.com/document/product/213/12849)
+默认值：false
                      * @param _force 是否强制导入，参考[强制导入镜像](https://cloud.tencent.com/document/product/213/12849)
+默认值：false
                      * 
                      */
                     void SetForce(const bool& _force);
@@ -235,11 +263,13 @@ namespace TencentCloud
 
                     /**
                      * 获取导入镜像后，激活操作系统采用的许可证类型。
-可选项：
+默认值：TencentCloud
+取值范围：
 TencentCloud: 腾讯云官方许可
 BYOL: 自带许可（Bring Your Own License）
                      * @return LicenseType 导入镜像后，激活操作系统采用的许可证类型。
-可选项：
+默认值：TencentCloud
+取值范围：
 TencentCloud: 腾讯云官方许可
 BYOL: 自带许可（Bring Your Own License）
                      * 
@@ -248,11 +278,13 @@ BYOL: 自带许可（Bring Your Own License）
 
                     /**
                      * 设置导入镜像后，激活操作系统采用的许可证类型。
-可选项：
+默认值：TencentCloud
+取值范围：
 TencentCloud: 腾讯云官方许可
 BYOL: 自带许可（Bring Your Own License）
                      * @param _licenseType 导入镜像后，激活操作系统采用的许可证类型。
-可选项：
+默认值：TencentCloud
+取值范围：
 TencentCloud: 腾讯云官方许可
 BYOL: 自带许可（Bring Your Own License）
                      * 
@@ -267,15 +299,23 @@ BYOL: 自带许可（Bring Your Own License）
                     bool LicenseTypeHasBeenSet() const;
 
                     /**
-                     * 获取启动模式
-                     * @return BootMode 启动模式
+                     * 获取启动模式。
+取值范围：`Legacy BIOS`、`UEFI`
+默认值：Legacy BIOS
+                     * @return BootMode 启动模式。
+取值范围：`Legacy BIOS`、`UEFI`
+默认值：Legacy BIOS
                      * 
                      */
                     std::string GetBootMode() const;
 
                     /**
-                     * 设置启动模式
-                     * @param _bootMode 启动模式
+                     * 设置启动模式。
+取值范围：`Legacy BIOS`、`UEFI`
+默认值：Legacy BIOS
+                     * @param _bootMode 启动模式。
+取值范围：`Legacy BIOS`、`UEFI`
+默认值：Legacy BIOS
                      * 
                      */
                     void SetBootMode(const std::string& _bootMode);
@@ -332,19 +372,22 @@ BYOL: 自带许可（Bring Your Own License）
                 private:
 
                     /**
-                     * 导入镜像的操作系统架构，`x86_64` 或 `i386`
+                     * 导入镜像的操作系统架构。
+取值范围包括：`x86_64` 、`i386`、`arm_64`
                      */
                     std::string m_architecture;
                     bool m_architectureHasBeenSet;
 
                     /**
-                     * 导入镜像的操作系统类型，通过`DescribeImportImageOs`获取
+                     * 导入镜像的操作系统类型 。
+可通过 [DescribeImportImageOs](https://cloud.tencent.com/document/api/213/15718) 接口返回值中的`ImportImageOsListSupported`获取。
                      */
                     std::string m_osType;
                     bool m_osTypeHasBeenSet;
 
                     /**
-                     * 导入镜像的操作系统版本，通过`DescribeImportImageOs`获取
+                     * 导入镜像的操作系统版本。
+可通过 [DescribeImportImageOs](https://cloud.tencent.com/document/api/213/15718) 接口返回值中的`ImportImageOsVersionSet`获取。
                      */
                     std::string m_osVersion;
                     bool m_osVersionHasBeenSet;
@@ -356,25 +399,29 @@ BYOL: 自带许可（Bring Your Own License）
                     bool m_imageUrlHasBeenSet;
 
                     /**
-                     * 镜像名称
+                     * 镜像名称。
+最多支持 60 个字符。
                      */
                     std::string m_imageName;
                     bool m_imageNameHasBeenSet;
 
                     /**
-                     * 镜像描述
+                     * 镜像描述。
+最多支持 256 个字符。
                      */
                     std::string m_imageDescription;
                     bool m_imageDescriptionHasBeenSet;
 
                     /**
-                     * 只检查参数，不执行任务
+                     * 只检查参数，不执行任务。
+默认值：false
                      */
                     bool m_dryRun;
                     bool m_dryRunHasBeenSet;
 
                     /**
                      * 是否强制导入，参考[强制导入镜像](https://cloud.tencent.com/document/product/213/12849)
+默认值：false
                      */
                     bool m_force;
                     bool m_forceHasBeenSet;
@@ -387,7 +434,8 @@ BYOL: 自带许可（Bring Your Own License）
 
                     /**
                      * 导入镜像后，激活操作系统采用的许可证类型。
-可选项：
+默认值：TencentCloud
+取值范围：
 TencentCloud: 腾讯云官方许可
 BYOL: 自带许可（Bring Your Own License）
                      */
@@ -395,7 +443,9 @@ BYOL: 自带许可（Bring Your Own License）
                     bool m_licenseTypeHasBeenSet;
 
                     /**
-                     * 启动模式
+                     * 启动模式。
+取值范围：`Legacy BIOS`、`UEFI`
+默认值：Legacy BIOS
                      */
                     std::string m_bootMode;
                     bool m_bootModeHasBeenSet;

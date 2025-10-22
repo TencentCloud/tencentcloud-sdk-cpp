@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取重复任务执行的具体时刻，例如"01:02:00"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExecuteAtTimeOfDay 重复任务执行的具体时刻，例如"01:02:00"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExecuteAtTimeOfDay() const;
 
                     /**
                      * 设置重复任务执行的具体时刻，例如"01:02:00"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _executeAtTimeOfDay 重复任务执行的具体时刻，例如"01:02:00"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExecuteAtTimeOfDay(const std::string& _executeAtTimeOfDay);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取每隔Step天执行一次
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Step 每隔Step天执行一次
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStep() const;
 
                     /**
                      * 设置每隔Step天执行一次
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _step 每隔Step天执行一次
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStep(const uint64_t& _step);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 重复任务执行的具体时刻，例如"01:02:00"
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_executeAtTimeOfDay;
                     bool m_executeAtTimeOfDayHasBeenSet;
 
                     /**
                      * 每隔Step天执行一次
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_step;
                     bool m_stepHasBeenSet;

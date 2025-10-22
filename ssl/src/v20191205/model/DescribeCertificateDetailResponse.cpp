@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,7 +65,9 @@ DescribeCertificateDetailResponse::DescribeCertificateDetailResponse() :
     m_encryptCertFingerprintHasBeenSet(false),
     m_encryptAlgorithmHasBeenSet(false),
     m_dvRevokeAuthDetailHasBeenSet(false),
-    m_certChainInfoHasBeenSet(false)
+    m_certChainInfoHasBeenSet(false),
+    m_domainTypeHasBeenSet(false),
+    m_certTypeHasBeenSet(false)
 {
 }
 
@@ -584,6 +586,26 @@ CoreInternalOutcome DescribeCertificateDetailResponse::Deserialize(const string 
         m_certChainInfoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DomainType") && !rsp["DomainType"].IsNull())
+    {
+        if (!rsp["DomainType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_domainType = rsp["DomainType"].GetUint64();
+        m_domainTypeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CertType") && !rsp["CertType"].IsNull())
+    {
+        if (!rsp["CertType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CertType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_certType = string(rsp["CertType"].GetString());
+        m_certTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -960,11 +982,27 @@ string DescribeCertificateDetailResponse::ToJsonString() const
         }
     }
 
+    if (m_domainTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DomainType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_domainType, allocator);
+    }
+
+    if (m_certTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certType.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -1390,6 +1428,26 @@ vector<CertBasicInfo> DescribeCertificateDetailResponse::GetCertChainInfo() cons
 bool DescribeCertificateDetailResponse::CertChainInfoHasBeenSet() const
 {
     return m_certChainInfoHasBeenSet;
+}
+
+uint64_t DescribeCertificateDetailResponse::GetDomainType() const
+{
+    return m_domainType;
+}
+
+bool DescribeCertificateDetailResponse::DomainTypeHasBeenSet() const
+{
+    return m_domainTypeHasBeenSet;
+}
+
+string DescribeCertificateDetailResponse::GetCertType() const
+{
+    return m_certType;
+}
+
+bool DescribeCertificateDetailResponse::CertTypeHasBeenSet() const
+{
+    return m_certTypeHasBeenSet;
 }
 
 

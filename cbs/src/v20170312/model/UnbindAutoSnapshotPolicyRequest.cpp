@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ using namespace std;
 
 UnbindAutoSnapshotPolicyRequest::UnbindAutoSnapshotPolicyRequest() :
     m_autoSnapshotPolicyIdHasBeenSet(false),
-    m_diskIdsHasBeenSet(false)
+    m_diskIdsHasBeenSet(false),
+    m_instanceIdsHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,19 @@ string UnbindAutoSnapshotPolicyRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_diskIds.begin(); itr != m_diskIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_instanceIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_instanceIds.begin(); itr != m_instanceIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -94,6 +108,22 @@ void UnbindAutoSnapshotPolicyRequest::SetDiskIds(const vector<string>& _diskIds)
 bool UnbindAutoSnapshotPolicyRequest::DiskIdsHasBeenSet() const
 {
     return m_diskIdsHasBeenSet;
+}
+
+vector<string> UnbindAutoSnapshotPolicyRequest::GetInstanceIds() const
+{
+    return m_instanceIds;
+}
+
+void UnbindAutoSnapshotPolicyRequest::SetInstanceIds(const vector<string>& _instanceIds)
+{
+    m_instanceIds = _instanceIds;
+    m_instanceIdsHasBeenSet = true;
+}
+
+bool UnbindAutoSnapshotPolicyRequest::InstanceIdsHasBeenSet() const
+{
+    return m_instanceIdsHasBeenSet;
 }
 
 

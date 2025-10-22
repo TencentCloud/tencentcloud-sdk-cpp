@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ ScriptInfo::ScriptInfo() :
     m_encodedContentHasBeenSet(false),
     m_encodedHttpArchiveHasBeenSet(false),
     m_loadWeightHasBeenSet(false),
-    m_fileIdHasBeenSet(false)
+    m_fileIdHasBeenSet(false),
+    m_uploadedHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome ScriptInfo::Deserialize(const rapidjson::Value &value)
         m_fileIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Uploaded") && !value["Uploaded"].IsNull())
+    {
+        if (!value["Uploaded"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScriptInfo.Uploaded` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_uploaded = value["Uploaded"].GetBool();
+        m_uploadedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void ScriptInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "FileId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_fileId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uploadedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Uploaded";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_uploaded, allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void ScriptInfo::SetFileId(const string& _fileId)
 bool ScriptInfo::FileIdHasBeenSet() const
 {
     return m_fileIdHasBeenSet;
+}
+
+bool ScriptInfo::GetUploaded() const
+{
+    return m_uploaded;
+}
+
+void ScriptInfo::SetUploaded(const bool& _uploaded)
+{
+    m_uploaded = _uploaded;
+    m_uploadedHasBeenSet = true;
+}
+
+bool ScriptInfo::UploadedHasBeenSet() const
+{
+    return m_uploadedHasBeenSet;
 }
 

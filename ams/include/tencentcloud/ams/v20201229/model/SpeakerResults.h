@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _label 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabel(const std::string& _label);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取得分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Score 得分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScore() const;
 
                     /**
                      * 设置得分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _score 得分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScore(const int64_t& _score);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetStartTime() const;
 
                     /**
                      * 设置开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTime 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTime(const double& _startTime);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
 
                     /**
                      * 得分
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_score;
                     bool m_scoreHasBeenSet;
 
                     /**
                      * 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

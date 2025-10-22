@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,14 +44,18 @@ namespace TencentCloud
 
                     /**
                      * 获取页码
+默认：1
                      * @return PageNumber 页码
+默认：1
                      * 
                      */
                     uint64_t GetPageNumber() const;
 
                     /**
                      * 设置页码
+默认：1
                      * @param _pageNumber 页码
+默认：1
                      * 
                      */
                     void SetPageNumber(const uint64_t& _pageNumber);
@@ -65,14 +69,18 @@ namespace TencentCloud
 
                     /**
                      * 获取每页数量
+默认：20 取值范围[1，200]
                      * @return PageSize 每页数量
+默认：20 取值范围[1，200]
                      * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
                      * 设置每页数量
+默认：20 取值范围[1，200]
                      * @param _pageSize 每页数量
+默认：20 取值范围[1，200]
                      * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
@@ -127,15 +135,23 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取排序字段：SuccessfulTime 预约结束时间
-                     * @return SortField 排序字段：SuccessfulTime 预约结束时间
+                     * 获取排序字段：
+默认<空>，不排序
+SuccessfulTime 预约结束时间
+                     * @return SortField 排序字段：
+默认<空>，不排序
+SuccessfulTime 预约结束时间
                      * 
                      */
                     std::string GetSortField() const;
 
                     /**
-                     * 设置排序字段：SuccessfulTime 预约结束时间
-                     * @param _sortField 排序字段：SuccessfulTime 预约结束时间
+                     * 设置排序字段：
+默认<空>，不排序
+SuccessfulTime 预约结束时间
+                     * @param _sortField 排序字段：
+默认<空>，不排序
+SuccessfulTime 预约结束时间
                      * 
                      */
                     void SetSortField(const std::string& _sortField);
@@ -148,15 +164,27 @@ namespace TencentCloud
                     bool SortFieldHasBeenSet() const;
 
                     /**
-                     * 获取排序规则：asc升序，desc降序
-                     * @return SortOrder 排序规则：asc升序，desc降序
+                     * 获取排序规则：
+asc：升序
+desc：降序
+默认：asc
+                     * @return SortOrder 排序规则：
+asc：升序
+desc：降序
+默认：asc
                      * 
                      */
                     std::string GetSortOrder() const;
 
                     /**
-                     * 设置排序规则：asc升序，desc降序
-                     * @param _sortOrder 排序规则：asc升序，desc降序
+                     * 设置排序规则：
+asc：升序
+desc：降序
+默认：asc
+                     * @param _sortOrder 排序规则：
+asc：升序
+desc：降序
+默认：asc
                      * 
                      */
                     void SetSortOrder(const std::string& _sortOrder);
@@ -172,12 +200,14 @@ namespace TencentCloud
 
                     /**
                      * 页码
+默认：1
                      */
                     uint64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
                      * 每页数量
+默认：20 取值范围[1，200]
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
@@ -195,13 +225,18 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 排序字段：SuccessfulTime 预约结束时间
+                     * 排序字段：
+默认<空>，不排序
+SuccessfulTime 预约结束时间
                      */
                     std::string m_sortField;
                     bool m_sortFieldHasBeenSet;
 
                     /**
-                     * 排序规则：asc升序，desc降序
+                     * 排序规则：
+asc：升序
+desc：降序
+默认：asc
                      */
                     std::string m_sortOrder;
                     bool m_sortOrderHasBeenSet;

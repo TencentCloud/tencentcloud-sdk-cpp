@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ using namespace std;
 ListDocItem::ListDocItem() :
     m_docBizIdHasBeenSet(false),
     m_fileNameHasBeenSet(false),
+    m_newNameHasBeenSet(false),
     m_fileTypeHasBeenSet(false),
     m_cosUrlHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
@@ -48,7 +49,14 @@ ListDocItem::ListDocItem() :
     m_webUrlHasBeenSet(false),
     m_expireStartHasBeenSet(false),
     m_expireEndHasBeenSet(false),
-    m_isAllowRetryHasBeenSet(false)
+    m_isAllowRetryHasBeenSet(false),
+    m_processingHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_cateBizIdHasBeenSet(false),
+    m_customerKnowledgeIdHasBeenSet(false),
+    m_attributeFlagsHasBeenSet(false),
+    m_isDisabledHasBeenSet(false),
+    m_staffNameHasBeenSet(false)
 {
 }
 
@@ -75,6 +83,16 @@ CoreInternalOutcome ListDocItem::Deserialize(const rapidjson::Value &value)
         }
         m_fileName = string(value["FileName"].GetString());
         m_fileNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("NewName") && !value["NewName"].IsNull())
+    {
+        if (!value["NewName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ListDocItem.NewName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_newName = string(value["NewName"].GetString());
+        m_newNameHasBeenSet = true;
     }
 
     if (value.HasMember("FileType") && !value["FileType"].IsNull())
@@ -347,6 +365,82 @@ CoreInternalOutcome ListDocItem::Deserialize(const rapidjson::Value &value)
         m_isAllowRetryHasBeenSet = true;
     }
 
+    if (value.HasMember("Processing") && !value["Processing"].IsNull())
+    {
+        if (!value["Processing"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ListDocItem.Processing` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Processing"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_processing.push_back((*itr).GetInt64());
+        }
+        m_processingHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ListDocItem.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CateBizId") && !value["CateBizId"].IsNull())
+    {
+        if (!value["CateBizId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ListDocItem.CateBizId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cateBizId = string(value["CateBizId"].GetString());
+        m_cateBizIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("CustomerKnowledgeId") && !value["CustomerKnowledgeId"].IsNull())
+    {
+        if (!value["CustomerKnowledgeId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ListDocItem.CustomerKnowledgeId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_customerKnowledgeId = string(value["CustomerKnowledgeId"].GetString());
+        m_customerKnowledgeIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("AttributeFlags") && !value["AttributeFlags"].IsNull())
+    {
+        if (!value["AttributeFlags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ListDocItem.AttributeFlags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AttributeFlags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_attributeFlags.push_back((*itr).GetUint64());
+        }
+        m_attributeFlagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsDisabled") && !value["IsDisabled"].IsNull())
+    {
+        if (!value["IsDisabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ListDocItem.IsDisabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDisabled = value["IsDisabled"].GetBool();
+        m_isDisabledHasBeenSet = true;
+    }
+
+    if (value.HasMember("StaffName") && !value["StaffName"].IsNull())
+    {
+        if (!value["StaffName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ListDocItem.StaffName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_staffName = string(value["StaffName"].GetString());
+        m_staffNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -368,6 +462,14 @@ void ListDocItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "FileName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_fileName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_newNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NewName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_newName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fileTypeHasBeenSet)
@@ -585,6 +687,72 @@ void ListDocItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, m_isAllowRetry, allocator);
     }
 
+    if (m_processingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Processing";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_processing.begin(); itr != m_processing.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cateBizIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CateBizId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cateBizId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customerKnowledgeIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomerKnowledgeId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customerKnowledgeId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_attributeFlagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AttributeFlags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_attributeFlags.begin(); itr != m_attributeFlags.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
+    if (m_isDisabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDisabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDisabled, allocator);
+    }
+
+    if (m_staffNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StaffName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_staffName.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
 
@@ -618,6 +786,22 @@ void ListDocItem::SetFileName(const string& _fileName)
 bool ListDocItem::FileNameHasBeenSet() const
 {
     return m_fileNameHasBeenSet;
+}
+
+string ListDocItem::GetNewName() const
+{
+    return m_newName;
+}
+
+void ListDocItem::SetNewName(const string& _newName)
+{
+    m_newName = _newName;
+    m_newNameHasBeenSet = true;
+}
+
+bool ListDocItem::NewNameHasBeenSet() const
+{
+    return m_newNameHasBeenSet;
 }
 
 string ListDocItem::GetFileType() const
@@ -1034,5 +1218,117 @@ void ListDocItem::SetIsAllowRetry(const bool& _isAllowRetry)
 bool ListDocItem::IsAllowRetryHasBeenSet() const
 {
     return m_isAllowRetryHasBeenSet;
+}
+
+vector<int64_t> ListDocItem::GetProcessing() const
+{
+    return m_processing;
+}
+
+void ListDocItem::SetProcessing(const vector<int64_t>& _processing)
+{
+    m_processing = _processing;
+    m_processingHasBeenSet = true;
+}
+
+bool ListDocItem::ProcessingHasBeenSet() const
+{
+    return m_processingHasBeenSet;
+}
+
+string ListDocItem::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void ListDocItem::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool ListDocItem::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+string ListDocItem::GetCateBizId() const
+{
+    return m_cateBizId;
+}
+
+void ListDocItem::SetCateBizId(const string& _cateBizId)
+{
+    m_cateBizId = _cateBizId;
+    m_cateBizIdHasBeenSet = true;
+}
+
+bool ListDocItem::CateBizIdHasBeenSet() const
+{
+    return m_cateBizIdHasBeenSet;
+}
+
+string ListDocItem::GetCustomerKnowledgeId() const
+{
+    return m_customerKnowledgeId;
+}
+
+void ListDocItem::SetCustomerKnowledgeId(const string& _customerKnowledgeId)
+{
+    m_customerKnowledgeId = _customerKnowledgeId;
+    m_customerKnowledgeIdHasBeenSet = true;
+}
+
+bool ListDocItem::CustomerKnowledgeIdHasBeenSet() const
+{
+    return m_customerKnowledgeIdHasBeenSet;
+}
+
+vector<uint64_t> ListDocItem::GetAttributeFlags() const
+{
+    return m_attributeFlags;
+}
+
+void ListDocItem::SetAttributeFlags(const vector<uint64_t>& _attributeFlags)
+{
+    m_attributeFlags = _attributeFlags;
+    m_attributeFlagsHasBeenSet = true;
+}
+
+bool ListDocItem::AttributeFlagsHasBeenSet() const
+{
+    return m_attributeFlagsHasBeenSet;
+}
+
+bool ListDocItem::GetIsDisabled() const
+{
+    return m_isDisabled;
+}
+
+void ListDocItem::SetIsDisabled(const bool& _isDisabled)
+{
+    m_isDisabled = _isDisabled;
+    m_isDisabledHasBeenSet = true;
+}
+
+bool ListDocItem::IsDisabledHasBeenSet() const
+{
+    return m_isDisabledHasBeenSet;
+}
+
+string ListDocItem::GetStaffName() const
+{
+    return m_staffName;
+}
+
+void ListDocItem::SetStaffName(const string& _staffName)
+{
+    m_staffName = _staffName;
+    m_staffNameHasBeenSet = true;
+}
+
+bool ListDocItem::StaffNameHasBeenSet() const
+{
+    return m_staffNameHasBeenSet;
 }
 

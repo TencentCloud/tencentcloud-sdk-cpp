@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 用户创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置用户创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 用户创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -157,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取keytab文件的下载地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DownLoadKeyTabUrl keytab文件的下载地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDownLoadKeyTabUrl() const;
 
                     /**
                      * 设置keytab文件的下载地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _downLoadKeyTabUrl keytab文件的下载地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDownLoadKeyTabUrl(const std::string& _downLoadKeyTabUrl);
@@ -202,7 +194,6 @@ namespace TencentCloud
 
                     /**
                      * 用户创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
@@ -215,7 +206,6 @@ namespace TencentCloud
 
                     /**
                      * keytab文件的下载地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_downLoadKeyTabUrl;
                     bool m_downLoadKeyTabUrlHasBeenSet;

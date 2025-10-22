@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,7 +65,10 @@ UpdateInstanceRequest::UpdateInstanceRequest() :
     m_shardAllocationBytesHasBeenSet(false),
     m_readWriteModeHasBeenSet(false),
     m_enableScheduleRecoverGroupHasBeenSet(false),
-    m_enableScheduleOperationDurationHasBeenSet(false)
+    m_enableScheduleOperationDurationHasBeenSet(false),
+    m_enableDestroyProtectionHasBeenSet(false),
+    m_autoScaleDiskInfoListHasBeenSet(false),
+    m_autoScaleDiskDeleteNodeTypeListHasBeenSet(false)
 {
 }
 
@@ -446,6 +449,42 @@ string UpdateInstanceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_enableScheduleOperationDuration.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_enableDestroyProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableDestroyProtection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_enableDestroyProtection.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoScaleDiskInfoListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoScaleDiskInfoList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_autoScaleDiskInfoList.begin(); itr != m_autoScaleDiskInfoList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_autoScaleDiskDeleteNodeTypeListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoScaleDiskDeleteNodeTypeList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_autoScaleDiskDeleteNodeTypeList.begin(); itr != m_autoScaleDiskDeleteNodeTypeList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -1142,6 +1181,54 @@ void UpdateInstanceRequest::SetEnableScheduleOperationDuration(const EnableSched
 bool UpdateInstanceRequest::EnableScheduleOperationDurationHasBeenSet() const
 {
     return m_enableScheduleOperationDurationHasBeenSet;
+}
+
+string UpdateInstanceRequest::GetEnableDestroyProtection() const
+{
+    return m_enableDestroyProtection;
+}
+
+void UpdateInstanceRequest::SetEnableDestroyProtection(const string& _enableDestroyProtection)
+{
+    m_enableDestroyProtection = _enableDestroyProtection;
+    m_enableDestroyProtectionHasBeenSet = true;
+}
+
+bool UpdateInstanceRequest::EnableDestroyProtectionHasBeenSet() const
+{
+    return m_enableDestroyProtectionHasBeenSet;
+}
+
+vector<AutoScaleDiskInfo> UpdateInstanceRequest::GetAutoScaleDiskInfoList() const
+{
+    return m_autoScaleDiskInfoList;
+}
+
+void UpdateInstanceRequest::SetAutoScaleDiskInfoList(const vector<AutoScaleDiskInfo>& _autoScaleDiskInfoList)
+{
+    m_autoScaleDiskInfoList = _autoScaleDiskInfoList;
+    m_autoScaleDiskInfoListHasBeenSet = true;
+}
+
+bool UpdateInstanceRequest::AutoScaleDiskInfoListHasBeenSet() const
+{
+    return m_autoScaleDiskInfoListHasBeenSet;
+}
+
+vector<string> UpdateInstanceRequest::GetAutoScaleDiskDeleteNodeTypeList() const
+{
+    return m_autoScaleDiskDeleteNodeTypeList;
+}
+
+void UpdateInstanceRequest::SetAutoScaleDiskDeleteNodeTypeList(const vector<string>& _autoScaleDiskDeleteNodeTypeList)
+{
+    m_autoScaleDiskDeleteNodeTypeList = _autoScaleDiskDeleteNodeTypeList;
+    m_autoScaleDiskDeleteNodeTypeListHasBeenSet = true;
+}
+
+bool UpdateInstanceRequest::AutoScaleDiskDeleteNodeTypeListHasBeenSet() const
+{
+    return m_autoScaleDiskDeleteNodeTypeListHasBeenSet;
 }
 
 

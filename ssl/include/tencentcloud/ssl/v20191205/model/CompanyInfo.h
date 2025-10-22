@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -195,19 +195,23 @@ namespace TencentCloud
                     bool CompanyPhoneHasBeenSet() const;
 
                     /**
-                     * 获取类型
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IdType 类型
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取公司证件类型，取值范围：
+TYDMZ（统一社会信用代码 ）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
+OTHERS（其他）
+                     * @return IdType 公司证件类型，取值范围：
+TYDMZ（统一社会信用代码 ）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
+OTHERS（其他）
                      * 
                      */
                     std::string GetIdType() const;
 
                     /**
-                     * 设置类型
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _idType 类型
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置公司证件类型，取值范围：
+TYDMZ（统一社会信用代码 ）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
+OTHERS（其他）
+                     * @param _idType 公司证件类型，取值范围：
+TYDMZ（统一社会信用代码 ）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
+OTHERS（其他）
                      * 
                      */
                     void SetIdType(const std::string& _idType);
@@ -220,19 +224,19 @@ namespace TencentCloud
                     bool IdTypeHasBeenSet() const;
 
                     /**
-                     * 获取ID号
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IdNumber ID号
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取公司证件号码，取值范围：
+TYDMZ（统一社会信用代码 ）：11532xxxxxxxx24820
+                     * @return IdNumber 公司证件号码，取值范围：
+TYDMZ（统一社会信用代码 ）：11532xxxxxxxx24820
                      * 
                      */
                     std::string GetIdNumber() const;
 
                     /**
-                     * 设置ID号
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _idNumber ID号
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置公司证件号码，取值范围：
+TYDMZ（统一社会信用代码 ）：11532xxxxxxxx24820
+                     * @param _idNumber 公司证件号码，取值范围：
+TYDMZ（统一社会信用代码 ）：11532xxxxxxxx24820
                      * 
                      */
                     void SetIdNumber(const std::string& _idNumber);
@@ -246,18 +250,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tags> GetTags() const;
 
                     /**
                      * 设置标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<Tags>& _tags);
@@ -314,22 +314,22 @@ namespace TencentCloud
                     bool m_companyPhoneHasBeenSet;
 
                     /**
-                     * 类型
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 公司证件类型，取值范围：
+TYDMZ（统一社会信用代码 ）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
+OTHERS（其他）
                      */
                     std::string m_idType;
                     bool m_idTypeHasBeenSet;
 
                     /**
-                     * ID号
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 公司证件号码，取值范围：
+TYDMZ（统一社会信用代码 ）：11532xxxxxxxx24820
                      */
                     std::string m_idNumber;
                     bool m_idNumberHasBeenSet;
 
                     /**
                      * 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tags> m_tags;
                     bool m_tagsHasBeenSet;

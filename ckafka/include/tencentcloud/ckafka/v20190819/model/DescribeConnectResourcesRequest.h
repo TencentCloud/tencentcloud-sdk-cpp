@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取连接源名称的关键字查询
-                     * @return SearchWord 连接源名称的关键字查询
+                     * 获取连接源名称的关键字查询,支持模糊匹配
+                     * @return SearchWord 连接源名称的关键字查询,支持模糊匹配
                      * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
-                     * 设置连接源名称的关键字查询
-                     * @param _searchWord 连接源名称的关键字查询
+                     * 设置连接源名称的关键字查询,支持模糊匹配
+                     * @param _searchWord 连接源名称的关键字查询,支持模糊匹配
                      * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，默认为20，最大值为100
-                     * @return Limit 返回数量，默认为20，最大值为100
+                     * 获取返回数量，默认为20，最大值为1000 (超过1000,则限制为1000)
+                     * @return Limit 返回数量，默认为20，最大值为1000 (超过1000,则限制为1000)
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认为20，最大值为100
-                     * @param _limit 返回数量，默认为20，最大值为100
+                     * 设置返回数量，默认为20，最大值为1000 (超过1000,则限制为1000)
+                     * @param _limit 返回数量，默认为20，最大值为1000 (超过1000,则限制为1000)
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -156,7 +156,7 @@ namespace TencentCloud
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 连接源名称的关键字查询
+                     * 连接源名称的关键字查询,支持模糊匹配
                      */
                     std::string m_searchWord;
                     bool m_searchWordHasBeenSet;
@@ -168,7 +168,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量，默认为20，最大值为100
+                     * 返回数量，默认为20，最大值为1000 (超过1000,则限制为1000)
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

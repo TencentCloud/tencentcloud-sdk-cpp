@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetricItem 数据项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMetricItem() const;
 
                     /**
                      * 设置数据项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _metricItem 数据项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMetricItem(const std::string& _metricItem);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetricName 数据项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMetricName() const;
 
                     /**
                      * 设置数据项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _metricName 数据项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMetricName(const std::string& _metricName);
@@ -126,14 +118,12 @@ namespace TencentCloud
 
                     /**
                      * 数据项
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_metricItem;
                     bool m_metricItemHasBeenSet;
 
                     /**
                      * 数据项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_metricName;
                     bool m_metricNameHasBeenSet;

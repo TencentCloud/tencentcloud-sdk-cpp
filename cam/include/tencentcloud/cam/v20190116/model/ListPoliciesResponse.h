@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -92,9 +92,7 @@ IsAttached: 当需要查询标记实体是否已经关联策略时不为null。0
 
                     /**
                      * 获取保留字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceTypeList 保留字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetServiceTypeList() const;
@@ -131,7 +129,6 @@ IsAttached: 当需要查询标记实体是否已经关联策略时不为null。0
 
                     /**
                      * 保留字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_serviceTypeList;
                     bool m_serviceTypeListHasBeenSet;

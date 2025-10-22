@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -355,7 +355,9 @@ namespace TencentCloud
                 AcceptVpcPeerConnectionOutcomeCallable AcceptVpcPeerConnectionCallable(const Model::AcceptVpcPeerConnectionRequest& request);
 
                 /**
-                 *批量注册虚拟IP，异步接口。通过接口来查询任务进度。每次请求最多注册256个IP
+                 *黑石1.0接口，业务已下线，90天无调用
+
+批量注册虚拟IP，异步接口。通过接口来查询任务进度。每次请求最多注册256个IP
                  * @param req AsyncRegisterIpsRequest
                  * @return AsyncRegisterIpsOutcome
                  */
@@ -373,7 +375,9 @@ namespace TencentCloud
                 BindEipsToNatGatewayOutcomeCallable BindEipsToNatGatewayCallable(const Model::BindEipsToNatGatewayRequest& request);
 
                 /**
-                 *可用于将子网的部分IP绑定到NAT网关
+                 *黑石1.0接口，业务已下线，90天无调用
+
+可用于将子网的部分IP绑定到NAT网关
                  * @param req BindIpsToNatGatewayRequest
                  * @return BindIpsToNatGatewayOutcome
                  */
@@ -382,7 +386,9 @@ namespace TencentCloud
                 BindIpsToNatGatewayOutcomeCallable BindIpsToNatGatewayCallable(const Model::BindIpsToNatGatewayRequest& request);
 
                 /**
-                 *NAT网关绑定子网后，该子网内全部IP可出公网
+                 *黑石1.0接口，业务已下线，90天无调用
+
+NAT网关绑定子网后，该子网内全部IP可出公网
                  * @param req BindSubnetsToNatGatewayRequest
                  * @return BindSubnetsToNatGatewayOutcome
                  */
@@ -391,7 +397,9 @@ namespace TencentCloud
                 BindSubnetsToNatGatewayOutcomeCallable BindSubnetsToNatGatewayCallable(const Model::BindSubnetsToNatGatewayRequest& request);
 
                 /**
-                 *本接口（CreateCustomerGateway）用于创建对端网关。
+                 *90天无调用
+
+本接口（CreateCustomerGateway）用于创建对端网关。
                  * @param req CreateCustomerGatewayRequest
                  * @return CreateCustomerGatewayOutcome
                  */
@@ -409,7 +417,9 @@ namespace TencentCloud
                 CreateDockerSubnetWithVlanOutcomeCallable CreateDockerSubnetWithVlanCallable(const Model::CreateDockerSubnetWithVlanRequest& request);
 
                 /**
-                 *本接口（CreateHostedInterface）用于黑石托管机器加入带VLANID不为5的子网。
+                 *黑石1.0接口，业务已下线，90天无调用
+
+本接口（CreateHostedInterface）用于黑石托管机器加入带VLANID不为5的子网。
 
 1) 不能加入vlanId 为5的子网，只能加入VLANID范围为2000-2999的子网。
 2) 每台托管机器最多可以加入20个子网。
@@ -431,7 +441,9 @@ namespace TencentCloud
                 CreateInterfacesOutcomeCallable CreateInterfacesCallable(const Model::CreateInterfacesRequest& request);
 
                 /**
-                 *创建NAT网关接口，可针对网段方式、子网全部IP、子网部分IP这三种方式创建NAT网关
+                 *黑石1.0接口，业务已下线，90天无调用
+
+创建NAT网关接口，可针对网段方式、子网全部IP、子网部分IP这三种方式创建NAT网关
                  * @param req CreateNatGatewayRequest
                  * @return CreateNatGatewayOutcome
                  */
@@ -440,7 +452,9 @@ namespace TencentCloud
                 CreateNatGatewayOutcomeCallable CreateNatGatewayCallable(const Model::CreateNatGatewayRequest& request);
 
                 /**
-                 *创建黑石路由表的路由规则
+                 *黑石1.0接口，业务已下线，90天无调用
+
+创建黑石路由表的路由规则
                  * @param req CreateRoutePoliciesRequest
                  * @return CreateRoutePoliciesOutcome
                  */
@@ -468,7 +482,9 @@ namespace TencentCloud
                 CreateVirtualSubnetWithVlanOutcomeCallable CreateVirtualSubnetWithVlanCallable(const Model::CreateVirtualSubnetWithVlanRequest& request);
 
                 /**
-                 *创建黑石私有网络
+                 *黑石1.0接口，业务已下线，90天无调用
+
+创建黑石私有网络
                  * @param req CreateVpcRequest
                  * @return CreateVpcOutcome
                  */
@@ -477,7 +493,9 @@ namespace TencentCloud
                 CreateVpcOutcomeCallable CreateVpcCallable(const Model::CreateVpcRequest& request);
 
                 /**
-                 *创建对等连接
+                 *黑石1.0接口，业务已下线，90天无调用
+
+创建对等连接
                  * @param req CreateVpcPeerConnectionRequest
                  * @return CreateVpcPeerConnectionOutcome
                  */
@@ -524,7 +542,9 @@ namespace TencentCloud
                 DeleteInterfacesOutcomeCallable DeleteInterfacesCallable(const Model::DeleteInterfacesRequest& request);
 
                 /**
-                 *删除NAT网关
+                 *黑石1.0接口，业务已下线，90天无调用
+
+删除NAT网关
                  * @param req DeleteNatGatewayRequest
                  * @return DeleteNatGatewayOutcome
                  */
@@ -533,7 +553,9 @@ namespace TencentCloud
                 DeleteNatGatewayOutcomeCallable DeleteNatGatewayCallable(const Model::DeleteNatGatewayRequest& request);
 
                 /**
-                 *删除黑石路由表路由规则
+                 *黑石1.0接口，业务已下线，90天无调用
+
+删除黑石路由表路由规则
                  * @param req DeleteRoutePolicyRequest
                  * @return DeleteRoutePolicyOutcome
                  */
@@ -599,7 +621,9 @@ namespace TencentCloud
                 DeleteVpnGatewayOutcomeCallable DeleteVpnGatewayCallable(const Model::DeleteVpnGatewayRequest& request);
 
                 /**
-                 *注销私有网络IP为空闲
+                 *黑石1.0接口，业务已下线，90天无调用
+
+注销私有网络IP为空闲
                  * @param req DeregisterIpsRequest
                  * @return DeregisterIpsOutcome
                  */
@@ -762,7 +786,9 @@ namespace TencentCloud
                 DescribeVpnGatewaysOutcomeCallable DescribeVpnGatewaysCallable(const Model::DescribeVpnGatewaysRequest& request);
 
                 /**
-                 *本接口(DownloadCustomerGatewayConfiguration)用于下载VPN通道配置。
+                 *90天无调用
+
+本接口(DownloadCustomerGatewayConfiguration)用于下载VPN通道配置。
                  * @param req DownloadCustomerGatewayConfigurationRequest
                  * @return DownloadCustomerGatewayConfigurationOutcome
                  */
@@ -780,7 +806,9 @@ namespace TencentCloud
                 ModifyCustomerGatewayAttributeOutcomeCallable ModifyCustomerGatewayAttributeCallable(const Model::ModifyCustomerGatewayAttributeRequest& request);
 
                 /**
-                 *修改自定义路由
+                 *黑石1.0接口，业务已下线，90天无调用
+
+修改自定义路由
                  * @param req ModifyRoutePolicyRequest
                  * @return ModifyRoutePolicyOutcome
                  */
@@ -789,7 +817,9 @@ namespace TencentCloud
                 ModifyRoutePolicyOutcomeCallable ModifyRoutePolicyCallable(const Model::ModifyRoutePolicyRequest& request);
 
                 /**
-                 *修改路由表
+                 *黑石1.0接口，业务已下线，90天无调用
+
+修改路由表
                  * @param req ModifyRouteTableRequest
                  * @return ModifyRouteTableOutcome
                  */
@@ -880,7 +910,9 @@ namespace TencentCloud
                 UnbindEipsFromNatGatewayOutcomeCallable UnbindEipsFromNatGatewayCallable(const Model::UnbindEipsFromNatGatewayRequest& request);
 
                 /**
-                 *NAT网关解绑IP接口，可将子网的部分IP从NAT网关中解绑
+                 *黑石1.0接口，业务已下线，90天无调用
+
+NAT网关解绑IP接口，可将子网的部分IP从NAT网关中解绑
                  * @param req UnbindIpsFromNatGatewayRequest
                  * @return UnbindIpsFromNatGatewayOutcome
                  */
@@ -889,7 +921,9 @@ namespace TencentCloud
                 UnbindIpsFromNatGatewayOutcomeCallable UnbindIpsFromNatGatewayCallable(const Model::UnbindIpsFromNatGatewayRequest& request);
 
                 /**
-                 *NAT网关解绑子网接口，可将子网解绑NAT网关
+                 *黑石1.0接口，业务已下线，90天无调用
+
+NAT网关解绑子网接口，可将子网解绑NAT网关
                  * @param req UnbindSubnetsFromNatGatewayRequest
                  * @return UnbindSubnetsFromNatGatewayOutcome
                  */
@@ -898,7 +932,9 @@ namespace TencentCloud
                 UnbindSubnetsFromNatGatewayOutcomeCallable UnbindSubnetsFromNatGatewayCallable(const Model::UnbindSubnetsFromNatGatewayRequest& request);
 
                 /**
-                 *升级NAT网关接口，可NAT网关修改为小型NAT网关、中型NAT网关、以及大型NAT网关
+                 *黑石1.0接口，业务已下线，90天无调用
+
+升级NAT网关接口，可NAT网关修改为小型NAT网关、中型NAT网关、以及大型NAT网关
 
                  * @param req UpgradeNatGatewayRequest
                  * @return UpgradeNatGatewayOutcome

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,84 +71,84 @@ namespace TencentCloud
                     /**
                      * 获取专用集群类型id（移到下一层级，已经废弃，后续将删除）
                      * @return DedicatedClusterTypeId 专用集群类型id（移到下一层级，已经废弃，后续将删除）
-                     * 
+                     * @deprecated
                      */
                     std::string GetDedicatedClusterTypeId() const;
 
                     /**
                      * 设置专用集群类型id（移到下一层级，已经废弃，后续将删除）
                      * @param _dedicatedClusterTypeId 专用集群类型id（移到下一层级，已经废弃，后续将删除）
-                     * 
+                     * @deprecated
                      */
                     void SetDedicatedClusterTypeId(const std::string& _dedicatedClusterTypeId);
 
                     /**
                      * 判断参数 DedicatedClusterTypeId 是否已赋值
                      * @return DedicatedClusterTypeId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DedicatedClusterTypeIdHasBeenSet() const;
 
                     /**
                      * 获取支持的存储类型列表（移到下一层级，已经废弃，后续将删除）
                      * @return SupportedStorageType 支持的存储类型列表（移到下一层级，已经废弃，后续将删除）
-                     * 
+                     * @deprecated
                      */
                     std::vector<std::string> GetSupportedStorageType() const;
 
                     /**
                      * 设置支持的存储类型列表（移到下一层级，已经废弃，后续将删除）
                      * @param _supportedStorageType 支持的存储类型列表（移到下一层级，已经废弃，后续将删除）
-                     * 
+                     * @deprecated
                      */
                     void SetSupportedStorageType(const std::vector<std::string>& _supportedStorageType);
 
                     /**
                      * 判断参数 SupportedStorageType 是否已赋值
                      * @return SupportedStorageType 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool SupportedStorageTypeHasBeenSet() const;
 
                     /**
                      * 获取支持的上连交换机的链路传输速率(GiB)（移到下一层级，已经废弃，后续将删除）
                      * @return SupportedUplinkSpeed 支持的上连交换机的链路传输速率(GiB)（移到下一层级，已经废弃，后续将删除）
-                     * 
+                     * @deprecated
                      */
                     std::vector<int64_t> GetSupportedUplinkSpeed() const;
 
                     /**
                      * 设置支持的上连交换机的链路传输速率(GiB)（移到下一层级，已经废弃，后续将删除）
                      * @param _supportedUplinkSpeed 支持的上连交换机的链路传输速率(GiB)（移到下一层级，已经废弃，后续将删除）
-                     * 
+                     * @deprecated
                      */
                     void SetSupportedUplinkSpeed(const std::vector<int64_t>& _supportedUplinkSpeed);
 
                     /**
                      * 判断参数 SupportedUplinkSpeed 是否已赋值
                      * @return SupportedUplinkSpeed 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool SupportedUplinkSpeedHasBeenSet() const;
 
                     /**
                      * 获取支持的实例族列表（移到下一层级，已经废弃，后续将删除）
                      * @return SupportedInstanceFamily 支持的实例族列表（移到下一层级，已经废弃，后续将删除）
-                     * 
+                     * @deprecated
                      */
                     std::vector<std::string> GetSupportedInstanceFamily() const;
 
                     /**
                      * 设置支持的实例族列表（移到下一层级，已经废弃，后续将删除）
                      * @param _supportedInstanceFamily 支持的实例族列表（移到下一层级，已经废弃，后续将删除）
-                     * 
+                     * @deprecated
                      */
                     void SetSupportedInstanceFamily(const std::vector<std::string>& _supportedInstanceFamily);
 
                     /**
                      * 判断参数 SupportedInstanceFamily 是否已赋值
                      * @return SupportedInstanceFamily 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool SupportedInstanceFamilyHasBeenSet() const;
 
@@ -280,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子订单详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DedicatedClusterOrderItems 子订单详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DedicatedClusterOrderItem> GetDedicatedClusterOrderItems() const;
 
                     /**
                      * 设置子订单详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dedicatedClusterOrderItems 子订单详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDedicatedClusterOrderItems(const std::vector<DedicatedClusterOrderItem>& _dedicatedClusterOrderItems);
@@ -305,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cpu值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cpu cpu值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCpu() const;
 
                     /**
                      * 设置cpu值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cpu cpu值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCpu(const int64_t& _cpu);
@@ -330,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取mem值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Mem mem值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMem() const;
 
                     /**
                      * 设置mem值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mem mem值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMem(const int64_t& _mem);
@@ -355,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取gpu值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Gpu gpu值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetGpu() const;
 
                     /**
                      * 设置gpu值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gpu gpu值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGpu(const int64_t& _gpu);
@@ -380,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0代表未支付，1代表已支付
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayStatus 0代表未支付，1代表已支付
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPayStatus() const;
 
                     /**
                      * 设置0代表未支付，1代表已支付
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _payStatus 0代表未支付，1代表已支付
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPayStatus(const int64_t& _payStatus);
@@ -405,18 +385,14 @@ namespace TencentCloud
 
                     /**
                      * 获取支付方式，一次性、按月、按年
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayType 支付方式，一次性、按月、按年
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPayType() const;
 
                     /**
                      * 设置支付方式，一次性、按月、按年
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _payType 支付方式，一次性、按月、按年
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPayType(const std::string& _payType);
@@ -430,18 +406,14 @@ namespace TencentCloud
 
                     /**
                      * 获取购买时长的单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeUnit 购买时长的单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTimeUnit() const;
 
                     /**
                      * 设置购买时长的单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeUnit 购买时长的单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeUnit(const std::string& _timeUnit);
@@ -455,18 +427,14 @@ namespace TencentCloud
 
                     /**
                      * 获取购买时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeSpan 购买时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTimeSpan() const;
 
                     /**
                      * 设置购买时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeSpan 购买时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeSpan(const int64_t& _timeSpan);
@@ -480,18 +448,14 @@ namespace TencentCloud
 
                     /**
                      * 获取订单类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrderType 订单类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOrderType() const;
 
                     /**
                      * 设置订单类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _orderType 订单类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOrderType(const std::string& _orderType);
@@ -748,63 +712,54 @@ namespace TencentCloud
 
                     /**
                      * 子订单详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DedicatedClusterOrderItem> m_dedicatedClusterOrderItems;
                     bool m_dedicatedClusterOrderItemsHasBeenSet;
 
                     /**
                      * cpu值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cpu;
                     bool m_cpuHasBeenSet;
 
                     /**
                      * mem值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_mem;
                     bool m_memHasBeenSet;
 
                     /**
                      * gpu值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_gpu;
                     bool m_gpuHasBeenSet;
 
                     /**
                      * 0代表未支付，1代表已支付
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_payStatus;
                     bool m_payStatusHasBeenSet;
 
                     /**
                      * 支付方式，一次性、按月、按年
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_payType;
                     bool m_payTypeHasBeenSet;
 
                     /**
                      * 购买时长的单位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timeUnit;
                     bool m_timeUnitHasBeenSet;
 
                     /**
                      * 购买时长
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
 
                     /**
                      * 订单类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_orderType;
                     bool m_orderTypeHasBeenSet;

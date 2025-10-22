@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcbr/v20220217/model/DeployParam.h>
 #include <tencentcloud/tcbr/v20220217/model/ServerBaseConfig.h>
+#include <tencentcloud/tcbr/v20220217/model/DiffConfigItem.h>
 
 
 namespace TencentCloud
@@ -108,15 +109,15 @@ namespace TencentCloud
                     bool DeployInfoHasBeenSet() const;
 
                     /**
-                     * 获取服务配置信息
-                     * @return ServerConfig 服务配置信息
+                     * 获取服务配置信息(已废弃)
+                     * @return ServerConfig 服务配置信息(已废弃)
                      * 
                      */
                     ServerBaseConfig GetServerConfig() const;
 
                     /**
-                     * 设置服务配置信息
-                     * @param _serverConfig 服务配置信息
+                     * 设置服务配置信息(已废弃)
+                     * @param _serverConfig 服务配置信息(已废弃)
                      * 
                      */
                     void SetServerConfig(const ServerBaseConfig& _serverConfig);
@@ -127,6 +128,48 @@ namespace TencentCloud
                      * 
                      */
                     bool ServerConfigHasBeenSet() const;
+
+                    /**
+                     * 获取业务类型，默认tcr
+                     * @return Business 业务类型，默认tcr
+                     * 
+                     */
+                    std::string GetBusiness() const;
+
+                    /**
+                     * 设置业务类型，默认tcr
+                     * @param _business 业务类型，默认tcr
+                     * 
+                     */
+                    void SetBusiness(const std::string& _business);
+
+                    /**
+                     * 判断参数 Business 是否已赋值
+                     * @return Business 是否已赋值
+                     * 
+                     */
+                    bool BusinessHasBeenSet() const;
+
+                    /**
+                     * 获取服务配置信息
+                     * @return Items 服务配置信息
+                     * 
+                     */
+                    std::vector<DiffConfigItem> GetItems() const;
+
+                    /**
+                     * 设置服务配置信息
+                     * @param _items 服务配置信息
+                     * 
+                     */
+                    void SetItems(const std::vector<DiffConfigItem>& _items);
+
+                    /**
+                     * 判断参数 Items 是否已赋值
+                     * @return Items 是否已赋值
+                     * 
+                     */
+                    bool ItemsHasBeenSet() const;
 
                 private:
 
@@ -149,10 +192,22 @@ namespace TencentCloud
                     bool m_deployInfoHasBeenSet;
 
                     /**
-                     * 服务配置信息
+                     * 服务配置信息(已废弃)
                      */
                     ServerBaseConfig m_serverConfig;
                     bool m_serverConfigHasBeenSet;
+
+                    /**
+                     * 业务类型，默认tcr
+                     */
+                    std::string m_business;
+                    bool m_businessHasBeenSet;
+
+                    /**
+                     * 服务配置信息
+                     */
+                    std::vector<DiffConfigItem> m_items;
+                    bool m_itemsHasBeenSet;
 
                 };
             }

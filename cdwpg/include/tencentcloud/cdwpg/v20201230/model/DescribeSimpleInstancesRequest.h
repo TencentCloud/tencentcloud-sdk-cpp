@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取11
-                     * @return SearchInstanceId 11
+                     * 获取用集群id搜索
+                     * @return SearchInstanceId 用集群id搜索
                      * 
                      */
                     std::string GetSearchInstanceId() const;
 
                     /**
-                     * 设置11
-                     * @param _searchInstanceId 11
+                     * 设置用集群id搜索
+                     * @param _searchInstanceId 用集群id搜索
                      * 
                      */
                     void SetSearchInstanceId(const std::string& _searchInstanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SearchInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取11
-                     * @return SearchInstanceName 11
+                     * 获取用集群名字搜索
+                     * @return SearchInstanceName 用集群名字搜索
                      * 
                      */
                     std::string GetSearchInstanceName() const;
 
                     /**
-                     * 设置11
-                     * @param _searchInstanceName 11
+                     * 设置用集群名字搜索
+                     * @param _searchInstanceName 用集群名字搜索
                      * 
                      */
                     void SetSearchInstanceName(const std::string& _searchInstanceName);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool SearchInstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取11
-                     * @return Offset 11
+                     * 获取分页参数，第一页为0，第二页为10
+                     * @return Offset 分页参数，第一页为0，第二页为10
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置11
-                     * @param _offset 11
+                     * 设置分页参数，第一页为0，第二页为10
+                     * @param _offset 分页参数，第一页为0，第二页为10
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取11
-                     * @return Limit 11
+                     * 获取分页参数，分页步长，默认为10
+                     * @return Limit 分页参数，分页步长，默认为10
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置11
-                     * @param _limit 11
+                     * 设置分页参数，分页步长，默认为10
+                     * @param _limit 分页参数，分页步长，默认为10
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取11
-                     * @return SearchTags 11
+                     * 获取用标签列表搜索
+                     * @return SearchTags 用标签列表搜索
                      * 
                      */
                     std::vector<std::string> GetSearchTags() const;
 
                     /**
-                     * 设置11
-                     * @param _searchTags 11
+                     * 设置用标签列表搜索
+                     * @param _searchTags 用标签列表搜索
                      * 
                      */
                     void SetSearchTags(const std::vector<std::string>& _searchTags);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 11
+                     * 用集群id搜索
                      */
                     std::string m_searchInstanceId;
                     bool m_searchInstanceIdHasBeenSet;
 
                     /**
-                     * 11
+                     * 用集群名字搜索
                      */
                     std::string m_searchInstanceName;
                     bool m_searchInstanceNameHasBeenSet;
 
                     /**
-                     * 11
+                     * 分页参数，第一页为0，第二页为10
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 11
+                     * 分页参数，分页步长，默认为10
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 11
+                     * 用标签列表搜索
                      */
                     std::vector<std::string> m_searchTags;
                     bool m_searchTagsHasBeenSet;

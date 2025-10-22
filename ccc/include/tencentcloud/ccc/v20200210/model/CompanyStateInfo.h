@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -214,6 +214,27 @@ namespace TencentCloud
                      */
                     bool ModifyTimeHasBeenSet() const;
 
+                    /**
+                     * 获取合同编号
+                     * @return ContractNo 合同编号
+                     * 
+                     */
+                    std::string GetContractNo() const;
+
+                    /**
+                     * 设置合同编号
+                     * @param _contractNo 合同编号
+                     * 
+                     */
+                    void SetContractNo(const std::string& _contractNo);
+
+                    /**
+                     * 判断参数 ContractNo 是否已赋值
+                     * @return ContractNo 是否已赋值
+                     * 
+                     */
+                    bool ContractNoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +284,12 @@ namespace TencentCloud
                      */
                     int64_t m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
+
+                    /**
+                     * 合同编号
+                     */
+                    std::string m_contractNo;
+                    bool m_contractNoHasBeenSet;
 
                 };
             }

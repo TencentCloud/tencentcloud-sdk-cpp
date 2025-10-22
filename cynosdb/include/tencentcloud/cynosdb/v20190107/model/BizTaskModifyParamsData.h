@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群参数修改数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterParamList 集群参数修改数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ModifyParamItem> GetClusterParamList() const;
 
                     /**
                      * 设置集群参数修改数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterParamList 集群参数修改数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterParamList(const std::vector<ModifyParamItem>& _clusterParamList);
@@ -96,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例参数修改数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyInstanceParams 实例参数修改数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BizTaskModifyInstanceParam> GetModifyInstanceParams() const;
 
                     /**
                      * 设置实例参数修改数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyInstanceParams 实例参数修改数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyInstanceParams(const std::vector<BizTaskModifyInstanceParam>& _modifyInstanceParams);
@@ -129,14 +121,12 @@ namespace TencentCloud
 
                     /**
                      * 集群参数修改数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ModifyParamItem> m_clusterParamList;
                     bool m_clusterParamListHasBeenSet;
 
                     /**
                      * 实例参数修改数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BizTaskModifyInstanceParam> m_modifyInstanceParams;
                     bool m_modifyInstanceParamsHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,8 +69,18 @@ namespace TencentCloud
 
                     /**
                      * 获取元数据信息列表, 可选值为 __SOURCE__、__FILENAME__、__TIMESTAMP__、__HOSTNAME__。
+
+- __SOURCE__：日志采集的源 IP，示例：10.0.1.2
+- __FILENAME__：日志采集的文件名，示例：/data/log/nginx/access.log
+- __TIMESTAMP__：日志时间戳（毫秒级别 Unix 时间戳），按时间范围检索日志时，将自动使用该时间对日志进行检索，在控制台显示为“日志时间”，示例：1640005601188
+- __HOSTNAME__：日志来源机器名称，需使用2.7.4及以上版本的 Loglistener 才会采集该字段，示例：localhost
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetaFields 元数据信息列表, 可选值为 __SOURCE__、__FILENAME__、__TIMESTAMP__、__HOSTNAME__。
+
+- __SOURCE__：日志采集的源 IP，示例：10.0.1.2
+- __FILENAME__：日志采集的文件名，示例：/data/log/nginx/access.log
+- __TIMESTAMP__：日志时间戳（毫秒级别 Unix 时间戳），按时间范围检索日志时，将自动使用该时间对日志进行检索，在控制台显示为“日志时间”，示例：1640005601188
+- __HOSTNAME__：日志来源机器名称，需使用2.7.4及以上版本的 Loglistener 才会采集该字段，示例：localhost
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -78,8 +88,18 @@ namespace TencentCloud
 
                     /**
                      * 设置元数据信息列表, 可选值为 __SOURCE__、__FILENAME__、__TIMESTAMP__、__HOSTNAME__。
+
+- __SOURCE__：日志采集的源 IP，示例：10.0.1.2
+- __FILENAME__：日志采集的文件名，示例：/data/log/nginx/access.log
+- __TIMESTAMP__：日志时间戳（毫秒级别 Unix 时间戳），按时间范围检索日志时，将自动使用该时间对日志进行检索，在控制台显示为“日志时间”，示例：1640005601188
+- __HOSTNAME__：日志来源机器名称，需使用2.7.4及以上版本的 Loglistener 才会采集该字段，示例：localhost
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _metaFields 元数据信息列表, 可选值为 __SOURCE__、__FILENAME__、__TIMESTAMP__、__HOSTNAME__。
+
+- __SOURCE__：日志采集的源 IP，示例：10.0.1.2
+- __FILENAME__：日志采集的文件名，示例：/data/log/nginx/access.log
+- __TIMESTAMP__：日志时间戳（毫秒级别 Unix 时间戳），按时间范围检索日志时，将自动使用该时间对日志进行检索，在控制台显示为“日志时间”，示例：1640005601188
+- __HOSTNAME__：日志来源机器名称，需使用2.7.4及以上版本的 Loglistener 才会采集该字段，示例：localhost
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -94,18 +114,14 @@ namespace TencentCloud
 
                     /**
                      * 获取投递Json格式，0：字符串方式投递；1:以结构化方式投递
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JsonType 投递Json格式，0：字符串方式投递；1:以结构化方式投递
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetJsonType() const;
 
                     /**
                      * 设置投递Json格式，0：字符串方式投递；1:以结构化方式投递
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _jsonType 投递Json格式，0：字符串方式投递；1:以结构化方式投递
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJsonType(const int64_t& _jsonType);
@@ -127,6 +143,11 @@ namespace TencentCloud
 
                     /**
                      * 元数据信息列表, 可选值为 __SOURCE__、__FILENAME__、__TIMESTAMP__、__HOSTNAME__。
+
+- __SOURCE__：日志采集的源 IP，示例：10.0.1.2
+- __FILENAME__：日志采集的文件名，示例：/data/log/nginx/access.log
+- __TIMESTAMP__：日志时间戳（毫秒级别 Unix 时间戳），按时间范围检索日志时，将自动使用该时间对日志进行检索，在控制台显示为“日志时间”，示例：1640005601188
+- __HOSTNAME__：日志来源机器名称，需使用2.7.4及以上版本的 Loglistener 才会采集该字段，示例：localhost
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_metaFields;
@@ -134,7 +155,6 @@ namespace TencentCloud
 
                     /**
                      * 投递Json格式，0：字符串方式投递；1:以结构化方式投递
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_jsonType;
                     bool m_jsonTypeHasBeenSet;

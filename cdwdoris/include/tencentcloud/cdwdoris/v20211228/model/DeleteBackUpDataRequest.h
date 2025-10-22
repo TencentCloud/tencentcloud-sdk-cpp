@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool IsDeleteAllHasBeenSet() const;
 
+                    /**
+                     * 获取true代表恢复删除隔离中的job 默认false就是删除
+                     * @return IsRecover true代表恢复删除隔离中的job 默认false就是删除
+                     * 
+                     */
+                    bool GetIsRecover() const;
+
+                    /**
+                     * 设置true代表恢复删除隔离中的job 默认false就是删除
+                     * @param _isRecover true代表恢复删除隔离中的job 默认false就是删除
+                     * 
+                     */
+                    void SetIsRecover(const bool& _isRecover);
+
+                    /**
+                     * 判断参数 IsRecover 是否已赋值
+                     * @return IsRecover 是否已赋值
+                     * 
+                     */
+                    bool IsRecoverHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     bool m_isDeleteAll;
                     bool m_isDeleteAllHasBeenSet;
+
+                    /**
+                     * true代表恢复删除隔离中的job 默认false就是删除
+                     */
+                    bool m_isRecover;
+                    bool m_isRecoverHasBeenSet;
 
                 };
             }

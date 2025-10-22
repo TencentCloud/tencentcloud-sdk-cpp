@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取冻结流水ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TranId 冻结流水ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTranId() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DealNames 订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetDealNames() const;
@@ -77,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取资源ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取资源ID）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceIds 资源ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取资源ID）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetResourceIds() const;
@@ -93,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取集群ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取集群ID）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterIds 集群ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取集群ID）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetClusterIds() const;
@@ -127,28 +119,24 @@ namespace TencentCloud
 
                     /**
                      * 冻结流水ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tranId;
                     bool m_tranIdHasBeenSet;
 
                     /**
                      * 订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_dealNames;
                     bool m_dealNamesHasBeenSet;
 
                     /**
                      * 资源ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取资源ID）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_resourceIds;
                     bool m_resourceIdsHasBeenSet;
 
                     /**
                      * 集群ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取集群ID）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_clusterIds;
                     bool m_clusterIdsHasBeenSet;

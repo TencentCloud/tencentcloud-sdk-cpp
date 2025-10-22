@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,7 +49,10 @@ ModelAccelerateTask::ModelAccelerateTask() :
     m_isSavedHasBeenSet(false),
     m_modelSignatureHasBeenSet(false),
     m_qATModelHasBeenSet(false),
-    m_frameworkVersionHasBeenSet(false)
+    m_frameworkVersionHasBeenSet(false),
+    m_modelVersionIdHasBeenSet(false),
+    m_resourceGroupIdHasBeenSet(false),
+    m_resourceGroupNameHasBeenSet(false)
 {
 }
 
@@ -392,6 +395,36 @@ CoreInternalOutcome ModelAccelerateTask::Deserialize(const rapidjson::Value &val
         m_frameworkVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("ModelVersionId") && !value["ModelVersionId"].IsNull())
+    {
+        if (!value["ModelVersionId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelAccelerateTask.ModelVersionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modelVersionId = string(value["ModelVersionId"].GetString());
+        m_modelVersionIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResourceGroupId") && !value["ResourceGroupId"].IsNull())
+    {
+        if (!value["ResourceGroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelAccelerateTask.ResourceGroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceGroupId = string(value["ResourceGroupId"].GetString());
+        m_resourceGroupIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResourceGroupName") && !value["ResourceGroupName"].IsNull())
+    {
+        if (!value["ResourceGroupName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelAccelerateTask.ResourceGroupName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceGroupName = string(value["ResourceGroupName"].GetString());
+        m_resourceGroupNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -651,6 +684,30 @@ void ModelAccelerateTask::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "FrameworkVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_frameworkVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modelVersionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelVersionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modelVersionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceGroupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceGroupName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceGroupName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1118,5 +1175,53 @@ void ModelAccelerateTask::SetFrameworkVersion(const string& _frameworkVersion)
 bool ModelAccelerateTask::FrameworkVersionHasBeenSet() const
 {
     return m_frameworkVersionHasBeenSet;
+}
+
+string ModelAccelerateTask::GetModelVersionId() const
+{
+    return m_modelVersionId;
+}
+
+void ModelAccelerateTask::SetModelVersionId(const string& _modelVersionId)
+{
+    m_modelVersionId = _modelVersionId;
+    m_modelVersionIdHasBeenSet = true;
+}
+
+bool ModelAccelerateTask::ModelVersionIdHasBeenSet() const
+{
+    return m_modelVersionIdHasBeenSet;
+}
+
+string ModelAccelerateTask::GetResourceGroupId() const
+{
+    return m_resourceGroupId;
+}
+
+void ModelAccelerateTask::SetResourceGroupId(const string& _resourceGroupId)
+{
+    m_resourceGroupId = _resourceGroupId;
+    m_resourceGroupIdHasBeenSet = true;
+}
+
+bool ModelAccelerateTask::ResourceGroupIdHasBeenSet() const
+{
+    return m_resourceGroupIdHasBeenSet;
+}
+
+string ModelAccelerateTask::GetResourceGroupName() const
+{
+    return m_resourceGroupName;
+}
+
+void ModelAccelerateTask::SetResourceGroupName(const string& _resourceGroupName)
+{
+    m_resourceGroupName = _resourceGroupName;
+    m_resourceGroupNameHasBeenSet = true;
+}
+
+bool ModelAccelerateTask::ResourceGroupNameHasBeenSet() const
+{
+    return m_resourceGroupNameHasBeenSet;
 }
 

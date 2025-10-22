@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取默认值为instance
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceType 默认值为instance
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
                      * 设置默认值为instance
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceType 默认值为instance
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceType(const std::string& _resourceType);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云标签数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 云标签数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置云标签数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 云标签数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 默认值为instance
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;
 
                     /**
                      * 云标签数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;

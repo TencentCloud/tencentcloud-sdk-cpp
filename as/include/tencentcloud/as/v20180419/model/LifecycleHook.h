@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -112,15 +112,23 @@ namespace TencentCloud
                     bool AutoScalingGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取生命周期挂钩默认结果
-                     * @return DefaultResult 生命周期挂钩默认结果
+                     * 获取定义伸缩组在生命周期挂钩超时或 LifecycleCommand 执行失败时应采取的操作，取值范围如下：
+- CONTINUE: 默认值，表示继续执行扩缩容活动
+- ABANDON: 针对扩容挂钩，挂钩超时或 LifecycleCommand 执行失败的 CVM 实例会直接释放或移出；而针对缩容挂钩，会继续执行缩容活动
+                     * @return DefaultResult 定义伸缩组在生命周期挂钩超时或 LifecycleCommand 执行失败时应采取的操作，取值范围如下：
+- CONTINUE: 默认值，表示继续执行扩缩容活动
+- ABANDON: 针对扩容挂钩，挂钩超时或 LifecycleCommand 执行失败的 CVM 实例会直接释放或移出；而针对缩容挂钩，会继续执行缩容活动
                      * 
                      */
                     std::string GetDefaultResult() const;
 
                     /**
-                     * 设置生命周期挂钩默认结果
-                     * @param _defaultResult 生命周期挂钩默认结果
+                     * 设置定义伸缩组在生命周期挂钩超时或 LifecycleCommand 执行失败时应采取的操作，取值范围如下：
+- CONTINUE: 默认值，表示继续执行扩缩容活动
+- ABANDON: 针对扩容挂钩，挂钩超时或 LifecycleCommand 执行失败的 CVM 实例会直接释放或移出；而针对缩容挂钩，会继续执行缩容活动
+                     * @param _defaultResult 定义伸缩组在生命周期挂钩超时或 LifecycleCommand 执行失败时应采取的操作，取值范围如下：
+- CONTINUE: 默认值，表示继续执行扩缩容活动
+- ABANDON: 针对扩容挂钩，挂钩超时或 LifecycleCommand 执行失败的 CVM 实例会直接释放或移出；而针对缩容挂钩，会继续执行缩容活动
                      * 
                      */
                     void SetDefaultResult(const std::string& _defaultResult);
@@ -133,15 +141,15 @@ namespace TencentCloud
                     bool DefaultResultHasBeenSet() const;
 
                     /**
-                     * 获取生命周期挂钩等待超时时间
-                     * @return HeartbeatTimeout 生命周期挂钩等待超时时间
+                     * 获取生命周期挂钩超时等待时间（以秒为单位），范围从 30 到 7200 秒。
+                     * @return HeartbeatTimeout 生命周期挂钩超时等待时间（以秒为单位），范围从 30 到 7200 秒。
                      * 
                      */
                     int64_t GetHeartbeatTimeout() const;
 
                     /**
-                     * 设置生命周期挂钩等待超时时间
-                     * @param _heartbeatTimeout 生命周期挂钩等待超时时间
+                     * 设置生命周期挂钩超时等待时间（以秒为单位），范围从 30 到 7200 秒。
+                     * @param _heartbeatTimeout 生命周期挂钩超时等待时间（以秒为单位），范围从 30 到 7200 秒。
                      * 
                      */
                     void SetHeartbeatTimeout(const int64_t& _heartbeatTimeout);
@@ -154,15 +162,23 @@ namespace TencentCloud
                     bool HeartbeatTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取生命周期挂钩适用场景
-                     * @return LifecycleTransition 生命周期挂钩适用场景
+                     * 获取生命周期挂钩场景，取值范围如下:
+- INSTANCE_LAUNCHING: 扩容生命周期挂钩
+- INSTANCE_TERMINATING: 缩容生命周期挂钩
+                     * @return LifecycleTransition 生命周期挂钩场景，取值范围如下:
+- INSTANCE_LAUNCHING: 扩容生命周期挂钩
+- INSTANCE_TERMINATING: 缩容生命周期挂钩
                      * 
                      */
                     std::string GetLifecycleTransition() const;
 
                     /**
-                     * 设置生命周期挂钩适用场景
-                     * @param _lifecycleTransition 生命周期挂钩适用场景
+                     * 设置生命周期挂钩场景，取值范围如下:
+- INSTANCE_LAUNCHING: 扩容生命周期挂钩
+- INSTANCE_TERMINATING: 缩容生命周期挂钩
+                     * @param _lifecycleTransition 生命周期挂钩场景，取值范围如下:
+- INSTANCE_LAUNCHING: 扩容生命周期挂钩
+- INSTANCE_TERMINATING: 缩容生命周期挂钩
                      * 
                      */
                     void SetLifecycleTransition(const std::string& _lifecycleTransition);
@@ -196,15 +212,15 @@ namespace TencentCloud
                     bool NotificationMetadataHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreatedTime 创建时间
+                     * 获取创建时间，采用 UTC 标准计时
+                     * @return CreatedTime 创建时间，采用 UTC 标准计时
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createdTime 创建时间
+                     * 设置创建时间，采用 UTC 标准计时
+                     * @param _createdTime 创建时间，采用 UTC 标准计时
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -238,15 +254,19 @@ namespace TencentCloud
                     bool NotificationTargetHasBeenSet() const;
 
                     /**
-                     * 获取生命周期挂钩适用场景
-                     * @return LifecycleTransitionType 生命周期挂钩适用场景
+                     * 获取进行生命周期挂钩的场景类型，取值范围包括 NORMAL 和 EXTENSION，默认值为 NORMAL。
+说明：设置为EXTENSION值，在AttachInstances、DetachInstances、RemoveInstances 接口时会触发生命周期挂钩操作，值为NORMAL则不会在这些接口中触发生命周期挂钩。
+                     * @return LifecycleTransitionType 进行生命周期挂钩的场景类型，取值范围包括 NORMAL 和 EXTENSION，默认值为 NORMAL。
+说明：设置为EXTENSION值，在AttachInstances、DetachInstances、RemoveInstances 接口时会触发生命周期挂钩操作，值为NORMAL则不会在这些接口中触发生命周期挂钩。
                      * 
                      */
                     std::string GetLifecycleTransitionType() const;
 
                     /**
-                     * 设置生命周期挂钩适用场景
-                     * @param _lifecycleTransitionType 生命周期挂钩适用场景
+                     * 设置进行生命周期挂钩的场景类型，取值范围包括 NORMAL 和 EXTENSION，默认值为 NORMAL。
+说明：设置为EXTENSION值，在AttachInstances、DetachInstances、RemoveInstances 接口时会触发生命周期挂钩操作，值为NORMAL则不会在这些接口中触发生命周期挂钩。
+                     * @param _lifecycleTransitionType 进行生命周期挂钩的场景类型，取值范围包括 NORMAL 和 EXTENSION，默认值为 NORMAL。
+说明：设置为EXTENSION值，在AttachInstances、DetachInstances、RemoveInstances 接口时会触发生命周期挂钩操作，值为NORMAL则不会在这些接口中触发生命周期挂钩。
                      * 
                      */
                     void SetLifecycleTransitionType(const std::string& _lifecycleTransitionType);
@@ -260,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取远程命令执行对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LifecycleCommand 远程命令执行对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     LifecycleCommand GetLifecycleCommand() const;
 
                     /**
                      * 设置远程命令执行对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lifecycleCommand 远程命令执行对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLifecycleCommand(const LifecycleCommand& _lifecycleCommand);
@@ -304,19 +320,23 @@ namespace TencentCloud
                     bool m_autoScalingGroupIdHasBeenSet;
 
                     /**
-                     * 生命周期挂钩默认结果
+                     * 定义伸缩组在生命周期挂钩超时或 LifecycleCommand 执行失败时应采取的操作，取值范围如下：
+- CONTINUE: 默认值，表示继续执行扩缩容活动
+- ABANDON: 针对扩容挂钩，挂钩超时或 LifecycleCommand 执行失败的 CVM 实例会直接释放或移出；而针对缩容挂钩，会继续执行缩容活动
                      */
                     std::string m_defaultResult;
                     bool m_defaultResultHasBeenSet;
 
                     /**
-                     * 生命周期挂钩等待超时时间
+                     * 生命周期挂钩超时等待时间（以秒为单位），范围从 30 到 7200 秒。
                      */
                     int64_t m_heartbeatTimeout;
                     bool m_heartbeatTimeoutHasBeenSet;
 
                     /**
-                     * 生命周期挂钩适用场景
+                     * 生命周期挂钩场景，取值范围如下:
+- INSTANCE_LAUNCHING: 扩容生命周期挂钩
+- INSTANCE_TERMINATING: 缩容生命周期挂钩
                      */
                     std::string m_lifecycleTransition;
                     bool m_lifecycleTransitionHasBeenSet;
@@ -328,7 +348,7 @@ namespace TencentCloud
                     bool m_notificationMetadataHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * 创建时间，采用 UTC 标准计时
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
@@ -340,14 +360,14 @@ namespace TencentCloud
                     bool m_notificationTargetHasBeenSet;
 
                     /**
-                     * 生命周期挂钩适用场景
+                     * 进行生命周期挂钩的场景类型，取值范围包括 NORMAL 和 EXTENSION，默认值为 NORMAL。
+说明：设置为EXTENSION值，在AttachInstances、DetachInstances、RemoveInstances 接口时会触发生命周期挂钩操作，值为NORMAL则不会在这些接口中触发生命周期挂钩。
                      */
                     std::string m_lifecycleTransitionType;
                     bool m_lifecycleTransitionTypeHasBeenSet;
 
                     /**
                      * 远程命令执行对象
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     LifecycleCommand m_lifecycleCommand;
                     bool m_lifecycleCommandHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,28 +46,45 @@ namespace TencentCloud
 
                     /**
                      * 获取风险面列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskSideItmeList 风险面列表
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::vector<Note> GetRiskSideItmeList() const;
 
                     /**
                      * 判断参数 RiskSideItmeList 是否已赋值
                      * @return RiskSideItmeList 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool RiskSideItmeListHasBeenSet() const;
+
+                    /**
+                     * 获取风险面列表
+                     * @return RiskSideItemList 风险面列表
+                     * 
+                     */
+                    std::vector<Note> GetRiskSideItemList() const;
+
+                    /**
+                     * 判断参数 RiskSideItemList 是否已赋值
+                     * @return RiskSideItemList 是否已赋值
+                     * 
+                     */
+                    bool RiskSideItemListHasBeenSet() const;
 
                 private:
 
                     /**
                      * 风险面列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Note> m_riskSideItmeList;
                     bool m_riskSideItmeListHasBeenSet;
+
+                    /**
+                     * 风险面列表
+                     */
+                    std::vector<Note> m_riskSideItemList;
+                    bool m_riskSideItemListHasBeenSet;
 
                 };
             }

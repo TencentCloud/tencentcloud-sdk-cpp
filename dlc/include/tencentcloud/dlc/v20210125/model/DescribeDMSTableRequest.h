@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取数据目录
-                     * @return Catalog 数据目录
+                     * 获取catalog类型
+                     * @return Catalog catalog类型
                      * 
                      */
                     std::string GetCatalog() const;
 
                     /**
-                     * 设置数据目录
-                     * @param _catalog 数据目录
+                     * 设置catalog类型
+                     * @param _catalog catalog类型
                      * 
                      */
                     void SetCatalog(const std::string& _catalog);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool KeywordHasBeenSet() const;
 
                     /**
-                     * 获取查询模式
-                     * @return Pattern 查询模式
+                     * 获取查询模式，只支持填*
+                     * @return Pattern 查询模式，只支持填*
                      * 
                      */
                     std::string GetPattern() const;
 
                     /**
-                     * 设置查询模式
-                     * @param _pattern 查询模式
+                     * 设置查询模式，只支持填*
+                     * @param _pattern 查询模式，只支持填*
                      * 
                      */
                     void SetPattern(const std::string& _pattern);
@@ -189,6 +189,27 @@ namespace TencentCloud
                      */
                     bool TypeHasBeenSet() const;
 
+                    /**
+                     * 获取数据源连接名
+                     * @return DatasourceConnectionName 数据源连接名
+                     * 
+                     */
+                    std::string GetDatasourceConnectionName() const;
+
+                    /**
+                     * 设置数据源连接名
+                     * @param _datasourceConnectionName 数据源连接名
+                     * 
+                     */
+                    void SetDatasourceConnectionName(const std::string& _datasourceConnectionName);
+
+                    /**
+                     * 判断参数 DatasourceConnectionName 是否已赋值
+                     * @return DatasourceConnectionName 是否已赋值
+                     * 
+                     */
+                    bool DatasourceConnectionNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -210,7 +231,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 数据目录
+                     * catalog类型
                      */
                     std::string m_catalog;
                     bool m_catalogHasBeenSet;
@@ -222,7 +243,7 @@ namespace TencentCloud
                     bool m_keywordHasBeenSet;
 
                     /**
-                     * 查询模式
+                     * 查询模式，只支持填*
                      */
                     std::string m_pattern;
                     bool m_patternHasBeenSet;
@@ -232,6 +253,12 @@ namespace TencentCloud
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * 数据源连接名
+                     */
+                    std::string m_datasourceConnectionName;
+                    bool m_datasourceConnectionNameHasBeenSet;
 
                 };
             }

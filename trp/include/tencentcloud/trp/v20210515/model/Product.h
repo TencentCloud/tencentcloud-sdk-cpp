@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -154,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取商品规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Specification 商品规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSpecification() const;
 
                     /**
                      * 设置商品规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _specification 商品规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSpecification(const std::string& _specification);
@@ -179,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -204,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取商品图片
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Logo 商品图片
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetLogo() const;
 
                     /**
                      * 设置商品图片
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logo 商品图片
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogo(const std::vector<std::string>& _logo);
@@ -271,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取预留字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ext 预留字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Ext GetExt() const;
 
                     /**
                      * 设置预留字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ext 预留字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExt(const Ext& _ext);
@@ -317,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取认证状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertState 认证状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCertState() const;
 
                     /**
                      * 设置认证状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _certState 认证状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCertState(const int64_t& _certState);
@@ -374,21 +354,18 @@ namespace TencentCloud
 
                     /**
                      * 商品规格
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_specification;
                     bool m_specificationHasBeenSet;
 
                     /**
                      * 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
                      * 商品图片
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_logo;
                     bool m_logoHasBeenSet;
@@ -407,7 +384,6 @@ namespace TencentCloud
 
                     /**
                      * 预留字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Ext m_ext;
                     bool m_extHasBeenSet;
@@ -420,7 +396,6 @@ namespace TencentCloud
 
                     /**
                      * 认证状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_certState;
                     bool m_certStateHasBeenSet;

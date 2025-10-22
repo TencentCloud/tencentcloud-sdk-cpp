@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取作业ID
-                     * @return JobId 作业ID
+                     * 获取作业ID；JobId详见[作业列表](https://cloud.tencent.com/document/product/599/15909)
+                     * @return JobId 作业ID；JobId详见[作业列表](https://cloud.tencent.com/document/product/599/15909)
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
-                     * 设置作业ID
-                     * @param _jobId 作业ID
+                     * 设置作业ID；JobId详见[作业列表](https://cloud.tencent.com/document/product/599/15909)
+                     * @param _jobId 作业ID；JobId详见[作业列表](https://cloud.tencent.com/document/product/599/15909)
                      * 
                      */
                     void SetJobId(const std::string& _jobId);
@@ -129,18 +129,54 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤条件，详情如下：
-<li> task-instance-type - String - 是否必填： 否 - 按照任务实例状态进行过滤（SUBMITTED：已提交；PENDING：等待中；RUNNABLE：可运行；STARTING：启动中；RUNNING：运行中；SUCCEED：成功；FAILED：失败；FAILED_INTERRUPTED：失败后保留实例）。</li>
+task-instance-state     - String - 是否必填： 否 - 按照任务实例状态进行过滤（
+
+- SUBMITTED：已提交；
+- PENDING：等待中；
+- RUNNABLE：可运行；
+- STARTING：启动中；
+- RUNNING：运行中；
+- SUCCEED：成功；
+- FAILED：失败；
+- FAILED_INTERRUPTED：失败后保留实例）。
                      * @return Filters 过滤条件，详情如下：
-<li> task-instance-type - String - 是否必填： 否 - 按照任务实例状态进行过滤（SUBMITTED：已提交；PENDING：等待中；RUNNABLE：可运行；STARTING：启动中；RUNNING：运行中；SUCCEED：成功；FAILED：失败；FAILED_INTERRUPTED：失败后保留实例）。</li>
+task-instance-state     - String - 是否必填： 否 - 按照任务实例状态进行过滤（
+
+- SUBMITTED：已提交；
+- PENDING：等待中；
+- RUNNABLE：可运行；
+- STARTING：启动中；
+- RUNNING：运行中；
+- SUCCEED：成功；
+- FAILED：失败；
+- FAILED_INTERRUPTED：失败后保留实例）。
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤条件，详情如下：
-<li> task-instance-type - String - 是否必填： 否 - 按照任务实例状态进行过滤（SUBMITTED：已提交；PENDING：等待中；RUNNABLE：可运行；STARTING：启动中；RUNNING：运行中；SUCCEED：成功；FAILED：失败；FAILED_INTERRUPTED：失败后保留实例）。</li>
+task-instance-state     - String - 是否必填： 否 - 按照任务实例状态进行过滤（
+
+- SUBMITTED：已提交；
+- PENDING：等待中；
+- RUNNABLE：可运行；
+- STARTING：启动中；
+- RUNNING：运行中；
+- SUCCEED：成功；
+- FAILED：失败；
+- FAILED_INTERRUPTED：失败后保留实例）。
                      * @param _filters 过滤条件，详情如下：
-<li> task-instance-type - String - 是否必填： 否 - 按照任务实例状态进行过滤（SUBMITTED：已提交；PENDING：等待中；RUNNABLE：可运行；STARTING：启动中；RUNNING：运行中；SUCCEED：成功；FAILED：失败；FAILED_INTERRUPTED：失败后保留实例）。</li>
+task-instance-state     - String - 是否必填： 否 - 按照任务实例状态进行过滤（
+
+- SUBMITTED：已提交；
+- PENDING：等待中；
+- RUNNABLE：可运行；
+- STARTING：启动中；
+- RUNNING：运行中；
+- SUCCEED：成功；
+- FAILED：失败；
+- FAILED_INTERRUPTED：失败后保留实例）。
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -155,7 +191,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 作业ID
+                     * 作业ID；JobId详见[作业列表](https://cloud.tencent.com/document/product/599/15909)
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
@@ -180,7 +216,16 @@ namespace TencentCloud
 
                     /**
                      * 过滤条件，详情如下：
-<li> task-instance-type - String - 是否必填： 否 - 按照任务实例状态进行过滤（SUBMITTED：已提交；PENDING：等待中；RUNNABLE：可运行；STARTING：启动中；RUNNING：运行中；SUCCEED：成功；FAILED：失败；FAILED_INTERRUPTED：失败后保留实例）。</li>
+task-instance-state     - String - 是否必填： 否 - 按照任务实例状态进行过滤（
+
+- SUBMITTED：已提交；
+- PENDING：等待中；
+- RUNNABLE：可运行；
+- STARTING：启动中；
+- RUNNING：运行中；
+- SUCCEED：成功；
+- FAILED：失败；
+- FAILED_INTERRUPTED：失败后保留实例）。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

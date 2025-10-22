@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,7 +59,15 @@ namespace TencentCloud
 
                     /**
                      * 获取域名类型
+pay：等待支持
+sub：已经预订
+wait：等待出价
+finish：完成出价
                      * @return Status 域名类型
+pay：等待支持
+sub：已经预订
+wait：等待出价
+finish：完成出价
                      * 
                      */
                     std::string GetStatus() const;
@@ -72,8 +80,10 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取支付结束时间
-                     * @return EndTime 支付结束时间
+                     * 获取支付结束时间 
+格式:YYYY-MM-DD HH:mm:ss
+                     * @return EndTime 支付结束时间 
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetEndTime() const;
@@ -86,8 +96,10 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取域名注册时间
-                     * @return RegTime 域名注册时间
+                     * 获取域名注册时间 
+格式:YYYY-MM-DD HH:mm:ss
+                     * @return RegTime 域名注册时间 
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetRegTime() const;
@@ -100,8 +112,8 @@ namespace TencentCloud
                     bool RegTimeHasBeenSet() const;
 
                     /**
-                     * 获取域名成交价格
-                     * @return Price 域名成交价格
+                     * 获取域名成交价格 单位元
+                     * @return Price 域名成交价格 单位元
                      * 
                      */
                     double GetPrice() const;
@@ -114,8 +126,8 @@ namespace TencentCloud
                     bool PriceHasBeenSet() const;
 
                     /**
-                     * 获取待退还保证金
-                     * @return RetDeposit 待退还保证金
+                     * 获取待退还保证金 单位元
+                     * @return RetDeposit 待退还保证金 单位元
                      * 
                      */
                     double GetRetDeposit() const;
@@ -137,30 +149,36 @@ namespace TencentCloud
 
                     /**
                      * 域名类型
+pay：等待支持
+sub：已经预订
+wait：等待出价
+finish：完成出价
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 支付结束时间
+                     * 支付结束时间 
+格式:YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 域名注册时间
+                     * 域名注册时间 
+格式:YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_regTime;
                     bool m_regTimeHasBeenSet;
 
                     /**
-                     * 域名成交价格
+                     * 域名成交价格 单位元
                      */
                     double m_price;
                     bool m_priceHasBeenSet;
 
                     /**
-                     * 待退还保证金
+                     * 待退还保证金 单位元
                      */
                     double m_retDeposit;
                     bool m_retDepositHasBeenSet;

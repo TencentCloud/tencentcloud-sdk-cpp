@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,12 +25,13 @@ using namespace std;
 AddCustomWhiteRuleRequest::AddCustomWhiteRuleRequest() :
     m_nameHasBeenSet(false),
     m_sortIdHasBeenSet(false),
-    m_expireTimeHasBeenSet(false),
     m_strategiesHasBeenSet(false),
     m_domainHasBeenSet(false),
     m_bypassHasBeenSet(false),
+    m_expireTimeHasBeenSet(false),
     m_jobTypeHasBeenSet(false),
-    m_jobDateTimeHasBeenSet(false)
+    m_jobDateTimeHasBeenSet(false),
+    m_logicalOpHasBeenSet(false)
 {
 }
 
@@ -55,14 +56,6 @@ string AddCustomWhiteRuleRequest::ToJsonString() const
         string key = "SortId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sortId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_expireTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ExpireTime";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_expireTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_strategiesHasBeenSet)
@@ -96,6 +89,14 @@ string AddCustomWhiteRuleRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_bypass.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_expireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_expireTime.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_jobTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -111,6 +112,14 @@ string AddCustomWhiteRuleRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_jobDateTime.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_logicalOpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogicalOp";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_logicalOp.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -151,22 +160,6 @@ void AddCustomWhiteRuleRequest::SetSortId(const string& _sortId)
 bool AddCustomWhiteRuleRequest::SortIdHasBeenSet() const
 {
     return m_sortIdHasBeenSet;
-}
-
-string AddCustomWhiteRuleRequest::GetExpireTime() const
-{
-    return m_expireTime;
-}
-
-void AddCustomWhiteRuleRequest::SetExpireTime(const string& _expireTime)
-{
-    m_expireTime = _expireTime;
-    m_expireTimeHasBeenSet = true;
-}
-
-bool AddCustomWhiteRuleRequest::ExpireTimeHasBeenSet() const
-{
-    return m_expireTimeHasBeenSet;
 }
 
 vector<Strategy> AddCustomWhiteRuleRequest::GetStrategies() const
@@ -217,6 +210,22 @@ bool AddCustomWhiteRuleRequest::BypassHasBeenSet() const
     return m_bypassHasBeenSet;
 }
 
+string AddCustomWhiteRuleRequest::GetExpireTime() const
+{
+    return m_expireTime;
+}
+
+void AddCustomWhiteRuleRequest::SetExpireTime(const string& _expireTime)
+{
+    m_expireTime = _expireTime;
+    m_expireTimeHasBeenSet = true;
+}
+
+bool AddCustomWhiteRuleRequest::ExpireTimeHasBeenSet() const
+{
+    return m_expireTimeHasBeenSet;
+}
+
 string AddCustomWhiteRuleRequest::GetJobType() const
 {
     return m_jobType;
@@ -247,6 +256,22 @@ void AddCustomWhiteRuleRequest::SetJobDateTime(const JobDateTime& _jobDateTime)
 bool AddCustomWhiteRuleRequest::JobDateTimeHasBeenSet() const
 {
     return m_jobDateTimeHasBeenSet;
+}
+
+string AddCustomWhiteRuleRequest::GetLogicalOp() const
+{
+    return m_logicalOp;
+}
+
+void AddCustomWhiteRuleRequest::SetLogicalOp(const string& _logicalOp)
+{
+    m_logicalOp = _logicalOp;
+    m_logicalOpHasBeenSet = true;
+}
+
+bool AddCustomWhiteRuleRequest::LogicalOpHasBeenSet() const
+{
+    return m_logicalOpHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,12 +23,18 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/hai/v20230812/model/CreateApplicationRequest.h>
+#include <tencentcloud/hai/v20230812/model/CreateApplicationResponse.h>
+#include <tencentcloud/hai/v20230812/model/CreateMuskPromptRequest.h>
+#include <tencentcloud/hai/v20230812/model/CreateMuskPromptResponse.h>
 #include <tencentcloud/hai/v20230812/model/DescribeApplicationsRequest.h>
 #include <tencentcloud/hai/v20230812/model/DescribeApplicationsResponse.h>
 #include <tencentcloud/hai/v20230812/model/DescribeInstanceNetworkStatusRequest.h>
 #include <tencentcloud/hai/v20230812/model/DescribeInstanceNetworkStatusResponse.h>
 #include <tencentcloud/hai/v20230812/model/DescribeInstancesRequest.h>
 #include <tencentcloud/hai/v20230812/model/DescribeInstancesResponse.h>
+#include <tencentcloud/hai/v20230812/model/DescribeMuskPromptsRequest.h>
+#include <tencentcloud/hai/v20230812/model/DescribeMuskPromptsResponse.h>
 #include <tencentcloud/hai/v20230812/model/DescribeRegionsRequest.h>
 #include <tencentcloud/hai/v20230812/model/DescribeRegionsResponse.h>
 #include <tencentcloud/hai/v20230812/model/DescribeScenesRequest.h>
@@ -37,6 +43,10 @@
 #include <tencentcloud/hai/v20230812/model/DescribeServiceLoginSettingsResponse.h>
 #include <tencentcloud/hai/v20230812/model/InquirePriceRunInstancesRequest.h>
 #include <tencentcloud/hai/v20230812/model/InquirePriceRunInstancesResponse.h>
+#include <tencentcloud/hai/v20230812/model/ResetInstancesPasswordRequest.h>
+#include <tencentcloud/hai/v20230812/model/ResetInstancesPasswordResponse.h>
+#include <tencentcloud/hai/v20230812/model/ResizeInstanceDiskRequest.h>
+#include <tencentcloud/hai/v20230812/model/ResizeInstanceDiskResponse.h>
 #include <tencentcloud/hai/v20230812/model/RunInstancesRequest.h>
 #include <tencentcloud/hai/v20230812/model/RunInstancesResponse.h>
 #include <tencentcloud/hai/v20230812/model/StartInstanceRequest.h>
@@ -59,6 +69,12 @@ namespace TencentCloud
                 HaiClient(const Credential &credential, const std::string &region);
                 HaiClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CreateApplicationResponse> CreateApplicationOutcome;
+                typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
+                typedef std::function<void(const HaiClient*, const Model::CreateApplicationRequest&, CreateApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateApplicationAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateMuskPromptResponse> CreateMuskPromptOutcome;
+                typedef std::future<CreateMuskPromptOutcome> CreateMuskPromptOutcomeCallable;
+                typedef std::function<void(const HaiClient*, const Model::CreateMuskPromptRequest&, CreateMuskPromptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMuskPromptAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeApplicationsResponse> DescribeApplicationsOutcome;
                 typedef std::future<DescribeApplicationsOutcome> DescribeApplicationsOutcomeCallable;
                 typedef std::function<void(const HaiClient*, const Model::DescribeApplicationsRequest&, DescribeApplicationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationsAsyncHandler;
@@ -68,6 +84,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstancesResponse> DescribeInstancesOutcome;
                 typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
                 typedef std::function<void(const HaiClient*, const Model::DescribeInstancesRequest&, DescribeInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMuskPromptsResponse> DescribeMuskPromptsOutcome;
+                typedef std::future<DescribeMuskPromptsOutcome> DescribeMuskPromptsOutcomeCallable;
+                typedef std::function<void(const HaiClient*, const Model::DescribeMuskPromptsRequest&, DescribeMuskPromptsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMuskPromptsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRegionsResponse> DescribeRegionsOutcome;
                 typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
                 typedef std::function<void(const HaiClient*, const Model::DescribeRegionsRequest&, DescribeRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
@@ -80,6 +99,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InquirePriceRunInstancesResponse> InquirePriceRunInstancesOutcome;
                 typedef std::future<InquirePriceRunInstancesOutcome> InquirePriceRunInstancesOutcomeCallable;
                 typedef std::function<void(const HaiClient*, const Model::InquirePriceRunInstancesRequest&, InquirePriceRunInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceRunInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResetInstancesPasswordResponse> ResetInstancesPasswordOutcome;
+                typedef std::future<ResetInstancesPasswordOutcome> ResetInstancesPasswordOutcomeCallable;
+                typedef std::function<void(const HaiClient*, const Model::ResetInstancesPasswordRequest&, ResetInstancesPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetInstancesPasswordAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResizeInstanceDiskResponse> ResizeInstanceDiskOutcome;
+                typedef std::future<ResizeInstanceDiskOutcome> ResizeInstanceDiskOutcomeCallable;
+                typedef std::function<void(const HaiClient*, const Model::ResizeInstanceDiskRequest&, ResizeInstanceDiskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResizeInstanceDiskAsyncHandler;
                 typedef Outcome<Core::Error, Model::RunInstancesResponse> RunInstancesOutcome;
                 typedef std::future<RunInstancesOutcome> RunInstancesOutcomeCallable;
                 typedef std::function<void(const HaiClient*, const Model::RunInstancesRequest&, RunInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunInstancesAsyncHandler;
@@ -96,7 +121,25 @@ namespace TencentCloud
 
 
                 /**
-                 *查询应用
+                 *本接口（CreateApplication）用于对HAI实例制作自定义应用。
+                 * @param req CreateApplicationRequest
+                 * @return CreateApplicationOutcome
+                 */
+                CreateApplicationOutcome CreateApplication(const Model::CreateApplicationRequest &request);
+                void CreateApplicationAsync(const Model::CreateApplicationRequest& request, const CreateApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateApplicationOutcomeCallable CreateApplicationCallable(const Model::CreateApplicationRequest& request);
+
+                /**
+                 *创建musk prompt 任务
+                 * @param req CreateMuskPromptRequest
+                 * @return CreateMuskPromptOutcome
+                 */
+                CreateMuskPromptOutcome CreateMuskPrompt(const Model::CreateMuskPromptRequest &request);
+                void CreateMuskPromptAsync(const Model::CreateMuskPromptRequest& request, const CreateMuskPromptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateMuskPromptOutcomeCallable CreateMuskPromptCallable(const Model::CreateMuskPromptRequest& request);
+
+                /**
+                 *本接口（DescribeApplications）用于查询应用
                  * @param req DescribeApplicationsRequest
                  * @return DescribeApplicationsOutcome
                  */
@@ -105,7 +148,7 @@ namespace TencentCloud
                 DescribeApplicationsOutcomeCallable DescribeApplicationsCallable(const Model::DescribeApplicationsRequest& request);
 
                 /**
-                 *查询实例的网络配置及消耗情况
+                 *本接口（DescribeInstanceNetworkStatus）用于查询实例的网络配置及消耗情况
                  * @param req DescribeInstanceNetworkStatusRequest
                  * @return DescribeInstanceNetworkStatusOutcome
                  */
@@ -114,7 +157,7 @@ namespace TencentCloud
                 DescribeInstanceNetworkStatusOutcomeCallable DescribeInstanceNetworkStatusCallable(const Model::DescribeInstanceNetworkStatusRequest& request);
 
                 /**
-                 *查询实例
+                 *本接口（DescribeInstances）用户查询实例
                  * @param req DescribeInstancesRequest
                  * @return DescribeInstancesOutcome
                  */
@@ -123,7 +166,16 @@ namespace TencentCloud
                 DescribeInstancesOutcomeCallable DescribeInstancesCallable(const Model::DescribeInstancesRequest& request);
 
                 /**
-                 *查询地域列表
+                 *获取prompt任务列表
+                 * @param req DescribeMuskPromptsRequest
+                 * @return DescribeMuskPromptsOutcome
+                 */
+                DescribeMuskPromptsOutcome DescribeMuskPrompts(const Model::DescribeMuskPromptsRequest &request);
+                void DescribeMuskPromptsAsync(const Model::DescribeMuskPromptsRequest& request, const DescribeMuskPromptsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMuskPromptsOutcomeCallable DescribeMuskPromptsCallable(const Model::DescribeMuskPromptsRequest& request);
+
+                /**
+                 *本接口（DescribeRegions）用于查询地域列表
                  * @param req DescribeRegionsRequest
                  * @return DescribeRegionsOutcome
                  */
@@ -132,7 +184,7 @@ namespace TencentCloud
                 DescribeRegionsOutcomeCallable DescribeRegionsCallable(const Model::DescribeRegionsRequest& request);
 
                 /**
-                 *查询场景
+                 *本接口（DescribeScenes）用于查询场景
                  * @param req DescribeScenesRequest
                  * @return DescribeScenesOutcome
                  */
@@ -141,7 +193,7 @@ namespace TencentCloud
                 DescribeScenesOutcomeCallable DescribeScenesCallable(const Model::DescribeScenesRequest& request);
 
                 /**
-                 *查询服务登录配置
+                 *本接口（DescribeServiceLoginSettings）用于查询服务登录配置
                  * @param req DescribeServiceLoginSettingsRequest
                  * @return DescribeServiceLoginSettingsOutcome
                  */
@@ -159,6 +211,24 @@ namespace TencentCloud
                 InquirePriceRunInstancesOutcomeCallable InquirePriceRunInstancesCallable(const Model::InquirePriceRunInstancesRequest& request);
 
                 /**
+                 *本接口 (ResetInstancesPassword) 用于重置实例的用户密码。
+                 * @param req ResetInstancesPasswordRequest
+                 * @return ResetInstancesPasswordOutcome
+                 */
+                ResetInstancesPasswordOutcome ResetInstancesPassword(const Model::ResetInstancesPasswordRequest &request);
+                void ResetInstancesPasswordAsync(const Model::ResetInstancesPasswordRequest& request, const ResetInstancesPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetInstancesPasswordOutcomeCallable ResetInstancesPasswordCallable(const Model::ResetInstancesPasswordRequest& request);
+
+                /**
+                 *本接口（ResizeInstanceDisk）用于对指定HAI实例进行扩容云硬盘操作。
+                 * @param req ResizeInstanceDiskRequest
+                 * @return ResizeInstanceDiskOutcome
+                 */
+                ResizeInstanceDiskOutcome ResizeInstanceDisk(const Model::ResizeInstanceDiskRequest &request);
+                void ResizeInstanceDiskAsync(const Model::ResizeInstanceDiskRequest& request, const ResizeInstanceDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResizeInstanceDiskOutcomeCallable ResizeInstanceDiskCallable(const Model::ResizeInstanceDiskRequest& request);
+
+                /**
                  *本接口 (RunInstances) 用于创建一个或多个指定配置的实例。
                  * @param req RunInstancesRequest
                  * @return RunInstancesOutcome
@@ -169,6 +239,7 @@ namespace TencentCloud
 
                 /**
                  *本接口 (StartInstance) 用于主动启动实例。
+‘运行中’、‘预付费’的实例不支持启动实例
                  * @param req StartInstanceRequest
                  * @return StartInstanceOutcome
                  */
@@ -178,6 +249,7 @@ namespace TencentCloud
 
                 /**
                  *本接口 (StopInstance) 用于主动关闭实例。
+‘已关机’、‘预付费’的实例不支持关机
                  * @param req StopInstanceRequest
                  * @return StopInstanceOutcome
                  */

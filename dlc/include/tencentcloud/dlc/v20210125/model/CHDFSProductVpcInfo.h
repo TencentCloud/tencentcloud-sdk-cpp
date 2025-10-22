@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,10 +50,8 @@ namespace TencentCloud
                     /**
                      * 获取vpc id
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId vpc id
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
@@ -61,10 +59,8 @@ namespace TencentCloud
                     /**
                      * 设置vpc id
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId vpc id
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -78,18 +74,14 @@ namespace TencentCloud
 
                     /**
                      * 获取vpc名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcName vpc名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcName() const;
 
                     /**
                      * 设置vpc名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcName vpc名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcName(const std::string& _vpcName);
@@ -103,18 +95,14 @@ namespace TencentCloud
 
                     /**
                      * 获取vpc子网信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcCidrBlock vpc子网信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VpcCidrBlock> GetVpcCidrBlock() const;
 
                     /**
                      * 设置vpc子网信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcCidrBlock vpc子网信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcCidrBlock(const std::vector<VpcCidrBlock>& _vpcCidrBlock);
@@ -128,18 +116,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleId 规则Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRuleId() const;
 
                     /**
                      * 设置规则Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleId 规则Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleId(const int64_t& _ruleId);
@@ -153,18 +137,14 @@ namespace TencentCloud
 
                     /**
                      * 获取权限组Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccessGroupId 权限组Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccessGroupId() const;
 
                     /**
                      * 设置权限组Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accessGroupId 权限组Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccessGroupId(const std::string& _accessGroupId);
@@ -181,35 +161,30 @@ namespace TencentCloud
                     /**
                      * vpc id
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * vpc名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcName;
                     bool m_vpcNameHasBeenSet;
 
                     /**
                      * vpc子网信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VpcCidrBlock> m_vpcCidrBlock;
                     bool m_vpcCidrBlockHasBeenSet;
 
                     /**
                      * 规则Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ruleId;
                     bool m_ruleIdHasBeenSet;
 
                     /**
                      * 权限组Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accessGroupId;
                     bool m_accessGroupIdHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件系统快照id
-                     * @return SnapshotId 文件系统快照id
+                     * 获取快照ID，可以通过[DescribeCfsSnapshots](https://cloud.tencent.com/document/api/582/80206) 查询获取
+                     * @return SnapshotId 快照ID，可以通过[DescribeCfsSnapshots](https://cloud.tencent.com/document/api/582/80206) 查询获取
                      * 
                      */
                     std::string GetSnapshotId() const;
 
                     /**
-                     * 设置文件系统快照id
-                     * @param _snapshotId 文件系统快照id
+                     * 设置快照ID，可以通过[DescribeCfsSnapshots](https://cloud.tencent.com/document/api/582/80206) 查询获取
+                     * @param _snapshotId 快照ID，可以通过[DescribeCfsSnapshots](https://cloud.tencent.com/document/api/582/80206) 查询获取
                      * 
                      */
                     void SetSnapshotId(const std::string& _snapshotId);
@@ -64,15 +64,19 @@ namespace TencentCloud
                     bool SnapshotIdHasBeenSet() const;
 
                     /**
-                     * 获取需要删除的文件文件系统快照ID 列表，快照ID，跟ID列表至少填一项
-                     * @return SnapshotIds 需要删除的文件文件系统快照ID 列表，快照ID，跟ID列表至少填一项
+                     * 获取需要删除的文件系统快照ID 列表，快照ID，跟ID列表至少填一项
+快照ID，可以通过[DescribeCfsSnapshots](https://cloud.tencent.com/document/api/582/80206) 查询获取
+                     * @return SnapshotIds 需要删除的文件系统快照ID 列表，快照ID，跟ID列表至少填一项
+快照ID，可以通过[DescribeCfsSnapshots](https://cloud.tencent.com/document/api/582/80206) 查询获取
                      * 
                      */
                     std::vector<std::string> GetSnapshotIds() const;
 
                     /**
-                     * 设置需要删除的文件文件系统快照ID 列表，快照ID，跟ID列表至少填一项
-                     * @param _snapshotIds 需要删除的文件文件系统快照ID 列表，快照ID，跟ID列表至少填一项
+                     * 设置需要删除的文件系统快照ID 列表，快照ID，跟ID列表至少填一项
+快照ID，可以通过[DescribeCfsSnapshots](https://cloud.tencent.com/document/api/582/80206) 查询获取
+                     * @param _snapshotIds 需要删除的文件系统快照ID 列表，快照ID，跟ID列表至少填一项
+快照ID，可以通过[DescribeCfsSnapshots](https://cloud.tencent.com/document/api/582/80206) 查询获取
                      * 
                      */
                     void SetSnapshotIds(const std::vector<std::string>& _snapshotIds);
@@ -87,13 +91,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件系统快照id
+                     * 快照ID，可以通过[DescribeCfsSnapshots](https://cloud.tencent.com/document/api/582/80206) 查询获取
                      */
                     std::string m_snapshotId;
                     bool m_snapshotIdHasBeenSet;
 
                     /**
-                     * 需要删除的文件文件系统快照ID 列表，快照ID，跟ID列表至少填一项
+                     * 需要删除的文件系统快照ID 列表，快照ID，跟ID列表至少填一项
+快照ID，可以通过[DescribeCfsSnapshots](https://cloud.tencent.com/document/api/582/80206) 查询获取
                      */
                     std::vector<std::string> m_snapshotIds;
                     bool m_snapshotIdsHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ CreateSyncJobRequest::CreateSyncJobRequest() :
     m_dstDatabaseTypeHasBeenSet(false),
     m_dstRegionHasBeenSet(false),
     m_specificationHasBeenSet(false),
+    m_timeSpanHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_countHasBeenSet(false),
     m_autoRenewHasBeenSet(false),
@@ -91,6 +92,14 @@ string CreateSyncJobRequest::ToJsonString() const
         string key = "Specification";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_specification.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_timeSpanHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeSpan";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_timeSpan, allocator);
     }
 
     if (m_tagsHasBeenSet)
@@ -250,6 +259,22 @@ void CreateSyncJobRequest::SetSpecification(const string& _specification)
 bool CreateSyncJobRequest::SpecificationHasBeenSet() const
 {
     return m_specificationHasBeenSet;
+}
+
+uint64_t CreateSyncJobRequest::GetTimeSpan() const
+{
+    return m_timeSpan;
+}
+
+void CreateSyncJobRequest::SetTimeSpan(const uint64_t& _timeSpan)
+{
+    m_timeSpan = _timeSpan;
+    m_timeSpanHasBeenSet = true;
+}
+
+bool CreateSyncJobRequest::TimeSpanHasBeenSet() const
+{
+    return m_timeSpanHasBeenSet;
 }
 
 vector<TagItem> CreateSyncJobRequest::GetTags() const

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -92,21 +92,21 @@ namespace TencentCloud
                     /**
                      * 获取操作者 Id。（废弃，请勿使用）
                      * @return Operator 操作者 Id。（废弃，请勿使用）
-                     * 
+                     * @deprecated
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置操作者 Id。（废弃，请勿使用）
                      * @param _operator 操作者 Id。（废弃，请勿使用）
-                     * 
+                     * @deprecated
                      */
                     void SetOperator(const std::string& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool OperatorHasBeenSet() const;
 

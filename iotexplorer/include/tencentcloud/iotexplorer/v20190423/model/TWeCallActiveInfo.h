@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,7 +51,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModelId 小程序ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetModelId() const;
 
@@ -60,31 +60,27 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modelId 小程序ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetModelId(const std::string& _modelId);
 
                     /**
                      * 判断参数 ModelId 是否已赋值
                      * @return ModelId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ModelIdHasBeenSet() const;
 
                     /**
                      * 获取Sn信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Sn Sn信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSn() const;
 
                     /**
                      * 设置Sn信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sn Sn信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSn(const std::string& _sn);
@@ -98,18 +94,14 @@ namespace TencentCloud
 
                     /**
                      * 获取过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireTime 过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetExpireTime() const;
 
                     /**
                      * 设置过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expireTime 过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpireTime(const int64_t& _expireTime);
@@ -120,6 +112,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ExpireTimeHasBeenSet() const;
+
+                    /**
+                     * 获取类型
+                     * @return PkgType 类型
+                     * 
+                     */
+                    int64_t GetPkgType() const;
+
+                    /**
+                     * 设置类型
+                     * @param _pkgType 类型
+                     * 
+                     */
+                    void SetPkgType(const int64_t& _pkgType);
+
+                    /**
+                     * 判断参数 PkgType 是否已赋值
+                     * @return PkgType 是否已赋值
+                     * 
+                     */
+                    bool PkgTypeHasBeenSet() const;
 
                 private:
 
@@ -132,17 +145,21 @@ namespace TencentCloud
 
                     /**
                      * Sn信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sn;
                     bool m_snHasBeenSet;
 
                     /**
                      * 过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;
+
+                    /**
+                     * 类型
+                     */
+                    int64_t m_pkgType;
+                    bool m_pkgTypeHasBeenSet;
 
                 };
             }

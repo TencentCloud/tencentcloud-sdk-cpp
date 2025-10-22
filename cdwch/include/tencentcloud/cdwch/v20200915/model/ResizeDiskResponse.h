@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取流程ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowId 流程ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlowId() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
@@ -77,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorMsg 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrorMsg() const;
@@ -95,21 +89,18 @@ namespace TencentCloud
 
                     /**
                      * 流程ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
                      * 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorMsg;
                     bool m_errorMsgHasBeenSet;

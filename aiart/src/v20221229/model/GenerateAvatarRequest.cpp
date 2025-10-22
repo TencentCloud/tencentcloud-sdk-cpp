@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ using namespace TencentCloud::Aiart::V20221229::Model;
 using namespace std;
 
 GenerateAvatarRequest::GenerateAvatarRequest() :
+    m_typeHasBeenSet(false),
     m_styleHasBeenSet(false),
     m_inputImageHasBeenSet(false),
     m_inputUrlHasBeenSet(false),
@@ -39,6 +40,14 @@ string GenerateAvatarRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_styleHasBeenSet)
     {
@@ -104,6 +113,22 @@ string GenerateAvatarRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string GenerateAvatarRequest::GetType() const
+{
+    return m_type;
+}
+
+void GenerateAvatarRequest::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool GenerateAvatarRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
+}
 
 string GenerateAvatarRequest::GetStyle() const
 {

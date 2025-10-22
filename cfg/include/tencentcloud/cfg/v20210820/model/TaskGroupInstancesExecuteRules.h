@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例选取模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskGroupInstancesExecuteMode 实例选取模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTaskGroupInstancesExecuteMode() const;
 
                     /**
                      * 设置实例选取模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskGroupInstancesExecuteMode 实例选取模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskGroupInstancesExecuteMode(const int64_t& _taskGroupInstancesExecuteMode);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取按比例选取模式下选取比例
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskGroupInstancesExecutePercent 按比例选取模式下选取比例
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTaskGroupInstancesExecutePercent() const;
 
                     /**
                      * 设置按比例选取模式下选取比例
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskGroupInstancesExecutePercent 按比例选取模式下选取比例
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskGroupInstancesExecutePercent(const int64_t& _taskGroupInstancesExecutePercent);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取按数量选取模式下选取数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskGroupInstancesExecuteNum 按数量选取模式下选取数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTaskGroupInstancesExecuteNum() const;
 
                     /**
                      * 设置按数量选取模式下选取数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskGroupInstancesExecuteNum 按数量选取模式下选取数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskGroupInstancesExecuteNum(const int64_t& _taskGroupInstancesExecuteNum);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 实例选取模式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_taskGroupInstancesExecuteMode;
                     bool m_taskGroupInstancesExecuteModeHasBeenSet;
 
                     /**
                      * 按比例选取模式下选取比例
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_taskGroupInstancesExecutePercent;
                     bool m_taskGroupInstancesExecutePercentHasBeenSet;
 
                     /**
                      * 按数量选取模式下选取数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_taskGroupInstancesExecuteNum;
                     bool m_taskGroupInstancesExecuteNumHasBeenSet;

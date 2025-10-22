@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -235,6 +235,48 @@ namespace TencentCloud
                      */
                     bool AllowHasBeenSet() const;
 
+                    /**
+                     * 获取客票生效日期
+                     * @return DateStart 客票生效日期
+                     * 
+                     */
+                    std::string GetDateStart() const;
+
+                    /**
+                     * 设置客票生效日期
+                     * @param _dateStart 客票生效日期
+                     * 
+                     */
+                    void SetDateStart(const std::string& _dateStart);
+
+                    /**
+                     * 判断参数 DateStart 是否已赋值
+                     * @return DateStart 是否已赋值
+                     * 
+                     */
+                    bool DateStartHasBeenSet() const;
+
+                    /**
+                     * 获取有效截止日期
+                     * @return DateEnd 有效截止日期
+                     * 
+                     */
+                    std::string GetDateEnd() const;
+
+                    /**
+                     * 设置有效截止日期
+                     * @param _dateEnd 有效截止日期
+                     * 
+                     */
+                    void SetDateEnd(const std::string& _dateEnd);
+
+                    /**
+                     * 判断参数 DateEnd 是否已赋值
+                     * @return DateEnd 是否已赋值
+                     * 
+                     */
+                    bool DateEndHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +332,18 @@ namespace TencentCloud
                      */
                     std::string m_allow;
                     bool m_allowHasBeenSet;
+
+                    /**
+                     * 客票生效日期
+                     */
+                    std::string m_dateStart;
+                    bool m_dateStartHasBeenSet;
+
+                    /**
+                     * 有效截止日期
+                     */
+                    std::string m_dateEnd;
+                    bool m_dateEndHasBeenSet;
 
                 };
             }

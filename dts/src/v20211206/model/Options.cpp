@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ Options::Options() :
     m_kafkaOptionHasBeenSet(false),
     m_rateLimitOptionHasBeenSet(false),
     m_autoRetryTimeRangeMinutesHasBeenSet(false),
+    m_startPositionHasBeenSet(false),
     m_filterBeginCommitHasBeenSet(false),
     m_filterCheckpointHasBeenSet(false)
 {
@@ -175,6 +176,16 @@ CoreInternalOutcome Options::Deserialize(const rapidjson::Value &value)
         m_autoRetryTimeRangeMinutesHasBeenSet = true;
     }
 
+    if (value.HasMember("StartPosition") && !value["StartPosition"].IsNull())
+    {
+        if (!value["StartPosition"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Options.StartPosition` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_startPosition = string(value["StartPosition"].GetString());
+        m_startPositionHasBeenSet = true;
+    }
+
     if (value.HasMember("FilterBeginCommit") && !value["FilterBeginCommit"].IsNull())
     {
         if (!value["FilterBeginCommit"].IsBool())
@@ -295,6 +306,14 @@ void Options::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "AutoRetryTimeRangeMinutes";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_autoRetryTimeRangeMinutes, allocator);
+    }
+
+    if (m_startPositionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartPosition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startPosition.c_str(), allocator).Move(), allocator);
     }
 
     if (m_filterBeginCommitHasBeenSet)
@@ -474,6 +493,22 @@ void Options::SetAutoRetryTimeRangeMinutes(const int64_t& _autoRetryTimeRangeMin
 bool Options::AutoRetryTimeRangeMinutesHasBeenSet() const
 {
     return m_autoRetryTimeRangeMinutesHasBeenSet;
+}
+
+string Options::GetStartPosition() const
+{
+    return m_startPosition;
+}
+
+void Options::SetStartPosition(const string& _startPosition)
+{
+    m_startPosition = _startPosition;
+    m_startPositionHasBeenSet = true;
+}
+
+bool Options::StartPositionHasBeenSet() const
+{
+    return m_startPositionHasBeenSet;
 }
 
 bool Options::GetFilterBeginCommit() const

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 日志内容高亮描述信息
+                * 符合检索条件的关键词，一般用于高亮显示。仅支持键值检索，不支持全文检索
                 */
                 class HighLightItem : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取高亮的日志Key
-                     * @return Key 高亮的日志Key
+                     * 获取高亮的日志字段名称
+                     * @return Key 高亮的日志字段名称
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置高亮的日志Key
-                     * @param _key 高亮的日志Key
+                     * 设置高亮的日志字段名称
+                     * @param _key 高亮的日志字段名称
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取高亮的语法
-                     * @return Values 高亮的语法
+                     * 获取高亮的关键词
+                     * @return Values 高亮的关键词
                      * 
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
-                     * 设置高亮的语法
-                     * @param _values 高亮的语法
+                     * 设置高亮的关键词
+                     * @param _values 高亮的关键词
                      * 
                      */
                     void SetValues(const std::vector<std::string>& _values);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 高亮的日志Key
+                     * 高亮的日志字段名称
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
-                     * 高亮的语法
+                     * 高亮的关键词
                      */
                     std::vector<std::string> m_values;
                     bool m_valuesHasBeenSet;

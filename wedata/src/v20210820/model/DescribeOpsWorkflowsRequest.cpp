@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,11 @@ DescribeOpsWorkflowsRequest::DescribeOpsWorkflowsRequest() :
     m_pageNumberHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
     m_sortItemHasBeenSet(false),
-    m_sortTypeHasBeenSet(false)
+    m_sortTypeHasBeenSet(false),
+    m_projectIdsHasBeenSet(false),
+    m_workflowTypeListHasBeenSet(false),
+    m_keyWordHasBeenSet(false),
+    m_scheduleTimeZoneHasBeenSet(false)
 {
 }
 
@@ -148,6 +152,48 @@ string DescribeOpsWorkflowsRequest::ToJsonString() const
         string key = "SortType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sortType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_projectIds.begin(); itr != m_projectIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_workflowTypeListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkflowTypeList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_workflowTypeList.begin(); itr != m_workflowTypeList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_keyWordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeyWord";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_keyWord.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scheduleTimeZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleTimeZone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_scheduleTimeZone.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -364,6 +410,70 @@ void DescribeOpsWorkflowsRequest::SetSortType(const string& _sortType)
 bool DescribeOpsWorkflowsRequest::SortTypeHasBeenSet() const
 {
     return m_sortTypeHasBeenSet;
+}
+
+vector<string> DescribeOpsWorkflowsRequest::GetProjectIds() const
+{
+    return m_projectIds;
+}
+
+void DescribeOpsWorkflowsRequest::SetProjectIds(const vector<string>& _projectIds)
+{
+    m_projectIds = _projectIds;
+    m_projectIdsHasBeenSet = true;
+}
+
+bool DescribeOpsWorkflowsRequest::ProjectIdsHasBeenSet() const
+{
+    return m_projectIdsHasBeenSet;
+}
+
+vector<string> DescribeOpsWorkflowsRequest::GetWorkflowTypeList() const
+{
+    return m_workflowTypeList;
+}
+
+void DescribeOpsWorkflowsRequest::SetWorkflowTypeList(const vector<string>& _workflowTypeList)
+{
+    m_workflowTypeList = _workflowTypeList;
+    m_workflowTypeListHasBeenSet = true;
+}
+
+bool DescribeOpsWorkflowsRequest::WorkflowTypeListHasBeenSet() const
+{
+    return m_workflowTypeListHasBeenSet;
+}
+
+string DescribeOpsWorkflowsRequest::GetKeyWord() const
+{
+    return m_keyWord;
+}
+
+void DescribeOpsWorkflowsRequest::SetKeyWord(const string& _keyWord)
+{
+    m_keyWord = _keyWord;
+    m_keyWordHasBeenSet = true;
+}
+
+bool DescribeOpsWorkflowsRequest::KeyWordHasBeenSet() const
+{
+    return m_keyWordHasBeenSet;
+}
+
+string DescribeOpsWorkflowsRequest::GetScheduleTimeZone() const
+{
+    return m_scheduleTimeZone;
+}
+
+void DescribeOpsWorkflowsRequest::SetScheduleTimeZone(const string& _scheduleTimeZone)
+{
+    m_scheduleTimeZone = _scheduleTimeZone;
+    m_scheduleTimeZoneHasBeenSet = true;
+}
+
+bool DescribeOpsWorkflowsRequest::ScheduleTimeZoneHasBeenSet() const
+{
+    return m_scheduleTimeZoneHasBeenSet;
 }
 
 

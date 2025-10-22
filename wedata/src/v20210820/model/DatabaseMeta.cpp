@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,7 +45,13 @@ DatabaseMeta::DatabaseMeta() :
     m_collectJobIdHasBeenSet(false),
     m_collectJobNameHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
-    m_clusterNameHasBeenSet(false)
+    m_clusterNameHasBeenSet(false),
+    m_modifiedTimeByTablesHasBeenSet(false),
+    m_lastAccessTimeByTablesHasBeenSet(false),
+    m_databaseGuidHasBeenSet(false),
+    m_environmentHasBeenSet(false),
+    m_ownerAccountHasBeenSet(false),
+    m_operateOptionHasBeenSet(false)
 {
 }
 
@@ -314,6 +320,73 @@ CoreInternalOutcome DatabaseMeta::Deserialize(const rapidjson::Value &value)
         m_clusterNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ModifiedTimeByTables") && !value["ModifiedTimeByTables"].IsNull())
+    {
+        if (!value["ModifiedTimeByTables"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatabaseMeta.ModifiedTimeByTables` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_modifiedTimeByTables = value["ModifiedTimeByTables"].GetUint64();
+        m_modifiedTimeByTablesHasBeenSet = true;
+    }
+
+    if (value.HasMember("LastAccessTimeByTables") && !value["LastAccessTimeByTables"].IsNull())
+    {
+        if (!value["LastAccessTimeByTables"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatabaseMeta.LastAccessTimeByTables` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastAccessTimeByTables = value["LastAccessTimeByTables"].GetUint64();
+        m_lastAccessTimeByTablesHasBeenSet = true;
+    }
+
+    if (value.HasMember("DatabaseGuid") && !value["DatabaseGuid"].IsNull())
+    {
+        if (!value["DatabaseGuid"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatabaseMeta.DatabaseGuid` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_databaseGuid = string(value["DatabaseGuid"].GetString());
+        m_databaseGuidHasBeenSet = true;
+    }
+
+    if (value.HasMember("Environment") && !value["Environment"].IsNull())
+    {
+        if (!value["Environment"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatabaseMeta.Environment` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_environment = string(value["Environment"].GetString());
+        m_environmentHasBeenSet = true;
+    }
+
+    if (value.HasMember("OwnerAccount") && !value["OwnerAccount"].IsNull())
+    {
+        if (!value["OwnerAccount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatabaseMeta.OwnerAccount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ownerAccount = value["OwnerAccount"].GetUint64();
+        m_ownerAccountHasBeenSet = true;
+    }
+
+    if (value.HasMember("OperateOption") && !value["OperateOption"].IsNull())
+    {
+        if (!value["OperateOption"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatabaseMeta.OperateOption` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_operateOption.Deserialize(value["OperateOption"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_operateOptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -526,6 +599,55 @@ void DatabaseMeta::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ClusterName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modifiedTimeByTablesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifiedTimeByTables";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_modifiedTimeByTables, allocator);
+    }
+
+    if (m_lastAccessTimeByTablesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastAccessTimeByTables";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_lastAccessTimeByTables, allocator);
+    }
+
+    if (m_databaseGuidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatabaseGuid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_databaseGuid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_environmentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Environment";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_environment.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ownerAccountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OwnerAccount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ownerAccount, allocator);
+    }
+
+    if (m_operateOptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperateOption";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operateOption.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -929,5 +1051,101 @@ void DatabaseMeta::SetClusterName(const string& _clusterName)
 bool DatabaseMeta::ClusterNameHasBeenSet() const
 {
     return m_clusterNameHasBeenSet;
+}
+
+uint64_t DatabaseMeta::GetModifiedTimeByTables() const
+{
+    return m_modifiedTimeByTables;
+}
+
+void DatabaseMeta::SetModifiedTimeByTables(const uint64_t& _modifiedTimeByTables)
+{
+    m_modifiedTimeByTables = _modifiedTimeByTables;
+    m_modifiedTimeByTablesHasBeenSet = true;
+}
+
+bool DatabaseMeta::ModifiedTimeByTablesHasBeenSet() const
+{
+    return m_modifiedTimeByTablesHasBeenSet;
+}
+
+uint64_t DatabaseMeta::GetLastAccessTimeByTables() const
+{
+    return m_lastAccessTimeByTables;
+}
+
+void DatabaseMeta::SetLastAccessTimeByTables(const uint64_t& _lastAccessTimeByTables)
+{
+    m_lastAccessTimeByTables = _lastAccessTimeByTables;
+    m_lastAccessTimeByTablesHasBeenSet = true;
+}
+
+bool DatabaseMeta::LastAccessTimeByTablesHasBeenSet() const
+{
+    return m_lastAccessTimeByTablesHasBeenSet;
+}
+
+string DatabaseMeta::GetDatabaseGuid() const
+{
+    return m_databaseGuid;
+}
+
+void DatabaseMeta::SetDatabaseGuid(const string& _databaseGuid)
+{
+    m_databaseGuid = _databaseGuid;
+    m_databaseGuidHasBeenSet = true;
+}
+
+bool DatabaseMeta::DatabaseGuidHasBeenSet() const
+{
+    return m_databaseGuidHasBeenSet;
+}
+
+string DatabaseMeta::GetEnvironment() const
+{
+    return m_environment;
+}
+
+void DatabaseMeta::SetEnvironment(const string& _environment)
+{
+    m_environment = _environment;
+    m_environmentHasBeenSet = true;
+}
+
+bool DatabaseMeta::EnvironmentHasBeenSet() const
+{
+    return m_environmentHasBeenSet;
+}
+
+uint64_t DatabaseMeta::GetOwnerAccount() const
+{
+    return m_ownerAccount;
+}
+
+void DatabaseMeta::SetOwnerAccount(const uint64_t& _ownerAccount)
+{
+    m_ownerAccount = _ownerAccount;
+    m_ownerAccountHasBeenSet = true;
+}
+
+bool DatabaseMeta::OwnerAccountHasBeenSet() const
+{
+    return m_ownerAccountHasBeenSet;
+}
+
+OperateOption DatabaseMeta::GetOperateOption() const
+{
+    return m_operateOption;
+}
+
+void DatabaseMeta::SetOperateOption(const OperateOption& _operateOption)
+{
+    m_operateOption = _operateOption;
+    m_operateOptionHasBeenSet = true;
+}
+
+bool DatabaseMeta::OperateOptionHasBeenSet() const
+{
+    return m_operateOptionHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -278,6 +278,27 @@ namespace TencentCloud
                      */
                     bool ExportToHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启同步到全局注册中心
+                     * @return SyncToGlobalRegistry 是否开启同步到全局注册中心
+                     * 
+                     */
+                    bool GetSyncToGlobalRegistry() const;
+
+                    /**
+                     * 设置是否开启同步到全局注册中心
+                     * @param _syncToGlobalRegistry 是否开启同步到全局注册中心
+                     * 
+                     */
+                    void SetSyncToGlobalRegistry(const bool& _syncToGlobalRegistry);
+
+                    /**
+                     * 判断参数 SyncToGlobalRegistry 是否已赋值
+                     * @return SyncToGlobalRegistry 是否已赋值
+                     * 
+                     */
+                    bool SyncToGlobalRegistryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -345,6 +366,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_exportTo;
                     bool m_exportToHasBeenSet;
+
+                    /**
+                     * 是否开启同步到全局注册中心
+                     */
+                    bool m_syncToGlobalRegistry;
+                    bool m_syncToGlobalRegistryHasBeenSet;
 
                 };
             }

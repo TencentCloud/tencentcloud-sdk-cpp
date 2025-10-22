@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,13 +25,17 @@ ModifyOutputInfo::ModifyOutputInfo() :
     m_outputNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_protocolHasBeenSet(false),
+    m_outputKindHasBeenSet(false),
     m_sRTSettingsHasBeenSet(false),
     m_rTPSettingsHasBeenSet(false),
     m_rTMPSettingsHasBeenSet(false),
     m_allowIpListHasBeenSet(false),
     m_maxConcurrentHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
-    m_zonesHasBeenSet(false)
+    m_zonesHasBeenSet(false),
+    m_rISTSettingsHasBeenSet(false),
+    m_outputTypeHasBeenSet(false),
+    m_pidSelectorHasBeenSet(false)
 {
 }
 
@@ -78,6 +82,16 @@ CoreInternalOutcome ModifyOutputInfo::Deserialize(const rapidjson::Value &value)
         }
         m_protocol = string(value["Protocol"].GetString());
         m_protocolHasBeenSet = true;
+    }
+
+    if (value.HasMember("OutputKind") && !value["OutputKind"].IsNull())
+    {
+        if (!value["OutputKind"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModifyOutputInfo.OutputKind` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_outputKind = string(value["OutputKind"].GetString());
+        m_outputKindHasBeenSet = true;
     }
 
     if (value.HasMember("SRTSettings") && !value["SRTSettings"].IsNull())
@@ -180,6 +194,50 @@ CoreInternalOutcome ModifyOutputInfo::Deserialize(const rapidjson::Value &value)
         m_zonesHasBeenSet = true;
     }
 
+    if (value.HasMember("RISTSettings") && !value["RISTSettings"].IsNull())
+    {
+        if (!value["RISTSettings"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModifyOutputInfo.RISTSettings` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_rISTSettings.Deserialize(value["RISTSettings"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_rISTSettingsHasBeenSet = true;
+    }
+
+    if (value.HasMember("OutputType") && !value["OutputType"].IsNull())
+    {
+        if (!value["OutputType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModifyOutputInfo.OutputType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_outputType = string(value["OutputType"].GetString());
+        m_outputTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("PidSelector") && !value["PidSelector"].IsNull())
+    {
+        if (!value["PidSelector"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModifyOutputInfo.PidSelector` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_pidSelector.Deserialize(value["PidSelector"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_pidSelectorHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -217,6 +275,14 @@ void ModifyOutputInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "Protocol";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_outputKindHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputKind";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outputKind.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sRTSettingsHasBeenSet)
@@ -293,6 +359,32 @@ void ModifyOutputInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         }
     }
 
+    if (m_rISTSettingsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RISTSettings";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_rISTSettings.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_outputTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outputType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pidSelectorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PidSelector";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_pidSelector.ToJsonObject(value[key.c_str()], allocator);
+    }
+
 }
 
 
@@ -358,6 +450,22 @@ void ModifyOutputInfo::SetProtocol(const string& _protocol)
 bool ModifyOutputInfo::ProtocolHasBeenSet() const
 {
     return m_protocolHasBeenSet;
+}
+
+string ModifyOutputInfo::GetOutputKind() const
+{
+    return m_outputKind;
+}
+
+void ModifyOutputInfo::SetOutputKind(const string& _outputKind)
+{
+    m_outputKind = _outputKind;
+    m_outputKindHasBeenSet = true;
+}
+
+bool ModifyOutputInfo::OutputKindHasBeenSet() const
+{
+    return m_outputKindHasBeenSet;
 }
 
 CreateOutputSRTSettings ModifyOutputInfo::GetSRTSettings() const
@@ -470,5 +578,53 @@ void ModifyOutputInfo::SetZones(const vector<string>& _zones)
 bool ModifyOutputInfo::ZonesHasBeenSet() const
 {
     return m_zonesHasBeenSet;
+}
+
+CreateOutputRistSettings ModifyOutputInfo::GetRISTSettings() const
+{
+    return m_rISTSettings;
+}
+
+void ModifyOutputInfo::SetRISTSettings(const CreateOutputRistSettings& _rISTSettings)
+{
+    m_rISTSettings = _rISTSettings;
+    m_rISTSettingsHasBeenSet = true;
+}
+
+bool ModifyOutputInfo::RISTSettingsHasBeenSet() const
+{
+    return m_rISTSettingsHasBeenSet;
+}
+
+string ModifyOutputInfo::GetOutputType() const
+{
+    return m_outputType;
+}
+
+void ModifyOutputInfo::SetOutputType(const string& _outputType)
+{
+    m_outputType = _outputType;
+    m_outputTypeHasBeenSet = true;
+}
+
+bool ModifyOutputInfo::OutputTypeHasBeenSet() const
+{
+    return m_outputTypeHasBeenSet;
+}
+
+PidSelector ModifyOutputInfo::GetPidSelector() const
+{
+    return m_pidSelector;
+}
+
+void ModifyOutputInfo::SetPidSelector(const PidSelector& _pidSelector)
+{
+    m_pidSelector = _pidSelector;
+    m_pidSelectorHasBeenSet = true;
+}
+
+bool ModifyOutputInfo::PidSelectorHasBeenSet() const
+{
+    return m_pidSelectorHasBeenSet;
 }
 

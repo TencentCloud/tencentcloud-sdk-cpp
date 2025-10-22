@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取进行中的任务taskid（StartRecord接口返回）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 进行中的任务taskid（StartRecord接口返回）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTaskId() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取录制类型：1代表单流 2代表混流 3代表单流和混流。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordMode 录制类型：1代表单流 2代表混流 3代表单流和混流。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRecordMode() const;
@@ -78,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取指定订阅流白名单或者黑名单。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubscribeRecordUserIds 指定订阅流白名单或者黑名单。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SubscribeRecordUserIds GetSubscribeRecordUserIds() const;
@@ -96,21 +90,18 @@ namespace TencentCloud
 
                     /**
                      * 进行中的任务taskid（StartRecord接口返回）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
                      * 录制类型：1代表单流 2代表混流 3代表单流和混流。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_recordMode;
                     bool m_recordModeHasBeenSet;
 
                     /**
                      * 指定订阅流白名单或者黑名单。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SubscribeRecordUserIds m_subscribeRecordUserIds;
                     bool m_subscribeRecordUserIdsHasBeenSet;

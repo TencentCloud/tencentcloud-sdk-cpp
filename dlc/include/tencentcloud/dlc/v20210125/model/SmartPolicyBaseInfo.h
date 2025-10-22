@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uin 用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Catalog/Database/Table
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyType Catalog/Database/Table
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPolicyType() const;
 
                     /**
                      * 设置Catalog/Database/Table
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _policyType Catalog/Database/Table
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPolicyType(const std::string& _policyType);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Catalog名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Catalog Catalog名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCatalog() const;
 
                     /**
                      * 设置Catalog名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _catalog Catalog名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCatalog(const std::string& _catalog);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Database 数据库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDatabase() const;
 
                     /**
                      * 设置数据库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _database 数据库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDatabase(const std::string& _database);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Table 表名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTable() const;
 
                     /**
                      * 设置表名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _table 表名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTable(const std::string& _table);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId 用户appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppId() const;
 
                     /**
                      * 设置用户appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appId 用户appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppId(const std::string& _appId);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * 用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
                      * Catalog/Database/Table
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_policyType;
                     bool m_policyTypeHasBeenSet;
 
                     /**
                      * Catalog名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_catalog;
                     bool m_catalogHasBeenSet;
 
                     /**
                      * 数据库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_database;
                     bool m_databaseHasBeenSet;
 
                     /**
                      * 表名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_table;
                     bool m_tableHasBeenSet;
 
                     /**
                      * 用户appid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;

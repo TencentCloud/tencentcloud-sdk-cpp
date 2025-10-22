@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,7 +50,9 @@ RiskDnsEventInfo::RiskDnsEventInfo() :
     m_clusterIDHasBeenSet(false),
     m_nodeIDHasBeenSet(false),
     m_nodeUniqueIDHasBeenSet(false),
-    m_clusterNameHasBeenSet(false)
+    m_clusterNameHasBeenSet(false),
+    m_imageIdHasBeenSet(false),
+    m_containerIdHasBeenSet(false)
 {
 }
 
@@ -359,6 +361,26 @@ CoreInternalOutcome RiskDnsEventInfo::Deserialize(const rapidjson::Value &value)
         m_clusterNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ImageId") && !value["ImageId"].IsNull())
+    {
+        if (!value["ImageId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RiskDnsEventInfo.ImageId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageId = string(value["ImageId"].GetString());
+        m_imageIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ContainerId") && !value["ContainerId"].IsNull())
+    {
+        if (!value["ContainerId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RiskDnsEventInfo.ContainerId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerId = string(value["ContainerId"].GetString());
+        m_containerIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -604,6 +626,22 @@ void RiskDnsEventInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ClusterName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imageIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_containerIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_containerId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1087,5 +1125,37 @@ void RiskDnsEventInfo::SetClusterName(const string& _clusterName)
 bool RiskDnsEventInfo::ClusterNameHasBeenSet() const
 {
     return m_clusterNameHasBeenSet;
+}
+
+string RiskDnsEventInfo::GetImageId() const
+{
+    return m_imageId;
+}
+
+void RiskDnsEventInfo::SetImageId(const string& _imageId)
+{
+    m_imageId = _imageId;
+    m_imageIdHasBeenSet = true;
+}
+
+bool RiskDnsEventInfo::ImageIdHasBeenSet() const
+{
+    return m_imageIdHasBeenSet;
+}
+
+string RiskDnsEventInfo::GetContainerId() const
+{
+    return m_containerId;
+}
+
+void RiskDnsEventInfo::SetContainerId(const string& _containerId)
+{
+    m_containerId = _containerId;
+    m_containerIdHasBeenSet = true;
+}
+
+bool RiskDnsEventInfo::ContainerIdHasBeenSet() const
+{
+    return m_containerIdHasBeenSet;
 }
 

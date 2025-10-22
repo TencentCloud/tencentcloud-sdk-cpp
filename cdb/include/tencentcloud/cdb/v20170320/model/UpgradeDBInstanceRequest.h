@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -174,15 +174,19 @@ namespace TencentCloud
                     bool SlaveZoneHasBeenSet() const;
 
                     /**
-                     * 获取主实例数据库引擎版本，支持值包括：5.5、5.6 和 5.7。
-                     * @return EngineVersion 主实例数据库引擎版本，支持值包括：5.5、5.6 和 5.7。
+                     * 获取主实例数据库引擎版本，支持值包括：5.5、5.6、5.7、8.0。
+说明：升级数据库版本请使用 [UpgradeDBInstanceEngineVersion](https://cloud.tencent.com/document/api/236/15870) 接口。
+                     * @return EngineVersion 主实例数据库引擎版本，支持值包括：5.5、5.6、5.7、8.0。
+说明：升级数据库版本请使用 [UpgradeDBInstanceEngineVersion](https://cloud.tencent.com/document/api/236/15870) 接口。
                      * 
                      */
                     std::string GetEngineVersion() const;
 
                     /**
-                     * 设置主实例数据库引擎版本，支持值包括：5.5、5.6 和 5.7。
-                     * @param _engineVersion 主实例数据库引擎版本，支持值包括：5.5、5.6 和 5.7。
+                     * 设置主实例数据库引擎版本，支持值包括：5.5、5.6、5.7、8.0。
+说明：升级数据库版本请使用 [UpgradeDBInstanceEngineVersion](https://cloud.tencent.com/document/api/236/15870) 接口。
+                     * @param _engineVersion 主实例数据库引擎版本，支持值包括：5.5、5.6、5.7、8.0。
+说明：升级数据库版本请使用 [UpgradeDBInstanceEngineVersion](https://cloud.tencent.com/document/api/236/15870) 接口。
                      * 
                      */
                     void SetEngineVersion(const std::string& _engineVersion);
@@ -216,18 +220,18 @@ namespace TencentCloud
                     bool WaitSwitchHasBeenSet() const;
 
                     /**
-                     * 获取备库 2 的可用区信息，默认为空，升级主实例时可指定该参数，升级只读实例或者灾备实例时指定该参数无意义。
+                     * 获取备库2的可用区信息，默认为空，升级主实例时可指定该参数，升级只读实例或者灾备实例时指定该参数无意义。可通过 [获取云数据库可售卖规格](https://cloud.tencent.com/document/product/236/17229) 接口查询支持的可用区。
 备注：如您要将三节点降级至双节点，将该参数设置为空值即可实现。
-                     * @return BackupZone 备库 2 的可用区信息，默认为空，升级主实例时可指定该参数，升级只读实例或者灾备实例时指定该参数无意义。
+                     * @return BackupZone 备库2的可用区信息，默认为空，升级主实例时可指定该参数，升级只读实例或者灾备实例时指定该参数无意义。可通过 [获取云数据库可售卖规格](https://cloud.tencent.com/document/product/236/17229) 接口查询支持的可用区。
 备注：如您要将三节点降级至双节点，将该参数设置为空值即可实现。
                      * 
                      */
                     std::string GetBackupZone() const;
 
                     /**
-                     * 设置备库 2 的可用区信息，默认为空，升级主实例时可指定该参数，升级只读实例或者灾备实例时指定该参数无意义。
+                     * 设置备库2的可用区信息，默认为空，升级主实例时可指定该参数，升级只读实例或者灾备实例时指定该参数无意义。可通过 [获取云数据库可售卖规格](https://cloud.tencent.com/document/product/236/17229) 接口查询支持的可用区。
 备注：如您要将三节点降级至双节点，将该参数设置为空值即可实现。
-                     * @param _backupZone 备库 2 的可用区信息，默认为空，升级主实例时可指定该参数，升级只读实例或者灾备实例时指定该参数无意义。
+                     * @param _backupZone 备库2的可用区信息，默认为空，升级主实例时可指定该参数，升级只读实例或者灾备实例时指定该参数无意义。可通过 [获取云数据库可售卖规格](https://cloud.tencent.com/document/product/236/17229) 接口查询支持的可用区。
 备注：如您要将三节点降级至双节点，将该参数设置为空值即可实现。
                      * 
                      */
@@ -413,15 +417,15 @@ namespace TencentCloud
                     bool RoTransTypeHasBeenSet() const;
 
                     /**
-                     * 获取集群版节点拓扑配置。
-                     * @return ClusterTopology 集群版节点拓扑配置。
+                     * 获取云盘版节点拓扑配置。
+                     * @return ClusterTopology 云盘版节点拓扑配置。
                      * 
                      */
                     ClusterTopology GetClusterTopology() const;
 
                     /**
-                     * 设置集群版节点拓扑配置。
-                     * @param _clusterTopology 集群版节点拓扑配置。
+                     * 设置云盘版节点拓扑配置。
+                     * @param _clusterTopology 云盘版节点拓扑配置。
                      * 
                      */
                     void SetClusterTopology(const ClusterTopology& _clusterTopology);
@@ -453,6 +457,51 @@ namespace TencentCloud
                      * 
                      */
                     bool CheckFastUpgradeRebootHasBeenSet() const;
+
+                    /**
+                     * 获取数据校验敏感度，非极速变配时使用此参数，敏感度根据当前实例规格计算迁移过程中的数据对比使用的cpu资源
+对应的选项为: "high"、"normal"、"low"，默认为空
+参数详解，：
+"high": 对应控制台中的高，数据库负载过高不建议使用
+"normal"：对应控制台中的标准
+"low"：对应控制台中的低
+
+                     * @return DataCheckSensitive 数据校验敏感度，非极速变配时使用此参数，敏感度根据当前实例规格计算迁移过程中的数据对比使用的cpu资源
+对应的选项为: "high"、"normal"、"low"，默认为空
+参数详解，：
+"high": 对应控制台中的高，数据库负载过高不建议使用
+"normal"：对应控制台中的标准
+"low"：对应控制台中的低
+
+                     * 
+                     */
+                    std::string GetDataCheckSensitive() const;
+
+                    /**
+                     * 设置数据校验敏感度，非极速变配时使用此参数，敏感度根据当前实例规格计算迁移过程中的数据对比使用的cpu资源
+对应的选项为: "high"、"normal"、"low"，默认为空
+参数详解，：
+"high": 对应控制台中的高，数据库负载过高不建议使用
+"normal"：对应控制台中的标准
+"low"：对应控制台中的低
+
+                     * @param _dataCheckSensitive 数据校验敏感度，非极速变配时使用此参数，敏感度根据当前实例规格计算迁移过程中的数据对比使用的cpu资源
+对应的选项为: "high"、"normal"、"low"，默认为空
+参数详解，：
+"high": 对应控制台中的高，数据库负载过高不建议使用
+"normal"：对应控制台中的标准
+"low"：对应控制台中的低
+
+                     * 
+                     */
+                    void SetDataCheckSensitive(const std::string& _dataCheckSensitive);
+
+                    /**
+                     * 判断参数 DataCheckSensitive 是否已赋值
+                     * @return DataCheckSensitive 是否已赋值
+                     * 
+                     */
+                    bool DataCheckSensitiveHasBeenSet() const;
 
                 private:
 
@@ -494,7 +543,8 @@ namespace TencentCloud
                     bool m_slaveZoneHasBeenSet;
 
                     /**
-                     * 主实例数据库引擎版本，支持值包括：5.5、5.6 和 5.7。
+                     * 主实例数据库引擎版本，支持值包括：5.5、5.6、5.7、8.0。
+说明：升级数据库版本请使用 [UpgradeDBInstanceEngineVersion](https://cloud.tencent.com/document/api/236/15870) 接口。
                      */
                     std::string m_engineVersion;
                     bool m_engineVersionHasBeenSet;
@@ -506,7 +556,7 @@ namespace TencentCloud
                     bool m_waitSwitchHasBeenSet;
 
                     /**
-                     * 备库 2 的可用区信息，默认为空，升级主实例时可指定该参数，升级只读实例或者灾备实例时指定该参数无意义。
+                     * 备库2的可用区信息，默认为空，升级主实例时可指定该参数，升级只读实例或者灾备实例时指定该参数无意义。可通过 [获取云数据库可售卖规格](https://cloud.tencent.com/document/product/236/17229) 接口查询支持的可用区。
 备注：如您要将三节点降级至双节点，将该参数设置为空值即可实现。
                      */
                     std::string m_backupZone;
@@ -562,7 +612,7 @@ namespace TencentCloud
                     bool m_roTransTypeHasBeenSet;
 
                     /**
-                     * 集群版节点拓扑配置。
+                     * 云盘版节点拓扑配置。
                      */
                     ClusterTopology m_clusterTopology;
                     bool m_clusterTopologyHasBeenSet;
@@ -572,6 +622,18 @@ namespace TencentCloud
                      */
                     int64_t m_checkFastUpgradeReboot;
                     bool m_checkFastUpgradeRebootHasBeenSet;
+
+                    /**
+                     * 数据校验敏感度，非极速变配时使用此参数，敏感度根据当前实例规格计算迁移过程中的数据对比使用的cpu资源
+对应的选项为: "high"、"normal"、"low"，默认为空
+参数详解，：
+"high": 对应控制台中的高，数据库负载过高不建议使用
+"normal"：对应控制台中的标准
+"low"：对应控制台中的低
+
+                     */
+                    std::string m_dataCheckSensitive;
+                    bool m_dataCheckSensitiveHasBeenSet;
 
                 };
             }

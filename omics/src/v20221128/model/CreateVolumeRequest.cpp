@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ CreateVolumeRequest::CreateVolumeRequest() :
     m_typeHasBeenSet(false),
     m_specHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_capacityHasBeenSet(false)
+    m_capacityHasBeenSet(false),
+    m_enableAutoScaleUpHasBeenSet(false),
+    m_metaTypeHasBeenSet(false)
 {
 }
 
@@ -85,6 +87,22 @@ string CreateVolumeRequest::ToJsonString() const
         string key = "Capacity";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_capacity, allocator);
+    }
+
+    if (m_enableAutoScaleUpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableAutoScaleUp";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableAutoScaleUp, allocator);
+    }
+
+    if (m_metaTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetaType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_metaType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +207,38 @@ void CreateVolumeRequest::SetCapacity(const uint64_t& _capacity)
 bool CreateVolumeRequest::CapacityHasBeenSet() const
 {
     return m_capacityHasBeenSet;
+}
+
+bool CreateVolumeRequest::GetEnableAutoScaleUp() const
+{
+    return m_enableAutoScaleUp;
+}
+
+void CreateVolumeRequest::SetEnableAutoScaleUp(const bool& _enableAutoScaleUp)
+{
+    m_enableAutoScaleUp = _enableAutoScaleUp;
+    m_enableAutoScaleUpHasBeenSet = true;
+}
+
+bool CreateVolumeRequest::EnableAutoScaleUpHasBeenSet() const
+{
+    return m_enableAutoScaleUpHasBeenSet;
+}
+
+string CreateVolumeRequest::GetMetaType() const
+{
+    return m_metaType;
+}
+
+void CreateVolumeRequest::SetMetaType(const string& _metaType)
+{
+    m_metaType = _metaType;
+    m_metaTypeHasBeenSet = true;
+}
+
+bool CreateVolumeRequest::MetaTypeHasBeenSet() const
+{
+    return m_metaTypeHasBeenSet;
 }
 
 

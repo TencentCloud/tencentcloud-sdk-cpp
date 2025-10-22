@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,8 @@ DescribeNotebookSessionStatementSqlResultResponse::DescribeNotebookSessionStatem
     m_outputPathHasBeenSet(false),
     m_useTimeHasBeenSet(false),
     m_affectRowsHasBeenSet(false),
-    m_dataAmountHasBeenSet(false)
+    m_dataAmountHasBeenSet(false),
+    m_uiUrlHasBeenSet(false)
 {
 }
 
@@ -159,6 +160,16 @@ CoreInternalOutcome DescribeNotebookSessionStatementSqlResultResponse::Deseriali
         m_dataAmountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("UiUrl") && !rsp["UiUrl"].IsNull())
+    {
+        if (!rsp["UiUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UiUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uiUrl = string(rsp["UiUrl"].GetString());
+        m_uiUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -240,11 +251,19 @@ string DescribeNotebookSessionStatementSqlResultResponse::ToJsonString() const
         value.AddMember(iKey, m_dataAmount, allocator);
     }
 
+    if (m_uiUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UiUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uiUrl.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -330,6 +349,16 @@ int64_t DescribeNotebookSessionStatementSqlResultResponse::GetDataAmount() const
 bool DescribeNotebookSessionStatementSqlResultResponse::DataAmountHasBeenSet() const
 {
     return m_dataAmountHasBeenSet;
+}
+
+string DescribeNotebookSessionStatementSqlResultResponse::GetUiUrl() const
+{
+    return m_uiUrl;
+}
+
+bool DescribeNotebookSessionStatementSqlResultResponse::UiUrlHasBeenSet() const
+{
+    return m_uiUrlHasBeenSet;
 }
 
 

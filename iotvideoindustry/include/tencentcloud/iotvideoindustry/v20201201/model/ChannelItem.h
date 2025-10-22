@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceId 设备唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置设备唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceId 设备唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通道唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelId 通道唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetChannelId() const;
 
                     /**
                      * 设置通道唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _channelId 通道唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChannelId(const std::string& _channelId);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 设备唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;
 
                     /**
                      * 通道唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_channelId;
                     bool m_channelIdHasBeenSet;

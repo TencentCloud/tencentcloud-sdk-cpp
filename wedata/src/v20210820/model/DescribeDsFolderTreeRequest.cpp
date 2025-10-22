@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,15 @@ DescribeDsFolderTreeRequest::DescribeDsFolderTreeRequest() :
     m_includeVirtualTaskHasBeenSet(false),
     m_taskFolderIdHasBeenSet(false),
     m_displayTypeHasBeenSet(false),
-    m_includeTaskFolderHasBeenSet(false)
+    m_includeTaskFolderHasBeenSet(false),
+    m_newFolderTreeModeHasBeenSet(false),
+    m_taskNodeIdHasBeenSet(false),
+    m_workflowTypeHasBeenSet(false),
+    m_taskTypeIdListHasBeenSet(false),
+    m_inChargeIdListHasBeenSet(false),
+    m_onlyMeHasBeenSet(false),
+    m_includeCodeTemplateHasBeenSet(false),
+    m_folderFormHasBeenSet(false)
 {
 }
 
@@ -130,6 +138,80 @@ string DescribeDsFolderTreeRequest::ToJsonString() const
         string key = "IncludeTaskFolder";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_includeTaskFolder, allocator);
+    }
+
+    if (m_newFolderTreeModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NewFolderTreeMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_newFolderTreeMode, allocator);
+    }
+
+    if (m_taskNodeIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskNodeId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_taskNodeId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workflowTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkflowType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_workflowType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskTypeIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskTypeIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_taskTypeIdList.begin(); itr != m_taskTypeIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_inChargeIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InChargeIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_inChargeIdList.begin(); itr != m_inChargeIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_onlyMeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OnlyMe";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_onlyMe, allocator);
+    }
+
+    if (m_includeCodeTemplateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IncludeCodeTemplate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_includeCodeTemplate, allocator);
+    }
+
+    if (m_folderFormHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FolderForm";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_folderForm.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -314,6 +396,134 @@ void DescribeDsFolderTreeRequest::SetIncludeTaskFolder(const bool& _includeTaskF
 bool DescribeDsFolderTreeRequest::IncludeTaskFolderHasBeenSet() const
 {
     return m_includeTaskFolderHasBeenSet;
+}
+
+bool DescribeDsFolderTreeRequest::GetNewFolderTreeMode() const
+{
+    return m_newFolderTreeMode;
+}
+
+void DescribeDsFolderTreeRequest::SetNewFolderTreeMode(const bool& _newFolderTreeMode)
+{
+    m_newFolderTreeMode = _newFolderTreeMode;
+    m_newFolderTreeModeHasBeenSet = true;
+}
+
+bool DescribeDsFolderTreeRequest::NewFolderTreeModeHasBeenSet() const
+{
+    return m_newFolderTreeModeHasBeenSet;
+}
+
+string DescribeDsFolderTreeRequest::GetTaskNodeId() const
+{
+    return m_taskNodeId;
+}
+
+void DescribeDsFolderTreeRequest::SetTaskNodeId(const string& _taskNodeId)
+{
+    m_taskNodeId = _taskNodeId;
+    m_taskNodeIdHasBeenSet = true;
+}
+
+bool DescribeDsFolderTreeRequest::TaskNodeIdHasBeenSet() const
+{
+    return m_taskNodeIdHasBeenSet;
+}
+
+string DescribeDsFolderTreeRequest::GetWorkflowType() const
+{
+    return m_workflowType;
+}
+
+void DescribeDsFolderTreeRequest::SetWorkflowType(const string& _workflowType)
+{
+    m_workflowType = _workflowType;
+    m_workflowTypeHasBeenSet = true;
+}
+
+bool DescribeDsFolderTreeRequest::WorkflowTypeHasBeenSet() const
+{
+    return m_workflowTypeHasBeenSet;
+}
+
+vector<int64_t> DescribeDsFolderTreeRequest::GetTaskTypeIdList() const
+{
+    return m_taskTypeIdList;
+}
+
+void DescribeDsFolderTreeRequest::SetTaskTypeIdList(const vector<int64_t>& _taskTypeIdList)
+{
+    m_taskTypeIdList = _taskTypeIdList;
+    m_taskTypeIdListHasBeenSet = true;
+}
+
+bool DescribeDsFolderTreeRequest::TaskTypeIdListHasBeenSet() const
+{
+    return m_taskTypeIdListHasBeenSet;
+}
+
+vector<string> DescribeDsFolderTreeRequest::GetInChargeIdList() const
+{
+    return m_inChargeIdList;
+}
+
+void DescribeDsFolderTreeRequest::SetInChargeIdList(const vector<string>& _inChargeIdList)
+{
+    m_inChargeIdList = _inChargeIdList;
+    m_inChargeIdListHasBeenSet = true;
+}
+
+bool DescribeDsFolderTreeRequest::InChargeIdListHasBeenSet() const
+{
+    return m_inChargeIdListHasBeenSet;
+}
+
+bool DescribeDsFolderTreeRequest::GetOnlyMe() const
+{
+    return m_onlyMe;
+}
+
+void DescribeDsFolderTreeRequest::SetOnlyMe(const bool& _onlyMe)
+{
+    m_onlyMe = _onlyMe;
+    m_onlyMeHasBeenSet = true;
+}
+
+bool DescribeDsFolderTreeRequest::OnlyMeHasBeenSet() const
+{
+    return m_onlyMeHasBeenSet;
+}
+
+bool DescribeDsFolderTreeRequest::GetIncludeCodeTemplate() const
+{
+    return m_includeCodeTemplate;
+}
+
+void DescribeDsFolderTreeRequest::SetIncludeCodeTemplate(const bool& _includeCodeTemplate)
+{
+    m_includeCodeTemplate = _includeCodeTemplate;
+    m_includeCodeTemplateHasBeenSet = true;
+}
+
+bool DescribeDsFolderTreeRequest::IncludeCodeTemplateHasBeenSet() const
+{
+    return m_includeCodeTemplateHasBeenSet;
+}
+
+string DescribeDsFolderTreeRequest::GetFolderForm() const
+{
+    return m_folderForm;
+}
+
+void DescribeDsFolderTreeRequest::SetFolderForm(const string& _folderForm)
+{
+    m_folderForm = _folderForm;
+    m_folderFormHasBeenSet = true;
+}
+
+bool DescribeDsFolderTreeRequest::FolderFormHasBeenSet() const
+{
+    return m_folderFormHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关键词起始位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Start 关键词起始位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStart() const;
 
                     /**
                      * 设置关键词起始位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _start 关键词起始位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStart(const int64_t& _start);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关键词结束位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return End 关键词结束位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEnd() const;
 
                     /**
                      * 设置关键词结束位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _end 关键词结束位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnd(const int64_t& _end);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 关键词起始位置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_start;
                     bool m_startHasBeenSet;
 
                     /**
                      * 关键词结束位置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_end;
                     bool m_endHasBeenSet;

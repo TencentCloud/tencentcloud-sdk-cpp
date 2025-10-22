@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ GetDeviceListRequest::GetDeviceListRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_firmwareVersionHasBeenSet(false),
+    m_fwTypeHasBeenSet(false),
     m_deviceNameHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_filtersHasBeenSet(false)
@@ -70,6 +71,14 @@ string GetDeviceListRequest::ToJsonString() const
         string key = "FirmwareVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_firmwareVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fwTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FwType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_fwType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deviceNameHasBeenSet)
@@ -173,6 +182,22 @@ void GetDeviceListRequest::SetFirmwareVersion(const string& _firmwareVersion)
 bool GetDeviceListRequest::FirmwareVersionHasBeenSet() const
 {
     return m_firmwareVersionHasBeenSet;
+}
+
+string GetDeviceListRequest::GetFwType() const
+{
+    return m_fwType;
+}
+
+void GetDeviceListRequest::SetFwType(const string& _fwType)
+{
+    m_fwType = _fwType;
+    m_fwTypeHasBeenSet = true;
+}
+
+bool GetDeviceListRequest::FwTypeHasBeenSet() const
+{
+    return m_fwTypeHasBeenSet;
 }
 
 string GetDeviceListRequest::GetDeviceName() const

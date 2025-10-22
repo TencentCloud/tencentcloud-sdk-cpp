@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取下单时间范围起始点【请保持时间范围最大90天】
-                     * @return CreatTimeRangeStart 下单时间范围起始点【请保持时间范围最大90天】
+                     * 获取下单时间范围起始点【*请必传并控制时间范围最大90天，避免出现超时】
+                     * @return CreatTimeRangeStart 下单时间范围起始点【*请必传并控制时间范围最大90天，避免出现超时】
                      * 
                      */
                     std::string GetCreatTimeRangeStart() const;
 
                     /**
-                     * 设置下单时间范围起始点【请保持时间范围最大90天】
-                     * @param _creatTimeRangeStart 下单时间范围起始点【请保持时间范围最大90天】
+                     * 设置下单时间范围起始点【*请必传并控制时间范围最大90天，避免出现超时】
+                     * @param _creatTimeRangeStart 下单时间范围起始点【*请必传并控制时间范围最大90天，避免出现超时】
                      * 
                      */
                     void SetCreatTimeRangeStart(const std::string& _creatTimeRangeStart);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool CreatTimeRangeStartHasBeenSet() const;
 
                     /**
-                     * 获取下单时间范围终止点【请保持时间范围最大90天】
-                     * @return CreatTimeRangeEnd 下单时间范围终止点【请保持时间范围最大90天】
+                     * 获取下单时间范围终止点【*请必传并控制时间范围最大90天，避免出现超时】
+                     * @return CreatTimeRangeEnd 下单时间范围终止点【*请必传并控制时间范围最大90天，避免出现超时】
                      * 
                      */
                     std::string GetCreatTimeRangeEnd() const;
 
                     /**
-                     * 设置下单时间范围终止点【请保持时间范围最大90天】
-                     * @param _creatTimeRangeEnd 下单时间范围终止点【请保持时间范围最大90天】
+                     * 设置下单时间范围终止点【*请必传并控制时间范围最大90天，避免出现超时】
+                     * @param _creatTimeRangeEnd 下单时间范围终止点【*请必传并控制时间范围最大90天，避免出现超时】
                      * 
                      */
                     void SetCreatTimeRangeEnd(const std::string& _creatTimeRangeEnd);
@@ -148,15 +148,23 @@ namespace TencentCloud
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取订单的状态(1：未支付;2：已支付;3：发货中;4：已发货;5：发货失败;6：已退款;7：已关单;8：订单过期;9：订单已失效;10：产品已失效;11：代付拒绝;12：支付中)
-                     * @return Status 订单的状态(1：未支付;2：已支付;3：发货中;4：已发货;5：发货失败;6：已退款;7：已关单;8：订单过期;9：订单已失效;10：产品已失效;11：代付拒绝;12：支付中)
+                     * 获取子订单状态(1-待支付,2-已支付,3-发货中,4-已发货,5-发货失败,6-已退款,7-已取消,8-已过期,9-已失效,12-支付中,13-退款中,30-处理中)
+
+控制台订单状态为以上状态的组合：未支付(1) 处理中(2,3,5,12,13,30) 已取消(7) 交易成功(4) 已过期(8) 已退款(6) 订单错误(9)
+                     * @return Status 子订单状态(1-待支付,2-已支付,3-发货中,4-已发货,5-发货失败,6-已退款,7-已取消,8-已过期,9-已失效,12-支付中,13-退款中,30-处理中)
+
+控制台订单状态为以上状态的组合：未支付(1) 处理中(2,3,5,12,13,30) 已取消(7) 交易成功(4) 已过期(8) 已退款(6) 订单错误(9)
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置订单的状态(1：未支付;2：已支付;3：发货中;4：已发货;5：发货失败;6：已退款;7：已关单;8：订单过期;9：订单已失效;10：产品已失效;11：代付拒绝;12：支付中)
-                     * @param _status 订单的状态(1：未支付;2：已支付;3：发货中;4：已发货;5：发货失败;6：已退款;7：已关单;8：订单过期;9：订单已失效;10：产品已失效;11：代付拒绝;12：支付中)
+                     * 设置子订单状态(1-待支付,2-已支付,3-发货中,4-已发货,5-发货失败,6-已退款,7-已取消,8-已过期,9-已失效,12-支付中,13-退款中,30-处理中)
+
+控制台订单状态为以上状态的组合：未支付(1) 处理中(2,3,5,12,13,30) 已取消(7) 交易成功(4) 已过期(8) 已退款(6) 订单错误(9)
+                     * @param _status 子订单状态(1-待支付,2-已支付,3-发货中,4-已发货,5-发货失败,6-已退款,7-已取消,8-已过期,9-已失效,12-支付中,13-退款中,30-处理中)
+
+控制台订单状态为以上状态的组合：未支付(1) 处理中(2,3,5,12,13,30) 已取消(7) 交易成功(4) 已过期(8) 已退款(6) 订单错误(9)
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -267,13 +275,13 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 下单时间范围起始点【请保持时间范围最大90天】
+                     * 下单时间范围起始点【*请必传并控制时间范围最大90天，避免出现超时】
                      */
                     std::string m_creatTimeRangeStart;
                     bool m_creatTimeRangeStartHasBeenSet;
 
                     /**
-                     * 下单时间范围终止点【请保持时间范围最大90天】
+                     * 下单时间范围终止点【*请必传并控制时间范围最大90天，避免出现超时】
                      */
                     std::string m_creatTimeRangeEnd;
                     bool m_creatTimeRangeEndHasBeenSet;
@@ -285,7 +293,9 @@ namespace TencentCloud
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 订单的状态(1：未支付;2：已支付;3：发货中;4：已发货;5：发货失败;6：已退款;7：已关单;8：订单过期;9：订单已失效;10：产品已失效;11：代付拒绝;12：支付中)
+                     * 子订单状态(1-待支付,2-已支付,3-发货中,4-已发货,5-发货失败,6-已退款,7-已取消,8-已过期,9-已失效,12-支付中,13-退款中,30-处理中)
+
+控制台订单状态为以上状态的组合：未支付(1) 处理中(2,3,5,12,13,30) 已取消(7) 交易成功(4) 已过期(8) 已退款(6) 订单错误(9)
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;

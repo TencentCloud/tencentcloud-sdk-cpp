@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -132,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 描述备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 描述备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -288,7 +284,6 @@ namespace TencentCloud
 
                     /**
                      * 描述备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,7 @@ DirectConnect::DirectConnect() :
     m_chargeTypeHasBeenSet(false),
     m_faultReportContactPersonHasBeenSet(false),
     m_faultReportContactNumberHasBeenSet(false),
+    m_faultReportContactEmailHasBeenSet(false),
     m_tagSetHasBeenSet(false),
     m_accessPointTypeHasBeenSet(false),
     m_idcCityHasBeenSet(false),
@@ -54,7 +55,10 @@ DirectConnect::DirectConnect() :
     m_otherVlanDirectConnectTunnelCountHasBeenSet(false),
     m_minBandwidthHasBeenSet(false),
     m_constructHasBeenSet(false),
-    m_accessPointNameHasBeenSet(false)
+    m_accessPointNameHasBeenSet(false),
+    m_isThreeArchHasBeenSet(false),
+    m_isMacSecHasBeenSet(false),
+    m_portSpecificationHasBeenSet(false)
 {
 }
 
@@ -283,6 +287,16 @@ CoreInternalOutcome DirectConnect::Deserialize(const rapidjson::Value &value)
         m_faultReportContactNumberHasBeenSet = true;
     }
 
+    if (value.HasMember("FaultReportContactEmail") && !value["FaultReportContactEmail"].IsNull())
+    {
+        if (!value["FaultReportContactEmail"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DirectConnect.FaultReportContactEmail` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_faultReportContactEmail = string(value["FaultReportContactEmail"].GetString());
+        m_faultReportContactEmailHasBeenSet = true;
+    }
+
     if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
     {
         if (!value["TagSet"].IsArray())
@@ -411,6 +425,36 @@ CoreInternalOutcome DirectConnect::Deserialize(const rapidjson::Value &value)
         }
         m_accessPointName = string(value["AccessPointName"].GetString());
         m_accessPointNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsThreeArch") && !value["IsThreeArch"].IsNull())
+    {
+        if (!value["IsThreeArch"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DirectConnect.IsThreeArch` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isThreeArch = value["IsThreeArch"].GetBool();
+        m_isThreeArchHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsMacSec") && !value["IsMacSec"].IsNull())
+    {
+        if (!value["IsMacSec"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DirectConnect.IsMacSec` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isMacSec = value["IsMacSec"].GetBool();
+        m_isMacSecHasBeenSet = true;
+    }
+
+    if (value.HasMember("PortSpecification") && !value["PortSpecification"].IsNull())
+    {
+        if (!value["PortSpecification"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DirectConnect.PortSpecification` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_portSpecification = value["PortSpecification"].GetUint64();
+        m_portSpecificationHasBeenSet = true;
     }
 
 
@@ -596,6 +640,14 @@ void DirectConnect::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         value.AddMember(iKey, rapidjson::Value(m_faultReportContactNumber.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_faultReportContactEmailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FaultReportContactEmail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_faultReportContactEmail.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_tagSetHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -697,6 +749,30 @@ void DirectConnect::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "AccessPointName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_accessPointName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isThreeArchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsThreeArch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isThreeArch, allocator);
+    }
+
+    if (m_isMacSecHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsMacSec";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isMacSec, allocator);
+    }
+
+    if (m_portSpecificationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PortSpecification";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_portSpecification, allocator);
     }
 
 }
@@ -1054,6 +1130,22 @@ bool DirectConnect::FaultReportContactNumberHasBeenSet() const
     return m_faultReportContactNumberHasBeenSet;
 }
 
+string DirectConnect::GetFaultReportContactEmail() const
+{
+    return m_faultReportContactEmail;
+}
+
+void DirectConnect::SetFaultReportContactEmail(const string& _faultReportContactEmail)
+{
+    m_faultReportContactEmail = _faultReportContactEmail;
+    m_faultReportContactEmailHasBeenSet = true;
+}
+
+bool DirectConnect::FaultReportContactEmailHasBeenSet() const
+{
+    return m_faultReportContactEmailHasBeenSet;
+}
+
 vector<Tag> DirectConnect::GetTagSet() const
 {
     return m_tagSet;
@@ -1244,5 +1336,53 @@ void DirectConnect::SetAccessPointName(const string& _accessPointName)
 bool DirectConnect::AccessPointNameHasBeenSet() const
 {
     return m_accessPointNameHasBeenSet;
+}
+
+bool DirectConnect::GetIsThreeArch() const
+{
+    return m_isThreeArch;
+}
+
+void DirectConnect::SetIsThreeArch(const bool& _isThreeArch)
+{
+    m_isThreeArch = _isThreeArch;
+    m_isThreeArchHasBeenSet = true;
+}
+
+bool DirectConnect::IsThreeArchHasBeenSet() const
+{
+    return m_isThreeArchHasBeenSet;
+}
+
+bool DirectConnect::GetIsMacSec() const
+{
+    return m_isMacSec;
+}
+
+void DirectConnect::SetIsMacSec(const bool& _isMacSec)
+{
+    m_isMacSec = _isMacSec;
+    m_isMacSecHasBeenSet = true;
+}
+
+bool DirectConnect::IsMacSecHasBeenSet() const
+{
+    return m_isMacSecHasBeenSet;
+}
+
+uint64_t DirectConnect::GetPortSpecification() const
+{
+    return m_portSpecification;
+}
+
+void DirectConnect::SetPortSpecification(const uint64_t& _portSpecification)
+{
+    m_portSpecification = _portSpecification;
+    m_portSpecificationHasBeenSet = true;
+}
+
+bool DirectConnect::PortSpecificationHasBeenSet() const
+{
+    return m_portSpecificationHasBeenSet;
 }
 

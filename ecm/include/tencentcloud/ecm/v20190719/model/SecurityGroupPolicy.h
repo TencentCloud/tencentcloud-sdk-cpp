@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -239,18 +239,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修改时间，例如 2020-07-22 19：27：23
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyTime 修改时间，例如 2020-07-22 19：27：23
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置修改时间，例如 2020-07-22 19：27：23
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyTime 修改时间，例如 2020-07-22 19：27：23
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -345,7 +341,6 @@ namespace TencentCloud
 
                     /**
                      * 修改时间，例如 2020-07-22 19：27：23
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;

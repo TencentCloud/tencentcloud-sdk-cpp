@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取策略Id。
-                     * @return PolicyId 策略Id。
+                     * 获取策略Id。可以调用[ListPolicies](https://cloud.tencent.com/document/product/850/105311)获取
+                     * @return PolicyId 策略Id。可以调用[ListPolicies](https://cloud.tencent.com/document/product/850/105311)获取
                      * 
                      */
                     uint64_t GetPolicyId() const;
 
                     /**
-                     * 设置策略Id。
-                     * @param _policyId 策略Id。
+                     * 设置策略Id。可以调用[ListPolicies](https://cloud.tencent.com/document/product/850/105311)获取
+                     * @param _policyId 策略Id。可以调用[ListPolicies](https://cloud.tencent.com/document/product/850/105311)获取
                      * 
                      */
                     void SetPolicyId(const uint64_t& _policyId);
@@ -87,7 +87,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 策略Id。
+                     * 策略Id。可以调用[ListPolicies](https://cloud.tencent.com/document/product/850/105311)获取
                      */
                     uint64_t m_policyId;
                     bool m_policyIdHasBeenSet;

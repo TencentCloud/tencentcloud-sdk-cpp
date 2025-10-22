@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 审核模版详情
+                * 审核模板详情
                 */
                 class ReviewTemplate : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取审核模版唯一标签。
-                     * @return Definition 审核模版唯一标签。
+                     * 获取审核模板唯一标签。
+                     * @return Definition 审核模板唯一标签。
                      * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
-                     * 设置审核模版唯一标签。
-                     * @param _definition 审核模版唯一标签。
+                     * 设置审核模板唯一标签。
+                     * @param _definition 审核模板唯一标签。
                      * 
                      */
                     void SetDefinition(const int64_t& _definition);
@@ -204,7 +204,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 审核模版唯一标签。
+                     * 审核模板唯一标签。
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;

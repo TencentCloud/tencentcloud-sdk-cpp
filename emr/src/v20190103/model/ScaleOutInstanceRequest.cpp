@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,7 +50,10 @@ ScaleOutInstanceRequest::ScaleOutInstanceRequest() :
     m_scaleOutServiceConfAssignHasBeenSet(false),
     m_autoRenewHasBeenSet(false),
     m_resourceBaseTypeHasBeenSet(false),
-    m_computeResourceIdHasBeenSet(false)
+    m_computeResourceIdHasBeenSet(false),
+    m_computeResourceAdvanceParamsHasBeenSet(false),
+    m_nodeMarksHasBeenSet(false),
+    m_warehouseNameHasBeenSet(false)
 {
 }
 
@@ -319,6 +322,32 @@ string ScaleOutInstanceRequest::ToJsonString() const
         string key = "ComputeResourceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_computeResourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_computeResourceAdvanceParamsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComputeResourceAdvanceParams";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_computeResourceAdvanceParams.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_nodeMarksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeMarks";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_nodeMarks.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_warehouseNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WarehouseName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_warehouseName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -775,6 +804,54 @@ void ScaleOutInstanceRequest::SetComputeResourceId(const string& _computeResourc
 bool ScaleOutInstanceRequest::ComputeResourceIdHasBeenSet() const
 {
     return m_computeResourceIdHasBeenSet;
+}
+
+ComputeResourceAdvanceParams ScaleOutInstanceRequest::GetComputeResourceAdvanceParams() const
+{
+    return m_computeResourceAdvanceParams;
+}
+
+void ScaleOutInstanceRequest::SetComputeResourceAdvanceParams(const ComputeResourceAdvanceParams& _computeResourceAdvanceParams)
+{
+    m_computeResourceAdvanceParams = _computeResourceAdvanceParams;
+    m_computeResourceAdvanceParamsHasBeenSet = true;
+}
+
+bool ScaleOutInstanceRequest::ComputeResourceAdvanceParamsHasBeenSet() const
+{
+    return m_computeResourceAdvanceParamsHasBeenSet;
+}
+
+NodeMark ScaleOutInstanceRequest::GetNodeMarks() const
+{
+    return m_nodeMarks;
+}
+
+void ScaleOutInstanceRequest::SetNodeMarks(const NodeMark& _nodeMarks)
+{
+    m_nodeMarks = _nodeMarks;
+    m_nodeMarksHasBeenSet = true;
+}
+
+bool ScaleOutInstanceRequest::NodeMarksHasBeenSet() const
+{
+    return m_nodeMarksHasBeenSet;
+}
+
+string ScaleOutInstanceRequest::GetWarehouseName() const
+{
+    return m_warehouseName;
+}
+
+void ScaleOutInstanceRequest::SetWarehouseName(const string& _warehouseName)
+{
+    m_warehouseName = _warehouseName;
+    m_warehouseNameHasBeenSet = true;
+}
+
+bool ScaleOutInstanceRequest::WarehouseNameHasBeenSet() const
+{
+    return m_warehouseNameHasBeenSet;
 }
 
 

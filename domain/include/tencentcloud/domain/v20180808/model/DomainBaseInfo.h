@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -130,19 +130,15 @@ NoAudit: 无需实名认证
                     bool RealNameAuditStatusHasBeenSet() const;
 
                     /**
-                     * 获取域名实名认证不通过原因。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RealNameAuditUnpassReason 域名实名认证不通过原因。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取域名实名认证不通过原因。<具体内容以实名审核机构返回为准>
+                     * @return RealNameAuditUnpassReason 域名实名认证不通过原因。<具体内容以实名审核机构返回为准>
                      * 
                      */
                     std::string GetRealNameAuditUnpassReason() const;
 
                     /**
-                     * 设置域名实名认证不通过原因。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _realNameAuditUnpassReason 域名实名认证不通过原因。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置域名实名认证不通过原因。<具体内容以实名审核机构返回为准>
+                     * @param _realNameAuditUnpassReason 域名实名认证不通过原因。<具体内容以实名审核机构返回为准>
                      * 
                      */
                     void SetRealNameAuditUnpassReason(const std::string& _realNameAuditUnpassReason);
@@ -196,18 +192,18 @@ Rejected：域名命名审核拒绝
                     bool DomainNameAuditStatusHasBeenSet() const;
 
                     /**
-                     * 获取域名命名审核不通过原因。
+                     * 获取域名命名审核不通过原因。<具体内容以实名审核机构返回为准>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DomainNameAuditUnpassReason 域名命名审核不通过原因。
+                     * @return DomainNameAuditUnpassReason 域名命名审核不通过原因。<具体内容以实名审核机构返回为准>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomainNameAuditUnpassReason() const;
 
                     /**
-                     * 设置域名命名审核不通过原因。
+                     * 设置域名命名审核不通过原因。<具体内容以实名审核机构返回为准>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _domainNameAuditUnpassReason 域名命名审核不通过原因。
+                     * @param _domainNameAuditUnpassReason 域名命名审核不通过原因。<具体内容以实名审核机构返回为准>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -222,14 +218,18 @@ Rejected：域名命名审核拒绝
 
                     /**
                      * 获取注册时间。
+格式:YYYY-MM-DD
                      * @return CreationDate 注册时间。
+格式:YYYY-MM-DD
                      * 
                      */
                     std::string GetCreationDate() const;
 
                     /**
                      * 设置注册时间。
+格式:YYYY-MM-DD
                      * @param _creationDate 注册时间。
+格式:YYYY-MM-DD
                      * 
                      */
                     void SetCreationDate(const std::string& _creationDate);
@@ -243,14 +243,18 @@ Rejected：域名命名审核拒绝
 
                     /**
                      * 获取到期时间
+格式:YYYY-MM-DD
                      * @return ExpirationDate 到期时间
+格式:YYYY-MM-DD
                      * 
                      */
                     std::string GetExpirationDate() const;
 
                     /**
                      * 设置到期时间
+格式:YYYY-MM-DD
                      * @param _expirationDate 到期时间
+格式:YYYY-MM-DD
                      * 
                      */
                     void SetExpirationDate(const std::string& _expirationDate);
@@ -278,7 +282,7 @@ clientTransferProhibited：注册商禁止转移
 clientUpdateProhibited：注册商禁止更新
 clientDeleteProhibited：注册商禁止删除
 serverRenewProhibited: 注册局禁止续费
-clientRenewProhobited: 注册商禁止续费
+clientRenewProhibited: 注册商禁止续费
                      * @return DomainStatus 域名状态。
 ok：正常
 serverHold：注册局暂停解析 
@@ -294,7 +298,7 @@ clientTransferProhibited：注册商禁止转移
 clientUpdateProhibited：注册商禁止更新
 clientDeleteProhibited：注册商禁止删除
 serverRenewProhibited: 注册局禁止续费
-clientRenewProhobited: 注册商禁止续费
+clientRenewProhibited: 注册商禁止续费
                      * 
                      */
                     std::vector<std::string> GetDomainStatus() const;
@@ -315,7 +319,7 @@ clientTransferProhibited：注册商禁止转移
 clientUpdateProhibited：注册商禁止更新
 clientDeleteProhibited：注册商禁止删除
 serverRenewProhibited: 注册局禁止续费
-clientRenewProhobited: 注册商禁止续费
+clientRenewProhibited: 注册商禁止续费
                      * @param _domainStatus 域名状态。
 ok：正常
 serverHold：注册局暂停解析 
@@ -331,7 +335,7 @@ clientTransferProhibited：注册商禁止转移
 clientUpdateProhibited：注册商禁止更新
 clientDeleteProhibited：注册商禁止删除
 serverRenewProhibited: 注册局禁止续费
-clientRenewProhobited: 注册商禁止续费
+clientRenewProhibited: 注册商禁止续费
                      * 
                      */
                     void SetDomainStatus(const std::vector<std::string>& _domainStatus);
@@ -497,14 +501,18 @@ false：关闭锁定
 
                     /**
                      * 获取锁定结束时间
+格式:YYYY-MM-DD HH:mm:ss
                      * @return LockEndTime 锁定结束时间
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetLockEndTime() const;
 
                     /**
                      * 设置锁定结束时间
+格式:YYYY-MM-DD HH:mm:ss
                      * @param _lockEndTime 锁定结束时间
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     void SetLockEndTime(const std::string& _lockEndTime);
@@ -542,8 +550,7 @@ NoAudit: 无需实名认证
                     bool m_realNameAuditStatusHasBeenSet;
 
                     /**
-                     * 域名实名认证不通过原因。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 域名实名认证不通过原因。<具体内容以实名审核机构返回为准>
                      */
                     std::string m_realNameAuditUnpassReason;
                     bool m_realNameAuditUnpassReasonHasBeenSet;
@@ -560,7 +567,7 @@ Rejected：域名命名审核拒绝
                     bool m_domainNameAuditStatusHasBeenSet;
 
                     /**
-                     * 域名命名审核不通过原因。
+                     * 域名命名审核不通过原因。<具体内容以实名审核机构返回为准>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domainNameAuditUnpassReason;
@@ -568,12 +575,14 @@ Rejected：域名命名审核拒绝
 
                     /**
                      * 注册时间。
+格式:YYYY-MM-DD
                      */
                     std::string m_creationDate;
                     bool m_creationDateHasBeenSet;
 
                     /**
                      * 到期时间
+格式:YYYY-MM-DD
                      */
                     std::string m_expirationDate;
                     bool m_expirationDateHasBeenSet;
@@ -594,7 +603,7 @@ clientTransferProhibited：注册商禁止转移
 clientUpdateProhibited：注册商禁止更新
 clientDeleteProhibited：注册商禁止删除
 serverRenewProhibited: 注册局禁止续费
-clientRenewProhobited: 注册商禁止续费
+clientRenewProhibited: 注册商禁止续费
                      */
                     std::vector<std::string> m_domainStatus;
                     bool m_domainStatusHasBeenSet;
@@ -642,6 +651,7 @@ false：关闭锁定
 
                     /**
                      * 锁定结束时间
+格式:YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_lockEndTime;
                     bool m_lockEndTimeHasBeenSet;

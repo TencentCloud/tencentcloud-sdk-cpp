@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,21 @@ ServiceSetting::ServiceSetting() :
     m_headlessServiceHasBeenSet(false),
     m_allowDeleteServiceHasBeenSet(false),
     m_openSessionAffinityHasBeenSet(false),
-    m_sessionAffinityTimeoutSecondsHasBeenSet(false)
+    m_sessionAffinityTimeoutSecondsHasBeenSet(false),
+    m_serviceNameHasBeenSet(false),
+    m_externalTrafficStrategyHasBeenSet(false),
+    m_externalTrafficPolicyHasBeenSet(false),
+    m_loadBalancerProvisionerHasBeenSet(false),
+    m_loadBalancingTypeHasBeenSet(false),
+    m_clusterIpHasBeenSet(false),
+    m_disableServiceIntHasBeenSet(false),
+    m_openSessionAffinityIntHasBeenSet(false),
+    m_headlessServiceIntHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_vpcIdHasBeenSet(false),
+    m_loadBalancingIpHasBeenSet(false),
+    m_loadBalancerIdHasBeenSet(false),
+    m_existingLoadBalancerIdHasBeenSet(false)
 {
 }
 
@@ -127,6 +141,146 @@ CoreInternalOutcome ServiceSetting::Deserialize(const rapidjson::Value &value)
         m_sessionAffinityTimeoutSecondsHasBeenSet = true;
     }
 
+    if (value.HasMember("ServiceName") && !value["ServiceName"].IsNull())
+    {
+        if (!value["ServiceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceSetting.ServiceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serviceName = string(value["ServiceName"].GetString());
+        m_serviceNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExternalTrafficStrategy") && !value["ExternalTrafficStrategy"].IsNull())
+    {
+        if (!value["ExternalTrafficStrategy"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceSetting.ExternalTrafficStrategy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_externalTrafficStrategy = string(value["ExternalTrafficStrategy"].GetString());
+        m_externalTrafficStrategyHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExternalTrafficPolicy") && !value["ExternalTrafficPolicy"].IsNull())
+    {
+        if (!value["ExternalTrafficPolicy"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceSetting.ExternalTrafficPolicy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_externalTrafficPolicy = string(value["ExternalTrafficPolicy"].GetString());
+        m_externalTrafficPolicyHasBeenSet = true;
+    }
+
+    if (value.HasMember("LoadBalancerProvisioner") && !value["LoadBalancerProvisioner"].IsNull())
+    {
+        if (!value["LoadBalancerProvisioner"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceSetting.LoadBalancerProvisioner` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_loadBalancerProvisioner = string(value["LoadBalancerProvisioner"].GetString());
+        m_loadBalancerProvisionerHasBeenSet = true;
+    }
+
+    if (value.HasMember("LoadBalancingType") && !value["LoadBalancingType"].IsNull())
+    {
+        if (!value["LoadBalancingType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceSetting.LoadBalancingType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_loadBalancingType = string(value["LoadBalancingType"].GetString());
+        m_loadBalancingTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterIp") && !value["ClusterIp"].IsNull())
+    {
+        if (!value["ClusterIp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceSetting.ClusterIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterIp = string(value["ClusterIp"].GetString());
+        m_clusterIpHasBeenSet = true;
+    }
+
+    if (value.HasMember("DisableServiceInt") && !value["DisableServiceInt"].IsNull())
+    {
+        if (!value["DisableServiceInt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceSetting.DisableServiceInt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_disableServiceInt = value["DisableServiceInt"].GetUint64();
+        m_disableServiceIntHasBeenSet = true;
+    }
+
+    if (value.HasMember("OpenSessionAffinityInt") && !value["OpenSessionAffinityInt"].IsNull())
+    {
+        if (!value["OpenSessionAffinityInt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceSetting.OpenSessionAffinityInt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_openSessionAffinityInt = value["OpenSessionAffinityInt"].GetUint64();
+        m_openSessionAffinityIntHasBeenSet = true;
+    }
+
+    if (value.HasMember("HeadlessServiceInt") && !value["HeadlessServiceInt"].IsNull())
+    {
+        if (!value["HeadlessServiceInt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceSetting.HeadlessServiceInt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_headlessServiceInt = value["HeadlessServiceInt"].GetUint64();
+        m_headlessServiceIntHasBeenSet = true;
+    }
+
+    if (value.HasMember("Name") && !value["Name"].IsNull())
+    {
+        if (!value["Name"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceSetting.Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
+    }
+
+    if (value.HasMember("VpcId") && !value["VpcId"].IsNull())
+    {
+        if (!value["VpcId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceSetting.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpcId = string(value["VpcId"].GetString());
+        m_vpcIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("LoadBalancingIp") && !value["LoadBalancingIp"].IsNull())
+    {
+        if (!value["LoadBalancingIp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceSetting.LoadBalancingIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_loadBalancingIp = string(value["LoadBalancingIp"].GetString());
+        m_loadBalancingIpHasBeenSet = true;
+    }
+
+    if (value.HasMember("LoadBalancerId") && !value["LoadBalancerId"].IsNull())
+    {
+        if (!value["LoadBalancerId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceSetting.LoadBalancerId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_loadBalancerId = string(value["LoadBalancerId"].GetString());
+        m_loadBalancerIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExistingLoadBalancerId") && !value["ExistingLoadBalancerId"].IsNull())
+    {
+        if (!value["ExistingLoadBalancerId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceSetting.ExistingLoadBalancerId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_existingLoadBalancerId = string(value["ExistingLoadBalancerId"].GetString());
+        m_existingLoadBalancerIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -203,6 +357,118 @@ void ServiceSetting::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "SessionAffinityTimeoutSeconds";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sessionAffinityTimeoutSeconds, allocator);
+    }
+
+    if (m_serviceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serviceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_externalTrafficStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalTrafficStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_externalTrafficStrategy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_externalTrafficPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalTrafficPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_externalTrafficPolicy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_loadBalancerProvisionerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoadBalancerProvisioner";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_loadBalancerProvisioner.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_loadBalancingTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoadBalancingType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_loadBalancingType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_disableServiceIntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisableServiceInt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_disableServiceInt, allocator);
+    }
+
+    if (m_openSessionAffinityIntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OpenSessionAffinityInt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_openSessionAffinityInt, allocator);
+    }
+
+    if (m_headlessServiceIntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HeadlessServiceInt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_headlessServiceInt, allocator);
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_loadBalancingIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoadBalancingIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_loadBalancingIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_loadBalancerIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoadBalancerId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_loadBalancerId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_existingLoadBalancerIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExistingLoadBalancerId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_existingLoadBalancerId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -334,5 +600,229 @@ void ServiceSetting::SetSessionAffinityTimeoutSeconds(const int64_t& _sessionAff
 bool ServiceSetting::SessionAffinityTimeoutSecondsHasBeenSet() const
 {
     return m_sessionAffinityTimeoutSecondsHasBeenSet;
+}
+
+string ServiceSetting::GetServiceName() const
+{
+    return m_serviceName;
+}
+
+void ServiceSetting::SetServiceName(const string& _serviceName)
+{
+    m_serviceName = _serviceName;
+    m_serviceNameHasBeenSet = true;
+}
+
+bool ServiceSetting::ServiceNameHasBeenSet() const
+{
+    return m_serviceNameHasBeenSet;
+}
+
+string ServiceSetting::GetExternalTrafficStrategy() const
+{
+    return m_externalTrafficStrategy;
+}
+
+void ServiceSetting::SetExternalTrafficStrategy(const string& _externalTrafficStrategy)
+{
+    m_externalTrafficStrategy = _externalTrafficStrategy;
+    m_externalTrafficStrategyHasBeenSet = true;
+}
+
+bool ServiceSetting::ExternalTrafficStrategyHasBeenSet() const
+{
+    return m_externalTrafficStrategyHasBeenSet;
+}
+
+string ServiceSetting::GetExternalTrafficPolicy() const
+{
+    return m_externalTrafficPolicy;
+}
+
+void ServiceSetting::SetExternalTrafficPolicy(const string& _externalTrafficPolicy)
+{
+    m_externalTrafficPolicy = _externalTrafficPolicy;
+    m_externalTrafficPolicyHasBeenSet = true;
+}
+
+bool ServiceSetting::ExternalTrafficPolicyHasBeenSet() const
+{
+    return m_externalTrafficPolicyHasBeenSet;
+}
+
+string ServiceSetting::GetLoadBalancerProvisioner() const
+{
+    return m_loadBalancerProvisioner;
+}
+
+void ServiceSetting::SetLoadBalancerProvisioner(const string& _loadBalancerProvisioner)
+{
+    m_loadBalancerProvisioner = _loadBalancerProvisioner;
+    m_loadBalancerProvisionerHasBeenSet = true;
+}
+
+bool ServiceSetting::LoadBalancerProvisionerHasBeenSet() const
+{
+    return m_loadBalancerProvisionerHasBeenSet;
+}
+
+string ServiceSetting::GetLoadBalancingType() const
+{
+    return m_loadBalancingType;
+}
+
+void ServiceSetting::SetLoadBalancingType(const string& _loadBalancingType)
+{
+    m_loadBalancingType = _loadBalancingType;
+    m_loadBalancingTypeHasBeenSet = true;
+}
+
+bool ServiceSetting::LoadBalancingTypeHasBeenSet() const
+{
+    return m_loadBalancingTypeHasBeenSet;
+}
+
+string ServiceSetting::GetClusterIp() const
+{
+    return m_clusterIp;
+}
+
+void ServiceSetting::SetClusterIp(const string& _clusterIp)
+{
+    m_clusterIp = _clusterIp;
+    m_clusterIpHasBeenSet = true;
+}
+
+bool ServiceSetting::ClusterIpHasBeenSet() const
+{
+    return m_clusterIpHasBeenSet;
+}
+
+uint64_t ServiceSetting::GetDisableServiceInt() const
+{
+    return m_disableServiceInt;
+}
+
+void ServiceSetting::SetDisableServiceInt(const uint64_t& _disableServiceInt)
+{
+    m_disableServiceInt = _disableServiceInt;
+    m_disableServiceIntHasBeenSet = true;
+}
+
+bool ServiceSetting::DisableServiceIntHasBeenSet() const
+{
+    return m_disableServiceIntHasBeenSet;
+}
+
+uint64_t ServiceSetting::GetOpenSessionAffinityInt() const
+{
+    return m_openSessionAffinityInt;
+}
+
+void ServiceSetting::SetOpenSessionAffinityInt(const uint64_t& _openSessionAffinityInt)
+{
+    m_openSessionAffinityInt = _openSessionAffinityInt;
+    m_openSessionAffinityIntHasBeenSet = true;
+}
+
+bool ServiceSetting::OpenSessionAffinityIntHasBeenSet() const
+{
+    return m_openSessionAffinityIntHasBeenSet;
+}
+
+uint64_t ServiceSetting::GetHeadlessServiceInt() const
+{
+    return m_headlessServiceInt;
+}
+
+void ServiceSetting::SetHeadlessServiceInt(const uint64_t& _headlessServiceInt)
+{
+    m_headlessServiceInt = _headlessServiceInt;
+    m_headlessServiceIntHasBeenSet = true;
+}
+
+bool ServiceSetting::HeadlessServiceIntHasBeenSet() const
+{
+    return m_headlessServiceIntHasBeenSet;
+}
+
+string ServiceSetting::GetName() const
+{
+    return m_name;
+}
+
+void ServiceSetting::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool ServiceSetting::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
+}
+
+string ServiceSetting::GetVpcId() const
+{
+    return m_vpcId;
+}
+
+void ServiceSetting::SetVpcId(const string& _vpcId)
+{
+    m_vpcId = _vpcId;
+    m_vpcIdHasBeenSet = true;
+}
+
+bool ServiceSetting::VpcIdHasBeenSet() const
+{
+    return m_vpcIdHasBeenSet;
+}
+
+string ServiceSetting::GetLoadBalancingIp() const
+{
+    return m_loadBalancingIp;
+}
+
+void ServiceSetting::SetLoadBalancingIp(const string& _loadBalancingIp)
+{
+    m_loadBalancingIp = _loadBalancingIp;
+    m_loadBalancingIpHasBeenSet = true;
+}
+
+bool ServiceSetting::LoadBalancingIpHasBeenSet() const
+{
+    return m_loadBalancingIpHasBeenSet;
+}
+
+string ServiceSetting::GetLoadBalancerId() const
+{
+    return m_loadBalancerId;
+}
+
+void ServiceSetting::SetLoadBalancerId(const string& _loadBalancerId)
+{
+    m_loadBalancerId = _loadBalancerId;
+    m_loadBalancerIdHasBeenSet = true;
+}
+
+bool ServiceSetting::LoadBalancerIdHasBeenSet() const
+{
+    return m_loadBalancerIdHasBeenSet;
+}
+
+string ServiceSetting::GetExistingLoadBalancerId() const
+{
+    return m_existingLoadBalancerId;
+}
+
+void ServiceSetting::SetExistingLoadBalancerId(const string& _existingLoadBalancerId)
+{
+    m_existingLoadBalancerId = _existingLoadBalancerId;
+    m_existingLoadBalancerIdHasBeenSet = true;
+}
+
+bool ServiceSetting::ExistingLoadBalancerIdHasBeenSet() const
+{
+    return m_existingLoadBalancerIdHasBeenSet;
 }
 

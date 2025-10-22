@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Db 数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDb() const;
 
                     /**
                      * 设置数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _db 数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDb(const std::string& _db);
@@ -72,19 +68,36 @@ namespace TencentCloud
                     bool DbHasBeenSet() const;
 
                     /**
+                     * 获取schema名
+                     * @return Schema schema名
+                     * 
+                     */
+                    std::string GetSchema() const;
+
+                    /**
+                     * 设置schema名
+                     * @param _schema schema名
+                     * 
+                     */
+                    void SetSchema(const std::string& _schema);
+
+                    /**
+                     * 判断参数 Schema 是否已赋值
+                     * @return Schema 是否已赋值
+                     * 
+                     */
+                    bool SchemaHasBeenSet() const;
+
+                    /**
                      * 获取表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Table 表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTable() const;
 
                     /**
                      * 设置表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _table 表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTable(const std::string& _table);
@@ -98,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取未发起检查的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Reason 未发起检查的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 设置未发起检查的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reason 未发起检查的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReason(const std::string& _reason);
@@ -125,21 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_db;
                     bool m_dbHasBeenSet;
 
                     /**
+                     * schema名
+                     */
+                    std::string m_schema;
+                    bool m_schemaHasBeenSet;
+
+                    /**
                      * 表名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_table;
                     bool m_tableHasBeenSet;
 
                     /**
                      * 未发起检查的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reason;
                     bool m_reasonHasBeenSet;

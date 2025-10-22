@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -151,6 +151,69 @@ namespace TencentCloud
                      */
                     bool NodeIDHasBeenSet() const;
 
+                    /**
+                     * 获取慢日志索引名
+                     * @return IndexName 慢日志索引名
+                     * 
+                     */
+                    std::string GetIndexName() const;
+
+                    /**
+                     * 设置慢日志索引名
+                     * @param _indexName 慢日志索引名
+                     * 
+                     */
+                    void SetIndexName(const std::string& _indexName);
+
+                    /**
+                     * 判断参数 IndexName 是否已赋值
+                     * @return IndexName 是否已赋值
+                     * 
+                     */
+                    bool IndexNameHasBeenSet() const;
+
+                    /**
+                     * 获取慢日志索引分片
+                     * @return Shard 慢日志索引分片
+                     * 
+                     */
+                    std::string GetShard() const;
+
+                    /**
+                     * 设置慢日志索引分片
+                     * @param _shard 慢日志索引分片
+                     * 
+                     */
+                    void SetShard(const std::string& _shard);
+
+                    /**
+                     * 判断参数 Shard 是否已赋值
+                     * @return Shard 是否已赋值
+                     * 
+                     */
+                    bool ShardHasBeenSet() const;
+
+                    /**
+                     * 获取慢日志索引查询耗时
+                     * @return QueryCost 慢日志索引查询耗时
+                     * 
+                     */
+                    std::string GetQueryCost() const;
+
+                    /**
+                     * 设置慢日志索引查询耗时
+                     * @param _queryCost 慢日志索引查询耗时
+                     * 
+                     */
+                    void SetQueryCost(const std::string& _queryCost);
+
+                    /**
+                     * 判断参数 QueryCost 是否已赋值
+                     * @return QueryCost 是否已赋值
+                     * 
+                     */
+                    bool QueryCostHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +245,24 @@ namespace TencentCloud
                      */
                     std::string m_nodeID;
                     bool m_nodeIDHasBeenSet;
+
+                    /**
+                     * 慢日志索引名
+                     */
+                    std::string m_indexName;
+                    bool m_indexNameHasBeenSet;
+
+                    /**
+                     * 慢日志索引分片
+                     */
+                    std::string m_shard;
+                    bool m_shardHasBeenSet;
+
+                    /**
+                     * 慢日志索引查询耗时
+                     */
+                    std::string m_queryCost;
+                    bool m_queryCostHasBeenSet;
 
                 };
             }

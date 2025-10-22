@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -88,6 +88,27 @@ namespace TencentCloud
                      */
                     bool ContentHasBeenSet() const;
 
+                    /**
+                     * 获取附件URL。未开放功能，请勿使用。
+                     * @return FileURL 附件URL。未开放功能，请勿使用。
+                     * 
+                     */
+                    std::string GetFileURL() const;
+
+                    /**
+                     * 设置附件URL。未开放功能，请勿使用。
+                     * @param _fileURL 附件URL。未开放功能，请勿使用。
+                     * 
+                     */
+                    void SetFileURL(const std::string& _fileURL);
+
+                    /**
+                     * 判断参数 FileURL 是否已赋值
+                     * @return FileURL 是否已赋值
+                     * 
+                     */
+                    bool FileURLHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +122,12 @@ namespace TencentCloud
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
+
+                    /**
+                     * 附件URL。未开放功能，请勿使用。
+                     */
+                    std::string m_fileURL;
+                    bool m_fileURLHasBeenSet;
 
                 };
             }

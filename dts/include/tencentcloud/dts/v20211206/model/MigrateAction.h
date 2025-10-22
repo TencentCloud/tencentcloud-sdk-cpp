@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务的所有操作列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AllAction 任务的所有操作列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAllAction() const;
 
                     /**
                      * 设置任务的所有操作列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _allAction 任务的所有操作列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAllAction(const std::vector<std::string>& _allAction);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务在当前状态下允许的操作列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AllowedAction 任务在当前状态下允许的操作列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAllowedAction() const;
 
                     /**
                      * 设置任务在当前状态下允许的操作列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _allowedAction 任务在当前状态下允许的操作列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAllowedAction(const std::vector<std::string>& _allowedAction);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 任务的所有操作列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_allAction;
                     bool m_allActionHasBeenSet;
 
                     /**
                      * 任务在当前状态下允许的操作列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_allowedAction;
                     bool m_allowedActionHasBeenSet;

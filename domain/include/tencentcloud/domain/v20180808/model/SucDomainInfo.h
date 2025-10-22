@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domain 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取业务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BusinessId 业务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBusinessId() const;
 
                     /**
                      * 设置业务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _businessId 业务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBusinessId(const std::string& _businessId);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
                      * 业务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_businessId;
                     bool m_businessIdHasBeenSet;

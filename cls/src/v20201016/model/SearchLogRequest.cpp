@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,8 @@ SearchLogRequest::SearchLogRequest() :
     m_offsetHasBeenSet(false),
     m_contextHasBeenSet(false),
     m_samplingRateHasBeenSet(false),
-    m_useNewAnalysisHasBeenSet(false)
+    m_useNewAnalysisHasBeenSet(false),
+    m_highLightHasBeenSet(false)
 {
 }
 
@@ -146,6 +147,14 @@ string SearchLogRequest::ToJsonString() const
         string key = "UseNewAnalysis";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_useNewAnalysis, allocator);
+    }
+
+    if (m_highLightHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HighLight";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_highLight, allocator);
     }
 
 
@@ -346,6 +355,22 @@ void SearchLogRequest::SetUseNewAnalysis(const bool& _useNewAnalysis)
 bool SearchLogRequest::UseNewAnalysisHasBeenSet() const
 {
     return m_useNewAnalysisHasBeenSet;
+}
+
+bool SearchLogRequest::GetHighLight() const
+{
+    return m_highLight;
+}
+
+void SearchLogRequest::SetHighLight(const bool& _highLight)
+{
+    m_highLight = _highLight;
+    m_highLightHasBeenSet = true;
+}
+
+bool SearchLogRequest::HighLightHasBeenSet() const
+{
+    return m_highLightHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取配置文件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigFile 配置文件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ConfigFile GetConfigFile() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 配置文件
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ConfigFile m_configFile;
                     bool m_configFileHasBeenSet;

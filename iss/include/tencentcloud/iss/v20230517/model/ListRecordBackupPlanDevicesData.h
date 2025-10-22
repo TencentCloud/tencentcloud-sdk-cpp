@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PageNumber 第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPageNumber() const;
 
                     /**
                      * 设置第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pageNumber 第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPageNumber(const int64_t& _pageNumber);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前页的设备数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PageSize 当前页的设备数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
                      * 设置当前页的设备数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pageSize 当前页的设备数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取本次查询的设备通道总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 本次查询的设备通道总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置本次查询的设备通道总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalCount 本次查询的设备通道总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
@@ -151,21 +139,18 @@ namespace TencentCloud
 
                     /**
                      * 第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
                      * 当前页的设备数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
                      * 本次查询的设备通道总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

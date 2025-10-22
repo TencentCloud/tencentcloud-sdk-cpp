@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,18 +51,14 @@ namespace TencentCloud
 
                     /**
                      * 获取生命体征
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VitalSign 生命体征
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     GeneralExaminationVitalSign GetVitalSign() const;
 
                     /**
                      * 设置生命体征
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vitalSign 生命体征
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVitalSign(const GeneralExaminationVitalSign& _vitalSign);
@@ -76,18 +72,14 @@ namespace TencentCloud
 
                     /**
                      * 获取其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Others 其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     GeneralExaminationOthers GetOthers() const;
 
                     /**
                      * 设置其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _others 其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOthers(const GeneralExaminationOthers& _others);
@@ -101,18 +93,14 @@ namespace TencentCloud
 
                     /**
                      * 获取小结
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BriefSummary 小结
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     GeneralExaminationBriefSummary GetBriefSummary() const;
 
                     /**
                      * 设置小结
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _briefSummary 小结
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBriefSummary(const GeneralExaminationBriefSummary& _briefSummary);
@@ -128,21 +116,18 @@ namespace TencentCloud
 
                     /**
                      * 生命体征
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     GeneralExaminationVitalSign m_vitalSign;
                     bool m_vitalSignHasBeenSet;
 
                     /**
                      * 其他
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     GeneralExaminationOthers m_others;
                     bool m_othersHasBeenSet;
 
                     /**
                      * 小结
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     GeneralExaminationBriefSummary m_briefSummary;
                     bool m_briefSummaryHasBeenSet;

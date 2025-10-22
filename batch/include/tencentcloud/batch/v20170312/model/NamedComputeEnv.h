@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,15 +75,15 @@ namespace TencentCloud
                     bool EnvNameHasBeenSet() const;
 
                     /**
-                     * 获取计算节点期望个数
-                     * @return DesiredComputeNodeCount 计算节点期望个数
+                     * 获取计算节点期望个数，最大上限2000.
+                     * @return DesiredComputeNodeCount 计算节点期望个数，最大上限2000.
                      * 
                      */
                     int64_t GetDesiredComputeNodeCount() const;
 
                     /**
-                     * 设置计算节点期望个数
-                     * @param _desiredComputeNodeCount 计算节点期望个数
+                     * 设置计算节点期望个数，最大上限2000.
+                     * @param _desiredComputeNodeCount 计算节点期望个数，最大上限2000.
                      * 
                      */
                     void SetDesiredComputeNodeCount(const int64_t& _desiredComputeNodeCount);
@@ -117,15 +117,23 @@ namespace TencentCloud
                     bool EnvDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取计算环境管理类型
-                     * @return EnvType 计算环境管理类型
+                     * 获取计算环境管理类型，枚举如下：
+MANAGED: 由客户在Batch平台主动创建；
+THPC_QUEUE: 由THPC平台创建，关联THPC平台的集群队列。
+                     * @return EnvType 计算环境管理类型，枚举如下：
+MANAGED: 由客户在Batch平台主动创建；
+THPC_QUEUE: 由THPC平台创建，关联THPC平台的集群队列。
                      * 
                      */
                     std::string GetEnvType() const;
 
                     /**
-                     * 设置计算环境管理类型
-                     * @param _envType 计算环境管理类型
+                     * 设置计算环境管理类型，枚举如下：
+MANAGED: 由客户在Batch平台主动创建；
+THPC_QUEUE: 由THPC平台创建，关联THPC平台的集群队列。
+                     * @param _envType 计算环境管理类型，枚举如下：
+MANAGED: 由客户在Batch平台主动创建；
+THPC_QUEUE: 由THPC平台创建，关联THPC平台的集群队列。
                      * 
                      */
                     void SetEnvType(const std::string& _envType);
@@ -368,7 +376,7 @@ TDMQ_CMQ：表示向腾讯云TDMQ_CMQ发送消息。<br/>默认值为CMQ。<br/>
                     bool m_envNameHasBeenSet;
 
                     /**
-                     * 计算节点期望个数
+                     * 计算节点期望个数，最大上限2000.
                      */
                     int64_t m_desiredComputeNodeCount;
                     bool m_desiredComputeNodeCountHasBeenSet;
@@ -380,7 +388,9 @@ TDMQ_CMQ：表示向腾讯云TDMQ_CMQ发送消息。<br/>默认值为CMQ。<br/>
                     bool m_envDescriptionHasBeenSet;
 
                     /**
-                     * 计算环境管理类型
+                     * 计算环境管理类型，枚举如下：
+MANAGED: 由客户在Batch平台主动创建；
+THPC_QUEUE: 由THPC平台创建，关联THPC平台的集群队列。
                      */
                     std::string m_envType;
                     bool m_envTypeHasBeenSet;

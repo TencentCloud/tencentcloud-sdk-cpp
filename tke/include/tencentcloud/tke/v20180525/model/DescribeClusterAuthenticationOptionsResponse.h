@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,9 +47,7 @@ namespace TencentCloud
 
                     /**
                      * 获取ServiceAccount认证配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceAccounts ServiceAccount认证配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ServiceAccountAuthenticationOptions GetServiceAccounts() const;
@@ -63,9 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 获取最近一次修改操作结果，返回值可能为：Updating，Success，Failed，TimeOut
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LatestOperationState 最近一次修改操作结果，返回值可能为：Updating，Success，Failed，TimeOut
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLatestOperationState() const;
@@ -79,9 +75,7 @@ namespace TencentCloud
 
                     /**
                      * 获取OIDC认证配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OIDCConfig OIDC认证配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     OIDCConfigAuthenticationOptions GetOIDCConfig() const;
@@ -97,21 +91,18 @@ namespace TencentCloud
 
                     /**
                      * ServiceAccount认证配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ServiceAccountAuthenticationOptions m_serviceAccounts;
                     bool m_serviceAccountsHasBeenSet;
 
                     /**
                      * 最近一次修改操作结果，返回值可能为：Updating，Success，Failed，TimeOut
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_latestOperationState;
                     bool m_latestOperationStateHasBeenSet;
 
                     /**
                      * OIDC认证配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OIDCConfigAuthenticationOptions m_oIDCConfig;
                     bool m_oIDCConfigHasBeenSet;

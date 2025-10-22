@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取发压host的IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IP 发压host的IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIP() const;
 
                     /**
                      * 设置发压host的IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iP 发压host的IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIP(const std::string& _iP);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取发压host所在的pod
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PodName 发压host所在的pod
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPodName() const;
 
                     /**
                      * 设置发压host所在的pod
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _podName 发压host所在的pod
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPodName(const std::string& _podName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 发压host的IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_iP;
                     bool m_iPHasBeenSet;
 
                     /**
                      * 发压host所在的pod
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_podName;
                     bool m_podNameHasBeenSet;
 
                     /**
                      * 所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;

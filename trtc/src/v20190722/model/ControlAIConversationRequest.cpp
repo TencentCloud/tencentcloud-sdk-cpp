@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ using namespace std;
 ControlAIConversationRequest::ControlAIConversationRequest() :
     m_taskIdHasBeenSet(false),
     m_commandHasBeenSet(false),
-    m_serverPushTextHasBeenSet(false)
+    m_serverPushTextHasBeenSet(false),
+    m_invokeLLMHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,15 @@ string ControlAIConversationRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_serverPushText.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_invokeLLMHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InvokeLLM";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_invokeLLM.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -115,6 +125,22 @@ void ControlAIConversationRequest::SetServerPushText(const ServerPushText& _serv
 bool ControlAIConversationRequest::ServerPushTextHasBeenSet() const
 {
     return m_serverPushTextHasBeenSet;
+}
+
+InvokeLLM ControlAIConversationRequest::GetInvokeLLM() const
+{
+    return m_invokeLLM;
+}
+
+void ControlAIConversationRequest::SetInvokeLLM(const InvokeLLM& _invokeLLM)
+{
+    m_invokeLLM = _invokeLLM;
+    m_invokeLLMHasBeenSet = true;
+}
+
+bool ControlAIConversationRequest::InvokeLLMHasBeenSet() const
+{
+    return m_invokeLLMHasBeenSet;
 }
 
 

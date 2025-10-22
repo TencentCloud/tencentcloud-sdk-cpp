@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -96,6 +96,27 @@ namespace TencentCloud
                      * 
                      */
                     bool FileNameHasBeenSet() const;
+
+                    /**
+                     * 获取重命名的新文档名称，在重命名提交之后，文档发布之前都是这个名称
+                     * @return NewName 重命名的新文档名称，在重命名提交之后，文档发布之前都是这个名称
+                     * 
+                     */
+                    std::string GetNewName() const;
+
+                    /**
+                     * 设置重命名的新文档名称，在重命名提交之后，文档发布之前都是这个名称
+                     * @param _newName 重命名的新文档名称，在重命名提交之后，文档发布之前都是这个名称
+                     * 
+                     */
+                    void SetNewName(const std::string& _newName);
+
+                    /**
+                     * 判断参数 NewName 是否已赋值
+                     * @return NewName 是否已赋值
+                     * 
+                     */
+                    bool NewNameHasBeenSet() const;
 
                     /**
                      * 获取文件类型
@@ -751,6 +772,161 @@ namespace TencentCloud
                      */
                     bool IsAllowRetryHasBeenSet() const;
 
+                    /**
+                     * 获取0:文档比对处理 1:文档生成问答
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Processing 0:文档比对处理 1:文档生成问答
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<int64_t> GetProcessing() const;
+
+                    /**
+                     * 设置0:文档比对处理 1:文档生成问答
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _processing 0:文档比对处理 1:文档生成问答
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProcessing(const std::vector<int64_t>& _processing);
+
+                    /**
+                     * 判断参数 Processing 是否已赋值
+                     * @return Processing 是否已赋值
+                     * 
+                     */
+                    bool ProcessingHasBeenSet() const;
+
+                    /**
+                     * 获取文档创建落库时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateTime 文档创建落库时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置文档创建落库时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _createTime 文档创建落库时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取文档所属分类ID
+                     * @return CateBizId 文档所属分类ID
+                     * 
+                     */
+                    std::string GetCateBizId() const;
+
+                    /**
+                     * 设置文档所属分类ID
+                     * @param _cateBizId 文档所属分类ID
+                     * 
+                     */
+                    void SetCateBizId(const std::string& _cateBizId);
+
+                    /**
+                     * 判断参数 CateBizId 是否已赋值
+                     * @return CateBizId 是否已赋值
+                     * 
+                     */
+                    bool CateBizIdHasBeenSet() const;
+
+                    /**
+                     * 获取文档的用户自定义ID
+                     * @return CustomerKnowledgeId 文档的用户自定义ID
+                     * 
+                     */
+                    std::string GetCustomerKnowledgeId() const;
+
+                    /**
+                     * 设置文档的用户自定义ID
+                     * @param _customerKnowledgeId 文档的用户自定义ID
+                     * 
+                     */
+                    void SetCustomerKnowledgeId(const std::string& _customerKnowledgeId);
+
+                    /**
+                     * 判断参数 CustomerKnowledgeId 是否已赋值
+                     * @return CustomerKnowledgeId 是否已赋值
+                     * 
+                     */
+                    bool CustomerKnowledgeIdHasBeenSet() const;
+
+                    /**
+                     * 获取文档的属性标记，0: 不做用户外部权限校验
+                     * @return AttributeFlags 文档的属性标记，0: 不做用户外部权限校验
+                     * 
+                     */
+                    std::vector<uint64_t> GetAttributeFlags() const;
+
+                    /**
+                     * 设置文档的属性标记，0: 不做用户外部权限校验
+                     * @param _attributeFlags 文档的属性标记，0: 不做用户外部权限校验
+                     * 
+                     */
+                    void SetAttributeFlags(const std::vector<uint64_t>& _attributeFlags);
+
+                    /**
+                     * 判断参数 AttributeFlags 是否已赋值
+                     * @return AttributeFlags 是否已赋值
+                     * 
+                     */
+                    bool AttributeFlagsHasBeenSet() const;
+
+                    /**
+                     * 获取false:未停用，ture:已停用
+                     * @return IsDisabled false:未停用，ture:已停用
+                     * 
+                     */
+                    bool GetIsDisabled() const;
+
+                    /**
+                     * 设置false:未停用，ture:已停用
+                     * @param _isDisabled false:未停用，ture:已停用
+                     * 
+                     */
+                    void SetIsDisabled(const bool& _isDisabled);
+
+                    /**
+                     * 判断参数 IsDisabled 是否已赋值
+                     * @return IsDisabled 是否已赋值
+                     * 
+                     */
+                    bool IsDisabledHasBeenSet() const;
+
+                    /**
+                     * 获取员工名称
+                     * @return StaffName 员工名称
+                     * 
+                     */
+                    std::string GetStaffName() const;
+
+                    /**
+                     * 设置员工名称
+                     * @param _staffName 员工名称
+                     * 
+                     */
+                    void SetStaffName(const std::string& _staffName);
+
+                    /**
+                     * 判断参数 StaffName 是否已赋值
+                     * @return StaffName 是否已赋值
+                     * 
+                     */
+                    bool StaffNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -766,6 +942,12 @@ namespace TencentCloud
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
+
+                    /**
+                     * 重命名的新文档名称，在重命名提交之后，文档发布之前都是这个名称
+                     */
+                    std::string m_newName;
+                    bool m_newNameHasBeenSet;
 
                     /**
                      * 文件类型
@@ -949,6 +1131,50 @@ namespace TencentCloud
                      */
                     bool m_isAllowRetry;
                     bool m_isAllowRetryHasBeenSet;
+
+                    /**
+                     * 0:文档比对处理 1:文档生成问答
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_processing;
+                    bool m_processingHasBeenSet;
+
+                    /**
+                     * 文档创建落库时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 文档所属分类ID
+                     */
+                    std::string m_cateBizId;
+                    bool m_cateBizIdHasBeenSet;
+
+                    /**
+                     * 文档的用户自定义ID
+                     */
+                    std::string m_customerKnowledgeId;
+                    bool m_customerKnowledgeIdHasBeenSet;
+
+                    /**
+                     * 文档的属性标记，0: 不做用户外部权限校验
+                     */
+                    std::vector<uint64_t> m_attributeFlags;
+                    bool m_attributeFlagsHasBeenSet;
+
+                    /**
+                     * false:未停用，ture:已停用
+                     */
+                    bool m_isDisabled;
+                    bool m_isDisabledHasBeenSet;
+
+                    /**
+                     * 员工名称
+                     */
+                    std::string m_staffName;
+                    bool m_staffNameHasBeenSet;
 
                 };
             }

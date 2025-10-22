@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ using namespace std;
 DeleteCloudNativeAPIGatewayCanaryRuleRequest::DeleteCloudNativeAPIGatewayCanaryRuleRequest() :
     m_gatewayIdHasBeenSet(false),
     m_serviceIdHasBeenSet(false),
-    m_priorityHasBeenSet(false)
+    m_priorityHasBeenSet(false),
+    m_priorityListHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,19 @@ string DeleteCloudNativeAPIGatewayCanaryRuleRequest::ToJsonString() const
         string key = "Priority";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_priority, allocator);
+    }
+
+    if (m_priorityListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PriorityList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_priorityList.begin(); itr != m_priorityList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 
@@ -114,6 +128,22 @@ void DeleteCloudNativeAPIGatewayCanaryRuleRequest::SetPriority(const int64_t& _p
 bool DeleteCloudNativeAPIGatewayCanaryRuleRequest::PriorityHasBeenSet() const
 {
     return m_priorityHasBeenSet;
+}
+
+vector<int64_t> DeleteCloudNativeAPIGatewayCanaryRuleRequest::GetPriorityList() const
+{
+    return m_priorityList;
+}
+
+void DeleteCloudNativeAPIGatewayCanaryRuleRequest::SetPriorityList(const vector<int64_t>& _priorityList)
+{
+    m_priorityList = _priorityList;
+    m_priorityListHasBeenSet = true;
+}
+
+bool DeleteCloudNativeAPIGatewayCanaryRuleRequest::PriorityListHasBeenSet() const
+{
+    return m_priorityListHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -168,18 +168,14 @@ ABNORMAL_CHILD_PROC: 敏感服务异常子进程启动
 
                     /**
                      * 获取威胁等级，HIGH:高，MIDDLE:中，LOW:低
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleLevel 威胁等级，HIGH:高，MIDDLE:中，LOW:低
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleLevel() const;
 
                     /**
                      * 设置威胁等级，HIGH:高，MIDDLE:中，LOW:低
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleLevel 威胁等级，HIGH:高，MIDDLE:中，LOW:低
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleLevel(const std::string& _ruleLevel);
@@ -228,7 +224,6 @@ ABNORMAL_CHILD_PROC: 敏感服务异常子进程启动
 
                     /**
                      * 威胁等级，HIGH:高，MIDDLE:中，LOW:低
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleLevel;
                     bool m_ruleLevelHasBeenSet;

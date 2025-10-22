@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,23 +44,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取appId
-                     * @return MiniProgramAppId appId
-                     * 
+                     * 获取参数已弃用，不用传参
+                     * @return MiniProgramAppId 参数已弃用，不用传参
+                     * @deprecated
                      */
                     std::string GetMiniProgramAppId() const;
 
                     /**
-                     * 设置appId
-                     * @param _miniProgramAppId appId
-                     * 
+                     * 设置参数已弃用，不用传参
+                     * @param _miniProgramAppId 参数已弃用，不用传参
+                     * @deprecated
                      */
                     void SetMiniProgramAppId(const std::string& _miniProgramAppId);
 
                     /**
                      * 判断参数 MiniProgramAppId 是否已赋值
                      * @return MiniProgramAppId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool MiniProgramAppIdHasBeenSet() const;
 
@@ -88,7 +88,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * appId
+                     * 参数已弃用，不用传参
                      */
                     std::string m_miniProgramAppId;
                     bool m_miniProgramAppIdHasBeenSet;

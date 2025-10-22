@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取参数模板ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TemplateId 参数模板ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTemplateId() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取参数模板包含的参数个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 参数模板包含的参数个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -94,9 +90,7 @@ namespace TencentCloud
 
                     /**
                      * 获取参数模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TemplateName 参数模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTemplateName() const;
@@ -110,9 +104,7 @@ namespace TencentCloud
 
                     /**
                      * 获取参数模板适用的数据库版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DBMajorVersion 参数模板适用的数据库版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDBMajorVersion() const;
@@ -126,9 +118,7 @@ namespace TencentCloud
 
                     /**
                      * 获取参数模板适用的数据库引擎
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DBEngine 参数模板适用的数据库引擎
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDBEngine() const;
@@ -142,9 +132,7 @@ namespace TencentCloud
 
                     /**
                      * 获取参数模板描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TemplateDescription 参数模板描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTemplateDescription() const;
@@ -160,14 +148,12 @@ namespace TencentCloud
 
                     /**
                      * 参数模板ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
                      * 参数模板包含的参数个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
@@ -181,28 +167,24 @@ namespace TencentCloud
 
                     /**
                      * 参数模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_templateName;
                     bool m_templateNameHasBeenSet;
 
                     /**
                      * 参数模板适用的数据库版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dBMajorVersion;
                     bool m_dBMajorVersionHasBeenSet;
 
                     /**
                      * 参数模板适用的数据库引擎
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dBEngine;
                     bool m_dBEngineHasBeenSet;
 
                     /**
                      * 参数模板描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_templateDescription;
                     bool m_templateDescriptionHasBeenSet;

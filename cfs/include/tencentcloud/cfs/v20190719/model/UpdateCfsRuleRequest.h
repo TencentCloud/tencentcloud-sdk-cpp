@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取权限组 ID
-                     * @return PGroupId 权限组 ID
+                     * 获取权限组 ID，可通过[DescribeCfsPGroups接口](https://cloud.tencent.com/document/api/582/38157)获取
+                     * @return PGroupId 权限组 ID，可通过[DescribeCfsPGroups接口](https://cloud.tencent.com/document/api/582/38157)获取
                      * 
                      */
                     std::string GetPGroupId() const;
 
                     /**
-                     * 设置权限组 ID
-                     * @param _pGroupId 权限组 ID
+                     * 设置权限组 ID，可通过[DescribeCfsPGroups接口](https://cloud.tencent.com/document/api/582/38157)获取
+                     * @param _pGroupId 权限组 ID，可通过[DescribeCfsPGroups接口](https://cloud.tencent.com/document/api/582/38157)获取
                      * 
                      */
                     void SetPGroupId(const std::string& _pGroupId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool PGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取规则 ID
-                     * @return RuleId 规则 ID
+                     * 获取规则 ID，可通过[DescribeCfsRules](https://cloud.tencent.com/document/api/582/38156)接口获取
+                     * @return RuleId 规则 ID，可通过[DescribeCfsRules](https://cloud.tencent.com/document/api/582/38156)接口获取
                      * 
                      */
                     std::string GetRuleId() const;
 
                     /**
-                     * 设置规则 ID
-                     * @param _ruleId 规则 ID
+                     * 设置规则 ID，可通过[DescribeCfsRules](https://cloud.tencent.com/document/api/582/38156)接口获取
+                     * @param _ruleId 规则 ID，可通过[DescribeCfsRules](https://cloud.tencent.com/document/api/582/38156)接口获取
                      * 
                      */
                     void SetRuleId(const std::string& _ruleId);
@@ -127,13 +127,13 @@ namespace TencentCloud
                     bool RWPermissionHasBeenSet() const;
 
                     /**
-                     * 获取用户权限，值为all_squash、no_all_squash、root_squash、no_root_squash。
+                     * 获取用户权限，值为all_squash、no_all_squash、root_squash、no_root_squash，默认值为root_squash
 all_squash：所有访问用户（含 root 用户）都会被映射为匿名用户或用户组。
 no_all_squash：所有访问用户（含 root 用户）均保持原有的 UID/GID 信息。
 root_squash：将来访的 root 用户映射为匿名用户或用户组，非 root 用户保持原有的 UID/GID 信息。
 no_root_squash：与 no_all_squash 效果一致，所有访问用户（含 root 用户）均保持原有的 UID/GID 信息
 
-                     * @return UserPermission 用户权限，值为all_squash、no_all_squash、root_squash、no_root_squash。
+                     * @return UserPermission 用户权限，值为all_squash、no_all_squash、root_squash、no_root_squash，默认值为root_squash
 all_squash：所有访问用户（含 root 用户）都会被映射为匿名用户或用户组。
 no_all_squash：所有访问用户（含 root 用户）均保持原有的 UID/GID 信息。
 root_squash：将来访的 root 用户映射为匿名用户或用户组，非 root 用户保持原有的 UID/GID 信息。
@@ -144,13 +144,13 @@ no_root_squash：与 no_all_squash 效果一致，所有访问用户（含 root 
                     std::string GetUserPermission() const;
 
                     /**
-                     * 设置用户权限，值为all_squash、no_all_squash、root_squash、no_root_squash。
+                     * 设置用户权限，值为all_squash、no_all_squash、root_squash、no_root_squash，默认值为root_squash
 all_squash：所有访问用户（含 root 用户）都会被映射为匿名用户或用户组。
 no_all_squash：所有访问用户（含 root 用户）均保持原有的 UID/GID 信息。
 root_squash：将来访的 root 用户映射为匿名用户或用户组，非 root 用户保持原有的 UID/GID 信息。
 no_root_squash：与 no_all_squash 效果一致，所有访问用户（含 root 用户）均保持原有的 UID/GID 信息
 
-                     * @param _userPermission 用户权限，值为all_squash、no_all_squash、root_squash、no_root_squash。
+                     * @param _userPermission 用户权限，值为all_squash、no_all_squash、root_squash、no_root_squash，默认值为root_squash
 all_squash：所有访问用户（含 root 用户）都会被映射为匿名用户或用户组。
 no_all_squash：所有访问用户（含 root 用户）均保持原有的 UID/GID 信息。
 root_squash：将来访的 root 用户映射为匿名用户或用户组，非 root 用户保持原有的 UID/GID 信息。
@@ -168,15 +168,15 @@ no_root_squash：与 no_all_squash 效果一致，所有访问用户（含 root 
                     bool UserPermissionHasBeenSet() const;
 
                     /**
-                     * 获取规则优先级，参数范围1-100。 其中 1 为最高，100为最低
-                     * @return Priority 规则优先级，参数范围1-100。 其中 1 为最高，100为最低
+                     * 获取规则优先级，参数范围1-100。 其中 1 为最高，100为最低，默认值为100
+                     * @return Priority 规则优先级，参数范围1-100。 其中 1 为最高，100为最低，默认值为100
                      * 
                      */
                     int64_t GetPriority() const;
 
                     /**
-                     * 设置规则优先级，参数范围1-100。 其中 1 为最高，100为最低
-                     * @param _priority 规则优先级，参数范围1-100。 其中 1 为最高，100为最低
+                     * 设置规则优先级，参数范围1-100。 其中 1 为最高，100为最低，默认值为100
+                     * @param _priority 规则优先级，参数范围1-100。 其中 1 为最高，100为最低，默认值为100
                      * 
                      */
                     void SetPriority(const int64_t& _priority);
@@ -191,13 +191,13 @@ no_root_squash：与 no_all_squash 效果一致，所有访问用户（含 root 
                 private:
 
                     /**
-                     * 权限组 ID
+                     * 权限组 ID，可通过[DescribeCfsPGroups接口](https://cloud.tencent.com/document/api/582/38157)获取
                      */
                     std::string m_pGroupId;
                     bool m_pGroupIdHasBeenSet;
 
                     /**
-                     * 规则 ID
+                     * 规则 ID，可通过[DescribeCfsRules](https://cloud.tencent.com/document/api/582/38156)接口获取
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;
@@ -215,7 +215,7 @@ no_root_squash：与 no_all_squash 效果一致，所有访问用户（含 root 
                     bool m_rWPermissionHasBeenSet;
 
                     /**
-                     * 用户权限，值为all_squash、no_all_squash、root_squash、no_root_squash。
+                     * 用户权限，值为all_squash、no_all_squash、root_squash、no_root_squash，默认值为root_squash
 all_squash：所有访问用户（含 root 用户）都会被映射为匿名用户或用户组。
 no_all_squash：所有访问用户（含 root 用户）均保持原有的 UID/GID 信息。
 root_squash：将来访的 root 用户映射为匿名用户或用户组，非 root 用户保持原有的 UID/GID 信息。
@@ -226,7 +226,7 @@ no_root_squash：与 no_all_squash 效果一致，所有访问用户（含 root 
                     bool m_userPermissionHasBeenSet;
 
                     /**
-                     * 规则优先级，参数范围1-100。 其中 1 为最高，100为最低
+                     * 规则优先级，参数范围1-100。 其中 1 为最高，100为最低，默认值为100
                      */
                     int64_t m_priority;
                     bool m_priorityHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,10 @@ ModifyInput::ModifyInput() :
     m_hLSPullSettingsHasBeenSet(false),
     m_resilientStreamHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
-    m_zonesHasBeenSet(false)
+    m_zonesHasBeenSet(false),
+    m_rISTSettingsHasBeenSet(false),
+    m_inputRegionHasBeenSet(false),
+    m_failOverOptionHasBeenSet(false)
 {
 }
 
@@ -234,6 +237,50 @@ CoreInternalOutcome ModifyInput::Deserialize(const rapidjson::Value &value)
         m_zonesHasBeenSet = true;
     }
 
+    if (value.HasMember("RISTSettings") && !value["RISTSettings"].IsNull())
+    {
+        if (!value["RISTSettings"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModifyInput.RISTSettings` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_rISTSettings.Deserialize(value["RISTSettings"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_rISTSettingsHasBeenSet = true;
+    }
+
+    if (value.HasMember("InputRegion") && !value["InputRegion"].IsNull())
+    {
+        if (!value["InputRegion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModifyInput.InputRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_inputRegion = string(value["InputRegion"].GetString());
+        m_inputRegionHasBeenSet = true;
+    }
+
+    if (value.HasMember("FailOverOption") && !value["FailOverOption"].IsNull())
+    {
+        if (!value["FailOverOption"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModifyInput.FailOverOption` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_failOverOption.Deserialize(value["FailOverOption"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_failOverOptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -372,6 +419,32 @@ void ModifyInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_rISTSettingsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RISTSettings";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_rISTSettings.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_inputRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inputRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_failOverOptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailOverOption";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_failOverOption.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -599,5 +672,53 @@ void ModifyInput::SetZones(const vector<string>& _zones)
 bool ModifyInput::ZonesHasBeenSet() const
 {
     return m_zonesHasBeenSet;
+}
+
+CreateInputRISTSettings ModifyInput::GetRISTSettings() const
+{
+    return m_rISTSettings;
+}
+
+void ModifyInput::SetRISTSettings(const CreateInputRISTSettings& _rISTSettings)
+{
+    m_rISTSettings = _rISTSettings;
+    m_rISTSettingsHasBeenSet = true;
+}
+
+bool ModifyInput::RISTSettingsHasBeenSet() const
+{
+    return m_rISTSettingsHasBeenSet;
+}
+
+string ModifyInput::GetInputRegion() const
+{
+    return m_inputRegion;
+}
+
+void ModifyInput::SetInputRegion(const string& _inputRegion)
+{
+    m_inputRegion = _inputRegion;
+    m_inputRegionHasBeenSet = true;
+}
+
+bool ModifyInput::InputRegionHasBeenSet() const
+{
+    return m_inputRegionHasBeenSet;
+}
+
+FailOverOption ModifyInput::GetFailOverOption() const
+{
+    return m_failOverOption;
+}
+
+void ModifyInput::SetFailOverOption(const FailOverOption& _failOverOption)
+{
+    m_failOverOption = _failOverOption;
+    m_failOverOptionHasBeenSet = true;
+}
+
+bool ModifyInput::FailOverOptionHasBeenSet() const
+{
+    return m_failOverOptionHasBeenSet;
 }
 

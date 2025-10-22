@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取私用网络ID或者统一ID，建议使用统一ID。
-                     * @return VpcId 私用网络ID或者统一ID，建议使用统一ID。
+                     * 获取私用网络唯一ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取。
+                     * @return VpcId 私用网络唯一ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私用网络ID或者统一ID，建议使用统一ID。
-                     * @param _vpcId 私用网络ID或者统一ID，建议使用统一ID。
+                     * 设置私用网络唯一ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取。
+                     * @param _vpcId 私用网络唯一ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool FlowLogNameHasBeenSet() const;
 
                     /**
-                     * 获取流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN|NAT|DCG。
-                     * @return ResourceType 流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN|NAT|DCG。
+                     * 获取流日志所属资源类型：VPC(私有网络)，SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。
+                     * @return ResourceType 流日志所属资源类型：VPC(私有网络)，SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN|NAT|DCG。
-                     * @param _resourceType 流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN|NAT|DCG。
+                     * 设置流日志所属资源类型：VPC(私有网络)，SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。
+                     * @param _resourceType 流日志所属资源类型：VPC(私有网络)，SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。
                      * 
                      */
                     void SetResourceType(const std::string& _resourceType);
@@ -154,15 +154,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取流日志采集类型，ACCEPT|REJECT|ALL。
-                     * @return TrafficType 流日志采集类型，ACCEPT|REJECT|ALL。
+                     * 获取流日志采集类型，ACCEPT（允许），REJECT（拒绝），ALL（全部）。
+                     * @return TrafficType 流日志采集类型，ACCEPT（允许），REJECT（拒绝），ALL（全部）。
                      * 
                      */
                     std::string GetTrafficType() const;
 
                     /**
-                     * 设置流日志采集类型，ACCEPT|REJECT|ALL。
-                     * @param _trafficType 流日志采集类型，ACCEPT|REJECT|ALL。
+                     * 设置流日志采集类型，ACCEPT（允许），REJECT（拒绝），ALL（全部）。
+                     * @param _trafficType 流日志采集类型，ACCEPT（允许），REJECT（拒绝），ALL（全部）。
                      * 
                      */
                     void SetTrafficType(const std::string& _trafficType);
@@ -196,15 +196,15 @@ namespace TencentCloud
                     bool CloudLogIdHasBeenSet() const;
 
                     /**
-                     * 获取流日志存储ID状态。
-                     * @return CloudLogState 流日志存储ID状态。
+                     * 获取流日志存储ID状态。SUCCESS（成功），DELETED（删除）。
+                     * @return CloudLogState 流日志存储ID状态。SUCCESS（成功），DELETED（删除）。
                      * 
                      */
                     std::string GetCloudLogState() const;
 
                     /**
-                     * 设置流日志存储ID状态。
-                     * @param _cloudLogState 流日志存储ID状态。
+                     * 设置流日志存储ID状态。SUCCESS（成功），DELETED（删除）。
+                     * @param _cloudLogState 流日志存储ID状态。SUCCESS（成功），DELETED（删除）。
                      * 
                      */
                     void SetCloudLogState(const std::string& _cloudLogState);
@@ -302,18 +302,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消费端类型：cls、ckafka。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StorageType 消费端类型：cls、ckafka。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStorageType() const;
 
                     /**
                      * 设置消费端类型：cls、ckafka。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _storageType 消费端类型：cls、ckafka。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStorageType(const std::string& _storageType);
@@ -327,18 +323,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消费端信息，当消费端类型为ckafka时返回。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowLogStorage 消费端信息，当消费端类型为ckafka时返回。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     FlowLogStorage GetFlowLogStorage() const;
 
                     /**
                      * 设置消费端信息，当消费端类型为ckafka时返回。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _flowLogStorage 消费端信息，当消费端类型为ckafka时返回。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFlowLogStorage(const FlowLogStorage& _flowLogStorage);
@@ -352,18 +344,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流日志存储ID对应的地域信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CloudLogRegion 流日志存储ID对应的地域信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCloudLogRegion() const;
 
                     /**
                      * 设置流日志存储ID对应的地域信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cloudLogRegion 流日志存储ID对应的地域信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCloudLogRegion(const std::string& _cloudLogRegion);
@@ -378,7 +366,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 私用网络ID或者统一ID，建议使用统一ID。
+                     * 私用网络唯一ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
@@ -396,7 +384,7 @@ namespace TencentCloud
                     bool m_flowLogNameHasBeenSet;
 
                     /**
-                     * 流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN|NAT|DCG。
+                     * 流日志所属资源类型：VPC(私有网络)，SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;
@@ -408,7 +396,7 @@ namespace TencentCloud
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 流日志采集类型，ACCEPT|REJECT|ALL。
+                     * 流日志采集类型，ACCEPT（允许），REJECT（拒绝），ALL（全部）。
                      */
                     std::string m_trafficType;
                     bool m_trafficTypeHasBeenSet;
@@ -420,7 +408,7 @@ namespace TencentCloud
                     bool m_cloudLogIdHasBeenSet;
 
                     /**
-                     * 流日志存储ID状态。
+                     * 流日志存储ID状态。SUCCESS（成功），DELETED（删除）。
                      */
                     std::string m_cloudLogState;
                     bool m_cloudLogStateHasBeenSet;
@@ -451,21 +439,18 @@ namespace TencentCloud
 
                     /**
                      * 消费端类型：cls、ckafka。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_storageType;
                     bool m_storageTypeHasBeenSet;
 
                     /**
                      * 消费端信息，当消费端类型为ckafka时返回。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     FlowLogStorage m_flowLogStorage;
                     bool m_flowLogStorageHasBeenSet;
 
                     /**
                      * 流日志存储ID对应的地域信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cloudLogRegion;
                     bool m_cloudLogRegionHasBeenSet;

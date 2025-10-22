@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timestamp 时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTimestamp() const;
 
                     /**
                      * 设置时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timestamp 时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimestamp(const std::string& _timestamp);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志等级，可选值note, warning，error
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 日志等级，可选值note, warning，error
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLevel() const;
 
                     /**
                      * 设置日志等级，可选值note, warning，error
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _level 日志等级，可选值note, warning，error
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevel(const std::string& _level);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 日志内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置日志内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _content 日志内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContent(const std::string& _content);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timestamp;
                     bool m_timestampHasBeenSet;
 
                     /**
                      * 日志等级，可选值note, warning，error
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_level;
                     bool m_levelHasBeenSet;
 
                     /**
                      * 日志内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;

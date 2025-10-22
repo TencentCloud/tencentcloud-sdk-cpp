@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ CreateBatchInitOrganizationUrlRequest::CreateBatchInitOrganizationUrlRequest() :
     m_operatorHasBeenSet(false),
     m_operateTypesHasBeenSet(false),
     m_organizationIdsHasBeenSet(false),
-    m_agentHasBeenSet(false)
+    m_agentHasBeenSet(false),
+    m_authorizedOrganizationIdHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,14 @@ string CreateBatchInitOrganizationUrlRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_authorizedOrganizationIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthorizedOrganizationId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_authorizedOrganizationId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -151,6 +160,22 @@ void CreateBatchInitOrganizationUrlRequest::SetAgent(const Agent& _agent)
 bool CreateBatchInitOrganizationUrlRequest::AgentHasBeenSet() const
 {
     return m_agentHasBeenSet;
+}
+
+string CreateBatchInitOrganizationUrlRequest::GetAuthorizedOrganizationId() const
+{
+    return m_authorizedOrganizationId;
+}
+
+void CreateBatchInitOrganizationUrlRequest::SetAuthorizedOrganizationId(const string& _authorizedOrganizationId)
+{
+    m_authorizedOrganizationId = _authorizedOrganizationId;
+    m_authorizedOrganizationIdHasBeenSet = true;
+}
+
+bool CreateBatchInitOrganizationUrlRequest::AuthorizedOrganizationIdHasBeenSet() const
+{
+    return m_authorizedOrganizationIdHasBeenSet;
 }
 
 

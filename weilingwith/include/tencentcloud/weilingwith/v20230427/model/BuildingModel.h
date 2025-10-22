@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取构件ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ElementId 构件ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetElementId() const;
 
                     /**
                      * 设置构件ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _elementId 构件ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetElementId(const std::string& _elementId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取构件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ElementName 构件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetElementName() const;
 
                     /**
                      * 设置构件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _elementName 构件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetElementName(const std::string& _elementName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取模型类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModelType 模型类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModelType() const;
 
                     /**
                      * 设置模型类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modelType 模型类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModelType(const std::string& _modelType);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取模型URL
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModelUrl 模型URL
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModelUrl() const;
 
                     /**
                      * 设置模型URL
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modelUrl 模型URL
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModelUrl(const std::string& _modelUrl);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 构件ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_elementId;
                     bool m_elementIdHasBeenSet;
 
                     /**
                      * 构件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_elementName;
                     bool m_elementNameHasBeenSet;
 
                     /**
                      * 模型类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modelType;
                     bool m_modelTypeHasBeenSet;
 
                     /**
                      * 模型URL
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modelUrl;
                     bool m_modelUrlHasBeenSet;

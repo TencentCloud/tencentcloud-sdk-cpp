@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流检测时返回，音频转存地址，保留30min
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DumpUrl 流检测时返回，音频转存地址，保留30min
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDumpUrl() const;
 
                     /**
                      * 设置流检测时返回，音频转存地址，保留30min
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dumpUrl 流检测时返回，音频转存地址，保留30min
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDumpUrl(const std::string& _dumpUrl);
@@ -95,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取违规主要类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MainType 违规主要类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMainType() const;
 
                     /**
                      * 设置违规主要类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mainType 违规主要类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMainType(const std::string& _mainType);
@@ -141,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取gme实时语音房间ID，透传任务传入时的RoomId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoomId gme实时语音房间ID，透传任务传入时的RoomId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRoomId() const;
 
                     /**
                      * 设置gme实时语音房间ID，透传任务传入时的RoomId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _roomId gme实时语音房间ID，透传任务传入时的RoomId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRoomId(const std::string& _roomId);
@@ -166,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取gme实时语音用户ID，透传任务传入时的OpenId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OpenId gme实时语音用户ID，透传任务传入时的OpenId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOpenId() const;
 
                     /**
                      * 设置gme实时语音用户ID，透传任务传入时的OpenId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _openId gme实时语音用户ID，透传任务传入时的OpenId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOpenId(const std::string& _openId);
@@ -191,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Info 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInfo() const;
 
                     /**
                      * 设置备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _info 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInfo(const std::string& _info);
@@ -216,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流检测时分片在流中的偏移时间，单位毫秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Offset 流检测时分片在流中的偏移时间，单位毫秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置流检测时分片在流中的偏移时间，单位毫秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _offset 流检测时分片在流中的偏移时间，单位毫秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -241,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流检测时分片时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Duration 流检测时分片时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDuration() const;
 
                     /**
                      * 设置流检测时分片时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _duration 流检测时分片时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDuration(const uint64_t& _duration);
@@ -266,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分片开始检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PieceStartTime 分片开始检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPieceStartTime() const;
 
                     /**
                      * 设置分片开始检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pieceStartTime 分片开始检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPieceStartTime(const uint64_t& _pieceStartTime);
@@ -293,7 +261,6 @@ namespace TencentCloud
 
                     /**
                      * 流检测时返回，音频转存地址，保留30min
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dumpUrl;
                     bool m_dumpUrlHasBeenSet;
@@ -306,7 +273,6 @@ namespace TencentCloud
 
                     /**
                      * 违规主要类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mainType;
                     bool m_mainTypeHasBeenSet;
@@ -319,42 +285,36 @@ namespace TencentCloud
 
                     /**
                      * gme实时语音房间ID，透传任务传入时的RoomId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_roomId;
                     bool m_roomIdHasBeenSet;
 
                     /**
                      * gme实时语音用户ID，透传任务传入时的OpenId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_openId;
                     bool m_openIdHasBeenSet;
 
                     /**
                      * 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_info;
                     bool m_infoHasBeenSet;
 
                     /**
                      * 流检测时分片在流中的偏移时间，单位毫秒
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
                      * 流检测时分片时长
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_duration;
                     bool m_durationHasBeenSet;
 
                     /**
                      * 分片开始检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_pieceStartTime;
                     bool m_pieceStartTimeHasBeenSet;

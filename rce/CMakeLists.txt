@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -35,8 +35,10 @@ set(rce_public_header_model
   include/tencentcloud/rce/v20201103/model/OutputManageMarketingRiskValue.h
   include/tencentcloud/rce/v20201103/model/CreateNameListRequest.h
   include/tencentcloud/rce/v20201103/model/DeleteNameListDataResponse.h
+  include/tencentcloud/rce/v20201103/model/DescribeUserUsageCntRequest.h
   include/tencentcloud/rce/v20201103/model/ImportNameListDataResponse.h
   include/tencentcloud/rce/v20201103/model/DeleteNameListRequest.h
+  include/tencentcloud/rce/v20201103/model/OutputDescribeUserUsageCnt.h
   include/tencentcloud/rce/v20201103/model/DescribeNameListDetailResponse.h
   include/tencentcloud/rce/v20201103/model/OutputDescribeNameListInfo.h
   include/tencentcloud/rce/v20201103/model/ManageMarketingRiskResponse.h
@@ -69,6 +71,7 @@ set(rce_public_header_model
   include/tencentcloud/rce/v20201103/model/ModifyNameListDataResponse.h
   include/tencentcloud/rce/v20201103/model/InputManageMarketingRisk.h
   include/tencentcloud/rce/v20201103/model/OutputCreateNameListFront.h
+  include/tencentcloud/rce/v20201103/model/OutputDescribeUserUsageCntData.h
   include/tencentcloud/rce/v20201103/model/ModifyNameListResponse.h
   include/tencentcloud/rce/v20201103/model/OutputDeleteNameListFront.h
   include/tencentcloud/rce/v20201103/model/InputDeleteNameListData.h
@@ -76,6 +79,7 @@ set(rce_public_header_model
   include/tencentcloud/rce/v20201103/model/DataAuthorizationInfo.h
   include/tencentcloud/rce/v20201103/model/DeleteNameListResponse.h
   include/tencentcloud/rce/v20201103/model/InputModifyNameListDataFrontListData.h
+  include/tencentcloud/rce/v20201103/model/DescribeUserUsageCntResponse.h
   )
 
 set(rce_src
@@ -96,8 +100,10 @@ set(rce_src
   src/v20201103/model/OutputManageMarketingRiskValue.cpp
   src/v20201103/model/CreateNameListRequest.cpp
   src/v20201103/model/DeleteNameListDataResponse.cpp
+  src/v20201103/model/DescribeUserUsageCntRequest.cpp
   src/v20201103/model/ImportNameListDataResponse.cpp
   src/v20201103/model/DeleteNameListRequest.cpp
+  src/v20201103/model/OutputDescribeUserUsageCnt.cpp
   src/v20201103/model/DescribeNameListDetailResponse.cpp
   src/v20201103/model/OutputDescribeNameListInfo.cpp
   src/v20201103/model/ManageMarketingRiskResponse.cpp
@@ -130,6 +136,7 @@ set(rce_src
   src/v20201103/model/ModifyNameListDataResponse.cpp
   src/v20201103/model/InputManageMarketingRisk.cpp
   src/v20201103/model/OutputCreateNameListFront.cpp
+  src/v20201103/model/OutputDescribeUserUsageCntData.cpp
   src/v20201103/model/ModifyNameListResponse.cpp
   src/v20201103/model/OutputDeleteNameListFront.cpp
   src/v20201103/model/InputDeleteNameListData.cpp
@@ -137,6 +144,7 @@ set(rce_src
   src/v20201103/model/DataAuthorizationInfo.cpp
   src/v20201103/model/DeleteNameListResponse.cpp
   src/v20201103/model/InputModifyNameListDataFrontListData.cpp
+  src/v20201103/model/DescribeUserUsageCntResponse.cpp
   )
 
 set(rce_include

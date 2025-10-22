@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取启动模板ID。
-                     * @return LaunchTemplateId 启动模板ID。
+                     * 获取启动模板ID。可通过 [DescribeLaunchTemplates](https://cloud.tencent.com/document/api/213/66322) 接口返回值中的`LaunchTemplateId `获取。
+                     * @return LaunchTemplateId 启动模板ID。可通过 [DescribeLaunchTemplates](https://cloud.tencent.com/document/api/213/66322) 接口返回值中的`LaunchTemplateId `获取。
                      * 
                      */
                     std::string GetLaunchTemplateId() const;
 
                     /**
-                     * 设置启动模板ID。
-                     * @param _launchTemplateId 启动模板ID。
+                     * 设置启动模板ID。可通过 [DescribeLaunchTemplates](https://cloud.tencent.com/document/api/213/66322) 接口返回值中的`LaunchTemplateId `获取。
+                     * @param _launchTemplateId 启动模板ID。可通过 [DescribeLaunchTemplates](https://cloud.tencent.com/document/api/213/66322) 接口返回值中的`LaunchTemplateId `获取。
                      * 
                      */
                     void SetLaunchTemplateId(const std::string& _launchTemplateId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool LaunchTemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取待设置的默认版本号。
-                     * @return DefaultVersion 待设置的默认版本号。
+                     * 获取待设置的默认版本号。可通过 [DescribeLaunchTemplateVersions](https://cloud.tencent.com/document/api/213/66323) 接口返回值中的`LaunchTemplateVersion`获取。
+                     * @return DefaultVersion 待设置的默认版本号。可通过 [DescribeLaunchTemplateVersions](https://cloud.tencent.com/document/api/213/66323) 接口返回值中的`LaunchTemplateVersion`获取。
                      * 
                      */
                     int64_t GetDefaultVersion() const;
 
                     /**
-                     * 设置待设置的默认版本号。
-                     * @param _defaultVersion 待设置的默认版本号。
+                     * 设置待设置的默认版本号。可通过 [DescribeLaunchTemplateVersions](https://cloud.tencent.com/document/api/213/66323) 接口返回值中的`LaunchTemplateVersion`获取。
+                     * @param _defaultVersion 待设置的默认版本号。可通过 [DescribeLaunchTemplateVersions](https://cloud.tencent.com/document/api/213/66323) 接口返回值中的`LaunchTemplateVersion`获取。
                      * 
                      */
                     void SetDefaultVersion(const int64_t& _defaultVersion);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 启动模板ID。
+                     * 启动模板ID。可通过 [DescribeLaunchTemplates](https://cloud.tencent.com/document/api/213/66322) 接口返回值中的`LaunchTemplateId `获取。
                      */
                     std::string m_launchTemplateId;
                     bool m_launchTemplateIdHasBeenSet;
 
                     /**
-                     * 待设置的默认版本号。
+                     * 待设置的默认版本号。可通过 [DescribeLaunchTemplateVersions](https://cloud.tencent.com/document/api/213/66323) 接口返回值中的`LaunchTemplateVersion`获取。
                      */
                     int64_t m_defaultVersion;
                     bool m_defaultVersionHasBeenSet;

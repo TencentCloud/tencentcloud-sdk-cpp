@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,7 +42,11 @@ CreateDatasourceRequest::CreateDatasourceRequest() :
     m_vipHasBeenSet(false),
     m_vportHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_operationAuthLimitHasBeenSet(false)
+    m_operationAuthLimitHasBeenSet(false),
+    m_useVPCHasBeenSet(false),
+    m_regionIdHasBeenSet(false),
+    m_schemaHasBeenSet(false),
+    m_dbVersionHasBeenSet(false)
 {
 }
 
@@ -216,6 +220,38 @@ string CreateDatasourceRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_useVPCHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseVPC";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_useVPC, allocator);
+    }
+
+    if (m_regionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_regionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_schemaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Schema";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_schema.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dbVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DbVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dbVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -544,6 +580,70 @@ void CreateDatasourceRequest::SetOperationAuthLimit(const vector<string>& _opera
 bool CreateDatasourceRequest::OperationAuthLimitHasBeenSet() const
 {
     return m_operationAuthLimitHasBeenSet;
+}
+
+bool CreateDatasourceRequest::GetUseVPC() const
+{
+    return m_useVPC;
+}
+
+void CreateDatasourceRequest::SetUseVPC(const bool& _useVPC)
+{
+    m_useVPC = _useVPC;
+    m_useVPCHasBeenSet = true;
+}
+
+bool CreateDatasourceRequest::UseVPCHasBeenSet() const
+{
+    return m_useVPCHasBeenSet;
+}
+
+string CreateDatasourceRequest::GetRegionId() const
+{
+    return m_regionId;
+}
+
+void CreateDatasourceRequest::SetRegionId(const string& _regionId)
+{
+    m_regionId = _regionId;
+    m_regionIdHasBeenSet = true;
+}
+
+bool CreateDatasourceRequest::RegionIdHasBeenSet() const
+{
+    return m_regionIdHasBeenSet;
+}
+
+string CreateDatasourceRequest::GetSchema() const
+{
+    return m_schema;
+}
+
+void CreateDatasourceRequest::SetSchema(const string& _schema)
+{
+    m_schema = _schema;
+    m_schemaHasBeenSet = true;
+}
+
+bool CreateDatasourceRequest::SchemaHasBeenSet() const
+{
+    return m_schemaHasBeenSet;
+}
+
+string CreateDatasourceRequest::GetDbVersion() const
+{
+    return m_dbVersion;
+}
+
+void CreateDatasourceRequest::SetDbVersion(const string& _dbVersion)
+{
+    m_dbVersion = _dbVersion;
+    m_dbVersionHasBeenSet = true;
+}
+
+bool CreateDatasourceRequest::DbVersionHasBeenSet() const
+{
+    return m_dbVersionHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取木马影响容器个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskContainerCnt 木马影响容器个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRiskContainerCnt() const;
@@ -75,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取待处理风险个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskCnt 待处理风险个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRiskCnt() const;
@@ -91,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取病毒库更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VirusDataBaseModifyTime 病毒库更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVirusDataBaseModifyTime() const;
@@ -107,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取木马影响容器个数较昨日增长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskContainerIncrease 木马影响容器个数较昨日增长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRiskContainerIncrease() const;
@@ -123,9 +115,7 @@ namespace TencentCloud
 
                     /**
                      * 获取待处理风险个数较昨日增长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskIncrease 待处理风险个数较昨日增长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRiskIncrease() const;
@@ -139,9 +129,7 @@ namespace TencentCloud
 
                     /**
                      * 获取隔离事件个数较昨日新增
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsolateIncrease 隔离事件个数较昨日新增
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsolateIncrease() const;
@@ -155,9 +143,7 @@ namespace TencentCloud
 
                     /**
                      * 获取隔离事件总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsolateCnt 隔离事件总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsolateCnt() const;
@@ -179,49 +165,42 @@ namespace TencentCloud
 
                     /**
                      * 木马影响容器个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_riskContainerCnt;
                     bool m_riskContainerCntHasBeenSet;
 
                     /**
                      * 待处理风险个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_riskCnt;
                     bool m_riskCntHasBeenSet;
 
                     /**
                      * 病毒库更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_virusDataBaseModifyTime;
                     bool m_virusDataBaseModifyTimeHasBeenSet;
 
                     /**
                      * 木马影响容器个数较昨日增长
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_riskContainerIncrease;
                     bool m_riskContainerIncreaseHasBeenSet;
 
                     /**
                      * 待处理风险个数较昨日增长
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_riskIncrease;
                     bool m_riskIncreaseHasBeenSet;
 
                     /**
                      * 隔离事件个数较昨日新增
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isolateIncrease;
                     bool m_isolateIncreaseHasBeenSet;
 
                     /**
                      * 隔离事件总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isolateCnt;
                     bool m_isolateCntHasBeenSet;

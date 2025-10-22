@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,7 +47,11 @@ DescribeOperateOpsTasksRequest::DescribeOperateOpsTasksRequest() :
     m_taskTagsHasBeenSet(false),
     m_keyWordHasBeenSet(false),
     m_initStrategyHasBeenSet(false),
-    m_requestResourceTypesHasBeenSet(false)
+    m_requestResourceTypesHasBeenSet(false),
+    m_projectIdsHasBeenSet(false),
+    m_blackTaskIdListHasBeenSet(false),
+    m_scheduleTimeZoneHasBeenSet(false),
+    m_runPriorityListHasBeenSet(false)
 {
 }
 
@@ -267,6 +271,53 @@ string DescribeOperateOpsTasksRequest::ToJsonString() const
         for (auto itr = m_requestResourceTypes.begin(); itr != m_requestResourceTypes.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_projectIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_projectIds.begin(); itr != m_projectIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_blackTaskIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BlackTaskIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_blackTaskIdList.begin(); itr != m_blackTaskIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_scheduleTimeZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleTimeZone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_scheduleTimeZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_runPriorityListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunPriorityList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_runPriorityList.begin(); itr != m_runPriorityList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
@@ -676,6 +727,70 @@ void DescribeOperateOpsTasksRequest::SetRequestResourceTypes(const vector<string
 bool DescribeOperateOpsTasksRequest::RequestResourceTypesHasBeenSet() const
 {
     return m_requestResourceTypesHasBeenSet;
+}
+
+vector<string> DescribeOperateOpsTasksRequest::GetProjectIds() const
+{
+    return m_projectIds;
+}
+
+void DescribeOperateOpsTasksRequest::SetProjectIds(const vector<string>& _projectIds)
+{
+    m_projectIds = _projectIds;
+    m_projectIdsHasBeenSet = true;
+}
+
+bool DescribeOperateOpsTasksRequest::ProjectIdsHasBeenSet() const
+{
+    return m_projectIdsHasBeenSet;
+}
+
+vector<string> DescribeOperateOpsTasksRequest::GetBlackTaskIdList() const
+{
+    return m_blackTaskIdList;
+}
+
+void DescribeOperateOpsTasksRequest::SetBlackTaskIdList(const vector<string>& _blackTaskIdList)
+{
+    m_blackTaskIdList = _blackTaskIdList;
+    m_blackTaskIdListHasBeenSet = true;
+}
+
+bool DescribeOperateOpsTasksRequest::BlackTaskIdListHasBeenSet() const
+{
+    return m_blackTaskIdListHasBeenSet;
+}
+
+string DescribeOperateOpsTasksRequest::GetScheduleTimeZone() const
+{
+    return m_scheduleTimeZone;
+}
+
+void DescribeOperateOpsTasksRequest::SetScheduleTimeZone(const string& _scheduleTimeZone)
+{
+    m_scheduleTimeZone = _scheduleTimeZone;
+    m_scheduleTimeZoneHasBeenSet = true;
+}
+
+bool DescribeOperateOpsTasksRequest::ScheduleTimeZoneHasBeenSet() const
+{
+    return m_scheduleTimeZoneHasBeenSet;
+}
+
+vector<int64_t> DescribeOperateOpsTasksRequest::GetRunPriorityList() const
+{
+    return m_runPriorityList;
+}
+
+void DescribeOperateOpsTasksRequest::SetRunPriorityList(const vector<int64_t>& _runPriorityList)
+{
+    m_runPriorityList = _runPriorityList;
+    m_runPriorityListHasBeenSet = true;
+}
+
+bool DescribeOperateOpsTasksRequest::RunPriorityListHasBeenSet() const
+{
+    return m_runPriorityListHasBeenSet;
 }
 
 

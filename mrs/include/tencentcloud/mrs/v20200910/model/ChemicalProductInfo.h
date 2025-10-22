@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取药品名称，包括通用名和商品名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 药品名称，包括通用名和商品名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ChemicalProductInfoName GetName() const;
 
                     /**
                      * 设置药品名称，包括通用名和商品名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 药品名称，包括通用名和商品名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const ChemicalProductInfoName& _name);
@@ -96,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取活性成份消息定义，如果是复方制剂，可以不列出每个活性成份的详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActiveIngredient 活性成份消息定义，如果是复方制剂，可以不列出每个活性成份的详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ChemicalProductInfoActiveIngredient GetActiveIngredient() const;
 
                     /**
                      * 设置活性成份消息定义，如果是复方制剂，可以不列出每个活性成份的详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _activeIngredient 活性成份消息定义，如果是复方制剂，可以不列出每个活性成份的详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActiveIngredient(const ChemicalProductInfoActiveIngredient& _activeIngredient);
@@ -121,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取性状
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Appearance 性状
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ChemicalProductInfoAppearance GetAppearance() const;
 
                     /**
                      * 设置性状
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appearance 性状
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppearance(const ChemicalProductInfoAppearance& _appearance);
@@ -146,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取适应症描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Indications 适应症描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ChemicalProductInfoIndications GetIndications() const;
 
                     /**
                      * 设置适应症描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _indications 适应症描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIndications(const ChemicalProductInfoIndications& _indications);
@@ -171,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Brochure 规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ChemicalProductInfoBrochure GetBrochure() const;
 
                     /**
                      * 设置规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _brochure 规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBrochure(const ChemicalProductInfoBrochure& _brochure);
@@ -196,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用法用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Dosage 用法用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ChemicalProductInfoDosage GetDosage() const;
 
                     /**
                      * 设置用法用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dosage 用法用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDosage(const ChemicalProductInfoDosage& _dosage);
@@ -221,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取不良反应
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdverseReaction 不良反应
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ChemicalProductInfoAdverseReaction GetAdverseReaction() const;
 
                     /**
                      * 设置不良反应
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _adverseReaction 不良反应
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdverseReaction(const ChemicalProductInfoAdverseReaction& _adverseReaction);
@@ -246,18 +218,14 @@ namespace TencentCloud
 
                     /**
                      * 获取禁忌情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Contraindications 禁忌情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ChemicalProductInfoContraindications GetContraindications() const;
 
                     /**
                      * 设置禁忌情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _contraindications 禁忌情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContraindications(const ChemicalProductInfoContraindications& _contraindications);
@@ -271,18 +239,14 @@ namespace TencentCloud
 
                     /**
                      * 获取注意事项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Precautions 注意事项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ChemicalProductInfoPrecautions GetPrecautions() const;
 
                     /**
                      * 设置注意事项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _precautions 注意事项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrecautions(const ChemicalProductInfoPrecautions& _precautions);
@@ -296,18 +260,14 @@ namespace TencentCloud
 
                     /**
                      * 获取孕妇及哺乳期妇女用药
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PregnancyLactationUse 孕妇及哺乳期妇女用药
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ChemicalProductInfoPregnancyLactationUse GetPregnancyLactationUse() const;
 
                     /**
                      * 设置孕妇及哺乳期妇女用药
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pregnancyLactationUse 孕妇及哺乳期妇女用药
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPregnancyLactationUse(const ChemicalProductInfoPregnancyLactationUse& _pregnancyLactationUse);
@@ -321,18 +281,14 @@ namespace TencentCloud
 
                     /**
                      * 获取儿童用药
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PediatricUse 儿童用药
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ChemicalProductInfoPediatricUse GetPediatricUse() const;
 
                     /**
                      * 设置儿童用药
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pediatricUse 儿童用药
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPediatricUse(const ChemicalProductInfoPediatricUse& _pediatricUse);
@@ -346,18 +302,14 @@ namespace TencentCloud
 
                     /**
                      * 获取老年用药
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GeriatricUse 老年用药
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ChemicalProductInfoGeriatricUse GetGeriatricUse() const;
 
                     /**
                      * 设置老年用药
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _geriatricUse 老年用药
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGeriatricUse(const ChemicalProductInfoGeriatricUse& _geriatricUse);
@@ -371,18 +323,14 @@ namespace TencentCloud
 
                     /**
                      * 获取药品的药物相互作用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Interactions 药品的药物相互作用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ChemicalProductInfoInteractions GetInteractions() const;
 
                     /**
                      * 设置药品的药物相互作用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _interactions 药品的药物相互作用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInteractions(const ChemicalProductInfoInteractions& _interactions);
@@ -396,18 +344,14 @@ namespace TencentCloud
 
                     /**
                      * 获取药物过量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Overdose 药物过量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ChemicalProductInfoOverdose GetOverdose() const;
 
                     /**
                      * 设置药物过量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _overdose 药物过量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOverdose(const ChemicalProductInfoOverdose& _overdose);
@@ -421,18 +365,14 @@ namespace TencentCloud
 
                     /**
                      * 获取临床试验
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClinicalTrial 临床试验
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ChemicalProductInfoClinicalTrial GetClinicalTrial() const;
 
                     /**
                      * 设置临床试验
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clinicalTrial 临床试验
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClinicalTrial(const ChemicalProductInfoClinicalTrial& _clinicalTrial);
@@ -446,18 +386,14 @@ namespace TencentCloud
 
                     /**
                      * 获取药理毒理
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PharmacologyToxicology 药理毒理
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ChemicalProductInfoPharmacologyToxicology GetPharmacologyToxicology() const;
 
                     /**
                      * 设置药理毒理
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pharmacologyToxicology 药理毒理
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPharmacologyToxicology(const ChemicalProductInfoPharmacologyToxicology& _pharmacologyToxicology);
@@ -471,18 +407,14 @@ namespace TencentCloud
 
                     /**
                      * 获取药代动力学
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Pharmacokinetics 药代动力学
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ChemicalProductInfoPharmacokinetics GetPharmacokinetics() const;
 
                     /**
                      * 设置药代动力学
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pharmacokinetics 药代动力学
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPharmacokinetics(const ChemicalProductInfoPharmacokinetics& _pharmacokinetics);
@@ -496,18 +428,14 @@ namespace TencentCloud
 
                     /**
                      * 获取储存条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Storage 储存条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ChemicalProductInfoStorage GetStorage() const;
 
                     /**
                      * 设置储存条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _storage 储存条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStorage(const ChemicalProductInfoStorage& _storage);
@@ -521,18 +449,14 @@ namespace TencentCloud
 
                     /**
                      * 获取包装信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Packaging 包装信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ChemicalProductInfoPackaging GetPackaging() const;
 
                     /**
                      * 设置包装信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packaging 包装信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackaging(const ChemicalProductInfoPackaging& _packaging);
@@ -546,18 +470,14 @@ namespace TencentCloud
 
                     /**
                      * 获取有效期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValidityPeriod 有效期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ChemicalProductInfoValidityPeriod GetValidityPeriod() const;
 
                     /**
                      * 设置有效期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _validityPeriod 有效期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValidityPeriod(const ChemicalProductInfoValidityPeriod& _validityPeriod);
@@ -571,18 +491,14 @@ namespace TencentCloud
 
                     /**
                      * 获取执行标准
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExecutiveStandards 执行标准
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ChemicalProductInfoExecutiveStandards GetExecutiveStandards() const;
 
                     /**
                      * 设置执行标准
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _executiveStandards 执行标准
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExecutiveStandards(const ChemicalProductInfoExecutiveStandards& _executiveStandards);
@@ -596,18 +512,14 @@ namespace TencentCloud
 
                     /**
                      * 获取批准文号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Approval 批准文号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ChemicalProductInfoApproval GetApproval() const;
 
                     /**
                      * 设置批准文号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _approval 批准文号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApproval(const ChemicalProductInfoApproval& _approval);
@@ -621,18 +533,14 @@ namespace TencentCloud
 
                     /**
                      * 获取生产企业名称和地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Manufacturer 生产企业名称和地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ChemicalProductInfoManufacturer GetManufacturer() const;
 
                     /**
                      * 设置生产企业名称和地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _manufacturer 生产企业名称和地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetManufacturer(const ChemicalProductInfoManufacturer& _manufacturer);
@@ -648,161 +556,138 @@ namespace TencentCloud
 
                     /**
                      * 药品名称，包括通用名和商品名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ChemicalProductInfoName m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 活性成份消息定义，如果是复方制剂，可以不列出每个活性成份的详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ChemicalProductInfoActiveIngredient m_activeIngredient;
                     bool m_activeIngredientHasBeenSet;
 
                     /**
                      * 性状
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ChemicalProductInfoAppearance m_appearance;
                     bool m_appearanceHasBeenSet;
 
                     /**
                      * 适应症描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ChemicalProductInfoIndications m_indications;
                     bool m_indicationsHasBeenSet;
 
                     /**
                      * 规格
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ChemicalProductInfoBrochure m_brochure;
                     bool m_brochureHasBeenSet;
 
                     /**
                      * 用法用量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ChemicalProductInfoDosage m_dosage;
                     bool m_dosageHasBeenSet;
 
                     /**
                      * 不良反应
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ChemicalProductInfoAdverseReaction m_adverseReaction;
                     bool m_adverseReactionHasBeenSet;
 
                     /**
                      * 禁忌情况
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ChemicalProductInfoContraindications m_contraindications;
                     bool m_contraindicationsHasBeenSet;
 
                     /**
                      * 注意事项
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ChemicalProductInfoPrecautions m_precautions;
                     bool m_precautionsHasBeenSet;
 
                     /**
                      * 孕妇及哺乳期妇女用药
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ChemicalProductInfoPregnancyLactationUse m_pregnancyLactationUse;
                     bool m_pregnancyLactationUseHasBeenSet;
 
                     /**
                      * 儿童用药
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ChemicalProductInfoPediatricUse m_pediatricUse;
                     bool m_pediatricUseHasBeenSet;
 
                     /**
                      * 老年用药
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ChemicalProductInfoGeriatricUse m_geriatricUse;
                     bool m_geriatricUseHasBeenSet;
 
                     /**
                      * 药品的药物相互作用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ChemicalProductInfoInteractions m_interactions;
                     bool m_interactionsHasBeenSet;
 
                     /**
                      * 药物过量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ChemicalProductInfoOverdose m_overdose;
                     bool m_overdoseHasBeenSet;
 
                     /**
                      * 临床试验
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ChemicalProductInfoClinicalTrial m_clinicalTrial;
                     bool m_clinicalTrialHasBeenSet;
 
                     /**
                      * 药理毒理
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ChemicalProductInfoPharmacologyToxicology m_pharmacologyToxicology;
                     bool m_pharmacologyToxicologyHasBeenSet;
 
                     /**
                      * 药代动力学
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ChemicalProductInfoPharmacokinetics m_pharmacokinetics;
                     bool m_pharmacokineticsHasBeenSet;
 
                     /**
                      * 储存条件
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ChemicalProductInfoStorage m_storage;
                     bool m_storageHasBeenSet;
 
                     /**
                      * 包装信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ChemicalProductInfoPackaging m_packaging;
                     bool m_packagingHasBeenSet;
 
                     /**
                      * 有效期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ChemicalProductInfoValidityPeriod m_validityPeriod;
                     bool m_validityPeriodHasBeenSet;
 
                     /**
                      * 执行标准
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ChemicalProductInfoExecutiveStandards m_executiveStandards;
                     bool m_executiveStandardsHasBeenSet;
 
                     /**
                      * 批准文号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ChemicalProductInfoApproval m_approval;
                     bool m_approvalHasBeenSet;
 
                     /**
                      * 生产企业名称和地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ChemicalProductInfoManufacturer m_manufacturer;
                     bool m_manufacturerHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取码id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackId 码id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPackId() const;
 
                     /**
                      * 设置码id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packId 码id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackId(const std::string& _packId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取企业id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CorpId 企业id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCorpId() const;
 
                     /**
                      * 设置企业id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _corpId 企业id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCorpId(const int64_t& _corpId);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取商户id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MerchantId 商户id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMerchantId() const;
 
                     /**
                      * 设置商户id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _merchantId 商户id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMerchantId(const std::string& _merchantId);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取制码状态 init: 初始化, pending: 执行中, done: 完成, error: 失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 制码状态 init: 初始化, pending: 执行中, done: 完成, error: 失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置制码状态 init: 初始化, pending: 执行中, done: 完成, error: 失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 制码状态 init: 初始化, pending: 执行中, done: 完成, error: 失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取执行日志
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Log 执行日志
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLog() const;
 
                     /**
                      * 设置执行日志
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _log 执行日志
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLog(const std::string& _log);
@@ -224,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建人
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateUser 创建人
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateUser() const;
 
                     /**
                      * 设置创建人
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createUser 创建人
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateUser(const std::string& _createUser);
@@ -249,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取码数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Amount 码数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAmount() const;
 
                     /**
                      * 设置码数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _amount 码数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAmount(const int64_t& _amount);
@@ -274,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取防伪码长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CodeLength 防伪码长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCodeLength() const;
 
                     /**
                      * 设置防伪码长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _codeLength 防伪码长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCodeLength(const int64_t& _codeLength);
@@ -299,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取码类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CodeType 码类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCodeType() const;
 
                     /**
                      * 设置码类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _codeType 码类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCodeType(const std::string& _codeType);
@@ -324,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否暗码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cipher 是否暗码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCipher() const;
 
                     /**
                      * 设置是否暗码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cipher 是否暗码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCipher(const int64_t& _cipher);
@@ -349,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取[弃用] 文字码地址，通过另一个接口查
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TextUrl [弃用] 文字码地址，通过另一个接口查
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTextUrl() const;
 
                     /**
                      * 设置[弃用] 文字码地址，通过另一个接口查
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _textUrl [弃用] 文字码地址，通过另一个接口查
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTextUrl(const std::string& _textUrl);
@@ -374,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取[弃用] 二维码地址，通过另一个接口查
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackUrl [弃用] 二维码地址，通过另一个接口查
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPackUrl() const;
 
                     /**
                      * 设置[弃用] 二维码地址，通过另一个接口查
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packUrl [弃用] 二维码地址，通过另一个接口查
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackUrl(const std::string& _packUrl);
@@ -399,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取商户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MerchantName 商户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMerchantName() const;
 
                     /**
                      * 设置商户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _merchantName 商户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMerchantName(const std::string& _merchantName);
@@ -424,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取码规则类型 0: 默认, 1: 自定义
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleType 码规则类型 0: 默认, 1: 自定义
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRuleType() const;
 
                     /**
                      * 设置码规则类型 0: 默认, 1: 自定义
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleType 码规则类型 0: 默认, 1: 自定义
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleType(const int64_t& _ruleType);
@@ -449,18 +385,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义码规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomId 自定义码规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCustomId() const;
 
                     /**
                      * 设置自定义码规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _customId 自定义码规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCustomId(const std::string& _customId);
@@ -474,18 +406,14 @@ namespace TencentCloud
 
                     /**
                      * 获取码包类型 0: 普通码包 1: 层级码包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackType 码包类型 0: 普通码包 1: 层级码包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPackType() const;
 
                     /**
                      * 设置码包类型 0: 普通码包 1: 层级码包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packType 码包类型 0: 普通码包 1: 层级码包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackType(const int64_t& _packType);
@@ -499,18 +427,14 @@ namespace TencentCloud
 
                     /**
                      * 获取生码层级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackLevel 生码层级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPackLevel() const;
 
                     /**
                      * 设置生码层级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packLevel 生码层级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackLevel(const uint64_t& _packLevel);
@@ -524,18 +448,14 @@ namespace TencentCloud
 
                     /**
                      * 获取层级码配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackSpec 层级码配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PackSpec> GetPackSpec() const;
 
                     /**
                      * 设置层级码配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packSpec 层级码配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackSpec(const std::vector<PackSpec>& _packSpec);
@@ -549,18 +469,14 @@ namespace TencentCloud
 
                     /**
                      * 获取商品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductName 商品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductName() const;
 
                     /**
                      * 设置商品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productName 商品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductName(const std::string& _productName);
@@ -574,18 +490,14 @@ namespace TencentCloud
 
                     /**
                      * 获取商品规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductSpecification 商品规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductSpecification() const;
 
                     /**
                      * 设置商品规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productSpecification 商品规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductSpecification(const std::string& _productSpecification);
@@ -599,18 +511,14 @@ namespace TencentCloud
 
                     /**
                      * 获取商品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductId 商品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置商品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productId 商品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductId(const std::string& _productId);
@@ -649,18 +557,14 @@ namespace TencentCloud
 
                     /**
                      * 获取场景码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SceneCode 场景码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSceneCode() const;
 
                     /**
                      * 设置场景码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sceneCode 场景码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSceneCode(const int64_t& _sceneCode);
@@ -674,18 +578,14 @@ namespace TencentCloud
 
                     /**
                      * 获取码规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CodeRule 码规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCodeRule() const;
 
                     /**
                      * 设置码规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _codeRule 码规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCodeRule(const std::string& _codeRule);
@@ -699,18 +599,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已使用码数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsedAmount 已使用码数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUsedAmount() const;
 
                     /**
                      * 设置已使用码数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _usedAmount 已使用码数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUsedAmount(const int64_t& _usedAmount);
@@ -724,18 +620,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开始流水号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SerialStart 开始流水号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSerialStart() const;
 
                     /**
                      * 设置开始流水号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serialStart 开始流水号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSerialStart(const uint64_t& _serialStart);
@@ -749,18 +641,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结束流水号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SerialEnd 结束流水号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSerialEnd() const;
 
                     /**
                      * 设置结束流水号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serialEnd 结束流水号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSerialEnd(const uint64_t& _serialEnd);
@@ -776,161 +664,138 @@ namespace TencentCloud
 
                     /**
                      * 码id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packId;
                     bool m_packIdHasBeenSet;
 
                     /**
                      * 企业id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_corpId;
                     bool m_corpIdHasBeenSet;
 
                     /**
                      * 商户id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_merchantId;
                     bool m_merchantIdHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
                      * 制码状态 init: 初始化, pending: 执行中, done: 完成, error: 失败
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 执行日志
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_log;
                     bool m_logHasBeenSet;
 
                     /**
                      * 创建人
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createUser;
                     bool m_createUserHasBeenSet;
 
                     /**
                      * 码数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_amount;
                     bool m_amountHasBeenSet;
 
                     /**
                      * 防伪码长度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_codeLength;
                     bool m_codeLengthHasBeenSet;
 
                     /**
                      * 码类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_codeType;
                     bool m_codeTypeHasBeenSet;
 
                     /**
                      * 是否暗码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cipher;
                     bool m_cipherHasBeenSet;
 
                     /**
                      * [弃用] 文字码地址，通过另一个接口查
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_textUrl;
                     bool m_textUrlHasBeenSet;
 
                     /**
                      * [弃用] 二维码地址，通过另一个接口查
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packUrl;
                     bool m_packUrlHasBeenSet;
 
                     /**
                      * 商户名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_merchantName;
                     bool m_merchantNameHasBeenSet;
 
                     /**
                      * 码规则类型 0: 默认, 1: 自定义
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ruleType;
                     bool m_ruleTypeHasBeenSet;
 
                     /**
                      * 自定义码规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_customId;
                     bool m_customIdHasBeenSet;
 
                     /**
                      * 码包类型 0: 普通码包 1: 层级码包
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_packType;
                     bool m_packTypeHasBeenSet;
 
                     /**
                      * 生码层级
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_packLevel;
                     bool m_packLevelHasBeenSet;
 
                     /**
                      * 层级码配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PackSpec> m_packSpec;
                     bool m_packSpecHasBeenSet;
 
                     /**
                      * 商品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productName;
                     bool m_productNameHasBeenSet;
 
                     /**
                      * 商品规格
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productSpecification;
                     bool m_productSpecificationHasBeenSet;
 
                     /**
                      * 商品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productId;
                     bool m_productIdHasBeenSet;
@@ -944,35 +809,30 @@ namespace TencentCloud
 
                     /**
                      * 场景码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sceneCode;
                     bool m_sceneCodeHasBeenSet;
 
                     /**
                      * 码规则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_codeRule;
                     bool m_codeRuleHasBeenSet;
 
                     /**
                      * 已使用码数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_usedAmount;
                     bool m_usedAmountHasBeenSet;
 
                     /**
                      * 开始流水号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_serialStart;
                     bool m_serialStartHasBeenSet;
 
                     /**
                      * 结束流水号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_serialEnd;
                     bool m_serialEndHasBeenSet;

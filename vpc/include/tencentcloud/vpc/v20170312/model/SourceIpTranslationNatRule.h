@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源类型，目前包含SUBNET、NETWORKINTERFACE、USERDEFINED
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceType 资源类型，目前包含SUBNET、NETWORKINTERFACE、USERDEFINED
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
                      * 设置资源类型，目前包含SUBNET、NETWORKINTERFACE、USERDEFINED
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceType 资源类型，目前包含SUBNET、NETWORKINTERFACE、USERDEFINED
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceType(const std::string& _resourceType);
@@ -135,15 +131,15 @@ namespace TencentCloud
                     bool PublicIpAddressesHasBeenSet() const;
 
                     /**
-                     * 获取描述
-                     * @return Description 描述
+                     * 获取规则描述
+                     * @return Description 规则描述
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述
-                     * @param _description 描述
+                     * 设置规则描述
+                     * @param _description 规则描述
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -178,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取NAT网关的ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NatGatewayId NAT网关的ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNatGatewayId() const;
 
                     /**
                      * 设置NAT网关的ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _natGatewayId NAT网关的ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNatGatewayId(const std::string& _natGatewayId);
@@ -203,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取私有网络VPC的ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId 私有网络VPC的ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络VPC的ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId 私有网络VPC的ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -228,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取NAT网关SNAT规则创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedTime NAT网关SNAT规则创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置NAT网关SNAT规则创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdTime NAT网关SNAT规则创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -261,7 +245,6 @@ namespace TencentCloud
 
                     /**
                      * 资源类型，目前包含SUBNET、NETWORKINTERFACE、USERDEFINED
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;
@@ -279,7 +262,7 @@ namespace TencentCloud
                     bool m_publicIpAddressesHasBeenSet;
 
                     /**
-                     * 描述
+                     * 规则描述
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
@@ -292,21 +275,18 @@ namespace TencentCloud
 
                     /**
                      * NAT网关的ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_natGatewayId;
                     bool m_natGatewayIdHasBeenSet;
 
                     /**
                      * 私有网络VPC的ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * NAT网关SNAT规则创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;

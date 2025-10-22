@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ProductHasBeenSet() const;
 
                     /**
-                     * 获取查询数目，默认为20，最大值为100。
-                     * @return Limit 查询数目，默认为20，最大值为100。
+                     * 获取查询数目，默认为20，最大值为500。
+                     * @return Limit 查询数目，默认为20，最大值为500。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置查询数目，默认为20，最大值为100。
-                     * @param _limit 查询数目，默认为20，最大值为100。
+                     * 设置查询数目，默认为20，最大值为500。
+                     * @param _limit 查询数目，默认为20，最大值为500。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -125,6 +125,27 @@ namespace TencentCloud
                      * 
                      */
                     bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取分片ID数组。
+                     * @return ShardIds 分片ID数组。
+                     * 
+                     */
+                    std::vector<int64_t> GetShardIds() const;
+
+                    /**
+                     * 设置分片ID数组。
+                     * @param _shardIds 分片ID数组。
+                     * 
+                     */
+                    void SetShardIds(const std::vector<int64_t>& _shardIds);
+
+                    /**
+                     * 判断参数 ShardIds 是否已赋值
+                     * @return ShardIds 是否已赋值
+                     * 
+                     */
+                    bool ShardIdsHasBeenSet() const;
 
                 private:
 
@@ -147,10 +168,16 @@ namespace TencentCloud
                     bool m_productHasBeenSet;
 
                     /**
-                     * 查询数目，默认为20，最大值为100。
+                     * 查询数目，默认为20，最大值为500。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 分片ID数组。
+                     */
+                    std::vector<int64_t> m_shardIds;
+                    bool m_shardIdsHasBeenSet;
 
                 };
             }

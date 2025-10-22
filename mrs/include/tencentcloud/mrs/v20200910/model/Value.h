@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Grade 等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGrade() const;
 
                     /**
                      * 设置等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _grade 等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGrade(const std::string& _grade);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Percent 百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<double> GetPercent() const;
 
                     /**
                      * 设置百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _percent 百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPercent(const std::vector<double>& _percent);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取阳性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Positive 阳性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPositive() const;
 
                     /**
                      * 设置阳性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _positive 阳性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPositive(const std::string& _positive);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 等级
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_grade;
                     bool m_gradeHasBeenSet;
 
                     /**
                      * 百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<double> m_percent;
                     bool m_percentHasBeenSet;
 
                     /**
                      * 阳性
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_positive;
                     bool m_positiveHasBeenSet;

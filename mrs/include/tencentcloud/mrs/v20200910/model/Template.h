@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,18 +72,14 @@ namespace TencentCloud
 
                     /**
                      * 获取患者信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PatientInfo 患者信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PatientInfo GetPatientInfo() const;
 
                     /**
                      * 设置患者信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _patientInfo 患者信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPatientInfo(const PatientInfo& _patientInfo);
@@ -97,18 +93,14 @@ namespace TencentCloud
 
                     /**
                      * 获取报告信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportInfo 报告信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ReportInfo GetReportInfo() const;
 
                     /**
                      * 设置报告信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reportInfo 报告信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReportInfo(const ReportInfo& _reportInfo);
@@ -122,18 +114,14 @@ namespace TencentCloud
 
                     /**
                      * 获取检查报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Check 检查报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Check GetCheck() const;
 
                     /**
                      * 设置检查报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _check 检查报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCheck(const Check& _check);
@@ -147,18 +135,14 @@ namespace TencentCloud
 
                     /**
                      * 获取病理报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Pathology 病理报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PathologyReport GetPathology() const;
 
                     /**
                      * 设置病理报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pathology 病理报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPathology(const PathologyReport& _pathology);
@@ -172,18 +156,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出院报告，入院报告，门诊病历
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MedDoc 出院报告，入院报告，门诊病历
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MedDoc GetMedDoc() const;
 
                     /**
                      * 设置出院报告，入院报告，门诊病历
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _medDoc 出院报告，入院报告，门诊病历
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMedDoc(const MedDoc& _medDoc);
@@ -197,18 +177,14 @@ namespace TencentCloud
 
                     /**
                      * 获取诊断证明
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiagCert 诊断证明
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DiagCert GetDiagCert() const;
 
                     /**
                      * 设置诊断证明
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diagCert 诊断证明
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiagCert(const DiagCert& _diagCert);
@@ -222,18 +198,14 @@ namespace TencentCloud
 
                     /**
                      * 获取病案首页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FirstPage 病案首页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     FirstPage GetFirstPage() const;
 
                     /**
                      * 设置病案首页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _firstPage 病案首页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFirstPage(const FirstPage& _firstPage);
@@ -247,18 +219,14 @@ namespace TencentCloud
 
                     /**
                      * 获取检验报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Indicator 检验报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Indicator GetIndicator() const;
 
                     /**
                      * 设置检验报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _indicator 检验报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIndicator(const Indicator& _indicator);
@@ -272,18 +240,14 @@ namespace TencentCloud
 
                     /**
                      * 获取报告类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportType 报告类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReportType() const;
 
                     /**
                      * 设置报告类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reportType 报告类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReportType(const std::string& _reportType);
@@ -297,18 +261,14 @@ namespace TencentCloud
 
                     /**
                      * 获取门诊病历信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MedicalRecordInfo 门诊病历信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MedicalRecordInfo GetMedicalRecordInfo() const;
 
                     /**
                      * 设置门诊病历信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _medicalRecordInfo 门诊病历信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMedicalRecordInfo(const MedicalRecordInfo& _medicalRecordInfo);
@@ -322,18 +282,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出入院信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Hospitalization 出入院信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Hospitalization GetHospitalization() const;
 
                     /**
                      * 设置出入院信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hospitalization 出入院信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHospitalization(const Hospitalization& _hospitalization);
@@ -347,18 +303,14 @@ namespace TencentCloud
 
                     /**
                      * 获取手术记录
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Surgery 手术记录
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Surgery GetSurgery() const;
 
                     /**
                      * 设置手术记录
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _surgery 手术记录
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSurgery(const Surgery& _surgery);
@@ -372,18 +324,14 @@ namespace TencentCloud
 
                     /**
                      * 获取心电图报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Electrocardiogram 心电图报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Electrocardiogram GetElectrocardiogram() const;
 
                     /**
                      * 设置心电图报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _electrocardiogram 心电图报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetElectrocardiogram(const Electrocardiogram& _electrocardiogram);
@@ -397,18 +345,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内窥镜报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Endoscopy 内窥镜报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Endoscopy GetEndoscopy() const;
 
                     /**
                      * 设置内窥镜报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endoscopy 内窥镜报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndoscopy(const Endoscopy& _endoscopy);
@@ -422,18 +366,14 @@ namespace TencentCloud
 
                     /**
                      * 获取处方单
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Prescription 处方单
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Prescription GetPrescription() const;
 
                     /**
                      * 设置处方单
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _prescription 处方单
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrescription(const Prescription& _prescription);
@@ -447,18 +387,14 @@ namespace TencentCloud
 
                     /**
                      * 获取疫苗接种凭证
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VaccineCertificate 疫苗接种凭证
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     VaccineCertificate GetVaccineCertificate() const;
 
                     /**
                      * 设置疫苗接种凭证
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vaccineCertificate 疫苗接种凭证
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVaccineCertificate(const VaccineCertificate& _vaccineCertificate);
@@ -472,18 +408,14 @@ namespace TencentCloud
 
                     /**
                      * 获取OCR文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OcrText OCR文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOcrText() const;
 
                     /**
                      * 设置OCR文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ocrText OCR文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOcrText(const std::string& _ocrText);
@@ -497,18 +429,14 @@ namespace TencentCloud
 
                     /**
                      * 获取OCR拼接后文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OcrResult OCR拼接后文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOcrResult() const;
 
                     /**
                      * 设置OCR拼接后文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ocrResult OCR拼接后文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOcrResult(const std::string& _ocrResult);
@@ -522,18 +450,14 @@ namespace TencentCloud
 
                     /**
                      * 获取报告类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportTypeDesc 报告类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReportTypeDesc() const;
 
                     /**
                      * 设置报告类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reportTypeDesc 报告类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReportTypeDesc(const std::string& _reportTypeDesc);
@@ -547,18 +471,14 @@ namespace TencentCloud
 
                     /**
                      * 获取病理报告v2
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PathologyV2 病理报告v2
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PathologyV2 GetPathologyV2() const;
 
                     /**
                      * 设置病理报告v2
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pathologyV2 病理报告v2
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPathologyV2(const PathologyV2& _pathologyV2);
@@ -572,18 +492,14 @@ namespace TencentCloud
 
                     /**
                      * 获取碳14尿素呼气试验
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return C14 碳14尿素呼气试验
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Indicator GetC14() const;
 
                     /**
                      * 设置碳14尿素呼气试验
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _c14 碳14尿素呼气试验
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetC14(const Indicator& _c14);
@@ -597,18 +513,14 @@ namespace TencentCloud
 
                     /**
                      * 获取体检结论
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Exame 体检结论
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Exame GetExame() const;
 
                     /**
                      * 设置体检结论
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _exame 体检结论
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExame(const Exame& _exame);
@@ -622,18 +534,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出院报告v2，入院报告v2，门诊病历v2
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MedDocV2 出院报告v2，入院报告v2，门诊病历v2
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DischargeInfoBlock GetMedDocV2() const;
 
                     /**
                      * 设置出院报告v2，入院报告v2，门诊病历v2
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _medDocV2 出院报告v2，入院报告v2，门诊病历v2
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMedDocV2(const DischargeInfoBlock& _medDocV2);
@@ -647,18 +555,14 @@ namespace TencentCloud
 
                     /**
                      * 获取检验报告v3
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IndicatorV3 检验报告v3
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     IndicatorV3 GetIndicatorV3() const;
 
                     /**
                      * 设置检验报告v3
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _indicatorV3 检验报告v3
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIndicatorV3(const IndicatorV3& _indicatorV3);
@@ -672,18 +576,14 @@ namespace TencentCloud
 
                     /**
                      * 获取核酸报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Covid 核酸报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CovidItemsInfo GetCovid() const;
 
                     /**
                      * 设置核酸报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _covid 核酸报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCovid(const CovidItemsInfo& _covid);
@@ -697,18 +597,14 @@ namespace TencentCloud
 
                     /**
                      * 获取孕产报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Maternity 孕产报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Maternity GetMaternity() const;
 
                     /**
                      * 设置孕产报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maternity 孕产报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaternity(const Maternity& _maternity);
@@ -722,18 +618,14 @@ namespace TencentCloud
 
                     /**
                      * 获取眼科报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Eye 眼科报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EyeItemsInfo GetEye() const;
 
                     /**
                      * 设置眼科报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eye 眼科报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEye(const EyeItemsInfo& _eye);
@@ -747,18 +639,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出生证明
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BirthCert 出生证明
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BirthCert GetBirthCert() const;
 
                     /**
                      * 设置出生证明
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _birthCert 出生证明
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBirthCert(const BirthCert& _birthCert);
@@ -772,18 +660,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时间轴
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timeline 时间轴
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TimelineInformation GetTimeline() const;
 
                     /**
                      * 设置时间轴
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeline 时间轴
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeline(const TimelineInformation& _timeline);
@@ -795,210 +679,208 @@ namespace TencentCloud
                      */
                     bool TimelineHasBeenSet() const;
 
+                    /**
+                     * 获取内窥镜报告V2
+                     * @return EndoscopyV2 内窥镜报告V2
+                     * 
+                     */
+                    Check GetEndoscopyV2() const;
+
+                    /**
+                     * 设置内窥镜报告V2
+                     * @param _endoscopyV2 内窥镜报告V2
+                     * 
+                     */
+                    void SetEndoscopyV2(const Check& _endoscopyV2);
+
+                    /**
+                     * 判断参数 EndoscopyV2 是否已赋值
+                     * @return EndoscopyV2 是否已赋值
+                     * 
+                     */
+                    bool EndoscopyV2HasBeenSet() const;
+
                 private:
 
                     /**
                      * 患者信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PatientInfo m_patientInfo;
                     bool m_patientInfoHasBeenSet;
 
                     /**
                      * 报告信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ReportInfo m_reportInfo;
                     bool m_reportInfoHasBeenSet;
 
                     /**
                      * 检查报告
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Check m_check;
                     bool m_checkHasBeenSet;
 
                     /**
                      * 病理报告
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PathologyReport m_pathology;
                     bool m_pathologyHasBeenSet;
 
                     /**
                      * 出院报告，入院报告，门诊病历
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MedDoc m_medDoc;
                     bool m_medDocHasBeenSet;
 
                     /**
                      * 诊断证明
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DiagCert m_diagCert;
                     bool m_diagCertHasBeenSet;
 
                     /**
                      * 病案首页
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     FirstPage m_firstPage;
                     bool m_firstPageHasBeenSet;
 
                     /**
                      * 检验报告
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Indicator m_indicator;
                     bool m_indicatorHasBeenSet;
 
                     /**
                      * 报告类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reportType;
                     bool m_reportTypeHasBeenSet;
 
                     /**
                      * 门诊病历信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MedicalRecordInfo m_medicalRecordInfo;
                     bool m_medicalRecordInfoHasBeenSet;
 
                     /**
                      * 出入院信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Hospitalization m_hospitalization;
                     bool m_hospitalizationHasBeenSet;
 
                     /**
                      * 手术记录
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Surgery m_surgery;
                     bool m_surgeryHasBeenSet;
 
                     /**
                      * 心电图报告
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Electrocardiogram m_electrocardiogram;
                     bool m_electrocardiogramHasBeenSet;
 
                     /**
                      * 内窥镜报告
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Endoscopy m_endoscopy;
                     bool m_endoscopyHasBeenSet;
 
                     /**
                      * 处方单
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Prescription m_prescription;
                     bool m_prescriptionHasBeenSet;
 
                     /**
                      * 疫苗接种凭证
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     VaccineCertificate m_vaccineCertificate;
                     bool m_vaccineCertificateHasBeenSet;
 
                     /**
                      * OCR文本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ocrText;
                     bool m_ocrTextHasBeenSet;
 
                     /**
                      * OCR拼接后文本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ocrResult;
                     bool m_ocrResultHasBeenSet;
 
                     /**
                      * 报告类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reportTypeDesc;
                     bool m_reportTypeDescHasBeenSet;
 
                     /**
                      * 病理报告v2
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PathologyV2 m_pathologyV2;
                     bool m_pathologyV2HasBeenSet;
 
                     /**
                      * 碳14尿素呼气试验
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Indicator m_c14;
                     bool m_c14HasBeenSet;
 
                     /**
                      * 体检结论
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Exame m_exame;
                     bool m_exameHasBeenSet;
 
                     /**
                      * 出院报告v2，入院报告v2，门诊病历v2
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DischargeInfoBlock m_medDocV2;
                     bool m_medDocV2HasBeenSet;
 
                     /**
                      * 检验报告v3
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     IndicatorV3 m_indicatorV3;
                     bool m_indicatorV3HasBeenSet;
 
                     /**
                      * 核酸报告
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CovidItemsInfo m_covid;
                     bool m_covidHasBeenSet;
 
                     /**
                      * 孕产报告
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Maternity m_maternity;
                     bool m_maternityHasBeenSet;
 
                     /**
                      * 眼科报告
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EyeItemsInfo m_eye;
                     bool m_eyeHasBeenSet;
 
                     /**
                      * 出生证明
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BirthCert m_birthCert;
                     bool m_birthCertHasBeenSet;
 
                     /**
                      * 时间轴
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TimelineInformation m_timeline;
                     bool m_timelineHasBeenSet;
+
+                    /**
+                     * 内窥镜报告V2
+                     */
+                    Check m_endoscopyV2;
+                    bool m_endoscopyV2HasBeenSet;
 
                 };
             }

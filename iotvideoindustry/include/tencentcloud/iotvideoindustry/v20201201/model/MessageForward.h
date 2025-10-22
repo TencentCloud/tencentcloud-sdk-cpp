@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IntId 配置ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIntId() const;
 
                     /**
                      * 设置配置ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _intId 配置ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIntId(const int64_t& _intId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 用户Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置用户Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uin 用户Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取json数组， 转发类型 1: 告警 2:GPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MessageType json数组， 转发类型 1: 告警 2:GPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMessageType() const;
 
                     /**
                      * 设置json数组， 转发类型 1: 告警 2:GPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _messageType json数组， 转发类型 1: 告警 2:GPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMessageType(const std::string& _messageType);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取区域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionId 区域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegionId() const;
 
                     /**
                      * 设置区域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionId 区域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionId(const std::string& _regionId);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取区域名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionName 区域名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegionName() const;
 
                     /**
                      * 设置区域名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionName 区域名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionName(const std::string& _regionName);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Instance 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstance() const;
 
                     /**
                      * 设置实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instance 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstance(const std::string& _instance);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceName 实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceName 实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取kafka topic id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicId kafka topic id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置kafka topic id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicId kafka topic id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取topic 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicName topic 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置topic 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicName topic 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -325,77 +281,66 @@ namespace TencentCloud
 
                     /**
                      * 配置ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_intId;
                     bool m_intIdHasBeenSet;
 
                     /**
                      * 用户Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
                      * json数组， 转发类型 1: 告警 2:GPS
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_messageType;
                     bool m_messageTypeHasBeenSet;
 
                     /**
                      * 区域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regionId;
                     bool m_regionIdHasBeenSet;
 
                     /**
                      * 区域名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regionName;
                     bool m_regionNameHasBeenSet;
 
                     /**
                      * 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instance;
                     bool m_instanceHasBeenSet;
 
                     /**
                      * 实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
                      * kafka topic id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
                      * topic 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;

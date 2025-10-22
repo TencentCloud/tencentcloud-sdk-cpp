@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取诊断目录
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Catalogues 诊断目录
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<KubeJarvisStateCatalogue> GetCatalogues() const;
 
                     /**
                      * 设置诊断目录
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _catalogues 诊断目录
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCatalogues(const std::vector<KubeJarvisStateCatalogue>& _catalogues);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取诊断结果统计
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Statistics 诊断结果统计
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<KubeJarvisStateStatistic> GetStatistics() const;
 
                     /**
                      * 设置诊断结果统计
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _statistics 诊断结果统计
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatistics(const std::vector<KubeJarvisStateStatistic>& _statistics);
@@ -102,14 +94,12 @@ namespace TencentCloud
 
                     /**
                      * 诊断目录
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<KubeJarvisStateCatalogue> m_catalogues;
                     bool m_cataloguesHasBeenSet;
 
                     /**
                      * 诊断结果统计
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<KubeJarvisStateStatistic> m_statistics;
                     bool m_statisticsHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取为false不点亮部署生效、重置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsDraft 为false不点亮部署生效、重置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsDraft() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取错误信息，预留
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorMsg 错误信息，预留
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrorMsg() const;
@@ -79,14 +75,12 @@ namespace TencentCloud
 
                     /**
                      * 为false不点亮部署生效、重置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isDraft;
                     bool m_isDraftHasBeenSet;
 
                     /**
                      * 错误信息，预留
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorMsg;
                     bool m_errorMsgHasBeenSet;

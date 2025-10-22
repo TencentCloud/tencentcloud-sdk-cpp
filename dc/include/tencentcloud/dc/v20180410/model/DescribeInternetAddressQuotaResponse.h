@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取IPv6互联网公网允许的最小前缀长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ipv6PrefixLen IPv6互联网公网允许的最小前缀长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIpv6PrefixLen() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取BGP类型IPv4互联网地址配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ipv4BgpQuota BGP类型IPv4互联网地址配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIpv4BgpQuota() const;
@@ -77,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取非BGP类型IPv4互联网地址配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ipv4OtherQuota 非BGP类型IPv4互联网地址配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIpv4OtherQuota() const;
@@ -93,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取BGP类型IPv4互联网地址已使用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ipv4BgpNum BGP类型IPv4互联网地址已使用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIpv4BgpNum() const;
@@ -109,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取非BGP类型互联网地址已使用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ipv4OtherNum 非BGP类型互联网地址已使用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIpv4OtherNum() const;
@@ -127,35 +117,30 @@ namespace TencentCloud
 
                     /**
                      * IPv6互联网公网允许的最小前缀长度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ipv6PrefixLen;
                     bool m_ipv6PrefixLenHasBeenSet;
 
                     /**
                      * BGP类型IPv4互联网地址配额
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ipv4BgpQuota;
                     bool m_ipv4BgpQuotaHasBeenSet;
 
                     /**
                      * 非BGP类型IPv4互联网地址配额
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ipv4OtherQuota;
                     bool m_ipv4OtherQuotaHasBeenSet;
 
                     /**
                      * BGP类型IPv4互联网地址已使用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ipv4BgpNum;
                     bool m_ipv4BgpNumHasBeenSet;
 
                     /**
                      * 非BGP类型互联网地址已使用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ipv4OtherNum;
                     bool m_ipv4OtherNumHasBeenSet;

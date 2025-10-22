@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -303,18 +303,14 @@ namespace TencentCloud
 
                     /**
                      * 获取专用宿主机所属的围笼ID。该字段仅对金融专区围笼内的专用宿主机有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CageId 专用宿主机所属的围笼ID。该字段仅对金融专区围笼内的专用宿主机有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCageId() const;
 
                     /**
                      * 设置专用宿主机所属的围笼ID。该字段仅对金融专区围笼内的专用宿主机有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cageId 专用宿主机所属的围笼ID。该字段仅对金融专区围笼内的专用宿主机有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCageId(const std::string& _cageId);
@@ -328,18 +324,14 @@ namespace TencentCloud
 
                     /**
                      * 获取专用宿主机关联的标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 专用宿主机关联的标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置专用宿主机关联的标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 专用宿主机关联的标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -427,14 +419,12 @@ namespace TencentCloud
 
                     /**
                      * 专用宿主机所属的围笼ID。该字段仅对金融专区围笼内的专用宿主机有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cageId;
                     bool m_cageIdHasBeenSet;
 
                     /**
                      * 专用宿主机关联的标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;

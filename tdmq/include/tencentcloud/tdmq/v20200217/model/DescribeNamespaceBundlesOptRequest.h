@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -210,6 +210,27 @@ namespace TencentCloud
                      */
                     bool OwnerBrokerHasBeenSet() const;
 
+                    /**
+                     * 获取租户(如果没有自定义租户名称，和 tenantId 相同；如果有配置自定义租户名称，则为自定义租户名 user_tenant)
+                     * @return Tenant 租户(如果没有自定义租户名称，和 tenantId 相同；如果有配置自定义租户名称，则为自定义租户名 user_tenant)
+                     * 
+                     */
+                    std::string GetTenant() const;
+
+                    /**
+                     * 设置租户(如果没有自定义租户名称，和 tenantId 相同；如果有配置自定义租户名称，则为自定义租户名 user_tenant)
+                     * @param _tenant 租户(如果没有自定义租户名称，和 tenantId 相同；如果有配置自定义租户名称，则为自定义租户名 user_tenant)
+                     * 
+                     */
+                    void SetTenant(const std::string& _tenant);
+
+                    /**
+                     * 判断参数 Tenant 是否已赋值
+                     * @return Tenant 是否已赋值
+                     * 
+                     */
+                    bool TenantHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +280,12 @@ namespace TencentCloud
                      */
                     std::string m_ownerBroker;
                     bool m_ownerBrokerHasBeenSet;
+
+                    /**
+                     * 租户(如果没有自定义租户名称，和 tenantId 相同；如果有配置自定义租户名称，则为自定义租户名 user_tenant)
+                     */
+                    std::string m_tenant;
+                    bool m_tenantHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -144,18 +144,14 @@ namespace TencentCloud
 
                     /**
                      * 获取音画质重生视频控制信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RebuildVideoInfo 音画质重生视频控制信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RebuildVideoInfo GetRebuildVideoInfo() const;
 
                     /**
                      * 设置音画质重生视频控制信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rebuildVideoInfo 音画质重生视频控制信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRebuildVideoInfo(const RebuildVideoInfo& _rebuildVideoInfo);
@@ -169,18 +165,14 @@ namespace TencentCloud
 
                     /**
                      * 获取音画质重生音频控制信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RebuildAudioInfo 音画质重生音频控制信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RebuildAudioInfo GetRebuildAudioInfo() const;
 
                     /**
                      * 设置音画质重生音频控制信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rebuildAudioInfo 音画质重生音频控制信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRebuildAudioInfo(const RebuildAudioInfo& _rebuildAudioInfo);
@@ -194,18 +186,14 @@ namespace TencentCloud
 
                     /**
                      * 获取输出视频控制信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetVideoInfo 输出视频控制信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RebuildMediaTargetVideoStream GetTargetVideoInfo() const;
 
                     /**
                      * 设置输出视频控制信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _targetVideoInfo 输出视频控制信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTargetVideoInfo(const RebuildMediaTargetVideoStream& _targetVideoInfo);
@@ -219,18 +207,14 @@ namespace TencentCloud
 
                     /**
                      * 获取输出音频控制信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetAudioInfo 输出音频控制信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RebuildMediaTargetAudioStream GetTargetAudioInfo() const;
 
                     /**
                      * 设置输出音频控制信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _targetAudioInfo 输出音频控制信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTargetAudioInfo(const RebuildMediaTargetAudioStream& _targetAudioInfo);
@@ -401,28 +385,24 @@ namespace TencentCloud
 
                     /**
                      * 音画质重生视频控制信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RebuildVideoInfo m_rebuildVideoInfo;
                     bool m_rebuildVideoInfoHasBeenSet;
 
                     /**
                      * 音画质重生音频控制信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RebuildAudioInfo m_rebuildAudioInfo;
                     bool m_rebuildAudioInfoHasBeenSet;
 
                     /**
                      * 输出视频控制信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RebuildMediaTargetVideoStream m_targetVideoInfo;
                     bool m_targetVideoInfoHasBeenSet;
 
                     /**
                      * 输出音频控制信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RebuildMediaTargetAudioStream m_targetAudioInfo;
                     bool m_targetAudioInfoHasBeenSet;

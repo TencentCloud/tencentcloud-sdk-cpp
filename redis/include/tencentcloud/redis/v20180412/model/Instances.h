@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -216,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例的磁盘大小。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskSize 实例的磁盘大小。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
                      * 设置实例的磁盘大小。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diskSize 实例的磁盘大小。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiskSize(const int64_t& _diskSize);
@@ -304,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该参数存在命名不规范问题，建议用参数IPv6取代。内部参数，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vip6 该参数存在命名不规范问题，建议用参数IPv6取代。内部参数，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVip6() const;
 
                     /**
                      * 设置该参数存在命名不规范问题，建议用参数IPv6取代。内部参数，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vip6 该参数存在命名不规范问题，建议用参数IPv6取代。内部参数，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVip6(const std::string& _vip6);
@@ -329,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内部参数，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IPv6 内部参数，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIPv6() const;
 
                     /**
                      * 设置内部参数，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iPv6 内部参数，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIPv6(const std::string& _iPv6);
@@ -591,7 +579,6 @@ namespace TencentCloud
 
                     /**
                      * 实例的磁盘大小。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
@@ -616,14 +603,12 @@ namespace TencentCloud
 
                     /**
                      * 该参数存在命名不规范问题，建议用参数IPv6取代。内部参数，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vip6;
                     bool m_vip6HasBeenSet;
 
                     /**
                      * 内部参数，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_iPv6;
                     bool m_iPv6HasBeenSet;

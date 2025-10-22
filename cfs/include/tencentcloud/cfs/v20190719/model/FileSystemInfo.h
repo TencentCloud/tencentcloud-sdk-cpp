@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@
 #include <tencentcloud/cfs/v20190719/model/TagInfo.h>
 #include <tencentcloud/cfs/v20190719/model/TieringDetailInfo.h>
 #include <tencentcloud/cfs/v20190719/model/AutoScaleUpRule.h>
+#include <tencentcloud/cfs/v20190719/model/ExstraPerformanceInfo.h>
 
 
 namespace TencentCloud
@@ -474,15 +475,15 @@ namespace TencentCloud
                     bool AutoSnapshotPolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取文件系统处理快照状态
-                     * @return SnapStatus 文件系统处理快照状态
+                     * 获取文件系统处理快照状态,snapping：快照中，normal：正常状态
+                     * @return SnapStatus 文件系统处理快照状态,snapping：快照中，normal：正常状态
                      * 
                      */
                     std::string GetSnapStatus() const;
 
                     /**
-                     * 设置文件系统处理快照状态
-                     * @param _snapStatus 文件系统处理快照状态
+                     * 设置文件系统处理快照状态,snapping：快照中，normal：正常状态
+                     * @param _snapStatus 文件系统处理快照状态,snapping：快照中，normal：正常状态
                      * 
                      */
                     void SetSnapStatus(const std::string& _snapStatus);
@@ -571,18 +572,14 @@ Available:可用
 
                     /**
                      * 获取分层存储详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TieringDetail 分层存储详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TieringDetailInfo GetTieringDetail() const;
 
                     /**
                      * 设置分层存储详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tieringDetail 分层存储详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTieringDetail(const TieringDetailInfo& _tieringDetail);
@@ -596,18 +593,14 @@ Available:可用
 
                     /**
                      * 获取文件系统自动扩容策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoScaleUpRule 文件系统自动扩容策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AutoScaleUpRule GetAutoScaleUpRule() const;
 
                     /**
                      * 设置文件系统自动扩容策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _autoScaleUpRule 文件系统自动扩容策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAutoScaleUpRule(const AutoScaleUpRule& _autoScaleUpRule);
@@ -621,18 +614,14 @@ Available:可用
 
                     /**
                      * 获取文件系统版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 文件系统版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置文件系统版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _version 文件系统版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -643,6 +632,56 @@ Available:可用
                      * 
                      */
                     bool VersionHasBeenSet() const;
+
+                    /**
+                     * 获取额外性能信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExstraPerformanceInfo 额外性能信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<ExstraPerformanceInfo> GetExstraPerformanceInfo() const;
+
+                    /**
+                     * 设置额外性能信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _exstraPerformanceInfo 额外性能信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExstraPerformanceInfo(const std::vector<ExstraPerformanceInfo>& _exstraPerformanceInfo);
+
+                    /**
+                     * 判断参数 ExstraPerformanceInfo 是否已赋值
+                     * @return ExstraPerformanceInfo 是否已赋值
+                     * 
+                     */
+                    bool ExstraPerformanceInfoHasBeenSet() const;
+
+                    /**
+                     * 获取basic：标准版元数据类型
+enhanced：增项版元数据类型
+                     * @return MetaType basic：标准版元数据类型
+enhanced：增项版元数据类型
+                     * 
+                     */
+                    std::string GetMetaType() const;
+
+                    /**
+                     * 设置basic：标准版元数据类型
+enhanced：增项版元数据类型
+                     * @param _metaType basic：标准版元数据类型
+enhanced：增项版元数据类型
+                     * 
+                     */
+                    void SetMetaType(const std::string& _metaType);
+
+                    /**
+                     * 判断参数 MetaType 是否已赋值
+                     * @return MetaType 是否已赋值
+                     * 
+                     */
+                    bool MetaTypeHasBeenSet() const;
 
                 private:
 
@@ -767,7 +806,7 @@ Available:可用
                     bool m_autoSnapshotPolicyIdHasBeenSet;
 
                     /**
-                     * 文件系统处理快照状态
+                     * 文件系统处理快照状态,snapping：快照中，normal：正常状态
                      */
                     std::string m_snapStatus;
                     bool m_snapStatusHasBeenSet;
@@ -795,24 +834,35 @@ Available:可用
 
                     /**
                      * 分层存储详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TieringDetailInfo m_tieringDetail;
                     bool m_tieringDetailHasBeenSet;
 
                     /**
                      * 文件系统自动扩容策略
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AutoScaleUpRule m_autoScaleUpRule;
                     bool m_autoScaleUpRuleHasBeenSet;
 
                     /**
                      * 文件系统版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
+
+                    /**
+                     * 额外性能信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ExstraPerformanceInfo> m_exstraPerformanceInfo;
+                    bool m_exstraPerformanceInfoHasBeenSet;
+
+                    /**
+                     * basic：标准版元数据类型
+enhanced：增项版元数据类型
+                     */
+                    std::string m_metaType;
+                    bool m_metaTypeHasBeenSet;
 
                 };
             }

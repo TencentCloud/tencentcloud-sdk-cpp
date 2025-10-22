@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomain() const;
@@ -61,10 +59,8 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取当前域名价格
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CurrentPrice 当前域名价格
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取当前域名价格 单位元
+                     * @return CurrentPrice 当前域名价格 单位元
                      * 
                      */
                     double GetCurrentPrice() const;
@@ -77,10 +73,8 @@ namespace TencentCloud
                     bool CurrentPriceHasBeenSet() const;
 
                     /**
-                     * 获取用户上次出价
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BidPrice 用户上次出价
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取用户上次出价 单位元
+                     * @return BidPrice 用户上次出价 单位元
                      * 
                      */
                     double GetBidPrice() const;
@@ -93,10 +87,8 @@ namespace TencentCloud
                     bool BidPriceHasBeenSet() const;
 
                     /**
-                     * 获取当前加价幅度
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CurrentPriceScope 当前加价幅度
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取当前加价幅度 单位元
+                     * @return CurrentPriceScope 当前加价幅度 单位元
                      * 
                      */
                     double GetCurrentPriceScope() const;
@@ -125,10 +117,8 @@ namespace TencentCloud
                     bool PriceScopeHasBeenSet() const;
 
                     /**
-                     * 获取用户当前已经支付了的保证金
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DepositPrice 用户当前已经支付了的保证金
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取用户当前已经支付了的保证金 单位元
+                     * @return DepositPrice 用户当前已经支付了的保证金 单位元
                      * 
                      */
                     double GetDepositPrice() const;
@@ -144,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 当前域名价格
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 当前域名价格 单位元
                      */
                     double m_currentPrice;
                     bool m_currentPriceHasBeenSet;
 
                     /**
-                     * 用户上次出价
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 用户上次出价 单位元
                      */
                     double m_bidPrice;
                     bool m_bidPriceHasBeenSet;
 
                     /**
-                     * 当前加价幅度
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 当前加价幅度 单位元
                      */
                     double m_currentPriceScope;
                     bool m_currentPriceScopeHasBeenSet;
@@ -178,8 +164,7 @@ namespace TencentCloud
                     bool m_priceScopeHasBeenSet;
 
                     /**
-                     * 用户当前已经支付了的保证金
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 用户当前已经支付了的保证金 单位元
                      */
                     double m_depositPrice;
                     bool m_depositPriceHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,7 +53,14 @@ JobConfig::JobConfig() :
     m_esServerlessSpaceHasBeenSet(false),
     m_indexNameHasBeenSet(false),
     m_workspaceNameHasBeenSet(false),
-    m_flinkVersionHasBeenSet(false)
+    m_flinkVersionHasBeenSet(false),
+    m_jobManagerCpuHasBeenSet(false),
+    m_jobManagerMemHasBeenSet(false),
+    m_taskManagerCpuHasBeenSet(false),
+    m_taskManagerMemHasBeenSet(false),
+    m_jobConfigItemHasBeenSet(false),
+    m_checkpointTimeoutSecondHasBeenSet(false),
+    m_checkpointIntervalSecondHasBeenSet(false)
 {
 }
 
@@ -443,6 +450,83 @@ CoreInternalOutcome JobConfig::Deserialize(const rapidjson::Value &value)
         m_flinkVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("JobManagerCpu") && !value["JobManagerCpu"].IsNull())
+    {
+        if (!value["JobManagerCpu"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobConfig.JobManagerCpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_jobManagerCpu = value["JobManagerCpu"].GetDouble();
+        m_jobManagerCpuHasBeenSet = true;
+    }
+
+    if (value.HasMember("JobManagerMem") && !value["JobManagerMem"].IsNull())
+    {
+        if (!value["JobManagerMem"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobConfig.JobManagerMem` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_jobManagerMem = value["JobManagerMem"].GetDouble();
+        m_jobManagerMemHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaskManagerCpu") && !value["TaskManagerCpu"].IsNull())
+    {
+        if (!value["TaskManagerCpu"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobConfig.TaskManagerCpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskManagerCpu = value["TaskManagerCpu"].GetDouble();
+        m_taskManagerCpuHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaskManagerMem") && !value["TaskManagerMem"].IsNull())
+    {
+        if (!value["TaskManagerMem"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobConfig.TaskManagerMem` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskManagerMem = value["TaskManagerMem"].GetDouble();
+        m_taskManagerMemHasBeenSet = true;
+    }
+
+    if (value.HasMember("JobConfigItem") && !value["JobConfigItem"].IsNull())
+    {
+        if (!value["JobConfigItem"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobConfig.JobConfigItem` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_jobConfigItem.Deserialize(value["JobConfigItem"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_jobConfigItemHasBeenSet = true;
+    }
+
+    if (value.HasMember("CheckpointTimeoutSecond") && !value["CheckpointTimeoutSecond"].IsNull())
+    {
+        if (!value["CheckpointTimeoutSecond"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobConfig.CheckpointTimeoutSecond` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_checkpointTimeoutSecond = value["CheckpointTimeoutSecond"].GetInt64();
+        m_checkpointTimeoutSecondHasBeenSet = true;
+    }
+
+    if (value.HasMember("CheckpointIntervalSecond") && !value["CheckpointIntervalSecond"].IsNull())
+    {
+        if (!value["CheckpointIntervalSecond"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobConfig.CheckpointIntervalSecond` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_checkpointIntervalSecond = value["CheckpointIntervalSecond"].GetInt64();
+        m_checkpointIntervalSecondHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -736,6 +820,63 @@ void JobConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "FlinkVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_flinkVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobManagerCpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobManagerCpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_jobManagerCpu, allocator);
+    }
+
+    if (m_jobManagerMemHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobManagerMem";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_jobManagerMem, allocator);
+    }
+
+    if (m_taskManagerCpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskManagerCpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_taskManagerCpu, allocator);
+    }
+
+    if (m_taskManagerMemHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskManagerMem";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_taskManagerMem, allocator);
+    }
+
+    if (m_jobConfigItemHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobConfigItem";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_jobConfigItem.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_checkpointTimeoutSecondHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckpointTimeoutSecond";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_checkpointTimeoutSecond, allocator);
+    }
+
+    if (m_checkpointIntervalSecondHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckpointIntervalSecond";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_checkpointIntervalSecond, allocator);
     }
 
 }
@@ -1267,5 +1408,117 @@ void JobConfig::SetFlinkVersion(const string& _flinkVersion)
 bool JobConfig::FlinkVersionHasBeenSet() const
 {
     return m_flinkVersionHasBeenSet;
+}
+
+double JobConfig::GetJobManagerCpu() const
+{
+    return m_jobManagerCpu;
+}
+
+void JobConfig::SetJobManagerCpu(const double& _jobManagerCpu)
+{
+    m_jobManagerCpu = _jobManagerCpu;
+    m_jobManagerCpuHasBeenSet = true;
+}
+
+bool JobConfig::JobManagerCpuHasBeenSet() const
+{
+    return m_jobManagerCpuHasBeenSet;
+}
+
+double JobConfig::GetJobManagerMem() const
+{
+    return m_jobManagerMem;
+}
+
+void JobConfig::SetJobManagerMem(const double& _jobManagerMem)
+{
+    m_jobManagerMem = _jobManagerMem;
+    m_jobManagerMemHasBeenSet = true;
+}
+
+bool JobConfig::JobManagerMemHasBeenSet() const
+{
+    return m_jobManagerMemHasBeenSet;
+}
+
+double JobConfig::GetTaskManagerCpu() const
+{
+    return m_taskManagerCpu;
+}
+
+void JobConfig::SetTaskManagerCpu(const double& _taskManagerCpu)
+{
+    m_taskManagerCpu = _taskManagerCpu;
+    m_taskManagerCpuHasBeenSet = true;
+}
+
+bool JobConfig::TaskManagerCpuHasBeenSet() const
+{
+    return m_taskManagerCpuHasBeenSet;
+}
+
+double JobConfig::GetTaskManagerMem() const
+{
+    return m_taskManagerMem;
+}
+
+void JobConfig::SetTaskManagerMem(const double& _taskManagerMem)
+{
+    m_taskManagerMem = _taskManagerMem;
+    m_taskManagerMemHasBeenSet = true;
+}
+
+bool JobConfig::TaskManagerMemHasBeenSet() const
+{
+    return m_taskManagerMemHasBeenSet;
+}
+
+JobConfig JobConfig::GetJobConfigItem() const
+{
+    return m_jobConfigItem;
+}
+
+void JobConfig::SetJobConfigItem(const JobConfig& _jobConfigItem)
+{
+    m_jobConfigItem = _jobConfigItem;
+    m_jobConfigItemHasBeenSet = true;
+}
+
+bool JobConfig::JobConfigItemHasBeenSet() const
+{
+    return m_jobConfigItemHasBeenSet;
+}
+
+int64_t JobConfig::GetCheckpointTimeoutSecond() const
+{
+    return m_checkpointTimeoutSecond;
+}
+
+void JobConfig::SetCheckpointTimeoutSecond(const int64_t& _checkpointTimeoutSecond)
+{
+    m_checkpointTimeoutSecond = _checkpointTimeoutSecond;
+    m_checkpointTimeoutSecondHasBeenSet = true;
+}
+
+bool JobConfig::CheckpointTimeoutSecondHasBeenSet() const
+{
+    return m_checkpointTimeoutSecondHasBeenSet;
+}
+
+int64_t JobConfig::GetCheckpointIntervalSecond() const
+{
+    return m_checkpointIntervalSecond;
+}
+
+void JobConfig::SetCheckpointIntervalSecond(const int64_t& _checkpointIntervalSecond)
+{
+    m_checkpointIntervalSecond = _checkpointIntervalSecond;
+    m_checkpointIntervalSecondHasBeenSet = true;
+}
+
+bool JobConfig::CheckpointIntervalSecondHasBeenSet() const
+{
+    return m_checkpointIntervalSecondHasBeenSet;
 }
 

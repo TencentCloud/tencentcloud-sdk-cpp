@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,39 +70,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取文件对应的业务类型，目前支持：
-<ul>
-<li>**FLOW ** : <font color="red">如需下载合同文件请选择此项</font></li>
-<li>**TEMPLATE ** : 如需下载模板文件请选择此项</li>
-<li>**DOCUMENT  **: 如需下载文档文件请选择此项</li>
-<li>**SEAL  **: 如需下载印章图片请选择此项</li>
-</ul>
-                     * @return BusinessType 文件对应的业务类型，目前支持：
-<ul>
-<li>**FLOW ** : <font color="red">如需下载合同文件请选择此项</font></li>
-<li>**TEMPLATE ** : 如需下载模板文件请选择此项</li>
-<li>**DOCUMENT  **: 如需下载文档文件请选择此项</li>
-<li>**SEAL  **: 如需下载印章图片请选择此项</li>
-</ul>
+                     * 获取文件对应的业务类型，目前支持：<ul><li>**FLOW ** : <font color="red">如需下载合同文件请选择此项</font></li><li>**TEMPLATE ** : 如需下载模板文件请选择此项</li><li>**DOCUMENT  **: 如需下载文档文件请选择此项</li><li>**SEAL  **: 如需下载印章图片请选择此项</li><li>**DIGITFILE**: 如需下载加签文件请选择此项</li></ul>
+                     * @return BusinessType 文件对应的业务类型，目前支持：<ul><li>**FLOW ** : <font color="red">如需下载合同文件请选择此项</font></li><li>**TEMPLATE ** : 如需下载模板文件请选择此项</li><li>**DOCUMENT  **: 如需下载文档文件请选择此项</li><li>**SEAL  **: 如需下载印章图片请选择此项</li><li>**DIGITFILE**: 如需下载加签文件请选择此项</li></ul>
                      * 
                      */
                     std::string GetBusinessType() const;
 
                     /**
-                     * 设置文件对应的业务类型，目前支持：
-<ul>
-<li>**FLOW ** : <font color="red">如需下载合同文件请选择此项</font></li>
-<li>**TEMPLATE ** : 如需下载模板文件请选择此项</li>
-<li>**DOCUMENT  **: 如需下载文档文件请选择此项</li>
-<li>**SEAL  **: 如需下载印章图片请选择此项</li>
-</ul>
-                     * @param _businessType 文件对应的业务类型，目前支持：
-<ul>
-<li>**FLOW ** : <font color="red">如需下载合同文件请选择此项</font></li>
-<li>**TEMPLATE ** : 如需下载模板文件请选择此项</li>
-<li>**DOCUMENT  **: 如需下载文档文件请选择此项</li>
-<li>**SEAL  **: 如需下载印章图片请选择此项</li>
-</ul>
+                     * 设置文件对应的业务类型，目前支持：<ul><li>**FLOW ** : <font color="red">如需下载合同文件请选择此项</font></li><li>**TEMPLATE ** : 如需下载模板文件请选择此项</li><li>**DOCUMENT  **: 如需下载文档文件请选择此项</li><li>**SEAL  **: 如需下载印章图片请选择此项</li><li>**DIGITFILE**: 如需下载加签文件请选择此项</li></ul>
+                     * @param _businessType 文件对应的业务类型，目前支持：<ul><li>**FLOW ** : <font color="red">如需下载合同文件请选择此项</font></li><li>**TEMPLATE ** : 如需下载模板文件请选择此项</li><li>**DOCUMENT  **: 如需下载文档文件请选择此项</li><li>**SEAL  **: 如需下载印章图片请选择此项</li><li>**DIGITFILE**: 如需下载加签文件请选择此项</li></ul>
                      * 
                      */
                     void SetBusinessType(const std::string& _businessType);
@@ -115,43 +91,15 @@ namespace TencentCloud
                     bool BusinessTypeHasBeenSet() const;
 
                     /**
-                     * 获取业务编号的数组，取值如下：
-<ul>
-<li>流程编号</li>
-<li>模板编号</li>
-<li>文档编号</li>
-<li>印章编号</li>
-<li>如需下载合同文件请传入FlowId，最大支持20个资源</li>
-</ul>
-                     * @return BusinessIds 业务编号的数组，取值如下：
-<ul>
-<li>流程编号</li>
-<li>模板编号</li>
-<li>文档编号</li>
-<li>印章编号</li>
-<li>如需下载合同文件请传入FlowId，最大支持20个资源</li>
-</ul>
+                     * 获取业务编号的数组，取值如下：<ul><li>流程编号</li><li>模板编号</li><li>文档编号</li><li>印章编号</li><li>加签文件编号</li><li>如需下载合同文件请传入FlowId，最大支持20个资源</li></ul>
+                     * @return BusinessIds 业务编号的数组，取值如下：<ul><li>流程编号</li><li>模板编号</li><li>文档编号</li><li>印章编号</li><li>加签文件编号</li><li>如需下载合同文件请传入FlowId，最大支持20个资源</li></ul>
                      * 
                      */
                     std::vector<std::string> GetBusinessIds() const;
 
                     /**
-                     * 设置业务编号的数组，取值如下：
-<ul>
-<li>流程编号</li>
-<li>模板编号</li>
-<li>文档编号</li>
-<li>印章编号</li>
-<li>如需下载合同文件请传入FlowId，最大支持20个资源</li>
-</ul>
-                     * @param _businessIds 业务编号的数组，取值如下：
-<ul>
-<li>流程编号</li>
-<li>模板编号</li>
-<li>文档编号</li>
-<li>印章编号</li>
-<li>如需下载合同文件请传入FlowId，最大支持20个资源</li>
-</ul>
+                     * 设置业务编号的数组，取值如下：<ul><li>流程编号</li><li>模板编号</li><li>文档编号</li><li>印章编号</li><li>加签文件编号</li><li>如需下载合同文件请传入FlowId，最大支持20个资源</li></ul>
+                     * @param _businessIds 业务编号的数组，取值如下：<ul><li>流程编号</li><li>模板编号</li><li>文档编号</li><li>印章编号</li><li>加签文件编号</li><li>如需下载合同文件请传入FlowId，最大支持20个资源</li></ul>
                      * 
                      */
                     void SetBusinessIds(const std::vector<std::string>& _businessIds);
@@ -365,26 +313,13 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 文件对应的业务类型，目前支持：
-<ul>
-<li>**FLOW ** : <font color="red">如需下载合同文件请选择此项</font></li>
-<li>**TEMPLATE ** : 如需下载模板文件请选择此项</li>
-<li>**DOCUMENT  **: 如需下载文档文件请选择此项</li>
-<li>**SEAL  **: 如需下载印章图片请选择此项</li>
-</ul>
+                     * 文件对应的业务类型，目前支持：<ul><li>**FLOW ** : <font color="red">如需下载合同文件请选择此项</font></li><li>**TEMPLATE ** : 如需下载模板文件请选择此项</li><li>**DOCUMENT  **: 如需下载文档文件请选择此项</li><li>**SEAL  **: 如需下载印章图片请选择此项</li><li>**DIGITFILE**: 如需下载加签文件请选择此项</li></ul>
                      */
                     std::string m_businessType;
                     bool m_businessTypeHasBeenSet;
 
                     /**
-                     * 业务编号的数组，取值如下：
-<ul>
-<li>流程编号</li>
-<li>模板编号</li>
-<li>文档编号</li>
-<li>印章编号</li>
-<li>如需下载合同文件请传入FlowId，最大支持20个资源</li>
-</ul>
+                     * 业务编号的数组，取值如下：<ul><li>流程编号</li><li>模板编号</li><li>文档编号</li><li>印章编号</li><li>加签文件编号</li><li>如需下载合同文件请传入FlowId，最大支持20个资源</li></ul>
                      */
                     std::vector<std::string> m_businessIds;
                     bool m_businessIdsHasBeenSet;

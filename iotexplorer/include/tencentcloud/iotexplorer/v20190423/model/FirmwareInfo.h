@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductName 产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductName() const;
 
                     /**
                      * 设置产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productName 产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductName(const std::string& _productName);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取固件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 固件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置固件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 固件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -161,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取固件描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 固件描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置固件描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 固件描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -186,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductId 产品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productId 产品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductId(const std::string& _productId);
@@ -211,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取固件升级模块
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FwType 固件升级模块
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFwType() const;
 
                     /**
                      * 设置固件升级模块
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fwType 固件升级模块
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFwType(const std::string& _fwType);
@@ -236,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建者子 uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateUserId 创建者子 uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCreateUserId() const;
 
                     /**
                      * 设置创建者子 uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createUserId 创建者子 uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateUserId(const int64_t& _createUserId);
@@ -261,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建者昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatorNickName 创建者昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatorNickName() const;
 
                     /**
                      * 设置创建者昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _creatorNickName 创建者昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatorNickName(const std::string& _creatorNickName);
@@ -286,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取固件用户自定义配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserDefined 固件用户自定义配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserDefined() const;
 
                     /**
                      * 设置固件用户自定义配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userDefined 固件用户自定义配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserDefined(const std::string& _userDefined);
@@ -331,56 +299,48 @@ namespace TencentCloud
 
                     /**
                      * 产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productName;
                     bool m_productNameHasBeenSet;
 
                     /**
                      * 固件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 固件描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 产品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productId;
                     bool m_productIdHasBeenSet;
 
                     /**
                      * 固件升级模块
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fwType;
                     bool m_fwTypeHasBeenSet;
 
                     /**
                      * 创建者子 uin
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_createUserId;
                     bool m_createUserIdHasBeenSet;
 
                     /**
                      * 创建者昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_creatorNickName;
                     bool m_creatorNickNameHasBeenSet;
 
                     /**
                      * 固件用户自定义配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userDefined;
                     bool m_userDefinedHasBeenSet;

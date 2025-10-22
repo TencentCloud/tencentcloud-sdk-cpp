@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取索引
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Index 索引
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetIndex() const;
 
                     /**
                      * 设置索引
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _index 索引
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIndex(const std::vector<int64_t>& _index);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Src 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSrc() const;
 
                     /**
                      * 设置原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _src 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrc(const std::string& _src);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -125,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取具体值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 具体值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ValueBlock GetValue() const;
 
                     /**
                      * 设置具体值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 具体值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const ValueBlock& _value);
@@ -150,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Coords 坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Coord> GetCoords() const;
 
                     /**
                      * 设置坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _coords 坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCoords(const std::vector<Coord>& _coords);
@@ -177,35 +157,30 @@ namespace TencentCloud
 
                     /**
                      * 索引
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_index;
                     bool m_indexHasBeenSet;
 
                     /**
                      * 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_src;
                     bool m_srcHasBeenSet;
 
                     /**
                      * 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 具体值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ValueBlock m_value;
                     bool m_valueHasBeenSet;
 
                     /**
                      * 坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Coord> m_coords;
                     bool m_coordsHasBeenSet;

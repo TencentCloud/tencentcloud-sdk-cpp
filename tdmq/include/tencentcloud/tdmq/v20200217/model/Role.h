@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -151,6 +151,27 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取授权类型（Cluster：集群；TopicAndGroup：主题或消费组）
+                     * @return PermType 授权类型（Cluster：集群；TopicAndGroup：主题或消费组）
+                     * 
+                     */
+                    std::string GetPermType() const;
+
+                    /**
+                     * 设置授权类型（Cluster：集群；TopicAndGroup：主题或消费组）
+                     * @param _permType 授权类型（Cluster：集群；TopicAndGroup：主题或消费组）
+                     * 
+                     */
+                    void SetPermType(const std::string& _permType);
+
+                    /**
+                     * 判断参数 PermType 是否已赋值
+                     * @return PermType 是否已赋值
+                     * 
+                     */
+                    bool PermTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +203,12 @@ namespace TencentCloud
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 授权类型（Cluster：集群；TopicAndGroup：主题或消费组）
+                     */
+                    std::string m_permType;
+                    bool m_permTypeHasBeenSet;
 
                 };
             }

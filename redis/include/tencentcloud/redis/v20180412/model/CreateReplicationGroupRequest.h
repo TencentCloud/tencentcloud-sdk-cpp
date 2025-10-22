@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取指定复制组中的主实例ID。
-                     * @return InstanceId 指定复制组中的主实例ID。
+                     * 获取指定复制组中的主实例ID。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
+                     * @return InstanceId 指定复制组中的主实例ID。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置指定复制组中的主实例ID。
-                     * @param _instanceId 指定复制组中的主实例ID。
+                     * 设置指定复制组中的主实例ID。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
+                     * @param _instanceId 指定复制组中的主实例ID。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取复制组名称。名称只支持长度为2-64个字符的中文、英文、数字、下划线_、分隔符-。
-                     * @return GroupName 复制组名称。名称只支持长度为2-64个字符的中文、英文、数字、下划线_、分隔符-。
+                     * 获取配置复制组名称。仅支持长度为2-64个字符的中文、英文、数字、下划线_、分隔符-。
+                     * @return GroupName 配置复制组名称。仅支持长度为2-64个字符的中文、英文、数字、下划线_、分隔符-。
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置复制组名称。名称只支持长度为2-64个字符的中文、英文、数字、下划线_、分隔符-。
-                     * @param _groupName 复制组名称。名称只支持长度为2-64个字符的中文、英文、数字、下划线_、分隔符-。
+                     * 设置配置复制组名称。仅支持长度为2-64个字符的中文、英文、数字、下划线_、分隔符-。
+                     * @param _groupName 配置复制组名称。仅支持长度为2-64个字符的中文、英文、数字、下划线_、分隔符-。
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -108,13 +108,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 指定复制组中的主实例ID。
+                     * 指定复制组中的主实例ID。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 复制组名称。名称只支持长度为2-64个字符的中文、英文、数字、下划线_、分隔符-。
+                     * 配置复制组名称。仅支持长度为2-64个字符的中文、英文、数字、下划线_、分隔符-。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;

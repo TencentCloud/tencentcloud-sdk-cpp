@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取情感标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label 情感标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置情感标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _label 情感标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabel(const std::string& _label);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签分数，取值范围0到100
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Score 标签分数，取值范围0到100
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScore() const;
 
                     /**
                      * 设置标签分数，取值范围0到100
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _score 标签分数，取值范围0到100
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScore(const int64_t& _score);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取情感分析明细
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Detail 情感分析明细
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SentimentDetail GetDetail() const;
 
                     /**
                      * 设置情感分析明细
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _detail 情感分析明细
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDetail(const SentimentDetail& _detail);
@@ -145,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _message 异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -172,21 +156,18 @@ namespace TencentCloud
 
                     /**
                      * 情感标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
 
                     /**
                      * 标签分数，取值范围0到100
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_score;
                     bool m_scoreHasBeenSet;
 
                     /**
                      * 情感分析明细
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SentimentDetail m_detail;
                     bool m_detailHasBeenSet;
@@ -199,7 +180,6 @@ namespace TencentCloud
 
                     /**
                      * 异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;

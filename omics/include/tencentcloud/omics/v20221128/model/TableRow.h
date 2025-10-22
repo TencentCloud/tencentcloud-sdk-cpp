@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表格行UUID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableRowUuid 表格行UUID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTableRowUuid() const;
 
                     /**
                      * 设置表格行UUID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tableRowUuid 表格行UUID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTableRowUuid(const std::string& _tableRowUuid);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表格行内容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 表格行内容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetContent() const;
 
                     /**
                      * 设置表格行内容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _content 表格行内容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContent(const std::vector<std::string>& _content);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 表格行UUID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tableRowUuid;
                     bool m_tableRowUuidHasBeenSet;
 
                     /**
                      * 表格行内容。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_content;
                     bool m_contentHasBeenSet;

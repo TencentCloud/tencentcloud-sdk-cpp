@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取测试数据集所在的文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 测试数据集所在的文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置测试数据集所在的文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 测试数据集所在的文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取测试数据集是否分片
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Split 测试数据集是否分片
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSplit() const;
 
                     /**
                      * 设置测试数据集是否分片
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _split 测试数据集是否分片
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSplit(const bool& _split);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取首行是否为参数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HeaderInFile 首行是否为参数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetHeaderInFile() const;
 
                     /**
                      * 设置首行是否为参数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _headerInFile 首行是否为参数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHeaderInFile(const bool& _headerInFile);
@@ -148,18 +136,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LineCount 文件行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLineCount() const;
 
                     /**
                      * 设置文件行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lineCount 文件行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLineCount(const int64_t& _lineCount);
@@ -198,18 +182,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Size 文件字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSize() const;
 
                     /**
                      * 设置文件字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _size 文件字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSize(const int64_t& _size);
@@ -273,18 +253,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 文件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置文件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 文件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -298,18 +274,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileId 文件 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileId() const;
 
                     /**
                      * 设置文件 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileId 文件 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileId(const std::string& _fileId);
@@ -325,21 +297,18 @@ namespace TencentCloud
 
                     /**
                      * 测试数据集所在的文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 测试数据集是否分片
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_split;
                     bool m_splitHasBeenSet;
 
                     /**
                      * 首行是否为参数名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_headerInFile;
                     bool m_headerInFileHasBeenSet;
@@ -353,7 +322,6 @@ namespace TencentCloud
 
                     /**
                      * 文件行数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_lineCount;
                     bool m_lineCountHasBeenSet;
@@ -367,7 +335,6 @@ namespace TencentCloud
 
                     /**
                      * 文件字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_size;
                     bool m_sizeHasBeenSet;
@@ -388,14 +355,12 @@ namespace TencentCloud
 
                     /**
                      * 文件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 文件 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;

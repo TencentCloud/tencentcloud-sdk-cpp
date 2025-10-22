@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网关实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GatewayId 网关实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGatewayId() const;
 
                     /**
                      * 设置网关实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gatewayId 网关实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网关分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId 网关分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置网关分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupId 网关分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取客户端公网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicNetwork 客户端公网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CloudNativeAPIGatewayConfig GetPublicNetwork() const;
 
                     /**
                      * 设置客户端公网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publicNetwork 客户端公网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublicNetwork(const CloudNativeAPIGatewayConfig& _publicNetwork);
@@ -126,21 +114,18 @@ namespace TencentCloud
 
                     /**
                      * 网关实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gatewayId;
                     bool m_gatewayIdHasBeenSet;
 
                     /**
                      * 网关分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
                      * 客户端公网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CloudNativeAPIGatewayConfig m_publicNetwork;
                     bool m_publicNetworkHasBeenSet;

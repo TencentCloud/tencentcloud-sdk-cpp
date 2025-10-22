@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ using namespace std;
 TWeCallActiveInfo::TWeCallActiveInfo() :
     m_modelIdHasBeenSet(false),
     m_snHasBeenSet(false),
-    m_expireTimeHasBeenSet(false)
+    m_expireTimeHasBeenSet(false),
+    m_pkgTypeHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome TWeCallActiveInfo::Deserialize(const rapidjson::Value &value
         m_expireTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("PkgType") && !value["PkgType"].IsNull())
+    {
+        if (!value["PkgType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TWeCallActiveInfo.PkgType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pkgType = value["PkgType"].GetInt64();
+        m_pkgTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void TWeCallActiveInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "ExpireTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_expireTime, allocator);
+    }
+
+    if (m_pkgTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PkgType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pkgType, allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void TWeCallActiveInfo::SetExpireTime(const int64_t& _expireTime)
 bool TWeCallActiveInfo::ExpireTimeHasBeenSet() const
 {
     return m_expireTimeHasBeenSet;
+}
+
+int64_t TWeCallActiveInfo::GetPkgType() const
+{
+    return m_pkgType;
+}
+
+void TWeCallActiveInfo::SetPkgType(const int64_t& _pkgType)
+{
+    m_pkgType = _pkgType;
+    m_pkgTypeHasBeenSet = true;
+}
+
+bool TWeCallActiveInfo::PkgTypeHasBeenSet() const
+{
+    return m_pkgTypeHasBeenSet;
 }
 

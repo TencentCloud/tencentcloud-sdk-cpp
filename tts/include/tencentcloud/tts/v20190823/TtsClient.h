@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,8 +63,8 @@ namespace TencentCloud
 <li>支持中文普通话、英文、中英文混读、粤语合成</li>
 <li>支持语速、音量设置</li>
 <li>支持回调或轮询的方式获取结果，结果获取请参考 长文本语音合成结果查询。</li>
-<li>提交长文本语音合成请求后，合成结果在3小时内完成，音频文件在服务端可保存24小时</li>
-
+<li>提交长文本语音合成请求后，合成结果在3小时内完成。请注意：30分钟内提交任务超过 100 万字符或 200 条任务除外。</li>
+<li>音频文件在服务端可保存24小时，请及时下载。</li>
 <p></p>
 
 长文本合成支持 SSML，语法详见 [SSML 标记语言](https://cloud.tencent.com/document/product/1073/49575)，使用时需满足如下使用规范：
@@ -98,9 +98,10 @@ namespace TencentCloud
 腾讯TTS技术可以应用到很多场景，比如，移动APP语音播报新闻；智能设备语音提醒；依靠网上现有节目或少量录音，快速合成明星语音，降低邀约成本；支持车载导航语音合成的个性化语音播报。
 基础合成支持 SSML，语法详见 [SSML 标记语言](https://cloud.tencent.com/document/product/1073/49575)。
 默认接口请求频率限制：
-精品音色和标准音色：20次/秒
-大模型音色：10次/秒
-一句话复刻音色：5次/秒
+精品音色：默认20并发
+大模型音色：默认20并发
+超自然大模型音色：暂不支持
+一句话复刻音色：默认10并发
                  * @param req TextToVoiceRequest
                  * @return TextToVoiceOutcome
                  */

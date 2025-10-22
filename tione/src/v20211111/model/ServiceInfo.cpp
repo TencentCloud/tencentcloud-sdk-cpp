@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,6 +38,7 @@ ServiceInfo::ServiceInfo() :
     m_hybridBillingPrepaidReplicasHasBeenSet(false),
     m_oldHybridBillingPrepaidReplicasHasBeenSet(false),
     m_modelHotUpdateEnableHasBeenSet(false),
+    m_instanceAliasHasBeenSet(false),
     m_scaleModeHasBeenSet(false),
     m_cronScaleJobsHasBeenSet(false),
     m_scaleStrategyHasBeenSet(false),
@@ -51,7 +52,14 @@ ServiceInfo::ServiceInfo() :
     m_inferCodeInfoHasBeenSet(false),
     m_commandHasBeenSet(false),
     m_serviceEIPHasBeenSet(false),
-    m_servicePortHasBeenSet(false)
+    m_servicePortHasBeenSet(false),
+    m_terminationGracePeriodSecondsHasBeenSet(false),
+    m_preStopCommandHasBeenSet(false),
+    m_grpcEnableHasBeenSet(false),
+    m_healthProbeHasBeenSet(false),
+    m_rollingUpdateHasBeenSet(false),
+    m_instancePerReplicasHasBeenSet(false),
+    m_volumeMountsHasBeenSet(false)
 {
 }
 
@@ -289,6 +297,16 @@ CoreInternalOutcome ServiceInfo::Deserialize(const rapidjson::Value &value)
         m_modelHotUpdateEnableHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceAlias") && !value["InstanceAlias"].IsNull())
+    {
+        if (!value["InstanceAlias"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.InstanceAlias` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceAlias = string(value["InstanceAlias"].GetString());
+        m_instanceAliasHasBeenSet = true;
+    }
+
     if (value.HasMember("ScaleMode") && !value["ScaleMode"].IsNull())
     {
         if (!value["ScaleMode"].IsString())
@@ -331,11 +349,18 @@ CoreInternalOutcome ServiceInfo::Deserialize(const rapidjson::Value &value)
 
     if (value.HasMember("ScheduledAction") && !value["ScheduledAction"].IsNull())
     {
-        if (!value["ScheduledAction"].IsString())
+        if (!value["ScheduledAction"].IsObject())
         {
-            return CoreInternalOutcome(Core::Error("response `ServiceInfo.ScheduledAction` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.ScheduledAction` is not object type").SetRequestId(requestId));
         }
-        m_scheduledAction = string(value["ScheduledAction"].GetString());
+
+        CoreInternalOutcome outcome = m_scheduledAction.Deserialize(value["ScheduledAction"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
         m_scheduledActionHasBeenSet = true;
     }
 
@@ -485,6 +510,103 @@ CoreInternalOutcome ServiceInfo::Deserialize(const rapidjson::Value &value)
         }
         m_servicePort = value["ServicePort"].GetInt64();
         m_servicePortHasBeenSet = true;
+    }
+
+    if (value.HasMember("TerminationGracePeriodSeconds") && !value["TerminationGracePeriodSeconds"].IsNull())
+    {
+        if (!value["TerminationGracePeriodSeconds"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.TerminationGracePeriodSeconds` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_terminationGracePeriodSeconds = value["TerminationGracePeriodSeconds"].GetInt64();
+        m_terminationGracePeriodSecondsHasBeenSet = true;
+    }
+
+    if (value.HasMember("PreStopCommand") && !value["PreStopCommand"].IsNull())
+    {
+        if (!value["PreStopCommand"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.PreStopCommand` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PreStopCommand"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_preStopCommand.push_back((*itr).GetString());
+        }
+        m_preStopCommandHasBeenSet = true;
+    }
+
+    if (value.HasMember("GrpcEnable") && !value["GrpcEnable"].IsNull())
+    {
+        if (!value["GrpcEnable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.GrpcEnable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_grpcEnable = value["GrpcEnable"].GetBool();
+        m_grpcEnableHasBeenSet = true;
+    }
+
+    if (value.HasMember("HealthProbe") && !value["HealthProbe"].IsNull())
+    {
+        if (!value["HealthProbe"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.HealthProbe` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_healthProbe.Deserialize(value["HealthProbe"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_healthProbeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RollingUpdate") && !value["RollingUpdate"].IsNull())
+    {
+        if (!value["RollingUpdate"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.RollingUpdate` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_rollingUpdate.Deserialize(value["RollingUpdate"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_rollingUpdateHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstancePerReplicas") && !value["InstancePerReplicas"].IsNull())
+    {
+        if (!value["InstancePerReplicas"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.InstancePerReplicas` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_instancePerReplicas = value["InstancePerReplicas"].GetInt64();
+        m_instancePerReplicasHasBeenSet = true;
+    }
+
+    if (value.HasMember("VolumeMounts") && !value["VolumeMounts"].IsNull())
+    {
+        if (!value["VolumeMounts"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.VolumeMounts` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["VolumeMounts"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            VolumeMount item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_volumeMounts.push_back(item);
+        }
+        m_volumeMountsHasBeenSet = true;
     }
 
 
@@ -644,6 +766,14 @@ void ServiceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, m_modelHotUpdateEnable, allocator);
     }
 
+    if (m_instanceAliasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceAlias";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceAlias.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_scaleModeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -680,7 +810,8 @@ void ServiceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ScheduledAction";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_scheduledAction.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_scheduledAction.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_podListHasBeenSet)
@@ -778,6 +909,76 @@ void ServiceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "ServicePort";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_servicePort, allocator);
+    }
+
+    if (m_terminationGracePeriodSecondsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TerminationGracePeriodSeconds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_terminationGracePeriodSeconds, allocator);
+    }
+
+    if (m_preStopCommandHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreStopCommand";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_preStopCommand.begin(); itr != m_preStopCommand.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_grpcEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GrpcEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_grpcEnable, allocator);
+    }
+
+    if (m_healthProbeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthProbe";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_healthProbe.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_rollingUpdateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RollingUpdate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_rollingUpdate.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_instancePerReplicasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstancePerReplicas";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_instancePerReplicas, allocator);
+    }
+
+    if (m_volumeMountsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VolumeMounts";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_volumeMounts.begin(); itr != m_volumeMounts.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1055,6 +1256,22 @@ bool ServiceInfo::ModelHotUpdateEnableHasBeenSet() const
     return m_modelHotUpdateEnableHasBeenSet;
 }
 
+string ServiceInfo::GetInstanceAlias() const
+{
+    return m_instanceAlias;
+}
+
+void ServiceInfo::SetInstanceAlias(const string& _instanceAlias)
+{
+    m_instanceAlias = _instanceAlias;
+    m_instanceAliasHasBeenSet = true;
+}
+
+bool ServiceInfo::InstanceAliasHasBeenSet() const
+{
+    return m_instanceAliasHasBeenSet;
+}
+
 string ServiceInfo::GetScaleMode() const
 {
     return m_scaleMode;
@@ -1103,12 +1320,12 @@ bool ServiceInfo::ScaleStrategyHasBeenSet() const
     return m_scaleStrategyHasBeenSet;
 }
 
-string ServiceInfo::GetScheduledAction() const
+ScheduledAction ServiceInfo::GetScheduledAction() const
 {
     return m_scheduledAction;
 }
 
-void ServiceInfo::SetScheduledAction(const string& _scheduledAction)
+void ServiceInfo::SetScheduledAction(const ScheduledAction& _scheduledAction)
 {
     m_scheduledAction = _scheduledAction;
     m_scheduledActionHasBeenSet = true;
@@ -1277,5 +1494,117 @@ void ServiceInfo::SetServicePort(const int64_t& _servicePort)
 bool ServiceInfo::ServicePortHasBeenSet() const
 {
     return m_servicePortHasBeenSet;
+}
+
+int64_t ServiceInfo::GetTerminationGracePeriodSeconds() const
+{
+    return m_terminationGracePeriodSeconds;
+}
+
+void ServiceInfo::SetTerminationGracePeriodSeconds(const int64_t& _terminationGracePeriodSeconds)
+{
+    m_terminationGracePeriodSeconds = _terminationGracePeriodSeconds;
+    m_terminationGracePeriodSecondsHasBeenSet = true;
+}
+
+bool ServiceInfo::TerminationGracePeriodSecondsHasBeenSet() const
+{
+    return m_terminationGracePeriodSecondsHasBeenSet;
+}
+
+vector<string> ServiceInfo::GetPreStopCommand() const
+{
+    return m_preStopCommand;
+}
+
+void ServiceInfo::SetPreStopCommand(const vector<string>& _preStopCommand)
+{
+    m_preStopCommand = _preStopCommand;
+    m_preStopCommandHasBeenSet = true;
+}
+
+bool ServiceInfo::PreStopCommandHasBeenSet() const
+{
+    return m_preStopCommandHasBeenSet;
+}
+
+bool ServiceInfo::GetGrpcEnable() const
+{
+    return m_grpcEnable;
+}
+
+void ServiceInfo::SetGrpcEnable(const bool& _grpcEnable)
+{
+    m_grpcEnable = _grpcEnable;
+    m_grpcEnableHasBeenSet = true;
+}
+
+bool ServiceInfo::GrpcEnableHasBeenSet() const
+{
+    return m_grpcEnableHasBeenSet;
+}
+
+HealthProbe ServiceInfo::GetHealthProbe() const
+{
+    return m_healthProbe;
+}
+
+void ServiceInfo::SetHealthProbe(const HealthProbe& _healthProbe)
+{
+    m_healthProbe = _healthProbe;
+    m_healthProbeHasBeenSet = true;
+}
+
+bool ServiceInfo::HealthProbeHasBeenSet() const
+{
+    return m_healthProbeHasBeenSet;
+}
+
+RollingUpdate ServiceInfo::GetRollingUpdate() const
+{
+    return m_rollingUpdate;
+}
+
+void ServiceInfo::SetRollingUpdate(const RollingUpdate& _rollingUpdate)
+{
+    m_rollingUpdate = _rollingUpdate;
+    m_rollingUpdateHasBeenSet = true;
+}
+
+bool ServiceInfo::RollingUpdateHasBeenSet() const
+{
+    return m_rollingUpdateHasBeenSet;
+}
+
+int64_t ServiceInfo::GetInstancePerReplicas() const
+{
+    return m_instancePerReplicas;
+}
+
+void ServiceInfo::SetInstancePerReplicas(const int64_t& _instancePerReplicas)
+{
+    m_instancePerReplicas = _instancePerReplicas;
+    m_instancePerReplicasHasBeenSet = true;
+}
+
+bool ServiceInfo::InstancePerReplicasHasBeenSet() const
+{
+    return m_instancePerReplicasHasBeenSet;
+}
+
+vector<VolumeMount> ServiceInfo::GetVolumeMounts() const
+{
+    return m_volumeMounts;
+}
+
+void ServiceInfo::SetVolumeMounts(const vector<VolumeMount>& _volumeMounts)
+{
+    m_volumeMounts = _volumeMounts;
+    m_volumeMountsHasBeenSet = true;
+}
+
+bool ServiceInfo::VolumeMountsHasBeenSet() const
+{
+    return m_volumeMountsHasBeenSet;
 }
 

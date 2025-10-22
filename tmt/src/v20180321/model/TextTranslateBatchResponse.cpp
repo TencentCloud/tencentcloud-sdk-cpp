@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ using namespace std;
 TextTranslateBatchResponse::TextTranslateBatchResponse() :
     m_sourceHasBeenSet(false),
     m_targetHasBeenSet(false),
-    m_targetTextListHasBeenSet(false)
+    m_targetTextListHasBeenSet(false),
+    m_usedAmountHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,16 @@ CoreInternalOutcome TextTranslateBatchResponse::Deserialize(const string &payloa
         m_targetTextListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("UsedAmount") && !rsp["UsedAmount"].IsNull())
+    {
+        if (!rsp["UsedAmount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsedAmount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_usedAmount = rsp["UsedAmount"].GetInt64();
+        m_usedAmountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -136,11 +147,19 @@ string TextTranslateBatchResponse::ToJsonString() const
         }
     }
 
+    if (m_usedAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UsedAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_usedAmount, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -176,6 +195,16 @@ vector<string> TextTranslateBatchResponse::GetTargetTextList() const
 bool TextTranslateBatchResponse::TargetTextListHasBeenSet() const
 {
     return m_targetTextListHasBeenSet;
+}
+
+int64_t TextTranslateBatchResponse::GetUsedAmount() const
+{
+    return m_usedAmount;
+}
+
+bool TextTranslateBatchResponse::UsedAmountHasBeenSet() const
+{
+    return m_usedAmountHasBeenSet;
 }
 
 

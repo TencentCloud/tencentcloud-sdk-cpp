@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -529,6 +529,31 @@ namespace TencentCloud
                      */
                     bool SingleUserMultiTokenHasBeenSet() const;
 
+                    /**
+                     * 获取嵌出显示配置，目前为ChatBI嵌出场景用，TableFilter表示数据表列表过滤，SqlView表示sql查看功能
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConfigParam 嵌出显示配置，目前为ChatBI嵌出场景用，TableFilter表示数据表列表过滤，SqlView表示sql查看功能
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetConfigParam() const;
+
+                    /**
+                     * 设置嵌出显示配置，目前为ChatBI嵌出场景用，TableFilter表示数据表列表过滤，SqlView表示sql查看功能
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _configParam 嵌出显示配置，目前为ChatBI嵌出场景用，TableFilter表示数据表列表过滤，SqlView表示sql查看功能
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetConfigParam(const std::string& _configParam);
+
+                    /**
+                     * 判断参数 ConfigParam 是否已赋值
+                     * @return ConfigParam 是否已赋值
+                     * 
+                     */
+                    bool ConfigParamHasBeenSet() const;
+
                 private:
 
                     /**
@@ -665,6 +690,13 @@ namespace TencentCloud
                      */
                     bool m_singleUserMultiToken;
                     bool m_singleUserMultiTokenHasBeenSet;
+
+                    /**
+                     * 嵌出显示配置，目前为ChatBI嵌出场景用，TableFilter表示数据表列表过滤，SqlView表示sql查看功能
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_configParam;
+                    bool m_configParamHasBeenSet;
 
                 };
             }

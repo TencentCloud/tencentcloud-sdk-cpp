@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,9 @@ ChatCompletionsResponse::ChatCompletionsResponse() :
     m_errorMsgHasBeenSet(false),
     m_moderationLevelHasBeenSet(false),
     m_searchInfoHasBeenSet(false),
-    m_replacesHasBeenSet(false)
+    m_replacesHasBeenSet(false),
+    m_recommendedQuestionsHasBeenSet(false),
+    m_processesHasBeenSet(false)
 {
 }
 
@@ -201,6 +203,36 @@ CoreInternalOutcome ChatCompletionsResponse::Deserialize(const string &payload)
         m_replacesHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RecommendedQuestions") && !rsp["RecommendedQuestions"].IsNull())
+    {
+        if (!rsp["RecommendedQuestions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RecommendedQuestions` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["RecommendedQuestions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_recommendedQuestions.push_back((*itr).GetString());
+        }
+        m_recommendedQuestionsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Processes") && !rsp["Processes"].IsNull())
+    {
+        if (!rsp["Processes"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Processes` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_processes.Deserialize(rsp["Processes"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_processesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,11 +332,33 @@ string ChatCompletionsResponse::ToJsonString() const
         }
     }
 
+    if (m_recommendedQuestionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecommendedQuestions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_recommendedQuestions.begin(); itr != m_recommendedQuestions.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_processesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Processes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_processes.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -400,6 +454,26 @@ vector<Replace> ChatCompletionsResponse::GetReplaces() const
 bool ChatCompletionsResponse::ReplacesHasBeenSet() const
 {
     return m_replacesHasBeenSet;
+}
+
+vector<string> ChatCompletionsResponse::GetRecommendedQuestions() const
+{
+    return m_recommendedQuestions;
+}
+
+bool ChatCompletionsResponse::RecommendedQuestionsHasBeenSet() const
+{
+    return m_recommendedQuestionsHasBeenSet;
+}
+
+Processes ChatCompletionsResponse::GetProcesses() const
+{
+    return m_processes;
+}
+
+bool ChatCompletionsResponse::ProcessesHasBeenSet() const
+{
+    return m_processesHasBeenSet;
 }
 
 

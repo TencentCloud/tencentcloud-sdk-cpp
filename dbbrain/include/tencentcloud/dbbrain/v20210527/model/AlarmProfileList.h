@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0-不是 1-是
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsWebHook 0-不是 1-是
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsWebHook() const;
 
                     /**
                      * 设置0-不是 1-是
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isWebHook 0-不是 1-是
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsWebHook(const int64_t& _isWebHook);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接收告警用户数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReceiveUinCount 接收告警用户数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetReceiveUinCount() const;
 
                     /**
                      * 设置接收告警用户数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _receiveUinCount 接收告警用户数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReceiveUinCount(const int64_t& _receiveUinCount);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取语言
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Lang 语言
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLang() const;
 
                     /**
                      * 设置语言
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lang 语言
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLang(const std::string& _lang);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取模板类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TemplateType 模板类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTemplateType() const;
 
                     /**
                      * 设置模板类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _templateType 模板类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTemplateType(const std::string& _templateType);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接收组数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReceiveGroupCount 接收组数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetReceiveGroupCount() const;
 
                     /**
                      * 设置接收组数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _receiveGroupCount 接收组数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReceiveGroupCount(const int64_t& _receiveGroupCount);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取更新用户的uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateUin 更新用户的uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUpdateUin() const;
 
                     /**
                      * 设置更新用户的uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateUin 更新用户的uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateUin(const int64_t& _updateUin);
@@ -224,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接收类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReceiveType 接收类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetReceiveType() const;
 
                     /**
                      * 设置接收类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _receiveType 接收类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReceiveType(const std::vector<int64_t>& _receiveType);
@@ -249,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接收用户信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReceiveInfo 接收用户信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ReceiveInfo> GetReceiveInfo() const;
 
                     /**
                      * 设置接收用户信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _receiveInfo 接收用户信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReceiveInfo(const std::vector<ReceiveInfo>& _receiveInfo);
@@ -273,19 +237,15 @@ namespace TencentCloud
                     bool ReceiveInfoHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdateTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取更新时间，格式: "yyyy-MM-dd HH:mm:ss"
+                     * @return UpdateTime 更新时间，格式: "yyyy-MM-dd HH:mm:ss"
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _updateTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置更新时间，格式: "yyyy-MM-dd HH:mm:ss"
+                     * @param _updateTime 更新时间，格式: "yyyy-MM-dd HH:mm:ss"
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -299,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取模板名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TemplateName 模板名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
                      * 设置模板名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _templateName 模板名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTemplateName(const std::string& _templateName);
@@ -324,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取发送渠道
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SendChannel 发送渠道
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetSendChannel() const;
 
                     /**
                      * 设置发送渠道
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sendChannel 发送渠道
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSendChannel(const std::vector<int64_t>& _sendChannel);
@@ -349,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取模板id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TemplateId 模板id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTemplateId() const;
 
                     /**
                      * 设置模板id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _templateId 模板id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTemplateId(const int64_t& _templateId);
@@ -374,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取webhook数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WebHookCount webhook数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetWebHookCount() const;
 
                     /**
                      * 设置webhook数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _webHookCount webhook数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWebHookCount(const int64_t& _webHookCount);
@@ -401,98 +345,84 @@ namespace TencentCloud
 
                     /**
                      * 0-不是 1-是
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isWebHook;
                     bool m_isWebHookHasBeenSet;
 
                     /**
                      * 接收告警用户数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_receiveUinCount;
                     bool m_receiveUinCountHasBeenSet;
 
                     /**
                      * 语言
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lang;
                     bool m_langHasBeenSet;
 
                     /**
                      * 模板类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_templateType;
                     bool m_templateTypeHasBeenSet;
 
                     /**
                      * 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
                      * 接收组数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_receiveGroupCount;
                     bool m_receiveGroupCountHasBeenSet;
 
                     /**
                      * 更新用户的uin
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_updateUin;
                     bool m_updateUinHasBeenSet;
 
                     /**
                      * 接收类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_receiveType;
                     bool m_receiveTypeHasBeenSet;
 
                     /**
                      * 接收用户信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ReceiveInfo> m_receiveInfo;
                     bool m_receiveInfoHasBeenSet;
 
                     /**
-                     * 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 更新时间，格式: "yyyy-MM-dd HH:mm:ss"
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
                      * 模板名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_templateName;
                     bool m_templateNameHasBeenSet;
 
                     /**
                      * 发送渠道
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_sendChannel;
                     bool m_sendChannelHasBeenSet;
 
                     /**
                      * 模板id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
                      * webhook数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_webHookCount;
                     bool m_webHookCountHasBeenSet;

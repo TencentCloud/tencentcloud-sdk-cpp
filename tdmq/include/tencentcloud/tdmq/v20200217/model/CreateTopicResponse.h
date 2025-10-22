@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取备注，128字符以内。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注，128字符以内。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
@@ -107,13 +105,11 @@ namespace TencentCloud
 2 ：局部顺序消息；
 3 ：重试队列；
 4 ：死信队列；
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicType 0： 普通消息；
 1 ：全局顺序消息；
 2 ：局部顺序消息；
 3 ：重试队列；
 4 ：死信队列；
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTopicType() const;
@@ -147,7 +143,6 @@ namespace TencentCloud
 
                     /**
                      * 备注，128字符以内。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
@@ -158,7 +153,6 @@ namespace TencentCloud
 2 ：局部顺序消息；
 3 ：重试队列；
 4 ：死信队列；
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_topicType;
                     bool m_topicTypeHasBeenSet;

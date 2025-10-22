@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -172,6 +172,27 @@ apache_hdfs_broker.conf、be.conf、fe.conf、core-site.xml、hdfs-site.xml、od
                      */
                     bool ConfigFileNamesHasBeenSet() const;
 
+                    /**
+                     * 获取需要查询的计算组列表
+                     * @return ComputeGroupIds 需要查询的计算组列表
+                     * 
+                     */
+                    std::vector<std::string> GetComputeGroupIds() const;
+
+                    /**
+                     * 设置需要查询的计算组列表
+                     * @param _computeGroupIds 需要查询的计算组列表
+                     * 
+                     */
+                    void SetComputeGroupIds(const std::vector<std::string>& _computeGroupIds);
+
+                    /**
+                     * 判断参数 ComputeGroupIds 是否已赋值
+                     * @return ComputeGroupIds 是否已赋值
+                     * 
+                     */
+                    bool ComputeGroupIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -210,6 +231,12 @@ apache_hdfs_broker.conf、be.conf、fe.conf、core-site.xml、hdfs-site.xml、od
                      */
                     std::vector<std::string> m_configFileNames;
                     bool m_configFileNamesHasBeenSet;
+
+                    /**
+                     * 需要查询的计算组列表
+                     */
+                    std::vector<std::string> m_computeGroupIds;
+                    bool m_computeGroupIdsHasBeenSet;
 
                 };
             }

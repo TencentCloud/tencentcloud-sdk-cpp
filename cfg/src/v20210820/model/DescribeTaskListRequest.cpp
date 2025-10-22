@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,9 @@ DescribeTaskListRequest::DescribeTaskListRequest() :
     m_taskIdHasBeenSet(false),
     m_applicationIdHasBeenSet(false),
     m_applicationNameHasBeenSet(false),
-    m_taskStatusListHasBeenSet(false)
+    m_taskStatusListHasBeenSet(false),
+    m_archIdHasBeenSet(false),
+    m_archNameHasBeenSet(false)
 {
 }
 
@@ -196,6 +198,22 @@ string DescribeTaskListRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
+    }
+
+    if (m_archIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ArchId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_archId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_archNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ArchName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_archName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -428,6 +446,38 @@ void DescribeTaskListRequest::SetTaskStatusList(const vector<uint64_t>& _taskSta
 bool DescribeTaskListRequest::TaskStatusListHasBeenSet() const
 {
     return m_taskStatusListHasBeenSet;
+}
+
+string DescribeTaskListRequest::GetArchId() const
+{
+    return m_archId;
+}
+
+void DescribeTaskListRequest::SetArchId(const string& _archId)
+{
+    m_archId = _archId;
+    m_archIdHasBeenSet = true;
+}
+
+bool DescribeTaskListRequest::ArchIdHasBeenSet() const
+{
+    return m_archIdHasBeenSet;
+}
+
+string DescribeTaskListRequest::GetArchName() const
+{
+    return m_archName;
+}
+
+void DescribeTaskListRequest::SetArchName(const string& _archName)
+{
+    m_archName = _archName;
+    m_archNameHasBeenSet = true;
+}
+
+bool DescribeTaskListRequest::ArchNameHasBeenSet() const
+{
+    return m_archNameHasBeenSet;
 }
 
 

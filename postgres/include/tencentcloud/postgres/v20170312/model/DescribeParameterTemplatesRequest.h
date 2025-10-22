@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取过滤条件，目前支持的过滤条件有：TemplateName, TemplateId，DBMajorVersion，DBEngine
-                     * @return Filters 过滤条件，目前支持的过滤条件有：TemplateName, TemplateId，DBMajorVersion，DBEngine
+                     * 获取过滤条件，目前支持的过滤条件有：TemplateName, TemplateId，DBMajorVersion，DBEngine。TemplateName不支持模糊匹配。
+                     * @return Filters 过滤条件，目前支持的过滤条件有：TemplateName, TemplateId，DBMajorVersion，DBEngine。TemplateName不支持模糊匹配。
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件，目前支持的过滤条件有：TemplateName, TemplateId，DBMajorVersion，DBEngine
-                     * @param _filters 过滤条件，目前支持的过滤条件有：TemplateName, TemplateId，DBMajorVersion，DBEngine
+                     * 设置过滤条件，目前支持的过滤条件有：TemplateName, TemplateId，DBMajorVersion，DBEngine。TemplateName不支持模糊匹配。
+                     * @param _filters 过滤条件，目前支持的过滤条件有：TemplateName, TemplateId，DBMajorVersion，DBEngine。TemplateName不支持模糊匹配。
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取排序指标，枚举值，支持：CreateTime，TemplateName，DBMajorVersion
-                     * @return OrderBy 排序指标，枚举值，支持：CreateTime，TemplateName，DBMajorVersion
+                     * 获取排序指标，枚举值，支持：CreateTime，TemplateName，DBMajorVersion。如果不指定该参数，默认将按照参数模板的编号倒序排列，也就是说最新添加的参数模板会排在最前面。
+                     * @return OrderBy 排序指标，枚举值，支持：CreateTime，TemplateName，DBMajorVersion。如果不指定该参数，默认将按照参数模板的编号倒序排列，也就是说最新添加的参数模板会排在最前面。
                      * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置排序指标，枚举值，支持：CreateTime，TemplateName，DBMajorVersion
-                     * @param _orderBy 排序指标，枚举值，支持：CreateTime，TemplateName，DBMajorVersion
+                     * 设置排序指标，枚举值，支持：CreateTime，TemplateName，DBMajorVersion。如果不指定该参数，默认将按照参数模板的编号倒序排列，也就是说最新添加的参数模板会排在最前面。
+                     * @param _orderBy 排序指标，枚举值，支持：CreateTime，TemplateName，DBMajorVersion。如果不指定该参数，默认将按照参数模板的编号倒序排列，也就是说最新添加的参数模板会排在最前面。
                      * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取排序方式，枚举值，支持：asc（升序） ，desc（降序）
-                     * @return OrderByType 排序方式，枚举值，支持：asc（升序） ，desc（降序）
+                     * 获取排序方式，枚举值，支持：asc（升序） ，desc（降序）。默认值为asc。当未指定OrderBy时，该参数失效，此时排序方式为OrderBy参数描述中给出的默认排序方式。
+                     * @return OrderByType 排序方式，枚举值，支持：asc（升序） ，desc（降序）。默认值为asc。当未指定OrderBy时，该参数失效，此时排序方式为OrderBy参数描述中给出的默认排序方式。
                      * 
                      */
                     std::string GetOrderByType() const;
 
                     /**
-                     * 设置排序方式，枚举值，支持：asc（升序） ，desc（降序）
-                     * @param _orderByType 排序方式，枚举值，支持：asc（升序） ，desc（降序）
+                     * 设置排序方式，枚举值，支持：asc（升序） ，desc（降序）。默认值为asc。当未指定OrderBy时，该参数失效，此时排序方式为OrderBy参数描述中给出的默认排序方式。
+                     * @param _orderByType 排序方式，枚举值，支持：asc（升序） ，desc（降序）。默认值为asc。当未指定OrderBy时，该参数失效，此时排序方式为OrderBy参数描述中给出的默认排序方式。
                      * 
                      */
                     void SetOrderByType(const std::string& _orderByType);
@@ -151,7 +151,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 过滤条件，目前支持的过滤条件有：TemplateName, TemplateId，DBMajorVersion，DBEngine
+                     * 过滤条件，目前支持的过滤条件有：TemplateName, TemplateId，DBMajorVersion，DBEngine。TemplateName不支持模糊匹配。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
@@ -169,13 +169,13 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 排序指标，枚举值，支持：CreateTime，TemplateName，DBMajorVersion
+                     * 排序指标，枚举值，支持：CreateTime，TemplateName，DBMajorVersion。如果不指定该参数，默认将按照参数模板的编号倒序排列，也就是说最新添加的参数模板会排在最前面。
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 排序方式，枚举值，支持：asc（升序） ，desc（降序）
+                     * 排序方式，枚举值，支持：asc（升序） ，desc（降序）。默认值为asc。当未指定OrderBy时，该参数失效，此时排序方式为OrderBy参数描述中给出的默认排序方式。
                      */
                     std::string m_orderByType;
                     bool m_orderByTypeHasBeenSet;

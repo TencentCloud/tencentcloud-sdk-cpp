@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 任务id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTaskId() const;
 
                     /**
                      * 设置任务id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskId 任务id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskId(const int64_t& _taskId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取字段名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FieldName 字段名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFieldName() const;
 
                     /**
                      * 设置字段名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fieldName 字段名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFieldName(const std::string& _fieldName);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleId 规则id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRuleId() const;
 
                     /**
                      * 设置规则id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleId 规则id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleId(const int64_t& _ruleId);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleName 规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleName 规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleName(const std::string& _ruleName);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分类id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CategoryId 分类id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCategoryId() const;
 
                     /**
                      * 设置分类id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _categoryId 分类id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCategoryId(const int64_t& _categoryId);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分类名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CategoryName 分类名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCategoryName() const;
 
                     /**
                      * 设置分类名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _categoryName 分类名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCategoryName(const std::string& _categoryName);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取多级分类的路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CategoryArr 多级分类的路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetCategoryArr() const;
 
                     /**
                      * 设置多级分类的路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _categoryArr 多级分类的路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCategoryArr(const std::vector<std::string>& _categoryArr);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分级id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LevelId 分级id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLevelId() const;
 
                     /**
                      * 设置分级id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _levelId 分级id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevelId(const int64_t& _levelId);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分级名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LevelName 分级名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLevelName() const;
 
                     /**
                      * 设置分级名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _levelName 分级名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevelName(const std::string& _levelName);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分级分数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LevelRiskScore 分级分数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLevelRiskScore() const;
 
                     /**
                      * 设置分级分数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _levelRiskScore 分级分数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevelRiskScore(const int64_t& _levelRiskScore);
@@ -325,77 +281,66 @@ namespace TencentCloud
 
                     /**
                      * id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 任务id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
                      * 字段名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fieldName;
                     bool m_fieldNameHasBeenSet;
 
                     /**
                      * 规则id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ruleId;
                     bool m_ruleIdHasBeenSet;
 
                     /**
                      * 规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;
 
                     /**
                      * 分类id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_categoryId;
                     bool m_categoryIdHasBeenSet;
 
                     /**
                      * 分类名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_categoryName;
                     bool m_categoryNameHasBeenSet;
 
                     /**
                      * 多级分类的路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_categoryArr;
                     bool m_categoryArrHasBeenSet;
 
                     /**
                      * 分级id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_levelId;
                     bool m_levelIdHasBeenSet;
 
                     /**
                      * 分级名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_levelName;
                     bool m_levelNameHasBeenSet;
 
                     /**
                      * 分级分数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_levelRiskScore;
                     bool m_levelRiskScoreHasBeenSet;

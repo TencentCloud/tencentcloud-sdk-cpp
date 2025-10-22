@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/BizTaskModifyParamsData.h>
 #include <tencentcloud/cynosdb/v20190107/model/TaskMaintainInfo.h>
 #include <tencentcloud/cynosdb/v20190107/model/InstanceCLSDeliveryInfo.h>
+#include <tencentcloud/cynosdb/v20190107/model/TaskProgressInfo.h>
+#include <tencentcloud/cynosdb/v20190107/model/GdnTaskInfo.h>
 
 
 namespace TencentCloud
@@ -122,18 +124,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -168,18 +166,14 @@ namespace TencentCloud
 
                     /**
                      * 获取延迟执行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DelayTime 延迟执行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDelayTime() const;
 
                     /**
                      * 设置延迟执行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _delayTime 延迟执行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDelayTime(const std::string& _delayTime);
@@ -193,18 +187,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务失败信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrMsg 任务失败信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrMsg() const;
 
                     /**
                      * 设置任务失败信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errMsg 任务失败信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrMsg(const std::string& _errMsg);
@@ -621,18 +611,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建集群任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateClustersData 创建集群任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CreateClustersData GetCreateClustersData() const;
 
                     /**
                      * 设置创建集群任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createClustersData 创建集群任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateClustersData(const CreateClustersData& _createClustersData);
@@ -646,18 +632,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群回档任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RollbackData 集群回档任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RollbackData GetRollbackData() const;
 
                     /**
                      * 设置集群回档任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rollbackData 集群回档任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRollbackData(const RollbackData& _rollbackData);
@@ -671,18 +653,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例变配任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyInstanceData 实例变配任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ModifyInstanceData GetModifyInstanceData() const;
 
                     /**
                      * 设置实例变配任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyInstanceData 实例变配任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyInstanceData(const ModifyInstanceData& _modifyInstanceData);
@@ -721,18 +699,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修改内核版本任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyDbVersionData 修改内核版本任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ModifyDbVersionData GetModifyDbVersionData() const;
 
                     /**
                      * 设置修改内核版本任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyDbVersionData 修改内核版本任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyDbVersionData(const ModifyDbVersionData& _modifyDbVersionData);
@@ -746,18 +720,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterSlaveData 集群可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ClusterSlaveData GetClusterSlaveData() const;
 
                     /**
                      * 设置集群可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterSlaveData 集群可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterSlaveData(const ClusterSlaveData& _clusterSlaveData);
@@ -821,18 +791,14 @@ namespace TencentCloud
 
                     /**
                      * 获取维护时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskMaintainInfo 维护时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TaskMaintainInfo GetTaskMaintainInfo() const;
 
                     /**
                      * 设置维护时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskMaintainInfo 维护时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskMaintainInfo(const TaskMaintainInfo& _taskMaintainInfo);
@@ -847,10 +813,8 @@ namespace TencentCloud
                     /**
                      * 获取实例日志投递信息
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceCLSDeliveryInfos 实例日志投递信息
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<InstanceCLSDeliveryInfo> GetInstanceCLSDeliveryInfos() const;
@@ -858,10 +822,8 @@ namespace TencentCloud
                     /**
                      * 设置实例日志投递信息
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceCLSDeliveryInfos 实例日志投递信息
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceCLSDeliveryInfos(const std::vector<InstanceCLSDeliveryInfo>& _instanceCLSDeliveryInfos);
@@ -872,6 +834,48 @@ namespace TencentCloud
                      * 
                      */
                     bool InstanceCLSDeliveryInfosHasBeenSet() const;
+
+                    /**
+                     * 获取任务进度信息
+                     * @return TaskProgressInfo 任务进度信息
+                     * 
+                     */
+                    TaskProgressInfo GetTaskProgressInfo() const;
+
+                    /**
+                     * 设置任务进度信息
+                     * @param _taskProgressInfo 任务进度信息
+                     * 
+                     */
+                    void SetTaskProgressInfo(const TaskProgressInfo& _taskProgressInfo);
+
+                    /**
+                     * 判断参数 TaskProgressInfo 是否已赋值
+                     * @return TaskProgressInfo 是否已赋值
+                     * 
+                     */
+                    bool TaskProgressInfoHasBeenSet() const;
+
+                    /**
+                     * 获取全球数据库网络任务
+                     * @return GdnTaskInfo 全球数据库网络任务
+                     * 
+                     */
+                    GdnTaskInfo GetGdnTaskInfo() const;
+
+                    /**
+                     * 设置全球数据库网络任务
+                     * @param _gdnTaskInfo 全球数据库网络任务
+                     * 
+                     */
+                    void SetGdnTaskInfo(const GdnTaskInfo& _gdnTaskInfo);
+
+                    /**
+                     * 判断参数 GdnTaskInfo 是否已赋值
+                     * @return GdnTaskInfo 是否已赋值
+                     * 
+                     */
+                    bool GdnTaskInfoHasBeenSet() const;
 
                 private:
 
@@ -895,7 +899,6 @@ namespace TencentCloud
 
                     /**
                      * 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
@@ -908,14 +911,12 @@ namespace TencentCloud
 
                     /**
                      * 延迟执行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_delayTime;
                     bool m_delayTimeHasBeenSet;
 
                     /**
                      * 任务失败信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errMsg;
                     bool m_errMsgHasBeenSet;
@@ -1037,21 +1038,18 @@ namespace TencentCloud
 
                     /**
                      * 创建集群任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CreateClustersData m_createClustersData;
                     bool m_createClustersDataHasBeenSet;
 
                     /**
                      * 集群回档任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RollbackData m_rollbackData;
                     bool m_rollbackDataHasBeenSet;
 
                     /**
                      * 实例变配任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ModifyInstanceData m_modifyInstanceData;
                     bool m_modifyInstanceDataHasBeenSet;
@@ -1065,14 +1063,12 @@ namespace TencentCloud
 
                     /**
                      * 修改内核版本任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ModifyDbVersionData m_modifyDbVersionData;
                     bool m_modifyDbVersionDataHasBeenSet;
 
                     /**
                      * 集群可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ClusterSlaveData m_clusterSlaveData;
                     bool m_clusterSlaveDataHasBeenSet;
@@ -1093,7 +1089,6 @@ namespace TencentCloud
 
                     /**
                      * 维护时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TaskMaintainInfo m_taskMaintainInfo;
                     bool m_taskMaintainInfoHasBeenSet;
@@ -1101,10 +1096,21 @@ namespace TencentCloud
                     /**
                      * 实例日志投递信息
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<InstanceCLSDeliveryInfo> m_instanceCLSDeliveryInfos;
                     bool m_instanceCLSDeliveryInfosHasBeenSet;
+
+                    /**
+                     * 任务进度信息
+                     */
+                    TaskProgressInfo m_taskProgressInfo;
+                    bool m_taskProgressInfoHasBeenSet;
+
+                    /**
+                     * 全球数据库网络任务
+                     */
+                    GdnTaskInfo m_gdnTaskInfo;
+                    bool m_gdnTaskInfoHasBeenSet;
 
                 };
             }

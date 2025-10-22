@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -506,18 +506,18 @@ namespace TencentCloud
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
-                     * 获取key:value
+                     * 获取空间标签信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TagList key:value
+                     * @return TagList 空间标签信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TagInfo> GetTagList() const;
 
                     /**
-                     * 设置key:value
+                     * 设置空间标签信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tagList key:value
+                     * @param _tagList 空间标签信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -529,6 +529,48 @@ namespace TencentCloud
                      * 
                      */
                     bool TagListHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启mcp服务
+                     * @return EnableMcpAccess 是否开启mcp服务
+                     * 
+                     */
+                    int64_t GetEnableMcpAccess() const;
+
+                    /**
+                     * 设置是否开启mcp服务
+                     * @param _enableMcpAccess 是否开启mcp服务
+                     * 
+                     */
+                    void SetEnableMcpAccess(const int64_t& _enableMcpAccess);
+
+                    /**
+                     * 判断参数 EnableMcpAccess 是否已赋值
+                     * @return EnableMcpAccess 是否已赋值
+                     * 
+                     */
+                    bool EnableMcpAccessHasBeenSet() const;
+
+                    /**
+                     * 获取mcp的访问地址
+                     * @return McpAccess mcp的访问地址
+                     * 
+                     */
+                    std::string GetMcpAccess() const;
+
+                    /**
+                     * 设置mcp的访问地址
+                     * @param _mcpAccess mcp的访问地址
+                     * 
+                     */
+                    void SetMcpAccess(const std::string& _mcpAccess);
+
+                    /**
+                     * 判断参数 McpAccess 是否已赋值
+                     * @return McpAccess 是否已赋值
+                     * 
+                     */
+                    bool McpAccessHasBeenSet() const;
 
                 private:
 
@@ -661,11 +703,23 @@ namespace TencentCloud
                     bool m_clusterTypeHasBeenSet;
 
                     /**
-                     * key:value
+                     * 空间标签信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TagInfo> m_tagList;
                     bool m_tagListHasBeenSet;
+
+                    /**
+                     * 是否开启mcp服务
+                     */
+                    int64_t m_enableMcpAccess;
+                    bool m_enableMcpAccessHasBeenSet;
+
+                    /**
+                     * mcp的访问地址
+                     */
+                    std::string m_mcpAccess;
+                    bool m_mcpAccessHasBeenSet;
 
                 };
             }

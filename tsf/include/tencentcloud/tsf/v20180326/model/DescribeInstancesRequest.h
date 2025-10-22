@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,35 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取过滤条件
-                     * @return Filters 过滤条件
+                     * 获取过滤条件。多个 filter 之间是与关系，单个 filter 多个 value 之间是或关系。
+参考：[{"Name":"ip","Values":["172.16.16.139"]}]
+filter name 取值范围：
+- `id`：实例ID
+- ` name `：实例名
+- ` ip `：内网IP（可填wan_ip或lan_ip）
+                     * @return Filters 过滤条件。多个 filter 之间是与关系，单个 filter 多个 value 之间是或关系。
+参考：[{"Name":"ip","Values":["172.16.16.139"]}]
+filter name 取值范围：
+- `id`：实例ID
+- ` name `：实例名
+- ` ip `：内网IP（可填wan_ip或lan_ip）
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件
-                     * @param _filters 过滤条件
+                     * 设置过滤条件。多个 filter 之间是与关系，单个 filter 多个 value 之间是或关系。
+参考：[{"Name":"ip","Values":["172.16.16.139"]}]
+filter name 取值范围：
+- `id`：实例ID
+- ` name `：实例名
+- ` ip `：内网IP（可填wan_ip或lan_ip）
+                     * @param _filters 过滤条件。多个 filter 之间是与关系，单个 filter 多个 value 之间是或关系。
+参考：[{"Name":"ip","Values":["172.16.16.139"]}]
+filter name 取值范围：
+- `id`：实例ID
+- ` name `：实例名
+- ` ip `：内网IP（可填wan_ip或lan_ip）
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -109,7 +129,12 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 过滤条件
+                     * 过滤条件。多个 filter 之间是与关系，单个 filter 多个 value 之间是或关系。
+参考：[{"Name":"ip","Values":["172.16.16.139"]}]
+filter name 取值范围：
+- `id`：实例ID
+- ` name `：实例名
+- ` ip `：内网IP（可填wan_ip或lan_ip）
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

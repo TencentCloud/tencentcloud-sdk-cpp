@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@
 #include <tencentcloud/es/v20180416/model/LogstashExtendedFile.h>
 #include <tencentcloud/es/v20180416/model/OperationDuration.h>
 #include <tencentcloud/es/v20180416/model/TagInfo.h>
+#include <tencentcloud/es/v20180416/model/ZoneDetail.h>
 
 
 namespace TencentCloud
@@ -683,6 +684,48 @@ namespace TencentCloud
                      */
                     bool MemSizeHasBeenSet() const;
 
+                    /**
+                     * 获取部署模式，0：单可用区、1：多可用区
+                     * @return DeployMode 部署模式，0：单可用区、1：多可用区
+                     * 
+                     */
+                    uint64_t GetDeployMode() const;
+
+                    /**
+                     * 设置部署模式，0：单可用区、1：多可用区
+                     * @param _deployMode 部署模式，0：单可用区、1：多可用区
+                     * 
+                     */
+                    void SetDeployMode(const uint64_t& _deployMode);
+
+                    /**
+                     * 判断参数 DeployMode 是否已赋值
+                     * @return DeployMode 是否已赋值
+                     * 
+                     */
+                    bool DeployModeHasBeenSet() const;
+
+                    /**
+                     * 获取多可用区部署时可用区的详细信息
+                     * @return MultiZoneInfo 多可用区部署时可用区的详细信息
+                     * 
+                     */
+                    std::vector<ZoneDetail> GetMultiZoneInfo() const;
+
+                    /**
+                     * 设置多可用区部署时可用区的详细信息
+                     * @param _multiZoneInfo 多可用区部署时可用区的详细信息
+                     * 
+                     */
+                    void SetMultiZoneInfo(const std::vector<ZoneDetail>& _multiZoneInfo);
+
+                    /**
+                     * 判断参数 MultiZoneInfo 是否已赋值
+                     * @return MultiZoneInfo 是否已赋值
+                     * 
+                     */
+                    bool MultiZoneInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -864,6 +907,18 @@ namespace TencentCloud
                      */
                     uint64_t m_memSize;
                     bool m_memSizeHasBeenSet;
+
+                    /**
+                     * 部署模式，0：单可用区、1：多可用区
+                     */
+                    uint64_t m_deployMode;
+                    bool m_deployModeHasBeenSet;
+
+                    /**
+                     * 多可用区部署时可用区的详细信息
+                     */
+                    std::vector<ZoneDetail> m_multiZoneInfo;
+                    bool m_multiZoneInfoHasBeenSet;
 
                 };
             }

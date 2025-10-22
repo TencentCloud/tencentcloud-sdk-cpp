@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,6 +37,8 @@
 #include <tencentcloud/gwlb/v20240906/model/DeregisterTargetGroupInstancesResponse.h>
 #include <tencentcloud/gwlb/v20240906/model/DescribeGatewayLoadBalancersRequest.h>
 #include <tencentcloud/gwlb/v20240906/model/DescribeGatewayLoadBalancersResponse.h>
+#include <tencentcloud/gwlb/v20240906/model/DescribeGatewayLoadBalancersResourcesRequest.h>
+#include <tencentcloud/gwlb/v20240906/model/DescribeGatewayLoadBalancersResourcesResponse.h>
 #include <tencentcloud/gwlb/v20240906/model/DescribeTargetGroupInstanceStatusRequest.h>
 #include <tencentcloud/gwlb/v20240906/model/DescribeTargetGroupInstanceStatusResponse.h>
 #include <tencentcloud/gwlb/v20240906/model/DescribeTargetGroupInstancesRequest.h>
@@ -94,6 +96,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeGatewayLoadBalancersResponse> DescribeGatewayLoadBalancersOutcome;
                 typedef std::future<DescribeGatewayLoadBalancersOutcome> DescribeGatewayLoadBalancersOutcomeCallable;
                 typedef std::function<void(const GwlbClient*, const Model::DescribeGatewayLoadBalancersRequest&, DescribeGatewayLoadBalancersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGatewayLoadBalancersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGatewayLoadBalancersResourcesResponse> DescribeGatewayLoadBalancersResourcesOutcome;
+                typedef std::future<DescribeGatewayLoadBalancersResourcesOutcome> DescribeGatewayLoadBalancersResourcesOutcomeCallable;
+                typedef std::function<void(const GwlbClient*, const Model::DescribeGatewayLoadBalancersResourcesRequest&, DescribeGatewayLoadBalancersResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGatewayLoadBalancersResourcesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTargetGroupInstanceStatusResponse> DescribeTargetGroupInstanceStatusOutcome;
                 typedef std::future<DescribeTargetGroupInstanceStatusOutcome> DescribeTargetGroupInstanceStatusOutcomeCallable;
                 typedef std::function<void(const GwlbClient*, const Model::DescribeTargetGroupInstanceStatusRequest&, DescribeTargetGroupInstanceStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTargetGroupInstanceStatusAsyncHandler;
@@ -132,7 +137,7 @@ namespace TencentCloud
 
                 /**
                  *本接口(AssociateTargetGroups)用来将目标组绑定到负载均衡。
-本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。
+本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 [DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683) 接口查询本次任务是否成功。
                  * @param req AssociateTargetGroupsRequest
                  * @return AssociateTargetGroupsOutcome
                  */
@@ -143,7 +148,7 @@ namespace TencentCloud
                 /**
                  *本接口(CreateGatewayLoadBalancer)用来创建网关负载均衡实例。为了使用网关负载均衡服务，您必须购买一个或多个网关负载均衡实例。成功调用该接口后，会返回网关负载均衡实例的唯一 ID。
 注意：单个账号在每个地域的默认购买配额为：10个。
-本接口为异步接口，接口成功返回后，可使用 DescribeGatewayLoadBalancers 接口查询负载均衡实例的状态（如创建中、正常），以确定是否创建成功。
+本接口为异步接口，接口成功返回后，可使用 [DescribeTaskStatus](https://cloud.tencent.com/document/api/1782/111700) 接口查询负载均衡实例的状态。
                  * @param req CreateGatewayLoadBalancerRequest
                  * @return CreateGatewayLoadBalancerOutcome
                  */
@@ -152,7 +157,7 @@ namespace TencentCloud
                 CreateGatewayLoadBalancerOutcomeCallable CreateGatewayLoadBalancerCallable(const Model::CreateGatewayLoadBalancerRequest& request);
 
                 /**
-                 *创建目标组。该功能正在内测中，如需使用，请通过[工单申请](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB&step=1)。
+                 *创建目标组。
                  * @param req CreateTargetGroupRequest
                  * @return CreateTargetGroupOutcome
                  */
@@ -162,7 +167,7 @@ namespace TencentCloud
 
                 /**
                  *DeleteGatewayLoadBalancer 接口用以删除指定的一个或多个网关负载均衡实例。成功删除后，会把网关负载均衡实例与后端服务解绑。
-本接口为异步接口，接口返回成功后，需以返回的 RequestId 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。
+本接口为异步接口，接口返回成功后，需以返回的 RequestId 为入参，调用 [DescribeTaskStatus](https://cloud.tencent.com/document/api/1782/111700) 接口查询本次任务是否成功。
                  * @param req DeleteGatewayLoadBalancerRequest
                  * @return DeleteGatewayLoadBalancerOutcome
                  */
@@ -181,7 +186,6 @@ namespace TencentCloud
 
                 /**
                  *从目标组中解绑服务器。
-本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。
                  * @param req DeregisterTargetGroupInstancesRequest
                  * @return DeregisterTargetGroupInstancesOutcome
                  */
@@ -197,6 +201,15 @@ namespace TencentCloud
                 DescribeGatewayLoadBalancersOutcome DescribeGatewayLoadBalancers(const Model::DescribeGatewayLoadBalancersRequest &request);
                 void DescribeGatewayLoadBalancersAsync(const Model::DescribeGatewayLoadBalancersRequest& request, const DescribeGatewayLoadBalancersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeGatewayLoadBalancersOutcomeCallable DescribeGatewayLoadBalancersCallable(const Model::DescribeGatewayLoadBalancersRequest& request);
+
+                /**
+                 *查询用户在当前地域支持可用区列表
+                 * @param req DescribeGatewayLoadBalancersResourcesRequest
+                 * @return DescribeGatewayLoadBalancersResourcesOutcome
+                 */
+                DescribeGatewayLoadBalancersResourcesOutcome DescribeGatewayLoadBalancersResources(const Model::DescribeGatewayLoadBalancersResourcesRequest &request);
+                void DescribeGatewayLoadBalancersResourcesAsync(const Model::DescribeGatewayLoadBalancersResourcesRequest& request, const DescribeGatewayLoadBalancersResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGatewayLoadBalancersResourcesOutcomeCallable DescribeGatewayLoadBalancersResourcesCallable(const Model::DescribeGatewayLoadBalancersResourcesRequest& request);
 
                 /**
                  *查询目标组后端服务状态。目前仅支持网关负载均衡类型的目标组支持查询后端服务状态。
@@ -245,7 +258,7 @@ namespace TencentCloud
 
                 /**
                  *解除负载均衡和目标组的关联关系。
-本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。
+本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 [DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683) 接口查询本次任务是否成功。
                  * @param req DisassociateTargetGroupsRequest
                  * @return DisassociateTargetGroupsOutcome
                  */
@@ -282,7 +295,6 @@ namespace TencentCloud
 
                 /**
                  *修改目标组的服务器权重。
-本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。
                  * @param req ModifyTargetGroupInstancesWeightRequest
                  * @return ModifyTargetGroupInstancesWeightOutcome
                  */
@@ -292,7 +304,6 @@ namespace TencentCloud
 
                 /**
                  *注册服务器到目标组。
-本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。
                  * @param req RegisterTargetGroupInstancesRequest
                  * @return RegisterTargetGroupInstancesOutcome
                  */

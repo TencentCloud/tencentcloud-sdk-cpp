@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vpc/v20170312/model/Tag.h>
 #include <tencentcloud/vpc/v20170312/model/AssistantCidr.h>
+#include <tencentcloud/vpc/v20170312/model/ISPIPv6CidrBlock.h>
 
 
 namespace TencentCloud
@@ -302,18 +303,14 @@ namespace TencentCloud
 
                     /**
                      * 获取辅助CIDR
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssistantCidrSet 辅助CIDR
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AssistantCidr> GetAssistantCidrSet() const;
 
                     /**
                      * 设置辅助CIDR
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _assistantCidrSet 辅助CIDR
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAssistantCidrSet(const std::vector<AssistantCidr>& _assistantCidrSet);
@@ -324,6 +321,27 @@ namespace TencentCloud
                      * 
                      */
                     bool AssistantCidrSetHasBeenSet() const;
+
+                    /**
+                     * 获取返回多运营商IPv6 Cidr Block
+                     * @return Ipv6CidrBlockSet 返回多运营商IPv6 Cidr Block
+                     * 
+                     */
+                    std::vector<ISPIPv6CidrBlock> GetIpv6CidrBlockSet() const;
+
+                    /**
+                     * 设置返回多运营商IPv6 Cidr Block
+                     * @param _ipv6CidrBlockSet 返回多运营商IPv6 Cidr Block
+                     * 
+                     */
+                    void SetIpv6CidrBlockSet(const std::vector<ISPIPv6CidrBlock>& _ipv6CidrBlockSet);
+
+                    /**
+                     * 判断参数 Ipv6CidrBlockSet 是否已赋值
+                     * @return Ipv6CidrBlockSet 是否已赋值
+                     * 
+                     */
+                    bool Ipv6CidrBlockSetHasBeenSet() const;
 
                 private:
 
@@ -401,10 +419,15 @@ namespace TencentCloud
 
                     /**
                      * 辅助CIDR
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AssistantCidr> m_assistantCidrSet;
                     bool m_assistantCidrSetHasBeenSet;
+
+                    /**
+                     * 返回多运营商IPv6 Cidr Block
+                     */
+                    std::vector<ISPIPv6CidrBlock> m_ipv6CidrBlockSet;
+                    bool m_ipv6CidrBlockSetHasBeenSet;
 
                 };
             }

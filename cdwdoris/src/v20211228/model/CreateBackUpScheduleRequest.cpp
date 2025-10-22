@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,9 @@ CreateBackUpScheduleRequest::CreateBackUpScheduleRequest() :
     m_scheduleNameHasBeenSet(false),
     m_scheduleInfoHasBeenSet(false),
     m_updateStatusHasBeenSet(false),
-    m_cosBucketHasBeenSet(false)
+    m_cosBucketHasBeenSet(false),
+    m_snapshotRemainPolicyHasBeenSet(false),
+    m_dataRemoteRegionHasBeenSet(false)
 {
 }
 
@@ -185,6 +187,23 @@ string CreateBackUpScheduleRequest::ToJsonString() const
         string key = "CosBucket";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cosBucket.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_snapshotRemainPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SnapshotRemainPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_snapshotRemainPolicy.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_dataRemoteRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataRemoteRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dataRemoteRegion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -449,6 +468,38 @@ void CreateBackUpScheduleRequest::SetCosBucket(const string& _cosBucket)
 bool CreateBackUpScheduleRequest::CosBucketHasBeenSet() const
 {
     return m_cosBucketHasBeenSet;
+}
+
+SnapshotRemainPolicy CreateBackUpScheduleRequest::GetSnapshotRemainPolicy() const
+{
+    return m_snapshotRemainPolicy;
+}
+
+void CreateBackUpScheduleRequest::SetSnapshotRemainPolicy(const SnapshotRemainPolicy& _snapshotRemainPolicy)
+{
+    m_snapshotRemainPolicy = _snapshotRemainPolicy;
+    m_snapshotRemainPolicyHasBeenSet = true;
+}
+
+bool CreateBackUpScheduleRequest::SnapshotRemainPolicyHasBeenSet() const
+{
+    return m_snapshotRemainPolicyHasBeenSet;
+}
+
+string CreateBackUpScheduleRequest::GetDataRemoteRegion() const
+{
+    return m_dataRemoteRegion;
+}
+
+void CreateBackUpScheduleRequest::SetDataRemoteRegion(const string& _dataRemoteRegion)
+{
+    m_dataRemoteRegion = _dataRemoteRegion;
+    m_dataRemoteRegionHasBeenSet = true;
+}
+
+bool CreateBackUpScheduleRequest::DataRemoteRegionHasBeenSet() const
+{
+    return m_dataRemoteRegionHasBeenSet;
 }
 
 

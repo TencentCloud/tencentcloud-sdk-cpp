@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,27 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取过滤条件：任务状态，可选值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。
-                     * @return Status 过滤条件：任务状态，可选值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。
+                     * 获取任务状态过滤条件，可选值：
+- WAITING（等待中）
+- PROCESSING（处理中）
+- FINISH（已完成）。
+                     * @return Status 任务状态过滤条件，可选值：
+- WAITING（等待中）
+- PROCESSING（处理中）
+- FINISH（已完成）。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置过滤条件：任务状态，可选值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。
-                     * @param _status 过滤条件：任务状态，可选值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。
+                     * 设置任务状态过滤条件，可选值：
+- WAITING（等待中）
+- PROCESSING（处理中）
+- FINISH（已完成）。
+                     * @param _status 任务状态过滤条件，可选值：
+- WAITING（等待中）
+- PROCESSING（处理中）
+- FINISH（已完成）。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -62,6 +74,35 @@ namespace TencentCloud
                      * 
                      */
                     bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取任务结束时子任务是否有失败。如果不传则忽略。
+<li>false: 过滤子任务没有失败的任务；</li>
+<li>true: 过滤子任务有失败的任务。</li>
+                     * @return SubTaskHasFailed 任务结束时子任务是否有失败。如果不传则忽略。
+<li>false: 过滤子任务没有失败的任务；</li>
+<li>true: 过滤子任务有失败的任务。</li>
+                     * 
+                     */
+                    bool GetSubTaskHasFailed() const;
+
+                    /**
+                     * 设置任务结束时子任务是否有失败。如果不传则忽略。
+<li>false: 过滤子任务没有失败的任务；</li>
+<li>true: 过滤子任务有失败的任务。</li>
+                     * @param _subTaskHasFailed 任务结束时子任务是否有失败。如果不传则忽略。
+<li>false: 过滤子任务没有失败的任务；</li>
+<li>true: 过滤子任务有失败的任务。</li>
+                     * 
+                     */
+                    void SetSubTaskHasFailed(const bool& _subTaskHasFailed);
+
+                    /**
+                     * 判断参数 SubTaskHasFailed 是否已赋值
+                     * @return SubTaskHasFailed 是否已赋值
+                     * 
+                     */
+                    bool SubTaskHasFailedHasBeenSet() const;
 
                     /**
                      * 获取返回记录条数，默认值：10，最大值：100。
@@ -105,13 +146,66 @@ namespace TencentCloud
                      */
                     bool ScrollTokenHasBeenSet() const;
 
+                    /**
+                     * 获取查询任务开始时间
+                     * @return StartTime 查询任务开始时间
+                     * 
+                     */
+                    std::string GetStartTime() const;
+
+                    /**
+                     * 设置查询任务开始时间
+                     * @param _startTime 查询任务开始时间
+                     * 
+                     */
+                    void SetStartTime(const std::string& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     * 
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取查询任务结束时间。
+                     * @return EndTime 查询任务结束时间。
+                     * 
+                     */
+                    std::string GetEndTime() const;
+
+                    /**
+                     * 设置查询任务结束时间。
+                     * @param _endTime 查询任务结束时间。
+                     * 
+                     */
+                    void SetEndTime(const std::string& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     * 
+                     */
+                    bool EndTimeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 过滤条件：任务状态，可选值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。
+                     * 任务状态过滤条件，可选值：
+- WAITING（等待中）
+- PROCESSING（处理中）
+- FINISH（已完成）。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 任务结束时子任务是否有失败。如果不传则忽略。
+<li>false: 过滤子任务没有失败的任务；</li>
+<li>true: 过滤子任务有失败的任务。</li>
+                     */
+                    bool m_subTaskHasFailed;
+                    bool m_subTaskHasFailedHasBeenSet;
 
                     /**
                      * 返回记录条数，默认值：10，最大值：100。
@@ -124,6 +218,18 @@ namespace TencentCloud
                      */
                     std::string m_scrollToken;
                     bool m_scrollTokenHasBeenSet;
+
+                    /**
+                     * 查询任务开始时间
+                     */
+                    std::string m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * 查询任务结束时间。
+                     */
+                    std::string m_endTime;
+                    bool m_endTimeHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -168,6 +168,27 @@ namespace TencentCloud
                      */
                     bool EncryptionHasBeenSet() const;
 
+                    /**
+                     * 获取排序字段（Name-按名称排序，CreateTime-按创建时间排序），默认CreateTime
+                     * @return OrderBy 排序字段（Name-按名称排序，CreateTime-按创建时间排序），默认CreateTime
+                     * 
+                     */
+                    std::string GetOrderBy() const;
+
+                    /**
+                     * 设置排序字段（Name-按名称排序，CreateTime-按创建时间排序），默认CreateTime
+                     * @param _orderBy 排序字段（Name-按名称排序，CreateTime-按创建时间排序），默认CreateTime
+                     * 
+                     */
+                    void SetOrderBy(const std::string& _orderBy);
+
+                    /**
+                     * 判断参数 OrderBy 是否已赋值
+                     * @return OrderBy 是否已赋值
+                     * 
+                     */
+                    bool OrderByHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +226,12 @@ namespace TencentCloud
                      */
                     std::string m_encryption;
                     bool m_encryptionHasBeenSet;
+
+                    /**
+                     * 排序字段（Name-按名称排序，CreateTime-按创建时间排序），默认CreateTime
+                     */
+                    std::string m_orderBy;
+                    bool m_orderByHasBeenSet;
 
                 };
             }

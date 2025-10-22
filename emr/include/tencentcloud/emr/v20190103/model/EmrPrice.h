@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取刊例价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginalCost 刊例价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOriginalCost() const;
 
                     /**
                      * 设置刊例价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _originalCost 刊例价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOriginalCost(const std::string& _originalCost);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取折扣价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiscountCost 折扣价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDiscountCost() const;
 
                     /**
                      * 设置折扣价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _discountCost 折扣价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiscountCost(const std::string& _discountCost);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Unit 单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUnit() const;
 
                     /**
                      * 设置单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _unit 单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUnit(const std::string& _unit);
@@ -149,18 +137,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否支持竞价实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportSpotPaid 是否支持竞价实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSupportSpotPaid() const;
 
                     /**
                      * 设置是否支持竞价实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _supportSpotPaid 是否支持竞价实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSupportSpotPaid(const bool& _supportSpotPaid);
@@ -176,21 +160,18 @@ namespace TencentCloud
 
                     /**
                      * 刊例价格
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_originalCost;
                     bool m_originalCostHasBeenSet;
 
                     /**
                      * 折扣价格
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_discountCost;
                     bool m_discountCostHasBeenSet;
 
                     /**
                      * 单位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_unit;
                     bool m_unitHasBeenSet;
@@ -204,7 +185,6 @@ namespace TencentCloud
 
                     /**
                      * 是否支持竞价实例
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_supportSpotPaid;
                     bool m_supportSpotPaidHasBeenSet;

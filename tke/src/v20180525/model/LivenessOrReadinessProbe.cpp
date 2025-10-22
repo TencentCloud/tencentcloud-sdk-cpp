@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +22,8 @@ using namespace std;
 
 LivenessOrReadinessProbe::LivenessOrReadinessProbe() :
     m_probeHasBeenSet(false),
-    m_httpGetHasBeenSet(false),
     m_execHasBeenSet(false),
+    m_httpGetHasBeenSet(false),
     m_tcpSocketHasBeenSet(false)
 {
 }
@@ -50,23 +50,6 @@ CoreInternalOutcome LivenessOrReadinessProbe::Deserialize(const rapidjson::Value
         m_probeHasBeenSet = true;
     }
 
-    if (value.HasMember("HttpGet") && !value["HttpGet"].IsNull())
-    {
-        if (!value["HttpGet"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `LivenessOrReadinessProbe.HttpGet` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_httpGet.Deserialize(value["HttpGet"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_httpGetHasBeenSet = true;
-    }
-
     if (value.HasMember("Exec") && !value["Exec"].IsNull())
     {
         if (!value["Exec"].IsObject())
@@ -82,6 +65,23 @@ CoreInternalOutcome LivenessOrReadinessProbe::Deserialize(const rapidjson::Value
         }
 
         m_execHasBeenSet = true;
+    }
+
+    if (value.HasMember("HttpGet") && !value["HttpGet"].IsNull())
+    {
+        if (!value["HttpGet"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `LivenessOrReadinessProbe.HttpGet` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_httpGet.Deserialize(value["HttpGet"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_httpGetHasBeenSet = true;
     }
 
     if (value.HasMember("TcpSocket") && !value["TcpSocket"].IsNull())
@@ -117,15 +117,6 @@ void LivenessOrReadinessProbe::ToJsonObject(rapidjson::Value &value, rapidjson::
         m_probe.ToJsonObject(value[key.c_str()], allocator);
     }
 
-    if (m_httpGetHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "HttpGet";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_httpGet.ToJsonObject(value[key.c_str()], allocator);
-    }
-
     if (m_execHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -133,6 +124,15 @@ void LivenessOrReadinessProbe::ToJsonObject(rapidjson::Value &value, rapidjson::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_exec.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_httpGetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HttpGet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_httpGet.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_tcpSocketHasBeenSet)
@@ -163,22 +163,6 @@ bool LivenessOrReadinessProbe::ProbeHasBeenSet() const
     return m_probeHasBeenSet;
 }
 
-HttpGet LivenessOrReadinessProbe::GetHttpGet() const
-{
-    return m_httpGet;
-}
-
-void LivenessOrReadinessProbe::SetHttpGet(const HttpGet& _httpGet)
-{
-    m_httpGet = _httpGet;
-    m_httpGetHasBeenSet = true;
-}
-
-bool LivenessOrReadinessProbe::HttpGetHasBeenSet() const
-{
-    return m_httpGetHasBeenSet;
-}
-
 Exec LivenessOrReadinessProbe::GetExec() const
 {
     return m_exec;
@@ -193,6 +177,22 @@ void LivenessOrReadinessProbe::SetExec(const Exec& _exec)
 bool LivenessOrReadinessProbe::ExecHasBeenSet() const
 {
     return m_execHasBeenSet;
+}
+
+HttpGet LivenessOrReadinessProbe::GetHttpGet() const
+{
+    return m_httpGet;
+}
+
+void LivenessOrReadinessProbe::SetHttpGet(const HttpGet& _httpGet)
+{
+    m_httpGet = _httpGet;
+    m_httpGetHasBeenSet = true;
+}
+
+bool LivenessOrReadinessProbe::HttpGetHasBeenSet() const
+{
+    return m_httpGetHasBeenSet;
 }
 
 TcpSocket LivenessOrReadinessProbe::GetTcpSocket() const

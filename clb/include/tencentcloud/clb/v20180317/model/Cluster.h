@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/clb/v20180317/model/ClustersZone.h>
+#include <tencentcloud/clb/v20180317/model/TagInfo.h>
 
 
 namespace TencentCloud
@@ -575,18 +576,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群容灾类型，如SINGLE-ZONE，DISASTER-RECOVERY，MUTUAL-DISASTER-RECOVERY
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DisasterRecoveryType 集群容灾类型，如SINGLE-ZONE，DISASTER-RECOVERY，MUTUAL-DISASTER-RECOVERY
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDisasterRecoveryType() const;
 
                     /**
                      * 设置集群容灾类型，如SINGLE-ZONE，DISASTER-RECOVERY，MUTUAL-DISASTER-RECOVERY
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _disasterRecoveryType 集群容灾类型，如SINGLE-ZONE，DISASTER-RECOVERY，MUTUAL-DISASTER-RECOVERY
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDisasterRecoveryType(const std::string& _disasterRecoveryType);
@@ -600,18 +597,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络出口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Egress 网络出口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEgress() const;
 
                     /**
                      * 设置网络出口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _egress 网络出口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEgress(const std::string& _egress);
@@ -625,18 +618,14 @@ namespace TencentCloud
 
                     /**
                      * 获取IP版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IPVersion IP版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIPVersion() const;
 
                     /**
                      * 设置IP版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iPVersion IP版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIPVersion(const std::string& _iPVersion);
@@ -647,6 +636,27 @@ namespace TencentCloud
                      * 
                      */
                     bool IPVersionHasBeenSet() const;
+
+                    /**
+                     * 获取标签信息
+                     * @return Tag 标签信息
+                     * 
+                     */
+                    std::vector<TagInfo> GetTag() const;
+
+                    /**
+                     * 设置标签信息
+                     * @param _tag 标签信息
+                     * 
+                     */
+                    void SetTag(const std::vector<TagInfo>& _tag);
+
+                    /**
+                     * 判断参数 Tag 是否已赋值
+                     * @return Tag 是否已赋值
+                     * 
+                     */
+                    bool TagHasBeenSet() const;
 
                 private:
 
@@ -800,24 +810,27 @@ namespace TencentCloud
 
                     /**
                      * 集群容灾类型，如SINGLE-ZONE，DISASTER-RECOVERY，MUTUAL-DISASTER-RECOVERY
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_disasterRecoveryType;
                     bool m_disasterRecoveryTypeHasBeenSet;
 
                     /**
                      * 网络出口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_egress;
                     bool m_egressHasBeenSet;
 
                     /**
                      * IP版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_iPVersion;
                     bool m_iPVersionHasBeenSet;
+
+                    /**
+                     * 标签信息
+                     */
+                    std::vector<TagInfo> m_tag;
+                    bool m_tagHasBeenSet;
 
                 };
             }

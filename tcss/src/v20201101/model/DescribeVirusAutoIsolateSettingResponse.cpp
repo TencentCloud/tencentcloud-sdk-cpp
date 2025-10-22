@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeVirusAutoIsolateSettingResponse::DescribeVirusAutoIsolateSettingResponse() :
     m_autoIsolateSwitchHasBeenSet(false),
-    m_isKillProgressHasBeenSet(false)
+    m_isKillProgressHasBeenSet(false),
+    m_userAutoIsolateKillSwitchHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome DescribeVirusAutoIsolateSettingResponse::Deserialize(const s
         m_isKillProgressHasBeenSet = true;
     }
 
+    if (rsp.HasMember("UserAutoIsolateKillSwitch") && !rsp["UserAutoIsolateKillSwitch"].IsNull())
+    {
+        if (!rsp["UserAutoIsolateKillSwitch"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserAutoIsolateKillSwitch` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_userAutoIsolateKillSwitch = rsp["UserAutoIsolateKillSwitch"].GetBool();
+        m_userAutoIsolateKillSwitchHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -109,11 +120,19 @@ string DescribeVirusAutoIsolateSettingResponse::ToJsonString() const
         value.AddMember(iKey, m_isKillProgress, allocator);
     }
 
+    if (m_userAutoIsolateKillSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserAutoIsolateKillSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_userAutoIsolateKillSwitch, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -139,6 +158,16 @@ bool DescribeVirusAutoIsolateSettingResponse::GetIsKillProgress() const
 bool DescribeVirusAutoIsolateSettingResponse::IsKillProgressHasBeenSet() const
 {
     return m_isKillProgressHasBeenSet;
+}
+
+bool DescribeVirusAutoIsolateSettingResponse::GetUserAutoIsolateKillSwitch() const
+{
+    return m_userAutoIsolateKillSwitch;
+}
+
+bool DescribeVirusAutoIsolateSettingResponse::UserAutoIsolateKillSwitchHasBeenSet() const
+{
+    return m_userAutoIsolateKillSwitchHasBeenSet;
 }
 
 

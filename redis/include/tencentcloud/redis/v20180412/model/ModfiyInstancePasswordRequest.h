@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -86,11 +86,11 @@ namespace TencentCloud
 
                     /**
                      * 获取实例新密码。密码复杂度要求如下：
-- 长度8 - 30位, 推荐使用12位以上的密码。
+- 长度8 - 64位, 推荐使用12位以上的密码。
 - 不能以"/"开头。
 - 至少包含小写字母a - z、大写字母A - Z、数字0 - 9、特殊字符 ()~!@#$%^&*-+=_|{}[]:;<>,.?/中的两项。
                      * @return Password 实例新密码。密码复杂度要求如下：
-- 长度8 - 30位, 推荐使用12位以上的密码。
+- 长度8 - 64位, 推荐使用12位以上的密码。
 - 不能以"/"开头。
 - 至少包含小写字母a - z、大写字母A - Z、数字0 - 9、特殊字符 ()~!@#$%^&*-+=_|{}[]:;<>,.?/中的两项。
                      * 
@@ -99,11 +99,11 @@ namespace TencentCloud
 
                     /**
                      * 设置实例新密码。密码复杂度要求如下：
-- 长度8 - 30位, 推荐使用12位以上的密码。
+- 长度8 - 64位, 推荐使用12位以上的密码。
 - 不能以"/"开头。
 - 至少包含小写字母a - z、大写字母A - Z、数字0 - 9、特殊字符 ()~!@#$%^&*-+=_|{}[]:;<>,.?/中的两项。
                      * @param _password 实例新密码。密码复杂度要求如下：
-- 长度8 - 30位, 推荐使用12位以上的密码。
+- 长度8 - 64位, 推荐使用12位以上的密码。
 - 不能以"/"开头。
 - 至少包含小写字母a - z、大写字母A - Z、数字0 - 9、特殊字符 ()~!@#$%^&*-+=_|{}[]:;<>,.?/中的两项。
                      * 
@@ -116,6 +116,27 @@ namespace TencentCloud
                      * 
                      */
                     bool PasswordHasBeenSet() const;
+
+                    /**
+                     * 获取是否加密密码
+                     * @return EncryptPassword 是否加密密码
+                     * 
+                     */
+                    bool GetEncryptPassword() const;
+
+                    /**
+                     * 设置是否加密密码
+                     * @param _encryptPassword 是否加密密码
+                     * 
+                     */
+                    void SetEncryptPassword(const bool& _encryptPassword);
+
+                    /**
+                     * 判断参数 EncryptPassword 是否已赋值
+                     * @return EncryptPassword 是否已赋值
+                     * 
+                     */
+                    bool EncryptPasswordHasBeenSet() const;
 
                 private:
 
@@ -133,12 +154,18 @@ namespace TencentCloud
 
                     /**
                      * 实例新密码。密码复杂度要求如下：
-- 长度8 - 30位, 推荐使用12位以上的密码。
+- 长度8 - 64位, 推荐使用12位以上的密码。
 - 不能以"/"开头。
 - 至少包含小写字母a - z、大写字母A - Z、数字0 - 9、特殊字符 ()~!@#$%^&*-+=_|{}[]:;<>,.?/中的两项。
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
+
+                    /**
+                     * 是否加密密码
+                     */
+                    bool m_encryptPassword;
+                    bool m_encryptPasswordHasBeenSet;
 
                 };
             }

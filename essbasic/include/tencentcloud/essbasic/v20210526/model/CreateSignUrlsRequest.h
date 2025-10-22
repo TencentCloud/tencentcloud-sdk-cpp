@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -163,7 +163,7 @@ namespace TencentCloud
                     /**
                      * 获取签署链接类型,可以设置的参数如下
 <ul><li> **WEIXINAPP** :(默认)跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型 ，此时返回短链</li>
-<li> **CHANNEL** :带有H5引导页的跳转电子签小程序的链接</li>
+<li> **CHANNEL** :带有H5引导页的跳转电子签小程序的链接(<b>GenerateType非ALL时候不能设置成CHANNEL</b>)</li>
 <li> **APP** :第三方App或小程序跳转电子签小程序的path, App或者小程序跳转适合此类型</li>
 <li> **LONGURL2WEIXINAPP** :跳转电子签小程序的链接, H5跳转适合此类型，此时返回长链</li></ul>
 
@@ -173,7 +173,7 @@ namespace TencentCloud
 
                      * @return Endpoint 签署链接类型,可以设置的参数如下
 <ul><li> **WEIXINAPP** :(默认)跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型 ，此时返回短链</li>
-<li> **CHANNEL** :带有H5引导页的跳转电子签小程序的链接</li>
+<li> **CHANNEL** :带有H5引导页的跳转电子签小程序的链接(<b>GenerateType非ALL时候不能设置成CHANNEL</b>)</li>
 <li> **APP** :第三方App或小程序跳转电子签小程序的path, App或者小程序跳转适合此类型</li>
 <li> **LONGURL2WEIXINAPP** :跳转电子签小程序的链接, H5跳转适合此类型，此时返回长链</li></ul>
 
@@ -188,7 +188,7 @@ namespace TencentCloud
                     /**
                      * 设置签署链接类型,可以设置的参数如下
 <ul><li> **WEIXINAPP** :(默认)跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型 ，此时返回短链</li>
-<li> **CHANNEL** :带有H5引导页的跳转电子签小程序的链接</li>
+<li> **CHANNEL** :带有H5引导页的跳转电子签小程序的链接(<b>GenerateType非ALL时候不能设置成CHANNEL</b>)</li>
 <li> **APP** :第三方App或小程序跳转电子签小程序的path, App或者小程序跳转适合此类型</li>
 <li> **LONGURL2WEIXINAPP** :跳转电子签小程序的链接, H5跳转适合此类型，此时返回长链</li></ul>
 
@@ -198,7 +198,7 @@ namespace TencentCloud
 
                      * @param _endpoint 签署链接类型,可以设置的参数如下
 <ul><li> **WEIXINAPP** :(默认)跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型 ，此时返回短链</li>
-<li> **CHANNEL** :带有H5引导页的跳转电子签小程序的链接</li>
+<li> **CHANNEL** :带有H5引导页的跳转电子签小程序的链接(<b>GenerateType非ALL时候不能设置成CHANNEL</b>)</li>
 <li> **APP** :第三方App或小程序跳转电子签小程序的path, App或者小程序跳转适合此类型</li>
 <li> **LONGURL2WEIXINAPP** :跳转电子签小程序的链接, H5跳转适合此类型，此时返回长链</li></ul>
 
@@ -289,18 +289,26 @@ namespace TencentCloud
 
                     /**
                      * 获取合同流程里边参与方的姓名。
-注: `GenerateType为"PERSON"(即个人签署方)时必填`
+注: 
+1. `GenerateType为"PERSON"(即个人签署方)时必填`。
+2. `在动态签署人补充链接场景中，可以通过传入这个值，对补充的个人参与方信息进行限制。仅匹配传入姓名的参与方才能补充合同。此参数预设信息功能暂时仅支持个人动态参与方。`
                      * @return Name 合同流程里边参与方的姓名。
-注: `GenerateType为"PERSON"(即个人签署方)时必填`
+注: 
+1. `GenerateType为"PERSON"(即个人签署方)时必填`。
+2. `在动态签署人补充链接场景中，可以通过传入这个值，对补充的个人参与方信息进行限制。仅匹配传入姓名的参与方才能补充合同。此参数预设信息功能暂时仅支持个人动态参与方。`
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置合同流程里边参与方的姓名。
-注: `GenerateType为"PERSON"(即个人签署方)时必填`
+注: 
+1. `GenerateType为"PERSON"(即个人签署方)时必填`。
+2. `在动态签署人补充链接场景中，可以通过传入这个值，对补充的个人参与方信息进行限制。仅匹配传入姓名的参与方才能补充合同。此参数预设信息功能暂时仅支持个人动态参与方。`
                      * @param _name 合同流程里边参与方的姓名。
-注: `GenerateType为"PERSON"(即个人签署方)时必填`
+注: 
+1. `GenerateType为"PERSON"(即个人签署方)时必填`。
+2. `在动态签署人补充链接场景中，可以通过传入这个值，对补充的个人参与方信息进行限制。仅匹配传入姓名的参与方才能补充合同。此参数预设信息功能暂时仅支持个人动态参与方。`
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -314,18 +322,26 @@ namespace TencentCloud
 
                     /**
                      * 获取合同流程里边签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。
-注:  `GenerateType为"PERSON"或"FOLLOWER"时必填`
+注:  
+1. `GenerateType为"PERSON"或"FOLLOWER"时必填。`
+2. `在动态签署人补充链接场景中，可以通过传入此值，对补充的个人参与方信息进行限制。仅匹配传入手机号的参与方才能补充合同。此参数预设信息功能暂时仅支持个人动态参与方。`
                      * @return Mobile 合同流程里边签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。
-注:  `GenerateType为"PERSON"或"FOLLOWER"时必填`
+注:  
+1. `GenerateType为"PERSON"或"FOLLOWER"时必填。`
+2. `在动态签署人补充链接场景中，可以通过传入此值，对补充的个人参与方信息进行限制。仅匹配传入手机号的参与方才能补充合同。此参数预设信息功能暂时仅支持个人动态参与方。`
                      * 
                      */
                     std::string GetMobile() const;
 
                     /**
                      * 设置合同流程里边签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。
-注:  `GenerateType为"PERSON"或"FOLLOWER"时必填`
+注:  
+1. `GenerateType为"PERSON"或"FOLLOWER"时必填。`
+2. `在动态签署人补充链接场景中，可以通过传入此值，对补充的个人参与方信息进行限制。仅匹配传入手机号的参与方才能补充合同。此参数预设信息功能暂时仅支持个人动态参与方。`
                      * @param _mobile 合同流程里边签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。
-注:  `GenerateType为"PERSON"或"FOLLOWER"时必填`
+注:  
+1. `GenerateType为"PERSON"或"FOLLOWER"时必填。`
+2. `在动态签署人补充链接场景中，可以通过传入此值，对补充的个人参与方信息进行限制。仅匹配传入手机号的参与方才能补充合同。此参数预设信息功能暂时仅支持个人动态参与方。`
                      * 
                      */
                     void SetMobile(const std::string& _mobile);
@@ -339,26 +355,34 @@ namespace TencentCloud
 
                     /**
                      * 获取证件类型，支持以下类型
-<ul><li>ID_CARD : 居民身份证</li>
-<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
-<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
+<ul><li>ID_CARD : 中国大陆居民身份证</li>
+<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>
+
+`注：在动态签署人补充链接场景中，可以通过传入此值，对补充的个人参与方信息进行限制。仅匹配传入证件类型的参与方才能补充合同。此参数预设信息功能暂时仅支持个人动态参与方，且需要和证件号参数一同传递，不能单独进行限制。`
                      * @return IdCardType 证件类型，支持以下类型
-<ul><li>ID_CARD : 居民身份证</li>
-<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
-<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
+<ul><li>ID_CARD : 中国大陆居民身份证</li>
+<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>
+
+`注：在动态签署人补充链接场景中，可以通过传入此值，对补充的个人参与方信息进行限制。仅匹配传入证件类型的参与方才能补充合同。此参数预设信息功能暂时仅支持个人动态参与方，且需要和证件号参数一同传递，不能单独进行限制。`
                      * 
                      */
                     std::string GetIdCardType() const;
 
                     /**
                      * 设置证件类型，支持以下类型
-<ul><li>ID_CARD : 居民身份证</li>
-<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
-<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
+<ul><li>ID_CARD : 中国大陆居民身份证</li>
+<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>
+
+`注：在动态签署人补充链接场景中，可以通过传入此值，对补充的个人参与方信息进行限制。仅匹配传入证件类型的参与方才能补充合同。此参数预设信息功能暂时仅支持个人动态参与方，且需要和证件号参数一同传递，不能单独进行限制。`
                      * @param _idCardType 证件类型，支持以下类型
-<ul><li>ID_CARD : 居民身份证</li>
-<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
-<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
+<ul><li>ID_CARD : 中国大陆居民身份证</li>
+<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>
+
+`注：在动态签署人补充链接场景中，可以通过传入此值，对补充的个人参与方信息进行限制。仅匹配传入证件类型的参与方才能补充合同。此参数预设信息功能暂时仅支持个人动态参与方，且需要和证件号参数一同传递，不能单独进行限制。`
                      * 
                      */
                     void SetIdCardType(const std::string& _idCardType);
@@ -373,12 +397,16 @@ namespace TencentCloud
                     /**
                      * 获取证件号码，应符合以下规则
 <ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li>
-<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>
+<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>
 <li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+
+`注：在动态签署人补充链接场景中，可以通过传入此值，对补充的个人参与方信息进行限制。仅匹配传入证件号的参与方才能补充合同。此参数预设信息功能暂时仅支持个人动态参与方。`
                      * @return IdCardNumber 证件号码，应符合以下规则
 <ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li>
-<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>
+<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>
 <li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+
+`注：在动态签署人补充链接场景中，可以通过传入此值，对补充的个人参与方信息进行限制。仅匹配传入证件号的参与方才能补充合同。此参数预设信息功能暂时仅支持个人动态参与方。`
                      * 
                      */
                     std::string GetIdCardNumber() const;
@@ -386,12 +414,16 @@ namespace TencentCloud
                     /**
                      * 设置证件号码，应符合以下规则
 <ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li>
-<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>
+<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>
 <li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+
+`注：在动态签署人补充链接场景中，可以通过传入此值，对补充的个人参与方信息进行限制。仅匹配传入证件号的参与方才能补充合同。此参数预设信息功能暂时仅支持个人动态参与方。`
                      * @param _idCardNumber 证件号码，应符合以下规则
 <ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li>
-<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>
+<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>
 <li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+
+`注：在动态签署人补充链接场景中，可以通过传入此值，对补充的个人参与方信息进行限制。仅匹配传入证件号的参与方才能补充合同。此参数预设信息功能暂时仅支持个人动态参与方。`
                      * 
                      */
                     void SetIdCardNumber(const std::string& _idCardNumber);
@@ -643,6 +675,35 @@ namespace TencentCloud
                      */
                     bool FlowGroupUrlInfoHasBeenSet() const;
 
+                    /**
+                     * 获取<font color="red">仅公众号 H5 跳转电子签小程序时</font>，如需签署完成的“返回应用”功能，在获取签署链接接口的 UrlUseEnv 参数需设置为 **WeChatOfficialAccounts**，小程序签署成功的结果页面中才会出现“返回应用”按钮。在用户点击“返回应用”按钮之后，会返回到公众号 H5。 
+
+参考 [公众号 H5 跳转电子签小程序](https://qian.tencent.com/developers/company/openwxminiprogram/#23-%E5%85%AC%E4%BC%97%E5%8F%B7-h5-%E4%B8%AD%E8%B7%B3%E8%BD%AC)。
+                     * @return UrlUseEnv <font color="red">仅公众号 H5 跳转电子签小程序时</font>，如需签署完成的“返回应用”功能，在获取签署链接接口的 UrlUseEnv 参数需设置为 **WeChatOfficialAccounts**，小程序签署成功的结果页面中才会出现“返回应用”按钮。在用户点击“返回应用”按钮之后，会返回到公众号 H5。 
+
+参考 [公众号 H5 跳转电子签小程序](https://qian.tencent.com/developers/company/openwxminiprogram/#23-%E5%85%AC%E4%BC%97%E5%8F%B7-h5-%E4%B8%AD%E8%B7%B3%E8%BD%AC)。
+                     * 
+                     */
+                    std::string GetUrlUseEnv() const;
+
+                    /**
+                     * 设置<font color="red">仅公众号 H5 跳转电子签小程序时</font>，如需签署完成的“返回应用”功能，在获取签署链接接口的 UrlUseEnv 参数需设置为 **WeChatOfficialAccounts**，小程序签署成功的结果页面中才会出现“返回应用”按钮。在用户点击“返回应用”按钮之后，会返回到公众号 H5。 
+
+参考 [公众号 H5 跳转电子签小程序](https://qian.tencent.com/developers/company/openwxminiprogram/#23-%E5%85%AC%E4%BC%97%E5%8F%B7-h5-%E4%B8%AD%E8%B7%B3%E8%BD%AC)。
+                     * @param _urlUseEnv <font color="red">仅公众号 H5 跳转电子签小程序时</font>，如需签署完成的“返回应用”功能，在获取签署链接接口的 UrlUseEnv 参数需设置为 **WeChatOfficialAccounts**，小程序签署成功的结果页面中才会出现“返回应用”按钮。在用户点击“返回应用”按钮之后，会返回到公众号 H5。 
+
+参考 [公众号 H5 跳转电子签小程序](https://qian.tencent.com/developers/company/openwxminiprogram/#23-%E5%85%AC%E4%BC%97%E5%8F%B7-h5-%E4%B8%AD%E8%B7%B3%E8%BD%AC)。
+                     * 
+                     */
+                    void SetUrlUseEnv(const std::string& _urlUseEnv);
+
+                    /**
+                     * 判断参数 UrlUseEnv 是否已赋值
+                     * @return UrlUseEnv 是否已赋值
+                     * 
+                     */
+                    bool UrlUseEnvHasBeenSet() const;
+
                 private:
 
                     /**
@@ -679,7 +740,7 @@ namespace TencentCloud
                     /**
                      * 签署链接类型,可以设置的参数如下
 <ul><li> **WEIXINAPP** :(默认)跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型 ，此时返回短链</li>
-<li> **CHANNEL** :带有H5引导页的跳转电子签小程序的链接</li>
+<li> **CHANNEL** :带有H5引导页的跳转电子签小程序的链接(<b>GenerateType非ALL时候不能设置成CHANNEL</b>)</li>
 <li> **APP** :第三方App或小程序跳转电子签小程序的path, App或者小程序跳转适合此类型</li>
 <li> **LONGURL2WEIXINAPP** :跳转电子签小程序的链接, H5跳转适合此类型，此时返回长链</li></ul>
 
@@ -712,23 +773,29 @@ namespace TencentCloud
 
                     /**
                      * 合同流程里边参与方的姓名。
-注: `GenerateType为"PERSON"(即个人签署方)时必填`
+注: 
+1. `GenerateType为"PERSON"(即个人签署方)时必填`。
+2. `在动态签署人补充链接场景中，可以通过传入这个值，对补充的个人参与方信息进行限制。仅匹配传入姓名的参与方才能补充合同。此参数预设信息功能暂时仅支持个人动态参与方。`
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 合同流程里边签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。
-注:  `GenerateType为"PERSON"或"FOLLOWER"时必填`
+注:  
+1. `GenerateType为"PERSON"或"FOLLOWER"时必填。`
+2. `在动态签署人补充链接场景中，可以通过传入此值，对补充的个人参与方信息进行限制。仅匹配传入手机号的参与方才能补充合同。此参数预设信息功能暂时仅支持个人动态参与方。`
                      */
                     std::string m_mobile;
                     bool m_mobileHasBeenSet;
 
                     /**
                      * 证件类型，支持以下类型
-<ul><li>ID_CARD : 居民身份证</li>
-<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
-<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
+<ul><li>ID_CARD : 中国大陆居民身份证</li>
+<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>
+
+`注：在动态签署人补充链接场景中，可以通过传入此值，对补充的个人参与方信息进行限制。仅匹配传入证件类型的参与方才能补充合同。此参数预设信息功能暂时仅支持个人动态参与方，且需要和证件号参数一同传递，不能单独进行限制。`
                      */
                     std::string m_idCardType;
                     bool m_idCardTypeHasBeenSet;
@@ -736,8 +803,10 @@ namespace TencentCloud
                     /**
                      * 证件号码，应符合以下规则
 <ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li>
-<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>
+<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>
 <li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+
+`注：在动态签署人补充链接场景中，可以通过传入此值，对补充的个人参与方信息进行限制。仅匹配传入证件号的参与方才能补充合同。此参数预设信息功能暂时仅支持个人动态参与方。`
                      */
                     std::string m_idCardNumber;
                     bool m_idCardNumberHasBeenSet;
@@ -807,6 +876,14 @@ namespace TencentCloud
                      */
                     FlowGroupUrlInfo m_flowGroupUrlInfo;
                     bool m_flowGroupUrlInfoHasBeenSet;
+
+                    /**
+                     * <font color="red">仅公众号 H5 跳转电子签小程序时</font>，如需签署完成的“返回应用”功能，在获取签署链接接口的 UrlUseEnv 参数需设置为 **WeChatOfficialAccounts**，小程序签署成功的结果页面中才会出现“返回应用”按钮。在用户点击“返回应用”按钮之后，会返回到公众号 H5。 
+
+参考 [公众号 H5 跳转电子签小程序](https://qian.tencent.com/developers/company/openwxminiprogram/#23-%E5%85%AC%E4%BC%97%E5%8F%B7-h5-%E4%B8%AD%E8%B7%B3%E8%BD%AC)。
+                     */
+                    std::string m_urlUseEnv;
+                    bool m_urlUseEnvHasBeenSet;
 
                 };
             }

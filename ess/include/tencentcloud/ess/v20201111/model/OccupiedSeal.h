@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -176,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取审核失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailReason 审核失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFailReason() const;
 
                     /**
                      * 设置审核失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _failReason 审核失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFailReason(const std::string& _failReason);
@@ -264,18 +260,14 @@ namespace TencentCloud
 
                     /**
                      * 获取授权人列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthorizedUsers 授权人列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AuthorizedUser> GetAuthorizedUsers() const;
 
                     /**
                      * 设置授权人列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _authorizedUsers 授权人列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuthorizedUsers(const std::vector<AuthorizedUser>& _authorizedUsers);
@@ -289,18 +281,14 @@ namespace TencentCloud
 
                     /**
                      * 获取印章扩展数据信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtendScene 印章扩展数据信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ExtendScene GetExtendScene() const;
 
                     /**
                      * 设置印章扩展数据信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _extendScene 印章扩展数据信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExtendScene(const ExtendScene& _extendScene);
@@ -311,6 +299,111 @@ namespace TencentCloud
                      * 
                      */
                     bool ExtendSceneHasBeenSet() const;
+
+                    /**
+                     * 获取印章的真实宽度，单位毫米
+                     * @return RealWidth 印章的真实宽度，单位毫米
+                     * 
+                     */
+                    int64_t GetRealWidth() const;
+
+                    /**
+                     * 设置印章的真实宽度，单位毫米
+                     * @param _realWidth 印章的真实宽度，单位毫米
+                     * 
+                     */
+                    void SetRealWidth(const int64_t& _realWidth);
+
+                    /**
+                     * 判断参数 RealWidth 是否已赋值
+                     * @return RealWidth 是否已赋值
+                     * 
+                     */
+                    bool RealWidthHasBeenSet() const;
+
+                    /**
+                     * 获取印章的真实高度，单位毫米
+                     * @return RealHeight 印章的真实高度，单位毫米
+                     * 
+                     */
+                    int64_t GetRealHeight() const;
+
+                    /**
+                     * 设置印章的真实高度，单位毫米
+                     * @param _realHeight 印章的真实高度，单位毫米
+                     * 
+                     */
+                    void SetRealHeight(const int64_t& _realHeight);
+
+                    /**
+                     * 判断参数 RealHeight 是否已赋值
+                     * @return RealHeight 是否已赋值
+                     * 
+                     */
+                    bool RealHeightHasBeenSet() const;
+
+                    /**
+                     * 获取自定义子类型印章
+                     * @return SubSealType 自定义子类型印章
+                     * 
+                     */
+                    std::string GetSubSealType() const;
+
+                    /**
+                     * 设置自定义子类型印章
+                     * @param _subSealType 自定义子类型印章
+                     * 
+                     */
+                    void SetSubSealType(const std::string& _subSealType);
+
+                    /**
+                     * 判断参数 SubSealType 是否已赋值
+                     * @return SubSealType 是否已赋值
+                     * 
+                     */
+                    bool SubSealTypeHasBeenSet() const;
+
+                    /**
+                     * 获取自定义子类型印章名称
+                     * @return SubSealName 自定义子类型印章名称
+                     * 
+                     */
+                    std::string GetSubSealName() const;
+
+                    /**
+                     * 设置自定义子类型印章名称
+                     * @param _subSealName 自定义子类型印章名称
+                     * 
+                     */
+                    void SetSubSealName(const std::string& _subSealName);
+
+                    /**
+                     * 判断参数 SubSealName 是否已赋值
+                     * @return SubSealName 是否已赋值
+                     * 
+                     */
+                    bool SubSealNameHasBeenSet() const;
+
+                    /**
+                     * 获取印章描述
+                     * @return SealDescription 印章描述
+                     * 
+                     */
+                    std::string GetSealDescription() const;
+
+                    /**
+                     * 设置印章描述
+                     * @param _sealDescription 印章描述
+                     * 
+                     */
+                    void SetSealDescription(const std::string& _sealDescription);
+
+                    /**
+                     * 判断参数 SealDescription 是否已赋值
+                     * @return SealDescription 是否已赋值
+                     * 
+                     */
+                    bool SealDescriptionHasBeenSet() const;
 
                 private:
 
@@ -352,7 +445,6 @@ namespace TencentCloud
 
                     /**
                      * 审核失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_failReason;
                     bool m_failReasonHasBeenSet;
@@ -377,17 +469,45 @@ namespace TencentCloud
 
                     /**
                      * 授权人列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AuthorizedUser> m_authorizedUsers;
                     bool m_authorizedUsersHasBeenSet;
 
                     /**
                      * 印章扩展数据信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ExtendScene m_extendScene;
                     bool m_extendSceneHasBeenSet;
+
+                    /**
+                     * 印章的真实宽度，单位毫米
+                     */
+                    int64_t m_realWidth;
+                    bool m_realWidthHasBeenSet;
+
+                    /**
+                     * 印章的真实高度，单位毫米
+                     */
+                    int64_t m_realHeight;
+                    bool m_realHeightHasBeenSet;
+
+                    /**
+                     * 自定义子类型印章
+                     */
+                    std::string m_subSealType;
+                    bool m_subSealTypeHasBeenSet;
+
+                    /**
+                     * 自定义子类型印章名称
+                     */
+                    std::string m_subSealName;
+                    bool m_subSealNameHasBeenSet;
+
+                    /**
+                     * 印章描述
+                     */
+                    std::string m_sealDescription;
+                    bool m_sealDescriptionHasBeenSet;
 
                 };
             }

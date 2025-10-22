@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,7 +51,8 @@ EmrListInstance::EmrListInstance() :
     m_isHandsClusterHasBeenSet(false),
     m_outSideSoftInfoHasBeenSet(false),
     m_isSupportOutsideClusterHasBeenSet(false),
-    m_isDedicatedClusterHasBeenSet(false)
+    m_isDedicatedClusterHasBeenSet(false),
+    m_isSupportCloneHasBeenSet(false)
 {
 }
 
@@ -390,6 +391,16 @@ CoreInternalOutcome EmrListInstance::Deserialize(const rapidjson::Value &value)
         m_isDedicatedClusterHasBeenSet = true;
     }
 
+    if (value.HasMember("IsSupportClone") && !value["IsSupportClone"].IsNull())
+    {
+        if (!value["IsSupportClone"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `EmrListInstance.IsSupportClone` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSupportClone = value["IsSupportClone"].GetBool();
+        m_isSupportCloneHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -657,6 +668,14 @@ void EmrListInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "IsDedicatedCluster";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isDedicatedCluster, allocator);
+    }
+
+    if (m_isSupportCloneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSupportClone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSupportClone, allocator);
     }
 
 }
@@ -1156,5 +1175,21 @@ void EmrListInstance::SetIsDedicatedCluster(const bool& _isDedicatedCluster)
 bool EmrListInstance::IsDedicatedClusterHasBeenSet() const
 {
     return m_isDedicatedClusterHasBeenSet;
+}
+
+bool EmrListInstance::GetIsSupportClone() const
+{
+    return m_isSupportClone;
+}
+
+void EmrListInstance::SetIsSupportClone(const bool& _isSupportClone)
+{
+    m_isSupportClone = _isSupportClone;
+    m_isSupportCloneHasBeenSet = true;
+}
+
+bool EmrListInstance::IsSupportCloneHasBeenSet() const
+{
+    return m_isSupportCloneHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -513,6 +513,49 @@ OrganizationClient::BindOrganizationMemberAuthAccountOutcomeCallable Organizatio
     return task->get_future();
 }
 
+OrganizationClient::BindOrganizationPolicySubAccountOutcome OrganizationClient::BindOrganizationPolicySubAccount(const BindOrganizationPolicySubAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "BindOrganizationPolicySubAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BindOrganizationPolicySubAccountResponse rsp = BindOrganizationPolicySubAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BindOrganizationPolicySubAccountOutcome(rsp);
+        else
+            return BindOrganizationPolicySubAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return BindOrganizationPolicySubAccountOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::BindOrganizationPolicySubAccountAsync(const BindOrganizationPolicySubAccountRequest& request, const BindOrganizationPolicySubAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BindOrganizationPolicySubAccount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::BindOrganizationPolicySubAccountOutcomeCallable OrganizationClient::BindOrganizationPolicySubAccountCallable(const BindOrganizationPolicySubAccountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BindOrganizationPolicySubAccountOutcome()>>(
+        [this, request]()
+        {
+            return this->BindOrganizationPolicySubAccount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OrganizationClient::CancelOrganizationMemberAuthAccountOutcome OrganizationClient::CancelOrganizationMemberAuthAccount(const CancelOrganizationMemberAuthAccountRequest &request)
 {
     auto outcome = MakeRequest(request, "CancelOrganizationMemberAuthAccount");
@@ -549,6 +592,49 @@ OrganizationClient::CancelOrganizationMemberAuthAccountOutcomeCallable Organizat
         [this, request]()
         {
             return this->CancelOrganizationMemberAuthAccount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OrganizationClient::CancelOrganizationPolicySubAccountOutcome OrganizationClient::CancelOrganizationPolicySubAccount(const CancelOrganizationPolicySubAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelOrganizationPolicySubAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelOrganizationPolicySubAccountResponse rsp = CancelOrganizationPolicySubAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelOrganizationPolicySubAccountOutcome(rsp);
+        else
+            return CancelOrganizationPolicySubAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelOrganizationPolicySubAccountOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::CancelOrganizationPolicySubAccountAsync(const CancelOrganizationPolicySubAccountRequest& request, const CancelOrganizationPolicySubAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CancelOrganizationPolicySubAccount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::CancelOrganizationPolicySubAccountOutcomeCallable OrganizationClient::CancelOrganizationPolicySubAccountCallable(const CancelOrganizationPolicySubAccountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CancelOrganizationPolicySubAccountOutcome()>>(
+        [this, request]()
+        {
+            return this->CancelOrganizationPolicySubAccount(request);
         }
     );
 
@@ -2534,6 +2620,49 @@ OrganizationClient::DescribeOrganizationMembersOutcomeCallable OrganizationClien
     return task->get_future();
 }
 
+OrganizationClient::DescribeOrganizationMembersAuthPolicyOutcome OrganizationClient::DescribeOrganizationMembersAuthPolicy(const DescribeOrganizationMembersAuthPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOrganizationMembersAuthPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOrganizationMembersAuthPolicyResponse rsp = DescribeOrganizationMembersAuthPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOrganizationMembersAuthPolicyOutcome(rsp);
+        else
+            return DescribeOrganizationMembersAuthPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOrganizationMembersAuthPolicyOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::DescribeOrganizationMembersAuthPolicyAsync(const DescribeOrganizationMembersAuthPolicyRequest& request, const DescribeOrganizationMembersAuthPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOrganizationMembersAuthPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::DescribeOrganizationMembersAuthPolicyOutcomeCallable OrganizationClient::DescribeOrganizationMembersAuthPolicyCallable(const DescribeOrganizationMembersAuthPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOrganizationMembersAuthPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOrganizationMembersAuthPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OrganizationClient::DescribeOrganizationNodesOutcome OrganizationClient::DescribeOrganizationNodes(const DescribeOrganizationNodesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeOrganizationNodes");
@@ -2656,6 +2785,49 @@ OrganizationClient::DescribePolicyConfigOutcomeCallable OrganizationClient::Desc
         [this, request]()
         {
             return this->DescribePolicyConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OrganizationClient::DescribeResourceToShareMemberOutcome OrganizationClient::DescribeResourceToShareMember(const DescribeResourceToShareMemberRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourceToShareMember");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourceToShareMemberResponse rsp = DescribeResourceToShareMemberResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourceToShareMemberOutcome(rsp);
+        else
+            return DescribeResourceToShareMemberOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourceToShareMemberOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::DescribeResourceToShareMemberAsync(const DescribeResourceToShareMemberRequest& request, const DescribeResourceToShareMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeResourceToShareMember(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::DescribeResourceToShareMemberOutcomeCallable OrganizationClient::DescribeResourceToShareMemberCallable(const DescribeResourceToShareMemberRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeResourceToShareMemberOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeResourceToShareMember(request);
         }
     );
 
@@ -4935,6 +5107,49 @@ OrganizationClient::UpdateOrganizationMemberEmailBindOutcomeCallable Organizatio
         [this, request]()
         {
             return this->UpdateOrganizationMemberEmailBind(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OrganizationClient::UpdateOrganizationMembersPolicyOutcome OrganizationClient::UpdateOrganizationMembersPolicy(const UpdateOrganizationMembersPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateOrganizationMembersPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateOrganizationMembersPolicyResponse rsp = UpdateOrganizationMembersPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateOrganizationMembersPolicyOutcome(rsp);
+        else
+            return UpdateOrganizationMembersPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateOrganizationMembersPolicyOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::UpdateOrganizationMembersPolicyAsync(const UpdateOrganizationMembersPolicyRequest& request, const UpdateOrganizationMembersPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateOrganizationMembersPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::UpdateOrganizationMembersPolicyOutcomeCallable OrganizationClient::UpdateOrganizationMembersPolicyCallable(const UpdateOrganizationMembersPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateOrganizationMembersPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateOrganizationMembersPolicy(request);
         }
     );
 

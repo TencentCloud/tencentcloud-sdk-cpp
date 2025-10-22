@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -95,18 +95,14 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤器
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FilterParam 过滤器
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FilterMapParam> GetFilterParam() const;
 
                     /**
                      * 设置过滤器
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _filterParam 过滤器
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFilterParam(const std::vector<FilterMapParam>& _filterParam);
@@ -120,18 +116,14 @@ namespace TencentCloud
 
                     /**
                      * 获取失败处理
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailureParam 失败处理
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     FailureParam GetFailureParam() const;
 
                     /**
                      * 设置失败处理
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _failureParam 失败处理
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFailureParam(const FailureParam& _failureParam);
@@ -145,18 +137,14 @@ namespace TencentCloud
 
                     /**
                      * 获取测试结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 测试结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 设置测试结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _result 测试结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResult(const std::string& _result);
@@ -170,18 +158,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceType 数据来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSourceType() const;
 
                     /**
                      * 设置数据来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sourceType 数据来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSourceType(const std::string& _sourceType);
@@ -195,18 +179,14 @@ namespace TencentCloud
 
                     /**
                      * 获取输出格式，JSON，ROW，默认为JSON
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutputFormat 输出格式，JSON，ROW，默认为JSON
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOutputFormat() const;
 
                     /**
                      * 设置输出格式，JSON，ROW，默认为JSON
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _outputFormat 输出格式，JSON，ROW，默认为JSON
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutputFormat(const std::string& _outputFormat);
@@ -220,18 +200,14 @@ namespace TencentCloud
 
                     /**
                      * 获取输出格式为ROW必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RowParam 输出格式为ROW必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RowParam GetRowParam() const;
 
                     /**
                      * 设置输出格式为ROW必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rowParam 输出格式为ROW必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRowParam(const RowParam& _rowParam);
@@ -245,18 +221,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否保留数据源Topic元数据信息（源Topic、Partition、Offset），默认为false
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeepMetadata 是否保留数据源Topic元数据信息（源Topic、Partition、Offset），默认为false
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetKeepMetadata() const;
 
                     /**
                      * 设置是否保留数据源Topic元数据信息（源Topic、Partition、Offset），默认为false
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _keepMetadata 是否保留数据源Topic元数据信息（源Topic、Partition、Offset），默认为false
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKeepMetadata(const bool& _keepMetadata);
@@ -270,18 +242,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数组解析
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BatchAnalyse 数组解析
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BatchAnalyseParam GetBatchAnalyse() const;
 
                     /**
                      * 设置数组解析
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _batchAnalyse 数组解析
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBatchAnalyse(const BatchAnalyseParam& _batchAnalyse);
@@ -309,56 +277,48 @@ namespace TencentCloud
 
                     /**
                      * 过滤器
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FilterMapParam> m_filterParam;
                     bool m_filterParamHasBeenSet;
 
                     /**
                      * 失败处理
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     FailureParam m_failureParam;
                     bool m_failureParamHasBeenSet;
 
                     /**
                      * 测试结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;
 
                     /**
                      * 数据来源
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sourceType;
                     bool m_sourceTypeHasBeenSet;
 
                     /**
                      * 输出格式，JSON，ROW，默认为JSON
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_outputFormat;
                     bool m_outputFormatHasBeenSet;
 
                     /**
                      * 输出格式为ROW必填
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RowParam m_rowParam;
                     bool m_rowParamHasBeenSet;
 
                     /**
                      * 是否保留数据源Topic元数据信息（源Topic、Partition、Offset），默认为false
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_keepMetadata;
                     bool m_keepMetadataHasBeenSet;
 
                     /**
                      * 数组解析
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BatchAnalyseParam m_batchAnalyse;
                     bool m_batchAnalyseHasBeenSet;

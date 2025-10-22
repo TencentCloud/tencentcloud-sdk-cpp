@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,8 @@ VulInfoHostInfo::VulInfoHostInfo() :
     m_quuidHasBeenSet(false),
     m_isSupportAutoFixHasBeenSet(false),
     m_uuidHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_machineTypeHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,16 @@ CoreInternalOutcome VulInfoHostInfo::Deserialize(const rapidjson::Value &value)
         m_instanceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("MachineType") && !value["MachineType"].IsNull())
+    {
+        if (!value["MachineType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulInfoHostInfo.MachineType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_machineType = string(value["MachineType"].GetString());
+        m_machineTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -175,6 +186,14 @@ void VulInfoHostInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_machineTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -290,5 +309,21 @@ void VulInfoHostInfo::SetInstanceId(const string& _instanceId)
 bool VulInfoHostInfo::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+string VulInfoHostInfo::GetMachineType() const
+{
+    return m_machineType;
+}
+
+void VulInfoHostInfo::SetMachineType(const string& _machineType)
+{
+    m_machineType = _machineType;
+    m_machineTypeHasBeenSet = true;
+}
+
+bool VulInfoHostInfo::MachineTypeHasBeenSet() const
+{
+    return m_machineTypeHasBeenSet;
 }
 

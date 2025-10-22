@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例id信息
-                     * @return InstanceId 实例id信息
+                     * 获取ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
+                     * @return InstanceId ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例id信息
-                     * @param _instanceId 实例id信息
+                     * 设置ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
+                     * @param _instanceId ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool OperationHasBeenSet() const;
 
                     /**
-                     * 获取权限类型，(2:DENY，3:ALLOW)，当前ckakfa支持ALLOW(相当于白名单)，其它用于后续兼容开源kafka的acl时使用
-                     * @return PermissionType 权限类型，(2:DENY，3:ALLOW)，当前ckakfa支持ALLOW(相当于白名单)，其它用于后续兼容开源kafka的acl时使用
+                     * 获取权限类型，(2:DENY，3:ALLOW)，当前ckafka支持ALLOW(相当于白名单)，其它用于后续兼容开源kafka的acl时使用
+                     * @return PermissionType 权限类型，(2:DENY，3:ALLOW)，当前ckafka支持ALLOW(相当于白名单)，其它用于后续兼容开源kafka的acl时使用
                      * 
                      */
                     int64_t GetPermissionType() const;
 
                     /**
-                     * 设置权限类型，(2:DENY，3:ALLOW)，当前ckakfa支持ALLOW(相当于白名单)，其它用于后续兼容开源kafka的acl时使用
-                     * @param _permissionType 权限类型，(2:DENY，3:ALLOW)，当前ckakfa支持ALLOW(相当于白名单)，其它用于后续兼容开源kafka的acl时使用
+                     * 设置权限类型，(2:DENY，3:ALLOW)，当前ckafka支持ALLOW(相当于白名单)，其它用于后续兼容开源kafka的acl时使用
+                     * @param _permissionType 权限类型，(2:DENY，3:ALLOW)，当前ckafka支持ALLOW(相当于白名单)，其它用于后续兼容开源kafka的acl时使用
                      * 
                      */
                     void SetPermissionType(const int64_t& _permissionType);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool HostHasBeenSet() const;
 
                     /**
-                     * 获取用户列表，默认为*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户
-                     * @return Principal 用户列表，默认为*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户
+                     * 获取用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户
+                     * @return Principal 用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户
                      * 
                      */
                     std::string GetPrincipal() const;
 
                     /**
-                     * 设置用户列表，默认为*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户
-                     * @param _principal 用户列表，默认为*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户
+                     * 设置用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户
+                     * @param _principal 用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户
                      * 
                      */
                     void SetPrincipal(const std::string& _principal);
@@ -192,7 +192,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例id信息
+                     * ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -216,7 +216,7 @@ namespace TencentCloud
                     bool m_operationHasBeenSet;
 
                     /**
-                     * 权限类型，(2:DENY，3:ALLOW)，当前ckakfa支持ALLOW(相当于白名单)，其它用于后续兼容开源kafka的acl时使用
+                     * 权限类型，(2:DENY，3:ALLOW)，当前ckafka支持ALLOW(相当于白名单)，其它用于后续兼容开源kafka的acl时使用
                      */
                     int64_t m_permissionType;
                     bool m_permissionTypeHasBeenSet;
@@ -228,7 +228,7 @@ namespace TencentCloud
                     bool m_hostHasBeenSet;
 
                     /**
-                     * 用户列表，默认为*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户
+                     * 用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户
                      */
                     std::string m_principal;
                     bool m_principalHasBeenSet;

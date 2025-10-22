@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -152,6 +152,27 @@ namespace TencentCloud
                      */
                     bool WorkSpaceIdHasBeenSet() const;
 
+                    /**
+                     * 获取资源类型，0=用户，1系统connector，2=用户自定义connector
+                     * @return SystemResource 资源类型，0=用户，1系统connector，2=用户自定义connector
+                     * 
+                     */
+                    uint64_t GetSystemResource() const;
+
+                    /**
+                     * 设置资源类型，0=用户，1系统connector，2=用户自定义connector
+                     * @param _systemResource 资源类型，0=用户，1系统connector，2=用户自定义connector
+                     * 
+                     */
+                    void SetSystemResource(const uint64_t& _systemResource);
+
+                    /**
+                     * 判断参数 SystemResource 是否已赋值
+                     * @return SystemResource 是否已赋值
+                     * 
+                     */
+                    bool SystemResourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -184,6 +205,12 @@ namespace TencentCloud
                      */
                     std::string m_workSpaceId;
                     bool m_workSpaceIdHasBeenSet;
+
+                    /**
+                     * 资源类型，0=用户，1系统connector，2=用户自定义connector
+                     */
+                    uint64_t m_systemResource;
+                    bool m_systemResourceHasBeenSet;
 
                 };
             }

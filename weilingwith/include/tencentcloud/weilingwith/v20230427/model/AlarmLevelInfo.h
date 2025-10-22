@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取级别id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LevelId 级别id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLevelId() const;
 
                     /**
                      * 设置级别id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _levelId 级别id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevelId(const int64_t& _levelId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取级别名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LevelName 级别名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLevelName() const;
 
                     /**
                      * 设置级别名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _levelName 级别名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevelName(const std::string& _levelName);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 级别id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_levelId;
                     bool m_levelIdHasBeenSet;
 
                     /**
                      * 级别名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_levelName;
                     bool m_levelNameHasBeenSet;

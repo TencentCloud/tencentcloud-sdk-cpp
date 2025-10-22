@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -80,9 +80,7 @@ namespace TencentCloud
 
                     /**
                      * 获取任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowName 任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlowName() const;
@@ -97,10 +95,8 @@ namespace TencentCloud
                     /**
                      * 获取总任务流程进度：
 例如：0.8
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowTotalProgress 总任务流程进度：
 例如：0.8
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetFlowTotalProgress() const;
@@ -120,7 +116,6 @@ namespace TencentCloud
 3:完成（存在跳过步骤），
 -1:失败，
 -3:阻塞，
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowTotalStatus 定义流程总状态：
 0:初始化，
 1:运行中，
@@ -128,7 +123,6 @@ namespace TencentCloud
 3:完成（存在跳过步骤），
 -1:失败，
 -3:阻塞，
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFlowTotalStatus() const;
@@ -158,6 +152,20 @@ NeedExtraDetail为true时返回
                      */
                     bool FlowExtraDetailHasBeenSet() const;
 
+                    /**
+                     * 获取流程描述
+                     * @return FlowInfo 流程描述
+                     * 
+                     */
+                    std::string GetFlowInfo() const;
+
+                    /**
+                     * 判断参数 FlowInfo 是否已赋值
+                     * @return FlowInfo 是否已赋值
+                     * 
+                     */
+                    bool FlowInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -176,7 +184,6 @@ NeedExtraDetail为true时返回
 
                     /**
                      * 任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowName;
                     bool m_flowNameHasBeenSet;
@@ -184,7 +191,6 @@ NeedExtraDetail为true时返回
                     /**
                      * 总任务流程进度：
 例如：0.8
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_flowTotalProgress;
                     bool m_flowTotalProgressHasBeenSet;
@@ -197,7 +203,6 @@ NeedExtraDetail为true时返回
 3:完成（存在跳过步骤），
 -1:失败，
 -3:阻塞，
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_flowTotalStatus;
                     bool m_flowTotalStatusHasBeenSet;
@@ -209,6 +214,12 @@ NeedExtraDetail为true时返回
                      */
                     std::vector<FlowExtraDetail> m_flowExtraDetail;
                     bool m_flowExtraDetailHasBeenSet;
+
+                    /**
+                     * 流程描述
+                     */
+                    std::string m_flowInfo;
+                    bool m_flowInfoHasBeenSet;
 
                 };
             }

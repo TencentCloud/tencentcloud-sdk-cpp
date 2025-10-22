@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -288,6 +288,56 @@ namespace TencentCloud
                      */
                     bool QueueCheckPointWritesHasBeenSet() const;
 
+                    /**
+                     * 获取创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateTime 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _createTime 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpdateTime 更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUpdateTime() const;
+
+                    /**
+                     * 设置更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _updateTime 更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUpdateTime(const std::string& _updateTime);
+
+                    /**
+                     * 判断参数 UpdateTime 是否已赋值
+                     * @return UpdateTime 是否已赋值
+                     * 
+                     */
+                    bool UpdateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -357,6 +407,20 @@ namespace TencentCloud
                      */
                     uint64_t m_queueCheckPointWrites;
                     bool m_queueCheckPointWritesHasBeenSet;
+
+                    /**
+                     * 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_updateTime;
+                    bool m_updateTimeHasBeenSet;
 
                 };
             }

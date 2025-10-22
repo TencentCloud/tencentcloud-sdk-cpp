@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待查询的伸缩组列表，上限100。
-                     * @return AutoScalingGroupIds 待查询的伸缩组列表，上限100。
+                     * 获取待查询的伸缩组列表，上限100。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 或调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。
+                     * @return AutoScalingGroupIds 待查询的伸缩组列表，上限100。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 或调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。
                      * 
                      */
                     std::vector<std::string> GetAutoScalingGroupIds() const;
 
                     /**
-                     * 设置待查询的伸缩组列表，上限100。
-                     * @param _autoScalingGroupIds 待查询的伸缩组列表，上限100。
+                     * 设置待查询的伸缩组列表，上限100。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 或调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。
+                     * @param _autoScalingGroupIds 待查询的伸缩组列表，上限100。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 或调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。
                      * 
                      */
                     void SetAutoScalingGroupIds(const std::vector<std::string>& _autoScalingGroupIds);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 待查询的伸缩组列表，上限100。
+                     * 待查询的伸缩组列表，上限100。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 或调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。
                      */
                     std::vector<std::string> m_autoScalingGroupIds;
                     bool m_autoScalingGroupIdsHasBeenSet;

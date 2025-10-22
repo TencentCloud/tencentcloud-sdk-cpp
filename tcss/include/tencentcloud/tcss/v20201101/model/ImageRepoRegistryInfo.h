@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -196,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取仓库连接错误信息，待废弃，请使用ConnDetectException
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConnectMsg 仓库连接错误信息，待废弃，请使用ConnDetectException
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConnectMsg() const;
 
                     /**
                      * 设置仓库连接错误信息，待废弃，请使用ConnDetectException
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _connectMsg 仓库连接错误信息，待废弃，请使用ConnDetectException
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConnectMsg(const std::string& _connectMsg);
@@ -408,6 +404,27 @@ namespace TencentCloud
                      */
                     bool SyncMessageHasBeenSet() const;
 
+                    /**
+                     * 获取同步方式，0全量同步，1增量同步	
+                     * @return SyncMode 同步方式，0全量同步，1增量同步	
+                     * 
+                     */
+                    uint64_t GetSyncMode() const;
+
+                    /**
+                     * 设置同步方式，0全量同步，1增量同步	
+                     * @param _syncMode 同步方式，0全量同步，1增量同步	
+                     * 
+                     */
+                    void SetSyncMode(const uint64_t& _syncMode);
+
+                    /**
+                     * 判断参数 SyncMode 是否已赋值
+                     * @return SyncMode 是否已赋值
+                     * 
+                     */
+                    bool SyncModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -454,7 +471,6 @@ namespace TencentCloud
 
                     /**
                      * 仓库连接错误信息，待废弃，请使用ConnDetectException
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_connectMsg;
                     bool m_connectMsgHasBeenSet;
@@ -512,6 +528,12 @@ namespace TencentCloud
                      */
                     std::string m_syncMessage;
                     bool m_syncMessageHasBeenSet;
+
+                    /**
+                     * 同步方式，0全量同步，1增量同步	
+                     */
+                    uint64_t m_syncMode;
+                    bool m_syncModeHasBeenSet;
 
                 };
             }

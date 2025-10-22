@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * mongodb售卖规格
+                * mongodb售卖规格。
                 */
                 class SpecItem : public AbstractModel
                 {
@@ -48,54 +48,26 @@ namespace TencentCloud
 
                     /**
                      * 获取规格信息标识。格式如：mongo.HIO10G.128g。由节点类型、规格类型、内存规格三部分组成。
-- 节点类型，如下所示。
-  - mongo：Mongod 节点。
- - mongos：Mongos 节点。
- - cfgstr：Configserver 节点。
-- 规格类型，如下所示。
- - HIO10G：通用高HIO万兆型。
- - HCD：云盘版类型。
-- 内存规格，如下所示：
- - 支持4、8、16、32、64、128、240、512。
- - 单位g：表示GB。128g则表示128GB。
+- 节点类型：**mongo**，指 Mongod 节点；**mongos**，指 Mongos 节点；**cfgstr**，指 Configserver 节点。
+- 规格类型：**HIO10G**，指通用高HIO万兆型；**HCD**：指云盘版类型。
+- 内存规格：支持4、8、16、32、64、128、240、512。单位g：表示GB。128g 则表示128GB。
                      * @return SpecCode 规格信息标识。格式如：mongo.HIO10G.128g。由节点类型、规格类型、内存规格三部分组成。
-- 节点类型，如下所示。
-  - mongo：Mongod 节点。
- - mongos：Mongos 节点。
- - cfgstr：Configserver 节点。
-- 规格类型，如下所示。
- - HIO10G：通用高HIO万兆型。
- - HCD：云盘版类型。
-- 内存规格，如下所示：
- - 支持4、8、16、32、64、128、240、512。
- - 单位g：表示GB。128g则表示128GB。
+- 节点类型：**mongo**，指 Mongod 节点；**mongos**，指 Mongos 节点；**cfgstr**，指 Configserver 节点。
+- 规格类型：**HIO10G**，指通用高HIO万兆型；**HCD**：指云盘版类型。
+- 内存规格：支持4、8、16、32、64、128、240、512。单位g：表示GB。128g 则表示128GB。
                      * 
                      */
                     std::string GetSpecCode() const;
 
                     /**
                      * 设置规格信息标识。格式如：mongo.HIO10G.128g。由节点类型、规格类型、内存规格三部分组成。
-- 节点类型，如下所示。
-  - mongo：Mongod 节点。
- - mongos：Mongos 节点。
- - cfgstr：Configserver 节点。
-- 规格类型，如下所示。
- - HIO10G：通用高HIO万兆型。
- - HCD：云盘版类型。
-- 内存规格，如下所示：
- - 支持4、8、16、32、64、128、240、512。
- - 单位g：表示GB。128g则表示128GB。
+- 节点类型：**mongo**，指 Mongod 节点；**mongos**，指 Mongos 节点；**cfgstr**，指 Configserver 节点。
+- 规格类型：**HIO10G**，指通用高HIO万兆型；**HCD**：指云盘版类型。
+- 内存规格：支持4、8、16、32、64、128、240、512。单位g：表示GB。128g 则表示128GB。
                      * @param _specCode 规格信息标识。格式如：mongo.HIO10G.128g。由节点类型、规格类型、内存规格三部分组成。
-- 节点类型，如下所示。
-  - mongo：Mongod 节点。
- - mongos：Mongos 节点。
- - cfgstr：Configserver 节点。
-- 规格类型，如下所示。
- - HIO10G：通用高HIO万兆型。
- - HCD：云盘版类型。
-- 内存规格，如下所示：
- - 支持4、8、16、32、64、128、240、512。
- - 单位g：表示GB。128g则表示128GB。
+- 节点类型：**mongo**，指 Mongod 节点；**mongos**，指 Mongos 节点；**cfgstr**，指 Configserver 节点。
+- 规格类型：**HIO10G**，指通用高HIO万兆型；**HCD**：指云盘版类型。
+- 内存规格：支持4、8、16、32、64、128、240、512。单位g：表示GB。128g 则表示128GB。
                      * 
                      */
                     void SetSpecCode(const std::string& _specCode);
@@ -285,38 +257,38 @@ namespace TencentCloud
 
                     /**
                      * 获取实例存储引擎版本信息。
-- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。
 - MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。
 - MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。
 - MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。
 - MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。
 - MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。
+- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。
                      * @return MongoVersionCode 实例存储引擎版本信息。
-- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。
 - MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。
 - MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。
 - MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。
 - MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。
 - MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。
+- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。
                      * 
                      */
                     std::string GetMongoVersionCode() const;
 
                     /**
                      * 设置实例存储引擎版本信息。
-- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。
 - MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。
 - MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。
 - MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。
 - MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。
 - MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。
+- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。
                      * @param _mongoVersionCode 实例存储引擎版本信息。
-- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。
 - MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。
 - MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。
 - MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。
 - MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。
 - MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。
+- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。
                      * 
                      */
                     void SetMongoVersionCode(const std::string& _mongoVersionCode);
@@ -350,19 +322,15 @@ namespace TencentCloud
                     bool MongoVersionValueHasBeenSet() const;
 
                     /**
-                     * 获取实例版本信息。支持：3.6、4.2、4.4、5.0、6.0。
-
-                     * @return Version 实例版本信息。支持：3.6、4.2、4.4、5.0、6.0。
-
+                     * 获取实例版本信息。支持：4.2、4.4、5.0、6.0、7.0。
+                     * @return Version 实例版本信息。支持：4.2、4.4、5.0、6.0、7.0。
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
-                     * 设置实例版本信息。支持：3.6、4.2、4.4、5.0、6.0。
-
-                     * @param _version 实例版本信息。支持：3.6、4.2、4.4、5.0、6.0。
-
+                     * 设置实例版本信息。支持：4.2、4.4、5.0、6.0、7.0。
+                     * @param _version 实例版本信息。支持：4.2、4.4、5.0、6.0、7.0。
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -583,16 +551,9 @@ namespace TencentCloud
 
                     /**
                      * 规格信息标识。格式如：mongo.HIO10G.128g。由节点类型、规格类型、内存规格三部分组成。
-- 节点类型，如下所示。
-  - mongo：Mongod 节点。
- - mongos：Mongos 节点。
- - cfgstr：Configserver 节点。
-- 规格类型，如下所示。
- - HIO10G：通用高HIO万兆型。
- - HCD：云盘版类型。
-- 内存规格，如下所示：
- - 支持4、8、16、32、64、128、240、512。
- - 单位g：表示GB。128g则表示128GB。
+- 节点类型：**mongo**，指 Mongod 节点；**mongos**，指 Mongos 节点；**cfgstr**，指 Configserver 节点。
+- 规格类型：**HIO10G**，指通用高HIO万兆型；**HCD**：指云盘版类型。
+- 内存规格：支持4、8、16、32、64、128、240、512。单位g：表示GB。128g 则表示128GB。
                      */
                     std::string m_specCode;
                     bool m_specCodeHasBeenSet;
@@ -649,12 +610,12 @@ namespace TencentCloud
 
                     /**
                      * 实例存储引擎版本信息。
-- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。
 - MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。
 - MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。
 - MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。
 - MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。
 - MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。
+- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。
                      */
                     std::string m_mongoVersionCode;
                     bool m_mongoVersionCodeHasBeenSet;
@@ -666,8 +627,7 @@ namespace TencentCloud
                     bool m_mongoVersionValueHasBeenSet;
 
                     /**
-                     * 实例版本信息。支持：3.6、4.2、4.4、5.0、6.0。
-
+                     * 实例版本信息。支持：4.2、4.4、5.0、6.0、7.0。
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;

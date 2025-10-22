@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ using namespace TencentCloud::Lke::V20231130::Model;
 using namespace std;
 
 CreateAppResponse::CreateAppResponse() :
-    m_appBizIdHasBeenSet(false)
+    m_appBizIdHasBeenSet(false),
+    m_isCustomListHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome CreateAppResponse::Deserialize(const string &payload)
         m_appBizIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IsCustomList") && !rsp["IsCustomList"].IsNull())
+    {
+        if (!rsp["IsCustomList"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsCustomList` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isCustomList = rsp["IsCustomList"].GetBool();
+        m_isCustomListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -90,11 +101,19 @@ string CreateAppResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_appBizId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_isCustomListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCustomList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isCustomList, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -110,6 +129,16 @@ string CreateAppResponse::GetAppBizId() const
 bool CreateAppResponse::AppBizIdHasBeenSet() const
 {
     return m_appBizIdHasBeenSet;
+}
+
+bool CreateAppResponse::GetIsCustomList() const
+{
+    return m_isCustomList;
+}
+
+bool CreateAppResponse::IsCustomListHasBeenSet() const
+{
+    return m_isCustomListHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,6 +37,7 @@ DspaDiscoveryCOSTaskResultDetail::DspaDiscoveryCOSTaskResultDetail() :
     m_fileTypeHasBeenSet(false),
     m_sensitiveDataCountHasBeenSet(false),
     m_categoryFullPathHasBeenSet(false),
+    m_categoryArrHasBeenSet(false),
     m_complianceIdHasBeenSet(false),
     m_resultIdHasBeenSet(false)
 {
@@ -210,6 +211,19 @@ CoreInternalOutcome DspaDiscoveryCOSTaskResultDetail::Deserialize(const rapidjso
         m_categoryFullPathHasBeenSet = true;
     }
 
+    if (value.HasMember("CategoryArr") && !value["CategoryArr"].IsNull())
+    {
+        if (!value["CategoryArr"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DspaDiscoveryCOSTaskResultDetail.CategoryArr` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CategoryArr"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_categoryArr.push_back((*itr).GetString());
+        }
+        m_categoryArrHasBeenSet = true;
+    }
+
     if (value.HasMember("ComplianceId") && !value["ComplianceId"].IsNull())
     {
         if (!value["ComplianceId"].IsInt64())
@@ -365,6 +379,19 @@ void DspaDiscoveryCOSTaskResultDetail::ToJsonObject(rapidjson::Value &value, rap
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_categoryFullPath.begin(); itr != m_categoryFullPath.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_categoryArrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CategoryArr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_categoryArr.begin(); itr != m_categoryArr.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -643,6 +670,22 @@ void DspaDiscoveryCOSTaskResultDetail::SetCategoryFullPath(const vector<string>&
 bool DspaDiscoveryCOSTaskResultDetail::CategoryFullPathHasBeenSet() const
 {
     return m_categoryFullPathHasBeenSet;
+}
+
+vector<string> DspaDiscoveryCOSTaskResultDetail::GetCategoryArr() const
+{
+    return m_categoryArr;
+}
+
+void DspaDiscoveryCOSTaskResultDetail::SetCategoryArr(const vector<string>& _categoryArr)
+{
+    m_categoryArr = _categoryArr;
+    m_categoryArrHasBeenSet = true;
+}
+
+bool DspaDiscoveryCOSTaskResultDetail::CategoryArrHasBeenSet() const
+{
+    return m_categoryArrHasBeenSet;
 }
 
 int64_t DspaDiscoveryCOSTaskResultDetail::GetComplianceId() const

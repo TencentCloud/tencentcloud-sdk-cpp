@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -130,21 +130,21 @@ namespace TencentCloud
                     /**
                      * 获取按照引擎筛选实例。
                      * @return EngineNames 按照引擎筛选实例。
-                     * 
+                     * @deprecated
                      */
                     std::vector<std::string> GetEngineNames() const;
 
                     /**
                      * 设置按照引擎筛选实例。
                      * @param _engineNames 按照引擎筛选实例。
-                     * 
+                     * @deprecated
                      */
                     void SetEngineNames(const std::vector<std::string>& _engineNames);
 
                     /**
                      * 判断参数 EngineNames 是否已赋值
                      * @return EngineNames 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool EngineNamesHasBeenSet() const;
 
@@ -170,6 +170,27 @@ namespace TencentCloud
                     bool EngineVersionsHasBeenSet() const;
 
                     /**
+                     * 获取按照api版本筛选实例
+                     * @return ApiVersions 按照api版本筛选实例
+                     * 
+                     */
+                    std::vector<std::string> GetApiVersions() const;
+
+                    /**
+                     * 设置按照api版本筛选实例
+                     * @param _apiVersions 按照api版本筛选实例
+                     * 
+                     */
+                    void SetApiVersions(const std::vector<std::string>& _apiVersions);
+
+                    /**
+                     * 判断参数 ApiVersions 是否已赋值
+                     * @return ApiVersions 是否已赋值
+                     * 
+                     */
+                    bool ApiVersionsHasBeenSet() const;
+
+                    /**
                      * 获取按照创建时间筛选实例。
                      * @return CreateAt 按照创建时间筛选实例。
                      * 
@@ -193,21 +214,21 @@ namespace TencentCloud
                     /**
                      * 获取按照可用区筛选实例。
                      * @return Zones 按照可用区筛选实例。
-                     * 
+                     * @deprecated
                      */
                     std::vector<std::string> GetZones() const;
 
                     /**
                      * 设置按照可用区筛选实例。
                      * @param _zones 按照可用区筛选实例。
-                     * 
+                     * @deprecated
                      */
                     void SetZones(const std::vector<std::string>& _zones);
 
                     /**
                      * 判断参数 Zones 是否已赋值
                      * @return Zones 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ZonesHasBeenSet() const;
 
@@ -316,6 +337,48 @@ namespace TencentCloud
                      */
                     bool ResourceTagsHasBeenSet() const;
 
+                    /**
+                     * 获取任务状态：1-待执行任务；2-密钥更新中；3-网络变更中；4-参数变更中；5-embedding变更中；6-ai套件变更中；7-滚动升级中；8-纵向扩容中；9-纵向缩容中；10-横向扩容中；11-横向缩容中
+                     * @return TaskStatus 任务状态：1-待执行任务；2-密钥更新中；3-网络变更中；4-参数变更中；5-embedding变更中；6-ai套件变更中；7-滚动升级中；8-纵向扩容中；9-纵向缩容中；10-横向扩容中；11-横向缩容中
+                     * 
+                     */
+                    std::vector<int64_t> GetTaskStatus() const;
+
+                    /**
+                     * 设置任务状态：1-待执行任务；2-密钥更新中；3-网络变更中；4-参数变更中；5-embedding变更中；6-ai套件变更中；7-滚动升级中；8-纵向扩容中；9-纵向缩容中；10-横向扩容中；11-横向缩容中
+                     * @param _taskStatus 任务状态：1-待执行任务；2-密钥更新中；3-网络变更中；4-参数变更中；5-embedding变更中；6-ai套件变更中；7-滚动升级中；8-纵向扩容中；9-纵向缩容中；10-横向扩容中；11-横向缩容中
+                     * 
+                     */
+                    void SetTaskStatus(const std::vector<int64_t>& _taskStatus);
+
+                    /**
+                     * 判断参数 TaskStatus 是否已赋值
+                     * @return TaskStatus 是否已赋值
+                     * 
+                     */
+                    bool TaskStatusHasBeenSet() const;
+
+                    /**
+                     * 获取根据实例vip搜索实例
+                     * @return Networks 根据实例vip搜索实例
+                     * 
+                     */
+                    std::vector<std::string> GetNetworks() const;
+
+                    /**
+                     * 设置根据实例vip搜索实例
+                     * @param _networks 根据实例vip搜索实例
+                     * 
+                     */
+                    void SetNetworks(const std::vector<std::string>& _networks);
+
+                    /**
+                     * 判断参数 Networks 是否已赋值
+                     * @return Networks 是否已赋值
+                     * 
+                     */
+                    bool NetworksHasBeenSet() const;
+
                 private:
 
                     /**
@@ -353,6 +416,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_engineVersions;
                     bool m_engineVersionsHasBeenSet;
+
+                    /**
+                     * 按照api版本筛选实例
+                     */
+                    std::vector<std::string> m_apiVersions;
+                    bool m_apiVersionsHasBeenSet;
 
                     /**
                      * 按照创建时间筛选实例。
@@ -395,6 +464,18 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_resourceTags;
                     bool m_resourceTagsHasBeenSet;
+
+                    /**
+                     * 任务状态：1-待执行任务；2-密钥更新中；3-网络变更中；4-参数变更中；5-embedding变更中；6-ai套件变更中；7-滚动升级中；8-纵向扩容中；9-纵向缩容中；10-横向扩容中；11-横向缩容中
+                     */
+                    std::vector<int64_t> m_taskStatus;
+                    bool m_taskStatusHasBeenSet;
+
+                    /**
+                     * 根据实例vip搜索实例
+                     */
+                    std::vector<std::string> m_networks;
+                    bool m_networksHasBeenSet;
 
                 };
             }

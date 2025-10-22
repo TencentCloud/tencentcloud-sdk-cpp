@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取可用字符数
-                     * @return AvailableCharSize 可用字符数
+                     * 获取可用字符数上限
+                     * @return AvailableCharSize 可用字符数上限
                      * 
                      */
                     std::string GetAvailableCharSize() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool AvailableCharSizeHasBeenSet() const;
 
                     /**
-                     * 获取超量字符数
-                     * @return ExceedCharSize 超量字符数
+                     * 获取超过可用字符数上限的字符数
+                     * @return ExceedCharSize 超过可用字符数上限的字符数
                      * 
                      */
                     std::string GetExceedCharSize() const;
@@ -71,19 +71,39 @@ namespace TencentCloud
                      */
                     bool ExceedCharSizeHasBeenSet() const;
 
+                    /**
+                     * 获取知识库使用字符总数
+                     * @return UsedCharSize 知识库使用字符总数
+                     * 
+                     */
+                    std::string GetUsedCharSize() const;
+
+                    /**
+                     * 判断参数 UsedCharSize 是否已赋值
+                     * @return UsedCharSize 是否已赋值
+                     * 
+                     */
+                    bool UsedCharSizeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 可用字符数
+                     * 可用字符数上限
                      */
                     std::string m_availableCharSize;
                     bool m_availableCharSizeHasBeenSet;
 
                     /**
-                     * 超量字符数
+                     * 超过可用字符数上限的字符数
                      */
                     std::string m_exceedCharSize;
                     bool m_exceedCharSizeHasBeenSet;
+
+                    /**
+                     * 知识库使用字符总数
+                     */
+                    std::string m_usedCharSize;
+                    bool m_usedCharSizeHasBeenSet;
 
                 };
             }

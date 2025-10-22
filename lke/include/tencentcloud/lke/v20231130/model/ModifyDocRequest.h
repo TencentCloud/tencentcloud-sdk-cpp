@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/lke/v20231130/model/AttrLabelRefer.h>
+#include <tencentcloud/lke/v20231130/model/UpdatePeriodInfo.h>
 
 
 namespace TencentCloud
@@ -107,15 +108,15 @@ namespace TencentCloud
                     bool IsReferHasBeenSet() const;
 
                     /**
-                     * 获取属性标签适用范围 1：全部，2：按条件
-                     * @return AttrRange 属性标签适用范围 1：全部，2：按条件
+                     * 获取标签适用范围，需要传参为1
+                     * @return AttrRange 标签适用范围，需要传参为1
                      * 
                      */
                     uint64_t GetAttrRange() const;
 
                     /**
-                     * 设置属性标签适用范围 1：全部，2：按条件
-                     * @param _attrRange 属性标签适用范围 1：全部，2：按条件
+                     * 设置标签适用范围，需要传参为1
+                     * @param _attrRange 标签适用范围，需要传参为1
                      * 
                      */
                     void SetAttrRange(const uint64_t& _attrRange);
@@ -170,15 +171,15 @@ namespace TencentCloud
                     bool LoginSubAccountUinHasBeenSet() const;
 
                     /**
-                     * 获取适用范围，关联的属性标签
-                     * @return AttrLabels 适用范围，关联的属性标签
+                     * 获取关联的标签
+                     * @return AttrLabels 关联的标签
                      * 
                      */
                     std::vector<AttrLabelRefer> GetAttrLabels() const;
 
                     /**
-                     * 设置适用范围，关联的属性标签
-                     * @param _attrLabels 适用范围，关联的属性标签
+                     * 设置关联的标签
+                     * @param _attrLabels 关联的标签
                      * 
                      */
                     void SetAttrLabels(const std::vector<AttrLabelRefer>& _attrLabels);
@@ -278,6 +279,111 @@ namespace TencentCloud
                      */
                     bool ExpireEndHasBeenSet() const;
 
+                    /**
+                     * 获取分类ID
+                     * @return CateBizId 分类ID
+                     * 
+                     */
+                    std::string GetCateBizId() const;
+
+                    /**
+                     * 设置分类ID
+                     * @param _cateBizId 分类ID
+                     * 
+                     */
+                    void SetCateBizId(const std::string& _cateBizId);
+
+                    /**
+                     * 判断参数 CateBizId 是否已赋值
+                     * @return CateBizId 是否已赋值
+                     * 
+                     */
+                    bool CateBizIdHasBeenSet() const;
+
+                    /**
+                     * 获取是否可下载，IsRefer为true并且ReferUrlType为0时，该值才有意义
+                     * @return IsDownload 是否可下载，IsRefer为true并且ReferUrlType为0时，该值才有意义
+                     * 
+                     */
+                    bool GetIsDownload() const;
+
+                    /**
+                     * 设置是否可下载，IsRefer为true并且ReferUrlType为0时，该值才有意义
+                     * @param _isDownload 是否可下载，IsRefer为true并且ReferUrlType为0时，该值才有意义
+                     * 
+                     */
+                    void SetIsDownload(const bool& _isDownload);
+
+                    /**
+                     * 判断参数 IsDownload 是否已赋值
+                     * @return IsDownload 是否已赋值
+                     * 
+                     */
+                    bool IsDownloadHasBeenSet() const;
+
+                    /**
+                     * 获取需要修改的内容类型  0  无效 1 更新文档cos信息 2 更新文档引用信息 3 更新文档刷新频率 4 腾讯文档刷新
+                     * @return ModifyTypes 需要修改的内容类型  0  无效 1 更新文档cos信息 2 更新文档引用信息 3 更新文档刷新频率 4 腾讯文档刷新
+                     * 
+                     */
+                    std::vector<uint64_t> GetModifyTypes() const;
+
+                    /**
+                     * 设置需要修改的内容类型  0  无效 1 更新文档cos信息 2 更新文档引用信息 3 更新文档刷新频率 4 腾讯文档刷新
+                     * @param _modifyTypes 需要修改的内容类型  0  无效 1 更新文档cos信息 2 更新文档引用信息 3 更新文档刷新频率 4 腾讯文档刷新
+                     * 
+                     */
+                    void SetModifyTypes(const std::vector<uint64_t>& _modifyTypes);
+
+                    /**
+                     * 判断参数 ModifyTypes 是否已赋值
+                     * @return ModifyTypes 是否已赋值
+                     * 
+                     */
+                    bool ModifyTypesHasBeenSet() const;
+
+                    /**
+                     * 获取文档更新频率
+                     * @return UpdatePeriodInfo 文档更新频率
+                     * 
+                     */
+                    UpdatePeriodInfo GetUpdatePeriodInfo() const;
+
+                    /**
+                     * 设置文档更新频率
+                     * @param _updatePeriodInfo 文档更新频率
+                     * 
+                     */
+                    void SetUpdatePeriodInfo(const UpdatePeriodInfo& _updatePeriodInfo);
+
+                    /**
+                     * 判断参数 UpdatePeriodInfo 是否已赋值
+                     * @return UpdatePeriodInfo 是否已赋值
+                     * 
+                     */
+                    bool UpdatePeriodInfoHasBeenSet() const;
+
+                    /**
+                     * 获取自定义切分规则
+                     * @return SplitRule 自定义切分规则
+                     * 
+                     */
+                    std::string GetSplitRule() const;
+
+                    /**
+                     * 设置自定义切分规则
+                     * @param _splitRule 自定义切分规则
+                     * 
+                     */
+                    void SetSplitRule(const std::string& _splitRule);
+
+                    /**
+                     * 判断参数 SplitRule 是否已赋值
+                     * @return SplitRule 是否已赋值
+                     * 
+                     */
+                    bool SplitRuleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -299,7 +405,7 @@ namespace TencentCloud
                     bool m_isReferHasBeenSet;
 
                     /**
-                     * 属性标签适用范围 1：全部，2：按条件
+                     * 标签适用范围，需要传参为1
                      */
                     uint64_t m_attrRange;
                     bool m_attrRangeHasBeenSet;
@@ -317,7 +423,7 @@ namespace TencentCloud
                     bool m_loginSubAccountUinHasBeenSet;
 
                     /**
-                     * 适用范围，关联的属性标签
+                     * 关联的标签
                      */
                     std::vector<AttrLabelRefer> m_attrLabels;
                     bool m_attrLabelsHasBeenSet;
@@ -346,6 +452,36 @@ namespace TencentCloud
                      */
                     std::string m_expireEnd;
                     bool m_expireEndHasBeenSet;
+
+                    /**
+                     * 分类ID
+                     */
+                    std::string m_cateBizId;
+                    bool m_cateBizIdHasBeenSet;
+
+                    /**
+                     * 是否可下载，IsRefer为true并且ReferUrlType为0时，该值才有意义
+                     */
+                    bool m_isDownload;
+                    bool m_isDownloadHasBeenSet;
+
+                    /**
+                     * 需要修改的内容类型  0  无效 1 更新文档cos信息 2 更新文档引用信息 3 更新文档刷新频率 4 腾讯文档刷新
+                     */
+                    std::vector<uint64_t> m_modifyTypes;
+                    bool m_modifyTypesHasBeenSet;
+
+                    /**
+                     * 文档更新频率
+                     */
+                    UpdatePeriodInfo m_updatePeriodInfo;
+                    bool m_updatePeriodInfoHasBeenSet;
+
+                    /**
+                     * 自定义切分规则
+                     */
+                    std::string m_splitRule;
+                    bool m_splitRuleHasBeenSet;
 
                 };
             }

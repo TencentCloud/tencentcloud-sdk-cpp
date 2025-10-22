@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,7 +45,9 @@ BizLicenseOCRResponse::BizLicenseOCRResponse() :
     m_titleHasBeenSet(false),
     m_serialNumberHasBeenSet(false),
     m_registrationAuthorityHasBeenSet(false),
-    m_electronicHasBeenSet(false)
+    m_electronicHasBeenSet(false),
+    m_businessCertificateHasBeenSet(false),
+    m_importantHasBeenSet(false)
 {
 }
 
@@ -309,6 +311,36 @@ CoreInternalOutcome BizLicenseOCRResponse::Deserialize(const string &payload)
         m_electronicHasBeenSet = true;
     }
 
+    if (rsp.HasMember("BusinessCertificate") && !rsp["BusinessCertificate"].IsNull())
+    {
+        if (!rsp["BusinessCertificate"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `BusinessCertificate` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["BusinessCertificate"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            BusinessCertificateInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_businessCertificate.push_back(item);
+        }
+        m_businessCertificateHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Important") && !rsp["Important"].IsNull())
+    {
+        if (!rsp["Important"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Important` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_important = string(rsp["Important"].GetString());
+        m_importantHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -505,11 +537,34 @@ string BizLicenseOCRResponse::ToJsonString() const
         value.AddMember(iKey, m_electronic, allocator);
     }
 
+    if (m_businessCertificateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BusinessCertificate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_businessCertificate.begin(); itr != m_businessCertificate.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_importantHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Important";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_important.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -735,6 +790,26 @@ bool BizLicenseOCRResponse::GetElectronic() const
 bool BizLicenseOCRResponse::ElectronicHasBeenSet() const
 {
     return m_electronicHasBeenSet;
+}
+
+vector<BusinessCertificateInfo> BizLicenseOCRResponse::GetBusinessCertificate() const
+{
+    return m_businessCertificate;
+}
+
+bool BizLicenseOCRResponse::BusinessCertificateHasBeenSet() const
+{
+    return m_businessCertificateHasBeenSet;
+}
+
+string BizLicenseOCRResponse::GetImportant() const
+{
+    return m_important;
+}
+
+bool BizLicenseOCRResponse::ImportantHasBeenSet() const
+{
+    return m_importantHasBeenSet;
 }
 
 

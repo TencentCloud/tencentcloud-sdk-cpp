@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WorkGroupId 用户组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetWorkGroupId() const;
 
                     /**
                      * 设置用户组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _workGroupId 用户组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWorkGroupId(const int64_t& _workGroupId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrategyType 策略类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStrategyType() const;
 
                     /**
                      * 设置策略类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _strategyType 策略类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStrategyType(const std::string& _strategyType);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 用户组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_workGroupId;
                     bool m_workGroupIdHasBeenSet;
 
                     /**
                      * 策略类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_strategyType;
                     bool m_strategyTypeHasBeenSet;

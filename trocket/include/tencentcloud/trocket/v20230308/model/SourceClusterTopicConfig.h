@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主题名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TopicName 主题名称
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取主题名称，可在[DescribeMigratingTopicList](https://cloud.tencent.com/document/api/1493/118007)接口返回的[MigratingTopic](https://cloud.tencent.com/document/api/1493/96031#MigratingTopic)数据结构中获得。
+                     * @return TopicName 主题名称，可在[DescribeMigratingTopicList](https://cloud.tencent.com/document/api/1493/118007)接口返回的[MigratingTopic](https://cloud.tencent.com/document/api/1493/96031#MigratingTopic)数据结构中获得。
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
-                     * 设置主题名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _topicName 主题名称
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置主题名称，可在[DescribeMigratingTopicList](https://cloud.tencent.com/document/api/1493/118007)接口返回的[MigratingTopic](https://cloud.tencent.com/document/api/1493/96031#MigratingTopic)数据结构中获得。
+                     * @param _topicName 主题名称，可在[DescribeMigratingTopicList](https://cloud.tencent.com/document/api/1493/118007)接口返回的[MigratingTopic](https://cloud.tencent.com/document/api/1493/96031#MigratingTopic)数据结构中获得。
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -86,7 +82,6 @@ PartitionedOrder 分区顺序消息
 Transaction 事务消息
 DelayScheduled 延时消息
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicType 主题类型，
 5.x版本
 UNSPECIFIED 未指定
@@ -101,7 +96,6 @@ PartitionedOrder 分区顺序消息
 Transaction 事务消息
 DelayScheduled 延时消息
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicType() const;
@@ -121,7 +115,6 @@ PartitionedOrder 分区顺序消息
 Transaction 事务消息
 DelayScheduled 延时消息
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicType 主题类型，
 5.x版本
 UNSPECIFIED 未指定
@@ -136,7 +129,6 @@ PartitionedOrder 分区顺序消息
 Transaction 事务消息
 DelayScheduled 延时消息
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicType(const std::string& _topicType);
@@ -150,18 +142,14 @@ DelayScheduled 延时消息
 
                     /**
                      * 获取队列数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QueueNum 队列数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetQueueNum() const;
 
                     /**
                      * 设置队列数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _queueNum 队列数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQueueNum(const int64_t& _queueNum);
@@ -175,18 +163,14 @@ DelayScheduled 延时消息
 
                     /**
                      * 获取备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -200,18 +184,14 @@ DelayScheduled 延时消息
 
                     /**
                      * 获取是否已导入，作为入参时无效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Imported 是否已导入，作为入参时无效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetImported() const;
 
                     /**
                      * 设置是否已导入，作为入参时无效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _imported 是否已导入，作为入参时无效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImported(const bool& _imported);
@@ -225,18 +205,14 @@ DelayScheduled 延时消息
 
                     /**
                      * 获取命名空间，仅4.x集群有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Namespace 命名空间，仅4.x集群有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置命名空间，仅4.x集群有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _namespace 命名空间，仅4.x集群有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNamespace(const std::string& _namespace);
@@ -254,13 +230,15 @@ Unknown 未知，
 AlreadyExists 已存在，
 Success 成功，
 Failure 失败
-注意：此字段可能返回 null，表示取不到有效值。
+
+仅作为出参可用
                      * @return ImportStatus 导入状态，
 Unknown 未知，
 AlreadyExists 已存在，
 Success 成功，
 Failure 失败
-注意：此字段可能返回 null，表示取不到有效值。
+
+仅作为出参可用
                      * 
                      */
                     std::string GetImportStatus() const;
@@ -271,13 +249,15 @@ Unknown 未知，
 AlreadyExists 已存在，
 Success 成功，
 Failure 失败
-注意：此字段可能返回 null，表示取不到有效值。
+
+仅作为出参可用
                      * @param _importStatus 导入状态，
 Unknown 未知，
 AlreadyExists 已存在，
 Success 成功，
 Failure 失败
-注意：此字段可能返回 null，表示取不到有效值。
+
+仅作为出参可用
                      * 
                      */
                     void SetImportStatus(const std::string& _importStatus);
@@ -291,18 +271,14 @@ Failure 失败
 
                     /**
                      * 获取4.x的命名空间，出参使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NamespaceV4 4.x的命名空间，出参使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNamespaceV4() const;
 
                     /**
                      * 设置4.x的命名空间，出参使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _namespaceV4 4.x的命名空间，出参使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNamespaceV4(const std::string& _namespaceV4);
@@ -316,18 +292,14 @@ Failure 失败
 
                     /**
                      * 获取4.x的主题名，出参使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicNameV4 4.x的主题名，出参使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicNameV4() const;
 
                     /**
                      * 设置4.x的主题名，出参使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicNameV4 4.x的主题名，出参使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicNameV4(const std::string& _topicNameV4);
@@ -341,18 +313,14 @@ Failure 失败
 
                     /**
                      * 获取4.x的完整命名空间，出参使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FullNamespaceV4 4.x的完整命名空间，出参使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFullNamespaceV4() const;
 
                     /**
                      * 设置4.x的完整命名空间，出参使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fullNamespaceV4 4.x的完整命名空间，出参使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFullNamespaceV4(const std::string& _fullNamespaceV4);
@@ -367,8 +335,7 @@ Failure 失败
                 private:
 
                     /**
-                     * 主题名称
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 主题名称，可在[DescribeMigratingTopicList](https://cloud.tencent.com/document/api/1493/118007)接口返回的[MigratingTopic](https://cloud.tencent.com/document/api/1493/96031#MigratingTopic)数据结构中获得。
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
@@ -388,35 +355,30 @@ PartitionedOrder 分区顺序消息
 Transaction 事务消息
 DelayScheduled 延时消息
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicType;
                     bool m_topicTypeHasBeenSet;
 
                     /**
                      * 队列数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_queueNum;
                     bool m_queueNumHasBeenSet;
 
                     /**
                      * 备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
                      * 是否已导入，作为入参时无效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_imported;
                     bool m_importedHasBeenSet;
 
                     /**
                      * 命名空间，仅4.x集群有效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
@@ -427,28 +389,26 @@ Unknown 未知，
 AlreadyExists 已存在，
 Success 成功，
 Failure 失败
-注意：此字段可能返回 null，表示取不到有效值。
+
+仅作为出参可用
                      */
                     std::string m_importStatus;
                     bool m_importStatusHasBeenSet;
 
                     /**
                      * 4.x的命名空间，出参使用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_namespaceV4;
                     bool m_namespaceV4HasBeenSet;
 
                     /**
                      * 4.x的主题名，出参使用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicNameV4;
                     bool m_topicNameV4HasBeenSet;
 
                     /**
                      * 4.x的完整命名空间，出参使用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fullNamespaceV4;
                     bool m_fullNamespaceV4HasBeenSet;

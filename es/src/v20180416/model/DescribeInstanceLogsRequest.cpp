@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,12 @@ DescribeInstanceLogsRequest::DescribeInstanceLogsRequest() :
     m_endTimeHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_orderByTypeHasBeenSet(false)
+    m_orderByTypeHasBeenSet(false),
+    m_logLevelsHasBeenSet(false),
+    m_nodeIdsHasBeenSet(false),
+    m_indexNameHasBeenSet(false),
+    m_shardIdHasBeenSet(false),
+    m_queryCostHasBeenSet(false)
 {
 }
 
@@ -103,6 +108,56 @@ string DescribeInstanceLogsRequest::ToJsonString() const
         string key = "OrderByType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_orderByType, allocator);
+    }
+
+    if (m_logLevelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogLevels";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_logLevels.begin(); itr != m_logLevels.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_nodeIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_nodeIds.begin(); itr != m_nodeIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_indexNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IndexName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_indexName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_shardIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShardId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_shardId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_queryCostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueryCost";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_queryCost, allocator);
     }
 
 
@@ -239,6 +294,86 @@ void DescribeInstanceLogsRequest::SetOrderByType(const uint64_t& _orderByType)
 bool DescribeInstanceLogsRequest::OrderByTypeHasBeenSet() const
 {
     return m_orderByTypeHasBeenSet;
+}
+
+vector<string> DescribeInstanceLogsRequest::GetLogLevels() const
+{
+    return m_logLevels;
+}
+
+void DescribeInstanceLogsRequest::SetLogLevels(const vector<string>& _logLevels)
+{
+    m_logLevels = _logLevels;
+    m_logLevelsHasBeenSet = true;
+}
+
+bool DescribeInstanceLogsRequest::LogLevelsHasBeenSet() const
+{
+    return m_logLevelsHasBeenSet;
+}
+
+vector<string> DescribeInstanceLogsRequest::GetNodeIds() const
+{
+    return m_nodeIds;
+}
+
+void DescribeInstanceLogsRequest::SetNodeIds(const vector<string>& _nodeIds)
+{
+    m_nodeIds = _nodeIds;
+    m_nodeIdsHasBeenSet = true;
+}
+
+bool DescribeInstanceLogsRequest::NodeIdsHasBeenSet() const
+{
+    return m_nodeIdsHasBeenSet;
+}
+
+string DescribeInstanceLogsRequest::GetIndexName() const
+{
+    return m_indexName;
+}
+
+void DescribeInstanceLogsRequest::SetIndexName(const string& _indexName)
+{
+    m_indexName = _indexName;
+    m_indexNameHasBeenSet = true;
+}
+
+bool DescribeInstanceLogsRequest::IndexNameHasBeenSet() const
+{
+    return m_indexNameHasBeenSet;
+}
+
+string DescribeInstanceLogsRequest::GetShardId() const
+{
+    return m_shardId;
+}
+
+void DescribeInstanceLogsRequest::SetShardId(const string& _shardId)
+{
+    m_shardId = _shardId;
+    m_shardIdHasBeenSet = true;
+}
+
+bool DescribeInstanceLogsRequest::ShardIdHasBeenSet() const
+{
+    return m_shardIdHasBeenSet;
+}
+
+uint64_t DescribeInstanceLogsRequest::GetQueryCost() const
+{
+    return m_queryCost;
+}
+
+void DescribeInstanceLogsRequest::SetQueryCost(const uint64_t& _queryCost)
+{
+    m_queryCost = _queryCost;
+    m_queryCostHasBeenSet = true;
+}
+
+bool DescribeInstanceLogsRequest::QueryCostHasBeenSet() const
+{
+    return m_queryCostHasBeenSet;
 }
 
 

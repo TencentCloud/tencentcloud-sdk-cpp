@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationId 应用id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置应用id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationId 应用id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部署组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId 部署组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置部署组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupId 部署组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 应用id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applicationId;
                     bool m_applicationIdHasBeenSet;
 
                     /**
                      * 部署组id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;

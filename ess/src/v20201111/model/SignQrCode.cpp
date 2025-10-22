@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ using namespace std;
 SignQrCode::SignQrCode() :
     m_qrCodeIdHasBeenSet(false),
     m_qrCodeUrlHasBeenSet(false),
-    m_expiredTimeHasBeenSet(false)
+    m_expiredTimeHasBeenSet(false),
+    m_weixinQrCodeUrlHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome SignQrCode::Deserialize(const rapidjson::Value &value)
         m_expiredTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("WeixinQrCodeUrl") && !value["WeixinQrCodeUrl"].IsNull())
+    {
+        if (!value["WeixinQrCodeUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SignQrCode.WeixinQrCodeUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_weixinQrCodeUrl = string(value["WeixinQrCodeUrl"].GetString());
+        m_weixinQrCodeUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void SignQrCode::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "ExpiredTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_expiredTime, allocator);
+    }
+
+    if (m_weixinQrCodeUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WeixinQrCodeUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_weixinQrCodeUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void SignQrCode::SetExpiredTime(const int64_t& _expiredTime)
 bool SignQrCode::ExpiredTimeHasBeenSet() const
 {
     return m_expiredTimeHasBeenSet;
+}
+
+string SignQrCode::GetWeixinQrCodeUrl() const
+{
+    return m_weixinQrCodeUrl;
+}
+
+void SignQrCode::SetWeixinQrCodeUrl(const string& _weixinQrCodeUrl)
+{
+    m_weixinQrCodeUrl = _weixinQrCodeUrl;
+    m_weixinQrCodeUrlHasBeenSet = true;
+}
+
+bool SignQrCode::WeixinQrCodeUrlHasBeenSet() const
+{
+    return m_weixinQrCodeUrlHasBeenSet;
 }
 

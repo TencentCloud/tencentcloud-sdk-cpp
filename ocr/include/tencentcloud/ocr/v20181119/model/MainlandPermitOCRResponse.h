@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -171,8 +171,8 @@ namespace TencentCloud
                     bool IssueNumberHasBeenSet() const;
 
                     /**
-                     * 获取证件类别， 如：台湾居民来往大陆通行证、港澳居民来往内地通行证。
-                     * @return Type 证件类别， 如：台湾居民来往大陆通行证、港澳居民来往内地通行证。
+                     * 获取证件类别， 如：台湾居民来往大陆通行证、港澳居民来往内地通行证、往来港澳通行证。
+                     * @return Type 证件类别， 如：台湾居民来往大陆通行证、港澳居民来往内地通行证、往来港澳通行证。
                      * 
                      */
                     std::string GetType() const;
@@ -283,7 +283,7 @@ namespace TencentCloud
                     bool m_issueNumberHasBeenSet;
 
                     /**
-                     * 证件类别， 如：台湾居民来往大陆通行证、港澳居民来往内地通行证。
+                     * 证件类别， 如：台湾居民来往大陆通行证、港澳居民来往内地通行证、往来港澳通行证。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

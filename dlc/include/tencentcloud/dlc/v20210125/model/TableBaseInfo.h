@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -92,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该数据表所属数据源名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatasourceConnectionName 该数据表所属数据源名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDatasourceConnectionName() const;
 
                     /**
                      * 设置该数据表所属数据源名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _datasourceConnectionName 该数据表所属数据源名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDatasourceConnectionName(const std::string& _datasourceConnectionName);
@@ -142,18 +138,14 @@ namespace TencentCloud
 
                     /**
                      * 获取具体类型，表or视图
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 具体类型，表or视图
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置具体类型，表or视图
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 具体类型，表or视图
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -167,18 +159,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据格式类型，hive，iceberg等
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableFormat 数据格式类型，hive，iceberg等
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTableFormat() const;
 
                     /**
                      * 设置数据格式类型，hive，iceberg等
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tableFormat 数据格式类型，hive，iceberg等
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTableFormat(const std::string& _tableFormat);
@@ -192,18 +180,14 @@ namespace TencentCloud
 
                     /**
                      * 获取建表用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserAlias 建表用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserAlias() const;
 
                     /**
                      * 设置建表用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userAlias 建表用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserAlias(const std::string& _userAlias);
@@ -217,18 +201,14 @@ namespace TencentCloud
 
                     /**
                      * 获取建表用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserSubUin 建表用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserSubUin() const;
 
                     /**
                      * 设置建表用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userSubUin 建表用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserSubUin(const std::string& _userSubUin);
@@ -315,6 +295,31 @@ namespace TencentCloud
                      */
                     bool SmartPolicyHasBeenSet() const;
 
+                    /**
+                     * 获取T-ICEBERG表的主键
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PrimaryKeys T-ICEBERG表的主键
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetPrimaryKeys() const;
+
+                    /**
+                     * 设置T-ICEBERG表的主键
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _primaryKeys T-ICEBERG表的主键
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPrimaryKeys(const std::vector<std::string>& _primaryKeys);
+
+                    /**
+                     * 判断参数 PrimaryKeys 是否已赋值
+                     * @return PrimaryKeys 是否已赋值
+                     * 
+                     */
+                    bool PrimaryKeysHasBeenSet() const;
+
                 private:
 
                     /**
@@ -331,7 +336,6 @@ namespace TencentCloud
 
                     /**
                      * 该数据表所属数据源名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_datasourceConnectionName;
                     bool m_datasourceConnectionNameHasBeenSet;
@@ -345,28 +349,24 @@ namespace TencentCloud
 
                     /**
                      * 具体类型，表or视图
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 数据格式类型，hive，iceberg等
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tableFormat;
                     bool m_tableFormatHasBeenSet;
 
                     /**
                      * 建表用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userAlias;
                     bool m_userAliasHasBeenSet;
 
                     /**
                      * 建表用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userSubUin;
                     bool m_userSubUinHasBeenSet;
@@ -391,6 +391,13 @@ namespace TencentCloud
                      */
                     SmartPolicy m_smartPolicy;
                     bool m_smartPolicyHasBeenSet;
+
+                    /**
+                     * T-ICEBERG表的主键
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_primaryKeys;
+                    bool m_primaryKeysHasBeenSet;
 
                 };
             }

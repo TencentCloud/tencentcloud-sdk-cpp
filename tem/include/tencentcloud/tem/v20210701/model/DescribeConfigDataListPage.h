@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分页游标，用以查询下一页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContinueToken 分页游标，用以查询下一页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContinueToken() const;
 
                     /**
                      * 设置分页游标，用以查询下一页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _continueToken 分页游标，用以查询下一页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContinueToken(const std::string& _continueToken);
@@ -128,7 +124,6 @@ namespace TencentCloud
 
                     /**
                      * 分页游标，用以查询下一页
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_continueToken;
                     bool m_continueTokenHasBeenSet;

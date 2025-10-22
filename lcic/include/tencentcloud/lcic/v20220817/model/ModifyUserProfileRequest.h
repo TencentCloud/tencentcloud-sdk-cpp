@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取待修改的用户名
-                     * @return Nickname 待修改的用户名
+                     * 获取待修改的用户名。对应注册用户下“Name“字段，本次修改是对此内容进行修改。
+                     * @return Nickname 待修改的用户名。对应注册用户下“Name“字段，本次修改是对此内容进行修改。
                      * 
                      */
                     std::string GetNickname() const;
 
                     /**
-                     * 设置待修改的用户名
-                     * @param _nickname 待修改的用户名
+                     * 设置待修改的用户名。对应注册用户下“Name“字段，本次修改是对此内容进行修改。
+                     * @param _nickname 待修改的用户名。对应注册用户下“Name“字段，本次修改是对此内容进行修改。
                      * 
                      */
                     void SetNickname(const std::string& _nickname);
@@ -114,7 +114,7 @@ namespace TencentCloud
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 待修改的用户名
+                     * 待修改的用户名。对应注册用户下“Name“字段，本次修改是对此内容进行修改。
                      */
                     std::string m_nickname;
                     bool m_nicknameHasBeenSet;

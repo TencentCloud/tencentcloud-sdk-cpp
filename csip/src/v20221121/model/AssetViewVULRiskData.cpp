@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,7 +60,8 @@ AssetViewVULRiskData::AssetViewVULRiskData() :
     m_engineSourceHasBeenSet(false),
     m_vulRiskIdHasBeenSet(false),
     m_tvdIDHasBeenSet(false),
-    m_isOneClickHasBeenSet(false)
+    m_isOneClickHasBeenSet(false),
+    m_isPOCHasBeenSet(false)
 {
 }
 
@@ -472,6 +473,16 @@ CoreInternalOutcome AssetViewVULRiskData::Deserialize(const rapidjson::Value &va
         m_isOneClickHasBeenSet = true;
     }
 
+    if (value.HasMember("IsPOC") && !value["IsPOC"].IsNull())
+    {
+        if (!value["IsPOC"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetViewVULRiskData.IsPOC` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isPOC = value["IsPOC"].GetUint64();
+        m_isPOCHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -802,6 +813,14 @@ void AssetViewVULRiskData::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "IsOneClick";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isOneClick, allocator);
+    }
+
+    if (m_isPOCHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsPOC";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isPOC, allocator);
     }
 
 }
@@ -1445,5 +1464,21 @@ void AssetViewVULRiskData::SetIsOneClick(const uint64_t& _isOneClick)
 bool AssetViewVULRiskData::IsOneClickHasBeenSet() const
 {
     return m_isOneClickHasBeenSet;
+}
+
+uint64_t AssetViewVULRiskData::GetIsPOC() const
+{
+    return m_isPOC;
+}
+
+void AssetViewVULRiskData::SetIsPOC(const uint64_t& _isPOC)
+{
+    m_isPOC = _isPOC;
+    m_isPOCHasBeenSet = true;
+}
+
+bool AssetViewVULRiskData::IsPOCHasBeenSet() const
+{
+    return m_isPOCHasBeenSet;
 }
 

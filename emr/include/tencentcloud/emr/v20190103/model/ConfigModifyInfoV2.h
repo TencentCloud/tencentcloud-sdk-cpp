@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,7 +57,6 @@ namespace TencentCloud
 - 3：删除
 - 4：克隆，与新建子队列的行为一样，特别的对于`fair`，可以复制子队列到新建队列
 - 6：编辑-增量更新
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OpType 操作类型，可选值：
 
 - 0：新建队列
@@ -66,7 +65,6 @@ namespace TencentCloud
 - 3：删除
 - 4：克隆，与新建子队列的行为一样，特别的对于`fair`，可以复制子队列到新建队列
 - 6：编辑-增量更新
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetOpType() const;
@@ -80,7 +78,6 @@ namespace TencentCloud
 - 3：删除
 - 4：克隆，与新建子队列的行为一样，特别的对于`fair`，可以复制子队列到新建队列
 - 6：编辑-增量更新
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _opType 操作类型，可选值：
 
 - 0：新建队列
@@ -89,7 +86,6 @@ namespace TencentCloud
 - 3：删除
 - 4：克隆，与新建子队列的行为一样，特别的对于`fair`，可以复制子队列到新建队列
 - 6：编辑-增量更新
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOpType(const uint64_t& _opType);
@@ -124,18 +120,14 @@ namespace TencentCloud
 
                     /**
                      * 获取新建队列 传root的MyId；新建子队列 传 选中队列的 myId；克隆 要传 选中队列 parentId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParentId 新建队列 传root的MyId；新建子队列 传 选中队列的 myId；克隆 要传 选中队列 parentId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParentId() const;
 
                     /**
                      * 设置新建队列 传root的MyId；新建子队列 传 选中队列的 myId；克隆 要传 选中队列 parentId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _parentId 新建队列 传root的MyId；新建子队列 传 选中队列的 myId；克隆 要传 选中队列 parentId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParentId(const std::string& _parentId);
@@ -149,18 +141,14 @@ namespace TencentCloud
 
                     /**
                      * 获取编辑、删除 传选中队列的 myId。克隆只有在调度器是`fair`时才需要传，用来复制子队列到新队列。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MyId 编辑、删除 传选中队列的 myId。克隆只有在调度器是`fair`时才需要传，用来复制子队列到新队列。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMyId() const;
 
                     /**
                      * 设置编辑、删除 传选中队列的 myId。克隆只有在调度器是`fair`时才需要传，用来复制子队列到新队列。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _myId 编辑、删除 传选中队列的 myId。克隆只有在调度器是`fair`时才需要传，用来复制子队列到新队列。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMyId(const std::string& _myId);
@@ -390,7 +378,6 @@ type AclForYarnQueue struct {
 - 3：删除
 - 4：克隆，与新建子队列的行为一样，特别的对于`fair`，可以复制子队列到新建队列
 - 6：编辑-增量更新
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_opType;
                     bool m_opTypeHasBeenSet;
@@ -403,14 +390,12 @@ type AclForYarnQueue struct {
 
                     /**
                      * 新建队列 传root的MyId；新建子队列 传 选中队列的 myId；克隆 要传 选中队列 parentId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_parentId;
                     bool m_parentIdHasBeenSet;
 
                     /**
                      * 编辑、删除 传选中队列的 myId。克隆只有在调度器是`fair`时才需要传，用来复制子队列到新队列。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_myId;
                     bool m_myIdHasBeenSet;

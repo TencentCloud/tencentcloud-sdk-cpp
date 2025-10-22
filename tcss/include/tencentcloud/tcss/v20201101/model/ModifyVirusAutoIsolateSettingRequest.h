@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool IsKillProgressHasBeenSet() const;
 
+                    /**
+                     * 获取用户用户自定义开关
+                     * @return UserAutoIsolateKillSwitch 用户用户自定义开关
+                     * 
+                     */
+                    bool GetUserAutoIsolateKillSwitch() const;
+
+                    /**
+                     * 设置用户用户自定义开关
+                     * @param _userAutoIsolateKillSwitch 用户用户自定义开关
+                     * 
+                     */
+                    void SetUserAutoIsolateKillSwitch(const bool& _userAutoIsolateKillSwitch);
+
+                    /**
+                     * 判断参数 UserAutoIsolateKillSwitch 是否已赋值
+                     * @return UserAutoIsolateKillSwitch 是否已赋值
+                     * 
+                     */
+                    bool UserAutoIsolateKillSwitchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     bool m_isKillProgress;
                     bool m_isKillProgressHasBeenSet;
+
+                    /**
+                     * 用户用户自定义开关
+                     */
+                    bool m_userAutoIsolateKillSwitch;
+                    bool m_userAutoIsolateKillSwitchHasBeenSet;
 
                 };
             }

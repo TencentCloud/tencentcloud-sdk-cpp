@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cwp::V20180228::Model;
 using namespace std;
 
-ScanTaskAgainResponse::ScanTaskAgainResponse()
+ScanTaskAgainResponse::ScanTaskAgainResponse() :
+    m_successCountHasBeenSet(false),
+    m_basicVersionCountHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,26 @@ CoreInternalOutcome ScanTaskAgainResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("SuccessCount") && !rsp["SuccessCount"].IsNull())
+    {
+        if (!rsp["SuccessCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SuccessCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_successCount = rsp["SuccessCount"].GetUint64();
+        m_successCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("BasicVersionCount") && !rsp["BasicVersionCount"].IsNull())
+    {
+        if (!rsp["BasicVersionCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BasicVersionCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_basicVersionCount = rsp["BasicVersionCount"].GetUint64();
+        m_basicVersionCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -71,16 +93,52 @@ string ScanTaskAgainResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
+    if (m_successCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SuccessCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_successCount, allocator);
+    }
+
+    if (m_basicVersionCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BasicVersionCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_basicVersionCount, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
     return buffer.GetString();
 }
 
+
+uint64_t ScanTaskAgainResponse::GetSuccessCount() const
+{
+    return m_successCount;
+}
+
+bool ScanTaskAgainResponse::SuccessCountHasBeenSet() const
+{
+    return m_successCountHasBeenSet;
+}
+
+uint64_t ScanTaskAgainResponse::GetBasicVersionCount() const
+{
+    return m_basicVersionCount;
+}
+
+bool ScanTaskAgainResponse::BasicVersionCountHasBeenSet() const
+{
+    return m_basicVersionCountHasBeenSet;
+}
 
 

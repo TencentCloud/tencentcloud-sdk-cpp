@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取kube-apiserver可用的自定义参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KubeAPIServer kube-apiserver可用的自定义参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<EdgeArgsFlag> GetKubeAPIServer() const;
 
                     /**
                      * 设置kube-apiserver可用的自定义参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _kubeAPIServer kube-apiserver可用的自定义参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKubeAPIServer(const std::vector<EdgeArgsFlag>& _kubeAPIServer);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取kube-controller-manager可用的自定义参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KubeControllerManager kube-controller-manager可用的自定义参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<EdgeArgsFlag> GetKubeControllerManager() const;
 
                     /**
                      * 设置kube-controller-manager可用的自定义参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _kubeControllerManager kube-controller-manager可用的自定义参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKubeControllerManager(const std::vector<EdgeArgsFlag>& _kubeControllerManager);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取kube-scheduler可用的自定义参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KubeScheduler kube-scheduler可用的自定义参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<EdgeArgsFlag> GetKubeScheduler() const;
 
                     /**
                      * 设置kube-scheduler可用的自定义参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _kubeScheduler kube-scheduler可用的自定义参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKubeScheduler(const std::vector<EdgeArgsFlag>& _kubeScheduler);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取kubelet可用的自定义参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Kubelet kubelet可用的自定义参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<EdgeArgsFlag> GetKubelet() const;
 
                     /**
                      * 设置kubelet可用的自定义参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _kubelet kubelet可用的自定义参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKubelet(const std::vector<EdgeArgsFlag>& _kubelet);
@@ -151,28 +135,24 @@ namespace TencentCloud
 
                     /**
                      * kube-apiserver可用的自定义参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<EdgeArgsFlag> m_kubeAPIServer;
                     bool m_kubeAPIServerHasBeenSet;
 
                     /**
                      * kube-controller-manager可用的自定义参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<EdgeArgsFlag> m_kubeControllerManager;
                     bool m_kubeControllerManagerHasBeenSet;
 
                     /**
                      * kube-scheduler可用的自定义参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<EdgeArgsFlag> m_kubeScheduler;
                     bool m_kubeSchedulerHasBeenSet;
 
                     /**
                      * kubelet可用的自定义参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<EdgeArgsFlag> m_kubelet;
                     bool m_kubeletHasBeenSet;

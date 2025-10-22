@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取云联网（CCN）各地域出带宽详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CcnBandwidthSet 云联网（CCN）各地域出带宽详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CcnBandwidthInfo> GetCcnBandwidthSet() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取符合条件的对象数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 符合条件的对象数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 云联网（CCN）各地域出带宽详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CcnBandwidthInfo> m_ccnBandwidthSet;
                     bool m_ccnBandwidthSetHasBeenSet;
 
                     /**
                      * 符合条件的对象数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

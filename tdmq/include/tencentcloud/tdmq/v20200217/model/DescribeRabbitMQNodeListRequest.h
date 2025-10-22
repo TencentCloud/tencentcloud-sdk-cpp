@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取rabbitmq集群ID
-                     * @return InstanceId rabbitmq集群ID
+                     * 获取实例 ID，形如amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
+                     * @return InstanceId 实例 ID，形如amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置rabbitmq集群ID
-                     * @param _instanceId rabbitmq集群ID
+                     * 设置实例 ID，形如amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
+                     * @param _instanceId 实例 ID，形如amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取偏移量，默认值 0
+                     * @return Offset 偏移量，默认值 0
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param _offset 偏移量
+                     * 设置偏移量，默认值 0
+                     * @param _offset 偏移量，默认值 0
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取一页限制
-                     * @return Limit 一页限制
+                     * 获取一页限制，默认值 20
+                     * @return Limit 一页限制，默认值 20
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置一页限制
-                     * @param _limit 一页限制
+                     * 设置一页限制，默认值 20
+                     * @param _limit 一页限制，默认值 20
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -128,30 +128,26 @@ namespace TencentCloud
                     bool NodeNameHasBeenSet() const;
 
                     /**
-                     * 获取过滤参数的名字和数值
-现在只有一个nodeStatus
-running/down
-数组类型，兼容后续添加过滤参数
+                     * 获取过滤参数的名字和数值，当前仅支持根据节点状态筛选。
+"Name": "nodeStatus"
+"Value": running or down
 
-                     * @return Filters 过滤参数的名字和数值
-现在只有一个nodeStatus
-running/down
-数组类型，兼容后续添加过滤参数
+                     * @return Filters 过滤参数的名字和数值，当前仅支持根据节点状态筛选。
+"Name": "nodeStatus"
+"Value": running or down
 
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤参数的名字和数值
-现在只有一个nodeStatus
-running/down
-数组类型，兼容后续添加过滤参数
+                     * 设置过滤参数的名字和数值，当前仅支持根据节点状态筛选。
+"Name": "nodeStatus"
+"Value": running or down
 
-                     * @param _filters 过滤参数的名字和数值
-现在只有一个nodeStatus
-running/down
-数组类型，兼容后续添加过滤参数
+                     * @param _filters 过滤参数的名字和数值，当前仅支持根据节点状态筛选。
+"Name": "nodeStatus"
+"Value": running or down
 
                      * 
                      */
@@ -166,18 +162,22 @@ running/down
 
                     /**
                      * 获取按指定元素排序，现在只有2个
-cpuUsage/diskUsage
+cpuUsage：节点CPU利用率
+diskUsage：节点磁盘利用率
                      * @return SortElement 按指定元素排序，现在只有2个
-cpuUsage/diskUsage
+cpuUsage：节点CPU利用率
+diskUsage：节点磁盘利用率
                      * 
                      */
                     std::string GetSortElement() const;
 
                     /**
                      * 设置按指定元素排序，现在只有2个
-cpuUsage/diskUsage
+cpuUsage：节点CPU利用率
+diskUsage：节点磁盘利用率
                      * @param _sortElement 按指定元素排序，现在只有2个
-cpuUsage/diskUsage
+cpuUsage：节点CPU利用率
+diskUsage：节点磁盘利用率
                      * 
                      */
                     void SetSortElement(const std::string& _sortElement);
@@ -217,19 +217,19 @@ ascend/descend
                 private:
 
                     /**
-                     * rabbitmq集群ID
+                     * 实例 ID，形如amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * 偏移量，默认值 0
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 一页限制
+                     * 一页限制，默认值 20
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -241,10 +241,9 @@ ascend/descend
                     bool m_nodeNameHasBeenSet;
 
                     /**
-                     * 过滤参数的名字和数值
-现在只有一个nodeStatus
-running/down
-数组类型，兼容后续添加过滤参数
+                     * 过滤参数的名字和数值，当前仅支持根据节点状态筛选。
+"Name": "nodeStatus"
+"Value": running or down
 
                      */
                     std::vector<Filter> m_filters;
@@ -252,7 +251,8 @@ running/down
 
                     /**
                      * 按指定元素排序，现在只有2个
-cpuUsage/diskUsage
+cpuUsage：节点CPU利用率
+diskUsage：节点磁盘利用率
                      */
                     std::string m_sortElement;
                     bool m_sortElementHasBeenSet;

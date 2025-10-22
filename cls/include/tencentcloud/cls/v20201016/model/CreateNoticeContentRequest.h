@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模板名称。
-                     * @return Name 模板名称。
+                     * 获取模板名称。最大支持255个字节
+                     * @return Name 模板名称。最大支持255个字节
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置模板名称。
-                     * @param _name 模板名称。
+                     * 设置模板名称。最大支持255个字节
+                     * @param _name 模板名称。最大支持255个字节
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -109,7 +109,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模板名称。
+                     * 模板名称。最大支持255个字节
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

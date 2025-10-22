@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取记录ID数组。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId
-                     * @return RecordIdList 记录ID数组。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId
+                     * 获取记录ID数组。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId。单次最多修改5000条记录。
+                     * @return RecordIdList 记录ID数组。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId。单次最多修改5000条记录。
                      * 
                      */
                     std::vector<uint64_t> GetRecordIdList() const;
 
                     /**
-                     * 设置记录ID数组。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId
-                     * @param _recordIdList 记录ID数组。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId
+                     * 设置记录ID数组。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId。单次最多修改5000条记录。
+                     * @param _recordIdList 记录ID数组。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId。单次最多修改5000条记录。
                      * 
                      */
                     void SetRecordIdList(const std::vector<uint64_t>& _recordIdList);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool ValueHasBeenSet() const;
 
                     /**
-                     * 获取MX记录优先级，仅当修改为 MX 记录时为必填参数。
-                     * @return MX MX记录优先级，仅当修改为 MX 记录时为必填参数。
+                     * 获取MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围1-65535。
+                     * @return MX MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围1-65535。
                      * 
                      */
                     std::string GetMX() const;
 
                     /**
-                     * 设置MX记录优先级，仅当修改为 MX 记录时为必填参数。
-                     * @param _mX MX记录优先级，仅当修改为 MX 记录时为必填参数。
+                     * 设置MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围1-65535。
+                     * @param _mX MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围1-65535。
                      * 
                      */
                     void SetMX(const std::string& _mX);
@@ -150,7 +150,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 记录ID数组。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId
+                     * 记录ID数组。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId。单次最多修改5000条记录。
                      */
                     std::vector<uint64_t> m_recordIdList;
                     bool m_recordIdListHasBeenSet;
@@ -174,7 +174,7 @@ namespace TencentCloud
                     bool m_valueHasBeenSet;
 
                     /**
-                     * MX记录优先级，仅当修改为 MX 记录时为必填参数。
+                     * MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围1-65535。
                      */
                     std::string m_mX;
                     bool m_mXHasBeenSet;

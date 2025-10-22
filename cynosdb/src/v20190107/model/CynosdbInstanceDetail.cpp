@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,7 +54,8 @@ CynosdbInstanceDetail::CynosdbInstanceDetail() :
     m_cynosVersionHasBeenSet(false),
     m_renewFlagHasBeenSet(false),
     m_minCpuHasBeenSet(false),
-    m_maxCpuHasBeenSet(false)
+    m_maxCpuHasBeenSet(false),
+    m_dbModeHasBeenSet(false)
 {
 }
 
@@ -403,6 +404,16 @@ CoreInternalOutcome CynosdbInstanceDetail::Deserialize(const rapidjson::Value &v
         m_maxCpuHasBeenSet = true;
     }
 
+    if (value.HasMember("DbMode") && !value["DbMode"].IsNull())
+    {
+        if (!value["DbMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstanceDetail.DbMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dbMode = string(value["DbMode"].GetString());
+        m_dbModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -680,6 +691,14 @@ void CynosdbInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "MaxCpu";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxCpu, allocator);
+    }
+
+    if (m_dbModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DbMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dbMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1227,5 +1246,21 @@ void CynosdbInstanceDetail::SetMaxCpu(const double& _maxCpu)
 bool CynosdbInstanceDetail::MaxCpuHasBeenSet() const
 {
     return m_maxCpuHasBeenSet;
+}
+
+string CynosdbInstanceDetail::GetDbMode() const
+{
+    return m_dbMode;
+}
+
+void CynosdbInstanceDetail::SetDbMode(const string& _dbMode)
+{
+    m_dbMode = _dbMode;
+    m_dbModeHasBeenSet = true;
+}
+
+bool CynosdbInstanceDetail::DbModeHasBeenSet() const
+{
+    return m_dbModeHasBeenSet;
 }
 

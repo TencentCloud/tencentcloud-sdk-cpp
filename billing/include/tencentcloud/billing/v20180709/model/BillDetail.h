@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -239,15 +239,19 @@ namespace TencentCloud
                     bool ActionTypeNameHasBeenSet() const;
 
                     /**
-                     * 获取订单ID：包年包月计费模式下订购的订单号
-                     * @return OrderId 订单ID：包年包月计费模式下订购的订单号
+                     * 获取订单ID：包年包月计费模式下对应子订单号。后付费计费模式下账单费用不存在订单概念，可忽略此参数。
+
+                     * @return OrderId 订单ID：包年包月计费模式下对应子订单号。后付费计费模式下账单费用不存在订单概念，可忽略此参数。
+
                      * 
                      */
                     std::string GetOrderId() const;
 
                     /**
-                     * 设置订单ID：包年包月计费模式下订购的订单号
-                     * @param _orderId 订单ID：包年包月计费模式下订购的订单号
+                     * 设置订单ID：包年包月计费模式下对应子订单号。后付费计费模式下账单费用不存在订单概念，可忽略此参数。
+
+                     * @param _orderId 订单ID：包年包月计费模式下对应子订单号。后付费计费模式下账单费用不存在订单概念，可忽略此参数。
+
                      * 
                      */
                     void SetOrderId(const std::string& _orderId);
@@ -429,18 +433,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BillTagInfo> GetTags() const;
 
                     /**
                      * 设置标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<BillTagInfo>& _tags);
@@ -454,18 +454,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BusinessCode 产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBusinessCode() const;
 
                     /**
                      * 设置产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _businessCode 产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBusinessCode(const std::string& _businessCode);
@@ -479,18 +475,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductCode 子产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductCode() const;
 
                     /**
                      * 设置子产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productCode 子产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductCode(const std::string& _productCode);
@@ -504,18 +496,14 @@ namespace TencentCloud
 
                     /**
                      * 获取交易类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActionType 交易类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetActionType() const;
 
                     /**
                      * 设置交易类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _actionType 交易类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActionType(const std::string& _actionType);
@@ -529,18 +517,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionId 地域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegionId() const;
 
                     /**
                      * 设置地域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionId 地域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionId(const std::string& _regionId);
@@ -575,18 +559,14 @@ namespace TencentCloud
 
                     /**
                      * 获取价格属性：该组件除单价、时长外的其他影响折扣定价的属性信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PriceInfo 价格属性：该组件除单价、时长外的其他影响折扣定价的属性信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetPriceInfo() const;
 
                     /**
                      * 设置价格属性：该组件除单价、时长外的其他影响折扣定价的属性信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _priceInfo 价格属性：该组件除单价、时长外的其他影响折扣定价的属性信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPriceInfo(const std::vector<std::string>& _priceInfo);
@@ -600,18 +580,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联交易单据ID：和本笔交易关联单据 ID，如，冲销订单，记录原订单、重结订单，退费单记录对应的原购买订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssociatedOrder 关联交易单据ID：和本笔交易关联单据 ID，如，冲销订单，记录原订单、重结订单，退费单记录对应的原购买订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BillDetailAssociatedOrder GetAssociatedOrder() const;
 
                     /**
                      * 设置关联交易单据ID：和本笔交易关联单据 ID，如，冲销订单，记录原订单、重结订单，退费单记录对应的原购买订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _associatedOrder 关联交易单据ID：和本笔交易关联单据 ID，如，冲销订单，记录原订单、重结订单，退费单记录对应的原购买订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAssociatedOrder(const BillDetailAssociatedOrder& _associatedOrder);
@@ -625,18 +601,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计算说明：特殊交易类型计费结算的详细计算说明，如退费及变配
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Formula 计算说明：特殊交易类型计费结算的详细计算说明，如退费及变配
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFormula() const;
 
                     /**
                      * 设置计算说明：特殊交易类型计费结算的详细计算说明，如退费及变配
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _formula 计算说明：特殊交易类型计费结算的详细计算说明，如退费及变配
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFormula(const std::string& _formula);
@@ -650,18 +622,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计费规则：各产品详细的计费规则官网说明链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FormulaUrl 计费规则：各产品详细的计费规则官网说明链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFormulaUrl() const;
 
                     /**
                      * 设置计费规则：各产品详细的计费规则官网说明链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _formulaUrl 计费规则：各产品详细的计费规则官网说明链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFormulaUrl(const std::string& _formulaUrl);
@@ -675,18 +643,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账单归属日
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BillDay 账单归属日
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBillDay() const;
 
                     /**
                      * 设置账单归属日
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _billDay 账单归属日
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBillDay(const std::string& _billDay);
@@ -700,18 +664,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账单归属月
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BillMonth 账单归属月
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBillMonth() const;
 
                     /**
                      * 设置账单归属月
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _billMonth 账单归属月
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBillMonth(const std::string& _billMonth);
@@ -725,18 +685,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账单记录ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 账单记录ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置账单记录ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 账单记录ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -750,18 +706,14 @@ namespace TencentCloud
 
                     /**
                      * 获取国内国际编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionType 国内国际编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegionType() const;
 
                     /**
                      * 设置国内国际编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionType 国内国际编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionType(const std::string& _regionType);
@@ -775,18 +727,14 @@ namespace TencentCloud
 
                     /**
                      * 获取国内国际：资源所属区域类型（国内、国际）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionTypeName 国内国际：资源所属区域类型（国内、国际）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegionTypeName() const;
 
                     /**
                      * 设置国内国际：资源所属区域类型（国内、国际）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionTypeName 国内国际：资源所属区域类型（国内、国际）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionTypeName(const std::string& _regionTypeName);
@@ -800,18 +748,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备注属性（实例配置）：其他备注信息，如预留实例的预留实例类型和交易类型、CCN 产品的两端地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReserveDetail 备注属性（实例配置）：其他备注信息，如预留实例的预留实例类型和交易类型、CCN 产品的两端地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReserveDetail() const;
 
                     /**
                      * 设置备注属性（实例配置）：其他备注信息，如预留实例的预留实例类型和交易类型、CCN 产品的两端地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reserveDetail 备注属性（实例配置）：其他备注信息，如预留实例的预留实例类型和交易类型、CCN 产品的两端地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReserveDetail(const std::string& _reserveDetail);
@@ -822,6 +766,69 @@ namespace TencentCloud
                      * 
                      */
                     bool ReserveDetailHasBeenSet() const;
+
+                    /**
+                     * 获取优惠对象
+                     * @return DiscountObject 优惠对象
+                     * 
+                     */
+                    std::string GetDiscountObject() const;
+
+                    /**
+                     * 设置优惠对象
+                     * @param _discountObject 优惠对象
+                     * 
+                     */
+                    void SetDiscountObject(const std::string& _discountObject);
+
+                    /**
+                     * 判断参数 DiscountObject 是否已赋值
+                     * @return DiscountObject 是否已赋值
+                     * 
+                     */
+                    bool DiscountObjectHasBeenSet() const;
+
+                    /**
+                     * 获取优惠类型
+                     * @return DiscountType 优惠类型
+                     * 
+                     */
+                    std::string GetDiscountType() const;
+
+                    /**
+                     * 设置优惠类型
+                     * @param _discountType 优惠类型
+                     * 
+                     */
+                    void SetDiscountType(const std::string& _discountType);
+
+                    /**
+                     * 判断参数 DiscountType 是否已赋值
+                     * @return DiscountType 是否已赋值
+                     * 
+                     */
+                    bool DiscountTypeHasBeenSet() const;
+
+                    /**
+                     * 获取优惠内容
+                     * @return DiscountContent 优惠内容
+                     * 
+                     */
+                    std::string GetDiscountContent() const;
+
+                    /**
+                     * 设置优惠内容
+                     * @param _discountContent 优惠内容
+                     * 
+                     */
+                    void SetDiscountContent(const std::string& _discountContent);
+
+                    /**
+                     * 判断参数 DiscountContent 是否已赋值
+                     * @return DiscountContent 是否已赋值
+                     * 
+                     */
+                    bool DiscountContentHasBeenSet() const;
 
                 private:
 
@@ -880,7 +887,8 @@ namespace TencentCloud
                     bool m_actionTypeNameHasBeenSet;
 
                     /**
-                     * 订单ID：包年包月计费模式下订购的订单号
+                     * 订单ID：包年包月计费模式下对应子订单号。后付费计费模式下账单费用不存在订单概念，可忽略此参数。
+
                      */
                     std::string m_orderId;
                     bool m_orderIdHasBeenSet;
@@ -935,35 +943,30 @@ namespace TencentCloud
 
                     /**
                      * 标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BillTagInfo> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
                      * 产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_businessCode;
                     bool m_businessCodeHasBeenSet;
 
                     /**
                      * 子产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productCode;
                     bool m_productCodeHasBeenSet;
 
                     /**
                      * 交易类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_actionType;
                     bool m_actionTypeHasBeenSet;
 
                     /**
                      * 地域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regionId;
                     bool m_regionIdHasBeenSet;
@@ -976,73 +979,81 @@ namespace TencentCloud
 
                     /**
                      * 价格属性：该组件除单价、时长外的其他影响折扣定价的属性信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_priceInfo;
                     bool m_priceInfoHasBeenSet;
 
                     /**
                      * 关联交易单据ID：和本笔交易关联单据 ID，如，冲销订单，记录原订单、重结订单，退费单记录对应的原购买订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BillDetailAssociatedOrder m_associatedOrder;
                     bool m_associatedOrderHasBeenSet;
 
                     /**
                      * 计算说明：特殊交易类型计费结算的详细计算说明，如退费及变配
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_formula;
                     bool m_formulaHasBeenSet;
 
                     /**
                      * 计费规则：各产品详细的计费规则官网说明链接
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_formulaUrl;
                     bool m_formulaUrlHasBeenSet;
 
                     /**
                      * 账单归属日
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_billDay;
                     bool m_billDayHasBeenSet;
 
                     /**
                      * 账单归属月
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_billMonth;
                     bool m_billMonthHasBeenSet;
 
                     /**
                      * 账单记录ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 国内国际编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regionType;
                     bool m_regionTypeHasBeenSet;
 
                     /**
                      * 国内国际：资源所属区域类型（国内、国际）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regionTypeName;
                     bool m_regionTypeNameHasBeenSet;
 
                     /**
                      * 备注属性（实例配置）：其他备注信息，如预留实例的预留实例类型和交易类型、CCN 产品的两端地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reserveDetail;
                     bool m_reserveDetailHasBeenSet;
+
+                    /**
+                     * 优惠对象
+                     */
+                    std::string m_discountObject;
+                    bool m_discountObjectHasBeenSet;
+
+                    /**
+                     * 优惠类型
+                     */
+                    std::string m_discountType;
+                    bool m_discountTypeHasBeenSet;
+
+                    /**
+                     * 优惠内容
+                     */
+                    std::string m_discountContent;
+                    bool m_discountContentHasBeenSet;
 
                 };
             }

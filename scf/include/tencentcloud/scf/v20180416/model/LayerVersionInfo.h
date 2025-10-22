@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取版本适用的运行时
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompatibleRuntimes 版本适用的运行时
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetCompatibleRuntimes() const;
 
                     /**
                      * 设置版本适用的运行时
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _compatibleRuntimes 版本适用的运行时
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCompatibleRuntimes(const std::vector<std::string>& _compatibleRuntimes);
@@ -95,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取版本描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 版本描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置版本描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 版本描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -186,15 +178,15 @@ namespace TencentCloud
                     bool LayerNameHasBeenSet() const;
 
                     /**
-                     * 获取层的具体版本当前状态，状态值[参考此处](https://cloud.tencent.com/document/product/583/47175#.E5.B1.82.EF.BC.88layer.EF.BC.89.E7.8A.B6.E6.80.81)
-                     * @return Status 层的具体版本当前状态，状态值[参考此处](https://cloud.tencent.com/document/product/583/47175#.E5.B1.82.EF.BC.88layer.EF.BC.89.E7.8A.B6.E6.80.81)
+                     * 获取层的具体版本当前状态，状态值[参考此处](https://cloud.tencent.com/document/product/583/115197#.E5.B1.82.EF.BC.88Layer.EF.BC.89.E7.8A.B6.E6.80.81)
+                     * @return Status 层的具体版本当前状态，状态值[参考此处](https://cloud.tencent.com/document/product/583/115197#.E5.B1.82.EF.BC.88Layer.EF.BC.89.E7.8A.B6.E6.80.81)
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置层的具体版本当前状态，状态值[参考此处](https://cloud.tencent.com/document/product/583/47175#.E5.B1.82.EF.BC.88layer.EF.BC.89.E7.8A.B6.E6.80.81)
-                     * @param _status 层的具体版本当前状态，状态值[参考此处](https://cloud.tencent.com/document/product/583/47175#.E5.B1.82.EF.BC.88layer.EF.BC.89.E7.8A.B6.E6.80.81)
+                     * 设置层的具体版本当前状态，状态值[参考此处](https://cloud.tencent.com/document/product/583/115197#.E5.B1.82.EF.BC.88Layer.EF.BC.89.E7.8A.B6.E6.80.81)
+                     * @param _status 层的具体版本当前状态，状态值[参考此处](https://cloud.tencent.com/document/product/583/115197#.E5.B1.82.EF.BC.88Layer.EF.BC.89.E7.8A.B6.E6.80.81)
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -208,18 +200,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Stamp
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Stamp Stamp
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStamp() const;
 
                     /**
                      * 设置Stamp
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stamp Stamp
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStamp(const std::string& _stamp);
@@ -260,7 +248,6 @@ namespace TencentCloud
 
                     /**
                      * 版本适用的运行时
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_compatibleRuntimes;
                     bool m_compatibleRuntimesHasBeenSet;
@@ -273,7 +260,6 @@ namespace TencentCloud
 
                     /**
                      * 版本描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
@@ -298,14 +284,13 @@ namespace TencentCloud
                     bool m_layerNameHasBeenSet;
 
                     /**
-                     * 层的具体版本当前状态，状态值[参考此处](https://cloud.tencent.com/document/product/583/47175#.E5.B1.82.EF.BC.88layer.EF.BC.89.E7.8A.B6.E6.80.81)
+                     * 层的具体版本当前状态，状态值[参考此处](https://cloud.tencent.com/document/product/583/115197#.E5.B1.82.EF.BC.88Layer.EF.BC.89.E7.8A.B6.E6.80.81)
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * Stamp
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stamp;
                     bool m_stampHasBeenSet;

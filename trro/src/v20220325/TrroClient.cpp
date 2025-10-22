@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -169,6 +169,49 @@ TrroClient::BoundLicensesOutcomeCallable TrroClient::BoundLicensesCallable(const
     return task->get_future();
 }
 
+TrroClient::CreateCloudRecordingOutcome TrroClient::CreateCloudRecording(const CreateCloudRecordingRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCloudRecording");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCloudRecordingResponse rsp = CreateCloudRecordingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCloudRecordingOutcome(rsp);
+        else
+            return CreateCloudRecordingOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCloudRecordingOutcome(outcome.GetError());
+    }
+}
+
+void TrroClient::CreateCloudRecordingAsync(const CreateCloudRecordingRequest& request, const CreateCloudRecordingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCloudRecording(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrroClient::CreateCloudRecordingOutcomeCallable TrroClient::CreateCloudRecordingCallable(const CreateCloudRecordingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCloudRecordingOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCloudRecording(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrroClient::CreateDeviceOutcome TrroClient::CreateDevice(const CreateDeviceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDevice");
@@ -248,6 +291,49 @@ TrroClient::CreateProjectOutcomeCallable TrroClient::CreateProjectCallable(const
         [this, request]()
         {
             return this->CreateProject(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrroClient::DeleteCloudRecordingOutcome TrroClient::DeleteCloudRecording(const DeleteCloudRecordingRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCloudRecording");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCloudRecordingResponse rsp = DeleteCloudRecordingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCloudRecordingOutcome(rsp);
+        else
+            return DeleteCloudRecordingOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCloudRecordingOutcome(outcome.GetError());
+    }
+}
+
+void TrroClient::DeleteCloudRecordingAsync(const DeleteCloudRecordingRequest& request, const DeleteCloudRecordingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCloudRecording(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrroClient::DeleteCloudRecordingOutcomeCallable TrroClient::DeleteCloudRecordingCallable(const DeleteCloudRecordingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCloudRecordingOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCloudRecording(request);
         }
     );
 
@@ -900,6 +986,49 @@ TrroClient::GetLicensesOutcomeCallable TrroClient::GetLicensesCallable(const Get
     return task->get_future();
 }
 
+TrroClient::ModifyCallbackUrlOutcome TrroClient::ModifyCallbackUrl(const ModifyCallbackUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCallbackUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCallbackUrlResponse rsp = ModifyCallbackUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCallbackUrlOutcome(rsp);
+        else
+            return ModifyCallbackUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCallbackUrlOutcome(outcome.GetError());
+    }
+}
+
+void TrroClient::ModifyCallbackUrlAsync(const ModifyCallbackUrlRequest& request, const ModifyCallbackUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCallbackUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrroClient::ModifyCallbackUrlOutcomeCallable TrroClient::ModifyCallbackUrlCallable(const ModifyCallbackUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCallbackUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCallbackUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrroClient::ModifyDeviceOutcome TrroClient::ModifyDevice(const ModifyDeviceRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDevice");
@@ -1022,6 +1151,135 @@ TrroClient::ModifyProjectOutcomeCallable TrroClient::ModifyProjectCallable(const
         [this, request]()
         {
             return this->ModifyProject(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrroClient::ModifyProjectSecModeOutcome TrroClient::ModifyProjectSecMode(const ModifyProjectSecModeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyProjectSecMode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyProjectSecModeResponse rsp = ModifyProjectSecModeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyProjectSecModeOutcome(rsp);
+        else
+            return ModifyProjectSecModeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyProjectSecModeOutcome(outcome.GetError());
+    }
+}
+
+void TrroClient::ModifyProjectSecModeAsync(const ModifyProjectSecModeRequest& request, const ModifyProjectSecModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyProjectSecMode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrroClient::ModifyProjectSecModeOutcomeCallable TrroClient::ModifyProjectSecModeCallable(const ModifyProjectSecModeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyProjectSecModeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyProjectSecMode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrroClient::StartPublishLiveStreamOutcome TrroClient::StartPublishLiveStream(const StartPublishLiveStreamRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartPublishLiveStream");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartPublishLiveStreamResponse rsp = StartPublishLiveStreamResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartPublishLiveStreamOutcome(rsp);
+        else
+            return StartPublishLiveStreamOutcome(o.GetError());
+    }
+    else
+    {
+        return StartPublishLiveStreamOutcome(outcome.GetError());
+    }
+}
+
+void TrroClient::StartPublishLiveStreamAsync(const StartPublishLiveStreamRequest& request, const StartPublishLiveStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartPublishLiveStream(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrroClient::StartPublishLiveStreamOutcomeCallable TrroClient::StartPublishLiveStreamCallable(const StartPublishLiveStreamRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartPublishLiveStreamOutcome()>>(
+        [this, request]()
+        {
+            return this->StartPublishLiveStream(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrroClient::StopPublishLiveStreamOutcome TrroClient::StopPublishLiveStream(const StopPublishLiveStreamRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopPublishLiveStream");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopPublishLiveStreamResponse rsp = StopPublishLiveStreamResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopPublishLiveStreamOutcome(rsp);
+        else
+            return StopPublishLiveStreamOutcome(o.GetError());
+    }
+    else
+    {
+        return StopPublishLiveStreamOutcome(outcome.GetError());
+    }
+}
+
+void TrroClient::StopPublishLiveStreamAsync(const StopPublishLiveStreamRequest& request, const StopPublishLiveStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopPublishLiveStream(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrroClient::StopPublishLiveStreamOutcomeCallable TrroClient::StopPublishLiveStreamCallable(const StopPublishLiveStreamRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopPublishLiveStreamOutcome()>>(
+        [this, request]()
+        {
+            return this->StopPublishLiveStream(request);
         }
     );
 

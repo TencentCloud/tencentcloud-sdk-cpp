@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -222,18 +222,18 @@ namespace TencentCloud
                     bool CodecHasBeenSet() const;
 
                     /**
-                     * 获取回调 URL，用户自行搭建的用于接收结果的服务URL。如果用户使用轮询方式获取识别结果，则无需提交该参数。
+                     * 获取回调 URL，用户自行搭建的用于接收结果的服务URL。如果用户使用轮询方式获取识别结果，则无需提交该参数。（注意：回调方式暂不支持一句话版声音复刻）
 回调采用POST请求方式，Content-Type为application/json，回调数据格式如下:{"TaskId":"xxxxxxxxxxxxxx","Status":2,"StatusStr":"success","VoiceType":xxxxx,"ErrorMsg":""}
-                     * @return CallbackUrl 回调 URL，用户自行搭建的用于接收结果的服务URL。如果用户使用轮询方式获取识别结果，则无需提交该参数。
+                     * @return CallbackUrl 回调 URL，用户自行搭建的用于接收结果的服务URL。如果用户使用轮询方式获取识别结果，则无需提交该参数。（注意：回调方式暂不支持一句话版声音复刻）
 回调采用POST请求方式，Content-Type为application/json，回调数据格式如下:{"TaskId":"xxxxxxxxxxxxxx","Status":2,"StatusStr":"success","VoiceType":xxxxx,"ErrorMsg":""}
                      * 
                      */
                     std::string GetCallbackUrl() const;
 
                     /**
-                     * 设置回调 URL，用户自行搭建的用于接收结果的服务URL。如果用户使用轮询方式获取识别结果，则无需提交该参数。
+                     * 设置回调 URL，用户自行搭建的用于接收结果的服务URL。如果用户使用轮询方式获取识别结果，则无需提交该参数。（注意：回调方式暂不支持一句话版声音复刻）
 回调采用POST请求方式，Content-Type为application/json，回调数据格式如下:{"TaskId":"xxxxxxxxxxxxxx","Status":2,"StatusStr":"success","VoiceType":xxxxx,"ErrorMsg":""}
-                     * @param _callbackUrl 回调 URL，用户自行搭建的用于接收结果的服务URL。如果用户使用轮询方式获取识别结果，则无需提交该参数。
+                     * @param _callbackUrl 回调 URL，用户自行搭建的用于接收结果的服务URL。如果用户使用轮询方式获取识别结果，则无需提交该参数。（注意：回调方式暂不支持一句话版声音复刻）
 回调采用POST请求方式，Content-Type为application/json，回调数据格式如下:{"TaskId":"xxxxxxxxxxxxxx","Status":2,"StatusStr":"success","VoiceType":xxxxx,"ErrorMsg":""}
                      * 
                      */
@@ -269,10 +269,8 @@ namespace TencentCloud
 
                     /**
                      * 获取复刻类型。
-0 - 轻量版声音复刻（默认）；
 5 - 一句话声音复刻。
                      * @return TaskType 复刻类型。
-0 - 轻量版声音复刻（默认）；
 5 - 一句话声音复刻。
                      * 
                      */
@@ -280,10 +278,8 @@ namespace TencentCloud
 
                     /**
                      * 设置复刻类型。
-0 - 轻量版声音复刻（默认）；
 5 - 一句话声音复刻。
                      * @param _taskType 复刻类型。
-0 - 轻量版声音复刻（默认）；
 5 - 一句话声音复刻。
                      * 
                      */
@@ -316,6 +312,31 @@ namespace TencentCloud
                      * 
                      */
                     bool VPRAudioIdHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启语音增强，0 - 关闭，1 - 开启 。默认关闭
+语音增强仅适用于一句话复刻场景
+                     * @return EnableVoiceEnhance 是否开启语音增强，0 - 关闭，1 - 开启 。默认关闭
+语音增强仅适用于一句话复刻场景
+                     * 
+                     */
+                    uint64_t GetEnableVoiceEnhance() const;
+
+                    /**
+                     * 设置是否开启语音增强，0 - 关闭，1 - 开启 。默认关闭
+语音增强仅适用于一句话复刻场景
+                     * @param _enableVoiceEnhance 是否开启语音增强，0 - 关闭，1 - 开启 。默认关闭
+语音增强仅适用于一句话复刻场景
+                     * 
+                     */
+                    void SetEnableVoiceEnhance(const uint64_t& _enableVoiceEnhance);
+
+                    /**
+                     * 判断参数 EnableVoiceEnhance 是否已赋值
+                     * @return EnableVoiceEnhance 是否已赋值
+                     * 
+                     */
+                    bool EnableVoiceEnhanceHasBeenSet() const;
 
                 private:
 
@@ -370,7 +391,7 @@ namespace TencentCloud
                     bool m_codecHasBeenSet;
 
                     /**
-                     * 回调 URL，用户自行搭建的用于接收结果的服务URL。如果用户使用轮询方式获取识别结果，则无需提交该参数。
+                     * 回调 URL，用户自行搭建的用于接收结果的服务URL。如果用户使用轮询方式获取识别结果，则无需提交该参数。（注意：回调方式暂不支持一句话版声音复刻）
 回调采用POST请求方式，Content-Type为application/json，回调数据格式如下:{"TaskId":"xxxxxxxxxxxxxx","Status":2,"StatusStr":"success","VoiceType":xxxxx,"ErrorMsg":""}
                      */
                     std::string m_callbackUrl;
@@ -384,7 +405,6 @@ namespace TencentCloud
 
                     /**
                      * 复刻类型。
-0 - 轻量版声音复刻（默认）；
 5 - 一句话声音复刻。
                      */
                     int64_t m_taskType;
@@ -395,6 +415,13 @@ namespace TencentCloud
                      */
                     std::string m_vPRAudioId;
                     bool m_vPRAudioIdHasBeenSet;
+
+                    /**
+                     * 是否开启语音增强，0 - 关闭，1 - 开启 。默认关闭
+语音增强仅适用于一句话复刻场景
+                     */
+                    uint64_t m_enableVoiceEnhance;
+                    bool m_enableVoiceEnhanceHasBeenSet;
 
                 };
             }

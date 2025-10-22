@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ EscapeWhiteListInfo::EscapeWhiteListInfo() :
     m_imageNameHasBeenSet(false),
     m_iDHasBeenSet(false),
     m_hostCountHasBeenSet(false),
+    m_superNodeCountHasBeenSet(false),
     m_containerCountHasBeenSet(false),
     m_eventTypeHasBeenSet(false),
     m_insertTimeHasBeenSet(false),
@@ -76,6 +77,16 @@ CoreInternalOutcome EscapeWhiteListInfo::Deserialize(const rapidjson::Value &val
         }
         m_hostCount = value["HostCount"].GetInt64();
         m_hostCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("SuperNodeCount") && !value["SuperNodeCount"].IsNull())
+    {
+        if (!value["SuperNodeCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EscapeWhiteListInfo.SuperNodeCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_superNodeCount = value["SuperNodeCount"].GetInt64();
+        m_superNodeCountHasBeenSet = true;
     }
 
     if (value.HasMember("ContainerCount") && !value["ContainerCount"].IsNull())
@@ -168,6 +179,14 @@ void EscapeWhiteListInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "HostCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hostCount, allocator);
+    }
+
+    if (m_superNodeCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SuperNodeCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_superNodeCount, allocator);
     }
 
     if (m_containerCountHasBeenSet)
@@ -280,6 +299,22 @@ void EscapeWhiteListInfo::SetHostCount(const int64_t& _hostCount)
 bool EscapeWhiteListInfo::HostCountHasBeenSet() const
 {
     return m_hostCountHasBeenSet;
+}
+
+int64_t EscapeWhiteListInfo::GetSuperNodeCount() const
+{
+    return m_superNodeCount;
+}
+
+void EscapeWhiteListInfo::SetSuperNodeCount(const int64_t& _superNodeCount)
+{
+    m_superNodeCount = _superNodeCount;
+    m_superNodeCountHasBeenSet = true;
+}
+
+bool EscapeWhiteListInfo::SuperNodeCountHasBeenSet() const
+{
+    return m_superNodeCountHasBeenSet;
 }
 
 int64_t EscapeWhiteListInfo::GetContainerCount() const

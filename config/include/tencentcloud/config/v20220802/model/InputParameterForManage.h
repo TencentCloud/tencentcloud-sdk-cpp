@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取值类型。数值：Integer， 字符串：String
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValueType 值类型。数值：Integer， 字符串：String
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValueType() const;
 
                     /**
                      * 设置值类型。数值：Integer， 字符串：String
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _valueType 值类型。数值：Integer， 字符串：String
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValueType(const std::string& _valueType);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数Key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParameterKey 参数Key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParameterKey() const;
 
                     /**
                      * 设置参数Key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _parameterKey 参数Key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParameterKey(const std::string& _parameterKey);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数类型。必填类型：Require，可选类型：Optional。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 参数类型。必填类型：Require，可选类型：Optional。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置参数类型。必填类型：Require，可选类型：Optional。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 参数类型。必填类型：Require，可选类型：Optional。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取默认值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefaultValue 默认值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDefaultValue() const;
 
                     /**
                      * 设置默认值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _defaultValue 默认值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefaultValue(const std::string& _defaultValue);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 值类型。数值：Integer， 字符串：String
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_valueType;
                     bool m_valueTypeHasBeenSet;
 
                     /**
                      * 参数Key
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_parameterKey;
                     bool m_parameterKeyHasBeenSet;
 
                     /**
                      * 参数类型。必填类型：Require，可选类型：Optional。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 默认值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_defaultValue;
                     bool m_defaultValueHasBeenSet;
 
                     /**
                      * 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

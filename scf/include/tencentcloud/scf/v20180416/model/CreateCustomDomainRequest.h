@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 #include <tencentcloud/scf/v20180416/model/EndpointsConf.h>
 #include <tencentcloud/scf/v20180416/model/CertConf.h>
 #include <tencentcloud/scf/v20180416/model/WafConf.h>
+#include <tencentcloud/scf/v20180416/model/Tag.h>
 
 
 namespace TencentCloud
@@ -109,15 +110,15 @@ namespace TencentCloud
                     bool EndpointsConfigHasBeenSet() const;
 
                     /**
-                     * 获取证书配置信息，HTTPS协议必穿
-                     * @return CertConfig 证书配置信息，HTTPS协议必穿
+                     * 获取证书配置信息，有使用HTTPS协议时候必须传
+                     * @return CertConfig 证书配置信息，有使用HTTPS协议时候必须传
                      * 
                      */
                     CertConf GetCertConfig() const;
 
                     /**
-                     * 设置证书配置信息，HTTPS协议必穿
-                     * @param _certConfig 证书配置信息，HTTPS协议必穿
+                     * 设置证书配置信息，有使用HTTPS协议时候必须传
+                     * @param _certConfig 证书配置信息，有使用HTTPS协议时候必须传
                      * 
                      */
                     void SetCertConfig(const CertConf& _certConfig);
@@ -150,6 +151,27 @@ namespace TencentCloud
                      */
                     bool WafConfigHasBeenSet() const;
 
+                    /**
+                     * 获取标签
+                     * @return Tags 标签
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置标签
+                     * @param _tags 标签
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -171,7 +193,7 @@ namespace TencentCloud
                     bool m_endpointsConfigHasBeenSet;
 
                     /**
-                     * 证书配置信息，HTTPS协议必穿
+                     * 证书配置信息，有使用HTTPS协议时候必须传
                      */
                     CertConf m_certConfig;
                     bool m_certConfigHasBeenSet;
@@ -181,6 +203,12 @@ namespace TencentCloud
                      */
                     WafConf m_wafConfig;
                     bool m_wafConfigHasBeenSet;
+
+                    /**
+                     * 标签
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

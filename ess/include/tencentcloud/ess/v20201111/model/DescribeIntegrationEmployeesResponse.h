@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取员工信息列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Employees 员工信息列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Staff> GetEmployees() const;
@@ -61,10 +59,8 @@ namespace TencentCloud
                     bool EmployeesHasBeenSet() const;
 
                     /**
-                     * 获取指定分页返回第几页的数据。页码从 0 开始，即首页为 0，最大20000。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Offset 指定分页返回第几页的数据。页码从 0 开始，即首页为 0，最大20000。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取偏移量
+                     * @return Offset 偏移量
                      * 
                      */
                     int64_t GetOffset() const;
@@ -108,14 +104,12 @@ namespace TencentCloud
 
                     /**
                      * 员工信息列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Staff> m_employees;
                     bool m_employeesHasBeenSet;
 
                     /**
-                     * 指定分页返回第几页的数据。页码从 0 开始，即首页为 0，最大20000。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 偏移量
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

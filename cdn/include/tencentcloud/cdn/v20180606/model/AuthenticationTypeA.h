@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,6 @@ namespace TencentCloud
 rand 为随机字符串，0 ~ 100 位大小写字母与数字组成；
 uid 为 0；
 md5hash：MD5（文件路径-timestamp-rand-uid-自定义密钥）
-
                 */
                 class AuthenticationTypeA : public AbstractModel
                 {

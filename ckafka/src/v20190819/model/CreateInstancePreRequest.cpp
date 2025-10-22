@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,7 +43,8 @@ CreateInstancePreRequest::CreateInstancePreRequest() :
     m_zoneIdsHasBeenSet(false),
     m_publicNetworkMonthlyHasBeenSet(false),
     m_instanceNumHasBeenSet(false),
-    m_autoVoucherHasBeenSet(false)
+    m_autoVoucherHasBeenSet(false),
+    m_elasticBandwidthSwitchHasBeenSet(false)
 {
 }
 
@@ -232,6 +233,14 @@ string CreateInstancePreRequest::ToJsonString() const
         string key = "AutoVoucher";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoVoucher, allocator);
+    }
+
+    if (m_elasticBandwidthSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElasticBandwidthSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_elasticBandwidthSwitch, allocator);
     }
 
 
@@ -576,6 +585,22 @@ void CreateInstancePreRequest::SetAutoVoucher(const int64_t& _autoVoucher)
 bool CreateInstancePreRequest::AutoVoucherHasBeenSet() const
 {
     return m_autoVoucherHasBeenSet;
+}
+
+int64_t CreateInstancePreRequest::GetElasticBandwidthSwitch() const
+{
+    return m_elasticBandwidthSwitch;
+}
+
+void CreateInstancePreRequest::SetElasticBandwidthSwitch(const int64_t& _elasticBandwidthSwitch)
+{
+    m_elasticBandwidthSwitch = _elasticBandwidthSwitch;
+    m_elasticBandwidthSwitchHasBeenSet = true;
+}
+
+bool CreateInstancePreRequest::ElasticBandwidthSwitchHasBeenSet() const
+{
+    return m_elasticBandwidthSwitchHasBeenSet;
 }
 
 

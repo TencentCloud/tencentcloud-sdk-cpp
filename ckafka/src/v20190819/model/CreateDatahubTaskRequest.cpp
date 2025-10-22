@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,8 @@ CreateDatahubTaskRequest::CreateDatahubTaskRequest() :
     m_schemaIdHasBeenSet(false),
     m_transformsParamHasBeenSet(false),
     m_taskIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -133,6 +134,14 @@ string CreateDatahubTaskRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -301,6 +310,22 @@ void CreateDatahubTaskRequest::SetTags(const vector<Tag>& _tags)
 bool CreateDatahubTaskRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string CreateDatahubTaskRequest::GetDescription() const
+{
+    return m_description;
+}
+
+void CreateDatahubTaskRequest::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool CreateDatahubTaskRequest::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 
 

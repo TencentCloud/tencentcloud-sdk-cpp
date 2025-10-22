@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取协议，可取值HTTP，HTTPS
-                     * @return Protocol 协议，可取值HTTP，HTTPS
+                     * 获取协议，可取值http，https，http/https
+                     * @return Protocol 协议，可取值http，https，http/https
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置协议，可取值HTTP，HTTPS
-                     * @param _protocol 协议，可取值HTTP，HTTPS
+                     * 设置协议，可取值http，https，http/https
+                     * @param _protocol 协议，可取值http，https，http/https
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -168,7 +168,7 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 协议，可取值HTTP，HTTPS
+                     * 协议，可取值http，https，http/https
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;

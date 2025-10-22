@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取vhost描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description vhost描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置vhost描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description vhost描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -116,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取vhost标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags vhost标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
                      * 设置vhost标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags vhost标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
@@ -141,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -166,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyTime 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyTime 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -191,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取vhost概览统计信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VirtualHostStatistics vhost概览统计信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RabbitMQVirtualHostStatistics GetVirtualHostStatistics() const;
 
                     /**
                      * 设置vhost概览统计信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _virtualHostStatistics vhost概览统计信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVirtualHostStatistics(const RabbitMQVirtualHostStatistics& _virtualHostStatistics);
@@ -216,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消息轨迹开关,true打开,false关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TraceFlag 消息轨迹开关,true打开,false关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetTraceFlag() const;
 
                     /**
                      * 设置消息轨迹开关,true打开,false关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _traceFlag 消息轨迹开关,true打开,false关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTraceFlag(const bool& _traceFlag);
@@ -241,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取vhost状态，与原生控制台对应，有running、partial、stopped、unknown
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status vhost状态，与原生控制台对应，有running、partial、stopped、unknown
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置vhost状态，与原生控制台对应，有running、partial、stopped、unknown
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status vhost状态，与原生控制台对应，有running、partial、stopped、unknown
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -266,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消息堆积数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MessageHeapCount 消息堆积数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMessageHeapCount() const;
 
                     /**
                      * 设置消息堆积数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _messageHeapCount 消息堆积数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMessageHeapCount(const int64_t& _messageHeapCount);
@@ -291,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取输入消息速率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MessageRateIn 输入消息速率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetMessageRateIn() const;
 
                     /**
                      * 设置输入消息速率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _messageRateIn 输入消息速率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMessageRateIn(const double& _messageRateIn);
@@ -316,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取输出消息速率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MessageRateOut 输出消息速率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetMessageRateOut() const;
 
                     /**
                      * 设置输出消息速率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _messageRateOut 输出消息速率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMessageRateOut(const double& _messageRateOut);
@@ -341,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否存在镜像队列策略，true 为存在，false 为不存
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MirrorQueuePolicyFlag 是否存在镜像队列策略，true 为存在，false 为不存
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetMirrorQueuePolicyFlag() const;
 
                     /**
                      * 设置是否存在镜像队列策略，true 为存在，false 为不存
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mirrorQueuePolicyFlag 是否存在镜像队列策略，true 为存在，false 为不存
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMirrorQueuePolicyFlag(const bool& _mirrorQueuePolicyFlag);
@@ -363,6 +319,48 @@ namespace TencentCloud
                      * 
                      */
                     bool MirrorQueuePolicyFlagHasBeenSet() const;
+
+                    /**
+                     * 获取创建时间时间戳
+                     * @return CreateTs 创建时间时间戳
+                     * 
+                     */
+                    uint64_t GetCreateTs() const;
+
+                    /**
+                     * 设置创建时间时间戳
+                     * @param _createTs 创建时间时间戳
+                     * 
+                     */
+                    void SetCreateTs(const uint64_t& _createTs);
+
+                    /**
+                     * 判断参数 CreateTs 是否已赋值
+                     * @return CreateTs 是否已赋值
+                     * 
+                     */
+                    bool CreateTsHasBeenSet() const;
+
+                    /**
+                     * 获取修改时间时间戳
+                     * @return ModifyTs 修改时间时间戳
+                     * 
+                     */
+                    uint64_t GetModifyTs() const;
+
+                    /**
+                     * 设置修改时间时间戳
+                     * @param _modifyTs 修改时间时间戳
+                     * 
+                     */
+                    void SetModifyTs(const uint64_t& _modifyTs);
+
+                    /**
+                     * 判断参数 ModifyTs 是否已赋值
+                     * @return ModifyTs 是否已赋值
+                     * 
+                     */
+                    bool ModifyTsHasBeenSet() const;
 
                 private:
 
@@ -380,80 +378,81 @@ namespace TencentCloud
 
                     /**
                      * vhost描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * vhost标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
                      * vhost概览统计信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RabbitMQVirtualHostStatistics m_virtualHostStatistics;
                     bool m_virtualHostStatisticsHasBeenSet;
 
                     /**
                      * 消息轨迹开关,true打开,false关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_traceFlag;
                     bool m_traceFlagHasBeenSet;
 
                     /**
                      * vhost状态，与原生控制台对应，有running、partial、stopped、unknown
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 消息堆积数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_messageHeapCount;
                     bool m_messageHeapCountHasBeenSet;
 
                     /**
                      * 输入消息速率
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_messageRateIn;
                     bool m_messageRateInHasBeenSet;
 
                     /**
                      * 输出消息速率
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_messageRateOut;
                     bool m_messageRateOutHasBeenSet;
 
                     /**
                      * 是否存在镜像队列策略，true 为存在，false 为不存
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_mirrorQueuePolicyFlag;
                     bool m_mirrorQueuePolicyFlagHasBeenSet;
+
+                    /**
+                     * 创建时间时间戳
+                     */
+                    uint64_t m_createTs;
+                    bool m_createTsHasBeenSet;
+
+                    /**
+                     * 修改时间时间戳
+                     */
+                    uint64_t m_modifyTs;
+                    bool m_modifyTsHasBeenSet;
 
                 };
             }

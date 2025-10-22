@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Db 数据库
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDb() const;
 
                     /**
                      * 设置数据库
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _db 数据库
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDb(const std::string& _db);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取权限列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Privileges 权限列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetPrivileges() const;
 
                     /**
                      * 设置权限列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _privileges 权限列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrivileges(const std::vector<std::string>& _privileges);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 数据库
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_db;
                     bool m_dbHasBeenSet;
 
                     /**
                      * 权限列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_privileges;
                     bool m_privilegesHasBeenSet;

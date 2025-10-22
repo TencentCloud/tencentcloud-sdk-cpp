@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -532,18 +532,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接入端口值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VirtualPort 接入端口值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetVirtualPort() const;
 
                     /**
                      * 设置接入端口值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _virtualPort 接入端口值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVirtualPort(const uint64_t& _virtualPort);
@@ -599,18 +595,14 @@ namespace TencentCloud
 
                     /**
                      * 获取版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetVersion() const;
 
                     /**
                      * 设置版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _version 版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersion(const uint64_t& _version);
@@ -764,7 +756,6 @@ namespace TencentCloud
 
                     /**
                      * 接入端口值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_virtualPort;
                     bool m_virtualPortHasBeenSet;
@@ -783,7 +774,6 @@ namespace TencentCloud
 
                     /**
                      * 版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_version;
                     bool m_versionHasBeenSet;

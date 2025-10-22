@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
 CreateDomainVerifyRecordRequest::CreateDomainVerifyRecordRequest() :
-    m_domainHasBeenSet(false)
+    m_domainHasBeenSet(false),
+    m_subAppIdHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string CreateDomainVerifyRecordRequest::ToJsonString() const
         string key = "Domain";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void CreateDomainVerifyRecordRequest::SetDomain(const string& _domain)
 bool CreateDomainVerifyRecordRequest::DomainHasBeenSet() const
 {
     return m_domainHasBeenSet;
+}
+
+uint64_t CreateDomainVerifyRecordRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void CreateDomainVerifyRecordRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool CreateDomainVerifyRecordRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
 }
 
 

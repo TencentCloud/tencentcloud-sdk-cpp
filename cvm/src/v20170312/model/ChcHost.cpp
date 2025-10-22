@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,7 +42,22 @@ ChcHost::ChcHost() :
     m_bmcMACHasBeenSet(false),
     m_deployMACHasBeenSet(false),
     m_tenantTypeHasBeenSet(false),
-    m_deployExtraConfigHasBeenSet(false)
+    m_deployExtraConfigHasBeenSet(false),
+    m_gpuHasBeenSet(false),
+    m_networkCardHasBeenSet(false),
+    m_isPredefinedTypeHasBeenSet(false),
+    m_chcInstanceTypeHasBeenSet(false),
+    m_chcInstanceFamilyHasBeenSet(false),
+    m_chcInstanceFamilyNameHasBeenSet(false),
+    m_resaleAppIdHasBeenSet(false),
+    m_resaleAccountIdHasBeenSet(false),
+    m_saleStatusHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_latestOperationHasBeenSet(false),
+    m_latestOperationErrorCodeHasBeenSet(false),
+    m_latestOperationErrorMsgHasBeenSet(false),
+    m_latestOperationNameHasBeenSet(false),
+    m_latestOperationStateHasBeenSet(false)
 {
 }
 
@@ -305,6 +320,166 @@ CoreInternalOutcome ChcHost::Deserialize(const rapidjson::Value &value)
         m_deployExtraConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("Gpu") && !value["Gpu"].IsNull())
+    {
+        if (!value["Gpu"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChcHost.Gpu` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gpu = string(value["Gpu"].GetString());
+        m_gpuHasBeenSet = true;
+    }
+
+    if (value.HasMember("NetworkCard") && !value["NetworkCard"].IsNull())
+    {
+        if (!value["NetworkCard"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChcHost.NetworkCard` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_networkCard = string(value["NetworkCard"].GetString());
+        m_networkCardHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsPredefinedType") && !value["IsPredefinedType"].IsNull())
+    {
+        if (!value["IsPredefinedType"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChcHost.IsPredefinedType` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isPredefinedType = value["IsPredefinedType"].GetBool();
+        m_isPredefinedTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ChcInstanceType") && !value["ChcInstanceType"].IsNull())
+    {
+        if (!value["ChcInstanceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChcHost.ChcInstanceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_chcInstanceType = string(value["ChcInstanceType"].GetString());
+        m_chcInstanceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ChcInstanceFamily") && !value["ChcInstanceFamily"].IsNull())
+    {
+        if (!value["ChcInstanceFamily"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChcHost.ChcInstanceFamily` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_chcInstanceFamily = string(value["ChcInstanceFamily"].GetString());
+        m_chcInstanceFamilyHasBeenSet = true;
+    }
+
+    if (value.HasMember("ChcInstanceFamilyName") && !value["ChcInstanceFamilyName"].IsNull())
+    {
+        if (!value["ChcInstanceFamilyName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChcHost.ChcInstanceFamilyName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_chcInstanceFamilyName = string(value["ChcInstanceFamilyName"].GetString());
+        m_chcInstanceFamilyNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResaleAppId") && !value["ResaleAppId"].IsNull())
+    {
+        if (!value["ResaleAppId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChcHost.ResaleAppId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resaleAppId = string(value["ResaleAppId"].GetString());
+        m_resaleAppIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResaleAccountId") && !value["ResaleAccountId"].IsNull())
+    {
+        if (!value["ResaleAccountId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChcHost.ResaleAccountId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resaleAccountId = string(value["ResaleAccountId"].GetString());
+        m_resaleAccountIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SaleStatus") && !value["SaleStatus"].IsNull())
+    {
+        if (!value["SaleStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChcHost.SaleStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_saleStatus = string(value["SaleStatus"].GetString());
+        m_saleStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ChcHost.Tags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("LatestOperation") && !value["LatestOperation"].IsNull())
+    {
+        if (!value["LatestOperation"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChcHost.LatestOperation` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_latestOperation = string(value["LatestOperation"].GetString());
+        m_latestOperationHasBeenSet = true;
+    }
+
+    if (value.HasMember("LatestOperationErrorCode") && !value["LatestOperationErrorCode"].IsNull())
+    {
+        if (!value["LatestOperationErrorCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChcHost.LatestOperationErrorCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_latestOperationErrorCode = string(value["LatestOperationErrorCode"].GetString());
+        m_latestOperationErrorCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("LatestOperationErrorMsg") && !value["LatestOperationErrorMsg"].IsNull())
+    {
+        if (!value["LatestOperationErrorMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChcHost.LatestOperationErrorMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_latestOperationErrorMsg = string(value["LatestOperationErrorMsg"].GetString());
+        m_latestOperationErrorMsgHasBeenSet = true;
+    }
+
+    if (value.HasMember("LatestOperationName") && !value["LatestOperationName"].IsNull())
+    {
+        if (!value["LatestOperationName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChcHost.LatestOperationName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_latestOperationName = string(value["LatestOperationName"].GetString());
+        m_latestOperationNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("LatestOperationState") && !value["LatestOperationState"].IsNull())
+    {
+        if (!value["LatestOperationState"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChcHost.LatestOperationState` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_latestOperationState = string(value["LatestOperationState"].GetString());
+        m_latestOperationStateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -500,6 +675,133 @@ void ChcHost::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_deployExtraConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_gpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Gpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gpu.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_networkCardHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkCard";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_networkCard.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isPredefinedTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsPredefinedType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isPredefinedType, allocator);
+    }
+
+    if (m_chcInstanceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChcInstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_chcInstanceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_chcInstanceFamilyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChcInstanceFamily";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_chcInstanceFamily.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_chcInstanceFamilyNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChcInstanceFamilyName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_chcInstanceFamilyName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resaleAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResaleAppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resaleAppId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resaleAccountIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResaleAccountId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resaleAccountId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_saleStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SaleStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_saleStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_latestOperationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LatestOperation";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_latestOperation.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_latestOperationErrorCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LatestOperationErrorCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_latestOperationErrorCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_latestOperationErrorMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LatestOperationErrorMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_latestOperationErrorMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_latestOperationNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LatestOperationName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_latestOperationName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_latestOperationStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LatestOperationState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_latestOperationState.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -855,5 +1157,245 @@ void ChcHost::SetDeployExtraConfig(const ChcDeployExtraConfig& _deployExtraConfi
 bool ChcHost::DeployExtraConfigHasBeenSet() const
 {
     return m_deployExtraConfigHasBeenSet;
+}
+
+string ChcHost::GetGpu() const
+{
+    return m_gpu;
+}
+
+void ChcHost::SetGpu(const string& _gpu)
+{
+    m_gpu = _gpu;
+    m_gpuHasBeenSet = true;
+}
+
+bool ChcHost::GpuHasBeenSet() const
+{
+    return m_gpuHasBeenSet;
+}
+
+string ChcHost::GetNetworkCard() const
+{
+    return m_networkCard;
+}
+
+void ChcHost::SetNetworkCard(const string& _networkCard)
+{
+    m_networkCard = _networkCard;
+    m_networkCardHasBeenSet = true;
+}
+
+bool ChcHost::NetworkCardHasBeenSet() const
+{
+    return m_networkCardHasBeenSet;
+}
+
+bool ChcHost::GetIsPredefinedType() const
+{
+    return m_isPredefinedType;
+}
+
+void ChcHost::SetIsPredefinedType(const bool& _isPredefinedType)
+{
+    m_isPredefinedType = _isPredefinedType;
+    m_isPredefinedTypeHasBeenSet = true;
+}
+
+bool ChcHost::IsPredefinedTypeHasBeenSet() const
+{
+    return m_isPredefinedTypeHasBeenSet;
+}
+
+string ChcHost::GetChcInstanceType() const
+{
+    return m_chcInstanceType;
+}
+
+void ChcHost::SetChcInstanceType(const string& _chcInstanceType)
+{
+    m_chcInstanceType = _chcInstanceType;
+    m_chcInstanceTypeHasBeenSet = true;
+}
+
+bool ChcHost::ChcInstanceTypeHasBeenSet() const
+{
+    return m_chcInstanceTypeHasBeenSet;
+}
+
+string ChcHost::GetChcInstanceFamily() const
+{
+    return m_chcInstanceFamily;
+}
+
+void ChcHost::SetChcInstanceFamily(const string& _chcInstanceFamily)
+{
+    m_chcInstanceFamily = _chcInstanceFamily;
+    m_chcInstanceFamilyHasBeenSet = true;
+}
+
+bool ChcHost::ChcInstanceFamilyHasBeenSet() const
+{
+    return m_chcInstanceFamilyHasBeenSet;
+}
+
+string ChcHost::GetChcInstanceFamilyName() const
+{
+    return m_chcInstanceFamilyName;
+}
+
+void ChcHost::SetChcInstanceFamilyName(const string& _chcInstanceFamilyName)
+{
+    m_chcInstanceFamilyName = _chcInstanceFamilyName;
+    m_chcInstanceFamilyNameHasBeenSet = true;
+}
+
+bool ChcHost::ChcInstanceFamilyNameHasBeenSet() const
+{
+    return m_chcInstanceFamilyNameHasBeenSet;
+}
+
+string ChcHost::GetResaleAppId() const
+{
+    return m_resaleAppId;
+}
+
+void ChcHost::SetResaleAppId(const string& _resaleAppId)
+{
+    m_resaleAppId = _resaleAppId;
+    m_resaleAppIdHasBeenSet = true;
+}
+
+bool ChcHost::ResaleAppIdHasBeenSet() const
+{
+    return m_resaleAppIdHasBeenSet;
+}
+
+string ChcHost::GetResaleAccountId() const
+{
+    return m_resaleAccountId;
+}
+
+void ChcHost::SetResaleAccountId(const string& _resaleAccountId)
+{
+    m_resaleAccountId = _resaleAccountId;
+    m_resaleAccountIdHasBeenSet = true;
+}
+
+bool ChcHost::ResaleAccountIdHasBeenSet() const
+{
+    return m_resaleAccountIdHasBeenSet;
+}
+
+string ChcHost::GetSaleStatus() const
+{
+    return m_saleStatus;
+}
+
+void ChcHost::SetSaleStatus(const string& _saleStatus)
+{
+    m_saleStatus = _saleStatus;
+    m_saleStatusHasBeenSet = true;
+}
+
+bool ChcHost::SaleStatusHasBeenSet() const
+{
+    return m_saleStatusHasBeenSet;
+}
+
+vector<Tag> ChcHost::GetTags() const
+{
+    return m_tags;
+}
+
+void ChcHost::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool ChcHost::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+string ChcHost::GetLatestOperation() const
+{
+    return m_latestOperation;
+}
+
+void ChcHost::SetLatestOperation(const string& _latestOperation)
+{
+    m_latestOperation = _latestOperation;
+    m_latestOperationHasBeenSet = true;
+}
+
+bool ChcHost::LatestOperationHasBeenSet() const
+{
+    return m_latestOperationHasBeenSet;
+}
+
+string ChcHost::GetLatestOperationErrorCode() const
+{
+    return m_latestOperationErrorCode;
+}
+
+void ChcHost::SetLatestOperationErrorCode(const string& _latestOperationErrorCode)
+{
+    m_latestOperationErrorCode = _latestOperationErrorCode;
+    m_latestOperationErrorCodeHasBeenSet = true;
+}
+
+bool ChcHost::LatestOperationErrorCodeHasBeenSet() const
+{
+    return m_latestOperationErrorCodeHasBeenSet;
+}
+
+string ChcHost::GetLatestOperationErrorMsg() const
+{
+    return m_latestOperationErrorMsg;
+}
+
+void ChcHost::SetLatestOperationErrorMsg(const string& _latestOperationErrorMsg)
+{
+    m_latestOperationErrorMsg = _latestOperationErrorMsg;
+    m_latestOperationErrorMsgHasBeenSet = true;
+}
+
+bool ChcHost::LatestOperationErrorMsgHasBeenSet() const
+{
+    return m_latestOperationErrorMsgHasBeenSet;
+}
+
+string ChcHost::GetLatestOperationName() const
+{
+    return m_latestOperationName;
+}
+
+void ChcHost::SetLatestOperationName(const string& _latestOperationName)
+{
+    m_latestOperationName = _latestOperationName;
+    m_latestOperationNameHasBeenSet = true;
+}
+
+bool ChcHost::LatestOperationNameHasBeenSet() const
+{
+    return m_latestOperationNameHasBeenSet;
+}
+
+string ChcHost::GetLatestOperationState() const
+{
+    return m_latestOperationState;
+}
+
+void ChcHost::SetLatestOperationState(const string& _latestOperationState)
+{
+    m_latestOperationState = _latestOperationState;
+    m_latestOperationStateHasBeenSet = true;
+}
+
+bool ChcHost::LatestOperationStateHasBeenSet() const
+{
+    return m_latestOperationStateHasBeenSet;
 }
 

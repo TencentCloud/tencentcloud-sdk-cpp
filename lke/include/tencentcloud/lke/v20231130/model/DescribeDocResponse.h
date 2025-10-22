@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/lke/v20231130/model/AttrLabel.h>
+#include <tencentcloud/lke/v20231130/model/UpdatePeriodInfo.h>
 
 
 namespace TencentCloud
@@ -339,8 +340,8 @@ namespace TencentCloud
                     bool IsAllowEditHasBeenSet() const;
 
                     /**
-                     * 获取属性标签适用范围 1：全部，2：按条件范围
-                     * @return AttrRange 属性标签适用范围 1：全部，2：按条件范围
+                     * 获取标签适用范围 1：全部，2：按条件范围
+                     * @return AttrRange 标签适用范围 1：全部，2：按条件范围
                      * 
                      */
                     int64_t GetAttrRange() const;
@@ -353,8 +354,8 @@ namespace TencentCloud
                     bool AttrRangeHasBeenSet() const;
 
                     /**
-                     * 获取属性标签
-                     * @return AttrLabels 属性标签
+                     * 获取标签
+                     * @return AttrLabels 标签
                      * 
                      */
                     std::vector<AttrLabel> GetAttrLabels() const;
@@ -365,6 +366,82 @@ namespace TencentCloud
                      * 
                      */
                     bool AttrLabelsHasBeenSet() const;
+
+                    /**
+                     * 获取分类ID
+                     * @return CateBizId 分类ID
+                     * 
+                     */
+                    std::string GetCateBizId() const;
+
+                    /**
+                     * 判断参数 CateBizId 是否已赋值
+                     * @return CateBizId 是否已赋值
+                     * 
+                     */
+                    bool CateBizIdHasBeenSet() const;
+
+                    /**
+                     * 获取文档是否停用，false:未停用，true:已停用
+                     * @return IsDisabled 文档是否停用，false:未停用，true:已停用
+                     * 
+                     */
+                    bool GetIsDisabled() const;
+
+                    /**
+                     * 判断参数 IsDisabled 是否已赋值
+                     * @return IsDisabled 是否已赋值
+                     * 
+                     */
+                    bool IsDisabledHasBeenSet() const;
+
+                    /**
+                     * 获取是否支持下载
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsDownload 是否支持下载
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIsDownload() const;
+
+                    /**
+                     * 判断参数 IsDownload 是否已赋值
+                     * @return IsDownload 是否已赋值
+                     * 
+                     */
+                    bool IsDownloadHasBeenSet() const;
+
+                    /**
+                     * 获取自定义切分规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SplitRule 自定义切分规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSplitRule() const;
+
+                    /**
+                     * 判断参数 SplitRule 是否已赋值
+                     * @return SplitRule 是否已赋值
+                     * 
+                     */
+                    bool SplitRuleHasBeenSet() const;
+
+                    /**
+                     * 获取文档更新频率
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpdatePeriodInfo 文档更新频率
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    UpdatePeriodInfo GetUpdatePeriodInfo() const;
+
+                    /**
+                     * 判断参数 UpdatePeriodInfo 是否已赋值
+                     * @return UpdatePeriodInfo 是否已赋值
+                     * 
+                     */
+                    bool UpdatePeriodInfoHasBeenSet() const;
 
                 private:
 
@@ -495,16 +572,49 @@ namespace TencentCloud
                     bool m_isAllowEditHasBeenSet;
 
                     /**
-                     * 属性标签适用范围 1：全部，2：按条件范围
+                     * 标签适用范围 1：全部，2：按条件范围
                      */
                     int64_t m_attrRange;
                     bool m_attrRangeHasBeenSet;
 
                     /**
-                     * 属性标签
+                     * 标签
                      */
                     std::vector<AttrLabel> m_attrLabels;
                     bool m_attrLabelsHasBeenSet;
+
+                    /**
+                     * 分类ID
+                     */
+                    std::string m_cateBizId;
+                    bool m_cateBizIdHasBeenSet;
+
+                    /**
+                     * 文档是否停用，false:未停用，true:已停用
+                     */
+                    bool m_isDisabled;
+                    bool m_isDisabledHasBeenSet;
+
+                    /**
+                     * 是否支持下载
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isDownload;
+                    bool m_isDownloadHasBeenSet;
+
+                    /**
+                     * 自定义切分规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_splitRule;
+                    bool m_splitRuleHasBeenSet;
+
+                    /**
+                     * 文档更新频率
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    UpdatePeriodInfo m_updatePeriodInfo;
+                    bool m_updatePeriodInfoHasBeenSet;
 
                 };
             }

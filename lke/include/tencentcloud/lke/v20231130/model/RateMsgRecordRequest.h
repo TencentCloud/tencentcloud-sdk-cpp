@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool BotAppKeyHasBeenSet() const;
 
                     /**
-                     * 获取消息ID
-                     * @return RecordId 消息ID
+                     * 获取消息ID 【大模型回复答案的RecordID】
+                     * @return RecordId 消息ID 【大模型回复答案的RecordID】
                      * 
                      */
                     std::string GetRecordId() const;
 
                     /**
-                     * 设置消息ID
-                     * @param _recordId 消息ID
+                     * 设置消息ID 【大模型回复答案的RecordID】
+                     * @param _recordId 消息ID 【大模型回复答案的RecordID】
                      * 
                      */
                     void SetRecordId(const std::string& _recordId);
@@ -85,15 +85,27 @@ namespace TencentCloud
                     bool RecordIdHasBeenSet() const;
 
                     /**
-                     * 获取1点赞2点踩
-                     * @return Score 1点赞2点踩
+                     * 获取1: 点赞;   2: 点踩;   
+注：
+(1) 评测端不支持点赞、点踩
+(2) 消息回复类型为欢迎语、并发超限、实时文档，不支持点赞、点踩
+                     * @return Score 1: 点赞;   2: 点踩;   
+注：
+(1) 评测端不支持点赞、点踩
+(2) 消息回复类型为欢迎语、并发超限、实时文档，不支持点赞、点踩
                      * 
                      */
                     uint64_t GetScore() const;
 
                     /**
-                     * 设置1点赞2点踩
-                     * @param _score 1点赞2点踩
+                     * 设置1: 点赞;   2: 点踩;   
+注：
+(1) 评测端不支持点赞、点踩
+(2) 消息回复类型为欢迎语、并发超限、实时文档，不支持点赞、点踩
+                     * @param _score 1: 点赞;   2: 点踩;   
+注：
+(1) 评测端不支持点赞、点踩
+(2) 消息回复类型为欢迎语、并发超限、实时文档，不支持点赞、点踩
                      * 
                      */
                     void SetScore(const uint64_t& _score);
@@ -106,15 +118,15 @@ namespace TencentCloud
                     bool ScoreHasBeenSet() const;
 
                     /**
-                     * 获取原因
-                     * @return Reasons 原因
+                     * 获取原因，只有Score参数为2即点踩的时候才需要输入
+                     * @return Reasons 原因，只有Score参数为2即点踩的时候才需要输入
                      * 
                      */
                     std::vector<std::string> GetReasons() const;
 
                     /**
-                     * 设置原因
-                     * @param _reasons 原因
+                     * 设置原因，只有Score参数为2即点踩的时候才需要输入
+                     * @param _reasons 原因，只有Score参数为2即点踩的时候才需要输入
                      * 
                      */
                     void SetReasons(const std::vector<std::string>& _reasons);
@@ -135,19 +147,22 @@ namespace TencentCloud
                     bool m_botAppKeyHasBeenSet;
 
                     /**
-                     * 消息ID
+                     * 消息ID 【大模型回复答案的RecordID】
                      */
                     std::string m_recordId;
                     bool m_recordIdHasBeenSet;
 
                     /**
-                     * 1点赞2点踩
+                     * 1: 点赞;   2: 点踩;   
+注：
+(1) 评测端不支持点赞、点踩
+(2) 消息回复类型为欢迎语、并发超限、实时文档，不支持点赞、点踩
                      */
                     uint64_t m_score;
                     bool m_scoreHasBeenSet;
 
                     /**
-                     * 原因
+                     * 原因，只有Score参数为2即点踩的时候才需要输入
                      */
                     std::vector<std::string> m_reasons;
                     bool m_reasonsHasBeenSet;

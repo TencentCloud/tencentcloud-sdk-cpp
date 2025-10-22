@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -109,13 +109,15 @@ namespace TencentCloud
                     /**
                      * 获取查询负载均衡详细信息列表的过滤条件，每次请求的Filters的上限为10，Filter.Values的上限为100。
 Filter.Name和Filter.Values皆为必填项。详细的过滤条件如下：
-- name - String - 是否必填：否 - （过滤条件）按照网关负载均衡实例名称过滤，如“gwlb-xxxx”。
 - VpcId - String - 是否必填：否 - （过滤条件）按照网关负载均衡实例所属的私有网络过滤，如“vpc-bhqk****”。
+- Vips - String  - 是否必填：否 - （过滤条件）按照网关负载均衡实例所属的私有网络过滤，如“10.1.1.1”
+- tag:tag-key - String - 是否必填：否 - （过滤条件）按照GWLB标签键值对进行过滤，tag-key使用具体的标签键进行替换。
 
                      * @return Filters 查询负载均衡详细信息列表的过滤条件，每次请求的Filters的上限为10，Filter.Values的上限为100。
 Filter.Name和Filter.Values皆为必填项。详细的过滤条件如下：
-- name - String - 是否必填：否 - （过滤条件）按照网关负载均衡实例名称过滤，如“gwlb-xxxx”。
 - VpcId - String - 是否必填：否 - （过滤条件）按照网关负载均衡实例所属的私有网络过滤，如“vpc-bhqk****”。
+- Vips - String  - 是否必填：否 - （过滤条件）按照网关负载均衡实例所属的私有网络过滤，如“10.1.1.1”
+- tag:tag-key - String - 是否必填：否 - （过滤条件）按照GWLB标签键值对进行过滤，tag-key使用具体的标签键进行替换。
 
                      * 
                      */
@@ -124,13 +126,15 @@ Filter.Name和Filter.Values皆为必填项。详细的过滤条件如下：
                     /**
                      * 设置查询负载均衡详细信息列表的过滤条件，每次请求的Filters的上限为10，Filter.Values的上限为100。
 Filter.Name和Filter.Values皆为必填项。详细的过滤条件如下：
-- name - String - 是否必填：否 - （过滤条件）按照网关负载均衡实例名称过滤，如“gwlb-xxxx”。
 - VpcId - String - 是否必填：否 - （过滤条件）按照网关负载均衡实例所属的私有网络过滤，如“vpc-bhqk****”。
+- Vips - String  - 是否必填：否 - （过滤条件）按照网关负载均衡实例所属的私有网络过滤，如“10.1.1.1”
+- tag:tag-key - String - 是否必填：否 - （过滤条件）按照GWLB标签键值对进行过滤，tag-key使用具体的标签键进行替换。
 
                      * @param _filters 查询负载均衡详细信息列表的过滤条件，每次请求的Filters的上限为10，Filter.Values的上限为100。
 Filter.Name和Filter.Values皆为必填项。详细的过滤条件如下：
-- name - String - 是否必填：否 - （过滤条件）按照网关负载均衡实例名称过滤，如“gwlb-xxxx”。
 - VpcId - String - 是否必填：否 - （过滤条件）按照网关负载均衡实例所属的私有网络过滤，如“vpc-bhqk****”。
+- Vips - String  - 是否必填：否 - （过滤条件）按照网关负载均衡实例所属的私有网络过滤，如“10.1.1.1”
+- tag:tag-key - String - 是否必填：否 - （过滤条件）按照GWLB标签键值对进行过滤，tag-key使用具体的标签键进行替换。
 
                      * 
                      */
@@ -187,8 +191,9 @@ Filter.Name和Filter.Values皆为必填项。详细的过滤条件如下：
                     /**
                      * 查询负载均衡详细信息列表的过滤条件，每次请求的Filters的上限为10，Filter.Values的上限为100。
 Filter.Name和Filter.Values皆为必填项。详细的过滤条件如下：
-- name - String - 是否必填：否 - （过滤条件）按照网关负载均衡实例名称过滤，如“gwlb-xxxx”。
 - VpcId - String - 是否必填：否 - （过滤条件）按照网关负载均衡实例所属的私有网络过滤，如“vpc-bhqk****”。
+- Vips - String  - 是否必填：否 - （过滤条件）按照网关负载均衡实例所属的私有网络过滤，如“10.1.1.1”
+- tag:tag-key - String - 是否必填：否 - （过滤条件）按照GWLB标签键值对进行过滤，tag-key使用具体的标签键进行替换。
 
                      */
                     std::vector<Filter> m_filters;

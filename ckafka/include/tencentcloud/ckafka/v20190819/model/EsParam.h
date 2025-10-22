@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,19 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例资源
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Resource 实例资源
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取Es实例资源Id
+                     * @return Resource Es实例资源Id
                      * 
                      */
                     std::string GetResource() const;
 
                     /**
-                     * 设置实例资源
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _resource 实例资源
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置Es实例资源Id
+                     * @param _resource Es实例资源Id
                      * 
                      */
                     void SetResource(const std::string& _resource);
@@ -76,18 +72,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Es的连接port
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port Es的连接port
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置Es的连接port
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _port Es的连接port
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -101,18 +93,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Es用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserName Es用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置Es用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userName Es用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -126,18 +114,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Es密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Password Es密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置Es密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _password Es密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -151,18 +135,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否为自建集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SelfBuilt 是否为自建集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSelfBuilt() const;
 
                     /**
                      * 设置是否为自建集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _selfBuilt 是否为自建集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSelfBuilt(const bool& _selfBuilt);
@@ -176,18 +156,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例vip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceVip 实例vip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceVip() const;
 
                     /**
                      * 设置实例vip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceVip 实例vip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceVip(const std::string& _serviceVip);
@@ -201,18 +177,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例的vpcId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UniqVpcId 实例的vpcId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
                      * 设置实例的vpcId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uniqVpcId 实例的vpcId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
@@ -226,18 +198,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Es是否抛弃解析失败的消息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DropInvalidMessage Es是否抛弃解析失败的消息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetDropInvalidMessage() const;
 
                     /**
                      * 设置Es是否抛弃解析失败的消息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dropInvalidMessage Es是否抛弃解析失败的消息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDropInvalidMessage(const bool& _dropInvalidMessage);
@@ -251,18 +219,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Es自定义index名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Index Es自定义index名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIndex() const;
 
                     /**
                      * 设置Es自定义index名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _index Es自定义index名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIndex(const std::string& _index);
@@ -276,18 +240,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Es自定义日期后缀
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DateFormat Es自定义日期后缀
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDateFormat() const;
 
                     /**
                      * 设置Es自定义日期后缀
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dateFormat Es自定义日期后缀
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDateFormat(const std::string& _dateFormat);
@@ -301,18 +261,14 @@ namespace TencentCloud
 
                     /**
                      * 获取非json格式数据的自定义key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContentKey 非json格式数据的自定义key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContentKey() const;
 
                     /**
                      * 设置非json格式数据的自定义key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _contentKey 非json格式数据的自定义key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContentKey(const std::string& _contentKey);
@@ -326,18 +282,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Es是否抛弃非json格式的消息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DropInvalidJsonMessage Es是否抛弃非json格式的消息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetDropInvalidJsonMessage() const;
 
                     /**
                      * 设置Es是否抛弃非json格式的消息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dropInvalidJsonMessage Es是否抛弃非json格式的消息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDropInvalidJsonMessage(const bool& _dropInvalidJsonMessage);
@@ -351,18 +303,14 @@ namespace TencentCloud
 
                     /**
                      * 获取转储到Es中的文档ID取值字段名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DocumentIdField 转储到Es中的文档ID取值字段名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDocumentIdField() const;
 
                     /**
                      * 设置转储到Es中的文档ID取值字段名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _documentIdField 转储到Es中的文档ID取值字段名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDocumentIdField(const std::string& _documentIdField);
@@ -376,18 +324,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Es自定义index名称的类型，STRING，JSONPATH，默认为STRING
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IndexType Es自定义index名称的类型，STRING，JSONPATH，默认为STRING
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIndexType() const;
 
                     /**
                      * 设置Es自定义index名称的类型，STRING，JSONPATH，默认为STRING
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _indexType Es自定义index名称的类型，STRING，JSONPATH，默认为STRING
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIndexType(const std::string& _indexType);
@@ -401,18 +345,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当设置成员参数DropInvalidMessageToCls设置为true时,DropInvalidMessage参数失效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DropCls 当设置成员参数DropInvalidMessageToCls设置为true时,DropInvalidMessage参数失效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DropCls GetDropCls() const;
 
                     /**
                      * 设置当设置成员参数DropInvalidMessageToCls设置为true时,DropInvalidMessage参数失效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dropCls 当设置成员参数DropInvalidMessageToCls设置为true时,DropInvalidMessage参数失效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDropCls(const DropCls& _dropCls);
@@ -426,18 +366,14 @@ namespace TencentCloud
 
                     /**
                      * 获取转储到ES的消息为Database的binlog时，如果需要同步数据库操作，即增删改的操作到ES时填写数据库表主键
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatabasePrimaryKey 转储到ES的消息为Database的binlog时，如果需要同步数据库操作，即增删改的操作到ES时填写数据库表主键
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDatabasePrimaryKey() const;
 
                     /**
                      * 设置转储到ES的消息为Database的binlog时，如果需要同步数据库操作，即增删改的操作到ES时填写数据库表主键
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _databasePrimaryKey 转储到ES的消息为Database的binlog时，如果需要同步数据库操作，即增删改的操作到ES时填写数据库表主键
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDatabasePrimaryKey(const std::string& _databasePrimaryKey);
@@ -451,18 +387,14 @@ namespace TencentCloud
 
                     /**
                      * 获取死信队列
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DropDlq 死信队列
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     FailureParam GetDropDlq() const;
 
                     /**
                      * 设置死信队列
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dropDlq 死信队列
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDropDlq(const FailureParam& _dropDlq);
@@ -476,18 +408,14 @@ namespace TencentCloud
 
                     /**
                      * 获取使用数据订阅格式导入 es 时，消息与 es 索引字段映射关系。不填默认为默认字段匹配
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordMappingList 使用数据订阅格式导入 es 时，消息与 es 索引字段映射关系。不填默认为默认字段匹配
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<EsRecordMapping> GetRecordMappingList() const;
 
                     /**
                      * 设置使用数据订阅格式导入 es 时，消息与 es 索引字段映射关系。不填默认为默认字段匹配
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recordMappingList 使用数据订阅格式导入 es 时，消息与 es 索引字段映射关系。不填默认为默认字段匹配
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecordMappingList(const std::vector<EsRecordMapping>& _recordMappingList);
@@ -501,18 +429,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消息要映射为 es 索引中 @timestamp 的字段，如果当前配置为空，则使用消息的时间戳进行映射
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DateField 消息要映射为 es 索引中 @timestamp 的字段，如果当前配置为空，则使用消息的时间戳进行映射
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDateField() const;
 
                     /**
                      * 设置消息要映射为 es 索引中 @timestamp 的字段，如果当前配置为空，则使用消息的时间戳进行映射
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dateField 消息要映射为 es 索引中 @timestamp 的字段，如果当前配置为空，则使用消息的时间戳进行映射
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDateField(const std::string& _dateField);
@@ -526,18 +450,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用来区分当前索引映射，属于新建索引还是存量索引。"EXIST_MAPPING"：从存量索引中选择；"NEW_MAPPING"：新建索引
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordMappingMode 用来区分当前索引映射，属于新建索引还是存量索引。"EXIST_MAPPING"：从存量索引中选择；"NEW_MAPPING"：新建索引
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRecordMappingMode() const;
 
                     /**
                      * 设置用来区分当前索引映射，属于新建索引还是存量索引。"EXIST_MAPPING"：从存量索引中选择；"NEW_MAPPING"：新建索引
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recordMappingMode 用来区分当前索引映射，属于新建索引还是存量索引。"EXIST_MAPPING"：从存量索引中选择；"NEW_MAPPING"：新建索引
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecordMappingMode(const std::string& _recordMappingMode);
@@ -552,141 +472,121 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例资源
-注意：此字段可能返回 null，表示取不到有效值。
+                     * Es实例资源Id
                      */
                     std::string m_resource;
                     bool m_resourceHasBeenSet;
 
                     /**
                      * Es的连接port
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
                      * Es用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
                      * Es密码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
                      * 是否为自建集群
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_selfBuilt;
                     bool m_selfBuiltHasBeenSet;
 
                     /**
                      * 实例vip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceVip;
                     bool m_serviceVipHasBeenSet;
 
                     /**
                      * 实例的vpcId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uniqVpcId;
                     bool m_uniqVpcIdHasBeenSet;
 
                     /**
                      * Es是否抛弃解析失败的消息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_dropInvalidMessage;
                     bool m_dropInvalidMessageHasBeenSet;
 
                     /**
                      * Es自定义index名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_index;
                     bool m_indexHasBeenSet;
 
                     /**
                      * Es自定义日期后缀
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dateFormat;
                     bool m_dateFormatHasBeenSet;
 
                     /**
                      * 非json格式数据的自定义key
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_contentKey;
                     bool m_contentKeyHasBeenSet;
 
                     /**
                      * Es是否抛弃非json格式的消息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_dropInvalidJsonMessage;
                     bool m_dropInvalidJsonMessageHasBeenSet;
 
                     /**
                      * 转储到Es中的文档ID取值字段名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_documentIdField;
                     bool m_documentIdFieldHasBeenSet;
 
                     /**
                      * Es自定义index名称的类型，STRING，JSONPATH，默认为STRING
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_indexType;
                     bool m_indexTypeHasBeenSet;
 
                     /**
                      * 当设置成员参数DropInvalidMessageToCls设置为true时,DropInvalidMessage参数失效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DropCls m_dropCls;
                     bool m_dropClsHasBeenSet;
 
                     /**
                      * 转储到ES的消息为Database的binlog时，如果需要同步数据库操作，即增删改的操作到ES时填写数据库表主键
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_databasePrimaryKey;
                     bool m_databasePrimaryKeyHasBeenSet;
 
                     /**
                      * 死信队列
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     FailureParam m_dropDlq;
                     bool m_dropDlqHasBeenSet;
 
                     /**
                      * 使用数据订阅格式导入 es 时，消息与 es 索引字段映射关系。不填默认为默认字段匹配
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<EsRecordMapping> m_recordMappingList;
                     bool m_recordMappingListHasBeenSet;
 
                     /**
                      * 消息要映射为 es 索引中 @timestamp 的字段，如果当前配置为空，则使用消息的时间戳进行映射
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dateField;
                     bool m_dateFieldHasBeenSet;
 
                     /**
                      * 用来区分当前索引映射，属于新建索引还是存量索引。"EXIST_MAPPING"：从存量索引中选择；"NEW_MAPPING"：新建索引
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_recordMappingMode;
                     bool m_recordMappingModeHasBeenSet;

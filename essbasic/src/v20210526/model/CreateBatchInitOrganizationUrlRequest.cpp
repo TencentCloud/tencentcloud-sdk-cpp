@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,9 @@ using namespace std;
 CreateBatchInitOrganizationUrlRequest::CreateBatchInitOrganizationUrlRequest() :
     m_agentHasBeenSet(false),
     m_operateTypesHasBeenSet(false),
-    m_proxyOrganizationOpenIdsHasBeenSet(false)
+    m_proxyOrganizationOpenIdsHasBeenSet(false),
+    m_isAuthorizePlatformApplicationHasBeenSet(false),
+    m_authorizedProxyOrganizationOpenIdHasBeenSet(false)
 {
 }
 
@@ -69,6 +71,22 @@ string CreateBatchInitOrganizationUrlRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_isAuthorizePlatformApplicationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsAuthorizePlatformApplication";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isAuthorizePlatformApplication, allocator);
+    }
+
+    if (m_authorizedProxyOrganizationOpenIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthorizedProxyOrganizationOpenId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_authorizedProxyOrganizationOpenId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -125,6 +143,38 @@ void CreateBatchInitOrganizationUrlRequest::SetProxyOrganizationOpenIds(const ve
 bool CreateBatchInitOrganizationUrlRequest::ProxyOrganizationOpenIdsHasBeenSet() const
 {
     return m_proxyOrganizationOpenIdsHasBeenSet;
+}
+
+bool CreateBatchInitOrganizationUrlRequest::GetIsAuthorizePlatformApplication() const
+{
+    return m_isAuthorizePlatformApplication;
+}
+
+void CreateBatchInitOrganizationUrlRequest::SetIsAuthorizePlatformApplication(const bool& _isAuthorizePlatformApplication)
+{
+    m_isAuthorizePlatformApplication = _isAuthorizePlatformApplication;
+    m_isAuthorizePlatformApplicationHasBeenSet = true;
+}
+
+bool CreateBatchInitOrganizationUrlRequest::IsAuthorizePlatformApplicationHasBeenSet() const
+{
+    return m_isAuthorizePlatformApplicationHasBeenSet;
+}
+
+string CreateBatchInitOrganizationUrlRequest::GetAuthorizedProxyOrganizationOpenId() const
+{
+    return m_authorizedProxyOrganizationOpenId;
+}
+
+void CreateBatchInitOrganizationUrlRequest::SetAuthorizedProxyOrganizationOpenId(const string& _authorizedProxyOrganizationOpenId)
+{
+    m_authorizedProxyOrganizationOpenId = _authorizedProxyOrganizationOpenId;
+    m_authorizedProxyOrganizationOpenIdHasBeenSet = true;
+}
+
+bool CreateBatchInitOrganizationUrlRequest::AuthorizedProxyOrganizationOpenIdHasBeenSet() const
+{
+    return m_authorizedProxyOrganizationOpenIdHasBeenSet;
 }
 
 

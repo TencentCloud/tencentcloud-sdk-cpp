@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -153,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取制品创建至今时间长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DurationDays 制品创建至今时间长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDurationDays() const;
 
                     /**
                      * 设置制品创建至今时间长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _durationDays 制品创建至今时间长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDurationDays(const std::string& _durationDays);
@@ -399,7 +395,6 @@ namespace TencentCloud
 
                     /**
                      * 制品创建至今时间长度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_durationDays;
                     bool m_durationDaysHasBeenSet;

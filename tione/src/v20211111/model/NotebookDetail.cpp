@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,7 +59,12 @@ NotebookDetail::NotebookDetail() :
     m_imageInfoHasBeenSet(false),
     m_imageTypeHasBeenSet(false),
     m_sSHConfigHasBeenSet(false),
-    m_volumeSourceGooseFSHasBeenSet(false)
+    m_volumeSourceGooseFSHasBeenSet(false),
+    m_subUinHasBeenSet(false),
+    m_resourceGroupInstanceIdHasBeenSet(false),
+    m_subUinNameHasBeenSet(false),
+    m_jobCreateTimeHasBeenSet(false),
+    m_appIdHasBeenSet(false)
 {
 }
 
@@ -526,6 +531,56 @@ CoreInternalOutcome NotebookDetail::Deserialize(const rapidjson::Value &value)
         m_volumeSourceGooseFSHasBeenSet = true;
     }
 
+    if (value.HasMember("SubUin") && !value["SubUin"].IsNull())
+    {
+        if (!value["SubUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NotebookDetail.SubUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subUin = string(value["SubUin"].GetString());
+        m_subUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResourceGroupInstanceId") && !value["ResourceGroupInstanceId"].IsNull())
+    {
+        if (!value["ResourceGroupInstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NotebookDetail.ResourceGroupInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceGroupInstanceId = string(value["ResourceGroupInstanceId"].GetString());
+        m_resourceGroupInstanceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubUinName") && !value["SubUinName"].IsNull())
+    {
+        if (!value["SubUinName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NotebookDetail.SubUinName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subUinName = string(value["SubUinName"].GetString());
+        m_subUinNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("JobCreateTime") && !value["JobCreateTime"].IsNull())
+    {
+        if (!value["JobCreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NotebookDetail.JobCreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_jobCreateTime = string(value["JobCreateTime"].GetString());
+        m_jobCreateTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AppId") && !value["AppId"].IsNull())
+    {
+        if (!value["AppId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NotebookDetail.AppId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_appId = string(value["AppId"].GetString());
+        m_appIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -873,6 +928,46 @@ void NotebookDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_volumeSourceGooseFS.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_subUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceGroupInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceGroupInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceGroupInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subUinNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubUinName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subUinName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobCreateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobCreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_jobCreateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1500,5 +1595,85 @@ void NotebookDetail::SetVolumeSourceGooseFS(const GooseFS& _volumeSourceGooseFS)
 bool NotebookDetail::VolumeSourceGooseFSHasBeenSet() const
 {
     return m_volumeSourceGooseFSHasBeenSet;
+}
+
+string NotebookDetail::GetSubUin() const
+{
+    return m_subUin;
+}
+
+void NotebookDetail::SetSubUin(const string& _subUin)
+{
+    m_subUin = _subUin;
+    m_subUinHasBeenSet = true;
+}
+
+bool NotebookDetail::SubUinHasBeenSet() const
+{
+    return m_subUinHasBeenSet;
+}
+
+string NotebookDetail::GetResourceGroupInstanceId() const
+{
+    return m_resourceGroupInstanceId;
+}
+
+void NotebookDetail::SetResourceGroupInstanceId(const string& _resourceGroupInstanceId)
+{
+    m_resourceGroupInstanceId = _resourceGroupInstanceId;
+    m_resourceGroupInstanceIdHasBeenSet = true;
+}
+
+bool NotebookDetail::ResourceGroupInstanceIdHasBeenSet() const
+{
+    return m_resourceGroupInstanceIdHasBeenSet;
+}
+
+string NotebookDetail::GetSubUinName() const
+{
+    return m_subUinName;
+}
+
+void NotebookDetail::SetSubUinName(const string& _subUinName)
+{
+    m_subUinName = _subUinName;
+    m_subUinNameHasBeenSet = true;
+}
+
+bool NotebookDetail::SubUinNameHasBeenSet() const
+{
+    return m_subUinNameHasBeenSet;
+}
+
+string NotebookDetail::GetJobCreateTime() const
+{
+    return m_jobCreateTime;
+}
+
+void NotebookDetail::SetJobCreateTime(const string& _jobCreateTime)
+{
+    m_jobCreateTime = _jobCreateTime;
+    m_jobCreateTimeHasBeenSet = true;
+}
+
+bool NotebookDetail::JobCreateTimeHasBeenSet() const
+{
+    return m_jobCreateTimeHasBeenSet;
+}
+
+string NotebookDetail::GetAppId() const
+{
+    return m_appId;
+}
+
+void NotebookDetail::SetAppId(const string& _appId)
+{
+    m_appId = _appId;
+    m_appIdHasBeenSet = true;
+}
+
+bool NotebookDetail::AppIdHasBeenSet() const
+{
+    return m_appIdHasBeenSet;
 }
 

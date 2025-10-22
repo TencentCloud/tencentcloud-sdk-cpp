@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络资源id，实例id或RO组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceId 网络资源id，实例id或RO组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置网络资源id，实例id或RO组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceId 网络资源id，实例id或RO组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源类型，1-实例 2-RO组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceType 资源类型，1-实例 2-RO组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetResourceType() const;
 
                     /**
                      * 设置资源类型，1-实例 2-RO组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceType 资源类型，1-实例 2-RO组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceType(const uint64_t& _resourceType);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取私有网络ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId 私有网络ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId 私有网络ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取IPV4地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vip IPV4地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置IPV4地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vip IPV4地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVip(const std::string& _vip);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取IPV6地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vip6 IPV6地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVip6() const;
 
                     /**
                      * 设置IPV6地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vip6 IPV6地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVip6(const std::string& _vip6);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取访问端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vport 访问端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetVport() const;
 
                     /**
                      * 设置访问端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vport 访问端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVport(const int64_t& _vport);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetId 子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络状态，1-申请中，2-使用中，3-删除中，4-已删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcStatus 网络状态，1-申请中，2-使用中，3-删除中，4-已删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetVpcStatus() const;
 
                     /**
                      * 设置网络状态，1-申请中，2-使用中，3-删除中，4-已删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcStatus 网络状态，1-申请中，2-使用中，3-删除中，4-已删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcStatus(const int64_t& _vpcStatus);
@@ -250,56 +218,48 @@ namespace TencentCloud
 
                     /**
                      * 网络资源id，实例id或RO组id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
                      * 资源类型，1-实例 2-RO组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_resourceType;
                     bool m_resourceTypeHasBeenSet;
 
                     /**
                      * 私有网络ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * IPV4地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
 
                     /**
                      * IPV6地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vip6;
                     bool m_vip6HasBeenSet;
 
                     /**
                      * 访问端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_vport;
                     bool m_vportHasBeenSet;
 
                     /**
                      * 子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
                      * 网络状态，1-申请中，2-使用中，3-删除中，4-已删除
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_vpcStatus;
                     bool m_vpcStatusHasBeenSet;

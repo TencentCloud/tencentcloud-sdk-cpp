@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,23 +66,35 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取待执行命令的实例ID列表，上限200。支持实例类型：
-<li> CVM </li>
-<li> LIGHTHOUSE </li>
-                     * @return InstanceIds 待执行命令的实例ID列表，上限200。支持实例类型：
-<li> CVM </li>
-<li> LIGHTHOUSE </li>
+                     * 获取待执行命令的实例ID列表，上限200。
+
+可通过对应云产品的查询实例接口获取实例 ID。目前支持实例类型：
+- CVM
+- Lighthouse
+- TAT 托管实例
+                     * @return InstanceIds 待执行命令的实例ID列表，上限200。
+
+可通过对应云产品的查询实例接口获取实例 ID。目前支持实例类型：
+- CVM
+- Lighthouse
+- TAT 托管实例
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置待执行命令的实例ID列表，上限200。支持实例类型：
-<li> CVM </li>
-<li> LIGHTHOUSE </li>
-                     * @param _instanceIds 待执行命令的实例ID列表，上限200。支持实例类型：
-<li> CVM </li>
-<li> LIGHTHOUSE </li>
+                     * 设置待执行命令的实例ID列表，上限200。
+
+可通过对应云产品的查询实例接口获取实例 ID。目前支持实例类型：
+- CVM
+- Lighthouse
+- TAT 托管实例
+                     * @param _instanceIds 待执行命令的实例ID列表，上限200。
+
+可通过对应云产品的查询实例接口获取实例 ID。目前支持实例类型：
+- CVM
+- Lighthouse
+- TAT 托管实例
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -137,15 +149,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取命令类型，目前支持取值：SHELL、POWERSHELL。默认：SHELL。
-                     * @return CommandType 命令类型，目前支持取值：SHELL、POWERSHELL。默认：SHELL。
+                     * 获取命令类型，目前支持取值：SHELL、POWERSHELL、BAT。默认：SHELL。
+                     * @return CommandType 命令类型，目前支持取值：SHELL、POWERSHELL、BAT。默认：SHELL。
                      * 
                      */
                     std::string GetCommandType() const;
 
                     /**
-                     * 设置命令类型，目前支持取值：SHELL、POWERSHELL。默认：SHELL。
-                     * @param _commandType 命令类型，目前支持取值：SHELL、POWERSHELL。默认：SHELL。
+                     * 设置命令类型，目前支持取值：SHELL、POWERSHELL、BAT。默认：SHELL。
+                     * @param _commandType 命令类型，目前支持取值：SHELL、POWERSHELL、BAT。默认：SHELL。
                      * 
                      */
                     void SetCommandType(const std::string& _commandType);
@@ -274,13 +286,17 @@ namespace TencentCloud
                     bool EnableParameterHasBeenSet() const;
 
                     /**
-                     * 获取启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{\"varA\": \"222\"}。
+                     * 获取启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{"varA": "222"}。
 key为自定义参数名称，value为该参数的默认取值。kv均为字符串型。
+仅在命令的 EnableParameter 为 true 时，才允许设置此参数。
+参数不支持同时指定 `DefaultParameters` 和 `DefaultParameterConfs` 。
 如果 Parameters 未提供，将使用这里的默认值进行替换。
 自定义参数最多20个。
 自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。
-                     * @return DefaultParameters 启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{\"varA\": \"222\"}。
+                     * @return DefaultParameters 启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{"varA": "222"}。
 key为自定义参数名称，value为该参数的默认取值。kv均为字符串型。
+仅在命令的 EnableParameter 为 true 时，才允许设置此参数。
+参数不支持同时指定 `DefaultParameters` 和 `DefaultParameterConfs` 。
 如果 Parameters 未提供，将使用这里的默认值进行替换。
 自定义参数最多20个。
 自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。
@@ -289,13 +305,17 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
                     std::string GetDefaultParameters() const;
 
                     /**
-                     * 设置启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{\"varA\": \"222\"}。
+                     * 设置启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{"varA": "222"}。
 key为自定义参数名称，value为该参数的默认取值。kv均为字符串型。
+仅在命令的 EnableParameter 为 true 时，才允许设置此参数。
+参数不支持同时指定 `DefaultParameters` 和 `DefaultParameterConfs` 。
 如果 Parameters 未提供，将使用这里的默认值进行替换。
 自定义参数最多20个。
 自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。
-                     * @param _defaultParameters 启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{\"varA\": \"222\"}。
+                     * @param _defaultParameters 启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{"varA": "222"}。
 key为自定义参数名称，value为该参数的默认取值。kv均为字符串型。
+仅在命令的 EnableParameter 为 true 时，才允许设置此参数。
+参数不支持同时指定 `DefaultParameters` 和 `DefaultParameterConfs` 。
 如果 Parameters 未提供，将使用这里的默认值进行替换。
 自定义参数最多20个。
 自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。
@@ -312,14 +332,26 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
 
                     /**
                      * 获取自定义参数数组。 如果 Parameters 未提供，将使用这里的默认值进行替换。 自定义参数最多20个。
+如果 Parameters 未提供，将使用这里的默认值进行替换。
+仅在命令的 EnableParameter 为 true 时，才允许设置此参数。
+参数不支持同时指定 `DefaultParameters` 和 `DefaultParameterConfs` 。
                      * @return DefaultParameterConfs 自定义参数数组。 如果 Parameters 未提供，将使用这里的默认值进行替换。 自定义参数最多20个。
+如果 Parameters 未提供，将使用这里的默认值进行替换。
+仅在命令的 EnableParameter 为 true 时，才允许设置此参数。
+参数不支持同时指定 `DefaultParameters` 和 `DefaultParameterConfs` 。
                      * 
                      */
                     std::vector<DefaultParameterConf> GetDefaultParameterConfs() const;
 
                     /**
                      * 设置自定义参数数组。 如果 Parameters 未提供，将使用这里的默认值进行替换。 自定义参数最多20个。
+如果 Parameters 未提供，将使用这里的默认值进行替换。
+仅在命令的 EnableParameter 为 true 时，才允许设置此参数。
+参数不支持同时指定 `DefaultParameters` 和 `DefaultParameterConfs` 。
                      * @param _defaultParameterConfs 自定义参数数组。 如果 Parameters 未提供，将使用这里的默认值进行替换。 自定义参数最多20个。
+如果 Parameters 未提供，将使用这里的默认值进行替换。
+仅在命令的 EnableParameter 为 true 时，才允许设置此参数。
+参数不支持同时指定 `DefaultParameters` 和 `DefaultParameterConfs` 。
                      * 
                      */
                     void SetDefaultParameterConfs(const std::vector<DefaultParameterConf>& _defaultParameterConfs);
@@ -332,14 +364,16 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
                     bool DefaultParameterConfsHasBeenSet() const;
 
                     /**
-                     * 获取Command 的自定义参数。字段类型为json encoded string。如：{\"varA\": \"222\"}。
+                     * 获取Command 的自定义参数。字段类型为json encoded string。如：{"varA": "222"}。
 key为自定义参数名称，value为该参数的默认取值。kv均为字符串型。
-如果未提供该参数取值，将使用 DefaultParameters 进行替换。
+仅在命令的 EnableParameter 为 true 时，才允许设置此参数。
+如果未提供该参数取值，将使用 DefaultParameters 或 DefaultParameterConfs 进行替换。
 自定义参数最多20个。
 自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。
-                     * @return Parameters Command 的自定义参数。字段类型为json encoded string。如：{\"varA\": \"222\"}。
+                     * @return Parameters Command 的自定义参数。字段类型为json encoded string。如：{"varA": "222"}。
 key为自定义参数名称，value为该参数的默认取值。kv均为字符串型。
-如果未提供该参数取值，将使用 DefaultParameters 进行替换。
+仅在命令的 EnableParameter 为 true 时，才允许设置此参数。
+如果未提供该参数取值，将使用 DefaultParameters 或 DefaultParameterConfs 进行替换。
 自定义参数最多20个。
 自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。
                      * 
@@ -347,14 +381,16 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
                     std::string GetParameters() const;
 
                     /**
-                     * 设置Command 的自定义参数。字段类型为json encoded string。如：{\"varA\": \"222\"}。
+                     * 设置Command 的自定义参数。字段类型为json encoded string。如：{"varA": "222"}。
 key为自定义参数名称，value为该参数的默认取值。kv均为字符串型。
-如果未提供该参数取值，将使用 DefaultParameters 进行替换。
+仅在命令的 EnableParameter 为 true 时，才允许设置此参数。
+如果未提供该参数取值，将使用 DefaultParameters 或 DefaultParameterConfs 进行替换。
 自定义参数最多20个。
 自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。
-                     * @param _parameters Command 的自定义参数。字段类型为json encoded string。如：{\"varA\": \"222\"}。
+                     * @param _parameters Command 的自定义参数。字段类型为json encoded string。如：{"varA": "222"}。
 key为自定义参数名称，value为该参数的默认取值。kv均为字符串型。
-如果未提供该参数取值，将使用 DefaultParameters 进行替换。
+仅在命令的 EnableParameter 为 true 时，才允许设置此参数。
+如果未提供该参数取值，将使用 DefaultParameters 或 DefaultParameterConfs 进行替换。
 自定义参数最多20个。
 自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。
                      * 
@@ -477,9 +513,12 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 待执行命令的实例ID列表，上限200。支持实例类型：
-<li> CVM </li>
-<li> LIGHTHOUSE </li>
+                     * 待执行命令的实例ID列表，上限200。
+
+可通过对应云产品的查询实例接口获取实例 ID。目前支持实例类型：
+- CVM
+- Lighthouse
+- TAT 托管实例
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
@@ -497,7 +536,7 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 命令类型，目前支持取值：SHELL、POWERSHELL。默认：SHELL。
+                     * 命令类型，目前支持取值：SHELL、POWERSHELL、BAT。默认：SHELL。
                      */
                     std::string m_commandType;
                     bool m_commandTypeHasBeenSet;
@@ -535,8 +574,10 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
                     bool m_enableParameterHasBeenSet;
 
                     /**
-                     * 启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{\"varA\": \"222\"}。
+                     * 启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{"varA": "222"}。
 key为自定义参数名称，value为该参数的默认取值。kv均为字符串型。
+仅在命令的 EnableParameter 为 true 时，才允许设置此参数。
+参数不支持同时指定 `DefaultParameters` 和 `DefaultParameterConfs` 。
 如果 Parameters 未提供，将使用这里的默认值进行替换。
 自定义参数最多20个。
 自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。
@@ -546,14 +587,18 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
 
                     /**
                      * 自定义参数数组。 如果 Parameters 未提供，将使用这里的默认值进行替换。 自定义参数最多20个。
+如果 Parameters 未提供，将使用这里的默认值进行替换。
+仅在命令的 EnableParameter 为 true 时，才允许设置此参数。
+参数不支持同时指定 `DefaultParameters` 和 `DefaultParameterConfs` 。
                      */
                     std::vector<DefaultParameterConf> m_defaultParameterConfs;
                     bool m_defaultParameterConfsHasBeenSet;
 
                     /**
-                     * Command 的自定义参数。字段类型为json encoded string。如：{\"varA\": \"222\"}。
+                     * Command 的自定义参数。字段类型为json encoded string。如：{"varA": "222"}。
 key为自定义参数名称，value为该参数的默认取值。kv均为字符串型。
-如果未提供该参数取值，将使用 DefaultParameters 进行替换。
+仅在命令的 EnableParameter 为 true 时，才允许设置此参数。
+如果未提供该参数取值，将使用 DefaultParameters 或 DefaultParameterConfs 进行替换。
 自定义参数最多20个。
 自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。
                      */

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@
 #include <tencentcloud/lighthouse/v20200324/model/InternetAccessible.h>
 #include <tencentcloud/lighthouse/v20200324/model/LoginSettings.h>
 #include <tencentcloud/lighthouse/v20200324/model/Tag.h>
+#include <tencentcloud/lighthouse/v20200324/model/SupportIpv6Detail.h>
 #include <tencentcloud/lighthouse/v20200324/model/InstanceViolationDetail.h>
 
 
@@ -297,10 +298,10 @@ PREPAID：表示预付费，即包年包月。
                     /**
                      * 获取自动续费标识。取值范围： 
 NOTIFY_AND_MANUAL_RENEW：表示通知即将过期，但不自动续费  
-NOTIFY_AND_AUTO_RENEW：表示通知即将过期，而且自动续费 。
+NOTIFY_AND_AUTO_RENEW：表示通知即将过期，而且自动续费 DISABLE_NOTIFY_AND_MANUAL_RENEW：不自动续费，且不通知。
                      * @return RenewFlag 自动续费标识。取值范围： 
 NOTIFY_AND_MANUAL_RENEW：表示通知即将过期，但不自动续费  
-NOTIFY_AND_AUTO_RENEW：表示通知即将过期，而且自动续费 。
+NOTIFY_AND_AUTO_RENEW：表示通知即将过期，而且自动续费 DISABLE_NOTIFY_AND_MANUAL_RENEW：不自动续费，且不通知。
                      * 
                      */
                     std::string GetRenewFlag() const;
@@ -308,10 +309,10 @@ NOTIFY_AND_AUTO_RENEW：表示通知即将过期，而且自动续费 。
                     /**
                      * 设置自动续费标识。取值范围： 
 NOTIFY_AND_MANUAL_RENEW：表示通知即将过期，但不自动续费  
-NOTIFY_AND_AUTO_RENEW：表示通知即将过期，而且自动续费 。
+NOTIFY_AND_AUTO_RENEW：表示通知即将过期，而且自动续费 DISABLE_NOTIFY_AND_MANUAL_RENEW：不自动续费，且不通知。
                      * @param _renewFlag 自动续费标识。取值范围： 
 NOTIFY_AND_MANUAL_RENEW：表示通知即将过期，但不自动续费  
-NOTIFY_AND_AUTO_RENEW：表示通知即将过期，而且自动续费 。
+NOTIFY_AND_AUTO_RENEW：表示通知即将过期，而且自动续费 DISABLE_NOTIFY_AND_MANUAL_RENEW：不自动续费，且不通知。
                      * 
                      */
                     void SetRenewFlag(const std::string& _renewFlag);
@@ -716,6 +717,48 @@ FAILED：表示操作失败
                     bool InstanceRestrictStateHasBeenSet() const;
 
                     /**
+                     * 获取描述实例是否支持IPv6。
+                     * @return SupportIpv6Detail 描述实例是否支持IPv6。
+                     * 
+                     */
+                    SupportIpv6Detail GetSupportIpv6Detail() const;
+
+                    /**
+                     * 设置描述实例是否支持IPv6。
+                     * @param _supportIpv6Detail 描述实例是否支持IPv6。
+                     * 
+                     */
+                    void SetSupportIpv6Detail(const SupportIpv6Detail& _supportIpv6Detail);
+
+                    /**
+                     * 判断参数 SupportIpv6Detail 是否已赋值
+                     * @return SupportIpv6Detail 是否已赋值
+                     * 
+                     */
+                    bool SupportIpv6DetailHasBeenSet() const;
+
+                    /**
+                     * 获取公网IPv6地址列表。
+                     * @return PublicIpv6Addresses 公网IPv6地址列表。
+                     * 
+                     */
+                    std::vector<std::string> GetPublicIpv6Addresses() const;
+
+                    /**
+                     * 设置公网IPv6地址列表。
+                     * @param _publicIpv6Addresses 公网IPv6地址列表。
+                     * 
+                     */
+                    void SetPublicIpv6Addresses(const std::vector<std::string>& _publicIpv6Addresses);
+
+                    /**
+                     * 判断参数 PublicIpv6Addresses 是否已赋值
+                     * @return PublicIpv6Addresses 是否已赋值
+                     * 
+                     */
+                    bool PublicIpv6AddressesHasBeenSet() const;
+
+                    /**
                      * 获取创建实例后自动执行TAT命令的调用ID。
                      * @return InitInvocationId 创建实例后自动执行TAT命令的调用ID。
                      * 
@@ -738,18 +781,14 @@ FAILED：表示操作失败
 
                     /**
                      * 获取实例违规详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceViolationDetail 实例违规详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     InstanceViolationDetail GetInstanceViolationDetail() const;
 
                     /**
                      * 设置实例违规详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceViolationDetail 实例违规详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceViolationDetail(const InstanceViolationDetail& _instanceViolationDetail);
@@ -835,7 +874,7 @@ PREPAID：表示预付费，即包年包月。
                     /**
                      * 自动续费标识。取值范围： 
 NOTIFY_AND_MANUAL_RENEW：表示通知即将过期，但不自动续费  
-NOTIFY_AND_AUTO_RENEW：表示通知即将过期，而且自动续费 。
+NOTIFY_AND_AUTO_RENEW：表示通知即将过期，而且自动续费 DISABLE_NOTIFY_AND_MANUAL_RENEW：不自动续费，且不通知。
                      */
                     std::string m_renewFlag;
                     bool m_renewFlagHasBeenSet;
@@ -951,6 +990,18 @@ FAILED：表示操作失败
                     bool m_instanceRestrictStateHasBeenSet;
 
                     /**
+                     * 描述实例是否支持IPv6。
+                     */
+                    SupportIpv6Detail m_supportIpv6Detail;
+                    bool m_supportIpv6DetailHasBeenSet;
+
+                    /**
+                     * 公网IPv6地址列表。
+                     */
+                    std::vector<std::string> m_publicIpv6Addresses;
+                    bool m_publicIpv6AddressesHasBeenSet;
+
+                    /**
                      * 创建实例后自动执行TAT命令的调用ID。
                      */
                     std::string m_initInvocationId;
@@ -958,7 +1009,6 @@ FAILED：表示操作失败
 
                     /**
                      * 实例违规详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InstanceViolationDetail m_instanceViolationDetail;
                     bool m_instanceViolationDetailHasBeenSet;

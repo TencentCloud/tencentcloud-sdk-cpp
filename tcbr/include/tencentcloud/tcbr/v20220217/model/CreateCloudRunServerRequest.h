@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,8 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcbr/v20220217/model/DeployParam.h>
 #include <tencentcloud/tcbr/v20220217/model/ServerBaseConfig.h>
+#include <tencentcloud/tcbr/v20220217/model/DiffConfigItem.h>
+#include <tencentcloud/tcbr/v20220217/model/CreateVpcInfo.h>
 
 
 namespace TencentCloud
@@ -108,15 +110,15 @@ namespace TencentCloud
                     bool DeployInfoHasBeenSet() const;
 
                     /**
-                     * 获取服务配置信息
-                     * @return ServerConfig 服务配置信息
+                     * 获取服务配置信息(已废弃)
+                     * @return ServerConfig 服务配置信息(已废弃)
                      * 
                      */
                     ServerBaseConfig GetServerConfig() const;
 
                     /**
-                     * 设置服务配置信息
-                     * @param _serverConfig 服务配置信息
+                     * 设置服务配置信息(已废弃)
+                     * @param _serverConfig 服务配置信息(已废弃)
                      * 
                      */
                     void SetServerConfig(const ServerBaseConfig& _serverConfig);
@@ -127,6 +129,48 @@ namespace TencentCloud
                      * 
                      */
                     bool ServerConfigHasBeenSet() const;
+
+                    /**
+                     * 获取服务配置信息
+                     * @return Items 服务配置信息
+                     * 
+                     */
+                    std::vector<DiffConfigItem> GetItems() const;
+
+                    /**
+                     * 设置服务配置信息
+                     * @param _items 服务配置信息
+                     * 
+                     */
+                    void SetItems(const std::vector<DiffConfigItem>& _items);
+
+                    /**
+                     * 判断参数 Items 是否已赋值
+                     * @return Items 是否已赋值
+                     * 
+                     */
+                    bool ItemsHasBeenSet() const;
+
+                    /**
+                     * 获取vpc 信息
+                     * @return VpcInfo vpc 信息
+                     * 
+                     */
+                    CreateVpcInfo GetVpcInfo() const;
+
+                    /**
+                     * 设置vpc 信息
+                     * @param _vpcInfo vpc 信息
+                     * 
+                     */
+                    void SetVpcInfo(const CreateVpcInfo& _vpcInfo);
+
+                    /**
+                     * 判断参数 VpcInfo 是否已赋值
+                     * @return VpcInfo 是否已赋值
+                     * 
+                     */
+                    bool VpcInfoHasBeenSet() const;
 
                 private:
 
@@ -149,10 +193,22 @@ namespace TencentCloud
                     bool m_deployInfoHasBeenSet;
 
                     /**
-                     * 服务配置信息
+                     * 服务配置信息(已废弃)
                      */
                     ServerBaseConfig m_serverConfig;
                     bool m_serverConfigHasBeenSet;
+
+                    /**
+                     * 服务配置信息
+                     */
+                    std::vector<DiffConfigItem> m_items;
+                    bool m_itemsHasBeenSet;
+
+                    /**
+                     * vpc 信息
+                     */
+                    CreateVpcInfo m_vpcInfo;
+                    bool m_vpcInfoHasBeenSet;
 
                 };
             }

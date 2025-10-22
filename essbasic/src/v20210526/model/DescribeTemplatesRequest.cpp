@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,8 @@ DescribeTemplatesRequest::DescribeTemplatesRequest() :
     m_queryAllComponentsHasBeenSet(false),
     m_withPreviewUrlHasBeenSet(false),
     m_withPdfUrlHasBeenSet(false),
-    m_operatorHasBeenSet(false)
+    m_operatorHasBeenSet(false),
+    m_userFlowTypeIdHasBeenSet(false)
 {
 }
 
@@ -146,6 +147,14 @@ string DescribeTemplatesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operator.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_userFlowTypeIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserFlowTypeId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userFlowTypeId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -346,6 +355,22 @@ void DescribeTemplatesRequest::SetOperator(const UserInfo& _operator)
 bool DescribeTemplatesRequest::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
+}
+
+string DescribeTemplatesRequest::GetUserFlowTypeId() const
+{
+    return m_userFlowTypeId;
+}
+
+void DescribeTemplatesRequest::SetUserFlowTypeId(const string& _userFlowTypeId)
+{
+    m_userFlowTypeId = _userFlowTypeId;
+    m_userFlowTypeIdHasBeenSet = true;
+}
+
+bool DescribeTemplatesRequest::UserFlowTypeIdHasBeenSet() const
+{
+    return m_userFlowTypeIdHasBeenSet;
 }
 
 

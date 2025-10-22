@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取点位X坐标值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return X 点位X坐标值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetX() const;
 
                     /**
                      * 设置点位X坐标值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _x 点位X坐标值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetX(const double& _x);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取点位Y坐标值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Y 点位Y坐标值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetY() const;
 
                     /**
                      * 设置点位Y坐标值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _y 点位Y坐标值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetY(const double& _y);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取点位Z坐标值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Z 点位Z坐标值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetZ() const;
 
                     /**
                      * 设置点位Z坐标值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _z 点位Z坐标值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZ(const double& _z);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 点位X坐标值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_x;
                     bool m_xHasBeenSet;
 
                     /**
                      * 点位Y坐标值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_y;
                     bool m_yHasBeenSet;
 
                     /**
                      * 点位Z坐标值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_z;
                     bool m_zHasBeenSet;

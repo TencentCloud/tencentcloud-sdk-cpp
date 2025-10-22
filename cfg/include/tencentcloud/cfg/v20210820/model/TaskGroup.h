@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -92,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分组描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskGroupDescription 分组描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskGroupDescription() const;
 
                     /**
                      * 设置分组描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskGroupDescription 分组描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskGroupDescription(const std::string& _taskGroupDescription);
@@ -285,18 +281,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参演实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskGroupSelectedInstanceList 参演实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetTaskGroupSelectedInstanceList() const;
 
                     /**
                      * 设置参演实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskGroupSelectedInstanceList 参演实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskGroupSelectedInstanceList(const std::vector<std::string>& _taskGroupSelectedInstanceList);
@@ -310,18 +302,14 @@ namespace TencentCloud
 
                     /**
                      * 获取机器选取规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskGroupInstancesExecuteRule 机器选取规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TaskGroupInstancesExecuteRules> GetTaskGroupInstancesExecuteRule() const;
 
                     /**
                      * 设置机器选取规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskGroupInstancesExecuteRule 机器选取规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskGroupInstancesExecuteRule(const std::vector<TaskGroupInstancesExecuteRules>& _taskGroupInstancesExecuteRule);
@@ -349,7 +337,6 @@ namespace TencentCloud
 
                     /**
                      * 分组描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskGroupDescription;
                     bool m_taskGroupDescriptionHasBeenSet;
@@ -404,14 +391,12 @@ namespace TencentCloud
 
                     /**
                      * 参演实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_taskGroupSelectedInstanceList;
                     bool m_taskGroupSelectedInstanceListHasBeenSet;
 
                     /**
                      * 机器选取规则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TaskGroupInstancesExecuteRules> m_taskGroupInstancesExecuteRule;
                     bool m_taskGroupInstancesExecuteRuleHasBeenSet;

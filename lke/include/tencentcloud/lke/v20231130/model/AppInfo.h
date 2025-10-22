@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -322,18 +322,18 @@ namespace TencentCloud
                     bool ModelNameHasBeenSet() const;
 
                     /**
-                     * 获取模型别名
+                     * 获取生成模型别名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ModelAliasName 模型别名
+                     * @return ModelAliasName 生成模型别名
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModelAliasName() const;
 
                     /**
-                     * 设置模型别名
+                     * 设置生成模型别名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _modelAliasName 模型别名
+                     * @param _modelAliasName 生成模型别名
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -345,6 +345,102 @@ namespace TencentCloud
                      * 
                      */
                     bool ModelAliasNameHasBeenSet() const;
+
+                    /**
+                     * 获取应用模式 standard:标准模式, agent: agent模式，single_workflow：单工作流模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Pattern 应用模式 standard:标准模式, agent: agent模式，single_workflow：单工作流模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPattern() const;
+
+                    /**
+                     * 设置应用模式 standard:标准模式, agent: agent模式，single_workflow：单工作流模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _pattern 应用模式 standard:标准模式, agent: agent模式，single_workflow：单工作流模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPattern(const std::string& _pattern);
+
+                    /**
+                     * 判断参数 Pattern 是否已赋值
+                     * @return Pattern 是否已赋值
+                     * 
+                     */
+                    bool PatternHasBeenSet() const;
+
+                    /**
+                     * 获取思考模型别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ThoughtModelAliasName 思考模型别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetThoughtModelAliasName() const;
+
+                    /**
+                     * 设置思考模型别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _thoughtModelAliasName 思考模型别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetThoughtModelAliasName(const std::string& _thoughtModelAliasName);
+
+                    /**
+                     * 判断参数 ThoughtModelAliasName 是否已赋值
+                     * @return ThoughtModelAliasName 是否已赋值
+                     * 
+                     */
+                    bool ThoughtModelAliasNameHasBeenSet() const;
+
+                    /**
+                     * 获取权限位信息
+                     * @return PermissionIds 权限位信息
+                     * 
+                     */
+                    std::vector<std::string> GetPermissionIds() const;
+
+                    /**
+                     * 设置权限位信息
+                     * @param _permissionIds 权限位信息
+                     * 
+                     */
+                    void SetPermissionIds(const std::vector<std::string>& _permissionIds);
+
+                    /**
+                     * 判断参数 PermissionIds 是否已赋值
+                     * @return PermissionIds 是否已赋值
+                     * 
+                     */
+                    bool PermissionIdsHasBeenSet() const;
+
+                    /**
+                     * 获取创建人昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Creator 创建人昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCreator() const;
+
+                    /**
+                     * 设置创建人昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _creator 创建人昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCreator(const std::string& _creator);
+
+                    /**
+                     * 判断参数 Creator 是否已赋值
+                     * @return Creator 是否已赋值
+                     * 
+                     */
+                    bool CreatorHasBeenSet() const;
 
                 private:
 
@@ -426,11 +522,38 @@ namespace TencentCloud
                     bool m_modelNameHasBeenSet;
 
                     /**
-                     * 模型别名
+                     * 生成模型别名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modelAliasName;
                     bool m_modelAliasNameHasBeenSet;
+
+                    /**
+                     * 应用模式 standard:标准模式, agent: agent模式，single_workflow：单工作流模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_pattern;
+                    bool m_patternHasBeenSet;
+
+                    /**
+                     * 思考模型别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_thoughtModelAliasName;
+                    bool m_thoughtModelAliasNameHasBeenSet;
+
+                    /**
+                     * 权限位信息
+                     */
+                    std::vector<std::string> m_permissionIds;
+                    bool m_permissionIdsHasBeenSet;
+
+                    /**
+                     * 创建人昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_creator;
+                    bool m_creatorHasBeenSet;
 
                 };
             }

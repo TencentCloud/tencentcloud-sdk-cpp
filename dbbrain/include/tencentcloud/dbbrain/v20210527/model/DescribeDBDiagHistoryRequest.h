@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID 。
-                     * @return InstanceId 实例 ID 。
+                     * 获取实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @return InstanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID 。
-                     * @param _instanceId 实例 ID 。
+                     * 设置实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @param _instanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取开始时间，如“2019-09-10 12:13:14”。
-                     * @return StartTime 开始时间，如“2019-09-10 12:13:14”。
+                     * 获取开始时间，如“2019-09-10 12:13:14”。结束时间与开始时间的间隔最大可为2天。
+                     * @return StartTime 开始时间，如“2019-09-10 12:13:14”。结束时间与开始时间的间隔最大可为2天。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间，如“2019-09-10 12:13:14”。
-                     * @param _startTime 开始时间，如“2019-09-10 12:13:14”。
+                     * 设置开始时间，如“2019-09-10 12:13:14”。结束时间与开始时间的间隔最大可为2天。
+                     * @param _startTime 开始时间，如“2019-09-10 12:13:14”。结束时间与开始时间的间隔最大可为2天。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -129,13 +129,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID 。
+                     * 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 开始时间，如“2019-09-10 12:13:14”。
+                     * 开始时间，如“2019-09-10 12:13:14”。结束时间与开始时间的间隔最大可为2天。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -168,6 +168,27 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取停止持续告警
+                     * @return ContinueAlarm 停止持续告警
+                     * 
+                     */
+                    int64_t GetContinueAlarm() const;
+
+                    /**
+                     * 设置停止持续告警
+                     * @param _continueAlarm 停止持续告警
+                     * 
+                     */
+                    void SetContinueAlarm(const int64_t& _continueAlarm);
+
+                    /**
+                     * 判断参数 ContinueAlarm 是否已赋值
+                     * @return ContinueAlarm 是否已赋值
+                     * 
+                     */
+                    bool ContinueAlarmHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +226,12 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 停止持续告警
+                     */
+                    int64_t m_continueAlarm;
+                    bool m_continueAlarmHasBeenSet;
 
                 };
             }

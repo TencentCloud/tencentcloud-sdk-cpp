@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -151,6 +151,31 @@ namespace TencentCloud
                      */
                     bool MountTargetHasBeenSet() const;
 
+                    /**
+                     * 获取云盘ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DiskId 云盘ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDiskId() const;
+
+                    /**
+                     * 设置云盘ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _diskId 云盘ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDiskId(const std::string& _diskId);
+
+                    /**
+                     * 判断参数 DiskId 是否已赋值
+                     * @return DiskId 是否已赋值
+                     * 
+                     */
+                    bool DiskIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +207,13 @@ namespace TencentCloud
                      */
                     std::string m_mountTarget;
                     bool m_mountTargetHasBeenSet;
+
+                    /**
+                     * 云盘ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_diskId;
+                    bool m_diskIdHasBeenSet;
 
                 };
             }

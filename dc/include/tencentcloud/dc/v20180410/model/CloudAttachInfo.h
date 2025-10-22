@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -265,18 +265,14 @@ stoped：终止状态
 
                     /**
                      * 获取敏捷上云建设完成的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReadyTime 敏捷上云建设完成的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReadyTime() const;
 
                     /**
                      * 设置敏捷上云建设完成的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _readyTime 敏捷上云建设完成的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReadyTime(const std::string& _readyTime);
@@ -485,6 +481,90 @@ cross-region：跨地域
                      */
                     bool BUpdateBandwidthHasBeenSet() const;
 
+                    /**
+                     * 获取接入地域
+                     * @return ArRegion 接入地域
+                     * 
+                     */
+                    std::string GetArRegion() const;
+
+                    /**
+                     * 设置接入地域
+                     * @param _arRegion 接入地域
+                     * 
+                     */
+                    void SetArRegion(const std::string& _arRegion);
+
+                    /**
+                     * 判断参数 ArRegion 是否已赋值
+                     * @return ArRegion 是否已赋值
+                     * 
+                     */
+                    bool ArRegionHasBeenSet() const;
+
+                    /**
+                     * 获取运营商代码
+                     * @return IapCode 运营商代码
+                     * 
+                     */
+                    std::string GetIapCode() const;
+
+                    /**
+                     * 设置运营商代码
+                     * @param _iapCode 运营商代码
+                     * 
+                     */
+                    void SetIapCode(const std::string& _iapCode);
+
+                    /**
+                     * 判断参数 IapCode 是否已赋值
+                     * @return IapCode 是否已赋值
+                     * 
+                     */
+                    bool IapCodeHasBeenSet() const;
+
+                    /**
+                     * 获取IDC侧类型。枚举值：CLOUD-云，ISP-运营商，OTHER-第三方
+                     * @return IdcPointType IDC侧类型。枚举值：CLOUD-云，ISP-运营商，OTHER-第三方
+                     * 
+                     */
+                    std::string GetIdcPointType() const;
+
+                    /**
+                     * 设置IDC侧类型。枚举值：CLOUD-云，ISP-运营商，OTHER-第三方
+                     * @param _idcPointType IDC侧类型。枚举值：CLOUD-云，ISP-运营商，OTHER-第三方
+                     * 
+                     */
+                    void SetIdcPointType(const std::string& _idcPointType);
+
+                    /**
+                     * 判断参数 IdcPointType 是否已赋值
+                     * @return IdcPointType 是否已赋值
+                     * 
+                     */
+                    bool IdcPointTypeHasBeenSet() const;
+
+                    /**
+                     * 获取运营商链路是否有保护
+                     * @return BIapLinkProtected 运营商链路是否有保护
+                     * 
+                     */
+                    bool GetBIapLinkProtected() const;
+
+                    /**
+                     * 设置运营商链路是否有保护
+                     * @param _bIapLinkProtected 运营商链路是否有保护
+                     * 
+                     */
+                    void SetBIapLinkProtected(const bool& _bIapLinkProtected);
+
+                    /**
+                     * 判断参数 BIapLinkProtected 是否已赋值
+                     * @return BIapLinkProtected 是否已赋值
+                     * 
+                     */
+                    bool BIapLinkProtectedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -550,7 +630,6 @@ stoped：终止状态
 
                     /**
                      * 敏捷上云建设完成的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_readyTime;
                     bool m_readyTimeHasBeenSet;
@@ -610,6 +689,30 @@ cross-region：跨地域
                      */
                     bool m_bUpdateBandwidth;
                     bool m_bUpdateBandwidthHasBeenSet;
+
+                    /**
+                     * 接入地域
+                     */
+                    std::string m_arRegion;
+                    bool m_arRegionHasBeenSet;
+
+                    /**
+                     * 运营商代码
+                     */
+                    std::string m_iapCode;
+                    bool m_iapCodeHasBeenSet;
+
+                    /**
+                     * IDC侧类型。枚举值：CLOUD-云，ISP-运营商，OTHER-第三方
+                     */
+                    std::string m_idcPointType;
+                    bool m_idcPointTypeHasBeenSet;
+
+                    /**
+                     * 运营商链路是否有保护
+                     */
+                    bool m_bIapLinkProtected;
+                    bool m_bIapLinkProtectedHasBeenSet;
 
                 };
             }

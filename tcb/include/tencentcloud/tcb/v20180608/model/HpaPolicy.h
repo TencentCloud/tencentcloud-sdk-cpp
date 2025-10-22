@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyType 策略类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPolicyType() const;
 
                     /**
                      * 设置策略类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _policyType 策略类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPolicyType(const std::string& _policyType);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyThreshold 策略阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPolicyThreshold() const;
 
                     /**
                      * 设置策略阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _policyThreshold 策略阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPolicyThreshold(const int64_t& _policyThreshold);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 策略类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_policyType;
                     bool m_policyTypeHasBeenSet;
 
                     /**
                      * 策略阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_policyThreshold;
                     bool m_policyThresholdHasBeenSet;

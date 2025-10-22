@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取仓库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Repo 仓库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRepo() const;
 
                     /**
                      * 设置仓库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _repo 仓库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRepo(const std::string& _repo);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取仓库平台
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RepoType 仓库平台
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRepoType() const;
 
                     /**
                      * 设置仓库平台
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _repoType 仓库平台
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRepoType(const std::string& _repoType);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取仓库语言
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RepoLanguage 仓库语言
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRepoLanguage() const;
 
                     /**
                      * 设置仓库语言
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _repoLanguage 仓库语言
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRepoLanguage(const std::string& _repoLanguage);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分支名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Branch 分支名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBranch() const;
 
                     /**
                      * 设置分支名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _branch 分支名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBranch(const std::string& _branch);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 仓库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_repo;
                     bool m_repoHasBeenSet;
 
                     /**
                      * 仓库平台
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_repoType;
                     bool m_repoTypeHasBeenSet;
 
                     /**
                      * 仓库语言
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_repoLanguage;
                     bool m_repoLanguageHasBeenSet;
 
                     /**
                      * 分支名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_branch;
                     bool m_branchHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tse/v20201207/model/CloudNativeAPIGatewayCanaryRule.h>
+#include <tencentcloud/tse/v20201207/model/CanaryPriorityRule.h>
 
 
 namespace TencentCloud
@@ -127,6 +128,27 @@ namespace TencentCloud
                      */
                     bool CanaryRuleHasBeenSet() const;
 
+                    /**
+                     * 获取灰度规则配置列表，如果配置了此参数，将以此参数为准，忽略Priority和CanaryRule参数
+                     * @return CanaryRuleList 灰度规则配置列表，如果配置了此参数，将以此参数为准，忽略Priority和CanaryRule参数
+                     * 
+                     */
+                    std::vector<CanaryPriorityRule> GetCanaryRuleList() const;
+
+                    /**
+                     * 设置灰度规则配置列表，如果配置了此参数，将以此参数为准，忽略Priority和CanaryRule参数
+                     * @param _canaryRuleList 灰度规则配置列表，如果配置了此参数，将以此参数为准，忽略Priority和CanaryRule参数
+                     * 
+                     */
+                    void SetCanaryRuleList(const std::vector<CanaryPriorityRule>& _canaryRuleList);
+
+                    /**
+                     * 判断参数 CanaryRuleList 是否已赋值
+                     * @return CanaryRuleList 是否已赋值
+                     * 
+                     */
+                    bool CanaryRuleListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -152,6 +174,12 @@ namespace TencentCloud
                      */
                     CloudNativeAPIGatewayCanaryRule m_canaryRule;
                     bool m_canaryRuleHasBeenSet;
+
+                    /**
+                     * 灰度规则配置列表，如果配置了此参数，将以此参数为准，忽略Priority和CanaryRule参数
+                     */
+                    std::vector<CanaryPriorityRule> m_canaryRuleList;
+                    bool m_canaryRuleListHasBeenSet;
 
                 };
             }

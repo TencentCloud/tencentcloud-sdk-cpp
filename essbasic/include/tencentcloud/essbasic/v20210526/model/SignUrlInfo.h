@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,9 @@ namespace TencentCloud
                      * 获取签署链接，过期时间为90天
 
 注：<font color="red">生成的链路后面不能再增加参数</font>（会出现覆盖链接中已有参数导致错误）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SignUrl 签署链接，过期时间为90天
 
 注：<font color="red">生成的链路后面不能再增加参数</font>（会出现覆盖链接中已有参数导致错误）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSignUrl() const;
@@ -63,11 +61,9 @@ namespace TencentCloud
                      * 设置签署链接，过期时间为90天
 
 注：<font color="red">生成的链路后面不能再增加参数</font>（会出现覆盖链接中已有参数导致错误）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _signUrl 签署链接，过期时间为90天
 
 注：<font color="red">生成的链路后面不能再增加参数</font>（会出现覆盖链接中已有参数导致错误）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSignUrl(const std::string& _signUrl);
@@ -81,18 +77,14 @@ namespace TencentCloud
 
                     /**
                      * 获取合同过期时间戳，单位秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Deadline 合同过期时间戳，单位秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDeadline() const;
 
                     /**
                      * 设置合同过期时间戳，单位秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deadline 合同过期时间戳，单位秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeadline(const int64_t& _deadline);
@@ -106,18 +98,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当流程为顺序签署此参数有效时，数字越小优先级越高，暂不支持并行签署 可选
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SignOrder 当流程为顺序签署此参数有效时，数字越小优先级越高，暂不支持并行签署 可选
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSignOrder() const;
 
                     /**
                      * 设置当流程为顺序签署此参数有效时，数字越小优先级越高，暂不支持并行签署 可选
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _signOrder 当流程为顺序签署此参数有效时，数字越小优先级越高，暂不支持并行签署 可选
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSignOrder(const int64_t& _signOrder);
@@ -131,18 +119,14 @@ namespace TencentCloud
 
                     /**
                      * 获取签署人编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SignId 签署人编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSignId() const;
 
                     /**
                      * 设置签署人编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _signId 签署人编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSignId(const std::string& _signId);
@@ -181,18 +165,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 用户姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置用户姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 用户姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -206,18 +186,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户手机号码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Mobile 用户手机号码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMobile() const;
 
                     /**
                      * 设置用户手机号码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mobile 用户手机号码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMobile(const std::string& _mobile);
@@ -231,18 +207,14 @@ namespace TencentCloud
 
                     /**
                      * 获取签署参与者机构名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrganizationName 签署参与者机构名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOrganizationName() const;
 
                     /**
                      * 设置签署参与者机构名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _organizationName 签署参与者机构名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOrganizationName(const std::string& _organizationName);
@@ -258,11 +230,9 @@ namespace TencentCloud
                      * 获取参与者类型, 类型如下:
 **ORGANIZATION**:企业经办人
 **PERSON**: 自然人
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApproverType 参与者类型, 类型如下:
 **ORGANIZATION**:企业经办人
 **PERSON**: 自然人
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApproverType() const;
@@ -271,11 +241,9 @@ namespace TencentCloud
                      * 设置参与者类型, 类型如下:
 **ORGANIZATION**:企业经办人
 **PERSON**: 自然人
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _approverType 参与者类型, 类型如下:
 **ORGANIZATION**:企业经办人
 **PERSON**: 自然人
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApproverType(const std::string& _approverType);
@@ -289,18 +257,14 @@ namespace TencentCloud
 
                     /**
                      * 获取经办人身份证号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdCardNumber 经办人身份证号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIdCardNumber() const;
 
                     /**
                      * 设置经办人身份证号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _idCardNumber 经办人身份证号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIdCardNumber(const std::string& _idCardNumber);
@@ -314,18 +278,14 @@ namespace TencentCloud
 
                     /**
                      * 获取签署链接对应流程Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowId 签署链接对应流程Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlowId() const;
 
                     /**
                      * 设置签署链接对应流程Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _flowId 签署链接对应流程Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFlowId(const std::string& _flowId);
@@ -339,18 +299,14 @@ namespace TencentCloud
 
                     /**
                      * 获取企业经办人 用户在渠道的编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OpenId 企业经办人 用户在渠道的编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOpenId() const;
 
                     /**
                      * 设置企业经办人 用户在渠道的编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _openId 企业经办人 用户在渠道的编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOpenId(const std::string& _openId);
@@ -364,18 +320,14 @@ namespace TencentCloud
 
                     /**
                      * 获取合同组签署链接对应的合同组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowGroupId 合同组签署链接对应的合同组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlowGroupId() const;
 
                     /**
                      * 设置合同组签署链接对应的合同组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _flowGroupId 合同组签署链接对应的合同组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFlowGroupId(const std::string& _flowGroupId);
@@ -389,18 +341,22 @@ namespace TencentCloud
 
                     /**
                      * 获取二维码，在生成动态签署人跳转封面页链接时返回
-注意：此字段可能返回 null，表示取不到有效值。
+
+注：`此二维码下载链接有效期为5分钟，可下载二维码后本地保存，二维码有效期为90天。`
                      * @return SignQrcodeUrl 二维码，在生成动态签署人跳转封面页链接时返回
-注意：此字段可能返回 null，表示取不到有效值。
+
+注：`此二维码下载链接有效期为5分钟，可下载二维码后本地保存，二维码有效期为90天。`
                      * 
                      */
                     std::string GetSignQrcodeUrl() const;
 
                     /**
                      * 设置二维码，在生成动态签署人跳转封面页链接时返回
-注意：此字段可能返回 null，表示取不到有效值。
+
+注：`此二维码下载链接有效期为5分钟，可下载二维码后本地保存，二维码有效期为90天。`
                      * @param _signQrcodeUrl 二维码，在生成动态签署人跳转封面页链接时返回
-注意：此字段可能返回 null，表示取不到有效值。
+
+注：`此二维码下载链接有效期为5分钟，可下载二维码后本地保存，二维码有效期为90天。`
                      * 
                      */
                     void SetSignQrcodeUrl(const std::string& _signQrcodeUrl);
@@ -418,28 +374,24 @@ namespace TencentCloud
                      * 签署链接，过期时间为90天
 
 注：<font color="red">生成的链路后面不能再增加参数</font>（会出现覆盖链接中已有参数导致错误）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_signUrl;
                     bool m_signUrlHasBeenSet;
 
                     /**
                      * 合同过期时间戳，单位秒
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_deadline;
                     bool m_deadlineHasBeenSet;
 
                     /**
                      * 当流程为顺序签署此参数有效时，数字越小优先级越高，暂不支持并行签署 可选
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_signOrder;
                     bool m_signOrderHasBeenSet;
 
                     /**
                      * 签署人编号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_signId;
                     bool m_signIdHasBeenSet;
@@ -453,21 +405,18 @@ namespace TencentCloud
 
                     /**
                      * 用户姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 用户手机号码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mobile;
                     bool m_mobileHasBeenSet;
 
                     /**
                      * 签署参与者机构名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_organizationName;
                     bool m_organizationNameHasBeenSet;
@@ -476,42 +425,38 @@ namespace TencentCloud
                      * 参与者类型, 类型如下:
 **ORGANIZATION**:企业经办人
 **PERSON**: 自然人
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_approverType;
                     bool m_approverTypeHasBeenSet;
 
                     /**
                      * 经办人身份证号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_idCardNumber;
                     bool m_idCardNumberHasBeenSet;
 
                     /**
                      * 签署链接对应流程Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
                      * 企业经办人 用户在渠道的编号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_openId;
                     bool m_openIdHasBeenSet;
 
                     /**
                      * 合同组签署链接对应的合同组id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowGroupId;
                     bool m_flowGroupIdHasBeenSet;
 
                     /**
                      * 二维码，在生成动态签署人跳转封面页链接时返回
-注意：此字段可能返回 null，表示取不到有效值。
+
+注：`此二维码下载链接有效期为5分钟，可下载二维码后本地保存，二维码有效期为90天。`
                      */
                     std::string m_signQrcodeUrl;
                     bool m_signQrcodeUrlHasBeenSet;

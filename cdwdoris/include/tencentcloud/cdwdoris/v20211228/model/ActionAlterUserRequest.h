@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,6 +106,48 @@ namespace TencentCloud
                      */
                     bool UserPrivilegeHasBeenSet() const;
 
+                    /**
+                     * 获取计算组列表
+                     * @return ComputeGroups 计算组列表
+                     * 
+                     */
+                    std::vector<std::string> GetComputeGroups() const;
+
+                    /**
+                     * 设置计算组列表
+                     * @param _computeGroups 计算组列表
+                     * 
+                     */
+                    void SetComputeGroups(const std::vector<std::string>& _computeGroups);
+
+                    /**
+                     * 判断参数 ComputeGroups 是否已赋值
+                     * @return ComputeGroups 是否已赋值
+                     * 
+                     */
+                    bool ComputeGroupsHasBeenSet() const;
+
+                    /**
+                     * 获取集群ID
+                     * @return InstanceId 集群ID
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置集群ID
+                     * @param _instanceId 集群ID
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +167,18 @@ namespace TencentCloud
                      */
                     int64_t m_userPrivilege;
                     bool m_userPrivilegeHasBeenSet;
+
+                    /**
+                     * 计算组列表
+                     */
+                    std::vector<std::string> m_computeGroups;
+                    bool m_computeGroupsHasBeenSet;
+
+                    /**
+                     * 集群ID
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
 
                 };
             }

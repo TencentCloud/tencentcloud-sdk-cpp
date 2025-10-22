@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -175,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取提取版权水印任务输入信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Input 提取版权水印任务输入信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ExtractCopyRightWatermarkTaskInput GetInput() const;
 
                     /**
                      * 设置提取版权水印任务输入信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _input 提取版权水印任务输入信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInput(const ExtractCopyRightWatermarkTaskInput& _input);
@@ -200,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取提取版权水印任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Output 提取版权水印任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ExtractCopyRightWatermarkTaskOutput GetOutput() const;
 
                     /**
                      * 设置提取版权水印任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _output 提取版权水印任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutput(const ExtractCopyRightWatermarkTaskOutput& _output);
@@ -304,14 +296,12 @@ namespace TencentCloud
 
                     /**
                      * 提取版权水印任务输入信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ExtractCopyRightWatermarkTaskInput m_input;
                     bool m_inputHasBeenSet;
 
                     /**
                      * 提取版权水印任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ExtractCopyRightWatermarkTaskOutput m_output;
                     bool m_outputHasBeenSet;

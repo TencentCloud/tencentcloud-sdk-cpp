@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取经验库标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TemplateTag 经验库标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTemplateTag() const;
 
                     /**
                      * 设置经验库标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _templateTag 经验库标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTemplateTag(const std::string& _templateTag);
@@ -220,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取经验库来源 0-自建经验 1-专家推荐
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TemplateSource 经验库来源 0-自建经验 1-专家推荐
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTemplateSource() const;
 
                     /**
                      * 设置经验库来源 0-自建经验 1-专家推荐
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _templateSource 经验库来源 0-自建经验 1-专家推荐
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTemplateSource(const int64_t& _templateSource);
@@ -265,7 +257,6 @@ namespace TencentCloud
 
                     /**
                      * 经验库标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_templateTag;
                     bool m_templateTagHasBeenSet;
@@ -296,7 +287,6 @@ namespace TencentCloud
 
                     /**
                      * 经验库来源 0-自建经验 1-专家推荐
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_templateSource;
                     bool m_templateSourceHasBeenSet;

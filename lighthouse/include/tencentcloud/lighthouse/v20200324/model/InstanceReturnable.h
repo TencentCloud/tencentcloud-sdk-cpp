@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -89,15 +89,55 @@ namespace TencentCloud
                     bool IsReturnableHasBeenSet() const;
 
                     /**
-                     * 获取实例退还失败错误码。
-                     * @return ReturnFailCode 实例退还失败错误码。
+                     * 获取实例退还失败错误码。取值:
+0: 可以退还
+1: 资源已退货。
+2: 资源已到期
+3: 资源购买超过5天不支持退款
+4: 非预付费资源不支持退款
+8: 退货数量超出限额
+9: 涉及活动订单不支持退款
+10: 资源不支持自助退，请走工单退款
+11: 涉及推广奖励渠道订单，请提工单咨询
+12: 根据业务侧产品规定，该资源不允许退款
+                     * @return ReturnFailCode 实例退还失败错误码。取值:
+0: 可以退还
+1: 资源已退货。
+2: 资源已到期
+3: 资源购买超过5天不支持退款
+4: 非预付费资源不支持退款
+8: 退货数量超出限额
+9: 涉及活动订单不支持退款
+10: 资源不支持自助退，请走工单退款
+11: 涉及推广奖励渠道订单，请提工单咨询
+12: 根据业务侧产品规定，该资源不允许退款
                      * 
                      */
                     int64_t GetReturnFailCode() const;
 
                     /**
-                     * 设置实例退还失败错误码。
-                     * @param _returnFailCode 实例退还失败错误码。
+                     * 设置实例退还失败错误码。取值:
+0: 可以退还
+1: 资源已退货。
+2: 资源已到期
+3: 资源购买超过5天不支持退款
+4: 非预付费资源不支持退款
+8: 退货数量超出限额
+9: 涉及活动订单不支持退款
+10: 资源不支持自助退，请走工单退款
+11: 涉及推广奖励渠道订单，请提工单咨询
+12: 根据业务侧产品规定，该资源不允许退款
+                     * @param _returnFailCode 实例退还失败错误码。取值:
+0: 可以退还
+1: 资源已退货。
+2: 资源已到期
+3: 资源购买超过5天不支持退款
+4: 非预付费资源不支持退款
+8: 退货数量超出限额
+9: 涉及活动订单不支持退款
+10: 资源不支持自助退，请走工单退款
+11: 涉及推广奖励渠道订单，请提工单咨询
+12: 根据业务侧产品规定，该资源不允许退款
                      * 
                      */
                     void SetReturnFailCode(const int64_t& _returnFailCode);
@@ -145,7 +185,17 @@ namespace TencentCloud
                     bool m_isReturnableHasBeenSet;
 
                     /**
-                     * 实例退还失败错误码。
+                     * 实例退还失败错误码。取值:
+0: 可以退还
+1: 资源已退货。
+2: 资源已到期
+3: 资源购买超过5天不支持退款
+4: 非预付费资源不支持退款
+8: 退货数量超出限额
+9: 涉及活动订单不支持退款
+10: 资源不支持自助退，请走工单退款
+11: 涉及推广奖励渠道订单，请提工单咨询
+12: 根据业务侧产品规定，该资源不允许退款
                      */
                     int64_t m_returnFailCode;
                     bool m_returnFailCodeHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -100,18 +100,18 @@ namespace TencentCloud
 
                     /**
                      * 获取文件资源ID，通过多文件上传[UploadFiles](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口获得，为32位字符串。
-建议开发者保存此资源ID，后续创建合同或创建合同流程需此资源ID。
+注：此字段定义为数组，但仅支持单个文件
                      * @return FileIds 文件资源ID，通过多文件上传[UploadFiles](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口获得，为32位字符串。
-建议开发者保存此资源ID，后续创建合同或创建合同流程需此资源ID。
+注：此字段定义为数组，但仅支持单个文件
                      * 
                      */
                     std::vector<std::string> GetFileIds() const;
 
                     /**
                      * 设置文件资源ID，通过多文件上传[UploadFiles](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口获得，为32位字符串。
-建议开发者保存此资源ID，后续创建合同或创建合同流程需此资源ID。
+注：此字段定义为数组，但仅支持单个文件
                      * @param _fileIds 文件资源ID，通过多文件上传[UploadFiles](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口获得，为32位字符串。
-建议开发者保存此资源ID，后续创建合同或创建合同流程需此资源ID。
+注：此字段定义为数组，但仅支持单个文件
                      * 
                      */
                     void SetFileIds(const std::vector<std::string>& _fileIds);
@@ -154,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取签署流程的类型(如销售合同/入职合同等)，最大长度200个字符
-示例值：劳务合同
                      * @return FlowType 签署流程的类型(如销售合同/入职合同等)，最大长度200个字符
-示例值：劳务合同
                      * 
                      */
                     std::string GetFlowType() const;
 
                     /**
                      * 设置签署流程的类型(如销售合同/入职合同等)，最大长度200个字符
-示例值：劳务合同
                      * @param _flowType 签署流程的类型(如销售合同/入职合同等)，最大长度200个字符
-示例值：劳务合同
                      * 
                      */
                     void SetFlowType(const std::string& _flowType);
@@ -402,18 +398,18 @@ false：有序签
 
                     /**
                      * 获取个人自动签场景。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
-示例值：E_PRESCRIPTION_AUTO_SIGN
+
                      * @return AutoSignScene 个人自动签场景。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
-示例值：E_PRESCRIPTION_AUTO_SIGN
+
                      * 
                      */
                     std::string GetAutoSignScene() const;
 
                     /**
                      * 设置个人自动签场景。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
-示例值：E_PRESCRIPTION_AUTO_SIGN
+
                      * @param _autoSignScene 个人自动签场景。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
-示例值：E_PRESCRIPTION_AUTO_SIGN
+
                      * 
                      */
                     void SetAutoSignScene(const std::string& _autoSignScene);
@@ -426,15 +422,15 @@ false：有序签
                     bool AutoSignSceneHasBeenSet() const;
 
                     /**
-                     * 获取在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
-                     * @return FlowDisplayType 在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
+                     * 获取在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li><li> <b>3</b> :文书</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
+                     * @return FlowDisplayType 在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li><li> <b>3</b> :文书</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
                      * 
                      */
                     int64_t GetFlowDisplayType() const;
 
                     /**
-                     * 设置在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
-                     * @param _flowDisplayType 在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
+                     * 设置在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li><li> <b>3</b> :文书</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
+                     * @param _flowDisplayType 在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li><li> <b>3</b> :文书</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
                      * 
                      */
                     void SetFlowDisplayType(const int64_t& _flowDisplayType);
@@ -464,7 +460,7 @@ false：有序签
 
                     /**
                      * 文件资源ID，通过多文件上传[UploadFiles](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口获得，为32位字符串。
-建议开发者保存此资源ID，后续创建合同或创建合同流程需此资源ID。
+注：此字段定义为数组，但仅支持单个文件
                      */
                     std::vector<std::string> m_fileIds;
                     bool m_fileIdsHasBeenSet;
@@ -479,7 +475,6 @@ false：有序签
 
                     /**
                      * 签署流程的类型(如销售合同/入职合同等)，最大长度200个字符
-示例值：劳务合同
                      */
                     std::string m_flowType;
                     bool m_flowTypeHasBeenSet;
@@ -547,13 +542,13 @@ false：有序签
 
                     /**
                      * 个人自动签场景。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
-示例值：E_PRESCRIPTION_AUTO_SIGN
+
                      */
                     std::string m_autoSignScene;
                     bool m_autoSignSceneHasBeenSet;
 
                     /**
-                     * 在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
+                     * 在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li><li> <b>3</b> :文书</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
                      */
                     int64_t m_flowDisplayType;
                     bool m_flowDisplayTypeHasBeenSet;

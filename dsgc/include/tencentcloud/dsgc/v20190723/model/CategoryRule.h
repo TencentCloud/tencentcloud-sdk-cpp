@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -175,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取别名ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AliasRuleId 别名ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAliasRuleId() const;
 
                     /**
                      * 设置别名ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _aliasRuleId 别名ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAliasRuleId(const int64_t& _aliasRuleId);
@@ -200,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取别名规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AliasRuleName 别名规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAliasRuleName() const;
 
                     /**
                      * 设置别名规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _aliasRuleName 别名规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAliasRuleName(const std::string& _aliasRuleName);
@@ -225,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取各类分类分级规则数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleEffectItems 各类分类分级规则数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RuleEffectItem> GetRuleEffectItems() const;
 
                     /**
                      * 设置各类分类分级规则数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleEffectItems 各类分类分级规则数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleEffectItems(const std::vector<RuleEffectItem>& _ruleEffectItems);
@@ -250,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleStatus 规则状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRuleStatus() const;
 
                     /**
                      * 设置规则状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleStatus 规则状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleStatus(const int64_t& _ruleStatus);
@@ -313,28 +297,24 @@ namespace TencentCloud
 
                     /**
                      * 别名ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_aliasRuleId;
                     bool m_aliasRuleIdHasBeenSet;
 
                     /**
                      * 别名规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_aliasRuleName;
                     bool m_aliasRuleNameHasBeenSet;
 
                     /**
                      * 各类分类分级规则数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RuleEffectItem> m_ruleEffectItems;
                     bool m_ruleEffectItemsHasBeenSet;
 
                     /**
                      * 规则状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ruleStatus;
                     bool m_ruleStatusHasBeenSet;

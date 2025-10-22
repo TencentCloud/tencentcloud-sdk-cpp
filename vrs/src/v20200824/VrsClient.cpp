@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -291,6 +291,49 @@ VrsClient::GetTrainingTextOutcomeCallable VrsClient::GetTrainingTextCallable(con
         [this, request]()
         {
             return this->GetTrainingText(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VrsClient::GetVRSVoiceTypeInfoOutcome VrsClient::GetVRSVoiceTypeInfo(const GetVRSVoiceTypeInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetVRSVoiceTypeInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetVRSVoiceTypeInfoResponse rsp = GetVRSVoiceTypeInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetVRSVoiceTypeInfoOutcome(rsp);
+        else
+            return GetVRSVoiceTypeInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return GetVRSVoiceTypeInfoOutcome(outcome.GetError());
+    }
+}
+
+void VrsClient::GetVRSVoiceTypeInfoAsync(const GetVRSVoiceTypeInfoRequest& request, const GetVRSVoiceTypeInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetVRSVoiceTypeInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VrsClient::GetVRSVoiceTypeInfoOutcomeCallable VrsClient::GetVRSVoiceTypeInfoCallable(const GetVRSVoiceTypeInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetVRSVoiceTypeInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->GetVRSVoiceTypeInfo(request);
         }
     );
 

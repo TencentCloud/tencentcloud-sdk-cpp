@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,12 @@ CreateApplicationRequest::CreateApplicationRequest() :
     m_programIdHasBeenSet(false),
     m_serviceConfigListHasBeenSet(false),
     m_ignoreCreateImageRepositoryHasBeenSet(false),
-    m_programIdListHasBeenSet(false)
+    m_programIdListHasBeenSet(false),
+    m_apmInstanceIdHasBeenSet(false),
+    m_programLanguageHasBeenSet(false),
+    m_frameworkTypeHasBeenSet(false),
+    m_serviceGovernanceConfigHasBeenSet(false),
+    m_createSameNameImageRepositoryHasBeenSet(false)
 {
 }
 
@@ -142,6 +147,47 @@ string CreateApplicationRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_apmInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApmInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_apmInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_programLanguageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProgramLanguage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_programLanguage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_frameworkTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FrameworkType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_frameworkType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceGovernanceConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceGovernanceConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_serviceGovernanceConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_createSameNameImageRepositoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateSameNameImageRepository";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_createSameNameImageRepository, allocator);
     }
 
 
@@ -326,6 +372,86 @@ void CreateApplicationRequest::SetProgramIdList(const vector<string>& _programId
 bool CreateApplicationRequest::ProgramIdListHasBeenSet() const
 {
     return m_programIdListHasBeenSet;
+}
+
+string CreateApplicationRequest::GetApmInstanceId() const
+{
+    return m_apmInstanceId;
+}
+
+void CreateApplicationRequest::SetApmInstanceId(const string& _apmInstanceId)
+{
+    m_apmInstanceId = _apmInstanceId;
+    m_apmInstanceIdHasBeenSet = true;
+}
+
+bool CreateApplicationRequest::ApmInstanceIdHasBeenSet() const
+{
+    return m_apmInstanceIdHasBeenSet;
+}
+
+string CreateApplicationRequest::GetProgramLanguage() const
+{
+    return m_programLanguage;
+}
+
+void CreateApplicationRequest::SetProgramLanguage(const string& _programLanguage)
+{
+    m_programLanguage = _programLanguage;
+    m_programLanguageHasBeenSet = true;
+}
+
+bool CreateApplicationRequest::ProgramLanguageHasBeenSet() const
+{
+    return m_programLanguageHasBeenSet;
+}
+
+string CreateApplicationRequest::GetFrameworkType() const
+{
+    return m_frameworkType;
+}
+
+void CreateApplicationRequest::SetFrameworkType(const string& _frameworkType)
+{
+    m_frameworkType = _frameworkType;
+    m_frameworkTypeHasBeenSet = true;
+}
+
+bool CreateApplicationRequest::FrameworkTypeHasBeenSet() const
+{
+    return m_frameworkTypeHasBeenSet;
+}
+
+ServiceGovernanceConfig CreateApplicationRequest::GetServiceGovernanceConfig() const
+{
+    return m_serviceGovernanceConfig;
+}
+
+void CreateApplicationRequest::SetServiceGovernanceConfig(const ServiceGovernanceConfig& _serviceGovernanceConfig)
+{
+    m_serviceGovernanceConfig = _serviceGovernanceConfig;
+    m_serviceGovernanceConfigHasBeenSet = true;
+}
+
+bool CreateApplicationRequest::ServiceGovernanceConfigHasBeenSet() const
+{
+    return m_serviceGovernanceConfigHasBeenSet;
+}
+
+bool CreateApplicationRequest::GetCreateSameNameImageRepository() const
+{
+    return m_createSameNameImageRepository;
+}
+
+void CreateApplicationRequest::SetCreateSameNameImageRepository(const bool& _createSameNameImageRepository)
+{
+    m_createSameNameImageRepository = _createSameNameImageRepository;
+    m_createSameNameImageRepositoryHasBeenSet = true;
+}
+
+bool CreateApplicationRequest::CreateSameNameImageRepositoryHasBeenSet() const
+{
+    return m_createSameNameImageRepositoryHasBeenSet;
 }
 
 

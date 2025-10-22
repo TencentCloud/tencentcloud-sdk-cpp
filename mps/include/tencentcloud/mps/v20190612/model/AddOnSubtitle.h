@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -109,6 +109,85 @@ namespace TencentCloud
                      */
                     bool SubtitleHasBeenSet() const;
 
+                    /**
+                     * 获取字幕名称	。
+注意：仅支持中文、英文、数字、空格、下划线(_)、短横线(-)、句点(.)和中英文括号，长度不能超过64个字符。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubtitleName 字幕名称	。
+注意：仅支持中文、英文、数字、空格、下划线(_)、短横线(-)、句点(.)和中英文括号，长度不能超过64个字符。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSubtitleName() const;
+
+                    /**
+                     * 设置字幕名称	。
+注意：仅支持中文、英文、数字、空格、下划线(_)、短横线(-)、句点(.)和中英文括号，长度不能超过64个字符。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subtitleName 字幕名称	。
+注意：仅支持中文、英文、数字、空格、下划线(_)、短横线(-)、句点(.)和中英文括号，长度不能超过64个字符。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubtitleName(const std::string& _subtitleName);
+
+                    /**
+                     * 判断参数 SubtitleName 是否已赋值
+                     * @return SubtitleName 是否已赋值
+                     * 
+                     */
+                    bool SubtitleNameHasBeenSet() const;
+
+                    /**
+                     * 获取字幕输出格式。取值{"WebVTT","TTML"}。
+默认值："WebVTT"
+                     * @return OutputFormat 字幕输出格式。取值{"WebVTT","TTML"}。
+默认值："WebVTT"
+                     * 
+                     */
+                    std::string GetOutputFormat() const;
+
+                    /**
+                     * 设置字幕输出格式。取值{"WebVTT","TTML"}。
+默认值："WebVTT"
+                     * @param _outputFormat 字幕输出格式。取值{"WebVTT","TTML"}。
+默认值："WebVTT"
+                     * 
+                     */
+                    void SetOutputFormat(const std::string& _outputFormat);
+
+                    /**
+                     * 判断参数 OutputFormat 是否已赋值
+                     * @return OutputFormat 是否已赋值
+                     * 
+                     */
+                    bool OutputFormatHasBeenSet() const;
+
+                    /**
+                     * 获取默认字幕轨道。为true时指定当前字幕为默认字幕轨道，最多可指定1条默认字幕轨道。
+默认值：false
+                     * @return DefaultTrack 默认字幕轨道。为true时指定当前字幕为默认字幕轨道，最多可指定1条默认字幕轨道。
+默认值：false
+                     * 
+                     */
+                    bool GetDefaultTrack() const;
+
+                    /**
+                     * 设置默认字幕轨道。为true时指定当前字幕为默认字幕轨道，最多可指定1条默认字幕轨道。
+默认值：false
+                     * @param _defaultTrack 默认字幕轨道。为true时指定当前字幕为默认字幕轨道，最多可指定1条默认字幕轨道。
+默认值：false
+                     * 
+                     */
+                    void SetDefaultTrack(const bool& _defaultTrack);
+
+                    /**
+                     * 判断参数 DefaultTrack 是否已赋值
+                     * @return DefaultTrack 是否已赋值
+                     * 
+                     */
+                    bool DefaultTrackHasBeenSet() const;
+
                 private:
 
                     /**
@@ -127,6 +206,28 @@ namespace TencentCloud
                      */
                     MediaInputInfo m_subtitle;
                     bool m_subtitleHasBeenSet;
+
+                    /**
+                     * 字幕名称	。
+注意：仅支持中文、英文、数字、空格、下划线(_)、短横线(-)、句点(.)和中英文括号，长度不能超过64个字符。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subtitleName;
+                    bool m_subtitleNameHasBeenSet;
+
+                    /**
+                     * 字幕输出格式。取值{"WebVTT","TTML"}。
+默认值："WebVTT"
+                     */
+                    std::string m_outputFormat;
+                    bool m_outputFormatHasBeenSet;
+
+                    /**
+                     * 默认字幕轨道。为true时指定当前字幕为默认字幕轨道，最多可指定1条默认字幕轨道。
+默认值：false
+                     */
+                    bool m_defaultTrack;
+                    bool m_defaultTrackHasBeenSet;
 
                 };
             }

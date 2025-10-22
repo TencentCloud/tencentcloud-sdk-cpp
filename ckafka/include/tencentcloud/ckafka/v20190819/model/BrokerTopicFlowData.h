@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Topic 名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TopicName Topic 名称
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取主题名
+                     * @return TopicName 主题名
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
-                     * 设置Topic 名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _topicName Topic 名称
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置主题名
+                     * @param _topicName 主题名
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -72,19 +68,15 @@ namespace TencentCloud
                     bool TopicNameHasBeenSet() const;
 
                     /**
-                     * 获取Topic Id
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TopicId Topic Id
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取主题Id
+                     * @return TopicId 主题Id
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置Topic Id
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _topicId Topic Id
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置主题Id
+                     * @param _topicId 主题Id
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Topic 流量(MB)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicTraffic Topic 流量(MB)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicTraffic() const;
 
                     /**
                      * 设置Topic 流量(MB)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicTraffic Topic 流量(MB)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicTraffic(const std::string& _topicTraffic);
@@ -124,22 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Topic 名称
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 主题名
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
 
                     /**
-                     * Topic Id
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 主题Id
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
                      * Topic 流量(MB)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicTraffic;
                     bool m_topicTrafficHasBeenSet;

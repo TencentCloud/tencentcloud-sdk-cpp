@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,9 @@ VulEmergentMsgInfo::VulEmergentMsgInfo() :
     m_vulIdHasBeenSet(false),
     m_publishTimeHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_nameEnHasBeenSet(false)
+    m_nameEnHasBeenSet(false),
+    m_supportFixHasBeenSet(false),
+    m_supportDefenseHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome VulEmergentMsgInfo::Deserialize(const rapidjson::Value &valu
         m_nameEnHasBeenSet = true;
     }
 
+    if (value.HasMember("SupportFix") && !value["SupportFix"].IsNull())
+    {
+        if (!value["SupportFix"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulEmergentMsgInfo.SupportFix` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_supportFix = value["SupportFix"].GetInt64();
+        m_supportFixHasBeenSet = true;
+    }
+
+    if (value.HasMember("SupportDefense") && !value["SupportDefense"].IsNull())
+    {
+        if (!value["SupportDefense"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulEmergentMsgInfo.SupportDefense` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_supportDefense = value["SupportDefense"].GetInt64();
+        m_supportDefenseHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +132,22 @@ void VulEmergentMsgInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "NameEn";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_nameEn.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_supportFixHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SupportFix";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_supportFix, allocator);
+    }
+
+    if (m_supportDefenseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SupportDefense";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_supportDefense, allocator);
     }
 
 }
@@ -177,5 +215,37 @@ void VulEmergentMsgInfo::SetNameEn(const string& _nameEn)
 bool VulEmergentMsgInfo::NameEnHasBeenSet() const
 {
     return m_nameEnHasBeenSet;
+}
+
+int64_t VulEmergentMsgInfo::GetSupportFix() const
+{
+    return m_supportFix;
+}
+
+void VulEmergentMsgInfo::SetSupportFix(const int64_t& _supportFix)
+{
+    m_supportFix = _supportFix;
+    m_supportFixHasBeenSet = true;
+}
+
+bool VulEmergentMsgInfo::SupportFixHasBeenSet() const
+{
+    return m_supportFixHasBeenSet;
+}
+
+int64_t VulEmergentMsgInfo::GetSupportDefense() const
+{
+    return m_supportDefense;
+}
+
+void VulEmergentMsgInfo::SetSupportDefense(const int64_t& _supportDefense)
+{
+    m_supportDefense = _supportDefense;
+    m_supportDefenseHasBeenSet = true;
+}
+
+bool VulEmergentMsgInfo::SupportDefenseHasBeenSet() const
+{
+    return m_supportDefenseHasBeenSet;
 }
 

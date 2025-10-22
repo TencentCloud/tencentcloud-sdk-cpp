@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取业务系统ID	
-                     * @return InstanceKey 业务系统ID	
+                     * 获取业务系统 ID
+                     * @return InstanceKey 业务系统 ID
                      * 
                      */
                     std::string GetInstanceKey() const;
 
                     /**
-                     * 设置业务系统ID	
-                     * @param _instanceKey 业务系统ID	
+                     * 设置业务系统 ID
+                     * @param _instanceKey 业务系统 ID
                      * 
                      */
                     void SetInstanceKey(const std::string& _instanceKey);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool ExceptionFilterHasBeenSet() const;
 
                     /**
-                     * 获取HTTP状态码过滤
-                     * @return ErrorCodeFilter HTTP状态码过滤
+                     * 获取HTTP 状态码过滤
+                     * @return ErrorCodeFilter HTTP 状态码过滤
                      * 
                      */
                     std::string GetErrorCodeFilter() const;
 
                     /**
-                     * 设置HTTP状态码过滤
-                     * @param _errorCodeFilter HTTP状态码过滤
+                     * 设置HTTP 状态码过滤
+                     * @param _errorCodeFilter HTTP 状态码过滤
                      * 
                      */
                     void SetErrorCodeFilter(const std::string& _errorCodeFilter);
@@ -154,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用诊断开关（已废弃）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventEnable 应用诊断开关（已废弃）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEventEnable() const;
 
                     /**
                      * 设置应用诊断开关（已废弃）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eventEnable 应用诊断开关（已废弃）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEventEnable(const bool& _eventEnable);
@@ -178,15 +174,15 @@ namespace TencentCloud
                     bool EventEnableHasBeenSet() const;
 
                     /**
-                     * 获取URL收敛开关 0 关 1 开
-                     * @return UrlConvergenceSwitch URL收敛开关 0 关 1 开
+                     * 获取URL 收敛开关 0 关 1 开
+                     * @return UrlConvergenceSwitch URL 收敛开关 0 关 1 开
                      * 
                      */
                     int64_t GetUrlConvergenceSwitch() const;
 
                     /**
-                     * 设置URL收敛开关 0 关 1 开
-                     * @param _urlConvergenceSwitch URL收敛开关 0 关 1 开
+                     * 设置URL 收敛开关 0 关 1 开
+                     * @param _urlConvergenceSwitch URL 收敛开关 0 关 1 开
                      * 
                      */
                     void SetUrlConvergenceSwitch(const int64_t& _urlConvergenceSwitch);
@@ -199,15 +195,15 @@ namespace TencentCloud
                     bool UrlConvergenceSwitchHasBeenSet() const;
 
                     /**
-                     * 获取URL收敛阈值	
-                     * @return UrlConvergenceThreshold URL收敛阈值	
+                     * 获取URL 收敛阈值	
+                     * @return UrlConvergenceThreshold URL 收敛阈值	
                      * 
                      */
                     int64_t GetUrlConvergenceThreshold() const;
 
                     /**
-                     * 设置URL收敛阈值	
-                     * @param _urlConvergenceThreshold URL收敛阈值	
+                     * 设置URL 收敛阈值	
+                     * @param _urlConvergenceThreshold URL 收敛阈值	
                      * 
                      */
                     void SetUrlConvergenceThreshold(const int64_t& _urlConvergenceThreshold);
@@ -220,15 +216,15 @@ namespace TencentCloud
                     bool UrlConvergenceThresholdHasBeenSet() const;
 
                     /**
-                     * 获取URL收敛规则正则	
-                     * @return UrlConvergence URL收敛规则正则	
+                     * 获取URL 收敛规则正则	
+                     * @return UrlConvergence URL 收敛规则正则	
                      * 
                      */
                     std::string GetUrlConvergence() const;
 
                     /**
-                     * 设置URL收敛规则正则	
-                     * @param _urlConvergence URL收敛规则正则	
+                     * 设置URL 收敛规则正则	
+                     * @param _urlConvergence URL 收敛规则正则	
                      * 
                      */
                     void SetUrlConvergence(const std::string& _urlConvergence);
@@ -241,15 +237,15 @@ namespace TencentCloud
                     bool UrlConvergenceHasBeenSet() const;
 
                     /**
-                     * 获取URL排除规则正则
-                     * @return UrlExclude URL排除规则正则
+                     * 获取URL 排除规则正则
+                     * @return UrlExclude URL 排除规则正则
                      * 
                      */
                     std::string GetUrlExclude() const;
 
                     /**
-                     * 设置URL排除规则正则
-                     * @param _urlExclude URL排除规则正则
+                     * 设置URL 排除规则正则
+                     * @param _urlExclude URL 排除规则正则
                      * 
                      */
                     void SetUrlExclude(const std::string& _urlExclude);
@@ -284,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志源	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogSource 日志源	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogSource() const;
 
                     /**
                      * 设置日志源	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logSource 日志源	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogSource(const std::string& _logSource);
@@ -414,18 +406,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组件列表开关（已废弃）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstrumentList 组件列表开关（已废弃）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Instrument> GetInstrumentList() const;
 
                     /**
                      * 设置组件列表开关（已废弃）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instrumentList 组件列表开关（已废弃）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstrumentList(const std::vector<Instrument>& _instrumentList);
@@ -458,10 +446,52 @@ namespace TencentCloud
                      */
                     bool TraceSquashHasBeenSet() const;
 
+                    /**
+                     * 获取探针熔断内存阈值
+                     * @return DisableMemoryUsed 探针熔断内存阈值
+                     * 
+                     */
+                    int64_t GetDisableMemoryUsed() const;
+
+                    /**
+                     * 设置探针熔断内存阈值
+                     * @param _disableMemoryUsed 探针熔断内存阈值
+                     * 
+                     */
+                    void SetDisableMemoryUsed(const int64_t& _disableMemoryUsed);
+
+                    /**
+                     * 判断参数 DisableMemoryUsed 是否已赋值
+                     * @return DisableMemoryUsed 是否已赋值
+                     * 
+                     */
+                    bool DisableMemoryUsedHasBeenSet() const;
+
+                    /**
+                     * 获取探针熔断CPU阈值
+                     * @return DisableCpuUsed 探针熔断CPU阈值
+                     * 
+                     */
+                    int64_t GetDisableCpuUsed() const;
+
+                    /**
+                     * 设置探针熔断CPU阈值
+                     * @param _disableCpuUsed 探针熔断CPU阈值
+                     * 
+                     */
+                    void SetDisableCpuUsed(const int64_t& _disableCpuUsed);
+
+                    /**
+                     * 判断参数 DisableCpuUsed 是否已赋值
+                     * @return DisableCpuUsed 是否已赋值
+                     * 
+                     */
+                    bool DisableCpuUsedHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 业务系统ID	
+                     * 业务系统 ID
                      */
                     std::string m_instanceKey;
                     bool m_instanceKeyHasBeenSet;
@@ -485,38 +515,37 @@ namespace TencentCloud
                     bool m_exceptionFilterHasBeenSet;
 
                     /**
-                     * HTTP状态码过滤
+                     * HTTP 状态码过滤
                      */
                     std::string m_errorCodeFilter;
                     bool m_errorCodeFilterHasBeenSet;
 
                     /**
                      * 应用诊断开关（已废弃）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_eventEnable;
                     bool m_eventEnableHasBeenSet;
 
                     /**
-                     * URL收敛开关 0 关 1 开
+                     * URL 收敛开关 0 关 1 开
                      */
                     int64_t m_urlConvergenceSwitch;
                     bool m_urlConvergenceSwitchHasBeenSet;
 
                     /**
-                     * URL收敛阈值	
+                     * URL 收敛阈值	
                      */
                     int64_t m_urlConvergenceThreshold;
                     bool m_urlConvergenceThresholdHasBeenSet;
 
                     /**
-                     * URL收敛规则正则	
+                     * URL 收敛规则正则	
                      */
                     std::string m_urlConvergence;
                     bool m_urlConvergenceHasBeenSet;
 
                     /**
-                     * URL排除规则正则
+                     * URL 排除规则正则
                      */
                     std::string m_urlExclude;
                     bool m_urlExcludeHasBeenSet;
@@ -529,7 +558,6 @@ namespace TencentCloud
 
                     /**
                      * 日志源	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logSource;
                     bool m_logSourceHasBeenSet;
@@ -566,7 +594,6 @@ namespace TencentCloud
 
                     /**
                      * 组件列表开关（已废弃）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Instrument> m_instrumentList;
                     bool m_instrumentListHasBeenSet;
@@ -576,6 +603,18 @@ namespace TencentCloud
                      */
                     bool m_traceSquash;
                     bool m_traceSquashHasBeenSet;
+
+                    /**
+                     * 探针熔断内存阈值
+                     */
+                    int64_t m_disableMemoryUsed;
+                    bool m_disableMemoryUsedHasBeenSet;
+
+                    /**
+                     * 探针熔断CPU阈值
+                     */
+                    int64_t m_disableCpuUsed;
+                    bool m_disableCpuUsedHasBeenSet;
 
                 };
             }

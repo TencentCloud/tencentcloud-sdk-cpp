@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,7 +70,8 @@ DCDBInstanceInfo::DCDBInstanceInfo() :
     m_dcnDstNumHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
-    m_dbVersionIdHasBeenSet(false)
+    m_dbVersionIdHasBeenSet(false),
+    m_protectedPropertyHasBeenSet(false)
 {
 }
 
@@ -599,6 +600,16 @@ CoreInternalOutcome DCDBInstanceInfo::Deserialize(const rapidjson::Value &value)
         m_dbVersionIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ProtectedProperty") && !value["ProtectedProperty"].IsNull())
+    {
+        if (!value["ProtectedProperty"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DCDBInstanceInfo.ProtectedProperty` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_protectedProperty = value["ProtectedProperty"].GetInt64();
+        m_protectedPropertyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1018,6 +1029,14 @@ void DCDBInstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "DbVersionId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dbVersionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_protectedPropertyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProtectedProperty";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_protectedProperty, allocator);
     }
 
 }
@@ -1821,5 +1840,21 @@ void DCDBInstanceInfo::SetDbVersionId(const string& _dbVersionId)
 bool DCDBInstanceInfo::DbVersionIdHasBeenSet() const
 {
     return m_dbVersionIdHasBeenSet;
+}
+
+int64_t DCDBInstanceInfo::GetProtectedProperty() const
+{
+    return m_protectedProperty;
+}
+
+void DCDBInstanceInfo::SetProtectedProperty(const int64_t& _protectedProperty)
+{
+    m_protectedProperty = _protectedProperty;
+    m_protectedPropertyHasBeenSet = true;
+}
+
+bool DCDBInstanceInfo::ProtectedPropertyHasBeenSet() const
+{
+    return m_protectedPropertyHasBeenSet;
 }
 

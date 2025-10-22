@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取统计分析的维度。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Dimension 统计分析的维度。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDimension() const;
 
                     /**
                      * 设置统计分析的维度。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dimension 统计分析的维度。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDimension(const std::string& _dimension);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取统计分析的维度下的统计数据详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 统计分析的维度下的统计数据详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<StatisticDataInfo> GetData() const;
 
                     /**
                      * 设置统计分析的维度下的统计数据详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _data 统计分析的维度下的统计数据详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetData(const std::vector<StatisticDataInfo>& _data);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 统计分析的维度。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dimension;
                     bool m_dimensionHasBeenSet;
 
                     /**
                      * 统计分析的维度下的统计数据详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<StatisticDataInfo> m_data;
                     bool m_dataHasBeenSet;

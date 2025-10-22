@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取禁言用户信息数组，内容包括被禁言的成员 ID，及其被禁言到的时间（使用 UTC 时间，即世界协调时间）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MutedAccountList 禁言用户信息数组，内容包括被禁言的成员 ID，及其被禁言到的时间（使用 UTC 时间，即世界协调时间）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<MutedAccountList> GetMutedAccountList() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 禁言用户信息数组，内容包括被禁言的成员 ID，及其被禁言到的时间（使用 UTC 时间，即世界协调时间）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MutedAccountList> m_mutedAccountList;
                     bool m_mutedAccountListHasBeenSet;

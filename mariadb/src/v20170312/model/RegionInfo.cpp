@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ RegionInfo::RegionInfo() :
     m_regionIdHasBeenSet(false),
     m_regionNameHasBeenSet(false),
     m_zoneListHasBeenSet(false),
-    m_availableChoiceHasBeenSet(false)
+    m_availableChoiceHasBeenSet(false),
+    m_cpuTypeHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,16 @@ CoreInternalOutcome RegionInfo::Deserialize(const rapidjson::Value &value)
         m_availableChoiceHasBeenSet = true;
     }
 
+    if (value.HasMember("CpuType") && !value["CpuType"].IsNull())
+    {
+        if (!value["CpuType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegionInfo.CpuType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cpuType = string(value["CpuType"].GetString());
+        m_cpuTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -163,6 +174,14 @@ void RegionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_cpuTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CpuType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cpuType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -246,5 +265,21 @@ void RegionInfo::SetAvailableChoice(const vector<ZoneChooseInfo>& _availableChoi
 bool RegionInfo::AvailableChoiceHasBeenSet() const
 {
     return m_availableChoiceHasBeenSet;
+}
+
+string RegionInfo::GetCpuType() const
+{
+    return m_cpuType;
+}
+
+void RegionInfo::SetCpuType(const string& _cpuType)
+{
+    m_cpuType = _cpuType;
+    m_cpuTypeHasBeenSet = true;
+}
+
+bool RegionInfo::CpuTypeHasBeenSet() const
+{
+    return m_cpuTypeHasBeenSet;
 }
 

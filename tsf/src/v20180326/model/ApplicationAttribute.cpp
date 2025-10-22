@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,9 @@ using namespace std;
 ApplicationAttribute::ApplicationAttribute() :
     m_instanceCountHasBeenSet(false),
     m_runInstanceCountHasBeenSet(false),
-    m_groupCountHasBeenSet(false)
+    m_groupCountHasBeenSet(false),
+    m_runningGroupCountHasBeenSet(false),
+    m_abnormalCountHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,26 @@ CoreInternalOutcome ApplicationAttribute::Deserialize(const rapidjson::Value &va
         m_groupCountHasBeenSet = true;
     }
 
+    if (value.HasMember("RunningGroupCount") && !value["RunningGroupCount"].IsNull())
+    {
+        if (!value["RunningGroupCount"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApplicationAttribute.RunningGroupCount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_runningGroupCount = string(value["RunningGroupCount"].GetString());
+        m_runningGroupCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("AbnormalCount") && !value["AbnormalCount"].IsNull())
+    {
+        if (!value["AbnormalCount"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApplicationAttribute.AbnormalCount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_abnormalCount = string(value["AbnormalCount"].GetString());
+        m_abnormalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +113,22 @@ void ApplicationAttribute::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "GroupCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_groupCount, allocator);
+    }
+
+    if (m_runningGroupCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunningGroupCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_runningGroupCount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_abnormalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AbnormalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_abnormalCount.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +180,37 @@ void ApplicationAttribute::SetGroupCount(const int64_t& _groupCount)
 bool ApplicationAttribute::GroupCountHasBeenSet() const
 {
     return m_groupCountHasBeenSet;
+}
+
+string ApplicationAttribute::GetRunningGroupCount() const
+{
+    return m_runningGroupCount;
+}
+
+void ApplicationAttribute::SetRunningGroupCount(const string& _runningGroupCount)
+{
+    m_runningGroupCount = _runningGroupCount;
+    m_runningGroupCountHasBeenSet = true;
+}
+
+bool ApplicationAttribute::RunningGroupCountHasBeenSet() const
+{
+    return m_runningGroupCountHasBeenSet;
+}
+
+string ApplicationAttribute::GetAbnormalCount() const
+{
+    return m_abnormalCount;
+}
+
+void ApplicationAttribute::SetAbnormalCount(const string& _abnormalCount)
+{
+    m_abnormalCount = _abnormalCount;
+    m_abnormalCountHasBeenSet = true;
+}
+
+bool ApplicationAttribute::AbnormalCountHasBeenSet() const
+{
+    return m_abnormalCountHasBeenSet;
 }
 

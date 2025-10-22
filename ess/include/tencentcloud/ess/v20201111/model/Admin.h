@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取超管名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 超管名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置超管名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 超管名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -75,11 +71,9 @@ namespace TencentCloud
                      * 获取超管手机号，打码显示
 示例值：138****1569
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Mobile 超管手机号，打码显示
 示例值：138****1569
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMobile() const;
@@ -88,11 +82,9 @@ namespace TencentCloud
                      * 设置超管手机号，打码显示
 示例值：138****1569
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mobile 超管手机号，打码显示
 示例值：138****1569
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMobile(const std::string& _mobile);
@@ -108,7 +100,6 @@ namespace TencentCloud
 
                     /**
                      * 超管名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -117,7 +108,6 @@ namespace TencentCloud
                      * 超管手机号，打码显示
 示例值：138****1569
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mobile;
                     bool m_mobileHasBeenSet;

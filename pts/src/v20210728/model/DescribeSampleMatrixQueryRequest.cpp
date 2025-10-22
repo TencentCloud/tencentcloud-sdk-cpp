@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,8 @@ DescribeSampleMatrixQueryRequest::DescribeSampleMatrixQueryRequest() :
     m_metricHasBeenSet(false),
     m_aggregationHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_groupByHasBeenSet(false)
+    m_groupByHasBeenSet(false),
+    m_maxPointHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,14 @@ string DescribeSampleMatrixQueryRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_maxPointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxPoint";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxPoint, allocator);
     }
 
 
@@ -226,6 +235,22 @@ void DescribeSampleMatrixQueryRequest::SetGroupBy(const vector<string>& _groupBy
 bool DescribeSampleMatrixQueryRequest::GroupByHasBeenSet() const
 {
     return m_groupByHasBeenSet;
+}
+
+int64_t DescribeSampleMatrixQueryRequest::GetMaxPoint() const
+{
+    return m_maxPoint;
+}
+
+void DescribeSampleMatrixQueryRequest::SetMaxPoint(const int64_t& _maxPoint)
+{
+    m_maxPoint = _maxPoint;
+    m_maxPointHasBeenSet = true;
+}
+
+bool DescribeSampleMatrixQueryRequest::MaxPointHasBeenSet() const
+{
+    return m_maxPointHasBeenSet;
 }
 
 

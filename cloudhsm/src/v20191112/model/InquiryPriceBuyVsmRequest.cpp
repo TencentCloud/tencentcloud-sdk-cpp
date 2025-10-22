@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,9 +27,9 @@ InquiryPriceBuyVsmRequest::InquiryPriceBuyVsmRequest() :
     m_payModeHasBeenSet(false),
     m_timeSpanHasBeenSet(false),
     m_timeUnitHasBeenSet(false),
-    m_currencyHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_hsmTypeHasBeenSet(false)
+    m_hsmTypeHasBeenSet(false),
+    m_currencyHasBeenSet(false)
 {
 }
 
@@ -72,14 +72,6 @@ string InquiryPriceBuyVsmRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_timeUnit.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_currencyHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Currency";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_currency.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_typeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -94,6 +86,14 @@ string InquiryPriceBuyVsmRequest::ToJsonString() const
         string key = "HsmType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_hsmType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_currencyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Currency";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_currency.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -168,22 +168,6 @@ bool InquiryPriceBuyVsmRequest::TimeUnitHasBeenSet() const
     return m_timeUnitHasBeenSet;
 }
 
-string InquiryPriceBuyVsmRequest::GetCurrency() const
-{
-    return m_currency;
-}
-
-void InquiryPriceBuyVsmRequest::SetCurrency(const string& _currency)
-{
-    m_currency = _currency;
-    m_currencyHasBeenSet = true;
-}
-
-bool InquiryPriceBuyVsmRequest::CurrencyHasBeenSet() const
-{
-    return m_currencyHasBeenSet;
-}
-
 string InquiryPriceBuyVsmRequest::GetType() const
 {
     return m_type;
@@ -214,6 +198,22 @@ void InquiryPriceBuyVsmRequest::SetHsmType(const string& _hsmType)
 bool InquiryPriceBuyVsmRequest::HsmTypeHasBeenSet() const
 {
     return m_hsmTypeHasBeenSet;
+}
+
+string InquiryPriceBuyVsmRequest::GetCurrency() const
+{
+    return m_currency;
+}
+
+void InquiryPriceBuyVsmRequest::SetCurrency(const string& _currency)
+{
+    m_currency = _currency;
+    m_currencyHasBeenSet = true;
+}
+
+bool InquiryPriceBuyVsmRequest::CurrencyHasBeenSet() const
+{
+    return m_currencyHasBeenSet;
 }
 
 

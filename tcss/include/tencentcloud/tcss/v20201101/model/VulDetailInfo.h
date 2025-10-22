@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 漏洞标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
                      * 设置漏洞标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 漏洞标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
@@ -116,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CategoryType 漏洞类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCategoryType() const;
 
                     /**
                      * 设置漏洞类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _categoryType 漏洞类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCategoryType(const std::string& _categoryType);
@@ -141,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞威胁等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 漏洞威胁等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLevel() const;
 
                     /**
                      * 设置漏洞威胁等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _level 漏洞威胁等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevel(const std::string& _level);
@@ -166,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞披露时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubmitTime 漏洞披露时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubmitTime() const;
 
                     /**
                      * 设置漏洞披露时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _submitTime 漏洞披露时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubmitTime(const std::string& _submitTime);
@@ -485,18 +469,14 @@ namespace TencentCloud
 
                     /**
                      * 获取防御状态，NO_DEFENDED:未防御，DEFENDED:已防御
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefenceStatus 防御状态，NO_DEFENDED:未防御，DEFENDED:已防御
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDefenceStatus() const;
 
                     /**
                      * 设置防御状态，NO_DEFENDED:未防御，DEFENDED:已防御
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _defenceStatus 防御状态，NO_DEFENDED:未防御，DEFENDED:已防御
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefenceStatus(const std::string& _defenceStatus);
@@ -510,18 +490,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞防御主机范围: MANUAL:自选主机节点，ALL:全部
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefenceScope 漏洞防御主机范围: MANUAL:自选主机节点，ALL:全部
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDefenceScope() const;
 
                     /**
                      * 设置漏洞防御主机范围: MANUAL:自选主机节点，ALL:全部
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _defenceScope 漏洞防御主机范围: MANUAL:自选主机节点，ALL:全部
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefenceScope(const std::string& _defenceScope);
@@ -535,18 +511,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞防御主机数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefenceHostCount 漏洞防御主机数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDefenceHostCount() const;
 
                     /**
                      * 设置漏洞防御主机数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _defenceHostCount 漏洞防御主机数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefenceHostCount(const int64_t& _defenceHostCount);
@@ -560,18 +532,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已防御攻击次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefendedCount 已防御攻击次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDefendedCount() const;
 
                     /**
                      * 设置已防御攻击次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _defendedCount 已防御攻击次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefendedCount(const int64_t& _defendedCount);
@@ -585,18 +553,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否已扫描，NOT_SCAN:未扫描,SCANNED:已扫描
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanStatus 是否已扫描，NOT_SCAN:未扫描,SCANNED:已扫描
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScanStatus() const;
 
                     /**
                      * 设置是否已扫描，NOT_SCAN:未扫描,SCANNED:已扫描
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scanStatus 是否已扫描，NOT_SCAN:未扫描,SCANNED:已扫描
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScanStatus(const std::string& _scanStatus);
@@ -624,28 +588,24 @@ namespace TencentCloud
 
                     /**
                      * 漏洞标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
                      * 漏洞类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_categoryType;
                     bool m_categoryTypeHasBeenSet;
 
                     /**
                      * 漏洞威胁等级
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_level;
                     bool m_levelHasBeenSet;
 
                     /**
                      * 漏洞披露时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_submitTime;
                     bool m_submitTimeHasBeenSet;
@@ -736,35 +696,30 @@ namespace TencentCloud
 
                     /**
                      * 防御状态，NO_DEFENDED:未防御，DEFENDED:已防御
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_defenceStatus;
                     bool m_defenceStatusHasBeenSet;
 
                     /**
                      * 漏洞防御主机范围: MANUAL:自选主机节点，ALL:全部
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_defenceScope;
                     bool m_defenceScopeHasBeenSet;
 
                     /**
                      * 漏洞防御主机数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_defenceHostCount;
                     bool m_defenceHostCountHasBeenSet;
 
                     /**
                      * 已防御攻击次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_defendedCount;
                     bool m_defendedCountHasBeenSet;
 
                     /**
                      * 是否已扫描，NOT_SCAN:未扫描,SCANNED:已扫描
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scanStatus;
                     bool m_scanStatusHasBeenSet;

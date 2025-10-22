@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取符合要求的App Id列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppIdList 符合要求的App Id列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetAppIdList() const;
 
                     /**
                      * 设置符合要求的App Id列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appIdList 符合要求的App Id列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppIdList(const std::vector<int64_t>& _appIdList);
@@ -102,7 +98,6 @@ namespace TencentCloud
 
                     /**
                      * 符合要求的App Id列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_appIdList;
                     bool m_appIdListHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeBackupDownloadUrlRequest::DescribeBackupDownloadUrlRequest() :
     m_clusterIdHasBeenSet(false),
-    m_backupIdHasBeenSet(false)
+    m_backupIdHasBeenSet(false),
+    m_downloadRestrictionHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,15 @@ string DescribeBackupDownloadUrlRequest::ToJsonString() const
         string key = "BackupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_backupId, allocator);
+    }
+
+    if (m_downloadRestrictionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DownloadRestriction";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_downloadRestriction.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -89,6 +99,22 @@ void DescribeBackupDownloadUrlRequest::SetBackupId(const int64_t& _backupId)
 bool DescribeBackupDownloadUrlRequest::BackupIdHasBeenSet() const
 {
     return m_backupIdHasBeenSet;
+}
+
+BackupLimitRestriction DescribeBackupDownloadUrlRequest::GetDownloadRestriction() const
+{
+    return m_downloadRestriction;
+}
+
+void DescribeBackupDownloadUrlRequest::SetDownloadRestriction(const BackupLimitRestriction& _downloadRestriction)
+{
+    m_downloadRestriction = _downloadRestriction;
+    m_downloadRestrictionHasBeenSet = true;
+}
+
+bool DescribeBackupDownloadUrlRequest::DownloadRestrictionHasBeenSet() const
+{
+    return m_downloadRestrictionHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取复制组字符串ID
-                     * @return GroupId 复制组字符串ID
+                     * 获取复制组ID。请登录[Redis控制台的全球复制](https://console.cloud.tencent.com/redis/replication)页面获取复制组 ID。
+                     * @return GroupId 复制组ID。请登录[Redis控制台的全球复制](https://console.cloud.tencent.com/redis/replication)页面获取复制组 ID。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置复制组字符串ID
-                     * @param _groupId 复制组字符串ID
+                     * 设置复制组ID。请登录[Redis控制台的全球复制](https://console.cloud.tencent.com/redis/replication)页面获取复制组 ID。
+                     * @param _groupId 复制组ID。请登录[Redis控制台的全球复制](https://console.cloud.tencent.com/redis/replication)页面获取复制组 ID。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取复制组名称
-                     * @return GroupName 复制组名称
+                     * 获取修改后的复制组名称。
+                     * @return GroupName 修改后的复制组名称。
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置复制组名称
-                     * @param _groupName 复制组名称
+                     * 设置修改后的复制组名称。
+                     * @param _groupName 修改后的复制组名称。
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取备注
-                     * @return Remark 备注
+                     * 获取备注描述。
+                     * @return Remark 备注描述。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注
-                     * @param _remark 备注
+                     * 设置备注描述。
+                     * @param _remark 备注描述。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 复制组字符串ID
+                     * 复制组ID。请登录[Redis控制台的全球复制](https://console.cloud.tencent.com/redis/replication)页面获取复制组 ID。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 复制组名称
+                     * 修改后的复制组名称。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 备注
+                     * 备注描述。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -733,7 +733,9 @@ namespace TencentCloud
                 RecoverRecycleTablesOutcomeCallable RecoverRecycleTablesCallable(const Model::RecoverRecycleTablesRequest& request);
 
                 /**
-                 *表格数据回档
+                 *不再使用
+
+表格数据回档
                  * @param req RollbackTablesRequest
                  * @return RollbackTablesOutcome
                  */

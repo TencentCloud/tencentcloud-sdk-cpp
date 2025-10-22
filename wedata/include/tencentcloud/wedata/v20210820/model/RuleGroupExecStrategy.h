@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/wedata/v20210820/model/ProdSchedulerTask.h>
+#include <tencentcloud/wedata/v20210820/model/RuleGroupConfig.h>
 
 
 namespace TencentCloud
@@ -497,6 +498,231 @@ namespace TencentCloud
                      */
                     bool DlcGroupNameHasBeenSet() const;
 
+                    /**
+                     * 获取任务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleGroupName 任务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRuleGroupName() const;
+
+                    /**
+                     * 设置任务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ruleGroupName 任务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRuleGroupName(const std::string& _ruleGroupName);
+
+                    /**
+                     * 判断参数 RuleGroupName 是否已赋值
+                     * @return RuleGroupName 是否已赋值
+                     * 
+                     */
+                    bool RuleGroupNameHasBeenSet() const;
+
+                    /**
+                     * 获取数据库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DatabaseName 数据库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDatabaseName() const;
+
+                    /**
+                     * 设置数据库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _databaseName 数据库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDatabaseName(const std::string& _databaseName);
+
+                    /**
+                     * 判断参数 DatabaseName 是否已赋值
+                     * @return DatabaseName 是否已赋值
+                     * 
+                     */
+                    bool DatabaseNameHasBeenSet() const;
+
+                    /**
+                     * 获取schema名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SchemaName schema名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSchemaName() const;
+
+                    /**
+                     * 设置schema名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _schemaName schema名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSchemaName(const std::string& _schemaName);
+
+                    /**
+                     * 判断参数 SchemaName 是否已赋值
+                     * @return SchemaName 是否已赋值
+                     * 
+                     */
+                    bool SchemaNameHasBeenSet() const;
+
+                    /**
+                     * 获取表名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TableName 表名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTableName() const;
+
+                    /**
+                     * 设置表名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tableName 表名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTableName(const std::string& _tableName);
+
+                    /**
+                     * 判断参数 TableName 是否已赋值
+                     * @return TableName 是否已赋值
+                     * 
+                     */
+                    bool TableNameHasBeenSet() const;
+
+                    /**
+                     * 获取数据源id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DatasourceId 数据源id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDatasourceId() const;
+
+                    /**
+                     * 设置数据源id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _datasourceId 数据源id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDatasourceId(const std::string& _datasourceId);
+
+                    /**
+                     * 判断参数 DatasourceId 是否已赋值
+                     * @return DatasourceId 是否已赋值
+                     * 
+                     */
+                    bool DatasourceIdHasBeenSet() const;
+
+                    /**
+                     * 获取任务描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Description 任务描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置任务描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _description 任务描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
+                    /**
+                     * 获取时区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ScheduleTimeZone 时区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetScheduleTimeZone() const;
+
+                    /**
+                     * 设置时区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _scheduleTimeZone 时区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetScheduleTimeZone(const std::string& _scheduleTimeZone);
+
+                    /**
+                     * 判断参数 ScheduleTimeZone 是否已赋值
+                     * @return ScheduleTimeZone 是否已赋值
+                     * 
+                     */
+                    bool ScheduleTimeZoneHasBeenSet() const;
+
+                    /**
+                     * 获取任务监控参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GroupConfig 任务监控参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    RuleGroupConfig GetGroupConfig() const;
+
+                    /**
+                     * 设置任务监控参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _groupConfig 任务监控参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGroupConfig(const RuleGroupConfig& _groupConfig);
+
+                    /**
+                     * 判断参数 GroupConfig 是否已赋值
+                     * @return GroupConfig 是否已赋值
+                     * 
+                     */
+                    bool GroupConfigHasBeenSet() const;
+
+                    /**
+                     * 获取引擎参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EngineParam 引擎参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEngineParam() const;
+
+                    /**
+                     * 设置引擎参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _engineParam 引擎参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEngineParam(const std::string& _engineParam);
+
+                    /**
+                     * 判断参数 EngineParam 是否已赋值
+                     * @return EngineParam 是否已赋值
+                     * 
+                     */
+                    bool EngineParamHasBeenSet() const;
+
                 private:
 
                     /**
@@ -624,6 +850,69 @@ namespace TencentCloud
                      */
                     std::string m_dlcGroupName;
                     bool m_dlcGroupNameHasBeenSet;
+
+                    /**
+                     * 任务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ruleGroupName;
+                    bool m_ruleGroupNameHasBeenSet;
+
+                    /**
+                     * 数据库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_databaseName;
+                    bool m_databaseNameHasBeenSet;
+
+                    /**
+                     * schema名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_schemaName;
+                    bool m_schemaNameHasBeenSet;
+
+                    /**
+                     * 表名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_tableName;
+                    bool m_tableNameHasBeenSet;
+
+                    /**
+                     * 数据源id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_datasourceId;
+                    bool m_datasourceIdHasBeenSet;
+
+                    /**
+                     * 任务描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 时区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_scheduleTimeZone;
+                    bool m_scheduleTimeZoneHasBeenSet;
+
+                    /**
+                     * 任务监控参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RuleGroupConfig m_groupConfig;
+                    bool m_groupConfigHasBeenSet;
+
+                    /**
+                     * 引擎参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_engineParam;
+                    bool m_engineParamHasBeenSet;
 
                 };
             }

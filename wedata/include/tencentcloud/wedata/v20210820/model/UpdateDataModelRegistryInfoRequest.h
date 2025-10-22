@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,46 +85,46 @@ namespace TencentCloud
                     bool AppCamRoleHasBeenSet() const;
 
                     /**
-                     * 获取数语的ip
-                     * @return Vip 数语的ip
+                     * 获取数语的公网访问ip
+                     * @return Ip 数语的公网访问ip
                      * 
                      */
-                    std::string GetVip() const;
+                    std::string GetIp() const;
 
                     /**
-                     * 设置数语的ip
-                     * @param _vip 数语的ip
+                     * 设置数语的公网访问ip
+                     * @param _ip 数语的公网访问ip
                      * 
                      */
-                    void SetVip(const std::string& _vip);
+                    void SetIp(const std::string& _ip);
 
                     /**
-                     * 判断参数 Vip 是否已赋值
-                     * @return Vip 是否已赋值
+                     * 判断参数 Ip 是否已赋值
+                     * @return Ip 是否已赋值
                      * 
                      */
-                    bool VipHasBeenSet() const;
+                    bool IpHasBeenSet() const;
 
                     /**
-                     * 获取数语的端口
-                     * @return Vport 数语的端口
+                     * 获取数语的公网访问端口
+                     * @return Port 数语的公网访问端口
                      * 
                      */
-                    uint64_t GetVport() const;
+                    uint64_t GetPort() const;
 
                     /**
-                     * 设置数语的端口
-                     * @param _vport 数语的端口
+                     * 设置数语的公网访问端口
+                     * @param _port 数语的公网访问端口
                      * 
                      */
-                    void SetVport(const uint64_t& _vport);
+                    void SetPort(const uint64_t& _port);
 
                     /**
-                     * 判断参数 Vport 是否已赋值
-                     * @return Vport 是否已赋值
+                     * 判断参数 Port 是否已赋值
+                     * @return Port 是否已赋值
                      * 
                      */
-                    bool VportHasBeenSet() const;
+                    bool PortHasBeenSet() const;
 
                     /**
                      * 获取数语的CAM角色id
@@ -210,6 +210,111 @@ namespace TencentCloud
                      */
                     bool OwnIdHasBeenSet() const;
 
+                    /**
+                     * 获取VpcId
+                     * @return VpcId VpcId
+                     * 
+                     */
+                    std::string GetVpcId() const;
+
+                    /**
+                     * 设置VpcId
+                     * @param _vpcId VpcId
+                     * 
+                     */
+                    void SetVpcId(const std::string& _vpcId);
+
+                    /**
+                     * 判断参数 VpcId 是否已赋值
+                     * @return VpcId 是否已赋值
+                     * 
+                     */
+                    bool VpcIdHasBeenSet() const;
+
+                    /**
+                     * 获取Vpc地域
+                     * @return VpcRegion Vpc地域
+                     * 
+                     */
+                    std::string GetVpcRegion() const;
+
+                    /**
+                     * 设置Vpc地域
+                     * @param _vpcRegion Vpc地域
+                     * 
+                     */
+                    void SetVpcRegion(const std::string& _vpcRegion);
+
+                    /**
+                     * 判断参数 VpcRegion 是否已赋值
+                     * @return VpcRegion 是否已赋值
+                     * 
+                     */
+                    bool VpcRegionHasBeenSet() const;
+
+                    /**
+                     * 获取数语的内网访问ip
+                     * @return Pip 数语的内网访问ip
+                     * 
+                     */
+                    std::string GetPip() const;
+
+                    /**
+                     * 设置数语的内网访问ip
+                     * @param _pip 数语的内网访问ip
+                     * 
+                     */
+                    void SetPip(const std::string& _pip);
+
+                    /**
+                     * 判断参数 Pip 是否已赋值
+                     * @return Pip 是否已赋值
+                     * 
+                     */
+                    bool PipHasBeenSet() const;
+
+                    /**
+                     * 获取数语的内网访问端口
+                     * @return Pport 数语的内网访问端口
+                     * 
+                     */
+                    uint64_t GetPport() const;
+
+                    /**
+                     * 设置数语的内网访问端口
+                     * @param _pport 数语的内网访问端口
+                     * 
+                     */
+                    void SetPport(const uint64_t& _pport);
+
+                    /**
+                     * 判断参数 Pport 是否已赋值
+                     * @return Pport 是否已赋值
+                     * 
+                     */
+                    bool PportHasBeenSet() const;
+
+                    /**
+                     * 获取是否开放公网访问数语, 1:是，0:否，默认1开放
+                     * @return IsPublic 是否开放公网访问数语, 1:是，0:否，默认1开放
+                     * 
+                     */
+                    uint64_t GetIsPublic() const;
+
+                    /**
+                     * 设置是否开放公网访问数语, 1:是，0:否，默认1开放
+                     * @param _isPublic 是否开放公网访问数语, 1:是，0:否，默认1开放
+                     * 
+                     */
+                    void SetIsPublic(const uint64_t& _isPublic);
+
+                    /**
+                     * 判断参数 IsPublic 是否已赋值
+                     * @return IsPublic 是否已赋值
+                     * 
+                     */
+                    bool IsPublicHasBeenSet() const;
+
                 private:
 
                     /**
@@ -225,16 +330,16 @@ namespace TencentCloud
                     bool m_appCamRoleHasBeenSet;
 
                     /**
-                     * 数语的ip
+                     * 数语的公网访问ip
                      */
-                    std::string m_vip;
-                    bool m_vipHasBeenSet;
+                    std::string m_ip;
+                    bool m_ipHasBeenSet;
 
                     /**
-                     * 数语的端口
+                     * 数语的公网访问端口
                      */
-                    uint64_t m_vport;
-                    bool m_vportHasBeenSet;
+                    uint64_t m_port;
+                    bool m_portHasBeenSet;
 
                     /**
                      * 数语的CAM角色id
@@ -259,6 +364,36 @@ namespace TencentCloud
                      */
                     std::string m_ownId;
                     bool m_ownIdHasBeenSet;
+
+                    /**
+                     * VpcId
+                     */
+                    std::string m_vpcId;
+                    bool m_vpcIdHasBeenSet;
+
+                    /**
+                     * Vpc地域
+                     */
+                    std::string m_vpcRegion;
+                    bool m_vpcRegionHasBeenSet;
+
+                    /**
+                     * 数语的内网访问ip
+                     */
+                    std::string m_pip;
+                    bool m_pipHasBeenSet;
+
+                    /**
+                     * 数语的内网访问端口
+                     */
+                    uint64_t m_pport;
+                    bool m_pportHasBeenSet;
+
+                    /**
+                     * 是否开放公网访问数语, 1:是，0:否，默认1开放
+                     */
+                    uint64_t m_isPublic;
+                    bool m_isPublicHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -193,23 +193,23 @@ namespace TencentCloud
                     bool ResourcesHasBeenSet() const;
 
                     /**
-                     * 获取标签列表
-                     * @return Tags 标签列表
-                     * 
+                     * 获取废弃，用TagItems
+                     * @return Tags 废弃，用TagItems
+                     * @deprecated
                      */
                     Tag GetTags() const;
 
                     /**
-                     * 设置标签列表
-                     * @param _tags 标签列表
-                     * 
+                     * 设置废弃，用TagItems
+                     * @param _tags 废弃，用TagItems
+                     * @deprecated
                      */
                     void SetTags(const Tag& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool TagsHasBeenSet() const;
 
@@ -233,6 +233,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ProductVersionHasBeenSet() const;
+
+                    /**
+                     * 获取标签列表
+                     * @return TagItems 标签列表
+                     * 
+                     */
+                    std::vector<Tag> GetTagItems() const;
+
+                    /**
+                     * 设置标签列表
+                     * @param _tagItems 标签列表
+                     * 
+                     */
+                    void SetTagItems(const std::vector<Tag>& _tagItems);
+
+                    /**
+                     * 判断参数 TagItems 是否已赋值
+                     * @return TagItems 是否已赋值
+                     * 
+                     */
+                    bool TagItemsHasBeenSet() const;
 
                 private:
 
@@ -279,7 +300,7 @@ namespace TencentCloud
                     bool m_resourcesHasBeenSet;
 
                     /**
-                     * 标签列表
+                     * 废弃，用TagItems
                      */
                     Tag m_tags;
                     bool m_tagsHasBeenSet;
@@ -289,6 +310,12 @@ namespace TencentCloud
                      */
                     std::string m_productVersion;
                     bool m_productVersionHasBeenSet;
+
+                    /**
+                     * 标签列表
+                     */
+                    std::vector<Tag> m_tagItems;
+                    bool m_tagItemsHasBeenSet;
 
                 };
             }

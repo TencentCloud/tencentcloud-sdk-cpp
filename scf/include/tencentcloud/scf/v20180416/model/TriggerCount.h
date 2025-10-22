@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -279,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Eb触发器数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Eb Eb触发器数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEb() const;
 
                     /**
                      * 设置Eb触发器数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eb Eb触发器数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEb(const int64_t& _eb);
@@ -372,7 +368,6 @@ namespace TencentCloud
 
                     /**
                      * Eb触发器数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_eb;
                     bool m_ebHasBeenSet;

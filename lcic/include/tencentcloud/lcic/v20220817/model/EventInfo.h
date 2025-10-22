@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -127,18 +127,14 @@ VisibleOff: 页面不可见
 
                     /**
                      * 获取事件详细内容，包含房间号,成员类型事件包含用户Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventData 事件详细内容，包含房间号,成员类型事件包含用户Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EventDataInfo GetEventData() const;
 
                     /**
                      * 设置事件详细内容，包含房间号,成员类型事件包含用户Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eventData 事件详细内容，包含房间号,成员类型事件包含用户Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEventData(const EventDataInfo& _eventData);
@@ -175,7 +171,6 @@ VisibleOff: 页面不可见
 
                     /**
                      * 事件详细内容，包含房间号,成员类型事件包含用户Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EventDataInfo m_eventData;
                     bool m_eventDataHasBeenSet;

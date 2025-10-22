@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,6 +48,48 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取产品编码
+                     * @return BusinessCode 产品编码
+                     * 
+                     */
+                    std::string GetBusinessCode() const;
+
+                    /**
+                     * 设置产品编码
+                     * @param _businessCode 产品编码
+                     * 
+                     */
+                    void SetBusinessCode(const std::string& _businessCode);
+
+                    /**
+                     * 判断参数 BusinessCode 是否已赋值
+                     * @return BusinessCode 是否已赋值
+                     * 
+                     */
+                    bool BusinessCodeHasBeenSet() const;
+
+                    /**
+                     * 获取产品名称
+                     * @return BusinessCodeName 产品名称
+                     * 
+                     */
+                    std::string GetBusinessCodeName() const;
+
+                    /**
+                     * 设置产品名称
+                     * @param _businessCodeName 产品名称
+                     * 
+                     */
+                    void SetBusinessCodeName(const std::string& _businessCodeName);
+
+                    /**
+                     * 判断参数 BusinessCodeName 是否已赋值
+                     * @return BusinessCodeName 是否已赋值
+                     * 
+                     */
+                    bool BusinessCodeNameHasBeenSet() const;
+
+                    /**
                      * 获取子产品
                      * @return Children 子产品
                      * 
@@ -69,6 +111,18 @@ namespace TencentCloud
                     bool ChildrenHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 产品编码
+                     */
+                    std::string m_businessCode;
+                    bool m_businessCodeHasBeenSet;
+
+                    /**
+                     * 产品名称
+                     */
+                    std::string m_businessCodeName;
+                    bool m_businessCodeNameHasBeenSet;
 
                     /**
                      * 子产品

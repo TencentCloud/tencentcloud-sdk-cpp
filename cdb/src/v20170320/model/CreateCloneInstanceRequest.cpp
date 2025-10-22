@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,7 +46,9 @@ CreateCloneInstanceRequest::CreateCloneInstanceRequest() :
     m_projectIdHasBeenSet(false),
     m_payTypeHasBeenSet(false),
     m_periodHasBeenSet(false),
-    m_clusterTopologyHasBeenSet(false)
+    m_clusterTopologyHasBeenSet(false),
+    m_srcRegionHasBeenSet(false),
+    m_specifiedSubBackupIdHasBeenSet(false)
 {
 }
 
@@ -260,6 +262,22 @@ string CreateCloneInstanceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_clusterTopology.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_srcRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SrcRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_srcRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_specifiedSubBackupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpecifiedSubBackupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_specifiedSubBackupId, allocator);
     }
 
 
@@ -652,6 +670,38 @@ void CreateCloneInstanceRequest::SetClusterTopology(const ClusterTopology& _clus
 bool CreateCloneInstanceRequest::ClusterTopologyHasBeenSet() const
 {
     return m_clusterTopologyHasBeenSet;
+}
+
+string CreateCloneInstanceRequest::GetSrcRegion() const
+{
+    return m_srcRegion;
+}
+
+void CreateCloneInstanceRequest::SetSrcRegion(const string& _srcRegion)
+{
+    m_srcRegion = _srcRegion;
+    m_srcRegionHasBeenSet = true;
+}
+
+bool CreateCloneInstanceRequest::SrcRegionHasBeenSet() const
+{
+    return m_srcRegionHasBeenSet;
+}
+
+int64_t CreateCloneInstanceRequest::GetSpecifiedSubBackupId() const
+{
+    return m_specifiedSubBackupId;
+}
+
+void CreateCloneInstanceRequest::SetSpecifiedSubBackupId(const int64_t& _specifiedSubBackupId)
+{
+    m_specifiedSubBackupId = _specifiedSubBackupId;
+    m_specifiedSubBackupIdHasBeenSet = true;
+}
+
+bool CreateCloneInstanceRequest::SpecifiedSubBackupIdHasBeenSet() const
+{
+    return m_specifiedSubBackupIdHasBeenSet;
 }
 
 

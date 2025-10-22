@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,35 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<br><li/> dashboardId：按照【仪表盘id】进行过滤。类型：String必选：否<br><br><li/> 每次请求的Filters的上限为10，Filter.Values的上限为100。
-                     * @return Filters <br><li/> dashboardId：按照【仪表盘id】进行过滤。类型：String必选：否<br><br><li/> 每次请求的Filters的上限为10，Filter.Values的上限为100。
+                     * 获取dashboardId：按照【仪表盘id】进行过滤。类型：String必选：否
+
+- 仪表盘id。通过 [获取仪表盘](https://cloud.tencent.com/document/api/614/95636)接口获取DashboardId。
+- 入参示例：dashboard-522a5609-1f41-4b11-8086-5afd1d7574f5
+
+每次请求的Filters的上限为10，Filter.Values的上限为100。
+                     * @return Filters dashboardId：按照【仪表盘id】进行过滤。类型：String必选：否
+
+- 仪表盘id。通过 [获取仪表盘](https://cloud.tencent.com/document/api/614/95636)接口获取DashboardId。
+- 入参示例：dashboard-522a5609-1f41-4b11-8086-5afd1d7574f5
+
+每次请求的Filters的上限为10，Filter.Values的上限为100。
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置<br><li/> dashboardId：按照【仪表盘id】进行过滤。类型：String必选：否<br><br><li/> 每次请求的Filters的上限为10，Filter.Values的上限为100。
-                     * @param _filters <br><li/> dashboardId：按照【仪表盘id】进行过滤。类型：String必选：否<br><br><li/> 每次请求的Filters的上限为10，Filter.Values的上限为100。
+                     * 设置dashboardId：按照【仪表盘id】进行过滤。类型：String必选：否
+
+- 仪表盘id。通过 [获取仪表盘](https://cloud.tencent.com/document/api/614/95636)接口获取DashboardId。
+- 入参示例：dashboard-522a5609-1f41-4b11-8086-5afd1d7574f5
+
+每次请求的Filters的上限为10，Filter.Values的上限为100。
+                     * @param _filters dashboardId：按照【仪表盘id】进行过滤。类型：String必选：否
+
+- 仪表盘id。通过 [获取仪表盘](https://cloud.tencent.com/document/api/614/95636)接口获取DashboardId。
+- 入参示例：dashboard-522a5609-1f41-4b11-8086-5afd1d7574f5
+
+每次请求的Filters的上限为10，Filter.Values的上限为100。
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -109,7 +129,12 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <br><li/> dashboardId：按照【仪表盘id】进行过滤。类型：String必选：否<br><br><li/> 每次请求的Filters的上限为10，Filter.Values的上限为100。
+                     * dashboardId：按照【仪表盘id】进行过滤。类型：String必选：否
+
+- 仪表盘id。通过 [获取仪表盘](https://cloud.tencent.com/document/api/614/95636)接口获取DashboardId。
+- 入参示例：dashboard-522a5609-1f41-4b11-8086-5afd1d7574f5
+
+每次请求的Filters的上限为10，Filter.Values的上限为100。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

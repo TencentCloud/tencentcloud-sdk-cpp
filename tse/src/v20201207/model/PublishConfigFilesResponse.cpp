@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ using namespace TencentCloud::Tse::V20201207::Model;
 using namespace std;
 
 PublishConfigFilesResponse::PublishConfigFilesResponse() :
-    m_resultHasBeenSet(false)
+    m_resultHasBeenSet(false),
+    m_configFileReleaseIdHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome PublishConfigFilesResponse::Deserialize(const string &payloa
         m_resultHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ConfigFileReleaseId") && !rsp["ConfigFileReleaseId"].IsNull())
+    {
+        if (!rsp["ConfigFileReleaseId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConfigFileReleaseId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_configFileReleaseId = string(rsp["ConfigFileReleaseId"].GetString());
+        m_configFileReleaseIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -90,11 +101,19 @@ string PublishConfigFilesResponse::ToJsonString() const
         value.AddMember(iKey, m_result, allocator);
     }
 
+    if (m_configFileReleaseIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigFileReleaseId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_configFileReleaseId.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -110,6 +129,16 @@ bool PublishConfigFilesResponse::GetResult() const
 bool PublishConfigFilesResponse::ResultHasBeenSet() const
 {
     return m_resultHasBeenSet;
+}
+
+string PublishConfigFilesResponse::GetConfigFileReleaseId() const
+{
+    return m_configFileReleaseId;
+}
+
+bool PublishConfigFilesResponse::ConfigFileReleaseIdHasBeenSet() const
+{
+    return m_configFileReleaseIdHasBeenSet;
 }
 
 

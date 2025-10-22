@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,12 @@ MsgRecordReference::MsgRecordReference() :
     m_urlHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_docIdHasBeenSet(false)
+    m_docIdHasBeenSet(false),
+    m_knowledgeNameHasBeenSet(false),
+    m_knowledgeBizIdHasBeenSet(false),
+    m_docBizIdHasBeenSet(false),
+    m_qaBizIdHasBeenSet(false),
+    m_indexHasBeenSet(false)
 {
 }
 
@@ -84,6 +89,56 @@ CoreInternalOutcome MsgRecordReference::Deserialize(const rapidjson::Value &valu
         m_docIdHasBeenSet = true;
     }
 
+    if (value.HasMember("KnowledgeName") && !value["KnowledgeName"].IsNull())
+    {
+        if (!value["KnowledgeName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MsgRecordReference.KnowledgeName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_knowledgeName = string(value["KnowledgeName"].GetString());
+        m_knowledgeNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("KnowledgeBizId") && !value["KnowledgeBizId"].IsNull())
+    {
+        if (!value["KnowledgeBizId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MsgRecordReference.KnowledgeBizId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_knowledgeBizId = string(value["KnowledgeBizId"].GetString());
+        m_knowledgeBizIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("DocBizId") && !value["DocBizId"].IsNull())
+    {
+        if (!value["DocBizId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MsgRecordReference.DocBizId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_docBizId = string(value["DocBizId"].GetString());
+        m_docBizIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("QaBizId") && !value["QaBizId"].IsNull())
+    {
+        if (!value["QaBizId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MsgRecordReference.QaBizId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_qaBizId = string(value["QaBizId"].GetString());
+        m_qaBizIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Index") && !value["Index"].IsNull())
+    {
+        if (!value["Index"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MsgRecordReference.Index` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_index = value["Index"].GetUint64();
+        m_indexHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +184,46 @@ void MsgRecordReference::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "DocId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_docId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_knowledgeNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KnowledgeName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_knowledgeName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_knowledgeBizIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KnowledgeBizId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_knowledgeBizId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_docBizIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DocBizId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_docBizId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_qaBizIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QaBizId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_qaBizId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_indexHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Index";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_index, allocator);
     }
 
 }
@@ -212,5 +307,85 @@ void MsgRecordReference::SetDocId(const string& _docId)
 bool MsgRecordReference::DocIdHasBeenSet() const
 {
     return m_docIdHasBeenSet;
+}
+
+string MsgRecordReference::GetKnowledgeName() const
+{
+    return m_knowledgeName;
+}
+
+void MsgRecordReference::SetKnowledgeName(const string& _knowledgeName)
+{
+    m_knowledgeName = _knowledgeName;
+    m_knowledgeNameHasBeenSet = true;
+}
+
+bool MsgRecordReference::KnowledgeNameHasBeenSet() const
+{
+    return m_knowledgeNameHasBeenSet;
+}
+
+string MsgRecordReference::GetKnowledgeBizId() const
+{
+    return m_knowledgeBizId;
+}
+
+void MsgRecordReference::SetKnowledgeBizId(const string& _knowledgeBizId)
+{
+    m_knowledgeBizId = _knowledgeBizId;
+    m_knowledgeBizIdHasBeenSet = true;
+}
+
+bool MsgRecordReference::KnowledgeBizIdHasBeenSet() const
+{
+    return m_knowledgeBizIdHasBeenSet;
+}
+
+string MsgRecordReference::GetDocBizId() const
+{
+    return m_docBizId;
+}
+
+void MsgRecordReference::SetDocBizId(const string& _docBizId)
+{
+    m_docBizId = _docBizId;
+    m_docBizIdHasBeenSet = true;
+}
+
+bool MsgRecordReference::DocBizIdHasBeenSet() const
+{
+    return m_docBizIdHasBeenSet;
+}
+
+string MsgRecordReference::GetQaBizId() const
+{
+    return m_qaBizId;
+}
+
+void MsgRecordReference::SetQaBizId(const string& _qaBizId)
+{
+    m_qaBizId = _qaBizId;
+    m_qaBizIdHasBeenSet = true;
+}
+
+bool MsgRecordReference::QaBizIdHasBeenSet() const
+{
+    return m_qaBizIdHasBeenSet;
+}
+
+uint64_t MsgRecordReference::GetIndex() const
+{
+    return m_index;
+}
+
+void MsgRecordReference::SetIndex(const uint64_t& _index)
+{
+    m_index = _index;
+    m_indexHasBeenSet = true;
+}
+
+bool MsgRecordReference::IndexHasBeenSet() const
+{
+    return m_indexHasBeenSet;
 }
 

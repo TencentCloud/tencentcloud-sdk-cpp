@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否是规则审计。true-规则审计，false-全审计。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuditRule 是否是规则审计。true-规则审计，false-全审计。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetAuditRule() const;
 
                     /**
                      * 设置是否是规则审计。true-规则审计，false-全审计。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _auditRule 是否是规则审计。true-规则审计，false-全审计。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuditRule(const bool& _auditRule);
@@ -96,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取审计规则详情。仅当AuditRule=true时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuditRuleFilters 审计规则详情。仅当AuditRule=true时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AuditRuleFilters> GetAuditRuleFilters() const;
 
                     /**
                      * 设置审计规则详情。仅当AuditRule=true时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _auditRuleFilters 审计规则详情。仅当AuditRule=true时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuditRuleFilters(const std::vector<AuditRuleFilters>& _auditRuleFilters);
@@ -121,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否是审计策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OldRule 是否是审计策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetOldRule() const;
 
                     /**
                      * 设置是否是审计策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _oldRule 是否是审计策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOldRule(const bool& _oldRule);
@@ -146,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例应用的规则模板详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleTemplates 实例应用的规则模板详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RuleTemplateInfo> GetRuleTemplates() const;
 
                     /**
                      * 设置实例应用的规则模板详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleTemplates 实例应用的规则模板详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleTemplates(const std::vector<RuleTemplateInfo>& _ruleTemplates);
@@ -179,28 +163,24 @@ namespace TencentCloud
 
                     /**
                      * 是否是规则审计。true-规则审计，false-全审计。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_auditRule;
                     bool m_auditRuleHasBeenSet;
 
                     /**
                      * 审计规则详情。仅当AuditRule=true时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AuditRuleFilters> m_auditRuleFilters;
                     bool m_auditRuleFiltersHasBeenSet;
 
                     /**
                      * 是否是审计策略
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_oldRule;
                     bool m_oldRuleHasBeenSet;
 
                     /**
                      * 实例应用的规则模板详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RuleTemplateInfo> m_ruleTemplates;
                     bool m_ruleTemplatesHasBeenSet;

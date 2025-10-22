@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,6 +39,49 @@ TrocketClient::TrocketClient(const Credential &credential, const string &region,
 {
 }
 
+
+TrocketClient::ChangeMigratingTopicToNextStageOutcome TrocketClient::ChangeMigratingTopicToNextStage(const ChangeMigratingTopicToNextStageRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChangeMigratingTopicToNextStage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChangeMigratingTopicToNextStageResponse rsp = ChangeMigratingTopicToNextStageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChangeMigratingTopicToNextStageOutcome(rsp);
+        else
+            return ChangeMigratingTopicToNextStageOutcome(o.GetError());
+    }
+    else
+    {
+        return ChangeMigratingTopicToNextStageOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::ChangeMigratingTopicToNextStageAsync(const ChangeMigratingTopicToNextStageRequest& request, const ChangeMigratingTopicToNextStageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChangeMigratingTopicToNextStage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::ChangeMigratingTopicToNextStageOutcomeCallable TrocketClient::ChangeMigratingTopicToNextStageCallable(const ChangeMigratingTopicToNextStageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChangeMigratingTopicToNextStageOutcome()>>(
+        [this, request]()
+        {
+            return this->ChangeMigratingTopicToNextStage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
 
 TrocketClient::CreateConsumerGroupOutcome TrocketClient::CreateConsumerGroup(const CreateConsumerGroupRequest &request)
 {
@@ -685,6 +728,49 @@ TrocketClient::DeleteRoleOutcomeCallable TrocketClient::DeleteRoleCallable(const
     return task->get_future();
 }
 
+TrocketClient::DeleteSmoothMigrationTaskOutcome TrocketClient::DeleteSmoothMigrationTask(const DeleteSmoothMigrationTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSmoothMigrationTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSmoothMigrationTaskResponse rsp = DeleteSmoothMigrationTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSmoothMigrationTaskOutcome(rsp);
+        else
+            return DeleteSmoothMigrationTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSmoothMigrationTaskOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::DeleteSmoothMigrationTaskAsync(const DeleteSmoothMigrationTaskRequest& request, const DeleteSmoothMigrationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteSmoothMigrationTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::DeleteSmoothMigrationTaskOutcomeCallable TrocketClient::DeleteSmoothMigrationTaskCallable(const DeleteSmoothMigrationTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteSmoothMigrationTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteSmoothMigrationTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrocketClient::DeleteTopicOutcome TrocketClient::DeleteTopic(const DeleteTopicRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteTopic");
@@ -721,6 +807,92 @@ TrocketClient::DeleteTopicOutcomeCallable TrocketClient::DeleteTopicCallable(con
         [this, request]()
         {
             return this->DeleteTopic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrocketClient::DescribeConsumerClientOutcome TrocketClient::DescribeConsumerClient(const DescribeConsumerClientRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConsumerClient");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConsumerClientResponse rsp = DescribeConsumerClientResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConsumerClientOutcome(rsp);
+        else
+            return DescribeConsumerClientOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConsumerClientOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::DescribeConsumerClientAsync(const DescribeConsumerClientRequest& request, const DescribeConsumerClientAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeConsumerClient(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::DescribeConsumerClientOutcomeCallable TrocketClient::DescribeConsumerClientCallable(const DescribeConsumerClientRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeConsumerClientOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeConsumerClient(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrocketClient::DescribeConsumerClientListOutcome TrocketClient::DescribeConsumerClientList(const DescribeConsumerClientListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConsumerClientList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConsumerClientListResponse rsp = DescribeConsumerClientListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConsumerClientListOutcome(rsp);
+        else
+            return DescribeConsumerClientListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConsumerClientListOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::DescribeConsumerClientListAsync(const DescribeConsumerClientListRequest& request, const DescribeConsumerClientListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeConsumerClientList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::DescribeConsumerClientListOutcomeCallable TrocketClient::DescribeConsumerClientListCallable(const DescribeConsumerClientListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeConsumerClientListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeConsumerClientList(request);
         }
     );
 
@@ -1502,6 +1674,350 @@ TrocketClient::DescribeMQTTUserListOutcomeCallable TrocketClient::DescribeMQTTUs
     return task->get_future();
 }
 
+TrocketClient::DescribeMessageOutcome TrocketClient::DescribeMessage(const DescribeMessageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMessage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMessageResponse rsp = DescribeMessageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMessageOutcome(rsp);
+        else
+            return DescribeMessageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMessageOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::DescribeMessageAsync(const DescribeMessageRequest& request, const DescribeMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMessage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::DescribeMessageOutcomeCallable TrocketClient::DescribeMessageCallable(const DescribeMessageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMessageOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMessage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrocketClient::DescribeMessageListOutcome TrocketClient::DescribeMessageList(const DescribeMessageListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMessageList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMessageListResponse rsp = DescribeMessageListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMessageListOutcome(rsp);
+        else
+            return DescribeMessageListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMessageListOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::DescribeMessageListAsync(const DescribeMessageListRequest& request, const DescribeMessageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMessageList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::DescribeMessageListOutcomeCallable TrocketClient::DescribeMessageListCallable(const DescribeMessageListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMessageListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMessageList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrocketClient::DescribeMessageTraceOutcome TrocketClient::DescribeMessageTrace(const DescribeMessageTraceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMessageTrace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMessageTraceResponse rsp = DescribeMessageTraceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMessageTraceOutcome(rsp);
+        else
+            return DescribeMessageTraceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMessageTraceOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::DescribeMessageTraceAsync(const DescribeMessageTraceRequest& request, const DescribeMessageTraceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMessageTrace(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::DescribeMessageTraceOutcomeCallable TrocketClient::DescribeMessageTraceCallable(const DescribeMessageTraceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMessageTraceOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMessageTrace(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrocketClient::DescribeMigratingGroupStatsOutcome TrocketClient::DescribeMigratingGroupStats(const DescribeMigratingGroupStatsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMigratingGroupStats");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMigratingGroupStatsResponse rsp = DescribeMigratingGroupStatsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMigratingGroupStatsOutcome(rsp);
+        else
+            return DescribeMigratingGroupStatsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMigratingGroupStatsOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::DescribeMigratingGroupStatsAsync(const DescribeMigratingGroupStatsRequest& request, const DescribeMigratingGroupStatsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMigratingGroupStats(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::DescribeMigratingGroupStatsOutcomeCallable TrocketClient::DescribeMigratingGroupStatsCallable(const DescribeMigratingGroupStatsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMigratingGroupStatsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMigratingGroupStats(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrocketClient::DescribeMigratingTopicListOutcome TrocketClient::DescribeMigratingTopicList(const DescribeMigratingTopicListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMigratingTopicList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMigratingTopicListResponse rsp = DescribeMigratingTopicListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMigratingTopicListOutcome(rsp);
+        else
+            return DescribeMigratingTopicListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMigratingTopicListOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::DescribeMigratingTopicListAsync(const DescribeMigratingTopicListRequest& request, const DescribeMigratingTopicListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMigratingTopicList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::DescribeMigratingTopicListOutcomeCallable TrocketClient::DescribeMigratingTopicListCallable(const DescribeMigratingTopicListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMigratingTopicListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMigratingTopicList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrocketClient::DescribeMigratingTopicStatsOutcome TrocketClient::DescribeMigratingTopicStats(const DescribeMigratingTopicStatsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMigratingTopicStats");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMigratingTopicStatsResponse rsp = DescribeMigratingTopicStatsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMigratingTopicStatsOutcome(rsp);
+        else
+            return DescribeMigratingTopicStatsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMigratingTopicStatsOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::DescribeMigratingTopicStatsAsync(const DescribeMigratingTopicStatsRequest& request, const DescribeMigratingTopicStatsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMigratingTopicStats(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::DescribeMigratingTopicStatsOutcomeCallable TrocketClient::DescribeMigratingTopicStatsCallable(const DescribeMigratingTopicStatsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMigratingTopicStatsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMigratingTopicStats(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrocketClient::DescribeMigrationTaskListOutcome TrocketClient::DescribeMigrationTaskList(const DescribeMigrationTaskListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMigrationTaskList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMigrationTaskListResponse rsp = DescribeMigrationTaskListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMigrationTaskListOutcome(rsp);
+        else
+            return DescribeMigrationTaskListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMigrationTaskListOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::DescribeMigrationTaskListAsync(const DescribeMigrationTaskListRequest& request, const DescribeMigrationTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMigrationTaskList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::DescribeMigrationTaskListOutcomeCallable TrocketClient::DescribeMigrationTaskListCallable(const DescribeMigrationTaskListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMigrationTaskListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMigrationTaskList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrocketClient::DescribeProducerListOutcome TrocketClient::DescribeProducerList(const DescribeProducerListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeProducerList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeProducerListResponse rsp = DescribeProducerListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeProducerListOutcome(rsp);
+        else
+            return DescribeProducerListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeProducerListOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::DescribeProducerListAsync(const DescribeProducerListRequest& request, const DescribeProducerListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeProducerList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::DescribeProducerListOutcomeCallable TrocketClient::DescribeProducerListCallable(const DescribeProducerListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeProducerListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeProducerList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrocketClient::DescribeProductSKUsOutcome TrocketClient::DescribeProductSKUs(const DescribeProductSKUsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeProductSKUs");
@@ -1588,6 +2104,92 @@ TrocketClient::DescribeRoleListOutcomeCallable TrocketClient::DescribeRoleListCa
     return task->get_future();
 }
 
+TrocketClient::DescribeSmoothMigrationTaskListOutcome TrocketClient::DescribeSmoothMigrationTaskList(const DescribeSmoothMigrationTaskListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSmoothMigrationTaskList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSmoothMigrationTaskListResponse rsp = DescribeSmoothMigrationTaskListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSmoothMigrationTaskListOutcome(rsp);
+        else
+            return DescribeSmoothMigrationTaskListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSmoothMigrationTaskListOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::DescribeSmoothMigrationTaskListAsync(const DescribeSmoothMigrationTaskListRequest& request, const DescribeSmoothMigrationTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSmoothMigrationTaskList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::DescribeSmoothMigrationTaskListOutcomeCallable TrocketClient::DescribeSmoothMigrationTaskListCallable(const DescribeSmoothMigrationTaskListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSmoothMigrationTaskListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSmoothMigrationTaskList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrocketClient::DescribeSourceClusterGroupListOutcome TrocketClient::DescribeSourceClusterGroupList(const DescribeSourceClusterGroupListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSourceClusterGroupList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSourceClusterGroupListResponse rsp = DescribeSourceClusterGroupListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSourceClusterGroupListOutcome(rsp);
+        else
+            return DescribeSourceClusterGroupListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSourceClusterGroupListOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::DescribeSourceClusterGroupListAsync(const DescribeSourceClusterGroupListRequest& request, const DescribeSourceClusterGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSourceClusterGroupList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::DescribeSourceClusterGroupListOutcomeCallable TrocketClient::DescribeSourceClusterGroupListCallable(const DescribeSourceClusterGroupListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSourceClusterGroupListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSourceClusterGroupList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrocketClient::DescribeTopicOutcome TrocketClient::DescribeTopic(const DescribeTopicRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTopic");
@@ -1667,6 +2269,92 @@ TrocketClient::DescribeTopicListOutcomeCallable TrocketClient::DescribeTopicList
         [this, request]()
         {
             return this->DescribeTopicList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrocketClient::DescribeTopicListByGroupOutcome TrocketClient::DescribeTopicListByGroup(const DescribeTopicListByGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTopicListByGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTopicListByGroupResponse rsp = DescribeTopicListByGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTopicListByGroupOutcome(rsp);
+        else
+            return DescribeTopicListByGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTopicListByGroupOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::DescribeTopicListByGroupAsync(const DescribeTopicListByGroupRequest& request, const DescribeTopicListByGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTopicListByGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::DescribeTopicListByGroupOutcomeCallable TrocketClient::DescribeTopicListByGroupCallable(const DescribeTopicListByGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTopicListByGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTopicListByGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrocketClient::DoHealthCheckOnMigratingTopicOutcome TrocketClient::DoHealthCheckOnMigratingTopic(const DoHealthCheckOnMigratingTopicRequest &request)
+{
+    auto outcome = MakeRequest(request, "DoHealthCheckOnMigratingTopic");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DoHealthCheckOnMigratingTopicResponse rsp = DoHealthCheckOnMigratingTopicResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DoHealthCheckOnMigratingTopicOutcome(rsp);
+        else
+            return DoHealthCheckOnMigratingTopicOutcome(o.GetError());
+    }
+    else
+    {
+        return DoHealthCheckOnMigratingTopicOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::DoHealthCheckOnMigratingTopicAsync(const DoHealthCheckOnMigratingTopicRequest& request, const DoHealthCheckOnMigratingTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DoHealthCheckOnMigratingTopic(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::DoHealthCheckOnMigratingTopicOutcomeCallable TrocketClient::DoHealthCheckOnMigratingTopicCallable(const DoHealthCheckOnMigratingTopicRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DoHealthCheckOnMigratingTopicOutcome()>>(
+        [this, request]()
+        {
+            return this->DoHealthCheckOnMigratingTopic(request);
         }
     );
 
@@ -1839,6 +2527,49 @@ TrocketClient::ModifyInstanceOutcomeCallable TrocketClient::ModifyInstanceCallab
         [this, request]()
         {
             return this->ModifyInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrocketClient::ModifyInstanceEndpointOutcome TrocketClient::ModifyInstanceEndpoint(const ModifyInstanceEndpointRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstanceEndpoint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceEndpointResponse rsp = ModifyInstanceEndpointResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceEndpointOutcome(rsp);
+        else
+            return ModifyInstanceEndpointOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceEndpointOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::ModifyInstanceEndpointAsync(const ModifyInstanceEndpointRequest& request, const ModifyInstanceEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstanceEndpoint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::ModifyInstanceEndpointOutcomeCallable TrocketClient::ModifyInstanceEndpointCallable(const ModifyInstanceEndpointRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstanceEndpointOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstanceEndpoint(request);
         }
     );
 
@@ -2140,6 +2871,178 @@ TrocketClient::ModifyTopicOutcomeCallable TrocketClient::ModifyTopicCallable(con
         [this, request]()
         {
             return this->ModifyTopic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrocketClient::RemoveMigratingTopicOutcome TrocketClient::RemoveMigratingTopic(const RemoveMigratingTopicRequest &request)
+{
+    auto outcome = MakeRequest(request, "RemoveMigratingTopic");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RemoveMigratingTopicResponse rsp = RemoveMigratingTopicResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RemoveMigratingTopicOutcome(rsp);
+        else
+            return RemoveMigratingTopicOutcome(o.GetError());
+    }
+    else
+    {
+        return RemoveMigratingTopicOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::RemoveMigratingTopicAsync(const RemoveMigratingTopicRequest& request, const RemoveMigratingTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RemoveMigratingTopic(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::RemoveMigratingTopicOutcomeCallable TrocketClient::RemoveMigratingTopicCallable(const RemoveMigratingTopicRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RemoveMigratingTopicOutcome()>>(
+        [this, request]()
+        {
+            return this->RemoveMigratingTopic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrocketClient::ResendDeadLetterMessageOutcome TrocketClient::ResendDeadLetterMessage(const ResendDeadLetterMessageRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResendDeadLetterMessage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResendDeadLetterMessageResponse rsp = ResendDeadLetterMessageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResendDeadLetterMessageOutcome(rsp);
+        else
+            return ResendDeadLetterMessageOutcome(o.GetError());
+    }
+    else
+    {
+        return ResendDeadLetterMessageOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::ResendDeadLetterMessageAsync(const ResendDeadLetterMessageRequest& request, const ResendDeadLetterMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResendDeadLetterMessage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::ResendDeadLetterMessageOutcomeCallable TrocketClient::ResendDeadLetterMessageCallable(const ResendDeadLetterMessageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResendDeadLetterMessageOutcome()>>(
+        [this, request]()
+        {
+            return this->ResendDeadLetterMessage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrocketClient::ResetConsumerGroupOffsetOutcome TrocketClient::ResetConsumerGroupOffset(const ResetConsumerGroupOffsetRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetConsumerGroupOffset");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetConsumerGroupOffsetResponse rsp = ResetConsumerGroupOffsetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetConsumerGroupOffsetOutcome(rsp);
+        else
+            return ResetConsumerGroupOffsetOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetConsumerGroupOffsetOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::ResetConsumerGroupOffsetAsync(const ResetConsumerGroupOffsetRequest& request, const ResetConsumerGroupOffsetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResetConsumerGroupOffset(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::ResetConsumerGroupOffsetOutcomeCallable TrocketClient::ResetConsumerGroupOffsetCallable(const ResetConsumerGroupOffsetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResetConsumerGroupOffsetOutcome()>>(
+        [this, request]()
+        {
+            return this->ResetConsumerGroupOffset(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrocketClient::RollbackMigratingTopicStageOutcome TrocketClient::RollbackMigratingTopicStage(const RollbackMigratingTopicStageRequest &request)
+{
+    auto outcome = MakeRequest(request, "RollbackMigratingTopicStage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RollbackMigratingTopicStageResponse rsp = RollbackMigratingTopicStageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RollbackMigratingTopicStageOutcome(rsp);
+        else
+            return RollbackMigratingTopicStageOutcome(o.GetError());
+    }
+    else
+    {
+        return RollbackMigratingTopicStageOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::RollbackMigratingTopicStageAsync(const RollbackMigratingTopicStageRequest& request, const RollbackMigratingTopicStageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RollbackMigratingTopicStage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::RollbackMigratingTopicStageOutcomeCallable TrocketClient::RollbackMigratingTopicStageCallable(const RollbackMigratingTopicStageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RollbackMigratingTopicStageOutcome()>>(
+        [this, request]()
+        {
+            return this->RollbackMigratingTopicStage(request);
         }
     );
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取执行开始时间(距离0点的秒数)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaintainStartTime 执行开始时间(距离0点的秒数)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaintainStartTime() const;
 
                     /**
                      * 设置执行开始时间(距离0点的秒数)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maintainStartTime 执行开始时间(距离0点的秒数)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaintainStartTime(const int64_t& _maintainStartTime);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取持续的时间(单位：秒)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaintainDuration 持续的时间(单位：秒)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaintainDuration() const;
 
                     /**
                      * 设置持续的时间(单位：秒)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maintainDuration 持续的时间(单位：秒)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaintainDuration(const int64_t& _maintainDuration);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可以执行的时间，枚举值：["Mon","Tue","Wed","Thu","Fri", "Sat", "Sun"]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaintainWeekDays 可以执行的时间，枚举值：["Mon","Tue","Wed","Thu","Fri", "Sat", "Sun"]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetMaintainWeekDays() const;
 
                     /**
                      * 设置可以执行的时间，枚举值：["Mon","Tue","Wed","Thu","Fri", "Sat", "Sun"]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maintainWeekDays 可以执行的时间，枚举值：["Mon","Tue","Wed","Thu","Fri", "Sat", "Sun"]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaintainWeekDays(const std::vector<std::string>& _maintainWeekDays);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 执行开始时间(距离0点的秒数)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maintainStartTime;
                     bool m_maintainStartTimeHasBeenSet;
 
                     /**
                      * 持续的时间(单位：秒)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maintainDuration;
                     bool m_maintainDurationHasBeenSet;
 
                     /**
                      * 可以执行的时间，枚举值：["Mon","Tue","Wed","Thu","Fri", "Sat", "Sun"]
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_maintainWeekDays;
                     bool m_maintainWeekDaysHasBeenSet;

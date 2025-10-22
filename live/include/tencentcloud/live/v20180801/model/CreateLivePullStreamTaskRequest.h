@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -83,7 +83,7 @@ SourceType 为点播（PullVodPushLive）可以填多个，上限30个。
 当前支持的文件格式：flv，mp4，hls。
 当前支持的拉流协议：http，https，rtmp，rtmps，rtsp，srt。
 注意：
-1. 建议优先使用 flv 文件，对于 mp4 未交织好的文件轮播推流易产生卡顿，可通过点播转码进行重新交织后再轮播。
+1. 建议优先使用 flv 文件，对于 mp4 未交织好的文件轮播推流易产生卡顿以及因为频繁拉取导致源产生大量源出口带宽成本，可通过点播转码进行重新交织后再轮播，或提前创建任务并开启本地模式。
 2. 拒绝内网域名等攻击性拉流地址，如有使用，则做账号封禁处理。
 3. 源文件请保持时间戳正常交织递增，避免因源文件异常影响推流及播放。
 4. 视频编码格式仅支持: H264, H265。
@@ -96,7 +96,7 @@ SourceType 为点播（PullVodPushLive）可以填多个，上限30个。
 当前支持的文件格式：flv，mp4，hls。
 当前支持的拉流协议：http，https，rtmp，rtmps，rtsp，srt。
 注意：
-1. 建议优先使用 flv 文件，对于 mp4 未交织好的文件轮播推流易产生卡顿，可通过点播转码进行重新交织后再轮播。
+1. 建议优先使用 flv 文件，对于 mp4 未交织好的文件轮播推流易产生卡顿以及因为频繁拉取导致源产生大量源出口带宽成本，可通过点播转码进行重新交织后再轮播，或提前创建任务并开启本地模式。
 2. 拒绝内网域名等攻击性拉流地址，如有使用，则做账号封禁处理。
 3. 源文件请保持时间戳正常交织递增，避免因源文件异常影响推流及播放。
 4. 视频编码格式仅支持: H264, H265。
@@ -114,7 +114,7 @@ SourceType 为点播（PullVodPushLive）可以填多个，上限30个。
 当前支持的文件格式：flv，mp4，hls。
 当前支持的拉流协议：http，https，rtmp，rtmps，rtsp，srt。
 注意：
-1. 建议优先使用 flv 文件，对于 mp4 未交织好的文件轮播推流易产生卡顿，可通过点播转码进行重新交织后再轮播。
+1. 建议优先使用 flv 文件，对于 mp4 未交织好的文件轮播推流易产生卡顿以及因为频繁拉取导致源产生大量源出口带宽成本，可通过点播转码进行重新交织后再轮播，或提前创建任务并开启本地模式。
 2. 拒绝内网域名等攻击性拉流地址，如有使用，则做账号封禁处理。
 3. 源文件请保持时间戳正常交织递增，避免因源文件异常影响推流及播放。
 4. 视频编码格式仅支持: H264, H265。
@@ -127,7 +127,7 @@ SourceType 为点播（PullVodPushLive）可以填多个，上限30个。
 当前支持的文件格式：flv，mp4，hls。
 当前支持的拉流协议：http，https，rtmp，rtmps，rtsp，srt。
 注意：
-1. 建议优先使用 flv 文件，对于 mp4 未交织好的文件轮播推流易产生卡顿，可通过点播转码进行重新交织后再轮播。
+1. 建议优先使用 flv 文件，对于 mp4 未交织好的文件轮播推流易产生卡顿以及因为频繁拉取导致源产生大量源出口带宽成本，可通过点播转码进行重新交织后再轮播，或提前创建任务并开启本地模式。
 2. 拒绝内网域名等攻击性拉流地址，如有使用，则做账号封禁处理。
 3. 源文件请保持时间戳正常交织递增，避免因源文件异常影响推流及播放。
 4. 视频编码格式仅支持: H264, H265。
@@ -258,39 +258,15 @@ SourceType 为点播（PullVodPushLive）可以填多个，上限30个。
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间，注意：
-1. 结束时间必须大于开始时间；
-2. 结束时间必须大于当前时间；
-3. 结束时间 和 开始时间 间隔必须小于七天。
-使用 UTC 格式时间，
-例如：2019-01-08T10:00:00Z。
-注意：北京时间值为 UTC 时间值 + 8 小时。
-                     * @return EndTime 结束时间，注意：
-1. 结束时间必须大于开始时间；
-2. 结束时间必须大于当前时间；
-3. 结束时间 和 开始时间 间隔必须小于七天。
-使用 UTC 格式时间，
-例如：2019-01-08T10:00:00Z。
-注意：北京时间值为 UTC 时间值 + 8 小时。
+                     * 获取结束时间，注意：1. 结束时间必须大于开始时间；2. 结束时间必须大于当前时间；3. 结束时间 和 开始时间 间隔必须小于30天。使用 UTC 格式时间，例如：2019-01-08T10:00:00Z。注意：北京时间值为 UTC 时间值 + 8 小时。
+                     * @return EndTime 结束时间，注意：1. 结束时间必须大于开始时间；2. 结束时间必须大于当前时间；3. 结束时间 和 开始时间 间隔必须小于30天。使用 UTC 格式时间，例如：2019-01-08T10:00:00Z。注意：北京时间值为 UTC 时间值 + 8 小时。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间，注意：
-1. 结束时间必须大于开始时间；
-2. 结束时间必须大于当前时间；
-3. 结束时间 和 开始时间 间隔必须小于七天。
-使用 UTC 格式时间，
-例如：2019-01-08T10:00:00Z。
-注意：北京时间值为 UTC 时间值 + 8 小时。
-                     * @param _endTime 结束时间，注意：
-1. 结束时间必须大于开始时间；
-2. 结束时间必须大于当前时间；
-3. 结束时间 和 开始时间 间隔必须小于七天。
-使用 UTC 格式时间，
-例如：2019-01-08T10:00:00Z。
-注意：北京时间值为 UTC 时间值 + 8 小时。
+                     * 设置结束时间，注意：1. 结束时间必须大于开始时间；2. 结束时间必须大于当前时间；3. 结束时间 和 开始时间 间隔必须小于30天。使用 UTC 格式时间，例如：2019-01-08T10:00:00Z。注意：北京时间值为 UTC 时间值 + 8 小时。
+                     * @param _endTime 结束时间，注意：1. 结束时间必须大于开始时间；2. 结束时间必须大于当前时间；3. 结束时间 和 开始时间 间隔必须小于30天。使用 UTC 格式时间，例如：2019-01-08T10:00:00Z。注意：北京时间值为 UTC 时间值 + 8 小时。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -595,15 +571,15 @@ https://cloud.tencent.com/document/product/267/56208
                     bool SpecifyTaskIdHasBeenSet() const;
 
                     /**
-                     * 获取任务描述，限制 512 字节。
-                     * @return Comment 任务描述，限制 512 字节。
+                     * 获取任务描述，限制 512 字节。不可以使用特殊字符，如Unicode的特殊字符集。
+                     * @return Comment 任务描述，限制 512 字节。不可以使用特殊字符，如Unicode的特殊字符集。
                      * 
                      */
                     std::string GetComment() const;
 
                     /**
-                     * 设置任务描述，限制 512 字节。
-                     * @param _comment 任务描述，限制 512 字节。
+                     * 设置任务描述，限制 512 字节。不可以使用特殊字符，如Unicode的特殊字符集。
+                     * @param _comment 任务描述，限制 512 字节。不可以使用特殊字符，如Unicode的特殊字符集。
                      * 
                      */
                     void SetComment(const std::string& _comment);
@@ -659,6 +635,68 @@ rtmp、rtmps、rtsp、rtp、srt。
                      * 
                      */
                     bool ToUrlHasBeenSet() const;
+
+                    /**
+                     * 获取指定播放文件索引。
+注意： 1. 从1开始，不大于SourceUrls中文件个数。
+2. 该偏移仅在首次轮播时有效。
+3. 提前创建的任务指定的偏移最长有效期为24小时，24小时后未开始的任务偏移失效。
+                     * @return FileIndex 指定播放文件索引。
+注意： 1. 从1开始，不大于SourceUrls中文件个数。
+2. 该偏移仅在首次轮播时有效。
+3. 提前创建的任务指定的偏移最长有效期为24小时，24小时后未开始的任务偏移失效。
+                     * 
+                     */
+                    int64_t GetFileIndex() const;
+
+                    /**
+                     * 设置指定播放文件索引。
+注意： 1. 从1开始，不大于SourceUrls中文件个数。
+2. 该偏移仅在首次轮播时有效。
+3. 提前创建的任务指定的偏移最长有效期为24小时，24小时后未开始的任务偏移失效。
+                     * @param _fileIndex 指定播放文件索引。
+注意： 1. 从1开始，不大于SourceUrls中文件个数。
+2. 该偏移仅在首次轮播时有效。
+3. 提前创建的任务指定的偏移最长有效期为24小时，24小时后未开始的任务偏移失效。
+                     * 
+                     */
+                    void SetFileIndex(const int64_t& _fileIndex);
+
+                    /**
+                     * 判断参数 FileIndex 是否已赋值
+                     * @return FileIndex 是否已赋值
+                     * 
+                     */
+                    bool FileIndexHasBeenSet() const;
+
+                    /**
+                     * 获取指定播放文件偏移。
+注意：
+1. 单位：秒，配合FileIndex使用。
+                     * @return OffsetTime 指定播放文件偏移。
+注意：
+1. 单位：秒，配合FileIndex使用。
+                     * 
+                     */
+                    int64_t GetOffsetTime() const;
+
+                    /**
+                     * 设置指定播放文件偏移。
+注意：
+1. 单位：秒，配合FileIndex使用。
+                     * @param _offsetTime 指定播放文件偏移。
+注意：
+1. 单位：秒，配合FileIndex使用。
+                     * 
+                     */
+                    void SetOffsetTime(const int64_t& _offsetTime);
+
+                    /**
+                     * 判断参数 OffsetTime 是否已赋值
+                     * @return OffsetTime 是否已赋值
+                     * 
+                     */
+                    bool OffsetTimeHasBeenSet() const;
 
                     /**
                      * 获取备源的类型：
@@ -881,7 +919,7 @@ SourceType 为点播（PullVodPushLive）可以填多个，上限30个。
 当前支持的文件格式：flv，mp4，hls。
 当前支持的拉流协议：http，https，rtmp，rtmps，rtsp，srt。
 注意：
-1. 建议优先使用 flv 文件，对于 mp4 未交织好的文件轮播推流易产生卡顿，可通过点播转码进行重新交织后再轮播。
+1. 建议优先使用 flv 文件，对于 mp4 未交织好的文件轮播推流易产生卡顿以及因为频繁拉取导致源产生大量源出口带宽成本，可通过点播转码进行重新交织后再轮播，或提前创建任务并开启本地模式。
 2. 拒绝内网域名等攻击性拉流地址，如有使用，则做账号封禁处理。
 3. 源文件请保持时间戳正常交织递增，避免因源文件异常影响推流及播放。
 4. 视频编码格式仅支持: H264, H265。
@@ -924,13 +962,7 @@ SourceType 为点播（PullVodPushLive）可以填多个，上限30个。
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间，注意：
-1. 结束时间必须大于开始时间；
-2. 结束时间必须大于当前时间；
-3. 结束时间 和 开始时间 间隔必须小于七天。
-使用 UTC 格式时间，
-例如：2019-01-08T10:00:00Z。
-注意：北京时间值为 UTC 时间值 + 8 小时。
+                     * 结束时间，注意：1. 结束时间必须大于开始时间；2. 结束时间必须大于当前时间；3. 结束时间 和 开始时间 间隔必须小于30天。使用 UTC 格式时间，例如：2019-01-08T10:00:00Z。注意：北京时间值为 UTC 时间值 + 8 小时。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -1015,7 +1047,7 @@ https://cloud.tencent.com/document/product/267/56208
                     bool m_specifyTaskIdHasBeenSet;
 
                     /**
-                     * 任务描述，限制 512 字节。
+                     * 任务描述，限制 512 字节。不可以使用特殊字符，如Unicode的特殊字符集。
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
@@ -1031,6 +1063,23 @@ rtmp、rtmps、rtsp、rtp、srt。
                      */
                     std::string m_toUrl;
                     bool m_toUrlHasBeenSet;
+
+                    /**
+                     * 指定播放文件索引。
+注意： 1. 从1开始，不大于SourceUrls中文件个数。
+2. 该偏移仅在首次轮播时有效。
+3. 提前创建的任务指定的偏移最长有效期为24小时，24小时后未开始的任务偏移失效。
+                     */
+                    int64_t m_fileIndex;
+                    bool m_fileIndexHasBeenSet;
+
+                    /**
+                     * 指定播放文件偏移。
+注意：
+1. 单位：秒，配合FileIndex使用。
+                     */
+                    int64_t m_offsetTime;
+                    bool m_offsetTimeHasBeenSet;
 
                     /**
                      * 备源的类型：

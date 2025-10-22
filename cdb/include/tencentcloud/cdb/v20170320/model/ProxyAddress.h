@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -155,10 +155,8 @@ namespace TencentCloud
                     /**
                      * 获取权重分配模式；
 系统自动分配："system"， 自定义："custom"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WeightMode 权重分配模式；
 系统自动分配："system"， 自定义："custom"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWeightMode() const;
@@ -166,10 +164,8 @@ namespace TencentCloud
                     /**
                      * 设置权重分配模式；
 系统自动分配："system"， 自定义："custom"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _weightMode 权重分配模式；
 系统自动分配："system"， 自定义："custom"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWeightMode(const std::string& _weightMode);
@@ -183,18 +179,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启延迟剔除，取值："true" | "false"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsKickOut 是否开启延迟剔除，取值："true" | "false"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsKickOut() const;
 
                     /**
                      * 设置是否开启延迟剔除，取值："true" | "false"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isKickOut 是否开启延迟剔除，取值："true" | "false"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsKickOut(const bool& _isKickOut);
@@ -208,18 +200,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最小保留数量，最小取值：0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MinCount 最小保留数量，最小取值：0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMinCount() const;
 
                     /**
                      * 设置最小保留数量，最小取值：0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _minCount 最小保留数量，最小取值：0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMinCount(const uint64_t& _minCount);
@@ -233,18 +221,14 @@ namespace TencentCloud
 
                     /**
                      * 获取延迟剔除阈值，最小取值：0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxDelay 延迟剔除阈值，最小取值：0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMaxDelay() const;
 
                     /**
                      * 设置延迟剔除阈值，最小取值：0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxDelay 延迟剔除阈值，最小取值：0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxDelay(const uint64_t& _maxDelay);
@@ -258,18 +242,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否自动添加RO，取值："true" | "false"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoAddRo 是否自动添加RO，取值："true" | "false"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetAutoAddRo() const;
 
                     /**
                      * 设置是否自动添加RO，取值："true" | "false"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _autoAddRo 是否自动添加RO，取值："true" | "false"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAutoAddRo(const bool& _autoAddRo);
@@ -283,18 +263,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否是只读，取值："true" | "false"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReadOnly 是否是只读，取值："true" | "false"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetReadOnly() const;
 
                     /**
                      * 设置是否是只读，取值："true" | "false"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _readOnly 是否是只读，取值："true" | "false"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReadOnly(const bool& _readOnly);
@@ -308,18 +284,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启事务分离
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransSplit 是否开启事务分离
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetTransSplit() const;
 
                     /**
                      * 设置是否开启事务分离
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _transSplit 是否开启事务分离
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTransSplit(const bool& _transSplit);
@@ -333,18 +305,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启故障转移
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailOver 是否开启故障转移
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetFailOver() const;
 
                     /**
                      * 设置是否开启故障转移
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _failOver 是否开启故障转移
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFailOver(const bool& _failOver);
@@ -358,18 +326,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启连接池
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConnectionPool 是否开启连接池
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetConnectionPool() const;
 
                     /**
                      * 设置是否开启连接池
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _connectionPool 是否开启连接池
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConnectionPool(const bool& _connectionPool);
@@ -383,18 +347,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Desc 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDesc() const;
 
                     /**
                      * 设置描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _desc 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDesc(const std::string& _desc);
@@ -408,18 +368,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例读权重分配
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyAllocation 实例读权重分配
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ProxyAllocation> GetProxyAllocation() const;
 
                     /**
                      * 设置实例读权重分配
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _proxyAllocation 实例读权重分配
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProxyAllocation(const std::vector<ProxyAllocation>& _proxyAllocation);
@@ -433,18 +389,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接入模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccessMode 接入模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccessMode() const;
 
                     /**
                      * 设置接入模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accessMode 接入模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccessMode(const std::string& _accessMode);
@@ -458,18 +410,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启自动负载均衡
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoLoadBalance 是否开启自动负载均衡
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetAutoLoadBalance() const;
 
                     /**
                      * 设置是否开启自动负载均衡
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _autoLoadBalance 是否开启自动负载均衡
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAutoLoadBalance(const bool& _autoLoadBalance);
@@ -480,6 +428,48 @@ namespace TencentCloud
                      * 
                      */
                     bool AutoLoadBalanceHasBeenSet() const;
+
+                    /**
+                     * 获取是否把libra当作ro节点
+                     * @return ApNodeAsRoNode 是否把libra当作ro节点
+                     * 
+                     */
+                    bool GetApNodeAsRoNode() const;
+
+                    /**
+                     * 设置是否把libra当作ro节点
+                     * @param _apNodeAsRoNode 是否把libra当作ro节点
+                     * 
+                     */
+                    void SetApNodeAsRoNode(const bool& _apNodeAsRoNode);
+
+                    /**
+                     * 判断参数 ApNodeAsRoNode 是否已赋值
+                     * @return ApNodeAsRoNode 是否已赋值
+                     * 
+                     */
+                    bool ApNodeAsRoNodeHasBeenSet() const;
+
+                    /**
+                     * 获取libra节点故障，是否转发给其他节点
+                     * @return ApQueryToOtherNode libra节点故障，是否转发给其他节点
+                     * 
+                     */
+                    bool GetApQueryToOtherNode() const;
+
+                    /**
+                     * 设置libra节点故障，是否转发给其他节点
+                     * @param _apQueryToOtherNode libra节点故障，是否转发给其他节点
+                     * 
+                     */
+                    void SetApQueryToOtherNode(const bool& _apQueryToOtherNode);
+
+                    /**
+                     * 判断参数 ApQueryToOtherNode 是否已赋值
+                     * @return ApQueryToOtherNode 是否已赋值
+                     * 
+                     */
+                    bool ApQueryToOtherNodeHasBeenSet() const;
 
                 private:
 
@@ -516,94 +506,93 @@ namespace TencentCloud
                     /**
                      * 权重分配模式；
 系统自动分配："system"， 自定义："custom"
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_weightMode;
                     bool m_weightModeHasBeenSet;
 
                     /**
                      * 是否开启延迟剔除，取值："true" | "false"
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isKickOut;
                     bool m_isKickOutHasBeenSet;
 
                     /**
                      * 最小保留数量，最小取值：0
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_minCount;
                     bool m_minCountHasBeenSet;
 
                     /**
                      * 延迟剔除阈值，最小取值：0
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxDelay;
                     bool m_maxDelayHasBeenSet;
 
                     /**
                      * 是否自动添加RO，取值："true" | "false"
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_autoAddRo;
                     bool m_autoAddRoHasBeenSet;
 
                     /**
                      * 是否是只读，取值："true" | "false"
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_readOnly;
                     bool m_readOnlyHasBeenSet;
 
                     /**
                      * 是否开启事务分离
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_transSplit;
                     bool m_transSplitHasBeenSet;
 
                     /**
                      * 是否开启故障转移
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_failOver;
                     bool m_failOverHasBeenSet;
 
                     /**
                      * 是否开启连接池
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_connectionPool;
                     bool m_connectionPoolHasBeenSet;
 
                     /**
                      * 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_desc;
                     bool m_descHasBeenSet;
 
                     /**
                      * 实例读权重分配
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ProxyAllocation> m_proxyAllocation;
                     bool m_proxyAllocationHasBeenSet;
 
                     /**
                      * 接入模式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accessMode;
                     bool m_accessModeHasBeenSet;
 
                     /**
                      * 是否开启自动负载均衡
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_autoLoadBalance;
                     bool m_autoLoadBalanceHasBeenSet;
+
+                    /**
+                     * 是否把libra当作ro节点
+                     */
+                    bool m_apNodeAsRoNode;
+                    bool m_apNodeAsRoNodeHasBeenSet;
+
+                    /**
+                     * libra节点故障，是否转发给其他节点
+                     */
+                    bool m_apQueryToOtherNode;
+                    bool m_apQueryToOtherNodeHasBeenSet;
 
                 };
             }

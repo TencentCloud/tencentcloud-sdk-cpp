@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -121,6 +121,27 @@ namespace TencentCloud
                      */
                     bool ExpiredTimeHasBeenSet() const;
 
+                    /**
+                     * 获取微信小程序二维码
+                     * @return WeixinQrCodeUrl 微信小程序二维码
+                     * 
+                     */
+                    std::string GetWeixinQrCodeUrl() const;
+
+                    /**
+                     * 设置微信小程序二维码
+                     * @param _weixinQrCodeUrl 微信小程序二维码
+                     * 
+                     */
+                    void SetWeixinQrCodeUrl(const std::string& _weixinQrCodeUrl);
+
+                    /**
+                     * 判断参数 WeixinQrCodeUrl 是否已赋值
+                     * @return WeixinQrCodeUrl 是否已赋值
+                     * 
+                     */
+                    bool WeixinQrCodeUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +164,12 @@ namespace TencentCloud
                      */
                     int64_t m_expiredTime;
                     bool m_expiredTimeHasBeenSet;
+
+                    /**
+                     * 微信小程序二维码
+                     */
+                    std::string m_weixinQrCodeUrl;
+                    bool m_weixinQrCodeUrlHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,8 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/trtc/v20190722/model/VoicePrint.h>
+#include <tencentcloud/trtc/v20190722/model/TurnDetection.h>
 
 
 namespace TencentCloud
@@ -199,14 +201,18 @@ https://cloud.tencent.com/document/product/269/31999#app-.E7.AE.A1.E7.90.86.E5.9
 
                     /**
                      * 获取机器人订阅的用户列表
+仅 TranscriptionMode 为 1或者 TranscriptionMode 为无限上麦模式支持传入多个用户列表
                      * @return TargetUserIdList 机器人订阅的用户列表
+仅 TranscriptionMode 为 1或者 TranscriptionMode 为无限上麦模式支持传入多个用户列表
                      * 
                      */
                     std::vector<std::string> GetTargetUserIdList() const;
 
                     /**
                      * 设置机器人订阅的用户列表
+仅 TranscriptionMode 为 1或者 TranscriptionMode 为无限上麦模式支持传入多个用户列表
                      * @param _targetUserIdList 机器人订阅的用户列表
+仅 TranscriptionMode 为 1或者 TranscriptionMode 为无限上麦模式支持传入多个用户列表
                      * 
                      */
                     void SetTargetUserIdList(const std::vector<std::string>& _targetUserIdList);
@@ -217,6 +223,48 @@ https://cloud.tencent.com/document/product/269/31999#app-.E7.AE.A1.E7.90.86.E5.9
                      * 
                      */
                     bool TargetUserIdListHasBeenSet() const;
+
+                    /**
+                     * 获取声纹配置
+                     * @return VoicePrint 声纹配置
+                     * 
+                     */
+                    VoicePrint GetVoicePrint() const;
+
+                    /**
+                     * 设置声纹配置
+                     * @param _voicePrint 声纹配置
+                     * 
+                     */
+                    void SetVoicePrint(const VoicePrint& _voicePrint);
+
+                    /**
+                     * 判断参数 VoicePrint 是否已赋值
+                     * @return VoicePrint 是否已赋值
+                     * 
+                     */
+                    bool VoicePrintHasBeenSet() const;
+
+                    /**
+                     * 获取语义断句检测
+                     * @return TurnDetection 语义断句检测
+                     * 
+                     */
+                    TurnDetection GetTurnDetection() const;
+
+                    /**
+                     * 设置语义断句检测
+                     * @param _turnDetection 语义断句检测
+                     * 
+                     */
+                    void SetTurnDetection(const TurnDetection& _turnDetection);
+
+                    /**
+                     * 判断参数 TurnDetection 是否已赋值
+                     * @return TurnDetection 是否已赋值
+                     * 
+                     */
+                    bool TurnDetectionHasBeenSet() const;
 
                 private:
 
@@ -265,9 +313,22 @@ https://cloud.tencent.com/document/product/269/31999#app-.E7.AE.A1.E7.90.86.E5.9
 
                     /**
                      * 机器人订阅的用户列表
+仅 TranscriptionMode 为 1或者 TranscriptionMode 为无限上麦模式支持传入多个用户列表
                      */
                     std::vector<std::string> m_targetUserIdList;
                     bool m_targetUserIdListHasBeenSet;
+
+                    /**
+                     * 声纹配置
+                     */
+                    VoicePrint m_voicePrint;
+                    bool m_voicePrintHasBeenSet;
+
+                    /**
+                     * 语义断句检测
+                     */
+                    TurnDetection m_turnDetection;
+                    bool m_turnDetectionHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取快照状态 0-初始状态1-快照创建成功；2-快照创建失败；
-                     * @return Status 快照状态 0-初始状态1-快照创建成功；2-快照创建失败；
+                     * 获取快照状态 0-初始状态1-快照创建成功；2-快照创建失败；10-不支持，11-无需创建
+                     * @return Status 快照状态 0-初始状态1-快照创建成功；2-快照创建失败；10-不支持，11-无需创建
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置快照状态 0-初始状态1-快照创建成功；2-快照创建失败；
-                     * @param _status 快照状态 0-初始状态1-快照创建成功；2-快照创建失败；
+                     * 设置快照状态 0-初始状态1-快照创建成功；2-快照创建失败；10-不支持，11-无需创建
+                     * @param _status 快照状态 0-初始状态1-快照创建成功；2-快照创建失败；10-不支持，11-无需创建
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -234,6 +234,27 @@ namespace TencentCloud
                      * 
                      */
                     bool FailReasonHasBeenSet() const;
+
+                    /**
+                     * 获取主机类型
+                     * @return MachineType 主机类型
+                     * 
+                     */
+                    std::string GetMachineType() const;
+
+                    /**
+                     * 设置主机类型
+                     * @param _machineType 主机类型
+                     * 
+                     */
+                    void SetMachineType(const std::string& _machineType);
+
+                    /**
+                     * 判断参数 MachineType 是否已赋值
+                     * @return MachineType 是否已赋值
+                     * 
+                     */
+                    bool MachineTypeHasBeenSet() const;
 
                 private:
 
@@ -280,7 +301,7 @@ namespace TencentCloud
                     bool m_idHasBeenSet;
 
                     /**
-                     * 快照状态 0-初始状态1-快照创建成功；2-快照创建失败；
+                     * 快照状态 0-初始状态1-快照创建成功；2-快照创建失败；10-不支持，11-无需创建
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
@@ -290,6 +311,12 @@ namespace TencentCloud
                      */
                     std::string m_failReason;
                     bool m_failReasonHasBeenSet;
+
+                    /**
+                     * 主机类型
+                     */
+                    std::string m_machineType;
+                    bool m_machineTypeHasBeenSet;
 
                 };
             }

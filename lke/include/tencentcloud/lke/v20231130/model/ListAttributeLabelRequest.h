@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -168,6 +168,27 @@ namespace TencentCloud
                      */
                     bool QueryHasBeenSet() const;
 
+                    /**
+                     * 获取每个属性同步拉取的标签值数量
+                     * @return LabelSize 每个属性同步拉取的标签值数量
+                     * 
+                     */
+                    uint64_t GetLabelSize() const;
+
+                    /**
+                     * 设置每个属性同步拉取的标签值数量
+                     * @param _labelSize 每个属性同步拉取的标签值数量
+                     * 
+                     */
+                    void SetLabelSize(const uint64_t& _labelSize);
+
+                    /**
+                     * 判断参数 LabelSize 是否已赋值
+                     * @return LabelSize 是否已赋值
+                     * 
+                     */
+                    bool LabelSizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +226,12 @@ namespace TencentCloud
                      */
                     std::string m_query;
                     bool m_queryHasBeenSet;
+
+                    /**
+                     * 每个属性同步拉取的标签值数量
+                     */
+                    uint64_t m_labelSize;
+                    bool m_labelSizeHasBeenSet;
 
                 };
             }

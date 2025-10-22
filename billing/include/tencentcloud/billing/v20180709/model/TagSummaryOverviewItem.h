@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagValue 标签值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTagValue() const;
 
                     /**
                      * 设置标签值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tagValue 标签值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTagValue(const std::string& _tagValue);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取费用所占百分比，两位小数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealTotalCostRatio 费用所占百分比，两位小数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRealTotalCostRatio() const;
 
                     /**
                      * 设置费用所占百分比，两位小数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _realTotalCostRatio 费用所占百分比，两位小数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRealTotalCostRatio(const std::string& _realTotalCostRatio);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取优惠后总价
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealTotalCost 优惠后总价
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRealTotalCost() const;
 
                     /**
                      * 设置优惠后总价
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _realTotalCost 优惠后总价
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRealTotalCost(const std::string& _realTotalCost);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取现金账户支出：通过现金账户支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CashPayAmount 现金账户支出：通过现金账户支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCashPayAmount() const;
 
                     /**
                      * 设置现金账户支出：通过现金账户支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cashPayAmount 现金账户支出：通过现金账户支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCashPayAmount(const std::string& _cashPayAmount);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取赠送账户支出：使用赠送金支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IncentivePayAmount 赠送账户支出：使用赠送金支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIncentivePayAmount() const;
 
                     /**
                      * 设置赠送账户支出：使用赠送金支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _incentivePayAmount 赠送账户支出：使用赠送金支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIncentivePayAmount(const std::string& _incentivePayAmount);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取优惠券支出：使用各类优惠券（如代金券、现金券等）支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VoucherPayAmount 优惠券支出：使用各类优惠券（如代金券、现金券等）支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVoucherPayAmount() const;
 
                     /**
                      * 设置优惠券支出：使用各类优惠券（如代金券、现金券等）支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _voucherPayAmount 优惠券支出：使用各类优惠券（如代金券、现金券等）支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVoucherPayAmount(const std::string& _voucherPayAmount);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分成金账户支出：通过分成金账户支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransferPayAmount 分成金账户支出：通过分成金账户支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTransferPayAmount() const;
 
                     /**
                      * 设置分成金账户支出：通过分成金账户支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _transferPayAmount 分成金账户支出：通过分成金账户支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTransferPayAmount(const std::string& _transferPayAmount);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原价，单位为元。TotalCost字段自账单3.0（即2021-05）之后开始生效，账单3.0之前返回"-"。合同价的情况下，TotalCost字段与官网价格存在差异，也返回“-”。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCost 原价，单位为元。TotalCost字段自账单3.0（即2021-05）之后开始生效，账单3.0之前返回"-"。合同价的情况下，TotalCost字段与官网价格存在差异，也返回“-”。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTotalCost() const;
 
                     /**
                      * 设置原价，单位为元。TotalCost字段自账单3.0（即2021-05）之后开始生效，账单3.0之前返回"-"。合同价的情况下，TotalCost字段与官网价格存在差异，也返回“-”。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalCost 原价，单位为元。TotalCost字段自账单3.0（即2021-05）之后开始生效，账单3.0之前返回"-"。合同价的情况下，TotalCost字段与官网价格存在差异，也返回“-”。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalCost(const std::string& _totalCost);
@@ -250,56 +218,48 @@ namespace TencentCloud
 
                     /**
                      * 标签值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tagValue;
                     bool m_tagValueHasBeenSet;
 
                     /**
                      * 费用所占百分比，两位小数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_realTotalCostRatio;
                     bool m_realTotalCostRatioHasBeenSet;
 
                     /**
                      * 优惠后总价
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_realTotalCost;
                     bool m_realTotalCostHasBeenSet;
 
                     /**
                      * 现金账户支出：通过现金账户支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cashPayAmount;
                     bool m_cashPayAmountHasBeenSet;
 
                     /**
                      * 赠送账户支出：使用赠送金支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_incentivePayAmount;
                     bool m_incentivePayAmountHasBeenSet;
 
                     /**
                      * 优惠券支出：使用各类优惠券（如代金券、现金券等）支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_voucherPayAmount;
                     bool m_voucherPayAmountHasBeenSet;
 
                     /**
                      * 分成金账户支出：通过分成金账户支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_transferPayAmount;
                     bool m_transferPayAmountHasBeenSet;
 
                     /**
                      * 原价，单位为元。TotalCost字段自账单3.0（即2021-05）之后开始生效，账单3.0之前返回"-"。合同价的情况下，TotalCost字段与官网价格存在差异，也返回“-”。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_totalCost;
                     bool m_totalCostHasBeenSet;

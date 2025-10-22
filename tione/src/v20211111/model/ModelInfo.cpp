@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,10 +27,13 @@ ModelInfo::ModelInfo() :
     m_modelVersionHasBeenSet(false),
     m_modelSourceHasBeenSet(false),
     m_cosPathInfoHasBeenSet(false),
+    m_gooseFSxHasBeenSet(false),
     m_algorithmFrameworkHasBeenSet(false),
     m_modelTypeHasBeenSet(false),
     m_modelFormatHasBeenSet(false),
-    m_isPrivateModelHasBeenSet(false)
+    m_isPrivateModelHasBeenSet(false),
+    m_modelCategoryHasBeenSet(false),
+    m_publicDataSourceHasBeenSet(false)
 {
 }
 
@@ -106,6 +109,23 @@ CoreInternalOutcome ModelInfo::Deserialize(const rapidjson::Value &value)
         m_cosPathInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("GooseFSx") && !value["GooseFSx"].IsNull())
+    {
+        if (!value["GooseFSx"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelInfo.GooseFSx` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_gooseFSx.Deserialize(value["GooseFSx"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_gooseFSxHasBeenSet = true;
+    }
+
     if (value.HasMember("AlgorithmFramework") && !value["AlgorithmFramework"].IsNull())
     {
         if (!value["AlgorithmFramework"].IsString())
@@ -144,6 +164,33 @@ CoreInternalOutcome ModelInfo::Deserialize(const rapidjson::Value &value)
         }
         m_isPrivateModel = value["IsPrivateModel"].GetBool();
         m_isPrivateModelHasBeenSet = true;
+    }
+
+    if (value.HasMember("ModelCategory") && !value["ModelCategory"].IsNull())
+    {
+        if (!value["ModelCategory"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelInfo.ModelCategory` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modelCategory = string(value["ModelCategory"].GetString());
+        m_modelCategoryHasBeenSet = true;
+    }
+
+    if (value.HasMember("PublicDataSource") && !value["PublicDataSource"].IsNull())
+    {
+        if (!value["PublicDataSource"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelInfo.PublicDataSource` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_publicDataSource.Deserialize(value["PublicDataSource"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_publicDataSourceHasBeenSet = true;
     }
 
 
@@ -202,6 +249,15 @@ void ModelInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         m_cosPathInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_gooseFSxHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GooseFSx";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_gooseFSx.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_algorithmFrameworkHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -232,6 +288,23 @@ void ModelInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "IsPrivateModel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isPrivateModel, allocator);
+    }
+
+    if (m_modelCategoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelCategory";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modelCategory.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publicDataSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicDataSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_publicDataSource.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -333,6 +406,22 @@ bool ModelInfo::CosPathInfoHasBeenSet() const
     return m_cosPathInfoHasBeenSet;
 }
 
+GooseFSx ModelInfo::GetGooseFSx() const
+{
+    return m_gooseFSx;
+}
+
+void ModelInfo::SetGooseFSx(const GooseFSx& _gooseFSx)
+{
+    m_gooseFSx = _gooseFSx;
+    m_gooseFSxHasBeenSet = true;
+}
+
+bool ModelInfo::GooseFSxHasBeenSet() const
+{
+    return m_gooseFSxHasBeenSet;
+}
+
 string ModelInfo::GetAlgorithmFramework() const
 {
     return m_algorithmFramework;
@@ -395,5 +484,37 @@ void ModelInfo::SetIsPrivateModel(const bool& _isPrivateModel)
 bool ModelInfo::IsPrivateModelHasBeenSet() const
 {
     return m_isPrivateModelHasBeenSet;
+}
+
+string ModelInfo::GetModelCategory() const
+{
+    return m_modelCategory;
+}
+
+void ModelInfo::SetModelCategory(const string& _modelCategory)
+{
+    m_modelCategory = _modelCategory;
+    m_modelCategoryHasBeenSet = true;
+}
+
+bool ModelInfo::ModelCategoryHasBeenSet() const
+{
+    return m_modelCategoryHasBeenSet;
+}
+
+PublicDataSourceFS ModelInfo::GetPublicDataSource() const
+{
+    return m_publicDataSource;
+}
+
+void ModelInfo::SetPublicDataSource(const PublicDataSourceFS& _publicDataSource)
+{
+    m_publicDataSource = _publicDataSource;
+    m_publicDataSourceHasBeenSet = true;
+}
+
+bool ModelInfo::PublicDataSourceHasBeenSet() const
+{
+    return m_publicDataSourceHasBeenSet;
 }
 

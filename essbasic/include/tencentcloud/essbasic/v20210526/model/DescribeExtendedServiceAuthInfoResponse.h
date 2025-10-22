@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取服务开通和授权的信息列表，根据查询类型返回所有支持的扩展服务开通和授权状况，或者返回特定扩展服务的开通和授权状况。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthInfo 服务开通和授权的信息列表，根据查询类型返回所有支持的扩展服务开通和授权状况，或者返回特定扩展服务的开通和授权状况。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ExtentServiceAuthInfo> GetAuthInfo() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 服务开通和授权的信息列表，根据查询类型返回所有支持的扩展服务开通和授权状况，或者返回特定扩展服务的开通和授权状况。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ExtentServiceAuthInfo> m_authInfo;
                     bool m_authInfoHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取创建房间ID列表
-                     * @return RoomInfos 创建房间ID列表
+                     * 获取批量创建课堂的配置信息
+                     * @return RoomInfos 批量创建课堂的配置信息
                      * 
                      */
                     std::vector<RoomInfo> GetRoomInfos() const;
 
                     /**
-                     * 设置创建房间ID列表
-                     * @param _roomInfos 创建房间ID列表
+                     * 设置批量创建课堂的配置信息
+                     * @param _roomInfos 批量创建课堂的配置信息
                      * 
                      */
                     void SetRoomInfos(const std::vector<RoomInfo>& _roomInfos);
@@ -94,7 +94,7 @@ namespace TencentCloud
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 创建房间ID列表
+                     * 批量创建课堂的配置信息
                      */
                     std::vector<RoomInfo> m_roomInfos;
                     bool m_roomInfosHasBeenSet;

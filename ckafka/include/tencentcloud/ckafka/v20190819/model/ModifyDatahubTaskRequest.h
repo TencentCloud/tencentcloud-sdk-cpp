@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool TaskNameHasBeenSet() const;
 
+                    /**
+                     * 获取任务描述信息
+                     * @return Description 任务描述信息
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置任务描述信息
+                     * @param _description 任务描述信息
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_taskName;
                     bool m_taskNameHasBeenSet;
+
+                    /**
+                     * 任务描述信息
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                 };
             }

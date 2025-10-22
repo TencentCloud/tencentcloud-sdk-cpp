@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ using namespace std;
 
 CreateTrafficPackagesRequest::CreateTrafficPackagesRequest() :
     m_trafficAmountHasBeenSet(false),
-    m_trafficPackageCountHasBeenSet(false)
+    m_trafficPackageCountHasBeenSet(false),
+    m_deductTypeHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string CreateTrafficPackagesRequest::ToJsonString() const
         string key = "TrafficPackageCount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_trafficPackageCount, allocator);
+    }
+
+    if (m_deductTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeductType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_deductType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void CreateTrafficPackagesRequest::SetTrafficPackageCount(const uint64_t& _traff
 bool CreateTrafficPackagesRequest::TrafficPackageCountHasBeenSet() const
 {
     return m_trafficPackageCountHasBeenSet;
+}
+
+string CreateTrafficPackagesRequest::GetDeductType() const
+{
+    return m_deductType;
+}
+
+void CreateTrafficPackagesRequest::SetDeductType(const string& _deductType)
+{
+    m_deductType = _deductType;
+    m_deductTypeHasBeenSet = true;
+}
+
+bool CreateTrafficPackagesRequest::DeductTypeHasBeenSet() const
+{
+    return m_deductTypeHasBeenSet;
 }
 
 

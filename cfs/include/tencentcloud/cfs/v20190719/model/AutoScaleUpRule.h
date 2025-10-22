@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ScaleThresholdHasBeenSet() const;
 
                     /**
-                     * 获取扩容后使用量跟集群总量比例,范围[1-90]
-                     * @return TargetThreshold 扩容后使用量跟集群总量比例,范围[1-90]
+                     * 获取扩容后使用量跟集群总量比例,范围[10-90]
+                     * @return TargetThreshold 扩容后使用量跟集群总量比例,范围[10-90]
                      * 
                      */
                     uint64_t GetTargetThreshold() const;
 
                     /**
-                     * 设置扩容后使用量跟集群总量比例,范围[1-90]
-                     * @param _targetThreshold 扩容后使用量跟集群总量比例,范围[1-90]
+                     * 设置扩容后使用量跟集群总量比例,范围[10-90]
+                     * @param _targetThreshold 扩容后使用量跟集群总量比例,范围[10-90]
                      * 
                      */
                     void SetTargetThreshold(const uint64_t& _targetThreshold);
@@ -124,7 +124,7 @@ namespace TencentCloud
                     bool m_scaleThresholdHasBeenSet;
 
                     /**
-                     * 扩容后使用量跟集群总量比例,范围[1-90]
+                     * 扩容后使用量跟集群总量比例,范围[10-90]
                      */
                     uint64_t m_targetThreshold;
                     bool m_targetThresholdHasBeenSet;

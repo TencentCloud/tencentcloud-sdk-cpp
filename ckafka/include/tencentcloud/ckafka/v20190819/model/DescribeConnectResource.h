@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,18 +60,14 @@ namespace TencentCloud
 
                     /**
                      * 获取连接源的Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceId 连接源的Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置连接源的Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceId 连接源的Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -85,18 +81,14 @@ namespace TencentCloud
 
                     /**
                      * 获取连接源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceName 连接源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceName() const;
 
                     /**
                      * 设置连接源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceName 连接源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceName(const std::string& _resourceName);
@@ -110,18 +102,14 @@ namespace TencentCloud
 
                     /**
                      * 获取连接源描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 连接源描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置连接源描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 连接源描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -135,18 +123,14 @@ namespace TencentCloud
 
                     /**
                      * 获取连接源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 连接源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置连接源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 连接源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -160,18 +144,14 @@ namespace TencentCloud
 
                     /**
                      * 获取连接源的状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 连接源的状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置连接源的状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 连接源的状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -185,18 +165,14 @@ namespace TencentCloud
 
                     /**
                      * 获取连接源的创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 连接源的创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置连接源的创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 连接源的创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -210,18 +186,14 @@ namespace TencentCloud
 
                     /**
                      * 获取连接源的异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorMessage 连接源的异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrorMessage() const;
 
                     /**
                      * 设置连接源的异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errorMessage 连接源的异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrorMessage(const std::string& _errorMessage);
@@ -235,18 +207,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该连接源关联的Datahub任务数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatahubTaskCount 该连接源关联的Datahub任务数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDatahubTaskCount() const;
 
                     /**
                      * 设置该连接源关联的Datahub任务数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _datahubTaskCount 该连接源关联的Datahub任务数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDatahubTaskCount(const int64_t& _datahubTaskCount);
@@ -260,18 +228,14 @@ namespace TencentCloud
 
                     /**
                      * 获取连接源的当前所处步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurrentStep 连接源的当前所处步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCurrentStep() const;
 
                     /**
                      * 设置连接源的当前所处步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _currentStep 连接源的当前所处步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCurrentStep(const std::string& _currentStep);
@@ -285,18 +249,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建进度百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskProgress 创建进度百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetTaskProgress() const;
 
                     /**
                      * 设置创建进度百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskProgress 创建进度百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskProgress(const double& _taskProgress);
@@ -310,18 +270,14 @@ namespace TencentCloud
 
                     /**
                      * 获取步骤列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StepList 步骤列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetStepList() const;
 
                     /**
                      * 设置步骤列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stepList 步骤列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStepList(const std::vector<std::string>& _stepList);
@@ -637,77 +593,66 @@ namespace TencentCloud
 
                     /**
                      * 连接源的Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
                      * 连接源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceName;
                     bool m_resourceNameHasBeenSet;
 
                     /**
                      * 连接源描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 连接源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 连接源的状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 连接源的创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 连接源的异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorMessage;
                     bool m_errorMessageHasBeenSet;
 
                     /**
                      * 该连接源关联的Datahub任务数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_datahubTaskCount;
                     bool m_datahubTaskCountHasBeenSet;
 
                     /**
                      * 连接源的当前所处步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_currentStep;
                     bool m_currentStepHasBeenSet;
 
                     /**
                      * 创建进度百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_taskProgress;
                     bool m_taskProgressHasBeenSet;
 
                     /**
                      * 步骤列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_stepList;
                     bool m_stepListHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,7 @@ DataAuthorizationInfo::DataAuthorizationInfo() :
     m_isAuthorizeHasBeenSet(false),
     m_isOrderHandlingHasBeenSet(false),
     m_authorizationTermHasBeenSet(false),
-    m_privacyPolicyLinkHasBeenSet(false),
-    m_isPersonalDataHasBeenSet(false)
+    m_privacyPolicyLinkHasBeenSet(false)
 {
 }
 
@@ -110,16 +109,6 @@ CoreInternalOutcome DataAuthorizationInfo::Deserialize(const rapidjson::Value &v
         m_privacyPolicyLinkHasBeenSet = true;
     }
 
-    if (value.HasMember("IsPersonalData") && !value["IsPersonalData"].IsNull())
-    {
-        if (!value["IsPersonalData"].IsUint64())
-        {
-            return CoreInternalOutcome(Core::Error("response `DataAuthorizationInfo.IsPersonalData` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_isPersonalData = value["IsPersonalData"].GetUint64();
-        m_isPersonalDataHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
@@ -186,14 +175,6 @@ void DataAuthorizationInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "PrivacyPolicyLink";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_privacyPolicyLink.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_isPersonalDataHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "IsPersonalData";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_isPersonalData, allocator);
     }
 
 }
@@ -309,21 +290,5 @@ void DataAuthorizationInfo::SetPrivacyPolicyLink(const string& _privacyPolicyLin
 bool DataAuthorizationInfo::PrivacyPolicyLinkHasBeenSet() const
 {
     return m_privacyPolicyLinkHasBeenSet;
-}
-
-uint64_t DataAuthorizationInfo::GetIsPersonalData() const
-{
-    return m_isPersonalData;
-}
-
-void DataAuthorizationInfo::SetIsPersonalData(const uint64_t& _isPersonalData)
-{
-    m_isPersonalData = _isPersonalData;
-    m_isPersonalDataHasBeenSet = true;
-}
-
-bool DataAuthorizationInfo::IsPersonalDataHasBeenSet() const
-{
-    return m_isPersonalDataHasBeenSet;
 }
 

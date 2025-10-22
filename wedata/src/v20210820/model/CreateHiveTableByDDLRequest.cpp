@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,12 @@ CreateHiveTableByDDLRequest::CreateHiveTableByDDLRequest() :
     m_projectIdHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_inchargeHasBeenSet(false),
-    m_schemaNameHasBeenSet(false)
+    m_schemaNameHasBeenSet(false),
+    m_asyncHasBeenSet(false),
+    m_dataOptimizationResourceHasBeenSet(false),
+    m_smartOptimizerWrittenHasBeenSet(false),
+    m_tableNameHasBeenSet(false),
+    m_resourceGroupNameHasBeenSet(false)
 {
 }
 
@@ -103,6 +108,46 @@ string CreateHiveTableByDDLRequest::ToJsonString() const
         string key = "SchemaName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_schemaName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_asyncHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Async";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_async, allocator);
+    }
+
+    if (m_dataOptimizationResourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataOptimizationResource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dataOptimizationResource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_smartOptimizerWrittenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SmartOptimizerWritten";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_smartOptimizerWritten.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tableNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tableName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceGroupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceGroupName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceGroupName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -239,6 +284,86 @@ void CreateHiveTableByDDLRequest::SetSchemaName(const string& _schemaName)
 bool CreateHiveTableByDDLRequest::SchemaNameHasBeenSet() const
 {
     return m_schemaNameHasBeenSet;
+}
+
+bool CreateHiveTableByDDLRequest::GetAsync() const
+{
+    return m_async;
+}
+
+void CreateHiveTableByDDLRequest::SetAsync(const bool& _async)
+{
+    m_async = _async;
+    m_asyncHasBeenSet = true;
+}
+
+bool CreateHiveTableByDDLRequest::AsyncHasBeenSet() const
+{
+    return m_asyncHasBeenSet;
+}
+
+string CreateHiveTableByDDLRequest::GetDataOptimizationResource() const
+{
+    return m_dataOptimizationResource;
+}
+
+void CreateHiveTableByDDLRequest::SetDataOptimizationResource(const string& _dataOptimizationResource)
+{
+    m_dataOptimizationResource = _dataOptimizationResource;
+    m_dataOptimizationResourceHasBeenSet = true;
+}
+
+bool CreateHiveTableByDDLRequest::DataOptimizationResourceHasBeenSet() const
+{
+    return m_dataOptimizationResourceHasBeenSet;
+}
+
+string CreateHiveTableByDDLRequest::GetSmartOptimizerWritten() const
+{
+    return m_smartOptimizerWritten;
+}
+
+void CreateHiveTableByDDLRequest::SetSmartOptimizerWritten(const string& _smartOptimizerWritten)
+{
+    m_smartOptimizerWritten = _smartOptimizerWritten;
+    m_smartOptimizerWrittenHasBeenSet = true;
+}
+
+bool CreateHiveTableByDDLRequest::SmartOptimizerWrittenHasBeenSet() const
+{
+    return m_smartOptimizerWrittenHasBeenSet;
+}
+
+string CreateHiveTableByDDLRequest::GetTableName() const
+{
+    return m_tableName;
+}
+
+void CreateHiveTableByDDLRequest::SetTableName(const string& _tableName)
+{
+    m_tableName = _tableName;
+    m_tableNameHasBeenSet = true;
+}
+
+bool CreateHiveTableByDDLRequest::TableNameHasBeenSet() const
+{
+    return m_tableNameHasBeenSet;
+}
+
+string CreateHiveTableByDDLRequest::GetResourceGroupName() const
+{
+    return m_resourceGroupName;
+}
+
+void CreateHiveTableByDDLRequest::SetResourceGroupName(const string& _resourceGroupName)
+{
+    m_resourceGroupName = _resourceGroupName;
+    m_resourceGroupNameHasBeenSet = true;
+}
+
+bool CreateHiveTableByDDLRequest::ResourceGroupNameHasBeenSet() const
+{
+    return m_resourceGroupNameHasBeenSet;
 }
 
 

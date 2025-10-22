@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -231,6 +231,174 @@ namespace TencentCloud
                      */
                     bool DescHasBeenSet() const;
 
+                    /**
+                     * 获取启动kafka配置
+                     * @return EnableKafka 启动kafka配置
+                     * 
+                     */
+                    uint64_t GetEnableKafka() const;
+
+                    /**
+                     * 设置启动kafka配置
+                     * @param _enableKafka 启动kafka配置
+                     * 
+                     */
+                    void SetEnableKafka(const uint64_t& _enableKafka);
+
+                    /**
+                     * 判断参数 EnableKafka 是否已赋值
+                     * @return EnableKafka 是否已赋值
+                     * 
+                     */
+                    bool EnableKafkaHasBeenSet() const;
+
+                    /**
+                     * 获取kafka_host
+                     * @return KafkaHost kafka_host
+                     * 
+                     */
+                    std::string GetKafkaHost() const;
+
+                    /**
+                     * 设置kafka_host
+                     * @param _kafkaHost kafka_host
+                     * 
+                     */
+                    void SetKafkaHost(const std::string& _kafkaHost);
+
+                    /**
+                     * 判断参数 KafkaHost 是否已赋值
+                     * @return KafkaHost 是否已赋值
+                     * 
+                     */
+                    bool KafkaHostHasBeenSet() const;
+
+                    /**
+                     * 获取topic
+                     * @return KafkaTopic topic
+                     * 
+                     */
+                    std::string GetKafkaTopic() const;
+
+                    /**
+                     * 设置topic
+                     * @param _kafkaTopic topic
+                     * 
+                     */
+                    void SetKafkaTopic(const std::string& _kafkaTopic);
+
+                    /**
+                     * 判断参数 KafkaTopic 是否已赋值
+                     * @return KafkaTopic 是否已赋值
+                     * 
+                     */
+                    bool KafkaTopicHasBeenSet() const;
+
+                    /**
+                     * 获取kafka_version
+                     * @return KafkaVersion kafka_version
+                     * 
+                     */
+                    std::string GetKafkaVersion() const;
+
+                    /**
+                     * 设置kafka_version
+                     * @param _kafkaVersion kafka_version
+                     * 
+                     */
+                    void SetKafkaVersion(const std::string& _kafkaVersion);
+
+                    /**
+                     * 判断参数 KafkaVersion 是否已赋值
+                     * @return KafkaVersion 是否已赋值
+                     * 
+                     */
+                    bool KafkaVersionHasBeenSet() const;
+
+                    /**
+                     * 获取kafka_username
+                     * @return SaslUserName kafka_username
+                     * 
+                     */
+                    std::string GetSaslUserName() const;
+
+                    /**
+                     * 设置kafka_username
+                     * @param _saslUserName kafka_username
+                     * 
+                     */
+                    void SetSaslUserName(const std::string& _saslUserName);
+
+                    /**
+                     * 判断参数 SaslUserName 是否已赋值
+                     * @return SaslUserName 是否已赋值
+                     * 
+                     */
+                    bool SaslUserNameHasBeenSet() const;
+
+                    /**
+                     * 获取kafka_pwd
+                     * @return SaslPassword kafka_pwd
+                     * 
+                     */
+                    std::string GetSaslPassword() const;
+
+                    /**
+                     * 设置kafka_pwd
+                     * @param _saslPassword kafka_pwd
+                     * 
+                     */
+                    void SetSaslPassword(const std::string& _saslPassword);
+
+                    /**
+                     * 判断参数 SaslPassword 是否已赋值
+                     * @return SaslPassword 是否已赋值
+                     * 
+                     */
+                    bool SaslPasswordHasBeenSet() const;
+
+                    /**
+                     * 获取SaslMechanism
+                     * @return SaslMechanism SaslMechanism
+                     * 
+                     */
+                    std::string GetSaslMechanism() const;
+
+                    /**
+                     * 设置SaslMechanism
+                     * @param _saslMechanism SaslMechanism
+                     * 
+                     */
+                    void SetSaslMechanism(const std::string& _saslMechanism);
+
+                    /**
+                     * 判断参数 SaslMechanism 是否已赋值
+                     * @return SaslMechanism 是否已赋值
+                     * 
+                     */
+                    bool SaslMechanismHasBeenSet() const;
+
+                    /**
+                     * 获取sink_id，日知汇算子id
+                     * @return SinkId sink_id，日知汇算子id
+                     * 
+                     */
+                    uint64_t GetSinkId() const;
+
+                    /**
+                     * 设置sink_id，日知汇算子id
+                     * @param _sinkId sink_id，日知汇算子id
+                     * 
+                     */
+                    void SetSinkId(const uint64_t& _sinkId);
+
+                    /**
+                     * 判断参数 SinkId 是否已赋值
+                     * @return SinkId 是否已赋值
+                     * 
+                     */
+                    bool SinkIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -286,6 +454,54 @@ namespace TencentCloud
                      */
                     std::string m_desc;
                     bool m_descHasBeenSet;
+
+                    /**
+                     * 启动kafka配置
+                     */
+                    uint64_t m_enableKafka;
+                    bool m_enableKafkaHasBeenSet;
+
+                    /**
+                     * kafka_host
+                     */
+                    std::string m_kafkaHost;
+                    bool m_kafkaHostHasBeenSet;
+
+                    /**
+                     * topic
+                     */
+                    std::string m_kafkaTopic;
+                    bool m_kafkaTopicHasBeenSet;
+
+                    /**
+                     * kafka_version
+                     */
+                    std::string m_kafkaVersion;
+                    bool m_kafkaVersionHasBeenSet;
+
+                    /**
+                     * kafka_username
+                     */
+                    std::string m_saslUserName;
+                    bool m_saslUserNameHasBeenSet;
+
+                    /**
+                     * kafka_pwd
+                     */
+                    std::string m_saslPassword;
+                    bool m_saslPasswordHasBeenSet;
+
+                    /**
+                     * SaslMechanism
+                     */
+                    std::string m_saslMechanism;
+                    bool m_saslMechanismHasBeenSet;
+
+                    /**
+                     * sink_id，日知汇算子id
+                     */
+                    uint64_t m_sinkId;
+                    bool m_sinkIdHasBeenSet;
 
                 };
             }

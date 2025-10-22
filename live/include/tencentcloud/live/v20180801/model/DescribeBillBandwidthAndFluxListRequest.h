@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -126,31 +126,15 @@ namespace TencentCloud
                     bool PlayDomainsHasBeenSet() const;
 
                     /**
-                     * 获取可选值：
-Mainland：查询国内数据，
-Oversea：则查询国外数据，
-默认：查询国内+国外的数据。
-注：LEB（快直播）只支持国内+国外数据查询。
-                     * @return MainlandOrOversea 可选值：
-Mainland：查询国内数据，
-Oversea：则查询国外数据，
-默认：查询国内+国外的数据。
-注：LEB（快直播）只支持国内+国外数据查询。
+                     * 获取可选值：Mainland：查询国内数据，Oversea：则查询国外数据，默认：查询国内+国外的数据。
+                     * @return MainlandOrOversea 可选值：Mainland：查询国内数据，Oversea：则查询国外数据，默认：查询国内+国外的数据。
                      * 
                      */
                     std::string GetMainlandOrOversea() const;
 
                     /**
-                     * 设置可选值：
-Mainland：查询国内数据，
-Oversea：则查询国外数据，
-默认：查询国内+国外的数据。
-注：LEB（快直播）只支持国内+国外数据查询。
-                     * @param _mainlandOrOversea 可选值：
-Mainland：查询国内数据，
-Oversea：则查询国外数据，
-默认：查询国内+国外的数据。
-注：LEB（快直播）只支持国内+国外数据查询。
+                     * 设置可选值：Mainland：查询国内数据，Oversea：则查询国外数据，默认：查询国内+国外的数据。
+                     * @param _mainlandOrOversea 可选值：Mainland：查询国内数据，Oversea：则查询国外数据，默认：查询国内+国外的数据。
                      * 
                      */
                     void SetMainlandOrOversea(const std::string& _mainlandOrOversea);
@@ -303,11 +287,7 @@ Africa 非洲。
                     bool m_playDomainsHasBeenSet;
 
                     /**
-                     * 可选值：
-Mainland：查询国内数据，
-Oversea：则查询国外数据，
-默认：查询国内+国外的数据。
-注：LEB（快直播）只支持国内+国外数据查询。
+                     * 可选值：Mainland：查询国内数据，Oversea：则查询国外数据，默认：查询国内+国外的数据。
                      */
                     std::string m_mainlandOrOversea;
                     bool m_mainlandOrOverseaHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ NodeProperty::NodeProperty() :
     m_zoneHasBeenSet(false),
     m_nodeNameHasBeenSet(false),
     m_addressHasBeenSet(false),
+    m_wanServiceAddressHasBeenSet(false),
     m_roleHasBeenSet(false),
     m_hiddenHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -68,6 +69,16 @@ CoreInternalOutcome NodeProperty::Deserialize(const rapidjson::Value &value)
         }
         m_address = string(value["Address"].GetString());
         m_addressHasBeenSet = true;
+    }
+
+    if (value.HasMember("WanServiceAddress") && !value["WanServiceAddress"].IsNull())
+    {
+        if (!value["WanServiceAddress"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeProperty.WanServiceAddress` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_wanServiceAddress = string(value["WanServiceAddress"].GetString());
+        m_wanServiceAddressHasBeenSet = true;
     }
 
     if (value.HasMember("Role") && !value["Role"].IsNull())
@@ -191,6 +202,14 @@ void NodeProperty::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         value.AddMember(iKey, rapidjson::Value(m_address.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_wanServiceAddressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WanServiceAddress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_wanServiceAddress.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_roleHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -311,6 +330,22 @@ void NodeProperty::SetAddress(const string& _address)
 bool NodeProperty::AddressHasBeenSet() const
 {
     return m_addressHasBeenSet;
+}
+
+string NodeProperty::GetWanServiceAddress() const
+{
+    return m_wanServiceAddress;
+}
+
+void NodeProperty::SetWanServiceAddress(const string& _wanServiceAddress)
+{
+    m_wanServiceAddress = _wanServiceAddress;
+    m_wanServiceAddressHasBeenSet = true;
+}
+
+bool NodeProperty::WanServiceAddressHasBeenSet() const
+{
+    return m_wanServiceAddressHasBeenSet;
 }
 
 string NodeProperty::GetRole() const

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点是否设置成不可调度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsUnschedulable 节点是否设置成不可调度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsUnschedulable() const;
 
                     /**
                      * 设置节点是否设置成不可调度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isUnschedulable 节点是否设置成不可调度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsUnschedulable(const bool& _isUnschedulable);
@@ -116,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取伸缩组的label列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Labels 伸缩组的label列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Label> GetLabels() const;
 
                     /**
                      * 设置伸缩组的label列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _labels 伸缩组的label列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabels(const std::vector<Label>& _labels);
@@ -176,14 +168,12 @@ namespace TencentCloud
 
                     /**
                      * 节点是否设置成不可调度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isUnschedulable;
                     bool m_isUnschedulableHasBeenSet;
 
                     /**
                      * 伸缩组的label列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Label> m_labels;
                     bool m_labelsHasBeenSet;

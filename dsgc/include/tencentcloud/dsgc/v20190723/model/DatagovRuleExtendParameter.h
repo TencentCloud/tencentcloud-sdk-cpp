@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,9 @@ namespace TencentCloud
                      * 获取扩展参数名称，目前支持如下两个扩展属性名称：
 IsFullWordMatch，表示是否全文匹配，该Name对应的Value可取值为"true"或"false":，默认值为"false"，
 IsIgnoreCase，表示是否忽略大小写，该Name对应的Value可取值为"true"或"false"，默认值为"true"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 扩展参数名称，目前支持如下两个扩展属性名称：
 IsFullWordMatch，表示是否全文匹配，该Name对应的Value可取值为"true"或"false":，默认值为"false"，
 IsIgnoreCase，表示是否忽略大小写，该Name对应的Value可取值为"true"或"false"，默认值为"true"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
@@ -63,11 +61,9 @@ IsIgnoreCase，表示是否忽略大小写，该Name对应的Value可取值为"t
                      * 设置扩展参数名称，目前支持如下两个扩展属性名称：
 IsFullWordMatch，表示是否全文匹配，该Name对应的Value可取值为"true"或"false":，默认值为"false"，
 IsIgnoreCase，表示是否忽略大小写，该Name对应的Value可取值为"true"或"false"，默认值为"true"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 扩展参数名称，目前支持如下两个扩展属性名称：
 IsFullWordMatch，表示是否全文匹配，该Name对应的Value可取值为"true"或"false":，默认值为"false"，
 IsIgnoreCase，表示是否忽略大小写，该Name对应的Value可取值为"true"或"false"，默认值为"true"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -81,18 +77,14 @@ IsIgnoreCase，表示是否忽略大小写，该Name对应的Value可取值为"t
 
                     /**
                      * 获取扩展参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 扩展参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置扩展参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 扩展参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -110,14 +102,12 @@ IsIgnoreCase，表示是否忽略大小写，该Name对应的Value可取值为"t
                      * 扩展参数名称，目前支持如下两个扩展属性名称：
 IsFullWordMatch，表示是否全文匹配，该Name对应的Value可取值为"true"或"false":，默认值为"false"，
 IsIgnoreCase，表示是否忽略大小写，该Name对应的Value可取值为"true"或"false"，默认值为"true"
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 扩展参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

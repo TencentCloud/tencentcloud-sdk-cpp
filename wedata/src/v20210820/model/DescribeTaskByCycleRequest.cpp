@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,10 @@ using namespace std;
 DescribeTaskByCycleRequest::DescribeTaskByCycleRequest() :
     m_projectIdHasBeenSet(false),
     m_inChargeHasBeenSet(false),
-    m_workflowIdHasBeenSet(false)
+    m_workflowIdHasBeenSet(false),
+    m_projectIdsHasBeenSet(false),
+    m_resourceGroupIdsHasBeenSet(false),
+    m_taskTypeIdListHasBeenSet(false)
 {
 }
 
@@ -58,6 +61,45 @@ string DescribeTaskByCycleRequest::ToJsonString() const
         string key = "WorkflowId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_workflowId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_projectIds.begin(); itr != m_projectIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_resourceGroupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_resourceGroupIds.begin(); itr != m_resourceGroupIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_taskTypeIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskTypeIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_taskTypeIdList.begin(); itr != m_taskTypeIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -114,6 +156,54 @@ void DescribeTaskByCycleRequest::SetWorkflowId(const string& _workflowId)
 bool DescribeTaskByCycleRequest::WorkflowIdHasBeenSet() const
 {
     return m_workflowIdHasBeenSet;
+}
+
+vector<string> DescribeTaskByCycleRequest::GetProjectIds() const
+{
+    return m_projectIds;
+}
+
+void DescribeTaskByCycleRequest::SetProjectIds(const vector<string>& _projectIds)
+{
+    m_projectIds = _projectIds;
+    m_projectIdsHasBeenSet = true;
+}
+
+bool DescribeTaskByCycleRequest::ProjectIdsHasBeenSet() const
+{
+    return m_projectIdsHasBeenSet;
+}
+
+vector<string> DescribeTaskByCycleRequest::GetResourceGroupIds() const
+{
+    return m_resourceGroupIds;
+}
+
+void DescribeTaskByCycleRequest::SetResourceGroupIds(const vector<string>& _resourceGroupIds)
+{
+    m_resourceGroupIds = _resourceGroupIds;
+    m_resourceGroupIdsHasBeenSet = true;
+}
+
+bool DescribeTaskByCycleRequest::ResourceGroupIdsHasBeenSet() const
+{
+    return m_resourceGroupIdsHasBeenSet;
+}
+
+vector<string> DescribeTaskByCycleRequest::GetTaskTypeIdList() const
+{
+    return m_taskTypeIdList;
+}
+
+void DescribeTaskByCycleRequest::SetTaskTypeIdList(const vector<string>& _taskTypeIdList)
+{
+    m_taskTypeIdList = _taskTypeIdList;
+    m_taskTypeIdListHasBeenSet = true;
+}
+
+bool DescribeTaskByCycleRequest::TaskTypeIdListHasBeenSet() const
+{
+    return m_taskTypeIdListHasBeenSet;
 }
 
 

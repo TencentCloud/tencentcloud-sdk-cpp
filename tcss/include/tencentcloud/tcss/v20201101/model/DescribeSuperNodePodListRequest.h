@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -135,15 +135,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取排序字段
-                     * @return By 排序字段
+                     * 获取排序字段 StartTime
+                     * @return By 排序字段 StartTime
                      * 
                      */
                     std::string GetBy() const;
 
                     /**
-                     * 设置排序字段
-                     * @param _by 排序字段
+                     * 设置排序字段 StartTime
+                     * @param _by 排序字段 StartTime
                      * 
                      */
                     void SetBy(const std::string& _by);
@@ -204,7 +204,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 排序字段
+                     * 排序字段 StartTime
                      */
                     std::string m_by;
                     bool m_byHasBeenSet;

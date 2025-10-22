@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否开启云自动化助手。取值范围：<br><li>TRUE：表示开启云自动化助手服务<br><li>FALSE：表示不开启云自动化助手服务<br><br>默认取值：TRUE。
-                     * @return Enabled 是否开启云自动化助手。取值范围：<br><li>TRUE：表示开启云自动化助手服务<br><li>FALSE：表示不开启云自动化助手服务<br><br>默认取值：TRUE。
+                     * 获取是否开启云自动化助手。取值范围：<br><li>TRUE：表示开启云自动化助手服务</li><br><li>FALSE：表示不开启云自动化助手服务</li><br><br>默认取值：TRUE。
+                     * @return Enabled 是否开启云自动化助手。取值范围：<br><li>TRUE：表示开启云自动化助手服务</li><br><li>FALSE：表示不开启云自动化助手服务</li><br><br>默认取值：TRUE。
                      * 
                      */
                     bool GetEnabled() const;
 
                     /**
-                     * 设置是否开启云自动化助手。取值范围：<br><li>TRUE：表示开启云自动化助手服务<br><li>FALSE：表示不开启云自动化助手服务<br><br>默认取值：TRUE。
-                     * @param _enabled 是否开启云自动化助手。取值范围：<br><li>TRUE：表示开启云自动化助手服务<br><li>FALSE：表示不开启云自动化助手服务<br><br>默认取值：TRUE。
+                     * 设置是否开启云自动化助手。取值范围：<br><li>TRUE：表示开启云自动化助手服务</li><br><li>FALSE：表示不开启云自动化助手服务</li><br><br>默认取值：TRUE。
+                     * @param _enabled 是否开启云自动化助手。取值范围：<br><li>TRUE：表示开启云自动化助手服务</li><br><li>FALSE：表示不开启云自动化助手服务</li><br><br>默认取值：TRUE。
                      * 
                      */
                     void SetEnabled(const bool& _enabled);
@@ -70,7 +70,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否开启云自动化助手。取值范围：<br><li>TRUE：表示开启云自动化助手服务<br><li>FALSE：表示不开启云自动化助手服务<br><br>默认取值：TRUE。
+                     * 是否开启云自动化助手。取值范围：<br><li>TRUE：表示开启云自动化助手服务</li><br><li>FALSE：表示不开启云自动化助手服务</li><br><br>默认取值：TRUE。
                      */
                     bool m_enabled;
                     bool m_enabledHasBeenSet;

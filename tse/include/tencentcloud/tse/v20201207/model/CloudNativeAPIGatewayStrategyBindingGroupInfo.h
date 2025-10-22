@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网关分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId 网关分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置网关分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupId 网关分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeConfig 节点配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CloudNativeAPIGatewayNodeConfig GetNodeConfig() const;
 
                     /**
                      * 设置节点配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodeConfig 节点配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodeConfig(const CloudNativeAPIGatewayNodeConfig& _nodeConfig);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取绑定时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BindTime 绑定时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBindTime() const;
 
                     /**
                      * 设置绑定时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bindTime 绑定时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBindTime(const std::string& _bindTime);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网关分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupName 网关分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置网关分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupName 网关分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取绑定状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 绑定状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置绑定状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 绑定状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -176,35 +156,30 @@ namespace TencentCloud
 
                     /**
                      * 网关分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
                      * 节点配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CloudNativeAPIGatewayNodeConfig m_nodeConfig;
                     bool m_nodeConfigHasBeenSet;
 
                     /**
                      * 绑定时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bindTime;
                     bool m_bindTimeHasBeenSet;
 
                     /**
                      * 网关分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
                      * 绑定状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

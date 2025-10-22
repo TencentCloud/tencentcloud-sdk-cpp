@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ SmartOptimizerPolicy::SmartOptimizerPolicy() :
     m_resourcesHasBeenSet(false),
     m_writtenHasBeenSet(false),
     m_lifecycleHasBeenSet(false),
-    m_indexHasBeenSet(false)
+    m_indexHasBeenSet(false),
+    m_changeTableHasBeenSet(false)
 {
 }
 
@@ -115,6 +116,23 @@ CoreInternalOutcome SmartOptimizerPolicy::Deserialize(const rapidjson::Value &va
         m_indexHasBeenSet = true;
     }
 
+    if (value.HasMember("ChangeTable") && !value["ChangeTable"].IsNull())
+    {
+        if (!value["ChangeTable"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SmartOptimizerPolicy.ChangeTable` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_changeTable.Deserialize(value["ChangeTable"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_changeTableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -170,6 +188,15 @@ void SmartOptimizerPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_index.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_changeTableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChangeTable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_changeTable.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -253,5 +280,21 @@ void SmartOptimizerPolicy::SetIndex(const SmartOptimizerIndexPolicy& _index)
 bool SmartOptimizerPolicy::IndexHasBeenSet() const
 {
     return m_indexHasBeenSet;
+}
+
+SmartOptimizerChangeTablePolicy SmartOptimizerPolicy::GetChangeTable() const
+{
+    return m_changeTable;
+}
+
+void SmartOptimizerPolicy::SetChangeTable(const SmartOptimizerChangeTablePolicy& _changeTable)
+{
+    m_changeTable = _changeTable;
+    m_changeTableHasBeenSet = true;
+}
+
+bool SmartOptimizerPolicy::ChangeTableHasBeenSet() const
+{
+    return m_changeTableHasBeenSet;
 }
 

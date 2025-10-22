@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DBInstanceNums 数据库实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDBInstanceNums() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DBNums 数据库个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDBNums() const;
@@ -78,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取表的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableNums 表的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTableNums() const;
@@ -94,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取字段个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FieldNums 字段个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFieldNums() const;
@@ -110,9 +102,7 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库实例的分布情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DBInstanceDistribution 数据库实例的分布情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Note> GetDBInstanceDistribution() const;
@@ -126,9 +116,7 @@ namespace TencentCloud
 
                     /**
                      * 获取db分布情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DBDistribution db分布情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Note> GetDBDistribution() const;
@@ -142,9 +130,7 @@ namespace TencentCloud
 
                     /**
                      * 获取cos桶的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BucketNums cos桶的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBucketNums() const;
@@ -158,9 +144,7 @@ namespace TencentCloud
 
                     /**
                      * 获取文件个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileNums 文件个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFileNums() const;
@@ -174,9 +158,7 @@ namespace TencentCloud
 
                     /**
                      * 获取用于对用户进行提示信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 用于对用户进行提示信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
@@ -190,9 +172,7 @@ namespace TencentCloud
 
                     /**
                      * 获取es实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EsInstanceNums es实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetEsInstanceNums() const;
@@ -206,9 +186,7 @@ namespace TencentCloud
 
                     /**
                      * 获取es索引数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EsIndexNums es索引数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetEsIndexNums() const;
@@ -222,9 +200,7 @@ namespace TencentCloud
 
                     /**
                      * 获取es字段数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EsFieldNums es字段数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetEsFieldNums() const;
@@ -238,9 +214,7 @@ namespace TencentCloud
 
                     /**
                      * 获取mongo实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MongoInstanceNums mongo实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMongoInstanceNums() const;
@@ -254,9 +228,7 @@ namespace TencentCloud
 
                     /**
                      * 获取mongo数据库数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MongoDbNums mongo数据库数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMongoDbNums() const;
@@ -270,9 +242,7 @@ namespace TencentCloud
 
                     /**
                      * 获取mongo集合数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MongoColNums mongo集合数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMongoColNums() const;
@@ -286,9 +256,7 @@ namespace TencentCloud
 
                     /**
                      * 获取mongo字段数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MongoFieldNums mongo字段数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMongoFieldNums() const;
@@ -304,112 +272,96 @@ namespace TencentCloud
 
                     /**
                      * 数据库实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_dBInstanceNums;
                     bool m_dBInstanceNumsHasBeenSet;
 
                     /**
                      * 数据库个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_dBNums;
                     bool m_dBNumsHasBeenSet;
 
                     /**
                      * 表的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_tableNums;
                     bool m_tableNumsHasBeenSet;
 
                     /**
                      * 字段个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_fieldNums;
                     bool m_fieldNumsHasBeenSet;
 
                     /**
                      * 数据库实例的分布情况
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Note> m_dBInstanceDistribution;
                     bool m_dBInstanceDistributionHasBeenSet;
 
                     /**
                      * db分布情况
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Note> m_dBDistribution;
                     bool m_dBDistributionHasBeenSet;
 
                     /**
                      * cos桶的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_bucketNums;
                     bool m_bucketNumsHasBeenSet;
 
                     /**
                      * 文件个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_fileNums;
                     bool m_fileNumsHasBeenSet;
 
                     /**
                      * 用于对用户进行提示信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
                      * es实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_esInstanceNums;
                     bool m_esInstanceNumsHasBeenSet;
 
                     /**
                      * es索引数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_esIndexNums;
                     bool m_esIndexNumsHasBeenSet;
 
                     /**
                      * es字段数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_esFieldNums;
                     bool m_esFieldNumsHasBeenSet;
 
                     /**
                      * mongo实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_mongoInstanceNums;
                     bool m_mongoInstanceNumsHasBeenSet;
 
                     /**
                      * mongo数据库数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_mongoDbNums;
                     bool m_mongoDbNumsHasBeenSet;
 
                     /**
                      * mongo集合数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_mongoColNums;
                     bool m_mongoColNumsHasBeenSet;
 
                     /**
                      * mongo字段数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_mongoFieldNums;
                     bool m_mongoFieldNumsHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,8 @@
 #include <tencentcloud/mps/v20190612/model/CreateOutputSRTSettings.h>
 #include <tencentcloud/mps/v20190612/model/CreateOutputRTMPSettings.h>
 #include <tencentcloud/mps/v20190612/model/CreateOutputInfoRTPSettings.h>
+#include <tencentcloud/mps/v20190612/model/CreateOutputRistSettings.h>
+#include <tencentcloud/mps/v20190612/model/PidSelector.h>
 
 
 namespace TencentCloud
@@ -92,15 +94,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取输出协议，可选[SRT|RTP|RTMP|RTMP_PULL]。
-                     * @return Protocol 输出协议，可选[SRT|RTP|RTMP|RTMP_PULL]。
+                     * 获取输出的转推协议，支持SRT|RTP|RTMP|RTMP_PULL|RTSP_PULL|RIST。
+                     * @return Protocol 输出的转推协议，支持SRT|RTP|RTMP|RTMP_PULL|RTSP_PULL|RIST。
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置输出协议，可选[SRT|RTP|RTMP|RTMP_PULL]。
-                     * @param _protocol 输出协议，可选[SRT|RTP|RTMP|RTMP_PULL]。
+                     * 设置输出的转推协议，支持SRT|RTP|RTMP|RTMP_PULL|RTSP_PULL|RIST。
+                     * @param _protocol 输出的转推协议，支持SRT|RTP|RTMP|RTMP_PULL|RTSP_PULL|RIST。
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -132,6 +134,48 @@ namespace TencentCloud
                      * 
                      */
                     bool OutputRegionHasBeenSet() const;
+
+                    /**
+                     * 获取输出类型：Internet/TencentCSS
+                     * @return OutputType 输出类型：Internet/TencentCSS
+                     * 
+                     */
+                    std::string GetOutputType() const;
+
+                    /**
+                     * 设置输出类型：Internet/TencentCSS
+                     * @param _outputType 输出类型：Internet/TencentCSS
+                     * 
+                     */
+                    void SetOutputType(const std::string& _outputType);
+
+                    /**
+                     * 判断参数 OutputType 是否已赋值
+                     * @return OutputType 是否已赋值
+                     * 
+                     */
+                    bool OutputTypeHasBeenSet() const;
+
+                    /**
+                     * 获取输出模块类型，包括Pinpoint（单点输出，最多支持四路并发输出）；MultiMesh（多路输出，支持大于四路的并发输出，目前可以达到200路）。默认类型为 Pinpoint 输出。对于单个 Flow 一个区域最多只能有一个 MultiMesh 输出
+                     * @return OutputKind 输出模块类型，包括Pinpoint（单点输出，最多支持四路并发输出）；MultiMesh（多路输出，支持大于四路的并发输出，目前可以达到200路）。默认类型为 Pinpoint 输出。对于单个 Flow 一个区域最多只能有一个 MultiMesh 输出
+                     * 
+                     */
+                    std::string GetOutputKind() const;
+
+                    /**
+                     * 设置输出模块类型，包括Pinpoint（单点输出，最多支持四路并发输出）；MultiMesh（多路输出，支持大于四路的并发输出，目前可以达到200路）。默认类型为 Pinpoint 输出。对于单个 Flow 一个区域最多只能有一个 MultiMesh 输出
+                     * @param _outputKind 输出模块类型，包括Pinpoint（单点输出，最多支持四路并发输出）；MultiMesh（多路输出，支持大于四路的并发输出，目前可以达到200路）。默认类型为 Pinpoint 输出。对于单个 Flow 一个区域最多只能有一个 MultiMesh 输出
+                     * 
+                     */
+                    void SetOutputKind(const std::string& _outputKind);
+
+                    /**
+                     * 判断参数 OutputKind 是否已赋值
+                     * @return OutputKind 是否已赋值
+                     * 
+                     */
+                    bool OutputKindHasBeenSet() const;
 
                     /**
                      * 获取输出的SRT的配置。
@@ -284,6 +328,48 @@ namespace TencentCloud
                      */
                     bool ZonesHasBeenSet() const;
 
+                    /**
+                     * 获取输出的RIST的配置。
+                     * @return RISTSettings 输出的RIST的配置。
+                     * 
+                     */
+                    CreateOutputRistSettings GetRISTSettings() const;
+
+                    /**
+                     * 设置输出的RIST的配置。
+                     * @param _rISTSettings 输出的RIST的配置。
+                     * 
+                     */
+                    void SetRISTSettings(const CreateOutputRistSettings& _rISTSettings);
+
+                    /**
+                     * 判断参数 RISTSettings 是否已赋值
+                     * @return RISTSettings 是否已赋值
+                     * 
+                     */
+                    bool RISTSettingsHasBeenSet() const;
+
+                    /**
+                     * 获取对于含有多个音/视频轨的流，可以指定需要使用的轨道
+                     * @return PidSelector 对于含有多个音/视频轨的流，可以指定需要使用的轨道
+                     * 
+                     */
+                    PidSelector GetPidSelector() const;
+
+                    /**
+                     * 设置对于含有多个音/视频轨的流，可以指定需要使用的轨道
+                     * @param _pidSelector 对于含有多个音/视频轨的流，可以指定需要使用的轨道
+                     * 
+                     */
+                    void SetPidSelector(const PidSelector& _pidSelector);
+
+                    /**
+                     * 判断参数 PidSelector 是否已赋值
+                     * @return PidSelector 是否已赋值
+                     * 
+                     */
+                    bool PidSelectorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -299,7 +385,7 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 输出协议，可选[SRT|RTP|RTMP|RTMP_PULL]。
+                     * 输出的转推协议，支持SRT|RTP|RTMP|RTMP_PULL|RTSP_PULL|RIST。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
@@ -309,6 +395,18 @@ namespace TencentCloud
                      */
                     std::string m_outputRegion;
                     bool m_outputRegionHasBeenSet;
+
+                    /**
+                     * 输出类型：Internet/TencentCSS
+                     */
+                    std::string m_outputType;
+                    bool m_outputTypeHasBeenSet;
+
+                    /**
+                     * 输出模块类型，包括Pinpoint（单点输出，最多支持四路并发输出）；MultiMesh（多路输出，支持大于四路的并发输出，目前可以达到200路）。默认类型为 Pinpoint 输出。对于单个 Flow 一个区域最多只能有一个 MultiMesh 输出
+                     */
+                    std::string m_outputKind;
+                    bool m_outputKindHasBeenSet;
 
                     /**
                      * 输出的SRT的配置。
@@ -352,6 +450,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_zones;
                     bool m_zonesHasBeenSet;
+
+                    /**
+                     * 输出的RIST的配置。
+                     */
+                    CreateOutputRistSettings m_rISTSettings;
+                    bool m_rISTSettingsHasBeenSet;
+
+                    /**
+                     * 对于含有多个音/视频轨的流，可以指定需要使用的轨道
+                     */
+                    PidSelector m_pidSelector;
+                    bool m_pidSelectorHasBeenSet;
 
                 };
             }

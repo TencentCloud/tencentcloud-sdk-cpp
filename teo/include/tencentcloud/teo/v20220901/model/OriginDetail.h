@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -259,6 +259,27 @@ namespace TencentCloud
                     bool PrivateParametersHasBeenSet() const;
 
                     /**
+                     * 获取当前配置的回源 HOST 头。
+                     * @return HostHeader 当前配置的回源 HOST 头。
+                     * 
+                     */
+                    std::string GetHostHeader() const;
+
+                    /**
+                     * 设置当前配置的回源 HOST 头。
+                     * @param _hostHeader 当前配置的回源 HOST 头。
+                     * 
+                     */
+                    void SetHostHeader(const std::string& _hostHeader);
+
+                    /**
+                     * 判断参数 HostHeader 是否已赋值
+                     * @return HostHeader 是否已赋值
+                     * 
+                     */
+                    bool HostHeaderHasBeenSet() const;
+
+                    /**
                      * 获取MO 子应用 ID
                      * @return VodeoSubAppId MO 子应用 ID
                      * @deprecated
@@ -321,6 +342,52 @@ namespace TencentCloud
                      */
                     bool VodeoBucketIdHasBeenSet() const;
 
+                    /**
+                     * 获取云点播回源范围，当 OriginType = VOD 时该参数会返回值。取值有:<li>all：当前源站对应的云点播应用内所有文件，默认值为 all；</li> <li>bucket：当前源站对应的云点播应用下指定某一个存储桶内的文件。通过参数 VodBucketId 来指定存储桶。
+</li>
+                     * @return VodOriginScope 云点播回源范围，当 OriginType = VOD 时该参数会返回值。取值有:<li>all：当前源站对应的云点播应用内所有文件，默认值为 all；</li> <li>bucket：当前源站对应的云点播应用下指定某一个存储桶内的文件。通过参数 VodBucketId 来指定存储桶。
+</li>
+                     * 
+                     */
+                    std::string GetVodOriginScope() const;
+
+                    /**
+                     * 设置云点播回源范围，当 OriginType = VOD 时该参数会返回值。取值有:<li>all：当前源站对应的云点播应用内所有文件，默认值为 all；</li> <li>bucket：当前源站对应的云点播应用下指定某一个存储桶内的文件。通过参数 VodBucketId 来指定存储桶。
+</li>
+                     * @param _vodOriginScope 云点播回源范围，当 OriginType = VOD 时该参数会返回值。取值有:<li>all：当前源站对应的云点播应用内所有文件，默认值为 all；</li> <li>bucket：当前源站对应的云点播应用下指定某一个存储桶内的文件。通过参数 VodBucketId 来指定存储桶。
+</li>
+                     * 
+                     */
+                    void SetVodOriginScope(const std::string& _vodOriginScope);
+
+                    /**
+                     * 判断参数 VodOriginScope 是否已赋值
+                     * @return VodOriginScope 是否已赋值
+                     * 
+                     */
+                    bool VodOriginScopeHasBeenSet() const;
+
+                    /**
+                     * 获取云点播存储桶 ID，该参数当 OriginType = VOD 且 VodOriginScope = bucket 时必填。数据来源：云点播专业版应用下存储桶的存储 ID 。
+                     * @return VodBucketId 云点播存储桶 ID，该参数当 OriginType = VOD 且 VodOriginScope = bucket 时必填。数据来源：云点播专业版应用下存储桶的存储 ID 。
+                     * 
+                     */
+                    std::string GetVodBucketId() const;
+
+                    /**
+                     * 设置云点播存储桶 ID，该参数当 OriginType = VOD 且 VodOriginScope = bucket 时必填。数据来源：云点播专业版应用下存储桶的存储 ID 。
+                     * @param _vodBucketId 云点播存储桶 ID，该参数当 OriginType = VOD 且 VodOriginScope = bucket 时必填。数据来源：云点播专业版应用下存储桶的存储 ID 。
+                     * 
+                     */
+                    void SetVodBucketId(const std::string& _vodBucketId);
+
+                    /**
+                     * 判断参数 VodBucketId 是否已赋值
+                     * @return VodBucketId 是否已赋值
+                     * 
+                     */
+                    bool VodBucketIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -382,6 +449,12 @@ namespace TencentCloud
                     bool m_privateParametersHasBeenSet;
 
                     /**
+                     * 当前配置的回源 HOST 头。
+                     */
+                    std::string m_hostHeader;
+                    bool m_hostHeaderHasBeenSet;
+
+                    /**
                      * MO 子应用 ID
                      */
                     int64_t m_vodeoSubAppId;
@@ -398,6 +471,19 @@ namespace TencentCloud
                      */
                     std::string m_vodeoBucketId;
                     bool m_vodeoBucketIdHasBeenSet;
+
+                    /**
+                     * 云点播回源范围，当 OriginType = VOD 时该参数会返回值。取值有:<li>all：当前源站对应的云点播应用内所有文件，默认值为 all；</li> <li>bucket：当前源站对应的云点播应用下指定某一个存储桶内的文件。通过参数 VodBucketId 来指定存储桶。
+</li>
+                     */
+                    std::string m_vodOriginScope;
+                    bool m_vodOriginScopeHasBeenSet;
+
+                    /**
+                     * 云点播存储桶 ID，该参数当 OriginType = VOD 且 VodOriginScope = bucket 时必填。数据来源：云点播专业版应用下存储桶的存储 ID 。
+                     */
+                    std::string m_vodBucketId;
+                    bool m_vodBucketIdHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分级组名称，唯一性约束，最多60个字符，仅允许输入中文、英文字母、数字、'_'、'-'，并且开头和结尾需为中文、英文字母或者数字，Name不可重复
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LevelGroupName 分级组名称，唯一性约束，最多60个字符，仅允许输入中文、英文字母、数字、'_'、'-'，并且开头和结尾需为中文、英文字母或者数字，Name不可重复
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLevelGroupName() const;
 
                     /**
                      * 设置分级组名称，唯一性约束，最多60个字符，仅允许输入中文、英文字母、数字、'_'、'-'，并且开头和结尾需为中文、英文字母或者数字，Name不可重复
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _levelGroupName 分级组名称，唯一性约束，最多60个字符，仅允许输入中文、英文字母、数字、'_'、'-'，并且开头和结尾需为中文、英文字母或者数字，Name不可重复
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevelGroupName(const std::string& _levelGroupName);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分级组来源，0为内置，1为自定义
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Source 分级组来源，0为内置，1为自定义
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSource() const;
 
                     /**
                      * 设置分级组来源，0为内置，1为自定义
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _source 分级组来源，0为内置，1为自定义
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSource(const int64_t& _source);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分级组描述，最多1024字符
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LevelGroupDesc 分级组描述，最多1024字符
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLevelGroupDesc() const;
 
                     /**
                      * 设置分级组描述，最多1024字符
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _levelGroupDesc 分级组描述，最多1024字符
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevelGroupDesc(const std::string& _levelGroupDesc);
@@ -125,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取具体分级标识详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LevelDetail 具体分级标识详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<LevelItem> GetLevelDetail() const;
 
                     /**
                      * 设置具体分级标识详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _levelDetail 具体分级标识详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevelDetail(const std::vector<LevelItem>& _levelDetail);
@@ -150,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引用合规组次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RefComplianceCnt 引用合规组次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRefComplianceCnt() const;
 
                     /**
                      * 设置引用合规组次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _refComplianceCnt 引用合规组次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRefComplianceCnt(const uint64_t& _refComplianceCnt);
@@ -175,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引用合规组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RefCompliance 引用合规组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DspaDiscoveryComplianceGroup> GetRefCompliance() const;
 
                     /**
                      * 设置引用合规组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _refCompliance 引用合规组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRefCompliance(const std::vector<DspaDiscoveryComplianceGroup>& _refCompliance);
@@ -200,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分级组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LevelGroupId 分级组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLevelGroupId() const;
 
                     /**
                      * 设置分级组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _levelGroupId 分级组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevelGroupId(const uint64_t& _levelGroupId);
@@ -227,49 +199,42 @@ namespace TencentCloud
 
                     /**
                      * 分级组名称，唯一性约束，最多60个字符，仅允许输入中文、英文字母、数字、'_'、'-'，并且开头和结尾需为中文、英文字母或者数字，Name不可重复
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_levelGroupName;
                     bool m_levelGroupNameHasBeenSet;
 
                     /**
                      * 分级组来源，0为内置，1为自定义
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
                      * 分级组描述，最多1024字符
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_levelGroupDesc;
                     bool m_levelGroupDescHasBeenSet;
 
                     /**
                      * 具体分级标识详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LevelItem> m_levelDetail;
                     bool m_levelDetailHasBeenSet;
 
                     /**
                      * 引用合规组次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_refComplianceCnt;
                     bool m_refComplianceCntHasBeenSet;
 
                     /**
                      * 引用合规组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DspaDiscoveryComplianceGroup> m_refCompliance;
                     bool m_refComplianceHasBeenSet;
 
                     /**
                      * 分级组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_levelGroupId;
                     bool m_levelGroupIdHasBeenSet;

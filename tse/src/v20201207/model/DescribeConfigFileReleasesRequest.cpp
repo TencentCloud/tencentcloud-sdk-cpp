@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,8 @@ DescribeConfigFileReleasesRequest::DescribeConfigFileReleasesRequest() :
     m_onlyUseHasBeenSet(false),
     m_releaseNameHasBeenSet(false),
     m_orderFieldHasBeenSet(false),
-    m_orderDescHasBeenSet(false)
+    m_orderDescHasBeenSet(false),
+    m_idHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,14 @@ string DescribeConfigFileReleasesRequest::ToJsonString() const
         string key = "OrderDesc";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_orderDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -289,6 +298,22 @@ void DescribeConfigFileReleasesRequest::SetOrderDesc(const string& _orderDesc)
 bool DescribeConfigFileReleasesRequest::OrderDescHasBeenSet() const
 {
     return m_orderDescHasBeenSet;
+}
+
+string DescribeConfigFileReleasesRequest::GetId() const
+{
+    return m_id;
+}
+
+void DescribeConfigFileReleasesRequest::SetId(const string& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool DescribeConfigFileReleasesRequest::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
 }
 
 

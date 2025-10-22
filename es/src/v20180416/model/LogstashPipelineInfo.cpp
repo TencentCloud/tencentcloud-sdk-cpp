@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,9 @@ LogstashPipelineInfo::LogstashPipelineInfo() :
     m_batchDelayHasBeenSet(false),
     m_queueTypeHasBeenSet(false),
     m_queueMaxBytesHasBeenSet(false),
-    m_queueCheckPointWritesHasBeenSet(false)
+    m_queueCheckPointWritesHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_updateTimeHasBeenSet(false)
 {
 }
 
@@ -139,6 +141,26 @@ CoreInternalOutcome LogstashPipelineInfo::Deserialize(const rapidjson::Value &va
         m_queueCheckPointWritesHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LogstashPipelineInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
+    {
+        if (!value["UpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LogstashPipelineInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = string(value["UpdateTime"].GetString());
+        m_updateTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +246,22 @@ void LogstashPipelineInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "QueueCheckPointWrites";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_queueCheckPointWrites, allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +425,37 @@ void LogstashPipelineInfo::SetQueueCheckPointWrites(const uint64_t& _queueCheckP
 bool LogstashPipelineInfo::QueueCheckPointWritesHasBeenSet() const
 {
     return m_queueCheckPointWritesHasBeenSet;
+}
+
+string LogstashPipelineInfo::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void LogstashPipelineInfo::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool LogstashPipelineInfo::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+string LogstashPipelineInfo::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+void LogstashPipelineInfo::SetUpdateTime(const string& _updateTime)
+{
+    m_updateTime = _updateTime;
+    m_updateTimeHasBeenSet = true;
+}
+
+bool LogstashPipelineInfo::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
 }
 

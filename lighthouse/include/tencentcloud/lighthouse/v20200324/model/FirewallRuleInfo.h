@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用类型，取值：自定义，HTTP(80)，HTTPS(443)，Linux登录(22)，Windows登录(3389)，MySQL(3306)，SQL Server(1433)，全部TCP，全部UDP，Ping-ICMP，ALL。
-                     * @return AppType 应用类型，取值：自定义，HTTP(80)，HTTPS(443)，Linux登录(22)，Windows登录(3389)，MySQL(3306)，SQL Server(1433)，全部TCP，全部UDP，Ping-ICMP，ALL。
+                     * 获取应用类型，取值：自定义，HTTP(80)，HTTPS(443)，Linux登录(22)，Windows登录(3389)，MySQL(3306)，SQL Server(1433)，全部TCP，全部UDP，Ping-ICMP，Windows登录优化 (3389)，FTP (21)，Ping，Ping (IPv6)，ALL。
+                     * @return AppType 应用类型，取值：自定义，HTTP(80)，HTTPS(443)，Linux登录(22)，Windows登录(3389)，MySQL(3306)，SQL Server(1433)，全部TCP，全部UDP，Ping-ICMP，Windows登录优化 (3389)，FTP (21)，Ping，Ping (IPv6)，ALL。
                      * 
                      */
                     std::string GetAppType() const;
 
                     /**
-                     * 设置应用类型，取值：自定义，HTTP(80)，HTTPS(443)，Linux登录(22)，Windows登录(3389)，MySQL(3306)，SQL Server(1433)，全部TCP，全部UDP，Ping-ICMP，ALL。
-                     * @param _appType 应用类型，取值：自定义，HTTP(80)，HTTPS(443)，Linux登录(22)，Windows登录(3389)，MySQL(3306)，SQL Server(1433)，全部TCP，全部UDP，Ping-ICMP，ALL。
+                     * 设置应用类型，取值：自定义，HTTP(80)，HTTPS(443)，Linux登录(22)，Windows登录(3389)，MySQL(3306)，SQL Server(1433)，全部TCP，全部UDP，Ping-ICMP，Windows登录优化 (3389)，FTP (21)，Ping，Ping (IPv6)，ALL。
+                     * @param _appType 应用类型，取值：自定义，HTTP(80)，HTTPS(443)，Linux登录(22)，Windows登录(3389)，MySQL(3306)，SQL Server(1433)，全部TCP，全部UDP，Ping-ICMP，Windows登录优化 (3389)，FTP (21)，Ping，Ping (IPv6)，ALL。
                      * 
                      */
                     void SetAppType(const std::string& _appType);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool AppTypeHasBeenSet() const;
 
                     /**
-                     * 获取协议，取值：TCP，UDP，ICMP，ALL。
-                     * @return Protocol 协议，取值：TCP，UDP，ICMP，ALL。
+                     * 获取协议，取值：TCP，UDP，ICMP，ICMPv6，ALL。
+                     * @return Protocol 协议，取值：TCP，UDP，ICMP，ICMPv6，ALL。
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置协议，取值：TCP，UDP，ICMP，ALL。
-                     * @param _protocol 协议，取值：TCP，UDP，ICMP，ALL。
+                     * 设置协议，取值：TCP，UDP，ICMP，ICMPv6，ALL。
+                     * @param _protocol 协议，取值：TCP，UDP，ICMP，ICMPv6，ALL。
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -143,6 +143,39 @@ namespace TencentCloud
                     bool CidrBlockHasBeenSet() const;
 
                     /**
+                     * 获取IPv6网段或IPv6地址(互斥)。
+示例值：::/0。
+
+和CidrBlock互斥，两者都不指定时，如果Protocol是ICMPv6，则取默认值::/0。
+                     * @return Ipv6CidrBlock IPv6网段或IPv6地址(互斥)。
+示例值：::/0。
+
+和CidrBlock互斥，两者都不指定时，如果Protocol是ICMPv6，则取默认值::/0。
+                     * 
+                     */
+                    std::string GetIpv6CidrBlock() const;
+
+                    /**
+                     * 设置IPv6网段或IPv6地址(互斥)。
+示例值：::/0。
+
+和CidrBlock互斥，两者都不指定时，如果Protocol是ICMPv6，则取默认值::/0。
+                     * @param _ipv6CidrBlock IPv6网段或IPv6地址(互斥)。
+示例值：::/0。
+
+和CidrBlock互斥，两者都不指定时，如果Protocol是ICMPv6，则取默认值::/0。
+                     * 
+                     */
+                    void SetIpv6CidrBlock(const std::string& _ipv6CidrBlock);
+
+                    /**
+                     * 判断参数 Ipv6CidrBlock 是否已赋值
+                     * @return Ipv6CidrBlock 是否已赋值
+                     * 
+                     */
+                    bool Ipv6CidrBlockHasBeenSet() const;
+
+                    /**
                      * 获取取值：ACCEPT，DROP。默认为 ACCEPT。
                      * @return Action 取值：ACCEPT，DROP。默认为 ACCEPT。
                      * 
@@ -187,13 +220,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用类型，取值：自定义，HTTP(80)，HTTPS(443)，Linux登录(22)，Windows登录(3389)，MySQL(3306)，SQL Server(1433)，全部TCP，全部UDP，Ping-ICMP，ALL。
+                     * 应用类型，取值：自定义，HTTP(80)，HTTPS(443)，Linux登录(22)，Windows登录(3389)，MySQL(3306)，SQL Server(1433)，全部TCP，全部UDP，Ping-ICMP，Windows登录优化 (3389)，FTP (21)，Ping，Ping (IPv6)，ALL。
                      */
                     std::string m_appType;
                     bool m_appTypeHasBeenSet;
 
                     /**
-                     * 协议，取值：TCP，UDP，ICMP，ALL。
+                     * 协议，取值：TCP，UDP，ICMP，ICMPv6，ALL。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
@@ -212,6 +245,15 @@ namespace TencentCloud
                      */
                     std::string m_cidrBlock;
                     bool m_cidrBlockHasBeenSet;
+
+                    /**
+                     * IPv6网段或IPv6地址(互斥)。
+示例值：::/0。
+
+和CidrBlock互斥，两者都不指定时，如果Protocol是ICMPv6，则取默认值::/0。
+                     */
+                    std::string m_ipv6CidrBlock;
+                    bool m_ipv6CidrBlockHasBeenSet;
 
                     /**
                      * 取值：ACCEPT，DROP。默认为 ACCEPT。

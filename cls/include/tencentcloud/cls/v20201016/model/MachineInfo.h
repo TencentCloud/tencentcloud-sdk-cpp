@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取机器实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceID 机器实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
                      * 设置机器实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceID 机器实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
@@ -114,15 +110,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取机器离线时间，空为正常，异常返回具体时间
-                     * @return OfflineTime 机器离线时间，空为正常，异常返回具体时间
+                     * 获取机器离线时间，空为正常，异常返回具体时间。时间格式：YYYY-MM-DD HH:mm:ss
+                     * @return OfflineTime 机器离线时间，空为正常，异常返回具体时间。时间格式：YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetOfflineTime() const;
 
                     /**
-                     * 设置机器离线时间，空为正常，异常返回具体时间
-                     * @param _offlineTime 机器离线时间，空为正常，异常返回具体时间
+                     * 设置机器离线时间，空为正常，异常返回具体时间。时间格式：YYYY-MM-DD HH:mm:ss
+                     * @param _offlineTime 机器离线时间，空为正常，异常返回具体时间。时间格式：YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     void SetOfflineTime(const std::string& _offlineTime);
@@ -257,7 +253,6 @@ namespace TencentCloud
 
                     /**
                      * 机器实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceID;
                     bool m_instanceIDHasBeenSet;
@@ -269,7 +264,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 机器离线时间，空为正常，异常返回具体时间
+                     * 机器离线时间，空为正常，异常返回具体时间。时间格式：YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_offlineTime;
                     bool m_offlineTimeHasBeenSet;

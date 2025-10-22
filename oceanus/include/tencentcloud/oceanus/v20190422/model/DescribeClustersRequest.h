@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -129,14 +129,38 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤规则
+    
+- Name
+    按照集群的名字进行模糊查询。例如：测试
+    类型： String
+    必选： 否
+    
                      * @return Filters 过滤规则
+    
+- Name
+    按照集群的名字进行模糊查询。例如：测试
+    类型： String
+    必选： 否
+    
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤规则
+    
+- Name
+    按照集群的名字进行模糊查询。例如：测试
+    类型： String
+    必选： 否
+    
                      * @param _filters 过滤规则
+    
+- Name
+    按照集群的名字进行模糊查询。例如：测试
+    类型： String
+    必选： 否
+    
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -197,6 +221,12 @@ namespace TencentCloud
 
                     /**
                      * 过滤规则
+    
+- Name
+    按照集群的名字进行模糊查询。例如：测试
+    类型： String
+    必选： 否
+    
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

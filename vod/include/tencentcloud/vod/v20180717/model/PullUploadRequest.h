@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -248,6 +248,27 @@ namespace TencentCloud
                     bool ClassIdHasBeenSet() const;
 
                     /**
+                     * 获取任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
+                     * @return TasksPriority 任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
+                     * 
+                     */
+                    int64_t GetTasksPriority() const;
+
+                    /**
+                     * 设置任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
+                     * @param _tasksPriority 任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
+                     * 
+                     */
+                    void SetTasksPriority(const int64_t& _tasksPriority);
+
+                    /**
+                     * 判断参数 TasksPriority 是否已赋值
+                     * @return TasksPriority 是否已赋值
+                     * 
+                     */
+                    bool TasksPriorityHasBeenSet() const;
+
+                    /**
                      * 获取来源上下文，用于透传用户请求信息，当指定 Procedure 任务后，任务流状态变更回调将返回该字段值，最长 1000 个字符。
                      * @return SessionContext 来源上下文，用于透传用户请求信息，当指定 Procedure 任务后，任务流状态变更回调将返回该字段值，最长 1000 个字符。
                      * 
@@ -390,6 +411,12 @@ namespace TencentCloud
                      */
                     int64_t m_classId;
                     bool m_classIdHasBeenSet;
+
+                    /**
+                     * 任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
+                     */
+                    int64_t m_tasksPriority;
+                    bool m_tasksPriorityHasBeenSet;
 
                     /**
                      * 来源上下文，用于透传用户请求信息，当指定 Procedure 任务后，任务流状态变更回调将返回该字段值，最长 1000 个字符。

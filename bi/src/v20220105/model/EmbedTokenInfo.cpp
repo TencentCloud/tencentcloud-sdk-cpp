@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,8 @@ EmbedTokenInfo::EmbedTokenInfo() :
     m_intentionHasBeenSet(false),
     m_tokenTypeHasBeenSet(false),
     m_tokenNumHasBeenSet(false),
-    m_singleUserMultiTokenHasBeenSet(false)
+    m_singleUserMultiTokenHasBeenSet(false),
+    m_configParamHasBeenSet(false)
 {
 }
 
@@ -238,6 +239,16 @@ CoreInternalOutcome EmbedTokenInfo::Deserialize(const rapidjson::Value &value)
         m_singleUserMultiTokenHasBeenSet = true;
     }
 
+    if (value.HasMember("ConfigParam") && !value["ConfigParam"].IsNull())
+    {
+        if (!value["ConfigParam"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EmbedTokenInfo.ConfigParam` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_configParam = string(value["ConfigParam"].GetString());
+        m_configParamHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -395,6 +406,14 @@ void EmbedTokenInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "SingleUserMultiToken";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_singleUserMultiToken, allocator);
+    }
+
+    if (m_configParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigParam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_configParam.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -702,5 +721,21 @@ void EmbedTokenInfo::SetSingleUserMultiToken(const bool& _singleUserMultiToken)
 bool EmbedTokenInfo::SingleUserMultiTokenHasBeenSet() const
 {
     return m_singleUserMultiTokenHasBeenSet;
+}
+
+string EmbedTokenInfo::GetConfigParam() const
+{
+    return m_configParam;
+}
+
+void EmbedTokenInfo::SetConfigParam(const string& _configParam)
+{
+    m_configParam = _configParam;
+    m_configParamHasBeenSet = true;
+}
+
+bool EmbedTokenInfo::ConfigParamHasBeenSet() const
+{
+    return m_configParamHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取集群ID，通过DescribeClusters接口获取
+                     * @return ClusterId 集群ID，通过DescribeClusters接口获取
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置集群ID，通过DescribeClusters接口获取
+                     * @param _clusterId 集群ID，通过DescribeClusters接口获取
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取节点名
-                     * @return NodeName 节点名
+                     * 获取节点ID
+                     * @return NodeName 节点ID
                      * 
                      */
                     std::string GetNodeName() const;
 
                     /**
-                     * 设置节点名
-                     * @param _nodeName 节点名
+                     * 设置节点ID
+                     * @param _nodeName 节点ID
                      * 
                      */
                     void SetNodeName(const std::string& _nodeName);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID
+                     * 集群ID，通过DescribeClusters接口获取
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 节点名
+                     * 节点ID
                      */
                     std::string m_nodeName;
                     bool m_nodeNameHasBeenSet;

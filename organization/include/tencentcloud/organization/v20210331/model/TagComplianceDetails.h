@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取合规状态。true-合规，false-不合规
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComplianceStatus 合规状态。true-合规，false-不合规
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetComplianceStatus() const;
 
                     /**
                      * 设置合规状态。true-合规，false-不合规
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _complianceStatus 合规状态。true-合规，false-不合规
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComplianceStatus(const bool& _complianceStatus);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取值不合规的标签键列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeysWithNonCompliantValues 值不合规的标签键列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetKeysWithNonCompliantValues() const;
 
                     /**
                      * 设置值不合规的标签键列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _keysWithNonCompliantValues 值不合规的标签键列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKeysWithNonCompliantValues(const std::vector<std::string>& _keysWithNonCompliantValues);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取键不合规的标签键列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NonCompliantKeys 键不合规的标签键列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetNonCompliantKeys() const;
 
                     /**
                      * 设置键不合规的标签键列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nonCompliantKeys 键不合规的标签键列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNonCompliantKeys(const std::vector<std::string>& _nonCompliantKeys);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 合规状态。true-合规，false-不合规
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_complianceStatus;
                     bool m_complianceStatusHasBeenSet;
 
                     /**
                      * 值不合规的标签键列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_keysWithNonCompliantValues;
                     bool m_keysWithNonCompliantValuesHasBeenSet;
 
                     /**
                      * 键不合规的标签键列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_nonCompliantKeys;
                     bool m_nonCompliantKeysHasBeenSet;

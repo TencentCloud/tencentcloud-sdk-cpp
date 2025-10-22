@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,8 @@ DescribeCloudStorageAIServiceResponse::DescribeCloudStorageAIServiceResponse() :
     m_userIdHasBeenSet(false),
     m_enabledHasBeenSet(false),
     m_configHasBeenSet(false),
-    m_rOIHasBeenSet(false)
+    m_rOIHasBeenSet(false),
+    m_packageIdHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,16 @@ CoreInternalOutcome DescribeCloudStorageAIServiceResponse::Deserialize(const str
         m_rOIHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PackageId") && !rsp["PackageId"].IsNull())
+    {
+        if (!rsp["PackageId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PackageId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_packageId = string(rsp["PackageId"].GetString());
+        m_packageIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -204,11 +215,19 @@ string DescribeCloudStorageAIServiceResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_rOI.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_packageIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PackageId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_packageId.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -284,6 +303,16 @@ string DescribeCloudStorageAIServiceResponse::GetROI() const
 bool DescribeCloudStorageAIServiceResponse::ROIHasBeenSet() const
 {
     return m_rOIHasBeenSet;
+}
+
+string DescribeCloudStorageAIServiceResponse::GetPackageId() const
+{
+    return m_packageId;
+}
+
+bool DescribeCloudStorageAIServiceResponse::PackageIdHasBeenSet() const
+{
+    return m_packageIdHasBeenSet;
 }
 
 

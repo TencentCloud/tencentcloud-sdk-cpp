@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,15 +106,23 @@ namespace TencentCloud
                     bool TopicTypeHasBeenSet() const;
 
                     /**
-                     * 获取日志集的保存周期，单位：天，默认30天，范围[1, 3600]。
-                     * @return Period 日志集的保存周期，单位：天，默认30天，范围[1, 3600]。
+                     * 获取存储时间，单位天，默认为 30。
+- 日志接入标准存储时，支持1至3600天，值为3640时代表永久保存。
+- 日志接入低频存储时，支持7至3600天，值为3640时代表永久保存。
+                     * @return Period 存储时间，单位天，默认为 30。
+- 日志接入标准存储时，支持1至3600天，值为3640时代表永久保存。
+- 日志接入低频存储时，支持7至3600天，值为3640时代表永久保存。
                      * 
                      */
                     uint64_t GetPeriod() const;
 
                     /**
-                     * 设置日志集的保存周期，单位：天，默认30天，范围[1, 3600]。
-                     * @param _period 日志集的保存周期，单位：天，默认30天，范围[1, 3600]。
+                     * 设置存储时间，单位天，默认为 30。
+- 日志接入标准存储时，支持1至3600天，值为3640时代表永久保存。
+- 日志接入低频存储时，支持7至3600天，值为3640时代表永久保存。
+                     * @param _period 存储时间，单位天，默认为 30。
+- 日志接入标准存储时，支持1至3600天，值为3640时代表永久保存。
+- 日志接入低频存储时，支持7至3600天，值为3640时代表永久保存。
                      * 
                      */
                     void SetPeriod(const uint64_t& _period);
@@ -168,7 +176,9 @@ namespace TencentCloud
                     bool m_topicTypeHasBeenSet;
 
                     /**
-                     * 日志集的保存周期，单位：天，默认30天，范围[1, 3600]。
+                     * 存储时间，单位天，默认为 30。
+- 日志接入标准存储时，支持1至3600天，值为3640时代表永久保存。
+- 日志接入低频存储时，支持7至3600天，值为3640时代表永久保存。
                      */
                     uint64_t m_period;
                     bool m_periodHasBeenSet;

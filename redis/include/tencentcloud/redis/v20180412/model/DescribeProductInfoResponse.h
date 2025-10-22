@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取地域售卖信息。
-                     * @return RegionSet 地域售卖信息。
+                     * 获取地域售卖信息。即使指定具体地域，也返回所有地域的售卖信息。
+                     * @return RegionSet 地域售卖信息。即使指定具体地域，也返回所有地域的售卖信息。
                      * 
                      */
                     std::vector<RegionConf> GetRegionSet() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 地域售卖信息。
+                     * 地域售卖信息。即使指定具体地域，也返回所有地域的售卖信息。
                      */
                     std::vector<RegionConf> m_regionSet;
                     bool m_regionSetHasBeenSet;

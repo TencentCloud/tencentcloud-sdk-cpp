@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,10 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务流ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FlowId 任务流ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取任务流ID(后付费或者serverless资源返回，如果需要同步任务状态，请使用DescribeFlow接口)
+                     * @return FlowId 任务流ID(后付费或者serverless资源返回，如果需要同步任务状态，请使用DescribeFlow接口)
                      * 
                      */
                     int64_t GetFlowId() const;
@@ -60,9 +58,9 @@ namespace TencentCloud
                     bool FlowIdHasBeenSet() const;
 
                     /**
-                     * 获取退款订单号
+                     * 获取退款订单号(预付费资源返回，如果需要同步订单状态，请使用计费产品的DescribeDealsByCond同步订单状态)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DealNames 退款订单号
+                     * @return DealNames 退款订单号(预付费资源返回，如果需要同步订单状态，请使用计费产品的DescribeDealsByCond同步订单状态)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -78,14 +76,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务流ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 任务流ID(后付费或者serverless资源返回，如果需要同步任务状态，请使用DescribeFlow接口)
                      */
                     int64_t m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
-                     * 退款订单号
+                     * 退款订单号(预付费资源返回，如果需要同步订单状态，请使用计费产品的DescribeDealsByCond同步订单状态)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_dealNames;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分配的 partition 信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Partitions 分配的 partition 信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetPartitions() const;
 
                     /**
                      * 设置分配的 partition 信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _partitions 分配的 partition 信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPartitions(const std::vector<int64_t>& _partitions);
@@ -102,7 +98,6 @@ namespace TencentCloud
 
                     /**
                      * 分配的 partition 信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_partitions;
                     bool m_partitionsHasBeenSet;

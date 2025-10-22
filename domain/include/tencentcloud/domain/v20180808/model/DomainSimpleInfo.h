@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -131,18 +131,14 @@ NoAudit: 无需实名认证
 
                     /**
                      * 获取域名实名认证不通过原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealNameAuditUnpassReason 域名实名认证不通过原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRealNameAuditUnpassReason() const;
 
                     /**
                      * 设置域名实名认证不通过原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _realNameAuditUnpassReason 域名实名认证不通过原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRealNameAuditUnpassReason(const std::string& _realNameAuditUnpassReason);
@@ -197,18 +193,14 @@ Rejected：域名命名审核拒绝
 
                     /**
                      * 获取域名命名审核不通过原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DomainNameAuditUnpassReason 域名命名审核不通过原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomainNameAuditUnpassReason() const;
 
                     /**
                      * 设置域名命名审核不通过原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domainNameAuditUnpassReason 域名命名审核不通过原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomainNameAuditUnpassReason(const std::string& _domainNameAuditUnpassReason);
@@ -278,7 +270,7 @@ clientTransferProhibited：注册商禁止转移
 clientUpdateProhibited：注册商禁止更新
 clientDeleteProhibited：注册商禁止删除
 serverRenewProhibited: 注册局禁止续费
-clientRenewProhobited: 注册商禁止续费
+clientRenewProhibited: 注册商禁止续费
                      * @return DomainStatus 域名状态。
 ok：正常
 serverHold：注册局暂停解析 
@@ -294,7 +286,7 @@ clientTransferProhibited：注册商禁止转移
 clientUpdateProhibited：注册商禁止更新
 clientDeleteProhibited：注册商禁止删除
 serverRenewProhibited: 注册局禁止续费
-clientRenewProhobited: 注册商禁止续费
+clientRenewProhibited: 注册商禁止续费
                      * 
                      */
                     std::vector<std::string> GetDomainStatus() const;
@@ -315,7 +307,7 @@ clientTransferProhibited：注册商禁止转移
 clientUpdateProhibited：注册商禁止更新
 clientDeleteProhibited：注册商禁止删除
 serverRenewProhibited: 注册局禁止续费
-clientRenewProhobited: 注册商禁止续费
+clientRenewProhibited: 注册商禁止续费
                      * @param _domainStatus 域名状态。
 ok：正常
 serverHold：注册局暂停解析 
@@ -331,7 +323,7 @@ clientTransferProhibited：注册商禁止转移
 clientUpdateProhibited：注册商禁止更新
 clientDeleteProhibited：注册商禁止删除
 serverRenewProhibited: 注册局禁止续费
-clientRenewProhobited: 注册商禁止续费
+clientRenewProhibited: 注册商禁止续费
                      * 
                      */
                     void SetDomainStatus(const std::vector<std::string>& _domainStatus);
@@ -648,7 +640,6 @@ NoAudit: 无需实名认证
 
                     /**
                      * 域名实名认证不通过原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_realNameAuditUnpassReason;
                     bool m_realNameAuditUnpassReasonHasBeenSet;
@@ -666,7 +657,6 @@ Rejected：域名命名审核拒绝
 
                     /**
                      * 域名命名审核不通过原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domainNameAuditUnpassReason;
                     bool m_domainNameAuditUnpassReasonHasBeenSet;
@@ -699,7 +689,7 @@ clientTransferProhibited：注册商禁止转移
 clientUpdateProhibited：注册商禁止更新
 clientDeleteProhibited：注册商禁止删除
 serverRenewProhibited: 注册局禁止续费
-clientRenewProhobited: 注册商禁止续费
+clientRenewProhibited: 注册商禁止续费
                      */
                     std::vector<std::string> m_domainStatus;
                     bool m_domainStatusHasBeenSet;

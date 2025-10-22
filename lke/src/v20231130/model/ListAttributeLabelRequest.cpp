@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ ListAttributeLabelRequest::ListAttributeLabelRequest() :
     m_pageSizeHasBeenSet(false),
     m_loginUinHasBeenSet(false),
     m_loginSubAccountUinHasBeenSet(false),
-    m_queryHasBeenSet(false)
+    m_queryHasBeenSet(false),
+    m_labelSizeHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string ListAttributeLabelRequest::ToJsonString() const
         string key = "Query";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_query.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_labelSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LabelSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_labelSize, allocator);
     }
 
 
@@ -189,6 +198,22 @@ void ListAttributeLabelRequest::SetQuery(const string& _query)
 bool ListAttributeLabelRequest::QueryHasBeenSet() const
 {
     return m_queryHasBeenSet;
+}
+
+uint64_t ListAttributeLabelRequest::GetLabelSize() const
+{
+    return m_labelSize;
+}
+
+void ListAttributeLabelRequest::SetLabelSize(const uint64_t& _labelSize)
+{
+    m_labelSize = _labelSize;
+    m_labelSizeHasBeenSet = true;
+}
+
+bool ListAttributeLabelRequest::LabelSizeHasBeenSet() const
+{
+    return m_labelSizeHasBeenSet;
 }
 
 

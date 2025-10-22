@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 续费云硬盘包年包月相关参数设置
+                * 续费云硬盘包年包月相关参数设置。
                 */
                 class RenewDiskChargePrepaid : public AbstractModel
                 {
@@ -48,14 +48,22 @@ namespace TencentCloud
 
                     /**
                      * 获取续费周期。
+单位：月。
+取值范围: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36]
                      * @return Period 续费周期。
+单位：月。
+取值范围: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36]
                      * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
                      * 设置续费周期。
+单位：月。
+取值范围: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36]
                      * @param _period 续费周期。
+单位：月。
+取值范围: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36]
                      * 
                      */
                     void SetPeriod(const int64_t& _period);
@@ -68,15 +76,31 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费，用户需要手动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不自动续费，且不通知<br><br>默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，云硬盘到期后将按月自动续费。
-                     * @return RenewFlag 自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费，用户需要手动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不自动续费，且不通知<br><br>默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，云硬盘到期后将按月自动续费。
+                     * 获取自动续费标识。
+取值范围：
+<li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费</li>
+<li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费，用户需要手动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不自动续费，且不通知</li>
+默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，云硬盘到期后将按月自动续费。
+                     * @return RenewFlag 自动续费标识。
+取值范围：
+<li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费</li>
+<li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费，用户需要手动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不自动续费，且不通知</li>
+默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，云硬盘到期后将按月自动续费。
                      * 
                      */
                     std::string GetRenewFlag() const;
 
                     /**
-                     * 设置自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费，用户需要手动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不自动续费，且不通知<br><br>默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，云硬盘到期后将按月自动续费。
-                     * @param _renewFlag 自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费，用户需要手动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不自动续费，且不通知<br><br>默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，云硬盘到期后将按月自动续费。
+                     * 设置自动续费标识。
+取值范围：
+<li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费</li>
+<li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费，用户需要手动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不自动续费，且不通知</li>
+默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，云硬盘到期后将按月自动续费。
+                     * @param _renewFlag 自动续费标识。
+取值范围：
+<li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费</li>
+<li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费，用户需要手动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不自动续费，且不通知</li>
+默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，云硬盘到期后将按月自动续费。
                      * 
                      */
                     void SetRenewFlag(const std::string& _renewFlag);
@@ -110,15 +134,27 @@ namespace TencentCloud
                     bool TimeUnitHasBeenSet() const;
 
                     /**
-                     * 获取当前实例到期时间。如“2018-01-01 00:00:00”。指定该参数即可对齐云硬盘所挂载的实例到期时间。该参数与Period必须指定其一，且不支持同时指定。
-                     * @return CurInstanceDeadline 当前实例到期时间。如“2018-01-01 00:00:00”。指定该参数即可对齐云硬盘所挂载的实例到期时间。该参数与Period必须指定其一，且不支持同时指定。
+                     * 获取当前实例到期时间。如“2018-01-01 00:00:00”。
+指定该参数即可对齐云硬盘所挂载的实例到期时间。
+该参数与Period必须指定其一，且不支持同时指定。
+该参数值必须大于入参中云硬盘的过期时间。
+                     * @return CurInstanceDeadline 当前实例到期时间。如“2018-01-01 00:00:00”。
+指定该参数即可对齐云硬盘所挂载的实例到期时间。
+该参数与Period必须指定其一，且不支持同时指定。
+该参数值必须大于入参中云硬盘的过期时间。
                      * 
                      */
                     std::string GetCurInstanceDeadline() const;
 
                     /**
-                     * 设置当前实例到期时间。如“2018-01-01 00:00:00”。指定该参数即可对齐云硬盘所挂载的实例到期时间。该参数与Period必须指定其一，且不支持同时指定。
-                     * @param _curInstanceDeadline 当前实例到期时间。如“2018-01-01 00:00:00”。指定该参数即可对齐云硬盘所挂载的实例到期时间。该参数与Period必须指定其一，且不支持同时指定。
+                     * 设置当前实例到期时间。如“2018-01-01 00:00:00”。
+指定该参数即可对齐云硬盘所挂载的实例到期时间。
+该参数与Period必须指定其一，且不支持同时指定。
+该参数值必须大于入参中云硬盘的过期时间。
+                     * @param _curInstanceDeadline 当前实例到期时间。如“2018-01-01 00:00:00”。
+指定该参数即可对齐云硬盘所挂载的实例到期时间。
+该参数与Period必须指定其一，且不支持同时指定。
+该参数值必须大于入参中云硬盘的过期时间。
                      * 
                      */
                     void SetCurInstanceDeadline(const std::string& _curInstanceDeadline);
@@ -134,12 +170,18 @@ namespace TencentCloud
 
                     /**
                      * 续费周期。
+单位：月。
+取值范围: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36]
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费，用户需要手动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不自动续费，且不通知<br><br>默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，云硬盘到期后将按月自动续费。
+                     * 自动续费标识。
+取值范围：
+<li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费</li>
+<li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费，用户需要手动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不自动续费，且不通知</li>
+默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，云硬盘到期后将按月自动续费。
                      */
                     std::string m_renewFlag;
                     bool m_renewFlagHasBeenSet;
@@ -151,7 +193,10 @@ namespace TencentCloud
                     bool m_timeUnitHasBeenSet;
 
                     /**
-                     * 当前实例到期时间。如“2018-01-01 00:00:00”。指定该参数即可对齐云硬盘所挂载的实例到期时间。该参数与Period必须指定其一，且不支持同时指定。
+                     * 当前实例到期时间。如“2018-01-01 00:00:00”。
+指定该参数即可对齐云硬盘所挂载的实例到期时间。
+该参数与Period必须指定其一，且不支持同时指定。
+该参数值必须大于入参中云硬盘的过期时间。
                      */
                     std::string m_curInstanceDeadline;
                     bool m_curInstanceDeadlineHasBeenSet;

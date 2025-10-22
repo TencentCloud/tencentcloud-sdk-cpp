@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -88,6 +88,27 @@ namespace TencentCloud
                      */
                     bool SubnetIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否为隐藏可用区
+                     * @return Hidden 是否为隐藏可用区
+                     * 
+                     */
+                    bool GetHidden() const;
+
+                    /**
+                     * 设置是否为隐藏可用区
+                     * @param _hidden 是否为隐藏可用区
+                     * 
+                     */
+                    void SetHidden(const bool& _hidden);
+
+                    /**
+                     * 判断参数 Hidden 是否已赋值
+                     * @return Hidden 是否已赋值
+                     * 
+                     */
+                    bool HiddenHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +122,12 @@ namespace TencentCloud
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
+
+                    /**
+                     * 是否为隐藏可用区
+                     */
+                    bool m_hidden;
+                    bool m_hiddenHasBeenSet;
 
                 };
             }

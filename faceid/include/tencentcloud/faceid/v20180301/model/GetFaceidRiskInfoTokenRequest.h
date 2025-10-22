@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取SDK中生成的Meta字符串
-                     * @return Meta SDK中生成的Meta字符串
+                     * 获取SDK中生成的Meta字符串。
+                     * @return Meta SDK中生成的Meta字符串。
                      * 
                      */
                     std::string GetMeta() const;
 
                     /**
-                     * 设置SDK中生成的Meta字符串
-                     * @param _meta SDK中生成的Meta字符串
+                     * 设置SDK中生成的Meta字符串。
+                     * @param _meta SDK中生成的Meta字符串。
                      * 
                      */
                     void SetMeta(const std::string& _meta);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool MetaHasBeenSet() const;
 
                     /**
-                     * 获取透传参数 1000长度字符串
-                     * @return Extra 透传参数 1000长度字符串
+                     * 获取透传参数 1000长度字符串。
+                     * @return Extra 透传参数 1000长度字符串。
                      * 
                      */
                     std::string GetExtra() const;
 
                     /**
-                     * 设置透传参数 1000长度字符串
-                     * @param _extra 透传参数 1000长度字符串
+                     * 设置透传参数 1000长度字符串。
+                     * @param _extra 透传参数 1000长度字符串。
                      * 
                      */
                     void SetExtra(const std::string& _extra);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * SDK中生成的Meta字符串
+                     * SDK中生成的Meta字符串。
                      */
                     std::string m_meta;
                     bool m_metaHasBeenSet;
 
                     /**
-                     * 透传参数 1000长度字符串
+                     * 透传参数 1000长度字符串。
                      */
                     std::string m_extra;
                     bool m_extraHasBeenSet;

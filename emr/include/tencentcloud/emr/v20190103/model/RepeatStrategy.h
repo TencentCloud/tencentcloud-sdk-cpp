@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -173,18 +173,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则过期时间，超过该时间后，规则将自动置为暂停状态，形式为"2020-07-23 00:00:00"。必须填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Expire 规则过期时间，超过该时间后，规则将自动置为暂停状态，形式为"2020-07-23 00:00:00"。必须填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpire() const;
 
                     /**
                      * 设置规则过期时间，超过该时间后，规则将自动置为暂停状态，形式为"2020-07-23 00:00:00"。必须填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expire 规则过期时间，超过该时间后，规则将自动置为暂停状态，形式为"2020-07-23 00:00:00"。必须填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpire(const std::string& _expire);
@@ -195,6 +191,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ExpireHasBeenSet() const;
+
+                    /**
+                     * 获取周期性规则开始时间
+                     * @return StartTime 周期性规则开始时间
+                     * 
+                     */
+                    std::string GetStartTime() const;
+
+                    /**
+                     * 设置周期性规则开始时间
+                     * @param _startTime 周期性规则开始时间
+                     * 
+                     */
+                    void SetStartTime(const std::string& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     * 
+                     */
+                    bool StartTimeHasBeenSet() const;
 
                 private:
 
@@ -234,10 +251,15 @@ namespace TencentCloud
 
                     /**
                      * 规则过期时间，超过该时间后，规则将自动置为暂停状态，形式为"2020-07-23 00:00:00"。必须填写
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expire;
                     bool m_expireHasBeenSet;
+
+                    /**
+                     * 周期性规则开始时间
+                     */
+                    std::string m_startTime;
+                    bool m_startTimeHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,11 +23,11 @@ using namespace TencentCloud::Apm::V20210622::Model;
 using namespace std;
 
 DescribeTagValuesRequest::DescribeTagValuesRequest() :
-    m_tagKeyHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
+    m_tagKeyHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
     m_orFiltersHasBeenSet(false),
     m_typeHasBeenSet(false)
 {
@@ -40,6 +40,14 @@ string DescribeTagValuesRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_tagKeyHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -48,12 +56,12 @@ string DescribeTagValuesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_tagKey.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_instanceIdHasBeenSet)
+    if (m_startTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceId";
+        string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_startTime, allocator);
     }
 
     if (m_endTimeHasBeenSet)
@@ -77,14 +85,6 @@ string DescribeTagValuesRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
-    }
-
-    if (m_startTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "StartTime";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_startTime, allocator);
     }
 
     if (m_orFiltersHasBeenSet)
@@ -118,6 +118,22 @@ string DescribeTagValuesRequest::ToJsonString() const
 }
 
 
+string DescribeTagValuesRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void DescribeTagValuesRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool DescribeTagValuesRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
 string DescribeTagValuesRequest::GetTagKey() const
 {
     return m_tagKey;
@@ -134,20 +150,20 @@ bool DescribeTagValuesRequest::TagKeyHasBeenSet() const
     return m_tagKeyHasBeenSet;
 }
 
-string DescribeTagValuesRequest::GetInstanceId() const
+int64_t DescribeTagValuesRequest::GetStartTime() const
 {
-    return m_instanceId;
+    return m_startTime;
 }
 
-void DescribeTagValuesRequest::SetInstanceId(const string& _instanceId)
+void DescribeTagValuesRequest::SetStartTime(const int64_t& _startTime)
 {
-    m_instanceId = _instanceId;
-    m_instanceIdHasBeenSet = true;
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
 }
 
-bool DescribeTagValuesRequest::InstanceIdHasBeenSet() const
+bool DescribeTagValuesRequest::StartTimeHasBeenSet() const
 {
-    return m_instanceIdHasBeenSet;
+    return m_startTimeHasBeenSet;
 }
 
 int64_t DescribeTagValuesRequest::GetEndTime() const
@@ -180,22 +196,6 @@ void DescribeTagValuesRequest::SetFilters(const vector<Filter>& _filters)
 bool DescribeTagValuesRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
-}
-
-int64_t DescribeTagValuesRequest::GetStartTime() const
-{
-    return m_startTime;
-}
-
-void DescribeTagValuesRequest::SetStartTime(const int64_t& _startTime)
-{
-    m_startTime = _startTime;
-    m_startTimeHasBeenSet = true;
-}
-
-bool DescribeTagValuesRequest::StartTimeHasBeenSet() const
-{
-    return m_startTimeHasBeenSet;
 }
 
 vector<Filter> DescribeTagValuesRequest::GetOrFilters() const

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -112,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扣分详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScoreDetails 扣分详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ScoreDetail> GetScoreDetails() const;
 
                     /**
                      * 设置扣分详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scoreDetails 扣分详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScoreDetails(const std::vector<ScoreDetail>& _scoreDetails);
@@ -134,6 +130,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ScoreDetailsHasBeenSet() const;
+
+                    /**
+                     * 获取健康等级版本，默认为V1
+                     * @return HealthLevelVersion 健康等级版本，默认为V1
+                     * 
+                     */
+                    std::string GetHealthLevelVersion() const;
+
+                    /**
+                     * 设置健康等级版本，默认为V1
+                     * @param _healthLevelVersion 健康等级版本，默认为V1
+                     * 
+                     */
+                    void SetHealthLevelVersion(const std::string& _healthLevelVersion);
+
+                    /**
+                     * 判断参数 HealthLevelVersion 是否已赋值
+                     * @return HealthLevelVersion 是否已赋值
+                     * 
+                     */
+                    bool HealthLevelVersionHasBeenSet() const;
 
                 private:
 
@@ -157,10 +174,15 @@ namespace TencentCloud
 
                     /**
                      * 扣分详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ScoreDetail> m_scoreDetails;
                     bool m_scoreDetailsHasBeenSet;
+
+                    /**
+                     * 健康等级版本，默认为V1
+                     */
+                    std::string m_healthLevelVersion;
+                    bool m_healthLevelVersionHasBeenSet;
 
                 };
             }

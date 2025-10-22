@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -88,6 +88,27 @@ namespace TencentCloud
                      */
                     bool VpcIdHasBeenSet() const;
 
+                    /**
+                     * 获取Target所属网络，私有网络格式如86323，如果是基础网络，则为0
+                     * @return NumericalVpcId Target所属网络，私有网络格式如86323，如果是基础网络，则为0
+                     * 
+                     */
+                    int64_t GetNumericalVpcId() const;
+
+                    /**
+                     * 设置Target所属网络，私有网络格式如86323，如果是基础网络，则为0
+                     * @param _numericalVpcId Target所属网络，私有网络格式如86323，如果是基础网络，则为0
+                     * 
+                     */
+                    void SetNumericalVpcId(const int64_t& _numericalVpcId);
+
+                    /**
+                     * 判断参数 NumericalVpcId 是否已赋值
+                     * @return NumericalVpcId 是否已赋值
+                     * 
+                     */
+                    bool NumericalVpcIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +122,12 @@ namespace TencentCloud
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
+
+                    /**
+                     * Target所属网络，私有网络格式如86323，如果是基础网络，则为0
+                     */
+                    int64_t m_numericalVpcId;
+                    bool m_numericalVpcIdHasBeenSet;
 
                 };
             }

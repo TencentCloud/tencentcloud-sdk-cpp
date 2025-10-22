@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,8 +24,11 @@ using namespace std;
 
 DescribeTasksRequest::DescribeTasksRequest() :
     m_statusHasBeenSet(false),
+    m_subTaskHasFailedHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_scrollTokenHasBeenSet(false)
+    m_scrollTokenHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false)
 {
 }
 
@@ -44,6 +47,14 @@ string DescribeTasksRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_subTaskHasFailedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubTaskHasFailed";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subTaskHasFailed, allocator);
+    }
+
     if (m_limitHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -58,6 +69,22 @@ string DescribeTasksRequest::ToJsonString() const
         string key = "ScrollToken";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_scrollToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -82,6 +109,22 @@ void DescribeTasksRequest::SetStatus(const string& _status)
 bool DescribeTasksRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+bool DescribeTasksRequest::GetSubTaskHasFailed() const
+{
+    return m_subTaskHasFailed;
+}
+
+void DescribeTasksRequest::SetSubTaskHasFailed(const bool& _subTaskHasFailed)
+{
+    m_subTaskHasFailed = _subTaskHasFailed;
+    m_subTaskHasFailedHasBeenSet = true;
+}
+
+bool DescribeTasksRequest::SubTaskHasFailedHasBeenSet() const
+{
+    return m_subTaskHasFailedHasBeenSet;
 }
 
 uint64_t DescribeTasksRequest::GetLimit() const
@@ -114,6 +157,38 @@ void DescribeTasksRequest::SetScrollToken(const string& _scrollToken)
 bool DescribeTasksRequest::ScrollTokenHasBeenSet() const
 {
     return m_scrollTokenHasBeenSet;
+}
+
+string DescribeTasksRequest::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void DescribeTasksRequest::SetStartTime(const string& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool DescribeTasksRequest::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
+}
+
+string DescribeTasksRequest::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void DescribeTasksRequest::SetEndTime(const string& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool DescribeTasksRequest::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
 }
 
 

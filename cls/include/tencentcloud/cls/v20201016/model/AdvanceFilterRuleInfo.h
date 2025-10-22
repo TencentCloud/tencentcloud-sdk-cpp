@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Key 过滤字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置过滤字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _key 过滤字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤规则，0:等于，1:字段存在，2:字段不存在
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rule 过滤规则，0:等于，1:字段存在，2:字段不存在
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRule() const;
 
                     /**
                      * 设置过滤规则，0:等于，1:字段存在，2:字段不存在
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rule 过滤规则，0:等于，1:字段存在，2:字段不存在
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRule(const uint64_t& _rule);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 过滤值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置过滤值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 过滤值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 过滤字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
                      * 过滤规则，0:等于，1:字段存在，2:字段不存在
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_rule;
                     bool m_ruleHasBeenSet;
 
                     /**
                      * 过滤值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

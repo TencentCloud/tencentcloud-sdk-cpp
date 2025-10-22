@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取类型，Pods
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 类型，Pods
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型，Pods
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 类型，Pods
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetValue() const;
 
                     /**
                      * 设置数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const int64_t& _value);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扩容周期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PeriodSeconds 扩容周期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPeriodSeconds() const;
 
                     /**
                      * 设置扩容周期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _periodSeconds 扩容周期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPeriodSeconds(const int64_t& _periodSeconds);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 类型，Pods
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_value;
                     bool m_valueHasBeenSet;
 
                     /**
                      * 扩容周期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_periodSeconds;
                     bool m_periodSecondsHasBeenSet;

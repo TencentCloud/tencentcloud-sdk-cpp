@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通知模板ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NoticeId 通知模板ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNoticeId() const;
 
                     /**
                      * 设置通知模板ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _noticeId 通知模板ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNoticeId(const std::string& _noticeId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取AMP consumer ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AMPConsumerId AMP consumer ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAMPConsumerId() const;
 
                     /**
                      * 设置AMP consumer ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _aMPConsumerId AMP consumer ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAMPConsumerId(const std::string& _aMPConsumerId);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 通知模板ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_noticeId;
                     bool m_noticeIdHasBeenSet;
 
                     /**
                      * AMP consumer ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_aMPConsumerId;
                     bool m_aMPConsumerIdHasBeenSet;

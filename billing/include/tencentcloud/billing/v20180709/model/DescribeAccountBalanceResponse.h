@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -158,28 +158,28 @@ namespace TencentCloud
                     /**
                      * 获取是否允许欠费消费
                      * @return IsAllowArrears 是否允许欠费消费
-                     * 
+                     * @deprecated
                      */
                     bool GetIsAllowArrears() const;
 
                     /**
                      * 判断参数 IsAllowArrears 是否已赋值
                      * @return IsAllowArrears 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool IsAllowArrearsHasBeenSet() const;
 
                     /**
                      * 获取是否限制信用额度
                      * @return IsCreditLimited 是否限制信用额度
-                     * 
+                     * @deprecated
                      */
                     bool GetIsCreditLimited() const;
 
                     /**
                      * 判断参数 IsCreditLimited 是否已赋值
                      * @return IsCreditLimited 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool IsCreditLimitedHasBeenSet() const;
 

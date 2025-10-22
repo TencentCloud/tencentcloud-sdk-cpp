@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -134,6 +134,48 @@ namespace TencentCloud
                      */
                     bool RepurchaseRenewSwitchHasBeenSet() const;
 
+                    /**
+                     * 获取新增机器自动绑定rasp,0 关闭 1开启
+                     * @return AutoBindRaspSwitch 新增机器自动绑定rasp,0 关闭 1开启
+                     * 
+                     */
+                    uint64_t GetAutoBindRaspSwitch() const;
+
+                    /**
+                     * 设置新增机器自动绑定rasp,0 关闭 1开启
+                     * @param _autoBindRaspSwitch 新增机器自动绑定rasp,0 关闭 1开启
+                     * 
+                     */
+                    void SetAutoBindRaspSwitch(const uint64_t& _autoBindRaspSwitch);
+
+                    /**
+                     * 判断参数 AutoBindRaspSwitch 是否已赋值
+                     * @return AutoBindRaspSwitch 是否已赋值
+                     * 
+                     */
+                    bool AutoBindRaspSwitchHasBeenSet() const;
+
+                    /**
+                     * 获取新增机器自动开启rasp防护,默认关闭,0 关闭 1开启
+                     * @return AutoOpenRaspSwitch 新增机器自动开启rasp防护,默认关闭,0 关闭 1开启
+                     * 
+                     */
+                    uint64_t GetAutoOpenRaspSwitch() const;
+
+                    /**
+                     * 设置新增机器自动开启rasp防护,默认关闭,0 关闭 1开启
+                     * @param _autoOpenRaspSwitch 新增机器自动开启rasp防护,默认关闭,0 关闭 1开启
+                     * 
+                     */
+                    void SetAutoOpenRaspSwitch(const uint64_t& _autoOpenRaspSwitch);
+
+                    /**
+                     * 判断参数 AutoOpenRaspSwitch 是否已赋值
+                     * @return AutoOpenRaspSwitch 是否已赋值
+                     * 
+                     */
+                    bool AutoOpenRaspSwitchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -161,6 +203,18 @@ namespace TencentCloud
                      */
                     uint64_t m_repurchaseRenewSwitch;
                     bool m_repurchaseRenewSwitchHasBeenSet;
+
+                    /**
+                     * 新增机器自动绑定rasp,0 关闭 1开启
+                     */
+                    uint64_t m_autoBindRaspSwitch;
+                    bool m_autoBindRaspSwitchHasBeenSet;
+
+                    /**
+                     * 新增机器自动开启rasp防护,默认关闭,0 关闭 1开启
+                     */
+                    uint64_t m_autoOpenRaspSwitch;
+                    bool m_autoOpenRaspSwitchHasBeenSet;
 
                 };
             }

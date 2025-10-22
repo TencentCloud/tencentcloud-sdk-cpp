@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -98,18 +98,14 @@ namespace TencentCloud
 
                     /**
                      * 获取场景描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 场景描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置场景描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 场景描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -123,18 +119,14 @@ namespace TencentCloud
 
                     /**
                      * 获取场景类型，如pts-http, pts-js, pts-trpc, pts-jmeter
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 场景类型，如pts-http, pts-js, pts-trpc, pts-jmeter
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置场景类型，如pts-http, pts-js, pts-trpc, pts-jmeter
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 场景类型，如pts-http, pts-js, pts-trpc, pts-jmeter
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -148,18 +140,14 @@ namespace TencentCloud
 
                     /**
                      * 获取场景状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 场景状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置场景状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 场景状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -173,18 +161,14 @@ namespace TencentCloud
 
                     /**
                      * 获取施压配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Load 施压配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Load GetLoad() const;
 
                     /**
                      * 设置施压配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _load 施压配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLoad(const Load& _load);
@@ -198,18 +182,14 @@ namespace TencentCloud
 
                     /**
                      * 获取deprecated
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EncodedScripts deprecated
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEncodedScripts() const;
 
                     /**
                      * 设置deprecated
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _encodedScripts deprecated
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEncodedScripts(const std::string& _encodedScripts);
@@ -298,18 +278,14 @@ namespace TencentCloud
 
                     /**
                      * 获取SLA规则的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SLAId SLA规则的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSLAId() const;
 
                     /**
                      * 设置SLA规则的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sLAId SLA规则的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSLAId(const std::string& _sLAId);
@@ -323,18 +299,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Cron Job规则的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CronId Cron Job规则的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCronId() const;
 
                     /**
                      * 设置Cron Job规则的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cronId Cron Job规则的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCronId(const std::string& _cronId);
@@ -390,18 +362,14 @@ namespace TencentCloud
 
                     /**
                      * 获取项目ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectId 项目ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _projectId 项目ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -415,18 +383,14 @@ namespace TencentCloud
 
                     /**
                      * 获取App ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId App ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAppId() const;
 
                     /**
                      * 设置App ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appId App ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppId(const int64_t& _appId);
@@ -440,18 +404,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uin 用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -465,18 +425,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubAccountUin 子用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubAccountUin() const;
 
                     /**
                      * 设置子用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subAccountUin 子用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubAccountUin(const std::string& _subAccountUin);
@@ -565,18 +521,14 @@ namespace TencentCloud
 
                     /**
                      * 获取SLA 策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SLAPolicy SLA 策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SLAPolicy GetSLAPolicy() const;
 
                     /**
                      * 设置SLA 策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sLAPolicy SLA 策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSLAPolicy(const SLAPolicy& _sLAPolicy);
@@ -615,18 +567,14 @@ namespace TencentCloud
 
                     /**
                      * 获取域名解析配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DomainNameConfig 域名解析配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DomainNameConfig GetDomainNameConfig() const;
 
                     /**
                      * 设置域名解析配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domainNameConfig 域名解析配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomainNameConfig(const DomainNameConfig& _domainNameConfig);
@@ -665,18 +613,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建人员
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Owner 创建人员
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOwner() const;
 
                     /**
                      * 设置创建人员
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _owner 创建人员
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOwner(const std::string& _owner);
@@ -690,18 +634,14 @@ namespace TencentCloud
 
                     /**
                      * 获取场景所在的项目的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectName 场景所在的项目的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectName() const;
 
                     /**
                      * 设置场景所在的项目的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _projectName 场景所在的项目的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProjectName(const std::string& _projectName);
@@ -729,35 +669,30 @@ namespace TencentCloud
 
                     /**
                      * 场景描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 场景类型，如pts-http, pts-js, pts-trpc, pts-jmeter
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 场景状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 施压配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Load m_load;
                     bool m_loadHasBeenSet;
 
                     /**
                      * deprecated
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_encodedScripts;
                     bool m_encodedScriptsHasBeenSet;
@@ -785,14 +720,12 @@ namespace TencentCloud
 
                     /**
                      * SLA规则的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sLAId;
                     bool m_sLAIdHasBeenSet;
 
                     /**
                      * Cron Job规则的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cronId;
                     bool m_cronIdHasBeenSet;
@@ -811,28 +744,24 @@ namespace TencentCloud
 
                     /**
                      * 项目ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
                      * App ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
                      * 用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
                      * 子用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subAccountUin;
                     bool m_subAccountUinHasBeenSet;
@@ -860,7 +789,6 @@ namespace TencentCloud
 
                     /**
                      * SLA 策略
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SLAPolicy m_sLAPolicy;
                     bool m_sLAPolicyHasBeenSet;
@@ -874,7 +802,6 @@ namespace TencentCloud
 
                     /**
                      * 域名解析配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DomainNameConfig m_domainNameConfig;
                     bool m_domainNameConfigHasBeenSet;
@@ -888,14 +815,12 @@ namespace TencentCloud
 
                     /**
                      * 创建人员
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_owner;
                     bool m_ownerHasBeenSet;
 
                     /**
                      * 场景所在的项目的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectName;
                     bool m_projectNameHasBeenSet;

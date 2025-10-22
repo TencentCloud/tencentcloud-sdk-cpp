@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@
 #include <tencentcloud/tdmq/v20200217/model/VirtualHostQuota.h>
 #include <tencentcloud/tdmq/v20200217/model/ExchangeQuota.h>
 #include <tencentcloud/tdmq/v20200217/model/QueueQuota.h>
+#include <tencentcloud/tdmq/v20200217/model/RabbitMQUserQuota.h>
 
 
 namespace TencentCloud
@@ -80,9 +81,7 @@ namespace TencentCloud
 
                     /**
                      * 获取集群访问
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterNetInfo 集群访问
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RabbitMQClusterAccessInfo GetClusterNetInfo() const;
@@ -96,9 +95,7 @@ namespace TencentCloud
 
                     /**
                      * 获取集群白名单
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterWhiteListInfo 集群白名单
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RabbitMQClusterWhiteListInfo GetClusterWhiteListInfo() const;
@@ -152,6 +149,20 @@ namespace TencentCloud
                      */
                     bool QueueQuotaHasBeenSet() const;
 
+                    /**
+                     * 获取用户配额信息
+                     * @return UserQuota 用户配额信息
+                     * 
+                     */
+                    RabbitMQUserQuota GetUserQuota() const;
+
+                    /**
+                     * 判断参数 UserQuota 是否已赋值
+                     * @return UserQuota 是否已赋值
+                     * 
+                     */
+                    bool UserQuotaHasBeenSet() const;
+
                 private:
 
                     /**
@@ -168,14 +179,12 @@ namespace TencentCloud
 
                     /**
                      * 集群访问
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RabbitMQClusterAccessInfo m_clusterNetInfo;
                     bool m_clusterNetInfoHasBeenSet;
 
                     /**
                      * 集群白名单
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RabbitMQClusterWhiteListInfo m_clusterWhiteListInfo;
                     bool m_clusterWhiteListInfoHasBeenSet;
@@ -197,6 +206,12 @@ namespace TencentCloud
                      */
                     QueueQuota m_queueQuota;
                     bool m_queueQuotaHasBeenSet;
+
+                    /**
+                     * 用户配额信息
+                     */
+                    RabbitMQUserQuota m_userQuota;
+                    bool m_userQuotaHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -490,18 +490,14 @@ namespace TencentCloud
 
                     /**
                      * 获取站点别名。数字、英文、-和_组合，限制20个字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AliasZoneName 站点别名。数字、英文、-和_组合，限制20个字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAliasZoneName() const;
 
                     /**
                      * 设置站点别名。数字、英文、-和_组合，限制20个字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _aliasZoneName 站点别名。数字、英文、-和_组合，限制20个字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAliasZoneName(const std::string& _aliasZoneName);
@@ -714,7 +710,6 @@ namespace TencentCloud
 
                     /**
                      * 站点别名。数字、英文、-和_组合，限制20个字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_aliasZoneName;
                     bool m_aliasZoneNameHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -126,6 +126,69 @@ namespace TencentCloud
                      */
                     bool PageSizeHasBeenSet() const;
 
+                    /**
+                     * 获取是否过滤掉企业管理员
+                     * @return IsFilterPerAuthUser 是否过滤掉企业管理员
+                     * 
+                     */
+                    bool GetIsFilterPerAuthUser() const;
+
+                    /**
+                     * 设置是否过滤掉企业管理员
+                     * @param _isFilterPerAuthUser 是否过滤掉企业管理员
+                     * 
+                     */
+                    void SetIsFilterPerAuthUser(const bool& _isFilterPerAuthUser);
+
+                    /**
+                     * 判断参数 IsFilterPerAuthUser 是否已赋值
+                     * @return IsFilterPerAuthUser 是否已赋值
+                     * 
+                     */
+                    bool IsFilterPerAuthUserHasBeenSet() const;
+
+                    /**
+                     * 获取是否过滤掉当前用户
+                     * @return IsFilterCurrentUser 是否过滤掉当前用户
+                     * 
+                     */
+                    bool GetIsFilterCurrentUser() const;
+
+                    /**
+                     * 设置是否过滤掉当前用户
+                     * @param _isFilterCurrentUser 是否过滤掉当前用户
+                     * 
+                     */
+                    void SetIsFilterCurrentUser(const bool& _isFilterCurrentUser);
+
+                    /**
+                     * 判断参数 IsFilterCurrentUser 是否已赋值
+                     * @return IsFilterCurrentUser 是否已赋值
+                     * 
+                     */
+                    bool IsFilterCurrentUserHasBeenSet() const;
+
+                    /**
+                     * 获取关键字
+                     * @return Keyword 关键字
+                     * 
+                     */
+                    std::string GetKeyword() const;
+
+                    /**
+                     * 设置关键字
+                     * @param _keyword 关键字
+                     * 
+                     */
+                    void SetKeyword(const std::string& _keyword);
+
+                    /**
+                     * 判断参数 Keyword 是否已赋值
+                     * @return Keyword 是否已赋值
+                     * 
+                     */
+                    bool KeywordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +214,24 @@ namespace TencentCloud
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
+
+                    /**
+                     * 是否过滤掉企业管理员
+                     */
+                    bool m_isFilterPerAuthUser;
+                    bool m_isFilterPerAuthUserHasBeenSet;
+
+                    /**
+                     * 是否过滤掉当前用户
+                     */
+                    bool m_isFilterCurrentUser;
+                    bool m_isFilterCurrentUserHasBeenSet;
+
+                    /**
+                     * 关键字
+                     */
+                    std::string m_keyword;
+                    bool m_keywordHasBeenSet;
 
                 };
             }

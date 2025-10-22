@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取诊断结果级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 诊断结果级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLevel() const;
 
                     /**
                      * 设置诊断结果级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _level 诊断结果级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevel(const std::string& _level);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取诊断对象名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObjName 诊断对象名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetObjName() const;
 
                     /**
                      * 设置诊断对象名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _objName 诊断对象名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetObjName(const std::string& _objName);
@@ -124,18 +116,14 @@ namespace TencentCloud
 
                     /**
                      * 获取诊断项标题
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Title 诊断项标题
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTitle() const;
 
                     /**
                      * 设置诊断项标题
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _title 诊断项标题
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTitle(const std::string& _title);
@@ -149,18 +137,14 @@ namespace TencentCloud
 
                     /**
                      * 获取诊断项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Desc 诊断项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDesc() const;
 
                     /**
                      * 设置诊断项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _desc 诊断项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDesc(const std::string& _desc);
@@ -199,18 +183,14 @@ namespace TencentCloud
 
                     /**
                      * 获取诊断建议文档链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProposalDocUrl 诊断建议文档链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProposalDocUrl() const;
 
                     /**
                      * 设置诊断建议文档链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _proposalDocUrl 诊断建议文档链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProposalDocUrl(const std::string& _proposalDocUrl);
@@ -224,18 +204,14 @@ namespace TencentCloud
 
                     /**
                      * 获取诊断建议文档名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProposalDocName 诊断建议文档名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProposalDocName() const;
 
                     /**
                      * 设置诊断建议文档名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _proposalDocName 诊断建议文档名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProposalDocName(const std::string& _proposalDocName);
@@ -251,14 +227,12 @@ namespace TencentCloud
 
                     /**
                      * 诊断结果级别
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_level;
                     bool m_levelHasBeenSet;
 
                     /**
                      * 诊断对象名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_objName;
                     bool m_objNameHasBeenSet;
@@ -272,14 +246,12 @@ namespace TencentCloud
 
                     /**
                      * 诊断项标题
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_title;
                     bool m_titleHasBeenSet;
 
                     /**
                      * 诊断项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_desc;
                     bool m_descHasBeenSet;
@@ -293,14 +265,12 @@ namespace TencentCloud
 
                     /**
                      * 诊断建议文档链接
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_proposalDocUrl;
                     bool m_proposalDocUrlHasBeenSet;
 
                     /**
                      * 诊断建议文档名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_proposalDocName;
                     bool m_proposalDocNameHasBeenSet;

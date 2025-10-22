@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -104,42 +104,42 @@ namespace TencentCloud
                     /**
                      * 获取已弃用，请使用各个具体任务的 ErrCode。
                      * @return ErrCode 已弃用，请使用各个具体任务的 ErrCode。
-                     * 
+                     * @deprecated
                      */
                     int64_t GetErrCode() const;
 
                     /**
                      * 设置已弃用，请使用各个具体任务的 ErrCode。
                      * @param _errCode 已弃用，请使用各个具体任务的 ErrCode。
-                     * 
+                     * @deprecated
                      */
                     void SetErrCode(const int64_t& _errCode);
 
                     /**
                      * 判断参数 ErrCode 是否已赋值
                      * @return ErrCode 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ErrCodeHasBeenSet() const;
 
                     /**
                      * 获取已弃用，请使用各个具体任务的 Message。
                      * @return Message 已弃用，请使用各个具体任务的 Message。
-                     * 
+                     * @deprecated
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置已弃用，请使用各个具体任务的 Message。
                      * @param _message 已弃用，请使用各个具体任务的 Message。
-                     * 
+                     * @deprecated
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool MessageHasBeenSet() const;
 

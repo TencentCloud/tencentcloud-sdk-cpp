@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取列名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Header 列名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHeader() const;
 
                     /**
                      * 设置列名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _header 列名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHeader(const std::string& _header);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取列数据类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataType 列数据类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataType() const;
 
                     /**
                      * 设置列数据类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataType 列数据类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataType(const std::string& _dataType);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 列名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_header;
                     bool m_headerHasBeenSet;
 
                     /**
                      * 列数据类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataType;
                     bool m_dataTypeHasBeenSet;

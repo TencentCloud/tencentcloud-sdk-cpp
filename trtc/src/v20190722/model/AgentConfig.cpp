@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,16 @@ AgentConfig::AgentConfig() :
     m_maxIdleTimeHasBeenSet(false),
     m_welcomeMessageHasBeenSet(false),
     m_interruptModeHasBeenSet(false),
-    m_interruptSpeechDurationHasBeenSet(false)
+    m_interruptSpeechDurationHasBeenSet(false),
+    m_turnDetectionModeHasBeenSet(false),
+    m_filterOneWordHasBeenSet(false),
+    m_welcomeMessagePriorityHasBeenSet(false),
+    m_filterBracketsContentHasBeenSet(false),
+    m_ambientSoundHasBeenSet(false),
+    m_voicePrintHasBeenSet(false),
+    m_turnDetectionHasBeenSet(false),
+    m_subtitleModeHasBeenSet(false),
+    m_interruptWordListHasBeenSet(false)
 {
 }
 
@@ -106,6 +115,120 @@ CoreInternalOutcome AgentConfig::Deserialize(const rapidjson::Value &value)
         m_interruptSpeechDurationHasBeenSet = true;
     }
 
+    if (value.HasMember("TurnDetectionMode") && !value["TurnDetectionMode"].IsNull())
+    {
+        if (!value["TurnDetectionMode"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentConfig.TurnDetectionMode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_turnDetectionMode = value["TurnDetectionMode"].GetUint64();
+        m_turnDetectionModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FilterOneWord") && !value["FilterOneWord"].IsNull())
+    {
+        if (!value["FilterOneWord"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentConfig.FilterOneWord` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_filterOneWord = value["FilterOneWord"].GetBool();
+        m_filterOneWordHasBeenSet = true;
+    }
+
+    if (value.HasMember("WelcomeMessagePriority") && !value["WelcomeMessagePriority"].IsNull())
+    {
+        if (!value["WelcomeMessagePriority"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentConfig.WelcomeMessagePriority` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_welcomeMessagePriority = value["WelcomeMessagePriority"].GetUint64();
+        m_welcomeMessagePriorityHasBeenSet = true;
+    }
+
+    if (value.HasMember("FilterBracketsContent") && !value["FilterBracketsContent"].IsNull())
+    {
+        if (!value["FilterBracketsContent"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentConfig.FilterBracketsContent` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_filterBracketsContent = value["FilterBracketsContent"].GetUint64();
+        m_filterBracketsContentHasBeenSet = true;
+    }
+
+    if (value.HasMember("AmbientSound") && !value["AmbientSound"].IsNull())
+    {
+        if (!value["AmbientSound"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentConfig.AmbientSound` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_ambientSound.Deserialize(value["AmbientSound"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_ambientSoundHasBeenSet = true;
+    }
+
+    if (value.HasMember("VoicePrint") && !value["VoicePrint"].IsNull())
+    {
+        if (!value["VoicePrint"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentConfig.VoicePrint` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_voicePrint.Deserialize(value["VoicePrint"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_voicePrintHasBeenSet = true;
+    }
+
+    if (value.HasMember("TurnDetection") && !value["TurnDetection"].IsNull())
+    {
+        if (!value["TurnDetection"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentConfig.TurnDetection` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_turnDetection.Deserialize(value["TurnDetection"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_turnDetectionHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubtitleMode") && !value["SubtitleMode"].IsNull())
+    {
+        if (!value["SubtitleMode"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentConfig.SubtitleMode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_subtitleMode = value["SubtitleMode"].GetUint64();
+        m_subtitleModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("InterruptWordList") && !value["InterruptWordList"].IsNull())
+    {
+        if (!value["InterruptWordList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AgentConfig.InterruptWordList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["InterruptWordList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_interruptWordList.push_back((*itr).GetString());
+        }
+        m_interruptWordListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +290,86 @@ void AgentConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "InterruptSpeechDuration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_interruptSpeechDuration, allocator);
+    }
+
+    if (m_turnDetectionModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TurnDetectionMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_turnDetectionMode, allocator);
+    }
+
+    if (m_filterOneWordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterOneWord";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_filterOneWord, allocator);
+    }
+
+    if (m_welcomeMessagePriorityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WelcomeMessagePriority";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_welcomeMessagePriority, allocator);
+    }
+
+    if (m_filterBracketsContentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterBracketsContent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_filterBracketsContent, allocator);
+    }
+
+    if (m_ambientSoundHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AmbientSound";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ambientSound.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_voicePrintHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VoicePrint";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_voicePrint.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_turnDetectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TurnDetection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_turnDetection.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_subtitleModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitleMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_subtitleMode, allocator);
+    }
+
+    if (m_interruptWordListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InterruptWordList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_interruptWordList.begin(); itr != m_interruptWordList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -282,5 +485,149 @@ void AgentConfig::SetInterruptSpeechDuration(const uint64_t& _interruptSpeechDur
 bool AgentConfig::InterruptSpeechDurationHasBeenSet() const
 {
     return m_interruptSpeechDurationHasBeenSet;
+}
+
+uint64_t AgentConfig::GetTurnDetectionMode() const
+{
+    return m_turnDetectionMode;
+}
+
+void AgentConfig::SetTurnDetectionMode(const uint64_t& _turnDetectionMode)
+{
+    m_turnDetectionMode = _turnDetectionMode;
+    m_turnDetectionModeHasBeenSet = true;
+}
+
+bool AgentConfig::TurnDetectionModeHasBeenSet() const
+{
+    return m_turnDetectionModeHasBeenSet;
+}
+
+bool AgentConfig::GetFilterOneWord() const
+{
+    return m_filterOneWord;
+}
+
+void AgentConfig::SetFilterOneWord(const bool& _filterOneWord)
+{
+    m_filterOneWord = _filterOneWord;
+    m_filterOneWordHasBeenSet = true;
+}
+
+bool AgentConfig::FilterOneWordHasBeenSet() const
+{
+    return m_filterOneWordHasBeenSet;
+}
+
+uint64_t AgentConfig::GetWelcomeMessagePriority() const
+{
+    return m_welcomeMessagePriority;
+}
+
+void AgentConfig::SetWelcomeMessagePriority(const uint64_t& _welcomeMessagePriority)
+{
+    m_welcomeMessagePriority = _welcomeMessagePriority;
+    m_welcomeMessagePriorityHasBeenSet = true;
+}
+
+bool AgentConfig::WelcomeMessagePriorityHasBeenSet() const
+{
+    return m_welcomeMessagePriorityHasBeenSet;
+}
+
+uint64_t AgentConfig::GetFilterBracketsContent() const
+{
+    return m_filterBracketsContent;
+}
+
+void AgentConfig::SetFilterBracketsContent(const uint64_t& _filterBracketsContent)
+{
+    m_filterBracketsContent = _filterBracketsContent;
+    m_filterBracketsContentHasBeenSet = true;
+}
+
+bool AgentConfig::FilterBracketsContentHasBeenSet() const
+{
+    return m_filterBracketsContentHasBeenSet;
+}
+
+AmbientSound AgentConfig::GetAmbientSound() const
+{
+    return m_ambientSound;
+}
+
+void AgentConfig::SetAmbientSound(const AmbientSound& _ambientSound)
+{
+    m_ambientSound = _ambientSound;
+    m_ambientSoundHasBeenSet = true;
+}
+
+bool AgentConfig::AmbientSoundHasBeenSet() const
+{
+    return m_ambientSoundHasBeenSet;
+}
+
+VoicePrint AgentConfig::GetVoicePrint() const
+{
+    return m_voicePrint;
+}
+
+void AgentConfig::SetVoicePrint(const VoicePrint& _voicePrint)
+{
+    m_voicePrint = _voicePrint;
+    m_voicePrintHasBeenSet = true;
+}
+
+bool AgentConfig::VoicePrintHasBeenSet() const
+{
+    return m_voicePrintHasBeenSet;
+}
+
+TurnDetection AgentConfig::GetTurnDetection() const
+{
+    return m_turnDetection;
+}
+
+void AgentConfig::SetTurnDetection(const TurnDetection& _turnDetection)
+{
+    m_turnDetection = _turnDetection;
+    m_turnDetectionHasBeenSet = true;
+}
+
+bool AgentConfig::TurnDetectionHasBeenSet() const
+{
+    return m_turnDetectionHasBeenSet;
+}
+
+uint64_t AgentConfig::GetSubtitleMode() const
+{
+    return m_subtitleMode;
+}
+
+void AgentConfig::SetSubtitleMode(const uint64_t& _subtitleMode)
+{
+    m_subtitleMode = _subtitleMode;
+    m_subtitleModeHasBeenSet = true;
+}
+
+bool AgentConfig::SubtitleModeHasBeenSet() const
+{
+    return m_subtitleModeHasBeenSet;
+}
+
+vector<string> AgentConfig::GetInterruptWordList() const
+{
+    return m_interruptWordList;
+}
+
+void AgentConfig::SetInterruptWordList(const vector<string>& _interruptWordList)
+{
+    m_interruptWordList = _interruptWordList;
+    m_interruptWordListHasBeenSet = true;
+}
+
+bool AgentConfig::InterruptWordListHasBeenSet() const
+{
+    return m_interruptWordListHasBeenSet;
 }
 

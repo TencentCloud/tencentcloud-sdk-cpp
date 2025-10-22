@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -108,18 +108,14 @@ ASSET_K8S, K8S资产
 
                     /**
                      * 获取最近一次触发的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastTriggerTime 最近一次触发的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastTriggerTime() const;
 
                     /**
                      * 设置最近一次触发的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastTriggerTime 最近一次触发的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastTriggerTime(const std::string& _lastTriggerTime);
@@ -214,7 +210,6 @@ ASSET_K8S, K8S资产
 
                     /**
                      * 最近一次触发的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastTriggerTime;
                     bool m_lastTriggerTimeHasBeenSet;

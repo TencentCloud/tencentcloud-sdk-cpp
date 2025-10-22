@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -148,6 +148,27 @@ namespace TencentCloud
                      */
                     bool ReportTypeHasBeenSet() const;
 
+                    /**
+                     * 获取混合云模式获取合同文件合并出证，默认：不同意。注：此参数需要联系腾讯电子签运营进行开通后生效
+                     * @return HybridEvidenceFlowFile 混合云模式获取合同文件合并出证，默认：不同意。注：此参数需要联系腾讯电子签运营进行开通后生效
+                     * 
+                     */
+                    bool GetHybridEvidenceFlowFile() const;
+
+                    /**
+                     * 设置混合云模式获取合同文件合并出证，默认：不同意。注：此参数需要联系腾讯电子签运营进行开通后生效
+                     * @param _hybridEvidenceFlowFile 混合云模式获取合同文件合并出证，默认：不同意。注：此参数需要联系腾讯电子签运营进行开通后生效
+                     * 
+                     */
+                    void SetHybridEvidenceFlowFile(const bool& _hybridEvidenceFlowFile);
+
+                    /**
+                     * 判断参数 HybridEvidenceFlowFile 是否已赋值
+                     * @return HybridEvidenceFlowFile 是否已赋值
+                     * 
+                     */
+                    bool HybridEvidenceFlowFileHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     int64_t m_reportType;
                     bool m_reportTypeHasBeenSet;
+
+                    /**
+                     * 混合云模式获取合同文件合并出证，默认：不同意。注：此参数需要联系腾讯电子签运营进行开通后生效
+                     */
+                    bool m_hybridEvidenceFlowFile;
+                    bool m_hybridEvidenceFlowFileHasBeenSet;
 
                 };
             }

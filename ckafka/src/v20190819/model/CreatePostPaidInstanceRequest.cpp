@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,9 +23,9 @@ using namespace TencentCloud::Ckafka::V20190819::Model;
 using namespace std;
 
 CreatePostPaidInstanceRequest::CreatePostPaidInstanceRequest() :
-    m_instanceNameHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
+    m_instanceNameHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_msgRetentionTimeHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
@@ -41,7 +41,8 @@ CreatePostPaidInstanceRequest::CreatePostPaidInstanceRequest() :
     m_zoneIdsHasBeenSet(false),
     m_instanceNumHasBeenSet(false),
     m_publicNetworkMonthlyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_elasticBandwidthSwitchHasBeenSet(false)
 {
 }
 
@@ -51,14 +52,6 @@ string CreatePostPaidInstanceRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_instanceNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceName";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_instanceName.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_vpcIdHasBeenSet)
     {
@@ -74,6 +67,14 @@ string CreatePostPaidInstanceRequest::ToJsonString() const
         string key = "SubnetId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceTypeHasBeenSet)
@@ -216,6 +217,14 @@ string CreatePostPaidInstanceRequest::ToJsonString() const
         }
     }
 
+    if (m_elasticBandwidthSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElasticBandwidthSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_elasticBandwidthSwitch, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -223,22 +232,6 @@ string CreatePostPaidInstanceRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string CreatePostPaidInstanceRequest::GetInstanceName() const
-{
-    return m_instanceName;
-}
-
-void CreatePostPaidInstanceRequest::SetInstanceName(const string& _instanceName)
-{
-    m_instanceName = _instanceName;
-    m_instanceNameHasBeenSet = true;
-}
-
-bool CreatePostPaidInstanceRequest::InstanceNameHasBeenSet() const
-{
-    return m_instanceNameHasBeenSet;
-}
 
 string CreatePostPaidInstanceRequest::GetVpcId() const
 {
@@ -270,6 +263,22 @@ void CreatePostPaidInstanceRequest::SetSubnetId(const string& _subnetId)
 bool CreatePostPaidInstanceRequest::SubnetIdHasBeenSet() const
 {
     return m_subnetIdHasBeenSet;
+}
+
+string CreatePostPaidInstanceRequest::GetInstanceName() const
+{
+    return m_instanceName;
+}
+
+void CreatePostPaidInstanceRequest::SetInstanceName(const string& _instanceName)
+{
+    m_instanceName = _instanceName;
+    m_instanceNameHasBeenSet = true;
+}
+
+bool CreatePostPaidInstanceRequest::InstanceNameHasBeenSet() const
+{
+    return m_instanceNameHasBeenSet;
 }
 
 int64_t CreatePostPaidInstanceRequest::GetInstanceType() const
@@ -526,6 +535,22 @@ void CreatePostPaidInstanceRequest::SetTags(const vector<Tag>& _tags)
 bool CreatePostPaidInstanceRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+int64_t CreatePostPaidInstanceRequest::GetElasticBandwidthSwitch() const
+{
+    return m_elasticBandwidthSwitch;
+}
+
+void CreatePostPaidInstanceRequest::SetElasticBandwidthSwitch(const int64_t& _elasticBandwidthSwitch)
+{
+    m_elasticBandwidthSwitch = _elasticBandwidthSwitch;
+    m_elasticBandwidthSwitchHasBeenSet = true;
+}
+
+bool CreatePostPaidInstanceRequest::ElasticBandwidthSwitchHasBeenSet() const
+{
+    return m_elasticBandwidthSwitchHasBeenSet;
 }
 
 

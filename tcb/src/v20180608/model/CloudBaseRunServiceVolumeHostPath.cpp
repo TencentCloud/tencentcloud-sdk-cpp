@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcb::V20180608::Model;
 using namespace std;
 
-CloudBaseRunServiceVolumeHostPath::CloudBaseRunServiceVolumeHostPath()
+CloudBaseRunServiceVolumeHostPath::CloudBaseRunServiceVolumeHostPath() :
+    m_pathHasBeenSet(false)
 {
 }
 
@@ -29,6 +30,16 @@ CoreInternalOutcome CloudBaseRunServiceVolumeHostPath::Deserialize(const rapidjs
     string requestId = "";
 
 
+    if (value.HasMember("Path") && !value["Path"].IsNull())
+    {
+        if (!value["Path"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunServiceVolumeHostPath.Path` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_path = string(value["Path"].GetString());
+        m_pathHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -36,6 +47,30 @@ CoreInternalOutcome CloudBaseRunServiceVolumeHostPath::Deserialize(const rapidjs
 void CloudBaseRunServiceVolumeHostPath::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_pathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Path";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_path.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
+
+string CloudBaseRunServiceVolumeHostPath::GetPath() const
+{
+    return m_path;
+}
+
+void CloudBaseRunServiceVolumeHostPath::SetPath(const string& _path)
+{
+    m_path = _path;
+    m_pathHasBeenSet = true;
+}
+
+bool CloudBaseRunServiceVolumeHostPath::PathHasBeenSet() const
+{
+    return m_pathHasBeenSet;
+}
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取盘类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskType 盘类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
                      * 设置盘类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diskType 盘类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskSize 大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
                      * 设置大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diskSize 大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiskSize(const int64_t& _diskSize);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskCount 个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDiskCount() const;
 
                     /**
                      * 设置个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diskCount 个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiskCount(const int64_t& _diskCount);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 盘类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
 
                     /**
                      * 大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
 
                     /**
                      * 个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_diskCount;
                     bool m_diskCountHasBeenSet;

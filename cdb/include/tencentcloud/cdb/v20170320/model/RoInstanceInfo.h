@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -529,6 +529,27 @@ namespace TencentCloud
                      */
                     bool PayTypeHasBeenSet() const;
 
+                    /**
+                     * 获取RO延迟复制状态。
+                     * @return ReplicationStatus RO延迟复制状态。
+                     * 
+                     */
+                    std::string GetReplicationStatus() const;
+
+                    /**
+                     * 设置RO延迟复制状态。
+                     * @param _replicationStatus RO延迟复制状态。
+                     * 
+                     */
+                    void SetReplicationStatus(const std::string& _replicationStatus);
+
+                    /**
+                     * 判断参数 ReplicationStatus 是否已赋值
+                     * @return ReplicationStatus 是否已赋值
+                     * 
+                     */
+                    bool ReplicationStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -668,6 +689,12 @@ namespace TencentCloud
                      */
                     int64_t m_payType;
                     bool m_payTypeHasBeenSet;
+
+                    /**
+                     * RO延迟复制状态。
+                     */
+                    std::string m_replicationStatus;
+                    bool m_replicationStatusHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取高优路由表唯一 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HighPriorityRouteTableId 高优路由表唯一 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHighPriorityRouteTableId() const;
 
                     /**
                      * 设置高优路由表唯一 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _highPriorityRouteTableId 高优路由表唯一 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHighPriorityRouteTableId(const std::string& _highPriorityRouteTableId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取VPC实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId VPC实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置VPC实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId VPC实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取高优路由表名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 高优路由表名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置高优路由表名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 高优路由表名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取高优路由表关联的子网列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetSet 高优路由表关联的子网列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSubnetSet() const;
 
                     /**
                      * 设置高优路由表关联的子网列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetSet 高优路由表关联的子网列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetSet(const std::vector<std::string>& _subnetSet);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取高优路由表条目信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HighPriorityRouteSet 高优路由表条目信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<HighPriorityRoute> GetHighPriorityRouteSet() const;
 
                     /**
                      * 设置高优路由表条目信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _highPriorityRouteSet 高优路由表条目信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHighPriorityRouteSet(const std::vector<HighPriorityRoute>& _highPriorityRouteSet);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedTime 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdTime 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -201,42 +177,36 @@ namespace TencentCloud
 
                     /**
                      * 高优路由表唯一 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_highPriorityRouteTableId;
                     bool m_highPriorityRouteTableIdHasBeenSet;
 
                     /**
                      * VPC实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * 高优路由表名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 高优路由表关联的子网列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_subnetSet;
                     bool m_subnetSetHasBeenSet;
 
                     /**
                      * 高优路由表条目信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<HighPriorityRoute> m_highPriorityRouteSet;
                     bool m_highPriorityRouteSetHasBeenSet;
 
                     /**
                      * 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,18 +75,14 @@ namespace TencentCloud
 
                     /**
                      * 获取人体检测置信度。取值0-1之间，当不开启人体检测开关时默认为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DetectConfidence 人体检测置信度。取值0-1之间，当不开启人体检测开关时默认为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetDetectConfidence() const;
 
                     /**
                      * 设置人体检测置信度。取值0-1之间，当不开启人体检测开关时默认为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _detectConfidence 人体检测置信度。取值0-1之间，当不开启人体检测开关时默认为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDetectConfidence(const double& _detectConfidence);
@@ -134,7 +130,6 @@ namespace TencentCloud
 
                     /**
                      * 人体检测置信度。取值0-1之间，当不开启人体检测开关时默认为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_detectConfidence;
                     bool m_detectConfidenceHasBeenSet;

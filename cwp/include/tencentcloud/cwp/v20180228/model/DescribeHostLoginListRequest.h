@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件。<li>Quuid - String - 是否必填：否 - 云服务器uuid</li><li>Uuid - String - 是否必填：否 - 主机安全唯一Uuid</li><li>MachineName - String - 是否必填：否 - 主机别名</li><li>Ip - String - 是否必填：否 - 主机ip</li><li>InstanceID - String - 是否必填：否 - 主机实例ID</li><li>SrcIp - String - 是否必填：否 - 来源ip筛选</li><li>UserName - String - 是否必填：否 - 用户名筛选</li><li>Status - string - 是否必填：否 - 状态筛选1:正常登录；5：已加白,14:已处理，15：已忽略</li><li>LoginTimeBegin - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li><li>LoginTimeEnd - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li><li>RiskLevel - string - 是否必填：否 - 状态筛选0:高危；1：可疑</li>
-                     * @return Filters 过滤条件。<li>Quuid - String - 是否必填：否 - 云服务器uuid</li><li>Uuid - String - 是否必填：否 - 主机安全唯一Uuid</li><li>MachineName - String - 是否必填：否 - 主机别名</li><li>Ip - String - 是否必填：否 - 主机ip</li><li>InstanceID - String - 是否必填：否 - 主机实例ID</li><li>SrcIp - String - 是否必填：否 - 来源ip筛选</li><li>UserName - String - 是否必填：否 - 用户名筛选</li><li>Status - string - 是否必填：否 - 状态筛选1:正常登录；5：已加白,14:已处理，15：已忽略</li><li>LoginTimeBegin - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li><li>LoginTimeEnd - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li><li>RiskLevel - string - 是否必填：否 - 状态筛选0:高危；1：可疑</li>
+                     * 获取过滤条件。<li>Quuid - String - 是否必填：否 - 云服务器uuid</li><li>Uuid - String - 是否必填：否 - 主机安全唯一Uuid</li><li>MachineName - String - 是否必填：否 - 主机别名</li><li>Ip - String - 是否必填：否 - 主机ip</li><li>InstanceID - String - 是否必填：否 - 主机实例ID</li><li>SrcIp - String - 是否必填：否 - 来源ip筛选</li><li>UserName - String - 是否必填：否 - 用户名筛选</li><li>Status - string - 是否必填：否 - 状态筛选：2:待处理；5：已加白,14:已处理，15：已忽略</li><li>LoginTimeBegin - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li><li>LoginTimeEnd - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li><li>RiskLevel - string - 是否必填：否 - 状态筛选0:高危；1：可疑</li>
+                     * @return Filters 过滤条件。<li>Quuid - String - 是否必填：否 - 云服务器uuid</li><li>Uuid - String - 是否必填：否 - 主机安全唯一Uuid</li><li>MachineName - String - 是否必填：否 - 主机别名</li><li>Ip - String - 是否必填：否 - 主机ip</li><li>InstanceID - String - 是否必填：否 - 主机实例ID</li><li>SrcIp - String - 是否必填：否 - 来源ip筛选</li><li>UserName - String - 是否必填：否 - 用户名筛选</li><li>Status - string - 是否必填：否 - 状态筛选：2:待处理；5：已加白,14:已处理，15：已忽略</li><li>LoginTimeBegin - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li><li>LoginTimeEnd - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li><li>RiskLevel - string - 是否必填：否 - 状态筛选0:高危；1：可疑</li>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件。<li>Quuid - String - 是否必填：否 - 云服务器uuid</li><li>Uuid - String - 是否必填：否 - 主机安全唯一Uuid</li><li>MachineName - String - 是否必填：否 - 主机别名</li><li>Ip - String - 是否必填：否 - 主机ip</li><li>InstanceID - String - 是否必填：否 - 主机实例ID</li><li>SrcIp - String - 是否必填：否 - 来源ip筛选</li><li>UserName - String - 是否必填：否 - 用户名筛选</li><li>Status - string - 是否必填：否 - 状态筛选1:正常登录；5：已加白,14:已处理，15：已忽略</li><li>LoginTimeBegin - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li><li>LoginTimeEnd - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li><li>RiskLevel - string - 是否必填：否 - 状态筛选0:高危；1：可疑</li>
-                     * @param _filters 过滤条件。<li>Quuid - String - 是否必填：否 - 云服务器uuid</li><li>Uuid - String - 是否必填：否 - 主机安全唯一Uuid</li><li>MachineName - String - 是否必填：否 - 主机别名</li><li>Ip - String - 是否必填：否 - 主机ip</li><li>InstanceID - String - 是否必填：否 - 主机实例ID</li><li>SrcIp - String - 是否必填：否 - 来源ip筛选</li><li>UserName - String - 是否必填：否 - 用户名筛选</li><li>Status - string - 是否必填：否 - 状态筛选1:正常登录；5：已加白,14:已处理，15：已忽略</li><li>LoginTimeBegin - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li><li>LoginTimeEnd - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li><li>RiskLevel - string - 是否必填：否 - 状态筛选0:高危；1：可疑</li>
+                     * 设置过滤条件。<li>Quuid - String - 是否必填：否 - 云服务器uuid</li><li>Uuid - String - 是否必填：否 - 主机安全唯一Uuid</li><li>MachineName - String - 是否必填：否 - 主机别名</li><li>Ip - String - 是否必填：否 - 主机ip</li><li>InstanceID - String - 是否必填：否 - 主机实例ID</li><li>SrcIp - String - 是否必填：否 - 来源ip筛选</li><li>UserName - String - 是否必填：否 - 用户名筛选</li><li>Status - string - 是否必填：否 - 状态筛选：2:待处理；5：已加白,14:已处理，15：已忽略</li><li>LoginTimeBegin - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li><li>LoginTimeEnd - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li><li>RiskLevel - string - 是否必填：否 - 状态筛选0:高危；1：可疑</li>
+                     * @param _filters 过滤条件。<li>Quuid - String - 是否必填：否 - 云服务器uuid</li><li>Uuid - String - 是否必填：否 - 主机安全唯一Uuid</li><li>MachineName - String - 是否必填：否 - 主机别名</li><li>Ip - String - 是否必填：否 - 主机ip</li><li>InstanceID - String - 是否必填：否 - 主机实例ID</li><li>SrcIp - String - 是否必填：否 - 来源ip筛选</li><li>UserName - String - 是否必填：否 - 用户名筛选</li><li>Status - string - 是否必填：否 - 状态筛选：2:待处理；5：已加白,14:已处理，15：已忽略</li><li>LoginTimeBegin - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li><li>LoginTimeEnd - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li><li>RiskLevel - string - 是否必填：否 - 状态筛选0:高危；1：可疑</li>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -163,7 +163,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 过滤条件。<li>Quuid - String - 是否必填：否 - 云服务器uuid</li><li>Uuid - String - 是否必填：否 - 主机安全唯一Uuid</li><li>MachineName - String - 是否必填：否 - 主机别名</li><li>Ip - String - 是否必填：否 - 主机ip</li><li>InstanceID - String - 是否必填：否 - 主机实例ID</li><li>SrcIp - String - 是否必填：否 - 来源ip筛选</li><li>UserName - String - 是否必填：否 - 用户名筛选</li><li>Status - string - 是否必填：否 - 状态筛选1:正常登录；5：已加白,14:已处理，15：已忽略</li><li>LoginTimeBegin - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li><li>LoginTimeEnd - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li><li>RiskLevel - string - 是否必填：否 - 状态筛选0:高危；1：可疑</li>
+                     * 过滤条件。<li>Quuid - String - 是否必填：否 - 云服务器uuid</li><li>Uuid - String - 是否必填：否 - 主机安全唯一Uuid</li><li>MachineName - String - 是否必填：否 - 主机别名</li><li>Ip - String - 是否必填：否 - 主机ip</li><li>InstanceID - String - 是否必填：否 - 主机实例ID</li><li>SrcIp - String - 是否必填：否 - 来源ip筛选</li><li>UserName - String - 是否必填：否 - 用户名筛选</li><li>Status - string - 是否必填：否 - 状态筛选：2:待处理；5：已加白,14:已处理，15：已忽略</li><li>LoginTimeBegin - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li><li>LoginTimeEnd - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li><li>RiskLevel - string - 是否必填：否 - 状态筛选0:高危；1：可疑</li>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

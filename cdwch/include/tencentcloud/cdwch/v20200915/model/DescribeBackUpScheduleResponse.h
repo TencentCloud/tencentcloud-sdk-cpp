@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,9 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 获取元数据备份策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetaStrategy 元数据备份策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ScheduleStrategy GetMetaStrategy() const;
@@ -77,9 +75,7 @@ namespace TencentCloud
 
                     /**
                      * 获取表数据备份策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataStrategy 表数据备份策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ScheduleStrategy GetDataStrategy() const;
@@ -93,9 +89,7 @@ namespace TencentCloud
 
                     /**
                      * 获取备份表列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackUpContents 备份表列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BackupTableContent> GetBackUpContents() const;
@@ -123,9 +117,7 @@ namespace TencentCloud
 
                     /**
                      * 获取错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorMsg 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrorMsg() const;
@@ -147,21 +139,18 @@ namespace TencentCloud
 
                     /**
                      * 元数据备份策略
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ScheduleStrategy m_metaStrategy;
                     bool m_metaStrategyHasBeenSet;
 
                     /**
                      * 表数据备份策略
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ScheduleStrategy m_dataStrategy;
                     bool m_dataStrategyHasBeenSet;
 
                     /**
                      * 备份表列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BackupTableContent> m_backUpContents;
                     bool m_backUpContentsHasBeenSet;
@@ -174,7 +163,6 @@ namespace TencentCloud
 
                     /**
                      * 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorMsg;
                     bool m_errorMsgHasBeenSet;

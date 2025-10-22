@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -167,11 +167,11 @@ namespace TencentCloud
                      * 获取license付费方式： 
 0，月度授权 
 1，永久授权 
-若不传则默认为月度授权
+若不传则默认为月度授权，永久授权设备需要调用OrderPerLicense接口支付授权费，否则设备无法使用
                      * @return LicensePayMode license付费方式： 
 0，月度授权 
 1，永久授权 
-若不传则默认为月度授权
+若不传则默认为月度授权，永久授权设备需要调用OrderPerLicense接口支付授权费，否则设备无法使用
                      * 
                      */
                     int64_t GetLicensePayMode() const;
@@ -180,11 +180,11 @@ namespace TencentCloud
                      * 设置license付费方式： 
 0，月度授权 
 1，永久授权 
-若不传则默认为月度授权
+若不传则默认为月度授权，永久授权设备需要调用OrderPerLicense接口支付授权费，否则设备无法使用
                      * @param _licensePayMode license付费方式： 
 0，月度授权 
 1，永久授权 
-若不传则默认为月度授权
+若不传则默认为月度授权，永久授权设备需要调用OrderPerLicense接口支付授权费，否则设备无法使用
                      * 
                      */
                     void SetLicensePayMode(const int64_t& _licensePayMode);
@@ -299,7 +299,7 @@ namespace TencentCloud
                      * license付费方式： 
 0，月度授权 
 1，永久授权 
-若不传则默认为月度授权
+若不传则默认为月度授权，永久授权设备需要调用OrderPerLicense接口支付授权费，否则设备无法使用
                      */
                     int64_t m_licensePayMode;
                     bool m_licensePayModeHasBeenSet;

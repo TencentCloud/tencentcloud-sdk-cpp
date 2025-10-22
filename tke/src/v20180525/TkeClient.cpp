@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -5329,6 +5329,92 @@ TkeClient::DescribeLogSwitchesOutcomeCallable TkeClient::DescribeLogSwitchesCall
     return task->get_future();
 }
 
+TkeClient::DescribeMasterComponentOutcome TkeClient::DescribeMasterComponent(const DescribeMasterComponentRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMasterComponent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMasterComponentResponse rsp = DescribeMasterComponentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMasterComponentOutcome(rsp);
+        else
+            return DescribeMasterComponentOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMasterComponentOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeMasterComponentAsync(const DescribeMasterComponentRequest& request, const DescribeMasterComponentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMasterComponent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeMasterComponentOutcomeCallable TkeClient::DescribeMasterComponentCallable(const DescribeMasterComponentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMasterComponentOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMasterComponent(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeOSImagesOutcome TkeClient::DescribeOSImages(const DescribeOSImagesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOSImages");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOSImagesResponse rsp = DescribeOSImagesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOSImagesOutcome(rsp);
+        else
+            return DescribeOSImagesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOSImagesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeOSImagesAsync(const DescribeOSImagesRequest& request, const DescribeOSImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOSImages(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeOSImagesOutcomeCallable TkeClient::DescribeOSImagesCallable(const DescribeOSImagesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOSImagesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOSImages(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribeOpenPolicyListOutcome TkeClient::DescribeOpenPolicyList(const DescribeOpenPolicyListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeOpenPolicyList");
@@ -7436,49 +7522,6 @@ TkeClient::EnableVpcCniNetworkTypeOutcomeCallable TkeClient::EnableVpcCniNetwork
     return task->get_future();
 }
 
-TkeClient::ForwardApplicationRequestV3Outcome TkeClient::ForwardApplicationRequestV3(const ForwardApplicationRequestV3Request &request)
-{
-    auto outcome = MakeRequest(request, "ForwardApplicationRequestV3");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ForwardApplicationRequestV3Response rsp = ForwardApplicationRequestV3Response();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ForwardApplicationRequestV3Outcome(rsp);
-        else
-            return ForwardApplicationRequestV3Outcome(o.GetError());
-    }
-    else
-    {
-        return ForwardApplicationRequestV3Outcome(outcome.GetError());
-    }
-}
-
-void TkeClient::ForwardApplicationRequestV3Async(const ForwardApplicationRequestV3Request& request, const ForwardApplicationRequestV3AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ForwardApplicationRequestV3(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TkeClient::ForwardApplicationRequestV3OutcomeCallable TkeClient::ForwardApplicationRequestV3Callable(const ForwardApplicationRequestV3Request &request)
-{
-    auto task = std::make_shared<std::packaged_task<ForwardApplicationRequestV3Outcome()>>(
-        [this, request]()
-        {
-            return this->ForwardApplicationRequestV3(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TkeClient::ForwardTKEEdgeApplicationRequestV3Outcome TkeClient::ForwardTKEEdgeApplicationRequestV3(const ForwardTKEEdgeApplicationRequestV3Request &request)
 {
     auto outcome = MakeRequest(request, "ForwardTKEEdgeApplicationRequestV3");
@@ -8332,6 +8375,49 @@ TkeClient::ModifyClusterVirtualNodePoolOutcomeCallable TkeClient::ModifyClusterV
         [this, request]()
         {
             return this->ModifyClusterVirtualNodePool(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::ModifyMasterComponentOutcome TkeClient::ModifyMasterComponent(const ModifyMasterComponentRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyMasterComponent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyMasterComponentResponse rsp = ModifyMasterComponentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyMasterComponentOutcome(rsp);
+        else
+            return ModifyMasterComponentOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyMasterComponentOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::ModifyMasterComponentAsync(const ModifyMasterComponentRequest& request, const ModifyMasterComponentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyMasterComponent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::ModifyMasterComponentOutcomeCallable TkeClient::ModifyMasterComponentCallable(const ModifyMasterComponentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyMasterComponentOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyMasterComponent(request);
         }
     );
 

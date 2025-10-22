@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,8 @@
 #include <tencentcloud/rce/v20201103/model/DescribeNameListDataListResponse.h>
 #include <tencentcloud/rce/v20201103/model/DescribeNameListDetailRequest.h>
 #include <tencentcloud/rce/v20201103/model/DescribeNameListDetailResponse.h>
+#include <tencentcloud/rce/v20201103/model/DescribeUserUsageCntRequest.h>
+#include <tencentcloud/rce/v20201103/model/DescribeUserUsageCntResponse.h>
 #include <tencentcloud/rce/v20201103/model/ImportNameListDataRequest.h>
 #include <tencentcloud/rce/v20201103/model/ImportNameListDataResponse.h>
 #include <tencentcloud/rce/v20201103/model/ManageMarketingRiskRequest.h>
@@ -75,6 +77,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeNameListDetailResponse> DescribeNameListDetailOutcome;
                 typedef std::future<DescribeNameListDetailOutcome> DescribeNameListDetailOutcomeCallable;
                 typedef std::function<void(const RceClient*, const Model::DescribeNameListDetailRequest&, DescribeNameListDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNameListDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserUsageCntResponse> DescribeUserUsageCntOutcome;
+                typedef std::future<DescribeUserUsageCntOutcome> DescribeUserUsageCntOutcomeCallable;
+                typedef std::function<void(const RceClient*, const Model::DescribeUserUsageCntRequest&, DescribeUserUsageCntOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserUsageCntAsyncHandler;
                 typedef Outcome<Core::Error, Model::ImportNameListDataResponse> ImportNameListDataOutcome;
                 typedef std::future<ImportNameListDataOutcome> ImportNameListDataOutcomeCallable;
                 typedef std::function<void(const RceClient*, const Model::ImportNameListDataRequest&, ImportNameListDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportNameListDataAsyncHandler;
@@ -145,6 +150,15 @@ namespace TencentCloud
                 DescribeNameListDetailOutcomeCallable DescribeNameListDetailCallable(const Model::DescribeNameListDetailRequest& request);
 
                 /**
+                 *RCE控制台预付费和后付费次数展示
+                 * @param req DescribeUserUsageCntRequest
+                 * @return DescribeUserUsageCntOutcome
+                 */
+                DescribeUserUsageCntOutcome DescribeUserUsageCnt(const Model::DescribeUserUsageCntRequest &request);
+                void DescribeUserUsageCntAsync(const Model::DescribeUserUsageCntRequest& request, const DescribeUserUsageCntAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserUsageCntOutcomeCallable DescribeUserUsageCntCallable(const Model::DescribeUserUsageCntRequest& request);
+
+                /**
                  *新增黑白名单数据，所有黑白名单数据总量上限为10000
                  * @param req ImportNameListDataRequest
                  * @return ImportNameListDataOutcome
@@ -154,7 +168,7 @@ namespace TencentCloud
                 ImportNameListDataOutcomeCallable ImportNameListDataCallable(const Model::ImportNameListDataRequest& request);
 
                 /**
-                 *全栈式风控引擎（RiskControlEngine，RCE）是基于人工智能技术和腾讯20年风控实战沉淀，依托腾讯海量业务构建的风控引擎，以轻量级的 SaaS 服务方式接入，帮助您快速解决注册、登录、营销活动等关键场景遇到的欺诈问题，实时防御黑灰产作恶。
+                 *通用业务欺诈保护是基于人工智能技术和腾讯20年风控实战沉淀，依托腾讯海量业务构建的风控引擎，以轻量级的 SaaS 服务方式接入，帮助您快速解决注册、登录、营销活动等关键场景遇到的欺诈问题，实时防御黑灰产作恶。
                  * @param req ManageMarketingRiskRequest
                  * @return ManageMarketingRiskOutcome
                  */

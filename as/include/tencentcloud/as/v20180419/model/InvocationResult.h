@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取执行活动ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InvocationId 执行活动ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInvocationId() const;
 
                     /**
                      * 设置执行活动ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _invocationId 执行活动ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInvocationId(const std::string& _invocationId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取执行任务ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InvocationTaskId 执行任务ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInvocationTaskId() const;
 
                     /**
                      * 设置执行任务ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _invocationTaskId 执行任务ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInvocationTaskId(const std::string& _invocationTaskId);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命令ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CommandId 命令ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCommandId() const;
 
                     /**
                      * 设置命令ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _commandId 命令ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCommandId(const std::string& _commandId);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取执行任务状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskStatus 执行任务状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskStatus() const;
 
                     /**
                      * 设置执行任务状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskStatus 执行任务状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskStatus(const std::string& _taskStatus);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取执行异常信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorMessage 执行异常信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrorMessage() const;
 
                     /**
                      * 设置执行异常信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errorMessage 执行异常信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrorMessage(const std::string& _errorMessage);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * 实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 执行活动ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_invocationId;
                     bool m_invocationIdHasBeenSet;
 
                     /**
                      * 执行任务ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_invocationTaskId;
                     bool m_invocationTaskIdHasBeenSet;
 
                     /**
                      * 命令ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_commandId;
                     bool m_commandIdHasBeenSet;
 
                     /**
                      * 执行任务状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskStatus;
                     bool m_taskStatusHasBeenSet;
 
                     /**
                      * 执行异常信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorMessage;
                     bool m_errorMessageHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ Library::Library() :
     m_remarkHasBeenSet(false),
     m_bucketNameHasBeenSet(false),
     m_bucketRegionHasBeenSet(false),
+    m_accessDomainHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_libraryExtensionHasBeenSet(false),
     m_sizeHasBeenSet(false),
@@ -87,6 +88,16 @@ CoreInternalOutcome Library::Deserialize(const rapidjson::Value &value)
         }
         m_bucketRegion = string(value["BucketRegion"].GetString());
         m_bucketRegionHasBeenSet = true;
+    }
+
+    if (value.HasMember("AccessDomain") && !value["AccessDomain"].IsNull())
+    {
+        if (!value["AccessDomain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Library.AccessDomain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_accessDomain = string(value["AccessDomain"].GetString());
+        m_accessDomainHasBeenSet = true;
     }
 
     if (value.HasMember("CreationTime") && !value["CreationTime"].IsNull())
@@ -191,6 +202,14 @@ void Library::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "BucketRegion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_bucketRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accessDomainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessDomain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accessDomain.c_str(), allocator).Move(), allocator);
     }
 
     if (m_creationTimeHasBeenSet)
@@ -315,6 +334,22 @@ void Library::SetBucketRegion(const string& _bucketRegion)
 bool Library::BucketRegionHasBeenSet() const
 {
     return m_bucketRegionHasBeenSet;
+}
+
+string Library::GetAccessDomain() const
+{
+    return m_accessDomain;
+}
+
+void Library::SetAccessDomain(const string& _accessDomain)
+{
+    m_accessDomain = _accessDomain;
+    m_accessDomainHasBeenSet = true;
+}
+
+bool Library::AccessDomainHasBeenSet() const
+{
+    return m_accessDomainHasBeenSet;
 }
 
 string Library::GetCreationTime() const

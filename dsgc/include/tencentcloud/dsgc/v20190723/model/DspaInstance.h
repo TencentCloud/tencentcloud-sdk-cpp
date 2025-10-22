@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dsgc/v20190723/model/Tag.h>
 
 
 namespace TencentCloud
@@ -371,18 +372,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例渠道
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Channel 实例渠道
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetChannel() const;
 
                     /**
                      * 设置实例渠道
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _channel 实例渠道
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChannel(const std::string& _channel);
@@ -396,18 +393,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已授权的实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InsAuthCount 已授权的实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInsAuthCount() const;
 
                     /**
                      * 设置已授权的实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _insAuthCount 已授权的实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInsAuthCount(const int64_t& _insAuthCount);
@@ -421,18 +414,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已购买的实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InsTotalQuota 已购买的实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInsTotalQuota() const;
 
                     /**
                      * 设置已购买的实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _insTotalQuota 已购买的实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInsTotalQuota(const int64_t& _insTotalQuota);
@@ -443,6 +432,27 @@ namespace TencentCloud
                      * 
                      */
                     bool InsTotalQuotaHasBeenSet() const;
+
+                    /**
+                     * 获取标签
+                     * @return Tags 标签
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置标签
+                     * @param _tags 标签
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
 
                 private:
 
@@ -540,24 +550,27 @@ namespace TencentCloud
 
                     /**
                      * 实例渠道
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_channel;
                     bool m_channelHasBeenSet;
 
                     /**
                      * 已授权的实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_insAuthCount;
                     bool m_insAuthCountHasBeenSet;
 
                     /**
                      * 已购买的实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_insTotalQuota;
                     bool m_insTotalQuotaHasBeenSet;
+
+                    /**
+                     * 标签
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

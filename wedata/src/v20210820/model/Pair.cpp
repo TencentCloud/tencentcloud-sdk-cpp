@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,8 @@ using namespace std;
 
 Pair::Pair() :
     m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_idHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome Pair::Deserialize(const rapidjson::Value &value)
         m_valueHasBeenSet = true;
     }
 
+    if (value.HasMember("Id") && !value["Id"].IsNull())
+    {
+        if (!value["Id"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Pair.Id` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = string(value["Id"].GetString());
+        m_idHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void Pair::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_value.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void Pair::SetValue(const string& _value)
 bool Pair::ValueHasBeenSet() const
 {
     return m_valueHasBeenSet;
+}
+
+string Pair::GetId() const
+{
+    return m_id;
+}
+
+void Pair::SetId(const string& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool Pair::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
 }
 

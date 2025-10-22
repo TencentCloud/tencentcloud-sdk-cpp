@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
-                     * @return InstanceId 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
+                     * 获取指定要查询的实例 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
+                     * @return InstanceId 指定要查询的实例 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
-                     * @param _instanceId 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
+                     * 设置指定要查询的实例 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
+                     * @param _instanceId 指定要查询的实例 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取筛选条件，操作所属的命名空间namespace，格式为db.collection
-                     * @return Ns 筛选条件，操作所属的命名空间namespace，格式为db.collection
+                     * 获取操作所属的命名空间 namespace，格式为 db.collection。
+                     * @return Ns 操作所属的命名空间 namespace，格式为 db.collection。
                      * 
                      */
                     std::string GetNs() const;
 
                     /**
-                     * 设置筛选条件，操作所属的命名空间namespace，格式为db.collection
-                     * @param _ns 筛选条件，操作所属的命名空间namespace，格式为db.collection
+                     * 设置操作所属的命名空间 namespace，格式为 db.collection。
+                     * @param _ns 操作所属的命名空间 namespace，格式为 db.collection。
                      * 
                      */
                     void SetNs(const std::string& _ns);
@@ -85,15 +85,23 @@ namespace TencentCloud
                     bool NsHasBeenSet() const;
 
                     /**
-                     * 获取筛选条件，操作已经执行的时间（单位：毫秒），结果将返回超过设置时间的操作，默认值为0，取值范围为[0, 3600000]
-                     * @return MillisecondRunning 筛选条件，操作已经执行的时间（单位：毫秒），结果将返回超过设置时间的操作，默认值为0，取值范围为[0, 3600000]
+                     * 获取设置查询筛选条件为操作任务已经执行的时间。
+- 默认值为0，取值范围为[0, 3600000]，单位：毫秒。
+- 结果将返回超过设置时间的操作。
+                     * @return MillisecondRunning 设置查询筛选条件为操作任务已经执行的时间。
+- 默认值为0，取值范围为[0, 3600000]，单位：毫秒。
+- 结果将返回超过设置时间的操作。
                      * 
                      */
                     uint64_t GetMillisecondRunning() const;
 
                     /**
-                     * 设置筛选条件，操作已经执行的时间（单位：毫秒），结果将返回超过设置时间的操作，默认值为0，取值范围为[0, 3600000]
-                     * @param _millisecondRunning 筛选条件，操作已经执行的时间（单位：毫秒），结果将返回超过设置时间的操作，默认值为0，取值范围为[0, 3600000]
+                     * 设置设置查询筛选条件为操作任务已经执行的时间。
+- 默认值为0，取值范围为[0, 3600000]，单位：毫秒。
+- 结果将返回超过设置时间的操作。
+                     * @param _millisecondRunning 设置查询筛选条件为操作任务已经执行的时间。
+- 默认值为0，取值范围为[0, 3600000]，单位：毫秒。
+- 结果将返回超过设置时间的操作。
                      * 
                      */
                     void SetMillisecondRunning(const uint64_t& _millisecondRunning);
@@ -106,15 +114,47 @@ namespace TencentCloud
                     bool MillisecondRunningHasBeenSet() const;
 
                     /**
-                     * 获取筛选条件，操作类型，可能的取值：none，update，insert，query，command，getmore，remove和killcursors
-                     * @return Op 筛选条件，操作类型，可能的取值：none，update，insert，query，command，getmore，remove和killcursors
+                     * 获取设置查询筛选条件为操作任务类型。取值包括：
+- none：特殊状态，空闲连接或内部任务等。
+- update：更新数据。
+- insert：插入操作。
+- query：查询操作。
+- command：命令操作。
+- getmore：获取更多数据。
+- remove：删除操作。
+- killcursors：释放查询游标的操作。
+                     * @return Op 设置查询筛选条件为操作任务类型。取值包括：
+- none：特殊状态，空闲连接或内部任务等。
+- update：更新数据。
+- insert：插入操作。
+- query：查询操作。
+- command：命令操作。
+- getmore：获取更多数据。
+- remove：删除操作。
+- killcursors：释放查询游标的操作。
                      * 
                      */
                     std::string GetOp() const;
 
                     /**
-                     * 设置筛选条件，操作类型，可能的取值：none，update，insert，query，command，getmore，remove和killcursors
-                     * @param _op 筛选条件，操作类型，可能的取值：none，update，insert，query，command，getmore，remove和killcursors
+                     * 设置设置查询筛选条件为操作任务类型。取值包括：
+- none：特殊状态，空闲连接或内部任务等。
+- update：更新数据。
+- insert：插入操作。
+- query：查询操作。
+- command：命令操作。
+- getmore：获取更多数据。
+- remove：删除操作。
+- killcursors：释放查询游标的操作。
+                     * @param _op 设置查询筛选条件为操作任务类型。取值包括：
+- none：特殊状态，空闲连接或内部任务等。
+- update：更新数据。
+- insert：插入操作。
+- query：查询操作。
+- command：命令操作。
+- getmore：获取更多数据。
+- remove：删除操作。
+- killcursors：释放查询游标的操作。
                      * 
                      */
                     void SetOp(const std::string& _op);
@@ -127,15 +167,15 @@ namespace TencentCloud
                     bool OpHasBeenSet() const;
 
                     /**
-                     * 获取筛选条件，分片名称
-                     * @return ReplicaSetName 筛选条件，分片名称
+                     * 获取筛选条件，分片名称。
+                     * @return ReplicaSetName 筛选条件，分片名称。
                      * 
                      */
                     std::string GetReplicaSetName() const;
 
                     /**
-                     * 设置筛选条件，分片名称
-                     * @param _replicaSetName 筛选条件，分片名称
+                     * 设置筛选条件，分片名称。
+                     * @param _replicaSetName 筛选条件，分片名称。
                      * 
                      */
                     void SetReplicaSetName(const std::string& _replicaSetName);
@@ -148,19 +188,23 @@ namespace TencentCloud
                     bool ReplicaSetNameHasBeenSet() const;
 
                     /**
-                     * 获取筛选条件，节点状态，可能的取值为：primary
-secondary
-                     * @return State 筛选条件，节点状态，可能的取值为：primary
-secondary
+                     * 获取设置查询筛选条件为节点角色。
+- primary：主节点。
+- secondary：从节点。
+                     * @return State 设置查询筛选条件为节点角色。
+- primary：主节点。
+- secondary：从节点。
                      * 
                      */
                     std::string GetState() const;
 
                     /**
-                     * 设置筛选条件，节点状态，可能的取值为：primary
-secondary
-                     * @param _state 筛选条件，节点状态，可能的取值为：primary
-secondary
+                     * 设置设置查询筛选条件为节点角色。
+- primary：主节点。
+- secondary：从节点。
+                     * @param _state 设置查询筛选条件为节点角色。
+- primary：主节点。
+- secondary：从节点。
                      * 
                      */
                     void SetState(const std::string& _state);
@@ -173,15 +217,15 @@ secondary
                     bool StateHasBeenSet() const;
 
                     /**
-                     * 获取单次请求返回的数量，默认值为100，取值范围为[0,100]
-                     * @return Limit 单次请求返回的数量，默认值为100，取值范围为[0,100]
+                     * 获取单次请求返回的数量，默认值为100，取值范围为[0,100]。
+                     * @return Limit 单次请求返回的数量，默认值为100，取值范围为[0,100]。
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置单次请求返回的数量，默认值为100，取值范围为[0,100]
-                     * @param _limit 单次请求返回的数量，默认值为100，取值范围为[0,100]
+                     * 设置单次请求返回的数量，默认值为100，取值范围为[0,100]。
+                     * @param _limit 单次请求返回的数量，默认值为100，取值范围为[0,100]。
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -194,15 +238,15 @@ secondary
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认值为0，取值范围为[0,10000]
-                     * @return Offset 偏移量，默认值为0，取值范围为[0,10000]
+                     * 获取偏移量，默认值为0，取值范围为[0,10000]。
+                     * @return Offset 偏移量，默认值为0，取值范围为[0,10000]。
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认值为0，取值范围为[0,10000]
-                     * @param _offset 偏移量，默认值为0，取值范围为[0,10000]
+                     * 设置偏移量，默认值为0，取值范围为[0,10000]。
+                     * @param _offset 偏移量，默认值为0，取值范围为[0,10000]。
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -215,15 +259,15 @@ secondary
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回结果集排序的字段，目前支持："MicrosecsRunning"/"microsecsrunning"，默认为升序排序
-                     * @return OrderBy 返回结果集排序的字段，目前支持："MicrosecsRunning"/"microsecsrunning"，默认为升序排序
+                     * 获取返回结果集排序的字段，目前支持按照 MicrosecsRunning（操作任务已执行的时间）排序。
+                     * @return OrderBy 返回结果集排序的字段，目前支持按照 MicrosecsRunning（操作任务已执行的时间）排序。
                      * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置返回结果集排序的字段，目前支持："MicrosecsRunning"/"microsecsrunning"，默认为升序排序
-                     * @param _orderBy 返回结果集排序的字段，目前支持："MicrosecsRunning"/"microsecsrunning"，默认为升序排序
+                     * 设置返回结果集排序的字段，目前支持按照 MicrosecsRunning（操作任务已执行的时间）排序。
+                     * @param _orderBy 返回结果集排序的字段，目前支持按照 MicrosecsRunning（操作任务已执行的时间）排序。
                      * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
@@ -236,15 +280,23 @@ secondary
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取返回结果集排序方式，可能的取值："ASC"/"asc"或"DESC"/"desc"
-                     * @return OrderByType 返回结果集排序方式，可能的取值："ASC"/"asc"或"DESC"/"desc"
+                     * 获取返回结果集排序方式。
+- ASC：升序。默认为 ASC，按照升序排序。
+- DESC：降序。
+                     * @return OrderByType 返回结果集排序方式。
+- ASC：升序。默认为 ASC，按照升序排序。
+- DESC：降序。
                      * 
                      */
                     std::string GetOrderByType() const;
 
                     /**
-                     * 设置返回结果集排序方式，可能的取值："ASC"/"asc"或"DESC"/"desc"
-                     * @param _orderByType 返回结果集排序方式，可能的取值："ASC"/"asc"或"DESC"/"desc"
+                     * 设置返回结果集排序方式。
+- ASC：升序。默认为 ASC，按照升序排序。
+- DESC：降序。
+                     * @param _orderByType 返回结果集排序方式。
+- ASC：升序。默认为 ASC，按照升序排序。
+- DESC：降序。
                      * 
                      */
                     void SetOrderByType(const std::string& _orderByType);
@@ -259,62 +311,75 @@ secondary
                 private:
 
                     /**
-                     * 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
+                     * 指定要查询的实例 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 筛选条件，操作所属的命名空间namespace，格式为db.collection
+                     * 操作所属的命名空间 namespace，格式为 db.collection。
                      */
                     std::string m_ns;
                     bool m_nsHasBeenSet;
 
                     /**
-                     * 筛选条件，操作已经执行的时间（单位：毫秒），结果将返回超过设置时间的操作，默认值为0，取值范围为[0, 3600000]
+                     * 设置查询筛选条件为操作任务已经执行的时间。
+- 默认值为0，取值范围为[0, 3600000]，单位：毫秒。
+- 结果将返回超过设置时间的操作。
                      */
                     uint64_t m_millisecondRunning;
                     bool m_millisecondRunningHasBeenSet;
 
                     /**
-                     * 筛选条件，操作类型，可能的取值：none，update，insert，query，command，getmore，remove和killcursors
+                     * 设置查询筛选条件为操作任务类型。取值包括：
+- none：特殊状态，空闲连接或内部任务等。
+- update：更新数据。
+- insert：插入操作。
+- query：查询操作。
+- command：命令操作。
+- getmore：获取更多数据。
+- remove：删除操作。
+- killcursors：释放查询游标的操作。
                      */
                     std::string m_op;
                     bool m_opHasBeenSet;
 
                     /**
-                     * 筛选条件，分片名称
+                     * 筛选条件，分片名称。
                      */
                     std::string m_replicaSetName;
                     bool m_replicaSetNameHasBeenSet;
 
                     /**
-                     * 筛选条件，节点状态，可能的取值为：primary
-secondary
+                     * 设置查询筛选条件为节点角色。
+- primary：主节点。
+- secondary：从节点。
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
 
                     /**
-                     * 单次请求返回的数量，默认值为100，取值范围为[0,100]
+                     * 单次请求返回的数量，默认值为100，取值范围为[0,100]。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量，默认值为0，取值范围为[0,10000]
+                     * 偏移量，默认值为0，取值范围为[0,10000]。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回结果集排序的字段，目前支持："MicrosecsRunning"/"microsecsrunning"，默认为升序排序
+                     * 返回结果集排序的字段，目前支持按照 MicrosecsRunning（操作任务已执行的时间）排序。
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 返回结果集排序方式，可能的取值："ASC"/"asc"或"DESC"/"desc"
+                     * 返回结果集排序方式。
+- ASC：升序。默认为 ASC，按照升序排序。
+- DESC：降序。
                      */
                     std::string m_orderByType;
                     bool m_orderByTypeHasBeenSet;

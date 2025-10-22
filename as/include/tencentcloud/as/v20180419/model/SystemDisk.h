@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,19 +47,51 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取系统盘类型。系统盘类型限制详见[云硬盘类型](https://cloud.tencent.com/document/product/362/2353)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><br>默认取值：CLOUD_PREMIUM。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DiskType 系统盘类型。系统盘类型限制详见[云硬盘类型](https://cloud.tencent.com/document/product/362/2353)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><br>默认取值：CLOUD_PREMIUM。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取系统盘类型。系统盘类型限制详见[云硬盘类型](https://cloud.tencent.com/document/product/362/2353)。取值范围
+<li>LOCAL_BASIC：本地硬盘</li>
+<li>LOCAL_SSD：本地SSD硬盘</li>
+<li>CLOUD_BASIC：普通云硬盘</li>
+<li>CLOUD_PREMIUM：高性能云硬盘</li>
+<li>CLOUD_SSD：SSD云硬盘</li>
+<li>CLOUD_BSSD：通用型SSD云硬盘</li>
+<li>CLOUD_HSSD：增强型SSD云硬盘</li>
+<li>CLOUD_TSSD：极速型SSD云硬盘</li>
+<li>默认取值：CLOUD_PREMIUM。</li>
+                     * @return DiskType 系统盘类型。系统盘类型限制详见[云硬盘类型](https://cloud.tencent.com/document/product/362/2353)。取值范围
+<li>LOCAL_BASIC：本地硬盘</li>
+<li>LOCAL_SSD：本地SSD硬盘</li>
+<li>CLOUD_BASIC：普通云硬盘</li>
+<li>CLOUD_PREMIUM：高性能云硬盘</li>
+<li>CLOUD_SSD：SSD云硬盘</li>
+<li>CLOUD_BSSD：通用型SSD云硬盘</li>
+<li>CLOUD_HSSD：增强型SSD云硬盘</li>
+<li>CLOUD_TSSD：极速型SSD云硬盘</li>
+<li>默认取值：CLOUD_PREMIUM。</li>
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置系统盘类型。系统盘类型限制详见[云硬盘类型](https://cloud.tencent.com/document/product/362/2353)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><br>默认取值：CLOUD_PREMIUM。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _diskType 系统盘类型。系统盘类型限制详见[云硬盘类型](https://cloud.tencent.com/document/product/362/2353)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><br>默认取值：CLOUD_PREMIUM。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置系统盘类型。系统盘类型限制详见[云硬盘类型](https://cloud.tencent.com/document/product/362/2353)。取值范围
+<li>LOCAL_BASIC：本地硬盘</li>
+<li>LOCAL_SSD：本地SSD硬盘</li>
+<li>CLOUD_BASIC：普通云硬盘</li>
+<li>CLOUD_PREMIUM：高性能云硬盘</li>
+<li>CLOUD_SSD：SSD云硬盘</li>
+<li>CLOUD_BSSD：通用型SSD云硬盘</li>
+<li>CLOUD_HSSD：增强型SSD云硬盘</li>
+<li>CLOUD_TSSD：极速型SSD云硬盘</li>
+<li>默认取值：CLOUD_PREMIUM。</li>
+                     * @param _diskType 系统盘类型。系统盘类型限制详见[云硬盘类型](https://cloud.tencent.com/document/product/362/2353)。取值范围
+<li>LOCAL_BASIC：本地硬盘</li>
+<li>LOCAL_SSD：本地SSD硬盘</li>
+<li>CLOUD_BASIC：普通云硬盘</li>
+<li>CLOUD_PREMIUM：高性能云硬盘</li>
+<li>CLOUD_SSD：SSD云硬盘</li>
+<li>CLOUD_BSSD：通用型SSD云硬盘</li>
+<li>CLOUD_HSSD：增强型SSD云硬盘</li>
+<li>CLOUD_TSSD：极速型SSD云硬盘</li>
+<li>默认取值：CLOUD_PREMIUM。</li>
                      * 
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -73,18 +105,14 @@ namespace TencentCloud
 
                     /**
                      * 获取系统盘大小，单位：GB。默认值为 50
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskSize 系统盘大小，单位：GB。默认值为 50
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDiskSize() const;
 
                     /**
                      * 设置系统盘大小，单位：GB。默认值为 50
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diskSize 系统盘大小，单位：GB。默认值为 50
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiskSize(const uint64_t& _diskSize);
@@ -99,15 +127,22 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 系统盘类型。系统盘类型限制详见[云硬盘类型](https://cloud.tencent.com/document/product/362/2353)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><br>默认取值：CLOUD_PREMIUM。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 系统盘类型。系统盘类型限制详见[云硬盘类型](https://cloud.tencent.com/document/product/362/2353)。取值范围
+<li>LOCAL_BASIC：本地硬盘</li>
+<li>LOCAL_SSD：本地SSD硬盘</li>
+<li>CLOUD_BASIC：普通云硬盘</li>
+<li>CLOUD_PREMIUM：高性能云硬盘</li>
+<li>CLOUD_SSD：SSD云硬盘</li>
+<li>CLOUD_BSSD：通用型SSD云硬盘</li>
+<li>CLOUD_HSSD：增强型SSD云硬盘</li>
+<li>CLOUD_TSSD：极速型SSD云硬盘</li>
+<li>默认取值：CLOUD_PREMIUM。</li>
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
 
                     /**
                      * 系统盘大小，单位：GB。默认值为 50
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;

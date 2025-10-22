@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -518,18 +518,14 @@ namespace TencentCloud
 
                     /**
                      * 获取推流服务端 IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServerIp 推流服务端 IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServerIp() const;
 
                     /**
                      * 设置推流服务端 IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serverIp 推流服务端 IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServerIp(const std::string& _serverIp);
@@ -540,6 +536,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ServerIpHasBeenSet() const;
+
+                    /**
+                     * 获取关键帧间隔 GOP ，单位：ms。
+                     * @return GopSize 关键帧间隔 GOP ，单位：ms。
+                     * 
+                     */
+                    int64_t GetGopSize() const;
+
+                    /**
+                     * 设置关键帧间隔 GOP ，单位：ms。
+                     * @param _gopSize 关键帧间隔 GOP ，单位：ms。
+                     * 
+                     */
+                    void SetGopSize(const int64_t& _gopSize);
+
+                    /**
+                     * 判断参数 GopSize 是否已赋值
+                     * @return GopSize 是否已赋值
+                     * 
+                     */
+                    bool GopSizeHasBeenSet() const;
 
                 private:
 
@@ -679,10 +696,15 @@ namespace TencentCloud
 
                     /**
                      * 推流服务端 IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serverIp;
                     bool m_serverIpHasBeenSet;
+
+                    /**
+                     * 关键帧间隔 GOP ，单位：ms。
+                     */
+                    int64_t m_gopSize;
+                    bool m_gopSizeHasBeenSet;
 
                 };
             }

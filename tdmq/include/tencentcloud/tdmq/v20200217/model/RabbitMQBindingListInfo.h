@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Rabbitmq路由关系列表成员
+                * RabbitMQ 路由关系列表成员
                 */
                 class RabbitMQBindingListInfo : public AbstractModel
                 {
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取路由关系id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BindingId 路由关系id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBindingId() const;
 
                     /**
                      * 设置路由关系id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bindingId 路由关系id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBindingId(const int64_t& _bindingId);
@@ -72,19 +68,15 @@ namespace TencentCloud
                     bool BindingIdHasBeenSet() const;
 
                     /**
-                     * 获取Vhost参数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VirtualHost Vhost参数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取VhostName
+                     * @return VirtualHost VhostName
                      * 
                      */
                     std::string GetVirtualHost() const;
 
                     /**
-                     * 设置Vhost参数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _virtualHost Vhost参数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置VhostName
+                     * @param _virtualHost VhostName
                      * 
                      */
                     void SetVirtualHost(const std::string& _virtualHost);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取源exchange名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Source 源exchange名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSource() const;
 
                     /**
                      * 设置源exchange名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _source 源exchange名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSource(const std::string& _source);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取目标类型,queue或exchange
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DestinationType 目标类型,queue或exchange
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDestinationType() const;
 
                     /**
                      * 设置目标类型,queue或exchange
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _destinationType 目标类型,queue或exchange
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDestinationType(const std::string& _destinationType);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取目标资源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Destination 目标资源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDestination() const;
 
                     /**
                      * 设置目标资源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _destination 目标资源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDestination(const std::string& _destination);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取绑定key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoutingKey 绑定key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRoutingKey() const;
 
                     /**
                      * 设置绑定key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _routingKey 绑定key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRoutingKey(const std::string& _routingKey);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取源exchange类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceExchangeType 源exchange类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSourceExchangeType() const;
 
                     /**
                      * 设置源exchange类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sourceExchangeType 源exchange类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSourceExchangeType(const std::string& _sourceExchangeType);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyTime 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyTime 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -271,70 +235,115 @@ namespace TencentCloud
                      */
                     bool ModifyTimeHasBeenSet() const;
 
+                    /**
+                     * 获取创建时间时间戳
+                     * @return CreateTs 创建时间时间戳
+                     * 
+                     */
+                    uint64_t GetCreateTs() const;
+
+                    /**
+                     * 设置创建时间时间戳
+                     * @param _createTs 创建时间时间戳
+                     * 
+                     */
+                    void SetCreateTs(const uint64_t& _createTs);
+
+                    /**
+                     * 判断参数 CreateTs 是否已赋值
+                     * @return CreateTs 是否已赋值
+                     * 
+                     */
+                    bool CreateTsHasBeenSet() const;
+
+                    /**
+                     * 获取修改时间时间戳
+                     * @return ModifyTs 修改时间时间戳
+                     * 
+                     */
+                    uint64_t GetModifyTs() const;
+
+                    /**
+                     * 设置修改时间时间戳
+                     * @param _modifyTs 修改时间时间戳
+                     * 
+                     */
+                    void SetModifyTs(const uint64_t& _modifyTs);
+
+                    /**
+                     * 判断参数 ModifyTs 是否已赋值
+                     * @return ModifyTs 是否已赋值
+                     * 
+                     */
+                    bool ModifyTsHasBeenSet() const;
+
                 private:
 
                     /**
                      * 路由关系id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_bindingId;
                     bool m_bindingIdHasBeenSet;
 
                     /**
-                     * Vhost参数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * VhostName
                      */
                     std::string m_virtualHost;
                     bool m_virtualHostHasBeenSet;
 
                     /**
                      * 源exchange名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
                      * 目标类型,queue或exchange
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_destinationType;
                     bool m_destinationTypeHasBeenSet;
 
                     /**
                      * 目标资源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_destination;
                     bool m_destinationHasBeenSet;
 
                     /**
                      * 绑定key
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_routingKey;
                     bool m_routingKeyHasBeenSet;
 
                     /**
                      * 源exchange类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sourceExchangeType;
                     bool m_sourceExchangeTypeHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
+
+                    /**
+                     * 创建时间时间戳
+                     */
+                    uint64_t m_createTs;
+                    bool m_createTsHasBeenSet;
+
+                    /**
+                     * 修改时间时间戳
+                     */
+                    uint64_t m_modifyTs;
+                    bool m_modifyTsHasBeenSet;
 
                 };
             }

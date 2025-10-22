@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -221,6 +221,48 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取是否禁用删除
+                     * @return DeleteDisabled 是否禁用删除
+                     * 
+                     */
+                    bool GetDeleteDisabled() const;
+
+                    /**
+                     * 设置是否禁用删除
+                     * @param _deleteDisabled 是否禁用删除
+                     * 
+                     */
+                    void SetDeleteDisabled(const bool& _deleteDisabled);
+
+                    /**
+                     * 判断参数 DeleteDisabled 是否已赋值
+                     * @return DeleteDisabled 是否已赋值
+                     * 
+                     */
+                    bool DeleteDisabledHasBeenSet() const;
+
+                    /**
+                     * 获取禁用原因
+                     * @return DeleteDisabledReason 禁用原因
+                     * 
+                     */
+                    std::string GetDeleteDisabledReason() const;
+
+                    /**
+                     * 设置禁用原因
+                     * @param _deleteDisabledReason 禁用原因
+                     * 
+                     */
+                    void SetDeleteDisabledReason(const std::string& _deleteDisabledReason);
+
+                    /**
+                     * 判断参数 DeleteDisabledReason 是否已赋值
+                     * @return DeleteDisabledReason 是否已赋值
+                     * 
+                     */
+                    bool DeleteDisabledReasonHasBeenSet() const;
+
                 private:
 
                     /**
@@ -271,6 +313,18 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 是否禁用删除
+                     */
+                    bool m_deleteDisabled;
+                    bool m_deleteDisabledHasBeenSet;
+
+                    /**
+                     * 禁用原因
+                     */
+                    std::string m_deleteDisabledReason;
+                    bool m_deleteDisabledReasonHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2620,6 +2620,49 @@ CdbClient::DescribeBinlogsOutcomeCallable CdbClient::DescribeBinlogsCallable(con
     return task->get_future();
 }
 
+CdbClient::DescribeCPUExpandStrategyInfoOutcome CdbClient::DescribeCPUExpandStrategyInfo(const DescribeCPUExpandStrategyInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCPUExpandStrategyInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCPUExpandStrategyInfoResponse rsp = DescribeCPUExpandStrategyInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCPUExpandStrategyInfoOutcome(rsp);
+        else
+            return DescribeCPUExpandStrategyInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCPUExpandStrategyInfoOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DescribeCPUExpandStrategyInfoAsync(const DescribeCPUExpandStrategyInfoRequest& request, const DescribeCPUExpandStrategyInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCPUExpandStrategyInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DescribeCPUExpandStrategyInfoOutcomeCallable CdbClient::DescribeCPUExpandStrategyInfoCallable(const DescribeCPUExpandStrategyInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCPUExpandStrategyInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCPUExpandStrategyInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::DescribeCdbProxyInfoOutcome CdbClient::DescribeCdbProxyInfo(const DescribeCdbProxyInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCdbProxyInfo");
@@ -2792,42 +2835,42 @@ CdbClient::DescribeClusterInfoOutcomeCallable CdbClient::DescribeClusterInfoCall
     return task->get_future();
 }
 
-CdbClient::DescribeCpuExpandStrategyOutcome CdbClient::DescribeCpuExpandStrategy(const DescribeCpuExpandStrategyRequest &request)
+CdbClient::DescribeCpuExpandHistoryOutcome CdbClient::DescribeCpuExpandHistory(const DescribeCpuExpandHistoryRequest &request)
 {
-    auto outcome = MakeRequest(request, "DescribeCpuExpandStrategy");
+    auto outcome = MakeRequest(request, "DescribeCpuExpandHistory");
     if (outcome.IsSuccess())
     {
         auto r = outcome.GetResult();
         string payload = string(r.Body(), r.BodySize());
-        DescribeCpuExpandStrategyResponse rsp = DescribeCpuExpandStrategyResponse();
+        DescribeCpuExpandHistoryResponse rsp = DescribeCpuExpandHistoryResponse();
         auto o = rsp.Deserialize(payload);
         if (o.IsSuccess())
-            return DescribeCpuExpandStrategyOutcome(rsp);
+            return DescribeCpuExpandHistoryOutcome(rsp);
         else
-            return DescribeCpuExpandStrategyOutcome(o.GetError());
+            return DescribeCpuExpandHistoryOutcome(o.GetError());
     }
     else
     {
-        return DescribeCpuExpandStrategyOutcome(outcome.GetError());
+        return DescribeCpuExpandHistoryOutcome(outcome.GetError());
     }
 }
 
-void CdbClient::DescribeCpuExpandStrategyAsync(const DescribeCpuExpandStrategyRequest& request, const DescribeCpuExpandStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+void CdbClient::DescribeCpuExpandHistoryAsync(const DescribeCpuExpandHistoryRequest& request, const DescribeCpuExpandHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
     auto fn = [this, request, handler, context]()
     {
-        handler(this, request, this->DescribeCpuExpandStrategy(request), context);
+        handler(this, request, this->DescribeCpuExpandHistory(request), context);
     };
 
     Executor::GetInstance()->Submit(new Runnable(fn));
 }
 
-CdbClient::DescribeCpuExpandStrategyOutcomeCallable CdbClient::DescribeCpuExpandStrategyCallable(const DescribeCpuExpandStrategyRequest &request)
+CdbClient::DescribeCpuExpandHistoryOutcomeCallable CdbClient::DescribeCpuExpandHistoryCallable(const DescribeCpuExpandHistoryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCpuExpandStrategyOutcome()>>(
+    auto task = std::make_shared<std::packaged_task<DescribeCpuExpandHistoryOutcome()>>(
         [this, request]()
         {
-            return this->DescribeCpuExpandStrategy(request);
+            return this->DescribeCpuExpandHistory(request);
         }
     );
 
@@ -3738,6 +3781,49 @@ CdbClient::DescribeInstanceParamsOutcomeCallable CdbClient::DescribeInstancePara
     return task->get_future();
 }
 
+CdbClient::DescribeInstancePasswordComplexityOutcome CdbClient::DescribeInstancePasswordComplexity(const DescribeInstancePasswordComplexityRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstancePasswordComplexity");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstancePasswordComplexityResponse rsp = DescribeInstancePasswordComplexityResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstancePasswordComplexityOutcome(rsp);
+        else
+            return DescribeInstancePasswordComplexityOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstancePasswordComplexityOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DescribeInstancePasswordComplexityAsync(const DescribeInstancePasswordComplexityRequest& request, const DescribeInstancePasswordComplexityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstancePasswordComplexity(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DescribeInstancePasswordComplexityOutcomeCallable CdbClient::DescribeInstancePasswordComplexityCallable(const DescribeInstancePasswordComplexityRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstancePasswordComplexityOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstancePasswordComplexity(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::DescribeInstanceUpgradeCheckJobOutcome CdbClient::DescribeInstanceUpgradeCheckJob(const DescribeInstanceUpgradeCheckJobRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstanceUpgradeCheckJob");
@@ -4462,6 +4548,49 @@ CdbClient::DescribeSupportedPrivilegesOutcomeCallable CdbClient::DescribeSupport
         [this, request]()
         {
             return this->DescribeSupportedPrivileges(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdbClient::DescribeTableColumnsOutcome CdbClient::DescribeTableColumns(const DescribeTableColumnsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTableColumns");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTableColumnsResponse rsp = DescribeTableColumnsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTableColumnsOutcome(rsp);
+        else
+            return DescribeTableColumnsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTableColumnsOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DescribeTableColumnsAsync(const DescribeTableColumnsRequest& request, const DescribeTableColumnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTableColumns(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DescribeTableColumnsOutcomeCallable CdbClient::DescribeTableColumnsCallable(const DescribeTableColumnsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTableColumnsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTableColumns(request);
         }
     );
 
@@ -5544,6 +5673,49 @@ CdbClient::ModifyDBInstanceLogToCLSOutcomeCallable CdbClient::ModifyDBInstanceLo
     return task->get_future();
 }
 
+CdbClient::ModifyDBInstanceModesOutcome CdbClient::ModifyDBInstanceModes(const ModifyDBInstanceModesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDBInstanceModes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDBInstanceModesResponse rsp = ModifyDBInstanceModesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDBInstanceModesOutcome(rsp);
+        else
+            return ModifyDBInstanceModesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDBInstanceModesOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::ModifyDBInstanceModesAsync(const ModifyDBInstanceModesRequest& request, const ModifyDBInstanceModesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDBInstanceModes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::ModifyDBInstanceModesOutcomeCallable CdbClient::ModifyDBInstanceModesCallable(const ModifyDBInstanceModesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDBInstanceModesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDBInstanceModes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::ModifyDBInstanceNameOutcome CdbClient::ModifyDBInstanceName(const ModifyDBInstanceNameRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDBInstanceName");
@@ -6017,6 +6189,49 @@ CdbClient::ModifyParamTemplateOutcomeCallable CdbClient::ModifyParamTemplateCall
     return task->get_future();
 }
 
+CdbClient::ModifyProtectModeOutcome CdbClient::ModifyProtectMode(const ModifyProtectModeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyProtectMode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyProtectModeResponse rsp = ModifyProtectModeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyProtectModeOutcome(rsp);
+        else
+            return ModifyProtectModeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyProtectModeOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::ModifyProtectModeAsync(const ModifyProtectModeRequest& request, const ModifyProtectModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyProtectMode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::ModifyProtectModeOutcomeCallable CdbClient::ModifyProtectModeCallable(const ModifyProtectModeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyProtectModeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyProtectMode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::ModifyRemoteBackupConfigOutcome CdbClient::ModifyRemoteBackupConfig(const ModifyRemoteBackupConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyRemoteBackupConfig");
@@ -6096,6 +6311,49 @@ CdbClient::ModifyRoGroupInfoOutcomeCallable CdbClient::ModifyRoGroupInfoCallable
         [this, request]()
         {
             return this->ModifyRoGroupInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdbClient::ModifyRoGroupVipVportOutcome CdbClient::ModifyRoGroupVipVport(const ModifyRoGroupVipVportRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRoGroupVipVport");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRoGroupVipVportResponse rsp = ModifyRoGroupVipVportResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRoGroupVipVportOutcome(rsp);
+        else
+            return ModifyRoGroupVipVportOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRoGroupVipVportOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::ModifyRoGroupVipVportAsync(const ModifyRoGroupVipVportRequest& request, const ModifyRoGroupVipVportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyRoGroupVipVport(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::ModifyRoGroupVipVportOutcomeCallable CdbClient::ModifyRoGroupVipVportCallable(const ModifyRoGroupVipVportRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyRoGroupVipVportOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyRoGroupVipVport(request);
         }
     );
 

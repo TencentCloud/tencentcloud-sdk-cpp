@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool NodesHasBeenSet() const;
 
                     /**
-                     * 获取拨测间隔
-                     * @return Interval 拨测间隔
+                     * 获取拨测间隔，单位为分钟
+                     * @return Interval 拨测间隔，单位为分钟
                      * 
                      */
                     int64_t GetInterval() const;
 
                     /**
-                     * 设置拨测间隔
-                     * @param _interval 拨测间隔
+                     * 设置拨测间隔，单位为分钟
+                     * @param _interval 拨测间隔，单位为分钟
                      * 
                      */
                     void SetInterval(const int64_t& _interval);
@@ -325,6 +325,27 @@ namespace TencentCloud
                      */
                     bool SubSyncFlagHasBeenSet() const;
 
+                    /**
+                     * 获取创建者名称
+                     * @return RtxName 创建者名称
+                     * 
+                     */
+                    std::string GetRtxName() const;
+
+                    /**
+                     * 设置创建者名称
+                     * @param _rtxName 创建者名称
+                     * 
+                     */
+                    void SetRtxName(const std::string& _rtxName);
+
+                    /**
+                     * 判断参数 RtxName 是否已赋值
+                     * @return RtxName 是否已赋值
+                     * 
+                     */
+                    bool RtxNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -346,7 +367,7 @@ namespace TencentCloud
                     bool m_nodesHasBeenSet;
 
                     /**
-                     * 拨测间隔
+                     * 拨测间隔，单位为分钟
                      */
                     int64_t m_interval;
                     bool m_intervalHasBeenSet;
@@ -406,6 +427,12 @@ namespace TencentCloud
                      */
                     int64_t m_subSyncFlag;
                     bool m_subSyncFlagHasBeenSet;
+
+                    /**
+                     * 创建者名称
+                     */
+                    std::string m_rtxName;
+                    bool m_rtxNameHasBeenSet;
 
                 };
             }

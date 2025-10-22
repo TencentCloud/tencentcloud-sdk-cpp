@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取克隆源实例Id。
-                     * @return InstanceId 克隆源实例Id。
+                     * 获取克隆源实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/api/236/15872) 接口获取。
+                     * @return InstanceId 克隆源实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/api/236/15872) 接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置克隆源实例Id。
-                     * @param _instanceId 克隆源实例Id。
+                     * 设置克隆源实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/api/236/15872) 接口获取。
+                     * @param _instanceId 克隆源实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/api/236/15872) 接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -116,15 +116,15 @@ namespace TencentCloud
                     bool SpecifiedBackupIdHasBeenSet() const;
 
                     /**
-                     * 获取私有网络 ID，如果不传则默认选择基础网络，请使用 [查询私有网络列表](/document/api/215/15778) 。
-                     * @return UniqVpcId 私有网络 ID，如果不传则默认选择基础网络，请使用 [查询私有网络列表](/document/api/215/15778) 。
+                     * 获取私有网络 ID，请使用 [查询私有网络列表](/document/api/215/15778)。
+                     * @return UniqVpcId 私有网络 ID，请使用 [查询私有网络列表](/document/api/215/15778)。
                      * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
-                     * 设置私有网络 ID，如果不传则默认选择基础网络，请使用 [查询私有网络列表](/document/api/215/15778) 。
-                     * @param _uniqVpcId 私有网络 ID，如果不传则默认选择基础网络，请使用 [查询私有网络列表](/document/api/215/15778) 。
+                     * 设置私有网络 ID，请使用 [查询私有网络列表](/document/api/215/15778)。
+                     * @param _uniqVpcId 私有网络 ID，请使用 [查询私有网络列表](/document/api/215/15778)。
                      * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
@@ -200,15 +200,15 @@ namespace TencentCloud
                     bool VolumeHasBeenSet() const;
 
                     /**
-                     * 获取新产生的克隆实例名称。
-                     * @return InstanceName 新产生的克隆实例名称。
+                     * 获取新产生的克隆实例名称。支持输入最大60个字符。
+                     * @return InstanceName 新产生的克隆实例名称。支持输入最大60个字符。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置新产生的克隆实例名称。
-                     * @param _instanceName 新产生的克隆实例名称。
+                     * 设置新产生的克隆实例名称。支持输入最大60个字符。
+                     * @param _instanceName 新产生的克隆实例名称。支持输入最大60个字符。
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -556,10 +556,52 @@ namespace TencentCloud
                      */
                     bool ClusterTopologyHasBeenSet() const;
 
+                    /**
+                     * 获取原实例所在地域名，当传入异地备份时为必选项，例：ap-guangzhou
+                     * @return SrcRegion 原实例所在地域名，当传入异地备份时为必选项，例：ap-guangzhou
+                     * 
+                     */
+                    std::string GetSrcRegion() const;
+
+                    /**
+                     * 设置原实例所在地域名，当传入异地备份时为必选项，例：ap-guangzhou
+                     * @param _srcRegion 原实例所在地域名，当传入异地备份时为必选项，例：ap-guangzhou
+                     * 
+                     */
+                    void SetSrcRegion(const std::string& _srcRegion);
+
+                    /**
+                     * 判断参数 SrcRegion 是否已赋值
+                     * @return SrcRegion 是否已赋值
+                     * 
+                     */
+                    bool SrcRegionHasBeenSet() const;
+
+                    /**
+                     * 获取异地数据备份id
+                     * @return SpecifiedSubBackupId 异地数据备份id
+                     * 
+                     */
+                    int64_t GetSpecifiedSubBackupId() const;
+
+                    /**
+                     * 设置异地数据备份id
+                     * @param _specifiedSubBackupId 异地数据备份id
+                     * 
+                     */
+                    void SetSpecifiedSubBackupId(const int64_t& _specifiedSubBackupId);
+
+                    /**
+                     * 判断参数 SpecifiedSubBackupId 是否已赋值
+                     * @return SpecifiedSubBackupId 是否已赋值
+                     * 
+                     */
+                    bool SpecifiedSubBackupIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 克隆源实例Id。
+                     * 克隆源实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/api/236/15872) 接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -579,7 +621,7 @@ namespace TencentCloud
                     bool m_specifiedBackupIdHasBeenSet;
 
                     /**
-                     * 私有网络 ID，如果不传则默认选择基础网络，请使用 [查询私有网络列表](/document/api/215/15778) 。
+                     * 私有网络 ID，请使用 [查询私有网络列表](/document/api/215/15778)。
                      */
                     std::string m_uniqVpcId;
                     bool m_uniqVpcIdHasBeenSet;
@@ -603,7 +645,7 @@ namespace TencentCloud
                     bool m_volumeHasBeenSet;
 
                     /**
-                     * 新产生的克隆实例名称。
+                     * 新产生的克隆实例名称。支持输入最大60个字符。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
@@ -703,6 +745,18 @@ namespace TencentCloud
                      */
                     ClusterTopology m_clusterTopology;
                     bool m_clusterTopologyHasBeenSet;
+
+                    /**
+                     * 原实例所在地域名，当传入异地备份时为必选项，例：ap-guangzhou
+                     */
+                    std::string m_srcRegion;
+                    bool m_srcRegionHasBeenSet;
+
+                    /**
+                     * 异地数据备份id
+                     */
+                    int64_t m_specifiedSubBackupId;
+                    bool m_specifiedSubBackupIdHasBeenSet;
 
                 };
             }

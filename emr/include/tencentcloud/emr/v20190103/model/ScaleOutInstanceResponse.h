@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,9 +75,7 @@ namespace TencentCloud
 
                     /**
                      * 获取客户端Token。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientToken 客户端Token。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClientToken() const;
@@ -91,9 +89,7 @@ namespace TencentCloud
 
                     /**
                      * 获取扩容流程ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowId 扩容流程ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFlowId() const;
@@ -107,9 +103,7 @@ namespace TencentCloud
 
                     /**
                      * 获取大订单号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BillId 大订单号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBillId() const;
@@ -123,9 +117,7 @@ namespace TencentCloud
 
                     /**
                      * 获取扩容TraceId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TraceId 扩容TraceId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTraceId() const;
@@ -154,28 +146,24 @@ namespace TencentCloud
 
                     /**
                      * 客户端Token。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clientToken;
                     bool m_clientTokenHasBeenSet;
 
                     /**
                      * 扩容流程ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
                      * 大订单号。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_billId;
                     bool m_billIdHasBeenSet;
 
                     /**
                      * 扩容TraceId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_traceId;
                     bool m_traceIdHasBeenSet;

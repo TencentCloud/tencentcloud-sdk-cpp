@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,8 @@
 using namespace TencentCloud::Mariadb::V20170312::Model;
 using namespace std;
 
-DescribeDBInstanceSpecsRequest::DescribeDBInstanceSpecsRequest()
+DescribeDBInstanceSpecsRequest::DescribeDBInstanceSpecsRequest() :
+    m_cpuTypeHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string DescribeDBInstanceSpecsRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_cpuTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CpuType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cpuType.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string DescribeDBInstanceSpecsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeDBInstanceSpecsRequest::GetCpuType() const
+{
+    return m_cpuType;
+}
+
+void DescribeDBInstanceSpecsRequest::SetCpuType(const string& _cpuType)
+{
+    m_cpuType = _cpuType;
+    m_cpuTypeHasBeenSet = true;
+}
+
+bool DescribeDBInstanceSpecsRequest::CpuTypeHasBeenSet() const
+{
+    return m_cpuTypeHasBeenSet;
+}
 
 

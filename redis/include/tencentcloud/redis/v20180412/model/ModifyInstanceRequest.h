@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,31 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取修改实例操作，如填写：rename-表示实例重命名；modifyProject-修改实例所属项目；modifyAutoRenew-修改实例续费标记
-                     * @return Operation 修改实例操作，如填写：rename-表示实例重命名；modifyProject-修改实例所属项目；modifyAutoRenew-修改实例续费标记
+                     * 获取修改实例操作。如填写：
+- rename：表示实例重命名。
+- modifyProject：修改实例所属项目。
+- modifyAutoRenew：修改实例续费标记。
+- modifyDeleteProtectionSwitch：修改实例删除保护。
+                     * @return Operation 修改实例操作。如填写：
+- rename：表示实例重命名。
+- modifyProject：修改实例所属项目。
+- modifyAutoRenew：修改实例续费标记。
+- modifyDeleteProtectionSwitch：修改实例删除保护。
                      * 
                      */
                     std::string GetOperation() const;
 
                     /**
-                     * 设置修改实例操作，如填写：rename-表示实例重命名；modifyProject-修改实例所属项目；modifyAutoRenew-修改实例续费标记
-                     * @param _operation 修改实例操作，如填写：rename-表示实例重命名；modifyProject-修改实例所属项目；modifyAutoRenew-修改实例续费标记
+                     * 设置修改实例操作。如填写：
+- rename：表示实例重命名。
+- modifyProject：修改实例所属项目。
+- modifyAutoRenew：修改实例续费标记。
+- modifyDeleteProtectionSwitch：修改实例删除保护。
+                     * @param _operation 修改实例操作。如填写：
+- rename：表示实例重命名。
+- modifyProject：修改实例所属项目。
+- modifyAutoRenew：修改实例续费标记。
+- modifyDeleteProtectionSwitch：修改实例删除保护。
                      * 
                      */
                     void SetOperation(const std::string& _operation);
@@ -64,15 +80,15 @@ namespace TencentCloud
                     bool OperationHasBeenSet() const;
 
                     /**
-                     * 获取实例Id，每次请求的实例的上限为10。
-                     * @return InstanceIds 实例Id，每次请求的实例的上限为10。
+                     * 获取实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。每次请求的实例数量的上限为10。
+                     * @return InstanceIds 实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。每次请求的实例数量的上限为10。
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置实例Id，每次请求的实例的上限为10。
-                     * @param _instanceIds 实例Id，每次请求的实例的上限为10。
+                     * 设置实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。每次请求的实例数量的上限为10。
+                     * @param _instanceIds 实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。每次请求的实例数量的上限为10。
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -85,15 +101,15 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取实例的新名称
-                     * @return InstanceNames 实例的新名称
+                     * 获取实例的新名称。名称只支持长度为60个字符的中文、英文、数字、下划线_、分隔符-。
+                     * @return InstanceNames 实例的新名称。名称只支持长度为60个字符的中文、英文、数字、下划线_、分隔符-。
                      * 
                      */
                     std::vector<std::string> GetInstanceNames() const;
 
                     /**
-                     * 设置实例的新名称
-                     * @param _instanceNames 实例的新名称
+                     * 设置实例的新名称。名称只支持长度为60个字符的中文、英文、数字、下划线_、分隔符-。
+                     * @param _instanceNames 实例的新名称。名称只支持长度为60个字符的中文、英文、数字、下划线_、分隔符-。
                      * 
                      */
                     void SetInstanceNames(const std::vector<std::string>& _instanceNames);
@@ -106,15 +122,15 @@ namespace TencentCloud
                     bool InstanceNamesHasBeenSet() const;
 
                     /**
-                     * 获取项目Id
-                     * @return ProjectId 项目Id
+                     * 获取项目 ID，请登录[Redis控制台的项目管理](https://console.cloud.tencent.com/project)页面，在**项目名称**中复制项目 ID。
+                     * @return ProjectId 项目 ID，请登录[Redis控制台的项目管理](https://console.cloud.tencent.com/project)页面，在**项目名称**中复制项目 ID。
                      * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置项目Id
-                     * @param _projectId 项目Id
+                     * 设置项目 ID，请登录[Redis控制台的项目管理](https://console.cloud.tencent.com/project)页面，在**项目名称**中复制项目 ID。
+                     * @param _projectId 项目 ID，请登录[Redis控制台的项目管理](https://console.cloud.tencent.com/project)页面，在**项目名称**中复制项目 ID。
                      * 
                      */
                     void SetProjectId(const int64_t& _projectId);
@@ -127,15 +143,27 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取自动续费标识。0 - 默认状态（手动续费）；1 - 自动续费；2 - 明确不自动续费
-                     * @return AutoRenews 自动续费标识。0 - 默认状态（手动续费）；1 - 自动续费；2 - 明确不自动续费
+                     * 获取自动续费标识。
+- 0：默认状态，指手动续费。
+- 1：自动续费。
+- 2：明确不自动续费。
+                     * @return AutoRenews 自动续费标识。
+- 0：默认状态，指手动续费。
+- 1：自动续费。
+- 2：明确不自动续费。
                      * 
                      */
                     std::vector<int64_t> GetAutoRenews() const;
 
                     /**
-                     * 设置自动续费标识。0 - 默认状态（手动续费）；1 - 自动续费；2 - 明确不自动续费
-                     * @param _autoRenews 自动续费标识。0 - 默认状态（手动续费）；1 - 自动续费；2 - 明确不自动续费
+                     * 设置自动续费标识。
+- 0：默认状态，指手动续费。
+- 1：自动续费。
+- 2：明确不自动续费。
+                     * @param _autoRenews 自动续费标识。
+- 0：默认状态，指手动续费。
+- 1：自动续费。
+- 2：明确不自动续费。
                      * 
                      */
                     void SetAutoRenews(const std::vector<int64_t>& _autoRenews);
@@ -148,102 +176,136 @@ namespace TencentCloud
                     bool AutoRenewsHasBeenSet() const;
 
                     /**
-                     * 获取已经废弃
-                     * @return InstanceId 已经废弃
+                     * 获取删除保护开关。- 0：默认状态，指关闭。- 1：开关打开。
+                     * @return DeleteProtectionSwitches 删除保护开关。- 0：默认状态，指关闭。- 1：开关打开。
                      * 
+                     */
+                    std::vector<int64_t> GetDeleteProtectionSwitches() const;
+
+                    /**
+                     * 设置删除保护开关。- 0：默认状态，指关闭。- 1：开关打开。
+                     * @param _deleteProtectionSwitches 删除保护开关。- 0：默认状态，指关闭。- 1：开关打开。
+                     * 
+                     */
+                    void SetDeleteProtectionSwitches(const std::vector<int64_t>& _deleteProtectionSwitches);
+
+                    /**
+                     * 判断参数 DeleteProtectionSwitches 是否已赋值
+                     * @return DeleteProtectionSwitches 是否已赋值
+                     * 
+                     */
+                    bool DeleteProtectionSwitchesHasBeenSet() const;
+
+                    /**
+                     * 获取目前在废弃中，存量用户还可以使用，建议新用户使用 InstanceIds。
+                     * @return InstanceId 目前在废弃中，存量用户还可以使用，建议新用户使用 InstanceIds。
+                     * @deprecated
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置已经废弃
-                     * @param _instanceId 已经废弃
-                     * 
+                     * 设置目前在废弃中，存量用户还可以使用，建议新用户使用 InstanceIds。
+                     * @param _instanceId 目前在废弃中，存量用户还可以使用，建议新用户使用 InstanceIds。
+                     * @deprecated
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取已经废弃
                      * @return InstanceName 已经废弃
-                     * 
+                     * @deprecated
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置已经废弃
                      * @param _instanceName 已经废弃
-                     * 
+                     * @deprecated
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取已经废弃
-                     * @return AutoRenew 已经废弃
-                     * 
+                     * 获取已经废弃。
+                     * @return AutoRenew 已经废弃。
+                     * @deprecated
                      */
                     int64_t GetAutoRenew() const;
 
                     /**
-                     * 设置已经废弃
-                     * @param _autoRenew 已经废弃
-                     * 
+                     * 设置已经废弃。
+                     * @param _autoRenew 已经废弃。
+                     * @deprecated
                      */
                     void SetAutoRenew(const int64_t& _autoRenew);
 
                     /**
                      * 判断参数 AutoRenew 是否已赋值
                      * @return AutoRenew 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AutoRenewHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 修改实例操作，如填写：rename-表示实例重命名；modifyProject-修改实例所属项目；modifyAutoRenew-修改实例续费标记
+                     * 修改实例操作。如填写：
+- rename：表示实例重命名。
+- modifyProject：修改实例所属项目。
+- modifyAutoRenew：修改实例续费标记。
+- modifyDeleteProtectionSwitch：修改实例删除保护。
                      */
                     std::string m_operation;
                     bool m_operationHasBeenSet;
 
                     /**
-                     * 实例Id，每次请求的实例的上限为10。
+                     * 实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。每次请求的实例数量的上限为10。
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 实例的新名称
+                     * 实例的新名称。名称只支持长度为60个字符的中文、英文、数字、下划线_、分隔符-。
                      */
                     std::vector<std::string> m_instanceNames;
                     bool m_instanceNamesHasBeenSet;
 
                     /**
-                     * 项目Id
+                     * 项目 ID，请登录[Redis控制台的项目管理](https://console.cloud.tencent.com/project)页面，在**项目名称**中复制项目 ID。
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 自动续费标识。0 - 默认状态（手动续费）；1 - 自动续费；2 - 明确不自动续费
+                     * 自动续费标识。
+- 0：默认状态，指手动续费。
+- 1：自动续费。
+- 2：明确不自动续费。
                      */
                     std::vector<int64_t> m_autoRenews;
                     bool m_autoRenewsHasBeenSet;
 
                     /**
-                     * 已经废弃
+                     * 删除保护开关。- 0：默认状态，指关闭。- 1：开关打开。
+                     */
+                    std::vector<int64_t> m_deleteProtectionSwitches;
+                    bool m_deleteProtectionSwitchesHasBeenSet;
+
+                    /**
+                     * 目前在废弃中，存量用户还可以使用，建议新用户使用 InstanceIds。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -255,7 +317,7 @@ namespace TencentCloud
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 已经废弃
+                     * 已经废弃。
                      */
                     int64_t m_autoRenew;
                     bool m_autoRenewHasBeenSet;

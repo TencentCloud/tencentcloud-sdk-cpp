@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,14 +90,54 @@ namespace TencentCloud
 
                     /**
                      * 获取批量任务类型
+new：注册域名
+renew：续费域名
+batch_transfer_prohibition_on：开启禁止转移锁
+batch_transfer_prohibition_off：关闭禁止转移锁
+batch_update_prohibition_on：开启禁止更新锁
+batch_update_prohibition_off：关闭禁止更新锁
+batch_modify_owner：域名转移
+batch_modify_domain_info：域名信息修改
+batch_transfer_in：域名转入
+batch_cancel_transfer_out：域名取消转出
                      * @return BatchAction 批量任务类型
+new：注册域名
+renew：续费域名
+batch_transfer_prohibition_on：开启禁止转移锁
+batch_transfer_prohibition_off：关闭禁止转移锁
+batch_update_prohibition_on：开启禁止更新锁
+batch_update_prohibition_off：关闭禁止更新锁
+batch_modify_owner：域名转移
+batch_modify_domain_info：域名信息修改
+batch_transfer_in：域名转入
+batch_cancel_transfer_out：域名取消转出
                      * 
                      */
                     std::string GetBatchAction() const;
 
                     /**
                      * 设置批量任务类型
+new：注册域名
+renew：续费域名
+batch_transfer_prohibition_on：开启禁止转移锁
+batch_transfer_prohibition_off：关闭禁止转移锁
+batch_update_prohibition_on：开启禁止更新锁
+batch_update_prohibition_off：关闭禁止更新锁
+batch_modify_owner：域名转移
+batch_modify_domain_info：域名信息修改
+batch_transfer_in：域名转入
+batch_cancel_transfer_out：域名取消转出
                      * @param _batchAction 批量任务类型
+new：注册域名
+renew：续费域名
+batch_transfer_prohibition_on：开启禁止转移锁
+batch_transfer_prohibition_off：关闭禁止转移锁
+batch_update_prohibition_on：开启禁止更新锁
+batch_update_prohibition_off：关闭禁止更新锁
+batch_modify_owner：域名转移
+batch_modify_domain_info：域名信息修改
+batch_transfer_in：域名转入
+batch_cancel_transfer_out：域名取消转出
                      * 
                      */
                     void SetBatchAction(const std::string& _batchAction);
@@ -125,6 +165,16 @@ namespace TencentCloud
 
                     /**
                      * 批量任务类型
+new：注册域名
+renew：续费域名
+batch_transfer_prohibition_on：开启禁止转移锁
+batch_transfer_prohibition_off：关闭禁止转移锁
+batch_update_prohibition_on：开启禁止更新锁
+batch_update_prohibition_off：关闭禁止更新锁
+batch_modify_owner：域名转移
+batch_modify_domain_info：域名信息修改
+batch_transfer_in：域名转入
+batch_cancel_transfer_out：域名取消转出
                      */
                     std::string m_batchAction;
                     bool m_batchActionHasBeenSet;

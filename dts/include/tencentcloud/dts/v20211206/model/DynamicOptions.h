@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dts/v20211206/model/DdlOption.h>
 #include <tencentcloud/dts/v20211206/model/ConflictHandleOption.h>
+#include <tencentcloud/dts/v20211206/model/KafkaOption.h>
 
 
 namespace TencentCloud
@@ -50,18 +51,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所要同步的DML和DDL的选项，Insert(插入操作)、Update(更新操作)、Delete(删除操作)、DDL(结构同步)，PartialDDL(自定义,和DdlOptions一起起作用 )；必填、dts会用该值覆盖原有的值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OpTypes 所要同步的DML和DDL的选项，Insert(插入操作)、Update(更新操作)、Delete(删除操作)、DDL(结构同步)，PartialDDL(自定义,和DdlOptions一起起作用 )；必填、dts会用该值覆盖原有的值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetOpTypes() const;
 
                     /**
                      * 设置所要同步的DML和DDL的选项，Insert(插入操作)、Update(更新操作)、Delete(删除操作)、DDL(结构同步)，PartialDDL(自定义,和DdlOptions一起起作用 )；必填、dts会用该值覆盖原有的值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _opTypes 所要同步的DML和DDL的选项，Insert(插入操作)、Update(更新操作)、Delete(删除操作)、DDL(结构同步)，PartialDDL(自定义,和DdlOptions一起起作用 )；必填、dts会用该值覆盖原有的值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOpTypes(const std::vector<std::string>& _opTypes);
@@ -74,19 +71,15 @@ namespace TencentCloud
                     bool OpTypesHasBeenSet() const;
 
                     /**
-                     * 获取DDL同步选项，具体描述要同步那些DDL; 当OpTypes取值PartialDDL时、字段不能为空；必填、dts会用该值覆盖原有的值
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DdlOptions DDL同步选项，具体描述要同步那些DDL; 当OpTypes取值PartialDDL时、字段不能为空；必填、dts会用该值覆盖原有的值
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取DDL同步选项，具体描述要同步哪些DDL; 当OpTypes取值PartialDDL时、字段不能为空；必填、dts会用该值覆盖原有的值
+                     * @return DdlOptions DDL同步选项，具体描述要同步哪些DDL; 当OpTypes取值PartialDDL时、字段不能为空；必填、dts会用该值覆盖原有的值
                      * 
                      */
                     std::vector<DdlOption> GetDdlOptions() const;
 
                     /**
-                     * 设置DDL同步选项，具体描述要同步那些DDL; 当OpTypes取值PartialDDL时、字段不能为空；必填、dts会用该值覆盖原有的值
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ddlOptions DDL同步选项，具体描述要同步那些DDL; 当OpTypes取值PartialDDL时、字段不能为空；必填、dts会用该值覆盖原有的值
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置DDL同步选项，具体描述要同步哪些DDL; 当OpTypes取值PartialDDL时、字段不能为空；必填、dts会用该值覆盖原有的值
+                     * @param _ddlOptions DDL同步选项，具体描述要同步哪些DDL; 当OpTypes取值PartialDDL时、字段不能为空；必填、dts会用该值覆盖原有的值
                      * 
                      */
                     void SetDdlOptions(const std::vector<DdlOption>& _ddlOptions);
@@ -100,18 +93,14 @@ namespace TencentCloud
 
                     /**
                      * 获取冲突处理选项，ReportError(报错)、Ignore(忽略)、Cover(覆盖)、ConditionCover(条件覆盖); 目前目标端为kafka的链路不支持修改该配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConflictHandleType 冲突处理选项，ReportError(报错)、Ignore(忽略)、Cover(覆盖)、ConditionCover(条件覆盖); 目前目标端为kafka的链路不支持修改该配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConflictHandleType() const;
 
                     /**
                      * 设置冲突处理选项，ReportError(报错)、Ignore(忽略)、Cover(覆盖)、ConditionCover(条件覆盖); 目前目标端为kafka的链路不支持修改该配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _conflictHandleType 冲突处理选项，ReportError(报错)、Ignore(忽略)、Cover(覆盖)、ConditionCover(条件覆盖); 目前目标端为kafka的链路不支持修改该配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConflictHandleType(const std::string& _conflictHandleType);
@@ -125,18 +114,14 @@ namespace TencentCloud
 
                     /**
                      * 获取冲突处理的详细选项，如条件覆盖中的条件行和条件操作；不能部分更新该选项的内部字段；有更新时、需要全量更新该字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConflictHandleOption 冲突处理的详细选项，如条件覆盖中的条件行和条件操作；不能部分更新该选项的内部字段；有更新时、需要全量更新该字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ConflictHandleOption GetConflictHandleOption() const;
 
                     /**
                      * 设置冲突处理的详细选项，如条件覆盖中的条件行和条件操作；不能部分更新该选项的内部字段；有更新时、需要全量更新该字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _conflictHandleOption 冲突处理的详细选项，如条件覆盖中的条件行和条件操作；不能部分更新该选项的内部字段；有更新时、需要全量更新该字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConflictHandleOption(const ConflictHandleOption& _conflictHandleOption);
@@ -148,35 +133,166 @@ namespace TencentCloud
                      */
                     bool ConflictHandleOptionHasBeenSet() const;
 
+                    /**
+                     * 获取同步到kafka链路的kafka配置
+                     * @return KafkaOption 同步到kafka链路的kafka配置
+                     * 
+                     */
+                    KafkaOption GetKafkaOption() const;
+
+                    /**
+                     * 设置同步到kafka链路的kafka配置
+                     * @param _kafkaOption 同步到kafka链路的kafka配置
+                     * 
+                     */
+                    void SetKafkaOption(const KafkaOption& _kafkaOption);
+
+                    /**
+                     * 判断参数 KafkaOption 是否已赋值
+                     * @return KafkaOption 是否已赋值
+                     * 
+                     */
+                    bool KafkaOptionHasBeenSet() const;
+
+                    /**
+                     * 获取同步到kafka链路是否过滤掉begin和commit消息。目前仅mysql2kafka链路支持
+                     * @return FilterBeginCommit 同步到kafka链路是否过滤掉begin和commit消息。目前仅mysql2kafka链路支持
+                     * 
+                     */
+                    bool GetFilterBeginCommit() const;
+
+                    /**
+                     * 设置同步到kafka链路是否过滤掉begin和commit消息。目前仅mysql2kafka链路支持
+                     * @param _filterBeginCommit 同步到kafka链路是否过滤掉begin和commit消息。目前仅mysql2kafka链路支持
+                     * 
+                     */
+                    void SetFilterBeginCommit(const bool& _filterBeginCommit);
+
+                    /**
+                     * 判断参数 FilterBeginCommit 是否已赋值
+                     * @return FilterBeginCommit 是否已赋值
+                     * 
+                     */
+                    bool FilterBeginCommitHasBeenSet() const;
+
+                    /**
+                     * 获取同步到kafka链路是否过滤掉checkpoint消息。目前仅mysql2kafka链路支持
+                     * @return FilterCheckpoint 同步到kafka链路是否过滤掉checkpoint消息。目前仅mysql2kafka链路支持
+                     * 
+                     */
+                    bool GetFilterCheckpoint() const;
+
+                    /**
+                     * 设置同步到kafka链路是否过滤掉checkpoint消息。目前仅mysql2kafka链路支持
+                     * @param _filterCheckpoint 同步到kafka链路是否过滤掉checkpoint消息。目前仅mysql2kafka链路支持
+                     * 
+                     */
+                    void SetFilterCheckpoint(const bool& _filterCheckpoint);
+
+                    /**
+                     * 判断参数 FilterCheckpoint 是否已赋值
+                     * @return FilterCheckpoint 是否已赋值
+                     * 
+                     */
+                    bool FilterCheckpointHasBeenSet() const;
+
+                    /**
+                     * 获取同名表的处理，ReportErrorAfterCheck(前置校验并报错，默认)、ExecuteAfterIgnore(忽略并继续执行)
+                     * @return DealOfExistSameTable 同名表的处理，ReportErrorAfterCheck(前置校验并报错，默认)、ExecuteAfterIgnore(忽略并继续执行)
+                     * 
+                     */
+                    std::string GetDealOfExistSameTable() const;
+
+                    /**
+                     * 设置同名表的处理，ReportErrorAfterCheck(前置校验并报错，默认)、ExecuteAfterIgnore(忽略并继续执行)
+                     * @param _dealOfExistSameTable 同名表的处理，ReportErrorAfterCheck(前置校验并报错，默认)、ExecuteAfterIgnore(忽略并继续执行)
+                     * 
+                     */
+                    void SetDealOfExistSameTable(const std::string& _dealOfExistSameTable);
+
+                    /**
+                     * 判断参数 DealOfExistSameTable 是否已赋值
+                     * @return DealOfExistSameTable 是否已赋值
+                     * 
+                     */
+                    bool DealOfExistSameTableHasBeenSet() const;
+
+                    /**
+                     * 获取仅增量任务重新设置指定位点
+                     * @return StartPosition 仅增量任务重新设置指定位点
+                     * 
+                     */
+                    std::string GetStartPosition() const;
+
+                    /**
+                     * 设置仅增量任务重新设置指定位点
+                     * @param _startPosition 仅增量任务重新设置指定位点
+                     * 
+                     */
+                    void SetStartPosition(const std::string& _startPosition);
+
+                    /**
+                     * 判断参数 StartPosition 是否已赋值
+                     * @return StartPosition 是否已赋值
+                     * 
+                     */
+                    bool StartPositionHasBeenSet() const;
+
                 private:
 
                     /**
                      * 所要同步的DML和DDL的选项，Insert(插入操作)、Update(更新操作)、Delete(删除操作)、DDL(结构同步)，PartialDDL(自定义,和DdlOptions一起起作用 )；必填、dts会用该值覆盖原有的值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_opTypes;
                     bool m_opTypesHasBeenSet;
 
                     /**
-                     * DDL同步选项，具体描述要同步那些DDL; 当OpTypes取值PartialDDL时、字段不能为空；必填、dts会用该值覆盖原有的值
-注意：此字段可能返回 null，表示取不到有效值。
+                     * DDL同步选项，具体描述要同步哪些DDL; 当OpTypes取值PartialDDL时、字段不能为空；必填、dts会用该值覆盖原有的值
                      */
                     std::vector<DdlOption> m_ddlOptions;
                     bool m_ddlOptionsHasBeenSet;
 
                     /**
                      * 冲突处理选项，ReportError(报错)、Ignore(忽略)、Cover(覆盖)、ConditionCover(条件覆盖); 目前目标端为kafka的链路不支持修改该配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_conflictHandleType;
                     bool m_conflictHandleTypeHasBeenSet;
 
                     /**
                      * 冲突处理的详细选项，如条件覆盖中的条件行和条件操作；不能部分更新该选项的内部字段；有更新时、需要全量更新该字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ConflictHandleOption m_conflictHandleOption;
                     bool m_conflictHandleOptionHasBeenSet;
+
+                    /**
+                     * 同步到kafka链路的kafka配置
+                     */
+                    KafkaOption m_kafkaOption;
+                    bool m_kafkaOptionHasBeenSet;
+
+                    /**
+                     * 同步到kafka链路是否过滤掉begin和commit消息。目前仅mysql2kafka链路支持
+                     */
+                    bool m_filterBeginCommit;
+                    bool m_filterBeginCommitHasBeenSet;
+
+                    /**
+                     * 同步到kafka链路是否过滤掉checkpoint消息。目前仅mysql2kafka链路支持
+                     */
+                    bool m_filterCheckpoint;
+                    bool m_filterCheckpointHasBeenSet;
+
+                    /**
+                     * 同名表的处理，ReportErrorAfterCheck(前置校验并报错，默认)、ExecuteAfterIgnore(忽略并继续执行)
+                     */
+                    std::string m_dealOfExistSameTable;
+                    bool m_dealOfExistSameTableHasBeenSet;
+
+                    /**
+                     * 仅增量任务重新设置指定位点
+                     */
+                    std::string m_startPosition;
+                    bool m_startPositionHasBeenSet;
 
                 };
             }

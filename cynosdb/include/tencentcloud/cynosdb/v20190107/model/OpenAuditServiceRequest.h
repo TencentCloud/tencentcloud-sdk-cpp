@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -107,23 +107,23 @@ namespace TencentCloud
                     bool HighLogExpireDayHasBeenSet() const;
 
                     /**
-                     * 获取审计规则。同RuleTemplateIds都不填是全审计。
-                     * @return AuditRuleFilters 审计规则。同RuleTemplateIds都不填是全审计。
-                     * 
+                     * 获取审计规则(废弃)。
+                     * @return AuditRuleFilters 审计规则(废弃)。
+                     * @deprecated
                      */
                     std::vector<AuditRuleFilters> GetAuditRuleFilters() const;
 
                     /**
-                     * 设置审计规则。同RuleTemplateIds都不填是全审计。
-                     * @param _auditRuleFilters 审计规则。同RuleTemplateIds都不填是全审计。
-                     * 
+                     * 设置审计规则(废弃)。
+                     * @param _auditRuleFilters 审计规则(废弃)。
+                     * @deprecated
                      */
                     void SetAuditRuleFilters(const std::vector<AuditRuleFilters>& _auditRuleFilters);
 
                     /**
                      * 判断参数 AuditRuleFilters 是否已赋值
                      * @return AuditRuleFilters 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AuditRuleFiltersHasBeenSet() const;
 
@@ -190,7 +190,7 @@ namespace TencentCloud
                     bool m_highLogExpireDayHasBeenSet;
 
                     /**
-                     * 审计规则。同RuleTemplateIds都不填是全审计。
+                     * 审计规则(废弃)。
                      */
                     std::vector<AuditRuleFilters> m_auditRuleFilters;
                     bool m_auditRuleFiltersHasBeenSet;

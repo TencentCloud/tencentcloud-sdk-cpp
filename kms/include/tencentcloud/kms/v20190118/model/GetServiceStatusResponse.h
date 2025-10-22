@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/kms/v20190118/model/ExclusiveHSM.h>
+#include <tencentcloud/kms/v20190118/model/DestinationSyncConfig.h>
 
 
 namespace TencentCloud
@@ -114,8 +116,8 @@ namespace TencentCloud
                     bool ProRenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取旗舰版购买记录的唯一性标识。如果为开通旗舰版，则返回值为空
-                     * @return ProResourceId 旗舰版购买记录的唯一性标识。如果为开通旗舰版，则返回值为空
+                     * 获取旗舰版购买记录的唯一性标识。如果未开通旗舰版，则返回值为空
+                     * @return ProResourceId 旗舰版购买记录的唯一性标识。如果未开通旗舰版，则返回值为空
                      * 
                      */
                     std::string GetProResourceId() const;
@@ -169,6 +171,132 @@ namespace TencentCloud
                      */
                     bool SubscriptionInfoHasBeenSet() const;
 
+                    /**
+                     * 获取返回KMS用户密钥使用数量
+                     * @return CmkUserCount 返回KMS用户密钥使用数量
+                     * 
+                     */
+                    uint64_t GetCmkUserCount() const;
+
+                    /**
+                     * 判断参数 CmkUserCount 是否已赋值
+                     * @return CmkUserCount 是否已赋值
+                     * 
+                     */
+                    bool CmkUserCountHasBeenSet() const;
+
+                    /**
+                     * 获取返回KMS用户密钥规格数量
+                     * @return CmkLimit 返回KMS用户密钥规格数量
+                     * 
+                     */
+                    uint64_t GetCmkLimit() const;
+
+                    /**
+                     * 判断参数 CmkLimit 是否已赋值
+                     * @return CmkLimit 是否已赋值
+                     * 
+                     */
+                    bool CmkLimitHasBeenSet() const;
+
+                    /**
+                     * 获取返回独享集群组
+                     * @return ExclusiveHSMList 返回独享集群组
+                     * 
+                     */
+                    std::vector<ExclusiveHSM> GetExclusiveHSMList() const;
+
+                    /**
+                     * 判断参数 ExclusiveHSMList 是否已赋值
+                     * @return ExclusiveHSMList 是否已赋值
+                     * 
+                     */
+                    bool ExclusiveHSMListHasBeenSet() const;
+
+                    /**
+                     * 获取是否支持数据密钥托管。1:支持，0:不支持。
+                     * @return IsAllowedDataKeyHosted 是否支持数据密钥托管。1:支持，0:不支持。
+                     * 
+                     */
+                    bool GetIsAllowedDataKeyHosted() const;
+
+                    /**
+                     * 判断参数 IsAllowedDataKeyHosted 是否已赋值
+                     * @return IsAllowedDataKeyHosted 是否已赋值
+                     * 
+                     */
+                    bool IsAllowedDataKeyHostedHasBeenSet() const;
+
+                    /**
+                     * 获取IsAllowedDataKeyHosted为1时有效，数据密钥的购买额度
+                     * @return DataKeyLimit IsAllowedDataKeyHosted为1时有效，数据密钥的购买额度
+                     * 
+                     */
+                    uint64_t GetDataKeyLimit() const;
+
+                    /**
+                     * 判断参数 DataKeyLimit 是否已赋值
+                     * @return DataKeyLimit 是否已赋值
+                     * 
+                     */
+                    bool DataKeyLimitHasBeenSet() const;
+
+                    /**
+                     * 获取IsAllowedDataKeyHosted为1时有效，数据密钥免费额度。
+                     * @return FreeDataKeyLimit IsAllowedDataKeyHosted为1时有效，数据密钥免费额度。
+                     * 
+                     */
+                    uint64_t GetFreeDataKeyLimit() const;
+
+                    /**
+                     * 判断参数 FreeDataKeyLimit 是否已赋值
+                     * @return FreeDataKeyLimit 是否已赋值
+                     * 
+                     */
+                    bool FreeDataKeyLimitHasBeenSet() const;
+
+                    /**
+                     * 获取IsAllowedDataKeyHosted为1时有效，已使用的数据密钥数量。
+                     * @return DataKeyUsedCount IsAllowedDataKeyHosted为1时有效，已使用的数据密钥数量。
+                     * 
+                     */
+                    uint64_t GetDataKeyUsedCount() const;
+
+                    /**
+                     * 判断参数 DataKeyUsedCount 是否已赋值
+                     * @return DataKeyUsedCount 是否已赋值
+                     * 
+                     */
+                    bool DataKeyUsedCountHasBeenSet() const;
+
+                    /**
+                     * 获取同步任务的目标地域信息
+                     * @return SyncTaskList 同步任务的目标地域信息
+                     * 
+                     */
+                    std::vector<DestinationSyncConfig> GetSyncTaskList() const;
+
+                    /**
+                     * 判断参数 SyncTaskList 是否已赋值
+                     * @return SyncTaskList 是否已赋值
+                     * 
+                     */
+                    bool SyncTaskListHasBeenSet() const;
+
+                    /**
+                     * 获取是否支持同步任务。true:支持，false:不支持。
+                     * @return IsAllowedSync 是否支持同步任务。true:支持，false:不支持。
+                     * 
+                     */
+                    bool GetIsAllowedSync() const;
+
+                    /**
+                     * 判断参数 IsAllowedSync 是否已赋值
+                     * @return IsAllowedSync 是否已赋值
+                     * 
+                     */
+                    bool IsAllowedSyncHasBeenSet() const;
+
                 private:
 
                     /**
@@ -202,7 +330,7 @@ namespace TencentCloud
                     bool m_proRenewFlagHasBeenSet;
 
                     /**
-                     * 旗舰版购买记录的唯一性标识。如果为开通旗舰版，则返回值为空
+                     * 旗舰版购买记录的唯一性标识。如果未开通旗舰版，则返回值为空
                      */
                     std::string m_proResourceId;
                     bool m_proResourceIdHasBeenSet;
@@ -224,6 +352,60 @@ namespace TencentCloud
                      */
                     std::string m_subscriptionInfo;
                     bool m_subscriptionInfoHasBeenSet;
+
+                    /**
+                     * 返回KMS用户密钥使用数量
+                     */
+                    uint64_t m_cmkUserCount;
+                    bool m_cmkUserCountHasBeenSet;
+
+                    /**
+                     * 返回KMS用户密钥规格数量
+                     */
+                    uint64_t m_cmkLimit;
+                    bool m_cmkLimitHasBeenSet;
+
+                    /**
+                     * 返回独享集群组
+                     */
+                    std::vector<ExclusiveHSM> m_exclusiveHSMList;
+                    bool m_exclusiveHSMListHasBeenSet;
+
+                    /**
+                     * 是否支持数据密钥托管。1:支持，0:不支持。
+                     */
+                    bool m_isAllowedDataKeyHosted;
+                    bool m_isAllowedDataKeyHostedHasBeenSet;
+
+                    /**
+                     * IsAllowedDataKeyHosted为1时有效，数据密钥的购买额度
+                     */
+                    uint64_t m_dataKeyLimit;
+                    bool m_dataKeyLimitHasBeenSet;
+
+                    /**
+                     * IsAllowedDataKeyHosted为1时有效，数据密钥免费额度。
+                     */
+                    uint64_t m_freeDataKeyLimit;
+                    bool m_freeDataKeyLimitHasBeenSet;
+
+                    /**
+                     * IsAllowedDataKeyHosted为1时有效，已使用的数据密钥数量。
+                     */
+                    uint64_t m_dataKeyUsedCount;
+                    bool m_dataKeyUsedCountHasBeenSet;
+
+                    /**
+                     * 同步任务的目标地域信息
+                     */
+                    std::vector<DestinationSyncConfig> m_syncTaskList;
+                    bool m_syncTaskListHasBeenSet;
+
+                    /**
+                     * 是否支持同步任务。true:支持，false:不支持。
+                     */
+                    bool m_isAllowedSync;
+                    bool m_isAllowedSyncHasBeenSet;
 
                 };
             }

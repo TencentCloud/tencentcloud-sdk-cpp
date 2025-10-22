@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -144,18 +144,14 @@ namespace TencentCloud
 
                     /**
                      * 获取联合产品标记，0代表普通高防包，1代表联合高防包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnionPackFlag 联合产品标记，0代表普通高防包，1代表联合高防包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetUnionPackFlag() const;
 
                     /**
                      * 设置联合产品标记，0代表普通高防包，1代表联合高防包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _unionPackFlag 联合产品标记，0代表普通高防包，1代表联合高防包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUnionPackFlag(const uint64_t& _unionPackFlag);
@@ -169,18 +165,14 @@ namespace TencentCloud
 
                     /**
                      * 获取业务带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceBandWidth 业务带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetServiceBandWidth() const;
 
                     /**
                      * 设置业务带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceBandWidth 业务带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceBandWidth(const uint64_t& _serviceBandWidth);
@@ -194,18 +186,14 @@ namespace TencentCloud
 
                     /**
                      * 获取战斗服版本标记，0表示普通高防包，1表示战斗服高防包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BattleEditionFlag 战斗服版本标记，0表示普通高防包，1表示战斗服高防包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetBattleEditionFlag() const;
 
                     /**
                      * 设置战斗服版本标记，0表示普通高防包，1表示战斗服高防包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _battleEditionFlag 战斗服版本标记，0表示普通高防包，1表示战斗服高防包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBattleEditionFlag(const uint64_t& _battleEditionFlag);
@@ -219,18 +207,14 @@ namespace TencentCloud
 
                     /**
                      * 获取渠道版标记，0表示普通高防包，1表示渠道版高防包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelEditionFlag 渠道版标记，0表示普通高防包，1表示渠道版高防包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetChannelEditionFlag() const;
 
                     /**
                      * 设置渠道版标记，0表示普通高防包，1表示渠道版高防包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _channelEditionFlag 渠道版标记，0表示普通高防包，1表示渠道版高防包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChannelEditionFlag(const uint64_t& _channelEditionFlag);
@@ -244,18 +228,14 @@ namespace TencentCloud
 
                     /**
                      * 获取高防包企业版标记，0表示普通高防包；1表示企业版高防包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnterpriseFlag 高防包企业版标记，0表示普通高防包；1表示企业版高防包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetEnterpriseFlag() const;
 
                     /**
                      * 设置高防包企业版标记，0表示普通高防包；1表示企业版高防包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enterpriseFlag 高防包企业版标记，0表示普通高防包；1表示企业版高防包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnterpriseFlag(const uint64_t& _enterpriseFlag);
@@ -269,18 +249,14 @@ namespace TencentCloud
 
                     /**
                      * 获取高防包企业版弹性阈值，0表示未开启；大于0为弹性防护阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ElasticLimit 高防包企业版弹性阈值，0表示未开启；大于0为弹性防护阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetElasticLimit() const;
 
                     /**
                      * 设置高防包企业版弹性阈值，0表示未开启；大于0为弹性防护阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _elasticLimit 高防包企业版弹性阈值，0表示未开启；大于0为弹性防护阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetElasticLimit(const uint64_t& _elasticLimit);
@@ -294,18 +270,14 @@ namespace TencentCloud
 
                     /**
                      * 获取降配后的防护能力，单位Gbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DownGradeProtect 降配后的防护能力，单位Gbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDownGradeProtect() const;
 
                     /**
                      * 设置降配后的防护能力，单位Gbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _downGradeProtect 降配后的防护能力，单位Gbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDownGradeProtect(const uint64_t& _downGradeProtect);
@@ -348,49 +320,42 @@ namespace TencentCloud
 
                     /**
                      * 联合产品标记，0代表普通高防包，1代表联合高防包
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_unionPackFlag;
                     bool m_unionPackFlagHasBeenSet;
 
                     /**
                      * 业务带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_serviceBandWidth;
                     bool m_serviceBandWidthHasBeenSet;
 
                     /**
                      * 战斗服版本标记，0表示普通高防包，1表示战斗服高防包
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_battleEditionFlag;
                     bool m_battleEditionFlagHasBeenSet;
 
                     /**
                      * 渠道版标记，0表示普通高防包，1表示渠道版高防包
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_channelEditionFlag;
                     bool m_channelEditionFlagHasBeenSet;
 
                     /**
                      * 高防包企业版标记，0表示普通高防包；1表示企业版高防包
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_enterpriseFlag;
                     bool m_enterpriseFlagHasBeenSet;
 
                     /**
                      * 高防包企业版弹性阈值，0表示未开启；大于0为弹性防护阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_elasticLimit;
                     bool m_elasticLimitHasBeenSet;
 
                     /**
                      * 降配后的防护能力，单位Gbps
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_downGradeProtect;
                     bool m_downGradeProtectHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -171,18 +171,14 @@ namespace TencentCloud
 
                     /**
                      * 获取视频画面抖动重影检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JitterConfigure 视频画面抖动重影检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     JitterConfigureInfo GetJitterConfigure() const;
 
                     /**
                      * 设置视频画面抖动重影检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _jitterConfigure 视频画面抖动重影检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJitterConfigure(const JitterConfigureInfo& _jitterConfigure);
@@ -196,18 +192,14 @@ namespace TencentCloud
 
                     /**
                      * 获取视频画面模糊检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BlurConfigure 视频画面模糊检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlurConfigureInfo GetBlurConfigure() const;
 
                     /**
                      * 设置视频画面模糊检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _blurConfigure 视频画面模糊检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBlurConfigure(const BlurConfigureInfo& _blurConfigure);
@@ -221,18 +213,14 @@ namespace TencentCloud
 
                     /**
                      * 获取视频画面低光、过曝检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AbnormalLightingConfigure 视频画面低光、过曝检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AbnormalLightingConfigureInfo GetAbnormalLightingConfigure() const;
 
                     /**
                      * 设置视频画面低光、过曝检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _abnormalLightingConfigure 视频画面低光、过曝检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAbnormalLightingConfigure(const AbnormalLightingConfigureInfo& _abnormalLightingConfigure);
@@ -246,18 +234,14 @@ namespace TencentCloud
 
                     /**
                      * 获取视频画面花屏检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CrashScreenConfigure 视频画面花屏检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CrashScreenConfigureInfo GetCrashScreenConfigure() const;
 
                     /**
                      * 设置视频画面花屏检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _crashScreenConfigure 视频画面花屏检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCrashScreenConfigure(const CrashScreenConfigureInfo& _crashScreenConfigure);
@@ -271,18 +255,14 @@ namespace TencentCloud
 
                     /**
                      * 获取视频画面黑边、白边、黑屏、白屏检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BlackWhiteEdgeConfigure 视频画面黑边、白边、黑屏、白屏检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlackWhiteEdgeConfigureInfo GetBlackWhiteEdgeConfigure() const;
 
                     /**
                      * 设置视频画面黑边、白边、黑屏、白屏检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _blackWhiteEdgeConfigure 视频画面黑边、白边、黑屏、白屏检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBlackWhiteEdgeConfigure(const BlackWhiteEdgeConfigureInfo& _blackWhiteEdgeConfigure);
@@ -296,18 +276,14 @@ namespace TencentCloud
 
                     /**
                      * 获取视频画面噪点检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NoiseConfigure 视频画面噪点检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     NoiseConfigureInfo GetNoiseConfigure() const;
 
                     /**
                      * 设置视频画面噪点检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _noiseConfigure 视频画面噪点检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNoiseConfigure(const NoiseConfigureInfo& _noiseConfigure);
@@ -321,18 +297,14 @@ namespace TencentCloud
 
                     /**
                      * 获取视频画面马赛克检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MosaicConfigure 视频画面马赛克检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MosaicConfigureInfo GetMosaicConfigure() const;
 
                     /**
                      * 设置视频画面马赛克检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mosaicConfigure 视频画面马赛克检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMosaicConfigure(const MosaicConfigureInfo& _mosaicConfigure);
@@ -346,18 +318,14 @@ namespace TencentCloud
 
                     /**
                      * 获取视频画面二维码检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QRCodeConfigure 视频画面二维码检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     QRCodeConfigureInfo GetQRCodeConfigure() const;
 
                     /**
                      * 设置视频画面二维码检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _qRCodeConfigure 视频画面二维码检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQRCodeConfigure(const QRCodeConfigureInfo& _qRCodeConfigure);
@@ -371,18 +339,14 @@ namespace TencentCloud
 
                     /**
                      * 获取视频画面质量评价的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QualityEvaluationConfigure 视频画面质量评价的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     QualityEvaluationConfigureInfo GetQualityEvaluationConfigure() const;
 
                     /**
                      * 设置视频画面质量评价的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _qualityEvaluationConfigure 视频画面质量评价的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQualityEvaluationConfigure(const QualityEvaluationConfigureInfo& _qualityEvaluationConfigure);
@@ -396,18 +360,14 @@ namespace TencentCloud
 
                     /**
                      * 获取音频（静音、低音、爆音）检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VoiceConfigure 音频（静音、低音、爆音）检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     VoiceConfigureInfo GetVoiceConfigure() const;
 
                     /**
                      * 设置音频（静音、低音、爆音）检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _voiceConfigure 音频（静音、低音、爆音）检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVoiceConfigure(const VoiceConfigureInfo& _voiceConfigure);
@@ -497,70 +457,60 @@ namespace TencentCloud
 
                     /**
                      * 视频画面抖动重影检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     JitterConfigureInfo m_jitterConfigure;
                     bool m_jitterConfigureHasBeenSet;
 
                     /**
                      * 视频画面模糊检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlurConfigureInfo m_blurConfigure;
                     bool m_blurConfigureHasBeenSet;
 
                     /**
                      * 视频画面低光、过曝检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AbnormalLightingConfigureInfo m_abnormalLightingConfigure;
                     bool m_abnormalLightingConfigureHasBeenSet;
 
                     /**
                      * 视频画面花屏检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CrashScreenConfigureInfo m_crashScreenConfigure;
                     bool m_crashScreenConfigureHasBeenSet;
 
                     /**
                      * 视频画面黑边、白边、黑屏、白屏检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlackWhiteEdgeConfigureInfo m_blackWhiteEdgeConfigure;
                     bool m_blackWhiteEdgeConfigureHasBeenSet;
 
                     /**
                      * 视频画面噪点检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     NoiseConfigureInfo m_noiseConfigure;
                     bool m_noiseConfigureHasBeenSet;
 
                     /**
                      * 视频画面马赛克检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MosaicConfigureInfo m_mosaicConfigure;
                     bool m_mosaicConfigureHasBeenSet;
 
                     /**
                      * 视频画面二维码检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     QRCodeConfigureInfo m_qRCodeConfigure;
                     bool m_qRCodeConfigureHasBeenSet;
 
                     /**
                      * 视频画面质量评价的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     QualityEvaluationConfigureInfo m_qualityEvaluationConfigure;
                     bool m_qualityEvaluationConfigureHasBeenSet;
 
                     /**
                      * 音频（静音、低音、爆音）检测的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     VoiceConfigureInfo m_voiceConfigure;
                     bool m_voiceConfigureHasBeenSet;

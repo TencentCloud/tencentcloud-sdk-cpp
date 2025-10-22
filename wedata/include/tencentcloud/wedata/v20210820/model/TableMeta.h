@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@
 #include <tencentcloud/wedata/v20210820/model/SearchColumnDocVO.h>
 #include <tencentcloud/wedata/v20210820/model/TableMetaProperty.h>
 #include <tencentcloud/wedata/v20210820/model/GovDatasourceInfo.h>
+#include <tencentcloud/wedata/v20210820/model/CreateAndDDLSupport.h>
 
 
 namespace TencentCloud
@@ -1580,6 +1581,206 @@ TABLE, VIEW, MANAGED_TABLE(Hive管理表), EXTERNAL_TABLE(Hive外部表), VIRTUA
                      */
                     bool HasBizPermissionHasBeenSet() const;
 
+                    /**
+                     * 获取引擎侧创建人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OwnerByEngine 引擎侧创建人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetOwnerByEngine() const;
+
+                    /**
+                     * 设置引擎侧创建人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ownerByEngine 引擎侧创建人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOwnerByEngine(const std::string& _ownerByEngine);
+
+                    /**
+                     * 判断参数 OwnerByEngine 是否已赋值
+                     * @return OwnerByEngine 是否已赋值
+                     * 
+                     */
+                    bool OwnerByEngineHasBeenSet() const;
+
+                    /**
+                     * 获取用户无映射账户，请先完成账户映射后再来申请。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ErrorTips 用户无映射账户，请先完成账户映射后再来申请。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetErrorTips() const;
+
+                    /**
+                     * 设置用户无映射账户，请先完成账户映射后再来申请。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _errorTips 用户无映射账户，请先完成账户映射后再来申请。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetErrorTips(const std::string& _errorTips);
+
+                    /**
+                     * 判断参数 ErrorTips 是否已赋值
+                     * @return ErrorTips 是否已赋值
+                     * 
+                     */
+                    bool ErrorTipsHasBeenSet() const;
+
+                    /**
+                     * 获取是否支持select or ddl
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IfSupportCreateAndDDL 是否支持select or ddl
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    CreateAndDDLSupport GetIfSupportCreateAndDDL() const;
+
+                    /**
+                     * 设置是否支持select or ddl
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ifSupportCreateAndDDL 是否支持select or ddl
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIfSupportCreateAndDDL(const CreateAndDDLSupport& _ifSupportCreateAndDDL);
+
+                    /**
+                     * 判断参数 IfSupportCreateAndDDL 是否已赋值
+                     * @return IfSupportCreateAndDDL 是否已赋值
+                     * 
+                     */
+                    bool IfSupportCreateAndDDLHasBeenSet() const;
+
+                    /**
+                     * 获取资产来源 历史默认值都是CRAWLER
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DataFromType 资产来源 历史默认值都是CRAWLER
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDataFromType() const;
+
+                    /**
+                     * 设置资产来源 历史默认值都是CRAWLER
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dataFromType 资产来源 历史默认值都是CRAWLER
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDataFromType(const std::string& _dataFromType);
+
+                    /**
+                     * 判断参数 DataFromType 是否已赋值
+                     * @return DataFromType 是否已赋值
+                     * 
+                     */
+                    bool DataFromTypeHasBeenSet() const;
+
+                    /**
+                     * 获取引擎侧责任人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EngineOwner 引擎侧责任人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEngineOwner() const;
+
+                    /**
+                     * 设置引擎侧责任人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _engineOwner 引擎侧责任人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEngineOwner(const std::string& _engineOwner);
+
+                    /**
+                     * 判断参数 EngineOwner 是否已赋值
+                     * @return EngineOwner 是否已赋值
+                     * 
+                     */
+                    bool EngineOwnerHasBeenSet() const;
+
+                    /**
+                     * 获取数据分层UUID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DataLayerUuid 数据分层UUID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDataLayerUuid() const;
+
+                    /**
+                     * 设置数据分层UUID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dataLayerUuid 数据分层UUID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDataLayerUuid(const std::string& _dataLayerUuid);
+
+                    /**
+                     * 判断参数 DataLayerUuid 是否已赋值
+                     * @return DataLayerUuid 是否已赋值
+                     * 
+                     */
+                    bool DataLayerUuidHasBeenSet() const;
+
+                    /**
+                     * 获取数据分层名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DataLayerName 数据分层名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDataLayerName() const;
+
+                    /**
+                     * 设置数据分层名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dataLayerName 数据分层名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDataLayerName(const std::string& _dataLayerName);
+
+                    /**
+                     * 判断参数 DataLayerName 是否已赋值
+                     * @return DataLayerName 是否已赋值
+                     * 
+                     */
+                    bool DataLayerNameHasBeenSet() const;
+
+                    /**
+                     * 获取字段数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ColumnCount 字段数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetColumnCount() const;
+
+                    /**
+                     * 设置字段数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _columnCount 字段数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetColumnCount(const int64_t& _columnCount);
+
+                    /**
+                     * 判断参数 ColumnCount 是否已赋值
+                     * @return ColumnCount 是否已赋值
+                     * 
+                     */
+                    bool ColumnCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2009,6 +2210,62 @@ TABLE, VIEW, MANAGED_TABLE(Hive管理表), EXTERNAL_TABLE(Hive外部表), VIRTUA
                      */
                     bool m_hasBizPermission;
                     bool m_hasBizPermissionHasBeenSet;
+
+                    /**
+                     * 引擎侧创建人
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ownerByEngine;
+                    bool m_ownerByEngineHasBeenSet;
+
+                    /**
+                     * 用户无映射账户，请先完成账户映射后再来申请。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_errorTips;
+                    bool m_errorTipsHasBeenSet;
+
+                    /**
+                     * 是否支持select or ddl
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CreateAndDDLSupport m_ifSupportCreateAndDDL;
+                    bool m_ifSupportCreateAndDDLHasBeenSet;
+
+                    /**
+                     * 资产来源 历史默认值都是CRAWLER
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dataFromType;
+                    bool m_dataFromTypeHasBeenSet;
+
+                    /**
+                     * 引擎侧责任人
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_engineOwner;
+                    bool m_engineOwnerHasBeenSet;
+
+                    /**
+                     * 数据分层UUID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dataLayerUuid;
+                    bool m_dataLayerUuidHasBeenSet;
+
+                    /**
+                     * 数据分层名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dataLayerName;
+                    bool m_dataLayerNameHasBeenSet;
+
+                    /**
+                     * 字段数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_columnCount;
+                    bool m_columnCountHasBeenSet;
 
                 };
             }

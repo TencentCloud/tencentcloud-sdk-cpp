@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -220,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取第三方码域名前缀
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CodeUrl 第三方码域名前缀
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCodeUrl() const;
 
                     /**
                      * 设置第三方码域名前缀
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _codeUrl 第三方码域名前缀
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCodeUrl(const std::string& _codeUrl);
@@ -265,7 +257,6 @@ namespace TencentCloud
 
                     /**
                      * 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
@@ -296,7 +287,6 @@ namespace TencentCloud
 
                     /**
                      * 第三方码域名前缀
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_codeUrl;
                     bool m_codeUrlHasBeenSet;

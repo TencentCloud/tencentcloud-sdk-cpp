@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取策略信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OpenPolicyInfoList 策略信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<OpenPolicyInfo> GetOpenPolicyInfoList() const;
@@ -60,14 +58,33 @@ namespace TencentCloud
                      */
                     bool OpenPolicyInfoListHasBeenSet() const;
 
+                    /**
+                     * 获取集群内是否安装了gatekeeper addon
+                     * @return GatekeeperStatus 集群内是否安装了gatekeeper addon
+                     * 
+                     */
+                    int64_t GetGatekeeperStatus() const;
+
+                    /**
+                     * 判断参数 GatekeeperStatus 是否已赋值
+                     * @return GatekeeperStatus 是否已赋值
+                     * 
+                     */
+                    bool GatekeeperStatusHasBeenSet() const;
+
                 private:
 
                     /**
                      * 策略信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<OpenPolicyInfo> m_openPolicyInfoList;
                     bool m_openPolicyInfoListHasBeenSet;
+
+                    /**
+                     * 集群内是否安装了gatekeeper addon
+                     */
+                    int64_t m_gatekeeperStatus;
+                    bool m_gatekeeperStatusHasBeenSet;
 
                 };
             }

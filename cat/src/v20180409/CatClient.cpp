@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -212,6 +212,49 @@ CatClient::DescribeInstantTasksOutcomeCallable CatClient::DescribeInstantTasksCa
     return task->get_future();
 }
 
+CatClient::DescribeNodeGroupsOutcome CatClient::DescribeNodeGroups(const DescribeNodeGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNodeGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNodeGroupsResponse rsp = DescribeNodeGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNodeGroupsOutcome(rsp);
+        else
+            return DescribeNodeGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNodeGroupsOutcome(outcome.GetError());
+    }
+}
+
+void CatClient::DescribeNodeGroupsAsync(const DescribeNodeGroupsRequest& request, const DescribeNodeGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNodeGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CatClient::DescribeNodeGroupsOutcomeCallable CatClient::DescribeNodeGroupsCallable(const DescribeNodeGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNodeGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNodeGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CatClient::DescribeNodesOutcome CatClient::DescribeNodes(const DescribeNodesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeNodes");
@@ -291,6 +334,49 @@ CatClient::DescribeProbeMetricDataOutcomeCallable CatClient::DescribeProbeMetric
         [this, request]()
         {
             return this->DescribeProbeMetricData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CatClient::DescribeProbeMetricTagValuesOutcome CatClient::DescribeProbeMetricTagValues(const DescribeProbeMetricTagValuesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeProbeMetricTagValues");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeProbeMetricTagValuesResponse rsp = DescribeProbeMetricTagValuesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeProbeMetricTagValuesOutcome(rsp);
+        else
+            return DescribeProbeMetricTagValuesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeProbeMetricTagValuesOutcome(outcome.GetError());
+    }
+}
+
+void CatClient::DescribeProbeMetricTagValuesAsync(const DescribeProbeMetricTagValuesRequest& request, const DescribeProbeMetricTagValuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeProbeMetricTagValues(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CatClient::DescribeProbeMetricTagValuesOutcomeCallable CatClient::DescribeProbeMetricTagValuesCallable(const DescribeProbeMetricTagValuesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeProbeMetricTagValuesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeProbeMetricTagValues(request);
         }
     );
 

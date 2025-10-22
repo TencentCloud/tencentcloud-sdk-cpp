@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -93,23 +93,15 @@ namespace TencentCloud
                     bool QuestionHasBeenSet() const;
 
                     /**
-                     * 获取拒答问题来源的数据源唯一id，取值1，2
-
-
-                     * @return BusinessSource 拒答问题来源的数据源唯一id，取值1，2
-
-
+                     * 获取拒答问题来源的数据源唯一id， - 拒答来源于不满意回复  2 - 拒答来源于手动添加
+                     * @return BusinessSource 拒答问题来源的数据源唯一id， - 拒答来源于不满意回复  2 - 拒答来源于手动添加
                      * 
                      */
                     uint64_t GetBusinessSource() const;
 
                     /**
-                     * 设置拒答问题来源的数据源唯一id，取值1，2
-
-
-                     * @param _businessSource 拒答问题来源的数据源唯一id，取值1，2
-
-
+                     * 设置拒答问题来源的数据源唯一id， - 拒答来源于不满意回复  2 - 拒答来源于手动添加
+                     * @param _businessSource 拒答问题来源的数据源唯一id， - 拒答来源于不满意回复  2 - 拒答来源于手动添加
                      * 
                      */
                     void SetBusinessSource(const uint64_t& _businessSource);
@@ -167,9 +159,7 @@ namespace TencentCloud
                     bool m_questionHasBeenSet;
 
                     /**
-                     * 拒答问题来源的数据源唯一id，取值1，2
-
-
+                     * 拒答问题来源的数据源唯一id， - 拒答来源于不满意回复  2 - 拒答来源于手动添加
                      */
                     uint64_t m_businessSource;
                     bool m_businessSourceHasBeenSet;

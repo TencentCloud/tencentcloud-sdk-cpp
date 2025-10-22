@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ using namespace TencentCloud::Thpc::V20230321::Model;
 using namespace std;
 
 NodeOverview::NodeOverview() :
+    m_clusterIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_zoneHasBeenSet(false),
     m_nodeStateHasBeenSet(false),
@@ -28,7 +29,10 @@ NodeOverview::NodeOverview() :
     m_queueNameHasBeenSet(false),
     m_nodeRoleHasBeenSet(false),
     m_nodeTypeHasBeenSet(false),
-    m_nodeIdHasBeenSet(false)
+    m_nodeIdHasBeenSet(false),
+    m_nodeAllocateStateHasBeenSet(false),
+    m_nodeNameHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -36,6 +40,16 @@ CoreInternalOutcome NodeOverview::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("ClusterId") && !value["ClusterId"].IsNull())
+    {
+        if (!value["ClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeOverview.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterId = string(value["ClusterId"].GetString());
+        m_clusterIdHasBeenSet = true;
+    }
 
     if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
     {
@@ -117,12 +131,50 @@ CoreInternalOutcome NodeOverview::Deserialize(const rapidjson::Value &value)
         m_nodeIdHasBeenSet = true;
     }
 
+    if (value.HasMember("NodeAllocateState") && !value["NodeAllocateState"].IsNull())
+    {
+        if (!value["NodeAllocateState"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeOverview.NodeAllocateState` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeAllocateState = string(value["NodeAllocateState"].GetString());
+        m_nodeAllocateStateHasBeenSet = true;
+    }
+
+    if (value.HasMember("NodeName") && !value["NodeName"].IsNull())
+    {
+        if (!value["NodeName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeOverview.NodeName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeName = string(value["NodeName"].GetString());
+        m_nodeNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeOverview.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void NodeOverview::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
+
+    if (m_clusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_instanceIdHasBeenSet)
     {
@@ -188,8 +240,48 @@ void NodeOverview::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         value.AddMember(iKey, rapidjson::Value(m_nodeId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_nodeAllocateStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeAllocateState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeAllocateState.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
+
+string NodeOverview::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void NodeOverview::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool NodeOverview::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
+}
 
 string NodeOverview::GetInstanceId() const
 {
@@ -317,5 +409,53 @@ void NodeOverview::SetNodeId(const string& _nodeId)
 bool NodeOverview::NodeIdHasBeenSet() const
 {
     return m_nodeIdHasBeenSet;
+}
+
+string NodeOverview::GetNodeAllocateState() const
+{
+    return m_nodeAllocateState;
+}
+
+void NodeOverview::SetNodeAllocateState(const string& _nodeAllocateState)
+{
+    m_nodeAllocateState = _nodeAllocateState;
+    m_nodeAllocateStateHasBeenSet = true;
+}
+
+bool NodeOverview::NodeAllocateStateHasBeenSet() const
+{
+    return m_nodeAllocateStateHasBeenSet;
+}
+
+string NodeOverview::GetNodeName() const
+{
+    return m_nodeName;
+}
+
+void NodeOverview::SetNodeName(const string& _nodeName)
+{
+    m_nodeName = _nodeName;
+    m_nodeNameHasBeenSet = true;
+}
+
+bool NodeOverview::NodeNameHasBeenSet() const
+{
+    return m_nodeNameHasBeenSet;
+}
+
+string NodeOverview::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void NodeOverview::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool NodeOverview::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 

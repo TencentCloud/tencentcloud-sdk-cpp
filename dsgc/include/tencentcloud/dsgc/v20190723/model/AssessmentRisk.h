@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取风险项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskDescription 风险项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiskDescription() const;
 
                     /**
                      * 设置风险项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskDescription 风险项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskDescription(const std::string& _riskDescription);
@@ -326,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取风险涉及资产id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataSourceId 风险涉及资产id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataSourceId() const;
 
                     /**
                      * 设置风险涉及资产id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataSourceId 风险涉及资产id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataSourceId(const std::string& _dataSourceId);
@@ -351,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取风险涉及资产名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataSourceName 风险涉及资产名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataSourceName() const;
 
                     /**
                      * 设置风险涉及资产名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataSourceName 风险涉及资产名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataSourceName(const std::string& _dataSourceName);
@@ -376,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资产名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetName 资产名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAssetName() const;
 
                     /**
                      * 设置资产名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _assetName 资产名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAssetName(const std::string& _assetName);
@@ -401,18 +385,14 @@ namespace TencentCloud
 
                     /**
                      * 获取建议使用安全产品
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecurityProduct 建议使用安全产品
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SecurityProduct> GetSecurityProduct() const;
 
                     /**
                      * 设置建议使用安全产品
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _securityProduct 建议使用安全产品
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecurityProduct(const std::vector<SecurityProduct>& _securityProduct);
@@ -426,18 +406,14 @@ namespace TencentCloud
 
                     /**
                      * 获取风险类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskType 风险类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiskType() const;
 
                     /**
                      * 设置风险类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskType 风险类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskType(const std::string& _riskType);
@@ -451,18 +427,14 @@ namespace TencentCloud
 
                     /**
                      * 获取风险面
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskSide 风险面
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiskSide() const;
 
                     /**
                      * 设置风险面
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskSide 风险面
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskSide(const std::string& _riskSide);
@@ -476,18 +448,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataSourceType 数据源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataSourceType() const;
 
                     /**
                      * 设置数据源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataSourceType 数据源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataSourceType(const std::string& _dataSourceType);
@@ -509,7 +477,6 @@ namespace TencentCloud
 
                     /**
                      * 风险项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riskDescription;
                     bool m_riskDescriptionHasBeenSet;
@@ -582,49 +549,42 @@ namespace TencentCloud
 
                     /**
                      * 风险涉及资产id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataSourceId;
                     bool m_dataSourceIdHasBeenSet;
 
                     /**
                      * 风险涉及资产名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataSourceName;
                     bool m_dataSourceNameHasBeenSet;
 
                     /**
                      * 资产名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_assetName;
                     bool m_assetNameHasBeenSet;
 
                     /**
                      * 建议使用安全产品
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SecurityProduct> m_securityProduct;
                     bool m_securityProductHasBeenSet;
 
                     /**
                      * 风险类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riskType;
                     bool m_riskTypeHasBeenSet;
 
                     /**
                      * 风险面
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riskSide;
                     bool m_riskSideHasBeenSet;
 
                     /**
                      * 数据源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataSourceType;
                     bool m_dataSourceTypeHasBeenSet;

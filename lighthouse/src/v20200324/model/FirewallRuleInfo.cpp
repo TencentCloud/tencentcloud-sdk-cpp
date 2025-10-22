@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ FirewallRuleInfo::FirewallRuleInfo() :
     m_protocolHasBeenSet(false),
     m_portHasBeenSet(false),
     m_cidrBlockHasBeenSet(false),
+    m_ipv6CidrBlockHasBeenSet(false),
     m_actionHasBeenSet(false),
     m_firewallRuleDescriptionHasBeenSet(false)
 {
@@ -73,6 +74,16 @@ CoreInternalOutcome FirewallRuleInfo::Deserialize(const rapidjson::Value &value)
         }
         m_cidrBlock = string(value["CidrBlock"].GetString());
         m_cidrBlockHasBeenSet = true;
+    }
+
+    if (value.HasMember("Ipv6CidrBlock") && !value["Ipv6CidrBlock"].IsNull())
+    {
+        if (!value["Ipv6CidrBlock"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FirewallRuleInfo.Ipv6CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ipv6CidrBlock = string(value["Ipv6CidrBlock"].GetString());
+        m_ipv6CidrBlockHasBeenSet = true;
     }
 
     if (value.HasMember("Action") && !value["Action"].IsNull())
@@ -132,6 +143,14 @@ void FirewallRuleInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "CidrBlock";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cidrBlock.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ipv6CidrBlockHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ipv6CidrBlock";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ipv6CidrBlock.c_str(), allocator).Move(), allocator);
     }
 
     if (m_actionHasBeenSet)
@@ -215,6 +234,22 @@ void FirewallRuleInfo::SetCidrBlock(const string& _cidrBlock)
 bool FirewallRuleInfo::CidrBlockHasBeenSet() const
 {
     return m_cidrBlockHasBeenSet;
+}
+
+string FirewallRuleInfo::GetIpv6CidrBlock() const
+{
+    return m_ipv6CidrBlock;
+}
+
+void FirewallRuleInfo::SetIpv6CidrBlock(const string& _ipv6CidrBlock)
+{
+    m_ipv6CidrBlock = _ipv6CidrBlock;
+    m_ipv6CidrBlockHasBeenSet = true;
+}
+
+bool FirewallRuleInfo::Ipv6CidrBlockHasBeenSet() const
+{
+    return m_ipv6CidrBlockHasBeenSet;
 }
 
 string FirewallRuleInfo::GetAction() const

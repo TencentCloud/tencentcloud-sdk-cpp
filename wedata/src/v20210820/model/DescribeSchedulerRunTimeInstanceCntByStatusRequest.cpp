@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,8 @@ DescribeSchedulerRunTimeInstanceCntByStatusRequest::DescribeSchedulerRunTimeInst
     m_inChargeHasBeenSet(false),
     m_workflowIdHasBeenSet(false),
     m_sortItemHasBeenSet(false),
-    m_sortTypeHasBeenSet(false)
+    m_sortTypeHasBeenSet(false),
+    m_projectIdsHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,19 @@ string DescribeSchedulerRunTimeInstanceCntByStatusRequest::ToJsonString() const
         string key = "SortType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sortType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_projectIds.begin(); itr != m_projectIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -289,6 +303,22 @@ void DescribeSchedulerRunTimeInstanceCntByStatusRequest::SetSortType(const strin
 bool DescribeSchedulerRunTimeInstanceCntByStatusRequest::SortTypeHasBeenSet() const
 {
     return m_sortTypeHasBeenSet;
+}
+
+vector<string> DescribeSchedulerRunTimeInstanceCntByStatusRequest::GetProjectIds() const
+{
+    return m_projectIds;
+}
+
+void DescribeSchedulerRunTimeInstanceCntByStatusRequest::SetProjectIds(const vector<string>& _projectIds)
+{
+    m_projectIds = _projectIds;
+    m_projectIdsHasBeenSet = true;
+}
+
+bool DescribeSchedulerRunTimeInstanceCntByStatusRequest::ProjectIdsHasBeenSet() const
+{
+    return m_projectIdsHasBeenSet;
 }
 
 

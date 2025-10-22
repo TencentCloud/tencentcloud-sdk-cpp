@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,8 +37,11 @@ RecognizeThaiIDCardOCRResponse::RecognizeThaiIDCardOCRResponse() :
     m_religionHasBeenSet(false),
     m_serialNumberHasBeenSet(false),
     m_addressHasBeenSet(false),
+    m_laserIDHasBeenSet(false),
     m_portraitImageHasBeenSet(false),
-    m_warnCardInfosHasBeenSet(false)
+    m_warnCardInfosHasBeenSet(false),
+    m_advancedInfoHasBeenSet(false),
+    m_cardCountHasBeenSet(false)
 {
 }
 
@@ -206,6 +209,16 @@ CoreInternalOutcome RecognizeThaiIDCardOCRResponse::Deserialize(const string &pa
         m_addressHasBeenSet = true;
     }
 
+    if (rsp.HasMember("LaserID") && !rsp["LaserID"].IsNull())
+    {
+        if (!rsp["LaserID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LaserID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_laserID = string(rsp["LaserID"].GetString());
+        m_laserIDHasBeenSet = true;
+    }
+
     if (rsp.HasMember("PortraitImage") && !rsp["PortraitImage"].IsNull())
     {
         if (!rsp["PortraitImage"].IsString())
@@ -227,6 +240,26 @@ CoreInternalOutcome RecognizeThaiIDCardOCRResponse::Deserialize(const string &pa
             m_warnCardInfos.push_back((*itr).GetInt64());
         }
         m_warnCardInfosHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AdvancedInfo") && !rsp["AdvancedInfo"].IsNull())
+    {
+        if (!rsp["AdvancedInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AdvancedInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_advancedInfo = string(rsp["AdvancedInfo"].GetString());
+        m_advancedInfoHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CardCount") && !rsp["CardCount"].IsNull())
+    {
+        if (!rsp["CardCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CardCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cardCount = rsp["CardCount"].GetInt64();
+        m_cardCountHasBeenSet = true;
     }
 
 
@@ -343,6 +376,14 @@ string RecognizeThaiIDCardOCRResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_address.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_laserIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LaserID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_laserID.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_portraitImageHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -364,11 +405,27 @@ string RecognizeThaiIDCardOCRResponse::ToJsonString() const
         }
     }
 
+    if (m_advancedInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdvancedInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_advancedInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cardCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CardCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cardCount, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -506,6 +563,16 @@ bool RecognizeThaiIDCardOCRResponse::AddressHasBeenSet() const
     return m_addressHasBeenSet;
 }
 
+string RecognizeThaiIDCardOCRResponse::GetLaserID() const
+{
+    return m_laserID;
+}
+
+bool RecognizeThaiIDCardOCRResponse::LaserIDHasBeenSet() const
+{
+    return m_laserIDHasBeenSet;
+}
+
 string RecognizeThaiIDCardOCRResponse::GetPortraitImage() const
 {
     return m_portraitImage;
@@ -524,6 +591,26 @@ vector<int64_t> RecognizeThaiIDCardOCRResponse::GetWarnCardInfos() const
 bool RecognizeThaiIDCardOCRResponse::WarnCardInfosHasBeenSet() const
 {
     return m_warnCardInfosHasBeenSet;
+}
+
+string RecognizeThaiIDCardOCRResponse::GetAdvancedInfo() const
+{
+    return m_advancedInfo;
+}
+
+bool RecognizeThaiIDCardOCRResponse::AdvancedInfoHasBeenSet() const
+{
+    return m_advancedInfoHasBeenSet;
+}
+
+int64_t RecognizeThaiIDCardOCRResponse::GetCardCount() const
+{
+    return m_cardCount;
+}
+
+bool RecognizeThaiIDCardOCRResponse::CardCountHasBeenSet() const
+{
+    return m_cardCountHasBeenSet;
 }
 
 

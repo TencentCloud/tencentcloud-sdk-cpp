@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取伸缩组ID。
-                     * @return AutoScalingGroupId 伸缩组ID。
+                     * 获取伸缩组ID。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 或调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。
+                     * @return AutoScalingGroupId 伸缩组ID。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 或调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。
                      * 
                      */
                     std::string GetAutoScalingGroupId() const;
 
                     /**
-                     * 设置伸缩组ID。
-                     * @param _autoScalingGroupId 伸缩组ID。
+                     * 设置伸缩组ID。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 或调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。
+                     * @param _autoScalingGroupId 伸缩组ID。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 或调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。
                      * 
                      */
                     void SetAutoScalingGroupId(const std::string& _autoScalingGroupId);
@@ -109,15 +109,15 @@ namespace TencentCloud
                     bool NotificationTypesHasBeenSet() const;
 
                     /**
-                     * 获取通知组ID，即为用户组ID集合，用户组ID可以通过[ListGroups](https://cloud.tencent.com/document/product/598/34589)查询。
-                     * @return NotificationUserGroupIds 通知组ID，即为用户组ID集合，用户组ID可以通过[ListGroups](https://cloud.tencent.com/document/product/598/34589)查询。
+                     * 获取通知组ID，即为用户组ID集合，用户组ID可以通过[ListGroups](https://cloud.tencent.com/document/product/598/34589)查询。该参数仅在 TargetType 为 USER_GROUP 时生效。
+                     * @return NotificationUserGroupIds 通知组ID，即为用户组ID集合，用户组ID可以通过[ListGroups](https://cloud.tencent.com/document/product/598/34589)查询。该参数仅在 TargetType 为 USER_GROUP 时生效。
                      * 
                      */
                     std::vector<std::string> GetNotificationUserGroupIds() const;
 
                     /**
-                     * 设置通知组ID，即为用户组ID集合，用户组ID可以通过[ListGroups](https://cloud.tencent.com/document/product/598/34589)查询。
-                     * @param _notificationUserGroupIds 通知组ID，即为用户组ID集合，用户组ID可以通过[ListGroups](https://cloud.tencent.com/document/product/598/34589)查询。
+                     * 设置通知组ID，即为用户组ID集合，用户组ID可以通过[ListGroups](https://cloud.tencent.com/document/product/598/34589)查询。该参数仅在 TargetType 为 USER_GROUP 时生效。
+                     * @param _notificationUserGroupIds 通知组ID，即为用户组ID集合，用户组ID可以通过[ListGroups](https://cloud.tencent.com/document/product/598/34589)查询。该参数仅在 TargetType 为 USER_GROUP 时生效。
                      * 
                      */
                     void SetNotificationUserGroupIds(const std::vector<std::string>& _notificationUserGroupIds);
@@ -130,20 +130,20 @@ namespace TencentCloud
                     bool NotificationUserGroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取通知接收端类型，取值如下
-<br><li>USER_GROUP：用户组
-<br><li>CMQ_QUEUE：CMQ 队列
-<br><li>CMQ_TOPIC：CMQ 主题
-<br><li>TDMQ_CMQ_TOPIC：TDMQ CMQ 主题
-<br><li>TDMQ_CMQ_QUEUE：TDMQ CMQ 队列
+                     * 获取通知接收端类型，取值如下：
+<li>USER_GROUP：用户组</li>
+<li>TDMQ_CMQ_TOPIC：TDMQ CMQ 主题</li>
+<li>TDMQ_CMQ_QUEUE：TDMQ CMQ 队列</li>
+<li>CMQ_QUEUE：CMQ 队列，[CMQ已下线](https://cloud.tencent.com/document/product/1496/83970)，目前仅推荐使用  TDMQ CMQ。</li>
+<li>CMQ_TOPIC：CMQ 主题，[CMQ已下线](https://cloud.tencent.com/document/product/1496/83970)，目前仅推荐使用  TDMQ CMQ。</li>
 
 默认值为：`USER_GROUP`。
-                     * @return TargetType 通知接收端类型，取值如下
-<br><li>USER_GROUP：用户组
-<br><li>CMQ_QUEUE：CMQ 队列
-<br><li>CMQ_TOPIC：CMQ 主题
-<br><li>TDMQ_CMQ_TOPIC：TDMQ CMQ 主题
-<br><li>TDMQ_CMQ_QUEUE：TDMQ CMQ 队列
+                     * @return TargetType 通知接收端类型，取值如下：
+<li>USER_GROUP：用户组</li>
+<li>TDMQ_CMQ_TOPIC：TDMQ CMQ 主题</li>
+<li>TDMQ_CMQ_QUEUE：TDMQ CMQ 队列</li>
+<li>CMQ_QUEUE：CMQ 队列，[CMQ已下线](https://cloud.tencent.com/document/product/1496/83970)，目前仅推荐使用  TDMQ CMQ。</li>
+<li>CMQ_TOPIC：CMQ 主题，[CMQ已下线](https://cloud.tencent.com/document/product/1496/83970)，目前仅推荐使用  TDMQ CMQ。</li>
 
 默认值为：`USER_GROUP`。
                      * 
@@ -151,20 +151,20 @@ namespace TencentCloud
                     std::string GetTargetType() const;
 
                     /**
-                     * 设置通知接收端类型，取值如下
-<br><li>USER_GROUP：用户组
-<br><li>CMQ_QUEUE：CMQ 队列
-<br><li>CMQ_TOPIC：CMQ 主题
-<br><li>TDMQ_CMQ_TOPIC：TDMQ CMQ 主题
-<br><li>TDMQ_CMQ_QUEUE：TDMQ CMQ 队列
+                     * 设置通知接收端类型，取值如下：
+<li>USER_GROUP：用户组</li>
+<li>TDMQ_CMQ_TOPIC：TDMQ CMQ 主题</li>
+<li>TDMQ_CMQ_QUEUE：TDMQ CMQ 队列</li>
+<li>CMQ_QUEUE：CMQ 队列，[CMQ已下线](https://cloud.tencent.com/document/product/1496/83970)，目前仅推荐使用  TDMQ CMQ。</li>
+<li>CMQ_TOPIC：CMQ 主题，[CMQ已下线](https://cloud.tencent.com/document/product/1496/83970)，目前仅推荐使用  TDMQ CMQ。</li>
 
 默认值为：`USER_GROUP`。
-                     * @param _targetType 通知接收端类型，取值如下
-<br><li>USER_GROUP：用户组
-<br><li>CMQ_QUEUE：CMQ 队列
-<br><li>CMQ_TOPIC：CMQ 主题
-<br><li>TDMQ_CMQ_TOPIC：TDMQ CMQ 主题
-<br><li>TDMQ_CMQ_QUEUE：TDMQ CMQ 队列
+                     * @param _targetType 通知接收端类型，取值如下：
+<li>USER_GROUP：用户组</li>
+<li>TDMQ_CMQ_TOPIC：TDMQ CMQ 主题</li>
+<li>TDMQ_CMQ_QUEUE：TDMQ CMQ 队列</li>
+<li>CMQ_QUEUE：CMQ 队列，[CMQ已下线](https://cloud.tencent.com/document/product/1496/83970)，目前仅推荐使用  TDMQ CMQ。</li>
+<li>CMQ_TOPIC：CMQ 主题，[CMQ已下线](https://cloud.tencent.com/document/product/1496/83970)，目前仅推荐使用  TDMQ CMQ。</li>
 
 默认值为：`USER_GROUP`。
                      * 
@@ -179,15 +179,15 @@ namespace TencentCloud
                     bool TargetTypeHasBeenSet() const;
 
                     /**
-                     * 获取CMQ 队列名称，如 TargetType 取值为 `CMQ_QUEUE` 或 `TDMQ_CMQ_QUEUE` 时，该字段必填。
-                     * @return QueueName CMQ 队列名称，如 TargetType 取值为 `CMQ_QUEUE` 或 `TDMQ_CMQ_QUEUE` 时，该字段必填。
+                     * 获取TDMQ CMQ 队列名，如 TargetType 取值为 `TDMQ_CMQ_QUEUE` ，该字段必填。
+                     * @return QueueName TDMQ CMQ 队列名，如 TargetType 取值为 `TDMQ_CMQ_QUEUE` ，该字段必填。
                      * 
                      */
                     std::string GetQueueName() const;
 
                     /**
-                     * 设置CMQ 队列名称，如 TargetType 取值为 `CMQ_QUEUE` 或 `TDMQ_CMQ_QUEUE` 时，该字段必填。
-                     * @param _queueName CMQ 队列名称，如 TargetType 取值为 `CMQ_QUEUE` 或 `TDMQ_CMQ_QUEUE` 时，该字段必填。
+                     * 设置TDMQ CMQ 队列名，如 TargetType 取值为 `TDMQ_CMQ_QUEUE` ，该字段必填。
+                     * @param _queueName TDMQ CMQ 队列名，如 TargetType 取值为 `TDMQ_CMQ_QUEUE` ，该字段必填。
                      * 
                      */
                     void SetQueueName(const std::string& _queueName);
@@ -200,15 +200,15 @@ namespace TencentCloud
                     bool QueueNameHasBeenSet() const;
 
                     /**
-                     * 获取CMQ 主题名称，如 TargetType 取值为 `CMQ_TOPIC` 或 `TDMQ_CMQ_TOPIC` 时，该字段必填。
-                     * @return TopicName CMQ 主题名称，如 TargetType 取值为 `CMQ_TOPIC` 或 `TDMQ_CMQ_TOPIC` 时，该字段必填。
+                     * 获取TDMQ CMQ 主题名，如 TargetType 取值为 `TDMQ_CMQ_TOPIC` ，该字段必填。
+                     * @return TopicName TDMQ CMQ 主题名，如 TargetType 取值为 `TDMQ_CMQ_TOPIC` ，该字段必填。
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
-                     * 设置CMQ 主题名称，如 TargetType 取值为 `CMQ_TOPIC` 或 `TDMQ_CMQ_TOPIC` 时，该字段必填。
-                     * @param _topicName CMQ 主题名称，如 TargetType 取值为 `CMQ_TOPIC` 或 `TDMQ_CMQ_TOPIC` 时，该字段必填。
+                     * 设置TDMQ CMQ 主题名，如 TargetType 取值为 `TDMQ_CMQ_TOPIC` ，该字段必填。
+                     * @param _topicName TDMQ CMQ 主题名，如 TargetType 取值为 `TDMQ_CMQ_TOPIC` ，该字段必填。
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -223,7 +223,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 伸缩组ID。
+                     * 伸缩组ID。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 或调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。
                      */
                     std::string m_autoScalingGroupId;
                     bool m_autoScalingGroupIdHasBeenSet;
@@ -241,18 +241,18 @@ namespace TencentCloud
                     bool m_notificationTypesHasBeenSet;
 
                     /**
-                     * 通知组ID，即为用户组ID集合，用户组ID可以通过[ListGroups](https://cloud.tencent.com/document/product/598/34589)查询。
+                     * 通知组ID，即为用户组ID集合，用户组ID可以通过[ListGroups](https://cloud.tencent.com/document/product/598/34589)查询。该参数仅在 TargetType 为 USER_GROUP 时生效。
                      */
                     std::vector<std::string> m_notificationUserGroupIds;
                     bool m_notificationUserGroupIdsHasBeenSet;
 
                     /**
-                     * 通知接收端类型，取值如下
-<br><li>USER_GROUP：用户组
-<br><li>CMQ_QUEUE：CMQ 队列
-<br><li>CMQ_TOPIC：CMQ 主题
-<br><li>TDMQ_CMQ_TOPIC：TDMQ CMQ 主题
-<br><li>TDMQ_CMQ_QUEUE：TDMQ CMQ 队列
+                     * 通知接收端类型，取值如下：
+<li>USER_GROUP：用户组</li>
+<li>TDMQ_CMQ_TOPIC：TDMQ CMQ 主题</li>
+<li>TDMQ_CMQ_QUEUE：TDMQ CMQ 队列</li>
+<li>CMQ_QUEUE：CMQ 队列，[CMQ已下线](https://cloud.tencent.com/document/product/1496/83970)，目前仅推荐使用  TDMQ CMQ。</li>
+<li>CMQ_TOPIC：CMQ 主题，[CMQ已下线](https://cloud.tencent.com/document/product/1496/83970)，目前仅推荐使用  TDMQ CMQ。</li>
 
 默认值为：`USER_GROUP`。
                      */
@@ -260,13 +260,13 @@ namespace TencentCloud
                     bool m_targetTypeHasBeenSet;
 
                     /**
-                     * CMQ 队列名称，如 TargetType 取值为 `CMQ_QUEUE` 或 `TDMQ_CMQ_QUEUE` 时，该字段必填。
+                     * TDMQ CMQ 队列名，如 TargetType 取值为 `TDMQ_CMQ_QUEUE` ，该字段必填。
                      */
                     std::string m_queueName;
                     bool m_queueNameHasBeenSet;
 
                     /**
-                     * CMQ 主题名称，如 TargetType 取值为 `CMQ_TOPIC` 或 `TDMQ_CMQ_TOPIC` 时，该字段必填。
+                     * TDMQ CMQ 主题名，如 TargetType 取值为 `TDMQ_CMQ_TOPIC` ，该字段必填。
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,6 +67,7 @@ namespace TencentCloud
 <li> Host Header 重写（HostHeader）；</li>
 <li> 强制 HTTPS（ForceRedirect）；</li>
 <li> 回源 HTTPS（OriginPullProtocol）；</li>
+<li> 单连接下载限速（ResponseSpeedLimit）；</li>
 <li> 缓存预刷新（CachePrefresh）；</li>
 <li> 智能压缩（Compression）；</li>
 <li> Hsts；</li>
@@ -96,6 +97,7 @@ namespace TencentCloud
 <li> Host Header 重写（HostHeader）；</li>
 <li> 强制 HTTPS（ForceRedirect）；</li>
 <li> 回源 HTTPS（OriginPullProtocol）；</li>
+<li> 单连接下载限速（ResponseSpeedLimit）；</li>
 <li> 缓存预刷新（CachePrefresh）；</li>
 <li> 智能压缩（Compression）；</li>
 <li> Hsts；</li>
@@ -130,6 +132,7 @@ namespace TencentCloud
 <li> Host Header 重写（HostHeader）；</li>
 <li> 强制 HTTPS（ForceRedirect）；</li>
 <li> 回源 HTTPS（OriginPullProtocol）；</li>
+<li> 单连接下载限速（ResponseSpeedLimit）；</li>
 <li> 缓存预刷新（CachePrefresh）；</li>
 <li> 智能压缩（Compression）；</li>
 <li> Hsts；</li>
@@ -159,6 +162,7 @@ namespace TencentCloud
 <li> Host Header 重写（HostHeader）；</li>
 <li> 强制 HTTPS（ForceRedirect）；</li>
 <li> 回源 HTTPS（OriginPullProtocol）；</li>
+<li> 单连接下载限速（ResponseSpeedLimit）；</li>
 <li> 缓存预刷新（CachePrefresh）；</li>
 <li> 智能压缩（Compression）；</li>
 <li> Hsts；</li>
@@ -268,6 +272,7 @@ namespace TencentCloud
 <li> Host Header 重写（HostHeader）；</li>
 <li> 强制 HTTPS（ForceRedirect）；</li>
 <li> 回源 HTTPS（OriginPullProtocol）；</li>
+<li> 单连接下载限速（ResponseSpeedLimit）；</li>
 <li> 缓存预刷新（CachePrefresh）；</li>
 <li> 智能压缩（Compression）；</li>
 <li> Hsts；</li>

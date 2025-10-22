@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -454,19 +454,15 @@ namespace TencentCloud
                     bool SubGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取用户的上台状态
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Stage 用户的上台状态
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取本堂课用户是否上过台。0 否；1 是
+                     * @return Stage 本堂课用户是否上过台。0 否；1 是
                      * 
                      */
                     int64_t GetStage() const;
 
                     /**
-                     * 设置用户的上台状态
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _stage 用户的上台状态
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置本堂课用户是否上过台。0 否；1 是
+                     * @param _stage 本堂课用户是否上过台。0 否；1 是
                      * 
                      */
                     void SetStage(const int64_t& _stage);
@@ -480,18 +476,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户状态。0为未到，1为在线，2为离线，3为被踢，4为永久被踢，5为暂时掉线
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurrentState 用户状态。0为未到，1为在线，2为离线，3为被踢，4为永久被踢，5为暂时掉线
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCurrentState() const;
 
                     /**
                      * 设置用户状态。0为未到，1为在线，2为离线，3为被踢，4为永久被踢，5为暂时掉线
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _currentState 用户状态。0为未到，1为在线，2为离线，3为被踢，4为永久被踢，5为暂时掉线
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCurrentState(const uint64_t& _currentState);
@@ -622,15 +614,13 @@ namespace TencentCloud
                     bool m_subGroupIdHasBeenSet;
 
                     /**
-                     * 用户的上台状态
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 本堂课用户是否上过台。0 否；1 是
                      */
                     int64_t m_stage;
                     bool m_stageHasBeenSet;
 
                     /**
                      * 用户状态。0为未到，1为在线，2为离线，3为被踢，4为永久被踢，5为暂时掉线
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_currentState;
                     bool m_currentStateHasBeenSet;

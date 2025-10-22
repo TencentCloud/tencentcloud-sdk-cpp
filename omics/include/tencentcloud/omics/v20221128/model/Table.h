@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表格ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableId 表格ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTableId() const;
 
                     /**
                      * 设置表格ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tableId 表格ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTableId(const std::string& _tableId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联项目ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectId 关联项目ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置关联项目ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _projectId 关联项目ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表格名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 表格名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置表格名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 表格名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表格描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 表格描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置表格描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 表格描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表格列
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Columns 表格列
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TableColumn> GetColumns() const;
 
                     /**
                      * 设置表格列
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _columns 表格列
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetColumns(const std::vector<TableColumn>& _columns);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建人
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Creator 创建人
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreator() const;
 
                     /**
                      * 设置创建人
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _creator 创建人
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreator(const std::string& _creator);
@@ -222,56 +194,76 @@ namespace TencentCloud
                      */
                     bool CreatorHasBeenSet() const;
 
+                    /**
+                     * 获取创建人ID
+                     * @return CreatorId 创建人ID
+                     * 
+                     */
+                    std::string GetCreatorId() const;
+
+                    /**
+                     * 设置创建人ID
+                     * @param _creatorId 创建人ID
+                     * 
+                     */
+                    void SetCreatorId(const std::string& _creatorId);
+
+                    /**
+                     * 判断参数 CreatorId 是否已赋值
+                     * @return CreatorId 是否已赋值
+                     * 
+                     */
+                    bool CreatorIdHasBeenSet() const;
+
                 private:
 
                     /**
                      * 表格ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tableId;
                     bool m_tableIdHasBeenSet;
 
                     /**
                      * 关联项目ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
                      * 表格名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 表格描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 表格列
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TableColumn> m_columns;
                     bool m_columnsHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 创建人
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_creator;
                     bool m_creatorHasBeenSet;
+
+                    /**
+                     * 创建人ID
+                     */
+                    std::string m_creatorId;
+                    bool m_creatorIdHasBeenSet;
 
                 };
             }

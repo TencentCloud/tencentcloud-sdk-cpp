@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取房间Id。	
-                     * @return RoomId 房间Id。	
+                     * 获取课堂Id。	
+                     * @return RoomId 课堂Id。	
                      * 
                      */
                     uint64_t GetRoomId() const;
 
                     /**
-                     * 设置房间Id。	
-                     * @param _roomId 房间Id。	
+                     * 设置课堂Id。	
+                     * @param _roomId 课堂Id。	
                      * 
                      */
                     void SetRoomId(const uint64_t& _roomId);
@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取请求消息的userId
+                     * @return UserId 请求消息的userId
+                     * 
+                     */
+                    std::string GetUserId() const;
+
+                    /**
+                     * 设置请求消息的userId
+                     * @param _userId 请求消息的userId
+                     * 
+                     */
+                    void SetUserId(const std::string& _userId);
+
+                    /**
+                     * 判断参数 UserId 是否已赋值
+                     * @return UserId 是否已赋值
+                     * 
+                     */
+                    bool UserIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -135,7 +156,7 @@ namespace TencentCloud
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 房间Id。	
+                     * 课堂Id。	
                      */
                     uint64_t m_roomId;
                     bool m_roomIdHasBeenSet;
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 请求消息的userId
+                     */
+                    std::string m_userId;
+                    bool m_userIdHasBeenSet;
 
                 };
             }

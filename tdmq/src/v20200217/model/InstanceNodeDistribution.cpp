@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ InstanceNodeDistribution::InstanceNodeDistribution() :
     m_zoneNameHasBeenSet(false),
     m_zoneIdHasBeenSet(false),
     m_nodeCountHasBeenSet(false),
-    m_nodePermWipeFlagHasBeenSet(false)
+    m_nodePermWipeFlagHasBeenSet(false),
+    m_zoneStatusHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome InstanceNodeDistribution::Deserialize(const rapidjson::Value
         m_nodePermWipeFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("ZoneStatus") && !value["ZoneStatus"].IsNull())
+    {
+        if (!value["ZoneStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceNodeDistribution.ZoneStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zoneStatus = string(value["ZoneStatus"].GetString());
+        m_zoneStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void InstanceNodeDistribution::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "NodePermWipeFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_nodePermWipeFlag, allocator);
+    }
+
+    if (m_zoneStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zoneStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void InstanceNodeDistribution::SetNodePermWipeFlag(const bool& _nodePermWipeFlag
 bool InstanceNodeDistribution::NodePermWipeFlagHasBeenSet() const
 {
     return m_nodePermWipeFlagHasBeenSet;
+}
+
+string InstanceNodeDistribution::GetZoneStatus() const
+{
+    return m_zoneStatus;
+}
+
+void InstanceNodeDistribution::SetZoneStatus(const string& _zoneStatus)
+{
+    m_zoneStatus = _zoneStatus;
+    m_zoneStatusHasBeenSet = true;
+}
+
+bool InstanceNodeDistribution::ZoneStatusHasBeenSet() const
+{
+    return m_zoneStatusHasBeenSet;
 }
 

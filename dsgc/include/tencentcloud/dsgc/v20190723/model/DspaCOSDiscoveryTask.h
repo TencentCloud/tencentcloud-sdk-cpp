@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -197,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务最新的一次执行结果信息，该字段用于查询任务列表接口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 任务最新的一次执行结果信息，该字段用于查询任务列表接口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ScanTaskResult GetResult() const;
 
                     /**
                      * 设置任务最新的一次执行结果信息，该字段用于查询任务列表接口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _result 任务最新的一次执行结果信息，该字段用于查询任务列表接口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResult(const ScanTaskResult& _result);
@@ -222,18 +218,14 @@ namespace TencentCloud
 
                     /**
                      * 获取定时开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimingStartTime 定时开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTimingStartTime() const;
 
                     /**
                      * 设置定时开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timingStartTime 定时开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimingStartTime(const std::string& _timingStartTime);
@@ -247,18 +239,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联分类模板是否更新
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComplianceUpdate 关联分类模板是否更新
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetComplianceUpdate() const;
 
                     /**
                      * 设置关联分类模板是否更新
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _complianceUpdate 关联分类模板是否更新
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComplianceUpdate(const bool& _complianceUpdate);
@@ -316,21 +304,18 @@ namespace TencentCloud
 
                     /**
                      * 任务最新的一次执行结果信息，该字段用于查询任务列表接口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ScanTaskResult m_result;
                     bool m_resultHasBeenSet;
 
                     /**
                      * 定时开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timingStartTime;
                     bool m_timingStartTimeHasBeenSet;
 
                     /**
                      * 关联分类模板是否更新
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_complianceUpdate;
                     bool m_complianceUpdateHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,7 @@ NewL7RuleEntry::NewL7RuleEntry() :
     m_cCStatusHasBeenSet(false),
     m_cCEnableHasBeenSet(false),
     m_cCThresholdHasBeenSet(false),
+    m_cCThresholdNewHasBeenSet(false),
     m_cCLevelHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
     m_httpsToHttpEnableHasBeenSet(false),
@@ -264,6 +265,16 @@ CoreInternalOutcome NewL7RuleEntry::Deserialize(const rapidjson::Value &value)
         }
         m_cCThreshold = value["CCThreshold"].GetUint64();
         m_cCThresholdHasBeenSet = true;
+    }
+
+    if (value.HasMember("CCThresholdNew") && !value["CCThresholdNew"].IsNull())
+    {
+        if (!value["CCThresholdNew"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.CCThresholdNew` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cCThresholdNew = value["CCThresholdNew"].GetUint64();
+        m_cCThresholdNewHasBeenSet = true;
     }
 
     if (value.HasMember("CCLevel") && !value["CCLevel"].IsNull())
@@ -508,6 +519,14 @@ void NewL7RuleEntry::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "CCThreshold";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cCThreshold, allocator);
+    }
+
+    if (m_cCThresholdNewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CCThresholdNew";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cCThresholdNew, allocator);
     }
 
     if (m_cCLevelHasBeenSet)
@@ -887,6 +906,22 @@ void NewL7RuleEntry::SetCCThreshold(const uint64_t& _cCThreshold)
 bool NewL7RuleEntry::CCThresholdHasBeenSet() const
 {
     return m_cCThresholdHasBeenSet;
+}
+
+uint64_t NewL7RuleEntry::GetCCThresholdNew() const
+{
+    return m_cCThresholdNew;
+}
+
+void NewL7RuleEntry::SetCCThresholdNew(const uint64_t& _cCThresholdNew)
+{
+    m_cCThresholdNew = _cCThresholdNew;
+    m_cCThresholdNewHasBeenSet = true;
+}
+
+bool NewL7RuleEntry::CCThresholdNewHasBeenSet() const
+{
+    return m_cCThresholdNewHasBeenSet;
 }
 
 string NewL7RuleEntry::GetCCLevel() const

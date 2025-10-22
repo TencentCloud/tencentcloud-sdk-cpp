@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
-                     * 获取关联主机数量
-                     * @return HostCount 关联主机数量
+                     * 获取关联主机数量（包含普通节点和超级节点数量）
+                     * @return HostCount 关联主机数量（包含普通节点和超级节点数量）
                      * 
                      */
                     int64_t GetHostCount() const;
 
                     /**
-                     * 设置关联主机数量
-                     * @param _hostCount 关联主机数量
+                     * 设置关联主机数量（包含普通节点和超级节点数量）
+                     * @param _hostCount 关联主机数量（包含普通节点和超级节点数量）
                      * 
                      */
                     void SetHostCount(const int64_t& _hostCount);
@@ -129,6 +129,27 @@ namespace TencentCloud
                      * 
                      */
                     bool HostCountHasBeenSet() const;
+
+                    /**
+                     * 获取关联超级节点数量
+                     * @return SuperNodeCount 关联超级节点数量
+                     * 
+                     */
+                    int64_t GetSuperNodeCount() const;
+
+                    /**
+                     * 设置关联超级节点数量
+                     * @param _superNodeCount 关联超级节点数量
+                     * 
+                     */
+                    void SetSuperNodeCount(const int64_t& _superNodeCount);
+
+                    /**
+                     * 判断参数 SuperNodeCount 是否已赋值
+                     * @return SuperNodeCount 是否已赋值
+                     * 
+                     */
+                    bool SuperNodeCountHasBeenSet() const;
 
                     /**
                      * 获取关联容器数量
@@ -256,10 +277,16 @@ namespace TencentCloud
                     bool m_iDHasBeenSet;
 
                     /**
-                     * 关联主机数量
+                     * 关联主机数量（包含普通节点和超级节点数量）
                      */
                     int64_t m_hostCount;
                     bool m_hostCountHasBeenSet;
+
+                    /**
+                     * 关联超级节点数量
+                     */
+                    int64_t m_superNodeCount;
+                    bool m_superNodeCountHasBeenSet;
 
                     /**
                      * 关联容器数量

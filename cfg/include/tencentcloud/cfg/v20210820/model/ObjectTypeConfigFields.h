@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取字段值是否需要转译，当不需要转译时，此字段返回null
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Transfer 字段值是否需要转译，当不需要转译时，此字段返回null
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTransfer() const;
 
                     /**
                      * 设置字段值是否需要转译，当不需要转译时，此字段返回null
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _transfer 字段值是否需要转译，当不需要转译时，此字段返回null
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTransfer(const std::string& _transfer);
@@ -115,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取tke的pod字段信息解析
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JsonParse tke的pod字段信息解析
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJsonParse() const;
 
                     /**
                      * 设置tke的pod字段信息解析
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _jsonParse tke的pod字段信息解析
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJsonParse(const std::string& _jsonParse);
@@ -137,6 +129,27 @@ namespace TencentCloud
                      * 
                      */
                     bool JsonParseHasBeenSet() const;
+
+                    /**
+                     * 获取字段类型 0:str 1:list
+                     * @return Type 字段类型 0:str 1:list
+                     * 
+                     */
+                    int64_t GetType() const;
+
+                    /**
+                     * 设置字段类型 0:str 1:list
+                     * @param _type 字段类型 0:str 1:list
+                     * 
+                     */
+                    void SetType(const int64_t& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
 
                 private:
 
@@ -154,17 +167,21 @@ namespace TencentCloud
 
                     /**
                      * 字段值是否需要转译，当不需要转译时，此字段返回null
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_transfer;
                     bool m_transferHasBeenSet;
 
                     /**
                      * tke的pod字段信息解析
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_jsonParse;
                     bool m_jsonParseHasBeenSet;
+
+                    /**
+                     * 字段类型 0:str 1:list
+                     */
+                    int64_t m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

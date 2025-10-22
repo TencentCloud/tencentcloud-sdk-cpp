@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vpc/v20170312/model/Tag.h>
 
 
 namespace TencentCloud
@@ -43,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取VPC实例ID。
-                     * @return VpcId VPC实例ID。
+                     * 获取VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。
+                     * @return VpcId VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置VPC实例ID。
-                     * @param _vpcId VPC实例ID。
+                     * 设置VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。
+                     * @param _vpcId VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -106,15 +107,19 @@ namespace TencentCloud
                     bool AutoAcceptFlagHasBeenSet() const;
 
                     /**
-                     * 获取后端服务ID，比如lb-xxx。
-                     * @return ServiceInstanceId 后端服务ID，比如lb-xxx。
+                     * 获取后端服务ID，比如lb-p1hiksdg。CLB可通过[DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459)接口获取；CDB可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/240/38568)接口获取；CRS可通过[DescribeInstances](https://cloud.tencent.com/document/product/239/20018)接口获取；GWLB可通过[DescribeGatewayLoadBalancers](https://cloud.tencent.com/document/product/1782/111683)接口获取。
+
+                     * @return ServiceInstanceId 后端服务ID，比如lb-p1hiksdg。CLB可通过[DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459)接口获取；CDB可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/240/38568)接口获取；CRS可通过[DescribeInstances](https://cloud.tencent.com/document/product/239/20018)接口获取；GWLB可通过[DescribeGatewayLoadBalancers](https://cloud.tencent.com/document/product/1782/111683)接口获取。
+
                      * 
                      */
                     std::string GetServiceInstanceId() const;
 
                     /**
-                     * 设置后端服务ID，比如lb-xxx。
-                     * @param _serviceInstanceId 后端服务ID，比如lb-xxx。
+                     * 设置后端服务ID，比如lb-p1hiksdg。CLB可通过[DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459)接口获取；CDB可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/240/38568)接口获取；CRS可通过[DescribeInstances](https://cloud.tencent.com/document/product/239/20018)接口获取；GWLB可通过[DescribeGatewayLoadBalancers](https://cloud.tencent.com/document/product/1782/111683)接口获取。
+
+                     * @param _serviceInstanceId 后端服务ID，比如lb-p1hiksdg。CLB可通过[DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459)接口获取；CDB可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/240/38568)接口获取；CRS可通过[DescribeInstances](https://cloud.tencent.com/document/product/239/20018)接口获取；GWLB可通过[DescribeGatewayLoadBalancers](https://cloud.tencent.com/document/product/1782/111683)接口获取。
+
                      * 
                      */
                     void SetServiceInstanceId(const std::string& _serviceInstanceId);
@@ -148,15 +153,15 @@ namespace TencentCloud
                     bool IsPassServiceHasBeenSet() const;
 
                     /**
-                     * 获取挂载的PAAS服务类型，CLB,CDB,CRS，不填默认挂载为CLB。
-                     * @return ServiceType 挂载的PAAS服务类型，CLB,CDB,CRS，不填默认挂载为CLB。
+                     * 获取挂载的PAAS服务类型，CLB（负载均衡），CDB（云数据库 MySQL），CRS（云数据库 Redis），GWLB（网关负载均衡）。不填默认挂载为CLB。
+                     * @return ServiceType 挂载的PAAS服务类型，CLB（负载均衡），CDB（云数据库 MySQL），CRS（云数据库 Redis），GWLB（网关负载均衡）。不填默认挂载为CLB。
                      * 
                      */
                     std::string GetServiceType() const;
 
                     /**
-                     * 设置挂载的PAAS服务类型，CLB,CDB,CRS，不填默认挂载为CLB。
-                     * @param _serviceType 挂载的PAAS服务类型，CLB,CDB,CRS，不填默认挂载为CLB。
+                     * 设置挂载的PAAS服务类型，CLB（负载均衡），CDB（云数据库 MySQL），CRS（云数据库 Redis），GWLB（网关负载均衡）。不填默认挂载为CLB。
+                     * @param _serviceType 挂载的PAAS服务类型，CLB（负载均衡），CDB（云数据库 MySQL），CRS（云数据库 Redis），GWLB（网关负载均衡）。不填默认挂载为CLB。
                      * 
                      */
                     void SetServiceType(const std::string& _serviceType);
@@ -168,10 +173,52 @@ namespace TencentCloud
                      */
                     bool ServiceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     * @return Tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     * @param _tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
+                    /**
+                     * 获取协议类型，支持 Ipv4，Ipv6，默认 Ipv4。
+                     * @return IpAddressType 协议类型，支持 Ipv4，Ipv6，默认 Ipv4。
+                     * 
+                     */
+                    std::string GetIpAddressType() const;
+
+                    /**
+                     * 设置协议类型，支持 Ipv4，Ipv6，默认 Ipv4。
+                     * @param _ipAddressType 协议类型，支持 Ipv4，Ipv6，默认 Ipv4。
+                     * 
+                     */
+                    void SetIpAddressType(const std::string& _ipAddressType);
+
+                    /**
+                     * 判断参数 IpAddressType 是否已赋值
+                     * @return IpAddressType 是否已赋值
+                     * 
+                     */
+                    bool IpAddressTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * VPC实例ID。
+                     * VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
@@ -189,7 +236,8 @@ namespace TencentCloud
                     bool m_autoAcceptFlagHasBeenSet;
 
                     /**
-                     * 后端服务ID，比如lb-xxx。
+                     * 后端服务ID，比如lb-p1hiksdg。CLB可通过[DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459)接口获取；CDB可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/240/38568)接口获取；CRS可通过[DescribeInstances](https://cloud.tencent.com/document/product/239/20018)接口获取；GWLB可通过[DescribeGatewayLoadBalancers](https://cloud.tencent.com/document/product/1782/111683)接口获取。
+
                      */
                     std::string m_serviceInstanceId;
                     bool m_serviceInstanceIdHasBeenSet;
@@ -201,10 +249,22 @@ namespace TencentCloud
                     bool m_isPassServiceHasBeenSet;
 
                     /**
-                     * 挂载的PAAS服务类型，CLB,CDB,CRS，不填默认挂载为CLB。
+                     * 挂载的PAAS服务类型，CLB（负载均衡），CDB（云数据库 MySQL），CRS（云数据库 Redis），GWLB（网关负载均衡）。不填默认挂载为CLB。
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;
+
+                    /**
+                     * 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
+
+                    /**
+                     * 协议类型，支持 Ipv4，Ipv6，默认 Ipv4。
+                     */
+                    std::string m_ipAddressType;
+                    bool m_ipAddressTypeHasBeenSet;
 
                 };
             }

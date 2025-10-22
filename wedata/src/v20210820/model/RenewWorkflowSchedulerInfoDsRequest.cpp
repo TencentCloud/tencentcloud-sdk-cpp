@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,11 @@ RenewWorkflowSchedulerInfoDsRequest::RenewWorkflowSchedulerInfoDsRequest() :
     m_modifyCycleValueHasBeenSet(false),
     m_calendarOpenHasBeenSet(false),
     m_calendarNameHasBeenSet(false),
-    m_calendarIdHasBeenSet(false)
+    m_calendarIdHasBeenSet(false),
+    m_scheduleTimeZoneHasBeenSet(false),
+    m_clearLinkHasBeenSet(false),
+    m_mainCyclicConfigHasBeenSet(false),
+    m_subordinateCyclicConfigHasBeenSet(false)
 {
 }
 
@@ -202,6 +206,38 @@ string RenewWorkflowSchedulerInfoDsRequest::ToJsonString() const
         string key = "CalendarId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_calendarId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scheduleTimeZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleTimeZone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_scheduleTimeZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clearLinkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClearLink";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_clearLink, allocator);
+    }
+
+    if (m_mainCyclicConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MainCyclicConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_mainCyclicConfig.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subordinateCyclicConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubordinateCyclicConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_subordinateCyclicConfig.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -514,6 +550,70 @@ void RenewWorkflowSchedulerInfoDsRequest::SetCalendarId(const string& _calendarI
 bool RenewWorkflowSchedulerInfoDsRequest::CalendarIdHasBeenSet() const
 {
     return m_calendarIdHasBeenSet;
+}
+
+string RenewWorkflowSchedulerInfoDsRequest::GetScheduleTimeZone() const
+{
+    return m_scheduleTimeZone;
+}
+
+void RenewWorkflowSchedulerInfoDsRequest::SetScheduleTimeZone(const string& _scheduleTimeZone)
+{
+    m_scheduleTimeZone = _scheduleTimeZone;
+    m_scheduleTimeZoneHasBeenSet = true;
+}
+
+bool RenewWorkflowSchedulerInfoDsRequest::ScheduleTimeZoneHasBeenSet() const
+{
+    return m_scheduleTimeZoneHasBeenSet;
+}
+
+bool RenewWorkflowSchedulerInfoDsRequest::GetClearLink() const
+{
+    return m_clearLink;
+}
+
+void RenewWorkflowSchedulerInfoDsRequest::SetClearLink(const bool& _clearLink)
+{
+    m_clearLink = _clearLink;
+    m_clearLinkHasBeenSet = true;
+}
+
+bool RenewWorkflowSchedulerInfoDsRequest::ClearLinkHasBeenSet() const
+{
+    return m_clearLinkHasBeenSet;
+}
+
+string RenewWorkflowSchedulerInfoDsRequest::GetMainCyclicConfig() const
+{
+    return m_mainCyclicConfig;
+}
+
+void RenewWorkflowSchedulerInfoDsRequest::SetMainCyclicConfig(const string& _mainCyclicConfig)
+{
+    m_mainCyclicConfig = _mainCyclicConfig;
+    m_mainCyclicConfigHasBeenSet = true;
+}
+
+bool RenewWorkflowSchedulerInfoDsRequest::MainCyclicConfigHasBeenSet() const
+{
+    return m_mainCyclicConfigHasBeenSet;
+}
+
+string RenewWorkflowSchedulerInfoDsRequest::GetSubordinateCyclicConfig() const
+{
+    return m_subordinateCyclicConfig;
+}
+
+void RenewWorkflowSchedulerInfoDsRequest::SetSubordinateCyclicConfig(const string& _subordinateCyclicConfig)
+{
+    m_subordinateCyclicConfig = _subordinateCyclicConfig;
+    m_subordinateCyclicConfigHasBeenSet = true;
+}
+
+bool RenewWorkflowSchedulerInfoDsRequest::SubordinateCyclicConfigHasBeenSet() const
+{
+    return m_subordinateCyclicConfigHasBeenSet;
 }
 
 

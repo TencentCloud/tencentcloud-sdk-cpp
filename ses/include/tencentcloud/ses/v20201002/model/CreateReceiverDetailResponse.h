@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,7 +43,107 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取收件人总数
+                     * @return TotalCount 收件人总数
+                     * 
+                     */
+                    uint64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     * 
+                     */
+                    bool TotalCountHasBeenSet() const;
+
+                    /**
+                     * 获取实际上传数量
+                     * @return ValidCount 实际上传数量
+                     * 
+                     */
+                    uint64_t GetValidCount() const;
+
+                    /**
+                     * 判断参数 ValidCount 是否已赋值
+                     * @return ValidCount 是否已赋值
+                     * 
+                     */
+                    bool ValidCountHasBeenSet() const;
+
+                    /**
+                     * 获取数据过长数量
+                     * @return TooLongCount 数据过长数量
+                     * 
+                     */
+                    uint64_t GetTooLongCount() const;
+
+                    /**
+                     * 判断参数 TooLongCount 是否已赋值
+                     * @return TooLongCount 是否已赋值
+                     * 
+                     */
+                    bool TooLongCountHasBeenSet() const;
+
+                    /**
+                     * 获取邮件地址为空数量
+                     * @return EmptyEmailCount 邮件地址为空数量
+                     * 
+                     */
+                    uint64_t GetEmptyEmailCount() const;
+
+                    /**
+                     * 判断参数 EmptyEmailCount 是否已赋值
+                     * @return EmptyEmailCount 是否已赋值
+                     * 
+                     */
+                    bool EmptyEmailCountHasBeenSet() const;
+
+                    /**
+                     * 获取重复数量
+                     * @return RepeatCount 重复数量
+                     * 
+                     */
+                    uint64_t GetRepeatCount() const;
+
+                    /**
+                     * 判断参数 RepeatCount 是否已赋值
+                     * @return RepeatCount 是否已赋值
+                     * 
+                     */
+                    bool RepeatCountHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 收件人总数
+                     */
+                    uint64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
+
+                    /**
+                     * 实际上传数量
+                     */
+                    uint64_t m_validCount;
+                    bool m_validCountHasBeenSet;
+
+                    /**
+                     * 数据过长数量
+                     */
+                    uint64_t m_tooLongCount;
+                    bool m_tooLongCountHasBeenSet;
+
+                    /**
+                     * 邮件地址为空数量
+                     */
+                    uint64_t m_emptyEmailCount;
+                    bool m_emptyEmailCountHasBeenSet;
+
+                    /**
+                     * 重复数量
+                     */
+                    uint64_t m_repeatCount;
+                    bool m_repeatCountHasBeenSet;
 
                 };
             }

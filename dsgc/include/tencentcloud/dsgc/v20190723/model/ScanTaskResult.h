@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -130,6 +130,69 @@ namespace TencentCloud
                      */
                     bool ResultHasBeenSet() const;
 
+                    /**
+                     * 获取结果描述
+                     * @return ResultDescription 结果描述
+                     * 
+                     */
+                    std::string GetResultDescription() const;
+
+                    /**
+                     * 设置结果描述
+                     * @param _resultDescription 结果描述
+                     * 
+                     */
+                    void SetResultDescription(const std::string& _resultDescription);
+
+                    /**
+                     * 判断参数 ResultDescription 是否已赋值
+                     * @return ResultDescription 是否已赋值
+                     * 
+                     */
+                    bool ResultDescriptionHasBeenSet() const;
+
+                    /**
+                     * 获取结果建议
+                     * @return Suggestion 结果建议
+                     * 
+                     */
+                    std::string GetSuggestion() const;
+
+                    /**
+                     * 设置结果建议
+                     * @param _suggestion 结果建议
+                     * 
+                     */
+                    void SetSuggestion(const std::string& _suggestion);
+
+                    /**
+                     * 判断参数 Suggestion 是否已赋值
+                     * @return Suggestion 是否已赋值
+                     * 
+                     */
+                    bool SuggestionHasBeenSet() const;
+
+                    /**
+                     * 获取扫描进度
+                     * @return Progress 扫描进度
+                     * 
+                     */
+                    double GetProgress() const;
+
+                    /**
+                     * 设置扫描进度
+                     * @param _progress 扫描进度
+                     * 
+                     */
+                    void SetProgress(const double& _progress);
+
+                    /**
+                     * 判断参数 Progress 是否已赋值
+                     * @return Progress 是否已赋值
+                     * 
+                     */
+                    bool ProgressHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +218,24 @@ namespace TencentCloud
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;
+
+                    /**
+                     * 结果描述
+                     */
+                    std::string m_resultDescription;
+                    bool m_resultDescriptionHasBeenSet;
+
+                    /**
+                     * 结果建议
+                     */
+                    std::string m_suggestion;
+                    bool m_suggestionHasBeenSet;
+
+                    /**
+                     * 扫描进度
+                     */
+                    double m_progress;
+                    bool m_progressHasBeenSet;
 
                 };
             }

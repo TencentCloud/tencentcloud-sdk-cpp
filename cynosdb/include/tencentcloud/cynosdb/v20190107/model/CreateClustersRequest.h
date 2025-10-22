@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 #include <tencentcloud/cynosdb/v20190107/model/Tag.h>
 #include <tencentcloud/cynosdb/v20190107/model/ParamItem.h>
 #include <tencentcloud/cynosdb/v20190107/model/InstanceInitInfo.h>
+#include <tencentcloud/cynosdb/v20190107/model/ProxyConfig.h>
 
 
 namespace TencentCloud
@@ -228,6 +229,27 @@ namespace TencentCloud
                      * 
                      */
                     bool MemoryHasBeenSet() const;
+
+                    /**
+                     * 获取实例数量，数量范围为(0,16]，默认值为2（即一个rw实例+一个ro实例），传递的n表示1个rw实例+n-1个ro实例（规格相同），如需要更精确的集群组成搭配，请使用InstanceInitInfos
+                     * @return InstanceCount 实例数量，数量范围为(0,16]，默认值为2（即一个rw实例+一个ro实例），传递的n表示1个rw实例+n-1个ro实例（规格相同），如需要更精确的集群组成搭配，请使用InstanceInitInfos
+                     * 
+                     */
+                    int64_t GetInstanceCount() const;
+
+                    /**
+                     * 设置实例数量，数量范围为(0,16]，默认值为2（即一个rw实例+一个ro实例），传递的n表示1个rw实例+n-1个ro实例（规格相同），如需要更精确的集群组成搭配，请使用InstanceInitInfos
+                     * @param _instanceCount 实例数量，数量范围为(0,16]，默认值为2（即一个rw实例+一个ro实例），传递的n表示1个rw实例+n-1个ro实例（规格相同），如需要更精确的集群组成搭配，请使用InstanceInitInfos
+                     * 
+                     */
+                    void SetInstanceCount(const int64_t& _instanceCount);
+
+                    /**
+                     * 判断参数 InstanceCount 是否已赋值
+                     * @return InstanceCount 是否已赋值
+                     * 
+                     */
+                    bool InstanceCountHasBeenSet() const;
 
                     /**
                      * 获取该参数无实际意义，已废弃。
@@ -504,27 +526,6 @@ timeRollback，时间点回档
                      * 
                      */
                     bool StorageLimitHasBeenSet() const;
-
-                    /**
-                     * 获取实例数量，数量范围为(0,16]
-                     * @return InstanceCount 实例数量，数量范围为(0,16]
-                     * 
-                     */
-                    int64_t GetInstanceCount() const;
-
-                    /**
-                     * 设置实例数量，数量范围为(0,16]
-                     * @param _instanceCount 实例数量，数量范围为(0,16]
-                     * 
-                     */
-                    void SetInstanceCount(const int64_t& _instanceCount);
-
-                    /**
-                     * 判断参数 InstanceCount 是否已赋值
-                     * @return InstanceCount 是否已赋值
-                     * 
-                     */
-                    bool InstanceCountHasBeenSet() const;
 
                     /**
                      * 获取包年包月购买时长
@@ -994,6 +995,90 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                      */
                     bool InstanceInitInfosHasBeenSet() const;
 
+                    /**
+                     * 获取全球数据库唯一标识
+                     * @return GdnId 全球数据库唯一标识
+                     * 
+                     */
+                    std::string GetGdnId() const;
+
+                    /**
+                     * 设置全球数据库唯一标识
+                     * @param _gdnId 全球数据库唯一标识
+                     * 
+                     */
+                    void SetGdnId(const std::string& _gdnId);
+
+                    /**
+                     * 判断参数 GdnId 是否已赋值
+                     * @return GdnId 是否已赋值
+                     * 
+                     */
+                    bool GdnIdHasBeenSet() const;
+
+                    /**
+                     * 获取数据库代理配置
+                     * @return ProxyConfig 数据库代理配置
+                     * 
+                     */
+                    ProxyConfig GetProxyConfig() const;
+
+                    /**
+                     * 设置数据库代理配置
+                     * @param _proxyConfig 数据库代理配置
+                     * 
+                     */
+                    void SetProxyConfig(const ProxyConfig& _proxyConfig);
+
+                    /**
+                     * 判断参数 ProxyConfig 是否已赋值
+                     * @return ProxyConfig 是否已赋值
+                     * 
+                     */
+                    bool ProxyConfigHasBeenSet() const;
+
+                    /**
+                     * 获取是否自动归档
+                     * @return AutoArchive 是否自动归档
+                     * 
+                     */
+                    std::string GetAutoArchive() const;
+
+                    /**
+                     * 设置是否自动归档
+                     * @param _autoArchive 是否自动归档
+                     * 
+                     */
+                    void SetAutoArchive(const std::string& _autoArchive);
+
+                    /**
+                     * 判断参数 AutoArchive 是否已赋值
+                     * @return AutoArchive 是否已赋值
+                     * 
+                     */
+                    bool AutoArchiveHasBeenSet() const;
+
+                    /**
+                     * 获取暂停后的归档处理时间
+                     * @return AutoArchiveDelayHours 暂停后的归档处理时间
+                     * 
+                     */
+                    int64_t GetAutoArchiveDelayHours() const;
+
+                    /**
+                     * 设置暂停后的归档处理时间
+                     * @param _autoArchiveDelayHours 暂停后的归档处理时间
+                     * 
+                     */
+                    void SetAutoArchiveDelayHours(const int64_t& _autoArchiveDelayHours);
+
+                    /**
+                     * 判断参数 AutoArchiveDelayHours 是否已赋值
+                     * @return AutoArchiveDelayHours 是否已赋值
+                     * 
+                     */
+                    bool AutoArchiveDelayHoursHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1047,6 +1132,12 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                      */
                     int64_t m_memory;
                     bool m_memoryHasBeenSet;
+
+                    /**
+                     * 实例数量，数量范围为(0,16]，默认值为2（即一个rw实例+一个ro实例），传递的n表示1个rw实例+n-1个ro实例（规格相同），如需要更精确的集群组成搭配，请使用InstanceInitInfos
+                     */
+                    int64_t m_instanceCount;
+                    bool m_instanceCountHasBeenSet;
 
                     /**
                      * 该参数无实际意义，已废弃。
@@ -1125,12 +1216,6 @@ timeRollback，时间点回档
                      */
                     int64_t m_storageLimit;
                     bool m_storageLimitHasBeenSet;
-
-                    /**
-                     * 实例数量，数量范围为(0,16]
-                     */
-                    int64_t m_instanceCount;
-                    bool m_instanceCountHasBeenSet;
 
                     /**
                      * 包年包月购买时长
@@ -1263,6 +1348,30 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                      */
                     std::vector<InstanceInitInfo> m_instanceInitInfos;
                     bool m_instanceInitInfosHasBeenSet;
+
+                    /**
+                     * 全球数据库唯一标识
+                     */
+                    std::string m_gdnId;
+                    bool m_gdnIdHasBeenSet;
+
+                    /**
+                     * 数据库代理配置
+                     */
+                    ProxyConfig m_proxyConfig;
+                    bool m_proxyConfigHasBeenSet;
+
+                    /**
+                     * 是否自动归档
+                     */
+                    std::string m_autoArchive;
+                    bool m_autoArchiveHasBeenSet;
+
+                    /**
+                     * 暂停后的归档处理时间
+                     */
+                    int64_t m_autoArchiveDelayHours;
+                    bool m_autoArchiveDelayHoursHasBeenSet;
 
                 };
             }

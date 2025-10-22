@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -86,35 +86,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件：
-<li>AddrType, 地址类型。0：BGP 1; 1: 电信， 2：移动， 3：联通</li>
-<li>AddrProto地址类型。0：IPv4 1:IPv6</li>
-<li>Status 地址状态。 0：使用中， 1：已停用， 2：已退还</li>
-<li>Subnet 互联网公网地址，数组</li>
-<InstanceIds>互联网公网地址ID，数组</li>
-                     * @return Filters 过滤条件：
-<li>AddrType, 地址类型。0：BGP 1; 1: 电信， 2：移动， 3：联通</li>
-<li>AddrProto地址类型。0：IPv4 1:IPv6</li>
-<li>Status 地址状态。 0：使用中， 1：已停用， 2：已退还</li>
-<li>Subnet 互联网公网地址，数组</li>
-<InstanceIds>互联网公网地址ID，数组</li>
+                     * 获取过滤条件： <li>AddrType，地址类型。0：BGP 1；1: 电信；2：移动；3：联通</li> <li>AddrProto，地址类型。0：IPv4；1:IPv6</li> <li>Status，地址状态。 0：使用中；1：已停用； 2：已退还</li> <li>Subnet，互联网公网地址。数组</li> <li>InstanceIds，互联网公网地址ID。数组</li>
+                     * @return Filters 过滤条件： <li>AddrType，地址类型。0：BGP 1；1: 电信；2：移动；3：联通</li> <li>AddrProto，地址类型。0：IPv4；1:IPv6</li> <li>Status，地址状态。 0：使用中；1：已停用； 2：已退还</li> <li>Subnet，互联网公网地址。数组</li> <li>InstanceIds，互联网公网地址ID。数组</li>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件：
-<li>AddrType, 地址类型。0：BGP 1; 1: 电信， 2：移动， 3：联通</li>
-<li>AddrProto地址类型。0：IPv4 1:IPv6</li>
-<li>Status 地址状态。 0：使用中， 1：已停用， 2：已退还</li>
-<li>Subnet 互联网公网地址，数组</li>
-<InstanceIds>互联网公网地址ID，数组</li>
-                     * @param _filters 过滤条件：
-<li>AddrType, 地址类型。0：BGP 1; 1: 电信， 2：移动， 3：联通</li>
-<li>AddrProto地址类型。0：IPv4 1:IPv6</li>
-<li>Status 地址状态。 0：使用中， 1：已停用， 2：已退还</li>
-<li>Subnet 互联网公网地址，数组</li>
-<InstanceIds>互联网公网地址ID，数组</li>
+                     * 设置过滤条件： <li>AddrType，地址类型。0：BGP 1；1: 电信；2：移动；3：联通</li> <li>AddrProto，地址类型。0：IPv4；1:IPv6</li> <li>Status，地址状态。 0：使用中；1：已停用； 2：已退还</li> <li>Subnet，互联网公网地址。数组</li> <li>InstanceIds，互联网公网地址ID。数组</li>
+                     * @param _filters 过滤条件： <li>AddrType，地址类型。0：BGP 1；1: 电信；2：移动；3：联通</li> <li>AddrProto，地址类型。0：IPv4；1:IPv6</li> <li>Status，地址状态。 0：使用中；1：已停用； 2：已退还</li> <li>Subnet，互联网公网地址。数组</li> <li>InstanceIds，互联网公网地址ID。数组</li>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -141,12 +121,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 过滤条件：
-<li>AddrType, 地址类型。0：BGP 1; 1: 电信， 2：移动， 3：联通</li>
-<li>AddrProto地址类型。0：IPv4 1:IPv6</li>
-<li>Status 地址状态。 0：使用中， 1：已停用， 2：已退还</li>
-<li>Subnet 互联网公网地址，数组</li>
-<InstanceIds>互联网公网地址ID，数组</li>
+                     * 过滤条件： <li>AddrType，地址类型。0：BGP 1；1: 电信；2：移动；3：联通</li> <li>AddrProto，地址类型。0：IPv4；1:IPv6</li> <li>Status，地址状态。 0：使用中；1：已停用； 2：已退还</li> <li>Subnet，互联网公网地址。数组</li> <li>InstanceIds，互联网公网地址ID。数组</li>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -176,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取安全网关路由限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FrequencyLimitConfig 安全网关路由限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FrequencyLimitConfig> GetFrequencyLimitConfig() const;
 
                     /**
                      * 设置安全网关路由限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _frequencyLimitConfig 安全网关路由限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFrequencyLimitConfig(const std::vector<FrequencyLimitConfig>& _frequencyLimitConfig);
@@ -201,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ip代表绑定后端ip。cbr代表云托管服务
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GatewayRouteServerType ip代表绑定后端ip。cbr代表云托管服务
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGatewayRouteServerType() const;
 
                     /**
                      * 设置ip代表绑定后端ip。cbr代表云托管服务
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gatewayRouteServerType ip代表绑定后端ip。cbr代表云托管服务
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGatewayRouteServerType(const std::string& _gatewayRouteServerType);
@@ -226,18 +218,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GatewayRouteServerName 服务名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGatewayRouteServerName() const;
 
                     /**
                      * 设置服务名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gatewayRouteServerName 服务名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGatewayRouteServerName(const std::string& _gatewayRouteServerName);
@@ -251,18 +239,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GatewayRewriteHost ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGatewayRewriteHost() const;
 
                     /**
                      * 设置ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gatewayRewriteHost ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGatewayRewriteHost(const std::string& _gatewayRewriteHost);
@@ -276,18 +260,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网关版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GatewayVersion 网关版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGatewayVersion() const;
 
                     /**
                      * 设置网关版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gatewayVersion 网关版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGatewayVersion(const std::string& _gatewayVersion);
@@ -301,18 +281,14 @@ namespace TencentCloud
 
                     /**
                      * 获取请求路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GatewayRoutePath 请求路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGatewayRoutePath() const;
 
                     /**
                      * 设置请求路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gatewayRoutePath 请求路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGatewayRoutePath(const std::string& _gatewayRoutePath);
@@ -326,18 +302,14 @@ namespace TencentCloud
 
                     /**
                      * 获取请求模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GatewayRouteMethod 请求模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGatewayRouteMethod() const;
 
                     /**
                      * 设置请求模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gatewayRouteMethod 请求模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGatewayRouteMethod(const std::string& _gatewayRouteMethod);
@@ -351,18 +323,14 @@ namespace TencentCloud
 
                     /**
                      * 获取4层端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GatewayRoutePort 4层端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetGatewayRoutePort() const;
 
                     /**
                      * 设置4层端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gatewayRoutePort 4层端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGatewayRoutePort(const int64_t& _gatewayRoutePort);
@@ -376,18 +344,14 @@ namespace TencentCloud
 
                     /**
                      * 获取路由环境ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GatewayRouteEnvId 路由环境ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGatewayRouteEnvId() const;
 
                     /**
                      * 设置路由环境ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gatewayRouteEnvId 路由环境ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGatewayRouteEnvId(const std::string& _gatewayRouteEnvId);
@@ -401,18 +365,14 @@ namespace TencentCloud
 
                     /**
                      * 获取路径匹配类型，支持prefix(前缀匹配)，regex(正则匹配)， 默认prefix
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GatewayRoutePathMatchType 路径匹配类型，支持prefix(前缀匹配)，regex(正则匹配)， 默认prefix
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGatewayRoutePathMatchType() const;
 
                     /**
                      * 设置路径匹配类型，支持prefix(前缀匹配)，regex(正则匹配)， 默认prefix
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gatewayRoutePathMatchType 路径匹配类型，支持prefix(前缀匹配)，regex(正则匹配)， 默认prefix
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGatewayRoutePathMatchType(const std::string& _gatewayRoutePathMatchType);
@@ -426,18 +386,14 @@ namespace TencentCloud
 
                     /**
                      * 获取安全网关自定义头部
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomHeader 安全网关自定义头部
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CustomHeader GetCustomHeader() const;
 
                     /**
                      * 设置安全网关自定义头部
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _customHeader 安全网关自定义头部
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCustomHeader(const CustomHeader& _customHeader);
@@ -489,77 +445,66 @@ namespace TencentCloud
 
                     /**
                      * 安全网关路由限制
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FrequencyLimitConfig> m_frequencyLimitConfig;
                     bool m_frequencyLimitConfigHasBeenSet;
 
                     /**
                      * ip代表绑定后端ip。cbr代表云托管服务
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gatewayRouteServerType;
                     bool m_gatewayRouteServerTypeHasBeenSet;
 
                     /**
                      * 服务名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gatewayRouteServerName;
                     bool m_gatewayRouteServerNameHasBeenSet;
 
                     /**
                      * ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gatewayRewriteHost;
                     bool m_gatewayRewriteHostHasBeenSet;
 
                     /**
                      * 网关版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gatewayVersion;
                     bool m_gatewayVersionHasBeenSet;
 
                     /**
                      * 请求路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gatewayRoutePath;
                     bool m_gatewayRoutePathHasBeenSet;
 
                     /**
                      * 请求模式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gatewayRouteMethod;
                     bool m_gatewayRouteMethodHasBeenSet;
 
                     /**
                      * 4层端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_gatewayRoutePort;
                     bool m_gatewayRoutePortHasBeenSet;
 
                     /**
                      * 路由环境ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gatewayRouteEnvId;
                     bool m_gatewayRouteEnvIdHasBeenSet;
 
                     /**
                      * 路径匹配类型，支持prefix(前缀匹配)，regex(正则匹配)， 默认prefix
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gatewayRoutePathMatchType;
                     bool m_gatewayRoutePathMatchTypeHasBeenSet;
 
                     /**
                      * 安全网关自定义头部
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CustomHeader m_customHeader;
                     bool m_customHeaderHasBeenSet;

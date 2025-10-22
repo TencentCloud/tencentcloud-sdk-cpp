@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,8 @@ BankCardOCRResponse::BankCardOCRResponse() :
     m_borderCutImageHasBeenSet(false),
     m_cardNoImageHasBeenSet(false),
     m_warningCodeHasBeenSet(false),
-    m_qualityValueHasBeenSet(false)
+    m_qualityValueHasBeenSet(false),
+    m_cardCategoryHasBeenSet(false)
 {
 }
 
@@ -163,6 +164,16 @@ CoreInternalOutcome BankCardOCRResponse::Deserialize(const string &payload)
         m_qualityValueHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CardCategory") && !rsp["CardCategory"].IsNull())
+    {
+        if (!rsp["CardCategory"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CardCategory` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cardCategory = string(rsp["CardCategory"].GetString());
+        m_cardCategoryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -250,11 +261,19 @@ string BankCardOCRResponse::ToJsonString() const
         value.AddMember(iKey, m_qualityValue, allocator);
     }
 
+    if (m_cardCategoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CardCategory";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cardCategory.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -350,6 +369,16 @@ int64_t BankCardOCRResponse::GetQualityValue() const
 bool BankCardOCRResponse::QualityValueHasBeenSet() const
 {
     return m_qualityValueHasBeenSet;
+}
+
+string BankCardOCRResponse::GetCardCategory() const
+{
+    return m_cardCategory;
+}
+
+bool BankCardOCRResponse::CardCategoryHasBeenSet() const
+{
+    return m_cardCategoryHasBeenSet;
 }
 
 

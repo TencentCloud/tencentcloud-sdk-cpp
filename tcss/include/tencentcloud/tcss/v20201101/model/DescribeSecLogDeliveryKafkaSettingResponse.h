@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取消息队列实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceID 消息队列实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceID() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取消息队列实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceName 消息队列实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceName() const;
@@ -78,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomain() const;
@@ -94,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取日志类型队列
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogTypeList 日志类型队列
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SecLogDeliveryKafkaSettingInfo> GetLogTypeList() const;
@@ -110,9 +102,7 @@ namespace TencentCloud
 
                     /**
                      * 获取用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return User 用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUser() const;
@@ -126,9 +116,7 @@ namespace TencentCloud
 
                     /**
                      * 获取地域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionID 地域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegionID() const;
@@ -144,42 +132,36 @@ namespace TencentCloud
 
                     /**
                      * 消息队列实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceID;
                     bool m_instanceIDHasBeenSet;
 
                     /**
                      * 消息队列实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
                      * 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
                      * 日志类型队列
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SecLogDeliveryKafkaSettingInfo> m_logTypeList;
                     bool m_logTypeListHasBeenSet;
 
                     /**
                      * 用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_user;
                     bool m_userHasBeenSet;
 
                     /**
                      * 地域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regionID;
                     bool m_regionIDHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,9 @@ DescribePodInstancesRequest::DescribePodInstancesRequest() :
     m_groupIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_podNameListHasBeenSet(false)
+    m_podNameListHasBeenSet(false),
+    m_deployVersionHasBeenSet(false),
+    m_taskIdHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,22 @@ string DescribePodInstancesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_deployVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeployVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_deployVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -144,6 +162,38 @@ void DescribePodInstancesRequest::SetPodNameList(const vector<string>& _podNameL
 bool DescribePodInstancesRequest::PodNameListHasBeenSet() const
 {
     return m_podNameListHasBeenSet;
+}
+
+string DescribePodInstancesRequest::GetDeployVersion() const
+{
+    return m_deployVersion;
+}
+
+void DescribePodInstancesRequest::SetDeployVersion(const string& _deployVersion)
+{
+    m_deployVersion = _deployVersion;
+    m_deployVersionHasBeenSet = true;
+}
+
+bool DescribePodInstancesRequest::DeployVersionHasBeenSet() const
+{
+    return m_deployVersionHasBeenSet;
+}
+
+string DescribePodInstancesRequest::GetTaskId() const
+{
+    return m_taskId;
+}
+
+void DescribePodInstancesRequest::SetTaskId(const string& _taskId)
+{
+    m_taskId = _taskId;
+    m_taskIdHasBeenSet = true;
+}
+
+bool DescribePodInstancesRequest::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -298,49 +298,6 @@ MnaClient::CreateEncryptedKeyOutcomeCallable MnaClient::CreateEncryptedKeyCallab
     return task->get_future();
 }
 
-MnaClient::CreateQosOutcome MnaClient::CreateQos(const CreateQosRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateQos");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateQosResponse rsp = CreateQosResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateQosOutcome(rsp);
-        else
-            return CreateQosOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateQosOutcome(outcome.GetError());
-    }
-}
-
-void MnaClient::CreateQosAsync(const CreateQosRequest& request, const CreateQosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateQos(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-MnaClient::CreateQosOutcomeCallable MnaClient::CreateQosCallable(const CreateQosRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateQosOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateQos(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 MnaClient::DeleteDeviceOutcome MnaClient::DeleteDevice(const DeleteDeviceRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteDevice");
@@ -470,42 +427,42 @@ MnaClient::DeleteL3ConnOutcomeCallable MnaClient::DeleteL3ConnCallable(const Del
     return task->get_future();
 }
 
-MnaClient::DeleteQosOutcome MnaClient::DeleteQos(const DeleteQosRequest &request)
+MnaClient::DownloadActiveDeviceCountOutcome MnaClient::DownloadActiveDeviceCount(const DownloadActiveDeviceCountRequest &request)
 {
-    auto outcome = MakeRequest(request, "DeleteQos");
+    auto outcome = MakeRequest(request, "DownloadActiveDeviceCount");
     if (outcome.IsSuccess())
     {
         auto r = outcome.GetResult();
         string payload = string(r.Body(), r.BodySize());
-        DeleteQosResponse rsp = DeleteQosResponse();
+        DownloadActiveDeviceCountResponse rsp = DownloadActiveDeviceCountResponse();
         auto o = rsp.Deserialize(payload);
         if (o.IsSuccess())
-            return DeleteQosOutcome(rsp);
+            return DownloadActiveDeviceCountOutcome(rsp);
         else
-            return DeleteQosOutcome(o.GetError());
+            return DownloadActiveDeviceCountOutcome(o.GetError());
     }
     else
     {
-        return DeleteQosOutcome(outcome.GetError());
+        return DownloadActiveDeviceCountOutcome(outcome.GetError());
     }
 }
 
-void MnaClient::DeleteQosAsync(const DeleteQosRequest& request, const DeleteQosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+void MnaClient::DownloadActiveDeviceCountAsync(const DownloadActiveDeviceCountRequest& request, const DownloadActiveDeviceCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
     auto fn = [this, request, handler, context]()
     {
-        handler(this, request, this->DeleteQos(request), context);
+        handler(this, request, this->DownloadActiveDeviceCount(request), context);
     };
 
     Executor::GetInstance()->Submit(new Runnable(fn));
 }
 
-MnaClient::DeleteQosOutcomeCallable MnaClient::DeleteQosCallable(const DeleteQosRequest &request)
+MnaClient::DownloadActiveDeviceCountOutcomeCallable MnaClient::DownloadActiveDeviceCountCallable(const DownloadActiveDeviceCountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteQosOutcome()>>(
+    auto task = std::make_shared<std::packaged_task<DownloadActiveDeviceCountOutcome()>>(
         [this, request]()
         {
-            return this->DeleteQos(request);
+            return this->DownloadActiveDeviceCount(request);
         }
     );
 
@@ -513,42 +470,42 @@ MnaClient::DeleteQosOutcomeCallable MnaClient::DeleteQosCallable(const DeleteQos
     return task->get_future();
 }
 
-MnaClient::DescribeQosOutcome MnaClient::DescribeQos(const DescribeQosRequest &request)
+MnaClient::GetActiveDeviceCountOutcome MnaClient::GetActiveDeviceCount(const GetActiveDeviceCountRequest &request)
 {
-    auto outcome = MakeRequest(request, "DescribeQos");
+    auto outcome = MakeRequest(request, "GetActiveDeviceCount");
     if (outcome.IsSuccess())
     {
         auto r = outcome.GetResult();
         string payload = string(r.Body(), r.BodySize());
-        DescribeQosResponse rsp = DescribeQosResponse();
+        GetActiveDeviceCountResponse rsp = GetActiveDeviceCountResponse();
         auto o = rsp.Deserialize(payload);
         if (o.IsSuccess())
-            return DescribeQosOutcome(rsp);
+            return GetActiveDeviceCountOutcome(rsp);
         else
-            return DescribeQosOutcome(o.GetError());
+            return GetActiveDeviceCountOutcome(o.GetError());
     }
     else
     {
-        return DescribeQosOutcome(outcome.GetError());
+        return GetActiveDeviceCountOutcome(outcome.GetError());
     }
 }
 
-void MnaClient::DescribeQosAsync(const DescribeQosRequest& request, const DescribeQosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+void MnaClient::GetActiveDeviceCountAsync(const GetActiveDeviceCountRequest& request, const GetActiveDeviceCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
     auto fn = [this, request, handler, context]()
     {
-        handler(this, request, this->DescribeQos(request), context);
+        handler(this, request, this->GetActiveDeviceCount(request), context);
     };
 
     Executor::GetInstance()->Submit(new Runnable(fn));
 }
 
-MnaClient::DescribeQosOutcomeCallable MnaClient::DescribeQosCallable(const DescribeQosRequest &request)
+MnaClient::GetActiveDeviceCountOutcomeCallable MnaClient::GetActiveDeviceCountCallable(const GetActiveDeviceCountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeQosOutcome()>>(
+    auto task = std::make_shared<std::packaged_task<GetActiveDeviceCountOutcome()>>(
         [this, request]()
         {
-            return this->DescribeQos(request);
+            return this->GetActiveDeviceCount(request);
         }
     );
 
@@ -1495,6 +1452,49 @@ MnaClient::OrderPerLicenseOutcomeCallable MnaClient::OrderPerLicenseCallable(con
         [this, request]()
         {
             return this->OrderPerLicense(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MnaClient::ReportOrderOutcome MnaClient::ReportOrder(const ReportOrderRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReportOrder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReportOrderResponse rsp = ReportOrderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReportOrderOutcome(rsp);
+        else
+            return ReportOrderOutcome(o.GetError());
+    }
+    else
+    {
+        return ReportOrderOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::ReportOrderAsync(const ReportOrderRequest& request, const ReportOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReportOrder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MnaClient::ReportOrderOutcomeCallable MnaClient::ReportOrderCallable(const ReportOrderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReportOrderOutcome()>>(
+        [this, request]()
+        {
+            return this->ReportOrder(request);
         }
     );
 

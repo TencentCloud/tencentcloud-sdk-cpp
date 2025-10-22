@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -217,15 +217,15 @@ namespace TencentCloud
                     bool TriggerCountHasBeenSet() const;
 
                     /**
-                     * 获取告警通知发送频率，单位为分钟
-                     * @return AlarmPeriod 告警通知发送频率，单位为分钟
+                     * 获取告警通知发送频率，单位为分钟(min)
+                     * @return AlarmPeriod 告警通知发送频率，单位为分钟(min)
                      * 
                      */
                     int64_t GetAlarmPeriod() const;
 
                     /**
-                     * 设置告警通知发送频率，单位为分钟
-                     * @param _alarmPeriod 告警通知发送频率，单位为分钟
+                     * 设置告警通知发送频率，单位为分钟(min)
+                     * @param _alarmPeriod 告警通知发送频率，单位为分钟(min)
                      * 
                      */
                     void SetAlarmPeriod(const int64_t& _alarmPeriod);
@@ -259,15 +259,15 @@ namespace TencentCloud
                     bool NoticesHasBeenSet() const;
 
                     /**
-                     * 获取告警持续时间，单位为分钟
-                     * @return Duration 告警持续时间，单位为分钟
+                     * 获取告警持续时间，单位为分钟(min)
+                     * @return Duration 告警持续时间，单位为分钟(min)
                      * 
                      */
                     int64_t GetDuration() const;
 
                     /**
-                     * 设置告警持续时间，单位为分钟
-                     * @param _duration 告警持续时间，单位为分钟
+                     * 设置告警持续时间，单位为分钟(min)
+                     * @param _duration 告警持续时间，单位为分钟(min)
                      * 
                      */
                     void SetDuration(const int64_t& _duration);
@@ -301,15 +301,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取告警发生时间，毫秒级Unix时间戳
-                     * @return CreateTime 告警发生时间，毫秒级Unix时间戳
+                     * 获取告警发生时间，毫秒级Unix时间戳(ms)
+                     * @return CreateTime 告警发生时间，毫秒级Unix时间戳(ms)
                      * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
-                     * 设置告警发生时间，毫秒级Unix时间戳
-                     * @param _createTime 告警发生时间，毫秒级Unix时间戳
+                     * 设置告警发生时间，毫秒级Unix时间戳(ms)
+                     * @param _createTime 告警发生时间，毫秒级Unix时间戳(ms)
                      * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
@@ -323,18 +323,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警分组触发时对应的分组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupTriggerCondition 告警分组触发时对应的分组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<GroupTriggerConditionInfo> GetGroupTriggerCondition() const;
 
                     /**
                      * 设置告警分组触发时对应的分组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupTriggerCondition 告警分组触发时对应的分组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupTriggerCondition(const std::vector<GroupTriggerConditionInfo>& _groupTriggerCondition);
@@ -348,18 +344,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警级别，0代表警告(Warn)，1代表提醒(Info)，2代表紧急 (Critical)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlarmLevel 告警级别，0代表警告(Warn)，1代表提醒(Info)，2代表紧急 (Critical)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAlarmLevel() const;
 
                     /**
                      * 设置告警级别，0代表警告(Warn)，1代表提醒(Info)，2代表紧急 (Critical)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _alarmLevel 告警级别，0代表警告(Warn)，1代表提醒(Info)，2代表紧急 (Critical)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAlarmLevel(const uint64_t& _alarmLevel);
@@ -374,10 +366,8 @@ namespace TencentCloud
                     /**
                      * 获取监控对象类型。
 0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MonitorObjectType 监控对象类型。
 0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMonitorObjectType() const;
@@ -385,10 +375,8 @@ namespace TencentCloud
                     /**
                      * 设置监控对象类型。
 0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _monitorObjectType 监控对象类型。
 0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMonitorObjectType(const uint64_t& _monitorObjectType);
@@ -399,6 +387,27 @@ namespace TencentCloud
                      * 
                      */
                     bool MonitorObjectTypeHasBeenSet() const;
+
+                    /**
+                     * 获取通知渠道类型，0默认代表cls内部通知渠道，1代表云监控通知渠道
+                     * @return SendType 通知渠道类型，0默认代表cls内部通知渠道，1代表云监控通知渠道
+                     * 
+                     */
+                    uint64_t GetSendType() const;
+
+                    /**
+                     * 设置通知渠道类型，0默认代表cls内部通知渠道，1代表云监控通知渠道
+                     * @param _sendType 通知渠道类型，0默认代表cls内部通知渠道，1代表云监控通知渠道
+                     * 
+                     */
+                    void SetSendType(const uint64_t& _sendType);
+
+                    /**
+                     * 判断参数 SendType 是否已赋值
+                     * @return SendType 是否已赋值
+                     * 
+                     */
+                    bool SendTypeHasBeenSet() const;
 
                 private:
 
@@ -451,7 +460,7 @@ namespace TencentCloud
                     bool m_triggerCountHasBeenSet;
 
                     /**
-                     * 告警通知发送频率，单位为分钟
+                     * 告警通知发送频率，单位为分钟(min)
                      */
                     int64_t m_alarmPeriod;
                     bool m_alarmPeriodHasBeenSet;
@@ -463,7 +472,7 @@ namespace TencentCloud
                     bool m_noticesHasBeenSet;
 
                     /**
-                     * 告警持续时间，单位为分钟
+                     * 告警持续时间，单位为分钟(min)
                      */
                     int64_t m_duration;
                     bool m_durationHasBeenSet;
@@ -475,21 +484,19 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 告警发生时间，毫秒级Unix时间戳
+                     * 告警发生时间，毫秒级Unix时间戳(ms)
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 告警分组触发时对应的分组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<GroupTriggerConditionInfo> m_groupTriggerCondition;
                     bool m_groupTriggerConditionHasBeenSet;
 
                     /**
                      * 告警级别，0代表警告(Warn)，1代表提醒(Info)，2代表紧急 (Critical)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_alarmLevel;
                     bool m_alarmLevelHasBeenSet;
@@ -497,10 +504,15 @@ namespace TencentCloud
                     /**
                      * 监控对象类型。
 0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_monitorObjectType;
                     bool m_monitorObjectTypeHasBeenSet;
+
+                    /**
+                     * 通知渠道类型，0默认代表cls内部通知渠道，1代表云监控通知渠道
+                     */
+                    uint64_t m_sendType;
+                    bool m_sendTypeHasBeenSet;
 
                 };
             }

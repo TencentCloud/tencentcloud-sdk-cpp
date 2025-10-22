@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -119,6 +119,49 @@ CbsClient::ApplySnapshotOutcomeCallable CbsClient::ApplySnapshotCallable(const A
         [this, request]()
         {
             return this->ApplySnapshot(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CbsClient::ApplySnapshotGroupOutcome CbsClient::ApplySnapshotGroup(const ApplySnapshotGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ApplySnapshotGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ApplySnapshotGroupResponse rsp = ApplySnapshotGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ApplySnapshotGroupOutcome(rsp);
+        else
+            return ApplySnapshotGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ApplySnapshotGroupOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::ApplySnapshotGroupAsync(const ApplySnapshotGroupRequest& request, const ApplySnapshotGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ApplySnapshotGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CbsClient::ApplySnapshotGroupOutcomeCallable CbsClient::ApplySnapshotGroupCallable(const ApplySnapshotGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ApplySnapshotGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->ApplySnapshotGroup(request);
         }
     );
 
@@ -427,6 +470,49 @@ CbsClient::CreateSnapshotOutcomeCallable CbsClient::CreateSnapshotCallable(const
     return task->get_future();
 }
 
+CbsClient::CreateSnapshotGroupOutcome CbsClient::CreateSnapshotGroup(const CreateSnapshotGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSnapshotGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSnapshotGroupResponse rsp = CreateSnapshotGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSnapshotGroupOutcome(rsp);
+        else
+            return CreateSnapshotGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSnapshotGroupOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::CreateSnapshotGroupAsync(const CreateSnapshotGroupRequest& request, const CreateSnapshotGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSnapshotGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CbsClient::CreateSnapshotGroupOutcomeCallable CbsClient::CreateSnapshotGroupCallable(const CreateSnapshotGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSnapshotGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSnapshotGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CbsClient::DeleteAutoSnapshotPoliciesOutcome CbsClient::DeleteAutoSnapshotPolicies(const DeleteAutoSnapshotPoliciesRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAutoSnapshotPolicies");
@@ -506,6 +592,49 @@ CbsClient::DeleteDiskBackupsOutcomeCallable CbsClient::DeleteDiskBackupsCallable
         [this, request]()
         {
             return this->DeleteDiskBackups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CbsClient::DeleteSnapshotGroupOutcome CbsClient::DeleteSnapshotGroup(const DeleteSnapshotGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSnapshotGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSnapshotGroupResponse rsp = DeleteSnapshotGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSnapshotGroupOutcome(rsp);
+        else
+            return DeleteSnapshotGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSnapshotGroupOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::DeleteSnapshotGroupAsync(const DeleteSnapshotGroupRequest& request, const DeleteSnapshotGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteSnapshotGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CbsClient::DeleteSnapshotGroupOutcomeCallable CbsClient::DeleteSnapshotGroupCallable(const DeleteSnapshotGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteSnapshotGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteSnapshotGroup(request);
         }
     );
 
@@ -850,6 +979,49 @@ CbsClient::DescribeInstancesDiskNumOutcomeCallable CbsClient::DescribeInstancesD
         [this, request]()
         {
             return this->DescribeInstancesDiskNum(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CbsClient::DescribeSnapshotGroupsOutcome CbsClient::DescribeSnapshotGroups(const DescribeSnapshotGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSnapshotGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSnapshotGroupsResponse rsp = DescribeSnapshotGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSnapshotGroupsOutcome(rsp);
+        else
+            return DescribeSnapshotGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSnapshotGroupsOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::DescribeSnapshotGroupsAsync(const DescribeSnapshotGroupsRequest& request, const DescribeSnapshotGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSnapshotGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CbsClient::DescribeSnapshotGroupsOutcomeCallable CbsClient::DescribeSnapshotGroupsCallable(const DescribeSnapshotGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSnapshotGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSnapshotGroups(request);
         }
     );
 

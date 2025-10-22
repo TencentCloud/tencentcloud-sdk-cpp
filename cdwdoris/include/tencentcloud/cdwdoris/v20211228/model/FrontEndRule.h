@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取id序列
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ID id序列
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetID() const;
 
                     /**
                      * 设置id序列
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iD id序列
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetID(const int64_t& _iD);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取详细规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rule 详细规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRule() const;
 
                     /**
                      * 设置详细规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rule 详细规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRule(const std::string& _rule);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * id序列
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
                      * 规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 详细规则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_rule;
                     bool m_ruleHasBeenSet;

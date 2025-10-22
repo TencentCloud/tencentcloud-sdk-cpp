@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ ResourceIds::ResourceIds() :
     m_cFSIdHasBeenSet(false),
     m_cFSStorageTypeHasBeenSet(false),
     m_cVMIdHasBeenSet(false),
-    m_eKSIdHasBeenSet(false)
+    m_eKSIdHasBeenSet(false),
+    m_tKEIdHasBeenSet(false),
+    m_tKESystemNodePoolIdHasBeenSet(false)
 {
 }
 
@@ -117,6 +119,26 @@ CoreInternalOutcome ResourceIds::Deserialize(const rapidjson::Value &value)
         m_eKSIdHasBeenSet = true;
     }
 
+    if (value.HasMember("TKEId") && !value["TKEId"].IsNull())
+    {
+        if (!value["TKEId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourceIds.TKEId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tKEId = string(value["TKEId"].GetString());
+        m_tKEIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("TKESystemNodePoolId") && !value["TKESystemNodePoolId"].IsNull())
+    {
+        if (!value["TKESystemNodePoolId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourceIds.TKESystemNodePoolId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tKESystemNodePoolId = string(value["TKESystemNodePoolId"].GetString());
+        m_tKESystemNodePoolIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +208,22 @@ void ResourceIds::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "EKSId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_eKSId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tKEIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TKEId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tKEId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tKESystemNodePoolIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TKESystemNodePoolId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tKESystemNodePoolId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +355,37 @@ void ResourceIds::SetEKSId(const string& _eKSId)
 bool ResourceIds::EKSIdHasBeenSet() const
 {
     return m_eKSIdHasBeenSet;
+}
+
+string ResourceIds::GetTKEId() const
+{
+    return m_tKEId;
+}
+
+void ResourceIds::SetTKEId(const string& _tKEId)
+{
+    m_tKEId = _tKEId;
+    m_tKEIdHasBeenSet = true;
+}
+
+bool ResourceIds::TKEIdHasBeenSet() const
+{
+    return m_tKEIdHasBeenSet;
+}
+
+string ResourceIds::GetTKESystemNodePoolId() const
+{
+    return m_tKESystemNodePoolId;
+}
+
+void ResourceIds::SetTKESystemNodePoolId(const string& _tKESystemNodePoolId)
+{
+    m_tKESystemNodePoolId = _tKESystemNodePoolId;
+    m_tKESystemNodePoolIdHasBeenSet = true;
+}
+
+bool ResourceIds::TKESystemNodePoolIdHasBeenSet() const
+{
+    return m_tKESystemNodePoolIdHasBeenSet;
 }
 

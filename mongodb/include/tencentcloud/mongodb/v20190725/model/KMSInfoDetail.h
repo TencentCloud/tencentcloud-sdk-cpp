@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主密钥 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeyId 主密钥 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKeyId() const;
 
                     /**
                      * 设置主密钥 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _keyId 主密钥 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKeyId(const std::string& _keyId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主密钥名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeyName 主密钥名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKeyName() const;
 
                     /**
                      * 设置主密钥名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _keyName 主密钥名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKeyName(const std::string& _keyName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例与密钥绑定时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 实例与密钥绑定时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置实例与密钥绑定时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 实例与密钥绑定时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -123,18 +111,22 @@ namespace TencentCloud
 
                     /**
                      * 获取密钥状态。
-注意：此字段可能返回 null，表示取不到有效值。
+- Enabled：开启。
+- Disabled：不开启。
                      * @return Status 密钥状态。
-注意：此字段可能返回 null，表示取不到有效值。
+- Enabled：开启。
+- Disabled：不开启。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置密钥状态。
-注意：此字段可能返回 null，表示取不到有效值。
+- Enabled：开启。
+- Disabled：不开启。
                      * @param _status 密钥状态。
-注意：此字段可能返回 null，表示取不到有效值。
+- Enabled：开启。
+- Disabled：不开启。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -148,18 +140,14 @@ namespace TencentCloud
 
                     /**
                      * 获取密钥用途。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeyUsage 密钥用途。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKeyUsage() const;
 
                     /**
                      * 设置密钥用途。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _keyUsage 密钥用途。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKeyUsage(const std::string& _keyUsage);
@@ -173,18 +161,14 @@ namespace TencentCloud
 
                     /**
                      * 获取密钥来源。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeyOrigin 密钥来源。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKeyOrigin() const;
 
                     /**
                      * 设置密钥来源。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _keyOrigin 密钥来源。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKeyOrigin(const std::string& _keyOrigin);
@@ -196,49 +180,72 @@ namespace TencentCloud
                      */
                     bool KeyOriginHasBeenSet() const;
 
+                    /**
+                     * 获取kms所在地域。
+                     * @return KmsRegion kms所在地域。
+                     * 
+                     */
+                    std::string GetKmsRegion() const;
+
+                    /**
+                     * 设置kms所在地域。
+                     * @param _kmsRegion kms所在地域。
+                     * 
+                     */
+                    void SetKmsRegion(const std::string& _kmsRegion);
+
+                    /**
+                     * 判断参数 KmsRegion 是否已赋值
+                     * @return KmsRegion 是否已赋值
+                     * 
+                     */
+                    bool KmsRegionHasBeenSet() const;
+
                 private:
 
                     /**
                      * 主密钥 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_keyId;
                     bool m_keyIdHasBeenSet;
 
                     /**
                      * 主密钥名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_keyName;
                     bool m_keyNameHasBeenSet;
 
                     /**
                      * 实例与密钥绑定时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 密钥状态。
-注意：此字段可能返回 null，表示取不到有效值。
+- Enabled：开启。
+- Disabled：不开启。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 密钥用途。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_keyUsage;
                     bool m_keyUsageHasBeenSet;
 
                     /**
                      * 密钥来源。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_keyOrigin;
                     bool m_keyOriginHasBeenSet;
+
+                    /**
+                     * kms所在地域。
+                     */
+                    std::string m_kmsRegion;
+                    bool m_kmsRegionHasBeenSet;
 
                 };
             }

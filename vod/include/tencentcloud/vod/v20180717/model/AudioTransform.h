@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,18 +74,14 @@ namespace TencentCloud
 
                     /**
                      * 获取音量调节参数， 当 Type = Volume 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VolumeParam 音量调节参数， 当 Type = Volume 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AudioVolumeParam GetVolumeParam() const;
 
                     /**
                      * 设置音量调节参数， 当 Type = Volume 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _volumeParam 音量调节参数， 当 Type = Volume 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVolumeParam(const AudioVolumeParam& _volumeParam);
@@ -108,7 +104,6 @@ namespace TencentCloud
 
                     /**
                      * 音量调节参数， 当 Type = Volume 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AudioVolumeParam m_volumeParam;
                     bool m_volumeParamHasBeenSet;

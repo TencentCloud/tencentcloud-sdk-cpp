@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,9 @@ using namespace std;
 DescribeNotebookSessionStatementSqlResultRequest::DescribeNotebookSessionStatementSqlResultRequest() :
     m_taskIdHasBeenSet(false),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_batchIdHasBeenSet(false),
+    m_dataFieldCutLenHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,22 @@ string DescribeNotebookSessionStatementSqlResultRequest::ToJsonString() const
         string key = "NextToken";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_nextToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_batchIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BatchId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_batchId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataFieldCutLenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataFieldCutLen";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dataFieldCutLen, allocator);
     }
 
 
@@ -114,6 +132,38 @@ void DescribeNotebookSessionStatementSqlResultRequest::SetNextToken(const string
 bool DescribeNotebookSessionStatementSqlResultRequest::NextTokenHasBeenSet() const
 {
     return m_nextTokenHasBeenSet;
+}
+
+string DescribeNotebookSessionStatementSqlResultRequest::GetBatchId() const
+{
+    return m_batchId;
+}
+
+void DescribeNotebookSessionStatementSqlResultRequest::SetBatchId(const string& _batchId)
+{
+    m_batchId = _batchId;
+    m_batchIdHasBeenSet = true;
+}
+
+bool DescribeNotebookSessionStatementSqlResultRequest::BatchIdHasBeenSet() const
+{
+    return m_batchIdHasBeenSet;
+}
+
+int64_t DescribeNotebookSessionStatementSqlResultRequest::GetDataFieldCutLen() const
+{
+    return m_dataFieldCutLen;
+}
+
+void DescribeNotebookSessionStatementSqlResultRequest::SetDataFieldCutLen(const int64_t& _dataFieldCutLen)
+{
+    m_dataFieldCutLen = _dataFieldCutLen;
+    m_dataFieldCutLenHasBeenSet = true;
+}
+
+bool DescribeNotebookSessionStatementSqlResultRequest::DataFieldCutLenHasBeenSet() const
+{
+    return m_dataFieldCutLenHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,9 +72,15 @@ namespace TencentCloud
                      * 获取是否回调证书信息:
 <ul><li>**false**: 不需要(默认)</li>
 <li>**true**:需要</li></ul>
+
+
+注：`该字段已经失效，请勿设置此参数。`
                      * @return CertInfoCallback 是否回调证书信息:
 <ul><li>**false**: 不需要(默认)</li>
 <li>**true**:需要</li></ul>
+
+
+注：`该字段已经失效，请勿设置此参数。`
                      * 
                      */
                     bool GetCertInfoCallback() const;
@@ -83,9 +89,15 @@ namespace TencentCloud
                      * 设置是否回调证书信息:
 <ul><li>**false**: 不需要(默认)</li>
 <li>**true**:需要</li></ul>
+
+
+注：`该字段已经失效，请勿设置此参数。`
                      * @param _certInfoCallback 是否回调证书信息:
 <ul><li>**false**: 不需要(默认)</li>
 <li>**true**:需要</li></ul>
+
+
+注：`该字段已经失效，请勿设置此参数。`
                      * 
                      */
                     void SetCertInfoCallback(const bool& _certInfoCallback);
@@ -179,17 +191,17 @@ namespace TencentCloud
                     /**
                      * 获取开通时候的身份验证方式, 取值为：
 <ul><li>**WEIXINAPP** : 微信人脸识别</li>
-<li>**INSIGHT** : 慧眼人脸认别</li>
+<li>**INSIGHT** : 慧眼人脸识别</li>
 <li>**TELECOM** : 运营商三要素验证</li></ul>
 注：
-<ul><li>如果是小程序开通链接，支持传 WEIXINAPP / TELECOM。为空默认 WEIXINAPP</li>
+<ul><li>如果是小程序开通链接，仅支持传 WEIXINAPP。为空默认 WEIXINAPP</li>
 <li>如果是 H5 开通链接，支持传 INSIGHT / TELECOM。为空默认 INSIGHT </li></ul>
                      * @return VerifyChannels 开通时候的身份验证方式, 取值为：
 <ul><li>**WEIXINAPP** : 微信人脸识别</li>
-<li>**INSIGHT** : 慧眼人脸认别</li>
+<li>**INSIGHT** : 慧眼人脸识别</li>
 <li>**TELECOM** : 运营商三要素验证</li></ul>
 注：
-<ul><li>如果是小程序开通链接，支持传 WEIXINAPP / TELECOM。为空默认 WEIXINAPP</li>
+<ul><li>如果是小程序开通链接，仅支持传 WEIXINAPP。为空默认 WEIXINAPP</li>
 <li>如果是 H5 开通链接，支持传 INSIGHT / TELECOM。为空默认 INSIGHT </li></ul>
                      * 
                      */
@@ -198,17 +210,17 @@ namespace TencentCloud
                     /**
                      * 设置开通时候的身份验证方式, 取值为：
 <ul><li>**WEIXINAPP** : 微信人脸识别</li>
-<li>**INSIGHT** : 慧眼人脸认别</li>
+<li>**INSIGHT** : 慧眼人脸识别</li>
 <li>**TELECOM** : 运营商三要素验证</li></ul>
 注：
-<ul><li>如果是小程序开通链接，支持传 WEIXINAPP / TELECOM。为空默认 WEIXINAPP</li>
+<ul><li>如果是小程序开通链接，仅支持传 WEIXINAPP。为空默认 WEIXINAPP</li>
 <li>如果是 H5 开通链接，支持传 INSIGHT / TELECOM。为空默认 INSIGHT </li></ul>
                      * @param _verifyChannels 开通时候的身份验证方式, 取值为：
 <ul><li>**WEIXINAPP** : 微信人脸识别</li>
-<li>**INSIGHT** : 慧眼人脸认别</li>
+<li>**INSIGHT** : 慧眼人脸识别</li>
 <li>**TELECOM** : 运营商三要素验证</li></ul>
 注：
-<ul><li>如果是小程序开通链接，支持传 WEIXINAPP / TELECOM。为空默认 WEIXINAPP</li>
+<ul><li>如果是小程序开通链接，仅支持传 WEIXINAPP。为空默认 WEIXINAPP</li>
 <li>如果是 H5 开通链接，支持传 INSIGHT / TELECOM。为空默认 INSIGHT </li></ul>
                      * 
                      */
@@ -225,9 +237,13 @@ namespace TencentCloud
                      * 获取设置用户开通自动签时是否绑定个人自动签账号许可。
 
 <ul><li><b>1</b>: (默认)不绑定自动签账号许可开通，开通后一直有效,   后续使用合同份额进行合同发起</li></ul>
+
+注：`该字段已经失效，请勿设置此参数。`
                      * @return LicenseType 设置用户开通自动签时是否绑定个人自动签账号许可。
 
 <ul><li><b>1</b>: (默认)不绑定自动签账号许可开通，开通后一直有效,   后续使用合同份额进行合同发起</li></ul>
+
+注：`该字段已经失效，请勿设置此参数。`
                      * 
                      */
                     int64_t GetLicenseType() const;
@@ -236,9 +252,13 @@ namespace TencentCloud
                      * 设置设置用户开通自动签时是否绑定个人自动签账号许可。
 
 <ul><li><b>1</b>: (默认)不绑定自动签账号许可开通，开通后一直有效,   后续使用合同份额进行合同发起</li></ul>
+
+注：`该字段已经失效，请勿设置此参数。`
                      * @param _licenseType 设置用户开通自动签时是否绑定个人自动签账号许可。
 
 <ul><li><b>1</b>: (默认)不绑定自动签账号许可开通，开通后一直有效,   后续使用合同份额进行合同发起</li></ul>
+
+注：`该字段已经失效，请勿设置此参数。`
                      * 
                      */
                     void SetLicenseType(const int64_t& _licenseType);
@@ -319,6 +339,9 @@ namespace TencentCloud
                      * 是否回调证书信息:
 <ul><li>**false**: 不需要(默认)</li>
 <li>**true**:需要</li></ul>
+
+
+注：`该字段已经失效，请勿设置此参数。`
                      */
                     bool m_certInfoCallback;
                     bool m_certInfoCallbackHasBeenSet;
@@ -348,10 +371,10 @@ namespace TencentCloud
                     /**
                      * 开通时候的身份验证方式, 取值为：
 <ul><li>**WEIXINAPP** : 微信人脸识别</li>
-<li>**INSIGHT** : 慧眼人脸认别</li>
+<li>**INSIGHT** : 慧眼人脸识别</li>
 <li>**TELECOM** : 运营商三要素验证</li></ul>
 注：
-<ul><li>如果是小程序开通链接，支持传 WEIXINAPP / TELECOM。为空默认 WEIXINAPP</li>
+<ul><li>如果是小程序开通链接，仅支持传 WEIXINAPP。为空默认 WEIXINAPP</li>
 <li>如果是 H5 开通链接，支持传 INSIGHT / TELECOM。为空默认 INSIGHT </li></ul>
                      */
                     std::vector<std::string> m_verifyChannels;
@@ -361,6 +384,8 @@ namespace TencentCloud
                      * 设置用户开通自动签时是否绑定个人自动签账号许可。
 
 <ul><li><b>1</b>: (默认)不绑定自动签账号许可开通，开通后一直有效,   后续使用合同份额进行合同发起</li></ul>
+
+注：`该字段已经失效，请勿设置此参数。`
                      */
                     int64_t m_licenseType;
                     bool m_licenseTypeHasBeenSet;

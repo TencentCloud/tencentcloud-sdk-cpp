@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,7 +50,14 @@ Service::Service() :
     m_createSourceHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_latestVersionHasBeenSet(false),
-    m_resourceGroupSWTypeHasBeenSet(false)
+    m_resourceGroupSWTypeHasBeenSet(false),
+    m_archiveStatusHasBeenSet(false),
+    m_deployTypeHasBeenSet(false),
+    m_instancePerReplicasHasBeenSet(false),
+    m_monitorSourceHasBeenSet(false),
+    m_subUinNameHasBeenSet(false),
+    m_schedulingPolicyHasBeenSet(false),
+    m_externalResourceGroupsHasBeenSet(false)
 {
 }
 
@@ -390,6 +397,93 @@ CoreInternalOutcome Service::Deserialize(const rapidjson::Value &value)
         m_resourceGroupSWTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ArchiveStatus") && !value["ArchiveStatus"].IsNull())
+    {
+        if (!value["ArchiveStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Service.ArchiveStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_archiveStatus = string(value["ArchiveStatus"].GetString());
+        m_archiveStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeployType") && !value["DeployType"].IsNull())
+    {
+        if (!value["DeployType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Service.DeployType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deployType = string(value["DeployType"].GetString());
+        m_deployTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstancePerReplicas") && !value["InstancePerReplicas"].IsNull())
+    {
+        if (!value["InstancePerReplicas"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Service.InstancePerReplicas` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instancePerReplicas = string(value["InstancePerReplicas"].GetString());
+        m_instancePerReplicasHasBeenSet = true;
+    }
+
+    if (value.HasMember("MonitorSource") && !value["MonitorSource"].IsNull())
+    {
+        if (!value["MonitorSource"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Service.MonitorSource` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_monitorSource = string(value["MonitorSource"].GetString());
+        m_monitorSourceHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubUinName") && !value["SubUinName"].IsNull())
+    {
+        if (!value["SubUinName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Service.SubUinName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subUinName = string(value["SubUinName"].GetString());
+        m_subUinNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("SchedulingPolicy") && !value["SchedulingPolicy"].IsNull())
+    {
+        if (!value["SchedulingPolicy"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Service.SchedulingPolicy` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_schedulingPolicy.Deserialize(value["SchedulingPolicy"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_schedulingPolicyHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExternalResourceGroups") && !value["ExternalResourceGroups"].IsNull())
+    {
+        if (!value["ExternalResourceGroups"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Service.ExternalResourceGroups` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ExternalResourceGroups"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ResourceGroupInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_externalResourceGroups.push_back(item);
+        }
+        m_externalResourceGroupsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -645,6 +739,70 @@ void Service::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "ResourceGroupSWType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resourceGroupSWType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_archiveStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ArchiveStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_archiveStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deployTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeployType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deployType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instancePerReplicasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstancePerReplicas";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instancePerReplicas.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_monitorSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MonitorSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_monitorSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subUinNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubUinName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subUinName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_schedulingPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SchedulingPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_schedulingPolicy.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_externalResourceGroupsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalResourceGroups";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_externalResourceGroups.begin(); itr != m_externalResourceGroups.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1128,5 +1286,117 @@ void Service::SetResourceGroupSWType(const string& _resourceGroupSWType)
 bool Service::ResourceGroupSWTypeHasBeenSet() const
 {
     return m_resourceGroupSWTypeHasBeenSet;
+}
+
+string Service::GetArchiveStatus() const
+{
+    return m_archiveStatus;
+}
+
+void Service::SetArchiveStatus(const string& _archiveStatus)
+{
+    m_archiveStatus = _archiveStatus;
+    m_archiveStatusHasBeenSet = true;
+}
+
+bool Service::ArchiveStatusHasBeenSet() const
+{
+    return m_archiveStatusHasBeenSet;
+}
+
+string Service::GetDeployType() const
+{
+    return m_deployType;
+}
+
+void Service::SetDeployType(const string& _deployType)
+{
+    m_deployType = _deployType;
+    m_deployTypeHasBeenSet = true;
+}
+
+bool Service::DeployTypeHasBeenSet() const
+{
+    return m_deployTypeHasBeenSet;
+}
+
+string Service::GetInstancePerReplicas() const
+{
+    return m_instancePerReplicas;
+}
+
+void Service::SetInstancePerReplicas(const string& _instancePerReplicas)
+{
+    m_instancePerReplicas = _instancePerReplicas;
+    m_instancePerReplicasHasBeenSet = true;
+}
+
+bool Service::InstancePerReplicasHasBeenSet() const
+{
+    return m_instancePerReplicasHasBeenSet;
+}
+
+string Service::GetMonitorSource() const
+{
+    return m_monitorSource;
+}
+
+void Service::SetMonitorSource(const string& _monitorSource)
+{
+    m_monitorSource = _monitorSource;
+    m_monitorSourceHasBeenSet = true;
+}
+
+bool Service::MonitorSourceHasBeenSet() const
+{
+    return m_monitorSourceHasBeenSet;
+}
+
+string Service::GetSubUinName() const
+{
+    return m_subUinName;
+}
+
+void Service::SetSubUinName(const string& _subUinName)
+{
+    m_subUinName = _subUinName;
+    m_subUinNameHasBeenSet = true;
+}
+
+bool Service::SubUinNameHasBeenSet() const
+{
+    return m_subUinNameHasBeenSet;
+}
+
+SchedulingPolicy Service::GetSchedulingPolicy() const
+{
+    return m_schedulingPolicy;
+}
+
+void Service::SetSchedulingPolicy(const SchedulingPolicy& _schedulingPolicy)
+{
+    m_schedulingPolicy = _schedulingPolicy;
+    m_schedulingPolicyHasBeenSet = true;
+}
+
+bool Service::SchedulingPolicyHasBeenSet() const
+{
+    return m_schedulingPolicyHasBeenSet;
+}
+
+vector<ResourceGroupInfo> Service::GetExternalResourceGroups() const
+{
+    return m_externalResourceGroups;
+}
+
+void Service::SetExternalResourceGroups(const vector<ResourceGroupInfo>& _externalResourceGroups)
+{
+    m_externalResourceGroups = _externalResourceGroups;
+    m_externalResourceGroupsHasBeenSet = true;
+}
+
+bool Service::ExternalResourceGroupsHasBeenSet() const
+{
+    return m_externalResourceGroupsHasBeenSet;
 }
 

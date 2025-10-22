@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ SLInstanceInfo::SLInstanceInfo() :
     m_clusterIdHasBeenSet(false),
     m_idHasBeenSet(false),
     m_statusDescHasBeenSet(false),
+    m_healthStatusHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
     m_regionIdHasBeenSet(false),
     m_zoneIdHasBeenSet(false),
@@ -35,7 +36,11 @@ SLInstanceInfo::SLInstanceInfo() :
     m_addTimeHasBeenSet(false),
     m_payModeHasBeenSet(false),
     m_zoneSettingsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_autoRenewFlagHasBeenSet(false),
+    m_isolateTimeHasBeenSet(false),
+    m_expireTimeHasBeenSet(false),
+    m_deployRoleHasBeenSet(false)
 {
 }
 
@@ -72,6 +77,16 @@ CoreInternalOutcome SLInstanceInfo::Deserialize(const rapidjson::Value &value)
         }
         m_statusDesc = string(value["StatusDesc"].GetString());
         m_statusDescHasBeenSet = true;
+    }
+
+    if (value.HasMember("HealthStatus") && !value["HealthStatus"].IsNull())
+    {
+        if (!value["HealthStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SLInstanceInfo.HealthStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_healthStatus = string(value["HealthStatus"].GetString());
+        m_healthStatusHasBeenSet = true;
     }
 
     if (value.HasMember("ClusterName") && !value["ClusterName"].IsNull())
@@ -214,6 +229,46 @@ CoreInternalOutcome SLInstanceInfo::Deserialize(const rapidjson::Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoRenewFlag") && !value["AutoRenewFlag"].IsNull())
+    {
+        if (!value["AutoRenewFlag"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SLInstanceInfo.AutoRenewFlag` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoRenewFlag = value["AutoRenewFlag"].GetUint64();
+        m_autoRenewFlagHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsolateTime") && !value["IsolateTime"].IsNull())
+    {
+        if (!value["IsolateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SLInstanceInfo.IsolateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isolateTime = string(value["IsolateTime"].GetString());
+        m_isolateTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExpireTime") && !value["ExpireTime"].IsNull())
+    {
+        if (!value["ExpireTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SLInstanceInfo.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_expireTime = string(value["ExpireTime"].GetString());
+        m_expireTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeployRole") && !value["DeployRole"].IsNull())
+    {
+        if (!value["DeployRole"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SLInstanceInfo.DeployRole` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deployRole = string(value["DeployRole"].GetString());
+        m_deployRoleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +298,14 @@ void SLInstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "StatusDesc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_statusDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_healthStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_healthStatus.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clusterNameHasBeenSet)
@@ -355,6 +418,38 @@ void SLInstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         }
     }
 
+    if (m_autoRenewFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRenewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoRenewFlag, allocator);
+    }
+
+    if (m_isolateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsolateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_isolateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_expireTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deployRoleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeployRole";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deployRole.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
 
@@ -404,6 +499,22 @@ void SLInstanceInfo::SetStatusDesc(const string& _statusDesc)
 bool SLInstanceInfo::StatusDescHasBeenSet() const
 {
     return m_statusDescHasBeenSet;
+}
+
+string SLInstanceInfo::GetHealthStatus() const
+{
+    return m_healthStatus;
+}
+
+void SLInstanceInfo::SetHealthStatus(const string& _healthStatus)
+{
+    m_healthStatus = _healthStatus;
+    m_healthStatusHasBeenSet = true;
+}
+
+bool SLInstanceInfo::HealthStatusHasBeenSet() const
+{
+    return m_healthStatusHasBeenSet;
 }
 
 string SLInstanceInfo::GetClusterName() const
@@ -596,5 +707,69 @@ void SLInstanceInfo::SetTags(const vector<Tag>& _tags)
 bool SLInstanceInfo::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+uint64_t SLInstanceInfo::GetAutoRenewFlag() const
+{
+    return m_autoRenewFlag;
+}
+
+void SLInstanceInfo::SetAutoRenewFlag(const uint64_t& _autoRenewFlag)
+{
+    m_autoRenewFlag = _autoRenewFlag;
+    m_autoRenewFlagHasBeenSet = true;
+}
+
+bool SLInstanceInfo::AutoRenewFlagHasBeenSet() const
+{
+    return m_autoRenewFlagHasBeenSet;
+}
+
+string SLInstanceInfo::GetIsolateTime() const
+{
+    return m_isolateTime;
+}
+
+void SLInstanceInfo::SetIsolateTime(const string& _isolateTime)
+{
+    m_isolateTime = _isolateTime;
+    m_isolateTimeHasBeenSet = true;
+}
+
+bool SLInstanceInfo::IsolateTimeHasBeenSet() const
+{
+    return m_isolateTimeHasBeenSet;
+}
+
+string SLInstanceInfo::GetExpireTime() const
+{
+    return m_expireTime;
+}
+
+void SLInstanceInfo::SetExpireTime(const string& _expireTime)
+{
+    m_expireTime = _expireTime;
+    m_expireTimeHasBeenSet = true;
+}
+
+bool SLInstanceInfo::ExpireTimeHasBeenSet() const
+{
+    return m_expireTimeHasBeenSet;
+}
+
+string SLInstanceInfo::GetDeployRole() const
+{
+    return m_deployRole;
+}
+
+void SLInstanceInfo::SetDeployRole(const string& _deployRole)
+{
+    m_deployRole = _deployRole;
+    m_deployRoleHasBeenSet = true;
+}
+
+bool SLInstanceInfo::DeployRoleHasBeenSet() const
+{
+    return m_deployRoleHasBeenSet;
 }
 

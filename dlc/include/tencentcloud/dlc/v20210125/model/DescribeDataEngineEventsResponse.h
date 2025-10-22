@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,9 +62,7 @@ namespace TencentCloud
 
                     /**
                      * 获取分页号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Page 分页号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPage() const;
@@ -78,9 +76,7 @@ namespace TencentCloud
 
                     /**
                      * 获取分页大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Size 分页大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSize() const;
@@ -94,9 +90,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总页数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalPages 总页数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalPages() const;
@@ -110,9 +104,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -135,28 +127,24 @@ namespace TencentCloud
 
                     /**
                      * 分页号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_page;
                     bool m_pageHasBeenSet;
 
                     /**
                      * 分页大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_size;
                     bool m_sizeHasBeenSet;
 
                     /**
                      * 总页数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalPages;
                     bool m_totalPagesHasBeenSet;
 
                     /**
                      * 总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

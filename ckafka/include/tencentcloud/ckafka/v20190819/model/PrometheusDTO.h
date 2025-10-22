@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取export类型（jmx_export\node_export）
-                     * @return Type export类型（jmx_export\node_export）
+                     * 获取export类型（JmxExport\NodeExport）
+                     * @return Type export类型（JmxExport\NodeExport）
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置export类型（jmx_export\node_export）
-                     * @param _type export类型（jmx_export\node_export）
+                     * 设置export类型（JmxExport\NodeExport）
+                     * @param _type export类型（JmxExport\NodeExport）
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取broker地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BrokerIp broker地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBrokerIp() const;
 
                     /**
                      * 设置broker地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _brokerIp broker地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBrokerIp(const std::string& _brokerIp);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取VPC ID信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId VPC ID信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置VPC ID信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId VPC ID信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -161,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网ID信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 子网ID信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网ID信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetId 子网ID信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -187,7 +175,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * export类型（jmx_export\node_export）
+                     * export类型（JmxExport\NodeExport）
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -206,21 +194,18 @@ namespace TencentCloud
 
                     /**
                      * broker地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_brokerIp;
                     bool m_brokerIpHasBeenSet;
 
                     /**
                      * VPC ID信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * 子网ID信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;

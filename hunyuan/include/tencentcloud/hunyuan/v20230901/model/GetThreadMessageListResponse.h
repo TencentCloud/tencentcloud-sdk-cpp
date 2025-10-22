@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,30 +63,30 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FirstID 第一条消息 ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetFirstID() const;
 
                     /**
                      * 判断参数 FirstID 是否已赋值
                      * @return FirstID 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool FirstIDHasBeenSet() const;
 
                     /**
-                     * 获取最后一条消息 ID
+                     * 获取已废弃
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LastID 最后一条消息 ID
+                     * @return LastID 已废弃
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     int64_t GetLastID() const;
 
                     /**
                      * 判断参数 LastID 是否已赋值
                      * @return LastID 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool LastIDHasBeenSet() const;
 
@@ -118,6 +118,34 @@ namespace TencentCloud
                      */
                     bool ObjectHasBeenSet() const;
 
+                    /**
+                     * 获取第一条消息 ID
+                     * @return FirstMsgID 第一条消息 ID
+                     * 
+                     */
+                    std::string GetFirstMsgID() const;
+
+                    /**
+                     * 判断参数 FirstMsgID 是否已赋值
+                     * @return FirstMsgID 是否已赋值
+                     * 
+                     */
+                    bool FirstMsgIDHasBeenSet() const;
+
+                    /**
+                     * 获取最后一条消息 ID
+                     * @return LastMsgID 最后一条消息 ID
+                     * 
+                     */
+                    std::string GetLastMsgID() const;
+
+                    /**
+                     * 判断参数 LastMsgID 是否已赋值
+                     * @return LastMsgID 是否已赋值
+                     * 
+                     */
+                    bool LastMsgIDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -134,7 +162,7 @@ namespace TencentCloud
                     bool m_firstIDHasBeenSet;
 
                     /**
-                     * 最后一条消息 ID
+                     * 已废弃
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_lastID;
@@ -151,6 +179,18 @@ namespace TencentCloud
                      */
                     std::string m_object;
                     bool m_objectHasBeenSet;
+
+                    /**
+                     * 第一条消息 ID
+                     */
+                    std::string m_firstMsgID;
+                    bool m_firstMsgIDHasBeenSet;
+
+                    /**
+                     * 最后一条消息 ID
+                     */
+                    std::string m_lastMsgID;
+                    bool m_lastMsgIDHasBeenSet;
 
                 };
             }

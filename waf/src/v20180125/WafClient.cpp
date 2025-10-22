@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -384,6 +384,49 @@ WafClient::AddSpartaProtectionOutcomeCallable WafClient::AddSpartaProtectionCall
     return task->get_future();
 }
 
+WafClient::BatchOperateUserSignatureRulesOutcome WafClient::BatchOperateUserSignatureRules(const BatchOperateUserSignatureRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchOperateUserSignatureRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchOperateUserSignatureRulesResponse rsp = BatchOperateUserSignatureRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchOperateUserSignatureRulesOutcome(rsp);
+        else
+            return BatchOperateUserSignatureRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchOperateUserSignatureRulesOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::BatchOperateUserSignatureRulesAsync(const BatchOperateUserSignatureRulesRequest& request, const BatchOperateUserSignatureRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BatchOperateUserSignatureRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::BatchOperateUserSignatureRulesOutcomeCallable WafClient::BatchOperateUserSignatureRulesCallable(const BatchOperateUserSignatureRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BatchOperateUserSignatureRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->BatchOperateUserSignatureRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::CreateAccessExportOutcome WafClient::CreateAccessExport(const CreateAccessExportRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAccessExport");
@@ -427,6 +470,92 @@ WafClient::CreateAccessExportOutcomeCallable WafClient::CreateAccessExportCallab
     return task->get_future();
 }
 
+WafClient::CreateAreaBanRuleOutcome WafClient::CreateAreaBanRule(const CreateAreaBanRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAreaBanRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAreaBanRuleResponse rsp = CreateAreaBanRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAreaBanRuleOutcome(rsp);
+        else
+            return CreateAreaBanRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAreaBanRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::CreateAreaBanRuleAsync(const CreateAreaBanRuleRequest& request, const CreateAreaBanRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAreaBanRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::CreateAreaBanRuleOutcomeCallable WafClient::CreateAreaBanRuleCallable(const CreateAreaBanRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAreaBanRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAreaBanRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::CreateBatchIpAccessControlOutcome WafClient::CreateBatchIpAccessControl(const CreateBatchIpAccessControlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBatchIpAccessControl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBatchIpAccessControlResponse rsp = CreateBatchIpAccessControlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBatchIpAccessControlOutcome(rsp);
+        else
+            return CreateBatchIpAccessControlOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBatchIpAccessControlOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::CreateBatchIpAccessControlAsync(const CreateBatchIpAccessControlRequest& request, const CreateBatchIpAccessControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBatchIpAccessControl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::CreateBatchIpAccessControlOutcomeCallable WafClient::CreateBatchIpAccessControlCallable(const CreateBatchIpAccessControlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBatchIpAccessControlOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBatchIpAccessControl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::CreateDealsOutcome WafClient::CreateDeals(const CreateDealsRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDeals");
@@ -463,6 +592,49 @@ WafClient::CreateDealsOutcomeCallable WafClient::CreateDealsCallable(const Creat
         [this, request]()
         {
             return this->CreateDeals(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::CreateExportOutcome WafClient::CreateExport(const CreateExportRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateExport");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateExportResponse rsp = CreateExportResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateExportOutcome(rsp);
+        else
+            return CreateExportOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateExportOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::CreateExportAsync(const CreateExportRequest& request, const CreateExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateExport(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::CreateExportOutcomeCallable WafClient::CreateExportCallable(const CreateExportRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateExportOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateExport(request);
         }
     );
 
@@ -549,6 +721,135 @@ WafClient::CreateIpAccessControlOutcomeCallable WafClient::CreateIpAccessControl
         [this, request]()
         {
             return this->CreateIpAccessControl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::CreateOwaspWhiteRuleOutcome WafClient::CreateOwaspWhiteRule(const CreateOwaspWhiteRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateOwaspWhiteRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateOwaspWhiteRuleResponse rsp = CreateOwaspWhiteRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateOwaspWhiteRuleOutcome(rsp);
+        else
+            return CreateOwaspWhiteRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateOwaspWhiteRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::CreateOwaspWhiteRuleAsync(const CreateOwaspWhiteRuleRequest& request, const CreateOwaspWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateOwaspWhiteRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::CreateOwaspWhiteRuleOutcomeCallable WafClient::CreateOwaspWhiteRuleCallable(const CreateOwaspWhiteRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateOwaspWhiteRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateOwaspWhiteRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::CreatePostCKafkaFlowOutcome WafClient::CreatePostCKafkaFlow(const CreatePostCKafkaFlowRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePostCKafkaFlow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePostCKafkaFlowResponse rsp = CreatePostCKafkaFlowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePostCKafkaFlowOutcome(rsp);
+        else
+            return CreatePostCKafkaFlowOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePostCKafkaFlowOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::CreatePostCKafkaFlowAsync(const CreatePostCKafkaFlowRequest& request, const CreatePostCKafkaFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePostCKafkaFlow(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::CreatePostCKafkaFlowOutcomeCallable WafClient::CreatePostCKafkaFlowCallable(const CreatePostCKafkaFlowRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePostCKafkaFlowOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePostCKafkaFlow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::CreatePostCLSFlowOutcome WafClient::CreatePostCLSFlow(const CreatePostCLSFlowRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePostCLSFlow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePostCLSFlowResponse rsp = CreatePostCLSFlowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePostCLSFlowOutcome(rsp);
+        else
+            return CreatePostCLSFlowOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePostCLSFlowOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::CreatePostCLSFlowAsync(const CreatePostCLSFlowRequest& request, const CreatePostCLSFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePostCLSFlow(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::CreatePostCLSFlowOutcomeCallable WafClient::CreatePostCLSFlowCallable(const CreatePostCLSFlowRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePostCLSFlowOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePostCLSFlow(request);
         }
     );
 
@@ -771,6 +1072,92 @@ WafClient::DeleteAttackWhiteRuleOutcomeCallable WafClient::DeleteAttackWhiteRule
     return task->get_future();
 }
 
+WafClient::DeleteBatchIpAccessControlOutcome WafClient::DeleteBatchIpAccessControl(const DeleteBatchIpAccessControlRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteBatchIpAccessControl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteBatchIpAccessControlResponse rsp = DeleteBatchIpAccessControlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteBatchIpAccessControlOutcome(rsp);
+        else
+            return DeleteBatchIpAccessControlOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteBatchIpAccessControlOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DeleteBatchIpAccessControlAsync(const DeleteBatchIpAccessControlRequest& request, const DeleteBatchIpAccessControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteBatchIpAccessControl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DeleteBatchIpAccessControlOutcomeCallable WafClient::DeleteBatchIpAccessControlCallable(const DeleteBatchIpAccessControlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteBatchIpAccessControlOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteBatchIpAccessControl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DeleteBotSceneUCBRuleOutcome WafClient::DeleteBotSceneUCBRule(const DeleteBotSceneUCBRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteBotSceneUCBRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteBotSceneUCBRuleResponse rsp = DeleteBotSceneUCBRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteBotSceneUCBRuleOutcome(rsp);
+        else
+            return DeleteBotSceneUCBRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteBotSceneUCBRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DeleteBotSceneUCBRuleAsync(const DeleteBotSceneUCBRuleRequest& request, const DeleteBotSceneUCBRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteBotSceneUCBRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DeleteBotSceneUCBRuleOutcomeCallable WafClient::DeleteBotSceneUCBRuleCallable(const DeleteBotSceneUCBRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteBotSceneUCBRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteBotSceneUCBRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::DeleteCCRuleOutcome WafClient::DeleteCCRule(const DeleteCCRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCCRule");
@@ -943,6 +1330,49 @@ WafClient::DeleteDomainWhiteRulesOutcomeCallable WafClient::DeleteDomainWhiteRul
     return task->get_future();
 }
 
+WafClient::DeleteExportOutcome WafClient::DeleteExport(const DeleteExportRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteExport");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteExportResponse rsp = DeleteExportResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteExportOutcome(rsp);
+        else
+            return DeleteExportOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteExportOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DeleteExportAsync(const DeleteExportRequest& request, const DeleteExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteExport(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DeleteExportOutcomeCallable WafClient::DeleteExportCallable(const DeleteExportRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteExportOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteExport(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::DeleteHostOutcome WafClient::DeleteHost(const DeleteHostRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteHost");
@@ -1065,6 +1495,92 @@ WafClient::DeleteIpAccessControlV2OutcomeCallable WafClient::DeleteIpAccessContr
         [this, request]()
         {
             return this->DeleteIpAccessControlV2(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DeleteOwaspRuleStatusOutcome WafClient::DeleteOwaspRuleStatus(const DeleteOwaspRuleStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteOwaspRuleStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteOwaspRuleStatusResponse rsp = DeleteOwaspRuleStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteOwaspRuleStatusOutcome(rsp);
+        else
+            return DeleteOwaspRuleStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteOwaspRuleStatusOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DeleteOwaspRuleStatusAsync(const DeleteOwaspRuleStatusRequest& request, const DeleteOwaspRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteOwaspRuleStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DeleteOwaspRuleStatusOutcomeCallable WafClient::DeleteOwaspRuleStatusCallable(const DeleteOwaspRuleStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteOwaspRuleStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteOwaspRuleStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DeleteOwaspWhiteRuleOutcome WafClient::DeleteOwaspWhiteRule(const DeleteOwaspWhiteRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteOwaspWhiteRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteOwaspWhiteRuleResponse rsp = DeleteOwaspWhiteRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteOwaspWhiteRuleOutcome(rsp);
+        else
+            return DeleteOwaspWhiteRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteOwaspWhiteRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DeleteOwaspWhiteRuleAsync(const DeleteOwaspWhiteRuleRequest& request, const DeleteOwaspWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteOwaspWhiteRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DeleteOwaspWhiteRuleOutcomeCallable WafClient::DeleteOwaspWhiteRuleCallable(const DeleteOwaspWhiteRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteOwaspWhiteRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteOwaspWhiteRule(request);
         }
     );
 
@@ -1545,6 +2061,49 @@ WafClient::DescribeAreaBanAreasOutcomeCallable WafClient::DescribeAreaBanAreasCa
     return task->get_future();
 }
 
+WafClient::DescribeAreaBanRuleOutcome WafClient::DescribeAreaBanRule(const DescribeAreaBanRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAreaBanRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAreaBanRuleResponse rsp = DescribeAreaBanRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAreaBanRuleOutcome(rsp);
+        else
+            return DescribeAreaBanRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAreaBanRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeAreaBanRuleAsync(const DescribeAreaBanRuleRequest& request, const DescribeAreaBanRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAreaBanRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeAreaBanRuleOutcomeCallable WafClient::DescribeAreaBanRuleCallable(const DescribeAreaBanRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAreaBanRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAreaBanRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::DescribeAreaBanSupportAreasOutcome WafClient::DescribeAreaBanSupportAreas(const DescribeAreaBanSupportAreasRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAreaBanSupportAreas");
@@ -1796,6 +2355,135 @@ WafClient::DescribeBatchIpAccessControlOutcomeCallable WafClient::DescribeBatchI
         [this, request]()
         {
             return this->DescribeBatchIpAccessControl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DescribeBotSceneListOutcome WafClient::DescribeBotSceneList(const DescribeBotSceneListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBotSceneList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBotSceneListResponse rsp = DescribeBotSceneListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBotSceneListOutcome(rsp);
+        else
+            return DescribeBotSceneListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBotSceneListOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeBotSceneListAsync(const DescribeBotSceneListRequest& request, const DescribeBotSceneListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBotSceneList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeBotSceneListOutcomeCallable WafClient::DescribeBotSceneListCallable(const DescribeBotSceneListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBotSceneListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBotSceneList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DescribeBotSceneOverviewOutcome WafClient::DescribeBotSceneOverview(const DescribeBotSceneOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBotSceneOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBotSceneOverviewResponse rsp = DescribeBotSceneOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBotSceneOverviewOutcome(rsp);
+        else
+            return DescribeBotSceneOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBotSceneOverviewOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeBotSceneOverviewAsync(const DescribeBotSceneOverviewRequest& request, const DescribeBotSceneOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBotSceneOverview(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeBotSceneOverviewOutcomeCallable WafClient::DescribeBotSceneOverviewCallable(const DescribeBotSceneOverviewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBotSceneOverviewOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBotSceneOverview(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DescribeBotSceneUCBRuleOutcome WafClient::DescribeBotSceneUCBRule(const DescribeBotSceneUCBRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBotSceneUCBRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBotSceneUCBRuleResponse rsp = DescribeBotSceneUCBRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBotSceneUCBRuleOutcome(rsp);
+        else
+            return DescribeBotSceneUCBRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBotSceneUCBRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeBotSceneUCBRuleAsync(const DescribeBotSceneUCBRuleRequest& request, const DescribeBotSceneUCBRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBotSceneUCBRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeBotSceneUCBRuleOutcomeCallable WafClient::DescribeBotSceneUCBRuleCallable(const DescribeBotSceneUCBRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBotSceneUCBRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBotSceneUCBRule(request);
         }
     );
 
@@ -2405,6 +3093,49 @@ WafClient::DescribeDomainsOutcomeCallable WafClient::DescribeDomainsCallable(con
     return task->get_future();
 }
 
+WafClient::DescribeExportsOutcome WafClient::DescribeExports(const DescribeExportsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExports");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExportsResponse rsp = DescribeExportsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExportsOutcome(rsp);
+        else
+            return DescribeExportsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExportsOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeExportsAsync(const DescribeExportsRequest& request, const DescribeExportsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeExports(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeExportsOutcomeCallable WafClient::DescribeExportsCallable(const DescribeExportsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeExportsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeExports(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::DescribeFindDomainListOutcome WafClient::DescribeFindDomainList(const DescribeFindDomainListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeFindDomainList");
@@ -2792,6 +3523,49 @@ WafClient::DescribeIpHitItemsOutcomeCallable WafClient::DescribeIpHitItemsCallab
     return task->get_future();
 }
 
+WafClient::DescribeLogHistogramOutcome WafClient::DescribeLogHistogram(const DescribeLogHistogramRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLogHistogram");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLogHistogramResponse rsp = DescribeLogHistogramResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLogHistogramOutcome(rsp);
+        else
+            return DescribeLogHistogramOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLogHistogramOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeLogHistogramAsync(const DescribeLogHistogramRequest& request, const DescribeLogHistogramAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLogHistogram(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeLogHistogramOutcomeCallable WafClient::DescribeLogHistogramCallable(const DescribeLogHistogramRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLogHistogramOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLogHistogram(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::DescribeModuleStatusOutcome WafClient::DescribeModuleStatus(const DescribeModuleStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeModuleStatus");
@@ -2871,6 +3645,135 @@ WafClient::DescribeObjectsOutcomeCallable WafClient::DescribeObjectsCallable(con
         [this, request]()
         {
             return this->DescribeObjects(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DescribeOwaspRuleTypesOutcome WafClient::DescribeOwaspRuleTypes(const DescribeOwaspRuleTypesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOwaspRuleTypes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOwaspRuleTypesResponse rsp = DescribeOwaspRuleTypesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOwaspRuleTypesOutcome(rsp);
+        else
+            return DescribeOwaspRuleTypesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOwaspRuleTypesOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeOwaspRuleTypesAsync(const DescribeOwaspRuleTypesRequest& request, const DescribeOwaspRuleTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOwaspRuleTypes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeOwaspRuleTypesOutcomeCallable WafClient::DescribeOwaspRuleTypesCallable(const DescribeOwaspRuleTypesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOwaspRuleTypesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOwaspRuleTypes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DescribeOwaspRulesOutcome WafClient::DescribeOwaspRules(const DescribeOwaspRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOwaspRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOwaspRulesResponse rsp = DescribeOwaspRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOwaspRulesOutcome(rsp);
+        else
+            return DescribeOwaspRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOwaspRulesOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeOwaspRulesAsync(const DescribeOwaspRulesRequest& request, const DescribeOwaspRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOwaspRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeOwaspRulesOutcomeCallable WafClient::DescribeOwaspRulesCallable(const DescribeOwaspRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOwaspRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOwaspRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DescribeOwaspWhiteRulesOutcome WafClient::DescribeOwaspWhiteRules(const DescribeOwaspWhiteRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOwaspWhiteRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOwaspWhiteRulesResponse rsp = DescribeOwaspWhiteRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOwaspWhiteRulesOutcome(rsp);
+        else
+            return DescribeOwaspWhiteRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOwaspWhiteRulesOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeOwaspWhiteRulesAsync(const DescribeOwaspWhiteRulesRequest& request, const DescribeOwaspWhiteRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOwaspWhiteRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeOwaspWhiteRulesOutcomeCallable WafClient::DescribeOwaspWhiteRulesCallable(const DescribeOwaspWhiteRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOwaspWhiteRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOwaspWhiteRules(request);
         }
     );
 
@@ -3043,6 +3946,92 @@ WafClient::DescribePortsOutcomeCallable WafClient::DescribePortsCallable(const D
         [this, request]()
         {
             return this->DescribePorts(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DescribePostCKafkaFlowsOutcome WafClient::DescribePostCKafkaFlows(const DescribePostCKafkaFlowsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePostCKafkaFlows");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePostCKafkaFlowsResponse rsp = DescribePostCKafkaFlowsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePostCKafkaFlowsOutcome(rsp);
+        else
+            return DescribePostCKafkaFlowsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePostCKafkaFlowsOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribePostCKafkaFlowsAsync(const DescribePostCKafkaFlowsRequest& request, const DescribePostCKafkaFlowsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePostCKafkaFlows(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribePostCKafkaFlowsOutcomeCallable WafClient::DescribePostCKafkaFlowsCallable(const DescribePostCKafkaFlowsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePostCKafkaFlowsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePostCKafkaFlows(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DescribePostCLSFlowsOutcome WafClient::DescribePostCLSFlows(const DescribePostCLSFlowsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePostCLSFlows");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePostCLSFlowsResponse rsp = DescribePostCLSFlowsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePostCLSFlowsOutcome(rsp);
+        else
+            return DescribePostCLSFlowsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePostCLSFlowsOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribePostCLSFlowsAsync(const DescribePostCLSFlowsRequest& request, const DescribePostCLSFlowsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePostCLSFlows(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribePostCLSFlowsOutcomeCallable WafClient::DescribePostCLSFlowsCallable(const DescribePostCLSFlowsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePostCLSFlowsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePostCLSFlows(request);
         }
     );
 
@@ -3351,6 +4340,49 @@ WafClient::DescribeTopAttackDomainOutcomeCallable WafClient::DescribeTopAttackDo
     return task->get_future();
 }
 
+WafClient::DescribeTopicsOutcome WafClient::DescribeTopics(const DescribeTopicsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTopics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTopicsResponse rsp = DescribeTopicsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTopicsOutcome(rsp);
+        else
+            return DescribeTopicsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTopicsOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeTopicsAsync(const DescribeTopicsRequest& request, const DescribeTopicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTopics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeTopicsOutcomeCallable WafClient::DescribeTopicsCallable(const DescribeTopicsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTopicsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTopics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::DescribeUserCdcClbWafRegionsOutcome WafClient::DescribeUserCdcClbWafRegions(const DescribeUserCdcClbWafRegionsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUserCdcClbWafRegions");
@@ -3523,6 +4555,49 @@ WafClient::DescribeUserLevelOutcomeCallable WafClient::DescribeUserLevelCallable
     return task->get_future();
 }
 
+WafClient::DescribeUserSignatureClassOutcome WafClient::DescribeUserSignatureClass(const DescribeUserSignatureClassRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserSignatureClass");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserSignatureClassResponse rsp = DescribeUserSignatureClassResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserSignatureClassOutcome(rsp);
+        else
+            return DescribeUserSignatureClassOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserSignatureClassOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeUserSignatureClassAsync(const DescribeUserSignatureClassRequest& request, const DescribeUserSignatureClassAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserSignatureClass(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeUserSignatureClassOutcomeCallable WafClient::DescribeUserSignatureClassCallable(const DescribeUserSignatureClassRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserSignatureClassOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserSignatureClass(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::DescribeUserSignatureRuleOutcome WafClient::DescribeUserSignatureRule(const DescribeUserSignatureRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUserSignatureRule");
@@ -3559,6 +4634,49 @@ WafClient::DescribeUserSignatureRuleOutcomeCallable WafClient::DescribeUserSigna
         [this, request]()
         {
             return this->DescribeUserSignatureRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DescribeUserSignatureRuleV2Outcome WafClient::DescribeUserSignatureRuleV2(const DescribeUserSignatureRuleV2Request &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserSignatureRuleV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserSignatureRuleV2Response rsp = DescribeUserSignatureRuleV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserSignatureRuleV2Outcome(rsp);
+        else
+            return DescribeUserSignatureRuleV2Outcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserSignatureRuleV2Outcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeUserSignatureRuleV2Async(const DescribeUserSignatureRuleV2Request& request, const DescribeUserSignatureRuleV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserSignatureRuleV2(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeUserSignatureRuleV2OutcomeCallable WafClient::DescribeUserSignatureRuleV2Callable(const DescribeUserSignatureRuleV2Request &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserSignatureRuleV2Outcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserSignatureRuleV2(request);
         }
     );
 
@@ -3774,6 +4892,92 @@ WafClient::DescribeWebshellStatusOutcomeCallable WafClient::DescribeWebshellStat
         [this, request]()
         {
             return this->DescribeWebshellStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DestroyPostCKafkaFlowOutcome WafClient::DestroyPostCKafkaFlow(const DestroyPostCKafkaFlowRequest &request)
+{
+    auto outcome = MakeRequest(request, "DestroyPostCKafkaFlow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DestroyPostCKafkaFlowResponse rsp = DestroyPostCKafkaFlowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DestroyPostCKafkaFlowOutcome(rsp);
+        else
+            return DestroyPostCKafkaFlowOutcome(o.GetError());
+    }
+    else
+    {
+        return DestroyPostCKafkaFlowOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DestroyPostCKafkaFlowAsync(const DestroyPostCKafkaFlowRequest& request, const DestroyPostCKafkaFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DestroyPostCKafkaFlow(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DestroyPostCKafkaFlowOutcomeCallable WafClient::DestroyPostCKafkaFlowCallable(const DestroyPostCKafkaFlowRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DestroyPostCKafkaFlowOutcome()>>(
+        [this, request]()
+        {
+            return this->DestroyPostCKafkaFlow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DestroyPostCLSFlowOutcome WafClient::DestroyPostCLSFlow(const DestroyPostCLSFlowRequest &request)
+{
+    auto outcome = MakeRequest(request, "DestroyPostCLSFlow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DestroyPostCLSFlowResponse rsp = DestroyPostCLSFlowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DestroyPostCLSFlowOutcome(rsp);
+        else
+            return DestroyPostCLSFlowOutcome(o.GetError());
+    }
+    else
+    {
+        return DestroyPostCLSFlowOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DestroyPostCLSFlowAsync(const DestroyPostCLSFlowRequest& request, const DestroyPostCLSFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DestroyPostCLSFlow(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DestroyPostCLSFlowOutcomeCallable WafClient::DestroyPostCLSFlowCallable(const DestroyPostCLSFlowRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DestroyPostCLSFlowOutcome()>>(
+        [this, request]()
+        {
+            return this->DestroyPostCLSFlow(request);
         }
     );
 
@@ -4383,6 +5587,49 @@ WafClient::ModifyAreaBanAreasOutcomeCallable WafClient::ModifyAreaBanAreasCallab
     return task->get_future();
 }
 
+WafClient::ModifyAreaBanRuleOutcome WafClient::ModifyAreaBanRule(const ModifyAreaBanRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAreaBanRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAreaBanRuleResponse rsp = ModifyAreaBanRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAreaBanRuleOutcome(rsp);
+        else
+            return ModifyAreaBanRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAreaBanRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyAreaBanRuleAsync(const ModifyAreaBanRuleRequest& request, const ModifyAreaBanRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAreaBanRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyAreaBanRuleOutcomeCallable WafClient::ModifyAreaBanRuleCallable(const ModifyAreaBanRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAreaBanRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAreaBanRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::ModifyAreaBanStatusOutcome WafClient::ModifyAreaBanStatus(const ModifyAreaBanStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAreaBanStatus");
@@ -4462,6 +5709,135 @@ WafClient::ModifyAttackWhiteRuleOutcomeCallable WafClient::ModifyAttackWhiteRule
         [this, request]()
         {
             return this->ModifyAttackWhiteRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::ModifyBatchIpAccessControlOutcome WafClient::ModifyBatchIpAccessControl(const ModifyBatchIpAccessControlRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBatchIpAccessControl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBatchIpAccessControlResponse rsp = ModifyBatchIpAccessControlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBatchIpAccessControlOutcome(rsp);
+        else
+            return ModifyBatchIpAccessControlOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBatchIpAccessControlOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyBatchIpAccessControlAsync(const ModifyBatchIpAccessControlRequest& request, const ModifyBatchIpAccessControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyBatchIpAccessControl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyBatchIpAccessControlOutcomeCallable WafClient::ModifyBatchIpAccessControlCallable(const ModifyBatchIpAccessControlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyBatchIpAccessControlOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyBatchIpAccessControl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::ModifyBotSceneStatusOutcome WafClient::ModifyBotSceneStatus(const ModifyBotSceneStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBotSceneStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBotSceneStatusResponse rsp = ModifyBotSceneStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBotSceneStatusOutcome(rsp);
+        else
+            return ModifyBotSceneStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBotSceneStatusOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyBotSceneStatusAsync(const ModifyBotSceneStatusRequest& request, const ModifyBotSceneStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyBotSceneStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyBotSceneStatusOutcomeCallable WafClient::ModifyBotSceneStatusCallable(const ModifyBotSceneStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyBotSceneStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyBotSceneStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::ModifyBotSceneUCBRuleOutcome WafClient::ModifyBotSceneUCBRule(const ModifyBotSceneUCBRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBotSceneUCBRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBotSceneUCBRuleResponse rsp = ModifyBotSceneUCBRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBotSceneUCBRuleOutcome(rsp);
+        else
+            return ModifyBotSceneUCBRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBotSceneUCBRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyBotSceneUCBRuleAsync(const ModifyBotSceneUCBRuleRequest& request, const ModifyBotSceneUCBRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyBotSceneUCBRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyBotSceneUCBRuleOutcomeCallable WafClient::ModifyBotSceneUCBRuleCallable(const ModifyBotSceneUCBRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyBotSceneUCBRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyBotSceneUCBRule(request);
         }
     );
 
@@ -5071,6 +6447,49 @@ WafClient::ModifyHostStatusOutcomeCallable WafClient::ModifyHostStatusCallable(c
     return task->get_future();
 }
 
+WafClient::ModifyInstanceAttackLogPostOutcome WafClient::ModifyInstanceAttackLogPost(const ModifyInstanceAttackLogPostRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstanceAttackLogPost");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceAttackLogPostResponse rsp = ModifyInstanceAttackLogPostResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceAttackLogPostOutcome(rsp);
+        else
+            return ModifyInstanceAttackLogPostOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceAttackLogPostOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyInstanceAttackLogPostAsync(const ModifyInstanceAttackLogPostRequest& request, const ModifyInstanceAttackLogPostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstanceAttackLogPost(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyInstanceAttackLogPostOutcomeCallable WafClient::ModifyInstanceAttackLogPostCallable(const ModifyInstanceAttackLogPostRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstanceAttackLogPostOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstanceAttackLogPost(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::ModifyInstanceElasticModeOutcome WafClient::ModifyInstanceElasticMode(const ModifyInstanceElasticModeRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyInstanceElasticMode");
@@ -5372,6 +6791,264 @@ WafClient::ModifyObjectOutcomeCallable WafClient::ModifyObjectCallable(const Mod
     return task->get_future();
 }
 
+WafClient::ModifyOwaspRuleStatusOutcome WafClient::ModifyOwaspRuleStatus(const ModifyOwaspRuleStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyOwaspRuleStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyOwaspRuleStatusResponse rsp = ModifyOwaspRuleStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyOwaspRuleStatusOutcome(rsp);
+        else
+            return ModifyOwaspRuleStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyOwaspRuleStatusOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyOwaspRuleStatusAsync(const ModifyOwaspRuleStatusRequest& request, const ModifyOwaspRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyOwaspRuleStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyOwaspRuleStatusOutcomeCallable WafClient::ModifyOwaspRuleStatusCallable(const ModifyOwaspRuleStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyOwaspRuleStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyOwaspRuleStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::ModifyOwaspRuleTypeActionOutcome WafClient::ModifyOwaspRuleTypeAction(const ModifyOwaspRuleTypeActionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyOwaspRuleTypeAction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyOwaspRuleTypeActionResponse rsp = ModifyOwaspRuleTypeActionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyOwaspRuleTypeActionOutcome(rsp);
+        else
+            return ModifyOwaspRuleTypeActionOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyOwaspRuleTypeActionOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyOwaspRuleTypeActionAsync(const ModifyOwaspRuleTypeActionRequest& request, const ModifyOwaspRuleTypeActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyOwaspRuleTypeAction(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyOwaspRuleTypeActionOutcomeCallable WafClient::ModifyOwaspRuleTypeActionCallable(const ModifyOwaspRuleTypeActionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyOwaspRuleTypeActionOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyOwaspRuleTypeAction(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::ModifyOwaspRuleTypeLevelOutcome WafClient::ModifyOwaspRuleTypeLevel(const ModifyOwaspRuleTypeLevelRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyOwaspRuleTypeLevel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyOwaspRuleTypeLevelResponse rsp = ModifyOwaspRuleTypeLevelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyOwaspRuleTypeLevelOutcome(rsp);
+        else
+            return ModifyOwaspRuleTypeLevelOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyOwaspRuleTypeLevelOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyOwaspRuleTypeLevelAsync(const ModifyOwaspRuleTypeLevelRequest& request, const ModifyOwaspRuleTypeLevelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyOwaspRuleTypeLevel(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyOwaspRuleTypeLevelOutcomeCallable WafClient::ModifyOwaspRuleTypeLevelCallable(const ModifyOwaspRuleTypeLevelRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyOwaspRuleTypeLevelOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyOwaspRuleTypeLevel(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::ModifyOwaspRuleTypeStatusOutcome WafClient::ModifyOwaspRuleTypeStatus(const ModifyOwaspRuleTypeStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyOwaspRuleTypeStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyOwaspRuleTypeStatusResponse rsp = ModifyOwaspRuleTypeStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyOwaspRuleTypeStatusOutcome(rsp);
+        else
+            return ModifyOwaspRuleTypeStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyOwaspRuleTypeStatusOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyOwaspRuleTypeStatusAsync(const ModifyOwaspRuleTypeStatusRequest& request, const ModifyOwaspRuleTypeStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyOwaspRuleTypeStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyOwaspRuleTypeStatusOutcomeCallable WafClient::ModifyOwaspRuleTypeStatusCallable(const ModifyOwaspRuleTypeStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyOwaspRuleTypeStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyOwaspRuleTypeStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::ModifyOwaspWhiteRuleOutcome WafClient::ModifyOwaspWhiteRule(const ModifyOwaspWhiteRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyOwaspWhiteRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyOwaspWhiteRuleResponse rsp = ModifyOwaspWhiteRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyOwaspWhiteRuleOutcome(rsp);
+        else
+            return ModifyOwaspWhiteRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyOwaspWhiteRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyOwaspWhiteRuleAsync(const ModifyOwaspWhiteRuleRequest& request, const ModifyOwaspWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyOwaspWhiteRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyOwaspWhiteRuleOutcomeCallable WafClient::ModifyOwaspWhiteRuleCallable(const ModifyOwaspWhiteRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyOwaspWhiteRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyOwaspWhiteRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::ModifyProtectionLevelOutcome WafClient::ModifyProtectionLevel(const ModifyProtectionLevelRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyProtectionLevel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyProtectionLevelResponse rsp = ModifyProtectionLevelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyProtectionLevelOutcome(rsp);
+        else
+            return ModifyProtectionLevelOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyProtectionLevelOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyProtectionLevelAsync(const ModifyProtectionLevelRequest& request, const ModifyProtectionLevelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyProtectionLevel(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyProtectionLevelOutcomeCallable WafClient::ModifyProtectionLevelCallable(const ModifyProtectionLevelRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyProtectionLevelOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyProtectionLevel(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::ModifyProtectionStatusOutcome WafClient::ModifyProtectionStatus(const ModifyProtectionStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyProtectionStatus");
@@ -5537,6 +7214,49 @@ WafClient::ModifyUserLevelOutcomeCallable WafClient::ModifyUserLevelCallable(con
         [this, request]()
         {
             return this->ModifyUserLevel(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::ModifyUserSignatureClassOutcome WafClient::ModifyUserSignatureClass(const ModifyUserSignatureClassRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyUserSignatureClass");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyUserSignatureClassResponse rsp = ModifyUserSignatureClassResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyUserSignatureClassOutcome(rsp);
+        else
+            return ModifyUserSignatureClassOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyUserSignatureClassOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyUserSignatureClassAsync(const ModifyUserSignatureClassRequest& request, const ModifyUserSignatureClassAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyUserSignatureClass(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyUserSignatureClassOutcomeCallable WafClient::ModifyUserSignatureClassCallable(const ModifyUserSignatureClassRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyUserSignatureClassOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyUserSignatureClass(request);
         }
     );
 
@@ -5931,6 +7651,49 @@ WafClient::SearchAttackLogOutcomeCallable WafClient::SearchAttackLogCallable(con
     return task->get_future();
 }
 
+WafClient::SearchLogOutcome WafClient::SearchLog(const SearchLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchLogResponse rsp = SearchLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchLogOutcome(rsp);
+        else
+            return SearchLogOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchLogOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::SearchLogAsync(const SearchLogRequest& request, const SearchLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SearchLog(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::SearchLogOutcomeCallable WafClient::SearchLogCallable(const SearchLogRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SearchLogOutcome()>>(
+        [this, request]()
+        {
+            return this->SearchLog(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::SwitchDomainRulesOutcome WafClient::SwitchDomainRules(const SwitchDomainRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "SwitchDomainRules");
@@ -6010,6 +7773,49 @@ WafClient::SwitchElasticModeOutcomeCallable WafClient::SwitchElasticModeCallable
         [this, request]()
         {
             return this->SwitchElasticMode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::UpdateProtectionModesOutcome WafClient::UpdateProtectionModes(const UpdateProtectionModesRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateProtectionModes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateProtectionModesResponse rsp = UpdateProtectionModesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateProtectionModesOutcome(rsp);
+        else
+            return UpdateProtectionModesOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateProtectionModesOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::UpdateProtectionModesAsync(const UpdateProtectionModesRequest& request, const UpdateProtectionModesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateProtectionModes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::UpdateProtectionModesOutcomeCallable WafClient::UpdateProtectionModesCallable(const UpdateProtectionModesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateProtectionModesOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateProtectionModes(request);
         }
     );
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -116,18 +116,14 @@ namespace TencentCloud
 
                     /**
                      * 获取鉴别涉及令人反感的信息的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PornConfigure 鉴别涉及令人反感的信息的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PornConfigureInfo GetPornConfigure() const;
 
                     /**
                      * 设置鉴别涉及令人反感的信息的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pornConfigure 鉴别涉及令人反感的信息的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPornConfigure(const PornConfigureInfo& _pornConfigure);
@@ -141,18 +137,14 @@ namespace TencentCloud
 
                     /**
                      * 获取鉴别涉及令人不安全的信息的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TerrorismConfigure 鉴别涉及令人不安全的信息的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TerrorismConfigureInfo GetTerrorismConfigure() const;
 
                     /**
                      * 设置鉴别涉及令人不安全的信息的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _terrorismConfigure 鉴别涉及令人不安全的信息的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTerrorismConfigure(const TerrorismConfigureInfo& _terrorismConfigure);
@@ -166,18 +158,14 @@ namespace TencentCloud
 
                     /**
                      * 获取鉴别涉及令人不适宜的信息的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PoliticalConfigure 鉴别涉及令人不适宜的信息的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PoliticalConfigureInfo GetPoliticalConfigure() const;
 
                     /**
                      * 设置鉴别涉及令人不适宜的信息的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _politicalConfigure 鉴别涉及令人不适宜的信息的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPoliticalConfigure(const PoliticalConfigureInfo& _politicalConfigure);
@@ -193,11 +181,9 @@ namespace TencentCloud
                      * 获取违禁控制参数。违禁内容包括：
 <li>谩骂；</li>
 <li>涉毒违法。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProhibitedConfigure 违禁控制参数。违禁内容包括：
 <li>谩骂；</li>
 <li>涉毒违法。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ProhibitedConfigureInfo GetProhibitedConfigure() const;
@@ -206,11 +192,9 @@ namespace TencentCloud
                      * 设置违禁控制参数。违禁内容包括：
 <li>谩骂；</li>
 <li>涉毒违法。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _prohibitedConfigure 违禁控制参数。违禁内容包括：
 <li>谩骂；</li>
 <li>涉毒违法。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProhibitedConfigure(const ProhibitedConfigureInfo& _prohibitedConfigure);
@@ -224,18 +208,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户自定义音视频审核控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserDefineConfigure 用户自定义音视频审核控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     UserDefineConfigureInfo GetUserDefineConfigure() const;
 
                     /**
                      * 设置用户自定义音视频审核控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userDefineConfigure 用户自定义音视频审核控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserDefineConfigure(const UserDefineConfigureInfo& _userDefineConfigure);
@@ -361,21 +341,18 @@ namespace TencentCloud
 
                     /**
                      * 鉴别涉及令人反感的信息的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PornConfigureInfo m_pornConfigure;
                     bool m_pornConfigureHasBeenSet;
 
                     /**
                      * 鉴别涉及令人不安全的信息的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TerrorismConfigureInfo m_terrorismConfigure;
                     bool m_terrorismConfigureHasBeenSet;
 
                     /**
                      * 鉴别涉及令人不适宜的信息的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PoliticalConfigureInfo m_politicalConfigure;
                     bool m_politicalConfigureHasBeenSet;
@@ -384,14 +361,12 @@ namespace TencentCloud
                      * 违禁控制参数。违禁内容包括：
 <li>谩骂；</li>
 <li>涉毒违法。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ProhibitedConfigureInfo m_prohibitedConfigure;
                     bool m_prohibitedConfigureHasBeenSet;
 
                     /**
                      * 用户自定义音视频审核控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     UserDefineConfigureInfo m_userDefineConfigure;
                     bool m_userDefineConfigureHasBeenSet;

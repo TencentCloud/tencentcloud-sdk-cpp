@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取迁移对象类型 all(全实例)，partial(部分对象)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObjectMode 迁移对象类型 all(全实例)，partial(部分对象)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetObjectMode() const;
 
                     /**
                      * 设置迁移对象类型 all(全实例)，partial(部分对象)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _objectMode 迁移对象类型 all(全实例)，partial(部分对象)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetObjectMode(const std::string& _objectMode);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取迁移对象，当 ObjectMode 为 partial 时，不为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Databases 迁移对象，当 ObjectMode 为 partial 时，不为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DBItem> GetDatabases() const;
 
                     /**
                      * 设置迁移对象，当 ObjectMode 为 partial 时，不为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _databases 迁移对象，当 ObjectMode 为 partial 时，不为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDatabases(const std::vector<DBItem>& _databases);
@@ -98,18 +90,26 @@ namespace TencentCloud
                     bool DatabasesHasBeenSet() const;
 
                     /**
-                     * 获取高级对象类型，如trigger、function、procedure、event。注意：如果要迁移同步高级对象，此配置中应该包含对应的高级对象类型
+                     * 获取高级对象类型，如trigger(触发器)、function(函数)、procedure(存储过程)、event(事件)。注意：如果要迁移同步高级对象，此配置中应该包含对应的高级对象类型。
+
+> 当前支持高级对象迁移的场景为MySQL、TDSQL-CMySQL、MariaDB、Percona之间的数据迁移。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AdvancedObjects 高级对象类型，如trigger、function、procedure、event。注意：如果要迁移同步高级对象，此配置中应该包含对应的高级对象类型
+                     * @return AdvancedObjects 高级对象类型，如trigger(触发器)、function(函数)、procedure(存储过程)、event(事件)。注意：如果要迁移同步高级对象，此配置中应该包含对应的高级对象类型。
+
+> 当前支持高级对象迁移的场景为MySQL、TDSQL-CMySQL、MariaDB、Percona之间的数据迁移。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAdvancedObjects() const;
 
                     /**
-                     * 设置高级对象类型，如trigger、function、procedure、event。注意：如果要迁移同步高级对象，此配置中应该包含对应的高级对象类型
+                     * 设置高级对象类型，如trigger(触发器)、function(函数)、procedure(存储过程)、event(事件)。注意：如果要迁移同步高级对象，此配置中应该包含对应的高级对象类型。
+
+> 当前支持高级对象迁移的场景为MySQL、TDSQL-CMySQL、MariaDB、Percona之间的数据迁移。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _advancedObjects 高级对象类型，如trigger、function、procedure、event。注意：如果要迁移同步高级对象，此配置中应该包含对应的高级对象类型
+                     * @param _advancedObjects 高级对象类型，如trigger(触发器)、function(函数)、procedure(存储过程)、event(事件)。注意：如果要迁移同步高级对象，此配置中应该包含对应的高级对象类型。
+
+> 当前支持高级对象迁移的场景为MySQL、TDSQL-CMySQL、MariaDB、Percona之间的数据迁移。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -126,20 +126,20 @@ namespace TencentCloud
 
                     /**
                      * 迁移对象类型 all(全实例)，partial(部分对象)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_objectMode;
                     bool m_objectModeHasBeenSet;
 
                     /**
                      * 迁移对象，当 ObjectMode 为 partial 时，不为空
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DBItem> m_databases;
                     bool m_databasesHasBeenSet;
 
                     /**
-                     * 高级对象类型，如trigger、function、procedure、event。注意：如果要迁移同步高级对象，此配置中应该包含对应的高级对象类型
+                     * 高级对象类型，如trigger(触发器)、function(函数)、procedure(存储过程)、event(事件)。注意：如果要迁移同步高级对象，此配置中应该包含对应的高级对象类型。
+
+> 当前支持高级对象迁移的场景为MySQL、TDSQL-CMySQL、MariaDB、Percona之间的数据迁移。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_advancedObjects;

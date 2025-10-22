@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,7 +76,9 @@ LoadBalancer::LoadBalancer() :
     m_attributeFlagsHasBeenSet(false),
     m_loadBalancerDomainHasBeenSet(false),
     m_egressHasBeenSet(false),
-    m_exclusiveHasBeenSet(false)
+    m_exclusiveHasBeenSet(false),
+    m_targetCountHasBeenSet(false),
+    m_associateEndpointHasBeenSet(false)
 {
 }
 
@@ -732,6 +734,26 @@ CoreInternalOutcome LoadBalancer::Deserialize(const rapidjson::Value &value)
         m_exclusiveHasBeenSet = true;
     }
 
+    if (value.HasMember("TargetCount") && !value["TargetCount"].IsNull())
+    {
+        if (!value["TargetCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.TargetCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetCount = value["TargetCount"].GetUint64();
+        m_targetCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("AssociateEndpoint") && !value["AssociateEndpoint"].IsNull())
+    {
+        if (!value["AssociateEndpoint"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.AssociateEndpoint` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_associateEndpoint = string(value["AssociateEndpoint"].GetString());
+        m_associateEndpointHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1237,6 +1259,22 @@ void LoadBalancer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Exclusive";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_exclusive, allocator);
+    }
+
+    if (m_targetCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_targetCount, allocator);
+    }
+
+    if (m_associateEndpointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssociateEndpoint";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_associateEndpoint.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2136,5 +2174,37 @@ void LoadBalancer::SetExclusive(const uint64_t& _exclusive)
 bool LoadBalancer::ExclusiveHasBeenSet() const
 {
     return m_exclusiveHasBeenSet;
+}
+
+uint64_t LoadBalancer::GetTargetCount() const
+{
+    return m_targetCount;
+}
+
+void LoadBalancer::SetTargetCount(const uint64_t& _targetCount)
+{
+    m_targetCount = _targetCount;
+    m_targetCountHasBeenSet = true;
+}
+
+bool LoadBalancer::TargetCountHasBeenSet() const
+{
+    return m_targetCountHasBeenSet;
+}
+
+string LoadBalancer::GetAssociateEndpoint() const
+{
+    return m_associateEndpoint;
+}
+
+void LoadBalancer::SetAssociateEndpoint(const string& _associateEndpoint)
+{
+    m_associateEndpoint = _associateEndpoint;
+    m_associateEndpointHasBeenSet = true;
+}
+
+bool LoadBalancer::AssociateEndpointHasBeenSet() const
+{
+    return m_associateEndpointHasBeenSet;
 }
 

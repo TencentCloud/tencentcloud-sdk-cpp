@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -110,23 +110,15 @@ namespace TencentCloud
                     bool VpcEndpointHasBeenSet() const;
 
                     /**
-                     * 获取vpc接入点状态
-OFF/ON/CREATING/DELETING
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VpcDataStreamEndpointStatus vpc接入点状态
-OFF/ON/CREATING/DELETING
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取vpc接入点状态 OFF/ON/CREATING/DELETING
+                     * @return VpcDataStreamEndpointStatus vpc接入点状态 OFF/ON/CREATING/DELETING
                      * 
                      */
                     std::string GetVpcDataStreamEndpointStatus() const;
 
                     /**
-                     * 设置vpc接入点状态
-OFF/ON/CREATING/DELETING
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _vpcDataStreamEndpointStatus vpc接入点状态
-OFF/ON/CREATING/DELETING
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置vpc接入点状态 OFF/ON/CREATING/DELETING
+                     * @param _vpcDataStreamEndpointStatus vpc接入点状态 OFF/ON/CREATING/DELETING
                      * 
                      */
                     void SetVpcDataStreamEndpointStatus(const std::string& _vpcDataStreamEndpointStatus);
@@ -137,6 +129,27 @@ OFF/ON/CREATING/DELETING
                      * 
                      */
                     bool VpcDataStreamEndpointStatusHasBeenSet() const;
+
+                    /**
+                     * 获取TLS加密的数据流接入点
+                     * @return VpcTlsEndpoint TLS加密的数据流接入点
+                     * 
+                     */
+                    std::string GetVpcTlsEndpoint() const;
+
+                    /**
+                     * 设置TLS加密的数据流接入点
+                     * @param _vpcTlsEndpoint TLS加密的数据流接入点
+                     * 
+                     */
+                    void SetVpcTlsEndpoint(const std::string& _vpcTlsEndpoint);
+
+                    /**
+                     * 判断参数 VpcTlsEndpoint 是否已赋值
+                     * @return VpcTlsEndpoint 是否已赋值
+                     * 
+                     */
+                    bool VpcTlsEndpointHasBeenSet() const;
 
                 private:
 
@@ -159,12 +172,16 @@ OFF/ON/CREATING/DELETING
                     bool m_vpcEndpointHasBeenSet;
 
                     /**
-                     * vpc接入点状态
-OFF/ON/CREATING/DELETING
-注意：此字段可能返回 null，表示取不到有效值。
+                     * vpc接入点状态 OFF/ON/CREATING/DELETING
                      */
                     std::string m_vpcDataStreamEndpointStatus;
                     bool m_vpcDataStreamEndpointStatusHasBeenSet;
+
+                    /**
+                     * TLS加密的数据流接入点
+                     */
+                    std::string m_vpcTlsEndpoint;
+                    bool m_vpcTlsEndpointHasBeenSet;
 
                 };
             }

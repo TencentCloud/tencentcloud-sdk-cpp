@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取启用头
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HeadEnabled 启用头
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetHeadEnabled() const;
 
                     /**
                      * 设置启用头
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _headEnabled 启用头
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHeadEnabled(const bool& _headEnabled);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标题
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HeadTitle 标题
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHeadTitle() const;
 
                     /**
                      * 设置标题
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _headTitle 标题
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHeadTitle(const std::string& _headTitle);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标识符
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Key 标识符
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置标识符
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _key 标识符
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取小程序AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId 小程序AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppId() const;
 
                     /**
                      * 设置小程序AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appId 小程序AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppId(const std::string& _appId);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取小程序AppPath
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppPath 小程序AppPath
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppPath() const;
 
                     /**
                      * 设置小程序AppPath
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appPath 小程序AppPath
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppPath(const std::string& _appPath);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取小程序名称AppName
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppName 小程序名称AppName
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置小程序名称AppName
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appName 小程序名称AppName
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppName(const std::string& _appName);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * 启用头
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_headEnabled;
                     bool m_headEnabledHasBeenSet;
 
                     /**
                      * 标题
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_headTitle;
                     bool m_headTitleHasBeenSet;
 
                     /**
                      * 标识符
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
                      * 小程序AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
                      * 小程序AppPath
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appPath;
                     bool m_appPathHasBeenSet;
 
                     /**
                      * 小程序名称AppName
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appName;
                     bool m_appNameHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例唯一id
-                     * @return InstanceId 实例唯一id
+                     * 获取ckafka集群实例id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
+                     * @return InstanceId ckafka集群实例id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例唯一id
-                     * @param _instanceId 实例唯一id
+                     * 设置ckafka集群实例id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
+                     * @param _instanceId ckafka集群实例id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取路由网络类型(3:vpc路由;7:内部支撑路由)
-                     * @return VipType 路由网络类型(3:vpc路由;7:内部支撑路由)
+                     * 获取路由网络类型(3:vpc路由;7:内部支撑路由;1:公网路由)
+                     * @return VipType 路由网络类型(3:vpc路由;7:内部支撑路由;1:公网路由)
                      * 
                      */
                     int64_t GetVipType() const;
 
                     /**
-                     * 设置路由网络类型(3:vpc路由;7:内部支撑路由)
-                     * @param _vipType 路由网络类型(3:vpc路由;7:内部支撑路由)
+                     * 设置路由网络类型(3:vpc路由;7:内部支撑路由;1:公网路由)
+                     * @param _vipType 路由网络类型(3:vpc路由;7:内部支撑路由;1:公网路由)
                      * 
                      */
                     void SetVipType(const int64_t& _vipType);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool VipTypeHasBeenSet() const;
 
                     /**
-                     * 获取vpc网络Id
-                     * @return VpcId vpc网络Id
+                     * 获取vpc网络Id,当vipType为3时必填
+                     * @return VpcId vpc网络Id,当vipType为3时必填
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置vpc网络Id
-                     * @param _vpcId vpc网络Id
+                     * 设置vpc网络Id,当vipType为3时必填
+                     * @param _vpcId vpc网络Id,当vipType为3时必填
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取vpc子网id
-                     * @return SubnetId vpc子网id
+                     * 获取vpc子网id,当vipType为3时必填
+                     * @return SubnetId vpc子网id,当vipType为3时必填
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置vpc子网id
-                     * @param _subnetId vpc子网id
+                     * 设置vpc子网id,当vipType为3时必填
+                     * @param _subnetId vpc子网id,当vipType为3时必填
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -127,15 +127,31 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取访问类型：0-plaintext；1-sasl_plaintext；2-ssl；3-sasl_ssl
-                     * @return AccessType 访问类型：0-plaintext；1-sasl_plaintext；2-ssl；3-sasl_ssl
+                     * 获取访问类型：0-plaintext；1-sasl_plaintext；3-sasl_ssl; 4-sasl_scram_sha_256; 5-sasl_scram_sha_512  默认为0
+vipType=3,支持 0,1,3,4,5
+vipType=7,支持0,1,3
+vipType=1,支持1,3
+
+                     * @return AccessType 访问类型：0-plaintext；1-sasl_plaintext；3-sasl_ssl; 4-sasl_scram_sha_256; 5-sasl_scram_sha_512  默认为0
+vipType=3,支持 0,1,3,4,5
+vipType=7,支持0,1,3
+vipType=1,支持1,3
+
                      * 
                      */
                     int64_t GetAccessType() const;
 
                     /**
-                     * 设置访问类型：0-plaintext；1-sasl_plaintext；2-ssl；3-sasl_ssl
-                     * @param _accessType 访问类型：0-plaintext；1-sasl_plaintext；2-ssl；3-sasl_ssl
+                     * 设置访问类型：0-plaintext；1-sasl_plaintext；3-sasl_ssl; 4-sasl_scram_sha_256; 5-sasl_scram_sha_512  默认为0
+vipType=3,支持 0,1,3,4,5
+vipType=7,支持0,1,3
+vipType=1,支持1,3
+
+                     * @param _accessType 访问类型：0-plaintext；1-sasl_plaintext；3-sasl_ssl; 4-sasl_scram_sha_256; 5-sasl_scram_sha_512  默认为0
+vipType=3,支持 0,1,3,4,5
+vipType=7,支持0,1,3
+vipType=1,支持1,3
+
                      * 
                      */
                     void SetAccessType(const int64_t& _accessType);
@@ -148,15 +164,15 @@ namespace TencentCloud
                     bool AccessTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否需要权限管理
-                     * @return AuthFlag 是否需要权限管理
+                     * 获取是否需要权限管理,该字段已废弃
+                     * @return AuthFlag 是否需要权限管理,该字段已废弃
                      * 
                      */
                     int64_t GetAuthFlag() const;
 
                     /**
-                     * 设置是否需要权限管理
-                     * @param _authFlag 是否需要权限管理
+                     * 设置是否需要权限管理,该字段已废弃
+                     * @param _authFlag 是否需要权限管理,该字段已废弃
                      * 
                      */
                     void SetAuthFlag(const int64_t& _authFlag);
@@ -190,15 +206,15 @@ namespace TencentCloud
                     bool CallerAppidHasBeenSet() const;
 
                     /**
-                     * 获取公网带宽
-                     * @return PublicNetwork 公网带宽
+                     * 获取公网带宽,公网路由必传,且是3的倍数,无默认值
+                     * @return PublicNetwork 公网带宽,公网路由必传,且是3的倍数,无默认值
                      * 
                      */
                     int64_t GetPublicNetwork() const;
 
                     /**
-                     * 设置公网带宽
-                     * @param _publicNetwork 公网带宽
+                     * 设置公网带宽,公网路由必传,且是3的倍数,无默认值
+                     * @param _publicNetwork 公网带宽,公网路由必传,且是3的倍数,无默认值
                      * 
                      */
                     void SetPublicNetwork(const int64_t& _publicNetwork);
@@ -231,40 +247,65 @@ namespace TencentCloud
                      */
                     bool IpHasBeenSet() const;
 
+                    /**
+                     * 获取备注信息
+                     * @return Note 备注信息
+                     * 
+                     */
+                    std::string GetNote() const;
+
+                    /**
+                     * 设置备注信息
+                     * @param _note 备注信息
+                     * 
+                     */
+                    void SetNote(const std::string& _note);
+
+                    /**
+                     * 判断参数 Note 是否已赋值
+                     * @return Note 是否已赋值
+                     * 
+                     */
+                    bool NoteHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例唯一id
+                     * ckafka集群实例id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 路由网络类型(3:vpc路由;7:内部支撑路由)
+                     * 路由网络类型(3:vpc路由;7:内部支撑路由;1:公网路由)
                      */
                     int64_t m_vipType;
                     bool m_vipTypeHasBeenSet;
 
                     /**
-                     * vpc网络Id
+                     * vpc网络Id,当vipType为3时必填
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * vpc子网id
+                     * vpc子网id,当vipType为3时必填
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 访问类型：0-plaintext；1-sasl_plaintext；2-ssl；3-sasl_ssl
+                     * 访问类型：0-plaintext；1-sasl_plaintext；3-sasl_ssl; 4-sasl_scram_sha_256; 5-sasl_scram_sha_512  默认为0
+vipType=3,支持 0,1,3,4,5
+vipType=7,支持0,1,3
+vipType=1,支持1,3
+
                      */
                     int64_t m_accessType;
                     bool m_accessTypeHasBeenSet;
 
                     /**
-                     * 是否需要权限管理
+                     * 是否需要权限管理,该字段已废弃
                      */
                     int64_t m_authFlag;
                     bool m_authFlagHasBeenSet;
@@ -276,7 +317,7 @@ namespace TencentCloud
                     bool m_callerAppidHasBeenSet;
 
                     /**
-                     * 公网带宽
+                     * 公网带宽,公网路由必传,且是3的倍数,无默认值
                      */
                     int64_t m_publicNetwork;
                     bool m_publicNetworkHasBeenSet;
@@ -286,6 +327,12 @@ namespace TencentCloud
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
+
+                    /**
+                     * 备注信息
+                     */
+                    std::string m_note;
+                    bool m_noteHasBeenSet;
 
                 };
             }

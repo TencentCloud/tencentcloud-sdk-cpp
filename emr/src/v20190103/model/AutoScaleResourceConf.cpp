@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,9 +34,11 @@ AutoScaleResourceConf::AutoScaleResourceConf() :
     m_changeToPodHasBeenSet(false),
     m_groupNameHasBeenSet(false),
     m_yarnNodeLabelHasBeenSet(false),
+    m_warehouseNameHasBeenSet(false),
     m_groupStatusHasBeenSet(false),
     m_parallelHasBeenSet(false),
-    m_enableMNodeHasBeenSet(false)
+    m_enableMNodeHasBeenSet(false),
+    m_extraAdvanceAttrsHasBeenSet(false)
 {
 }
 
@@ -175,6 +177,16 @@ CoreInternalOutcome AutoScaleResourceConf::Deserialize(const rapidjson::Value &v
         m_yarnNodeLabelHasBeenSet = true;
     }
 
+    if (value.HasMember("WarehouseName") && !value["WarehouseName"].IsNull())
+    {
+        if (!value["WarehouseName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoScaleResourceConf.WarehouseName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_warehouseName = string(value["WarehouseName"].GetString());
+        m_warehouseNameHasBeenSet = true;
+    }
+
     if (value.HasMember("GroupStatus") && !value["GroupStatus"].IsNull())
     {
         if (!value["GroupStatus"].IsInt64())
@@ -203,6 +215,23 @@ CoreInternalOutcome AutoScaleResourceConf::Deserialize(const rapidjson::Value &v
         }
         m_enableMNode = value["EnableMNode"].GetInt64();
         m_enableMNodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExtraAdvanceAttrs") && !value["ExtraAdvanceAttrs"].IsNull())
+    {
+        if (!value["ExtraAdvanceAttrs"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoScaleResourceConf.ExtraAdvanceAttrs` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_extraAdvanceAttrs.Deserialize(value["ExtraAdvanceAttrs"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_extraAdvanceAttrsHasBeenSet = true;
     }
 
 
@@ -316,6 +345,14 @@ void AutoScaleResourceConf::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         value.AddMember(iKey, rapidjson::Value(m_yarnNodeLabel.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_warehouseNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WarehouseName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_warehouseName.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_groupStatusHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -338,6 +375,15 @@ void AutoScaleResourceConf::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "EnableMNode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableMNode, allocator);
+    }
+
+    if (m_extraAdvanceAttrsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtraAdvanceAttrs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_extraAdvanceAttrs.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -551,6 +597,22 @@ bool AutoScaleResourceConf::YarnNodeLabelHasBeenSet() const
     return m_yarnNodeLabelHasBeenSet;
 }
 
+string AutoScaleResourceConf::GetWarehouseName() const
+{
+    return m_warehouseName;
+}
+
+void AutoScaleResourceConf::SetWarehouseName(const string& _warehouseName)
+{
+    m_warehouseName = _warehouseName;
+    m_warehouseNameHasBeenSet = true;
+}
+
+bool AutoScaleResourceConf::WarehouseNameHasBeenSet() const
+{
+    return m_warehouseNameHasBeenSet;
+}
+
 int64_t AutoScaleResourceConf::GetGroupStatus() const
 {
     return m_groupStatus;
@@ -597,5 +659,21 @@ void AutoScaleResourceConf::SetEnableMNode(const int64_t& _enableMNode)
 bool AutoScaleResourceConf::EnableMNodeHasBeenSet() const
 {
     return m_enableMNodeHasBeenSet;
+}
+
+AutoScaleGroupAdvanceAttrs AutoScaleResourceConf::GetExtraAdvanceAttrs() const
+{
+    return m_extraAdvanceAttrs;
+}
+
+void AutoScaleResourceConf::SetExtraAdvanceAttrs(const AutoScaleGroupAdvanceAttrs& _extraAdvanceAttrs)
+{
+    m_extraAdvanceAttrs = _extraAdvanceAttrs;
+    m_extraAdvanceAttrsHasBeenSet = true;
+}
+
+bool AutoScaleResourceConf::ExtraAdvanceAttrsHasBeenSet() const
+{
+    return m_extraAdvanceAttrsHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,8 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tione/v20211111/model/CosPathInfo.h>
+#include <tencentcloud/tione/v20211111/model/GooseFSx.h>
+#include <tencentcloud/tione/v20211111/model/PublicDataSourceFS.h>
 
 
 namespace TencentCloud
@@ -178,6 +180,27 @@ namespace TencentCloud
                     bool CosPathInfoHasBeenSet() const;
 
                     /**
+                     * 获取GooseFSx的配置，ModelSource为GooseFSx时有效
+                     * @return GooseFSx GooseFSx的配置，ModelSource为GooseFSx时有效
+                     * 
+                     */
+                    GooseFSx GetGooseFSx() const;
+
+                    /**
+                     * 设置GooseFSx的配置，ModelSource为GooseFSx时有效
+                     * @param _gooseFSx GooseFSx的配置，ModelSource为GooseFSx时有效
+                     * 
+                     */
+                    void SetGooseFSx(const GooseFSx& _gooseFSx);
+
+                    /**
+                     * 判断参数 GooseFSx 是否已赋值
+                     * @return GooseFSx 是否已赋值
+                     * 
+                     */
+                    bool GooseFSxHasBeenSet() const;
+
+                    /**
                      * 获取模型对应的算法框架，预留
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlgorithmFramework 模型对应的算法框架，预留
@@ -277,6 +300,48 @@ namespace TencentCloud
                      */
                     bool IsPrivateModelHasBeenSet() const;
 
+                    /**
+                     * 获取模型的类别 多模态MultiModal, 文本大模型 LLM
+                     * @return ModelCategory 模型的类别 多模态MultiModal, 文本大模型 LLM
+                     * 
+                     */
+                    std::string GetModelCategory() const;
+
+                    /**
+                     * 设置模型的类别 多模态MultiModal, 文本大模型 LLM
+                     * @param _modelCategory 模型的类别 多模态MultiModal, 文本大模型 LLM
+                     * 
+                     */
+                    void SetModelCategory(const std::string& _modelCategory);
+
+                    /**
+                     * 判断参数 ModelCategory 是否已赋值
+                     * @return ModelCategory 是否已赋值
+                     * 
+                     */
+                    bool ModelCategoryHasBeenSet() const;
+
+                    /**
+                     * 获取数据源的配置
+                     * @return PublicDataSource 数据源的配置
+                     * 
+                     */
+                    PublicDataSourceFS GetPublicDataSource() const;
+
+                    /**
+                     * 设置数据源的配置
+                     * @param _publicDataSource 数据源的配置
+                     * 
+                     */
+                    void SetPublicDataSource(const PublicDataSourceFS& _publicDataSource);
+
+                    /**
+                     * 判断参数 PublicDataSource 是否已赋值
+                     * @return PublicDataSource 是否已赋值
+                     * 
+                     */
+                    bool PublicDataSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -317,6 +382,12 @@ namespace TencentCloud
                     bool m_cosPathInfoHasBeenSet;
 
                     /**
+                     * GooseFSx的配置，ModelSource为GooseFSx时有效
+                     */
+                    GooseFSx m_gooseFSx;
+                    bool m_gooseFSxHasBeenSet;
+
+                    /**
                      * 模型对应的算法框架，预留
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -343,6 +414,18 @@ namespace TencentCloud
                      */
                     bool m_isPrivateModel;
                     bool m_isPrivateModelHasBeenSet;
+
+                    /**
+                     * 模型的类别 多模态MultiModal, 文本大模型 LLM
+                     */
+                    std::string m_modelCategory;
+                    bool m_modelCategoryHasBeenSet;
+
+                    /**
+                     * 数据源的配置
+                     */
+                    PublicDataSourceFS m_publicDataSource;
+                    bool m_publicDataSourceHasBeenSet;
 
                 };
             }

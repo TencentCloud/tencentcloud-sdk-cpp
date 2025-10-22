@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -257,7 +257,7 @@ namespace TencentCloud
 <li>Yunnan：云南。</li>
 <li>Chongqing：重庆。</li>
 <li>Sichuan：四川。</li>
-<li>Tibet：西藏。</li>
+<li>Xizang：西藏。</li>
 <li>Guangdong：广东。</li>
 <li>Guangxi：广西。</li>
 <li>Hainan：海南。</li>
@@ -292,7 +292,7 @@ namespace TencentCloud
 <li>Yunnan：云南。</li>
 <li>Chongqing：重庆。</li>
 <li>Sichuan：四川。</li>
-<li>Tibet：西藏。</li>
+<li>Xizang：西藏。</li>
 <li>Guangdong：广东。</li>
 <li>Guangxi：广西。</li>
 <li>Hainan：海南。</li>
@@ -332,7 +332,7 @@ namespace TencentCloud
 <li>Yunnan：云南。</li>
 <li>Chongqing：重庆。</li>
 <li>Sichuan：四川。</li>
-<li>Tibet：西藏。</li>
+<li>Xizang：西藏。</li>
 <li>Guangdong：广东。</li>
 <li>Guangxi：广西。</li>
 <li>Hainan：海南。</li>
@@ -367,7 +367,7 @@ namespace TencentCloud
 <li>Yunnan：云南。</li>
 <li>Chongqing：重庆。</li>
 <li>Sichuan：四川。</li>
-<li>Tibet：西藏。</li>
+<li>Xizang：西藏。</li>
 <li>Guangdong：广东。</li>
 <li>Guangxi：广西。</li>
 <li>Hainan：海南。</li>
@@ -553,7 +553,7 @@ namespace TencentCloud
 <li>Yunnan：云南。</li>
 <li>Chongqing：重庆。</li>
 <li>Sichuan：四川。</li>
-<li>Tibet：西藏。</li>
+<li>Xizang：西藏。</li>
 <li>Guangdong：广东。</li>
 <li>Guangxi：广西。</li>
 <li>Hainan：海南。</li>

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取证书 ID。
-                     * @return CertificateId 证书 ID。
+                     * 获取待提交资料的付费证书 ID。
+                     * @return CertificateId 待提交资料的付费证书 ID。
                      * 
                      */
                     std::string GetCertificateId() const;
 
                     /**
-                     * 设置证书 ID。
-                     * @param _certificateId 证书 ID。
+                     * 设置待提交资料的付费证书 ID。
+                     * @param _certificateId 待提交资料的付费证书 ID。
                      * 
                      */
                     void SetCertificateId(const std::string& _certificateId);
@@ -64,15 +64,23 @@ namespace TencentCloud
                     bool CertificateIdHasBeenSet() const;
 
                     /**
-                     * 获取CSR 生成方式：online = 在线生成, parse = 手动上传。
-                     * @return CsrType CSR 生成方式：online = 在线生成, parse = 手动上传。
+                     * 获取此字段必传。 CSR 生成方式， 取值为：
+online：腾讯云提交的填写的参数信息生成CSR和私钥， 并由腾讯云加密存储
+parse：自行生成CSR和私钥， 并通过上传CSR申请证书
+                     * @return CsrType 此字段必传。 CSR 生成方式， 取值为：
+online：腾讯云提交的填写的参数信息生成CSR和私钥， 并由腾讯云加密存储
+parse：自行生成CSR和私钥， 并通过上传CSR申请证书
                      * 
                      */
                     std::string GetCsrType() const;
 
                     /**
-                     * 设置CSR 生成方式：online = 在线生成, parse = 手动上传。
-                     * @param _csrType CSR 生成方式：online = 在线生成, parse = 手动上传。
+                     * 设置此字段必传。 CSR 生成方式， 取值为：
+online：腾讯云提交的填写的参数信息生成CSR和私钥， 并由腾讯云加密存储
+parse：自行生成CSR和私钥， 并通过上传CSR申请证书
+                     * @param _csrType 此字段必传。 CSR 生成方式， 取值为：
+online：腾讯云提交的填写的参数信息生成CSR和私钥， 并由腾讯云加密存储
+parse：自行生成CSR和私钥， 并通过上传CSR申请证书
                      * 
                      */
                     void SetCsrType(const std::string& _csrType);
@@ -86,14 +94,18 @@ namespace TencentCloud
 
                     /**
                      * 获取上传的 CSR 内容。
+若CstType为parse， 则此字段必传。
                      * @return CsrContent 上传的 CSR 内容。
+若CstType为parse， 则此字段必传。
                      * 
                      */
                     std::string GetCsrContent() const;
 
                     /**
                      * 设置上传的 CSR 内容。
+若CstType为parse， 则此字段必传。
                      * @param _csrContent 上传的 CSR 内容。
+若CstType为parse， 则此字段必传。
                      * 
                      */
                     void SetCsrContent(const std::string& _csrContent);
@@ -106,15 +118,15 @@ namespace TencentCloud
                     bool CsrContentHasBeenSet() const;
 
                     /**
-                     * 获取绑定证书的域名。
-                     * @return CertificateDomain 绑定证书的域名。
+                     * 获取证书绑定的通用名称， 若是上传的CSR，则该域名需与CSR解析的通用名称一致
+                     * @return CertificateDomain 证书绑定的通用名称， 若是上传的CSR，则该域名需与CSR解析的通用名称一致
                      * 
                      */
                     std::string GetCertificateDomain() const;
 
                     /**
-                     * 设置绑定证书的域名。
-                     * @param _certificateDomain 绑定证书的域名。
+                     * 设置证书绑定的通用名称， 若是上传的CSR，则该域名需与CSR解析的通用名称一致
+                     * @param _certificateDomain 证书绑定的通用名称， 若是上传的CSR，则该域名需与CSR解析的通用名称一致
                      * 
                      */
                     void SetCertificateDomain(const std::string& _certificateDomain);
@@ -127,15 +139,15 @@ namespace TencentCloud
                     bool CertificateDomainHasBeenSet() const;
 
                     /**
-                     * 获取上传的域名数组（多域名证书可以上传）。
-                     * @return DomainList 上传的域名数组（多域名证书可以上传）。
+                     * 获取证书绑定的其他域名， 单域名、泛域名证书无需提供。 多域名、多泛域名必填
+                     * @return DomainList 证书绑定的其他域名， 单域名、泛域名证书无需提供。 多域名、多泛域名必填
                      * 
                      */
                     std::vector<std::string> GetDomainList() const;
 
                     /**
-                     * 设置上传的域名数组（多域名证书可以上传）。
-                     * @param _domainList 上传的域名数组（多域名证书可以上传）。
+                     * 设置证书绑定的其他域名， 单域名、泛域名证书无需提供。 多域名、多泛域名必填
+                     * @param _domainList 证书绑定的其他域名， 单域名、泛域名证书无需提供。 多域名、多泛域名必填
                      * 
                      */
                     void SetDomainList(const std::vector<std::string>& _domainList);
@@ -148,15 +160,15 @@ namespace TencentCloud
                     bool DomainListHasBeenSet() const;
 
                     /**
-                     * 获取私钥密码（非必填）。
-                     * @return KeyPassword 私钥密码（非必填）。
+                     * 获取私钥密码， 目前仅使用在生成jks、pfx格式证书时密码； 其他格式私钥证书未加密	
+                     * @return KeyPassword 私钥密码， 目前仅使用在生成jks、pfx格式证书时密码； 其他格式私钥证书未加密	
                      * 
                      */
                     std::string GetKeyPassword() const;
 
                     /**
-                     * 设置私钥密码（非必填）。
-                     * @param _keyPassword 私钥密码（非必填）。
+                     * 设置私钥密码， 目前仅使用在生成jks、pfx格式证书时密码； 其他格式私钥证书未加密	
+                     * @param _keyPassword 私钥密码， 目前仅使用在生成jks、pfx格式证书时密码； 其他格式私钥证书未加密	
                      * 
                      */
                     void SetKeyPassword(const std::string& _keyPassword);
@@ -169,15 +181,15 @@ namespace TencentCloud
                     bool KeyPasswordHasBeenSet() const;
 
                     /**
-                     * 获取公司名称。
-                     * @return OrganizationName 公司名称。
+                     * 获取字段必传， 公司名称。
+                     * @return OrganizationName 字段必传， 公司名称。
                      * 
                      */
                     std::string GetOrganizationName() const;
 
                     /**
-                     * 设置公司名称。
-                     * @param _organizationName 公司名称。
+                     * 设置字段必传， 公司名称。
+                     * @param _organizationName 字段必传， 公司名称。
                      * 
                      */
                     void SetOrganizationName(const std::string& _organizationName);
@@ -190,15 +202,15 @@ namespace TencentCloud
                     bool OrganizationNameHasBeenSet() const;
 
                     /**
-                     * 获取部门名称。
-                     * @return OrganizationDivision 部门名称。
+                     * 获取字段必传， 部门名称。
+                     * @return OrganizationDivision 字段必传， 部门名称。
                      * 
                      */
                     std::string GetOrganizationDivision() const;
 
                     /**
-                     * 设置部门名称。
-                     * @param _organizationDivision 部门名称。
+                     * 设置字段必传， 部门名称。
+                     * @param _organizationDivision 字段必传， 部门名称。
                      * 
                      */
                     void SetOrganizationDivision(const std::string& _organizationDivision);
@@ -211,15 +223,15 @@ namespace TencentCloud
                     bool OrganizationDivisionHasBeenSet() const;
 
                     /**
-                     * 获取公司详细地址。
-                     * @return OrganizationAddress 公司详细地址。
+                     * 获取字段必传， 公司详细地址。
+                     * @return OrganizationAddress 字段必传， 公司详细地址。
                      * 
                      */
                     std::string GetOrganizationAddress() const;
 
                     /**
-                     * 设置公司详细地址。
-                     * @param _organizationAddress 公司详细地址。
+                     * 设置字段必传， 公司详细地址。
+                     * @param _organizationAddress 字段必传， 公司详细地址。
                      * 
                      */
                     void SetOrganizationAddress(const std::string& _organizationAddress);
@@ -232,15 +244,15 @@ namespace TencentCloud
                     bool OrganizationAddressHasBeenSet() const;
 
                     /**
-                     * 获取国家名称，如中国：CN 。
-                     * @return OrganizationCountry 国家名称，如中国：CN 。
+                     * 获取字段必传， 国家名称，传CN即可
+                     * @return OrganizationCountry 字段必传， 国家名称，传CN即可
                      * 
                      */
                     std::string GetOrganizationCountry() const;
 
                     /**
-                     * 设置国家名称，如中国：CN 。
-                     * @param _organizationCountry 国家名称，如中国：CN 。
+                     * 设置字段必传， 国家名称，传CN即可
+                     * @param _organizationCountry 字段必传， 国家名称，传CN即可
                      * 
                      */
                     void SetOrganizationCountry(const std::string& _organizationCountry);
@@ -253,15 +265,15 @@ namespace TencentCloud
                     bool OrganizationCountryHasBeenSet() const;
 
                     /**
-                     * 获取公司所在城市。
-                     * @return OrganizationCity 公司所在城市。
+                     * 获取字段必传， 公司所在城市。
+                     * @return OrganizationCity 字段必传， 公司所在城市。
                      * 
                      */
                     std::string GetOrganizationCity() const;
 
                     /**
-                     * 设置公司所在城市。
-                     * @param _organizationCity 公司所在城市。
+                     * 设置字段必传， 公司所在城市。
+                     * @param _organizationCity 字段必传， 公司所在城市。
                      * 
                      */
                     void SetOrganizationCity(const std::string& _organizationCity);
@@ -274,15 +286,15 @@ namespace TencentCloud
                     bool OrganizationCityHasBeenSet() const;
 
                     /**
-                     * 获取公司所在省份。
-                     * @return OrganizationRegion 公司所在省份。
+                     * 获取字段必传， 公司所在省份。
+                     * @return OrganizationRegion 字段必传， 公司所在省份。
                      * 
                      */
                     std::string GetOrganizationRegion() const;
 
                     /**
-                     * 设置公司所在省份。
-                     * @param _organizationRegion 公司所在省份。
+                     * 设置字段必传， 公司所在省份。
+                     * @param _organizationRegion 字段必传， 公司所在省份。
                      * 
                      */
                     void SetOrganizationRegion(const std::string& _organizationRegion);
@@ -316,15 +328,15 @@ namespace TencentCloud
                     bool PostalCodeHasBeenSet() const;
 
                     /**
-                     * 获取公司座机区号。
-                     * @return PhoneAreaCode 公司座机区号。
+                     * 获取字段必传， 公司座机区号。
+                     * @return PhoneAreaCode 字段必传， 公司座机区号。
                      * 
                      */
                     std::string GetPhoneAreaCode() const;
 
                     /**
-                     * 设置公司座机区号。
-                     * @param _phoneAreaCode 公司座机区号。
+                     * 设置字段必传， 公司座机区号。
+                     * @param _phoneAreaCode 字段必传， 公司座机区号。
                      * 
                      */
                     void SetPhoneAreaCode(const std::string& _phoneAreaCode);
@@ -337,15 +349,15 @@ namespace TencentCloud
                     bool PhoneAreaCodeHasBeenSet() const;
 
                     /**
-                     * 获取公司座机号码。
-                     * @return PhoneNumber 公司座机号码。
+                     * 获取字段必传， 公司座机号码。
+                     * @return PhoneNumber 字段必传， 公司座机号码。
                      * 
                      */
                     std::string GetPhoneNumber() const;
 
                     /**
-                     * 设置公司座机号码。
-                     * @param _phoneNumber 公司座机号码。
+                     * 设置字段必传， 公司座机号码。
+                     * @param _phoneNumber 字段必传， 公司座机号码。
                      * 
                      */
                     void SetPhoneNumber(const std::string& _phoneNumber);
@@ -379,15 +391,15 @@ namespace TencentCloud
                     bool VerifyTypeHasBeenSet() const;
 
                     /**
-                     * 获取管理人名。
-                     * @return AdminFirstName 管理人名。
+                     * 获取字段必传，管理人名。
+                     * @return AdminFirstName 字段必传，管理人名。
                      * 
                      */
                     std::string GetAdminFirstName() const;
 
                     /**
-                     * 设置管理人名。
-                     * @param _adminFirstName 管理人名。
+                     * 设置字段必传，管理人名。
+                     * @param _adminFirstName 字段必传，管理人名。
                      * 
                      */
                     void SetAdminFirstName(const std::string& _adminFirstName);
@@ -400,15 +412,15 @@ namespace TencentCloud
                     bool AdminFirstNameHasBeenSet() const;
 
                     /**
-                     * 获取管理人姓。
-                     * @return AdminLastName 管理人姓。
+                     * 获取字段必传，管理人姓。
+                     * @return AdminLastName 字段必传，管理人姓。
                      * 
                      */
                     std::string GetAdminLastName() const;
 
                     /**
-                     * 设置管理人姓。
-                     * @param _adminLastName 管理人姓。
+                     * 设置字段必传，管理人姓。
+                     * @param _adminLastName 字段必传，管理人姓。
                      * 
                      */
                     void SetAdminLastName(const std::string& _adminLastName);
@@ -421,15 +433,15 @@ namespace TencentCloud
                     bool AdminLastNameHasBeenSet() const;
 
                     /**
-                     * 获取管理人手机号码。
-                     * @return AdminPhoneNum 管理人手机号码。
+                     * 获取字段必传，管理人手机号码。
+                     * @return AdminPhoneNum 字段必传，管理人手机号码。
                      * 
                      */
                     std::string GetAdminPhoneNum() const;
 
                     /**
-                     * 设置管理人手机号码。
-                     * @param _adminPhoneNum 管理人手机号码。
+                     * 设置字段必传，管理人手机号码。
+                     * @param _adminPhoneNum 字段必传，管理人手机号码。
                      * 
                      */
                     void SetAdminPhoneNum(const std::string& _adminPhoneNum);
@@ -442,15 +454,15 @@ namespace TencentCloud
                     bool AdminPhoneNumHasBeenSet() const;
 
                     /**
-                     * 获取管理人邮箱地址。
-                     * @return AdminEmail 管理人邮箱地址。
+                     * 获取字段必传，管理人邮箱地址。
+                     * @return AdminEmail 字段必传，管理人邮箱地址。
                      * 
                      */
                     std::string GetAdminEmail() const;
 
                     /**
-                     * 设置管理人邮箱地址。
-                     * @param _adminEmail 管理人邮箱地址。
+                     * 设置字段必传，管理人邮箱地址。
+                     * @param _adminEmail 字段必传，管理人邮箱地址。
                      * 
                      */
                     void SetAdminEmail(const std::string& _adminEmail);
@@ -463,15 +475,15 @@ namespace TencentCloud
                     bool AdminEmailHasBeenSet() const;
 
                     /**
-                     * 获取管理人职位。
-                     * @return AdminPosition 管理人职位。
+                     * 获取字段必传，管理人职位。
+                     * @return AdminPosition 字段必传，管理人职位。
                      * 
                      */
                     std::string GetAdminPosition() const;
 
                     /**
-                     * 设置管理人职位。
-                     * @param _adminPosition 管理人职位。
+                     * 设置字段必传，管理人职位。
+                     * @param _adminPosition 字段必传，管理人职位。
                      * 
                      */
                     void SetAdminPosition(const std::string& _adminPosition);
@@ -484,15 +496,15 @@ namespace TencentCloud
                     bool AdminPositionHasBeenSet() const;
 
                     /**
-                     * 获取联系人名。
-                     * @return ContactFirstName 联系人名。
+                     * 获取字段必传，联系人名。
+                     * @return ContactFirstName 字段必传，联系人名。
                      * 
                      */
                     std::string GetContactFirstName() const;
 
                     /**
-                     * 设置联系人名。
-                     * @param _contactFirstName 联系人名。
+                     * 设置字段必传，联系人名。
+                     * @param _contactFirstName 字段必传，联系人名。
                      * 
                      */
                     void SetContactFirstName(const std::string& _contactFirstName);
@@ -505,15 +517,15 @@ namespace TencentCloud
                     bool ContactFirstNameHasBeenSet() const;
 
                     /**
-                     * 获取联系人姓。
-                     * @return ContactLastName 联系人姓。
+                     * 获取字段必传，联系人姓。
+                     * @return ContactLastName 字段必传，联系人姓。
                      * 
                      */
                     std::string GetContactLastName() const;
 
                     /**
-                     * 设置联系人姓。
-                     * @param _contactLastName 联系人姓。
+                     * 设置字段必传，联系人姓。
+                     * @param _contactLastName 字段必传，联系人姓。
                      * 
                      */
                     void SetContactLastName(const std::string& _contactLastName);
@@ -526,15 +538,15 @@ namespace TencentCloud
                     bool ContactLastNameHasBeenSet() const;
 
                     /**
-                     * 获取联系人邮箱地址。
-                     * @return ContactEmail 联系人邮箱地址。
+                     * 获取字段必传，联系人邮箱地址。
+                     * @return ContactEmail 字段必传，联系人邮箱地址。
                      * 
                      */
                     std::string GetContactEmail() const;
 
                     /**
-                     * 设置联系人邮箱地址。
-                     * @param _contactEmail 联系人邮箱地址。
+                     * 设置字段必传，联系人邮箱地址。
+                     * @param _contactEmail 字段必传，联系人邮箱地址。
                      * 
                      */
                     void SetContactEmail(const std::string& _contactEmail);
@@ -547,15 +559,15 @@ namespace TencentCloud
                     bool ContactEmailHasBeenSet() const;
 
                     /**
-                     * 获取联系人手机号码。
-                     * @return ContactNumber 联系人手机号码。
+                     * 获取字段必传，联系人手机号码。
+                     * @return ContactNumber 字段必传，联系人手机号码。
                      * 
                      */
                     std::string GetContactNumber() const;
 
                     /**
-                     * 设置联系人手机号码。
-                     * @param _contactNumber 联系人手机号码。
+                     * 设置字段必传，联系人手机号码。
+                     * @param _contactNumber 字段必传，联系人手机号码。
                      * 
                      */
                     void SetContactNumber(const std::string& _contactNumber);
@@ -568,15 +580,15 @@ namespace TencentCloud
                     bool ContactNumberHasBeenSet() const;
 
                     /**
-                     * 获取联系人职位。
-                     * @return ContactPosition 联系人职位。
+                     * 获取字段必传，联系人职位。
+                     * @return ContactPosition 字段必传，联系人职位。
                      * 
                      */
                     std::string GetContactPosition() const;
 
                     /**
-                     * 设置联系人职位。
-                     * @param _contactPosition 联系人职位。
+                     * 设置字段必传，联系人职位。
+                     * @param _contactPosition 字段必传，联系人职位。
                      * 
                      */
                     void SetContactPosition(const std::string& _contactPosition);
@@ -588,76 +600,100 @@ namespace TencentCloud
                      */
                     bool ContactPositionHasBeenSet() const;
 
+                    /**
+                     * 获取是否DV证书。默认false
+                     * @return IsDV 是否DV证书。默认false
+                     * 
+                     */
+                    bool GetIsDV() const;
+
+                    /**
+                     * 设置是否DV证书。默认false
+                     * @param _isDV 是否DV证书。默认false
+                     * 
+                     */
+                    void SetIsDV(const bool& _isDV);
+
+                    /**
+                     * 判断参数 IsDV 是否已赋值
+                     * @return IsDV 是否已赋值
+                     * 
+                     */
+                    bool IsDVHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 证书 ID。
+                     * 待提交资料的付费证书 ID。
                      */
                     std::string m_certificateId;
                     bool m_certificateIdHasBeenSet;
 
                     /**
-                     * CSR 生成方式：online = 在线生成, parse = 手动上传。
+                     * 此字段必传。 CSR 生成方式， 取值为：
+online：腾讯云提交的填写的参数信息生成CSR和私钥， 并由腾讯云加密存储
+parse：自行生成CSR和私钥， 并通过上传CSR申请证书
                      */
                     std::string m_csrType;
                     bool m_csrTypeHasBeenSet;
 
                     /**
                      * 上传的 CSR 内容。
+若CstType为parse， 则此字段必传。
                      */
                     std::string m_csrContent;
                     bool m_csrContentHasBeenSet;
 
                     /**
-                     * 绑定证书的域名。
+                     * 证书绑定的通用名称， 若是上传的CSR，则该域名需与CSR解析的通用名称一致
                      */
                     std::string m_certificateDomain;
                     bool m_certificateDomainHasBeenSet;
 
                     /**
-                     * 上传的域名数组（多域名证书可以上传）。
+                     * 证书绑定的其他域名， 单域名、泛域名证书无需提供。 多域名、多泛域名必填
                      */
                     std::vector<std::string> m_domainList;
                     bool m_domainListHasBeenSet;
 
                     /**
-                     * 私钥密码（非必填）。
+                     * 私钥密码， 目前仅使用在生成jks、pfx格式证书时密码； 其他格式私钥证书未加密	
                      */
                     std::string m_keyPassword;
                     bool m_keyPasswordHasBeenSet;
 
                     /**
-                     * 公司名称。
+                     * 字段必传， 公司名称。
                      */
                     std::string m_organizationName;
                     bool m_organizationNameHasBeenSet;
 
                     /**
-                     * 部门名称。
+                     * 字段必传， 部门名称。
                      */
                     std::string m_organizationDivision;
                     bool m_organizationDivisionHasBeenSet;
 
                     /**
-                     * 公司详细地址。
+                     * 字段必传， 公司详细地址。
                      */
                     std::string m_organizationAddress;
                     bool m_organizationAddressHasBeenSet;
 
                     /**
-                     * 国家名称，如中国：CN 。
+                     * 字段必传， 国家名称，传CN即可
                      */
                     std::string m_organizationCountry;
                     bool m_organizationCountryHasBeenSet;
 
                     /**
-                     * 公司所在城市。
+                     * 字段必传， 公司所在城市。
                      */
                     std::string m_organizationCity;
                     bool m_organizationCityHasBeenSet;
 
                     /**
-                     * 公司所在省份。
+                     * 字段必传， 公司所在省份。
                      */
                     std::string m_organizationRegion;
                     bool m_organizationRegionHasBeenSet;
@@ -669,13 +705,13 @@ namespace TencentCloud
                     bool m_postalCodeHasBeenSet;
 
                     /**
-                     * 公司座机区号。
+                     * 字段必传， 公司座机区号。
                      */
                     std::string m_phoneAreaCode;
                     bool m_phoneAreaCodeHasBeenSet;
 
                     /**
-                     * 公司座机号码。
+                     * 字段必传， 公司座机号码。
                      */
                     std::string m_phoneNumber;
                     bool m_phoneNumberHasBeenSet;
@@ -687,64 +723,70 @@ namespace TencentCloud
                     bool m_verifyTypeHasBeenSet;
 
                     /**
-                     * 管理人名。
+                     * 字段必传，管理人名。
                      */
                     std::string m_adminFirstName;
                     bool m_adminFirstNameHasBeenSet;
 
                     /**
-                     * 管理人姓。
+                     * 字段必传，管理人姓。
                      */
                     std::string m_adminLastName;
                     bool m_adminLastNameHasBeenSet;
 
                     /**
-                     * 管理人手机号码。
+                     * 字段必传，管理人手机号码。
                      */
                     std::string m_adminPhoneNum;
                     bool m_adminPhoneNumHasBeenSet;
 
                     /**
-                     * 管理人邮箱地址。
+                     * 字段必传，管理人邮箱地址。
                      */
                     std::string m_adminEmail;
                     bool m_adminEmailHasBeenSet;
 
                     /**
-                     * 管理人职位。
+                     * 字段必传，管理人职位。
                      */
                     std::string m_adminPosition;
                     bool m_adminPositionHasBeenSet;
 
                     /**
-                     * 联系人名。
+                     * 字段必传，联系人名。
                      */
                     std::string m_contactFirstName;
                     bool m_contactFirstNameHasBeenSet;
 
                     /**
-                     * 联系人姓。
+                     * 字段必传，联系人姓。
                      */
                     std::string m_contactLastName;
                     bool m_contactLastNameHasBeenSet;
 
                     /**
-                     * 联系人邮箱地址。
+                     * 字段必传，联系人邮箱地址。
                      */
                     std::string m_contactEmail;
                     bool m_contactEmailHasBeenSet;
 
                     /**
-                     * 联系人手机号码。
+                     * 字段必传，联系人手机号码。
                      */
                     std::string m_contactNumber;
                     bool m_contactNumberHasBeenSet;
 
                     /**
-                     * 联系人职位。
+                     * 字段必传，联系人职位。
                      */
                     std::string m_contactPosition;
                     bool m_contactPositionHasBeenSet;
+
+                    /**
+                     * 是否DV证书。默认false
+                     */
+                    bool m_isDV;
+                    bool m_isDVHasBeenSet;
 
                 };
             }

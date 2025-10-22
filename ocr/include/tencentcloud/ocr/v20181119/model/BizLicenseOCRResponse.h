@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ocr/v20181119/model/BusinessCertificateInfo.h>
 
 
 namespace TencentCloud
@@ -363,6 +364,34 @@ WARN_RESHOOT_CARD翻拍件告警
                      */
                     bool ElectronicHasBeenSet() const;
 
+                    /**
+                     * 获取非营业执照的营业类证件识别结果，将以结构化形式呈现。
+                     * @return BusinessCertificate 非营业执照的营业类证件识别结果，将以结构化形式呈现。
+                     * 
+                     */
+                    std::vector<BusinessCertificateInfo> GetBusinessCertificate() const;
+
+                    /**
+                     * 判断参数 BusinessCertificate 是否已赋值
+                     * @return BusinessCertificate 是否已赋值
+                     * 
+                     */
+                    bool BusinessCertificateHasBeenSet() const;
+
+                    /**
+                     * 获取重要提示字段
+                     * @return Important 重要提示字段
+                     * 
+                     */
+                    std::string GetImportant() const;
+
+                    /**
+                     * 判断参数 Important 是否已赋值
+                     * @return Important 是否已赋值
+                     * 
+                     */
+                    bool ImportantHasBeenSet() const;
+
                 private:
 
                     /**
@@ -502,6 +531,18 @@ WARN_RESHOOT_CARD翻拍件告警
                      */
                     bool m_electronic;
                     bool m_electronicHasBeenSet;
+
+                    /**
+                     * 非营业执照的营业类证件识别结果，将以结构化形式呈现。
+                     */
+                    std::vector<BusinessCertificateInfo> m_businessCertificate;
+                    bool m_businessCertificateHasBeenSet;
+
+                    /**
+                     * 重要提示字段
+                     */
+                    std::string m_important;
+                    bool m_importantHasBeenSet;
 
                 };
             }

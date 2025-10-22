@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件系统id
-                     * @return FileSystemId 文件系统id
+                     * 获取文件系统 ID
+                     * @return FileSystemId 文件系统 ID
                      * 
                      */
                     std::string GetFileSystemId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
-                     * 获取规则状态0:关闭，1 开启
-                     * @return Status 规则状态0:关闭，1 开启
+                     * 获取规则状态 0：关闭，1：开启
+                     * @return Status 规则状态 0：关闭，1：开启
                      * 
                      */
                     uint64_t GetStatus() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取扩容阈值,范围[10-90]
-                     * @return ScaleUpThreshold 扩容阈值,范围[10-90]
+                     * 获取扩容阈值，范围[10-90]
+                     * @return ScaleUpThreshold 扩容阈值，范围[10-90]
                      * 
                      */
                     uint64_t GetScaleUpThreshold() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool ScaleUpThresholdHasBeenSet() const;
 
                     /**
-                     * 获取扩容后达到阈值,范围[10-90]
-                     * @return TargetThreshold 扩容后达到阈值,范围[10-90]
+                     * 获取扩容后达到阈值，范围[10-90]
+                     * @return TargetThreshold 扩容后达到阈值，范围[10-90]
                      * 
                      */
                     uint64_t GetTargetThreshold() const;
@@ -102,25 +102,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件系统id
+                     * 文件系统 ID
                      */
                     std::string m_fileSystemId;
                     bool m_fileSystemIdHasBeenSet;
 
                     /**
-                     * 规则状态0:关闭，1 开启
+                     * 规则状态 0：关闭，1：开启
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 扩容阈值,范围[10-90]
+                     * 扩容阈值，范围[10-90]
                      */
                     uint64_t m_scaleUpThreshold;
                     bool m_scaleUpThresholdHasBeenSet;
 
                     /**
-                     * 扩容后达到阈值,范围[10-90]
+                     * 扩容后达到阈值，范围[10-90]
                      */
                     uint64_t m_targetThreshold;
                     bool m_targetThresholdHasBeenSet;

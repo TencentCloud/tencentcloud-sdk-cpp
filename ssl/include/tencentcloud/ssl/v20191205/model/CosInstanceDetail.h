@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已绑定的证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertId 已绑定的证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCertId() const;
 
                     /**
                      * 设置已绑定的证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _certId 已绑定的证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCertId(const std::string& _certId);
@@ -119,18 +115,14 @@ DISABLED:域名下线状态
 
                     /**
                      * 获取存储桶名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bucket 存储桶名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBucket() const;
 
                     /**
                      * 设置存储桶名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bucket 存储桶名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBucket(const std::string& _bucket);
@@ -144,18 +136,14 @@ DISABLED:域名下线状态
 
                     /**
                      * 获取存储桶地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 存储桶地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置存储桶地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 存储桶地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -177,7 +165,6 @@ DISABLED:域名下线状态
 
                     /**
                      * 已绑定的证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_certId;
                     bool m_certIdHasBeenSet;
@@ -191,14 +178,12 @@ DISABLED:域名下线状态
 
                     /**
                      * 存储桶名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bucket;
                     bool m_bucketHasBeenSet;
 
                     /**
                      * 存储桶地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;

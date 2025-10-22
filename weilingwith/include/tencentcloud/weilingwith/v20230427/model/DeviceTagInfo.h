@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagId 标签Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTagId() const;
 
                     /**
                      * 设置标签Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tagId 标签Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTagId(const int64_t& _tagId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagName 标签名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTagName() const;
 
                     /**
                      * 设置标签名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tagName 标签名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTagName(const std::string& _tagName);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 标签Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_tagId;
                     bool m_tagIdHasBeenSet;
 
                     /**
                      * 标签名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tagName;
                     bool m_tagNameHasBeenSet;

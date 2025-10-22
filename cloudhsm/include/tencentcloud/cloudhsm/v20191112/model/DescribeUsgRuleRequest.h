@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取根据安全组Id获取安全组详情
-                     * @return SgIds 根据安全组Id获取安全组详情
+                     * 获取安全组Id列表
+                     * @return SgIds 安全组Id列表
                      * 
                      */
                     std::vector<std::string> GetSgIds() const;
 
                     /**
-                     * 设置根据安全组Id获取安全组详情
-                     * @param _sgIds 根据安全组Id获取安全组详情
+                     * 设置安全组Id列表
+                     * @param _sgIds 安全组Id列表
                      * 
                      */
                     void SetSgIds(const std::vector<std::string>& _sgIds);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 根据安全组Id获取安全组详情
+                     * 安全组Id列表
                      */
                     std::vector<std::string> m_sgIds;
                     bool m_sgIdsHasBeenSet;

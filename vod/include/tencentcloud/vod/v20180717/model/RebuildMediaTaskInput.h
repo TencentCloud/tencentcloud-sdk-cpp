@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -123,15 +123,15 @@ namespace TencentCloud
                     bool EndTimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取音画质重生模版号。
-                     * @return Definition 音画质重生模版号。
+                     * 获取音画质重生模板号。
+                     * @return Definition 音画质重生模板号。
                      * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
-                     * 设置音画质重生模版号。
-                     * @param _definition 音画质重生模版号。
+                     * 设置音画质重生模板号。
+                     * @param _definition 音画质重生模板号。
                      * 
                      */
                     void SetDefinition(const int64_t& _definition);
@@ -437,7 +437,7 @@ namespace TencentCloud
                     bool m_endTimeOffsetHasBeenSet;
 
                     /**
-                     * 音画质重生模版号。
+                     * 音画质重生模板号。
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;

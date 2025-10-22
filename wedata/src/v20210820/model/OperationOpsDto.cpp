@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ OperationOpsDto::OperationOpsDto() :
     m_resultHasBeenSet(false),
     m_resultMsgHasBeenSet(false),
     m_errorIdHasBeenSet(false),
-    m_errorDescHasBeenSet(false)
+    m_errorDescHasBeenSet(false),
+    m_asyncActionIdHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome OperationOpsDto::Deserialize(const rapidjson::Value &value)
         m_errorDescHasBeenSet = true;
     }
 
+    if (value.HasMember("AsyncActionId") && !value["AsyncActionId"].IsNull())
+    {
+        if (!value["AsyncActionId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OperationOpsDto.AsyncActionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_asyncActionId = string(value["AsyncActionId"].GetString());
+        m_asyncActionIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void OperationOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ErrorDesc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_errorDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_asyncActionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AsyncActionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_asyncActionId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void OperationOpsDto::SetErrorDesc(const string& _errorDesc)
 bool OperationOpsDto::ErrorDescHasBeenSet() const
 {
     return m_errorDescHasBeenSet;
+}
+
+string OperationOpsDto::GetAsyncActionId() const
+{
+    return m_asyncActionId;
+}
+
+void OperationOpsDto::SetAsyncActionId(const string& _asyncActionId)
+{
+    m_asyncActionId = _asyncActionId;
+    m_asyncActionIdHasBeenSet = true;
+}
+
+bool OperationOpsDto::AsyncActionIdHasBeenSet() const
+{
+    return m_asyncActionIdHasBeenSet;
 }
 

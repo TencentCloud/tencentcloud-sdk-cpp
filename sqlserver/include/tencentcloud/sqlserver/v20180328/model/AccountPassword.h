@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -88,6 +88,27 @@ namespace TencentCloud
                      */
                     bool PasswordHasBeenSet() const;
 
+                    /**
+                     * 获取加密密钥版本号，0表示不使用加密
+                     * @return EncryptedVersion 加密密钥版本号，0表示不使用加密
+                     * 
+                     */
+                    int64_t GetEncryptedVersion() const;
+
+                    /**
+                     * 设置加密密钥版本号，0表示不使用加密
+                     * @param _encryptedVersion 加密密钥版本号，0表示不使用加密
+                     * 
+                     */
+                    void SetEncryptedVersion(const int64_t& _encryptedVersion);
+
+                    /**
+                     * 判断参数 EncryptedVersion 是否已赋值
+                     * @return EncryptedVersion 是否已赋值
+                     * 
+                     */
+                    bool EncryptedVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +122,12 @@ namespace TencentCloud
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
+
+                    /**
+                     * 加密密钥版本号，0表示不使用加密
+                     */
+                    int64_t m_encryptedVersion;
+                    bool m_encryptedVersionHasBeenSet;
 
                 };
             }

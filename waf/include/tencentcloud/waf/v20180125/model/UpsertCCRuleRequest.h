@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -169,48 +169,6 @@ namespace TencentCloud
                     bool IntervalHasBeenSet() const;
 
                     /**
-                     * 获取检测Url
-                     * @return Url 检测Url
-                     * 
-                     */
-                    std::string GetUrl() const;
-
-                    /**
-                     * 设置检测Url
-                     * @param _url 检测Url
-                     * 
-                     */
-                    void SetUrl(const std::string& _url);
-
-                    /**
-                     * 判断参数 Url 是否已赋值
-                     * @return Url 是否已赋值
-                     * 
-                     */
-                    bool UrlHasBeenSet() const;
-
-                    /**
-                     * 获取匹配方法，0表示等于，1表示前缀匹配，2表示包含
-                     * @return MatchFunc 匹配方法，0表示等于，1表示前缀匹配，2表示包含
-                     * 
-                     */
-                    int64_t GetMatchFunc() const;
-
-                    /**
-                     * 设置匹配方法，0表示等于，1表示前缀匹配，2表示包含
-                     * @param _matchFunc 匹配方法，0表示等于，1表示前缀匹配，2表示包含
-                     * 
-                     */
-                    void SetMatchFunc(const int64_t& _matchFunc);
-
-                    /**
-                     * 判断参数 MatchFunc 是否已赋值
-                     * @return MatchFunc 是否已赋值
-                     * 
-                     */
-                    bool MatchFuncHasBeenSet() const;
-
-                    /**
                      * 获取动作，20表示观察，21表示人机识别，22表示拦截，23表示精准拦截，26表示精准人机识别，27表示JS校验
                      * @return ActionType 动作，20表示观察，21表示人机识别，22表示拦截，23表示精准拦截，26表示精准人机识别，27表示JS校验
                      * 
@@ -274,15 +232,57 @@ namespace TencentCloud
                     bool ValidTimeHasBeenSet() const;
 
                     /**
-                     * 获取附加参数
-                     * @return OptionsArr 附加参数
+                     * 获取检测Url
+                     * @return Url 检测Url
+                     * 
+                     */
+                    std::string GetUrl() const;
+
+                    /**
+                     * 设置检测Url
+                     * @param _url 检测Url
+                     * 
+                     */
+                    void SetUrl(const std::string& _url);
+
+                    /**
+                     * 判断参数 Url 是否已赋值
+                     * @return Url 是否已赋值
+                     * 
+                     */
+                    bool UrlHasBeenSet() const;
+
+                    /**
+                     * 获取匹配方法，0表示等于，1表示前缀匹配，2表示包含，3表示不等于，6表示后缀匹配，7表示不包含
+                     * @return MatchFunc 匹配方法，0表示等于，1表示前缀匹配，2表示包含，3表示不等于，6表示后缀匹配，7表示不包含
+                     * 
+                     */
+                    int64_t GetMatchFunc() const;
+
+                    /**
+                     * 设置匹配方法，0表示等于，1表示前缀匹配，2表示包含，3表示不等于，6表示后缀匹配，7表示不包含
+                     * @param _matchFunc 匹配方法，0表示等于，1表示前缀匹配，2表示包含，3表示不等于，6表示后缀匹配，7表示不包含
+                     * 
+                     */
+                    void SetMatchFunc(const int64_t& _matchFunc);
+
+                    /**
+                     * 判断参数 MatchFunc 是否已赋值
+                     * @return MatchFunc 是否已赋值
+                     * 
+                     */
+                    bool MatchFuncHasBeenSet() const;
+
+                    /**
+                     * 获取CC的匹配条件JSON序列化的字符串，示例：[{\"key\":\"Method\",\"args\":[\"=R0VU\"],\"match\":\"0\",\"encodeflag\":true}] Key可选值为 Method、Post、Referer、Cookie、User-Agent、CustomHeader、CaptchaRisk、CaptchaDeviceRisk、CaptchaScore match可选值为，当Key为Method的时候可选值为0（等于）、3（不等于）。 Key为Post的时候可选值为0（等于）、3（不等于），Key为Cookie的时候可选值为0（等于）、2（包含），3（不等于）、7（不包含）、 当Key为Referer的时候可选值为0（等于）、3（不等于）、1（前缀匹配）、6（后缀匹配）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为Cookie的时候可选值为0（等于）、3（不等于）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为User-Agent的时候可选值为0（等于）、3（不等于）、1（前缀匹配）、6（后缀匹配）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为CustomHeader的时候可选值为0（等于）、3（不等于）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）。 Key为IPLocation时，可选值为13（属于）、14（不属于）。 Key为CaptchaRisk时，可选值为0（等于）、3（不等于）、13（属于）、14（不属于）、12（存在）、5（不存在）。 Key为CaptchaDeviceRisk时，可选值为0（等于）、3（不等于）、13（属于）、14（不属于）、12（存在）、5（不存在）。 Key为CaptchaScore时，可选值为15（数值等于）、16（数值不等于）、17（数值大于）、18（数值小于）、19（数值大于等于）、20（数值小于等于）、12（存在）、5（不存在）。args用来表示匹配内容，需要设置encodeflag为true，当Key为Post、Cookie、CustomHeader时，用等号=来分别串接Key和Value，并分别用Base64编码，类似YWJj=YWJj。当Key为Referer、User-Agent时，用等号=来串接Value，类似=YWJj。
+                     * @return OptionsArr CC的匹配条件JSON序列化的字符串，示例：[{\"key\":\"Method\",\"args\":[\"=R0VU\"],\"match\":\"0\",\"encodeflag\":true}] Key可选值为 Method、Post、Referer、Cookie、User-Agent、CustomHeader、CaptchaRisk、CaptchaDeviceRisk、CaptchaScore match可选值为，当Key为Method的时候可选值为0（等于）、3（不等于）。 Key为Post的时候可选值为0（等于）、3（不等于），Key为Cookie的时候可选值为0（等于）、2（包含），3（不等于）、7（不包含）、 当Key为Referer的时候可选值为0（等于）、3（不等于）、1（前缀匹配）、6（后缀匹配）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为Cookie的时候可选值为0（等于）、3（不等于）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为User-Agent的时候可选值为0（等于）、3（不等于）、1（前缀匹配）、6（后缀匹配）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为CustomHeader的时候可选值为0（等于）、3（不等于）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）。 Key为IPLocation时，可选值为13（属于）、14（不属于）。 Key为CaptchaRisk时，可选值为0（等于）、3（不等于）、13（属于）、14（不属于）、12（存在）、5（不存在）。 Key为CaptchaDeviceRisk时，可选值为0（等于）、3（不等于）、13（属于）、14（不属于）、12（存在）、5（不存在）。 Key为CaptchaScore时，可选值为15（数值等于）、16（数值不等于）、17（数值大于）、18（数值小于）、19（数值大于等于）、20（数值小于等于）、12（存在）、5（不存在）。args用来表示匹配内容，需要设置encodeflag为true，当Key为Post、Cookie、CustomHeader时，用等号=来分别串接Key和Value，并分别用Base64编码，类似YWJj=YWJj。当Key为Referer、User-Agent时，用等号=来串接Value，类似=YWJj。
                      * 
                      */
                     std::string GetOptionsArr() const;
 
                     /**
-                     * 设置附加参数
-                     * @param _optionsArr 附加参数
+                     * 设置CC的匹配条件JSON序列化的字符串，示例：[{\"key\":\"Method\",\"args\":[\"=R0VU\"],\"match\":\"0\",\"encodeflag\":true}] Key可选值为 Method、Post、Referer、Cookie、User-Agent、CustomHeader、CaptchaRisk、CaptchaDeviceRisk、CaptchaScore match可选值为，当Key为Method的时候可选值为0（等于）、3（不等于）。 Key为Post的时候可选值为0（等于）、3（不等于），Key为Cookie的时候可选值为0（等于）、2（包含），3（不等于）、7（不包含）、 当Key为Referer的时候可选值为0（等于）、3（不等于）、1（前缀匹配）、6（后缀匹配）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为Cookie的时候可选值为0（等于）、3（不等于）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为User-Agent的时候可选值为0（等于）、3（不等于）、1（前缀匹配）、6（后缀匹配）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为CustomHeader的时候可选值为0（等于）、3（不等于）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）。 Key为IPLocation时，可选值为13（属于）、14（不属于）。 Key为CaptchaRisk时，可选值为0（等于）、3（不等于）、13（属于）、14（不属于）、12（存在）、5（不存在）。 Key为CaptchaDeviceRisk时，可选值为0（等于）、3（不等于）、13（属于）、14（不属于）、12（存在）、5（不存在）。 Key为CaptchaScore时，可选值为15（数值等于）、16（数值不等于）、17（数值大于）、18（数值小于）、19（数值大于等于）、20（数值小于等于）、12（存在）、5（不存在）。args用来表示匹配内容，需要设置encodeflag为true，当Key为Post、Cookie、CustomHeader时，用等号=来分别串接Key和Value，并分别用Base64编码，类似YWJj=YWJj。当Key为Referer、User-Agent时，用等号=来串接Value，类似=YWJj。
+                     * @param _optionsArr CC的匹配条件JSON序列化的字符串，示例：[{\"key\":\"Method\",\"args\":[\"=R0VU\"],\"match\":\"0\",\"encodeflag\":true}] Key可选值为 Method、Post、Referer、Cookie、User-Agent、CustomHeader、CaptchaRisk、CaptchaDeviceRisk、CaptchaScore match可选值为，当Key为Method的时候可选值为0（等于）、3（不等于）。 Key为Post的时候可选值为0（等于）、3（不等于），Key为Cookie的时候可选值为0（等于）、2（包含），3（不等于）、7（不包含）、 当Key为Referer的时候可选值为0（等于）、3（不等于）、1（前缀匹配）、6（后缀匹配）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为Cookie的时候可选值为0（等于）、3（不等于）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为User-Agent的时候可选值为0（等于）、3（不等于）、1（前缀匹配）、6（后缀匹配）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为CustomHeader的时候可选值为0（等于）、3（不等于）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）。 Key为IPLocation时，可选值为13（属于）、14（不属于）。 Key为CaptchaRisk时，可选值为0（等于）、3（不等于）、13（属于）、14（不属于）、12（存在）、5（不存在）。 Key为CaptchaDeviceRisk时，可选值为0（等于）、3（不等于）、13（属于）、14（不属于）、12（存在）、5（不存在）。 Key为CaptchaScore时，可选值为15（数值等于）、16（数值不等于）、17（数值大于）、18（数值小于）、19（数值大于等于）、20（数值小于等于）、12（存在）、5（不存在）。args用来表示匹配内容，需要设置encodeflag为true，当Key为Post、Cookie、CustomHeader时，用等号=来分别串接Key和Value，并分别用Base64编码，类似YWJj=YWJj。当Key为Referer、User-Agent时，用等号=来串接Value，类似=YWJj。
                      * 
                      */
                     void SetOptionsArr(const std::string& _optionsArr);
@@ -441,6 +441,111 @@ namespace TencentCloud
                      */
                     bool LengthHasBeenSet() const;
 
+                    /**
+                     * 获取限频方式
+                     * @return LimitMethod 限频方式
+                     * 
+                     */
+                    std::string GetLimitMethod() const;
+
+                    /**
+                     * 设置限频方式
+                     * @param _limitMethod 限频方式
+                     * 
+                     */
+                    void SetLimitMethod(const std::string& _limitMethod);
+
+                    /**
+                     * 判断参数 LimitMethod 是否已赋值
+                     * @return LimitMethod 是否已赋值
+                     * 
+                     */
+                    bool LimitMethodHasBeenSet() const;
+
+                    /**
+                     * 获取cel表达式
+                     * @return CelRule cel表达式
+                     * 
+                     */
+                    std::string GetCelRule() const;
+
+                    /**
+                     * 设置cel表达式
+                     * @param _celRule cel表达式
+                     * 
+                     */
+                    void SetCelRule(const std::string& _celRule);
+
+                    /**
+                     * 判断参数 CelRule 是否已赋值
+                     * @return CelRule 是否已赋值
+                     * 
+                     */
+                    bool CelRuleHasBeenSet() const;
+
+                    /**
+                     * 获取配置方式的逻辑操作符，and或者or
+                     * @return LogicalOp 配置方式的逻辑操作符，and或者or
+                     * 
+                     */
+                    std::string GetLogicalOp() const;
+
+                    /**
+                     * 设置配置方式的逻辑操作符，and或者or
+                     * @param _logicalOp 配置方式的逻辑操作符，and或者or
+                     * 
+                     */
+                    void SetLogicalOp(const std::string& _logicalOp);
+
+                    /**
+                     * 判断参数 LogicalOp 是否已赋值
+                     * @return LogicalOp 是否已赋值
+                     * 
+                     */
+                    bool LogicalOpHasBeenSet() const;
+
+                    /**
+                     * 获取页面ID
+                     * @return PageId 页面ID
+                     * 
+                     */
+                    std::string GetPageId() const;
+
+                    /**
+                     * 设置页面ID
+                     * @param _pageId 页面ID
+                     * 
+                     */
+                    void SetPageId(const std::string& _pageId);
+
+                    /**
+                     * 判断参数 PageId 是否已赋值
+                     * @return PageId 是否已赋值
+                     * 
+                     */
+                    bool PageIdHasBeenSet() const;
+
+                    /**
+                     * 获取动作灰度比例，默认值100
+                     * @return ActionRatio 动作灰度比例，默认值100
+                     * 
+                     */
+                    uint64_t GetActionRatio() const;
+
+                    /**
+                     * 设置动作灰度比例，默认值100
+                     * @param _actionRatio 动作灰度比例，默认值100
+                     * 
+                     */
+                    void SetActionRatio(const uint64_t& _actionRatio);
+
+                    /**
+                     * 判断参数 ActionRatio 是否已赋值
+                     * @return ActionRatio 是否已赋值
+                     * 
+                     */
+                    bool ActionRatioHasBeenSet() const;
+
                 private:
 
                     /**
@@ -480,18 +585,6 @@ namespace TencentCloud
                     bool m_intervalHasBeenSet;
 
                     /**
-                     * 检测Url
-                     */
-                    std::string m_url;
-                    bool m_urlHasBeenSet;
-
-                    /**
-                     * 匹配方法，0表示等于，1表示前缀匹配，2表示包含
-                     */
-                    int64_t m_matchFunc;
-                    bool m_matchFuncHasBeenSet;
-
-                    /**
                      * 动作，20表示观察，21表示人机识别，22表示拦截，23表示精准拦截，26表示精准人机识别，27表示JS校验
                      */
                     std::string m_actionType;
@@ -510,7 +603,19 @@ namespace TencentCloud
                     bool m_validTimeHasBeenSet;
 
                     /**
-                     * 附加参数
+                     * 检测Url
+                     */
+                    std::string m_url;
+                    bool m_urlHasBeenSet;
+
+                    /**
+                     * 匹配方法，0表示等于，1表示前缀匹配，2表示包含，3表示不等于，6表示后缀匹配，7表示不包含
+                     */
+                    int64_t m_matchFunc;
+                    bool m_matchFuncHasBeenSet;
+
+                    /**
+                     * CC的匹配条件JSON序列化的字符串，示例：[{\"key\":\"Method\",\"args\":[\"=R0VU\"],\"match\":\"0\",\"encodeflag\":true}] Key可选值为 Method、Post、Referer、Cookie、User-Agent、CustomHeader、CaptchaRisk、CaptchaDeviceRisk、CaptchaScore match可选值为，当Key为Method的时候可选值为0（等于）、3（不等于）。 Key为Post的时候可选值为0（等于）、3（不等于），Key为Cookie的时候可选值为0（等于）、2（包含），3（不等于）、7（不包含）、 当Key为Referer的时候可选值为0（等于）、3（不等于）、1（前缀匹配）、6（后缀匹配）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为Cookie的时候可选值为0（等于）、3（不等于）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为User-Agent的时候可选值为0（等于）、3（不等于）、1（前缀匹配）、6（后缀匹配）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为CustomHeader的时候可选值为0（等于）、3（不等于）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）。 Key为IPLocation时，可选值为13（属于）、14（不属于）。 Key为CaptchaRisk时，可选值为0（等于）、3（不等于）、13（属于）、14（不属于）、12（存在）、5（不存在）。 Key为CaptchaDeviceRisk时，可选值为0（等于）、3（不等于）、13（属于）、14（不属于）、12（存在）、5（不存在）。 Key为CaptchaScore时，可选值为15（数值等于）、16（数值不等于）、17（数值大于）、18（数值小于）、19（数值大于等于）、20（数值小于等于）、12（存在）、5（不存在）。args用来表示匹配内容，需要设置encodeflag为true，当Key为Post、Cookie、CustomHeader时，用等号=来分别串接Key和Value，并分别用Base64编码，类似YWJj=YWJj。当Key为Referer、User-Agent时，用等号=来串接Value，类似=YWJj。
                      */
                     std::string m_optionsArr;
                     bool m_optionsArrHasBeenSet;
@@ -556,6 +661,36 @@ namespace TencentCloud
                      */
                     uint64_t m_length;
                     bool m_lengthHasBeenSet;
+
+                    /**
+                     * 限频方式
+                     */
+                    std::string m_limitMethod;
+                    bool m_limitMethodHasBeenSet;
+
+                    /**
+                     * cel表达式
+                     */
+                    std::string m_celRule;
+                    bool m_celRuleHasBeenSet;
+
+                    /**
+                     * 配置方式的逻辑操作符，and或者or
+                     */
+                    std::string m_logicalOp;
+                    bool m_logicalOpHasBeenSet;
+
+                    /**
+                     * 页面ID
+                     */
+                    std::string m_pageId;
+                    bool m_pageIdHasBeenSet;
+
+                    /**
+                     * 动作灰度比例，默认值100
+                     */
+                    uint64_t m_actionRatio;
+                    bool m_actionRatioHasBeenSet;
 
                 };
             }

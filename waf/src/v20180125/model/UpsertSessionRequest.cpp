@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,8 @@ UpsertSessionRequest::UpsertSessionRequest() :
     m_endOffsetHasBeenSet(false),
     m_editionHasBeenSet(false),
     m_sessionNameHasBeenSet(false),
-    m_sessionIDHasBeenSet(false)
+    m_sessionIDHasBeenSet(false),
+    m_keyHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,14 @@ string UpsertSessionRequest::ToJsonString() const
         string key = "SessionID";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sessionID, allocator);
+    }
+
+    if (m_keyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Key";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_key.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -289,6 +298,22 @@ void UpsertSessionRequest::SetSessionID(const int64_t& _sessionID)
 bool UpsertSessionRequest::SessionIDHasBeenSet() const
 {
     return m_sessionIDHasBeenSet;
+}
+
+string UpsertSessionRequest::GetKey() const
+{
+    return m_key;
+}
+
+void UpsertSessionRequest::SetKey(const string& _key)
+{
+    m_key = _key;
+    m_keyHasBeenSet = true;
+}
+
+bool UpsertSessionRequest::KeyHasBeenSet() const
+{
+    return m_keyHasBeenSet;
 }
 
 

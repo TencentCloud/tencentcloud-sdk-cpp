@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,15 @@ Pod::Pod() :
     m_createTimeHasBeenSet(false),
     m_containersHasBeenSet(false),
     m_containerInfosHasBeenSet(false),
-    m_crossTenantENIInfoHasBeenSet(false)
+    m_crossTenantENIInfoHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_startScheduleTimeHasBeenSet(false),
+    m_messageHasBeenSet(false),
+    m_nodeIPHasBeenSet(false),
+    m_nodeIdHasBeenSet(false),
+    m_resourceGroupIdHasBeenSet(false),
+    m_resourceGroupNameHasBeenSet(false),
+    m_resourceInfoHasBeenSet(false)
 {
 }
 
@@ -152,6 +160,93 @@ CoreInternalOutcome Pod::Deserialize(const rapidjson::Value &value)
         m_crossTenantENIInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Pod.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("StartScheduleTime") && !value["StartScheduleTime"].IsNull())
+    {
+        if (!value["StartScheduleTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Pod.StartScheduleTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_startScheduleTime = string(value["StartScheduleTime"].GetString());
+        m_startScheduleTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Message") && !value["Message"].IsNull())
+    {
+        if (!value["Message"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Pod.Message` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_message = string(value["Message"].GetString());
+        m_messageHasBeenSet = true;
+    }
+
+    if (value.HasMember("NodeIP") && !value["NodeIP"].IsNull())
+    {
+        if (!value["NodeIP"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Pod.NodeIP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeIP = string(value["NodeIP"].GetString());
+        m_nodeIPHasBeenSet = true;
+    }
+
+    if (value.HasMember("NodeId") && !value["NodeId"].IsNull())
+    {
+        if (!value["NodeId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Pod.NodeId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeId = string(value["NodeId"].GetString());
+        m_nodeIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResourceGroupId") && !value["ResourceGroupId"].IsNull())
+    {
+        if (!value["ResourceGroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Pod.ResourceGroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceGroupId = string(value["ResourceGroupId"].GetString());
+        m_resourceGroupIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResourceGroupName") && !value["ResourceGroupName"].IsNull())
+    {
+        if (!value["ResourceGroupName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Pod.ResourceGroupName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceGroupName = string(value["ResourceGroupName"].GetString());
+        m_resourceGroupNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResourceInfo") && !value["ResourceInfo"].IsNull())
+    {
+        if (!value["ResourceInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Pod.ResourceInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_resourceInfo.Deserialize(value["ResourceInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_resourceInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -238,6 +333,71 @@ void Pod::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_crossTenantENIInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startScheduleTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartScheduleTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startScheduleTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_messageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Message";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeIP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeIP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceGroupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceGroupName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_resourceInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -385,5 +545,133 @@ void Pod::SetCrossTenantENIInfo(const CrossTenantENIInfo& _crossTenantENIInfo)
 bool Pod::CrossTenantENIInfoHasBeenSet() const
 {
     return m_crossTenantENIInfoHasBeenSet;
+}
+
+string Pod::GetStatus() const
+{
+    return m_status;
+}
+
+void Pod::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool Pod::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string Pod::GetStartScheduleTime() const
+{
+    return m_startScheduleTime;
+}
+
+void Pod::SetStartScheduleTime(const string& _startScheduleTime)
+{
+    m_startScheduleTime = _startScheduleTime;
+    m_startScheduleTimeHasBeenSet = true;
+}
+
+bool Pod::StartScheduleTimeHasBeenSet() const
+{
+    return m_startScheduleTimeHasBeenSet;
+}
+
+string Pod::GetMessage() const
+{
+    return m_message;
+}
+
+void Pod::SetMessage(const string& _message)
+{
+    m_message = _message;
+    m_messageHasBeenSet = true;
+}
+
+bool Pod::MessageHasBeenSet() const
+{
+    return m_messageHasBeenSet;
+}
+
+string Pod::GetNodeIP() const
+{
+    return m_nodeIP;
+}
+
+void Pod::SetNodeIP(const string& _nodeIP)
+{
+    m_nodeIP = _nodeIP;
+    m_nodeIPHasBeenSet = true;
+}
+
+bool Pod::NodeIPHasBeenSet() const
+{
+    return m_nodeIPHasBeenSet;
+}
+
+string Pod::GetNodeId() const
+{
+    return m_nodeId;
+}
+
+void Pod::SetNodeId(const string& _nodeId)
+{
+    m_nodeId = _nodeId;
+    m_nodeIdHasBeenSet = true;
+}
+
+bool Pod::NodeIdHasBeenSet() const
+{
+    return m_nodeIdHasBeenSet;
+}
+
+string Pod::GetResourceGroupId() const
+{
+    return m_resourceGroupId;
+}
+
+void Pod::SetResourceGroupId(const string& _resourceGroupId)
+{
+    m_resourceGroupId = _resourceGroupId;
+    m_resourceGroupIdHasBeenSet = true;
+}
+
+bool Pod::ResourceGroupIdHasBeenSet() const
+{
+    return m_resourceGroupIdHasBeenSet;
+}
+
+string Pod::GetResourceGroupName() const
+{
+    return m_resourceGroupName;
+}
+
+void Pod::SetResourceGroupName(const string& _resourceGroupName)
+{
+    m_resourceGroupName = _resourceGroupName;
+    m_resourceGroupNameHasBeenSet = true;
+}
+
+bool Pod::ResourceGroupNameHasBeenSet() const
+{
+    return m_resourceGroupNameHasBeenSet;
+}
+
+ResourceInfo Pod::GetResourceInfo() const
+{
+    return m_resourceInfo;
+}
+
+void Pod::SetResourceInfo(const ResourceInfo& _resourceInfo)
+{
+    m_resourceInfo = _resourceInfo;
+    m_resourceInfoHasBeenSet = true;
+}
+
+bool Pod::ResourceInfoHasBeenSet() const
+{
+    return m_resourceInfoHasBeenSet;
 }
 

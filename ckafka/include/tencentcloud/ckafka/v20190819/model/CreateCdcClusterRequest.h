@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取cdc集群的总带宽
-                     * @return Bandwidth cdc集群的总带宽
+                     * 获取实例带宽,单位MB/s; 最小值:20MB/s, 高级版最大值:360MB/s,专业版最大值:100000MB/s  标准版固定带宽规格: 40MB/s, 100MB/s, 150MB/s
+                     * @return Bandwidth 实例带宽,单位MB/s; 最小值:20MB/s, 高级版最大值:360MB/s,专业版最大值:100000MB/s  标准版固定带宽规格: 40MB/s, 100MB/s, 150MB/s
                      * 
                      */
                     int64_t GetBandwidth() const;
 
                     /**
-                     * 设置cdc集群的总带宽
-                     * @param _bandwidth cdc集群的总带宽
+                     * 设置实例带宽,单位MB/s; 最小值:20MB/s, 高级版最大值:360MB/s,专业版最大值:100000MB/s  标准版固定带宽规格: 40MB/s, 100MB/s, 150MB/s
+                     * @param _bandwidth 实例带宽,单位MB/s; 最小值:20MB/s, 高级版最大值:360MB/s,专业版最大值:100000MB/s  标准版固定带宽规格: 40MB/s, 100MB/s, 150MB/s
                      * 
                      */
                     void SetBandwidth(const int64_t& _bandwidth);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool DiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取数据盘类型
-                     * @return DiskType 数据盘类型
+                     * 获取ckafka集群实例磁盘类型
+                     * @return DiskType ckafka集群实例磁盘类型
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置数据盘类型
-                     * @param _diskType 数据盘类型
+                     * 设置ckafka集群实例磁盘类型
+                     * @param _diskType ckafka集群实例磁盘类型
                      * 
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -237,7 +237,7 @@ namespace TencentCloud
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * cdc集群的总带宽
+                     * 实例带宽,单位MB/s; 最小值:20MB/s, 高级版最大值:360MB/s,专业版最大值:100000MB/s  标准版固定带宽规格: 40MB/s, 100MB/s, 150MB/s
                      */
                     int64_t m_bandwidth;
                     bool m_bandwidthHasBeenSet;
@@ -249,7 +249,7 @@ namespace TencentCloud
                     bool m_diskSizeHasBeenSet;
 
                     /**
-                     * 数据盘类型
+                     * ckafka集群实例磁盘类型
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;

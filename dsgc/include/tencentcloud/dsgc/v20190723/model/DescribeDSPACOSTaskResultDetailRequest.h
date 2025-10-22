@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,27 +85,6 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取扫描Bucket结果ID
-                     * @return BucketResultId 扫描Bucket结果ID
-                     * 
-                     */
-                    int64_t GetBucketResultId() const;
-
-                    /**
-                     * 设置扫描Bucket结果ID
-                     * @param _bucketResultId 扫描Bucket结果ID
-                     * 
-                     */
-                    void SetBucketResultId(const int64_t& _bucketResultId);
-
-                    /**
-                     * 判断参数 BucketResultId 是否已赋值
-                     * @return BucketResultId 是否已赋值
-                     * 
-                     */
-                    bool BucketResultIdHasBeenSet() const;
-
-                    /**
                      * 获取合规组ID
                      * @return ComplianceId 合规组ID
                      * 
@@ -125,6 +104,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ComplianceIdHasBeenSet() const;
+
+                    /**
+                     * 获取扫描Bucket结果ID
+                     * @return BucketResultId 扫描Bucket结果ID
+                     * @deprecated
+                     */
+                    int64_t GetBucketResultId() const;
+
+                    /**
+                     * 设置扫描Bucket结果ID
+                     * @param _bucketResultId 扫描Bucket结果ID
+                     * @deprecated
+                     */
+                    void SetBucketResultId(const int64_t& _bucketResultId);
+
+                    /**
+                     * 判断参数 BucketResultId 是否已赋值
+                     * @return BucketResultId 是否已赋值
+                     * @deprecated
+                     */
+                    bool BucketResultIdHasBeenSet() const;
 
                     /**
                      * 获取文件名
@@ -273,6 +273,27 @@ namespace TencentCloud
                      */
                     bool CategoryIdListHasBeenSet() const;
 
+                    /**
+                     * 获取扫描结果id
+                     * @return ScanResultId 扫描结果id
+                     * 
+                     */
+                    int64_t GetScanResultId() const;
+
+                    /**
+                     * 设置扫描结果id
+                     * @param _scanResultId 扫描结果id
+                     * 
+                     */
+                    void SetScanResultId(const int64_t& _scanResultId);
+
+                    /**
+                     * 判断参数 ScanResultId 是否已赋值
+                     * @return ScanResultId 是否已赋值
+                     * 
+                     */
+                    bool ScanResultIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -288,16 +309,16 @@ namespace TencentCloud
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 扫描Bucket结果ID
-                     */
-                    int64_t m_bucketResultId;
-                    bool m_bucketResultIdHasBeenSet;
-
-                    /**
                      * 合规组ID
                      */
                     int64_t m_complianceId;
                     bool m_complianceIdHasBeenSet;
+
+                    /**
+                     * 扫描Bucket结果ID
+                     */
+                    int64_t m_bucketResultId;
+                    bool m_bucketResultIdHasBeenSet;
 
                     /**
                      * 文件名
@@ -340,6 +361,12 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_categoryIdList;
                     bool m_categoryIdListHasBeenSet;
+
+                    /**
+                     * 扫描结果id
+                     */
+                    int64_t m_scanResultId;
+                    bool m_scanResultIdHasBeenSet;
 
                 };
             }

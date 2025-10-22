@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取NFS挂载Server
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Server NFS挂载Server
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServer() const;
 
                     /**
                      * 设置NFS挂载Server
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _server NFS挂载Server
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServer(const std::string& _server);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Server路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Path Server路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置Server路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _path Server路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPath(const std::string& _path);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否只读
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReadOnly 是否只读
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetReadOnly() const;
 
                     /**
                      * 设置是否只读
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _readOnly 是否只读
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReadOnly(const bool& _readOnly);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取secret名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecretName secret名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSecretName() const;
 
                     /**
                      * 设置secret名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _secretName secret名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecretName(const std::string& _secretName);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取临时目录
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableEmptyDirVolume 临时目录
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableEmptyDirVolume() const;
 
                     /**
                      * 设置临时目录
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableEmptyDirVolume 临时目录
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableEmptyDirVolume(const bool& _enableEmptyDirVolume);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * NFS挂载Server
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_server;
                     bool m_serverHasBeenSet;
 
                     /**
                      * Server路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
 
                     /**
                      * 是否只读
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_readOnly;
                     bool m_readOnlyHasBeenSet;
 
                     /**
                      * secret名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_secretName;
                     bool m_secretNameHasBeenSet;
 
                     /**
                      * 临时目录
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableEmptyDirVolume;
                     bool m_enableEmptyDirVolumeHasBeenSet;

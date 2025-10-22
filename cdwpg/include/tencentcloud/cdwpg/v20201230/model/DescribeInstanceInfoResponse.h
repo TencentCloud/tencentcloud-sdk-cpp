@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取1
-                     * @return SimpleInstanceInfo 1
+                     * 获取集群描述信息
+                     * @return SimpleInstanceInfo 集群描述信息
                      * 
                      */
                     SimpleInstanceInfo GetSimpleInstanceInfo() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool SimpleInstanceInfoHasBeenSet() const;
 
                     /**
-                     * 获取1
-                     * @return ErrorMsg 1
+                     * 获取错误信息
+                     * @return ErrorMsg 错误信息
                      * 
                      */
                     std::string GetErrorMsg() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 1
+                     * 集群描述信息
                      */
                     SimpleInstanceInfo m_simpleInstanceInfo;
                     bool m_simpleInstanceInfoHasBeenSet;
 
                     /**
-                     * 1
+                     * 错误信息
                      */
                     std::string m_errorMsg;
                     bool m_errorMsgHasBeenSet;

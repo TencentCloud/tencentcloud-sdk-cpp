@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取部署好的服务Id
-                     * @return Model 部署好的服务Id
+                     * 获取对话的模型服务组ID
+                     * @return Model 对话的模型服务组ID
                      * 
                      */
                     std::string GetModel() const;
@@ -75,9 +75,7 @@ namespace TencentCloud
 
                     /**
                      * 获取会话Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 会话Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetId() const;
@@ -91,9 +89,7 @@ namespace TencentCloud
 
                     /**
                      * 获取token统计
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Usage token统计
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Usage GetUsage() const;
@@ -108,7 +104,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 部署好的服务Id
+                     * 对话的模型服务组ID
                      */
                     std::string m_model;
                     bool m_modelHasBeenSet;
@@ -121,14 +117,12 @@ namespace TencentCloud
 
                     /**
                      * 会话Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * token统计
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Usage m_usage;
                     bool m_usageHasBeenSet;

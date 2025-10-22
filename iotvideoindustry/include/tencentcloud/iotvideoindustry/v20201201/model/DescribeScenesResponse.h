@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取场景总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 场景总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotal() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取场景列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return List 场景列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SceneItem> GetList() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 场景总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
                      * 场景列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SceneItem> m_list;
                     bool m_listHasBeenSet;

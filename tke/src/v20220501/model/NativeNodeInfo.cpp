@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,15 +34,22 @@ NativeNodeInfo::NativeNodeInfo() :
     m_renewFlagHasBeenSet(false),
     m_payModeHasBeenSet(false),
     m_memoryHasBeenSet(false),
+    m_systemDiskHasBeenSet(false),
     m_internetAccessibleHasBeenSet(false),
     m_instanceFamilyHasBeenSet(false),
     m_lanIpHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_expiredTimeHasBeenSet(false),
+    m_wanIpHasBeenSet(false),
+    m_keyIdsHasBeenSet(false),
+    m_gPUParamsHasBeenSet(false),
+    m_dataDisksHasBeenSet(false),
     m_securityGroupIDsHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_osImageHasBeenSet(false)
+    m_osImageHasBeenSet(false),
+    m_machineTypeHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -181,6 +188,23 @@ CoreInternalOutcome NativeNodeInfo::Deserialize(const rapidjson::Value &value)
         m_memoryHasBeenSet = true;
     }
 
+    if (value.HasMember("SystemDisk") && !value["SystemDisk"].IsNull())
+    {
+        if (!value["SystemDisk"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `NativeNodeInfo.SystemDisk` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_systemDisk.Deserialize(value["SystemDisk"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_systemDiskHasBeenSet = true;
+    }
+
     if (value.HasMember("InternetAccessible") && !value["InternetAccessible"].IsNull())
     {
         if (!value["InternetAccessible"].IsObject())
@@ -238,6 +262,66 @@ CoreInternalOutcome NativeNodeInfo::Deserialize(const rapidjson::Value &value)
         m_expiredTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("WanIp") && !value["WanIp"].IsNull())
+    {
+        if (!value["WanIp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NativeNodeInfo.WanIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_wanIp = string(value["WanIp"].GetString());
+        m_wanIpHasBeenSet = true;
+    }
+
+    if (value.HasMember("KeyIds") && !value["KeyIds"].IsNull())
+    {
+        if (!value["KeyIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `NativeNodeInfo.KeyIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["KeyIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_keyIds.push_back((*itr).GetString());
+        }
+        m_keyIdsHasBeenSet = true;
+    }
+
+    if (value.HasMember("GPUParams") && !value["GPUParams"].IsNull())
+    {
+        if (!value["GPUParams"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `NativeNodeInfo.GPUParams` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_gPUParams.Deserialize(value["GPUParams"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_gPUParamsHasBeenSet = true;
+    }
+
+    if (value.HasMember("DataDisks") && !value["DataDisks"].IsNull())
+    {
+        if (!value["DataDisks"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `NativeNodeInfo.DataDisks` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DataDisks"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DataDisk item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_dataDisks.push_back(item);
+        }
+        m_dataDisksHasBeenSet = true;
+    }
+
     if (value.HasMember("SecurityGroupIDs") && !value["SecurityGroupIDs"].IsNull())
     {
         if (!value["SecurityGroupIDs"].IsArray())
@@ -279,6 +363,26 @@ CoreInternalOutcome NativeNodeInfo::Deserialize(const rapidjson::Value &value)
         }
         m_osImage = string(value["OsImage"].GetString());
         m_osImageHasBeenSet = true;
+    }
+
+    if (value.HasMember("MachineType") && !value["MachineType"].IsNull())
+    {
+        if (!value["MachineType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NativeNodeInfo.MachineType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_machineType = string(value["MachineType"].GetString());
+        m_machineTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NativeNodeInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
     }
 
 
@@ -392,6 +496,15 @@ void NativeNodeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, m_memory, allocator);
     }
 
+    if (m_systemDiskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SystemDisk";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_systemDisk.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_internetAccessibleHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -433,6 +546,51 @@ void NativeNodeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, rapidjson::Value(m_expiredTime.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_wanIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WanIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_wanIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_keyIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeyIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_keyIds.begin(); itr != m_keyIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_gPUParamsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GPUParams";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_gPUParams.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_dataDisksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataDisks";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dataDisks.begin(); itr != m_dataDisks.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_securityGroupIDsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -468,6 +626,22 @@ void NativeNodeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "OsImage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_osImage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_machineTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -681,6 +855,22 @@ bool NativeNodeInfo::MemoryHasBeenSet() const
     return m_memoryHasBeenSet;
 }
 
+Disk NativeNodeInfo::GetSystemDisk() const
+{
+    return m_systemDisk;
+}
+
+void NativeNodeInfo::SetSystemDisk(const Disk& _systemDisk)
+{
+    m_systemDisk = _systemDisk;
+    m_systemDiskHasBeenSet = true;
+}
+
+bool NativeNodeInfo::SystemDiskHasBeenSet() const
+{
+    return m_systemDiskHasBeenSet;
+}
+
 InternetAccessible NativeNodeInfo::GetInternetAccessible() const
 {
     return m_internetAccessible;
@@ -761,6 +951,70 @@ bool NativeNodeInfo::ExpiredTimeHasBeenSet() const
     return m_expiredTimeHasBeenSet;
 }
 
+string NativeNodeInfo::GetWanIp() const
+{
+    return m_wanIp;
+}
+
+void NativeNodeInfo::SetWanIp(const string& _wanIp)
+{
+    m_wanIp = _wanIp;
+    m_wanIpHasBeenSet = true;
+}
+
+bool NativeNodeInfo::WanIpHasBeenSet() const
+{
+    return m_wanIpHasBeenSet;
+}
+
+vector<string> NativeNodeInfo::GetKeyIds() const
+{
+    return m_keyIds;
+}
+
+void NativeNodeInfo::SetKeyIds(const vector<string>& _keyIds)
+{
+    m_keyIds = _keyIds;
+    m_keyIdsHasBeenSet = true;
+}
+
+bool NativeNodeInfo::KeyIdsHasBeenSet() const
+{
+    return m_keyIdsHasBeenSet;
+}
+
+GPUParams NativeNodeInfo::GetGPUParams() const
+{
+    return m_gPUParams;
+}
+
+void NativeNodeInfo::SetGPUParams(const GPUParams& _gPUParams)
+{
+    m_gPUParams = _gPUParams;
+    m_gPUParamsHasBeenSet = true;
+}
+
+bool NativeNodeInfo::GPUParamsHasBeenSet() const
+{
+    return m_gPUParamsHasBeenSet;
+}
+
+vector<DataDisk> NativeNodeInfo::GetDataDisks() const
+{
+    return m_dataDisks;
+}
+
+void NativeNodeInfo::SetDataDisks(const vector<DataDisk>& _dataDisks)
+{
+    m_dataDisks = _dataDisks;
+    m_dataDisksHasBeenSet = true;
+}
+
+bool NativeNodeInfo::DataDisksHasBeenSet() const
+{
+    return m_dataDisksHasBeenSet;
+}
+
 vector<string> NativeNodeInfo::GetSecurityGroupIDs() const
 {
     return m_securityGroupIDs;
@@ -823,5 +1077,37 @@ void NativeNodeInfo::SetOsImage(const string& _osImage)
 bool NativeNodeInfo::OsImageHasBeenSet() const
 {
     return m_osImageHasBeenSet;
+}
+
+string NativeNodeInfo::GetMachineType() const
+{
+    return m_machineType;
+}
+
+void NativeNodeInfo::SetMachineType(const string& _machineType)
+{
+    m_machineType = _machineType;
+    m_machineTypeHasBeenSet = true;
+}
+
+bool NativeNodeInfo::MachineTypeHasBeenSet() const
+{
+    return m_machineTypeHasBeenSet;
+}
+
+string NativeNodeInfo::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void NativeNodeInfo::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool NativeNodeInfo::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 

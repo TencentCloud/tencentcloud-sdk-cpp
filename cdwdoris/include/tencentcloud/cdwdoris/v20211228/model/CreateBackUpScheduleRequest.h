@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@
 #include <tencentcloud/cdwdoris/v20211228/model/DorisSourceInfo.h>
 #include <tencentcloud/cdwdoris/v20211228/model/CosSourceInfo.h>
 #include <tencentcloud/cdwdoris/v20211228/model/ScheduleInfo.h>
+#include <tencentcloud/cdwdoris/v20211228/model/SnapshotRemainPolicy.h>
 
 
 namespace TencentCloud
@@ -183,55 +184,55 @@ namespace TencentCloud
                     /**
                      * 获取0为默认。1时是对远端的doris进行备份，不周期，一次性
                      * @return BackupType 0为默认。1时是对远端的doris进行备份，不周期，一次性
-                     * 
+                     * @deprecated
                      */
                     int64_t GetBackupType() const;
 
                     /**
                      * 设置0为默认。1时是对远端的doris进行备份，不周期，一次性
                      * @param _backupType 0为默认。1时是对远端的doris进行备份，不周期，一次性
-                     * 
+                     * @deprecated
                      */
                     void SetBackupType(const int64_t& _backupType);
 
                     /**
                      * 判断参数 BackupType 是否已赋值
                      * @return BackupType 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool BackupTypeHasBeenSet() const;
 
                     /**
                      * 获取远端doris集群的连接信息
                      * @return DorisSourceInfo 远端doris集群的连接信息
-                     * 
+                     * @deprecated
                      */
                     DorisSourceInfo GetDorisSourceInfo() const;
 
                     /**
                      * 设置远端doris集群的连接信息
                      * @param _dorisSourceInfo 远端doris集群的连接信息
-                     * 
+                     * @deprecated
                      */
                     void SetDorisSourceInfo(const DorisSourceInfo& _dorisSourceInfo);
 
                     /**
                      * 判断参数 DorisSourceInfo 是否已赋值
                      * @return DorisSourceInfo 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DorisSourceInfoHasBeenSet() const;
 
                     /**
-                     * 获取0为默认。1时是一次性备份。2时是远端备份
-                     * @return BackupTimeType 0为默认。1时是一次性备份。2时是远端备份
+                     * 获取0为周期备份。1时是立即备份。3时是定时备份。
+                     * @return BackupTimeType 0为周期备份。1时是立即备份。3时是定时备份。
                      * 
                      */
                     int64_t GetBackupTimeType() const;
 
                     /**
-                     * 设置0为默认。1时是一次性备份。2时是远端备份
-                     * @param _backupTimeType 0为默认。1时是一次性备份。2时是远端备份
+                     * 设置0为周期备份。1时是立即备份。3时是定时备份。
+                     * @param _backupTimeType 0为周期备份。1时是立即备份。3时是定时备份。
                      * 
                      */
                     void SetBackupTimeType(const int64_t& _backupTimeType);
@@ -246,63 +247,63 @@ namespace TencentCloud
                     /**
                      * 获取0为默认。1时是备份完成后立即恢复
                      * @return RestoreType 0为默认。1时是备份完成后立即恢复
-                     * 
+                     * @deprecated
                      */
                     int64_t GetRestoreType() const;
 
                     /**
                      * 设置0为默认。1时是备份完成后立即恢复
                      * @param _restoreType 0为默认。1时是备份完成后立即恢复
-                     * 
+                     * @deprecated
                      */
                     void SetRestoreType(const int64_t& _restoreType);
 
                     /**
                      * 判断参数 RestoreType 是否已赋值
                      * @return RestoreType 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool RestoreTypeHasBeenSet() const;
 
                     /**
                      * 获取0为默认。1时是提供自定义的secret连接cos
                      * @return AuthType 0为默认。1时是提供自定义的secret连接cos
-                     * 
+                     * @deprecated
                      */
                     int64_t GetAuthType() const;
 
                     /**
                      * 设置0为默认。1时是提供自定义的secret连接cos
                      * @param _authType 0为默认。1时是提供自定义的secret连接cos
-                     * 
+                     * @deprecated
                      */
                     void SetAuthType(const int64_t& _authType);
 
                     /**
                      * 判断参数 AuthType 是否已赋值
                      * @return AuthType 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AuthTypeHasBeenSet() const;
 
                     /**
                      * 获取cos认证的信息
                      * @return CosSourceInfo cos认证的信息
-                     * 
+                     * @deprecated
                      */
                     CosSourceInfo GetCosSourceInfo() const;
 
                     /**
                      * 设置cos认证的信息
                      * @param _cosSourceInfo cos认证的信息
-                     * 
+                     * @deprecated
                      */
                     void SetCosSourceInfo(const CosSourceInfo& _cosSourceInfo);
 
                     /**
                      * 判断参数 CosSourceInfo 是否已赋值
                      * @return CosSourceInfo 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool CosSourceInfoHasBeenSet() const;
 
@@ -402,6 +403,48 @@ namespace TencentCloud
                      */
                     bool CosBucketHasBeenSet() const;
 
+                    /**
+                     * 获取快照保留策略
+                     * @return SnapshotRemainPolicy 快照保留策略
+                     * 
+                     */
+                    SnapshotRemainPolicy GetSnapshotRemainPolicy() const;
+
+                    /**
+                     * 设置快照保留策略
+                     * @param _snapshotRemainPolicy 快照保留策略
+                     * 
+                     */
+                    void SetSnapshotRemainPolicy(const SnapshotRemainPolicy& _snapshotRemainPolicy);
+
+                    /**
+                     * 判断参数 SnapshotRemainPolicy 是否已赋值
+                     * @return SnapshotRemainPolicy 是否已赋值
+                     * 
+                     */
+                    bool SnapshotRemainPolicyHasBeenSet() const;
+
+                    /**
+                     * 获取备份数据所在地域，当前地域应该为空
+                     * @return DataRemoteRegion 备份数据所在地域，当前地域应该为空
+                     * 
+                     */
+                    std::string GetDataRemoteRegion() const;
+
+                    /**
+                     * 设置备份数据所在地域，当前地域应该为空
+                     * @param _dataRemoteRegion 备份数据所在地域，当前地域应该为空
+                     * 
+                     */
+                    void SetDataRemoteRegion(const std::string& _dataRemoteRegion);
+
+                    /**
+                     * 判断参数 DataRemoteRegion 是否已赋值
+                     * @return DataRemoteRegion 是否已赋值
+                     * 
+                     */
+                    bool DataRemoteRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -455,7 +498,7 @@ namespace TencentCloud
                     bool m_dorisSourceInfoHasBeenSet;
 
                     /**
-                     * 0为默认。1时是一次性备份。2时是远端备份
+                     * 0为周期备份。1时是立即备份。3时是定时备份。
                      */
                     int64_t m_backupTimeType;
                     bool m_backupTimeTypeHasBeenSet;
@@ -504,6 +547,18 @@ namespace TencentCloud
                      */
                     std::string m_cosBucket;
                     bool m_cosBucketHasBeenSet;
+
+                    /**
+                     * 快照保留策略
+                     */
+                    SnapshotRemainPolicy m_snapshotRemainPolicy;
+                    bool m_snapshotRemainPolicyHasBeenSet;
+
+                    /**
+                     * 备份数据所在地域，当前地域应该为空
+                     */
+                    std::string m_dataRemoteRegion;
+                    bool m_dataRemoteRegionHasBeenSet;
 
                 };
             }

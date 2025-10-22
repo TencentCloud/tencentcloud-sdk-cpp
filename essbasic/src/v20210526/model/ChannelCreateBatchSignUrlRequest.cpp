@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,10 +32,15 @@ ChannelCreateBatchSignUrlRequest::ChannelCreateBatchSignUrlRequest() :
     m_notifyTypeHasBeenSet(false),
     m_flowIdsHasBeenSet(false),
     m_organizationNameHasBeenSet(false),
+    m_signatureTypesHasBeenSet(false),
     m_jumpToDetailHasBeenSet(false),
     m_flowBatchUrlInfoHasBeenSet(false),
     m_openIdHasBeenSet(false),
-    m_organizationOpenIdHasBeenSet(false)
+    m_organizationOpenIdHasBeenSet(false),
+    m_autoJumpBackHasBeenSet(false),
+    m_urlUseEnvHasBeenSet(false),
+    m_canBatchRejectHasBeenSet(false),
+    m_canSkipReadFlowHasBeenSet(false)
 {
 }
 
@@ -125,6 +130,19 @@ string ChannelCreateBatchSignUrlRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_organizationName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_signatureTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignatureTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_signatureTypes.begin(); itr != m_signatureTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
     if (m_jumpToDetailHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -156,6 +174,38 @@ string ChannelCreateBatchSignUrlRequest::ToJsonString() const
         string key = "OrganizationOpenId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_organizationOpenId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoJumpBackHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoJumpBack";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoJumpBack, allocator);
+    }
+
+    if (m_urlUseEnvHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UrlUseEnv";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_urlUseEnv.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_canBatchRejectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CanBatchReject";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_canBatchReject, allocator);
+    }
+
+    if (m_canSkipReadFlowHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CanSkipReadFlow";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_canSkipReadFlow, allocator);
     }
 
 
@@ -310,6 +360,22 @@ bool ChannelCreateBatchSignUrlRequest::OrganizationNameHasBeenSet() const
     return m_organizationNameHasBeenSet;
 }
 
+vector<int64_t> ChannelCreateBatchSignUrlRequest::GetSignatureTypes() const
+{
+    return m_signatureTypes;
+}
+
+void ChannelCreateBatchSignUrlRequest::SetSignatureTypes(const vector<int64_t>& _signatureTypes)
+{
+    m_signatureTypes = _signatureTypes;
+    m_signatureTypesHasBeenSet = true;
+}
+
+bool ChannelCreateBatchSignUrlRequest::SignatureTypesHasBeenSet() const
+{
+    return m_signatureTypesHasBeenSet;
+}
+
 bool ChannelCreateBatchSignUrlRequest::GetJumpToDetail() const
 {
     return m_jumpToDetail;
@@ -372,6 +438,70 @@ void ChannelCreateBatchSignUrlRequest::SetOrganizationOpenId(const string& _orga
 bool ChannelCreateBatchSignUrlRequest::OrganizationOpenIdHasBeenSet() const
 {
     return m_organizationOpenIdHasBeenSet;
+}
+
+bool ChannelCreateBatchSignUrlRequest::GetAutoJumpBack() const
+{
+    return m_autoJumpBack;
+}
+
+void ChannelCreateBatchSignUrlRequest::SetAutoJumpBack(const bool& _autoJumpBack)
+{
+    m_autoJumpBack = _autoJumpBack;
+    m_autoJumpBackHasBeenSet = true;
+}
+
+bool ChannelCreateBatchSignUrlRequest::AutoJumpBackHasBeenSet() const
+{
+    return m_autoJumpBackHasBeenSet;
+}
+
+string ChannelCreateBatchSignUrlRequest::GetUrlUseEnv() const
+{
+    return m_urlUseEnv;
+}
+
+void ChannelCreateBatchSignUrlRequest::SetUrlUseEnv(const string& _urlUseEnv)
+{
+    m_urlUseEnv = _urlUseEnv;
+    m_urlUseEnvHasBeenSet = true;
+}
+
+bool ChannelCreateBatchSignUrlRequest::UrlUseEnvHasBeenSet() const
+{
+    return m_urlUseEnvHasBeenSet;
+}
+
+bool ChannelCreateBatchSignUrlRequest::GetCanBatchReject() const
+{
+    return m_canBatchReject;
+}
+
+void ChannelCreateBatchSignUrlRequest::SetCanBatchReject(const bool& _canBatchReject)
+{
+    m_canBatchReject = _canBatchReject;
+    m_canBatchRejectHasBeenSet = true;
+}
+
+bool ChannelCreateBatchSignUrlRequest::CanBatchRejectHasBeenSet() const
+{
+    return m_canBatchRejectHasBeenSet;
+}
+
+bool ChannelCreateBatchSignUrlRequest::GetCanSkipReadFlow() const
+{
+    return m_canSkipReadFlow;
+}
+
+void ChannelCreateBatchSignUrlRequest::SetCanSkipReadFlow(const bool& _canSkipReadFlow)
+{
+    m_canSkipReadFlow = _canSkipReadFlow;
+    m_canSkipReadFlowHasBeenSet = true;
+}
+
+bool ChannelCreateBatchSignUrlRequest::CanSkipReadFlowHasBeenSet() const
+{
+    return m_canSkipReadFlowHasBeenSet;
 }
 
 

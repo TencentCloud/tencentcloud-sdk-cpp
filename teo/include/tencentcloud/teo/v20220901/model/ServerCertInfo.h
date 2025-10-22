@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,10 +49,8 @@ namespace TencentCloud
                     /**
                      * 获取服务器证书 ID。来源于 SSL 侧，您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/ssl) 查看 CertId。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertId 服务器证书 ID。来源于 SSL 侧，您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/ssl) 查看 CertId。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCertId() const;
@@ -60,10 +58,8 @@ namespace TencentCloud
                     /**
                      * 设置服务器证书 ID。来源于 SSL 侧，您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/ssl) 查看 CertId。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _certId 服务器证书 ID。来源于 SSL 侧，您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/ssl) 查看 CertId。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCertId(const std::string& _certId);
@@ -77,18 +73,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证书备注名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Alias 证书备注名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置证书备注名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _alias 证书备注名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAlias(const std::string& _alias);
@@ -105,12 +97,10 @@ namespace TencentCloud
 <li>default：默认证书；</li>
 <li>upload：用户上传；</li>
 <li>managed：腾讯云托管。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 证书类型，取值有：
 <li>default：默认证书；</li>
 <li>upload：用户上传；</li>
 <li>managed：腾讯云托管。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
@@ -120,12 +110,10 @@ namespace TencentCloud
 <li>default：默认证书；</li>
 <li>upload：用户上传；</li>
 <li>managed：腾讯云托管。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 证书类型，取值有：
 <li>default：默认证书；</li>
 <li>upload：用户上传；</li>
 <li>managed：腾讯云托管。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -139,18 +127,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证书过期时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireTime 证书过期时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置证书过期时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expireTime 证书过期时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -164,18 +148,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证书部署时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeployTime 证书部署时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeployTime() const;
 
                     /**
                      * 设置证书部署时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deployTime 证书部署时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeployTime(const std::string& _deployTime);
@@ -189,18 +169,14 @@ namespace TencentCloud
 
                     /**
                      * 获取签名算法。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SignAlgo 签名算法。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSignAlgo() const;
 
                     /**
                      * 设置签名算法。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _signAlgo 签名算法。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSignAlgo(const std::string& _signAlgo);
@@ -214,18 +190,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证书归属域名名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CommonName 证书归属域名名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCommonName() const;
 
                     /**
                      * 设置证书归属域名名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _commonName 证书归属域名名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCommonName(const std::string& _commonName);
@@ -242,14 +214,12 @@ namespace TencentCloud
                     /**
                      * 服务器证书 ID。来源于 SSL 侧，您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/ssl) 查看 CertId。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_certId;
                     bool m_certIdHasBeenSet;
 
                     /**
                      * 证书备注名。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_alias;
                     bool m_aliasHasBeenSet;
@@ -259,35 +229,30 @@ namespace TencentCloud
 <li>default：默认证书；</li>
 <li>upload：用户上传；</li>
 <li>managed：腾讯云托管。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 证书过期时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
                      * 证书部署时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deployTime;
                     bool m_deployTimeHasBeenSet;
 
                     /**
                      * 签名算法。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_signAlgo;
                     bool m_signAlgoHasBeenSet;
 
                     /**
                      * 证书归属域名名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_commonName;
                     bool m_commonNameHasBeenSet;

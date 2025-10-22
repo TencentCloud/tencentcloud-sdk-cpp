@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -469,15 +469,15 @@ namespace TencentCloud
                     bool RenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取实例高可用， 1-双机高可用，2-单机，3-跨可用区，4-集群跨可用区，5-集群，9-自研机房
-                     * @return Model 实例高可用， 1-双机高可用，2-单机，3-跨可用区，4-集群跨可用区，5-集群，9-自研机房
+                     * 获取实例高可用， 1-双机高可用，2-单机，3-跨可用区，4-集群跨可用区，5-集群，6-多节点集群，7-多节点集群跨可用区，9-自研机房
+                     * @return Model 实例高可用， 1-双机高可用，2-单机，3-跨可用区，4-集群跨可用区，5-集群，6-多节点集群，7-多节点集群跨可用区，9-自研机房
                      * 
                      */
                     int64_t GetModel() const;
 
                     /**
-                     * 设置实例高可用， 1-双机高可用，2-单机，3-跨可用区，4-集群跨可用区，5-集群，9-自研机房
-                     * @param _model 实例高可用， 1-双机高可用，2-单机，3-跨可用区，4-集群跨可用区，5-集群，9-自研机房
+                     * 设置实例高可用， 1-双机高可用，2-单机，3-跨可用区，4-集群跨可用区，5-集群，6-多节点集群，7-多节点集群跨可用区，9-自研机房
+                     * @param _model 实例高可用， 1-双机高可用，2-单机，3-跨可用区，4-集群跨可用区，5-集群，6-多节点集群，7-多节点集群跨可用区，9-自研机房
                      * 
                      */
                     void SetModel(const int64_t& _model);
@@ -722,18 +722,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例隔离操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsolateOperator 实例隔离操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIsolateOperator() const;
 
                     /**
                      * 设置实例隔离操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isolateOperator 实例隔离操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsolateOperator(const std::string& _isolateOperator);
@@ -747,18 +743,14 @@ namespace TencentCloud
 
                     /**
                      * 获取发布订阅标识，SUB-订阅实例，PUB-发布实例，空值-没有发布订阅的普通实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubFlag 发布订阅标识，SUB-订阅实例，PUB-发布实例，空值-没有发布订阅的普通实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubFlag() const;
 
                     /**
                      * 设置发布订阅标识，SUB-订阅实例，PUB-发布实例，空值-没有发布订阅的普通实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subFlag 发布订阅标识，SUB-订阅实例，PUB-发布实例，空值-没有发布订阅的普通实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubFlag(const std::string& _subFlag);
@@ -772,18 +764,14 @@ namespace TencentCloud
 
                     /**
                      * 获取只读标识，RO-只读实例，MASTER-有RO实例的主实例，空值-没有只读组的非RO实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ROFlag 只读标识，RO-只读实例，MASTER-有RO实例的主实例，空值-没有只读组的非RO实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetROFlag() const;
 
                     /**
                      * 设置只读标识，RO-只读实例，MASTER-有RO实例的主实例，空值-没有只读组的非RO实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rOFlag 只读标识，RO-只读实例，MASTER-有RO实例的主实例，空值-没有只读组的非RO实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetROFlag(const std::string& _rOFlag);
@@ -797,18 +785,14 @@ namespace TencentCloud
 
                     /**
                      * 获取容灾类型，MIRROR-镜像，ALWAYSON-AlwaysOn, SINGLE-单例
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HAFlag 容灾类型，MIRROR-镜像，ALWAYSON-AlwaysOn, SINGLE-单例
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHAFlag() const;
 
                     /**
                      * 设置容灾类型，MIRROR-镜像，ALWAYSON-AlwaysOn, SINGLE-单例
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hAFlag 容灾类型，MIRROR-镜像，ALWAYSON-AlwaysOn, SINGLE-单例
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHAFlag(const std::string& _hAFlag);
@@ -847,18 +831,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备份模式，master_pkg-主节点打包备份(默认) ；master_no_pkg-主节点不打包备份；slave_pkg-从节点打包备份(always on集群有效)；slave_no_pkg-从节点不打包备份(always on集群有效)；只读副本对该值无效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupModel 备份模式，master_pkg-主节点打包备份(默认) ；master_no_pkg-主节点不打包备份；slave_pkg-从节点打包备份(always on集群有效)；slave_no_pkg-从节点不打包备份(always on集群有效)；只读副本对该值无效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBackupModel() const;
 
                     /**
                      * 设置备份模式，master_pkg-主节点打包备份(默认) ；master_no_pkg-主节点不打包备份；slave_pkg-从节点打包备份(always on集群有效)；slave_no_pkg-从节点不打包备份(always on集群有效)；只读副本对该值无效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _backupModel 备份模式，master_pkg-主节点打包备份(默认) ；master_no_pkg-主节点不打包备份；slave_pkg-从节点打包备份(always on集群有效)；slave_no_pkg-从节点不打包备份(always on集群有效)；只读副本对该值无效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBackupModel(const std::string& _backupModel);
@@ -872,18 +852,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例备份信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceNote 实例备份信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceNote() const;
 
                     /**
                      * 设置实例备份信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceNote 实例备份信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceNote(const std::string& _instanceNote);
@@ -959,15 +935,19 @@ namespace TencentCloud
                     bool BackupSaveDaysHasBeenSet() const;
 
                     /**
-                     * 获取实例类型 HA-高可用 RO-只读实例 SI-基础版 BI-商业智能服务
-                     * @return InstanceType 实例类型 HA-高可用 RO-只读实例 SI-基础版 BI-商业智能服务
+                     * 获取实例类型 HA-高可用，RO-只读实例，SI-基础版，BI-商业智能服务，cvmHA-云盘高可用，cvmRO-云盘只读实例，MultiHA-多节点，cvmMultiHA-云盘多节点
+
+                     * @return InstanceType 实例类型 HA-高可用，RO-只读实例，SI-基础版，BI-商业智能服务，cvmHA-云盘高可用，cvmRO-云盘只读实例，MultiHA-多节点，cvmMultiHA-云盘多节点
+
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置实例类型 HA-高可用 RO-只读实例 SI-基础版 BI-商业智能服务
-                     * @param _instanceType 实例类型 HA-高可用 RO-只读实例 SI-基础版 BI-商业智能服务
+                     * 设置实例类型 HA-高可用，RO-只读实例，SI-基础版，BI-商业智能服务，cvmHA-云盘高可用，cvmRO-云盘只读实例，MultiHA-多节点，cvmMultiHA-云盘多节点
+
+                     * @param _instanceType 实例类型 HA-高可用，RO-只读实例，SI-基础版，BI-商业智能服务，cvmHA-云盘高可用，cvmRO-云盘只读实例，MultiHA-多节点，cvmMultiHA-云盘多节点
+
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -1148,19 +1128,15 @@ namespace TencentCloud
                     bool IsDrZoneHasBeenSet() const;
 
                     /**
-                     * 获取备可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SlaveZones 备可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取双节点实例备可用区信息
+                     * @return SlaveZones 双节点实例备可用区信息
                      * 
                      */
                     SlaveZones GetSlaveZones() const;
 
                     /**
-                     * 设置备可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _slaveZones 备可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置双节点实例备可用区信息
+                     * @param _slaveZones 双节点实例备可用区信息
                      * 
                      */
                     void SetSlaveZones(const SlaveZones& _slaveZones);
@@ -1174,18 +1150,14 @@ namespace TencentCloud
 
                     /**
                      * 获取架构标识，SINGLE-单节点 DOUBLE-双节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Architecture 架构标识，SINGLE-单节点 DOUBLE-双节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetArchitecture() const;
 
                     /**
                      * 设置架构标识，SINGLE-单节点 DOUBLE-双节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _architecture 架构标识，SINGLE-单节点 DOUBLE-双节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetArchitecture(const std::string& _architecture);
@@ -1199,18 +1171,14 @@ namespace TencentCloud
 
                     /**
                      * 获取类型标识，EXCLUSIVE-独享型，SHARED-共享型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Style 类型标识，EXCLUSIVE-独享型，SHARED-共享型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStyle() const;
 
                     /**
                      * 设置类型标识，EXCLUSIVE-独享型，SHARED-共享型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _style 类型标识，EXCLUSIVE-独享型，SHARED-共享型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStyle(const std::string& _style);
@@ -1221,6 +1189,27 @@ namespace TencentCloud
                      * 
                      */
                     bool StyleHasBeenSet() const;
+
+                    /**
+                     * 获取多节点实例备可用区信息
+                     * @return MultiSlaveZones 多节点实例备可用区信息
+                     * 
+                     */
+                    std::vector<SlaveZones> GetMultiSlaveZones() const;
+
+                    /**
+                     * 设置多节点实例备可用区信息
+                     * @param _multiSlaveZones 多节点实例备可用区信息
+                     * 
+                     */
+                    void SetMultiSlaveZones(const std::vector<SlaveZones>& _multiSlaveZones);
+
+                    /**
+                     * 判断参数 MultiSlaveZones 是否已赋值
+                     * @return MultiSlaveZones 是否已赋值
+                     * 
+                     */
+                    bool MultiSlaveZonesHasBeenSet() const;
 
                 private:
 
@@ -1345,7 +1334,7 @@ namespace TencentCloud
                     bool m_renewFlagHasBeenSet;
 
                     /**
-                     * 实例高可用， 1-双机高可用，2-单机，3-跨可用区，4-集群跨可用区，5-集群，9-自研机房
+                     * 实例高可用， 1-双机高可用，2-单机，3-跨可用区，4-集群跨可用区，5-集群，6-多节点集群，7-多节点集群跨可用区，9-自研机房
                      */
                     int64_t m_model;
                     bool m_modelHasBeenSet;
@@ -1418,28 +1407,24 @@ namespace TencentCloud
 
                     /**
                      * 实例隔离操作
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_isolateOperator;
                     bool m_isolateOperatorHasBeenSet;
 
                     /**
                      * 发布订阅标识，SUB-订阅实例，PUB-发布实例，空值-没有发布订阅的普通实例
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subFlag;
                     bool m_subFlagHasBeenSet;
 
                     /**
                      * 只读标识，RO-只读实例，MASTER-有RO实例的主实例，空值-没有只读组的非RO实例
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_rOFlag;
                     bool m_rOFlagHasBeenSet;
 
                     /**
                      * 容灾类型，MIRROR-镜像，ALWAYSON-AlwaysOn, SINGLE-单例
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hAFlag;
                     bool m_hAFlagHasBeenSet;
@@ -1453,14 +1438,12 @@ namespace TencentCloud
 
                     /**
                      * 备份模式，master_pkg-主节点打包备份(默认) ；master_no_pkg-主节点不打包备份；slave_pkg-从节点打包备份(always on集群有效)；slave_no_pkg-从节点不打包备份(always on集群有效)；只读副本对该值无效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_backupModel;
                     bool m_backupModelHasBeenSet;
 
                     /**
                      * 实例备份信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceNote;
                     bool m_instanceNoteHasBeenSet;
@@ -1484,7 +1467,8 @@ namespace TencentCloud
                     bool m_backupSaveDaysHasBeenSet;
 
                     /**
-                     * 实例类型 HA-高可用 RO-只读实例 SI-基础版 BI-商业智能服务
+                     * 实例类型 HA-高可用，RO-只读实例，SI-基础版，BI-商业智能服务，cvmHA-云盘高可用，cvmRO-云盘只读实例，MultiHA-多节点，cvmMultiHA-云盘多节点
+
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
@@ -1538,25 +1522,28 @@ namespace TencentCloud
                     bool m_isDrZoneHasBeenSet;
 
                     /**
-                     * 备可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 双节点实例备可用区信息
                      */
                     SlaveZones m_slaveZones;
                     bool m_slaveZonesHasBeenSet;
 
                     /**
                      * 架构标识，SINGLE-单节点 DOUBLE-双节点
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_architecture;
                     bool m_architectureHasBeenSet;
 
                     /**
                      * 类型标识，EXCLUSIVE-独享型，SHARED-共享型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_style;
                     bool m_styleHasBeenSet;
+
+                    /**
+                     * 多节点实例备可用区信息
+                     */
+                    std::vector<SlaveZones> m_multiSlaveZones;
+                    bool m_multiSlaveZonesHasBeenSet;
 
                 };
             }

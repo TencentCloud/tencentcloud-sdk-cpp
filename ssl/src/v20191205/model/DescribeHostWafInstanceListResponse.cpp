@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,7 +70,7 @@ CoreInternalOutcome DescribeHostWafInstanceListResponse::Deserialize(const strin
         const rapidjson::Value &tmpValue = rsp["InstanceList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            LiveInstanceDetail item;
+            WafInstanceDetail item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
@@ -111,7 +111,7 @@ string DescribeHostWafInstanceListResponse::ToJsonString() const
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -119,7 +119,7 @@ string DescribeHostWafInstanceListResponse::ToJsonString() const
 }
 
 
-vector<LiveInstanceDetail> DescribeHostWafInstanceListResponse::GetInstanceList() const
+vector<WafInstanceDetail> DescribeHostWafInstanceListResponse::GetInstanceList() const
 {
     return m_instanceList;
 }

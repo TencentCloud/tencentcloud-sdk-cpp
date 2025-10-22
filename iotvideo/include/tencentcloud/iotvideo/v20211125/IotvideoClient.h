@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,6 +39,8 @@
 #include <tencentcloud/iotvideo/v20211125/model/CancelAIModelApplicationResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/CancelDeviceFirmwareTaskRequest.h>
 #include <tencentcloud/iotvideo/v20211125/model/CancelDeviceFirmwareTaskResponse.h>
+#include <tencentcloud/iotvideo/v20211125/model/ChangeP2PRouteRequest.h>
+#include <tencentcloud/iotvideo/v20211125/model/ChangeP2PRouteResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/CheckForwardAuthRequest.h>
 #include <tencentcloud/iotvideo/v20211125/model/CheckForwardAuthResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/ControlDeviceDataRequest.h>
@@ -53,8 +55,12 @@
 #include <tencentcloud/iotvideo/v20211125/model/CreateCloudStorageResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/CreateDataForwardRequest.h>
 #include <tencentcloud/iotvideo/v20211125/model/CreateDataForwardResponse.h>
+#include <tencentcloud/iotvideo/v20211125/model/CreateDeviceChannelRequest.h>
+#include <tencentcloud/iotvideo/v20211125/model/CreateDeviceChannelResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/CreateForwardRuleRequest.h>
 #include <tencentcloud/iotvideo/v20211125/model/CreateForwardRuleResponse.h>
+#include <tencentcloud/iotvideo/v20211125/model/CreateFreeCloudStorageRequest.h>
+#include <tencentcloud/iotvideo/v20211125/model/CreateFreeCloudStorageResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/CreateProductRequest.h>
 #include <tencentcloud/iotvideo/v20211125/model/CreateProductResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/CreateTaskFileUrlRequest.h>
@@ -115,6 +121,8 @@
 #include <tencentcloud/iotvideo/v20211125/model/DescribeCloudStorageTimeResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribeCloudStorageUsersRequest.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribeCloudStorageUsersResponse.h>
+#include <tencentcloud/iotvideo/v20211125/model/DescribeCsReportCountDataInfoRequest.h>
+#include <tencentcloud/iotvideo/v20211125/model/DescribeCsReportCountDataInfoResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribeDataForwardListRequest.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribeDataForwardListResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribeDeviceRequest.h>
@@ -151,12 +159,16 @@
 #include <tencentcloud/iotvideo/v20211125/model/DescribeFirmwareTasksResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribeForwardRuleRequest.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribeForwardRuleResponse.h>
+#include <tencentcloud/iotvideo/v20211125/model/DescribeFreeCloudStorageNumRequest.h>
+#include <tencentcloud/iotvideo/v20211125/model/DescribeFreeCloudStorageNumResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribeMessageDataStatsRequest.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribeMessageDataStatsResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribeModelDefinitionRequest.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribeModelDefinitionResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribeP2PInfoRequest.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribeP2PInfoResponse.h>
+#include <tencentcloud/iotvideo/v20211125/model/DescribeP2PRouteRequest.h>
+#include <tencentcloud/iotvideo/v20211125/model/DescribeP2PRouteResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribePackageConsumeTaskRequest.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribePackageConsumeTaskResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribePackageConsumeTasksRequest.h>
@@ -265,6 +277,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CancelDeviceFirmwareTaskResponse> CancelDeviceFirmwareTaskOutcome;
                 typedef std::future<CancelDeviceFirmwareTaskOutcome> CancelDeviceFirmwareTaskOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::CancelDeviceFirmwareTaskRequest&, CancelDeviceFirmwareTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelDeviceFirmwareTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::ChangeP2PRouteResponse> ChangeP2PRouteOutcome;
+                typedef std::future<ChangeP2PRouteOutcome> ChangeP2PRouteOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::ChangeP2PRouteRequest&, ChangeP2PRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChangeP2PRouteAsyncHandler;
                 typedef Outcome<Core::Error, Model::CheckForwardAuthResponse> CheckForwardAuthOutcome;
                 typedef std::future<CheckForwardAuthOutcome> CheckForwardAuthOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::CheckForwardAuthRequest&, CheckForwardAuthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckForwardAuthAsyncHandler;
@@ -286,9 +301,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDataForwardResponse> CreateDataForwardOutcome;
                 typedef std::future<CreateDataForwardOutcome> CreateDataForwardOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::CreateDataForwardRequest&, CreateDataForwardOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataForwardAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDeviceChannelResponse> CreateDeviceChannelOutcome;
+                typedef std::future<CreateDeviceChannelOutcome> CreateDeviceChannelOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::CreateDeviceChannelRequest&, CreateDeviceChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceChannelAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateForwardRuleResponse> CreateForwardRuleOutcome;
                 typedef std::future<CreateForwardRuleOutcome> CreateForwardRuleOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::CreateForwardRuleRequest&, CreateForwardRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateForwardRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateFreeCloudStorageResponse> CreateFreeCloudStorageOutcome;
+                typedef std::future<CreateFreeCloudStorageOutcome> CreateFreeCloudStorageOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::CreateFreeCloudStorageRequest&, CreateFreeCloudStorageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFreeCloudStorageAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateProductResponse> CreateProductOutcome;
                 typedef std::future<CreateProductOutcome> CreateProductOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::CreateProductRequest&, CreateProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProductAsyncHandler;
@@ -379,6 +400,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCloudStorageUsersResponse> DescribeCloudStorageUsersOutcome;
                 typedef std::future<DescribeCloudStorageUsersOutcome> DescribeCloudStorageUsersOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribeCloudStorageUsersRequest&, DescribeCloudStorageUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageUsersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCsReportCountDataInfoResponse> DescribeCsReportCountDataInfoOutcome;
+                typedef std::future<DescribeCsReportCountDataInfoOutcome> DescribeCsReportCountDataInfoOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::DescribeCsReportCountDataInfoRequest&, DescribeCsReportCountDataInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCsReportCountDataInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDataForwardListResponse> DescribeDataForwardListOutcome;
                 typedef std::future<DescribeDataForwardListOutcome> DescribeDataForwardListOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribeDataForwardListRequest&, DescribeDataForwardListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataForwardListAsyncHandler;
@@ -433,6 +457,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeForwardRuleResponse> DescribeForwardRuleOutcome;
                 typedef std::future<DescribeForwardRuleOutcome> DescribeForwardRuleOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribeForwardRuleRequest&, DescribeForwardRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeForwardRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFreeCloudStorageNumResponse> DescribeFreeCloudStorageNumOutcome;
+                typedef std::future<DescribeFreeCloudStorageNumOutcome> DescribeFreeCloudStorageNumOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::DescribeFreeCloudStorageNumRequest&, DescribeFreeCloudStorageNumOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFreeCloudStorageNumAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMessageDataStatsResponse> DescribeMessageDataStatsOutcome;
                 typedef std::future<DescribeMessageDataStatsOutcome> DescribeMessageDataStatsOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribeMessageDataStatsRequest&, DescribeMessageDataStatsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMessageDataStatsAsyncHandler;
@@ -442,6 +469,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeP2PInfoResponse> DescribeP2PInfoOutcome;
                 typedef std::future<DescribeP2PInfoOutcome> DescribeP2PInfoOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribeP2PInfoRequest&, DescribeP2PInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeP2PInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeP2PRouteResponse> DescribeP2PRouteOutcome;
+                typedef std::future<DescribeP2PRouteOutcome> DescribeP2PRouteOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::DescribeP2PRouteRequest&, DescribeP2PRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeP2PRouteAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePackageConsumeTaskResponse> DescribePackageConsumeTaskOutcome;
                 typedef std::future<DescribePackageConsumeTaskOutcome> DescribePackageConsumeTaskOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribePackageConsumeTaskRequest&, DescribePackageConsumeTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePackageConsumeTaskAsyncHandler;
@@ -560,7 +590,7 @@ namespace TencentCloud
                 ApplyAIModelOutcomeCallable ApplyAIModelCallable(const Model::ApplyAIModelRequest& request);
 
                 /**
-                 *本接口（BatchUpdateFirmware）用于批量更新设备固件 
+                 *本接口（BatchUpdateFirmware）用于批量更新设备固件
                  * @param req BatchUpdateFirmwareRequest
                  * @return BatchUpdateFirmwareOutcome
                  */
@@ -621,6 +651,15 @@ namespace TencentCloud
                 CancelDeviceFirmwareTaskOutcome CancelDeviceFirmwareTask(const Model::CancelDeviceFirmwareTaskRequest &request);
                 void CancelDeviceFirmwareTaskAsync(const Model::CancelDeviceFirmwareTaskRequest& request, const CancelDeviceFirmwareTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CancelDeviceFirmwareTaskOutcomeCallable CancelDeviceFirmwareTaskCallable(const Model::CancelDeviceFirmwareTaskRequest& request);
+
+                /**
+                 *p2p路线切换（此接口目前处于内测接口，可以联系申请加白 ）
+                 * @param req ChangeP2PRouteRequest
+                 * @return ChangeP2PRouteOutcome
+                 */
+                ChangeP2PRouteOutcome ChangeP2PRoute(const Model::ChangeP2PRouteRequest &request);
+                void ChangeP2PRouteAsync(const Model::ChangeP2PRouteRequest& request, const ChangeP2PRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChangeP2PRouteOutcomeCallable ChangeP2PRouteCallable(const Model::ChangeP2PRouteRequest& request);
 
                 /**
                  *判断是否开启转发的权限
@@ -686,6 +725,15 @@ namespace TencentCloud
                 CreateDataForwardOutcomeCallable CreateDataForwardCallable(const Model::CreateDataForwardRequest& request);
 
                 /**
+                 *创建设备通道
+                 * @param req CreateDeviceChannelRequest
+                 * @return CreateDeviceChannelOutcome
+                 */
+                CreateDeviceChannelOutcome CreateDeviceChannel(const Model::CreateDeviceChannelRequest &request);
+                void CreateDeviceChannelAsync(const Model::CreateDeviceChannelRequest& request, const CreateDeviceChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDeviceChannelOutcomeCallable CreateDeviceChannelCallable(const Model::CreateDeviceChannelRequest& request);
+
+                /**
                  *创建转发规则
                  * @param req CreateForwardRuleRequest
                  * @return CreateForwardRuleOutcome
@@ -693,6 +741,15 @@ namespace TencentCloud
                 CreateForwardRuleOutcome CreateForwardRule(const Model::CreateForwardRuleRequest &request);
                 void CreateForwardRuleAsync(const Model::CreateForwardRuleRequest& request, const CreateForwardRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateForwardRuleOutcomeCallable CreateForwardRuleCallable(const Model::CreateForwardRuleRequest& request);
+
+                /**
+                 *开通免费云存服务
+                 * @param req CreateFreeCloudStorageRequest
+                 * @return CreateFreeCloudStorageOutcome
+                 */
+                CreateFreeCloudStorageOutcome CreateFreeCloudStorage(const Model::CreateFreeCloudStorageRequest &request);
+                void CreateFreeCloudStorageAsync(const Model::CreateFreeCloudStorageRequest& request, const CreateFreeCloudStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateFreeCloudStorageOutcomeCallable CreateFreeCloudStorageCallable(const Model::CreateFreeCloudStorageRequest& request);
 
                 /**
                  *创建产品
@@ -731,7 +788,7 @@ namespace TencentCloud
                 DeleteDeviceOutcomeCallable DeleteDeviceCallable(const Model::DeleteDeviceRequest& request);
 
                 /**
-                 *本接口（DeleteFirmware）用于删除固件 
+                 *本接口（DeleteFirmware）用于删除固件
                  * @param req DeleteFirmwareRequest
                  * @return DeleteFirmwareOutcome
                  */
@@ -965,6 +1022,15 @@ namespace TencentCloud
                 DescribeCloudStorageUsersOutcomeCallable DescribeCloudStorageUsersCallable(const Model::DescribeCloudStorageUsersRequest& request);
 
                 /**
+                 *获取云存上报统计信息
+                 * @param req DescribeCsReportCountDataInfoRequest
+                 * @return DescribeCsReportCountDataInfoOutcome
+                 */
+                DescribeCsReportCountDataInfoOutcome DescribeCsReportCountDataInfo(const Model::DescribeCsReportCountDataInfoRequest &request);
+                void DescribeCsReportCountDataInfoAsync(const Model::DescribeCsReportCountDataInfoRequest& request, const DescribeCsReportCountDataInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCsReportCountDataInfoOutcomeCallable DescribeCsReportCountDataInfoCallable(const Model::DescribeCsReportCountDataInfoRequest& request);
+
+                /**
                  *获取数据转发列表
                  * @param req DescribeDataForwardListRequest
                  * @return DescribeDataForwardListOutcome
@@ -1127,6 +1193,15 @@ namespace TencentCloud
                 DescribeForwardRuleOutcomeCallable DescribeForwardRuleCallable(const Model::DescribeForwardRuleRequest& request);
 
                 /**
+                 *查询云存卡套餐信息
+                 * @param req DescribeFreeCloudStorageNumRequest
+                 * @return DescribeFreeCloudStorageNumOutcome
+                 */
+                DescribeFreeCloudStorageNumOutcome DescribeFreeCloudStorageNum(const Model::DescribeFreeCloudStorageNumRequest &request);
+                void DescribeFreeCloudStorageNumAsync(const Model::DescribeFreeCloudStorageNumRequest& request, const DescribeFreeCloudStorageNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFreeCloudStorageNumOutcomeCallable DescribeFreeCloudStorageNumCallable(const Model::DescribeFreeCloudStorageNumRequest& request);
+
+                /**
                  *查询设备消息数量统计
                  * @param req DescribeMessageDataStatsRequest
                  * @return DescribeMessageDataStatsOutcome
@@ -1152,6 +1227,15 @@ namespace TencentCloud
                 DescribeP2PInfoOutcome DescribeP2PInfo(const Model::DescribeP2PInfoRequest &request);
                 void DescribeP2PInfoAsync(const Model::DescribeP2PInfoRequest& request, const DescribeP2PInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeP2PInfoOutcomeCallable DescribeP2PInfoCallable(const Model::DescribeP2PInfoRequest& request);
+
+                /**
+                 *当前p2p线路
+                 * @param req DescribeP2PRouteRequest
+                 * @return DescribeP2PRouteOutcome
+                 */
+                DescribeP2PRouteOutcome DescribeP2PRoute(const Model::DescribeP2PRouteRequest &request);
+                void DescribeP2PRouteAsync(const Model::DescribeP2PRouteRequest& request, const DescribeP2PRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeP2PRouteOutcomeCallable DescribeP2PRouteCallable(const Model::DescribeP2PRouteRequest& request);
 
                 /**
                  *查询套餐消耗记录详情
@@ -1253,7 +1337,7 @@ namespace TencentCloud
                 GenerateSignedVideoURLOutcomeCallable GenerateSignedVideoURLCallable(const Model::GenerateSignedVideoURLRequest& request);
 
                 /**
-                 *本接口（GetAllFirmwareVersion）用于获取所有的版本列表 
+                 *本接口（GetAllFirmwareVersion）用于获取所有的版本列表
                  * @param req GetAllFirmwareVersionRequest
                  * @return GetAllFirmwareVersionOutcome
                  */
@@ -1262,7 +1346,7 @@ namespace TencentCloud
                 GetAllFirmwareVersionOutcomeCallable GetAllFirmwareVersionCallable(const Model::GetAllFirmwareVersionRequest& request);
 
                 /**
-                 *本接口（GetFirmwareURL）用于获取固件存储的URL 
+                 *本接口（GetFirmwareURL）用于获取固件存储的URL
                  * @param req GetFirmwareURLRequest
                  * @return GetFirmwareURLOutcome
                  */
@@ -1289,7 +1373,7 @@ namespace TencentCloud
                 InheritCloudStorageUserOutcomeCallable InheritCloudStorageUserCallable(const Model::InheritCloudStorageUserRequest& request);
 
                 /**
-                 *本接口（ListFirmwares）用于获取固件列表 
+                 *本接口（ListFirmwares）用于获取固件列表
                  * @param req ListFirmwaresRequest
                  * @return ListFirmwaresOutcome
                  */
@@ -1451,7 +1535,7 @@ namespace TencentCloud
                 UpdateAIModelChannelOutcomeCallable UpdateAIModelChannelCallable(const Model::UpdateAIModelChannelRequest& request);
 
                 /**
-                 *本接口（UploadFirmware）用于上传设备固件信息 
+                 *本接口（UploadFirmware）用于上传设备固件信息
                  * @param req UploadFirmwareRequest
                  * @return UploadFirmwareOutcome
                  */

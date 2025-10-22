@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool NameHasBeenSet() const;
 
+                    /**
+                     * 获取是否同步删除服务上绑定的路由
+                     * @return DeleteRoutes 是否同步删除服务上绑定的路由
+                     * 
+                     */
+                    bool GetDeleteRoutes() const;
+
+                    /**
+                     * 设置是否同步删除服务上绑定的路由
+                     * @param _deleteRoutes 是否同步删除服务上绑定的路由
+                     * 
+                     */
+                    void SetDeleteRoutes(const bool& _deleteRoutes);
+
+                    /**
+                     * 判断参数 DeleteRoutes 是否已赋值
+                     * @return DeleteRoutes 是否已赋值
+                     * 
+                     */
+                    bool DeleteRoutesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
+
+                    /**
+                     * 是否同步删除服务上绑定的路由
+                     */
+                    bool m_deleteRoutes;
+                    bool m_deleteRoutesHasBeenSet;
 
                 };
             }

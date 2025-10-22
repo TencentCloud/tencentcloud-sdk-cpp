@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ ObjectTypeConfigFields::ObjectTypeConfigFields() :
     m_keyHasBeenSet(false),
     m_headerHasBeenSet(false),
     m_transferHasBeenSet(false),
-    m_jsonParseHasBeenSet(false)
+    m_jsonParseHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome ObjectTypeConfigFields::Deserialize(const rapidjson::Value &
         m_jsonParseHasBeenSet = true;
     }
 
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ObjectTypeConfigFields.Type` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = value["Type"].GetInt64();
+        m_typeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void ObjectTypeConfigFields::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "JsonParse";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_jsonParse.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_type, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void ObjectTypeConfigFields::SetJsonParse(const string& _jsonParse)
 bool ObjectTypeConfigFields::JsonParseHasBeenSet() const
 {
     return m_jsonParseHasBeenSet;
+}
+
+int64_t ObjectTypeConfigFields::GetType() const
+{
+    return m_type;
+}
+
+void ObjectTypeConfigFields::SetType(const int64_t& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool ObjectTypeConfigFields::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 

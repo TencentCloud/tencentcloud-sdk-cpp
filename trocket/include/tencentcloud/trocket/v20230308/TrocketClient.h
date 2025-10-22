@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/trocket/v20230308/model/ChangeMigratingTopicToNextStageRequest.h>
+#include <tencentcloud/trocket/v20230308/model/ChangeMigratingTopicToNextStageResponse.h>
 #include <tencentcloud/trocket/v20230308/model/CreateConsumerGroupRequest.h>
 #include <tencentcloud/trocket/v20230308/model/CreateConsumerGroupResponse.h>
 #include <tencentcloud/trocket/v20230308/model/CreateInstanceRequest.h>
@@ -53,8 +55,14 @@
 #include <tencentcloud/trocket/v20230308/model/DeleteMQTTUserResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DeleteRoleRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DeleteRoleResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DeleteSmoothMigrationTaskRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DeleteSmoothMigrationTaskResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DeleteTopicRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DeleteTopicResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeConsumerClientRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeConsumerClientResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeConsumerClientListRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeConsumerClientListResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeConsumerGroupRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeConsumerGroupResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeConsumerGroupListRequest.h>
@@ -91,14 +99,38 @@
 #include <tencentcloud/trocket/v20230308/model/DescribeMQTTTopicListResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeMQTTUserListRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeMQTTUserListResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeMessageRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeMessageResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeMessageListRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeMessageListResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeMessageTraceRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeMessageTraceResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeMigratingGroupStatsRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeMigratingGroupStatsResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeMigratingTopicListRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeMigratingTopicListResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeMigratingTopicStatsRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeMigratingTopicStatsResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeMigrationTaskListRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeMigrationTaskListResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeProducerListRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeProducerListResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeProductSKUsRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeProductSKUsResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeRoleListRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeRoleListResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeSmoothMigrationTaskListRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeSmoothMigrationTaskListResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeSourceClusterGroupListRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeSourceClusterGroupListResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeTopicRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeTopicResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeTopicListRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeTopicListResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeTopicListByGroupRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeTopicListByGroupResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DoHealthCheckOnMigratingTopicRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DoHealthCheckOnMigratingTopicResponse.h>
 #include <tencentcloud/trocket/v20230308/model/ImportSourceClusterConsumerGroupsRequest.h>
 #include <tencentcloud/trocket/v20230308/model/ImportSourceClusterConsumerGroupsResponse.h>
 #include <tencentcloud/trocket/v20230308/model/ImportSourceClusterTopicsRequest.h>
@@ -107,6 +139,8 @@
 #include <tencentcloud/trocket/v20230308/model/ModifyConsumerGroupResponse.h>
 #include <tencentcloud/trocket/v20230308/model/ModifyInstanceRequest.h>
 #include <tencentcloud/trocket/v20230308/model/ModifyInstanceResponse.h>
+#include <tencentcloud/trocket/v20230308/model/ModifyInstanceEndpointRequest.h>
+#include <tencentcloud/trocket/v20230308/model/ModifyInstanceEndpointResponse.h>
 #include <tencentcloud/trocket/v20230308/model/ModifyMQTTInsPublicEndpointRequest.h>
 #include <tencentcloud/trocket/v20230308/model/ModifyMQTTInsPublicEndpointResponse.h>
 #include <tencentcloud/trocket/v20230308/model/ModifyMQTTInstanceRequest.h>
@@ -121,6 +155,14 @@
 #include <tencentcloud/trocket/v20230308/model/ModifyRoleResponse.h>
 #include <tencentcloud/trocket/v20230308/model/ModifyTopicRequest.h>
 #include <tencentcloud/trocket/v20230308/model/ModifyTopicResponse.h>
+#include <tencentcloud/trocket/v20230308/model/RemoveMigratingTopicRequest.h>
+#include <tencentcloud/trocket/v20230308/model/RemoveMigratingTopicResponse.h>
+#include <tencentcloud/trocket/v20230308/model/ResendDeadLetterMessageRequest.h>
+#include <tencentcloud/trocket/v20230308/model/ResendDeadLetterMessageResponse.h>
+#include <tencentcloud/trocket/v20230308/model/ResetConsumerGroupOffsetRequest.h>
+#include <tencentcloud/trocket/v20230308/model/ResetConsumerGroupOffsetResponse.h>
+#include <tencentcloud/trocket/v20230308/model/RollbackMigratingTopicStageRequest.h>
+#include <tencentcloud/trocket/v20230308/model/RollbackMigratingTopicStageResponse.h>
 
 
 namespace TencentCloud
@@ -135,6 +177,9 @@ namespace TencentCloud
                 TrocketClient(const Credential &credential, const std::string &region);
                 TrocketClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::ChangeMigratingTopicToNextStageResponse> ChangeMigratingTopicToNextStageOutcome;
+                typedef std::future<ChangeMigratingTopicToNextStageOutcome> ChangeMigratingTopicToNextStageOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::ChangeMigratingTopicToNextStageRequest&, ChangeMigratingTopicToNextStageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChangeMigratingTopicToNextStageAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateConsumerGroupResponse> CreateConsumerGroupOutcome;
                 typedef std::future<CreateConsumerGroupOutcome> CreateConsumerGroupOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::CreateConsumerGroupRequest&, CreateConsumerGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConsumerGroupAsyncHandler;
@@ -180,9 +225,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteRoleResponse> DeleteRoleOutcome;
                 typedef std::future<DeleteRoleOutcome> DeleteRoleOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DeleteRoleRequest&, DeleteRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRoleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSmoothMigrationTaskResponse> DeleteSmoothMigrationTaskOutcome;
+                typedef std::future<DeleteSmoothMigrationTaskOutcome> DeleteSmoothMigrationTaskOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DeleteSmoothMigrationTaskRequest&, DeleteSmoothMigrationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSmoothMigrationTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteTopicResponse> DeleteTopicOutcome;
                 typedef std::future<DeleteTopicOutcome> DeleteTopicOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DeleteTopicRequest&, DeleteTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTopicAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeConsumerClientResponse> DescribeConsumerClientOutcome;
+                typedef std::future<DescribeConsumerClientOutcome> DescribeConsumerClientOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DescribeConsumerClientRequest&, DescribeConsumerClientOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConsumerClientAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeConsumerClientListResponse> DescribeConsumerClientListOutcome;
+                typedef std::future<DescribeConsumerClientListOutcome> DescribeConsumerClientListOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DescribeConsumerClientListRequest&, DescribeConsumerClientListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConsumerClientListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeConsumerGroupResponse> DescribeConsumerGroupOutcome;
                 typedef std::future<DescribeConsumerGroupOutcome> DescribeConsumerGroupOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeConsumerGroupRequest&, DescribeConsumerGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConsumerGroupAsyncHandler;
@@ -237,18 +291,54 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMQTTUserListResponse> DescribeMQTTUserListOutcome;
                 typedef std::future<DescribeMQTTUserListOutcome> DescribeMQTTUserListOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeMQTTUserListRequest&, DescribeMQTTUserListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMQTTUserListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMessageResponse> DescribeMessageOutcome;
+                typedef std::future<DescribeMessageOutcome> DescribeMessageOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DescribeMessageRequest&, DescribeMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMessageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMessageListResponse> DescribeMessageListOutcome;
+                typedef std::future<DescribeMessageListOutcome> DescribeMessageListOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DescribeMessageListRequest&, DescribeMessageListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMessageListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMessageTraceResponse> DescribeMessageTraceOutcome;
+                typedef std::future<DescribeMessageTraceOutcome> DescribeMessageTraceOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DescribeMessageTraceRequest&, DescribeMessageTraceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMessageTraceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMigratingGroupStatsResponse> DescribeMigratingGroupStatsOutcome;
+                typedef std::future<DescribeMigratingGroupStatsOutcome> DescribeMigratingGroupStatsOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DescribeMigratingGroupStatsRequest&, DescribeMigratingGroupStatsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMigratingGroupStatsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMigratingTopicListResponse> DescribeMigratingTopicListOutcome;
+                typedef std::future<DescribeMigratingTopicListOutcome> DescribeMigratingTopicListOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DescribeMigratingTopicListRequest&, DescribeMigratingTopicListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMigratingTopicListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMigratingTopicStatsResponse> DescribeMigratingTopicStatsOutcome;
+                typedef std::future<DescribeMigratingTopicStatsOutcome> DescribeMigratingTopicStatsOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DescribeMigratingTopicStatsRequest&, DescribeMigratingTopicStatsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMigratingTopicStatsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMigrationTaskListResponse> DescribeMigrationTaskListOutcome;
+                typedef std::future<DescribeMigrationTaskListOutcome> DescribeMigrationTaskListOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DescribeMigrationTaskListRequest&, DescribeMigrationTaskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMigrationTaskListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeProducerListResponse> DescribeProducerListOutcome;
+                typedef std::future<DescribeProducerListOutcome> DescribeProducerListOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DescribeProducerListRequest&, DescribeProducerListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProducerListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeProductSKUsResponse> DescribeProductSKUsOutcome;
                 typedef std::future<DescribeProductSKUsOutcome> DescribeProductSKUsOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeProductSKUsRequest&, DescribeProductSKUsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductSKUsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRoleListResponse> DescribeRoleListOutcome;
                 typedef std::future<DescribeRoleListOutcome> DescribeRoleListOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeRoleListRequest&, DescribeRoleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoleListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSmoothMigrationTaskListResponse> DescribeSmoothMigrationTaskListOutcome;
+                typedef std::future<DescribeSmoothMigrationTaskListOutcome> DescribeSmoothMigrationTaskListOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DescribeSmoothMigrationTaskListRequest&, DescribeSmoothMigrationTaskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSmoothMigrationTaskListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSourceClusterGroupListResponse> DescribeSourceClusterGroupListOutcome;
+                typedef std::future<DescribeSourceClusterGroupListOutcome> DescribeSourceClusterGroupListOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DescribeSourceClusterGroupListRequest&, DescribeSourceClusterGroupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSourceClusterGroupListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTopicResponse> DescribeTopicOutcome;
                 typedef std::future<DescribeTopicOutcome> DescribeTopicOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeTopicRequest&, DescribeTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTopicListResponse> DescribeTopicListOutcome;
                 typedef std::future<DescribeTopicListOutcome> DescribeTopicListOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeTopicListRequest&, DescribeTopicListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTopicListByGroupResponse> DescribeTopicListByGroupOutcome;
+                typedef std::future<DescribeTopicListByGroupOutcome> DescribeTopicListByGroupOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DescribeTopicListByGroupRequest&, DescribeTopicListByGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicListByGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DoHealthCheckOnMigratingTopicResponse> DoHealthCheckOnMigratingTopicOutcome;
+                typedef std::future<DoHealthCheckOnMigratingTopicOutcome> DoHealthCheckOnMigratingTopicOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DoHealthCheckOnMigratingTopicRequest&, DoHealthCheckOnMigratingTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DoHealthCheckOnMigratingTopicAsyncHandler;
                 typedef Outcome<Core::Error, Model::ImportSourceClusterConsumerGroupsResponse> ImportSourceClusterConsumerGroupsOutcome;
                 typedef std::future<ImportSourceClusterConsumerGroupsOutcome> ImportSourceClusterConsumerGroupsOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::ImportSourceClusterConsumerGroupsRequest&, ImportSourceClusterConsumerGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportSourceClusterConsumerGroupsAsyncHandler;
@@ -261,6 +351,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyInstanceResponse> ModifyInstanceOutcome;
                 typedef std::future<ModifyInstanceOutcome> ModifyInstanceOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::ModifyInstanceRequest&, ModifyInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceEndpointResponse> ModifyInstanceEndpointOutcome;
+                typedef std::future<ModifyInstanceEndpointOutcome> ModifyInstanceEndpointOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::ModifyInstanceEndpointRequest&, ModifyInstanceEndpointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceEndpointAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyMQTTInsPublicEndpointResponse> ModifyMQTTInsPublicEndpointOutcome;
                 typedef std::future<ModifyMQTTInsPublicEndpointOutcome> ModifyMQTTInsPublicEndpointOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::ModifyMQTTInsPublicEndpointRequest&, ModifyMQTTInsPublicEndpointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMQTTInsPublicEndpointAsyncHandler;
@@ -282,8 +375,29 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyTopicResponse> ModifyTopicOutcome;
                 typedef std::future<ModifyTopicOutcome> ModifyTopicOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::ModifyTopicRequest&, ModifyTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTopicAsyncHandler;
+                typedef Outcome<Core::Error, Model::RemoveMigratingTopicResponse> RemoveMigratingTopicOutcome;
+                typedef std::future<RemoveMigratingTopicOutcome> RemoveMigratingTopicOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::RemoveMigratingTopicRequest&, RemoveMigratingTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveMigratingTopicAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResendDeadLetterMessageResponse> ResendDeadLetterMessageOutcome;
+                typedef std::future<ResendDeadLetterMessageOutcome> ResendDeadLetterMessageOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::ResendDeadLetterMessageRequest&, ResendDeadLetterMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResendDeadLetterMessageAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResetConsumerGroupOffsetResponse> ResetConsumerGroupOffsetOutcome;
+                typedef std::future<ResetConsumerGroupOffsetOutcome> ResetConsumerGroupOffsetOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::ResetConsumerGroupOffsetRequest&, ResetConsumerGroupOffsetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetConsumerGroupOffsetAsyncHandler;
+                typedef Outcome<Core::Error, Model::RollbackMigratingTopicStageResponse> RollbackMigratingTopicStageOutcome;
+                typedef std::future<RollbackMigratingTopicStageOutcome> RollbackMigratingTopicStageOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::RollbackMigratingTopicStageRequest&, RollbackMigratingTopicStageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RollbackMigratingTopicStageAsyncHandler;
 
 
+
+                /**
+                 *修改迁移中的Topic状态进入下一步
+                 * @param req ChangeMigratingTopicToNextStageRequest
+                 * @return ChangeMigratingTopicToNextStageOutcome
+                 */
+                ChangeMigratingTopicToNextStageOutcome ChangeMigratingTopicToNextStage(const Model::ChangeMigratingTopicToNextStageRequest &request);
+                void ChangeMigratingTopicToNextStageAsync(const Model::ChangeMigratingTopicToNextStageRequest& request, const ChangeMigratingTopicToNextStageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChangeMigratingTopicToNextStageOutcomeCallable ChangeMigratingTopicToNextStageCallable(const Model::ChangeMigratingTopicToNextStageRequest& request);
 
                 /**
                  *创建消费组
@@ -358,7 +472,7 @@ namespace TencentCloud
                 CreateTopicOutcomeCallable CreateTopicCallable(const Model::CreateTopicRequest& request);
 
                 /**
-                 *删除消费组
+                 *删除消费组。消费者组删除后，消费者组的所有配置和相关数据都会被清空，且无法找回。删除后，在线的消费者客户端会出现报错，建议您提前下线客户端。
                  * @param req DeleteConsumerGroupRequest
                  * @return DeleteConsumerGroupOutcome
                  */
@@ -367,7 +481,7 @@ namespace TencentCloud
                 DeleteConsumerGroupOutcomeCallable DeleteConsumerGroupCallable(const Model::DeleteConsumerGroupRequest& request);
 
                 /**
-                 *删除 RocketMQ 5.x 集群。
+                 *删除 RocketMQ 5.x 集群，删除前请先删除正在使用的主题、消费组和角色信息。
                  * @param req DeleteInstanceRequest
                  * @return DeleteInstanceOutcome
                  */
@@ -412,7 +526,7 @@ namespace TencentCloud
                 DeleteMQTTUserOutcomeCallable DeleteMQTTUserCallable(const Model::DeleteMQTTUserRequest& request);
 
                 /**
-                 *删除角色
+                 *删除角色。请确保该角色相关信息不在当前代码中被使用。删除角色后，原先使用该角色进行生产或消费消息的密钥（AccessKey 和 SecretKey）将立即失效。
                  * @param req DeleteRoleRequest
                  * @return DeleteRoleOutcome
                  */
@@ -421,13 +535,40 @@ namespace TencentCloud
                 DeleteRoleOutcomeCallable DeleteRoleCallable(const Model::DeleteRoleRequest& request);
 
                 /**
-                 *删除主题
+                 *删除平滑迁移任务，只有被取消的任务才可删除
+                 * @param req DeleteSmoothMigrationTaskRequest
+                 * @return DeleteSmoothMigrationTaskOutcome
+                 */
+                DeleteSmoothMigrationTaskOutcome DeleteSmoothMigrationTask(const Model::DeleteSmoothMigrationTaskRequest &request);
+                void DeleteSmoothMigrationTaskAsync(const Model::DeleteSmoothMigrationTaskRequest& request, const DeleteSmoothMigrationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSmoothMigrationTaskOutcomeCallable DeleteSmoothMigrationTaskCallable(const Model::DeleteSmoothMigrationTaskRequest& request);
+
+                /**
+                 *删除主题。主题删除后，主题的所有配置和相关数据都会被清空，且无法找回。
                  * @param req DeleteTopicRequest
                  * @return DeleteTopicOutcome
                  */
                 DeleteTopicOutcome DeleteTopic(const Model::DeleteTopicRequest &request);
                 void DeleteTopicAsync(const Model::DeleteTopicRequest& request, const DeleteTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteTopicOutcomeCallable DeleteTopicCallable(const Model::DeleteTopicRequest& request);
+
+                /**
+                 *查询消费者客户端详情
+                 * @param req DescribeConsumerClientRequest
+                 * @return DescribeConsumerClientOutcome
+                 */
+                DescribeConsumerClientOutcome DescribeConsumerClient(const Model::DescribeConsumerClientRequest &request);
+                void DescribeConsumerClientAsync(const Model::DescribeConsumerClientRequest& request, const DescribeConsumerClientAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConsumerClientOutcomeCallable DescribeConsumerClientCallable(const Model::DescribeConsumerClientRequest& request);
+
+                /**
+                 *查询消费组下的客户端连接列表。
+                 * @param req DescribeConsumerClientListRequest
+                 * @return DescribeConsumerClientListOutcome
+                 */
+                DescribeConsumerClientListOutcome DescribeConsumerClientList(const Model::DescribeConsumerClientListRequest &request);
+                void DescribeConsumerClientListAsync(const Model::DescribeConsumerClientListRequest& request, const DescribeConsumerClientListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConsumerClientListOutcomeCallable DescribeConsumerClientListCallable(const Model::DescribeConsumerClientListRequest& request);
 
                 /**
                  *查询消费组详情
@@ -441,8 +582,13 @@ namespace TencentCloud
                 /**
                  *获取消费组列表，Filter参数使用说明如下：
 
-1. ConsumerGroupName，名称模糊查询
-2. ConsumeMessageOrderly，投递顺序性。"true":顺序投递；"false":并发投递
+- ConsumerGroupName 消费组名称，支持模糊查询，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。
+- ConsumeMessageOrderly，投递顺序性，枚举值如下：
+    - true 顺序投递
+    - false 并发投递
+
+Filters示例： 
+[{ "Name": "ConsumeMessageOrderly", "Values": ["true"] }]
                  * @param req DescribeConsumerGroupListRequest
                  * @return DescribeConsumerGroupListOutcome
                  */
@@ -461,11 +607,16 @@ namespace TencentCloud
 
                 /**
                  *查询集群列表，支持 4.x 和 5.x 集群，其中 Filters 参数使用说明如下：
-1. InstanceName, 名称模糊查询
-2. InstanceId，集群ID查询
-3. InstanceType, 集群类型查询，支持多选
-4. Version，集群版本查询
-当使用TagFilters查询时，Filters参数失效。
+
+- InstanceName 集群名称，支持模糊查询，从本接口返回值或控制台获得
+- InstanceId 集群ID，精确查询，从当前接口或控制台获得
+- InstanceType 集群类型，可参考 [InstanceItem](https://cloud.tencent.com/document/api/1493/96031#InstanceItem) 数据结构，支持多选
+- Version 集群版本，枚举值如下：
+    - 4 RocketMQ 4.x 集群
+    - 5 RocketMQ 5.x 集群
+
+Filters示例：
+ [{ "Name": "InstanceId", "Values": ["rmq-72mo3a9o"] }]
                  * @param req DescribeFusionInstanceListRequest
                  * @return DescribeFusionInstanceListOutcome
                  */
@@ -484,12 +635,17 @@ namespace TencentCloud
 
                 /**
                  *查询集群列表，仅支持 5.x 集群。Filters参数使用说明如下：
-1. InstanceName, 名称模糊查询
-2. InstanceId，集群ID查询
-3. InstanceType, 集群类型查询，支持多选
-3. InstanceStatus，集群状态查询，支持多选
 
-当使用TagFilters查询时，Filters参数失效。
+- InstanceName 集群名称，支持模糊搜索
+- InstanceId 腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得
+- InstanceType 集群类型，可参考 [InstanceItem](https://cloud.tencent.com/document/api/1493/96031#InstanceItem) 数据结构，支持多选
+- InstanceStatus 集群状态，可参考 [InstanceItem](https://cloud.tencent.com/document/api/1493/96031#InstanceItem) 数据结构，支持多选
+
+Filters示例：
+[{
+    "Name": "InstanceId",
+    "Values": ["rmq-72mo3a9o"]
+}]
                  * @param req DescribeInstanceListRequest
                  * @return DescribeInstanceListOutcome
                  */
@@ -617,6 +773,95 @@ namespace TencentCloud
                 DescribeMQTTUserListOutcomeCallable DescribeMQTTUserListCallable(const Model::DescribeMQTTUserListRequest& request);
 
                 /**
+                 *查询消息详情
+                 * @param req DescribeMessageRequest
+                 * @return DescribeMessageOutcome
+                 */
+                DescribeMessageOutcome DescribeMessage(const Model::DescribeMessageRequest &request);
+                void DescribeMessageAsync(const Model::DescribeMessageRequest& request, const DescribeMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMessageOutcomeCallable DescribeMessageCallable(const Model::DescribeMessageRequest& request);
+
+                /**
+                 *查询消息列表。如果查询死信消息，请设置ConsumerGroup参数。
+                 * @param req DescribeMessageListRequest
+                 * @return DescribeMessageListOutcome
+                 */
+                DescribeMessageListOutcome DescribeMessageList(const Model::DescribeMessageListRequest &request);
+                void DescribeMessageListAsync(const Model::DescribeMessageListRequest& request, const DescribeMessageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMessageListOutcomeCallable DescribeMessageListCallable(const Model::DescribeMessageListRequest& request);
+
+                /**
+                 *根据消息 ID 查询消息轨迹。
+                 * @param req DescribeMessageTraceRequest
+                 * @return DescribeMessageTraceOutcome
+                 */
+                DescribeMessageTraceOutcome DescribeMessageTrace(const Model::DescribeMessageTraceRequest &request);
+                void DescribeMessageTraceAsync(const Model::DescribeMessageTraceRequest& request, const DescribeMessageTraceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMessageTraceOutcomeCallable DescribeMessageTraceCallable(const Model::DescribeMessageTraceRequest& request);
+
+                /**
+                 *查看迁移消费组的实时信息
+                 * @param req DescribeMigratingGroupStatsRequest
+                 * @return DescribeMigratingGroupStatsOutcome
+                 */
+                DescribeMigratingGroupStatsOutcome DescribeMigratingGroupStats(const Model::DescribeMigratingGroupStatsRequest &request);
+                void DescribeMigratingGroupStatsAsync(const Model::DescribeMigratingGroupStatsRequest& request, const DescribeMigratingGroupStatsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMigratingGroupStatsOutcomeCallable DescribeMigratingGroupStatsCallable(const Model::DescribeMigratingGroupStatsRequest& request);
+
+                /**
+                 *查询Topic迁移状态列表。
+
+Filters字段为查询过滤器，支持以下条件：
+* TopicName 主题名称，支持模糊查询
+* MigrationStatus 迁移状态，可参考[MigratingTopic](https://cloud.tencent.com/document/api/1493/96031#MigratingTopic)数据结构
+* Namespace 命名空间，仅4.x集群有效
+
+Filters示例：
+[{
+    "Name": "TopicName",
+    "Values": ["topic-a"]
+}]
+                 * @param req DescribeMigratingTopicListRequest
+                 * @return DescribeMigratingTopicListOutcome
+                 */
+                DescribeMigratingTopicListOutcome DescribeMigratingTopicList(const Model::DescribeMigratingTopicListRequest &request);
+                void DescribeMigratingTopicListAsync(const Model::DescribeMigratingTopicListRequest& request, const DescribeMigratingTopicListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMigratingTopicListOutcomeCallable DescribeMigratingTopicListCallable(const Model::DescribeMigratingTopicListRequest& request);
+
+                /**
+                 *用于查询迁移主题的实时数据
+                 * @param req DescribeMigratingTopicStatsRequest
+                 * @return DescribeMigratingTopicStatsOutcome
+                 */
+                DescribeMigratingTopicStatsOutcome DescribeMigratingTopicStats(const Model::DescribeMigratingTopicStatsRequest &request);
+                void DescribeMigratingTopicStatsAsync(const Model::DescribeMigratingTopicStatsRequest& request, const DescribeMigratingTopicStatsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMigratingTopicStatsOutcomeCallable DescribeMigratingTopicStatsCallable(const Model::DescribeMigratingTopicStatsRequest& request);
+
+                /**
+                 *获取数据迁移任务列表，Filter参数使用说明如下：
+
+TaskId，根据任务ID精确查找
+InstanceId，根据实例ID精确查找
+Type，根据任务类型精确查找
+                 * @param req DescribeMigrationTaskListRequest
+                 * @return DescribeMigrationTaskListOutcome
+                 */
+                DescribeMigrationTaskListOutcome DescribeMigrationTaskList(const Model::DescribeMigrationTaskListRequest &request);
+                void DescribeMigrationTaskListAsync(const Model::DescribeMigrationTaskListRequest& request, const DescribeMigrationTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMigrationTaskListOutcomeCallable DescribeMigrationTaskListCallable(const Model::DescribeMigrationTaskListRequest& request);
+
+                /**
+                 *查询主题关联的生产者列表信息，Filters支持以下筛选条件：
+- ClientIP，客户端IP
+- ClientID，客户端ID
+                 * @param req DescribeProducerListRequest
+                 * @return DescribeProducerListOutcome
+                 */
+                DescribeProducerListOutcome DescribeProducerList(const Model::DescribeProducerListRequest &request);
+                void DescribeProducerListAsync(const Model::DescribeProducerListRequest& request, const DescribeProducerListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProducerListOutcomeCallable DescribeProducerListCallable(const Model::DescribeProducerListRequest& request);
+
+                /**
                  *查询产品售卖规格，针对 RocketMQ 5.x 集群。
                  * @param req DescribeProductSKUsRequest
                  * @return DescribeProductSKUsOutcome
@@ -628,7 +873,11 @@ namespace TencentCloud
                 /**
                  *查询角色列表，Filter参数使用说明如下：
 
-1. RoleName，角色名称模糊搜索
+- RoleName 角色名称，支持模糊搜索，从本接口返回值或控制台获得
+- AccessKey AccessKey，支持模糊搜索，从本接口返回值或控制台获得
+
+Filters示例： 
+[{ "Name": "RoleName", "Values": ["test_role"] }]
                  * @param req DescribeRoleListRequest
                  * @return DescribeRoleListOutcome
                  */
@@ -637,9 +886,54 @@ namespace TencentCloud
                 DescribeRoleListOutcomeCallable DescribeRoleListCallable(const Model::DescribeRoleListRequest& request);
 
                 /**
+                 *用于查询平滑迁移任务列表。
+
+查询参数Filters， 支持的字段如下：
+* TaskStatus, 任务状态，支持多选 
+* ConnectionType，网络连接类型，支持多选，参考[SmoothMigrationTaskItem](https://cloud.tencent.com/document/api/1493/96031#SmoothMigrationTaskItem)的说明
+* InstanceId，实例ID，精确搜索 
+* TaskName，任务名称，支持模糊搜索
+
+Filters示例：
+[{
+    "Name": "InstanceId",
+    "Values": ["rmq-1gzecldfg"]
+}]
+                 * @param req DescribeSmoothMigrationTaskListRequest
+                 * @return DescribeSmoothMigrationTaskListOutcome
+                 */
+                DescribeSmoothMigrationTaskListOutcome DescribeSmoothMigrationTaskList(const Model::DescribeSmoothMigrationTaskListRequest &request);
+                void DescribeSmoothMigrationTaskListAsync(const Model::DescribeSmoothMigrationTaskListRequest& request, const DescribeSmoothMigrationTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSmoothMigrationTaskListOutcomeCallable DescribeSmoothMigrationTaskListCallable(const Model::DescribeSmoothMigrationTaskListRequest& request);
+
+                /**
+                 *平滑迁移过程获取源集群group列表接口。
+
+Filters字段为查询过滤器，支持以下字段：
+* GroupName，消费组名称，支持模糊搜索
+* Imported，是否已导入
+* ImportStatus，导入状态，参考[SourceClusterGroupConfig](https://cloud.tencent.com/document/api/1493/96031#SourceClusterGroupConfig)的说明
+* Namespace，命名空间，仅4.x集群有效
+
+Filters示例：
+[{
+    "Name": "GroupName",
+    "Values": ["group-a"]
+}]
+                 * @param req DescribeSourceClusterGroupListRequest
+                 * @return DescribeSourceClusterGroupListOutcome
+                 */
+                DescribeSourceClusterGroupListOutcome DescribeSourceClusterGroupList(const Model::DescribeSourceClusterGroupListRequest &request);
+                void DescribeSourceClusterGroupListAsync(const Model::DescribeSourceClusterGroupListRequest& request, const DescribeSourceClusterGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSourceClusterGroupListOutcomeCallable DescribeSourceClusterGroupListCallable(const Model::DescribeSourceClusterGroupListRequest& request);
+
+                /**
                  *查询主题详情，Offset和Limit参数是指订阅该主题的消费组查询分页参数，Filter参数使用说明如下：
 
-ConsumerGroup，消费组名称过滤
+- ConsumerGroup 消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。
+
+Filters示例： 
+[{ "Name": "ConsumerGroup", "Values": ["test_group"] }]
                  * @param req DescribeTopicRequest
                  * @return DescribeTopicOutcome
                  */
@@ -650,14 +944,40 @@ ConsumerGroup，消费组名称过滤
                 /**
                  *获取主题列表，Filter参数使用说明如下：
 
-1. TopicName，主题名称模糊搜索
-2. TopicType，主题类型查询，支持多选，可选值：Normal,Order,Transaction,DelayScheduled
+- TopicName 主题名称，支持模糊搜索，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得
+- TopicType 主题类型查询，支持多选，参考 [DescribeTopic](https://cloud.tencent.com/document/api/1493/97945) 接口 TopicType 字段
+
+Filters示例：
+ [{ "Name": "TopicName", "Values": ["test_topic"] }]
                  * @param req DescribeTopicListRequest
                  * @return DescribeTopicListOutcome
                  */
                 DescribeTopicListOutcome DescribeTopicList(const Model::DescribeTopicListRequest &request);
                 void DescribeTopicListAsync(const Model::DescribeTopicListRequest& request, const DescribeTopicListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTopicListOutcomeCallable DescribeTopicListCallable(const Model::DescribeTopicListRequest& request);
+
+                /**
+                 *根据消费组获取主题列表，Filter参数使用说明如下：
+
+- TopicName 主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得。
+
+Filters示例： 
+[{ "Name": "TopicName", "Values": ["test_topic"] }]
+                 * @param req DescribeTopicListByGroupRequest
+                 * @return DescribeTopicListByGroupOutcome
+                 */
+                DescribeTopicListByGroupOutcome DescribeTopicListByGroup(const Model::DescribeTopicListByGroupRequest &request);
+                void DescribeTopicListByGroupAsync(const Model::DescribeTopicListByGroupRequest& request, const DescribeTopicListByGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTopicListByGroupOutcomeCallable DescribeTopicListByGroupCallable(const Model::DescribeTopicListByGroupRequest& request);
+
+                /**
+                 *检查迁移中的主题是否处于正常状态，只有处于正常状态的主题，才可以进入下一个迁移阶段
+                 * @param req DoHealthCheckOnMigratingTopicRequest
+                 * @return DoHealthCheckOnMigratingTopicOutcome
+                 */
+                DoHealthCheckOnMigratingTopicOutcome DoHealthCheckOnMigratingTopic(const Model::DoHealthCheckOnMigratingTopicRequest &request);
+                void DoHealthCheckOnMigratingTopicAsync(const Model::DoHealthCheckOnMigratingTopicRequest& request, const DoHealthCheckOnMigratingTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DoHealthCheckOnMigratingTopicOutcomeCallable DoHealthCheckOnMigratingTopicCallable(const Model::DoHealthCheckOnMigratingTopicRequest& request);
 
                 /**
                  *导入消费者组列表
@@ -687,13 +1007,22 @@ ConsumerGroup，消费组名称过滤
                 ModifyConsumerGroupOutcomeCallable ModifyConsumerGroupCallable(const Model::ModifyConsumerGroupRequest& request);
 
                 /**
-                 *修改 RocketMQ 5.x 集群属性。
+                 *修改 RocketMQ 5.x 集群属性，仅支持修改运行中的集群。
                  * @param req ModifyInstanceRequest
                  * @return ModifyInstanceOutcome
                  */
                 ModifyInstanceOutcome ModifyInstance(const Model::ModifyInstanceRequest &request);
                 void ModifyInstanceAsync(const Model::ModifyInstanceRequest& request, const ModifyInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyInstanceOutcomeCallable ModifyInstanceCallable(const Model::ModifyInstanceRequest& request);
+
+                /**
+                 *修改 RocketMQ 5.x 集群接入点，操作前请先确认接入点已存在。
+                 * @param req ModifyInstanceEndpointRequest
+                 * @return ModifyInstanceEndpointOutcome
+                 */
+                ModifyInstanceEndpointOutcome ModifyInstanceEndpoint(const Model::ModifyInstanceEndpointRequest &request);
+                void ModifyInstanceEndpointAsync(const Model::ModifyInstanceEndpointRequest& request, const ModifyInstanceEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceEndpointOutcomeCallable ModifyInstanceEndpointCallable(const Model::ModifyInstanceEndpointRequest& request);
 
                 /**
                  *更新MQTT实例公网接入点
@@ -758,6 +1087,42 @@ ConsumerGroup，消费组名称过滤
                 ModifyTopicOutcome ModifyTopic(const Model::ModifyTopicRequest &request);
                 void ModifyTopicAsync(const Model::ModifyTopicRequest& request, const ModifyTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyTopicOutcomeCallable ModifyTopicCallable(const Model::ModifyTopicRequest& request);
+
+                /**
+                 *从迁移列表中移除主题，仅当主题处于初始状态时有效
+                 * @param req RemoveMigratingTopicRequest
+                 * @return RemoveMigratingTopicOutcome
+                 */
+                RemoveMigratingTopicOutcome RemoveMigratingTopic(const Model::RemoveMigratingTopicRequest &request);
+                void RemoveMigratingTopicAsync(const Model::RemoveMigratingTopicRequest& request, const RemoveMigratingTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RemoveMigratingTopicOutcomeCallable RemoveMigratingTopicCallable(const Model::RemoveMigratingTopicRequest& request);
+
+                /**
+                 *重新发送死信消息
+                 * @param req ResendDeadLetterMessageRequest
+                 * @return ResendDeadLetterMessageOutcome
+                 */
+                ResendDeadLetterMessageOutcome ResendDeadLetterMessage(const Model::ResendDeadLetterMessageRequest &request);
+                void ResendDeadLetterMessageAsync(const Model::ResendDeadLetterMessageRequest& request, const ResendDeadLetterMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResendDeadLetterMessageOutcomeCallable ResendDeadLetterMessageCallable(const Model::ResendDeadLetterMessageRequest& request);
+
+                /**
+                 *重置消费位点
+                 * @param req ResetConsumerGroupOffsetRequest
+                 * @return ResetConsumerGroupOffsetOutcome
+                 */
+                ResetConsumerGroupOffsetOutcome ResetConsumerGroupOffset(const Model::ResetConsumerGroupOffsetRequest &request);
+                void ResetConsumerGroupOffsetAsync(const Model::ResetConsumerGroupOffsetRequest& request, const ResetConsumerGroupOffsetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetConsumerGroupOffsetOutcomeCallable ResetConsumerGroupOffsetCallable(const Model::ResetConsumerGroupOffsetRequest& request);
+
+                /**
+                 *回滚正在迁移的主题至前一个阶段
+                 * @param req RollbackMigratingTopicStageRequest
+                 * @return RollbackMigratingTopicStageOutcome
+                 */
+                RollbackMigratingTopicStageOutcome RollbackMigratingTopicStage(const Model::RollbackMigratingTopicStageRequest &request);
+                void RollbackMigratingTopicStageAsync(const Model::RollbackMigratingTopicStageRequest& request, const RollbackMigratingTopicStageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RollbackMigratingTopicStageOutcomeCallable RollbackMigratingTopicStageCallable(const Model::RollbackMigratingTopicStageRequest& request);
 
             };
         }

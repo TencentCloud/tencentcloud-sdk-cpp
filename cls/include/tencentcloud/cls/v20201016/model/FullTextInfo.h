@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -98,18 +98,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否包含中文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainZH 是否包含中文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetContainZH() const;
 
                     /**
                      * 设置是否包含中文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _containZH 是否包含中文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContainZH(const bool& _containZH);
@@ -139,7 +135,6 @@ namespace TencentCloud
 
                     /**
                      * 是否包含中文
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_containZH;
                     bool m_containZHHasBeenSet;

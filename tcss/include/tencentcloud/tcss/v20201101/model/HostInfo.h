@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -365,18 +365,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所属项目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Project 所属项目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ProjectInfo GetProject() const;
 
                     /**
                      * 设置所属项目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _project 所属项目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProject(const ProjectInfo& _project);
@@ -390,18 +386,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TagInfo> GetTags() const;
 
                     /**
                      * 设置标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<TagInfo>& _tags);
@@ -641,14 +633,12 @@ namespace TencentCloud
 
                     /**
                      * 所属项目
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ProjectInfo m_project;
                     bool m_projectHasBeenSet;
 
                     /**
                      * 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TagInfo> m_tags;
                     bool m_tagsHasBeenSet;

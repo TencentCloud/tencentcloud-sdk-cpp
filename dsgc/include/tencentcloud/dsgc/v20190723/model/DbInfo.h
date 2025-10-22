@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbName 数据库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDbName() const;
 
                     /**
                      * 设置数据库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dbName 数据库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDbName(const std::string& _dbName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取绑定的状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValidStatus 绑定的状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValidStatus() const;
 
                     /**
                      * 设置绑定的状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _validStatus 绑定的状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValidStatus(const std::string& _validStatus);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取绑定的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BindType 绑定的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBindType() const;
 
                     /**
                      * 设置绑定的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bindType 绑定的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBindType(const std::string& _bindType);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 数据库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dbName;
                     bool m_dbNameHasBeenSet;
 
                     /**
                      * 绑定的状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_validStatus;
                     bool m_validStatusHasBeenSet;
 
                     /**
                      * 绑定的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bindType;
                     bool m_bindTypeHasBeenSet;

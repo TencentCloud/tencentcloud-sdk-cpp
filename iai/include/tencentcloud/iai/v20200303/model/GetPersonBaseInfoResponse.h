@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取人员名称
-                     * @return PersonName 人员名称
+                     * 获取人员名称。
+                     * @return PersonName 人员名称。
                      * 
                      */
                     std::string GetPersonName() const;
@@ -58,8 +58,10 @@ namespace TencentCloud
                     bool PersonNameHasBeenSet() const;
 
                     /**
-                     * 获取人员性别，0代表未填写，1代表男性，2代表女性
-                     * @return Gender 人员性别，0代表未填写，1代表男性，2代表女性
+                     * 获取人员性别。
+- 取值范围：0代表未填写，1代表男性，2代表女性。
+                     * @return Gender 人员性别。
+- 取值范围：0代表未填写，1代表男性，2代表女性。
                      * 
                      */
                     int64_t GetGender() const;
@@ -72,8 +74,8 @@ namespace TencentCloud
                     bool GenderHasBeenSet() const;
 
                     /**
-                     * 获取包含的人脸 ID 列表
-                     * @return FaceIds 包含的人脸 ID 列表
+                     * 获取包含的人脸 ID 列表。
+                     * @return FaceIds 包含的人脸 ID 列表。
                      * 
                      */
                     std::vector<std::string> GetFaceIds() const;
@@ -88,19 +90,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 人员名称
+                     * 人员名称。
                      */
                     std::string m_personName;
                     bool m_personNameHasBeenSet;
 
                     /**
-                     * 人员性别，0代表未填写，1代表男性，2代表女性
+                     * 人员性别。
+- 取值范围：0代表未填写，1代表男性，2代表女性。
                      */
                     int64_t m_gender;
                     bool m_genderHasBeenSet;
 
                     /**
-                     * 包含的人脸 ID 列表
+                     * 包含的人脸 ID 列表。
                      */
                     std::vector<std::string> m_faceIds;
                     bool m_faceIdsHasBeenSet;

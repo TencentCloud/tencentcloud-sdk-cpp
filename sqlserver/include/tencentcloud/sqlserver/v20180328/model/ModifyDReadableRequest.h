@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取指定的备机只读vip，不填自动分配
-                     * @return Vip 指定的备机只读vip，不填自动分配
+                     * 获取指定的备机只读vip，不填自动分配。多节点SingleReadOnly模式不支持指定vip。
+                     * @return Vip 指定的备机只读vip，不填自动分配。多节点SingleReadOnly模式不支持指定vip。
                      * 
                      */
                     std::string GetVip() const;
 
                     /**
-                     * 设置指定的备机只读vip，不填自动分配
-                     * @param _vip 指定的备机只读vip，不填自动分配
+                     * 设置指定的备机只读vip，不填自动分配。多节点SingleReadOnly模式不支持指定vip。
+                     * @param _vip 指定的备机只读vip，不填自动分配。多节点SingleReadOnly模式不支持指定vip。
                      * 
                      */
                     void SetVip(const std::string& _vip);
@@ -146,6 +146,27 @@ namespace TencentCloud
                      * 
                      */
                     bool VipHasBeenSet() const;
+
+                    /**
+                     * 获取备机只读模式，多节点架构默认取值BalancedReadOnly。SingleReadOnly-每个备机各对应一个只读地址（多节点架构），BalancedReadOnly-所有备机共用一个只读地址。当实例是双节点架构时，固定取值SingleReadOnly。
+                     * @return ReadMode 备机只读模式，多节点架构默认取值BalancedReadOnly。SingleReadOnly-每个备机各对应一个只读地址（多节点架构），BalancedReadOnly-所有备机共用一个只读地址。当实例是双节点架构时，固定取值SingleReadOnly。
+                     * 
+                     */
+                    std::string GetReadMode() const;
+
+                    /**
+                     * 设置备机只读模式，多节点架构默认取值BalancedReadOnly。SingleReadOnly-每个备机各对应一个只读地址（多节点架构），BalancedReadOnly-所有备机共用一个只读地址。当实例是双节点架构时，固定取值SingleReadOnly。
+                     * @param _readMode 备机只读模式，多节点架构默认取值BalancedReadOnly。SingleReadOnly-每个备机各对应一个只读地址（多节点架构），BalancedReadOnly-所有备机共用一个只读地址。当实例是双节点架构时，固定取值SingleReadOnly。
+                     * 
+                     */
+                    void SetReadMode(const std::string& _readMode);
+
+                    /**
+                     * 判断参数 ReadMode 是否已赋值
+                     * @return ReadMode 是否已赋值
+                     * 
+                     */
+                    bool ReadModeHasBeenSet() const;
 
                 private:
 
@@ -174,10 +195,16 @@ namespace TencentCloud
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 指定的备机只读vip，不填自动分配
+                     * 指定的备机只读vip，不填自动分配。多节点SingleReadOnly模式不支持指定vip。
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
+
+                    /**
+                     * 备机只读模式，多节点架构默认取值BalancedReadOnly。SingleReadOnly-每个备机各对应一个只读地址（多节点架构），BalancedReadOnly-所有备机共用一个只读地址。当实例是双节点架构时，固定取值SingleReadOnly。
+                     */
+                    std::string m_readMode;
+                    bool m_readModeHasBeenSet;
 
                 };
             }

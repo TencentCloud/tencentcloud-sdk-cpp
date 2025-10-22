@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -132,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取起始Offset
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BeginOffset 起始Offset
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetBeginOffset() const;
 
                     /**
                      * 设置起始Offset
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _beginOffset 起始Offset
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBeginOffset(const uint64_t& _beginOffset);
@@ -157,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取末端Offset
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndOffset 末端Offset
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetEndOffset() const;
 
                     /**
                      * 设置末端Offset
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endOffset 末端Offset
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndOffset(const uint64_t& _endOffset);
@@ -182,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消息数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MessageCount 消息数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMessageCount() const;
 
                     /**
                      * 设置消息数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _messageCount 消息数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMessageCount(const uint64_t& _messageCount);
@@ -207,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取未同步副本集
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutOfSyncReplica 未同步副本集
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOutOfSyncReplica() const;
 
                     /**
                      * 设置未同步副本集
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _outOfSyncReplica 未同步副本集
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutOfSyncReplica(const std::string& _outOfSyncReplica);
@@ -258,28 +242,24 @@ namespace TencentCloud
 
                     /**
                      * 起始Offset
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_beginOffset;
                     bool m_beginOffsetHasBeenSet;
 
                     /**
                      * 末端Offset
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_endOffset;
                     bool m_endOffsetHasBeenSet;
 
                     /**
                      * 消息数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_messageCount;
                     bool m_messageCountHasBeenSet;
 
                     /**
                      * 未同步副本集
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_outOfSyncReplica;
                     bool m_outOfSyncReplicaHasBeenSet;

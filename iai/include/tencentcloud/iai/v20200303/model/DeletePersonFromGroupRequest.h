@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取人员ID，取值为创建人员接口中的PersonId
-                     * @return PersonId 人员ID，取值为创建人员接口中的PersonId
+                     * 获取人员ID，取值为创建人员接口中的PersonId。
+                     * @return PersonId 人员ID，取值为创建人员接口中的PersonId。
                      * 
                      */
                     std::string GetPersonId() const;
 
                     /**
-                     * 设置人员ID，取值为创建人员接口中的PersonId
-                     * @param _personId 人员ID，取值为创建人员接口中的PersonId
+                     * 设置人员ID，取值为创建人员接口中的PersonId。
+                     * @param _personId 人员ID，取值为创建人员接口中的PersonId。
                      * 
                      */
                     void SetPersonId(const std::string& _personId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool PersonIdHasBeenSet() const;
 
                     /**
-                     * 获取人员库ID，取值为创建人员库接口中的GroupId
-                     * @return GroupId 人员库ID，取值为创建人员库接口中的GroupId
+                     * 获取人员库ID，取值为创建人员库接口中的GroupId。
+                     * @return GroupId 人员库ID，取值为创建人员库接口中的GroupId。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置人员库ID，取值为创建人员库接口中的GroupId
-                     * @param _groupId 人员库ID，取值为创建人员库接口中的GroupId
+                     * 设置人员库ID，取值为创建人员库接口中的GroupId。
+                     * @param _groupId 人员库ID，取值为创建人员库接口中的GroupId。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 人员ID，取值为创建人员接口中的PersonId
+                     * 人员ID，取值为创建人员接口中的PersonId。
                      */
                     std::string m_personId;
                     bool m_personIdHasBeenSet;
 
                     /**
-                     * 人员库ID，取值为创建人员库接口中的GroupId
+                     * 人员库ID，取值为创建人员库接口中的GroupId。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;

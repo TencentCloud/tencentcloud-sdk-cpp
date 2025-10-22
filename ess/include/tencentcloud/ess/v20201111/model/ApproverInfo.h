@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@
 #include <tencentcloud/ess/v20201111/model/Component.h>
 #include <tencentcloud/ess/v20201111/model/ApproverOption.h>
 #include <tencentcloud/ess/v20201111/model/ComponentLimit.h>
+#include <tencentcloud/ess/v20201111/model/RegisterInfo.h>
 
 
 namespace TencentCloud
@@ -120,18 +121,18 @@ namespace TencentCloud
                     bool ApproverNameHasBeenSet() const;
 
                     /**
-                     * 获取签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。
+                     * 获取签署方经办人手机号码， 支持中国大陆手机号11位数字(无需加+86前缀或其他字符)。
 请确认手机号所有方为此合同签署方。
-                     * @return ApproverMobile 签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。
+                     * @return ApproverMobile 签署方经办人手机号码， 支持中国大陆手机号11位数字(无需加+86前缀或其他字符)。
 请确认手机号所有方为此合同签署方。
                      * 
                      */
                     std::string GetApproverMobile() const;
 
                     /**
-                     * 设置签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。
+                     * 设置签署方经办人手机号码， 支持中国大陆手机号11位数字(无需加+86前缀或其他字符)。
 请确认手机号所有方为此合同签署方。
-                     * @param _approverMobile 签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。
+                     * @param _approverMobile 签署方经办人手机号码， 支持中国大陆手机号11位数字(无需加+86前缀或其他字符)。
 请确认手机号所有方为此合同签署方。
                      * 
                      */
@@ -182,27 +183,35 @@ namespace TencentCloud
                     bool OrganizationNameHasBeenSet() const;
 
                     /**
-                     * 获取合同中的签署控件列表，列表中可支持下列多种签署控件,控件的详细定义参考开发者中心的Component结构体
+                     * 获取【在用文件发起合同场景下才有效，模板发起场景下需要在模板中配置】合同中的该名签署方的签署控件列表，列表中可支持下列多种签署控件,控件的详细定义参考开发者中心的Component结构体
 <ul><li> 个人签名/印章</li>
 <li> 企业印章</li>
 <li> 骑缝章等签署控件</li></ul>
-                     * @return SignComponents 合同中的签署控件列表，列表中可支持下列多种签署控件,控件的详细定义参考开发者中心的Component结构体
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/91757a7f9188ccf3057a4a8979cf3f93.png)
+                     * @return SignComponents 【在用文件发起合同场景下才有效，模板发起场景下需要在模板中配置】合同中的该名签署方的签署控件列表，列表中可支持下列多种签署控件,控件的详细定义参考开发者中心的Component结构体
 <ul><li> 个人签名/印章</li>
 <li> 企业印章</li>
 <li> 骑缝章等签署控件</li></ul>
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/91757a7f9188ccf3057a4a8979cf3f93.png)
                      * 
                      */
                     std::vector<Component> GetSignComponents() const;
 
                     /**
-                     * 设置合同中的签署控件列表，列表中可支持下列多种签署控件,控件的详细定义参考开发者中心的Component结构体
+                     * 设置【在用文件发起合同场景下才有效，模板发起场景下需要在模板中配置】合同中的该名签署方的签署控件列表，列表中可支持下列多种签署控件,控件的详细定义参考开发者中心的Component结构体
 <ul><li> 个人签名/印章</li>
 <li> 企业印章</li>
 <li> 骑缝章等签署控件</li></ul>
-                     * @param _signComponents 合同中的签署控件列表，列表中可支持下列多种签署控件,控件的详细定义参考开发者中心的Component结构体
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/91757a7f9188ccf3057a4a8979cf3f93.png)
+                     * @param _signComponents 【在用文件发起合同场景下才有效，模板发起场景下需要在模板中配置】合同中的该名签署方的签署控件列表，列表中可支持下列多种签署控件,控件的详细定义参考开发者中心的Component结构体
 <ul><li> 个人签名/印章</li>
 <li> 企业印章</li>
 <li> 骑缝章等签署控件</li></ul>
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/91757a7f9188ccf3057a4a8979cf3f93.png)
                      * 
                      */
                     void SetSignComponents(const std::vector<Component>& _signComponents);
@@ -281,26 +290,26 @@ namespace TencentCloud
 
                     /**
                      * 获取签署方经办人的证件号码，应符合以下规则
-<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
-<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>
-<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>
+<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
                      * @return ApproverIdCardNumber 签署方经办人的证件号码，应符合以下规则
-<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
-<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>
-<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>
+<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
                      * 
                      */
                     std::string GetApproverIdCardNumber() const;
 
                     /**
                      * 设置签署方经办人的证件号码，应符合以下规则
-<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
-<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>
-<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>
+<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
                      * @param _approverIdCardNumber 签署方经办人的证件号码，应符合以下规则
-<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
-<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>
-<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>
+<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
                      * 
                      */
                     void SetApproverIdCardNumber(const std::string& _approverIdCardNumber);
@@ -420,23 +429,23 @@ namespace TencentCloud
                     bool ApproverRoleNameHasBeenSet() const;
 
                     /**
-                     * 获取签署意愿确认渠道，默认为WEIXINAPP:人脸识别
+                     * 获取<font color="red">【已不再使用】</font>签署意愿确认渠道，默认为WEIXINAPP:人脸识别
 
-注: 将要废弃, 用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置
-                     * @return VerifyChannel 签署意愿确认渠道，默认为WEIXINAPP:人脸识别
+注: 该字段已不再使用, 请用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置
+                     * @return VerifyChannel <font color="red">【已不再使用】</font>签署意愿确认渠道，默认为WEIXINAPP:人脸识别
 
-注: 将要废弃, 用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置
+注: 该字段已不再使用, 请用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置
                      * 
                      */
                     std::vector<std::string> GetVerifyChannel() const;
 
                     /**
-                     * 设置签署意愿确认渠道，默认为WEIXINAPP:人脸识别
+                     * 设置<font color="red">【已不再使用】</font>签署意愿确认渠道，默认为WEIXINAPP:人脸识别
 
-注: 将要废弃, 用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置
-                     * @param _verifyChannel 签署意愿确认渠道，默认为WEIXINAPP:人脸识别
+注: 该字段已不再使用, 请用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置
+                     * @param _verifyChannel <font color="red">【已不再使用】</font>签署意愿确认渠道，默认为WEIXINAPP:人脸识别
 
-注: 将要废弃, 用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置
+注: 该字段已不再使用, 请用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置
                      * 
                      */
                     void SetVerifyChannel(const std::vector<std::string>& _verifyChannel);
@@ -602,39 +611,47 @@ namespace TencentCloud
                     bool ApproverOptionHasBeenSet() const;
 
                     /**
-                     * 获取指定个人签署方查看合同的校验方式,可以传值如下:
+                     * 获取【在用文件发起合同场景下才有效，模板发起场景下需要在模板中配置】指定个人签署方查看合同的校验方式,可以传值如下:
 <ul><li>  **1**   : （默认）人脸识别,人脸识别后才能合同内容</li>
 <li>  **2**  : 手机号验证, 用户手机号和参与方手机号(ApproverMobile)相同即可查看合同内容（当手写签名方式为OCR_ESIGN时，该校验方式无效，因为这种签名方式依赖实名认证）
 </li></ul>
 注: 
 <ul><li>如果合同流程设置ApproverVerifyType查看合同的校验方式,    则忽略此签署人的查看合同的校验方式</li>
 <li>此字段可传多个校验方式</li></ul>
-                     * @return ApproverVerifyTypes 指定个人签署方查看合同的校验方式,可以传值如下:
+
+
+                     * @return ApproverVerifyTypes 【在用文件发起合同场景下才有效，模板发起场景下需要在模板中配置】指定个人签署方查看合同的校验方式,可以传值如下:
 <ul><li>  **1**   : （默认）人脸识别,人脸识别后才能合同内容</li>
 <li>  **2**  : 手机号验证, 用户手机号和参与方手机号(ApproverMobile)相同即可查看合同内容（当手写签名方式为OCR_ESIGN时，该校验方式无效，因为这种签名方式依赖实名认证）
 </li></ul>
 注: 
 <ul><li>如果合同流程设置ApproverVerifyType查看合同的校验方式,    则忽略此签署人的查看合同的校验方式</li>
 <li>此字段可传多个校验方式</li></ul>
+
+
                      * 
                      */
                     std::vector<int64_t> GetApproverVerifyTypes() const;
 
                     /**
-                     * 设置指定个人签署方查看合同的校验方式,可以传值如下:
+                     * 设置【在用文件发起合同场景下才有效，模板发起场景下需要在模板中配置】指定个人签署方查看合同的校验方式,可以传值如下:
 <ul><li>  **1**   : （默认）人脸识别,人脸识别后才能合同内容</li>
 <li>  **2**  : 手机号验证, 用户手机号和参与方手机号(ApproverMobile)相同即可查看合同内容（当手写签名方式为OCR_ESIGN时，该校验方式无效，因为这种签名方式依赖实名认证）
 </li></ul>
 注: 
 <ul><li>如果合同流程设置ApproverVerifyType查看合同的校验方式,    则忽略此签署人的查看合同的校验方式</li>
 <li>此字段可传多个校验方式</li></ul>
-                     * @param _approverVerifyTypes 指定个人签署方查看合同的校验方式,可以传值如下:
+
+
+                     * @param _approverVerifyTypes 【在用文件发起合同场景下才有效，模板发起场景下需要在模板中配置】指定个人签署方查看合同的校验方式,可以传值如下:
 <ul><li>  **1**   : （默认）人脸识别,人脸识别后才能合同内容</li>
 <li>  **2**  : 手机号验证, 用户手机号和参与方手机号(ApproverMobile)相同即可查看合同内容（当手写签名方式为OCR_ESIGN时，该校验方式无效，因为这种签名方式依赖实名认证）
 </li></ul>
 注: 
 <ul><li>如果合同流程设置ApproverVerifyType查看合同的校验方式,    则忽略此签署人的查看合同的校验方式</li>
 <li>此字段可传多个校验方式</li></ul>
+
+
                      * 
                      */
                     void SetApproverVerifyTypes(const std::vector<int64_t>& _approverVerifyTypes);
@@ -647,7 +664,7 @@ namespace TencentCloud
                     bool ApproverVerifyTypesHasBeenSet() const;
 
                     /**
-                     * 获取您可以指定签署方签署合同的认证校验方式，可传递以下值：
+                     * 获取【在用文件发起合同场景下才有效，模板发起场景下需要在模板中配置】您可以指定签署方签署合同的认证校验方式，可传递以下值：
 <ul><li>**1**：人脸认证，需进行人脸识别成功后才能签署合同；</li>
 <li>**2**：签署密码，需输入与用户在腾讯电子签设置的密码一致才能校验成功进行合同签署；</li>
 <li>**3**：运营商三要素，需到运营商处比对手机号实名信息（名字、手机号、证件号）校验一致才能成功进行合同签署。（如果是港澳台客户，建议不要选择这个）</li>
@@ -655,14 +672,15 @@ namespace TencentCloud
 <li>**6**：设备面容识别，需要对比手机机主预留的人脸信息，校验一致才能成功进行合同签署。（Android系统暂不支持该校验方式）</li></ul>
 
 
-默认为1(人脸认证 ),2(签署密码),3(运营商三要素),5(设备指纹识别),6(设备面容识别)
+默认为：
+1(人脸认证 ),2(签署密码),3(运营商三要素),5(设备指纹识别),6(设备面容识别)
 
 注：
 1. 用<font color='red'>模板创建合同场景</font>, 签署人的认证方式需要在配置模板的时候指定, <font color='red'>在创建合同重新指定无效</font>
 2. 运营商三要素认证方式对手机号运营商及前缀有限制,可以参考[运营商支持列表类](https://qian.tencent.com/developers/company/mobile_support)得到具体的支持说明
 3. 校验方式不允许只包含<font color='red'>设备指纹识别</font>和<font color='red'>设备面容识别</font>，至少需要再增加一种其他校验方式。
 4. <font color='red'>设备指纹识别</font>和<font color='red'>设备面容识别</font>只支持小程序使用，其他端暂不支持。
-                     * @return ApproverSignTypes 您可以指定签署方签署合同的认证校验方式，可传递以下值：
+                     * @return ApproverSignTypes 【在用文件发起合同场景下才有效，模板发起场景下需要在模板中配置】您可以指定签署方签署合同的认证校验方式，可传递以下值：
 <ul><li>**1**：人脸认证，需进行人脸识别成功后才能签署合同；</li>
 <li>**2**：签署密码，需输入与用户在腾讯电子签设置的密码一致才能校验成功进行合同签署；</li>
 <li>**3**：运营商三要素，需到运营商处比对手机号实名信息（名字、手机号、证件号）校验一致才能成功进行合同签署。（如果是港澳台客户，建议不要选择这个）</li>
@@ -670,7 +688,8 @@ namespace TencentCloud
 <li>**6**：设备面容识别，需要对比手机机主预留的人脸信息，校验一致才能成功进行合同签署。（Android系统暂不支持该校验方式）</li></ul>
 
 
-默认为1(人脸认证 ),2(签署密码),3(运营商三要素),5(设备指纹识别),6(设备面容识别)
+默认为：
+1(人脸认证 ),2(签署密码),3(运营商三要素),5(设备指纹识别),6(设备面容识别)
 
 注：
 1. 用<font color='red'>模板创建合同场景</font>, 签署人的认证方式需要在配置模板的时候指定, <font color='red'>在创建合同重新指定无效</font>
@@ -682,7 +701,7 @@ namespace TencentCloud
                     std::vector<int64_t> GetApproverSignTypes() const;
 
                     /**
-                     * 设置您可以指定签署方签署合同的认证校验方式，可传递以下值：
+                     * 设置【在用文件发起合同场景下才有效，模板发起场景下需要在模板中配置】您可以指定签署方签署合同的认证校验方式，可传递以下值：
 <ul><li>**1**：人脸认证，需进行人脸识别成功后才能签署合同；</li>
 <li>**2**：签署密码，需输入与用户在腾讯电子签设置的密码一致才能校验成功进行合同签署；</li>
 <li>**3**：运营商三要素，需到运营商处比对手机号实名信息（名字、手机号、证件号）校验一致才能成功进行合同签署。（如果是港澳台客户，建议不要选择这个）</li>
@@ -690,14 +709,15 @@ namespace TencentCloud
 <li>**6**：设备面容识别，需要对比手机机主预留的人脸信息，校验一致才能成功进行合同签署。（Android系统暂不支持该校验方式）</li></ul>
 
 
-默认为1(人脸认证 ),2(签署密码),3(运营商三要素),5(设备指纹识别),6(设备面容识别)
+默认为：
+1(人脸认证 ),2(签署密码),3(运营商三要素),5(设备指纹识别),6(设备面容识别)
 
 注：
 1. 用<font color='red'>模板创建合同场景</font>, 签署人的认证方式需要在配置模板的时候指定, <font color='red'>在创建合同重新指定无效</font>
 2. 运营商三要素认证方式对手机号运营商及前缀有限制,可以参考[运营商支持列表类](https://qian.tencent.com/developers/company/mobile_support)得到具体的支持说明
 3. 校验方式不允许只包含<font color='red'>设备指纹识别</font>和<font color='red'>设备面容识别</font>，至少需要再增加一种其他校验方式。
 4. <font color='red'>设备指纹识别</font>和<font color='red'>设备面容识别</font>只支持小程序使用，其他端暂不支持。
-                     * @param _approverSignTypes 您可以指定签署方签署合同的认证校验方式，可传递以下值：
+                     * @param _approverSignTypes 【在用文件发起合同场景下才有效，模板发起场景下需要在模板中配置】您可以指定签署方签署合同的认证校验方式，可传递以下值：
 <ul><li>**1**：人脸认证，需进行人脸识别成功后才能签署合同；</li>
 <li>**2**：签署密码，需输入与用户在腾讯电子签设置的密码一致才能校验成功进行合同签署；</li>
 <li>**3**：运营商三要素，需到运营商处比对手机号实名信息（名字、手机号、证件号）校验一致才能成功进行合同签署。（如果是港澳台客户，建议不要选择这个）</li>
@@ -705,7 +725,8 @@ namespace TencentCloud
 <li>**6**：设备面容识别，需要对比手机机主预留的人脸信息，校验一致才能成功进行合同签署。（Android系统暂不支持该校验方式）</li></ul>
 
 
-默认为1(人脸认证 ),2(签署密码),3(运营商三要素),5(设备指纹识别),6(设备面容识别)
+默认为：
+1(人脸认证 ),2(签署密码),3(运营商三要素),5(设备指纹识别),6(设备面容识别)
 
 注：
 1. 用<font color='red'>模板创建合同场景</font>, 签署人的认证方式需要在配置模板的时候指定, <font color='red'>在创建合同重新指定无效</font>
@@ -724,43 +745,51 @@ namespace TencentCloud
                     bool ApproverSignTypesHasBeenSet() const;
 
                     /**
-                     * 获取发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：
+                     * 获取此签署人（员工或者个人）签署前，是否需要发起方企业审批，取值如下：
 <ul><li>**false**：（默认）不需要审批，直接签署。</li>
 <li>**true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>
 企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果
 <ul><li>如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>
 <li>如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>
 
-注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`
-                     * @return ApproverNeedSignReview 发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：
+注：`此功能可用于与发起方企业内部的审批流程进行关联，支持手动、静默签署合同`
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/b14d5188ed0229d1401e74a9a49cab6d.png)
+                     * @return ApproverNeedSignReview 此签署人（员工或者个人）签署前，是否需要发起方企业审批，取值如下：
 <ul><li>**false**：（默认）不需要审批，直接签署。</li>
 <li>**true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>
 企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果
 <ul><li>如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>
 <li>如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>
 
-注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`
+注：`此功能可用于与发起方企业内部的审批流程进行关联，支持手动、静默签署合同`
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/b14d5188ed0229d1401e74a9a49cab6d.png)
                      * 
                      */
                     bool GetApproverNeedSignReview() const;
 
                     /**
-                     * 设置发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：
+                     * 设置此签署人（员工或者个人）签署前，是否需要发起方企业审批，取值如下：
 <ul><li>**false**：（默认）不需要审批，直接签署。</li>
 <li>**true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>
 企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果
 <ul><li>如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>
 <li>如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>
 
-注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`
-                     * @param _approverNeedSignReview 发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：
+注：`此功能可用于与发起方企业内部的审批流程进行关联，支持手动、静默签署合同`
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/b14d5188ed0229d1401e74a9a49cab6d.png)
+                     * @param _approverNeedSignReview 此签署人（员工或者个人）签署前，是否需要发起方企业审批，取值如下：
 <ul><li>**false**：（默认）不需要审批，直接签署。</li>
 <li>**true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>
 企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果
 <ul><li>如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>
 <li>如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>
 
-注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`
+注：`此功能可用于与发起方企业内部的审批流程进行关联，支持手动、静默签署合同`
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/b14d5188ed0229d1401e74a9a49cab6d.png)
                      * 
                      */
                     void SetApproverNeedSignReview(const bool& _approverNeedSignReview);
@@ -773,10 +802,10 @@ namespace TencentCloud
                     bool ApproverNeedSignReviewHasBeenSet() const;
 
                     /**
-                     * 获取[用PDF文件创建签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlowByFiles)时,如果设置了外层参数SignBeanTag=1(允许签署过程中添加签署控件),则可通过此参数明确规定合同所使用的签署控件类型（骑缝章、普通章法人章等）和具体的印章（印章ID或者印章类型）或签名方式。
+                     * 获取【在用文件发起合同场景下才有效】在调用[用PDF文件创建签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlowByFiles)创建合同时,如果设置了外层参数SignBeanTag=1(允许签署过程中添加签署控件),则可通过此参数明确规定合同所使用的签署控件类型（骑缝章、普通章法人章等）和具体的印章（印章ID或者印章类型）或签名方式。
 
 注：`限制印章控件或骑缝章控件情况下,仅本企业签署方可以指定具体印章（通过传递ComponentValue,支持多个），他方企业或个人只支持限制控件类型。`
-                     * @return AddSignComponentsLimits [用PDF文件创建签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlowByFiles)时,如果设置了外层参数SignBeanTag=1(允许签署过程中添加签署控件),则可通过此参数明确规定合同所使用的签署控件类型（骑缝章、普通章法人章等）和具体的印章（印章ID或者印章类型）或签名方式。
+                     * @return AddSignComponentsLimits 【在用文件发起合同场景下才有效】在调用[用PDF文件创建签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlowByFiles)创建合同时,如果设置了外层参数SignBeanTag=1(允许签署过程中添加签署控件),则可通过此参数明确规定合同所使用的签署控件类型（骑缝章、普通章法人章等）和具体的印章（印章ID或者印章类型）或签名方式。
 
 注：`限制印章控件或骑缝章控件情况下,仅本企业签署方可以指定具体印章（通过传递ComponentValue,支持多个），他方企业或个人只支持限制控件类型。`
                      * 
@@ -784,10 +813,10 @@ namespace TencentCloud
                     std::vector<ComponentLimit> GetAddSignComponentsLimits() const;
 
                     /**
-                     * 设置[用PDF文件创建签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlowByFiles)时,如果设置了外层参数SignBeanTag=1(允许签署过程中添加签署控件),则可通过此参数明确规定合同所使用的签署控件类型（骑缝章、普通章法人章等）和具体的印章（印章ID或者印章类型）或签名方式。
+                     * 设置【在用文件发起合同场景下才有效】在调用[用PDF文件创建签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlowByFiles)创建合同时,如果设置了外层参数SignBeanTag=1(允许签署过程中添加签署控件),则可通过此参数明确规定合同所使用的签署控件类型（骑缝章、普通章法人章等）和具体的印章（印章ID或者印章类型）或签名方式。
 
 注：`限制印章控件或骑缝章控件情况下,仅本企业签署方可以指定具体印章（通过传递ComponentValue,支持多个），他方企业或个人只支持限制控件类型。`
-                     * @param _addSignComponentsLimits [用PDF文件创建签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlowByFiles)时,如果设置了外层参数SignBeanTag=1(允许签署过程中添加签署控件),则可通过此参数明确规定合同所使用的签署控件类型（骑缝章、普通章法人章等）和具体的印章（印章ID或者印章类型）或签名方式。
+                     * @param _addSignComponentsLimits 【在用文件发起合同场景下才有效】在调用[用PDF文件创建签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlowByFiles)创建合同时,如果设置了外层参数SignBeanTag=1(允许签署过程中添加签署控件),则可通过此参数明确规定合同所使用的签署控件类型（骑缝章、普通章法人章等）和具体的印章（印章ID或者印章类型）或签名方式。
 
 注：`限制印章控件或骑缝章控件情况下,仅本企业签署方可以指定具体印章（通过传递ComponentValue,支持多个），他方企业或个人只支持限制控件类型。`
                      * 
@@ -852,55 +881,63 @@ namespace TencentCloud
                     bool DeadlineHasBeenSet() const;
 
                     /**
-                     * 获取签署人在合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体
+                     * 获取【在用文件发起合同场景下才有效，模板发起场景下需要在模板中配置】签署人在合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体
 <ul><li>单行文本控件</li>
 <li>多行文本控件</li>
 <li>勾选框控件</li>
 <li>数字控件</li>
 <li>图片控件</li>
-<li>数据表格等填写控件</li></ul>
+</ul>
 
 具体使用说明可参考[为签署方指定填写控件](https://qian.tencent.cn/developers/company/createFlowByFiles/#指定签署方填写控件)
 
 注：`此参数仅在通过文件发起合同或者合同组时生效`
-                     * @return Components 签署人在合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/e004195ee4cb98a7f9bc12eb4a0a0b77.png)
+                     * @return Components 【在用文件发起合同场景下才有效，模板发起场景下需要在模板中配置】签署人在合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体
 <ul><li>单行文本控件</li>
 <li>多行文本控件</li>
 <li>勾选框控件</li>
 <li>数字控件</li>
 <li>图片控件</li>
-<li>数据表格等填写控件</li></ul>
+</ul>
 
 具体使用说明可参考[为签署方指定填写控件](https://qian.tencent.cn/developers/company/createFlowByFiles/#指定签署方填写控件)
 
 注：`此参数仅在通过文件发起合同或者合同组时生效`
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/e004195ee4cb98a7f9bc12eb4a0a0b77.png)
                      * 
                      */
                     std::vector<Component> GetComponents() const;
 
                     /**
-                     * 设置签署人在合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体
+                     * 设置【在用文件发起合同场景下才有效，模板发起场景下需要在模板中配置】签署人在合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体
 <ul><li>单行文本控件</li>
 <li>多行文本控件</li>
 <li>勾选框控件</li>
 <li>数字控件</li>
 <li>图片控件</li>
-<li>数据表格等填写控件</li></ul>
+</ul>
 
 具体使用说明可参考[为签署方指定填写控件](https://qian.tencent.cn/developers/company/createFlowByFiles/#指定签署方填写控件)
 
 注：`此参数仅在通过文件发起合同或者合同组时生效`
-                     * @param _components 签署人在合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/e004195ee4cb98a7f9bc12eb4a0a0b77.png)
+                     * @param _components 【在用文件发起合同场景下才有效，模板发起场景下需要在模板中配置】签署人在合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体
 <ul><li>单行文本控件</li>
 <li>多行文本控件</li>
 <li>勾选框控件</li>
 <li>数字控件</li>
 <li>图片控件</li>
-<li>数据表格等填写控件</li></ul>
+</ul>
 
 具体使用说明可参考[为签署方指定填写控件](https://qian.tencent.cn/developers/company/createFlowByFiles/#指定签署方填写控件)
 
 注：`此参数仅在通过文件发起合同或者合同组时生效`
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/e004195ee4cb98a7f9bc12eb4a0a0b77.png)
                      * 
                      */
                     void SetComponents(const std::vector<Component>& _components);
@@ -911,6 +948,56 @@ namespace TencentCloud
                      * 
                      */
                     bool ComponentsHasBeenSet() const;
+
+                    /**
+                     * 获取进入签署流程的限制，目前支持以下选项：
+<ul><li> <b>空值（默认）</b> :无限制，可在任何场景进入签署流程。</li><li> <b>link</b> :选择此选项后，将无法通过控制台或电子签小程序列表进入填写或签署操作，仅可预览合同。填写或签署流程只能通过短信或发起方提供的专用链接进行。</li></ul>
+                     * @return SignEndpoints 进入签署流程的限制，目前支持以下选项：
+<ul><li> <b>空值（默认）</b> :无限制，可在任何场景进入签署流程。</li><li> <b>link</b> :选择此选项后，将无法通过控制台或电子签小程序列表进入填写或签署操作，仅可预览合同。填写或签署流程只能通过短信或发起方提供的专用链接进行。</li></ul>
+                     * 
+                     */
+                    std::vector<std::string> GetSignEndpoints() const;
+
+                    /**
+                     * 设置进入签署流程的限制，目前支持以下选项：
+<ul><li> <b>空值（默认）</b> :无限制，可在任何场景进入签署流程。</li><li> <b>link</b> :选择此选项后，将无法通过控制台或电子签小程序列表进入填写或签署操作，仅可预览合同。填写或签署流程只能通过短信或发起方提供的专用链接进行。</li></ul>
+                     * @param _signEndpoints 进入签署流程的限制，目前支持以下选项：
+<ul><li> <b>空值（默认）</b> :无限制，可在任何场景进入签署流程。</li><li> <b>link</b> :选择此选项后，将无法通过控制台或电子签小程序列表进入填写或签署操作，仅可预览合同。填写或签署流程只能通过短信或发起方提供的专用链接进行。</li></ul>
+                     * 
+                     */
+                    void SetSignEndpoints(const std::vector<std::string>& _signEndpoints);
+
+                    /**
+                     * 判断参数 SignEndpoints 是否已赋值
+                     * @return SignEndpoints 是否已赋值
+                     * 
+                     */
+                    bool SignEndpointsHasBeenSet() const;
+
+                    /**
+                     * 获取快速注册相关信息
+
+                     * @return RegisterInfo 快速注册相关信息
+
+                     * 
+                     */
+                    RegisterInfo GetRegisterInfo() const;
+
+                    /**
+                     * 设置快速注册相关信息
+
+                     * @param _registerInfo 快速注册相关信息
+
+                     * 
+                     */
+                    void SetRegisterInfo(const RegisterInfo& _registerInfo);
+
+                    /**
+                     * 判断参数 RegisterInfo 是否已赋值
+                     * @return RegisterInfo 是否已赋值
+                     * 
+                     */
+                    bool RegisterInfoHasBeenSet() const;
 
                 private:
 
@@ -934,7 +1021,7 @@ namespace TencentCloud
                     bool m_approverNameHasBeenSet;
 
                     /**
-                     * 签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。
+                     * 签署方经办人手机号码， 支持中国大陆手机号11位数字(无需加+86前缀或其他字符)。
 请确认手机号所有方为此合同签署方。
                      */
                     std::string m_approverMobile;
@@ -951,10 +1038,12 @@ namespace TencentCloud
                     bool m_organizationNameHasBeenSet;
 
                     /**
-                     * 合同中的签署控件列表，列表中可支持下列多种签署控件,控件的详细定义参考开发者中心的Component结构体
+                     * 【在用文件发起合同场景下才有效，模板发起场景下需要在模板中配置】合同中的该名签署方的签署控件列表，列表中可支持下列多种签署控件,控件的详细定义参考开发者中心的Component结构体
 <ul><li> 个人签名/印章</li>
 <li> 企业印章</li>
 <li> 骑缝章等签署控件</li></ul>
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/91757a7f9188ccf3057a4a8979cf3f93.png)
                      */
                     std::vector<Component> m_signComponents;
                     bool m_signComponentsHasBeenSet;
@@ -978,9 +1067,9 @@ namespace TencentCloud
 
                     /**
                      * 签署方经办人的证件号码，应符合以下规则
-<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
-<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>
-<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>
+<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
                      */
                     std::string m_approverIdCardNumber;
                     bool m_approverIdCardNumberHasBeenSet;
@@ -1015,9 +1104,9 @@ namespace TencentCloud
                     bool m_approverRoleNameHasBeenSet;
 
                     /**
-                     * 签署意愿确认渠道，默认为WEIXINAPP:人脸识别
+                     * <font color="red">【已不再使用】</font>签署意愿确认渠道，默认为WEIXINAPP:人脸识别
 
-注: 将要废弃, 用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置
+注: 该字段已不再使用, 请用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置
                      */
                     std::vector<std::string> m_verifyChannel;
                     bool m_verifyChannelHasBeenSet;
@@ -1065,19 +1154,21 @@ namespace TencentCloud
                     bool m_approverOptionHasBeenSet;
 
                     /**
-                     * 指定个人签署方查看合同的校验方式,可以传值如下:
+                     * 【在用文件发起合同场景下才有效，模板发起场景下需要在模板中配置】指定个人签署方查看合同的校验方式,可以传值如下:
 <ul><li>  **1**   : （默认）人脸识别,人脸识别后才能合同内容</li>
 <li>  **2**  : 手机号验证, 用户手机号和参与方手机号(ApproverMobile)相同即可查看合同内容（当手写签名方式为OCR_ESIGN时，该校验方式无效，因为这种签名方式依赖实名认证）
 </li></ul>
 注: 
 <ul><li>如果合同流程设置ApproverVerifyType查看合同的校验方式,    则忽略此签署人的查看合同的校验方式</li>
 <li>此字段可传多个校验方式</li></ul>
+
+
                      */
                     std::vector<int64_t> m_approverVerifyTypes;
                     bool m_approverVerifyTypesHasBeenSet;
 
                     /**
-                     * 您可以指定签署方签署合同的认证校验方式，可传递以下值：
+                     * 【在用文件发起合同场景下才有效，模板发起场景下需要在模板中配置】您可以指定签署方签署合同的认证校验方式，可传递以下值：
 <ul><li>**1**：人脸认证，需进行人脸识别成功后才能签署合同；</li>
 <li>**2**：签署密码，需输入与用户在腾讯电子签设置的密码一致才能校验成功进行合同签署；</li>
 <li>**3**：运营商三要素，需到运营商处比对手机号实名信息（名字、手机号、证件号）校验一致才能成功进行合同签署。（如果是港澳台客户，建议不要选择这个）</li>
@@ -1085,7 +1176,8 @@ namespace TencentCloud
 <li>**6**：设备面容识别，需要对比手机机主预留的人脸信息，校验一致才能成功进行合同签署。（Android系统暂不支持该校验方式）</li></ul>
 
 
-默认为1(人脸认证 ),2(签署密码),3(运营商三要素),5(设备指纹识别),6(设备面容识别)
+默认为：
+1(人脸认证 ),2(签署密码),3(运营商三要素),5(设备指纹识别),6(设备面容识别)
 
 注：
 1. 用<font color='red'>模板创建合同场景</font>, 签署人的认证方式需要在配置模板的时候指定, <font color='red'>在创建合同重新指定无效</font>
@@ -1097,20 +1189,22 @@ namespace TencentCloud
                     bool m_approverSignTypesHasBeenSet;
 
                     /**
-                     * 发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：
+                     * 此签署人（员工或者个人）签署前，是否需要发起方企业审批，取值如下：
 <ul><li>**false**：（默认）不需要审批，直接签署。</li>
 <li>**true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>
 企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果
 <ul><li>如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>
 <li>如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>
 
-注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`
+注：`此功能可用于与发起方企业内部的审批流程进行关联，支持手动、静默签署合同`
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/b14d5188ed0229d1401e74a9a49cab6d.png)
                      */
                     bool m_approverNeedSignReview;
                     bool m_approverNeedSignReviewHasBeenSet;
 
                     /**
-                     * [用PDF文件创建签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlowByFiles)时,如果设置了外层参数SignBeanTag=1(允许签署过程中添加签署控件),则可通过此参数明确规定合同所使用的签署控件类型（骑缝章、普通章法人章等）和具体的印章（印章ID或者印章类型）或签名方式。
+                     * 【在用文件发起合同场景下才有效】在调用[用PDF文件创建签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlowByFiles)创建合同时,如果设置了外层参数SignBeanTag=1(允许签署过程中添加签署控件),则可通过此参数明确规定合同所使用的签署控件类型（骑缝章、普通章法人章等）和具体的印章（印章ID或者印章类型）或签名方式。
 
 注：`限制印章控件或骑缝章控件情况下,仅本企业签署方可以指定具体印章（通过传递ComponentValue,支持多个），他方企业或个人只支持限制控件类型。`
                      */
@@ -1132,20 +1226,36 @@ namespace TencentCloud
                     bool m_deadlineHasBeenSet;
 
                     /**
-                     * 签署人在合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体
+                     * 【在用文件发起合同场景下才有效，模板发起场景下需要在模板中配置】签署人在合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体
 <ul><li>单行文本控件</li>
 <li>多行文本控件</li>
 <li>勾选框控件</li>
 <li>数字控件</li>
 <li>图片控件</li>
-<li>数据表格等填写控件</li></ul>
+</ul>
 
 具体使用说明可参考[为签署方指定填写控件](https://qian.tencent.cn/developers/company/createFlowByFiles/#指定签署方填写控件)
 
 注：`此参数仅在通过文件发起合同或者合同组时生效`
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/e004195ee4cb98a7f9bc12eb4a0a0b77.png)
                      */
                     std::vector<Component> m_components;
                     bool m_componentsHasBeenSet;
+
+                    /**
+                     * 进入签署流程的限制，目前支持以下选项：
+<ul><li> <b>空值（默认）</b> :无限制，可在任何场景进入签署流程。</li><li> <b>link</b> :选择此选项后，将无法通过控制台或电子签小程序列表进入填写或签署操作，仅可预览合同。填写或签署流程只能通过短信或发起方提供的专用链接进行。</li></ul>
+                     */
+                    std::vector<std::string> m_signEndpoints;
+                    bool m_signEndpointsHasBeenSet;
+
+                    /**
+                     * 快速注册相关信息
+
+                     */
+                    RegisterInfo m_registerInfo;
+                    bool m_registerInfoHasBeenSet;
 
                 };
             }

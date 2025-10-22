@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,9 @@ StartCpuExpandRequest::StartCpuExpandRequest() :
     m_instanceIdHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_expandCpuHasBeenSet(false),
-    m_autoStrategyHasBeenSet(false)
+    m_autoStrategyHasBeenSet(false),
+    m_timeIntervalStrategyHasBeenSet(false),
+    m_periodStrategyHasBeenSet(false)
 {
 }
 
@@ -68,6 +70,24 @@ string StartCpuExpandRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_autoStrategy.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_timeIntervalStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeIntervalStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_timeIntervalStrategy.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_periodStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PeriodStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_periodStrategy.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -140,6 +160,38 @@ void StartCpuExpandRequest::SetAutoStrategy(const AutoStrategy& _autoStrategy)
 bool StartCpuExpandRequest::AutoStrategyHasBeenSet() const
 {
     return m_autoStrategyHasBeenSet;
+}
+
+TimeIntervalStrategy StartCpuExpandRequest::GetTimeIntervalStrategy() const
+{
+    return m_timeIntervalStrategy;
+}
+
+void StartCpuExpandRequest::SetTimeIntervalStrategy(const TimeIntervalStrategy& _timeIntervalStrategy)
+{
+    m_timeIntervalStrategy = _timeIntervalStrategy;
+    m_timeIntervalStrategyHasBeenSet = true;
+}
+
+bool StartCpuExpandRequest::TimeIntervalStrategyHasBeenSet() const
+{
+    return m_timeIntervalStrategyHasBeenSet;
+}
+
+PeriodStrategy StartCpuExpandRequest::GetPeriodStrategy() const
+{
+    return m_periodStrategy;
+}
+
+void StartCpuExpandRequest::SetPeriodStrategy(const PeriodStrategy& _periodStrategy)
+{
+    m_periodStrategy = _periodStrategy;
+    m_periodStrategyHasBeenSet = true;
+}
+
+bool StartCpuExpandRequest::PeriodStrategyHasBeenSet() const
+{
+    return m_periodStrategyHasBeenSet;
 }
 
 

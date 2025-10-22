@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,14 +44,22 @@ namespace TencentCloud
 
                     /**
                      * 获取待删除的执行器ID。
+
+可通过 [DescribeInvokers(查询执行器)](https://cloud.tencent.com/document/api/1340/61759) 接口获取。
                      * @return InvokerId 待删除的执行器ID。
+
+可通过 [DescribeInvokers(查询执行器)](https://cloud.tencent.com/document/api/1340/61759) 接口获取。
                      * 
                      */
                     std::string GetInvokerId() const;
 
                     /**
                      * 设置待删除的执行器ID。
+
+可通过 [DescribeInvokers(查询执行器)](https://cloud.tencent.com/document/api/1340/61759) 接口获取。
                      * @param _invokerId 待删除的执行器ID。
+
+可通过 [DescribeInvokers(查询执行器)](https://cloud.tencent.com/document/api/1340/61759) 接口获取。
                      * 
                      */
                     void SetInvokerId(const std::string& _invokerId);
@@ -67,6 +75,8 @@ namespace TencentCloud
 
                     /**
                      * 待删除的执行器ID。
+
+可通过 [DescribeInvokers(查询执行器)](https://cloud.tencent.com/document/api/1340/61759) 接口获取。
                      */
                     std::string m_invokerId;
                     bool m_invokerIdHasBeenSet;

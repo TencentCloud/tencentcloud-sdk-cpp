@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,7 +56,6 @@ Illegal 违法
 Abuse 谩骂
 Terror 暴恐
 Ad 广告
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Scene 场景
 Porn 色情
 Sexy 性感
@@ -65,7 +64,6 @@ Illegal 违法
 Abuse 谩骂
 Terror 暴恐
 Ad 广告
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScene() const;
@@ -79,7 +77,6 @@ Illegal 违法
 Abuse 谩骂
 Terror 暴恐
 Ad 广告
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scene 场景
 Porn 色情
 Sexy 性感
@@ -88,7 +85,6 @@ Illegal 违法
 Abuse 谩骂
 Terror 暴恐
 Ad 广告
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScene(const std::string& _scene);
@@ -104,11 +100,9 @@ Ad 广告
                      * 获取是否命中
 0 未命中
 1 命中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HitFlag 是否命中
 0 未命中
 1 命中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHitFlag() const;
@@ -117,11 +111,9 @@ Ad 广告
                      * 设置是否命中
 0 未命中
 1 命中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hitFlag 是否命中
 0 未命中
 1 命中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHitFlag(const int64_t& _hitFlag);
@@ -138,12 +130,10 @@ Ad 广告
 Pass 通过，
 Review 建议人审，
 Block 确认违规
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Suggestion 审核建议，可选值：
 Pass 通过，
 Review 建议人审，
 Block 确认违规
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSuggestion() const;
@@ -153,12 +143,10 @@ Block 确认违规
 Pass 通过，
 Review 建议人审，
 Block 确认违规
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _suggestion 审核建议，可选值：
 Pass 通过，
 Review 建议人审，
 Block 确认违规
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
@@ -172,18 +160,14 @@ Block 确认违规
 
                     /**
                      * 获取标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _label 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabel(const std::string& _label);
@@ -197,18 +181,14 @@ Block 确认违规
 
                     /**
                      * 获取子标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubLabel 子标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubLabel() const;
 
                     /**
                      * 设置子标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subLabel 子标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubLabel(const std::string& _subLabel);
@@ -222,18 +202,14 @@ Block 确认违规
 
                     /**
                      * 获取分数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Score 分数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScore() const;
 
                     /**
                      * 设置分数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _score 分数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScore(const int64_t& _score);
@@ -247,18 +223,14 @@ Block 确认违规
 
                     /**
                      * 获取人物名称列表，如未识别，则为null
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Names 人物名称列表，如未识别，则为null
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetNames() const;
 
                     /**
                      * 设置人物名称列表，如未识别，则为null
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _names 人物名称列表，如未识别，则为null
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNames(const std::vector<std::string>& _names);
@@ -272,18 +244,14 @@ Block 确认违规
 
                     /**
                      * 获取图片OCR文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 图片OCR文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置图片OCR文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _text 图片OCR文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetText(const std::string& _text);
@@ -297,18 +265,14 @@ Block 确认违规
 
                     /**
                      * 获取其他详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Details 其他详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ImageResultsResultDetail> GetDetails() const;
 
                     /**
                      * 设置其他详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _details 其他详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDetails(const std::vector<ImageResultsResultDetail>& _details);
@@ -319,6 +283,27 @@ Block 确认违规
                      * 
                      */
                     bool DetailsHasBeenSet() const;
+
+                    /**
+                     * 获取审核命中类型
+                     * @return HitType 审核命中类型
+                     * 
+                     */
+                    std::string GetHitType() const;
+
+                    /**
+                     * 设置审核命中类型
+                     * @param _hitType 审核命中类型
+                     * 
+                     */
+                    void SetHitType(const std::string& _hitType);
+
+                    /**
+                     * 判断参数 HitType 是否已赋值
+                     * @return HitType 是否已赋值
+                     * 
+                     */
+                    bool HitTypeHasBeenSet() const;
 
                 private:
 
@@ -331,7 +316,6 @@ Illegal 违法
 Abuse 谩骂
 Terror 暴恐
 Ad 广告
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scene;
                     bool m_sceneHasBeenSet;
@@ -340,7 +324,6 @@ Ad 广告
                      * 是否命中
 0 未命中
 1 命中
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_hitFlag;
                     bool m_hitFlagHasBeenSet;
@@ -350,52 +333,51 @@ Ad 广告
 Pass 通过，
 Review 建议人审，
 Block 确认违规
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_suggestion;
                     bool m_suggestionHasBeenSet;
 
                     /**
                      * 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
 
                     /**
                      * 子标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subLabel;
                     bool m_subLabelHasBeenSet;
 
                     /**
                      * 分数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_score;
                     bool m_scoreHasBeenSet;
 
                     /**
                      * 人物名称列表，如未识别，则为null
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_names;
                     bool m_namesHasBeenSet;
 
                     /**
                      * 图片OCR文本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;
 
                     /**
                      * 其他详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ImageResultsResultDetail> m_details;
                     bool m_detailsHasBeenSet;
+
+                    /**
+                     * 审核命中类型
+                     */
+                    std::string m_hitType;
+                    bool m_hitTypeHasBeenSet;
 
                 };
             }

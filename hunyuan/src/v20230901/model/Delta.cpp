@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ using namespace std;
 Delta::Delta() :
     m_roleHasBeenSet(false),
     m_contentHasBeenSet(false),
-    m_toolCallsHasBeenSet(false)
+    m_toolCallsHasBeenSet(false),
+    m_reasoningContentHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome Delta::Deserialize(const rapidjson::Value &value)
         m_toolCallsHasBeenSet = true;
     }
 
+    if (value.HasMember("ReasoningContent") && !value["ReasoningContent"].IsNull())
+    {
+        if (!value["ReasoningContent"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Delta.ReasoningContent` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_reasoningContent = string(value["ReasoningContent"].GetString());
+        m_reasoningContentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -108,6 +119,14 @@ void Delta::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_reasoningContentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReasoningContent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reasoningContent.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -159,5 +178,21 @@ void Delta::SetToolCalls(const vector<ToolCall>& _toolCalls)
 bool Delta::ToolCallsHasBeenSet() const
 {
     return m_toolCallsHasBeenSet;
+}
+
+string Delta::GetReasoningContent() const
+{
+    return m_reasoningContent;
+}
+
+void Delta::SetReasoningContent(const string& _reasoningContent)
+{
+    m_reasoningContent = _reasoningContent;
+    m_reasoningContentHasBeenSet = true;
+}
+
+bool Delta::ReasoningContentHasBeenSet() const
+{
+    return m_reasoningContentHasBeenSet;
 }
 

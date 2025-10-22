@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ set(tdid_public_header
 
 set(tdid_public_header_model
   include/tencentcloud/tdid/v20210519/model/GetTDidDocumentResponse.h
+  include/tencentcloud/tdid/v20210519/model/CredentialStatusInfo.h
   include/tencentcloud/tdid/v20210519/model/VerifyPresentationRequest.h
   include/tencentcloud/tdid/v20210519/model/SetTDidAttributeResponse.h
   include/tencentcloud/tdid/v20210519/model/IssueCredentialResponse.h
@@ -52,20 +53,21 @@ set(tdid_public_header_model
   include/tencentcloud/tdid/v20210519/model/DeactivateTDidResponse.h
   include/tencentcloud/tdid/v20210519/model/CredentialProof.h
   include/tencentcloud/tdid/v20210519/model/CredentialState.h
-  include/tencentcloud/tdid/v20210519/model/ChainTransaction.h
+  include/tencentcloud/tdid/v20210519/model/GetTDidByObjectIdRequest.h
   include/tencentcloud/tdid/v20210519/model/CreatePresentationResponse.h
   include/tencentcloud/tdid/v20210519/model/DidAttribute.h
   include/tencentcloud/tdid/v20210519/model/UpdateCredentialStateRequest.h
   include/tencentcloud/tdid/v20210519/model/GetOverSummaryResponse.h
   include/tencentcloud/tdid/v20210519/model/CreateTDidByPubKeyRequest.h
   include/tencentcloud/tdid/v20210519/model/DeactivateTDidRequest.h
-  include/tencentcloud/tdid/v20210519/model/GetTDidByObjectIdRequest.h
+  include/tencentcloud/tdid/v20210519/model/ChainTransaction.h
   include/tencentcloud/tdid/v20210519/model/GetAppSummaryRequest.h
   )
 
 set(tdid_src
   src/v20210519/TdidClient.cpp
   src/v20210519/model/GetTDidDocumentResponse.cpp
+  src/v20210519/model/CredentialStatusInfo.cpp
   src/v20210519/model/VerifyPresentationRequest.cpp
   src/v20210519/model/SetTDidAttributeResponse.cpp
   src/v20210519/model/IssueCredentialResponse.cpp
@@ -98,14 +100,14 @@ set(tdid_src
   src/v20210519/model/DeactivateTDidResponse.cpp
   src/v20210519/model/CredentialProof.cpp
   src/v20210519/model/CredentialState.cpp
-  src/v20210519/model/ChainTransaction.cpp
+  src/v20210519/model/GetTDidByObjectIdRequest.cpp
   src/v20210519/model/CreatePresentationResponse.cpp
   src/v20210519/model/DidAttribute.cpp
   src/v20210519/model/UpdateCredentialStateRequest.cpp
   src/v20210519/model/GetOverSummaryResponse.cpp
   src/v20210519/model/CreateTDidByPubKeyRequest.cpp
   src/v20210519/model/DeactivateTDidRequest.cpp
-  src/v20210519/model/GetTDidByObjectIdRequest.cpp
+  src/v20210519/model/ChainTransaction.cpp
   src/v20210519/model/GetAppSummaryRequest.cpp
   )
 

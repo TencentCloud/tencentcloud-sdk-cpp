@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,7 +45,9 @@ ServerRisk::ServerRisk() :
     m_indexHasBeenSet(false),
     m_riskListHasBeenSet(false),
     m_suggestionListHasBeenSet(false),
-    m_statusCodeHasBeenSet(false)
+    m_statusCodeHasBeenSet(false),
+    m_newLevelHasBeenSet(false),
+    m_xspmStatusHasBeenSet(false)
 {
 }
 
@@ -324,6 +326,26 @@ CoreInternalOutcome ServerRisk::Deserialize(const rapidjson::Value &value)
         m_statusCodeHasBeenSet = true;
     }
 
+    if (value.HasMember("NewLevel") && !value["NewLevel"].IsNull())
+    {
+        if (!value["NewLevel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerRisk.NewLevel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_newLevel = string(value["NewLevel"].GetString());
+        m_newLevelHasBeenSet = true;
+    }
+
+    if (value.HasMember("XspmStatus") && !value["XspmStatus"].IsNull())
+    {
+        if (!value["XspmStatus"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerRisk.XspmStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_xspmStatus = value["XspmStatus"].GetUint64();
+        m_xspmStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -543,6 +565,22 @@ void ServerRisk::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "StatusCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_statusCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_newLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NewLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_newLevel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_xspmStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "XspmStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_xspmStatus, allocator);
     }
 
 }
@@ -946,5 +984,37 @@ void ServerRisk::SetStatusCode(const string& _statusCode)
 bool ServerRisk::StatusCodeHasBeenSet() const
 {
     return m_statusCodeHasBeenSet;
+}
+
+string ServerRisk::GetNewLevel() const
+{
+    return m_newLevel;
+}
+
+void ServerRisk::SetNewLevel(const string& _newLevel)
+{
+    m_newLevel = _newLevel;
+    m_newLevelHasBeenSet = true;
+}
+
+bool ServerRisk::NewLevelHasBeenSet() const
+{
+    return m_newLevelHasBeenSet;
+}
+
+uint64_t ServerRisk::GetXspmStatus() const
+{
+    return m_xspmStatus;
+}
+
+void ServerRisk::SetXspmStatus(const uint64_t& _xspmStatus)
+{
+    m_xspmStatus = _xspmStatus;
+    m_xspmStatusHasBeenSet = true;
+}
+
+bool ServerRisk::XspmStatusHasBeenSet() const
+{
+    return m_xspmStatusHasBeenSet;
 }
 

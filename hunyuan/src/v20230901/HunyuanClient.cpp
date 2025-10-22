@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -119,6 +119,49 @@ HunyuanClient::ChatCompletionsOutcomeCallable HunyuanClient::ChatCompletionsCall
         [this, request]()
         {
             return this->ChatCompletions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+HunyuanClient::ChatTranslationsOutcome HunyuanClient::ChatTranslations(const ChatTranslationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChatTranslations");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChatTranslationsResponse rsp = ChatTranslationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChatTranslationsOutcome(rsp);
+        else
+            return ChatTranslationsOutcome(o.GetError());
+    }
+    else
+    {
+        return ChatTranslationsOutcome(outcome.GetError());
+    }
+}
+
+void HunyuanClient::ChatTranslationsAsync(const ChatTranslationsRequest& request, const ChatTranslationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChatTranslations(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HunyuanClient::ChatTranslationsOutcomeCallable HunyuanClient::ChatTranslationsCallable(const ChatTranslationsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChatTranslationsOutcome()>>(
+        [this, request]()
+        {
+            return this->ChatTranslations(request);
         }
     );
 
@@ -506,6 +549,92 @@ HunyuanClient::GetTokenCountOutcomeCallable HunyuanClient::GetTokenCountCallable
         [this, request]()
         {
             return this->GetTokenCount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+HunyuanClient::GroupChatCompletionsOutcome HunyuanClient::GroupChatCompletions(const GroupChatCompletionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "GroupChatCompletions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GroupChatCompletionsResponse rsp = GroupChatCompletionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GroupChatCompletionsOutcome(rsp);
+        else
+            return GroupChatCompletionsOutcome(o.GetError());
+    }
+    else
+    {
+        return GroupChatCompletionsOutcome(outcome.GetError());
+    }
+}
+
+void HunyuanClient::GroupChatCompletionsAsync(const GroupChatCompletionsRequest& request, const GroupChatCompletionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GroupChatCompletions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HunyuanClient::GroupChatCompletionsOutcomeCallable HunyuanClient::GroupChatCompletionsCallable(const GroupChatCompletionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GroupChatCompletionsOutcome()>>(
+        [this, request]()
+        {
+            return this->GroupChatCompletions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+HunyuanClient::ImageQuestionOutcome HunyuanClient::ImageQuestion(const ImageQuestionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ImageQuestion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ImageQuestionResponse rsp = ImageQuestionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ImageQuestionOutcome(rsp);
+        else
+            return ImageQuestionOutcome(o.GetError());
+    }
+    else
+    {
+        return ImageQuestionOutcome(outcome.GetError());
+    }
+}
+
+void HunyuanClient::ImageQuestionAsync(const ImageQuestionRequest& request, const ImageQuestionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ImageQuestion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HunyuanClient::ImageQuestionOutcomeCallable HunyuanClient::ImageQuestionCallable(const ImageQuestionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ImageQuestionOutcome()>>(
+        [this, request]()
+        {
+            return this->ImageQuestion(request);
         }
     );
 

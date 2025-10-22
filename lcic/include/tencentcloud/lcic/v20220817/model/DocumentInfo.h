@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文档Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DocumentId 文档Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDocumentId() const;
 
                     /**
                      * 设置文档Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _documentId 文档Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDocumentId(const std::string& _documentId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文档原址url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DocumentUrl 文档原址url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDocumentUrl() const;
 
                     /**
                      * 设置文档原址url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _documentUrl 文档原址url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDocumentUrl(const std::string& _documentUrl);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文档名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DocumentName 文档名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDocumentName() const;
 
                     /**
                      * 设置文档名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _documentName 文档名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDocumentName(const std::string& _documentName);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文档所有者UserId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Owner 文档所有者UserId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOwner() const;
 
                     /**
                      * 设置文档所有者UserId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _owner 文档所有者UserId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOwner(const std::string& _owner);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SdkAppId 应用Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置应用Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sdkAppId 应用Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文档权限，0：私有课件 1：公共课件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Permission 文档权限，0：私有课件 1：公共课件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPermission() const;
 
                     /**
                      * 设置文档权限，0：私有课件 1：公共课件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _permission 文档权限，0：私有课件 1：公共课件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPermission(const uint64_t& _permission);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取转码结果，无需转码为空，转码成功为结果url，转码失败为错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TranscodeResult 转码结果，无需转码为空，转码成功为结果url，转码失败为错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTranscodeResult() const;
 
                     /**
                      * 设置转码结果，无需转码为空，转码成功为结果url，转码失败为错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _transcodeResult 转码结果，无需转码为空，转码成功为结果url，转码失败为错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTranscodeResult(const std::string& _transcodeResult);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取转码类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TranscodeType 转码类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTranscodeType() const;
 
                     /**
                      * 设置转码类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _transcodeType 转码类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTranscodeType(const uint64_t& _transcodeType);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取转码进度， 0 - 100 表示（0% - 100%）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TranscodeProgress 转码进度， 0 - 100 表示（0% - 100%）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTranscodeProgress() const;
 
                     /**
                      * 设置转码进度， 0 - 100 表示（0% - 100%）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _transcodeProgress 转码进度， 0 - 100 表示（0% - 100%）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTranscodeProgress(const uint64_t& _transcodeProgress);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取转码状态，0为无需转码，1为正在转码，2为转码失败，3为转码成功
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TranscodeState 转码状态，0为无需转码，1为正在转码，2为转码失败，3为转码成功
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTranscodeState() const;
 
                     /**
                      * 设置转码状态，0为无需转码，1为正在转码，2为转码失败，3为转码成功
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _transcodeState 转码状态，0为无需转码，1为正在转码，2为转码失败，3为转码成功
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTranscodeState(const uint64_t& _transcodeState);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取转码失败后的错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TranscodeInfo 转码失败后的错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTranscodeInfo() const;
 
                     /**
                      * 设置转码失败后的错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _transcodeInfo 转码失败后的错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTranscodeInfo(const std::string& _transcodeInfo);
@@ -323,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文档类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DocumentType 文档类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDocumentType() const;
 
                     /**
                      * 设置文档类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _documentType 文档类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDocumentType(const std::string& _documentType);
@@ -348,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文档大小，单位：字节
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DocumentSize 文档大小，单位：字节
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDocumentSize() const;
 
                     /**
                      * 设置文档大小，单位：字节
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _documentSize 文档大小，单位：字节
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDocumentSize(const uint64_t& _documentSize);
@@ -373,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取更新的UNIX时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新的UNIX时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetUpdateTime() const;
 
                     /**
                      * 设置更新的UNIX时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 更新的UNIX时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const uint64_t& _updateTime);
@@ -398,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取课件页数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Pages 课件页数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPages() const;
 
                     /**
                      * 设置课件页数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pages 课件页数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPages(const uint64_t& _pages);
@@ -423,18 +363,14 @@ namespace TencentCloud
 
                     /**
                      * 获取宽，仅在静态转码的课件有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Width 宽，仅在静态转码的课件有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetWidth() const;
 
                     /**
                      * 设置宽，仅在静态转码的课件有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _width 宽，仅在静态转码的课件有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWidth(const uint64_t& _width);
@@ -448,18 +384,14 @@ namespace TencentCloud
 
                     /**
                      * 获取高，仅在静态转码的课件有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Height 高，仅在静态转码的课件有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetHeight() const;
 
                     /**
                      * 设置高，仅在静态转码的课件有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _height 高，仅在静态转码的课件有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHeight(const uint64_t& _height);
@@ -473,18 +405,14 @@ namespace TencentCloud
 
                     /**
                      * 获取封面，仅转码的课件会生成封面
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cover 封面，仅转码的课件会生成封面
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCover() const;
 
                     /**
                      * 设置封面，仅转码的课件会生成封面
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cover 封面，仅转码的课件会生成封面
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCover(const std::string& _cover);
@@ -498,18 +426,14 @@ namespace TencentCloud
 
                     /**
                      * 获取课件预览地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Preview 课件预览地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPreview() const;
 
                     /**
                      * 设置课件预览地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _preview 课件预览地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPreview(const std::string& _preview);
@@ -523,18 +447,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文档的分辨率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resolution 文档的分辨率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResolution() const;
 
                     /**
                      * 设置文档的分辨率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resolution 文档的分辨率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResolution(const std::string& _resolution);
@@ -548,18 +468,14 @@ namespace TencentCloud
 
                     /**
                      * 获取转码后文档的最小分辨率，和创建文档时传入的参数一致。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MinScaleResolution 转码后文档的最小分辨率，和创建文档时传入的参数一致。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMinScaleResolution() const;
 
                     /**
                      * 设置转码后文档的最小分辨率，和创建文档时传入的参数一致。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _minScaleResolution 转码后文档的最小分辨率，和创建文档时传入的参数一致。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMinScaleResolution(const std::string& _minScaleResolution);
@@ -575,147 +491,126 @@ namespace TencentCloud
 
                     /**
                      * 文档Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_documentId;
                     bool m_documentIdHasBeenSet;
 
                     /**
                      * 文档原址url
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_documentUrl;
                     bool m_documentUrlHasBeenSet;
 
                     /**
                      * 文档名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_documentName;
                     bool m_documentNameHasBeenSet;
 
                     /**
                      * 文档所有者UserId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_owner;
                     bool m_ownerHasBeenSet;
 
                     /**
                      * 应用Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
                      * 文档权限，0：私有课件 1：公共课件
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_permission;
                     bool m_permissionHasBeenSet;
 
                     /**
                      * 转码结果，无需转码为空，转码成功为结果url，转码失败为错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_transcodeResult;
                     bool m_transcodeResultHasBeenSet;
 
                     /**
                      * 转码类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_transcodeType;
                     bool m_transcodeTypeHasBeenSet;
 
                     /**
                      * 转码进度， 0 - 100 表示（0% - 100%）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_transcodeProgress;
                     bool m_transcodeProgressHasBeenSet;
 
                     /**
                      * 转码状态，0为无需转码，1为正在转码，2为转码失败，3为转码成功
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_transcodeState;
                     bool m_transcodeStateHasBeenSet;
 
                     /**
                      * 转码失败后的错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_transcodeInfo;
                     bool m_transcodeInfoHasBeenSet;
 
                     /**
                      * 文档类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_documentType;
                     bool m_documentTypeHasBeenSet;
 
                     /**
                      * 文档大小，单位：字节
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_documentSize;
                     bool m_documentSizeHasBeenSet;
 
                     /**
                      * 更新的UNIX时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
                      * 课件页数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_pages;
                     bool m_pagesHasBeenSet;
 
                     /**
                      * 宽，仅在静态转码的课件有效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
                      * 高，仅在静态转码的课件有效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_height;
                     bool m_heightHasBeenSet;
 
                     /**
                      * 封面，仅转码的课件会生成封面
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cover;
                     bool m_coverHasBeenSet;
 
                     /**
                      * 课件预览地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_preview;
                     bool m_previewHasBeenSet;
 
                     /**
                      * 文档的分辨率
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resolution;
                     bool m_resolutionHasBeenSet;
 
                     /**
                      * 转码后文档的最小分辨率，和创建文档时传入的参数一致。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_minScaleResolution;
                     bool m_minScaleResolutionHasBeenSet;

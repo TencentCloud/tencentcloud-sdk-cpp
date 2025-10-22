@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,6 +49,8 @@ Instance::Instance() :
     m_zoneHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_instanceRestrictStateHasBeenSet(false),
+    m_supportIpv6DetailHasBeenSet(false),
+    m_publicIpv6AddressesHasBeenSet(false),
     m_initInvocationIdHasBeenSet(false),
     m_instanceViolationDetailHasBeenSet(false)
 {
@@ -376,6 +378,36 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
         m_instanceRestrictStateHasBeenSet = true;
     }
 
+    if (value.HasMember("SupportIpv6Detail") && !value["SupportIpv6Detail"].IsNull())
+    {
+        if (!value["SupportIpv6Detail"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Instance.SupportIpv6Detail` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_supportIpv6Detail.Deserialize(value["SupportIpv6Detail"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_supportIpv6DetailHasBeenSet = true;
+    }
+
+    if (value.HasMember("PublicIpv6Addresses") && !value["PublicIpv6Addresses"].IsNull())
+    {
+        if (!value["PublicIpv6Addresses"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Instance.PublicIpv6Addresses` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PublicIpv6Addresses"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_publicIpv6Addresses.push_back((*itr).GetString());
+        }
+        m_publicIpv6AddressesHasBeenSet = true;
+    }
+
     if (value.HasMember("InitInvocationId") && !value["InitInvocationId"].IsNull())
     {
         if (!value["InitInvocationId"].IsString())
@@ -652,6 +684,28 @@ void Instance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "InstanceRestrictState";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceRestrictState.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_supportIpv6DetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SupportIpv6Detail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_supportIpv6Detail.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_publicIpv6AddressesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicIpv6Addresses";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_publicIpv6Addresses.begin(); itr != m_publicIpv6Addresses.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_initInvocationIdHasBeenSet)
@@ -1120,6 +1174,38 @@ void Instance::SetInstanceRestrictState(const string& _instanceRestrictState)
 bool Instance::InstanceRestrictStateHasBeenSet() const
 {
     return m_instanceRestrictStateHasBeenSet;
+}
+
+SupportIpv6Detail Instance::GetSupportIpv6Detail() const
+{
+    return m_supportIpv6Detail;
+}
+
+void Instance::SetSupportIpv6Detail(const SupportIpv6Detail& _supportIpv6Detail)
+{
+    m_supportIpv6Detail = _supportIpv6Detail;
+    m_supportIpv6DetailHasBeenSet = true;
+}
+
+bool Instance::SupportIpv6DetailHasBeenSet() const
+{
+    return m_supportIpv6DetailHasBeenSet;
+}
+
+vector<string> Instance::GetPublicIpv6Addresses() const
+{
+    return m_publicIpv6Addresses;
+}
+
+void Instance::SetPublicIpv6Addresses(const vector<string>& _publicIpv6Addresses)
+{
+    m_publicIpv6Addresses = _publicIpv6Addresses;
+    m_publicIpv6AddressesHasBeenSet = true;
+}
+
+bool Instance::PublicIpv6AddressesHasBeenSet() const
+{
+    return m_publicIpv6AddressesHasBeenSet;
 }
 
 string Instance::GetInitInvocationId() const

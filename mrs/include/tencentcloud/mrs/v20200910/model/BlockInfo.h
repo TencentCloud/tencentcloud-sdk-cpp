@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原文位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Index 原文位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetIndex() const;
 
                     /**
                      * 设置原文位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _index 原文位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIndex(const std::vector<int64_t>& _index);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取阳性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Positive 阳性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPositive() const;
 
                     /**
                      * 设置阳性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _positive 阳性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPositive(const std::string& _positive);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Src 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSrc() const;
 
                     /**
                      * 设置原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _src 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrc(const std::string& _src);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Size 大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Size> GetSize() const;
 
                     /**
                      * 设置大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _size 大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSize(const std::vector<Size>& _size);
@@ -226,49 +198,42 @@ namespace TencentCloud
 
                     /**
                      * 原文位置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_index;
                     bool m_indexHasBeenSet;
 
                     /**
                      * 阳性
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_positive;
                     bool m_positiveHasBeenSet;
 
                     /**
                      * 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_src;
                     bool m_srcHasBeenSet;
 
                     /**
                      * 值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
 
                     /**
                      * 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Size> m_size;
                     bool m_sizeHasBeenSet;

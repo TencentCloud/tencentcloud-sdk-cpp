@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ AllocateIp6AddressesBandwidthRequest::AllocateIp6AddressesBandwidthRequest() :
     m_ip6AddressesHasBeenSet(false),
     m_internetMaxBandwidthOutHasBeenSet(false),
     m_internetChargeTypeHasBeenSet(false),
-    m_bandwidthPackageIdHasBeenSet(false)
+    m_bandwidthPackageIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,21 @@ string AllocateIp6AddressesBandwidthRequest::ToJsonString() const
         string key = "BandwidthPackageId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_bandwidthPackageId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -144,6 +160,22 @@ void AllocateIp6AddressesBandwidthRequest::SetBandwidthPackageId(const string& _
 bool AllocateIp6AddressesBandwidthRequest::BandwidthPackageIdHasBeenSet() const
 {
     return m_bandwidthPackageIdHasBeenSet;
+}
+
+vector<Tag> AllocateIp6AddressesBandwidthRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void AllocateIp6AddressesBandwidthRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool AllocateIp6AddressesBandwidthRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

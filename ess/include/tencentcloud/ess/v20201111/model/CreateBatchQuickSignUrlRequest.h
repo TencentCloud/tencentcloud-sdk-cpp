@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@
 #include <tencentcloud/ess/v20201111/model/UserInfo.h>
 #include <tencentcloud/ess/v20201111/model/FlowBatchUrlInfo.h>
 #include <tencentcloud/ess/v20201111/model/Intention.h>
+#include <tencentcloud/ess/v20201111/model/PresetApproverInfo.h>
 
 
 namespace TencentCloud
@@ -49,30 +50,42 @@ namespace TencentCloud
 
                     /**
                      * 获取批量签署的流程签署人，其中姓名(ApproverName)、参与人类型(ApproverType)必传，手机号(ApproverMobile)和证件信息(ApproverIdCardType、ApproverIdCardNumber)可任选一种或全部传入。
+<ul>
+<li>若为个人参与方：ApproverType=1</li>
+<li>若为企业参与方：ApproverType=0。同时 OrganizationName 参数需传入参与方企业名称。 </li>
+</ul>
 注:
-`1. ApproverType目前只支持个人类型的签署人。`
-`2. 签署人只能有手写签名和时间类型的签署控件，其他类型的填写控件和签署控件暂时都未支持。`
-`3. 当需要通过短信验证码签署时，手机号ApproverMobile需要与发起合同时填写的用户手机号一致。`
+`1. 暂不支持签署人拖动签署控件功能，以及签批控件。`
+`2. 当需要通过短信验证码签署时，手机号ApproverMobile需要与发起合同时填写的用户手机号一致。`
                      * @return FlowApproverInfo 批量签署的流程签署人，其中姓名(ApproverName)、参与人类型(ApproverType)必传，手机号(ApproverMobile)和证件信息(ApproverIdCardType、ApproverIdCardNumber)可任选一种或全部传入。
+<ul>
+<li>若为个人参与方：ApproverType=1</li>
+<li>若为企业参与方：ApproverType=0。同时 OrganizationName 参数需传入参与方企业名称。 </li>
+</ul>
 注:
-`1. ApproverType目前只支持个人类型的签署人。`
-`2. 签署人只能有手写签名和时间类型的签署控件，其他类型的填写控件和签署控件暂时都未支持。`
-`3. 当需要通过短信验证码签署时，手机号ApproverMobile需要与发起合同时填写的用户手机号一致。`
+`1. 暂不支持签署人拖动签署控件功能，以及签批控件。`
+`2. 当需要通过短信验证码签署时，手机号ApproverMobile需要与发起合同时填写的用户手机号一致。`
                      * 
                      */
                     FlowCreateApprover GetFlowApproverInfo() const;
 
                     /**
                      * 设置批量签署的流程签署人，其中姓名(ApproverName)、参与人类型(ApproverType)必传，手机号(ApproverMobile)和证件信息(ApproverIdCardType、ApproverIdCardNumber)可任选一种或全部传入。
+<ul>
+<li>若为个人参与方：ApproverType=1</li>
+<li>若为企业参与方：ApproverType=0。同时 OrganizationName 参数需传入参与方企业名称。 </li>
+</ul>
 注:
-`1. ApproverType目前只支持个人类型的签署人。`
-`2. 签署人只能有手写签名和时间类型的签署控件，其他类型的填写控件和签署控件暂时都未支持。`
-`3. 当需要通过短信验证码签署时，手机号ApproverMobile需要与发起合同时填写的用户手机号一致。`
+`1. 暂不支持签署人拖动签署控件功能，以及签批控件。`
+`2. 当需要通过短信验证码签署时，手机号ApproverMobile需要与发起合同时填写的用户手机号一致。`
                      * @param _flowApproverInfo 批量签署的流程签署人，其中姓名(ApproverName)、参与人类型(ApproverType)必传，手机号(ApproverMobile)和证件信息(ApproverIdCardType、ApproverIdCardNumber)可任选一种或全部传入。
+<ul>
+<li>若为个人参与方：ApproverType=1</li>
+<li>若为企业参与方：ApproverType=0。同时 OrganizationName 参数需传入参与方企业名称。 </li>
+</ul>
 注:
-`1. ApproverType目前只支持个人类型的签署人。`
-`2. 签署人只能有手写签名和时间类型的签署控件，其他类型的填写控件和签署控件暂时都未支持。`
-`3. 当需要通过短信验证码签署时，手机号ApproverMobile需要与发起合同时填写的用户手机号一致。`
+`1. 暂不支持签署人拖动签署控件功能，以及签批控件。`
+`2. 当需要通过短信验证码签署时，手机号ApproverMobile需要与发起合同时填写的用户手机号一致。`
                      * 
                      */
                     void SetFlowApproverInfo(const FlowCreateApprover& _flowApproverInfo);
@@ -216,6 +229,7 @@ namespace TencentCloud
 <ul><li>默认情况下，签名类型为手写签名</li>
 <li>您可以传递多种值，表示可用多种签名类型。</li>
 <li>该参数会覆盖您合同中的签名类型，若您在发起合同时限定了签名类型(赋值签名类型给ComponentTypeLimit)，请将这些签名类型赋予此参数</li>
+<li>若签署方为企业员工，此参数无效，签名方式将以合同中为准。</li>
 </ul>
                      * @return SignatureTypes 指定批量签署合同的签名类型，可传递以下值：
 <ul><li>**0**：手写签名(默认)</li>
@@ -227,6 +241,7 @@ namespace TencentCloud
 <ul><li>默认情况下，签名类型为手写签名</li>
 <li>您可以传递多种值，表示可用多种签名类型。</li>
 <li>该参数会覆盖您合同中的签名类型，若您在发起合同时限定了签名类型(赋值签名类型给ComponentTypeLimit)，请将这些签名类型赋予此参数</li>
+<li>若签署方为企业员工，此参数无效，签名方式将以合同中为准。</li>
 </ul>
                      * 
                      */
@@ -243,6 +258,7 @@ namespace TencentCloud
 <ul><li>默认情况下，签名类型为手写签名</li>
 <li>您可以传递多种值，表示可用多种签名类型。</li>
 <li>该参数会覆盖您合同中的签名类型，若您在发起合同时限定了签名类型(赋值签名类型给ComponentTypeLimit)，请将这些签名类型赋予此参数</li>
+<li>若签署方为企业员工，此参数无效，签名方式将以合同中为准。</li>
 </ul>
                      * @param _signatureTypes 指定批量签署合同的签名类型，可传递以下值：
 <ul><li>**0**：手写签名(默认)</li>
@@ -254,6 +270,7 @@ namespace TencentCloud
 <ul><li>默认情况下，签名类型为手写签名</li>
 <li>您可以传递多种值，表示可用多种签名类型。</li>
 <li>该参数会覆盖您合同中的签名类型，若您在发起合同时限定了签名类型(赋值签名类型给ComponentTypeLimit)，请将这些签名类型赋予此参数</li>
+<li>若签署方为企业员工，此参数无效，签名方式将以合同中为准。</li>
 </ul>
                      * 
                      */
@@ -350,14 +367,22 @@ namespace TencentCloud
 
                     /**
                      * 获取批量签署合同相关信息，指定合同和签署方的信息，用于补充动态签署人。	
+
+注: `若签署方为企业员工，暂不支持通过H5端进行动态签署人的补充`
                      * @return FlowBatchUrlInfo 批量签署合同相关信息，指定合同和签署方的信息，用于补充动态签署人。	
+
+注: `若签署方为企业员工，暂不支持通过H5端进行动态签署人的补充`
                      * 
                      */
                     FlowBatchUrlInfo GetFlowBatchUrlInfo() const;
 
                     /**
                      * 设置批量签署合同相关信息，指定合同和签署方的信息，用于补充动态签署人。	
+
+注: `若签署方为企业员工，暂不支持通过H5端进行动态签署人的补充`
                      * @param _flowBatchUrlInfo 批量签署合同相关信息，指定合同和签署方的信息，用于补充动态签署人。	
+
+注: `若签署方为企业员工，暂不支持通过H5端进行动态签署人的补充`
                      * 
                      */
                     void SetFlowBatchUrlInfo(const FlowBatchUrlInfo& _flowBatchUrlInfo);
@@ -412,14 +437,22 @@ namespace TencentCloud
 
                     /**
                      * 获取缓存签署人信息。在H5签署链接动态领取场景，首次填写后，选择缓存签署人信息，在下次签署人点击领取链接时，会自动将个人信息（姓名、身份证号、手机号）填入，否则需要每次手动填写。
+
+注: `若参与方为企业员工时，暂不支持对参与方信息进行缓存`
                      * @return CacheApproverInfo 缓存签署人信息。在H5签署链接动态领取场景，首次填写后，选择缓存签署人信息，在下次签署人点击领取链接时，会自动将个人信息（姓名、身份证号、手机号）填入，否则需要每次手动填写。
+
+注: `若参与方为企业员工时，暂不支持对参与方信息进行缓存`
                      * 
                      */
                     bool GetCacheApproverInfo() const;
 
                     /**
                      * 设置缓存签署人信息。在H5签署链接动态领取场景，首次填写后，选择缓存签署人信息，在下次签署人点击领取链接时，会自动将个人信息（姓名、身份证号、手机号）填入，否则需要每次手动填写。
+
+注: `若参与方为企业员工时，暂不支持对参与方信息进行缓存`
                      * @param _cacheApproverInfo 缓存签署人信息。在H5签署链接动态领取场景，首次填写后，选择缓存签署人信息，在下次签署人点击领取链接时，会自动将个人信息（姓名、身份证号、手机号）填入，否则需要每次手动填写。
+
+注: `若参与方为企业员工时，暂不支持对参与方信息进行缓存`
                      * 
                      */
                     void SetCacheApproverInfo(const bool& _cacheApproverInfo);
@@ -431,14 +464,75 @@ namespace TencentCloud
                      */
                     bool CacheApproverInfoHasBeenSet() const;
 
+                    /**
+                     * 获取是否允许此链接中签署方批量拒签。
+ <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>
+
+注：`当前合同组不支持批量拒签功能。请对合同组中的每个子合同逐一执行拒签操作，以达到拒签整个合同组的效果。`
+
+                     * @return CanBatchReject 是否允许此链接中签署方批量拒签。
+ <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>
+
+注：`当前合同组不支持批量拒签功能。请对合同组中的每个子合同逐一执行拒签操作，以达到拒签整个合同组的效果。`
+
+                     * 
+                     */
+                    bool GetCanBatchReject() const;
+
+                    /**
+                     * 设置是否允许此链接中签署方批量拒签。
+ <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>
+
+注：`当前合同组不支持批量拒签功能。请对合同组中的每个子合同逐一执行拒签操作，以达到拒签整个合同组的效果。`
+
+                     * @param _canBatchReject 是否允许此链接中签署方批量拒签。
+ <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>
+
+注：`当前合同组不支持批量拒签功能。请对合同组中的每个子合同逐一执行拒签操作，以达到拒签整个合同组的效果。`
+
+                     * 
+                     */
+                    void SetCanBatchReject(const bool& _canBatchReject);
+
+                    /**
+                     * 判断参数 CanBatchReject 是否已赋值
+                     * @return CanBatchReject 是否已赋值
+                     * 
+                     */
+                    bool CanBatchRejectHasBeenSet() const;
+
+                    /**
+                     * 获取	 预设的动态签署方的补充信息，仅匹配对应信息的签署方才能领取合同。暂时仅对个人参与方生效。
+                     * @return PresetApproverInfo 	 预设的动态签署方的补充信息，仅匹配对应信息的签署方才能领取合同。暂时仅对个人参与方生效。
+                     * 
+                     */
+                    PresetApproverInfo GetPresetApproverInfo() const;
+
+                    /**
+                     * 设置	 预设的动态签署方的补充信息，仅匹配对应信息的签署方才能领取合同。暂时仅对个人参与方生效。
+                     * @param _presetApproverInfo 	 预设的动态签署方的补充信息，仅匹配对应信息的签署方才能领取合同。暂时仅对个人参与方生效。
+                     * 
+                     */
+                    void SetPresetApproverInfo(const PresetApproverInfo& _presetApproverInfo);
+
+                    /**
+                     * 判断参数 PresetApproverInfo 是否已赋值
+                     * @return PresetApproverInfo 是否已赋值
+                     * 
+                     */
+                    bool PresetApproverInfoHasBeenSet() const;
+
                 private:
 
                     /**
                      * 批量签署的流程签署人，其中姓名(ApproverName)、参与人类型(ApproverType)必传，手机号(ApproverMobile)和证件信息(ApproverIdCardType、ApproverIdCardNumber)可任选一种或全部传入。
+<ul>
+<li>若为个人参与方：ApproverType=1</li>
+<li>若为企业参与方：ApproverType=0。同时 OrganizationName 参数需传入参与方企业名称。 </li>
+</ul>
 注:
-`1. ApproverType目前只支持个人类型的签署人。`
-`2. 签署人只能有手写签名和时间类型的签署控件，其他类型的填写控件和签署控件暂时都未支持。`
-`3. 当需要通过短信验证码签署时，手机号ApproverMobile需要与发起合同时填写的用户手机号一致。`
+`1. 暂不支持签署人拖动签署控件功能，以及签批控件。`
+`2. 当需要通过短信验证码签署时，手机号ApproverMobile需要与发起合同时填写的用户手机号一致。`
                      */
                     FlowCreateApprover m_flowApproverInfo;
                     bool m_flowApproverInfoHasBeenSet;
@@ -488,6 +582,7 @@ namespace TencentCloud
 <ul><li>默认情况下，签名类型为手写签名</li>
 <li>您可以传递多种值，表示可用多种签名类型。</li>
 <li>该参数会覆盖您合同中的签名类型，若您在发起合同时限定了签名类型(赋值签名类型给ComponentTypeLimit)，请将这些签名类型赋予此参数</li>
+<li>若签署方为企业员工，此参数无效，签名方式将以合同中为准。</li>
 </ul>
                      */
                     std::vector<int64_t> m_signatureTypes;
@@ -517,6 +612,8 @@ namespace TencentCloud
 
                     /**
                      * 批量签署合同相关信息，指定合同和签署方的信息，用于补充动态签署人。	
+
+注: `若签署方为企业员工，暂不支持通过H5端进行动态签署人的补充`
                      */
                     FlowBatchUrlInfo m_flowBatchUrlInfo;
                     bool m_flowBatchUrlInfoHasBeenSet;
@@ -534,9 +631,27 @@ namespace TencentCloud
 
                     /**
                      * 缓存签署人信息。在H5签署链接动态领取场景，首次填写后，选择缓存签署人信息，在下次签署人点击领取链接时，会自动将个人信息（姓名、身份证号、手机号）填入，否则需要每次手动填写。
+
+注: `若参与方为企业员工时，暂不支持对参与方信息进行缓存`
                      */
                     bool m_cacheApproverInfo;
                     bool m_cacheApproverInfoHasBeenSet;
+
+                    /**
+                     * 是否允许此链接中签署方批量拒签。
+ <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>
+
+注：`当前合同组不支持批量拒签功能。请对合同组中的每个子合同逐一执行拒签操作，以达到拒签整个合同组的效果。`
+
+                     */
+                    bool m_canBatchReject;
+                    bool m_canBatchRejectHasBeenSet;
+
+                    /**
+                     * 	 预设的动态签署方的补充信息，仅匹配对应信息的签署方才能领取合同。暂时仅对个人参与方生效。
+                     */
+                    PresetApproverInfo m_presetApproverInfo;
+                    bool m_presetApproverInfoHasBeenSet;
 
                 };
             }

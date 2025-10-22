@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -79,18 +79,14 @@ namespace TencentCloud
 
                     /**
                      * 获取首包配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FirstPartConfig 首包配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     FirstPartConfig GetFirstPartConfig() const;
 
                     /**
                      * 设置首包配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _firstPartConfig 首包配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFirstPartConfig(const FirstPartConfig& _firstPartConfig);
@@ -104,18 +100,14 @@ namespace TencentCloud
 
                     /**
                      * 获取基础配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SlowRateConfig 基础配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SlowRateConfig GetSlowRateConfig() const;
 
                     /**
                      * 设置基础配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _slowRateConfig 基础配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSlowRateConfig(const SlowRateConfig& _slowRateConfig);
@@ -131,11 +123,9 @@ namespace TencentCloud
                      * 获取慢速攻击的处置动作，取值有：
 <li>monitor：观察；</li>
 <li>drop：拦截。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Action 慢速攻击的处置动作，取值有：
 <li>monitor：观察；</li>
 <li>drop：拦截。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAction() const;
@@ -144,11 +134,9 @@ namespace TencentCloud
                      * 设置慢速攻击的处置动作，取值有：
 <li>monitor：观察；</li>
 <li>drop：拦截。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _action 慢速攻击的处置动作，取值有：
 <li>monitor：观察；</li>
 <li>drop：拦截。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAction(const std::string& _action);
@@ -162,18 +150,14 @@ namespace TencentCloud
 
                     /**
                      * 获取本规则的Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleId 本规则的Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRuleId() const;
 
                     /**
                      * 设置本规则的Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleId 本规则的Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleId(const uint64_t& _ruleId);
@@ -197,14 +181,12 @@ namespace TencentCloud
 
                     /**
                      * 首包配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     FirstPartConfig m_firstPartConfig;
                     bool m_firstPartConfigHasBeenSet;
 
                     /**
                      * 基础配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SlowRateConfig m_slowRateConfig;
                     bool m_slowRateConfigHasBeenSet;
@@ -213,14 +195,12 @@ namespace TencentCloud
                      * 慢速攻击的处置动作，取值有：
 <li>monitor：观察；</li>
 <li>drop：拦截。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_action;
                     bool m_actionHasBeenSet;
 
                     /**
                      * 本规则的Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_ruleId;
                     bool m_ruleIdHasBeenSet;

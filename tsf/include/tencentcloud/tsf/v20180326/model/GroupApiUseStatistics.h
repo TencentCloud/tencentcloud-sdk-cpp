@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取总调用数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopStatusCode 总调用数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ApiUseStatisticsEntity> GetTopStatusCode() const;
 
                     /**
                      * 设置总调用数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topStatusCode 总调用数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopStatusCode(const std::vector<ApiUseStatisticsEntity>& _topStatusCode);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取平均错误率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopTimeCost 平均错误率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ApiUseStatisticsEntity> GetTopTimeCost() const;
 
                     /**
                      * 设置平均错误率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topTimeCost 平均错误率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopTimeCost(const std::vector<ApiUseStatisticsEntity>& _topTimeCost);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分位值对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Quantile 分位值对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     QuantileEntity GetQuantile() const;
 
                     /**
                      * 设置分位值对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _quantile 分位值对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQuantile(const QuantileEntity& _quantile);
@@ -127,21 +115,18 @@ namespace TencentCloud
 
                     /**
                      * 总调用数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ApiUseStatisticsEntity> m_topStatusCode;
                     bool m_topStatusCodeHasBeenSet;
 
                     /**
                      * 平均错误率
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ApiUseStatisticsEntity> m_topTimeCost;
                     bool m_topTimeCostHasBeenSet;
 
                     /**
                      * 分位值对象
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     QuantileEntity m_quantile;
                     bool m_quantileHasBeenSet;

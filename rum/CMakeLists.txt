@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -76,7 +76,7 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/DescribeRumLogExportsResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeDataStaticProjectRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeRumStatsLogListRequest.h
-  include/tencentcloud/rum/v20210622/model/ResumeProjectRequest.h
+  include/tencentcloud/rum/v20210622/model/Kafka.h
   include/tencentcloud/rum/v20210622/model/ProjectLimit.h
   include/tencentcloud/rum/v20210622/model/CreateProjectRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeRumStatsLogListResponse.h
@@ -117,6 +117,7 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/DescribeProjectsRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataEventUrlRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeAppDimensionMetricsResponse.h
+  include/tencentcloud/rum/v20210622/model/ResumeProjectRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeAppSingleCaseDetailListRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeRumGroupLogRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeWhitelistsResponse.h
@@ -199,7 +200,7 @@ set(rum_src
   src/v20210622/model/DescribeRumLogExportsResponse.cpp
   src/v20210622/model/DescribeDataStaticProjectRequest.cpp
   src/v20210622/model/DescribeRumStatsLogListRequest.cpp
-  src/v20210622/model/ResumeProjectRequest.cpp
+  src/v20210622/model/Kafka.cpp
   src/v20210622/model/ProjectLimit.cpp
   src/v20210622/model/CreateProjectRequest.cpp
   src/v20210622/model/DescribeRumStatsLogListResponse.cpp
@@ -240,6 +241,7 @@ set(rum_src
   src/v20210622/model/DescribeProjectsRequest.cpp
   src/v20210622/model/DescribeDataEventUrlRequest.cpp
   src/v20210622/model/DescribeAppDimensionMetricsResponse.cpp
+  src/v20210622/model/ResumeProjectRequest.cpp
   src/v20210622/model/DescribeAppSingleCaseDetailListRequest.cpp
   src/v20210622/model/DescribeRumGroupLogRequest.cpp
   src/v20210622/model/DescribeWhitelistsResponse.cpp

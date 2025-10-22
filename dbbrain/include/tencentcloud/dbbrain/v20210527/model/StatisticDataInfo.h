@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取统计维度的值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 统计维度的值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置统计维度的值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 统计维度的值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取平均时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeAvg 平均时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetTimeAvg() const;
 
                     /**
                      * 设置平均时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeAvg 平均时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeAvg(const double& _timeAvg);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取总时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeSum 总时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetTimeSum() const;
 
                     /**
                      * 设置总时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeSum 总时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeSum(const double& _timeSum);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _count 数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCount(const int64_t& _count);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 统计维度的值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 平均时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_timeAvg;
                     bool m_timeAvgHasBeenSet;
 
                     /**
                      * 总时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_timeSum;
                     bool m_timeSumHasBeenSet;
 
                     /**
                      * 数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_count;
                     bool m_countHasBeenSet;

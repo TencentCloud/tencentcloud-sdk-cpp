@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,14 @@ ChatCompletionsRequest::ChatCompletionsRequest() :
     m_enableSpeedSearchHasBeenSet(false),
     m_enableMultimediaHasBeenSet(false),
     m_enableDeepSearchHasBeenSet(false),
-    m_seedHasBeenSet(false)
+    m_seedHasBeenSet(false),
+    m_forceSearchEnhancementHasBeenSet(false),
+    m_stopHasBeenSet(false),
+    m_enableRecommendedQuestionsHasBeenSet(false),
+    m_enableDeepReadHasBeenSet(false),
+    m_webSearchOptionsHasBeenSet(false),
+    m_topicChoiceHasBeenSet(false),
+    m_enableThinkingHasBeenSet(false)
 {
 }
 
@@ -190,6 +197,68 @@ string ChatCompletionsRequest::ToJsonString() const
         string key = "Seed";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_seed, allocator);
+    }
+
+    if (m_forceSearchEnhancementHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForceSearchEnhancement";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_forceSearchEnhancement, allocator);
+    }
+
+    if (m_stopHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Stop";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_stop.begin(); itr != m_stop.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_enableRecommendedQuestionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableRecommendedQuestions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableRecommendedQuestions, allocator);
+    }
+
+    if (m_enableDeepReadHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableDeepRead";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableDeepRead, allocator);
+    }
+
+    if (m_webSearchOptionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebSearchOptions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_webSearchOptions.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_topicChoiceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopicChoice";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_topicChoice.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableThinkingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableThinking";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableThinking, allocator);
     }
 
 
@@ -454,6 +523,118 @@ void ChatCompletionsRequest::SetSeed(const int64_t& _seed)
 bool ChatCompletionsRequest::SeedHasBeenSet() const
 {
     return m_seedHasBeenSet;
+}
+
+bool ChatCompletionsRequest::GetForceSearchEnhancement() const
+{
+    return m_forceSearchEnhancement;
+}
+
+void ChatCompletionsRequest::SetForceSearchEnhancement(const bool& _forceSearchEnhancement)
+{
+    m_forceSearchEnhancement = _forceSearchEnhancement;
+    m_forceSearchEnhancementHasBeenSet = true;
+}
+
+bool ChatCompletionsRequest::ForceSearchEnhancementHasBeenSet() const
+{
+    return m_forceSearchEnhancementHasBeenSet;
+}
+
+vector<string> ChatCompletionsRequest::GetStop() const
+{
+    return m_stop;
+}
+
+void ChatCompletionsRequest::SetStop(const vector<string>& _stop)
+{
+    m_stop = _stop;
+    m_stopHasBeenSet = true;
+}
+
+bool ChatCompletionsRequest::StopHasBeenSet() const
+{
+    return m_stopHasBeenSet;
+}
+
+bool ChatCompletionsRequest::GetEnableRecommendedQuestions() const
+{
+    return m_enableRecommendedQuestions;
+}
+
+void ChatCompletionsRequest::SetEnableRecommendedQuestions(const bool& _enableRecommendedQuestions)
+{
+    m_enableRecommendedQuestions = _enableRecommendedQuestions;
+    m_enableRecommendedQuestionsHasBeenSet = true;
+}
+
+bool ChatCompletionsRequest::EnableRecommendedQuestionsHasBeenSet() const
+{
+    return m_enableRecommendedQuestionsHasBeenSet;
+}
+
+bool ChatCompletionsRequest::GetEnableDeepRead() const
+{
+    return m_enableDeepRead;
+}
+
+void ChatCompletionsRequest::SetEnableDeepRead(const bool& _enableDeepRead)
+{
+    m_enableDeepRead = _enableDeepRead;
+    m_enableDeepReadHasBeenSet = true;
+}
+
+bool ChatCompletionsRequest::EnableDeepReadHasBeenSet() const
+{
+    return m_enableDeepReadHasBeenSet;
+}
+
+WebSearchOptions ChatCompletionsRequest::GetWebSearchOptions() const
+{
+    return m_webSearchOptions;
+}
+
+void ChatCompletionsRequest::SetWebSearchOptions(const WebSearchOptions& _webSearchOptions)
+{
+    m_webSearchOptions = _webSearchOptions;
+    m_webSearchOptionsHasBeenSet = true;
+}
+
+bool ChatCompletionsRequest::WebSearchOptionsHasBeenSet() const
+{
+    return m_webSearchOptionsHasBeenSet;
+}
+
+string ChatCompletionsRequest::GetTopicChoice() const
+{
+    return m_topicChoice;
+}
+
+void ChatCompletionsRequest::SetTopicChoice(const string& _topicChoice)
+{
+    m_topicChoice = _topicChoice;
+    m_topicChoiceHasBeenSet = true;
+}
+
+bool ChatCompletionsRequest::TopicChoiceHasBeenSet() const
+{
+    return m_topicChoiceHasBeenSet;
+}
+
+bool ChatCompletionsRequest::GetEnableThinking() const
+{
+    return m_enableThinking;
+}
+
+void ChatCompletionsRequest::SetEnableThinking(const bool& _enableThinking)
+{
+    m_enableThinking = _enableThinking;
+    m_enableThinkingHasBeenSet = true;
+}
+
+bool ChatCompletionsRequest::EnableThinkingHasBeenSet() const
+{
+    return m_enableThinkingHasBeenSet;
 }
 
 

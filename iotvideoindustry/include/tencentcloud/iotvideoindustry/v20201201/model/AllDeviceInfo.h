@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceId 设备唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置设备唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceId 设备唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备类型；2：IPC
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceType 设备类型；2：IPC
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDeviceType() const;
 
                     /**
                      * 设置设备类型；2：IPC
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceType 设备类型；2：IPC
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceType(const int64_t& _deviceType);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备状态；0：设备不在线；1：设备在线；2：设备隔离中；3：设备未注册
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 设备状态；0：设备不在线；1：设备在线；2：设备隔离中；3：设备未注册
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置设备状态；0：设备不在线；1：设备在线；2：设备隔离中；3：设备未注册
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 设备状态；0：设备不在线；1：设备在线；2：设备隔离中；3：设备未注册
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备扩展属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtraInformation 设备扩展属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExtraInformation() const;
 
                     /**
                      * 设置设备扩展属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _extraInformation 设备扩展属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExtraInformation(const std::string& _extraInformation);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NickName 设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNickName() const;
 
                     /**
                      * 设置设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nickName 设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNickName(const std::string& _nickName);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备绑定分组路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupPath 设备绑定分组路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupPath() const;
 
                     /**
                      * 设置设备绑定分组路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupPath 设备绑定分组路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupPath(const std::string& _groupPath);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceCode 设备编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceCode() const;
 
                     /**
                      * 设置设备编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceCode 设备编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceCode(const std::string& _deviceCode);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否存在录像,，0:不存在；1：存在
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsRecord 是否存在录像,，0:不存在；1：存在
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsRecord() const;
 
                     /**
                      * 设置是否存在录像,，0:不存在；1：存在
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isRecord 是否存在录像,，0:不存在；1：存在
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsRecord(const int64_t& _isRecord);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该设备是否可录制
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Recordable 该设备是否可录制
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRecordable() const;
 
                     /**
                      * 设置该设备是否可录制
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recordable 该设备是否可录制
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecordable(const int64_t& _recordable);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备接入协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocol 设备接入协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置设备接入协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _protocol 设备接入协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -323,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId 组Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置组Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupId 组Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -348,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupName 组名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置组名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupName 组名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -375,91 +323,78 @@ namespace TencentCloud
 
                     /**
                      * 设备唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;
 
                     /**
                      * 设备类型；2：IPC
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_deviceType;
                     bool m_deviceTypeHasBeenSet;
 
                     /**
                      * 设备状态；0：设备不在线；1：设备在线；2：设备隔离中；3：设备未注册
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 设备扩展属性
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_extraInformation;
                     bool m_extraInformationHasBeenSet;
 
                     /**
                      * 设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nickName;
                     bool m_nickNameHasBeenSet;
 
                     /**
                      * 设备绑定分组路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupPath;
                     bool m_groupPathHasBeenSet;
 
                     /**
                      * 设备编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceCode;
                     bool m_deviceCodeHasBeenSet;
 
                     /**
                      * 是否存在录像,，0:不存在；1：存在
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isRecord;
                     bool m_isRecordHasBeenSet;
 
                     /**
                      * 该设备是否可录制
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_recordable;
                     bool m_recordableHasBeenSet;
 
                     /**
                      * 设备接入协议
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
                      * 组Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
                      * 组名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;

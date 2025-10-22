@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -115,18 +115,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备份源站，1: 备份源站，0: 普通源站
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Backup 备份源站，1: 备份源站，0: 普通源站
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetBackup() const;
 
                     /**
                      * 设置备份源站，1: 备份源站，0: 普通源站
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _backup 备份源站，1: 备份源站，0: 普通源站
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBackup(const uint64_t& _backup);
@@ -161,7 +157,6 @@ namespace TencentCloud
 
                     /**
                      * 备份源站，1: 备份源站，0: 普通源站
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_backup;
                     bool m_backupHasBeenSet;

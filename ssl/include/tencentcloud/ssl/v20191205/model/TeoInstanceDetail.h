@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -115,14 +115,34 @@ namespace TencentCloud
 
                     /**
                      * 获取域名状态
+deployed：已部署；
+processing：部署中；
+applying：申请中；
+failed：申请失败；
+issued：绑定失败。
                      * @return Status 域名状态
+deployed：已部署；
+processing：部署中；
+applying：申请中；
+failed：申请失败；
+issued：绑定失败。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置域名状态
+deployed：已部署；
+processing：部署中；
+applying：申请中；
+failed：申请失败；
+issued：绑定失败。
                      * @param _status 域名状态
+deployed：已部署；
+processing：部署中；
+applying：申请中；
+failed：申请失败；
+issued：绑定失败。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -133,6 +153,27 @@ namespace TencentCloud
                      * 
                      */
                     bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取证书加密算法
+                     * @return Algorithm 证书加密算法
+                     * 
+                     */
+                    std::string GetAlgorithm() const;
+
+                    /**
+                     * 设置证书加密算法
+                     * @param _algorithm 证书加密算法
+                     * 
+                     */
+                    void SetAlgorithm(const std::string& _algorithm);
+
+                    /**
+                     * 判断参数 Algorithm 是否已赋值
+                     * @return Algorithm 是否已赋值
+                     * 
+                     */
+                    bool AlgorithmHasBeenSet() const;
 
                 private:
 
@@ -157,9 +198,20 @@ namespace TencentCloud
 
                     /**
                      * 域名状态
+deployed：已部署；
+processing：部署中；
+applying：申请中；
+failed：申请失败；
+issued：绑定失败。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 证书加密算法
+                     */
+                    std::string m_algorithm;
+                    bool m_algorithmHasBeenSet;
 
                 };
             }

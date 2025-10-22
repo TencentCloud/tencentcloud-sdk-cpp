@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,11 @@ using namespace std;
 ServerPushText::ServerPushText() :
     m_textHasBeenSet(false),
     m_interruptHasBeenSet(false),
-    m_stopAfterPlayHasBeenSet(false)
+    m_stopAfterPlayHasBeenSet(false),
+    m_audioHasBeenSet(false),
+    m_dropModeHasBeenSet(false),
+    m_priorityHasBeenSet(false),
+    m_addHistoryHasBeenSet(false)
 {
 }
 
@@ -62,6 +66,46 @@ CoreInternalOutcome ServerPushText::Deserialize(const rapidjson::Value &value)
         m_stopAfterPlayHasBeenSet = true;
     }
 
+    if (value.HasMember("Audio") && !value["Audio"].IsNull())
+    {
+        if (!value["Audio"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerPushText.Audio` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_audio = string(value["Audio"].GetString());
+        m_audioHasBeenSet = true;
+    }
+
+    if (value.HasMember("DropMode") && !value["DropMode"].IsNull())
+    {
+        if (!value["DropMode"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerPushText.DropMode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dropMode = value["DropMode"].GetUint64();
+        m_dropModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Priority") && !value["Priority"].IsNull())
+    {
+        if (!value["Priority"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerPushText.Priority` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_priority = value["Priority"].GetUint64();
+        m_priorityHasBeenSet = true;
+    }
+
+    if (value.HasMember("AddHistory") && !value["AddHistory"].IsNull())
+    {
+        if (!value["AddHistory"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerPushText.AddHistory` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_addHistory = value["AddHistory"].GetBool();
+        m_addHistoryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +135,38 @@ void ServerPushText::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "StopAfterPlay";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_stopAfterPlay, allocator);
+    }
+
+    if (m_audioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Audio";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_audio.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dropModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DropMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dropMode, allocator);
+    }
+
+    if (m_priorityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Priority";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_priority, allocator);
+    }
+
+    if (m_addHistoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddHistory";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_addHistory, allocator);
     }
 
 }
@@ -142,5 +218,69 @@ void ServerPushText::SetStopAfterPlay(const bool& _stopAfterPlay)
 bool ServerPushText::StopAfterPlayHasBeenSet() const
 {
     return m_stopAfterPlayHasBeenSet;
+}
+
+string ServerPushText::GetAudio() const
+{
+    return m_audio;
+}
+
+void ServerPushText::SetAudio(const string& _audio)
+{
+    m_audio = _audio;
+    m_audioHasBeenSet = true;
+}
+
+bool ServerPushText::AudioHasBeenSet() const
+{
+    return m_audioHasBeenSet;
+}
+
+uint64_t ServerPushText::GetDropMode() const
+{
+    return m_dropMode;
+}
+
+void ServerPushText::SetDropMode(const uint64_t& _dropMode)
+{
+    m_dropMode = _dropMode;
+    m_dropModeHasBeenSet = true;
+}
+
+bool ServerPushText::DropModeHasBeenSet() const
+{
+    return m_dropModeHasBeenSet;
+}
+
+uint64_t ServerPushText::GetPriority() const
+{
+    return m_priority;
+}
+
+void ServerPushText::SetPriority(const uint64_t& _priority)
+{
+    m_priority = _priority;
+    m_priorityHasBeenSet = true;
+}
+
+bool ServerPushText::PriorityHasBeenSet() const
+{
+    return m_priorityHasBeenSet;
+}
+
+bool ServerPushText::GetAddHistory() const
+{
+    return m_addHistory;
+}
+
+void ServerPushText::SetAddHistory(const bool& _addHistory)
+{
+    m_addHistory = _addHistory;
+    m_addHistoryHasBeenSet = true;
+}
+
+bool ServerPushText::AddHistoryHasBeenSet() const
+{
+    return m_addHistoryHasBeenSet;
 }
 

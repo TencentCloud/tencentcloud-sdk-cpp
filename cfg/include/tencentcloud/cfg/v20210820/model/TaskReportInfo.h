@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -132,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取演练报告cos文件地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CosUrl 演练报告cos文件地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCosUrl() const;
 
                     /**
                      * 设置演练报告cos文件地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cosUrl 演练报告cos文件地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCosUrl(const std::string& _cosUrl);
@@ -224,18 +220,14 @@ namespace TencentCloud
 
                     /**
                      * 获取归档ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ArchiveUuid 归档ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetArchiveUuid() const;
 
                     /**
                      * 设置归档ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _archiveUuid 归档ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetArchiveUuid(const std::string& _archiveUuid);
@@ -275,7 +267,6 @@ namespace TencentCloud
 
                     /**
                      * 演练报告cos文件地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cosUrl;
                     bool m_cosUrlHasBeenSet;
@@ -301,7 +292,6 @@ namespace TencentCloud
 
                     /**
                      * 归档ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_archiveUuid;
                     bool m_archiveUuidHasBeenSet;

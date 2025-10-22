@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需退还的云盘ID列表。
-                     * @return DiskIds 需退还的云盘ID列表。
+                     * 获取需退还的云盘ID列表，通过[DescribeDisks](/document/product/362/16315)接口查询。
+                     * @return DiskIds 需退还的云盘ID列表，通过[DescribeDisks](/document/product/362/16315)接口查询。
                      * 
                      */
                     std::vector<std::string> GetDiskIds() const;
 
                     /**
-                     * 设置需退还的云盘ID列表。
-                     * @param _diskIds 需退还的云盘ID列表。
+                     * 设置需退还的云盘ID列表，通过[DescribeDisks](/document/product/362/16315)接口查询。
+                     * @param _diskIds 需退还的云盘ID列表，通过[DescribeDisks](/document/product/362/16315)接口查询。
                      * 
                      */
                     void SetDiskIds(const std::vector<std::string>& _diskIds);
@@ -87,7 +87,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 需退还的云盘ID列表。
+                     * 需退还的云盘ID列表，通过[DescribeDisks](/document/product/362/16315)接口查询。
                      */
                     std::vector<std::string> m_diskIds;
                     bool m_diskIdsHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -182,15 +182,15 @@ namespace TencentCloud
                     bool AdjustmentValueHasBeenSet() const;
 
                     /**
-                     * 获取冷却时间，仅适用于简单策略。
-                     * @return Cooldown 冷却时间，仅适用于简单策略。
+                     * 获取冷却时间，单位为秒，仅适用于简单策略。取值范围 [0,3600]，默认冷却时间300秒。
+                     * @return Cooldown 冷却时间，单位为秒，仅适用于简单策略。取值范围 [0,3600]，默认冷却时间300秒。
                      * 
                      */
                     uint64_t GetCooldown() const;
 
                     /**
-                     * 设置冷却时间，仅适用于简单策略。
-                     * @param _cooldown 冷却时间，仅适用于简单策略。
+                     * 设置冷却时间，单位为秒，仅适用于简单策略。取值范围 [0,3600]，默认冷却时间300秒。
+                     * @param _cooldown 冷却时间，单位为秒，仅适用于简单策略。取值范围 [0,3600]，默认冷却时间300秒。
                      * 
                      */
                     void SetCooldown(const uint64_t& _cooldown);
@@ -410,7 +410,7 @@ namespace TencentCloud
                     bool m_adjustmentValueHasBeenSet;
 
                     /**
-                     * 冷却时间，仅适用于简单策略。
+                     * 冷却时间，单位为秒，仅适用于简单策略。取值范围 [0,3600]，默认冷却时间300秒。
                      */
                     uint64_t m_cooldown;
                     bool m_cooldownHasBeenSet;

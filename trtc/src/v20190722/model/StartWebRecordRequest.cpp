@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,8 @@ StartWebRecordRequest::StartWebRecordRequest() :
     m_sdkAppIdHasBeenSet(false),
     m_recordIdHasBeenSet(false),
     m_publishCdnParamsHasBeenSet(false),
-    m_readyTimeoutHasBeenSet(false)
+    m_readyTimeoutHasBeenSet(false),
+    m_emulateMobileParamsHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,15 @@ string StartWebRecordRequest::ToJsonString() const
         string key = "ReadyTimeout";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_readyTimeout, allocator);
+    }
+
+    if (m_emulateMobileParamsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EmulateMobileParams";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_emulateMobileParams.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -248,6 +258,22 @@ void StartWebRecordRequest::SetReadyTimeout(const uint64_t& _readyTimeout)
 bool StartWebRecordRequest::ReadyTimeoutHasBeenSet() const
 {
     return m_readyTimeoutHasBeenSet;
+}
+
+EmulateMobileParams StartWebRecordRequest::GetEmulateMobileParams() const
+{
+    return m_emulateMobileParams;
+}
+
+void StartWebRecordRequest::SetEmulateMobileParams(const EmulateMobileParams& _emulateMobileParams)
+{
+    m_emulateMobileParams = _emulateMobileParams;
+    m_emulateMobileParamsHasBeenSet = true;
+}
+
+bool StartWebRecordRequest::EmulateMobileParamsHasBeenSet() const
+{
+    return m_emulateMobileParamsHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,6 +68,31 @@ namespace TencentCloud
                      */
                     bool SegmentSetHasBeenSet() const;
 
+                    /**
+                     * 获取视频摘要，离线场景用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Abstract 视频摘要，离线场景用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAbstract() const;
+
+                    /**
+                     * 设置视频摘要，离线场景用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _abstract 视频摘要，离线场景用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAbstract(const std::string& _abstract);
+
+                    /**
+                     * 判断参数 Abstract 是否已赋值
+                     * @return Abstract 是否已赋值
+                     * 
+                     */
+                    bool AbstractHasBeenSet() const;
+
                 private:
 
                     /**
@@ -75,6 +100,13 @@ namespace TencentCloud
                      */
                     std::vector<SegmentRecognitionItem> m_segmentSet;
                     bool m_segmentSetHasBeenSet;
+
+                    /**
+                     * 视频摘要，离线场景用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_abstract;
+                    bool m_abstractHasBeenSet;
 
                 };
             }

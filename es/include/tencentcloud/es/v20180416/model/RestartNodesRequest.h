@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -253,6 +253,27 @@ namespace TencentCloud
                      */
                     bool EnableScheduleOperationDurationHasBeenSet() const;
 
+                    /**
+                     * 获取事件id列表
+                     * @return EventTypeIds 事件id列表
+                     * 
+                     */
+                    std::vector<std::string> GetEventTypeIds() const;
+
+                    /**
+                     * 设置事件id列表
+                     * @param _eventTypeIds 事件id列表
+                     * 
+                     */
+                    void SetEventTypeIds(const std::vector<std::string>& _eventTypeIds);
+
+                    /**
+                     * 判断参数 EventTypeIds 是否已赋值
+                     * @return EventTypeIds 是否已赋值
+                     * 
+                     */
+                    bool EventTypeIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -314,6 +335,12 @@ namespace TencentCloud
                      */
                     EnableScheduleOperationDuration m_enableScheduleOperationDuration;
                     bool m_enableScheduleOperationDurationHasBeenSet;
+
+                    /**
+                     * 事件id列表
+                     */
+                    std::vector<std::string> m_eventTypeIds;
+                    bool m_eventTypeIdsHasBeenSet;
 
                 };
             }

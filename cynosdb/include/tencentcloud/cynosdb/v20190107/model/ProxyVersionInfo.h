@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取proxy版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyVersion proxy版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProxyVersion() const;
 
                     /**
                      * 设置proxy版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _proxyVersion proxy版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProxyVersion(const std::string& _proxyVersion);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取版本描述：GA:稳定版  BETA:尝鲜版，DEPRECATED:过旧，
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyVersionType 版本描述：GA:稳定版  BETA:尝鲜版，DEPRECATED:过旧，
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProxyVersionType() const;
 
                     /**
                      * 设置版本描述：GA:稳定版  BETA:尝鲜版，DEPRECATED:过旧，
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _proxyVersionType 版本描述：GA:稳定版  BETA:尝鲜版，DEPRECATED:过旧，
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProxyVersionType(const std::string& _proxyVersionType);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * proxy版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_proxyVersion;
                     bool m_proxyVersionHasBeenSet;
 
                     /**
                      * 版本描述：GA:稳定版  BETA:尝鲜版，DEPRECATED:过旧，
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_proxyVersionType;
                     bool m_proxyVersionTypeHasBeenSet;

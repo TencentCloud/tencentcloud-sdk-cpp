@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取合规组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComplianceGroupId 合规组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetComplianceGroupId() const;
 
                     /**
                      * 设置合规组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _complianceGroupId 合规组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComplianceGroupId(const int64_t& _complianceGroupId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取合规组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 合规组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置合规组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 合规组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取合规组描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 合规组描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置合规组描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 合规组描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取合规组类型；0 默认合规组，1 系统合规组（除默认合规组外）, 2 自定义合规组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComplianceGroupType 合规组类型；0 默认合规组，1 系统合规组（除默认合规组外）, 2 自定义合规组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetComplianceGroupType() const;
 
                     /**
                      * 设置合规组类型；0 默认合规组，1 系统合规组（除默认合规组外）, 2 自定义合规组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _complianceGroupType 合规组类型；0 默认合规组，1 系统合规组（除默认合规组外）, 2 自定义合规组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComplianceGroupType(const int64_t& _complianceGroupType);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取合规组对应的规则项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComplianceGroupRules 合规组对应的规则项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DspaDiscoveryComplianceGroupRule> GetComplianceGroupRules() const;
 
                     /**
                      * 设置合规组对应的规则项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _complianceGroupRules 合规组对应的规则项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComplianceGroupRules(const std::vector<DspaDiscoveryComplianceGroupRule>& _complianceGroupRules);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取合规组对应的分级组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LevelGroupId 合规组对应的分级组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLevelGroupId() const;
 
                     /**
                      * 设置合规组对应的分级组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _levelGroupId 合规组对应的分级组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevelGroupId(const uint64_t& _levelGroupId);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否禁止使用（true，禁止使用，false，可以使用）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Disabled 是否禁止使用（true，禁止使用，false，可以使用）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetDisabled() const;
 
                     /**
                      * 设置是否禁止使用（true，禁止使用，false，可以使用）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _disabled 是否禁止使用（true，禁止使用，false，可以使用）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDisabled(const bool& _disabled);
@@ -224,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsAlias 是否别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsAlias() const;
 
                     /**
                      * 设置是否别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isAlias 是否别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsAlias(const bool& _isAlias);
@@ -247,63 +215,109 @@ namespace TencentCloud
                      */
                     bool IsAliasHasBeenSet() const;
 
+                    /**
+                     * 获取1代表模板开启，0代表模板关闭
+                     * @return Status 1代表模板开启，0代表模板关闭
+                     * 
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 设置1代表模板开启，0代表模板关闭
+                     * @param _status 1代表模板开启，0代表模板关闭
+                     * 
+                     */
+                    void SetStatus(const int64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取模板最后修改时间
+                     * @return ModifyTime 模板最后修改时间
+                     * 
+                     */
+                    std::string GetModifyTime() const;
+
+                    /**
+                     * 设置模板最后修改时间
+                     * @param _modifyTime 模板最后修改时间
+                     * 
+                     */
+                    void SetModifyTime(const std::string& _modifyTime);
+
+                    /**
+                     * 判断参数 ModifyTime 是否已赋值
+                     * @return ModifyTime 是否已赋值
+                     * 
+                     */
+                    bool ModifyTimeHasBeenSet() const;
+
                 private:
 
                     /**
                      * 合规组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_complianceGroupId;
                     bool m_complianceGroupIdHasBeenSet;
 
                     /**
                      * 合规组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 合规组描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 合规组类型；0 默认合规组，1 系统合规组（除默认合规组外）, 2 自定义合规组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_complianceGroupType;
                     bool m_complianceGroupTypeHasBeenSet;
 
                     /**
                      * 合规组对应的规则项
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DspaDiscoveryComplianceGroupRule> m_complianceGroupRules;
                     bool m_complianceGroupRulesHasBeenSet;
 
                     /**
                      * 合规组对应的分级组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_levelGroupId;
                     bool m_levelGroupIdHasBeenSet;
 
                     /**
                      * 是否禁止使用（true，禁止使用，false，可以使用）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_disabled;
                     bool m_disabledHasBeenSet;
 
                     /**
                      * 是否别名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isAlias;
                     bool m_isAliasHasBeenSet;
+
+                    /**
+                     * 1代表模板开启，0代表模板关闭
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 模板最后修改时间
+                     */
+                    std::string m_modifyTime;
+                    bool m_modifyTimeHasBeenSet;
 
                 };
             }

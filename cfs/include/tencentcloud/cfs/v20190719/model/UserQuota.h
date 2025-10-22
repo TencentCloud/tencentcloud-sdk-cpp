@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -153,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取容量使用，单位GiB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CapacityUsed 容量使用，单位GiB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCapacityUsed() const;
 
                     /**
                      * 设置容量使用，单位GiB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _capacityUsed 容量使用，单位GiB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCapacityUsed(const uint64_t& _capacityUsed);
@@ -178,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件使用个数，单位个
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileUsed 文件使用个数，单位个
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetFileUsed() const;
 
                     /**
                      * 设置文件使用个数，单位个
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileUsed 文件使用个数，单位个
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileUsed(const uint64_t& _fileUsed);
@@ -228,18 +220,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置规则状态，inavailable---配置中，available --已生效，deleting--删除中，deleted 已删除，failed--配置失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 配置规则状态，inavailable---配置中，available --已生效，deleting--删除中，deleted 已删除，failed--配置失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置配置规则状态，inavailable---配置中，available --已生效，deleting--删除中，deleted 已删除，failed--配置失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 配置规则状态，inavailable---配置中，available --已生效，deleting--删除中，deleted 已删除，failed--配置失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -285,14 +273,12 @@ namespace TencentCloud
 
                     /**
                      * 容量使用，单位GiB
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_capacityUsed;
                     bool m_capacityUsedHasBeenSet;
 
                     /**
                      * 文件使用个数，单位个
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_fileUsed;
                     bool m_fileUsedHasBeenSet;
@@ -306,7 +292,6 @@ namespace TencentCloud
 
                     /**
                      * 配置规则状态，inavailable---配置中，available --已生效，deleting--删除中，deleted 已删除，failed--配置失败
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

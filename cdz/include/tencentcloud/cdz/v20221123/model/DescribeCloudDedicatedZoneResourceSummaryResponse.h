@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cdz/v20221123/model/CloudDedicatedZoneResourceSummaryInfo.h>
+#include <tencentcloud/cdz/v20221123/model/ExtraInfo.h>
 
 
 namespace TencentCloud
@@ -46,9 +47,7 @@ namespace TencentCloud
 
                     /**
                      * 获取资源水位详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceSummarySet 资源水位详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CloudDedicatedZoneResourceSummaryInfo> GetResourceSummarySet() const;
@@ -60,14 +59,33 @@ namespace TencentCloud
                      */
                     bool ResourceSummarySetHasBeenSet() const;
 
+                    /**
+                     * 获取资源水位扩展信息
+                     * @return ExtraInfo 资源水位扩展信息
+                     * 
+                     */
+                    ExtraInfo GetExtraInfo() const;
+
+                    /**
+                     * 判断参数 ExtraInfo 是否已赋值
+                     * @return ExtraInfo 是否已赋值
+                     * 
+                     */
+                    bool ExtraInfoHasBeenSet() const;
+
                 private:
 
                     /**
                      * 资源水位详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CloudDedicatedZoneResourceSummaryInfo> m_resourceSummarySet;
                     bool m_resourceSummarySetHasBeenSet;
+
+                    /**
+                     * 资源水位扩展信息
+                     */
+                    ExtraInfo m_extraInfo;
+                    bool m_extraInfoHasBeenSet;
 
                 };
             }

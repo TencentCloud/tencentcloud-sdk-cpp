@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,7 +47,9 @@ ReverseShellEventInfo::ReverseShellEventInfo() :
     m_referencesHasBeenSet(false),
     m_machineWanIpHasBeenSet(false),
     m_machineStatusHasBeenSet(false),
-    m_modifyTimeHasBeenSet(false)
+    m_modifyTimeHasBeenSet(false),
+    m_cmdLineQuoteHasBeenSet(false),
+    m_riskLevelHasBeenSet(false)
 {
 }
 
@@ -332,6 +334,26 @@ CoreInternalOutcome ReverseShellEventInfo::Deserialize(const rapidjson::Value &v
         m_modifyTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("CmdLineQuote") && !value["CmdLineQuote"].IsNull())
+    {
+        if (!value["CmdLineQuote"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReverseShellEventInfo.CmdLineQuote` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cmdLineQuote = string(value["CmdLineQuote"].GetString());
+        m_cmdLineQuoteHasBeenSet = true;
+    }
+
+    if (value.HasMember("RiskLevel") && !value["RiskLevel"].IsNull())
+    {
+        if (!value["RiskLevel"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReverseShellEventInfo.RiskLevel` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_riskLevel = value["RiskLevel"].GetUint64();
+        m_riskLevelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -563,6 +585,22 @@ void ReverseShellEventInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "ModifyTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_modifyTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cmdLineQuoteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CmdLineQuote";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cmdLineQuote.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_riskLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RiskLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_riskLevel, allocator);
     }
 
 }
@@ -998,5 +1036,37 @@ void ReverseShellEventInfo::SetModifyTime(const string& _modifyTime)
 bool ReverseShellEventInfo::ModifyTimeHasBeenSet() const
 {
     return m_modifyTimeHasBeenSet;
+}
+
+string ReverseShellEventInfo::GetCmdLineQuote() const
+{
+    return m_cmdLineQuote;
+}
+
+void ReverseShellEventInfo::SetCmdLineQuote(const string& _cmdLineQuote)
+{
+    m_cmdLineQuote = _cmdLineQuote;
+    m_cmdLineQuoteHasBeenSet = true;
+}
+
+bool ReverseShellEventInfo::CmdLineQuoteHasBeenSet() const
+{
+    return m_cmdLineQuoteHasBeenSet;
+}
+
+uint64_t ReverseShellEventInfo::GetRiskLevel() const
+{
+    return m_riskLevel;
+}
+
+void ReverseShellEventInfo::SetRiskLevel(const uint64_t& _riskLevel)
+{
+    m_riskLevel = _riskLevel;
+    m_riskLevelHasBeenSet = true;
+}
+
+bool ReverseShellEventInfo::RiskLevelHasBeenSet() const
+{
+    return m_riskLevelHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,30 +48,30 @@ namespace TencentCloud
 
                     /**
                      * 获取回调的类型。可选值：
-- Http
-- WeCom
-- DingTalk
-- Lark
+- Http(自定义接口回调)
+- WeCom(企业微信)
+- DingTalk(钉钉)
+- Lark(飞书)
                      * @return CallbackType 回调的类型。可选值：
-- Http
-- WeCom
-- DingTalk
-- Lark
+- Http(自定义接口回调)
+- WeCom(企业微信)
+- DingTalk(钉钉)
+- Lark(飞书)
                      * 
                      */
                     std::string GetCallbackType() const;
 
                     /**
                      * 设置回调的类型。可选值：
-- Http
-- WeCom
-- DingTalk
-- Lark
+- Http(自定义接口回调)
+- WeCom(企业微信)
+- DingTalk(钉钉)
+- Lark(飞书)
                      * @param _callbackType 回调的类型。可选值：
-- Http
-- WeCom
-- DingTalk
-- Lark
+- Http(自定义接口回调)
+- WeCom(企业微信)
+- DingTalk(钉钉)
+- Lark(飞书)
                      * 
                      */
                     void SetCallbackType(const std::string& _callbackType);
@@ -109,19 +109,15 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取集成配置ID。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WebCallbackId 集成配置ID。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取集成配置ID。-通过[获取告警渠道回调配置列表](https://cloud.tencent.com/document/product/614/115229)获取集成配置ID
+                     * @return WebCallbackId 集成配置ID。-通过[获取告警渠道回调配置列表](https://cloud.tencent.com/document/product/614/115229)获取集成配置ID
                      * 
                      */
                     std::string GetWebCallbackId() const;
 
                     /**
-                     * 设置集成配置ID。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _webCallbackId 集成配置ID。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置集成配置ID。-通过[获取告警渠道回调配置列表](https://cloud.tencent.com/document/product/614/115229)获取集成配置ID
+                     * @param _webCallbackId 集成配置ID。-通过[获取告警渠道回调配置列表](https://cloud.tencent.com/document/product/614/115229)获取集成配置ID
                      * 
                      */
                     void SetWebCallbackId(const std::string& _webCallbackId);
@@ -140,14 +136,12 @@ namespace TencentCloud
 
 注意：
 - 参数CallbackType为Http时为必选，其它回调方式无需填写。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Method 回调方法。可选值：
 - POST（默认值）
 - PUT
 
 注意：
 - 参数CallbackType为Http时为必选，其它回调方式无需填写。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMethod() const;
@@ -159,14 +153,12 @@ namespace TencentCloud
 
 注意：
 - 参数CallbackType为Http时为必选，其它回调方式无需填写。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _method 回调方法。可选值：
 - POST（默认值）
 - PUT
 
 注意：
 - 参数CallbackType为Http时为必选，其它回调方式无需填写。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMethod(const std::string& _method);
@@ -180,18 +172,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通知内容模板ID，使用Default-zh引用默认模板（中文），使用Default-en引用DefaultTemplate(English)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NoticeContentId 通知内容模板ID，使用Default-zh引用默认模板（中文），使用Default-en引用DefaultTemplate(English)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNoticeContentId() const;
 
                     /**
                      * 设置通知内容模板ID，使用Default-zh引用默认模板（中文），使用Default-en引用DefaultTemplate(English)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _noticeContentId 通知内容模板ID，使用Default-zh引用默认模板（中文），使用Default-en引用DefaultTemplate(English)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNoticeContentId(const std::string& _noticeContentId);
@@ -207,11 +195,9 @@ namespace TencentCloud
                      * 获取提醒类型。
 
 0：不提醒；1：指定人；2：所有人
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemindType 提醒类型。
 
 0：不提醒；1：指定人；2：所有人
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRemindType() const;
@@ -220,11 +206,9 @@ namespace TencentCloud
                      * 设置提醒类型。
 
 0：不提醒；1：指定人；2：所有人
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remindType 提醒类型。
 
 0：不提醒；1：指定人；2：所有人
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemindType(const uint64_t& _remindType);
@@ -238,18 +222,14 @@ namespace TencentCloud
 
                     /**
                      * 获取电话列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Mobiles 电话列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetMobiles() const;
 
                     /**
                      * 设置电话列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mobiles 电话列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMobiles(const std::vector<std::string>& _mobiles);
@@ -263,18 +243,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户ID列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserIds 用户ID列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetUserIds() const;
 
                     /**
                      * 设置用户ID列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userIds 用户ID列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserIds(const std::vector<std::string>& _userIds);
@@ -288,26 +264,22 @@ namespace TencentCloud
 
                     /**
                      * 获取该参数已废弃，请使用NoticeContentId。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Headers 该参数已废弃，请使用NoticeContentId。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::vector<std::string> GetHeaders() const;
 
                     /**
                      * 设置该参数已废弃，请使用NoticeContentId。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _headers 该参数已废弃，请使用NoticeContentId。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetHeaders(const std::vector<std::string>& _headers);
 
                     /**
                      * 判断参数 Headers 是否已赋值
                      * @return Headers 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool HeadersHasBeenSet() const;
 
@@ -316,7 +288,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Body 该参数已废弃，请使用NoticeContentId。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetBody() const;
 
@@ -325,14 +297,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _body 该参数已废弃，请使用NoticeContentId。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetBody(const std::string& _body);
 
                     /**
                      * 判断参数 Body 是否已赋值
                      * @return Body 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool BodyHasBeenSet() const;
 
@@ -369,10 +341,10 @@ namespace TencentCloud
 
                     /**
                      * 回调的类型。可选值：
-- Http
-- WeCom
-- DingTalk
-- Lark
+- Http(自定义接口回调)
+- WeCom(企业微信)
+- DingTalk(钉钉)
+- Lark(飞书)
                      */
                     std::string m_callbackType;
                     bool m_callbackTypeHasBeenSet;
@@ -385,8 +357,7 @@ namespace TencentCloud
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 集成配置ID。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 集成配置ID。-通过[获取告警渠道回调配置列表](https://cloud.tencent.com/document/product/614/115229)获取集成配置ID
                      */
                     std::string m_webCallbackId;
                     bool m_webCallbackIdHasBeenSet;
@@ -398,14 +369,12 @@ namespace TencentCloud
 
 注意：
 - 参数CallbackType为Http时为必选，其它回调方式无需填写。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_method;
                     bool m_methodHasBeenSet;
 
                     /**
                      * 通知内容模板ID，使用Default-zh引用默认模板（中文），使用Default-en引用DefaultTemplate(English)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_noticeContentId;
                     bool m_noticeContentIdHasBeenSet;
@@ -414,28 +383,24 @@ namespace TencentCloud
                      * 提醒类型。
 
 0：不提醒；1：指定人；2：所有人
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_remindType;
                     bool m_remindTypeHasBeenSet;
 
                     /**
                      * 电话列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_mobiles;
                     bool m_mobilesHasBeenSet;
 
                     /**
                      * 用户ID列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_userIds;
                     bool m_userIdsHasBeenSet;
 
                     /**
                      * 该参数已废弃，请使用NoticeContentId。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_headers;
                     bool m_headersHasBeenSet;

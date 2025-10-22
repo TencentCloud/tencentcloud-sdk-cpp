@@ -1,0 +1,107 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_LKE_V20231130_MODEL_DESCRIBENODERUNREQUEST_H_
+#define TENCENTCLOUD_LKE_V20231130_MODEL_DESCRIBENODERUNREQUEST_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Lke
+    {
+        namespace V20231130
+        {
+            namespace Model
+            {
+                /**
+                * DescribeNodeRun请求参数结构体
+                */
+                class DescribeNodeRunRequest : public AbstractModel
+                {
+                public:
+                    DescribeNodeRunRequest();
+                    ~DescribeNodeRunRequest() = default;
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取应用ID
+                     * @return AppBizId 应用ID
+                     * 
+                     */
+                    std::string GetAppBizId() const;
+
+                    /**
+                     * 设置应用ID
+                     * @param _appBizId 应用ID
+                     * 
+                     */
+                    void SetAppBizId(const std::string& _appBizId);
+
+                    /**
+                     * 判断参数 AppBizId 是否已赋值
+                     * @return AppBizId 是否已赋值
+                     * 
+                     */
+                    bool AppBizIdHasBeenSet() const;
+
+                    /**
+                     * 获取节点运行实例ID
+                     * @return NodeRunId 节点运行实例ID
+                     * 
+                     */
+                    std::string GetNodeRunId() const;
+
+                    /**
+                     * 设置节点运行实例ID
+                     * @param _nodeRunId 节点运行实例ID
+                     * 
+                     */
+                    void SetNodeRunId(const std::string& _nodeRunId);
+
+                    /**
+                     * 判断参数 NodeRunId 是否已赋值
+                     * @return NodeRunId 是否已赋值
+                     * 
+                     */
+                    bool NodeRunIdHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 应用ID
+                     */
+                    std::string m_appBizId;
+                    bool m_appBizIdHasBeenSet;
+
+                    /**
+                     * 节点运行实例ID
+                     */
+                    std::string m_nodeRunId;
+                    bool m_nodeRunIdHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_LKE_V20231130_MODEL_DESCRIBENODERUNREQUEST_H_

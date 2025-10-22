@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Partition,例如"0"或"1"
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Partition Partition,例如"0"或"1"
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取分区
+                     * @return Partition 分区
                      * 
                      */
                     std::string GetPartition() const;
 
                     /**
-                     * 设置Partition,例如"0"或"1"
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _partition Partition,例如"0"或"1"
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置分区
+                     * @param _partition 分区
                      * 
                      */
                     void SetPartition(const std::string& _partition);
@@ -72,19 +68,15 @@ namespace TencentCloud
                     bool PartitionHasBeenSet() const;
 
                     /**
-                     * 获取Offset,例如100
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Offset Offset,例如100
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取位点偏移量
+                     * @return Offset 位点偏移量
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置Offset,例如100
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _offset Offset,例如100
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置位点偏移量
+                     * @param _offset 位点偏移量
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -99,15 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Partition,例如"0"或"1"
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 分区
                      */
                     std::string m_partition;
                     bool m_partitionHasBeenSet;
 
                     /**
-                     * Offset,例如100
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 位点偏移量
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

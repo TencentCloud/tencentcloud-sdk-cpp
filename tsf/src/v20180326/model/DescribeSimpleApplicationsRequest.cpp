@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,8 @@ DescribeSimpleApplicationsRequest::DescribeSimpleApplicationsRequest() :
     m_microserviceTypeHasBeenSet(false),
     m_applicationResourceTypeListHasBeenSet(false),
     m_searchWordHasBeenSet(false),
-    m_disableProgramAuthCheckHasBeenSet(false)
+    m_disableProgramAuthCheckHasBeenSet(false),
+    m_microserviceTypeListHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,19 @@ string DescribeSimpleApplicationsRequest::ToJsonString() const
         string key = "DisableProgramAuthCheck";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_disableProgramAuthCheck, allocator);
+    }
+
+    if (m_microserviceTypeListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MicroserviceTypeList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_microserviceTypeList.begin(); itr != m_microserviceTypeList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -249,6 +263,22 @@ void DescribeSimpleApplicationsRequest::SetDisableProgramAuthCheck(const bool& _
 bool DescribeSimpleApplicationsRequest::DisableProgramAuthCheckHasBeenSet() const
 {
     return m_disableProgramAuthCheckHasBeenSet;
+}
+
+vector<string> DescribeSimpleApplicationsRequest::GetMicroserviceTypeList() const
+{
+    return m_microserviceTypeList;
+}
+
+void DescribeSimpleApplicationsRequest::SetMicroserviceTypeList(const vector<string>& _microserviceTypeList)
+{
+    m_microserviceTypeList = _microserviceTypeList;
+    m_microserviceTypeListHasBeenSet = true;
+}
+
+bool DescribeSimpleApplicationsRequest::MicroserviceTypeListHasBeenSet() const
+{
+    return m_microserviceTypeListHasBeenSet;
 }
 
 

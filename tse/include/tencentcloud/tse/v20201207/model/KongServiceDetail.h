@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ID 服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetID() const;
 
                     /**
                      * 设置服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iD 服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetID(const std::string& _iD);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 服务名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置服务名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 服务名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取后端协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocol 后端协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置后端协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _protocol 后端协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -149,18 +137,14 @@ namespace TencentCloud
 
                     /**
                      * 获取后端延时，单位ms
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timeout 后端延时，单位ms
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTimeout() const;
 
                     /**
                      * 设置后端延时，单位ms
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeout 后端延时，单位ms
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeout(const int64_t& _timeout);
@@ -174,18 +158,14 @@ namespace TencentCloud
 
                     /**
                      * 获取重试次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Retries 重试次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRetries() const;
 
                     /**
                      * 设置重试次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _retries 重试次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRetries(const int64_t& _retries);
@@ -224,18 +204,14 @@ namespace TencentCloud
 
                     /**
                      * 获取后端配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpstreamInfo 后端配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KongUpstreamInfo GetUpstreamInfo() const;
 
                     /**
                      * 设置后端配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _upstreamInfo 后端配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpstreamInfo(const KongUpstreamInfo& _upstreamInfo);
@@ -249,18 +225,14 @@ namespace TencentCloud
 
                     /**
                      * 获取后端类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpstreamType 后端类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpstreamType() const;
 
                     /**
                      * 设置后端类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _upstreamType 后端类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpstreamType(const std::string& _upstreamType);
@@ -274,18 +246,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否可编辑
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Editable 是否可编辑
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEditable() const;
 
                     /**
                      * 设置是否可编辑
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _editable 是否可编辑
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEditable(const bool& _editable);
@@ -299,18 +267,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -326,21 +290,18 @@ namespace TencentCloud
 
                     /**
                      * 服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
                      * 服务名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 后端协议
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
@@ -354,14 +315,12 @@ namespace TencentCloud
 
                     /**
                      * 后端延时，单位ms
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_timeout;
                     bool m_timeoutHasBeenSet;
 
                     /**
                      * 重试次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_retries;
                     bool m_retriesHasBeenSet;
@@ -375,28 +334,24 @@ namespace TencentCloud
 
                     /**
                      * 后端配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KongUpstreamInfo m_upstreamInfo;
                     bool m_upstreamInfoHasBeenSet;
 
                     /**
                      * 后端类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_upstreamType;
                     bool m_upstreamTypeHasBeenSet;
 
                     /**
                      * 是否可编辑
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_editable;
                     bool m_editableHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;

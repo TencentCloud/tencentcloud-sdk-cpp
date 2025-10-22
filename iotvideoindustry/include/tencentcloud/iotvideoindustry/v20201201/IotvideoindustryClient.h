@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -654,7 +654,7 @@ namespace TencentCloud
                 CreateLiveChannelOutcomeCallable CreateLiveChannelCallable(const Model::CreateLiveChannelRequest& request);
 
                 /**
-                 *创建直播录制计划
+                 *创建直播录制计划，直播录制接口，暂时下线中，只有国标接口支持云端录制
                  * @param req CreateLiveRecordPlanRequest
                  * @return CreateLiveRecordPlanOutcome
                  */
@@ -1292,8 +1292,7 @@ RecordId和StartTime/EndTime互斥
                 GetRecordDatesByDevOutcomeCallable GetRecordDatesByDevCallable(const Model::GetRecordDatesByDevRequest& request);
 
                 /**
-                 *本接口(GetRecordPlanByDev)用于根据设备ID查询其绑定的录制计划.
-
+                 *本接口(GetRecordPlanByDev)用于根据设备ID查询其绑定的录制计划. 这个接口没有业务逻辑用到, 已废弃，统一用DescribeDevice
                  * @param req GetRecordPlanByDevRequest
                  * @return GetRecordPlanByDevOutcome
                  */
@@ -1441,7 +1440,6 @@ RecordId和StartTime/EndTime互斥
 
                 /**
                  *本接口(ModifyRecordingPlan)用于更新录制计划。
-
                  * @param req ModifyRecordingPlanRequest
                  * @return ModifyRecordingPlanOutcome
                  */

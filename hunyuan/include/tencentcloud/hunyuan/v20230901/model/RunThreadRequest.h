@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool ThreadIDHasBeenSet() const;
 
                     /**
-                     * 获取助手 ID
-                     * @return AssistantID 助手 ID
+                     * 获取助手 ID（目前未使用，留空）
+                     * @return AssistantID 助手 ID（目前未使用，留空）
                      * 
                      */
                     std::string GetAssistantID() const;
 
                     /**
-                     * 设置助手 ID
-                     * @param _assistantID 助手 ID
+                     * 设置助手 ID（目前未使用，留空）
+                     * @param _assistantID 助手 ID（目前未使用，留空）
                      * 
                      */
                     void SetAssistantID(const std::string& _assistantID);
@@ -284,7 +284,7 @@ namespace TencentCloud
                     bool m_threadIDHasBeenSet;
 
                     /**
-                     * 助手 ID
+                     * 助手 ID（目前未使用，留空）
                      */
                     std::string m_assistantID;
                     bool m_assistantIDHasBeenSet;

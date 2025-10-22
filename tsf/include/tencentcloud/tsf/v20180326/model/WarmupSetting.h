@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool EnabledHasBeenSet() const;
 
                     /**
-                     * 获取预热时间
-                     * @return WarmupTime 预热时间
+                     * 获取预热时间，单位秒
+                     * @return WarmupTime 预热时间，单位秒
                      * 
                      */
                     uint64_t GetWarmupTime() const;
 
                     /**
-                     * 设置预热时间
-                     * @param _warmupTime 预热时间
+                     * 设置预热时间，单位秒
+                     * @param _warmupTime 预热时间，单位秒
                      * 
                      */
                     void SetWarmupTime(const uint64_t& _warmupTime);
@@ -139,7 +139,7 @@ namespace TencentCloud
                     bool m_enabledHasBeenSet;
 
                     /**
-                     * 预热时间
+                     * 预热时间，单位秒
                      */
                     uint64_t m_warmupTime;
                     bool m_warmupTimeHasBeenSet;

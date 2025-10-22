@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cdwdoris/v20211228/model/DorisSourceInfo.h>
 #include <tencentcloud/cdwdoris/v20211228/model/BackupCosInfo.h>
+#include <tencentcloud/cdwdoris/v20211228/model/SnapshotRemainPolicy.h>
 
 
 namespace TencentCloud
@@ -113,18 +114,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备份单副本数据量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackUpSingleSize 备份单副本数据量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBackUpSingleSize() const;
 
                     /**
                      * 设置备份单副本数据量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _backUpSingleSize 备份单副本数据量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBackUpSingleSize(const int64_t& _backUpSingleSize);
@@ -201,18 +198,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0为默认。1时是对远端的doris进行备份，不周期，一次性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupType 0为默认。1时是对远端的doris进行备份，不周期，一次性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBackupType() const;
 
                     /**
                      * 设置0为默认。1时是对远端的doris进行备份，不周期，一次性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _backupType 0为默认。1时是对远端的doris进行备份，不周期，一次性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBackupType(const int64_t& _backupType);
@@ -226,18 +219,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0为默认。1时是立即备份。2时是迁移
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupTimeType 0为默认。1时是立即备份。2时是迁移
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBackupTimeType() const;
 
                     /**
                      * 设置0为默认。1时是立即备份。2时是迁移
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _backupTimeType 0为默认。1时是立即备份。2时是迁移
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBackupTimeType(const int64_t& _backupTimeType);
@@ -251,18 +240,14 @@ namespace TencentCloud
 
                     /**
                      * 获取远端doris的连接信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DorisSourceInfo 远端doris的连接信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DorisSourceInfo GetDorisSourceInfo() const;
 
                     /**
                      * 设置远端doris的连接信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dorisSourceInfo 远端doris的连接信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDorisSourceInfo(const DorisSourceInfo& _dorisSourceInfo);
@@ -276,18 +261,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例状态对应的数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobStatusNum 实例状态对应的数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetJobStatusNum() const;
 
                     /**
                      * 设置实例状态对应的数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _jobStatusNum 实例状态对应的数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJobStatusNum(const int64_t& _jobStatusNum);
@@ -301,18 +282,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备份实例中关于cos的信息	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupCosInfo 备份实例中关于cos的信息	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BackupCosInfo GetBackupCosInfo() const;
 
                     /**
                      * 设置备份实例中关于cos的信息	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _backupCosInfo 备份实例中关于cos的信息	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBackupCosInfo(const BackupCosInfo& _backupCosInfo);
@@ -326,18 +303,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否使用的自定义桶
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsUserDefineBucket 是否使用的自定义桶
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsUserDefineBucket() const;
 
                     /**
                      * 设置是否使用的自定义桶
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isUserDefineBucket 是否使用的自定义桶
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsUserDefineBucket(const bool& _isUserDefineBucket);
@@ -348,6 +321,69 @@ namespace TencentCloud
                      * 
                      */
                     bool IsUserDefineBucketHasBeenSet() const;
+
+                    /**
+                     * 获取错误原因
+                     * @return ErrorReason 错误原因
+                     * 
+                     */
+                    std::string GetErrorReason() const;
+
+                    /**
+                     * 设置错误原因
+                     * @param _errorReason 错误原因
+                     * 
+                     */
+                    void SetErrorReason(const std::string& _errorReason);
+
+                    /**
+                     * 判断参数 ErrorReason 是否已赋值
+                     * @return ErrorReason 是否已赋值
+                     * 
+                     */
+                    bool ErrorReasonHasBeenSet() const;
+
+                    /**
+                     * 获取快照保留策略
+                     * @return SnapshotRemainPolicy 快照保留策略
+                     * 
+                     */
+                    SnapshotRemainPolicy GetSnapshotRemainPolicy() const;
+
+                    /**
+                     * 设置快照保留策略
+                     * @param _snapshotRemainPolicy 快照保留策略
+                     * 
+                     */
+                    void SetSnapshotRemainPolicy(const SnapshotRemainPolicy& _snapshotRemainPolicy);
+
+                    /**
+                     * 判断参数 SnapshotRemainPolicy 是否已赋值
+                     * @return SnapshotRemainPolicy 是否已赋值
+                     * 
+                     */
+                    bool SnapshotRemainPolicyHasBeenSet() const;
+
+                    /**
+                     * 获取隔离次数
+                     * @return IsolationCount 隔离次数
+                     * 
+                     */
+                    int64_t GetIsolationCount() const;
+
+                    /**
+                     * 设置隔离次数
+                     * @param _isolationCount 隔离次数
+                     * 
+                     */
+                    void SetIsolationCount(const int64_t& _isolationCount);
+
+                    /**
+                     * 判断参数 IsolationCount 是否已赋值
+                     * @return IsolationCount 是否已赋值
+                     * 
+                     */
+                    bool IsolationCountHasBeenSet() const;
 
                 private:
 
@@ -371,7 +407,6 @@ namespace TencentCloud
 
                     /**
                      * 备份单副本数据量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_backUpSingleSize;
                     bool m_backUpSingleSizeHasBeenSet;
@@ -396,45 +431,57 @@ namespace TencentCloud
 
                     /**
                      * 0为默认。1时是对远端的doris进行备份，不周期，一次性
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_backupType;
                     bool m_backupTypeHasBeenSet;
 
                     /**
                      * 0为默认。1时是立即备份。2时是迁移
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_backupTimeType;
                     bool m_backupTimeTypeHasBeenSet;
 
                     /**
                      * 远端doris的连接信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DorisSourceInfo m_dorisSourceInfo;
                     bool m_dorisSourceInfoHasBeenSet;
 
                     /**
                      * 实例状态对应的数值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_jobStatusNum;
                     bool m_jobStatusNumHasBeenSet;
 
                     /**
                      * 备份实例中关于cos的信息	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BackupCosInfo m_backupCosInfo;
                     bool m_backupCosInfoHasBeenSet;
 
                     /**
                      * 是否使用的自定义桶
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isUserDefineBucket;
                     bool m_isUserDefineBucketHasBeenSet;
+
+                    /**
+                     * 错误原因
+                     */
+                    std::string m_errorReason;
+                    bool m_errorReasonHasBeenSet;
+
+                    /**
+                     * 快照保留策略
+                     */
+                    SnapshotRemainPolicy m_snapshotRemainPolicy;
+                    bool m_snapshotRemainPolicyHasBeenSet;
+
+                    /**
+                     * 隔离次数
+                     */
+                    int64_t m_isolationCount;
+                    bool m_isolationCountHasBeenSet;
 
                 };
             }

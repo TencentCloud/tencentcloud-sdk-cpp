@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,8 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/faceid/v20180301/model/Encryption.h>
 #include <tencentcloud/faceid/v20180301/model/IntentionQuestion.h>
-#include <tencentcloud/faceid/v20180301/model/RuleIdConfig.h>
 #include <tencentcloud/faceid/v20180301/model/IntentionActionConfig.h>
+#include <tencentcloud/faceid/v20180301/model/RuleIdConfig.h>
 
 
 namespace TencentCloud
@@ -47,15 +47,27 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用于细分客户使用场景，申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。如有疑问，请添加[腾讯云人脸核身小助手](https://cloud.tencent.com/document/product/1007/56130)进行咨询。
-                     * @return RuleId 用于细分客户使用场景，申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。如有疑问，请添加[腾讯云人脸核身小助手](https://cloud.tencent.com/document/product/1007/56130)进行咨询。
+                     * 获取业务流程ID。
+- 用于细分客户使用场景, 可为业务配置不同的业务流程。
+- 申请开通服务后，登录腾讯云[慧眼人脸核身控制](https://console.cloud.tencent.com/faceid)进行创建，审核通过后即可调用。
+- 如有疑问，请添加[腾讯云人脸核身小助手](https://cloud.tencent.com/document/product/1007/56130)进行咨询。
+                     * @return RuleId 业务流程ID。
+- 用于细分客户使用场景, 可为业务配置不同的业务流程。
+- 申请开通服务后，登录腾讯云[慧眼人脸核身控制](https://console.cloud.tencent.com/faceid)进行创建，审核通过后即可调用。
+- 如有疑问，请添加[腾讯云人脸核身小助手](https://cloud.tencent.com/document/product/1007/56130)进行咨询。
                      * 
                      */
                     std::string GetRuleId() const;
 
                     /**
-                     * 设置用于细分客户使用场景，申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。如有疑问，请添加[腾讯云人脸核身小助手](https://cloud.tencent.com/document/product/1007/56130)进行咨询。
-                     * @param _ruleId 用于细分客户使用场景，申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。如有疑问，请添加[腾讯云人脸核身小助手](https://cloud.tencent.com/document/product/1007/56130)进行咨询。
+                     * 设置业务流程ID。
+- 用于细分客户使用场景, 可为业务配置不同的业务流程。
+- 申请开通服务后，登录腾讯云[慧眼人脸核身控制](https://console.cloud.tencent.com/faceid)进行创建，审核通过后即可调用。
+- 如有疑问，请添加[腾讯云人脸核身小助手](https://cloud.tencent.com/document/product/1007/56130)进行咨询。
+                     * @param _ruleId 业务流程ID。
+- 用于细分客户使用场景, 可为业务配置不同的业务流程。
+- 申请开通服务后，登录腾讯云[慧眼人脸核身控制](https://console.cloud.tencent.com/faceid)进行创建，审核通过后即可调用。
+- 如有疑问，请添加[腾讯云人脸核身小助手](https://cloud.tencent.com/document/product/1007/56130)进行咨询。
                      * 
                      */
                     void SetRuleId(const std::string& _ruleId);
@@ -89,19 +101,23 @@ namespace TencentCloud
                     bool TerminalTypeHasBeenSet() const;
 
                     /**
-                     * 获取身份标识（是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示）。
-规则：a-z，A-Z，0-9组合。最长长度32位。
-                     * @return IdCard 身份标识（是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示）。
-规则：a-z，A-Z，0-9组合。最长长度32位。
+                     * 获取验证人的身份证号码。
+- 是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示。
+
+                     * @return IdCard 验证人的身份证号码。
+- 是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示。
+
                      * 
                      */
                     std::string GetIdCard() const;
 
                     /**
-                     * 设置身份标识（是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示）。
-规则：a-z，A-Z，0-9组合。最长长度32位。
-                     * @param _idCard 身份标识（是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示）。
-规则：a-z，A-Z，0-9组合。最长长度32位。
+                     * 设置验证人的身份证号码。
+- 是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示。
+
+                     * @param _idCard 验证人的身份证号码。
+- 是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示。
+
                      * 
                      */
                     void SetIdCard(const std::string& _idCard);
@@ -114,19 +130,23 @@ namespace TencentCloud
                     bool IdCardHasBeenSet() const;
 
                     /**
-                     * 获取姓名。（是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示）。
-最长长度32位。中文请使用UTF-8编码。
-                     * @return Name 姓名。（是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示）。
-最长长度32位。中文请使用UTF-8编码。
+                     * 获取验证人的姓名。
+- 是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示。
+- 最长长度32位。中文请使用UTF-8编码。
+                     * @return Name 验证人的姓名。
+- 是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示。
+- 最长长度32位。中文请使用UTF-8编码。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置姓名。（是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示）。
-最长长度32位。中文请使用UTF-8编码。
-                     * @param _name 姓名。（是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示）。
-最长长度32位。中文请使用UTF-8编码。
+                     * 设置验证人的姓名。
+- 是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示。
+- 最长长度32位。中文请使用UTF-8编码。
+                     * @param _name 验证人的姓名。
+- 是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示。
+- 最长长度32位。中文请使用UTF-8编码。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -139,15 +159,19 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取认证结束后重定向的回调链接地址。最长长度1024位。
-                     * @return RedirectUrl 认证结束后重定向的回调链接地址。最长长度1024位。
+                     * 获取认证结束后重定向的回调链接地址。
+- 最长长度1024位。
+                     * @return RedirectUrl 认证结束后重定向的回调链接地址。
+- 最长长度1024位。
                      * 
                      */
                     std::string GetRedirectUrl() const;
 
                     /**
-                     * 设置认证结束后重定向的回调链接地址。最长长度1024位。
-                     * @param _redirectUrl 认证结束后重定向的回调链接地址。最长长度1024位。
+                     * 设置认证结束后重定向的回调链接地址。
+- 最长长度1024位。
+                     * @param _redirectUrl 认证结束后重定向的回调链接地址。
+- 最长长度1024位。
                      * 
                      */
                     void SetRedirectUrl(const std::string& _redirectUrl);
@@ -161,14 +185,18 @@ namespace TencentCloud
 
                     /**
                      * 获取透传字段，在获取验证结果时返回。
+- 最长长度1024位。
                      * @return Extra 透传字段，在获取验证结果时返回。
+- 最长长度1024位。
                      * 
                      */
                     std::string GetExtra() const;
 
                     /**
                      * 设置透传字段，在获取验证结果时返回。
+- 最长长度1024位。
                      * @param _extra 透传字段，在获取验证结果时返回。
+- 最长长度1024位。
                      * 
                      */
                     void SetExtra(const std::string& _extra);
@@ -181,19 +209,27 @@ namespace TencentCloud
                     bool ExtraHasBeenSet() const;
 
                     /**
-                     * 获取用于人脸比对的照片，图片的Base64值；
-Base64编码后的图片数据大小不超过3M，仅支持jpg、png格式。请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
-                     * @return ImageBase64 用于人脸比对的照片，图片的Base64值；
-Base64编码后的图片数据大小不超过3M，仅支持jpg、png格式。请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
+                     * 获取用于人脸比对的图像数据，使用base64编码。
+- Base64编码后的图片数据大小不超过3M。
+- 仅支持jpg、png格式。
+- 请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
+                     * @return ImageBase64 用于人脸比对的图像数据，使用base64编码。
+- Base64编码后的图片数据大小不超过3M。
+- 仅支持jpg、png格式。
+- 请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
                      * 
                      */
                     std::string GetImageBase64() const;
 
                     /**
-                     * 设置用于人脸比对的照片，图片的Base64值；
-Base64编码后的图片数据大小不超过3M，仅支持jpg、png格式。请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
-                     * @param _imageBase64 用于人脸比对的照片，图片的Base64值；
-Base64编码后的图片数据大小不超过3M，仅支持jpg、png格式。请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
+                     * 设置用于人脸比对的图像数据，使用base64编码。
+- Base64编码后的图片数据大小不超过3M。
+- 仅支持jpg、png格式。
+- 请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
+                     * @param _imageBase64 用于人脸比对的图像数据，使用base64编码。
+- Base64编码后的图片数据大小不超过3M。
+- 仅支持jpg、png格式。
+- 请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
                      * 
                      */
                     void SetImageBase64(const std::string& _imageBase64);
@@ -227,15 +263,23 @@ Base64编码后的图片数据大小不超过3M，仅支持jpg、png格式。请
                     bool EncryptionHasBeenSet() const;
 
                     /**
-                     * 获取意愿核身（朗读模式）使用的文案，若未使用意愿核身（朗读模式），则该字段无需传入。默认为空，最长可接受120的字符串长度。
-                     * @return IntentionVerifyText 意愿核身（朗读模式）使用的文案，若未使用意愿核身（朗读模式），则该字段无需传入。默认为空，最长可接受120的字符串长度。
+                     * 获取意愿核身（朗读模式）使用的文案。
+- 若未使用意愿核身（朗读模式），则该字段无需传入。
+- 最长可接受120的字符串长度。
+                     * @return IntentionVerifyText 意愿核身（朗读模式）使用的文案。
+- 若未使用意愿核身（朗读模式），则该字段无需传入。
+- 最长可接受120的字符串长度。
                      * 
                      */
                     std::string GetIntentionVerifyText() const;
 
                     /**
-                     * 设置意愿核身（朗读模式）使用的文案，若未使用意愿核身（朗读模式），则该字段无需传入。默认为空，最长可接受120的字符串长度。
-                     * @param _intentionVerifyText 意愿核身（朗读模式）使用的文案，若未使用意愿核身（朗读模式），则该字段无需传入。默认为空，最长可接受120的字符串长度。
+                     * 设置意愿核身（朗读模式）使用的文案。
+- 若未使用意愿核身（朗读模式），则该字段无需传入。
+- 最长可接受120的字符串长度。
+                     * @param _intentionVerifyText 意愿核身（朗读模式）使用的文案。
+- 若未使用意愿核身（朗读模式），则该字段无需传入。
+- 最长可接受120的字符串长度。
                      * 
                      */
                     void SetIntentionVerifyText(const std::string& _intentionVerifyText);
@@ -248,15 +292,23 @@ Base64编码后的图片数据大小不超过3M，仅支持jpg、png格式。请
                     bool IntentionVerifyTextHasBeenSet() const;
 
                     /**
-                     * 获取意愿核身语音问答模式（即语音播报+语音回答）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。当前仅支持1轮问答。
-                     * @return IntentionQuestions 意愿核身语音问答模式（即语音播报+语音回答）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。当前仅支持1轮问答。
+                     * 获取意愿核身（语音播报+语音回答模式）使用的文案。
+- 包括：系统语音播报的文本、需要核验的标准文本。
+- 问答模式支持1-10轮（不超过10轮）的意愿确认。
+                     * @return IntentionQuestions 意愿核身（语音播报+语音回答模式）使用的文案。
+- 包括：系统语音播报的文本、需要核验的标准文本。
+- 问答模式支持1-10轮（不超过10轮）的意愿确认。
                      * 
                      */
                     std::vector<IntentionQuestion> GetIntentionQuestions() const;
 
                     /**
-                     * 设置意愿核身语音问答模式（即语音播报+语音回答）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。当前仅支持1轮问答。
-                     * @param _intentionQuestions 意愿核身语音问答模式（即语音播报+语音回答）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。当前仅支持1轮问答。
+                     * 设置意愿核身（语音播报+语音回答模式）使用的文案。
+- 包括：系统语音播报的文本、需要核验的标准文本。
+- 问答模式支持1-10轮（不超过10轮）的意愿确认。
+                     * @param _intentionQuestions 意愿核身（语音播报+语音回答模式）使用的文案。
+- 包括：系统语音播报的文本、需要核验的标准文本。
+- 问答模式支持1-10轮（不超过10轮）的意愿确认。
                      * 
                      */
                     void SetIntentionQuestions(const std::vector<IntentionQuestion>& _intentionQuestions);
@@ -269,36 +321,23 @@ Base64编码后的图片数据大小不超过3M，仅支持jpg、png格式。请
                     bool IntentionQuestionsHasBeenSet() const;
 
                     /**
-                     * 获取RuleId相关配置
-                     * @return Config RuleId相关配置
-                     * 
-                     */
-                    RuleIdConfig GetConfig() const;
-
-                    /**
-                     * 设置RuleId相关配置
-                     * @param _config RuleId相关配置
-                     * 
-                     */
-                    void SetConfig(const RuleIdConfig& _config);
-
-                    /**
-                     * 判断参数 Config 是否已赋值
-                     * @return Config 是否已赋值
-                     * 
-                     */
-                    bool ConfigHasBeenSet() const;
-
-                    /**
-                     * 获取意愿核身（点头确认模式）使用的文案，若未使用意愿核身（点头确认模式），则该字段无需传入。当前仅支持一个提示文本。
-                     * @return IntentionActions 意愿核身（点头确认模式）使用的文案，若未使用意愿核身（点头确认模式），则该字段无需传入。当前仅支持一个提示文本。
+                     * 获取意愿核身（点头确认模式）使用的文案。
+- 若未使用意愿核身（点头确认模式），则该字段无需传入。
+- 点头确认模式支持1-10轮（不超过10轮）的意愿确认。
+                     * @return IntentionActions 意愿核身（点头确认模式）使用的文案。
+- 若未使用意愿核身（点头确认模式），则该字段无需传入。
+- 点头确认模式支持1-10轮（不超过10轮）的意愿确认。
                      * 
                      */
                     std::vector<IntentionActionConfig> GetIntentionActions() const;
 
                     /**
-                     * 设置意愿核身（点头确认模式）使用的文案，若未使用意愿核身（点头确认模式），则该字段无需传入。当前仅支持一个提示文本。
-                     * @param _intentionActions 意愿核身（点头确认模式）使用的文案，若未使用意愿核身（点头确认模式），则该字段无需传入。当前仅支持一个提示文本。
+                     * 设置意愿核身（点头确认模式）使用的文案。
+- 若未使用意愿核身（点头确认模式），则该字段无需传入。
+- 点头确认模式支持1-10轮（不超过10轮）的意愿确认。
+                     * @param _intentionActions 意愿核身（点头确认模式）使用的文案。
+- 若未使用意愿核身（点头确认模式），则该字段无需传入。
+- 点头确认模式支持1-10轮（不超过10轮）的意愿确认。
                      * 
                      */
                     void SetIntentionActions(const std::vector<IntentionActionConfig>& _intentionActions);
@@ -310,10 +349,34 @@ Base64编码后的图片数据大小不超过3M，仅支持jpg、png格式。请
                      */
                     bool IntentionActionsHasBeenSet() const;
 
+                    /**
+                     * 获取意愿核身流程配置。
+                     * @return Config 意愿核身流程配置。
+                     * 
+                     */
+                    RuleIdConfig GetConfig() const;
+
+                    /**
+                     * 设置意愿核身流程配置。
+                     * @param _config 意愿核身流程配置。
+                     * 
+                     */
+                    void SetConfig(const RuleIdConfig& _config);
+
+                    /**
+                     * 判断参数 Config 是否已赋值
+                     * @return Config 是否已赋值
+                     * 
+                     */
+                    bool ConfigHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 用于细分客户使用场景，申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。如有疑问，请添加[腾讯云人脸核身小助手](https://cloud.tencent.com/document/product/1007/56130)进行咨询。
+                     * 业务流程ID。
+- 用于细分客户使用场景, 可为业务配置不同的业务流程。
+- 申请开通服务后，登录腾讯云[慧眼人脸核身控制](https://console.cloud.tencent.com/faceid)进行创建，审核通过后即可调用。
+- 如有疑问，请添加[腾讯云人脸核身小助手](https://cloud.tencent.com/document/product/1007/56130)进行咨询。
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;
@@ -325,34 +388,40 @@ Base64编码后的图片数据大小不超过3M，仅支持jpg、png格式。请
                     bool m_terminalTypeHasBeenSet;
 
                     /**
-                     * 身份标识（是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示）。
-规则：a-z，A-Z，0-9组合。最长长度32位。
+                     * 验证人的身份证号码。
+- 是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示。
+
                      */
                     std::string m_idCard;
                     bool m_idCardHasBeenSet;
 
                     /**
-                     * 姓名。（是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示）。
-最长长度32位。中文请使用UTF-8编码。
+                     * 验证人的姓名。
+- 是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示。
+- 最长长度32位。中文请使用UTF-8编码。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 认证结束后重定向的回调链接地址。最长长度1024位。
+                     * 认证结束后重定向的回调链接地址。
+- 最长长度1024位。
                      */
                     std::string m_redirectUrl;
                     bool m_redirectUrlHasBeenSet;
 
                     /**
                      * 透传字段，在获取验证结果时返回。
+- 最长长度1024位。
                      */
                     std::string m_extra;
                     bool m_extraHasBeenSet;
 
                     /**
-                     * 用于人脸比对的照片，图片的Base64值；
-Base64编码后的图片数据大小不超过3M，仅支持jpg、png格式。请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
+                     * 用于人脸比对的图像数据，使用base64编码。
+- Base64编码后的图片数据大小不超过3M。
+- 仅支持jpg、png格式。
+- 请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
                      */
                     std::string m_imageBase64;
                     bool m_imageBase64HasBeenSet;
@@ -364,28 +433,34 @@ Base64编码后的图片数据大小不超过3M，仅支持jpg、png格式。请
                     bool m_encryptionHasBeenSet;
 
                     /**
-                     * 意愿核身（朗读模式）使用的文案，若未使用意愿核身（朗读模式），则该字段无需传入。默认为空，最长可接受120的字符串长度。
+                     * 意愿核身（朗读模式）使用的文案。
+- 若未使用意愿核身（朗读模式），则该字段无需传入。
+- 最长可接受120的字符串长度。
                      */
                     std::string m_intentionVerifyText;
                     bool m_intentionVerifyTextHasBeenSet;
 
                     /**
-                     * 意愿核身语音问答模式（即语音播报+语音回答）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。当前仅支持1轮问答。
+                     * 意愿核身（语音播报+语音回答模式）使用的文案。
+- 包括：系统语音播报的文本、需要核验的标准文本。
+- 问答模式支持1-10轮（不超过10轮）的意愿确认。
                      */
                     std::vector<IntentionQuestion> m_intentionQuestions;
                     bool m_intentionQuestionsHasBeenSet;
 
                     /**
-                     * RuleId相关配置
-                     */
-                    RuleIdConfig m_config;
-                    bool m_configHasBeenSet;
-
-                    /**
-                     * 意愿核身（点头确认模式）使用的文案，若未使用意愿核身（点头确认模式），则该字段无需传入。当前仅支持一个提示文本。
+                     * 意愿核身（点头确认模式）使用的文案。
+- 若未使用意愿核身（点头确认模式），则该字段无需传入。
+- 点头确认模式支持1-10轮（不超过10轮）的意愿确认。
                      */
                     std::vector<IntentionActionConfig> m_intentionActions;
                     bool m_intentionActionsHasBeenSet;
+
+                    /**
+                     * 意愿核身流程配置。
+                     */
+                    RuleIdConfig m_config;
+                    bool m_configHasBeenSet;
 
                 };
             }

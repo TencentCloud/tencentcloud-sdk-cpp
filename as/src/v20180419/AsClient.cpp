@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1495,6 +1495,49 @@ AsClient::EnableAutoScalingGroupOutcomeCallable AsClient::EnableAutoScalingGroup
         [this, request]()
         {
             return this->EnableAutoScalingGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AsClient::EnterStandbyOutcome AsClient::EnterStandby(const EnterStandbyRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnterStandby");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnterStandbyResponse rsp = EnterStandbyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnterStandbyOutcome(rsp);
+        else
+            return EnterStandbyOutcome(o.GetError());
+    }
+    else
+    {
+        return EnterStandbyOutcome(outcome.GetError());
+    }
+}
+
+void AsClient::EnterStandbyAsync(const EnterStandbyRequest& request, const EnterStandbyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnterStandby(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsClient::EnterStandbyOutcomeCallable AsClient::EnterStandbyCallable(const EnterStandbyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnterStandbyOutcome()>>(
+        [this, request]()
+        {
+            return this->EnterStandby(request);
         }
     );
 

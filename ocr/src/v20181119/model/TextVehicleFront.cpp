@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,10 @@ TextVehicleFront::TextVehicleFront() :
     m_engineNoHasBeenSet(false),
     m_registerDateHasBeenSet(false),
     m_issueDateHasBeenSet(false),
-    m_sealHasBeenSet(false)
+    m_sealHasBeenSet(false),
+    m_stateElectronicHasBeenSet(false),
+    m_inspectionValidityTimeElectronicHasBeenSet(false),
+    m_generationTimeElectronicHasBeenSet(false)
 {
 }
 
@@ -150,6 +153,36 @@ CoreInternalOutcome TextVehicleFront::Deserialize(const rapidjson::Value &value)
         m_sealHasBeenSet = true;
     }
 
+    if (value.HasMember("StateElectronic") && !value["StateElectronic"].IsNull())
+    {
+        if (!value["StateElectronic"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TextVehicleFront.StateElectronic` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_stateElectronic = string(value["StateElectronic"].GetString());
+        m_stateElectronicHasBeenSet = true;
+    }
+
+    if (value.HasMember("InspectionValidityTimeElectronic") && !value["InspectionValidityTimeElectronic"].IsNull())
+    {
+        if (!value["InspectionValidityTimeElectronic"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TextVehicleFront.InspectionValidityTimeElectronic` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_inspectionValidityTimeElectronic = string(value["InspectionValidityTimeElectronic"].GetString());
+        m_inspectionValidityTimeElectronicHasBeenSet = true;
+    }
+
+    if (value.HasMember("GenerationTimeElectronic") && !value["GenerationTimeElectronic"].IsNull())
+    {
+        if (!value["GenerationTimeElectronic"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TextVehicleFront.GenerationTimeElectronic` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_generationTimeElectronic = string(value["GenerationTimeElectronic"].GetString());
+        m_generationTimeElectronicHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +276,30 @@ void TextVehicleFront::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "Seal";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_seal.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_stateElectronicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StateElectronic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_stateElectronic.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inspectionValidityTimeElectronicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InspectionValidityTimeElectronic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inspectionValidityTimeElectronic.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_generationTimeElectronicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GenerationTimeElectronic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_generationTimeElectronic.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -422,5 +479,53 @@ void TextVehicleFront::SetSeal(const string& _seal)
 bool TextVehicleFront::SealHasBeenSet() const
 {
     return m_sealHasBeenSet;
+}
+
+string TextVehicleFront::GetStateElectronic() const
+{
+    return m_stateElectronic;
+}
+
+void TextVehicleFront::SetStateElectronic(const string& _stateElectronic)
+{
+    m_stateElectronic = _stateElectronic;
+    m_stateElectronicHasBeenSet = true;
+}
+
+bool TextVehicleFront::StateElectronicHasBeenSet() const
+{
+    return m_stateElectronicHasBeenSet;
+}
+
+string TextVehicleFront::GetInspectionValidityTimeElectronic() const
+{
+    return m_inspectionValidityTimeElectronic;
+}
+
+void TextVehicleFront::SetInspectionValidityTimeElectronic(const string& _inspectionValidityTimeElectronic)
+{
+    m_inspectionValidityTimeElectronic = _inspectionValidityTimeElectronic;
+    m_inspectionValidityTimeElectronicHasBeenSet = true;
+}
+
+bool TextVehicleFront::InspectionValidityTimeElectronicHasBeenSet() const
+{
+    return m_inspectionValidityTimeElectronicHasBeenSet;
+}
+
+string TextVehicleFront::GetGenerationTimeElectronic() const
+{
+    return m_generationTimeElectronic;
+}
+
+void TextVehicleFront::SetGenerationTimeElectronic(const string& _generationTimeElectronic)
+{
+    m_generationTimeElectronic = _generationTimeElectronic;
+    m_generationTimeElectronicHasBeenSet = true;
+}
+
+bool TextVehicleFront::GenerationTimeElectronicHasBeenSet() const
+{
+    return m_generationTimeElectronicHasBeenSet;
 }
 

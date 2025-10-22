@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取代理组ID
-                     * @return ProxyGroupId 代理组ID
+                     * 获取代理组 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。
+                     * @return ProxyGroupId 代理组 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。
                      * 
                      */
                     std::string GetProxyGroupId() const;
 
                     /**
-                     * 设置代理组ID
-                     * @param _proxyGroupId 代理组ID
+                     * 设置代理组 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。
+                     * @param _proxyGroupId 代理组 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。
                      * 
                      */
                     void SetProxyGroupId(const std::string& _proxyGroupId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProxyGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取代理组地址ID
-                     * @return ProxyAddressId 代理组地址ID
+                     * 获取代理组地址 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。
+                     * @return ProxyAddressId 代理组地址 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。
                      * 
                      */
                     std::string GetProxyAddressId() const;
 
                     /**
-                     * 设置代理组地址ID
-                     * @param _proxyAddressId 代理组地址ID
+                     * 设置代理组地址 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。
+                     * @param _proxyAddressId 代理组地址 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。
                      * 
                      */
                     void SetProxyAddressId(const std::string& _proxyAddressId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ProxyAddressIdHasBeenSet() const;
 
                     /**
-                     * 获取私有网络ID
-                     * @return UniqVpcId 私有网络ID
+                     * 获取私有网络 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @return UniqVpcId 私有网络 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
-                     * 设置私有网络ID
-                     * @param _uniqVpcId 私有网络ID
+                     * 设置私有网络 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @param _uniqVpcId 私有网络 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool UniqVpcIdHasBeenSet() const;
 
                     /**
-                     * 获取私有子网ID
-                     * @return UniqSubnetId 私有子网ID
+                     * 获取私有子网 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @return UniqSubnetId 私有子网 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     std::string GetUniqSubnetId() const;
 
                     /**
-                     * 设置私有子网ID
-                     * @param _uniqSubnetId 私有子网ID
+                     * 设置私有子网 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @param _uniqSubnetId 私有子网 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     void SetUniqSubnetId(const std::string& _uniqSubnetId);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool UniqSubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取IP地址
-                     * @return Vip IP地址
+                     * 获取IP 地址。若不填写则自动分配子网下的可用 IP。
+                     * @return Vip IP 地址。若不填写则自动分配子网下的可用 IP。
                      * 
                      */
                     std::string GetVip() const;
 
                     /**
-                     * 设置IP地址
-                     * @param _vip IP地址
+                     * 设置IP 地址。若不填写则自动分配子网下的可用 IP。
+                     * @param _vip IP 地址。若不填写则自动分配子网下的可用 IP。
                      * 
                      */
                     void SetVip(const std::string& _vip);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool VipHasBeenSet() const;
 
                     /**
-                     * 获取端口
-                     * @return VPort 端口
+                     * 获取端口。默认值3306，取值范围：1024 - 65535。
+                     * @return VPort 端口。默认值3306，取值范围：1024 - 65535。
                      * 
                      */
                     uint64_t GetVPort() const;
 
                     /**
-                     * 设置端口
-                     * @param _vPort 端口
+                     * 设置端口。默认值3306，取值范围：1024 - 65535。
+                     * @param _vPort 端口。默认值3306，取值范围：1024 - 65535。
                      * 
                      */
                     void SetVPort(const uint64_t& _vPort);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool VPortHasBeenSet() const;
 
                     /**
-                     * 获取旧IP地址回收时间
-                     * @return ReleaseDuration 旧IP地址回收时间
+                     * 获取旧 IP 地址回收时间。单位：小时，默认值：24，取值范围：0 - 168。
+                     * @return ReleaseDuration 旧 IP 地址回收时间。单位：小时，默认值：24，取值范围：0 - 168。
                      * 
                      */
                     uint64_t GetReleaseDuration() const;
 
                     /**
-                     * 设置旧IP地址回收时间
-                     * @param _releaseDuration 旧IP地址回收时间
+                     * 设置旧 IP 地址回收时间。单位：小时，默认值：24，取值范围：0 - 168。
+                     * @param _releaseDuration 旧 IP 地址回收时间。单位：小时，默认值：24，取值范围：0 - 168。
                      * 
                      */
                     void SetReleaseDuration(const uint64_t& _releaseDuration);
@@ -192,43 +192,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 代理组ID
+                     * 代理组 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。
                      */
                     std::string m_proxyGroupId;
                     bool m_proxyGroupIdHasBeenSet;
 
                     /**
-                     * 代理组地址ID
+                     * 代理组地址 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。
                      */
                     std::string m_proxyAddressId;
                     bool m_proxyAddressIdHasBeenSet;
 
                     /**
-                     * 私有网络ID
+                     * 私有网络 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      */
                     std::string m_uniqVpcId;
                     bool m_uniqVpcIdHasBeenSet;
 
                     /**
-                     * 私有子网ID
+                     * 私有子网 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      */
                     std::string m_uniqSubnetId;
                     bool m_uniqSubnetIdHasBeenSet;
 
                     /**
-                     * IP地址
+                     * IP 地址。若不填写则自动分配子网下的可用 IP。
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
 
                     /**
-                     * 端口
+                     * 端口。默认值3306，取值范围：1024 - 65535。
                      */
                     uint64_t m_vPort;
                     bool m_vPortHasBeenSet;
 
                     /**
-                     * 旧IP地址回收时间
+                     * 旧 IP 地址回收时间。单位：小时，默认值：24，取值范围：0 - 168。
                      */
                     uint64_t m_releaseDuration;
                     bool m_releaseDurationHasBeenSet;

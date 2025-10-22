@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ExecutionIdHasBeenSet() const;
 
                     /**
-                     * 获取分页Page
-                     * @return Offset 分页Page
+                     * 获取页数，第几页，用于分页
+                     * @return Offset 页数，第几页，用于分页
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页Page
-                     * @param _offset 分页Page
+                     * 设置页数，第几页，用于分页
+                     * @param _offset 页数，第几页，用于分页
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页PageSize
-                     * @return Limit 分页PageSize
+                     * 获取每页个数，用于分页，最大值为100
+                     * @return Limit 每页个数，用于分页，最大值为100
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页PageSize
-                     * @param _limit 分页PageSize
+                     * 设置每页个数，用于分页，最大值为100
+                     * @param _limit 每页个数，用于分页，最大值为100
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -168,13 +168,13 @@ namespace TencentCloud
                     bool m_executionIdHasBeenSet;
 
                     /**
-                     * 分页Page
+                     * 页数，第几页，用于分页
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页PageSize
+                     * 每页个数，用于分页，最大值为100
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

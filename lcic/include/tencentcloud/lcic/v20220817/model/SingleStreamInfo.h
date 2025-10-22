@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserId 用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userId 用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
                      * 设置开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTime 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StopTime 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStopTime() const;
 
                     /**
                      * 设置结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stopTime 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStopTime(const uint64_t& _stopTime);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取总时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Duration 总时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDuration() const;
 
                     /**
                      * 设置总时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _duration 总时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDuration(const uint64_t& _duration);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileFormat 文件格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileFormat() const;
 
                     /**
                      * 设置文件格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileFormat 文件格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileFormat(const std::string& _fileFormat);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordUrl 流url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRecordUrl() const;
 
                     /**
                      * 设置流url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recordUrl 流url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecordUrl(const std::string& _recordUrl);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordSize 流大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRecordSize() const;
 
                     /**
                      * 设置流大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recordSize 流大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecordSize(const uint64_t& _recordSize);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VideoId 流ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVideoId() const;
 
                     /**
                      * 设置流ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _videoId 流ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVideoId(const std::string& _videoId);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Role 流类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRole() const;
 
                     /**
                      * 设置流类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _role 流类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRole(const std::string& _role);
@@ -275,63 +239,54 @@ namespace TencentCloud
 
                     /**
                      * 用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
                      * 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_stopTime;
                     bool m_stopTimeHasBeenSet;
 
                     /**
                      * 总时长
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_duration;
                     bool m_durationHasBeenSet;
 
                     /**
                      * 文件格式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileFormat;
                     bool m_fileFormatHasBeenSet;
 
                     /**
                      * 流url
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_recordUrl;
                     bool m_recordUrlHasBeenSet;
 
                     /**
                      * 流大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_recordSize;
                     bool m_recordSizeHasBeenSet;
 
                     /**
                      * 流ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_videoId;
                     bool m_videoIdHasBeenSet;
 
                     /**
                      * 流类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_role;
                     bool m_roleHasBeenSet;

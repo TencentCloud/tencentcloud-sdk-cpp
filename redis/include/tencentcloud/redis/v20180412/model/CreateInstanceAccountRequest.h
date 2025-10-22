@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID。
-                     * @return InstanceId 实例 ID。
+                     * 获取实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
+                     * @return InstanceId 实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID。
-                     * @param _instanceId 实例 ID。
+                     * 设置实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
+                     * @param _instanceId 实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,10 +64,10 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取自定义访问数据库的名称。
+                     * 获取自定义的访问数据库的账号名称。
 - 仅由字母、数字、下划线、中划线组成。
 - 长度不能大于32位。
-                     * @return AccountName 自定义访问数据库的名称。
+                     * @return AccountName 自定义的访问数据库的账号名称。
 - 仅由字母、数字、下划线、中划线组成。
 - 长度不能大于32位。
                      * 
@@ -75,10 +75,10 @@ namespace TencentCloud
                     std::string GetAccountName() const;
 
                     /**
-                     * 设置自定义访问数据库的名称。
+                     * 设置自定义的访问数据库的账号名称。
 - 仅由字母、数字、下划线、中划线组成。
 - 长度不能大于32位。
-                     * @param _accountName 自定义访问数据库的名称。
+                     * @param _accountName 自定义的访问数据库的账号名称。
 - 仅由字母、数字、下划线、中划线组成。
 - 长度不能大于32位。
                      * 
@@ -160,22 +160,22 @@ namespace TencentCloud
 
                     /**
                      * 获取账户读写权限，支持选择只读与读写权限。
-- r：只读
-- rw: 读写权限
+- r：只读。
+- rw: 读写。
                      * @return Privilege 账户读写权限，支持选择只读与读写权限。
-- r：只读
-- rw: 读写权限
+- r：只读。
+- rw: 读写。
                      * 
                      */
                     std::string GetPrivilege() const;
 
                     /**
                      * 设置账户读写权限，支持选择只读与读写权限。
-- r：只读
-- rw: 读写权限
+- r：只读。
+- rw: 读写。
                      * @param _privilege 账户读写权限，支持选择只读与读写权限。
-- r：只读
-- rw: 读写权限
+- r：只读。
+- rw: 读写。
                      * 
                      */
                     void SetPrivilege(const std::string& _privilege);
@@ -188,15 +188,15 @@ namespace TencentCloud
                     bool PrivilegeHasBeenSet() const;
 
                     /**
-                     * 获取子账号描述信息，长度[0,64] 字节，支持中文。
-                     * @return Remark 子账号描述信息，长度[0,64] 字节，支持中文。
+                     * 获取账号备注描述信息，长度为[0,64] 字节，支持中文。
+                     * @return Remark 账号备注描述信息，长度为[0,64] 字节，支持中文。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置子账号描述信息，长度[0,64] 字节，支持中文。
-                     * @param _remark 子账号描述信息，长度[0,64] 字节，支持中文。
+                     * 设置账号备注描述信息，长度为[0,64] 字节，支持中文。
+                     * @param _remark 账号备注描述信息，长度为[0,64] 字节，支持中文。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -208,16 +208,37 @@ namespace TencentCloud
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取是否加密密码
+                     * @return EncryptPassword 是否加密密码
+                     * 
+                     */
+                    bool GetEncryptPassword() const;
+
+                    /**
+                     * 设置是否加密密码
+                     * @param _encryptPassword 是否加密密码
+                     * 
+                     */
+                    void SetEncryptPassword(const bool& _encryptPassword);
+
+                    /**
+                     * 判断参数 EncryptPassword 是否已赋值
+                     * @return EncryptPassword 是否已赋值
+                     * 
+                     */
+                    bool EncryptPasswordHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例 ID。
+                     * 实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 自定义访问数据库的名称。
+                     * 自定义的访问数据库的账号名称。
 - 仅由字母、数字、下划线、中划线组成。
 - 长度不能大于32位。
                      */
@@ -244,17 +265,23 @@ namespace TencentCloud
 
                     /**
                      * 账户读写权限，支持选择只读与读写权限。
-- r：只读
-- rw: 读写权限
+- r：只读。
+- rw: 读写。
                      */
                     std::string m_privilege;
                     bool m_privilegeHasBeenSet;
 
                     /**
-                     * 子账号描述信息，长度[0,64] 字节，支持中文。
+                     * 账号备注描述信息，长度为[0,64] 字节，支持中文。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * 是否加密密码
+                     */
+                    bool m_encryptPassword;
+                    bool m_encryptPasswordHasBeenSet;
 
                 };
             }

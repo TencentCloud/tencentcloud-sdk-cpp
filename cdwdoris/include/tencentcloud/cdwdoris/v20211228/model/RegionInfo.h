@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -112,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域下所有可用区列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zones 地域下所有可用区列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ZoneInfo> GetZones() const;
 
                     /**
                      * 设置地域下所有可用区列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zones 地域下所有可用区列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZones(const std::vector<ZoneInfo>& _zones);
@@ -158,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0代表是国际站 1代表不是
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsInternationalSite 0代表是国际站 1代表不是
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsInternationalSite() const;
 
                     /**
                      * 设置0代表是国际站 1代表不是
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isInternationalSite 0代表是国际站 1代表不是
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsInternationalSite(const uint64_t& _isInternationalSite);
@@ -183,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取桶
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bucket 桶
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBucket() const;
 
                     /**
                      * 设置桶
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bucket 桶
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBucket(const std::string& _bucket);
@@ -205,6 +193,48 @@ namespace TencentCloud
                      * 
                      */
                     bool BucketHasBeenSet() const;
+
+                    /**
+                     * 获取存算分离集群数
+                     * @return SSCCount 存算分离集群数
+                     * 
+                     */
+                    int64_t GetSSCCount() const;
+
+                    /**
+                     * 设置存算分离集群数
+                     * @param _sSCCount 存算分离集群数
+                     * 
+                     */
+                    void SetSSCCount(const int64_t& _sSCCount);
+
+                    /**
+                     * 判断参数 SSCCount 是否已赋值
+                     * @return SSCCount 是否已赋值
+                     * 
+                     */
+                    bool SSCCountHasBeenSet() const;
+
+                    /**
+                     * 获取是否开通存算分离
+                     * @return EnableSSC 是否开通存算分离
+                     * 
+                     */
+                    bool GetEnableSSC() const;
+
+                    /**
+                     * 设置是否开通存算分离
+                     * @param _enableSSC 是否开通存算分离
+                     * 
+                     */
+                    void SetEnableSSC(const bool& _enableSSC);
+
+                    /**
+                     * 判断参数 EnableSSC 是否已赋值
+                     * @return EnableSSC 是否已赋值
+                     * 
+                     */
+                    bool EnableSSCHasBeenSet() const;
 
                 private:
 
@@ -228,7 +258,6 @@ namespace TencentCloud
 
                     /**
                      * 地域下所有可用区列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ZoneInfo> m_zones;
                     bool m_zonesHasBeenSet;
@@ -241,17 +270,27 @@ namespace TencentCloud
 
                     /**
                      * 0代表是国际站 1代表不是
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isInternationalSite;
                     bool m_isInternationalSiteHasBeenSet;
 
                     /**
                      * 桶
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bucket;
                     bool m_bucketHasBeenSet;
+
+                    /**
+                     * 存算分离集群数
+                     */
+                    int64_t m_sSCCount;
+                    bool m_sSCCountHasBeenSet;
+
+                    /**
+                     * 是否开通存算分离
+                     */
+                    bool m_enableSSC;
+                    bool m_enableSSCHasBeenSet;
 
                 };
             }

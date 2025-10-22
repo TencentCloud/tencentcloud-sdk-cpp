@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -174,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MX优先级：记录类型为MX时必填。取值范围：5,10,15,20,30,40,50
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MX MX优先级：记录类型为MX时必填。取值范围：5,10,15,20,30,40,50
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMX() const;
 
                     /**
                      * 设置MX优先级：记录类型为MX时必填。取值范围：5,10,15,20,30,40,50
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mX MX优先级：记录类型为MX时必填。取值范围：5,10,15,20,30,40,50
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMX(const int64_t& _mX);
@@ -312,18 +308,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0暂停，1启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Enabled 0暂停，1启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetEnabled() const;
 
                     /**
                      * 设置0暂停，1启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enabled 0暂停，1启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnabled(const uint64_t& _enabled);
@@ -334,6 +326,27 @@ namespace TencentCloud
                      * 
                      */
                     bool EnabledHasBeenSet() const;
+
+                    /**
+                     * 获取备注
+                     * @return Remark 备注
+                     * 
+                     */
+                    std::string GetRemark() const;
+
+                    /**
+                     * 设置备注
+                     * @param _remark 备注
+                     * 
+                     */
+                    void SetRemark(const std::string& _remark);
+
+                    /**
+                     * 判断参数 Remark 是否已赋值
+                     * @return Remark 是否已赋值
+                     * 
+                     */
+                    bool RemarkHasBeenSet() const;
 
                 private:
 
@@ -375,7 +388,6 @@ namespace TencentCloud
 
                     /**
                      * MX优先级：记录类型为MX时必填。取值范围：5,10,15,20,30,40,50
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_mX;
                     bool m_mXHasBeenSet;
@@ -414,10 +426,15 @@ namespace TencentCloud
 
                     /**
                      * 0暂停，1启用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_enabled;
                     bool m_enabledHasBeenSet;
+
+                    /**
+                     * 备注
+                     */
+                    std::string m_remark;
+                    bool m_remarkHasBeenSet;
 
                 };
             }

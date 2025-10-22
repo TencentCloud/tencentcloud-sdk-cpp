@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Header名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Key Header名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置Header名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _key Header名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Header值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value Header值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置Header值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value Header值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Header类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppendAction Header类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppendAction() const;
 
                     /**
                      * 设置Header类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appendAction Header类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppendAction(const std::string& _appendAction);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * Header名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
                      * Header值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
 
                     /**
                      * Header类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appendAction;
                     bool m_appendActionHasBeenSet;

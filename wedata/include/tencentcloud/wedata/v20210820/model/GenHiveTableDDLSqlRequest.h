@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -550,6 +550,90 @@ namespace TencentCloud
                      */
                     bool SinkSchemaNameHasBeenSet() const;
 
+                    /**
+                     * 获取获取源信息的环境
+                     * @return Env 获取源信息的环境
+                     * 
+                     */
+                    std::string GetEnv() const;
+
+                    /**
+                     * 设置获取源信息的环境
+                     * @param _env 获取源信息的环境
+                     * 
+                     */
+                    void SetEnv(const std::string& _env);
+
+                    /**
+                     * 判断参数 Env 是否已赋值
+                     * @return Env 是否已赋值
+                     * 
+                     */
+                    bool EnvHasBeenSet() const;
+
+                    /**
+                     * 获取doris写入模式配置
+                     * @return WriteMode doris写入模式配置
+                     * 
+                     */
+                    std::string GetWriteMode() const;
+
+                    /**
+                     * 设置doris写入模式配置
+                     * @param _writeMode doris写入模式配置
+                     * 
+                     */
+                    void SetWriteMode(const std::string& _writeMode);
+
+                    /**
+                     * 判断参数 WriteMode 是否已赋值
+                     * @return WriteMode 是否已赋值
+                     * 
+                     */
+                    bool WriteModeHasBeenSet() const;
+
+                    /**
+                     * 获取任务类型 201（实时）， 202（离线） 
+                     * @return TaskType 任务类型 201（实时）， 202（离线） 
+                     * 
+                     */
+                    int64_t GetTaskType() const;
+
+                    /**
+                     * 设置任务类型 201（实时）， 202（离线） 
+                     * @param _taskType 任务类型 201（实时）， 202（离线） 
+                     * 
+                     */
+                    void SetTaskType(const int64_t& _taskType);
+
+                    /**
+                     * 判断参数 TaskType 是否已赋值
+                     * @return TaskType 是否已赋值
+                     * 
+                     */
+                    bool TaskTypeHasBeenSet() const;
+
+                    /**
+                     * 获取目标端table名称
+                     * @return SinkTableName 目标端table名称
+                     * 
+                     */
+                    std::string GetSinkTableName() const;
+
+                    /**
+                     * 设置目标端table名称
+                     * @param _sinkTableName 目标端table名称
+                     * 
+                     */
+                    void SetSinkTableName(const std::string& _sinkTableName);
+
+                    /**
+                     * 判断参数 SinkTableName 是否已赋值
+                     * @return SinkTableName 是否已赋值
+                     * 
+                     */
+                    bool SinkTableNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -695,6 +779,30 @@ namespace TencentCloud
                      */
                     std::string m_sinkSchemaName;
                     bool m_sinkSchemaNameHasBeenSet;
+
+                    /**
+                     * 获取源信息的环境
+                     */
+                    std::string m_env;
+                    bool m_envHasBeenSet;
+
+                    /**
+                     * doris写入模式配置
+                     */
+                    std::string m_writeMode;
+                    bool m_writeModeHasBeenSet;
+
+                    /**
+                     * 任务类型 201（实时）， 202（离线） 
+                     */
+                    int64_t m_taskType;
+                    bool m_taskTypeHasBeenSet;
+
+                    /**
+                     * 目标端table名称
+                     */
+                    std::string m_sinkTableName;
+                    bool m_sinkTableNameHasBeenSet;
 
                 };
             }

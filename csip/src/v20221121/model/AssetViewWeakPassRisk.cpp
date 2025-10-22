@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,8 @@ AssetViewWeakPassRisk::AssetViewWeakPassRisk() :
     m_vULTypeHasBeenSet(false),
     m_vULURLHasBeenSet(false),
     m_fixHasBeenSet(false),
-    m_payloadHasBeenSet(false)
+    m_payloadHasBeenSet(false),
+    m_portHasBeenSet(false)
 {
 }
 
@@ -260,6 +261,16 @@ CoreInternalOutcome AssetViewWeakPassRisk::Deserialize(const rapidjson::Value &v
         m_payloadHasBeenSet = true;
     }
 
+    if (value.HasMember("Port") && !value["Port"].IsNull())
+    {
+        if (!value["Port"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetViewWeakPassRisk.Port` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_port = value["Port"].GetInt64();
+        m_portHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -433,6 +444,14 @@ void AssetViewWeakPassRisk::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "Payload";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_payload.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_portHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Port";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_port, allocator);
     }
 
 }
@@ -772,5 +791,21 @@ void AssetViewWeakPassRisk::SetPayload(const string& _payload)
 bool AssetViewWeakPassRisk::PayloadHasBeenSet() const
 {
     return m_payloadHasBeenSet;
+}
+
+int64_t AssetViewWeakPassRisk::GetPort() const
+{
+    return m_port;
+}
+
+void AssetViewWeakPassRisk::SetPort(const int64_t& _port)
+{
+    m_port = _port;
+    m_portHasBeenSet = true;
+}
+
+bool AssetViewWeakPassRisk::PortHasBeenSet() const
+{
+    return m_portHasBeenSet;
 }
 

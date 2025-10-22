@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -109,15 +109,15 @@ DISABLE_NOTIFY_AND_MANUAL_RENEW：表示明确不自动续费(用户设置)
                     bool RenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取时长单位，默认值MONTH
-                     * @return TimeUnit 时长单位，默认值MONTH
+                     * 获取时长单位，枚举： MONTH, DAY, HOUR；释义：月，日，小时
+                     * @return TimeUnit 时长单位，枚举： MONTH, DAY, HOUR；释义：月，日，小时
                      * 
                      */
                     std::string GetTimeUnit() const;
 
                     /**
-                     * 设置时长单位，默认值MONTH
-                     * @param _timeUnit 时长单位，默认值MONTH
+                     * 设置时长单位，枚举： MONTH, DAY, HOUR；释义：月，日，小时
+                     * @param _timeUnit 时长单位，枚举： MONTH, DAY, HOUR；释义：月，日，小时
                      * 
                      */
                     void SetTimeUnit(const std::string& _timeUnit);
@@ -149,7 +149,7 @@ DISABLE_NOTIFY_AND_MANUAL_RENEW：表示明确不自动续费(用户设置)
                     bool m_renewFlagHasBeenSet;
 
                     /**
-                     * 时长单位，默认值MONTH
+                     * 时长单位，枚举： MONTH, DAY, HOUR；释义：月，日，小时
                      */
                     std::string m_timeUnit;
                     bool m_timeUnitHasBeenSet;

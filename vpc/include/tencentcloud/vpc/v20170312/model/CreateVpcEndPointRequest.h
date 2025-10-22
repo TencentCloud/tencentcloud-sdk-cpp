@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取VPC实例ID。
-                     * @return VpcId VPC实例ID。
+                     * 获取VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。
+                     * @return VpcId VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置VPC实例ID。
-                     * @param _vpcId VPC实例ID。
+                     * 设置VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。
+                     * @param _vpcId VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网实例ID。
-                     * @return SubnetId 子网实例ID。
+                     * 获取子网实例ID。可通过[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)接口获取。
+                     * @return SubnetId 子网实例ID。可通过[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)接口获取。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网实例ID。
-                     * @param _subnetId 子网实例ID。
+                     * 设置子网实例ID。可通过[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)接口获取。
+                     * @param _subnetId 子网实例ID。可通过[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)接口获取。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取终端节点名称。
-                     * @return EndPointName 终端节点名称。
+                     * 获取终端节点名称。限制为60个字符。
+                     * @return EndPointName 终端节点名称。限制为60个字符。
                      * 
                      */
                     std::string GetEndPointName() const;
 
                     /**
-                     * 设置终端节点名称。
-                     * @param _endPointName 终端节点名称。
+                     * 设置终端节点名称。限制为60个字符。
+                     * @param _endPointName 终端节点名称。限制为60个字符。
                      * 
                      */
                     void SetEndPointName(const std::string& _endPointName);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool EndPointNameHasBeenSet() const;
 
                     /**
-                     * 获取终端节点服务ID。
-                     * @return EndPointServiceId 终端节点服务ID。
+                     * 获取终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。
+                     * @return EndPointServiceId 终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。
                      * 
                      */
                     std::string GetEndPointServiceId() const;
 
                     /**
-                     * 设置终端节点服务ID。
-                     * @param _endPointServiceId 终端节点服务ID。
+                     * 设置终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。
+                     * @param _endPointServiceId 终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。
                      * 
                      */
                     void SetEndPointServiceId(const std::string& _endPointServiceId);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool EndPointVipHasBeenSet() const;
 
                     /**
-                     * 获取安全组ID。
-                     * @return SecurityGroupId 安全组ID。
+                     * 获取安全组ID。可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)接口获取。
+                     * @return SecurityGroupId 安全组ID。可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)接口获取。
                      * 
                      */
                     std::string GetSecurityGroupId() const;
 
                     /**
-                     * 设置安全组ID。
-                     * @param _securityGroupId 安全组ID。
+                     * 设置安全组ID。可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)接口获取。
+                     * @param _securityGroupId 安全组ID。可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)接口获取。
                      * 
                      */
                     void SetSecurityGroupId(const std::string& _securityGroupId);
@@ -190,28 +190,49 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取协议类型，支持 Ipv4，Ipv6，默认 Ipv4
+                     * @return IpAddressType 协议类型，支持 Ipv4，Ipv6，默认 Ipv4
+                     * 
+                     */
+                    std::string GetIpAddressType() const;
+
+                    /**
+                     * 设置协议类型，支持 Ipv4，Ipv6，默认 Ipv4
+                     * @param _ipAddressType 协议类型，支持 Ipv4，Ipv6，默认 Ipv4
+                     * 
+                     */
+                    void SetIpAddressType(const std::string& _ipAddressType);
+
+                    /**
+                     * 判断参数 IpAddressType 是否已赋值
+                     * @return IpAddressType 是否已赋值
+                     * 
+                     */
+                    bool IpAddressTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * VPC实例ID。
+                     * VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 子网实例ID。
+                     * 子网实例ID。可通过[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)接口获取。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 终端节点名称。
+                     * 终端节点名称。限制为60个字符。
                      */
                     std::string m_endPointName;
                     bool m_endPointNameHasBeenSet;
 
                     /**
-                     * 终端节点服务ID。
+                     * 终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。
                      */
                     std::string m_endPointServiceId;
                     bool m_endPointServiceIdHasBeenSet;
@@ -223,7 +244,7 @@ namespace TencentCloud
                     bool m_endPointVipHasBeenSet;
 
                     /**
-                     * 安全组ID。
+                     * 安全组ID。可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)接口获取。
                      */
                     std::string m_securityGroupId;
                     bool m_securityGroupIdHasBeenSet;
@@ -233,6 +254,12 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 协议类型，支持 Ipv4，Ipv6，默认 Ipv4
+                     */
+                    std::string m_ipAddressType;
+                    bool m_ipAddressTypeHasBeenSet;
 
                 };
             }

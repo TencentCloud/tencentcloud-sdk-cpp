@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID。
-                     * @return DBInstanceId 实例ID。
+                     * 获取实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * @return DBInstanceId 实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
-                     * 设置实例ID。
-                     * @param _dBInstanceId 实例ID。
+                     * 设置实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * @param _dBInstanceId 实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
@@ -94,12 +94,12 @@ namespace TencentCloud
 <li>0：立即切换 </li>
 <li>1：指定时间切换</li>
 <li>2：维护时间窗口内切换</li>
-默认值：0 
+
                      * @return SwitchTag 指定实例配置完成变更后的切换时间。
 <li>0：立即切换 </li>
 <li>1：指定时间切换</li>
 <li>2：维护时间窗口内切换</li>
-默认值：0 
+
                      * 
                      */
                     int64_t GetSwitchTag() const;
@@ -109,12 +109,12 @@ namespace TencentCloud
 <li>0：立即切换 </li>
 <li>1：指定时间切换</li>
 <li>2：维护时间窗口内切换</li>
-默认值：0 
+
                      * @param _switchTag 指定实例配置完成变更后的切换时间。
 <li>0：立即切换 </li>
 <li>1：指定时间切换</li>
 <li>2：维护时间窗口内切换</li>
-默认值：0 
+
                      * 
                      */
                     void SetSwitchTag(const int64_t& _switchTag);
@@ -171,7 +171,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID。
+                     * 实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      */
                     std::string m_dBInstanceId;
                     bool m_dBInstanceIdHasBeenSet;
@@ -188,7 +188,7 @@ namespace TencentCloud
 <li>0：立即切换 </li>
 <li>1：指定时间切换</li>
 <li>2：维护时间窗口内切换</li>
-默认值：0 
+
                      */
                     int64_t m_switchTag;
                     bool m_switchTagHasBeenSet;

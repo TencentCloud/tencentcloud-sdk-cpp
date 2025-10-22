@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源方
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceType 资源方
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
                      * 设置资源方
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceType 资源方
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceType(const std::string& _resourceType);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取指标名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetricName 指标名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMetricName() const;
 
                     /**
                      * 设置指标名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _metricName 指标名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMetricName(const std::string& _metricName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取按量计费详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResQuota 按量计费详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetResQuota() const;
 
                     /**
                      * 设置按量计费详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resQuota 按量计费详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResQuota(const double& _resQuota);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源包抵扣详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PkgQuota 资源包抵扣详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetPkgQuota() const;
 
                     /**
                      * 设置资源包抵扣详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pkgQuota 资源包抵扣详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPkgQuota(const double& _pkgQuota);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取免费额度抵扣详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FreeQuota 免费额度抵扣详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetFreeQuota() const;
 
                     /**
                      * 设置免费额度抵扣详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _freeQuota 免费额度抵扣详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFreeQuota(const double& _freeQuota);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取环境id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnvId 环境id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置环境id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _envId 环境id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnvId(const std::string& _envId);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * 资源方
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;
 
                     /**
                      * 指标名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_metricName;
                     bool m_metricNameHasBeenSet;
 
                     /**
                      * 按量计费详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_resQuota;
                     bool m_resQuotaHasBeenSet;
 
                     /**
                      * 资源包抵扣详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_pkgQuota;
                     bool m_pkgQuotaHasBeenSet;
 
                     /**
                      * 免费额度抵扣详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_freeQuota;
                     bool m_freeQuotaHasBeenSet;
 
                     /**
                      * 环境id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_envId;
                     bool m_envIdHasBeenSet;

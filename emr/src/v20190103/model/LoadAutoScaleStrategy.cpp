@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,10 +33,17 @@ LoadAutoScaleStrategy::LoadAutoScaleStrategy() :
     m_periodValidHasBeenSet(false),
     m_graceDownFlagHasBeenSet(false),
     m_graceDownTimeHasBeenSet(false),
+    m_graceDownProtectFlagHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_configGroupAssignedHasBeenSet(false),
     m_measureMethodHasBeenSet(false),
-    m_loadMetricsConditionsHasBeenSet(false)
+    m_softDeployDescHasBeenSet(false),
+    m_serviceNodeDescHasBeenSet(false),
+    m_serviceNodeInfoHasBeenSet(false),
+    m_softDeployInfoHasBeenSet(false),
+    m_loadMetricsConditionsHasBeenSet(false),
+    m_groupIdHasBeenSet(false),
+    m_softHasBeenSet(false)
 {
 }
 
@@ -165,6 +172,16 @@ CoreInternalOutcome LoadAutoScaleStrategy::Deserialize(const rapidjson::Value &v
         m_graceDownTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("GraceDownProtectFlag") && !value["GraceDownProtectFlag"].IsNull())
+    {
+        if (!value["GraceDownProtectFlag"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadAutoScaleStrategy.GraceDownProtectFlag` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_graceDownProtectFlag = value["GraceDownProtectFlag"].GetBool();
+        m_graceDownProtectFlagHasBeenSet = true;
+    }
+
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
@@ -205,6 +222,55 @@ CoreInternalOutcome LoadAutoScaleStrategy::Deserialize(const rapidjson::Value &v
         m_measureMethodHasBeenSet = true;
     }
 
+    if (value.HasMember("SoftDeployDesc") && !value["SoftDeployDesc"].IsNull())
+    {
+        if (!value["SoftDeployDesc"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LoadAutoScaleStrategy.SoftDeployDesc` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SoftDeployDesc"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_softDeployDesc.push_back((*itr).GetString());
+        }
+        m_softDeployDescHasBeenSet = true;
+    }
+
+    if (value.HasMember("ServiceNodeDesc") && !value["ServiceNodeDesc"].IsNull())
+    {
+        if (!value["ServiceNodeDesc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadAutoScaleStrategy.ServiceNodeDesc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serviceNodeDesc = string(value["ServiceNodeDesc"].GetString());
+        m_serviceNodeDescHasBeenSet = true;
+    }
+
+    if (value.HasMember("ServiceNodeInfo") && !value["ServiceNodeInfo"].IsNull())
+    {
+        if (!value["ServiceNodeInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LoadAutoScaleStrategy.ServiceNodeInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ServiceNodeInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_serviceNodeInfo.push_back((*itr).GetInt64());
+        }
+        m_serviceNodeInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("SoftDeployInfo") && !value["SoftDeployInfo"].IsNull())
+    {
+        if (!value["SoftDeployInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LoadAutoScaleStrategy.SoftDeployInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SoftDeployInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_softDeployInfo.push_back((*itr).GetInt64());
+        }
+        m_softDeployInfoHasBeenSet = true;
+    }
+
     if (value.HasMember("LoadMetricsConditions") && !value["LoadMetricsConditions"].IsNull())
     {
         if (!value["LoadMetricsConditions"].IsObject())
@@ -220,6 +286,26 @@ CoreInternalOutcome LoadAutoScaleStrategy::Deserialize(const rapidjson::Value &v
         }
 
         m_loadMetricsConditionsHasBeenSet = true;
+    }
+
+    if (value.HasMember("GroupId") && !value["GroupId"].IsNull())
+    {
+        if (!value["GroupId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadAutoScaleStrategy.GroupId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupId = value["GroupId"].GetInt64();
+        m_groupIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Soft") && !value["Soft"].IsNull())
+    {
+        if (!value["Soft"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadAutoScaleStrategy.Soft` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_soft = string(value["Soft"].GetString());
+        m_softHasBeenSet = true;
     }
 
 
@@ -325,6 +411,14 @@ void LoadAutoScaleStrategy::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         value.AddMember(iKey, m_graceDownTime, allocator);
     }
 
+    if (m_graceDownProtectFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GraceDownProtectFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_graceDownProtectFlag, allocator);
+    }
+
     if (m_tagsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -356,6 +450,53 @@ void LoadAutoScaleStrategy::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         value.AddMember(iKey, rapidjson::Value(m_measureMethod.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_softDeployDescHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SoftDeployDesc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_softDeployDesc.begin(); itr != m_softDeployDesc.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_serviceNodeDescHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceNodeDesc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serviceNodeDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceNodeInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceNodeInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_serviceNodeInfo.begin(); itr != m_serviceNodeInfo.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_softDeployInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SoftDeployInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_softDeployInfo.begin(); itr != m_softDeployInfo.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
     if (m_loadMetricsConditionsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -363,6 +504,22 @@ void LoadAutoScaleStrategy::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_loadMetricsConditions.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_groupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_groupId, allocator);
+    }
+
+    if (m_softHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Soft";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_soft.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -560,6 +717,22 @@ bool LoadAutoScaleStrategy::GraceDownTimeHasBeenSet() const
     return m_graceDownTimeHasBeenSet;
 }
 
+bool LoadAutoScaleStrategy::GetGraceDownProtectFlag() const
+{
+    return m_graceDownProtectFlag;
+}
+
+void LoadAutoScaleStrategy::SetGraceDownProtectFlag(const bool& _graceDownProtectFlag)
+{
+    m_graceDownProtectFlag = _graceDownProtectFlag;
+    m_graceDownProtectFlagHasBeenSet = true;
+}
+
+bool LoadAutoScaleStrategy::GraceDownProtectFlagHasBeenSet() const
+{
+    return m_graceDownProtectFlagHasBeenSet;
+}
+
 vector<Tag> LoadAutoScaleStrategy::GetTags() const
 {
     return m_tags;
@@ -608,6 +781,70 @@ bool LoadAutoScaleStrategy::MeasureMethodHasBeenSet() const
     return m_measureMethodHasBeenSet;
 }
 
+vector<string> LoadAutoScaleStrategy::GetSoftDeployDesc() const
+{
+    return m_softDeployDesc;
+}
+
+void LoadAutoScaleStrategy::SetSoftDeployDesc(const vector<string>& _softDeployDesc)
+{
+    m_softDeployDesc = _softDeployDesc;
+    m_softDeployDescHasBeenSet = true;
+}
+
+bool LoadAutoScaleStrategy::SoftDeployDescHasBeenSet() const
+{
+    return m_softDeployDescHasBeenSet;
+}
+
+string LoadAutoScaleStrategy::GetServiceNodeDesc() const
+{
+    return m_serviceNodeDesc;
+}
+
+void LoadAutoScaleStrategy::SetServiceNodeDesc(const string& _serviceNodeDesc)
+{
+    m_serviceNodeDesc = _serviceNodeDesc;
+    m_serviceNodeDescHasBeenSet = true;
+}
+
+bool LoadAutoScaleStrategy::ServiceNodeDescHasBeenSet() const
+{
+    return m_serviceNodeDescHasBeenSet;
+}
+
+vector<int64_t> LoadAutoScaleStrategy::GetServiceNodeInfo() const
+{
+    return m_serviceNodeInfo;
+}
+
+void LoadAutoScaleStrategy::SetServiceNodeInfo(const vector<int64_t>& _serviceNodeInfo)
+{
+    m_serviceNodeInfo = _serviceNodeInfo;
+    m_serviceNodeInfoHasBeenSet = true;
+}
+
+bool LoadAutoScaleStrategy::ServiceNodeInfoHasBeenSet() const
+{
+    return m_serviceNodeInfoHasBeenSet;
+}
+
+vector<int64_t> LoadAutoScaleStrategy::GetSoftDeployInfo() const
+{
+    return m_softDeployInfo;
+}
+
+void LoadAutoScaleStrategy::SetSoftDeployInfo(const vector<int64_t>& _softDeployInfo)
+{
+    m_softDeployInfo = _softDeployInfo;
+    m_softDeployInfoHasBeenSet = true;
+}
+
+bool LoadAutoScaleStrategy::SoftDeployInfoHasBeenSet() const
+{
+    return m_softDeployInfoHasBeenSet;
+}
+
 LoadMetricsConditions LoadAutoScaleStrategy::GetLoadMetricsConditions() const
 {
     return m_loadMetricsConditions;
@@ -622,5 +859,37 @@ void LoadAutoScaleStrategy::SetLoadMetricsConditions(const LoadMetricsConditions
 bool LoadAutoScaleStrategy::LoadMetricsConditionsHasBeenSet() const
 {
     return m_loadMetricsConditionsHasBeenSet;
+}
+
+int64_t LoadAutoScaleStrategy::GetGroupId() const
+{
+    return m_groupId;
+}
+
+void LoadAutoScaleStrategy::SetGroupId(const int64_t& _groupId)
+{
+    m_groupId = _groupId;
+    m_groupIdHasBeenSet = true;
+}
+
+bool LoadAutoScaleStrategy::GroupIdHasBeenSet() const
+{
+    return m_groupIdHasBeenSet;
+}
+
+string LoadAutoScaleStrategy::GetSoft() const
+{
+    return m_soft;
+}
+
+void LoadAutoScaleStrategy::SetSoft(const string& _soft)
+{
+    m_soft = _soft;
+    m_softHasBeenSet = true;
+}
+
+bool LoadAutoScaleStrategy::SoftHasBeenSet() const
+{
+    return m_softHasBeenSet;
 }
 

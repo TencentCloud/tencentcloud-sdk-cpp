@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -124,7 +124,7 @@ namespace TencentCloud
                 CreateDBInstanceOutcomeCallable CreateDBInstanceCallable(const Model::CreateDBInstanceRequest& request);
 
                 /**
-                 *本接口(CreateDBInstanceHour)用于创建按量计费的MongoDB云数据库实例（包括主实例、灾备实例和只读实例），可通过传入实例规格、实例类型、MongoDB版本、购买时长和数量等信息创建云数据库实例。
+                 *本接口(CreateDBInstanceHour)用于创建按量计费的MongoDB云数据库实例，可通过传入实例规格、实例类型、MongoDB版本、购买时长和数量等信息创建云数据库实例。
                  * @param req CreateDBInstanceHourRequest
                  * @return CreateDBInstanceHourOutcome
                  */
@@ -188,8 +188,6 @@ namespace TencentCloud
 
                 /**
                  *本接口(SetPassword)用于设置（初始化）MongoDB云数据库实例账户密码。
-
-
                  * @param req SetPasswordRequest
                  * @return SetPasswordOutcome
                  */

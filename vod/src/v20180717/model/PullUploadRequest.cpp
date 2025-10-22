@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ PullUploadRequest::PullUploadRequest() :
     m_expireTimeHasBeenSet(false),
     m_storageRegionHasBeenSet(false),
     m_classIdHasBeenSet(false),
+    m_tasksPriorityHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_extInfoHasBeenSet(false),
@@ -116,6 +117,14 @@ string PullUploadRequest::ToJsonString() const
         string key = "ClassId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_classId, allocator);
+    }
+
+    if (m_tasksPriorityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TasksPriority";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_tasksPriority, allocator);
     }
 
     if (m_sessionContextHasBeenSet)
@@ -300,6 +309,22 @@ void PullUploadRequest::SetClassId(const int64_t& _classId)
 bool PullUploadRequest::ClassIdHasBeenSet() const
 {
     return m_classIdHasBeenSet;
+}
+
+int64_t PullUploadRequest::GetTasksPriority() const
+{
+    return m_tasksPriority;
+}
+
+void PullUploadRequest::SetTasksPriority(const int64_t& _tasksPriority)
+{
+    m_tasksPriority = _tasksPriority;
+    m_tasksPriorityHasBeenSet = true;
+}
+
+bool PullUploadRequest::TasksPriorityHasBeenSet() const
+{
+    return m_tasksPriorityHasBeenSet;
 }
 
 string PullUploadRequest::GetSessionContext() const

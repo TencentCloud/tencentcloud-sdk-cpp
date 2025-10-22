@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -241,18 +241,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -266,18 +262,14 @@ namespace TencentCloud
 
                     /**
                      * 获取更新时间，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 更新时间，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -288,6 +280,27 @@ namespace TencentCloud
                      * 
                      */
                     bool UpdateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取过期时间，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)，过期后将停止播单的播放。“9999-12-31T23:59:59+08:00”表示永不过期。
+                     * @return ExpiredTime 过期时间，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)，过期后将停止播单的播放。“9999-12-31T23:59:59+08:00”表示永不过期。
+                     * 
+                     */
+                    std::string GetExpiredTime() const;
+
+                    /**
+                     * 设置过期时间，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)，过期后将停止播单的播放。“9999-12-31T23:59:59+08:00”表示永不过期。
+                     * @param _expiredTime 过期时间，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)，过期后将停止播单的播放。“9999-12-31T23:59:59+08:00”表示永不过期。
+                     * 
+                     */
+                    void SetExpiredTime(const std::string& _expiredTime);
+
+                    /**
+                     * 判断参数 ExpiredTime 是否已赋值
+                     * @return ExpiredTime 是否已赋值
+                     * 
+                     */
+                    bool ExpiredTimeHasBeenSet() const;
 
                 private:
 
@@ -347,17 +360,21 @@ namespace TencentCloud
 
                     /**
                      * 创建时间，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 更新时间，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 过期时间，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)，过期后将停止播单的播放。“9999-12-31T23:59:59+08:00”表示永不过期。
+                     */
+                    std::string m_expiredTime;
+                    bool m_expiredTimeHasBeenSet;
 
                 };
             }

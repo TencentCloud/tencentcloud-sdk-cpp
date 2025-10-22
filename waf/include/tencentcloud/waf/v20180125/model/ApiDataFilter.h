@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -109,6 +109,27 @@ namespace TencentCloud
                      */
                     bool ValueHasBeenSet() const;
 
+                    /**
+                     * 获取风险等级
+                     * @return ValueList 风险等级
+                     * 
+                     */
+                    std::vector<std::string> GetValueList() const;
+
+                    /**
+                     * 设置风险等级
+                     * @param _valueList 风险等级
+                     * 
+                     */
+                    void SetValueList(const std::vector<std::string>& _valueList);
+
+                    /**
+                     * 判断参数 ValueList 是否已赋值
+                     * @return ValueList 是否已赋值
+                     * 
+                     */
+                    bool ValueListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +149,12 @@ namespace TencentCloud
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
+
+                    /**
+                     * 风险等级
+                     */
+                    std::vector<std::string> m_valueList;
+                    bool m_valueListHasBeenSet;
 
                 };
             }

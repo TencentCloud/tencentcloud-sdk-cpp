@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ SeatUserInfo::SeatUserInfo() :
     m_nickHasBeenSet(false),
     m_userIdHasBeenSet(false),
     m_skillGroupNameListHasBeenSet(false),
-    m_roleHasBeenSet(false)
+    m_roleHasBeenSet(false),
+    m_extensionNumberHasBeenSet(false)
 {
 }
 
@@ -120,6 +121,16 @@ CoreInternalOutcome SeatUserInfo::Deserialize(const rapidjson::Value &value)
         m_roleHasBeenSet = true;
     }
 
+    if (value.HasMember("ExtensionNumber") && !value["ExtensionNumber"].IsNull())
+    {
+        if (!value["ExtensionNumber"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SeatUserInfo.ExtensionNumber` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_extensionNumber = string(value["ExtensionNumber"].GetString());
+        m_extensionNumberHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -194,6 +205,14 @@ void SeatUserInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Role";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_role, allocator);
+    }
+
+    if (m_extensionNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtensionNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_extensionNumber.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -325,5 +344,21 @@ void SeatUserInfo::SetRole(const int64_t& _role)
 bool SeatUserInfo::RoleHasBeenSet() const
 {
     return m_roleHasBeenSet;
+}
+
+string SeatUserInfo::GetExtensionNumber() const
+{
+    return m_extensionNumber;
+}
+
+void SeatUserInfo::SetExtensionNumber(const string& _extensionNumber)
+{
+    m_extensionNumber = _extensionNumber;
+    m_extensionNumberHasBeenSet = true;
+}
+
+bool SeatUserInfo::ExtensionNumberHasBeenSet() const
+{
+    return m_extensionNumberHasBeenSet;
 }
 

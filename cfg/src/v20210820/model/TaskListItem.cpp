@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,10 @@ TaskListItem::TaskListItem() :
     m_applicationIdHasBeenSet(false),
     m_applicationNameHasBeenSet(false),
     m_verifyIdHasBeenSet(false),
-    m_taskStatusTypeHasBeenSet(false)
+    m_taskStatusTypeHasBeenSet(false),
+    m_archIdHasBeenSet(false),
+    m_archNameHasBeenSet(false),
+    m_taskSourceHasBeenSet(false)
 {
 }
 
@@ -183,6 +186,36 @@ CoreInternalOutcome TaskListItem::Deserialize(const rapidjson::Value &value)
         m_taskStatusTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ArchId") && !value["ArchId"].IsNull())
+    {
+        if (!value["ArchId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskListItem.ArchId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_archId = string(value["ArchId"].GetString());
+        m_archIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ArchName") && !value["ArchName"].IsNull())
+    {
+        if (!value["ArchName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskListItem.ArchName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_archName = string(value["ArchName"].GetString());
+        m_archNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaskSource") && !value["TaskSource"].IsNull())
+    {
+        if (!value["TaskSource"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskListItem.TaskSource` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskSource = value["TaskSource"].GetInt64();
+        m_taskSourceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +333,30 @@ void TaskListItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "TaskStatusType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskStatusType, allocator);
+    }
+
+    if (m_archIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ArchId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_archId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_archNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ArchName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_archName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_taskSource, allocator);
     }
 
 }
@@ -527,5 +584,53 @@ void TaskListItem::SetTaskStatusType(const uint64_t& _taskStatusType)
 bool TaskListItem::TaskStatusTypeHasBeenSet() const
 {
     return m_taskStatusTypeHasBeenSet;
+}
+
+string TaskListItem::GetArchId() const
+{
+    return m_archId;
+}
+
+void TaskListItem::SetArchId(const string& _archId)
+{
+    m_archId = _archId;
+    m_archIdHasBeenSet = true;
+}
+
+bool TaskListItem::ArchIdHasBeenSet() const
+{
+    return m_archIdHasBeenSet;
+}
+
+string TaskListItem::GetArchName() const
+{
+    return m_archName;
+}
+
+void TaskListItem::SetArchName(const string& _archName)
+{
+    m_archName = _archName;
+    m_archNameHasBeenSet = true;
+}
+
+bool TaskListItem::ArchNameHasBeenSet() const
+{
+    return m_archNameHasBeenSet;
+}
+
+int64_t TaskListItem::GetTaskSource() const
+{
+    return m_taskSource;
+}
+
+void TaskListItem::SetTaskSource(const int64_t& _taskSource)
+{
+    m_taskSource = _taskSource;
+    m_taskSourceHasBeenSet = true;
+}
+
+bool TaskListItem::TaskSourceHasBeenSet() const
+{
+    return m_taskSourceHasBeenSet;
 }
 

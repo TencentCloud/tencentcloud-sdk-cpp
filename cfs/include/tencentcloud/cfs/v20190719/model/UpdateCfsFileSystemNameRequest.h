@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件系统 ID
-                     * @return FileSystemId 文件系统 ID
+                     * 获取文件系统 ID,通过[查询文件系统接口](https://cloud.tencent.com/document/api/582/38170)获取
+                     * @return FileSystemId 文件系统 ID,通过[查询文件系统接口](https://cloud.tencent.com/document/api/582/38170)获取
                      * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
-                     * 设置文件系统 ID
-                     * @param _fileSystemId 文件系统 ID
+                     * 设置文件系统 ID,通过[查询文件系统接口](https://cloud.tencent.com/document/api/582/38170)获取
+                     * @param _fileSystemId 文件系统 ID,通过[查询文件系统接口](https://cloud.tencent.com/document/api/582/38170)获取
                      * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
-                     * 获取用户自定义文件系统名称
-                     * @return FsName 用户自定义文件系统名称
+                     * 获取用户自定义文件系统名称，64字节内的中文字母数字或者 _,-,与CreationToken 至少填一个
+                     * @return FsName 用户自定义文件系统名称，64字节内的中文字母数字或者 _,-,与CreationToken 至少填一个
                      * 
                      */
                     std::string GetFsName() const;
 
                     /**
-                     * 设置用户自定义文件系统名称
-                     * @param _fsName 用户自定义文件系统名称
+                     * 设置用户自定义文件系统名称，64字节内的中文字母数字或者 _,-,与CreationToken 至少填一个
+                     * @param _fsName 用户自定义文件系统名称，64字节内的中文字母数字或者 _,-,与CreationToken 至少填一个
                      * 
                      */
                     void SetFsName(const std::string& _fsName);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件系统 ID
+                     * 文件系统 ID,通过[查询文件系统接口](https://cloud.tencent.com/document/api/582/38170)获取
                      */
                     std::string m_fileSystemId;
                     bool m_fileSystemIdHasBeenSet;
 
                     /**
-                     * 用户自定义文件系统名称
+                     * 用户自定义文件系统名称，64字节内的中文字母数字或者 _,-,与CreationToken 至少填一个
                      */
                     std::string m_fsName;
                     bool m_fsNameHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,11 +44,11 @@ namespace TencentCloud
 
                     /**
                      * 获取查询开始时间点，精确到分钟粒度，接口查询支持两种时间格式：
-1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO%20%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F,-ISO%20%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F)。
+1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#52)。
 2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
 支持最近两个月的查询，查询开始和结束时间跨度不支持超过31天。
                      * @return StartTime 查询开始时间点，精确到分钟粒度，接口查询支持两种时间格式：
-1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO%20%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F,-ISO%20%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F)。
+1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#52)。
 2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
 支持最近两个月的查询，查询开始和结束时间跨度不支持超过31天。
                      * 
@@ -57,11 +57,11 @@ namespace TencentCloud
 
                     /**
                      * 设置查询开始时间点，精确到分钟粒度，接口查询支持两种时间格式：
-1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO%20%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F,-ISO%20%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F)。
+1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#52)。
 2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
 支持最近两个月的查询，查询开始和结束时间跨度不支持超过31天。
                      * @param _startTime 查询开始时间点，精确到分钟粒度，接口查询支持两种时间格式：
-1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO%20%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F,-ISO%20%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F)。
+1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#52)。
 2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
 支持最近两个月的查询，查询开始和结束时间跨度不支持超过31天。
                      * 
@@ -77,11 +77,11 @@ namespace TencentCloud
 
                     /**
                      * 获取查询结束时间点，精确到分钟粒度，接口查询支持两种时间格式：
-1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO%20%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F,-ISO%20%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F)。
+1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#52)。
 2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
 支持最近两个月的查询，查询开始和结束时间跨度不支持超过31天。
                      * @return EndTime 查询结束时间点，精确到分钟粒度，接口查询支持两种时间格式：
-1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO%20%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F,-ISO%20%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F)。
+1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#52)。
 2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
 支持最近两个月的查询，查询开始和结束时间跨度不支持超过31天。
                      * 
@@ -90,11 +90,11 @@ namespace TencentCloud
 
                     /**
                      * 设置查询结束时间点，精确到分钟粒度，接口查询支持两种时间格式：
-1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO%20%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F,-ISO%20%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F)。
+1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#52)。
 2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
 支持最近两个月的查询，查询开始和结束时间跨度不支持超过31天。
                      * @param _endTime 查询结束时间点，精确到分钟粒度，接口查询支持两种时间格式：
-1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO%20%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F,-ISO%20%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F)。
+1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#52)。
 2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
 支持最近两个月的查询，查询开始和结束时间跨度不支持超过31天。
                      * 
@@ -285,7 +285,7 @@ https://cloud.tencent.com/document/product/267/34019。
 
                     /**
                      * 查询开始时间点，精确到分钟粒度，接口查询支持两种时间格式：
-1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO%20%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F,-ISO%20%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F)。
+1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#52)。
 2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
 支持最近两个月的查询，查询开始和结束时间跨度不支持超过31天。
                      */
@@ -294,7 +294,7 @@ https://cloud.tencent.com/document/product/267/34019。
 
                     /**
                      * 查询结束时间点，精确到分钟粒度，接口查询支持两种时间格式：
-1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO%20%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F,-ISO%20%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F)。
+1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#52)。
 2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
 支持最近两个月的查询，查询开始和结束时间跨度不支持超过31天。
                      */

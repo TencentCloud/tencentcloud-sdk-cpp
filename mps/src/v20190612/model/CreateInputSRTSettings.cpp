@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,8 @@ CreateInputSRTSettings::CreateInputSRTSettings() :
     m_peerIdleTimeoutHasBeenSet(false),
     m_passphraseHasBeenSet(false),
     m_pbKeyLenHasBeenSet(false),
-    m_sourceAddressesHasBeenSet(false)
+    m_sourceAddressesHasBeenSet(false),
+    m_fECHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,23 @@ CoreInternalOutcome CreateInputSRTSettings::Deserialize(const rapidjson::Value &
         m_sourceAddressesHasBeenSet = true;
     }
 
+    if (value.HasMember("FEC") && !value["FEC"].IsNull())
+    {
+        if (!value["FEC"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateInputSRTSettings.FEC` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_fEC.Deserialize(value["FEC"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_fECHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -222,6 +240,15 @@ void CreateInputSRTSettings::ToJsonObject(rapidjson::Value &value, rapidjson::Do
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_fECHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FEC";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_fEC.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -369,5 +396,21 @@ void CreateInputSRTSettings::SetSourceAddresses(const vector<SRTSourceAddressReq
 bool CreateInputSRTSettings::SourceAddressesHasBeenSet() const
 {
     return m_sourceAddressesHasBeenSet;
+}
+
+SRTFECSimpleOptions CreateInputSRTSettings::GetFEC() const
+{
+    return m_fEC;
+}
+
+void CreateInputSRTSettings::SetFEC(const SRTFECSimpleOptions& _fEC)
+{
+    m_fEC = _fEC;
+    m_fECHasBeenSet = true;
+}
+
+bool CreateInputSRTSettings::FECHasBeenSet() const
+{
+    return m_fECHasBeenSet;
 }
 

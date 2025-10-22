@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取帐号统计列表记录总数。
-                     * @return TotalCount 帐号统计列表记录总数。
+                     * 获取账号统计列表记录总数。
+                     * @return TotalCount 账号统计列表记录总数。
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取帐号统计列表。
-                     * @return AccountStatistics 帐号统计列表。
+                     * 获取账号统计列表。
+                     * @return AccountStatistics 账号统计列表。
                      * 
                      */
                     std::vector<AccountStatistics> GetAccountStatistics() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 帐号统计列表记录总数。
+                     * 账号统计列表记录总数。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 帐号统计列表。
+                     * 账号统计列表。
                      */
                     std::vector<AccountStatistics> m_accountStatistics;
                     bool m_accountStatisticsHasBeenSet;

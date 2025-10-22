@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,10 @@ using namespace std;
 MediaAiAnalysisDescriptionItem::MediaAiAnalysisDescriptionItem() :
     m_descriptionHasBeenSet(false),
     m_confidenceHasBeenSet(false),
-    m_paragraphsHasBeenSet(false)
+    m_titleHasBeenSet(false),
+    m_keywordsHasBeenSet(false),
+    m_paragraphsHasBeenSet(false),
+    m_mindMapUrlHasBeenSet(false)
 {
 }
 
@@ -52,6 +55,29 @@ CoreInternalOutcome MediaAiAnalysisDescriptionItem::Deserialize(const rapidjson:
         m_confidenceHasBeenSet = true;
     }
 
+    if (value.HasMember("Title") && !value["Title"].IsNull())
+    {
+        if (!value["Title"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaAiAnalysisDescriptionItem.Title` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_title = string(value["Title"].GetString());
+        m_titleHasBeenSet = true;
+    }
+
+    if (value.HasMember("Keywords") && !value["Keywords"].IsNull())
+    {
+        if (!value["Keywords"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `MediaAiAnalysisDescriptionItem.Keywords` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Keywords"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_keywords.push_back((*itr).GetString());
+        }
+        m_keywordsHasBeenSet = true;
+    }
+
     if (value.HasMember("Paragraphs") && !value["Paragraphs"].IsNull())
     {
         if (!value["Paragraphs"].IsArray())
@@ -70,6 +96,16 @@ CoreInternalOutcome MediaAiAnalysisDescriptionItem::Deserialize(const rapidjson:
             m_paragraphs.push_back(item);
         }
         m_paragraphsHasBeenSet = true;
+    }
+
+    if (value.HasMember("MindMapUrl") && !value["MindMapUrl"].IsNull())
+    {
+        if (!value["MindMapUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaAiAnalysisDescriptionItem.MindMapUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mindMapUrl = string(value["MindMapUrl"].GetString());
+        m_mindMapUrlHasBeenSet = true;
     }
 
 
@@ -95,6 +131,27 @@ void MediaAiAnalysisDescriptionItem::ToJsonObject(rapidjson::Value &value, rapid
         value.AddMember(iKey, m_confidence, allocator);
     }
 
+    if (m_titleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Title";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_title.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_keywordsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Keywords";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_keywords.begin(); itr != m_keywords.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
     if (m_paragraphsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -108,6 +165,14 @@ void MediaAiAnalysisDescriptionItem::ToJsonObject(rapidjson::Value &value, rapid
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_mindMapUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MindMapUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mindMapUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -145,6 +210,38 @@ bool MediaAiAnalysisDescriptionItem::ConfidenceHasBeenSet() const
     return m_confidenceHasBeenSet;
 }
 
+string MediaAiAnalysisDescriptionItem::GetTitle() const
+{
+    return m_title;
+}
+
+void MediaAiAnalysisDescriptionItem::SetTitle(const string& _title)
+{
+    m_title = _title;
+    m_titleHasBeenSet = true;
+}
+
+bool MediaAiAnalysisDescriptionItem::TitleHasBeenSet() const
+{
+    return m_titleHasBeenSet;
+}
+
+vector<string> MediaAiAnalysisDescriptionItem::GetKeywords() const
+{
+    return m_keywords;
+}
+
+void MediaAiAnalysisDescriptionItem::SetKeywords(const vector<string>& _keywords)
+{
+    m_keywords = _keywords;
+    m_keywordsHasBeenSet = true;
+}
+
+bool MediaAiAnalysisDescriptionItem::KeywordsHasBeenSet() const
+{
+    return m_keywordsHasBeenSet;
+}
+
 vector<AiParagraphInfo> MediaAiAnalysisDescriptionItem::GetParagraphs() const
 {
     return m_paragraphs;
@@ -159,5 +256,21 @@ void MediaAiAnalysisDescriptionItem::SetParagraphs(const vector<AiParagraphInfo>
 bool MediaAiAnalysisDescriptionItem::ParagraphsHasBeenSet() const
 {
     return m_paragraphsHasBeenSet;
+}
+
+string MediaAiAnalysisDescriptionItem::GetMindMapUrl() const
+{
+    return m_mindMapUrl;
+}
+
+void MediaAiAnalysisDescriptionItem::SetMindMapUrl(const string& _mindMapUrl)
+{
+    m_mindMapUrl = _mindMapUrl;
+    m_mindMapUrlHasBeenSet = true;
+}
+
+bool MediaAiAnalysisDescriptionItem::MindMapUrlHasBeenSet() const
+{
+    return m_mindMapUrlHasBeenSet;
 }
 

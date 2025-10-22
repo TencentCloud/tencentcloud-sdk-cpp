@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最后一次探测到该状态的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastProbeTime 最后一次探测到该状态的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastProbeTime() const;
 
                     /**
                      * 设置最后一次探测到该状态的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastProbeTime 最后一次探测到该状态的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastProbeTime(const std::string& _lastProbeTime);
@@ -115,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最后一次转换到该过程的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastTransitionTime 最后一次转换到该过程的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastTransitionTime() const;
 
                     /**
                      * 设置最后一次转换到该过程的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastTransitionTime 最后一次转换到该过程的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastTransitionTime(const std::string& _lastTransitionTime);
@@ -140,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取转换到该过程的简明原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Reason 转换到该过程的简明原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 设置转换到该过程的简明原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reason 转换到该过程的简明原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReason(const std::string& _reason);
@@ -165,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取转换到该过程的更多信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 转换到该过程的更多信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置转换到该过程的更多信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _message 转换到该过程的更多信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -204,28 +188,24 @@ namespace TencentCloud
 
                     /**
                      * 最后一次探测到该状态的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastProbeTime;
                     bool m_lastProbeTimeHasBeenSet;
 
                     /**
                      * 最后一次转换到该过程的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastTransitionTime;
                     bool m_lastTransitionTimeHasBeenSet;
 
                     /**
                      * 转换到该过程的简明原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reason;
                     bool m_reasonHasBeenSet;
 
                     /**
                      * 转换到该过程的更多信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;

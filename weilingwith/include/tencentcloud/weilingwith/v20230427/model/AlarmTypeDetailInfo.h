@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警类型id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 告警类型id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置告警类型id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 告警类型id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取父节点id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParentId 父节点id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetParentId() const;
 
                     /**
                      * 设置父节点id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _parentId 父节点id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParentId(const int64_t& _parentId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0-标准告警类型，1-自定义告警类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 0-标准告警类型，1-自定义告警类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
                      * 设置0-标准告警类型，1-自定义告警类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 0-标准告警类型，1-自定义告警类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警名称类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 告警名称类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置告警名称类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 告警名称类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警类型英文名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnglishName 告警类型英文名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEnglishName() const;
 
                     /**
                      * 设置告警类型英文名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _englishName 告警类型英文名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnglishName(const std::string& _englishName);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 告警类型id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 父节点id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_parentId;
                     bool m_parentIdHasBeenSet;
 
                     /**
                      * 0-标准告警类型，1-自定义告警类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 告警名称类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 告警类型英文名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_englishName;
                     bool m_englishNameHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/emr/v20190103/model/ZoneSetting.h>
 #include <tencentcloud/emr/v20190103/model/Tag.h>
+#include <tencentcloud/emr/v20190103/model/SLInstance.h>
 
 
 namespace TencentCloud
@@ -44,6 +45,20 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
+
+                    /**
+                     * 获取实例字符串标识。
+                     * @return InstanceId 实例字符串标识。
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取实例名称。
@@ -145,7 +160,153 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取实例数字标识。
+                     * @return ClusterId 实例数字标识。
+                     * 
+                     */
+                    int64_t GetClusterId() const;
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     * 
+                     */
+                    bool ClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取实例区域ID。
+                     * @return RegionId 实例区域ID。
+                     * 
+                     */
+                    int64_t GetRegionId() const;
+
+                    /**
+                     * 判断参数 RegionId 是否已赋值
+                     * @return RegionId 是否已赋值
+                     * 
+                     */
+                    bool RegionIdHasBeenSet() const;
+
+                    /**
+                     * 获取实例主可用区。
+                     * @return Zone 实例主可用区。
+                     * 
+                     */
+                    std::string GetZone() const;
+
+                    /**
+                     * 判断参数 Zone 是否已赋值
+                     * @return Zone 是否已赋值
+                     * 
+                     */
+                    bool ZoneHasBeenSet() const;
+
+                    /**
+                     * 获取实例过期时间，后付费返回0000-00-00 00:00:00
+                     * @return ExpireTime 实例过期时间，后付费返回0000-00-00 00:00:00
+                     * 
+                     */
+                    std::string GetExpireTime() const;
+
+                    /**
+                     * 判断参数 ExpireTime 是否已赋值
+                     * @return ExpireTime 是否已赋值
+                     * 
+                     */
+                    bool ExpireTimeHasBeenSet() const;
+
+                    /**
+                     * 获取实例隔离时间，未隔离返回0000-00-00 00:00:00。
+                     * @return IsolateTime 实例隔离时间，未隔离返回0000-00-00 00:00:00。
+                     * 
+                     */
+                    std::string GetIsolateTime() const;
+
+                    /**
+                     * 判断参数 IsolateTime 是否已赋值
+                     * @return IsolateTime 是否已赋值
+                     * 
+                     */
+                    bool IsolateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取实例创建时间。
+                     * @return CreateTime 实例创建时间。
+                     * 
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取实例状态码，-2:  "TERMINATED", 2:   "RUNNING", 14:  "TERMINATING", 19:  "ISOLATING", 22:  "ADJUSTING", 201: "ISOLATED"。
+                     * @return Status 实例状态码，-2:  "TERMINATED", 2:   "RUNNING", 14:  "TERMINATING", 19:  "ISOLATING", 22:  "ADJUSTING", 201: "ISOLATED"。
+                     * 
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取自动续费标记， 0：表示通知即将过期，但不自动续费 1：表示通知即将过期，而且自动续费 2：表示不通知即将过期，也不自动续费，若业务无续费概念为0
+                     * @return AutoRenewFlag 自动续费标记， 0：表示通知即将过期，但不自动续费 1：表示通知即将过期，而且自动续费 2：表示不通知即将过期，也不自动续费，若业务无续费概念为0
+                     * 
+                     */
+                    int64_t GetAutoRenewFlag() const;
+
+                    /**
+                     * 判断参数 AutoRenewFlag 是否已赋值
+                     * @return AutoRenewFlag 是否已赋值
+                     * 
+                     */
+                    bool AutoRenewFlagHasBeenSet() const;
+
+                    /**
+                     * 获取实例节点总数。
+                     * @return NodeNum 实例节点总数。
+                     * 
+                     */
+                    int64_t GetNodeNum() const;
+
+                    /**
+                     * 判断参数 NodeNum 是否已赋值
+                     * @return NodeNum 是否已赋值
+                     * 
+                     */
+                    bool NodeNumHasBeenSet() const;
+
+                    /**
+                     * 获取Serverless Instance infomation
+                     * @return SLInstance Serverless Instance infomation
+                     * 
+                     */
+                    std::vector<SLInstance> GetSLInstance() const;
+
+                    /**
+                     * 判断参数 SLInstance 是否已赋值
+                     * @return SLInstance 是否已赋值
+                     * 
+                     */
+                    bool SLInstanceHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 实例字符串标识。
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
 
                     /**
                      * 实例名称。
@@ -189,6 +350,66 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 实例数字标识。
+                     */
+                    int64_t m_clusterId;
+                    bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * 实例区域ID。
+                     */
+                    int64_t m_regionId;
+                    bool m_regionIdHasBeenSet;
+
+                    /**
+                     * 实例主可用区。
+                     */
+                    std::string m_zone;
+                    bool m_zoneHasBeenSet;
+
+                    /**
+                     * 实例过期时间，后付费返回0000-00-00 00:00:00
+                     */
+                    std::string m_expireTime;
+                    bool m_expireTimeHasBeenSet;
+
+                    /**
+                     * 实例隔离时间，未隔离返回0000-00-00 00:00:00。
+                     */
+                    std::string m_isolateTime;
+                    bool m_isolateTimeHasBeenSet;
+
+                    /**
+                     * 实例创建时间。
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 实例状态码，-2:  "TERMINATED", 2:   "RUNNING", 14:  "TERMINATING", 19:  "ISOLATING", 22:  "ADJUSTING", 201: "ISOLATED"。
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 自动续费标记， 0：表示通知即将过期，但不自动续费 1：表示通知即将过期，而且自动续费 2：表示不通知即将过期，也不自动续费，若业务无续费概念为0
+                     */
+                    int64_t m_autoRenewFlag;
+                    bool m_autoRenewFlagHasBeenSet;
+
+                    /**
+                     * 实例节点总数。
+                     */
+                    int64_t m_nodeNum;
+                    bool m_nodeNumHasBeenSet;
+
+                    /**
+                     * Serverless Instance infomation
+                     */
+                    std::vector<SLInstance> m_sLInstance;
+                    bool m_sLInstanceHasBeenSet;
 
                 };
             }

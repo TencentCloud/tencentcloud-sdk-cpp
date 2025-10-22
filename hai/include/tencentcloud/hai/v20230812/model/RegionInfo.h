@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,23 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ap-guangzhou
-
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Region ap-guangzhou
-
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取地域
+                     * @return Region 地域
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置ap-guangzhou
-
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _region ap-guangzhou
-
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置地域
+                     * @param _region 地域
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -76,19 +68,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取华南地区(广州)
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RegionName 华南地区(广州)
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取地域名称
+                     * @return RegionName 地域名称
                      * 
                      */
                     std::string GetRegionName() const;
 
                     /**
-                     * 设置华南地区(广州)
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _regionName 华南地区(广州)
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置地域名称
+                     * @param _regionName 地域名称
                      * 
                      */
                     void SetRegionName(const std::string& _regionName);
@@ -104,11 +92,9 @@ namespace TencentCloud
                      * 获取地域是否可用状态
 AVAILABLE：可用
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionState 地域是否可用状态
 AVAILABLE：可用
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegionState() const;
@@ -117,11 +103,9 @@ AVAILABLE：可用
                      * 设置地域是否可用状态
 AVAILABLE：可用
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionState 地域是否可用状态
 AVAILABLE：可用
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionState(const std::string& _regionState);
@@ -135,22 +119,18 @@ AVAILABLE：可用
 
                     /**
                      * 获取学术加速是否支持：
-NO_NEED_SUPPORT表示不需支持；NOT_SUPPORT_YET表示暂未支持；ALREADY_SUPPORT表示已经支持。对于ALREADY_SUPPORT的地域才需进一步调用DescribeScholarRocketStatus查看学术加速是开启还是关闭
-注意：此字段可能返回 null，表示取不到有效值。
+NO_NEED_SUPPORT表示不需支持；NOT_SUPPORT_YET表示暂未支持；ALREADY_SUPPORT表示已经支持。
                      * @return ScholarRocketSupportState 学术加速是否支持：
-NO_NEED_SUPPORT表示不需支持；NOT_SUPPORT_YET表示暂未支持；ALREADY_SUPPORT表示已经支持。对于ALREADY_SUPPORT的地域才需进一步调用DescribeScholarRocketStatus查看学术加速是开启还是关闭
-注意：此字段可能返回 null，表示取不到有效值。
+NO_NEED_SUPPORT表示不需支持；NOT_SUPPORT_YET表示暂未支持；ALREADY_SUPPORT表示已经支持。
                      * 
                      */
                     std::string GetScholarRocketSupportState() const;
 
                     /**
                      * 设置学术加速是否支持：
-NO_NEED_SUPPORT表示不需支持；NOT_SUPPORT_YET表示暂未支持；ALREADY_SUPPORT表示已经支持。对于ALREADY_SUPPORT的地域才需进一步调用DescribeScholarRocketStatus查看学术加速是开启还是关闭
-注意：此字段可能返回 null，表示取不到有效值。
+NO_NEED_SUPPORT表示不需支持；NOT_SUPPORT_YET表示暂未支持；ALREADY_SUPPORT表示已经支持。
                      * @param _scholarRocketSupportState 学术加速是否支持：
-NO_NEED_SUPPORT表示不需支持；NOT_SUPPORT_YET表示暂未支持；ALREADY_SUPPORT表示已经支持。对于ALREADY_SUPPORT的地域才需进一步调用DescribeScholarRocketStatus查看学术加速是开启还是关闭
-注意：此字段可能返回 null，表示取不到有效值。
+NO_NEED_SUPPORT表示不需支持；NOT_SUPPORT_YET表示暂未支持；ALREADY_SUPPORT表示已经支持。
                      * 
                      */
                     void SetScholarRocketSupportState(const std::string& _scholarRocketSupportState);
@@ -165,16 +145,13 @@ NO_NEED_SUPPORT表示不需支持；NOT_SUPPORT_YET表示暂未支持；ALREADY_
                 private:
 
                     /**
-                     * ap-guangzhou
-
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 地域
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 华南地区(广州)
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 地域名称
                      */
                     std::string m_regionName;
                     bool m_regionNameHasBeenSet;
@@ -183,15 +160,13 @@ NO_NEED_SUPPORT表示不需支持；NOT_SUPPORT_YET表示暂未支持；ALREADY_
                      * 地域是否可用状态
 AVAILABLE：可用
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regionState;
                     bool m_regionStateHasBeenSet;
 
                     /**
                      * 学术加速是否支持：
-NO_NEED_SUPPORT表示不需支持；NOT_SUPPORT_YET表示暂未支持；ALREADY_SUPPORT表示已经支持。对于ALREADY_SUPPORT的地域才需进一步调用DescribeScholarRocketStatus查看学术加速是开启还是关闭
-注意：此字段可能返回 null，表示取不到有效值。
+NO_NEED_SUPPORT表示不需支持；NOT_SUPPORT_YET表示暂未支持；ALREADY_SUPPORT表示已经支持。
                      */
                     std::string m_scholarRocketSupportState;
                     bool m_scholarRocketSupportStateHasBeenSet;

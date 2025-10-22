@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -123,18 +123,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据存储路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Location 数据存储路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLocation() const;
 
                     /**
                      * 设置数据存储路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _location 数据存储路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLocation(const std::string& _location);
@@ -173,18 +169,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据表更新时间, 单位: ms。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifiedTime 数据表更新时间, 单位: ms。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifiedTime() const;
 
                     /**
                      * 设置数据表更新时间, 单位: ms。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifiedTime 数据表更新时间, 单位: ms。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifiedTime(const std::string& _modifiedTime);
@@ -198,18 +190,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据表创建时间,单位: ms。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 数据表创建时间,单位: ms。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置数据表创建时间,单位: ms。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 数据表创建时间,单位: ms。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -223,18 +211,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据格式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InputFormat 数据格式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInputFormat() const;
 
                     /**
                      * 设置数据格式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _inputFormat 数据格式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInputFormat(const std::string& _inputFormat);
@@ -248,18 +232,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据表存储大小（单位：Byte）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StorageSize 数据表存储大小（单位：Byte）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStorageSize() const;
 
                     /**
                      * 设置数据表存储大小（单位：Byte）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _storageSize 数据表存储大小（单位：Byte）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStorageSize(const int64_t& _storageSize);
@@ -273,18 +253,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据表行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordCount 数据表行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRecordCount() const;
 
                     /**
                      * 设置数据表行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recordCount 数据表行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecordCount(const int64_t& _recordCount);
@@ -298,18 +274,14 @@ namespace TencentCloud
 
                     /**
                      * 获取xxxx
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MapMaterializedViewName xxxx
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMapMaterializedViewName() const;
 
                     /**
                      * 设置xxxx
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mapMaterializedViewName xxxx
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMapMaterializedViewName(const std::string& _mapMaterializedViewName);
@@ -323,18 +295,14 @@ namespace TencentCloud
 
                     /**
                      * 获取访问热点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HeatValue 访问热点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHeatValue() const;
 
                     /**
                      * 设置访问热点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _heatValue 访问热点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHeatValue(const int64_t& _heatValue);
@@ -345,6 +313,27 @@ namespace TencentCloud
                      * 
                      */
                     bool HeatValueHasBeenSet() const;
+
+                    /**
+                     * 获取InputFormat的缩写
+                     * @return InputFormatShort InputFormat的缩写
+                     * 
+                     */
+                    std::string GetInputFormatShort() const;
+
+                    /**
+                     * 设置InputFormat的缩写
+                     * @param _inputFormatShort InputFormat的缩写
+                     * 
+                     */
+                    void SetInputFormatShort(const std::string& _inputFormatShort);
+
+                    /**
+                     * 判断参数 InputFormatShort 是否已赋值
+                     * @return InputFormatShort 是否已赋值
+                     * 
+                     */
+                    bool InputFormatShortHasBeenSet() const;
 
                 private:
 
@@ -370,7 +359,6 @@ namespace TencentCloud
 
                     /**
                      * 数据存储路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_location;
                     bool m_locationHasBeenSet;
@@ -384,52 +372,51 @@ namespace TencentCloud
 
                     /**
                      * 数据表更新时间, 单位: ms。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifiedTime;
                     bool m_modifiedTimeHasBeenSet;
 
                     /**
                      * 数据表创建时间,单位: ms。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 数据格式。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_inputFormat;
                     bool m_inputFormatHasBeenSet;
 
                     /**
                      * 数据表存储大小（单位：Byte）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_storageSize;
                     bool m_storageSizeHasBeenSet;
 
                     /**
                      * 数据表行数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_recordCount;
                     bool m_recordCountHasBeenSet;
 
                     /**
                      * xxxx
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mapMaterializedViewName;
                     bool m_mapMaterializedViewNameHasBeenSet;
 
                     /**
                      * 访问热点
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_heatValue;
                     bool m_heatValueHasBeenSet;
+
+                    /**
+                     * InputFormat的缩写
+                     */
+                    std::string m_inputFormatShort;
+                    bool m_inputFormatShortHasBeenSet;
 
                 };
             }

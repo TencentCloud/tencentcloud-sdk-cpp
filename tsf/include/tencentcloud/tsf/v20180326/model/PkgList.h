@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取程序包信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 程序包信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PkgInfo> GetContent() const;
 
                     /**
                      * 设置程序包信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _content 程序包信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContent(const std::vector<PkgInfo>& _content);
@@ -95,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取程序包仓库id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RepositoryId 程序包仓库id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRepositoryId() const;
 
                     /**
                      * 设置程序包仓库id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _repositoryId 程序包仓库id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRepositoryId(const std::string& _repositoryId);
@@ -120,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取程序包仓库类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RepositoryType 程序包仓库类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRepositoryType() const;
 
                     /**
                      * 设置程序包仓库类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _repositoryType 程序包仓库类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRepositoryType(const std::string& _repositoryType);
@@ -145,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取程序包仓库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RepositoryName 程序包仓库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRepositoryName() const;
 
                     /**
                      * 设置程序包仓库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _repositoryName 程序包仓库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRepositoryName(const std::string& _repositoryName);
@@ -178,28 +162,24 @@ namespace TencentCloud
 
                     /**
                      * 程序包信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PkgInfo> m_content;
                     bool m_contentHasBeenSet;
 
                     /**
                      * 程序包仓库id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_repositoryId;
                     bool m_repositoryIdHasBeenSet;
 
                     /**
                      * 程序包仓库类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_repositoryType;
                     bool m_repositoryTypeHasBeenSet;
 
                     /**
                      * 程序包仓库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_repositoryName;
                     bool m_repositoryNameHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取请求日志数量，默认为20。
-                     * @return Limit 请求日志数量，默认为20。
+                     * 获取请求日志数量，默认为20, 最大值为1000，如超过1000按照1000处理。
+                     * @return Limit 请求日志数量，默认为20, 最大值为1000，如超过1000按照1000处理。
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置请求日志数量，默认为20。
-                     * @param _limit 请求日志数量，默认为20。
+                     * 设置请求日志数量，默认为20, 最大值为1000，如超过1000按照1000处理。
+                     * @param _limit 请求日志数量，默认为20, 最大值为1000，如超过1000按照1000处理。
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 请求日志数量，默认为20。
+                     * 请求日志数量，默认为20, 最大值为1000，如超过1000按照1000处理。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

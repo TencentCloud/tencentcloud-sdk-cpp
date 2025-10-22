@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Revision 应用版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRevision() const;
 
                     /**
                      * 设置应用版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _revision 应用版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRevision(const uint64_t& _revision);
@@ -115,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 应用状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置应用状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 应用状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -140,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用制品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Chart 应用制品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetChart() const;
 
                     /**
                      * 设置应用制品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _chart 应用制品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChart(const std::string& _chart);
@@ -165,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用制品版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppVersion 应用制品版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppVersion() const;
 
                     /**
                      * 设置应用制品版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appVersion 应用制品版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppVersion(const std::string& _appVersion);
@@ -190,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedTime 应用更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdatedTime() const;
 
                     /**
                      * 设置应用更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updatedTime 应用更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdatedTime(const std::string& _updatedTime);
@@ -215,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 应用描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置应用描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 应用描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -254,42 +230,36 @@ namespace TencentCloud
 
                     /**
                      * 应用版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_revision;
                     bool m_revisionHasBeenSet;
 
                     /**
                      * 应用状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 应用制品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_chart;
                     bool m_chartHasBeenSet;
 
                     /**
                      * 应用制品版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appVersion;
                     bool m_appVersionHasBeenSet;
 
                     /**
                      * 应用更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updatedTime;
                     bool m_updatedTimeHasBeenSet;
 
                     /**
                      * 应用描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

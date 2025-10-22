@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,15 +91,27 @@ namespace TencentCloud
                     bool OsNameHasBeenSet() const;
 
                     /**
-                     * 获取镜像类型
-                     * @return ImageType 镜像类型
+                     * 获取镜像类型。镜像类型返回值包括：
+* `PUBLIC_IMAGE` 公共镜像
+* `PRIVATE_IMAGE` 自定义镜像
+* `SHARED_IMAGE` 共享镜像
+                     * @return ImageType 镜像类型。镜像类型返回值包括：
+* `PUBLIC_IMAGE` 公共镜像
+* `PRIVATE_IMAGE` 自定义镜像
+* `SHARED_IMAGE` 共享镜像
                      * 
                      */
                     std::string GetImageType() const;
 
                     /**
-                     * 设置镜像类型
-                     * @param _imageType 镜像类型
+                     * 设置镜像类型。镜像类型返回值包括：
+* `PUBLIC_IMAGE` 公共镜像
+* `PRIVATE_IMAGE` 自定义镜像
+* `SHARED_IMAGE` 共享镜像
+                     * @param _imageType 镜像类型。镜像类型返回值包括：
+* `PUBLIC_IMAGE` 公共镜像
+* `PRIVATE_IMAGE` 自定义镜像
+* `SHARED_IMAGE` 共享镜像
                      * 
                      */
                     void SetImageType(const std::string& _imageType);
@@ -112,15 +124,19 @@ namespace TencentCloud
                     bool ImageTypeHasBeenSet() const;
 
                     /**
-                     * 获取镜像创建时间
-                     * @return CreatedTime 镜像创建时间
+                     * 获取镜像创建时间。
+按照 ISO8601 标准表示，并且使用 UTC 时间，格式为：YYYY-MM-DDThh:mm:ssZ。
+                     * @return CreatedTime 镜像创建时间。
+按照 ISO8601 标准表示，并且使用 UTC 时间，格式为：YYYY-MM-DDThh:mm:ssZ。
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置镜像创建时间
-                     * @param _createdTime 镜像创建时间
+                     * 设置镜像创建时间。
+按照 ISO8601 标准表示，并且使用 UTC 时间，格式为：YYYY-MM-DDThh:mm:ssZ。
+                     * @param _createdTime 镜像创建时间。
+按照 ISO8601 标准表示，并且使用 UTC 时间，格式为：YYYY-MM-DDThh:mm:ssZ。
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -175,15 +191,15 @@ namespace TencentCloud
                     bool ImageDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取镜像大小
-                     * @return ImageSize 镜像大小
+                     * 获取镜像大小，单位 GiB。
+                     * @return ImageSize 镜像大小，单位 GiB。
                      * 
                      */
                     int64_t GetImageSize() const;
 
                     /**
-                     * 设置镜像大小
-                     * @param _imageSize 镜像大小
+                     * 设置镜像大小，单位 GiB。
+                     * @param _imageSize 镜像大小，单位 GiB。
                      * 
                      */
                     void SetImageSize(const int64_t& _imageSize);
@@ -196,15 +212,27 @@ namespace TencentCloud
                     bool ImageSizeHasBeenSet() const;
 
                     /**
-                     * 获取镜像架构
-                     * @return Architecture 镜像架构
+                     * 获取镜像架构。镜像架构返回值包括：
+* `x86_64`
+* `arm`
+* `i386`
+                     * @return Architecture 镜像架构。镜像架构返回值包括：
+* `x86_64`
+* `arm`
+* `i386`
                      * 
                      */
                     std::string GetArchitecture() const;
 
                     /**
-                     * 设置镜像架构
-                     * @param _architecture 镜像架构
+                     * 设置镜像架构。镜像架构返回值包括：
+* `x86_64`
+* `arm`
+* `i386`
+                     * @param _architecture 镜像架构。镜像架构返回值包括：
+* `x86_64`
+* `arm`
+* `i386`
                      * 
                      */
                     void SetArchitecture(const std::string& _architecture);
@@ -221,16 +249,14 @@ namespace TencentCloud
 CREATING-创建中
 NORMAL-正常
 CREATEFAILED-创建失败
-USING-使用中
-SYNCING-同步中
+SYNCING-复制中
 IMPORTING-导入中
 IMPORTFAILED-导入失败
                      * @return ImageState 镜像状态:
 CREATING-创建中
 NORMAL-正常
 CREATEFAILED-创建失败
-USING-使用中
-SYNCING-同步中
+SYNCING-复制中
 IMPORTING-导入中
 IMPORTFAILED-导入失败
                      * 
@@ -242,16 +268,14 @@ IMPORTFAILED-导入失败
 CREATING-创建中
 NORMAL-正常
 CREATEFAILED-创建失败
-USING-使用中
-SYNCING-同步中
+SYNCING-复制中
 IMPORTING-导入中
 IMPORTFAILED-导入失败
                      * @param _imageState 镜像状态:
 CREATING-创建中
 NORMAL-正常
 CREATEFAILED-创建失败
-USING-使用中
-SYNCING-同步中
+SYNCING-复制中
 IMPORTING-导入中
 IMPORTFAILED-导入失败
                      * 
@@ -308,15 +332,27 @@ IMPORTFAILED-导入失败
                     bool ImageCreatorHasBeenSet() const;
 
                     /**
-                     * 获取镜像来源
-                     * @return ImageSource 镜像来源
+                     * 获取镜像来源。镜像来源返回值包括：
+* `OFFICIAL` 官方镜像
+* `CREATE_IMAGE` 用户自建镜像
+* `EXTERNAL_IMPORT` 用户外部导入镜像
+                     * @return ImageSource 镜像来源。镜像来源返回值包括：
+* `OFFICIAL` 官方镜像
+* `CREATE_IMAGE` 用户自建镜像
+* `EXTERNAL_IMPORT` 用户外部导入镜像
                      * 
                      */
                     std::string GetImageSource() const;
 
                     /**
-                     * 设置镜像来源
-                     * @param _imageSource 镜像来源
+                     * 设置镜像来源。镜像来源返回值包括：
+* `OFFICIAL` 官方镜像
+* `CREATE_IMAGE` 用户自建镜像
+* `EXTERNAL_IMPORT` 用户外部导入镜像
+                     * @param _imageSource 镜像来源。镜像来源返回值包括：
+* `OFFICIAL` 官方镜像
+* `CREATE_IMAGE` 用户自建镜像
+* `EXTERNAL_IMPORT` 用户外部导入镜像
                      * 
                      */
                     void SetImageSource(const std::string& _imageSource);
@@ -355,18 +391,14 @@ IMPORTFAILED-导入失败
 
                     /**
                      * 获取镜像是否支持cloud-init
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsSupportCloudinit 镜像是否支持cloud-init
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsSupportCloudinit() const;
 
                     /**
                      * 设置镜像是否支持cloud-init
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isSupportCloudinit 镜像是否支持cloud-init
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsSupportCloudinit(const bool& _isSupportCloudinit);
@@ -380,18 +412,14 @@ IMPORTFAILED-导入失败
 
                     /**
                      * 获取镜像关联的快照信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SnapshotSet 镜像关联的快照信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Snapshot> GetSnapshotSet() const;
 
                     /**
                      * 设置镜像关联的快照信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _snapshotSet 镜像关联的快照信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSnapshotSet(const std::vector<Snapshot>& _snapshotSet);
@@ -405,18 +433,14 @@ IMPORTFAILED-导入失败
 
                     /**
                      * 获取镜像关联的标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 镜像关联的标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置镜像关联的标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 镜像关联的标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -429,15 +453,23 @@ IMPORTFAILED-导入失败
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取镜像许可类型
-                     * @return LicenseType 镜像许可类型
+                     * 获取镜像许可类型。镜像许可类型返回值包括：
+* `TencentCloud` 腾讯云官方许可
+* `BYOL` 用户自带许可
+                     * @return LicenseType 镜像许可类型。镜像许可类型返回值包括：
+* `TencentCloud` 腾讯云官方许可
+* `BYOL` 用户自带许可
                      * 
                      */
                     std::string GetLicenseType() const;
 
                     /**
-                     * 设置镜像许可类型
-                     * @param _licenseType 镜像许可类型
+                     * 设置镜像许可类型。镜像许可类型返回值包括：
+* `TencentCloud` 腾讯云官方许可
+* `BYOL` 用户自带许可
+                     * @param _licenseType 镜像许可类型。镜像许可类型返回值包括：
+* `TencentCloud` 腾讯云官方许可
+* `BYOL` 用户自带许可
                      * 
                      */
                     void SetLicenseType(const std::string& _licenseType);
@@ -451,18 +483,14 @@ IMPORTFAILED-导入失败
 
                     /**
                      * 获取镜像族
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageFamily 镜像族
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetImageFamily() const;
 
                     /**
                      * 设置镜像族
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _imageFamily 镜像族
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImageFamily(const std::string& _imageFamily);
@@ -495,6 +523,27 @@ IMPORTFAILED-导入失败
                      */
                     bool ImageDeprecatedHasBeenSet() const;
 
+                    /**
+                     * 获取CDC镜像缓存状态
+                     * @return CdcCacheStatus CDC镜像缓存状态
+                     * 
+                     */
+                    std::string GetCdcCacheStatus() const;
+
+                    /**
+                     * 设置CDC镜像缓存状态
+                     * @param _cdcCacheStatus CDC镜像缓存状态
+                     * 
+                     */
+                    void SetCdcCacheStatus(const std::string& _cdcCacheStatus);
+
+                    /**
+                     * 判断参数 CdcCacheStatus 是否已赋值
+                     * @return CdcCacheStatus 是否已赋值
+                     * 
+                     */
+                    bool CdcCacheStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -510,13 +559,17 @@ IMPORTFAILED-导入失败
                     bool m_osNameHasBeenSet;
 
                     /**
-                     * 镜像类型
+                     * 镜像类型。镜像类型返回值包括：
+* `PUBLIC_IMAGE` 公共镜像
+* `PRIVATE_IMAGE` 自定义镜像
+* `SHARED_IMAGE` 共享镜像
                      */
                     std::string m_imageType;
                     bool m_imageTypeHasBeenSet;
 
                     /**
-                     * 镜像创建时间
+                     * 镜像创建时间。
+按照 ISO8601 标准表示，并且使用 UTC 时间，格式为：YYYY-MM-DDThh:mm:ssZ。
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
@@ -534,13 +587,16 @@ IMPORTFAILED-导入失败
                     bool m_imageDescriptionHasBeenSet;
 
                     /**
-                     * 镜像大小
+                     * 镜像大小，单位 GiB。
                      */
                     int64_t m_imageSize;
                     bool m_imageSizeHasBeenSet;
 
                     /**
-                     * 镜像架构
+                     * 镜像架构。镜像架构返回值包括：
+* `x86_64`
+* `arm`
+* `i386`
                      */
                     std::string m_architecture;
                     bool m_architectureHasBeenSet;
@@ -550,8 +606,7 @@ IMPORTFAILED-导入失败
 CREATING-创建中
 NORMAL-正常
 CREATEFAILED-创建失败
-USING-使用中
-SYNCING-同步中
+SYNCING-复制中
 IMPORTING-导入中
 IMPORTFAILED-导入失败
                      */
@@ -571,7 +626,10 @@ IMPORTFAILED-导入失败
                     bool m_imageCreatorHasBeenSet;
 
                     /**
-                     * 镜像来源
+                     * 镜像来源。镜像来源返回值包括：
+* `OFFICIAL` 官方镜像
+* `CREATE_IMAGE` 用户自建镜像
+* `EXTERNAL_IMPORT` 用户外部导入镜像
                      */
                     std::string m_imageSource;
                     bool m_imageSourceHasBeenSet;
@@ -585,34 +643,32 @@ IMPORTFAILED-导入失败
 
                     /**
                      * 镜像是否支持cloud-init
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isSupportCloudinit;
                     bool m_isSupportCloudinitHasBeenSet;
 
                     /**
                      * 镜像关联的快照信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Snapshot> m_snapshotSet;
                     bool m_snapshotSetHasBeenSet;
 
                     /**
                      * 镜像关联的标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 镜像许可类型
+                     * 镜像许可类型。镜像许可类型返回值包括：
+* `TencentCloud` 腾讯云官方许可
+* `BYOL` 用户自带许可
                      */
                     std::string m_licenseType;
                     bool m_licenseTypeHasBeenSet;
 
                     /**
                      * 镜像族
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_imageFamily;
                     bool m_imageFamilyHasBeenSet;
@@ -622,6 +678,12 @@ IMPORTFAILED-导入失败
                      */
                     bool m_imageDeprecated;
                     bool m_imageDeprecatedHasBeenSet;
+
+                    /**
+                     * CDC镜像缓存状态
+                     */
+                    std::string m_cdcCacheStatus;
+                    bool m_cdcCacheStatusHasBeenSet;
 
                 };
             }

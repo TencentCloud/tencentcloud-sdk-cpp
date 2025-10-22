@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -768,6 +768,27 @@ pause
                      */
                     bool MaxCpuHasBeenSet() const;
 
+                    /**
+                     * 获取Db类型:<li>NORMAL</li><li>SERVERLESS</li>
+                     * @return DbMode Db类型:<li>NORMAL</li><li>SERVERLESS</li>
+                     * 
+                     */
+                    std::string GetDbMode() const;
+
+                    /**
+                     * 设置Db类型:<li>NORMAL</li><li>SERVERLESS</li>
+                     * @param _dbMode Db类型:<li>NORMAL</li><li>SERVERLESS</li>
+                     * 
+                     */
+                    void SetDbMode(const std::string& _dbMode);
+
+                    /**
+                     * 判断参数 DbMode 是否已赋值
+                     * @return DbMode 是否已赋值
+                     * 
+                     */
+                    bool DbModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -975,6 +996,12 @@ pause
                      */
                     double m_maxCpu;
                     bool m_maxCpuHasBeenSet;
+
+                    /**
+                     * Db类型:<li>NORMAL</li><li>SERVERLESS</li>
+                     */
+                    std::string m_dbMode;
+                    bool m_dbModeHasBeenSet;
 
                 };
             }

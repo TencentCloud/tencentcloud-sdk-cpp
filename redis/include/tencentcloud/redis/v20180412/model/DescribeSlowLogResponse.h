@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,20 +61,20 @@ namespace TencentCloud
                     /**
                      * 获取已废弃，该参数存在命名不规范问题，后续用参数InstanceSlowLogDetail取代。慢查询详情。
                      * @return InstanceSlowlogDetail 已废弃，该参数存在命名不规范问题，后续用参数InstanceSlowLogDetail取代。慢查询详情。
-                     * 
+                     * @deprecated
                      */
                     std::vector<InstanceSlowlogDetail> GetInstanceSlowlogDetail() const;
 
                     /**
                      * 判断参数 InstanceSlowlogDetail 是否已赋值
                      * @return InstanceSlowlogDetail 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool InstanceSlowlogDetailHasBeenSet() const;
 
                     /**
-                     * 获取慢查询详情。
-                     * @return InstanceSlowLogDetail 慢查询详情。
+                     * 获取慢查询详情，注意：TotalCount大于1W，即慢日志超过1万条，不支持返回日志详情，返回数据为空。 建议缩小BeginTime和EndTime的时间间隔，多次查询。
+                     * @return InstanceSlowLogDetail 慢查询详情，注意：TotalCount大于1W，即慢日志超过1万条，不支持返回日志详情，返回数据为空。 建议缩小BeginTime和EndTime的时间间隔，多次查询。
                      * 
                      */
                     std::vector<InstanceSlowlogDetail> GetInstanceSlowLogDetail() const;
@@ -101,7 +101,7 @@ namespace TencentCloud
                     bool m_instanceSlowlogDetailHasBeenSet;
 
                     /**
-                     * 慢查询详情。
+                     * 慢查询详情，注意：TotalCount大于1W，即慢日志超过1万条，不支持返回日志详情，返回数据为空。 建议缩小BeginTime和EndTime的时间间隔，多次查询。
                      */
                     std::vector<InstanceSlowlogDetail> m_instanceSlowLogDetail;
                     bool m_instanceSlowLogDetailHasBeenSet;

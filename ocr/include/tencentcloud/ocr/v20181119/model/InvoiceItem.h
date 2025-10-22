@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@
 #include <tencentcloud/ocr/v20181119/model/Polygon.h>
 #include <tencentcloud/ocr/v20181119/model/SingleInvoiceItem.h>
 #include <tencentcloud/ocr/v20181119/model/ItemPolygonInfo.h>
+#include <tencentcloud/ocr/v20181119/model/InvoiceSealInfo.h>
 
 
 namespace TencentCloud
@@ -99,6 +100,9 @@ FailedOperation.UnKnowError：表示识别失败；
 15：非税发票
 16：全电发票
 17：医疗发票
+18：完税凭证
+19：海关缴款书
+20：银行回单
                      * @return Type 识别出的图片所属的票据类型。
 -1：未知类型
 0：出租车发票
@@ -115,6 +119,9 @@ FailedOperation.UnKnowError：表示识别失败；
 15：非税发票
 16：全电发票
 17：医疗发票
+18：完税凭证
+19：海关缴款书
+20：银行回单
                      * 
                      */
                     int64_t GetType() const;
@@ -136,6 +143,9 @@ FailedOperation.UnKnowError：表示识别失败；
 15：非税发票
 16：全电发票
 17：医疗发票
+18：完税凭证
+19：海关缴款书
+20：银行回单
                      * @param _type 识别出的图片所属的票据类型。
 -1：未知类型
 0：出租车发票
@@ -152,6 +162,9 @@ FailedOperation.UnKnowError：表示识别失败；
 15：非税发票
 16：全电发票
 17：医疗发票
+18：完税凭证
+19：海关缴款书
+20：银行回单
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -185,15 +198,15 @@ FailedOperation.UnKnowError：表示识别失败；
                     bool PolygonHasBeenSet() const;
 
                     /**
-                     * 获取识别出的图片在混贴票据图片中的旋转角度。
-                     * @return Angle 识别出的图片在混贴票据图片中的旋转角度。
+                     * 获取识别出切图后各图片的旋转角度。
+                     * @return Angle 识别出切图后各图片的旋转角度。
                      * 
                      */
                     double GetAngle() const;
 
                     /**
-                     * 设置识别出的图片在混贴票据图片中的旋转角度。
-                     * @param _angle 识别出的图片在混贴票据图片中的旋转角度。
+                     * 设置识别出切图后各图片的旋转角度。
+                     * @param _angle 识别出切图后各图片的旋转角度。
                      * 
                      */
                     void SetAngle(const double& _angle);
@@ -227,15 +240,15 @@ FailedOperation.UnKnowError：表示识别失败；
                     bool SingleInvoiceInfosHasBeenSet() const;
 
                     /**
-                     * 获取发票处于识别图片或PDF文件中的页教，默认从1开始。
-                     * @return Page 发票处于识别图片或PDF文件中的页教，默认从1开始。
+                     * 获取发票处于识别图片或PDF文件中的页码，默认从1开始。
+                     * @return Page 发票处于识别图片或PDF文件中的页码，默认从1开始。
                      * 
                      */
                     int64_t GetPage() const;
 
                     /**
-                     * 设置发票处于识别图片或PDF文件中的页教，默认从1开始。
-                     * @param _page 发票处于识别图片或PDF文件中的页教，默认从1开始。
+                     * 设置发票处于识别图片或PDF文件中的页码，默认从1开始。
+                     * @param _page 发票处于识别图片或PDF文件中的页码，默认从1开始。
                      * 
                      */
                     void SetPage(const int64_t& _page);
@@ -352,6 +365,48 @@ FailedOperation.UnKnowError：表示识别失败；
                      */
                     bool ItemPolygonHasBeenSet() const;
 
+                    /**
+                     * 获取二维码数据。
+                     * @return QRCode 二维码数据。
+                     * 
+                     */
+                    std::string GetQRCode() const;
+
+                    /**
+                     * 设置二维码数据。
+                     * @param _qRCode 二维码数据。
+                     * 
+                     */
+                    void SetQRCode(const std::string& _qRCode);
+
+                    /**
+                     * 判断参数 QRCode 是否已赋值
+                     * @return QRCode 是否已赋值
+                     * 
+                     */
+                    bool QRCodeHasBeenSet() const;
+
+                    /**
+                     * 获取印章信息
+                     * @return InvoiceSealInfo 印章信息
+                     * 
+                     */
+                    InvoiceSealInfo GetInvoiceSealInfo() const;
+
+                    /**
+                     * 设置印章信息
+                     * @param _invoiceSealInfo 印章信息
+                     * 
+                     */
+                    void SetInvoiceSealInfo(const InvoiceSealInfo& _invoiceSealInfo);
+
+                    /**
+                     * 判断参数 InvoiceSealInfo 是否已赋值
+                     * @return InvoiceSealInfo 是否已赋值
+                     * 
+                     */
+                    bool InvoiceSealInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -380,6 +435,9 @@ FailedOperation.UnKnowError：表示识别失败；
 15：非税发票
 16：全电发票
 17：医疗发票
+18：完税凭证
+19：海关缴款书
+20：银行回单
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
@@ -391,7 +449,7 @@ FailedOperation.UnKnowError：表示识别失败；
                     bool m_polygonHasBeenSet;
 
                     /**
-                     * 识别出的图片在混贴票据图片中的旋转角度。
+                     * 识别出切图后各图片的旋转角度。
                      */
                     double m_angle;
                     bool m_angleHasBeenSet;
@@ -403,7 +461,7 @@ FailedOperation.UnKnowError：表示识别失败；
                     bool m_singleInvoiceInfosHasBeenSet;
 
                     /**
-                     * 发票处于识别图片或PDF文件中的页教，默认从1开始。
+                     * 发票处于识别图片或PDF文件中的页码，默认从1开始。
                      */
                     int64_t m_page;
                     bool m_pageHasBeenSet;
@@ -437,6 +495,18 @@ FailedOperation.UnKnowError：表示识别失败；
                      */
                     std::vector<ItemPolygonInfo> m_itemPolygon;
                     bool m_itemPolygonHasBeenSet;
+
+                    /**
+                     * 二维码数据。
+                     */
+                    std::string m_qRCode;
+                    bool m_qRCodeHasBeenSet;
+
+                    /**
+                     * 印章信息
+                     */
+                    InvoiceSealInfo m_invoiceSealInfo;
+                    bool m_invoiceSealInfoHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -102,9 +102,7 @@ namespace TencentCloud
 
                     /**
                      * 获取秒级unix时间戳，实际房间开始时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealStartTime 秒级unix时间戳，实际房间开始时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRealStartTime() const;
@@ -118,9 +116,7 @@ namespace TencentCloud
 
                     /**
                      * 获取秒级unix时间戳，实际房间结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealEndTime 秒级unix时间戳，实际房间结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRealEndTime() const;
@@ -133,8 +129,8 @@ namespace TencentCloud
                     bool RealEndTimeHasBeenSet() const;
 
                     /**
-                     * 获取房间消息总数。
-                     * @return MessageCount 房间消息总数。
+                     * 获取课堂消息总数。
+                     * @return MessageCount 课堂消息总数。
                      * 
                      */
                     uint64_t GetMessageCount() const;
@@ -147,8 +143,8 @@ namespace TencentCloud
                     bool MessageCountHasBeenSet() const;
 
                     /**
-                     * 获取房间连麦总数。
-                     * @return MicCount 房间连麦总数。
+                     * 获取课堂连麦总数。
+                     * @return MicCount 课堂连麦总数。
                      * 
                      */
                     uint64_t GetMicCount() const;
@@ -188,26 +184,24 @@ namespace TencentCloud
 
                     /**
                      * 秒级unix时间戳，实际房间开始时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_realStartTime;
                     bool m_realStartTimeHasBeenSet;
 
                     /**
                      * 秒级unix时间戳，实际房间结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_realEndTime;
                     bool m_realEndTimeHasBeenSet;
 
                     /**
-                     * 房间消息总数。
+                     * 课堂消息总数。
                      */
                     uint64_t m_messageCount;
                     bool m_messageCountHasBeenSet;
 
                     /**
-                     * 房间连麦总数。
+                     * 课堂连麦总数。
                      */
                     uint64_t m_micCount;
                     bool m_micCountHasBeenSet;

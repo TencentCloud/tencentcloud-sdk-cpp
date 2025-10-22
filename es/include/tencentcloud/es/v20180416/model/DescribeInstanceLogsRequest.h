@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -234,6 +234,111 @@ namespace TencentCloud
                      */
                     bool OrderByTypeHasBeenSet() const;
 
+                    /**
+                     * 获取日志级别
+                     * @return LogLevels 日志级别
+                     * 
+                     */
+                    std::vector<std::string> GetLogLevels() const;
+
+                    /**
+                     * 设置日志级别
+                     * @param _logLevels 日志级别
+                     * 
+                     */
+                    void SetLogLevels(const std::vector<std::string>& _logLevels);
+
+                    /**
+                     * 判断参数 LogLevels 是否已赋值
+                     * @return LogLevels 是否已赋值
+                     * 
+                     */
+                    bool LogLevelsHasBeenSet() const;
+
+                    /**
+                     * 获取节点ID
+                     * @return NodeIds 节点ID
+                     * 
+                     */
+                    std::vector<std::string> GetNodeIds() const;
+
+                    /**
+                     * 设置节点ID
+                     * @param _nodeIds 节点ID
+                     * 
+                     */
+                    void SetNodeIds(const std::vector<std::string>& _nodeIds);
+
+                    /**
+                     * 判断参数 NodeIds 是否已赋值
+                     * @return NodeIds 是否已赋值
+                     * 
+                     */
+                    bool NodeIdsHasBeenSet() const;
+
+                    /**
+                     * 获取慢日志索引名
+                     * @return IndexName 慢日志索引名
+                     * 
+                     */
+                    std::string GetIndexName() const;
+
+                    /**
+                     * 设置慢日志索引名
+                     * @param _indexName 慢日志索引名
+                     * 
+                     */
+                    void SetIndexName(const std::string& _indexName);
+
+                    /**
+                     * 判断参数 IndexName 是否已赋值
+                     * @return IndexName 是否已赋值
+                     * 
+                     */
+                    bool IndexNameHasBeenSet() const;
+
+                    /**
+                     * 获取慢日志索引分片
+                     * @return ShardId 慢日志索引分片
+                     * 
+                     */
+                    std::string GetShardId() const;
+
+                    /**
+                     * 设置慢日志索引分片
+                     * @param _shardId 慢日志索引分片
+                     * 
+                     */
+                    void SetShardId(const std::string& _shardId);
+
+                    /**
+                     * 判断参数 ShardId 是否已赋值
+                     * @return ShardId 是否已赋值
+                     * 
+                     */
+                    bool ShardIdHasBeenSet() const;
+
+                    /**
+                     * 获取慢日志查询耗时
+                     * @return QueryCost 慢日志查询耗时
+                     * 
+                     */
+                    uint64_t GetQueryCost() const;
+
+                    /**
+                     * 设置慢日志查询耗时
+                     * @param _queryCost 慢日志查询耗时
+                     * 
+                     */
+                    void SetQueryCost(const uint64_t& _queryCost);
+
+                    /**
+                     * 判断参数 QueryCost 是否已赋值
+                     * @return QueryCost 是否已赋值
+                     * 
+                     */
+                    bool QueryCostHasBeenSet() const;
+
                 private:
 
                     /**
@@ -289,6 +394,36 @@ namespace TencentCloud
                      */
                     uint64_t m_orderByType;
                     bool m_orderByTypeHasBeenSet;
+
+                    /**
+                     * 日志级别
+                     */
+                    std::vector<std::string> m_logLevels;
+                    bool m_logLevelsHasBeenSet;
+
+                    /**
+                     * 节点ID
+                     */
+                    std::vector<std::string> m_nodeIds;
+                    bool m_nodeIdsHasBeenSet;
+
+                    /**
+                     * 慢日志索引名
+                     */
+                    std::string m_indexName;
+                    bool m_indexNameHasBeenSet;
+
+                    /**
+                     * 慢日志索引分片
+                     */
+                    std::string m_shardId;
+                    bool m_shardIdHasBeenSet;
+
+                    /**
+                     * 慢日志查询耗时
+                     */
+                    uint64_t m_queryCost;
+                    bool m_queryCostHasBeenSet;
 
                 };
             }

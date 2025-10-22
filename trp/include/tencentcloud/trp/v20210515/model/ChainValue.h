@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标题名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label 标题名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置标题名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _label 标题名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabel(const std::string& _label);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取类型，文字："text"，图片："image"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 类型，文字："text"，图片："image"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型，文字："text"，图片："image"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 类型，文字："text"，图片："image"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取值，文字类型："abc"，图片类型：""/images/img.png"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 值，文字类型："abc"，图片类型：""/images/img.png"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置值，文字类型："abc"，图片类型：""/images/img.png"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 值，文字类型："abc"，图片类型：""/images/img.png"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 标题名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
 
                     /**
                      * 类型，文字："text"，图片："image"
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 值，文字类型："abc"，图片类型：""/images/img.png"
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

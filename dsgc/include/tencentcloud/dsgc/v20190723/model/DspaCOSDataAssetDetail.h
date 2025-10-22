@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -300,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceRegion 资源所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceRegion() const;
 
                     /**
                      * 设置资源所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceRegion 资源所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceRegion(const std::string& _resourceRegion);
@@ -325,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分类ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CategoryId 分类ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCategoryId() const;
 
                     /**
                      * 设置分类ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _categoryId 分类ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCategoryId(const int64_t& _categoryId);
@@ -350,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分级ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LevelId 分级ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLevelId() const;
 
                     /**
                      * 设置分级ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _levelId 分级ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevelId(const int64_t& _levelId);
@@ -375,18 +363,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件扫描结果ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileResultId 文件扫描结果ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFileResultId() const;
 
                     /**
                      * 设置文件扫描结果ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileResultId 文件扫描结果ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileResultId(const int64_t& _fileResultId);
@@ -400,18 +384,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataSourceName 数据源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataSourceName() const;
 
                     /**
                      * 设置数据源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataSourceName 数据源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataSourceName(const std::string& _dataSourceName);
@@ -425,18 +405,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分类路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CategoryFullPath 分类路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCategoryFullPath() const;
 
                     /**
                      * 设置分类路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _categoryFullPath 分类路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCategoryFullPath(const std::string& _categoryFullPath);
@@ -451,10 +427,8 @@ namespace TencentCloud
                     /**
                      * 获取0-系统识别
 1-人工识别
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdentifyType 0-系统识别
 1-人工识别
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIdentifyType() const;
@@ -462,10 +436,8 @@ namespace TencentCloud
                     /**
                      * 设置0-系统识别
 1-人工识别
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _identifyType 0-系统识别
 1-人工识别
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIdentifyType(const int64_t& _identifyType);
@@ -480,10 +452,8 @@ namespace TencentCloud
                     /**
                      * 获取0-系统识别
 1-人工识别
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckStatus 0-系统识别
 1-人工识别
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCheckStatus() const;
@@ -491,10 +461,8 @@ namespace TencentCloud
                     /**
                      * 设置0-系统识别
 1-人工识别
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _checkStatus 0-系统识别
 1-人工识别
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCheckStatus(const int64_t& _checkStatus);
@@ -582,42 +550,36 @@ namespace TencentCloud
 
                     /**
                      * 资源所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceRegion;
                     bool m_resourceRegionHasBeenSet;
 
                     /**
                      * 分类ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_categoryId;
                     bool m_categoryIdHasBeenSet;
 
                     /**
                      * 分级ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_levelId;
                     bool m_levelIdHasBeenSet;
 
                     /**
                      * 文件扫描结果ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_fileResultId;
                     bool m_fileResultIdHasBeenSet;
 
                     /**
                      * 数据源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataSourceName;
                     bool m_dataSourceNameHasBeenSet;
 
                     /**
                      * 分类路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_categoryFullPath;
                     bool m_categoryFullPathHasBeenSet;
@@ -625,7 +587,6 @@ namespace TencentCloud
                     /**
                      * 0-系统识别
 1-人工识别
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_identifyType;
                     bool m_identifyTypeHasBeenSet;
@@ -633,7 +594,6 @@ namespace TencentCloud
                     /**
                      * 0-系统识别
 1-人工识别
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_checkStatus;
                     bool m_checkStatusHasBeenSet;

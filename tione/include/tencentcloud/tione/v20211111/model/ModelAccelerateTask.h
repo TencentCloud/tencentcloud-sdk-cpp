@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -775,6 +775,81 @@ namespace TencentCloud
                      */
                     bool FrameworkVersionHasBeenSet() const;
 
+                    /**
+                     * 获取模型版本ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ModelVersionId 模型版本ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetModelVersionId() const;
+
+                    /**
+                     * 设置模型版本ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _modelVersionId 模型版本ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetModelVersionId(const std::string& _modelVersionId);
+
+                    /**
+                     * 判断参数 ModelVersionId 是否已赋值
+                     * @return ModelVersionId 是否已赋值
+                     * 
+                     */
+                    bool ModelVersionIdHasBeenSet() const;
+
+                    /**
+                     * 获取资源组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceGroupId 资源组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetResourceGroupId() const;
+
+                    /**
+                     * 设置资源组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _resourceGroupId 资源组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetResourceGroupId(const std::string& _resourceGroupId);
+
+                    /**
+                     * 判断参数 ResourceGroupId 是否已赋值
+                     * @return ResourceGroupId 是否已赋值
+                     * 
+                     */
+                    bool ResourceGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取资源组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceGroupName 资源组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetResourceGroupName() const;
+
+                    /**
+                     * 设置资源组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _resourceGroupName 资源组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetResourceGroupName(const std::string& _resourceGroupName);
+
+                    /**
+                     * 判断参数 ResourceGroupName 是否已赋值
+                     * @return ResourceGroupName 是否已赋值
+                     * 
+                     */
+                    bool ResourceGroupNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -979,6 +1054,27 @@ namespace TencentCloud
                      */
                     std::string m_frameworkVersion;
                     bool m_frameworkVersionHasBeenSet;
+
+                    /**
+                     * 模型版本ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_modelVersionId;
+                    bool m_modelVersionIdHasBeenSet;
+
+                    /**
+                     * 资源组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_resourceGroupId;
+                    bool m_resourceGroupIdHasBeenSet;
+
+                    /**
+                     * 资源组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_resourceGroupName;
+                    bool m_resourceGroupNameHasBeenSet;
 
                 };
             }

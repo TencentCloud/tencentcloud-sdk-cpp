@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ccc/v20200210/model/SkillGroupItem.h>
+#include <tencentcloud/ccc/v20200210/model/ForwardingConfig.h>
 
 
 namespace TencentCloud
@@ -153,25 +154,67 @@ namespace TencentCloud
                     bool StaffNumberHasBeenSet() const;
 
                     /**
-                     * 获取用户角色id
-                     * @return RoleId 用户角色id
-                     * 
+                     * 获取用户角色 ID，一个用户绑定了多个角色时以RoleIdList为准
+                     * @return RoleId 用户角色 ID，一个用户绑定了多个角色时以RoleIdList为准
+                     * @deprecated
                      */
                     uint64_t GetRoleId() const;
 
                     /**
-                     * 设置用户角色id
-                     * @param _roleId 用户角色id
-                     * 
+                     * 设置用户角色 ID，一个用户绑定了多个角色时以RoleIdList为准
+                     * @param _roleId 用户角色 ID，一个用户绑定了多个角色时以RoleIdList为准
+                     * @deprecated
                      */
                     void SetRoleId(const uint64_t& _roleId);
 
                     /**
                      * 判断参数 RoleId 是否已赋值
                      * @return RoleId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool RoleIdHasBeenSet() const;
+
+                    /**
+                     * 获取用户角色id列表
+                     * @return RoleIdList 用户角色id列表
+                     * @deprecated
+                     */
+                    uint64_t GetRoleIdList() const;
+
+                    /**
+                     * 设置用户角色id列表
+                     * @param _roleIdList 用户角色id列表
+                     * @deprecated
+                     */
+                    void SetRoleIdList(const uint64_t& _roleIdList);
+
+                    /**
+                     * 判断参数 RoleIdList 是否已赋值
+                     * @return RoleIdList 是否已赋值
+                     * @deprecated
+                     */
+                    bool RoleIdListHasBeenSet() const;
+
+                    /**
+                     * 获取用户角色id列表
+                     * @return RoleList 用户角色id列表
+                     * 
+                     */
+                    std::vector<uint64_t> GetRoleList() const;
+
+                    /**
+                     * 设置用户角色id列表
+                     * @param _roleList 用户角色id列表
+                     * 
+                     */
+                    void SetRoleList(const std::vector<uint64_t>& _roleList);
+
+                    /**
+                     * 判断参数 RoleList 是否已赋值
+                     * @return RoleList 是否已赋值
+                     * 
+                     */
+                    bool RoleListHasBeenSet() const;
 
                     /**
                      * 获取所属技能组列表
@@ -215,6 +258,48 @@ namespace TencentCloud
                      */
                     bool LastModifyTimestampHasBeenSet() const;
 
+                    /**
+                     * 获取座席分机号（1 到 8 打头，4 - 6 位）
+                     * @return ExtensionNumber 座席分机号（1 到 8 打头，4 - 6 位）
+                     * 
+                     */
+                    std::string GetExtensionNumber() const;
+
+                    /**
+                     * 设置座席分机号（1 到 8 打头，4 - 6 位）
+                     * @param _extensionNumber 座席分机号（1 到 8 打头，4 - 6 位）
+                     * 
+                     */
+                    void SetExtensionNumber(const std::string& _extensionNumber);
+
+                    /**
+                     * 判断参数 ExtensionNumber 是否已赋值
+                     * @return ExtensionNumber 是否已赋值
+                     * 
+                     */
+                    bool ExtensionNumberHasBeenSet() const;
+
+                    /**
+                     * 获取呼叫转移配置
+                     * @return ForwardingConfig 呼叫转移配置
+                     * 
+                     */
+                    ForwardingConfig GetForwardingConfig() const;
+
+                    /**
+                     * 设置呼叫转移配置
+                     * @param _forwardingConfig 呼叫转移配置
+                     * 
+                     */
+                    void SetForwardingConfig(const ForwardingConfig& _forwardingConfig);
+
+                    /**
+                     * 判断参数 ForwardingConfig 是否已赋值
+                     * @return ForwardingConfig 是否已赋值
+                     * 
+                     */
+                    bool ForwardingConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -248,10 +333,22 @@ namespace TencentCloud
                     bool m_staffNumberHasBeenSet;
 
                     /**
-                     * 用户角色id
+                     * 用户角色 ID，一个用户绑定了多个角色时以RoleIdList为准
                      */
                     uint64_t m_roleId;
                     bool m_roleIdHasBeenSet;
+
+                    /**
+                     * 用户角色id列表
+                     */
+                    uint64_t m_roleIdList;
+                    bool m_roleIdListHasBeenSet;
+
+                    /**
+                     * 用户角色id列表
+                     */
+                    std::vector<uint64_t> m_roleList;
+                    bool m_roleListHasBeenSet;
 
                     /**
                      * 所属技能组列表
@@ -264,6 +361,18 @@ namespace TencentCloud
                      */
                     int64_t m_lastModifyTimestamp;
                     bool m_lastModifyTimestampHasBeenSet;
+
+                    /**
+                     * 座席分机号（1 到 8 打头，4 - 6 位）
+                     */
+                    std::string m_extensionNumber;
+                    bool m_extensionNumberHasBeenSet;
+
+                    /**
+                     * 呼叫转移配置
+                     */
+                    ForwardingConfig m_forwardingConfig;
+                    bool m_forwardingConfigHasBeenSet;
 
                 };
             }

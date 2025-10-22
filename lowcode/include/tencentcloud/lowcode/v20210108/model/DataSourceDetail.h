@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/lowcode/v20210108/model/DataSourceLinkApp.h>
 #include <tencentcloud/lowcode/v20210108/model/TicketAuthInfo.h>
+#include <tencentcloud/lowcode/v20210108/model/RelationField.h>
 
 
 namespace TencentCloud
@@ -134,14 +135,18 @@ namespace TencentCloud
 
                     /**
                      * 获取数据源描述
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 数据源描述
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置数据源描述
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 数据源描述
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -197,18 +202,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前为环境 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PkgId 当前为环境 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPkgId() const;
 
                     /**
                      * 设置当前为环境 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pkgId 当前为环境 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPkgId(const std::string& _pkgId);
@@ -247,18 +248,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建者用户 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatorId 创建者用户 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatorId() const;
 
                     /**
                      * 设置创建者用户 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _creatorId 创建者用户 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatorId(const std::string& _creatorId);
@@ -322,18 +319,14 @@ namespace TencentCloud
 
                     /**
                      * 获取环境 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnvId 环境 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置环境 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _envId 环境 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnvId(const std::string& _envId);
@@ -397,18 +390,14 @@ namespace TencentCloud
 
                     /**
                      * 获取发布时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublishedAt 发布时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublishedAt() const;
 
                     /**
                      * 设置发布时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publishedAt 发布时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublishedAt(const std::string& _publishedAt);
@@ -472,18 +461,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云函数状态 1 Active 2 Creating 3 Updating 4 Deleting  9 Deleted 11 CreatFailed  12 UpdateFailed 13 DeleteFailed 21 UpdateTimeOut
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScfStatus 云函数状态 1 Active 2 Creating 3 Updating 4 Deleting  9 Deleted 11 CreatFailed  12 UpdateFailed 13 DeleteFailed 21 UpdateTimeOut
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetScfStatus() const;
 
                     /**
                      * 设置云函数状态 1 Active 2 Creating 3 Updating 4 Deleting  9 Deleted 11 CreatFailed  12 UpdateFailed 13 DeleteFailed 21 UpdateTimeOut
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scfStatus 云函数状态 1 Active 2 Creating 3 Updating 4 Deleting  9 Deleted 11 CreatFailed  12 UpdateFailed 13 DeleteFailed 21 UpdateTimeOut
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScfStatus(const uint64_t& _scfStatus);
@@ -497,18 +482,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义方法
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Methods 自定义方法
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMethods() const;
 
                     /**
                      * 设置自定义方法
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _methods 自定义方法
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMethods(const std::string& _methods);
@@ -547,18 +528,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否旧数据源 1 新 0 旧
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsNewDataSource 是否旧数据源 1 新 0 旧
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsNewDataSource() const;
 
                     /**
                      * 设置是否旧数据源 1 新 0 旧
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isNewDataSource 是否旧数据源 1 新 0 旧
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsNewDataSource(const int64_t& _isNewDataSource);
@@ -675,7 +652,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublishVersion 发布版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetPublishVersion() const;
 
@@ -684,14 +661,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publishVersion 发布版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetPublishVersion(const std::string& _publishVersion);
 
                     /**
                      * 判断参数 PublishVersion 是否已赋值
                      * @return PublishVersion 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool PublishVersionHasBeenSet() const;
 
@@ -722,18 +699,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据源子类型   "database" 标准模型 "custom-database" 自定义模型 "system" 系统模型 "connector" 连接器 "custom-connector" 自定义连接器 "hidden" 隐藏数据源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubType 数据源子类型   "database" 标准模型 "custom-database" 自定义模型 "system" 系统模型 "connector" 连接器 "custom-connector" 自定义连接器 "hidden" 隐藏数据源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubType() const;
 
                     /**
                      * 设置数据源子类型   "database" 标准模型 "custom-database" 自定义模型 "system" 系统模型 "connector" 连接器 "custom-connector" 自定义连接器 "hidden" 隐藏数据源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subType 数据源子类型   "database" 标准模型 "custom-database" 自定义模型 "system" 系统模型 "connector" 连接器 "custom-connector" 自定义连接器 "hidden" 隐藏数据源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubType(const std::string& _subType);
@@ -795,6 +768,173 @@ namespace TencentCloud
                      */
                     bool AuthInfoHasBeenSet() const;
 
+                    /**
+                     * 获取1发布0未发布
+                     * @return PublishStatus 1发布0未发布
+                     * 
+                     */
+                    int64_t GetPublishStatus() const;
+
+                    /**
+                     * 设置1发布0未发布
+                     * @param _publishStatus 1发布0未发布
+                     * 
+                     */
+                    void SetPublishStatus(const int64_t& _publishStatus);
+
+                    /**
+                     * 判断参数 PublishStatus 是否已赋值
+                     * @return PublishStatus 是否已赋值
+                     * 
+                     */
+                    bool PublishStatusHasBeenSet() const;
+
+                    /**
+                     * 获取更新版本
+                     * @return UpdateVersion 更新版本
+                     * 
+                     */
+                    int64_t GetUpdateVersion() const;
+
+                    /**
+                     * 设置更新版本
+                     * @param _updateVersion 更新版本
+                     * 
+                     */
+                    void SetUpdateVersion(const int64_t& _updateVersion);
+
+                    /**
+                     * 判断参数 UpdateVersion 是否已赋值
+                     * @return UpdateVersion 是否已赋值
+                     * 
+                     */
+                    bool UpdateVersionHasBeenSet() const;
+
+                    /**
+                     * 获取模型关联关系字段列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RelationFieldList 模型关联关系字段列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<RelationField> GetRelationFieldList() const;
+
+                    /**
+                     * 设置模型关联关系字段列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _relationFieldList 模型关联关系字段列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRelationFieldList(const std::vector<RelationField>& _relationFieldList);
+
+                    /**
+                     * 判断参数 RelationFieldList 是否已赋值
+                     * @return RelationFieldList 是否已赋值
+                     * 
+                     */
+                    bool RelationFieldListHasBeenSet() const;
+
+                    /**
+                     * 获取db实例类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DbInstanceType db实例类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDbInstanceType() const;
+
+                    /**
+                     * 设置db实例类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dbInstanceType db实例类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDbInstanceType(const std::string& _dbInstanceType);
+
+                    /**
+                     * 判断参数 DbInstanceType 是否已赋值
+                     * @return DbInstanceType 是否已赋值
+                     * 
+                     */
+                    bool DbInstanceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取体验环境db表名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PreviewTableName 体验环境db表名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPreviewTableName() const;
+
+                    /**
+                     * 设置体验环境db表名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _previewTableName 体验环境db表名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPreviewTableName(const std::string& _previewTableName);
+
+                    /**
+                     * 判断参数 PreviewTableName 是否已赋值
+                     * @return PreviewTableName 是否已赋值
+                     * 
+                     */
+                    bool PreviewTableNameHasBeenSet() const;
+
+                    /**
+                     * 获取正式环境db表名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PublishedTableName 正式环境db表名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPublishedTableName() const;
+
+                    /**
+                     * 设置正式环境db表名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _publishedTableName 正式环境db表名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPublishedTableName(const std::string& _publishedTableName);
+
+                    /**
+                     * 判断参数 PublishedTableName 是否已赋值
+                     * @return PublishedTableName 是否已赋值
+                     * 
+                     */
+                    bool PublishedTableNameHasBeenSet() const;
+
+                    /**
+                     * 获取DB来源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DbSourceType DB来源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDbSourceType() const;
+
+                    /**
+                     * 设置DB来源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dbSourceType DB来源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDbSourceType(const std::string& _dbSourceType);
+
+                    /**
+                     * 判断参数 DbSourceType 是否已赋值
+                     * @return DbSourceType 是否已赋值
+                     * 
+                     */
+                    bool DbSourceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -823,6 +963,7 @@ namespace TencentCloud
 
                     /**
                      * 数据源描述
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
@@ -841,7 +982,6 @@ namespace TencentCloud
 
                     /**
                      * 当前为环境 id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pkgId;
                     bool m_pkgIdHasBeenSet;
@@ -855,7 +995,6 @@ namespace TencentCloud
 
                     /**
                      * 创建者用户 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_creatorId;
                     bool m_creatorIdHasBeenSet;
@@ -876,7 +1015,6 @@ namespace TencentCloud
 
                     /**
                      * 环境 id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_envId;
                     bool m_envIdHasBeenSet;
@@ -897,7 +1035,6 @@ namespace TencentCloud
 
                     /**
                      * 发布时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publishedAt;
                     bool m_publishedAtHasBeenSet;
@@ -918,14 +1055,12 @@ namespace TencentCloud
 
                     /**
                      * 云函数状态 1 Active 2 Creating 3 Updating 4 Deleting  9 Deleted 11 CreatFailed  12 UpdateFailed 13 DeleteFailed 21 UpdateTimeOut
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_scfStatus;
                     bool m_scfStatusHasBeenSet;
 
                     /**
                      * 自定义方法
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_methods;
                     bool m_methodsHasBeenSet;
@@ -939,7 +1074,6 @@ namespace TencentCloud
 
                     /**
                      * 是否旧数据源 1 新 0 旧
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isNewDataSource;
                     bool m_isNewDataSourceHasBeenSet;
@@ -988,7 +1122,6 @@ namespace TencentCloud
 
                     /**
                      * 数据源子类型   "database" 标准模型 "custom-database" 自定义模型 "system" 系统模型 "connector" 连接器 "custom-connector" 自定义连接器 "hidden" 隐藏数据源
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subType;
                     bool m_subTypeHasBeenSet;
@@ -1006,6 +1139,53 @@ namespace TencentCloud
                      */
                     TicketAuthInfo m_authInfo;
                     bool m_authInfoHasBeenSet;
+
+                    /**
+                     * 1发布0未发布
+                     */
+                    int64_t m_publishStatus;
+                    bool m_publishStatusHasBeenSet;
+
+                    /**
+                     * 更新版本
+                     */
+                    int64_t m_updateVersion;
+                    bool m_updateVersionHasBeenSet;
+
+                    /**
+                     * 模型关联关系字段列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<RelationField> m_relationFieldList;
+                    bool m_relationFieldListHasBeenSet;
+
+                    /**
+                     * db实例类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dbInstanceType;
+                    bool m_dbInstanceTypeHasBeenSet;
+
+                    /**
+                     * 体验环境db表名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_previewTableName;
+                    bool m_previewTableNameHasBeenSet;
+
+                    /**
+                     * 正式环境db表名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_publishedTableName;
+                    bool m_publishedTableNameHasBeenSet;
+
+                    /**
+                     * DB来源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dbSourceType;
+                    bool m_dbSourceTypeHasBeenSet;
 
                 };
             }

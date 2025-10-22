@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,31 +44,43 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取过滤条件。
-<li> end-point-service-id- String - （过滤条件）终端节点服务ID。</li>
+                     * 获取过滤条件。当前支持如下过滤条件：
+<li> end-point-service-id- String - （过滤条件）终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。
+</li>
 <li>end-point-name - String - （过滤条件）终端节点实例名称。</li>
-<li> end-point-id- String - （过滤条件）终端节点实例ID。</li>
-<li> vpc-id- String - （过滤条件）VPC实例ID。</li>
-                     * @return Filters 过滤条件。
-<li> end-point-service-id- String - （过滤条件）终端节点服务ID。</li>
+<li> end-point-id- String - （过滤条件）终端节点实例ID。可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679) 
+接口获取。</li>
+<li> vpc-id- String - （过滤条件）VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。
+</li>
+                     * @return Filters 过滤条件。当前支持如下过滤条件：
+<li> end-point-service-id- String - （过滤条件）终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。
+</li>
 <li>end-point-name - String - （过滤条件）终端节点实例名称。</li>
-<li> end-point-id- String - （过滤条件）终端节点实例ID。</li>
-<li> vpc-id- String - （过滤条件）VPC实例ID。</li>
+<li> end-point-id- String - （过滤条件）终端节点实例ID。可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679) 
+接口获取。</li>
+<li> vpc-id- String - （过滤条件）VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。
+</li>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件。
-<li> end-point-service-id- String - （过滤条件）终端节点服务ID。</li>
+                     * 设置过滤条件。当前支持如下过滤条件：
+<li> end-point-service-id- String - （过滤条件）终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。
+</li>
 <li>end-point-name - String - （过滤条件）终端节点实例名称。</li>
-<li> end-point-id- String - （过滤条件）终端节点实例ID。</li>
-<li> vpc-id- String - （过滤条件）VPC实例ID。</li>
-                     * @param _filters 过滤条件。
-<li> end-point-service-id- String - （过滤条件）终端节点服务ID。</li>
+<li> end-point-id- String - （过滤条件）终端节点实例ID。可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679) 
+接口获取。</li>
+<li> vpc-id- String - （过滤条件）VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。
+</li>
+                     * @param _filters 过滤条件。当前支持如下过滤条件：
+<li> end-point-service-id- String - （过滤条件）终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。
+</li>
 <li>end-point-name - String - （过滤条件）终端节点实例名称。</li>
-<li> end-point-id- String - （过滤条件）终端节点实例ID。</li>
-<li> vpc-id- String - （过滤条件）VPC实例ID。</li>
+<li> end-point-id- String - （过滤条件）终端节点实例ID。可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679) 
+接口获取。</li>
+<li> vpc-id- String - （过滤条件）VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。
+</li>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -123,15 +135,19 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取终端节点ID列表。
-                     * @return EndPointId 终端节点ID列表。
+                     * 获取终端节点ID列表。可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679) 
+获取。
+                     * @return EndPointId 终端节点ID列表。可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679) 
+获取。
                      * 
                      */
                     std::vector<std::string> GetEndPointId() const;
 
                     /**
-                     * 设置终端节点ID列表。
-                     * @param _endPointId 终端节点ID列表。
+                     * 设置终端节点ID列表。可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679) 
+获取。
+                     * @param _endPointId 终端节点ID列表。可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679) 
+获取。
                      * 
                      */
                     void SetEndPointId(const std::vector<std::string>& _endPointId);
@@ -143,14 +159,38 @@ namespace TencentCloud
                      */
                     bool EndPointIdHasBeenSet() const;
 
+                    /**
+                     * 获取协议类型，支持 Ipv4，Ipv6，默认 Ipv4。
+                     * @return IpAddressType 协议类型，支持 Ipv4，Ipv6，默认 Ipv4。
+                     * 
+                     */
+                    std::string GetIpAddressType() const;
+
+                    /**
+                     * 设置协议类型，支持 Ipv4，Ipv6，默认 Ipv4。
+                     * @param _ipAddressType 协议类型，支持 Ipv4，Ipv6，默认 Ipv4。
+                     * 
+                     */
+                    void SetIpAddressType(const std::string& _ipAddressType);
+
+                    /**
+                     * 判断参数 IpAddressType 是否已赋值
+                     * @return IpAddressType 是否已赋值
+                     * 
+                     */
+                    bool IpAddressTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 过滤条件。
-<li> end-point-service-id- String - （过滤条件）终端节点服务ID。</li>
+                     * 过滤条件。当前支持如下过滤条件：
+<li> end-point-service-id- String - （过滤条件）终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。
+</li>
 <li>end-point-name - String - （过滤条件）终端节点实例名称。</li>
-<li> end-point-id- String - （过滤条件）终端节点实例ID。</li>
-<li> vpc-id- String - （过滤条件）VPC实例ID。</li>
+<li> end-point-id- String - （过滤条件）终端节点实例ID。可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679) 
+接口获取。</li>
+<li> vpc-id- String - （过滤条件）VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。
+</li>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
@@ -168,10 +208,17 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 终端节点ID列表。
+                     * 终端节点ID列表。可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679) 
+获取。
                      */
                     std::vector<std::string> m_endPointId;
                     bool m_endPointIdHasBeenSet;
+
+                    /**
+                     * 协议类型，支持 Ipv4，Ipv6，默认 Ipv4。
+                     */
+                    std::string m_ipAddressType;
+                    bool m_ipAddressTypeHasBeenSet;
 
                 };
             }

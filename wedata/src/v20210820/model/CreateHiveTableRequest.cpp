@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,12 @@ CreateHiveTableRequest::CreateHiveTableRequest() :
     m_dDLSqlHasBeenSet(false),
     m_privilegeHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_inchargeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_inchargeHasBeenSet(false),
+    m_dataOptimizationResourceHasBeenSet(false),
+    m_smartOptimizerWrittenHasBeenSet(false),
+    m_tableNameHasBeenSet(false),
+    m_resourceGroupNameHasBeenSet(false)
 {
 }
 
@@ -79,12 +84,52 @@ string CreateHiveTableRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_inchargeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Incharge";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_incharge.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataOptimizationResourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataOptimizationResource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dataOptimizationResource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_smartOptimizerWrittenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SmartOptimizerWritten";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_smartOptimizerWritten.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tableNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tableName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceGroupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceGroupName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceGroupName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -175,6 +220,22 @@ bool CreateHiveTableRequest::ProjectIdHasBeenSet() const
     return m_projectIdHasBeenSet;
 }
 
+string CreateHiveTableRequest::GetType() const
+{
+    return m_type;
+}
+
+void CreateHiveTableRequest::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool CreateHiveTableRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
+}
+
 string CreateHiveTableRequest::GetIncharge() const
 {
     return m_incharge;
@@ -189,6 +250,70 @@ void CreateHiveTableRequest::SetIncharge(const string& _incharge)
 bool CreateHiveTableRequest::InchargeHasBeenSet() const
 {
     return m_inchargeHasBeenSet;
+}
+
+string CreateHiveTableRequest::GetDataOptimizationResource() const
+{
+    return m_dataOptimizationResource;
+}
+
+void CreateHiveTableRequest::SetDataOptimizationResource(const string& _dataOptimizationResource)
+{
+    m_dataOptimizationResource = _dataOptimizationResource;
+    m_dataOptimizationResourceHasBeenSet = true;
+}
+
+bool CreateHiveTableRequest::DataOptimizationResourceHasBeenSet() const
+{
+    return m_dataOptimizationResourceHasBeenSet;
+}
+
+string CreateHiveTableRequest::GetSmartOptimizerWritten() const
+{
+    return m_smartOptimizerWritten;
+}
+
+void CreateHiveTableRequest::SetSmartOptimizerWritten(const string& _smartOptimizerWritten)
+{
+    m_smartOptimizerWritten = _smartOptimizerWritten;
+    m_smartOptimizerWrittenHasBeenSet = true;
+}
+
+bool CreateHiveTableRequest::SmartOptimizerWrittenHasBeenSet() const
+{
+    return m_smartOptimizerWrittenHasBeenSet;
+}
+
+string CreateHiveTableRequest::GetTableName() const
+{
+    return m_tableName;
+}
+
+void CreateHiveTableRequest::SetTableName(const string& _tableName)
+{
+    m_tableName = _tableName;
+    m_tableNameHasBeenSet = true;
+}
+
+bool CreateHiveTableRequest::TableNameHasBeenSet() const
+{
+    return m_tableNameHasBeenSet;
+}
+
+string CreateHiveTableRequest::GetResourceGroupName() const
+{
+    return m_resourceGroupName;
+}
+
+void CreateHiveTableRequest::SetResourceGroupName(const string& _resourceGroupName)
+{
+    m_resourceGroupName = _resourceGroupName;
+    m_resourceGroupNameHasBeenSet = true;
+}
+
+bool CreateHiveTableRequest::ResourceGroupNameHasBeenSet() const
+{
+    return m_resourceGroupNameHasBeenSet;
 }
 
 

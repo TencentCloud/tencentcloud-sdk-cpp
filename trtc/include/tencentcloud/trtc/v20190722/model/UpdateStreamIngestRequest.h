@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取源流URL【必填】。
-                     * @return StreamUrl 源流URL【必填】。
+                     * 获取源流URL。
+                     * @return StreamUrl 源流URL。
                      * 
                      */
                     std::string GetStreamUrl() const;
 
                     /**
-                     * 设置源流URL【必填】。
-                     * @param _streamUrl 源流URL【必填】。
+                     * 设置源流URL。
+                     * @param _streamUrl 源流URL。
                      * 
                      */
                     void SetStreamUrl(const std::string& _streamUrl);
@@ -104,6 +104,48 @@ namespace TencentCloud
                      * 
                      */
                     bool StreamUrlHasBeenSet() const;
+
+                    /**
+                     * 获取音量，取值范围[0, 100]，默认100，表示原音量。
+                     * @return Volume 音量，取值范围[0, 100]，默认100，表示原音量。
+                     * 
+                     */
+                    uint64_t GetVolume() const;
+
+                    /**
+                     * 设置音量，取值范围[0, 100]，默认100，表示原音量。
+                     * @param _volume 音量，取值范围[0, 100]，默认100，表示原音量。
+                     * 
+                     */
+                    void SetVolume(const uint64_t& _volume);
+
+                    /**
+                     * 判断参数 Volume 是否已赋值
+                     * @return Volume 是否已赋值
+                     * 
+                     */
+                    bool VolumeHasBeenSet() const;
+
+                    /**
+                     * 获取是否暂停，默认false表示不暂停。暂停期间任务仍在进行中仍会计费，暂停超过12小时会自动销毁任务, 建议主动调用停止任务接口。
+                     * @return IsPause 是否暂停，默认false表示不暂停。暂停期间任务仍在进行中仍会计费，暂停超过12小时会自动销毁任务, 建议主动调用停止任务接口。
+                     * 
+                     */
+                    bool GetIsPause() const;
+
+                    /**
+                     * 设置是否暂停，默认false表示不暂停。暂停期间任务仍在进行中仍会计费，暂停超过12小时会自动销毁任务, 建议主动调用停止任务接口。
+                     * @param _isPause 是否暂停，默认false表示不暂停。暂停期间任务仍在进行中仍会计费，暂停超过12小时会自动销毁任务, 建议主动调用停止任务接口。
+                     * 
+                     */
+                    void SetIsPause(const bool& _isPause);
+
+                    /**
+                     * 判断参数 IsPause 是否已赋值
+                     * @return IsPause 是否已赋值
+                     * 
+                     */
+                    bool IsPauseHasBeenSet() const;
 
                 private:
 
@@ -120,10 +162,22 @@ namespace TencentCloud
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 源流URL【必填】。
+                     * 源流URL。
                      */
                     std::string m_streamUrl;
                     bool m_streamUrlHasBeenSet;
+
+                    /**
+                     * 音量，取值范围[0, 100]，默认100，表示原音量。
+                     */
+                    uint64_t m_volume;
+                    bool m_volumeHasBeenSet;
+
+                    /**
+                     * 是否暂停，默认false表示不暂停。暂停期间任务仍在进行中仍会计费，暂停超过12小时会自动销毁任务, 建议主动调用停止任务接口。
+                     */
+                    bool m_isPause;
+                    bool m_isPauseHasBeenSet;
 
                 };
             }

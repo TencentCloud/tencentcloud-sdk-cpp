@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -474,18 +474,18 @@ namespace TencentCloud
                     bool ClusterNameHasBeenSet() const;
 
                     /**
-                     * 获取最新配置版本号
+                     * 获取最新配置版本号，包括已经删除的版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LatestJobConfigVersion 最新配置版本号
+                     * @return LatestJobConfigVersion 最新配置版本号，包括已经删除的版本
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLatestJobConfigVersion() const;
 
                     /**
-                     * 设置最新配置版本号
+                     * 设置最新配置版本号，包括已经删除的版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _latestJobConfigVersion 最新配置版本号
+                     * @param _latestJobConfigVersion 最新配置版本号，包括已经删除的版本
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -497,6 +497,27 @@ namespace TencentCloud
                      * 
                      */
                     bool LatestJobConfigVersionHasBeenSet() const;
+
+                    /**
+                     * 获取最新的版本号，不包括已经删除的版本号
+                     * @return LatestValidJobConfigVersion 最新的版本号，不包括已经删除的版本号
+                     * 
+                     */
+                    int64_t GetLatestValidJobConfigVersion() const;
+
+                    /**
+                     * 设置最新的版本号，不包括已经删除的版本号
+                     * @param _latestValidJobConfigVersion 最新的版本号，不包括已经删除的版本号
+                     * 
+                     */
+                    void SetLatestValidJobConfigVersion(const int64_t& _latestValidJobConfigVersion);
+
+                    /**
+                     * 判断参数 LatestValidJobConfigVersion 是否已赋值
+                     * @return LatestValidJobConfigVersion 是否已赋值
+                     * 
+                     */
+                    bool LatestValidJobConfigVersionHasBeenSet() const;
 
                     /**
                      * 获取已发布的配置版本
@@ -977,6 +998,98 @@ namespace TencentCloud
                      */
                     bool RunningMemHasBeenSet() const;
 
+                    /**
+                     * 获取是否开了默认告警
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OpenJobDefaultAlarm 是否开了默认告警
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetOpenJobDefaultAlarm() const;
+
+                    /**
+                     * 设置是否开了默认告警
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _openJobDefaultAlarm 是否开了默认告警
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOpenJobDefaultAlarm(const int64_t& _openJobDefaultAlarm);
+
+                    /**
+                     * 判断参数 OpenJobDefaultAlarm 是否已赋值
+                     * @return OpenJobDefaultAlarm 是否已赋值
+                     * 
+                     */
+                    bool OpenJobDefaultAlarmHasBeenSet() const;
+
+                    /**
+                     * 获取操作中描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProgressDesc 操作中描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetProgressDesc() const;
+
+                    /**
+                     * 设置操作中描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _progressDesc 操作中描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProgressDesc(const std::string& _progressDesc);
+
+                    /**
+                     * 判断参数 ProgressDesc 是否已赋值
+                     * @return ProgressDesc 是否已赋值
+                     * 
+                     */
+                    bool ProgressDescHasBeenSet() const;
+
+                    /**
+                     * 获取停止持续告警
+                     * @return ContinueAlarm 停止持续告警
+                     * 
+                     */
+                    int64_t GetContinueAlarm() const;
+
+                    /**
+                     * 设置停止持续告警
+                     * @param _continueAlarm 停止持续告警
+                     * 
+                     */
+                    void SetContinueAlarm(const int64_t& _continueAlarm);
+
+                    /**
+                     * 判断参数 ContinueAlarm 是否已赋值
+                     * @return ContinueAlarm 是否已赋值
+                     * 
+                     */
+                    bool ContinueAlarmHasBeenSet() const;
+
+                    /**
+                     * 获取作业重启次数
+                     * @return RestartCount 作业重启次数
+                     * 
+                     */
+                    int64_t GetRestartCount() const;
+
+                    /**
+                     * 设置作业重启次数
+                     * @param _restartCount 作业重启次数
+                     * 
+                     */
+                    void SetRestartCount(const int64_t& _restartCount);
+
+                    /**
+                     * 判断参数 RestartCount 是否已赋值
+                     * @return RestartCount 是否已赋值
+                     * 
+                     */
+                    bool RestartCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1099,11 +1212,17 @@ namespace TencentCloud
                     bool m_clusterNameHasBeenSet;
 
                     /**
-                     * 最新配置版本号
+                     * 最新配置版本号，包括已经删除的版本
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_latestJobConfigVersion;
                     bool m_latestJobConfigVersionHasBeenSet;
+
+                    /**
+                     * 最新的版本号，不包括已经删除的版本号
+                     */
+                    int64_t m_latestValidJobConfigVersion;
+                    bool m_latestValidJobConfigVersionHasBeenSet;
 
                     /**
                      * 已发布的配置版本
@@ -1238,6 +1357,32 @@ namespace TencentCloud
                      */
                     double m_runningMem;
                     bool m_runningMemHasBeenSet;
+
+                    /**
+                     * 是否开了默认告警
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_openJobDefaultAlarm;
+                    bool m_openJobDefaultAlarmHasBeenSet;
+
+                    /**
+                     * 操作中描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_progressDesc;
+                    bool m_progressDescHasBeenSet;
+
+                    /**
+                     * 停止持续告警
+                     */
+                    int64_t m_continueAlarm;
+                    bool m_continueAlarmHasBeenSet;
+
+                    /**
+                     * 作业重启次数
+                     */
+                    int64_t m_restartCount;
+                    bool m_restartCountHasBeenSet;
 
                 };
             }

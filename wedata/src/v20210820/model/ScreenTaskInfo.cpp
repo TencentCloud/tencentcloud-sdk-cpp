@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,12 +27,14 @@ ScreenTaskInfo::ScreenTaskInfo() :
     m_stoppingNumHasBeenSet(false),
     m_stoppedNumHasBeenSet(false),
     m_frozenNumHasBeenSet(false),
+    m_invalidNumHasBeenSet(false),
     m_yearNumHasBeenSet(false),
     m_monthNumHasBeenSet(false),
     m_weekNumHasBeenSet(false),
     m_dayNumHasBeenSet(false),
     m_hourNumHasBeenSet(false),
-    m_minuteNumHasBeenSet(false)
+    m_minuteNumHasBeenSet(false),
+    m_workflowNumHasBeenSet(false)
 {
 }
 
@@ -101,6 +103,16 @@ CoreInternalOutcome ScreenTaskInfo::Deserialize(const rapidjson::Value &value)
         m_frozenNumHasBeenSet = true;
     }
 
+    if (value.HasMember("InvalidNum") && !value["InvalidNum"].IsNull())
+    {
+        if (!value["InvalidNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScreenTaskInfo.InvalidNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_invalidNum = value["InvalidNum"].GetUint64();
+        m_invalidNumHasBeenSet = true;
+    }
+
     if (value.HasMember("YearNum") && !value["YearNum"].IsNull())
     {
         if (!value["YearNum"].IsUint64())
@@ -161,6 +173,16 @@ CoreInternalOutcome ScreenTaskInfo::Deserialize(const rapidjson::Value &value)
         m_minuteNumHasBeenSet = true;
     }
 
+    if (value.HasMember("WorkflowNum") && !value["WorkflowNum"].IsNull())
+    {
+        if (!value["WorkflowNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScreenTaskInfo.WorkflowNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_workflowNum = value["WorkflowNum"].GetUint64();
+        m_workflowNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -216,6 +238,14 @@ void ScreenTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, m_frozenNum, allocator);
     }
 
+    if (m_invalidNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InvalidNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_invalidNum, allocator);
+    }
+
     if (m_yearNumHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -262,6 +292,14 @@ void ScreenTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "MinuteNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_minuteNum, allocator);
+    }
+
+    if (m_workflowNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkflowNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_workflowNum, allocator);
     }
 
 }
@@ -363,6 +401,22 @@ bool ScreenTaskInfo::FrozenNumHasBeenSet() const
     return m_frozenNumHasBeenSet;
 }
 
+uint64_t ScreenTaskInfo::GetInvalidNum() const
+{
+    return m_invalidNum;
+}
+
+void ScreenTaskInfo::SetInvalidNum(const uint64_t& _invalidNum)
+{
+    m_invalidNum = _invalidNum;
+    m_invalidNumHasBeenSet = true;
+}
+
+bool ScreenTaskInfo::InvalidNumHasBeenSet() const
+{
+    return m_invalidNumHasBeenSet;
+}
+
 uint64_t ScreenTaskInfo::GetYearNum() const
 {
     return m_yearNum;
@@ -457,5 +511,21 @@ void ScreenTaskInfo::SetMinuteNum(const uint64_t& _minuteNum)
 bool ScreenTaskInfo::MinuteNumHasBeenSet() const
 {
     return m_minuteNumHasBeenSet;
+}
+
+uint64_t ScreenTaskInfo::GetWorkflowNum() const
+{
+    return m_workflowNum;
+}
+
+void ScreenTaskInfo::SetWorkflowNum(const uint64_t& _workflowNum)
+{
+    m_workflowNum = _workflowNum;
+    m_workflowNumHasBeenSet = true;
+}
+
+bool ScreenTaskInfo::WorkflowNumHasBeenSet() const
+{
+    return m_workflowNumHasBeenSet;
 }
 

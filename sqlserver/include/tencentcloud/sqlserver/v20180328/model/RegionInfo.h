@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取地域英文ID，类似ap-guanghou
-                     * @return Region 地域英文ID，类似ap-guanghou
+                     * 获取地域英文ID，类似ap-guangzhou
+                     * @return Region 地域英文ID，类似ap-guangzhou
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置地域英文ID，类似ap-guanghou
-                     * @param _region 地域英文ID，类似ap-guanghou
+                     * 设置地域英文ID，类似ap-guangzhou
+                     * @param _region 地域英文ID，类似ap-guangzhou
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -133,7 +133,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 地域英文ID，类似ap-guanghou
+                     * 地域英文ID，类似ap-guangzhou
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;

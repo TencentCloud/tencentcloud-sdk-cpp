@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,14 @@ Project::Project() :
     m_panelScopeHasBeenSet(false),
     m_isExternalManageHasBeenSet(false),
     m_managePlatformHasBeenSet(false),
-    m_configListHasBeenSet(false)
+    m_configListHasBeenSet(false),
+    m_createdUserNameHasBeenSet(false),
+    m_ownerHasBeenSet(false),
+    m_ownerNameHasBeenSet(false),
+    m_normalCountHasBeenSet(false),
+    m_freeCountHasBeenSet(false),
+    m_adhocCountHasBeenSet(false),
+    m_briefingCountHasBeenSet(false)
 {
 }
 
@@ -273,6 +280,76 @@ CoreInternalOutcome Project::Deserialize(const rapidjson::Value &value)
         m_configListHasBeenSet = true;
     }
 
+    if (value.HasMember("CreatedUserName") && !value["CreatedUserName"].IsNull())
+    {
+        if (!value["CreatedUserName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Project.CreatedUserName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createdUserName = string(value["CreatedUserName"].GetString());
+        m_createdUserNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Owner") && !value["Owner"].IsNull())
+    {
+        if (!value["Owner"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Project.Owner` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_owner = string(value["Owner"].GetString());
+        m_ownerHasBeenSet = true;
+    }
+
+    if (value.HasMember("OwnerName") && !value["OwnerName"].IsNull())
+    {
+        if (!value["OwnerName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Project.OwnerName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ownerName = string(value["OwnerName"].GetString());
+        m_ownerNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("NormalCount") && !value["NormalCount"].IsNull())
+    {
+        if (!value["NormalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Project.NormalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_normalCount = value["NormalCount"].GetInt64();
+        m_normalCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("FreeCount") && !value["FreeCount"].IsNull())
+    {
+        if (!value["FreeCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Project.FreeCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_freeCount = value["FreeCount"].GetInt64();
+        m_freeCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("AdhocCount") && !value["AdhocCount"].IsNull())
+    {
+        if (!value["AdhocCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Project.AdhocCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_adhocCount = value["AdhocCount"].GetInt64();
+        m_adhocCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("BriefingCount") && !value["BriefingCount"].IsNull())
+    {
+        if (!value["BriefingCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Project.BriefingCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_briefingCount = value["BriefingCount"].GetInt64();
+        m_briefingCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -458,6 +535,62 @@ void Project::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_createdUserNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreatedUserName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdUserName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ownerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Owner";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_owner.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ownerNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OwnerName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ownerName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_normalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NormalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_normalCount, allocator);
+    }
+
+    if (m_freeCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FreeCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_freeCount, allocator);
+    }
+
+    if (m_adhocCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdhocCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_adhocCount, allocator);
+    }
+
+    if (m_briefingCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BriefingCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_briefingCount, allocator);
     }
 
 }
@@ -797,5 +930,117 @@ void Project::SetConfigList(const vector<ProjectConfigList>& _configList)
 bool Project::ConfigListHasBeenSet() const
 {
     return m_configListHasBeenSet;
+}
+
+string Project::GetCreatedUserName() const
+{
+    return m_createdUserName;
+}
+
+void Project::SetCreatedUserName(const string& _createdUserName)
+{
+    m_createdUserName = _createdUserName;
+    m_createdUserNameHasBeenSet = true;
+}
+
+bool Project::CreatedUserNameHasBeenSet() const
+{
+    return m_createdUserNameHasBeenSet;
+}
+
+string Project::GetOwner() const
+{
+    return m_owner;
+}
+
+void Project::SetOwner(const string& _owner)
+{
+    m_owner = _owner;
+    m_ownerHasBeenSet = true;
+}
+
+bool Project::OwnerHasBeenSet() const
+{
+    return m_ownerHasBeenSet;
+}
+
+string Project::GetOwnerName() const
+{
+    return m_ownerName;
+}
+
+void Project::SetOwnerName(const string& _ownerName)
+{
+    m_ownerName = _ownerName;
+    m_ownerNameHasBeenSet = true;
+}
+
+bool Project::OwnerNameHasBeenSet() const
+{
+    return m_ownerNameHasBeenSet;
+}
+
+int64_t Project::GetNormalCount() const
+{
+    return m_normalCount;
+}
+
+void Project::SetNormalCount(const int64_t& _normalCount)
+{
+    m_normalCount = _normalCount;
+    m_normalCountHasBeenSet = true;
+}
+
+bool Project::NormalCountHasBeenSet() const
+{
+    return m_normalCountHasBeenSet;
+}
+
+int64_t Project::GetFreeCount() const
+{
+    return m_freeCount;
+}
+
+void Project::SetFreeCount(const int64_t& _freeCount)
+{
+    m_freeCount = _freeCount;
+    m_freeCountHasBeenSet = true;
+}
+
+bool Project::FreeCountHasBeenSet() const
+{
+    return m_freeCountHasBeenSet;
+}
+
+int64_t Project::GetAdhocCount() const
+{
+    return m_adhocCount;
+}
+
+void Project::SetAdhocCount(const int64_t& _adhocCount)
+{
+    m_adhocCount = _adhocCount;
+    m_adhocCountHasBeenSet = true;
+}
+
+bool Project::AdhocCountHasBeenSet() const
+{
+    return m_adhocCountHasBeenSet;
+}
+
+int64_t Project::GetBriefingCount() const
+{
+    return m_briefingCount;
+}
+
+void Project::SetBriefingCount(const int64_t& _briefingCount)
+{
+    m_briefingCount = _briefingCount;
+    m_briefingCountHasBeenSet = true;
+}
+
+bool Project::BriefingCountHasBeenSet() const
+{
+    return m_briefingCountHasBeenSet;
 }
 

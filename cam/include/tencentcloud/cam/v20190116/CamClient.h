@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,6 +55,8 @@
 #include <tencentcloud/cam/v20190116/model/CreateSAMLProviderResponse.h>
 #include <tencentcloud/cam/v20190116/model/CreateServiceLinkedRoleRequest.h>
 #include <tencentcloud/cam/v20190116/model/CreateServiceLinkedRoleResponse.h>
+#include <tencentcloud/cam/v20190116/model/CreateSubAccountLoginIpPolicyRequest.h>
+#include <tencentcloud/cam/v20190116/model/CreateSubAccountLoginIpPolicyResponse.h>
 #include <tencentcloud/cam/v20190116/model/CreateUserOIDCConfigRequest.h>
 #include <tencentcloud/cam/v20190116/model/CreateUserOIDCConfigResponse.h>
 #include <tencentcloud/cam/v20190116/model/CreateUserSAMLConfigRequest.h>
@@ -195,6 +197,8 @@
 #include <tencentcloud/cam/v20190116/model/UpdateRoleConsoleLoginResponse.h>
 #include <tencentcloud/cam/v20190116/model/UpdateRoleDescriptionRequest.h>
 #include <tencentcloud/cam/v20190116/model/UpdateRoleDescriptionResponse.h>
+#include <tencentcloud/cam/v20190116/model/UpdateRoleSessionDurationRequest.h>
+#include <tencentcloud/cam/v20190116/model/UpdateRoleSessionDurationResponse.h>
 #include <tencentcloud/cam/v20190116/model/UpdateSAMLProviderRequest.h>
 #include <tencentcloud/cam/v20190116/model/UpdateSAMLProviderResponse.h>
 #include <tencentcloud/cam/v20190116/model/UpdateUserRequest.h>
@@ -265,6 +269,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateServiceLinkedRoleResponse> CreateServiceLinkedRoleOutcome;
                 typedef std::future<CreateServiceLinkedRoleOutcome> CreateServiceLinkedRoleOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::CreateServiceLinkedRoleRequest&, CreateServiceLinkedRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateServiceLinkedRoleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSubAccountLoginIpPolicyResponse> CreateSubAccountLoginIpPolicyOutcome;
+                typedef std::future<CreateSubAccountLoginIpPolicyOutcome> CreateSubAccountLoginIpPolicyOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::CreateSubAccountLoginIpPolicyRequest&, CreateSubAccountLoginIpPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSubAccountLoginIpPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateUserOIDCConfigResponse> CreateUserOIDCConfigOutcome;
                 typedef std::future<CreateUserOIDCConfigOutcome> CreateUserOIDCConfigOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::CreateUserOIDCConfigRequest&, CreateUserOIDCConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserOIDCConfigAsyncHandler;
@@ -475,6 +482,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateRoleDescriptionResponse> UpdateRoleDescriptionOutcome;
                 typedef std::future<UpdateRoleDescriptionOutcome> UpdateRoleDescriptionOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::UpdateRoleDescriptionRequest&, UpdateRoleDescriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRoleDescriptionAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateRoleSessionDurationResponse> UpdateRoleSessionDurationOutcome;
+                typedef std::future<UpdateRoleSessionDurationOutcome> UpdateRoleSessionDurationOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::UpdateRoleSessionDurationRequest&, UpdateRoleSessionDurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRoleSessionDurationAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateSAMLProviderResponse> UpdateSAMLProviderOutcome;
                 typedef std::future<UpdateSAMLProviderOutcome> UpdateSAMLProviderOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::UpdateSAMLProviderRequest&, UpdateSAMLProviderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateSAMLProviderAsyncHandler;
@@ -633,6 +643,15 @@ namespace TencentCloud
                 CreateServiceLinkedRoleOutcome CreateServiceLinkedRole(const Model::CreateServiceLinkedRoleRequest &request);
                 void CreateServiceLinkedRoleAsync(const Model::CreateServiceLinkedRoleRequest& request, const CreateServiceLinkedRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateServiceLinkedRoleOutcomeCallable CreateServiceLinkedRoleCallable(const Model::CreateServiceLinkedRoleRequest& request);
+
+                /**
+                 *增加子账号登录IP策略
+                 * @param req CreateSubAccountLoginIpPolicyRequest
+                 * @return CreateSubAccountLoginIpPolicyOutcome
+                 */
+                CreateSubAccountLoginIpPolicyOutcome CreateSubAccountLoginIpPolicy(const Model::CreateSubAccountLoginIpPolicyRequest &request);
+                void CreateSubAccountLoginIpPolicyAsync(const Model::CreateSubAccountLoginIpPolicyRequest& request, const CreateSubAccountLoginIpPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSubAccountLoginIpPolicyOutcomeCallable CreateSubAccountLoginIpPolicyCallable(const Model::CreateSubAccountLoginIpPolicyRequest& request);
 
                 /**
                  *创建用户OIDC配置。只能创建一个用户OIDC身份提供商，并且创建用户OIDC配置之后会自动关闭用户SAML SSO身份提供商。
@@ -1265,6 +1284,15 @@ namespace TencentCloud
                 UpdateRoleDescriptionOutcome UpdateRoleDescription(const Model::UpdateRoleDescriptionRequest &request);
                 void UpdateRoleDescriptionAsync(const Model::UpdateRoleDescriptionRequest& request, const UpdateRoleDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateRoleDescriptionOutcomeCallable UpdateRoleDescriptionCallable(const Model::UpdateRoleDescriptionRequest& request);
+
+                /**
+                 *修改角色会话时长 
+                 * @param req UpdateRoleSessionDurationRequest
+                 * @return UpdateRoleSessionDurationOutcome
+                 */
+                UpdateRoleSessionDurationOutcome UpdateRoleSessionDuration(const Model::UpdateRoleSessionDurationRequest &request);
+                void UpdateRoleSessionDurationAsync(const Model::UpdateRoleSessionDurationRequest& request, const UpdateRoleSessionDurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateRoleSessionDurationOutcomeCallable UpdateRoleSessionDurationCallable(const Model::UpdateRoleSessionDurationRequest& request);
 
                 /**
                  *更新SAML身份提供商信息

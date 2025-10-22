@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -110,13 +110,11 @@ namespace TencentCloud
                     bool VersionHasBeenSet() const;
 
                     /**
-                     * 获取实例类型，
-EXPERIMENT，体验版
+                     * 获取实例类型
 BASIC，基础版
 PRO，专业版
 PLATINUM，铂金版
-                     * @return InstanceType 实例类型，
-EXPERIMENT，体验版
+                     * @return InstanceType 实例类型
 BASIC，基础版
 PRO，专业版
 PLATINUM，铂金版
@@ -125,13 +123,11 @@ PLATINUM，铂金版
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置实例类型，
-EXPERIMENT，体验版
+                     * 设置实例类型
 BASIC，基础版
 PRO，专业版
 PLATINUM，铂金版
-                     * @param _instanceType 实例类型，
-EXPERIMENT，体验版
+                     * @param _instanceType 实例类型
 BASIC，基础版
 PRO，专业版
 PLATINUM，铂金版
@@ -152,7 +148,6 @@ RUNNING, 运行中
 MAINTAINING，维护中
 ABNORMAL，异常
 OVERDUE，欠费
-DESTROYED，已删除
 CREATING，创建中
 MODIFYING，变配中
 CREATE_FAILURE，创建失败
@@ -163,7 +158,6 @@ RUNNING, 运行中
 MAINTAINING，维护中
 ABNORMAL，异常
 OVERDUE，欠费
-DESTROYED，已删除
 CREATING，创建中
 MODIFYING，变配中
 CREATE_FAILURE，创建失败
@@ -179,7 +173,6 @@ RUNNING, 运行中
 MAINTAINING，维护中
 ABNORMAL，异常
 OVERDUE，欠费
-DESTROYED，已删除
 CREATING，创建中
 MODIFYING，变配中
 CREATE_FAILURE，创建失败
@@ -190,7 +183,6 @@ RUNNING, 运行中
 MAINTAINING，维护中
 ABNORMAL，异常
 OVERDUE，欠费
-DESTROYED，已删除
 CREATING，创建中
 MODIFYING，变配中
 CREATE_FAILURE，创建失败
@@ -230,18 +222,14 @@ DELETING，删除中
 
                     /**
                      * 获取备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -297,18 +285,14 @@ DELETING，删除中
 
                     /**
                      * 获取弹性TPS限流值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TpsLimit 弹性TPS限流值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTpsLimit() const;
 
                     /**
                      * 设置弹性TPS限流值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tpsLimit 弹性TPS限流值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTpsLimit(const int64_t& _tpsLimit);
@@ -321,19 +305,15 @@ DELETING，删除中
                     bool TpsLimitHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取创建时间，毫秒级时间戳
+                     * @return CreateTime 创建时间，毫秒级时间戳
                      * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置创建时间，毫秒级时间戳
+                     * @param _createTime 创建时间，毫秒级时间戳
                      * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
@@ -347,18 +327,14 @@ DELETING，删除中
 
                     /**
                      * 获取单客户端最大订阅数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxSubscriptionPerClient 单客户端最大订阅数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxSubscriptionPerClient() const;
 
                     /**
                      * 设置单客户端最大订阅数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxSubscriptionPerClient 单客户端最大订阅数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxSubscriptionPerClient(const int64_t& _maxSubscriptionPerClient);
@@ -372,18 +348,14 @@ DELETING，删除中
 
                     /**
                      * 获取客户端连接数上线
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientNumLimit 客户端连接数上线
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetClientNumLimit() const;
 
                     /**
                      * 设置客户端连接数上线
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clientNumLimit 客户端连接数上线
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClientNumLimit(const int64_t& _clientNumLimit);
@@ -396,19 +368,23 @@ DELETING，删除中
                     bool ClientNumLimitHasBeenSet() const;
 
                     /**
-                     * 获取是否自动续费
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RenewFlag 是否自动续费
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取是否自动续费。仅包年包月集群生效。
+1:自动续费
+0:非自动续费
+                     * @return RenewFlag 是否自动续费。仅包年包月集群生效。
+1:自动续费
+0:非自动续费
                      * 
                      */
                     int64_t GetRenewFlag() const;
 
                     /**
-                     * 设置是否自动续费
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _renewFlag 是否自动续费
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置是否自动续费。仅包年包月集群生效。
+1:自动续费
+0:非自动续费
+                     * @param _renewFlag 是否自动续费。仅包年包月集群生效。
+1:自动续费
+0:非自动续费
                      * 
                      */
                     void SetRenewFlag(const int64_t& _renewFlag);
@@ -422,18 +398,14 @@ DELETING，删除中
 
                     /**
                      * 获取计费模式， POSTPAID，按量计费 PREPAID，包年包月
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayMode 计费模式， POSTPAID，按量计费 PREPAID，包年包月
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPayMode() const;
 
                     /**
                      * 设置计费模式， POSTPAID，按量计费 PREPAID，包年包月
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _payMode 计费模式， POSTPAID，按量计费 PREPAID，包年包月
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPayMode(const std::string& _payMode);
@@ -446,19 +418,15 @@ DELETING，删除中
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取到期时间，秒为单位
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExpiryTime 到期时间，秒为单位
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取到期时间，毫秒级时间戳
+                     * @return ExpiryTime 到期时间，毫秒级时间戳
                      * 
                      */
                     int64_t GetExpiryTime() const;
 
                     /**
-                     * 设置到期时间，秒为单位
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _expiryTime 到期时间，秒为单位
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置到期时间，毫秒级时间戳
+                     * @param _expiryTime 到期时间，毫秒级时间戳
                      * 
                      */
                     void SetExpiryTime(const int64_t& _expiryTime);
@@ -471,19 +439,15 @@ DELETING，删除中
                     bool ExpiryTimeHasBeenSet() const;
 
                     /**
-                     * 获取预销毁时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DestroyTime 预销毁时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取预销毁时间，毫秒级时间戳
+                     * @return DestroyTime 预销毁时间，毫秒级时间戳
                      * 
                      */
                     int64_t GetDestroyTime() const;
 
                     /**
-                     * 设置预销毁时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _destroyTime 预销毁时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置预销毁时间，毫秒级时间戳
+                     * @param _destroyTime 预销毁时间，毫秒级时间戳
                      * 
                      */
                     void SetDestroyTime(const int64_t& _destroyTime);
@@ -497,18 +461,14 @@ DELETING，删除中
 
                     /**
                      * 获取授权规则条数限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthorizationPolicyLimit 授权规则条数限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAuthorizationPolicyLimit() const;
 
                     /**
                      * 设置授权规则条数限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _authorizationPolicyLimit 授权规则条数限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuthorizationPolicyLimit(const int64_t& _authorizationPolicyLimit);
@@ -522,18 +482,14 @@ DELETING，删除中
 
                     /**
                      * 获取最大ca配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxCaNum 最大ca配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxCaNum() const;
 
                     /**
                      * 设置最大ca配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxCaNum 最大ca配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxCaNum(const int64_t& _maxCaNum);
@@ -547,18 +503,14 @@ DELETING，删除中
 
                     /**
                      * 获取最大订阅数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxSubscription 最大订阅数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxSubscription() const;
 
                     /**
                      * 设置最大订阅数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxSubscription 最大订阅数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxSubscription(const int64_t& _maxSubscription);
@@ -569,6 +521,90 @@ DELETING，删除中
                      * 
                      */
                     bool MaxSubscriptionHasBeenSet() const;
+
+                    /**
+                     * 获取共享订阅组数最大限制
+                     * @return SharedSubscriptionGroupLimit 共享订阅组数最大限制
+                     * 
+                     */
+                    int64_t GetSharedSubscriptionGroupLimit() const;
+
+                    /**
+                     * 设置共享订阅组数最大限制
+                     * @param _sharedSubscriptionGroupLimit 共享订阅组数最大限制
+                     * 
+                     */
+                    void SetSharedSubscriptionGroupLimit(const int64_t& _sharedSubscriptionGroupLimit);
+
+                    /**
+                     * 判断参数 SharedSubscriptionGroupLimit 是否已赋值
+                     * @return SharedSubscriptionGroupLimit 是否已赋值
+                     * 
+                     */
+                    bool SharedSubscriptionGroupLimitHasBeenSet() const;
+
+                    /**
+                     * 获取单个共享订阅组TopicFilter数限制
+                     * @return MaxTopicFilterPerSharedSubscriptionGroup 单个共享订阅组TopicFilter数限制
+                     * 
+                     */
+                    int64_t GetMaxTopicFilterPerSharedSubscriptionGroup() const;
+
+                    /**
+                     * 设置单个共享订阅组TopicFilter数限制
+                     * @param _maxTopicFilterPerSharedSubscriptionGroup 单个共享订阅组TopicFilter数限制
+                     * 
+                     */
+                    void SetMaxTopicFilterPerSharedSubscriptionGroup(const int64_t& _maxTopicFilterPerSharedSubscriptionGroup);
+
+                    /**
+                     * 判断参数 MaxTopicFilterPerSharedSubscriptionGroup 是否已赋值
+                     * @return MaxTopicFilterPerSharedSubscriptionGroup 是否已赋值
+                     * 
+                     */
+                    bool MaxTopicFilterPerSharedSubscriptionGroupHasBeenSet() const;
+
+                    /**
+                     * 获取自动订阅规则条数限制
+                     * @return AutoSubscriptionPolicyLimit 自动订阅规则条数限制
+                     * 
+                     */
+                    int64_t GetAutoSubscriptionPolicyLimit() const;
+
+                    /**
+                     * 设置自动订阅规则条数限制
+                     * @param _autoSubscriptionPolicyLimit 自动订阅规则条数限制
+                     * 
+                     */
+                    void SetAutoSubscriptionPolicyLimit(const int64_t& _autoSubscriptionPolicyLimit);
+
+                    /**
+                     * 判断参数 AutoSubscriptionPolicyLimit 是否已赋值
+                     * @return AutoSubscriptionPolicyLimit 是否已赋值
+                     * 
+                     */
+                    bool AutoSubscriptionPolicyLimitHasBeenSet() const;
+
+                    /**
+                     * 获取单条自动订阅规则TopicFilter数限制
+                     * @return MaxTopicFilterPerAutoSubscriptionPolicy 单条自动订阅规则TopicFilter数限制
+                     * 
+                     */
+                    int64_t GetMaxTopicFilterPerAutoSubscriptionPolicy() const;
+
+                    /**
+                     * 设置单条自动订阅规则TopicFilter数限制
+                     * @param _maxTopicFilterPerAutoSubscriptionPolicy 单条自动订阅规则TopicFilter数限制
+                     * 
+                     */
+                    void SetMaxTopicFilterPerAutoSubscriptionPolicy(const int64_t& _maxTopicFilterPerAutoSubscriptionPolicy);
+
+                    /**
+                     * 判断参数 MaxTopicFilterPerAutoSubscriptionPolicy 是否已赋值
+                     * @return MaxTopicFilterPerAutoSubscriptionPolicy 是否已赋值
+                     * 
+                     */
+                    bool MaxTopicFilterPerAutoSubscriptionPolicyHasBeenSet() const;
 
                 private:
 
@@ -591,8 +627,7 @@ DELETING，删除中
                     bool m_versionHasBeenSet;
 
                     /**
-                     * 实例类型，
-EXPERIMENT，体验版
+                     * 实例类型
 BASIC，基础版
 PRO，专业版
 PLATINUM，铂金版
@@ -606,7 +641,6 @@ RUNNING, 运行中
 MAINTAINING，维护中
 ABNORMAL，异常
 OVERDUE，欠费
-DESTROYED，已删除
 CREATING，创建中
 MODIFYING，变配中
 CREATE_FAILURE，创建失败
@@ -624,7 +658,6 @@ DELETING，删除中
 
                     /**
                      * 备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
@@ -643,80 +676,95 @@ DELETING，删除中
 
                     /**
                      * 弹性TPS限流值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_tpsLimit;
                     bool m_tpsLimitHasBeenSet;
 
                     /**
-                     * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 创建时间，毫秒级时间戳
                      */
                     int64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 单客户端最大订阅数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxSubscriptionPerClient;
                     bool m_maxSubscriptionPerClientHasBeenSet;
 
                     /**
                      * 客户端连接数上线
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_clientNumLimit;
                     bool m_clientNumLimitHasBeenSet;
 
                     /**
-                     * 是否自动续费
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 是否自动续费。仅包年包月集群生效。
+1:自动续费
+0:非自动续费
                      */
                     int64_t m_renewFlag;
                     bool m_renewFlagHasBeenSet;
 
                     /**
                      * 计费模式， POSTPAID，按量计费 PREPAID，包年包月
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 到期时间，秒为单位
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 到期时间，毫秒级时间戳
                      */
                     int64_t m_expiryTime;
                     bool m_expiryTimeHasBeenSet;
 
                     /**
-                     * 预销毁时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 预销毁时间，毫秒级时间戳
                      */
                     int64_t m_destroyTime;
                     bool m_destroyTimeHasBeenSet;
 
                     /**
                      * 授权规则条数限制
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_authorizationPolicyLimit;
                     bool m_authorizationPolicyLimitHasBeenSet;
 
                     /**
                      * 最大ca配额
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxCaNum;
                     bool m_maxCaNumHasBeenSet;
 
                     /**
                      * 最大订阅数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxSubscription;
                     bool m_maxSubscriptionHasBeenSet;
+
+                    /**
+                     * 共享订阅组数最大限制
+                     */
+                    int64_t m_sharedSubscriptionGroupLimit;
+                    bool m_sharedSubscriptionGroupLimitHasBeenSet;
+
+                    /**
+                     * 单个共享订阅组TopicFilter数限制
+                     */
+                    int64_t m_maxTopicFilterPerSharedSubscriptionGroup;
+                    bool m_maxTopicFilterPerSharedSubscriptionGroupHasBeenSet;
+
+                    /**
+                     * 自动订阅规则条数限制
+                     */
+                    int64_t m_autoSubscriptionPolicyLimit;
+                    bool m_autoSubscriptionPolicyLimitHasBeenSet;
+
+                    /**
+                     * 单条自动订阅规则TopicFilter数限制
+                     */
+                    int64_t m_maxTopicFilterPerAutoSubscriptionPolicy;
+                    bool m_maxTopicFilterPerAutoSubscriptionPolicyHasBeenSet;
 
                 };
             }

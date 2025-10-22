@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用id列表
-                     * @return ApplicationIds 应用id列表
+                     * 获取应用id列表。单次请求数量上限为100个。
+                     * @return ApplicationIds 应用id列表。单次请求数量上限为100个。
                      * 
                      */
                     std::vector<std::string> GetApplicationIds() const;
 
                     /**
-                     * 设置应用id列表
-                     * @param _applicationIds 应用id列表
+                     * 设置应用id列表。单次请求数量上限为100个。
+                     * @param _applicationIds 应用id列表。单次请求数量上限为100个。
                      * 
                      */
                     void SetApplicationIds(const std::vector<std::string>& _applicationIds);
@@ -65,31 +65,15 @@ namespace TencentCloud
                     bool ApplicationIdsHasBeenSet() const;
 
                     /**
-                     * 获取过滤器，跟ApplicationIds不能共用，支持的filter主要有：
-application-id: 精确匹配;
-scene-id: 精确匹配;
-application-name: 模糊匹配;
-application-type: 精确匹配;
-                     * @return Filters 过滤器，跟ApplicationIds不能共用，支持的filter主要有：
-application-id: 精确匹配;
-scene-id: 精确匹配;
-application-name: 模糊匹配;
-application-type: 精确匹配;
+                     * 获取过滤器，跟ApplicationIds不能共用，支持的filter主要有：application-id: 精确匹配;scene-id: 精确匹配，通过调用接口 [DescribeScenes](https://cloud.tencent.com/document/api/1721/101608)获取;application-name: 模糊匹配;application-type: 精确匹配，枚举类型如下：PUBLIC_APPLICATION（公共应用）/ PRIVATE_APPLICATION（自定义应用）/ COMMUNITY_APPLICATION（社区应用）;
+                     * @return Filters 过滤器，跟ApplicationIds不能共用，支持的filter主要有：application-id: 精确匹配;scene-id: 精确匹配，通过调用接口 [DescribeScenes](https://cloud.tencent.com/document/api/1721/101608)获取;application-name: 模糊匹配;application-type: 精确匹配，枚举类型如下：PUBLIC_APPLICATION（公共应用）/ PRIVATE_APPLICATION（自定义应用）/ COMMUNITY_APPLICATION（社区应用）;
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤器，跟ApplicationIds不能共用，支持的filter主要有：
-application-id: 精确匹配;
-scene-id: 精确匹配;
-application-name: 模糊匹配;
-application-type: 精确匹配;
-                     * @param _filters 过滤器，跟ApplicationIds不能共用，支持的filter主要有：
-application-id: 精确匹配;
-scene-id: 精确匹配;
-application-name: 模糊匹配;
-application-type: 精确匹配;
+                     * 设置过滤器，跟ApplicationIds不能共用，支持的filter主要有：application-id: 精确匹配;scene-id: 精确匹配，通过调用接口 [DescribeScenes](https://cloud.tencent.com/document/api/1721/101608)获取;application-name: 模糊匹配;application-type: 精确匹配，枚举类型如下：PUBLIC_APPLICATION（公共应用）/ PRIVATE_APPLICATION（自定义应用）/ COMMUNITY_APPLICATION（社区应用）;
+                     * @param _filters 过滤器，跟ApplicationIds不能共用，支持的filter主要有：application-id: 精确匹配;scene-id: 精确匹配，通过调用接口 [DescribeScenes](https://cloud.tencent.com/document/api/1721/101608)获取;application-name: 模糊匹配;application-type: 精确匹配，枚举类型如下：PUBLIC_APPLICATION（公共应用）/ PRIVATE_APPLICATION（自定义应用）/ COMMUNITY_APPLICATION（社区应用）;
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -102,15 +86,15 @@ application-type: 精确匹配;
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为0
-                     * @return Offset 偏移量，默认为0
+                     * 获取偏移量，不得小于0，默认为0
+                     * @return Offset 偏移量，不得小于0，默认为0
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为0
-                     * @param _offset 偏移量，默认为0
+                     * 设置偏移量，不得小于0，默认为0
+                     * @param _offset 偏移量，不得小于0，默认为0
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -123,27 +107,15 @@ application-type: 精确匹配;
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回量，默认为20
-MC：1000
-用户：100
-
-                     * @return Limit 返回量，默认为20
-MC：1000
-用户：100
-
+                     * 获取返回量，不得大于100，默认为20
+                     * @return Limit 返回量，不得大于100，默认为20
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回量，默认为20
-MC：1000
-用户：100
-
-                     * @param _limit 返回量，默认为20
-MC：1000
-用户：100
-
+                     * 设置返回量，不得大于100，默认为20
+                     * @param _limit 返回量，不得大于100，默认为20
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -200,32 +172,25 @@ MC：1000
                 private:
 
                     /**
-                     * 应用id列表
+                     * 应用id列表。单次请求数量上限为100个。
                      */
                     std::vector<std::string> m_applicationIds;
                     bool m_applicationIdsHasBeenSet;
 
                     /**
-                     * 过滤器，跟ApplicationIds不能共用，支持的filter主要有：
-application-id: 精确匹配;
-scene-id: 精确匹配;
-application-name: 模糊匹配;
-application-type: 精确匹配;
+                     * 过滤器，跟ApplicationIds不能共用，支持的filter主要有：application-id: 精确匹配;scene-id: 精确匹配，通过调用接口 [DescribeScenes](https://cloud.tencent.com/document/api/1721/101608)获取;application-name: 模糊匹配;application-type: 精确匹配，枚举类型如下：PUBLIC_APPLICATION（公共应用）/ PRIVATE_APPLICATION（自定义应用）/ COMMUNITY_APPLICATION（社区应用）;
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 偏移量，默认为0
+                     * 偏移量，不得小于0，默认为0
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回量，默认为20
-MC：1000
-用户：100
-
+                     * 返回量，不得大于100，默认为20
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

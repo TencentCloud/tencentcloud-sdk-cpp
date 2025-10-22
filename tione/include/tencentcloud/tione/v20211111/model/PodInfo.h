@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -197,6 +197,31 @@ namespace TencentCloud
                      */
                     bool ResourceConfigInfoHasBeenSet() const;
 
+                    /**
+                     * 获取Pod所属任务的SubUin信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubUin Pod所属任务的SubUin信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSubUin() const;
+
+                    /**
+                     * 设置Pod所属任务的SubUin信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subUin Pod所属任务的SubUin信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubUin(const std::string& _subUin);
+
+                    /**
+                     * 判断参数 SubUin 是否已赋值
+                     * @return SubUin 是否已赋值
+                     * 
+                     */
+                    bool SubUinHasBeenSet() const;
+
                 private:
 
                     /**
@@ -240,6 +265,13 @@ namespace TencentCloud
                      */
                     ResourceConfigInfo m_resourceConfigInfo;
                     bool m_resourceConfigInfoHasBeenSet;
+
+                    /**
+                     * Pod所属任务的SubUin信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subUin;
+                    bool m_subUinHasBeenSet;
 
                 };
             }

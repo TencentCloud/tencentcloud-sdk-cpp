@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/trocket/v20230308/model/DetailedRolePerm.h>
 
 
 namespace TencentCloud
@@ -43,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return InstanceId 集群ID
+                     * 获取腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。
+                     * @return InstanceId 腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _instanceId 集群ID
+                     * 设置腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。
+                     * @param _instanceId 腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取角色名称
-                     * @return Role 角色名称
+                     * 获取角色名称，不能为空，只支持数字 大小写字母 分隔符("_","-")，不能超过 32 个字符
+                     * @return Role 角色名称，不能为空，只支持数字 大小写字母 分隔符("_","-")，不能超过 32 个字符
                      * 
                      */
                     std::string GetRole() const;
 
                     /**
-                     * 设置角色名称
-                     * @param _role 角色名称
+                     * 设置角色名称，不能为空，只支持数字 大小写字母 分隔符("_","-")，不能超过 32 个字符
+                     * @param _role 角色名称，不能为空，只支持数字 大小写字母 分隔符("_","-")，不能超过 32 个字符
                      * 
                      */
                     void SetRole(const std::string& _role);
@@ -83,27 +84,6 @@ namespace TencentCloud
                      * 
                      */
                     bool RoleHasBeenSet() const;
-
-                    /**
-                     * 获取备注
-                     * @return Remark 备注
-                     * 
-                     */
-                    std::string GetRemark() const;
-
-                    /**
-                     * 设置备注
-                     * @param _remark 备注
-                     * 
-                     */
-                    void SetRemark(const std::string& _remark);
-
-                    /**
-                     * 判断参数 Remark 是否已赋值
-                     * @return Remark 是否已赋值
-                     * 
-                     */
-                    bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取是否开启生产权限
@@ -147,25 +127,82 @@ namespace TencentCloud
                      */
                     bool PermReadHasBeenSet() const;
 
+                    /**
+                     * 获取备注
+                     * @return Remark 备注
+                     * 
+                     */
+                    std::string GetRemark() const;
+
+                    /**
+                     * 设置备注
+                     * @param _remark 备注
+                     * 
+                     */
+                    void SetRemark(const std::string& _remark);
+
+                    /**
+                     * 判断参数 Remark 是否已赋值
+                     * @return Remark 是否已赋值
+                     * 
+                     */
+                    bool RemarkHasBeenSet() const;
+
+                    /**
+                     * 获取权限类型，默认按集群授权（Cluster：集群级别；TopicAndGroup：主题&消费组级别）
+                     * @return PermType 权限类型，默认按集群授权（Cluster：集群级别；TopicAndGroup：主题&消费组级别）
+                     * 
+                     */
+                    std::string GetPermType() const;
+
+                    /**
+                     * 设置权限类型，默认按集群授权（Cluster：集群级别；TopicAndGroup：主题&消费组级别）
+                     * @param _permType 权限类型，默认按集群授权（Cluster：集群级别；TopicAndGroup：主题&消费组级别）
+                     * 
+                     */
+                    void SetPermType(const std::string& _permType);
+
+                    /**
+                     * 判断参数 PermType 是否已赋值
+                     * @return PermType 是否已赋值
+                     * 
+                     */
+                    bool PermTypeHasBeenSet() const;
+
+                    /**
+                     * 获取Topic&Group维度权限配置，权限类型为 TopicAndGroup 时必填
+                     * @return DetailedPerms Topic&Group维度权限配置，权限类型为 TopicAndGroup 时必填
+                     * 
+                     */
+                    std::vector<DetailedRolePerm> GetDetailedPerms() const;
+
+                    /**
+                     * 设置Topic&Group维度权限配置，权限类型为 TopicAndGroup 时必填
+                     * @param _detailedPerms Topic&Group维度权限配置，权限类型为 TopicAndGroup 时必填
+                     * 
+                     */
+                    void SetDetailedPerms(const std::vector<DetailedRolePerm>& _detailedPerms);
+
+                    /**
+                     * 判断参数 DetailedPerms 是否已赋值
+                     * @return DetailedPerms 是否已赋值
+                     * 
+                     */
+                    bool DetailedPermsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 集群ID
+                     * 腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 角色名称
+                     * 角色名称，不能为空，只支持数字 大小写字母 分隔符("_","-")，不能超过 32 个字符
                      */
                     std::string m_role;
                     bool m_roleHasBeenSet;
-
-                    /**
-                     * 备注
-                     */
-                    std::string m_remark;
-                    bool m_remarkHasBeenSet;
 
                     /**
                      * 是否开启生产权限
@@ -178,6 +215,24 @@ namespace TencentCloud
                      */
                     bool m_permRead;
                     bool m_permReadHasBeenSet;
+
+                    /**
+                     * 备注
+                     */
+                    std::string m_remark;
+                    bool m_remarkHasBeenSet;
+
+                    /**
+                     * 权限类型，默认按集群授权（Cluster：集群级别；TopicAndGroup：主题&消费组级别）
+                     */
+                    std::string m_permType;
+                    bool m_permTypeHasBeenSet;
+
+                    /**
+                     * Topic&Group维度权限配置，权限类型为 TopicAndGroup 时必填
+                     */
+                    std::vector<DetailedRolePerm> m_detailedPerms;
+                    bool m_detailedPermsHasBeenSet;
 
                 };
             }

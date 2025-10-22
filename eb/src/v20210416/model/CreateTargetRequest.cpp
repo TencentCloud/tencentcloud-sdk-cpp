@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,10 @@ CreateTargetRequest::CreateTargetRequest() :
     m_eventBusIdHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_targetDescriptionHasBeenSet(false),
-    m_ruleIdHasBeenSet(false)
+    m_ruleIdHasBeenSet(false),
+    m_batchTimeoutHasBeenSet(false),
+    m_batchEventCountHasBeenSet(false),
+    m_enableBatchDeliveryHasBeenSet(false)
 {
 }
 
@@ -68,6 +71,30 @@ string CreateTargetRequest::ToJsonString() const
         string key = "RuleId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_ruleId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_batchTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BatchTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_batchTimeout, allocator);
+    }
+
+    if (m_batchEventCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BatchEventCount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_batchEventCount, allocator);
+    }
+
+    if (m_enableBatchDeliveryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableBatchDelivery";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableBatchDelivery, allocator);
     }
 
 
@@ -140,6 +167,54 @@ void CreateTargetRequest::SetRuleId(const string& _ruleId)
 bool CreateTargetRequest::RuleIdHasBeenSet() const
 {
     return m_ruleIdHasBeenSet;
+}
+
+int64_t CreateTargetRequest::GetBatchTimeout() const
+{
+    return m_batchTimeout;
+}
+
+void CreateTargetRequest::SetBatchTimeout(const int64_t& _batchTimeout)
+{
+    m_batchTimeout = _batchTimeout;
+    m_batchTimeoutHasBeenSet = true;
+}
+
+bool CreateTargetRequest::BatchTimeoutHasBeenSet() const
+{
+    return m_batchTimeoutHasBeenSet;
+}
+
+int64_t CreateTargetRequest::GetBatchEventCount() const
+{
+    return m_batchEventCount;
+}
+
+void CreateTargetRequest::SetBatchEventCount(const int64_t& _batchEventCount)
+{
+    m_batchEventCount = _batchEventCount;
+    m_batchEventCountHasBeenSet = true;
+}
+
+bool CreateTargetRequest::BatchEventCountHasBeenSet() const
+{
+    return m_batchEventCountHasBeenSet;
+}
+
+bool CreateTargetRequest::GetEnableBatchDelivery() const
+{
+    return m_enableBatchDelivery;
+}
+
+void CreateTargetRequest::SetEnableBatchDelivery(const bool& _enableBatchDelivery)
+{
+    m_enableBatchDelivery = _enableBatchDelivery;
+    m_enableBatchDeliveryHasBeenSet = true;
+}
+
+bool CreateTargetRequest::EnableBatchDeliveryHasBeenSet() const
+{
+    return m_enableBatchDeliveryHasBeenSet;
 }
 
 

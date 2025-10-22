@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取准备删除的镜像Id列表
-                     * @return ImageIds 准备删除的镜像Id列表
+                     * 获取删除的镜像 ID 列表。
+可通过 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) 接口返回值中的`ImageId`获取。
+                     * @return ImageIds 删除的镜像 ID 列表。
+可通过 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) 接口返回值中的`ImageId`获取。
                      * 
                      */
                     std::vector<std::string> GetImageIds() const;
 
                     /**
-                     * 设置准备删除的镜像Id列表
-                     * @param _imageIds 准备删除的镜像Id列表
+                     * 设置删除的镜像 ID 列表。
+可通过 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) 接口返回值中的`ImageId`获取。
+                     * @param _imageIds 删除的镜像 ID 列表。
+可通过 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) 接口返回值中的`ImageId`获取。
                      * 
                      */
                     void SetImageIds(const std::vector<std::string>& _imageIds);
@@ -64,15 +68,19 @@ namespace TencentCloud
                     bool ImageIdsHasBeenSet() const;
 
                     /**
-                     * 获取是否删除镜像关联的快照
-                     * @return DeleteBindedSnap 是否删除镜像关联的快照
+                     * 获取是否删除镜像关联的快照。
+默认值：false
+                     * @return DeleteBindedSnap 是否删除镜像关联的快照。
+默认值：false
                      * 
                      */
                     bool GetDeleteBindedSnap() const;
 
                     /**
-                     * 设置是否删除镜像关联的快照
-                     * @param _deleteBindedSnap 是否删除镜像关联的快照
+                     * 设置是否删除镜像关联的快照。
+默认值：false
+                     * @param _deleteBindedSnap 是否删除镜像关联的快照。
+默认值：false
                      * 
                      */
                     void SetDeleteBindedSnap(const bool& _deleteBindedSnap);
@@ -85,15 +93,19 @@ namespace TencentCloud
                     bool DeleteBindedSnapHasBeenSet() const;
 
                     /**
-                     * 获取检测是否支持删除镜像
-                     * @return DryRun 检测是否支持删除镜像
+                     * 获取检测是否支持删除镜像。
+默认值：false
+                     * @return DryRun 检测是否支持删除镜像。
+默认值：false
                      * 
                      */
                     bool GetDryRun() const;
 
                     /**
-                     * 设置检测是否支持删除镜像
-                     * @param _dryRun 检测是否支持删除镜像
+                     * 设置检测是否支持删除镜像。
+默认值：false
+                     * @param _dryRun 检测是否支持删除镜像。
+默认值：false
                      * 
                      */
                     void SetDryRun(const bool& _dryRun);
@@ -108,19 +120,22 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 准备删除的镜像Id列表
+                     * 删除的镜像 ID 列表。
+可通过 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) 接口返回值中的`ImageId`获取。
                      */
                     std::vector<std::string> m_imageIds;
                     bool m_imageIdsHasBeenSet;
 
                     /**
-                     * 是否删除镜像关联的快照
+                     * 是否删除镜像关联的快照。
+默认值：false
                      */
                     bool m_deleteBindedSnap;
                     bool m_deleteBindedSnapHasBeenSet;
 
                     /**
-                     * 检测是否支持删除镜像
+                     * 检测是否支持删除镜像。
+默认值：false
                      */
                     bool m_dryRun;
                     bool m_dryRunHasBeenSet;

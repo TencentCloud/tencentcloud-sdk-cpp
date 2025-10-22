@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -168,6 +168,69 @@ namespace TencentCloud
                      */
                     bool RegistryTaskIDHasBeenSet() const;
 
+                    /**
+                     * 获取本地镜像容器运行中
+                     * @return LocalImageContainerRunning 本地镜像容器运行中
+                     * 
+                     */
+                    bool GetLocalImageContainerRunning() const;
+
+                    /**
+                     * 设置本地镜像容器运行中
+                     * @param _localImageContainerRunning 本地镜像容器运行中
+                     * 
+                     */
+                    void SetLocalImageContainerRunning(const bool& _localImageContainerRunning);
+
+                    /**
+                     * 判断参数 LocalImageContainerRunning 是否已赋值
+                     * @return LocalImageContainerRunning 是否已赋值
+                     * 
+                     */
+                    bool LocalImageContainerRunningHasBeenSet() const;
+
+                    /**
+                     * 获取仓库镜像容器运行中
+                     * @return RegistryImageContainerRunning 仓库镜像容器运行中
+                     * 
+                     */
+                    bool GetRegistryImageContainerRunning() const;
+
+                    /**
+                     * 设置仓库镜像容器运行中
+                     * @param _registryImageContainerRunning 仓库镜像容器运行中
+                     * 
+                     */
+                    void SetRegistryImageContainerRunning(const bool& _registryImageContainerRunning);
+
+                    /**
+                     * 判断参数 RegistryImageContainerRunning 是否已赋值
+                     * @return RegistryImageContainerRunning 是否已赋值
+                     * 
+                     */
+                    bool RegistryImageContainerRunningHasBeenSet() const;
+
+                    /**
+                     * 获取仓库镜像是否是最新
+                     * @return IsLatest 仓库镜像是否是最新
+                     * 
+                     */
+                    bool GetIsLatest() const;
+
+                    /**
+                     * 设置仓库镜像是否是最新
+                     * @param _isLatest 仓库镜像是否是最新
+                     * 
+                     */
+                    void SetIsLatest(const bool& _isLatest);
+
+                    /**
+                     * 判断参数 IsLatest 是否已赋值
+                     * @return IsLatest 是否已赋值
+                     * 
+                     */
+                    bool IsLatestHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +268,24 @@ namespace TencentCloud
                      */
                     int64_t m_registryTaskID;
                     bool m_registryTaskIDHasBeenSet;
+
+                    /**
+                     * 本地镜像容器运行中
+                     */
+                    bool m_localImageContainerRunning;
+                    bool m_localImageContainerRunningHasBeenSet;
+
+                    /**
+                     * 仓库镜像容器运行中
+                     */
+                    bool m_registryImageContainerRunning;
+                    bool m_registryImageContainerRunningHasBeenSet;
+
+                    /**
+                     * 仓库镜像是否是最新
+                     */
+                    bool m_isLatest;
+                    bool m_isLatestHasBeenSet;
 
                 };
             }

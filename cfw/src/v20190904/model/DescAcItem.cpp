@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,7 +53,11 @@ DescAcItem::DescAcItem() :
     m_paramTemplateIdHasBeenSet(false),
     m_sourceNameHasBeenSet(false),
     m_targetNameHasBeenSet(false),
-    m_lastHitTimeHasBeenSet(false)
+    m_lastHitTimeHasBeenSet(false),
+    m_countryKeyHasBeenSet(false),
+    m_cityKeyHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_updateTimeHasBeenSet(false)
 {
 }
 
@@ -402,6 +406,46 @@ CoreInternalOutcome DescAcItem::Deserialize(const rapidjson::Value &value)
         m_lastHitTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("CountryKey") && !value["CountryKey"].IsNull())
+    {
+        if (!value["CountryKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescAcItem.CountryKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_countryKey = string(value["CountryKey"].GetString());
+        m_countryKeyHasBeenSet = true;
+    }
+
+    if (value.HasMember("CityKey") && !value["CityKey"].IsNull())
+    {
+        if (!value["CityKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescAcItem.CityKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cityKey = string(value["CityKey"].GetString());
+        m_cityKeyHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescAcItem.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
+    {
+        if (!value["UpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescAcItem.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = string(value["UpdateTime"].GetString());
+        m_updateTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -678,6 +722,38 @@ void DescAcItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "LastHitTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_lastHitTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_countryKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CountryKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_countryKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cityKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CityKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cityKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1209,5 +1285,69 @@ void DescAcItem::SetLastHitTime(const string& _lastHitTime)
 bool DescAcItem::LastHitTimeHasBeenSet() const
 {
     return m_lastHitTimeHasBeenSet;
+}
+
+string DescAcItem::GetCountryKey() const
+{
+    return m_countryKey;
+}
+
+void DescAcItem::SetCountryKey(const string& _countryKey)
+{
+    m_countryKey = _countryKey;
+    m_countryKeyHasBeenSet = true;
+}
+
+bool DescAcItem::CountryKeyHasBeenSet() const
+{
+    return m_countryKeyHasBeenSet;
+}
+
+string DescAcItem::GetCityKey() const
+{
+    return m_cityKey;
+}
+
+void DescAcItem::SetCityKey(const string& _cityKey)
+{
+    m_cityKey = _cityKey;
+    m_cityKeyHasBeenSet = true;
+}
+
+bool DescAcItem::CityKeyHasBeenSet() const
+{
+    return m_cityKeyHasBeenSet;
+}
+
+string DescAcItem::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void DescAcItem::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool DescAcItem::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+string DescAcItem::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+void DescAcItem::SetUpdateTime(const string& _updateTime)
+{
+    m_updateTime = _updateTime;
+    m_updateTimeHasBeenSet = true;
+}
+
+bool DescAcItem::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
 }
 

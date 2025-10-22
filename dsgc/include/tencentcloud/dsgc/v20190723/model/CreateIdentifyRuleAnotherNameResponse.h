@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取创建的别名规则id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AliasRuleId 创建的别名规则id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAliasRuleId() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取别名规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AliasRuleName 别名规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAliasRuleName() const;
@@ -79,14 +75,12 @@ namespace TencentCloud
 
                     /**
                      * 创建的别名规则id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_aliasRuleId;
                     bool m_aliasRuleIdHasBeenSet;
 
                     /**
                      * 别名规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_aliasRuleName;
                     bool m_aliasRuleNameHasBeenSet;

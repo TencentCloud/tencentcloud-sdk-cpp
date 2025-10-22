@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -112,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取码规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomId 码规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCustomId() const;
 
                     /**
                      * 设置码规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _customId 码规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCustomId(const std::string& _customId);
@@ -137,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取码段配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CodeParts 码段配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CodePart> GetCodeParts() const;
 
                     /**
                      * 设置码段配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _codeParts 码段配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCodeParts(const std::vector<CodePart>& _codeParts);
@@ -162,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取包装单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Unit 包装单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUnit() const;
 
                     /**
                      * 设置包装单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _unit 包装单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUnit(const std::string& _unit);
@@ -187,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取场景值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SceneCode 场景值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSceneCode() const;
 
                     /**
                      * 设置场景值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sceneCode 场景值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSceneCode(const int64_t& _sceneCode);
@@ -232,28 +216,24 @@ namespace TencentCloud
 
                     /**
                      * 码规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_customId;
                     bool m_customIdHasBeenSet;
 
                     /**
                      * 码段配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CodePart> m_codeParts;
                     bool m_codePartsHasBeenSet;
 
                     /**
                      * 包装单位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_unit;
                     bool m_unitHasBeenSet;
 
                     /**
                      * 场景值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sceneCode;
                     bool m_sceneCodeHasBeenSet;

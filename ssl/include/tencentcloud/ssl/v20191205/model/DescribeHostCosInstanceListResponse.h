@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取COS实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceList COS实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CosInstanceDetail> GetInstanceList() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -78,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取异步刷新总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AsyncTotalNum 异步刷新总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAsyncTotalNum() const;
@@ -94,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取异步刷新当前执行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AsyncOffset 异步刷新当前执行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAsyncOffset() const;
@@ -110,9 +102,7 @@ namespace TencentCloud
 
                     /**
                      * 获取当前缓存读取时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AsyncCacheTime 当前缓存读取时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAsyncCacheTime() const;
@@ -128,35 +118,30 @@ namespace TencentCloud
 
                     /**
                      * COS实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CosInstanceDetail> m_instanceList;
                     bool m_instanceListHasBeenSet;
 
                     /**
                      * 总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * 异步刷新总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_asyncTotalNum;
                     bool m_asyncTotalNumHasBeenSet;
 
                     /**
                      * 异步刷新当前执行数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_asyncOffset;
                     bool m_asyncOffsetHasBeenSet;
 
                     /**
                      * 当前缓存读取时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_asyncCacheTime;
                     bool m_asyncCacheTimeHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cvm/v20170312/model/Tag.h>
 
 
 namespace TencentCloud
@@ -69,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取高性能计算集群名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 高性能计算集群名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置高性能计算集群名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 高性能计算集群名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -94,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取高性能计算集群备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 高性能计算集群备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置高性能计算集群备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 高性能计算集群备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -182,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 集群创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置集群创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 集群创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -207,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群内实例ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceIds 集群内实例ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置集群内实例ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceIds 集群内实例ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -232,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取高性能计算集群类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HpcClusterType 高性能计算集群类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHpcClusterType() const;
 
                     /**
                      * 设置高性能计算集群类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hpcClusterType 高性能计算集群类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHpcClusterType(const std::string& _hpcClusterType);
@@ -257,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取高性能计算集群对应的业务场景标识，当前只支持CDC。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HpcClusterBusinessId 高性能计算集群对应的业务场景标识，当前只支持CDC。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHpcClusterBusinessId() const;
 
                     /**
                      * 设置高性能计算集群对应的业务场景标识，当前只支持CDC。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hpcClusterBusinessId 高性能计算集群对应的业务场景标识，当前只支持CDC。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHpcClusterBusinessId(const std::string& _hpcClusterBusinessId);
@@ -280,6 +257,48 @@ namespace TencentCloud
                      */
                     bool HpcClusterBusinessIdHasBeenSet() const;
 
+                    /**
+                     * 获取高性能计算集群网络模式
+                     * @return HpcClusterNetMode 高性能计算集群网络模式
+                     * 
+                     */
+                    uint64_t GetHpcClusterNetMode() const;
+
+                    /**
+                     * 设置高性能计算集群网络模式
+                     * @param _hpcClusterNetMode 高性能计算集群网络模式
+                     * 
+                     */
+                    void SetHpcClusterNetMode(const uint64_t& _hpcClusterNetMode);
+
+                    /**
+                     * 判断参数 HpcClusterNetMode 是否已赋值
+                     * @return HpcClusterNetMode 是否已赋值
+                     * 
+                     */
+                    bool HpcClusterNetModeHasBeenSet() const;
+
+                    /**
+                     * 获取高性能计算集群关联的标签列表
+                     * @return Tags 高性能计算集群关联的标签列表
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置高性能计算集群关联的标签列表
+                     * @param _tags 高性能计算集群关联的标签列表
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,14 +309,12 @@ namespace TencentCloud
 
                     /**
                      * 高性能计算集群名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 高性能计算集群备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
@@ -322,31 +339,39 @@ namespace TencentCloud
 
                     /**
                      * 集群创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 集群内实例ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
 
                     /**
                      * 高性能计算集群类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hpcClusterType;
                     bool m_hpcClusterTypeHasBeenSet;
 
                     /**
                      * 高性能计算集群对应的业务场景标识，当前只支持CDC。	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hpcClusterBusinessId;
                     bool m_hpcClusterBusinessIdHasBeenSet;
+
+                    /**
+                     * 高性能计算集群网络模式
+                     */
+                    uint64_t m_hpcClusterNetMode;
+                    bool m_hpcClusterNetModeHasBeenSet;
+
+                    /**
+                     * 高性能计算集群关联的标签列表
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

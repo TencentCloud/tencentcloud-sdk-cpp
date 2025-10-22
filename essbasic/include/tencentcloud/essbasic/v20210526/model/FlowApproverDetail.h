@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,38 +49,34 @@ namespace TencentCloud
                     /**
                      * 获取模板配置时候的签署人角色ID(用PDF文件发起也可以指定,如果不指定则自动生成此角色ID), 所有的填写控件和签署控件都归属不同的角色
                      * @return ReceiptId 模板配置时候的签署人角色ID(用PDF文件发起也可以指定,如果不指定则自动生成此角色ID), 所有的填写控件和签署控件都归属不同的角色
-                     * 
+                     * @deprecated
                      */
                     std::string GetReceiptId() const;
 
                     /**
                      * 设置模板配置时候的签署人角色ID(用PDF文件发起也可以指定,如果不指定则自动生成此角色ID), 所有的填写控件和签署控件都归属不同的角色
                      * @param _receiptId 模板配置时候的签署人角色ID(用PDF文件发起也可以指定,如果不指定则自动生成此角色ID), 所有的填写控件和签署控件都归属不同的角色
-                     * 
+                     * @deprecated
                      */
                     void SetReceiptId(const std::string& _receiptId);
 
                     /**
                      * 判断参数 ReceiptId 是否已赋值
                      * @return ReceiptId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ReceiptIdHasBeenSet() const;
 
                     /**
                      * 获取第三方平台子客企业的唯一标识，定义Agent中的ProxyOrganizationOpenId一样, 可以参考<a href="https://qian.tencent.com/developers/partnerApis/dataTypes/#agent" target="_blank">Agent结构体</a>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyOrganizationOpenId 第三方平台子客企业的唯一标识，定义Agent中的ProxyOrganizationOpenId一样, 可以参考<a href="https://qian.tencent.com/developers/partnerApis/dataTypes/#agent" target="_blank">Agent结构体</a>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProxyOrganizationOpenId() const;
 
                     /**
                      * 设置第三方平台子客企业的唯一标识，定义Agent中的ProxyOrganizationOpenId一样, 可以参考<a href="https://qian.tencent.com/developers/partnerApis/dataTypes/#agent" target="_blank">Agent结构体</a>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _proxyOrganizationOpenId 第三方平台子客企业的唯一标识，定义Agent中的ProxyOrganizationOpenId一样, 可以参考<a href="https://qian.tencent.com/developers/partnerApis/dataTypes/#agent" target="_blank">Agent结构体</a>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProxyOrganizationOpenId(const std::string& _proxyOrganizationOpenId);
@@ -179,10 +175,8 @@ namespace TencentCloud
                     /**
                      * 获取签署方经办人的姓名。
 经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApproveName 签署方经办人的姓名。
 经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApproveName() const;
@@ -190,10 +184,8 @@ namespace TencentCloud
                     /**
                      * 设置签署方经办人的姓名。
 经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _approveName 签署方经办人的姓名。
 经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApproveName(const std::string& _approveName);
@@ -219,7 +211,6 @@ namespace TencentCloud
 <li> **FORWARD** :已经转他人处理</li>
 <li> **STOP** :流程已终止</li>
 <li> **RELIEVED** :解除协议（已解除）</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApproveStatus 当前签署人的状态, 状态如下
 <ul><li> **PENDING** :待签署</li>
 <li> **FILLPENDING** :待填写</li>
@@ -233,7 +224,6 @@ namespace TencentCloud
 <li> **FORWARD** :已经转他人处理</li>
 <li> **STOP** :流程已终止</li>
 <li> **RELIEVED** :解除协议（已解除）</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApproveStatus() const;
@@ -252,7 +242,6 @@ namespace TencentCloud
 <li> **FORWARD** :已经转他人处理</li>
 <li> **STOP** :流程已终止</li>
 <li> **RELIEVED** :解除协议（已解除）</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _approveStatus 当前签署人的状态, 状态如下
 <ul><li> **PENDING** :待签署</li>
 <li> **FILLPENDING** :待填写</li>
@@ -266,7 +255,6 @@ namespace TencentCloud
 <li> **FORWARD** :已经转他人处理</li>
 <li> **STOP** :流程已终止</li>
 <li> **RELIEVED** :解除协议（已解除）</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApproveStatus(const std::string& _approveStatus);
@@ -280,18 +268,14 @@ namespace TencentCloud
 
                     /**
                      * 获取签署人拒签等情况的时候填写的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApproveMessage 签署人拒签等情况的时候填写的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApproveMessage() const;
 
                     /**
                      * 设置签署人拒签等情况的时候填写的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _approveMessage 签署人拒签等情况的时候填写的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApproveMessage(const std::string& _approveMessage);
@@ -328,11 +312,9 @@ namespace TencentCloud
                      * 获取参与者类型 
 <ul><li> **ORGANIZATION** :企业签署人</li>
 <li> **PERSON** :个人签署人</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApproveType 参与者类型 
 <ul><li> **ORGANIZATION** :企业签署人</li>
 <li> **PERSON** :个人签署人</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApproveType() const;
@@ -341,11 +323,9 @@ namespace TencentCloud
                      * 设置参与者类型 
 <ul><li> **ORGANIZATION** :企业签署人</li>
 <li> **PERSON** :个人签署人</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _approveType 参与者类型 
 <ul><li> **ORGANIZATION** :企业签署人</li>
 <li> **PERSON** :个人签署人</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApproveType(const std::string& _approveType);
@@ -359,18 +339,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义签署人的角色名, 如: 收款人、开具人、见证人等
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApproverRoleName 自定义签署人的角色名, 如: 收款人、开具人、见证人等
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApproverRoleName() const;
 
                     /**
                      * 设置自定义签署人的角色名, 如: 收款人、开具人、见证人等
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _approverRoleName 自定义签署人的角色名, 如: 收款人、开具人、见证人等
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApproverRoleName(const std::string& _approverRoleName);
@@ -382,6 +358,48 @@ namespace TencentCloud
                      */
                     bool ApproverRoleNameHasBeenSet() const;
 
+                    /**
+                     * 获取签署参与人在本流程中的编号ID（每个流程不同），可用此ID来定位签署参与人在本流程的签署节点。
+                     * @return SignId 签署参与人在本流程中的编号ID（每个流程不同），可用此ID来定位签署参与人在本流程的签署节点。
+                     * 
+                     */
+                    std::string GetSignId() const;
+
+                    /**
+                     * 设置签署参与人在本流程中的编号ID（每个流程不同），可用此ID来定位签署参与人在本流程的签署节点。
+                     * @param _signId 签署参与人在本流程中的编号ID（每个流程不同），可用此ID来定位签署参与人在本流程的签署节点。
+                     * 
+                     */
+                    void SetSignId(const std::string& _signId);
+
+                    /**
+                     * 判断参数 SignId 是否已赋值
+                     * @return SignId 是否已赋值
+                     * 
+                     */
+                    bool SignIdHasBeenSet() const;
+
+                    /**
+                     * 获取模板配置时候的签署人角色ID(用PDF文件发起也可以指定,如果不指定则自动生成此角色ID), 所有的填写控件和签署控件都归属不同的角色
+                     * @return RecipientId 模板配置时候的签署人角色ID(用PDF文件发起也可以指定,如果不指定则自动生成此角色ID), 所有的填写控件和签署控件都归属不同的角色
+                     * 
+                     */
+                    std::string GetRecipientId() const;
+
+                    /**
+                     * 设置模板配置时候的签署人角色ID(用PDF文件发起也可以指定,如果不指定则自动生成此角色ID), 所有的填写控件和签署控件都归属不同的角色
+                     * @param _recipientId 模板配置时候的签署人角色ID(用PDF文件发起也可以指定,如果不指定则自动生成此角色ID), 所有的填写控件和签署控件都归属不同的角色
+                     * 
+                     */
+                    void SetRecipientId(const std::string& _recipientId);
+
+                    /**
+                     * 判断参数 RecipientId 是否已赋值
+                     * @return RecipientId 是否已赋值
+                     * 
+                     */
+                    bool RecipientIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -392,7 +410,6 @@ namespace TencentCloud
 
                     /**
                      * 第三方平台子客企业的唯一标识，定义Agent中的ProxyOrganizationOpenId一样, 可以参考<a href="https://qian.tencent.com/developers/partnerApis/dataTypes/#agent" target="_blank">Agent结构体</a>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_proxyOrganizationOpenId;
                     bool m_proxyOrganizationOpenIdHasBeenSet;
@@ -424,7 +441,6 @@ namespace TencentCloud
                     /**
                      * 签署方经办人的姓名。
 经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_approveName;
                     bool m_approveNameHasBeenSet;
@@ -443,14 +459,12 @@ namespace TencentCloud
 <li> **FORWARD** :已经转他人处理</li>
 <li> **STOP** :流程已终止</li>
 <li> **RELIEVED** :解除协议（已解除）</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_approveStatus;
                     bool m_approveStatusHasBeenSet;
 
                     /**
                      * 签署人拒签等情况的时候填写的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_approveMessage;
                     bool m_approveMessageHasBeenSet;
@@ -465,17 +479,27 @@ namespace TencentCloud
                      * 参与者类型 
 <ul><li> **ORGANIZATION** :企业签署人</li>
 <li> **PERSON** :个人签署人</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_approveType;
                     bool m_approveTypeHasBeenSet;
 
                     /**
                      * 自定义签署人的角色名, 如: 收款人、开具人、见证人等
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_approverRoleName;
                     bool m_approverRoleNameHasBeenSet;
+
+                    /**
+                     * 签署参与人在本流程中的编号ID（每个流程不同），可用此ID来定位签署参与人在本流程的签署节点。
+                     */
+                    std::string m_signId;
+                    bool m_signIdHasBeenSet;
+
+                    /**
+                     * 模板配置时候的签署人角色ID(用PDF文件发起也可以指定,如果不指定则自动生成此角色ID), 所有的填写控件和签署控件都归属不同的角色
+                     */
+                    std::string m_recipientId;
+                    bool m_recipientIdHasBeenSet;
 
                 };
             }

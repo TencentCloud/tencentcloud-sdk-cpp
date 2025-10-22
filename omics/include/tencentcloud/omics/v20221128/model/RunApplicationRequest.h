@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -388,6 +388,90 @@ namespace TencentCloud
                      */
                     bool VolumeIdsHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启结果通知。
+                     * @return ResultNotification 是否开启结果通知。
+                     * 
+                     */
+                    bool GetResultNotification() const;
+
+                    /**
+                     * 设置是否开启结果通知。
+                     * @param _resultNotification 是否开启结果通知。
+                     * 
+                     */
+                    void SetResultNotification(const bool& _resultNotification);
+
+                    /**
+                     * 判断参数 ResultNotification 是否已赋值
+                     * @return ResultNotification 是否已赋值
+                     * 
+                     */
+                    bool ResultNotificationHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启超时通知。
+                     * @return TimeoutNotification 是否开启超时通知。
+                     * 
+                     */
+                    bool GetTimeoutNotification() const;
+
+                    /**
+                     * 设置是否开启超时通知。
+                     * @param _timeoutNotification 是否开启超时通知。
+                     * 
+                     */
+                    void SetTimeoutNotification(const bool& _timeoutNotification);
+
+                    /**
+                     * 判断参数 TimeoutNotification 是否已赋值
+                     * @return TimeoutNotification 是否已赋值
+                     * 
+                     */
+                    bool TimeoutNotificationHasBeenSet() const;
+
+                    /**
+                     * 获取任务超时通知时间（单位：分钟），支持5到2880分钟。
+                     * @return TimeoutNotificationMinutes 任务超时通知时间（单位：分钟），支持5到2880分钟。
+                     * 
+                     */
+                    uint64_t GetTimeoutNotificationMinutes() const;
+
+                    /**
+                     * 设置任务超时通知时间（单位：分钟），支持5到2880分钟。
+                     * @param _timeoutNotificationMinutes 任务超时通知时间（单位：分钟），支持5到2880分钟。
+                     * 
+                     */
+                    void SetTimeoutNotificationMinutes(const uint64_t& _timeoutNotificationMinutes);
+
+                    /**
+                     * 判断参数 TimeoutNotificationMinutes 是否已赋值
+                     * @return TimeoutNotificationMinutes 是否已赋值
+                     * 
+                     */
+                    bool TimeoutNotificationMinutesHasBeenSet() const;
+
+                    /**
+                     * 获取接受通知邮件地址列表。
+                     * @return EmailForNotification 接受通知邮件地址列表。
+                     * 
+                     */
+                    std::vector<std::string> GetEmailForNotification() const;
+
+                    /**
+                     * 设置接受通知邮件地址列表。
+                     * @param _emailForNotification 接受通知邮件地址列表。
+                     * 
+                     */
+                    void SetEmailForNotification(const std::vector<std::string>& _emailForNotification);
+
+                    /**
+                     * 判断参数 EmailForNotification 是否已赋值
+                     * @return EmailForNotification 是否已赋值
+                     * 
+                     */
+                    bool EmailForNotificationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -487,6 +571,30 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_volumeIds;
                     bool m_volumeIdsHasBeenSet;
+
+                    /**
+                     * 是否开启结果通知。
+                     */
+                    bool m_resultNotification;
+                    bool m_resultNotificationHasBeenSet;
+
+                    /**
+                     * 是否开启超时通知。
+                     */
+                    bool m_timeoutNotification;
+                    bool m_timeoutNotificationHasBeenSet;
+
+                    /**
+                     * 任务超时通知时间（单位：分钟），支持5到2880分钟。
+                     */
+                    uint64_t m_timeoutNotificationMinutes;
+                    bool m_timeoutNotificationMinutesHasBeenSet;
+
+                    /**
+                     * 接受通知邮件地址列表。
+                     */
+                    std::vector<std::string> m_emailForNotification;
+                    bool m_emailForNotificationHasBeenSet;
 
                 };
             }

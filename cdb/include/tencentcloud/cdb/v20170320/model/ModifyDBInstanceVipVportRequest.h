@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取目标 IP。该参数和 DstPort 参数，两者必传一个。
-                     * @return DstIp 目标 IP。该参数和 DstPort 参数，两者必传一个。
+                     * 获取目标 IP。
+                     * @return DstIp 目标 IP。
                      * 
                      */
                     std::string GetDstIp() const;
 
                     /**
-                     * 设置目标 IP。该参数和 DstPort 参数，两者必传一个。
-                     * @param _dstIp 目标 IP。该参数和 DstPort 参数，两者必传一个。
+                     * 设置目标 IP。
+                     * @param _dstIp 目标 IP。
                      * 
                      */
                     void SetDstIp(const std::string& _dstIp);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool DstIpHasBeenSet() const;
 
                     /**
-                     * 获取目标端口，支持范围为：[1024-65535]。该参数和 DstIp 参数，两者必传一个。
-                     * @return DstPort 目标端口，支持范围为：[1024-65535]。该参数和 DstIp 参数，两者必传一个。
+                     * 获取目标端口，支持范围为：[1024-65535]。
+                     * @return DstPort 目标端口，支持范围为：[1024-65535]。
                      * 
                      */
                     int64_t GetDstPort() const;
 
                     /**
-                     * 设置目标端口，支持范围为：[1024-65535]。该参数和 DstIp 参数，两者必传一个。
-                     * @param _dstPort 目标端口，支持范围为：[1024-65535]。该参数和 DstIp 参数，两者必传一个。
+                     * 设置目标端口，支持范围为：[1024-65535]。
+                     * @param _dstPort 目标端口，支持范围为：[1024-65535]。
                      * 
                      */
                     void SetDstPort(const int64_t& _dstPort);
@@ -198,13 +198,13 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 目标 IP。该参数和 DstPort 参数，两者必传一个。
+                     * 目标 IP。
                      */
                     std::string m_dstIp;
                     bool m_dstIpHasBeenSet;
 
                     /**
-                     * 目标端口，支持范围为：[1024-65535]。该参数和 DstIp 参数，两者必传一个。
+                     * 目标端口，支持范围为：[1024-65535]。
                      */
                     int64_t m_dstPort;
                     bool m_dstPortHasBeenSet;

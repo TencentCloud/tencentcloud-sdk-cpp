@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,10 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件名
-
-                     * @return FileName 文件名
-
+                     * 获取文件名, 发布端固定使用这个名称
+                     * @return FileName 文件名, 发布端固定使用这个名称
                      * 
                      */
                     std::string GetFileName() const;
@@ -121,11 +119,54 @@ namespace TencentCloud
                      */
                     bool BucketHasBeenSet() const;
 
+                    /**
+                     * 获取存在文档重命名情况下的新名称, 评测端优先使用这个名称
+                     * @return NewName 存在文档重命名情况下的新名称, 评测端优先使用这个名称
+                     * 
+                     */
+                    std::string GetNewName() const;
+
+                    /**
+                     * 判断参数 NewName 是否已赋值
+                     * @return NewName 是否已赋值
+                     * 
+                     */
+                    bool NewNameHasBeenSet() const;
+
+                    /**
+                     * 获取文件md结果cos临时地址
+                     * @return ParseResultCosUrl 文件md结果cos临时地址
+                     * 
+                     */
+                    std::string GetParseResultCosUrl() const;
+
+                    /**
+                     * 判断参数 ParseResultCosUrl 是否已赋值
+                     * @return ParseResultCosUrl 是否已赋值
+                     * 
+                     */
+                    bool ParseResultCosUrlHasBeenSet() const;
+
+                    /**
+                     * 获取是否可下载
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsDownload 是否可下载
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIsDownload() const;
+
+                    /**
+                     * 判断参数 IsDownload 是否已赋值
+                     * @return IsDownload 是否已赋值
+                     * 
+                     */
+                    bool IsDownloadHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 文件名
-
+                     * 文件名, 发布端固定使用这个名称
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
@@ -156,6 +197,25 @@ namespace TencentCloud
                      */
                     std::string m_bucket;
                     bool m_bucketHasBeenSet;
+
+                    /**
+                     * 存在文档重命名情况下的新名称, 评测端优先使用这个名称
+                     */
+                    std::string m_newName;
+                    bool m_newNameHasBeenSet;
+
+                    /**
+                     * 文件md结果cos临时地址
+                     */
+                    std::string m_parseResultCosUrl;
+                    bool m_parseResultCosUrlHasBeenSet;
+
+                    /**
+                     * 是否可下载
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isDownload;
+                    bool m_isDownloadHasBeenSet;
 
                 };
             }

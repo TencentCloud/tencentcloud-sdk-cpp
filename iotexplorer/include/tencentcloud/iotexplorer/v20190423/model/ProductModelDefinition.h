@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -132,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品所属分类的模型快照（产品创建时刻的）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CategoryModel 产品所属分类的模型快照（产品创建时刻的）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCategoryModel() const;
 
                     /**
                      * 设置产品所属分类的模型快照（产品创建时刻的）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _categoryModel 产品所属分类的模型快照（产品创建时刻的）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCategoryModel(const std::string& _categoryModel);
@@ -157,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品的连接类型的模型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetTypeModel 产品的连接类型的模型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNetTypeModel() const;
 
                     /**
                      * 设置产品的连接类型的模型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _netTypeModel 产品的连接类型的模型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNetTypeModel(const std::string& _netTypeModel);
@@ -208,14 +200,12 @@ namespace TencentCloud
 
                     /**
                      * 产品所属分类的模型快照（产品创建时刻的）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_categoryModel;
                     bool m_categoryModelHasBeenSet;
 
                     /**
                      * 产品的连接类型的模型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_netTypeModel;
                     bool m_netTypeModelHasBeenSet;

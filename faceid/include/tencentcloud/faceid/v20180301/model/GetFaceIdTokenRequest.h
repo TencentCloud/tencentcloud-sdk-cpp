@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,27 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取本地上传照片(LOCAL)、商业库(BUSINESS)
-                     * @return CompareLib 本地上传照片(LOCAL)、商业库(BUSINESS)
+                     * 获取比对库。
+- 取值范围：
+LOCAL：本地上传照片。
+BUSINESS：商业库。
+                     * @return CompareLib 比对库。
+- 取值范围：
+LOCAL：本地上传照片。
+BUSINESS：商业库。
                      * 
                      */
                     std::string GetCompareLib() const;
 
                     /**
-                     * 设置本地上传照片(LOCAL)、商业库(BUSINESS)
-                     * @param _compareLib 本地上传照片(LOCAL)、商业库(BUSINESS)
+                     * 设置比对库。
+- 取值范围：
+LOCAL：本地上传照片。
+BUSINESS：商业库。
+                     * @param _compareLib 比对库。
+- 取值范围：
+LOCAL：本地上传照片。
+BUSINESS：商业库。
                      * 
                      */
                     void SetCompareLib(const std::string& _compareLib);
@@ -65,15 +77,19 @@ namespace TencentCloud
                     bool CompareLibHasBeenSet() const;
 
                     /**
-                     * 获取CompareLib为商业库时必传。
-                     * @return IdCard CompareLib为商业库时必传。
+                     * 获取身份证。
+- CompareLib为商业库时必传。
+                     * @return IdCard 身份证。
+- CompareLib为商业库时必传。
                      * 
                      */
                     std::string GetIdCard() const;
 
                     /**
-                     * 设置CompareLib为商业库时必传。
-                     * @param _idCard CompareLib为商业库时必传。
+                     * 设置身份证。
+- CompareLib为商业库时必传。
+                     * @param _idCard 身份证。
+- CompareLib为商业库时必传。
                      * 
                      */
                     void SetIdCard(const std::string& _idCard);
@@ -86,15 +102,19 @@ namespace TencentCloud
                     bool IdCardHasBeenSet() const;
 
                     /**
-                     * 获取CompareLib为商业库时必传。
-                     * @return Name CompareLib为商业库时必传。
+                     * 获取姓名。
+- CompareLib为商业库时必传。
+                     * @return Name 姓名。
+- CompareLib为商业库时必传。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置CompareLib为商业库时必传。
-                     * @param _name CompareLib为商业库时必传。
+                     * 设置姓名。
+- CompareLib为商业库时必传。
+                     * @param _name 姓名。
+- CompareLib为商业库时必传。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -107,19 +127,27 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取CompareLib为上传照片比对时必传，Base64后图片最大8MB。
-请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
-                     * @return ImageBase64 CompareLib为上传照片比对时必传，Base64后图片最大8MB。
-请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
+                     * 获取图片的Base64。
+- CompareLib为上传照片比对时必传。
+- Base64后图片最大8MB。
+- 请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
+                     * @return ImageBase64 图片的Base64。
+- CompareLib为上传照片比对时必传。
+- Base64后图片最大8MB。
+- 请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
                      * 
                      */
                     std::string GetImageBase64() const;
 
                     /**
-                     * 设置CompareLib为上传照片比对时必传，Base64后图片最大8MB。
-请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
-                     * @param _imageBase64 CompareLib为上传照片比对时必传，Base64后图片最大8MB。
-请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
+                     * 设置图片的Base64。
+- CompareLib为上传照片比对时必传。
+- Base64后图片最大8MB。
+- 请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
+                     * @param _imageBase64 图片的Base64。
+- CompareLib为上传照片比对时必传。
+- Base64后图片最大8MB。
+- 请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
                      * 
                      */
                     void SetImageBase64(const std::string& _imageBase64);
@@ -132,15 +160,15 @@ namespace TencentCloud
                     bool ImageBase64HasBeenSet() const;
 
                     /**
-                     * 获取SDK中生成的Meta字符串
-                     * @return Meta SDK中生成的Meta字符串
+                     * 获取SDK中生成的Meta字符串。
+                     * @return Meta SDK中生成的Meta字符串。
                      * 
                      */
                     std::string GetMeta() const;
 
                     /**
-                     * 设置SDK中生成的Meta字符串
-                     * @param _meta SDK中生成的Meta字符串
+                     * 设置SDK中生成的Meta字符串。
+                     * @param _meta SDK中生成的Meta字符串。
                      * 
                      */
                     void SetMeta(const std::string& _meta);
@@ -153,15 +181,19 @@ namespace TencentCloud
                     bool MetaHasBeenSet() const;
 
                     /**
-                     * 获取透传参数 1000长度字符串
-                     * @return Extra 透传参数 1000长度字符串
+                     * 获取透传参数。
+- 1000长度字符串
+                     * @return Extra 透传参数。
+- 1000长度字符串
                      * 
                      */
                     std::string GetExtra() const;
 
                     /**
-                     * 设置透传参数 1000长度字符串
-                     * @param _extra 透传参数 1000长度字符串
+                     * 设置透传参数。
+- 1000长度字符串
+                     * @param _extra 透传参数。
+- 1000长度字符串
                      * 
                      */
                     void SetExtra(const std::string& _extra);
@@ -174,19 +206,31 @@ namespace TencentCloud
                     bool ExtraHasBeenSet() const;
 
                     /**
-                     * 获取默认为false，设置该参数为true后，核身过程中的视频图片将会存储在人脸核身控制台授权cos的bucket中，拉取结果时会返回对应资源完整cos地址。开通地址见https://console.cloud.tencent.com/faceid/cos
-【注意】选择该参数为true后将不返回base64数据，请根据接入情况谨慎修改。
-                     * @return UseCos 默认为false，设置该参数为true后，核身过程中的视频图片将会存储在人脸核身控制台授权cos的bucket中，拉取结果时会返回对应资源完整cos地址。开通地址见https://console.cloud.tencent.com/faceid/cos
-【注意】选择该参数为true后将不返回base64数据，请根据接入情况谨慎修改。
+                     * 获取是否使用cos桶。
+- 默认为false。
+- 设置该参数为true后，核身过程中的视频图片将会存储在人脸核身控制台授权cos的bucket中，拉取结果时会返回对应资源完整cos地址。
+- 开通地址见https://console.cloud.tencent.com/faceid/cos
+- 【注意】选择该参数为true后将不返回base64数据，请根据接入情况谨慎修改。
+                     * @return UseCos 是否使用cos桶。
+- 默认为false。
+- 设置该参数为true后，核身过程中的视频图片将会存储在人脸核身控制台授权cos的bucket中，拉取结果时会返回对应资源完整cos地址。
+- 开通地址见https://console.cloud.tencent.com/faceid/cos
+- 【注意】选择该参数为true后将不返回base64数据，请根据接入情况谨慎修改。
                      * 
                      */
                     bool GetUseCos() const;
 
                     /**
-                     * 设置默认为false，设置该参数为true后，核身过程中的视频图片将会存储在人脸核身控制台授权cos的bucket中，拉取结果时会返回对应资源完整cos地址。开通地址见https://console.cloud.tencent.com/faceid/cos
-【注意】选择该参数为true后将不返回base64数据，请根据接入情况谨慎修改。
-                     * @param _useCos 默认为false，设置该参数为true后，核身过程中的视频图片将会存储在人脸核身控制台授权cos的bucket中，拉取结果时会返回对应资源完整cos地址。开通地址见https://console.cloud.tencent.com/faceid/cos
-【注意】选择该参数为true后将不返回base64数据，请根据接入情况谨慎修改。
+                     * 设置是否使用cos桶。
+- 默认为false。
+- 设置该参数为true后，核身过程中的视频图片将会存储在人脸核身控制台授权cos的bucket中，拉取结果时会返回对应资源完整cos地址。
+- 开通地址见https://console.cloud.tencent.com/faceid/cos
+- 【注意】选择该参数为true后将不返回base64数据，请根据接入情况谨慎修改。
+                     * @param _useCos 是否使用cos桶。
+- 默认为false。
+- 设置该参数为true后，核身过程中的视频图片将会存储在人脸核身控制台授权cos的bucket中，拉取结果时会返回对应资源完整cos地址。
+- 开通地址见https://console.cloud.tencent.com/faceid/cos
+- 【注意】选择该参数为true后将不返回base64数据，请根据接入情况谨慎修改。
                      * 
                      */
                     void SetUseCos(const bool& _useCos);
@@ -199,15 +243,15 @@ namespace TencentCloud
                     bool UseCosHasBeenSet() const;
 
                     /**
-                     * 获取敏感数据加密信息。对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
-                     * @return Encryption 敏感数据加密信息。对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * 获取敏感数据加密信息。对传入信息（姓名、身份证号、自传照片）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * @return Encryption 敏感数据加密信息。对传入信息（姓名、身份证号、自传照片）有加密需求的用户可使用此参数，详情请点击左侧链接。
                      * 
                      */
                     Encryption GetEncryption() const;
 
                     /**
-                     * 设置敏感数据加密信息。对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
-                     * @param _encryption 敏感数据加密信息。对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * 设置敏感数据加密信息。对传入信息（姓名、身份证号、自传照片）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * @param _encryption 敏感数据加密信息。对传入信息（姓名、身份证号、自传照片）有加密需求的用户可使用此参数，详情请点击左侧链接。
                      * 
                      */
                     void SetEncryption(const Encryption& _encryption);
@@ -220,19 +264,23 @@ namespace TencentCloud
                     bool EncryptionHasBeenSet() const;
 
                     /**
-                     * 获取用于细分客户使用场景，申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。如有疑问，请添加腾讯云人脸核身小助手进行咨询。
-示例值：1
-                     * @return RuleId 用于细分客户使用场景，申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。如有疑问，请添加腾讯云人脸核身小助手进行咨询。
-示例值：1
+                     * 获取用于细分客户使用场景。
+- 申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。
+- 如有疑问，请添加腾讯云人脸核身小助手进行咨询。
+                     * @return RuleId 用于细分客户使用场景。
+- 申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。
+- 如有疑问，请添加腾讯云人脸核身小助手进行咨询。
                      * 
                      */
                     std::string GetRuleId() const;
 
                     /**
-                     * 设置用于细分客户使用场景，申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。如有疑问，请添加腾讯云人脸核身小助手进行咨询。
-示例值：1
-                     * @param _ruleId 用于细分客户使用场景，申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。如有疑问，请添加腾讯云人脸核身小助手进行咨询。
-示例值：1
+                     * 设置用于细分客户使用场景。
+- 申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。
+- 如有疑问，请添加腾讯云人脸核身小助手进行咨询。
+                     * @param _ruleId 用于细分客户使用场景。
+- 申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。
+- 如有疑问，请添加腾讯云人脸核身小助手进行咨询。
                      * 
                      */
                     void SetRuleId(const std::string& _ruleId);
@@ -247,58 +295,70 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 本地上传照片(LOCAL)、商业库(BUSINESS)
+                     * 比对库。
+- 取值范围：
+LOCAL：本地上传照片。
+BUSINESS：商业库。
                      */
                     std::string m_compareLib;
                     bool m_compareLibHasBeenSet;
 
                     /**
-                     * CompareLib为商业库时必传。
+                     * 身份证。
+- CompareLib为商业库时必传。
                      */
                     std::string m_idCard;
                     bool m_idCardHasBeenSet;
 
                     /**
-                     * CompareLib为商业库时必传。
+                     * 姓名。
+- CompareLib为商业库时必传。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * CompareLib为上传照片比对时必传，Base64后图片最大8MB。
-请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
+                     * 图片的Base64。
+- CompareLib为上传照片比对时必传。
+- Base64后图片最大8MB。
+- 请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
                      */
                     std::string m_imageBase64;
                     bool m_imageBase64HasBeenSet;
 
                     /**
-                     * SDK中生成的Meta字符串
+                     * SDK中生成的Meta字符串。
                      */
                     std::string m_meta;
                     bool m_metaHasBeenSet;
 
                     /**
-                     * 透传参数 1000长度字符串
+                     * 透传参数。
+- 1000长度字符串
                      */
                     std::string m_extra;
                     bool m_extraHasBeenSet;
 
                     /**
-                     * 默认为false，设置该参数为true后，核身过程中的视频图片将会存储在人脸核身控制台授权cos的bucket中，拉取结果时会返回对应资源完整cos地址。开通地址见https://console.cloud.tencent.com/faceid/cos
-【注意】选择该参数为true后将不返回base64数据，请根据接入情况谨慎修改。
+                     * 是否使用cos桶。
+- 默认为false。
+- 设置该参数为true后，核身过程中的视频图片将会存储在人脸核身控制台授权cos的bucket中，拉取结果时会返回对应资源完整cos地址。
+- 开通地址见https://console.cloud.tencent.com/faceid/cos
+- 【注意】选择该参数为true后将不返回base64数据，请根据接入情况谨慎修改。
                      */
                     bool m_useCos;
                     bool m_useCosHasBeenSet;
 
                     /**
-                     * 敏感数据加密信息。对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * 敏感数据加密信息。对传入信息（姓名、身份证号、自传照片）有加密需求的用户可使用此参数，详情请点击左侧链接。
                      */
                     Encryption m_encryption;
                     bool m_encryptionHasBeenSet;
 
                     /**
-                     * 用于细分客户使用场景，申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。如有疑问，请添加腾讯云人脸核身小助手进行咨询。
-示例值：1
+                     * 用于细分客户使用场景。
+- 申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。
+- 如有疑问，请添加腾讯云人脸核身小助手进行咨询。
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;

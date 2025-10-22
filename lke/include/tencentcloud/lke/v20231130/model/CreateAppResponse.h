@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,6 +59,22 @@ namespace TencentCloud
                      */
                     bool AppBizIdHasBeenSet() const;
 
+                    /**
+                     * 获取判断账户应用列表权限是否是自定义的，用户交互提示
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsCustomList 判断账户应用列表权限是否是自定义的，用户交互提示
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIsCustomList() const;
+
+                    /**
+                     * 判断参数 IsCustomList 是否已赋值
+                     * @return IsCustomList 是否已赋值
+                     * 
+                     */
+                    bool IsCustomListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +83,13 @@ namespace TencentCloud
                      */
                     std::string m_appBizId;
                     bool m_appBizIdHasBeenSet;
+
+                    /**
+                     * 判断账户应用列表权限是否是自定义的，用户交互提示
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isCustomList;
+                    bool m_isCustomListHasBeenSet;
 
                 };
             }

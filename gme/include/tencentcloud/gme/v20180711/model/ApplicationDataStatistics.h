@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -320,6 +320,90 @@ namespace TencentCloud
                      */
                     bool PcuDataSumHasBeenSet() const;
 
+                    /**
+                     * 获取小游戏时长统计项数目
+                     * @return MiniGameDataNum 小游戏时长统计项数目
+                     * 
+                     */
+                    uint64_t GetMiniGameDataNum() const;
+
+                    /**
+                     * 设置小游戏时长统计项数目
+                     * @param _miniGameDataNum 小游戏时长统计项数目
+                     * 
+                     */
+                    void SetMiniGameDataNum(const uint64_t& _miniGameDataNum);
+
+                    /**
+                     * 判断参数 MiniGameDataNum 是否已赋值
+                     * @return MiniGameDataNum 是否已赋值
+                     * 
+                     */
+                    bool MiniGameDataNumHasBeenSet() const;
+
+                    /**
+                     * 获取大陆地区小游戏时长统计数据，单位分钟
+                     * @return MiniGameDataMainland 大陆地区小游戏时长统计数据，单位分钟
+                     * 
+                     */
+                    std::vector<StatisticsItem> GetMiniGameDataMainland() const;
+
+                    /**
+                     * 设置大陆地区小游戏时长统计数据，单位分钟
+                     * @param _miniGameDataMainland 大陆地区小游戏时长统计数据，单位分钟
+                     * 
+                     */
+                    void SetMiniGameDataMainland(const std::vector<StatisticsItem>& _miniGameDataMainland);
+
+                    /**
+                     * 判断参数 MiniGameDataMainland 是否已赋值
+                     * @return MiniGameDataMainland 是否已赋值
+                     * 
+                     */
+                    bool MiniGameDataMainlandHasBeenSet() const;
+
+                    /**
+                     * 获取海外地区小游戏时长统计数据，单位分钟
+                     * @return MiniGameDataOversea 海外地区小游戏时长统计数据，单位分钟
+                     * 
+                     */
+                    std::vector<StatisticsItem> GetMiniGameDataOversea() const;
+
+                    /**
+                     * 设置海外地区小游戏时长统计数据，单位分钟
+                     * @param _miniGameDataOversea 海外地区小游戏时长统计数据，单位分钟
+                     * 
+                     */
+                    void SetMiniGameDataOversea(const std::vector<StatisticsItem>& _miniGameDataOversea);
+
+                    /**
+                     * 判断参数 MiniGameDataOversea 是否已赋值
+                     * @return MiniGameDataOversea 是否已赋值
+                     * 
+                     */
+                    bool MiniGameDataOverseaHasBeenSet() const;
+
+                    /**
+                     * 获取大陆和海外地区小游戏时长统计数据汇总，单位分钟
+                     * @return MiniGameDataSum 大陆和海外地区小游戏时长统计数据汇总，单位分钟
+                     * 
+                     */
+                    std::vector<StatisticsItem> GetMiniGameDataSum() const;
+
+                    /**
+                     * 设置大陆和海外地区小游戏时长统计数据汇总，单位分钟
+                     * @param _miniGameDataSum 大陆和海外地区小游戏时长统计数据汇总，单位分钟
+                     * 
+                     */
+                    void SetMiniGameDataSum(const std::vector<StatisticsItem>& _miniGameDataSum);
+
+                    /**
+                     * 判断参数 MiniGameDataSum 是否已赋值
+                     * @return MiniGameDataSum 是否已赋值
+                     * 
+                     */
+                    bool MiniGameDataSumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -399,6 +483,30 @@ namespace TencentCloud
                      */
                     std::vector<StatisticsItem> m_pcuDataSum;
                     bool m_pcuDataSumHasBeenSet;
+
+                    /**
+                     * 小游戏时长统计项数目
+                     */
+                    uint64_t m_miniGameDataNum;
+                    bool m_miniGameDataNumHasBeenSet;
+
+                    /**
+                     * 大陆地区小游戏时长统计数据，单位分钟
+                     */
+                    std::vector<StatisticsItem> m_miniGameDataMainland;
+                    bool m_miniGameDataMainlandHasBeenSet;
+
+                    /**
+                     * 海外地区小游戏时长统计数据，单位分钟
+                     */
+                    std::vector<StatisticsItem> m_miniGameDataOversea;
+                    bool m_miniGameDataOverseaHasBeenSet;
+
+                    /**
+                     * 大陆和海外地区小游戏时长统计数据汇总，单位分钟
+                     */
+                    std::vector<StatisticsItem> m_miniGameDataSum;
+                    bool m_miniGameDataSumHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取redis大key分析的自定义分割符，仅redis使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeyDelimiters redis大key分析的自定义分割符，仅redis使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetKeyDelimiters() const;
 
                     /**
                      * 设置redis大key分析的自定义分割符，仅redis使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _keyDelimiters redis大key分析的自定义分割符，仅redis使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKeyDelimiters(const std::vector<std::string>& _keyDelimiters);
@@ -115,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分片节点数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ShardNum 分片节点数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetShardNum() const;
 
                     /**
                      * 设置分片节点数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _shardNum 分片节点数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetShardNum(const std::string& _shardNum);
@@ -140,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启大key周期性分析，仅redis产品有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AnalysisTopKey 是否开启大key周期性分析，仅redis产品有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAnalysisTopKey() const;
 
                     /**
                      * 设置是否开启大key周期性分析，仅redis产品有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _analysisTopKey 是否开启大key周期性分析，仅redis产品有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAnalysisTopKey(const std::string& _analysisTopKey);
@@ -179,21 +167,18 @@ namespace TencentCloud
 
                     /**
                      * redis大key分析的自定义分割符，仅redis使用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_keyDelimiters;
                     bool m_keyDelimitersHasBeenSet;
 
                     /**
                      * 分片节点数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_shardNum;
                     bool m_shardNumHasBeenSet;
 
                     /**
                      * 是否开启大key周期性分析，仅redis产品有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_analysisTopKey;
                     bool m_analysisTopKeyHasBeenSet;

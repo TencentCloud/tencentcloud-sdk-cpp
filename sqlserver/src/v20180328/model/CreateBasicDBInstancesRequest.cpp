@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,7 +44,8 @@ CreateBasicDBInstancesRequest::CreateBasicDBInstancesRequest() :
     m_spanHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
     m_collationHasBeenSet(false),
-    m_timeZoneHasBeenSet(false)
+    m_timeZoneHasBeenSet(false),
+    m_diskEncryptFlagHasBeenSet(false)
 {
 }
 
@@ -251,6 +252,14 @@ string CreateBasicDBInstancesRequest::ToJsonString() const
         string key = "TimeZone";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_timeZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_diskEncryptFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskEncryptFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_diskEncryptFlag, allocator);
     }
 
 
@@ -611,6 +620,22 @@ void CreateBasicDBInstancesRequest::SetTimeZone(const string& _timeZone)
 bool CreateBasicDBInstancesRequest::TimeZoneHasBeenSet() const
 {
     return m_timeZoneHasBeenSet;
+}
+
+int64_t CreateBasicDBInstancesRequest::GetDiskEncryptFlag() const
+{
+    return m_diskEncryptFlag;
+}
+
+void CreateBasicDBInstancesRequest::SetDiskEncryptFlag(const int64_t& _diskEncryptFlag)
+{
+    m_diskEncryptFlag = _diskEncryptFlag;
+    m_diskEncryptFlagHasBeenSet = true;
+}
+
+bool CreateBasicDBInstancesRequest::DiskEncryptFlagHasBeenSet() const
+{
+    return m_diskEncryptFlagHasBeenSet;
 }
 
 

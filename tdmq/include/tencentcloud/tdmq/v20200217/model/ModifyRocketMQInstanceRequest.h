@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool MessageRetentionHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启删除保护
+                     * @return EnableDeletionProtection 是否开启删除保护
+                     * 
+                     */
+                    bool GetEnableDeletionProtection() const;
+
+                    /**
+                     * 设置是否开启删除保护
+                     * @param _enableDeletionProtection 是否开启删除保护
+                     * 
+                     */
+                    void SetEnableDeletionProtection(const bool& _enableDeletionProtection);
+
+                    /**
+                     * 判断参数 EnableDeletionProtection 是否已赋值
+                     * @return EnableDeletionProtection 是否已赋值
+                     * 
+                     */
+                    bool EnableDeletionProtectionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     int64_t m_messageRetention;
                     bool m_messageRetentionHasBeenSet;
+
+                    /**
+                     * 是否开启删除保护
+                     */
+                    bool m_enableDeletionProtection;
+                    bool m_enableDeletionProtectionHasBeenSet;
 
                 };
             }

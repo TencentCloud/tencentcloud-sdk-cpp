@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分片起始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Begin 分片起始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBegin() const;
 
                     /**
                      * 设置分片起始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _begin 分片起始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBegin(const int64_t& _begin);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分片结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return End 分片结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEnd() const;
 
                     /**
                      * 设置分片结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _end 分片结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnd(const int64_t& _end);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 分片起始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_begin;
                     bool m_beginHasBeenSet;
 
                     /**
                      * 分片结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_end;
                     bool m_endHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,7 +40,9 @@ CreateLogstashInstanceRequest::CreateLogstashInstanceRequest() :
     m_diskSizeHasBeenSet(false),
     m_licenseTypeHasBeenSet(false),
     m_tagListHasBeenSet(false),
-    m_operationDurationHasBeenSet(false)
+    m_operationDurationHasBeenSet(false),
+    m_multiZoneInfoHasBeenSet(false),
+    m_deployModeHasBeenSet(false)
 {
 }
 
@@ -206,6 +208,29 @@ string CreateLogstashInstanceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operationDuration.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_multiZoneInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MultiZoneInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_multiZoneInfo.begin(); itr != m_multiZoneInfo.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_deployModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeployMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deployMode, allocator);
     }
 
 
@@ -502,6 +527,38 @@ void CreateLogstashInstanceRequest::SetOperationDuration(const OperationDuration
 bool CreateLogstashInstanceRequest::OperationDurationHasBeenSet() const
 {
     return m_operationDurationHasBeenSet;
+}
+
+vector<ZoneDetail> CreateLogstashInstanceRequest::GetMultiZoneInfo() const
+{
+    return m_multiZoneInfo;
+}
+
+void CreateLogstashInstanceRequest::SetMultiZoneInfo(const vector<ZoneDetail>& _multiZoneInfo)
+{
+    m_multiZoneInfo = _multiZoneInfo;
+    m_multiZoneInfoHasBeenSet = true;
+}
+
+bool CreateLogstashInstanceRequest::MultiZoneInfoHasBeenSet() const
+{
+    return m_multiZoneInfoHasBeenSet;
+}
+
+uint64_t CreateLogstashInstanceRequest::GetDeployMode() const
+{
+    return m_deployMode;
+}
+
+void CreateLogstashInstanceRequest::SetDeployMode(const uint64_t& _deployMode)
+{
+    m_deployMode = _deployMode;
+    m_deployModeHasBeenSet = true;
+}
+
+bool CreateLogstashInstanceRequest::DeployModeHasBeenSet() const
+{
+    return m_deployModeHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取列：DatabaseName
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatabaseName 列：DatabaseName
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDatabaseName() const;
 
                     /**
                      * 设置列：DatabaseName
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _databaseName 列：DatabaseName
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDatabaseName(const std::string& _databaseName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取列：TableName
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableName 列：TableName
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTableName() const;
 
                     /**
                      * 设置列：TableName
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tableName 列：TableName
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTableName(const std::string& _tableName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取列：Size
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Size 列：Size
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSize() const;
 
                     /**
                      * 设置列：Size
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _size 列：Size
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSize(const std::string& _size);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取列：RemoteSize
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemoteSize 列：RemoteSize
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemoteSize() const;
 
                     /**
                      * 设置列：RemoteSize
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remoteSize 列：RemoteSize
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemoteSize(const std::string& _remoteSize);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 列：DatabaseName
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_databaseName;
                     bool m_databaseNameHasBeenSet;
 
                     /**
                      * 列：TableName
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tableName;
                     bool m_tableNameHasBeenSet;
 
                     /**
                      * 列：Size
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_size;
                     bool m_sizeHasBeenSet;
 
                     /**
                      * 列：RemoteSize
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remoteSize;
                     bool m_remoteSizeHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -280,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取总设备数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalDevice 总设备数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalDevice() const;
 
                     /**
                      * 设置总设备数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalDevice 总设备数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalDevice(const int64_t& _totalDevice);
@@ -305,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取激活设备数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActivateDevice 激活设备数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetActivateDevice() const;
 
                     /**
                      * 设置激活设备数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _activateDevice 激活设备数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActivateDevice(const int64_t& _activateDevice);
@@ -330,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -355,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 实例状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置实例状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 实例状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -380,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消息上下行配置TPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpDownTPS 消息上下行配置TPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUpDownTPS() const;
 
                     /**
                      * 设置消息上下行配置TPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _upDownTPS 消息上下行配置TPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpDownTPS(const int64_t& _upDownTPS);
@@ -405,18 +385,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前消息上下行TPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpDownCurrentTPS 当前消息上下行TPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUpDownCurrentTPS() const;
 
                     /**
                      * 设置当前消息上下行TPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _upDownCurrentTPS 当前消息上下行TPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpDownCurrentTPS(const int64_t& _upDownCurrentTPS);
@@ -430,18 +406,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消息转发配置TPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ForwardTPS 消息转发配置TPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetForwardTPS() const;
 
                     /**
                      * 设置消息转发配置TPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _forwardTPS 消息转发配置TPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetForwardTPS(const int64_t& _forwardTPS);
@@ -455,18 +427,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消息转发当前TPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ForwardCurrentTPS 消息转发当前TPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetForwardCurrentTPS() const;
 
                     /**
                      * 设置消息转发当前TPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _forwardCurrentTPS 消息转发当前TPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetForwardCurrentTPS(const int64_t& _forwardCurrentTPS);
@@ -480,18 +448,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例单元数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CellNum 实例单元数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCellNum() const;
 
                     /**
                      * 设置实例单元数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cellNum 实例单元数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCellNum(const int64_t& _cellNum);
@@ -504,19 +468,15 @@ namespace TencentCloud
                     bool CellNumHasBeenSet() const;
 
                     /**
-                     * 获取实例Tag
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BillingTag 实例Tag
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取实例Tag，企业实例必传
+                     * @return BillingTag 实例Tag，企业实例必传
                      * 
                      */
                     std::string GetBillingTag() const;
 
                     /**
-                     * 设置实例Tag
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _billingTag 实例Tag
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置实例Tag，企业实例必传
+                     * @param _billingTag 实例Tag，企业实例必传
                      * 
                      */
                     void SetBillingTag(const std::string& _billingTag);
@@ -530,18 +490,14 @@ namespace TencentCloud
 
                     /**
                      * 获取每日消息数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EverydayFreeMessageCount 每日消息数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEverydayFreeMessageCount() const;
 
                     /**
                      * 设置每日消息数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _everydayFreeMessageCount 每日消息数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEverydayFreeMessageCount(const int64_t& _everydayFreeMessageCount);
@@ -555,18 +511,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最大在线设备数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxDeviceOnlineCount 最大在线设备数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxDeviceOnlineCount() const;
 
                     /**
                      * 设置最大在线设备数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxDeviceOnlineCount 最大在线设备数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxDeviceOnlineCount(const int64_t& _maxDeviceOnlineCount);
@@ -648,84 +600,72 @@ namespace TencentCloud
 
                     /**
                      * 总设备数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalDevice;
                     bool m_totalDeviceHasBeenSet;
 
                     /**
                      * 激活设备数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_activateDevice;
                     bool m_activateDeviceHasBeenSet;
 
                     /**
                      * 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 实例状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 消息上下行配置TPS
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_upDownTPS;
                     bool m_upDownTPSHasBeenSet;
 
                     /**
                      * 当前消息上下行TPS
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_upDownCurrentTPS;
                     bool m_upDownCurrentTPSHasBeenSet;
 
                     /**
                      * 消息转发配置TPS
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_forwardTPS;
                     bool m_forwardTPSHasBeenSet;
 
                     /**
                      * 消息转发当前TPS
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_forwardCurrentTPS;
                     bool m_forwardCurrentTPSHasBeenSet;
 
                     /**
                      * 实例单元数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cellNum;
                     bool m_cellNumHasBeenSet;
 
                     /**
-                     * 实例Tag
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 实例Tag，企业实例必传
                      */
                     std::string m_billingTag;
                     bool m_billingTagHasBeenSet;
 
                     /**
                      * 每日消息数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_everydayFreeMessageCount;
                     bool m_everydayFreeMessageCountHasBeenSet;
 
                     /**
                      * 最大在线设备数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxDeviceOnlineCount;
                     bool m_maxDeviceOnlineCountHasBeenSet;

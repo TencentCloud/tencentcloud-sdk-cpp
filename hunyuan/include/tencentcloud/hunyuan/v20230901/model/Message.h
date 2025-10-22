@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,18 +91,18 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取多种类型内容（目前支持图片和文本），仅 hunyuan-vision 模型支持
+                     * 获取多种类型内容（目前支持图片和文本），仅 hunyuan-vision 和 hunyuan-turbo-vision 模型支持
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Contents 多种类型内容（目前支持图片和文本），仅 hunyuan-vision 模型支持
+                     * @return Contents 多种类型内容（目前支持图片和文本），仅 hunyuan-vision 和 hunyuan-turbo-vision 模型支持
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Content> GetContents() const;
 
                     /**
-                     * 设置多种类型内容（目前支持图片和文本），仅 hunyuan-vision 模型支持
+                     * 设置多种类型内容（目前支持图片和文本），仅 hunyuan-vision 和 hunyuan-turbo-vision 模型支持
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _contents 多种类型内容（目前支持图片和文本），仅 hunyuan-vision 模型支持
+                     * @param _contents 多种类型内容（目前支持图片和文本），仅 hunyuan-vision 和 hunyuan-turbo-vision 模型支持
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -165,6 +165,52 @@ namespace TencentCloud
                      */
                     bool ToolCallsHasBeenSet() const;
 
+                    /**
+                     * 获取文件标识符。单次最大 50 个文件。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FileIDs 文件标识符。单次最大 50 个文件。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetFileIDs() const;
+
+                    /**
+                     * 设置文件标识符。单次最大 50 个文件。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _fileIDs 文件标识符。单次最大 50 个文件。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFileIDs(const std::vector<std::string>& _fileIDs);
+
+                    /**
+                     * 判断参数 FileIDs 是否已赋值
+                     * @return FileIDs 是否已赋值
+                     * 
+                     */
+                    bool FileIDsHasBeenSet() const;
+
+                    /**
+                     * 获取思维链内容。用于展示模型思考过程，仅 Hunyuan-T1 系列模型可用。注意：在进行多轮对话时，请**不要**将此字段拼接到 messages 中。请求 messages 的请求参数中包含 reasoning_content，接口将报错。
+                     * @return ReasoningContent 思维链内容。用于展示模型思考过程，仅 Hunyuan-T1 系列模型可用。注意：在进行多轮对话时，请**不要**将此字段拼接到 messages 中。请求 messages 的请求参数中包含 reasoning_content，接口将报错。
+                     * 
+                     */
+                    std::string GetReasoningContent() const;
+
+                    /**
+                     * 设置思维链内容。用于展示模型思考过程，仅 Hunyuan-T1 系列模型可用。注意：在进行多轮对话时，请**不要**将此字段拼接到 messages 中。请求 messages 的请求参数中包含 reasoning_content，接口将报错。
+                     * @param _reasoningContent 思维链内容。用于展示模型思考过程，仅 Hunyuan-T1 系列模型可用。注意：在进行多轮对话时，请**不要**将此字段拼接到 messages 中。请求 messages 的请求参数中包含 reasoning_content，接口将报错。
+                     * 
+                     */
+                    void SetReasoningContent(const std::string& _reasoningContent);
+
+                    /**
+                     * 判断参数 ReasoningContent 是否已赋值
+                     * @return ReasoningContent 是否已赋值
+                     * 
+                     */
+                    bool ReasoningContentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -180,7 +226,7 @@ namespace TencentCloud
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 多种类型内容（目前支持图片和文本），仅 hunyuan-vision 模型支持
+                     * 多种类型内容（目前支持图片和文本），仅 hunyuan-vision 和 hunyuan-turbo-vision 模型支持
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Content> m_contents;
@@ -199,6 +245,19 @@ namespace TencentCloud
                      */
                     std::vector<ToolCall> m_toolCalls;
                     bool m_toolCallsHasBeenSet;
+
+                    /**
+                     * 文件标识符。单次最大 50 个文件。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_fileIDs;
+                    bool m_fileIDsHasBeenSet;
+
+                    /**
+                     * 思维链内容。用于展示模型思考过程，仅 Hunyuan-T1 系列模型可用。注意：在进行多轮对话时，请**不要**将此字段拼接到 messages 中。请求 messages 的请求参数中包含 reasoning_content，接口将报错。
+                     */
+                    std::string m_reasoningContent;
+                    bool m_reasoningContentHasBeenSet;
 
                 };
             }

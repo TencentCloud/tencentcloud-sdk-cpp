@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool IpHasBeenSet() const;
 
                     /**
-                     * 获取协议，可取值HTTP，HTTPS
-                     * @return Protocol 协议，可取值HTTP，HTTPS
+                     * 获取协议，可取值http, https, http/https
+                     * @return Protocol 协议，可取值http, https, http/https
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置协议，可取值HTTP，HTTPS
-                     * @param _protocol 协议，可取值HTTP，HTTPS
+                     * 设置协议，可取值http, https, http/https
+                     * @param _protocol 协议，可取值http, https, http/https
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool PolicyHasBeenSet() const;
 
                     /**
-                     * 获取是否为兜底频控
-                     * @return IsGlobal 是否为兜底频控
+                     * 获取是否为兜底频控 0表示不是 1表示是
+                     * @return IsGlobal 是否为兜底频控 0表示不是 1表示是
                      * 
                      */
                     int64_t GetIsGlobal() const;
 
                     /**
-                     * 设置是否为兜底频控
-                     * @param _isGlobal 是否为兜底频控
+                     * 设置是否为兜底频控 0表示不是 1表示是
+                     * @param _isGlobal 是否为兜底频控 0表示不是 1表示是
                      * 
                      */
                     void SetIsGlobal(const int64_t& _isGlobal);
@@ -184,7 +184,7 @@ namespace TencentCloud
                     bool m_ipHasBeenSet;
 
                     /**
-                     * 协议，可取值HTTP，HTTPS
+                     * 协议，可取值http, https, http/https
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
@@ -202,7 +202,7 @@ namespace TencentCloud
                     bool m_policyHasBeenSet;
 
                     /**
-                     * 是否为兜底频控
+                     * 是否为兜底频控 0表示不是 1表示是
                      */
                     int64_t m_isGlobal;
                     bool m_isGlobalHasBeenSet;

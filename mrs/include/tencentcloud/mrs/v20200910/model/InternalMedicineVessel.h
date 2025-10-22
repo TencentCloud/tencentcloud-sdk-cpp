@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取血管总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 血管总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KeyValueItem GetText() const;
 
                     /**
                      * 设置血管总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _text 血管总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetText(const KeyValueItem& _text);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取血管杂音
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VascularMurmur 血管杂音
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KeyValueItem GetVascularMurmur() const;
 
                     /**
                      * 设置血管杂音
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vascularMurmur 血管杂音
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVascularMurmur(const KeyValueItem& _vascularMurmur);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取外周血管
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PeripheralVessel 外周血管
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KeyValueItem GetPeripheralVessel() const;
 
                     /**
                      * 设置外周血管
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _peripheralVessel 外周血管
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPeripheralVessel(const KeyValueItem& _peripheralVessel);
@@ -126,21 +114,18 @@ namespace TencentCloud
 
                     /**
                      * 血管总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KeyValueItem m_text;
                     bool m_textHasBeenSet;
 
                     /**
                      * 血管杂音
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KeyValueItem m_vascularMurmur;
                     bool m_vascularMurmurHasBeenSet;
 
                     /**
                      * 外周血管
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KeyValueItem m_peripheralVessel;
                     bool m_peripheralVesselHasBeenSet;

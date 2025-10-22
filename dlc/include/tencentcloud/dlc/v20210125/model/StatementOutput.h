@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取执行总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExecutionCount 执行总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetExecutionCount() const;
 
                     /**
                      * 设置执行总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _executionCount 执行总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExecutionCount(const int64_t& _executionCount);
@@ -99,18 +95,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Statement状态:ok,error
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status Statement状态:ok,error
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置Statement状态:ok,error
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status Statement状态:ok,error
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -124,18 +116,14 @@ namespace TencentCloud
 
                     /**
                      * 获取错误名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorName 错误名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrorName() const;
 
                     /**
                      * 设置错误名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errorName 错误名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrorName(const std::string& _errorName);
@@ -199,18 +187,14 @@ namespace TencentCloud
 
                     /**
                      * 获取SQL类型任务结果返回
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SQLResult SQL类型任务结果返回
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSQLResult() const;
 
                     /**
                      * 设置SQL类型任务结果返回
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sQLResult SQL类型任务结果返回
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSQLResult(const std::string& _sQLResult);
@@ -226,7 +210,6 @@ namespace TencentCloud
 
                     /**
                      * 执行总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_executionCount;
                     bool m_executionCountHasBeenSet;
@@ -240,14 +223,12 @@ namespace TencentCloud
 
                     /**
                      * Statement状态:ok,error
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 错误名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorName;
                     bool m_errorNameHasBeenSet;
@@ -268,7 +249,6 @@ namespace TencentCloud
 
                     /**
                      * SQL类型任务结果返回
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sQLResult;
                     bool m_sQLResultHasBeenSet;

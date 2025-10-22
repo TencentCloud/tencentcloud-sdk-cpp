@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,18 +56,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Business 产品
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AnalyseBusinessDetail> GetBusiness() const;
 
                     /**
                      * 设置产品
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _business 产品
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBusiness(const std::vector<AnalyseBusinessDetail>& _business);
@@ -81,18 +77,14 @@ namespace TencentCloud
 
                     /**
                      * 获取项目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Project 项目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AnalyseProjectDetail> GetProject() const;
 
                     /**
                      * 设置项目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _project 项目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProject(const std::vector<AnalyseProjectDetail>& _project);
@@ -106,18 +98,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AnalyseRegionDetail> GetRegion() const;
 
                     /**
                      * 设置地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::vector<AnalyseRegionDetail>& _region);
@@ -131,18 +119,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计费模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayMode 计费模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AnalysePayModeDetail> GetPayMode() const;
 
                     /**
                      * 设置计费模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _payMode 计费模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPayMode(const std::vector<AnalysePayModeDetail>& _payMode);
@@ -156,18 +140,14 @@ namespace TencentCloud
 
                     /**
                      * 获取交易类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActionType 交易类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AnalyseActionTypeDetail> GetActionType() const;
 
                     /**
                      * 设置交易类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _actionType 交易类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActionType(const std::vector<AnalyseActionTypeDetail>& _actionType);
@@ -181,18 +161,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AnalyseZoneDetail> GetZone() const;
 
                     /**
                      * 设置可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zone 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZone(const std::vector<AnalyseZoneDetail>& _zone);
@@ -206,18 +182,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源所有者Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OwnerUin 资源所有者Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AnalyseOwnerUinDetail> GetOwnerUin() const;
 
                     /**
                      * 设置资源所有者Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ownerUin 资源所有者Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOwnerUin(const std::vector<AnalyseOwnerUinDetail>& _ownerUin);
@@ -231,18 +203,14 @@ namespace TencentCloud
 
                     /**
                      * 获取费用类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Amount 费用类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AnalyseAmountDetail> GetAmount() const;
 
                     /**
                      * 设置费用类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _amount 费用类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAmount(const std::vector<AnalyseAmountDetail>& _amount);
@@ -258,56 +226,48 @@ namespace TencentCloud
 
                     /**
                      * 产品
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AnalyseBusinessDetail> m_business;
                     bool m_businessHasBeenSet;
 
                     /**
                      * 项目
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AnalyseProjectDetail> m_project;
                     bool m_projectHasBeenSet;
 
                     /**
                      * 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AnalyseRegionDetail> m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * 计费模式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AnalysePayModeDetail> m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
                      * 交易类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AnalyseActionTypeDetail> m_actionType;
                     bool m_actionTypeHasBeenSet;
 
                     /**
                      * 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AnalyseZoneDetail> m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
                      * 资源所有者Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AnalyseOwnerUinDetail> m_ownerUin;
                     bool m_ownerUinHasBeenSet;
 
                     /**
                      * 费用类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AnalyseAmountDetail> m_amount;
                     bool m_amountHasBeenSet;

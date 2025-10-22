@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取密钥对名称，可由数字，字母和下划线组成，长度不超过25个字符。
-                     * @return KeyName 密钥对名称，可由数字，字母和下划线组成，长度不超过25个字符。
+                     * 获取密钥对名称，可由数字、字母和下划线组成，长度不超过25个字符。密钥对名称不能和已经存在的密钥对名称重复。
+                     * @return KeyName 密钥对名称，可由数字、字母和下划线组成，长度不超过25个字符。密钥对名称不能和已经存在的密钥对名称重复。
                      * 
                      */
                     std::string GetKeyName() const;
 
                     /**
-                     * 设置密钥对名称，可由数字，字母和下划线组成，长度不超过25个字符。
-                     * @param _keyName 密钥对名称，可由数字，字母和下划线组成，长度不超过25个字符。
+                     * 设置密钥对名称，可由数字、字母和下划线组成，长度不超过25个字符。密钥对名称不能和已经存在的密钥对名称重复。
+                     * @param _keyName 密钥对名称，可由数字、字母和下划线组成，长度不超过25个字符。密钥对名称不能和已经存在的密钥对名称重复。
                      * 
                      */
                     void SetKeyName(const std::string& _keyName);
@@ -65,11 +65,11 @@ namespace TencentCloud
                     bool KeyNameHasBeenSet() const;
 
                     /**
-                     * 获取密钥对创建后所属的项目ID。
+                     * 获取密钥对创建后所属的项目ID，ProjectId为0表示默认项目。
 可以通过以下方式获取项目ID：
 <li>通过项目列表查询项目ID。</li>
 <li>通过调用接口 [DescribeProjects](https://cloud.tencent.com/document/api/651/78725)，取返回信息中的`projectId `获取项目ID。</li>
-                     * @return ProjectId 密钥对创建后所属的项目ID。
+                     * @return ProjectId 密钥对创建后所属的项目ID，ProjectId为0表示默认项目。
 可以通过以下方式获取项目ID：
 <li>通过项目列表查询项目ID。</li>
 <li>通过调用接口 [DescribeProjects](https://cloud.tencent.com/document/api/651/78725)，取返回信息中的`projectId `获取项目ID。</li>
@@ -78,11 +78,11 @@ namespace TencentCloud
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置密钥对创建后所属的项目ID。
+                     * 设置密钥对创建后所属的项目ID，ProjectId为0表示默认项目。
 可以通过以下方式获取项目ID：
 <li>通过项目列表查询项目ID。</li>
 <li>通过调用接口 [DescribeProjects](https://cloud.tencent.com/document/api/651/78725)，取返回信息中的`projectId `获取项目ID。</li>
-                     * @param _projectId 密钥对创建后所属的项目ID。
+                     * @param _projectId 密钥对创建后所属的项目ID，ProjectId为0表示默认项目。
 可以通过以下方式获取项目ID：
 <li>通过项目列表查询项目ID。</li>
 <li>通过调用接口 [DescribeProjects](https://cloud.tencent.com/document/api/651/78725)，取返回信息中的`projectId `获取项目ID。</li>
@@ -121,13 +121,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 密钥对名称，可由数字，字母和下划线组成，长度不超过25个字符。
+                     * 密钥对名称，可由数字、字母和下划线组成，长度不超过25个字符。密钥对名称不能和已经存在的密钥对名称重复。
                      */
                     std::string m_keyName;
                     bool m_keyNameHasBeenSet;
 
                     /**
-                     * 密钥对创建后所属的项目ID。
+                     * 密钥对创建后所属的项目ID，ProjectId为0表示默认项目。
 可以通过以下方式获取项目ID：
 <li>通过项目列表查询项目ID。</li>
 <li>通过调用接口 [DescribeProjects](https://cloud.tencent.com/document/api/651/78725)，取返回信息中的`projectId `获取项目ID。</li>

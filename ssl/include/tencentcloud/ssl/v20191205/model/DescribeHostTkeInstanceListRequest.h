@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,27 +44,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待部署的证书ID
-                     * @return CertificateId 待部署的证书ID
-                     * 
-                     */
-                    std::string GetCertificateId() const;
-
-                    /**
-                     * 设置待部署的证书ID
-                     * @param _certificateId 待部署的证书ID
-                     * 
-                     */
-                    void SetCertificateId(const std::string& _certificateId);
-
-                    /**
-                     * 判断参数 CertificateId 是否已赋值
-                     * @return CertificateId 是否已赋值
-                     * 
-                     */
-                    bool CertificateIdHasBeenSet() const;
-
-                    /**
                      * 获取分页偏移量，从0开始。
                      * @return Offset 分页偏移量，从0开始。
                      * 
@@ -105,6 +84,27 @@ namespace TencentCloud
                      * 
                      */
                     bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取待部署的证书ID
+                     * @return CertificateId 待部署的证书ID
+                     * 
+                     */
+                    std::string GetCertificateId() const;
+
+                    /**
+                     * 设置待部署的证书ID
+                     * @param _certificateId 待部署的证书ID
+                     * 
+                     */
+                    void SetCertificateId(const std::string& _certificateId);
+
+                    /**
+                     * 判断参数 CertificateId 是否已赋值
+                     * @return CertificateId 是否已赋值
+                     * 
+                     */
+                    bool CertificateIdHasBeenSet() const;
 
                     /**
                      * 获取是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取是否异步缓存
-                     * @return AsyncCache 是否异步缓存
+                     * 获取是否异步缓存，0表示否，1表示是，默认为0
+                     * @return AsyncCache 是否异步缓存，0表示否，1表示是，默认为0
                      * 
                      */
                     int64_t GetAsyncCache() const;
 
                     /**
-                     * 设置是否异步缓存
-                     * @param _asyncCache 是否异步缓存
+                     * 设置是否异步缓存，0表示否，1表示是，默认为0
+                     * @param _asyncCache 是否异步缓存，0表示否，1表示是，默认为0
                      * 
                      */
                     void SetAsyncCache(const int64_t& _asyncCache);
@@ -193,12 +193,6 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 待部署的证书ID
-                     */
-                    std::string m_certificateId;
-                    bool m_certificateIdHasBeenSet;
-
-                    /**
                      * 分页偏移量，从0开始。
                      */
                     uint64_t m_offset;
@@ -209,6 +203,12 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 待部署的证书ID
+                     */
+                    std::string m_certificateId;
+                    bool m_certificateIdHasBeenSet;
 
                     /**
                      * 是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时
@@ -223,7 +223,7 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 是否异步缓存
+                     * 是否异步缓存，0表示否，1表示是，默认为0
                      */
                     int64_t m_asyncCache;
                     bool m_asyncCacheHasBeenSet;

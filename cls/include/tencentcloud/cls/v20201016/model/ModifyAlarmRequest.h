@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取告警策略ID。
-                     * @return AlarmId 告警策略ID。
+                     * 获取告警策略ID。-通过[获取告警策略列表](https://cloud.tencent.com/document/product/614/56461)获取告警策略ID
+                     * @return AlarmId 告警策略ID。-通过[获取告警策略列表](https://cloud.tencent.com/document/product/614/56461)获取告警策略ID
                      * 
                      */
                     std::string GetAlarmId() const;
 
                     /**
-                     * 设置告警策略ID。
-                     * @param _alarmId 告警策略ID。
+                     * 设置告警策略ID。-通过[获取告警策略列表](https://cloud.tencent.com/document/product/614/56461)获取告警策略ID
+                     * @param _alarmId 告警策略ID。-通过[获取告警策略列表](https://cloud.tencent.com/document/product/614/56461)获取告警策略ID
                      * 
                      */
                     void SetAlarmId(const std::string& _alarmId);
@@ -71,15 +71,15 @@ namespace TencentCloud
                     bool AlarmIdHasBeenSet() const;
 
                     /**
-                     * 获取告警策略名称
-                     * @return Name 告警策略名称
+                     * 获取告警策略名称。最大支持255个字节，不支持 '|'。
+                     * @return Name 告警策略名称。最大支持255个字节，不支持 '|'。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置告警策略名称
-                     * @param _name 告警策略名称
+                     * 设置告警策略名称。最大支持255个字节，不支持 '|'。
+                     * @param _name 告警策略名称。最大支持255个字节，不支持 '|'。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -113,11 +113,11 @@ namespace TencentCloud
                     bool MonitorTimeHasBeenSet() const;
 
                     /**
-                     * 获取触发条件。
+                     * 获取告警信息发送的触发条件。
 
 注意:  
 - Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
-                     * @return Condition 触发条件。
+                     * @return Condition 告警信息发送的触发条件。
 
 注意:  
 - Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
@@ -126,11 +126,11 @@ namespace TencentCloud
                     std::string GetCondition() const;
 
                     /**
-                     * 设置触发条件。
+                     * 设置告警信息发送的触发条件。
 
 注意:  
 - Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
-                     * @param _condition 触发条件。
+                     * @param _condition 告警信息发送的触发条件。
 
 注意:  
 - Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
@@ -262,15 +262,15 @@ namespace TencentCloud
                     bool AlarmPeriodHasBeenSet() const;
 
                     /**
-                     * 获取关联的告警通知模板列表。
-                     * @return AlarmNoticeIds 关联的告警通知模板列表。
+                     * 获取关联的告警通知渠道组列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取关联的告警通知渠道组列表，和MonitorNotice互斥
+                     * @return AlarmNoticeIds 关联的告警通知渠道组列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取关联的告警通知渠道组列表，和MonitorNotice互斥
                      * 
                      */
                     std::vector<std::string> GetAlarmNoticeIds() const;
 
                     /**
-                     * 设置关联的告警通知模板列表。
-                     * @param _alarmNoticeIds 关联的告警通知模板列表。
+                     * 设置关联的告警通知渠道组列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取关联的告警通知渠道组列表，和MonitorNotice互斥
+                     * @param _alarmNoticeIds 关联的告警通知渠道组列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取关联的告警通知渠道组列表，和MonitorNotice互斥
                      * 
                      */
                     void SetAlarmNoticeIds(const std::vector<std::string>& _alarmNoticeIds);
@@ -327,21 +327,21 @@ namespace TencentCloud
                     /**
                      * 获取该参数已废弃，请使用Status参数控制是否开启告警策略。
                      * @return Enable 该参数已废弃，请使用Status参数控制是否开启告警策略。
-                     * 
+                     * @deprecated
                      */
                     bool GetEnable() const;
 
                     /**
                      * 设置该参数已废弃，请使用Status参数控制是否开启告警策略。
                      * @param _enable 该参数已废弃，请使用Status参数控制是否开启告警策略。
-                     * 
+                     * @deprecated
                      */
                     void SetEnable(const bool& _enable);
 
                     /**
                      * 判断参数 Enable 是否已赋值
                      * @return Enable 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool EnableHasBeenSet() const;
 
@@ -536,13 +536,13 @@ Classifications元素的Value长度不能超过200个字符。
                 private:
 
                     /**
-                     * 告警策略ID。
+                     * 告警策略ID。-通过[获取告警策略列表](https://cloud.tencent.com/document/product/614/56461)获取告警策略ID
                      */
                     std::string m_alarmId;
                     bool m_alarmIdHasBeenSet;
 
                     /**
-                     * 告警策略名称
+                     * 告警策略名称。最大支持255个字节，不支持 '|'。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -554,7 +554,7 @@ Classifications元素的Value长度不能超过200个字符。
                     bool m_monitorTimeHasBeenSet;
 
                     /**
-                     * 触发条件。
+                     * 告警信息发送的触发条件。
 
 注意:  
 - Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。
@@ -595,7 +595,7 @@ Classifications元素的Value长度不能超过200个字符。
                     bool m_alarmPeriodHasBeenSet;
 
                     /**
-                     * 关联的告警通知模板列表。
+                     * 关联的告警通知渠道组列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取关联的告警通知渠道组列表，和MonitorNotice互斥
                      */
                     std::vector<std::string> m_alarmNoticeIds;
                     bool m_alarmNoticeIdsHasBeenSet;

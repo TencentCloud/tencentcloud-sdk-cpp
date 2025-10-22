@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取缓存清理时间(小时)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CacheClearDelay 缓存清理时间(小时)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCacheClearDelay() const;
 
                     /**
                      * 设置缓存清理时间(小时)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cacheClearDelay 缓存清理时间(小时)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCacheClearDelay(const uint64_t& _cacheClearDelay);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取缓存清理计划时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CacheClearTime 缓存清理计划时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCacheClearTime() const;
 
                     /**
                      * 设置缓存清理计划时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cacheClearTime 缓存清理计划时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCacheClearTime(const std::string& _cacheClearTime);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取缓存是否已被清理。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CacheCleared 缓存是否已被清理。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetCacheCleared() const;
 
                     /**
                      * 设置缓存是否已被清理。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cacheCleared 缓存是否已被清理。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCacheCleared(const bool& _cacheCleared);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 缓存清理时间(小时)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_cacheClearDelay;
                     bool m_cacheClearDelayHasBeenSet;
 
                     /**
                      * 缓存清理计划时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cacheClearTime;
                     bool m_cacheClearTimeHasBeenSet;
 
                     /**
                      * 缓存是否已被清理。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_cacheCleared;
                     bool m_cacheClearedHasBeenSet;

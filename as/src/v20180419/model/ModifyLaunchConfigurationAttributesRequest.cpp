@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,7 +46,9 @@ ModifyLaunchConfigurationAttributesRequest::ModifyLaunchConfigurationAttributesR
     m_disasterRecoverGroupIdsHasBeenSet(false),
     m_loginSettingsHasBeenSet(false),
     m_instanceTagsHasBeenSet(false),
-    m_imageFamilyHasBeenSet(false)
+    m_imageFamilyHasBeenSet(false),
+    m_dedicatedClusterIdHasBeenSet(false),
+    m_metadataHasBeenSet(false)
 {
 }
 
@@ -285,6 +287,23 @@ string ModifyLaunchConfigurationAttributesRequest::ToJsonString() const
         string key = "ImageFamily";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_imageFamily.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dedicatedClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DedicatedClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dedicatedClusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_metadataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Metadata";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_metadata.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -677,6 +696,38 @@ void ModifyLaunchConfigurationAttributesRequest::SetImageFamily(const string& _i
 bool ModifyLaunchConfigurationAttributesRequest::ImageFamilyHasBeenSet() const
 {
     return m_imageFamilyHasBeenSet;
+}
+
+string ModifyLaunchConfigurationAttributesRequest::GetDedicatedClusterId() const
+{
+    return m_dedicatedClusterId;
+}
+
+void ModifyLaunchConfigurationAttributesRequest::SetDedicatedClusterId(const string& _dedicatedClusterId)
+{
+    m_dedicatedClusterId = _dedicatedClusterId;
+    m_dedicatedClusterIdHasBeenSet = true;
+}
+
+bool ModifyLaunchConfigurationAttributesRequest::DedicatedClusterIdHasBeenSet() const
+{
+    return m_dedicatedClusterIdHasBeenSet;
+}
+
+Metadata ModifyLaunchConfigurationAttributesRequest::GetMetadata() const
+{
+    return m_metadata;
+}
+
+void ModifyLaunchConfigurationAttributesRequest::SetMetadata(const Metadata& _metadata)
+{
+    m_metadata = _metadata;
+    m_metadataHasBeenSet = true;
+}
+
+bool ModifyLaunchConfigurationAttributesRequest::MetadataHasBeenSet() const
+{
+    return m_metadataHasBeenSet;
 }
 
 

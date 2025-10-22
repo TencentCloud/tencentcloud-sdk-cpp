@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,8 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ActivateTWeCallLicenseRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ActivateTWeCallLicenseResponse.h>
-#include <tencentcloud/iotexplorer/v20190423/model/AssignTWeCallLicenseRequest.h>
-#include <tencentcloud/iotexplorer/v20190423/model/AssignTWeCallLicenseResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/BatchUpdateFirmwareRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/BatchUpdateFirmwareResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BindCloudStorageUserRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BindCloudStorageUserResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BindDevicesRequest.h>
@@ -39,26 +39,38 @@
 #include <tencentcloud/iotexplorer/v20190423/model/CallDeviceActionSyncResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CancelAssignTWeCallLicenseRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CancelAssignTWeCallLicenseResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ChangeP2PRouteRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ChangeP2PRouteResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CheckFirmwareUpdateRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CheckFirmwareUpdateResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ControlDeviceDataRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ControlDeviceDataResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateAISearchTaskAsyncRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateAISearchTaskAsyncResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateBatchProductionRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateBatchProductionResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateCloudStorageAIServiceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateCloudStorageAIServiceResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateCloudStorageAIServiceTaskRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateCloudStorageAIServiceTaskResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateDeviceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateDeviceResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateDeviceChannelRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateDeviceChannelResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateExternalSourceAIServiceTaskRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateExternalSourceAIServiceTaskResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateFenceBindRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateFenceBindResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateFreeCloudStorageRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateFreeCloudStorageResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateIotVideoCloudStorageRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateIotVideoCloudStorageResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateLoRaFrequencyRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateLoRaFrequencyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateLoRaGatewayRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateLoRaGatewayResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateOtaModuleRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateOtaModuleResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreatePositionFenceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreatePositionFenceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreatePositionSpaceRequest.h>
@@ -69,6 +81,12 @@
 #include <tencentcloud/iotexplorer/v20190423/model/CreateStudioProductResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTRTCSignaturesWithRoomIdRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTRTCSignaturesWithRoomIdResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateTWeSeeRecognitionTaskRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateTWeSeeRecognitionTaskResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateTWeTalkProductConfigRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateTWeTalkProductConfigResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateTWeTalkProductConfigV2Request.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateTWeTalkProductConfigV2Response.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTopicPolicyRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTopicPolicyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTopicRuleRequest.h>
@@ -85,6 +103,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteLoRaFrequencyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteLoRaGatewayRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteLoRaGatewayResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DeleteOtaModuleRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DeleteOtaModuleResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeletePositionFenceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeletePositionFenceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeletePositionSpaceRequest.h>
@@ -97,6 +117,12 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteTopicPolicyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteTopicRuleRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteTopicRuleResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeAISearchTaskAsyncRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeAISearchTaskAsyncResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeActivateDeviceRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeActivateDeviceResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeActivateLicenseServiceRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeActivateLicenseServiceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeBatchProductionRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeBatchProductionResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeBindedProductsRequest.h>
@@ -115,6 +141,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageDateResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageEventsRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageEventsResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageEventsWithAITasksRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageEventsWithAITasksResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageMultiThumbnailRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageMultiThumbnailResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageOrderRequest.h>
@@ -133,6 +161,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageTimeResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageUsersRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageUsersResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCsReportCountDataInfoRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCsReportCountDataInfoResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceBindGatewayRequest.h>
@@ -159,8 +189,14 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareTaskRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareTaskResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareTaskDevicesRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareTaskDevicesResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareTasksRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareTasksResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareUpdateStatusRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareUpdateStatusResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeFreeCloudStorageNumRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeFreeCloudStorageNumResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeGatewayBindDevicesRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeGatewayBindDevicesResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeGatewaySubDeviceListRequest.h>
@@ -173,6 +209,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeLoRaFrequencyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeModelDefinitionRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeModelDefinitionResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeP2PRouteRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeP2PRouteResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribePackageConsumeTaskRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribePackageConsumeTaskResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribePackageConsumeTasksRequest.h>
@@ -187,10 +225,24 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeSpaceFenceEventListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeStudioProductRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeStudioProductResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeSubscribedTopicPolicyRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeSubscribedTopicPolicyResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeSeeConfigRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeSeeConfigResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeSeeRecognitionTaskRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeSeeRecognitionTaskResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeTalkProductConfigRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeTalkProductConfigResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeTalkProductConfigV2Request.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeTalkProductConfigV2Response.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTopicPolicyRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTopicPolicyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTopicRuleRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTopicRuleResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeUnbindedDevicesRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeUnbindedDevicesResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeVideoLicenseRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeVideoLicenseResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DirectBindDeviceInFamilyRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DirectBindDeviceInFamilyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DisableTopicRuleRequest.h>
@@ -231,22 +283,38 @@
 #include <tencentcloud/iotexplorer/v20190423/model/GetStudioProductListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetTWeCallActiveStatusRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetTWeCallActiveStatusResponse.h>
-#include <tencentcloud/iotexplorer/v20190423/model/GetTWeCallPkgListRequest.h>
-#include <tencentcloud/iotexplorer/v20190423/model/GetTWeCallPkgListResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GetTWeTalkProductConfigListRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GetTWeTalkProductConfigListResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GetTWeTalkProductConfigListV2Request.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GetTWeTalkProductConfigListV2Response.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetTopicRuleListRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetTopicRuleListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetWechatDeviceTicketRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetWechatDeviceTicketResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/InheritCloudStorageUserRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/InheritCloudStorageUserResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/InvokeAISearchServiceRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/InvokeAISearchServiceResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/InvokeCloudStorageAIServiceTaskRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/InvokeCloudStorageAIServiceTaskResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/InvokeExternalSourceAIServiceTaskRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/InvokeExternalSourceAIServiceTaskResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/InvokeTWeSeeRecognitionTaskRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/InvokeTWeSeeRecognitionTaskResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/InvokeVideosKeywordsAnalyzerRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/InvokeVideosKeywordsAnalyzerResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListEventHistoryRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListEventHistoryResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListFirmwaresRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListFirmwaresResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ListOtaModulesRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ListOtaModulesResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ListProductOtaModulesRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ListProductOtaModulesResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListTopicPolicyRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListTopicPolicyResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifyApplicationRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifyApplicationResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyCloudStorageAIServiceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyCloudStorageAIServiceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyCloudStorageAIServiceCallbackRequest.h>
@@ -271,10 +339,18 @@
 #include <tencentcloud/iotexplorer/v20190423/model/ModifySpacePropertyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyStudioProductRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyStudioProductResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifyTWeSeeConfigRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifyTWeSeeConfigResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifyTWeTalkProductConfigRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifyTWeTalkProductConfigResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifyTWeTalkProductConfigV2Request.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifyTWeTalkProductConfigV2Response.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTopicPolicyRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTopicPolicyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTopicRuleRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTopicRuleResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/PauseTWeCallDeviceRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/PauseTWeCallDeviceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/PublishBroadcastMessageRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/PublishBroadcastMessageResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/PublishFirmwareUpdateMessageRequest.h>
@@ -293,6 +369,10 @@
 #include <tencentcloud/iotexplorer/v20190423/model/ResetCloudStorageAIServiceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ResetCloudStorageEventRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ResetCloudStorageEventResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ResetTWeCallDeviceRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ResetTWeCallDeviceResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ResumeWeCallDeviceRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ResumeWeCallDeviceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SearchPositionSpaceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SearchPositionSpaceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SearchStudioProductRequest.h>
@@ -301,6 +381,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/SearchTopicRuleResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/TransferCloudStorageRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/TransferCloudStorageResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/TransferTWeCallDeviceRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/TransferTWeCallDeviceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UnbindDevicesRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UnbindDevicesResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UnbindProductsRequest.h>
@@ -311,6 +393,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/UpdateDevicesEnableStateResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UpdateFirmwareRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UpdateFirmwareResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/UpdateOtaModuleRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/UpdateOtaModuleResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UploadFirmwareRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UploadFirmwareResponse.h>
 
@@ -330,9 +414,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ActivateTWeCallLicenseResponse> ActivateTWeCallLicenseOutcome;
                 typedef std::future<ActivateTWeCallLicenseOutcome> ActivateTWeCallLicenseOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ActivateTWeCallLicenseRequest&, ActivateTWeCallLicenseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ActivateTWeCallLicenseAsyncHandler;
-                typedef Outcome<Core::Error, Model::AssignTWeCallLicenseResponse> AssignTWeCallLicenseOutcome;
-                typedef std::future<AssignTWeCallLicenseOutcome> AssignTWeCallLicenseOutcomeCallable;
-                typedef std::function<void(const IotexplorerClient*, const Model::AssignTWeCallLicenseRequest&, AssignTWeCallLicenseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssignTWeCallLicenseAsyncHandler;
+                typedef Outcome<Core::Error, Model::BatchUpdateFirmwareResponse> BatchUpdateFirmwareOutcome;
+                typedef std::future<BatchUpdateFirmwareOutcome> BatchUpdateFirmwareOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::BatchUpdateFirmwareRequest&, BatchUpdateFirmwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchUpdateFirmwareAsyncHandler;
                 typedef Outcome<Core::Error, Model::BindCloudStorageUserResponse> BindCloudStorageUserOutcome;
                 typedef std::future<BindCloudStorageUserOutcome> BindCloudStorageUserOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::BindCloudStorageUserRequest&, BindCloudStorageUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindCloudStorageUserAsyncHandler;
@@ -351,27 +435,42 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CancelAssignTWeCallLicenseResponse> CancelAssignTWeCallLicenseOutcome;
                 typedef std::future<CancelAssignTWeCallLicenseOutcome> CancelAssignTWeCallLicenseOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CancelAssignTWeCallLicenseRequest&, CancelAssignTWeCallLicenseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelAssignTWeCallLicenseAsyncHandler;
+                typedef Outcome<Core::Error, Model::ChangeP2PRouteResponse> ChangeP2PRouteOutcome;
+                typedef std::future<ChangeP2PRouteOutcome> ChangeP2PRouteOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ChangeP2PRouteRequest&, ChangeP2PRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChangeP2PRouteAsyncHandler;
                 typedef Outcome<Core::Error, Model::CheckFirmwareUpdateResponse> CheckFirmwareUpdateOutcome;
                 typedef std::future<CheckFirmwareUpdateOutcome> CheckFirmwareUpdateOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CheckFirmwareUpdateRequest&, CheckFirmwareUpdateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckFirmwareUpdateAsyncHandler;
                 typedef Outcome<Core::Error, Model::ControlDeviceDataResponse> ControlDeviceDataOutcome;
                 typedef std::future<ControlDeviceDataOutcome> ControlDeviceDataOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ControlDeviceDataRequest&, ControlDeviceDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ControlDeviceDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAISearchTaskAsyncResponse> CreateAISearchTaskAsyncOutcome;
+                typedef std::future<CreateAISearchTaskAsyncOutcome> CreateAISearchTaskAsyncOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::CreateAISearchTaskAsyncRequest&, CreateAISearchTaskAsyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAISearchTaskAsyncAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateBatchProductionResponse> CreateBatchProductionOutcome;
                 typedef std::future<CreateBatchProductionOutcome> CreateBatchProductionOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateBatchProductionRequest&, CreateBatchProductionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchProductionAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCloudStorageAIServiceResponse> CreateCloudStorageAIServiceOutcome;
                 typedef std::future<CreateCloudStorageAIServiceOutcome> CreateCloudStorageAIServiceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateCloudStorageAIServiceRequest&, CreateCloudStorageAIServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudStorageAIServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCloudStorageAIServiceTaskResponse> CreateCloudStorageAIServiceTaskOutcome;
+                typedef std::future<CreateCloudStorageAIServiceTaskOutcome> CreateCloudStorageAIServiceTaskOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::CreateCloudStorageAIServiceTaskRequest&, CreateCloudStorageAIServiceTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudStorageAIServiceTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDeviceResponse> CreateDeviceOutcome;
                 typedef std::future<CreateDeviceOutcome> CreateDeviceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateDeviceRequest&, CreateDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDeviceChannelResponse> CreateDeviceChannelOutcome;
+                typedef std::future<CreateDeviceChannelOutcome> CreateDeviceChannelOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::CreateDeviceChannelRequest&, CreateDeviceChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceChannelAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateExternalSourceAIServiceTaskResponse> CreateExternalSourceAIServiceTaskOutcome;
                 typedef std::future<CreateExternalSourceAIServiceTaskOutcome> CreateExternalSourceAIServiceTaskOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateExternalSourceAIServiceTaskRequest&, CreateExternalSourceAIServiceTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateExternalSourceAIServiceTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateFenceBindResponse> CreateFenceBindOutcome;
                 typedef std::future<CreateFenceBindOutcome> CreateFenceBindOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateFenceBindRequest&, CreateFenceBindOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFenceBindAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateFreeCloudStorageResponse> CreateFreeCloudStorageOutcome;
+                typedef std::future<CreateFreeCloudStorageOutcome> CreateFreeCloudStorageOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::CreateFreeCloudStorageRequest&, CreateFreeCloudStorageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFreeCloudStorageAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateIotVideoCloudStorageResponse> CreateIotVideoCloudStorageOutcome;
                 typedef std::future<CreateIotVideoCloudStorageOutcome> CreateIotVideoCloudStorageOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateIotVideoCloudStorageRequest&, CreateIotVideoCloudStorageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIotVideoCloudStorageAsyncHandler;
@@ -381,6 +480,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateLoRaGatewayResponse> CreateLoRaGatewayOutcome;
                 typedef std::future<CreateLoRaGatewayOutcome> CreateLoRaGatewayOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateLoRaGatewayRequest&, CreateLoRaGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLoRaGatewayAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateOtaModuleResponse> CreateOtaModuleOutcome;
+                typedef std::future<CreateOtaModuleOutcome> CreateOtaModuleOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::CreateOtaModuleRequest&, CreateOtaModuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOtaModuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePositionFenceResponse> CreatePositionFenceOutcome;
                 typedef std::future<CreatePositionFenceOutcome> CreatePositionFenceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreatePositionFenceRequest&, CreatePositionFenceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePositionFenceAsyncHandler;
@@ -396,6 +498,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateTRTCSignaturesWithRoomIdResponse> CreateTRTCSignaturesWithRoomIdOutcome;
                 typedef std::future<CreateTRTCSignaturesWithRoomIdOutcome> CreateTRTCSignaturesWithRoomIdOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateTRTCSignaturesWithRoomIdRequest&, CreateTRTCSignaturesWithRoomIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTRTCSignaturesWithRoomIdAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateTWeSeeRecognitionTaskResponse> CreateTWeSeeRecognitionTaskOutcome;
+                typedef std::future<CreateTWeSeeRecognitionTaskOutcome> CreateTWeSeeRecognitionTaskOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::CreateTWeSeeRecognitionTaskRequest&, CreateTWeSeeRecognitionTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTWeSeeRecognitionTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateTWeTalkProductConfigResponse> CreateTWeTalkProductConfigOutcome;
+                typedef std::future<CreateTWeTalkProductConfigOutcome> CreateTWeTalkProductConfigOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::CreateTWeTalkProductConfigRequest&, CreateTWeTalkProductConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTWeTalkProductConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateTWeTalkProductConfigV2Response> CreateTWeTalkProductConfigV2Outcome;
+                typedef std::future<CreateTWeTalkProductConfigV2Outcome> CreateTWeTalkProductConfigV2OutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::CreateTWeTalkProductConfigV2Request&, CreateTWeTalkProductConfigV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTWeTalkProductConfigV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTopicPolicyResponse> CreateTopicPolicyOutcome;
                 typedef std::future<CreateTopicPolicyOutcome> CreateTopicPolicyOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateTopicPolicyRequest&, CreateTopicPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTopicPolicyAsyncHandler;
@@ -420,6 +531,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteLoRaGatewayResponse> DeleteLoRaGatewayOutcome;
                 typedef std::future<DeleteLoRaGatewayOutcome> DeleteLoRaGatewayOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DeleteLoRaGatewayRequest&, DeleteLoRaGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLoRaGatewayAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteOtaModuleResponse> DeleteOtaModuleOutcome;
+                typedef std::future<DeleteOtaModuleOutcome> DeleteOtaModuleOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DeleteOtaModuleRequest&, DeleteOtaModuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteOtaModuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeletePositionFenceResponse> DeletePositionFenceOutcome;
                 typedef std::future<DeletePositionFenceOutcome> DeletePositionFenceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DeletePositionFenceRequest&, DeletePositionFenceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePositionFenceAsyncHandler;
@@ -438,6 +552,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteTopicRuleResponse> DeleteTopicRuleOutcome;
                 typedef std::future<DeleteTopicRuleOutcome> DeleteTopicRuleOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DeleteTopicRuleRequest&, DeleteTopicRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTopicRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAISearchTaskAsyncResponse> DescribeAISearchTaskAsyncOutcome;
+                typedef std::future<DescribeAISearchTaskAsyncOutcome> DescribeAISearchTaskAsyncOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeAISearchTaskAsyncRequest&, DescribeAISearchTaskAsyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAISearchTaskAsyncAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeActivateDeviceResponse> DescribeActivateDeviceOutcome;
+                typedef std::future<DescribeActivateDeviceOutcome> DescribeActivateDeviceOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeActivateDeviceRequest&, DescribeActivateDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeActivateDeviceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeActivateLicenseServiceResponse> DescribeActivateLicenseServiceOutcome;
+                typedef std::future<DescribeActivateLicenseServiceOutcome> DescribeActivateLicenseServiceOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeActivateLicenseServiceRequest&, DescribeActivateLicenseServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeActivateLicenseServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBatchProductionResponse> DescribeBatchProductionOutcome;
                 typedef std::future<DescribeBatchProductionOutcome> DescribeBatchProductionOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeBatchProductionRequest&, DescribeBatchProductionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBatchProductionAsyncHandler;
@@ -465,6 +588,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCloudStorageEventsResponse> DescribeCloudStorageEventsOutcome;
                 typedef std::future<DescribeCloudStorageEventsOutcome> DescribeCloudStorageEventsOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeCloudStorageEventsRequest&, DescribeCloudStorageEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageEventsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudStorageEventsWithAITasksResponse> DescribeCloudStorageEventsWithAITasksOutcome;
+                typedef std::future<DescribeCloudStorageEventsWithAITasksOutcome> DescribeCloudStorageEventsWithAITasksOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeCloudStorageEventsWithAITasksRequest&, DescribeCloudStorageEventsWithAITasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageEventsWithAITasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCloudStorageMultiThumbnailResponse> DescribeCloudStorageMultiThumbnailOutcome;
                 typedef std::future<DescribeCloudStorageMultiThumbnailOutcome> DescribeCloudStorageMultiThumbnailOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeCloudStorageMultiThumbnailRequest&, DescribeCloudStorageMultiThumbnailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageMultiThumbnailAsyncHandler;
@@ -492,6 +618,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCloudStorageUsersResponse> DescribeCloudStorageUsersOutcome;
                 typedef std::future<DescribeCloudStorageUsersOutcome> DescribeCloudStorageUsersOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeCloudStorageUsersRequest&, DescribeCloudStorageUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageUsersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCsReportCountDataInfoResponse> DescribeCsReportCountDataInfoOutcome;
+                typedef std::future<DescribeCsReportCountDataInfoOutcome> DescribeCsReportCountDataInfoOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeCsReportCountDataInfoRequest&, DescribeCsReportCountDataInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCsReportCountDataInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDeviceResponse> DescribeDeviceOutcome;
                 typedef std::future<DescribeDeviceOutcome> DescribeDeviceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeDeviceRequest&, DescribeDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceAsyncHandler;
@@ -531,9 +660,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeFirmwareTaskResponse> DescribeFirmwareTaskOutcome;
                 typedef std::future<DescribeFirmwareTaskOutcome> DescribeFirmwareTaskOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeFirmwareTaskRequest&, DescribeFirmwareTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirmwareTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFirmwareTaskDevicesResponse> DescribeFirmwareTaskDevicesOutcome;
+                typedef std::future<DescribeFirmwareTaskDevicesOutcome> DescribeFirmwareTaskDevicesOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeFirmwareTaskDevicesRequest&, DescribeFirmwareTaskDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirmwareTaskDevicesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFirmwareTasksResponse> DescribeFirmwareTasksOutcome;
+                typedef std::future<DescribeFirmwareTasksOutcome> DescribeFirmwareTasksOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeFirmwareTasksRequest&, DescribeFirmwareTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirmwareTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeFirmwareUpdateStatusResponse> DescribeFirmwareUpdateStatusOutcome;
                 typedef std::future<DescribeFirmwareUpdateStatusOutcome> DescribeFirmwareUpdateStatusOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeFirmwareUpdateStatusRequest&, DescribeFirmwareUpdateStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirmwareUpdateStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFreeCloudStorageNumResponse> DescribeFreeCloudStorageNumOutcome;
+                typedef std::future<DescribeFreeCloudStorageNumOutcome> DescribeFreeCloudStorageNumOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeFreeCloudStorageNumRequest&, DescribeFreeCloudStorageNumOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFreeCloudStorageNumAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeGatewayBindDevicesResponse> DescribeGatewayBindDevicesOutcome;
                 typedef std::future<DescribeGatewayBindDevicesOutcome> DescribeGatewayBindDevicesOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeGatewayBindDevicesRequest&, DescribeGatewayBindDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGatewayBindDevicesAsyncHandler;
@@ -552,6 +690,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeModelDefinitionResponse> DescribeModelDefinitionOutcome;
                 typedef std::future<DescribeModelDefinitionOutcome> DescribeModelDefinitionOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeModelDefinitionRequest&, DescribeModelDefinitionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModelDefinitionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeP2PRouteResponse> DescribeP2PRouteOutcome;
+                typedef std::future<DescribeP2PRouteOutcome> DescribeP2PRouteOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeP2PRouteRequest&, DescribeP2PRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeP2PRouteAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePackageConsumeTaskResponse> DescribePackageConsumeTaskOutcome;
                 typedef std::future<DescribePackageConsumeTaskOutcome> DescribePackageConsumeTaskOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribePackageConsumeTaskRequest&, DescribePackageConsumeTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePackageConsumeTaskAsyncHandler;
@@ -573,12 +714,33 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeStudioProductResponse> DescribeStudioProductOutcome;
                 typedef std::future<DescribeStudioProductOutcome> DescribeStudioProductOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeStudioProductRequest&, DescribeStudioProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStudioProductAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSubscribedTopicPolicyResponse> DescribeSubscribedTopicPolicyOutcome;
+                typedef std::future<DescribeSubscribedTopicPolicyOutcome> DescribeSubscribedTopicPolicyOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeSubscribedTopicPolicyRequest&, DescribeSubscribedTopicPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubscribedTopicPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTWeSeeConfigResponse> DescribeTWeSeeConfigOutcome;
+                typedef std::future<DescribeTWeSeeConfigOutcome> DescribeTWeSeeConfigOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeTWeSeeConfigRequest&, DescribeTWeSeeConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTWeSeeConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTWeSeeRecognitionTaskResponse> DescribeTWeSeeRecognitionTaskOutcome;
+                typedef std::future<DescribeTWeSeeRecognitionTaskOutcome> DescribeTWeSeeRecognitionTaskOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeTWeSeeRecognitionTaskRequest&, DescribeTWeSeeRecognitionTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTWeSeeRecognitionTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTWeTalkProductConfigResponse> DescribeTWeTalkProductConfigOutcome;
+                typedef std::future<DescribeTWeTalkProductConfigOutcome> DescribeTWeTalkProductConfigOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeTWeTalkProductConfigRequest&, DescribeTWeTalkProductConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTWeTalkProductConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTWeTalkProductConfigV2Response> DescribeTWeTalkProductConfigV2Outcome;
+                typedef std::future<DescribeTWeTalkProductConfigV2Outcome> DescribeTWeTalkProductConfigV2OutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeTWeTalkProductConfigV2Request&, DescribeTWeTalkProductConfigV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTWeTalkProductConfigV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTopicPolicyResponse> DescribeTopicPolicyOutcome;
                 typedef std::future<DescribeTopicPolicyOutcome> DescribeTopicPolicyOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeTopicPolicyRequest&, DescribeTopicPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTopicRuleResponse> DescribeTopicRuleOutcome;
                 typedef std::future<DescribeTopicRuleOutcome> DescribeTopicRuleOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeTopicRuleRequest&, DescribeTopicRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUnbindedDevicesResponse> DescribeUnbindedDevicesOutcome;
+                typedef std::future<DescribeUnbindedDevicesOutcome> DescribeUnbindedDevicesOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeUnbindedDevicesRequest&, DescribeUnbindedDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUnbindedDevicesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVideoLicenseResponse> DescribeVideoLicenseOutcome;
+                typedef std::future<DescribeVideoLicenseOutcome> DescribeVideoLicenseOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeVideoLicenseRequest&, DescribeVideoLicenseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVideoLicenseAsyncHandler;
                 typedef Outcome<Core::Error, Model::DirectBindDeviceInFamilyResponse> DirectBindDeviceInFamilyOutcome;
                 typedef std::future<DirectBindDeviceInFamilyOutcome> DirectBindDeviceInFamilyOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DirectBindDeviceInFamilyRequest&, DirectBindDeviceInFamilyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DirectBindDeviceInFamilyAsyncHandler;
@@ -639,9 +801,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetTWeCallActiveStatusResponse> GetTWeCallActiveStatusOutcome;
                 typedef std::future<GetTWeCallActiveStatusOutcome> GetTWeCallActiveStatusOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::GetTWeCallActiveStatusRequest&, GetTWeCallActiveStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTWeCallActiveStatusAsyncHandler;
-                typedef Outcome<Core::Error, Model::GetTWeCallPkgListResponse> GetTWeCallPkgListOutcome;
-                typedef std::future<GetTWeCallPkgListOutcome> GetTWeCallPkgListOutcomeCallable;
-                typedef std::function<void(const IotexplorerClient*, const Model::GetTWeCallPkgListRequest&, GetTWeCallPkgListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTWeCallPkgListAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetTWeTalkProductConfigListResponse> GetTWeTalkProductConfigListOutcome;
+                typedef std::future<GetTWeTalkProductConfigListOutcome> GetTWeTalkProductConfigListOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::GetTWeTalkProductConfigListRequest&, GetTWeTalkProductConfigListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTWeTalkProductConfigListAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetTWeTalkProductConfigListV2Response> GetTWeTalkProductConfigListV2Outcome;
+                typedef std::future<GetTWeTalkProductConfigListV2Outcome> GetTWeTalkProductConfigListV2OutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::GetTWeTalkProductConfigListV2Request&, GetTWeTalkProductConfigListV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTWeTalkProductConfigListV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::GetTopicRuleListResponse> GetTopicRuleListOutcome;
                 typedef std::future<GetTopicRuleListOutcome> GetTopicRuleListOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::GetTopicRuleListRequest&, GetTopicRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTopicRuleListAsyncHandler;
@@ -651,18 +816,39 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InheritCloudStorageUserResponse> InheritCloudStorageUserOutcome;
                 typedef std::future<InheritCloudStorageUserOutcome> InheritCloudStorageUserOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::InheritCloudStorageUserRequest&, InheritCloudStorageUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InheritCloudStorageUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::InvokeAISearchServiceResponse> InvokeAISearchServiceOutcome;
+                typedef std::future<InvokeAISearchServiceOutcome> InvokeAISearchServiceOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::InvokeAISearchServiceRequest&, InvokeAISearchServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InvokeAISearchServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::InvokeCloudStorageAIServiceTaskResponse> InvokeCloudStorageAIServiceTaskOutcome;
+                typedef std::future<InvokeCloudStorageAIServiceTaskOutcome> InvokeCloudStorageAIServiceTaskOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::InvokeCloudStorageAIServiceTaskRequest&, InvokeCloudStorageAIServiceTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InvokeCloudStorageAIServiceTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::InvokeExternalSourceAIServiceTaskResponse> InvokeExternalSourceAIServiceTaskOutcome;
                 typedef std::future<InvokeExternalSourceAIServiceTaskOutcome> InvokeExternalSourceAIServiceTaskOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::InvokeExternalSourceAIServiceTaskRequest&, InvokeExternalSourceAIServiceTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InvokeExternalSourceAIServiceTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::InvokeTWeSeeRecognitionTaskResponse> InvokeTWeSeeRecognitionTaskOutcome;
+                typedef std::future<InvokeTWeSeeRecognitionTaskOutcome> InvokeTWeSeeRecognitionTaskOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::InvokeTWeSeeRecognitionTaskRequest&, InvokeTWeSeeRecognitionTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InvokeTWeSeeRecognitionTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::InvokeVideosKeywordsAnalyzerResponse> InvokeVideosKeywordsAnalyzerOutcome;
+                typedef std::future<InvokeVideosKeywordsAnalyzerOutcome> InvokeVideosKeywordsAnalyzerOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::InvokeVideosKeywordsAnalyzerRequest&, InvokeVideosKeywordsAnalyzerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InvokeVideosKeywordsAnalyzerAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListEventHistoryResponse> ListEventHistoryOutcome;
                 typedef std::future<ListEventHistoryOutcome> ListEventHistoryOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ListEventHistoryRequest&, ListEventHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListEventHistoryAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListFirmwaresResponse> ListFirmwaresOutcome;
                 typedef std::future<ListFirmwaresOutcome> ListFirmwaresOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ListFirmwaresRequest&, ListFirmwaresOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListFirmwaresAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListOtaModulesResponse> ListOtaModulesOutcome;
+                typedef std::future<ListOtaModulesOutcome> ListOtaModulesOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ListOtaModulesRequest&, ListOtaModulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListOtaModulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListProductOtaModulesResponse> ListProductOtaModulesOutcome;
+                typedef std::future<ListProductOtaModulesOutcome> ListProductOtaModulesOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ListProductOtaModulesRequest&, ListProductOtaModulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListProductOtaModulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListTopicPolicyResponse> ListTopicPolicyOutcome;
                 typedef std::future<ListTopicPolicyOutcome> ListTopicPolicyOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ListTopicPolicyRequest&, ListTopicPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTopicPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyApplicationResponse> ModifyApplicationOutcome;
+                typedef std::future<ModifyApplicationOutcome> ModifyApplicationOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ModifyApplicationRequest&, ModifyApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApplicationAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCloudStorageAIServiceResponse> ModifyCloudStorageAIServiceOutcome;
                 typedef std::future<ModifyCloudStorageAIServiceOutcome> ModifyCloudStorageAIServiceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ModifyCloudStorageAIServiceRequest&, ModifyCloudStorageAIServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCloudStorageAIServiceAsyncHandler;
@@ -699,12 +885,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyStudioProductResponse> ModifyStudioProductOutcome;
                 typedef std::future<ModifyStudioProductOutcome> ModifyStudioProductOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ModifyStudioProductRequest&, ModifyStudioProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyStudioProductAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyTWeSeeConfigResponse> ModifyTWeSeeConfigOutcome;
+                typedef std::future<ModifyTWeSeeConfigOutcome> ModifyTWeSeeConfigOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ModifyTWeSeeConfigRequest&, ModifyTWeSeeConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTWeSeeConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyTWeTalkProductConfigResponse> ModifyTWeTalkProductConfigOutcome;
+                typedef std::future<ModifyTWeTalkProductConfigOutcome> ModifyTWeTalkProductConfigOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ModifyTWeTalkProductConfigRequest&, ModifyTWeTalkProductConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTWeTalkProductConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyTWeTalkProductConfigV2Response> ModifyTWeTalkProductConfigV2Outcome;
+                typedef std::future<ModifyTWeTalkProductConfigV2Outcome> ModifyTWeTalkProductConfigV2OutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ModifyTWeTalkProductConfigV2Request&, ModifyTWeTalkProductConfigV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTWeTalkProductConfigV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyTopicPolicyResponse> ModifyTopicPolicyOutcome;
                 typedef std::future<ModifyTopicPolicyOutcome> ModifyTopicPolicyOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ModifyTopicPolicyRequest&, ModifyTopicPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTopicPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyTopicRuleResponse> ModifyTopicRuleOutcome;
                 typedef std::future<ModifyTopicRuleOutcome> ModifyTopicRuleOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ModifyTopicRuleRequest&, ModifyTopicRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTopicRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::PauseTWeCallDeviceResponse> PauseTWeCallDeviceOutcome;
+                typedef std::future<PauseTWeCallDeviceOutcome> PauseTWeCallDeviceOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::PauseTWeCallDeviceRequest&, PauseTWeCallDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PauseTWeCallDeviceAsyncHandler;
                 typedef Outcome<Core::Error, Model::PublishBroadcastMessageResponse> PublishBroadcastMessageOutcome;
                 typedef std::future<PublishBroadcastMessageOutcome> PublishBroadcastMessageOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::PublishBroadcastMessageRequest&, PublishBroadcastMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PublishBroadcastMessageAsyncHandler;
@@ -732,6 +930,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ResetCloudStorageEventResponse> ResetCloudStorageEventOutcome;
                 typedef std::future<ResetCloudStorageEventOutcome> ResetCloudStorageEventOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ResetCloudStorageEventRequest&, ResetCloudStorageEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetCloudStorageEventAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResetTWeCallDeviceResponse> ResetTWeCallDeviceOutcome;
+                typedef std::future<ResetTWeCallDeviceOutcome> ResetTWeCallDeviceOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ResetTWeCallDeviceRequest&, ResetTWeCallDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetTWeCallDeviceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResumeWeCallDeviceResponse> ResumeWeCallDeviceOutcome;
+                typedef std::future<ResumeWeCallDeviceOutcome> ResumeWeCallDeviceOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ResumeWeCallDeviceRequest&, ResumeWeCallDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResumeWeCallDeviceAsyncHandler;
                 typedef Outcome<Core::Error, Model::SearchPositionSpaceResponse> SearchPositionSpaceOutcome;
                 typedef std::future<SearchPositionSpaceOutcome> SearchPositionSpaceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::SearchPositionSpaceRequest&, SearchPositionSpaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchPositionSpaceAsyncHandler;
@@ -744,6 +948,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::TransferCloudStorageResponse> TransferCloudStorageOutcome;
                 typedef std::future<TransferCloudStorageOutcome> TransferCloudStorageOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::TransferCloudStorageRequest&, TransferCloudStorageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TransferCloudStorageAsyncHandler;
+                typedef Outcome<Core::Error, Model::TransferTWeCallDeviceResponse> TransferTWeCallDeviceOutcome;
+                typedef std::future<TransferTWeCallDeviceOutcome> TransferTWeCallDeviceOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::TransferTWeCallDeviceRequest&, TransferTWeCallDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TransferTWeCallDeviceAsyncHandler;
                 typedef Outcome<Core::Error, Model::UnbindDevicesResponse> UnbindDevicesOutcome;
                 typedef std::future<UnbindDevicesOutcome> UnbindDevicesOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::UnbindDevicesRequest&, UnbindDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindDevicesAsyncHandler;
@@ -759,6 +966,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateFirmwareResponse> UpdateFirmwareOutcome;
                 typedef std::future<UpdateFirmwareOutcome> UpdateFirmwareOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::UpdateFirmwareRequest&, UpdateFirmwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFirmwareAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateOtaModuleResponse> UpdateOtaModuleOutcome;
+                typedef std::future<UpdateOtaModuleOutcome> UpdateOtaModuleOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::UpdateOtaModuleRequest&, UpdateOtaModuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateOtaModuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::UploadFirmwareResponse> UploadFirmwareOutcome;
                 typedef std::future<UploadFirmwareOutcome> UploadFirmwareOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::UploadFirmwareRequest&, UploadFirmwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadFirmwareAsyncHandler;
@@ -775,13 +985,13 @@ namespace TencentCloud
                 ActivateTWeCallLicenseOutcomeCallable ActivateTWeCallLicenseCallable(const Model::ActivateTWeCallLicenseRequest& request);
 
                 /**
-                 *分配License
-                 * @param req AssignTWeCallLicenseRequest
-                 * @return AssignTWeCallLicenseOutcome
+                 *本接口（BatchUpdateFirmware）用于批量更新设备固件
+                 * @param req BatchUpdateFirmwareRequest
+                 * @return BatchUpdateFirmwareOutcome
                  */
-                AssignTWeCallLicenseOutcome AssignTWeCallLicense(const Model::AssignTWeCallLicenseRequest &request);
-                void AssignTWeCallLicenseAsync(const Model::AssignTWeCallLicenseRequest& request, const AssignTWeCallLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                AssignTWeCallLicenseOutcomeCallable AssignTWeCallLicenseCallable(const Model::AssignTWeCallLicenseRequest& request);
+                BatchUpdateFirmwareOutcome BatchUpdateFirmware(const Model::BatchUpdateFirmwareRequest &request);
+                void BatchUpdateFirmwareAsync(const Model::BatchUpdateFirmwareRequest& request, const BatchUpdateFirmwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchUpdateFirmwareOutcomeCallable BatchUpdateFirmwareCallable(const Model::BatchUpdateFirmwareRequest& request);
 
                 /**
                  *绑定云存用户
@@ -802,7 +1012,7 @@ namespace TencentCloud
                 BindDevicesOutcomeCallable BindDevicesCallable(const Model::BindDevicesRequest& request);
 
                 /**
-                 *批量绑定子产品
+                 *批量绑定子产品。
                  * @param req BindProductsRequest
                  * @return BindProductsOutcome
                  */
@@ -829,13 +1039,24 @@ namespace TencentCloud
                 CallDeviceActionSyncOutcomeCallable CallDeviceActionSyncCallable(const Model::CallDeviceActionSyncRequest& request);
 
                 /**
-                 *取消分配
+                 *业务已下线
+
+取消分配
                  * @param req CancelAssignTWeCallLicenseRequest
                  * @return CancelAssignTWeCallLicenseOutcome
                  */
                 CancelAssignTWeCallLicenseOutcome CancelAssignTWeCallLicense(const Model::CancelAssignTWeCallLicenseRequest &request);
                 void CancelAssignTWeCallLicenseAsync(const Model::CancelAssignTWeCallLicenseRequest& request, const CancelAssignTWeCallLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CancelAssignTWeCallLicenseOutcomeCallable CancelAssignTWeCallLicenseCallable(const Model::CancelAssignTWeCallLicenseRequest& request);
+
+                /**
+                 *p2p路线切换（此接口目前处于内测接口，可以联系申请加白 ）
+                 * @param req ChangeP2PRouteRequest
+                 * @return ChangeP2PRouteOutcome
+                 */
+                ChangeP2PRouteOutcome ChangeP2PRoute(const Model::ChangeP2PRouteRequest &request);
+                void ChangeP2PRouteAsync(const Model::ChangeP2PRouteRequest& request, const ChangeP2PRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChangeP2PRouteOutcomeCallable ChangeP2PRouteCallable(const Model::ChangeP2PRouteRequest& request);
 
                 /**
                  *本接口（CheckFirmwareUpdate）用于查询设备可升级固件版本
@@ -856,6 +1077,15 @@ namespace TencentCloud
                 ControlDeviceDataOutcomeCallable ControlDeviceDataCallable(const Model::ControlDeviceDataRequest& request);
 
                 /**
+                 *创建视频语义异步搜索任务
+                 * @param req CreateAISearchTaskAsyncRequest
+                 * @return CreateAISearchTaskAsyncOutcome
+                 */
+                CreateAISearchTaskAsyncOutcome CreateAISearchTaskAsync(const Model::CreateAISearchTaskAsyncRequest &request);
+                void CreateAISearchTaskAsyncAsync(const Model::CreateAISearchTaskAsyncRequest& request, const CreateAISearchTaskAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAISearchTaskAsyncOutcomeCallable CreateAISearchTaskAsyncCallable(const Model::CreateAISearchTaskAsyncRequest& request);
+
+                /**
                  *用于新建批量生产设备
                  * @param req CreateBatchProductionRequest
                  * @return CreateBatchProductionOutcome
@@ -874,6 +1104,15 @@ namespace TencentCloud
                 CreateCloudStorageAIServiceOutcomeCallable CreateCloudStorageAIServiceCallable(const Model::CreateCloudStorageAIServiceRequest& request);
 
                 /**
+                 *创建设备云存 AI 分析任务
+                 * @param req CreateCloudStorageAIServiceTaskRequest
+                 * @return CreateCloudStorageAIServiceTaskOutcome
+                 */
+                CreateCloudStorageAIServiceTaskOutcome CreateCloudStorageAIServiceTask(const Model::CreateCloudStorageAIServiceTaskRequest &request);
+                void CreateCloudStorageAIServiceTaskAsync(const Model::CreateCloudStorageAIServiceTaskRequest& request, const CreateCloudStorageAIServiceTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCloudStorageAIServiceTaskOutcomeCallable CreateCloudStorageAIServiceTaskCallable(const Model::CreateCloudStorageAIServiceTaskRequest& request);
+
+                /**
                  *创建设备
                  * @param req CreateDeviceRequest
                  * @return CreateDeviceOutcome
@@ -881,6 +1120,15 @@ namespace TencentCloud
                 CreateDeviceOutcome CreateDevice(const Model::CreateDeviceRequest &request);
                 void CreateDeviceAsync(const Model::CreateDeviceRequest& request, const CreateDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDeviceOutcomeCallable CreateDeviceCallable(const Model::CreateDeviceRequest& request);
+
+                /**
+                 *创建设备通道
+                 * @param req CreateDeviceChannelRequest
+                 * @return CreateDeviceChannelOutcome
+                 */
+                CreateDeviceChannelOutcome CreateDeviceChannel(const Model::CreateDeviceChannelRequest &request);
+                void CreateDeviceChannelAsync(const Model::CreateDeviceChannelRequest& request, const CreateDeviceChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDeviceChannelOutcomeCallable CreateDeviceChannelCallable(const Model::CreateDeviceChannelRequest& request);
 
                 /**
                  *创建外部视频 AI 分析任务
@@ -892,13 +1140,22 @@ namespace TencentCloud
                 CreateExternalSourceAIServiceTaskOutcomeCallable CreateExternalSourceAIServiceTaskCallable(const Model::CreateExternalSourceAIServiceTaskRequest& request);
 
                 /**
-                 *创建围栏绑定信息
+                 *> 创建围栏绑定信息。
                  * @param req CreateFenceBindRequest
                  * @return CreateFenceBindOutcome
                  */
                 CreateFenceBindOutcome CreateFenceBind(const Model::CreateFenceBindRequest &request);
                 void CreateFenceBindAsync(const Model::CreateFenceBindRequest& request, const CreateFenceBindAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateFenceBindOutcomeCallable CreateFenceBindCallable(const Model::CreateFenceBindRequest& request);
+
+                /**
+                 *开通云存卡服务
+                 * @param req CreateFreeCloudStorageRequest
+                 * @return CreateFreeCloudStorageOutcome
+                 */
+                CreateFreeCloudStorageOutcome CreateFreeCloudStorage(const Model::CreateFreeCloudStorageRequest &request);
+                void CreateFreeCloudStorageAsync(const Model::CreateFreeCloudStorageRequest& request, const CreateFreeCloudStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateFreeCloudStorageOutcomeCallable CreateFreeCloudStorageCallable(const Model::CreateFreeCloudStorageRequest& request);
 
                 /**
                  *开通云存服务
@@ -928,7 +1185,16 @@ namespace TencentCloud
                 CreateLoRaGatewayOutcomeCallable CreateLoRaGatewayCallable(const Model::CreateLoRaGatewayRequest& request);
 
                 /**
-                 *创建围栏
+                 *本接口（CreateOtaModule）用于新建OTA模块
+                 * @param req CreateOtaModuleRequest
+                 * @return CreateOtaModuleOutcome
+                 */
+                CreateOtaModuleOutcome CreateOtaModule(const Model::CreateOtaModuleRequest &request);
+                void CreateOtaModuleAsync(const Model::CreateOtaModuleRequest& request, const CreateOtaModuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateOtaModuleOutcomeCallable CreateOtaModuleCallable(const Model::CreateOtaModuleRequest& request);
+
+                /**
+                 *创建围栏。
                  * @param req CreatePositionFenceRequest
                  * @return CreatePositionFenceOutcome
                  */
@@ -937,7 +1203,7 @@ namespace TencentCloud
                 CreatePositionFenceOutcomeCallable CreatePositionFenceCallable(const Model::CreatePositionFenceRequest& request);
 
                 /**
-                 *创建位置空间
+                 *创建位置空间。
                  * @param req CreatePositionSpaceRequest
                  * @return CreatePositionSpaceOutcome
                  */
@@ -973,7 +1239,34 @@ namespace TencentCloud
                 CreateTRTCSignaturesWithRoomIdOutcomeCallable CreateTRTCSignaturesWithRoomIdCallable(const Model::CreateTRTCSignaturesWithRoomIdRequest& request);
 
                 /**
-                 *本接口（CreateTopicPolicy）用于创建一个Topic 
+                 *创建 TWeSee 语义理解任务
+                 * @param req CreateTWeSeeRecognitionTaskRequest
+                 * @return CreateTWeSeeRecognitionTaskOutcome
+                 */
+                CreateTWeSeeRecognitionTaskOutcome CreateTWeSeeRecognitionTask(const Model::CreateTWeSeeRecognitionTaskRequest &request);
+                void CreateTWeSeeRecognitionTaskAsync(const Model::CreateTWeSeeRecognitionTaskRequest& request, const CreateTWeSeeRecognitionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTWeSeeRecognitionTaskOutcomeCallable CreateTWeSeeRecognitionTaskCallable(const Model::CreateTWeSeeRecognitionTaskRequest& request);
+
+                /**
+                 *用于配置TWeTalk服务连接产品配置信息。
+                 * @param req CreateTWeTalkProductConfigRequest
+                 * @return CreateTWeTalkProductConfigOutcome
+                 */
+                CreateTWeTalkProductConfigOutcome CreateTWeTalkProductConfig(const Model::CreateTWeTalkProductConfigRequest &request);
+                void CreateTWeTalkProductConfigAsync(const Model::CreateTWeTalkProductConfigRequest& request, const CreateTWeTalkProductConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTWeTalkProductConfigOutcomeCallable CreateTWeTalkProductConfigCallable(const Model::CreateTWeTalkProductConfigRequest& request);
+
+                /**
+                 *用于配置TWeTalk服务连接产品配置信息。
+                 * @param req CreateTWeTalkProductConfigV2Request
+                 * @return CreateTWeTalkProductConfigV2Outcome
+                 */
+                CreateTWeTalkProductConfigV2Outcome CreateTWeTalkProductConfigV2(const Model::CreateTWeTalkProductConfigV2Request &request);
+                void CreateTWeTalkProductConfigV2Async(const Model::CreateTWeTalkProductConfigV2Request& request, const CreateTWeTalkProductConfigV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTWeTalkProductConfigV2OutcomeCallable CreateTWeTalkProductConfigV2Callable(const Model::CreateTWeTalkProductConfigV2Request& request);
+
+                /**
+                 *本接口（CreateTopicPolicy）用于创建一个Topic
                  * @param req CreateTopicPolicyRequest
                  * @return CreateTopicPolicyOutcome
                  */
@@ -1018,7 +1311,7 @@ namespace TencentCloud
                 DeleteDevicesOutcomeCallable DeleteDevicesCallable(const Model::DeleteDevicesRequest& request);
 
                 /**
-                 *删除围栏绑定信息
+                 *删除围栏绑定信息。
                  * @param req DeleteFenceBindRequest
                  * @return DeleteFenceBindOutcome
                  */
@@ -1045,7 +1338,16 @@ namespace TencentCloud
                 DeleteLoRaGatewayOutcomeCallable DeleteLoRaGatewayCallable(const Model::DeleteLoRaGatewayRequest& request);
 
                 /**
-                 *删除围栏
+                 *本接口（DeleteOtaModule）用于删除OTA模块
+                 * @param req DeleteOtaModuleRequest
+                 * @return DeleteOtaModuleOutcome
+                 */
+                DeleteOtaModuleOutcome DeleteOtaModule(const Model::DeleteOtaModuleRequest &request);
+                void DeleteOtaModuleAsync(const Model::DeleteOtaModuleRequest& request, const DeleteOtaModuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteOtaModuleOutcomeCallable DeleteOtaModuleCallable(const Model::DeleteOtaModuleRequest& request);
+
+                /**
+                 *删除围栏。
                  * @param req DeletePositionFenceRequest
                  * @return DeletePositionFenceOutcome
                  */
@@ -1054,7 +1356,7 @@ namespace TencentCloud
                 DeletePositionFenceOutcomeCallable DeletePositionFenceCallable(const Model::DeletePositionFenceRequest& request);
 
                 /**
-                 *删除位置空间
+                 *删除位置空间。
                  * @param req DeletePositionSpaceRequest
                  * @return DeletePositionSpaceOutcome
                  */
@@ -1063,7 +1365,7 @@ namespace TencentCloud
                 DeletePositionSpaceOutcomeCallable DeletePositionSpaceCallable(const Model::DeletePositionSpaceRequest& request);
 
                 /**
-                 *提供删除某个项目的能力
+                 *提供删除某个项目的能力。
                  * @param req DeleteProjectRequest
                  * @return DeleteProjectOutcome
                  */
@@ -1081,7 +1383,7 @@ namespace TencentCloud
                 DeleteStudioProductOutcomeCallable DeleteStudioProductCallable(const Model::DeleteStudioProductRequest& request);
 
                 /**
-                 *本接口（DeleteTopicPolicy）用于删除Topic 
+                 *本接口（DeleteTopicPolicy）用于删除Topic
                  * @param req DeleteTopicPolicyRequest
                  * @return DeleteTopicPolicyOutcome
                  */
@@ -1090,13 +1392,40 @@ namespace TencentCloud
                 DeleteTopicPolicyOutcomeCallable DeleteTopicPolicyCallable(const Model::DeleteTopicPolicyRequest& request);
 
                 /**
-                 *删除规则
+                 *删除规则。
                  * @param req DeleteTopicRuleRequest
                  * @return DeleteTopicRuleOutcome
                  */
                 DeleteTopicRuleOutcome DeleteTopicRule(const Model::DeleteTopicRuleRequest &request);
                 void DeleteTopicRuleAsync(const Model::DeleteTopicRuleRequest& request, const DeleteTopicRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteTopicRuleOutcomeCallable DeleteTopicRuleCallable(const Model::DeleteTopicRuleRequest& request);
+
+                /**
+                 *获取视频语义异步搜索任务详情
+                 * @param req DescribeAISearchTaskAsyncRequest
+                 * @return DescribeAISearchTaskAsyncOutcome
+                 */
+                DescribeAISearchTaskAsyncOutcome DescribeAISearchTaskAsync(const Model::DescribeAISearchTaskAsyncRequest &request);
+                void DescribeAISearchTaskAsyncAsync(const Model::DescribeAISearchTaskAsyncRequest& request, const DescribeAISearchTaskAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAISearchTaskAsyncOutcomeCallable DescribeAISearchTaskAsyncCallable(const Model::DescribeAISearchTaskAsyncRequest& request);
+
+                /**
+                 *获取设备激活详情
+                 * @param req DescribeActivateDeviceRequest
+                 * @return DescribeActivateDeviceOutcome
+                 */
+                DescribeActivateDeviceOutcome DescribeActivateDevice(const Model::DescribeActivateDeviceRequest &request);
+                void DescribeActivateDeviceAsync(const Model::DescribeActivateDeviceRequest& request, const DescribeActivateDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeActivateDeviceOutcomeCallable DescribeActivateDeviceCallable(const Model::DescribeActivateDeviceRequest& request);
+
+                /**
+                 *获取增值服务激活码详情
+                 * @param req DescribeActivateLicenseServiceRequest
+                 * @return DescribeActivateLicenseServiceOutcome
+                 */
+                DescribeActivateLicenseServiceOutcome DescribeActivateLicenseService(const Model::DescribeActivateLicenseServiceRequest &request);
+                void DescribeActivateLicenseServiceAsync(const Model::DescribeActivateLicenseServiceRequest& request, const DescribeActivateLicenseServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeActivateLicenseServiceOutcomeCallable DescribeActivateLicenseServiceCallable(const Model::DescribeActivateLicenseServiceRequest& request);
 
                 /**
                  *获取量产详情信息。
@@ -1180,6 +1509,15 @@ namespace TencentCloud
                 DescribeCloudStorageEventsOutcomeCallable DescribeCloudStorageEventsCallable(const Model::DescribeCloudStorageEventsRequest& request);
 
                 /**
+                 *拉取云存事件列表
+                 * @param req DescribeCloudStorageEventsWithAITasksRequest
+                 * @return DescribeCloudStorageEventsWithAITasksOutcome
+                 */
+                DescribeCloudStorageEventsWithAITasksOutcome DescribeCloudStorageEventsWithAITasks(const Model::DescribeCloudStorageEventsWithAITasksRequest &request);
+                void DescribeCloudStorageEventsWithAITasksAsync(const Model::DescribeCloudStorageEventsWithAITasksRequest& request, const DescribeCloudStorageEventsWithAITasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudStorageEventsWithAITasksOutcomeCallable DescribeCloudStorageEventsWithAITasksCallable(const Model::DescribeCloudStorageEventsWithAITasksRequest& request);
+
+                /**
                  *拉取多个云存事件缩略图
                  * @param req DescribeCloudStorageMultiThumbnailRequest
                  * @return DescribeCloudStorageMultiThumbnailOutcome
@@ -1261,6 +1599,15 @@ namespace TencentCloud
                 DescribeCloudStorageUsersOutcomeCallable DescribeCloudStorageUsersCallable(const Model::DescribeCloudStorageUsersRequest& request);
 
                 /**
+                 *获取云存上报统计信息
+                 * @param req DescribeCsReportCountDataInfoRequest
+                 * @return DescribeCsReportCountDataInfoOutcome
+                 */
+                DescribeCsReportCountDataInfoOutcome DescribeCsReportCountDataInfo(const Model::DescribeCsReportCountDataInfoRequest &request);
+                void DescribeCsReportCountDataInfoAsync(const Model::DescribeCsReportCountDataInfoRequest& request, const DescribeCsReportCountDataInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCsReportCountDataInfoOutcomeCallable DescribeCsReportCountDataInfoCallable(const Model::DescribeCsReportCountDataInfoRequest& request);
+
+                /**
                  *用于查看某个设备的详细信息
                  * @param req DescribeDeviceRequest
                  * @return DescribeDeviceOutcome
@@ -1315,7 +1662,9 @@ namespace TencentCloud
                 DescribeDeviceFirmwaresOutcomeCallable DescribeDeviceFirmwaresCallable(const Model::DescribeDeviceFirmwaresRequest& request);
 
                 /**
-                 *获取实时位置解析
+                 *获取实时位置解析依赖于teg位置服务，近30天调用只有2个个人账号调用，产品推下线
+
+获取实时位置解析
                  * @param req DescribeDeviceLocationSolveRequest
                  * @return DescribeDeviceLocationSolveOutcome
                  */
@@ -1342,7 +1691,7 @@ namespace TencentCloud
                 DescribeDevicePositionListOutcomeCallable DescribeDevicePositionListCallable(const Model::DescribeDevicePositionListRequest& request);
 
                 /**
-                 *获取围栏绑定信息列表
+                 *获取围栏绑定信息列表。
                  * @param req DescribeFenceBindListRequest
                  * @return DescribeFenceBindListOutcome
                  */
@@ -1351,7 +1700,7 @@ namespace TencentCloud
                 DescribeFenceBindListOutcomeCallable DescribeFenceBindListCallable(const Model::DescribeFenceBindListRequest& request);
 
                 /**
-                 *获取围栏告警事件列表
+                 *获取围栏告警事件列表。
                  * @param req DescribeFenceEventListRequest
                  * @return DescribeFenceEventListOutcome
                  */
@@ -1378,6 +1727,24 @@ namespace TencentCloud
                 DescribeFirmwareTaskOutcomeCallable DescribeFirmwareTaskCallable(const Model::DescribeFirmwareTaskRequest& request);
 
                 /**
+                 *查询固件升级任务的设备列表
+                 * @param req DescribeFirmwareTaskDevicesRequest
+                 * @return DescribeFirmwareTaskDevicesOutcome
+                 */
+                DescribeFirmwareTaskDevicesOutcome DescribeFirmwareTaskDevices(const Model::DescribeFirmwareTaskDevicesRequest &request);
+                void DescribeFirmwareTaskDevicesAsync(const Model::DescribeFirmwareTaskDevicesRequest& request, const DescribeFirmwareTaskDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFirmwareTaskDevicesOutcomeCallable DescribeFirmwareTaskDevicesCallable(const Model::DescribeFirmwareTaskDevicesRequest& request);
+
+                /**
+                 *搜索固件升级任务列表
+                 * @param req DescribeFirmwareTasksRequest
+                 * @return DescribeFirmwareTasksOutcome
+                 */
+                DescribeFirmwareTasksOutcome DescribeFirmwareTasks(const Model::DescribeFirmwareTasksRequest &request);
+                void DescribeFirmwareTasksAsync(const Model::DescribeFirmwareTasksRequest& request, const DescribeFirmwareTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFirmwareTasksOutcomeCallable DescribeFirmwareTasksCallable(const Model::DescribeFirmwareTasksRequest& request);
+
+                /**
                  *本接口（DescribeFirmwareUpdateStatus）用于查询设备固件升级状态及进度。
                  * @param req DescribeFirmwareUpdateStatusRequest
                  * @return DescribeFirmwareUpdateStatusOutcome
@@ -1385,6 +1752,15 @@ namespace TencentCloud
                 DescribeFirmwareUpdateStatusOutcome DescribeFirmwareUpdateStatus(const Model::DescribeFirmwareUpdateStatusRequest &request);
                 void DescribeFirmwareUpdateStatusAsync(const Model::DescribeFirmwareUpdateStatusRequest& request, const DescribeFirmwareUpdateStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeFirmwareUpdateStatusOutcomeCallable DescribeFirmwareUpdateStatusCallable(const Model::DescribeFirmwareUpdateStatusRequest& request);
+
+                /**
+                 *查询云存卡套餐信息
+                 * @param req DescribeFreeCloudStorageNumRequest
+                 * @return DescribeFreeCloudStorageNumOutcome
+                 */
+                DescribeFreeCloudStorageNumOutcome DescribeFreeCloudStorageNum(const Model::DescribeFreeCloudStorageNumRequest &request);
+                void DescribeFreeCloudStorageNumAsync(const Model::DescribeFreeCloudStorageNumRequest& request, const DescribeFreeCloudStorageNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFreeCloudStorageNumOutcomeCallable DescribeFreeCloudStorageNumCallable(const Model::DescribeFreeCloudStorageNumRequest& request);
 
                 /**
                  *获取网关绑定的子设备列表
@@ -1405,7 +1781,7 @@ namespace TencentCloud
                 DescribeGatewaySubDeviceListOutcomeCallable DescribeGatewaySubDeviceListCallable(const Model::DescribeGatewaySubDeviceListRequest& request);
 
                 /**
-                 *用于获取网关可绑定或解绑的子产品
+                 *用于获取网关可绑定或解绑的子产品。
                  * @param req DescribeGatewaySubProductsRequest
                  * @return DescribeGatewaySubProductsOutcome
                  */
@@ -1439,6 +1815,15 @@ namespace TencentCloud
                 DescribeModelDefinitionOutcome DescribeModelDefinition(const Model::DescribeModelDefinitionRequest &request);
                 void DescribeModelDefinitionAsync(const Model::DescribeModelDefinitionRequest& request, const DescribeModelDefinitionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeModelDefinitionOutcomeCallable DescribeModelDefinitionCallable(const Model::DescribeModelDefinitionRequest& request);
+
+                /**
+                 *当前p2p线路
+                 * @param req DescribeP2PRouteRequest
+                 * @return DescribeP2PRouteOutcome
+                 */
+                DescribeP2PRouteOutcome DescribeP2PRoute(const Model::DescribeP2PRouteRequest &request);
+                void DescribeP2PRouteAsync(const Model::DescribeP2PRouteRequest& request, const DescribeP2PRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeP2PRouteOutcomeCallable DescribeP2PRouteCallable(const Model::DescribeP2PRouteRequest& request);
 
                 /**
                  *查询套餐消耗记录详情
@@ -1486,7 +1871,7 @@ namespace TencentCloud
                 DescribeProjectOutcomeCallable DescribeProjectCallable(const Model::DescribeProjectRequest& request);
 
                 /**
-                 *获取位置空间中围栏告警事件列表
+                 *获取位置空间中围栏告警事件列表。
                  * @param req DescribeSpaceFenceEventListRequest
                  * @return DescribeSpaceFenceEventListOutcome
                  */
@@ -1504,7 +1889,52 @@ namespace TencentCloud
                 DescribeStudioProductOutcomeCallable DescribeStudioProductCallable(const Model::DescribeStudioProductRequest& request);
 
                 /**
-                 *本接口（DescribeTopicPolicy）用于查看Topic详细信息 
+                 *本接口（DescribeSubscribedTopicPolicy）用于获取设备已订阅Topic列表
+                 * @param req DescribeSubscribedTopicPolicyRequest
+                 * @return DescribeSubscribedTopicPolicyOutcome
+                 */
+                DescribeSubscribedTopicPolicyOutcome DescribeSubscribedTopicPolicy(const Model::DescribeSubscribedTopicPolicyRequest &request);
+                void DescribeSubscribedTopicPolicyAsync(const Model::DescribeSubscribedTopicPolicyRequest& request, const DescribeSubscribedTopicPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSubscribedTopicPolicyOutcomeCallable DescribeSubscribedTopicPolicyCallable(const Model::DescribeSubscribedTopicPolicyRequest& request);
+
+                /**
+                 *拉取 TWeSee 配置
+                 * @param req DescribeTWeSeeConfigRequest
+                 * @return DescribeTWeSeeConfigOutcome
+                 */
+                DescribeTWeSeeConfigOutcome DescribeTWeSeeConfig(const Model::DescribeTWeSeeConfigRequest &request);
+                void DescribeTWeSeeConfigAsync(const Model::DescribeTWeSeeConfigRequest& request, const DescribeTWeSeeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTWeSeeConfigOutcomeCallable DescribeTWeSeeConfigCallable(const Model::DescribeTWeSeeConfigRequest& request);
+
+                /**
+                 *查询 TWeSee 语义理解任务
+                 * @param req DescribeTWeSeeRecognitionTaskRequest
+                 * @return DescribeTWeSeeRecognitionTaskOutcome
+                 */
+                DescribeTWeSeeRecognitionTaskOutcome DescribeTWeSeeRecognitionTask(const Model::DescribeTWeSeeRecognitionTaskRequest &request);
+                void DescribeTWeSeeRecognitionTaskAsync(const Model::DescribeTWeSeeRecognitionTaskRequest& request, const DescribeTWeSeeRecognitionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTWeSeeRecognitionTaskOutcomeCallable DescribeTWeSeeRecognitionTaskCallable(const Model::DescribeTWeSeeRecognitionTaskRequest& request);
+
+                /**
+                 *用于获取TWeTalk服务连接产品配置信息。
+                 * @param req DescribeTWeTalkProductConfigRequest
+                 * @return DescribeTWeTalkProductConfigOutcome
+                 */
+                DescribeTWeTalkProductConfigOutcome DescribeTWeTalkProductConfig(const Model::DescribeTWeTalkProductConfigRequest &request);
+                void DescribeTWeTalkProductConfigAsync(const Model::DescribeTWeTalkProductConfigRequest& request, const DescribeTWeTalkProductConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTWeTalkProductConfigOutcomeCallable DescribeTWeTalkProductConfigCallable(const Model::DescribeTWeTalkProductConfigRequest& request);
+
+                /**
+                 *用于查询TWeTalk服务连接产品配置信息。
+                 * @param req DescribeTWeTalkProductConfigV2Request
+                 * @return DescribeTWeTalkProductConfigV2Outcome
+                 */
+                DescribeTWeTalkProductConfigV2Outcome DescribeTWeTalkProductConfigV2(const Model::DescribeTWeTalkProductConfigV2Request &request);
+                void DescribeTWeTalkProductConfigV2Async(const Model::DescribeTWeTalkProductConfigV2Request& request, const DescribeTWeTalkProductConfigV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTWeTalkProductConfigV2OutcomeCallable DescribeTWeTalkProductConfigV2Callable(const Model::DescribeTWeTalkProductConfigV2Request& request);
+
+                /**
+                 *本接口（DescribeTopicPolicy）用于查看Topic详细信息
                  * @param req DescribeTopicPolicyRequest
                  * @return DescribeTopicPolicyOutcome
                  */
@@ -1520,6 +1950,24 @@ namespace TencentCloud
                 DescribeTopicRuleOutcome DescribeTopicRule(const Model::DescribeTopicRuleRequest &request);
                 void DescribeTopicRuleAsync(const Model::DescribeTopicRuleRequest& request, const DescribeTopicRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTopicRuleOutcomeCallable DescribeTopicRuleCallable(const Model::DescribeTopicRuleRequest& request);
+
+                /**
+                 *获取未绑定的设备列表
+                 * @param req DescribeUnbindedDevicesRequest
+                 * @return DescribeUnbindedDevicesOutcome
+                 */
+                DescribeUnbindedDevicesOutcome DescribeUnbindedDevices(const Model::DescribeUnbindedDevicesRequest &request);
+                void DescribeUnbindedDevicesAsync(const Model::DescribeUnbindedDevicesRequest& request, const DescribeUnbindedDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUnbindedDevicesOutcomeCallable DescribeUnbindedDevicesCallable(const Model::DescribeUnbindedDevicesRequest& request);
+
+                /**
+                 *用于查询视频激活码统计概览
+                 * @param req DescribeVideoLicenseRequest
+                 * @return DescribeVideoLicenseOutcome
+                 */
+                DescribeVideoLicenseOutcome DescribeVideoLicense(const Model::DescribeVideoLicenseRequest &request);
+                void DescribeVideoLicenseAsync(const Model::DescribeVideoLicenseRequest& request, const DescribeVideoLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVideoLicenseOutcomeCallable DescribeVideoLicenseCallable(const Model::DescribeVideoLicenseRequest& request);
 
                 /**
                  *直接绑定设备和家庭
@@ -1702,13 +2150,22 @@ namespace TencentCloud
                 GetTWeCallActiveStatusOutcomeCallable GetTWeCallActiveStatusCallable(const Model::GetTWeCallActiveStatusRequest& request);
 
                 /**
-                 *查询TWeCall包列表
-                 * @param req GetTWeCallPkgListRequest
-                 * @return GetTWeCallPkgListOutcome
+                 *用于获取TWeTalk服务连接产品配置信息列表。
+                 * @param req GetTWeTalkProductConfigListRequest
+                 * @return GetTWeTalkProductConfigListOutcome
                  */
-                GetTWeCallPkgListOutcome GetTWeCallPkgList(const Model::GetTWeCallPkgListRequest &request);
-                void GetTWeCallPkgListAsync(const Model::GetTWeCallPkgListRequest& request, const GetTWeCallPkgListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                GetTWeCallPkgListOutcomeCallable GetTWeCallPkgListCallable(const Model::GetTWeCallPkgListRequest& request);
+                GetTWeTalkProductConfigListOutcome GetTWeTalkProductConfigList(const Model::GetTWeTalkProductConfigListRequest &request);
+                void GetTWeTalkProductConfigListAsync(const Model::GetTWeTalkProductConfigListRequest& request, const GetTWeTalkProductConfigListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetTWeTalkProductConfigListOutcomeCallable GetTWeTalkProductConfigListCallable(const Model::GetTWeTalkProductConfigListRequest& request);
+
+                /**
+                 *用于查询TWeTalk服务连接产品配置信息。
+                 * @param req GetTWeTalkProductConfigListV2Request
+                 * @return GetTWeTalkProductConfigListV2Outcome
+                 */
+                GetTWeTalkProductConfigListV2Outcome GetTWeTalkProductConfigListV2(const Model::GetTWeTalkProductConfigListV2Request &request);
+                void GetTWeTalkProductConfigListV2Async(const Model::GetTWeTalkProductConfigListV2Request& request, const GetTWeTalkProductConfigListV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetTWeTalkProductConfigListV2OutcomeCallable GetTWeTalkProductConfigListV2Callable(const Model::GetTWeTalkProductConfigListV2Request& request);
 
                 /**
                  *获取规则列表
@@ -1738,6 +2195,24 @@ namespace TencentCloud
                 InheritCloudStorageUserOutcomeCallable InheritCloudStorageUserCallable(const Model::InheritCloudStorageUserRequest& request);
 
                 /**
+                 *视频语义搜索
+                 * @param req InvokeAISearchServiceRequest
+                 * @return InvokeAISearchServiceOutcome
+                 */
+                InvokeAISearchServiceOutcome InvokeAISearchService(const Model::InvokeAISearchServiceRequest &request);
+                void InvokeAISearchServiceAsync(const Model::InvokeAISearchServiceRequest& request, const InvokeAISearchServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InvokeAISearchServiceOutcomeCallable InvokeAISearchServiceCallable(const Model::InvokeAISearchServiceRequest& request);
+
+                /**
+                 *同步执行设备云存 AI 分析任务
+                 * @param req InvokeCloudStorageAIServiceTaskRequest
+                 * @return InvokeCloudStorageAIServiceTaskOutcome
+                 */
+                InvokeCloudStorageAIServiceTaskOutcome InvokeCloudStorageAIServiceTask(const Model::InvokeCloudStorageAIServiceTaskRequest &request);
+                void InvokeCloudStorageAIServiceTaskAsync(const Model::InvokeCloudStorageAIServiceTaskRequest& request, const InvokeCloudStorageAIServiceTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InvokeCloudStorageAIServiceTaskOutcomeCallable InvokeCloudStorageAIServiceTaskCallable(const Model::InvokeCloudStorageAIServiceTaskRequest& request);
+
+                /**
                  *创建外部视频 AI 分析任务
                  * @param req InvokeExternalSourceAIServiceTaskRequest
                  * @return InvokeExternalSourceAIServiceTaskOutcome
@@ -1745,6 +2220,24 @@ namespace TencentCloud
                 InvokeExternalSourceAIServiceTaskOutcome InvokeExternalSourceAIServiceTask(const Model::InvokeExternalSourceAIServiceTaskRequest &request);
                 void InvokeExternalSourceAIServiceTaskAsync(const Model::InvokeExternalSourceAIServiceTaskRequest& request, const InvokeExternalSourceAIServiceTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InvokeExternalSourceAIServiceTaskOutcomeCallable InvokeExternalSourceAIServiceTaskCallable(const Model::InvokeExternalSourceAIServiceTaskRequest& request);
+
+                /**
+                 *同步执行 TWeSee 语义理解任务
+                 * @param req InvokeTWeSeeRecognitionTaskRequest
+                 * @return InvokeTWeSeeRecognitionTaskOutcome
+                 */
+                InvokeTWeSeeRecognitionTaskOutcome InvokeTWeSeeRecognitionTask(const Model::InvokeTWeSeeRecognitionTaskRequest &request);
+                void InvokeTWeSeeRecognitionTaskAsync(const Model::InvokeTWeSeeRecognitionTaskRequest& request, const InvokeTWeSeeRecognitionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InvokeTWeSeeRecognitionTaskOutcomeCallable InvokeTWeSeeRecognitionTaskCallable(const Model::InvokeTWeSeeRecognitionTaskRequest& request);
+
+                /**
+                 *获取某个时间段的视频内容关键字
+                 * @param req InvokeVideosKeywordsAnalyzerRequest
+                 * @return InvokeVideosKeywordsAnalyzerOutcome
+                 */
+                InvokeVideosKeywordsAnalyzerOutcome InvokeVideosKeywordsAnalyzer(const Model::InvokeVideosKeywordsAnalyzerRequest &request);
+                void InvokeVideosKeywordsAnalyzerAsync(const Model::InvokeVideosKeywordsAnalyzerRequest& request, const InvokeVideosKeywordsAnalyzerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InvokeVideosKeywordsAnalyzerOutcomeCallable InvokeVideosKeywordsAnalyzerCallable(const Model::InvokeVideosKeywordsAnalyzerRequest& request);
 
                 /**
                  *获取设备的历史事件
@@ -1765,6 +2258,24 @@ namespace TencentCloud
                 ListFirmwaresOutcomeCallable ListFirmwaresCallable(const Model::ListFirmwaresRequest& request);
 
                 /**
+                 *本接口（ListOtaModules）用于获取OTA模块列表
+                 * @param req ListOtaModulesRequest
+                 * @return ListOtaModulesOutcome
+                 */
+                ListOtaModulesOutcome ListOtaModules(const Model::ListOtaModulesRequest &request);
+                void ListOtaModulesAsync(const Model::ListOtaModulesRequest& request, const ListOtaModulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListOtaModulesOutcomeCallable ListOtaModulesCallable(const Model::ListOtaModulesRequest& request);
+
+                /**
+                 *本接口（ListProductOtaModules）用于获取产品OTA模块列表
+                 * @param req ListProductOtaModulesRequest
+                 * @return ListProductOtaModulesOutcome
+                 */
+                ListProductOtaModulesOutcome ListProductOtaModules(const Model::ListProductOtaModulesRequest &request);
+                void ListProductOtaModulesAsync(const Model::ListProductOtaModulesRequest& request, const ListProductOtaModulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListProductOtaModulesOutcomeCallable ListProductOtaModulesCallable(const Model::ListProductOtaModulesRequest& request);
+
+                /**
                  *本接口（ListTopicPolicy）用于获取Topic列表
                  * @param req ListTopicPolicyRequest
                  * @return ListTopicPolicyOutcome
@@ -1772,6 +2283,15 @@ namespace TencentCloud
                 ListTopicPolicyOutcome ListTopicPolicy(const Model::ListTopicPolicyRequest &request);
                 void ListTopicPolicyAsync(const Model::ListTopicPolicyRequest& request, const ListTopicPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListTopicPolicyOutcomeCallable ListTopicPolicyCallable(const Model::ListTopicPolicyRequest& request);
+
+                /**
+                 *更新应用信息
+                 * @param req ModifyApplicationRequest
+                 * @return ModifyApplicationOutcome
+                 */
+                ModifyApplicationOutcome ModifyApplication(const Model::ModifyApplicationRequest &request);
+                void ModifyApplicationAsync(const Model::ModifyApplicationRequest& request, const ModifyApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyApplicationOutcomeCallable ModifyApplicationCallable(const Model::ModifyApplicationRequest& request);
 
                 /**
                  *修改指定设备的云存 AI 服务参数配置
@@ -1792,7 +2312,7 @@ namespace TencentCloud
                 ModifyCloudStorageAIServiceCallbackOutcomeCallable ModifyCloudStorageAIServiceCallbackCallable(const Model::ModifyCloudStorageAIServiceCallbackRequest& request);
 
                 /**
-                 *更新围栏绑定信息
+                 *更新围栏绑定信息。
                  * @param req ModifyFenceBindRequest
                  * @return ModifyFenceBindOutcome
                  */
@@ -1828,7 +2348,7 @@ namespace TencentCloud
                 ModifyModelDefinitionOutcomeCallable ModifyModelDefinitionCallable(const Model::ModifyModelDefinitionRequest& request);
 
                 /**
-                 *更新围栏
+                 *更新围栏。
                  * @param req ModifyPositionFenceRequest
                  * @return ModifyPositionFenceOutcome
                  */
@@ -1837,7 +2357,7 @@ namespace TencentCloud
                 ModifyPositionFenceOutcomeCallable ModifyPositionFenceCallable(const Model::ModifyPositionFenceRequest& request);
 
                 /**
-                 *更新位置空间
+                 *更新位置空间。
                  * @param req ModifyPositionSpaceRequest
                  * @return ModifyPositionSpaceOutcome
                  */
@@ -1855,7 +2375,7 @@ namespace TencentCloud
                 ModifyProductCloudStorageAIServiceOutcomeCallable ModifyProductCloudStorageAIServiceCallable(const Model::ModifyProductCloudStorageAIServiceRequest& request);
 
                 /**
-                 *修改项目
+                 *修改项目。
                  * @param req ModifyProjectRequest
                  * @return ModifyProjectOutcome
                  */
@@ -1882,7 +2402,34 @@ namespace TencentCloud
                 ModifyStudioProductOutcomeCallable ModifyStudioProductCallable(const Model::ModifyStudioProductRequest& request);
 
                 /**
-                 *本接口（UpdateTopicPolicy）用于更新Topic信息 
+                 *修改 TWeSee 配置
+                 * @param req ModifyTWeSeeConfigRequest
+                 * @return ModifyTWeSeeConfigOutcome
+                 */
+                ModifyTWeSeeConfigOutcome ModifyTWeSeeConfig(const Model::ModifyTWeSeeConfigRequest &request);
+                void ModifyTWeSeeConfigAsync(const Model::ModifyTWeSeeConfigRequest& request, const ModifyTWeSeeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTWeSeeConfigOutcomeCallable ModifyTWeSeeConfigCallable(const Model::ModifyTWeSeeConfigRequest& request);
+
+                /**
+                 *用于修改TWeTalk服务连接产品配置信息。
+                 * @param req ModifyTWeTalkProductConfigRequest
+                 * @return ModifyTWeTalkProductConfigOutcome
+                 */
+                ModifyTWeTalkProductConfigOutcome ModifyTWeTalkProductConfig(const Model::ModifyTWeTalkProductConfigRequest &request);
+                void ModifyTWeTalkProductConfigAsync(const Model::ModifyTWeTalkProductConfigRequest& request, const ModifyTWeTalkProductConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTWeTalkProductConfigOutcomeCallable ModifyTWeTalkProductConfigCallable(const Model::ModifyTWeTalkProductConfigRequest& request);
+
+                /**
+                 *用于修改配置TWeTalk服务连接产品配置信息。
+                 * @param req ModifyTWeTalkProductConfigV2Request
+                 * @return ModifyTWeTalkProductConfigV2Outcome
+                 */
+                ModifyTWeTalkProductConfigV2Outcome ModifyTWeTalkProductConfigV2(const Model::ModifyTWeTalkProductConfigV2Request &request);
+                void ModifyTWeTalkProductConfigV2Async(const Model::ModifyTWeTalkProductConfigV2Request& request, const ModifyTWeTalkProductConfigV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTWeTalkProductConfigV2OutcomeCallable ModifyTWeTalkProductConfigV2Callable(const Model::ModifyTWeTalkProductConfigV2Request& request);
+
+                /**
+                 *本接口（UpdateTopicPolicy）用于更新Topic信息
                  * @param req ModifyTopicPolicyRequest
                  * @return ModifyTopicPolicyOutcome
                  */
@@ -1900,7 +2447,18 @@ namespace TencentCloud
                 ModifyTopicRuleOutcomeCallable ModifyTopicRuleCallable(const Model::ModifyTopicRuleRequest& request);
 
                 /**
-                 *发布广播消息
+                 *暂停设备
+                 * @param req PauseTWeCallDeviceRequest
+                 * @return PauseTWeCallDeviceOutcome
+                 */
+                PauseTWeCallDeviceOutcome PauseTWeCallDevice(const Model::PauseTWeCallDeviceRequest &request);
+                void PauseTWeCallDeviceAsync(const Model::PauseTWeCallDeviceRequest& request, const PauseTWeCallDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PauseTWeCallDeviceOutcomeCallable PauseTWeCallDeviceCallable(const Model::PauseTWeCallDeviceRequest& request);
+
+                /**
+                 *发布广播消息、发布RRPC消息属于早期服务，目前已停止维护，需要从官网下线。
+
+发布广播消息
                  * @param req PublishBroadcastMessageRequest
                  * @return PublishBroadcastMessageOutcome
                  */
@@ -1927,7 +2485,9 @@ namespace TencentCloud
                 PublishMessageOutcomeCallable PublishMessageCallable(const Model::PublishMessageRequest& request);
 
                 /**
-                 *下发RRPC消息
+                 *发布广播消息、发布RRPC消息属于早期服务，目前已停止维护，需要从官网下线。
+
+下发RRPC消息
                  * @param req PublishRRPCMessageRequest
                  * @return PublishRRPCMessageOutcome
                  */
@@ -1981,6 +2541,24 @@ namespace TencentCloud
                 ResetCloudStorageEventOutcomeCallable ResetCloudStorageEventCallable(const Model::ResetCloudStorageEventRequest& request);
 
                 /**
+                 *重置设备
+                 * @param req ResetTWeCallDeviceRequest
+                 * @return ResetTWeCallDeviceOutcome
+                 */
+                ResetTWeCallDeviceOutcome ResetTWeCallDevice(const Model::ResetTWeCallDeviceRequest &request);
+                void ResetTWeCallDeviceAsync(const Model::ResetTWeCallDeviceRequest& request, const ResetTWeCallDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetTWeCallDeviceOutcomeCallable ResetTWeCallDeviceCallable(const Model::ResetTWeCallDeviceRequest& request);
+
+                /**
+                 *恢复设备
+                 * @param req ResumeWeCallDeviceRequest
+                 * @return ResumeWeCallDeviceOutcome
+                 */
+                ResumeWeCallDeviceOutcome ResumeWeCallDevice(const Model::ResumeWeCallDeviceRequest &request);
+                void ResumeWeCallDeviceAsync(const Model::ResumeWeCallDeviceRequest& request, const ResumeWeCallDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResumeWeCallDeviceOutcomeCallable ResumeWeCallDeviceCallable(const Model::ResumeWeCallDeviceRequest& request);
+
+                /**
                  *搜索位置空间
                  * @param req SearchPositionSpaceRequest
                  * @return SearchPositionSpaceOutcome
@@ -2017,6 +2595,15 @@ namespace TencentCloud
                 TransferCloudStorageOutcomeCallable TransferCloudStorageCallable(const Model::TransferCloudStorageRequest& request);
 
                 /**
+                 *转移设备
+                 * @param req TransferTWeCallDeviceRequest
+                 * @return TransferTWeCallDeviceOutcome
+                 */
+                TransferTWeCallDeviceOutcome TransferTWeCallDevice(const Model::TransferTWeCallDeviceRequest &request);
+                void TransferTWeCallDeviceAsync(const Model::TransferTWeCallDeviceRequest& request, const TransferTWeCallDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TransferTWeCallDeviceOutcomeCallable TransferTWeCallDeviceCallable(const Model::TransferTWeCallDeviceRequest& request);
+
+                /**
                  *批量解绑子设备
                  * @param req UnbindDevicesRequest
                  * @return UnbindDevicesOutcome
@@ -2026,7 +2613,7 @@ namespace TencentCloud
                 UnbindDevicesOutcomeCallable UnbindDevicesCallable(const Model::UnbindDevicesRequest& request);
 
                 /**
-                 *批量解绑子产品
+                 *批量解绑子产品。
                  * @param req UnbindProductsRequest
                  * @return UnbindProductsOutcome
                  */
@@ -2053,13 +2640,22 @@ namespace TencentCloud
                 UpdateDevicesEnableStateOutcomeCallable UpdateDevicesEnableStateCallable(const Model::UpdateDevicesEnableStateRequest& request);
 
                 /**
-                 *本接口（UpdateFirmware）用于对指定设备发起固件升级请求 
+                 *本接口（UpdateFirmware）用于对指定设备发起固件升级请求
                  * @param req UpdateFirmwareRequest
                  * @return UpdateFirmwareOutcome
                  */
                 UpdateFirmwareOutcome UpdateFirmware(const Model::UpdateFirmwareRequest &request);
                 void UpdateFirmwareAsync(const Model::UpdateFirmwareRequest& request, const UpdateFirmwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateFirmwareOutcomeCallable UpdateFirmwareCallable(const Model::UpdateFirmwareRequest& request);
+
+                /**
+                 *本接口（UpdateOtaModule）用于修改OTA模块
+                 * @param req UpdateOtaModuleRequest
+                 * @return UpdateOtaModuleOutcome
+                 */
+                UpdateOtaModuleOutcome UpdateOtaModule(const Model::UpdateOtaModuleRequest &request);
+                void UpdateOtaModuleAsync(const Model::UpdateOtaModuleRequest& request, const UpdateOtaModuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateOtaModuleOutcomeCallable UpdateOtaModuleCallable(const Model::UpdateOtaModuleRequest& request);
 
                 /**
                  *本接口（UploadFirmware）用于创建设备固件版本信息，在平台用于固件版本升级、固件资源下发等。

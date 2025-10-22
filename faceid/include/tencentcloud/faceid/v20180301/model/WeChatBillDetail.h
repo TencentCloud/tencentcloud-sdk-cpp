@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool BizTokenHasBeenSet() const;
 
                     /**
-                     * 获取本token收费次数
-                     * @return ChargeCount 本token收费次数
+                     * 获取本token收费次数。（说明：一次核身过程用户可能会重试多次，因此一个biztoken可能会对应多次计费，如需配置重试上限，请[联系我们](https://cloud.tencent.com/document/product/1007/56130)配置。）
+                     * @return ChargeCount 本token收费次数。（说明：一次核身过程用户可能会重试多次，因此一个biztoken可能会对应多次计费，如需配置重试上限，请[联系我们](https://cloud.tencent.com/document/product/1007/56130)配置。）
                      * 
                      */
                     uint64_t GetChargeCount() const;
 
                     /**
-                     * 设置本token收费次数
-                     * @param _chargeCount 本token收费次数
+                     * 设置本token收费次数。（说明：一次核身过程用户可能会重试多次，因此一个biztoken可能会对应多次计费，如需配置重试上限，请[联系我们](https://cloud.tencent.com/document/product/1007/56130)配置。）
+                     * @param _chargeCount 本token收费次数。（说明：一次核身过程用户可能会重试多次，因此一个biztoken可能会对应多次计费，如需配置重试上限，请[联系我们](https://cloud.tencent.com/document/product/1007/56130)配置。）
                      * 
                      */
                     void SetChargeCount(const uint64_t& _chargeCount);
@@ -140,7 +140,7 @@ namespace TencentCloud
                     bool m_bizTokenHasBeenSet;
 
                     /**
-                     * 本token收费次数
+                     * 本token收费次数。（说明：一次核身过程用户可能会重试多次，因此一个biztoken可能会对应多次计费，如需配置重试上限，请[联系我们](https://cloud.tencent.com/document/product/1007/56130)配置。）
                      */
                     uint64_t m_chargeCount;
                     bool m_chargeCountHasBeenSet;

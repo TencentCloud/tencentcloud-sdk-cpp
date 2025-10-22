@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,12 @@ StaffInfo::StaffInfo() :
     m_nickHasBeenSet(false),
     m_staffNumberHasBeenSet(false),
     m_roleIdHasBeenSet(false),
+    m_roleIdListHasBeenSet(false),
+    m_roleListHasBeenSet(false),
     m_skillGroupListHasBeenSet(false),
-    m_lastModifyTimestampHasBeenSet(false)
+    m_lastModifyTimestampHasBeenSet(false),
+    m_extensionNumberHasBeenSet(false),
+    m_forwardingConfigHasBeenSet(false)
 {
 }
 
@@ -97,6 +101,29 @@ CoreInternalOutcome StaffInfo::Deserialize(const rapidjson::Value &value)
         m_roleIdHasBeenSet = true;
     }
 
+    if (value.HasMember("RoleIdList") && !value["RoleIdList"].IsNull())
+    {
+        if (!value["RoleIdList"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `StaffInfo.RoleIdList` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_roleIdList = value["RoleIdList"].GetUint64();
+        m_roleIdListHasBeenSet = true;
+    }
+
+    if (value.HasMember("RoleList") && !value["RoleList"].IsNull())
+    {
+        if (!value["RoleList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `StaffInfo.RoleList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RoleList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_roleList.push_back((*itr).GetUint64());
+        }
+        m_roleListHasBeenSet = true;
+    }
+
     if (value.HasMember("SkillGroupList") && !value["SkillGroupList"].IsNull())
     {
         if (!value["SkillGroupList"].IsArray())
@@ -125,6 +152,33 @@ CoreInternalOutcome StaffInfo::Deserialize(const rapidjson::Value &value)
         }
         m_lastModifyTimestamp = value["LastModifyTimestamp"].GetInt64();
         m_lastModifyTimestampHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExtensionNumber") && !value["ExtensionNumber"].IsNull())
+    {
+        if (!value["ExtensionNumber"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `StaffInfo.ExtensionNumber` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_extensionNumber = string(value["ExtensionNumber"].GetString());
+        m_extensionNumberHasBeenSet = true;
+    }
+
+    if (value.HasMember("ForwardingConfig") && !value["ForwardingConfig"].IsNull())
+    {
+        if (!value["ForwardingConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `StaffInfo.ForwardingConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_forwardingConfig.Deserialize(value["ForwardingConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_forwardingConfigHasBeenSet = true;
     }
 
 
@@ -182,6 +236,27 @@ void StaffInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         value.AddMember(iKey, m_roleId, allocator);
     }
 
+    if (m_roleIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoleIdList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_roleIdList, allocator);
+    }
+
+    if (m_roleListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoleList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_roleList.begin(); itr != m_roleList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
     if (m_skillGroupListHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -203,6 +278,23 @@ void StaffInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "LastModifyTimestamp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lastModifyTimestamp, allocator);
+    }
+
+    if (m_extensionNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtensionNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_extensionNumber.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_forwardingConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForwardingConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_forwardingConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -304,6 +396,38 @@ bool StaffInfo::RoleIdHasBeenSet() const
     return m_roleIdHasBeenSet;
 }
 
+uint64_t StaffInfo::GetRoleIdList() const
+{
+    return m_roleIdList;
+}
+
+void StaffInfo::SetRoleIdList(const uint64_t& _roleIdList)
+{
+    m_roleIdList = _roleIdList;
+    m_roleIdListHasBeenSet = true;
+}
+
+bool StaffInfo::RoleIdListHasBeenSet() const
+{
+    return m_roleIdListHasBeenSet;
+}
+
+vector<uint64_t> StaffInfo::GetRoleList() const
+{
+    return m_roleList;
+}
+
+void StaffInfo::SetRoleList(const vector<uint64_t>& _roleList)
+{
+    m_roleList = _roleList;
+    m_roleListHasBeenSet = true;
+}
+
+bool StaffInfo::RoleListHasBeenSet() const
+{
+    return m_roleListHasBeenSet;
+}
+
 vector<SkillGroupItem> StaffInfo::GetSkillGroupList() const
 {
     return m_skillGroupList;
@@ -334,5 +458,37 @@ void StaffInfo::SetLastModifyTimestamp(const int64_t& _lastModifyTimestamp)
 bool StaffInfo::LastModifyTimestampHasBeenSet() const
 {
     return m_lastModifyTimestampHasBeenSet;
+}
+
+string StaffInfo::GetExtensionNumber() const
+{
+    return m_extensionNumber;
+}
+
+void StaffInfo::SetExtensionNumber(const string& _extensionNumber)
+{
+    m_extensionNumber = _extensionNumber;
+    m_extensionNumberHasBeenSet = true;
+}
+
+bool StaffInfo::ExtensionNumberHasBeenSet() const
+{
+    return m_extensionNumberHasBeenSet;
+}
+
+ForwardingConfig StaffInfo::GetForwardingConfig() const
+{
+    return m_forwardingConfig;
+}
+
+void StaffInfo::SetForwardingConfig(const ForwardingConfig& _forwardingConfig)
+{
+    m_forwardingConfig = _forwardingConfig;
+    m_forwardingConfigHasBeenSet = true;
+}
+
+bool StaffInfo::ForwardingConfigHasBeenSet() const
+{
+    return m_forwardingConfigHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品码code
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BusinessCode 产品码code
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBusinessCode() const;
 
                     /**
                      * 设置产品码code
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _businessCode 产品码code
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBusinessCode(const std::string& _businessCode);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BusinessCodeName 产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBusinessCodeName() const;
 
                     /**
                      * 设置产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _businessCodeName 产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBusinessCodeName(const std::string& _businessCodeName);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 产品码code
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_businessCode;
                     bool m_businessCodeHasBeenSet;
 
                     /**
                      * 产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_businessCodeName;
                     bool m_businessCodeNameHasBeenSet;

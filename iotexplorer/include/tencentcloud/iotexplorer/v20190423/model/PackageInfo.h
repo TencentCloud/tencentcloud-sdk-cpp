@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -136,18 +136,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云存套餐创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedAt 云存套餐创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCreatedAt() const;
 
                     /**
                      * 设置云存套餐创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdAt 云存套餐创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedAt(const int64_t& _createdAt);
@@ -161,18 +157,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云存套餐更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedAt 云存套餐更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUpdatedAt() const;
 
                     /**
                      * 设置云存套餐更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updatedAt 云存套餐更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdatedAt(const int64_t& _updatedAt);
@@ -186,18 +178,14 @@ namespace TencentCloud
 
                     /**
                      * 获取套餐id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageId 套餐id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPackageId() const;
 
                     /**
                      * 设置套餐id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packageId 套餐id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackageId(const std::string& _packageId);
@@ -211,18 +199,14 @@ namespace TencentCloud
 
                     /**
                      * 获取订单id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrderId 订单id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOrderId() const;
 
                     /**
                      * 设置订单id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _orderId 订单id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOrderId(const std::string& _orderId);
@@ -257,18 +241,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CSUserId 用户id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCSUserId() const;
 
                     /**
                      * 设置用户id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cSUserId 用户id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCSUserId(const std::string& _cSUserId);
@@ -309,28 +289,24 @@ namespace TencentCloud
 
                     /**
                      * 云存套餐创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_createdAt;
                     bool m_createdAtHasBeenSet;
 
                     /**
                      * 云存套餐更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_updatedAt;
                     bool m_updatedAtHasBeenSet;
 
                     /**
                      * 套餐id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packageId;
                     bool m_packageIdHasBeenSet;
 
                     /**
                      * 订单id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_orderId;
                     bool m_orderIdHasBeenSet;
@@ -343,7 +319,6 @@ namespace TencentCloud
 
                     /**
                      * 用户id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cSUserId;
                     bool m_cSUserIdHasBeenSet;

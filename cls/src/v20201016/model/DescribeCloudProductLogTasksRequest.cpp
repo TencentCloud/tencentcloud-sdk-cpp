@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,10 @@
 using namespace TencentCloud::Cls::V20201016::Model;
 using namespace std;
 
-DescribeCloudProductLogTasksRequest::DescribeCloudProductLogTasksRequest()
+DescribeCloudProductLogTasksRequest::DescribeCloudProductLogTasksRequest() :
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -33,6 +36,37 @@ string DescribeCloudProductLogTasksRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +74,53 @@ string DescribeCloudProductLogTasksRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t DescribeCloudProductLogTasksRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeCloudProductLogTasksRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeCloudProductLogTasksRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+int64_t DescribeCloudProductLogTasksRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeCloudProductLogTasksRequest::SetLimit(const int64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeCloudProductLogTasksRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+vector<Filter> DescribeCloudProductLogTasksRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeCloudProductLogTasksRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeCloudProductLogTasksRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
+}
 
 

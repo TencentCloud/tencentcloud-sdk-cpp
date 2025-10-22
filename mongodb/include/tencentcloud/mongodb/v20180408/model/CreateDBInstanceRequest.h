@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool VolumeHasBeenSet() const;
 
                     /**
-                     * 获取版本号，当前支持 MONGO_3_WT、MONGO_3_ROCKS、MONGO_36_WT
-                     * @return MongoVersion 版本号，当前支持 MONGO_3_WT、MONGO_3_ROCKS、MONGO_36_WT
+                     * 获取指版本信息。具体支持的版本信息 ，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。 - MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。 - MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。 - MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。 - MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。 - MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。 - MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。
+                     * @return MongoVersion 指版本信息。具体支持的版本信息 ，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。 - MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。 - MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。 - MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。 - MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。 - MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。 - MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。
                      * 
                      */
                     std::string GetMongoVersion() const;
 
                     /**
-                     * 设置版本号，当前支持 MONGO_3_WT、MONGO_3_ROCKS、MONGO_36_WT
-                     * @param _mongoVersion 版本号，当前支持 MONGO_3_WT、MONGO_3_ROCKS、MONGO_36_WT
+                     * 设置指版本信息。具体支持的版本信息 ，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。 - MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。 - MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。 - MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。 - MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。 - MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。 - MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。
+                     * @param _mongoVersion 指版本信息。具体支持的版本信息 ，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。 - MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。 - MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。 - MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。 - MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。 - MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。 - MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。
                      * 
                      */
                     void SetMongoVersion(const std::string& _mongoVersion);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool MongoVersionHasBeenSet() const;
 
                     /**
-                     * 获取机器类型，GIO：高IO版；TGIO：高IO万兆
-                     * @return MachineCode 机器类型，GIO：高IO版；TGIO：高IO万兆
+                     * 获取机器类型，HIO10G：高IO万兆。
+                     * @return MachineCode 机器类型，HIO10G：高IO万兆。
                      * 
                      */
                     std::string GetMachineCode() const;
 
                     /**
-                     * 设置机器类型，GIO：高IO版；TGIO：高IO万兆
-                     * @param _machineCode 机器类型，GIO：高IO版；TGIO：高IO万兆
+                     * 设置机器类型，HIO10G：高IO万兆。
+                     * @param _machineCode 机器类型，HIO10G：高IO万兆。
                      * 
                      */
                     void SetMachineCode(const std::string& _machineCode);
@@ -315,6 +315,27 @@ namespace TencentCloud
                      */
                     bool UniqSubnetIdHasBeenSet() const;
 
+                    /**
+                     * 获取实例类型，REPLSET-副本集，SHARD-分片集群，默认为REPLSET
+                     * @return InstanceType 实例类型，REPLSET-副本集，SHARD-分片集群，默认为REPLSET
+                     * 
+                     */
+                    std::string GetInstanceType() const;
+
+                    /**
+                     * 设置实例类型，REPLSET-副本集，SHARD-分片集群，默认为REPLSET
+                     * @param _instanceType 实例类型，REPLSET-副本集，SHARD-分片集群，默认为REPLSET
+                     * 
+                     */
+                    void SetInstanceType(const std::string& _instanceType);
+
+                    /**
+                     * 判断参数 InstanceType 是否已赋值
+                     * @return InstanceType 是否已赋值
+                     * 
+                     */
+                    bool InstanceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -336,13 +357,13 @@ namespace TencentCloud
                     bool m_volumeHasBeenSet;
 
                     /**
-                     * 版本号，当前支持 MONGO_3_WT、MONGO_3_ROCKS、MONGO_36_WT
+                     * 指版本信息。具体支持的版本信息 ，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。 - MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。 - MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。 - MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。 - MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。 - MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。 - MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。
                      */
                     std::string m_mongoVersion;
                     bool m_mongoVersionHasBeenSet;
 
                     /**
-                     * 机器类型，GIO：高IO版；TGIO：高IO万兆
+                     * 机器类型，HIO10G：高IO万兆。
                      */
                     std::string m_machineCode;
                     bool m_machineCodeHasBeenSet;
@@ -394,6 +415,12 @@ namespace TencentCloud
                      */
                     std::string m_uniqSubnetId;
                     bool m_uniqSubnetIdHasBeenSet;
+
+                    /**
+                     * 实例类型，REPLSET-副本集，SHARD-分片集群，默认为REPLSET
+                     */
+                    std::string m_instanceType;
+                    bool m_instanceTypeHasBeenSet;
 
                 };
             }

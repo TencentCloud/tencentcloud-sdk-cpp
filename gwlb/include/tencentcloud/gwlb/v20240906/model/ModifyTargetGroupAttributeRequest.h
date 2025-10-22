@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取目标组的ID。
-                     * @return TargetGroupId 目标组的ID。
+                     * 获取目标组的ID，可以通过[DescribeTargetGroups](https://cloud.tencent.com/document/product/214/40554)获取。
+                     * @return TargetGroupId 目标组的ID，可以通过[DescribeTargetGroups](https://cloud.tencent.com/document/product/214/40554)获取。
                      * 
                      */
                     std::string GetTargetGroupId() const;
 
                     /**
-                     * 设置目标组的ID。
-                     * @param _targetGroupId 目标组的ID。
+                     * 设置目标组的ID，可以通过[DescribeTargetGroups](https://cloud.tencent.com/document/product/214/40554)获取。
+                     * @param _targetGroupId 目标组的ID，可以通过[DescribeTargetGroups](https://cloud.tencent.com/document/product/214/40554)获取。
                      * 
                      */
                     void SetTargetGroupId(const std::string& _targetGroupId);
@@ -127,10 +127,136 @@ namespace TencentCloud
                      */
                     bool AllDeadToAliveHasBeenSet() const;
 
+                    /**
+                     * 获取TCP协议连接空闲超时时间，可配置60s-6000s，默认350s。
+                     * @return TcpIdleConnectTimeout TCP协议连接空闲超时时间，可配置60s-6000s，默认350s。
+                     * 
+                     */
+                    int64_t GetTcpIdleConnectTimeout() const;
+
+                    /**
+                     * 设置TCP协议连接空闲超时时间，可配置60s-6000s，默认350s。
+                     * @param _tcpIdleConnectTimeout TCP协议连接空闲超时时间，可配置60s-6000s，默认350s。
+                     * 
+                     */
+                    void SetTcpIdleConnectTimeout(const int64_t& _tcpIdleConnectTimeout);
+
+                    /**
+                     * 判断参数 TcpIdleConnectTimeout 是否已赋值
+                     * @return TcpIdleConnectTimeout 是否已赋值
+                     * 
+                     */
+                    bool TcpIdleConnectTimeoutHasBeenSet() const;
+
+                    /**
+                     * 获取其他协议连接空闲超时时间，可配置5s-180s，默认120s
+                     * @return OthersIdleConnectTimeout 其他协议连接空闲超时时间，可配置5s-180s，默认120s
+                     * 
+                     */
+                    int64_t GetOthersIdleConnectTimeout() const;
+
+                    /**
+                     * 设置其他协议连接空闲超时时间，可配置5s-180s，默认120s
+                     * @param _othersIdleConnectTimeout 其他协议连接空闲超时时间，可配置5s-180s，默认120s
+                     * 
+                     */
+                    void SetOthersIdleConnectTimeout(const int64_t& _othersIdleConnectTimeout);
+
+                    /**
+                     * 判断参数 OthersIdleConnectTimeout 是否已赋值
+                     * @return OthersIdleConnectTimeout 是否已赋值
+                     * 
+                     */
+                    bool OthersIdleConnectTimeoutHasBeenSet() const;
+
+                    /**
+                     * 获取重新调度功能内的解绑后端服务开关，开关打开后解绑后端服务会触发重新调度。
+                     * @return RescheduleUnbindRs 重新调度功能内的解绑后端服务开关，开关打开后解绑后端服务会触发重新调度。
+                     * 
+                     */
+                    bool GetRescheduleUnbindRs() const;
+
+                    /**
+                     * 设置重新调度功能内的解绑后端服务开关，开关打开后解绑后端服务会触发重新调度。
+                     * @param _rescheduleUnbindRs 重新调度功能内的解绑后端服务开关，开关打开后解绑后端服务会触发重新调度。
+                     * 
+                     */
+                    void SetRescheduleUnbindRs(const bool& _rescheduleUnbindRs);
+
+                    /**
+                     * 判断参数 RescheduleUnbindRs 是否已赋值
+                     * @return RescheduleUnbindRs 是否已赋值
+                     * 
+                     */
+                    bool RescheduleUnbindRsHasBeenSet() const;
+
+                    /**
+                     * 获取解绑RS后开启重调度的时间，可配置0s-3600s，默认0s
+                     * @return RescheduleUnbindRsStartTime 解绑RS后开启重调度的时间，可配置0s-3600s，默认0s
+                     * 
+                     */
+                    int64_t GetRescheduleUnbindRsStartTime() const;
+
+                    /**
+                     * 设置解绑RS后开启重调度的时间，可配置0s-3600s，默认0s
+                     * @param _rescheduleUnbindRsStartTime 解绑RS后开启重调度的时间，可配置0s-3600s，默认0s
+                     * 
+                     */
+                    void SetRescheduleUnbindRsStartTime(const int64_t& _rescheduleUnbindRsStartTime);
+
+                    /**
+                     * 判断参数 RescheduleUnbindRsStartTime 是否已赋值
+                     * @return RescheduleUnbindRsStartTime 是否已赋值
+                     * 
+                     */
+                    bool RescheduleUnbindRsStartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取重新调度功能内的后端服务健康探测异常开关，开关打开后后端服务健康检查异常会触发重新调度。
+                     * @return RescheduleUnhealthy 重新调度功能内的后端服务健康探测异常开关，开关打开后后端服务健康检查异常会触发重新调度。
+                     * 
+                     */
+                    bool GetRescheduleUnhealthy() const;
+
+                    /**
+                     * 设置重新调度功能内的后端服务健康探测异常开关，开关打开后后端服务健康检查异常会触发重新调度。
+                     * @param _rescheduleUnhealthy 重新调度功能内的后端服务健康探测异常开关，开关打开后后端服务健康检查异常会触发重新调度。
+                     * 
+                     */
+                    void SetRescheduleUnhealthy(const bool& _rescheduleUnhealthy);
+
+                    /**
+                     * 判断参数 RescheduleUnhealthy 是否已赋值
+                     * @return RescheduleUnhealthy 是否已赋值
+                     * 
+                     */
+                    bool RescheduleUnhealthyHasBeenSet() const;
+
+                    /**
+                     * 获取后端服务健康探测异常后开启重调度的时间，可配置0s-3600s，默认0s
+                     * @return RescheduleUnhealthyStartTime 后端服务健康探测异常后开启重调度的时间，可配置0s-3600s，默认0s
+                     * 
+                     */
+                    int64_t GetRescheduleUnhealthyStartTime() const;
+
+                    /**
+                     * 设置后端服务健康探测异常后开启重调度的时间，可配置0s-3600s，默认0s
+                     * @param _rescheduleUnhealthyStartTime 后端服务健康探测异常后开启重调度的时间，可配置0s-3600s，默认0s
+                     * 
+                     */
+                    void SetRescheduleUnhealthyStartTime(const int64_t& _rescheduleUnhealthyStartTime);
+
+                    /**
+                     * 判断参数 RescheduleUnhealthyStartTime 是否已赋值
+                     * @return RescheduleUnhealthyStartTime 是否已赋值
+                     * 
+                     */
+                    bool RescheduleUnhealthyStartTimeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 目标组的ID。
+                     * 目标组的ID，可以通过[DescribeTargetGroups](https://cloud.tencent.com/document/product/214/40554)获取。
                      */
                     std::string m_targetGroupId;
                     bool m_targetGroupIdHasBeenSet;
@@ -152,6 +278,42 @@ namespace TencentCloud
                      */
                     bool m_allDeadToAlive;
                     bool m_allDeadToAliveHasBeenSet;
+
+                    /**
+                     * TCP协议连接空闲超时时间，可配置60s-6000s，默认350s。
+                     */
+                    int64_t m_tcpIdleConnectTimeout;
+                    bool m_tcpIdleConnectTimeoutHasBeenSet;
+
+                    /**
+                     * 其他协议连接空闲超时时间，可配置5s-180s，默认120s
+                     */
+                    int64_t m_othersIdleConnectTimeout;
+                    bool m_othersIdleConnectTimeoutHasBeenSet;
+
+                    /**
+                     * 重新调度功能内的解绑后端服务开关，开关打开后解绑后端服务会触发重新调度。
+                     */
+                    bool m_rescheduleUnbindRs;
+                    bool m_rescheduleUnbindRsHasBeenSet;
+
+                    /**
+                     * 解绑RS后开启重调度的时间，可配置0s-3600s，默认0s
+                     */
+                    int64_t m_rescheduleUnbindRsStartTime;
+                    bool m_rescheduleUnbindRsStartTimeHasBeenSet;
+
+                    /**
+                     * 重新调度功能内的后端服务健康探测异常开关，开关打开后后端服务健康检查异常会触发重新调度。
+                     */
+                    bool m_rescheduleUnhealthy;
+                    bool m_rescheduleUnhealthyHasBeenSet;
+
+                    /**
+                     * 后端服务健康探测异常后开启重调度的时间，可配置0s-3600s，默认0s
+                     */
+                    int64_t m_rescheduleUnhealthyStartTime;
+                    bool m_rescheduleUnhealthyStartTimeHasBeenSet;
 
                 };
             }

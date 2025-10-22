@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ using namespace std;
 DescribeGovernanceNamespacesRequest::DescribeGovernanceNamespacesRequest() :
     m_instanceIdHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_syncToGlobalRegistryHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false)
 {
@@ -51,6 +52,14 @@ string DescribeGovernanceNamespacesRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_syncToGlobalRegistryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncToGlobalRegistry";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_syncToGlobalRegistry.c_str(), allocator).Move(), allocator);
     }
 
     if (m_offsetHasBeenSet)
@@ -107,6 +116,22 @@ void DescribeGovernanceNamespacesRequest::SetName(const string& _name)
 bool DescribeGovernanceNamespacesRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+string DescribeGovernanceNamespacesRequest::GetSyncToGlobalRegistry() const
+{
+    return m_syncToGlobalRegistry;
+}
+
+void DescribeGovernanceNamespacesRequest::SetSyncToGlobalRegistry(const string& _syncToGlobalRegistry)
+{
+    m_syncToGlobalRegistry = _syncToGlobalRegistry;
+    m_syncToGlobalRegistryHasBeenSet = true;
+}
+
+bool DescribeGovernanceNamespacesRequest::SyncToGlobalRegistryHasBeenSet() const
+{
+    return m_syncToGlobalRegistryHasBeenSet;
 }
 
 uint64_t DescribeGovernanceNamespacesRequest::GetOffset() const

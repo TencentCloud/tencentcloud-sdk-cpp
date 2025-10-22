@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品名称代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BusinessCodes 产品名称代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBusinessCodes() const;
 
                     /**
                      * 设置产品名称代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _businessCodes 产品名称代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBusinessCodes(const std::string& _businessCodes);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子产品名称代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductCodes 子产品名称代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductCodes() const;
 
                     /**
                      * 设置子产品名称代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productCodes 子产品名称代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductCodes(const std::string& _productCodes);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组件类型代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComponentCode 组件类型代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComponentCode() const;
 
                     /**
                      * 设置组件类型代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _componentCode 组件类型代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComponentCode(const std::string& _componentCode);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区ID：资源所属可用区ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneIds 可用区ID：资源所属可用区ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZoneIds() const;
 
                     /**
                      * 设置可用区ID：资源所属可用区ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zoneIds 可用区ID：资源所属可用区ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZoneIds(const std::string& _zoneIds);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域ID:资源所属地域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionIds 地域ID:资源所属地域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegionIds() const;
 
                     /**
                      * 设置地域ID:资源所属地域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionIds 地域ID:资源所属地域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionIds(const std::string& _regionIds);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取项目ID:资源所属项目ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectIds 项目ID:资源所属项目ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectIds() const;
 
                     /**
                      * 设置项目ID:资源所属项目ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _projectIds 项目ID:资源所属项目ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProjectIds(const std::string& _projectIds);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计费模式 prePay(表示包年包月)/postPay(表示按量计费)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayModes 计费模式 prePay(表示包年包月)/postPay(表示按量计费)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPayModes() const;
 
                     /**
                      * 设置计费模式 prePay(表示包年包月)/postPay(表示按量计费)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _payModes 计费模式 prePay(表示包年包月)/postPay(表示按量计费)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPayModes(const std::string& _payModes);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取交易类型，查询交易类型（请使用交易类型code入参）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActionTypes 交易类型，查询交易类型（请使用交易类型code入参）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetActionTypes() const;
 
                     /**
                      * 设置交易类型，查询交易类型（请使用交易类型code入参）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _actionTypes 交易类型，查询交易类型（请使用交易类型code入参）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActionTypes(const std::string& _actionTypes);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分账标签键
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 分账标签键
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTags() const;
 
                     /**
                      * 设置分账标签键
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 分账标签键
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::string& _tags);
@@ -278,14 +242,12 @@ incentivePayAmount:赠送金
 voucherPayAmount:优惠券 
 tax:税金 
 costBeforeTax:税前价
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FeeType 费用类型，查询费用类型（请使用费用类型code入参)入参枚举如下：
 cashPayAmount:现金 
 incentivePayAmount:赠送金 
 voucherPayAmount:优惠券 
 tax:税金 
 costBeforeTax:税前价
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFeeType() const;
@@ -297,14 +259,12 @@ incentivePayAmount:赠送金
 voucherPayAmount:优惠券 
 tax:税金 
 costBeforeTax:税前价
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _feeType 费用类型，查询费用类型（请使用费用类型code入参)入参枚举如下：
 cashPayAmount:现金 
 incentivePayAmount:赠送金 
 voucherPayAmount:优惠券 
 tax:税金 
 costBeforeTax:税前价
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFeeType(const std::string& _feeType);
@@ -318,18 +278,14 @@ costBeforeTax:税前价
 
                     /**
                      * 获取查询成本分析数据的用户UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayerUins 查询成本分析数据的用户UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPayerUins() const;
 
                     /**
                      * 设置查询成本分析数据的用户UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _payerUins 查询成本分析数据的用户UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPayerUins(const std::string& _payerUins);
@@ -343,18 +299,14 @@ costBeforeTax:税前价
 
                     /**
                      * 获取使用资源的用户UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OwnerUins 使用资源的用户UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOwnerUins() const;
 
                     /**
                      * 设置使用资源的用户UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ownerUins 使用资源的用户UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOwnerUins(const std::string& _ownerUins);
@@ -368,18 +320,14 @@ costBeforeTax:税前价
 
                     /**
                      * 获取消耗类型，查询消耗类型（请使用消耗类型code入参）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConsumptionTypes 消耗类型，查询消耗类型（请使用消耗类型code入参）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConsumptionTypes() const;
 
                     /**
                      * 设置消耗类型，查询消耗类型（请使用消耗类型code入参）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _consumptionTypes 消耗类型，查询消耗类型（请使用消耗类型code入参）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConsumptionTypes(const std::string& _consumptionTypes);
@@ -395,63 +343,54 @@ costBeforeTax:税前价
 
                     /**
                      * 产品名称代码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_businessCodes;
                     bool m_businessCodesHasBeenSet;
 
                     /**
                      * 子产品名称代码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productCodes;
                     bool m_productCodesHasBeenSet;
 
                     /**
                      * 组件类型代码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_componentCode;
                     bool m_componentCodeHasBeenSet;
 
                     /**
                      * 可用区ID：资源所属可用区ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zoneIds;
                     bool m_zoneIdsHasBeenSet;
 
                     /**
                      * 地域ID:资源所属地域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regionIds;
                     bool m_regionIdsHasBeenSet;
 
                     /**
                      * 项目ID:资源所属项目ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectIds;
                     bool m_projectIdsHasBeenSet;
 
                     /**
                      * 计费模式 prePay(表示包年包月)/postPay(表示按量计费)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_payModes;
                     bool m_payModesHasBeenSet;
 
                     /**
                      * 交易类型，查询交易类型（请使用交易类型code入参）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_actionTypes;
                     bool m_actionTypesHasBeenSet;
 
                     /**
                      * 分账标签键
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tags;
                     bool m_tagsHasBeenSet;
@@ -463,28 +402,24 @@ incentivePayAmount:赠送金
 voucherPayAmount:优惠券 
 tax:税金 
 costBeforeTax:税前价
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_feeType;
                     bool m_feeTypeHasBeenSet;
 
                     /**
                      * 查询成本分析数据的用户UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_payerUins;
                     bool m_payerUinsHasBeenSet;
 
                     /**
                      * 使用资源的用户UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ownerUins;
                     bool m_ownerUinsHasBeenSet;
 
                     /**
                      * 消耗类型，查询消耗类型（请使用消耗类型code入参）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_consumptionTypes;
                     bool m_consumptionTypesHasBeenSet;

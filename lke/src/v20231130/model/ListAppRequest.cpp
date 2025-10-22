@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,9 @@ ListAppRequest::ListAppRequest() :
     m_pageSizeHasBeenSet(false),
     m_pageNumberHasBeenSet(false),
     m_keywordHasBeenSet(false),
-    m_loginSubAccountUinHasBeenSet(false)
+    m_loginSubAccountUinHasBeenSet(false),
+    m_agentTypeHasBeenSet(false),
+    m_appStatusHasBeenSet(false)
 {
 }
 
@@ -76,6 +78,22 @@ string ListAppRequest::ToJsonString() const
         string key = "LoginSubAccountUin";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_loginSubAccountUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agentTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_agentType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppStatus";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_appStatus.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +182,38 @@ void ListAppRequest::SetLoginSubAccountUin(const string& _loginSubAccountUin)
 bool ListAppRequest::LoginSubAccountUinHasBeenSet() const
 {
     return m_loginSubAccountUinHasBeenSet;
+}
+
+string ListAppRequest::GetAgentType() const
+{
+    return m_agentType;
+}
+
+void ListAppRequest::SetAgentType(const string& _agentType)
+{
+    m_agentType = _agentType;
+    m_agentTypeHasBeenSet = true;
+}
+
+bool ListAppRequest::AgentTypeHasBeenSet() const
+{
+    return m_agentTypeHasBeenSet;
+}
+
+string ListAppRequest::GetAppStatus() const
+{
+    return m_appStatus;
+}
+
+void ListAppRequest::SetAppStatus(const string& _appStatus)
+{
+    m_appStatus = _appStatus;
+    m_appStatusHasBeenSet = true;
+}
+
+bool ListAppRequest::AppStatusHasBeenSet() const
+{
+    return m_appStatusHasBeenSet;
 }
 
 

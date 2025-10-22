@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -99,18 +99,18 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取云监控告警模板ID ，返回告警模板转换后的notice ID。
+                     * 获取腾讯云可观测平台告警模板ID ，返回告警模板转换后的notice ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AMPReceivers 云监控告警模板ID ，返回告警模板转换后的notice ID。
+                     * @return AMPReceivers 腾讯云可观测平台告警模板ID ，返回告警模板转换后的notice ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAMPReceivers() const;
 
                     /**
-                     * 设置云监控告警模板ID ，返回告警模板转换后的notice ID。
+                     * 设置腾讯云可观测平台告警模板ID ，返回告警模板转换后的notice ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _aMPReceivers 云监控告警模板ID ，返回告警模板转换后的notice ID。
+                     * @param _aMPReceivers 腾讯云可观测平台告警模板ID ，返回告警模板转换后的notice ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -290,7 +290,7 @@ namespace TencentCloud
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 云监控告警模板ID ，返回告警模板转换后的notice ID。
+                     * 腾讯云可观测平台告警模板ID ，返回告警模板转换后的notice ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_aMPReceivers;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool AccessGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取VPC网络类型（1：CVM；2：黑石1.0）
-                     * @return VpcType VPC网络类型（1：CVM；2：黑石1.0）
+                     * 获取VPC网络类型（1：CVM）
+                     * @return VpcType VPC网络类型（1：CVM）
                      * 
                      */
                     uint64_t GetVpcType() const;
 
                     /**
-                     * 设置VPC网络类型（1：CVM；2：黑石1.0）
-                     * @param _vpcType VPC网络类型（1：CVM；2：黑石1.0）
+                     * 设置VPC网络类型（1：CVM）
+                     * @param _vpcType VPC网络类型（1：CVM）
                      * 
                      */
                     void SetVpcType(const uint64_t& _vpcType);
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_accessGroupNameHasBeenSet;
 
                     /**
-                     * VPC网络类型（1：CVM；2：黑石1.0）
+                     * VPC网络类型（1：CVM）
                      */
                     uint64_t m_vpcType;
                     bool m_vpcTypeHasBeenSet;

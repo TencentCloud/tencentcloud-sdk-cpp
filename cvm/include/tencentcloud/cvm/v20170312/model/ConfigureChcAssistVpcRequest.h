@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cvm/v20170312/model/VirtualPrivateCloud.h>
+#include <tencentcloud/cvm/v20170312/model/ChcDeployExtraConfig.h>
 
 
 namespace TencentCloud
@@ -148,6 +149,27 @@ namespace TencentCloud
                      */
                     bool DeploySecurityGroupIdsHasBeenSet() const;
 
+                    /**
+                     * 获取部署网络的附加参数，用于指定minios类型、bios引导模式等
+                     * @return ChcDeployExtraConfig 部署网络的附加参数，用于指定minios类型、bios引导模式等
+                     * 
+                     */
+                    ChcDeployExtraConfig GetChcDeployExtraConfig() const;
+
+                    /**
+                     * 设置部署网络的附加参数，用于指定minios类型、bios引导模式等
+                     * @param _chcDeployExtraConfig 部署网络的附加参数，用于指定minios类型、bios引导模式等
+                     * 
+                     */
+                    void SetChcDeployExtraConfig(const ChcDeployExtraConfig& _chcDeployExtraConfig);
+
+                    /**
+                     * 判断参数 ChcDeployExtraConfig 是否已赋值
+                     * @return ChcDeployExtraConfig 是否已赋值
+                     * 
+                     */
+                    bool ChcDeployExtraConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +201,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_deploySecurityGroupIds;
                     bool m_deploySecurityGroupIdsHasBeenSet;
+
+                    /**
+                     * 部署网络的附加参数，用于指定minios类型、bios引导模式等
+                     */
+                    ChcDeployExtraConfig m_chcDeployExtraConfig;
+                    bool m_chcDeployExtraConfigHasBeenSet;
 
                 };
             }

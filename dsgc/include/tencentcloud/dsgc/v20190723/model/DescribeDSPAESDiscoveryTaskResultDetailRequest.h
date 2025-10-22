@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool LevelIdHasBeenSet() const;
 
                     /**
-                     * 获取索引名称
-                     * @return DbName 索引名称
+                     * 获取数据库名称
+                     * @return DbName 数据库名称
                      * 
                      */
                     std::string GetDbName() const;
 
                     /**
-                     * 设置索引名称
-                     * @param _dbName 索引名称
+                     * 设置数据库名称
+                     * @param _dbName 数据库名称
                      * 
                      */
                     void SetDbName(const std::string& _dbName);
@@ -255,7 +255,7 @@ namespace TencentCloud
                     bool m_levelIdHasBeenSet;
 
                     /**
-                     * 索引名称
+                     * 数据库名称
                      */
                     std::string m_dbName;
                     bool m_dbNameHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,7 +51,8 @@ CreateSparkAppRequest::CreateSparkAppRequest() :
     m_appExecutorMaxNumbersHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_isInheritHasBeenSet(false),
-    m_isSessionStartedHasBeenSet(false)
+    m_isSessionStartedHasBeenSet(false),
+    m_dependencyPackagesHasBeenSet(false)
 {
 }
 
@@ -292,6 +293,21 @@ string CreateSparkAppRequest::ToJsonString() const
         string key = "IsSessionStarted";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isSessionStarted, allocator);
+    }
+
+    if (m_dependencyPackagesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DependencyPackages";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dependencyPackages.begin(); itr != m_dependencyPackages.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -764,6 +780,22 @@ void CreateSparkAppRequest::SetIsSessionStarted(const bool& _isSessionStarted)
 bool CreateSparkAppRequest::IsSessionStartedHasBeenSet() const
 {
     return m_isSessionStartedHasBeenSet;
+}
+
+vector<DependencyPackage> CreateSparkAppRequest::GetDependencyPackages() const
+{
+    return m_dependencyPackages;
+}
+
+void CreateSparkAppRequest::SetDependencyPackages(const vector<DependencyPackage>& _dependencyPackages)
+{
+    m_dependencyPackages = _dependencyPackages;
+    m_dependencyPackagesHasBeenSet = true;
+}
+
+bool CreateSparkAppRequest::DependencyPackagesHasBeenSet() const
+{
+    return m_dependencyPackagesHasBeenSet;
 }
 
 

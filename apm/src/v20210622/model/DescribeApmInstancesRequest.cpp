@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ using namespace std;
 DescribeApmInstancesRequest::DescribeApmInstancesRequest() :
     m_tagsHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
     m_instanceIdsHasBeenSet(false),
     m_demoInstanceFlagHasBeenSet(false),
     m_allRegionsFlagHasBeenSet(false)
@@ -59,6 +60,14 @@ string DescribeApmInstancesRequest::ToJsonString() const
         string key = "InstanceName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceIdsHasBeenSet)
@@ -128,6 +137,22 @@ void DescribeApmInstancesRequest::SetInstanceName(const string& _instanceName)
 bool DescribeApmInstancesRequest::InstanceNameHasBeenSet() const
 {
     return m_instanceNameHasBeenSet;
+}
+
+string DescribeApmInstancesRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void DescribeApmInstancesRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool DescribeApmInstancesRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 
 vector<string> DescribeApmInstancesRequest::GetInstanceIds() const

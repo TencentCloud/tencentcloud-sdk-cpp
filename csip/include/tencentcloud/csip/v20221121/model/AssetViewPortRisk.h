@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool SuggestionHasBeenSet() const;
 
                     /**
-                     * 获取状态，0未处理、1已处置、2已忽略
-                     * @return Status 状态，0未处理、1已处置、2已忽略
+                     * 获取状态，0未处理、1已处置、2已忽略、3云防已防护
+                     * @return Status 状态，0未处理、1已处置、2已忽略、3云防已防护
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置状态，0未处理、1已处置、2已忽略
-                     * @param _status 状态，0未处理、1已处置、2已忽略
+                     * 设置状态，0未处理、1已处置、2已忽略、3云防已防护
+                     * @param _status 状态，0未处理、1已处置、2已忽略、3云防已防护
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -445,6 +445,48 @@ namespace TencentCloud
                      */
                     bool FromHasBeenSet() const;
 
+                    /**
+                     * 获取服务判定,high_risk_service 高危服务 web_service web服务 other_service 其他服务
+                     * @return ServiceJudge 服务判定,high_risk_service 高危服务 web_service web服务 other_service 其他服务
+                     * 
+                     */
+                    std::string GetServiceJudge() const;
+
+                    /**
+                     * 设置服务判定,high_risk_service 高危服务 web_service web服务 other_service 其他服务
+                     * @param _serviceJudge 服务判定,high_risk_service 高危服务 web_service web服务 other_service 其他服务
+                     * 
+                     */
+                    void SetServiceJudge(const std::string& _serviceJudge);
+
+                    /**
+                     * 判断参数 ServiceJudge 是否已赋值
+                     * @return ServiceJudge 是否已赋值
+                     * 
+                     */
+                    bool ServiceJudgeHasBeenSet() const;
+
+                    /**
+                     * 获取状态，0未处理、1已处置、2已忽略、3云防已防护、4无需处理
+                     * @return XspmStatus 状态，0未处理、1已处置、2已忽略、3云防已防护、4无需处理
+                     * 
+                     */
+                    uint64_t GetXspmStatus() const;
+
+                    /**
+                     * 设置状态，0未处理、1已处置、2已忽略、3云防已防护、4无需处理
+                     * @param _xspmStatus 状态，0未处理、1已处置、2已忽略、3云防已防护、4无需处理
+                     * 
+                     */
+                    void SetXspmStatus(const uint64_t& _xspmStatus);
+
+                    /**
+                     * 判断参数 XspmStatus 是否已赋值
+                     * @return XspmStatus 是否已赋值
+                     * 
+                     */
+                    bool XspmStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -508,7 +550,7 @@ namespace TencentCloud
                     bool m_suggestionHasBeenSet;
 
                     /**
-                     * 状态，0未处理、1已处置、2已忽略
+                     * 状态，0未处理、1已处置、2已忽略、3云防已防护
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
@@ -560,6 +602,18 @@ namespace TencentCloud
                      */
                     std::string m_from;
                     bool m_fromHasBeenSet;
+
+                    /**
+                     * 服务判定,high_risk_service 高危服务 web_service web服务 other_service 其他服务
+                     */
+                    std::string m_serviceJudge;
+                    bool m_serviceJudgeHasBeenSet;
+
+                    /**
+                     * 状态，0未处理、1已处置、2已忽略、3云防已防护、4无需处理
+                     */
+                    uint64_t m_xspmStatus;
+                    bool m_xspmStatusHasBeenSet;
 
                 };
             }

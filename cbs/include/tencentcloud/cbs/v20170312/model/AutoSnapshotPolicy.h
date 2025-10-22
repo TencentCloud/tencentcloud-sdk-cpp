@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,14 +51,18 @@ namespace TencentCloud
 
                     /**
                      * 获取已绑定当前定期快照策略的云盘ID列表。
+DescribeDiskAssociatedAutoSnapshotPolicy场景下该字段返回为空。
                      * @return DiskIdSet 已绑定当前定期快照策略的云盘ID列表。
+DescribeDiskAssociatedAutoSnapshotPolicy场景下该字段返回为空。
                      * 
                      */
                     std::vector<std::string> GetDiskIdSet() const;
 
                     /**
                      * 设置已绑定当前定期快照策略的云盘ID列表。
+DescribeDiskAssociatedAutoSnapshotPolicy场景下该字段返回为空。
                      * @param _diskIdSet 已绑定当前定期快照策略的云盘ID列表。
+DescribeDiskAssociatedAutoSnapshotPolicy场景下该字段返回为空。
                      * 
                      */
                     void SetDiskIdSet(const std::vector<std::string>& _diskIdSet);
@@ -92,15 +96,31 @@ namespace TencentCloud
                     bool IsActivatedHasBeenSet() const;
 
                     /**
-                     * 获取定期快照策略的状态。取值范围：<br><li>NORMAL：正常<br><li>ISOLATED：已隔离。
-                     * @return AutoSnapshotPolicyState 定期快照策略的状态。取值范围：<br><li>NORMAL：正常<br><li>ISOLATED：已隔离。
+                     * 获取定期快照策略的状态。取值范围：
+<ul>
+  <li>NORMAL：正常</li>
+  <li>ISOLATED：已隔离</li>
+</ul>
+                     * @return AutoSnapshotPolicyState 定期快照策略的状态。取值范围：
+<ul>
+  <li>NORMAL：正常</li>
+  <li>ISOLATED：已隔离</li>
+</ul>
                      * 
                      */
                     std::string GetAutoSnapshotPolicyState() const;
 
                     /**
-                     * 设置定期快照策略的状态。取值范围：<br><li>NORMAL：正常<br><li>ISOLATED：已隔离。
-                     * @param _autoSnapshotPolicyState 定期快照策略的状态。取值范围：<br><li>NORMAL：正常<br><li>ISOLATED：已隔离。
+                     * 设置定期快照策略的状态。取值范围：
+<ul>
+  <li>NORMAL：正常</li>
+  <li>ISOLATED：已隔离</li>
+</ul>
+                     * @param _autoSnapshotPolicyState 定期快照策略的状态。取值范围：
+<ul>
+  <li>NORMAL：正常</li>
+  <li>ISOLATED：已隔离</li>
+</ul>
                      * 
                      */
                     void SetAutoSnapshotPolicyState(const std::string& _autoSnapshotPolicyState);
@@ -113,19 +133,15 @@ namespace TencentCloud
                     bool AutoSnapshotPolicyStateHasBeenSet() const;
 
                     /**
-                     * 获取是否是跨账号复制快照快照, 1：是, 0: 不是
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsCopyToRemote 是否是跨账号复制快照快照, 1：是, 0: 不是
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取是否是跨账号复制快照, 1：是, 0: 不是
+                     * @return IsCopyToRemote 是否是跨账号复制快照, 1：是, 0: 不是
                      * 
                      */
                     uint64_t GetIsCopyToRemote() const;
 
                     /**
-                     * 设置是否是跨账号复制快照快照, 1：是, 0: 不是
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isCopyToRemote 是否是跨账号复制快照快照, 1：是, 0: 不是
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置是否是跨账号复制快照, 1：是, 0: 不是
+                     * @param _isCopyToRemote 是否是跨账号复制快照, 1：是, 0: 不是
                      * 
                      */
                     void SetIsCopyToRemote(const uint64_t& _isCopyToRemote);
@@ -311,18 +327,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已绑定当前定期快照策略的实例ID列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceIdSet 已绑定当前定期快照策略的实例ID列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetInstanceIdSet() const;
 
                     /**
                      * 设置已绑定当前定期快照策略的实例ID列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceIdSet 已绑定当前定期快照策略的实例ID列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceIdSet(const std::vector<std::string>& _instanceIdSet);
@@ -336,18 +348,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该定期快照创建的快照可以保留的月数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RetentionMonths 该定期快照创建的快照可以保留的月数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRetentionMonths() const;
 
                     /**
                      * 设置该定期快照创建的快照可以保留的月数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _retentionMonths 该定期快照创建的快照可以保留的月数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRetentionMonths(const uint64_t& _retentionMonths);
@@ -361,18 +369,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该定期快照创建的快照最大保留数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RetentionAmount 该定期快照创建的快照最大保留数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRetentionAmount() const;
 
                     /**
                      * 设置该定期快照创建的快照最大保留数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _retentionAmount 该定期快照创建的快照最大保留数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRetentionAmount(const uint64_t& _retentionAmount);
@@ -436,18 +440,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -463,6 +463,7 @@ namespace TencentCloud
 
                     /**
                      * 已绑定当前定期快照策略的云盘ID列表。
+DescribeDiskAssociatedAutoSnapshotPolicy场景下该字段返回为空。
                      */
                     std::vector<std::string> m_diskIdSet;
                     bool m_diskIdSetHasBeenSet;
@@ -474,14 +475,17 @@ namespace TencentCloud
                     bool m_isActivatedHasBeenSet;
 
                     /**
-                     * 定期快照策略的状态。取值范围：<br><li>NORMAL：正常<br><li>ISOLATED：已隔离。
+                     * 定期快照策略的状态。取值范围：
+<ul>
+  <li>NORMAL：正常</li>
+  <li>ISOLATED：已隔离</li>
+</ul>
                      */
                     std::string m_autoSnapshotPolicyState;
                     bool m_autoSnapshotPolicyStateHasBeenSet;
 
                     /**
-                     * 是否是跨账号复制快照快照, 1：是, 0: 不是
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 是否是跨账号复制快照, 1：是, 0: 不是
                      */
                     uint64_t m_isCopyToRemote;
                     bool m_isCopyToRemoteHasBeenSet;
@@ -537,21 +541,18 @@ namespace TencentCloud
 
                     /**
                      * 已绑定当前定期快照策略的实例ID列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_instanceIdSet;
                     bool m_instanceIdSetHasBeenSet;
 
                     /**
                      * 该定期快照创建的快照可以保留的月数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_retentionMonths;
                     bool m_retentionMonthsHasBeenSet;
 
                     /**
                      * 该定期快照创建的快照最大保留数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_retentionAmount;
                     bool m_retentionAmountHasBeenSet;
@@ -572,7 +573,6 @@ namespace TencentCloud
 
                     /**
                      * 标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;

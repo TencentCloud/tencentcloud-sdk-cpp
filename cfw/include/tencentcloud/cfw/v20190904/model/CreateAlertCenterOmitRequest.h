@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -88,6 +88,27 @@ AlertTable 告警中心  InterceptionTable拦截列表
                      */
                     bool TableTypeHasBeenSet() const;
 
+                    /**
+                     * 获取处置对象,事件ID列表
+                     * @return HandleEventIdList 处置对象,事件ID列表
+                     * 
+                     */
+                    std::vector<std::string> GetHandleEventIdList() const;
+
+                    /**
+                     * 设置处置对象,事件ID列表
+                     * @param _handleEventIdList 处置对象,事件ID列表
+                     * 
+                     */
+                    void SetHandleEventIdList(const std::vector<std::string>& _handleEventIdList);
+
+                    /**
+                     * 判断参数 HandleEventIdList 是否已赋值
+                     * @return HandleEventIdList 是否已赋值
+                     * 
+                     */
+                    bool HandleEventIdListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -102,6 +123,12 @@ AlertTable 告警中心  InterceptionTable拦截列表
                      */
                     std::string m_tableType;
                     bool m_tableTypeHasBeenSet;
+
+                    /**
+                     * 处置对象,事件ID列表
+                     */
+                    std::vector<std::string> m_handleEventIdList;
+                    bool m_handleEventIdListHasBeenSet;
 
                 };
             }

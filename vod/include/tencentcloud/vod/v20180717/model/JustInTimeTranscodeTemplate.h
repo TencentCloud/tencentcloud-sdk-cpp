@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -113,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取视频参数配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VideoConfigure 视频参数配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     VideoConfigureInfo GetVideoConfigure() const;
 
                     /**
                      * 设置视频参数配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _videoConfigure 视频参数配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVideoConfigure(const VideoConfigureInfo& _videoConfigure);
@@ -138,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取水印参数配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WatermarkConfigure 水印参数配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     WatermarkConfigureData GetWatermarkConfigure() const;
 
                     /**
                      * 设置水印参数配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _watermarkConfigure 水印参数配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWatermarkConfigure(const WatermarkConfigureData& _watermarkConfigure);
@@ -183,14 +175,12 @@ namespace TencentCloud
 
                     /**
                      * 视频参数配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     VideoConfigureInfo m_videoConfigure;
                     bool m_videoConfigureHasBeenSet;
 
                     /**
                      * 水印参数配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     WatermarkConfigureData m_watermarkConfigure;
                     bool m_watermarkConfigureHasBeenSet;

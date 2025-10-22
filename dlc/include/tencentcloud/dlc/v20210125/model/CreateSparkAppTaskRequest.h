@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dlc/v20210125/model/KVPair.h>
 
 
 namespace TencentCloud
@@ -84,6 +85,27 @@ namespace TencentCloud
                      */
                     bool CmdArgsHasBeenSet() const;
 
+                    /**
+                     * 获取任务来源信息
+                     * @return SourceInfo 任务来源信息
+                     * 
+                     */
+                    std::vector<KVPair> GetSourceInfo() const;
+
+                    /**
+                     * 设置任务来源信息
+                     * @param _sourceInfo 任务来源信息
+                     * 
+                     */
+                    void SetSourceInfo(const std::vector<KVPair>& _sourceInfo);
+
+                    /**
+                     * 判断参数 SourceInfo 是否已赋值
+                     * @return SourceInfo 是否已赋值
+                     * 
+                     */
+                    bool SourceInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +119,12 @@ namespace TencentCloud
                      */
                     std::string m_cmdArgs;
                     bool m_cmdArgsHasBeenSet;
+
+                    /**
+                     * 任务来源信息
+                     */
+                    std::vector<KVPair> m_sourceInfo;
+                    bool m_sourceInfoHasBeenSet;
 
                 };
             }

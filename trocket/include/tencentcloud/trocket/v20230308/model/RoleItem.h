@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/trocket/v20230308/model/DetailedRolePerm.h>
 
 
 namespace TencentCloud
@@ -173,15 +174,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取创建时间，秒为单位
-                     * @return CreatedTime 创建时间，秒为单位
+                     * 获取角色的创建时间，**Unix时间戳（毫秒）**
+                     * @return CreatedTime 角色的创建时间，**Unix时间戳（毫秒）**
                      * 
                      */
                     int64_t GetCreatedTime() const;
 
                     /**
-                     * 设置创建时间，秒为单位
-                     * @param _createdTime 创建时间，秒为单位
+                     * 设置角色的创建时间，**Unix时间戳（毫秒）**
+                     * @param _createdTime 角色的创建时间，**Unix时间戳（毫秒）**
                      * 
                      */
                     void SetCreatedTime(const int64_t& _createdTime);
@@ -194,15 +195,15 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取修改时间，秒为单位
-                     * @return ModifiedTime 修改时间，秒为单位
+                     * 获取角色的更新时间，**Unix时间戳（毫秒）**
+                     * @return ModifiedTime 角色的更新时间，**Unix时间戳（毫秒）**
                      * 
                      */
                     int64_t GetModifiedTime() const;
 
                     /**
-                     * 设置修改时间，秒为单位
-                     * @param _modifiedTime 修改时间，秒为单位
+                     * 设置角色的更新时间，**Unix时间戳（毫秒）**
+                     * @param _modifiedTime 角色的更新时间，**Unix时间戳（毫秒）**
                      * 
                      */
                     void SetModifiedTime(const int64_t& _modifiedTime);
@@ -213,6 +214,52 @@ namespace TencentCloud
                      * 
                      */
                     bool ModifiedTimeHasBeenSet() const;
+
+                    /**
+                     * 获取权限类型，默认按集群授权（Cluster：集群级别；TopicAndGroup：主题&消费组级别）
+                     * @return PermType 权限类型，默认按集群授权（Cluster：集群级别；TopicAndGroup：主题&消费组级别）
+                     * 
+                     */
+                    std::string GetPermType() const;
+
+                    /**
+                     * 设置权限类型，默认按集群授权（Cluster：集群级别；TopicAndGroup：主题&消费组级别）
+                     * @param _permType 权限类型，默认按集群授权（Cluster：集群级别；TopicAndGroup：主题&消费组级别）
+                     * 
+                     */
+                    void SetPermType(const std::string& _permType);
+
+                    /**
+                     * 判断参数 PermType 是否已赋值
+                     * @return PermType 是否已赋值
+                     * 
+                     */
+                    bool PermTypeHasBeenSet() const;
+
+                    /**
+                     * 获取Topic和Group维度权限配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DetailedRolePerms Topic和Group维度权限配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<DetailedRolePerm> GetDetailedRolePerms() const;
+
+                    /**
+                     * 设置Topic和Group维度权限配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _detailedRolePerms Topic和Group维度权限配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDetailedRolePerms(const std::vector<DetailedRolePerm>& _detailedRolePerms);
+
+                    /**
+                     * 判断参数 DetailedRolePerms 是否已赋值
+                     * @return DetailedRolePerms 是否已赋值
+                     * 
+                     */
+                    bool DetailedRolePermsHasBeenSet() const;
 
                 private:
 
@@ -253,16 +300,29 @@ namespace TencentCloud
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 创建时间，秒为单位
+                     * 角色的创建时间，**Unix时间戳（毫秒）**
                      */
                     int64_t m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 修改时间，秒为单位
+                     * 角色的更新时间，**Unix时间戳（毫秒）**
                      */
                     int64_t m_modifiedTime;
                     bool m_modifiedTimeHasBeenSet;
+
+                    /**
+                     * 权限类型，默认按集群授权（Cluster：集群级别；TopicAndGroup：主题&消费组级别）
+                     */
+                    std::string m_permType;
+                    bool m_permTypeHasBeenSet;
+
+                    /**
+                     * Topic和Group维度权限配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DetailedRolePerm> m_detailedRolePerms;
+                    bool m_detailedRolePermsHasBeenSet;
 
                 };
             }

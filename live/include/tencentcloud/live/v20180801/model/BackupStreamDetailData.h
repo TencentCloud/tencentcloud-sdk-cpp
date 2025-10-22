@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取推流域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DomainName 推流域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomainName() const;
 
                     /**
                      * 设置推流域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domainName 推流域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomainName(const std::string& _domainName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取推流路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppName 推流路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置推流路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appName 推流路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppName(const std::string& _appName);
@@ -99,10 +91,8 @@ namespace TencentCloud
                     /**
                      * 获取 UTC 格式，例如：2018-06-29T19:00:00Z。
 注意：和北京时间相差8小时。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublishTime  UTC 格式，例如：2018-06-29T19:00:00Z。
 注意：和北京时间相差8小时。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublishTime() const;
@@ -110,10 +100,8 @@ namespace TencentCloud
                     /**
                      * 设置 UTC 格式，例如：2018-06-29T19:00:00Z。
 注意：和北京时间相差8小时。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publishTime  UTC 格式，例如：2018-06-29T19:00:00Z。
 注意：和北京时间相差8小时。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublishTime(const std::string& _publishTime);
@@ -127,18 +115,14 @@ namespace TencentCloud
 
                     /**
                      * 获取推流唯一标识。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpstreamSequence 推流唯一标识。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpstreamSequence() const;
 
                     /**
                      * 设置推流唯一标识。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _upstreamSequence 推流唯一标识。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpstreamSequence(const std::string& _upstreamSequence);
@@ -156,13 +140,11 @@ namespace TencentCloud
 拉流转推(1234)；
 注意：拉流转推来源括号中为拉流转推的任务 
  ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceFrom 推流来源。示例：
 直推流；
 拉流转推(1234)；
 注意：拉流转推来源括号中为拉流转推的任务 
  ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSourceFrom() const;
@@ -173,13 +155,11 @@ namespace TencentCloud
 拉流转推(1234)；
 注意：拉流转推来源括号中为拉流转推的任务 
  ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sourceFrom 推流来源。示例：
 直推流；
 拉流转推(1234)；
 注意：拉流转推来源括号中为拉流转推的任务 
  ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSourceFrom(const std::string& _sourceFrom);
@@ -195,11 +175,9 @@ namespace TencentCloud
                      * 获取主备标识。
 当前流为主流：1，
 当前流为备流: 0。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MasterFlag 主备标识。
 当前流为主流：1，
 当前流为备流: 0。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMasterFlag() const;
@@ -208,11 +186,9 @@ namespace TencentCloud
                      * 设置主备标识。
 当前流为主流：1，
 当前流为备流: 0。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _masterFlag 主备标识。
 当前流为主流：1，
 当前流为备流: 0。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMasterFlag(const int64_t& _masterFlag);
@@ -228,14 +204,12 @@ namespace TencentCloud
 
                     /**
                      * 推流域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domainName;
                     bool m_domainNameHasBeenSet;
 
                     /**
                      * 推流路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appName;
                     bool m_appNameHasBeenSet;
@@ -243,14 +217,12 @@ namespace TencentCloud
                     /**
                      *  UTC 格式，例如：2018-06-29T19:00:00Z。
 注意：和北京时间相差8小时。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publishTime;
                     bool m_publishTimeHasBeenSet;
 
                     /**
                      * 推流唯一标识。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_upstreamSequence;
                     bool m_upstreamSequenceHasBeenSet;
@@ -261,7 +233,6 @@ namespace TencentCloud
 拉流转推(1234)；
 注意：拉流转推来源括号中为拉流转推的任务 
  ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sourceFrom;
                     bool m_sourceFromHasBeenSet;
@@ -270,7 +241,6 @@ namespace TencentCloud
                      * 主备标识。
 当前流为主流：1，
 当前流为备流: 0。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_masterFlag;
                     bool m_masterFlagHasBeenSet;

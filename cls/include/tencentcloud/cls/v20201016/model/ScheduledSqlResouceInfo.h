@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取目标主题id
-                     * @return TopicId 目标主题id
+                     * 获取通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
+                     * @return TopicId 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置目标主题id
-                     * @param _topicId 目标主题id
+                     * 设置通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
+                     * @param _topicId 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取主题的地域信息
-                     * @return Region 主题的地域信息
+                     * 获取主题的地域信息，当前不支持跨地域，支持地域参考 [地域列表](https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) 文档。
+                     * @return Region 主题的地域信息，当前不支持跨地域，支持地域参考 [地域列表](https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) 文档。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置主题的地域信息
-                     * @param _region 主题的地域信息
+                     * 设置主题的地域信息，当前不支持跨地域，支持地域参考 [地域列表](https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) 文档。
+                     * @param _region 主题的地域信息，当前不支持跨地域，支持地域参考 [地域列表](https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) 文档。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -226,13 +226,13 @@ BizType为1时，优先使用MetricNames字段多指标只能填充到MetricName
                 private:
 
                     /**
-                     * 目标主题id
+                     * 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 主题的地域信息
+                     * 主题的地域信息，当前不支持跨地域，支持地域参考 [地域列表](https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) 文档。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;

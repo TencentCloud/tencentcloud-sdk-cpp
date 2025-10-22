@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -114,12 +114,10 @@ namespace TencentCloud
 0表示正常；
 1表示异常。
 未开启健康检查状态时，该状态始终为正常。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealServerStatus 源站健康检查状态，其中：
 0表示正常；
 1表示异常。
 未开启健康检查状态时，该状态始终为正常。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRealServerStatus() const;
@@ -129,12 +127,10 @@ namespace TencentCloud
 0表示正常；
 1表示异常。
 未开启健康检查状态时，该状态始终为正常。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _realServerStatus 源站健康检查状态，其中：
 0表示正常；
 1表示异常。
 未开启健康检查状态时，该状态始终为正常。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRealServerStatus(const int64_t& _realServerStatus);
@@ -148,18 +144,14 @@ namespace TencentCloud
 
                     /**
                      * 获取源站的端口号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealServerPort 源站的端口号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRealServerPort() const;
 
                     /**
                      * 设置源站的端口号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _realServerPort 源站的端口号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRealServerPort(const int64_t& _realServerPort);
@@ -238,14 +230,12 @@ namespace TencentCloud
 0表示正常；
 1表示异常。
 未开启健康检查状态时，该状态始终为正常。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_realServerStatus;
                     bool m_realServerStatusHasBeenSet;
 
                     /**
                      * 源站的端口号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_realServerPort;
                     bool m_realServerPortHasBeenSet;

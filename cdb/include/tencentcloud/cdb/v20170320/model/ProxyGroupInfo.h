@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取代理版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyVersion 代理版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProxyVersion() const;
 
                     /**
                      * 设置代理版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _proxyVersion 代理版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProxyVersion(const std::string& _proxyVersion);
@@ -96,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取代理支持升级版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportUpgradeProxyVersion 代理支持升级版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSupportUpgradeProxyVersion() const;
 
                     /**
                      * 设置代理支持升级版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _supportUpgradeProxyVersion 代理支持升级版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSupportUpgradeProxyVersion(const std::string& _supportUpgradeProxyVersion);
@@ -120,19 +112,15 @@ namespace TencentCloud
                     bool SupportUpgradeProxyVersionHasBeenSet() const;
 
                     /**
-                     * 获取代理状态
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 代理状态
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取代理状态。0 - 初始化中，1 - 在线中，2 - 在线中-读写分离中，3 - 下线，4 - 销毁。
+                     * @return Status 代理状态。0 - 初始化中，1 - 在线中，2 - 在线中-读写分离中，3 - 下线，4 - 销毁。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置代理状态
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 代理状态
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置代理状态。0 - 初始化中，1 - 在线中，2 - 在线中-读写分离中，3 - 下线，4 - 销毁。
+                     * @param _status 代理状态。0 - 初始化中，1 - 在线中，2 - 在线中-读写分离中，3 - 下线，4 - 销毁。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -145,19 +133,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取代理任务状态
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskStatus 代理任务状态
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取代理任务状态，Upgrading - 升级中，UpgradeTo - 升级待切换，UpgradeSwitching - 升级切换中，ProxyCreateAddress - 配置地址中，ProxyModifyAddress - 修改地址中，ProxyCloseAddress - 关闭地址中。
+                     * @return TaskStatus 代理任务状态，Upgrading - 升级中，UpgradeTo - 升级待切换，UpgradeSwitching - 升级切换中，ProxyCreateAddress - 配置地址中，ProxyModifyAddress - 修改地址中，ProxyCloseAddress - 关闭地址中。
                      * 
                      */
                     std::string GetTaskStatus() const;
 
                     /**
-                     * 设置代理任务状态
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskStatus 代理任务状态
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置代理任务状态，Upgrading - 升级中，UpgradeTo - 升级待切换，UpgradeSwitching - 升级切换中，ProxyCreateAddress - 配置地址中，ProxyModifyAddress - 修改地址中，ProxyCloseAddress - 关闭地址中。
+                     * @param _taskStatus 代理任务状态，Upgrading - 升级中，UpgradeTo - 升级待切换，UpgradeSwitching - 升级切换中，ProxyCreateAddress - 配置地址中，ProxyModifyAddress - 修改地址中，ProxyCloseAddress - 关闭地址中。
                      * 
                      */
                     void SetTaskStatus(const std::string& _taskStatus);
@@ -171,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取代理组节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyNode 代理组节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ProxyNode> GetProxyNode() const;
 
                     /**
                      * 设置代理组节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _proxyNode 代理组节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProxyNode(const std::vector<ProxyNode>& _proxyNode);
@@ -196,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取代理组地址信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyAddress 代理组地址信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ProxyAddress> GetProxyAddress() const;
 
                     /**
                      * 设置代理组地址信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _proxyAddress 代理组地址信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProxyAddress(const std::vector<ProxyAddress>& _proxyAddress);
@@ -221,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取连接池阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConnectionPoolLimit 连接池阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetConnectionPoolLimit() const;
 
                     /**
                      * 设置连接池阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _connectionPoolLimit 连接池阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConnectionPoolLimit(const uint64_t& _connectionPoolLimit);
@@ -246,18 +218,14 @@ namespace TencentCloud
 
                     /**
                      * 获取支持创建地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportCreateProxyAddress 支持创建地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSupportCreateProxyAddress() const;
 
                     /**
                      * 设置支持创建地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _supportCreateProxyAddress 支持创建地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSupportCreateProxyAddress(const bool& _supportCreateProxyAddress);
@@ -271,18 +239,14 @@ namespace TencentCloud
 
                     /**
                      * 获取支持升级代理版本所需的cdb版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportUpgradeProxyMysqlVersion 支持升级代理版本所需的cdb版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSupportUpgradeProxyMysqlVersion() const;
 
                     /**
                      * 设置支持升级代理版本所需的cdb版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _supportUpgradeProxyMysqlVersion 支持升级代理版本所需的cdb版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSupportUpgradeProxyMysqlVersion(const std::string& _supportUpgradeProxyMysqlVersion);
@@ -304,63 +268,54 @@ namespace TencentCloud
 
                     /**
                      * 代理版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_proxyVersion;
                     bool m_proxyVersionHasBeenSet;
 
                     /**
                      * 代理支持升级版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_supportUpgradeProxyVersion;
                     bool m_supportUpgradeProxyVersionHasBeenSet;
 
                     /**
-                     * 代理状态
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 代理状态。0 - 初始化中，1 - 在线中，2 - 在线中-读写分离中，3 - 下线，4 - 销毁。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 代理任务状态
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 代理任务状态，Upgrading - 升级中，UpgradeTo - 升级待切换，UpgradeSwitching - 升级切换中，ProxyCreateAddress - 配置地址中，ProxyModifyAddress - 修改地址中，ProxyCloseAddress - 关闭地址中。
                      */
                     std::string m_taskStatus;
                     bool m_taskStatusHasBeenSet;
 
                     /**
                      * 代理组节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ProxyNode> m_proxyNode;
                     bool m_proxyNodeHasBeenSet;
 
                     /**
                      * 代理组地址信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ProxyAddress> m_proxyAddress;
                     bool m_proxyAddressHasBeenSet;
 
                     /**
                      * 连接池阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_connectionPoolLimit;
                     bool m_connectionPoolLimitHasBeenSet;
 
                     /**
                      * 支持创建地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_supportCreateProxyAddress;
                     bool m_supportCreateProxyAddressHasBeenSet;
 
                     /**
                      * 支持升级代理版本所需的cdb版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_supportUpgradeProxyMysqlVersion;
                     bool m_supportUpgradeProxyMysqlVersionHasBeenSet;

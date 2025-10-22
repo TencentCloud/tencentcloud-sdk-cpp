@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ using namespace TencentCloud::Tcss::V20201101::Model;
 using namespace std;
 
 DescribeAssetImageRegistryVirusListExportResponse::DescribeAssetImageRegistryVirusListExportResponse() :
-    m_downloadUrlHasBeenSet(false)
+    m_downloadUrlHasBeenSet(false),
+    m_jobIdHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome DescribeAssetImageRegistryVirusListExportResponse::Deseriali
         m_downloadUrlHasBeenSet = true;
     }
 
+    if (rsp.HasMember("JobId") && !rsp["JobId"].IsNull())
+    {
+        if (!rsp["JobId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_jobId = string(rsp["JobId"].GetString());
+        m_jobIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -90,11 +101,19 @@ string DescribeAssetImageRegistryVirusListExportResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_downloadUrl.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_jobIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_jobId.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -110,6 +129,16 @@ string DescribeAssetImageRegistryVirusListExportResponse::GetDownloadUrl() const
 bool DescribeAssetImageRegistryVirusListExportResponse::DownloadUrlHasBeenSet() const
 {
     return m_downloadUrlHasBeenSet;
+}
+
+string DescribeAssetImageRegistryVirusListExportResponse::GetJobId() const
+{
+    return m_jobId;
+}
+
+bool DescribeAssetImageRegistryVirusListExportResponse::JobIdHasBeenSet() const
+{
+    return m_jobIdHasBeenSet;
 }
 
 

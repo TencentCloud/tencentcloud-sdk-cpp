@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -172,6 +172,48 @@ namespace TencentCloud
                      */
                     bool NextHopHasBeenSet() const;
 
+                    /**
+                     * 获取路由更新时间
+                     * @return UpdateTime 路由更新时间
+                     * 
+                     */
+                    std::string GetUpdateTime() const;
+
+                    /**
+                     * 设置路由更新时间
+                     * @param _updateTime 路由更新时间
+                     * 
+                     */
+                    void SetUpdateTime(const std::string& _updateTime);
+
+                    /**
+                     * 判断参数 UpdateTime 是否已赋值
+                     * @return UpdateTime 是否已赋值
+                     * 
+                     */
+                    bool UpdateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取是否配置在通道上
+                     * @return ApplyOnTunnelEnable 是否配置在通道上
+                     * 
+                     */
+                    bool GetApplyOnTunnelEnable() const;
+
+                    /**
+                     * 设置是否配置在通道上
+                     * @param _applyOnTunnelEnable 是否配置在通道上
+                     * 
+                     */
+                    void SetApplyOnTunnelEnable(const bool& _applyOnTunnelEnable);
+
+                    /**
+                     * 判断参数 ApplyOnTunnelEnable 是否已赋值
+                     * @return ApplyOnTunnelEnable 是否已赋值
+                     * 
+                     */
+                    bool ApplyOnTunnelEnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -209,6 +251,18 @@ namespace TencentCloud
                      */
                     std::string m_nextHop;
                     bool m_nextHopHasBeenSet;
+
+                    /**
+                     * 路由更新时间
+                     */
+                    std::string m_updateTime;
+                    bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 是否配置在通道上
+                     */
+                    bool m_applyOnTunnelEnable;
+                    bool m_applyOnTunnelEnableHasBeenSet;
 
                 };
             }

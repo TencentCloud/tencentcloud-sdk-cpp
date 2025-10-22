@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,7 +74,13 @@ DataEngineInfo::DataEngineInfo() :
     m_engineResourceUsedCUHasBeenSet(false),
     m_accessInfosHasBeenSet(false),
     m_engineNetworkNameHasBeenSet(false),
-    m_isPoolModeHasBeenSet(false)
+    m_isPoolModeHasBeenSet(false),
+    m_isSupportAIHasBeenSet(false),
+    m_gatewayIdHasBeenSet(false),
+    m_gatewayStateHasBeenSet(false),
+    m_isAIGatewayHasBeenSet(false),
+    m_isAIEngineHasBeenSet(false),
+    m_scheduleElasticityConfHasBeenSet(false)
 {
 }
 
@@ -670,6 +676,73 @@ CoreInternalOutcome DataEngineInfo::Deserialize(const rapidjson::Value &value)
         m_isPoolModeHasBeenSet = true;
     }
 
+    if (value.HasMember("IsSupportAI") && !value["IsSupportAI"].IsNull())
+    {
+        if (!value["IsSupportAI"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataEngineInfo.IsSupportAI` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSupportAI = value["IsSupportAI"].GetBool();
+        m_isSupportAIHasBeenSet = true;
+    }
+
+    if (value.HasMember("GatewayId") && !value["GatewayId"].IsNull())
+    {
+        if (!value["GatewayId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataEngineInfo.GatewayId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gatewayId = string(value["GatewayId"].GetString());
+        m_gatewayIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("GatewayState") && !value["GatewayState"].IsNull())
+    {
+        if (!value["GatewayState"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataEngineInfo.GatewayState` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_gatewayState = value["GatewayState"].GetInt64();
+        m_gatewayStateHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsAIGateway") && !value["IsAIGateway"].IsNull())
+    {
+        if (!value["IsAIGateway"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataEngineInfo.IsAIGateway` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isAIGateway = value["IsAIGateway"].GetBool();
+        m_isAIGatewayHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsAIEngine") && !value["IsAIEngine"].IsNull())
+    {
+        if (!value["IsAIEngine"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataEngineInfo.IsAIEngine` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isAIEngine = value["IsAIEngine"].GetInt64();
+        m_isAIEngineHasBeenSet = true;
+    }
+
+    if (value.HasMember("ScheduleElasticityConf") && !value["ScheduleElasticityConf"].IsNull())
+    {
+        if (!value["ScheduleElasticityConf"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataEngineInfo.ScheduleElasticityConf` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_scheduleElasticityConf.Deserialize(value["ScheduleElasticityConf"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_scheduleElasticityConfHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1135,6 +1208,55 @@ void DataEngineInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "IsPoolMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_isPoolMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isSupportAIHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSupportAI";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSupportAI, allocator);
+    }
+
+    if (m_gatewayIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GatewayId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gatewayId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gatewayStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GatewayState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_gatewayState, allocator);
+    }
+
+    if (m_isAIGatewayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsAIGateway";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isAIGateway, allocator);
+    }
+
+    if (m_isAIEngineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsAIEngine";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isAIEngine, allocator);
+    }
+
+    if (m_scheduleElasticityConfHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleElasticityConf";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_scheduleElasticityConf.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -2002,5 +2124,101 @@ void DataEngineInfo::SetIsPoolMode(const string& _isPoolMode)
 bool DataEngineInfo::IsPoolModeHasBeenSet() const
 {
     return m_isPoolModeHasBeenSet;
+}
+
+bool DataEngineInfo::GetIsSupportAI() const
+{
+    return m_isSupportAI;
+}
+
+void DataEngineInfo::SetIsSupportAI(const bool& _isSupportAI)
+{
+    m_isSupportAI = _isSupportAI;
+    m_isSupportAIHasBeenSet = true;
+}
+
+bool DataEngineInfo::IsSupportAIHasBeenSet() const
+{
+    return m_isSupportAIHasBeenSet;
+}
+
+string DataEngineInfo::GetGatewayId() const
+{
+    return m_gatewayId;
+}
+
+void DataEngineInfo::SetGatewayId(const string& _gatewayId)
+{
+    m_gatewayId = _gatewayId;
+    m_gatewayIdHasBeenSet = true;
+}
+
+bool DataEngineInfo::GatewayIdHasBeenSet() const
+{
+    return m_gatewayIdHasBeenSet;
+}
+
+int64_t DataEngineInfo::GetGatewayState() const
+{
+    return m_gatewayState;
+}
+
+void DataEngineInfo::SetGatewayState(const int64_t& _gatewayState)
+{
+    m_gatewayState = _gatewayState;
+    m_gatewayStateHasBeenSet = true;
+}
+
+bool DataEngineInfo::GatewayStateHasBeenSet() const
+{
+    return m_gatewayStateHasBeenSet;
+}
+
+bool DataEngineInfo::GetIsAIGateway() const
+{
+    return m_isAIGateway;
+}
+
+void DataEngineInfo::SetIsAIGateway(const bool& _isAIGateway)
+{
+    m_isAIGateway = _isAIGateway;
+    m_isAIGatewayHasBeenSet = true;
+}
+
+bool DataEngineInfo::IsAIGatewayHasBeenSet() const
+{
+    return m_isAIGatewayHasBeenSet;
+}
+
+int64_t DataEngineInfo::GetIsAIEngine() const
+{
+    return m_isAIEngine;
+}
+
+void DataEngineInfo::SetIsAIEngine(const int64_t& _isAIEngine)
+{
+    m_isAIEngine = _isAIEngine;
+    m_isAIEngineHasBeenSet = true;
+}
+
+bool DataEngineInfo::IsAIEngineHasBeenSet() const
+{
+    return m_isAIEngineHasBeenSet;
+}
+
+ScheduleElasticityConf DataEngineInfo::GetScheduleElasticityConf() const
+{
+    return m_scheduleElasticityConf;
+}
+
+void DataEngineInfo::SetScheduleElasticityConf(const ScheduleElasticityConf& _scheduleElasticityConf)
+{
+    m_scheduleElasticityConf = _scheduleElasticityConf;
+    m_scheduleElasticityConfHasBeenSet = true;
+}
+
+bool DataEngineInfo::ScheduleElasticityConfHasBeenSet() const
+{
+    return m_scheduleElasticityConfHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -142,18 +142,14 @@ namespace TencentCloud
 
                     /**
                      * 获取更新时间，如果为null，默认由底层按当前时间生成。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间，如果为null，默认由底层按当前时间生成。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间，如果为null，默认由底层按当前时间生成。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 更新时间，如果为null，默认由底层按当前时间生成。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -167,18 +163,14 @@ namespace TencentCloud
 
                     /**
                      * 获取匹配条件。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExceptUserRuleConditions 匹配条件。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ExceptUserRuleCondition> GetExceptUserRuleConditions() const;
 
                     /**
                      * 设置匹配条件。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _exceptUserRuleConditions 匹配条件。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExceptUserRuleConditions(const std::vector<ExceptUserRuleCondition>& _exceptUserRuleConditions);
@@ -192,18 +184,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则生效的范围。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExceptUserRuleScope 规则生效的范围。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ExceptUserRuleScope GetExceptUserRuleScope() const;
 
                     /**
                      * 设置规则生效的范围。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _exceptUserRuleScope 规则生效的范围。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExceptUserRuleScope(const ExceptUserRuleScope& _exceptUserRuleScope);
@@ -266,21 +254,18 @@ namespace TencentCloud
 
                     /**
                      * 更新时间，如果为null，默认由底层按当前时间生成。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
                      * 匹配条件。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ExceptUserRuleCondition> m_exceptUserRuleConditions;
                     bool m_exceptUserRuleConditionsHasBeenSet;
 
                     /**
                      * 规则生效的范围。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ExceptUserRuleScope m_exceptUserRuleScope;
                     bool m_exceptUserRuleScopeHasBeenSet;

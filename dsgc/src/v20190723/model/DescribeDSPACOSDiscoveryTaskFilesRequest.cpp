@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ using namespace std;
 DescribeDSPACOSDiscoveryTaskFilesRequest::DescribeDSPACOSDiscoveryTaskFilesRequest() :
     m_dspaIdHasBeenSet(false),
     m_taskIdHasBeenSet(false),
-    m_bucketResultIdHasBeenSet(false)
+    m_bucketResultIdHasBeenSet(false),
+    m_scanResultIdHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeDSPACOSDiscoveryTaskFilesRequest::ToJsonString() const
         string key = "BucketResultId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_bucketResultId, allocator);
+    }
+
+    if (m_scanResultIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScanResultId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_scanResultId, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeDSPACOSDiscoveryTaskFilesRequest::SetBucketResultId(const int64_t& 
 bool DescribeDSPACOSDiscoveryTaskFilesRequest::BucketResultIdHasBeenSet() const
 {
     return m_bucketResultIdHasBeenSet;
+}
+
+int64_t DescribeDSPACOSDiscoveryTaskFilesRequest::GetScanResultId() const
+{
+    return m_scanResultId;
+}
+
+void DescribeDSPACOSDiscoveryTaskFilesRequest::SetScanResultId(const int64_t& _scanResultId)
+{
+    m_scanResultId = _scanResultId;
+    m_scanResultIdHasBeenSet = true;
+}
+
+bool DescribeDSPACOSDiscoveryTaskFilesRequest::ScanResultIdHasBeenSet() const
+{
+    return m_scanResultIdHasBeenSet;
 }
 
 

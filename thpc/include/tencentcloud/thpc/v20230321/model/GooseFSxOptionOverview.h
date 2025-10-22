@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件系统master的ip和端口列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Masters 文件系统master的ip和端口列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetMasters() const;
 
                     /**
                      * 设置文件系统master的ip和端口列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _masters 文件系统master的ip和端口列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMasters(const std::vector<std::string>& _masters);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件系统的本地挂载路径。GooseFSx目前只支持挂载在/goosefsx/{文件系统ID}_proxy/目录下。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LocalPath 文件系统的本地挂载路径。GooseFSx目前只支持挂载在/goosefsx/{文件系统ID}_proxy/目录下。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLocalPath() const;
 
                     /**
                      * 设置文件系统的本地挂载路径。GooseFSx目前只支持挂载在/goosefsx/{文件系统ID}_proxy/目录下。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _localPath 文件系统的本地挂载路径。GooseFSx目前只支持挂载在/goosefsx/{文件系统ID}_proxy/目录下。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLocalPath(const std::string& _localPath);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 文件系统master的ip和端口列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_masters;
                     bool m_mastersHasBeenSet;
 
                     /**
                      * 文件系统的本地挂载路径。GooseFSx目前只支持挂载在/goosefsx/{文件系统ID}_proxy/目录下。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_localPath;
                     bool m_localPathHasBeenSet;

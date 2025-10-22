@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -112,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取若未来扩展到DBName粒度，可采用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DBs 若未来扩展到DBName粒度，可采用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DBStatements> GetDBs() const;
 
                     /**
                      * 设置若未来扩展到DBName粒度，可采用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dBs 若未来扩展到DBName粒度，可采用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDBs(const std::vector<DBStatements>& _dBs);
@@ -157,7 +153,6 @@ namespace TencentCloud
 
                     /**
                      * 若未来扩展到DBName粒度，可采用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DBStatements> m_dBs;
                     bool m_dBsHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,10 @@ RecognizeConfig::RecognizeConfig() :
     m_languageHasBeenSet(false),
     m_alternativeLanguageHasBeenSet(false),
     m_modelHasBeenSet(false),
-    m_translationLanguageHasBeenSet(false)
+    m_translationLanguageHasBeenSet(false),
+    m_hotWordListHasBeenSet(false),
+    m_vadSilenceTimeHasBeenSet(false),
+    m_vadLevelHasBeenSet(false)
 {
 }
 
@@ -76,6 +79,36 @@ CoreInternalOutcome RecognizeConfig::Deserialize(const rapidjson::Value &value)
         m_translationLanguageHasBeenSet = true;
     }
 
+    if (value.HasMember("HotWordList") && !value["HotWordList"].IsNull())
+    {
+        if (!value["HotWordList"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecognizeConfig.HotWordList` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hotWordList = string(value["HotWordList"].GetString());
+        m_hotWordListHasBeenSet = true;
+    }
+
+    if (value.HasMember("VadSilenceTime") && !value["VadSilenceTime"].IsNull())
+    {
+        if (!value["VadSilenceTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecognizeConfig.VadSilenceTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_vadSilenceTime = value["VadSilenceTime"].GetUint64();
+        m_vadSilenceTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("VadLevel") && !value["VadLevel"].IsNull())
+    {
+        if (!value["VadLevel"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecognizeConfig.VadLevel` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_vadLevel = value["VadLevel"].GetUint64();
+        m_vadLevelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -118,6 +151,30 @@ void RecognizeConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "TranslationLanguage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_translationLanguage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hotWordListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HotWordList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hotWordList.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vadSilenceTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VadSilenceTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vadSilenceTime, allocator);
+    }
+
+    if (m_vadLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VadLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vadLevel, allocator);
     }
 
 }
@@ -185,5 +242,53 @@ void RecognizeConfig::SetTranslationLanguage(const string& _translationLanguage)
 bool RecognizeConfig::TranslationLanguageHasBeenSet() const
 {
     return m_translationLanguageHasBeenSet;
+}
+
+string RecognizeConfig::GetHotWordList() const
+{
+    return m_hotWordList;
+}
+
+void RecognizeConfig::SetHotWordList(const string& _hotWordList)
+{
+    m_hotWordList = _hotWordList;
+    m_hotWordListHasBeenSet = true;
+}
+
+bool RecognizeConfig::HotWordListHasBeenSet() const
+{
+    return m_hotWordListHasBeenSet;
+}
+
+uint64_t RecognizeConfig::GetVadSilenceTime() const
+{
+    return m_vadSilenceTime;
+}
+
+void RecognizeConfig::SetVadSilenceTime(const uint64_t& _vadSilenceTime)
+{
+    m_vadSilenceTime = _vadSilenceTime;
+    m_vadSilenceTimeHasBeenSet = true;
+}
+
+bool RecognizeConfig::VadSilenceTimeHasBeenSet() const
+{
+    return m_vadSilenceTimeHasBeenSet;
+}
+
+uint64_t RecognizeConfig::GetVadLevel() const
+{
+    return m_vadLevel;
+}
+
+void RecognizeConfig::SetVadLevel(const uint64_t& _vadLevel)
+{
+    m_vadLevel = _vadLevel;
+    m_vadLevelHasBeenSet = true;
+}
+
+bool RecognizeConfig::VadLevelHasBeenSet() const
+{
+    return m_vadLevelHasBeenSet;
 }
 

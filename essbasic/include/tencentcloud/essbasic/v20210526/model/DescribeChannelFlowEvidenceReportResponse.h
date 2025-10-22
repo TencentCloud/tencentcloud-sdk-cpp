@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取出证报告PDF的下载 URL，有效期为5分钟，超过有效期后将无法再下载。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportUrl 出证报告PDF的下载 URL，有效期为5分钟，超过有效期后将无法再下载。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReportUrl() const;
@@ -64,12 +62,12 @@ namespace TencentCloud
 
 <ul><li>**EvidenceStatusExecuting**：  出证任务在执行中</li>
 <li>**EvidenceStatusSuccess**：  出证任务执行成功</li>
-<li>**EvidenceStatusFailed** ： 出征任务执行失败</li></ul>
+<li>**EvidenceStatusFailed** ： 出证任务执行失败</li></ul>
                      * @return Status 出证任务执行的状态, 状态含义如下：
 
 <ul><li>**EvidenceStatusExecuting**：  出证任务在执行中</li>
 <li>**EvidenceStatusSuccess**：  出证任务执行成功</li>
-<li>**EvidenceStatusFailed** ： 出征任务执行失败</li></ul>
+<li>**EvidenceStatusFailed** ： 出证任务执行失败</li></ul>
                      * 
                      */
                     std::string GetStatus() const;
@@ -85,7 +83,6 @@ namespace TencentCloud
 
                     /**
                      * 出证报告PDF的下载 URL，有效期为5分钟，超过有效期后将无法再下载。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reportUrl;
                     bool m_reportUrlHasBeenSet;
@@ -95,7 +92,7 @@ namespace TencentCloud
 
 <ul><li>**EvidenceStatusExecuting**：  出证任务在执行中</li>
 <li>**EvidenceStatusSuccess**：  出证任务执行成功</li>
-<li>**EvidenceStatusFailed** ： 出征任务执行失败</li></ul>
+<li>**EvidenceStatusFailed** ： 出证任务执行失败</li></ul>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -453,18 +453,14 @@ namespace TencentCloud
 
                     /**
                      * 获取DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DpdEnable DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDpdEnable() const;
 
                     /**
                      * 设置DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dpdEnable DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDpdEnable(const int64_t& _dpdEnable);
@@ -478,18 +474,14 @@ namespace TencentCloud
 
                     /**
                      * 获取DPD超时时间。即探测确认对端不存在需要的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DpdTimeout DPD超时时间。即探测确认对端不存在需要的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDpdTimeout() const;
 
                     /**
                      * 设置DPD超时时间。即探测确认对端不存在需要的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dpdTimeout DPD超时时间。即探测确认对端不存在需要的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDpdTimeout(const std::string& _dpdTimeout);
@@ -503,18 +495,14 @@ namespace TencentCloud
 
                     /**
                      * 获取DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DpdAction DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDpdAction() const;
 
                     /**
                      * 设置DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dpdAction DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDpdAction(const std::string& _dpdAction);
@@ -549,18 +537,14 @@ namespace TencentCloud
 
                     /**
                      * 获取协商类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NegotiationType 协商类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNegotiationType() const;
 
                     /**
                      * 设置协商类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _negotiationType 协商类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNegotiationType(const std::string& _negotiationType);
@@ -574,18 +558,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Bgp配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BgpConfig Bgp配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BgpConfigAndAsn GetBgpConfig() const;
 
                     /**
                      * 设置Bgp配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bgpConfig Bgp配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBgpConfig(const BgpConfigAndAsn& _bgpConfig);
@@ -599,18 +579,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Nqa配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HealthCheckConfig Nqa配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     HealthCheckConfig GetHealthCheckConfig() const;
 
                     /**
                      * 设置Nqa配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _healthCheckConfig Nqa配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHealthCheckConfig(const HealthCheckConfig& _healthCheckConfig);
@@ -740,21 +716,18 @@ namespace TencentCloud
 
                     /**
                      * DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_dpdEnable;
                     bool m_dpdEnableHasBeenSet;
 
                     /**
                      * DPD超时时间。即探测确认对端不存在需要的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dpdTimeout;
                     bool m_dpdTimeoutHasBeenSet;
 
                     /**
                      * DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dpdAction;
                     bool m_dpdActionHasBeenSet;
@@ -767,21 +740,18 @@ namespace TencentCloud
 
                     /**
                      * 协商类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_negotiationType;
                     bool m_negotiationTypeHasBeenSet;
 
                     /**
                      * Bgp配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BgpConfigAndAsn m_bgpConfig;
                     bool m_bgpConfigHasBeenSet;
 
                     /**
                      * Nqa配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     HealthCheckConfig m_healthCheckConfig;
                     bool m_healthCheckConfigHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,7 +45,8 @@ DescribeCloudNativeAPIGatewayResult::DescribeCloudNativeAPIGatewayResult() :
     m_gatewayMinorVersionHasBeenSet(false),
     m_instancePortHasBeenSet(false),
     m_loadBalancerTypeHasBeenSet(false),
-    m_publicIpAddressesHasBeenSet(false)
+    m_publicIpAddressesHasBeenSet(false),
+    m_deleteProtectHasBeenSet(false)
 {
 }
 
@@ -338,6 +339,16 @@ CoreInternalOutcome DescribeCloudNativeAPIGatewayResult::Deserialize(const rapid
         m_publicIpAddressesHasBeenSet = true;
     }
 
+    if (value.HasMember("DeleteProtect") && !value["DeleteProtect"].IsNull())
+    {
+        if (!value["DeleteProtect"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeCloudNativeAPIGatewayResult.DeleteProtect` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_deleteProtect = value["DeleteProtect"].GetBool();
+        m_deleteProtectHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -558,6 +569,14 @@ void DescribeCloudNativeAPIGatewayResult::ToJsonObject(rapidjson::Value &value, 
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_deleteProtectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteProtect";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deleteProtect, allocator);
     }
 
 }
@@ -961,5 +980,21 @@ void DescribeCloudNativeAPIGatewayResult::SetPublicIpAddresses(const vector<stri
 bool DescribeCloudNativeAPIGatewayResult::PublicIpAddressesHasBeenSet() const
 {
     return m_publicIpAddressesHasBeenSet;
+}
+
+bool DescribeCloudNativeAPIGatewayResult::GetDeleteProtect() const
+{
+    return m_deleteProtect;
+}
+
+void DescribeCloudNativeAPIGatewayResult::SetDeleteProtect(const bool& _deleteProtect)
+{
+    m_deleteProtect = _deleteProtect;
+    m_deleteProtectHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewayResult::DeleteProtectHasBeenSet() const
+{
+    return m_deleteProtectHasBeenSet;
 }
 

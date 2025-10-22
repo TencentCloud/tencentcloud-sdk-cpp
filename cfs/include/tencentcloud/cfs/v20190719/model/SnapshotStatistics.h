@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool SnapshotNumberHasBeenSet() const;
 
                     /**
-                     * 获取快照总容量
-                     * @return SnapshotSize 快照总容量
+                     * 获取快照总容量，单位是MiB
+                     * @return SnapshotSize 快照总容量，单位是MiB
                      * 
                      */
                     uint64_t GetSnapshotSize() const;
 
                     /**
-                     * 设置快照总容量
-                     * @param _snapshotSize 快照总容量
+                     * 设置快照总容量，单位是MiB
+                     * @param _snapshotSize 快照总容量，单位是MiB
                      * 
                      */
                     void SetSnapshotSize(const uint64_t& _snapshotSize);
@@ -124,7 +124,7 @@ namespace TencentCloud
                     bool m_snapshotNumberHasBeenSet;
 
                     /**
-                     * 快照总容量
+                     * 快照总容量，单位是MiB
                      */
                     uint64_t m_snapshotSize;
                     bool m_snapshotSizeHasBeenSet;

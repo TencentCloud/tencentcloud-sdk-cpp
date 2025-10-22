@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网的ipv4
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cidr 子网的ipv4
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCidr() const;
 
                     /**
                      * 设置子网的ipv4
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cidr 子网的ipv4
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCidr(const std::string& _cidr);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zone 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取subnet类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Target subnet类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTarget() const;
 
                     /**
                      * 设置subnet类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _target subnet类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTarget(const std::string& _target);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -225,49 +197,42 @@ namespace TencentCloud
 
                     /**
                      * 子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 子网的ipv4
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cidr;
                     bool m_cidrHasBeenSet;
 
                     /**
                      * 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
                      * 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * subnet类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_target;
                     bool m_targetHasBeenSet;
 
                     /**
                      * 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * 名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

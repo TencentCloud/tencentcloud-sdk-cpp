@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -409,15 +409,23 @@ Operator 目前支持
                     bool GlobalParamHasBeenSet() const;
 
                     /**
-                     * 获取100 不绑定用户  200 单用户单token  300 单用户多token
-                     * @return TokenType 100 不绑定用户  200 单用户单token  300 单用户多token
+                     * 获取100 不绑定用户, 一次创建一个token，UserCorpId和UserId 非必填，不支持 ChatBI 嵌出
+200 单用户单token , 一次创建一个token， UserCorpId和UserId 必填
+300 单用户多token, 一次创建多个token，UserCorpId和UserId 必填
+                     * @return TokenType 100 不绑定用户, 一次创建一个token，UserCorpId和UserId 非必填，不支持 ChatBI 嵌出
+200 单用户单token , 一次创建一个token， UserCorpId和UserId 必填
+300 单用户多token, 一次创建多个token，UserCorpId和UserId 必填
                      * 
                      */
                     int64_t GetTokenType() const;
 
                     /**
-                     * 设置100 不绑定用户  200 单用户单token  300 单用户多token
-                     * @param _tokenType 100 不绑定用户  200 单用户单token  300 单用户多token
+                     * 设置100 不绑定用户, 一次创建一个token，UserCorpId和UserId 非必填，不支持 ChatBI 嵌出
+200 单用户单token , 一次创建一个token， UserCorpId和UserId 必填
+300 单用户多token, 一次创建多个token，UserCorpId和UserId 必填
+                     * @param _tokenType 100 不绑定用户, 一次创建一个token，UserCorpId和UserId 非必填，不支持 ChatBI 嵌出
+200 单用户单token , 一次创建一个token， UserCorpId和UserId 必填
+300 单用户多token, 一次创建多个token，UserCorpId和UserId 必填
                      * 
                      */
                     void SetTokenType(const int64_t& _tokenType);
@@ -449,6 +457,27 @@ Operator 目前支持
                      * 
                      */
                     bool TokenNumHasBeenSet() const;
+
+                    /**
+                     * 获取嵌出显示配置，目前为ChatBI嵌出场景用，TableFilter表示数据表列表过滤，SqlView表示sql查看功能
+                     * @return ConfigParam 嵌出显示配置，目前为ChatBI嵌出场景用，TableFilter表示数据表列表过滤，SqlView表示sql查看功能
+                     * 
+                     */
+                    std::string GetConfigParam() const;
+
+                    /**
+                     * 设置嵌出显示配置，目前为ChatBI嵌出场景用，TableFilter表示数据表列表过滤，SqlView表示sql查看功能
+                     * @param _configParam 嵌出显示配置，目前为ChatBI嵌出场景用，TableFilter表示数据表列表过滤，SqlView表示sql查看功能
+                     * 
+                     */
+                    void SetConfigParam(const std::string& _configParam);
+
+                    /**
+                     * 判断参数 ConfigParam 是否已赋值
+                     * @return ConfigParam 是否已赋值
+                     * 
+                     */
+                    bool ConfigParamHasBeenSet() const;
 
                 private:
 
@@ -552,7 +581,9 @@ Operator 目前支持
                     bool m_globalParamHasBeenSet;
 
                     /**
-                     * 100 不绑定用户  200 单用户单token  300 单用户多token
+                     * 100 不绑定用户, 一次创建一个token，UserCorpId和UserId 非必填，不支持 ChatBI 嵌出
+200 单用户单token , 一次创建一个token， UserCorpId和UserId 必填
+300 单用户多token, 一次创建多个token，UserCorpId和UserId 必填
                      */
                     int64_t m_tokenType;
                     bool m_tokenTypeHasBeenSet;
@@ -562,6 +593,12 @@ Operator 目前支持
                      */
                     int64_t m_tokenNum;
                     bool m_tokenNumHasBeenSet;
+
+                    /**
+                     * 嵌出显示配置，目前为ChatBI嵌出场景用，TableFilter表示数据表列表过滤，SqlView表示sql查看功能
+                     */
+                    std::string m_configParam;
+                    bool m_configParamHasBeenSet;
 
                 };
             }

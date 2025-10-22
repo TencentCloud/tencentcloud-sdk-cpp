@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,6 +63,48 @@ namespace TencentCloud
                      */
                     bool LoadBalancerIdsHasBeenSet() const;
 
+                    /**
+                     * 获取要查询的监听器ID列表。
+                     * @return ListenerIds 要查询的监听器ID列表。
+                     * 
+                     */
+                    std::vector<std::string> GetListenerIds() const;
+
+                    /**
+                     * 设置要查询的监听器ID列表。
+                     * @param _listenerIds 要查询的监听器ID列表。
+                     * 
+                     */
+                    void SetListenerIds(const std::vector<std::string>& _listenerIds);
+
+                    /**
+                     * 判断参数 ListenerIds 是否已赋值
+                     * @return ListenerIds 是否已赋值
+                     * 
+                     */
+                    bool ListenerIdsHasBeenSet() const;
+
+                    /**
+                     * 获取要查询的转发规则ID列表。
+                     * @return LocationIds 要查询的转发规则ID列表。
+                     * 
+                     */
+                    std::vector<std::string> GetLocationIds() const;
+
+                    /**
+                     * 设置要查询的转发规则ID列表。
+                     * @param _locationIds 要查询的转发规则ID列表。
+                     * 
+                     */
+                    void SetLocationIds(const std::vector<std::string>& _locationIds);
+
+                    /**
+                     * 判断参数 LocationIds 是否已赋值
+                     * @return LocationIds 是否已赋值
+                     * 
+                     */
+                    bool LocationIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +112,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_loadBalancerIds;
                     bool m_loadBalancerIdsHasBeenSet;
+
+                    /**
+                     * 要查询的监听器ID列表。
+                     */
+                    std::vector<std::string> m_listenerIds;
+                    bool m_listenerIdsHasBeenSet;
+
+                    /**
+                     * 要查询的转发规则ID列表。
+                     */
+                    std::vector<std::string> m_locationIds;
+                    bool m_locationIdsHasBeenSet;
 
                 };
             }

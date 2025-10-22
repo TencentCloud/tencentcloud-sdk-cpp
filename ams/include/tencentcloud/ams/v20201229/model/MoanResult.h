@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取固定取值为Moan（呻吟/娇喘），如音频中无复杂类型「MoanResult」的返回则代表该音频中无呻吟/娇喘相关违规内容；
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label 固定取值为Moan（呻吟/娇喘），如音频中无复杂类型「MoanResult」的返回则代表该音频中无呻吟/娇喘相关违规内容；
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置固定取值为Moan（呻吟/娇喘），如音频中无复杂类型「MoanResult」的返回则代表该音频中无呻吟/娇喘相关违规内容；
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _label 固定取值为Moan（呻吟/娇喘），如音频中无复杂类型「MoanResult」的返回则代表该音频中无呻吟/娇喘相关违规内容；
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabel(const std::string& _label);
@@ -165,22 +161,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该字段用于返回当前标签（Lable）下的二级标签。
-注意：此字段可能返回null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubLabel 该字段用于返回当前标签（Lable）下的二级标签。
-注意：此字段可能返回null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubLabel() const;
 
                     /**
                      * 设置该字段用于返回当前标签（Lable）下的二级标签。
-注意：此字段可能返回null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subLabel 该字段用于返回当前标签（Lable）下的二级标签。
-注意：此字段可能返回null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubLabel(const std::string& _subLabel);
@@ -196,7 +184,6 @@ namespace TencentCloud
 
                     /**
                      * 固定取值为Moan（呻吟/娇喘），如音频中无复杂类型「MoanResult」的返回则代表该音频中无呻吟/娇喘相关违规内容；
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
@@ -229,8 +216,6 @@ namespace TencentCloud
 
                     /**
                      * 该字段用于返回当前标签（Lable）下的二级标签。
-注意：此字段可能返回null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subLabel;
                     bool m_subLabelHasBeenSet;

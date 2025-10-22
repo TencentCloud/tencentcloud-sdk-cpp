@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,8 @@
 #include <tencentcloud/scf/v20180416/model/DeleteCustomDomainResponse.h>
 #include <tencentcloud/scf/v20180416/model/DeleteFunctionRequest.h>
 #include <tencentcloud/scf/v20180416/model/DeleteFunctionResponse.h>
+#include <tencentcloud/scf/v20180416/model/DeleteFunctionVersionRequest.h>
+#include <tencentcloud/scf/v20180416/model/DeleteFunctionVersionResponse.h>
 #include <tencentcloud/scf/v20180416/model/DeleteLayerVersionRequest.h>
 #include <tencentcloud/scf/v20180416/model/DeleteLayerVersionResponse.h>
 #include <tencentcloud/scf/v20180416/model/DeleteNamespaceRequest.h>
@@ -166,6 +168,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteFunctionResponse> DeleteFunctionOutcome;
                 typedef std::future<DeleteFunctionOutcome> DeleteFunctionOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::DeleteFunctionRequest&, DeleteFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFunctionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteFunctionVersionResponse> DeleteFunctionVersionOutcome;
+                typedef std::future<DeleteFunctionVersionOutcome> DeleteFunctionVersionOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::DeleteFunctionVersionRequest&, DeleteFunctionVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFunctionVersionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteLayerVersionResponse> DeleteLayerVersionOutcome;
                 typedef std::future<DeleteLayerVersionOutcome> DeleteLayerVersionOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::DeleteLayerVersionRequest&, DeleteLayerVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLayerVersionAsyncHandler;
@@ -382,6 +387,15 @@ namespace TencentCloud
                 DeleteFunctionOutcome DeleteFunction(const Model::DeleteFunctionRequest &request);
                 void DeleteFunctionAsync(const Model::DeleteFunctionRequest& request, const DeleteFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteFunctionOutcomeCallable DeleteFunctionCallable(const Model::DeleteFunctionRequest& request);
+
+                /**
+                 *该接口根据传入参数删除函数的指定版本。
+                 * @param req DeleteFunctionVersionRequest
+                 * @return DeleteFunctionVersionOutcome
+                 */
+                DeleteFunctionVersionOutcome DeleteFunctionVersion(const Model::DeleteFunctionVersionRequest &request);
+                void DeleteFunctionVersionAsync(const Model::DeleteFunctionVersionRequest& request, const DeleteFunctionVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteFunctionVersionOutcomeCallable DeleteFunctionVersionCallable(const Model::DeleteFunctionVersionRequest& request);
 
                 /**
                  *删除指定层的指定版本，被删除的版本无法再关联到函数上，但不会影响正在引用这个层的函数。

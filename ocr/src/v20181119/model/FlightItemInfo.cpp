@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,9 @@ FlightItemInfo::FlightItemInfo() :
     m_dateGetOnHasBeenSet(false),
     m_timeGetOnHasBeenSet(false),
     m_fareBasisHasBeenSet(false),
-    m_allowHasBeenSet(false)
+    m_allowHasBeenSet(false),
+    m_dateStartHasBeenSet(false),
+    m_dateEndHasBeenSet(false)
 {
 }
 
@@ -128,6 +130,26 @@ CoreInternalOutcome FlightItemInfo::Deserialize(const rapidjson::Value &value)
         m_allowHasBeenSet = true;
     }
 
+    if (value.HasMember("DateStart") && !value["DateStart"].IsNull())
+    {
+        if (!value["DateStart"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlightItemInfo.DateStart` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dateStart = string(value["DateStart"].GetString());
+        m_dateStartHasBeenSet = true;
+    }
+
+    if (value.HasMember("DateEnd") && !value["DateEnd"].IsNull())
+    {
+        if (!value["DateEnd"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlightItemInfo.DateEnd` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dateEnd = string(value["DateEnd"].GetString());
+        m_dateEndHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +227,22 @@ void FlightItemInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Allow";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_allow.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dateStartHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DateStart";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dateStart.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dateEndHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DateEnd";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dateEnd.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +390,37 @@ void FlightItemInfo::SetAllow(const string& _allow)
 bool FlightItemInfo::AllowHasBeenSet() const
 {
     return m_allowHasBeenSet;
+}
+
+string FlightItemInfo::GetDateStart() const
+{
+    return m_dateStart;
+}
+
+void FlightItemInfo::SetDateStart(const string& _dateStart)
+{
+    m_dateStart = _dateStart;
+    m_dateStartHasBeenSet = true;
+}
+
+bool FlightItemInfo::DateStartHasBeenSet() const
+{
+    return m_dateStartHasBeenSet;
+}
+
+string FlightItemInfo::GetDateEnd() const
+{
+    return m_dateEnd;
+}
+
+void FlightItemInfo::SetDateEnd(const string& _dateEnd)
+{
+    m_dateEnd = _dateEnd;
+    m_dateEndHasBeenSet = true;
+}
+
+bool FlightItemInfo::DateEndHasBeenSet() const
+{
+    return m_dateEndHasBeenSet;
 }
 

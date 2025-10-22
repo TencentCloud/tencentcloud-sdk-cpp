@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,8 @@ BackupInfo::BackupInfo() :
     m_cosStorageTypeHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_encryptionFlagHasBeenSet(false),
-    m_executedGTIDSetHasBeenSet(false)
+    m_executedGTIDSetHasBeenSet(false),
+    m_mD5HasBeenSet(false)
 {
 }
 
@@ -270,6 +271,16 @@ CoreInternalOutcome BackupInfo::Deserialize(const rapidjson::Value &value)
         m_executedGTIDSetHasBeenSet = true;
     }
 
+    if (value.HasMember("MD5") && !value["MD5"].IsNull())
+    {
+        if (!value["MD5"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupInfo.MD5` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mD5 = string(value["MD5"].GetString());
+        m_mD5HasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -450,6 +461,14 @@ void BackupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "ExecutedGTIDSet";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_executedGTIDSet.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mD5HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MD5";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mD5.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -789,5 +808,21 @@ void BackupInfo::SetExecutedGTIDSet(const string& _executedGTIDSet)
 bool BackupInfo::ExecutedGTIDSetHasBeenSet() const
 {
     return m_executedGTIDSetHasBeenSet;
+}
+
+string BackupInfo::GetMD5() const
+{
+    return m_mD5;
+}
+
+void BackupInfo::SetMD5(const string& _mD5)
+{
+    m_mD5 = _mD5;
+    m_mD5HasBeenSet = true;
+}
+
+bool BackupInfo::MD5HasBeenSet() const
+{
+    return m_mD5HasBeenSet;
 }
 

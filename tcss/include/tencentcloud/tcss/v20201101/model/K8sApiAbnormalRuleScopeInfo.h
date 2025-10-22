@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -138,18 +138,14 @@ USER_DEFINED: 用户自定义
 
                     /**
                      * 获取威胁等级 HIGH:高级 MIDDLE: 中级 LOW:低级 NOTICE:提示
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskLevel 威胁等级 HIGH:高级 MIDDLE: 中级 LOW:低级 NOTICE:提示
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiskLevel() const;
 
                     /**
                      * 设置威胁等级 HIGH:高级 MIDDLE: 中级 LOW:低级 NOTICE:提示
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskLevel 威胁等级 HIGH:高级 MIDDLE: 中级 LOW:低级 NOTICE:提示
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskLevel(const std::string& _riskLevel);
@@ -163,18 +159,14 @@ USER_DEFINED: 用户自定义
 
                     /**
                      * 获取开关状态(true:开 false:关) 适用于系统规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 开关状态(true:开 false:关) 适用于系统规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetStatus() const;
 
                     /**
                      * 设置开关状态(true:开 false:关) 适用于系统规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 开关状态(true:开 false:关) 适用于系统规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const bool& _status);
@@ -188,18 +180,14 @@ USER_DEFINED: 用户自定义
 
                     /**
                      * 获取是否被删除 适用于自定义规则入参
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsDelete 是否被删除 适用于自定义规则入参
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsDelete() const;
 
                     /**
                      * 设置是否被删除 适用于自定义规则入参
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isDelete 是否被删除 适用于自定义规则入参
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsDelete(const bool& _isDelete);
@@ -239,21 +227,18 @@ USER_DEFINED: 用户自定义
 
                     /**
                      * 威胁等级 HIGH:高级 MIDDLE: 中级 LOW:低级 NOTICE:提示
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riskLevel;
                     bool m_riskLevelHasBeenSet;
 
                     /**
                      * 开关状态(true:开 false:关) 适用于系统规则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 是否被删除 适用于自定义规则入参
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isDelete;
                     bool m_isDeleteHasBeenSet;

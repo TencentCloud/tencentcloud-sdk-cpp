@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,8 @@ ModifyDSPADiscoveryTaskRequest::ModifyDSPADiscoveryTaskRequest() :
     m_periodHasBeenSet(false),
     m_timingStartTimeHasBeenSet(false),
     m_resourceRegionHasBeenSet(false),
-    m_dataSourceTypeHasBeenSet(false)
+    m_dataSourceTypeHasBeenSet(false),
+    m_scanRangeHasBeenSet(false)
 {
 }
 
@@ -162,6 +163,14 @@ string ModifyDSPADiscoveryTaskRequest::ToJsonString() const
         string key = "DataSourceType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dataSourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scanRangeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScanRange";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_scanRange.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -394,6 +403,22 @@ void ModifyDSPADiscoveryTaskRequest::SetDataSourceType(const string& _dataSource
 bool ModifyDSPADiscoveryTaskRequest::DataSourceTypeHasBeenSet() const
 {
     return m_dataSourceTypeHasBeenSet;
+}
+
+string ModifyDSPADiscoveryTaskRequest::GetScanRange() const
+{
+    return m_scanRange;
+}
+
+void ModifyDSPADiscoveryTaskRequest::SetScanRange(const string& _scanRange)
+{
+    m_scanRange = _scanRange;
+    m_scanRangeHasBeenSet = true;
+}
+
+bool ModifyDSPADiscoveryTaskRequest::ScanRangeHasBeenSet() const
+{
+    return m_scanRangeHasBeenSet;
 }
 
 

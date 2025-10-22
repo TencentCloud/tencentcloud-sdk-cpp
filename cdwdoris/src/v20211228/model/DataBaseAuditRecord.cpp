@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,9 @@ DataBaseAuditRecord::DataBaseAuditRecord() :
     m_dbNameHasBeenSet(false),
     m_sqlTypeHasBeenSet(false),
     m_catalogHasBeenSet(false),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_isQueryHasBeenSet(false),
+    m_computeGroupHasBeenSet(false)
 {
 }
 
@@ -183,6 +185,26 @@ CoreInternalOutcome DataBaseAuditRecord::Deserialize(const rapidjson::Value &val
         m_stateHasBeenSet = true;
     }
 
+    if (value.HasMember("IsQuery") && !value["IsQuery"].IsNull())
+    {
+        if (!value["IsQuery"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataBaseAuditRecord.IsQuery` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isQuery = value["IsQuery"].GetBool();
+        m_isQueryHasBeenSet = true;
+    }
+
+    if (value.HasMember("ComputeGroup") && !value["ComputeGroup"].IsNull())
+    {
+        if (!value["ComputeGroup"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataBaseAuditRecord.ComputeGroup` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_computeGroup = string(value["ComputeGroup"].GetString());
+        m_computeGroupHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +322,22 @@ void DataBaseAuditRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "State";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_state.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isQueryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsQuery";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isQuery, allocator);
+    }
+
+    if (m_computeGroupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComputeGroup";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_computeGroup.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -527,5 +565,37 @@ void DataBaseAuditRecord::SetState(const string& _state)
 bool DataBaseAuditRecord::StateHasBeenSet() const
 {
     return m_stateHasBeenSet;
+}
+
+bool DataBaseAuditRecord::GetIsQuery() const
+{
+    return m_isQuery;
+}
+
+void DataBaseAuditRecord::SetIsQuery(const bool& _isQuery)
+{
+    m_isQuery = _isQuery;
+    m_isQueryHasBeenSet = true;
+}
+
+bool DataBaseAuditRecord::IsQueryHasBeenSet() const
+{
+    return m_isQueryHasBeenSet;
+}
+
+string DataBaseAuditRecord::GetComputeGroup() const
+{
+    return m_computeGroup;
+}
+
+void DataBaseAuditRecord::SetComputeGroup(const string& _computeGroup)
+{
+    m_computeGroup = _computeGroup;
+    m_computeGroupHasBeenSet = true;
+}
+
+bool DataBaseAuditRecord::ComputeGroupHasBeenSet() const
+{
+    return m_computeGroupHasBeenSet;
 }
 

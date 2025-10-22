@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取记录
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Records 记录
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<LogConfig> GetRecords() const;
 
                     /**
                      * 设置记录
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _records 记录
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecords(const std::vector<LogConfig>& _records);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取翻页游标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContinueToken 翻页游标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContinueToken() const;
 
                     /**
                      * 设置翻页游标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _continueToken 翻页游标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContinueToken(const std::string& _continueToken);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 记录
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LogConfig> m_records;
                     bool m_recordsHasBeenSet;
 
                     /**
                      * 翻页游标
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_continueToken;
                     bool m_continueTokenHasBeenSet;

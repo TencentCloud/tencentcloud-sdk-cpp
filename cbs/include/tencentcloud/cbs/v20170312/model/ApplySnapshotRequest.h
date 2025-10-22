@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,15 +85,19 @@ namespace TencentCloud
                     bool DiskIdHasBeenSet() const;
 
                     /**
-                     * 获取回滚前是否执行自动关机
-                     * @return AutoStopInstance 回滚前是否执行自动关机
+                     * 获取回滚前是否执行自动关机，仅支持回滚快照至已挂载的云硬盘时传入。
+此参数为true时，AutoStartInstance才能为true。
+                     * @return AutoStopInstance 回滚前是否执行自动关机，仅支持回滚快照至已挂载的云硬盘时传入。
+此参数为true时，AutoStartInstance才能为true。
                      * 
                      */
                     bool GetAutoStopInstance() const;
 
                     /**
-                     * 设置回滚前是否执行自动关机
-                     * @param _autoStopInstance 回滚前是否执行自动关机
+                     * 设置回滚前是否执行自动关机，仅支持回滚快照至已挂载的云硬盘时传入。
+此参数为true时，AutoStartInstance才能为true。
+                     * @param _autoStopInstance 回滚前是否执行自动关机，仅支持回滚快照至已挂载的云硬盘时传入。
+此参数为true时，AutoStartInstance才能为true。
                      * 
                      */
                     void SetAutoStopInstance(const bool& _autoStopInstance);
@@ -106,15 +110,15 @@ namespace TencentCloud
                     bool AutoStopInstanceHasBeenSet() const;
 
                     /**
-                     * 获取回滚完成后是否自动开机
-                     * @return AutoStartInstance 回滚完成后是否自动开机
+                     * 获取回滚完成后是否自动开机，仅支持回滚快照至已挂载的云硬盘时传入。该参数传入时，需要同时传入AutoStopInstance参数。
+                     * @return AutoStartInstance 回滚完成后是否自动开机，仅支持回滚快照至已挂载的云硬盘时传入。该参数传入时，需要同时传入AutoStopInstance参数。
                      * 
                      */
                     bool GetAutoStartInstance() const;
 
                     /**
-                     * 设置回滚完成后是否自动开机
-                     * @param _autoStartInstance 回滚完成后是否自动开机
+                     * 设置回滚完成后是否自动开机，仅支持回滚快照至已挂载的云硬盘时传入。该参数传入时，需要同时传入AutoStopInstance参数。
+                     * @param _autoStartInstance 回滚完成后是否自动开机，仅支持回滚快照至已挂载的云硬盘时传入。该参数传入时，需要同时传入AutoStopInstance参数。
                      * 
                      */
                     void SetAutoStartInstance(const bool& _autoStartInstance);
@@ -141,13 +145,14 @@ namespace TencentCloud
                     bool m_diskIdHasBeenSet;
 
                     /**
-                     * 回滚前是否执行自动关机
+                     * 回滚前是否执行自动关机，仅支持回滚快照至已挂载的云硬盘时传入。
+此参数为true时，AutoStartInstance才能为true。
                      */
                     bool m_autoStopInstance;
                     bool m_autoStopInstanceHasBeenSet;
 
                     /**
-                     * 回滚完成后是否自动开机
+                     * 回滚完成后是否自动开机，仅支持回滚快照至已挂载的云硬盘时传入。该参数传入时，需要同时传入AutoStopInstance参数。
                      */
                     bool m_autoStartInstance;
                     bool m_autoStartInstanceHasBeenSet;

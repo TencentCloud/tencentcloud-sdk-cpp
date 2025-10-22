@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -146,6 +146,27 @@ namespace TencentCloud
                      * 
                      */
                     bool LegalPersonHasBeenSet() const;
+
+                    /**
+                     * 获取（精确查询）法人身份证号。
+                     * @return LegalPersonId （精确查询）法人身份证号。
+                     * 
+                     */
+                    std::string GetLegalPersonId() const;
+
+                    /**
+                     * 设置（精确查询）法人身份证号。
+                     * @param _legalPersonId （精确查询）法人身份证号。
+                     * 
+                     */
+                    void SetLegalPersonId(const std::string& _legalPersonId);
+
+                    /**
+                     * 判断参数 LegalPersonId 是否已赋值
+                     * @return LegalPersonId 是否已赋值
+                     * 
+                     */
+                    bool LegalPersonIdHasBeenSet() const;
 
                     /**
                      * 获取（模糊查询）发证机关。
@@ -451,6 +472,12 @@ namespace TencentCloud
                      */
                     std::string m_legalPerson;
                     bool m_legalPersonHasBeenSet;
+
+                    /**
+                     * （精确查询）法人身份证号。
+                     */
+                    std::string m_legalPersonId;
+                    bool m_legalPersonIdHasBeenSet;
 
                     /**
                      * （模糊查询）发证机关。

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,18 +21,18 @@ using namespace TencentCloud::Apm::V20210622::Model;
 using namespace std;
 
 ApmInstanceDetail::ApmInstanceDetail() :
-    m_amountOfUsedStorageHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_createUinHasBeenSet(false),
-    m_serviceCountHasBeenSet(false),
-    m_countOfReportSpanPerDayHasBeenSet(false),
-    m_appIdHasBeenSet(false),
-    m_traceDurationHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_regionHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_appIdHasBeenSet(false),
+    m_createUinHasBeenSet(false),
+    m_amountOfUsedStorageHasBeenSet(false),
+    m_serviceCountHasBeenSet(false),
+    m_countOfReportSpanPerDayHasBeenSet(false),
+    m_traceDurationHasBeenSet(false),
     m_spanDailyCountersHasBeenSet(false),
     m_billingInstanceHasBeenSet(false),
     m_errRateThresholdHasBeenSet(false),
@@ -52,7 +52,31 @@ ApmInstanceDetail::ApmInstanceDetail() :
     m_payModeEffectiveHasBeenSet(false),
     m_responseDurationWarningThresholdHasBeenSet(false),
     m_freeHasBeenSet(false),
-    m_defaultTSFHasBeenSet(false)
+    m_defaultTSFHasBeenSet(false),
+    m_isRelatedDashboardHasBeenSet(false),
+    m_dashboardTopicIDHasBeenSet(false),
+    m_isInstrumentationVulnerabilityScanHasBeenSet(false),
+    m_isSqlInjectionAnalysisHasBeenSet(false),
+    m_stopReasonHasBeenSet(false),
+    m_isRemoteCommandExecutionAnalysisHasBeenSet(false),
+    m_isMemoryHijackingAnalysisHasBeenSet(false),
+    m_logIndexTypeHasBeenSet(false),
+    m_logTraceIdKeyHasBeenSet(false),
+    m_isDeleteAnyFileAnalysisHasBeenSet(false),
+    m_isReadAnyFileAnalysisHasBeenSet(false),
+    m_isUploadAnyFileAnalysisHasBeenSet(false),
+    m_isIncludeAnyFileAnalysisHasBeenSet(false),
+    m_isDirectoryTraversalAnalysisHasBeenSet(false),
+    m_isTemplateEngineInjectionAnalysisHasBeenSet(false),
+    m_isScriptEngineInjectionAnalysisHasBeenSet(false),
+    m_isExpressionInjectionAnalysisHasBeenSet(false),
+    m_isJNDIInjectionAnalysisHasBeenSet(false),
+    m_isJNIInjectionAnalysisHasBeenSet(false),
+    m_isWebshellBackdoorAnalysisHasBeenSet(false),
+    m_isDeserializationAnalysisHasBeenSet(false),
+    m_tokenHasBeenSet(false),
+    m_urlLongSegmentThresholdHasBeenSet(false),
+    m_urlNumberSegmentThresholdHasBeenSet(false)
 {
 }
 
@@ -60,46 +84,6 @@ CoreInternalOutcome ApmInstanceDetail::Deserialize(const rapidjson::Value &value
 {
     string requestId = "";
 
-
-    if (value.HasMember("AmountOfUsedStorage") && !value["AmountOfUsedStorage"].IsNull())
-    {
-        if (!value["AmountOfUsedStorage"].IsLosslessDouble())
-        {
-            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.AmountOfUsedStorage` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
-        }
-        m_amountOfUsedStorage = value["AmountOfUsedStorage"].GetDouble();
-        m_amountOfUsedStorageHasBeenSet = true;
-    }
-
-    if (value.HasMember("Name") && !value["Name"].IsNull())
-    {
-        if (!value["Name"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.Name` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_name = string(value["Name"].GetString());
-        m_nameHasBeenSet = true;
-    }
-
-    if (value.HasMember("Tags") && !value["Tags"].IsNull())
-    {
-        if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.Tags` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["Tags"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            ApmTag item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_tags.push_back(item);
-        }
-        m_tagsHasBeenSet = true;
-    }
 
     if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
     {
@@ -111,54 +95,14 @@ CoreInternalOutcome ApmInstanceDetail::Deserialize(const rapidjson::Value &value
         m_instanceIdHasBeenSet = true;
     }
 
-    if (value.HasMember("CreateUin") && !value["CreateUin"].IsNull())
+    if (value.HasMember("Name") && !value["Name"].IsNull())
     {
-        if (!value["CreateUin"].IsString())
+        if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.CreateUin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_createUin = string(value["CreateUin"].GetString());
-        m_createUinHasBeenSet = true;
-    }
-
-    if (value.HasMember("ServiceCount") && !value["ServiceCount"].IsNull())
-    {
-        if (!value["ServiceCount"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.ServiceCount` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_serviceCount = value["ServiceCount"].GetInt64();
-        m_serviceCountHasBeenSet = true;
-    }
-
-    if (value.HasMember("CountOfReportSpanPerDay") && !value["CountOfReportSpanPerDay"].IsNull())
-    {
-        if (!value["CountOfReportSpanPerDay"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.CountOfReportSpanPerDay` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_countOfReportSpanPerDay = value["CountOfReportSpanPerDay"].GetInt64();
-        m_countOfReportSpanPerDayHasBeenSet = true;
-    }
-
-    if (value.HasMember("AppId") && !value["AppId"].IsNull())
-    {
-        if (!value["AppId"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.AppId` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_appId = value["AppId"].GetInt64();
-        m_appIdHasBeenSet = true;
-    }
-
-    if (value.HasMember("TraceDuration") && !value["TraceDuration"].IsNull())
-    {
-        if (!value["TraceDuration"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.TraceDuration` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_traceDuration = value["TraceDuration"].GetInt64();
-        m_traceDurationHasBeenSet = true;
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
     }
 
     if (value.HasMember("Description") && !value["Description"].IsNull())
@@ -189,6 +133,86 @@ CoreInternalOutcome ApmInstanceDetail::Deserialize(const rapidjson::Value &value
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.Tags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ApmTag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("AppId") && !value["AppId"].IsNull())
+    {
+        if (!value["AppId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.AppId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_appId = value["AppId"].GetInt64();
+        m_appIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateUin") && !value["CreateUin"].IsNull())
+    {
+        if (!value["CreateUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.CreateUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createUin = string(value["CreateUin"].GetString());
+        m_createUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("AmountOfUsedStorage") && !value["AmountOfUsedStorage"].IsNull())
+    {
+        if (!value["AmountOfUsedStorage"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.AmountOfUsedStorage` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_amountOfUsedStorage = value["AmountOfUsedStorage"].GetDouble();
+        m_amountOfUsedStorageHasBeenSet = true;
+    }
+
+    if (value.HasMember("ServiceCount") && !value["ServiceCount"].IsNull())
+    {
+        if (!value["ServiceCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.ServiceCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_serviceCount = value["ServiceCount"].GetInt64();
+        m_serviceCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("CountOfReportSpanPerDay") && !value["CountOfReportSpanPerDay"].IsNull())
+    {
+        if (!value["CountOfReportSpanPerDay"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.CountOfReportSpanPerDay` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_countOfReportSpanPerDay = value["CountOfReportSpanPerDay"].GetInt64();
+        m_countOfReportSpanPerDayHasBeenSet = true;
+    }
+
+    if (value.HasMember("TraceDuration") && !value["TraceDuration"].IsNull())
+    {
+        if (!value["TraceDuration"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.TraceDuration` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_traceDuration = value["TraceDuration"].GetInt64();
+        m_traceDurationHasBeenSet = true;
     }
 
     if (value.HasMember("SpanDailyCounters") && !value["SpanDailyCounters"].IsNull())
@@ -394,43 +418,252 @@ CoreInternalOutcome ApmInstanceDetail::Deserialize(const rapidjson::Value &value
         m_defaultTSFHasBeenSet = true;
     }
 
+    if (value.HasMember("IsRelatedDashboard") && !value["IsRelatedDashboard"].IsNull())
+    {
+        if (!value["IsRelatedDashboard"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.IsRelatedDashboard` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isRelatedDashboard = value["IsRelatedDashboard"].GetInt64();
+        m_isRelatedDashboardHasBeenSet = true;
+    }
+
+    if (value.HasMember("DashboardTopicID") && !value["DashboardTopicID"].IsNull())
+    {
+        if (!value["DashboardTopicID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.DashboardTopicID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dashboardTopicID = string(value["DashboardTopicID"].GetString());
+        m_dashboardTopicIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsInstrumentationVulnerabilityScan") && !value["IsInstrumentationVulnerabilityScan"].IsNull())
+    {
+        if (!value["IsInstrumentationVulnerabilityScan"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.IsInstrumentationVulnerabilityScan` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isInstrumentationVulnerabilityScan = value["IsInstrumentationVulnerabilityScan"].GetInt64();
+        m_isInstrumentationVulnerabilityScanHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsSqlInjectionAnalysis") && !value["IsSqlInjectionAnalysis"].IsNull())
+    {
+        if (!value["IsSqlInjectionAnalysis"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.IsSqlInjectionAnalysis` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSqlInjectionAnalysis = value["IsSqlInjectionAnalysis"].GetInt64();
+        m_isSqlInjectionAnalysisHasBeenSet = true;
+    }
+
+    if (value.HasMember("StopReason") && !value["StopReason"].IsNull())
+    {
+        if (!value["StopReason"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.StopReason` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_stopReason = value["StopReason"].GetInt64();
+        m_stopReasonHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsRemoteCommandExecutionAnalysis") && !value["IsRemoteCommandExecutionAnalysis"].IsNull())
+    {
+        if (!value["IsRemoteCommandExecutionAnalysis"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.IsRemoteCommandExecutionAnalysis` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isRemoteCommandExecutionAnalysis = value["IsRemoteCommandExecutionAnalysis"].GetInt64();
+        m_isRemoteCommandExecutionAnalysisHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsMemoryHijackingAnalysis") && !value["IsMemoryHijackingAnalysis"].IsNull())
+    {
+        if (!value["IsMemoryHijackingAnalysis"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.IsMemoryHijackingAnalysis` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isMemoryHijackingAnalysis = value["IsMemoryHijackingAnalysis"].GetInt64();
+        m_isMemoryHijackingAnalysisHasBeenSet = true;
+    }
+
+    if (value.HasMember("LogIndexType") && !value["LogIndexType"].IsNull())
+    {
+        if (!value["LogIndexType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.LogIndexType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_logIndexType = value["LogIndexType"].GetInt64();
+        m_logIndexTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("LogTraceIdKey") && !value["LogTraceIdKey"].IsNull())
+    {
+        if (!value["LogTraceIdKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.LogTraceIdKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logTraceIdKey = string(value["LogTraceIdKey"].GetString());
+        m_logTraceIdKeyHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsDeleteAnyFileAnalysis") && !value["IsDeleteAnyFileAnalysis"].IsNull())
+    {
+        if (!value["IsDeleteAnyFileAnalysis"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.IsDeleteAnyFileAnalysis` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDeleteAnyFileAnalysis = value["IsDeleteAnyFileAnalysis"].GetInt64();
+        m_isDeleteAnyFileAnalysisHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsReadAnyFileAnalysis") && !value["IsReadAnyFileAnalysis"].IsNull())
+    {
+        if (!value["IsReadAnyFileAnalysis"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.IsReadAnyFileAnalysis` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isReadAnyFileAnalysis = value["IsReadAnyFileAnalysis"].GetInt64();
+        m_isReadAnyFileAnalysisHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsUploadAnyFileAnalysis") && !value["IsUploadAnyFileAnalysis"].IsNull())
+    {
+        if (!value["IsUploadAnyFileAnalysis"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.IsUploadAnyFileAnalysis` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isUploadAnyFileAnalysis = value["IsUploadAnyFileAnalysis"].GetInt64();
+        m_isUploadAnyFileAnalysisHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsIncludeAnyFileAnalysis") && !value["IsIncludeAnyFileAnalysis"].IsNull())
+    {
+        if (!value["IsIncludeAnyFileAnalysis"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.IsIncludeAnyFileAnalysis` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isIncludeAnyFileAnalysis = value["IsIncludeAnyFileAnalysis"].GetInt64();
+        m_isIncludeAnyFileAnalysisHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsDirectoryTraversalAnalysis") && !value["IsDirectoryTraversalAnalysis"].IsNull())
+    {
+        if (!value["IsDirectoryTraversalAnalysis"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.IsDirectoryTraversalAnalysis` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDirectoryTraversalAnalysis = value["IsDirectoryTraversalAnalysis"].GetInt64();
+        m_isDirectoryTraversalAnalysisHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsTemplateEngineInjectionAnalysis") && !value["IsTemplateEngineInjectionAnalysis"].IsNull())
+    {
+        if (!value["IsTemplateEngineInjectionAnalysis"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.IsTemplateEngineInjectionAnalysis` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isTemplateEngineInjectionAnalysis = value["IsTemplateEngineInjectionAnalysis"].GetInt64();
+        m_isTemplateEngineInjectionAnalysisHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsScriptEngineInjectionAnalysis") && !value["IsScriptEngineInjectionAnalysis"].IsNull())
+    {
+        if (!value["IsScriptEngineInjectionAnalysis"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.IsScriptEngineInjectionAnalysis` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isScriptEngineInjectionAnalysis = value["IsScriptEngineInjectionAnalysis"].GetInt64();
+        m_isScriptEngineInjectionAnalysisHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsExpressionInjectionAnalysis") && !value["IsExpressionInjectionAnalysis"].IsNull())
+    {
+        if (!value["IsExpressionInjectionAnalysis"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.IsExpressionInjectionAnalysis` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isExpressionInjectionAnalysis = value["IsExpressionInjectionAnalysis"].GetInt64();
+        m_isExpressionInjectionAnalysisHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsJNDIInjectionAnalysis") && !value["IsJNDIInjectionAnalysis"].IsNull())
+    {
+        if (!value["IsJNDIInjectionAnalysis"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.IsJNDIInjectionAnalysis` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isJNDIInjectionAnalysis = value["IsJNDIInjectionAnalysis"].GetInt64();
+        m_isJNDIInjectionAnalysisHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsJNIInjectionAnalysis") && !value["IsJNIInjectionAnalysis"].IsNull())
+    {
+        if (!value["IsJNIInjectionAnalysis"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.IsJNIInjectionAnalysis` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isJNIInjectionAnalysis = value["IsJNIInjectionAnalysis"].GetInt64();
+        m_isJNIInjectionAnalysisHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsWebshellBackdoorAnalysis") && !value["IsWebshellBackdoorAnalysis"].IsNull())
+    {
+        if (!value["IsWebshellBackdoorAnalysis"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.IsWebshellBackdoorAnalysis` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isWebshellBackdoorAnalysis = value["IsWebshellBackdoorAnalysis"].GetInt64();
+        m_isWebshellBackdoorAnalysisHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsDeserializationAnalysis") && !value["IsDeserializationAnalysis"].IsNull())
+    {
+        if (!value["IsDeserializationAnalysis"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.IsDeserializationAnalysis` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDeserializationAnalysis = value["IsDeserializationAnalysis"].GetInt64();
+        m_isDeserializationAnalysisHasBeenSet = true;
+    }
+
+    if (value.HasMember("Token") && !value["Token"].IsNull())
+    {
+        if (!value["Token"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.Token` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_token = string(value["Token"].GetString());
+        m_tokenHasBeenSet = true;
+    }
+
+    if (value.HasMember("UrlLongSegmentThreshold") && !value["UrlLongSegmentThreshold"].IsNull())
+    {
+        if (!value["UrlLongSegmentThreshold"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.UrlLongSegmentThreshold` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_urlLongSegmentThreshold = value["UrlLongSegmentThreshold"].GetInt64();
+        m_urlLongSegmentThresholdHasBeenSet = true;
+    }
+
+    if (value.HasMember("UrlNumberSegmentThreshold") && !value["UrlNumberSegmentThreshold"].IsNull())
+    {
+        if (!value["UrlNumberSegmentThreshold"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.UrlNumberSegmentThreshold` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_urlNumberSegmentThreshold = value["UrlNumberSegmentThreshold"].GetInt64();
+        m_urlNumberSegmentThresholdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void ApmInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_amountOfUsedStorageHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AmountOfUsedStorage";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_amountOfUsedStorage, allocator);
-    }
-
-    if (m_nameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Name";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_tagsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Tags";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
-    }
 
     if (m_instanceIdHasBeenSet)
     {
@@ -440,44 +673,12 @@ void ApmInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_createUinHasBeenSet)
+    if (m_nameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CreateUin";
+        string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_createUin.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_serviceCountHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ServiceCount";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_serviceCount, allocator);
-    }
-
-    if (m_countOfReportSpanPerDayHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CountOfReportSpanPerDay";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_countOfReportSpanPerDay, allocator);
-    }
-
-    if (m_appIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AppId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_appId, allocator);
-    }
-
-    if (m_traceDurationHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TraceDuration";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_traceDuration, allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_descriptionHasBeenSet)
@@ -502,6 +703,69 @@ void ApmInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Region";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_appIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_appId, allocator);
+    }
+
+    if (m_createUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_amountOfUsedStorageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AmountOfUsedStorage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_amountOfUsedStorage, allocator);
+    }
+
+    if (m_serviceCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_serviceCount, allocator);
+    }
+
+    if (m_countOfReportSpanPerDayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CountOfReportSpanPerDay";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_countOfReportSpanPerDay, allocator);
+    }
+
+    if (m_traceDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TraceDuration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_traceDuration, allocator);
     }
 
     if (m_spanDailyCountersHasBeenSet)
@@ -669,56 +933,200 @@ void ApmInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         value.AddMember(iKey, m_defaultTSF, allocator);
     }
 
+    if (m_isRelatedDashboardHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsRelatedDashboard";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isRelatedDashboard, allocator);
+    }
+
+    if (m_dashboardTopicIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DashboardTopicID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dashboardTopicID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isInstrumentationVulnerabilityScanHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsInstrumentationVulnerabilityScan";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isInstrumentationVulnerabilityScan, allocator);
+    }
+
+    if (m_isSqlInjectionAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSqlInjectionAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSqlInjectionAnalysis, allocator);
+    }
+
+    if (m_stopReasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StopReason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_stopReason, allocator);
+    }
+
+    if (m_isRemoteCommandExecutionAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsRemoteCommandExecutionAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isRemoteCommandExecutionAnalysis, allocator);
+    }
+
+    if (m_isMemoryHijackingAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsMemoryHijackingAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isMemoryHijackingAnalysis, allocator);
+    }
+
+    if (m_logIndexTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogIndexType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_logIndexType, allocator);
+    }
+
+    if (m_logTraceIdKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogTraceIdKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logTraceIdKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isDeleteAnyFileAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDeleteAnyFileAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDeleteAnyFileAnalysis, allocator);
+    }
+
+    if (m_isReadAnyFileAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsReadAnyFileAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isReadAnyFileAnalysis, allocator);
+    }
+
+    if (m_isUploadAnyFileAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsUploadAnyFileAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isUploadAnyFileAnalysis, allocator);
+    }
+
+    if (m_isIncludeAnyFileAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsIncludeAnyFileAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isIncludeAnyFileAnalysis, allocator);
+    }
+
+    if (m_isDirectoryTraversalAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDirectoryTraversalAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDirectoryTraversalAnalysis, allocator);
+    }
+
+    if (m_isTemplateEngineInjectionAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsTemplateEngineInjectionAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isTemplateEngineInjectionAnalysis, allocator);
+    }
+
+    if (m_isScriptEngineInjectionAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsScriptEngineInjectionAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isScriptEngineInjectionAnalysis, allocator);
+    }
+
+    if (m_isExpressionInjectionAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsExpressionInjectionAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isExpressionInjectionAnalysis, allocator);
+    }
+
+    if (m_isJNDIInjectionAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsJNDIInjectionAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isJNDIInjectionAnalysis, allocator);
+    }
+
+    if (m_isJNIInjectionAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsJNIInjectionAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isJNIInjectionAnalysis, allocator);
+    }
+
+    if (m_isWebshellBackdoorAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsWebshellBackdoorAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isWebshellBackdoorAnalysis, allocator);
+    }
+
+    if (m_isDeserializationAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDeserializationAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDeserializationAnalysis, allocator);
+    }
+
+    if (m_tokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Token";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_token.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_urlLongSegmentThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UrlLongSegmentThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_urlLongSegmentThreshold, allocator);
+    }
+
+    if (m_urlNumberSegmentThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UrlNumberSegmentThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_urlNumberSegmentThreshold, allocator);
+    }
+
 }
 
-
-double ApmInstanceDetail::GetAmountOfUsedStorage() const
-{
-    return m_amountOfUsedStorage;
-}
-
-void ApmInstanceDetail::SetAmountOfUsedStorage(const double& _amountOfUsedStorage)
-{
-    m_amountOfUsedStorage = _amountOfUsedStorage;
-    m_amountOfUsedStorageHasBeenSet = true;
-}
-
-bool ApmInstanceDetail::AmountOfUsedStorageHasBeenSet() const
-{
-    return m_amountOfUsedStorageHasBeenSet;
-}
-
-string ApmInstanceDetail::GetName() const
-{
-    return m_name;
-}
-
-void ApmInstanceDetail::SetName(const string& _name)
-{
-    m_name = _name;
-    m_nameHasBeenSet = true;
-}
-
-bool ApmInstanceDetail::NameHasBeenSet() const
-{
-    return m_nameHasBeenSet;
-}
-
-vector<ApmTag> ApmInstanceDetail::GetTags() const
-{
-    return m_tags;
-}
-
-void ApmInstanceDetail::SetTags(const vector<ApmTag>& _tags)
-{
-    m_tags = _tags;
-    m_tagsHasBeenSet = true;
-}
-
-bool ApmInstanceDetail::TagsHasBeenSet() const
-{
-    return m_tagsHasBeenSet;
-}
 
 string ApmInstanceDetail::GetInstanceId() const
 {
@@ -736,84 +1144,20 @@ bool ApmInstanceDetail::InstanceIdHasBeenSet() const
     return m_instanceIdHasBeenSet;
 }
 
-string ApmInstanceDetail::GetCreateUin() const
+string ApmInstanceDetail::GetName() const
 {
-    return m_createUin;
+    return m_name;
 }
 
-void ApmInstanceDetail::SetCreateUin(const string& _createUin)
+void ApmInstanceDetail::SetName(const string& _name)
 {
-    m_createUin = _createUin;
-    m_createUinHasBeenSet = true;
+    m_name = _name;
+    m_nameHasBeenSet = true;
 }
 
-bool ApmInstanceDetail::CreateUinHasBeenSet() const
+bool ApmInstanceDetail::NameHasBeenSet() const
 {
-    return m_createUinHasBeenSet;
-}
-
-int64_t ApmInstanceDetail::GetServiceCount() const
-{
-    return m_serviceCount;
-}
-
-void ApmInstanceDetail::SetServiceCount(const int64_t& _serviceCount)
-{
-    m_serviceCount = _serviceCount;
-    m_serviceCountHasBeenSet = true;
-}
-
-bool ApmInstanceDetail::ServiceCountHasBeenSet() const
-{
-    return m_serviceCountHasBeenSet;
-}
-
-int64_t ApmInstanceDetail::GetCountOfReportSpanPerDay() const
-{
-    return m_countOfReportSpanPerDay;
-}
-
-void ApmInstanceDetail::SetCountOfReportSpanPerDay(const int64_t& _countOfReportSpanPerDay)
-{
-    m_countOfReportSpanPerDay = _countOfReportSpanPerDay;
-    m_countOfReportSpanPerDayHasBeenSet = true;
-}
-
-bool ApmInstanceDetail::CountOfReportSpanPerDayHasBeenSet() const
-{
-    return m_countOfReportSpanPerDayHasBeenSet;
-}
-
-int64_t ApmInstanceDetail::GetAppId() const
-{
-    return m_appId;
-}
-
-void ApmInstanceDetail::SetAppId(const int64_t& _appId)
-{
-    m_appId = _appId;
-    m_appIdHasBeenSet = true;
-}
-
-bool ApmInstanceDetail::AppIdHasBeenSet() const
-{
-    return m_appIdHasBeenSet;
-}
-
-int64_t ApmInstanceDetail::GetTraceDuration() const
-{
-    return m_traceDuration;
-}
-
-void ApmInstanceDetail::SetTraceDuration(const int64_t& _traceDuration)
-{
-    m_traceDuration = _traceDuration;
-    m_traceDurationHasBeenSet = true;
-}
-
-bool ApmInstanceDetail::TraceDurationHasBeenSet() const
-{
-    return m_traceDurationHasBeenSet;
+    return m_nameHasBeenSet;
 }
 
 string ApmInstanceDetail::GetDescription() const
@@ -862,6 +1206,118 @@ void ApmInstanceDetail::SetRegion(const string& _region)
 bool ApmInstanceDetail::RegionHasBeenSet() const
 {
     return m_regionHasBeenSet;
+}
+
+vector<ApmTag> ApmInstanceDetail::GetTags() const
+{
+    return m_tags;
+}
+
+void ApmInstanceDetail::SetTags(const vector<ApmTag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetAppId() const
+{
+    return m_appId;
+}
+
+void ApmInstanceDetail::SetAppId(const int64_t& _appId)
+{
+    m_appId = _appId;
+    m_appIdHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::AppIdHasBeenSet() const
+{
+    return m_appIdHasBeenSet;
+}
+
+string ApmInstanceDetail::GetCreateUin() const
+{
+    return m_createUin;
+}
+
+void ApmInstanceDetail::SetCreateUin(const string& _createUin)
+{
+    m_createUin = _createUin;
+    m_createUinHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::CreateUinHasBeenSet() const
+{
+    return m_createUinHasBeenSet;
+}
+
+double ApmInstanceDetail::GetAmountOfUsedStorage() const
+{
+    return m_amountOfUsedStorage;
+}
+
+void ApmInstanceDetail::SetAmountOfUsedStorage(const double& _amountOfUsedStorage)
+{
+    m_amountOfUsedStorage = _amountOfUsedStorage;
+    m_amountOfUsedStorageHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::AmountOfUsedStorageHasBeenSet() const
+{
+    return m_amountOfUsedStorageHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetServiceCount() const
+{
+    return m_serviceCount;
+}
+
+void ApmInstanceDetail::SetServiceCount(const int64_t& _serviceCount)
+{
+    m_serviceCount = _serviceCount;
+    m_serviceCountHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::ServiceCountHasBeenSet() const
+{
+    return m_serviceCountHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetCountOfReportSpanPerDay() const
+{
+    return m_countOfReportSpanPerDay;
+}
+
+void ApmInstanceDetail::SetCountOfReportSpanPerDay(const int64_t& _countOfReportSpanPerDay)
+{
+    m_countOfReportSpanPerDay = _countOfReportSpanPerDay;
+    m_countOfReportSpanPerDayHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::CountOfReportSpanPerDayHasBeenSet() const
+{
+    return m_countOfReportSpanPerDayHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetTraceDuration() const
+{
+    return m_traceDuration;
+}
+
+void ApmInstanceDetail::SetTraceDuration(const int64_t& _traceDuration)
+{
+    m_traceDuration = _traceDuration;
+    m_traceDurationHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::TraceDurationHasBeenSet() const
+{
+    return m_traceDurationHasBeenSet;
 }
 
 int64_t ApmInstanceDetail::GetSpanDailyCounters() const
@@ -1182,5 +1638,389 @@ void ApmInstanceDetail::SetDefaultTSF(const int64_t& _defaultTSF)
 bool ApmInstanceDetail::DefaultTSFHasBeenSet() const
 {
     return m_defaultTSFHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetIsRelatedDashboard() const
+{
+    return m_isRelatedDashboard;
+}
+
+void ApmInstanceDetail::SetIsRelatedDashboard(const int64_t& _isRelatedDashboard)
+{
+    m_isRelatedDashboard = _isRelatedDashboard;
+    m_isRelatedDashboardHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::IsRelatedDashboardHasBeenSet() const
+{
+    return m_isRelatedDashboardHasBeenSet;
+}
+
+string ApmInstanceDetail::GetDashboardTopicID() const
+{
+    return m_dashboardTopicID;
+}
+
+void ApmInstanceDetail::SetDashboardTopicID(const string& _dashboardTopicID)
+{
+    m_dashboardTopicID = _dashboardTopicID;
+    m_dashboardTopicIDHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::DashboardTopicIDHasBeenSet() const
+{
+    return m_dashboardTopicIDHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetIsInstrumentationVulnerabilityScan() const
+{
+    return m_isInstrumentationVulnerabilityScan;
+}
+
+void ApmInstanceDetail::SetIsInstrumentationVulnerabilityScan(const int64_t& _isInstrumentationVulnerabilityScan)
+{
+    m_isInstrumentationVulnerabilityScan = _isInstrumentationVulnerabilityScan;
+    m_isInstrumentationVulnerabilityScanHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::IsInstrumentationVulnerabilityScanHasBeenSet() const
+{
+    return m_isInstrumentationVulnerabilityScanHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetIsSqlInjectionAnalysis() const
+{
+    return m_isSqlInjectionAnalysis;
+}
+
+void ApmInstanceDetail::SetIsSqlInjectionAnalysis(const int64_t& _isSqlInjectionAnalysis)
+{
+    m_isSqlInjectionAnalysis = _isSqlInjectionAnalysis;
+    m_isSqlInjectionAnalysisHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::IsSqlInjectionAnalysisHasBeenSet() const
+{
+    return m_isSqlInjectionAnalysisHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetStopReason() const
+{
+    return m_stopReason;
+}
+
+void ApmInstanceDetail::SetStopReason(const int64_t& _stopReason)
+{
+    m_stopReason = _stopReason;
+    m_stopReasonHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::StopReasonHasBeenSet() const
+{
+    return m_stopReasonHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetIsRemoteCommandExecutionAnalysis() const
+{
+    return m_isRemoteCommandExecutionAnalysis;
+}
+
+void ApmInstanceDetail::SetIsRemoteCommandExecutionAnalysis(const int64_t& _isRemoteCommandExecutionAnalysis)
+{
+    m_isRemoteCommandExecutionAnalysis = _isRemoteCommandExecutionAnalysis;
+    m_isRemoteCommandExecutionAnalysisHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::IsRemoteCommandExecutionAnalysisHasBeenSet() const
+{
+    return m_isRemoteCommandExecutionAnalysisHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetIsMemoryHijackingAnalysis() const
+{
+    return m_isMemoryHijackingAnalysis;
+}
+
+void ApmInstanceDetail::SetIsMemoryHijackingAnalysis(const int64_t& _isMemoryHijackingAnalysis)
+{
+    m_isMemoryHijackingAnalysis = _isMemoryHijackingAnalysis;
+    m_isMemoryHijackingAnalysisHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::IsMemoryHijackingAnalysisHasBeenSet() const
+{
+    return m_isMemoryHijackingAnalysisHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetLogIndexType() const
+{
+    return m_logIndexType;
+}
+
+void ApmInstanceDetail::SetLogIndexType(const int64_t& _logIndexType)
+{
+    m_logIndexType = _logIndexType;
+    m_logIndexTypeHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::LogIndexTypeHasBeenSet() const
+{
+    return m_logIndexTypeHasBeenSet;
+}
+
+string ApmInstanceDetail::GetLogTraceIdKey() const
+{
+    return m_logTraceIdKey;
+}
+
+void ApmInstanceDetail::SetLogTraceIdKey(const string& _logTraceIdKey)
+{
+    m_logTraceIdKey = _logTraceIdKey;
+    m_logTraceIdKeyHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::LogTraceIdKeyHasBeenSet() const
+{
+    return m_logTraceIdKeyHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetIsDeleteAnyFileAnalysis() const
+{
+    return m_isDeleteAnyFileAnalysis;
+}
+
+void ApmInstanceDetail::SetIsDeleteAnyFileAnalysis(const int64_t& _isDeleteAnyFileAnalysis)
+{
+    m_isDeleteAnyFileAnalysis = _isDeleteAnyFileAnalysis;
+    m_isDeleteAnyFileAnalysisHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::IsDeleteAnyFileAnalysisHasBeenSet() const
+{
+    return m_isDeleteAnyFileAnalysisHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetIsReadAnyFileAnalysis() const
+{
+    return m_isReadAnyFileAnalysis;
+}
+
+void ApmInstanceDetail::SetIsReadAnyFileAnalysis(const int64_t& _isReadAnyFileAnalysis)
+{
+    m_isReadAnyFileAnalysis = _isReadAnyFileAnalysis;
+    m_isReadAnyFileAnalysisHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::IsReadAnyFileAnalysisHasBeenSet() const
+{
+    return m_isReadAnyFileAnalysisHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetIsUploadAnyFileAnalysis() const
+{
+    return m_isUploadAnyFileAnalysis;
+}
+
+void ApmInstanceDetail::SetIsUploadAnyFileAnalysis(const int64_t& _isUploadAnyFileAnalysis)
+{
+    m_isUploadAnyFileAnalysis = _isUploadAnyFileAnalysis;
+    m_isUploadAnyFileAnalysisHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::IsUploadAnyFileAnalysisHasBeenSet() const
+{
+    return m_isUploadAnyFileAnalysisHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetIsIncludeAnyFileAnalysis() const
+{
+    return m_isIncludeAnyFileAnalysis;
+}
+
+void ApmInstanceDetail::SetIsIncludeAnyFileAnalysis(const int64_t& _isIncludeAnyFileAnalysis)
+{
+    m_isIncludeAnyFileAnalysis = _isIncludeAnyFileAnalysis;
+    m_isIncludeAnyFileAnalysisHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::IsIncludeAnyFileAnalysisHasBeenSet() const
+{
+    return m_isIncludeAnyFileAnalysisHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetIsDirectoryTraversalAnalysis() const
+{
+    return m_isDirectoryTraversalAnalysis;
+}
+
+void ApmInstanceDetail::SetIsDirectoryTraversalAnalysis(const int64_t& _isDirectoryTraversalAnalysis)
+{
+    m_isDirectoryTraversalAnalysis = _isDirectoryTraversalAnalysis;
+    m_isDirectoryTraversalAnalysisHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::IsDirectoryTraversalAnalysisHasBeenSet() const
+{
+    return m_isDirectoryTraversalAnalysisHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetIsTemplateEngineInjectionAnalysis() const
+{
+    return m_isTemplateEngineInjectionAnalysis;
+}
+
+void ApmInstanceDetail::SetIsTemplateEngineInjectionAnalysis(const int64_t& _isTemplateEngineInjectionAnalysis)
+{
+    m_isTemplateEngineInjectionAnalysis = _isTemplateEngineInjectionAnalysis;
+    m_isTemplateEngineInjectionAnalysisHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::IsTemplateEngineInjectionAnalysisHasBeenSet() const
+{
+    return m_isTemplateEngineInjectionAnalysisHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetIsScriptEngineInjectionAnalysis() const
+{
+    return m_isScriptEngineInjectionAnalysis;
+}
+
+void ApmInstanceDetail::SetIsScriptEngineInjectionAnalysis(const int64_t& _isScriptEngineInjectionAnalysis)
+{
+    m_isScriptEngineInjectionAnalysis = _isScriptEngineInjectionAnalysis;
+    m_isScriptEngineInjectionAnalysisHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::IsScriptEngineInjectionAnalysisHasBeenSet() const
+{
+    return m_isScriptEngineInjectionAnalysisHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetIsExpressionInjectionAnalysis() const
+{
+    return m_isExpressionInjectionAnalysis;
+}
+
+void ApmInstanceDetail::SetIsExpressionInjectionAnalysis(const int64_t& _isExpressionInjectionAnalysis)
+{
+    m_isExpressionInjectionAnalysis = _isExpressionInjectionAnalysis;
+    m_isExpressionInjectionAnalysisHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::IsExpressionInjectionAnalysisHasBeenSet() const
+{
+    return m_isExpressionInjectionAnalysisHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetIsJNDIInjectionAnalysis() const
+{
+    return m_isJNDIInjectionAnalysis;
+}
+
+void ApmInstanceDetail::SetIsJNDIInjectionAnalysis(const int64_t& _isJNDIInjectionAnalysis)
+{
+    m_isJNDIInjectionAnalysis = _isJNDIInjectionAnalysis;
+    m_isJNDIInjectionAnalysisHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::IsJNDIInjectionAnalysisHasBeenSet() const
+{
+    return m_isJNDIInjectionAnalysisHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetIsJNIInjectionAnalysis() const
+{
+    return m_isJNIInjectionAnalysis;
+}
+
+void ApmInstanceDetail::SetIsJNIInjectionAnalysis(const int64_t& _isJNIInjectionAnalysis)
+{
+    m_isJNIInjectionAnalysis = _isJNIInjectionAnalysis;
+    m_isJNIInjectionAnalysisHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::IsJNIInjectionAnalysisHasBeenSet() const
+{
+    return m_isJNIInjectionAnalysisHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetIsWebshellBackdoorAnalysis() const
+{
+    return m_isWebshellBackdoorAnalysis;
+}
+
+void ApmInstanceDetail::SetIsWebshellBackdoorAnalysis(const int64_t& _isWebshellBackdoorAnalysis)
+{
+    m_isWebshellBackdoorAnalysis = _isWebshellBackdoorAnalysis;
+    m_isWebshellBackdoorAnalysisHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::IsWebshellBackdoorAnalysisHasBeenSet() const
+{
+    return m_isWebshellBackdoorAnalysisHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetIsDeserializationAnalysis() const
+{
+    return m_isDeserializationAnalysis;
+}
+
+void ApmInstanceDetail::SetIsDeserializationAnalysis(const int64_t& _isDeserializationAnalysis)
+{
+    m_isDeserializationAnalysis = _isDeserializationAnalysis;
+    m_isDeserializationAnalysisHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::IsDeserializationAnalysisHasBeenSet() const
+{
+    return m_isDeserializationAnalysisHasBeenSet;
+}
+
+string ApmInstanceDetail::GetToken() const
+{
+    return m_token;
+}
+
+void ApmInstanceDetail::SetToken(const string& _token)
+{
+    m_token = _token;
+    m_tokenHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::TokenHasBeenSet() const
+{
+    return m_tokenHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetUrlLongSegmentThreshold() const
+{
+    return m_urlLongSegmentThreshold;
+}
+
+void ApmInstanceDetail::SetUrlLongSegmentThreshold(const int64_t& _urlLongSegmentThreshold)
+{
+    m_urlLongSegmentThreshold = _urlLongSegmentThreshold;
+    m_urlLongSegmentThresholdHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::UrlLongSegmentThresholdHasBeenSet() const
+{
+    return m_urlLongSegmentThresholdHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetUrlNumberSegmentThreshold() const
+{
+    return m_urlNumberSegmentThreshold;
+}
+
+void ApmInstanceDetail::SetUrlNumberSegmentThreshold(const int64_t& _urlNumberSegmentThreshold)
+{
+    m_urlNumberSegmentThreshold = _urlNumberSegmentThreshold;
+    m_urlNumberSegmentThresholdHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::UrlNumberSegmentThresholdHasBeenSet() const
+{
+    return m_urlNumberSegmentThresholdHasBeenSet;
 }
 

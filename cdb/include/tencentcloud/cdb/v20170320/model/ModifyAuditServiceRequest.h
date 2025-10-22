@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID。
-                     * @return InstanceId 实例ID。
+                     * 获取实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @return InstanceId 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID。
-                     * @param _instanceId 实例ID。
+                     * 设置实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @param _instanceId 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,15 +65,43 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取日志保留时长。
-                     * @return LogExpireDay 日志保留时长。
+                     * 获取日志保留时长。支持值包括：
+7 - 一周；
+30 - 一个月；
+90 - 三个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年。
+                     * @return LogExpireDay 日志保留时长。支持值包括：
+7 - 一周；
+30 - 一个月；
+90 - 三个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年。
                      * 
                      */
                     uint64_t GetLogExpireDay() const;
 
                     /**
-                     * 设置日志保留时长。
-                     * @param _logExpireDay 日志保留时长。
+                     * 设置日志保留时长。支持值包括：
+7 - 一周；
+30 - 一个月；
+90 - 三个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年。
+                     * @param _logExpireDay 日志保留时长。支持值包括：
+7 - 一周；
+30 - 一个月；
+90 - 三个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年。
                      * 
                      */
                     void SetLogExpireDay(const uint64_t& _logExpireDay);
@@ -86,15 +114,47 @@ namespace TencentCloud
                     bool LogExpireDayHasBeenSet() const;
 
                     /**
-                     * 获取高频日志保留时长。
-                     * @return HighLogExpireDay 高频日志保留时长。
+                     * 获取高频日志保留时长。默认值为7，此项取值需小于等于 LogExpireDay，支持值包括：
+3 - 3天；
+7 - 一周；
+30 - 一个月；
+90 - 三个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年。
+                     * @return HighLogExpireDay 高频日志保留时长。默认值为7，此项取值需小于等于 LogExpireDay，支持值包括：
+3 - 3天；
+7 - 一周；
+30 - 一个月；
+90 - 三个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年。
                      * 
                      */
                     uint64_t GetHighLogExpireDay() const;
 
                     /**
-                     * 设置高频日志保留时长。
-                     * @param _highLogExpireDay 高频日志保留时长。
+                     * 设置高频日志保留时长。默认值为7，此项取值需小于等于 LogExpireDay，支持值包括：
+3 - 3天；
+7 - 一周；
+30 - 一个月；
+90 - 三个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年。
+                     * @param _highLogExpireDay 高频日志保留时长。默认值为7，此项取值需小于等于 LogExpireDay，支持值包括：
+3 - 3天；
+7 - 一周；
+30 - 一个月；
+90 - 三个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年。
                      * 
                      */
                     void SetHighLogExpireDay(const uint64_t& _highLogExpireDay);
@@ -128,36 +188,36 @@ namespace TencentCloud
                     bool AuditAllHasBeenSet() const;
 
                     /**
-                     * 获取审计规则。
-                     * @return AuditRuleFilters 审计规则。
-                     * 
+                     * 获取废弃。
+                     * @return AuditRuleFilters 废弃。
+                     * @deprecated
                      */
                     std::vector<AuditRuleFilters> GetAuditRuleFilters() const;
 
                     /**
-                     * 设置审计规则。
-                     * @param _auditRuleFilters 审计规则。
-                     * 
+                     * 设置废弃。
+                     * @param _auditRuleFilters 废弃。
+                     * @deprecated
                      */
                     void SetAuditRuleFilters(const std::vector<AuditRuleFilters>& _auditRuleFilters);
 
                     /**
                      * 判断参数 AuditRuleFilters 是否已赋值
                      * @return AuditRuleFilters 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AuditRuleFiltersHasBeenSet() const;
 
                     /**
-                     * 获取规则模板ID。
-                     * @return RuleTemplateIds 规则模板ID。
+                     * 获取规则模板 ID。可通过 [DescribeAuditRuleTemplates](https://cloud.tencent.com/document/api/236/101811) 接口获取。
+                     * @return RuleTemplateIds 规则模板 ID。可通过 [DescribeAuditRuleTemplates](https://cloud.tencent.com/document/api/236/101811) 接口获取。
                      * 
                      */
                     std::vector<std::string> GetRuleTemplateIds() const;
 
                     /**
-                     * 设置规则模板ID。
-                     * @param _ruleTemplateIds 规则模板ID。
+                     * 设置规则模板 ID。可通过 [DescribeAuditRuleTemplates](https://cloud.tencent.com/document/api/236/101811) 接口获取。
+                     * @param _ruleTemplateIds 规则模板 ID。可通过 [DescribeAuditRuleTemplates](https://cloud.tencent.com/document/api/236/101811) 接口获取。
                      * 
                      */
                     void SetRuleTemplateIds(const std::vector<std::string>& _ruleTemplateIds);
@@ -172,19 +232,34 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID。
+                     * 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 日志保留时长。
+                     * 日志保留时长。支持值包括：
+7 - 一周；
+30 - 一个月；
+90 - 三个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年。
                      */
                     uint64_t m_logExpireDay;
                     bool m_logExpireDayHasBeenSet;
 
                     /**
-                     * 高频日志保留时长。
+                     * 高频日志保留时长。默认值为7，此项取值需小于等于 LogExpireDay，支持值包括：
+3 - 3天；
+7 - 一周；
+30 - 一个月；
+90 - 三个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年。
                      */
                     uint64_t m_highLogExpireDay;
                     bool m_highLogExpireDayHasBeenSet;
@@ -196,13 +271,13 @@ namespace TencentCloud
                     bool m_auditAllHasBeenSet;
 
                     /**
-                     * 审计规则。
+                     * 废弃。
                      */
                     std::vector<AuditRuleFilters> m_auditRuleFilters;
                     bool m_auditRuleFiltersHasBeenSet;
 
                     /**
-                     * 规则模板ID。
+                     * 规则模板 ID。可通过 [DescribeAuditRuleTemplates](https://cloud.tencent.com/document/api/236/101811) 接口获取。
                      */
                     std::vector<std::string> m_ruleTemplateIds;
                     bool m_ruleTemplateIdsHasBeenSet;

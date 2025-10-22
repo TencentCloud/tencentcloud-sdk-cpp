@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,9 @@ using namespace TencentCloud::Emr::V20190103::Model;
 using namespace std;
 
 UserManagerFilter::UserManagerFilter() :
-    m_userNameHasBeenSet(false)
+    m_userNameHasBeenSet(false),
+    m_userTypeHasBeenSet(false),
+    m_groupsHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,26 @@ CoreInternalOutcome UserManagerFilter::Deserialize(const rapidjson::Value &value
         m_userNameHasBeenSet = true;
     }
 
+    if (value.HasMember("UserType") && !value["UserType"].IsNull())
+    {
+        if (!value["UserType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserManagerFilter.UserType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userType = string(value["UserType"].GetString());
+        m_userTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Groups") && !value["Groups"].IsNull())
+    {
+        if (!value["Groups"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserManagerFilter.Groups` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_groups = string(value["Groups"].GetString());
+        m_groupsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +75,22 @@ void UserManagerFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "UserName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_userName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Groups";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groups.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -72,5 +110,37 @@ void UserManagerFilter::SetUserName(const string& _userName)
 bool UserManagerFilter::UserNameHasBeenSet() const
 {
     return m_userNameHasBeenSet;
+}
+
+string UserManagerFilter::GetUserType() const
+{
+    return m_userType;
+}
+
+void UserManagerFilter::SetUserType(const string& _userType)
+{
+    m_userType = _userType;
+    m_userTypeHasBeenSet = true;
+}
+
+bool UserManagerFilter::UserTypeHasBeenSet() const
+{
+    return m_userTypeHasBeenSet;
+}
+
+string UserManagerFilter::GetGroups() const
+{
+    return m_groups;
+}
+
+void UserManagerFilter::SetGroups(const string& _groups)
+{
+    m_groups = _groups;
+    m_groupsHasBeenSet = true;
+}
+
+bool UserManagerFilter::GroupsHasBeenSet() const
+{
+    return m_groupsHasBeenSet;
 }
 

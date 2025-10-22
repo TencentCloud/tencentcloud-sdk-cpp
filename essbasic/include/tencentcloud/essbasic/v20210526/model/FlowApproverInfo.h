@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,15 +90,15 @@ RecipientId参数获取：
                     /**
                      * 获取签署方经办人的证件类型，支持以下类型
 <ul><li>ID_CARD : 中国大陆居民身份证  (默认值)</li>
-<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
-<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>
+<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li>
 <li>OTHER_CARD_TYPE : 其他证件</li></ul>
 
 注: `其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`
                      * @return IdCardType 签署方经办人的证件类型，支持以下类型
 <ul><li>ID_CARD : 中国大陆居民身份证  (默认值)</li>
-<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
-<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>
+<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li>
 <li>OTHER_CARD_TYPE : 其他证件</li></ul>
 
 注: `其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`
@@ -109,15 +109,15 @@ RecipientId参数获取：
                     /**
                      * 设置签署方经办人的证件类型，支持以下类型
 <ul><li>ID_CARD : 中国大陆居民身份证  (默认值)</li>
-<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
-<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>
+<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li>
 <li>OTHER_CARD_TYPE : 其他证件</li></ul>
 
 注: `其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`
                      * @param _idCardType 签署方经办人的证件类型，支持以下类型
 <ul><li>ID_CARD : 中国大陆居民身份证  (默认值)</li>
-<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
-<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>
+<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li>
 <li>OTHER_CARD_TYPE : 其他证件</li></ul>
 
 注: `其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`
@@ -134,26 +134,26 @@ RecipientId参数获取：
 
                     /**
                      * 获取签署方经办人的证件号码，应符合以下规则
-<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
-<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>
-<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>
+<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
                      * @return IdCardNumber 签署方经办人的证件号码，应符合以下规则
-<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
-<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>
-<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>
+<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
                      * 
                      */
                     std::string GetIdCardNumber() const;
 
                     /**
                      * 设置签署方经办人的证件号码，应符合以下规则
-<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
-<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>
-<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>
+<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
                      * @param _idCardNumber 签署方经办人的证件号码，应符合以下规则
-<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
-<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>
-<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>
+<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
                      * 
                      */
                     void SetIdCardNumber(const std::string& _idCardNumber);
@@ -459,15 +459,23 @@ RecipientId参数获取：
                     bool CallbackUrlHasBeenSet() const;
 
                     /**
-                     * 获取使用PDF文件直接发起合同时，签署人指定的签署控件；<br/>使用模板发起合同时，指定本企业印章签署控件的印章ID: <br/>通过ComponentId或ComponenetName指定签署控件，ComponentValue为印章ID。
-                     * @return SignComponents 使用PDF文件直接发起合同时，签署人指定的签署控件；<br/>使用模板发起合同时，指定本企业印章签署控件的印章ID: <br/>通过ComponentId或ComponenetName指定签署控件，ComponentValue为印章ID。
+                     * 获取使用PDF文件直接发起合同时，签署人指定的签署控件；<br/>使用模板发起合同时，指定本企业印章签署控件的印章ID:注意：(如果模板里面指定了印章，默认使用模板里面配置的印章，不能进行变更) <br/>通过ComponentId或ComponenetName指定签署控件，ComponentValue为印章ID。
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/91757a7f9188ccf3057a4a8979cf3f93.png)
+                     * @return SignComponents 使用PDF文件直接发起合同时，签署人指定的签署控件；<br/>使用模板发起合同时，指定本企业印章签署控件的印章ID:注意：(如果模板里面指定了印章，默认使用模板里面配置的印章，不能进行变更) <br/>通过ComponentId或ComponenetName指定签署控件，ComponentValue为印章ID。
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/91757a7f9188ccf3057a4a8979cf3f93.png)
                      * 
                      */
                     std::vector<Component> GetSignComponents() const;
 
                     /**
-                     * 设置使用PDF文件直接发起合同时，签署人指定的签署控件；<br/>使用模板发起合同时，指定本企业印章签署控件的印章ID: <br/>通过ComponentId或ComponenetName指定签署控件，ComponentValue为印章ID。
-                     * @param _signComponents 使用PDF文件直接发起合同时，签署人指定的签署控件；<br/>使用模板发起合同时，指定本企业印章签署控件的印章ID: <br/>通过ComponentId或ComponenetName指定签署控件，ComponentValue为印章ID。
+                     * 设置使用PDF文件直接发起合同时，签署人指定的签署控件；<br/>使用模板发起合同时，指定本企业印章签署控件的印章ID:注意：(如果模板里面指定了印章，默认使用模板里面配置的印章，不能进行变更) <br/>通过ComponentId或ComponenetName指定签署控件，ComponentValue为印章ID。
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/91757a7f9188ccf3057a4a8979cf3f93.png)
+                     * @param _signComponents 使用PDF文件直接发起合同时，签署人指定的签署控件；<br/>使用模板发起合同时，指定本企业印章签署控件的印章ID:注意：(如果模板里面指定了印章，默认使用模板里面配置的印章，不能进行变更) <br/>通过ComponentId或ComponenetName指定签署控件，ComponentValue为印章ID。
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/91757a7f9188ccf3057a4a8979cf3f93.png)
                      * 
                      */
                     void SetSignComponents(const std::vector<Component>& _signComponents);
@@ -636,43 +644,51 @@ RecipientId参数获取：
                     bool ApproverOptionHasBeenSet() const;
 
                     /**
-                     * 获取发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：
+                     * 获取此签署人（员工或者个人）签署前，是否需要发起方企业进行审批，取值如下：
 <ul><li>**false**：（默认）不需要审批，直接签署。</li>
-<li>**true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>
+<li>**true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待发起方企业内部审批完成。</li></ul>
 企业可以通过ChannelCreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果
 <ul><li>如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>
 <li>如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>
 
-注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`
-                     * @return ApproverNeedSignReview 发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：
+注：`此功能可用于与发起方企业内部的审批流程进行关联，支持手动、静默签署合同`
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/b14d5188ed0229d1401e74a9a49cab6d.png)
+                     * @return ApproverNeedSignReview 此签署人（员工或者个人）签署前，是否需要发起方企业进行审批，取值如下：
 <ul><li>**false**：（默认）不需要审批，直接签署。</li>
-<li>**true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>
+<li>**true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待发起方企业内部审批完成。</li></ul>
 企业可以通过ChannelCreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果
 <ul><li>如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>
 <li>如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>
 
-注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`
+注：`此功能可用于与发起方企业内部的审批流程进行关联，支持手动、静默签署合同`
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/b14d5188ed0229d1401e74a9a49cab6d.png)
                      * 
                      */
                     bool GetApproverNeedSignReview() const;
 
                     /**
-                     * 设置发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：
+                     * 设置此签署人（员工或者个人）签署前，是否需要发起方企业进行审批，取值如下：
 <ul><li>**false**：（默认）不需要审批，直接签署。</li>
-<li>**true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>
+<li>**true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待发起方企业内部审批完成。</li></ul>
 企业可以通过ChannelCreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果
 <ul><li>如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>
 <li>如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>
 
-注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`
-                     * @param _approverNeedSignReview 发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：
+注：`此功能可用于与发起方企业内部的审批流程进行关联，支持手动、静默签署合同`
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/b14d5188ed0229d1401e74a9a49cab6d.png)
+                     * @param _approverNeedSignReview 此签署人（员工或者个人）签署前，是否需要发起方企业进行审批，取值如下：
 <ul><li>**false**：（默认）不需要审批，直接签署。</li>
-<li>**true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>
+<li>**true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待发起方企业内部审批完成。</li></ul>
 企业可以通过ChannelCreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果
 <ul><li>如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>
 <li>如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>
 
-注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`
+注：`此功能可用于与发起方企业内部的审批流程进行关联，支持手动、静默签署合同`
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/b14d5188ed0229d1401e74a9a49cab6d.png)
                      * 
                      */
                     void SetApproverNeedSignReview(const bool& _approverNeedSignReview);
@@ -737,7 +753,8 @@ RecipientId参数获取：
 <li>**5**：设备指纹识别，需要对比手机机主预留的指纹信息，校验一致才能成功进行合同签署。（iOS系统暂不支持该校验方式）</li>
 <li>**6**：设备面容识别，需要对比手机机主预留的人脸信息，校验一致才能成功进行合同签署。（Android系统暂不支持该校验方式）</li></ul>
 
-默认为1(人脸认证 ),2(签署密码),3(运营商三要素),5(设备指纹识别),6(设备面容识别)
+默认为：
+1(人脸认证 ),2(签署密码),3(运营商三要素),5(设备指纹识别),6(设备面容识别)
 
 注: 
 1. 用<font color='red'>模板创建合同场景</font>, 签署人的认证方式需要在配置模板的时候指定, <font color='red'>在创建合同重新指定无效</font>
@@ -751,7 +768,8 @@ RecipientId参数获取：
 <li>**5**：设备指纹识别，需要对比手机机主预留的指纹信息，校验一致才能成功进行合同签署。（iOS系统暂不支持该校验方式）</li>
 <li>**6**：设备面容识别，需要对比手机机主预留的人脸信息，校验一致才能成功进行合同签署。（Android系统暂不支持该校验方式）</li></ul>
 
-默认为1(人脸认证 ),2(签署密码),3(运营商三要素),5(设备指纹识别),6(设备面容识别)
+默认为：
+1(人脸认证 ),2(签署密码),3(运营商三要素),5(设备指纹识别),6(设备面容识别)
 
 注: 
 1. 用<font color='red'>模板创建合同场景</font>, 签署人的认证方式需要在配置模板的时候指定, <font color='red'>在创建合同重新指定无效</font>
@@ -770,7 +788,8 @@ RecipientId参数获取：
 <li>**5**：设备指纹识别，需要对比手机机主预留的指纹信息，校验一致才能成功进行合同签署。（iOS系统暂不支持该校验方式）</li>
 <li>**6**：设备面容识别，需要对比手机机主预留的人脸信息，校验一致才能成功进行合同签署。（Android系统暂不支持该校验方式）</li></ul>
 
-默认为1(人脸认证 ),2(签署密码),3(运营商三要素),5(设备指纹识别),6(设备面容识别)
+默认为：
+1(人脸认证 ),2(签署密码),3(运营商三要素),5(设备指纹识别),6(设备面容识别)
 
 注: 
 1. 用<font color='red'>模板创建合同场景</font>, 签署人的认证方式需要在配置模板的时候指定, <font color='red'>在创建合同重新指定无效</font>
@@ -784,7 +803,8 @@ RecipientId参数获取：
 <li>**5**：设备指纹识别，需要对比手机机主预留的指纹信息，校验一致才能成功进行合同签署。（iOS系统暂不支持该校验方式）</li>
 <li>**6**：设备面容识别，需要对比手机机主预留的人脸信息，校验一致才能成功进行合同签署。（Android系统暂不支持该校验方式）</li></ul>
 
-默认为1(人脸认证 ),2(签署密码),3(运营商三要素),5(设备指纹识别),6(设备面容识别)
+默认为：
+1(人脸认证 ),2(签署密码),3(运营商三要素),5(设备指纹识别),6(设备面容识别)
 
 注: 
 1. 用<font color='red'>模板创建合同场景</font>, 签署人的认证方式需要在配置模板的时候指定, <font color='red'>在创建合同重新指定无效</font>
@@ -974,8 +994,9 @@ RecipientId参数获取：
 
 具体使用说明可参考[为签署方指定填写控件](https://qian.tencent.cn/developers/partner/createFlowByFiles#为签署方指定填写控件)
 
-
 注：`此参数仅在通过文件发起合同或者合同组时生效`
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/e004195ee4cb98a7f9bc12eb4a0a0b77.png)
                      * @return Components 签署人在合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体
 <ul><li>单行文本控件</li>
 <li>多行文本控件</li>
@@ -986,8 +1007,9 @@ RecipientId参数获取：
 
 具体使用说明可参考[为签署方指定填写控件](https://qian.tencent.cn/developers/partner/createFlowByFiles#为签署方指定填写控件)
 
-
 注：`此参数仅在通过文件发起合同或者合同组时生效`
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/e004195ee4cb98a7f9bc12eb4a0a0b77.png)
                      * 
                      */
                     std::vector<Component> GetComponents() const;
@@ -1003,8 +1025,9 @@ RecipientId参数获取：
 
 具体使用说明可参考[为签署方指定填写控件](https://qian.tencent.cn/developers/partner/createFlowByFiles#为签署方指定填写控件)
 
-
 注：`此参数仅在通过文件发起合同或者合同组时生效`
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/e004195ee4cb98a7f9bc12eb4a0a0b77.png)
                      * @param _components 签署人在合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体
 <ul><li>单行文本控件</li>
 <li>多行文本控件</li>
@@ -1015,8 +1038,9 @@ RecipientId参数获取：
 
 具体使用说明可参考[为签署方指定填写控件](https://qian.tencent.cn/developers/partner/createFlowByFiles#为签署方指定填写控件)
 
-
 注：`此参数仅在通过文件发起合同或者合同组时生效`
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/e004195ee4cb98a7f9bc12eb4a0a0b77.png)
                      * 
                      */
                     void SetComponents(const std::vector<Component>& _components);
@@ -1077,6 +1101,31 @@ RecipientId参数获取：
                      */
                     bool IntentionHasBeenSet() const;
 
+                    /**
+                     * 获取进入签署流程的限制，目前支持以下选项：
+<ul><li> <b>空值（默认）</b> :无限制，可在任何场景进入签署流程。</li><li> <b>link</b> :选择此选项后，将无法通过控制台或电子签小程序列表进入填写或签署操作，仅可预览合同。填写或签署流程只能通过短信或发起方提供的专用链接进行。</li></ul>
+                     * @return SignEndpoints 进入签署流程的限制，目前支持以下选项：
+<ul><li> <b>空值（默认）</b> :无限制，可在任何场景进入签署流程。</li><li> <b>link</b> :选择此选项后，将无法通过控制台或电子签小程序列表进入填写或签署操作，仅可预览合同。填写或签署流程只能通过短信或发起方提供的专用链接进行。</li></ul>
+                     * 
+                     */
+                    std::vector<std::string> GetSignEndpoints() const;
+
+                    /**
+                     * 设置进入签署流程的限制，目前支持以下选项：
+<ul><li> <b>空值（默认）</b> :无限制，可在任何场景进入签署流程。</li><li> <b>link</b> :选择此选项后，将无法通过控制台或电子签小程序列表进入填写或签署操作，仅可预览合同。填写或签署流程只能通过短信或发起方提供的专用链接进行。</li></ul>
+                     * @param _signEndpoints 进入签署流程的限制，目前支持以下选项：
+<ul><li> <b>空值（默认）</b> :无限制，可在任何场景进入签署流程。</li><li> <b>link</b> :选择此选项后，将无法通过控制台或电子签小程序列表进入填写或签署操作，仅可预览合同。填写或签署流程只能通过短信或发起方提供的专用链接进行。</li></ul>
+                     * 
+                     */
+                    void SetSignEndpoints(const std::vector<std::string>& _signEndpoints);
+
+                    /**
+                     * 判断参数 SignEndpoints 是否已赋值
+                     * @return SignEndpoints 是否已赋值
+                     * 
+                     */
+                    bool SignEndpointsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1089,8 +1138,8 @@ RecipientId参数获取：
                     /**
                      * 签署方经办人的证件类型，支持以下类型
 <ul><li>ID_CARD : 中国大陆居民身份证  (默认值)</li>
-<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
-<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>
+<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li>
 <li>OTHER_CARD_TYPE : 其他证件</li></ul>
 
 注: `其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`
@@ -1100,9 +1149,9 @@ RecipientId参数获取：
 
                     /**
                      * 签署方经办人的证件号码，应符合以下规则
-<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
-<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>
-<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>
+<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
                      */
                     std::string m_idCardNumber;
                     bool m_idCardNumberHasBeenSet;
@@ -1188,7 +1237,9 @@ RecipientId参数获取：
                     bool m_callbackUrlHasBeenSet;
 
                     /**
-                     * 使用PDF文件直接发起合同时，签署人指定的签署控件；<br/>使用模板发起合同时，指定本企业印章签署控件的印章ID: <br/>通过ComponentId或ComponenetName指定签署控件，ComponentValue为印章ID。
+                     * 使用PDF文件直接发起合同时，签署人指定的签署控件；<br/>使用模板发起合同时，指定本企业印章签署控件的印章ID:注意：(如果模板里面指定了印章，默认使用模板里面配置的印章，不能进行变更) <br/>通过ComponentId或ComponenetName指定签署控件，ComponentValue为印章ID。
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/91757a7f9188ccf3057a4a8979cf3f93.png)
                      */
                     std::vector<Component> m_signComponents;
                     bool m_signComponentsHasBeenSet;
@@ -1236,14 +1287,16 @@ RecipientId参数获取：
                     bool m_approverOptionHasBeenSet;
 
                     /**
-                     * 发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：
+                     * 此签署人（员工或者个人）签署前，是否需要发起方企业进行审批，取值如下：
 <ul><li>**false**：（默认）不需要审批，直接签署。</li>
-<li>**true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>
+<li>**true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待发起方企业内部审批完成。</li></ul>
 企业可以通过ChannelCreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果
 <ul><li>如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>
 <li>如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>
 
-注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`
+注：`此功能可用于与发起方企业内部的审批流程进行关联，支持手动、静默签署合同`
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/b14d5188ed0229d1401e74a9a49cab6d.png)
                      */
                     bool m_approverNeedSignReview;
                     bool m_approverNeedSignReviewHasBeenSet;
@@ -1268,7 +1321,8 @@ RecipientId参数获取：
 <li>**5**：设备指纹识别，需要对比手机机主预留的指纹信息，校验一致才能成功进行合同签署。（iOS系统暂不支持该校验方式）</li>
 <li>**6**：设备面容识别，需要对比手机机主预留的人脸信息，校验一致才能成功进行合同签署。（Android系统暂不支持该校验方式）</li></ul>
 
-默认为1(人脸认证 ),2(签署密码),3(运营商三要素),5(设备指纹识别),6(设备面容识别)
+默认为：
+1(人脸认证 ),2(签署密码),3(运营商三要素),5(设备指纹识别),6(设备面容识别)
 
 注: 
 1. 用<font color='red'>模板创建合同场景</font>, 签署人的认证方式需要在配置模板的时候指定, <font color='red'>在创建合同重新指定无效</font>
@@ -1334,8 +1388,9 @@ RecipientId参数获取：
 
 具体使用说明可参考[为签署方指定填写控件](https://qian.tencent.cn/developers/partner/createFlowByFiles#为签署方指定填写控件)
 
-
 注：`此参数仅在通过文件发起合同或者合同组时生效`
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/e004195ee4cb98a7f9bc12eb4a0a0b77.png)
                      */
                     std::vector<Component> m_components;
                     bool m_componentsHasBeenSet;
@@ -1352,6 +1407,13 @@ RecipientId参数获取：
                      */
                     Intention m_intention;
                     bool m_intentionHasBeenSet;
+
+                    /**
+                     * 进入签署流程的限制，目前支持以下选项：
+<ul><li> <b>空值（默认）</b> :无限制，可在任何场景进入签署流程。</li><li> <b>link</b> :选择此选项后，将无法通过控制台或电子签小程序列表进入填写或签署操作，仅可预览合同。填写或签署流程只能通过短信或发起方提供的专用链接进行。</li></ul>
+                     */
+                    std::vector<std::string> m_signEndpoints;
+                    bool m_signEndpointsHasBeenSet;
 
                 };
             }

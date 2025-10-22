@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,8 @@ CreateLivePullStreamTaskRequest::CreateLivePullStreamTaskRequest() :
     m_specifyTaskIdHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_toUrlHasBeenSet(false),
+    m_fileIndexHasBeenSet(false),
+    m_offsetTimeHasBeenSet(false),
     m_backupSourceTypeHasBeenSet(false),
     m_backupSourceUrlHasBeenSet(false),
     m_watermarkListHasBeenSet(false),
@@ -201,6 +203,22 @@ string CreateLivePullStreamTaskRequest::ToJsonString() const
         string key = "ToUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_toUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileIndexHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileIndex";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_fileIndex, allocator);
+    }
+
+    if (m_offsetTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OffsetTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offsetTime, allocator);
     }
 
     if (m_backupSourceTypeHasBeenSet)
@@ -544,6 +562,38 @@ void CreateLivePullStreamTaskRequest::SetToUrl(const string& _toUrl)
 bool CreateLivePullStreamTaskRequest::ToUrlHasBeenSet() const
 {
     return m_toUrlHasBeenSet;
+}
+
+int64_t CreateLivePullStreamTaskRequest::GetFileIndex() const
+{
+    return m_fileIndex;
+}
+
+void CreateLivePullStreamTaskRequest::SetFileIndex(const int64_t& _fileIndex)
+{
+    m_fileIndex = _fileIndex;
+    m_fileIndexHasBeenSet = true;
+}
+
+bool CreateLivePullStreamTaskRequest::FileIndexHasBeenSet() const
+{
+    return m_fileIndexHasBeenSet;
+}
+
+int64_t CreateLivePullStreamTaskRequest::GetOffsetTime() const
+{
+    return m_offsetTime;
+}
+
+void CreateLivePullStreamTaskRequest::SetOffsetTime(const int64_t& _offsetTime)
+{
+    m_offsetTime = _offsetTime;
+    m_offsetTimeHasBeenSet = true;
+}
+
+bool CreateLivePullStreamTaskRequest::OffsetTimeHasBeenSet() const
+{
+    return m_offsetTimeHasBeenSet;
 }
 
 string CreateLivePullStreamTaskRequest::GetBackupSourceType() const

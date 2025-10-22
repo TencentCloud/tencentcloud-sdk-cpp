@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源链接地址，过期时间5分钟
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url 资源链接地址，过期时间5分钟
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置资源链接地址，过期时间5分钟
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _url 资源链接地址，过期时间5分钟
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 资源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置资源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 资源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 资源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置资源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 资源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 资源链接地址，过期时间5分钟
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
                      * 资源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 资源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 描述了 “云监控” 服务相关的信息。
+                * 描述了 “可观测平台（原名云监控）” 服务相关的信息。
                 */
                 class RunMonitorServiceEnabled : public AbstractModel
                 {
@@ -47,31 +47,27 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否开启[云监控](https://cloud.tencent.com/document/product/248)服务。取值范围：
+                     * 获取是否开启[可观测平台（原名云监控）](https://cloud.tencent.com/document/product/248)服务。取值范围：
 <li>TRUE：表示开启云监控服务</li>
 <li>FALSE：表示不开启云监控服务</li>
 默认取值：TRUE。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Enabled 是否开启[云监控](https://cloud.tencent.com/document/product/248)服务。取值范围：
+                     * @return Enabled 是否开启[可观测平台（原名云监控）](https://cloud.tencent.com/document/product/248)服务。取值范围：
 <li>TRUE：表示开启云监控服务</li>
 <li>FALSE：表示不开启云监控服务</li>
 默认取值：TRUE。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnabled() const;
 
                     /**
-                     * 设置是否开启[云监控](https://cloud.tencent.com/document/product/248)服务。取值范围：
+                     * 设置是否开启[可观测平台（原名云监控）](https://cloud.tencent.com/document/product/248)服务。取值范围：
 <li>TRUE：表示开启云监控服务</li>
 <li>FALSE：表示不开启云监控服务</li>
 默认取值：TRUE。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _enabled 是否开启[云监控](https://cloud.tencent.com/document/product/248)服务。取值范围：
+                     * @param _enabled 是否开启[可观测平台（原名云监控）](https://cloud.tencent.com/document/product/248)服务。取值范围：
 <li>TRUE：表示开启云监控服务</li>
 <li>FALSE：表示不开启云监控服务</li>
 默认取值：TRUE。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnabled(const bool& _enabled);
@@ -86,11 +82,10 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否开启[云监控](https://cloud.tencent.com/document/product/248)服务。取值范围：
+                     * 是否开启[可观测平台（原名云监控）](https://cloud.tencent.com/document/product/248)服务。取值范围：
 <li>TRUE：表示开启云监控服务</li>
 <li>FALSE：表示不开启云监控服务</li>
 默认取值：TRUE。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enabled;
                     bool m_enabledHasBeenSet;

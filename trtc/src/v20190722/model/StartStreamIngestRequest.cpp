@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,8 @@ StartStreamIngestRequest::StartStreamIngestRequest() :
     m_seekSecondHasBeenSet(false),
     m_autoPushHasBeenSet(false),
     m_repeatNumHasBeenSet(false),
-    m_maxDurationHasBeenSet(false)
+    m_maxDurationHasBeenSet(false),
+    m_volumeHasBeenSet(false)
 {
 }
 
@@ -164,6 +165,14 @@ string StartStreamIngestRequest::ToJsonString() const
         string key = "MaxDuration";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxDuration, allocator);
+    }
+
+    if (m_volumeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Volume";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_volume, allocator);
     }
 
 
@@ -396,6 +405,22 @@ void StartStreamIngestRequest::SetMaxDuration(const int64_t& _maxDuration)
 bool StartStreamIngestRequest::MaxDurationHasBeenSet() const
 {
     return m_maxDurationHasBeenSet;
+}
+
+uint64_t StartStreamIngestRequest::GetVolume() const
+{
+    return m_volume;
+}
+
+void StartStreamIngestRequest::SetVolume(const uint64_t& _volume)
+{
+    m_volume = _volume;
+    m_volumeHasBeenSet = true;
+}
+
+bool StartStreamIngestRequest::VolumeHasBeenSet() const
+{
+    return m_volumeHasBeenSet;
 }
 
 

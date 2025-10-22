@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -154,21 +154,21 @@ namespace TencentCloud
                     /**
                      * 获取该值已废弃
                      * @return CreateTime 该值已废弃
-                     * 
+                     * @deprecated
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置该值已废弃
                      * @param _createTime 该值已废弃
-                     * 
+                     * @deprecated
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -192,6 +192,27 @@ namespace TencentCloud
                      * 
                      */
                     bool MaxUserConnectionsHasBeenSet() const;
+
+                    /**
+                     * 获取用户账号是否开启了密码轮转
+                     * @return OpenCam 用户账号是否开启了密码轮转
+                     * 
+                     */
+                    bool GetOpenCam() const;
+
+                    /**
+                     * 设置用户账号是否开启了密码轮转
+                     * @param _openCam 用户账号是否开启了密码轮转
+                     * 
+                     */
+                    void SetOpenCam(const bool& _openCam);
+
+                    /**
+                     * 判断参数 OpenCam 是否已赋值
+                     * @return OpenCam 是否已赋值
+                     * 
+                     */
+                    bool OpenCamHasBeenSet() const;
 
                 private:
 
@@ -236,6 +257,12 @@ namespace TencentCloud
                      */
                     int64_t m_maxUserConnections;
                     bool m_maxUserConnectionsHasBeenSet;
+
+                    /**
+                     * 用户账号是否开启了密码轮转
+                     */
+                    bool m_openCam;
+                    bool m_openCamHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -212,6 +212,49 @@ GoosefsClient::BatchDeleteClientNodesOutcomeCallable GoosefsClient::BatchDeleteC
     return task->get_future();
 }
 
+GoosefsClient::BuildClientNodeMountCommandOutcome GoosefsClient::BuildClientNodeMountCommand(const BuildClientNodeMountCommandRequest &request)
+{
+    auto outcome = MakeRequest(request, "BuildClientNodeMountCommand");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BuildClientNodeMountCommandResponse rsp = BuildClientNodeMountCommandResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BuildClientNodeMountCommandOutcome(rsp);
+        else
+            return BuildClientNodeMountCommandOutcome(o.GetError());
+    }
+    else
+    {
+        return BuildClientNodeMountCommandOutcome(outcome.GetError());
+    }
+}
+
+void GoosefsClient::BuildClientNodeMountCommandAsync(const BuildClientNodeMountCommandRequest& request, const BuildClientNodeMountCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BuildClientNodeMountCommand(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GoosefsClient::BuildClientNodeMountCommandOutcomeCallable GoosefsClient::BuildClientNodeMountCommandCallable(const BuildClientNodeMountCommandRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BuildClientNodeMountCommandOutcome()>>(
+        [this, request]()
+        {
+            return this->BuildClientNodeMountCommand(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GoosefsClient::CreateDataRepositoryTaskOutcome GoosefsClient::CreateDataRepositoryTask(const CreateDataRepositoryTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDataRepositoryTask");
@@ -298,6 +341,49 @@ GoosefsClient::CreateFileSystemOutcomeCallable GoosefsClient::CreateFileSystemCa
     return task->get_future();
 }
 
+GoosefsClient::CreateFilesetOutcome GoosefsClient::CreateFileset(const CreateFilesetRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateFileset");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateFilesetResponse rsp = CreateFilesetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateFilesetOutcome(rsp);
+        else
+            return CreateFilesetOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateFilesetOutcome(outcome.GetError());
+    }
+}
+
+void GoosefsClient::CreateFilesetAsync(const CreateFilesetRequest& request, const CreateFilesetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateFileset(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GoosefsClient::CreateFilesetOutcomeCallable GoosefsClient::CreateFilesetCallable(const CreateFilesetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateFilesetOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateFileset(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GoosefsClient::DeleteCrossVpcSubnetSupportForClientNodeOutcome GoosefsClient::DeleteCrossVpcSubnetSupportForClientNode(const DeleteCrossVpcSubnetSupportForClientNodeRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCrossVpcSubnetSupportForClientNode");
@@ -377,6 +463,49 @@ GoosefsClient::DeleteFileSystemOutcomeCallable GoosefsClient::DeleteFileSystemCa
         [this, request]()
         {
             return this->DeleteFileSystem(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GoosefsClient::DeleteFilesetOutcome GoosefsClient::DeleteFileset(const DeleteFilesetRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteFileset");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteFilesetResponse rsp = DeleteFilesetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteFilesetOutcome(rsp);
+        else
+            return DeleteFilesetOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteFilesetOutcome(outcome.GetError());
+    }
+}
+
+void GoosefsClient::DeleteFilesetAsync(const DeleteFilesetRequest& request, const DeleteFilesetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteFileset(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GoosefsClient::DeleteFilesetOutcomeCallable GoosefsClient::DeleteFilesetCallable(const DeleteFilesetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteFilesetOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteFileset(request);
         }
     );
 
@@ -685,6 +814,92 @@ GoosefsClient::DescribeFileSystemsOutcomeCallable GoosefsClient::DescribeFileSys
     return task->get_future();
 }
 
+GoosefsClient::DescribeFilesetGeneralConfigOutcome GoosefsClient::DescribeFilesetGeneralConfig(const DescribeFilesetGeneralConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFilesetGeneralConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFilesetGeneralConfigResponse rsp = DescribeFilesetGeneralConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFilesetGeneralConfigOutcome(rsp);
+        else
+            return DescribeFilesetGeneralConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFilesetGeneralConfigOutcome(outcome.GetError());
+    }
+}
+
+void GoosefsClient::DescribeFilesetGeneralConfigAsync(const DescribeFilesetGeneralConfigRequest& request, const DescribeFilesetGeneralConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFilesetGeneralConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GoosefsClient::DescribeFilesetGeneralConfigOutcomeCallable GoosefsClient::DescribeFilesetGeneralConfigCallable(const DescribeFilesetGeneralConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFilesetGeneralConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFilesetGeneralConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GoosefsClient::DescribeFilesetsOutcome GoosefsClient::DescribeFilesets(const DescribeFilesetsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFilesets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFilesetsResponse rsp = DescribeFilesetsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFilesetsOutcome(rsp);
+        else
+            return DescribeFilesetsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFilesetsOutcome(outcome.GetError());
+    }
+}
+
+void GoosefsClient::DescribeFilesetsAsync(const DescribeFilesetsRequest& request, const DescribeFilesetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFilesets(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GoosefsClient::DescribeFilesetsOutcomeCallable GoosefsClient::DescribeFilesetsCallable(const DescribeFilesetsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFilesetsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFilesets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GoosefsClient::DetachFileSystemBucketOutcome GoosefsClient::DetachFileSystemBucket(const DetachFileSystemBucketRequest &request)
 {
     auto outcome = MakeRequest(request, "DetachFileSystemBucket");
@@ -893,6 +1108,92 @@ GoosefsClient::QueryDataRepositoryBandwidthOutcomeCallable GoosefsClient::QueryD
         [this, request]()
         {
             return this->QueryDataRepositoryBandwidth(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GoosefsClient::UpdateFilesetOutcome GoosefsClient::UpdateFileset(const UpdateFilesetRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateFileset");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateFilesetResponse rsp = UpdateFilesetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateFilesetOutcome(rsp);
+        else
+            return UpdateFilesetOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateFilesetOutcome(outcome.GetError());
+    }
+}
+
+void GoosefsClient::UpdateFilesetAsync(const UpdateFilesetRequest& request, const UpdateFilesetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateFileset(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GoosefsClient::UpdateFilesetOutcomeCallable GoosefsClient::UpdateFilesetCallable(const UpdateFilesetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateFilesetOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateFileset(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GoosefsClient::UpdateFilesetGeneralConfigOutcome GoosefsClient::UpdateFilesetGeneralConfig(const UpdateFilesetGeneralConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateFilesetGeneralConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateFilesetGeneralConfigResponse rsp = UpdateFilesetGeneralConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateFilesetGeneralConfigOutcome(rsp);
+        else
+            return UpdateFilesetGeneralConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateFilesetGeneralConfigOutcome(outcome.GetError());
+    }
+}
+
+void GoosefsClient::UpdateFilesetGeneralConfigAsync(const UpdateFilesetGeneralConfigRequest& request, const UpdateFilesetGeneralConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateFilesetGeneralConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GoosefsClient::UpdateFilesetGeneralConfigOutcomeCallable GoosefsClient::UpdateFilesetGeneralConfigCallable(const UpdateFilesetGeneralConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateFilesetGeneralConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateFilesetGeneralConfig(request);
         }
     );
 

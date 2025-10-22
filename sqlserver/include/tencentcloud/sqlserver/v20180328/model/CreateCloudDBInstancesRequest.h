@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -526,6 +526,69 @@ namespace TencentCloud
                      */
                     bool TimeZoneHasBeenSet() const;
 
+                    /**
+                     * 获取是否多节点架构实例，默认值为false。当MultiNodes = true时，参数MultiZones必须取值为true。
+                     * @return MultiNodes 是否多节点架构实例，默认值为false。当MultiNodes = true时，参数MultiZones必须取值为true。
+                     * 
+                     */
+                    bool GetMultiNodes() const;
+
+                    /**
+                     * 设置是否多节点架构实例，默认值为false。当MultiNodes = true时，参数MultiZones必须取值为true。
+                     * @param _multiNodes 是否多节点架构实例，默认值为false。当MultiNodes = true时，参数MultiZones必须取值为true。
+                     * 
+                     */
+                    void SetMultiNodes(const bool& _multiNodes);
+
+                    /**
+                     * 判断参数 MultiNodes 是否已赋值
+                     * @return MultiNodes 是否已赋值
+                     * 
+                     */
+                    bool MultiNodesHasBeenSet() const;
+
+                    /**
+                     * 获取备节点可用区，默认为空。当MultiNodes = true时，主节点和备节点可用区不能全部相同。备机可用区集合最小为2个，最大不超过5个。
+                     * @return DrZones 备节点可用区，默认为空。当MultiNodes = true时，主节点和备节点可用区不能全部相同。备机可用区集合最小为2个，最大不超过5个。
+                     * 
+                     */
+                    std::vector<std::string> GetDrZones() const;
+
+                    /**
+                     * 设置备节点可用区，默认为空。当MultiNodes = true时，主节点和备节点可用区不能全部相同。备机可用区集合最小为2个，最大不超过5个。
+                     * @param _drZones 备节点可用区，默认为空。当MultiNodes = true时，主节点和备节点可用区不能全部相同。备机可用区集合最小为2个，最大不超过5个。
+                     * 
+                     */
+                    void SetDrZones(const std::vector<std::string>& _drZones);
+
+                    /**
+                     * 判断参数 DrZones 是否已赋值
+                     * @return DrZones 是否已赋值
+                     * 
+                     */
+                    bool DrZonesHasBeenSet() const;
+
+                    /**
+                     * 获取磁盘加密标识，0-不加密，1-加密
+                     * @return DiskEncryptFlag 磁盘加密标识，0-不加密，1-加密
+                     * 
+                     */
+                    int64_t GetDiskEncryptFlag() const;
+
+                    /**
+                     * 设置磁盘加密标识，0-不加密，1-加密
+                     * @param _diskEncryptFlag 磁盘加密标识，0-不加密，1-加密
+                     * 
+                     */
+                    void SetDiskEncryptFlag(const int64_t& _diskEncryptFlag);
+
+                    /**
+                     * 判断参数 DiskEncryptFlag 是否已赋值
+                     * @return DiskEncryptFlag 是否已赋值
+                     * 
+                     */
+                    bool DiskEncryptFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -665,6 +728,24 @@ namespace TencentCloud
                      */
                     std::string m_timeZone;
                     bool m_timeZoneHasBeenSet;
+
+                    /**
+                     * 是否多节点架构实例，默认值为false。当MultiNodes = true时，参数MultiZones必须取值为true。
+                     */
+                    bool m_multiNodes;
+                    bool m_multiNodesHasBeenSet;
+
+                    /**
+                     * 备节点可用区，默认为空。当MultiNodes = true时，主节点和备节点可用区不能全部相同。备机可用区集合最小为2个，最大不超过5个。
+                     */
+                    std::vector<std::string> m_drZones;
+                    bool m_drZonesHasBeenSet;
+
+                    /**
+                     * 磁盘加密标识，0-不加密，1-加密
+                     */
+                    int64_t m_diskEncryptFlag;
+                    bool m_diskEncryptFlagHasBeenSet;
 
                 };
             }

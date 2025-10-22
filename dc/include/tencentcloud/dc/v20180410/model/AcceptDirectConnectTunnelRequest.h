@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取专用通道ID。
-                     * @return DirectConnectTunnelId 专用通道ID。
+                     * 获取专用通道ID。可以通过[DescribeDirectConnectTunnels](https://cloud.tencent.com/document/product/216/19819)接口获取。
+                     * @return DirectConnectTunnelId 专用通道ID。可以通过[DescribeDirectConnectTunnels](https://cloud.tencent.com/document/product/216/19819)接口获取。
                      * 
                      */
                     std::string GetDirectConnectTunnelId() const;
 
                     /**
-                     * 设置专用通道ID。
-                     * @param _directConnectTunnelId 专用通道ID。
+                     * 设置专用通道ID。可以通过[DescribeDirectConnectTunnels](https://cloud.tencent.com/document/product/216/19819)接口获取。
+                     * @param _directConnectTunnelId 专用通道ID。可以通过[DescribeDirectConnectTunnels](https://cloud.tencent.com/document/product/216/19819)接口获取。
                      * 
                      */
                     void SetDirectConnectTunnelId(const std::string& _directConnectTunnelId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 专用通道ID。
+                     * 专用通道ID。可以通过[DescribeDirectConnectTunnels](https://cloud.tencent.com/document/product/216/19819)接口获取。
                      */
                     std::string m_directConnectTunnelId;
                     bool m_directConnectTunnelIdHasBeenSet;

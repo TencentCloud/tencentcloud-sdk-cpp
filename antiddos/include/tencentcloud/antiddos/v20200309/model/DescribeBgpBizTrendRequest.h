@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取统计纬度，可取值intraffic, outtraffic, inpkg, outpkg
-                     * @return MetricName 统计纬度，可取值intraffic, outtraffic, inpkg, outpkg
+                     * 获取统计维度，可取值intraffic, outtraffic, inpkg, outpkg； intraffic：入流量 outtraffic：出流量 inpkg：入包速率 outpkg：出包速率
+                     * @return MetricName 统计维度，可取值intraffic, outtraffic, inpkg, outpkg； intraffic：入流量 outtraffic：出流量 inpkg：入包速率 outpkg：出包速率
                      * 
                      */
                     std::string GetMetricName() const;
 
                     /**
-                     * 设置统计纬度，可取值intraffic, outtraffic, inpkg, outpkg
-                     * @param _metricName 统计纬度，可取值intraffic, outtraffic, inpkg, outpkg
+                     * 设置统计维度，可取值intraffic, outtraffic, inpkg, outpkg； intraffic：入流量 outtraffic：出流量 inpkg：入包速率 outpkg：出包速率
+                     * @param _metricName 统计维度，可取值intraffic, outtraffic, inpkg, outpkg； intraffic：入流量 outtraffic：出流量 inpkg：入包速率 outpkg：出包速率
                      * 
                      */
                     void SetMetricName(const std::string& _metricName);
@@ -189,7 +189,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 统计纬度，可取值intraffic, outtraffic, inpkg, outpkg
+                     * 统计维度，可取值intraffic, outtraffic, inpkg, outpkg； intraffic：入流量 outtraffic：出流量 inpkg：入包速率 outpkg：出包速率
                      */
                     std::string m_metricName;
                     bool m_metricNameHasBeenSet;

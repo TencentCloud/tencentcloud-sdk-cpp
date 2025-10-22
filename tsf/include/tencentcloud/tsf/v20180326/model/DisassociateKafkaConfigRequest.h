@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取配置项id
-                     * @return ConfigId 配置项id
+                     * 获取日志配置项ID
+可通过调用[DescribeBusinessLogConfigs](https://cloud.tencent.com/document/product/649/75777)查询已创建的日志配置项列表或登录[控制台](https://console.cloud.tencent.com/tsf/observable/log?rid=1)进行查看
+                     * @return ConfigId 日志配置项ID
+可通过调用[DescribeBusinessLogConfigs](https://cloud.tencent.com/document/product/649/75777)查询已创建的日志配置项列表或登录[控制台](https://console.cloud.tencent.com/tsf/observable/log?rid=1)进行查看
                      * 
                      */
                     std::string GetConfigId() const;
 
                     /**
-                     * 设置配置项id
-                     * @param _configId 配置项id
+                     * 设置日志配置项ID
+可通过调用[DescribeBusinessLogConfigs](https://cloud.tencent.com/document/product/649/75777)查询已创建的日志配置项列表或登录[控制台](https://console.cloud.tencent.com/tsf/observable/log?rid=1)进行查看
+                     * @param _configId 日志配置项ID
+可通过调用[DescribeBusinessLogConfigs](https://cloud.tencent.com/document/product/649/75777)查询已创建的日志配置项列表或登录[控制台](https://console.cloud.tencent.com/tsf/observable/log?rid=1)进行查看
                      * 
                      */
                     void SetConfigId(const std::string& _configId);
@@ -64,15 +68,19 @@ namespace TencentCloud
                     bool ConfigIdHasBeenSet() const;
 
                     /**
-                     * 获取部署组id
-                     * @return GroupIds 部署组id
+                     * 获取部署组ID列表
+可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/product/649/36068)或[DescribeGroups](https://cloud.tencent.com/document/product/649/36065)查询已创建的部署组列表或登录[控制台](https://console.cloud.tencent.com/tsf/app-detail?rid=1&id=application-yo7kp9dv&tab=publish&subTab=group)进行查看
+                     * @return GroupIds 部署组ID列表
+可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/product/649/36068)或[DescribeGroups](https://cloud.tencent.com/document/product/649/36065)查询已创建的部署组列表或登录[控制台](https://console.cloud.tencent.com/tsf/app-detail?rid=1&id=application-yo7kp9dv&tab=publish&subTab=group)进行查看
                      * 
                      */
                     std::vector<std::string> GetGroupIds() const;
 
                     /**
-                     * 设置部署组id
-                     * @param _groupIds 部署组id
+                     * 设置部署组ID列表
+可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/product/649/36068)或[DescribeGroups](https://cloud.tencent.com/document/product/649/36065)查询已创建的部署组列表或登录[控制台](https://console.cloud.tencent.com/tsf/app-detail?rid=1&id=application-yo7kp9dv&tab=publish&subTab=group)进行查看
+                     * @param _groupIds 部署组ID列表
+可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/product/649/36068)或[DescribeGroups](https://cloud.tencent.com/document/product/649/36065)查询已创建的部署组列表或登录[控制台](https://console.cloud.tencent.com/tsf/app-detail?rid=1&id=application-yo7kp9dv&tab=publish&subTab=group)进行查看
                      * 
                      */
                     void SetGroupIds(const std::vector<std::string>& _groupIds);
@@ -87,13 +95,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 配置项id
+                     * 日志配置项ID
+可通过调用[DescribeBusinessLogConfigs](https://cloud.tencent.com/document/product/649/75777)查询已创建的日志配置项列表或登录[控制台](https://console.cloud.tencent.com/tsf/observable/log?rid=1)进行查看
                      */
                     std::string m_configId;
                     bool m_configIdHasBeenSet;
 
                     /**
-                     * 部署组id
+                     * 部署组ID列表
+可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/product/649/36068)或[DescribeGroups](https://cloud.tencent.com/document/product/649/36065)查询已创建的部署组列表或登录[控制台](https://console.cloud.tencent.com/tsf/app-detail?rid=1&id=application-yo7kp9dv&tab=publish&subTab=group)进行查看
                      */
                     std::vector<std::string> m_groupIds;
                     bool m_groupIdsHasBeenSet;

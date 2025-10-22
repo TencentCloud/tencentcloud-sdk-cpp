@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -233,10 +233,10 @@ namespace TencentCloud
                     bool ProtoInfoHasBeenSet() const;
 
                     /**
-                     * 获取业务类型可取值domain, port
+                     * 获取业务类型：</br>
 port：端口业务
 domain：域名业务
-                     * @return BusinessType 业务类型可取值domain, port
+                     * @return BusinessType 业务类型：</br>
 port：端口业务
 domain：域名业务
                      * 
@@ -244,10 +244,10 @@ domain：域名业务
                     std::string GetBusinessType() const;
 
                     /**
-                     * 设置业务类型可取值domain, port
+                     * 设置业务类型：</br>
 port：端口业务
 domain：域名业务
-                     * @param _businessType 业务类型可取值domain, port
+                     * @param _businessType 业务类型：</br>
 port：端口业务
 domain：域名业务
                      * 
@@ -318,7 +318,7 @@ domain：域名业务
                     bool m_protoInfoHasBeenSet;
 
                     /**
-                     * 业务类型可取值domain, port
+                     * 业务类型：</br>
 port：端口业务
 domain：域名业务
                      */

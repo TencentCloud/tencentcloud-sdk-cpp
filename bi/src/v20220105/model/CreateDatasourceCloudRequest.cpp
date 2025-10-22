@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,7 +42,9 @@ CreateDatasourceCloudRequest::CreateDatasourceCloudRequest() :
     m_dataOriginHasBeenSet(false),
     m_dataOriginProjectIdHasBeenSet(false),
     m_dataOriginDatasourceIdHasBeenSet(false),
-    m_clusterIdHasBeenSet(false)
+    m_clusterIdHasBeenSet(false),
+    m_schemaHasBeenSet(false),
+    m_dbVersionHasBeenSet(false)
 {
 }
 
@@ -211,6 +213,22 @@ string CreateDatasourceCloudRequest::ToJsonString() const
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_schemaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Schema";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_schema.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dbVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DbVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dbVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -539,6 +557,38 @@ void CreateDatasourceCloudRequest::SetClusterId(const string& _clusterId)
 bool CreateDatasourceCloudRequest::ClusterIdHasBeenSet() const
 {
     return m_clusterIdHasBeenSet;
+}
+
+string CreateDatasourceCloudRequest::GetSchema() const
+{
+    return m_schema;
+}
+
+void CreateDatasourceCloudRequest::SetSchema(const string& _schema)
+{
+    m_schema = _schema;
+    m_schemaHasBeenSet = true;
+}
+
+bool CreateDatasourceCloudRequest::SchemaHasBeenSet() const
+{
+    return m_schemaHasBeenSet;
+}
+
+string CreateDatasourceCloudRequest::GetDbVersion() const
+{
+    return m_dbVersion;
+}
+
+void CreateDatasourceCloudRequest::SetDbVersion(const string& _dbVersion)
+{
+    m_dbVersion = _dbVersion;
+    m_dbVersionHasBeenSet = true;
+}
+
+bool CreateDatasourceCloudRequest::DbVersionHasBeenSet() const
+{
+    return m_dbVersionHasBeenSet;
 }
 
 

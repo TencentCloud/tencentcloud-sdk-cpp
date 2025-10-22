@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,29 +50,67 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否启用MIG特性
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MIGEnable 是否启用MIG特性
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取CUDA版本信息
+                     * @return CUDA CUDA版本信息
                      * 
                      */
-                    bool GetMIGEnable() const;
+                    DriverVersion GetCUDA() const;
 
                     /**
-                     * 设置是否启用MIG特性
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _mIGEnable 是否启用MIG特性
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置CUDA版本信息
+                     * @param _cUDA CUDA版本信息
                      * 
                      */
-                    void SetMIGEnable(const bool& _mIGEnable);
+                    void SetCUDA(const DriverVersion& _cUDA);
 
                     /**
-                     * 判断参数 MIGEnable 是否已赋值
-                     * @return MIGEnable 是否已赋值
+                     * 判断参数 CUDA 是否已赋值
+                     * @return CUDA 是否已赋值
                      * 
                      */
-                    bool MIGEnableHasBeenSet() const;
+                    bool CUDAHasBeenSet() const;
+
+                    /**
+                     * 获取cuDNN版本信息
+                     * @return CUDNN cuDNN版本信息
+                     * 
+                     */
+                    CUDNN GetCUDNN() const;
+
+                    /**
+                     * 设置cuDNN版本信息
+                     * @param _cUDNN cuDNN版本信息
+                     * 
+                     */
+                    void SetCUDNN(const CUDNN& _cUDNN);
+
+                    /**
+                     * 判断参数 CUDNN 是否已赋值
+                     * @return CUDNN 是否已赋值
+                     * 
+                     */
+                    bool CUDNNHasBeenSet() const;
+
+                    /**
+                     * 获取自定义GPU驱动信息
+                     * @return CustomDriver 自定义GPU驱动信息
+                     * 
+                     */
+                    CustomDriver GetCustomDriver() const;
+
+                    /**
+                     * 设置自定义GPU驱动信息
+                     * @param _customDriver 自定义GPU驱动信息
+                     * 
+                     */
+                    void SetCustomDriver(const CustomDriver& _customDriver);
+
+                    /**
+                     * 判断参数 CustomDriver 是否已赋值
+                     * @return CustomDriver 是否已赋值
+                     * 
+                     */
+                    bool CustomDriverHasBeenSet() const;
 
                     /**
                      * 获取GPU驱动版本信息
@@ -96,88 +134,45 @@ namespace TencentCloud
                     bool DriverHasBeenSet() const;
 
                     /**
-                     * 获取CUDA版本信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CUDA CUDA版本信息
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取是否启用MIG特性
+                     * @return MIGEnable 是否启用MIG特性
                      * 
                      */
-                    DriverVersion GetCUDA() const;
+                    bool GetMIGEnable() const;
 
                     /**
-                     * 设置CUDA版本信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cUDA CUDA版本信息
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置是否启用MIG特性
+                     * @param _mIGEnable 是否启用MIG特性
                      * 
                      */
-                    void SetCUDA(const DriverVersion& _cUDA);
+                    void SetMIGEnable(const bool& _mIGEnable);
 
                     /**
-                     * 判断参数 CUDA 是否已赋值
-                     * @return CUDA 是否已赋值
+                     * 判断参数 MIGEnable 是否已赋值
+                     * @return MIGEnable 是否已赋值
                      * 
                      */
-                    bool CUDAHasBeenSet() const;
-
-                    /**
-                     * 获取cuDNN版本信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CUDNN cuDNN版本信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    CUDNN GetCUDNN() const;
-
-                    /**
-                     * 设置cuDNN版本信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cUDNN cuDNN版本信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetCUDNN(const CUDNN& _cUDNN);
-
-                    /**
-                     * 判断参数 CUDNN 是否已赋值
-                     * @return CUDNN 是否已赋值
-                     * 
-                     */
-                    bool CUDNNHasBeenSet() const;
-
-                    /**
-                     * 获取自定义GPU驱动信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CustomDriver 自定义GPU驱动信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    CustomDriver GetCustomDriver() const;
-
-                    /**
-                     * 设置自定义GPU驱动信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _customDriver 自定义GPU驱动信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetCustomDriver(const CustomDriver& _customDriver);
-
-                    /**
-                     * 判断参数 CustomDriver 是否已赋值
-                     * @return CustomDriver 是否已赋值
-                     * 
-                     */
-                    bool CustomDriverHasBeenSet() const;
+                    bool MIGEnableHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 是否启用MIG特性
-注意：此字段可能返回 null，表示取不到有效值。
+                     * CUDA版本信息
                      */
-                    bool m_mIGEnable;
-                    bool m_mIGEnableHasBeenSet;
+                    DriverVersion m_cUDA;
+                    bool m_cUDAHasBeenSet;
+
+                    /**
+                     * cuDNN版本信息
+                     */
+                    CUDNN m_cUDNN;
+                    bool m_cUDNNHasBeenSet;
+
+                    /**
+                     * 自定义GPU驱动信息
+                     */
+                    CustomDriver m_customDriver;
+                    bool m_customDriverHasBeenSet;
 
                     /**
                      * GPU驱动版本信息
@@ -186,25 +181,10 @@ namespace TencentCloud
                     bool m_driverHasBeenSet;
 
                     /**
-                     * CUDA版本信息
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 是否启用MIG特性
                      */
-                    DriverVersion m_cUDA;
-                    bool m_cUDAHasBeenSet;
-
-                    /**
-                     * cuDNN版本信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    CUDNN m_cUDNN;
-                    bool m_cUDNNHasBeenSet;
-
-                    /**
-                     * 自定义GPU驱动信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    CustomDriver m_customDriver;
-                    bool m_customDriverHasBeenSet;
+                    bool m_mIGEnable;
+                    bool m_mIGEnableHasBeenSet;
 
                 };
             }

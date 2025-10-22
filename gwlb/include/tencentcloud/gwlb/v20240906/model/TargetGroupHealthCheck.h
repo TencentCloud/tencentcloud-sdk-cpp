@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,27 +68,27 @@ namespace TencentCloud
                     bool HealthSwitchHasBeenSet() const;
 
                     /**
-                     * 获取健康检查使用的协议。支持ping和tcp，默认为ping。
+                     * 获取健康检查使用的协议。支持PING和TCP两种方式，默认为PING。
 
-- PING: icmp
-- TCP: tcp
-                     * @return Protocol 健康检查使用的协议。支持ping和tcp，默认为ping。
+- icmp: 使用PING的方式进行健康检查
+- tcp: 使用TCP连接的方式进行健康检查
+                     * @return Protocol 健康检查使用的协议。支持PING和TCP两种方式，默认为PING。
 
-- PING: icmp
-- TCP: tcp
+- icmp: 使用PING的方式进行健康检查
+- tcp: 使用TCP连接的方式进行健康检查
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置健康检查使用的协议。支持ping和tcp，默认为ping。
+                     * 设置健康检查使用的协议。支持PING和TCP两种方式，默认为PING。
 
-- PING: icmp
-- TCP: tcp
-                     * @param _protocol 健康检查使用的协议。支持ping和tcp，默认为ping。
+- icmp: 使用PING的方式进行健康检查
+- tcp: 使用TCP连接的方式进行健康检查
+                     * @param _protocol 健康检查使用的协议。支持PING和TCP两种方式，默认为PING。
 
-- PING: icmp
-- TCP: tcp
+- icmp: 使用PING的方式进行健康检查
+- tcp: 使用TCP连接的方式进行健康检查
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -101,18 +101,18 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取健康检查端口，探测协议未tcp时，该参数必填。
+                     * 获取健康检查端口，探测协议为tcp时，该参数必填。
 
-                     * @return Port 健康检查端口，探测协议未tcp时，该参数必填。
+                     * @return Port 健康检查端口，探测协议为tcp时，该参数必填。
 
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
-                     * 设置健康检查端口，探测协议未tcp时，该参数必填。
+                     * 设置健康检查端口，探测协议为tcp时，该参数必填。
 
-                     * @param _port 健康检查端口，探测协议未tcp时，该参数必填。
+                     * @param _port 健康检查端口，探测协议为tcp时，该参数必填。
 
                      * 
                      */
@@ -168,15 +168,15 @@ namespace TencentCloud
                     bool IntervalTimeHasBeenSet() const;
 
                     /**
-                     * 获取检测健康阈值。 默认为3秒。 可配置范围：2 - 10次。
-                     * @return HealthNum 检测健康阈值。 默认为3秒。 可配置范围：2 - 10次。
+                     * 获取检测健康阈值。 默认为3次。 可配置范围：2 - 10次。
+                     * @return HealthNum 检测健康阈值。 默认为3次。 可配置范围：2 - 10次。
                      * 
                      */
                     int64_t GetHealthNum() const;
 
                     /**
-                     * 设置检测健康阈值。 默认为3秒。 可配置范围：2 - 10次。
-                     * @param _healthNum 检测健康阈值。 默认为3秒。 可配置范围：2 - 10次。
+                     * 设置检测健康阈值。 默认为3次。 可配置范围：2 - 10次。
+                     * @param _healthNum 检测健康阈值。 默认为3次。 可配置范围：2 - 10次。
                      * 
                      */
                     void SetHealthNum(const int64_t& _healthNum);
@@ -189,15 +189,15 @@ namespace TencentCloud
                     bool HealthNumHasBeenSet() const;
 
                     /**
-                     * 获取检测不健康阈值。 默认为3秒。 可配置范围：2 - 10次。
-                     * @return UnHealthNum 检测不健康阈值。 默认为3秒。 可配置范围：2 - 10次。
+                     * 获取检测不健康阈值。 默认为3次。 可配置范围：2 - 10次。
+                     * @return UnHealthNum 检测不健康阈值。 默认为3次。 可配置范围：2 - 10次。
                      * 
                      */
                     int64_t GetUnHealthNum() const;
 
                     /**
-                     * 设置检测不健康阈值。 默认为3秒。 可配置范围：2 - 10次。
-                     * @param _unHealthNum 检测不健康阈值。 默认为3秒。 可配置范围：2 - 10次。
+                     * 设置检测不健康阈值。 默认为3次。 可配置范围：2 - 10次。
+                     * @param _unHealthNum 检测不健康阈值。 默认为3次。 可配置范围：2 - 10次。
                      * 
                      */
                     void SetUnHealthNum(const int64_t& _unHealthNum);
@@ -218,16 +218,16 @@ namespace TencentCloud
                     bool m_healthSwitchHasBeenSet;
 
                     /**
-                     * 健康检查使用的协议。支持ping和tcp，默认为ping。
+                     * 健康检查使用的协议。支持PING和TCP两种方式，默认为PING。
 
-- PING: icmp
-- TCP: tcp
+- icmp: 使用PING的方式进行健康检查
+- tcp: 使用TCP连接的方式进行健康检查
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 健康检查端口，探测协议未tcp时，该参数必填。
+                     * 健康检查端口，探测协议为tcp时，该参数必填。
 
                      */
                     int64_t m_port;
@@ -246,13 +246,13 @@ namespace TencentCloud
                     bool m_intervalTimeHasBeenSet;
 
                     /**
-                     * 检测健康阈值。 默认为3秒。 可配置范围：2 - 10次。
+                     * 检测健康阈值。 默认为3次。 可配置范围：2 - 10次。
                      */
                     int64_t m_healthNum;
                     bool m_healthNumHasBeenSet;
 
                     /**
-                     * 检测不健康阈值。 默认为3秒。 可配置范围：2 - 10次。
+                     * 检测不健康阈值。 默认为3次。 可配置范围：2 - 10次。
                      */
                     int64_t m_unHealthNum;
                     bool m_unHealthNumHasBeenSet;

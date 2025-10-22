@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ using namespace std;
 DescribeOpsMakePlanTasksRequest::DescribeOpsMakePlanTasksRequest() :
     m_projectIdHasBeenSet(false),
     m_planIdHasBeenSet(false),
+    m_stateListHasBeenSet(false),
     m_pageNumberHasBeenSet(false),
     m_pageSizeHasBeenSet(false)
 {
@@ -51,6 +52,19 @@ string DescribeOpsMakePlanTasksRequest::ToJsonString() const
         string key = "PlanId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_planId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_stateListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StateList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_stateList.begin(); itr != m_stateList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
     if (m_pageNumberHasBeenSet)
@@ -107,6 +121,22 @@ void DescribeOpsMakePlanTasksRequest::SetPlanId(const string& _planId)
 bool DescribeOpsMakePlanTasksRequest::PlanIdHasBeenSet() const
 {
     return m_planIdHasBeenSet;
+}
+
+vector<int64_t> DescribeOpsMakePlanTasksRequest::GetStateList() const
+{
+    return m_stateList;
+}
+
+void DescribeOpsMakePlanTasksRequest::SetStateList(const vector<int64_t>& _stateList)
+{
+    m_stateList = _stateList;
+    m_stateListHasBeenSet = true;
+}
+
+bool DescribeOpsMakePlanTasksRequest::StateListHasBeenSet() const
+{
+    return m_stateListHasBeenSet;
 }
 
 int64_t DescribeOpsMakePlanTasksRequest::GetPageNumber() const

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ using namespace std;
 DescribeDatabaseAuditRecordsResponse::DescribeDatabaseAuditRecordsResponse() :
     m_totalCountHasBeenSet(false),
     m_slowQueryRecordsHasBeenSet(false),
+    m_recordsHasBeenSet(false),
     m_errorMsgHasBeenSet(false)
 {
 }
@@ -91,6 +92,26 @@ CoreInternalOutcome DescribeDatabaseAuditRecordsResponse::Deserialize(const stri
         m_slowQueryRecordsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Records") && !rsp["Records"].IsNull())
+    {
+        if (!rsp["Records"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Records` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Records"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DataBaseAuditRecord item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_records.push_back(item);
+        }
+        m_recordsHasBeenSet = true;
+    }
+
     if (rsp.HasMember("ErrorMsg") && !rsp["ErrorMsg"].IsNull())
     {
         if (!rsp["ErrorMsg"].IsString())
@@ -128,6 +149,21 @@ string DescribeDatabaseAuditRecordsResponse::ToJsonString() const
         m_slowQueryRecords.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_recordsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Records";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_records.begin(); itr != m_records.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_errorMsgHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -140,7 +176,7 @@ string DescribeDatabaseAuditRecordsResponse::ToJsonString() const
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -166,6 +202,16 @@ DataBaseAuditRecord DescribeDatabaseAuditRecordsResponse::GetSlowQueryRecords() 
 bool DescribeDatabaseAuditRecordsResponse::SlowQueryRecordsHasBeenSet() const
 {
     return m_slowQueryRecordsHasBeenSet;
+}
+
+vector<DataBaseAuditRecord> DescribeDatabaseAuditRecordsResponse::GetRecords() const
+{
+    return m_records;
+}
+
+bool DescribeDatabaseAuditRecordsResponse::RecordsHasBeenSet() const
+{
+    return m_recordsHasBeenSet;
 }
 
 string DescribeDatabaseAuditRecordsResponse::GetErrorMsg() const

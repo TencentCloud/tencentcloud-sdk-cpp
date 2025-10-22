@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,18 +54,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库代理组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyGroup 数据库代理组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ProxyGroup GetProxyGroup() const;
 
                     /**
                      * 设置数据库代理组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _proxyGroup 数据库代理组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProxyGroup(const ProxyGroup& _proxyGroup);
@@ -79,18 +75,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库代理组读写分离信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyGroupRwInfo 数据库代理组读写分离信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ProxyGroupRwInfo GetProxyGroupRwInfo() const;
 
                     /**
                      * 设置数据库代理组读写分离信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _proxyGroupRwInfo 数据库代理组读写分离信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProxyGroupRwInfo(const ProxyGroupRwInfo& _proxyGroupRwInfo);
@@ -129,18 +121,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库代理连接池信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConnectionPool 数据库代理连接池信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ProxyConnectionPoolInfo GetConnectionPool() const;
 
                     /**
                      * 设置数据库代理连接池信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _connectionPool 数据库代理连接池信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConnectionPool(const ProxyConnectionPoolInfo& _connectionPool);
@@ -179,18 +167,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库代理任务集
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tasks 数据库代理任务集
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ObjectTask> GetTasks() const;
 
                     /**
                      * 设置数据库代理任务集
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tasks 数据库代理任务集
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTasks(const std::vector<ObjectTask>& _tasks);
@@ -206,14 +190,12 @@ namespace TencentCloud
 
                     /**
                      * 数据库代理组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ProxyGroup m_proxyGroup;
                     bool m_proxyGroupHasBeenSet;
 
                     /**
                      * 数据库代理组读写分离信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ProxyGroupRwInfo m_proxyGroupRwInfo;
                     bool m_proxyGroupRwInfoHasBeenSet;
@@ -227,7 +209,6 @@ namespace TencentCloud
 
                     /**
                      * 数据库代理连接池信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ProxyConnectionPoolInfo m_connectionPool;
                     bool m_connectionPoolHasBeenSet;
@@ -241,7 +222,6 @@ namespace TencentCloud
 
                     /**
                      * 数据库代理任务集
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ObjectTask> m_tasks;
                     bool m_tasksHasBeenSet;

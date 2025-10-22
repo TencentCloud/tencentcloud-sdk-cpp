@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ ApproverOption::ApproverOption() :
     m_noTransferHasBeenSet(false),
     m_hideOneKeySignHasBeenSet(false),
     m_fillTypeHasBeenSet(false),
-    m_flowReadLimitHasBeenSet(false)
+    m_flowReadLimitHasBeenSet(false),
+    m_forbidAddSignDateHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome ApproverOption::Deserialize(const rapidjson::Value &value)
         m_flowReadLimitHasBeenSet = true;
     }
 
+    if (value.HasMember("ForbidAddSignDate") && !value["ForbidAddSignDate"].IsNull())
+    {
+        if (!value["ForbidAddSignDate"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApproverOption.ForbidAddSignDate` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_forbidAddSignDate = value["ForbidAddSignDate"].GetBool();
+        m_forbidAddSignDateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void ApproverOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "FlowReadLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_flowReadLimit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_forbidAddSignDateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForbidAddSignDate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_forbidAddSignDate, allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void ApproverOption::SetFlowReadLimit(const string& _flowReadLimit)
 bool ApproverOption::FlowReadLimitHasBeenSet() const
 {
     return m_flowReadLimitHasBeenSet;
+}
+
+bool ApproverOption::GetForbidAddSignDate() const
+{
+    return m_forbidAddSignDate;
+}
+
+void ApproverOption::SetForbidAddSignDate(const bool& _forbidAddSignDate)
+{
+    m_forbidAddSignDate = _forbidAddSignDate;
+    m_forbidAddSignDateHasBeenSet = true;
+}
+
+bool ApproverOption::ForbidAddSignDateHasBeenSet() const
+{
+    return m_forbidAddSignDateHasBeenSet;
 }
 

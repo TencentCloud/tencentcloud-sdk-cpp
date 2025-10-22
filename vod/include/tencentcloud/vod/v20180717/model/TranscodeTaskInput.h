@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -94,15 +94,15 @@ namespace TencentCloud
                     bool WatermarkSetHasBeenSet() const;
 
                     /**
-                     * 获取溯源水印，该功能已不再支持使用。
-                     * @return TraceWatermark 溯源水印，该功能已不再支持使用。
+                     * 获取溯源水印。
+                     * @return TraceWatermark 溯源水印。
                      * 
                      */
                     TraceWatermarkInput GetTraceWatermark() const;
 
                     /**
-                     * 设置溯源水印，该功能已不再支持使用。
-                     * @param _traceWatermark 溯源水印，该功能已不再支持使用。
+                     * 设置溯源水印。
+                     * @param _traceWatermark 溯源水印。
                      * 
                      */
                     void SetTraceWatermark(const TraceWatermarkInput& _traceWatermark);
@@ -115,15 +115,15 @@ namespace TencentCloud
                     bool TraceWatermarkHasBeenSet() const;
 
                     /**
-                     * 获取版权水印，该功能已不再支持使用。
-                     * @return CopyRightWatermark 版权水印，该功能已不再支持使用。
+                     * 获取版权水印。
+                     * @return CopyRightWatermark 版权水印。
                      * 
                      */
                     CopyRightWatermarkInput GetCopyRightWatermark() const;
 
                     /**
-                     * 设置版权水印，该功能已不再支持使用。
-                     * @param _copyRightWatermark 版权水印，该功能已不再支持使用。
+                     * 设置版权水印。
+                     * @param _copyRightWatermark 版权水印。
                      * 
                      */
                     void SetCopyRightWatermark(const CopyRightWatermarkInput& _copyRightWatermark);
@@ -258,13 +258,13 @@ namespace TencentCloud
                     bool m_watermarkSetHasBeenSet;
 
                     /**
-                     * 溯源水印，该功能已不再支持使用。
+                     * 溯源水印。
                      */
                     TraceWatermarkInput m_traceWatermark;
                     bool m_traceWatermarkHasBeenSet;
 
                     /**
-                     * 版权水印，该功能已不再支持使用。
+                     * 版权水印。
                      */
                     CopyRightWatermarkInput m_copyRightWatermark;
                     bool m_copyRightWatermarkHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,10 +44,12 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取一次核身流程的标识，有效时间为600秒；
-完成核身后，可用该标识获取验证结果信息。
-                     * @return EidToken 一次核身流程的标识，有效时间为600秒；
-完成核身后，可用该标识获取验证结果信息。
+                     * 获取一次核身流程的标识。
+- 有效时间为600秒。
+- 完成核身后，可用该标识获取验证结果信息。
+                     * @return EidToken 一次核身流程的标识。
+- 有效时间为600秒。
+- 完成核身后，可用该标识获取验证结果信息。
                      * 
                      */
                     std::string GetEidToken() const;
@@ -60,8 +62,10 @@ namespace TencentCloud
                     bool EidTokenHasBeenSet() const;
 
                     /**
-                     * 获取发起核身流程的URL，用于H5场景核身。
-                     * @return Url 发起核身流程的URL，用于H5场景核身。
+                     * 获取发起核身流程的URL。
+- 用于H5场景核身。
+                     * @return Url 发起核身流程的URL。
+- 用于H5场景核身。
                      * 
                      */
                     std::string GetUrl() const;
@@ -76,14 +80,16 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 一次核身流程的标识，有效时间为600秒；
-完成核身后，可用该标识获取验证结果信息。
+                     * 一次核身流程的标识。
+- 有效时间为600秒。
+- 完成核身后，可用该标识获取验证结果信息。
                      */
                     std::string m_eidToken;
                     bool m_eidTokenHasBeenSet;
 
                     /**
-                     * 发起核身流程的URL，用于H5场景核身。
+                     * 发起核身流程的URL。
+- 用于H5场景核身。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,6 +64,48 @@ namespace TencentCloud
                     bool AppTypeHasBeenSet() const;
 
                     /**
+                     * 获取应用模式 standard:标准模式, agent: agent模式，single_workflow：单工作流模式
+                     * @return Pattern 应用模式 standard:标准模式, agent: agent模式，single_workflow：单工作流模式
+                     * 
+                     */
+                    std::string GetPattern() const;
+
+                    /**
+                     * 设置应用模式 standard:标准模式, agent: agent模式，single_workflow：单工作流模式
+                     * @param _pattern 应用模式 standard:标准模式, agent: agent模式，single_workflow：单工作流模式
+                     * 
+                     */
+                    void SetPattern(const std::string& _pattern);
+
+                    /**
+                     * 判断参数 Pattern 是否已赋值
+                     * @return Pattern 是否已赋值
+                     * 
+                     */
+                    bool PatternHasBeenSet() const;
+
+                    /**
+                     * 获取模型类别 generate：生成模型，thought：思考模型,embedding模型，rerank：rerank模型
+                     * @return ModelCategory 模型类别 generate：生成模型，thought：思考模型,embedding模型，rerank：rerank模型
+                     * 
+                     */
+                    std::string GetModelCategory() const;
+
+                    /**
+                     * 设置模型类别 generate：生成模型，thought：思考模型,embedding模型，rerank：rerank模型
+                     * @param _modelCategory 模型类别 generate：生成模型，thought：思考模型,embedding模型，rerank：rerank模型
+                     * 
+                     */
+                    void SetModelCategory(const std::string& _modelCategory);
+
+                    /**
+                     * 判断参数 ModelCategory 是否已赋值
+                     * @return ModelCategory 是否已赋值
+                     * 
+                     */
+                    bool ModelCategoryHasBeenSet() const;
+
+                    /**
                      * 获取登录用户主账号(集成商模式必填)	
                      * @return LoginUin 登录用户主账号(集成商模式必填)	
                      * 
@@ -112,6 +154,18 @@ namespace TencentCloud
                      */
                     std::string m_appType;
                     bool m_appTypeHasBeenSet;
+
+                    /**
+                     * 应用模式 standard:标准模式, agent: agent模式，single_workflow：单工作流模式
+                     */
+                    std::string m_pattern;
+                    bool m_patternHasBeenSet;
+
+                    /**
+                     * 模型类别 generate：生成模型，thought：思考模型,embedding模型，rerank：rerank模型
+                     */
+                    std::string m_modelCategory;
+                    bool m_modelCategoryHasBeenSet;
 
                     /**
                      * 登录用户主账号(集成商模式必填)	

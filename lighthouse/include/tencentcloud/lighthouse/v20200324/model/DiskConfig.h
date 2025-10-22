@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,15 +68,31 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取云硬盘类型。
-                     * @return DiskType 云硬盘类型。
+                     * 获取云硬盘类型。枚举值如下：
+
+<li>CLOUD_BASIC：普通云硬盘</li>
+<li>CLOUD_PREMIUM：高性能云硬盘</li>
+<li>CLOUD_SSD：SSD云硬盘</li>
+                     * @return DiskType 云硬盘类型。枚举值如下：
+
+<li>CLOUD_BASIC：普通云硬盘</li>
+<li>CLOUD_PREMIUM：高性能云硬盘</li>
+<li>CLOUD_SSD：SSD云硬盘</li>
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置云硬盘类型。
-                     * @param _diskType 云硬盘类型。
+                     * 设置云硬盘类型。枚举值如下：
+
+<li>CLOUD_BASIC：普通云硬盘</li>
+<li>CLOUD_PREMIUM：高性能云硬盘</li>
+<li>CLOUD_SSD：SSD云硬盘</li>
+                     * @param _diskType 云硬盘类型。枚举值如下：
+
+<li>CLOUD_BASIC：普通云硬盘</li>
+<li>CLOUD_PREMIUM：高性能云硬盘</li>
+<li>CLOUD_SSD：SSD云硬盘</li>
                      * 
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -181,7 +197,11 @@ namespace TencentCloud
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 云硬盘类型。
+                     * 云硬盘类型。枚举值如下：
+
+<li>CLOUD_BASIC：普通云硬盘</li>
+<li>CLOUD_PREMIUM：高性能云硬盘</li>
+<li>CLOUD_SSD：SSD云硬盘</li>
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;

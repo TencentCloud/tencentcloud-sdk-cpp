@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -152,9 +152,7 @@ namespace TencentCloud
 
                     /**
                      * 获取该字段用于返回根据您的需求配置的额外附加信息（Extra），如未配置则默认返回值为空。<br>备注：不同客户或Biztype下返回信息不同，如需配置该字段请提交工单咨询或联系售后专员处理
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Extra 该字段用于返回根据您的需求配置的额外附加信息（Extra），如未配置则默认返回值为空。<br>备注：不同客户或Biztype下返回信息不同，如需配置该字段请提交工单咨询或联系售后专员处理
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExtra() const;
@@ -168,9 +166,7 @@ namespace TencentCloud
 
                     /**
                      * 获取该字段用于返回检测对象对应请求参数中的DataId，与输入的DataId字段中的内容对应
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataId 该字段用于返回检测对象对应请求参数中的DataId，与输入的DataId字段中的内容对应
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataId() const;
@@ -184,9 +180,7 @@ namespace TencentCloud
 
                     /**
                      * 获取该字段用于返回当前标签（Label）下的二级标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubLabel 该字段用于返回当前标签（Label）下的二级标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubLabel() const;
@@ -200,9 +194,7 @@ namespace TencentCloud
 
                     /**
                      * 获取该字段用于返回上下文关联文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContextText 该字段用于返回上下文关联文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContextText() const;
@@ -229,6 +221,20 @@ namespace TencentCloud
                      * 
                      */
                     bool SentimentAnalysisHasBeenSet() const;
+
+                    /**
+                     * 获取该字段用于标识本次审核决策归因，比如text_nlp_tianji标识是由nlp tianji模型给出的审核决策，text_keyword_public标识命中了业务的关键词库
+                     * @return HitType 该字段用于标识本次审核决策归因，比如text_nlp_tianji标识是由nlp tianji模型给出的审核决策，text_keyword_public标识命中了业务的关键词库
+                     * 
+                     */
+                    std::string GetHitType() const;
+
+                    /**
+                     * 判断参数 HitType 是否已赋值
+                     * @return HitType 是否已赋值
+                     * 
+                     */
+                    bool HitTypeHasBeenSet() const;
 
                 private:
 
@@ -279,28 +285,24 @@ namespace TencentCloud
 
                     /**
                      * 该字段用于返回根据您的需求配置的额外附加信息（Extra），如未配置则默认返回值为空。<br>备注：不同客户或Biztype下返回信息不同，如需配置该字段请提交工单咨询或联系售后专员处理
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_extra;
                     bool m_extraHasBeenSet;
 
                     /**
                      * 该字段用于返回检测对象对应请求参数中的DataId，与输入的DataId字段中的内容对应
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataId;
                     bool m_dataIdHasBeenSet;
 
                     /**
                      * 该字段用于返回当前标签（Label）下的二级标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subLabel;
                     bool m_subLabelHasBeenSet;
 
                     /**
                      * 该字段用于返回上下文关联文本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_contextText;
                     bool m_contextTextHasBeenSet;
@@ -311,6 +313,12 @@ namespace TencentCloud
                      */
                     SentimentAnalysis m_sentimentAnalysis;
                     bool m_sentimentAnalysisHasBeenSet;
+
+                    /**
+                     * 该字段用于标识本次审核决策归因，比如text_nlp_tianji标识是由nlp tianji模型给出的审核决策，text_keyword_public标识命中了业务的关键词库
+                     */
+                    std::string m_hitType;
+                    bool m_hitTypeHasBeenSet;
 
                 };
             }

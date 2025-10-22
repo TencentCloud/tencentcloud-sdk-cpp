@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -269,8 +269,8 @@ namespace TencentCloud
                     bool NotProtectMachineCntHasBeenSet() const;
 
                     /**
-                     * 获取已防护普惠版机器数（Lighthouse机器）
-                     * @return LHGeneralDiscountCnt 已防护普惠版机器数（Lighthouse机器）
+                     * 获取已防护轻量机器数（Lighthouse机器）
+                     * @return LHGeneralDiscountCnt 已防护轻量机器数（Lighthouse机器）
                      * 
                      */
                     uint64_t GetLHGeneralDiscountCnt() const;
@@ -423,7 +423,7 @@ namespace TencentCloud
                     bool m_notProtectMachineCntHasBeenSet;
 
                     /**
-                     * 已防护普惠版机器数（Lighthouse机器）
+                     * 已防护轻量机器数（Lighthouse机器）
                      */
                     uint64_t m_lHGeneralDiscountCnt;
                     bool m_lHGeneralDiscountCntHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -247,18 +247,18 @@ namespace TencentCloud
                     bool UnitPriceDiscountHighHasBeenSet() const;
 
                     /**
-                     * 获取后付费云盘的计价单元，取值范围：<br><li>HOUR：表示后付费云盘的计价单元是按小时计算。
+                     * 获取后付费云盘的计价单元，取值范围：<br><li>HOUR：表示后付费云盘的计价单元是按小时计算。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ChargeUnit 后付费云盘的计价单元，取值范围：<br><li>HOUR：表示后付费云盘的计价单元是按小时计算。
+                     * @return ChargeUnit 后付费云盘的计价单元，取值范围：<br><li>HOUR：表示后付费云盘的计价单元是按小时计算。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetChargeUnit() const;
 
                     /**
-                     * 设置后付费云盘的计价单元，取值范围：<br><li>HOUR：表示后付费云盘的计价单元是按小时计算。
+                     * 设置后付费云盘的计价单元，取值范围：<br><li>HOUR：表示后付费云盘的计价单元是按小时计算。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _chargeUnit 后付费云盘的计价单元，取值范围：<br><li>HOUR：表示后付费云盘的计价单元是按小时计算。
+                     * @param _chargeUnit 后付费云盘的计价单元，取值范围：<br><li>HOUR：表示后付费云盘的计价单元是按小时计算。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -330,7 +330,7 @@ namespace TencentCloud
                     bool m_unitPriceDiscountHighHasBeenSet;
 
                     /**
-                     * 后付费云盘的计价单元，取值范围：<br><li>HOUR：表示后付费云盘的计价单元是按小时计算。
+                     * 后付费云盘的计价单元，取值范围：<br><li>HOUR：表示后付费云盘的计价单元是按小时计算。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_chargeUnit;

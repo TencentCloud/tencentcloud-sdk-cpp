@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -174,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取变配前实例机器类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OldDeviceType 变配前实例机器类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOldDeviceType() const;
 
                     /**
                      * 设置变配前实例机器类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _oldDeviceType 变配前实例机器类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOldDeviceType(const std::string& _oldDeviceType);
@@ -199,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取变配后实例机器类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceType 变配后实例机器类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceType() const;
 
                     /**
                      * 设置变配后实例机器类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceType 变配后实例机器类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceType(const std::string& _deviceType);
@@ -242,6 +234,48 @@ namespace TencentCloud
                      * 
                      */
                     bool UpgradeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取libra节点数量
+                     * @return LibraNodeCount libra节点数量
+                     * 
+                     */
+                    int64_t GetLibraNodeCount() const;
+
+                    /**
+                     * 设置libra节点数量
+                     * @param _libraNodeCount libra节点数量
+                     * 
+                     */
+                    void SetLibraNodeCount(const int64_t& _libraNodeCount);
+
+                    /**
+                     * 判断参数 LibraNodeCount 是否已赋值
+                     * @return LibraNodeCount 是否已赋值
+                     * 
+                     */
+                    bool LibraNodeCountHasBeenSet() const;
+
+                    /**
+                     * 获取原libra节点数量
+                     * @return OldLibraNodeCount 原libra节点数量
+                     * 
+                     */
+                    int64_t GetOldLibraNodeCount() const;
+
+                    /**
+                     * 设置原libra节点数量
+                     * @param _oldLibraNodeCount 原libra节点数量
+                     * 
+                     */
+                    void SetOldLibraNodeCount(const int64_t& _oldLibraNodeCount);
+
+                    /**
+                     * 判断参数 OldLibraNodeCount 是否已赋值
+                     * @return OldLibraNodeCount 是否已赋值
+                     * 
+                     */
+                    bool OldLibraNodeCountHasBeenSet() const;
 
                 private:
 
@@ -283,14 +317,12 @@ namespace TencentCloud
 
                     /**
                      * 变配前实例机器类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_oldDeviceType;
                     bool m_oldDeviceTypeHasBeenSet;
 
                     /**
                      * 变配后实例机器类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceType;
                     bool m_deviceTypeHasBeenSet;
@@ -300,6 +332,18 @@ namespace TencentCloud
                      */
                     std::string m_upgradeType;
                     bool m_upgradeTypeHasBeenSet;
+
+                    /**
+                     * libra节点数量
+                     */
+                    int64_t m_libraNodeCount;
+                    bool m_libraNodeCountHasBeenSet;
+
+                    /**
+                     * 原libra节点数量
+                     */
+                    int64_t m_oldLibraNodeCount;
+                    bool m_oldLibraNodeCountHasBeenSet;
 
                 };
             }

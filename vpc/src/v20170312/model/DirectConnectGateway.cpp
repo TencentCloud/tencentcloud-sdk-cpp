@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,7 +42,8 @@ DirectConnectGateway::DirectConnectGateway() :
     m_flowDetailsUpdateTimeHasBeenSet(false),
     m_newAfcHasBeenSet(false),
     m_accessNetworkTypeHasBeenSet(false),
-    m_haZoneListHasBeenSet(false)
+    m_haZoneListHasBeenSet(false),
+    m_gatewayAsnHasBeenSet(false)
 {
 }
 
@@ -277,6 +278,16 @@ CoreInternalOutcome DirectConnectGateway::Deserialize(const rapidjson::Value &va
         m_haZoneListHasBeenSet = true;
     }
 
+    if (value.HasMember("GatewayAsn") && !value["GatewayAsn"].IsNull())
+    {
+        if (!value["GatewayAsn"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DirectConnectGateway.GatewayAsn` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_gatewayAsn = value["GatewayAsn"].GetUint64();
+        m_gatewayAsnHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -468,6 +479,14 @@ void DirectConnectGateway::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_gatewayAsnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GatewayAsn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_gatewayAsn, allocator);
     }
 
 }
@@ -823,5 +842,21 @@ void DirectConnectGateway::SetHaZoneList(const vector<string>& _haZoneList)
 bool DirectConnectGateway::HaZoneListHasBeenSet() const
 {
     return m_haZoneListHasBeenSet;
+}
+
+uint64_t DirectConnectGateway::GetGatewayAsn() const
+{
+    return m_gatewayAsn;
+}
+
+void DirectConnectGateway::SetGatewayAsn(const uint64_t& _gatewayAsn)
+{
+    m_gatewayAsn = _gatewayAsn;
+    m_gatewayAsnHasBeenSet = true;
+}
+
+bool DirectConnectGateway::GatewayAsnHasBeenSet() const
+{
+    return m_gatewayAsnHasBeenSet;
 }
 

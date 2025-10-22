@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,10 +23,10 @@ using namespace TencentCloud::Apm::V20210622::Model;
 using namespace std;
 
 DescribeGeneralMetricDataRequest::DescribeGeneralMetricDataRequest() :
-    m_filtersHasBeenSet(false),
     m_metricsHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_viewNameHasBeenSet(false),
+    m_filtersHasBeenSet(false),
     m_groupByHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
@@ -42,21 +42,6 @@ string DescribeGeneralMetricDataRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_filtersHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Filters";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
-        }
-    }
 
     if (m_metricsHasBeenSet)
     {
@@ -85,6 +70,21 @@ string DescribeGeneralMetricDataRequest::ToJsonString() const
         string key = "ViewName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_viewName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_groupByHasBeenSet)
@@ -149,22 +149,6 @@ string DescribeGeneralMetricDataRequest::ToJsonString() const
 }
 
 
-vector<GeneralFilter> DescribeGeneralMetricDataRequest::GetFilters() const
-{
-    return m_filters;
-}
-
-void DescribeGeneralMetricDataRequest::SetFilters(const vector<GeneralFilter>& _filters)
-{
-    m_filters = _filters;
-    m_filtersHasBeenSet = true;
-}
-
-bool DescribeGeneralMetricDataRequest::FiltersHasBeenSet() const
-{
-    return m_filtersHasBeenSet;
-}
-
 vector<string> DescribeGeneralMetricDataRequest::GetMetrics() const
 {
     return m_metrics;
@@ -211,6 +195,22 @@ void DescribeGeneralMetricDataRequest::SetViewName(const string& _viewName)
 bool DescribeGeneralMetricDataRequest::ViewNameHasBeenSet() const
 {
     return m_viewNameHasBeenSet;
+}
+
+vector<GeneralFilter> DescribeGeneralMetricDataRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeGeneralMetricDataRequest::SetFilters(const vector<GeneralFilter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeGeneralMetricDataRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 vector<string> DescribeGeneralMetricDataRequest::GetGroupBy() const

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,18 +53,14 @@ namespace TencentCloud
 
                     /**
                      * 获取耳朵
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ear 耳朵
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     OtolaryngologyEar GetEar() const;
 
                     /**
                      * 设置耳朵
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ear 耳朵
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEar(const OtolaryngologyEar& _ear);
@@ -78,18 +74,14 @@ namespace TencentCloud
 
                     /**
                      * 获取鼻
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Nose 鼻
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     OtolaryngologyNose GetNose() const;
 
                     /**
                      * 设置鼻
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nose 鼻
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNose(const OtolaryngologyNose& _nose);
@@ -103,18 +95,14 @@ namespace TencentCloud
 
                     /**
                      * 获取喉
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Larynx 喉
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     OtolaryngologyLarynx GetLarynx() const;
 
                     /**
                      * 设置喉
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _larynx 喉
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLarynx(const OtolaryngologyLarynx& _larynx);
@@ -128,18 +116,14 @@ namespace TencentCloud
 
                     /**
                      * 获取耳鼻喉其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Others 耳鼻喉其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<KeyValueItem> GetOthers() const;
 
                     /**
                      * 设置耳鼻喉其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _others 耳鼻喉其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOthers(const std::vector<KeyValueItem>& _others);
@@ -153,18 +137,14 @@ namespace TencentCloud
 
                     /**
                      * 获取小结
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BriefSummary 小结
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     OtolaryngologyBriefSummary GetBriefSummary() const;
 
                     /**
                      * 设置小结
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _briefSummary 小结
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBriefSummary(const OtolaryngologyBriefSummary& _briefSummary);
@@ -180,35 +160,30 @@ namespace TencentCloud
 
                     /**
                      * 耳朵
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OtolaryngologyEar m_ear;
                     bool m_earHasBeenSet;
 
                     /**
                      * 鼻
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OtolaryngologyNose m_nose;
                     bool m_noseHasBeenSet;
 
                     /**
                      * 喉
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OtolaryngologyLarynx m_larynx;
                     bool m_larynxHasBeenSet;
 
                     /**
                      * 耳鼻喉其他
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<KeyValueItem> m_others;
                     bool m_othersHasBeenSet;
 
                     /**
                      * 小结
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OtolaryngologyBriefSummary m_briefSummary;
                     bool m_briefSummaryHasBeenSet;

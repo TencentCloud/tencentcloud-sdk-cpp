@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -295,15 +295,15 @@ namespace TencentCloud
                     bool UserDataHasBeenSet() const;
 
                     /**
-                     * 获取启动配置创建时间。
-                     * @return CreatedTime 启动配置创建时间。
+                     * 获取启动配置创建时间，为标准`UTC`时间。
+                     * @return CreatedTime 启动配置创建时间，为标准`UTC`时间。
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置启动配置创建时间。
-                     * @param _createdTime 启动配置创建时间。
+                     * 设置启动配置创建时间，为标准`UTC`时间。
+                     * @param _createdTime 启动配置创建时间，为标准`UTC`时间。
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -379,15 +379,31 @@ namespace TencentCloud
                     bool LaunchConfigurationStatusHasBeenSet() const;
 
                     /**
-                     * 获取实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。<li>POSTPAID_BY_HOUR：按小时后付费</li><li>SPOTPAID：竞价付费</li>
-                     * @return InstanceChargeType 实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。<li>POSTPAID_BY_HOUR：按小时后付费</li><li>SPOTPAID：竞价付费</li>
+                     * 获取实例计费类型，取值范围如下：
+<li>POSTPAID_BY_HOUR：按小时后付费</li>
+<li>SPOTPAID：竞价付费</li>
+<li>PREPAID：预付费，即包年包月</li>
+<li>CDCPAID：专用集群付费</li>
+                     * @return InstanceChargeType 实例计费类型，取值范围如下：
+<li>POSTPAID_BY_HOUR：按小时后付费</li>
+<li>SPOTPAID：竞价付费</li>
+<li>PREPAID：预付费，即包年包月</li>
+<li>CDCPAID：专用集群付费</li>
                      * 
                      */
                     std::string GetInstanceChargeType() const;
 
                     /**
-                     * 设置实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。<li>POSTPAID_BY_HOUR：按小时后付费</li><li>SPOTPAID：竞价付费</li>
-                     * @param _instanceChargeType 实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。<li>POSTPAID_BY_HOUR：按小时后付费</li><li>SPOTPAID：竞价付费</li>
+                     * 设置实例计费类型，取值范围如下：
+<li>POSTPAID_BY_HOUR：按小时后付费</li>
+<li>SPOTPAID：竞价付费</li>
+<li>PREPAID：预付费，即包年包月</li>
+<li>CDCPAID：专用集群付费</li>
+                     * @param _instanceChargeType 实例计费类型，取值范围如下：
+<li>POSTPAID_BY_HOUR：按小时后付费</li>
+<li>SPOTPAID：竞价付费</li>
+<li>PREPAID：预付费，即包年包月</li>
+<li>CDCPAID：专用集群付费</li>
                      * 
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
@@ -467,19 +483,15 @@ namespace TencentCloud
                     bool InstanceTagsHasBeenSet() const;
 
                     /**
-                     * 获取标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Tags 标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取标签列表，该参数内的标签仅用于绑定启动配置，不会传递给基于该启动配置扩容的 CVM 实例。
+                     * @return Tags 标签列表，该参数内的标签仅用于绑定启动配置，不会传递给基于该启动配置扩容的 CVM 实例。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tags 标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置标签列表，该参数内的标签仅用于绑定启动配置，不会传递给基于该启动配置扩容的 CVM 实例。
+                     * @param _tags 标签列表，该参数内的标签仅用于绑定启动配置，不会传递给基于该启动配置扩容的 CVM 实例。
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -513,15 +525,15 @@ namespace TencentCloud
                     bool VersionNumberHasBeenSet() const;
 
                     /**
-                     * 获取更新时间。
-                     * @return UpdatedTime 更新时间。
+                     * 获取更新时间，为标准`UTC`时间。
+                     * @return UpdatedTime 更新时间，为标准`UTC`时间。
                      * 
                      */
                     std::string GetUpdatedTime() const;
 
                     /**
-                     * 设置更新时间。
-                     * @param _updatedTime 更新时间。
+                     * 设置更新时间，为标准`UTC`时间。
+                     * @param _updatedTime 更新时间，为标准`UTC`时间。
                      * 
                      */
                     void SetUpdatedTime(const std::string& _updatedTime);
@@ -534,15 +546,15 @@ namespace TencentCloud
                     bool UpdatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。
-                     * @return CamRoleName CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。
+                     * 获取CAM角色名称。可通过[DescribeRoleList](https://cloud.tencent.com/document/product/598/36223)接口返回值中的roleName获取。
+                     * @return CamRoleName CAM角色名称。可通过[DescribeRoleList](https://cloud.tencent.com/document/product/598/36223)接口返回值中的roleName获取。
                      * 
                      */
                     std::string GetCamRoleName() const;
 
                     /**
-                     * 设置CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。
-                     * @param _camRoleName CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。
+                     * 设置CAM角色名称。可通过[DescribeRoleList](https://cloud.tencent.com/document/product/598/36223)接口返回值中的roleName获取。
+                     * @param _camRoleName CAM角色名称。可通过[DescribeRoleList](https://cloud.tencent.com/document/product/598/36223)接口返回值中的roleName获取。
                      * 
                      */
                     void SetCamRoleName(const std::string& _camRoleName);
@@ -728,18 +740,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像族名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageFamily 镜像族名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetImageFamily() const;
 
                     /**
                      * 设置镜像族名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _imageFamily 镜像族名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImageFamily(const std::string& _imageFamily);
@@ -750,6 +758,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ImageFamilyHasBeenSet() const;
+
+                    /**
+                     * 获取本地专用集群 ID。
+                     * @return DedicatedClusterId 本地专用集群 ID。
+                     * 
+                     */
+                    std::string GetDedicatedClusterId() const;
+
+                    /**
+                     * 设置本地专用集群 ID。
+                     * @param _dedicatedClusterId 本地专用集群 ID。
+                     * 
+                     */
+                    void SetDedicatedClusterId(const std::string& _dedicatedClusterId);
+
+                    /**
+                     * 判断参数 DedicatedClusterId 是否已赋值
+                     * @return DedicatedClusterId 是否已赋值
+                     * 
+                     */
+                    bool DedicatedClusterIdHasBeenSet() const;
 
                 private:
 
@@ -821,7 +850,7 @@ namespace TencentCloud
                     bool m_userDataHasBeenSet;
 
                     /**
-                     * 启动配置创建时间。
+                     * 启动配置创建时间，为标准`UTC`时间。
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
@@ -845,7 +874,11 @@ namespace TencentCloud
                     bool m_launchConfigurationStatusHasBeenSet;
 
                     /**
-                     * 实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。<li>POSTPAID_BY_HOUR：按小时后付费</li><li>SPOTPAID：竞价付费</li>
+                     * 实例计费类型，取值范围如下：
+<li>POSTPAID_BY_HOUR：按小时后付费</li>
+<li>SPOTPAID：竞价付费</li>
+<li>PREPAID：预付费，即包年包月</li>
+<li>CDCPAID：专用集群付费</li>
                      */
                     std::string m_instanceChargeType;
                     bool m_instanceChargeTypeHasBeenSet;
@@ -870,8 +903,7 @@ namespace TencentCloud
                     bool m_instanceTagsHasBeenSet;
 
                     /**
-                     * 标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 标签列表，该参数内的标签仅用于绑定启动配置，不会传递给基于该启动配置扩容的 CVM 实例。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
@@ -883,13 +915,13 @@ namespace TencentCloud
                     bool m_versionNumberHasBeenSet;
 
                     /**
-                     * 更新时间。
+                     * 更新时间，为标准`UTC`时间。
                      */
                     std::string m_updatedTime;
                     bool m_updatedTimeHasBeenSet;
 
                     /**
-                     * CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。
+                     * CAM角色名称。可通过[DescribeRoleList](https://cloud.tencent.com/document/product/598/36223)接口返回值中的roleName获取。
                      */
                     std::string m_camRoleName;
                     bool m_camRoleNameHasBeenSet;
@@ -945,10 +977,15 @@ namespace TencentCloud
 
                     /**
                      * 镜像族名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_imageFamily;
                     bool m_imageFamilyHasBeenSet;
+
+                    /**
+                     * 本地专用集群 ID。
+                     */
+                    std::string m_dedicatedClusterId;
+                    bool m_dedicatedClusterIdHasBeenSet;
 
                 };
             }

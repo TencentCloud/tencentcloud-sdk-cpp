@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,8 @@ DescribeAdvancedStoreLocationResponse::DescribeAdvancedStoreLocationResponse() :
     m_enableHasBeenSet(false),
     m_storeLocationHasBeenSet(false),
     m_hasLakeFsHasBeenSet(false),
-    m_lakeFsStatusHasBeenSet(false)
+    m_lakeFsStatusHasBeenSet(false),
+    m_bucketTypeHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,16 @@ CoreInternalOutcome DescribeAdvancedStoreLocationResponse::Deserialize(const str
         m_lakeFsStatusHasBeenSet = true;
     }
 
+    if (rsp.HasMember("BucketType") && !rsp["BucketType"].IsNull())
+    {
+        if (!rsp["BucketType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BucketType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bucketType = string(rsp["BucketType"].GetString());
+        m_bucketTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -147,11 +158,19 @@ string DescribeAdvancedStoreLocationResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_lakeFsStatus.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_bucketTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BucketType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bucketType.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -197,6 +216,16 @@ string DescribeAdvancedStoreLocationResponse::GetLakeFsStatus() const
 bool DescribeAdvancedStoreLocationResponse::LakeFsStatusHasBeenSet() const
 {
     return m_lakeFsStatusHasBeenSet;
+}
+
+string DescribeAdvancedStoreLocationResponse::GetBucketType() const
+{
+    return m_bucketType;
+}
+
+bool DescribeAdvancedStoreLocationResponse::BucketTypeHasBeenSet() const
+{
+    return m_bucketTypeHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool FileSizeHasBeenSet() const;
 
+                    /**
+                     * 获取模块类型or固件类型
+                     * @return FwType 模块类型or固件类型
+                     * 
+                     */
+                    std::string GetFwType() const;
+
+                    /**
+                     * 设置模块类型or固件类型
+                     * @param _fwType 模块类型or固件类型
+                     * 
+                     */
+                    void SetFwType(const std::string& _fwType);
+
+                    /**
+                     * 判断参数 FwType 是否已赋值
+                     * @return FwType 是否已赋值
+                     * 
+                     */
+                    bool FwTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     uint64_t m_fileSize;
                     bool m_fileSizeHasBeenSet;
+
+                    /**
+                     * 模块类型or固件类型
+                     */
+                    std::string m_fwType;
+                    bool m_fwTypeHasBeenSet;
 
                 };
             }

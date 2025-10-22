@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取升级任务源版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriVersion 升级任务源版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOriVersion() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取升级任务目标版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DstVersion 升级任务目标版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDstVersion() const;
@@ -91,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Percent 进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPercent() const;
@@ -109,14 +103,12 @@ namespace TencentCloud
 
                     /**
                      * 升级任务源版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_oriVersion;
                     bool m_oriVersionHasBeenSet;
 
                     /**
                      * 升级任务目标版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dstVersion;
                     bool m_dstVersionHasBeenSet;
@@ -129,7 +121,6 @@ namespace TencentCloud
 
                     /**
                      * 进度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_percent;
                     bool m_percentHasBeenSet;

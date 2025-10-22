@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -282,18 +282,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务结果数据表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataSet 任务结果数据表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataSet() const;
 
                     /**
                      * 设置任务结果数据表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataSet 任务结果数据表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataSet(const std::string& _dataSet);
@@ -391,18 +387,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务进度明细
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProgressDetail 任务进度明细
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProgressDetail() const;
 
                     /**
                      * 设置任务进度明细
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _progressDetail 任务进度明细
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProgressDetail(const std::string& _progressDetail);
@@ -416,18 +408,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 任务结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置任务结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 任务结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -441,18 +429,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计算资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataEngineId 计算资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataEngineId() const;
 
                     /**
                      * 设置计算资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataEngineId 计算资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataEngineId(const std::string& _dataEngineId);
@@ -466,18 +450,14 @@ namespace TencentCloud
 
                     /**
                      * 获取执行sql的子uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperateUin 执行sql的子uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperateUin() const;
 
                     /**
                      * 设置执行sql的子uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _operateUin 执行sql的子uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOperateUin(const std::string& _operateUin);
@@ -491,18 +471,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计算资源名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataEngineName 计算资源名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataEngineName() const;
 
                     /**
                      * 设置计算资源名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataEngineName 计算资源名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataEngineName(const std::string& _dataEngineName);
@@ -516,18 +492,14 @@ namespace TencentCloud
 
                     /**
                      * 获取导入类型是本地导入还是cos
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InputType 导入类型是本地导入还是cos
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInputType() const;
 
                     /**
                      * 设置导入类型是本地导入还是cos
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _inputType 导入类型是本地导入还是cos
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInputType(const std::string& _inputType);
@@ -541,18 +513,14 @@ namespace TencentCloud
 
                     /**
                      * 获取导入配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InputConf 导入配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInputConf() const;
 
                     /**
                      * 设置导入配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _inputConf 导入配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInputConf(const std::string& _inputConf);
@@ -566,18 +534,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataNumber 数据条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDataNumber() const;
 
                     /**
                      * 设置数据条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataNumber 数据条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataNumber(const int64_t& _dataNumber);
@@ -591,18 +555,14 @@ namespace TencentCloud
 
                     /**
                      * 获取查询数据能不能下载
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CanDownload 查询数据能不能下载
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetCanDownload() const;
 
                     /**
                      * 设置查询数据能不能下载
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _canDownload 查询数据能不能下载
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCanDownload(const bool& _canDownload);
@@ -616,18 +576,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserAlias 用户别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserAlias() const;
 
                     /**
                      * 设置用户别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userAlias 用户别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserAlias(const std::string& _userAlias);
@@ -641,18 +597,14 @@ namespace TencentCloud
 
                     /**
                      * 获取spark应用作业名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SparkJobName spark应用作业名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSparkJobName() const;
 
                     /**
                      * 设置spark应用作业名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sparkJobName spark应用作业名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSparkJobName(const std::string& _sparkJobName);
@@ -666,18 +618,14 @@ namespace TencentCloud
 
                     /**
                      * 获取spark应用作业Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SparkJobId spark应用作业Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSparkJobId() const;
 
                     /**
                      * 设置spark应用作业Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sparkJobId spark应用作业Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSparkJobId(const std::string& _sparkJobId);
@@ -691,18 +639,14 @@ namespace TencentCloud
 
                     /**
                      * 获取spark应用入口jar文件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SparkJobFile spark应用入口jar文件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSparkJobFile() const;
 
                     /**
                      * 设置spark应用入口jar文件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sparkJobFile spark应用入口jar文件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSparkJobFile(const std::string& _sparkJobFile);
@@ -716,18 +660,14 @@ namespace TencentCloud
 
                     /**
                      * 获取spark ui url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UiUrl spark ui url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUiUrl() const;
 
                     /**
                      * 设置spark ui url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uiUrl spark ui url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUiUrl(const std::string& _uiUrl);
@@ -741,18 +681,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务耗时，单位： ms
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalTime 任务耗时，单位： ms
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalTime() const;
 
                     /**
                      * 设置任务耗时，单位： ms
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalTime 任务耗时，单位： ms
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalTime(const int64_t& _totalTime);
@@ -766,18 +702,14 @@ namespace TencentCloud
 
                     /**
                      * 获取spark app job执行task的程序入口参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CmdArgs spark app job执行task的程序入口参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCmdArgs() const;
 
                     /**
                      * 设置spark app job执行task的程序入口参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cmdArgs spark app job执行task的程序入口参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCmdArgs(const std::string& _cmdArgs);
@@ -791,18 +723,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群镜像大版本名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageVersion 集群镜像大版本名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetImageVersion() const;
 
                     /**
                      * 设置集群镜像大版本名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _imageVersion 集群镜像大版本名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImageVersion(const std::string& _imageVersion);
@@ -816,18 +744,14 @@ namespace TencentCloud
 
                     /**
                      * 获取driver规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DriverSize driver规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDriverSize() const;
 
                     /**
                      * 设置driver规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _driverSize driver规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDriverSize(const std::string& _driverSize);
@@ -841,18 +765,14 @@ namespace TencentCloud
 
                     /**
                      * 获取executor规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExecutorSize executor规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExecutorSize() const;
 
                     /**
                      * 设置executor规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _executorSize executor规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExecutorSize(const std::string& _executorSize);
@@ -866,18 +786,14 @@ namespace TencentCloud
 
                     /**
                      * 获取指定executor数量，最小值为1，最大值小于集群规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExecutorNums 指定executor数量，最小值为1，最大值小于集群规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetExecutorNums() const;
 
                     /**
                      * 设置指定executor数量，最小值为1，最大值小于集群规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _executorNums 指定executor数量，最小值为1，最大值小于集群规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExecutorNums(const uint64_t& _executorNums);
@@ -891,18 +807,14 @@ namespace TencentCloud
 
                     /**
                      * 获取指定executor max数量（动态配置场景下），最小值为1，最大值小于集群规格（当ExecutorMaxNumbers小于ExecutorNums时，改值设定为ExecutorNums）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExecutorMaxNumbers 指定executor max数量（动态配置场景下），最小值为1，最大值小于集群规格（当ExecutorMaxNumbers小于ExecutorNums时，改值设定为ExecutorNums）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetExecutorMaxNumbers() const;
 
                     /**
                      * 设置指定executor max数量（动态配置场景下），最小值为1，最大值小于集群规格（当ExecutorMaxNumbers小于ExecutorNums时，改值设定为ExecutorNums）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _executorMaxNumbers 指定executor max数量（动态配置场景下），最小值为1，最大值小于集群规格（当ExecutorMaxNumbers小于ExecutorNums时，改值设定为ExecutorNums）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExecutorMaxNumbers(const uint64_t& _executorMaxNumbers);
@@ -991,18 +903,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结果文件格式：默认为csv
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResultFormat 结果文件格式：默认为csv
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResultFormat() const;
 
                     /**
                      * 设置结果文件格式：默认为csv
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resultFormat 结果文件格式：默认为csv
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResultFormat(const std::string& _resultFormat);
@@ -1016,18 +924,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎类型，SparkSQL：SparkSQL 引擎；SparkBatch：Spark作业引擎；PrestoSQL：Presto引擎
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EngineTypeDetail 引擎类型，SparkSQL：SparkSQL 引擎；SparkBatch：Spark作业引擎；PrestoSQL：Presto引擎
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEngineTypeDetail() const;
 
                     /**
                      * 设置引擎类型，SparkSQL：SparkSQL 引擎；SparkBatch：Spark作业引擎；PrestoSQL：Presto引擎
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _engineTypeDetail 引擎类型，SparkSQL：SparkSQL 引擎；SparkBatch：Spark作业引擎；PrestoSQL：Presto引擎
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEngineTypeDetail(const std::string& _engineTypeDetail);
@@ -1041,18 +945,14 @@ namespace TencentCloud
 
                     /**
                      * 获取spark引擎资源组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceGroupName spark引擎资源组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceGroupName() const;
 
                     /**
                      * 设置spark引擎资源组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceGroupName spark引擎资源组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceGroupName(const std::string& _resourceGroupName);
@@ -1063,6 +963,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ResourceGroupNameHasBeenSet() const;
+
+                    /**
+                     * 获取任务执行耗时
+                     * @return JobTimeSum 任务执行耗时
+                     * 
+                     */
+                    int64_t GetJobTimeSum() const;
+
+                    /**
+                     * 设置任务执行耗时
+                     * @param _jobTimeSum 任务执行耗时
+                     * 
+                     */
+                    void SetJobTimeSum(const int64_t& _jobTimeSum);
+
+                    /**
+                     * 判断参数 JobTimeSum 是否已赋值
+                     * @return JobTimeSum 是否已赋值
+                     * 
+                     */
+                    bool JobTimeSumHasBeenSet() const;
 
                 private:
 
@@ -1134,7 +1055,6 @@ namespace TencentCloud
 
                     /**
                      * 任务结果数据表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataSet;
                     bool m_dataSetHasBeenSet;
@@ -1165,147 +1085,126 @@ namespace TencentCloud
 
                     /**
                      * 任务进度明细
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_progressDetail;
                     bool m_progressDetailHasBeenSet;
 
                     /**
                      * 任务结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
                      * 计算资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataEngineId;
                     bool m_dataEngineIdHasBeenSet;
 
                     /**
                      * 执行sql的子uin
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operateUin;
                     bool m_operateUinHasBeenSet;
 
                     /**
                      * 计算资源名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataEngineName;
                     bool m_dataEngineNameHasBeenSet;
 
                     /**
                      * 导入类型是本地导入还是cos
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_inputType;
                     bool m_inputTypeHasBeenSet;
 
                     /**
                      * 导入配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_inputConf;
                     bool m_inputConfHasBeenSet;
 
                     /**
                      * 数据条数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_dataNumber;
                     bool m_dataNumberHasBeenSet;
 
                     /**
                      * 查询数据能不能下载
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_canDownload;
                     bool m_canDownloadHasBeenSet;
 
                     /**
                      * 用户别名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userAlias;
                     bool m_userAliasHasBeenSet;
 
                     /**
                      * spark应用作业名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sparkJobName;
                     bool m_sparkJobNameHasBeenSet;
 
                     /**
                      * spark应用作业Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sparkJobId;
                     bool m_sparkJobIdHasBeenSet;
 
                     /**
                      * spark应用入口jar文件
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sparkJobFile;
                     bool m_sparkJobFileHasBeenSet;
 
                     /**
                      * spark ui url
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uiUrl;
                     bool m_uiUrlHasBeenSet;
 
                     /**
                      * 任务耗时，单位： ms
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalTime;
                     bool m_totalTimeHasBeenSet;
 
                     /**
                      * spark app job执行task的程序入口参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cmdArgs;
                     bool m_cmdArgsHasBeenSet;
 
                     /**
                      * 集群镜像大版本名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_imageVersion;
                     bool m_imageVersionHasBeenSet;
 
                     /**
                      * driver规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_driverSize;
                     bool m_driverSizeHasBeenSet;
 
                     /**
                      * executor规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_executorSize;
                     bool m_executorSizeHasBeenSet;
 
                     /**
                      * 指定executor数量，最小值为1，最大值小于集群规格
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_executorNums;
                     bool m_executorNumsHasBeenSet;
 
                     /**
                      * 指定executor max数量（动态配置场景下），最小值为1，最大值小于集群规格（当ExecutorMaxNumbers小于ExecutorNums时，改值设定为ExecutorNums）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_executorMaxNumbers;
                     bool m_executorMaxNumbersHasBeenSet;
@@ -1333,24 +1232,27 @@ namespace TencentCloud
 
                     /**
                      * 结果文件格式：默认为csv
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resultFormat;
                     bool m_resultFormatHasBeenSet;
 
                     /**
                      * 引擎类型，SparkSQL：SparkSQL 引擎；SparkBatch：Spark作业引擎；PrestoSQL：Presto引擎
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_engineTypeDetail;
                     bool m_engineTypeDetailHasBeenSet;
 
                     /**
                      * spark引擎资源组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceGroupName;
                     bool m_resourceGroupNameHasBeenSet;
+
+                    /**
+                     * 任务执行耗时
+                     */
+                    int64_t m_jobTimeSum;
+                    bool m_jobTimeSumHasBeenSet;
 
                 };
             }

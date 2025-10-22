@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,8 @@ DescribeVpcEndPointServiceRequest::DescribeVpcEndPointServiceRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_endPointServiceIdsHasBeenSet(false),
-    m_isListAuthorizedEndPointServiceHasBeenSet(false)
+    m_isListAuthorizedEndPointServiceHasBeenSet(false),
+    m_ipAddressTypeHasBeenSet(false)
 {
 }
 
@@ -88,6 +89,14 @@ string DescribeVpcEndPointServiceRequest::ToJsonString() const
         string key = "IsListAuthorizedEndPointService";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isListAuthorizedEndPointService, allocator);
+    }
+
+    if (m_ipAddressTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpAddressType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ipAddressType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -176,6 +185,22 @@ void DescribeVpcEndPointServiceRequest::SetIsListAuthorizedEndPointService(const
 bool DescribeVpcEndPointServiceRequest::IsListAuthorizedEndPointServiceHasBeenSet() const
 {
     return m_isListAuthorizedEndPointServiceHasBeenSet;
+}
+
+string DescribeVpcEndPointServiceRequest::GetIpAddressType() const
+{
+    return m_ipAddressType;
+}
+
+void DescribeVpcEndPointServiceRequest::SetIpAddressType(const string& _ipAddressType)
+{
+    m_ipAddressType = _ipAddressType;
+    m_ipAddressTypeHasBeenSet = true;
+}
+
+bool DescribeVpcEndPointServiceRequest::IpAddressTypeHasBeenSet() const
+{
+    return m_ipAddressTypeHasBeenSet;
 }
 
 

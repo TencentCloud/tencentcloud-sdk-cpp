@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionCode 地域代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegionCode() const;
 
                     /**
                      * 设置地域代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionCode 地域代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionCode(const std::string& _regionCode);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域代码（V3版本）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionCodeV3 地域代码（V3版本）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegionCodeV3() const;
 
                     /**
                      * 设置地域代码（V3版本）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionCodeV3 地域代码（V3版本）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionCodeV3(const std::string& _regionCodeV3);
@@ -160,19 +152,15 @@ namespace TencentCloud
                     bool RegionCodeV3HasBeenSet() const;
 
                     /**
-                     * 获取NONE:默认值不支持任何特殊机型\nCVM:支持CVM类型
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Support NONE:默认值不支持任何特殊机型\nCVM:支持CVM类型
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取NONE:默认值不支持任何特殊类型 实例类型
+                     * @return Support NONE:默认值不支持任何特殊类型 实例类型
                      * 
                      */
                     std::string GetSupport() const;
 
                     /**
-                     * 设置NONE:默认值不支持任何特殊机型\nCVM:支持CVM类型
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _support NONE:默认值不支持任何特殊机型\nCVM:支持CVM类型
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置NONE:默认值不支持任何特殊类型 实例类型
+                     * @param _support NONE:默认值不支持任何特殊类型 实例类型
                      * 
                      */
                     void SetSupport(const std::string& _support);
@@ -186,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否支持ipv6, 0：表示不支持，1：表示支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ipv6 是否支持ipv6, 0：表示不支持，1：表示支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIpv6() const;
 
                     /**
                      * 设置是否支持ipv6, 0：表示不支持，1：表示支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ipv6 是否支持ipv6, 0：表示不支持，1：表示支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIpv6(const int64_t& _ipv6);
@@ -211,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否支持跨可用区, 0：表示不支持，1：表示支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MultiZone 是否支持跨可用区, 0：表示不支持，1：表示支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMultiZone() const;
 
                     /**
                      * 设置是否支持跨可用区, 0：表示不支持，1：表示支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _multiZone 是否支持跨可用区, 0：表示不支持，1：表示支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMultiZone(const int64_t& _multiZone);
@@ -256,35 +236,30 @@ namespace TencentCloud
 
                     /**
                      * 地域代码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regionCode;
                     bool m_regionCodeHasBeenSet;
 
                     /**
                      * 地域代码（V3版本）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regionCodeV3;
                     bool m_regionCodeV3HasBeenSet;
 
                     /**
-                     * NONE:默认值不支持任何特殊机型\nCVM:支持CVM类型
-注意：此字段可能返回 null，表示取不到有效值。
+                     * NONE:默认值不支持任何特殊类型 实例类型
                      */
                     std::string m_support;
                     bool m_supportHasBeenSet;
 
                     /**
                      * 是否支持ipv6, 0：表示不支持，1：表示支持
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ipv6;
                     bool m_ipv6HasBeenSet;
 
                     /**
                      * 是否支持跨可用区, 0：表示不支持，1：表示支持
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_multiZone;
                     bool m_multiZoneHasBeenSet;

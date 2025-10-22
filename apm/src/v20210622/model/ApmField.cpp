@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,12 +21,14 @@ using namespace TencentCloud::Apm::V20210622::Model;
 using namespace std;
 
 ApmField::ApmField() :
-    m_compareValHasBeenSet(false),
-    m_compareValsHasBeenSet(false),
+    m_keyHasBeenSet(false),
     m_valueHasBeenSet(false),
     m_unitHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_lastPeriodValueHasBeenSet(false)
+    m_compareValsHasBeenSet(false),
+    m_lastPeriodValueHasBeenSet(false),
+    m_compareValHasBeenSet(false),
+    m_nameCNHasBeenSet(false),
+    m_nameENHasBeenSet(false)
 {
 }
 
@@ -35,34 +37,14 @@ CoreInternalOutcome ApmField::Deserialize(const rapidjson::Value &value)
     string requestId = "";
 
 
-    if (value.HasMember("CompareVal") && !value["CompareVal"].IsNull())
+    if (value.HasMember("Key") && !value["Key"].IsNull())
     {
-        if (!value["CompareVal"].IsString())
+        if (!value["Key"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `ApmField.CompareVal` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApmField.Key` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_compareVal = string(value["CompareVal"].GetString());
-        m_compareValHasBeenSet = true;
-    }
-
-    if (value.HasMember("CompareVals") && !value["CompareVals"].IsNull())
-    {
-        if (!value["CompareVals"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `ApmField.CompareVals` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["CompareVals"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            APMKVItem item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_compareVals.push_back(item);
-        }
-        m_compareValsHasBeenSet = true;
+        m_key = string(value["Key"].GetString());
+        m_keyHasBeenSet = true;
     }
 
     if (value.HasMember("Value") && !value["Value"].IsNull())
@@ -85,14 +67,24 @@ CoreInternalOutcome ApmField::Deserialize(const rapidjson::Value &value)
         m_unitHasBeenSet = true;
     }
 
-    if (value.HasMember("Key") && !value["Key"].IsNull())
+    if (value.HasMember("CompareVals") && !value["CompareVals"].IsNull())
     {
-        if (!value["Key"].IsString())
+        if (!value["CompareVals"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ApmField.CompareVals` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CompareVals"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `ApmField.Key` IsString=false incorrectly").SetRequestId(requestId));
+            APMKVItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_compareVals.push_back(item);
         }
-        m_key = string(value["Key"].GetString());
-        m_keyHasBeenSet = true;
+        m_compareValsHasBeenSet = true;
     }
 
     if (value.HasMember("LastPeriodValue") && !value["LastPeriodValue"].IsNull())
@@ -115,6 +107,36 @@ CoreInternalOutcome ApmField::Deserialize(const rapidjson::Value &value)
         m_lastPeriodValueHasBeenSet = true;
     }
 
+    if (value.HasMember("CompareVal") && !value["CompareVal"].IsNull())
+    {
+        if (!value["CompareVal"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmField.CompareVal` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_compareVal = string(value["CompareVal"].GetString());
+        m_compareValHasBeenSet = true;
+    }
+
+    if (value.HasMember("NameCN") && !value["NameCN"].IsNull())
+    {
+        if (!value["NameCN"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmField.NameCN` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nameCN = string(value["NameCN"].GetString());
+        m_nameCNHasBeenSet = true;
+    }
+
+    if (value.HasMember("NameEN") && !value["NameEN"].IsNull())
+    {
+        if (!value["NameEN"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmField.NameEN` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nameEN = string(value["NameEN"].GetString());
+        m_nameENHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -122,27 +144,12 @@ CoreInternalOutcome ApmField::Deserialize(const rapidjson::Value &value)
 void ApmField::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_compareValHasBeenSet)
+    if (m_keyHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CompareVal";
+        string key = "Key";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_compareVal.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_compareValsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CompareVals";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_compareVals.begin(); itr != m_compareVals.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+        value.AddMember(iKey, rapidjson::Value(m_key.c_str(), allocator).Move(), allocator);
     }
 
     if (m_valueHasBeenSet)
@@ -161,12 +168,19 @@ void ApmField::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         value.AddMember(iKey, rapidjson::Value(m_unit.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_keyHasBeenSet)
+    if (m_compareValsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Key";
+        string key = "CompareVals";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_key.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_compareVals.begin(); itr != m_compareVals.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_lastPeriodValueHasBeenSet)
@@ -184,39 +198,47 @@ void ApmField::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         }
     }
 
+    if (m_compareValHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CompareVal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_compareVal.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nameCNHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NameCN";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nameCN.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nameENHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NameEN";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nameEN.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
 
-string ApmField::GetCompareVal() const
+string ApmField::GetKey() const
 {
-    return m_compareVal;
+    return m_key;
 }
 
-void ApmField::SetCompareVal(const string& _compareVal)
+void ApmField::SetKey(const string& _key)
 {
-    m_compareVal = _compareVal;
-    m_compareValHasBeenSet = true;
+    m_key = _key;
+    m_keyHasBeenSet = true;
 }
 
-bool ApmField::CompareValHasBeenSet() const
+bool ApmField::KeyHasBeenSet() const
 {
-    return m_compareValHasBeenSet;
-}
-
-vector<APMKVItem> ApmField::GetCompareVals() const
-{
-    return m_compareVals;
-}
-
-void ApmField::SetCompareVals(const vector<APMKVItem>& _compareVals)
-{
-    m_compareVals = _compareVals;
-    m_compareValsHasBeenSet = true;
-}
-
-bool ApmField::CompareValsHasBeenSet() const
-{
-    return m_compareValsHasBeenSet;
+    return m_keyHasBeenSet;
 }
 
 double ApmField::GetValue() const
@@ -251,20 +273,20 @@ bool ApmField::UnitHasBeenSet() const
     return m_unitHasBeenSet;
 }
 
-string ApmField::GetKey() const
+vector<APMKVItem> ApmField::GetCompareVals() const
 {
-    return m_key;
+    return m_compareVals;
 }
 
-void ApmField::SetKey(const string& _key)
+void ApmField::SetCompareVals(const vector<APMKVItem>& _compareVals)
 {
-    m_key = _key;
-    m_keyHasBeenSet = true;
+    m_compareVals = _compareVals;
+    m_compareValsHasBeenSet = true;
 }
 
-bool ApmField::KeyHasBeenSet() const
+bool ApmField::CompareValsHasBeenSet() const
 {
-    return m_keyHasBeenSet;
+    return m_compareValsHasBeenSet;
 }
 
 vector<APMKV> ApmField::GetLastPeriodValue() const
@@ -281,5 +303,53 @@ void ApmField::SetLastPeriodValue(const vector<APMKV>& _lastPeriodValue)
 bool ApmField::LastPeriodValueHasBeenSet() const
 {
     return m_lastPeriodValueHasBeenSet;
+}
+
+string ApmField::GetCompareVal() const
+{
+    return m_compareVal;
+}
+
+void ApmField::SetCompareVal(const string& _compareVal)
+{
+    m_compareVal = _compareVal;
+    m_compareValHasBeenSet = true;
+}
+
+bool ApmField::CompareValHasBeenSet() const
+{
+    return m_compareValHasBeenSet;
+}
+
+string ApmField::GetNameCN() const
+{
+    return m_nameCN;
+}
+
+void ApmField::SetNameCN(const string& _nameCN)
+{
+    m_nameCN = _nameCN;
+    m_nameCNHasBeenSet = true;
+}
+
+bool ApmField::NameCNHasBeenSet() const
+{
+    return m_nameCNHasBeenSet;
+}
+
+string ApmField::GetNameEN() const
+{
+    return m_nameEN;
+}
+
+void ApmField::SetNameEN(const string& _nameEN)
+{
+    m_nameEN = _nameEN;
+    m_nameENHasBeenSet = true;
+}
+
+bool ApmField::NameENHasBeenSet() const
+{
+    return m_nameENHasBeenSet;
 }
 

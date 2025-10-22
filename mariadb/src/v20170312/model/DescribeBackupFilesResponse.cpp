@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeBackupFilesResponse::DescribeBackupFilesResponse() :
     m_filesHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+    m_totalCountHasBeenSet(false),
+    m_urlPrefixHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,16 @@ CoreInternalOutcome DescribeBackupFilesResponse::Deserialize(const string &paylo
         m_totalCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("UrlPrefix") && !rsp["UrlPrefix"].IsNull())
+    {
+        if (!rsp["UrlPrefix"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UrlPrefix` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_urlPrefix = string(rsp["UrlPrefix"].GetString());
+        m_urlPrefixHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,11 +137,19 @@ string DescribeBackupFilesResponse::ToJsonString() const
         value.AddMember(iKey, m_totalCount, allocator);
     }
 
+    if (m_urlPrefixHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UrlPrefix";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_urlPrefix.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -156,6 +175,16 @@ int64_t DescribeBackupFilesResponse::GetTotalCount() const
 bool DescribeBackupFilesResponse::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
+}
+
+string DescribeBackupFilesResponse::GetUrlPrefix() const
+{
+    return m_urlPrefix;
+}
+
+bool DescribeBackupFilesResponse::UrlPrefixHasBeenSet() const
+{
+    return m_urlPrefixHasBeenSet;
 }
 
 

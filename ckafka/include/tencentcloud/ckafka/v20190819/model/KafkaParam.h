@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool SelfBuiltHasBeenSet() const;
 
                     /**
-                     * 获取实例资源
-                     * @return Resource 实例资源
+                     * 获取ckafka集群实例Id
+                     * @return Resource ckafka集群实例Id
                      * 
                      */
                     std::string GetResource() const;
 
                     /**
-                     * 设置实例资源
-                     * @param _resource 实例资源
+                     * 设置ckafka集群实例Id
+                     * @param _resource ckafka集群实例Id
                      * 
                      */
                     void SetResource(const std::string& _resource);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool ResourceHasBeenSet() const;
 
                     /**
-                     * 获取Topic名称，多个以“,”分隔
-                     * @return Topic Topic名称，多个以“,”分隔
+                     * 获取主题名，多个以“,”分隔
+                     * @return Topic 主题名，多个以“,”分隔
                      * 
                      */
                     std::string GetTopic() const;
 
                     /**
-                     * 设置Topic名称，多个以“,”分隔
-                     * @param _topic Topic名称，多个以“,”分隔
+                     * 设置主题名，多个以“,”分隔
+                     * @param _topic 主题名，多个以“,”分隔
                      * 
                      */
                     void SetTopic(const std::string& _topic);
@@ -186,18 +186,18 @@ namespace TencentCloud
                     bool ResourceNameHasBeenSet() const;
 
                     /**
-                     * 获取Zone ID
+                     * 获取可用区
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ZoneId Zone ID
+                     * @return ZoneId 可用区
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
-                     * 设置Zone ID
+                     * 设置可用区
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _zoneId Zone ID
+                     * @param _zoneId 可用区
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -211,18 +211,18 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取Topic的Id
+                     * 获取主题Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TopicId Topic的Id
+                     * @return TopicId 主题Id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置Topic的Id
+                     * 设置主题Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _topicId Topic的Id
+                     * @param _topicId 主题Id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -287,18 +287,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Qps 限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QpsLimit Qps 限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetQpsLimit() const;
 
                     /**
                      * 设置Qps 限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _qpsLimit Qps 限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQpsLimit(const uint64_t& _qpsLimit);
@@ -337,18 +333,14 @@ namespace TencentCloud
 
                     /**
                      * 获取「分发到多个topic」开关，默认为false
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UseTableMapping 「分发到多个topic」开关，默认为false
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetUseTableMapping() const;
 
                     /**
                      * 设置「分发到多个topic」开关，默认为false
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _useTableMapping 「分发到多个topic」开关，默认为false
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUseTableMapping(const bool& _useTableMapping);
@@ -362,18 +354,14 @@ namespace TencentCloud
 
                     /**
                      * 获取使用的Topic是否需要自动创建（目前只支持SOURCE流入任务，如果不使用分发到多个topic，需要在Topic字段填写需要自动创建的topic名）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UseAutoCreateTopic 使用的Topic是否需要自动创建（目前只支持SOURCE流入任务，如果不使用分发到多个topic，需要在Topic字段填写需要自动创建的topic名）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetUseAutoCreateTopic() const;
 
                     /**
                      * 设置使用的Topic是否需要自动创建（目前只支持SOURCE流入任务，如果不使用分发到多个topic，需要在Topic字段填写需要自动创建的topic名）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _useAutoCreateTopic 使用的Topic是否需要自动创建（目前只支持SOURCE流入任务，如果不使用分发到多个topic，需要在Topic字段填写需要自动创建的topic名）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUseAutoCreateTopic(const bool& _useAutoCreateTopic);
@@ -387,18 +375,14 @@ namespace TencentCloud
 
                     /**
                      * 获取写入Topic时是否进行压缩，不开启填"none"，开启的话，填写"open"。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompressionType 写入Topic时是否进行压缩，不开启填"none"，开启的话，填写"open"。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCompressionType() const;
 
                     /**
                      * 设置写入Topic时是否进行压缩，不开启填"none"，开启的话，填写"open"。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _compressionType 写入Topic时是否进行压缩，不开启填"none"，开启的话，填写"open"。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCompressionType(const std::string& _compressionType);
@@ -412,18 +396,14 @@ namespace TencentCloud
 
                     /**
                      * 获取源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MsgMultiple 源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMsgMultiple() const;
 
                     /**
                      * 设置源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _msgMultiple 源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMsgMultiple(const int64_t& _msgMultiple);
@@ -437,18 +417,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据同步专用参数, 正常数据处理可为空, 实例级别同步: 仅同步元数据填写"META_SYNC_INSTANCE_TYPE", 同步元数据及全部topic内消息的填写"META_AND_DATA_SYNC_INSTANCE_TYPE"; topic级别同步: 选中的源和目标topic中的消息(需要目标实例也包含该topic)填写"DATA_SYNC_TYPE"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConnectorSyncType 数据同步专用参数, 正常数据处理可为空, 实例级别同步: 仅同步元数据填写"META_SYNC_INSTANCE_TYPE", 同步元数据及全部topic内消息的填写"META_AND_DATA_SYNC_INSTANCE_TYPE"; topic级别同步: 选中的源和目标topic中的消息(需要目标实例也包含该topic)填写"DATA_SYNC_TYPE"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConnectorSyncType() const;
 
                     /**
                      * 设置数据同步专用参数, 正常数据处理可为空, 实例级别同步: 仅同步元数据填写"META_SYNC_INSTANCE_TYPE", 同步元数据及全部topic内消息的填写"META_AND_DATA_SYNC_INSTANCE_TYPE"; topic级别同步: 选中的源和目标topic中的消息(需要目标实例也包含该topic)填写"DATA_SYNC_TYPE"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _connectorSyncType 数据同步专用参数, 正常数据处理可为空, 实例级别同步: 仅同步元数据填写"META_SYNC_INSTANCE_TYPE", 同步元数据及全部topic内消息的填写"META_AND_DATA_SYNC_INSTANCE_TYPE"; topic级别同步: 选中的源和目标topic中的消息(需要目标实例也包含该topic)填写"DATA_SYNC_TYPE"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConnectorSyncType(const std::string& _connectorSyncType);
@@ -462,18 +438,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据同步专用参数, 当通过时,希望下游的消息写入分区与上游的一致,则填true,但下游分区小于上游时,会报错; 不需要一致则为false, 默认为false
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeepPartition 数据同步专用参数, 当通过时,希望下游的消息写入分区与上游的一致,则填true,但下游分区小于上游时,会报错; 不需要一致则为false, 默认为false
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetKeepPartition() const;
 
                     /**
                      * 设置数据同步专用参数, 当通过时,希望下游的消息写入分区与上游的一致,则填true,但下游分区小于上游时,会报错; 不需要一致则为false, 默认为false
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _keepPartition 数据同步专用参数, 当通过时,希望下游的消息写入分区与上游的一致,则填true,但下游分区小于上游时,会报错; 不需要一致则为false, 默认为false
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKeepPartition(const bool& _keepPartition);
@@ -485,6 +457,27 @@ namespace TencentCloud
                      */
                     bool KeepPartitionHasBeenSet() const;
 
+                    /**
+                     * 获取正则匹配Topic列表
+                     * @return TopicRegularExpression 正则匹配Topic列表
+                     * 
+                     */
+                    std::string GetTopicRegularExpression() const;
+
+                    /**
+                     * 设置正则匹配Topic列表
+                     * @param _topicRegularExpression 正则匹配Topic列表
+                     * 
+                     */
+                    void SetTopicRegularExpression(const std::string& _topicRegularExpression);
+
+                    /**
+                     * 判断参数 TopicRegularExpression 是否已赋值
+                     * @return TopicRegularExpression 是否已赋值
+                     * 
+                     */
+                    bool TopicRegularExpressionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -494,13 +487,13 @@ namespace TencentCloud
                     bool m_selfBuiltHasBeenSet;
 
                     /**
-                     * 实例资源
+                     * ckafka集群实例Id
                      */
                     std::string m_resource;
                     bool m_resourceHasBeenSet;
 
                     /**
-                     * Topic名称，多个以“,”分隔
+                     * 主题名，多个以“,”分隔
                      */
                     std::string m_topic;
                     bool m_topicHasBeenSet;
@@ -527,14 +520,14 @@ namespace TencentCloud
                     bool m_resourceNameHasBeenSet;
 
                     /**
-                     * Zone ID
+                     * 可用区
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * Topic的Id
+                     * 主题Id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicId;
@@ -556,7 +549,6 @@ namespace TencentCloud
 
                     /**
                      * Qps 限制
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_qpsLimit;
                     bool m_qpsLimitHasBeenSet;
@@ -570,45 +562,45 @@ namespace TencentCloud
 
                     /**
                      * 「分发到多个topic」开关，默认为false
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_useTableMapping;
                     bool m_useTableMappingHasBeenSet;
 
                     /**
                      * 使用的Topic是否需要自动创建（目前只支持SOURCE流入任务，如果不使用分发到多个topic，需要在Topic字段填写需要自动创建的topic名）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_useAutoCreateTopic;
                     bool m_useAutoCreateTopicHasBeenSet;
 
                     /**
                      * 写入Topic时是否进行压缩，不开启填"none"，开启的话，填写"open"。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_compressionType;
                     bool m_compressionTypeHasBeenSet;
 
                     /**
                      * 源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_msgMultiple;
                     bool m_msgMultipleHasBeenSet;
 
                     /**
                      * 数据同步专用参数, 正常数据处理可为空, 实例级别同步: 仅同步元数据填写"META_SYNC_INSTANCE_TYPE", 同步元数据及全部topic内消息的填写"META_AND_DATA_SYNC_INSTANCE_TYPE"; topic级别同步: 选中的源和目标topic中的消息(需要目标实例也包含该topic)填写"DATA_SYNC_TYPE"
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_connectorSyncType;
                     bool m_connectorSyncTypeHasBeenSet;
 
                     /**
                      * 数据同步专用参数, 当通过时,希望下游的消息写入分区与上游的一致,则填true,但下游分区小于上游时,会报错; 不需要一致则为false, 默认为false
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_keepPartition;
                     bool m_keepPartitionHasBeenSet;
+
+                    /**
+                     * 正则匹配Topic列表
+                     */
+                    std::string m_topicRegularExpression;
+                    bool m_topicRegularExpressionHasBeenSet;
 
                 };
             }

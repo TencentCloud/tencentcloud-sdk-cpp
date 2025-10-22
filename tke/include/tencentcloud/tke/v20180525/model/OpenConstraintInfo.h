@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,44 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取策略实例名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 策略实例名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetName() const;
-
-                    /**
-                     * 设置策略实例名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name 策略实例名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetName(const std::string& _name);
-
-                    /**
-                     * 判断参数 Name 是否已赋值
-                     * @return Name 是否已赋值
-                     * 
-                     */
-                    bool NameHasBeenSet() const;
-
-                    /**
                      * 获取策略实例关联事件数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventNums 策略实例关联事件数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetEventNums() const;
 
                     /**
                      * 设置策略实例关联事件数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eventNums 策略实例关联事件数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEventNums(const uint64_t& _eventNums);
@@ -97,19 +68,36 @@ namespace TencentCloud
                     bool EventNumsHasBeenSet() const;
 
                     /**
+                     * 获取策略实例名称
+                     * @return Name 策略实例名称
+                     * 
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置策略实例名称
+                     * @param _name 策略实例名称
+                     * 
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     * 
+                     */
+                    bool NameHasBeenSet() const;
+
+                    /**
                      * 获取实例yaml详情base64编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return YamlDetail 实例yaml详情base64编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetYamlDetail() const;
 
                     /**
                      * 设置实例yaml详情base64编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _yamlDetail 实例yaml详情base64编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetYamlDetail(const std::string& _yamlDetail);
@@ -124,22 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 策略实例名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_name;
-                    bool m_nameHasBeenSet;
-
-                    /**
                      * 策略实例关联事件数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_eventNums;
                     bool m_eventNumsHasBeenSet;
 
                     /**
+                     * 策略实例名称
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
+
+                    /**
                      * 实例yaml详情base64编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_yamlDetail;
                     bool m_yamlDetailHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取目前支持根据ts排序
-                     * @return By 目前支持根据ts排序
+                     * 获取目前支持根据create_time、modify_time、id排序
+                     * @return By 目前支持根据create_time、modify_time、id排序
                      * 
                      */
                     std::string GetBy() const;
 
                     /**
-                     * 设置目前支持根据ts排序
-                     * @param _by 目前支持根据ts排序
+                     * 设置目前支持根据create_time、modify_time、id排序
+                     * @param _by 目前支持根据create_time、modify_time、id排序
                      * 
                      */
                     void SetBy(const std::string& _by);
@@ -202,7 +202,7 @@ namespace TencentCloud
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 目前支持根据ts排序
+                     * 目前支持根据create_time、modify_time、id排序
                      */
                     std::string m_by;
                     bool m_byHasBeenSet;

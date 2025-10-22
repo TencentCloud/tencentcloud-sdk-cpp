@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,14 +84,12 @@ namespace TencentCloud
 <li>acl：自定义规则；</li>
 <li>cc：cc攻击防护；</li>
 <li>bot：Bot防护。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Modules 生效的模块，该字段取值有：
 <li>waf：托管规则；</li>
 <li>rate：速率限制；</li>
 <li>acl：自定义规则；</li>
 <li>cc：cc攻击防护；</li>
 <li>bot：Bot防护。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetModules() const;
@@ -103,14 +101,12 @@ namespace TencentCloud
 <li>acl：自定义规则；</li>
 <li>cc：cc攻击防护；</li>
 <li>bot：Bot防护。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modules 生效的模块，该字段取值有：
 <li>waf：托管规则；</li>
 <li>rate：速率限制；</li>
 <li>acl：自定义规则；</li>
 <li>cc：cc攻击防护；</li>
 <li>bot：Bot防护。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModules(const std::vector<std::string>& _modules);
@@ -124,18 +120,14 @@ namespace TencentCloud
 
                     /**
                      * 获取跳过部分规则ID的例外规则详情。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PartialModules 跳过部分规则ID的例外规则详情。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PartialModule> GetPartialModules() const;
 
                     /**
                      * 设置跳过部分规则ID的例外规则详情。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _partialModules 跳过部分规则ID的例外规则详情。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPartialModules(const std::vector<PartialModule>& _partialModules);
@@ -149,18 +141,14 @@ namespace TencentCloud
 
                     /**
                      * 获取跳过具体字段不去扫描的例外规则详情。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SkipConditions 跳过具体字段不去扫描的例外规则详情。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SkipCondition> GetSkipConditions() const;
 
                     /**
                      * 设置跳过具体字段不去扫描的例外规则详情。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _skipConditions 跳过具体字段不去扫描的例外规则详情。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSkipConditions(const std::vector<SkipCondition>& _skipConditions);
@@ -189,21 +177,18 @@ namespace TencentCloud
 <li>acl：自定义规则；</li>
 <li>cc：cc攻击防护；</li>
 <li>bot：Bot防护。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_modules;
                     bool m_modulesHasBeenSet;
 
                     /**
                      * 跳过部分规则ID的例外规则详情。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PartialModule> m_partialModules;
                     bool m_partialModulesHasBeenSet;
 
                     /**
                      * 跳过具体字段不去扫描的例外规则详情。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SkipCondition> m_skipConditions;
                     bool m_skipConditionsHasBeenSet;

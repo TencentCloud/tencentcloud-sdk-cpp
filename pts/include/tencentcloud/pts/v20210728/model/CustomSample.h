@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -183,18 +183,14 @@ namespace TencentCloud
 
                     /**
                      * 获取指标序列名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 指标序列名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置指标序列名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 指标序列名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -248,7 +244,6 @@ namespace TencentCloud
 
                     /**
                      * 指标序列名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

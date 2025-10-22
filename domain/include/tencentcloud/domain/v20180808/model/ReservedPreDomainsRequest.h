@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,19 @@ namespace TencentCloud
                     bool DomainListHasBeenSet() const;
 
                     /**
-                     * 获取模板ID
-                     * @return TemplateId 模板ID
+                     * 获取模板ID 
+可通过[DescribeTemplateList](https://cloud.tencent.com/document/api/242/48940)接口获取
+                     * @return TemplateId 模板ID 
+可通过[DescribeTemplateList](https://cloud.tencent.com/document/api/242/48940)接口获取
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置模板ID
-                     * @param _templateId 模板ID
+                     * 设置模板ID 
+可通过[DescribeTemplateList](https://cloud.tencent.com/document/api/242/48940)接口获取
+                     * @param _templateId 模板ID 
+可通过[DescribeTemplateList](https://cloud.tencent.com/document/api/242/48940)接口获取
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -85,15 +89,15 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取结束后是否自动支付尾款，默认开启 传入1关闭
-                     * @return IsAutoPay 结束后是否自动支付尾款，默认开启 传入1关闭
+                     * 获取结束后是否自动支付尾款，默认1 开启 传入0关闭
+                     * @return IsAutoPay 结束后是否自动支付尾款，默认1 开启 传入0关闭
                      * 
                      */
                     int64_t GetIsAutoPay() const;
 
                     /**
-                     * 设置结束后是否自动支付尾款，默认开启 传入1关闭
-                     * @param _isAutoPay 结束后是否自动支付尾款，默认开启 传入1关闭
+                     * 设置结束后是否自动支付尾款，默认1 开启 传入0关闭
+                     * @param _isAutoPay 结束后是否自动支付尾款，默认1 开启 传入0关闭
                      * 
                      */
                     void SetIsAutoPay(const int64_t& _isAutoPay);
@@ -106,15 +110,15 @@ namespace TencentCloud
                     bool IsAutoPayHasBeenSet() const;
 
                     /**
-                     * 获取结束后是否自动进行梯度保证金扣除，默认开启 传入1关闭
-                     * @return IsBidAutoPay 结束后是否自动进行梯度保证金扣除，默认开启 传入1关闭
+                     * 获取结束后是否自动进行梯度保证金扣除，默认1开启 传入0关闭
+                     * @return IsBidAutoPay 结束后是否自动进行梯度保证金扣除，默认1开启 传入0关闭
                      * 
                      */
                     int64_t GetIsBidAutoPay() const;
 
                     /**
-                     * 设置结束后是否自动进行梯度保证金扣除，默认开启 传入1关闭
-                     * @param _isBidAutoPay 结束后是否自动进行梯度保证金扣除，默认开启 传入1关闭
+                     * 设置结束后是否自动进行梯度保证金扣除，默认1开启 传入0关闭
+                     * @param _isBidAutoPay 结束后是否自动进行梯度保证金扣除，默认1开启 传入0关闭
                      * 
                      */
                     void SetIsBidAutoPay(const int64_t& _isBidAutoPay);
@@ -135,19 +139,20 @@ namespace TencentCloud
                     bool m_domainListHasBeenSet;
 
                     /**
-                     * 模板ID
+                     * 模板ID 
+可通过[DescribeTemplateList](https://cloud.tencent.com/document/api/242/48940)接口获取
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 结束后是否自动支付尾款，默认开启 传入1关闭
+                     * 结束后是否自动支付尾款，默认1 开启 传入0关闭
                      */
                     int64_t m_isAutoPay;
                     bool m_isAutoPayHasBeenSet;
 
                     /**
-                     * 结束后是否自动进行梯度保证金扣除，默认开启 传入1关闭
+                     * 结束后是否自动进行梯度保证金扣除，默认1开启 传入0关闭
                      */
                     int64_t m_isBidAutoPay;
                     bool m_isBidAutoPayHasBeenSet;

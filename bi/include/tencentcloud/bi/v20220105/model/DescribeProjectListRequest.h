@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool ModuleCollectionHasBeenSet() const;
 
+                    /**
+                     * 获取moduleId集合
+                     * @return ModuleIdList moduleId集合
+                     * 
+                     */
+                    std::vector<std::string> GetModuleIdList() const;
+
+                    /**
+                     * 设置moduleId集合
+                     * @param _moduleIdList moduleId集合
+                     * 
+                     */
+                    void SetModuleIdList(const std::vector<std::string>& _moduleIdList);
+
+                    /**
+                     * 判断参数 ModuleIdList 是否已赋值
+                     * @return ModuleIdList 是否已赋值
+                     * 
+                     */
+                    bool ModuleIdListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     std::string m_moduleCollection;
                     bool m_moduleCollectionHasBeenSet;
+
+                    /**
+                     * moduleId集合
+                     */
+                    std::vector<std::string> m_moduleIdList;
+                    bool m_moduleIdListHasBeenSet;
 
                 };
             }

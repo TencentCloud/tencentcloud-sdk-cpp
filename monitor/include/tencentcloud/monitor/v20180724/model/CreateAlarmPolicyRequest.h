@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@
 #include <tencentcloud/monitor/v20180724/model/Tag.h>
 #include <tencentcloud/monitor/v20180724/model/LogAlarmReq.h>
 #include <tencentcloud/monitor/v20180724/model/AlarmHierarchicalNotice.h>
+#include <tencentcloud/monitor/v20180724/model/NoticeContentTmplBindInfo.h>
 
 
 namespace TencentCloud
@@ -448,6 +449,48 @@ namespace TencentCloud
                      */
                     bool EbSubjectHasBeenSet() const;
 
+                    /**
+                     * 获取附加告警内容
+                     * @return AdditionalAlarmContent 附加告警内容
+                     * 
+                     */
+                    std::string GetAdditionalAlarmContent() const;
+
+                    /**
+                     * 设置附加告警内容
+                     * @param _additionalAlarmContent 附加告警内容
+                     * 
+                     */
+                    void SetAdditionalAlarmContent(const std::string& _additionalAlarmContent);
+
+                    /**
+                     * 判断参数 AdditionalAlarmContent 是否已赋值
+                     * @return AdditionalAlarmContent 是否已赋值
+                     * 
+                     */
+                    bool AdditionalAlarmContentHasBeenSet() const;
+
+                    /**
+                     * 获取通知模板绑定信息
+                     * @return NoticeContentTmplBindInfos 通知模板绑定信息
+                     * 
+                     */
+                    std::vector<NoticeContentTmplBindInfo> GetNoticeContentTmplBindInfos() const;
+
+                    /**
+                     * 设置通知模板绑定信息
+                     * @param _noticeContentTmplBindInfos 通知模板绑定信息
+                     * 
+                     */
+                    void SetNoticeContentTmplBindInfos(const std::vector<NoticeContentTmplBindInfo>& _noticeContentTmplBindInfos);
+
+                    /**
+                     * 判断参数 NoticeContentTmplBindInfos 是否已赋值
+                     * @return NoticeContentTmplBindInfos 是否已赋值
+                     * 
+                     */
+                    bool NoticeContentTmplBindInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -563,6 +606,18 @@ namespace TencentCloud
                      */
                     std::string m_ebSubject;
                     bool m_ebSubjectHasBeenSet;
+
+                    /**
+                     * 附加告警内容
+                     */
+                    std::string m_additionalAlarmContent;
+                    bool m_additionalAlarmContentHasBeenSet;
+
+                    /**
+                     * 通知模板绑定信息
+                     */
+                    std::vector<NoticeContentTmplBindInfo> m_noticeContentTmplBindInfos;
+                    bool m_noticeContentTmplBindInfosHasBeenSet;
 
                 };
             }

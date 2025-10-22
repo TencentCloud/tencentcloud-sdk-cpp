@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取场景ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IntId 场景ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIntId() const;
 
                     /**
                      * 设置场景ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _intId 场景ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIntId(const int64_t& _intId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 用户UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置用户UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uin 用户UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取场景名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SceneName 场景名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSceneName() const;
 
                     /**
                      * 设置场景名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sceneName 场景名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSceneName(const std::string& _sceneName);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取触发规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SceneTrigger 触发规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSceneTrigger() const;
 
                     /**
                      * 设置触发规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sceneTrigger 触发规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSceneTrigger(const std::string& _sceneTrigger);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取录制时长 秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordDuration 录制时长 秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRecordDuration() const;
 
                     /**
                      * 设置录制时长 秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recordDuration 录制时长 秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecordDuration(const int64_t& _recordDuration);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取存储时长 天
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StoreDuration 存储时长 天
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStoreDuration() const;
 
                     /**
                      * 设置存储时长 天
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _storeDuration 存储时长 天
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStoreDuration(const int64_t& _storeDuration);
@@ -242,42 +218,36 @@ namespace TencentCloud
 
                     /**
                      * 场景ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_intId;
                     bool m_intIdHasBeenSet;
 
                     /**
                      * 用户UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
                      * 场景名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sceneName;
                     bool m_sceneNameHasBeenSet;
 
                     /**
                      * 触发规则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sceneTrigger;
                     bool m_sceneTriggerHasBeenSet;
 
                     /**
                      * 录制时长 秒
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_recordDuration;
                     bool m_recordDurationHasBeenSet;
 
                     /**
                      * 存储时长 天
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_storeDuration;
                     bool m_storeDurationHasBeenSet;

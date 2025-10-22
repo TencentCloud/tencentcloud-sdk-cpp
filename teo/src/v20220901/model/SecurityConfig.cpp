@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,8 @@ SecurityConfig::SecurityConfig() :
     m_exceptConfigHasBeenSet(false),
     m_dropPageConfigHasBeenSet(false),
     m_templateConfigHasBeenSet(false),
-    m_slowPostConfigHasBeenSet(false)
+    m_slowPostConfigHasBeenSet(false),
+    m_detectLengthLimitConfigHasBeenSet(false)
 {
 }
 
@@ -209,6 +210,23 @@ CoreInternalOutcome SecurityConfig::Deserialize(const rapidjson::Value &value)
         m_slowPostConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("DetectLengthLimitConfig") && !value["DetectLengthLimitConfig"].IsNull())
+    {
+        if (!value["DetectLengthLimitConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityConfig.DetectLengthLimitConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_detectLengthLimitConfig.Deserialize(value["DetectLengthLimitConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_detectLengthLimitConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -304,6 +322,15 @@ void SecurityConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_slowPostConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_detectLengthLimitConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DetectLengthLimitConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_detectLengthLimitConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -467,5 +494,21 @@ void SecurityConfig::SetSlowPostConfig(const SlowPostConfig& _slowPostConfig)
 bool SecurityConfig::SlowPostConfigHasBeenSet() const
 {
     return m_slowPostConfigHasBeenSet;
+}
+
+DetectLengthLimitConfig SecurityConfig::GetDetectLengthLimitConfig() const
+{
+    return m_detectLengthLimitConfig;
+}
+
+void SecurityConfig::SetDetectLengthLimitConfig(const DetectLengthLimitConfig& _detectLengthLimitConfig)
+{
+    m_detectLengthLimitConfig = _detectLengthLimitConfig;
+    m_detectLengthLimitConfigHasBeenSet = true;
+}
+
+bool SecurityConfig::DetectLengthLimitConfigHasBeenSet() const
+{
+    return m_detectLengthLimitConfigHasBeenSet;
 }
 

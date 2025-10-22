@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ ResourceRefDetail::ResourceRefDetail() :
     m_versionHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_systemProvideHasBeenSet(false)
+    m_systemProvideHasBeenSet(false),
+    m_connectorHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome ResourceRefDetail::Deserialize(const rapidjson::Value &value
         m_systemProvideHasBeenSet = true;
     }
 
+    if (value.HasMember("Connector") && !value["Connector"].IsNull())
+    {
+        if (!value["Connector"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourceRefDetail.Connector` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_connector = string(value["Connector"].GetString());
+        m_connectorHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void ResourceRefDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "SystemProvide";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_systemProvide, allocator);
+    }
+
+    if (m_connectorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Connector";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_connector.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void ResourceRefDetail::SetSystemProvide(const int64_t& _systemProvide)
 bool ResourceRefDetail::SystemProvideHasBeenSet() const
 {
     return m_systemProvideHasBeenSet;
+}
+
+string ResourceRefDetail::GetConnector() const
+{
+    return m_connector;
+}
+
+void ResourceRefDetail::SetConnector(const string& _connector)
+{
+    m_connector = _connector;
+    m_connectorHasBeenSet = true;
+}
+
+bool ResourceRefDetail::ConnectorHasBeenSet() const
+{
+    return m_connectorHasBeenSet;
 }
 

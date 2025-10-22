@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取聚合运算符：$addFields、$match、$project、$replaceRoot、$redact、$replaceWith、$set、$unset。其中 $replaceWith、$set、$unset 只有当订阅实例是4.2及以上版本可选。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AggOp 聚合运算符：$addFields、$match、$project、$replaceRoot、$redact、$replaceWith、$set、$unset。其中 $replaceWith、$set、$unset 只有当订阅实例是4.2及以上版本可选。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAggOp() const;
 
                     /**
                      * 设置聚合运算符：$addFields、$match、$project、$replaceRoot、$redact、$replaceWith、$set、$unset。其中 $replaceWith、$set、$unset 只有当订阅实例是4.2及以上版本可选。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _aggOp 聚合运算符：$addFields、$match、$project、$replaceRoot、$redact、$replaceWith、$set、$unset。其中 $replaceWith、$set、$unset 只有当订阅实例是4.2及以上版本可选。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAggOp(const std::string& _aggOp);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取聚合表达式。必须是json格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AggCmd 聚合表达式。必须是json格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAggCmd() const;
 
                     /**
                      * 设置聚合表达式。必须是json格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _aggCmd 聚合表达式。必须是json格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAggCmd(const std::string& _aggCmd);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 聚合运算符：$addFields、$match、$project、$replaceRoot、$redact、$replaceWith、$set、$unset。其中 $replaceWith、$set、$unset 只有当订阅实例是4.2及以上版本可选。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_aggOp;
                     bool m_aggOpHasBeenSet;
 
                     /**
                      * 聚合表达式。必须是json格式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_aggCmd;
                     bool m_aggCmdHasBeenSet;

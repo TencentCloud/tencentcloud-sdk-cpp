@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网关服务列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Services 网关服务列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DescribeGatewayVersion> GetServices() const;
 
                     /**
                      * 设置网关服务列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _services 网关服务列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServices(const std::vector<DescribeGatewayVersion>& _services);
@@ -76,7 +72,6 @@ namespace TencentCloud
 
                     /**
                      * 网关服务列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DescribeGatewayVersion> m_services;
                     bool m_servicesHasBeenSet;

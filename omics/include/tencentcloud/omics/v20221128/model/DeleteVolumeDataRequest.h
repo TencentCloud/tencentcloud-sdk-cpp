@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool VolumeIdHasBeenSet() const;
 
                     /**
-                     * 获取需要删除的路径
-                     * @return Path 需要删除的路径
+                     * 获取需要删除的路径。
+                     * @return Path 需要删除的路径。
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
-                     * 设置需要删除的路径
-                     * @param _path 需要删除的路径
+                     * 设置需要删除的路径。
+                     * @param _path 需要删除的路径。
                      * 
                      */
                     void SetPath(const std::string& _path);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_volumeIdHasBeenSet;
 
                     /**
-                     * 需要删除的路径
+                     * 需要删除的路径。
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;

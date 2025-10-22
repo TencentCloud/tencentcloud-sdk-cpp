@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool BackupPeriodHasBeenSet() const;
 
                     /**
-                     * 获取数据备份保留时长
-                     * @return BaseBackupRetentionPeriod 数据备份保留时长
+                     * 获取数据备份保留时长。单位：天
+                     * @return BaseBackupRetentionPeriod 数据备份保留时长。单位：天
                      * 
                      */
                     uint64_t GetBaseBackupRetentionPeriod() const;
 
                     /**
-                     * 设置数据备份保留时长
-                     * @param _baseBackupRetentionPeriod 数据备份保留时长
+                     * 设置数据备份保留时长。单位：天
+                     * @param _baseBackupRetentionPeriod 数据备份保留时长。单位：天
                      * 
                      */
                     void SetBaseBackupRetentionPeriod(const uint64_t& _baseBackupRetentionPeriod);
@@ -130,6 +130,153 @@ namespace TencentCloud
                      */
                     bool MaxBackupStartTimeHasBeenSet() const;
 
+                    /**
+                     * 获取备份计划ID
+                     * @return PlanId 备份计划ID
+                     * 
+                     */
+                    std::string GetPlanId() const;
+
+                    /**
+                     * 设置备份计划ID
+                     * @param _planId 备份计划ID
+                     * 
+                     */
+                    void SetPlanId(const std::string& _planId);
+
+                    /**
+                     * 判断参数 PlanId 是否已赋值
+                     * @return PlanId 是否已赋值
+                     * 
+                     */
+                    bool PlanIdHasBeenSet() const;
+
+                    /**
+                     * 获取备份计划自定义名称。
+                     * @return PlanName 备份计划自定义名称。
+                     * 
+                     */
+                    std::string GetPlanName() const;
+
+                    /**
+                     * 设置备份计划自定义名称。
+                     * @param _planName 备份计划自定义名称。
+                     * 
+                     */
+                    void SetPlanName(const std::string& _planName);
+
+                    /**
+                     * 判断参数 PlanName 是否已赋值
+                     * @return PlanName 是否已赋值
+                     * 
+                     */
+                    bool PlanNameHasBeenSet() const;
+
+                    /**
+                     * 获取日志备份保留时长。单位：天
+                     * @return LogBackupRetentionPeriod 日志备份保留时长。单位：天
+                     * 
+                     */
+                    uint64_t GetLogBackupRetentionPeriod() const;
+
+                    /**
+                     * 设置日志备份保留时长。单位：天
+                     * @param _logBackupRetentionPeriod 日志备份保留时长。单位：天
+                     * 
+                     */
+                    void SetLogBackupRetentionPeriod(const uint64_t& _logBackupRetentionPeriod);
+
+                    /**
+                     * 判断参数 LogBackupRetentionPeriod 是否已赋值
+                     * @return LogBackupRetentionPeriod 是否已赋值
+                     * 
+                     */
+                    bool LogBackupRetentionPeriodHasBeenSet() const;
+
+                    /**
+                     * 获取创建时间。
+                     * @return CreatedTime 创建时间。
+                     * 
+                     */
+                    std::string GetCreatedTime() const;
+
+                    /**
+                     * 设置创建时间。
+                     * @param _createdTime 创建时间。
+                     * 
+                     */
+                    void SetCreatedTime(const std::string& _createdTime);
+
+                    /**
+                     * 判断参数 CreatedTime 是否已赋值
+                     * @return CreatedTime 是否已赋值
+                     * 
+                     */
+                    bool CreatedTimeHasBeenSet() const;
+
+                    /**
+                     * 获取最近一次的修改时间。
+                     * @return UpdatedTime 最近一次的修改时间。
+                     * 
+                     */
+                    std::string GetUpdatedTime() const;
+
+                    /**
+                     * 设置最近一次的修改时间。
+                     * @param _updatedTime 最近一次的修改时间。
+                     * 
+                     */
+                    void SetUpdatedTime(const std::string& _updatedTime);
+
+                    /**
+                     * 判断参数 UpdatedTime 是否已赋值
+                     * @return UpdatedTime 是否已赋值
+                     * 
+                     */
+                    bool UpdatedTimeHasBeenSet() const;
+
+                    /**
+                     * 获取备份计划类型。系统默认创建的为default，自定义的为custom。
+                     * @return PlanType 备份计划类型。系统默认创建的为default，自定义的为custom。
+                     * 
+                     */
+                    std::string GetPlanType() const;
+
+                    /**
+                     * 设置备份计划类型。系统默认创建的为default，自定义的为custom。
+                     * @param _planType 备份计划类型。系统默认创建的为default，自定义的为custom。
+                     * 
+                     */
+                    void SetPlanType(const std::string& _planType);
+
+                    /**
+                     * 判断参数 PlanType 是否已赋值
+                     * @return PlanType 是否已赋值
+                     * 
+                     */
+                    bool PlanTypeHasBeenSet() const;
+
+                    /**
+                     * 获取备份周期类型。当前支持week、month。
+                     * @return BackupPeriodType 备份周期类型。当前支持week、month。
+                     * 
+                     */
+                    std::string GetBackupPeriodType() const;
+
+                    /**
+                     * 设置备份周期类型。当前支持week、month。
+                     * @param _backupPeriodType 备份周期类型。当前支持week、month。
+                     * 
+                     */
+                    void SetBackupPeriodType(const std::string& _backupPeriodType);
+
+                    /**
+                     * 判断参数 BackupPeriodType 是否已赋值
+                     * @return BackupPeriodType 是否已赋值
+                     * 
+                     */
+                    bool BackupPeriodTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,7 +286,7 @@ namespace TencentCloud
                     bool m_backupPeriodHasBeenSet;
 
                     /**
-                     * 数据备份保留时长
+                     * 数据备份保留时长。单位：天
                      */
                     uint64_t m_baseBackupRetentionPeriod;
                     bool m_baseBackupRetentionPeriodHasBeenSet;
@@ -155,6 +302,48 @@ namespace TencentCloud
                      */
                     std::string m_maxBackupStartTime;
                     bool m_maxBackupStartTimeHasBeenSet;
+
+                    /**
+                     * 备份计划ID
+                     */
+                    std::string m_planId;
+                    bool m_planIdHasBeenSet;
+
+                    /**
+                     * 备份计划自定义名称。
+                     */
+                    std::string m_planName;
+                    bool m_planNameHasBeenSet;
+
+                    /**
+                     * 日志备份保留时长。单位：天
+                     */
+                    uint64_t m_logBackupRetentionPeriod;
+                    bool m_logBackupRetentionPeriodHasBeenSet;
+
+                    /**
+                     * 创建时间。
+                     */
+                    std::string m_createdTime;
+                    bool m_createdTimeHasBeenSet;
+
+                    /**
+                     * 最近一次的修改时间。
+                     */
+                    std::string m_updatedTime;
+                    bool m_updatedTimeHasBeenSet;
+
+                    /**
+                     * 备份计划类型。系统默认创建的为default，自定义的为custom。
+                     */
+                    std::string m_planType;
+                    bool m_planTypeHasBeenSet;
+
+                    /**
+                     * 备份周期类型。当前支持week、month。
+                     */
+                    std::string m_backupPeriodType;
+                    bool m_backupPeriodTypeHasBeenSet;
 
                 };
             }

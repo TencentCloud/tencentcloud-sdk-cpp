@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -184,15 +184,15 @@ namespace TencentCloud
                     bool AssetCreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取公网ip
-                     * @return PublicIp 公网ip
+                     * 获取公网IP
+                     * @return PublicIp 公网IP
                      * 
                      */
                     std::string GetPublicIp() const;
 
                     /**
-                     * 设置公网ip
-                     * @param _publicIp 公网ip
+                     * 设置公网IP
+                     * @param _publicIp 公网IP
                      * 
                      */
                     void SetPublicIp(const std::string& _publicIp);
@@ -205,15 +205,15 @@ namespace TencentCloud
                     bool PublicIpHasBeenSet() const;
 
                     /**
-                     * 获取私网ip
-                     * @return PrivateIp 私网ip
+                     * 获取私网IP
+                     * @return PrivateIp 私网IP
                      * 
                      */
                     std::string GetPrivateIp() const;
 
                     /**
-                     * 设置私网ip
-                     * @param _privateIp 私网ip
+                     * 设置私网IP
+                     * @param _privateIp 私网IP
                      * 
                      */
                     void SetPrivateIp(const std::string& _privateIp);
@@ -415,15 +415,15 @@ namespace TencentCloud
                     bool SubnetNameHasBeenSet() const;
 
                     /**
-                     * 获取uuid
-                     * @return InstanceUuid uuid
+                     * 获取主机安全Agent UUID
+                     * @return InstanceUuid 主机安全Agent UUID
                      * 
                      */
                     std::string GetInstanceUuid() const;
 
                     /**
-                     * 设置uuid
-                     * @param _instanceUuid uuid
+                     * 设置主机安全Agent UUID
+                     * @param _instanceUuid 主机安全Agent UUID
                      * 
                      */
                     void SetInstanceUuid(const std::string& _instanceUuid);
@@ -436,15 +436,15 @@ namespace TencentCloud
                     bool InstanceUuidHasBeenSet() const;
 
                     /**
-                     * 获取qquid
-                     * @return InstanceQUuid qquid
+                     * 获取云主机 CVM UUID
+                     * @return InstanceQUuid 云主机 CVM UUID
                      * 
                      */
                     std::string GetInstanceQUuid() const;
 
                     /**
-                     * 设置qquid
-                     * @param _instanceQUuid qquid
+                     * 设置云主机 CVM UUID
+                     * @param _instanceQUuid 云主机 CVM UUID
                      * 
                      */
                     void SetInstanceQUuid(const std::string& _instanceQUuid);
@@ -1531,13 +1531,13 @@ namespace TencentCloud
                     bool m_assetCreateTimeHasBeenSet;
 
                     /**
-                     * 公网ip
+                     * 公网IP
                      */
                     std::string m_publicIp;
                     bool m_publicIpHasBeenSet;
 
                     /**
-                     * 私网ip
+                     * 私网IP
                      */
                     std::string m_privateIp;
                     bool m_privateIpHasBeenSet;
@@ -1597,13 +1597,13 @@ namespace TencentCloud
                     bool m_subnetNameHasBeenSet;
 
                     /**
-                     * uuid
+                     * 主机安全Agent UUID
                      */
                     std::string m_instanceUuid;
                     bool m_instanceUuidHasBeenSet;
 
                     /**
-                     * qquid
+                     * 云主机 CVM UUID
                      */
                     std::string m_instanceQUuid;
                     bool m_instanceQUuidHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取镜像版本数组
-                     * @return ImageTags 镜像版本数组
+                     * 获取需要删除的镜像版本列表，可通过调用[DescribeImageTags](https://cloud.tencent.com/document/api/649/36052)查询已创建的镜像版本列表或登录控制台进行查看。
+                     * @return ImageTags 需要删除的镜像版本列表，可通过调用[DescribeImageTags](https://cloud.tencent.com/document/api/649/36052)查询已创建的镜像版本列表或登录控制台进行查看。
                      * 
                      */
                     std::vector<DeleteImageTag> GetImageTags() const;
 
                     /**
-                     * 设置镜像版本数组
-                     * @param _imageTags 镜像版本数组
+                     * 设置需要删除的镜像版本列表，可通过调用[DescribeImageTags](https://cloud.tencent.com/document/api/649/36052)查询已创建的镜像版本列表或登录控制台进行查看。
+                     * @param _imageTags 需要删除的镜像版本列表，可通过调用[DescribeImageTags](https://cloud.tencent.com/document/api/649/36052)查询已创建的镜像版本列表或登录控制台进行查看。
                      * 
                      */
                     void SetImageTags(const std::vector<DeleteImageTag>& _imageTags);
@@ -88,7 +88,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 镜像版本数组
+                     * 需要删除的镜像版本列表，可通过调用[DescribeImageTags](https://cloud.tencent.com/document/api/649/36052)查询已创建的镜像版本列表或登录控制台进行查看。
                      */
                     std::vector<DeleteImageTag> m_imageTags;
                     bool m_imageTagsHasBeenSet;

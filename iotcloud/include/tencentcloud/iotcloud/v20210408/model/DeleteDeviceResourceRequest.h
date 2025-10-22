@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,27 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取产品ID
-                     * @return ProductID 产品ID
-                     * 
-                     */
-                    std::string GetProductID() const;
-
-                    /**
-                     * 设置产品ID
-                     * @param _productID 产品ID
-                     * 
-                     */
-                    void SetProductID(const std::string& _productID);
-
-                    /**
-                     * 判断参数 ProductID 是否已赋值
-                     * @return ProductID 是否已赋值
-                     * 
-                     */
-                    bool ProductIDHasBeenSet() const;
-
-                    /**
                      * 获取资源名称
                      * @return Name 资源名称
                      * 
@@ -105,13 +84,28 @@ namespace TencentCloud
                      */
                     bool DeviceNameHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取产品ID
+                     * @return ProductID 产品ID
+                     * 
+                     */
+                    std::string GetProductID() const;
 
                     /**
-                     * 产品ID
+                     * 设置产品ID
+                     * @param _productID 产品ID
+                     * 
                      */
-                    std::string m_productID;
-                    bool m_productIDHasBeenSet;
+                    void SetProductID(const std::string& _productID);
+
+                    /**
+                     * 判断参数 ProductID 是否已赋值
+                     * @return ProductID 是否已赋值
+                     * 
+                     */
+                    bool ProductIDHasBeenSet() const;
+
+                private:
 
                     /**
                      * 资源名称
@@ -124,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_deviceName;
                     bool m_deviceNameHasBeenSet;
+
+                    /**
+                     * 产品ID
+                     */
+                    std::string m_productID;
+                    bool m_productIDHasBeenSet;
 
                 };
             }

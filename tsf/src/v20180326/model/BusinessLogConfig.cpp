@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,13 @@ BusinessLogConfig::BusinessLogConfig() :
     m_configUpdateTimeHasBeenSet(false),
     m_configSchemaHasBeenSet(false),
     m_configAssociatedGroupsHasBeenSet(false),
-    m_configAssociatedGroupListHasBeenSet(false)
+    m_configAssociatedGroupListHasBeenSet(false),
+    m_filebeatConfigEnableHasBeenSet(false),
+    m_filebeatCloseTimeoutHasBeenSet(false),
+    m_filebeatIgnoreOlderHasBeenSet(false),
+    m_filebeatHarvesterLimitHasBeenSet(false),
+    m_filebeatCloseInactiveHasBeenSet(false),
+    m_filebeatCleanInactiveHasBeenSet(false)
 {
 }
 
@@ -177,6 +183,66 @@ CoreInternalOutcome BusinessLogConfig::Deserialize(const rapidjson::Value &value
         m_configAssociatedGroupListHasBeenSet = true;
     }
 
+    if (value.HasMember("FilebeatConfigEnable") && !value["FilebeatConfigEnable"].IsNull())
+    {
+        if (!value["FilebeatConfigEnable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `BusinessLogConfig.FilebeatConfigEnable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_filebeatConfigEnable = value["FilebeatConfigEnable"].GetBool();
+        m_filebeatConfigEnableHasBeenSet = true;
+    }
+
+    if (value.HasMember("FilebeatCloseTimeout") && !value["FilebeatCloseTimeout"].IsNull())
+    {
+        if (!value["FilebeatCloseTimeout"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BusinessLogConfig.FilebeatCloseTimeout` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_filebeatCloseTimeout = value["FilebeatCloseTimeout"].GetInt64();
+        m_filebeatCloseTimeoutHasBeenSet = true;
+    }
+
+    if (value.HasMember("FilebeatIgnoreOlder") && !value["FilebeatIgnoreOlder"].IsNull())
+    {
+        if (!value["FilebeatIgnoreOlder"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BusinessLogConfig.FilebeatIgnoreOlder` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_filebeatIgnoreOlder = value["FilebeatIgnoreOlder"].GetInt64();
+        m_filebeatIgnoreOlderHasBeenSet = true;
+    }
+
+    if (value.HasMember("FilebeatHarvesterLimit") && !value["FilebeatHarvesterLimit"].IsNull())
+    {
+        if (!value["FilebeatHarvesterLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BusinessLogConfig.FilebeatHarvesterLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_filebeatHarvesterLimit = value["FilebeatHarvesterLimit"].GetInt64();
+        m_filebeatHarvesterLimitHasBeenSet = true;
+    }
+
+    if (value.HasMember("FilebeatCloseInactive") && !value["FilebeatCloseInactive"].IsNull())
+    {
+        if (!value["FilebeatCloseInactive"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BusinessLogConfig.FilebeatCloseInactive` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_filebeatCloseInactive = value["FilebeatCloseInactive"].GetInt64();
+        m_filebeatCloseInactiveHasBeenSet = true;
+    }
+
+    if (value.HasMember("FilebeatCleanInactive") && !value["FilebeatCleanInactive"].IsNull())
+    {
+        if (!value["FilebeatCleanInactive"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BusinessLogConfig.FilebeatCleanInactive` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_filebeatCleanInactive = value["FilebeatCleanInactive"].GetInt64();
+        m_filebeatCleanInactiveHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -285,6 +351,54 @@ void BusinessLogConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_filebeatConfigEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilebeatConfigEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_filebeatConfigEnable, allocator);
+    }
+
+    if (m_filebeatCloseTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilebeatCloseTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_filebeatCloseTimeout, allocator);
+    }
+
+    if (m_filebeatIgnoreOlderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilebeatIgnoreOlder";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_filebeatIgnoreOlder, allocator);
+    }
+
+    if (m_filebeatHarvesterLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilebeatHarvesterLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_filebeatHarvesterLimit, allocator);
+    }
+
+    if (m_filebeatCloseInactiveHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilebeatCloseInactive";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_filebeatCloseInactive, allocator);
+    }
+
+    if (m_filebeatCleanInactiveHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilebeatCleanInactive";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_filebeatCleanInactive, allocator);
     }
 
 }
@@ -464,5 +578,101 @@ void BusinessLogConfig::SetConfigAssociatedGroupList(const vector<BusinessLogCon
 bool BusinessLogConfig::ConfigAssociatedGroupListHasBeenSet() const
 {
     return m_configAssociatedGroupListHasBeenSet;
+}
+
+bool BusinessLogConfig::GetFilebeatConfigEnable() const
+{
+    return m_filebeatConfigEnable;
+}
+
+void BusinessLogConfig::SetFilebeatConfigEnable(const bool& _filebeatConfigEnable)
+{
+    m_filebeatConfigEnable = _filebeatConfigEnable;
+    m_filebeatConfigEnableHasBeenSet = true;
+}
+
+bool BusinessLogConfig::FilebeatConfigEnableHasBeenSet() const
+{
+    return m_filebeatConfigEnableHasBeenSet;
+}
+
+int64_t BusinessLogConfig::GetFilebeatCloseTimeout() const
+{
+    return m_filebeatCloseTimeout;
+}
+
+void BusinessLogConfig::SetFilebeatCloseTimeout(const int64_t& _filebeatCloseTimeout)
+{
+    m_filebeatCloseTimeout = _filebeatCloseTimeout;
+    m_filebeatCloseTimeoutHasBeenSet = true;
+}
+
+bool BusinessLogConfig::FilebeatCloseTimeoutHasBeenSet() const
+{
+    return m_filebeatCloseTimeoutHasBeenSet;
+}
+
+int64_t BusinessLogConfig::GetFilebeatIgnoreOlder() const
+{
+    return m_filebeatIgnoreOlder;
+}
+
+void BusinessLogConfig::SetFilebeatIgnoreOlder(const int64_t& _filebeatIgnoreOlder)
+{
+    m_filebeatIgnoreOlder = _filebeatIgnoreOlder;
+    m_filebeatIgnoreOlderHasBeenSet = true;
+}
+
+bool BusinessLogConfig::FilebeatIgnoreOlderHasBeenSet() const
+{
+    return m_filebeatIgnoreOlderHasBeenSet;
+}
+
+int64_t BusinessLogConfig::GetFilebeatHarvesterLimit() const
+{
+    return m_filebeatHarvesterLimit;
+}
+
+void BusinessLogConfig::SetFilebeatHarvesterLimit(const int64_t& _filebeatHarvesterLimit)
+{
+    m_filebeatHarvesterLimit = _filebeatHarvesterLimit;
+    m_filebeatHarvesterLimitHasBeenSet = true;
+}
+
+bool BusinessLogConfig::FilebeatHarvesterLimitHasBeenSet() const
+{
+    return m_filebeatHarvesterLimitHasBeenSet;
+}
+
+int64_t BusinessLogConfig::GetFilebeatCloseInactive() const
+{
+    return m_filebeatCloseInactive;
+}
+
+void BusinessLogConfig::SetFilebeatCloseInactive(const int64_t& _filebeatCloseInactive)
+{
+    m_filebeatCloseInactive = _filebeatCloseInactive;
+    m_filebeatCloseInactiveHasBeenSet = true;
+}
+
+bool BusinessLogConfig::FilebeatCloseInactiveHasBeenSet() const
+{
+    return m_filebeatCloseInactiveHasBeenSet;
+}
+
+int64_t BusinessLogConfig::GetFilebeatCleanInactive() const
+{
+    return m_filebeatCleanInactive;
+}
+
+void BusinessLogConfig::SetFilebeatCleanInactive(const int64_t& _filebeatCleanInactive)
+{
+    m_filebeatCleanInactive = _filebeatCleanInactive;
+    m_filebeatCleanInactiveHasBeenSet = true;
+}
+
+bool BusinessLogConfig::FilebeatCleanInactiveHasBeenSet() const
+{
+    return m_filebeatCleanInactiveHasBeenSet;
 }
 

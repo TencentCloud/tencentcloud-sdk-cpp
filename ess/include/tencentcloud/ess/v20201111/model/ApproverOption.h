@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -138,14 +138,20 @@ namespace TencentCloud
 
 <ul><li> **1** :  动态签署人（可发起合同后再补充签署人信息）注：`企业自动签不支持动态补充`</li></ul>
 
+
+
 注：
-`使用动态签署人能力前，需登陆腾讯电子签控制台打开服务开关`
+1. `使用动态签署人能力前，需登陆腾讯电子签控制台打开服务开关`
+2. 此参数在嵌入式场景下无效。
                      * @return FillType 签署人信息补充类型，默认无需补充。
 
 <ul><li> **1** :  动态签署人（可发起合同后再补充签署人信息）注：`企业自动签不支持动态补充`</li></ul>
 
+
+
 注：
-`使用动态签署人能力前，需登陆腾讯电子签控制台打开服务开关`
+1. `使用动态签署人能力前，需登陆腾讯电子签控制台打开服务开关`
+2. 此参数在嵌入式场景下无效。
                      * 
                      */
                     int64_t GetFillType() const;
@@ -155,14 +161,20 @@ namespace TencentCloud
 
 <ul><li> **1** :  动态签署人（可发起合同后再补充签署人信息）注：`企业自动签不支持动态补充`</li></ul>
 
+
+
 注：
-`使用动态签署人能力前，需登陆腾讯电子签控制台打开服务开关`
+1. `使用动态签署人能力前，需登陆腾讯电子签控制台打开服务开关`
+2. 此参数在嵌入式场景下无效。
                      * @param _fillType 签署人信息补充类型，默认无需补充。
 
 <ul><li> **1** :  动态签署人（可发起合同后再补充签署人信息）注：`企业自动签不支持动态补充`</li></ul>
 
+
+
 注：
-`使用动态签署人能力前，需登陆腾讯电子签控制台打开服务开关`
+1. `使用动态签署人能力前，需登陆腾讯电子签控制台打开服务开关`
+2. 此参数在嵌入式场景下无效。
                      * 
                      */
                     void SetFillType(const int64_t& _fillType);
@@ -223,6 +235,47 @@ namespace TencentCloud
                      */
                     bool FlowReadLimitHasBeenSet() const;
 
+                    /**
+                     * 获取禁止在签署过程中添加签署日期控件
+ <br/>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：
+<ul>
+<li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li>
+<li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li>
+</ul>
+                     * @return ForbidAddSignDate 禁止在签署过程中添加签署日期控件
+ <br/>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：
+<ul>
+<li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li>
+<li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li>
+</ul>
+                     * 
+                     */
+                    bool GetForbidAddSignDate() const;
+
+                    /**
+                     * 设置禁止在签署过程中添加签署日期控件
+ <br/>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：
+<ul>
+<li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li>
+<li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li>
+</ul>
+                     * @param _forbidAddSignDate 禁止在签署过程中添加签署日期控件
+ <br/>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：
+<ul>
+<li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li>
+<li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li>
+</ul>
+                     * 
+                     */
+                    void SetForbidAddSignDate(const bool& _forbidAddSignDate);
+
+                    /**
+                     * 判断参数 ForbidAddSignDate 是否已赋值
+                     * @return ForbidAddSignDate 是否已赋值
+                     * 
+                     */
+                    bool ForbidAddSignDateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -254,8 +307,11 @@ namespace TencentCloud
 
 <ul><li> **1** :  动态签署人（可发起合同后再补充签署人信息）注：`企业自动签不支持动态补充`</li></ul>
 
+
+
 注：
-`使用动态签署人能力前，需登陆腾讯电子签控制台打开服务开关`
+1. `使用动态签署人能力前，需登陆腾讯电子签控制台打开服务开关`
+2. 此参数在嵌入式场景下无效。
                      */
                     int64_t m_fillType;
                     bool m_fillTypeHasBeenSet;
@@ -272,6 +328,17 @@ namespace TencentCloud
                      */
                     std::string m_flowReadLimit;
                     bool m_flowReadLimitHasBeenSet;
+
+                    /**
+                     * 禁止在签署过程中添加签署日期控件
+ <br/>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：
+<ul>
+<li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li>
+<li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li>
+</ul>
+                     */
+                    bool m_forbidAddSignDate;
+                    bool m_forbidAddSignDateHasBeenSet;
 
                 };
             }

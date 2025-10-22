@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取续费类型：AUTO_RENEW 自动续费，  MANUAL_RENEW 手动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RenewFlag 续费类型：AUTO_RENEW 自动续费，  MANUAL_RENEW 手动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRenewFlag() const;
 
                     /**
                      * 设置续费类型：AUTO_RENEW 自动续费，  MANUAL_RENEW 手动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _renewFlag 续费类型：AUTO_RENEW 自动续费，  MANUAL_RENEW 手动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRenewFlag(const std::string& _renewFlag);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取购买时长，单位：月
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Period 购买时长，单位：月
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
                      * 设置购买时长，单位：月
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _period 购买时长，单位：月
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPeriod(const int64_t& _period);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 续费类型：AUTO_RENEW 自动续费，  MANUAL_RENEW 手动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_renewFlag;
                     bool m_renewFlagHasBeenSet;
 
                     /**
                      * 购买时长，单位：月
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;

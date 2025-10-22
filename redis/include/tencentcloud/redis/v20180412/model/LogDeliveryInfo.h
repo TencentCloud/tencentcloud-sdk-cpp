@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志投递开启状态，开启：true，关闭：false
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Enabled 日志投递开启状态，开启：true，关闭：false
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnabled() const;
 
                     /**
                      * 设置日志投递开启状态，开启：true，关闭：false
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enabled 日志投递开启状态，开启：true，关闭：false
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnabled(const bool& _enabled);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志集ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogsetId 日志集ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogsetId() const;
 
                     /**
                      * 设置日志集ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logsetId 日志集ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogsetId(const std::string& _logsetId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志主题ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicId 日志主题ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置日志主题ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicId 日志主题ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志集所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogRegion 日志集所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogRegion() const;
 
                     /**
                      * 设置日志集所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logRegion 日志集所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogRegion(const std::string& _logRegion);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 日志投递开启状态，开启：true，关闭：false
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enabled;
                     bool m_enabledHasBeenSet;
 
                     /**
                      * 日志集ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logsetId;
                     bool m_logsetIdHasBeenSet;
 
                     /**
                      * 日志主题ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
                      * 日志集所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logRegion;
                     bool m_logRegionHasBeenSet;

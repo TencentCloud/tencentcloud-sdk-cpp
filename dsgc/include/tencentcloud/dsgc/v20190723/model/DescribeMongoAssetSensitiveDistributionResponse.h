@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,9 +48,7 @@ namespace TencentCloud
 
                     /**
                      * 获取mongo的资产统计数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MongoAsset mongo的资产统计数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MongoAsset GetMongoAsset() const;
@@ -64,9 +62,7 @@ namespace TencentCloud
 
                     /**
                      * 获取涉敏top数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopAsset 涉敏top数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TopAsset> GetTopAsset() const;
@@ -80,9 +76,7 @@ namespace TencentCloud
 
                     /**
                      * 获取mongo的详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MongoDetail mongo的详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<MongoAssetDBDetail> GetMongoDetail() const;
@@ -98,21 +92,18 @@ namespace TencentCloud
 
                     /**
                      * mongo的资产统计数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MongoAsset m_mongoAsset;
                     bool m_mongoAssetHasBeenSet;
 
                     /**
                      * 涉敏top数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TopAsset> m_topAsset;
                     bool m_topAssetHasBeenSet;
 
                     /**
                      * mongo的详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MongoAssetDBDetail> m_mongoDetail;
                     bool m_mongoDetailHasBeenSet;

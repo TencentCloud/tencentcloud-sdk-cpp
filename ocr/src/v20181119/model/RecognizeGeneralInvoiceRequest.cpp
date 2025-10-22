@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,9 @@ RecognizeGeneralInvoiceRequest::RecognizeGeneralInvoiceRequest() :
     m_pdfPageNumberHasBeenSet(false),
     m_enableMultiplePageHasBeenSet(false),
     m_enableCutImageHasBeenSet(false),
-    m_enableItemPolygonHasBeenSet(false)
+    m_enableItemPolygonHasBeenSet(false),
+    m_enableQRCodeHasBeenSet(false),
+    m_enableSealHasBeenSet(false)
 {
 }
 
@@ -117,6 +119,22 @@ string RecognizeGeneralInvoiceRequest::ToJsonString() const
         string key = "EnableItemPolygon";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableItemPolygon, allocator);
+    }
+
+    if (m_enableQRCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableQRCode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableQRCode, allocator);
+    }
+
+    if (m_enableSealHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableSeal";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableSeal, allocator);
     }
 
 
@@ -269,6 +287,38 @@ void RecognizeGeneralInvoiceRequest::SetEnableItemPolygon(const bool& _enableIte
 bool RecognizeGeneralInvoiceRequest::EnableItemPolygonHasBeenSet() const
 {
     return m_enableItemPolygonHasBeenSet;
+}
+
+bool RecognizeGeneralInvoiceRequest::GetEnableQRCode() const
+{
+    return m_enableQRCode;
+}
+
+void RecognizeGeneralInvoiceRequest::SetEnableQRCode(const bool& _enableQRCode)
+{
+    m_enableQRCode = _enableQRCode;
+    m_enableQRCodeHasBeenSet = true;
+}
+
+bool RecognizeGeneralInvoiceRequest::EnableQRCodeHasBeenSet() const
+{
+    return m_enableQRCodeHasBeenSet;
+}
+
+bool RecognizeGeneralInvoiceRequest::GetEnableSeal() const
+{
+    return m_enableSeal;
+}
+
+void RecognizeGeneralInvoiceRequest::SetEnableSeal(const bool& _enableSeal)
+{
+    m_enableSeal = _enableSeal;
+    m_enableSealHasBeenSet = true;
+}
+
+bool RecognizeGeneralInvoiceRequest::EnableSealHasBeenSet() const
+{
+    return m_enableSealHasBeenSet;
 }
 
 

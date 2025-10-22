@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -131,19 +131,15 @@ Type为5，域名模板eg：www.qq.com,www.tencent.com
                     bool IpStringHasBeenSet() const;
 
                     /**
-                     * 获取1 ip模板
-5 域名模板
-                     * @return Type 1 ip模板
-5 域名模板
+                     * 获取1 ip模板  5 域名模板
+                     * @return Type 1 ip模板  5 域名模板
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置1 ip模板
-5 域名模板
-                     * @param _type 1 ip模板
-5 域名模板
+                     * 设置1 ip模板  5 域名模板
+                     * @param _type 1 ip模板  5 域名模板
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -204,8 +200,7 @@ Type为5，域名模板eg：www.qq.com,www.tencent.com
                     bool m_ipStringHasBeenSet;
 
                     /**
-                     * 1 ip模板
-5 域名模板
+                     * 1 ip模板  5 域名模板
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;

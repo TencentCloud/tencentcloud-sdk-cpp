@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return InstanceId 集群ID
+                     * 获取腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。
+                     * @return InstanceId 腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _instanceId 集群ID
+                     * 设置腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。
+                     * @param _instanceId 腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
-                     * @return Name 实例名称
+                     * 获取实例名称，不能为空, 3-64个字符，只能包含数字、字母、“-”和“_”
+                     * @return Name 实例名称，不能为空, 3-64个字符，只能包含数字、字母、“-”和“_”
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置实例名称
-                     * @param _name 实例名称
+                     * 设置实例名称，不能为空, 3-64个字符，只能包含数字、字母、“-”和“_”
+                     * @param _name 实例名称，不能为空, 3-64个字符，只能包含数字、字母、“-”和“_”
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取备注信息
-                     * @return Remark 备注信息
+                     * 获取备注信息，最多 128 个字符
+                     * @return Remark 备注信息，最多 128 个字符
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注信息
-                     * @param _remark 备注信息
+                     * 设置备注信息，最多 128 个字符
+                     * @param _remark 备注信息，最多 128 个字符
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool SendReceiveRatioHasBeenSet() const;
 
                     /**
-                     * 获取调整实例规格的商品代号
-                     * @return SkuCode 调整实例规格的商品代号
+                     * 获取商品规格，从 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/96031#ProductSKU) 出参获得。
+                     * @return SkuCode 商品规格，从 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/96031#ProductSKU) 出参获得。
                      * 
                      */
                     std::string GetSkuCode() const;
 
                     /**
-                     * 设置调整实例规格的商品代号
-                     * @param _skuCode 调整实例规格的商品代号
+                     * 设置商品规格，从 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/96031#ProductSKU) 出参获得。
+                     * @param _skuCode 商品规格，从 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/96031#ProductSKU) 出参获得。
                      * 
                      */
                     void SetSkuCode(const std::string& _skuCode);
@@ -148,15 +148,31 @@ namespace TencentCloud
                     bool SkuCodeHasBeenSet() const;
 
                     /**
-                     * 获取消息保留时长，小时为单位
-                     * @return MessageRetention 消息保留时长，小时为单位
+                     * 获取消息保留时长（单位：小时），取值范围参考 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/96031#ProductSKU) 出参：
+
+- 默认值：DefaultRetention 参数
+- 最小值：RetentionLowerLimit 参数
+- 最大值：RetentionUpperLimit 参数
+                     * @return MessageRetention 消息保留时长（单位：小时），取值范围参考 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/96031#ProductSKU) 出参：
+
+- 默认值：DefaultRetention 参数
+- 最小值：RetentionLowerLimit 参数
+- 最大值：RetentionUpperLimit 参数
                      * 
                      */
                     int64_t GetMessageRetention() const;
 
                     /**
-                     * 设置消息保留时长，小时为单位
-                     * @param _messageRetention 消息保留时长，小时为单位
+                     * 设置消息保留时长（单位：小时），取值范围参考 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/96031#ProductSKU) 出参：
+
+- 默认值：DefaultRetention 参数
+- 最小值：RetentionLowerLimit 参数
+- 最大值：RetentionUpperLimit 参数
+                     * @param _messageRetention 消息保留时长（单位：小时），取值范围参考 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/96031#ProductSKU) 出参：
+
+- 默认值：DefaultRetention 参数
+- 最小值：RetentionLowerLimit 参数
+- 最大值：RetentionUpperLimit 参数
                      * 
                      */
                     void SetMessageRetention(const int64_t& _messageRetention);
@@ -211,15 +227,27 @@ namespace TencentCloud
                     bool AclEnabledHasBeenSet() const;
 
                     /**
-                     * 获取最大可创建主题数
-                     * @return MaxTopicNum 最大可创建主题数
+                     * 获取最大可创建主题数，取值范围参考 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/96031#ProductSKU) 出参：
+
+- 最小值和默认值：TopicNumLimit 参数
+- 最大值：TopicNumUpperLimit 参数
+                     * @return MaxTopicNum 最大可创建主题数，取值范围参考 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/96031#ProductSKU) 出参：
+
+- 最小值和默认值：TopicNumLimit 参数
+- 最大值：TopicNumUpperLimit 参数
                      * 
                      */
                     int64_t GetMaxTopicNum() const;
 
                     /**
-                     * 设置最大可创建主题数
-                     * @param _maxTopicNum 最大可创建主题数
+                     * 设置最大可创建主题数，取值范围参考 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/96031#ProductSKU) 出参：
+
+- 最小值和默认值：TopicNumLimit 参数
+- 最大值：TopicNumUpperLimit 参数
+                     * @param _maxTopicNum 最大可创建主题数，取值范围参考 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/96031#ProductSKU) 出参：
+
+- 最小值和默认值：TopicNumLimit 参数
+- 最大值：TopicNumUpperLimit 参数
                      * 
                      */
                     void SetMaxTopicNum(const int64_t& _maxTopicNum);
@@ -232,15 +260,15 @@ namespace TencentCloud
                     bool MaxTopicNumHasBeenSet() const;
 
                     /**
-                     * 获取免费额度之外的主题个数
-                     * @return ExtraTopicNum 免费额度之外的主题个数
+                     * 获取免费额度之外的主题个数，免费额度参考 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/96031#ProductSKU) 出参中的 TopicNumLimit 参数。
+                     * @return ExtraTopicNum 免费额度之外的主题个数，免费额度参考 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/96031#ProductSKU) 出参中的 TopicNumLimit 参数。
                      * 
                      */
                     std::string GetExtraTopicNum() const;
 
                     /**
-                     * 设置免费额度之外的主题个数
-                     * @param _extraTopicNum 免费额度之外的主题个数
+                     * 设置免费额度之外的主题个数，免费额度参考 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/96031#ProductSKU) 出参中的 TopicNumLimit 参数。
+                     * @param _extraTopicNum 免费额度之外的主题个数，免费额度参考 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/96031#ProductSKU) 出参中的 TopicNumLimit 参数。
                      * 
                      */
                     void SetExtraTopicNum(const std::string& _extraTopicNum);
@@ -252,22 +280,43 @@ namespace TencentCloud
                      */
                     bool ExtraTopicNumHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启删除保护
+                     * @return EnableDeletionProtection 是否开启删除保护
+                     * 
+                     */
+                    bool GetEnableDeletionProtection() const;
+
+                    /**
+                     * 设置是否开启删除保护
+                     * @param _enableDeletionProtection 是否开启删除保护
+                     * 
+                     */
+                    void SetEnableDeletionProtection(const bool& _enableDeletionProtection);
+
+                    /**
+                     * 判断参数 EnableDeletionProtection 是否已赋值
+                     * @return EnableDeletionProtection 是否已赋值
+                     * 
+                     */
+                    bool EnableDeletionProtectionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 集群ID
+                     * 腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * 实例名称，不能为空, 3-64个字符，只能包含数字、字母、“-”和“_”
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 备注信息
+                     * 备注信息，最多 128 个字符
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
@@ -279,13 +328,17 @@ namespace TencentCloud
                     bool m_sendReceiveRatioHasBeenSet;
 
                     /**
-                     * 调整实例规格的商品代号
+                     * 商品规格，从 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/96031#ProductSKU) 出参获得。
                      */
                     std::string m_skuCode;
                     bool m_skuCodeHasBeenSet;
 
                     /**
-                     * 消息保留时长，小时为单位
+                     * 消息保留时长（单位：小时），取值范围参考 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/96031#ProductSKU) 出参：
+
+- 默认值：DefaultRetention 参数
+- 最小值：RetentionLowerLimit 参数
+- 最大值：RetentionUpperLimit 参数
                      */
                     int64_t m_messageRetention;
                     bool m_messageRetentionHasBeenSet;
@@ -303,16 +356,25 @@ namespace TencentCloud
                     bool m_aclEnabledHasBeenSet;
 
                     /**
-                     * 最大可创建主题数
+                     * 最大可创建主题数，取值范围参考 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/96031#ProductSKU) 出参：
+
+- 最小值和默认值：TopicNumLimit 参数
+- 最大值：TopicNumUpperLimit 参数
                      */
                     int64_t m_maxTopicNum;
                     bool m_maxTopicNumHasBeenSet;
 
                     /**
-                     * 免费额度之外的主题个数
+                     * 免费额度之外的主题个数，免费额度参考 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/96031#ProductSKU) 出参中的 TopicNumLimit 参数。
                      */
                     std::string m_extraTopicNum;
                     bool m_extraTopicNumHasBeenSet;
+
+                    /**
+                     * 是否开启删除保护
+                     */
+                    bool m_enableDeletionProtection;
+                    bool m_enableDeletionProtectionHasBeenSet;
 
                 };
             }

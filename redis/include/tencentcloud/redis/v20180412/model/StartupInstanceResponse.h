@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,14 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取该字段已废弃，请通过查询实例接口获取到的状态来判断实例是否已解隔离
                      * @return TaskId 该字段已废弃，请通过查询实例接口获取到的状态来判断实例是否已解隔离
-                     * 
+                     * @deprecated
                      */
                     int64_t GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool TaskIdHasBeenSet() const;
 

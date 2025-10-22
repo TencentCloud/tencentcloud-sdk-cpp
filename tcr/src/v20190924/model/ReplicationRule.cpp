@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ ReplicationRule::ReplicationRule() :
     m_nameHasBeenSet(false),
     m_destNamespaceHasBeenSet(false),
     m_overrideHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_deletionHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome ReplicationRule::Deserialize(const rapidjson::Value &value)
         m_filtersHasBeenSet = true;
     }
 
+    if (value.HasMember("Deletion") && !value["Deletion"].IsNull())
+    {
+        if (!value["Deletion"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReplicationRule.Deletion` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_deletion = value["Deletion"].GetBool();
+        m_deletionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -127,6 +138,14 @@ void ReplicationRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_deletionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Deletion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deletion, allocator);
     }
 
 }
@@ -194,5 +213,21 @@ void ReplicationRule::SetFilters(const vector<ReplicationFilter>& _filters)
 bool ReplicationRule::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+bool ReplicationRule::GetDeletion() const
+{
+    return m_deletion;
+}
+
+void ReplicationRule::SetDeletion(const bool& _deletion)
+{
+    m_deletion = _deletion;
+    m_deletionHasBeenSet = true;
+}
+
+bool ReplicationRule::DeletionHasBeenSet() const
+{
+    return m_deletionHasBeenSet;
 }
 

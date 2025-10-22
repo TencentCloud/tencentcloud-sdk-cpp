@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ using namespace std;
 FreezeTasksByWorkflowIdsRequest::FreezeTasksByWorkflowIdsRequest() :
     m_workflowIdsHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_killInstanceHasBeenSet(false)
+    m_killInstanceHasBeenSet(false),
+    m_asyncModeHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,14 @@ string FreezeTasksByWorkflowIdsRequest::ToJsonString() const
         string key = "KillInstance";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_killInstance, allocator);
+    }
+
+    if (m_asyncModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AsyncMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_asyncMode, allocator);
     }
 
 
@@ -119,6 +128,22 @@ void FreezeTasksByWorkflowIdsRequest::SetKillInstance(const bool& _killInstance)
 bool FreezeTasksByWorkflowIdsRequest::KillInstanceHasBeenSet() const
 {
     return m_killInstanceHasBeenSet;
+}
+
+bool FreezeTasksByWorkflowIdsRequest::GetAsyncMode() const
+{
+    return m_asyncMode;
+}
+
+void FreezeTasksByWorkflowIdsRequest::SetAsyncMode(const bool& _asyncMode)
+{
+    m_asyncMode = _asyncMode;
+    m_asyncModeHasBeenSet = true;
+}
+
+bool FreezeTasksByWorkflowIdsRequest::AsyncModeHasBeenSet() const
+{
+    return m_asyncModeHasBeenSet;
 }
 
 

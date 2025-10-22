@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool DealIdsHasBeenSet() const;
 
                     /**
-                     * 获取异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。
-                     * @return AsyncRequestId 异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。
+                     * 获取异步任务的请求 ID，可使用此 ID [查询异步任务的执行结果](https://cloud.tencent.com/document/product/236/20410)。
+                     * @return AsyncRequestId 异步任务的请求 ID，可使用此 ID [查询异步任务的执行结果](https://cloud.tencent.com/document/product/236/20410)。
                      * 
                      */
                     std::string GetAsyncRequestId() const;
@@ -80,7 +80,7 @@ namespace TencentCloud
                     bool m_dealIdsHasBeenSet;
 
                     /**
-                     * 异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。
+                     * 异步任务的请求 ID，可使用此 ID [查询异步任务的执行结果](https://cloud.tencent.com/document/product/236/20410)。
                      */
                     std::string m_asyncRequestId;
                     bool m_asyncRequestIdHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,14 +44,18 @@ namespace TencentCloud
 
                     /**
                      * 获取指标主题ID
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * @return TopicId 指标主题ID
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置指标主题ID
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * @param _topicId 指标主题ID
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -65,14 +69,18 @@ namespace TencentCloud
 
                     /**
                      * 获取查询语句，使用PromQL语法
+- 参考 [语法规则](https://cloud.tencent.com/document/product/614/90334) 文档
                      * @return Query 查询语句，使用PromQL语法
+- 参考 [语法规则](https://cloud.tencent.com/document/product/614/90334) 文档
                      * 
                      */
                     std::string GetQuery() const;
 
                     /**
                      * 设置查询语句，使用PromQL语法
+- 参考 [语法规则](https://cloud.tencent.com/document/product/614/90334) 文档
                      * @param _query 查询语句，使用PromQL语法
+- 参考 [语法规则](https://cloud.tencent.com/document/product/614/90334) 文档
                      * 
                      */
                     void SetQuery(const std::string& _query);
@@ -151,12 +159,14 @@ namespace TencentCloud
 
                     /**
                      * 指标主题ID
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
                      * 查询语句，使用PromQL语法
+- 参考 [语法规则](https://cloud.tencent.com/document/product/614/90334) 文档
                      */
                     std::string m_query;
                     bool m_queryHasBeenSet;

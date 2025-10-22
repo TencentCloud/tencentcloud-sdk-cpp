@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -94,9 +94,7 @@ namespace TencentCloud
 
                     /**
                      * 获取订阅的云数据库实例ID，只有订阅云数据库该值才有意义
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 订阅的云数据库实例ID，只有订阅云数据库该值才有意义
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
@@ -110,9 +108,7 @@ namespace TencentCloud
 
                     /**
                      * 获取订阅的云数据库实例状态，只有订阅云数据库该值才有意义。可能值为：running, isolated, offline
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceStatus 订阅的云数据库实例状态，只有订阅云数据库该值才有意义。可能值为：running, isolated, offline
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceStatus() const;
@@ -154,9 +150,7 @@ namespace TencentCloud
 
                     /**
                      * 获取修改时间，时间格式如：Y-m-d h:m:s
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyTime 修改时间，时间格式如：Y-m-d h:m:s
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyTime() const;
@@ -170,9 +164,7 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间，时间格式如：Y-m-d h:m:s
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间，时间格式如：Y-m-d h:m:s
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
@@ -186,9 +178,7 @@ namespace TencentCloud
 
                     /**
                      * 获取隔离时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsolateTime 隔离时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIsolateTime() const;
@@ -202,9 +192,7 @@ namespace TencentCloud
 
                     /**
                      * 获取包年包月任务的到期时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireTime 包年包月任务的到期时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpireTime() const;
@@ -218,9 +206,7 @@ namespace TencentCloud
 
                     /**
                      * 获取下线时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OfflineTime 下线时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOfflineTime() const;
@@ -276,9 +262,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Kafka topic
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Topic Kafka topic
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopic() const;
@@ -292,9 +276,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Kafka服务Broker地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Broker Kafka服务Broker地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBroker() const;
@@ -308,9 +290,7 @@ namespace TencentCloud
 
                     /**
                      * 获取数据订阅的类型，当 Product 不为 mongodb 时，可能值为：all-全实例更新；dml-数据更新；ddl-结构更新；dmlAndDdl-数据更新+结构更新。当 Product 为 mongodb 时，可能值为 all-全实例更新；database-订阅单库；collection-订阅单集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubscribeMode 数据订阅的类型，当 Product 不为 mongodb 时，可能值为：all-全实例更新；dml-数据更新；ddl-结构更新；dmlAndDdl-数据更新+结构更新。当 Product 为 mongodb 时，可能值为 all-全实例更新；database-订阅单库；collection-订阅单集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubscribeMode() const;
@@ -324,9 +304,7 @@ namespace TencentCloud
 
                     /**
                      * 获取订阅数据格式。如果为空则用的默认格式: mysql\cynosdbmysql\mariadb\percona\tdsqlpercona\tdpg是protobuf，mongo是json。当 DatabaseType 为 mysql和cynosdbmysql 时有三种可选协议：protobuf\avro\json。数据格式详情参考官网的消费demo文档
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocol 订阅数据格式。如果为空则用的默认格式: mysql\cynosdbmysql\mariadb\percona\tdsqlpercona\tdpg是protobuf，mongo是json。当 DatabaseType 为 mysql和cynosdbmysql 时有三种可选协议：protobuf\avro\json。数据格式详情参考官网的消费demo文档
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProtocol() const;
@@ -340,9 +318,7 @@ namespace TencentCloud
 
                     /**
                      * 获取订阅的数据库表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubscribeObjects 订阅的数据库表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SubscribeObject> GetSubscribeObjects() const;
@@ -356,9 +332,7 @@ namespace TencentCloud
 
                     /**
                      * 获取kafka配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KafkaConfig kafka配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SubscribeKafkaConfig GetKafkaConfig() const;
@@ -372,9 +346,7 @@ namespace TencentCloud
 
                     /**
                      * 获取订阅内置kafka的版本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KafkaVersion 订阅内置kafka的版本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKafkaVersion() const;
@@ -388,9 +360,7 @@ namespace TencentCloud
 
                     /**
                      * 获取源数据库接入类型，如：extranet(公网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、cdb(云数据库)、cvm(云服务器自建)、intranet(自研上云)、vpc(私有网络vpc)。注意具体可选值依赖当前链路支持能力
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccessType 源数据库接入类型，如：extranet(公网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、cdb(云数据库)、cvm(云服务器自建)、intranet(自研上云)、vpc(私有网络vpc)。注意具体可选值依赖当前链路支持能力
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccessType() const;
@@ -404,9 +374,7 @@ namespace TencentCloud
 
                     /**
                      * 获取接入类型信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Endpoints 接入类型信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<EndpointItem> GetEndpoints() const;
@@ -420,9 +388,7 @@ namespace TencentCloud
 
                     /**
                      * 获取mongo输出聚合设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PipelineInfo mongo输出聚合设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PipelineInfo> GetPipelineInfo() const;
@@ -436,9 +402,7 @@ namespace TencentCloud
 
                     /**
                      * 获取标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TagItem> GetTags() const;
@@ -470,11 +434,9 @@ namespace TencentCloud
                      * 获取为业务添加的额外信息。参数名作key，参数值作value。
 mysql选填参数：ProcessXA-是否处理XA事务，为true处理，其他不处理。
 mongo选填参数：SubscribeType-订阅类型，目前只支持changeStream。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtraAttr 为业务添加的额外信息。参数名作key，参数值作value。
 mysql选填参数：ProcessXA-是否处理XA事务，为true处理，其他不处理。
 mongo选填参数：SubscribeType-订阅类型，目前只支持changeStream。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<KeyValuePairOption> GetExtraAttr() const;
@@ -485,6 +447,62 @@ mongo选填参数：SubscribeType-订阅类型，目前只支持changeStream。
                      * 
                      */
                     bool ExtraAttrHasBeenSet() const;
+
+                    /**
+                     * 获取数据订阅版本, 当前支持kafka和kafkaPro（专业版）
+                     * @return SubscribeVersion 数据订阅版本, 当前支持kafka和kafkaPro（专业版）
+                     * 
+                     */
+                    std::string GetSubscribeVersion() const;
+
+                    /**
+                     * 判断参数 SubscribeVersion 是否已赋值
+                     * @return SubscribeVersion 是否已赋值
+                     * 
+                     */
+                    bool SubscribeVersionHasBeenSet() const;
+
+                    /**
+                     * 获取消费端地址所在vpc
+                     * @return ConsumerVpcId 消费端地址所在vpc
+                     * 
+                     */
+                    std::string GetConsumerVpcId() const;
+
+                    /**
+                     * 判断参数 ConsumerVpcId 是否已赋值
+                     * @return ConsumerVpcId 是否已赋值
+                     * 
+                     */
+                    bool ConsumerVpcIdHasBeenSet() const;
+
+                    /**
+                     * 获取消费端地址所在子网
+                     * @return ConsumerSubnetId 消费端地址所在子网
+                     * 
+                     */
+                    std::string GetConsumerSubnetId() const;
+
+                    /**
+                     * 判断参数 ConsumerSubnetId 是否已赋值
+                     * @return ConsumerSubnetId 是否已赋值
+                     * 
+                     */
+                    bool ConsumerSubnetIdHasBeenSet() const;
+
+                    /**
+                     * 获取订阅实例规格
+                     * @return InstanceClass 订阅实例规格
+                     * 
+                     */
+                    std::string GetInstanceClass() const;
+
+                    /**
+                     * 判断参数 InstanceClass 是否已赋值
+                     * @return InstanceClass 是否已赋值
+                     * 
+                     */
+                    bool InstanceClassHasBeenSet() const;
 
                 private:
 
@@ -508,14 +526,12 @@ mongo选填参数：SubscribeType-订阅类型，目前只支持changeStream。
 
                     /**
                      * 订阅的云数据库实例ID，只有订阅云数据库该值才有意义
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 订阅的云数据库实例状态，只有订阅云数据库该值才有意义。可能值为：running, isolated, offline
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceStatus;
                     bool m_instanceStatusHasBeenSet;
@@ -534,35 +550,30 @@ mongo选填参数：SubscribeType-订阅类型，目前只支持changeStream。
 
                     /**
                      * 修改时间，时间格式如：Y-m-d h:m:s
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
                      * 创建时间，时间格式如：Y-m-d h:m:s
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 隔离时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_isolateTime;
                     bool m_isolateTimeHasBeenSet;
 
                     /**
                      * 包年包月任务的到期时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
                      * 下线时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_offlineTime;
                     bool m_offlineTimeHasBeenSet;
@@ -587,77 +598,66 @@ mongo选填参数：SubscribeType-订阅类型，目前只支持changeStream。
 
                     /**
                      * Kafka topic
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topic;
                     bool m_topicHasBeenSet;
 
                     /**
                      * Kafka服务Broker地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_broker;
                     bool m_brokerHasBeenSet;
 
                     /**
                      * 数据订阅的类型，当 Product 不为 mongodb 时，可能值为：all-全实例更新；dml-数据更新；ddl-结构更新；dmlAndDdl-数据更新+结构更新。当 Product 为 mongodb 时，可能值为 all-全实例更新；database-订阅单库；collection-订阅单集合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subscribeMode;
                     bool m_subscribeModeHasBeenSet;
 
                     /**
                      * 订阅数据格式。如果为空则用的默认格式: mysql\cynosdbmysql\mariadb\percona\tdsqlpercona\tdpg是protobuf，mongo是json。当 DatabaseType 为 mysql和cynosdbmysql 时有三种可选协议：protobuf\avro\json。数据格式详情参考官网的消费demo文档
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
                      * 订阅的数据库表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SubscribeObject> m_subscribeObjects;
                     bool m_subscribeObjectsHasBeenSet;
 
                     /**
                      * kafka配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SubscribeKafkaConfig m_kafkaConfig;
                     bool m_kafkaConfigHasBeenSet;
 
                     /**
                      * 订阅内置kafka的版本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_kafkaVersion;
                     bool m_kafkaVersionHasBeenSet;
 
                     /**
                      * 源数据库接入类型，如：extranet(公网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、cdb(云数据库)、cvm(云服务器自建)、intranet(自研上云)、vpc(私有网络vpc)。注意具体可选值依赖当前链路支持能力
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accessType;
                     bool m_accessTypeHasBeenSet;
 
                     /**
                      * 接入类型信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<EndpointItem> m_endpoints;
                     bool m_endpointsHasBeenSet;
 
                     /**
                      * mongo输出聚合设置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PipelineInfo> m_pipelineInfo;
                     bool m_pipelineInfoHasBeenSet;
 
                     /**
                      * 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TagItem> m_tags;
                     bool m_tagsHasBeenSet;
@@ -673,10 +673,33 @@ mongo选填参数：SubscribeType-订阅类型，目前只支持changeStream。
                      * 为业务添加的额外信息。参数名作key，参数值作value。
 mysql选填参数：ProcessXA-是否处理XA事务，为true处理，其他不处理。
 mongo选填参数：SubscribeType-订阅类型，目前只支持changeStream。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<KeyValuePairOption> m_extraAttr;
                     bool m_extraAttrHasBeenSet;
+
+                    /**
+                     * 数据订阅版本, 当前支持kafka和kafkaPro（专业版）
+                     */
+                    std::string m_subscribeVersion;
+                    bool m_subscribeVersionHasBeenSet;
+
+                    /**
+                     * 消费端地址所在vpc
+                     */
+                    std::string m_consumerVpcId;
+                    bool m_consumerVpcIdHasBeenSet;
+
+                    /**
+                     * 消费端地址所在子网
+                     */
+                    std::string m_consumerSubnetId;
+                    bool m_consumerSubnetIdHasBeenSet;
+
+                    /**
+                     * 订阅实例规格
+                     */
+                    std::string m_instanceClass;
+                    bool m_instanceClassHasBeenSet;
 
                 };
             }

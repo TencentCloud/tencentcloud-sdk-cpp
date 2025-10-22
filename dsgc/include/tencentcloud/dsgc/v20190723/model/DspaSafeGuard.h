@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,12 +51,10 @@ namespace TencentCloud
 UNSET 未设置
 DISABLE 规则设置未启用
 ENABLE 规则设置并启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Encrypt 加密状态，可取值如下：
 UNSET 未设置
 DISABLE 规则设置未启用
 ENABLE 规则设置并启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEncrypt() const;
@@ -66,12 +64,10 @@ ENABLE 规则设置并启用
 UNSET 未设置
 DISABLE 规则设置未启用
 ENABLE 规则设置并启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _encrypt 加密状态，可取值如下：
 UNSET 未设置
 DISABLE 规则设置未启用
 ENABLE 规则设置并启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEncrypt(const std::string& _encrypt);
@@ -88,12 +84,10 @@ ENABLE 规则设置并启用
 UNSET 未设置
 DISABLE 规则设置未启用
 ENABLE 规则设置并启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Desensitization 脱敏状态，可取值如下：
 UNSET 未设置
 DISABLE 规则设置未启用
 ENABLE 规则设置并启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDesensitization() const;
@@ -103,12 +97,10 @@ ENABLE 规则设置并启用
 UNSET 未设置
 DISABLE 规则设置未启用
 ENABLE 规则设置并启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _desensitization 脱敏状态，可取值如下：
 UNSET 未设置
 DISABLE 规则设置未启用
 ENABLE 规则设置并启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDesensitization(const std::string& _desensitization);
@@ -127,7 +119,6 @@ ENABLE 规则设置并启用
 UNSET 未设置
 DISABLE 规则设置未启用
 ENABLE 规则设置并启用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_encrypt;
                     bool m_encryptHasBeenSet;
@@ -137,7 +128,6 @@ ENABLE 规则设置并启用
 UNSET 未设置
 DISABLE 规则设置未启用
 ENABLE 规则设置并启用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_desensitization;
                     bool m_desensitizationHasBeenSet;

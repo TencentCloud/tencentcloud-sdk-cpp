@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取翻页偏移量。
-                     * @return Offset 翻页偏移量。
+                     * 获取翻页偏移量。默认值为0
+                     * @return Offset 翻页偏移量。默认值为0
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置翻页偏移量。
-                     * @param _offset 翻页偏移量。
+                     * 设置翻页偏移量。默认值为0
+                     * @param _offset 翻页偏移量。默认值为0
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取翻页查询单页数量。
-                     * @return Limit 翻页查询单页数量。
+                     * 获取翻页查询单页数量。默认值为 20，最大值为 1000
+                     * @return Limit 翻页查询单页数量。默认值为 20，最大值为 1000
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置翻页查询单页数量。
-                     * @param _limit 翻页查询单页数量。
+                     * 设置翻页查询单页数量。默认值为 20，最大值为 1000
+                     * @param _limit 翻页查询单页数量。默认值为 20，最大值为 1000
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool SearchWordHasBeenSet() const;
 
                     /**
-                     * 获取任务启用状态。enabled/disabled
-                     * @return TaskState 任务启用状态。enabled/disabled
+                     * 获取任务启用状态。一共2种状态可选，ENABLED：启用，DISABLED：停用
+                     * @return TaskState 任务启用状态。一共2种状态可选，ENABLED：启用，DISABLED：停用
                      * 
                      */
                     std::string GetTaskState() const;
 
                     /**
-                     * 设置任务启用状态。enabled/disabled
-                     * @param _taskState 任务启用状态。enabled/disabled
+                     * 设置任务启用状态。一共2种状态可选，ENABLED：启用，DISABLED：停用
+                     * @param _taskState 任务启用状态。一共2种状态可选，ENABLED：启用，DISABLED：停用
                      * 
                      */
                     void SetTaskState(const std::string& _taskState);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool TaskStateHasBeenSet() const;
 
                     /**
-                     * 获取分组ID。
-                     * @return GroupId 分组ID。
+                     * 获取部署组ID。前往[应用管理](https://console.cloud.tencent.com/tsf/app?rid=1)点击应用ID进入应用部署列表页面获取部署组ID。
+                     * @return GroupId 部署组ID。前往[应用管理](https://console.cloud.tencent.com/tsf/app?rid=1)点击应用ID进入应用部署列表页面获取部署组ID。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置分组ID。
-                     * @param _groupId 分组ID。
+                     * 设置部署组ID。前往[应用管理](https://console.cloud.tencent.com/tsf/app?rid=1)点击应用ID进入应用部署列表页面获取部署组ID。
+                     * @param _groupId 部署组ID。前往[应用管理](https://console.cloud.tencent.com/tsf/app?rid=1)点击应用ID进入应用部署列表页面获取部署组ID。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取任务类型。
-                     * @return TaskType 任务类型。
+                     * 获取任务类型。当前只支持一种任务类型。枚举值，java：Java类任务
+                     * @return TaskType 任务类型。当前只支持一种任务类型。枚举值，java：Java类任务
                      * 
                      */
                     std::string GetTaskType() const;
 
                     /**
-                     * 设置任务类型。
-                     * @param _taskType 任务类型。
+                     * 设置任务类型。当前只支持一种任务类型。枚举值，java：Java类任务
+                     * @param _taskType 任务类型。当前只支持一种任务类型。枚举值，java：Java类任务
                      * 
                      */
                     void SetTaskType(const std::string& _taskType);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取任务触发类型，UNICAST、BROADCAST。
-                     * @return ExecuteType 任务触发类型，UNICAST、BROADCAST。
+                     * 获取任务执行方式，unicast：随机单节点执行，broadcast：广播执行，shard：分片执行
+                     * @return ExecuteType 任务执行方式，unicast：随机单节点执行，broadcast：广播执行，shard：分片执行
                      * 
                      */
                     std::string GetExecuteType() const;
 
                     /**
-                     * 设置任务触发类型，UNICAST、BROADCAST。
-                     * @param _executeType 任务触发类型，UNICAST、BROADCAST。
+                     * 设置任务执行方式，unicast：随机单节点执行，broadcast：广播执行，shard：分片执行
+                     * @param _executeType 任务执行方式，unicast：随机单节点执行，broadcast：广播执行，shard：分片执行
                      * 
                      */
                     void SetExecuteType(const std::string& _executeType);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool ExecuteTypeHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return Ids 无
+                     * 获取任务ID列表。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页第一列查看任务ID。
+                     * @return Ids 任务ID列表。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页第一列查看任务ID。
                      * 
                      */
                     std::vector<std::string> GetIds() const;
 
                     /**
-                     * 设置无
-                     * @param _ids 无
+                     * 设置任务ID列表。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页第一列查看任务ID。
+                     * @param _ids 任务ID列表。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页第一列查看任务ID。
                      * 
                      */
                     void SetIds(const std::vector<std::string>& _ids);
@@ -213,13 +213,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 翻页偏移量。
+                     * 翻页偏移量。默认值为0
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 翻页查询单页数量。
+                     * 翻页查询单页数量。默认值为 20，最大值为 1000
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -231,31 +231,31 @@ namespace TencentCloud
                     bool m_searchWordHasBeenSet;
 
                     /**
-                     * 任务启用状态。enabled/disabled
+                     * 任务启用状态。一共2种状态可选，ENABLED：启用，DISABLED：停用
                      */
                     std::string m_taskState;
                     bool m_taskStateHasBeenSet;
 
                     /**
-                     * 分组ID。
+                     * 部署组ID。前往[应用管理](https://console.cloud.tencent.com/tsf/app?rid=1)点击应用ID进入应用部署列表页面获取部署组ID。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 任务类型。
+                     * 任务类型。当前只支持一种任务类型。枚举值，java：Java类任务
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 任务触发类型，UNICAST、BROADCAST。
+                     * 任务执行方式，unicast：随机单节点执行，broadcast：广播执行，shard：分片执行
                      */
                     std::string m_executeType;
                     bool m_executeTypeHasBeenSet;
 
                     /**
-                     * 无
+                     * 任务ID列表。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页第一列查看任务ID。
                      */
                     std::vector<std::string> m_ids;
                     bool m_idsHasBeenSet;

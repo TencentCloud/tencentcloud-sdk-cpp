@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,8 @@ DescribeStreamLinkFlowMediaStatisticsRequest::DescribeStreamLinkFlowMediaStatist
     m_pipelineHasBeenSet(false),
     m_periodHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_remoteIpHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string DescribeStreamLinkFlowMediaStatisticsRequest::ToJsonString() const
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_remoteIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemoteIp";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_remoteIp.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -214,6 +223,22 @@ void DescribeStreamLinkFlowMediaStatisticsRequest::SetEndTime(const string& _end
 bool DescribeStreamLinkFlowMediaStatisticsRequest::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+string DescribeStreamLinkFlowMediaStatisticsRequest::GetRemoteIp() const
+{
+    return m_remoteIp;
+}
+
+void DescribeStreamLinkFlowMediaStatisticsRequest::SetRemoteIp(const string& _remoteIp)
+{
+    m_remoteIp = _remoteIp;
+    m_remoteIpHasBeenSet = true;
+}
+
+bool DescribeStreamLinkFlowMediaStatisticsRequest::RemoteIpHasBeenSet() const
+{
+    return m_remoteIpHasBeenSet;
 }
 
 

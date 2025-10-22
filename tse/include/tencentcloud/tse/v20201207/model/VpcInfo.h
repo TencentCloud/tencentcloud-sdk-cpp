@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内网访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IntranetAddress 内网访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIntranetAddress() const;
 
                     /**
                      * 设置内网访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _intranetAddress 内网访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIntranetAddress(const std::string& _intranetAddress);
@@ -115,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取负载均衡均衡接入点子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LbSubnetId 负载均衡均衡接入点子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLbSubnetId() const;
 
                     /**
                      * 设置负载均衡均衡接入点子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lbSubnetId 负载均衡均衡接入点子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLbSubnetId(const std::string& _lbSubnetId);
@@ -154,14 +146,12 @@ namespace TencentCloud
 
                     /**
                      * 内网访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_intranetAddress;
                     bool m_intranetAddressHasBeenSet;
 
                     /**
                      * 负载均衡均衡接入点子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lbSubnetId;
                     bool m_lbSubnetIdHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取field数组
-                     * @return Fields field数组
+                     * 获取field数组，用于指标的查询结果
+                     * @return Fields field数组，用于指标的查询结果
                      * 
                      */
                     std::vector<ApmField> GetFields() const;
 
                     /**
-                     * 设置field数组
-                     * @param _fields field数组
+                     * 设置field数组，用于指标的查询结果
+                     * @param _fields field数组，用于指标的查询结果
                      * 
                      */
                     void SetFields(const std::vector<ApmField>& _fields);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool FieldsHasBeenSet() const;
 
                     /**
-                     * 获取tag数组
-                     * @return Tags tag数组
+                     * 获取tag数组，用于区分 Groupby 的对象
+                     * @return Tags tag数组，用于区分 Groupby 的对象
                      * 
                      */
                     std::vector<ApmTag> GetTags() const;
 
                     /**
-                     * 设置tag数组
-                     * @param _tags tag数组
+                     * 设置tag数组，用于区分 Groupby 的对象
+                     * @param _tags tag数组，用于区分 Groupby 的对象
                      * 
                      */
                     void SetTags(const std::vector<ApmTag>& _tags);
@@ -93,13 +93,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * field数组
+                     * field数组，用于指标的查询结果
                      */
                     std::vector<ApmField> m_fields;
                     bool m_fieldsHasBeenSet;
 
                     /**
-                     * tag数组
+                     * tag数组，用于区分 Groupby 的对象
                      */
                     std::vector<ApmTag> m_tags;
                     bool m_tagsHasBeenSet;

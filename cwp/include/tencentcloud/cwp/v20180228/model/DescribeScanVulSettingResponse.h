@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -170,8 +170,8 @@ namespace TencentCloud
                     bool ClickTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取为空默认扫描全部专业版、旗舰版、普惠版主机，不为空只扫描选中主机
-                     * @return Uuids 为空默认扫描全部专业版、旗舰版、普惠版主机，不为空只扫描选中主机
+                     * 获取为空默认扫描全部专业版、旗舰版、轻量版主机，不为空只扫描选中主机
+                     * @return Uuids 为空默认扫描全部专业版、旗舰版、轻量版主机，不为空只扫描选中主机
                      * 
                      */
                     std::vector<std::string> GetUuids() const;
@@ -254,7 +254,7 @@ namespace TencentCloud
                     bool m_clickTimeoutHasBeenSet;
 
                     /**
-                     * 为空默认扫描全部专业版、旗舰版、普惠版主机，不为空只扫描选中主机
+                     * 为空默认扫描全部专业版、旗舰版、轻量版主机，不为空只扫描选中主机
                      */
                     std::vector<std::string> m_uuids;
                     bool m_uuidsHasBeenSet;

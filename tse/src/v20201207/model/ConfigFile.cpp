@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,11 @@ ConfigFile::ConfigFile() :
     m_modifyTimeHasBeenSet(false),
     m_modifyByHasBeenSet(false),
     m_releaseTimeHasBeenSet(false),
-    m_releaseByHasBeenSet(false)
+    m_releaseByHasBeenSet(false),
+    m_configFileSupportedClientHasBeenSet(false),
+    m_configFilePersistentHasBeenSet(false),
+    m_encryptedHasBeenSet(false),
+    m_encryptAlgoHasBeenSet(false)
 {
 }
 
@@ -204,6 +208,53 @@ CoreInternalOutcome ConfigFile::Deserialize(const rapidjson::Value &value)
         m_releaseByHasBeenSet = true;
     }
 
+    if (value.HasMember("ConfigFileSupportedClient") && !value["ConfigFileSupportedClient"].IsNull())
+    {
+        if (!value["ConfigFileSupportedClient"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConfigFile.ConfigFileSupportedClient` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_configFileSupportedClient = value["ConfigFileSupportedClient"].GetInt64();
+        m_configFileSupportedClientHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConfigFilePersistent") && !value["ConfigFilePersistent"].IsNull())
+    {
+        if (!value["ConfigFilePersistent"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConfigFile.ConfigFilePersistent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_configFilePersistent.Deserialize(value["ConfigFilePersistent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_configFilePersistentHasBeenSet = true;
+    }
+
+    if (value.HasMember("Encrypted") && !value["Encrypted"].IsNull())
+    {
+        if (!value["Encrypted"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConfigFile.Encrypted` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_encrypted = value["Encrypted"].GetBool();
+        m_encryptedHasBeenSet = true;
+    }
+
+    if (value.HasMember("EncryptAlgo") && !value["EncryptAlgo"].IsNull())
+    {
+        if (!value["EncryptAlgo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConfigFile.EncryptAlgo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_encryptAlgo = string(value["EncryptAlgo"].GetString());
+        m_encryptAlgoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -336,6 +387,39 @@ void ConfigFile::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "ReleaseBy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_releaseBy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_configFileSupportedClientHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigFileSupportedClient";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_configFileSupportedClient, allocator);
+    }
+
+    if (m_configFilePersistentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigFilePersistent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_configFilePersistent.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_encryptedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Encrypted";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_encrypted, allocator);
+    }
+
+    if (m_encryptAlgoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptAlgo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_encryptAlgo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -579,5 +663,69 @@ void ConfigFile::SetReleaseBy(const string& _releaseBy)
 bool ConfigFile::ReleaseByHasBeenSet() const
 {
     return m_releaseByHasBeenSet;
+}
+
+int64_t ConfigFile::GetConfigFileSupportedClient() const
+{
+    return m_configFileSupportedClient;
+}
+
+void ConfigFile::SetConfigFileSupportedClient(const int64_t& _configFileSupportedClient)
+{
+    m_configFileSupportedClient = _configFileSupportedClient;
+    m_configFileSupportedClientHasBeenSet = true;
+}
+
+bool ConfigFile::ConfigFileSupportedClientHasBeenSet() const
+{
+    return m_configFileSupportedClientHasBeenSet;
+}
+
+ConfigFilePersistent ConfigFile::GetConfigFilePersistent() const
+{
+    return m_configFilePersistent;
+}
+
+void ConfigFile::SetConfigFilePersistent(const ConfigFilePersistent& _configFilePersistent)
+{
+    m_configFilePersistent = _configFilePersistent;
+    m_configFilePersistentHasBeenSet = true;
+}
+
+bool ConfigFile::ConfigFilePersistentHasBeenSet() const
+{
+    return m_configFilePersistentHasBeenSet;
+}
+
+bool ConfigFile::GetEncrypted() const
+{
+    return m_encrypted;
+}
+
+void ConfigFile::SetEncrypted(const bool& _encrypted)
+{
+    m_encrypted = _encrypted;
+    m_encryptedHasBeenSet = true;
+}
+
+bool ConfigFile::EncryptedHasBeenSet() const
+{
+    return m_encryptedHasBeenSet;
+}
+
+string ConfigFile::GetEncryptAlgo() const
+{
+    return m_encryptAlgo;
+}
+
+void ConfigFile::SetEncryptAlgo(const string& _encryptAlgo)
+{
+    m_encryptAlgo = _encryptAlgo;
+    m_encryptAlgoHasBeenSet = true;
+}
+
+bool ConfigFile::EncryptAlgoHasBeenSet() const
+{
+    return m_encryptAlgoHasBeenSet;
 }
 

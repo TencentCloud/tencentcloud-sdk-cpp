@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取评估项ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrategyId 评估项ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStrategyId() const;
 
                     /**
                      * 设置评估项ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _strategyId 评估项ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStrategyId(const uint64_t& _strategyId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取评估项名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 评估项名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置评估项名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 评估项名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取评估项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Desc 评估项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDesc() const;
 
                     /**
                      * 设置评估项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _desc 评估项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDesc(const std::string& _desc);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取评估项对应产品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Product 评估项对应产品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProduct() const;
 
                     /**
                      * 设置评估项对应产品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _product 评估项对应产品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProduct(const std::string& _product);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取评估项对应产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductDesc 评估项对应产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductDesc() const;
 
                     /**
                      * 设置评估项对应产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productDesc 评估项对应产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductDesc(const std::string& _productDesc);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取评估项优化建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Repair 评估项优化建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRepair() const;
 
                     /**
                      * 设置评估项优化建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _repair 评估项优化建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRepair(const std::string& _repair);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取评估项类别ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId 评估项类别ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetGroupId() const;
 
                     /**
                      * 设置评估项类别ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupId 评估项类别ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupId(const uint64_t& _groupId);
@@ -224,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取评估项类别名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupName 评估项类别名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置评估项类别名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupName 评估项类别名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -249,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取评估项风险列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Conditions 评估项风险列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Conditions> GetConditions() const;
 
                     /**
                      * 设置评估项风险列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _conditions 评估项风险列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConditions(const std::vector<Conditions>& _conditions);
@@ -276,63 +240,54 @@ namespace TencentCloud
 
                     /**
                      * 评估项ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_strategyId;
                     bool m_strategyIdHasBeenSet;
 
                     /**
                      * 评估项名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 评估项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_desc;
                     bool m_descHasBeenSet;
 
                     /**
                      * 评估项对应产品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;
 
                     /**
                      * 评估项对应产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productDesc;
                     bool m_productDescHasBeenSet;
 
                     /**
                      * 评估项优化建议
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_repair;
                     bool m_repairHasBeenSet;
 
                     /**
                      * 评估项类别ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
                      * 评估项类别名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
                      * 评估项风险列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Conditions> m_conditions;
                     bool m_conditionsHasBeenSet;

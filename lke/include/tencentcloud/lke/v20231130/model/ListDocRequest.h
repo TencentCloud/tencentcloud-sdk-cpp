@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/lke/v20231130/model/DocFilterFlag.h>
 
 
 namespace TencentCloud
@@ -107,14 +108,22 @@ namespace TencentCloud
 
                     /**
                      * 获取查询内容
+
+输入特定标识 lke:system:untagged  将查询所有未关联标签的文档
                      * @return Query 查询内容
+
+输入特定标识 lke:system:untagged  将查询所有未关联标签的文档
                      * 
                      */
                     std::string GetQuery() const;
 
                     /**
                      * 设置查询内容
+
+输入特定标识 lke:system:untagged  将查询所有未关联标签的文档
                      * @param _query 查询内容
+
+输入特定标识 lke:system:untagged  将查询所有未关联标签的文档
                      * 
                      */
                     void SetQuery(const std::string& _query);
@@ -147,6 +156,111 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取查询类型 filename 文档、 attribute 标签
+                     * @return QueryType 查询类型 filename 文档、 attribute 标签
+                     * 
+                     */
+                    std::string GetQueryType() const;
+
+                    /**
+                     * 设置查询类型 filename 文档、 attribute 标签
+                     * @param _queryType 查询类型 filename 文档、 attribute 标签
+                     * 
+                     */
+                    void SetQueryType(const std::string& _queryType);
+
+                    /**
+                     * 判断参数 QueryType 是否已赋值
+                     * @return QueryType 是否已赋值
+                     * 
+                     */
+                    bool QueryTypeHasBeenSet() const;
+
+                    /**
+                     * 获取分类ID
+                     * @return CateBizId 分类ID
+                     * 
+                     */
+                    std::string GetCateBizId() const;
+
+                    /**
+                     * 设置分类ID
+                     * @param _cateBizId 分类ID
+                     * 
+                     */
+                    void SetCateBizId(const std::string& _cateBizId);
+
+                    /**
+                     * 判断参数 CateBizId 是否已赋值
+                     * @return CateBizId 是否已赋值
+                     * 
+                     */
+                    bool CateBizIdHasBeenSet() const;
+
+                    /**
+                     * 获取文件类型分类筛选
+                     * @return FileTypes 文件类型分类筛选
+                     * 
+                     */
+                    std::vector<std::string> GetFileTypes() const;
+
+                    /**
+                     * 设置文件类型分类筛选
+                     * @param _fileTypes 文件类型分类筛选
+                     * 
+                     */
+                    void SetFileTypes(const std::vector<std::string>& _fileTypes);
+
+                    /**
+                     * 判断参数 FileTypes 是否已赋值
+                     * @return FileTypes 是否已赋值
+                     * 
+                     */
+                    bool FileTypesHasBeenSet() const;
+
+                    /**
+                     * 获取文档列表筛选标识位
+                     * @return FilterFlag 文档列表筛选标识位
+                     * 
+                     */
+                    std::vector<DocFilterFlag> GetFilterFlag() const;
+
+                    /**
+                     * 设置文档列表筛选标识位
+                     * @param _filterFlag 文档列表筛选标识位
+                     * 
+                     */
+                    void SetFilterFlag(const std::vector<DocFilterFlag>& _filterFlag);
+
+                    /**
+                     * 判断参数 FilterFlag 是否已赋值
+                     * @return FilterFlag 是否已赋值
+                     * 
+                     */
+                    bool FilterFlagHasBeenSet() const;
+
+                    /**
+                     * 获取是否只展示当前分类的数据 0不是，1是
+                     * @return ShowCurrCate 是否只展示当前分类的数据 0不是，1是
+                     * 
+                     */
+                    uint64_t GetShowCurrCate() const;
+
+                    /**
+                     * 设置是否只展示当前分类的数据 0不是，1是
+                     * @param _showCurrCate 是否只展示当前分类的数据 0不是，1是
+                     * 
+                     */
+                    void SetShowCurrCate(const uint64_t& _showCurrCate);
+
+                    /**
+                     * 判断参数 ShowCurrCate 是否已赋值
+                     * @return ShowCurrCate 是否已赋值
+                     * 
+                     */
+                    bool ShowCurrCateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -169,6 +283,8 @@ namespace TencentCloud
 
                     /**
                      * 查询内容
+
+输入特定标识 lke:system:untagged  将查询所有未关联标签的文档
                      */
                     std::string m_query;
                     bool m_queryHasBeenSet;
@@ -178,6 +294,36 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 查询类型 filename 文档、 attribute 标签
+                     */
+                    std::string m_queryType;
+                    bool m_queryTypeHasBeenSet;
+
+                    /**
+                     * 分类ID
+                     */
+                    std::string m_cateBizId;
+                    bool m_cateBizIdHasBeenSet;
+
+                    /**
+                     * 文件类型分类筛选
+                     */
+                    std::vector<std::string> m_fileTypes;
+                    bool m_fileTypesHasBeenSet;
+
+                    /**
+                     * 文档列表筛选标识位
+                     */
+                    std::vector<DocFilterFlag> m_filterFlag;
+                    bool m_filterFlagHasBeenSet;
+
+                    /**
+                     * 是否只展示当前分类的数据 0不是，1是
+                     */
+                    uint64_t m_showCurrCate;
+                    bool m_showCurrCateHasBeenSet;
 
                 };
             }

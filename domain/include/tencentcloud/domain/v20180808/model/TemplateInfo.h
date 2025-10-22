@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,15 +70,35 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取认证状态：未实名认证:NotUpload, 实名审核中:InAudit，已实名认证:Approved，实名审核失败:Reject
-                     * @return AuditStatus 认证状态：未实名认证:NotUpload, 实名审核中:InAudit，已实名认证:Approved，实名审核失败:Reject
+                     * 获取认证状态:
+NotUpload: 未实名认证
+InAudit: 实名审核中
+Approved: 已实名认证
+Reject: 实名审核失败
+NotVerified: 实名信息待修改
+                     * @return AuditStatus 认证状态:
+NotUpload: 未实名认证
+InAudit: 实名审核中
+Approved: 已实名认证
+Reject: 实名审核失败
+NotVerified: 实名信息待修改
                      * 
                      */
                     std::string GetAuditStatus() const;
 
                     /**
-                     * 设置认证状态：未实名认证:NotUpload, 实名审核中:InAudit，已实名认证:Approved，实名审核失败:Reject
-                     * @param _auditStatus 认证状态：未实名认证:NotUpload, 实名审核中:InAudit，已实名认证:Approved，实名审核失败:Reject
+                     * 设置认证状态:
+NotUpload: 未实名认证
+InAudit: 实名审核中
+Approved: 已实名认证
+Reject: 实名审核失败
+NotVerified: 实名信息待修改
+                     * @param _auditStatus 认证状态:
+NotUpload: 未实名认证
+InAudit: 实名审核中
+Approved: 已实名认证
+Reject: 实名审核失败
+NotVerified: 实名信息待修改
                      * 
                      */
                     void SetAuditStatus(const std::string& _auditStatus);
@@ -91,15 +111,19 @@ namespace TencentCloud
                     bool AuditStatusHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreatedOn 创建时间
+                     * 获取创建时间 
+格式:YYYY-MM-DD HH:mm:ss
+                     * @return CreatedOn 创建时间 
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetCreatedOn() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createdOn 创建时间
+                     * 设置创建时间 
+格式:YYYY-MM-DD HH:mm:ss
+                     * @param _createdOn 创建时间 
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     void SetCreatedOn(const std::string& _createdOn);
@@ -112,15 +136,19 @@ namespace TencentCloud
                     bool CreatedOnHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
-                     * @return UpdatedOn 更新时间
+                     * 获取更新时间 
+格式:YYYY-MM-DD HH:mm:ss
+                     * @return UpdatedOn 更新时间 
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetUpdatedOn() const;
 
                     /**
-                     * 设置更新时间
-                     * @param _updatedOn 更新时间
+                     * 设置更新时间 
+格式:YYYY-MM-DD HH:mm:ss
+                     * @param _updatedOn 更新时间 
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     void SetUpdatedOn(const std::string& _updatedOn);
@@ -309,19 +337,26 @@ namespace TencentCloud
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 认证状态：未实名认证:NotUpload, 实名审核中:InAudit，已实名认证:Approved，实名审核失败:Reject
+                     * 认证状态:
+NotUpload: 未实名认证
+InAudit: 实名审核中
+Approved: 已实名认证
+Reject: 实名审核失败
+NotVerified: 实名信息待修改
                      */
                     std::string m_auditStatus;
                     bool m_auditStatusHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * 创建时间 
+格式:YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_createdOn;
                     bool m_createdOnHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * 更新时间 
+格式:YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_updatedOn;
                     bool m_updatedOnHasBeenSet;

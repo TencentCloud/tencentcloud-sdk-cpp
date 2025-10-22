@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool ActionDescHasBeenSet() const;
 
                     /**
-                     * 获取来源
-                     * @return Source 来源
+                     * 获取来源1:文档生成，2：批量导入，3：手动添加
+                     * @return Source 来源1:文档生成，2：批量导入，3：手动添加
                      * 
                      */
                     uint64_t GetSource() const;
 
                     /**
-                     * 设置来源
-                     * @param _source 来源
+                     * 设置来源1:文档生成，2：批量导入，3：手动添加
+                     * @param _source 来源1:文档生成，2：批量导入，3：手动添加
                      * 
                      */
                     void SetSource(const uint64_t& _source);
@@ -325,7 +325,7 @@ namespace TencentCloud
                     bool m_actionDescHasBeenSet;
 
                     /**
-                     * 来源
+                     * 来源1:文档生成，2：批量导入，3：手动添加
                      */
                     uint64_t m_source;
                     bool m_sourceHasBeenSet;

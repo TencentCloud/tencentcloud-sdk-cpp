@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,10 +24,12 @@ using namespace std;
 
 DescribeHostDdosInstanceListRequest::DescribeHostDdosInstanceListRequest() :
     m_certificateIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
     m_isCacheHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_oldCertificateIdHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_oldCertificateIdHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false)
 {
 }
 
@@ -44,14 +46,6 @@ string DescribeHostDdosInstanceListRequest::ToJsonString() const
         string key = "CertificateId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_certificateId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_resourceTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ResourceType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_resourceType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isCacheHasBeenSet)
@@ -77,12 +71,36 @@ string DescribeHostDdosInstanceListRequest::ToJsonString() const
         }
     }
 
+    if (m_resourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceType.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_oldCertificateIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OldCertificateId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_oldCertificateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
     }
 
 
@@ -107,22 +125,6 @@ void DescribeHostDdosInstanceListRequest::SetCertificateId(const string& _certif
 bool DescribeHostDdosInstanceListRequest::CertificateIdHasBeenSet() const
 {
     return m_certificateIdHasBeenSet;
-}
-
-string DescribeHostDdosInstanceListRequest::GetResourceType() const
-{
-    return m_resourceType;
-}
-
-void DescribeHostDdosInstanceListRequest::SetResourceType(const string& _resourceType)
-{
-    m_resourceType = _resourceType;
-    m_resourceTypeHasBeenSet = true;
-}
-
-bool DescribeHostDdosInstanceListRequest::ResourceTypeHasBeenSet() const
-{
-    return m_resourceTypeHasBeenSet;
 }
 
 uint64_t DescribeHostDdosInstanceListRequest::GetIsCache() const
@@ -157,6 +159,22 @@ bool DescribeHostDdosInstanceListRequest::FiltersHasBeenSet() const
     return m_filtersHasBeenSet;
 }
 
+string DescribeHostDdosInstanceListRequest::GetResourceType() const
+{
+    return m_resourceType;
+}
+
+void DescribeHostDdosInstanceListRequest::SetResourceType(const string& _resourceType)
+{
+    m_resourceType = _resourceType;
+    m_resourceTypeHasBeenSet = true;
+}
+
+bool DescribeHostDdosInstanceListRequest::ResourceTypeHasBeenSet() const
+{
+    return m_resourceTypeHasBeenSet;
+}
+
 string DescribeHostDdosInstanceListRequest::GetOldCertificateId() const
 {
     return m_oldCertificateId;
@@ -171,6 +189,38 @@ void DescribeHostDdosInstanceListRequest::SetOldCertificateId(const string& _old
 bool DescribeHostDdosInstanceListRequest::OldCertificateIdHasBeenSet() const
 {
     return m_oldCertificateIdHasBeenSet;
+}
+
+uint64_t DescribeHostDdosInstanceListRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeHostDdosInstanceListRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeHostDdosInstanceListRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+uint64_t DescribeHostDdosInstanceListRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeHostDdosInstanceListRequest::SetLimit(const uint64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeHostDdosInstanceListRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
 }
 
 

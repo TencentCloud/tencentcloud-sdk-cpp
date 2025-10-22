@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Src 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSrc() const;
 
                     /**
                      * 设置原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _src 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrc(const std::string& _src);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取PTNM分期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PTNMM PTNM分期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPTNMM() const;
 
                     /**
                      * 设置PTNM分期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pTNMM PTNM分期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPTNMM(const std::string& _pTNMM);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取PTNM分期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PTNMN PTNM分期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPTNMN() const;
 
                     /**
                      * 设置PTNM分期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pTNMN PTNM分期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPTNMN(const std::string& _pTNMN);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取PTNM分期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PTNMT PTNM分期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPTNMT() const;
 
                     /**
                      * 设置PTNM分期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pTNMT PTNM分期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPTNMT(const std::string& _pTNMT);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_src;
                     bool m_srcHasBeenSet;
 
                     /**
                      * PTNM分期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pTNMM;
                     bool m_pTNMMHasBeenSet;
 
                     /**
                      * PTNM分期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pTNMN;
                     bool m_pTNMNHasBeenSet;
 
                     /**
                      * PTNM分期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pTNMT;
                     bool m_pTNMTHasBeenSet;

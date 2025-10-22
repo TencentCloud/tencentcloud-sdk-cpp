@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分类分级等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SensitiveLevel 分类分级等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RiskMatrixLevel GetSensitiveLevel() const;
 
                     /**
                      * 设置分类分级等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sensitiveLevel 分类分级等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSensitiveLevel(const RiskMatrixLevel& _sensitiveLevel);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取脆弱项等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulnerabilityLevel 脆弱项等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RiskMatrixLevel GetVulnerabilityLevel() const;
 
                     /**
                      * 设置脆弱项等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vulnerabilityLevel 脆弱项等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVulnerabilityLevel(const RiskMatrixLevel& _vulnerabilityLevel);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取风险名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskName 风险名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiskName() const;
 
                     /**
                      * 设置风险名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskName 风险名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskName(const std::string& _riskName);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskScore 分数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetRiskScore() const;
 
                     /**
                      * 设置分数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskScore 分数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskScore(const double& _riskScore);
@@ -151,28 +135,24 @@ namespace TencentCloud
 
                     /**
                      * 分类分级等级
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RiskMatrixLevel m_sensitiveLevel;
                     bool m_sensitiveLevelHasBeenSet;
 
                     /**
                      * 脆弱项等级
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RiskMatrixLevel m_vulnerabilityLevel;
                     bool m_vulnerabilityLevelHasBeenSet;
 
                     /**
                      * 风险名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riskName;
                     bool m_riskNameHasBeenSet;
 
                     /**
                      * 分数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_riskScore;
                     bool m_riskScoreHasBeenSet;

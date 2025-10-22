@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ BuildPacksInfo::BuildPacksInfo() :
     m_baseImageHasBeenSet(false),
     m_entryPointHasBeenSet(false),
     m_repoLanguageHasBeenSet(false),
-    m_uploadFilenameHasBeenSet(false)
+    m_uploadFilenameHasBeenSet(false),
+    m_languageVersionHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome BuildPacksInfo::Deserialize(const rapidjson::Value &value)
         m_uploadFilenameHasBeenSet = true;
     }
 
+    if (value.HasMember("LanguageVersion") && !value["LanguageVersion"].IsNull())
+    {
+        if (!value["LanguageVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BuildPacksInfo.LanguageVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_languageVersion = string(value["LanguageVersion"].GetString());
+        m_languageVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void BuildPacksInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "UploadFilename";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_uploadFilename.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_languageVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LanguageVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_languageVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void BuildPacksInfo::SetUploadFilename(const string& _uploadFilename)
 bool BuildPacksInfo::UploadFilenameHasBeenSet() const
 {
     return m_uploadFilenameHasBeenSet;
+}
+
+string BuildPacksInfo::GetLanguageVersion() const
+{
+    return m_languageVersion;
+}
+
+void BuildPacksInfo::SetLanguageVersion(const string& _languageVersion)
+{
+    m_languageVersion = _languageVersion;
+    m_languageVersionHasBeenSet = true;
+}
+
+bool BuildPacksInfo::LanguageVersionHasBeenSet() const
+{
+    return m_languageVersionHasBeenSet;
 }
 

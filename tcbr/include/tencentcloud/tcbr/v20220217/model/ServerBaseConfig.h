@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,9 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcbr/v20220217/model/HpaPolicy.h>
+#include <tencentcloud/tcbr/v20220217/model/TimerScale.h>
+#include <tencentcloud/tcbr/v20220217/model/VpcConf.h>
+#include <tencentcloud/tcbr/v20220217/model/VolumeConf.h>
 
 
 namespace TencentCloud
@@ -469,18 +472,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务标签, function: 函数托管
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tag 服务标签, function: 函数托管
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTag() const;
 
                     /**
                      * 设置服务标签, function: 函数托管
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tag 服务标签, function: 函数托管
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTag(const std::string& _tag);
@@ -491,6 +490,199 @@ namespace TencentCloud
                      * 
                      */
                     bool TagHasBeenSet() const;
+
+                    /**
+                     * 获取内网访问开关 close | open
+                     * @return InternalAccess 内网访问开关 close | open
+                     * 
+                     */
+                    std::string GetInternalAccess() const;
+
+                    /**
+                     * 设置内网访问开关 close | open
+                     * @param _internalAccess 内网访问开关 close | open
+                     * 
+                     */
+                    void SetInternalAccess(const std::string& _internalAccess);
+
+                    /**
+                     * 判断参数 InternalAccess 是否已赋值
+                     * @return InternalAccess 是否已赋值
+                     * 
+                     */
+                    bool InternalAccessHasBeenSet() const;
+
+                    /**
+                     * 获取内网域名
+                     * @return InternalDomain 内网域名
+                     * 
+                     */
+                    std::string GetInternalDomain() const;
+
+                    /**
+                     * 设置内网域名
+                     * @param _internalDomain 内网域名
+                     * 
+                     */
+                    void SetInternalDomain(const std::string& _internalDomain);
+
+                    /**
+                     * 判断参数 InternalDomain 是否已赋值
+                     * @return InternalDomain 是否已赋值
+                     * 
+                     */
+                    bool InternalDomainHasBeenSet() const;
+
+                    /**
+                     * 获取运行模式
+                     * @return OperationMode 运行模式
+                     * 
+                     */
+                    std::string GetOperationMode() const;
+
+                    /**
+                     * 设置运行模式
+                     * @param _operationMode 运行模式
+                     * 
+                     */
+                    void SetOperationMode(const std::string& _operationMode);
+
+                    /**
+                     * 判断参数 OperationMode 是否已赋值
+                     * @return OperationMode 是否已赋值
+                     * 
+                     */
+                    bool OperationModeHasBeenSet() const;
+
+                    /**
+                     * 获取定时扩缩容配置
+                     * @return TimerScale 定时扩缩容配置
+                     * 
+                     */
+                    std::vector<TimerScale> GetTimerScale() const;
+
+                    /**
+                     * 设置定时扩缩容配置
+                     * @param _timerScale 定时扩缩容配置
+                     * 
+                     */
+                    void SetTimerScale(const std::vector<TimerScale>& _timerScale);
+
+                    /**
+                     * 判断参数 TimerScale 是否已赋值
+                     * @return TimerScale 是否已赋值
+                     * 
+                     */
+                    bool TimerScaleHasBeenSet() const;
+
+                    /**
+                     * 获取Dockerfile EntryPoint 参数
+                     * @return EntryPoint Dockerfile EntryPoint 参数
+                     * 
+                     */
+                    std::vector<std::string> GetEntryPoint() const;
+
+                    /**
+                     * 设置Dockerfile EntryPoint 参数
+                     * @param _entryPoint Dockerfile EntryPoint 参数
+                     * 
+                     */
+                    void SetEntryPoint(const std::vector<std::string>& _entryPoint);
+
+                    /**
+                     * 判断参数 EntryPoint 是否已赋值
+                     * @return EntryPoint 是否已赋值
+                     * 
+                     */
+                    bool EntryPointHasBeenSet() const;
+
+                    /**
+                     * 获取Dockerfile Cmd 参数
+                     * @return Cmd Dockerfile Cmd 参数
+                     * 
+                     */
+                    std::vector<std::string> GetCmd() const;
+
+                    /**
+                     * 设置Dockerfile Cmd 参数
+                     * @param _cmd Dockerfile Cmd 参数
+                     * 
+                     */
+                    void SetCmd(const std::vector<std::string>& _cmd);
+
+                    /**
+                     * 判断参数 Cmd 是否已赋值
+                     * @return Cmd 是否已赋值
+                     * 
+                     */
+                    bool CmdHasBeenSet() const;
+
+                    /**
+                     * 获取会话亲和性开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SessionAffinity 会话亲和性开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSessionAffinity() const;
+
+                    /**
+                     * 设置会话亲和性开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sessionAffinity 会话亲和性开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSessionAffinity(const std::string& _sessionAffinity);
+
+                    /**
+                     * 判断参数 SessionAffinity 是否已赋值
+                     * @return SessionAffinity 是否已赋值
+                     * 
+                     */
+                    bool SessionAffinityHasBeenSet() const;
+
+                    /**
+                     * 获取Vpc 配置参数
+                     * @return VpcConf Vpc 配置参数
+                     * 
+                     */
+                    VpcConf GetVpcConf() const;
+
+                    /**
+                     * 设置Vpc 配置参数
+                     * @param _vpcConf Vpc 配置参数
+                     * 
+                     */
+                    void SetVpcConf(const VpcConf& _vpcConf);
+
+                    /**
+                     * 判断参数 VpcConf 是否已赋值
+                     * @return VpcConf 是否已赋值
+                     * 
+                     */
+                    bool VpcConfHasBeenSet() const;
+
+                    /**
+                     * 获取存储配置信息
+                     * @return VolumesConf 存储配置信息
+                     * 
+                     */
+                    std::vector<VolumeConf> GetVolumesConf() const;
+
+                    /**
+                     * 设置存储配置信息
+                     * @param _volumesConf 存储配置信息
+                     * 
+                     */
+                    void SetVolumesConf(const std::vector<VolumeConf>& _volumesConf);
+
+                    /**
+                     * 判断参数 VolumesConf 是否已赋值
+                     * @return VolumesConf 是否已赋值
+                     * 
+                     */
+                    bool VolumesConfHasBeenSet() const;
 
                 private:
 
@@ -616,10 +808,64 @@ namespace TencentCloud
 
                     /**
                      * 服务标签, function: 函数托管
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tag;
                     bool m_tagHasBeenSet;
+
+                    /**
+                     * 内网访问开关 close | open
+                     */
+                    std::string m_internalAccess;
+                    bool m_internalAccessHasBeenSet;
+
+                    /**
+                     * 内网域名
+                     */
+                    std::string m_internalDomain;
+                    bool m_internalDomainHasBeenSet;
+
+                    /**
+                     * 运行模式
+                     */
+                    std::string m_operationMode;
+                    bool m_operationModeHasBeenSet;
+
+                    /**
+                     * 定时扩缩容配置
+                     */
+                    std::vector<TimerScale> m_timerScale;
+                    bool m_timerScaleHasBeenSet;
+
+                    /**
+                     * Dockerfile EntryPoint 参数
+                     */
+                    std::vector<std::string> m_entryPoint;
+                    bool m_entryPointHasBeenSet;
+
+                    /**
+                     * Dockerfile Cmd 参数
+                     */
+                    std::vector<std::string> m_cmd;
+                    bool m_cmdHasBeenSet;
+
+                    /**
+                     * 会话亲和性开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sessionAffinity;
+                    bool m_sessionAffinityHasBeenSet;
+
+                    /**
+                     * Vpc 配置参数
+                     */
+                    VpcConf m_vpcConf;
+                    bool m_vpcConfHasBeenSet;
+
+                    /**
+                     * 存储配置信息
+                     */
+                    std::vector<VolumeConf> m_volumesConf;
+                    bool m_volumesConfHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -193,6 +193,48 @@ namespace TencentCloud
                      */
                     bool JobStatusHasBeenSet() const;
 
+                    /**
+                     * 获取处理数据量
+                     * @return ProcessSize 处理数据量
+                     * 
+                     */
+                    int64_t GetProcessSize() const;
+
+                    /**
+                     * 设置处理数据量
+                     * @param _processSize 处理数据量
+                     * 
+                     */
+                    void SetProcessSize(const int64_t& _processSize);
+
+                    /**
+                     * 判断参数 ProcessSize 是否已赋值
+                     * @return ProcessSize 是否已赋值
+                     * 
+                     */
+                    bool ProcessSizeHasBeenSet() const;
+
+                    /**
+                     * 获取错误原因
+                     * @return ErrorReason 错误原因
+                     * 
+                     */
+                    std::string GetErrorReason() const;
+
+                    /**
+                     * 设置错误原因
+                     * @param _errorReason 错误原因
+                     * 
+                     */
+                    void SetErrorReason(const std::string& _errorReason);
+
+                    /**
+                     * 判断参数 ErrorReason 是否已赋值
+                     * @return ErrorReason 是否已赋值
+                     * 
+                     */
+                    bool ErrorReasonHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +278,18 @@ namespace TencentCloud
                      */
                     std::string m_jobStatus;
                     bool m_jobStatusHasBeenSet;
+
+                    /**
+                     * 处理数据量
+                     */
+                    int64_t m_processSize;
+                    bool m_processSizeHasBeenSet;
+
+                    /**
+                     * 错误原因
+                     */
+                    std::string m_errorReason;
+                    bool m_errorReasonHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,16 +25,30 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/emr/v20190103/model/AddMetricScaleStrategyRequest.h>
 #include <tencentcloud/emr/v20190103/model/AddMetricScaleStrategyResponse.h>
+#include <tencentcloud/emr/v20190103/model/AddNodeResourceConfigRequest.h>
+#include <tencentcloud/emr/v20190103/model/AddNodeResourceConfigResponse.h>
 #include <tencentcloud/emr/v20190103/model/AddUsersForUserManagerRequest.h>
 #include <tencentcloud/emr/v20190103/model/AddUsersForUserManagerResponse.h>
+#include <tencentcloud/emr/v20190103/model/AttachDisksRequest.h>
+#include <tencentcloud/emr/v20190103/model/AttachDisksResponse.h>
+#include <tencentcloud/emr/v20190103/model/ConvertPreToPostClusterRequest.h>
+#include <tencentcloud/emr/v20190103/model/ConvertPreToPostClusterResponse.h>
+#include <tencentcloud/emr/v20190103/model/CreateCloudInstanceRequest.h>
+#include <tencentcloud/emr/v20190103/model/CreateCloudInstanceResponse.h>
 #include <tencentcloud/emr/v20190103/model/CreateClusterRequest.h>
 #include <tencentcloud/emr/v20190103/model/CreateClusterResponse.h>
+#include <tencentcloud/emr/v20190103/model/CreateGroupsSTDRequest.h>
+#include <tencentcloud/emr/v20190103/model/CreateGroupsSTDResponse.h>
 #include <tencentcloud/emr/v20190103/model/CreateInstanceRequest.h>
 #include <tencentcloud/emr/v20190103/model/CreateInstanceResponse.h>
 #include <tencentcloud/emr/v20190103/model/CreateSLInstanceRequest.h>
 #include <tencentcloud/emr/v20190103/model/CreateSLInstanceResponse.h>
 #include <tencentcloud/emr/v20190103/model/DeleteAutoScaleStrategyRequest.h>
 #include <tencentcloud/emr/v20190103/model/DeleteAutoScaleStrategyResponse.h>
+#include <tencentcloud/emr/v20190103/model/DeleteGroupsSTDRequest.h>
+#include <tencentcloud/emr/v20190103/model/DeleteGroupsSTDResponse.h>
+#include <tencentcloud/emr/v20190103/model/DeleteNodeResourceConfigRequest.h>
+#include <tencentcloud/emr/v20190103/model/DeleteNodeResourceConfigResponse.h>
 #include <tencentcloud/emr/v20190103/model/DeleteUserManagerUserListRequest.h>
 #include <tencentcloud/emr/v20190103/model/DeleteUserManagerUserListResponse.h>
 #include <tencentcloud/emr/v20190103/model/DeployYarnConfRequest.h>
@@ -51,12 +65,16 @@
 #include <tencentcloud/emr/v20190103/model/DescribeClusterNodesResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeCvmQuotaRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeCvmQuotaResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeDAGInfoRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeDAGInfoResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeEmrApplicationStaticsRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeEmrApplicationStaticsResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeEmrOverviewMetricsRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeEmrOverviewMetricsResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeGlobalConfigRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeGlobalConfigResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeGroupsSTDRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeGroupsSTDResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeHBaseTableOverviewRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeHBaseTableOverviewResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeHDFSStorageInfoRequest.h>
@@ -67,6 +85,8 @@
 #include <tencentcloud/emr/v20190103/model/DescribeImpalaQueriesResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeInsightListRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeInsightListResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeInspectionTaskResultRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeInspectionTaskResultResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeInstanceRenewNodesRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeInstanceRenewNodesResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeInstancesRequest.h>
@@ -77,6 +97,12 @@
 #include <tencentcloud/emr/v20190103/model/DescribeJobFlowResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeKyuubiQueryInfoRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeKyuubiQueryInfoResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeNodeDataDisksRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeNodeDataDisksResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeNodeResourceConfigFastRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeNodeResourceConfigFastResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeNodeSpecRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeNodeSpecResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeResourceScheduleRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeResourceScheduleResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeResourceScheduleDiffDetailRequest.h>
@@ -85,8 +111,12 @@
 #include <tencentcloud/emr/v20190103/model/DescribeSLInstanceResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeSLInstanceListRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeSLInstanceListResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeServiceConfGroupInfosRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeServiceConfGroupInfosResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeServiceNodeInfosRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeServiceNodeInfosResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeSparkApplicationsRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeSparkApplicationsResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeSparkQueriesRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeSparkQueriesResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeStarRocksQueryInfoRequest.h>
@@ -117,6 +147,14 @@
 #include <tencentcloud/emr/v20190103/model/ModifyAutoScaleStrategyResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifyGlobalConfigRequest.h>
 #include <tencentcloud/emr/v20190103/model/ModifyGlobalConfigResponse.h>
+#include <tencentcloud/emr/v20190103/model/ModifyInspectionSettingsRequest.h>
+#include <tencentcloud/emr/v20190103/model/ModifyInspectionSettingsResponse.h>
+#include <tencentcloud/emr/v20190103/model/ModifyInstanceBasicRequest.h>
+#include <tencentcloud/emr/v20190103/model/ModifyInstanceBasicResponse.h>
+#include <tencentcloud/emr/v20190103/model/ModifyPodNumRequest.h>
+#include <tencentcloud/emr/v20190103/model/ModifyPodNumResponse.h>
+#include <tencentcloud/emr/v20190103/model/ModifyResourceRequest.h>
+#include <tencentcloud/emr/v20190103/model/ModifyResourceResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifyResourcePoolsRequest.h>
 #include <tencentcloud/emr/v20190103/model/ModifyResourcePoolsResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifyResourceScheduleConfigRequest.h>
@@ -127,20 +165,30 @@
 #include <tencentcloud/emr/v20190103/model/ModifyResourcesTagsResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifySLInstanceRequest.h>
 #include <tencentcloud/emr/v20190103/model/ModifySLInstanceResponse.h>
+#include <tencentcloud/emr/v20190103/model/ModifySLInstanceBasicRequest.h>
+#include <tencentcloud/emr/v20190103/model/ModifySLInstanceBasicResponse.h>
+#include <tencentcloud/emr/v20190103/model/ModifyUserGroupRequest.h>
+#include <tencentcloud/emr/v20190103/model/ModifyUserGroupResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifyUserManagerPwdRequest.h>
 #include <tencentcloud/emr/v20190103/model/ModifyUserManagerPwdResponse.h>
+#include <tencentcloud/emr/v20190103/model/ModifyUsersOfGroupSTDRequest.h>
+#include <tencentcloud/emr/v20190103/model/ModifyUsersOfGroupSTDResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifyYarnDeployRequest.h>
 #include <tencentcloud/emr/v20190103/model/ModifyYarnDeployResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifyYarnQueueV2Request.h>
 #include <tencentcloud/emr/v20190103/model/ModifyYarnQueueV2Response.h>
 #include <tencentcloud/emr/v20190103/model/ResetYarnConfigRequest.h>
 #include <tencentcloud/emr/v20190103/model/ResetYarnConfigResponse.h>
+#include <tencentcloud/emr/v20190103/model/ResizeDataDisksRequest.h>
+#include <tencentcloud/emr/v20190103/model/ResizeDataDisksResponse.h>
 #include <tencentcloud/emr/v20190103/model/RunJobFlowRequest.h>
 #include <tencentcloud/emr/v20190103/model/RunJobFlowResponse.h>
 #include <tencentcloud/emr/v20190103/model/ScaleOutClusterRequest.h>
 #include <tencentcloud/emr/v20190103/model/ScaleOutClusterResponse.h>
 #include <tencentcloud/emr/v20190103/model/ScaleOutInstanceRequest.h>
 #include <tencentcloud/emr/v20190103/model/ScaleOutInstanceResponse.h>
+#include <tencentcloud/emr/v20190103/model/SetNodeResourceConfigDefaultRequest.h>
+#include <tencentcloud/emr/v20190103/model/SetNodeResourceConfigDefaultResponse.h>
 #include <tencentcloud/emr/v20190103/model/StartStopServiceOrMonitorRequest.h>
 #include <tencentcloud/emr/v20190103/model/StartStopServiceOrMonitorResponse.h>
 #include <tencentcloud/emr/v20190103/model/SyncPodStateRequest.h>
@@ -170,12 +218,27 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddMetricScaleStrategyResponse> AddMetricScaleStrategyOutcome;
                 typedef std::future<AddMetricScaleStrategyOutcome> AddMetricScaleStrategyOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::AddMetricScaleStrategyRequest&, AddMetricScaleStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddMetricScaleStrategyAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddNodeResourceConfigResponse> AddNodeResourceConfigOutcome;
+                typedef std::future<AddNodeResourceConfigOutcome> AddNodeResourceConfigOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::AddNodeResourceConfigRequest&, AddNodeResourceConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddNodeResourceConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddUsersForUserManagerResponse> AddUsersForUserManagerOutcome;
                 typedef std::future<AddUsersForUserManagerOutcome> AddUsersForUserManagerOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::AddUsersForUserManagerRequest&, AddUsersForUserManagerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddUsersForUserManagerAsyncHandler;
+                typedef Outcome<Core::Error, Model::AttachDisksResponse> AttachDisksOutcome;
+                typedef std::future<AttachDisksOutcome> AttachDisksOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::AttachDisksRequest&, AttachDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AttachDisksAsyncHandler;
+                typedef Outcome<Core::Error, Model::ConvertPreToPostClusterResponse> ConvertPreToPostClusterOutcome;
+                typedef std::future<ConvertPreToPostClusterOutcome> ConvertPreToPostClusterOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::ConvertPreToPostClusterRequest&, ConvertPreToPostClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ConvertPreToPostClusterAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCloudInstanceResponse> CreateCloudInstanceOutcome;
+                typedef std::future<CreateCloudInstanceOutcome> CreateCloudInstanceOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::CreateCloudInstanceRequest&, CreateCloudInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateClusterResponse> CreateClusterOutcome;
                 typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::CreateClusterRequest&, CreateClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateGroupsSTDResponse> CreateGroupsSTDOutcome;
+                typedef std::future<CreateGroupsSTDOutcome> CreateGroupsSTDOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::CreateGroupsSTDRequest&, CreateGroupsSTDOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGroupsSTDAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateInstanceResponse> CreateInstanceOutcome;
                 typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::CreateInstanceRequest&, CreateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAsyncHandler;
@@ -185,6 +248,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAutoScaleStrategyResponse> DeleteAutoScaleStrategyOutcome;
                 typedef std::future<DeleteAutoScaleStrategyOutcome> DeleteAutoScaleStrategyOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DeleteAutoScaleStrategyRequest&, DeleteAutoScaleStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAutoScaleStrategyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteGroupsSTDResponse> DeleteGroupsSTDOutcome;
+                typedef std::future<DeleteGroupsSTDOutcome> DeleteGroupsSTDOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DeleteGroupsSTDRequest&, DeleteGroupsSTDOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGroupsSTDAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteNodeResourceConfigResponse> DeleteNodeResourceConfigOutcome;
+                typedef std::future<DeleteNodeResourceConfigOutcome> DeleteNodeResourceConfigOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DeleteNodeResourceConfigRequest&, DeleteNodeResourceConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNodeResourceConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteUserManagerUserListResponse> DeleteUserManagerUserListOutcome;
                 typedef std::future<DeleteUserManagerUserListOutcome> DeleteUserManagerUserListOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DeleteUserManagerUserListRequest&, DeleteUserManagerUserListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserManagerUserListAsyncHandler;
@@ -209,6 +278,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCvmQuotaResponse> DescribeCvmQuotaOutcome;
                 typedef std::future<DescribeCvmQuotaOutcome> DescribeCvmQuotaOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeCvmQuotaRequest&, DescribeCvmQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCvmQuotaAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDAGInfoResponse> DescribeDAGInfoOutcome;
+                typedef std::future<DescribeDAGInfoOutcome> DescribeDAGInfoOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeDAGInfoRequest&, DescribeDAGInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDAGInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEmrApplicationStaticsResponse> DescribeEmrApplicationStaticsOutcome;
                 typedef std::future<DescribeEmrApplicationStaticsOutcome> DescribeEmrApplicationStaticsOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeEmrApplicationStaticsRequest&, DescribeEmrApplicationStaticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEmrApplicationStaticsAsyncHandler;
@@ -218,6 +290,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeGlobalConfigResponse> DescribeGlobalConfigOutcome;
                 typedef std::future<DescribeGlobalConfigOutcome> DescribeGlobalConfigOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeGlobalConfigRequest&, DescribeGlobalConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGlobalConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGroupsSTDResponse> DescribeGroupsSTDOutcome;
+                typedef std::future<DescribeGroupsSTDOutcome> DescribeGroupsSTDOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeGroupsSTDRequest&, DescribeGroupsSTDOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGroupsSTDAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeHBaseTableOverviewResponse> DescribeHBaseTableOverviewOutcome;
                 typedef std::future<DescribeHBaseTableOverviewOutcome> DescribeHBaseTableOverviewOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeHBaseTableOverviewRequest&, DescribeHBaseTableOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHBaseTableOverviewAsyncHandler;
@@ -233,6 +308,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInsightListResponse> DescribeInsightListOutcome;
                 typedef std::future<DescribeInsightListOutcome> DescribeInsightListOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeInsightListRequest&, DescribeInsightListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInsightListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInspectionTaskResultResponse> DescribeInspectionTaskResultOutcome;
+                typedef std::future<DescribeInspectionTaskResultOutcome> DescribeInspectionTaskResultOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeInspectionTaskResultRequest&, DescribeInspectionTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInspectionTaskResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceRenewNodesResponse> DescribeInstanceRenewNodesOutcome;
                 typedef std::future<DescribeInstanceRenewNodesOutcome> DescribeInstanceRenewNodesOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeInstanceRenewNodesRequest&, DescribeInstanceRenewNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceRenewNodesAsyncHandler;
@@ -248,6 +326,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeKyuubiQueryInfoResponse> DescribeKyuubiQueryInfoOutcome;
                 typedef std::future<DescribeKyuubiQueryInfoOutcome> DescribeKyuubiQueryInfoOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeKyuubiQueryInfoRequest&, DescribeKyuubiQueryInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKyuubiQueryInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNodeDataDisksResponse> DescribeNodeDataDisksOutcome;
+                typedef std::future<DescribeNodeDataDisksOutcome> DescribeNodeDataDisksOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeNodeDataDisksRequest&, DescribeNodeDataDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNodeDataDisksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNodeResourceConfigFastResponse> DescribeNodeResourceConfigFastOutcome;
+                typedef std::future<DescribeNodeResourceConfigFastOutcome> DescribeNodeResourceConfigFastOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeNodeResourceConfigFastRequest&, DescribeNodeResourceConfigFastOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNodeResourceConfigFastAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNodeSpecResponse> DescribeNodeSpecOutcome;
+                typedef std::future<DescribeNodeSpecOutcome> DescribeNodeSpecOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeNodeSpecRequest&, DescribeNodeSpecOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNodeSpecAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeResourceScheduleResponse> DescribeResourceScheduleOutcome;
                 typedef std::future<DescribeResourceScheduleOutcome> DescribeResourceScheduleOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeResourceScheduleRequest&, DescribeResourceScheduleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceScheduleAsyncHandler;
@@ -260,9 +347,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSLInstanceListResponse> DescribeSLInstanceListOutcome;
                 typedef std::future<DescribeSLInstanceListOutcome> DescribeSLInstanceListOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeSLInstanceListRequest&, DescribeSLInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSLInstanceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeServiceConfGroupInfosResponse> DescribeServiceConfGroupInfosOutcome;
+                typedef std::future<DescribeServiceConfGroupInfosOutcome> DescribeServiceConfGroupInfosOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeServiceConfGroupInfosRequest&, DescribeServiceConfGroupInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceConfGroupInfosAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeServiceNodeInfosResponse> DescribeServiceNodeInfosOutcome;
                 typedef std::future<DescribeServiceNodeInfosOutcome> DescribeServiceNodeInfosOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeServiceNodeInfosRequest&, DescribeServiceNodeInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceNodeInfosAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSparkApplicationsResponse> DescribeSparkApplicationsOutcome;
+                typedef std::future<DescribeSparkApplicationsOutcome> DescribeSparkApplicationsOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeSparkApplicationsRequest&, DescribeSparkApplicationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSparkApplicationsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSparkQueriesResponse> DescribeSparkQueriesOutcome;
                 typedef std::future<DescribeSparkQueriesOutcome> DescribeSparkQueriesOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeSparkQueriesRequest&, DescribeSparkQueriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSparkQueriesAsyncHandler;
@@ -308,6 +401,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyGlobalConfigResponse> ModifyGlobalConfigOutcome;
                 typedef std::future<ModifyGlobalConfigOutcome> ModifyGlobalConfigOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::ModifyGlobalConfigRequest&, ModifyGlobalConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGlobalConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInspectionSettingsResponse> ModifyInspectionSettingsOutcome;
+                typedef std::future<ModifyInspectionSettingsOutcome> ModifyInspectionSettingsOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::ModifyInspectionSettingsRequest&, ModifyInspectionSettingsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInspectionSettingsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceBasicResponse> ModifyInstanceBasicOutcome;
+                typedef std::future<ModifyInstanceBasicOutcome> ModifyInstanceBasicOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::ModifyInstanceBasicRequest&, ModifyInstanceBasicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceBasicAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyPodNumResponse> ModifyPodNumOutcome;
+                typedef std::future<ModifyPodNumOutcome> ModifyPodNumOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::ModifyPodNumRequest&, ModifyPodNumOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPodNumAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyResourceResponse> ModifyResourceOutcome;
+                typedef std::future<ModifyResourceOutcome> ModifyResourceOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::ModifyResourceRequest&, ModifyResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResourceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyResourcePoolsResponse> ModifyResourcePoolsOutcome;
                 typedef std::future<ModifyResourcePoolsOutcome> ModifyResourcePoolsOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::ModifyResourcePoolsRequest&, ModifyResourcePoolsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResourcePoolsAsyncHandler;
@@ -323,9 +428,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifySLInstanceResponse> ModifySLInstanceOutcome;
                 typedef std::future<ModifySLInstanceOutcome> ModifySLInstanceOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::ModifySLInstanceRequest&, ModifySLInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySLInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySLInstanceBasicResponse> ModifySLInstanceBasicOutcome;
+                typedef std::future<ModifySLInstanceBasicOutcome> ModifySLInstanceBasicOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::ModifySLInstanceBasicRequest&, ModifySLInstanceBasicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySLInstanceBasicAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyUserGroupResponse> ModifyUserGroupOutcome;
+                typedef std::future<ModifyUserGroupOutcome> ModifyUserGroupOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::ModifyUserGroupRequest&, ModifyUserGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyUserManagerPwdResponse> ModifyUserManagerPwdOutcome;
                 typedef std::future<ModifyUserManagerPwdOutcome> ModifyUserManagerPwdOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::ModifyUserManagerPwdRequest&, ModifyUserManagerPwdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserManagerPwdAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyUsersOfGroupSTDResponse> ModifyUsersOfGroupSTDOutcome;
+                typedef std::future<ModifyUsersOfGroupSTDOutcome> ModifyUsersOfGroupSTDOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::ModifyUsersOfGroupSTDRequest&, ModifyUsersOfGroupSTDOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUsersOfGroupSTDAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyYarnDeployResponse> ModifyYarnDeployOutcome;
                 typedef std::future<ModifyYarnDeployOutcome> ModifyYarnDeployOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::ModifyYarnDeployRequest&, ModifyYarnDeployOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyYarnDeployAsyncHandler;
@@ -335,6 +449,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ResetYarnConfigResponse> ResetYarnConfigOutcome;
                 typedef std::future<ResetYarnConfigOutcome> ResetYarnConfigOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::ResetYarnConfigRequest&, ResetYarnConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetYarnConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResizeDataDisksResponse> ResizeDataDisksOutcome;
+                typedef std::future<ResizeDataDisksOutcome> ResizeDataDisksOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::ResizeDataDisksRequest&, ResizeDataDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResizeDataDisksAsyncHandler;
                 typedef Outcome<Core::Error, Model::RunJobFlowResponse> RunJobFlowOutcome;
                 typedef std::future<RunJobFlowOutcome> RunJobFlowOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::RunJobFlowRequest&, RunJobFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunJobFlowAsyncHandler;
@@ -344,6 +461,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ScaleOutInstanceResponse> ScaleOutInstanceOutcome;
                 typedef std::future<ScaleOutInstanceOutcome> ScaleOutInstanceOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::ScaleOutInstanceRequest&, ScaleOutInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScaleOutInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetNodeResourceConfigDefaultResponse> SetNodeResourceConfigDefaultOutcome;
+                typedef std::future<SetNodeResourceConfigDefaultOutcome> SetNodeResourceConfigDefaultOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::SetNodeResourceConfigDefaultRequest&, SetNodeResourceConfigDefaultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetNodeResourceConfigDefaultAsyncHandler;
                 typedef Outcome<Core::Error, Model::StartStopServiceOrMonitorResponse> StartStopServiceOrMonitorOutcome;
                 typedef std::future<StartStopServiceOrMonitorOutcome> StartStopServiceOrMonitorOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::StartStopServiceOrMonitorRequest&, StartStopServiceOrMonitorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartStopServiceOrMonitorAsyncHandler;
@@ -375,6 +495,15 @@ namespace TencentCloud
                 AddMetricScaleStrategyOutcomeCallable AddMetricScaleStrategyCallable(const Model::AddMetricScaleStrategyRequest& request);
 
                 /**
+                 *增加当前集群的节点规格配置
+                 * @param req AddNodeResourceConfigRequest
+                 * @return AddNodeResourceConfigOutcome
+                 */
+                AddNodeResourceConfigOutcome AddNodeResourceConfig(const Model::AddNodeResourceConfigRequest &request);
+                void AddNodeResourceConfigAsync(const Model::AddNodeResourceConfigRequest& request, const AddNodeResourceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddNodeResourceConfigOutcomeCallable AddNodeResourceConfigCallable(const Model::AddNodeResourceConfigRequest& request);
+
+                /**
                  *该接口支持安装了OpenLdap组件的集群。
 新增用户列表（用户管理）。
                  * @param req AddUsersForUserManagerRequest
@@ -383,6 +512,33 @@ namespace TencentCloud
                 AddUsersForUserManagerOutcome AddUsersForUserManager(const Model::AddUsersForUserManagerRequest &request);
                 void AddUsersForUserManagerAsync(const Model::AddUsersForUserManagerRequest& request, const AddUsersForUserManagerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddUsersForUserManagerOutcomeCallable AddUsersForUserManagerCallable(const Model::AddUsersForUserManagerRequest& request);
+
+                /**
+                 *云盘挂载
+                 * @param req AttachDisksRequest
+                 * @return AttachDisksOutcome
+                 */
+                AttachDisksOutcome AttachDisks(const Model::AttachDisksRequest &request);
+                void AttachDisksAsync(const Model::AttachDisksRequest& request, const AttachDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AttachDisksOutcomeCallable AttachDisksCallable(const Model::AttachDisksRequest& request);
+
+                /**
+                 *包月集群转按量集群（不含cdb）
+                 * @param req ConvertPreToPostClusterRequest
+                 * @return ConvertPreToPostClusterOutcome
+                 */
+                ConvertPreToPostClusterOutcome ConvertPreToPostCluster(const Model::ConvertPreToPostClusterRequest &request);
+                void ConvertPreToPostClusterAsync(const Model::ConvertPreToPostClusterRequest& request, const ConvertPreToPostClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ConvertPreToPostClusterOutcomeCallable ConvertPreToPostClusterCallable(const Model::ConvertPreToPostClusterRequest& request);
+
+                /**
+                 *创建EMR容器集群实例
+                 * @param req CreateCloudInstanceRequest
+                 * @return CreateCloudInstanceOutcome
+                 */
+                CreateCloudInstanceOutcome CreateCloudInstance(const Model::CreateCloudInstanceRequest &request);
+                void CreateCloudInstanceAsync(const Model::CreateCloudInstanceRequest& request, const CreateCloudInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCloudInstanceOutcomeCallable CreateCloudInstanceCallable(const Model::CreateCloudInstanceRequest& request);
 
                 /**
                  *创建EMR集群实例
@@ -394,6 +550,15 @@ namespace TencentCloud
                 CreateClusterOutcomeCallable CreateClusterCallable(const Model::CreateClusterRequest& request);
 
                 /**
+                 *用户管理-批量创建用户组
+                 * @param req CreateGroupsSTDRequest
+                 * @return CreateGroupsSTDOutcome
+                 */
+                CreateGroupsSTDOutcome CreateGroupsSTD(const Model::CreateGroupsSTDRequest &request);
+                void CreateGroupsSTDAsync(const Model::CreateGroupsSTDRequest& request, const CreateGroupsSTDAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateGroupsSTDOutcomeCallable CreateGroupsSTDCallable(const Model::CreateGroupsSTDRequest& request);
+
+                /**
                  *创建EMR集群实例
                  * @param req CreateInstanceRequest
                  * @return CreateInstanceOutcome
@@ -403,9 +568,9 @@ namespace TencentCloud
                 CreateInstanceOutcomeCallable CreateInstanceCallable(const Model::CreateInstanceRequest& request);
 
                 /**
-                 *本接口（CreateSLInstance）用于创建 Lite HBase 实例
-- 接口调用成功，会创建Lite HBase实例，创建实例请求成功会返回创建实例的 InstaceId 和请求的 RequestID。
-- 接口为异步接口，接口返回时操作并未立即完成，实例操作结果可以通过调用 DescribeInstancesList 查看当前实例的 StatusDesc 状态。
+                 *本接口（CreateSLInstance）用于创建Serverless HBase实例
+- 接口调用成功，会创建Serverless HBase实例，创建实例请求成功会返回创建实例的InstaceId和请求的 RequestID。
+- 接口为异步接口，接口返回时操作并未立即完成，实例操作结果可以通过调用DescribeInstancesList查看当前实例的StatusDesc状态。
                  * @param req CreateSLInstanceRequest
                  * @return CreateSLInstanceOutcome
                  */
@@ -421,6 +586,24 @@ namespace TencentCloud
                 DeleteAutoScaleStrategyOutcome DeleteAutoScaleStrategy(const Model::DeleteAutoScaleStrategyRequest &request);
                 void DeleteAutoScaleStrategyAsync(const Model::DeleteAutoScaleStrategyRequest& request, const DeleteAutoScaleStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteAutoScaleStrategyOutcomeCallable DeleteAutoScaleStrategyCallable(const Model::DeleteAutoScaleStrategyRequest& request);
+
+                /**
+                 *批量删除用户组
+                 * @param req DeleteGroupsSTDRequest
+                 * @return DeleteGroupsSTDOutcome
+                 */
+                DeleteGroupsSTDOutcome DeleteGroupsSTD(const Model::DeleteGroupsSTDRequest &request);
+                void DeleteGroupsSTDAsync(const Model::DeleteGroupsSTDRequest& request, const DeleteGroupsSTDAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteGroupsSTDOutcomeCallable DeleteGroupsSTDCallable(const Model::DeleteGroupsSTDRequest& request);
+
+                /**
+                 *删除当前集群的节点规格配置
+                 * @param req DeleteNodeResourceConfigRequest
+                 * @return DeleteNodeResourceConfigOutcome
+                 */
+                DeleteNodeResourceConfigOutcome DeleteNodeResourceConfig(const Model::DeleteNodeResourceConfigRequest &request);
+                void DeleteNodeResourceConfigAsync(const Model::DeleteNodeResourceConfigRequest& request, const DeleteNodeResourceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteNodeResourceConfigOutcomeCallable DeleteNodeResourceConfigCallable(const Model::DeleteNodeResourceConfigRequest& request);
 
                 /**
                  *删除用户列表（用户管理）
@@ -495,6 +678,15 @@ namespace TencentCloud
                 DescribeCvmQuotaOutcomeCallable DescribeCvmQuotaCallable(const Model::DescribeCvmQuotaRequest& request);
 
                 /**
+                 *查询DAG信息
+                 * @param req DescribeDAGInfoRequest
+                 * @return DescribeDAGInfoOutcome
+                 */
+                DescribeDAGInfoOutcome DescribeDAGInfo(const Model::DescribeDAGInfoRequest &request);
+                void DescribeDAGInfoAsync(const Model::DescribeDAGInfoRequest& request, const DescribeDAGInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDAGInfoOutcomeCallable DescribeDAGInfoCallable(const Model::DescribeDAGInfoRequest& request);
+
+                /**
                  *yarn application 统计接口查询
                  * @param req DescribeEmrApplicationStaticsRequest
                  * @return DescribeEmrApplicationStaticsOutcome
@@ -520,6 +712,15 @@ namespace TencentCloud
                 DescribeGlobalConfigOutcome DescribeGlobalConfig(const Model::DescribeGlobalConfigRequest &request);
                 void DescribeGlobalConfigAsync(const Model::DescribeGlobalConfigRequest& request, const DescribeGlobalConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeGlobalConfigOutcomeCallable DescribeGlobalConfigCallable(const Model::DescribeGlobalConfigRequest& request);
+
+                /**
+                 *查询用户组
+                 * @param req DescribeGroupsSTDRequest
+                 * @return DescribeGroupsSTDOutcome
+                 */
+                DescribeGroupsSTDOutcome DescribeGroupsSTD(const Model::DescribeGroupsSTDRequest &request);
+                void DescribeGroupsSTDAsync(const Model::DescribeGroupsSTDRequest& request, const DescribeGroupsSTDAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGroupsSTDOutcomeCallable DescribeGroupsSTDCallable(const Model::DescribeGroupsSTDRequest& request);
 
                 /**
                  *获取Hbase表级监控数据概览接口
@@ -567,6 +768,15 @@ namespace TencentCloud
                 DescribeInsightListOutcomeCallable DescribeInsightListCallable(const Model::DescribeInsightListRequest& request);
 
                 /**
+                 *获取巡检任务结果列表
+                 * @param req DescribeInspectionTaskResultRequest
+                 * @return DescribeInspectionTaskResultOutcome
+                 */
+                DescribeInspectionTaskResultOutcome DescribeInspectionTaskResult(const Model::DescribeInspectionTaskResultRequest &request);
+                void DescribeInspectionTaskResultAsync(const Model::DescribeInspectionTaskResultRequest& request, const DescribeInspectionTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInspectionTaskResultOutcomeCallable DescribeInspectionTaskResultCallable(const Model::DescribeInspectionTaskResultRequest& request);
+
+                /**
                  *查询待续费节点信息
                  * @param req DescribeInstanceRenewNodesRequest
                  * @return DescribeInstanceRenewNodesOutcome
@@ -612,6 +822,33 @@ namespace TencentCloud
                 DescribeKyuubiQueryInfoOutcomeCallable DescribeKyuubiQueryInfoCallable(const Model::DescribeKyuubiQueryInfoRequest& request);
 
                 /**
+                 *查询节点数据盘信息
+                 * @param req DescribeNodeDataDisksRequest
+                 * @return DescribeNodeDataDisksOutcome
+                 */
+                DescribeNodeDataDisksOutcome DescribeNodeDataDisks(const Model::DescribeNodeDataDisksRequest &request);
+                void DescribeNodeDataDisksAsync(const Model::DescribeNodeDataDisksRequest& request, const DescribeNodeDataDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNodeDataDisksOutcomeCallable DescribeNodeDataDisksCallable(const Model::DescribeNodeDataDisksRequest& request);
+
+                /**
+                 *快速获取当前集群的节点规格配置
+                 * @param req DescribeNodeResourceConfigFastRequest
+                 * @return DescribeNodeResourceConfigFastOutcome
+                 */
+                DescribeNodeResourceConfigFastOutcome DescribeNodeResourceConfigFast(const Model::DescribeNodeResourceConfigFastRequest &request);
+                void DescribeNodeResourceConfigFastAsync(const Model::DescribeNodeResourceConfigFastRequest& request, const DescribeNodeResourceConfigFastAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNodeResourceConfigFastOutcomeCallable DescribeNodeResourceConfigFastCallable(const Model::DescribeNodeResourceConfigFastRequest& request);
+
+                /**
+                 *查询节点规格
+                 * @param req DescribeNodeSpecRequest
+                 * @return DescribeNodeSpecOutcome
+                 */
+                DescribeNodeSpecOutcome DescribeNodeSpec(const Model::DescribeNodeSpecRequest &request);
+                void DescribeNodeSpecAsync(const Model::DescribeNodeSpecRequest& request, const DescribeNodeSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNodeSpecOutcomeCallable DescribeNodeSpecCallable(const Model::DescribeNodeSpecRequest& request);
+
+                /**
                  *查询YARN资源调度数据信息。已废弃，请使用`DescribeYarnQueue`去查询队列信息。
                  * @param req DescribeResourceScheduleRequest
                  * @return DescribeResourceScheduleOutcome
@@ -630,7 +867,7 @@ namespace TencentCloud
                 DescribeResourceScheduleDiffDetailOutcomeCallable DescribeResourceScheduleDiffDetailCallable(const Model::DescribeResourceScheduleDiffDetailRequest& request);
 
                 /**
-                 *本接口（DescribeSLInstance）用于查询 Lite HBase 实例基本信息
+                 *本接口（DescribeSLInstance）用于查询 Serverless HBase实例基本信息
                  * @param req DescribeSLInstanceRequest
                  * @return DescribeSLInstanceOutcome
                  */
@@ -639,13 +876,22 @@ namespace TencentCloud
                 DescribeSLInstanceOutcomeCallable DescribeSLInstanceCallable(const Model::DescribeSLInstanceRequest& request);
 
                 /**
-                 *本接口（DescribeSLInstanceList）用于查询 Lite HBase 实例列表详细信息
+                 *本接口（DescribeSLInstanceList）用于查询Serverless HBase实例列表详细信息
                  * @param req DescribeSLInstanceListRequest
                  * @return DescribeSLInstanceListOutcome
                  */
                 DescribeSLInstanceListOutcome DescribeSLInstanceList(const Model::DescribeSLInstanceListRequest &request);
                 void DescribeSLInstanceListAsync(const Model::DescribeSLInstanceListRequest& request, const DescribeSLInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSLInstanceListOutcomeCallable DescribeSLInstanceListCallable(const Model::DescribeSLInstanceListRequest& request);
+
+                /**
+                 *描述服务配置组信息
+                 * @param req DescribeServiceConfGroupInfosRequest
+                 * @return DescribeServiceConfGroupInfosOutcome
+                 */
+                DescribeServiceConfGroupInfosOutcome DescribeServiceConfGroupInfos(const Model::DescribeServiceConfGroupInfosRequest &request);
+                void DescribeServiceConfGroupInfosAsync(const Model::DescribeServiceConfGroupInfosRequest& request, const DescribeServiceConfGroupInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeServiceConfGroupInfosOutcomeCallable DescribeServiceConfGroupInfosCallable(const Model::DescribeServiceConfGroupInfosRequest& request);
 
                 /**
                  *查询服务进程信息
@@ -655,6 +901,15 @@ namespace TencentCloud
                 DescribeServiceNodeInfosOutcome DescribeServiceNodeInfos(const Model::DescribeServiceNodeInfosRequest &request);
                 void DescribeServiceNodeInfosAsync(const Model::DescribeServiceNodeInfosRequest& request, const DescribeServiceNodeInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeServiceNodeInfosOutcomeCallable DescribeServiceNodeInfosCallable(const Model::DescribeServiceNodeInfosRequest& request);
+
+                /**
+                 *获取spark应用列表
+                 * @param req DescribeSparkApplicationsRequest
+                 * @return DescribeSparkApplicationsOutcome
+                 */
+                DescribeSparkApplicationsOutcome DescribeSparkApplications(const Model::DescribeSparkApplicationsRequest &request);
+                void DescribeSparkApplicationsAsync(const Model::DescribeSparkApplicationsRequest& request, const DescribeSparkApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSparkApplicationsOutcomeCallable DescribeSparkApplicationsCallable(const Model::DescribeSparkApplicationsRequest& request);
 
                 /**
                  *查询Spark查询信息列表
@@ -794,7 +1049,45 @@ namespace TencentCloud
                 ModifyGlobalConfigOutcomeCallable ModifyGlobalConfigCallable(const Model::ModifyGlobalConfigRequest& request);
 
                 /**
-                 *刷新YARN的动态资源池。已废弃，请使用`DeployYarnConf`
+                 *设置巡检任务配置
+                 * @param req ModifyInspectionSettingsRequest
+                 * @return ModifyInspectionSettingsOutcome
+                 */
+                ModifyInspectionSettingsOutcome ModifyInspectionSettings(const Model::ModifyInspectionSettingsRequest &request);
+                void ModifyInspectionSettingsAsync(const Model::ModifyInspectionSettingsRequest& request, const ModifyInspectionSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInspectionSettingsOutcomeCallable ModifyInspectionSettingsCallable(const Model::ModifyInspectionSettingsRequest& request);
+
+                /**
+                 *修改集群名称
+                 * @param req ModifyInstanceBasicRequest
+                 * @return ModifyInstanceBasicOutcome
+                 */
+                ModifyInstanceBasicOutcome ModifyInstanceBasic(const Model::ModifyInstanceBasicRequest &request);
+                void ModifyInstanceBasicAsync(const Model::ModifyInstanceBasicRequest& request, const ModifyInstanceBasicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceBasicOutcomeCallable ModifyInstanceBasicCallable(const Model::ModifyInstanceBasicRequest& request);
+
+                /**
+                 *调整Pod数量
+                 * @param req ModifyPodNumRequest
+                 * @return ModifyPodNumOutcome
+                 */
+                ModifyPodNumOutcome ModifyPodNum(const Model::ModifyPodNumRequest &request);
+                void ModifyPodNumAsync(const Model::ModifyPodNumRequest& request, const ModifyPodNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyPodNumOutcomeCallable ModifyPodNumCallable(const Model::ModifyPodNumRequest& request);
+
+                /**
+                 *变配实例
+                 * @param req ModifyResourceRequest
+                 * @return ModifyResourceOutcome
+                 */
+                ModifyResourceOutcome ModifyResource(const Model::ModifyResourceRequest &request);
+                void ModifyResourceAsync(const Model::ModifyResourceRequest& request, const ModifyResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyResourceOutcomeCallable ModifyResourceCallable(const Model::ModifyResourceRequest& request);
+
+                /**
+                 *已废弃，请使用DeployYarnConf\\n，近一年未被调用
+
+刷新YARN的动态资源池。已废弃，请使用`DeployYarnConf`
                  * @param req ModifyResourcePoolsRequest
                  * @return ModifyResourcePoolsOutcome
                  */
@@ -803,7 +1096,9 @@ namespace TencentCloud
                 ModifyResourcePoolsOutcomeCallable ModifyResourcePoolsCallable(const Model::ModifyResourcePoolsRequest& request);
 
                 /**
-                 *修改YARN资源调度的资源配置。已废弃，请使用`ModifyYarnQueueV2`来修改队列配置
+                 *已废弃，请使用ModifyYarnQueueV2来修改队列配置，近一年无相关日志
+
+修改YARN资源调度的资源配置。已废弃，请使用`ModifyYarnQueueV2`来修改队列配置
                  * @param req ModifyResourceScheduleConfigRequest
                  * @return ModifyResourceScheduleConfigOutcome
                  */
@@ -830,15 +1125,33 @@ namespace TencentCloud
                 ModifyResourcesTagsOutcomeCallable ModifyResourcesTagsCallable(const Model::ModifyResourcesTagsRequest& request);
 
                 /**
-                 *本接口（ModifySLInstance）用于修改Lite HBase 实例节点数。
-- 接口调用成功，会创建Lite HBase实例，创建实例请求成功会返回请求的 RequestID。
-- 接口为异步接口，接口返回时操作并未立即完成，实例操作结果可以通过调用 DescribeInstancesList 查看当前实例的 StatusDesc 状态。
+                 *本接口（ModifySLInstance）用于Serverless HBase变配实例。
+- 接口调用成功，会创建Serverless HBase实例，创建实例请求成功会返回请求的 RequestID。
+- 接口为异步接口，接口返回时操作并未立即完成，实例操作结果可以通过调用DescribeInstancesList查看当前实例的StatusDesc状态。
                  * @param req ModifySLInstanceRequest
                  * @return ModifySLInstanceOutcome
                  */
                 ModifySLInstanceOutcome ModifySLInstance(const Model::ModifySLInstanceRequest &request);
                 void ModifySLInstanceAsync(const Model::ModifySLInstanceRequest& request, const ModifySLInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifySLInstanceOutcomeCallable ModifySLInstanceCallable(const Model::ModifySLInstanceRequest& request);
+
+                /**
+                 *serverless hbase修改实例名称
+                 * @param req ModifySLInstanceBasicRequest
+                 * @return ModifySLInstanceBasicOutcome
+                 */
+                ModifySLInstanceBasicOutcome ModifySLInstanceBasic(const Model::ModifySLInstanceBasicRequest &request);
+                void ModifySLInstanceBasicAsync(const Model::ModifySLInstanceBasicRequest& request, const ModifySLInstanceBasicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySLInstanceBasicOutcomeCallable ModifySLInstanceBasicCallable(const Model::ModifySLInstanceBasicRequest& request);
+
+                /**
+                 *用户管理-修改用户组
+                 * @param req ModifyUserGroupRequest
+                 * @return ModifyUserGroupOutcome
+                 */
+                ModifyUserGroupOutcome ModifyUserGroup(const Model::ModifyUserGroupRequest &request);
+                void ModifyUserGroupAsync(const Model::ModifyUserGroupRequest& request, const ModifyUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyUserGroupOutcomeCallable ModifyUserGroupCallable(const Model::ModifyUserGroupRequest& request);
 
                 /**
                  *修改用户密码（用户管理）
@@ -850,7 +1163,18 @@ namespace TencentCloud
                 ModifyUserManagerPwdOutcomeCallable ModifyUserManagerPwdCallable(const Model::ModifyUserManagerPwdRequest& request);
 
                 /**
-                 *部署生效。已废弃，请使用`DeployYarnConf`接口进行部署生效
+                 *变更用户组用户信息
+                 * @param req ModifyUsersOfGroupSTDRequest
+                 * @return ModifyUsersOfGroupSTDOutcome
+                 */
+                ModifyUsersOfGroupSTDOutcome ModifyUsersOfGroupSTD(const Model::ModifyUsersOfGroupSTDRequest &request);
+                void ModifyUsersOfGroupSTDAsync(const Model::ModifyUsersOfGroupSTDRequest& request, const ModifyUsersOfGroupSTDAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyUsersOfGroupSTDOutcomeCallable ModifyUsersOfGroupSTDCallable(const Model::ModifyUsersOfGroupSTDRequest& request);
+
+                /**
+                 *该接口已废弃，请使用DeployYarnConf完成部署生效
+
+部署生效。已废弃，请使用`DeployYarnConf`接口进行部署生效
                  * @param req ModifyYarnDeployRequest
                  * @return ModifyYarnDeployOutcome
                  */
@@ -875,6 +1199,15 @@ namespace TencentCloud
                 ResetYarnConfigOutcome ResetYarnConfig(const Model::ResetYarnConfigRequest &request);
                 void ResetYarnConfigAsync(const Model::ResetYarnConfigRequest& request, const ResetYarnConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ResetYarnConfigOutcomeCallable ResetYarnConfigCallable(const Model::ResetYarnConfigRequest& request);
+
+                /**
+                 *云数据盘扩容
+                 * @param req ResizeDataDisksRequest
+                 * @return ResizeDataDisksOutcome
+                 */
+                ResizeDataDisksOutcome ResizeDataDisks(const Model::ResizeDataDisksRequest &request);
+                void ResizeDataDisksAsync(const Model::ResizeDataDisksRequest& request, const ResizeDataDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResizeDataDisksOutcomeCallable ResizeDataDisksCallable(const Model::ResizeDataDisksRequest& request);
 
                 /**
                  *创建流程作业
@@ -902,6 +1235,15 @@ namespace TencentCloud
                 ScaleOutInstanceOutcome ScaleOutInstance(const Model::ScaleOutInstanceRequest &request);
                 void ScaleOutInstanceAsync(const Model::ScaleOutInstanceRequest& request, const ScaleOutInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ScaleOutInstanceOutcomeCallable ScaleOutInstanceCallable(const Model::ScaleOutInstanceRequest& request);
+
+                /**
+                 *设置当前集群的某个节点规格配置为默认或取消默认
+                 * @param req SetNodeResourceConfigDefaultRequest
+                 * @return SetNodeResourceConfigDefaultOutcome
+                 */
+                SetNodeResourceConfigDefaultOutcome SetNodeResourceConfigDefault(const Model::SetNodeResourceConfigDefaultRequest &request);
+                void SetNodeResourceConfigDefaultAsync(const Model::SetNodeResourceConfigDefaultRequest& request, const SetNodeResourceConfigDefaultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetNodeResourceConfigDefaultOutcomeCallable SetNodeResourceConfigDefaultCallable(const Model::SetNodeResourceConfigDefaultRequest& request);
 
                 /**
                  *用于启停服务 重启服务等功能
@@ -940,7 +1282,7 @@ namespace TencentCloud
                 TerminateInstanceOutcomeCallable TerminateInstanceCallable(const Model::TerminateInstanceRequest& request);
 
                 /**
-                 *本接口（TerminateSLInstance）用于销毁 Lite HBase 实例
+                 *本接口（TerminateSLInstance）用于销毁Serverless HBase实例
                  * @param req TerminateSLInstanceRequest
                  * @return TerminateSLInstanceOutcome
                  */

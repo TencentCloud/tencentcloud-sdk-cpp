@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -226,6 +226,31 @@ namespace TencentCloud
                      */
                     bool SteadyStateHasBeenSet() const;
 
+                    /**
+                     * 获取websocket与trtc实时翻译的UserId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserId websocket与trtc实时翻译的UserId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUserId() const;
+
+                    /**
+                     * 设置websocket与trtc实时翻译的UserId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _userId websocket与trtc实时翻译的UserId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUserId(const std::string& _userId);
+
+                    /**
+                     * 判断参数 UserId 是否已赋值
+                     * @return UserId 是否已赋值
+                     * 
+                     */
+                    bool UserIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -278,6 +303,13 @@ namespace TencentCloud
                      */
                     bool m_steadyState;
                     bool m_steadyStateHasBeenSet;
+
+                    /**
+                     * websocket与trtc实时翻译的UserId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_userId;
+                    bool m_userIdHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -82,10 +82,10 @@ namespace TencentCloud
                     /**
                      * 获取接收者。
 当ReceiverType为Uin时，ReceiverIds的值为用户uid。[子用户信息查询](https://cloud.tencent.com/document/api/598/53486)
-当ReceiverType为Group时，ReceiverIds的值为用户组id。[CAM用户组](https://cloud.tencent.com/document/product/598/14985)
+当ReceiverType为Group时，ReceiverIds的值为用户组id。[CAM用户组](https://cloud.tencent.com/document/product/598/34589)
                      * @return ReceiverIds 接收者。
 当ReceiverType为Uin时，ReceiverIds的值为用户uid。[子用户信息查询](https://cloud.tencent.com/document/api/598/53486)
-当ReceiverType为Group时，ReceiverIds的值为用户组id。[CAM用户组](https://cloud.tencent.com/document/product/598/14985)
+当ReceiverType为Group时，ReceiverIds的值为用户组id。[CAM用户组](https://cloud.tencent.com/document/product/598/34589)
                      * 
                      */
                     std::vector<int64_t> GetReceiverIds() const;
@@ -93,10 +93,10 @@ namespace TencentCloud
                     /**
                      * 设置接收者。
 当ReceiverType为Uin时，ReceiverIds的值为用户uid。[子用户信息查询](https://cloud.tencent.com/document/api/598/53486)
-当ReceiverType为Group时，ReceiverIds的值为用户组id。[CAM用户组](https://cloud.tencent.com/document/product/598/14985)
+当ReceiverType为Group时，ReceiverIds的值为用户组id。[CAM用户组](https://cloud.tencent.com/document/product/598/34589)
                      * @param _receiverIds 接收者。
 当ReceiverType为Uin时，ReceiverIds的值为用户uid。[子用户信息查询](https://cloud.tencent.com/document/api/598/53486)
-当ReceiverType为Group时，ReceiverIds的值为用户组id。[CAM用户组](https://cloud.tencent.com/document/product/598/14985)
+当ReceiverType为Group时，ReceiverIds的值为用户组id。[CAM用户组](https://cloud.tencent.com/document/product/598/34589)
                      * 
                      */
                     void SetReceiverIds(const std::vector<int64_t>& _receiverIds);
@@ -146,19 +146,15 @@ namespace TencentCloud
                     bool ReceiverChannelsHasBeenSet() const;
 
                     /**
-                     * 获取通知内容模板ID，使用Default-zh引用默认模板（中文），使用Default-en引用DefaultTemplate(English)。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NoticeContentId 通知内容模板ID，使用Default-zh引用默认模板（中文），使用Default-en引用DefaultTemplate(English)。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取通知内容模板ID，使用Default-zh引用默认模板（中文），使用Default-en引用DefaultTemplate(English)。-通过[获取通知内容模板](https://cloud.tencent.com/document/product/614/111714)获取通知内容模板ID
+                     * @return NoticeContentId 通知内容模板ID，使用Default-zh引用默认模板（中文），使用Default-en引用DefaultTemplate(English)。-通过[获取通知内容模板](https://cloud.tencent.com/document/product/614/111714)获取通知内容模板ID
                      * 
                      */
                     std::string GetNoticeContentId() const;
 
                     /**
-                     * 设置通知内容模板ID，使用Default-zh引用默认模板（中文），使用Default-en引用DefaultTemplate(English)。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _noticeContentId 通知内容模板ID，使用Default-zh引用默认模板（中文），使用Default-en引用DefaultTemplate(English)。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置通知内容模板ID，使用Default-zh引用默认模板（中文），使用Default-en引用DefaultTemplate(English)。-通过[获取通知内容模板](https://cloud.tencent.com/document/product/614/111714)获取通知内容模板ID
+                     * @param _noticeContentId 通知内容模板ID，使用Default-zh引用默认模板（中文），使用Default-en引用DefaultTemplate(English)。-通过[获取通知内容模板](https://cloud.tencent.com/document/product/614/111714)获取通知内容模板ID
                      * 
                      */
                     void SetNoticeContentId(const std::string& _noticeContentId);
@@ -259,7 +255,7 @@ namespace TencentCloud
                     /**
                      * 接收者。
 当ReceiverType为Uin时，ReceiverIds的值为用户uid。[子用户信息查询](https://cloud.tencent.com/document/api/598/53486)
-当ReceiverType为Group时，ReceiverIds的值为用户组id。[CAM用户组](https://cloud.tencent.com/document/product/598/14985)
+当ReceiverType为Group时，ReceiverIds的值为用户组id。[CAM用户组](https://cloud.tencent.com/document/product/598/34589)
                      */
                     std::vector<int64_t> m_receiverIds;
                     bool m_receiverIdsHasBeenSet;
@@ -275,8 +271,7 @@ namespace TencentCloud
                     bool m_receiverChannelsHasBeenSet;
 
                     /**
-                     * 通知内容模板ID，使用Default-zh引用默认模板（中文），使用Default-en引用DefaultTemplate(English)。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 通知内容模板ID，使用Default-zh引用默认模板（中文），使用Default-en引用DefaultTemplate(English)。-通过[获取通知内容模板](https://cloud.tencent.com/document/product/614/111714)获取通知内容模板ID
                      */
                     std::string m_noticeContentId;
                     bool m_noticeContentIdHasBeenSet;

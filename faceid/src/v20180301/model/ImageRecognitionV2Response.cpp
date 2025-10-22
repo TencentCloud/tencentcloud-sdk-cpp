@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ using namespace std;
 ImageRecognitionV2Response::ImageRecognitionV2Response() :
     m_simHasBeenSet(false),
     m_resultHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_extraHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome ImageRecognitionV2Response::Deserialize(const string &payloa
         m_descriptionHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Extra") && !rsp["Extra"].IsNull())
+    {
+        if (!rsp["Extra"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Extra` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_extra = string(rsp["Extra"].GetString());
+        m_extraHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -128,11 +139,19 @@ string ImageRecognitionV2Response::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_extraHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Extra";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_extra.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -168,6 +187,16 @@ string ImageRecognitionV2Response::GetDescription() const
 bool ImageRecognitionV2Response::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+string ImageRecognitionV2Response::GetExtra() const
+{
+    return m_extra;
+}
+
+bool ImageRecognitionV2Response::ExtraHasBeenSet() const
+{
+    return m_extraHasBeenSet;
 }
 
 

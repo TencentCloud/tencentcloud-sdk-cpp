@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,7 +50,10 @@ CreateLaunchTemplateVersionRequest::CreateLaunchTemplateVersionRequest() :
     m_hpcClusterIdHasBeenSet(false),
     m_instanceChargeTypeHasBeenSet(false),
     m_instanceChargePrepaidHasBeenSet(false),
-    m_disableApiTerminationHasBeenSet(false)
+    m_disableApiTerminationHasBeenSet(false),
+    m_enableJumboFrameHasBeenSet(false),
+    m_metadataHasBeenSet(false),
+    m_templateDataModifyActionHasBeenSet(false)
 {
 }
 
@@ -316,6 +319,31 @@ string CreateLaunchTemplateVersionRequest::ToJsonString() const
         string key = "DisableApiTermination";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_disableApiTermination, allocator);
+    }
+
+    if (m_enableJumboFrameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableJumboFrame";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableJumboFrame, allocator);
+    }
+
+    if (m_metadataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Metadata";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_metadata.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_templateDataModifyActionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateDataModifyAction";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_templateDataModifyAction.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -772,6 +800,54 @@ void CreateLaunchTemplateVersionRequest::SetDisableApiTermination(const bool& _d
 bool CreateLaunchTemplateVersionRequest::DisableApiTerminationHasBeenSet() const
 {
     return m_disableApiTerminationHasBeenSet;
+}
+
+bool CreateLaunchTemplateVersionRequest::GetEnableJumboFrame() const
+{
+    return m_enableJumboFrame;
+}
+
+void CreateLaunchTemplateVersionRequest::SetEnableJumboFrame(const bool& _enableJumboFrame)
+{
+    m_enableJumboFrame = _enableJumboFrame;
+    m_enableJumboFrameHasBeenSet = true;
+}
+
+bool CreateLaunchTemplateVersionRequest::EnableJumboFrameHasBeenSet() const
+{
+    return m_enableJumboFrameHasBeenSet;
+}
+
+Metadata CreateLaunchTemplateVersionRequest::GetMetadata() const
+{
+    return m_metadata;
+}
+
+void CreateLaunchTemplateVersionRequest::SetMetadata(const Metadata& _metadata)
+{
+    m_metadata = _metadata;
+    m_metadataHasBeenSet = true;
+}
+
+bool CreateLaunchTemplateVersionRequest::MetadataHasBeenSet() const
+{
+    return m_metadataHasBeenSet;
+}
+
+string CreateLaunchTemplateVersionRequest::GetTemplateDataModifyAction() const
+{
+    return m_templateDataModifyAction;
+}
+
+void CreateLaunchTemplateVersionRequest::SetTemplateDataModifyAction(const string& _templateDataModifyAction)
+{
+    m_templateDataModifyAction = _templateDataModifyAction;
+    m_templateDataModifyActionHasBeenSet = true;
+}
+
+bool CreateLaunchTemplateVersionRequest::TemplateDataModifyActionHasBeenSet() const
+{
+    return m_templateDataModifyActionHasBeenSet;
 }
 
 

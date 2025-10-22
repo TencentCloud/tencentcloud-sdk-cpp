@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Es的连接port
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port Es的连接port
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置Es的连接port
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _port Es的连接port
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Es连接源的用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserName Es连接源的用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置Es连接源的用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userName Es连接源的用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Es连接源的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Password Es连接源的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置Es连接源的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _password Es连接源的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Es连接源的实例资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resource Es连接源的实例资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResource() const;
 
                     /**
                      * 设置Es连接源的实例资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resource Es连接源的实例资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResource(const std::string& _resource);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Es连接源是否为自建集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SelfBuilt Es连接源是否为自建集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSelfBuilt() const;
 
                     /**
                      * 设置Es连接源是否为自建集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _selfBuilt Es连接源是否为自建集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSelfBuilt(const bool& _selfBuilt);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Es连接源的实例vip，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceVip Es连接源的实例vip，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceVip() const;
 
                     /**
                      * 设置Es连接源的实例vip，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceVip Es连接源的实例vip，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceVip(const std::string& _serviceVip);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Es连接源的vpcId，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UniqVpcId Es连接源的vpcId，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
                      * 设置Es连接源的vpcId，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uniqVpcId Es连接源的vpcId，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
@@ -250,49 +222,42 @@ namespace TencentCloud
 
                     /**
                      * Es的连接port
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
                      * Es连接源的用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
                      * Es连接源的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
                      * Es连接源的实例资源
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resource;
                     bool m_resourceHasBeenSet;
 
                     /**
                      * Es连接源是否为自建集群
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_selfBuilt;
                     bool m_selfBuiltHasBeenSet;
 
                     /**
                      * Es连接源的实例vip，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceVip;
                     bool m_serviceVipHasBeenSet;
 
                     /**
                      * Es连接源的vpcId，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uniqVpcId;
                     bool m_uniqVpcIdHasBeenSet;

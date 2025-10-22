@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -146,6 +146,27 @@ namespace TencentCloud
                      */
                     bool ErrorDescHasBeenSet() const;
 
+                    /**
+                     * 获取异步操作记录id
+                     * @return AsyncActionId 异步操作记录id
+                     * 
+                     */
+                    std::string GetAsyncActionId() const;
+
+                    /**
+                     * 设置异步操作记录id
+                     * @param _asyncActionId 异步操作记录id
+                     * 
+                     */
+                    void SetAsyncActionId(const std::string& _asyncActionId);
+
+                    /**
+                     * 判断参数 AsyncActionId 是否已赋值
+                     * @return AsyncActionId 是否已赋值
+                     * 
+                     */
+                    bool AsyncActionIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -175,6 +196,12 @@ namespace TencentCloud
                      */
                     std::string m_errorDesc;
                     bool m_errorDescHasBeenSet;
+
+                    /**
+                     * 异步操作记录id
+                     */
+                    std::string m_asyncActionId;
+                    bool m_asyncActionIdHasBeenSet;
 
                 };
             }

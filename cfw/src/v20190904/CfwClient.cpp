@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,49 +39,6 @@ CfwClient::CfwClient(const Credential &credential, const string &region, const C
 {
 }
 
-
-CfwClient::AddAcRuleOutcome CfwClient::AddAcRule(const AddAcRuleRequest &request)
-{
-    auto outcome = MakeRequest(request, "AddAcRule");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        AddAcRuleResponse rsp = AddAcRuleResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return AddAcRuleOutcome(rsp);
-        else
-            return AddAcRuleOutcome(o.GetError());
-    }
-    else
-    {
-        return AddAcRuleOutcome(outcome.GetError());
-    }
-}
-
-void CfwClient::AddAcRuleAsync(const AddAcRuleRequest& request, const AddAcRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddAcRule(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CfwClient::AddAcRuleOutcomeCallable CfwClient::AddAcRuleCallable(const AddAcRuleRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<AddAcRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->AddAcRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
 
 CfwClient::AddAclRuleOutcome CfwClient::AddAclRule(const AddAclRuleRequest &request)
 {
@@ -642,49 +599,6 @@ CfwClient::CreateDatabaseWhiteListRulesOutcomeCallable CfwClient::CreateDatabase
     return task->get_future();
 }
 
-CfwClient::CreateIdsWhiteRuleOutcome CfwClient::CreateIdsWhiteRule(const CreateIdsWhiteRuleRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateIdsWhiteRule");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateIdsWhiteRuleResponse rsp = CreateIdsWhiteRuleResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateIdsWhiteRuleOutcome(rsp);
-        else
-            return CreateIdsWhiteRuleOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateIdsWhiteRuleOutcome(outcome.GetError());
-    }
-}
-
-void CfwClient::CreateIdsWhiteRuleAsync(const CreateIdsWhiteRuleRequest& request, const CreateIdsWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateIdsWhiteRule(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CfwClient::CreateIdsWhiteRuleOutcomeCallable CfwClient::CreateIdsWhiteRuleCallable(const CreateIdsWhiteRuleRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateIdsWhiteRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateIdsWhiteRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CfwClient::CreateNatFwInstanceOutcome CfwClient::CreateNatFwInstance(const CreateNatFwInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateNatFwInstance");
@@ -1065,49 +979,6 @@ CfwClient::DeleteBlockIgnoreRuleNewOutcomeCallable CfwClient::DeleteBlockIgnoreR
         [this, request]()
         {
             return this->DeleteBlockIgnoreRuleNew(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-CfwClient::DeleteIdsWhiteRuleOutcome CfwClient::DeleteIdsWhiteRule(const DeleteIdsWhiteRuleRequest &request)
-{
-    auto outcome = MakeRequest(request, "DeleteIdsWhiteRule");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DeleteIdsWhiteRuleResponse rsp = DeleteIdsWhiteRuleResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DeleteIdsWhiteRuleOutcome(rsp);
-        else
-            return DeleteIdsWhiteRuleOutcome(o.GetError());
-    }
-    else
-    {
-        return DeleteIdsWhiteRuleOutcome(outcome.GetError());
-    }
-}
-
-void CfwClient::DeleteIdsWhiteRuleAsync(const DeleteIdsWhiteRuleRequest& request, const DeleteIdsWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteIdsWhiteRule(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CfwClient::DeleteIdsWhiteRuleOutcomeCallable CfwClient::DeleteIdsWhiteRuleCallable(const DeleteIdsWhiteRuleRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DeleteIdsWhiteRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteIdsWhiteRule(request);
         }
     );
 
@@ -1717,6 +1588,49 @@ CfwClient::DescribeCfwEipsOutcomeCallable CfwClient::DescribeCfwEipsCallable(con
     return task->get_future();
 }
 
+CfwClient::DescribeCfwInsStatusOutcome CfwClient::DescribeCfwInsStatus(const DescribeCfwInsStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCfwInsStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCfwInsStatusResponse rsp = DescribeCfwInsStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCfwInsStatusOutcome(rsp);
+        else
+            return DescribeCfwInsStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCfwInsStatusOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeCfwInsStatusAsync(const DescribeCfwInsStatusRequest& request, const DescribeCfwInsStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCfwInsStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::DescribeCfwInsStatusOutcomeCallable CfwClient::DescribeCfwInsStatusCallable(const DescribeCfwInsStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCfwInsStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCfwInsStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::DescribeDefenseSwitchOutcome CfwClient::DescribeDefenseSwitch(const DescribeDefenseSwitchRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDefenseSwitch");
@@ -2104,42 +2018,42 @@ CfwClient::DescribeIPStatusListOutcomeCallable CfwClient::DescribeIPStatusListCa
     return task->get_future();
 }
 
-CfwClient::DescribeIdsWhiteRuleOutcome CfwClient::DescribeIdsWhiteRule(const DescribeIdsWhiteRuleRequest &request)
+CfwClient::DescribeLogStorageStatisticOutcome CfwClient::DescribeLogStorageStatistic(const DescribeLogStorageStatisticRequest &request)
 {
-    auto outcome = MakeRequest(request, "DescribeIdsWhiteRule");
+    auto outcome = MakeRequest(request, "DescribeLogStorageStatistic");
     if (outcome.IsSuccess())
     {
         auto r = outcome.GetResult();
         string payload = string(r.Body(), r.BodySize());
-        DescribeIdsWhiteRuleResponse rsp = DescribeIdsWhiteRuleResponse();
+        DescribeLogStorageStatisticResponse rsp = DescribeLogStorageStatisticResponse();
         auto o = rsp.Deserialize(payload);
         if (o.IsSuccess())
-            return DescribeIdsWhiteRuleOutcome(rsp);
+            return DescribeLogStorageStatisticOutcome(rsp);
         else
-            return DescribeIdsWhiteRuleOutcome(o.GetError());
+            return DescribeLogStorageStatisticOutcome(o.GetError());
     }
     else
     {
-        return DescribeIdsWhiteRuleOutcome(outcome.GetError());
+        return DescribeLogStorageStatisticOutcome(outcome.GetError());
     }
 }
 
-void CfwClient::DescribeIdsWhiteRuleAsync(const DescribeIdsWhiteRuleRequest& request, const DescribeIdsWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+void CfwClient::DescribeLogStorageStatisticAsync(const DescribeLogStorageStatisticRequest& request, const DescribeLogStorageStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
     auto fn = [this, request, handler, context]()
     {
-        handler(this, request, this->DescribeIdsWhiteRule(request), context);
+        handler(this, request, this->DescribeLogStorageStatistic(request), context);
     };
 
     Executor::GetInstance()->Submit(new Runnable(fn));
 }
 
-CfwClient::DescribeIdsWhiteRuleOutcomeCallable CfwClient::DescribeIdsWhiteRuleCallable(const DescribeIdsWhiteRuleRequest &request)
+CfwClient::DescribeLogStorageStatisticOutcomeCallable CfwClient::DescribeLogStorageStatisticCallable(const DescribeLogStorageStatisticRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeIdsWhiteRuleOutcome()>>(
+    auto task = std::make_shared<std::packaged_task<DescribeLogStorageStatisticOutcome()>>(
         [this, request]()
         {
-            return this->DescribeIdsWhiteRule(request);
+            return this->DescribeLogStorageStatistic(request);
         }
     );
 
@@ -3258,49 +3172,6 @@ CfwClient::ModifyAllRuleStatusOutcomeCallable CfwClient::ModifyAllRuleStatusCall
         [this, request]()
         {
             return this->ModifyAllRuleStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-CfwClient::ModifyAllVPCSwitchStatusOutcome CfwClient::ModifyAllVPCSwitchStatus(const ModifyAllVPCSwitchStatusRequest &request)
-{
-    auto outcome = MakeRequest(request, "ModifyAllVPCSwitchStatus");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ModifyAllVPCSwitchStatusResponse rsp = ModifyAllVPCSwitchStatusResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ModifyAllVPCSwitchStatusOutcome(rsp);
-        else
-            return ModifyAllVPCSwitchStatusOutcome(o.GetError());
-    }
-    else
-    {
-        return ModifyAllVPCSwitchStatusOutcome(outcome.GetError());
-    }
-}
-
-void CfwClient::ModifyAllVPCSwitchStatusAsync(const ModifyAllVPCSwitchStatusRequest& request, const ModifyAllVPCSwitchStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAllVPCSwitchStatus(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CfwClient::ModifyAllVPCSwitchStatusOutcomeCallable CfwClient::ModifyAllVPCSwitchStatusCallable(const ModifyAllVPCSwitchStatusRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ModifyAllVPCSwitchStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAllVPCSwitchStatus(request);
         }
     );
 
@@ -4763,6 +4634,49 @@ CfwClient::RemoveVpcAcRuleOutcomeCallable CfwClient::RemoveVpcAcRuleCallable(con
         [this, request]()
         {
             return this->RemoveVpcAcRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::SearchLogOutcome CfwClient::SearchLog(const SearchLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchLogResponse rsp = SearchLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchLogOutcome(rsp);
+        else
+            return SearchLogOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchLogOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::SearchLogAsync(const SearchLogRequest& request, const SearchLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SearchLog(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::SearchLogOutcomeCallable CfwClient::SearchLogCallable(const SearchLogRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SearchLogOutcome()>>(
+        [this, request]()
+        {
+            return this->SearchLog(request);
         }
     );
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取刷新实例状态。如果在刷新时实例被移出或销毁，状态会更新为 NOT_FOUND。取值如下：<br><li>WAITING：待刷新</li><li>INIT：初始化中</li><li>RUNNING：刷新中</li><li>FAILED：刷新失败</li><li>CANCELLED：已取消</li><li>SUCCESSFUL：刷新成功</li><li>NOT_FOUND：实例不存在
-                     * @return InstanceStatus 刷新实例状态。如果在刷新时实例被移出或销毁，状态会更新为 NOT_FOUND。取值如下：<br><li>WAITING：待刷新</li><li>INIT：初始化中</li><li>RUNNING：刷新中</li><li>FAILED：刷新失败</li><li>CANCELLED：已取消</li><li>SUCCESSFUL：刷新成功</li><li>NOT_FOUND：实例不存在
+                     * 获取刷新实例状态。如果在刷新时实例被移出或销毁，状态会更新为 NOT_FOUND。取值如下：<li>WAITING：待刷新</li><li>INIT：初始化中</li><li>RUNNING：刷新中</li><li>FAILED：刷新失败</li><li>CANCELLED：已取消</li><li>SUCCESSFUL：刷新成功</li><li>NOT_FOUND：实例不存在</li>
+                     * @return InstanceStatus 刷新实例状态。如果在刷新时实例被移出或销毁，状态会更新为 NOT_FOUND。取值如下：<li>WAITING：待刷新</li><li>INIT：初始化中</li><li>RUNNING：刷新中</li><li>FAILED：刷新失败</li><li>CANCELLED：已取消</li><li>SUCCESSFUL：刷新成功</li><li>NOT_FOUND：实例不存在</li>
                      * 
                      */
                     std::string GetInstanceStatus() const;
 
                     /**
-                     * 设置刷新实例状态。如果在刷新时实例被移出或销毁，状态会更新为 NOT_FOUND。取值如下：<br><li>WAITING：待刷新</li><li>INIT：初始化中</li><li>RUNNING：刷新中</li><li>FAILED：刷新失败</li><li>CANCELLED：已取消</li><li>SUCCESSFUL：刷新成功</li><li>NOT_FOUND：实例不存在
-                     * @param _instanceStatus 刷新实例状态。如果在刷新时实例被移出或销毁，状态会更新为 NOT_FOUND。取值如下：<br><li>WAITING：待刷新</li><li>INIT：初始化中</li><li>RUNNING：刷新中</li><li>FAILED：刷新失败</li><li>CANCELLED：已取消</li><li>SUCCESSFUL：刷新成功</li><li>NOT_FOUND：实例不存在
+                     * 设置刷新实例状态。如果在刷新时实例被移出或销毁，状态会更新为 NOT_FOUND。取值如下：<li>WAITING：待刷新</li><li>INIT：初始化中</li><li>RUNNING：刷新中</li><li>FAILED：刷新失败</li><li>CANCELLED：已取消</li><li>SUCCESSFUL：刷新成功</li><li>NOT_FOUND：实例不存在</li>
+                     * @param _instanceStatus 刷新实例状态。如果在刷新时实例被移出或销毁，状态会更新为 NOT_FOUND。取值如下：<li>WAITING：待刷新</li><li>INIT：初始化中</li><li>RUNNING：刷新中</li><li>FAILED：刷新失败</li><li>CANCELLED：已取消</li><li>SUCCESSFUL：刷新成功</li><li>NOT_FOUND：实例不存在</li>
                      * 
                      */
                     void SetInstanceStatus(const std::string& _instanceStatus);
@@ -91,10 +91,8 @@ namespace TencentCloud
                     /**
                      * 获取实例刷新中最近一次伸缩活动 ID，可通过 DescribeAutoScalingActivities 接口查询。
 需注意伸缩活动与实例刷新活动不同，一次实例刷新活动可能包括多次伸缩活动。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastActivityId 实例刷新中最近一次伸缩活动 ID，可通过 DescribeAutoScalingActivities 接口查询。
 需注意伸缩活动与实例刷新活动不同，一次实例刷新活动可能包括多次伸缩活动。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastActivityId() const;
@@ -102,10 +100,8 @@ namespace TencentCloud
                     /**
                      * 设置实例刷新中最近一次伸缩活动 ID，可通过 DescribeAutoScalingActivities 接口查询。
 需注意伸缩活动与实例刷新活动不同，一次实例刷新活动可能包括多次伸缩活动。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastActivityId 实例刷新中最近一次伸缩活动 ID，可通过 DescribeAutoScalingActivities 接口查询。
 需注意伸缩活动与实例刷新活动不同，一次实例刷新活动可能包括多次伸缩活动。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastActivityId(const std::string& _lastActivityId);
@@ -119,18 +115,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例刷新状态信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceStatusMessage 实例刷新状态信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceStatusMessage() const;
 
                     /**
                      * 设置实例刷新状态信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceStatusMessage 实例刷新状态信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceStatusMessage(const std::string& _instanceStatusMessage);
@@ -151,7 +143,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 刷新实例状态。如果在刷新时实例被移出或销毁，状态会更新为 NOT_FOUND。取值如下：<br><li>WAITING：待刷新</li><li>INIT：初始化中</li><li>RUNNING：刷新中</li><li>FAILED：刷新失败</li><li>CANCELLED：已取消</li><li>SUCCESSFUL：刷新成功</li><li>NOT_FOUND：实例不存在
+                     * 刷新实例状态。如果在刷新时实例被移出或销毁，状态会更新为 NOT_FOUND。取值如下：<li>WAITING：待刷新</li><li>INIT：初始化中</li><li>RUNNING：刷新中</li><li>FAILED：刷新失败</li><li>CANCELLED：已取消</li><li>SUCCESSFUL：刷新成功</li><li>NOT_FOUND：实例不存在</li>
                      */
                     std::string m_instanceStatus;
                     bool m_instanceStatusHasBeenSet;
@@ -159,14 +151,12 @@ namespace TencentCloud
                     /**
                      * 实例刷新中最近一次伸缩活动 ID，可通过 DescribeAutoScalingActivities 接口查询。
 需注意伸缩活动与实例刷新活动不同，一次实例刷新活动可能包括多次伸缩活动。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastActivityId;
                     bool m_lastActivityIdHasBeenSet;
 
                     /**
                      * 实例刷新状态信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceStatusMessage;
                     bool m_instanceStatusMessageHasBeenSet;

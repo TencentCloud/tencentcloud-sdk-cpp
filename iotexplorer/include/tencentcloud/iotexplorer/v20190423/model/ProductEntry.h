@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool CategoryIdHasBeenSet() const;
 
                     /**
-                     * 获取加密类型。1表示证书认证，2表示秘钥认证，21表示TID认证-SE方式，22表示TID认证-软加固方式
-                     * @return EncryptionType 加密类型。1表示证书认证，2表示秘钥认证，21表示TID认证-SE方式，22表示TID认证-软加固方式
+                     * 获取加密类型。1表示证书认证，2表示密钥认证，21表示TID认证-SE方式，22表示TID认证-软加固方式
+                     * @return EncryptionType 加密类型。1表示证书认证，2表示密钥认证，21表示TID认证-SE方式，22表示TID认证-软加固方式
                      * 
                      */
                     std::string GetEncryptionType() const;
 
                     /**
-                     * 设置加密类型。1表示证书认证，2表示秘钥认证，21表示TID认证-SE方式，22表示TID认证-软加固方式
-                     * @param _encryptionType 加密类型。1表示证书认证，2表示秘钥认证，21表示TID认证-SE方式，22表示TID认证-软加固方式
+                     * 设置加密类型。1表示证书认证，2表示密钥认证，21表示TID认证-SE方式，22表示TID认证-软加固方式
+                     * @param _encryptionType 加密类型。1表示证书认证，2表示密钥认证，21表示TID认证-SE方式，22表示TID认证-软加固方式
                      * 
                      */
                     void SetEncryptionType(const std::string& _encryptionType);
@@ -346,18 +346,14 @@ wifi、wifi-ble、cellular、5g、lorawan、ble、ethernet、wifi-ethernet、els
 
                     /**
                      * 获取是否使用脚本进行二进制转json功能 可以取值 true / false
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableProductScript 是否使用脚本进行二进制转json功能 可以取值 true / false
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEnableProductScript() const;
 
                     /**
                      * 设置是否使用脚本进行二进制转json功能 可以取值 true / false
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableProductScript 是否使用脚本进行二进制转json功能 可以取值 true / false
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableProductScript(const std::string& _enableProductScript);
@@ -371,18 +367,14 @@ wifi、wifi-ble、cellular、5g、lorawan、ble、ethernet、wifi-ethernet、els
 
                     /**
                      * 获取创建人 UinId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateUserId 创建人 UinId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCreateUserId() const;
 
                     /**
                      * 设置创建人 UinId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createUserId 创建人 UinId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateUserId(const int64_t& _createUserId);
@@ -396,18 +388,14 @@ wifi、wifi-ble、cellular、5g、lorawan、ble、ethernet、wifi-ethernet、els
 
                     /**
                      * 获取创建者昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatorNickName 创建者昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatorNickName() const;
 
                     /**
                      * 设置创建者昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _creatorNickName 创建者昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatorNickName(const std::string& _creatorNickName);
@@ -421,18 +409,14 @@ wifi、wifi-ble、cellular、5g、lorawan、ble、ethernet、wifi-ethernet、els
 
                     /**
                      * 获取绑定策略（1：强踢；2：非强踢；0：表示无意义）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BindStrategy 绑定策略（1：强踢；2：非强踢；0：表示无意义）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetBindStrategy() const;
 
                     /**
                      * 设置绑定策略（1：强踢；2：非强踢；0：表示无意义）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bindStrategy 绑定策略（1：强踢；2：非强踢；0：表示无意义）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBindStrategy(const uint64_t& _bindStrategy);
@@ -446,18 +430,14 @@ wifi、wifi-ble、cellular、5g、lorawan、ble、ethernet、wifi-ethernet、els
 
                     /**
                      * 获取设备数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceCount 设备数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDeviceCount() const;
 
                     /**
                      * 设置设备数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceCount 设备数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceCount(const int64_t& _deviceCount);
@@ -471,18 +451,14 @@ wifi、wifi-ble、cellular、5g、lorawan、ble、ethernet、wifi-ethernet、els
 
                     /**
                      * 获取平均传输速率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rate 平均传输速率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRate() const;
 
                     /**
                      * 设置平均传输速率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rate 平均传输速率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRate(const std::string& _rate);
@@ -496,18 +472,14 @@ wifi、wifi-ble、cellular、5g、lorawan、ble、ethernet、wifi-ethernet、els
 
                     /**
                      * 获取有效期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Period 有效期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPeriod() const;
 
                     /**
                      * 设置有效期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _period 有效期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPeriod(const std::string& _period);
@@ -518,6 +490,27 @@ wifi、wifi-ble、cellular、5g、lorawan、ble、ethernet、wifi-ethernet、els
                      * 
                      */
                     bool PeriodHasBeenSet() const;
+
+                    /**
+                     * 获取互联互通标识
+                     * @return IsInterconnection 互联互通标识
+                     * 
+                     */
+                    int64_t GetIsInterconnection() const;
+
+                    /**
+                     * 设置互联互通标识
+                     * @param _isInterconnection 互联互通标识
+                     * 
+                     */
+                    void SetIsInterconnection(const int64_t& _isInterconnection);
+
+                    /**
+                     * 判断参数 IsInterconnection 是否已赋值
+                     * @return IsInterconnection 是否已赋值
+                     * 
+                     */
+                    bool IsInterconnectionHasBeenSet() const;
 
                 private:
 
@@ -540,7 +533,7 @@ wifi、wifi-ble、cellular、5g、lorawan、ble、ethernet、wifi-ethernet、els
                     bool m_categoryIdHasBeenSet;
 
                     /**
-                     * 加密类型。1表示证书认证，2表示秘钥认证，21表示TID认证-SE方式，22表示TID认证-软加固方式
+                     * 加密类型。1表示证书认证，2表示密钥认证，21表示TID认证-SE方式，22表示TID认证-软加固方式
                      */
                     std::string m_encryptionType;
                     bool m_encryptionTypeHasBeenSet;
@@ -608,52 +601,51 @@ wifi、wifi-ble、cellular、5g、lorawan、ble、ethernet、wifi-ethernet、els
 
                     /**
                      * 是否使用脚本进行二进制转json功能 可以取值 true / false
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_enableProductScript;
                     bool m_enableProductScriptHasBeenSet;
 
                     /**
                      * 创建人 UinId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_createUserId;
                     bool m_createUserIdHasBeenSet;
 
                     /**
                      * 创建者昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_creatorNickName;
                     bool m_creatorNickNameHasBeenSet;
 
                     /**
                      * 绑定策略（1：强踢；2：非强踢；0：表示无意义）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_bindStrategy;
                     bool m_bindStrategyHasBeenSet;
 
                     /**
                      * 设备数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_deviceCount;
                     bool m_deviceCountHasBeenSet;
 
                     /**
                      * 平均传输速率
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_rate;
                     bool m_rateHasBeenSet;
 
                     /**
                      * 有效期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_period;
                     bool m_periodHasBeenSet;
+
+                    /**
+                     * 互联互通标识
+                     */
+                    int64_t m_isInterconnection;
+                    bool m_isInterconnectionHasBeenSet;
 
                 };
             }

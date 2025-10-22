@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,6 +85,48 @@ namespace TencentCloud
                      */
                     bool BaseConfigHasBeenSet() const;
 
+                    /**
+                     * 获取应用模式 standard:标准模式, agent: agent模式，single_workflow：单工作流模式
+                     * @return Pattern 应用模式 standard:标准模式, agent: agent模式，single_workflow：单工作流模式
+                     * 
+                     */
+                    std::string GetPattern() const;
+
+                    /**
+                     * 设置应用模式 standard:标准模式, agent: agent模式，single_workflow：单工作流模式
+                     * @param _pattern 应用模式 standard:标准模式, agent: agent模式，single_workflow：单工作流模式
+                     * 
+                     */
+                    void SetPattern(const std::string& _pattern);
+
+                    /**
+                     * 判断参数 Pattern 是否已赋值
+                     * @return Pattern 是否已赋值
+                     * 
+                     */
+                    bool PatternHasBeenSet() const;
+
+                    /**
+                     * 获取智能体类型 dialogue 对话式智能体，wechat 公众号智能体
+                     * @return AgentType 智能体类型 dialogue 对话式智能体，wechat 公众号智能体
+                     * 
+                     */
+                    std::string GetAgentType() const;
+
+                    /**
+                     * 设置智能体类型 dialogue 对话式智能体，wechat 公众号智能体
+                     * @param _agentType 智能体类型 dialogue 对话式智能体，wechat 公众号智能体
+                     * 
+                     */
+                    void SetAgentType(const std::string& _agentType);
+
+                    /**
+                     * 判断参数 AgentType 是否已赋值
+                     * @return AgentType 是否已赋值
+                     * 
+                     */
+                    bool AgentTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -98,6 +140,18 @@ namespace TencentCloud
                      */
                     BaseConfig m_baseConfig;
                     bool m_baseConfigHasBeenSet;
+
+                    /**
+                     * 应用模式 standard:标准模式, agent: agent模式，single_workflow：单工作流模式
+                     */
+                    std::string m_pattern;
+                    bool m_patternHasBeenSet;
+
+                    /**
+                     * 智能体类型 dialogue 对话式智能体，wechat 公众号智能体
+                     */
+                    std::string m_agentType;
+                    bool m_agentTypeHasBeenSet;
 
                 };
             }

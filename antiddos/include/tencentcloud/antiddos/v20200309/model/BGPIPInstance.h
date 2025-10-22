@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -308,18 +308,14 @@ namespace TencentCloud
 
                     /**
                      * 获取区分高防IP境外线路
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneId 区分高防IP境外线路
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetZoneId() const;
 
                     /**
                      * 设置区分高防IP境外线路
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zoneId 区分高防IP境外线路
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZoneId(const uint64_t& _zoneId);
@@ -333,18 +329,14 @@ namespace TencentCloud
 
                     /**
                      * 获取区分集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tgw 区分集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTgw() const;
 
                     /**
                      * 设置区分集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tgw 区分集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTgw(const uint64_t& _tgw);
@@ -358,18 +350,14 @@ namespace TencentCloud
 
                     /**
                      * 获取高防弹性公网IP状态，包含'CREATING'(创建中),'BINDING'(绑定中),'BIND'(已绑定),'UNBINDING'(解绑中),'UNBIND'(已解绑),'OFFLINING'(释放中),'BIND_ENI'(绑定悬空弹性网卡)。只对高防弹性公网IP实例有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EipAddressStatus 高防弹性公网IP状态，包含'CREATING'(创建中),'BINDING'(绑定中),'BIND'(已绑定),'UNBINDING'(解绑中),'UNBIND'(已解绑),'OFFLINING'(释放中),'BIND_ENI'(绑定悬空弹性网卡)。只对高防弹性公网IP实例有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEipAddressStatus() const;
 
                     /**
                      * 设置高防弹性公网IP状态，包含'CREATING'(创建中),'BINDING'(绑定中),'BIND'(已绑定),'UNBINDING'(解绑中),'UNBIND'(已解绑),'OFFLINING'(释放中),'BIND_ENI'(绑定悬空弹性网卡)。只对高防弹性公网IP实例有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eipAddressStatus 高防弹性公网IP状态，包含'CREATING'(创建中),'BINDING'(绑定中),'BIND'(已绑定),'UNBINDING'(解绑中),'UNBIND'(已解绑),'OFFLINING'(释放中),'BIND_ENI'(绑定悬空弹性网卡)。只对高防弹性公网IP实例有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEipAddressStatus(const std::string& _eipAddressStatus);
@@ -383,18 +371,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否高防弹性公网IP实例，是为1，否为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EipFlag 是否高防弹性公网IP实例，是为1，否为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEipFlag() const;
 
                     /**
                      * 设置是否高防弹性公网IP实例，是为1，否为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eipFlag 是否高防弹性公网IP实例，是为1，否为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEipFlag(const int64_t& _eipFlag);
@@ -466,18 +450,14 @@ namespace TencentCloud
 
                     /**
                      * 获取建议客户接入的域名，客户可使用域名接入。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 建议客户接入的域名，客户可使用域名接入。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置建议客户接入的域名，客户可使用域名接入。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domain 建议客户接入的域名，客户可使用域名接入。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -512,18 +492,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否Ipv6版本的IP, 是为1，否为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return V6Flag 是否Ipv6版本的IP, 是为1，否为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetV6Flag() const;
 
                     /**
                      * 设置是否Ipv6版本的IP, 是为1，否为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _v6Flag 是否Ipv6版本的IP, 是为1，否为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetV6Flag(const uint64_t& _v6Flag);
@@ -537,18 +513,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否渠道版高防IP，是为1，否为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BGPIPChannelFlag 是否渠道版高防IP，是为1，否为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetBGPIPChannelFlag() const;
 
                     /**
                      * 设置是否渠道版高防IP，是为1，否为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bGPIPChannelFlag 是否渠道版高防IP，是为1，否为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBGPIPChannelFlag(const uint64_t& _bGPIPChannelFlag);
@@ -562,18 +534,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源关联标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagInfoList 资源关联标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TagInfo> GetTagInfoList() const;
 
                     /**
                      * 设置资源关联标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tagInfoList 资源关联标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTagInfoList(const std::vector<TagInfo>& _tagInfoList);
@@ -616,18 +584,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源实例版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceVersion 资源实例版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetInstanceVersion() const;
 
                     /**
                      * 设置资源实例版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceVersion 资源实例版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceVersion(const uint64_t& _instanceVersion);
@@ -641,18 +605,14 @@ namespace TencentCloud
 
                     /**
                      * 获取重保实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConvoyId 重保实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConvoyId() const;
 
                     /**
                      * 设置重保实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _convoyId 重保实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConvoyId(const std::string& _convoyId);
@@ -666,18 +626,14 @@ namespace TencentCloud
 
                     /**
                      * 获取带宽后付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ElasticBandwidth 带宽后付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetElasticBandwidth() const;
 
                     /**
                      * 设置带宽后付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _elasticBandwidth 带宽后付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetElasticBandwidth(const uint64_t& _elasticBandwidth);
@@ -691,18 +647,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否为EO代播的ip: 1是，0不是
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EOFlag 是否为EO代播的ip: 1是，0不是
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetEOFlag() const;
 
                     /**
                      * 设置是否为EO代播的ip: 1是，0不是
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eOFlag 是否为EO代播的ip: 1是，0不是
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEOFlag(const uint64_t& _eOFlag);
@@ -788,28 +740,24 @@ namespace TencentCloud
 
                     /**
                      * 区分高防IP境外线路
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
                      * 区分集群
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_tgw;
                     bool m_tgwHasBeenSet;
 
                     /**
                      * 高防弹性公网IP状态，包含'CREATING'(创建中),'BINDING'(绑定中),'BIND'(已绑定),'UNBINDING'(解绑中),'UNBIND'(已解绑),'OFFLINING'(释放中),'BIND_ENI'(绑定悬空弹性网卡)。只对高防弹性公网IP实例有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_eipAddressStatus;
                     bool m_eipAddressStatusHasBeenSet;
 
                     /**
                      * 是否高防弹性公网IP实例，是为1，否为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_eipFlag;
                     bool m_eipFlagHasBeenSet;
@@ -832,7 +780,6 @@ namespace TencentCloud
 
                     /**
                      * 建议客户接入的域名，客户可使用域名接入。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
@@ -845,21 +792,18 @@ namespace TencentCloud
 
                     /**
                      * 是否Ipv6版本的IP, 是为1，否为0
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_v6Flag;
                     bool m_v6FlagHasBeenSet;
 
                     /**
                      * 是否渠道版高防IP，是为1，否为0
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_bGPIPChannelFlag;
                     bool m_bGPIPChannelFlagHasBeenSet;
 
                     /**
                      * 资源关联标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TagInfo> m_tagInfoList;
                     bool m_tagInfoListHasBeenSet;
@@ -874,28 +818,24 @@ namespace TencentCloud
 
                     /**
                      * 资源实例版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_instanceVersion;
                     bool m_instanceVersionHasBeenSet;
 
                     /**
                      * 重保实例
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_convoyId;
                     bool m_convoyIdHasBeenSet;
 
                     /**
                      * 带宽后付费
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_elasticBandwidth;
                     bool m_elasticBandwidthHasBeenSet;
 
                     /**
                      * 是否为EO代播的ip: 1是，0不是
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_eOFlag;
                     bool m_eOFlagHasBeenSet;

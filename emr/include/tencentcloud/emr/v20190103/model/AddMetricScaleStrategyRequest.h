@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取1表示按负载规则扩容，2表示按时间规则扩容。必须填写，并且和下面的规则策略匹配
-                     * @return StrategyType 1表示按负载规则扩容，2表示按时间规则扩容。必须填写，并且和下面的规则策略匹配
+                     * 获取1表示按负载规则扩缩容，2表示按时间规则扩缩容。必须填写，并且和下面的规则策略匹配
+                     * @return StrategyType 1表示按负载规则扩缩容，2表示按时间规则扩缩容。必须填写，并且和下面的规则策略匹配
                      * 
                      */
                     int64_t GetStrategyType() const;
 
                     /**
-                     * 设置1表示按负载规则扩容，2表示按时间规则扩容。必须填写，并且和下面的规则策略匹配
-                     * @param _strategyType 1表示按负载规则扩容，2表示按时间规则扩容。必须填写，并且和下面的规则策略匹配
+                     * 设置1表示按负载规则扩缩容，2表示按时间规则扩缩容。必须填写，并且和下面的规则策略匹配
+                     * @param _strategyType 1表示按负载规则扩缩容，2表示按时间规则扩缩容。必须填写，并且和下面的规则策略匹配
                      * 
                      */
                     void SetStrategyType(const int64_t& _strategyType);
@@ -137,7 +137,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 1表示按负载规则扩容，2表示按时间规则扩容。必须填写，并且和下面的规则策略匹配
+                     * 1表示按负载规则扩缩容，2表示按时间规则扩缩容。必须填写，并且和下面的规则策略匹配
                      */
                     int64_t m_strategyType;
                     bool m_strategyTypeHasBeenSet;

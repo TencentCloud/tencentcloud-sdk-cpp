@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,7 +56,15 @@ InstanceAttributesResponse::InstanceAttributesResponse() :
     m_remainingPartitionsHasBeenSet(false),
     m_remainingTopicsHasBeenSet(false),
     m_dynamicDiskConfigHasBeenSet(false),
-    m_instanceChargeTypeHasBeenSet(false)
+    m_instanceChargeTypeHasBeenSet(false),
+    m_elasticBandwidthSwitchHasBeenSet(false),
+    m_elasticBandwidthOpenStatusHasBeenSet(false),
+    m_clusterTypeHasBeenSet(false),
+    m_freePartitionNumberHasBeenSet(false),
+    m_elasticFloatBandwidthHasBeenSet(false),
+    m_customCertIdHasBeenSet(false),
+    m_uncleanLeaderElectionEnableHasBeenSet(false),
+    m_deleteProtectionEnableHasBeenSet(false)
 {
 }
 
@@ -472,6 +480,86 @@ CoreInternalOutcome InstanceAttributesResponse::Deserialize(const rapidjson::Val
         m_instanceChargeTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ElasticBandwidthSwitch") && !value["ElasticBandwidthSwitch"].IsNull())
+    {
+        if (!value["ElasticBandwidthSwitch"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceAttributesResponse.ElasticBandwidthSwitch` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_elasticBandwidthSwitch = value["ElasticBandwidthSwitch"].GetInt64();
+        m_elasticBandwidthSwitchHasBeenSet = true;
+    }
+
+    if (value.HasMember("ElasticBandwidthOpenStatus") && !value["ElasticBandwidthOpenStatus"].IsNull())
+    {
+        if (!value["ElasticBandwidthOpenStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceAttributesResponse.ElasticBandwidthOpenStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_elasticBandwidthOpenStatus = value["ElasticBandwidthOpenStatus"].GetInt64();
+        m_elasticBandwidthOpenStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterType") && !value["ClusterType"].IsNull())
+    {
+        if (!value["ClusterType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceAttributesResponse.ClusterType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterType = string(value["ClusterType"].GetString());
+        m_clusterTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FreePartitionNumber") && !value["FreePartitionNumber"].IsNull())
+    {
+        if (!value["FreePartitionNumber"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceAttributesResponse.FreePartitionNumber` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_freePartitionNumber = value["FreePartitionNumber"].GetInt64();
+        m_freePartitionNumberHasBeenSet = true;
+    }
+
+    if (value.HasMember("ElasticFloatBandwidth") && !value["ElasticFloatBandwidth"].IsNull())
+    {
+        if (!value["ElasticFloatBandwidth"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceAttributesResponse.ElasticFloatBandwidth` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_elasticFloatBandwidth = value["ElasticFloatBandwidth"].GetInt64();
+        m_elasticFloatBandwidthHasBeenSet = true;
+    }
+
+    if (value.HasMember("CustomCertId") && !value["CustomCertId"].IsNull())
+    {
+        if (!value["CustomCertId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceAttributesResponse.CustomCertId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_customCertId = string(value["CustomCertId"].GetString());
+        m_customCertIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("UncleanLeaderElectionEnable") && !value["UncleanLeaderElectionEnable"].IsNull())
+    {
+        if (!value["UncleanLeaderElectionEnable"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceAttributesResponse.UncleanLeaderElectionEnable` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_uncleanLeaderElectionEnable = value["UncleanLeaderElectionEnable"].GetInt64();
+        m_uncleanLeaderElectionEnableHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeleteProtectionEnable") && !value["DeleteProtectionEnable"].IsNull())
+    {
+        if (!value["DeleteProtectionEnable"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceAttributesResponse.DeleteProtectionEnable` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deleteProtectionEnable = value["DeleteProtectionEnable"].GetInt64();
+        m_deleteProtectionEnableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -792,6 +880,70 @@ void InstanceAttributesResponse::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "InstanceChargeType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceChargeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_elasticBandwidthSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElasticBandwidthSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_elasticBandwidthSwitch, allocator);
+    }
+
+    if (m_elasticBandwidthOpenStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElasticBandwidthOpenStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_elasticBandwidthOpenStatus, allocator);
+    }
+
+    if (m_clusterTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_freePartitionNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FreePartitionNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_freePartitionNumber, allocator);
+    }
+
+    if (m_elasticFloatBandwidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElasticFloatBandwidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_elasticFloatBandwidth, allocator);
+    }
+
+    if (m_customCertIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomCertId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customCertId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uncleanLeaderElectionEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UncleanLeaderElectionEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_uncleanLeaderElectionEnable, allocator);
+    }
+
+    if (m_deleteProtectionEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteProtectionEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deleteProtectionEnable, allocator);
     }
 
 }
@@ -1371,5 +1523,133 @@ void InstanceAttributesResponse::SetInstanceChargeType(const string& _instanceCh
 bool InstanceAttributesResponse::InstanceChargeTypeHasBeenSet() const
 {
     return m_instanceChargeTypeHasBeenSet;
+}
+
+int64_t InstanceAttributesResponse::GetElasticBandwidthSwitch() const
+{
+    return m_elasticBandwidthSwitch;
+}
+
+void InstanceAttributesResponse::SetElasticBandwidthSwitch(const int64_t& _elasticBandwidthSwitch)
+{
+    m_elasticBandwidthSwitch = _elasticBandwidthSwitch;
+    m_elasticBandwidthSwitchHasBeenSet = true;
+}
+
+bool InstanceAttributesResponse::ElasticBandwidthSwitchHasBeenSet() const
+{
+    return m_elasticBandwidthSwitchHasBeenSet;
+}
+
+int64_t InstanceAttributesResponse::GetElasticBandwidthOpenStatus() const
+{
+    return m_elasticBandwidthOpenStatus;
+}
+
+void InstanceAttributesResponse::SetElasticBandwidthOpenStatus(const int64_t& _elasticBandwidthOpenStatus)
+{
+    m_elasticBandwidthOpenStatus = _elasticBandwidthOpenStatus;
+    m_elasticBandwidthOpenStatusHasBeenSet = true;
+}
+
+bool InstanceAttributesResponse::ElasticBandwidthOpenStatusHasBeenSet() const
+{
+    return m_elasticBandwidthOpenStatusHasBeenSet;
+}
+
+string InstanceAttributesResponse::GetClusterType() const
+{
+    return m_clusterType;
+}
+
+void InstanceAttributesResponse::SetClusterType(const string& _clusterType)
+{
+    m_clusterType = _clusterType;
+    m_clusterTypeHasBeenSet = true;
+}
+
+bool InstanceAttributesResponse::ClusterTypeHasBeenSet() const
+{
+    return m_clusterTypeHasBeenSet;
+}
+
+int64_t InstanceAttributesResponse::GetFreePartitionNumber() const
+{
+    return m_freePartitionNumber;
+}
+
+void InstanceAttributesResponse::SetFreePartitionNumber(const int64_t& _freePartitionNumber)
+{
+    m_freePartitionNumber = _freePartitionNumber;
+    m_freePartitionNumberHasBeenSet = true;
+}
+
+bool InstanceAttributesResponse::FreePartitionNumberHasBeenSet() const
+{
+    return m_freePartitionNumberHasBeenSet;
+}
+
+int64_t InstanceAttributesResponse::GetElasticFloatBandwidth() const
+{
+    return m_elasticFloatBandwidth;
+}
+
+void InstanceAttributesResponse::SetElasticFloatBandwidth(const int64_t& _elasticFloatBandwidth)
+{
+    m_elasticFloatBandwidth = _elasticFloatBandwidth;
+    m_elasticFloatBandwidthHasBeenSet = true;
+}
+
+bool InstanceAttributesResponse::ElasticFloatBandwidthHasBeenSet() const
+{
+    return m_elasticFloatBandwidthHasBeenSet;
+}
+
+string InstanceAttributesResponse::GetCustomCertId() const
+{
+    return m_customCertId;
+}
+
+void InstanceAttributesResponse::SetCustomCertId(const string& _customCertId)
+{
+    m_customCertId = _customCertId;
+    m_customCertIdHasBeenSet = true;
+}
+
+bool InstanceAttributesResponse::CustomCertIdHasBeenSet() const
+{
+    return m_customCertIdHasBeenSet;
+}
+
+int64_t InstanceAttributesResponse::GetUncleanLeaderElectionEnable() const
+{
+    return m_uncleanLeaderElectionEnable;
+}
+
+void InstanceAttributesResponse::SetUncleanLeaderElectionEnable(const int64_t& _uncleanLeaderElectionEnable)
+{
+    m_uncleanLeaderElectionEnable = _uncleanLeaderElectionEnable;
+    m_uncleanLeaderElectionEnableHasBeenSet = true;
+}
+
+bool InstanceAttributesResponse::UncleanLeaderElectionEnableHasBeenSet() const
+{
+    return m_uncleanLeaderElectionEnableHasBeenSet;
+}
+
+int64_t InstanceAttributesResponse::GetDeleteProtectionEnable() const
+{
+    return m_deleteProtectionEnable;
+}
+
+void InstanceAttributesResponse::SetDeleteProtectionEnable(const int64_t& _deleteProtectionEnable)
+{
+    m_deleteProtectionEnable = _deleteProtectionEnable;
+    m_deleteProtectionEnableHasBeenSet = true;
+}
+
+bool InstanceAttributesResponse::DeleteProtectionEnableHasBeenSet() const
+{
+    return m_deleteProtectionEnableHasBeenSet;
 }
 

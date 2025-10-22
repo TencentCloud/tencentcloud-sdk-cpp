@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -489,18 +489,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备份实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupJobId 备份实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBackupJobId() const;
 
                     /**
                      * 设置备份实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _backupJobId 备份实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBackupJobId(const int64_t& _backupJobId);
@@ -514,18 +510,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例对应snapshot的id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 实例对应snapshot的id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTaskId() const;
 
                     /**
                      * 设置实例对应snapshot的id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskId 实例对应snapshot的id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskId(const int64_t& _taskId);
@@ -536,6 +528,27 @@ namespace TencentCloud
                      * 
                      */
                     bool TaskIdHasBeenSet() const;
+
+                    /**
+                     * 获取恢复任务id
+                     * @return ID 恢复任务id
+                     * 
+                     */
+                    int64_t GetID() const;
+
+                    /**
+                     * 设置恢复任务id
+                     * @param _iD 恢复任务id
+                     * 
+                     */
+                    void SetID(const int64_t& _iD);
+
+                    /**
+                     * 判断参数 ID 是否已赋值
+                     * @return ID 是否已赋值
+                     * 
+                     */
+                    bool IDHasBeenSet() const;
 
                 private:
 
@@ -667,17 +680,21 @@ namespace TencentCloud
 
                     /**
                      * 备份实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_backupJobId;
                     bool m_backupJobIdHasBeenSet;
 
                     /**
                      * 实例对应snapshot的id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_taskId;
                     bool m_taskIdHasBeenSet;
+
+                    /**
+                     * 恢复任务id
+                     */
+                    int64_t m_iD;
+                    bool m_iDHasBeenSet;
 
                 };
             }

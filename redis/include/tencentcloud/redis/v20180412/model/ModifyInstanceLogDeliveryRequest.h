@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID。
-                     * @return InstanceId 实例ID。
+                     * 获取实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
+                     * @return InstanceId 实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID。
-                     * @param _instanceId 实例ID。
+                     * 设置实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
+                     * @param _instanceId 实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -114,15 +114,15 @@ namespace TencentCloud
                     bool EnabledHasBeenSet() const;
 
                     /**
-                     * 获取投递的日志集ID。
-                     * @return LogsetId 投递的日志集ID。
+                     * 获取投递的日志集ID。通过接口[DescribeLogsets](https://cloud.tencent.com/document/api/614/58624)获取到日志集ID。
+                     * @return LogsetId 投递的日志集ID。通过接口[DescribeLogsets](https://cloud.tencent.com/document/api/614/58624)获取到日志集ID。
                      * 
                      */
                     std::string GetLogsetId() const;
 
                     /**
-                     * 设置投递的日志集ID。
-                     * @param _logsetId 投递的日志集ID。
+                     * 设置投递的日志集ID。通过接口[DescribeLogsets](https://cloud.tencent.com/document/api/614/58624)获取到日志集ID。
+                     * @param _logsetId 投递的日志集ID。通过接口[DescribeLogsets](https://cloud.tencent.com/document/api/614/58624)获取到日志集ID。
                      * 
                      */
                     void SetLogsetId(const std::string& _logsetId);
@@ -135,15 +135,15 @@ namespace TencentCloud
                     bool LogsetIdHasBeenSet() const;
 
                     /**
-                     * 获取投递的日志主题ID。
-                     * @return TopicId 投递的日志主题ID。
+                     * 获取投递的日志主题ID。通过接口[DescribeTopics](https://cloud.tencent.com/document/api/614/56454)获取到日志主题ID。
+                     * @return TopicId 投递的日志主题ID。通过接口[DescribeTopics](https://cloud.tencent.com/document/api/614/56454)获取到日志主题ID。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置投递的日志主题ID。
-                     * @param _topicId 投递的日志主题ID。
+                     * 设置投递的日志主题ID。通过接口[DescribeTopics](https://cloud.tencent.com/document/api/614/56454)获取到日志主题ID。
+                     * @param _topicId 投递的日志主题ID。通过接口[DescribeTopics](https://cloud.tencent.com/document/api/614/56454)获取到日志主题ID。
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -156,15 +156,15 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取日志集名称。若**LogsetId**未指定具体的日志集ID，请配置该参数，设置日志集名称，系统会以设置的日志集名称自动创建新的日志集。
-                     * @return LogsetName 日志集名称。若**LogsetId**未指定具体的日志集ID，请配置该参数，设置日志集名称，系统会以设置的日志集名称自动创建新的日志集。
+                     * 获取日志集名称。**LogsetId**为空时必传，系统会以LogsetName为名称来创建新的日志集并投递日志。
+                     * @return LogsetName 日志集名称。**LogsetId**为空时必传，系统会以LogsetName为名称来创建新的日志集并投递日志。
                      * 
                      */
                     std::string GetLogsetName() const;
 
                     /**
-                     * 设置日志集名称。若**LogsetId**未指定具体的日志集ID，请配置该参数，设置日志集名称，系统会以设置的日志集名称自动创建新的日志集。
-                     * @param _logsetName 日志集名称。若**LogsetId**未指定具体的日志集ID，请配置该参数，设置日志集名称，系统会以设置的日志集名称自动创建新的日志集。
+                     * 设置日志集名称。**LogsetId**为空时必传，系统会以LogsetName为名称来创建新的日志集并投递日志。
+                     * @param _logsetName 日志集名称。**LogsetId**为空时必传，系统会以LogsetName为名称来创建新的日志集并投递日志。
                      * 
                      */
                     void SetLogsetName(const std::string& _logsetName);
@@ -177,15 +177,15 @@ namespace TencentCloud
                     bool LogsetNameHasBeenSet() const;
 
                     /**
-                     * 获取日志主题名称，TopicId为空时必传，会自动创建新的日志主题。
-                     * @return TopicName 日志主题名称，TopicId为空时必传，会自动创建新的日志主题。
+                     * 获取日志主题名称。**TopicId**为空时必传，系统会以TopicName为名称来创建新的日志主题并投递日志。
+                     * @return TopicName 日志主题名称。**TopicId**为空时必传，系统会以TopicName为名称来创建新的日志主题并投递日志。
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
-                     * 设置日志主题名称，TopicId为空时必传，会自动创建新的日志主题。
-                     * @param _topicName 日志主题名称，TopicId为空时必传，会自动创建新的日志主题。
+                     * 设置日志主题名称。**TopicId**为空时必传，系统会以TopicName为名称来创建新的日志主题并投递日志。
+                     * @param _topicName 日志主题名称。**TopicId**为空时必传，系统会以TopicName为名称来创建新的日志主题并投递日志。
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -263,7 +263,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID。
+                     * 实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -283,25 +283,25 @@ namespace TencentCloud
                     bool m_enabledHasBeenSet;
 
                     /**
-                     * 投递的日志集ID。
+                     * 投递的日志集ID。通过接口[DescribeLogsets](https://cloud.tencent.com/document/api/614/58624)获取到日志集ID。
                      */
                     std::string m_logsetId;
                     bool m_logsetIdHasBeenSet;
 
                     /**
-                     * 投递的日志主题ID。
+                     * 投递的日志主题ID。通过接口[DescribeTopics](https://cloud.tencent.com/document/api/614/56454)获取到日志主题ID。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 日志集名称。若**LogsetId**未指定具体的日志集ID，请配置该参数，设置日志集名称，系统会以设置的日志集名称自动创建新的日志集。
+                     * 日志集名称。**LogsetId**为空时必传，系统会以LogsetName为名称来创建新的日志集并投递日志。
                      */
                     std::string m_logsetName;
                     bool m_logsetNameHasBeenSet;
 
                     /**
-                     * 日志主题名称，TopicId为空时必传，会自动创建新的日志主题。
+                     * 日志主题名称。**TopicId**为空时必传，系统会以TopicName为名称来创建新的日志主题并投递日志。
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,10 @@ ServiceCallInfoV2::ServiceCallInfoV2() :
     m_serviceGroupIdHasBeenSet(false),
     m_internetEndpointHasBeenSet(false),
     m_authorizationEnableHasBeenSet(false),
-    m_authTokenHasBeenSet(false)
+    m_authTokenHasBeenSet(false),
+    m_authTokensHasBeenSet(false),
+    m_enableLimitHasBeenSet(false),
+    m_grpcHostHasBeenSet(false)
 {
 }
 
@@ -73,6 +76,46 @@ CoreInternalOutcome ServiceCallInfoV2::Deserialize(const rapidjson::Value &value
         m_authTokenHasBeenSet = true;
     }
 
+    if (value.HasMember("AuthTokens") && !value["AuthTokens"].IsNull())
+    {
+        if (!value["AuthTokens"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ServiceCallInfoV2.AuthTokens` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AuthTokens"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AuthToken item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_authTokens.push_back(item);
+        }
+        m_authTokensHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableLimit") && !value["EnableLimit"].IsNull())
+    {
+        if (!value["EnableLimit"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceCallInfoV2.EnableLimit` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableLimit = value["EnableLimit"].GetBool();
+        m_enableLimitHasBeenSet = true;
+    }
+
+    if (value.HasMember("GrpcHost") && !value["GrpcHost"].IsNull())
+    {
+        if (!value["GrpcHost"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceCallInfoV2.GrpcHost` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_grpcHost = string(value["GrpcHost"].GetString());
+        m_grpcHostHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +153,37 @@ void ServiceCallInfoV2::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "AuthToken";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_authToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_authTokensHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthTokens";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_authTokens.begin(); itr != m_authTokens.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_enableLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableLimit, allocator);
+    }
+
+    if (m_grpcHostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GrpcHost";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_grpcHost.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +251,53 @@ void ServiceCallInfoV2::SetAuthToken(const string& _authToken)
 bool ServiceCallInfoV2::AuthTokenHasBeenSet() const
 {
     return m_authTokenHasBeenSet;
+}
+
+vector<AuthToken> ServiceCallInfoV2::GetAuthTokens() const
+{
+    return m_authTokens;
+}
+
+void ServiceCallInfoV2::SetAuthTokens(const vector<AuthToken>& _authTokens)
+{
+    m_authTokens = _authTokens;
+    m_authTokensHasBeenSet = true;
+}
+
+bool ServiceCallInfoV2::AuthTokensHasBeenSet() const
+{
+    return m_authTokensHasBeenSet;
+}
+
+bool ServiceCallInfoV2::GetEnableLimit() const
+{
+    return m_enableLimit;
+}
+
+void ServiceCallInfoV2::SetEnableLimit(const bool& _enableLimit)
+{
+    m_enableLimit = _enableLimit;
+    m_enableLimitHasBeenSet = true;
+}
+
+bool ServiceCallInfoV2::EnableLimitHasBeenSet() const
+{
+    return m_enableLimitHasBeenSet;
+}
+
+string ServiceCallInfoV2::GetGrpcHost() const
+{
+    return m_grpcHost;
+}
+
+void ServiceCallInfoV2::SetGrpcHost(const string& _grpcHost)
+{
+    m_grpcHost = _grpcHost;
+    m_grpcHostHasBeenSet = true;
+}
+
+bool ServiceCallInfoV2::GrpcHostHasBeenSet() const
+{
+    return m_grpcHostHasBeenSet;
 }
 

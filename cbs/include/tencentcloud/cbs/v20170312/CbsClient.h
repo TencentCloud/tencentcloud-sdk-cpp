@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,8 @@
 #include <tencentcloud/cbs/v20170312/model/ApplyDiskBackupResponse.h>
 #include <tencentcloud/cbs/v20170312/model/ApplySnapshotRequest.h>
 #include <tencentcloud/cbs/v20170312/model/ApplySnapshotResponse.h>
+#include <tencentcloud/cbs/v20170312/model/ApplySnapshotGroupRequest.h>
+#include <tencentcloud/cbs/v20170312/model/ApplySnapshotGroupResponse.h>
 #include <tencentcloud/cbs/v20170312/model/AttachDisksRequest.h>
 #include <tencentcloud/cbs/v20170312/model/AttachDisksResponse.h>
 #include <tencentcloud/cbs/v20170312/model/BindAutoSnapshotPolicyRequest.h>
@@ -41,10 +43,14 @@
 #include <tencentcloud/cbs/v20170312/model/CreateDisksResponse.h>
 #include <tencentcloud/cbs/v20170312/model/CreateSnapshotRequest.h>
 #include <tencentcloud/cbs/v20170312/model/CreateSnapshotResponse.h>
+#include <tencentcloud/cbs/v20170312/model/CreateSnapshotGroupRequest.h>
+#include <tencentcloud/cbs/v20170312/model/CreateSnapshotGroupResponse.h>
 #include <tencentcloud/cbs/v20170312/model/DeleteAutoSnapshotPoliciesRequest.h>
 #include <tencentcloud/cbs/v20170312/model/DeleteAutoSnapshotPoliciesResponse.h>
 #include <tencentcloud/cbs/v20170312/model/DeleteDiskBackupsRequest.h>
 #include <tencentcloud/cbs/v20170312/model/DeleteDiskBackupsResponse.h>
+#include <tencentcloud/cbs/v20170312/model/DeleteSnapshotGroupRequest.h>
+#include <tencentcloud/cbs/v20170312/model/DeleteSnapshotGroupResponse.h>
 #include <tencentcloud/cbs/v20170312/model/DeleteSnapshotsRequest.h>
 #include <tencentcloud/cbs/v20170312/model/DeleteSnapshotsResponse.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeAutoSnapshotPoliciesRequest.h>
@@ -61,6 +67,8 @@
 #include <tencentcloud/cbs/v20170312/model/DescribeDisksResponse.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeInstancesDiskNumRequest.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeInstancesDiskNumResponse.h>
+#include <tencentcloud/cbs/v20170312/model/DescribeSnapshotGroupsRequest.h>
+#include <tencentcloud/cbs/v20170312/model/DescribeSnapshotGroupsResponse.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeSnapshotOverviewRequest.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeSnapshotOverviewResponse.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeSnapshotSharePermissionRequest.h>
@@ -127,6 +135,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ApplySnapshotResponse> ApplySnapshotOutcome;
                 typedef std::future<ApplySnapshotOutcome> ApplySnapshotOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::ApplySnapshotRequest&, ApplySnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplySnapshotAsyncHandler;
+                typedef Outcome<Core::Error, Model::ApplySnapshotGroupResponse> ApplySnapshotGroupOutcome;
+                typedef std::future<ApplySnapshotGroupOutcome> ApplySnapshotGroupOutcomeCallable;
+                typedef std::function<void(const CbsClient*, const Model::ApplySnapshotGroupRequest&, ApplySnapshotGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplySnapshotGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::AttachDisksResponse> AttachDisksOutcome;
                 typedef std::future<AttachDisksOutcome> AttachDisksOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::AttachDisksRequest&, AttachDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AttachDisksAsyncHandler;
@@ -148,12 +159,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateSnapshotResponse> CreateSnapshotOutcome;
                 typedef std::future<CreateSnapshotOutcome> CreateSnapshotOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::CreateSnapshotRequest&, CreateSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSnapshotAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSnapshotGroupResponse> CreateSnapshotGroupOutcome;
+                typedef std::future<CreateSnapshotGroupOutcome> CreateSnapshotGroupOutcomeCallable;
+                typedef std::function<void(const CbsClient*, const Model::CreateSnapshotGroupRequest&, CreateSnapshotGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSnapshotGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAutoSnapshotPoliciesResponse> DeleteAutoSnapshotPoliciesOutcome;
                 typedef std::future<DeleteAutoSnapshotPoliciesOutcome> DeleteAutoSnapshotPoliciesOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::DeleteAutoSnapshotPoliciesRequest&, DeleteAutoSnapshotPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAutoSnapshotPoliciesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDiskBackupsResponse> DeleteDiskBackupsOutcome;
                 typedef std::future<DeleteDiskBackupsOutcome> DeleteDiskBackupsOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::DeleteDiskBackupsRequest&, DeleteDiskBackupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDiskBackupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSnapshotGroupResponse> DeleteSnapshotGroupOutcome;
+                typedef std::future<DeleteSnapshotGroupOutcome> DeleteSnapshotGroupOutcomeCallable;
+                typedef std::function<void(const CbsClient*, const Model::DeleteSnapshotGroupRequest&, DeleteSnapshotGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSnapshotGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteSnapshotsResponse> DeleteSnapshotsOutcome;
                 typedef std::future<DeleteSnapshotsOutcome> DeleteSnapshotsOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::DeleteSnapshotsRequest&, DeleteSnapshotsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSnapshotsAsyncHandler;
@@ -178,6 +195,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstancesDiskNumResponse> DescribeInstancesDiskNumOutcome;
                 typedef std::future<DescribeInstancesDiskNumOutcome> DescribeInstancesDiskNumOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::DescribeInstancesDiskNumRequest&, DescribeInstancesDiskNumOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesDiskNumAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSnapshotGroupsResponse> DescribeSnapshotGroupsOutcome;
+                typedef std::future<DescribeSnapshotGroupsOutcome> DescribeSnapshotGroupsOutcomeCallable;
+                typedef std::function<void(const CbsClient*, const Model::DescribeSnapshotGroupsRequest&, DescribeSnapshotGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSnapshotOverviewResponse> DescribeSnapshotOverviewOutcome;
                 typedef std::future<DescribeSnapshotOverviewOutcome> DescribeSnapshotOverviewOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::DescribeSnapshotOverviewRequest&, DescribeSnapshotOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotOverviewAsyncHandler;
@@ -253,9 +273,9 @@ namespace TencentCloud
                 /**
                  *本接口（ApplyDiskBackup）用于回滚备份点到原云硬盘。
 
-* 仅支持回滚到原云硬盘上。对于数据盘备份点，如果您需要复制备份点数据到其它云硬盘上，请先使用 CreateSnapshot 将备份点转换为快照，然后使用 CreateDisks 接口创建新的弹性云硬盘，将快照数据复制到新购云硬盘上。
-* 用于回滚的备份点必须处于NORMAL状态。备份点状态可以通过DescribeDiskBackups接口查询，见输出参数中BackupState字段解释。
-* 如果是弹性云硬盘，则云硬盘必须处于未挂载状态，云硬盘挂载状态可以通过DescribeDisks接口查询，见Attached字段解释；如果是随实例一起购买的非弹性云硬盘，则实例必须处于关机状态，实例状态可以通过DescribeInstancesStatus接口查询。
+* 仅支持回滚到原云硬盘上。对于数据盘备份点，如果您需要复制备份点数据到其它云硬盘上，请先使用[CreateSnapshot](/document/product/362/15648) 将备份点转换为快照，然后使用[CreateDisks](/document/product/362/16312) 接口创建新的弹性云硬盘，将快照数据复制到新购云硬盘上。
+* 用于回滚的备份点必须处于NORMAL状态。备份点状态可以通过[DescribeDiskBackups](/document/product/362/80278)接口查询，见输出参数中BackupState字段解释。
+* 如果是弹性云硬盘，则云硬盘必须处于未挂载状态，云硬盘挂载状态可以通[DescribeDisks](/document/product/362/16315)接口查询，见Attached字段解释；如果是随实例一起购买的非弹性云硬盘，则实例必须处于关机状态，实例状态可以通过[DescribeInstancesStatus](/document/product/213/15738)接口查询。
                  * @param req ApplyDiskBackupRequest
                  * @return ApplyDiskBackupOutcome
                  */
@@ -275,6 +295,18 @@ namespace TencentCloud
                 ApplySnapshotOutcome ApplySnapshot(const Model::ApplySnapshotRequest &request);
                 void ApplySnapshotAsync(const Model::ApplySnapshotRequest& request, const ApplySnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ApplySnapshotOutcomeCallable ApplySnapshotCallable(const Model::ApplySnapshotRequest& request);
+
+                /**
+                 *本接口（ApplySnapshotGroup）用于回滚快照组，将实例恢复到创建快照组时刻的状态。
+* 1.可选择快照组全部或部分盘进行回滚；
+* 2.如果回滚的盘中包含已挂载的盘，要求这些盘必须挂载在同一实例上，且要求该实例已关机才能回滚；
+* 3.回滚为异步操作，接口返回成功不代表回滚成功，可通过调DescribeSnapshotGroups接口查询快照组的状态。
+                 * @param req ApplySnapshotGroupRequest
+                 * @return ApplySnapshotGroupOutcome
+                 */
+                ApplySnapshotGroupOutcome ApplySnapshotGroup(const Model::ApplySnapshotGroupRequest &request);
+                void ApplySnapshotGroupAsync(const Model::ApplySnapshotGroupRequest& request, const ApplySnapshotGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ApplySnapshotGroupOutcomeCallable ApplySnapshotGroupCallable(const Model::ApplySnapshotGroupRequest& request);
 
                 /**
                  *本接口（AttachDisks）用于挂载云硬盘。
@@ -304,7 +336,7 @@ namespace TencentCloud
                  *本接口（CopySnapshotCrossRegions）用于快照跨地域复制。
 
 * 本接口为异步接口，当跨地域复制的请求下发成功后会返回一个新的快照ID，此时快照未立即复制到目标地域，可请求目标地域的[DescribeSnapshots](/document/product/362/15647)接口查询新快照的状态，判断是否复制完成。如果快照的状态为“NORMAL”，表示快照复制完成。
-* 本接口实现的快照跨地域复制操作将产生跨地域流量，预计2022年第三季度会针对此功能进行商业化计费；请留意后续站内信公告，避免产生预期外扣费。
+* 本接口实现的快照跨地域复制操作将产生跨地域流量，预计2025年第三季度会针对此功能进行商业化计费；请留意后续站内信公告，避免产生预期外扣费。
                  * @param req CopySnapshotCrossRegionsRequest
                  * @return CopySnapshotCrossRegionsOutcome
                  */
@@ -360,6 +392,17 @@ namespace TencentCloud
                 CreateSnapshotOutcomeCallable CreateSnapshotCallable(const Model::CreateSnapshotRequest& request);
 
                 /**
+                 *本接口（CreateSnapshotGroup）用于创建快照组。
+* 创建快照组的云硬盘列表必须挂载在同一实例上；
+* 可选择挂载在实例上的全部或部分盘创建快照组。
+                 * @param req CreateSnapshotGroupRequest
+                 * @return CreateSnapshotGroupOutcome
+                 */
+                CreateSnapshotGroupOutcome CreateSnapshotGroup(const Model::CreateSnapshotGroupRequest &request);
+                void CreateSnapshotGroupAsync(const Model::CreateSnapshotGroupRequest& request, const CreateSnapshotGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSnapshotGroupOutcomeCallable CreateSnapshotGroupCallable(const Model::CreateSnapshotGroupRequest& request);
+
+                /**
                  *本接口（DeleteAutoSnapshotPolicies）用于删除定期快照策略。
 
 *  支持批量操作。如果多个定期快照策略存在无法删除的，则操作不执行，以特定错误码返回。
@@ -378,6 +421,17 @@ namespace TencentCloud
                 DeleteDiskBackupsOutcome DeleteDiskBackups(const Model::DeleteDiskBackupsRequest &request);
                 void DeleteDiskBackupsAsync(const Model::DeleteDiskBackupsRequest& request, const DeleteDiskBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteDiskBackupsOutcomeCallable DeleteDiskBackupsCallable(const Model::DeleteDiskBackupsRequest& request);
+
+                /**
+                 *本接口（DeleteSnapshotGroup）用于删除快照组，一次调用仅支持删除一个快照组。
+* 默认会删除快照组内的所有快照；
+* 如果快照组内的快照有关联镜像，则删除失败，所有快照均不会删除；如果需要同时删除快照绑定的镜像，可传入参数DeleteBindImages等于true。
+                 * @param req DeleteSnapshotGroupRequest
+                 * @return DeleteSnapshotGroupOutcome
+                 */
+                DeleteSnapshotGroupOutcome DeleteSnapshotGroup(const Model::DeleteSnapshotGroupRequest &request);
+                void DeleteSnapshotGroupAsync(const Model::DeleteSnapshotGroupRequest& request, const DeleteSnapshotGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSnapshotGroupOutcomeCallable DeleteSnapshotGroupCallable(const Model::DeleteSnapshotGroupRequest& request);
 
                 /**
                  *本接口（DeleteSnapshots）用于删除快照。
@@ -467,6 +521,17 @@ namespace TencentCloud
                 DescribeInstancesDiskNumOutcome DescribeInstancesDiskNum(const Model::DescribeInstancesDiskNumRequest &request);
                 void DescribeInstancesDiskNumAsync(const Model::DescribeInstancesDiskNumRequest& request, const DescribeInstancesDiskNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstancesDiskNumOutcomeCallable DescribeInstancesDiskNumCallable(const Model::DescribeInstancesDiskNumRequest& request);
+
+                /**
+                 *本接口（DescribeSnapshotGroups）用于查询快照组列表。
+* 可以根据快照组ID、快照组状态、快照组关联的快照ID等来查询快照组列表，不同条件之间为与(AND)的关系，过滤信息详细请见过滤器`Filter`。
+* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的快照组列表。
+                 * @param req DescribeSnapshotGroupsRequest
+                 * @return DescribeSnapshotGroupsOutcome
+                 */
+                DescribeSnapshotGroupsOutcome DescribeSnapshotGroups(const Model::DescribeSnapshotGroupsRequest &request);
+                void DescribeSnapshotGroupsAsync(const Model::DescribeSnapshotGroupsRequest& request, const DescribeSnapshotGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSnapshotGroupsOutcomeCallable DescribeSnapshotGroupsCallable(const Model::DescribeSnapshotGroupsRequest& request);
 
                 /**
                  *该接口用于查询用户快照使用概览，包括快照总容量、计费容量等信息。
@@ -598,7 +663,7 @@ namespace TencentCloud
                 ModifyAutoSnapshotPolicyAttributeOutcomeCallable ModifyAutoSnapshotPolicyAttributeCallable(const Model::ModifyAutoSnapshotPolicyAttributeRequest& request);
 
                 /**
-                 ** 只支持修改弹性云盘的项目ID。随云主机创建的云硬盘项目ID与云主机联动。可以通过[DescribeDisks](/document/product/362/16315)接口查询，见输出参数中Portable字段解释。
+                 ** 只支持修改弹性云盘的项目ID。随云主机创建的云硬盘项目ID与云主机联动。是否是弹性云盘可以通过[DescribeDisks](/document/product/362/16315)接口查询，见输出参数中Portable字段解释。
 * “云硬盘名称”仅为方便用户自己管理之用，腾讯云并不以此名称作为提交工单或是进行云盘管理操作的依据。
 * 支持批量操作，如果传入多个云盘ID，则所有云盘修改为同一属性。如果存在不允许操作的云盘，则操作不执行，以特定错误码返回。
                  * @param req ModifyDiskAttributesRequest
@@ -632,7 +697,6 @@ namespace TencentCloud
                  *本接口 (ModifyDisksChargeType) 用于切换云硬盘的计费模式。
 
 非弹性云硬盘不支持此接口，请通过修改实例计费模式接口将实例连同非弹性云硬盘一起转换。
-默认接口请求频率限制：10次/秒。
                  * @param req ModifyDisksChargeTypeRequest
                  * @return ModifyDisksChargeTypeOutcome
                  */

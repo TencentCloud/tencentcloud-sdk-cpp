@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ess/v20201111/model/UserFlowType.h>
 
 
 namespace TencentCloud
@@ -90,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取合同流程描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowDescription 合同流程描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlowDescription() const;
 
                     /**
                      * 设置合同流程描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _flowDescription 合同流程描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFlowDescription(const std::string& _flowDescription);
@@ -115,14 +112,18 @@ namespace TencentCloud
 
                     /**
                      * 获取合同流程的类别分类（如销售合同/入职合同等）。
+该字段将被废弃，不建议使用。	请使用 UserFlowType。
                      * @return FlowType 合同流程的类别分类（如销售合同/入职合同等）。
+该字段将被废弃，不建议使用。	请使用 UserFlowType。
                      * 
                      */
                     std::string GetFlowType() const;
 
                     /**
                      * 设置合同流程的类别分类（如销售合同/入职合同等）。
+该字段将被废弃，不建议使用。	请使用 UserFlowType。
                      * @param _flowType 合同流程的类别分类（如销售合同/入职合同等）。
+该字段将被废弃，不建议使用。	请使用 UserFlowType。
                      * 
                      */
                     void SetFlowType(const std::string& _flowType);
@@ -148,7 +149,6 @@ namespace TencentCloud
 <li> **9** : 部分填写</li>
 <li> **10** : 已拒填</li>
 <li> **21** : 已解除</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowStatus 合同流程当前的签署状态, 会存在下列的状态值
 <ul><li> **0** : 未开启流程(合同中不存在填写环节)</li>
 <li> **1** : 待签署</li>
@@ -162,7 +162,6 @@ namespace TencentCloud
 <li> **9** : 部分填写</li>
 <li> **10** : 已拒填</li>
 <li> **21** : 已解除</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFlowStatus() const;
@@ -181,7 +180,6 @@ namespace TencentCloud
 <li> **9** : 部分填写</li>
 <li> **10** : 已拒填</li>
 <li> **21** : 已解除</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _flowStatus 合同流程当前的签署状态, 会存在下列的状态值
 <ul><li> **0** : 未开启流程(合同中不存在填写环节)</li>
 <li> **1** : 待签署</li>
@@ -195,7 +193,6 @@ namespace TencentCloud
 <li> **9** : 部分填写</li>
 <li> **10** : 已拒填</li>
 <li> **21** : 已解除</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFlowStatus(const int64_t& _flowStatus);
@@ -209,18 +206,14 @@ namespace TencentCloud
 
                     /**
                      * 获取合同流程创建时间，格式为Unix标准时间戳（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedOn 合同流程创建时间，格式为Unix标准时间戳（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCreatedOn() const;
 
                     /**
                      * 设置合同流程创建时间，格式为Unix标准时间戳（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdOn 合同流程创建时间，格式为Unix标准时间戳（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedOn(const int64_t& _createdOn);
@@ -234,18 +227,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当合同流程状态为已拒签（即 FlowStatus=3）或已撤销（即 FlowStatus=6）时，此字段 FlowMessage 为拒签或撤销原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowMessage 当合同流程状态为已拒签（即 FlowStatus=3）或已撤销（即 FlowStatus=6）时，此字段 FlowMessage 为拒签或撤销原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlowMessage() const;
 
                     /**
                      * 设置当合同流程状态为已拒签（即 FlowStatus=3）或已撤销（即 FlowStatus=6）时，此字段 FlowMessage 为拒签或撤销原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _flowMessage 当合同流程状态为已拒签（即 FlowStatus=3）或已撤销（即 FlowStatus=6）时，此字段 FlowMessage 为拒签或撤销原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFlowMessage(const std::string& _flowMessage);
@@ -259,18 +248,14 @@ namespace TencentCloud
 
                     /**
                      * 获取 合同流程发起方的员工编号, 即员工在腾讯电子签平台的唯一身份标识。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Creator  合同流程发起方的员工编号, 即员工在腾讯电子签平台的唯一身份标识。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreator() const;
 
                     /**
                      * 设置 合同流程发起方的员工编号, 即员工在腾讯电子签平台的唯一身份标识。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _creator  合同流程发起方的员工编号, 即员工在腾讯电子签平台的唯一身份标识。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreator(const std::string& _creator);
@@ -284,18 +269,14 @@ namespace TencentCloud
 
                     /**
                      * 获取合同流程的签署截止时间，格式为Unix标准时间戳（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Deadline 合同流程的签署截止时间，格式为Unix标准时间戳（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDeadline() const;
 
                     /**
                      * 设置合同流程的签署截止时间，格式为Unix标准时间戳（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deadline 合同流程的签署截止时间，格式为Unix标准时间戳（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeadline(const int64_t& _deadline);
@@ -306,6 +287,60 @@ namespace TencentCloud
                      * 
                      */
                     bool DeadlineHasBeenSet() const;
+
+                    /**
+                     * 获取用户合同的自定义分类。
+
+自定义合同类型的位置，在下图所示地方:
+![image](https://qcloudimg.tencent-cloud.cn/raw/00d72934c31bd49115a566e4e1a4530d.png)
+                     * @return UserFlowType 用户合同的自定义分类。
+
+自定义合同类型的位置，在下图所示地方:
+![image](https://qcloudimg.tencent-cloud.cn/raw/00d72934c31bd49115a566e4e1a4530d.png)
+                     * 
+                     */
+                    UserFlowType GetUserFlowType() const;
+
+                    /**
+                     * 设置用户合同的自定义分类。
+
+自定义合同类型的位置，在下图所示地方:
+![image](https://qcloudimg.tencent-cloud.cn/raw/00d72934c31bd49115a566e4e1a4530d.png)
+                     * @param _userFlowType 用户合同的自定义分类。
+
+自定义合同类型的位置，在下图所示地方:
+![image](https://qcloudimg.tencent-cloud.cn/raw/00d72934c31bd49115a566e4e1a4530d.png)
+                     * 
+                     */
+                    void SetUserFlowType(const UserFlowType& _userFlowType);
+
+                    /**
+                     * 判断参数 UserFlowType 是否已赋值
+                     * @return UserFlowType 是否已赋值
+                     * 
+                     */
+                    bool UserFlowTypeHasBeenSet() const;
+
+                    /**
+                     * 获取发起模板时,使用的模板Id
+                     * @return TemplateId 发起模板时,使用的模板Id
+                     * 
+                     */
+                    std::string GetTemplateId() const;
+
+                    /**
+                     * 设置发起模板时,使用的模板Id
+                     * @param _templateId 发起模板时,使用的模板Id
+                     * 
+                     */
+                    void SetTemplateId(const std::string& _templateId);
+
+                    /**
+                     * 判断参数 TemplateId 是否已赋值
+                     * @return TemplateId 是否已赋值
+                     * 
+                     */
+                    bool TemplateIdHasBeenSet() const;
 
                 private:
 
@@ -323,13 +358,13 @@ namespace TencentCloud
 
                     /**
                      * 合同流程描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowDescription;
                     bool m_flowDescriptionHasBeenSet;
 
                     /**
                      * 合同流程的类别分类（如销售合同/入职合同等）。
+该字段将被废弃，不建议使用。	请使用 UserFlowType。
                      */
                     std::string m_flowType;
                     bool m_flowTypeHasBeenSet;
@@ -348,38 +383,48 @@ namespace TencentCloud
 <li> **9** : 部分填写</li>
 <li> **10** : 已拒填</li>
 <li> **21** : 已解除</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_flowStatus;
                     bool m_flowStatusHasBeenSet;
 
                     /**
                      * 合同流程创建时间，格式为Unix标准时间戳（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_createdOn;
                     bool m_createdOnHasBeenSet;
 
                     /**
                      * 当合同流程状态为已拒签（即 FlowStatus=3）或已撤销（即 FlowStatus=6）时，此字段 FlowMessage 为拒签或撤销原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowMessage;
                     bool m_flowMessageHasBeenSet;
 
                     /**
                      *  合同流程发起方的员工编号, 即员工在腾讯电子签平台的唯一身份标识。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_creator;
                     bool m_creatorHasBeenSet;
 
                     /**
                      * 合同流程的签署截止时间，格式为Unix标准时间戳（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_deadline;
                     bool m_deadlineHasBeenSet;
+
+                    /**
+                     * 用户合同的自定义分类。
+
+自定义合同类型的位置，在下图所示地方:
+![image](https://qcloudimg.tencent-cloud.cn/raw/00d72934c31bd49115a566e4e1a4530d.png)
+                     */
+                    UserFlowType m_userFlowType;
+                    bool m_userFlowTypeHasBeenSet;
+
+                    /**
+                     * 发起模板时,使用的模板Id
+                     */
+                    std::string m_templateId;
+                    bool m_templateIdHasBeenSet;
 
                 };
             }

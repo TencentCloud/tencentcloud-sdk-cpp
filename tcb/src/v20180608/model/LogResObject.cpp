@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ using namespace std;
 LogResObject::LogResObject() :
     m_contextHasBeenSet(false),
     m_listOverHasBeenSet(false),
-    m_resultsHasBeenSet(false)
+    m_resultsHasBeenSet(false),
+    m_analysisRecordsHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,19 @@ CoreInternalOutcome LogResObject::Deserialize(const rapidjson::Value &value)
         m_resultsHasBeenSet = true;
     }
 
+    if (value.HasMember("AnalysisRecords") && !value["AnalysisRecords"].IsNull())
+    {
+        if (!value["AnalysisRecords"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LogResObject.AnalysisRecords` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AnalysisRecords"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_analysisRecords.push_back((*itr).GetString());
+        }
+        m_analysisRecordsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +121,19 @@ void LogResObject::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_analysisRecordsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AnalysisRecords";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_analysisRecords.begin(); itr != m_analysisRecords.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -159,5 +186,21 @@ void LogResObject::SetResults(const vector<LogObject>& _results)
 bool LogResObject::ResultsHasBeenSet() const
 {
     return m_resultsHasBeenSet;
+}
+
+vector<string> LogResObject::GetAnalysisRecords() const
+{
+    return m_analysisRecords;
+}
+
+void LogResObject::SetAnalysisRecords(const vector<string>& _analysisRecords)
+{
+    m_analysisRecords = _analysisRecords;
+    m_analysisRecordsHasBeenSet = true;
+}
+
+bool LogResObject::AnalysisRecordsHasBeenSet() const
+{
+    return m_analysisRecordsHasBeenSet;
 }
 

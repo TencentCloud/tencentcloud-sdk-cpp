@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取x轴时间戳
+                     * 获取X轴: 时间区域；根据查询条件的粒度返回“分/小时/日”三种区间范围
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return X x轴时间戳
+                     * @return X X轴: 时间区域；根据查询条件的粒度返回“分/小时/日”三种区间范围
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetX() const;
 
                     /**
-                     * 设置x轴时间戳
+                     * 设置X轴: 时间区域；根据查询条件的粒度返回“分/小时/日”三种区间范围
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _x x轴时间戳
+                     * @param _x X轴: 时间区域；根据查询条件的粒度返回“分/小时/日”三种区间范围
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool XHasBeenSet() const;
 
                     /**
-                     * 获取y轴统计值
+                     * 获取Y轴: 该时间区域内的统计值，如token消耗量，调用次数或使用量等信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Y y轴统计值
+                     * @return Y Y轴: 该时间区域内的统计值，如token消耗量，调用次数或使用量等信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetY() const;
 
                     /**
-                     * 设置y轴统计值
+                     * 设置Y轴: 该时间区域内的统计值，如token消耗量，调用次数或使用量等信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _y y轴统计值
+                     * @param _y Y轴: 该时间区域内的统计值，如token消耗量，调用次数或使用量等信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,14 +99,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * x轴时间戳
+                     * X轴: 时间区域；根据查询条件的粒度返回“分/小时/日”三种区间范围
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_x;
                     bool m_xHasBeenSet;
 
                     /**
-                     * y轴统计值
+                     * Y轴: 该时间区域内的统计值，如token消耗量，调用次数或使用量等信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_y;

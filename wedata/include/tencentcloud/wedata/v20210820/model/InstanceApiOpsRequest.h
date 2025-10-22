@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -720,6 +720,111 @@ namespace TencentCloud
                      */
                     bool OnlyRerunHasBeenSet() const;
 
+                    /**
+                     * 获取时区
+                     * @return ScheduleTimeZone 时区
+                     * 
+                     */
+                    std::string GetScheduleTimeZone() const;
+
+                    /**
+                     * 设置时区
+                     * @param _scheduleTimeZone 时区
+                     * 
+                     */
+                    void SetScheduleTimeZone(const std::string& _scheduleTimeZone);
+
+                    /**
+                     * 判断参数 ScheduleTimeZone 是否已赋值
+                     * @return ScheduleTimeZone 是否已赋值
+                     * 
+                     */
+                    bool ScheduleTimeZoneHasBeenSet() const;
+
+                    /**
+                     * 获取计划调度时间
+                     * @return ScheduleTimeFrom 计划调度时间
+                     * 
+                     */
+                    std::string GetScheduleTimeFrom() const;
+
+                    /**
+                     * 设置计划调度时间
+                     * @param _scheduleTimeFrom 计划调度时间
+                     * 
+                     */
+                    void SetScheduleTimeFrom(const std::string& _scheduleTimeFrom);
+
+                    /**
+                     * 判断参数 ScheduleTimeFrom 是否已赋值
+                     * @return ScheduleTimeFrom 是否已赋值
+                     * 
+                     */
+                    bool ScheduleTimeFromHasBeenSet() const;
+
+                    /**
+                     * 获取计划调度时间
+                     * @return ScheduleTimeTo 计划调度时间
+                     * 
+                     */
+                    std::string GetScheduleTimeTo() const;
+
+                    /**
+                     * 设置计划调度时间
+                     * @param _scheduleTimeTo 计划调度时间
+                     * 
+                     */
+                    void SetScheduleTimeTo(const std::string& _scheduleTimeTo);
+
+                    /**
+                     * 判断参数 ScheduleTimeTo 是否已赋值
+                     * @return ScheduleTimeTo 是否已赋值
+                     * 
+                     */
+                    bool ScheduleTimeToHasBeenSet() const;
+
+                    /**
+                     * 获取任务优先级过滤实例列表
+                     * @return RunPriorityList 任务优先级过滤实例列表
+                     * 
+                     */
+                    std::vector<int64_t> GetRunPriorityList() const;
+
+                    /**
+                     * 设置任务优先级过滤实例列表
+                     * @param _runPriorityList 任务优先级过滤实例列表
+                     * 
+                     */
+                    void SetRunPriorityList(const std::vector<int64_t>& _runPriorityList);
+
+                    /**
+                     * 判断参数 RunPriorityList 是否已赋值
+                     * @return RunPriorityList 是否已赋值
+                     * 
+                     */
+                    bool RunPriorityListHasBeenSet() const;
+
+                    /**
+                     * 获取实例调度周期筛选
+                     * @return InstanceCycleType 实例调度周期筛选
+                     * 
+                     */
+                    std::vector<std::string> GetInstanceCycleType() const;
+
+                    /**
+                     * 设置实例调度周期筛选
+                     * @param _instanceCycleType 实例调度周期筛选
+                     * 
+                     */
+                    void SetInstanceCycleType(const std::vector<std::string>& _instanceCycleType);
+
+                    /**
+                     * 判断参数 InstanceCycleType 是否已赋值
+                     * @return InstanceCycleType 是否已赋值
+                     * 
+                     */
+                    bool InstanceCycleTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -913,6 +1018,36 @@ namespace TencentCloud
                      */
                     bool m_onlyRerun;
                     bool m_onlyRerunHasBeenSet;
+
+                    /**
+                     * 时区
+                     */
+                    std::string m_scheduleTimeZone;
+                    bool m_scheduleTimeZoneHasBeenSet;
+
+                    /**
+                     * 计划调度时间
+                     */
+                    std::string m_scheduleTimeFrom;
+                    bool m_scheduleTimeFromHasBeenSet;
+
+                    /**
+                     * 计划调度时间
+                     */
+                    std::string m_scheduleTimeTo;
+                    bool m_scheduleTimeToHasBeenSet;
+
+                    /**
+                     * 任务优先级过滤实例列表
+                     */
+                    std::vector<int64_t> m_runPriorityList;
+                    bool m_runPriorityListHasBeenSet;
+
+                    /**
+                     * 实例调度周期筛选
+                     */
+                    std::vector<std::string> m_instanceCycleType;
+                    bool m_instanceCycleTypeHasBeenSet;
 
                 };
             }

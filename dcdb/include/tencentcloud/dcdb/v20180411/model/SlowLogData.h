@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -405,18 +405,14 @@ namespace TencentCloud
 
                     /**
                      * 获取样例Sql
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExampleSql 样例Sql
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExampleSql() const;
 
                     /**
                      * 设置样例Sql
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _exampleSql 样例Sql
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExampleSql(const std::string& _exampleSql);
@@ -430,18 +426,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账户的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Host 账户的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHost() const;
 
                     /**
                      * 设置账户的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _host 账户的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHost(const std::string& _host);
@@ -559,14 +551,12 @@ namespace TencentCloud
 
                     /**
                      * 样例Sql
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_exampleSql;
                     bool m_exampleSqlHasBeenSet;
 
                     /**
                      * 账户的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;

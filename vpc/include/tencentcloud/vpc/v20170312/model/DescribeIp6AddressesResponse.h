@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取符合条件的 IPV6 数量。
-                     * @return TotalCount 符合条件的 IPV6 数量。
+                     * 获取符合条件的 IPv6 数量。
+                     * @return TotalCount 符合条件的 IPv6 数量。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取IPV6 详细信息列表。
-                     * @return AddressSet IPV6 详细信息列表。
+                     * 获取IPv6 详细信息列表。
+                     * @return AddressSet IPv6 详细信息列表。
                      * 
                      */
                     std::vector<Address> GetAddressSet() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 符合条件的 IPV6 数量。
+                     * 符合条件的 IPv6 数量。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * IPV6 详细信息列表。
+                     * IPv6 详细信息列表。
                      */
                     std::vector<Address> m_addressSet;
                     bool m_addressSetHasBeenSet;

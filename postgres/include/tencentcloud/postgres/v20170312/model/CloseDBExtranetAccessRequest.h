@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID，形如postgres-6r233v55
-                     * @return DBInstanceId 实例ID，形如postgres-6r233v55
+                     * 获取实例ID，可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取。形如postgres-6r233v55
+                     * @return DBInstanceId 实例ID，可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取。形如postgres-6r233v55
                      * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
-                     * 设置实例ID，形如postgres-6r233v55
-                     * @param _dBInstanceId 实例ID，形如postgres-6r233v55
+                     * 设置实例ID，可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取。形如postgres-6r233v55
+                     * @param _dBInstanceId 实例ID，可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取。形如postgres-6r233v55
                      * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取是否关闭Ipv6外网，1：是，0：否
-                     * @return IsIpv6 是否关闭Ipv6外网，1：是，0：否
+                     * 获取是否关闭Ipv6外网，1：是，0：否。默认值：0。
+                     * @return IsIpv6 是否关闭Ipv6外网，1：是，0：否。默认值：0。
                      * 
                      */
                     int64_t GetIsIpv6() const;
 
                     /**
-                     * 设置是否关闭Ipv6外网，1：是，0：否
-                     * @param _isIpv6 是否关闭Ipv6外网，1：是，0：否
+                     * 设置是否关闭Ipv6外网，1：是，0：否。默认值：0。
+                     * @param _isIpv6 是否关闭Ipv6外网，1：是，0：否。默认值：0。
                      * 
                      */
                     void SetIsIpv6(const int64_t& _isIpv6);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID，形如postgres-6r233v55
+                     * 实例ID，可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取。形如postgres-6r233v55
                      */
                     std::string m_dBInstanceId;
                     bool m_dBInstanceIdHasBeenSet;
 
                     /**
-                     * 是否关闭Ipv6外网，1：是，0：否
+                     * 是否关闭Ipv6外网，1：是，0：否。默认值：0。
                      */
                     int64_t m_isIpv6;
                     bool m_isIpv6HasBeenSet;

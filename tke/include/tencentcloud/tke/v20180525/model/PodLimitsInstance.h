@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取机型所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 机型所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置机型所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zone 机型所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取机型所属机型族
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceFamily 机型所属机型族
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceFamily() const;
 
                     /**
                      * 设置机型所属机型族
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceFamily 机型所属机型族
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceFamily(const std::string& _instanceFamily);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例机型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType 实例机型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置实例机型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceType 实例机型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取机型可支持的最大VPC-CNI模式Pod数量信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PodLimits 机型可支持的最大VPC-CNI模式Pod数量信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PodLimitsByType GetPodLimits() const;
 
                     /**
                      * 设置机型可支持的最大VPC-CNI模式Pod数量信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _podLimits 机型可支持的最大VPC-CNI模式Pod数量信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPodLimits(const PodLimitsByType& _podLimits);
@@ -151,28 +135,24 @@ namespace TencentCloud
 
                     /**
                      * 机型所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
                      * 机型所属机型族
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceFamily;
                     bool m_instanceFamilyHasBeenSet;
 
                     /**
                      * 实例机型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
                      * 机型可支持的最大VPC-CNI模式Pod数量信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PodLimitsByType m_podLimits;
                     bool m_podLimitsHasBeenSet;

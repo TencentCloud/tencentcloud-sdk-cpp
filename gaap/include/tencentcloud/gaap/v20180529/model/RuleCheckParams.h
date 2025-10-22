@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -178,18 +178,14 @@ namespace TencentCloud
 
                     /**
                      * 获取源站服务失败统计频率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedCountInter 源站服务失败统计频率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetFailedCountInter() const;
 
                     /**
                      * 设置源站服务失败统计频率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _failedCountInter 源站服务失败统计频率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFailedCountInter(const uint64_t& _failedCountInter);
@@ -203,18 +199,14 @@ namespace TencentCloud
 
                     /**
                      * 获取源站健康性检查阀值，超过该阀值会屏蔽服务
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedThreshold 源站健康性检查阀值，超过该阀值会屏蔽服务
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetFailedThreshold() const;
 
                     /**
                      * 设置源站健康性检查阀值，超过该阀值会屏蔽服务
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _failedThreshold 源站健康性检查阀值，超过该阀值会屏蔽服务
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFailedThreshold(const uint64_t& _failedThreshold);
@@ -228,18 +220,14 @@ namespace TencentCloud
 
                     /**
                      * 获取源站健康性检测超出阀值后，屏蔽的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BlockInter 源站健康性检测超出阀值后，屏蔽的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetBlockInter() const;
 
                     /**
                      * 设置源站健康性检测超出阀值后，屏蔽的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _blockInter 源站健康性检测超出阀值后，屏蔽的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBlockInter(const uint64_t& _blockInter);
@@ -292,21 +280,18 @@ namespace TencentCloud
 
                     /**
                      * 源站服务失败统计频率
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_failedCountInter;
                     bool m_failedCountInterHasBeenSet;
 
                     /**
                      * 源站健康性检查阀值，超过该阀值会屏蔽服务
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_failedThreshold;
                     bool m_failedThresholdHasBeenSet;
 
                     /**
                      * 源站健康性检测超出阀值后，屏蔽的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_blockInter;
                     bool m_blockInterHasBeenSet;

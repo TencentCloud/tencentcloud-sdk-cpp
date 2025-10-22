@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,9 @@ ProxyAddress::ProxyAddress() :
     m_descHasBeenSet(false),
     m_proxyAllocationHasBeenSet(false),
     m_accessModeHasBeenSet(false),
-    m_autoLoadBalanceHasBeenSet(false)
+    m_autoLoadBalanceHasBeenSet(false),
+    m_apNodeAsRoNodeHasBeenSet(false),
+    m_apQueryToOtherNodeHasBeenSet(false)
 {
 }
 
@@ -237,6 +239,26 @@ CoreInternalOutcome ProxyAddress::Deserialize(const rapidjson::Value &value)
         m_autoLoadBalanceHasBeenSet = true;
     }
 
+    if (value.HasMember("ApNodeAsRoNode") && !value["ApNodeAsRoNode"].IsNull())
+    {
+        if (!value["ApNodeAsRoNode"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyAddress.ApNodeAsRoNode` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_apNodeAsRoNode = value["ApNodeAsRoNode"].GetBool();
+        m_apNodeAsRoNodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApQueryToOtherNode") && !value["ApQueryToOtherNode"].IsNull())
+    {
+        if (!value["ApQueryToOtherNode"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyAddress.ApQueryToOtherNode` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_apQueryToOtherNode = value["ApQueryToOtherNode"].GetBool();
+        m_apQueryToOtherNodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -393,6 +415,22 @@ void ProxyAddress::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "AutoLoadBalance";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_autoLoadBalance, allocator);
+    }
+
+    if (m_apNodeAsRoNodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApNodeAsRoNode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_apNodeAsRoNode, allocator);
+    }
+
+    if (m_apQueryToOtherNodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApQueryToOtherNode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_apQueryToOtherNode, allocator);
     }
 
 }
@@ -684,5 +722,37 @@ void ProxyAddress::SetAutoLoadBalance(const bool& _autoLoadBalance)
 bool ProxyAddress::AutoLoadBalanceHasBeenSet() const
 {
     return m_autoLoadBalanceHasBeenSet;
+}
+
+bool ProxyAddress::GetApNodeAsRoNode() const
+{
+    return m_apNodeAsRoNode;
+}
+
+void ProxyAddress::SetApNodeAsRoNode(const bool& _apNodeAsRoNode)
+{
+    m_apNodeAsRoNode = _apNodeAsRoNode;
+    m_apNodeAsRoNodeHasBeenSet = true;
+}
+
+bool ProxyAddress::ApNodeAsRoNodeHasBeenSet() const
+{
+    return m_apNodeAsRoNodeHasBeenSet;
+}
+
+bool ProxyAddress::GetApQueryToOtherNode() const
+{
+    return m_apQueryToOtherNode;
+}
+
+void ProxyAddress::SetApQueryToOtherNode(const bool& _apQueryToOtherNode)
+{
+    m_apQueryToOtherNode = _apQueryToOtherNode;
+    m_apQueryToOtherNodeHasBeenSet = true;
+}
+
+bool ProxyAddress::ApQueryToOtherNodeHasBeenSet() const
+{
+    return m_apQueryToOtherNodeHasBeenSet;
 }
 

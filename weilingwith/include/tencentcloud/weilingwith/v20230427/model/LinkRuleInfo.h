@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取联动id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 联动id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置联动id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 联动id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取联动名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 联动名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置联动名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 联动名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventSet 事件列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Event> GetEventSet() const;
 
                     /**
                      * 设置事件列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eventSet 事件列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEventSet(const std::vector<Event>& _eventSet);
@@ -125,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取动作列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActionSet 动作列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Action> GetActionSet() const;
 
                     /**
                      * 设置动作列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _actionSet 动作列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActionSet(const std::vector<Action>& _actionSet);
@@ -150,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态：0开，-1关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态：0开，-1关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置状态：0开，-1关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 状态：0开，-1关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -175,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取起始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BeginDate 起始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBeginDate() const;
 
                     /**
                      * 设置起始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _beginDate 起始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBeginDate(const std::string& _beginDate);
@@ -200,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndDate 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndDate() const;
 
                     /**
                      * 设置结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endDate 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndDate(const std::string& _endDate);
@@ -225,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取有效周期内容,有效字段为x-json后的字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValidPeriod 有效周期内容,有效字段为x-json后的字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValidPeriod() const;
 
                     /**
                      * 设置有效周期内容,有效字段为x-json后的字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _validPeriod 有效周期内容,有效字段为x-json后的字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValidPeriod(const std::string& _validPeriod);
@@ -252,56 +220,48 @@ namespace TencentCloud
 
                     /**
                      * 联动id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 联动名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 事件列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Event> m_eventSet;
                     bool m_eventSetHasBeenSet;
 
                     /**
                      * 动作列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Action> m_actionSet;
                     bool m_actionSetHasBeenSet;
 
                     /**
                      * 状态：0开，-1关
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 起始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_beginDate;
                     bool m_beginDateHasBeenSet;
 
                     /**
                      * 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endDate;
                     bool m_endDateHasBeenSet;
 
                     /**
                      * 有效周期内容,有效字段为x-json后的字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_validPeriod;
                     bool m_validPeriodHasBeenSet;

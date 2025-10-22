@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消费分组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupsInfo 消费分组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<GroupInfoResponse> GetGroupsInfo() const;
 
                     /**
                      * 设置消费分组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupsInfo 消费分组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupsInfo(const std::vector<GroupInfoResponse>& _groupsInfo);
@@ -116,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取此次请求是否异步的状态。实例里分组较少的会直接返回结果,Status为1。当分组较多时,会异步更新缓存，Status为0时不会返回分组信息，直至Status为1更新完毕返回结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 此次请求是否异步的状态。实例里分组较少的会直接返回结果,Status为1。当分组较多时,会异步更新缓存，Status为0时不会返回分组信息，直至Status为1更新完毕返回结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置此次请求是否异步的状态。实例里分组较少的会直接返回结果,Status为1。当分组较多时,会异步更新缓存，Status为0时不会返回分组信息，直至Status为1更新完毕返回结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 此次请求是否异步的状态。实例里分组较少的会直接返回结果,Status为1。当分组较多时,会异步更新缓存，Status为0时不会返回分组信息，直至Status为1更新完毕返回结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -155,14 +147,12 @@ namespace TencentCloud
 
                     /**
                      * 消费分组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<GroupInfoResponse> m_groupsInfo;
                     bool m_groupsInfoHasBeenSet;
 
                     /**
                      * 此次请求是否异步的状态。实例里分组较少的会直接返回结果,Status为1。当分组较多时,会异步更新缓存，Status为0时不会返回分组信息，直至Status为1更新完毕返回结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

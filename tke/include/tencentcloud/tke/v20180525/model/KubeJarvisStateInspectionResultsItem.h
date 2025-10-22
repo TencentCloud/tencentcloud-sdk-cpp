@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取巡检结果名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 巡检结果名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置巡检结果名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 巡检结果名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取诊断结果统计
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Statistics 诊断结果统计
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<KubeJarvisStateStatistic> GetStatistics() const;
 
                     /**
                      * 设置诊断结果统计
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _statistics 诊断结果统计
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatistics(const std::vector<KubeJarvisStateStatistic>& _statistics);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 巡检结果名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 诊断结果统计
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<KubeJarvisStateStatistic> m_statistics;
                     bool m_statisticsHasBeenSet;

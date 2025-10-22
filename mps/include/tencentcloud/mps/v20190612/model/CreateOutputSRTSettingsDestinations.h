@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取输出的IP。
-                     * @return Ip 输出的IP。
+                     * 获取输出的IP或域名。
+                     * @return Ip 输出的IP或域名。
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置输出的IP。
-                     * @param _ip 输出的IP。
+                     * 设置输出的IP或域名。
+                     * @param _ip 输出的IP或域名。
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -91,7 +91,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 输出的IP。
+                     * 输出的IP或域名。
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;

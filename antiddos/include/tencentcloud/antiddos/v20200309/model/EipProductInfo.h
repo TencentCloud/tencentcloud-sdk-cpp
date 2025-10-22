@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -172,18 +172,14 @@ other(托管IP)
 
                     /**
                      * 获取域名化资产对应的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 域名化资产对应的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名化资产对应的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domain 域名化资产对应的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -233,7 +229,6 @@ other(托管IP)
 
                     /**
                      * 域名化资产对应的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取集群ID，通过DescribeClusters接口获取
+                     * @return ClusterId 集群ID，通过DescribeClusters接口获取
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置集群ID，通过DescribeClusters接口获取
+                     * @param _clusterId 集群ID，通过DescribeClusters接口获取
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取节点池ID
-                     * @return NodePoolId 节点池ID
+                     * 获取节点池ID，通过DescribeNodePools接口获取
+                     * @return NodePoolId 节点池ID，通过DescribeNodePools接口获取
                      * 
                      */
                     std::string GetNodePoolId() const;
 
                     /**
-                     * 设置节点池ID
-                     * @param _nodePoolId 节点池ID
+                     * 设置节点池ID，通过DescribeNodePools接口获取
+                     * @param _nodePoolId 节点池ID，通过DescribeNodePools接口获取
                      * 
                      */
                     void SetNodePoolId(const std::string& _nodePoolId);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool NodePoolIdHasBeenSet() const;
 
                     /**
-                     * 获取节点池名称
-                     * @return Name 节点池名称
+                     * 获取节点池名称，必须修改至少一个参数
+                     * @return Name 节点池名称，必须修改至少一个参数
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置节点池名称
-                     * @param _name 节点池名称
+                     * 设置节点池名称，必须修改至少一个参数
+                     * @param _name 节点池名称，必须修改至少一个参数
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取安全组ID列表
-                     * @return SecurityGroupIds 安全组ID列表
+                     * 获取安全组ID列表，必须修改至少一个参数
+                     * @return SecurityGroupIds 安全组ID列表，必须修改至少一个参数
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
-                     * 设置安全组ID列表
-                     * @param _securityGroupIds 安全组ID列表
+                     * 设置安全组ID列表，必须修改至少一个参数
+                     * @param _securityGroupIds 安全组ID列表，必须修改至少一个参数
                      * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool SecurityGroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取虚拟节点label
-                     * @return Labels 虚拟节点label
+                     * 获取虚拟节点label，必须修改至少一个参数
+                     * @return Labels 虚拟节点label，必须修改至少一个参数
                      * 
                      */
                     std::vector<Label> GetLabels() const;
 
                     /**
-                     * 设置虚拟节点label
-                     * @param _labels 虚拟节点label
+                     * 设置虚拟节点label，必须修改至少一个参数
+                     * @param _labels 虚拟节点label，必须修改至少一个参数
                      * 
                      */
                     void SetLabels(const std::vector<Label>& _labels);
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool LabelsHasBeenSet() const;
 
                     /**
-                     * 获取虚拟节点taint
-                     * @return Taints 虚拟节点taint
+                     * 获取虚拟节点taint，必须修改至少一个参数
+                     * @return Taints 虚拟节点taint，必须修改至少一个参数
                      * 
                      */
                     std::vector<Taint> GetTaints() const;
 
                     /**
-                     * 设置虚拟节点taint
-                     * @param _taints 虚拟节点taint
+                     * 设置虚拟节点taint，必须修改至少一个参数
+                     * @param _taints 虚拟节点taint，必须修改至少一个参数
                      * 
                      */
                     void SetTaints(const std::vector<Taint>& _taints);
@@ -171,15 +171,15 @@ namespace TencentCloud
                     bool TaintsHasBeenSet() const;
 
                     /**
-                     * 获取删除保护开关
-                     * @return DeletionProtection 删除保护开关
+                     * 获取删除保护开关，必须修改至少一个参数
+                     * @return DeletionProtection 删除保护开关，必须修改至少一个参数
                      * 
                      */
                     bool GetDeletionProtection() const;
 
                     /**
-                     * 设置删除保护开关
-                     * @param _deletionProtection 删除保护开关
+                     * 设置删除保护开关，必须修改至少一个参数
+                     * @param _deletionProtection 删除保护开关，必须修改至少一个参数
                      * 
                      */
                     void SetDeletionProtection(const bool& _deletionProtection);
@@ -194,43 +194,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID
+                     * 集群ID，通过DescribeClusters接口获取
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 节点池ID
+                     * 节点池ID，通过DescribeNodePools接口获取
                      */
                     std::string m_nodePoolId;
                     bool m_nodePoolIdHasBeenSet;
 
                     /**
-                     * 节点池名称
+                     * 节点池名称，必须修改至少一个参数
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 安全组ID列表
+                     * 安全组ID列表，必须修改至少一个参数
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;
 
                     /**
-                     * 虚拟节点label
+                     * 虚拟节点label，必须修改至少一个参数
                      */
                     std::vector<Label> m_labels;
                     bool m_labelsHasBeenSet;
 
                     /**
-                     * 虚拟节点taint
+                     * 虚拟节点taint，必须修改至少一个参数
                      */
                     std::vector<Taint> m_taints;
                     bool m_taintsHasBeenSet;
 
                     /**
-                     * 删除保护开关
+                     * 删除保护开关，必须修改至少一个参数
                      */
                     bool m_deletionProtection;
                     bool m_deletionProtectionHasBeenSet;

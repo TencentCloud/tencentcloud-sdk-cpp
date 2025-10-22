@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataEngineId 引擎ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataEngineId() const;
 
                     /**
                      * 设置引擎ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataEngineId 引擎ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataEngineId(const std::string& _dataEngineId);
@@ -119,7 +115,6 @@ namespace TencentCloud
 
                     /**
                      * 引擎ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataEngineId;
                     bool m_dataEngineIdHasBeenSet;

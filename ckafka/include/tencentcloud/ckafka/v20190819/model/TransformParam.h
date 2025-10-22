@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -219,18 +219,14 @@ namespace TencentCloud
 
                     /**
                      * 获取测试结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 测试结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 设置测试结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _result 测试结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResult(const std::string& _result);
@@ -244,18 +240,14 @@ namespace TencentCloud
 
                     /**
                      * 获取解析结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AnalyseResult 解析结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<MapParam> GetAnalyseResult() const;
 
                     /**
                      * 设置解析结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _analyseResult 解析结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAnalyseResult(const std::vector<MapParam>& _analyseResult);
@@ -269,18 +261,14 @@ namespace TencentCloud
 
                     /**
                      * 获取底层引擎是否使用eb
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UseEventBus 底层引擎是否使用eb
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetUseEventBus() const;
 
                     /**
                      * 设置底层引擎是否使用eb
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _useEventBus 底层引擎是否使用eb
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUseEventBus(const bool& _useEventBus);
@@ -344,21 +332,18 @@ namespace TencentCloud
 
                     /**
                      * 测试结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;
 
                     /**
                      * 解析结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MapParam> m_analyseResult;
                     bool m_analyseResultHasBeenSet;
 
                     /**
                      * 底层引擎是否使用eb
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_useEventBus;
                     bool m_useEventBusHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -180,6 +180,48 @@ namespace TencentCloud
                      */
                     bool MobileHasBeenSet() const;
 
+                    /**
+                     * 获取合同组Id，传入此参数则可以不传FlowIds
+                     * @return FlowGroupId 合同组Id，传入此参数则可以不传FlowIds
+                     * 
+                     */
+                    std::string GetFlowGroupId() const;
+
+                    /**
+                     * 设置合同组Id，传入此参数则可以不传FlowIds
+                     * @param _flowGroupId 合同组Id，传入此参数则可以不传FlowIds
+                     * 
+                     */
+                    void SetFlowGroupId(const std::string& _flowGroupId);
+
+                    /**
+                     * 判断参数 FlowGroupId 是否已赋值
+                     * @return FlowGroupId 是否已赋值
+                     * 
+                     */
+                    bool FlowGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取是否允许此链接中签署方批量拒签。 <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>注：`当前合同组不支持批量拒签功能。请对合同组中的每个子合同逐一执行拒签操作，以达到拒签整个合同组的效果。`
+                     * @return CanBatchReject 是否允许此链接中签署方批量拒签。 <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>注：`当前合同组不支持批量拒签功能。请对合同组中的每个子合同逐一执行拒签操作，以达到拒签整个合同组的效果。`
+                     * 
+                     */
+                    bool GetCanBatchReject() const;
+
+                    /**
+                     * 设置是否允许此链接中签署方批量拒签。 <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>注：`当前合同组不支持批量拒签功能。请对合同组中的每个子合同逐一执行拒签操作，以达到拒签整个合同组的效果。`
+                     * @param _canBatchReject 是否允许此链接中签署方批量拒签。 <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>注：`当前合同组不支持批量拒签功能。请对合同组中的每个子合同逐一执行拒签操作，以达到拒签整个合同组的效果。`
+                     * 
+                     */
+                    void SetCanBatchReject(const bool& _canBatchReject);
+
+                    /**
+                     * 判断参数 CanBatchReject 是否已赋值
+                     * @return CanBatchReject 是否已赋值
+                     * 
+                     */
+                    bool CanBatchRejectHasBeenSet() const;
+
                 private:
 
                     /**
@@ -219,6 +261,18 @@ namespace TencentCloud
                      */
                     std::string m_mobile;
                     bool m_mobileHasBeenSet;
+
+                    /**
+                     * 合同组Id，传入此参数则可以不传FlowIds
+                     */
+                    std::string m_flowGroupId;
+                    bool m_flowGroupIdHasBeenSet;
+
+                    /**
+                     * 是否允许此链接中签署方批量拒签。 <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>注：`当前合同组不支持批量拒签功能。请对合同组中的每个子合同逐一执行拒签操作，以达到拒签整个合同组的效果。`
+                     */
+                    bool m_canBatchReject;
+                    bool m_canBatchRejectHasBeenSet;
 
                 };
             }

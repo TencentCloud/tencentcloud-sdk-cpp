@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取手术名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SurgeryName 手术名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SurgeryAttr GetSurgeryName() const;
 
                     /**
                      * 设置手术名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _surgeryName 手术名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSurgeryName(const SurgeryAttr& _surgeryName);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取手术日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SurgeryDate 手术日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SurgeryAttr GetSurgeryDate() const;
 
                     /**
                      * 设置手术日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _surgeryDate 手术日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSurgeryDate(const SurgeryAttr& _surgeryDate);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取术前诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PreoperativePathology 术前诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SurgeryAttr GetPreoperativePathology() const;
 
                     /**
                      * 设置术前诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _preoperativePathology 术前诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPreoperativePathology(const SurgeryAttr& _preoperativePathology);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取术中诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IntraoperativePathology 术中诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SurgeryAttr GetIntraoperativePathology() const;
 
                     /**
                      * 设置术中诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _intraoperativePathology 术中诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIntraoperativePathology(const SurgeryAttr& _intraoperativePathology);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取术后诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PostoperativePathology 术后诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SurgeryAttr GetPostoperativePathology() const;
 
                     /**
                      * 设置术后诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _postoperativePathology 术后诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPostoperativePathology(const SurgeryAttr& _postoperativePathology);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DischargeDiagnosis 出院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SurgeryAttr GetDischargeDiagnosis() const;
 
                     /**
                      * 设置出院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dischargeDiagnosis 出院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDischargeDiagnosis(const SurgeryAttr& _dischargeDiagnosis);
@@ -201,42 +177,36 @@ namespace TencentCloud
 
                     /**
                      * 手术名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SurgeryAttr m_surgeryName;
                     bool m_surgeryNameHasBeenSet;
 
                     /**
                      * 手术日期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SurgeryAttr m_surgeryDate;
                     bool m_surgeryDateHasBeenSet;
 
                     /**
                      * 术前诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SurgeryAttr m_preoperativePathology;
                     bool m_preoperativePathologyHasBeenSet;
 
                     /**
                      * 术中诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SurgeryAttr m_intraoperativePathology;
                     bool m_intraoperativePathologyHasBeenSet;
 
                     /**
                      * 术后诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SurgeryAttr m_postoperativePathology;
                     bool m_postoperativePathologyHasBeenSet;
 
                     /**
                      * 出院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SurgeryAttr m_dischargeDiagnosis;
                     bool m_dischargeDiagnosisHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取场景ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IntId 场景ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIntId() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取录制时长(秒)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordDuration 录制时长(秒)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRecordDuration() const;
@@ -77,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取场景名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SceneName 场景名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSceneName() const;
@@ -93,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取场景触发规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SceneTrigger 场景触发规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSceneTrigger() const;
@@ -109,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取存储时长 (天)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StoreDuration 存储时长 (天)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStoreDuration() const;
@@ -125,9 +115,7 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
@@ -141,9 +129,7 @@ namespace TencentCloud
 
                     /**
                      * 获取更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
@@ -173,49 +159,42 @@ namespace TencentCloud
 
                     /**
                      * 场景ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_intId;
                     bool m_intIdHasBeenSet;
 
                     /**
                      * 录制时长(秒)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_recordDuration;
                     bool m_recordDurationHasBeenSet;
 
                     /**
                      * 场景名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sceneName;
                     bool m_sceneNameHasBeenSet;
 
                     /**
                      * 场景触发规则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sceneTrigger;
                     bool m_sceneTriggerHasBeenSet;
 
                     /**
                      * 存储时长 (天)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_storeDuration;
                     bool m_storeDurationHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

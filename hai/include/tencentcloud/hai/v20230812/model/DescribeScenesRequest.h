@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取场景id列表
-                     * @return SceneIds 场景id列表
+                     * 获取场景id列表，单次能查询100个场景id
+                     * @return SceneIds 场景id列表，单次能查询100个场景id
                      * 
                      */
                     std::vector<std::string> GetSceneIds() const;
 
                     /**
-                     * 设置场景id列表
-                     * @param _sceneIds 场景id列表
+                     * 设置场景id列表，单次能查询100个场景id
+                     * @param _sceneIds 场景id列表，单次能查询100个场景id
                      * 
                      */
                     void SetSceneIds(const std::vector<std::string>& _sceneIds);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 场景id列表
+                     * 场景id列表，单次能查询100个场景id
                      */
                     std::vector<std::string> m_sceneIds;
                     bool m_sceneIdsHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取站点或者加速域名。
-                     * @return Domain 站点或者加速域名。
+                     * 获取站点域名或者站点下的加速域名。
+                     * @return Domain 站点域名或者站点下的加速域名。
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置站点或者加速域名。
-                     * @param _domain 站点或者加速域名。
+                     * 设置站点域名或者站点下的加速域名。
+                     * @param _domain 站点域名或者站点下的加速域名。
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 站点或者加速域名。
+                     * 站点域名或者站点下的加速域名。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;

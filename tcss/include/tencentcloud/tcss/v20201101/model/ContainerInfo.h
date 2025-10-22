@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -450,18 +450,14 @@ namespace TencentCloud
 
                     /**
                      * 获取隔离来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsolateSource 隔离来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIsolateSource() const;
 
                     /**
                      * 设置隔离来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isolateSource 隔离来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsolateSource(const std::string& _isolateSource);
@@ -475,18 +471,14 @@ namespace TencentCloud
 
                     /**
                      * 获取隔离时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsolateTime 隔离时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIsolateTime() const;
 
                     /**
                      * 设置隔离时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isolateTime 隔离时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsolateTime(const std::string& _isolateTime);
@@ -689,18 +681,14 @@ namespace TencentCloud
 
                     /**
                      * 获取pod uid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PodUid pod uid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPodUid() const;
 
                     /**
                      * 设置pod uid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _podUid pod uid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPodUid(const std::string& _podUid);
@@ -830,14 +818,12 @@ namespace TencentCloud
 
                     /**
                      * 隔离来源
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_isolateSource;
                     bool m_isolateSourceHasBeenSet;
 
                     /**
                      * 隔离时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_isolateTime;
                     bool m_isolateTimeHasBeenSet;
@@ -898,7 +884,6 @@ namespace TencentCloud
 
                     /**
                      * pod uid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_podUid;
                     bool m_podUidHasBeenSet;

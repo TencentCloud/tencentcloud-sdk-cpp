@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对象类型,可能得值有：account,index,shardkey,schema
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObjectType 对象类型,可能得值有：account,index,shardkey,schema
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetObjectType() const;
 
                     /**
                      * 设置对象类型,可能得值有：account,index,shardkey,schema
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _objectType 对象类型,可能得值有：account,index,shardkey,schema
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetObjectType(const std::string& _objectType);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取源端分块
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SrcChunk 源端分块
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSrcChunk() const;
 
                     /**
                      * 设置源端分块
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _srcChunk 源端分块
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrcChunk(const std::string& _srcChunk);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取目标端分块
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DstChunk 目标端分块
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDstChunk() const;
 
                     /**
                      * 设置目标端分块
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dstChunk 目标端分块
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDstChunk(const std::string& _dstChunk);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取源端值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SrcItem 源端值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSrcItem() const;
 
                     /**
                      * 设置源端值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _srcItem 源端值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrcItem(const std::string& _srcItem);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取目标端值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DstItem 目标端值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDstItem() const;
 
                     /**
                      * 设置目标端值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dstItem 目标端值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDstItem(const std::string& _dstItem);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 对象类型,可能得值有：account,index,shardkey,schema
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_objectType;
                     bool m_objectTypeHasBeenSet;
 
                     /**
                      * 源端分块
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_srcChunk;
                     bool m_srcChunkHasBeenSet;
 
                     /**
                      * 目标端分块
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dstChunk;
                     bool m_dstChunkHasBeenSet;
 
                     /**
                      * 源端值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_srcItem;
                     bool m_srcItemHasBeenSet;
 
                     /**
                      * 目标端值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dstItem;
                     bool m_dstItemHasBeenSet;

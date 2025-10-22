@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取支持消费者提交消息时，传入 metadata 作为它用，当前一般为空字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Metadata 支持消费者提交消息时，传入 metadata 作为它用，当前一般为空字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMetadata() const;
 
                     /**
                      * 设置支持消费者提交消息时，传入 metadata 作为它用，当前一般为空字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _metadata 支持消费者提交消息时，传入 metadata 作为它用，当前一般为空字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMetadata(const std::string& _metadata);
@@ -192,7 +188,6 @@ namespace TencentCloud
 
                     /**
                      * 支持消费者提交消息时，传入 metadata 作为它用，当前一般为空字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_metadata;
                     bool m_metadataHasBeenSet;

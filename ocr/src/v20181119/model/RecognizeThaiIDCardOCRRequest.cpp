@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,9 @@ using namespace std;
 
 RecognizeThaiIDCardOCRRequest::RecognizeThaiIDCardOCRRequest() :
     m_imageBase64HasBeenSet(false),
+    m_backImageBase64HasBeenSet(false),
     m_imageUrlHasBeenSet(false),
+    m_backImageUrlHasBeenSet(false),
     m_cropPortraitHasBeenSet(false)
 {
 }
@@ -44,12 +46,28 @@ string RecognizeThaiIDCardOCRRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_imageBase64.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_backImageBase64HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackImageBase64";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_backImageBase64.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_imageUrlHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_imageUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backImageUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackImageUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_backImageUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cropPortraitHasBeenSet)
@@ -84,6 +102,22 @@ bool RecognizeThaiIDCardOCRRequest::ImageBase64HasBeenSet() const
     return m_imageBase64HasBeenSet;
 }
 
+string RecognizeThaiIDCardOCRRequest::GetBackImageBase64() const
+{
+    return m_backImageBase64;
+}
+
+void RecognizeThaiIDCardOCRRequest::SetBackImageBase64(const string& _backImageBase64)
+{
+    m_backImageBase64 = _backImageBase64;
+    m_backImageBase64HasBeenSet = true;
+}
+
+bool RecognizeThaiIDCardOCRRequest::BackImageBase64HasBeenSet() const
+{
+    return m_backImageBase64HasBeenSet;
+}
+
 string RecognizeThaiIDCardOCRRequest::GetImageUrl() const
 {
     return m_imageUrl;
@@ -98,6 +132,22 @@ void RecognizeThaiIDCardOCRRequest::SetImageUrl(const string& _imageUrl)
 bool RecognizeThaiIDCardOCRRequest::ImageUrlHasBeenSet() const
 {
     return m_imageUrlHasBeenSet;
+}
+
+string RecognizeThaiIDCardOCRRequest::GetBackImageUrl() const
+{
+    return m_backImageUrl;
+}
+
+void RecognizeThaiIDCardOCRRequest::SetBackImageUrl(const string& _backImageUrl)
+{
+    m_backImageUrl = _backImageUrl;
+    m_backImageUrlHasBeenSet = true;
+}
+
+bool RecognizeThaiIDCardOCRRequest::BackImageUrlHasBeenSet() const
+{
+    return m_backImageUrlHasBeenSet;
 }
 
 bool RecognizeThaiIDCardOCRRequest::GetCropPortrait() const

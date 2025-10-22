@@ -1,0 +1,121 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_WEDATA_V20250806_MODEL_SQLCONTENTACTIONRESULT_H_
+#define TENCENTCLOUD_WEDATA_V20250806_MODEL_SQLCONTENTACTIONRESULT_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Wedata
+    {
+        namespace V20250806
+        {
+            namespace Model
+            {
+                /**
+                * SQL探索文件/文件夹操作结果
+                */
+                class SQLContentActionResult : public AbstractModel
+                {
+                public:
+                    SQLContentActionResult();
+                    ~SQLContentActionResult() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取操作是否成功
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 操作是否成功
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetStatus() const;
+
+                    /**
+                     * 设置操作是否成功
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _status 操作是否成功
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStatus(const bool& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取文件夹ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FolderId 文件夹ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetFolderId() const;
+
+                    /**
+                     * 设置文件夹ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _folderId 文件夹ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFolderId(const std::string& _folderId);
+
+                    /**
+                     * 判断参数 FolderId 是否已赋值
+                     * @return FolderId 是否已赋值
+                     * 
+                     */
+                    bool FolderIdHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 操作是否成功
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 文件夹ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_folderId;
+                    bool m_folderIdHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_WEDATA_V20250806_MODEL_SQLCONTENTACTIONRESULT_H_

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ EncryptionKey::EncryptionKey() :
     m_dEKCipherTextBlobHasBeenSet(false),
     m_isEnabledHasBeenSet(false),
     m_keyRegionHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_kMSClusterIdHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome EncryptionKey::Deserialize(const rapidjson::Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("KMSClusterId") && !value["KMSClusterId"].IsNull())
+    {
+        if (!value["KMSClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EncryptionKey.KMSClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kMSClusterId = string(value["KMSClusterId"].GetString());
+        m_kMSClusterIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void EncryptionKey::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kMSClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KMSClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kMSClusterId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void EncryptionKey::SetCreateTime(const string& _createTime)
 bool EncryptionKey::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+string EncryptionKey::GetKMSClusterId() const
+{
+    return m_kMSClusterId;
+}
+
+void EncryptionKey::SetKMSClusterId(const string& _kMSClusterId)
+{
+    m_kMSClusterId = _kMSClusterId;
+    m_kMSClusterIdHasBeenSet = true;
+}
+
+bool EncryptionKey::KMSClusterIdHasBeenSet() const
+{
+    return m_kMSClusterIdHasBeenSet;
 }
 

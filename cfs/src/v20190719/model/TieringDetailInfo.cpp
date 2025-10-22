@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,8 @@ using namespace TencentCloud::Cfs::V20190719::Model;
 using namespace std;
 
 TieringDetailInfo::TieringDetailInfo() :
-    m_tieringSizeInBytesHasBeenSet(false)
+    m_tieringSizeInBytesHasBeenSet(false),
+    m_secondaryTieringSizeInBytesHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome TieringDetailInfo::Deserialize(const rapidjson::Value &value
         m_tieringSizeInBytesHasBeenSet = true;
     }
 
+    if (value.HasMember("SecondaryTieringSizeInBytes") && !value["SecondaryTieringSizeInBytes"].IsNull())
+    {
+        if (!value["SecondaryTieringSizeInBytes"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TieringDetailInfo.SecondaryTieringSizeInBytes` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_secondaryTieringSizeInBytes = value["SecondaryTieringSizeInBytes"].GetInt64();
+        m_secondaryTieringSizeInBytesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void TieringDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "TieringSizeInBytes";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tieringSizeInBytes, allocator);
+    }
+
+    if (m_secondaryTieringSizeInBytesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecondaryTieringSizeInBytes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_secondaryTieringSizeInBytes, allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void TieringDetailInfo::SetTieringSizeInBytes(const int64_t& _tieringSizeInBytes
 bool TieringDetailInfo::TieringSizeInBytesHasBeenSet() const
 {
     return m_tieringSizeInBytesHasBeenSet;
+}
+
+int64_t TieringDetailInfo::GetSecondaryTieringSizeInBytes() const
+{
+    return m_secondaryTieringSizeInBytes;
+}
+
+void TieringDetailInfo::SetSecondaryTieringSizeInBytes(const int64_t& _secondaryTieringSizeInBytes)
+{
+    m_secondaryTieringSizeInBytes = _secondaryTieringSizeInBytes;
+    m_secondaryTieringSizeInBytesHasBeenSet = true;
+}
+
+bool TieringDetailInfo::SecondaryTieringSizeInBytesHasBeenSet() const
+{
+    return m_secondaryTieringSizeInBytesHasBeenSet;
 }
 

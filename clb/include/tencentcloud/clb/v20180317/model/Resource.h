@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -92,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用资源。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AvailabilitySet 可用资源。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ResourceAvailability> GetAvailabilitySet() const;
 
                     /**
                      * 设置可用资源。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _availabilitySet 可用资源。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAvailabilitySet(const std::vector<ResourceAvailability>& _availabilitySet);
@@ -117,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取运营商类型信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TypeSet 运营商类型信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TypeInfo> GetTypeSet() const;
 
                     /**
                      * 设置运营商类型信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _typeSet 运营商类型信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTypeSet(const std::vector<TypeInfo>& _typeSet);
@@ -156,14 +148,12 @@ namespace TencentCloud
 
                     /**
                      * 可用资源。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ResourceAvailability> m_availabilitySet;
                     bool m_availabilitySetHasBeenSet;
 
                     /**
                      * 运营商类型信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TypeInfo> m_typeSet;
                     bool m_typeSetHasBeenSet;

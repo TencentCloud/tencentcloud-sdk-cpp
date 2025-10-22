@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ AddressTemplateGroup::AddressTemplateGroup() :
     m_addressTemplateGroupIdHasBeenSet(false),
     m_addressTemplateIdSetHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
+    m_updatedTimeHasBeenSet(false),
     m_addressTemplateSetHasBeenSet(false),
     m_tagSetHasBeenSet(false)
 {
@@ -76,6 +77,16 @@ CoreInternalOutcome AddressTemplateGroup::Deserialize(const rapidjson::Value &va
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdatedTime") && !value["UpdatedTime"].IsNull())
+    {
+        if (!value["UpdatedTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AddressTemplateGroup.UpdatedTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updatedTime = string(value["UpdatedTime"].GetString());
+        m_updatedTimeHasBeenSet = true;
     }
 
     if (value.HasMember("AddressTemplateSet") && !value["AddressTemplateSet"].IsNull())
@@ -160,6 +171,14 @@ void AddressTemplateGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "CreatedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createdTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updatedTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdatedTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updatedTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_addressTemplateSetHasBeenSet)
@@ -257,6 +276,22 @@ void AddressTemplateGroup::SetCreatedTime(const string& _createdTime)
 bool AddressTemplateGroup::CreatedTimeHasBeenSet() const
 {
     return m_createdTimeHasBeenSet;
+}
+
+string AddressTemplateGroup::GetUpdatedTime() const
+{
+    return m_updatedTime;
+}
+
+void AddressTemplateGroup::SetUpdatedTime(const string& _updatedTime)
+{
+    m_updatedTime = _updatedTime;
+    m_updatedTimeHasBeenSet = true;
+}
+
+bool AddressTemplateGroup::UpdatedTimeHasBeenSet() const
+{
+    return m_updatedTimeHasBeenSet;
 }
 
 vector<AddressTemplateItem> AddressTemplateGroup::GetAddressTemplateSet() const

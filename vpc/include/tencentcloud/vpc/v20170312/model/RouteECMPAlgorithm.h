@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取 目标网段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DestinationCidrBlock  目标网段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDestinationCidrBlock() const;
 
                     /**
                      * 设置 目标网段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _destinationCidrBlock  目标网段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDestinationCidrBlock(const std::string& _destinationCidrBlock);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取支持的 ECMP算法有：ECMP_QUINTUPLE_HASH：五元组hash，ECMP_SOURCE_DESTINATION_IP_HASH：源和目的IP hash，ECMP_DESTINATION_IP_HASH：目的IP hash，ECMP_SOURCE_IP_HASH：源IP hash。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetRouteAlgorithm 支持的 ECMP算法有：ECMP_QUINTUPLE_HASH：五元组hash，ECMP_SOURCE_DESTINATION_IP_HASH：源和目的IP hash，ECMP_DESTINATION_IP_HASH：目的IP hash，ECMP_SOURCE_IP_HASH：源IP hash。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetRouteAlgorithm() const;
 
                     /**
                      * 设置支持的 ECMP算法有：ECMP_QUINTUPLE_HASH：五元组hash，ECMP_SOURCE_DESTINATION_IP_HASH：源和目的IP hash，ECMP_DESTINATION_IP_HASH：目的IP hash，ECMP_SOURCE_IP_HASH：源IP hash。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetRouteAlgorithm 支持的 ECMP算法有：ECMP_QUINTUPLE_HASH：五元组hash，ECMP_SOURCE_DESTINATION_IP_HASH：源和目的IP hash，ECMP_DESTINATION_IP_HASH：目的IP hash，ECMP_SOURCE_IP_HASH：源IP hash。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetRouteAlgorithm(const std::string& _subnetRouteAlgorithm);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      *  目标网段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_destinationCidrBlock;
                     bool m_destinationCidrBlockHasBeenSet;
 
                     /**
                      * 支持的 ECMP算法有：ECMP_QUINTUPLE_HASH：五元组hash，ECMP_SOURCE_DESTINATION_IP_HASH：源和目的IP hash，ECMP_DESTINATION_IP_HASH：目的IP hash，ECMP_SOURCE_IP_HASH：源IP hash。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetRouteAlgorithm;
                     bool m_subnetRouteAlgorithmHasBeenSet;

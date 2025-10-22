@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -267,18 +267,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoscalingGroupStatus 状态信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAutoscalingGroupStatus() const;
 
                     /**
                      * 设置状态信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _autoscalingGroupStatus 状态信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAutoscalingGroupStatus(const std::string& _autoscalingGroupStatus);
@@ -292,18 +288,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最大节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxNodesNum 最大节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxNodesNum() const;
 
                     /**
                      * 设置最大节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxNodesNum 最大节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxNodesNum(const int64_t& _maxNodesNum);
@@ -317,18 +309,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最小节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MinNodesNum 最小节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMinNodesNum() const;
 
                     /**
                      * 设置最小节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _minNodesNum 最小节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMinNodesNum(const int64_t& _minNodesNum);
@@ -342,18 +330,14 @@ namespace TencentCloud
 
                     /**
                      * 获取期望的节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DesiredNodesNum 期望的节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDesiredNodesNum() const;
 
                     /**
                      * 设置期望的节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _desiredNodesNum 期望的节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDesiredNodesNum(const int64_t& _desiredNodesNum);
@@ -392,18 +376,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点池osName
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodePoolOs 节点池osName
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNodePoolOs() const;
 
                     /**
                      * 设置节点池osName
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodePoolOs 节点池osName
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodePoolOs(const std::string& _nodePoolOs);
@@ -417,18 +397,14 @@ namespace TencentCloud
 
                     /**
                      * 获取容器的镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OsCustomizeType 容器的镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOsCustomizeType() const;
 
                     /**
                      * 设置容器的镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _osCustomizeType 容器的镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOsCustomizeType(const std::string& _osCustomizeType);
@@ -442,18 +418,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageId 镜像id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetImageId() const;
 
                     /**
                      * 设置镜像id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _imageId 镜像id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImageId(const std::string& _imageId);
@@ -467,18 +439,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群属于节点podCIDR大小自定义模式时，节点池需要带上pod数量属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DesiredPodNum 集群属于节点podCIDR大小自定义模式时，节点池需要带上pod数量属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDesiredPodNum() const;
 
                     /**
                      * 设置集群属于节点podCIDR大小自定义模式时，节点池需要带上pod数量属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _desiredPodNum 集群属于节点podCIDR大小自定义模式时，节点池需要带上pod数量属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDesiredPodNum(const int64_t& _desiredPodNum);
@@ -492,18 +460,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户自定义脚本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserScript 用户自定义脚本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserScript() const;
 
                     /**
                      * 设置用户自定义脚本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userScript 用户自定义脚本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserScript(const std::string& _userScript);
@@ -542,18 +506,14 @@ namespace TencentCloud
 
                     /**
                      * 获取删除保护开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeletionProtection 删除保护开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetDeletionProtection() const;
 
                     /**
                      * 设置删除保护开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deletionProtection 删除保护开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeletionProtection(const bool& _deletionProtection);
@@ -617,18 +577,14 @@ namespace TencentCloud
 
                     /**
                      * 获取dockerd --graph 指定值, 默认为 /var/lib/docker
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DockerGraphPath dockerd --graph 指定值, 默认为 /var/lib/docker
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDockerGraphPath() const;
 
                     /**
                      * 设置dockerd --graph 指定值, 默认为 /var/lib/docker
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dockerGraphPath dockerd --graph 指定值, 默认为 /var/lib/docker
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDockerGraphPath(const std::string& _dockerGraphPath);
@@ -667,18 +623,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否不可调度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Unschedulable 是否不可调度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUnschedulable() const;
 
                     /**
                      * 设置是否不可调度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _unschedulable 是否不可调度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUnschedulable(const int64_t& _unschedulable);
@@ -692,18 +644,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户自定义脚本,在UserScript前执行
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PreStartUserScript 用户自定义脚本,在UserScript前执行
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPreStartUserScript() const;
 
                     /**
                      * 设置用户自定义脚本,在UserScript前执行
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _preStartUserScript 用户自定义脚本,在UserScript前执行
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPreStartUserScript(const std::string& _preStartUserScript);
@@ -779,28 +727,24 @@ namespace TencentCloud
 
                     /**
                      * 状态信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_autoscalingGroupStatus;
                     bool m_autoscalingGroupStatusHasBeenSet;
 
                     /**
                      * 最大节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxNodesNum;
                     bool m_maxNodesNumHasBeenSet;
 
                     /**
                      * 最小节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_minNodesNum;
                     bool m_minNodesNumHasBeenSet;
 
                     /**
                      * 期望的节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_desiredNodesNum;
                     bool m_desiredNodesNumHasBeenSet;
@@ -814,35 +758,30 @@ namespace TencentCloud
 
                     /**
                      * 节点池osName
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nodePoolOs;
                     bool m_nodePoolOsHasBeenSet;
 
                     /**
                      * 容器的镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_osCustomizeType;
                     bool m_osCustomizeTypeHasBeenSet;
 
                     /**
                      * 镜像id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_imageId;
                     bool m_imageIdHasBeenSet;
 
                     /**
                      * 集群属于节点podCIDR大小自定义模式时，节点池需要带上pod数量属性
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_desiredPodNum;
                     bool m_desiredPodNumHasBeenSet;
 
                     /**
                      * 用户自定义脚本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userScript;
                     bool m_userScriptHasBeenSet;
@@ -856,7 +795,6 @@ namespace TencentCloud
 
                     /**
                      * 删除保护开关
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_deletionProtection;
                     bool m_deletionProtectionHasBeenSet;
@@ -877,7 +815,6 @@ namespace TencentCloud
 
                     /**
                      * dockerd --graph 指定值, 默认为 /var/lib/docker
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dockerGraphPath;
                     bool m_dockerGraphPathHasBeenSet;
@@ -891,14 +828,12 @@ namespace TencentCloud
 
                     /**
                      * 是否不可调度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_unschedulable;
                     bool m_unschedulableHasBeenSet;
 
                     /**
                      * 用户自定义脚本,在UserScript前执行
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_preStartUserScript;
                     bool m_preStartUserScriptHasBeenSet;

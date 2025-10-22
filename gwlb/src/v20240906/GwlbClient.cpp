@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -334,6 +334,49 @@ GwlbClient::DescribeGatewayLoadBalancersOutcomeCallable GwlbClient::DescribeGate
         [this, request]()
         {
             return this->DescribeGatewayLoadBalancers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GwlbClient::DescribeGatewayLoadBalancersResourcesOutcome GwlbClient::DescribeGatewayLoadBalancersResources(const DescribeGatewayLoadBalancersResourcesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGatewayLoadBalancersResources");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGatewayLoadBalancersResourcesResponse rsp = DescribeGatewayLoadBalancersResourcesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGatewayLoadBalancersResourcesOutcome(rsp);
+        else
+            return DescribeGatewayLoadBalancersResourcesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGatewayLoadBalancersResourcesOutcome(outcome.GetError());
+    }
+}
+
+void GwlbClient::DescribeGatewayLoadBalancersResourcesAsync(const DescribeGatewayLoadBalancersResourcesRequest& request, const DescribeGatewayLoadBalancersResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGatewayLoadBalancersResources(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GwlbClient::DescribeGatewayLoadBalancersResourcesOutcomeCallable GwlbClient::DescribeGatewayLoadBalancersResourcesCallable(const DescribeGatewayLoadBalancersResourcesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGatewayLoadBalancersResourcesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGatewayLoadBalancersResources(request);
         }
     );
 

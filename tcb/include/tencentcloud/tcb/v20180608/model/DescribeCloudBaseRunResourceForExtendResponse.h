@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取集群状态(creating/succ)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterStatus 集群状态(creating/succ)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterStatus() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取虚拟集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VirtualClusterId 虚拟集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVirtualClusterId() const;
@@ -78,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取vpc id信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId vpc id信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
@@ -94,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
@@ -110,9 +102,7 @@ namespace TencentCloud
 
                     /**
                      * 获取子网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetIds 子网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CloudBaseRunVpcSubnet> GetSubnetIds() const;
@@ -128,35 +118,30 @@ namespace TencentCloud
 
                     /**
                      * 集群状态(creating/succ)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterStatus;
                     bool m_clusterStatusHasBeenSet;
 
                     /**
                      * 虚拟集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_virtualClusterId;
                     bool m_virtualClusterIdHasBeenSet;
 
                     /**
                      * vpc id信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * 地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * 子网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CloudBaseRunVpcSubnet> m_subnetIds;
                     bool m_subnetIdsHasBeenSet;

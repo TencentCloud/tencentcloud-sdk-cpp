@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -77,18 +77,14 @@ namespace TencentCloud
 
                     /**
                      * 获取统计的间隔，单位是秒，即在首段包传输结束后，将数据传输轴按照本参数切分，每个分片独立计算慢速攻击。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Interval 统计的间隔，单位是秒，即在首段包传输结束后，将数据传输轴按照本参数切分，每个分片独立计算慢速攻击。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetInterval() const;
 
                     /**
                      * 设置统计的间隔，单位是秒，即在首段包传输结束后，将数据传输轴按照本参数切分，每个分片独立计算慢速攻击。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _interval 统计的间隔，单位是秒，即在首段包传输结束后，将数据传输轴按照本参数切分，每个分片独立计算慢速攻击。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInterval(const uint64_t& _interval);
@@ -102,18 +98,14 @@ namespace TencentCloud
 
                     /**
                      * 获取统计时应用的速率阈值，单位是bps，即如果本分片中的传输速率没达到本参数的值，则判定为慢速攻击，应用慢速攻击的处置方式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Threshold 统计时应用的速率阈值，单位是bps，即如果本分片中的传输速率没达到本参数的值，则判定为慢速攻击，应用慢速攻击的处置方式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetThreshold() const;
 
                     /**
                      * 设置统计时应用的速率阈值，单位是bps，即如果本分片中的传输速率没达到本参数的值，则判定为慢速攻击，应用慢速攻击的处置方式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _threshold 统计时应用的速率阈值，单位是bps，即如果本分片中的传输速率没达到本参数的值，则判定为慢速攻击，应用慢速攻击的处置方式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetThreshold(const uint64_t& _threshold);
@@ -137,14 +129,12 @@ namespace TencentCloud
 
                     /**
                      * 统计的间隔，单位是秒，即在首段包传输结束后，将数据传输轴按照本参数切分，每个分片独立计算慢速攻击。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_interval;
                     bool m_intervalHasBeenSet;
 
                     /**
                      * 统计时应用的速率阈值，单位是bps，即如果本分片中的传输速率没达到本参数的值，则判定为慢速攻击，应用慢速攻击的处置方式。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_threshold;
                     bool m_thresholdHasBeenSet;

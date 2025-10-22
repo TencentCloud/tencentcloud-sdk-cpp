@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,10 @@ Project::Project() :
     m_clustersHasBeenSet(false),
     m_paramsHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_modelHasBeenSet(false)
+    m_modelHasBeenSet(false),
+    m_secondModuleListHasBeenSet(false),
+    m_ownerHasBeenSet(false),
+    m_workspaceExtHasBeenSet(false)
 {
 }
 
@@ -217,6 +220,56 @@ CoreInternalOutcome Project::Deserialize(const rapidjson::Value &value)
         m_modelHasBeenSet = true;
     }
 
+    if (value.HasMember("SecondModuleList") && !value["SecondModuleList"].IsNull())
+    {
+        if (!value["SecondModuleList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Project.SecondModuleList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SecondModuleList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_secondModuleList.push_back((*itr).GetString());
+        }
+        m_secondModuleListHasBeenSet = true;
+    }
+
+    if (value.HasMember("Owner") && !value["Owner"].IsNull())
+    {
+        if (!value["Owner"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Project.Owner` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_owner.Deserialize(value["Owner"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_ownerHasBeenSet = true;
+    }
+
+    if (value.HasMember("WorkspaceExt") && !value["WorkspaceExt"].IsNull())
+    {
+        if (!value["WorkspaceExt"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Project.WorkspaceExt` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["WorkspaceExt"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            WorkspaceExt item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_workspaceExt.push_back(item);
+        }
+        m_workspaceExtHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -350,6 +403,43 @@ void Project::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "Model";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_model.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_secondModuleListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecondModuleList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_secondModuleList.begin(); itr != m_secondModuleList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_ownerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Owner";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_owner.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_workspaceExtHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkspaceExt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_workspaceExt.begin(); itr != m_workspaceExt.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -577,5 +667,53 @@ void Project::SetModel(const string& _model)
 bool Project::ModelHasBeenSet() const
 {
     return m_modelHasBeenSet;
+}
+
+vector<string> Project::GetSecondModuleList() const
+{
+    return m_secondModuleList;
+}
+
+void Project::SetSecondModuleList(const vector<string>& _secondModuleList)
+{
+    m_secondModuleList = _secondModuleList;
+    m_secondModuleListHasBeenSet = true;
+}
+
+bool Project::SecondModuleListHasBeenSet() const
+{
+    return m_secondModuleListHasBeenSet;
+}
+
+BaseUser Project::GetOwner() const
+{
+    return m_owner;
+}
+
+void Project::SetOwner(const BaseUser& _owner)
+{
+    m_owner = _owner;
+    m_ownerHasBeenSet = true;
+}
+
+bool Project::OwnerHasBeenSet() const
+{
+    return m_ownerHasBeenSet;
+}
+
+vector<WorkspaceExt> Project::GetWorkspaceExt() const
+{
+    return m_workspaceExt;
+}
+
+void Project::SetWorkspaceExt(const vector<WorkspaceExt>& _workspaceExt)
+{
+    m_workspaceExt = _workspaceExt;
+    m_workspaceExtHasBeenSet = true;
+}
+
+bool Project::WorkspaceExtHasBeenSet() const
+{
+    return m_workspaceExtHasBeenSet;
 }
 

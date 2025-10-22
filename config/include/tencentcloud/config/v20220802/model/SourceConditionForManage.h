@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取条件为空，合规：COMPLIANT，不合规：NON_COMPLIANT，无法应用：NOT_APPLICABLE
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EmptyAs 条件为空，合规：COMPLIANT，不合规：NON_COMPLIANT，无法应用：NOT_APPLICABLE
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEmptyAs() const;
 
                     /**
                      * 设置条件为空，合规：COMPLIANT，不合规：NON_COMPLIANT，无法应用：NOT_APPLICABLE
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _emptyAs 条件为空，合规：COMPLIANT，不合规：NON_COMPLIANT，无法应用：NOT_APPLICABLE
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEmptyAs(const std::string& _emptyAs);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SelectPath 配置路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSelectPath() const;
 
                     /**
                      * 设置配置路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _selectPath 配置路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSelectPath(const std::string& _selectPath);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取操作运算符
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Operator 操作运算符
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置操作运算符
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _operator 操作运算符
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOperator(const std::string& _operator);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否必须
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Required 是否必须
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetRequired() const;
 
                     /**
                      * 设置是否必须
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _required 是否必须
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRequired(const bool& _required);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取期望值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DesiredValue 期望值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDesiredValue() const;
 
                     /**
                      * 设置期望值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _desiredValue 期望值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDesiredValue(const std::string& _desiredValue);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 条件为空，合规：COMPLIANT，不合规：NON_COMPLIANT，无法应用：NOT_APPLICABLE
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_emptyAs;
                     bool m_emptyAsHasBeenSet;
 
                     /**
                      * 配置路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_selectPath;
                     bool m_selectPathHasBeenSet;
 
                     /**
                      * 操作运算符
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
                      * 是否必须
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_required;
                     bool m_requiredHasBeenSet;
 
                     /**
                      * 期望值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_desiredValue;
                     bool m_desiredValueHasBeenSet;

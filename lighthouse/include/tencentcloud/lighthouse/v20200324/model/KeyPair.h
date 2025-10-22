@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/lighthouse/v20200324/model/Tag.h>
 
 
 namespace TencentCloud
@@ -111,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取密钥对关联的实例 ID 列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssociatedInstanceIds 密钥对关联的实例 ID 列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAssociatedInstanceIds() const;
 
                     /**
                      * 设置密钥对关联的实例 ID 列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _associatedInstanceIds 密钥对关联的实例 ID 列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAssociatedInstanceIds(const std::vector<std::string>& _associatedInstanceIds);
@@ -184,6 +181,27 @@ namespace TencentCloud
                      */
                     bool PrivateKeyHasBeenSet() const;
 
+                    /**
+                     * 获取密钥对绑定的标签列表。
+                     * @return Tags 密钥对绑定的标签列表。
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置密钥对绑定的标签列表。
+                     * @param _tags 密钥对绑定的标签列表。
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,7 +224,6 @@ namespace TencentCloud
 
                     /**
                      * 密钥对关联的实例 ID 列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_associatedInstanceIds;
                     bool m_associatedInstanceIdsHasBeenSet;
@@ -224,6 +241,12 @@ namespace TencentCloud
                      */
                     std::string m_privateKey;
                     bool m_privateKeyHasBeenSet;
+
+                    /**
+                     * 密钥对绑定的标签列表。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

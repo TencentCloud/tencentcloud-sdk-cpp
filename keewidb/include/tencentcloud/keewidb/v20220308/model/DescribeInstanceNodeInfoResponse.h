@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,9 +62,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Proxy 节点信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Proxy Proxy 节点信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ProxyNodeInfo> GetProxy() const;
@@ -92,9 +90,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Redis 节点信息。该参数仅为产品兼容性而保留，并不具有实际意义，可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Redis Redis 节点信息。该参数仅为产品兼容性而保留，并不具有实际意义，可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RedisNodeInfo> GetRedis() const;
@@ -122,9 +118,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Tendis 节点信息。该参数仅为产品兼容性而保留，并不具有实际意义，可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tendis Tendis 节点信息。该参数仅为产品兼容性而保留，并不具有实际意义，可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<InstanceNodeInfo> GetTendis() const;
@@ -138,9 +132,7 @@ namespace TencentCloud
 
                     /**
                      * 获取KeewiDB 节点数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeeWiDBCount KeewiDB 节点数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetKeeWiDBCount() const;
@@ -154,9 +146,7 @@ namespace TencentCloud
 
                     /**
                      * 获取KeewiDB 节点信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeeWiDB KeewiDB 节点信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<InstanceNodeInfo> GetKeeWiDB() const;
@@ -178,7 +168,6 @@ namespace TencentCloud
 
                     /**
                      * Proxy 节点信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ProxyNodeInfo> m_proxy;
                     bool m_proxyHasBeenSet;
@@ -191,7 +180,6 @@ namespace TencentCloud
 
                     /**
                      * Redis 节点信息。该参数仅为产品兼容性而保留，并不具有实际意义，可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RedisNodeInfo> m_redis;
                     bool m_redisHasBeenSet;
@@ -204,21 +192,18 @@ namespace TencentCloud
 
                     /**
                      * Tendis 节点信息。该参数仅为产品兼容性而保留，并不具有实际意义，可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<InstanceNodeInfo> m_tendis;
                     bool m_tendisHasBeenSet;
 
                     /**
                      * KeewiDB 节点数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_keeWiDBCount;
                     bool m_keeWiDBCountHasBeenSet;
 
                     /**
                      * KeewiDB 节点信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<InstanceNodeInfo> m_keeWiDB;
                     bool m_keeWiDBHasBeenSet;

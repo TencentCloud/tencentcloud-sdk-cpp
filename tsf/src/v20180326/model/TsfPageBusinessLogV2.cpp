@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ TsfPageBusinessLogV2::TsfPageBusinessLogV2() :
     m_totalCountHasBeenSet(false),
     m_contentHasBeenSet(false),
     m_scrollIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_searchAfterHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,19 @@ CoreInternalOutcome TsfPageBusinessLogV2::Deserialize(const rapidjson::Value &va
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("SearchAfter") && !value["SearchAfter"].IsNull())
+    {
+        if (!value["SearchAfter"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TsfPageBusinessLogV2.SearchAfter` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SearchAfter"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_searchAfter.push_back((*itr).GetString());
+        }
+        m_searchAfterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -127,6 +141,19 @@ void TsfPageBusinessLogV2::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_searchAfterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SearchAfter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_searchAfter.begin(); itr != m_searchAfter.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -194,5 +221,21 @@ void TsfPageBusinessLogV2::SetStatus(const string& _status)
 bool TsfPageBusinessLogV2::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+vector<string> TsfPageBusinessLogV2::GetSearchAfter() const
+{
+    return m_searchAfter;
+}
+
+void TsfPageBusinessLogV2::SetSearchAfter(const vector<string>& _searchAfter)
+{
+    m_searchAfter = _searchAfter;
+    m_searchAfterHasBeenSet = true;
+}
+
+bool TsfPageBusinessLogV2::SearchAfterHasBeenSet() const
+{
+    return m_searchAfterHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,21 +67,21 @@ namespace TencentCloud
                     /**
                      * 获取部署资源类型
                      * @return ResourceType 部署资源类型
-                     * 
+                     * @deprecated
                      */
                     std::string GetResourceType() const;
 
                     /**
                      * 设置部署资源类型
                      * @param _resourceType 部署资源类型
-                     * 
+                     * @deprecated
                      */
                     void SetResourceType(const std::string& _resourceType);
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ResourceTypeHasBeenSet() const;
 
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool OldCertificateIdHasBeenSet() const;
 
                     /**
-                     * 获取分页偏移量，从0开始。
-                     * @return Offset 分页偏移量，从0开始。
+                     * 获取分页偏移量，默认值为0.
+                     * @return Offset 分页偏移量，默认值为0.
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置分页偏移量，从0开始。
-                     * @param _offset 分页偏移量，从0开始。
+                     * 设置分页偏移量，默认值为0.
+                     * @param _offset 分页偏移量，默认值为0.
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取每页数量，默认10。	
-                     * @return Limit 每页数量，默认10。	
+                     * 获取每页数量，默认10，最大值为200。	
+                     * @return Limit 每页数量，默认10，最大值为200。	
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置每页数量，默认10。	
-                     * @param _limit 每页数量，默认10。	
+                     * 设置每页数量，默认10，最大值为200。	
+                     * @param _limit 每页数量，默认10，最大值为200。	
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取是否异步
-                     * @return AsyncCache 是否异步
+                     * 获取是否异步，1表示是，0表示否，默认为0
+                     * @return AsyncCache 是否异步，1表示是，0表示否，默认为0
                      * 
                      */
                     int64_t GetAsyncCache() const;
 
                     /**
-                     * 设置是否异步
-                     * @param _asyncCache 是否异步
+                     * 设置是否异步，1表示是，0表示否，默认为0
+                     * @param _asyncCache 是否异步，1表示是，0表示否，默认为0
                      * 
                      */
                     void SetAsyncCache(const int64_t& _asyncCache);
@@ -244,19 +244,19 @@ namespace TencentCloud
                     bool m_oldCertificateIdHasBeenSet;
 
                     /**
-                     * 分页偏移量，从0开始。
+                     * 分页偏移量，默认值为0.
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 每页数量，默认10。	
+                     * 每页数量，默认10，最大值为200。	
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 是否异步
+                     * 是否异步，1表示是，0表示否，默认为0
                      */
                     int64_t m_asyncCache;
                     bool m_asyncCacheHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -550,7 +550,9 @@ namespace TencentCloud
                 DescribeCameraExtendInfoOutcomeCallable DescribeCameraExtendInfoCallable(const Model::DescribeCameraExtendInfoRequest& request);
 
                 /**
-                 *通过城市id查询工作空间列表
+                 *老微瓴后续不继续更新
+
+通过城市id查询工作空间列表
                  * @param req DescribeCityWorkspaceListRequest
                  * @return DescribeCityWorkspaceListOutcome
                  */

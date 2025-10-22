@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ DescribeDisasterRecoverGroupQuotaResponse::DescribeDisasterRecoverGroupQuotaResp
     m_currentNumHasBeenSet(false),
     m_cvmInHostGroupQuotaHasBeenSet(false),
     m_cvmInSwGroupQuotaHasBeenSet(false),
-    m_cvmInRackGroupQuotaHasBeenSet(false)
+    m_cvmInRackGroupQuotaHasBeenSet(false),
+    m_cvmInSwitchGroupQuotaHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,16 @@ CoreInternalOutcome DescribeDisasterRecoverGroupQuotaResponse::Deserialize(const
         m_cvmInRackGroupQuotaHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CvmInSwitchGroupQuota") && !rsp["CvmInSwitchGroupQuota"].IsNull())
+    {
+        if (!rsp["CvmInSwitchGroupQuota"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CvmInSwitchGroupQuota` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cvmInSwitchGroupQuota = rsp["CvmInSwitchGroupQuota"].GetInt64();
+        m_cvmInSwitchGroupQuotaHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -166,11 +177,19 @@ string DescribeDisasterRecoverGroupQuotaResponse::ToJsonString() const
         value.AddMember(iKey, m_cvmInRackGroupQuota, allocator);
     }
 
+    if (m_cvmInSwitchGroupQuotaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CvmInSwitchGroupQuota";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cvmInSwitchGroupQuota, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -226,6 +245,16 @@ int64_t DescribeDisasterRecoverGroupQuotaResponse::GetCvmInRackGroupQuota() cons
 bool DescribeDisasterRecoverGroupQuotaResponse::CvmInRackGroupQuotaHasBeenSet() const
 {
     return m_cvmInRackGroupQuotaHasBeenSet;
+}
+
+int64_t DescribeDisasterRecoverGroupQuotaResponse::GetCvmInSwitchGroupQuota() const
+{
+    return m_cvmInSwitchGroupQuota;
+}
+
+bool DescribeDisasterRecoverGroupQuotaResponse::CvmInSwitchGroupQuotaHasBeenSet() const
+{
+    return m_cvmInSwitchGroupQuotaHasBeenSet;
 }
 
 

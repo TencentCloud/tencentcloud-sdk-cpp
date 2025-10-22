@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取查询用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OsUser 查询用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOsUser() const;
 
                     /**
                      * 设置查询用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _osUser 查询用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOsUser(const std::string& _osUser);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取查询ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InitialQueryId 查询ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInitialQueryId() const;
 
                     /**
                      * 设置查询ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _initialQueryId 查询ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInitialQueryId(const std::string& _initialQueryId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取SQL语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Sql SQL语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSql() const;
 
                     /**
                      * 设置SQL语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sql SQL语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSql(const std::string& _sql);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QueryStartTime 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQueryStartTime() const;
 
                     /**
                      * 设置开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _queryStartTime 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQueryStartTime(const std::string& _queryStartTime);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取执行耗时
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DurationMs 执行耗时
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDurationMs() const;
 
                     /**
                      * 设置执行耗时
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _durationMs 执行耗时
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDurationMs(const int64_t& _durationMs);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取读取行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReadRows 读取行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetReadRows() const;
 
                     /**
                      * 设置读取行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _readRows 读取行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReadRows(const int64_t& _readRows);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取读取字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResultRows 读取字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetResultRows() const;
 
                     /**
                      * 设置读取字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resultRows 读取字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResultRows(const int64_t& _resultRows);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结果字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResultBytes 结果字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetResultBytes() const;
 
                     /**
                      * 设置结果字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resultBytes 结果字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResultBytes(const uint64_t& _resultBytes);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内存
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemoryUsage 内存
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMemoryUsage() const;
 
                     /**
                      * 设置内存
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _memoryUsage 内存
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMemoryUsage(const int64_t& _memoryUsage);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取初始查询IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InitialAddress 初始查询IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInitialAddress() const;
 
                     /**
                      * 设置初始查询IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _initialAddress 初始查询IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInitialAddress(const std::string& _initialAddress);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbName 数据库
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDbName() const;
 
                     /**
                      * 设置数据库
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dbName 数据库
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDbName(const std::string& _dbName);
@@ -323,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取sql类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SqlType sql类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSqlType() const;
 
                     /**
                      * 设置sql类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sqlType sql类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSqlType(const std::string& _sqlType);
@@ -348,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取catalog名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Catalog catalog名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCatalog() const;
 
                     /**
                      * 设置catalog名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _catalog catalog名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCatalog(const std::string& _catalog);
@@ -373,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return State 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _state 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetState(const std::string& _state);
@@ -396,105 +340,145 @@ namespace TencentCloud
                      */
                     bool StateHasBeenSet() const;
 
+                    /**
+                     * 获取是否是查询
+                     * @return IsQuery 是否是查询
+                     * 
+                     */
+                    bool GetIsQuery() const;
+
+                    /**
+                     * 设置是否是查询
+                     * @param _isQuery 是否是查询
+                     * 
+                     */
+                    void SetIsQuery(const bool& _isQuery);
+
+                    /**
+                     * 判断参数 IsQuery 是否已赋值
+                     * @return IsQuery 是否已赋值
+                     * 
+                     */
+                    bool IsQueryHasBeenSet() const;
+
+                    /**
+                     * 获取计算组
+                     * @return ComputeGroup 计算组
+                     * 
+                     */
+                    std::string GetComputeGroup() const;
+
+                    /**
+                     * 设置计算组
+                     * @param _computeGroup 计算组
+                     * 
+                     */
+                    void SetComputeGroup(const std::string& _computeGroup);
+
+                    /**
+                     * 判断参数 ComputeGroup 是否已赋值
+                     * @return ComputeGroup 是否已赋值
+                     * 
+                     */
+                    bool ComputeGroupHasBeenSet() const;
+
                 private:
 
                     /**
                      * 查询用户
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_osUser;
                     bool m_osUserHasBeenSet;
 
                     /**
                      * 查询ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_initialQueryId;
                     bool m_initialQueryIdHasBeenSet;
 
                     /**
                      * SQL语句
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sql;
                     bool m_sqlHasBeenSet;
 
                     /**
                      * 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_queryStartTime;
                     bool m_queryStartTimeHasBeenSet;
 
                     /**
                      * 执行耗时
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_durationMs;
                     bool m_durationMsHasBeenSet;
 
                     /**
                      * 读取行数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_readRows;
                     bool m_readRowsHasBeenSet;
 
                     /**
                      * 读取字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_resultRows;
                     bool m_resultRowsHasBeenSet;
 
                     /**
                      * 结果字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_resultBytes;
                     bool m_resultBytesHasBeenSet;
 
                     /**
                      * 内存
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_memoryUsage;
                     bool m_memoryUsageHasBeenSet;
 
                     /**
                      * 初始查询IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_initialAddress;
                     bool m_initialAddressHasBeenSet;
 
                     /**
                      * 数据库
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dbName;
                     bool m_dbNameHasBeenSet;
 
                     /**
                      * sql类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sqlType;
                     bool m_sqlTypeHasBeenSet;
 
                     /**
                      * catalog名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_catalog;
                     bool m_catalogHasBeenSet;
 
                     /**
                      * 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
+
+                    /**
+                     * 是否是查询
+                     */
+                    bool m_isQuery;
+                    bool m_isQueryHasBeenSet;
+
+                    /**
+                     * 计算组
+                     */
+                    std::string m_computeGroup;
+                    bool m_computeGroupHasBeenSet;
 
                 };
             }

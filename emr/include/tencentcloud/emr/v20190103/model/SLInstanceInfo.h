@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * EMR Lite HBase 实例信息
+                * Serverless HBase实例信息
                 */
                 class SLInstanceInfo : public AbstractModel
                 {
@@ -110,6 +110,27 @@ namespace TencentCloud
                      * 
                      */
                     bool StatusDescHasBeenSet() const;
+
+                    /**
+                     * 获取健康状态
+                     * @return HealthStatus 健康状态
+                     * 
+                     */
+                    std::string GetHealthStatus() const;
+
+                    /**
+                     * 设置健康状态
+                     * @param _healthStatus 健康状态
+                     * 
+                     */
+                    void SetHealthStatus(const std::string& _healthStatus);
+
+                    /**
+                     * 判断参数 HealthStatus 是否已赋值
+                     * @return HealthStatus 是否已赋值
+                     * 
+                     */
+                    bool HealthStatusHasBeenSet() const;
 
                     /**
                      * 获取实例名称
@@ -371,6 +392,90 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取自动续费标记， 0：表示通知即将过期，但不自动续费 1：表示通知即将过期，而且自动续费 2：表示不通知即将过期，也不自动续费，若业务无续费概念，设置为0
+                     * @return AutoRenewFlag 自动续费标记， 0：表示通知即将过期，但不自动续费 1：表示通知即将过期，而且自动续费 2：表示不通知即将过期，也不自动续费，若业务无续费概念，设置为0
+                     * 
+                     */
+                    uint64_t GetAutoRenewFlag() const;
+
+                    /**
+                     * 设置自动续费标记， 0：表示通知即将过期，但不自动续费 1：表示通知即将过期，而且自动续费 2：表示不通知即将过期，也不自动续费，若业务无续费概念，设置为0
+                     * @param _autoRenewFlag 自动续费标记， 0：表示通知即将过期，但不自动续费 1：表示通知即将过期，而且自动续费 2：表示不通知即将过期，也不自动续费，若业务无续费概念，设置为0
+                     * 
+                     */
+                    void SetAutoRenewFlag(const uint64_t& _autoRenewFlag);
+
+                    /**
+                     * 判断参数 AutoRenewFlag 是否已赋值
+                     * @return AutoRenewFlag 是否已赋值
+                     * 
+                     */
+                    bool AutoRenewFlagHasBeenSet() const;
+
+                    /**
+                     * 获取隔离时间，未隔离返回0000-00-00 00:00:00。
+                     * @return IsolateTime 隔离时间，未隔离返回0000-00-00 00:00:00。
+                     * 
+                     */
+                    std::string GetIsolateTime() const;
+
+                    /**
+                     * 设置隔离时间，未隔离返回0000-00-00 00:00:00。
+                     * @param _isolateTime 隔离时间，未隔离返回0000-00-00 00:00:00。
+                     * 
+                     */
+                    void SetIsolateTime(const std::string& _isolateTime);
+
+                    /**
+                     * 判断参数 IsolateTime 是否已赋值
+                     * @return IsolateTime 是否已赋值
+                     * 
+                     */
+                    bool IsolateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取过期时间，后付费返回0000-00-00 00:00:00
+                     * @return ExpireTime 过期时间，后付费返回0000-00-00 00:00:00
+                     * 
+                     */
+                    std::string GetExpireTime() const;
+
+                    /**
+                     * 设置过期时间，后付费返回0000-00-00 00:00:00
+                     * @param _expireTime 过期时间，后付费返回0000-00-00 00:00:00
+                     * 
+                     */
+                    void SetExpireTime(const std::string& _expireTime);
+
+                    /**
+                     * 判断参数 ExpireTime 是否已赋值
+                     * @return ExpireTime 是否已赋值
+                     * 
+                     */
+                    bool ExpireTimeHasBeenSet() const;
+
+                    /**
+                     * 获取主备部署角色
+                     * @return DeployRole 主备部署角色
+                     * 
+                     */
+                    std::string GetDeployRole() const;
+
+                    /**
+                     * 设置主备部署角色
+                     * @param _deployRole 主备部署角色
+                     * 
+                     */
+                    void SetDeployRole(const std::string& _deployRole);
+
+                    /**
+                     * 判断参数 DeployRole 是否已赋值
+                     * @return DeployRole 是否已赋值
+                     * 
+                     */
+                    bool DeployRoleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -390,6 +495,12 @@ namespace TencentCloud
                      */
                     std::string m_statusDesc;
                     bool m_statusDescHasBeenSet;
+
+                    /**
+                     * 健康状态
+                     */
+                    std::string m_healthStatus;
+                    bool m_healthStatusHasBeenSet;
 
                     /**
                      * 实例名称
@@ -464,6 +575,30 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 自动续费标记， 0：表示通知即将过期，但不自动续费 1：表示通知即将过期，而且自动续费 2：表示不通知即将过期，也不自动续费，若业务无续费概念，设置为0
+                     */
+                    uint64_t m_autoRenewFlag;
+                    bool m_autoRenewFlagHasBeenSet;
+
+                    /**
+                     * 隔离时间，未隔离返回0000-00-00 00:00:00。
+                     */
+                    std::string m_isolateTime;
+                    bool m_isolateTimeHasBeenSet;
+
+                    /**
+                     * 过期时间，后付费返回0000-00-00 00:00:00
+                     */
+                    std::string m_expireTime;
+                    bool m_expireTimeHasBeenSet;
+
+                    /**
+                     * 主备部署角色
+                     */
+                    std::string m_deployRole;
+                    bool m_deployRoleHasBeenSet;
 
                 };
             }

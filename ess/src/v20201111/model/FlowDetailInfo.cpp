@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,9 @@ FlowDetailInfo::FlowDetailInfo() :
     m_createdOnHasBeenSet(false),
     m_flowApproverInfosHasBeenSet(false),
     m_ccInfosHasBeenSet(false),
-    m_creatorHasBeenSet(false)
+    m_creatorHasBeenSet(false),
+    m_userFlowTypeHasBeenSet(false),
+    m_templateIdHasBeenSet(false)
 {
 }
 
@@ -159,6 +161,33 @@ CoreInternalOutcome FlowDetailInfo::Deserialize(const rapidjson::Value &value)
         m_creatorHasBeenSet = true;
     }
 
+    if (value.HasMember("UserFlowType") && !value["UserFlowType"].IsNull())
+    {
+        if (!value["UserFlowType"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowDetailInfo.UserFlowType` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_userFlowType.Deserialize(value["UserFlowType"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_userFlowTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TemplateId") && !value["TemplateId"].IsNull())
+    {
+        if (!value["TemplateId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowDetailInfo.TemplateId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_templateId = string(value["TemplateId"].GetString());
+        m_templateIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -258,6 +287,23 @@ void FlowDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Creator";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_creator.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userFlowTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserFlowType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_userFlowType.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_templateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -421,5 +467,37 @@ void FlowDetailInfo::SetCreator(const string& _creator)
 bool FlowDetailInfo::CreatorHasBeenSet() const
 {
     return m_creatorHasBeenSet;
+}
+
+UserFlowType FlowDetailInfo::GetUserFlowType() const
+{
+    return m_userFlowType;
+}
+
+void FlowDetailInfo::SetUserFlowType(const UserFlowType& _userFlowType)
+{
+    m_userFlowType = _userFlowType;
+    m_userFlowTypeHasBeenSet = true;
+}
+
+bool FlowDetailInfo::UserFlowTypeHasBeenSet() const
+{
+    return m_userFlowTypeHasBeenSet;
+}
+
+string FlowDetailInfo::GetTemplateId() const
+{
+    return m_templateId;
+}
+
+void FlowDetailInfo::SetTemplateId(const string& _templateId)
+{
+    m_templateId = _templateId;
+    m_templateIdHasBeenSet = true;
+}
+
+bool FlowDetailInfo::TemplateIdHasBeenSet() const
+{
+    return m_templateIdHasBeenSet;
 }
 

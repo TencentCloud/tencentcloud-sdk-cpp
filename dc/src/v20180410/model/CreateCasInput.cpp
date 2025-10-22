@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,10 @@ CreateCasInput::CreateCasInput() :
     m_idcTypeHasBeenSet(false),
     m_bandwidthHasBeenSet(false),
     m_telephoneHasBeenSet(false),
-    m_remarksHasBeenSet(false)
+    m_remarksHasBeenSet(false),
+    m_arRegionHasBeenSet(false),
+    m_idcPointTypeHasBeenSet(false),
+    m_bIapLinkProtectedHasBeenSet(false)
 {
 }
 
@@ -95,6 +98,36 @@ CoreInternalOutcome CreateCasInput::Deserialize(const rapidjson::Value &value)
         m_remarksHasBeenSet = true;
     }
 
+    if (value.HasMember("ArRegion") && !value["ArRegion"].IsNull())
+    {
+        if (!value["ArRegion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateCasInput.ArRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_arRegion = string(value["ArRegion"].GetString());
+        m_arRegionHasBeenSet = true;
+    }
+
+    if (value.HasMember("IdcPointType") && !value["IdcPointType"].IsNull())
+    {
+        if (!value["IdcPointType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateCasInput.IdcPointType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_idcPointType = string(value["IdcPointType"].GetString());
+        m_idcPointTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("BIapLinkProtected") && !value["BIapLinkProtected"].IsNull())
+    {
+        if (!value["BIapLinkProtected"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateCasInput.BIapLinkProtected` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_bIapLinkProtected = value["BIapLinkProtected"].GetBool();
+        m_bIapLinkProtectedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +181,30 @@ void CreateCasInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Remarks";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_remarks.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_arRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ArRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_arRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idcPointTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdcPointType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_idcPointType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bIapLinkProtectedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BIapLinkProtected";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bIapLinkProtected, allocator);
     }
 
 }
@@ -247,5 +304,53 @@ void CreateCasInput::SetRemarks(const string& _remarks)
 bool CreateCasInput::RemarksHasBeenSet() const
 {
     return m_remarksHasBeenSet;
+}
+
+string CreateCasInput::GetArRegion() const
+{
+    return m_arRegion;
+}
+
+void CreateCasInput::SetArRegion(const string& _arRegion)
+{
+    m_arRegion = _arRegion;
+    m_arRegionHasBeenSet = true;
+}
+
+bool CreateCasInput::ArRegionHasBeenSet() const
+{
+    return m_arRegionHasBeenSet;
+}
+
+string CreateCasInput::GetIdcPointType() const
+{
+    return m_idcPointType;
+}
+
+void CreateCasInput::SetIdcPointType(const string& _idcPointType)
+{
+    m_idcPointType = _idcPointType;
+    m_idcPointTypeHasBeenSet = true;
+}
+
+bool CreateCasInput::IdcPointTypeHasBeenSet() const
+{
+    return m_idcPointTypeHasBeenSet;
+}
+
+bool CreateCasInput::GetBIapLinkProtected() const
+{
+    return m_bIapLinkProtected;
+}
+
+void CreateCasInput::SetBIapLinkProtected(const bool& _bIapLinkProtected)
+{
+    m_bIapLinkProtected = _bIapLinkProtected;
+    m_bIapLinkProtectedHasBeenSet = true;
+}
+
+bool CreateCasInput::BIapLinkProtectedHasBeenSet() const
+{
+    return m_bIapLinkProtectedHasBeenSet;
 }
 

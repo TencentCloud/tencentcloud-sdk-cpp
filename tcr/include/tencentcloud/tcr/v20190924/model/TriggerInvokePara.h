@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppId() const;
 
                     /**
                      * 设置AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appId AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppId(const std::string& _appId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取TKE集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterId TKE集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置TKE集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterId TKE集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取TKE集群命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Namespace TKE集群命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置TKE集群命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _namespace TKE集群命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNamespace(const std::string& _namespace);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取TKE集群工作负载名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceName TKE集群工作负载名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceName() const;
 
                     /**
                      * 设置TKE集群工作负载名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceName TKE集群工作负载名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceName(const std::string& _serviceName);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取TKE集群工作负载中容器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerName TKE集群工作负载中容器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContainerName() const;
 
                     /**
                      * 设置TKE集群工作负载中容器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _containerName TKE集群工作负载中容器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContainerName(const std::string& _containerName);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取TKE集群地域数字ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterRegion TKE集群地域数字ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetClusterRegion() const;
 
                     /**
                      * 设置TKE集群地域数字ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterRegion TKE集群地域数字ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterRegion(const int64_t& _clusterRegion);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
                      * TKE集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
                      * TKE集群命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
 
                     /**
                      * TKE集群工作负载名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceName;
                     bool m_serviceNameHasBeenSet;
 
                     /**
                      * TKE集群工作负载中容器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_containerName;
                     bool m_containerNameHasBeenSet;
 
                     /**
                      * TKE集群地域数字ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_clusterRegion;
                     bool m_clusterRegionHasBeenSet;

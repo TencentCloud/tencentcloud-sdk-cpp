@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取租户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TenantId 租户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTenantId() const;
 
                     /**
                      * 设置租户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tenantId 租户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTenantId(const std::string& _tenantId);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户池ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserStoreId 用户池ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserStoreId() const;
 
                     /**
                      * 设置用户池ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userStoreId 用户池ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserStoreId(const std::string& _userStoreId);
@@ -119,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventCode 事件编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEventCode() const;
 
                     /**
                      * 设置事件编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eventCode 事件编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEventCode(const std::string& _eventCode);
@@ -144,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件发生时间戳，单位：毫秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventDate 事件发生时间戳，单位：毫秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEventDate() const;
 
                     /**
                      * 设置事件发生时间戳，单位：毫秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eventDate 事件发生时间戳，单位：毫秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEventDate(const int64_t& _eventDate);
@@ -197,12 +181,10 @@ namespace TencentCloud
 
 <li> **TENANT** </li>  租户
 <li> **USER** </li>  用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Participant 事件参与者
 
 <li> **TENANT** </li>  租户
 <li> **USER** </li>  用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParticipant() const;
@@ -212,12 +194,10 @@ namespace TencentCloud
 
 <li> **TENANT** </li>  租户
 <li> **USER** </li>  用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _participant 事件参与者
 
 <li> **TENANT** </li>  租户
 <li> **USER** </li>  用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParticipant(const std::string& _participant);
@@ -231,18 +211,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用clientId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationClientId 应用clientId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplicationClientId() const;
 
                     /**
                      * 设置应用clientId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationClientId 应用clientId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationClientId(const std::string& _applicationClientId);
@@ -256,18 +232,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationName 应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplicationName() const;
 
                     /**
                      * 设置应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationName 应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationName(const std::string& _applicationName);
@@ -281,18 +253,14 @@ namespace TencentCloud
 
                     /**
                      * 获取认证源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthSourceId 认证源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAuthSourceId() const;
 
                     /**
                      * 设置认证源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _authSourceId 认证源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuthSourceId(const std::string& _authSourceId);
@@ -306,18 +274,14 @@ namespace TencentCloud
 
                     /**
                      * 获取认证源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthSourceName 认证源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAuthSourceName() const;
 
                     /**
                      * 设置认证源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _authSourceName 认证源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuthSourceName(const std::string& _authSourceName);
@@ -331,18 +295,14 @@ namespace TencentCloud
 
                     /**
                      * 获取认证源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthSourceType 认证源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAuthSourceType() const;
 
                     /**
                      * 设置认证源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _authSourceType 认证源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuthSourceType(const std::string& _authSourceType);
@@ -356,18 +316,14 @@ namespace TencentCloud
 
                     /**
                      * 获取认证源类别
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthSourceCategory 认证源类别
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAuthSourceCategory() const;
 
                     /**
                      * 设置认证源类别
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _authSourceCategory 认证源类别
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuthSourceCategory(const std::string& _authSourceCategory);
@@ -381,18 +337,14 @@ namespace TencentCloud
 
                     /**
                      * 获取IP地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ip IP地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置IP地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ip IP地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -406,18 +358,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户代理
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserAgent 用户代理
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserAgent() const;
 
                     /**
                      * 设置用户代理
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userAgent 用户代理
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserAgent(const std::string& _userAgent);
@@ -431,18 +379,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserId 用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userId 用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -514,28 +458,24 @@ namespace TencentCloud
 
                     /**
                      * 租户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tenantId;
                     bool m_tenantIdHasBeenSet;
 
                     /**
                      * 用户池ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userStoreId;
                     bool m_userStoreIdHasBeenSet;
 
                     /**
                      * 事件编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_eventCode;
                     bool m_eventCodeHasBeenSet;
 
                     /**
                      * 事件发生时间戳，单位：毫秒
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_eventDate;
                     bool m_eventDateHasBeenSet;
@@ -552,70 +492,60 @@ namespace TencentCloud
 
 <li> **TENANT** </li>  租户
 <li> **USER** </li>  用户
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_participant;
                     bool m_participantHasBeenSet;
 
                     /**
                      * 应用clientId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applicationClientId;
                     bool m_applicationClientIdHasBeenSet;
 
                     /**
                      * 应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applicationName;
                     bool m_applicationNameHasBeenSet;
 
                     /**
                      * 认证源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_authSourceId;
                     bool m_authSourceIdHasBeenSet;
 
                     /**
                      * 认证源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_authSourceName;
                     bool m_authSourceNameHasBeenSet;
 
                     /**
                      * 认证源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_authSourceType;
                     bool m_authSourceTypeHasBeenSet;
 
                     /**
                      * 认证源类别
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_authSourceCategory;
                     bool m_authSourceCategoryHasBeenSet;
 
                     /**
                      * IP地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
                      * 用户代理
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userAgent;
                     bool m_userAgentHasBeenSet;
 
                     /**
                      * 用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;

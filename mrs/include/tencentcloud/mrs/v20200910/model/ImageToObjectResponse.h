@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,9 +47,7 @@ namespace TencentCloud
 
                     /**
                      * 获取报告结构化结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Template 报告结构化结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Template GetTemplate() const;
@@ -63,9 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 获取多级分类结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TextTypeList 多级分类结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TextType> GetTextTypeList() const;
@@ -81,14 +77,12 @@ namespace TencentCloud
 
                     /**
                      * 报告结构化结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Template m_template;
                     bool m_templateHasBeenSet;
 
                     /**
                      * 多级分类结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TextType> m_textTypeList;
                     bool m_textTypeListHasBeenSet;

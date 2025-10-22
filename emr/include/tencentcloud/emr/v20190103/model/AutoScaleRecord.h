@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -237,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取补偿扩容，0表示不开启，1表示开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompensateFlag 补偿扩容，0表示不开启，1表示开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCompensateFlag() const;
 
                     /**
                      * 设置补偿扩容，0表示不开启，1表示开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _compensateFlag 补偿扩容，0表示不开启，1表示开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCompensateFlag(const int64_t& _compensateFlag);
@@ -262,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取补偿次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompensateCount 补偿次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCompensateCount() const;
 
                     /**
                      * 设置补偿次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _compensateCount 补偿次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCompensateCount(const int64_t& _compensateCount);
@@ -287,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取重试次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RetryCount 重试次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRetryCount() const;
 
                     /**
                      * 设置重试次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _retryCount 重试次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRetryCount(const uint64_t& _retryCount);
@@ -312,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取重试信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RetryInfo 重试信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRetryInfo() const;
 
                     /**
                      * 设置重试信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _retryInfo 重试信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRetryInfo(const std::string& _retryInfo);
@@ -337,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取重试英文描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RetryEnReason 重试英文描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRetryEnReason() const;
 
                     /**
                      * 设置重试英文描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _retryEnReason 重试英文描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRetryEnReason(const std::string& _retryEnReason);
@@ -362,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取重试描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RetryReason 重试描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRetryReason() const;
 
                     /**
                      * 设置重试描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _retryReason 重试描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRetryReason(const std::string& _retryReason);
@@ -443,42 +419,36 @@ namespace TencentCloud
 
                     /**
                      * 补偿扩容，0表示不开启，1表示开启
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_compensateFlag;
                     bool m_compensateFlagHasBeenSet;
 
                     /**
                      * 补偿次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_compensateCount;
                     bool m_compensateCountHasBeenSet;
 
                     /**
                      * 重试次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_retryCount;
                     bool m_retryCountHasBeenSet;
 
                     /**
                      * 重试信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_retryInfo;
                     bool m_retryInfoHasBeenSet;
 
                     /**
                      * 重试英文描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_retryEnReason;
                     bool m_retryEnReasonHasBeenSet;
 
                     /**
                      * 重试描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_retryReason;
                     bool m_retryReasonHasBeenSet;

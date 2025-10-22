@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -196,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取域名备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 域名备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置域名备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 域名备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -473,18 +469,14 @@ namespace TencentCloud
 
                     /**
                      * 获取域名实际使用的NS列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActualNsList 域名实际使用的NS列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetActualNsList() const;
 
                     /**
                      * 设置域名实际使用的NS列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _actualNsList 域名实际使用的NS列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActualNsList(const std::vector<std::string>& _actualNsList);
@@ -519,18 +511,14 @@ namespace TencentCloud
 
                     /**
                      * 获取域名所有者的账户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OwnerNick 域名所有者的账户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOwnerNick() const;
 
                     /**
                      * 设置域名所有者的账户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ownerNick 域名所有者的账户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOwnerNick(const std::string& _ownerNick);
@@ -544,18 +532,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否在付费套餐宽限期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsGracePeriod 是否在付费套餐宽限期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIsGracePeriod() const;
 
                     /**
                      * 设置是否在付费套餐宽限期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isGracePeriod 是否在付费套餐宽限期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsGracePeriod(const std::string& _isGracePeriod);
@@ -569,18 +553,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否在付费套餐缓冲期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VipBuffered 是否在付费套餐缓冲期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVipBuffered() const;
 
                     /**
                      * 设置是否在付费套餐缓冲期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vipBuffered 是否在付费套餐缓冲期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVipBuffered(const std::string& _vipBuffered);
@@ -694,18 +674,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否是子域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsSubDomain 是否是子域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsSubDomain() const;
 
                     /**
                      * 设置是否是子域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isSubDomain 是否是子域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsSubDomain(const bool& _isSubDomain);
@@ -719,18 +695,14 @@ namespace TencentCloud
 
                     /**
                      * 获取域名关联的标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagList 域名关联的标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TagItem> GetTagList() const;
 
                     /**
                      * 设置域名关联的标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tagList 域名关联的标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTagList(const std::vector<TagItem>& _tagList);
@@ -830,7 +802,6 @@ namespace TencentCloud
 
                     /**
                      * 域名备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
@@ -909,7 +880,6 @@ namespace TencentCloud
 
                     /**
                      * 域名实际使用的NS列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_actualNsList;
                     bool m_actualNsListHasBeenSet;
@@ -922,21 +892,18 @@ namespace TencentCloud
 
                     /**
                      * 域名所有者的账户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ownerNick;
                     bool m_ownerNickHasBeenSet;
 
                     /**
                      * 是否在付费套餐宽限期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_isGracePeriod;
                     bool m_isGracePeriodHasBeenSet;
 
                     /**
                      * 是否在付费套餐缓冲期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vipBuffered;
                     bool m_vipBufferedHasBeenSet;
@@ -971,14 +938,12 @@ namespace TencentCloud
 
                     /**
                      * 是否是子域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isSubDomain;
                     bool m_isSubDomainHasBeenSet;
 
                     /**
                      * 域名关联的标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TagItem> m_tagList;
                     bool m_tagListHasBeenSet;

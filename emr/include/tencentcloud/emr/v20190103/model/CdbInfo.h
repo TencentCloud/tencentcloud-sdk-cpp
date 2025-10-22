@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceName 数据库实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置数据库实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceName 数据库实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ip 数据库IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置数据库IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ip 数据库IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port 数据库端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置数据库端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _port 数据库端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库内存规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemSize 数据库内存规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMemSize() const;
 
                     /**
                      * 设置数据库内存规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _memSize 数据库内存规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMemSize(const int64_t& _memSize);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库磁盘规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Volume 数据库磁盘规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetVolume() const;
 
                     /**
                      * 设置数据库磁盘规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _volume 数据库磁盘规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVolume(const int64_t& _volume);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Service 服务标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetService() const;
 
                     /**
                      * 设置服务标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _service 服务标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetService(const std::string& _service);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireTime 过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expireTime 过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取申请时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplyTime 申请时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplyTime() const;
 
                     /**
                      * 设置申请时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applyTime 申请时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplyTime(const std::string& _applyTime);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取付费类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayType 付费类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPayType() const;
 
                     /**
                      * 设置付费类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _payType 付费类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPayType(const int64_t& _payType);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取过期标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireFlag 过期标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetExpireFlag() const;
 
                     /**
                      * 设置过期标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expireFlag 过期标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpireFlag(const bool& _expireFlag);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 数据库状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置数据库状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 数据库状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -323,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取续费标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsAutoRenew 续费标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsAutoRenew() const;
 
                     /**
                      * 设置续费标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isAutoRenew 续费标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsAutoRenew(const int64_t& _isAutoRenew);
@@ -348,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SerialNo 数据库字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSerialNo() const;
 
                     /**
                      * 设置数据库字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serialNo 数据库字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSerialNo(const std::string& _serialNo);
@@ -373,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ZoneId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneId ZoneId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
                      * 设置ZoneId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zoneId ZoneId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZoneId(const int64_t& _zoneId);
@@ -398,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取RegionId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionId RegionId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRegionId() const;
 
                     /**
                      * 设置RegionId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionId RegionId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionId(const int64_t& _regionId);
@@ -425,105 +365,90 @@ namespace TencentCloud
 
                     /**
                      * 数据库实例
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
                      * 数据库IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
                      * 数据库端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
                      * 数据库内存规格
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_memSize;
                     bool m_memSizeHasBeenSet;
 
                     /**
                      * 数据库磁盘规格
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_volume;
                     bool m_volumeHasBeenSet;
 
                     /**
                      * 服务标识
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_service;
                     bool m_serviceHasBeenSet;
 
                     /**
                      * 过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
                      * 申请时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applyTime;
                     bool m_applyTimeHasBeenSet;
 
                     /**
                      * 付费类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_payType;
                     bool m_payTypeHasBeenSet;
 
                     /**
                      * 过期标识
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_expireFlag;
                     bool m_expireFlagHasBeenSet;
 
                     /**
                      * 数据库状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 续费标识
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isAutoRenew;
                     bool m_isAutoRenewHasBeenSet;
 
                     /**
                      * 数据库字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serialNo;
                     bool m_serialNoHasBeenSet;
 
                     /**
                      * ZoneId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
                      * RegionId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_regionId;
                     bool m_regionIdHasBeenSet;

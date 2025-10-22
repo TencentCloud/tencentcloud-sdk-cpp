@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,8 @@ AlarmReceiverInfo::AlarmReceiverInfo() :
     m_wecomHasBeenSet(false),
     m_httpHasBeenSet(false),
     m_wecomGroupHasBeenSet(false),
-    m_larkGroupHasBeenSet(false)
+    m_larkGroupHasBeenSet(false),
+    m_alarmMessageSendResultHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,16 @@ CoreInternalOutcome AlarmReceiverInfo::Deserialize(const rapidjson::Value &value
         m_larkGroupHasBeenSet = true;
     }
 
+    if (value.HasMember("AlarmMessageSendResult") && !value["AlarmMessageSendResult"].IsNull())
+    {
+        if (!value["AlarmMessageSendResult"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmReceiverInfo.AlarmMessageSendResult` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_alarmMessageSendResult = string(value["AlarmMessageSendResult"].GetString());
+        m_alarmMessageSendResultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +235,14 @@ void AlarmReceiverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "LarkGroup";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_larkGroup, allocator);
+    }
+
+    if (m_alarmMessageSendResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmMessageSendResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_alarmMessageSendResult.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +406,21 @@ void AlarmReceiverInfo::SetLarkGroup(const uint64_t& _larkGroup)
 bool AlarmReceiverInfo::LarkGroupHasBeenSet() const
 {
     return m_larkGroupHasBeenSet;
+}
+
+string AlarmReceiverInfo::GetAlarmMessageSendResult() const
+{
+    return m_alarmMessageSendResult;
+}
+
+void AlarmReceiverInfo::SetAlarmMessageSendResult(const string& _alarmMessageSendResult)
+{
+    m_alarmMessageSendResult = _alarmMessageSendResult;
+    m_alarmMessageSendResultHasBeenSet = true;
+}
+
+bool AlarmReceiverInfo::AlarmMessageSendResultHasBeenSet() const
+{
+    return m_alarmMessageSendResultHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,8 @@ ModifyCloudNativeAPIGatewayRequest::ModifyCloudNativeAPIGatewayRequest() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_enableClsHasBeenSet(false),
-    m_internetPayModeHasBeenSet(false)
+    m_internetPayModeHasBeenSet(false),
+    m_deleteProtectHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string ModifyCloudNativeAPIGatewayRequest::ToJsonString() const
         string key = "InternetPayMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_internetPayMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deleteProtectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteProtect";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deleteProtect, allocator);
     }
 
 
@@ -164,6 +173,22 @@ void ModifyCloudNativeAPIGatewayRequest::SetInternetPayMode(const string& _inter
 bool ModifyCloudNativeAPIGatewayRequest::InternetPayModeHasBeenSet() const
 {
     return m_internetPayModeHasBeenSet;
+}
+
+bool ModifyCloudNativeAPIGatewayRequest::GetDeleteProtect() const
+{
+    return m_deleteProtect;
+}
+
+void ModifyCloudNativeAPIGatewayRequest::SetDeleteProtect(const bool& _deleteProtect)
+{
+    m_deleteProtect = _deleteProtect;
+    m_deleteProtectHasBeenSet = true;
+}
+
+bool ModifyCloudNativeAPIGatewayRequest::DeleteProtectHasBeenSet() const
+{
+    return m_deleteProtectHasBeenSet;
 }
 
 

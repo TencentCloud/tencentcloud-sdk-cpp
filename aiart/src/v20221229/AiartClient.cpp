@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -126,6 +126,92 @@ AiartClient::GenerateAvatarOutcomeCallable AiartClient::GenerateAvatarCallable(c
     return task->get_future();
 }
 
+AiartClient::ImageInpaintingRemovalOutcome AiartClient::ImageInpaintingRemoval(const ImageInpaintingRemovalRequest &request)
+{
+    auto outcome = MakeRequest(request, "ImageInpaintingRemoval");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ImageInpaintingRemovalResponse rsp = ImageInpaintingRemovalResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ImageInpaintingRemovalOutcome(rsp);
+        else
+            return ImageInpaintingRemovalOutcome(o.GetError());
+    }
+    else
+    {
+        return ImageInpaintingRemovalOutcome(outcome.GetError());
+    }
+}
+
+void AiartClient::ImageInpaintingRemovalAsync(const ImageInpaintingRemovalRequest& request, const ImageInpaintingRemovalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ImageInpaintingRemoval(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AiartClient::ImageInpaintingRemovalOutcomeCallable AiartClient::ImageInpaintingRemovalCallable(const ImageInpaintingRemovalRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ImageInpaintingRemovalOutcome()>>(
+        [this, request]()
+        {
+            return this->ImageInpaintingRemoval(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AiartClient::ImageOutpaintingOutcome AiartClient::ImageOutpainting(const ImageOutpaintingRequest &request)
+{
+    auto outcome = MakeRequest(request, "ImageOutpainting");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ImageOutpaintingResponse rsp = ImageOutpaintingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ImageOutpaintingOutcome(rsp);
+        else
+            return ImageOutpaintingOutcome(o.GetError());
+    }
+    else
+    {
+        return ImageOutpaintingOutcome(outcome.GetError());
+    }
+}
+
+void AiartClient::ImageOutpaintingAsync(const ImageOutpaintingRequest& request, const ImageOutpaintingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ImageOutpainting(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AiartClient::ImageOutpaintingOutcomeCallable AiartClient::ImageOutpaintingCallable(const ImageOutpaintingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ImageOutpaintingOutcome()>>(
+        [this, request]()
+        {
+            return this->ImageOutpainting(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AiartClient::ImageToImageOutcome AiartClient::ImageToImage(const ImageToImageRequest &request)
 {
     auto outcome = MakeRequest(request, "ImageToImage");
@@ -212,6 +298,92 @@ AiartClient::QueryDrawPortraitJobOutcomeCallable AiartClient::QueryDrawPortraitJ
     return task->get_future();
 }
 
+AiartClient::QueryGlamPicJobOutcome AiartClient::QueryGlamPicJob(const QueryGlamPicJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryGlamPicJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryGlamPicJobResponse rsp = QueryGlamPicJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryGlamPicJobOutcome(rsp);
+        else
+            return QueryGlamPicJobOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryGlamPicJobOutcome(outcome.GetError());
+    }
+}
+
+void AiartClient::QueryGlamPicJobAsync(const QueryGlamPicJobRequest& request, const QueryGlamPicJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryGlamPicJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AiartClient::QueryGlamPicJobOutcomeCallable AiartClient::QueryGlamPicJobCallable(const QueryGlamPicJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryGlamPicJobOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryGlamPicJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AiartClient::QueryMemeJobOutcome AiartClient::QueryMemeJob(const QueryMemeJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryMemeJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryMemeJobResponse rsp = QueryMemeJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryMemeJobOutcome(rsp);
+        else
+            return QueryMemeJobOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryMemeJobOutcome(outcome.GetError());
+    }
+}
+
+void AiartClient::QueryMemeJobAsync(const QueryMemeJobRequest& request, const QueryMemeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryMemeJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AiartClient::QueryMemeJobOutcomeCallable AiartClient::QueryMemeJobCallable(const QueryMemeJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryMemeJobOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryMemeJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AiartClient::QueryTextToImageProJobOutcome AiartClient::QueryTextToImageProJob(const QueryTextToImageProJobRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryTextToImageProJob");
@@ -291,6 +463,49 @@ AiartClient::QueryTrainPortraitModelJobOutcomeCallable AiartClient::QueryTrainPo
         [this, request]()
         {
             return this->QueryTrainPortraitModelJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AiartClient::RefineImageOutcome AiartClient::RefineImage(const RefineImageRequest &request)
+{
+    auto outcome = MakeRequest(request, "RefineImage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RefineImageResponse rsp = RefineImageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RefineImageOutcome(rsp);
+        else
+            return RefineImageOutcome(o.GetError());
+    }
+    else
+    {
+        return RefineImageOutcome(outcome.GetError());
+    }
+}
+
+void AiartClient::RefineImageAsync(const RefineImageRequest& request, const RefineImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RefineImage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AiartClient::RefineImageOutcomeCallable AiartClient::RefineImageCallable(const RefineImageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RefineImageOutcome()>>(
+        [this, request]()
+        {
+            return this->RefineImage(request);
         }
     );
 
@@ -427,6 +642,92 @@ AiartClient::SubmitDrawPortraitJobOutcomeCallable AiartClient::SubmitDrawPortrai
     return task->get_future();
 }
 
+AiartClient::SubmitGlamPicJobOutcome AiartClient::SubmitGlamPicJob(const SubmitGlamPicJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitGlamPicJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitGlamPicJobResponse rsp = SubmitGlamPicJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitGlamPicJobOutcome(rsp);
+        else
+            return SubmitGlamPicJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitGlamPicJobOutcome(outcome.GetError());
+    }
+}
+
+void AiartClient::SubmitGlamPicJobAsync(const SubmitGlamPicJobRequest& request, const SubmitGlamPicJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SubmitGlamPicJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AiartClient::SubmitGlamPicJobOutcomeCallable AiartClient::SubmitGlamPicJobCallable(const SubmitGlamPicJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SubmitGlamPicJobOutcome()>>(
+        [this, request]()
+        {
+            return this->SubmitGlamPicJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AiartClient::SubmitMemeJobOutcome AiartClient::SubmitMemeJob(const SubmitMemeJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitMemeJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitMemeJobResponse rsp = SubmitMemeJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitMemeJobOutcome(rsp);
+        else
+            return SubmitMemeJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitMemeJobOutcome(outcome.GetError());
+    }
+}
+
+void AiartClient::SubmitMemeJobAsync(const SubmitMemeJobRequest& request, const SubmitMemeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SubmitMemeJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AiartClient::SubmitMemeJobOutcomeCallable AiartClient::SubmitMemeJobCallable(const SubmitMemeJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SubmitMemeJobOutcome()>>(
+        [this, request]()
+        {
+            return this->SubmitMemeJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AiartClient::SubmitTextToImageProJobOutcome AiartClient::SubmitTextToImageProJob(const SubmitTextToImageProJobRequest &request)
 {
     auto outcome = MakeRequest(request, "SubmitTextToImageProJob");
@@ -513,42 +814,85 @@ AiartClient::SubmitTrainPortraitModelJobOutcomeCallable AiartClient::SubmitTrain
     return task->get_future();
 }
 
-AiartClient::TextToImageOutcome AiartClient::TextToImage(const TextToImageRequest &request)
+AiartClient::TextToImageLiteOutcome AiartClient::TextToImageLite(const TextToImageLiteRequest &request)
 {
-    auto outcome = MakeRequest(request, "TextToImage");
+    auto outcome = MakeRequest(request, "TextToImageLite");
     if (outcome.IsSuccess())
     {
         auto r = outcome.GetResult();
         string payload = string(r.Body(), r.BodySize());
-        TextToImageResponse rsp = TextToImageResponse();
+        TextToImageLiteResponse rsp = TextToImageLiteResponse();
         auto o = rsp.Deserialize(payload);
         if (o.IsSuccess())
-            return TextToImageOutcome(rsp);
+            return TextToImageLiteOutcome(rsp);
         else
-            return TextToImageOutcome(o.GetError());
+            return TextToImageLiteOutcome(o.GetError());
     }
     else
     {
-        return TextToImageOutcome(outcome.GetError());
+        return TextToImageLiteOutcome(outcome.GetError());
     }
 }
 
-void AiartClient::TextToImageAsync(const TextToImageRequest& request, const TextToImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+void AiartClient::TextToImageLiteAsync(const TextToImageLiteRequest& request, const TextToImageLiteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
     auto fn = [this, request, handler, context]()
     {
-        handler(this, request, this->TextToImage(request), context);
+        handler(this, request, this->TextToImageLite(request), context);
     };
 
     Executor::GetInstance()->Submit(new Runnable(fn));
 }
 
-AiartClient::TextToImageOutcomeCallable AiartClient::TextToImageCallable(const TextToImageRequest &request)
+AiartClient::TextToImageLiteOutcomeCallable AiartClient::TextToImageLiteCallable(const TextToImageLiteRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<TextToImageOutcome()>>(
+    auto task = std::make_shared<std::packaged_task<TextToImageLiteOutcome()>>(
         [this, request]()
         {
-            return this->TextToImage(request);
+            return this->TextToImageLite(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AiartClient::TextToImageRapidOutcome AiartClient::TextToImageRapid(const TextToImageRapidRequest &request)
+{
+    auto outcome = MakeRequest(request, "TextToImageRapid");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TextToImageRapidResponse rsp = TextToImageRapidResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TextToImageRapidOutcome(rsp);
+        else
+            return TextToImageRapidOutcome(o.GetError());
+    }
+    else
+    {
+        return TextToImageRapidOutcome(outcome.GetError());
+    }
+}
+
+void AiartClient::TextToImageRapidAsync(const TextToImageRapidRequest& request, const TextToImageRapidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TextToImageRapid(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AiartClient::TextToImageRapidOutcomeCallable AiartClient::TextToImageRapidCallable(const TextToImageRapidRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TextToImageRapidOutcome()>>(
+        [this, request]()
+        {
+            return this->TextToImageRapid(request);
         }
     );
 

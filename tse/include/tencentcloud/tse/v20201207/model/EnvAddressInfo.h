@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -112,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取config内网访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigIntranetAddress config内网访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConfigIntranetAddress() const;
 
                     /**
                      * 设置config内网访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configIntranetAddress config内网访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigIntranetAddress(const std::string& _configIntranetAddress);
@@ -137,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启config内网clb
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableConfigIntranet 是否开启config内网clb
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableConfigIntranet() const;
 
                     /**
                      * 设置是否开启config内网clb
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableConfigIntranet 是否开启config内网clb
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableConfigIntranet(const bool& _enableConfigIntranet);
@@ -162,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取客户端公网带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InternetBandWidth 客户端公网带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInternetBandWidth() const;
 
                     /**
                      * 设置客户端公网带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _internetBandWidth 客户端公网带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInternetBandWidth(const int64_t& _internetBandWidth);
@@ -187,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取客户端公网CLB多可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CLBMultiRegion 客户端公网CLB多可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CLBMultiRegion GetCLBMultiRegion() const;
 
                     /**
                      * 设置客户端公网CLB多可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cLBMultiRegion 客户端公网CLB多可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCLBMultiRegion(const CLBMultiRegion& _cLBMultiRegion);
@@ -232,28 +216,24 @@ namespace TencentCloud
 
                     /**
                      * config内网访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_configIntranetAddress;
                     bool m_configIntranetAddressHasBeenSet;
 
                     /**
                      * 是否开启config内网clb
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableConfigIntranet;
                     bool m_enableConfigIntranetHasBeenSet;
 
                     /**
                      * 客户端公网带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_internetBandWidth;
                     bool m_internetBandWidthHasBeenSet;
 
                     /**
                      * 客户端公网CLB多可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CLBMultiRegion m_cLBMultiRegion;
                     bool m_cLBMultiRegionHasBeenSet;

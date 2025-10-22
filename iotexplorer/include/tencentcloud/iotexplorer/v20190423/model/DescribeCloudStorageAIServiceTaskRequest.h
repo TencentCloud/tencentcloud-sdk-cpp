@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,6 +63,35 @@ namespace TencentCloud
                      */
                     bool TaskIdHasBeenSet() const;
 
+                    /**
+                     * 获取下载 URL 的过期时间。
+
+若传入该参数，则响应中将包含所有文件的下载 URL
+                     * @return FileURLExpireTime 下载 URL 的过期时间。
+
+若传入该参数，则响应中将包含所有文件的下载 URL
+                     * 
+                     */
+                    int64_t GetFileURLExpireTime() const;
+
+                    /**
+                     * 设置下载 URL 的过期时间。
+
+若传入该参数，则响应中将包含所有文件的下载 URL
+                     * @param _fileURLExpireTime 下载 URL 的过期时间。
+
+若传入该参数，则响应中将包含所有文件的下载 URL
+                     * 
+                     */
+                    void SetFileURLExpireTime(const int64_t& _fileURLExpireTime);
+
+                    /**
+                     * 判断参数 FileURLExpireTime 是否已赋值
+                     * @return FileURLExpireTime 是否已赋值
+                     * 
+                     */
+                    bool FileURLExpireTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +99,14 @@ namespace TencentCloud
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
+
+                    /**
+                     * 下载 URL 的过期时间。
+
+若传入该参数，则响应中将包含所有文件的下载 URL
+                     */
+                    int64_t m_fileURLExpireTime;
+                    bool m_fileURLExpireTimeHasBeenSet;
 
                 };
             }

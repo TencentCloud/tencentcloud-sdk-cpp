@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @return InstanceId 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @param _instanceId 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取私有网络ID
-                     * @return UniqVpcId 私有网络ID
+                     * 获取私有网络 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @return UniqVpcId 私有网络 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
-                     * 设置私有网络ID
-                     * @param _uniqVpcId 私有网络ID
+                     * 设置私有网络 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @param _uniqVpcId 私有网络 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool UniqVpcIdHasBeenSet() const;
 
                     /**
-                     * 获取私有子网ID
-                     * @return UniqSubnetId 私有子网ID
+                     * 获取私有子网 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @return UniqSubnetId 私有子网 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     std::string GetUniqSubnetId() const;
 
                     /**
-                     * 设置私有子网ID
-                     * @param _uniqSubnetId 私有子网ID
+                     * 设置私有子网 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @param _uniqSubnetId 私有子网 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     void SetUniqSubnetId(const std::string& _uniqSubnetId);
@@ -107,43 +107,51 @@ namespace TencentCloud
                     bool UniqSubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取节点规格配置
-备注：数据库代理支持的节点规格为：2C4000MB、4C8000MB、8C16000MB。
+                     * 获取节点规格配置。
 示例中参数说明：
 NodeCount：节点个数。
 Region：节点地域。
 Zone：节点可用区。
 Cpu：单个代理节点核数（单位：核）。
 Mem：单个代理节点内存数（单位：MB）。
-                     * @return ProxyNodeCustom 节点规格配置
-备注：数据库代理支持的节点规格为：2C4000MB、4C8000MB、8C16000MB。
+备注：
+1. 数据库代理支持的节点规格为：2C4000MB、4C8000MB、8C16000MB。
+2. 上述参数项（如节点个数、可用区等）均为必填，在调用接口时如未填写完整，可能会创建失败。
+                     * @return ProxyNodeCustom 节点规格配置。
 示例中参数说明：
 NodeCount：节点个数。
 Region：节点地域。
 Zone：节点可用区。
 Cpu：单个代理节点核数（单位：核）。
 Mem：单个代理节点内存数（单位：MB）。
+备注：
+1. 数据库代理支持的节点规格为：2C4000MB、4C8000MB、8C16000MB。
+2. 上述参数项（如节点个数、可用区等）均为必填，在调用接口时如未填写完整，可能会创建失败。
                      * 
                      */
                     std::vector<ProxyNodeCustom> GetProxyNodeCustom() const;
 
                     /**
-                     * 设置节点规格配置
-备注：数据库代理支持的节点规格为：2C4000MB、4C8000MB、8C16000MB。
+                     * 设置节点规格配置。
 示例中参数说明：
 NodeCount：节点个数。
 Region：节点地域。
 Zone：节点可用区。
 Cpu：单个代理节点核数（单位：核）。
 Mem：单个代理节点内存数（单位：MB）。
-                     * @param _proxyNodeCustom 节点规格配置
-备注：数据库代理支持的节点规格为：2C4000MB、4C8000MB、8C16000MB。
+备注：
+1. 数据库代理支持的节点规格为：2C4000MB、4C8000MB、8C16000MB。
+2. 上述参数项（如节点个数、可用区等）均为必填，在调用接口时如未填写完整，可能会创建失败。
+                     * @param _proxyNodeCustom 节点规格配置。
 示例中参数说明：
 NodeCount：节点个数。
 Region：节点地域。
 Zone：节点可用区。
 Cpu：单个代理节点核数（单位：核）。
 Mem：单个代理节点内存数（单位：MB）。
+备注：
+1. 数据库代理支持的节点规格为：2C4000MB、4C8000MB、8C16000MB。
+2. 上述参数项（如节点个数、可用区等）均为必填，在调用接口时如未填写完整，可能会创建失败。
                      * 
                      */
                     void SetProxyNodeCustom(const std::vector<ProxyNodeCustom>& _proxyNodeCustom);
@@ -246,32 +254,34 @@ Mem：单个代理节点内存数（单位：MB）。
                 private:
 
                     /**
-                     * 实例ID
+                     * 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 私有网络ID
+                     * 私有网络 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      */
                     std::string m_uniqVpcId;
                     bool m_uniqVpcIdHasBeenSet;
 
                     /**
-                     * 私有子网ID
+                     * 私有子网 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      */
                     std::string m_uniqSubnetId;
                     bool m_uniqSubnetIdHasBeenSet;
 
                     /**
-                     * 节点规格配置
-备注：数据库代理支持的节点规格为：2C4000MB、4C8000MB、8C16000MB。
+                     * 节点规格配置。
 示例中参数说明：
 NodeCount：节点个数。
 Region：节点地域。
 Zone：节点可用区。
 Cpu：单个代理节点核数（单位：核）。
 Mem：单个代理节点内存数（单位：MB）。
+备注：
+1. 数据库代理支持的节点规格为：2C4000MB、4C8000MB、8C16000MB。
+2. 上述参数项（如节点个数、可用区等）均为必填，在调用接口时如未填写完整，可能会创建失败。
                      */
                     std::vector<ProxyNodeCustom> m_proxyNodeCustom;
                     bool m_proxyNodeCustomHasBeenSet;

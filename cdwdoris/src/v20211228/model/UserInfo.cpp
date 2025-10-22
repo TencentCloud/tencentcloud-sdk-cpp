@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,8 @@ UserInfo::UserInfo() :
     m_describeHasBeenSet(false),
     m_oldPwdHasBeenSet(false),
     m_camUinHasBeenSet(false),
-    m_camRangerGroupIdsHasBeenSet(false)
+    m_camRangerGroupIdsHasBeenSet(false),
+    m_computeGroupTypeHasBeenSet(false)
 {
 }
 
@@ -131,6 +132,16 @@ CoreInternalOutcome UserInfo::Deserialize(const rapidjson::Value &value)
         m_camRangerGroupIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("ComputeGroupType") && !value["ComputeGroupType"].IsNull())
+    {
+        if (!value["ComputeGroupType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserInfo.ComputeGroupType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_computeGroupType = value["ComputeGroupType"].GetInt64();
+        m_computeGroupTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -213,6 +224,14 @@ void UserInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_computeGroupTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComputeGroupType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_computeGroupType, allocator);
     }
 
 }
@@ -360,5 +379,21 @@ void UserInfo::SetCamRangerGroupIds(const vector<int64_t>& _camRangerGroupIds)
 bool UserInfo::CamRangerGroupIdsHasBeenSet() const
 {
     return m_camRangerGroupIdsHasBeenSet;
+}
+
+int64_t UserInfo::GetComputeGroupType() const
+{
+    return m_computeGroupType;
+}
+
+void UserInfo::SetComputeGroupType(const int64_t& _computeGroupType)
+{
+    m_computeGroupType = _computeGroupType;
+    m_computeGroupTypeHasBeenSet = true;
+}
+
+bool UserInfo::ComputeGroupTypeHasBeenSet() const
+{
+    return m_computeGroupTypeHasBeenSet;
 }
 

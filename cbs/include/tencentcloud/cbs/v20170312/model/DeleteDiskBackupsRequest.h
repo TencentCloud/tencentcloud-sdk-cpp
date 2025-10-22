@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待删除的云硬盘备份点ID。
-                     * @return DiskBackupIds 待删除的云硬盘备份点ID。
+                     * 获取待删除的云硬盘备份点ID，可以通过[DescribeDiskBackups](/document/product/362/80278)接口查询。
+                     * @return DiskBackupIds 待删除的云硬盘备份点ID，可以通过[DescribeDiskBackups](/document/product/362/80278)接口查询。
                      * 
                      */
                     std::vector<std::string> GetDiskBackupIds() const;
 
                     /**
-                     * 设置待删除的云硬盘备份点ID。
-                     * @param _diskBackupIds 待删除的云硬盘备份点ID。
+                     * 设置待删除的云硬盘备份点ID，可以通过[DescribeDiskBackups](/document/product/362/80278)接口查询。
+                     * @param _diskBackupIds 待删除的云硬盘备份点ID，可以通过[DescribeDiskBackups](/document/product/362/80278)接口查询。
                      * 
                      */
                     void SetDiskBackupIds(const std::vector<std::string>& _diskBackupIds);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 待删除的云硬盘备份点ID。
+                     * 待删除的云硬盘备份点ID，可以通过[DescribeDiskBackups](/document/product/362/80278)接口查询。
                      */
                     std::vector<std::string> m_diskBackupIds;
                     bool m_diskBackupIdsHasBeenSet;

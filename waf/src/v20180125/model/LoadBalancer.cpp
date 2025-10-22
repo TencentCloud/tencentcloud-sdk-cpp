@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,11 +25,11 @@ LoadBalancer::LoadBalancer() :
     m_loadBalancerNameHasBeenSet(false),
     m_listenerIdHasBeenSet(false),
     m_listenerNameHasBeenSet(false),
-    m_vipHasBeenSet(false),
     m_vportHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_protocolHasBeenSet(false),
     m_zoneHasBeenSet(false),
+    m_vipHasBeenSet(false),
     m_numericalVpcIdHasBeenSet(false),
     m_loadBalancerTypeHasBeenSet(false),
     m_loadBalancerDomainHasBeenSet(false)
@@ -81,16 +81,6 @@ CoreInternalOutcome LoadBalancer::Deserialize(const rapidjson::Value &value)
         m_listenerNameHasBeenSet = true;
     }
 
-    if (value.HasMember("Vip") && !value["Vip"].IsNull())
-    {
-        if (!value["Vip"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `LoadBalancer.Vip` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_vip = string(value["Vip"].GetString());
-        m_vipHasBeenSet = true;
-    }
-
     if (value.HasMember("Vport") && !value["Vport"].IsNull())
     {
         if (!value["Vport"].IsUint64())
@@ -129,6 +119,16 @@ CoreInternalOutcome LoadBalancer::Deserialize(const rapidjson::Value &value)
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("Vip") && !value["Vip"].IsNull())
+    {
+        if (!value["Vip"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.Vip` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vip = string(value["Vip"].GetString());
+        m_vipHasBeenSet = true;
     }
 
     if (value.HasMember("NumericalVpcId") && !value["NumericalVpcId"].IsNull())
@@ -200,14 +200,6 @@ void LoadBalancer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         value.AddMember(iKey, rapidjson::Value(m_listenerName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_vipHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Vip";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_vip.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_vportHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -238,6 +230,14 @@ void LoadBalancer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Vip";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vip.c_str(), allocator).Move(), allocator);
     }
 
     if (m_numericalVpcIdHasBeenSet)
@@ -331,22 +331,6 @@ bool LoadBalancer::ListenerNameHasBeenSet() const
     return m_listenerNameHasBeenSet;
 }
 
-string LoadBalancer::GetVip() const
-{
-    return m_vip;
-}
-
-void LoadBalancer::SetVip(const string& _vip)
-{
-    m_vip = _vip;
-    m_vipHasBeenSet = true;
-}
-
-bool LoadBalancer::VipHasBeenSet() const
-{
-    return m_vipHasBeenSet;
-}
-
 uint64_t LoadBalancer::GetVport() const
 {
     return m_vport;
@@ -409,6 +393,22 @@ void LoadBalancer::SetZone(const string& _zone)
 bool LoadBalancer::ZoneHasBeenSet() const
 {
     return m_zoneHasBeenSet;
+}
+
+string LoadBalancer::GetVip() const
+{
+    return m_vip;
+}
+
+void LoadBalancer::SetVip(const string& _vip)
+{
+    m_vip = _vip;
+    m_vipHasBeenSet = true;
+}
+
+bool LoadBalancer::VipHasBeenSet() const
+{
+    return m_vipHasBeenSet;
 }
 
 int64_t LoadBalancer::GetNumericalVpcId() const

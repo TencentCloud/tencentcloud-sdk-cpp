@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductName 产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductName() const;
 
                     /**
                      * 设置产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productName 产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductName(const std::string& _productName);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户名称（该字段已废弃）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuperUser 用户名称（该字段已废弃）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSuperUser() const;
 
                     /**
                      * 设置用户名称（该字段已废弃）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _superUser 用户名称（该字段已废弃）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSuperUser(const std::vector<std::string>& _superUser);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取vpc配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcInfo vpc配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CHDFSProductVpcInfo> GetVpcInfo() const;
 
                     /**
                      * 设置vpc配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcInfo vpc配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcInfo(const std::vector<CHDFSProductVpcInfo>& _vpcInfo);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否与该桶绑定（该字段已废弃）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsBind 是否与该桶绑定（该字段已废弃）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsBind() const;
 
                     /**
                      * 设置是否与该桶绑定（该字段已废弃）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isBind 是否与该桶绑定（该字段已废弃）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsBind(const bool& _isBind);
@@ -151,28 +135,24 @@ namespace TencentCloud
 
                     /**
                      * 产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productName;
                     bool m_productNameHasBeenSet;
 
                     /**
                      * 用户名称（该字段已废弃）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_superUser;
                     bool m_superUserHasBeenSet;
 
                     /**
                      * vpc配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CHDFSProductVpcInfo> m_vpcInfo;
                     bool m_vpcInfoHasBeenSet;
 
                     /**
                      * 是否与该桶绑定（该字段已废弃）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isBind;
                     bool m_isBindHasBeenSet;

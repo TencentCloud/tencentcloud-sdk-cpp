@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,12 +28,17 @@ CreateBatchSignUrlRequest::CreateBatchSignUrlRequest() :
     m_mobileHasBeenSet(false),
     m_agentHasBeenSet(false),
     m_idCardTypeHasBeenSet(false),
+    m_signatureTypesHasBeenSet(false),
     m_idCardNumberHasBeenSet(false),
     m_notifyTypeHasBeenSet(false),
     m_flowIdsHasBeenSet(false),
     m_organizationNameHasBeenSet(false),
     m_jumpToDetailHasBeenSet(false),
-    m_flowBatchUrlInfoHasBeenSet(false)
+    m_flowBatchUrlInfoHasBeenSet(false),
+    m_autoJumpBackHasBeenSet(false),
+    m_urlUseEnvHasBeenSet(false),
+    m_canBatchRejectHasBeenSet(false),
+    m_canSkipReadFlowHasBeenSet(false)
 {
 }
 
@@ -84,6 +89,19 @@ string CreateBatchSignUrlRequest::ToJsonString() const
         string key = "IdCardType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_idCardType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_signatureTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignatureTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_signatureTypes.begin(); itr != m_signatureTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
     if (m_idCardNumberHasBeenSet)
@@ -138,6 +156,38 @@ string CreateBatchSignUrlRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_flowBatchUrlInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_autoJumpBackHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoJumpBack";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoJumpBack, allocator);
+    }
+
+    if (m_urlUseEnvHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UrlUseEnv";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_urlUseEnv.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_canBatchRejectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CanBatchReject";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_canBatchReject, allocator);
+    }
+
+    if (m_canSkipReadFlowHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CanSkipReadFlow";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_canSkipReadFlow, allocator);
     }
 
 
@@ -226,6 +276,22 @@ void CreateBatchSignUrlRequest::SetIdCardType(const string& _idCardType)
 bool CreateBatchSignUrlRequest::IdCardTypeHasBeenSet() const
 {
     return m_idCardTypeHasBeenSet;
+}
+
+vector<int64_t> CreateBatchSignUrlRequest::GetSignatureTypes() const
+{
+    return m_signatureTypes;
+}
+
+void CreateBatchSignUrlRequest::SetSignatureTypes(const vector<int64_t>& _signatureTypes)
+{
+    m_signatureTypes = _signatureTypes;
+    m_signatureTypesHasBeenSet = true;
+}
+
+bool CreateBatchSignUrlRequest::SignatureTypesHasBeenSet() const
+{
+    return m_signatureTypesHasBeenSet;
 }
 
 string CreateBatchSignUrlRequest::GetIdCardNumber() const
@@ -322,6 +388,70 @@ void CreateBatchSignUrlRequest::SetFlowBatchUrlInfo(const FlowBatchUrlInfo& _flo
 bool CreateBatchSignUrlRequest::FlowBatchUrlInfoHasBeenSet() const
 {
     return m_flowBatchUrlInfoHasBeenSet;
+}
+
+bool CreateBatchSignUrlRequest::GetAutoJumpBack() const
+{
+    return m_autoJumpBack;
+}
+
+void CreateBatchSignUrlRequest::SetAutoJumpBack(const bool& _autoJumpBack)
+{
+    m_autoJumpBack = _autoJumpBack;
+    m_autoJumpBackHasBeenSet = true;
+}
+
+bool CreateBatchSignUrlRequest::AutoJumpBackHasBeenSet() const
+{
+    return m_autoJumpBackHasBeenSet;
+}
+
+string CreateBatchSignUrlRequest::GetUrlUseEnv() const
+{
+    return m_urlUseEnv;
+}
+
+void CreateBatchSignUrlRequest::SetUrlUseEnv(const string& _urlUseEnv)
+{
+    m_urlUseEnv = _urlUseEnv;
+    m_urlUseEnvHasBeenSet = true;
+}
+
+bool CreateBatchSignUrlRequest::UrlUseEnvHasBeenSet() const
+{
+    return m_urlUseEnvHasBeenSet;
+}
+
+bool CreateBatchSignUrlRequest::GetCanBatchReject() const
+{
+    return m_canBatchReject;
+}
+
+void CreateBatchSignUrlRequest::SetCanBatchReject(const bool& _canBatchReject)
+{
+    m_canBatchReject = _canBatchReject;
+    m_canBatchRejectHasBeenSet = true;
+}
+
+bool CreateBatchSignUrlRequest::CanBatchRejectHasBeenSet() const
+{
+    return m_canBatchRejectHasBeenSet;
+}
+
+bool CreateBatchSignUrlRequest::GetCanSkipReadFlow() const
+{
+    return m_canSkipReadFlow;
+}
+
+void CreateBatchSignUrlRequest::SetCanSkipReadFlow(const bool& _canSkipReadFlow)
+{
+    m_canSkipReadFlow = _canSkipReadFlow;
+    m_canSkipReadFlowHasBeenSet = true;
+}
+
+bool CreateBatchSignUrlRequest::CanSkipReadFlowHasBeenSet() const
+{
+    return m_canSkipReadFlowHasBeenSet;
 }
 
 

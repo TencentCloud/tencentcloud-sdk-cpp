@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,8 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/apm/v20210622/model/OrderBy.h>
 #include <tencentcloud/apm/v20210622/model/Filter.h>
+#include <tencentcloud/apm/v20210622/model/OrderBy.h>
 
 
 namespace TencentCloud
@@ -45,78 +45,36 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分页
-                     * @return Offset 分页
+                     * 获取业务系统 ID
+                     * @return InstanceId 业务系统 ID
                      * 
                      */
-                    int64_t GetOffset() const;
+                    std::string GetInstanceId() const;
 
                     /**
-                     * 设置分页
-                     * @param _offset 分页
+                     * 设置业务系统 ID
+                     * @param _instanceId 业务系统 ID
                      * 
                      */
-                    void SetOffset(const int64_t& _offset);
+                    void SetInstanceId(const std::string& _instanceId);
 
                     /**
-                     * 判断参数 Offset 是否已赋值
-                     * @return Offset 是否已赋值
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
                      * 
                      */
-                    bool OffsetHasBeenSet() const;
+                    bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取列表项个数
-                     * @return Limit 列表项个数
-                     * 
-                     */
-                    int64_t GetLimit() const;
-
-                    /**
-                     * 设置列表项个数
-                     * @param _limit 列表项个数
-                     * 
-                     */
-                    void SetLimit(const int64_t& _limit);
-
-                    /**
-                     * 判断参数 Limit 是否已赋值
-                     * @return Limit 是否已赋值
-                     * 
-                     */
-                    bool LimitHasBeenSet() const;
-
-                    /**
-                     * 获取排序
-                     * @return OrderBy 排序
-                     * 
-                     */
-                    OrderBy GetOrderBy() const;
-
-                    /**
-                     * 设置排序
-                     * @param _orderBy 排序
-                     * 
-                     */
-                    void SetOrderBy(const OrderBy& _orderBy);
-
-                    /**
-                     * 判断参数 OrderBy 是否已赋值
-                     * @return OrderBy 是否已赋值
-                     * 
-                     */
-                    bool OrderByHasBeenSet() const;
-
-                    /**
-                     * 获取span查询开始时间戳（单位:秒）
-                     * @return StartTime span查询开始时间戳（单位:秒）
+                     * 获取Span 查询开始时间戳（单位：秒）
+                     * @return StartTime Span 查询开始时间戳（单位：秒）
                      * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
-                     * 设置span查询开始时间戳（单位:秒）
-                     * @param _startTime span查询开始时间戳（单位:秒）
+                     * 设置Span 查询开始时间戳（单位：秒）
+                     * @param _startTime Span 查询开始时间戳（单位：秒）
                      * 
                      */
                     void SetStartTime(const int64_t& _startTime);
@@ -129,25 +87,25 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取实例名
-                     * @return InstanceId 实例名
+                     * 获取Span 查询结束时间戳（单位：秒）
+                     * @return EndTime Span 查询结束时间戳（单位：秒）
                      * 
                      */
-                    std::string GetInstanceId() const;
+                    int64_t GetEndTime() const;
 
                     /**
-                     * 设置实例名
-                     * @param _instanceId 实例名
+                     * 设置Span 查询结束时间戳（单位：秒）
+                     * @param _endTime Span 查询结束时间戳（单位：秒）
                      * 
                      */
-                    void SetInstanceId(const std::string& _instanceId);
+                    void SetEndTime(const int64_t& _endTime);
 
                     /**
-                     * 判断参数 InstanceId 是否已赋值
-                     * @return InstanceId 是否已赋值
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
                      * 
                      */
-                    bool InstanceIdHasBeenSet() const;
+                    bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取通用过滤参数
@@ -171,15 +129,76 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取业务自身服务名
-                     * @return BusinessName 业务自身服务名
+                     * 获取排序
+现支持的 Key 有：
+
+- startTime(开始时间)
+- endTime(结束时间)
+- duration(响应时间)
+
+现支持的 Value 有：
+
+- desc(降序排序)
+- asc(升序排序)
+                     * @return OrderBy 排序
+现支持的 Key 有：
+
+- startTime(开始时间)
+- endTime(结束时间)
+- duration(响应时间)
+
+现支持的 Value 有：
+
+- desc(降序排序)
+- asc(升序排序)
+                     * 
+                     */
+                    OrderBy GetOrderBy() const;
+
+                    /**
+                     * 设置排序
+现支持的 Key 有：
+
+- startTime(开始时间)
+- endTime(结束时间)
+- duration(响应时间)
+
+现支持的 Value 有：
+
+- desc(降序排序)
+- asc(升序排序)
+                     * @param _orderBy 排序
+现支持的 Key 有：
+
+- startTime(开始时间)
+- endTime(结束时间)
+- duration(响应时间)
+
+现支持的 Value 有：
+
+- desc(降序排序)
+- asc(升序排序)
+                     * 
+                     */
+                    void SetOrderBy(const OrderBy& _orderBy);
+
+                    /**
+                     * 判断参数 OrderBy 是否已赋值
+                     * @return OrderBy 是否已赋值
+                     * 
+                     */
+                    bool OrderByHasBeenSet() const;
+
+                    /**
+                     * 获取业务自身服务名，控制台用户请填写taw
+                     * @return BusinessName 业务自身服务名，控制台用户请填写taw
                      * 
                      */
                     std::string GetBusinessName() const;
 
                     /**
-                     * 设置业务自身服务名
-                     * @param _businessName 业务自身服务名
+                     * 设置业务自身服务名，控制台用户请填写taw
+                     * @param _businessName 业务自身服务名，控制台用户请填写taw
                      * 
                      */
                     void SetBusinessName(const std::string& _businessName);
@@ -192,57 +211,66 @@ namespace TencentCloud
                     bool BusinessNameHasBeenSet() const;
 
                     /**
-                     * 获取span查询结束时间戳（单位:秒）
-                     * @return EndTime span查询结束时间戳（单位:秒）
+                     * 获取单页项目个数，默认为10000，合法取值范围为0～10000
+                     * @return Limit 单页项目个数，默认为10000，合法取值范围为0～10000
                      * 
                      */
-                    int64_t GetEndTime() const;
+                    int64_t GetLimit() const;
 
                     /**
-                     * 设置span查询结束时间戳（单位:秒）
-                     * @param _endTime span查询结束时间戳（单位:秒）
+                     * 设置单页项目个数，默认为10000，合法取值范围为0～10000
+                     * @param _limit 单页项目个数，默认为10000，合法取值范围为0～10000
                      * 
                      */
-                    void SetEndTime(const int64_t& _endTime);
+                    void SetLimit(const int64_t& _limit);
 
                     /**
-                     * 判断参数 EndTime 是否已赋值
-                     * @return EndTime 是否已赋值
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
                      * 
                      */
-                    bool EndTimeHasBeenSet() const;
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取分页
+                     * @return Offset 分页
+                     * 
+                     */
+                    int64_t GetOffset() const;
+
+                    /**
+                     * 设置分页
+                     * @param _offset 分页
+                     * 
+                     */
+                    void SetOffset(const int64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     * 
+                     */
+                    bool OffsetHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 分页
+                     * 业务系统 ID
                      */
-                    int64_t m_offset;
-                    bool m_offsetHasBeenSet;
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 列表项个数
-                     */
-                    int64_t m_limit;
-                    bool m_limitHasBeenSet;
-
-                    /**
-                     * 排序
-                     */
-                    OrderBy m_orderBy;
-                    bool m_orderByHasBeenSet;
-
-                    /**
-                     * span查询开始时间戳（单位:秒）
+                     * Span 查询开始时间戳（单位：秒）
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 实例名
+                     * Span 查询结束时间戳（单位：秒）
                      */
-                    std::string m_instanceId;
-                    bool m_instanceIdHasBeenSet;
+                    int64_t m_endTime;
+                    bool m_endTimeHasBeenSet;
 
                     /**
                      * 通用过滤参数
@@ -251,16 +279,38 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 业务自身服务名
+                     * 排序
+现支持的 Key 有：
+
+- startTime(开始时间)
+- endTime(结束时间)
+- duration(响应时间)
+
+现支持的 Value 有：
+
+- desc(降序排序)
+- asc(升序排序)
+                     */
+                    OrderBy m_orderBy;
+                    bool m_orderByHasBeenSet;
+
+                    /**
+                     * 业务自身服务名，控制台用户请填写taw
                      */
                     std::string m_businessName;
                     bool m_businessNameHasBeenSet;
 
                     /**
-                     * span查询结束时间戳（单位:秒）
+                     * 单页项目个数，默认为10000，合法取值范围为0～10000
                      */
-                    int64_t m_endTime;
-                    bool m_endTimeHasBeenSet;
+                    int64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * 分页
+                     */
+                    int64_t m_offset;
+                    bool m_offsetHasBeenSet;
 
                 };
             }

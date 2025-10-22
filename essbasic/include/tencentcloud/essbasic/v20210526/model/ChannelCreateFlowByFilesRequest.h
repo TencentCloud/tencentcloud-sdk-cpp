@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,42 +48,42 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+                     * 获取合同的发起企业和发起人信息，<a href="https://qcloudimg.tencent-cloud.cn/raw/b69f8aad306c40b7b78d096e39b2edbb.png" target="_blank">点击查看合同发起企业和人展示的位置</a>
 
 此接口下面信息必填。
 <ul>
 <li>渠道应用标识:  Agent.AppId</li>
-<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>
-<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>
+<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId（合同的发起企业）</li>
+<li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId （合同的发起人）</li>
 </ul>
-                     * @return Agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+                     * @return Agent 合同的发起企业和发起人信息，<a href="https://qcloudimg.tencent-cloud.cn/raw/b69f8aad306c40b7b78d096e39b2edbb.png" target="_blank">点击查看合同发起企业和人展示的位置</a>
 
 此接口下面信息必填。
 <ul>
 <li>渠道应用标识:  Agent.AppId</li>
-<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>
-<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>
+<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId（合同的发起企业）</li>
+<li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId （合同的发起人）</li>
 </ul>
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+                     * 设置合同的发起企业和发起人信息，<a href="https://qcloudimg.tencent-cloud.cn/raw/b69f8aad306c40b7b78d096e39b2edbb.png" target="_blank">点击查看合同发起企业和人展示的位置</a>
 
 此接口下面信息必填。
 <ul>
 <li>渠道应用标识:  Agent.AppId</li>
-<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>
-<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>
+<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId（合同的发起企业）</li>
+<li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId （合同的发起人）</li>
 </ul>
-                     * @param _agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+                     * @param _agent 合同的发起企业和发起人信息，<a href="https://qcloudimg.tencent-cloud.cn/raw/b69f8aad306c40b7b78d096e39b2edbb.png" target="_blank">点击查看合同发起企业和人展示的位置</a>
 
 此接口下面信息必填。
 <ul>
 <li>渠道应用标识:  Agent.AppId</li>
-<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>
-<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>
+<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId（合同的发起企业）</li>
+<li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId （合同的发起人）</li>
 </ul>
                      * 
                      */
@@ -204,6 +204,8 @@ namespace TencentCloud
 <li>数字控件</li>
 <li>图片控件</li>
 <li>数据表格等填写控件</li></ul>
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/e004195ee4cb98a7f9bc12eb4a0a0b77.png)
                      * @return Components 模板或者合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体
 <ul><li>单行文本控件</li>
 <li>多行文本控件</li>
@@ -211,6 +213,8 @@ namespace TencentCloud
 <li>数字控件</li>
 <li>图片控件</li>
 <li>数据表格等填写控件</li></ul>
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/e004195ee4cb98a7f9bc12eb4a0a0b77.png)
                      * 
                      */
                     std::vector<Component> GetComponents() const;
@@ -223,6 +227,8 @@ namespace TencentCloud
 <li>数字控件</li>
 <li>图片控件</li>
 <li>数据表格等填写控件</li></ul>
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/e004195ee4cb98a7f9bc12eb4a0a0b77.png)
                      * @param _components 模板或者合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体
 <ul><li>单行文本控件</li>
 <li>多行文本控件</li>
@@ -230,6 +236,8 @@ namespace TencentCloud
 <li>数字控件</li>
 <li>图片控件</li>
 <li>数据表格等填写控件</li></ul>
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/e004195ee4cb98a7f9bc12eb4a0a0b77.png)
                      * 
                      */
                     void SetComponents(const std::vector<Component>& _components);
@@ -529,11 +537,17 @@ MobileCheck：手机号验证，用户手机号和参与方手机号（ApproverM
                      * 获取签署方签署控件（印章/签名等）的生成方式：
 <ul><li> **0**：在合同流程发起时，由发起人指定签署方的签署控件的位置和数量。</li>
 <li> **1**：签署方在签署时自行添加签署控件，可以拖动位置和控制数量。</li></ul>
-**注**: `发起后添加控件功能不支持添加签批控件`
+
+**注**: 
+1.发起后添加控件功能不支持添加签批控件 
+2.签署方在签署时自行添加签署控件仅支持电子签小程序或web控制台签署，不支持H5
                      * @return SignBeanTag 签署方签署控件（印章/签名等）的生成方式：
 <ul><li> **0**：在合同流程发起时，由发起人指定签署方的签署控件的位置和数量。</li>
 <li> **1**：签署方在签署时自行添加签署控件，可以拖动位置和控制数量。</li></ul>
-**注**: `发起后添加控件功能不支持添加签批控件`
+
+**注**: 
+1.发起后添加控件功能不支持添加签批控件 
+2.签署方在签署时自行添加签署控件仅支持电子签小程序或web控制台签署，不支持H5
                      * 
                      */
                     int64_t GetSignBeanTag() const;
@@ -542,11 +556,17 @@ MobileCheck：手机号验证，用户手机号和参与方手机号（ApproverM
                      * 设置签署方签署控件（印章/签名等）的生成方式：
 <ul><li> **0**：在合同流程发起时，由发起人指定签署方的签署控件的位置和数量。</li>
 <li> **1**：签署方在签署时自行添加签署控件，可以拖动位置和控制数量。</li></ul>
-**注**: `发起后添加控件功能不支持添加签批控件`
+
+**注**: 
+1.发起后添加控件功能不支持添加签批控件 
+2.签署方在签署时自行添加签署控件仅支持电子签小程序或web控制台签署，不支持H5
                      * @param _signBeanTag 签署方签署控件（印章/签名等）的生成方式：
 <ul><li> **0**：在合同流程发起时，由发起人指定签署方的签署控件的位置和数量。</li>
 <li> **1**：签署方在签署时自行添加签署控件，可以拖动位置和控制数量。</li></ul>
-**注**: `发起后添加控件功能不支持添加签批控件`
+
+**注**: 
+1.发起后添加控件功能不支持添加签批控件 
+2.签署方在签署时自行添加签署控件仅支持电子签小程序或web控制台签署，不支持H5
                      * 
                      */
                     void SetSignBeanTag(const int64_t& _signBeanTag);
@@ -675,15 +695,15 @@ MobileCheck：手机号验证，用户手机号和参与方手机号（ApproverM
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
-                     * @return FlowDisplayType 在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
+                     * 获取在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li><li> <b>3</b> :文书</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
+                     * @return FlowDisplayType 在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li><li> <b>3</b> :文书</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
                      * 
                      */
                     int64_t GetFlowDisplayType() const;
 
                     /**
-                     * 设置在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
-                     * @param _flowDisplayType 在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
+                     * 设置在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li><li> <b>3</b> :文书</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
+                     * @param _flowDisplayType 在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li><li> <b>3</b> :文书</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
                      * 
                      */
                     void SetFlowDisplayType(const int64_t& _flowDisplayType);
@@ -695,16 +715,128 @@ MobileCheck：手机号验证，用户手机号和参与方手机号（ApproverM
                      */
                     bool FlowDisplayTypeHasBeenSet() const;
 
+                    /**
+                     * 获取是否为预览模式，取值如下： <ul><li> **false**：非预览模式（默认），会产生合同流程并返回合同流程编号FlowId。</li> <li> **true**：预览模式，不产生合同流程，不返回合同流程编号FlowId，而是返回预览链接PreviewUrl，有效期为300秒，用于查看真实发起后合同的样子。</li></ul>
+                     * @return NeedPreview 是否为预览模式，取值如下： <ul><li> **false**：非预览模式（默认），会产生合同流程并返回合同流程编号FlowId。</li> <li> **true**：预览模式，不产生合同流程，不返回合同流程编号FlowId，而是返回预览链接PreviewUrl，有效期为300秒，用于查看真实发起后合同的样子。</li></ul>
+                     * 
+                     */
+                    bool GetNeedPreview() const;
+
+                    /**
+                     * 设置是否为预览模式，取值如下： <ul><li> **false**：非预览模式（默认），会产生合同流程并返回合同流程编号FlowId。</li> <li> **true**：预览模式，不产生合同流程，不返回合同流程编号FlowId，而是返回预览链接PreviewUrl，有效期为300秒，用于查看真实发起后合同的样子。</li></ul>
+                     * @param _needPreview 是否为预览模式，取值如下： <ul><li> **false**：非预览模式（默认），会产生合同流程并返回合同流程编号FlowId。</li> <li> **true**：预览模式，不产生合同流程，不返回合同流程编号FlowId，而是返回预览链接PreviewUrl，有效期为300秒，用于查看真实发起后合同的样子。</li></ul>
+                     * 
+                     */
+                    void SetNeedPreview(const bool& _needPreview);
+
+                    /**
+                     * 判断参数 NeedPreview 是否已赋值
+                     * @return NeedPreview 是否已赋值
+                     * 
+                     */
+                    bool NeedPreviewHasBeenSet() const;
+
+                    /**
+                     * 获取预览模式下产生的预览链接类型 
+<ul><li> **0** :(默认) 文件流 ,点开后下载预览的合同PDF文件 </li>
+<li> **1** :H5链接 ,点开后在浏览器中展示合同的样子</li></ul>
+注: `此参数在NeedPreview 为true时有效`
+
+                     * @return PreviewType 预览模式下产生的预览链接类型 
+<ul><li> **0** :(默认) 文件流 ,点开后下载预览的合同PDF文件 </li>
+<li> **1** :H5链接 ,点开后在浏览器中展示合同的样子</li></ul>
+注: `此参数在NeedPreview 为true时有效`
+
+                     * 
+                     */
+                    int64_t GetPreviewType() const;
+
+                    /**
+                     * 设置预览模式下产生的预览链接类型 
+<ul><li> **0** :(默认) 文件流 ,点开后下载预览的合同PDF文件 </li>
+<li> **1** :H5链接 ,点开后在浏览器中展示合同的样子</li></ul>
+注: `此参数在NeedPreview 为true时有效`
+
+                     * @param _previewType 预览模式下产生的预览链接类型 
+<ul><li> **0** :(默认) 文件流 ,点开后下载预览的合同PDF文件 </li>
+<li> **1** :H5链接 ,点开后在浏览器中展示合同的样子</li></ul>
+注: `此参数在NeedPreview 为true时有效`
+
+                     * 
+                     */
+                    void SetPreviewType(const int64_t& _previewType);
+
+                    /**
+                     * 判断参数 PreviewType 是否已赋值
+                     * @return PreviewType 是否已赋值
+                     * 
+                     */
+                    bool PreviewTypeHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启动态合同（动态签署人2.0）
+<ul><li> **false** :(默认) 不开启动态合同（动态签署人2.0）</li>
+<li> **true** :开启动态合同（动态签署人2.0）,发起后可继续追加合同签署人</li></ul>
+
+                     * @return OpenDynamicFlow 是否开启动态合同（动态签署人2.0）
+<ul><li> **false** :(默认) 不开启动态合同（动态签署人2.0）</li>
+<li> **true** :开启动态合同（动态签署人2.0）,发起后可继续追加合同签署人</li></ul>
+
+                     * @deprecated
+                     */
+                    bool GetOpenDynamicFlow() const;
+
+                    /**
+                     * 设置是否开启动态合同（动态签署人2.0）
+<ul><li> **false** :(默认) 不开启动态合同（动态签署人2.0）</li>
+<li> **true** :开启动态合同（动态签署人2.0）,发起后可继续追加合同签署人</li></ul>
+
+                     * @param _openDynamicFlow 是否开启动态合同（动态签署人2.0）
+<ul><li> **false** :(默认) 不开启动态合同（动态签署人2.0）</li>
+<li> **true** :开启动态合同（动态签署人2.0）,发起后可继续追加合同签署人</li></ul>
+
+                     * @deprecated
+                     */
+                    void SetOpenDynamicFlow(const bool& _openDynamicFlow);
+
+                    /**
+                     * 判断参数 OpenDynamicFlow 是否已赋值
+                     * @return OpenDynamicFlow 是否已赋值
+                     * @deprecated
+                     */
+                    bool OpenDynamicFlowHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启动态合同（动态签署人2.0）<ul><li> **false** :(默认) 不开启动态合同（动态签署人2.0）</li><li> **true** :开启动态合同（动态签署人2.0）,发起后可继续追加合同签署人</li></ul>
+                     * @return OpenDynamicSignFlow 是否开启动态合同（动态签署人2.0）<ul><li> **false** :(默认) 不开启动态合同（动态签署人2.0）</li><li> **true** :开启动态合同（动态签署人2.0）,发起后可继续追加合同签署人</li></ul>
+                     * 
+                     */
+                    bool GetOpenDynamicSignFlow() const;
+
+                    /**
+                     * 设置是否开启动态合同（动态签署人2.0）<ul><li> **false** :(默认) 不开启动态合同（动态签署人2.0）</li><li> **true** :开启动态合同（动态签署人2.0）,发起后可继续追加合同签署人</li></ul>
+                     * @param _openDynamicSignFlow 是否开启动态合同（动态签署人2.0）<ul><li> **false** :(默认) 不开启动态合同（动态签署人2.0）</li><li> **true** :开启动态合同（动态签署人2.0）,发起后可继续追加合同签署人</li></ul>
+                     * 
+                     */
+                    void SetOpenDynamicSignFlow(const bool& _openDynamicSignFlow);
+
+                    /**
+                     * 判断参数 OpenDynamicSignFlow 是否已赋值
+                     * @return OpenDynamicSignFlow 是否已赋值
+                     * 
+                     */
+                    bool OpenDynamicSignFlowHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+                     * 合同的发起企业和发起人信息，<a href="https://qcloudimg.tencent-cloud.cn/raw/b69f8aad306c40b7b78d096e39b2edbb.png" target="_blank">点击查看合同发起企业和人展示的位置</a>
 
 此接口下面信息必填。
 <ul>
 <li>渠道应用标识:  Agent.AppId</li>
-<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>
-<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>
+<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId（合同的发起企业）</li>
+<li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId （合同的发起人）</li>
 </ul>
                      */
                     Agent m_agent;
@@ -746,6 +878,8 @@ MobileCheck：手机号验证，用户手机号和参与方手机号（ApproverM
 <li>数字控件</li>
 <li>图片控件</li>
 <li>数据表格等填写控件</li></ul>
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/e004195ee4cb98a7f9bc12eb4a0a0b77.png)
                      */
                     std::vector<Component> m_components;
                     bool m_componentsHasBeenSet;
@@ -831,7 +965,10 @@ MobileCheck：手机号验证，用户手机号和参与方手机号（ApproverM
                      * 签署方签署控件（印章/签名等）的生成方式：
 <ul><li> **0**：在合同流程发起时，由发起人指定签署方的签署控件的位置和数量。</li>
 <li> **1**：签署方在签署时自行添加签署控件，可以拖动位置和控制数量。</li></ul>
-**注**: `发起后添加控件功能不支持添加签批控件`
+
+**注**: 
+1.发起后添加控件功能不支持添加签批控件 
+2.签署方在签署时自行添加签署控件仅支持电子签小程序或web控制台签署，不支持H5
                      */
                     int64_t m_signBeanTag;
                     bool m_signBeanTagHasBeenSet;
@@ -869,10 +1006,41 @@ MobileCheck：手机号验证，用户手机号和参与方手机号（ApproverM
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
+                     * 在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li><li> <b>3</b> :文书</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
                      */
                     int64_t m_flowDisplayType;
                     bool m_flowDisplayTypeHasBeenSet;
+
+                    /**
+                     * 是否为预览模式，取值如下： <ul><li> **false**：非预览模式（默认），会产生合同流程并返回合同流程编号FlowId。</li> <li> **true**：预览模式，不产生合同流程，不返回合同流程编号FlowId，而是返回预览链接PreviewUrl，有效期为300秒，用于查看真实发起后合同的样子。</li></ul>
+                     */
+                    bool m_needPreview;
+                    bool m_needPreviewHasBeenSet;
+
+                    /**
+                     * 预览模式下产生的预览链接类型 
+<ul><li> **0** :(默认) 文件流 ,点开后下载预览的合同PDF文件 </li>
+<li> **1** :H5链接 ,点开后在浏览器中展示合同的样子</li></ul>
+注: `此参数在NeedPreview 为true时有效`
+
+                     */
+                    int64_t m_previewType;
+                    bool m_previewTypeHasBeenSet;
+
+                    /**
+                     * 是否开启动态合同（动态签署人2.0）
+<ul><li> **false** :(默认) 不开启动态合同（动态签署人2.0）</li>
+<li> **true** :开启动态合同（动态签署人2.0）,发起后可继续追加合同签署人</li></ul>
+
+                     */
+                    bool m_openDynamicFlow;
+                    bool m_openDynamicFlowHasBeenSet;
+
+                    /**
+                     * 是否开启动态合同（动态签署人2.0）<ul><li> **false** :(默认) 不开启动态合同（动态签署人2.0）</li><li> **true** :开启动态合同（动态签署人2.0）,发起后可继续追加合同签署人</li></ul>
+                     */
+                    bool m_openDynamicSignFlow;
+                    bool m_openDynamicSignFlowHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取集群存储选项。
-                     * @return StorageOption 集群存储选项。
+                     * 获取集群存储选项；集群已存在的节点和新增节点都会挂载此存储。
+                     * @return StorageOption 集群存储选项；集群已存在的节点和新增节点都会挂载此存储。
                      * 
                      */
                     StorageOption GetStorageOption() const;
 
                     /**
-                     * 设置集群存储选项。
-                     * @param _storageOption 集群存储选项。
+                     * 设置集群存储选项；集群已存在的节点和新增节点都会挂载此存储。
+                     * @param _storageOption 集群存储选项；集群已存在的节点和新增节点都会挂载此存储。
                      * 
                      */
                     void SetStorageOption(const StorageOption& _storageOption);
@@ -94,7 +94,7 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 集群存储选项。
+                     * 集群存储选项；集群已存在的节点和新增节点都会挂载此存储。
                      */
                     StorageOption m_storageOption;
                     bool m_storageOptionHasBeenSet;

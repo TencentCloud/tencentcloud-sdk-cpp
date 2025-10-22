@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dc/v20180410/model/Filter.h>
 
 
 namespace TencentCloud
@@ -43,19 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取接入点所在的地域。使用DescribeRegions查询。
-您可以通过调用 DescribeRegions接口获取地域ID。
-                     * @return RegionId 接入点所在的地域。使用DescribeRegions查询。
-您可以通过调用 DescribeRegions接口获取地域ID。
+                     * 获取接入点所在的地域。你可以通过调用[DescribeRegions](https://cloud.tencent.com/document/product/1596/77930)接口获取地域ID。
+                     * @return RegionId 接入点所在的地域。你可以通过调用[DescribeRegions](https://cloud.tencent.com/document/product/1596/77930)接口获取地域ID。
                      * 
                      */
                     std::string GetRegionId() const;
 
                     /**
-                     * 设置接入点所在的地域。使用DescribeRegions查询。
-您可以通过调用 DescribeRegions接口获取地域ID。
-                     * @param _regionId 接入点所在的地域。使用DescribeRegions查询。
-您可以通过调用 DescribeRegions接口获取地域ID。
+                     * 设置接入点所在的地域。你可以通过调用[DescribeRegions](https://cloud.tencent.com/document/product/1596/77930)接口获取地域ID。
+                     * @param _regionId 接入点所在的地域。你可以通过调用[DescribeRegions](https://cloud.tencent.com/document/product/1596/77930)接口获取地域ID。
                      * 
                      */
                     void SetRegionId(const std::string& _regionId);
@@ -109,11 +106,31 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取过滤参数，支持：access-point-id、isp
+                     * @return Filters 过滤参数，支持：access-point-id、isp
+                     * 
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置过滤参数，支持：access-point-id、isp
+                     * @param _filters 过滤参数，支持：access-point-id、isp
+                     * 
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 接入点所在的地域。使用DescribeRegions查询。
-您可以通过调用 DescribeRegions接口获取地域ID。
+                     * 接入点所在的地域。你可以通过调用[DescribeRegions](https://cloud.tencent.com/document/product/1596/77930)接口获取地域ID。
                      */
                     std::string m_regionId;
                     bool m_regionIdHasBeenSet;
@@ -129,6 +146,12 @@ namespace TencentCloud
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 过滤参数，支持：access-point-id、isp
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                 };
             }

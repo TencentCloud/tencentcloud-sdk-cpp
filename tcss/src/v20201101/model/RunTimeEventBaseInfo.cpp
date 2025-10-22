@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,7 +51,8 @@ RunTimeEventBaseInfo::RunTimeEventBaseInfo() :
     m_nodeUniqueIDHasBeenSet(false),
     m_hostIDHasBeenSet(false),
     m_namespaceHasBeenSet(false),
-    m_workloadTypeHasBeenSet(false)
+    m_workloadTypeHasBeenSet(false),
+    m_containerStatusHasBeenSet(false)
 {
 }
 
@@ -370,6 +371,16 @@ CoreInternalOutcome RunTimeEventBaseInfo::Deserialize(const rapidjson::Value &va
         m_workloadTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ContainerStatus") && !value["ContainerStatus"].IsNull())
+    {
+        if (!value["ContainerStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunTimeEventBaseInfo.ContainerStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerStatus = string(value["ContainerStatus"].GetString());
+        m_containerStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -623,6 +634,14 @@ void RunTimeEventBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "WorkloadType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_workloadType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_containerStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_containerStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1122,5 +1141,21 @@ void RunTimeEventBaseInfo::SetWorkloadType(const string& _workloadType)
 bool RunTimeEventBaseInfo::WorkloadTypeHasBeenSet() const
 {
     return m_workloadTypeHasBeenSet;
+}
+
+string RunTimeEventBaseInfo::GetContainerStatus() const
+{
+    return m_containerStatus;
+}
+
+void RunTimeEventBaseInfo::SetContainerStatus(const string& _containerStatus)
+{
+    m_containerStatus = _containerStatus;
+    m_containerStatusHasBeenSet = true;
+}
+
+bool RunTimeEventBaseInfo::ContainerStatusHasBeenSet() const
+{
+    return m_containerStatusHasBeenSet;
 }
 

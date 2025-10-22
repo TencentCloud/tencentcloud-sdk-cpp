@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备证书，用于 TLS 建立链接时校验客户端身份。采用非对称加密时返回该参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceCert 设备证书，用于 TLS 建立链接时校验客户端身份。采用非对称加密时返回该参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceCert() const;
 
                     /**
                      * 设置设备证书，用于 TLS 建立链接时校验客户端身份。采用非对称加密时返回该参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceCert 设备证书，用于 TLS 建立链接时校验客户端身份。采用非对称加密时返回该参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceCert(const std::string& _deviceCert);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceName 设备名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceName 设备名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备私钥，用于 TLS 建立链接时校验客户端身份，腾讯云后台不保存，请妥善保管。采用非对称加密时返回该参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DevicePrivateKey 设备私钥，用于 TLS 建立链接时校验客户端身份，腾讯云后台不保存，请妥善保管。采用非对称加密时返回该参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDevicePrivateKey() const;
 
                     /**
                      * 设置设备私钥，用于 TLS 建立链接时校验客户端身份，腾讯云后台不保存，请妥善保管。采用非对称加密时返回该参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _devicePrivateKey 设备私钥，用于 TLS 建立链接时校验客户端身份，腾讯云后台不保存，请妥善保管。采用非对称加密时返回该参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDevicePrivateKey(const std::string& _devicePrivateKey);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对称加密密钥，base64编码。采用对称加密时返回该参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DevicePsk 对称加密密钥，base64编码。采用对称加密时返回该参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDevicePsk() const;
 
                     /**
                      * 设置对称加密密钥，base64编码。采用对称加密时返回该参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _devicePsk 对称加密密钥，base64编码。采用对称加密时返回该参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDevicePsk(const std::string& _devicePsk);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 设备证书，用于 TLS 建立链接时校验客户端身份。采用非对称加密时返回该参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceCert;
                     bool m_deviceCertHasBeenSet;
 
                     /**
                      * 设备名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceName;
                     bool m_deviceNameHasBeenSet;
 
                     /**
                      * 设备私钥，用于 TLS 建立链接时校验客户端身份，腾讯云后台不保存，请妥善保管。采用非对称加密时返回该参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_devicePrivateKey;
                     bool m_devicePrivateKeyHasBeenSet;
 
                     /**
                      * 对称加密密钥，base64编码。采用对称加密时返回该参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_devicePsk;
                     bool m_devicePskHasBeenSet;

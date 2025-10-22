@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tsf/v20180326/model/FieldRef.h>
 #include <tencentcloud/tsf/v20180326/model/ResourceFieldRef.h>
+#include <tencentcloud/tsf/v20180326/model/CommonRef.h>
 
 
 namespace TencentCloud
@@ -50,18 +51,14 @@ namespace TencentCloud
 
                     /**
                      * 获取k8s env 的 FieldRef
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FieldRef k8s env 的 FieldRef
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     FieldRef GetFieldRef() const;
 
                     /**
                      * 设置k8s env 的 FieldRef
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fieldRef k8s env 的 FieldRef
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFieldRef(const FieldRef& _fieldRef);
@@ -98,11 +95,52 @@ namespace TencentCloud
                      */
                     bool ResourceFieldRefHasBeenSet() const;
 
+                    /**
+                     * 获取k8s env的configMapKeyRef
+                     * @return ConfigMapKeyRef k8s env的configMapKeyRef
+                     * 
+                     */
+                    CommonRef GetConfigMapKeyRef() const;
+
+                    /**
+                     * 设置k8s env的configMapKeyRef
+                     * @param _configMapKeyRef k8s env的configMapKeyRef
+                     * 
+                     */
+                    void SetConfigMapKeyRef(const CommonRef& _configMapKeyRef);
+
+                    /**
+                     * 判断参数 ConfigMapKeyRef 是否已赋值
+                     * @return ConfigMapKeyRef 是否已赋值
+                     * 
+                     */
+                    bool ConfigMapKeyRefHasBeenSet() const;
+
+                    /**
+                     * 获取k8s env 的 secretKeyRef
+                     * @return SecretKeyRef k8s env 的 secretKeyRef
+                     * 
+                     */
+                    CommonRef GetSecretKeyRef() const;
+
+                    /**
+                     * 设置k8s env 的 secretKeyRef
+                     * @param _secretKeyRef k8s env 的 secretKeyRef
+                     * 
+                     */
+                    void SetSecretKeyRef(const CommonRef& _secretKeyRef);
+
+                    /**
+                     * 判断参数 SecretKeyRef 是否已赋值
+                     * @return SecretKeyRef 是否已赋值
+                     * 
+                     */
+                    bool SecretKeyRefHasBeenSet() const;
+
                 private:
 
                     /**
                      * k8s env 的 FieldRef
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     FieldRef m_fieldRef;
                     bool m_fieldRefHasBeenSet;
@@ -113,6 +151,18 @@ namespace TencentCloud
                      */
                     ResourceFieldRef m_resourceFieldRef;
                     bool m_resourceFieldRefHasBeenSet;
+
+                    /**
+                     * k8s env的configMapKeyRef
+                     */
+                    CommonRef m_configMapKeyRef;
+                    bool m_configMapKeyRefHasBeenSet;
+
+                    /**
+                     * k8s env 的 secretKeyRef
+                     */
+                    CommonRef m_secretKeyRef;
+                    bool m_secretKeyRefHasBeenSet;
 
                 };
             }

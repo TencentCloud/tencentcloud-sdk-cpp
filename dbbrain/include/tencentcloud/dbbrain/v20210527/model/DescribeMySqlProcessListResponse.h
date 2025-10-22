@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,10 +60,8 @@ namespace TencentCloud
                     bool ProcessListHasBeenSet() const;
 
                     /**
-                     * 获取sql会话统计信息。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Statistics sql会话统计信息。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取sql会话统计信息。如果请求参数中包含StatDimensions，该参数则可能返回，否则不返回。
+                     * @return Statistics sql会话统计信息。如果请求参数中包含StatDimensions，该参数则可能返回，否则不返回。
                      * 
                      */
                     std::vector<StatisticInfo> GetStatistics() const;
@@ -84,8 +82,7 @@ namespace TencentCloud
                     bool m_processListHasBeenSet;
 
                     /**
-                     * sql会话统计信息。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * sql会话统计信息。如果请求参数中包含StatDimensions，该参数则可能返回，否则不返回。
                      */
                     std::vector<StatisticInfo> m_statistics;
                     bool m_statisticsHasBeenSet;

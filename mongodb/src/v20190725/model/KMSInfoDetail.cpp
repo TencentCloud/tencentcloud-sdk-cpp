@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ KMSInfoDetail::KMSInfoDetail() :
     m_createTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_keyUsageHasBeenSet(false),
-    m_keyOriginHasBeenSet(false)
+    m_keyOriginHasBeenSet(false),
+    m_kmsRegionHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome KMSInfoDetail::Deserialize(const rapidjson::Value &value)
         m_keyOriginHasBeenSet = true;
     }
 
+    if (value.HasMember("KmsRegion") && !value["KmsRegion"].IsNull())
+    {
+        if (!value["KmsRegion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KMSInfoDetail.KmsRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kmsRegion = string(value["KmsRegion"].GetString());
+        m_kmsRegionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void KMSInfoDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "KeyOrigin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_keyOrigin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kmsRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KmsRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kmsRegion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void KMSInfoDetail::SetKeyOrigin(const string& _keyOrigin)
 bool KMSInfoDetail::KeyOriginHasBeenSet() const
 {
     return m_keyOriginHasBeenSet;
+}
+
+string KMSInfoDetail::GetKmsRegion() const
+{
+    return m_kmsRegion;
+}
+
+void KMSInfoDetail::SetKmsRegion(const string& _kmsRegion)
+{
+    m_kmsRegion = _kmsRegion;
+    m_kmsRegionHasBeenSet = true;
+}
+
+bool KMSInfoDetail::KmsRegionHasBeenSet() const
+{
+    return m_kmsRegionHasBeenSet;
 }
 

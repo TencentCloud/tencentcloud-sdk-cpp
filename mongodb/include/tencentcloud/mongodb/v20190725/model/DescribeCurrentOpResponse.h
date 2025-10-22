@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取符合查询条件的操作总数
-                     * @return TotalCount 符合查询条件的操作总数
+                     * 获取符合查询条件的操作总数。
+                     * @return TotalCount 符合查询条件的操作总数。
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取当前操作列表
-                     * @return CurrentOps 当前操作列表
+                     * 获取当前操作列表。
+                     * @return CurrentOps 当前操作列表。
                      * 
                      */
                     std::vector<CurrentOp> GetCurrentOps() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 符合查询条件的操作总数
+                     * 符合查询条件的操作总数。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 当前操作列表
+                     * 当前操作列表。
                      */
                     std::vector<CurrentOp> m_currentOps;
                     bool m_currentOpsHasBeenSet;

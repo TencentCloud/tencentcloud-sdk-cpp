@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ using namespace TencentCloud::Cynosdb::V20190107::Model;
 using namespace std;
 
 ExportInstanceErrorLogsResponse::ExportInstanceErrorLogsResponse() :
-    m_errorLogItemsHasBeenSet(false)
+    m_errorLogItemsHasBeenSet(false),
+    m_fileContentHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,16 @@ CoreInternalOutcome ExportInstanceErrorLogsResponse::Deserialize(const string &p
         m_errorLogItemsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FileContent") && !rsp["FileContent"].IsNull())
+    {
+        if (!rsp["FileContent"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileContent` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileContent = string(rsp["FileContent"].GetString());
+        m_fileContentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,11 +118,19 @@ string ExportInstanceErrorLogsResponse::ToJsonString() const
         }
     }
 
+    if (m_fileContentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileContent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileContent.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -127,6 +146,16 @@ vector<ErrorLogItemExport> ExportInstanceErrorLogsResponse::GetErrorLogItems() c
 bool ExportInstanceErrorLogsResponse::ErrorLogItemsHasBeenSet() const
 {
     return m_errorLogItemsHasBeenSet;
+}
+
+string ExportInstanceErrorLogsResponse::GetFileContent() const
+{
+    return m_fileContent;
+}
+
+bool ExportInstanceErrorLogsResponse::FileContentHasBeenSet() const
+{
+    return m_fileContentHasBeenSet;
 }
 
 

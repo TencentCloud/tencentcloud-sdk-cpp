@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool SchemeUrlHasBeenSet() const;
 
                     /**
-                     * 获取二维码，在生成动态签署人跳转封面页链接时返回
-                     * @return SchemeQrcodeUrl 二维码，在生成动态签署人跳转封面页链接时返回
+                     * 获取二维码，在生成动态签署人跳转封面页链接时返回  注：`此二维码下载链接有效期为5分钟，可下载二维码后本地保存。`
+                     * @return SchemeQrcodeUrl 二维码，在生成动态签署人跳转封面页链接时返回  注：`此二维码下载链接有效期为5分钟，可下载二维码后本地保存。`
                      * 
                      */
                     std::string GetSchemeQrcodeUrl() const;
@@ -101,7 +101,7 @@ namespace TencentCloud
                     bool m_schemeUrlHasBeenSet;
 
                     /**
-                     * 二维码，在生成动态签署人跳转封面页链接时返回
+                     * 二维码，在生成动态签署人跳转封面页链接时返回  注：`此二维码下载链接有效期为5分钟，可下载二维码后本地保存。`
                      */
                     std::string m_schemeQrcodeUrl;
                     bool m_schemeQrcodeUrlHasBeenSet;

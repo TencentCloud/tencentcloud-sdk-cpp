@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取实例总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 实例总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -77,10 +75,8 @@ namespace TencentCloud
                     bool InstancesListHasBeenSet() const;
 
                     /**
-                     * 获取-
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ErrorMsg -
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取错误信息
+                     * @return ErrorMsg 错误信息
                      * 
                      */
                     std::string GetErrorMsg() const;
@@ -96,7 +92,6 @@ namespace TencentCloud
 
                     /**
                      * 实例总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
@@ -109,8 +104,7 @@ namespace TencentCloud
                     bool m_instancesListHasBeenSet;
 
                     /**
-                     * -
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 错误信息
                      */
                     std::string m_errorMsg;
                     bool m_errorMsgHasBeenSet;

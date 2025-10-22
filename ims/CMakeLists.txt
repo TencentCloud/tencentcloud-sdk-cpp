@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -37,6 +37,7 @@ set(ims_public_header_model
   include/tencentcloud/ims/v20200713/model/User.h
   include/tencentcloud/ims/v20201229/model/ImageModerationRequest.h
   include/tencentcloud/ims/v20201229/model/RecognitionResult.h
+  include/tencentcloud/ims/v20201229/model/OcrHitInfo.h
   include/tencentcloud/ims/v20201229/model/ObjectResult.h
   include/tencentcloud/ims/v20201229/model/OcrTextDetail.h
   include/tencentcloud/ims/v20201229/model/CreateImageModerationAsyncTaskResponse.h
@@ -51,6 +52,7 @@ set(ims_public_header_model
   include/tencentcloud/ims/v20201229/model/CreateImageModerationAsyncTaskRequest.h
   include/tencentcloud/ims/v20201229/model/LibResult.h
   include/tencentcloud/ims/v20201229/model/ImageModerationResponse.h
+  include/tencentcloud/ims/v20201229/model/Positions.h
   include/tencentcloud/ims/v20201229/model/User.h
   )
 
@@ -74,6 +76,7 @@ set(ims_src
   src/v20200713/model/User.cpp
   src/v20201229/model/ImageModerationRequest.cpp
   src/v20201229/model/RecognitionResult.cpp
+  src/v20201229/model/OcrHitInfo.cpp
   src/v20201229/model/ObjectResult.cpp
   src/v20201229/model/OcrTextDetail.cpp
   src/v20201229/model/CreateImageModerationAsyncTaskResponse.cpp
@@ -88,6 +91,7 @@ set(ims_src
   src/v20201229/model/CreateImageModerationAsyncTaskRequest.cpp
   src/v20201229/model/LibResult.cpp
   src/v20201229/model/ImageModerationResponse.cpp
+  src/v20201229/model/Positions.cpp
   src/v20201229/model/User.cpp
   )
 

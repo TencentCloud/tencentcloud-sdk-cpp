@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@
 #include <tencentcloud/vpc/v20170312/model/IKEOptionsSpecification.h>
 #include <tencentcloud/vpc/v20170312/model/IPSECOptionsSpecification.h>
 #include <tencentcloud/vpc/v20170312/model/HealthCheckConfig.h>
+#include <tencentcloud/vpc/v20170312/model/BgpConfig.h>
 
 
 namespace TencentCloud
@@ -361,6 +362,27 @@ namespace TencentCloud
                      */
                     bool HealthCheckConfigHasBeenSet() const;
 
+                    /**
+                     * 获取BGP隧道配置
+                     * @return BgpConfig BGP隧道配置
+                     * 
+                     */
+                    BgpConfig GetBgpConfig() const;
+
+                    /**
+                     * 设置BGP隧道配置
+                     * @param _bgpConfig BGP隧道配置
+                     * 
+                     */
+                    void SetBgpConfig(const BgpConfig& _bgpConfig);
+
+                    /**
+                     * 判断参数 BgpConfig 是否已赋值
+                     * @return BgpConfig 是否已赋值
+                     * 
+                     */
+                    bool BgpConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -452,6 +474,12 @@ namespace TencentCloud
                      */
                     HealthCheckConfig m_healthCheckConfig;
                     bool m_healthCheckConfigHasBeenSet;
+
+                    /**
+                     * BGP隧道配置
+                     */
+                    BgpConfig m_bgpConfig;
+                    bool m_bgpConfigHasBeenSet;
 
                 };
             }

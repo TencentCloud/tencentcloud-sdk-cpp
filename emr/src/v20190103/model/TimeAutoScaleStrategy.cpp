@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ TimeAutoScaleStrategy::TimeAutoScaleStrategy() :
     m_strategyIdHasBeenSet(false),
     m_graceDownFlagHasBeenSet(false),
     m_graceDownTimeHasBeenSet(false),
+    m_graceDownProtectFlagHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_configGroupAssignedHasBeenSet(false),
     m_measureMethodHasBeenSet(false),
@@ -40,7 +41,8 @@ TimeAutoScaleStrategy::TimeAutoScaleStrategy() :
     m_softDeployInfoHasBeenSet(false),
     m_serviceNodeInfoHasBeenSet(false),
     m_compensateFlagHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
+    m_groupIdHasBeenSet(false),
+    m_graceDownLabelHasBeenSet(false)
 {
 }
 
@@ -166,6 +168,16 @@ CoreInternalOutcome TimeAutoScaleStrategy::Deserialize(const rapidjson::Value &v
         m_graceDownTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("GraceDownProtectFlag") && !value["GraceDownProtectFlag"].IsNull())
+    {
+        if (!value["GraceDownProtectFlag"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TimeAutoScaleStrategy.GraceDownProtectFlag` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_graceDownProtectFlag = value["GraceDownProtectFlag"].GetBool();
+        m_graceDownProtectFlagHasBeenSet = true;
+    }
+
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
@@ -272,6 +284,26 @@ CoreInternalOutcome TimeAutoScaleStrategy::Deserialize(const rapidjson::Value &v
         m_groupIdHasBeenSet = true;
     }
 
+    if (value.HasMember("GraceDownLabel") && !value["GraceDownLabel"].IsNull())
+    {
+        if (!value["GraceDownLabel"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TimeAutoScaleStrategy.GraceDownLabel` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["GraceDownLabel"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TkeLabel item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_graceDownLabel.push_back(item);
+        }
+        m_graceDownLabelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -368,6 +400,14 @@ void TimeAutoScaleStrategy::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         value.AddMember(iKey, m_graceDownTime, allocator);
     }
 
+    if (m_graceDownProtectFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GraceDownProtectFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_graceDownProtectFlag, allocator);
+    }
+
     if (m_tagsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -455,6 +495,21 @@ void TimeAutoScaleStrategy::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_groupId, allocator);
+    }
+
+    if (m_graceDownLabelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GraceDownLabel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_graceDownLabel.begin(); itr != m_graceDownLabel.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -636,6 +691,22 @@ bool TimeAutoScaleStrategy::GraceDownTimeHasBeenSet() const
     return m_graceDownTimeHasBeenSet;
 }
 
+bool TimeAutoScaleStrategy::GetGraceDownProtectFlag() const
+{
+    return m_graceDownProtectFlag;
+}
+
+void TimeAutoScaleStrategy::SetGraceDownProtectFlag(const bool& _graceDownProtectFlag)
+{
+    m_graceDownProtectFlag = _graceDownProtectFlag;
+    m_graceDownProtectFlagHasBeenSet = true;
+}
+
+bool TimeAutoScaleStrategy::GraceDownProtectFlagHasBeenSet() const
+{
+    return m_graceDownProtectFlagHasBeenSet;
+}
+
 vector<Tag> TimeAutoScaleStrategy::GetTags() const
 {
     return m_tags;
@@ -778,5 +849,21 @@ void TimeAutoScaleStrategy::SetGroupId(const int64_t& _groupId)
 bool TimeAutoScaleStrategy::GroupIdHasBeenSet() const
 {
     return m_groupIdHasBeenSet;
+}
+
+vector<TkeLabel> TimeAutoScaleStrategy::GetGraceDownLabel() const
+{
+    return m_graceDownLabel;
+}
+
+void TimeAutoScaleStrategy::SetGraceDownLabel(const vector<TkeLabel>& _graceDownLabel)
+{
+    m_graceDownLabel = _graceDownLabel;
+    m_graceDownLabelHasBeenSet = true;
+}
+
+bool TimeAutoScaleStrategy::GraceDownLabelHasBeenSet() const
+{
+    return m_graceDownLabelHasBeenSet;
 }
 

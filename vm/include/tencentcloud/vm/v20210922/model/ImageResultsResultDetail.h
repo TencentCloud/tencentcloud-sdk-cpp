@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vm/v20210922/model/ImageResultsResultDetailLocation.h>
+#include <tencentcloud/vm/v20210922/model/OcrHitInfo.h>
 
 
 namespace TencentCloud
@@ -49,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -74,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取OCR识别文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text OCR识别文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置OCR识别文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _text OCR识别文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetText(const std::string& _text);
@@ -99,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取位置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Location 位置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ImageResultsResultDetailLocation GetLocation() const;
 
                     /**
                      * 设置位置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _location 位置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLocation(const ImageResultsResultDetailLocation& _location);
@@ -124,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _label 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabel(const std::string& _label);
@@ -149,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取库ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LibId 库ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLibId() const;
 
                     /**
                      * 设置库ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _libId 库ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLibId(const std::string& _libId);
@@ -174,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LibName 库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLibName() const;
 
                     /**
                      * 设置库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _libName 库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLibName(const std::string& _libName);
@@ -199,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命中的关键词
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Keywords 命中的关键词
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetKeywords() const;
 
                     /**
                      * 设置命中的关键词
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _keywords 命中的关键词
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKeywords(const std::vector<std::string>& _keywords);
@@ -224,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Suggestion 建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSuggestion() const;
 
                     /**
                      * 设置建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _suggestion 建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
@@ -249,18 +218,14 @@ namespace TencentCloud
 
                     /**
                      * 获取得分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Score 得分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScore() const;
 
                     /**
                      * 设置得分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _score 得分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScore(const int64_t& _score);
@@ -274,18 +239,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子标签码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubLabelCode 子标签码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubLabelCode() const;
 
                     /**
                      * 设置子标签码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subLabelCode 子标签码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubLabelCode(const std::string& _subLabelCode);
@@ -297,77 +258,121 @@ namespace TencentCloud
                      */
                     bool SubLabelCodeHasBeenSet() const;
 
+                    /**
+                     * 获取子标签
+                     * @return SubLabel 子标签
+                     * 
+                     */
+                    std::string GetSubLabel() const;
+
+                    /**
+                     * 设置子标签
+                     * @param _subLabel 子标签
+                     * 
+                     */
+                    void SetSubLabel(const std::string& _subLabel);
+
+                    /**
+                     * 判断参数 SubLabel 是否已赋值
+                     * @return SubLabel 是否已赋值
+                     * 
+                     */
+                    bool SubLabelHasBeenSet() const;
+
+                    /**
+                     * 获取Ocr文本命中信息
+                     * @return OcrHitInfos Ocr文本命中信息
+                     * 
+                     */
+                    std::vector<OcrHitInfo> GetOcrHitInfos() const;
+
+                    /**
+                     * 设置Ocr文本命中信息
+                     * @param _ocrHitInfos Ocr文本命中信息
+                     * 
+                     */
+                    void SetOcrHitInfos(const std::vector<OcrHitInfo>& _ocrHitInfos);
+
+                    /**
+                     * 判断参数 OcrHitInfos 是否已赋值
+                     * @return OcrHitInfos 是否已赋值
+                     * 
+                     */
+                    bool OcrHitInfosHasBeenSet() const;
+
                 private:
 
                     /**
                      * 任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * OCR识别文本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;
 
                     /**
                      * 位置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ImageResultsResultDetailLocation m_location;
                     bool m_locationHasBeenSet;
 
                     /**
                      * 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
 
                     /**
                      * 库ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_libId;
                     bool m_libIdHasBeenSet;
 
                     /**
                      * 库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_libName;
                     bool m_libNameHasBeenSet;
 
                     /**
                      * 命中的关键词
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_keywords;
                     bool m_keywordsHasBeenSet;
 
                     /**
                      * 建议
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_suggestion;
                     bool m_suggestionHasBeenSet;
 
                     /**
                      * 得分
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_score;
                     bool m_scoreHasBeenSet;
 
                     /**
                      * 子标签码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subLabelCode;
                     bool m_subLabelCodeHasBeenSet;
+
+                    /**
+                     * 子标签
+                     */
+                    std::string m_subLabel;
+                    bool m_subLabelHasBeenSet;
+
+                    /**
+                     * Ocr文本命中信息
+                     */
+                    std::vector<OcrHitInfo> m_ocrHitInfos;
+                    bool m_ocrHitInfosHasBeenSet;
 
                 };
             }

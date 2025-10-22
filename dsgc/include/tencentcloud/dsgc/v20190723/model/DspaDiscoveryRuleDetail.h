@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleId 规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRuleId() const;
 
                     /**
                      * 设置规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleId 规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleId(const int64_t& _ruleId);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -125,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则来源，取值：0 内置, 1 自定义
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Source 规则来源，取值：0 内置, 1 自定义
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSource() const;
 
                     /**
                      * 设置规则来源，取值：0 内置, 1 自定义
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _source 规则来源，取值：0 内置, 1 自定义
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSource(const int64_t& _source);
@@ -150,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取RDB规则详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RDBRules RDB规则详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DspaDiscoveryRDBRules GetRDBRules() const;
 
                     /**
                      * 设置RDB规则详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rDBRules RDB规则详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRDBRules(const DspaDiscoveryRDBRules& _rDBRules);
@@ -175,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取COS规则详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return COSRules COS规则详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DspaDiscoveryCOSRules GetCOSRules() const;
 
                     /**
                      * 设置COS规则详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cOSRules COS规则详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCOSRules(const DspaDiscoveryCOSRules& _cOSRules);
@@ -200,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0关闭，1开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 0关闭，1开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置0关闭，1开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 0关闭，1开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -227,49 +199,42 @@ namespace TencentCloud
 
                     /**
                      * 规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ruleId;
                     bool m_ruleIdHasBeenSet;
 
                     /**
                      * 规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 规则来源，取值：0 内置, 1 自定义
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
                      * RDB规则详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DspaDiscoveryRDBRules m_rDBRules;
                     bool m_rDBRulesHasBeenSet;
 
                     /**
                      * COS规则详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DspaDiscoveryCOSRules m_cOSRules;
                     bool m_cOSRulesHasBeenSet;
 
                     /**
                      * 0关闭，1开启
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

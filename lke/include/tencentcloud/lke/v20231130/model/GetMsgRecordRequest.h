@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取数量
-                     * @return Count 数量
+                     * 获取数量,  数量需大于2, 最大1000
+                     * @return Count 数量,  数量需大于2, 最大1000
                      * 
                      */
                     uint64_t GetCount() const;
 
                     /**
-                     * 设置数量
-                     * @param _count 数量
+                     * 设置数量,  数量需大于2, 最大1000
+                     * @param _count 数量,  数量需大于2, 最大1000
                      * 
                      */
                     void SetCount(const uint64_t& _count);
@@ -106,36 +106,15 @@ namespace TencentCloud
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取最后一条记录ID
-                     * @return LastRecordId 最后一条记录ID
-                     * 
-                     */
-                    std::string GetLastRecordId() const;
-
-                    /**
-                     * 设置最后一条记录ID
-                     * @param _lastRecordId 最后一条记录ID
-                     * 
-                     */
-                    void SetLastRecordId(const std::string& _lastRecordId);
-
-                    /**
-                     * 判断参数 LastRecordId 是否已赋值
-                     * @return LastRecordId 是否已赋值
-                     * 
-                     */
-                    bool LastRecordIdHasBeenSet() const;
-
-                    /**
-                     * 获取应用AppKey, 当Type=5[API访客]时, 该字段必填
-                     * @return BotAppKey 应用AppKey, 当Type=5[API访客]时, 该字段必填
+                     * 获取应用AppKey, 当Type=5[API访客]时, 该字段必填  :</br>  获取方式:</br>   1、应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取</br>   2、参考 https://cloud.tencent.com/document/product/1759/109469 第二项
+                     * @return BotAppKey 应用AppKey, 当Type=5[API访客]时, 该字段必填  :</br>  获取方式:</br>   1、应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取</br>   2、参考 https://cloud.tencent.com/document/product/1759/109469 第二项
                      * 
                      */
                     std::string GetBotAppKey() const;
 
                     /**
-                     * 设置应用AppKey, 当Type=5[API访客]时, 该字段必填
-                     * @param _botAppKey 应用AppKey, 当Type=5[API访客]时, 该字段必填
+                     * 设置应用AppKey, 当Type=5[API访客]时, 该字段必填  :</br>  获取方式:</br>   1、应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取</br>   2、参考 https://cloud.tencent.com/document/product/1759/109469 第二项
+                     * @param _botAppKey 应用AppKey, 当Type=5[API访客]时, 该字段必填  :</br>  获取方式:</br>   1、应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取</br>   2、参考 https://cloud.tencent.com/document/product/1759/109469 第二项
                      * 
                      */
                     void SetBotAppKey(const std::string& _botAppKey);
@@ -168,6 +147,72 @@ namespace TencentCloud
                      */
                     bool SceneHasBeenSet() const;
 
+                    /**
+                     * 获取最后一条记录ID， 消息从后往前获取
+
+MidRecordId与LastRecordId只能选择一个
+
+                     * @return LastRecordId 最后一条记录ID， 消息从后往前获取
+
+MidRecordId与LastRecordId只能选择一个
+
+                     * 
+                     */
+                    std::string GetLastRecordId() const;
+
+                    /**
+                     * 设置最后一条记录ID， 消息从后往前获取
+
+MidRecordId与LastRecordId只能选择一个
+
+                     * @param _lastRecordId 最后一条记录ID， 消息从后往前获取
+
+MidRecordId与LastRecordId只能选择一个
+
+                     * 
+                     */
+                    void SetLastRecordId(const std::string& _lastRecordId);
+
+                    /**
+                     * 判断参数 LastRecordId 是否已赋值
+                     * @return LastRecordId 是否已赋值
+                     * 
+                     */
+                    bool LastRecordIdHasBeenSet() const;
+
+                    /**
+                     * 获取传该值，代表拉取该记录id的前后总共count条消息记录
+
+MidRecordId与LastRecordId只能选择一个
+
+                     * @return MidRecordId 传该值，代表拉取该记录id的前后总共count条消息记录
+
+MidRecordId与LastRecordId只能选择一个
+
+                     * 
+                     */
+                    std::string GetMidRecordId() const;
+
+                    /**
+                     * 设置传该值，代表拉取该记录id的前后总共count条消息记录
+
+MidRecordId与LastRecordId只能选择一个
+
+                     * @param _midRecordId 传该值，代表拉取该记录id的前后总共count条消息记录
+
+MidRecordId与LastRecordId只能选择一个
+
+                     * 
+                     */
+                    void SetMidRecordId(const std::string& _midRecordId);
+
+                    /**
+                     * 判断参数 MidRecordId 是否已赋值
+                     * @return MidRecordId 是否已赋值
+                     * 
+                     */
+                    bool MidRecordIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -177,7 +222,7 @@ namespace TencentCloud
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 数量
+                     * 数量,  数量需大于2, 最大1000
                      */
                     uint64_t m_count;
                     bool m_countHasBeenSet;
@@ -189,13 +234,7 @@ namespace TencentCloud
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * 最后一条记录ID
-                     */
-                    std::string m_lastRecordId;
-                    bool m_lastRecordIdHasBeenSet;
-
-                    /**
-                     * 应用AppKey, 当Type=5[API访客]时, 该字段必填
+                     * 应用AppKey, 当Type=5[API访客]时, 该字段必填  :</br>  获取方式:</br>   1、应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取</br>   2、参考 https://cloud.tencent.com/document/product/1759/109469 第二项
                      */
                     std::string m_botAppKey;
                     bool m_botAppKeyHasBeenSet;
@@ -205,6 +244,24 @@ namespace TencentCloud
                      */
                     uint64_t m_scene;
                     bool m_sceneHasBeenSet;
+
+                    /**
+                     * 最后一条记录ID， 消息从后往前获取
+
+MidRecordId与LastRecordId只能选择一个
+
+                     */
+                    std::string m_lastRecordId;
+                    bool m_lastRecordIdHasBeenSet;
+
+                    /**
+                     * 传该值，代表拉取该记录id的前后总共count条消息记录
+
+MidRecordId与LastRecordId只能选择一个
+
+                     */
+                    std::string m_midRecordId;
+                    bool m_midRecordIdHasBeenSet;
 
                 };
             }

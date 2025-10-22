@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取废弃
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WhiteList 废弃
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWhiteList() const;
 
                     /**
                      * 设置废弃
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _whiteList 废弃
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWhiteList(const std::string& _whiteList);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公网管控台白名单
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicControlConsoleWhiteList 公网管控台白名单
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublicControlConsoleWhiteList() const;
 
                     /**
                      * 设置公网管控台白名单
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publicControlConsoleWhiteList 公网管控台白名单
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublicControlConsoleWhiteList(const std::string& _publicControlConsoleWhiteList);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公网数据流白名单
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicDataStreamWhiteList 公网数据流白名单
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublicDataStreamWhiteList() const;
 
                     /**
                      * 设置公网数据流白名单
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publicDataStreamWhiteList 公网数据流白名单
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublicDataStreamWhiteList(const std::string& _publicDataStreamWhiteList);
@@ -175,21 +163,18 @@ namespace TencentCloud
 
                     /**
                      * 废弃
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_whiteList;
                     bool m_whiteListHasBeenSet;
 
                     /**
                      * 公网管控台白名单
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publicControlConsoleWhiteList;
                     bool m_publicControlConsoleWhiteListHasBeenSet;
 
                     /**
                      * 公网数据流白名单
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publicDataStreamWhiteList;
                     bool m_publicDataStreamWhiteListHasBeenSet;

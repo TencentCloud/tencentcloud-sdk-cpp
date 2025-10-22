@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -113,6 +113,90 @@ namespace TencentCloud
                      */
                     bool SearchUsageHasBeenSet() const;
 
+                    /**
+                     * 获取文档解析消耗页数
+                     * @return PageUsage 文档解析消耗页数
+                     * 
+                     */
+                    uint64_t GetPageUsage() const;
+
+                    /**
+                     * 判断参数 PageUsage 是否已赋值
+                     * @return PageUsage 是否已赋值
+                     * 
+                     */
+                    bool PageUsageHasBeenSet() const;
+
+                    /**
+                     * 获取拆分token消耗量
+                     * @return SplitTokenUsage 拆分token消耗量
+                     * 
+                     */
+                    double GetSplitTokenUsage() const;
+
+                    /**
+                     * 判断参数 SplitTokenUsage 是否已赋值
+                     * @return SplitTokenUsage 是否已赋值
+                     * 
+                     */
+                    bool SplitTokenUsageHasBeenSet() const;
+
+                    /**
+                     * 获取Rag检索次数
+                     * @return RagSearchUsage Rag检索次数
+                     * 
+                     */
+                    double GetRagSearchUsage() const;
+
+                    /**
+                     * 判断参数 RagSearchUsage 是否已赋值
+                     * @return RagSearchUsage 是否已赋值
+                     * 
+                     */
+                    bool RagSearchUsageHasBeenSet() const;
+
+                    /**
+                     * 获取联网搜索次数
+                     * @return InternetSearchUsage 联网搜索次数
+                     * 
+                     */
+                    double GetInternetSearchUsage() const;
+
+                    /**
+                     * 判断参数 InternetSearchUsage 是否已赋值
+                     * @return InternetSearchUsage 是否已赋值
+                     * 
+                     */
+                    bool InternetSearchUsageHasBeenSet() const;
+
+                    /**
+                     * 获取dosage配额限制
+                     * @return DosageTypeLimit dosage配额限制
+                     * 
+                     */
+                    double GetDosageTypeLimit() const;
+
+                    /**
+                     * 判断参数 DosageTypeLimit 是否已赋值
+                     * @return DosageTypeLimit 是否已赋值
+                     * 
+                     */
+                    bool DosageTypeLimitHasBeenSet() const;
+
+                    /**
+                     * 获取dosage当前用量	
+                     * @return DosageTypeCurr dosage当前用量	
+                     * 
+                     */
+                    double GetDosageTypeCurr() const;
+
+                    /**
+                     * 判断参数 DosageTypeCurr 是否已赋值
+                     * @return DosageTypeCurr 是否已赋值
+                     * 
+                     */
+                    bool DosageTypeCurrHasBeenSet() const;
+
                 private:
 
                     /**
@@ -144,6 +228,42 @@ namespace TencentCloud
                      */
                     double m_searchUsage;
                     bool m_searchUsageHasBeenSet;
+
+                    /**
+                     * 文档解析消耗页数
+                     */
+                    uint64_t m_pageUsage;
+                    bool m_pageUsageHasBeenSet;
+
+                    /**
+                     * 拆分token消耗量
+                     */
+                    double m_splitTokenUsage;
+                    bool m_splitTokenUsageHasBeenSet;
+
+                    /**
+                     * Rag检索次数
+                     */
+                    double m_ragSearchUsage;
+                    bool m_ragSearchUsageHasBeenSet;
+
+                    /**
+                     * 联网搜索次数
+                     */
+                    double m_internetSearchUsage;
+                    bool m_internetSearchUsageHasBeenSet;
+
+                    /**
+                     * dosage配额限制
+                     */
+                    double m_dosageTypeLimit;
+                    bool m_dosageTypeLimitHasBeenSet;
+
+                    /**
+                     * dosage当前用量	
+                     */
+                    double m_dosageTypeCurr;
+                    bool m_dosageTypeCurrHasBeenSet;
 
                 };
             }

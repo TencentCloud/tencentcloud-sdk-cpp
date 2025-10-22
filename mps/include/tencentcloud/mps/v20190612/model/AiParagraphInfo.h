@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,6 +72,48 @@ namespace TencentCloud
                     bool SummaryHasBeenSet() const;
 
                     /**
+                     * 获取分段标题
+                     * @return Title 分段标题
+                     * 
+                     */
+                    std::string GetTitle() const;
+
+                    /**
+                     * 设置分段标题
+                     * @param _title 分段标题
+                     * 
+                     */
+                    void SetTitle(const std::string& _title);
+
+                    /**
+                     * 判断参数 Title 是否已赋值
+                     * @return Title 是否已赋值
+                     * 
+                     */
+                    bool TitleHasBeenSet() const;
+
+                    /**
+                     * 获取分段关键词
+                     * @return Keywords 分段关键词
+                     * 
+                     */
+                    std::vector<std::string> GetKeywords() const;
+
+                    /**
+                     * 设置分段关键词
+                     * @param _keywords 分段关键词
+                     * 
+                     */
+                    void SetKeywords(const std::vector<std::string>& _keywords);
+
+                    /**
+                     * 判断参数 Keywords 是否已赋值
+                     * @return Keywords 是否已赋值
+                     * 
+                     */
+                    bool KeywordsHasBeenSet() const;
+
+                    /**
                      * 获取分段起始时间点，秒
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTimeOffset 分段起始时间点，秒
@@ -129,6 +171,18 @@ namespace TencentCloud
                      */
                     std::string m_summary;
                     bool m_summaryHasBeenSet;
+
+                    /**
+                     * 分段标题
+                     */
+                    std::string m_title;
+                    bool m_titleHasBeenSet;
+
+                    /**
+                     * 分段关键词
+                     */
+                    std::vector<std::string> m_keywords;
+                    bool m_keywordsHasBeenSet;
 
                     /**
                      * 分段起始时间点，秒

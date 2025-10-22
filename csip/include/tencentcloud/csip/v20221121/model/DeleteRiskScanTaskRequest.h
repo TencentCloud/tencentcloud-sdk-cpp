@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务id 列表
-                     * @return TaskIdList 任务id 列表
+                     * 获取任务id 和目标AppID列表
+                     * @return TaskIdList 任务id 和目标AppID列表
                      * 
                      */
                     std::vector<TaskIdListKey> GetTaskIdList() const;
 
                     /**
-                     * 设置任务id 列表
-                     * @param _taskIdList 任务id 列表
+                     * 设置任务id 和目标AppID列表
+                     * @param _taskIdList 任务id 和目标AppID列表
                      * 
                      */
                     void SetTaskIdList(const std::vector<TaskIdListKey>& _taskIdList);
@@ -88,7 +88,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务id 列表
+                     * 任务id 和目标AppID列表
                      */
                     std::vector<TaskIdListKey> m_taskIdList;
                     bool m_taskIdListHasBeenSet;

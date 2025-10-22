@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -92,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原始刷新活动ID，仅在回滚刷新活动中存在。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginRefreshActivityId 原始刷新活动ID，仅在回滚刷新活动中存在。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOriginRefreshActivityId() const;
 
                     /**
                      * 设置原始刷新活动ID，仅在回滚刷新活动中存在。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _originRefreshActivityId 原始刷新活动ID，仅在回滚刷新活动中存在。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOriginRefreshActivityId(const std::string& _originRefreshActivityId);
@@ -137,15 +133,23 @@ namespace TencentCloud
                     bool RefreshBatchSetHasBeenSet() const;
 
                     /**
-                     * 获取刷新模式。
-                     * @return RefreshMode 刷新模式。
+                     * 获取刷新模式。取值范围如下：
+<li>ROLLING_UPDATE_RESET：重装系统进行滚动更新</li>
+<li>ROLLING_UPDATE_REPLACE：新建实例替换进行滚动更新，该模式暂不支持回滚接口</li>
+                     * @return RefreshMode 刷新模式。取值范围如下：
+<li>ROLLING_UPDATE_RESET：重装系统进行滚动更新</li>
+<li>ROLLING_UPDATE_REPLACE：新建实例替换进行滚动更新，该模式暂不支持回滚接口</li>
                      * 
                      */
                     std::string GetRefreshMode() const;
 
                     /**
-                     * 设置刷新模式。
-                     * @param _refreshMode 刷新模式。
+                     * 设置刷新模式。取值范围如下：
+<li>ROLLING_UPDATE_RESET：重装系统进行滚动更新</li>
+<li>ROLLING_UPDATE_REPLACE：新建实例替换进行滚动更新，该模式暂不支持回滚接口</li>
+                     * @param _refreshMode 刷新模式。取值范围如下：
+<li>ROLLING_UPDATE_RESET：重装系统进行滚动更新</li>
+<li>ROLLING_UPDATE_REPLACE：新建实例替换进行滚动更新，该模式暂不支持回滚接口</li>
                      * 
                      */
                     void SetRefreshMode(const std::string& _refreshMode);
@@ -262,18 +266,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前刷新批次序号。例如，2 表示当前活动正在刷新第二批次的实例。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurrentRefreshBatchNum 当前刷新批次序号。例如，2 表示当前活动正在刷新第二批次的实例。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCurrentRefreshBatchNum() const;
 
                     /**
                      * 设置当前刷新批次序号。例如，2 表示当前活动正在刷新第二批次的实例。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _currentRefreshBatchNum 当前刷新批次序号。例如，2 表示当前活动正在刷新第二批次的实例。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCurrentRefreshBatchNum(const uint64_t& _currentRefreshBatchNum);
@@ -286,18 +286,18 @@ namespace TencentCloud
                     bool CurrentRefreshBatchNumHasBeenSet() const;
 
                     /**
-                     * 获取刷新活动开始时间。
+                     * 获取刷新活动开始时间，为标准 `UTC` 时间，格式形如 `YYYY-MM-DDTHH:mm:ssZ`。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StartTime 刷新活动开始时间。
+                     * @return StartTime 刷新活动开始时间，为标准 `UTC` 时间，格式形如 `YYYY-MM-DDTHH:mm:ssZ`。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置刷新活动开始时间。
+                     * 设置刷新活动开始时间，为标准 `UTC` 时间，格式形如 `YYYY-MM-DDTHH:mm:ssZ`。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _startTime 刷新活动开始时间。
+                     * @param _startTime 刷新活动开始时间，为标准 `UTC` 时间，格式形如 `YYYY-MM-DDTHH:mm:ssZ`。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -311,18 +311,18 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取刷新活动结束时间。
+                     * 获取刷新活动结束时间，为标准 `UTC` 时间，格式形如 `YYYY-MM-DDTHH:mm:ssZ`。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EndTime 刷新活动结束时间。
+                     * @return EndTime 刷新活动结束时间，为标准 `UTC` 时间，格式形如 `YYYY-MM-DDTHH:mm:ssZ`。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置刷新活动结束时间。
+                     * 设置刷新活动结束时间，为标准 `UTC` 时间，格式形如 `YYYY-MM-DDTHH:mm:ssZ`。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _endTime 刷新活动结束时间。
+                     * @param _endTime 刷新活动结束时间，为标准 `UTC` 时间，格式形如 `YYYY-MM-DDTHH:mm:ssZ`。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -336,19 +336,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取刷新活动创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreatedTime 刷新活动创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取刷新活动创建时间，为标准 `UTC` 时间，格式形如 `YYYY-MM-DDTHH:mm:ssZ`。
+                     * @return CreatedTime 刷新活动创建时间，为标准 `UTC` 时间，格式形如 `YYYY-MM-DDTHH:mm:ssZ`。
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置刷新活动创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createdTime 刷新活动创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置刷新活动创建时间，为标准 `UTC` 时间，格式形如 `YYYY-MM-DDTHH:mm:ssZ`。
+                     * @param _createdTime 刷新活动创建时间，为标准 `UTC` 时间，格式形如 `YYYY-MM-DDTHH:mm:ssZ`。
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -376,7 +372,6 @@ namespace TencentCloud
 
                     /**
                      * 原始刷新活动ID，仅在回滚刷新活动中存在。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_originRefreshActivityId;
                     bool m_originRefreshActivityIdHasBeenSet;
@@ -388,7 +383,9 @@ namespace TencentCloud
                     bool m_refreshBatchSetHasBeenSet;
 
                     /**
-                     * 刷新模式。
+                     * 刷新模式。取值范围如下：
+<li>ROLLING_UPDATE_RESET：重装系统进行滚动更新</li>
+<li>ROLLING_UPDATE_REPLACE：新建实例替换进行滚动更新，该模式暂不支持回滚接口</li>
                      */
                     std::string m_refreshMode;
                     bool m_refreshModeHasBeenSet;
@@ -423,28 +420,26 @@ namespace TencentCloud
 
                     /**
                      * 当前刷新批次序号。例如，2 表示当前活动正在刷新第二批次的实例。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_currentRefreshBatchNum;
                     bool m_currentRefreshBatchNumHasBeenSet;
 
                     /**
-                     * 刷新活动开始时间。
+                     * 刷新活动开始时间，为标准 `UTC` 时间，格式形如 `YYYY-MM-DDTHH:mm:ssZ`。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 刷新活动结束时间。
+                     * 刷新活动结束时间，为标准 `UTC` 时间，格式形如 `YYYY-MM-DDTHH:mm:ssZ`。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 刷新活动创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 刷新活动创建时间，为标准 `UTC` 时间，格式形如 `YYYY-MM-DDTHH:mm:ssZ`。
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;

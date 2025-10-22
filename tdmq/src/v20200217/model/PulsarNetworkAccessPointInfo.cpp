@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,9 @@ PulsarNetworkAccessPointInfo::PulsarNetworkAccessPointInfo() :
     m_bandwidthHasBeenSet(false),
     m_securityPolicyHasBeenSet(false),
     m_standardAccessPointHasBeenSet(false),
-    m_zoneNameHasBeenSet(false)
+    m_zoneNameHasBeenSet(false),
+    m_tlsHasBeenSet(false),
+    m_customUrlHasBeenSet(false)
 {
 }
 
@@ -160,6 +162,26 @@ CoreInternalOutcome PulsarNetworkAccessPointInfo::Deserialize(const rapidjson::V
         m_zoneNameHasBeenSet = true;
     }
 
+    if (value.HasMember("Tls") && !value["Tls"].IsNull())
+    {
+        if (!value["Tls"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `PulsarNetworkAccessPointInfo.Tls` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_tls = value["Tls"].GetBool();
+        m_tlsHasBeenSet = true;
+    }
+
+    if (value.HasMember("CustomUrl") && !value["CustomUrl"].IsNull())
+    {
+        if (!value["CustomUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PulsarNetworkAccessPointInfo.CustomUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_customUrl = string(value["CustomUrl"].GetString());
+        m_customUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -260,6 +282,22 @@ void PulsarNetworkAccessPointInfo::ToJsonObject(rapidjson::Value &value, rapidjs
         string key = "ZoneName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_zoneName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tlsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tls";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tls, allocator);
+    }
+
+    if (m_customUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -439,5 +477,37 @@ void PulsarNetworkAccessPointInfo::SetZoneName(const string& _zoneName)
 bool PulsarNetworkAccessPointInfo::ZoneNameHasBeenSet() const
 {
     return m_zoneNameHasBeenSet;
+}
+
+bool PulsarNetworkAccessPointInfo::GetTls() const
+{
+    return m_tls;
+}
+
+void PulsarNetworkAccessPointInfo::SetTls(const bool& _tls)
+{
+    m_tls = _tls;
+    m_tlsHasBeenSet = true;
+}
+
+bool PulsarNetworkAccessPointInfo::TlsHasBeenSet() const
+{
+    return m_tlsHasBeenSet;
+}
+
+string PulsarNetworkAccessPointInfo::GetCustomUrl() const
+{
+    return m_customUrl;
+}
+
+void PulsarNetworkAccessPointInfo::SetCustomUrl(const string& _customUrl)
+{
+    m_customUrl = _customUrl;
+    m_customUrlHasBeenSet = true;
+}
+
+bool PulsarNetworkAccessPointInfo::CustomUrlHasBeenSet() const
+{
+    return m_customUrlHasBeenSet;
 }
 

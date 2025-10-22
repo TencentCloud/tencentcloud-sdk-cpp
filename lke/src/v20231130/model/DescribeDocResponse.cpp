@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,7 +46,12 @@ DescribeDocResponse::DescribeDocResponse() :
     m_docCharSizeHasBeenSet(false),
     m_isAllowEditHasBeenSet(false),
     m_attrRangeHasBeenSet(false),
-    m_attrLabelsHasBeenSet(false)
+    m_attrLabelsHasBeenSet(false),
+    m_cateBizIdHasBeenSet(false),
+    m_isDisabledHasBeenSet(false),
+    m_isDownloadHasBeenSet(false),
+    m_splitRuleHasBeenSet(false),
+    m_updatePeriodInfoHasBeenSet(false)
 {
 }
 
@@ -324,6 +329,63 @@ CoreInternalOutcome DescribeDocResponse::Deserialize(const string &payload)
         m_attrLabelsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CateBizId") && !rsp["CateBizId"].IsNull())
+    {
+        if (!rsp["CateBizId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CateBizId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cateBizId = string(rsp["CateBizId"].GetString());
+        m_cateBizIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("IsDisabled") && !rsp["IsDisabled"].IsNull())
+    {
+        if (!rsp["IsDisabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsDisabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDisabled = rsp["IsDisabled"].GetBool();
+        m_isDisabledHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("IsDownload") && !rsp["IsDownload"].IsNull())
+    {
+        if (!rsp["IsDownload"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsDownload` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDownload = rsp["IsDownload"].GetBool();
+        m_isDownloadHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SplitRule") && !rsp["SplitRule"].IsNull())
+    {
+        if (!rsp["SplitRule"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SplitRule` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_splitRule = string(rsp["SplitRule"].GetString());
+        m_splitRuleHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("UpdatePeriodInfo") && !rsp["UpdatePeriodInfo"].IsNull())
+    {
+        if (!rsp["UpdatePeriodInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `UpdatePeriodInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_updatePeriodInfo.Deserialize(rsp["UpdatePeriodInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_updatePeriodInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -525,11 +587,52 @@ string DescribeDocResponse::ToJsonString() const
         }
     }
 
+    if (m_cateBizIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CateBizId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cateBizId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isDisabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDisabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDisabled, allocator);
+    }
+
+    if (m_isDownloadHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDownload";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDownload, allocator);
+    }
+
+    if (m_splitRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SplitRule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_splitRule.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updatePeriodInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdatePeriodInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_updatePeriodInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -765,6 +868,56 @@ vector<AttrLabel> DescribeDocResponse::GetAttrLabels() const
 bool DescribeDocResponse::AttrLabelsHasBeenSet() const
 {
     return m_attrLabelsHasBeenSet;
+}
+
+string DescribeDocResponse::GetCateBizId() const
+{
+    return m_cateBizId;
+}
+
+bool DescribeDocResponse::CateBizIdHasBeenSet() const
+{
+    return m_cateBizIdHasBeenSet;
+}
+
+bool DescribeDocResponse::GetIsDisabled() const
+{
+    return m_isDisabled;
+}
+
+bool DescribeDocResponse::IsDisabledHasBeenSet() const
+{
+    return m_isDisabledHasBeenSet;
+}
+
+bool DescribeDocResponse::GetIsDownload() const
+{
+    return m_isDownload;
+}
+
+bool DescribeDocResponse::IsDownloadHasBeenSet() const
+{
+    return m_isDownloadHasBeenSet;
+}
+
+string DescribeDocResponse::GetSplitRule() const
+{
+    return m_splitRule;
+}
+
+bool DescribeDocResponse::SplitRuleHasBeenSet() const
+{
+    return m_splitRuleHasBeenSet;
+}
+
+UpdatePeriodInfo DescribeDocResponse::GetUpdatePeriodInfo() const
+{
+    return m_updatePeriodInfo;
+}
+
+bool DescribeDocResponse::UpdatePeriodInfoHasBeenSet() const
+{
+    return m_updatePeriodInfoHasBeenSet;
 }
 
 

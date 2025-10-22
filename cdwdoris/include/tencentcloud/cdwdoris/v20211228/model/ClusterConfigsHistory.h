@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,6 +45,27 @@ namespace TencentCloud
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
+
+                    /**
+                     * 获取计算组id
+                     * @return ComputeGroupId 计算组id
+                     * 
+                     */
+                    std::string GetComputeGroupId() const;
+
+                    /**
+                     * 设置计算组id
+                     * @param _computeGroupId 计算组id
+                     * 
+                     */
+                    void SetComputeGroupId(const std::string& _computeGroupId);
+
+                    /**
+                     * 判断参数 ComputeGroupId 是否已赋值
+                     * @return ComputeGroupId 是否已赋值
+                     * 
+                     */
+                    bool ComputeGroupIdHasBeenSet() const;
 
                     /**
                      * 获取配置文件名称
@@ -111,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修改原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 修改原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置修改原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 修改原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -179,6 +196,12 @@ namespace TencentCloud
                 private:
 
                     /**
+                     * 计算组id
+                     */
+                    std::string m_computeGroupId;
+                    bool m_computeGroupIdHasBeenSet;
+
+                    /**
                      * 配置文件名称
                      */
                     std::string m_fileName;
@@ -198,7 +221,6 @@ namespace TencentCloud
 
                     /**
                      * 修改原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;

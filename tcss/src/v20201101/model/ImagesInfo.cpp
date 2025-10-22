@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ ImagesInfo::ImagesInfo() :
     m_createTimeHasBeenSet(false),
     m_sizeHasBeenSet(false),
     m_hostCntHasBeenSet(false),
+    m_superNodeCntHasBeenSet(false),
     m_containerCntHasBeenSet(false),
     m_scanTimeHasBeenSet(false),
     m_vulCntHasBeenSet(false),
@@ -104,6 +105,16 @@ CoreInternalOutcome ImagesInfo::Deserialize(const rapidjson::Value &value)
         }
         m_hostCnt = value["HostCnt"].GetUint64();
         m_hostCntHasBeenSet = true;
+    }
+
+    if (value.HasMember("SuperNodeCnt") && !value["SuperNodeCnt"].IsNull())
+    {
+        if (!value["SuperNodeCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImagesInfo.SuperNodeCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_superNodeCnt = value["SuperNodeCnt"].GetUint64();
+        m_superNodeCntHasBeenSet = true;
     }
 
     if (value.HasMember("ContainerCnt") && !value["ContainerCnt"].IsNull())
@@ -373,6 +384,14 @@ void ImagesInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         value.AddMember(iKey, m_hostCnt, allocator);
     }
 
+    if (m_superNodeCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SuperNodeCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_superNodeCnt, allocator);
+    }
+
     if (m_containerCntHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -630,6 +649,22 @@ void ImagesInfo::SetHostCnt(const uint64_t& _hostCnt)
 bool ImagesInfo::HostCntHasBeenSet() const
 {
     return m_hostCntHasBeenSet;
+}
+
+uint64_t ImagesInfo::GetSuperNodeCnt() const
+{
+    return m_superNodeCnt;
+}
+
+void ImagesInfo::SetSuperNodeCnt(const uint64_t& _superNodeCnt)
+{
+    m_superNodeCnt = _superNodeCnt;
+    m_superNodeCntHasBeenSet = true;
+}
+
+bool ImagesInfo::SuperNodeCntHasBeenSet() const
+{
+    return m_superNodeCntHasBeenSet;
 }
 
 uint64_t ImagesInfo::GetContainerCnt() const

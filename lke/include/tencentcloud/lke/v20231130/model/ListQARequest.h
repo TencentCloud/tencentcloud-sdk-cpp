@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -107,14 +107,22 @@ namespace TencentCloud
 
                     /**
                      * 获取查询问题
+
+输入特定标识 lke:system:untagged  将查询所有未关联标签的问答
                      * @return Query 查询问题
+
+输入特定标识 lke:system:untagged  将查询所有未关联标签的问答
                      * 
                      */
                     std::string GetQuery() const;
 
                     /**
                      * 设置查询问题
+
+输入特定标识 lke:system:untagged  将查询所有未关联标签的问答
                      * @param _query 查询问题
+
+输入特定标识 lke:system:untagged  将查询所有未关联标签的问答
                      * 
                      */
                     void SetQuery(const std::string& _query);
@@ -232,6 +240,27 @@ namespace TencentCloud
                     bool QueryAnswerHasBeenSet() const;
 
                     /**
+                     * 获取分类ID
+                     * @return CateBizId 分类ID
+                     * 
+                     */
+                    std::string GetCateBizId() const;
+
+                    /**
+                     * 设置分类ID
+                     * @param _cateBizId 分类ID
+                     * 
+                     */
+                    void SetCateBizId(const std::string& _cateBizId);
+
+                    /**
+                     * 判断参数 CateBizId 是否已赋值
+                     * @return CateBizId 是否已赋值
+                     * 
+                     */
+                    bool CateBizIdHasBeenSet() const;
+
+                    /**
                      * 获取QA业务ID列表
                      * @return QaBizIds QA业务ID列表
                      * 
@@ -251,6 +280,48 @@ namespace TencentCloud
                      * 
                      */
                     bool QaBizIdsHasBeenSet() const;
+
+                    /**
+                     * 获取查询类型 filename 名称、 attribute 标签
+                     * @return QueryType 查询类型 filename 名称、 attribute 标签
+                     * 
+                     */
+                    std::string GetQueryType() const;
+
+                    /**
+                     * 设置查询类型 filename 名称、 attribute 标签
+                     * @param _queryType 查询类型 filename 名称、 attribute 标签
+                     * 
+                     */
+                    void SetQueryType(const std::string& _queryType);
+
+                    /**
+                     * 判断参数 QueryType 是否已赋值
+                     * @return QueryType 是否已赋值
+                     * 
+                     */
+                    bool QueryTypeHasBeenSet() const;
+
+                    /**
+                     * 获取是否只展示当前分类的数据 0不是，1是
+                     * @return ShowCurrCate 是否只展示当前分类的数据 0不是，1是
+                     * 
+                     */
+                    uint64_t GetShowCurrCate() const;
+
+                    /**
+                     * 设置是否只展示当前分类的数据 0不是，1是
+                     * @param _showCurrCate 是否只展示当前分类的数据 0不是，1是
+                     * 
+                     */
+                    void SetShowCurrCate(const uint64_t& _showCurrCate);
+
+                    /**
+                     * 判断参数 ShowCurrCate 是否已赋值
+                     * @return ShowCurrCate 是否已赋值
+                     * 
+                     */
+                    bool ShowCurrCateHasBeenSet() const;
 
                 private:
 
@@ -274,6 +345,8 @@ namespace TencentCloud
 
                     /**
                      * 查询问题
+
+输入特定标识 lke:system:untagged  将查询所有未关联标签的问答
                      */
                     std::string m_query;
                     bool m_queryHasBeenSet;
@@ -309,10 +382,28 @@ namespace TencentCloud
                     bool m_queryAnswerHasBeenSet;
 
                     /**
+                     * 分类ID
+                     */
+                    std::string m_cateBizId;
+                    bool m_cateBizIdHasBeenSet;
+
+                    /**
                      * QA业务ID列表
                      */
                     std::vector<std::string> m_qaBizIds;
                     bool m_qaBizIdsHasBeenSet;
+
+                    /**
+                     * 查询类型 filename 名称、 attribute 标签
+                     */
+                    std::string m_queryType;
+                    bool m_queryTypeHasBeenSet;
+
+                    /**
+                     * 是否只展示当前分类的数据 0不是，1是
+                     */
+                    uint64_t m_showCurrCate;
+                    bool m_showCurrCateHasBeenSet;
 
                 };
             }

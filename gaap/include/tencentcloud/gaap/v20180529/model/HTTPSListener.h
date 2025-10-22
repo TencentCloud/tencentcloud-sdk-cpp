@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -237,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务器SSL证书的别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertificateAlias 服务器SSL证书的别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCertificateAlias() const;
 
                     /**
                      * 设置服务器SSL证书的别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _certificateAlias 服务器SSL证书的别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCertificateAlias(const std::string& _certificateAlias);
@@ -289,11 +285,9 @@ namespace TencentCloud
                      * 获取监听器认证方式。其中，
 0表示单向认证；
 1表示双向认证。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthType 监听器认证方式。其中，
 0表示单向认证；
 1表示双向认证。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAuthType() const;
@@ -302,11 +296,9 @@ namespace TencentCloud
                      * 设置监听器认证方式。其中，
 0表示单向认证；
 1表示双向认证。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _authType 监听器认证方式。其中，
 0表示单向认证；
 1表示双向认证。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuthType(const int64_t& _authType);
@@ -345,18 +337,14 @@ namespace TencentCloud
 
                     /**
                      * 获取多客户端CA证书别名信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolyClientCertificateAliasInfo 多客户端CA证书别名信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CertificateAliasInfo> GetPolyClientCertificateAliasInfo() const;
 
                     /**
                      * 设置多客户端CA证书别名信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _polyClientCertificateAliasInfo 多客户端CA证书别名信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPolyClientCertificateAliasInfo(const std::vector<CertificateAliasInfo>& _polyClientCertificateAliasInfo);
@@ -373,12 +361,10 @@ namespace TencentCloud
 0，不支持Http3接入；
 1，持Http3接入。
 注意：如果支持了Http3的功能，那么该监听器会占用对应的UDP接入端口，不可再创建相同端口的UDP监听器。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Http3Supported 是否支持Http3，其中：
 0，不支持Http3接入；
 1，持Http3接入。
 注意：如果支持了Http3的功能，那么该监听器会占用对应的UDP接入端口，不可再创建相同端口的UDP监听器。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHttp3Supported() const;
@@ -388,12 +374,10 @@ namespace TencentCloud
 0，不支持Http3接入；
 1，持Http3接入。
 注意：如果支持了Http3的功能，那么该监听器会占用对应的UDP接入端口，不可再创建相同端口的UDP监听器。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _http3Supported 是否支持Http3，其中：
 0，不支持Http3接入；
 1，持Http3接入。
 注意：如果支持了Http3的功能，那么该监听器会占用对应的UDP接入端口，不可再创建相同端口的UDP监听器。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHttp3Supported(const int64_t& _http3Supported);
@@ -407,18 +391,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监听器的通道ID，如果监听器属于通道组，则为null
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyId 监听器的通道ID，如果监听器属于通道组，则为null
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProxyId() const;
 
                     /**
                      * 设置监听器的通道ID，如果监听器属于通道组，则为null
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _proxyId 监听器的通道ID，如果监听器属于通道组，则为null
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProxyId(const std::string& _proxyId);
@@ -457,18 +437,14 @@ namespace TencentCloud
 
                     /**
                      * 获取支持的TLS版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TLSSupportVersion 支持的TLS版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetTLSSupportVersion() const;
 
                     /**
                      * 设置支持的TLS版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tLSSupportVersion 支持的TLS版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTLSSupportVersion(const std::vector<std::string>& _tLSSupportVersion);
@@ -482,18 +458,14 @@ namespace TencentCloud
 
                     /**
                      * 获取支持的TLS密码套件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TLSCiphers 支持的TLS密码套件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTLSCiphers() const;
 
                     /**
                      * 设置支持的TLS密码套件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tLSCiphers 支持的TLS密码套件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTLSCiphers(const std::string& _tLSCiphers);
@@ -562,7 +534,6 @@ namespace TencentCloud
 
                     /**
                      * 服务器SSL证书的别名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_certificateAlias;
                     bool m_certificateAliasHasBeenSet;
@@ -578,7 +549,6 @@ namespace TencentCloud
                      * 监听器认证方式。其中，
 0表示单向认证；
 1表示双向认证。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_authType;
                     bool m_authTypeHasBeenSet;
@@ -592,7 +562,6 @@ namespace TencentCloud
 
                     /**
                      * 多客户端CA证书别名信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CertificateAliasInfo> m_polyClientCertificateAliasInfo;
                     bool m_polyClientCertificateAliasInfoHasBeenSet;
@@ -602,14 +571,12 @@ namespace TencentCloud
 0，不支持Http3接入；
 1，持Http3接入。
 注意：如果支持了Http3的功能，那么该监听器会占用对应的UDP接入端口，不可再创建相同端口的UDP监听器。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_http3Supported;
                     bool m_http3SupportedHasBeenSet;
 
                     /**
                      * 监听器的通道ID，如果监听器属于通道组，则为null
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_proxyId;
                     bool m_proxyIdHasBeenSet;
@@ -623,14 +590,12 @@ namespace TencentCloud
 
                     /**
                      * 支持的TLS版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_tLSSupportVersion;
                     bool m_tLSSupportVersionHasBeenSet;
 
                     /**
                      * 支持的TLS密码套件
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tLSCiphers;
                     bool m_tLSCiphersHasBeenSet;

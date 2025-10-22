@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,8 @@ ModifyRoundPlayRequest::ModifyRoundPlayRequest() :
     m_nameHasBeenSet(false),
     m_descHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_playBackModeHasBeenSet(false)
+    m_playBackModeHasBeenSet(false),
+    m_expiredTimeHasBeenSet(false)
 {
 }
 
@@ -110,6 +111,14 @@ string ModifyRoundPlayRequest::ToJsonString() const
         string key = "PlayBackMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_playBackMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expiredTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpiredTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_expiredTime.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -246,6 +255,22 @@ void ModifyRoundPlayRequest::SetPlayBackMode(const string& _playBackMode)
 bool ModifyRoundPlayRequest::PlayBackModeHasBeenSet() const
 {
     return m_playBackModeHasBeenSet;
+}
+
+string ModifyRoundPlayRequest::GetExpiredTime() const
+{
+    return m_expiredTime;
+}
+
+void ModifyRoundPlayRequest::SetExpiredTime(const string& _expiredTime)
+{
+    m_expiredTime = _expiredTime;
+    m_expiredTimeHasBeenSet = true;
+}
+
+bool ModifyRoundPlayRequest::ExpiredTimeHasBeenSet() const
+{
+    return m_expiredTimeHasBeenSet;
 }
 
 

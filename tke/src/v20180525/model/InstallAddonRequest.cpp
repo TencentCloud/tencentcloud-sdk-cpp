@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ InstallAddonRequest::InstallAddonRequest() :
     m_clusterIdHasBeenSet(false),
     m_addonNameHasBeenSet(false),
     m_addonVersionHasBeenSet(false),
-    m_rawValuesHasBeenSet(false)
+    m_rawValuesHasBeenSet(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string InstallAddonRequest::ToJsonString() const
         string key = "RawValues";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_rawValues.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dryRunHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DryRun";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dryRun, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void InstallAddonRequest::SetRawValues(const string& _rawValues)
 bool InstallAddonRequest::RawValuesHasBeenSet() const
 {
     return m_rawValuesHasBeenSet;
+}
+
+bool InstallAddonRequest::GetDryRun() const
+{
+    return m_dryRun;
+}
+
+void InstallAddonRequest::SetDryRun(const bool& _dryRun)
+{
+    m_dryRun = _dryRun;
+    m_dryRunHasBeenSet = true;
+}
+
+bool InstallAddonRequest::DryRunHasBeenSet() const
+{
+    return m_dryRunHasBeenSet;
 }
 
 

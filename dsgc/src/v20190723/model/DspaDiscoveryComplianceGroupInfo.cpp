@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ DspaDiscoveryComplianceGroupInfo::DspaDiscoveryComplianceGroupInfo() :
     m_complianceGroupRulesHasBeenSet(false),
     m_levelGroupIdHasBeenSet(false),
     m_disabledHasBeenSet(false),
-    m_isAliasHasBeenSet(false)
+    m_isAliasHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_modifyTimeHasBeenSet(false)
 {
 }
 
@@ -127,6 +129,26 @@ CoreInternalOutcome DspaDiscoveryComplianceGroupInfo::Deserialize(const rapidjso
         m_isAliasHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspaDiscoveryComplianceGroupInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetInt64();
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ModifyTime") && !value["ModifyTime"].IsNull())
+    {
+        if (!value["ModifyTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspaDiscoveryComplianceGroupInfo.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modifyTime = string(value["ModifyTime"].GetString());
+        m_modifyTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -203,6 +225,22 @@ void DspaDiscoveryComplianceGroupInfo::ToJsonObject(rapidjson::Value &value, rap
         string key = "IsAlias";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isAlias, allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_modifyTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modifyTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -334,5 +372,37 @@ void DspaDiscoveryComplianceGroupInfo::SetIsAlias(const bool& _isAlias)
 bool DspaDiscoveryComplianceGroupInfo::IsAliasHasBeenSet() const
 {
     return m_isAliasHasBeenSet;
+}
+
+int64_t DspaDiscoveryComplianceGroupInfo::GetStatus() const
+{
+    return m_status;
+}
+
+void DspaDiscoveryComplianceGroupInfo::SetStatus(const int64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool DspaDiscoveryComplianceGroupInfo::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string DspaDiscoveryComplianceGroupInfo::GetModifyTime() const
+{
+    return m_modifyTime;
+}
+
+void DspaDiscoveryComplianceGroupInfo::SetModifyTime(const string& _modifyTime)
+{
+    m_modifyTime = _modifyTime;
+    m_modifyTimeHasBeenSet = true;
+}
+
+bool DspaDiscoveryComplianceGroupInfo::ModifyTimeHasBeenSet() const
+{
+    return m_modifyTimeHasBeenSet;
 }
 

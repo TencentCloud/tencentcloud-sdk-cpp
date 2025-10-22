@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取目标组ID列表。
-                     * @return TargetGroupIds 目标组ID列表。
+                     * 获取目标组ID列表。 可以通过接口[DescribeTargetGroups](https://cloud.tencent.com/document/product/214/40554)获取。
+                     * @return TargetGroupIds 目标组ID列表。 可以通过接口[DescribeTargetGroups](https://cloud.tencent.com/document/product/214/40554)获取。
                      * 
                      */
                     std::vector<std::string> GetTargetGroupIds() const;
 
                     /**
-                     * 设置目标组ID列表。
-                     * @param _targetGroupIds 目标组ID列表。
+                     * 设置目标组ID列表。 可以通过接口[DescribeTargetGroups](https://cloud.tencent.com/document/product/214/40554)获取。
+                     * @param _targetGroupIds 目标组ID列表。 可以通过接口[DescribeTargetGroups](https://cloud.tencent.com/document/product/214/40554)获取。
                      * 
                      */
                     void SetTargetGroupIds(const std::vector<std::string>& _targetGroupIds);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 目标组ID列表。
+                     * 目标组ID列表。 可以通过接口[DescribeTargetGroups](https://cloud.tencent.com/document/product/214/40554)获取。
                      */
                     std::vector<std::string> m_targetGroupIds;
                     bool m_targetGroupIdsHasBeenSet;

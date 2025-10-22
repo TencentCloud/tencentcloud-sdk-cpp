@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ DescribeTasksOverviewRequest::DescribeTasksOverviewRequest() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_dataEngineNameHasBeenSet(false)
+    m_dataEngineNameHasBeenSet(false),
+    m_houseIdsHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,19 @@ string DescribeTasksOverviewRequest::ToJsonString() const
         string key = "DataEngineName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dataEngineName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_houseIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HouseIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_houseIds.begin(); itr != m_houseIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -146,6 +160,22 @@ void DescribeTasksOverviewRequest::SetDataEngineName(const string& _dataEngineNa
 bool DescribeTasksOverviewRequest::DataEngineNameHasBeenSet() const
 {
     return m_dataEngineNameHasBeenSet;
+}
+
+vector<string> DescribeTasksOverviewRequest::GetHouseIds() const
+{
+    return m_houseIds;
+}
+
+void DescribeTasksOverviewRequest::SetHouseIds(const vector<string>& _houseIds)
+{
+    m_houseIds = _houseIds;
+    m_houseIdsHasBeenSet = true;
+}
+
+bool DescribeTasksOverviewRequest::HouseIdsHasBeenSet() const
+{
+    return m_houseIdsHasBeenSet;
 }
 
 

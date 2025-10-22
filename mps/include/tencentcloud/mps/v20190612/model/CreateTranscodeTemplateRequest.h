@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -259,6 +259,27 @@ namespace TencentCloud
                      */
                     bool EnhanceConfigHasBeenSet() const;
 
+                    /**
+                     * 获取扩展参数，序列化的 json 字符串。
+                     * @return StdExtInfo 扩展参数，序列化的 json 字符串。
+                     * 
+                     */
+                    std::string GetStdExtInfo() const;
+
+                    /**
+                     * 设置扩展参数，序列化的 json 字符串。
+                     * @param _stdExtInfo 扩展参数，序列化的 json 字符串。
+                     * 
+                     */
+                    void SetStdExtInfo(const std::string& _stdExtInfo);
+
+                    /**
+                     * 判断参数 StdExtInfo 是否已赋值
+                     * @return StdExtInfo 是否已赋值
+                     * 
+                     */
+                    bool StdExtInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -320,6 +341,12 @@ namespace TencentCloud
                      */
                     EnhanceConfig m_enhanceConfig;
                     bool m_enhanceConfigHasBeenSet;
+
+                    /**
+                     * 扩展参数，序列化的 json 字符串。
+                     */
+                    std::string m_stdExtInfo;
+                    bool m_stdExtInfoHasBeenSet;
 
                 };
             }

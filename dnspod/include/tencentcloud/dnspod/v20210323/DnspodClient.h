@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,6 +39,8 @@
 #include <tencentcloud/dnspod/v20210323/model/CreateDomainCustomLineResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/CreateDomainGroupRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/CreateDomainGroupResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/CreateDomainsAnalyticsFileRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/CreateDomainsAnalyticsFileResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/CreateLineGroupRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/CreateLineGroupResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/CreateLineGroupCopyRequest.h>
@@ -51,6 +53,10 @@
 #include <tencentcloud/dnspod/v20210323/model/CreateRecordGroupResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/CreateSnapshotRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/CreateSnapshotResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/CreateSubDomainsAnalyticsFileRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/CreateSubDomainsAnalyticsFileResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/CreateSubdomainValidateTXTValueRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/CreateSubdomainValidateTXTValueResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/CreateTXTRecordRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/CreateTXTRecordResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DeleteDomainRequest.h>
@@ -81,6 +87,8 @@
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainAliasListResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainAnalyticsRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainAnalyticsResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeDomainAndRecordListRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeDomainAndRecordListResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainCustomLineListRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainCustomLineListResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainFilterListRequest.h>
@@ -99,8 +107,12 @@
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainShareInfoResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainShareUserListRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainShareUserListResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeDomainVipListRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeDomainVipListResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainWhoisRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainWhoisResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeFileInfoByJobIdRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeFileInfoByJobIdResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeLineGroupListRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeLineGroupListResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribePackageDetailRequest.h>
@@ -123,6 +135,8 @@
 #include <tencentcloud/dnspod/v20210323/model/DescribeRecordSnapshotRollbackResultResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeRecordTypeRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeRecordTypeResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeResolveCountRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeResolveCountResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeSnapshotConfigRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeSnapshotConfigResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeSnapshotListRequest.h>
@@ -133,10 +147,14 @@
 #include <tencentcloud/dnspod/v20210323/model/DescribeSnapshotRollbackTaskResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeSubdomainAnalyticsRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeSubdomainAnalyticsResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeSubdomainValidateStatusRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeSubdomainValidateStatusResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeUserDetailRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeUserDetailResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeVASStatisticRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeVASStatisticResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeVasListRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeVasListResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DownloadSnapshotRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DownloadSnapshotResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyDomainCustomLineRequest.h>
@@ -225,6 +243,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDomainGroupResponse> CreateDomainGroupOutcome;
                 typedef std::future<CreateDomainGroupOutcome> CreateDomainGroupOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::CreateDomainGroupRequest&, CreateDomainGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDomainGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDomainsAnalyticsFileResponse> CreateDomainsAnalyticsFileOutcome;
+                typedef std::future<CreateDomainsAnalyticsFileOutcome> CreateDomainsAnalyticsFileOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::CreateDomainsAnalyticsFileRequest&, CreateDomainsAnalyticsFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDomainsAnalyticsFileAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateLineGroupResponse> CreateLineGroupOutcome;
                 typedef std::future<CreateLineGroupOutcome> CreateLineGroupOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::CreateLineGroupRequest&, CreateLineGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLineGroupAsyncHandler;
@@ -243,6 +264,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateSnapshotResponse> CreateSnapshotOutcome;
                 typedef std::future<CreateSnapshotOutcome> CreateSnapshotOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::CreateSnapshotRequest&, CreateSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSnapshotAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSubDomainsAnalyticsFileResponse> CreateSubDomainsAnalyticsFileOutcome;
+                typedef std::future<CreateSubDomainsAnalyticsFileOutcome> CreateSubDomainsAnalyticsFileOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::CreateSubDomainsAnalyticsFileRequest&, CreateSubDomainsAnalyticsFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSubDomainsAnalyticsFileAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSubdomainValidateTXTValueResponse> CreateSubdomainValidateTXTValueOutcome;
+                typedef std::future<CreateSubdomainValidateTXTValueOutcome> CreateSubdomainValidateTXTValueOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::CreateSubdomainValidateTXTValueRequest&, CreateSubdomainValidateTXTValueOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSubdomainValidateTXTValueAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTXTRecordResponse> CreateTXTRecordOutcome;
                 typedef std::future<CreateTXTRecordOutcome> CreateTXTRecordOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::CreateTXTRecordRequest&, CreateTXTRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTXTRecordAsyncHandler;
@@ -288,6 +315,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDomainAnalyticsResponse> DescribeDomainAnalyticsOutcome;
                 typedef std::future<DescribeDomainAnalyticsOutcome> DescribeDomainAnalyticsOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeDomainAnalyticsRequest&, DescribeDomainAnalyticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainAnalyticsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDomainAndRecordListResponse> DescribeDomainAndRecordListOutcome;
+                typedef std::future<DescribeDomainAndRecordListOutcome> DescribeDomainAndRecordListOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::DescribeDomainAndRecordListRequest&, DescribeDomainAndRecordListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainAndRecordListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDomainCustomLineListResponse> DescribeDomainCustomLineListOutcome;
                 typedef std::future<DescribeDomainCustomLineListOutcome> DescribeDomainCustomLineListOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeDomainCustomLineListRequest&, DescribeDomainCustomLineListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainCustomLineListAsyncHandler;
@@ -315,9 +345,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDomainShareUserListResponse> DescribeDomainShareUserListOutcome;
                 typedef std::future<DescribeDomainShareUserListOutcome> DescribeDomainShareUserListOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeDomainShareUserListRequest&, DescribeDomainShareUserListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainShareUserListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDomainVipListResponse> DescribeDomainVipListOutcome;
+                typedef std::future<DescribeDomainVipListOutcome> DescribeDomainVipListOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::DescribeDomainVipListRequest&, DescribeDomainVipListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainVipListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDomainWhoisResponse> DescribeDomainWhoisOutcome;
                 typedef std::future<DescribeDomainWhoisOutcome> DescribeDomainWhoisOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeDomainWhoisRequest&, DescribeDomainWhoisOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainWhoisAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFileInfoByJobIdResponse> DescribeFileInfoByJobIdOutcome;
+                typedef std::future<DescribeFileInfoByJobIdOutcome> DescribeFileInfoByJobIdOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::DescribeFileInfoByJobIdRequest&, DescribeFileInfoByJobIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFileInfoByJobIdAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLineGroupListResponse> DescribeLineGroupListOutcome;
                 typedef std::future<DescribeLineGroupListOutcome> DescribeLineGroupListOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeLineGroupListRequest&, DescribeLineGroupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLineGroupListAsyncHandler;
@@ -351,6 +387,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRecordTypeResponse> DescribeRecordTypeOutcome;
                 typedef std::future<DescribeRecordTypeOutcome> DescribeRecordTypeOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeRecordTypeRequest&, DescribeRecordTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordTypeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeResolveCountResponse> DescribeResolveCountOutcome;
+                typedef std::future<DescribeResolveCountOutcome> DescribeResolveCountOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::DescribeResolveCountRequest&, DescribeResolveCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResolveCountAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSnapshotConfigResponse> DescribeSnapshotConfigOutcome;
                 typedef std::future<DescribeSnapshotConfigOutcome> DescribeSnapshotConfigOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeSnapshotConfigRequest&, DescribeSnapshotConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotConfigAsyncHandler;
@@ -366,12 +405,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSubdomainAnalyticsResponse> DescribeSubdomainAnalyticsOutcome;
                 typedef std::future<DescribeSubdomainAnalyticsOutcome> DescribeSubdomainAnalyticsOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeSubdomainAnalyticsRequest&, DescribeSubdomainAnalyticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubdomainAnalyticsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSubdomainValidateStatusResponse> DescribeSubdomainValidateStatusOutcome;
+                typedef std::future<DescribeSubdomainValidateStatusOutcome> DescribeSubdomainValidateStatusOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::DescribeSubdomainValidateStatusRequest&, DescribeSubdomainValidateStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubdomainValidateStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUserDetailResponse> DescribeUserDetailOutcome;
                 typedef std::future<DescribeUserDetailOutcome> DescribeUserDetailOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeUserDetailRequest&, DescribeUserDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVASStatisticResponse> DescribeVASStatisticOutcome;
                 typedef std::future<DescribeVASStatisticOutcome> DescribeVASStatisticOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeVASStatisticRequest&, DescribeVASStatisticOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVASStatisticAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVasListResponse> DescribeVasListOutcome;
+                typedef std::future<DescribeVasListOutcome> DescribeVasListOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::DescribeVasListRequest&, DescribeVasListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVasListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DownloadSnapshotResponse> DownloadSnapshotOutcome;
                 typedef std::future<DownloadSnapshotOutcome> DownloadSnapshotOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DownloadSnapshotRequest&, DownloadSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadSnapshotAsyncHandler;
@@ -525,6 +570,15 @@ namespace TencentCloud
                 CreateDomainGroupOutcomeCallable CreateDomainGroupCallable(const Model::CreateDomainGroupRequest& request);
 
                 /**
+                 *批量导出域名解析量
+                 * @param req CreateDomainsAnalyticsFileRequest
+                 * @return CreateDomainsAnalyticsFileOutcome
+                 */
+                CreateDomainsAnalyticsFileOutcome CreateDomainsAnalyticsFile(const Model::CreateDomainsAnalyticsFileRequest &request);
+                void CreateDomainsAnalyticsFileAsync(const Model::CreateDomainsAnalyticsFileRequest& request, const CreateDomainsAnalyticsFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDomainsAnalyticsFileOutcomeCallable CreateDomainsAnalyticsFileCallable(const Model::CreateDomainsAnalyticsFileRequest& request);
+
+                /**
                  *创建域名的线路分组
                  * @param req CreateLineGroupRequest
                  * @return CreateLineGroupOutcome
@@ -578,6 +632,24 @@ namespace TencentCloud
                 CreateSnapshotOutcome CreateSnapshot(const Model::CreateSnapshotRequest &request);
                 void CreateSnapshotAsync(const Model::CreateSnapshotRequest& request, const CreateSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateSnapshotOutcomeCallable CreateSnapshotCallable(const Model::CreateSnapshotRequest& request);
+
+                /**
+                 *批量导出子域名解析量
+                 * @param req CreateSubDomainsAnalyticsFileRequest
+                 * @return CreateSubDomainsAnalyticsFileOutcome
+                 */
+                CreateSubDomainsAnalyticsFileOutcome CreateSubDomainsAnalyticsFile(const Model::CreateSubDomainsAnalyticsFileRequest &request);
+                void CreateSubDomainsAnalyticsFileAsync(const Model::CreateSubDomainsAnalyticsFileRequest& request, const CreateSubDomainsAnalyticsFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSubDomainsAnalyticsFileOutcomeCallable CreateSubDomainsAnalyticsFileCallable(const Model::CreateSubDomainsAnalyticsFileRequest& request);
+
+                /**
+                 *创建添加子域名 Zone 域解析时所需要的 TXT 记录值
+                 * @param req CreateSubdomainValidateTXTValueRequest
+                 * @return CreateSubdomainValidateTXTValueOutcome
+                 */
+                CreateSubdomainValidateTXTValueOutcome CreateSubdomainValidateTXTValue(const Model::CreateSubdomainValidateTXTValueRequest &request);
+                void CreateSubdomainValidateTXTValueAsync(const Model::CreateSubdomainValidateTXTValueRequest& request, const CreateSubdomainValidateTXTValueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSubdomainValidateTXTValueOutcomeCallable CreateSubdomainValidateTXTValueCallable(const Model::CreateSubdomainValidateTXTValueRequest& request);
 
                 /**
                  *添加TXT记录
@@ -681,7 +753,7 @@ namespace TencentCloud
                 DeleteSnapshotOutcomeCallable DeleteSnapshotCallable(const Model::DeleteSnapshotRequest& request);
 
                 /**
-                 *获取任务详情
+                 *获取批量操作任务执行详情
                  * @param req DescribeBatchTaskRequest
                  * @return DescribeBatchTaskOutcome
                  */
@@ -715,6 +787,15 @@ namespace TencentCloud
                 DescribeDomainAnalyticsOutcome DescribeDomainAnalytics(const Model::DescribeDomainAnalyticsRequest &request);
                 void DescribeDomainAnalyticsAsync(const Model::DescribeDomainAnalyticsRequest& request, const DescribeDomainAnalyticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDomainAnalyticsOutcomeCallable DescribeDomainAnalyticsCallable(const Model::DescribeDomainAnalyticsRequest& request);
+
+                /**
+                 *批量操作中搜索域名
+                 * @param req DescribeDomainAndRecordListRequest
+                 * @return DescribeDomainAndRecordListOutcome
+                 */
+                DescribeDomainAndRecordListOutcome DescribeDomainAndRecordList(const Model::DescribeDomainAndRecordListRequest &request);
+                void DescribeDomainAndRecordListAsync(const Model::DescribeDomainAndRecordListRequest& request, const DescribeDomainAndRecordListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDomainAndRecordListOutcomeCallable DescribeDomainAndRecordListCallable(const Model::DescribeDomainAndRecordListRequest& request);
 
                 /**
                  *获取域名的自定义线路列表
@@ -799,6 +880,15 @@ namespace TencentCloud
                 DescribeDomainShareUserListOutcomeCallable DescribeDomainShareUserListCallable(const Model::DescribeDomainShareUserListRequest& request);
 
                 /**
+                 *获取套餐列表
+                 * @param req DescribeDomainVipListRequest
+                 * @return DescribeDomainVipListOutcome
+                 */
+                DescribeDomainVipListOutcome DescribeDomainVipList(const Model::DescribeDomainVipListRequest &request);
+                void DescribeDomainVipListAsync(const Model::DescribeDomainVipListRequest& request, const DescribeDomainVipListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDomainVipListOutcomeCallable DescribeDomainVipListCallable(const Model::DescribeDomainVipListRequest& request);
+
+                /**
                  *获取域名Whois信息
                  * @param req DescribeDomainWhoisRequest
                  * @return DescribeDomainWhoisOutcome
@@ -806,6 +896,15 @@ namespace TencentCloud
                 DescribeDomainWhoisOutcome DescribeDomainWhois(const Model::DescribeDomainWhoisRequest &request);
                 void DescribeDomainWhoisAsync(const Model::DescribeDomainWhoisRequest& request, const DescribeDomainWhoisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDomainWhoisOutcomeCallable DescribeDomainWhoisCallable(const Model::DescribeDomainWhoisRequest& request);
+
+                /**
+                 *根据批量任务ID获取生成文件信息
+                 * @param req DescribeFileInfoByJobIdRequest
+                 * @return DescribeFileInfoByJobIdOutcome
+                 */
+                DescribeFileInfoByJobIdOutcome DescribeFileInfoByJobId(const Model::DescribeFileInfoByJobIdRequest &request);
+                void DescribeFileInfoByJobIdAsync(const Model::DescribeFileInfoByJobIdRequest& request, const DescribeFileInfoByJobIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFileInfoByJobIdOutcomeCallable DescribeFileInfoByJobIdCallable(const Model::DescribeFileInfoByJobIdRequest& request);
 
                 /**
                  *获取域名的线路分组列表
@@ -913,6 +1012,15 @@ namespace TencentCloud
                 DescribeRecordTypeOutcomeCallable DescribeRecordTypeCallable(const Model::DescribeRecordTypeRequest& request);
 
                 /**
+                 *查看域名的解析量
+                 * @param req DescribeResolveCountRequest
+                 * @return DescribeResolveCountOutcome
+                 */
+                DescribeResolveCountOutcome DescribeResolveCount(const Model::DescribeResolveCountRequest &request);
+                void DescribeResolveCountAsync(const Model::DescribeResolveCountRequest& request, const DescribeResolveCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResolveCountOutcomeCallable DescribeResolveCountCallable(const Model::DescribeResolveCountRequest& request);
+
+                /**
                  *查询解析快照配置
                  * @param req DescribeSnapshotConfigRequest
                  * @return DescribeSnapshotConfigOutcome
@@ -958,6 +1066,15 @@ namespace TencentCloud
                 DescribeSubdomainAnalyticsOutcomeCallable DescribeSubdomainAnalyticsCallable(const Model::DescribeSubdomainAnalyticsRequest& request);
 
                 /**
+                 *查看添加子域名 Zone 域解析 TXT 记录值验证状态
+                 * @param req DescribeSubdomainValidateStatusRequest
+                 * @return DescribeSubdomainValidateStatusOutcome
+                 */
+                DescribeSubdomainValidateStatusOutcome DescribeSubdomainValidateStatus(const Model::DescribeSubdomainValidateStatusRequest &request);
+                void DescribeSubdomainValidateStatusAsync(const Model::DescribeSubdomainValidateStatusRequest& request, const DescribeSubdomainValidateStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSubdomainValidateStatusOutcomeCallable DescribeSubdomainValidateStatusCallable(const Model::DescribeSubdomainValidateStatusRequest& request);
+
+                /**
                  *获取账户信息
                  * @param req DescribeUserDetailRequest
                  * @return DescribeUserDetailOutcome
@@ -974,6 +1091,15 @@ namespace TencentCloud
                 DescribeVASStatisticOutcome DescribeVASStatistic(const Model::DescribeVASStatisticRequest &request);
                 void DescribeVASStatisticAsync(const Model::DescribeVASStatisticRequest& request, const DescribeVASStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeVASStatisticOutcomeCallable DescribeVASStatisticCallable(const Model::DescribeVASStatisticRequest& request);
+
+                /**
+                 *获取增值服务列表
+                 * @param req DescribeVasListRequest
+                 * @return DescribeVasListOutcome
+                 */
+                DescribeVasListOutcome DescribeVasList(const Model::DescribeVasListRequest &request);
+                void DescribeVasListAsync(const Model::DescribeVasListRequest& request, const DescribeVasListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVasListOutcomeCallable DescribeVasListCallable(const Model::DescribeVasListRequest& request);
 
                 /**
                  *下载快照

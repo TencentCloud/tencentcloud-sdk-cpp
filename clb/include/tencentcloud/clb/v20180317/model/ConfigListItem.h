@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool UconfigIdHasBeenSet() const;
 
                     /**
-                     * 获取配置类型
-                     * @return ConfigType 配置类型
+                     * 获取配置类型， 可选值：CLB（实例维度配置）， SERVER（服务维度配置），LOCATION（规则维度配置）
+                     * @return ConfigType 配置类型， 可选值：CLB（实例维度配置）， SERVER（服务维度配置），LOCATION（规则维度配置）
                      * 
                      */
                     std::string GetConfigType() const;
 
                     /**
-                     * 设置配置类型
-                     * @param _configType 配置类型
+                     * 设置配置类型， 可选值：CLB（实例维度配置）， SERVER（服务维度配置），LOCATION（规则维度配置）
+                     * @param _configType 配置类型， 可选值：CLB（实例维度配置）， SERVER（服务维度配置），LOCATION（规则维度配置）
                      * 
                      */
                     void SetConfigType(const std::string& _configType);
@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigName 配置名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConfigName() const;
 
                     /**
                      * 设置配置名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configName 配置名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigName(const std::string& _configName);
@@ -135,15 +131,19 @@ namespace TencentCloud
                     bool ConfigContentHasBeenSet() const;
 
                     /**
-                     * 获取增加配置时间
-                     * @return CreateTimestamp 增加配置时间
+                     * 获取配置的创建时间。
+格式：YYYY-MM-DD HH:mm:ss
+                     * @return CreateTimestamp 配置的创建时间。
+格式：YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetCreateTimestamp() const;
 
                     /**
-                     * 设置增加配置时间
-                     * @param _createTimestamp 增加配置时间
+                     * 设置配置的创建时间。
+格式：YYYY-MM-DD HH:mm:ss
+                     * @param _createTimestamp 配置的创建时间。
+格式：YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     void SetCreateTimestamp(const std::string& _createTimestamp);
@@ -156,15 +156,19 @@ namespace TencentCloud
                     bool CreateTimestampHasBeenSet() const;
 
                     /**
-                     * 获取修改配置时间
-                     * @return UpdateTimestamp 修改配置时间
+                     * 获取配置的修改时间。
+格式：YYYY-MM-DD HH:mm:ss
+                     * @return UpdateTimestamp 配置的修改时间。
+格式：YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetUpdateTimestamp() const;
 
                     /**
-                     * 设置修改配置时间
-                     * @param _updateTimestamp 修改配置时间
+                     * 设置配置的修改时间。
+格式：YYYY-MM-DD HH:mm:ss
+                     * @param _updateTimestamp 配置的修改时间。
+格式：YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     void SetUpdateTimestamp(const std::string& _updateTimestamp);
@@ -185,14 +189,13 @@ namespace TencentCloud
                     bool m_uconfigIdHasBeenSet;
 
                     /**
-                     * 配置类型
+                     * 配置类型， 可选值：CLB（实例维度配置）， SERVER（服务维度配置），LOCATION（规则维度配置）
                      */
                     std::string m_configType;
                     bool m_configTypeHasBeenSet;
 
                     /**
                      * 配置名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_configName;
                     bool m_configNameHasBeenSet;
@@ -204,13 +207,15 @@ namespace TencentCloud
                     bool m_configContentHasBeenSet;
 
                     /**
-                     * 增加配置时间
+                     * 配置的创建时间。
+格式：YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_createTimestamp;
                     bool m_createTimestampHasBeenSet;
 
                     /**
-                     * 修改配置时间
+                     * 配置的修改时间。
+格式：YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_updateTimestamp;
                     bool m_updateTimestampHasBeenSet;

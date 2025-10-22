@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自动删除策略列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrategyInfo 自动删除策略列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AutoDelStrategyInfo> GetStrategyInfo() const;
 
                     /**
                      * 设置自动删除策略列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _strategyInfo 自动删除策略列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStrategyInfo(const std::vector<AutoDelStrategyInfo>& _strategyInfo);
@@ -103,7 +99,6 @@ namespace TencentCloud
 
                     /**
                      * 自动删除策略列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AutoDelStrategyInfo> m_strategyInfo;
                     bool m_strategyInfoHasBeenSet;

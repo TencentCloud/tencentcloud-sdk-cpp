@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主动健康检查健康探测间隔，单位：秒，0表示不开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HealthyInterval 主动健康检查健康探测间隔，单位：秒，0表示不开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetHealthyInterval() const;
 
                     /**
                      * 设置主动健康检查健康探测间隔，单位：秒，0表示不开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _healthyInterval 主动健康检查健康探测间隔，单位：秒，0表示不开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHealthyInterval(const uint64_t& _healthyInterval);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主动健康检查异常探测间隔，单位：秒，0表示不开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnHealthyInterval 主动健康检查异常探测间隔，单位：秒，0表示不开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetUnHealthyInterval() const;
 
                     /**
                      * 设置主动健康检查异常探测间隔，单位：秒，0表示不开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _unHealthyInterval 主动健康检查异常探测间隔，单位：秒，0表示不开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUnHealthyInterval(const uint64_t& _unHealthyInterval);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取在 GET HTTP 请求中使用的路径，以作为主动运行状况检查的探测器运行。默认： ”/”。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HttpPath 在 GET HTTP 请求中使用的路径，以作为主动运行状况检查的探测器运行。默认： ”/”。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHttpPath() const;
 
                     /**
                      * 设置在 GET HTTP 请求中使用的路径，以作为主动运行状况检查的探测器运行。默认： ”/”。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _httpPath 在 GET HTTP 请求中使用的路径，以作为主动运行状况检查的探测器运行。默认： ”/”。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHttpPath(const std::string& _httpPath);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取GET HTTP 请求的超时时间，单位：秒。默认 60。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timeout GET HTTP 请求的超时时间，单位：秒。默认 60。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetTimeout() const;
 
                     /**
                      * 设置GET HTTP 请求的超时时间，单位：秒。默认 60。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeout GET HTTP 请求的超时时间，单位：秒。默认 60。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeout(const double& _timeout);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 主动健康检查健康探测间隔，单位：秒，0表示不开启
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_healthyInterval;
                     bool m_healthyIntervalHasBeenSet;
 
                     /**
                      * 主动健康检查异常探测间隔，单位：秒，0表示不开启
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_unHealthyInterval;
                     bool m_unHealthyIntervalHasBeenSet;
 
                     /**
                      * 在 GET HTTP 请求中使用的路径，以作为主动运行状况检查的探测器运行。默认： ”/”。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_httpPath;
                     bool m_httpPathHasBeenSet;
 
                     /**
                      * GET HTTP 请求的超时时间，单位：秒。默认 60。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_timeout;
                     bool m_timeoutHasBeenSet;

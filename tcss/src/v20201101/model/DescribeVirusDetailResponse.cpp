@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,7 +84,8 @@ DescribeVirusDetailResponse::DescribeVirusDetailResponse() :
     m_nodeIDHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
     m_namespaceHasBeenSet(false),
-    m_workloadTypeHasBeenSet(false)
+    m_workloadTypeHasBeenSet(false),
+    m_containerStatusHasBeenSet(false)
 {
 }
 
@@ -738,6 +739,16 @@ CoreInternalOutcome DescribeVirusDetailResponse::Deserialize(const string &paylo
         m_workloadTypeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ContainerStatus") && !rsp["ContainerStatus"].IsNull())
+    {
+        if (!rsp["ContainerStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ContainerStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerStatus = string(rsp["ContainerStatus"].GetString());
+        m_containerStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1246,11 +1257,19 @@ string DescribeVirusDetailResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_workloadType.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_containerStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_containerStatus.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -1866,6 +1885,16 @@ string DescribeVirusDetailResponse::GetWorkloadType() const
 bool DescribeVirusDetailResponse::WorkloadTypeHasBeenSet() const
 {
     return m_workloadTypeHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetContainerStatus() const
+{
+    return m_containerStatus;
+}
+
+bool DescribeVirusDetailResponse::ContainerStatusHasBeenSet() const
+{
+    return m_containerStatusHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,10 @@ GetDocPreviewResponse::GetDocPreviewResponse() :
     m_fileTypeHasBeenSet(false),
     m_cosUrlHasBeenSet(false),
     m_urlHasBeenSet(false),
-    m_bucketHasBeenSet(false)
+    m_bucketHasBeenSet(false),
+    m_newNameHasBeenSet(false),
+    m_parseResultCosUrlHasBeenSet(false),
+    m_isDownloadHasBeenSet(false)
 {
 }
 
@@ -116,6 +119,36 @@ CoreInternalOutcome GetDocPreviewResponse::Deserialize(const string &payload)
         m_bucketHasBeenSet = true;
     }
 
+    if (rsp.HasMember("NewName") && !rsp["NewName"].IsNull())
+    {
+        if (!rsp["NewName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NewName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_newName = string(rsp["NewName"].GetString());
+        m_newNameHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ParseResultCosUrl") && !rsp["ParseResultCosUrl"].IsNull())
+    {
+        if (!rsp["ParseResultCosUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ParseResultCosUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_parseResultCosUrl = string(rsp["ParseResultCosUrl"].GetString());
+        m_parseResultCosUrlHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("IsDownload") && !rsp["IsDownload"].IsNull())
+    {
+        if (!rsp["IsDownload"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsDownload` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDownload = rsp["IsDownload"].GetBool();
+        m_isDownloadHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -166,11 +199,35 @@ string GetDocPreviewResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_bucket.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_newNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NewName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_newName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_parseResultCosUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParseResultCosUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parseResultCosUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isDownloadHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDownload";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDownload, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -226,6 +283,36 @@ string GetDocPreviewResponse::GetBucket() const
 bool GetDocPreviewResponse::BucketHasBeenSet() const
 {
     return m_bucketHasBeenSet;
+}
+
+string GetDocPreviewResponse::GetNewName() const
+{
+    return m_newName;
+}
+
+bool GetDocPreviewResponse::NewNameHasBeenSet() const
+{
+    return m_newNameHasBeenSet;
+}
+
+string GetDocPreviewResponse::GetParseResultCosUrl() const
+{
+    return m_parseResultCosUrl;
+}
+
+bool GetDocPreviewResponse::ParseResultCosUrlHasBeenSet() const
+{
+    return m_parseResultCosUrlHasBeenSet;
+}
+
+bool GetDocPreviewResponse::GetIsDownload() const
+{
+    return m_isDownload;
+}
+
+bool GetDocPreviewResponse::IsDownloadHasBeenSet() const
+{
+    return m_isDownloadHasBeenSet;
 }
 
 

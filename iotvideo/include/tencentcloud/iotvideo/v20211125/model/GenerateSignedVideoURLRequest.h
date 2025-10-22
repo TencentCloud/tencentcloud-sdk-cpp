@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool VideoURLHasBeenSet() const;
 
                     /**
-                     * 获取播放链接过期时间
-                     * @return ExpireTime 播放链接过期时间
+                     * 获取播放链接过期时间（时间戳，单位秒）
+                     * @return ExpireTime 播放链接过期时间（时间戳，单位秒）
                      * 
                      */
                     uint64_t GetExpireTime() const;
 
                     /**
-                     * 设置播放链接过期时间
-                     * @param _expireTime 播放链接过期时间
+                     * 设置播放链接过期时间（时间戳，单位秒）
+                     * @param _expireTime 播放链接过期时间（时间戳，单位秒）
                      * 
                      */
                     void SetExpireTime(const uint64_t& _expireTime);
@@ -114,7 +114,7 @@ namespace TencentCloud
                     bool m_videoURLHasBeenSet;
 
                     /**
-                     * 播放链接过期时间
+                     * 播放链接过期时间（时间戳，单位秒）
                      */
                     uint64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;

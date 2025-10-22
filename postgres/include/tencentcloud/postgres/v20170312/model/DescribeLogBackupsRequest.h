@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -88,12 +88,14 @@ namespace TencentCloud
                     /**
                      * 获取按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：
 db-instance-id：按照实例ID过滤，类型为string。
-db-instance-name：按照实例名过滤，类型为string。
+db-instance-name：按照实例名过滤，支持模糊匹配，类型为string。
 db-instance-ip：按照实例私有网络IP地址过滤，类型为string。
+db-instance-status：按实例状态过滤，类型为string。取值参考[DBInstance](https://cloud.tencent.com/document/api/409/16778#DBInstance)结构的DBInstanceStatus字段。
                      * @return Filters 按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：
 db-instance-id：按照实例ID过滤，类型为string。
-db-instance-name：按照实例名过滤，类型为string。
+db-instance-name：按照实例名过滤，支持模糊匹配，类型为string。
 db-instance-ip：按照实例私有网络IP地址过滤，类型为string。
+db-instance-status：按实例状态过滤，类型为string。取值参考[DBInstance](https://cloud.tencent.com/document/api/409/16778#DBInstance)结构的DBInstanceStatus字段。
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
@@ -101,12 +103,14 @@ db-instance-ip：按照实例私有网络IP地址过滤，类型为string。
                     /**
                      * 设置按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：
 db-instance-id：按照实例ID过滤，类型为string。
-db-instance-name：按照实例名过滤，类型为string。
+db-instance-name：按照实例名过滤，支持模糊匹配，类型为string。
 db-instance-ip：按照实例私有网络IP地址过滤，类型为string。
+db-instance-status：按实例状态过滤，类型为string。取值参考[DBInstance](https://cloud.tencent.com/document/api/409/16778#DBInstance)结构的DBInstanceStatus字段。
                      * @param _filters 按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：
 db-instance-id：按照实例ID过滤，类型为string。
-db-instance-name：按照实例名过滤，类型为string。
+db-instance-name：按照实例名过滤，支持模糊匹配，类型为string。
 db-instance-ip：按照实例私有网络IP地址过滤，类型为string。
+db-instance-status：按实例状态过滤，类型为string。取值参考[DBInstance](https://cloud.tencent.com/document/api/409/16778#DBInstance)结构的DBInstanceStatus字段。
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -161,15 +165,15 @@ db-instance-ip：按照实例私有网络IP地址过滤，类型为string。
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取排序字段，支持StartTime,FinishTime,Size。
-                     * @return OrderBy 排序字段，支持StartTime,FinishTime,Size。
+                     * 获取排序字段，支持StartTime,FinishTime,Size。默认值：StartTime
+                     * @return OrderBy 排序字段，支持StartTime,FinishTime,Size。默认值：StartTime
                      * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置排序字段，支持StartTime,FinishTime,Size。
-                     * @param _orderBy 排序字段，支持StartTime,FinishTime,Size。
+                     * 设置排序字段，支持StartTime,FinishTime,Size。默认值：StartTime
+                     * @param _orderBy 排序字段，支持StartTime,FinishTime,Size。默认值：StartTime
                      * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
@@ -182,15 +186,15 @@ db-instance-ip：按照实例私有网络IP地址过滤，类型为string。
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取排序方式，包括升序：asc，降序：desc。
-                     * @return OrderByType 排序方式，包括升序：asc，降序：desc。
+                     * 获取排序方式，包括升序：asc，降序：desc。默认值：desc。
+                     * @return OrderByType 排序方式，包括升序：asc，降序：desc。默认值：desc。
                      * 
                      */
                     std::string GetOrderByType() const;
 
                     /**
-                     * 设置排序方式，包括升序：asc，降序：desc。
-                     * @param _orderByType 排序方式，包括升序：asc，降序：desc。
+                     * 设置排序方式，包括升序：asc，降序：desc。默认值：desc。
+                     * @param _orderByType 排序方式，包括升序：asc，降序：desc。默认值：desc。
                      * 
                      */
                     void SetOrderByType(const std::string& _orderByType);
@@ -219,8 +223,9 @@ db-instance-ip：按照实例私有网络IP地址过滤，类型为string。
                     /**
                      * 按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：
 db-instance-id：按照实例ID过滤，类型为string。
-db-instance-name：按照实例名过滤，类型为string。
+db-instance-name：按照实例名过滤，支持模糊匹配，类型为string。
 db-instance-ip：按照实例私有网络IP地址过滤，类型为string。
+db-instance-status：按实例状态过滤，类型为string。取值参考[DBInstance](https://cloud.tencent.com/document/api/409/16778#DBInstance)结构的DBInstanceStatus字段。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
@@ -238,13 +243,13 @@ db-instance-ip：按照实例私有网络IP地址过滤，类型为string。
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 排序字段，支持StartTime,FinishTime,Size。
+                     * 排序字段，支持StartTime,FinishTime,Size。默认值：StartTime
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 排序方式，包括升序：asc，降序：desc。
+                     * 排序方式，包括升序：asc，降序：desc。默认值：desc。
                      */
                     std::string m_orderByType;
                     bool m_orderByTypeHasBeenSet;

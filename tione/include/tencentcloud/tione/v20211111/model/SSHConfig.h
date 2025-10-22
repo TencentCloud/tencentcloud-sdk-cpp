@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tione/v20211111/model/PodSSHInfo.h>
 
 
 namespace TencentCloud
@@ -146,6 +147,56 @@ namespace TencentCloud
                      */
                     bool LoginCommandHasBeenSet() const;
 
+                    /**
+                     * 获取登录地址是否改变
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsAddressChanged 登录地址是否改变
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIsAddressChanged() const;
+
+                    /**
+                     * 设置登录地址是否改变
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isAddressChanged 登录地址是否改变
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsAddressChanged(const bool& _isAddressChanged);
+
+                    /**
+                     * 判断参数 IsAddressChanged 是否已赋值
+                     * @return IsAddressChanged 是否已赋值
+                     * 
+                     */
+                    bool IsAddressChangedHasBeenSet() const;
+
+                    /**
+                     * 获取POD访问信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PodSSHInfo POD访问信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    PodSSHInfo GetPodSSHInfo() const;
+
+                    /**
+                     * 设置POD访问信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _podSSHInfo POD访问信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPodSSHInfo(const PodSSHInfo& _podSSHInfo);
+
+                    /**
+                     * 判断参数 PodSSHInfo 是否已赋值
+                     * @return PodSSHInfo 是否已赋值
+                     * 
+                     */
+                    bool PodSSHInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -175,6 +226,20 @@ namespace TencentCloud
                      */
                     std::string m_loginCommand;
                     bool m_loginCommandHasBeenSet;
+
+                    /**
+                     * 登录地址是否改变
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isAddressChanged;
+                    bool m_isAddressChangedHasBeenSet;
+
+                    /**
+                     * POD访问信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    PodSSHInfo m_podSSHInfo;
+                    bool m_podSSHInfoHasBeenSet;
 
                 };
             }

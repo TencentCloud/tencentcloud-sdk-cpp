@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取新生儿名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NeonatalName 新生儿名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNeonatalName() const;
 
                     /**
                      * 设置新生儿名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _neonatalName 新生儿名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNeonatalName(const std::string& _neonatalName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取新生儿性别
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NeonatalGender 新生儿性别
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNeonatalGender() const;
 
                     /**
                      * 设置新生儿性别
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _neonatalGender 新生儿性别
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNeonatalGender(const std::string& _neonatalGender);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出生身长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BirthLength 出生身长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBirthLength() const;
 
                     /**
                      * 设置出生身长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _birthLength 出生身长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBirthLength(const std::string& _birthLength);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出生体重
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BirthWeight 出生体重
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBirthWeight() const;
 
                     /**
                      * 设置出生体重
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _birthWeight 出生体重
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBirthWeight(const std::string& _birthWeight);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出生孕周
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GestationalAge 出生孕周
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGestationalAge() const;
 
                     /**
                      * 设置出生孕周
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gestationalAge 出生孕周
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGestationalAge(const std::string& _gestationalAge);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出生时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BirthTime 出生时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBirthTime() const;
 
                     /**
                      * 设置出生时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _birthTime 出生时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBirthTime(const std::string& _birthTime);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出生地点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BirthPlace 出生地点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBirthPlace() const;
 
                     /**
                      * 设置出生地点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _birthPlace 出生地点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBirthPlace(const std::string& _birthPlace);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取医疗机构
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MedicalInstitutions 医疗机构
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMedicalInstitutions() const;
 
                     /**
                      * 设置医疗机构
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _medicalInstitutions 医疗机构
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMedicalInstitutions(const std::string& _medicalInstitutions);
@@ -250,56 +218,48 @@ namespace TencentCloud
 
                     /**
                      * 新生儿名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_neonatalName;
                     bool m_neonatalNameHasBeenSet;
 
                     /**
                      * 新生儿性别
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_neonatalGender;
                     bool m_neonatalGenderHasBeenSet;
 
                     /**
                      * 出生身长
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_birthLength;
                     bool m_birthLengthHasBeenSet;
 
                     /**
                      * 出生体重
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_birthWeight;
                     bool m_birthWeightHasBeenSet;
 
                     /**
                      * 出生孕周
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gestationalAge;
                     bool m_gestationalAgeHasBeenSet;
 
                     /**
                      * 出生时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_birthTime;
                     bool m_birthTimeHasBeenSet;
 
                     /**
                      * 出生地点
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_birthPlace;
                     bool m_birthPlaceHasBeenSet;
 
                     /**
                      * 医疗机构
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_medicalInstitutions;
                     bool m_medicalInstitutionsHasBeenSet;

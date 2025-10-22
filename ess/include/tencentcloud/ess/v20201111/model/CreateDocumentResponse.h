@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,13 +68,11 @@ namespace TencentCloud
                      * 获取合同预览链接URL。
 
 注: `1.如果是预览模式(即NeedPreview设置为true)时, 才会有此预览链接URL`
-`2.当使用的模板中存在动态表格控件时，预览结果中没有动态表格的填写内容`
-注意：此字段可能返回 null，表示取不到有效值。
+`2.当使用的模板中存在动态表格控件时，预览结果中没有动态表格的填写内容,完整的预览链接需通过[合同文档合成完成回调](https://qian.tencent.com/developers/company/callback_types_contracts_sign/#%E4%B9%9D-%E5%90%88%E5%90%8C%E6%96%87%E6%A1%A3%E5%90%88%E6%88%90%E5%AE%8C%E6%88%90%E5%9B%9E%E8%B0%83)获取。
                      * @return PreviewFileUrl 合同预览链接URL。
 
 注: `1.如果是预览模式(即NeedPreview设置为true)时, 才会有此预览链接URL`
-`2.当使用的模板中存在动态表格控件时，预览结果中没有动态表格的填写内容`
-注意：此字段可能返回 null，表示取不到有效值。
+`2.当使用的模板中存在动态表格控件时，预览结果中没有动态表格的填写内容,完整的预览链接需通过[合同文档合成完成回调](https://qian.tencent.com/developers/company/callback_types_contracts_sign/#%E4%B9%9D-%E5%90%88%E5%90%8C%E6%96%87%E6%A1%A3%E5%90%88%E6%88%90%E5%AE%8C%E6%88%90%E5%9B%9E%E8%B0%83)获取。
                      * 
                      */
                     std::string GetPreviewFileUrl() const;
@@ -88,9 +86,7 @@ namespace TencentCloud
 
                     /**
                      * 获取签署方信息，如角色ID、角色名称等
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Approvers 签署方信息，如角色ID、角色名称等
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ApproverItem> GetApprovers() const;
@@ -117,15 +113,13 @@ namespace TencentCloud
                      * 合同预览链接URL。
 
 注: `1.如果是预览模式(即NeedPreview设置为true)时, 才会有此预览链接URL`
-`2.当使用的模板中存在动态表格控件时，预览结果中没有动态表格的填写内容`
-注意：此字段可能返回 null，表示取不到有效值。
+`2.当使用的模板中存在动态表格控件时，预览结果中没有动态表格的填写内容,完整的预览链接需通过[合同文档合成完成回调](https://qian.tencent.com/developers/company/callback_types_contracts_sign/#%E4%B9%9D-%E5%90%88%E5%90%8C%E6%96%87%E6%A1%A3%E5%90%88%E6%88%90%E5%AE%8C%E6%88%90%E5%9B%9E%E8%B0%83)获取。
                      */
                     std::string m_previewFileUrl;
                     bool m_previewFileUrlHasBeenSet;
 
                     /**
                      * 签署方信息，如角色ID、角色名称等
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ApproverItem> m_approvers;
                     bool m_approversHasBeenSet;

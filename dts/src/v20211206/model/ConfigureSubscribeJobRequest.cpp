@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,9 @@ ConfigureSubscribeJobRequest::ConfigureSubscribeJobRequest() :
     m_subscribeObjectsHasBeenSet(false),
     m_protocolHasBeenSet(false),
     m_pipelineInfoHasBeenSet(false),
-    m_extraAttrHasBeenSet(false)
+    m_extraAttrHasBeenSet(false),
+    m_consumerVpcIdHasBeenSet(false),
+    m_consumerSubnetIdHasBeenSet(false)
 {
 }
 
@@ -141,6 +143,22 @@ string ConfigureSubscribeJobRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_consumerVpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsumerVpcId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_consumerVpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_consumerSubnetIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsumerSubnetId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_consumerSubnetId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -293,6 +311,38 @@ void ConfigureSubscribeJobRequest::SetExtraAttr(const vector<KeyValuePairOption>
 bool ConfigureSubscribeJobRequest::ExtraAttrHasBeenSet() const
 {
     return m_extraAttrHasBeenSet;
+}
+
+string ConfigureSubscribeJobRequest::GetConsumerVpcId() const
+{
+    return m_consumerVpcId;
+}
+
+void ConfigureSubscribeJobRequest::SetConsumerVpcId(const string& _consumerVpcId)
+{
+    m_consumerVpcId = _consumerVpcId;
+    m_consumerVpcIdHasBeenSet = true;
+}
+
+bool ConfigureSubscribeJobRequest::ConsumerVpcIdHasBeenSet() const
+{
+    return m_consumerVpcIdHasBeenSet;
+}
+
+string ConfigureSubscribeJobRequest::GetConsumerSubnetId() const
+{
+    return m_consumerSubnetId;
+}
+
+void ConfigureSubscribeJobRequest::SetConsumerSubnetId(const string& _consumerSubnetId)
+{
+    m_consumerSubnetId = _consumerSubnetId;
+    m_consumerSubnetIdHasBeenSet = true;
+}
+
+bool ConfigureSubscribeJobRequest::ConsumerSubnetIdHasBeenSet() const
+{
+    return m_consumerSubnetIdHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -286,7 +286,7 @@ namespace TencentCloud
                      * @return TagInfoSet 媒体绑定的标签信息列表 。
 该字段已废弃。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::vector<MaterialTagInfo> GetTagInfoSet() const;
 
@@ -297,14 +297,14 @@ namespace TencentCloud
                      * @param _tagInfoSet 媒体绑定的标签信息列表 。
 该字段已废弃。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetTagInfoSet(const std::vector<MaterialTagInfo>& _tagInfoSet);
 
                     /**
                      * 判断参数 TagInfoSet 是否已赋值
                      * @return TagInfoSet 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool TagInfoSetHasBeenSet() const;
 

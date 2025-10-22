@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则模板ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleTemplateId 规则模板ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleTemplateId() const;
 
                     /**
                      * 设置规则模板ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleTemplateId 规则模板ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleTemplateId(const std::string& _ruleTemplateId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则模板名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleTemplateName 规则模板名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleTemplateName() const;
 
                     /**
                      * 设置规则模板名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleTemplateName 规则模板名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleTemplateName(const std::string& _ruleTemplateName);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则内容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleFilters 规则内容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RuleFilters> GetRuleFilters() const;
 
                     /**
                      * 设置规则内容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleFilters 规则内容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleFilters(const std::vector<RuleFilters>& _ruleFilters);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警等级。1-低风险，2-中风险，3-高风险。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlarmLevel 告警等级。1-低风险，2-中风险，3-高风险。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAlarmLevel() const;
 
                     /**
                      * 设置告警等级。1-低风险，2-中风险，3-高风险。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _alarmLevel 告警等级。1-低风险，2-中风险，3-高风险。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAlarmLevel(const int64_t& _alarmLevel);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警策略。0-不告警，1-告警。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlarmPolicy 告警策略。0-不告警，1-告警。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAlarmPolicy() const;
 
                     /**
                      * 设置告警策略。0-不告警，1-告警。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _alarmPolicy 告警策略。0-不告警，1-告警。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAlarmPolicy(const int64_t& _alarmPolicy);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 规则描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置规则描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 规则描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -201,42 +177,36 @@ namespace TencentCloud
 
                     /**
                      * 规则模板ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleTemplateId;
                     bool m_ruleTemplateIdHasBeenSet;
 
                     /**
                      * 规则模板名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleTemplateName;
                     bool m_ruleTemplateNameHasBeenSet;
 
                     /**
                      * 规则内容。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RuleFilters> m_ruleFilters;
                     bool m_ruleFiltersHasBeenSet;
 
                     /**
                      * 告警等级。1-低风险，2-中风险，3-高风险。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_alarmLevel;
                     bool m_alarmLevelHasBeenSet;
 
                     /**
                      * 告警策略。0-不告警，1-告警。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_alarmPolicy;
                     bool m_alarmPolicyHasBeenSet;
 
                     /**
                      * 规则描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

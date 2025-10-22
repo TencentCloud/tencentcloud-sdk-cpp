@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/trocket/v20230308/model/ClientSubscriptionInfo.h>
 
 
 namespace TencentCloud
@@ -197,18 +198,34 @@ namespace TencentCloud
                     bool IsOnlineHasBeenSet() const;
 
                     /**
-                     * 获取消费类型
+                     * 获取消费类型，枚举值如下：
+
+- PULL：PULL 消费类型
+- PUSH：PUSH 消费类型
+- POP：POP 消费类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ConsumeType 消费类型
+                     * @return ConsumeType 消费类型，枚举值如下：
+
+- PULL：PULL 消费类型
+- PUSH：PUSH 消费类型
+- POP：POP 消费类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConsumeType() const;
 
                     /**
-                     * 设置消费类型
+                     * 设置消费类型，枚举值如下：
+
+- PULL：PULL 消费类型
+- PUSH：PUSH 消费类型
+- POP：POP 消费类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _consumeType 消费类型
+                     * @param _consumeType 消费类型，枚举值如下：
+
+- PULL：PULL 消费类型
+- PUSH：PUSH 消费类型
+- POP：POP 消费类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -272,18 +289,30 @@ namespace TencentCloud
                     bool ExpressionTypeHasBeenSet() const;
 
                     /**
-                     * 获取订阅一致性
+                     * 获取订阅一致性，枚举如下：
+
+- 0: 订阅一致
+- 1: 订阅不一致
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Consistency 订阅一致性
+                     * @return Consistency 订阅一致性，枚举如下：
+
+- 0: 订阅一致
+- 1: 订阅不一致
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetConsistency() const;
 
                     /**
-                     * 设置订阅一致性
+                     * 设置订阅一致性，枚举如下：
+
+- 0: 订阅一致
+- 1: 订阅不一致
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _consistency 订阅一致性
+                     * @param _consistency 订阅一致性，枚举如下：
+
+- 0: 订阅一致
+- 1: 订阅不一致
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -322,18 +351,18 @@ namespace TencentCloud
                     bool ConsumerLagHasBeenSet() const;
 
                     /**
-                     * 获取最后消费进度更新时间，秒为单位
+                     * 获取最后消费进度更新时间，**Unix时间戳（毫秒）**
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LastUpdateTime 最后消费进度更新时间，秒为单位
+                     * @return LastUpdateTime 最后消费进度更新时间，**Unix时间戳（毫秒）**
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLastUpdateTime() const;
 
                     /**
-                     * 设置最后消费进度更新时间，秒为单位
+                     * 设置最后消费进度更新时间，**Unix时间戳（毫秒）**
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _lastUpdateTime 最后消费进度更新时间，秒为单位
+                     * @param _lastUpdateTime 最后消费进度更新时间，**Unix时间戳（毫秒）**
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -429,6 +458,31 @@ CLUSTERING 集群模式;
                      */
                     bool MessageModelHasBeenSet() const;
 
+                    /**
+                     * 获取订阅不一致的客户端列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClientSubscriptionInfos 订阅不一致的客户端列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<ClientSubscriptionInfo> GetClientSubscriptionInfos() const;
+
+                    /**
+                     * 设置订阅不一致的客户端列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _clientSubscriptionInfos 订阅不一致的客户端列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetClientSubscriptionInfos(const std::vector<ClientSubscriptionInfo>& _clientSubscriptionInfos);
+
+                    /**
+                     * 判断参数 ClientSubscriptionInfos 是否已赋值
+                     * @return ClientSubscriptionInfos 是否已赋值
+                     * 
+                     */
+                    bool ClientSubscriptionInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -474,7 +528,11 @@ CLUSTERING 集群模式;
                     bool m_isOnlineHasBeenSet;
 
                     /**
-                     * 消费类型
+                     * 消费类型，枚举值如下：
+
+- PULL：PULL 消费类型
+- PUSH：PUSH 消费类型
+- POP：POP 消费类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_consumeType;
@@ -495,7 +553,10 @@ CLUSTERING 集群模式;
                     bool m_expressionTypeHasBeenSet;
 
                     /**
-                     * 订阅一致性
+                     * 订阅一致性，枚举如下：
+
+- 0: 订阅一致
+- 1: 订阅不一致
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_consistency;
@@ -509,7 +570,7 @@ CLUSTERING 集群模式;
                     bool m_consumerLagHasBeenSet;
 
                     /**
-                     * 最后消费进度更新时间，秒为单位
+                     * 最后消费进度更新时间，**Unix时间戳（毫秒）**
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_lastUpdateTime;
@@ -537,6 +598,13 @@ CLUSTERING 集群模式;
                      */
                     std::string m_messageModel;
                     bool m_messageModelHasBeenSet;
+
+                    /**
+                     * 订阅不一致的客户端列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ClientSubscriptionInfo> m_clientSubscriptionInfos;
+                    bool m_clientSubscriptionInfosHasBeenSet;
 
                 };
             }

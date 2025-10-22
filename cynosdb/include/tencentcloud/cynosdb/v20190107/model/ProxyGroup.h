@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -174,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterId 集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterId 集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -199,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId 用户AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAppId() const;
 
                     /**
                      * 设置用户AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appId 用户AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppId(const int64_t& _appId);
@@ -224,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取读写节点开通数据库代理
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OpenRw 读写节点开通数据库代理
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOpenRw() const;
 
                     /**
                      * 设置读写节点开通数据库代理
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _openRw 读写节点开通数据库代理
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOpenRw(const std::string& _openRw);
@@ -287,21 +275,18 @@ namespace TencentCloud
 
                     /**
                      * 集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
                      * 用户AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
                      * 读写节点开通数据库代理
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_openRw;
                     bool m_openRwHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ using namespace TencentCloud::Lke::V20231130::Model;
 using namespace std;
 
 CheckAttributeLabelReferResponse::CheckAttributeLabelReferResponse() :
-    m_isReferHasBeenSet(false)
+    m_isReferHasBeenSet(false),
+    m_listHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,26 @@ CoreInternalOutcome CheckAttributeLabelReferResponse::Deserialize(const string &
         m_isReferHasBeenSet = true;
     }
 
+    if (rsp.HasMember("List") && !rsp["List"].IsNull())
+    {
+        if (!rsp["List"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `List` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["List"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AttributeLabelRefByWorkflow item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_list.push_back(item);
+        }
+        m_listHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -90,11 +111,26 @@ string CheckAttributeLabelReferResponse::ToJsonString() const
         value.AddMember(iKey, m_isRefer, allocator);
     }
 
+    if (m_listHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "List";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_list.begin(); itr != m_list.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -110,6 +146,16 @@ bool CheckAttributeLabelReferResponse::GetIsRefer() const
 bool CheckAttributeLabelReferResponse::IsReferHasBeenSet() const
 {
     return m_isReferHasBeenSet;
+}
+
+vector<AttributeLabelRefByWorkflow> CheckAttributeLabelReferResponse::GetList() const
+{
+    return m_list;
+}
+
+bool CheckAttributeLabelReferResponse::ListHasBeenSet() const
+{
+    return m_listHasBeenSet;
 }
 
 

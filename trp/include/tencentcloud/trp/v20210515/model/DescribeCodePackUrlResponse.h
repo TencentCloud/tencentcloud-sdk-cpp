@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取文字码包地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url 文字码包地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUrl() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取图片码包地址，可能为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImgUrl 图片码包地址，可能为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetImgUrl() const;
@@ -77,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取文字码包Key，用于上传导入
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileKey 文字码包Key，用于上传导入
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileKey() const;
@@ -95,21 +89,18 @@ namespace TencentCloud
 
                     /**
                      * 文字码包地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
                      * 图片码包地址，可能为空
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_imgUrl;
                     bool m_imgUrlHasBeenSet;
 
                     /**
                      * 文字码包Key，用于上传导入
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileKey;
                     bool m_fileKeyHasBeenSet;

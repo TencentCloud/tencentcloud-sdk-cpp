@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -282,46 +282,25 @@ namespace TencentCloud
                     bool MaxRoCountHasBeenSet() const;
 
                     /**
-                     * 获取集群是否允许扩容，可选范围<li>yes</li><li>no</li>
-                     * @return AutoScaleUp 集群是否允许扩容，可选范围<li>yes</li><li>no</li>
+                     * 获取是否开启归档，可选范围<li>yes</li><li>no</li>默认值:yes
+                     * @return AutoArchive 是否开启归档，可选范围<li>yes</li><li>no</li>默认值:yes
                      * 
                      */
-                    std::string GetAutoScaleUp() const;
+                    std::string GetAutoArchive() const;
 
                     /**
-                     * 设置集群是否允许扩容，可选范围<li>yes</li><li>no</li>
-                     * @param _autoScaleUp 集群是否允许扩容，可选范围<li>yes</li><li>no</li>
+                     * 设置是否开启归档，可选范围<li>yes</li><li>no</li>默认值:yes
+                     * @param _autoArchive 是否开启归档，可选范围<li>yes</li><li>no</li>默认值:yes
                      * 
                      */
-                    void SetAutoScaleUp(const std::string& _autoScaleUp);
+                    void SetAutoArchive(const std::string& _autoArchive);
 
                     /**
-                     * 判断参数 AutoScaleUp 是否已赋值
-                     * @return AutoScaleUp 是否已赋值
+                     * 判断参数 AutoArchive 是否已赋值
+                     * @return AutoArchive 是否已赋值
                      * 
                      */
-                    bool AutoScaleUpHasBeenSet() const;
-
-                    /**
-                     * 获取集群是否允许缩容，可选范围<li>yes</li><li>no</li>
-                     * @return AutoScaleDown 集群是否允许缩容，可选范围<li>yes</li><li>no</li>
-                     * 
-                     */
-                    std::string GetAutoScaleDown() const;
-
-                    /**
-                     * 设置集群是否允许缩容，可选范围<li>yes</li><li>no</li>
-                     * @param _autoScaleDown 集群是否允许缩容，可选范围<li>yes</li><li>no</li>
-                     * 
-                     */
-                    void SetAutoScaleDown(const std::string& _autoScaleDown);
-
-                    /**
-                     * 判断参数 AutoScaleDown 是否已赋值
-                     * @return AutoScaleDown 是否已赋值
-                     * 
-                     */
-                    bool AutoScaleDownHasBeenSet() const;
+                    bool AutoArchiveHasBeenSet() const;
 
                 private:
 
@@ -394,16 +373,10 @@ namespace TencentCloud
                     bool m_maxRoCountHasBeenSet;
 
                     /**
-                     * 集群是否允许扩容，可选范围<li>yes</li><li>no</li>
+                     * 是否开启归档，可选范围<li>yes</li><li>no</li>默认值:yes
                      */
-                    std::string m_autoScaleUp;
-                    bool m_autoScaleUpHasBeenSet;
-
-                    /**
-                     * 集群是否允许缩容，可选范围<li>yes</li><li>no</li>
-                     */
-                    std::string m_autoScaleDown;
-                    bool m_autoScaleDownHasBeenSet;
+                    std::string m_autoArchive;
+                    bool m_autoArchiveHasBeenSet;
 
                 };
             }

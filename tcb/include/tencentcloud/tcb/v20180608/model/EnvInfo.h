@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -260,18 +260,14 @@ namespace TencentCloud
 
                     /**
                      * 获取tcb产品套餐ID，参考DescribePackages接口的返回值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageId tcb产品套餐ID，参考DescribePackages接口的返回值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPackageId() const;
 
                     /**
                      * 设置tcb产品套餐ID，参考DescribePackages接口的返回值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packageId tcb产品套餐ID，参考DescribePackages接口的返回值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackageId(const std::string& _packageId);
@@ -285,18 +281,14 @@ namespace TencentCloud
 
                     /**
                      * 获取套餐中文名称，参考DescribePackages接口的返回值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageName 套餐中文名称，参考DescribePackages接口的返回值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPackageName() const;
 
                     /**
                      * 设置套餐中文名称，参考DescribePackages接口的返回值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packageName 套餐中文名称，参考DescribePackages接口的返回值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackageName(const std::string& _packageName);
@@ -310,18 +302,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云日志服务列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogServices 云日志服务列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<LogServiceInfo> GetLogServices() const;
 
                     /**
                      * 设置云日志服务列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logServices 云日志服务列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogServices(const std::vector<LogServiceInfo>& _logServices);
@@ -335,18 +323,14 @@ namespace TencentCloud
 
                     /**
                      * 获取静态资源信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StaticStorages 静态资源信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<StaticStorageInfo> GetStaticStorages() const;
 
                     /**
                      * 设置静态资源信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _staticStorages 静态资源信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStaticStorages(const std::vector<StaticStorageInfo>& _staticStorages);
@@ -360,18 +344,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否到期自动降为免费版
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsAutoDegrade 是否到期自动降为免费版
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsAutoDegrade() const;
 
                     /**
                      * 设置是否到期自动降为免费版
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isAutoDegrade 是否到期自动降为免费版
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsAutoDegrade(const bool& _isAutoDegrade);
@@ -385,18 +365,14 @@ namespace TencentCloud
 
                     /**
                      * 获取环境渠道
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnvChannel 环境渠道
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEnvChannel() const;
 
                     /**
                      * 设置环境渠道
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _envChannel 环境渠道
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnvChannel(const std::string& _envChannel);
@@ -412,11 +388,9 @@ namespace TencentCloud
                      * 获取支付方式。包含以下取值：
 <li> prepayment：预付费</li>
 <li> postpaid：后付费</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayMode 支付方式。包含以下取值：
 <li> prepayment：预付费</li>
 <li> postpaid：后付费</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPayMode() const;
@@ -425,11 +399,9 @@ namespace TencentCloud
                      * 设置支付方式。包含以下取值：
 <li> prepayment：预付费</li>
 <li> postpaid：后付费</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _payMode 支付方式。包含以下取值：
 <li> prepayment：预付费</li>
 <li> postpaid：后付费</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPayMode(const std::string& _payMode);
@@ -443,18 +415,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否为默认环境
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsDefault 是否为默认环境
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsDefault() const;
 
                     /**
                      * 设置是否为默认环境
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isDefault 是否为默认环境
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsDefault(const bool& _isDefault);
@@ -468,18 +436,14 @@ namespace TencentCloud
 
                     /**
                      * 获取环境所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 环境所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置环境所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 环境所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -493,18 +457,14 @@ namespace TencentCloud
 
                     /**
                      * 获取环境标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 环境标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置环境标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 环境标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -518,18 +478,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义日志服务
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomLogServices 自定义日志服务
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ClsInfo> GetCustomLogServices() const;
 
                     /**
                      * 设置自定义日志服务
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _customLogServices 自定义日志服务
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCustomLogServices(const std::vector<ClsInfo>& _customLogServices);
@@ -543,18 +499,14 @@ namespace TencentCloud
 
                     /**
                      * 获取环境类型：baas, run, hoting, weda
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnvType 环境类型：baas, run, hoting, weda
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEnvType() const;
 
                     /**
                      * 设置环境类型：baas, run, hoting, weda
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _envType 环境类型：baas, run, hoting, weda
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnvType(const std::string& _envType);
@@ -568,18 +520,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否是dau新套餐
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsDauPackage 是否是dau新套餐
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsDauPackage() const;
 
                     /**
                      * 设置是否是dau新套餐
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isDauPackage 是否是dau新套餐
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsDauPackage(const bool& _isDauPackage);
@@ -593,18 +541,14 @@ namespace TencentCloud
 
                     /**
                      * 获取套餐类型:空\baas\tcbr
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageType 套餐类型:空\baas\tcbr
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPackageType() const;
 
                     /**
                      * 设置套餐类型:空\baas\tcbr
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packageType 套餐类型:空\baas\tcbr
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackageType(const std::string& _packageType);
@@ -618,18 +562,14 @@ namespace TencentCloud
 
                     /**
                      * 获取架构类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ArchitectureType 架构类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetArchitectureType() const;
 
                     /**
                      * 设置架构类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _architectureType 架构类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetArchitectureType(const std::string& _architectureType);
@@ -643,18 +583,14 @@ namespace TencentCloud
 
                     /**
                      * 获取回收标志，默认为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Recycle 回收标志，默认为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRecycle() const;
 
                     /**
                      * 设置回收标志，默认为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recycle 回收标志，默认为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecycle(const std::string& _recycle);
@@ -728,42 +664,36 @@ namespace TencentCloud
 
                     /**
                      * tcb产品套餐ID，参考DescribePackages接口的返回值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packageId;
                     bool m_packageIdHasBeenSet;
 
                     /**
                      * 套餐中文名称，参考DescribePackages接口的返回值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packageName;
                     bool m_packageNameHasBeenSet;
 
                     /**
                      * 云日志服务列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LogServiceInfo> m_logServices;
                     bool m_logServicesHasBeenSet;
 
                     /**
                      * 静态资源信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<StaticStorageInfo> m_staticStorages;
                     bool m_staticStoragesHasBeenSet;
 
                     /**
                      * 是否到期自动降为免费版
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isAutoDegrade;
                     bool m_isAutoDegradeHasBeenSet;
 
                     /**
                      * 环境渠道
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_envChannel;
                     bool m_envChannelHasBeenSet;
@@ -772,70 +702,60 @@ namespace TencentCloud
                      * 支付方式。包含以下取值：
 <li> prepayment：预付费</li>
 <li> postpaid：后付费</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
                      * 是否为默认环境
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isDefault;
                     bool m_isDefaultHasBeenSet;
 
                     /**
                      * 环境所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * 环境标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
                      * 自定义日志服务
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ClsInfo> m_customLogServices;
                     bool m_customLogServicesHasBeenSet;
 
                     /**
                      * 环境类型：baas, run, hoting, weda
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_envType;
                     bool m_envTypeHasBeenSet;
 
                     /**
                      * 是否是dau新套餐
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isDauPackage;
                     bool m_isDauPackageHasBeenSet;
 
                     /**
                      * 套餐类型:空\baas\tcbr
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packageType;
                     bool m_packageTypeHasBeenSet;
 
                     /**
                      * 架构类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_architectureType;
                     bool m_architectureTypeHasBeenSet;
 
                     /**
                      * 回收标志，默认为空
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_recycle;
                     bool m_recycleHasBeenSet;

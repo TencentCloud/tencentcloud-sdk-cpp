@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ CreateConsumerGroupRequest::CreateConsumerGroupRequest() :
     m_consumeEnableHasBeenSet(false),
     m_consumeMessageOrderlyHasBeenSet(false),
     m_consumerGroupHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_tagListHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,21 @@ string CreateConsumerGroupRequest::ToJsonString() const
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagList.begin(); itr != m_tagList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -189,6 +205,22 @@ void CreateConsumerGroupRequest::SetRemark(const string& _remark)
 bool CreateConsumerGroupRequest::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+vector<Tag> CreateConsumerGroupRequest::GetTagList() const
+{
+    return m_tagList;
+}
+
+void CreateConsumerGroupRequest::SetTagList(const vector<Tag>& _tagList)
+{
+    m_tagList = _tagList;
+    m_tagListHasBeenSet = true;
+}
+
+bool CreateConsumerGroupRequest::TagListHasBeenSet() const
+{
+    return m_tagListHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,7 +44,9 @@ DescribeInstanceTradeParameterRequest::DescribeInstanceTradeParameterRequest() :
     m_multiZonesHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
     m_timeZoneHasBeenSet(false),
-    m_collationHasBeenSet(false)
+    m_collationHasBeenSet(false),
+    m_multiNodesHasBeenSet(false),
+    m_drZonesHasBeenSet(false)
 {
 }
 
@@ -246,6 +248,27 @@ string DescribeInstanceTradeParameterRequest::ToJsonString() const
         string key = "Collation";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_collation.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_multiNodesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MultiNodes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_multiNodes, allocator);
+    }
+
+    if (m_drZonesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DrZones";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_drZones.begin(); itr != m_drZones.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -606,6 +629,38 @@ void DescribeInstanceTradeParameterRequest::SetCollation(const string& _collatio
 bool DescribeInstanceTradeParameterRequest::CollationHasBeenSet() const
 {
     return m_collationHasBeenSet;
+}
+
+bool DescribeInstanceTradeParameterRequest::GetMultiNodes() const
+{
+    return m_multiNodes;
+}
+
+void DescribeInstanceTradeParameterRequest::SetMultiNodes(const bool& _multiNodes)
+{
+    m_multiNodes = _multiNodes;
+    m_multiNodesHasBeenSet = true;
+}
+
+bool DescribeInstanceTradeParameterRequest::MultiNodesHasBeenSet() const
+{
+    return m_multiNodesHasBeenSet;
+}
+
+vector<string> DescribeInstanceTradeParameterRequest::GetDrZones() const
+{
+    return m_drZones;
+}
+
+void DescribeInstanceTradeParameterRequest::SetDrZones(const vector<string>& _drZones)
+{
+    m_drZones = _drZones;
+    m_drZonesHasBeenSet = true;
+}
+
+bool DescribeInstanceTradeParameterRequest::DrZonesHasBeenSet() const
+{
+    return m_drZonesHasBeenSet;
 }
 
 

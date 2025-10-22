@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例id信息
-                     * @return InstanceId 实例id信息
+                     * 获取ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
+                     * @return InstanceId ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例id信息
-                     * @param _instanceId 实例id信息
+                     * 设置ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
+                     * @param _instanceId ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取匹配类型，目前支持前缀匹配与预设策略，枚举值列表：PREFIXED/PRESET
-                     * @return PatternType 匹配类型，目前支持前缀匹配与预设策略，枚举值列表：PREFIXED/PRESET
+                     * 获取ACL规则匹配类型，目前支持前缀匹配与预设策略，枚举值列表：PREFIXED/PRESET
+                     * @return PatternType ACL规则匹配类型，目前支持前缀匹配与预设策略，枚举值列表：PREFIXED/PRESET
                      * 
                      */
                     std::string GetPatternType() const;
 
                     /**
-                     * 设置匹配类型，目前支持前缀匹配与预设策略，枚举值列表：PREFIXED/PRESET
-                     * @param _patternType 匹配类型，目前支持前缀匹配与预设策略，枚举值列表：PREFIXED/PRESET
+                     * 设置ACL规则匹配类型，目前支持前缀匹配与预设策略，枚举值列表：PREFIXED/PRESET
+                     * @param _patternType ACL规则匹配类型，目前支持前缀匹配与预设策略，枚举值列表：PREFIXED/PRESET
                      * 
                      */
                     void SetPatternType(const std::string& _patternType);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool RuleListHasBeenSet() const;
 
                     /**
-                     * 获取表示前缀匹配的前缀的值
-                     * @return Pattern 表示前缀匹配的前缀的值
+                     * 获取表示前缀匹配的前缀的值 (当PatternType取值为PREFIXED时，此参数必填)
+                     * @return Pattern 表示前缀匹配的前缀的值 (当PatternType取值为PREFIXED时，此参数必填)
                      * 
                      */
                     std::string GetPattern() const;
 
                     /**
-                     * 设置表示前缀匹配的前缀的值
-                     * @param _pattern 表示前缀匹配的前缀的值
+                     * 设置表示前缀匹配的前缀的值 (当PatternType取值为PREFIXED时，此参数必填)
+                     * @param _pattern 表示前缀匹配的前缀的值 (当PatternType取值为PREFIXED时，此参数必填)
                      * 
                      */
                     void SetPattern(const std::string& _pattern);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool PatternHasBeenSet() const;
 
                     /**
-                     * 获取预设ACL规则是否应用到新增的topic中
-                     * @return IsApplied 预设ACL规则是否应用到新增的topic中
+                     * 获取预设ACL规则是否应用到新增的topic中。默认为0，表示否。取值为1时表示是。
+                     * @return IsApplied 预设ACL规则是否应用到新增的topic中。默认为0，表示否。取值为1时表示是。
                      * 
                      */
                     int64_t GetIsApplied() const;
 
                     /**
-                     * 设置预设ACL规则是否应用到新增的topic中
-                     * @param _isApplied 预设ACL规则是否应用到新增的topic中
+                     * 设置预设ACL规则是否应用到新增的topic中。默认为0，表示否。取值为1时表示是。
+                     * @param _isApplied 预设ACL规则是否应用到新增的topic中。默认为0，表示否。取值为1时表示是。
                      * 
                      */
                     void SetIsApplied(const int64_t& _isApplied);
@@ -214,7 +214,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例id信息
+                     * ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -226,7 +226,7 @@ namespace TencentCloud
                     bool m_resourceTypeHasBeenSet;
 
                     /**
-                     * 匹配类型，目前支持前缀匹配与预设策略，枚举值列表：PREFIXED/PRESET
+                     * ACL规则匹配类型，目前支持前缀匹配与预设策略，枚举值列表：PREFIXED/PRESET
                      */
                     std::string m_patternType;
                     bool m_patternTypeHasBeenSet;
@@ -244,13 +244,13 @@ namespace TencentCloud
                     bool m_ruleListHasBeenSet;
 
                     /**
-                     * 表示前缀匹配的前缀的值
+                     * 表示前缀匹配的前缀的值 (当PatternType取值为PREFIXED时，此参数必填)
                      */
                     std::string m_pattern;
                     bool m_patternHasBeenSet;
 
                     /**
-                     * 预设ACL规则是否应用到新增的topic中
+                     * 预设ACL规则是否应用到新增的topic中。默认为0，表示否。取值为1时表示是。
                      */
                     int64_t m_isApplied;
                     bool m_isAppliedHasBeenSet;

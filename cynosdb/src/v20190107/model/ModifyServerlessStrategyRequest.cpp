@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,8 +34,7 @@ ModifyServerlessStrategyRequest::ModifyServerlessStrategyRequest() :
     m_maxRoCpuHasBeenSet(false),
     m_minRoCountHasBeenSet(false),
     m_maxRoCountHasBeenSet(false),
-    m_autoScaleUpHasBeenSet(false),
-    m_autoScaleDownHasBeenSet(false)
+    m_autoArchiveHasBeenSet(false)
 {
 }
 
@@ -134,20 +133,12 @@ string ModifyServerlessStrategyRequest::ToJsonString() const
         d.AddMember(iKey, m_maxRoCount, allocator);
     }
 
-    if (m_autoScaleUpHasBeenSet)
+    if (m_autoArchiveHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AutoScaleUp";
+        string key = "AutoArchive";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_autoScaleUp.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_autoScaleDownHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AutoScaleDown";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_autoScaleDown.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_autoArchive.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -334,36 +325,20 @@ bool ModifyServerlessStrategyRequest::MaxRoCountHasBeenSet() const
     return m_maxRoCountHasBeenSet;
 }
 
-string ModifyServerlessStrategyRequest::GetAutoScaleUp() const
+string ModifyServerlessStrategyRequest::GetAutoArchive() const
 {
-    return m_autoScaleUp;
+    return m_autoArchive;
 }
 
-void ModifyServerlessStrategyRequest::SetAutoScaleUp(const string& _autoScaleUp)
+void ModifyServerlessStrategyRequest::SetAutoArchive(const string& _autoArchive)
 {
-    m_autoScaleUp = _autoScaleUp;
-    m_autoScaleUpHasBeenSet = true;
+    m_autoArchive = _autoArchive;
+    m_autoArchiveHasBeenSet = true;
 }
 
-bool ModifyServerlessStrategyRequest::AutoScaleUpHasBeenSet() const
+bool ModifyServerlessStrategyRequest::AutoArchiveHasBeenSet() const
 {
-    return m_autoScaleUpHasBeenSet;
-}
-
-string ModifyServerlessStrategyRequest::GetAutoScaleDown() const
-{
-    return m_autoScaleDown;
-}
-
-void ModifyServerlessStrategyRequest::SetAutoScaleDown(const string& _autoScaleDown)
-{
-    m_autoScaleDown = _autoScaleDown;
-    m_autoScaleDownHasBeenSet = true;
-}
-
-bool ModifyServerlessStrategyRequest::AutoScaleDownHasBeenSet() const
-{
-    return m_autoScaleDownHasBeenSet;
+    return m_autoArchiveHasBeenSet;
 }
 
 

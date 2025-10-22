@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -152,6 +152,31 @@ namespace TencentCloud
                      */
                     bool PlaybackPolicyHasBeenSet() const;
 
+                    /**
+                     * 获取Widevine安全级别，接口取值[L1, L2, L3]。
+安全级别定义参考Widevine安全级别定义。
+                     * @return WidevineSecurityLevel Widevine安全级别，接口取值[L1, L2, L3]。
+安全级别定义参考Widevine安全级别定义。
+                     * 
+                     */
+                    std::string GetWidevineSecurityLevel() const;
+
+                    /**
+                     * 设置Widevine安全级别，接口取值[L1, L2, L3]。
+安全级别定义参考Widevine安全级别定义。
+                     * @param _widevineSecurityLevel Widevine安全级别，接口取值[L1, L2, L3]。
+安全级别定义参考Widevine安全级别定义。
+                     * 
+                     */
+                    void SetWidevineSecurityLevel(const std::string& _widevineSecurityLevel);
+
+                    /**
+                     * 判断参数 WidevineSecurityLevel 是否已赋值
+                     * @return WidevineSecurityLevel 是否已赋值
+                     * 
+                     */
+                    bool WidevineSecurityLevelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -184,6 +209,13 @@ namespace TencentCloud
                      */
                     PlaybackPolicy m_playbackPolicy;
                     bool m_playbackPolicyHasBeenSet;
+
+                    /**
+                     * Widevine安全级别，接口取值[L1, L2, L3]。
+安全级别定义参考Widevine安全级别定义。
+                     */
+                    std::string m_widevineSecurityLevel;
+                    bool m_widevineSecurityLevelHasBeenSet;
 
                 };
             }

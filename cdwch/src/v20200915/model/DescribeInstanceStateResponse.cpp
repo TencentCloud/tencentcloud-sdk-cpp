@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,9 @@ DescribeInstanceStateResponse::DescribeInstanceStateResponse() :
     m_flowNameHasBeenSet(false),
     m_flowProgressHasBeenSet(false),
     m_instanceStateDescHasBeenSet(false),
-    m_flowMsgHasBeenSet(false)
+    m_flowMsgHasBeenSet(false),
+    m_processNameHasBeenSet(false),
+    m_processSubNameHasBeenSet(false)
 {
 }
 
@@ -127,6 +129,26 @@ CoreInternalOutcome DescribeInstanceStateResponse::Deserialize(const string &pay
         m_flowMsgHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ProcessName") && !rsp["ProcessName"].IsNull())
+    {
+        if (!rsp["ProcessName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProcessName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_processName = string(rsp["ProcessName"].GetString());
+        m_processNameHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ProcessSubName") && !rsp["ProcessSubName"].IsNull())
+    {
+        if (!rsp["ProcessSubName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProcessSubName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_processSubName = string(rsp["ProcessSubName"].GetString());
+        m_processSubNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -185,11 +207,27 @@ string DescribeInstanceStateResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_flowMsg.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_processNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_processName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_processSubNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessSubName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_processSubName.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -255,6 +293,26 @@ string DescribeInstanceStateResponse::GetFlowMsg() const
 bool DescribeInstanceStateResponse::FlowMsgHasBeenSet() const
 {
     return m_flowMsgHasBeenSet;
+}
+
+string DescribeInstanceStateResponse::GetProcessName() const
+{
+    return m_processName;
+}
+
+bool DescribeInstanceStateResponse::ProcessNameHasBeenSet() const
+{
+    return m_processNameHasBeenSet;
+}
+
+string DescribeInstanceStateResponse::GetProcessSubName() const
+{
+    return m_processSubName;
+}
+
+bool DescribeInstanceStateResponse::ProcessSubNameHasBeenSet() const
+{
+    return m_processSubNameHasBeenSet;
 }
 
 

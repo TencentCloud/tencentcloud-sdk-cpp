@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取人员ID，取值为创建人员接口中的PersonId
-                     * @return PersonId 人员ID，取值为创建人员接口中的PersonId
+                     * 获取人员ID，取值为创建人员接口中的PersonId。
+                     * @return PersonId 人员ID，取值为创建人员接口中的PersonId。
                      * 
                      */
                     std::string GetPersonId() const;
 
                     /**
-                     * 设置人员ID，取值为创建人员接口中的PersonId
-                     * @param _personId 人员ID，取值为创建人员接口中的PersonId
+                     * 设置人员ID，取值为创建人员接口中的PersonId。
+                     * @param _personId 人员ID，取值为创建人员接口中的PersonId。
                      * 
                      */
                     void SetPersonId(const std::string& _personId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool PersonIdHasBeenSet() const;
 
                     /**
-                     * 获取待加入的人员库列表，数组元素取值为创建人员库接口中的GroupId
-                     * @return GroupIds 待加入的人员库列表，数组元素取值为创建人员库接口中的GroupId
+                     * 获取待加入的人员库列表，数组元素取值为创建人员库接口中的GroupId。
+                     * @return GroupIds 待加入的人员库列表，数组元素取值为创建人员库接口中的GroupId。
                      * 
                      */
                     std::vector<std::string> GetGroupIds() const;
 
                     /**
-                     * 设置待加入的人员库列表，数组元素取值为创建人员库接口中的GroupId
-                     * @param _groupIds 待加入的人员库列表，数组元素取值为创建人员库接口中的GroupId
+                     * 设置待加入的人员库列表，数组元素取值为创建人员库接口中的GroupId。
+                     * @param _groupIds 待加入的人员库列表，数组元素取值为创建人员库接口中的GroupId。
                      * 
                      */
                     void SetGroupIds(const std::vector<std::string>& _groupIds);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 人员ID，取值为创建人员接口中的PersonId
+                     * 人员ID，取值为创建人员接口中的PersonId。
                      */
                     std::string m_personId;
                     bool m_personIdHasBeenSet;
 
                     /**
-                     * 待加入的人员库列表，数组元素取值为创建人员库接口中的GroupId
+                     * 待加入的人员库列表，数组元素取值为创建人员库接口中的GroupId。
                      */
                     std::vector<std::string> m_groupIds;
                     bool m_groupIdsHasBeenSet;

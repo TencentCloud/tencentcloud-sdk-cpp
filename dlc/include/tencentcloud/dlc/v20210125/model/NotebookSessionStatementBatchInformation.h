@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,18 +74,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前批任务是否运行完成
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsAvailable 当前批任务是否运行完成
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsAvailable() const;
 
                     /**
                      * 设置当前批任务是否运行完成
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isAvailable 当前批任务是否运行完成
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsAvailable(const bool& _isAvailable);
@@ -99,18 +95,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Session唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SessionId Session唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
                      * 设置Session唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sessionId Session唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -158,14 +150,12 @@ namespace TencentCloud
 
                     /**
                      * 当前批任务是否运行完成
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isAvailable;
                     bool m_isAvailableHasBeenSet;
 
                     /**
                      * Session唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;

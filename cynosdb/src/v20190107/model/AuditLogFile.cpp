@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ AuditLogFile::AuditLogFile() :
     m_statusHasBeenSet(false),
     m_fileSizeHasBeenSet(false),
     m_downloadUrlHasBeenSet(false),
-    m_errMsgHasBeenSet(false)
+    m_errMsgHasBeenSet(false),
+    m_progressRateHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome AuditLogFile::Deserialize(const rapidjson::Value &value)
         m_errMsgHasBeenSet = true;
     }
 
+    if (value.HasMember("ProgressRate") && !value["ProgressRate"].IsNull())
+    {
+        if (!value["ProgressRate"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AuditLogFile.ProgressRate` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_progressRate = value["ProgressRate"].GetInt64();
+        m_progressRateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void AuditLogFile::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ErrMsg";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_errMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_progressRateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProgressRate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_progressRate, allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void AuditLogFile::SetErrMsg(const string& _errMsg)
 bool AuditLogFile::ErrMsgHasBeenSet() const
 {
     return m_errMsgHasBeenSet;
+}
+
+int64_t AuditLogFile::GetProgressRate() const
+{
+    return m_progressRate;
+}
+
+void AuditLogFile::SetProgressRate(const int64_t& _progressRate)
+{
+    m_progressRate = _progressRate;
+    m_progressRateHasBeenSet = true;
+}
+
+bool AuditLogFile::ProgressRateHasBeenSet() const
+{
+    return m_progressRateHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 #include <tencentcloud/cdwch/v20200915/model/Charge.h>
 #include <tencentcloud/cdwch/v20200915/model/NodeSpec.h>
 #include <tencentcloud/cdwch/v20200915/model/Tag.h>
+#include <tencentcloud/cdwch/v20200915/model/SecondaryZoneInfo.h>
 
 
 namespace TencentCloud
@@ -130,15 +131,15 @@ namespace TencentCloud
                     bool UserSubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取版本
-                     * @return ProductVersion 版本
+                     * 获取系统版本
+                     * @return ProductVersion 系统版本
                      * 
                      */
                     std::string GetProductVersion() const;
 
                     /**
-                     * 设置版本
-                     * @param _productVersion 版本
+                     * 设置系统版本
+                     * @param _productVersion 系统版本
                      * 
                      */
                     void SetProductVersion(const std::string& _productVersion);
@@ -281,15 +282,15 @@ SpecName从DescribeSpec接口中返回的DataSpec.Name获取
                     bool CosBucketNameHasBeenSet() const;
 
                     /**
-                     * 获取是否是裸盘挂载
-                     * @return MountDiskType 是否是裸盘挂载
+                     * 获取是否是裸盘挂载，默认值 0 为 未挂载，1 为挂载。
+                     * @return MountDiskType 是否是裸盘挂载，默认值 0 为 未挂载，1 为挂载。
                      * 
                      */
                     int64_t GetMountDiskType() const;
 
                     /**
-                     * 设置是否是裸盘挂载
-                     * @param _mountDiskType 是否是裸盘挂载
+                     * 设置是否是裸盘挂载，默认值 0 为 未挂载，1 为挂载。
+                     * @param _mountDiskType 是否是裸盘挂载，默认值 0 为 未挂载，1 为挂载。
                      * 
                      */
                     void SetMountDiskType(const int64_t& _mountDiskType);
@@ -323,19 +324,15 @@ SpecName从DescribeSpec接口中返回的DataSpec.Name获取
                     bool HAZkHasBeenSet() const;
 
                     /**
-                     * 获取ZK节点
-SpecName从DescribeSpec接口中返回的CommonSpec.Name（ZK节点）获取
-                     * @return CommonSpec ZK节点
-SpecName从DescribeSpec接口中返回的CommonSpec.Name（ZK节点）获取
+                     * 获取ZK节点SpecName从DescribeSpec接口中返回的CommonSpec结构体的Name（ZK节点）获取
+                     * @return CommonSpec ZK节点SpecName从DescribeSpec接口中返回的CommonSpec结构体的Name（ZK节点）获取
                      * 
                      */
                     NodeSpec GetCommonSpec() const;
 
                     /**
-                     * 设置ZK节点
-SpecName从DescribeSpec接口中返回的CommonSpec.Name（ZK节点）获取
-                     * @param _commonSpec ZK节点
-SpecName从DescribeSpec接口中返回的CommonSpec.Name（ZK节点）获取
+                     * 设置ZK节点SpecName从DescribeSpec接口中返回的CommonSpec结构体的Name（ZK节点）获取
+                     * @param _commonSpec ZK节点SpecName从DescribeSpec接口中返回的CommonSpec结构体的Name（ZK节点）获取
                      * 
                      */
                     void SetCommonSpec(const NodeSpec& _commonSpec);
@@ -368,6 +365,48 @@ SpecName从DescribeSpec接口中返回的CommonSpec.Name（ZK节点）获取
                      */
                     bool TagItemsHasBeenSet() const;
 
+                    /**
+                     * 获取副可用区信息
+                     * @return SecondaryZoneInfo 副可用区信息
+                     * 
+                     */
+                    std::vector<SecondaryZoneInfo> GetSecondaryZoneInfo() const;
+
+                    /**
+                     * 设置副可用区信息
+                     * @param _secondaryZoneInfo 副可用区信息
+                     * 
+                     */
+                    void SetSecondaryZoneInfo(const std::vector<SecondaryZoneInfo>& _secondaryZoneInfo);
+
+                    /**
+                     * 判断参数 SecondaryZoneInfo 是否已赋值
+                     * @return SecondaryZoneInfo 是否已赋值
+                     * 
+                     */
+                    bool SecondaryZoneInfoHasBeenSet() const;
+
+                    /**
+                     * 获取default账号登陆实例的密码。8-16个字符，至少包含大写字母、小写字母、数字和特殊字符!@#%^*中的三种，第一个字符不能为特殊字符
+                     * @return CkDefaultUserPwd default账号登陆实例的密码。8-16个字符，至少包含大写字母、小写字母、数字和特殊字符!@#%^*中的三种，第一个字符不能为特殊字符
+                     * 
+                     */
+                    std::string GetCkDefaultUserPwd() const;
+
+                    /**
+                     * 设置default账号登陆实例的密码。8-16个字符，至少包含大写字母、小写字母、数字和特殊字符!@#%^*中的三种，第一个字符不能为特殊字符
+                     * @param _ckDefaultUserPwd default账号登陆实例的密码。8-16个字符，至少包含大写字母、小写字母、数字和特殊字符!@#%^*中的三种，第一个字符不能为特殊字符
+                     * 
+                     */
+                    void SetCkDefaultUserPwd(const std::string& _ckDefaultUserPwd);
+
+                    /**
+                     * 判断参数 CkDefaultUserPwd 是否已赋值
+                     * @return CkDefaultUserPwd 是否已赋值
+                     * 
+                     */
+                    bool CkDefaultUserPwdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -395,7 +434,7 @@ SpecName从DescribeSpec接口中返回的CommonSpec.Name（ZK节点）获取
                     bool m_userSubnetIdHasBeenSet;
 
                     /**
-                     * 版本
+                     * 系统版本
                      */
                     std::string m_productVersion;
                     bool m_productVersionHasBeenSet;
@@ -438,7 +477,7 @@ SpecName从DescribeSpec接口中返回的DataSpec.Name获取
                     bool m_cosBucketNameHasBeenSet;
 
                     /**
-                     * 是否是裸盘挂载
+                     * 是否是裸盘挂载，默认值 0 为 未挂载，1 为挂载。
                      */
                     int64_t m_mountDiskType;
                     bool m_mountDiskTypeHasBeenSet;
@@ -450,8 +489,7 @@ SpecName从DescribeSpec接口中返回的DataSpec.Name获取
                     bool m_hAZkHasBeenSet;
 
                     /**
-                     * ZK节点
-SpecName从DescribeSpec接口中返回的CommonSpec.Name（ZK节点）获取
+                     * ZK节点SpecName从DescribeSpec接口中返回的CommonSpec结构体的Name（ZK节点）获取
                      */
                     NodeSpec m_commonSpec;
                     bool m_commonSpecHasBeenSet;
@@ -461,6 +499,18 @@ SpecName从DescribeSpec接口中返回的CommonSpec.Name（ZK节点）获取
                      */
                     std::vector<Tag> m_tagItems;
                     bool m_tagItemsHasBeenSet;
+
+                    /**
+                     * 副可用区信息
+                     */
+                    std::vector<SecondaryZoneInfo> m_secondaryZoneInfo;
+                    bool m_secondaryZoneInfoHasBeenSet;
+
+                    /**
+                     * default账号登陆实例的密码。8-16个字符，至少包含大写字母、小写字母、数字和特殊字符!@#%^*中的三种，第一个字符不能为特殊字符
+                     */
+                    std::string m_ckDefaultUserPwd;
+                    bool m_ckDefaultUserPwdHasBeenSet;
 
                 };
             }

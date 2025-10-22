@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageId 镜像ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetImageId() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageName 镜像名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetImageName() const;
@@ -77,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
@@ -93,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取木马文件大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Size 木马文件大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSize() const;
@@ -109,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取木马文件路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FilePath 木马文件路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFilePath() const;
@@ -125,9 +115,7 @@ namespace TencentCloud
 
                     /**
                      * 获取最近生成时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyTime 最近生成时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyTime() const;
@@ -141,9 +129,7 @@ namespace TencentCloud
 
                     /**
                      * 获取病毒名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VirusName 病毒名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVirusName() const;
@@ -157,9 +143,7 @@ namespace TencentCloud
 
                     /**
                      * 获取风险等级 RISK_CRITICAL, RISK_HIGH, RISK_MEDIUM, RISK_LOW, RISK_NOTICE。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskLevel 风险等级 RISK_CRITICAL, RISK_HIGH, RISK_MEDIUM, RISK_LOW, RISK_NOTICE。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiskLevel() const;
@@ -173,9 +157,7 @@ namespace TencentCloud
 
                     /**
                      * 获取容器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerName 容器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContainerName() const;
@@ -189,9 +171,7 @@ namespace TencentCloud
 
                     /**
                      * 获取容器id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerId 容器id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContainerId() const;
@@ -205,9 +185,7 @@ namespace TencentCloud
 
                     /**
                      * 获取主机名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostName 主机名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHostName() const;
@@ -221,9 +199,7 @@ namespace TencentCloud
 
                     /**
                      * 获取主机id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostId 主机id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHostId() const;
@@ -237,9 +213,7 @@ namespace TencentCloud
 
                     /**
                      * 获取进程名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProcessName 进程名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProcessName() const;
@@ -253,9 +227,7 @@ namespace TencentCloud
 
                     /**
                      * 获取进程路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProcessPath 进程路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProcessPath() const;
@@ -269,9 +241,7 @@ namespace TencentCloud
 
                     /**
                      * 获取进程md5
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProcessMd5 进程md5
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProcessMd5() const;
@@ -285,9 +255,7 @@ namespace TencentCloud
 
                     /**
                      * 获取进程id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProcessId 进程id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetProcessId() const;
@@ -301,9 +269,7 @@ namespace TencentCloud
 
                     /**
                      * 获取进程参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProcessArgv 进程参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProcessArgv() const;
@@ -317,9 +283,7 @@ namespace TencentCloud
 
                     /**
                      * 获取进程链
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProcessChan 进程链
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProcessChan() const;
@@ -333,9 +297,7 @@ namespace TencentCloud
 
                     /**
                      * 获取进程组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProcessAccountGroup 进程组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProcessAccountGroup() const;
@@ -349,9 +311,7 @@ namespace TencentCloud
 
                     /**
                      * 获取进程启动用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProcessStartAccount 进程启动用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProcessStartAccount() const;
@@ -365,9 +325,7 @@ namespace TencentCloud
 
                     /**
                      * 获取进程文件权限
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProcessFileAuthority 进程文件权限
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProcessFileAuthority() const;
@@ -381,9 +339,7 @@ namespace TencentCloud
 
                     /**
                      * 获取来源：0：一键扫描， 1：定时扫描 2：实时监控
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceType 来源：0：一键扫描， 1：定时扫描 2：实时监控
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSourceType() const;
@@ -397,9 +353,7 @@ namespace TencentCloud
 
                     /**
                      * 获取标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetTags() const;
@@ -413,9 +367,7 @@ namespace TencentCloud
 
                     /**
                      * 获取事件描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HarmDescribe 事件描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHarmDescribe() const;
@@ -429,9 +381,7 @@ namespace TencentCloud
 
                     /**
                      * 获取建议方案
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuggestScheme 建议方案
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSuggestScheme() const;
@@ -445,9 +395,7 @@ namespace TencentCloud
 
                     /**
                      * 获取备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Mark 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMark() const;
@@ -461,9 +409,7 @@ namespace TencentCloud
 
                     /**
                      * 获取风险文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileName 风险文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileName() const;
@@ -477,9 +423,7 @@ namespace TencentCloud
 
                     /**
                      * 获取文件MD5
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileMd5 文件MD5
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileMd5() const;
@@ -493,9 +437,7 @@ namespace TencentCloud
 
                     /**
                      * 获取事件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventType 事件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEventType() const;
@@ -509,9 +451,7 @@ namespace TencentCloud
 
                     /**
                      * 获取集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PodName 集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPodName() const;
@@ -533,7 +473,6 @@ DEAL_ISOLATING:隔离中
 DEAL_ISOLATE_FAILED:隔离失败
 DEAL_RECOVERING:恢复中
 DEAL_RECOVER_FAILED: 恢复失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status DEAL_NONE:文件待处理
 DEAL_IGNORE:已经忽略
 DEAL_ADD_WHITELIST:加白
@@ -543,7 +482,6 @@ DEAL_ISOLATING:隔离中
 DEAL_ISOLATE_FAILED:隔离失败
 DEAL_RECOVERING:恢复中
 DEAL_RECOVER_FAILED: 恢复失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
@@ -563,7 +501,6 @@ FILE_ABNORMAL_DEAL_RECOVER:恢复文件时，文件异常
 BACKUP_FILE_NOT_FOUND:备份文件不存在
 CONTAINER_NOT_FOUND_DEAL_ISOLATE:隔离时，容器不存在
 CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubStatus 失败子状态:
 FILE_NOT_FOUND:文件不存在
 FILE_ABNORMAL:文件异常
@@ -571,7 +508,6 @@ FILE_ABNORMAL_DEAL_RECOVER:恢复文件时，文件异常
 BACKUP_FILE_NOT_FOUND:备份文件不存在
 CONTAINER_NOT_FOUND_DEAL_ISOLATE:隔离时，容器不存在
 CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubStatus() const;
@@ -585,9 +521,7 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
 
                     /**
                      * 获取内网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostIP 内网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHostIP() const;
@@ -601,9 +535,7 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
 
                     /**
                      * 获取外网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientIP 外网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClientIP() const;
@@ -617,9 +549,7 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
 
                     /**
                      * 获取父进程启动用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PProcessStartUser 父进程启动用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPProcessStartUser() const;
@@ -633,9 +563,7 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
 
                     /**
                      * 获取父进程用户组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PProcessUserGroup 父进程用户组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPProcessUserGroup() const;
@@ -649,9 +577,7 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
 
                     /**
                      * 获取父进程路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PProcessPath 父进程路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPProcessPath() const;
@@ -665,9 +591,7 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
 
                     /**
                      * 获取父进程命令行参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PProcessParam 父进程命令行参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPProcessParam() const;
@@ -681,9 +605,7 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
 
                     /**
                      * 获取祖先进程启动用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AncestorProcessStartUser 祖先进程启动用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAncestorProcessStartUser() const;
@@ -697,9 +619,7 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
 
                     /**
                      * 获取祖先进程用户组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AncestorProcessUserGroup 祖先进程用户组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAncestorProcessUserGroup() const;
@@ -713,9 +633,7 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
 
                     /**
                      * 获取祖先进程路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AncestorProcessPath 祖先进程路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAncestorProcessPath() const;
@@ -729,9 +647,7 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
 
                     /**
                      * 获取祖先进程命令行参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AncestorProcessParam 祖先进程命令行参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAncestorProcessParam() const;
@@ -745,9 +661,7 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
 
                     /**
                      * 获取事件最后一次处理的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperationTime 事件最后一次处理的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperationTime() const;
@@ -761,9 +675,7 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
 
                     /**
                      * 获取容器隔离状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerNetStatus 容器隔离状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContainerNetStatus() const;
@@ -777,9 +689,7 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
 
                     /**
                      * 获取容器隔离子状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerNetSubStatus 容器隔离子状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContainerNetSubStatus() const;
@@ -793,9 +703,7 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
 
                     /**
                      * 获取容器隔离操作来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerIsolateOperationSrc 容器隔离操作来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContainerIsolateOperationSrc() const;
@@ -814,14 +722,12 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
 3: binaryAi
 4: 异常行为
 5: 威胁情报
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckPlatform 检测平台
 1: 云查杀引擎
 2: tav
 3: binaryAi
 4: 异常行为
 5: 威胁情报
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetCheckPlatform() const;
@@ -835,9 +741,7 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
 
                     /**
                      * 获取文件访问时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileAccessTime 文件访问时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileAccessTime() const;
@@ -851,9 +755,7 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
 
                     /**
                      * 获取文件修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileModifyTime 文件修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileModifyTime() const;
@@ -1033,214 +935,198 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
                      */
                     bool WorkloadTypeHasBeenSet() const;
 
+                    /**
+                     * 获取容器状态
+                     * @return ContainerStatus 容器状态
+                     * 
+                     */
+                    std::string GetContainerStatus() const;
+
+                    /**
+                     * 判断参数 ContainerStatus 是否已赋值
+                     * @return ContainerStatus 是否已赋值
+                     * 
+                     */
+                    bool ContainerStatusHasBeenSet() const;
+
                 private:
 
                     /**
                      * 镜像ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_imageId;
                     bool m_imageIdHasBeenSet;
 
                     /**
                      * 镜像名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_imageName;
                     bool m_imageNameHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 木马文件大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_size;
                     bool m_sizeHasBeenSet;
 
                     /**
                      * 木马文件路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_filePath;
                     bool m_filePathHasBeenSet;
 
                     /**
                      * 最近生成时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
                      * 病毒名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_virusName;
                     bool m_virusNameHasBeenSet;
 
                     /**
                      * 风险等级 RISK_CRITICAL, RISK_HIGH, RISK_MEDIUM, RISK_LOW, RISK_NOTICE。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riskLevel;
                     bool m_riskLevelHasBeenSet;
 
                     /**
                      * 容器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_containerName;
                     bool m_containerNameHasBeenSet;
 
                     /**
                      * 容器id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_containerId;
                     bool m_containerIdHasBeenSet;
 
                     /**
                      * 主机名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostName;
                     bool m_hostNameHasBeenSet;
 
                     /**
                      * 主机id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostId;
                     bool m_hostIdHasBeenSet;
 
                     /**
                      * 进程名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_processName;
                     bool m_processNameHasBeenSet;
 
                     /**
                      * 进程路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_processPath;
                     bool m_processPathHasBeenSet;
 
                     /**
                      * 进程md5
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_processMd5;
                     bool m_processMd5HasBeenSet;
 
                     /**
                      * 进程id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_processId;
                     bool m_processIdHasBeenSet;
 
                     /**
                      * 进程参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_processArgv;
                     bool m_processArgvHasBeenSet;
 
                     /**
                      * 进程链
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_processChan;
                     bool m_processChanHasBeenSet;
 
                     /**
                      * 进程组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_processAccountGroup;
                     bool m_processAccountGroupHasBeenSet;
 
                     /**
                      * 进程启动用户
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_processStartAccount;
                     bool m_processStartAccountHasBeenSet;
 
                     /**
                      * 进程文件权限
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_processFileAuthority;
                     bool m_processFileAuthorityHasBeenSet;
 
                     /**
                      * 来源：0：一键扫描， 1：定时扫描 2：实时监控
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sourceType;
                     bool m_sourceTypeHasBeenSet;
 
                     /**
                      * 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
                      * 事件描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_harmDescribe;
                     bool m_harmDescribeHasBeenSet;
 
                     /**
                      * 建议方案
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_suggestScheme;
                     bool m_suggestSchemeHasBeenSet;
 
                     /**
                      * 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mark;
                     bool m_markHasBeenSet;
 
                     /**
                      * 风险文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
 
                     /**
                      * 文件MD5
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileMd5;
                     bool m_fileMd5HasBeenSet;
 
                     /**
                      * 事件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_eventType;
                     bool m_eventTypeHasBeenSet;
 
                     /**
                      * 集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_podName;
                     bool m_podNameHasBeenSet;
@@ -1255,7 +1141,6 @@ DEAL_ISOLATING:隔离中
 DEAL_ISOLATE_FAILED:隔离失败
 DEAL_RECOVERING:恢复中
 DEAL_RECOVER_FAILED: 恢复失败
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
@@ -1268,105 +1153,90 @@ FILE_ABNORMAL_DEAL_RECOVER:恢复文件时，文件异常
 BACKUP_FILE_NOT_FOUND:备份文件不存在
 CONTAINER_NOT_FOUND_DEAL_ISOLATE:隔离时，容器不存在
 CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subStatus;
                     bool m_subStatusHasBeenSet;
 
                     /**
                      * 内网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostIP;
                     bool m_hostIPHasBeenSet;
 
                     /**
                      * 外网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clientIP;
                     bool m_clientIPHasBeenSet;
 
                     /**
                      * 父进程启动用户
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pProcessStartUser;
                     bool m_pProcessStartUserHasBeenSet;
 
                     /**
                      * 父进程用户组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pProcessUserGroup;
                     bool m_pProcessUserGroupHasBeenSet;
 
                     /**
                      * 父进程路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pProcessPath;
                     bool m_pProcessPathHasBeenSet;
 
                     /**
                      * 父进程命令行参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pProcessParam;
                     bool m_pProcessParamHasBeenSet;
 
                     /**
                      * 祖先进程启动用户
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ancestorProcessStartUser;
                     bool m_ancestorProcessStartUserHasBeenSet;
 
                     /**
                      * 祖先进程用户组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ancestorProcessUserGroup;
                     bool m_ancestorProcessUserGroupHasBeenSet;
 
                     /**
                      * 祖先进程路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ancestorProcessPath;
                     bool m_ancestorProcessPathHasBeenSet;
 
                     /**
                      * 祖先进程命令行参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ancestorProcessParam;
                     bool m_ancestorProcessParamHasBeenSet;
 
                     /**
                      * 事件最后一次处理的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operationTime;
                     bool m_operationTimeHasBeenSet;
 
                     /**
                      * 容器隔离状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_containerNetStatus;
                     bool m_containerNetStatusHasBeenSet;
 
                     /**
                      * 容器隔离子状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_containerNetSubStatus;
                     bool m_containerNetSubStatusHasBeenSet;
 
                     /**
                      * 容器隔离操作来源
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_containerIsolateOperationSrc;
                     bool m_containerIsolateOperationSrcHasBeenSet;
@@ -1378,21 +1248,18 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
 3: binaryAi
 4: 异常行为
 5: 威胁情报
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_checkPlatform;
                     bool m_checkPlatformHasBeenSet;
 
                     /**
                      * 文件访问时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileAccessTime;
                     bool m_fileAccessTimeHasBeenSet;
 
                     /**
                      * 文件修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileModifyTime;
                     bool m_fileModifyTimeHasBeenSet;
@@ -1468,6 +1335,12 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
                      */
                     std::string m_workloadType;
                     bool m_workloadTypeHasBeenSet;
+
+                    /**
+                     * 容器状态
+                     */
+                    std::string m_containerStatus;
+                    bool m_containerStatusHasBeenSet;
 
                 };
             }

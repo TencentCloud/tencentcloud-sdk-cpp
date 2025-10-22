@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取专用通道ID
-                     * @return DirectConnectTunnelId 专用通道ID
+                     * 获取专用通道ID。
+                     * @return DirectConnectTunnelId 专用通道ID。
                      * 
                      */
                     std::string GetDirectConnectTunnelId() const;
 
                     /**
-                     * 设置专用通道ID
-                     * @param _directConnectTunnelId 专用通道ID
+                     * 设置专用通道ID。
+                     * @param _directConnectTunnelId 专用通道ID。
                      * 
                      */
                     void SetDirectConnectTunnelId(const std::string& _directConnectTunnelId);
@@ -66,22 +66,22 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤条件：
-route-type：路由类型，取值：BGP/STATIC
-route-subnet：路由cidr，取值如：192.68.1.0/24
+route-type：路由类型，取值：BGP/STATIC；
+route-subnet：路由cidr，取值如：192.68.1.0/24。
                      * @return Filters 过滤条件：
-route-type：路由类型，取值：BGP/STATIC
-route-subnet：路由cidr，取值如：192.68.1.0/24
+route-type：路由类型，取值：BGP/STATIC；
+route-subnet：路由cidr，取值如：192.68.1.0/24。
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤条件：
-route-type：路由类型，取值：BGP/STATIC
-route-subnet：路由cidr，取值如：192.68.1.0/24
+route-type：路由类型，取值：BGP/STATIC；
+route-subnet：路由cidr，取值如：192.68.1.0/24。
                      * @param _filters 过滤条件：
-route-type：路由类型，取值：BGP/STATIC
-route-subnet：路由cidr，取值如：192.68.1.0/24
+route-type：路由类型，取值：BGP/STATIC；
+route-subnet：路由cidr，取值如：192.68.1.0/24。
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -94,15 +94,15 @@ route-subnet：路由cidr，取值如：192.68.1.0/24
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为0
-                     * @return Offset 偏移量，默认为0
+                     * 获取偏移量，默认为0。
+                     * @return Offset 偏移量，默认为0。
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为0
-                     * @param _offset 偏移量，默认为0
+                     * 设置偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -115,15 +115,15 @@ route-subnet：路由cidr，取值如：192.68.1.0/24
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，默认为20，最大值为100
-                     * @return Limit 返回数量，默认为20，最大值为100
+                     * 获取返回数量，默认为20，最大值为100。
+                     * @return Limit 返回数量，默认为20，最大值为100。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认为20，最大值为100
-                     * @param _limit 返回数量，默认为20，最大值为100
+                     * 设置返回数量，默认为20，最大值为100。
+                     * @param _limit 返回数量，默认为20，最大值为100。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -138,27 +138,27 @@ route-subnet：路由cidr，取值如：192.68.1.0/24
                 private:
 
                     /**
-                     * 专用通道ID
+                     * 专用通道ID。
                      */
                     std::string m_directConnectTunnelId;
                     bool m_directConnectTunnelIdHasBeenSet;
 
                     /**
                      * 过滤条件：
-route-type：路由类型，取值：BGP/STATIC
-route-subnet：路由cidr，取值如：192.68.1.0/24
+route-type：路由类型，取值：BGP/STATIC；
+route-subnet：路由cidr，取值如：192.68.1.0/24。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 偏移量，默认为0
+                     * 偏移量，默认为0。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量，默认为20，最大值为100
+                     * 返回数量，默认为20，最大值为100。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

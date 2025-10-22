@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,10 +76,8 @@ namespace TencentCloud
                     /**
                      * 获取签署连接过期时间字符串：年月日-时分秒
 
-例如:2023-07-28 17:25:59
                      * @return UrlExpireOn 签署连接过期时间字符串：年月日-时分秒
 
-例如:2023-07-28 17:25:59
                      * 
                      */
                     std::string GetUrlExpireOn() const;
@@ -123,7 +121,6 @@ namespace TencentCloud
                     /**
                      * 签署连接过期时间字符串：年月日-时分秒
 
-例如:2023-07-28 17:25:59
                      */
                     std::string m_urlExpireOn;
                     bool m_urlExpireOnHasBeenSet;

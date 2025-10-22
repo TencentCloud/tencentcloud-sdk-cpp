@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取互联网公网地址数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetNum 互联网公网地址数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSubnetNum() const;
 
                     /**
                      * 设置互联网公网地址数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetNum 互联网公网地址数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetNum(const int64_t& _subnetNum);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * 互联网公网地址数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_subnetNum;
                     bool m_subnetNumHasBeenSet;

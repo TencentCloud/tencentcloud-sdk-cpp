@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,7 +54,6 @@ enable_doing-开启中
 disable_doing-关闭中
 renew_doing-更新中
 wait_doing-等待维护时间内执行
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Encryption SSL加密状态，
 enable-已开启
 disable-未开启
@@ -62,7 +61,6 @@ enable_doing-开启中
 disable_doing-关闭中
 renew_doing-更新中
 wait_doing-等待维护时间内执行
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEncryption() const;
@@ -75,7 +73,6 @@ enable_doing-开启中
 disable_doing-关闭中
 renew_doing-更新中
 wait_doing-等待维护时间内执行
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _encryption SSL加密状态，
 enable-已开启
 disable-未开启
@@ -83,7 +80,6 @@ enable_doing-开启中
 disable_doing-关闭中
 renew_doing-更新中
 wait_doing-等待维护时间内执行
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEncryption(const std::string& _encryption);
@@ -97,18 +93,14 @@ wait_doing-等待维护时间内执行
 
                     /**
                      * 获取SSL证书有效期，时间格式 YYYY-MM-DD HH:MM:SS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SSLValidityPeriod SSL证书有效期，时间格式 YYYY-MM-DD HH:MM:SS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSSLValidityPeriod() const;
 
                     /**
                      * 设置SSL证书有效期，时间格式 YYYY-MM-DD HH:MM:SS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sSLValidityPeriod SSL证书有效期，时间格式 YYYY-MM-DD HH:MM:SS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSSLValidityPeriod(const std::string& _sSLValidityPeriod);
@@ -122,18 +114,14 @@ wait_doing-等待维护时间内执行
 
                     /**
                      * 获取SSL证书有效性，0-无效，1-有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SSLValidity SSL证书有效性，0-无效，1-有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSSLValidity() const;
 
                     /**
                      * 设置SSL证书有效性，0-无效，1-有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sSLValidity SSL证书有效性，0-无效，1-有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSSLValidity(const uint64_t& _sSLValidity);
@@ -145,6 +133,69 @@ wait_doing-等待维护时间内执行
                      */
                     bool SSLValidityHasBeenSet() const;
 
+                    /**
+                     * 获取是否是KMS的CMK证书
+                     * @return IsKMS 是否是KMS的CMK证书
+                     * 
+                     */
+                    int64_t GetIsKMS() const;
+
+                    /**
+                     * 设置是否是KMS的CMK证书
+                     * @param _isKMS 是否是KMS的CMK证书
+                     * 
+                     */
+                    void SetIsKMS(const int64_t& _isKMS);
+
+                    /**
+                     * 判断参数 IsKMS 是否已赋值
+                     * @return IsKMS 是否已赋值
+                     * 
+                     */
+                    bool IsKMSHasBeenSet() const;
+
+                    /**
+                     * 获取KMS中购买的用户主密钥ID（CMK）
+                     * @return CMKId KMS中购买的用户主密钥ID（CMK）
+                     * 
+                     */
+                    std::string GetCMKId() const;
+
+                    /**
+                     * 设置KMS中购买的用户主密钥ID（CMK）
+                     * @param _cMKId KMS中购买的用户主密钥ID（CMK）
+                     * 
+                     */
+                    void SetCMKId(const std::string& _cMKId);
+
+                    /**
+                     * 判断参数 CMKId 是否已赋值
+                     * @return CMKId 是否已赋值
+                     * 
+                     */
+                    bool CMKIdHasBeenSet() const;
+
+                    /**
+                     * 获取CMK所属的地域，不同地域的CMK数据不互通
+                     * @return CMKRegion CMK所属的地域，不同地域的CMK数据不互通
+                     * 
+                     */
+                    std::string GetCMKRegion() const;
+
+                    /**
+                     * 设置CMK所属的地域，不同地域的CMK数据不互通
+                     * @param _cMKRegion CMK所属的地域，不同地域的CMK数据不互通
+                     * 
+                     */
+                    void SetCMKRegion(const std::string& _cMKRegion);
+
+                    /**
+                     * 判断参数 CMKRegion 是否已赋值
+                     * @return CMKRegion 是否已赋值
+                     * 
+                     */
+                    bool CMKRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,24 +206,39 @@ enable_doing-开启中
 disable_doing-关闭中
 renew_doing-更新中
 wait_doing-等待维护时间内执行
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_encryption;
                     bool m_encryptionHasBeenSet;
 
                     /**
                      * SSL证书有效期，时间格式 YYYY-MM-DD HH:MM:SS
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sSLValidityPeriod;
                     bool m_sSLValidityPeriodHasBeenSet;
 
                     /**
                      * SSL证书有效性，0-无效，1-有效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_sSLValidity;
                     bool m_sSLValidityHasBeenSet;
+
+                    /**
+                     * 是否是KMS的CMK证书
+                     */
+                    int64_t m_isKMS;
+                    bool m_isKMSHasBeenSet;
+
+                    /**
+                     * KMS中购买的用户主密钥ID（CMK）
+                     */
+                    std::string m_cMKId;
+                    bool m_cMKIdHasBeenSet;
+
+                    /**
+                     * CMK所属的地域，不同地域的CMK数据不互通
+                     */
+                    std::string m_cMKRegion;
+                    bool m_cMKRegionHasBeenSet;
 
                 };
             }

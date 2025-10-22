@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取印章ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SealId 印章ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSealId() const;
 
                     /**
                      * 设置印章ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sealId 印章ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSealId(const std::string& _sealId);
@@ -76,12 +72,10 @@ namespace TencentCloud
 ORGANIZATIONSEAL：企业印章；
 OFFICIAL：企业公章；
 CONTRACT：合同专用章
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SealType 印章类型。LEGAL_PERSON_SEAL: 法定代表人章；
 ORGANIZATIONSEAL：企业印章；
 OFFICIAL：企业公章；
 CONTRACT：合同专用章
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSealType() const;
@@ -91,12 +85,10 @@ CONTRACT：合同专用章
 ORGANIZATIONSEAL：企业印章；
 OFFICIAL：企业公章；
 CONTRACT：合同专用章
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sealType 印章类型。LEGAL_PERSON_SEAL: 法定代表人章；
 ORGANIZATIONSEAL：企业印章；
 OFFICIAL：企业公章；
 CONTRACT：合同专用章
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSealType(const std::string& _sealType);
@@ -110,18 +102,14 @@ CONTRACT：合同专用章
 
                     /**
                      * 获取印章名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SealName 印章名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSealName() const;
 
                     /**
                      * 设置印章名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sealName 印章名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSealName(const std::string& _sealName);
@@ -137,7 +125,6 @@ CONTRACT：合同专用章
 
                     /**
                      * 印章ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sealId;
                     bool m_sealIdHasBeenSet;
@@ -147,14 +134,12 @@ CONTRACT：合同专用章
 ORGANIZATIONSEAL：企业印章；
 OFFICIAL：企业公章；
 CONTRACT：合同专用章
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sealType;
                     bool m_sealTypeHasBeenSet;
 
                     /**
                      * 印章名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sealName;
                     bool m_sealNameHasBeenSet;

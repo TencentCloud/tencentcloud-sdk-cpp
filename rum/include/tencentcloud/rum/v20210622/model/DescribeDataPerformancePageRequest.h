@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -525,6 +525,27 @@ namespace TencentCloud
                      */
                     bool NetStatusHasBeenSet() const;
 
+                    /**
+                     * 获取是否返回webvitals数据
+                     * @return WebVitals 是否返回webvitals数据
+                     * 
+                     */
+                    bool GetWebVitals() const;
+
+                    /**
+                     * 设置是否返回webvitals数据
+                     * @param _webVitals 是否返回webvitals数据
+                     * 
+                     */
+                    void SetWebVitals(const bool& _webVitals);
+
+                    /**
+                     * 判断参数 WebVitals 是否已赋值
+                     * @return WebVitals 是否已赋值
+                     * 
+                     */
+                    bool WebVitalsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -664,6 +685,12 @@ namespace TencentCloud
                      */
                     std::string m_netStatus;
                     bool m_netStatusHasBeenSet;
+
+                    /**
+                     * 是否返回webvitals数据
+                     */
+                    bool m_webVitals;
+                    bool m_webVitalsHasBeenSet;
 
                 };
             }

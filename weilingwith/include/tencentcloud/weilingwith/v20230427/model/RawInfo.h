@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取加密向量（如果视频网关选择流为非加密传输这个参数可忽略）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SM4Vector 加密向量（如果视频网关选择流为非加密传输这个参数可忽略）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSM4Vector() const;
 
                     /**
                      * 设置加密向量（如果视频网关选择流为非加密传输这个参数可忽略）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sM4Vector 加密向量（如果视频网关选择流为非加密传输这个参数可忽略）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSM4Vector(const std::string& _sM4Vector);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取专线ip (非专线接入可忽略)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NATIP 专线ip (非专线接入可忽略)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNATIP() const;
 
                     /**
                      * 设置专线ip (非专线接入可忽略)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nATIP 专线ip (非专线接入可忽略)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNATIP(const std::string& _nATIP);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取客户端握手鉴权参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StreamToken 客户端握手鉴权参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStreamToken() const;
 
                     /**
                      * 设置客户端握手鉴权参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _streamToken 客户端握手鉴权参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStreamToken(const std::string& _streamToken);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取拉流端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port 拉流端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置拉流端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _port 拉流端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取视频流加密key,目前为AES128加密KEY（如果视频网关选择流为非加密传输这个参数可忽略）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StreamEnKey 视频流加密key,目前为AES128加密KEY（如果视频网关选择流为非加密传输这个参数可忽略）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStreamEnKey() const;
 
                     /**
                      * 设置视频流加密key,目前为AES128加密KEY（如果视频网关选择流为非加密传输这个参数可忽略）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _streamEnKey 视频流加密key,目前为AES128加密KEY（如果视频网关选择流为非加密传输这个参数可忽略）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStreamEnKey(const std::string& _streamEnKey);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取拉流公网地址（非公网接入时，这个地址是内网地址）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IP 拉流公网地址（非公网接入时，这个地址是内网地址）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIP() const;
 
                     /**
                      * 设置拉流公网地址（非公网接入时，这个地址是内网地址）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iP 拉流公网地址（非公网接入时，这个地址是内网地址）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIP(const std::string& _iP);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取拉流内网地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InnerIP 拉流内网地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInnerIP() const;
 
                     /**
                      * 设置拉流内网地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _innerIP 拉流内网地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInnerIP(const std::string& _innerIP);
@@ -225,49 +197,42 @@ namespace TencentCloud
 
                     /**
                      * 加密向量（如果视频网关选择流为非加密传输这个参数可忽略）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sM4Vector;
                     bool m_sM4VectorHasBeenSet;
 
                     /**
                      * 专线ip (非专线接入可忽略)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nATIP;
                     bool m_nATIPHasBeenSet;
 
                     /**
                      * 客户端握手鉴权参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_streamToken;
                     bool m_streamTokenHasBeenSet;
 
                     /**
                      * 拉流端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
                      * 视频流加密key,目前为AES128加密KEY（如果视频网关选择流为非加密传输这个参数可忽略）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_streamEnKey;
                     bool m_streamEnKeyHasBeenSet;
 
                     /**
                      * 拉流公网地址（非公网接入时，这个地址是内网地址）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_iP;
                     bool m_iPHasBeenSet;
 
                     /**
                      * 拉流内网地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_innerIP;
                     bool m_innerIPHasBeenSet;

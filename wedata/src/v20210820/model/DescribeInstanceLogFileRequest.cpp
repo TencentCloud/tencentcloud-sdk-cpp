@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,12 @@ DescribeInstanceLogFileRequest::DescribeInstanceLogFileRequest() :
     m_originFileNameHasBeenSet(false),
     m_executionJobIdHasBeenSet(false),
     m_logLevelTypeHasBeenSet(false),
-    m_executionFileTypeHasBeenSet(false)
+    m_executionFileTypeHasBeenSet(false),
+    m_instanceLifeDetailDtoListHasBeenSet(false),
+    m_currentLifeRoundHasBeenSet(false),
+    m_maxLifeRoundHasBeenSet(false),
+    m_triesHasBeenSet(false),
+    m_dynamicHasBeenSet(false)
 {
 }
 
@@ -112,6 +117,53 @@ string DescribeInstanceLogFileRequest::ToJsonString() const
         string key = "ExecutionFileType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_executionFileType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceLifeDetailDtoListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceLifeDetailDtoList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_instanceLifeDetailDtoList.begin(); itr != m_instanceLifeDetailDtoList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_currentLifeRoundHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CurrentLifeRound";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_currentLifeRound, allocator);
+    }
+
+    if (m_maxLifeRoundHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxLifeRound";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxLifeRound, allocator);
+    }
+
+    if (m_triesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tries";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_tries, allocator);
+    }
+
+    if (m_dynamicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Dynamic";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dynamic, allocator);
     }
 
 
@@ -264,6 +316,86 @@ void DescribeInstanceLogFileRequest::SetExecutionFileType(const string& _executi
 bool DescribeInstanceLogFileRequest::ExecutionFileTypeHasBeenSet() const
 {
     return m_executionFileTypeHasBeenSet;
+}
+
+vector<InstanceLifeDetailDto> DescribeInstanceLogFileRequest::GetInstanceLifeDetailDtoList() const
+{
+    return m_instanceLifeDetailDtoList;
+}
+
+void DescribeInstanceLogFileRequest::SetInstanceLifeDetailDtoList(const vector<InstanceLifeDetailDto>& _instanceLifeDetailDtoList)
+{
+    m_instanceLifeDetailDtoList = _instanceLifeDetailDtoList;
+    m_instanceLifeDetailDtoListHasBeenSet = true;
+}
+
+bool DescribeInstanceLogFileRequest::InstanceLifeDetailDtoListHasBeenSet() const
+{
+    return m_instanceLifeDetailDtoListHasBeenSet;
+}
+
+int64_t DescribeInstanceLogFileRequest::GetCurrentLifeRound() const
+{
+    return m_currentLifeRound;
+}
+
+void DescribeInstanceLogFileRequest::SetCurrentLifeRound(const int64_t& _currentLifeRound)
+{
+    m_currentLifeRound = _currentLifeRound;
+    m_currentLifeRoundHasBeenSet = true;
+}
+
+bool DescribeInstanceLogFileRequest::CurrentLifeRoundHasBeenSet() const
+{
+    return m_currentLifeRoundHasBeenSet;
+}
+
+int64_t DescribeInstanceLogFileRequest::GetMaxLifeRound() const
+{
+    return m_maxLifeRound;
+}
+
+void DescribeInstanceLogFileRequest::SetMaxLifeRound(const int64_t& _maxLifeRound)
+{
+    m_maxLifeRound = _maxLifeRound;
+    m_maxLifeRoundHasBeenSet = true;
+}
+
+bool DescribeInstanceLogFileRequest::MaxLifeRoundHasBeenSet() const
+{
+    return m_maxLifeRoundHasBeenSet;
+}
+
+int64_t DescribeInstanceLogFileRequest::GetTries() const
+{
+    return m_tries;
+}
+
+void DescribeInstanceLogFileRequest::SetTries(const int64_t& _tries)
+{
+    m_tries = _tries;
+    m_triesHasBeenSet = true;
+}
+
+bool DescribeInstanceLogFileRequest::TriesHasBeenSet() const
+{
+    return m_triesHasBeenSet;
+}
+
+bool DescribeInstanceLogFileRequest::GetDynamic() const
+{
+    return m_dynamic;
+}
+
+void DescribeInstanceLogFileRequest::SetDynamic(const bool& _dynamic)
+{
+    m_dynamic = _dynamic;
+    m_dynamicHasBeenSet = true;
+}
+
+bool DescribeInstanceLogFileRequest::DynamicHasBeenSet() const
+{
+    return m_dynamicHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,9 @@ ConfigFileReleaseHistory::ConfigFileReleaseHistory() :
     m_modifyTimeHasBeenSet(false),
     m_modifyByHasBeenSet(false),
     m_releaseDescriptionHasBeenSet(false),
-    m_releaseReasonHasBeenSet(false)
+    m_releaseReasonHasBeenSet(false),
+    m_configFileSupportedClientHasBeenSet(false),
+    m_configFilePersistentHasBeenSet(false)
 {
 }
 
@@ -237,6 +239,33 @@ CoreInternalOutcome ConfigFileReleaseHistory::Deserialize(const rapidjson::Value
         m_releaseReasonHasBeenSet = true;
     }
 
+    if (value.HasMember("ConfigFileSupportedClient") && !value["ConfigFileSupportedClient"].IsNull())
+    {
+        if (!value["ConfigFileSupportedClient"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConfigFileReleaseHistory.ConfigFileSupportedClient` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_configFileSupportedClient = value["ConfigFileSupportedClient"].GetInt64();
+        m_configFileSupportedClientHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConfigFilePersistent") && !value["ConfigFilePersistent"].IsNull())
+    {
+        if (!value["ConfigFilePersistent"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConfigFileReleaseHistory.ConfigFilePersistent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_configFilePersistent.Deserialize(value["ConfigFilePersistent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_configFilePersistentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -393,6 +422,23 @@ void ConfigFileReleaseHistory::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "ReleaseReason";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_releaseReason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_configFileSupportedClientHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigFileSupportedClient";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_configFileSupportedClient, allocator);
+    }
+
+    if (m_configFilePersistentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigFilePersistent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_configFilePersistent.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -684,5 +730,37 @@ void ConfigFileReleaseHistory::SetReleaseReason(const string& _releaseReason)
 bool ConfigFileReleaseHistory::ReleaseReasonHasBeenSet() const
 {
     return m_releaseReasonHasBeenSet;
+}
+
+int64_t ConfigFileReleaseHistory::GetConfigFileSupportedClient() const
+{
+    return m_configFileSupportedClient;
+}
+
+void ConfigFileReleaseHistory::SetConfigFileSupportedClient(const int64_t& _configFileSupportedClient)
+{
+    m_configFileSupportedClient = _configFileSupportedClient;
+    m_configFileSupportedClientHasBeenSet = true;
+}
+
+bool ConfigFileReleaseHistory::ConfigFileSupportedClientHasBeenSet() const
+{
+    return m_configFileSupportedClientHasBeenSet;
+}
+
+ConfigFilePersistent ConfigFileReleaseHistory::GetConfigFilePersistent() const
+{
+    return m_configFilePersistent;
+}
+
+void ConfigFileReleaseHistory::SetConfigFilePersistent(const ConfigFilePersistent& _configFilePersistent)
+{
+    m_configFilePersistent = _configFilePersistent;
+    m_configFilePersistentHasBeenSet = true;
+}
+
+bool ConfigFileReleaseHistory::ConfigFilePersistentHasBeenSet() const
+{
+    return m_configFilePersistentHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网卡序号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetId 网卡序号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNetId() const;
 
                     /**
                      * 设置网卡序号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _netId 网卡序号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNetId(const int64_t& _netId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网卡IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetIp 网卡IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNetIp() const;
 
                     /**
                      * 设置网卡IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _netIp 网卡IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNetIp(const std::string& _netIp);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时延，单位ms
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rtt 时延，单位ms
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetRtt() const;
 
                     /**
                      * 设置时延，单位ms
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rtt 时延，单位ms
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRtt(const std::vector<int64_t>& _rtt);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取丢包率，单位%
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Lost 丢包率，单位%
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetLost() const;
 
                     /**
                      * 设置丢包率，单位%
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lost 丢包率，单位%
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLost(const std::vector<int64_t>& _lost);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取发送bps，单位kbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SendBps 发送bps，单位kbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetSendBps() const;
 
                     /**
                      * 设置发送bps，单位kbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sendBps 发送bps，单位kbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSendBps(const std::vector<int64_t>& _sendBps);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接收bps，单位kbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecvBps 接收bps，单位kbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetRecvBps() const;
 
                     /**
                      * 设置接收bps，单位kbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recvBps 接收bps，单位kbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecvBps(const std::vector<int64_t>& _recvBps);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * 网卡序号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_netId;
                     bool m_netIdHasBeenSet;
 
                     /**
                      * 网卡IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_netIp;
                     bool m_netIpHasBeenSet;
 
                     /**
                      * 时延，单位ms
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_rtt;
                     bool m_rttHasBeenSet;
 
                     /**
                      * 丢包率，单位%
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_lost;
                     bool m_lostHasBeenSet;
 
                     /**
                      * 发送bps，单位kbps
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_sendBps;
                     bool m_sendBpsHasBeenSet;
 
                     /**
                      * 接收bps，单位kbps
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_recvBps;
                     bool m_recvBpsHasBeenSet;

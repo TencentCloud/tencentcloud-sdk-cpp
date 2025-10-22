@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -78,18 +78,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Waf(托管规则)模块的拦截页面配置。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WafDropPageDetail Waf(托管规则)模块的拦截页面配置。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DropPageDetail GetWafDropPageDetail() const;
 
                     /**
                      * 设置Waf(托管规则)模块的拦截页面配置。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _wafDropPageDetail Waf(托管规则)模块的拦截页面配置。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWafDropPageDetail(const DropPageDetail& _wafDropPageDetail);
@@ -103,18 +99,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义页面的拦截页面配置。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AclDropPageDetail 自定义页面的拦截页面配置。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DropPageDetail GetAclDropPageDetail() const;
 
                     /**
                      * 设置自定义页面的拦截页面配置。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _aclDropPageDetail 自定义页面的拦截页面配置。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAclDropPageDetail(const DropPageDetail& _aclDropPageDetail);
@@ -138,14 +130,12 @@ namespace TencentCloud
 
                     /**
                      * Waf(托管规则)模块的拦截页面配置。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DropPageDetail m_wafDropPageDetail;
                     bool m_wafDropPageDetailHasBeenSet;
 
                     /**
                      * 自定义页面的拦截页面配置。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DropPageDetail m_aclDropPageDetail;
                     bool m_aclDropPageDetailHasBeenSet;

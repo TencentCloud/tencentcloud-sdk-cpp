@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigItem 配置项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConfigItem() const;
 
                     /**
                      * 设置配置项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configItem 配置项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigItem(const std::string& _configItem);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigValue 配置值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConfigValue() const;
 
                     /**
                      * 设置配置值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configValue 配置值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigValue(const std::string& _configValue);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 配置项
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_configItem;
                     bool m_configItemHasBeenSet;
 
                     /**
                      * 配置值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_configValue;
                     bool m_configValueHasBeenSet;

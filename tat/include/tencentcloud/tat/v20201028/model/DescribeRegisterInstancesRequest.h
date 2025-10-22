@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,35 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例id。
-                     * @return InstanceIds 实例id。
+                     * 获取托管实例 id。
+
+每次请求的上限为 100。
+
+参数不支持同时指定 `InstanceIds` 和 `Filters` 。
+
+                     * @return InstanceIds 托管实例 id。
+
+每次请求的上限为 100。
+
+参数不支持同时指定 `InstanceIds` 和 `Filters` 。
+
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置实例id。
-                     * @param _instanceIds 实例id。
+                     * 设置托管实例 id。
+
+每次请求的上限为 100。
+
+参数不支持同时指定 `InstanceIds` 和 `Filters` 。
+
+                     * @param _instanceIds 托管实例 id。
+
+每次请求的上限为 100。
+
+参数不支持同时指定 `InstanceIds` 和 `Filters` 。
+
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -65,23 +85,36 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取过滤器列表。
+                     * 获取过滤器列表。每次请求的 `Filters` 的上限为 10，`Filter.Values` 的上限为 5。参数不支持同时指定 `InstanceIds` 和 `Filters` 。
+
 
 - instance-name
 
-按照【实例名称】进行过滤。
+按照【托管实例名称】进行过滤。
 类型：String
 必选：否
 
 - instance-id
 
-按照【实例ID】进行过滤。
+按照【托管实例ID】进行过滤。
+类型：String
+必选：否
+
+- register-status
+
+按照【托管实例状态】进行过滤，取值：Online | Offline。
+类型：String
+必选：否
+
+- local-ip
+
+按照【托管实例网卡IP】进行过滤。
 类型：String
 必选：否
 
 - register-code-id
 
-按照【注册码ID】进行过滤。
+按照【托管实例注册码ID】进行过滤。可通过 [DescribeRegisterCodes(查询注册码)](https://cloud.tencent.com/document/api/1340/96925) 接口获取。
 类型：String
 必选：否
 
@@ -91,24 +124,57 @@ namespace TencentCloud
 类型：String
 必选：否
 
+- tag-key
 
-                     * @return Filters 过滤器列表。
+按照【标签键】进行过滤。
+类型：String
+必选：否
+
+- tag-value
+
+按照【标签值】进行过滤。
+类型：String
+必选：否
+
+- tag:tag-key
+
+按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。
+类型：String
+必选：否
+
+例如 Filter 为 {"Name": "tag:key1", "Values": ["v1", "v2"] } ，即查询所有标签为 key1:v1 或 key1:v2 的资源。
+
+
+                     * @return Filters 过滤器列表。每次请求的 `Filters` 的上限为 10，`Filter.Values` 的上限为 5。参数不支持同时指定 `InstanceIds` 和 `Filters` 。
+
 
 - instance-name
 
-按照【实例名称】进行过滤。
+按照【托管实例名称】进行过滤。
 类型：String
 必选：否
 
 - instance-id
 
-按照【实例ID】进行过滤。
+按照【托管实例ID】进行过滤。
+类型：String
+必选：否
+
+- register-status
+
+按照【托管实例状态】进行过滤，取值：Online | Offline。
+类型：String
+必选：否
+
+- local-ip
+
+按照【托管实例网卡IP】进行过滤。
 类型：String
 必选：否
 
 - register-code-id
 
-按照【注册码ID】进行过滤。
+按照【托管实例注册码ID】进行过滤。可通过 [DescribeRegisterCodes(查询注册码)](https://cloud.tencent.com/document/api/1340/96925) 接口获取。
 类型：String
 必选：否
 
@@ -117,6 +183,26 @@ namespace TencentCloud
 按照【操作系统类型】进行过滤，取值：Linux | Windows。
 类型：String
 必选：否
+
+- tag-key
+
+按照【标签键】进行过滤。
+类型：String
+必选：否
+
+- tag-value
+
+按照【标签值】进行过滤。
+类型：String
+必选：否
+
+- tag:tag-key
+
+按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。
+类型：String
+必选：否
+
+例如 Filter 为 {"Name": "tag:key1", "Values": ["v1", "v2"] } ，即查询所有标签为 key1:v1 或 key1:v2 的资源。
 
 
                      * 
@@ -124,23 +210,36 @@ namespace TencentCloud
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤器列表。
+                     * 设置过滤器列表。每次请求的 `Filters` 的上限为 10，`Filter.Values` 的上限为 5。参数不支持同时指定 `InstanceIds` 和 `Filters` 。
+
 
 - instance-name
 
-按照【实例名称】进行过滤。
+按照【托管实例名称】进行过滤。
 类型：String
 必选：否
 
 - instance-id
 
-按照【实例ID】进行过滤。
+按照【托管实例ID】进行过滤。
+类型：String
+必选：否
+
+- register-status
+
+按照【托管实例状态】进行过滤，取值：Online | Offline。
+类型：String
+必选：否
+
+- local-ip
+
+按照【托管实例网卡IP】进行过滤。
 类型：String
 必选：否
 
 - register-code-id
 
-按照【注册码ID】进行过滤。
+按照【托管实例注册码ID】进行过滤。可通过 [DescribeRegisterCodes(查询注册码)](https://cloud.tencent.com/document/api/1340/96925) 接口获取。
 类型：String
 必选：否
 
@@ -150,24 +249,57 @@ namespace TencentCloud
 类型：String
 必选：否
 
+- tag-key
 
-                     * @param _filters 过滤器列表。
+按照【标签键】进行过滤。
+类型：String
+必选：否
+
+- tag-value
+
+按照【标签值】进行过滤。
+类型：String
+必选：否
+
+- tag:tag-key
+
+按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。
+类型：String
+必选：否
+
+例如 Filter 为 {"Name": "tag:key1", "Values": ["v1", "v2"] } ，即查询所有标签为 key1:v1 或 key1:v2 的资源。
+
+
+                     * @param _filters 过滤器列表。每次请求的 `Filters` 的上限为 10，`Filter.Values` 的上限为 5。参数不支持同时指定 `InstanceIds` 和 `Filters` 。
+
 
 - instance-name
 
-按照【实例名称】进行过滤。
+按照【托管实例名称】进行过滤。
 类型：String
 必选：否
 
 - instance-id
 
-按照【实例ID】进行过滤。
+按照【托管实例ID】进行过滤。
+类型：String
+必选：否
+
+- register-status
+
+按照【托管实例状态】进行过滤，取值：Online | Offline。
+类型：String
+必选：否
+
+- local-ip
+
+按照【托管实例网卡IP】进行过滤。
 类型：String
 必选：否
 
 - register-code-id
 
-按照【注册码ID】进行过滤。
+按照【托管实例注册码ID】进行过滤。可通过 [DescribeRegisterCodes(查询注册码)](https://cloud.tencent.com/document/api/1340/96925) 接口获取。
 类型：String
 必选：否
 
@@ -176,6 +308,26 @@ namespace TencentCloud
 按照【操作系统类型】进行过滤，取值：Linux | Windows。
 类型：String
 必选：否
+
+- tag-key
+
+按照【标签键】进行过滤。
+类型：String
+必选：否
+
+- tag-value
+
+按照【标签值】进行过滤。
+类型：String
+必选：否
+
+- tag:tag-key
+
+按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。
+类型：String
+必选：否
+
+例如 Filter 为 {"Name": "tag:key1", "Values": ["v1", "v2"] } ，即查询所有标签为 key1:v1 或 key1:v2 的资源。
 
 
                      * 
@@ -234,29 +386,47 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例id。
+                     * 托管实例 id。
+
+每次请求的上限为 100。
+
+参数不支持同时指定 `InstanceIds` 和 `Filters` 。
+
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 过滤器列表。
+                     * 过滤器列表。每次请求的 `Filters` 的上限为 10，`Filter.Values` 的上限为 5。参数不支持同时指定 `InstanceIds` 和 `Filters` 。
+
 
 - instance-name
 
-按照【实例名称】进行过滤。
+按照【托管实例名称】进行过滤。
 类型：String
 必选：否
 
 - instance-id
 
-按照【实例ID】进行过滤。
+按照【托管实例ID】进行过滤。
+类型：String
+必选：否
+
+- register-status
+
+按照【托管实例状态】进行过滤，取值：Online | Offline。
+类型：String
+必选：否
+
+- local-ip
+
+按照【托管实例网卡IP】进行过滤。
 类型：String
 必选：否
 
 - register-code-id
 
-按照【注册码ID】进行过滤。
+按照【托管实例注册码ID】进行过滤。可通过 [DescribeRegisterCodes(查询注册码)](https://cloud.tencent.com/document/api/1340/96925) 接口获取。
 类型：String
 必选：否
 
@@ -265,6 +435,26 @@ namespace TencentCloud
 按照【操作系统类型】进行过滤，取值：Linux | Windows。
 类型：String
 必选：否
+
+- tag-key
+
+按照【标签键】进行过滤。
+类型：String
+必选：否
+
+- tag-value
+
+按照【标签值】进行过滤。
+类型：String
+必选：否
+
+- tag:tag-key
+
+按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。
+类型：String
+必选：否
+
+例如 Filter 为 {"Name": "tag:key1", "Values": ["v1", "v2"] } ，即查询所有标签为 key1:v1 或 key1:v2 的资源。
 
 
                      */

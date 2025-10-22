@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -81,7 +81,15 @@ TableMeta::TableMeta() :
     m_collectJobIdHasBeenSet(false),
     m_collectJobNameHasBeenSet(false),
     m_urnHasBeenSet(false),
-    m_hasBizPermissionHasBeenSet(false)
+    m_hasBizPermissionHasBeenSet(false),
+    m_ownerByEngineHasBeenSet(false),
+    m_errorTipsHasBeenSet(false),
+    m_ifSupportCreateAndDDLHasBeenSet(false),
+    m_dataFromTypeHasBeenSet(false),
+    m_engineOwnerHasBeenSet(false),
+    m_dataLayerUuidHasBeenSet(false),
+    m_dataLayerNameHasBeenSet(false),
+    m_columnCountHasBeenSet(false)
 {
 }
 
@@ -753,6 +761,93 @@ CoreInternalOutcome TableMeta::Deserialize(const rapidjson::Value &value)
         m_hasBizPermissionHasBeenSet = true;
     }
 
+    if (value.HasMember("OwnerByEngine") && !value["OwnerByEngine"].IsNull())
+    {
+        if (!value["OwnerByEngine"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableMeta.OwnerByEngine` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ownerByEngine = string(value["OwnerByEngine"].GetString());
+        m_ownerByEngineHasBeenSet = true;
+    }
+
+    if (value.HasMember("ErrorTips") && !value["ErrorTips"].IsNull())
+    {
+        if (!value["ErrorTips"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableMeta.ErrorTips` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errorTips = string(value["ErrorTips"].GetString());
+        m_errorTipsHasBeenSet = true;
+    }
+
+    if (value.HasMember("IfSupportCreateAndDDL") && !value["IfSupportCreateAndDDL"].IsNull())
+    {
+        if (!value["IfSupportCreateAndDDL"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableMeta.IfSupportCreateAndDDL` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_ifSupportCreateAndDDL.Deserialize(value["IfSupportCreateAndDDL"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_ifSupportCreateAndDDLHasBeenSet = true;
+    }
+
+    if (value.HasMember("DataFromType") && !value["DataFromType"].IsNull())
+    {
+        if (!value["DataFromType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableMeta.DataFromType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataFromType = string(value["DataFromType"].GetString());
+        m_dataFromTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("EngineOwner") && !value["EngineOwner"].IsNull())
+    {
+        if (!value["EngineOwner"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableMeta.EngineOwner` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_engineOwner = string(value["EngineOwner"].GetString());
+        m_engineOwnerHasBeenSet = true;
+    }
+
+    if (value.HasMember("DataLayerUuid") && !value["DataLayerUuid"].IsNull())
+    {
+        if (!value["DataLayerUuid"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableMeta.DataLayerUuid` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataLayerUuid = string(value["DataLayerUuid"].GetString());
+        m_dataLayerUuidHasBeenSet = true;
+    }
+
+    if (value.HasMember("DataLayerName") && !value["DataLayerName"].IsNull())
+    {
+        if (!value["DataLayerName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableMeta.DataLayerName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataLayerName = string(value["DataLayerName"].GetString());
+        m_dataLayerNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ColumnCount") && !value["ColumnCount"].IsNull())
+    {
+        if (!value["ColumnCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableMeta.ColumnCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_columnCount = value["ColumnCount"].GetInt64();
+        m_columnCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1284,6 +1379,71 @@ void TableMeta::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "HasBizPermission";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hasBizPermission, allocator);
+    }
+
+    if (m_ownerByEngineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OwnerByEngine";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ownerByEngine.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_errorTipsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorTips";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorTips.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ifSupportCreateAndDDLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IfSupportCreateAndDDL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ifSupportCreateAndDDL.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_dataFromTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataFromType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dataFromType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_engineOwnerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EngineOwner";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_engineOwner.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataLayerUuidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataLayerUuid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dataLayerUuid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataLayerNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataLayerName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dataLayerName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_columnCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ColumnCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_columnCount, allocator);
     }
 
 }
@@ -2263,5 +2423,133 @@ void TableMeta::SetHasBizPermission(const bool& _hasBizPermission)
 bool TableMeta::HasBizPermissionHasBeenSet() const
 {
     return m_hasBizPermissionHasBeenSet;
+}
+
+string TableMeta::GetOwnerByEngine() const
+{
+    return m_ownerByEngine;
+}
+
+void TableMeta::SetOwnerByEngine(const string& _ownerByEngine)
+{
+    m_ownerByEngine = _ownerByEngine;
+    m_ownerByEngineHasBeenSet = true;
+}
+
+bool TableMeta::OwnerByEngineHasBeenSet() const
+{
+    return m_ownerByEngineHasBeenSet;
+}
+
+string TableMeta::GetErrorTips() const
+{
+    return m_errorTips;
+}
+
+void TableMeta::SetErrorTips(const string& _errorTips)
+{
+    m_errorTips = _errorTips;
+    m_errorTipsHasBeenSet = true;
+}
+
+bool TableMeta::ErrorTipsHasBeenSet() const
+{
+    return m_errorTipsHasBeenSet;
+}
+
+CreateAndDDLSupport TableMeta::GetIfSupportCreateAndDDL() const
+{
+    return m_ifSupportCreateAndDDL;
+}
+
+void TableMeta::SetIfSupportCreateAndDDL(const CreateAndDDLSupport& _ifSupportCreateAndDDL)
+{
+    m_ifSupportCreateAndDDL = _ifSupportCreateAndDDL;
+    m_ifSupportCreateAndDDLHasBeenSet = true;
+}
+
+bool TableMeta::IfSupportCreateAndDDLHasBeenSet() const
+{
+    return m_ifSupportCreateAndDDLHasBeenSet;
+}
+
+string TableMeta::GetDataFromType() const
+{
+    return m_dataFromType;
+}
+
+void TableMeta::SetDataFromType(const string& _dataFromType)
+{
+    m_dataFromType = _dataFromType;
+    m_dataFromTypeHasBeenSet = true;
+}
+
+bool TableMeta::DataFromTypeHasBeenSet() const
+{
+    return m_dataFromTypeHasBeenSet;
+}
+
+string TableMeta::GetEngineOwner() const
+{
+    return m_engineOwner;
+}
+
+void TableMeta::SetEngineOwner(const string& _engineOwner)
+{
+    m_engineOwner = _engineOwner;
+    m_engineOwnerHasBeenSet = true;
+}
+
+bool TableMeta::EngineOwnerHasBeenSet() const
+{
+    return m_engineOwnerHasBeenSet;
+}
+
+string TableMeta::GetDataLayerUuid() const
+{
+    return m_dataLayerUuid;
+}
+
+void TableMeta::SetDataLayerUuid(const string& _dataLayerUuid)
+{
+    m_dataLayerUuid = _dataLayerUuid;
+    m_dataLayerUuidHasBeenSet = true;
+}
+
+bool TableMeta::DataLayerUuidHasBeenSet() const
+{
+    return m_dataLayerUuidHasBeenSet;
+}
+
+string TableMeta::GetDataLayerName() const
+{
+    return m_dataLayerName;
+}
+
+void TableMeta::SetDataLayerName(const string& _dataLayerName)
+{
+    m_dataLayerName = _dataLayerName;
+    m_dataLayerNameHasBeenSet = true;
+}
+
+bool TableMeta::DataLayerNameHasBeenSet() const
+{
+    return m_dataLayerNameHasBeenSet;
+}
+
+int64_t TableMeta::GetColumnCount() const
+{
+    return m_columnCount;
+}
+
+void TableMeta::SetColumnCount(const int64_t& _columnCount)
+{
+    m_columnCount = _columnCount;
+    m_columnCountHasBeenSet = true;
+}
+
+bool TableMeta::ColumnCountHasBeenSet() const
+{
+    return m_columnCountHasBeenSet;
 }
 

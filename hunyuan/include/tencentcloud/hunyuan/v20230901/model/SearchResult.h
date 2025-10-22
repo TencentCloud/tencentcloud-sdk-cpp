@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -121,6 +121,48 @@ namespace TencentCloud
                      */
                     bool UrlHasBeenSet() const;
 
+                    /**
+                     * 获取搜索引文站点名
+                     * @return Text 搜索引文站点名
+                     * 
+                     */
+                    std::string GetText() const;
+
+                    /**
+                     * 设置搜索引文站点名
+                     * @param _text 搜索引文站点名
+                     * 
+                     */
+                    void SetText(const std::string& _text);
+
+                    /**
+                     * 判断参数 Text 是否已赋值
+                     * @return Text 是否已赋值
+                     * 
+                     */
+                    bool TextHasBeenSet() const;
+
+                    /**
+                     * 获取搜索引文图标
+                     * @return Icon 搜索引文图标
+                     * 
+                     */
+                    std::string GetIcon() const;
+
+                    /**
+                     * 设置搜索引文图标
+                     * @param _icon 搜索引文图标
+                     * 
+                     */
+                    void SetIcon(const std::string& _icon);
+
+                    /**
+                     * 判断参数 Icon 是否已赋值
+                     * @return Icon 是否已赋值
+                     * 
+                     */
+                    bool IconHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +185,18 @@ namespace TencentCloud
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
+
+                    /**
+                     * 搜索引文站点名
+                     */
+                    std::string m_text;
+                    bool m_textHasBeenSet;
+
+                    /**
+                     * 搜索引文图标
+                     */
+                    std::string m_icon;
+                    bool m_iconHasBeenSet;
 
                 };
             }

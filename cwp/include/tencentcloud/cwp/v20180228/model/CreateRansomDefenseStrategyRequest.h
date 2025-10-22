@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -212,15 +212,15 @@ namespace TencentCloud
                     bool ExcludeDirHasBeenSet() const;
 
                     /**
-                     * 获取备份模式： 0按周，1按天
-                     * @return BackupType 备份模式： 0按周，1按天
+                     * 获取备份模式： 0按周，1按天，2不备份
+                     * @return BackupType 备份模式： 0按周，1按天，2不备份
                      * 
                      */
                     uint64_t GetBackupType() const;
 
                     /**
-                     * 设置备份模式： 0按周，1按天
-                     * @param _backupType 备份模式： 0按周，1按天
+                     * 设置备份模式： 0按周，1按天，2不备份
+                     * @param _backupType 备份模式： 0按周，1按天，2不备份
                      * 
                      */
                     void SetBackupType(const uint64_t& _backupType);
@@ -346,7 +346,7 @@ namespace TencentCloud
                     bool m_excludeDirHasBeenSet;
 
                     /**
-                     * 备份模式： 0按周，1按天
+                     * 备份模式： 0按周，1按天，2不备份
                      */
                     uint64_t m_backupType;
                     bool m_backupTypeHasBeenSet;

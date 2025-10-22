@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例id
-                     * @return InstanceId 实例id
+                     * 获取ckafka集群实例Id
+                     * @return InstanceId ckafka集群实例Id
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例id
-                     * @param _instanceId 实例id
+                     * 设置ckafka集群实例Id
+                     * @param _instanceId ckafka集群实例Id
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
-                     * @return InstanceName 实例名称
+                     * 获取ckafka集群实例Name
+                     * @return InstanceName ckafka集群实例Name
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称
-                     * @param _instanceName 实例名称
+                     * 设置ckafka集群实例Name
+                     * @param _instanceName ckafka集群实例Name
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取实例的状态。0：创建中，1：运行中，2：删除中 ， 5 隔离中，-1 创建失败
-                     * @return Status 实例的状态。0：创建中，1：运行中，2：删除中 ， 5 隔离中，-1 创建失败
+                     * 获取实例的状态。0: 创建中，1: 运行中，2: 删除中,  3: 已删除,  5: 隔离中,  7: 升级中,  -1: 创建失败 
+                     * @return Status 实例的状态。0: 创建中，1: 运行中，2: 删除中,  3: 已删除,  5: 隔离中,  7: 升级中,  -1: 创建失败 
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置实例的状态。0：创建中，1：运行中，2：删除中 ， 5 隔离中，-1 创建失败
-                     * @param _status 实例的状态。0：创建中，1：运行中，2：删除中 ， 5 隔离中，-1 创建失败
+                     * 设置实例的状态。0: 创建中，1: 运行中，2: 删除中,  3: 已删除,  5: 隔离中,  7: 升级中,  -1: 创建失败 
+                     * @param _status 实例的状态。0: 创建中，1: 运行中，2: 删除中,  3: 已删除,  5: 隔离中,  7: 升级中,  -1: 创建失败 
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开源实例。开源：true，不开源：false
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IfCommunity 是否开源实例。开源：true，不开源：false
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIfCommunity() const;
 
                     /**
                      * 设置是否开源实例。开源：true，不开源：false
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ifCommunity 是否开源实例。开源：true，不开源：false
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIfCommunity(const bool& _ifCommunity);
@@ -137,26 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例id
+                     * ckafka集群实例Id
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * ckafka集群实例Name
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 实例的状态。0：创建中，1：运行中，2：删除中 ， 5 隔离中，-1 创建失败
+                     * 实例的状态。0: 创建中，1: 运行中，2: 删除中,  3: 已删除,  5: 隔离中,  7: 升级中,  -1: 创建失败 
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 是否开源实例。开源：true，不开源：false
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_ifCommunity;
                     bool m_ifCommunityHasBeenSet;

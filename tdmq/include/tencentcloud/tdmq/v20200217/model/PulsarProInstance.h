@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tdmq/v20200217/model/Tag.h>
+#include <tencentcloud/tdmq/v20200217/model/CertificateInfo.h>
 
 
 namespace TencentCloud
@@ -474,6 +475,48 @@ namespace TencentCloud
                      */
                     bool BillingLabelVersionHasBeenSet() const;
 
+                    /**
+                     * 获取自定义租户
+                     * @return Tenant 自定义租户
+                     * 
+                     */
+                    std::string GetTenant() const;
+
+                    /**
+                     * 设置自定义租户
+                     * @param _tenant 自定义租户
+                     * 
+                     */
+                    void SetTenant(const std::string& _tenant);
+
+                    /**
+                     * 判断参数 Tenant 是否已赋值
+                     * @return Tenant 是否已赋值
+                     * 
+                     */
+                    bool TenantHasBeenSet() const;
+
+                    /**
+                     * 获取集群的证书列表
+                     * @return CertificateList 集群的证书列表
+                     * 
+                     */
+                    std::vector<CertificateInfo> GetCertificateList() const;
+
+                    /**
+                     * 设置集群的证书列表
+                     * @param _certificateList 集群的证书列表
+                     * 
+                     */
+                    void SetCertificateList(const std::vector<CertificateInfo>& _certificateList);
+
+                    /**
+                     * 判断参数 CertificateList 是否已赋值
+                     * @return CertificateList 是否已赋值
+                     * 
+                     */
+                    bool CertificateListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -596,6 +639,18 @@ namespace TencentCloud
                      */
                     std::string m_billingLabelVersion;
                     bool m_billingLabelVersionHasBeenSet;
+
+                    /**
+                     * 自定义租户
+                     */
+                    std::string m_tenant;
+                    bool m_tenantHasBeenSet;
+
+                    /**
+                     * 集群的证书列表
+                     */
+                    std::vector<CertificateInfo> m_certificateList;
+                    bool m_certificateListHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,9 @@ using namespace TencentCloud::Tcss::V20201101::Model;
 using namespace std;
 
 DeleteMachineRequest::DeleteMachineRequest() :
-    m_uuidHasBeenSet(false)
+    m_uuidHasBeenSet(false),
+    m_nodeUniqueIdsHasBeenSet(false),
+    m_uUIDsHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,32 @@ string DeleteMachineRequest::ToJsonString() const
         string key = "Uuid";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_uuid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeUniqueIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeUniqueIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_nodeUniqueIds.begin(); itr != m_nodeUniqueIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_uUIDsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UUIDs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_uUIDs.begin(); itr != m_uUIDs.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -64,6 +92,38 @@ void DeleteMachineRequest::SetUuid(const string& _uuid)
 bool DeleteMachineRequest::UuidHasBeenSet() const
 {
     return m_uuidHasBeenSet;
+}
+
+vector<string> DeleteMachineRequest::GetNodeUniqueIds() const
+{
+    return m_nodeUniqueIds;
+}
+
+void DeleteMachineRequest::SetNodeUniqueIds(const vector<string>& _nodeUniqueIds)
+{
+    m_nodeUniqueIds = _nodeUniqueIds;
+    m_nodeUniqueIdsHasBeenSet = true;
+}
+
+bool DeleteMachineRequest::NodeUniqueIdsHasBeenSet() const
+{
+    return m_nodeUniqueIdsHasBeenSet;
+}
+
+vector<string> DeleteMachineRequest::GetUUIDs() const
+{
+    return m_uUIDs;
+}
+
+void DeleteMachineRequest::SetUUIDs(const vector<string>& _uUIDs)
+{
+    m_uUIDs = _uUIDs;
+    m_uUIDsHasBeenSet = true;
+}
+
+bool DeleteMachineRequest::UUIDsHasBeenSet() const
+{
+    return m_uUIDsHasBeenSet;
 }
 
 

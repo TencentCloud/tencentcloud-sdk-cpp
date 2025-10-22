@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -83,7 +83,6 @@ id,地域,简称信息如下：
 - 17,  法兰克福,eu-frankfurt
 - 18,  首尔,ap-seoul
 - 19,  重庆,ap-chongqing
-- 21,  孟买,ap-mumbai
 - 22,  弗吉尼亚,na-ashburn
 - 23,  曼谷,ap-bangkok
 - 25,  东京,ap-tokyo
@@ -106,7 +105,6 @@ id,地域,简称信息如下：
 - 17,  法兰克福,eu-frankfurt
 - 18,  首尔,ap-seoul
 - 19,  重庆,ap-chongqing
-- 21,  孟买,ap-mumbai
 - 22,  弗吉尼亚,na-ashburn
 - 23,  曼谷,ap-bangkok
 - 25,  东京,ap-tokyo
@@ -134,7 +132,6 @@ id,地域,简称信息如下：
 - 17,  法兰克福,eu-frankfurt
 - 18,  首尔,ap-seoul
 - 19,  重庆,ap-chongqing
-- 21,  孟买,ap-mumbai
 - 22,  弗吉尼亚,na-ashburn
 - 23,  曼谷,ap-bangkok
 - 25,  东京,ap-tokyo
@@ -157,7 +154,6 @@ id,地域,简称信息如下：
 - 17,  法兰克福,eu-frankfurt
 - 18,  首尔,ap-seoul
 - 19,  重庆,ap-chongqing
-- 21,  孟买,ap-mumbai
 - 22,  弗吉尼亚,na-ashburn
 - 23,  曼谷,ap-bangkok
 - 25,  东京,ap-tokyo
@@ -200,7 +196,6 @@ id,地域,简称信息如下：
 - 17,  法兰克福,eu-frankfurt
 - 18,  首尔,ap-seoul
 - 19,  重庆,ap-chongqing
-- 21,  孟买,ap-mumbai
 - 22,  弗吉尼亚,na-ashburn
 - 23,  曼谷,ap-bangkok
 - 25,  东京,ap-tokyo

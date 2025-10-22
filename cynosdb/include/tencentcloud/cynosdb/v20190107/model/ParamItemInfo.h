@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParamName 参数名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParamName() const;
 
                     /**
                      * 设置参数名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _paramName 参数名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParamName(const std::string& _paramName);
@@ -74,10 +70,8 @@ namespace TencentCloud
                     /**
                      * 获取参数新值
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NewValue 参数新值
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNewValue() const;
@@ -85,10 +79,8 @@ namespace TencentCloud
                     /**
                      * 设置参数新值
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _newValue 参数新值
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNewValue(const std::string& _newValue);
@@ -103,10 +95,8 @@ namespace TencentCloud
                     /**
                      * 获取参数旧值
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OldValue 参数旧值
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOldValue() const;
@@ -114,10 +104,8 @@ namespace TencentCloud
                     /**
                      * 设置参数旧值
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _oldValue 参数旧值
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOldValue(const std::string& _oldValue);
@@ -132,10 +120,8 @@ namespace TencentCloud
                     /**
                      * 获取参数公式
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValueFunction 参数公式
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValueFunction() const;
@@ -143,10 +129,8 @@ namespace TencentCloud
                     /**
                      * 设置参数公式
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _valueFunction 参数公式
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValueFunction(const std::string& _valueFunction);
@@ -162,7 +146,6 @@ namespace TencentCloud
 
                     /**
                      * 参数名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_paramName;
                     bool m_paramNameHasBeenSet;
@@ -170,7 +153,6 @@ namespace TencentCloud
                     /**
                      * 参数新值
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_newValue;
                     bool m_newValueHasBeenSet;
@@ -178,7 +160,6 @@ namespace TencentCloud
                     /**
                      * 参数旧值
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_oldValue;
                     bool m_oldValueHasBeenSet;
@@ -186,7 +167,6 @@ namespace TencentCloud
                     /**
                      * 参数公式
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_valueFunction;
                     bool m_valueFunctionHasBeenSet;

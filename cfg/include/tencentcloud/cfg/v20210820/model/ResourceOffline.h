@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceId 资源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetResourceId() const;
 
                     /**
                      * 设置资源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceId 资源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceId(const int64_t& _resourceId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源下线时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceDeleteTime 资源下线时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceDeleteTime() const;
 
                     /**
                      * 设置资源下线时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceDeleteTime 资源下线时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceDeleteTime(const std::string& _resourceDeleteTime);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源下线提示
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceDeleteMessage 资源下线提示
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceDeleteMessage() const;
 
                     /**
                      * 设置资源下线提示
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceDeleteMessage 资源下线提示
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceDeleteMessage(const std::string& _resourceDeleteMessage);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 资源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
                      * 资源下线时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceDeleteTime;
                     bool m_resourceDeleteTimeHasBeenSet;
 
                     /**
                      * 资源下线提示
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceDeleteMessage;
                     bool m_resourceDeleteMessageHasBeenSet;

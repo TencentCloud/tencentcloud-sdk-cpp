@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,8 +21,8 @@ using namespace TencentCloud::Tke::V20180525::Model;
 using namespace std;
 
 DriverVersion::DriverVersion() :
-    m_versionHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_versionHasBeenSet(false)
 {
 }
 
@@ -30,16 +30,6 @@ CoreInternalOutcome DriverVersion::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("Version") && !value["Version"].IsNull())
-    {
-        if (!value["Version"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `DriverVersion.Version` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_version = string(value["Version"].GetString());
-        m_versionHasBeenSet = true;
-    }
 
     if (value.HasMember("Name") && !value["Name"].IsNull())
     {
@@ -51,20 +41,22 @@ CoreInternalOutcome DriverVersion::Deserialize(const rapidjson::Value &value)
         m_nameHasBeenSet = true;
     }
 
+    if (value.HasMember("Version") && !value["Version"].IsNull())
+    {
+        if (!value["Version"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DriverVersion.Version` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_version = string(value["Version"].GetString());
+        m_versionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void DriverVersion::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_versionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Version";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_nameHasBeenSet)
     {
@@ -74,24 +66,16 @@ void DriverVersion::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_versionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Version";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
-
-string DriverVersion::GetVersion() const
-{
-    return m_version;
-}
-
-void DriverVersion::SetVersion(const string& _version)
-{
-    m_version = _version;
-    m_versionHasBeenSet = true;
-}
-
-bool DriverVersion::VersionHasBeenSet() const
-{
-    return m_versionHasBeenSet;
-}
 
 string DriverVersion::GetName() const
 {
@@ -107,5 +91,21 @@ void DriverVersion::SetName(const string& _name)
 bool DriverVersion::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+string DriverVersion::GetVersion() const
+{
+    return m_version;
+}
+
+void DriverVersion::SetVersion(const string& _version)
+{
+    m_version = _version;
+    m_versionHasBeenSet = true;
+}
+
+bool DriverVersion::VersionHasBeenSet() const
+{
+    return m_versionHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Policys 策略列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CcnRouteTableInputPolicy> GetPolicys() const;
 
                     /**
                      * 设置策略列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _policys 策略列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPolicys(const std::vector<CcnRouteTableInputPolicy>& _policys);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取版本号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyVersion 版本号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPolicyVersion() const;
 
                     /**
                      * 设置版本号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _policyVersion 版本号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPolicyVersion(const uint64_t& _policyVersion);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -126,21 +114,18 @@ namespace TencentCloud
 
                     /**
                      * 策略列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CcnRouteTableInputPolicy> m_policys;
                     bool m_policysHasBeenSet;
 
                     /**
                      * 版本号。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_policyVersion;
                     bool m_policyVersionHasBeenSet;
 
                     /**
                      * 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;

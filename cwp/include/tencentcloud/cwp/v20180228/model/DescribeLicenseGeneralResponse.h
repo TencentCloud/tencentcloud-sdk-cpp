@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -226,8 +226,8 @@ namespace TencentCloud
                     bool ProVersionLicenseCntHasBeenSet() const;
 
                     /**
-                     * 获取普惠版总授权数(有效订单的授权数)
-                     * @return CwpVersionLicenseCnt 普惠版总授权数(有效订单的授权数)
+                     * 获取轻量版总授权数(有效订单的授权数)
+                     * @return CwpVersionLicenseCnt 轻量版总授权数(有效订单的授权数)
                      * 
                      */
                     uint64_t GetCwpVersionLicenseCnt() const;
@@ -308,6 +308,34 @@ namespace TencentCloud
                      * 
                      */
                     bool RepurchaseRenewSwitchHasBeenSet() const;
+
+                    /**
+                     * 获取是否自动新增机器绑定rasp防护,false 关闭 true 开启
+                     * @return AutoBindRaspSwitch 是否自动新增机器绑定rasp防护,false 关闭 true 开启
+                     * 
+                     */
+                    bool GetAutoBindRaspSwitch() const;
+
+                    /**
+                     * 判断参数 AutoBindRaspSwitch 是否已赋值
+                     * @return AutoBindRaspSwitch 是否已赋值
+                     * 
+                     */
+                    bool AutoBindRaspSwitchHasBeenSet() const;
+
+                    /**
+                     * 获取是否自动新增机器开启rasp防护,false 关闭 true 开启
+                     * @return AutoOpenRaspSwitch 是否自动新增机器开启rasp防护,false 关闭 true 开启
+                     * 
+                     */
+                    bool GetAutoOpenRaspSwitch() const;
+
+                    /**
+                     * 判断参数 AutoOpenRaspSwitch 是否已赋值
+                     * @return AutoOpenRaspSwitch 是否已赋值
+                     * 
+                     */
+                    bool AutoOpenRaspSwitchHasBeenSet() const;
 
                 private:
 
@@ -390,7 +418,7 @@ namespace TencentCloud
                     bool m_proVersionLicenseCntHasBeenSet;
 
                     /**
-                     * 普惠版总授权数(有效订单的授权数)
+                     * 轻量版总授权数(有效订单的授权数)
                      */
                     uint64_t m_cwpVersionLicenseCnt;
                     bool m_cwpVersionLicenseCntHasBeenSet;
@@ -424,6 +452,18 @@ namespace TencentCloud
                      */
                     bool m_repurchaseRenewSwitch;
                     bool m_repurchaseRenewSwitchHasBeenSet;
+
+                    /**
+                     * 是否自动新增机器绑定rasp防护,false 关闭 true 开启
+                     */
+                    bool m_autoBindRaspSwitch;
+                    bool m_autoBindRaspSwitchHasBeenSet;
+
+                    /**
+                     * 是否自动新增机器开启rasp防护,false 关闭 true 开启
+                     */
+                    bool m_autoOpenRaspSwitch;
+                    bool m_autoOpenRaspSwitchHasBeenSet;
 
                 };
             }

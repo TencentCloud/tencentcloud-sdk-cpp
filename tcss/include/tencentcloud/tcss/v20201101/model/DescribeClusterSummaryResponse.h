@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -213,9 +213,7 @@ namespace TencentCloud
 
                     /**
                      * 获取TKE集群数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TkeClusterCount TKE集群数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTkeClusterCount() const;
@@ -229,9 +227,7 @@ namespace TencentCloud
 
                     /**
                      * 获取用户自建腾讯云集群数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserCreateTencentClusterCount 用户自建腾讯云集群数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetUserCreateTencentClusterCount() const;
@@ -245,9 +241,7 @@ namespace TencentCloud
 
                     /**
                      * 获取用户自建集群混合云数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserCreateHybridClusterCount 用户自建集群混合云数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetUserCreateHybridClusterCount() const;
@@ -335,21 +329,18 @@ namespace TencentCloud
 
                     /**
                      * TKE集群数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_tkeClusterCount;
                     bool m_tkeClusterCountHasBeenSet;
 
                     /**
                      * 用户自建腾讯云集群数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_userCreateTencentClusterCount;
                     bool m_userCreateTencentClusterCountHasBeenSet;
 
                     /**
                      * 用户自建集群混合云数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_userCreateHybridClusterCount;
                     bool m_userCreateHybridClusterCountHasBeenSet;

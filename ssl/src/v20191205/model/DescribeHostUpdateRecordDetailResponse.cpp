@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ DescribeHostUpdateRecordDetailResponse::DescribeHostUpdateRecordDetailResponse()
     m_recordDetailListHasBeenSet(false),
     m_successTotalCountHasBeenSet(false),
     m_failedTotalCountHasBeenSet(false),
-    m_runningTotalCountHasBeenSet(false)
+    m_runningTotalCountHasBeenSet(false),
+    m_pendingTotalCountHasBeenSet(false)
 {
 }
 
@@ -126,6 +127,16 @@ CoreInternalOutcome DescribeHostUpdateRecordDetailResponse::Deserialize(const st
         m_runningTotalCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PendingTotalCount") && !rsp["PendingTotalCount"].IsNull())
+    {
+        if (!rsp["PendingTotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PendingTotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pendingTotalCount = rsp["PendingTotalCount"].GetInt64();
+        m_pendingTotalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -183,11 +194,19 @@ string DescribeHostUpdateRecordDetailResponse::ToJsonString() const
         value.AddMember(iKey, m_runningTotalCount, allocator);
     }
 
+    if (m_pendingTotalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PendingTotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pendingTotalCount, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -243,6 +262,16 @@ int64_t DescribeHostUpdateRecordDetailResponse::GetRunningTotalCount() const
 bool DescribeHostUpdateRecordDetailResponse::RunningTotalCountHasBeenSet() const
 {
     return m_runningTotalCountHasBeenSet;
+}
+
+int64_t DescribeHostUpdateRecordDetailResponse::GetPendingTotalCount() const
+{
+    return m_pendingTotalCount;
+}
+
+bool DescribeHostUpdateRecordDetailResponse::PendingTotalCountHasBeenSet() const
+{
+    return m_pendingTotalCountHasBeenSet;
 }
 
 

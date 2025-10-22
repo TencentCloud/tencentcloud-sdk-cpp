@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取免密分享Id
-                     * @return SharingId 免密分享Id
+                     * 获取免密分享Id。
+- 通过 [获取免密分享列表](https://cloud.tencent.com/document/product/614/109798) 获取免密分享Id。 
+- 通过 [创建免密分享](https://cloud.tencent.com/document/product/614/109800) 获取免密分享Id。
+                     * @return SharingId 免密分享Id。
+- 通过 [获取免密分享列表](https://cloud.tencent.com/document/product/614/109798) 获取免密分享Id。 
+- 通过 [创建免密分享](https://cloud.tencent.com/document/product/614/109800) 获取免密分享Id。
                      * 
                      */
                     std::string GetSharingId() const;
 
                     /**
-                     * 设置免密分享Id
-                     * @param _sharingId 免密分享Id
+                     * 设置免密分享Id。
+- 通过 [获取免密分享列表](https://cloud.tencent.com/document/product/614/109798) 获取免密分享Id。 
+- 通过 [创建免密分享](https://cloud.tencent.com/document/product/614/109800) 获取免密分享Id。
+                     * @param _sharingId 免密分享Id。
+- 通过 [获取免密分享列表](https://cloud.tencent.com/document/product/614/109798) 获取免密分享Id。 
+- 通过 [创建免密分享](https://cloud.tencent.com/document/product/614/109800) 获取免密分享Id。
                      * 
                      */
                     void SetSharingId(const std::string& _sharingId);
@@ -66,7 +74,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 免密分享Id
+                     * 免密分享Id。
+- 通过 [获取免密分享列表](https://cloud.tencent.com/document/product/614/109798) 获取免密分享Id。 
+- 通过 [创建免密分享](https://cloud.tencent.com/document/product/614/109800) 获取免密分享Id。
                      */
                     std::string m_sharingId;
                     bool m_sharingIdHasBeenSet;

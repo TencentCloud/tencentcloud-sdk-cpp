@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,10 @@ CreateDirectConnectGatewayRequest::CreateDirectConnectGatewayRequest() :
     m_networkInstanceIdHasBeenSet(false),
     m_gatewayTypeHasBeenSet(false),
     m_modeTypeHasBeenSet(false),
+    m_gatewayAsnHasBeenSet(false),
     m_zoneHasBeenSet(false),
-    m_haZoneGroupIdHasBeenSet(false)
+    m_haZoneGroupIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -80,6 +82,14 @@ string CreateDirectConnectGatewayRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_modeType.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_gatewayAsnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GatewayAsn";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_gatewayAsn, allocator);
+    }
+
     if (m_zoneHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -94,6 +104,21 @@ string CreateDirectConnectGatewayRequest::ToJsonString() const
         string key = "HaZoneGroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_haZoneGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -184,6 +209,22 @@ bool CreateDirectConnectGatewayRequest::ModeTypeHasBeenSet() const
     return m_modeTypeHasBeenSet;
 }
 
+uint64_t CreateDirectConnectGatewayRequest::GetGatewayAsn() const
+{
+    return m_gatewayAsn;
+}
+
+void CreateDirectConnectGatewayRequest::SetGatewayAsn(const uint64_t& _gatewayAsn)
+{
+    m_gatewayAsn = _gatewayAsn;
+    m_gatewayAsnHasBeenSet = true;
+}
+
+bool CreateDirectConnectGatewayRequest::GatewayAsnHasBeenSet() const
+{
+    return m_gatewayAsnHasBeenSet;
+}
+
 string CreateDirectConnectGatewayRequest::GetZone() const
 {
     return m_zone;
@@ -214,6 +255,22 @@ void CreateDirectConnectGatewayRequest::SetHaZoneGroupId(const string& _haZoneGr
 bool CreateDirectConnectGatewayRequest::HaZoneGroupIdHasBeenSet() const
 {
     return m_haZoneGroupIdHasBeenSet;
+}
+
+vector<Tag> CreateDirectConnectGatewayRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateDirectConnectGatewayRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateDirectConnectGatewayRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,8 @@ SearchBusinessLogRequest::SearchBusinessLogRequest() :
     m_groupIdsHasBeenSet(false),
     m_searchWordTypeHasBeenSet(false),
     m_batchTypeHasBeenSet(false),
-    m_scrollIdHasBeenSet(false)
+    m_scrollIdHasBeenSet(false),
+    m_searchAfterHasBeenSet(false)
 {
 }
 
@@ -163,6 +164,19 @@ string SearchBusinessLogRequest::ToJsonString() const
         string key = "ScrollId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_scrollId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_searchAfterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SearchAfter";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_searchAfter.begin(); itr != m_searchAfter.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -379,6 +393,22 @@ void SearchBusinessLogRequest::SetScrollId(const string& _scrollId)
 bool SearchBusinessLogRequest::ScrollIdHasBeenSet() const
 {
     return m_scrollIdHasBeenSet;
+}
+
+vector<string> SearchBusinessLogRequest::GetSearchAfter() const
+{
+    return m_searchAfter;
+}
+
+void SearchBusinessLogRequest::SetSearchAfter(const vector<string>& _searchAfter)
+{
+    m_searchAfter = _searchAfter;
+    m_searchAfterHasBeenSet = true;
+}
+
+bool SearchBusinessLogRequest::SearchAfterHasBeenSet() const
+{
+    return m_searchAfterHasBeenSet;
 }
 
 

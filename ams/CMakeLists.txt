@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -63,7 +63,7 @@ set(ams_public_header_model
   include/tencentcloud/ams/v20201229/model/DescribeTasksRequest.h
   include/tencentcloud/ams/v20201229/model/AudioResultDetailSpeakerResult.h
   include/tencentcloud/ams/v20201229/model/CreateAudioModerationSyncTaskRequest.h
-  include/tencentcloud/ams/v20201229/model/BucketInfo.h
+  include/tencentcloud/ams/v20201229/model/HitInfo.h
   include/tencentcloud/ams/v20201229/model/CreateAudioModerationTaskResponse.h
   include/tencentcloud/ams/v20201229/model/TaskResult.h
   include/tencentcloud/ams/v20201229/model/CancelTaskRequest.h
@@ -82,7 +82,9 @@ set(ams_public_header_model
   include/tencentcloud/ams/v20201229/model/AudioResultDetailLanguageResult.h
   include/tencentcloud/ams/v20201229/model/RecognitionResult.h
   include/tencentcloud/ams/v20201229/model/MoanResult.h
+  include/tencentcloud/ams/v20201229/model/Position.h
   include/tencentcloud/ams/v20201229/model/CancelTaskResponse.h
+  include/tencentcloud/ams/v20201229/model/BucketInfo.h
   include/tencentcloud/ams/v20201229/model/AudioResultDetailTextResult.h
   include/tencentcloud/ams/v20201229/model/SpeakerResults.h
   include/tencentcloud/ams/v20201229/model/TravelResults.h
@@ -140,7 +142,7 @@ set(ams_src
   src/v20201229/model/DescribeTasksRequest.cpp
   src/v20201229/model/AudioResultDetailSpeakerResult.cpp
   src/v20201229/model/CreateAudioModerationSyncTaskRequest.cpp
-  src/v20201229/model/BucketInfo.cpp
+  src/v20201229/model/HitInfo.cpp
   src/v20201229/model/CreateAudioModerationTaskResponse.cpp
   src/v20201229/model/TaskResult.cpp
   src/v20201229/model/CancelTaskRequest.cpp
@@ -159,7 +161,9 @@ set(ams_src
   src/v20201229/model/AudioResultDetailLanguageResult.cpp
   src/v20201229/model/RecognitionResult.cpp
   src/v20201229/model/MoanResult.cpp
+  src/v20201229/model/Position.cpp
   src/v20201229/model/CancelTaskResponse.cpp
+  src/v20201229/model/BucketInfo.cpp
   src/v20201229/model/AudioResultDetailTextResult.cpp
   src/v20201229/model/SpeakerResults.cpp
   src/v20201229/model/TravelResults.cpp

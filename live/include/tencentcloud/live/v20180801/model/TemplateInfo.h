@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/live/v20180801/model/ChildTemplateInfo.h>
 
 
 namespace TencentCloud
@@ -637,6 +638,64 @@ baseline/main/high。默认baseline
                      */
                     bool DRMTracksHasBeenSet() const;
 
+                    /**
+                     * 获取是否创建自适应码率，默认值 0。
+0：否。
+1：是。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsAdaptiveBitRate 是否创建自适应码率，默认值 0。
+0：否。
+1：是。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetIsAdaptiveBitRate() const;
+
+                    /**
+                     * 设置是否创建自适应码率，默认值 0。
+0：否。
+1：是。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isAdaptiveBitRate 是否创建自适应码率，默认值 0。
+0：否。
+1：是。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsAdaptiveBitRate(const int64_t& _isAdaptiveBitRate);
+
+                    /**
+                     * 判断参数 IsAdaptiveBitRate 是否已赋值
+                     * @return IsAdaptiveBitRate 是否已赋值
+                     * 
+                     */
+                    bool IsAdaptiveBitRateHasBeenSet() const;
+
+                    /**
+                     * 获取自适应码率，子转码模板信息，当 IsAdaptiveBitRate 为 1 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AdaptiveChildren 自适应码率，子转码模板信息，当 IsAdaptiveBitRate 为 1 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<ChildTemplateInfo> GetAdaptiveChildren() const;
+
+                    /**
+                     * 设置自适应码率，子转码模板信息，当 IsAdaptiveBitRate 为 1 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _adaptiveChildren 自适应码率，子转码模板信息，当 IsAdaptiveBitRate 为 1 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAdaptiveChildren(const std::vector<ChildTemplateInfo>& _adaptiveChildren);
+
+                    /**
+                     * 判断参数 AdaptiveChildren 是否已赋值
+                     * @return AdaptiveChildren 是否已赋值
+                     * 
+                     */
+                    bool AdaptiveChildrenHasBeenSet() const;
+
                 private:
 
                     /**
@@ -803,6 +862,22 @@ baseline/main/high。默认baseline
                      */
                     std::string m_dRMTracks;
                     bool m_dRMTracksHasBeenSet;
+
+                    /**
+                     * 是否创建自适应码率，默认值 0。
+0：否。
+1：是。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isAdaptiveBitRate;
+                    bool m_isAdaptiveBitRateHasBeenSet;
+
+                    /**
+                     * 自适应码率，子转码模板信息，当 IsAdaptiveBitRate 为 1 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ChildTemplateInfo> m_adaptiveChildren;
+                    bool m_adaptiveChildrenHasBeenSet;
 
                 };
             }

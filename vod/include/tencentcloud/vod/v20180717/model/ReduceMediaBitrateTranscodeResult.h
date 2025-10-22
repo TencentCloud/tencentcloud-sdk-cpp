@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -134,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取转码任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Output 转码任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MediaTranscodeItem GetOutput() const;
 
                     /**
                      * 设置转码任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _output 转码任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutput(const MediaTranscodeItem& _output);
@@ -248,7 +244,6 @@ namespace TencentCloud
 
                     /**
                      * 转码任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaTranscodeItem m_output;
                     bool m_outputHasBeenSet;

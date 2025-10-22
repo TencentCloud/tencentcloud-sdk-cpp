@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@
 #include <tencentcloud/vod/v20180717/model/UrlSignatureAuthPolicy.h>
 #include <tencentcloud/vod/v20180717/model/RefererAuthPolicy.h>
 #include <tencentcloud/vod/v20180717/model/DomainQUICConfig.h>
+#include <tencentcloud/vod/v20180717/model/IPFilterPolicy.h>
 
 
 namespace TencentCloud
@@ -74,18 +75,14 @@ namespace TencentCloud
 
                     /**
                      * 获取加速地区信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccelerateAreaInfos 加速地区信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AccelerateAreaInfo> GetAccelerateAreaInfos() const;
 
                     /**
                      * 设置加速地区信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accelerateAreaInfos 加速地区信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccelerateAreaInfos(const std::vector<AccelerateAreaInfo>& _accelerateAreaInfos);
@@ -132,18 +129,14 @@ namespace TencentCloud
 
                     /**
                      * 获取HTTPS 配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HTTPSConfig HTTPS 配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DomainHTTPSConfig GetHTTPSConfig() const;
 
                     /**
                      * 设置HTTPS 配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hTTPSConfig HTTPS 配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHTTPSConfig(const DomainHTTPSConfig& _hTTPSConfig);
@@ -157,18 +150,14 @@ namespace TencentCloud
 
                     /**
                      * 获取[Key 防盗链](https://cloud.tencent.com/document/product/266/14047)配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UrlSignatureAuthPolicy [Key 防盗链](https://cloud.tencent.com/document/product/266/14047)配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     UrlSignatureAuthPolicy GetUrlSignatureAuthPolicy() const;
 
                     /**
                      * 设置[Key 防盗链](https://cloud.tencent.com/document/product/266/14047)配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _urlSignatureAuthPolicy [Key 防盗链](https://cloud.tencent.com/document/product/266/14047)配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUrlSignatureAuthPolicy(const UrlSignatureAuthPolicy& _urlSignatureAuthPolicy);
@@ -182,18 +171,14 @@ namespace TencentCloud
 
                     /**
                      * 获取[Referer 防盗链](https://cloud.tencent.com/document/product/266/14046)配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RefererAuthPolicy [Referer 防盗链](https://cloud.tencent.com/document/product/266/14046)配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RefererAuthPolicy GetRefererAuthPolicy() const;
 
                     /**
                      * 设置[Referer 防盗链](https://cloud.tencent.com/document/product/266/14046)配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _refererAuthPolicy [Referer 防盗链](https://cloud.tencent.com/document/product/266/14046)配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRefererAuthPolicy(const RefererAuthPolicy& _refererAuthPolicy);
@@ -232,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取域名 QUIC 配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QUICConfig 域名 QUIC 配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DomainQUICConfig GetQUICConfig() const;
 
                     /**
                      * 设置域名 QUIC 配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _qUICConfig 域名 QUIC 配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQUICConfig(const DomainQUICConfig& _qUICConfig);
@@ -255,6 +236,48 @@ namespace TencentCloud
                      */
                     bool QUICConfigHasBeenSet() const;
 
+                    /**
+                     * 获取IP 访问限制配置信息。
+                     * @return IPFilterPolicy IP 访问限制配置信息。
+                     * 
+                     */
+                    IPFilterPolicy GetIPFilterPolicy() const;
+
+                    /**
+                     * 设置IP 访问限制配置信息。
+                     * @param _iPFilterPolicy IP 访问限制配置信息。
+                     * 
+                     */
+                    void SetIPFilterPolicy(const IPFilterPolicy& _iPFilterPolicy);
+
+                    /**
+                     * 判断参数 IPFilterPolicy 是否已赋值
+                     * @return IPFilterPolicy 是否已赋值
+                     * 
+                     */
+                    bool IPFilterPolicyHasBeenSet() const;
+
+                    /**
+                     * 获取域名类型，取值有： <li>VOD：使用 VOD 产品分发的域名；</li> <li>EdgeOne：使用 EdgeOne 产品分发的域名。</li>
+                     * @return Type 域名类型，取值有： <li>VOD：使用 VOD 产品分发的域名；</li> <li>EdgeOne：使用 EdgeOne 产品分发的域名。</li>
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置域名类型，取值有： <li>VOD：使用 VOD 产品分发的域名；</li> <li>EdgeOne：使用 EdgeOne 产品分发的域名。</li>
+                     * @param _type 域名类型，取值有： <li>VOD：使用 VOD 产品分发的域名；</li> <li>EdgeOne：使用 EdgeOne 产品分发的域名。</li>
+                     * 
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -265,7 +288,6 @@ namespace TencentCloud
 
                     /**
                      * 加速地区信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AccelerateAreaInfo> m_accelerateAreaInfos;
                     bool m_accelerateAreaInfosHasBeenSet;
@@ -281,21 +303,18 @@ namespace TencentCloud
 
                     /**
                      * HTTPS 配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DomainHTTPSConfig m_hTTPSConfig;
                     bool m_hTTPSConfigHasBeenSet;
 
                     /**
                      * [Key 防盗链](https://cloud.tencent.com/document/product/266/14047)配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     UrlSignatureAuthPolicy m_urlSignatureAuthPolicy;
                     bool m_urlSignatureAuthPolicyHasBeenSet;
 
                     /**
                      * [Referer 防盗链](https://cloud.tencent.com/document/product/266/14046)配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RefererAuthPolicy m_refererAuthPolicy;
                     bool m_refererAuthPolicyHasBeenSet;
@@ -309,10 +328,21 @@ namespace TencentCloud
 
                     /**
                      * 域名 QUIC 配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DomainQUICConfig m_qUICConfig;
                     bool m_qUICConfigHasBeenSet;
+
+                    /**
+                     * IP 访问限制配置信息。
+                     */
+                    IPFilterPolicy m_iPFilterPolicy;
+                    bool m_iPFilterPolicyHasBeenSet;
+
+                    /**
+                     * 域名类型，取值有： <li>VOD：使用 VOD 产品分发的域名；</li> <li>EdgeOne：使用 EdgeOne 产品分发的域名。</li>
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

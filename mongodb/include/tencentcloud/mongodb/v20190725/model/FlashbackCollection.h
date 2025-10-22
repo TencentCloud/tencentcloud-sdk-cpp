@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 按key回档，源数据所在的表
+                * 按 Key 闪回数据表
                 */
                 class FlashbackCollection : public AbstractModel
                 {
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取按key回档指定的集合名
-                     * @return CollectionName 按key回档指定的集合名
+                     * 获取指定按 Key 闪回源数据库集合名。
+                     * @return CollectionName 指定按 Key 闪回源数据库集合名。
                      * 
                      */
                     std::string GetCollectionName() const;
 
                     /**
-                     * 设置按key回档指定的集合名
-                     * @param _collectionName 按key回档指定的集合名
+                     * 设置指定按 Key 闪回源数据库集合名。
+                     * @param _collectionName 指定按 Key 闪回源数据库集合名。
                      * 
                      */
                     void SetCollectionName(const std::string& _collectionName);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool CollectionNameHasBeenSet() const;
 
                     /**
-                     * 获取按key回档到的目标集合名
-                     * @return TargetResultCollectionName 按key回档到的目标集合名
+                     * 获取指定按 Key 闪回目标数据库集合名。
+                     * @return TargetResultCollectionName 指定按 Key 闪回目标数据库集合名。
                      * 
                      */
                     std::string GetTargetResultCollectionName() const;
 
                     /**
-                     * 设置按key回档到的目标集合名
-                     * @param _targetResultCollectionName 按key回档到的目标集合名
+                     * 设置指定按 Key 闪回目标数据库集合名。
+                     * @param _targetResultCollectionName 指定按 Key 闪回目标数据库集合名。
                      * 
                      */
                     void SetTargetResultCollectionName(const std::string& _targetResultCollectionName);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool TargetResultCollectionNameHasBeenSet() const;
 
                     /**
-                     * 获取上传到cos的文件的value所对应的key值
-                     * @return FilterKey 上传到cos的文件的value所对应的key值
+                     * 获取指定用于过滤按 Key 闪回的 Key（键）。
+                     * @return FilterKey 指定用于过滤按 Key 闪回的 Key（键）。
                      * 
                      */
                     std::string GetFilterKey() const;
 
                     /**
-                     * 设置上传到cos的文件的value所对应的key值
-                     * @param _filterKey 上传到cos的文件的value所对应的key值
+                     * 设置指定用于过滤按 Key 闪回的 Key（键）。
+                     * @param _filterKey 指定用于过滤按 Key 闪回的 Key（键）。
                      * 
                      */
                     void SetFilterKey(const std::string& _filterKey);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool FilterKeyHasBeenSet() const;
 
                     /**
-                     * 获取用于按key回档过滤的键值对
-                     * @return KeyValues 用于按key回档过滤的键值对
+                     * 获取指定用于按 Key 闪回的键值对。数组元素最大限制为 50000。
+                     * @return KeyValues 指定用于按 Key 闪回的键值对。数组元素最大限制为 50000。
                      * 
                      */
                     std::vector<FBKeyValue> GetKeyValues() const;
 
                     /**
-                     * 设置用于按key回档过滤的键值对
-                     * @param _keyValues 用于按key回档过滤的键值对
+                     * 设置指定用于按 Key 闪回的键值对。数组元素最大限制为 50000。
+                     * @param _keyValues 指定用于按 Key 闪回的键值对。数组元素最大限制为 50000。
                      * 
                      */
                     void SetKeyValues(const std::vector<FBKeyValue>& _keyValues);
@@ -134,25 +134,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 按key回档指定的集合名
+                     * 指定按 Key 闪回源数据库集合名。
                      */
                     std::string m_collectionName;
                     bool m_collectionNameHasBeenSet;
 
                     /**
-                     * 按key回档到的目标集合名
+                     * 指定按 Key 闪回目标数据库集合名。
                      */
                     std::string m_targetResultCollectionName;
                     bool m_targetResultCollectionNameHasBeenSet;
 
                     /**
-                     * 上传到cos的文件的value所对应的key值
+                     * 指定用于过滤按 Key 闪回的 Key（键）。
                      */
                     std::string m_filterKey;
                     bool m_filterKeyHasBeenSet;
 
                     /**
-                     * 用于按key回档过滤的键值对
+                     * 指定用于按 Key 闪回的键值对。数组元素最大限制为 50000。
                      */
                     std::vector<FBKeyValue> m_keyValues;
                     bool m_keyValuesHasBeenSet;

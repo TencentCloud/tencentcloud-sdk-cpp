@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,7 +48,9 @@ RollbackToNewClusterRequest::RollbackToNewClusterRequest() :
     m_timeUnitHasBeenSet(false),
     m_rollbackDatabasesHasBeenSet(false),
     m_rollbackTablesHasBeenSet(false),
-    m_originalROInstanceListHasBeenSet(false)
+    m_originalROInstanceListHasBeenSet(false),
+    m_projectIdHasBeenSet(false),
+    m_autoArchiveHasBeenSet(false)
 {
 }
 
@@ -315,6 +317,22 @@ string RollbackToNewClusterRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_projectId, allocator);
+    }
+
+    if (m_autoArchiveHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoArchive";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_autoArchive.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -739,6 +757,38 @@ void RollbackToNewClusterRequest::SetOriginalROInstanceList(const vector<string>
 bool RollbackToNewClusterRequest::OriginalROInstanceListHasBeenSet() const
 {
     return m_originalROInstanceListHasBeenSet;
+}
+
+int64_t RollbackToNewClusterRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void RollbackToNewClusterRequest::SetProjectId(const int64_t& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool RollbackToNewClusterRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
+}
+
+string RollbackToNewClusterRequest::GetAutoArchive() const
+{
+    return m_autoArchive;
+}
+
+void RollbackToNewClusterRequest::SetAutoArchive(const string& _autoArchive)
+{
+    m_autoArchive = _autoArchive;
+    m_autoArchiveHasBeenSet = true;
+}
+
+bool RollbackToNewClusterRequest::AutoArchiveHasBeenSet() const
+{
+    return m_autoArchiveHasBeenSet;
 }
 
 

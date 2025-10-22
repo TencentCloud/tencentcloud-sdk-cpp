@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取新账户的名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return User 新账户的名称
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取账号名，可输入1 - 32个字符。
+                     * @return User 账号名，可输入1 - 32个字符。
                      * 
                      */
                     std::string GetUser() const;
 
                     /**
-                     * 设置新账户的名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _user 新账户的名称
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置账号名，可输入1 - 32个字符。
+                     * @param _user 账号名，可输入1 - 32个字符。
                      * 
                      */
                     void SetUser(const std::string& _user);
@@ -72,19 +68,27 @@ namespace TencentCloud
                     bool UserHasBeenSet() const;
 
                     /**
-                     * 获取新账户的域名
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Host 新账户的域名
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取账号的主机。
+说明：
+1. IP 形式，支持填入%。
+2. 多个主机以分隔符分隔，分隔符支持;,|换行符和空格。
+                     * @return Host 账号的主机。
+说明：
+1. IP 形式，支持填入%。
+2. 多个主机以分隔符分隔，分隔符支持;,|换行符和空格。
                      * 
                      */
                     std::string GetHost() const;
 
                     /**
-                     * 设置新账户的域名
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _host 新账户的域名
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置账号的主机。
+说明：
+1. IP 形式，支持填入%。
+2. 多个主机以分隔符分隔，分隔符支持;,|换行符和空格。
+                     * @param _host 账号的主机。
+说明：
+1. IP 形式，支持填入%。
+2. 多个主机以分隔符分隔，分隔符支持;,|换行符和空格。
                      * 
                      */
                     void SetHost(const std::string& _host);
@@ -99,15 +103,16 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 新账户的名称
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 账号名，可输入1 - 32个字符。
                      */
                     std::string m_user;
                     bool m_userHasBeenSet;
 
                     /**
-                     * 新账户的域名
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 账号的主机。
+说明：
+1. IP 形式，支持填入%。
+2. 多个主机以分隔符分隔，分隔符支持;,|换行符和空格。
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;

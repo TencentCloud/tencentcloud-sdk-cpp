@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,9 @@ using namespace std;
 CreateDisasterRecoverGroupRequest::CreateDisasterRecoverGroupRequest() :
     m_nameHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
+    m_clientTokenHasBeenSet(false),
+    m_affinityHasBeenSet(false),
+    m_tagSpecificationHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,29 @@ string CreateDisasterRecoverGroupRequest::ToJsonString() const
         string key = "ClientToken";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clientToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_affinityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Affinity";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_affinity, allocator);
+    }
+
+    if (m_tagSpecificationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagSpecification";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagSpecification.begin(); itr != m_tagSpecification.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -114,6 +139,38 @@ void CreateDisasterRecoverGroupRequest::SetClientToken(const string& _clientToke
 bool CreateDisasterRecoverGroupRequest::ClientTokenHasBeenSet() const
 {
     return m_clientTokenHasBeenSet;
+}
+
+int64_t CreateDisasterRecoverGroupRequest::GetAffinity() const
+{
+    return m_affinity;
+}
+
+void CreateDisasterRecoverGroupRequest::SetAffinity(const int64_t& _affinity)
+{
+    m_affinity = _affinity;
+    m_affinityHasBeenSet = true;
+}
+
+bool CreateDisasterRecoverGroupRequest::AffinityHasBeenSet() const
+{
+    return m_affinityHasBeenSet;
+}
+
+vector<TagSpecification> CreateDisasterRecoverGroupRequest::GetTagSpecification() const
+{
+    return m_tagSpecification;
+}
+
+void CreateDisasterRecoverGroupRequest::SetTagSpecification(const vector<TagSpecification>& _tagSpecification)
+{
+    m_tagSpecification = _tagSpecification;
+    m_tagSpecificationHasBeenSet = true;
+}
+
+bool CreateDisasterRecoverGroupRequest::TagSpecificationHasBeenSet() const
+{
+    return m_tagSpecificationHasBeenSet;
 }
 
 

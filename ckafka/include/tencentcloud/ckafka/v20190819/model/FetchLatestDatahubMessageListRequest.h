@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主题名
-                     * @return Name 主题名
+                     * 获取弹性topic名称
+                     * @return Name 弹性topic名称
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置主题名
-                     * @param _name 主题名
+                     * 设置弹性topic名称
+                     * @param _name 弹性topic名称
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -129,7 +129,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 主题名
+                     * 弹性topic名称
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool EnableFlagHasBeenSet() const;
 
                     /**
-                     * 获取加工任务类型，1： DSL， 2：SQL
-                     * @return Type 加工任务类型，1： DSL， 2：SQL
+                     * 获取加工任务类型，1： DSL(使用自定义加工语言的加工任务)， 2：SQL(使用sql的加工任务)
+                     * @return Type 加工任务类型，1： DSL(使用自定义加工语言的加工任务)， 2：SQL(使用sql的加工任务)
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置加工任务类型，1： DSL， 2：SQL
-                     * @param _type 加工任务类型，1： DSL， 2：SQL
+                     * 设置加工任务类型，1： DSL(使用自定义加工语言的加工任务)， 2：SQL(使用sql的加工任务)
+                     * @param _type 加工任务类型，1： DSL(使用自定义加工语言的加工任务)， 2：SQL(使用sql的加工任务)
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -175,14 +175,18 @@ namespace TencentCloud
 
                     /**
                      * 获取加工任务创建时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      * @return CreateTime 加工任务创建时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置加工任务创建时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      * @param _createTime 加工任务创建时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -196,14 +200,18 @@ namespace TencentCloud
 
                     /**
                      * 获取最近修改时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      * @return UpdateTime 最近修改时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置最近修改时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      * @param _updateTime 最近修改时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -217,14 +225,18 @@ namespace TencentCloud
 
                     /**
                      * 获取最后启用时间，如果需要重建集群，修改该时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      * @return LastEnableTime 最后启用时间，如果需要重建集群，修改该时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetLastEnableTime() const;
 
                     /**
                      * 设置最后启用时间，如果需要重建集群，修改该时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      * @param _lastEnableTime 最后启用时间，如果需要重建集群，修改该时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     void SetLastEnableTime(const std::string& _lastEnableTime);
@@ -322,18 +334,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据加工类型。0：标准加工任务；1：前置加工任务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataTransformType 数据加工类型。0：标准加工任务；1：前置加工任务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDataTransformType() const;
 
                     /**
                      * 设置数据加工类型。0：标准加工任务；1：前置加工任务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataTransformType 数据加工类型。0：标准加工任务；1：前置加工任务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataTransformType(const uint64_t& _dataTransformType);
@@ -347,18 +355,14 @@ namespace TencentCloud
 
                     /**
                      * 获取保留失败日志状态。 1:不保留，2:保留
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeepFailureLog 保留失败日志状态。 1:不保留，2:保留
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetKeepFailureLog() const;
 
                     /**
                      * 设置保留失败日志状态。 1:不保留，2:保留
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _keepFailureLog 保留失败日志状态。 1:不保留，2:保留
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKeepFailureLog(const uint64_t& _keepFailureLog);
@@ -372,18 +376,14 @@ namespace TencentCloud
 
                     /**
                      * 获取失败日志的字段名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailureLogKey 失败日志的字段名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFailureLogKey() const;
 
                     /**
                      * 设置失败日志的字段名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _failureLogKey 失败日志的字段名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFailureLogKey(const std::string& _failureLogKey);
@@ -416,7 +416,7 @@ namespace TencentCloud
                     bool m_enableFlagHasBeenSet;
 
                     /**
-                     * 加工任务类型，1： DSL， 2：SQL
+                     * 加工任务类型，1： DSL(使用自定义加工语言的加工任务)， 2：SQL(使用sql的加工任务)
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
@@ -435,18 +435,21 @@ namespace TencentCloud
 
                     /**
                      * 加工任务创建时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 最近修改时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
                      * 最后启用时间，如果需要重建集群，修改该时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_lastEnableTime;
                     bool m_lastEnableTimeHasBeenSet;
@@ -477,21 +480,18 @@ namespace TencentCloud
 
                     /**
                      * 数据加工类型。0：标准加工任务；1：前置加工任务。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_dataTransformType;
                     bool m_dataTransformTypeHasBeenSet;
 
                     /**
                      * 保留失败日志状态。 1:不保留，2:保留
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_keepFailureLog;
                     bool m_keepFailureLogHasBeenSet;
 
                     /**
                      * 失败日志的字段名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_failureLogKey;
                     bool m_failureLogKeyHasBeenSet;

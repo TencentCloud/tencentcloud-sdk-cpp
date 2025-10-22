@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,8 @@
 #include <tencentcloud/tmt/v20180321/model/GetFileTranslateResponse.h>
 #include <tencentcloud/tmt/v20180321/model/ImageTranslateRequest.h>
 #include <tencentcloud/tmt/v20180321/model/ImageTranslateResponse.h>
+#include <tencentcloud/tmt/v20180321/model/ImageTranslateLLMRequest.h>
+#include <tencentcloud/tmt/v20180321/model/ImageTranslateLLMResponse.h>
 #include <tencentcloud/tmt/v20180321/model/LanguageDetectRequest.h>
 #include <tencentcloud/tmt/v20180321/model/LanguageDetectResponse.h>
 #include <tencentcloud/tmt/v20180321/model/SpeechTranslateRequest.h>
@@ -60,6 +62,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ImageTranslateResponse> ImageTranslateOutcome;
                 typedef std::future<ImageTranslateOutcome> ImageTranslateOutcomeCallable;
                 typedef std::function<void(const TmtClient*, const Model::ImageTranslateRequest&, ImageTranslateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageTranslateAsyncHandler;
+                typedef Outcome<Core::Error, Model::ImageTranslateLLMResponse> ImageTranslateLLMOutcome;
+                typedef std::future<ImageTranslateLLMOutcome> ImageTranslateLLMOutcomeCallable;
+                typedef std::function<void(const TmtClient*, const Model::ImageTranslateLLMRequest&, ImageTranslateLLMOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageTranslateLLMAsyncHandler;
                 typedef Outcome<Core::Error, Model::LanguageDetectResponse> LanguageDetectOutcome;
                 typedef std::future<LanguageDetectOutcome> LanguageDetectOutcomeCallable;
                 typedef std::function<void(const TmtClient*, const Model::LanguageDetectRequest&, LanguageDetectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LanguageDetectAsyncHandler;
@@ -106,6 +111,20 @@ namespace TencentCloud
                 ImageTranslateOutcomeCallable ImageTranslateCallable(const Model::ImageTranslateRequest& request);
 
                 /**
+                 *提供18种语言的图片翻译服务，可自动识别图片中的文本内容并翻译成目标语言，识别后的文本按行翻译，后续会提供可按段落翻译的版本。
+
+- 输入图片格式：png、jpg、jpeg等常用图片格式，不支持gif动图。
+- 输出图片格式：jpg。
+
+提示：对于一般开发者，我们建议优先使用SDK接入简化开发。SDK使用介绍请直接查看 5. 开发者资源 部分。
+                 * @param req ImageTranslateLLMRequest
+                 * @return ImageTranslateLLMOutcome
+                 */
+                ImageTranslateLLMOutcome ImageTranslateLLM(const Model::ImageTranslateLLMRequest &request);
+                void ImageTranslateLLMAsync(const Model::ImageTranslateLLMRequest& request, const ImageTranslateLLMAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ImageTranslateLLMOutcomeCallable ImageTranslateLLMCallable(const Model::ImageTranslateLLMRequest& request);
+
+                /**
                  *可自动识别文本内容的语言种类，轻量高效，无需额外实现判断方式，使面向客户的服务体验更佳。 <br />
 提示：对于一般开发者，我们建议优先使用SDK接入简化开发。SDK使用介绍请直接查看 5. 开发者资源 部分。
                  * @param req LanguageDetectRequest
@@ -138,7 +157,7 @@ namespace TencentCloud
                 TextTranslateOutcomeCallable TextTranslateCallable(const Model::TextTranslateRequest& request);
 
                 /**
-                 *文本翻译的批量接口
+                 *批量翻译文本的接口
                  * @param req TextTranslateBatchRequest
                  * @return TextTranslateBatchOutcome
                  */

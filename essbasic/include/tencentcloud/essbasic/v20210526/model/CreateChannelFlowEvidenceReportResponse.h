@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取出证报告 ID，可用于<a href="https://qian.tencent.com/developers/partnerApis/certificate/DescribeChannelFlowEvidenceReport" target="_blank">获取出证报告任务执行结果</a>查询出证任务结果和出证PDF的下载URL
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportId 出证报告 ID，可用于<a href="https://qian.tencent.com/developers/partnerApis/certificate/DescribeChannelFlowEvidenceReport" target="_blank">获取出证报告任务执行结果</a>查询出证任务结果和出证PDF的下载URL
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReportId() const;
@@ -64,12 +62,12 @@ namespace TencentCloud
 
 <ul><li>**EvidenceStatusExecuting**：  出证任务在执行中</li>
 <li>**EvidenceStatusSuccess**：  出证任务执行成功</li>
-<li>**EvidenceStatusFailed** ： 出征任务执行失败</li></ul>
+<li>**EvidenceStatusFailed** ： 出证任务执行失败</li></ul>
                      * @return Status 出证任务执行的状态, 状态含义如下：
 
 <ul><li>**EvidenceStatusExecuting**：  出证任务在执行中</li>
 <li>**EvidenceStatusSuccess**：  出证任务执行成功</li>
-<li>**EvidenceStatusFailed** ： 出征任务执行失败</li></ul>
+<li>**EvidenceStatusFailed** ： 出证任务执行失败</li></ul>
                      * 
                      */
                     std::string GetStatus() const;
@@ -83,9 +81,7 @@ namespace TencentCloud
 
                     /**
                      * 获取废除，字段无效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportUrl 废除，字段无效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReportUrl() const;
@@ -101,7 +97,6 @@ namespace TencentCloud
 
                     /**
                      * 出证报告 ID，可用于<a href="https://qian.tencent.com/developers/partnerApis/certificate/DescribeChannelFlowEvidenceReport" target="_blank">获取出证报告任务执行结果</a>查询出证任务结果和出证PDF的下载URL
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reportId;
                     bool m_reportIdHasBeenSet;
@@ -111,14 +106,13 @@ namespace TencentCloud
 
 <ul><li>**EvidenceStatusExecuting**：  出证任务在执行中</li>
 <li>**EvidenceStatusSuccess**：  出证任务执行成功</li>
-<li>**EvidenceStatusFailed** ： 出征任务执行失败</li></ul>
+<li>**EvidenceStatusFailed** ： 出证任务执行失败</li></ul>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 废除，字段无效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reportUrl;
                     bool m_reportUrlHasBeenSet;

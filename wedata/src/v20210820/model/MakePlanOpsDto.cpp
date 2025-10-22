@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,7 +45,13 @@ MakePlanOpsDto::MakePlanOpsDto() :
     m_taskCountHasBeenSet(false),
     m_completePercentHasBeenSet(false),
     m_successPercentHasBeenSet(false),
-    m_checkParentTypeHasBeenSet(false)
+    m_checkParentTypeHasBeenSet(false),
+    m_sameSelfWorkflowDependTypeHasBeenSet(false),
+    m_selfWorkflowDependencyHasBeenSet(false),
+    m_makeDataTimeOrderHasBeenSet(false),
+    m_scheduleTimeZoneHasBeenSet(false),
+    m_appParamHasBeenSet(false),
+    m_timeTypeHasBeenSet(false)
 {
 }
 
@@ -327,6 +333,66 @@ CoreInternalOutcome MakePlanOpsDto::Deserialize(const rapidjson::Value &value)
         m_checkParentTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("SameSelfWorkflowDependType") && !value["SameSelfWorkflowDependType"].IsNull())
+    {
+        if (!value["SameSelfWorkflowDependType"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `MakePlanOpsDto.SameSelfWorkflowDependType` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_sameSelfWorkflowDependType = value["SameSelfWorkflowDependType"].GetBool();
+        m_sameSelfWorkflowDependTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SelfWorkflowDependency") && !value["SelfWorkflowDependency"].IsNull())
+    {
+        if (!value["SelfWorkflowDependency"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MakePlanOpsDto.SelfWorkflowDependency` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_selfWorkflowDependency = string(value["SelfWorkflowDependency"].GetString());
+        m_selfWorkflowDependencyHasBeenSet = true;
+    }
+
+    if (value.HasMember("MakeDataTimeOrder") && !value["MakeDataTimeOrder"].IsNull())
+    {
+        if (!value["MakeDataTimeOrder"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MakePlanOpsDto.MakeDataTimeOrder` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_makeDataTimeOrder = string(value["MakeDataTimeOrder"].GetString());
+        m_makeDataTimeOrderHasBeenSet = true;
+    }
+
+    if (value.HasMember("ScheduleTimeZone") && !value["ScheduleTimeZone"].IsNull())
+    {
+        if (!value["ScheduleTimeZone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MakePlanOpsDto.ScheduleTimeZone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scheduleTimeZone = string(value["ScheduleTimeZone"].GetString());
+        m_scheduleTimeZoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("AppParam") && !value["AppParam"].IsNull())
+    {
+        if (!value["AppParam"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MakePlanOpsDto.AppParam` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_appParam = string(value["AppParam"].GetString());
+        m_appParamHasBeenSet = true;
+    }
+
+    if (value.HasMember("TimeType") && !value["TimeType"].IsNull())
+    {
+        if (!value["TimeType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MakePlanOpsDto.TimeType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_timeType = string(value["TimeType"].GetString());
+        m_timeTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -551,6 +617,54 @@ void MakePlanOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "CheckParentType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_checkParentType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sameSelfWorkflowDependTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SameSelfWorkflowDependType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sameSelfWorkflowDependType, allocator);
+    }
+
+    if (m_selfWorkflowDependencyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SelfWorkflowDependency";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_selfWorkflowDependency.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_makeDataTimeOrderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MakeDataTimeOrder";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_makeDataTimeOrder.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scheduleTimeZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleTimeZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scheduleTimeZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppParam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appParam.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_timeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_timeType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -954,5 +1068,101 @@ void MakePlanOpsDto::SetCheckParentType(const string& _checkParentType)
 bool MakePlanOpsDto::CheckParentTypeHasBeenSet() const
 {
     return m_checkParentTypeHasBeenSet;
+}
+
+bool MakePlanOpsDto::GetSameSelfWorkflowDependType() const
+{
+    return m_sameSelfWorkflowDependType;
+}
+
+void MakePlanOpsDto::SetSameSelfWorkflowDependType(const bool& _sameSelfWorkflowDependType)
+{
+    m_sameSelfWorkflowDependType = _sameSelfWorkflowDependType;
+    m_sameSelfWorkflowDependTypeHasBeenSet = true;
+}
+
+bool MakePlanOpsDto::SameSelfWorkflowDependTypeHasBeenSet() const
+{
+    return m_sameSelfWorkflowDependTypeHasBeenSet;
+}
+
+string MakePlanOpsDto::GetSelfWorkflowDependency() const
+{
+    return m_selfWorkflowDependency;
+}
+
+void MakePlanOpsDto::SetSelfWorkflowDependency(const string& _selfWorkflowDependency)
+{
+    m_selfWorkflowDependency = _selfWorkflowDependency;
+    m_selfWorkflowDependencyHasBeenSet = true;
+}
+
+bool MakePlanOpsDto::SelfWorkflowDependencyHasBeenSet() const
+{
+    return m_selfWorkflowDependencyHasBeenSet;
+}
+
+string MakePlanOpsDto::GetMakeDataTimeOrder() const
+{
+    return m_makeDataTimeOrder;
+}
+
+void MakePlanOpsDto::SetMakeDataTimeOrder(const string& _makeDataTimeOrder)
+{
+    m_makeDataTimeOrder = _makeDataTimeOrder;
+    m_makeDataTimeOrderHasBeenSet = true;
+}
+
+bool MakePlanOpsDto::MakeDataTimeOrderHasBeenSet() const
+{
+    return m_makeDataTimeOrderHasBeenSet;
+}
+
+string MakePlanOpsDto::GetScheduleTimeZone() const
+{
+    return m_scheduleTimeZone;
+}
+
+void MakePlanOpsDto::SetScheduleTimeZone(const string& _scheduleTimeZone)
+{
+    m_scheduleTimeZone = _scheduleTimeZone;
+    m_scheduleTimeZoneHasBeenSet = true;
+}
+
+bool MakePlanOpsDto::ScheduleTimeZoneHasBeenSet() const
+{
+    return m_scheduleTimeZoneHasBeenSet;
+}
+
+string MakePlanOpsDto::GetAppParam() const
+{
+    return m_appParam;
+}
+
+void MakePlanOpsDto::SetAppParam(const string& _appParam)
+{
+    m_appParam = _appParam;
+    m_appParamHasBeenSet = true;
+}
+
+bool MakePlanOpsDto::AppParamHasBeenSet() const
+{
+    return m_appParamHasBeenSet;
+}
+
+string MakePlanOpsDto::GetTimeType() const
+{
+    return m_timeType;
+}
+
+void MakePlanOpsDto::SetTimeType(const string& _timeType)
+{
+    m_timeType = _timeType;
+    m_timeTypeHasBeenSet = true;
+}
+
+bool MakePlanOpsDto::TimeTypeHasBeenSet() const
+{
+    return m_timeTypeHasBeenSet;
 }
 

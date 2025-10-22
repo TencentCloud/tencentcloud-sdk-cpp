@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -172,6 +172,27 @@ namespace TencentCloud
                      */
                     bool OperationHasBeenSet() const;
 
+                    /**
+                     * 获取StoreFile数量
+                     * @return StoreFileNum StoreFile数量
+                     * 
+                     */
+                    double GetStoreFileNum() const;
+
+                    /**
+                     * 设置StoreFile数量
+                     * @param _storeFileNum StoreFile数量
+                     * 
+                     */
+                    void SetStoreFileNum(const double& _storeFileNum);
+
+                    /**
+                     * 判断参数 StoreFileNum 是否已赋值
+                     * @return StoreFileNum 是否已赋值
+                     * 
+                     */
+                    bool StoreFileNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -209,6 +230,12 @@ namespace TencentCloud
                      */
                     std::string m_operation;
                     bool m_operationHasBeenSet;
+
+                    /**
+                     * StoreFile数量
+                     */
+                    double m_storeFileNum;
+                    bool m_storeFileNumHasBeenSet;
 
                 };
             }

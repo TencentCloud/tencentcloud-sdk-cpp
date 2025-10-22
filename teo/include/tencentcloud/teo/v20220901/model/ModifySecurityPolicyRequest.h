@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/teo/v20220901/model/SecurityConfig.h>
+#include <tencentcloud/teo/v20220901/model/SecurityPolicy.h>
 
 
 namespace TencentCloud
@@ -44,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取站点Id。
-                     * @return ZoneId 站点Id。
+                     * 获取站点 ID。
+                     * @return ZoneId 站点 ID。
                      * 
                      */
                     std::string GetZoneId() const;
 
                     /**
-                     * 设置站点Id。
-                     * @param _zoneId 站点Id。
+                     * 设置站点 ID。
+                     * @param _zoneId 站点 ID。
                      * 
                      */
                     void SetZoneId(const std::string& _zoneId);
@@ -65,15 +66,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取安全配置。
-                     * @return SecurityConfig 安全配置。
+                     * 获取安全策略配置。<li>当 SecurityPolicy 参数中的 ExceptionRules 被设置时，SecurityConfig 参数中的 ExceptConfig 将被忽略；</li><li>当 SecurityPolicy 参数中的 CustomRules 被设置时，SecurityConfig 参数中的 AclConfig、 IpTableConfig 将被忽略；</li><li>当 SecurityPolicy 参数中的 HttpDDoSProtection 和 RateLimitingRules 被设置时，SecurityConfig 参数中的 RateLimitConfig 将被忽略；</li><li>当 SecurityPolicy 参数中的 ManagedRule 被设置时，SecurityConfig 参数中的 WafConfig 将被忽略；</li><li>对于例外规则、自定义规则、速率限制以及托管规则策略配置建议使用 SecurityPolicy 参数进行设置。</li>
+                     * @return SecurityConfig 安全策略配置。<li>当 SecurityPolicy 参数中的 ExceptionRules 被设置时，SecurityConfig 参数中的 ExceptConfig 将被忽略；</li><li>当 SecurityPolicy 参数中的 CustomRules 被设置时，SecurityConfig 参数中的 AclConfig、 IpTableConfig 将被忽略；</li><li>当 SecurityPolicy 参数中的 HttpDDoSProtection 和 RateLimitingRules 被设置时，SecurityConfig 参数中的 RateLimitConfig 将被忽略；</li><li>当 SecurityPolicy 参数中的 ManagedRule 被设置时，SecurityConfig 参数中的 WafConfig 将被忽略；</li><li>对于例外规则、自定义规则、速率限制以及托管规则策略配置建议使用 SecurityPolicy 参数进行设置。</li>
                      * 
                      */
                     SecurityConfig GetSecurityConfig() const;
 
                     /**
-                     * 设置安全配置。
-                     * @param _securityConfig 安全配置。
+                     * 设置安全策略配置。<li>当 SecurityPolicy 参数中的 ExceptionRules 被设置时，SecurityConfig 参数中的 ExceptConfig 将被忽略；</li><li>当 SecurityPolicy 参数中的 CustomRules 被设置时，SecurityConfig 参数中的 AclConfig、 IpTableConfig 将被忽略；</li><li>当 SecurityPolicy 参数中的 HttpDDoSProtection 和 RateLimitingRules 被设置时，SecurityConfig 参数中的 RateLimitConfig 将被忽略；</li><li>当 SecurityPolicy 参数中的 ManagedRule 被设置时，SecurityConfig 参数中的 WafConfig 将被忽略；</li><li>对于例外规则、自定义规则、速率限制以及托管规则策略配置建议使用 SecurityPolicy 参数进行设置。</li>
+                     * @param _securityConfig 安全策略配置。<li>当 SecurityPolicy 参数中的 ExceptionRules 被设置时，SecurityConfig 参数中的 ExceptConfig 将被忽略；</li><li>当 SecurityPolicy 参数中的 CustomRules 被设置时，SecurityConfig 参数中的 AclConfig、 IpTableConfig 将被忽略；</li><li>当 SecurityPolicy 参数中的 HttpDDoSProtection 和 RateLimitingRules 被设置时，SecurityConfig 参数中的 RateLimitConfig 将被忽略；</li><li>当 SecurityPolicy 参数中的 ManagedRule 被设置时，SecurityConfig 参数中的 WafConfig 将被忽略；</li><li>对于例外规则、自定义规则、速率限制以及托管规则策略配置建议使用 SecurityPolicy 参数进行设置。</li>
                      * 
                      */
                     void SetSecurityConfig(const SecurityConfig& _securityConfig);
@@ -86,23 +87,36 @@ namespace TencentCloud
                     bool SecurityConfigHasBeenSet() const;
 
                     /**
-                     * 获取子域名/应用名。
+                     * 获取安全策略配置。对 Web 例外规则、防护自定义策略、速率规则和托管规则配置建议使用，支持表达式语法对安全策略进行配置。
+                     * @return SecurityPolicy 安全策略配置。对 Web 例外规则、防护自定义策略、速率规则和托管规则配置建议使用，支持表达式语法对安全策略进行配置。
+                     * 
+                     */
+                    SecurityPolicy GetSecurityPolicy() const;
 
-注意：当同时指定本参数和 TemplateId 参数时，本参数不生效。请勿同时指定本参数和 TemplateId 参数。
-                     * @return Entity 子域名/应用名。
+                    /**
+                     * 设置安全策略配置。对 Web 例外规则、防护自定义策略、速率规则和托管规则配置建议使用，支持表达式语法对安全策略进行配置。
+                     * @param _securityPolicy 安全策略配置。对 Web 例外规则、防护自定义策略、速率规则和托管规则配置建议使用，支持表达式语法对安全策略进行配置。
+                     * 
+                     */
+                    void SetSecurityPolicy(const SecurityPolicy& _securityPolicy);
 
-注意：当同时指定本参数和 TemplateId 参数时，本参数不生效。请勿同时指定本参数和 TemplateId 参数。
+                    /**
+                     * 判断参数 SecurityPolicy 是否已赋值
+                     * @return SecurityPolicy 是否已赋值
+                     * 
+                     */
+                    bool SecurityPolicyHasBeenSet() const;
+
+                    /**
+                     * 获取安全策略类型，可使用以下参数值： <li>ZoneDefaultPolicy：用于指定站点级策略；</li><li>Template：用于指定策略模板，需要同时指定 TemplateId 参数；</li><li>Host：用于指定域名级策略（注意：当使用域名来指定域名服务策略时，仅支持已经应用了域名级策略的域名服务或者策略模板）。</li>
+                     * @return Entity 安全策略类型，可使用以下参数值： <li>ZoneDefaultPolicy：用于指定站点级策略；</li><li>Template：用于指定策略模板，需要同时指定 TemplateId 参数；</li><li>Host：用于指定域名级策略（注意：当使用域名来指定域名服务策略时，仅支持已经应用了域名级策略的域名服务或者策略模板）。</li>
                      * 
                      */
                     std::string GetEntity() const;
 
                     /**
-                     * 设置子域名/应用名。
-
-注意：当同时指定本参数和 TemplateId 参数时，本参数不生效。请勿同时指定本参数和 TemplateId 参数。
-                     * @param _entity 子域名/应用名。
-
-注意：当同时指定本参数和 TemplateId 参数时，本参数不生效。请勿同时指定本参数和 TemplateId 参数。
+                     * 设置安全策略类型，可使用以下参数值： <li>ZoneDefaultPolicy：用于指定站点级策略；</li><li>Template：用于指定策略模板，需要同时指定 TemplateId 参数；</li><li>Host：用于指定域名级策略（注意：当使用域名来指定域名服务策略时，仅支持已经应用了域名级策略的域名服务或者策略模板）。</li>
+                     * @param _entity 安全策略类型，可使用以下参数值： <li>ZoneDefaultPolicy：用于指定站点级策略；</li><li>Template：用于指定策略模板，需要同时指定 TemplateId 参数；</li><li>Host：用于指定域名级策略（注意：当使用域名来指定域名服务策略时，仅支持已经应用了域名级策略的域名服务或者策略模板）。</li>
                      * 
                      */
                     void SetEntity(const std::string& _entity);
@@ -115,31 +129,36 @@ namespace TencentCloud
                     bool EntityHasBeenSet() const;
 
                     /**
-                     * 获取指定模板策略 ID，或指定站点全局策略。
-- 如需配置策略模板，请指定策略模板 ID。
-- 如需配置站点全局策略，请使用 @ZoneLevel@Domain 参数值
+                     * 获取指定域名。当 Entity 参数值为 Host 时，使用本参数指定的域名级策略，例如：使用 www.example.com ，配置该域名的域名级策略。
+                     * @return Host 指定域名。当 Entity 参数值为 Host 时，使用本参数指定的域名级策略，例如：使用 www.example.com ，配置该域名的域名级策略。
+                     * 
+                     */
+                    std::string GetHost() const;
 
-注意：当使用本参数时，Entity 参数不生效。请勿同时使用本参数和 Entity 参数。
-                     * @return TemplateId 指定模板策略 ID，或指定站点全局策略。
-- 如需配置策略模板，请指定策略模板 ID。
-- 如需配置站点全局策略，请使用 @ZoneLevel@Domain 参数值
+                    /**
+                     * 设置指定域名。当 Entity 参数值为 Host 时，使用本参数指定的域名级策略，例如：使用 www.example.com ，配置该域名的域名级策略。
+                     * @param _host 指定域名。当 Entity 参数值为 Host 时，使用本参数指定的域名级策略，例如：使用 www.example.com ，配置该域名的域名级策略。
+                     * 
+                     */
+                    void SetHost(const std::string& _host);
 
-注意：当使用本参数时，Entity 参数不生效。请勿同时使用本参数和 Entity 参数。
+                    /**
+                     * 判断参数 Host 是否已赋值
+                     * @return Host 是否已赋值
+                     * 
+                     */
+                    bool HostHasBeenSet() const;
+
+                    /**
+                     * 获取指定策略模板 ID。当 Entity 参数值为 Template 时，使用本参数指定策略模板的 ID。
+                     * @return TemplateId 指定策略模板 ID。当 Entity 参数值为 Template 时，使用本参数指定策略模板的 ID。
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置指定模板策略 ID，或指定站点全局策略。
-- 如需配置策略模板，请指定策略模板 ID。
-- 如需配置站点全局策略，请使用 @ZoneLevel@Domain 参数值
-
-注意：当使用本参数时，Entity 参数不生效。请勿同时使用本参数和 Entity 参数。
-                     * @param _templateId 指定模板策略 ID，或指定站点全局策略。
-- 如需配置策略模板，请指定策略模板 ID。
-- 如需配置站点全局策略，请使用 @ZoneLevel@Domain 参数值
-
-注意：当使用本参数时，Entity 参数不生效。请勿同时使用本参数和 Entity 参数。
+                     * 设置指定策略模板 ID。当 Entity 参数值为 Template 时，使用本参数指定策略模板的 ID。
+                     * @param _templateId 指定策略模板 ID。当 Entity 参数值为 Template 时，使用本参数指定策略模板的 ID。
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -154,31 +173,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 站点Id。
+                     * 站点 ID。
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 安全配置。
+                     * 安全策略配置。<li>当 SecurityPolicy 参数中的 ExceptionRules 被设置时，SecurityConfig 参数中的 ExceptConfig 将被忽略；</li><li>当 SecurityPolicy 参数中的 CustomRules 被设置时，SecurityConfig 参数中的 AclConfig、 IpTableConfig 将被忽略；</li><li>当 SecurityPolicy 参数中的 HttpDDoSProtection 和 RateLimitingRules 被设置时，SecurityConfig 参数中的 RateLimitConfig 将被忽略；</li><li>当 SecurityPolicy 参数中的 ManagedRule 被设置时，SecurityConfig 参数中的 WafConfig 将被忽略；</li><li>对于例外规则、自定义规则、速率限制以及托管规则策略配置建议使用 SecurityPolicy 参数进行设置。</li>
                      */
                     SecurityConfig m_securityConfig;
                     bool m_securityConfigHasBeenSet;
 
                     /**
-                     * 子域名/应用名。
+                     * 安全策略配置。对 Web 例外规则、防护自定义策略、速率规则和托管规则配置建议使用，支持表达式语法对安全策略进行配置。
+                     */
+                    SecurityPolicy m_securityPolicy;
+                    bool m_securityPolicyHasBeenSet;
 
-注意：当同时指定本参数和 TemplateId 参数时，本参数不生效。请勿同时指定本参数和 TemplateId 参数。
+                    /**
+                     * 安全策略类型，可使用以下参数值： <li>ZoneDefaultPolicy：用于指定站点级策略；</li><li>Template：用于指定策略模板，需要同时指定 TemplateId 参数；</li><li>Host：用于指定域名级策略（注意：当使用域名来指定域名服务策略时，仅支持已经应用了域名级策略的域名服务或者策略模板）。</li>
                      */
                     std::string m_entity;
                     bool m_entityHasBeenSet;
 
                     /**
-                     * 指定模板策略 ID，或指定站点全局策略。
-- 如需配置策略模板，请指定策略模板 ID。
-- 如需配置站点全局策略，请使用 @ZoneLevel@Domain 参数值
+                     * 指定域名。当 Entity 参数值为 Host 时，使用本参数指定的域名级策略，例如：使用 www.example.com ，配置该域名的域名级策略。
+                     */
+                    std::string m_host;
+                    bool m_hostHasBeenSet;
 
-注意：当使用本参数时，Entity 参数不生效。请勿同时使用本参数和 Entity 参数。
+                    /**
+                     * 指定策略模板 ID。当 Entity 参数值为 Template 时，使用本参数指定策略模板的 ID。
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;

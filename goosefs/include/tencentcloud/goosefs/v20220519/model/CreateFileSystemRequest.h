@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -233,6 +233,27 @@ namespace TencentCloud
                      */
                     bool SecurityGroupIdHasBeenSet() const;
 
+                    /**
+                     * 获取集群ssh通信端口，默认是22
+                     * @return ClusterPort 集群ssh通信端口，默认是22
+                     * 
+                     */
+                    uint64_t GetClusterPort() const;
+
+                    /**
+                     * 设置集群ssh通信端口，默认是22
+                     * @param _clusterPort 集群ssh通信端口，默认是22
+                     * 
+                     */
+                    void SetClusterPort(const uint64_t& _clusterPort);
+
+                    /**
+                     * 判断参数 ClusterPort 是否已赋值
+                     * @return ClusterPort 是否已赋值
+                     * 
+                     */
+                    bool ClusterPortHasBeenSet() const;
+
                 private:
 
                     /**
@@ -288,6 +309,12 @@ namespace TencentCloud
                      */
                     std::string m_securityGroupId;
                     bool m_securityGroupIdHasBeenSet;
+
+                    /**
+                     * 集群ssh通信端口，默认是22
+                     */
+                    uint64_t m_clusterPort;
+                    bool m_clusterPortHasBeenSet;
 
                 };
             }

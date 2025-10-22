@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,6 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
-#include <tencentcloud/cfw/v20190904/model/AddAcRuleRequest.h>
-#include <tencentcloud/cfw/v20190904/model/AddAcRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/AddAclRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/AddAclRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/AddEnterpriseSecurityGroupRulesRequest.h>
@@ -51,8 +49,6 @@
 #include <tencentcloud/cfw/v20190904/model/CreateChooseVpcsResponse.h>
 #include <tencentcloud/cfw/v20190904/model/CreateDatabaseWhiteListRulesRequest.h>
 #include <tencentcloud/cfw/v20190904/model/CreateDatabaseWhiteListRulesResponse.h>
-#include <tencentcloud/cfw/v20190904/model/CreateIdsWhiteRuleRequest.h>
-#include <tencentcloud/cfw/v20190904/model/CreateIdsWhiteRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/CreateNatFwInstanceRequest.h>
 #include <tencentcloud/cfw/v20190904/model/CreateNatFwInstanceResponse.h>
 #include <tencentcloud/cfw/v20190904/model/CreateNatFwInstanceWithDomainRequest.h>
@@ -71,8 +67,6 @@
 #include <tencentcloud/cfw/v20190904/model/DeleteBlockIgnoreRuleListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteBlockIgnoreRuleNewRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteBlockIgnoreRuleNewResponse.h>
-#include <tencentcloud/cfw/v20190904/model/DeleteIdsWhiteRuleRequest.h>
-#include <tencentcloud/cfw/v20190904/model/DeleteIdsWhiteRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteNatFwInstanceRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteNatFwInstanceResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteRemoteAccessDomainRequest.h>
@@ -101,6 +95,8 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeBlockStaticListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeCfwEipsRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeCfwEipsResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeCfwInsStatusRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeCfwInsStatusResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeDefenseSwitchRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeDefenseSwitchResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeEnterpriseSGRuleProgressRequest.h>
@@ -119,8 +115,8 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeGuideScanInfoResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeIPStatusListRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeIPStatusListResponse.h>
-#include <tencentcloud/cfw/v20190904/model/DescribeIdsWhiteRuleRequest.h>
-#include <tencentcloud/cfw/v20190904/model/DescribeIdsWhiteRuleResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeLogStorageStatisticRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeLogStorageStatisticResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeLogsRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeLogsResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatAcRuleRequest.h>
@@ -173,8 +169,6 @@
 #include <tencentcloud/cfw/v20190904/model/ModifyAllPublicIPSwitchStatusResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyAllRuleStatusRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyAllRuleStatusResponse.h>
-#include <tencentcloud/cfw/v20190904/model/ModifyAllVPCSwitchStatusRequest.h>
-#include <tencentcloud/cfw/v20190904/model/ModifyAllVPCSwitchStatusResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyAssetScanRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyAssetScanResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyAssetSyncRequest.h>
@@ -243,6 +237,8 @@
 #include <tencentcloud/cfw/v20190904/model/RemoveNatAcRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/RemoveVpcAcRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/RemoveVpcAcRuleResponse.h>
+#include <tencentcloud/cfw/v20190904/model/SearchLogRequest.h>
+#include <tencentcloud/cfw/v20190904/model/SearchLogResponse.h>
 #include <tencentcloud/cfw/v20190904/model/SetNatFwDnatRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/SetNatFwDnatRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/SetNatFwEipRequest.h>
@@ -265,9 +261,6 @@ namespace TencentCloud
                 CfwClient(const Credential &credential, const std::string &region);
                 CfwClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Core::Error, Model::AddAcRuleResponse> AddAcRuleOutcome;
-                typedef std::future<AddAcRuleOutcome> AddAcRuleOutcomeCallable;
-                typedef std::function<void(const CfwClient*, const Model::AddAcRuleRequest&, AddAcRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddAcRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddAclRuleResponse> AddAclRuleOutcome;
                 typedef std::future<AddAclRuleOutcome> AddAclRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::AddAclRuleRequest&, AddAclRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddAclRuleAsyncHandler;
@@ -307,9 +300,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDatabaseWhiteListRulesResponse> CreateDatabaseWhiteListRulesOutcome;
                 typedef std::future<CreateDatabaseWhiteListRulesOutcome> CreateDatabaseWhiteListRulesOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::CreateDatabaseWhiteListRulesRequest&, CreateDatabaseWhiteListRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDatabaseWhiteListRulesAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateIdsWhiteRuleResponse> CreateIdsWhiteRuleOutcome;
-                typedef std::future<CreateIdsWhiteRuleOutcome> CreateIdsWhiteRuleOutcomeCallable;
-                typedef std::function<void(const CfwClient*, const Model::CreateIdsWhiteRuleRequest&, CreateIdsWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIdsWhiteRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateNatFwInstanceResponse> CreateNatFwInstanceOutcome;
                 typedef std::future<CreateNatFwInstanceOutcome> CreateNatFwInstanceOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::CreateNatFwInstanceRequest&, CreateNatFwInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNatFwInstanceAsyncHandler;
@@ -337,9 +327,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteBlockIgnoreRuleNewResponse> DeleteBlockIgnoreRuleNewOutcome;
                 typedef std::future<DeleteBlockIgnoreRuleNewOutcome> DeleteBlockIgnoreRuleNewOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DeleteBlockIgnoreRuleNewRequest&, DeleteBlockIgnoreRuleNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBlockIgnoreRuleNewAsyncHandler;
-                typedef Outcome<Core::Error, Model::DeleteIdsWhiteRuleResponse> DeleteIdsWhiteRuleOutcome;
-                typedef std::future<DeleteIdsWhiteRuleOutcome> DeleteIdsWhiteRuleOutcomeCallable;
-                typedef std::function<void(const CfwClient*, const Model::DeleteIdsWhiteRuleRequest&, DeleteIdsWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIdsWhiteRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteNatFwInstanceResponse> DeleteNatFwInstanceOutcome;
                 typedef std::future<DeleteNatFwInstanceOutcome> DeleteNatFwInstanceOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DeleteNatFwInstanceRequest&, DeleteNatFwInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNatFwInstanceAsyncHandler;
@@ -382,6 +369,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCfwEipsResponse> DescribeCfwEipsOutcome;
                 typedef std::future<DescribeCfwEipsOutcome> DescribeCfwEipsOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeCfwEipsRequest&, DescribeCfwEipsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCfwEipsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCfwInsStatusResponse> DescribeCfwInsStatusOutcome;
+                typedef std::future<DescribeCfwInsStatusOutcome> DescribeCfwInsStatusOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeCfwInsStatusRequest&, DescribeCfwInsStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCfwInsStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDefenseSwitchResponse> DescribeDefenseSwitchOutcome;
                 typedef std::future<DescribeDefenseSwitchOutcome> DescribeDefenseSwitchOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeDefenseSwitchRequest&, DescribeDefenseSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDefenseSwitchAsyncHandler;
@@ -409,9 +399,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIPStatusListResponse> DescribeIPStatusListOutcome;
                 typedef std::future<DescribeIPStatusListOutcome> DescribeIPStatusListOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeIPStatusListRequest&, DescribeIPStatusListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIPStatusListAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeIdsWhiteRuleResponse> DescribeIdsWhiteRuleOutcome;
-                typedef std::future<DescribeIdsWhiteRuleOutcome> DescribeIdsWhiteRuleOutcomeCallable;
-                typedef std::function<void(const CfwClient*, const Model::DescribeIdsWhiteRuleRequest&, DescribeIdsWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIdsWhiteRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLogStorageStatisticResponse> DescribeLogStorageStatisticOutcome;
+                typedef std::future<DescribeLogStorageStatisticOutcome> DescribeLogStorageStatisticOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeLogStorageStatisticRequest&, DescribeLogStorageStatisticOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogStorageStatisticAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLogsResponse> DescribeLogsOutcome;
                 typedef std::future<DescribeLogsOutcome> DescribeLogsOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeLogsRequest&, DescribeLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogsAsyncHandler;
@@ -490,9 +480,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAllRuleStatusResponse> ModifyAllRuleStatusOutcome;
                 typedef std::future<ModifyAllRuleStatusOutcome> ModifyAllRuleStatusOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyAllRuleStatusRequest&, ModifyAllRuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAllRuleStatusAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyAllVPCSwitchStatusResponse> ModifyAllVPCSwitchStatusOutcome;
-                typedef std::future<ModifyAllVPCSwitchStatusOutcome> ModifyAllVPCSwitchStatusOutcomeCallable;
-                typedef std::function<void(const CfwClient*, const Model::ModifyAllVPCSwitchStatusRequest&, ModifyAllVPCSwitchStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAllVPCSwitchStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAssetScanResponse> ModifyAssetScanOutcome;
                 typedef std::future<ModifyAssetScanOutcome> ModifyAssetScanOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyAssetScanRequest&, ModifyAssetScanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAssetScanAsyncHandler;
@@ -595,6 +582,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RemoveVpcAcRuleResponse> RemoveVpcAcRuleOutcome;
                 typedef std::future<RemoveVpcAcRuleOutcome> RemoveVpcAcRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::RemoveVpcAcRuleRequest&, RemoveVpcAcRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveVpcAcRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::SearchLogResponse> SearchLogOutcome;
+                typedef std::future<SearchLogOutcome> SearchLogOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::SearchLogRequest&, SearchLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchLogAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetNatFwDnatRuleResponse> SetNatFwDnatRuleOutcome;
                 typedef std::future<SetNatFwDnatRuleOutcome> SetNatFwDnatRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::SetNatFwDnatRuleRequest&, SetNatFwDnatRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetNatFwDnatRuleAsyncHandler;
@@ -609,17 +599,6 @@ namespace TencentCloud
                 typedef std::function<void(const CfwClient*, const Model::SyncFwOperateRequest&, SyncFwOperateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SyncFwOperateAsyncHandler;
 
 
-
-                /**
-                 *接口不再使用，已有新接口AddAclRule
-
-添加互联网边界规则
-                 * @param req AddAcRuleRequest
-                 * @return AddAcRuleOutcome
-                 */
-                AddAcRuleOutcome AddAcRule(const Model::AddAcRuleRequest &request);
-                void AddAcRuleAsync(const Model::AddAcRuleRequest& request, const AddAcRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                AddAcRuleOutcomeCallable AddAcRuleCallable(const Model::AddAcRuleRequest& request);
 
                 /**
                  *添加互联网边界访问控制规则
@@ -739,15 +718,6 @@ namespace TencentCloud
                 CreateDatabaseWhiteListRulesOutcomeCallable CreateDatabaseWhiteListRulesCallable(const Model::CreateDatabaseWhiteListRulesRequest& request);
 
                 /**
-                 *创建入侵防御规则白名单接口
-                 * @param req CreateIdsWhiteRuleRequest
-                 * @return CreateIdsWhiteRuleOutcome
-                 */
-                CreateIdsWhiteRuleOutcome CreateIdsWhiteRule(const Model::CreateIdsWhiteRuleRequest &request);
-                void CreateIdsWhiteRuleAsync(const Model::CreateIdsWhiteRuleRequest& request, const CreateIdsWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateIdsWhiteRuleOutcomeCallable CreateIdsWhiteRuleCallable(const Model::CreateIdsWhiteRuleRequest& request);
-
-                /**
                  *创建NAT防火墙实例（Region参数必填）
                  * @param req CreateNatFwInstanceRequest
                  * @return CreateNatFwInstanceOutcome
@@ -827,15 +797,6 @@ namespace TencentCloud
                 DeleteBlockIgnoreRuleNewOutcome DeleteBlockIgnoreRuleNew(const Model::DeleteBlockIgnoreRuleNewRequest &request);
                 void DeleteBlockIgnoreRuleNewAsync(const Model::DeleteBlockIgnoreRuleNewRequest& request, const DeleteBlockIgnoreRuleNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteBlockIgnoreRuleNewOutcomeCallable DeleteBlockIgnoreRuleNewCallable(const Model::DeleteBlockIgnoreRuleNewRequest& request);
-
-                /**
-                 *删除入侵防御规则白名单接口
-                 * @param req DeleteIdsWhiteRuleRequest
-                 * @return DeleteIdsWhiteRuleOutcome
-                 */
-                DeleteIdsWhiteRuleOutcome DeleteIdsWhiteRule(const Model::DeleteIdsWhiteRuleRequest &request);
-                void DeleteIdsWhiteRuleAsync(const Model::DeleteIdsWhiteRuleRequest& request, const DeleteIdsWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DeleteIdsWhiteRuleOutcomeCallable DeleteIdsWhiteRuleCallable(const Model::DeleteIdsWhiteRuleRequest& request);
 
                 /**
                  *销毁防火墙实例
@@ -964,6 +925,15 @@ namespace TencentCloud
                 DescribeCfwEipsOutcomeCallable DescribeCfwEipsCallable(const Model::DescribeCfwEipsRequest& request);
 
                 /**
+                 *cfw实例运行状态查询
+                 * @param req DescribeCfwInsStatusRequest
+                 * @return DescribeCfwInsStatusOutcome
+                 */
+                DescribeCfwInsStatusOutcome DescribeCfwInsStatus(const Model::DescribeCfwInsStatusRequest &request);
+                void DescribeCfwInsStatusAsync(const Model::DescribeCfwInsStatusRequest& request, const DescribeCfwInsStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCfwInsStatusOutcomeCallable DescribeCfwInsStatusCallable(const Model::DescribeCfwInsStatusRequest& request);
+
+                /**
                  *获取入侵防御按钮列表
                  * @param req DescribeDefenseSwitchRequest
                  * @return DescribeDefenseSwitchOutcome
@@ -1045,13 +1015,13 @@ namespace TencentCloud
                 DescribeIPStatusListOutcomeCallable DescribeIPStatusListCallable(const Model::DescribeIPStatusListRequest& request);
 
                 /**
-                 *查询入侵防御规则白名单接口
-                 * @param req DescribeIdsWhiteRuleRequest
-                 * @return DescribeIdsWhiteRuleOutcome
+                 *租户日志存储统计
+                 * @param req DescribeLogStorageStatisticRequest
+                 * @return DescribeLogStorageStatisticOutcome
                  */
-                DescribeIdsWhiteRuleOutcome DescribeIdsWhiteRule(const Model::DescribeIdsWhiteRuleRequest &request);
-                void DescribeIdsWhiteRuleAsync(const Model::DescribeIdsWhiteRuleRequest& request, const DescribeIdsWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeIdsWhiteRuleOutcomeCallable DescribeIdsWhiteRuleCallable(const Model::DescribeIdsWhiteRuleRequest& request);
+                DescribeLogStorageStatisticOutcome DescribeLogStorageStatistic(const Model::DescribeLogStorageStatisticRequest &request);
+                void DescribeLogStorageStatisticAsync(const Model::DescribeLogStorageStatisticRequest& request, const DescribeLogStorageStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLogStorageStatisticOutcomeCallable DescribeLogStorageStatisticCallable(const Model::DescribeLogStorageStatisticRequest& request);
 
                 /**
                  *日志审计日志查询
@@ -1171,7 +1141,7 @@ namespace TencentCloud
                 DescribeSourceAssetOutcomeCallable DescribeSourceAssetCallable(const Model::DescribeSourceAssetRequest& request);
 
                 /**
-                 *防火墙开关列表，已废弃，请使用DescribeFwEdgeIps
+                 *防火墙开关列表，请换用DescribeFwEdgeIps
                  * @param req DescribeSwitchListsRequest
                  * @return DescribeSwitchListsOutcome
                  */
@@ -1286,17 +1256,6 @@ namespace TencentCloud
                 ModifyAllRuleStatusOutcome ModifyAllRuleStatus(const Model::ModifyAllRuleStatusRequest &request);
                 void ModifyAllRuleStatusAsync(const Model::ModifyAllRuleStatusRequest& request, const ModifyAllRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAllRuleStatusOutcomeCallable ModifyAllRuleStatusCallable(const Model::ModifyAllRuleStatusRequest& request);
-
-                /**
-                 *该接口已不再使用
-
-VPC防火墙一键开关
-                 * @param req ModifyAllVPCSwitchStatusRequest
-                 * @return ModifyAllVPCSwitchStatusOutcome
-                 */
-                ModifyAllVPCSwitchStatusOutcome ModifyAllVPCSwitchStatus(const Model::ModifyAllVPCSwitchStatusRequest &request);
-                void ModifyAllVPCSwitchStatusAsync(const Model::ModifyAllVPCSwitchStatusRequest& request, const ModifyAllVPCSwitchStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyAllVPCSwitchStatusOutcomeCallable ModifyAllVPCSwitchStatusCallable(const Model::ModifyAllVPCSwitchStatusRequest& request);
 
                 /**
                  *资产扫描
@@ -1607,6 +1566,18 @@ VPC间规则需指定EdgeId。Nat边界规则需指定地域Region与Direction�
                 RemoveVpcAcRuleOutcome RemoveVpcAcRule(const Model::RemoveVpcAcRuleRequest &request);
                 void RemoveVpcAcRuleAsync(const Model::RemoveVpcAcRuleRequest& request, const RemoveVpcAcRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RemoveVpcAcRuleOutcomeCallable RemoveVpcAcRuleCallable(const Model::RemoveVpcAcRuleRequest& request);
+
+                /**
+                 *本接口用于检索分析日志，使用该接口时请注意如下事项：
+1. 该接口除受默认接口请求频率限制外，针对单个日志主题，查询并发数不能超过15。
+2. 检索语法建议使用日志服务专用检索语法CQL，请使用SyntaxRule参数，将值设置为1，控制台默认也使用该语法规则。
+3. API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Accept-Encoding:gzip）。
+                 * @param req SearchLogRequest
+                 * @return SearchLogOutcome
+                 */
+                SearchLogOutcome SearchLog(const Model::SearchLogRequest &request);
+                void SearchLogAsync(const Model::SearchLogRequest& request, const SearchLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SearchLogOutcomeCallable SearchLogCallable(const Model::SearchLogRequest& request);
 
                 /**
                  *配置防火墙Dnat规则

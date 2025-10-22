@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,69 +49,36 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取昨日同比指标值，已弃用，不建议使用
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CompareVal 昨日同比指标值，已弃用，不建议使用
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取指标名
+                     * @return Key 指标名
                      * 
                      */
-                    std::string GetCompareVal() const;
+                    std::string GetKey() const;
 
                     /**
-                     * 设置昨日同比指标值，已弃用，不建议使用
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _compareVal 昨日同比指标值，已弃用，不建议使用
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置指标名
+                     * @param _key 指标名
                      * 
                      */
-                    void SetCompareVal(const std::string& _compareVal);
+                    void SetKey(const std::string& _key);
 
                     /**
-                     * 判断参数 CompareVal 是否已赋值
-                     * @return CompareVal 是否已赋值
+                     * 判断参数 Key 是否已赋值
+                     * @return Key 是否已赋值
                      * 
                      */
-                    bool CompareValHasBeenSet() const;
+                    bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取Compare值结果数组，推荐使用
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CompareVals Compare值结果数组，推荐使用
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::vector<APMKVItem> GetCompareVals() const;
-
-                    /**
-                     * 设置Compare值结果数组，推荐使用
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _compareVals Compare值结果数组，推荐使用
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetCompareVals(const std::vector<APMKVItem>& _compareVals);
-
-                    /**
-                     * 判断参数 CompareVals 是否已赋值
-                     * @return CompareVals 是否已赋值
-                     * 
-                     */
-                    bool CompareValsHasBeenSet() const;
-
-                    /**
-                     * 获取指标值
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Value 指标值
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取指标数值
+                     * @return Value 指标数值
                      * 
                      */
                     double GetValue() const;
 
                     /**
-                     * 设置指标值
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _value 指标值
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置指标数值
+                     * @param _value 指标数值
                      * 
                      */
                     void SetValue(const double& _value);
@@ -125,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取指标所对应的单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Unit 指标所对应的单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUnit() const;
 
                     /**
                      * 设置指标所对应的单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _unit 指标所对应的单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUnit(const std::string& _unit);
@@ -149,39 +112,43 @@ namespace TencentCloud
                     bool UnitHasBeenSet() const;
 
                     /**
-                     * 获取请求数
-                     * @return Key 请求数
-                     * 
-                     */
-                    std::string GetKey() const;
-
-                    /**
-                     * 设置请求数
-                     * @param _key 请求数
-                     * 
-                     */
-                    void SetKey(const std::string& _key);
-
-                    /**
-                     * 判断参数 Key 是否已赋值
-                     * @return Key 是否已赋值
-                     * 
-                     */
-                    bool KeyHasBeenSet() const;
-
-                    /**
-                     * 获取同环比上周期具体数值
+                     * 获取同比结果数组，推荐使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LastPeriodValue 同环比上周期具体数值
+                     * @return CompareVals 同比结果数组，推荐使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<APMKVItem> GetCompareVals() const;
+
+                    /**
+                     * 设置同比结果数组，推荐使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _compareVals 同比结果数组，推荐使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCompareVals(const std::vector<APMKVItem>& _compareVals);
+
+                    /**
+                     * 判断参数 CompareVals 是否已赋值
+                     * @return CompareVals 是否已赋值
+                     * 
+                     */
+                    bool CompareValsHasBeenSet() const;
+
+                    /**
+                     * 获取同比上一个周期的具体指标数值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LastPeriodValue 同比上一个周期的具体指标数值
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<APMKV> GetLastPeriodValue() const;
 
                     /**
-                     * 设置同环比上周期具体数值
+                     * 设置同比上一个周期的具体指标数值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _lastPeriodValue 同环比上周期具体数值
+                     * @param _lastPeriodValue 同比上一个周期的具体指标数值
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -194,48 +161,120 @@ namespace TencentCloud
                      */
                     bool LastPeriodValueHasBeenSet() const;
 
+                    /**
+                     * 获取同比指标值，已弃用，不建议使用
+                     * @return CompareVal 同比指标值，已弃用，不建议使用
+                     * 
+                     */
+                    std::string GetCompareVal() const;
+
+                    /**
+                     * 设置同比指标值，已弃用，不建议使用
+                     * @param _compareVal 同比指标值，已弃用，不建议使用
+                     * 
+                     */
+                    void SetCompareVal(const std::string& _compareVal);
+
+                    /**
+                     * 判断参数 CompareVal 是否已赋值
+                     * @return CompareVal 是否已赋值
+                     * 
+                     */
+                    bool CompareValHasBeenSet() const;
+
+                    /**
+                     * 获取指标中文名
+                     * @return NameCN 指标中文名
+                     * 
+                     */
+                    std::string GetNameCN() const;
+
+                    /**
+                     * 设置指标中文名
+                     * @param _nameCN 指标中文名
+                     * 
+                     */
+                    void SetNameCN(const std::string& _nameCN);
+
+                    /**
+                     * 判断参数 NameCN 是否已赋值
+                     * @return NameCN 是否已赋值
+                     * 
+                     */
+                    bool NameCNHasBeenSet() const;
+
+                    /**
+                     * 获取指标英文名
+                     * @return NameEN 指标英文名
+                     * 
+                     */
+                    std::string GetNameEN() const;
+
+                    /**
+                     * 设置指标英文名
+                     * @param _nameEN 指标英文名
+                     * 
+                     */
+                    void SetNameEN(const std::string& _nameEN);
+
+                    /**
+                     * 判断参数 NameEN 是否已赋值
+                     * @return NameEN 是否已赋值
+                     * 
+                     */
+                    bool NameENHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 昨日同比指标值，已弃用，不建议使用
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 指标名
                      */
-                    std::string m_compareVal;
-                    bool m_compareValHasBeenSet;
+                    std::string m_key;
+                    bool m_keyHasBeenSet;
 
                     /**
-                     * Compare值结果数组，推荐使用
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::vector<APMKVItem> m_compareVals;
-                    bool m_compareValsHasBeenSet;
-
-                    /**
-                     * 指标值
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 指标数值
                      */
                     double m_value;
                     bool m_valueHasBeenSet;
 
                     /**
                      * 指标所对应的单位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_unit;
                     bool m_unitHasBeenSet;
 
                     /**
-                     * 请求数
+                     * 同比结果数组，推荐使用
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_key;
-                    bool m_keyHasBeenSet;
+                    std::vector<APMKVItem> m_compareVals;
+                    bool m_compareValsHasBeenSet;
 
                     /**
-                     * 同环比上周期具体数值
+                     * 同比上一个周期的具体指标数值
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<APMKV> m_lastPeriodValue;
                     bool m_lastPeriodValueHasBeenSet;
+
+                    /**
+                     * 同比指标值，已弃用，不建议使用
+                     */
+                    std::string m_compareVal;
+                    bool m_compareValHasBeenSet;
+
+                    /**
+                     * 指标中文名
+                     */
+                    std::string m_nameCN;
+                    bool m_nameCNHasBeenSet;
+
+                    /**
+                     * 指标英文名
+                     */
+                    std::string m_nameEN;
+                    bool m_nameENHasBeenSet;
 
                 };
             }

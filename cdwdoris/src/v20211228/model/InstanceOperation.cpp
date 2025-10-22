@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,8 @@ InstanceOperation::InstanceOperation() :
     m_resultDescHasBeenSet(false),
     m_operateUinHasBeenSet(false),
     m_jobIdHasBeenSet(false),
-    m_operationDetailHasBeenSet(false)
+    m_operationDetailHasBeenSet(false),
+    m_computerGroupIdHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,16 @@ CoreInternalOutcome InstanceOperation::Deserialize(const rapidjson::Value &value
         m_operationDetailHasBeenSet = true;
     }
 
+    if (value.HasMember("ComputerGroupId") && !value["ComputerGroupId"].IsNull())
+    {
+        if (!value["ComputerGroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceOperation.ComputerGroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_computerGroupId = string(value["ComputerGroupId"].GetString());
+        m_computerGroupIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +254,14 @@ void InstanceOperation::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "OperationDetail";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_operationDetail.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_computerGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComputerGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_computerGroupId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -422,5 +441,21 @@ void InstanceOperation::SetOperationDetail(const string& _operationDetail)
 bool InstanceOperation::OperationDetailHasBeenSet() const
 {
     return m_operationDetailHasBeenSet;
+}
+
+string InstanceOperation::GetComputerGroupId() const
+{
+    return m_computerGroupId;
+}
+
+void InstanceOperation::SetComputerGroupId(const string& _computerGroupId)
+{
+    m_computerGroupId = _computerGroupId;
+    m_computerGroupIdHasBeenSet = true;
+}
+
+bool InstanceOperation::ComputerGroupIdHasBeenSet() const
+{
+    return m_computerGroupIdHasBeenSet;
 }
 

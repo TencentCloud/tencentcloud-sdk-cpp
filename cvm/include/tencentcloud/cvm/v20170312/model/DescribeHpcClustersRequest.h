@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cvm/v20170312/model/Filter.h>
 
 
 namespace TencentCloud
@@ -43,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取高性能计算集群ID数组。
-                     * @return HpcClusterIds 高性能计算集群ID数组。
+                     * 获取一个或多个待操作的高性能计算集群ID。集群ID信息可通过 [查询高性能集群信息](https://cloud.tencent.com/document/api/213/83220) 接口获取。每次请求高性能计算集群信息的批量上限为100，默认配合Limit传参数，不能超过Limit值，Limit默认20。
+                     * @return HpcClusterIds 一个或多个待操作的高性能计算集群ID。集群ID信息可通过 [查询高性能集群信息](https://cloud.tencent.com/document/api/213/83220) 接口获取。每次请求高性能计算集群信息的批量上限为100，默认配合Limit传参数，不能超过Limit值，Limit默认20。
                      * 
                      */
                     std::vector<std::string> GetHpcClusterIds() const;
 
                     /**
-                     * 设置高性能计算集群ID数组。
-                     * @param _hpcClusterIds 高性能计算集群ID数组。
+                     * 设置一个或多个待操作的高性能计算集群ID。集群ID信息可通过 [查询高性能集群信息](https://cloud.tencent.com/document/api/213/83220) 接口获取。每次请求高性能计算集群信息的批量上限为100，默认配合Limit传参数，不能超过Limit值，Limit默认20。
+                     * @param _hpcClusterIds 一个或多个待操作的高性能计算集群ID。集群ID信息可通过 [查询高性能集群信息](https://cloud.tencent.com/document/api/213/83220) 接口获取。每次请求高性能计算集群信息的批量上限为100，默认配合Limit传参数，不能超过Limit值，Limit默认20。
                      * 
                      */
                     void SetHpcClusterIds(const std::vector<std::string>& _hpcClusterIds);
@@ -64,15 +65,15 @@ namespace TencentCloud
                     bool HpcClusterIdsHasBeenSet() const;
 
                     /**
-                     * 获取高性能计算集群名称。
-                     * @return Name 高性能计算集群名称。
+                     * 获取高性能计算集群名称，长度限制[1-60]。
+                     * @return Name 高性能计算集群名称，长度限制[1-60]。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置高性能计算集群名称。
-                     * @param _name 高性能计算集群名称。
+                     * 设置高性能计算集群名称，长度限制[1-60]。
+                     * @param _name 高性能计算集群名称，长度限制[1-60]。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -85,15 +86,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取可用区。
-                     * @return Zone 可用区。
+                     * 获取可用区信息。可用区信息可通过 [查询可用区信息](https://cloud.tencent.com/document/api/213/15707) 接口获取。
+                     * @return Zone 可用区信息。可用区信息可通过 [查询可用区信息](https://cloud.tencent.com/document/api/213/15707) 接口获取。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置可用区。
-                     * @param _zone 可用区。
+                     * 设置可用区信息。可用区信息可通过 [查询可用区信息](https://cloud.tencent.com/document/api/213/15707) 接口获取。
+                     * @param _zone 可用区信息。可用区信息可通过 [查询可用区信息](https://cloud.tencent.com/document/api/213/15707) 接口获取。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -127,15 +128,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取本次请求量, 默认值20。
-                     * @return Limit 本次请求量, 默认值20。
+                     * 获取本次请求量, 默认值20，范围限制为[1-100]。
+                     * @return Limit 本次请求量, 默认值20，范围限制为[1-100]。
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置本次请求量, 默认值20。
-                     * @param _limit 本次请求量, 默认值20。
+                     * 设置本次请求量, 默认值20，范围限制为[1-100]。
+                     * @param _limit 本次请求量, 默认值20，范围限制为[1-100]。
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -148,15 +149,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取高性能计算集群类型。
-                     * @return HpcClusterType 高性能计算集群类型。
+                     * 获取高性能计算集群类型，当前有三个取值：分别是CDC/CHC/STANDARD，其中STANDARD是默认的标准模式。
+                     * @return HpcClusterType 高性能计算集群类型，当前有三个取值：分别是CDC/CHC/STANDARD，其中STANDARD是默认的标准模式。
                      * 
                      */
                     std::string GetHpcClusterType() const;
 
                     /**
-                     * 设置高性能计算集群类型。
-                     * @param _hpcClusterType 高性能计算集群类型。
+                     * 设置高性能计算集群类型，当前有三个取值：分别是CDC/CHC/STANDARD，其中STANDARD是默认的标准模式。
+                     * @param _hpcClusterType 高性能计算集群类型，当前有三个取值：分别是CDC/CHC/STANDARD，其中STANDARD是默认的标准模式。
                      * 
                      */
                     void SetHpcClusterType(const std::string& _hpcClusterType);
@@ -169,15 +170,15 @@ namespace TencentCloud
                     bool HpcClusterTypeHasBeenSet() const;
 
                     /**
-                     * 获取高性能计算集群对应的业务场景标识，当前只支持CDC。	
-                     * @return HpcClusterBusinessId 高性能计算集群对应的业务场景标识，当前只支持CDC。	
+                     * 获取高性能计算集群对应的业务场景标识，当前只支持CDC场景类型。	
+                     * @return HpcClusterBusinessId 高性能计算集群对应的业务场景标识，当前只支持CDC场景类型。	
                      * 
                      */
                     std::string GetHpcClusterBusinessId() const;
 
                     /**
-                     * 设置高性能计算集群对应的业务场景标识，当前只支持CDC。	
-                     * @param _hpcClusterBusinessId 高性能计算集群对应的业务场景标识，当前只支持CDC。	
+                     * 设置高性能计算集群对应的业务场景标识，当前只支持CDC场景类型。	
+                     * @param _hpcClusterBusinessId 高性能计算集群对应的业务场景标识，当前只支持CDC场景类型。	
                      * 
                      */
                     void SetHpcClusterBusinessId(const std::string& _hpcClusterBusinessId);
@@ -189,22 +190,64 @@ namespace TencentCloud
                      */
                     bool HpcClusterBusinessIdHasBeenSet() const;
 
+                    /**
+                     * 获取高性能计算集群实例类型
+                     * @return InstanceType 高性能计算集群实例类型
+                     * 
+                     */
+                    std::string GetInstanceType() const;
+
+                    /**
+                     * 设置高性能计算集群实例类型
+                     * @param _instanceType 高性能计算集群实例类型
+                     * 
+                     */
+                    void SetInstanceType(const std::string& _instanceType);
+
+                    /**
+                     * 判断参数 InstanceType 是否已赋值
+                     * @return InstanceType 是否已赋值
+                     * 
+                     */
+                    bool InstanceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<li><strong>tag-key</strong></li> <p style="padding-left: 30px;">按照【<strong>标签键</strong>】进行过滤。</p><p style="padding-left: 30px;">类型：String</p><p style="padding-left: 30px;">必选：否</p> <li><strong>tag-value</strong></li> <p style="padding-left: 30px;">按照【<strong>标签值</strong>】进行过滤。</p><p style="padding-left: 30px;">类型：String</p><p style="padding-left: 30px;">必选：否</p> <li><strong>tag:tag-key</strong></li> <p style="padding-left: 30px;">按照【<strong>标签键值对</strong>】进行过滤。tag-key使用具体的标签键进行替换。</p><p style="padding-left: 30px;">类型：String</p><p style="padding-left: 30px;">必选：否</p> 每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。
+                     * @return Filters <li><strong>tag-key</strong></li> <p style="padding-left: 30px;">按照【<strong>标签键</strong>】进行过滤。</p><p style="padding-left: 30px;">类型：String</p><p style="padding-left: 30px;">必选：否</p> <li><strong>tag-value</strong></li> <p style="padding-left: 30px;">按照【<strong>标签值</strong>】进行过滤。</p><p style="padding-left: 30px;">类型：String</p><p style="padding-left: 30px;">必选：否</p> <li><strong>tag:tag-key</strong></li> <p style="padding-left: 30px;">按照【<strong>标签键值对</strong>】进行过滤。tag-key使用具体的标签键进行替换。</p><p style="padding-left: 30px;">类型：String</p><p style="padding-left: 30px;">必选：否</p> 每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。
+                     * 
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置<li><strong>tag-key</strong></li> <p style="padding-left: 30px;">按照【<strong>标签键</strong>】进行过滤。</p><p style="padding-left: 30px;">类型：String</p><p style="padding-left: 30px;">必选：否</p> <li><strong>tag-value</strong></li> <p style="padding-left: 30px;">按照【<strong>标签值</strong>】进行过滤。</p><p style="padding-left: 30px;">类型：String</p><p style="padding-left: 30px;">必选：否</p> <li><strong>tag:tag-key</strong></li> <p style="padding-left: 30px;">按照【<strong>标签键值对</strong>】进行过滤。tag-key使用具体的标签键进行替换。</p><p style="padding-left: 30px;">类型：String</p><p style="padding-left: 30px;">必选：否</p> 每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。
+                     * @param _filters <li><strong>tag-key</strong></li> <p style="padding-left: 30px;">按照【<strong>标签键</strong>】进行过滤。</p><p style="padding-left: 30px;">类型：String</p><p style="padding-left: 30px;">必选：否</p> <li><strong>tag-value</strong></li> <p style="padding-left: 30px;">按照【<strong>标签值</strong>】进行过滤。</p><p style="padding-left: 30px;">类型：String</p><p style="padding-left: 30px;">必选：否</p> <li><strong>tag:tag-key</strong></li> <p style="padding-left: 30px;">按照【<strong>标签键值对</strong>】进行过滤。tag-key使用具体的标签键进行替换。</p><p style="padding-left: 30px;">类型：String</p><p style="padding-left: 30px;">必选：否</p> 每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。
+                     * 
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 高性能计算集群ID数组。
+                     * 一个或多个待操作的高性能计算集群ID。集群ID信息可通过 [查询高性能集群信息](https://cloud.tencent.com/document/api/213/83220) 接口获取。每次请求高性能计算集群信息的批量上限为100，默认配合Limit传参数，不能超过Limit值，Limit默认20。
                      */
                     std::vector<std::string> m_hpcClusterIds;
                     bool m_hpcClusterIdsHasBeenSet;
 
                     /**
-                     * 高性能计算集群名称。
+                     * 高性能计算集群名称，长度限制[1-60]。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 可用区。
+                     * 可用区信息。可用区信息可通过 [查询可用区信息](https://cloud.tencent.com/document/api/213/15707) 接口获取。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
@@ -216,22 +259,34 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 本次请求量, 默认值20。
+                     * 本次请求量, 默认值20，范围限制为[1-100]。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 高性能计算集群类型。
+                     * 高性能计算集群类型，当前有三个取值：分别是CDC/CHC/STANDARD，其中STANDARD是默认的标准模式。
                      */
                     std::string m_hpcClusterType;
                     bool m_hpcClusterTypeHasBeenSet;
 
                     /**
-                     * 高性能计算集群对应的业务场景标识，当前只支持CDC。	
+                     * 高性能计算集群对应的业务场景标识，当前只支持CDC场景类型。	
                      */
                     std::string m_hpcClusterBusinessId;
                     bool m_hpcClusterBusinessIdHasBeenSet;
+
+                    /**
+                     * 高性能计算集群实例类型
+                     */
+                    std::string m_instanceType;
+                    bool m_instanceTypeHasBeenSet;
+
+                    /**
+                     * <li><strong>tag-key</strong></li> <p style="padding-left: 30px;">按照【<strong>标签键</strong>】进行过滤。</p><p style="padding-left: 30px;">类型：String</p><p style="padding-left: 30px;">必选：否</p> <li><strong>tag-value</strong></li> <p style="padding-left: 30px;">按照【<strong>标签值</strong>】进行过滤。</p><p style="padding-left: 30px;">类型：String</p><p style="padding-left: 30px;">必选：否</p> <li><strong>tag:tag-key</strong></li> <p style="padding-left: 30px;">按照【<strong>标签键值对</strong>】进行过滤。tag-key使用具体的标签键进行替换。</p><p style="padding-left: 30px;">类型：String</p><p style="padding-left: 30px;">必选：否</p> 每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                 };
             }

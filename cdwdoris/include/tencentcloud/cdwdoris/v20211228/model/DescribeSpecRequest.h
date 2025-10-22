@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool SpecNameHasBeenSet() const;
 
+                    /**
+                     * 获取是否存算分离
+                     * @return IsSSC 是否存算分离
+                     * 
+                     */
+                    bool GetIsSSC() const;
+
+                    /**
+                     * 设置是否存算分离
+                     * @param _isSSC 是否存算分离
+                     * 
+                     */
+                    void SetIsSSC(const bool& _isSSC);
+
+                    /**
+                     * 判断参数 IsSSC 是否已赋值
+                     * @return IsSSC 是否已赋值
+                     * 
+                     */
+                    bool IsSSCHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     std::string m_specName;
                     bool m_specNameHasBeenSet;
+
+                    /**
+                     * 是否存算分离
+                     */
+                    bool m_isSSC;
+                    bool m_isSSCHasBeenSet;
 
                 };
             }

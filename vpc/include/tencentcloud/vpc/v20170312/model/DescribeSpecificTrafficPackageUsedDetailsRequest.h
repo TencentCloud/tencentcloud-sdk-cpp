@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取共享流量包唯一ID
-                     * @return TrafficPackageId 共享流量包唯一ID
+                     * 获取共享流量包唯一ID。可以使用[DescribeTrafficPackages](https://cloud.tencent.com/document/product/215/80090?locationSource=from%3Ddoc-search%26scope%3Dcurrent%26keyword%3D%E6%B5%81%E9%87%8F%E5%8C%85)接口获取TrafficPackageId。
+                     * @return TrafficPackageId 共享流量包唯一ID。可以使用[DescribeTrafficPackages](https://cloud.tencent.com/document/product/215/80090?locationSource=from%3Ddoc-search%26scope%3Dcurrent%26keyword%3D%E6%B5%81%E9%87%8F%E5%8C%85)接口获取TrafficPackageId。
                      * 
                      */
                     std::string GetTrafficPackageId() const;
 
                     /**
-                     * 设置共享流量包唯一ID
-                     * @param _trafficPackageId 共享流量包唯一ID
+                     * 设置共享流量包唯一ID。可以使用[DescribeTrafficPackages](https://cloud.tencent.com/document/product/215/80090?locationSource=from%3Ddoc-search%26scope%3Dcurrent%26keyword%3D%E6%B5%81%E9%87%8F%E5%8C%85)接口获取TrafficPackageId。
+                     * @param _trafficPackageId 共享流量包唯一ID。可以使用[DescribeTrafficPackages](https://cloud.tencent.com/document/product/215/80090?locationSource=from%3Ddoc-search%26scope%3Dcurrent%26keyword%3D%E6%B5%81%E9%87%8F%E5%8C%85)接口获取TrafficPackageId。
                      * 
                      */
                     void SetTrafficPackageId(const std::string& _trafficPackageId);
@@ -65,15 +65,27 @@ namespace TencentCloud
                     bool TrafficPackageIdHasBeenSet() const;
 
                     /**
-                     * 获取每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。详细的过滤条件如下：<li> resource-id - String - 是否必填：否 - （过滤条件）按照抵扣流量资源的唯一 ID 过滤。</li><li> resource-type - String - 是否必填：否 - （过滤条件）按照资源类型过滤，资源类型包括 CVM 和 EIP </li>
-                     * @return Filters 每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。详细的过滤条件如下：<li> resource-id - String - 是否必填：否 - （过滤条件）按照抵扣流量资源的唯一 ID 过滤。</li><li> resource-type - String - 是否必填：否 - （过滤条件）按照资源类型过滤，资源类型包括 CVM 和 EIP </li>
+                     * 获取每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。详细的过滤条件如下：<ul style="margin:0"><li> resource-type - String - 是否必填：否 - （过滤条件）按照资源类型过滤，资源类型包括 EIP、BWP、LB。 </li>
+<li> resource-id - String - 是否必填：否 - （过滤条件）按照抵扣流量资源的唯一 ID 过滤。以下补充资源ID获取方式：<ul><li>EIP：可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取资源ID。</li>
+<li>BWP：可以使用[DescribeBandwidthPackages](https://cloud.tencent.com/document/product/215/19209)接口获取资源ID。</li>
+<li>LB：可以使用[DescribeLoadBalancers](https://cloud.tencent.com/document/product/214/30685)接口获取资源ID。</li></ul></li></ul>
+                     * @return Filters 每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。详细的过滤条件如下：<ul style="margin:0"><li> resource-type - String - 是否必填：否 - （过滤条件）按照资源类型过滤，资源类型包括 EIP、BWP、LB。 </li>
+<li> resource-id - String - 是否必填：否 - （过滤条件）按照抵扣流量资源的唯一 ID 过滤。以下补充资源ID获取方式：<ul><li>EIP：可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取资源ID。</li>
+<li>BWP：可以使用[DescribeBandwidthPackages](https://cloud.tencent.com/document/product/215/19209)接口获取资源ID。</li>
+<li>LB：可以使用[DescribeLoadBalancers](https://cloud.tencent.com/document/product/214/30685)接口获取资源ID。</li></ul></li></ul>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。详细的过滤条件如下：<li> resource-id - String - 是否必填：否 - （过滤条件）按照抵扣流量资源的唯一 ID 过滤。</li><li> resource-type - String - 是否必填：否 - （过滤条件）按照资源类型过滤，资源类型包括 CVM 和 EIP </li>
-                     * @param _filters 每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。详细的过滤条件如下：<li> resource-id - String - 是否必填：否 - （过滤条件）按照抵扣流量资源的唯一 ID 过滤。</li><li> resource-type - String - 是否必填：否 - （过滤条件）按照资源类型过滤，资源类型包括 CVM 和 EIP </li>
+                     * 设置每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。详细的过滤条件如下：<ul style="margin:0"><li> resource-type - String - 是否必填：否 - （过滤条件）按照资源类型过滤，资源类型包括 EIP、BWP、LB。 </li>
+<li> resource-id - String - 是否必填：否 - （过滤条件）按照抵扣流量资源的唯一 ID 过滤。以下补充资源ID获取方式：<ul><li>EIP：可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取资源ID。</li>
+<li>BWP：可以使用[DescribeBandwidthPackages](https://cloud.tencent.com/document/product/215/19209)接口获取资源ID。</li>
+<li>LB：可以使用[DescribeLoadBalancers](https://cloud.tencent.com/document/product/214/30685)接口获取资源ID。</li></ul></li></ul>
+                     * @param _filters 每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。详细的过滤条件如下：<ul style="margin:0"><li> resource-type - String - 是否必填：否 - （过滤条件）按照资源类型过滤，资源类型包括 EIP、BWP、LB。 </li>
+<li> resource-id - String - 是否必填：否 - （过滤条件）按照抵扣流量资源的唯一 ID 过滤。以下补充资源ID获取方式：<ul><li>EIP：可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取资源ID。</li>
+<li>BWP：可以使用[DescribeBandwidthPackages](https://cloud.tencent.com/document/product/215/19209)接口获取资源ID。</li>
+<li>LB：可以使用[DescribeLoadBalancers](https://cloud.tencent.com/document/product/214/30685)接口获取资源ID。</li></ul></li></ul>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -128,15 +140,19 @@ namespace TencentCloud
                     bool OrderTypeHasBeenSet() const;
 
                     /**
-                     * 获取开始时间。不传默认为当前时间往前推30天
-                     * @return StartTime 开始时间。不传默认为当前时间往前推30天
+                     * 获取开始时间。待查询的共享流量包用量开始时间。不传默认为当前时间往前推30天。
+时间格式：YYYY-MM-DD hh:mm:ss
+                     * @return StartTime 开始时间。待查询的共享流量包用量开始时间。不传默认为当前时间往前推30天。
+时间格式：YYYY-MM-DD hh:mm:ss
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间。不传默认为当前时间往前推30天
-                     * @param _startTime 开始时间。不传默认为当前时间往前推30天
+                     * 设置开始时间。待查询的共享流量包用量开始时间。不传默认为当前时间往前推30天。
+时间格式：YYYY-MM-DD hh:mm:ss
+                     * @param _startTime 开始时间。待查询的共享流量包用量开始时间。不传默认为当前时间往前推30天。
+时间格式：YYYY-MM-DD hh:mm:ss
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -149,15 +165,19 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间。不传默认为当前时间
-                     * @return EndTime 结束时间。不传默认为当前时间
+                     * 获取结束时间。待查询的共享流量包用量结束时间。不传默认为当前时间。
+时间格式：YYYY-MM-DD hh:mm:ss
+                     * @return EndTime 结束时间。待查询的共享流量包用量结束时间。不传默认为当前时间。
+时间格式：YYYY-MM-DD hh:mm:ss
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间。不传默认为当前时间
-                     * @param _endTime 结束时间。不传默认为当前时间
+                     * 设置结束时间。待查询的共享流量包用量结束时间。不传默认为当前时间。
+时间格式：YYYY-MM-DD hh:mm:ss
+                     * @param _endTime 结束时间。待查询的共享流量包用量结束时间。不传默认为当前时间。
+时间格式：YYYY-MM-DD hh:mm:ss
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -214,13 +234,16 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 共享流量包唯一ID
+                     * 共享流量包唯一ID。可以使用[DescribeTrafficPackages](https://cloud.tencent.com/document/product/215/80090?locationSource=from%3Ddoc-search%26scope%3Dcurrent%26keyword%3D%E6%B5%81%E9%87%8F%E5%8C%85)接口获取TrafficPackageId。
                      */
                     std::string m_trafficPackageId;
                     bool m_trafficPackageIdHasBeenSet;
 
                     /**
-                     * 每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。详细的过滤条件如下：<li> resource-id - String - 是否必填：否 - （过滤条件）按照抵扣流量资源的唯一 ID 过滤。</li><li> resource-type - String - 是否必填：否 - （过滤条件）按照资源类型过滤，资源类型包括 CVM 和 EIP </li>
+                     * 每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。详细的过滤条件如下：<ul style="margin:0"><li> resource-type - String - 是否必填：否 - （过滤条件）按照资源类型过滤，资源类型包括 EIP、BWP、LB。 </li>
+<li> resource-id - String - 是否必填：否 - （过滤条件）按照抵扣流量资源的唯一 ID 过滤。以下补充资源ID获取方式：<ul><li>EIP：可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取资源ID。</li>
+<li>BWP：可以使用[DescribeBandwidthPackages](https://cloud.tencent.com/document/product/215/19209)接口获取资源ID。</li>
+<li>LB：可以使用[DescribeLoadBalancers](https://cloud.tencent.com/document/product/214/30685)接口获取资源ID。</li></ul></li></ul>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
@@ -238,13 +261,15 @@ namespace TencentCloud
                     bool m_orderTypeHasBeenSet;
 
                     /**
-                     * 开始时间。不传默认为当前时间往前推30天
+                     * 开始时间。待查询的共享流量包用量开始时间。不传默认为当前时间往前推30天。
+时间格式：YYYY-MM-DD hh:mm:ss
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间。不传默认为当前时间
+                     * 结束时间。待查询的共享流量包用量结束时间。不传默认为当前时间。
+时间格式：YYYY-MM-DD hh:mm:ss
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

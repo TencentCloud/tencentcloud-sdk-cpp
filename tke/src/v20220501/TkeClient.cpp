@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -119,6 +119,49 @@ TkeClient::CreateNodePoolOutcomeCallable TkeClient::CreateNodePoolCallable(const
         [this, request]()
         {
             return this->CreateNodePool(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DeleteClusterMachinesOutcome TkeClient::DeleteClusterMachines(const DeleteClusterMachinesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteClusterMachines");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteClusterMachinesResponse rsp = DeleteClusterMachinesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteClusterMachinesOutcome(rsp);
+        else
+            return DeleteClusterMachinesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteClusterMachinesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DeleteClusterMachinesAsync(const DeleteClusterMachinesRequest& request, const DeleteClusterMachinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteClusterMachines(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DeleteClusterMachinesOutcomeCallable TkeClient::DeleteClusterMachinesCallable(const DeleteClusterMachinesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteClusterMachinesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteClusterMachines(request);
         }
     );
 
@@ -506,6 +549,178 @@ TkeClient::ModifyNodePoolOutcomeCallable TkeClient::ModifyNodePoolCallable(const
         [this, request]()
         {
             return this->ModifyNodePool(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::RebootMachinesOutcome TkeClient::RebootMachines(const RebootMachinesRequest &request)
+{
+    auto outcome = MakeRequest(request, "RebootMachines");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RebootMachinesResponse rsp = RebootMachinesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RebootMachinesOutcome(rsp);
+        else
+            return RebootMachinesOutcome(o.GetError());
+    }
+    else
+    {
+        return RebootMachinesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::RebootMachinesAsync(const RebootMachinesRequest& request, const RebootMachinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RebootMachines(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::RebootMachinesOutcomeCallable TkeClient::RebootMachinesCallable(const RebootMachinesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RebootMachinesOutcome()>>(
+        [this, request]()
+        {
+            return this->RebootMachines(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::SetMachineLoginOutcome TkeClient::SetMachineLogin(const SetMachineLoginRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetMachineLogin");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetMachineLoginResponse rsp = SetMachineLoginResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetMachineLoginOutcome(rsp);
+        else
+            return SetMachineLoginOutcome(o.GetError());
+    }
+    else
+    {
+        return SetMachineLoginOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::SetMachineLoginAsync(const SetMachineLoginRequest& request, const SetMachineLoginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetMachineLogin(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::SetMachineLoginOutcomeCallable TkeClient::SetMachineLoginCallable(const SetMachineLoginRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetMachineLoginOutcome()>>(
+        [this, request]()
+        {
+            return this->SetMachineLogin(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::StartMachinesOutcome TkeClient::StartMachines(const StartMachinesRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartMachines");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartMachinesResponse rsp = StartMachinesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartMachinesOutcome(rsp);
+        else
+            return StartMachinesOutcome(o.GetError());
+    }
+    else
+    {
+        return StartMachinesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::StartMachinesAsync(const StartMachinesRequest& request, const StartMachinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartMachines(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::StartMachinesOutcomeCallable TkeClient::StartMachinesCallable(const StartMachinesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartMachinesOutcome()>>(
+        [this, request]()
+        {
+            return this->StartMachines(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::StopMachinesOutcome TkeClient::StopMachines(const StopMachinesRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopMachines");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopMachinesResponse rsp = StopMachinesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopMachinesOutcome(rsp);
+        else
+            return StopMachinesOutcome(o.GetError());
+    }
+    else
+    {
+        return StopMachinesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::StopMachinesAsync(const StopMachinesRequest& request, const StopMachinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopMachines(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::StopMachinesOutcomeCallable TkeClient::StopMachinesCallable(const StopMachinesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopMachinesOutcome()>>(
+        [this, request]()
+        {
+            return this->StopMachines(request);
         }
     );
 

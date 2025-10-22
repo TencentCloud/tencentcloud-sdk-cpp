@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,6 +72,34 @@ namespace TencentCloud
                      */
                     bool EventSetHasBeenSet() const;
 
+                    /**
+                     * 获取支持的内核版本
+                     * @return SupportCoreVersion 支持的内核版本
+                     * 
+                     */
+                    std::string GetSupportCoreVersion() const;
+
+                    /**
+                     * 判断参数 SupportCoreVersion 是否已赋值
+                     * @return SupportCoreVersion 是否已赋值
+                     * 
+                     */
+                    bool SupportCoreVersionHasBeenSet() const;
+
+                    /**
+                     * 获取拦截失败可能的原因
+                     * @return InterceptionFailureTip 拦截失败可能的原因
+                     * 
+                     */
+                    std::string GetInterceptionFailureTip() const;
+
+                    /**
+                     * 判断参数 InterceptionFailureTip 是否已赋值
+                     * @return InterceptionFailureTip 是否已赋值
+                     * 
+                     */
+                    bool InterceptionFailureTipHasBeenSet() const;
+
                 private:
 
                     /**
@@ -85,6 +113,18 @@ namespace TencentCloud
                      */
                     std::vector<AccessControlEventInfo> m_eventSet;
                     bool m_eventSetHasBeenSet;
+
+                    /**
+                     * 支持的内核版本
+                     */
+                    std::string m_supportCoreVersion;
+                    bool m_supportCoreVersionHasBeenSet;
+
+                    /**
+                     * 拦截失败可能的原因
+                     */
+                    std::string m_interceptionFailureTip;
+                    bool m_interceptionFailureTipHasBeenSet;
 
                 };
             }

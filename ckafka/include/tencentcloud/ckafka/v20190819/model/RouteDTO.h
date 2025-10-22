@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取RouteId11
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RouteId RouteId11
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取路由Id
+                     * @return RouteId 路由Id
                      * 
                      */
                     int64_t GetRouteId() const;
 
                     /**
-                     * 设置RouteId11
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _routeId RouteId11
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置路由Id
+                     * @param _routeId 路由Id
                      * 
                      */
                     void SetRouteId(const int64_t& _routeId);
@@ -74,8 +70,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * RouteId11
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 路由Id
                      */
                     int64_t m_routeId;
                     bool m_routeIdHasBeenSet;

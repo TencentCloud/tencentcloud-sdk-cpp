@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,10 @@ UpdateAssetImageRegistryRegistryDetailRequest::UpdateAssetImageRegistryRegistryD
     m_speedLimitHasBeenSet(false),
     m_insecureHasBeenSet(false),
     m_connDetectConfigHasBeenSet(false),
-    m_registryIdHasBeenSet(false)
+    m_registryIdHasBeenSet(false),
+    m_syncModeHasBeenSet(false),
+    m_needScanHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -146,6 +149,30 @@ string UpdateAssetImageRegistryRegistryDetailRequest::ToJsonString() const
         string key = "RegistryId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_registryId, allocator);
+    }
+
+    if (m_syncModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_syncMode, allocator);
+    }
+
+    if (m_needScanHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedScan";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needScan, allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -346,6 +373,54 @@ void UpdateAssetImageRegistryRegistryDetailRequest::SetRegistryId(const int64_t&
 bool UpdateAssetImageRegistryRegistryDetailRequest::RegistryIdHasBeenSet() const
 {
     return m_registryIdHasBeenSet;
+}
+
+uint64_t UpdateAssetImageRegistryRegistryDetailRequest::GetSyncMode() const
+{
+    return m_syncMode;
+}
+
+void UpdateAssetImageRegistryRegistryDetailRequest::SetSyncMode(const uint64_t& _syncMode)
+{
+    m_syncMode = _syncMode;
+    m_syncModeHasBeenSet = true;
+}
+
+bool UpdateAssetImageRegistryRegistryDetailRequest::SyncModeHasBeenSet() const
+{
+    return m_syncModeHasBeenSet;
+}
+
+bool UpdateAssetImageRegistryRegistryDetailRequest::GetNeedScan() const
+{
+    return m_needScan;
+}
+
+void UpdateAssetImageRegistryRegistryDetailRequest::SetNeedScan(const bool& _needScan)
+{
+    m_needScan = _needScan;
+    m_needScanHasBeenSet = true;
+}
+
+bool UpdateAssetImageRegistryRegistryDetailRequest::NeedScanHasBeenSet() const
+{
+    return m_needScanHasBeenSet;
+}
+
+string UpdateAssetImageRegistryRegistryDetailRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void UpdateAssetImageRegistryRegistryDetailRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool UpdateAssetImageRegistryRegistryDetailRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 
 

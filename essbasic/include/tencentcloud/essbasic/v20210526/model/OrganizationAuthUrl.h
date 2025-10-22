@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -108,6 +108,48 @@ namespace TencentCloud
                      */
                     bool ErrorMessageHasBeenSet() const;
 
+                    /**
+                     * 获取企业批量注册 传递过来的企业名称，方便客户定位企业	
+                     * @return OrganizationName 企业批量注册 传递过来的企业名称，方便客户定位企业	
+                     * 
+                     */
+                    std::string GetOrganizationName() const;
+
+                    /**
+                     * 设置企业批量注册 传递过来的企业名称，方便客户定位企业	
+                     * @param _organizationName 企业批量注册 传递过来的企业名称，方便客户定位企业	
+                     * 
+                     */
+                    void SetOrganizationName(const std::string& _organizationName);
+
+                    /**
+                     * 判断参数 OrganizationName 是否已赋值
+                     * @return OrganizationName 是否已赋值
+                     * 
+                     */
+                    bool OrganizationNameHasBeenSet() const;
+
+                    /**
+                     * 获取企业批量注册的唯一 Id， 此 Id 可以用在[创建企业批量认证链接-单链接](https://qian.tencent.com/developers/partnerApis/accounts/CreateBatchOrganizationRegistrationTasks)。
+                     * @return SubTaskId 企业批量注册的唯一 Id， 此 Id 可以用在[创建企业批量认证链接-单链接](https://qian.tencent.com/developers/partnerApis/accounts/CreateBatchOrganizationRegistrationTasks)。
+                     * 
+                     */
+                    std::string GetSubTaskId() const;
+
+                    /**
+                     * 设置企业批量注册的唯一 Id， 此 Id 可以用在[创建企业批量认证链接-单链接](https://qian.tencent.com/developers/partnerApis/accounts/CreateBatchOrganizationRegistrationTasks)。
+                     * @param _subTaskId 企业批量注册的唯一 Id， 此 Id 可以用在[创建企业批量认证链接-单链接](https://qian.tencent.com/developers/partnerApis/accounts/CreateBatchOrganizationRegistrationTasks)。
+                     * 
+                     */
+                    void SetSubTaskId(const std::string& _subTaskId);
+
+                    /**
+                     * 判断参数 SubTaskId 是否已赋值
+                     * @return SubTaskId 是否已赋值
+                     * 
+                     */
+                    bool SubTaskIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -126,6 +168,18 @@ namespace TencentCloud
                      */
                     std::string m_errorMessage;
                     bool m_errorMessageHasBeenSet;
+
+                    /**
+                     * 企业批量注册 传递过来的企业名称，方便客户定位企业	
+                     */
+                    std::string m_organizationName;
+                    bool m_organizationNameHasBeenSet;
+
+                    /**
+                     * 企业批量注册的唯一 Id， 此 Id 可以用在[创建企业批量认证链接-单链接](https://qian.tencent.com/developers/partnerApis/accounts/CreateBatchOrganizationRegistrationTasks)。
+                     */
+                    std::string m_subTaskId;
+                    bool m_subTaskIdHasBeenSet;
 
                 };
             }

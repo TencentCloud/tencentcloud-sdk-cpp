@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -384,6 +384,49 @@ ThpcClient::DeleteClusterStorageOptionOutcomeCallable ThpcClient::DeleteClusterS
     return task->get_future();
 }
 
+ThpcClient::DeleteJobOutcome ThpcClient::DeleteJob(const DeleteJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteJobResponse rsp = DeleteJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteJobOutcome(rsp);
+        else
+            return DeleteJobOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteJobOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::DeleteJobAsync(const DeleteJobRequest& request, const DeleteJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ThpcClient::DeleteJobOutcomeCallable ThpcClient::DeleteJobCallable(const DeleteJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteJobOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ThpcClient::DeleteNodesOutcome ThpcClient::DeleteNodes(const DeleteNodesRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteNodes");
@@ -685,6 +728,135 @@ ThpcClient::DescribeInitNodeScriptsOutcomeCallable ThpcClient::DescribeInitNodeS
     return task->get_future();
 }
 
+ThpcClient::DescribeJobSubmitInfoOutcome ThpcClient::DescribeJobSubmitInfo(const DescribeJobSubmitInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeJobSubmitInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeJobSubmitInfoResponse rsp = DescribeJobSubmitInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeJobSubmitInfoOutcome(rsp);
+        else
+            return DescribeJobSubmitInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeJobSubmitInfoOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::DescribeJobSubmitInfoAsync(const DescribeJobSubmitInfoRequest& request, const DescribeJobSubmitInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeJobSubmitInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ThpcClient::DescribeJobSubmitInfoOutcomeCallable ThpcClient::DescribeJobSubmitInfoCallable(const DescribeJobSubmitInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeJobSubmitInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeJobSubmitInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ThpcClient::DescribeJobsOutcome ThpcClient::DescribeJobs(const DescribeJobsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeJobs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeJobsResponse rsp = DescribeJobsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeJobsOutcome(rsp);
+        else
+            return DescribeJobsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeJobsOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::DescribeJobsAsync(const DescribeJobsRequest& request, const DescribeJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeJobs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ThpcClient::DescribeJobsOutcomeCallable ThpcClient::DescribeJobsCallable(const DescribeJobsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeJobsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeJobs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ThpcClient::DescribeJobsOverviewOutcome ThpcClient::DescribeJobsOverview(const DescribeJobsOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeJobsOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeJobsOverviewResponse rsp = DescribeJobsOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeJobsOverviewOutcome(rsp);
+        else
+            return DescribeJobsOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeJobsOverviewOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::DescribeJobsOverviewAsync(const DescribeJobsOverviewRequest& request, const DescribeJobsOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeJobsOverview(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ThpcClient::DescribeJobsOverviewOutcomeCallable ThpcClient::DescribeJobsOverviewCallable(const DescribeJobsOverviewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeJobsOverviewOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeJobsOverview(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ThpcClient::DescribeNodesOutcome ThpcClient::DescribeNodes(const DescribeNodesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeNodes");
@@ -943,6 +1115,49 @@ ThpcClient::ModifyWorkspacesAttributeOutcomeCallable ThpcClient::ModifyWorkspace
     return task->get_future();
 }
 
+ThpcClient::ModifyWorkspacesRenewFlagOutcome ThpcClient::ModifyWorkspacesRenewFlag(const ModifyWorkspacesRenewFlagRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyWorkspacesRenewFlag");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyWorkspacesRenewFlagResponse rsp = ModifyWorkspacesRenewFlagResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyWorkspacesRenewFlagOutcome(rsp);
+        else
+            return ModifyWorkspacesRenewFlagOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyWorkspacesRenewFlagOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::ModifyWorkspacesRenewFlagAsync(const ModifyWorkspacesRenewFlagRequest& request, const ModifyWorkspacesRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyWorkspacesRenewFlag(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ThpcClient::ModifyWorkspacesRenewFlagOutcomeCallable ThpcClient::ModifyWorkspacesRenewFlagCallable(const ModifyWorkspacesRenewFlagRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyWorkspacesRenewFlagOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyWorkspacesRenewFlag(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ThpcClient::SetAutoScalingConfigurationOutcome ThpcClient::SetAutoScalingConfiguration(const SetAutoScalingConfigurationRequest &request)
 {
     auto outcome = MakeRequest(request, "SetAutoScalingConfiguration");
@@ -979,6 +1194,92 @@ ThpcClient::SetAutoScalingConfigurationOutcomeCallable ThpcClient::SetAutoScalin
         [this, request]()
         {
             return this->SetAutoScalingConfiguration(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ThpcClient::SubmitJobOutcome ThpcClient::SubmitJob(const SubmitJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitJobResponse rsp = SubmitJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitJobOutcome(rsp);
+        else
+            return SubmitJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitJobOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::SubmitJobAsync(const SubmitJobRequest& request, const SubmitJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SubmitJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ThpcClient::SubmitJobOutcomeCallable ThpcClient::SubmitJobCallable(const SubmitJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SubmitJobOutcome()>>(
+        [this, request]()
+        {
+            return this->SubmitJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ThpcClient::TerminateJobOutcome ThpcClient::TerminateJob(const TerminateJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "TerminateJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TerminateJobResponse rsp = TerminateJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TerminateJobOutcome(rsp);
+        else
+            return TerminateJobOutcome(o.GetError());
+    }
+    else
+    {
+        return TerminateJobOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::TerminateJobAsync(const TerminateJobRequest& request, const TerminateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TerminateJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ThpcClient::TerminateJobOutcomeCallable ThpcClient::TerminateJobCallable(const TerminateJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TerminateJobOutcome()>>(
+        [this, request]()
+        {
+            return this->TerminateJob(request);
         }
     );
 

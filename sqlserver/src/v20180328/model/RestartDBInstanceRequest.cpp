@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ using namespace TencentCloud::Sqlserver::V20180328::Model;
 using namespace std;
 
 RestartDBInstanceRequest::RestartDBInstanceRequest() :
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_waitSwitchHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string RestartDBInstanceRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_waitSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WaitSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_waitSwitch, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void RestartDBInstanceRequest::SetInstanceId(const string& _instanceId)
 bool RestartDBInstanceRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+uint64_t RestartDBInstanceRequest::GetWaitSwitch() const
+{
+    return m_waitSwitch;
+}
+
+void RestartDBInstanceRequest::SetWaitSwitch(const uint64_t& _waitSwitch)
+{
+    m_waitSwitch = _waitSwitch;
+    m_waitSwitchHasBeenSet = true;
+}
+
+bool RestartDBInstanceRequest::WaitSwitchHasBeenSet() const
+{
+    return m_waitSwitchHasBeenSet;
 }
 
 

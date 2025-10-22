@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取实例ID，形如postgres-hez4fh0v
-                     * @return DBInstanceId 实例ID，形如postgres-hez4fh0v
+                     * 获取实例ID，形如postgres-hez4fh0v。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * @return DBInstanceId 实例ID，形如postgres-hez4fh0v。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
-                     * 设置实例ID，形如postgres-hez4fh0v
-                     * @param _dBInstanceId 实例ID，形如postgres-hez4fh0v
+                     * 设置实例ID，形如postgres-hez4fh0v。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * @param _dBInstanceId 实例ID，形如postgres-hez4fh0v。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
@@ -106,36 +106,40 @@ namespace TencentCloud
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取【废弃参数，不再生效】，实例计费类型。
-                     * @return InstanceChargeType 【废弃参数，不再生效】，实例计费类型。
-                     * 
+                     * 获取实例计费类型。
+                     * @return InstanceChargeType 实例计费类型。
+                     * @deprecated
                      */
                     std::string GetInstanceChargeType() const;
 
                     /**
-                     * 设置【废弃参数，不再生效】，实例计费类型。
-                     * @param _instanceChargeType 【废弃参数，不再生效】，实例计费类型。
-                     * 
+                     * 设置实例计费类型。
+                     * @param _instanceChargeType 实例计费类型。
+                     * @deprecated
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
 
                     /**
                      * 判断参数 InstanceChargeType 是否已赋值
                      * @return InstanceChargeType 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool InstanceChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例的Cpu大小，单位Core
-                     * @return Cpu 实例的Cpu大小，单位Core
+                     * 获取实例的Cpu大小，单位Core。
+不传入此参数时，默认根据Memory确定的售卖规格所对应的Cpu进行设置。如Memory为2，支持的售卖规格有1核2GiB，则不传入Cpu时，Cpu默认为1。
+                     * @return Cpu 实例的Cpu大小，单位Core。
+不传入此参数时，默认根据Memory确定的售卖规格所对应的Cpu进行设置。如Memory为2，支持的售卖规格有1核2GiB，则不传入Cpu时，Cpu默认为1。
                      * 
                      */
                     int64_t GetCpu() const;
 
                     /**
-                     * 设置实例的Cpu大小，单位Core
-                     * @param _cpu 实例的Cpu大小，单位Core
+                     * 设置实例的Cpu大小，单位Core。
+不传入此参数时，默认根据Memory确定的售卖规格所对应的Cpu进行设置。如Memory为2，支持的售卖规格有1核2GiB，则不传入Cpu时，Cpu默认为1。
+                     * @param _cpu 实例的Cpu大小，单位Core。
+不传入此参数时，默认根据Memory确定的售卖规格所对应的Cpu进行设置。如Memory为2，支持的售卖规格有1核2GiB，则不传入Cpu时，Cpu默认为1。
                      * 
                      */
                     void SetCpu(const int64_t& _cpu);
@@ -162,19 +166,20 @@ namespace TencentCloud
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * 实例ID，形如postgres-hez4fh0v
+                     * 实例ID，形如postgres-hez4fh0v。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      */
                     std::string m_dBInstanceId;
                     bool m_dBInstanceIdHasBeenSet;
 
                     /**
-                     * 【废弃参数，不再生效】，实例计费类型。
+                     * 实例计费类型。
                      */
                     std::string m_instanceChargeType;
                     bool m_instanceChargeTypeHasBeenSet;
 
                     /**
-                     * 实例的Cpu大小，单位Core
+                     * 实例的Cpu大小，单位Core。
+不传入此参数时，默认根据Memory确定的售卖规格所对应的Cpu进行设置。如Memory为2，支持的售卖规格有1核2GiB，则不传入Cpu时，Cpu默认为1。
                      */
                     int64_t m_cpu;
                     bool m_cpuHasBeenSet;

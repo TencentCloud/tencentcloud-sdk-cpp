@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否停止成功
-                     * @return Result 是否停止成功
+                     * 获取是否停止成功，true：停止成功，false：停止失败
+                     * @return Result 是否停止成功，true：停止成功，false：停止失败
                      * 
                      */
                     bool GetResult() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否停止成功
+                     * 是否停止成功，true：停止成功，false：停止失败
                      */
                     bool m_result;
                     bool m_resultHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ using namespace std;
 TriggerDsEventRequest::TriggerDsEventRequest() :
     m_projectIdHasBeenSet(false),
     m_eventCaseListHasBeenSet(false),
-    m_eventBatchCaseListHasBeenSet(false)
+    m_eventBatchCaseListHasBeenSet(false),
+    m_scheduleTimeZoneHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,14 @@ string TriggerDsEventRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_scheduleTimeZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleTimeZone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_scheduleTimeZone.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -128,6 +137,22 @@ void TriggerDsEventRequest::SetEventBatchCaseList(const vector<EventBatchCaseDTO
 bool TriggerDsEventRequest::EventBatchCaseListHasBeenSet() const
 {
     return m_eventBatchCaseListHasBeenSet;
+}
+
+string TriggerDsEventRequest::GetScheduleTimeZone() const
+{
+    return m_scheduleTimeZone;
+}
+
+void TriggerDsEventRequest::SetScheduleTimeZone(const string& _scheduleTimeZone)
+{
+    m_scheduleTimeZone = _scheduleTimeZone;
+    m_scheduleTimeZoneHasBeenSet = true;
+}
+
+bool TriggerDsEventRequest::ScheduleTimeZoneHasBeenSet() const
+{
+    return m_scheduleTimeZoneHasBeenSet;
 }
 
 

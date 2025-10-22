@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取COS导入配置ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id COS导入配置ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置COS导入配置ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id COS导入配置ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicId 日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicId 日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogsetId 日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogsetId() const;
 
                     /**
                      * 设置日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logsetId 日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogsetId(const std::string& _logsetId);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取COS导入任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name COS导入任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置COS导入任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name COS导入任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取COS存储桶
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bucket COS存储桶
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBucket() const;
 
                     /**
                      * 设置COS存储桶
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bucket COS存储桶
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBucket(const std::string& _bucket);
@@ -173,19 +153,23 @@ namespace TencentCloud
                     bool BucketHasBeenSet() const;
 
                     /**
-                     * 获取COS存储桶所在地域
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BucketRegion COS存储桶所在地域
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取COS存储桶所在地域。
+
+- 通过[地域和访问域名](https://cloud.tencent.com/document/product/436/6224)获取地域信息。
+                     * @return BucketRegion COS存储桶所在地域。
+
+- 通过[地域和访问域名](https://cloud.tencent.com/document/product/436/6224)获取地域信息。
                      * 
                      */
                     std::string GetBucketRegion() const;
 
                     /**
-                     * 设置COS存储桶所在地域
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _bucketRegion COS存储桶所在地域
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置COS存储桶所在地域。
+
+- 通过[地域和访问域名](https://cloud.tencent.com/document/product/436/6224)获取地域信息。
+                     * @param _bucketRegion COS存储桶所在地域。
+
+- 通过[地域和访问域名](https://cloud.tencent.com/document/product/436/6224)获取地域信息。
                      * 
                      */
                     void SetBucketRegion(const std::string& _bucketRegion);
@@ -199,18 +183,14 @@ namespace TencentCloud
 
                     /**
                      * 获取COS文件所在文件夹的前缀
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Prefix COS文件所在文件夹的前缀
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPrefix() const;
 
                     /**
                      * 设置COS文件所在文件夹的前缀
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _prefix COS文件所在文件夹的前缀
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrefix(const std::string& _prefix);
@@ -225,10 +205,8 @@ namespace TencentCloud
                     /**
                      * 获取采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表单行全文；
 默认为minimalist_log
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogType 采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表单行全文；
 默认为minimalist_log
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogType() const;
@@ -236,10 +214,8 @@ namespace TencentCloud
                     /**
                      * 设置采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表单行全文；
 默认为minimalist_log
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logType 采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表单行全文；
 默认为minimalist_log
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogType(const std::string& _logType);
@@ -253,18 +229,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态   status 0: 已创建, 1: 运行中, 2: 已停止, 3: 已完成, 4: 运行失败。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态   status 0: 已创建, 1: 运行中, 2: 已停止, 3: 已完成, 4: 运行失败。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置状态   status 0: 已创建, 1: 运行中, 2: 已停止, 3: 已完成, 4: 运行失败。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 状态   status 0: 已创建, 1: 运行中, 2: 已停止, 3: 已完成, 4: 运行失败。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -278,18 +250,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否启用:   0： 未启用  ， 1：启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Enable 是否启用:   0： 未启用  ， 1：启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetEnable() const;
 
                     /**
                      * 设置是否启用:   0： 未启用  ， 1：启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enable 是否启用:   0： 未启用  ， 1：启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnable(const uint64_t& _enable);
@@ -302,19 +270,15 @@ namespace TencentCloud
                     bool EnableHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取创建时间。时间格式：YYYY-MM-DD HH:mm:ss
+                     * @return CreateTime 创建时间。时间格式：YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置创建时间。时间格式：YYYY-MM-DD HH:mm:ss
+                     * @param _createTime 创建时间。时间格式：YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -327,19 +291,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdateTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取更新时间。时间格式：YYYY-MM-DD HH:mm:ss
+                     * @return UpdateTime 更新时间。时间格式：YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _updateTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置更新时间。时间格式：YYYY-MM-DD HH:mm:ss
+                     * @param _updateTime 更新时间。时间格式：YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -353,18 +313,14 @@ namespace TencentCloud
 
                     /**
                      * 获取进度条百分值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Progress 进度条百分值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetProgress() const;
 
                     /**
                      * 设置进度条百分值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _progress 进度条百分值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProgress(const uint64_t& _progress);
@@ -377,19 +333,15 @@ namespace TencentCloud
                     bool ProgressHasBeenSet() const;
 
                     /**
-                     * 获取supported: "", "gzip", "lzop", "snappy”; 默认空
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Compress supported: "", "gzip", "lzop", "snappy”; 默认空
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取压缩方式supported: "", "gzip", "lzop", "snappy”;  默认空不压缩
+                     * @return Compress 压缩方式supported: "", "gzip", "lzop", "snappy”;  默认空不压缩
                      * 
                      */
                     std::string GetCompress() const;
 
                     /**
-                     * 设置supported: "", "gzip", "lzop", "snappy”; 默认空
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _compress supported: "", "gzip", "lzop", "snappy”; 默认空
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置压缩方式supported: "", "gzip", "lzop", "snappy”;  默认空不压缩
+                     * @param _compress 压缩方式supported: "", "gzip", "lzop", "snappy”;  默认空不压缩
                      * 
                      */
                     void SetCompress(const std::string& _compress);
@@ -403,18 +355,14 @@ namespace TencentCloud
 
                     /**
                      * 获取见： ExtractRuleInfo 结构描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtractRuleInfo 见： ExtractRuleInfo 结构描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ExtractRuleInfo GetExtractRuleInfo() const;
 
                     /**
                      * 设置见： ExtractRuleInfo 结构描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _extractRuleInfo 见： ExtractRuleInfo 结构描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExtractRuleInfo(const ExtractRuleInfo& _extractRuleInfo);
@@ -428,18 +376,14 @@ namespace TencentCloud
 
                     /**
                      * 获取COS导入任务类型。1：一次性导入任务；2：持续性导入任务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskType COS导入任务类型。1：一次性导入任务；2：持续性导入任务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTaskType() const;
 
                     /**
                      * 设置COS导入任务类型。1：一次性导入任务；2：持续性导入任务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskType COS导入任务类型。1：一次性导入任务；2：持续性导入任务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskType(const uint64_t& _taskType);
@@ -453,18 +397,14 @@ namespace TencentCloud
 
                     /**
                      * 获取元数据。支持 bucket，object。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Metadata 元数据。支持 bucket，object。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetMetadata() const;
 
                     /**
                      * 设置元数据。支持 bucket，object。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _metadata 元数据。支持 bucket，object。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMetadata(const std::vector<std::string>& _metadata);
@@ -480,49 +420,44 @@ namespace TencentCloud
 
                     /**
                      * COS导入配置ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
                      * 日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logsetId;
                     bool m_logsetIdHasBeenSet;
 
                     /**
                      * COS导入任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * COS存储桶
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bucket;
                     bool m_bucketHasBeenSet;
 
                     /**
-                     * COS存储桶所在地域
-注意：此字段可能返回 null，表示取不到有效值。
+                     * COS存储桶所在地域。
+
+- 通过[地域和访问域名](https://cloud.tencent.com/document/product/436/6224)获取地域信息。
                      */
                     std::string m_bucketRegion;
                     bool m_bucketRegionHasBeenSet;
 
                     /**
                      * COS文件所在文件夹的前缀
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_prefix;
                     bool m_prefixHasBeenSet;
@@ -530,70 +465,60 @@ namespace TencentCloud
                     /**
                      * 采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表单行全文；
 默认为minimalist_log
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logType;
                     bool m_logTypeHasBeenSet;
 
                     /**
                      * 状态   status 0: 已创建, 1: 运行中, 2: 已停止, 3: 已完成, 4: 运行失败。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 是否启用:   0： 未启用  ， 1：启用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_enable;
                     bool m_enableHasBeenSet;
 
                     /**
-                     * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 创建时间。时间格式：YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 更新时间。时间格式：YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
                      * 进度条百分值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_progress;
                     bool m_progressHasBeenSet;
 
                     /**
-                     * supported: "", "gzip", "lzop", "snappy”; 默认空
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 压缩方式supported: "", "gzip", "lzop", "snappy”;  默认空不压缩
                      */
                     std::string m_compress;
                     bool m_compressHasBeenSet;
 
                     /**
                      * 见： ExtractRuleInfo 结构描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ExtractRuleInfo m_extractRuleInfo;
                     bool m_extractRuleInfoHasBeenSet;
 
                     /**
                      * COS导入任务类型。1：一次性导入任务；2：持续性导入任务。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
                      * 元数据。支持 bucket，object。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_metadata;
                     bool m_metadataHasBeenSet;

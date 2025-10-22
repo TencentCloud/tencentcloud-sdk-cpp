@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,10 @@ AudioResult::AudioResult() :
     m_recognitionResultsHasBeenSet(false),
     m_speakerResultsHasBeenSet(false),
     m_labelResultsHasBeenSet(false),
-    m_travelResultsHasBeenSet(false)
+    m_travelResultsHasBeenSet(false),
+    m_subTagHasBeenSet(false),
+    m_subTagCodeHasBeenSet(false),
+    m_hitTypeHasBeenSet(false)
 {
 }
 
@@ -275,6 +278,36 @@ CoreInternalOutcome AudioResult::Deserialize(const rapidjson::Value &value)
         m_travelResultsHasBeenSet = true;
     }
 
+    if (value.HasMember("SubTag") && !value["SubTag"].IsNull())
+    {
+        if (!value["SubTag"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AudioResult.SubTag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subTag = string(value["SubTag"].GetString());
+        m_subTagHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubTagCode") && !value["SubTagCode"].IsNull())
+    {
+        if (!value["SubTagCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AudioResult.SubTagCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subTagCode = string(value["SubTagCode"].GetString());
+        m_subTagCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("HitType") && !value["HitType"].IsNull())
+    {
+        if (!value["HitType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AudioResult.HitType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hitType = string(value["HitType"].GetString());
+        m_hitTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -457,6 +490,30 @@ void AudioResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_subTagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubTag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subTag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subTagCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubTagCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subTagCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hitTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HitType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hitType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -716,5 +773,53 @@ void AudioResult::SetTravelResults(const vector<TravelResults>& _travelResults)
 bool AudioResult::TravelResultsHasBeenSet() const
 {
     return m_travelResultsHasBeenSet;
+}
+
+string AudioResult::GetSubTag() const
+{
+    return m_subTag;
+}
+
+void AudioResult::SetSubTag(const string& _subTag)
+{
+    m_subTag = _subTag;
+    m_subTagHasBeenSet = true;
+}
+
+bool AudioResult::SubTagHasBeenSet() const
+{
+    return m_subTagHasBeenSet;
+}
+
+string AudioResult::GetSubTagCode() const
+{
+    return m_subTagCode;
+}
+
+void AudioResult::SetSubTagCode(const string& _subTagCode)
+{
+    m_subTagCode = _subTagCode;
+    m_subTagCodeHasBeenSet = true;
+}
+
+bool AudioResult::SubTagCodeHasBeenSet() const
+{
+    return m_subTagCodeHasBeenSet;
+}
+
+string AudioResult::GetHitType() const
+{
+    return m_hitType;
+}
+
+void AudioResult::SetHitType(const string& _hitType)
+{
+    m_hitType = _hitType;
+    m_hitTypeHasBeenSet = true;
+}
+
+bool AudioResult::HitTypeHasBeenSet() const
+{
+    return m_hitTypeHasBeenSet;
 }
 

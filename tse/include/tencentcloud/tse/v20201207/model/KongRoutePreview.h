@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ID 服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetID() const;
 
                     /**
                      * 设置服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iD 服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetID(const std::string& _iD);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 服务名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置服务名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 服务名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -174,18 +166,14 @@ namespace TencentCloud
 
                     /**
                      * 获取无
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocols 无
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetProtocols() const;
 
                     /**
                      * 设置无
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _protocols 无
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProtocols(const std::vector<std::string>& _protocols);
@@ -199,18 +187,14 @@ namespace TencentCloud
 
                     /**
                      * 获取无
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PreserveHost 无
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetPreserveHost() const;
 
                     /**
                      * 设置无
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _preserveHost 无
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPreserveHost(const bool& _preserveHost);
@@ -224,18 +208,14 @@ namespace TencentCloud
 
                     /**
                      * 获取无
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HttpsRedirectStatusCode 无
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHttpsRedirectStatusCode() const;
 
                     /**
                      * 设置无
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _httpsRedirectStatusCode 无
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHttpsRedirectStatusCode(const int64_t& _httpsRedirectStatusCode);
@@ -249,18 +229,14 @@ namespace TencentCloud
 
                     /**
                      * 获取无
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StripPath 无
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetStripPath() const;
 
                     /**
                      * 设置无
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stripPath 无
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStripPath(const bool& _stripPath);
@@ -274,18 +250,14 @@ namespace TencentCloud
 
                     /**
                      * 获取无
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedTime 无
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置无
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdTime 无
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -324,18 +296,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceName 服务名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceName() const;
 
                     /**
                      * 设置服务名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceName 服务名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceName(const std::string& _serviceName);
@@ -349,18 +317,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceID 服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceID() const;
 
                     /**
                      * 设置服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceID 服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceID(const std::string& _serviceID);
@@ -374,18 +338,14 @@ namespace TencentCloud
 
                     /**
                      * 获取目的端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DestinationPorts 目的端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<uint64_t> GetDestinationPorts() const;
 
                     /**
                      * 设置目的端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _destinationPorts 目的端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDestinationPorts(const std::vector<uint64_t>& _destinationPorts);
@@ -399,18 +359,14 @@ namespace TencentCloud
 
                     /**
                      * 获取路由的Headers
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Headers 路由的Headers
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<KVMapping> GetHeaders() const;
 
                     /**
                      * 设置路由的Headers
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _headers 路由的Headers
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHeaders(const std::vector<KVMapping>& _headers);
@@ -422,18 +378,79 @@ namespace TencentCloud
                      */
                     bool HeadersHasBeenSet() const;
 
+                    /**
+                     * 获取是否缓存请求body，默认true
+                     * @return RequestBuffering 是否缓存请求body，默认true
+                     * 
+                     */
+                    bool GetRequestBuffering() const;
+
+                    /**
+                     * 设置是否缓存请求body，默认true
+                     * @param _requestBuffering 是否缓存请求body，默认true
+                     * 
+                     */
+                    void SetRequestBuffering(const bool& _requestBuffering);
+
+                    /**
+                     * 判断参数 RequestBuffering 是否已赋值
+                     * @return RequestBuffering 是否已赋值
+                     * 
+                     */
+                    bool RequestBufferingHasBeenSet() const;
+
+                    /**
+                     * 获取是否缓存响应body，默认true
+                     * @return ResponseBuffering 是否缓存响应body，默认true
+                     * 
+                     */
+                    bool GetResponseBuffering() const;
+
+                    /**
+                     * 设置是否缓存响应body，默认true
+                     * @param _responseBuffering 是否缓存响应body，默认true
+                     * 
+                     */
+                    void SetResponseBuffering(const bool& _responseBuffering);
+
+                    /**
+                     * 判断参数 ResponseBuffering 是否已赋值
+                     * @return ResponseBuffering 是否已赋值
+                     * 
+                     */
+                    bool ResponseBufferingHasBeenSet() const;
+
+                    /**
+                     * 获取正则优先级
+                     * @return RegexPriority 正则优先级
+                     * 
+                     */
+                    int64_t GetRegexPriority() const;
+
+                    /**
+                     * 设置正则优先级
+                     * @param _regexPriority 正则优先级
+                     * 
+                     */
+                    void SetRegexPriority(const int64_t& _regexPriority);
+
+                    /**
+                     * 判断参数 RegexPriority 是否已赋值
+                     * @return RegexPriority 是否已赋值
+                     * 
+                     */
+                    bool RegexPriorityHasBeenSet() const;
+
                 private:
 
                     /**
                      * 服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
                      * 服务名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -461,35 +478,30 @@ namespace TencentCloud
 
                     /**
                      * 无
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_protocols;
                     bool m_protocolsHasBeenSet;
 
                     /**
                      * 无
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_preserveHost;
                     bool m_preserveHostHasBeenSet;
 
                     /**
                      * 无
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_httpsRedirectStatusCode;
                     bool m_httpsRedirectStatusCodeHasBeenSet;
 
                     /**
                      * 无
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_stripPath;
                     bool m_stripPathHasBeenSet;
 
                     /**
                      * 无
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
@@ -503,31 +515,45 @@ namespace TencentCloud
 
                     /**
                      * 服务名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceName;
                     bool m_serviceNameHasBeenSet;
 
                     /**
                      * 服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceID;
                     bool m_serviceIDHasBeenSet;
 
                     /**
                      * 目的端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<uint64_t> m_destinationPorts;
                     bool m_destinationPortsHasBeenSet;
 
                     /**
                      * 路由的Headers
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<KVMapping> m_headers;
                     bool m_headersHasBeenSet;
+
+                    /**
+                     * 是否缓存请求body，默认true
+                     */
+                    bool m_requestBuffering;
+                    bool m_requestBufferingHasBeenSet;
+
+                    /**
+                     * 是否缓存响应body，默认true
+                     */
+                    bool m_responseBuffering;
+                    bool m_responseBufferingHasBeenSet;
+
+                    /**
+                     * 正则优先级
+                     */
+                    int64_t m_regexPriority;
+                    bool m_regexPriorityHasBeenSet;
 
                 };
             }

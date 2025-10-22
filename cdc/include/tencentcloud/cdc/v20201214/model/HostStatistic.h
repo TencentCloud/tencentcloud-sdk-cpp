@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -154,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取平均cpu负载百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CpuAverage 平均cpu负载百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetCpuAverage() const;
 
                     /**
                      * 设置平均cpu负载百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cpuAverage 平均cpu负载百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCpuAverage(const double& _cpuAverage);
@@ -179,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取平均内存使用率百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemAverage 平均内存使用率百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetMemAverage() const;
 
                     /**
                      * 设置平均内存使用率百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _memAverage 平均内存使用率百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMemAverage(const double& _memAverage);
@@ -204,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取平均网络流量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetAverage 平均网络流量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetNetAverage() const;
 
                     /**
                      * 设置平均网络流量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _netAverage 平均网络流量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNetAverage(const double& _netAverage);
@@ -229,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cpu详细监控数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CpuDetailData cpu详细监控数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DetailData GetCpuDetailData() const;
 
                     /**
                      * 设置cpu详细监控数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cpuDetailData cpu详细监控数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCpuDetailData(const DetailData& _cpuDetailData);
@@ -254,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内存详细数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemDetailData 内存详细数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DetailData GetMemDetailData() const;
 
                     /**
                      * 设置内存详细数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _memDetailData 内存详细数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMemDetailData(const DetailData& _memDetailData);
@@ -279,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络速率详细数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetRateDetailData 网络速率详细数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DetailData GetNetRateDetailData() const;
 
                     /**
                      * 设置网络速率详细数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _netRateDetailData 网络速率详细数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNetRateDetailData(const DetailData& _netRateDetailData);
@@ -304,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网速包详细数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetPacketDetailData 网速包详细数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DetailData GetNetPacketDetailData() const;
 
                     /**
                      * 设置网速包详细数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _netPacketDetailData 网速包详细数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNetPacketDetailData(const DetailData& _netPacketDetailData);
@@ -361,49 +333,42 @@ namespace TencentCloud
 
                     /**
                      * 平均cpu负载百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_cpuAverage;
                     bool m_cpuAverageHasBeenSet;
 
                     /**
                      * 平均内存使用率百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_memAverage;
                     bool m_memAverageHasBeenSet;
 
                     /**
                      * 平均网络流量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_netAverage;
                     bool m_netAverageHasBeenSet;
 
                     /**
                      * cpu详细监控数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DetailData m_cpuDetailData;
                     bool m_cpuDetailDataHasBeenSet;
 
                     /**
                      * 内存详细数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DetailData m_memDetailData;
                     bool m_memDetailDataHasBeenSet;
 
                     /**
                      * 网络速率详细数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DetailData m_netRateDetailData;
                     bool m_netRateDetailDataHasBeenSet;
 
                     /**
                      * 网速包详细数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DetailData m_netPacketDetailData;
                     bool m_netPacketDetailDataHasBeenSet;

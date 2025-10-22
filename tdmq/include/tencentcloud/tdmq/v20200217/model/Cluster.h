@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -732,6 +732,27 @@ namespace TencentCloud
                      */
                     bool ProjectNameHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持升级专业版实例
+                     * @return UpgradeProInstance 是否支持升级专业版实例
+                     * 
+                     */
+                    bool GetUpgradeProInstance() const;
+
+                    /**
+                     * 设置是否支持升级专业版实例
+                     * @param _upgradeProInstance 是否支持升级专业版实例
+                     * 
+                     */
+                    void SetUpgradeProInstance(const bool& _upgradeProInstance);
+
+                    /**
+                     * 判断参数 UpgradeProInstance 是否已赋值
+                     * @return UpgradeProInstance 是否已赋值
+                     * 
+                     */
+                    bool UpgradeProInstanceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -926,6 +947,12 @@ namespace TencentCloud
                      */
                     std::string m_projectName;
                     bool m_projectNameHasBeenSet;
+
+                    /**
+                     * 是否支持升级专业版实例
+                     */
+                    bool m_upgradeProInstance;
+                    bool m_upgradeProInstanceHasBeenSet;
 
                 };
             }

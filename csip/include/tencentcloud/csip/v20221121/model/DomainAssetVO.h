@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -678,15 +678,15 @@ namespace TencentCloud
                     bool SourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取memberiD
-                     * @return MemberId memberiD
+                     * 获取memberId信息
+                     * @return MemberId memberId信息
                      * 
                      */
                     std::string GetMemberId() const;
 
                     /**
-                     * 设置memberiD
-                     * @param _memberId memberiD
+                     * 设置memberId信息
+                     * @param _memberId memberId信息
                      * 
                      */
                     void SetMemberId(const std::string& _memberId);
@@ -1049,7 +1049,7 @@ namespace TencentCloud
                     bool m_sourceTypeHasBeenSet;
 
                     /**
-                     * memberiD
+                     * memberId信息
                      */
                     std::string m_memberId;
                     bool m_memberIdHasBeenSet;

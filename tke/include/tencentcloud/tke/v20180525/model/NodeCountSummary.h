@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取手动管理的节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ManuallyAdded 手动管理的节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ManuallyAdded GetManuallyAdded() const;
 
                     /**
                      * 设置手动管理的节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _manuallyAdded 手动管理的节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetManuallyAdded(const ManuallyAdded& _manuallyAdded);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自动管理的节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoscalingAdded 自动管理的节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AutoscalingAdded GetAutoscalingAdded() const;
 
                     /**
                      * 设置自动管理的节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _autoscalingAdded 自动管理的节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAutoscalingAdded(const AutoscalingAdded& _autoscalingAdded);
@@ -102,14 +94,12 @@ namespace TencentCloud
 
                     /**
                      * 手动管理的节点
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ManuallyAdded m_manuallyAdded;
                     bool m_manuallyAddedHasBeenSet;
 
                     /**
                      * 自动管理的节点
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AutoscalingAdded m_autoscalingAdded;
                     bool m_autoscalingAddedHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取冻结流水，一次开通一个冻结流水。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TranId 冻结流水，一次开通一个冻结流水。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTranId() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取后付费订单号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DealNames 后付费订单号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetDealNames() const;
@@ -77,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取发货资源id列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceIds 发货资源id列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetResourceIds() const;
@@ -93,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取大订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BigDealIds 大订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetBigDealIds() const;
@@ -111,28 +103,24 @@ namespace TencentCloud
 
                     /**
                      * 冻结流水，一次开通一个冻结流水。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tranId;
                     bool m_tranIdHasBeenSet;
 
                     /**
                      * 后付费订单号。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_dealNames;
                     bool m_dealNamesHasBeenSet;
 
                     /**
                      * 发货资源id列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_resourceIds;
                     bool m_resourceIdsHasBeenSet;
 
                     /**
                      * 大订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_bigDealIds;
                     bool m_bigDealIdsHasBeenSet;

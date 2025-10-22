@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取错误码。
-                     * @return Code 错误码。
+                     * 获取错误码。0代表成功，其他对应不同的报错场景。
+                     * @return Code 错误码。0代表成功，其他对应不同的报错场景。
                      * 
                      */
                     int64_t GetCode() const;
 
                     /**
-                     * 设置错误码。
-                     * @param _code 错误码。
+                     * 设置错误码。0代表成功，其他对应不同的报错场景。
+                     * @param _code 错误码。0代表成功，其他对应不同的报错场景。
                      * 
                      */
                     void SetCode(const int64_t& _code);
@@ -301,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务关联的实例 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceIds 任务关联的实例 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置任务关联的实例 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceIds 任务关联的实例 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -347,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务的附加信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskAttachInfo 任务的附加信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TaskAttachInfo> GetTaskAttachInfo() const;
 
                     /**
                      * 设置任务的附加信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskAttachInfo 任务的附加信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskAttachInfo(const std::vector<TaskAttachInfo>& _taskAttachInfo);
@@ -373,7 +365,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 错误码。
+                     * 错误码。0代表成功，其他对应不同的报错场景。
                      */
                     int64_t m_code;
                     bool m_codeHasBeenSet;
@@ -443,7 +435,6 @@ namespace TencentCloud
 
                     /**
                      * 任务关联的实例 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
@@ -456,7 +447,6 @@ namespace TencentCloud
 
                     /**
                      * 任务的附加信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TaskAttachInfo> m_taskAttachInfo;
                     bool m_taskAttachInfoHasBeenSet;

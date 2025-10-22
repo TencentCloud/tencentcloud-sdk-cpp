@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,8 +60,26 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
+                     * 获取导入到编排空间的任务id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ArrangeSpaceTaskId 导入到编排空间的任务id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetArrangeSpaceTaskId() const;
+
+                    /**
+                     * 判断参数 ArrangeSpaceTaskId 是否已赋值
+                     * @return ArrangeSpaceTaskId 是否已赋值
+                     * 
+                     */
+                    bool ArrangeSpaceTaskIdHasBeenSet() const;
+
+                    /**
                      * 获取结果
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 结果
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetData() const;
@@ -83,7 +101,15 @@ namespace TencentCloud
                     bool m_taskIdHasBeenSet;
 
                     /**
+                     * 导入到编排空间的任务id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_arrangeSpaceTaskId;
+                    bool m_arrangeSpaceTaskIdHasBeenSet;
+
+                    /**
                      * 结果
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_data;
                     bool m_dataHasBeenSet;

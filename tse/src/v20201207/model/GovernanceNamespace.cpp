@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,10 @@ GovernanceNamespace::GovernanceNamespace() :
     m_userIdsHasBeenSet(false),
     m_groupIdsHasBeenSet(false),
     m_removeUserIdsHasBeenSet(false),
-    m_removeGroupIdsHasBeenSet(false)
+    m_removeGroupIdsHasBeenSet(false),
+    m_serviceExportToHasBeenSet(false),
+    m_syncToGlobalRegistryHasBeenSet(false),
+    m_metadatasHasBeenSet(false)
 {
 }
 
@@ -184,6 +187,49 @@ CoreInternalOutcome GovernanceNamespace::Deserialize(const rapidjson::Value &val
         m_removeGroupIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("ServiceExportTo") && !value["ServiceExportTo"].IsNull())
+    {
+        if (!value["ServiceExportTo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `GovernanceNamespace.ServiceExportTo` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ServiceExportTo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_serviceExportTo.push_back((*itr).GetString());
+        }
+        m_serviceExportToHasBeenSet = true;
+    }
+
+    if (value.HasMember("SyncToGlobalRegistry") && !value["SyncToGlobalRegistry"].IsNull())
+    {
+        if (!value["SyncToGlobalRegistry"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `GovernanceNamespace.SyncToGlobalRegistry` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_syncToGlobalRegistry = value["SyncToGlobalRegistry"].GetBool();
+        m_syncToGlobalRegistryHasBeenSet = true;
+    }
+
+    if (value.HasMember("Metadatas") && !value["Metadatas"].IsNull())
+    {
+        if (!value["Metadatas"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `GovernanceNamespace.Metadatas` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Metadatas"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Metadata item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_metadatas.push_back(item);
+        }
+        m_metadatasHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -312,6 +358,42 @@ void GovernanceNamespace::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         for (auto itr = m_removeGroupIds.begin(); itr != m_removeGroupIds.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_serviceExportToHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceExportTo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_serviceExportTo.begin(); itr != m_serviceExportTo.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_syncToGlobalRegistryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncToGlobalRegistry";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_syncToGlobalRegistry, allocator);
+    }
+
+    if (m_metadatasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Metadatas";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_metadatas.begin(); itr != m_metadatas.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -524,5 +606,53 @@ void GovernanceNamespace::SetRemoveGroupIds(const vector<string>& _removeGroupId
 bool GovernanceNamespace::RemoveGroupIdsHasBeenSet() const
 {
     return m_removeGroupIdsHasBeenSet;
+}
+
+vector<string> GovernanceNamespace::GetServiceExportTo() const
+{
+    return m_serviceExportTo;
+}
+
+void GovernanceNamespace::SetServiceExportTo(const vector<string>& _serviceExportTo)
+{
+    m_serviceExportTo = _serviceExportTo;
+    m_serviceExportToHasBeenSet = true;
+}
+
+bool GovernanceNamespace::ServiceExportToHasBeenSet() const
+{
+    return m_serviceExportToHasBeenSet;
+}
+
+bool GovernanceNamespace::GetSyncToGlobalRegistry() const
+{
+    return m_syncToGlobalRegistry;
+}
+
+void GovernanceNamespace::SetSyncToGlobalRegistry(const bool& _syncToGlobalRegistry)
+{
+    m_syncToGlobalRegistry = _syncToGlobalRegistry;
+    m_syncToGlobalRegistryHasBeenSet = true;
+}
+
+bool GovernanceNamespace::SyncToGlobalRegistryHasBeenSet() const
+{
+    return m_syncToGlobalRegistryHasBeenSet;
+}
+
+vector<Metadata> GovernanceNamespace::GetMetadatas() const
+{
+    return m_metadatas;
+}
+
+void GovernanceNamespace::SetMetadatas(const vector<Metadata>& _metadatas)
+{
+    m_metadatas = _metadatas;
+    m_metadatasHasBeenSet = true;
+}
+
+bool GovernanceNamespace::MetadatasHasBeenSet() const
+{
+    return m_metadatasHasBeenSet;
 }
 

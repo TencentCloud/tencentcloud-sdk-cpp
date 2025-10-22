@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取诊断任务数据列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 诊断任务数据列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AppTaskData> GetData() const;
@@ -76,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取任务总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 任务总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotal() const;
@@ -100,14 +96,12 @@ namespace TencentCloud
 
                     /**
                      * 诊断任务数据列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AppTaskData> m_data;
                     bool m_dataHasBeenSet;
 
                     /**
                      * 任务总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;

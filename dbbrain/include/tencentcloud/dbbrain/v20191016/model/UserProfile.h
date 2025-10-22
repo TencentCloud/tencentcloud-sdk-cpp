@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置的id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProfileId 配置的id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProfileId() const;
 
                     /**
                      * 设置配置的id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _profileId 配置的id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProfileId(const std::string& _profileId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProfileType 配置类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProfileType() const;
 
                     /**
                      * 设置配置类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _profileType 配置类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProfileType(const std::string& _profileType);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置级别，"User"或"Instance"。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProfileLevel 配置级别，"User"或"Instance"。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProfileLevel() const;
 
                     /**
                      * 设置配置级别，"User"或"Instance"。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _profileLevel 配置级别，"User"或"Instance"。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProfileLevel(const std::string& _profileLevel);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProfileName 配置名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProfileName() const;
 
                     /**
                      * 设置配置名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _profileName 配置名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProfileName(const std::string& _profileName);
@@ -172,28 +156,24 @@ namespace TencentCloud
 
                     /**
                      * 配置的id。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_profileId;
                     bool m_profileIdHasBeenSet;
 
                     /**
                      * 配置类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_profileType;
                     bool m_profileTypeHasBeenSet;
 
                     /**
                      * 配置级别，"User"或"Instance"。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_profileLevel;
                     bool m_profileLevelHasBeenSet;
 
                     /**
                      * 配置名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_profileName;
                     bool m_profileNameHasBeenSet;

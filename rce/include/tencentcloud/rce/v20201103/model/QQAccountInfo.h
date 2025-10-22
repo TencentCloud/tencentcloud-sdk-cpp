@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -140,18 +140,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户设备号（已不推荐使用）。
-
                      * @return DeviceId 用户设备号（已不推荐使用）。
-
                      * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置用户设备号（已不推荐使用）。
-
                      * @param _deviceId 用户设备号（已不推荐使用）。
-
                      * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
@@ -193,7 +189,6 @@ namespace TencentCloud
 
                     /**
                      * 用户设备号（已不推荐使用）。
-
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;

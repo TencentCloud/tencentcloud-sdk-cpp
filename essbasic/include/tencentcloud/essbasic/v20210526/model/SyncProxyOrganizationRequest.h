@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -205,10 +205,10 @@ namespace TencentCloud
                     /**
                      * 获取第三方平台子客企业法定代表人的证件类型，支持以下类型
 <ul><li>ID_CARD : 中国大陆居民身份证 (默认值)</li></ul>
-注: `现在仅支持ID_CARD居民身份证类型`
+注: `现在仅支持ID_CARD中国大陆居民身份证类型`
                      * @return ProxyLegalIdCardType 第三方平台子客企业法定代表人的证件类型，支持以下类型
 <ul><li>ID_CARD : 中国大陆居民身份证 (默认值)</li></ul>
-注: `现在仅支持ID_CARD居民身份证类型`
+注: `现在仅支持ID_CARD中国大陆居民身份证类型`
                      * 
                      */
                     std::string GetProxyLegalIdCardType() const;
@@ -216,10 +216,10 @@ namespace TencentCloud
                     /**
                      * 设置第三方平台子客企业法定代表人的证件类型，支持以下类型
 <ul><li>ID_CARD : 中国大陆居民身份证 (默认值)</li></ul>
-注: `现在仅支持ID_CARD居民身份证类型`
+注: `现在仅支持ID_CARD中国大陆居民身份证类型`
                      * @param _proxyLegalIdCardType 第三方平台子客企业法定代表人的证件类型，支持以下类型
 <ul><li>ID_CARD : 中国大陆居民身份证 (默认值)</li></ul>
-注: `现在仅支持ID_CARD居民身份证类型`
+注: `现在仅支持ID_CARD中国大陆居民身份证类型`
                      * 
                      */
                     void SetProxyLegalIdCardType(const std::string& _proxyLegalIdCardType);
@@ -233,18 +233,18 @@ namespace TencentCloud
 
                     /**
                      * 获取第三方平台子客企业法定代表人的证件号码, 应符合以下规则
-<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li></ul>
+<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li></ul>
                      * @return ProxyLegalIdCardNumber 第三方平台子客企业法定代表人的证件号码, 应符合以下规则
-<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li></ul>
+<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li></ul>
                      * 
                      */
                     std::string GetProxyLegalIdCardNumber() const;
 
                     /**
                      * 设置第三方平台子客企业法定代表人的证件号码, 应符合以下规则
-<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li></ul>
+<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li></ul>
                      * @param _proxyLegalIdCardNumber 第三方平台子客企业法定代表人的证件号码, 应符合以下规则
-<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li></ul>
+<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li></ul>
                      * 
                      */
                     void SetProxyLegalIdCardNumber(const std::string& _proxyLegalIdCardNumber);
@@ -334,14 +334,14 @@ namespace TencentCloud
                     /**
                      * 第三方平台子客企业法定代表人的证件类型，支持以下类型
 <ul><li>ID_CARD : 中国大陆居民身份证 (默认值)</li></ul>
-注: `现在仅支持ID_CARD居民身份证类型`
+注: `现在仅支持ID_CARD中国大陆居民身份证类型`
                      */
                     std::string m_proxyLegalIdCardType;
                     bool m_proxyLegalIdCardTypeHasBeenSet;
 
                     /**
                      * 第三方平台子客企业法定代表人的证件号码, 应符合以下规则
-<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li></ul>
+<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li></ul>
                      */
                     std::string m_proxyLegalIdCardNumber;
                     bool m_proxyLegalIdCardNumberHasBeenSet;

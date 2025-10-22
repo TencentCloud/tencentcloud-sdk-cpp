@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,9 @@ PayDealsRequest::PayDealsRequest() :
     m_orderIdsHasBeenSet(false),
     m_autoVoucherHasBeenSet(false),
     m_voucherIdsHasBeenSet(false),
-    m_bigDealIdsHasBeenSet(false)
+    m_bigDealIdsHasBeenSet(false),
+    m_agentPayHasBeenSet(false),
+    m_cpsUinHasBeenSet(false)
 {
 }
 
@@ -82,6 +84,22 @@ string PayDealsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_agentPayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentPay";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_agentPay, allocator);
+    }
+
+    if (m_cpsUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CpsUin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cpsUin.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -154,6 +172,38 @@ void PayDealsRequest::SetBigDealIds(const vector<string>& _bigDealIds)
 bool PayDealsRequest::BigDealIdsHasBeenSet() const
 {
     return m_bigDealIdsHasBeenSet;
+}
+
+int64_t PayDealsRequest::GetAgentPay() const
+{
+    return m_agentPay;
+}
+
+void PayDealsRequest::SetAgentPay(const int64_t& _agentPay)
+{
+    m_agentPay = _agentPay;
+    m_agentPayHasBeenSet = true;
+}
+
+bool PayDealsRequest::AgentPayHasBeenSet() const
+{
+    return m_agentPayHasBeenSet;
+}
+
+string PayDealsRequest::GetCpsUin() const
+{
+    return m_cpsUin;
+}
+
+void PayDealsRequest::SetCpsUin(const string& _cpsUin)
+{
+    m_cpsUin = _cpsUin;
+    m_cpsUinHasBeenSet = true;
+}
+
+bool PayDealsRequest::CpsUinHasBeenSet() const
+{
+    return m_cpsUinHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ using namespace std;
 DescribeSpecResponse::DescribeSpecResponse() :
     m_masterSpecHasBeenSet(false),
     m_coreSpecHasBeenSet(false),
-    m_attachCBSSpecHasBeenSet(false)
+    m_attachCBSSpecHasBeenSet(false),
+    m_cNSpecHasBeenSet(false)
 {
 }
 
@@ -124,6 +125,26 @@ CoreInternalOutcome DescribeSpecResponse::Deserialize(const string &payload)
         m_attachCBSSpecHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CNSpec") && !rsp["CNSpec"].IsNull())
+    {
+        if (!rsp["CNSpec"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CNSpec` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["CNSpec"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ResourceSpec item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_cNSpec.push_back(item);
+        }
+        m_cNSpecHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -179,11 +200,26 @@ string DescribeSpecResponse::ToJsonString() const
         }
     }
 
+    if (m_cNSpecHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CNSpec";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_cNSpec.begin(); itr != m_cNSpec.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -219,6 +255,16 @@ vector<DiskSpec> DescribeSpecResponse::GetAttachCBSSpec() const
 bool DescribeSpecResponse::AttachCBSSpecHasBeenSet() const
 {
     return m_attachCBSSpecHasBeenSet;
+}
+
+vector<ResourceSpec> DescribeSpecResponse::GetCNSpec() const
+{
+    return m_cNSpec;
+}
+
+bool DescribeSpecResponse::CNSpecHasBeenSet() const
+{
+    return m_cNSpecHasBeenSet;
 }
 
 

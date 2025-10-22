@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WID 设备Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWID() const;
 
                     /**
                      * 设置设备Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _wID 设备Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWID(const std::string& _wID);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取指令接受, 0表示成功
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Code 指令接受, 0表示成功
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCode() const;
 
                     /**
                      * 设置指令接受, 0表示成功
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _code 指令接受, 0表示成功
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCode(const int64_t& _code);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取控制结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 控制结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 设置控制结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _result 控制结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResult(const std::string& _result);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取批量大于1时，可用此seq进行链路追踪
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Seq 批量大于1时，可用此seq进行链路追踪
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSeq() const;
 
                     /**
                      * 设置批量大于1时，可用此seq进行链路追踪
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _seq 批量大于1时，可用此seq进行链路追踪
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSeq(const std::string& _seq);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 设备Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_wID;
                     bool m_wIDHasBeenSet;
 
                     /**
                      * 指令接受, 0表示成功
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_code;
                     bool m_codeHasBeenSet;
 
                     /**
                      * 控制结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;
 
                     /**
                      * 批量大于1时，可用此seq进行链路追踪
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_seq;
                     bool m_seqHasBeenSet;

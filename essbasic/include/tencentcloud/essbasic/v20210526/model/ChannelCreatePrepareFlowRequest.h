@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@
 #include <tencentcloud/essbasic/v20210526/model/CommonFlowApprover.h>
 #include <tencentcloud/essbasic/v20210526/model/OrganizationInfo.h>
 #include <tencentcloud/essbasic/v20210526/model/UserInfo.h>
+#include <tencentcloud/essbasic/v20210526/model/SignComponentConfig.h>
 
 
 namespace TencentCloud
@@ -214,23 +215,23 @@ namespace TencentCloud
                     bool FlowOptionHasBeenSet() const;
 
                     /**
-                     * 获取合同签署人信息
-                     * @return FlowApproverList 合同签署人信息
-                     * 
+                     * 获取已废弃，请用FlowInfo.Approvers
+                     * @return FlowApproverList 已废弃，请用FlowInfo.Approvers
+                     * @deprecated
                      */
                     std::vector<CommonFlowApprover> GetFlowApproverList() const;
 
                     /**
-                     * 设置合同签署人信息
-                     * @param _flowApproverList 合同签署人信息
-                     * 
+                     * 设置已废弃，请用FlowInfo.Approvers
+                     * @param _flowApproverList 已废弃，请用FlowInfo.Approvers
+                     * @deprecated
                      */
                     void SetFlowApproverList(const std::vector<CommonFlowApprover>& _flowApproverList);
 
                     /**
                      * 判断参数 FlowApproverList 是否已赋值
                      * @return FlowApproverList 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool FlowApproverListHasBeenSet() const;
 
@@ -322,6 +323,39 @@ namespace TencentCloud
                      */
                     bool OperatorHasBeenSet() const;
 
+                    /**
+                     * 获取<font color="red">此参数已经废弃，请使用 CreateFlowOption 里面的 SignComponentConfig</font>
+签署控件的配置信息，用在嵌入式发起的页面配置，包括
+
+- 签署控件 是否默认展示日期.
+                     * @return SignComponentConfig <font color="red">此参数已经废弃，请使用 CreateFlowOption 里面的 SignComponentConfig</font>
+签署控件的配置信息，用在嵌入式发起的页面配置，包括
+
+- 签署控件 是否默认展示日期.
+                     * @deprecated
+                     */
+                    SignComponentConfig GetSignComponentConfig() const;
+
+                    /**
+                     * 设置<font color="red">此参数已经废弃，请使用 CreateFlowOption 里面的 SignComponentConfig</font>
+签署控件的配置信息，用在嵌入式发起的页面配置，包括
+
+- 签署控件 是否默认展示日期.
+                     * @param _signComponentConfig <font color="red">此参数已经废弃，请使用 CreateFlowOption 里面的 SignComponentConfig</font>
+签署控件的配置信息，用在嵌入式发起的页面配置，包括
+
+- 签署控件 是否默认展示日期.
+                     * @deprecated
+                     */
+                    void SetSignComponentConfig(const SignComponentConfig& _signComponentConfig);
+
+                    /**
+                     * 判断参数 SignComponentConfig 是否已赋值
+                     * @return SignComponentConfig 是否已赋值
+                     * @deprecated
+                     */
+                    bool SignComponentConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -370,7 +404,7 @@ namespace TencentCloud
                     bool m_flowOptionHasBeenSet;
 
                     /**
-                     * 合同签署人信息
+                     * 已废弃，请用FlowInfo.Approvers
                      */
                     std::vector<CommonFlowApprover> m_flowApproverList;
                     bool m_flowApproverListHasBeenSet;
@@ -399,6 +433,15 @@ namespace TencentCloud
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
+
+                    /**
+                     * <font color="red">此参数已经废弃，请使用 CreateFlowOption 里面的 SignComponentConfig</font>
+签署控件的配置信息，用在嵌入式发起的页面配置，包括
+
+- 签署控件 是否默认展示日期.
+                     */
+                    SignComponentConfig m_signComponentConfig;
+                    bool m_signComponentConfigHasBeenSet;
 
                 };
             }

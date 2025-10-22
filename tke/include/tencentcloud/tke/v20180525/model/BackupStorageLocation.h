@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取存储服务提供方，默认腾讯云	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Provider 存储服务提供方，默认腾讯云	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProvider() const;
 
                     /**
                      * 设置存储服务提供方，默认腾讯云	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _provider 存储服务提供方，默认腾讯云	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProvider(const std::string& _provider);
@@ -115,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对象存储桶名称，如果是COS必须是tke-backup-前缀开头	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bucket 对象存储桶名称，如果是COS必须是tke-backup-前缀开头	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBucket() const;
 
                     /**
                      * 设置对象存储桶名称，如果是COS必须是tke-backup-前缀开头	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bucket 对象存储桶名称，如果是COS必须是tke-backup-前缀开头	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBucket(const std::string& _bucket);
@@ -140,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对象存储桶路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Path 对象存储桶路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置对象存储桶路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _path 对象存储桶路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPath(const std::string& _path);
@@ -165,18 +153,22 @@ namespace TencentCloud
 
                     /**
                      * 获取存储仓库状态
-注意：此字段可能返回 null，表示取不到有效值。
+- Available: 可用
+- Unavailable: 不可用
                      * @return State 存储仓库状态
-注意：此字段可能返回 null，表示取不到有效值。
+- Available: 可用
+- Unavailable: 不可用
                      * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置存储仓库状态
-注意：此字段可能返回 null，表示取不到有效值。
+- Available: 可用
+- Unavailable: 不可用
                      * @param _state 存储仓库状态
-注意：此字段可能返回 null，表示取不到有效值。
+- Available: 可用
+- Unavailable: 不可用
                      * 
                      */
                     void SetState(const std::string& _state);
@@ -190,18 +182,14 @@ namespace TencentCloud
 
                     /**
                      * 获取详细状态信息	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 详细状态信息	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置详细状态信息	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _message 详细状态信息	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -215,18 +203,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最后一次检查时间	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastValidationTime 最后一次检查时间	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastValidationTime() const;
 
                     /**
                      * 设置最后一次检查时间	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastValidationTime 最后一次检查时间	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastValidationTime(const std::string& _lastValidationTime);
@@ -254,42 +238,38 @@ namespace TencentCloud
 
                     /**
                      * 存储服务提供方，默认腾讯云	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_provider;
                     bool m_providerHasBeenSet;
 
                     /**
                      * 对象存储桶名称，如果是COS必须是tke-backup-前缀开头	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bucket;
                     bool m_bucketHasBeenSet;
 
                     /**
                      * 对象存储桶路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
 
                     /**
                      * 存储仓库状态
-注意：此字段可能返回 null，表示取不到有效值。
+- Available: 可用
+- Unavailable: 不可用
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
 
                     /**
                      * 详细状态信息	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
                      * 最后一次检查时间	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastValidationTime;
                     bool m_lastValidationTimeHasBeenSet;

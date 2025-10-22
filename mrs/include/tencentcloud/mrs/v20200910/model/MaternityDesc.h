@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,18 +51,14 @@ namespace TencentCloud
 
                     /**
                      * 获取胎儿数据结构
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Fetus 胎儿数据结构
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Fetus> GetFetus() const;
 
                     /**
                      * 设置胎儿数据结构
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fetus 胎儿数据结构
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFetus(const std::vector<Fetus>& _fetus);
@@ -76,18 +72,14 @@ namespace TencentCloud
 
                     /**
                      * 获取胎儿数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FetusNum 胎儿数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     FieldInfo GetFetusNum() const;
 
                     /**
                      * 设置胎儿数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fetusNum 胎儿数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFetusNum(const FieldInfo& _fetusNum);
@@ -101,18 +93,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _text 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetText(const std::string& _text);
@@ -126,18 +114,14 @@ namespace TencentCloud
 
                     /**
                      * 获取坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Coords 坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Coord> GetCoords() const;
 
                     /**
                      * 设置坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _coords 坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCoords(const std::vector<Coord>& _coords);
@@ -153,28 +137,24 @@ namespace TencentCloud
 
                     /**
                      * 胎儿数据结构
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Fetus> m_fetus;
                     bool m_fetusHasBeenSet;
 
                     /**
                      * 胎儿数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     FieldInfo m_fetusNum;
                     bool m_fetusNumHasBeenSet;
 
                     /**
                      * 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;
 
                     /**
                      * 坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Coord> m_coords;
                     bool m_coordsHasBeenSet;

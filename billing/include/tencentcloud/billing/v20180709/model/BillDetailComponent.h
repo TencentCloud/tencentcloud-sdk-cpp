@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -196,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原始用量/时长：组件被资源包抵扣前的原始用量/时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealTotalMeasure 原始用量/时长：组件被资源包抵扣前的原始用量/时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRealTotalMeasure() const;
 
                     /**
                      * 设置原始用量/时长：组件被资源包抵扣前的原始用量/时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _realTotalMeasure 原始用量/时长：组件被资源包抵扣前的原始用量/时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRealTotalMeasure(const std::string& _realTotalMeasure);
@@ -221,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取抵扣用量/时长（含资源包）：组件被资源包抵扣的用量/时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeductedMeasure 抵扣用量/时长（含资源包）：组件被资源包抵扣的用量/时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeductedMeasure() const;
 
                     /**
                      * 设置抵扣用量/时长（含资源包）：组件被资源包抵扣的用量/时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deductedMeasure 抵扣用量/时长（含资源包）：组件被资源包抵扣的用量/时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeductedMeasure(const std::string& _deductedMeasure);
@@ -435,18 +427,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分成金账户支出：通过分成金账户支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransferPayAmount 分成金账户支出：通过分成金账户支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTransferPayAmount() const;
 
                     /**
                      * 设置分成金账户支出：通过分成金账户支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _transferPayAmount 分成金账户支出：通过分成金账户支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTransferPayAmount(const std::string& _transferPayAmount);
@@ -460,18 +448,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组件类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ItemCode 组件类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetItemCode() const;
 
                     /**
                      * 设置组件类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _itemCode 组件类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetItemCode(const std::string& _itemCode);
@@ -485,18 +469,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组件名称编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComponentCode 组件名称编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComponentCode() const;
 
                     /**
                      * 设置组件名称编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _componentCode 组件名称编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComponentCode(const std::string& _componentCode);
@@ -510,18 +490,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组件单价：组件的折后单价，组件单价 = 刊例价 * 折扣
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContractPrice 组件单价：组件的折后单价，组件单价 = 刊例价 * 折扣
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContractPrice() const;
 
                     /**
                      * 设置组件单价：组件的折后单价，组件单价 = 刊例价 * 折扣
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _contractPrice 组件单价：组件的折后单价，组件单价 = 刊例价 * 折扣
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContractPrice(const std::string& _contractPrice);
@@ -535,18 +511,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例类型：购买的产品服务对应的实例类型，包括资源包、RI、SP、竞价实例。正常的实例展示默认为不展示
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType 实例类型：购买的产品服务对应的实例类型，包括资源包、RI、SP、竞价实例。正常的实例展示默认为不展示
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置实例类型：购买的产品服务对应的实例类型，包括资源包、RI、SP、竞价实例。正常的实例展示默认为不展示
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceType 实例类型：购买的产品服务对应的实例类型，包括资源包、RI、SP、竞价实例。正常的实例展示默认为不展示
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -560,18 +532,14 @@ namespace TencentCloud
 
                     /**
                      * 获取预留实例抵扣的使用时长：本产品或服务使用预留实例抵扣的使用时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiTimeSpan 预留实例抵扣的使用时长：本产品或服务使用预留实例抵扣的使用时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiTimeSpan() const;
 
                     /**
                      * 设置预留实例抵扣的使用时长：本产品或服务使用预留实例抵扣的使用时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riTimeSpan 预留实例抵扣的使用时长：本产品或服务使用预留实例抵扣的使用时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiTimeSpan(const std::string& _riTimeSpan);
@@ -585,18 +553,14 @@ namespace TencentCloud
 
                     /**
                      * 获取预留实例抵扣组件原价：本产品或服务使用预留实例抵扣的组件原价金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginalCostWithRI 预留实例抵扣组件原价：本产品或服务使用预留实例抵扣的组件原价金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOriginalCostWithRI() const;
 
                     /**
                      * 设置预留实例抵扣组件原价：本产品或服务使用预留实例抵扣的组件原价金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _originalCostWithRI 预留实例抵扣组件原价：本产品或服务使用预留实例抵扣的组件原价金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOriginalCostWithRI(const std::string& _originalCostWithRI);
@@ -610,18 +574,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节省计划抵扣率：节省计划可用余额额度范围内，节省计划对于此组件打的折扣率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SPDeductionRate 节省计划抵扣率：节省计划可用余额额度范围内，节省计划对于此组件打的折扣率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSPDeductionRate() const;
 
                     /**
                      * 设置节省计划抵扣率：节省计划可用余额额度范围内，节省计划对于此组件打的折扣率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sPDeductionRate 节省计划抵扣率：节省计划可用余额额度范围内，节省计划对于此组件打的折扣率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSPDeductionRate(const std::string& _sPDeductionRate);
@@ -660,18 +620,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节省计划抵扣组件原价：节省计划抵扣原价=节省计划包抵扣金额/节省计划抵扣率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginalCostWithSP 节省计划抵扣组件原价：节省计划抵扣原价=节省计划包抵扣金额/节省计划抵扣率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOriginalCostWithSP() const;
 
                     /**
                      * 设置节省计划抵扣组件原价：节省计划抵扣原价=节省计划包抵扣金额/节省计划抵扣率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _originalCostWithSP 节省计划抵扣组件原价：节省计划抵扣原价=节省计划包抵扣金额/节省计划抵扣率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOriginalCostWithSP(const std::string& _originalCostWithSP);
@@ -685,18 +641,14 @@ namespace TencentCloud
 
                     /**
                      * 获取混合折扣率：综合各类折扣抵扣信息后的最终折扣率，混合折扣率 = 优惠后总价 / 组件原价
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BlendedDiscount 混合折扣率：综合各类折扣抵扣信息后的最终折扣率，混合折扣率 = 优惠后总价 / 组件原价
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBlendedDiscount() const;
 
                     /**
                      * 设置混合折扣率：综合各类折扣抵扣信息后的最终折扣率，混合折扣率 = 优惠后总价 / 组件原价
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _blendedDiscount 混合折扣率：综合各类折扣抵扣信息后的最终折扣率，混合折扣率 = 优惠后总价 / 组件原价
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBlendedDiscount(const std::string& _blendedDiscount);
@@ -710,18 +662,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置描述：资源配置规格信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComponentConfig 配置描述：资源配置规格信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BillDetailComponentConfig> GetComponentConfig() const;
 
                     /**
                      * 设置配置描述：资源配置规格信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _componentConfig 配置描述：资源配置规格信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComponentConfig(const std::vector<BillDetailComponentConfig>& _componentConfig);
@@ -779,14 +727,12 @@ namespace TencentCloud
 
                     /**
                      * 原始用量/时长：组件被资源包抵扣前的原始用量/时长
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_realTotalMeasure;
                     bool m_realTotalMeasureHasBeenSet;
 
                     /**
                      * 抵扣用量/时长（含资源包）：组件被资源包抵扣的用量/时长
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deductedMeasure;
                     bool m_deductedMeasureHasBeenSet;
@@ -847,56 +793,48 @@ namespace TencentCloud
 
                     /**
                      * 分成金账户支出：通过分成金账户支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_transferPayAmount;
                     bool m_transferPayAmountHasBeenSet;
 
                     /**
                      * 组件类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_itemCode;
                     bool m_itemCodeHasBeenSet;
 
                     /**
                      * 组件名称编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_componentCode;
                     bool m_componentCodeHasBeenSet;
 
                     /**
                      * 组件单价：组件的折后单价，组件单价 = 刊例价 * 折扣
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_contractPrice;
                     bool m_contractPriceHasBeenSet;
 
                     /**
                      * 实例类型：购买的产品服务对应的实例类型，包括资源包、RI、SP、竞价实例。正常的实例展示默认为不展示
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
                      * 预留实例抵扣的使用时长：本产品或服务使用预留实例抵扣的使用时长
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riTimeSpan;
                     bool m_riTimeSpanHasBeenSet;
 
                     /**
                      * 预留实例抵扣组件原价：本产品或服务使用预留实例抵扣的组件原价金额
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_originalCostWithRI;
                     bool m_originalCostWithRIHasBeenSet;
 
                     /**
                      * 节省计划抵扣率：节省计划可用余额额度范围内，节省计划对于此组件打的折扣率
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sPDeductionRate;
                     bool m_sPDeductionRateHasBeenSet;
@@ -910,21 +848,18 @@ namespace TencentCloud
 
                     /**
                      * 节省计划抵扣组件原价：节省计划抵扣原价=节省计划包抵扣金额/节省计划抵扣率
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_originalCostWithSP;
                     bool m_originalCostWithSPHasBeenSet;
 
                     /**
                      * 混合折扣率：综合各类折扣抵扣信息后的最终折扣率，混合折扣率 = 优惠后总价 / 组件原价
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_blendedDiscount;
                     bool m_blendedDiscountHasBeenSet;
 
                     /**
                      * 配置描述：资源配置规格信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BillDetailComponentConfig> m_componentConfig;
                     bool m_componentConfigHasBeenSet;

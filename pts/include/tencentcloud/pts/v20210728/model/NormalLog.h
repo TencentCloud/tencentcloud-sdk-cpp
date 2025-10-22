@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取毫秒时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timestamp 毫秒时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTimestamp() const;
 
                     /**
                      * 设置毫秒时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timestamp 毫秒时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimestamp(const std::string& _timestamp);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SeverityText 日志级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSeverityText() const;
 
                     /**
                      * 设置日志级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _severityText 日志级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSeverityText(const std::string& _severityText);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志输出内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Body 日志输出内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBody() const;
 
                     /**
                      * 设置日志输出内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _body 日志输出内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBody(const std::string& _body);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 毫秒时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timestamp;
                     bool m_timestampHasBeenSet;
 
                     /**
                      * 日志级别
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_severityText;
                     bool m_severityTextHasBeenSet;
 
                     /**
                      * 日志输出内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_body;
                     bool m_bodyHasBeenSet;

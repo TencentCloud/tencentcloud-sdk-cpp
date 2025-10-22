@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取记录ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 记录ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置记录ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 记录ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取月份，格式：yyyy-mm，示例：2021-01。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Month 月份，格式：yyyy-mm，示例：2021-01。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMonth() const;
 
                     /**
                      * 设置月份，格式：yyyy-mm，示例：2021-01。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _month 月份，格式：yyyy-mm，示例：2021-01。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMonth(const std::string& _month);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消耗金额，单元：元。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCost 消耗金额，单元：元。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetTotalCost() const;
 
                     /**
                      * 设置消耗金额，单元：元。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalCost 消耗金额，单元：元。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalCost(const double& _totalCost);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取比上月增长率%。正数增长，负数下降，空值无法统计。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GrowthRate 比上月增长率%。正数增长，负数下降，空值无法统计。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGrowthRate() const;
 
                     /**
                      * 设置比上月增长率%。正数增长，负数下降，空值无法统计。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _growthRate 比上月增长率%。正数增长，负数下降，空值无法统计。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGrowthRate(const std::string& _growthRate);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 记录ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 月份，格式：yyyy-mm，示例：2021-01。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_month;
                     bool m_monthHasBeenSet;
 
                     /**
                      * 消耗金额，单元：元。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_totalCost;
                     bool m_totalCostHasBeenSet;
 
                     /**
                      * 比上月增长率%。正数增长，负数下降，空值无法统计。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_growthRate;
                     bool m_growthRateHasBeenSet;

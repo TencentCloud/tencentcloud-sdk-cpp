@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -237,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailureReason 失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFailureReason() const;
 
                     /**
                      * 设置失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _failureReason 失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFailureReason(const std::string& _failureReason);
@@ -318,7 +314,6 @@ namespace TencentCloud
 
                     /**
                      * 失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_failureReason;
                     bool m_failureReasonHasBeenSet;

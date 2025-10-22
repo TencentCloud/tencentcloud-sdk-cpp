@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,8 @@ ModifyVodDomainConfigRequest::ModifyVodDomainConfigRequest() :
     m_subAppIdHasBeenSet(false),
     m_refererAuthPolicyHasBeenSet(false),
     m_urlSignatureAuthPolicyHasBeenSet(false),
-    m_qUICConfigHasBeenSet(false)
+    m_qUICConfigHasBeenSet(false),
+    m_iPFilterPolicyHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,15 @@ string ModifyVodDomainConfigRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_qUICConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_iPFilterPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IPFilterPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_iPFilterPolicy.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -167,6 +177,22 @@ void ModifyVodDomainConfigRequest::SetQUICConfig(const DomainQUICConfig& _qUICCo
 bool ModifyVodDomainConfigRequest::QUICConfigHasBeenSet() const
 {
     return m_qUICConfigHasBeenSet;
+}
+
+IPFilterPolicy ModifyVodDomainConfigRequest::GetIPFilterPolicy() const
+{
+    return m_iPFilterPolicy;
+}
+
+void ModifyVodDomainConfigRequest::SetIPFilterPolicy(const IPFilterPolicy& _iPFilterPolicy)
+{
+    m_iPFilterPolicy = _iPFilterPolicy;
+    m_iPFilterPolicyHasBeenSet = true;
+}
+
+bool ModifyVodDomainConfigRequest::IPFilterPolicyHasBeenSet() const
+{
+    return m_iPFilterPolicyHasBeenSet;
 }
 
 

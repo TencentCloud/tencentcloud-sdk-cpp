@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -302,6 +302,31 @@ namespace TencentCloud
                      */
                     bool NetTypeHasBeenSet() const;
 
+                    /**
+                     * 获取产品品类id，113：摄像头
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CategoryId 产品品类id，113：摄像头
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetCategoryId() const;
+
+                    /**
+                     * 设置产品品类id，113：摄像头
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _categoryId 产品品类id，113：摄像头
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCategoryId(const uint64_t& _categoryId);
+
+                    /**
+                     * 判断参数 CategoryId 是否已赋值
+                     * @return CategoryId 是否已赋值
+                     * 
+                     */
+                    bool CategoryIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -376,6 +401,13 @@ namespace TencentCloud
                      */
                     std::string m_netType;
                     bool m_netTypeHasBeenSet;
+
+                    /**
+                     * 产品品类id，113：摄像头
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_categoryId;
+                    bool m_categoryIdHasBeenSet;
 
                 };
             }

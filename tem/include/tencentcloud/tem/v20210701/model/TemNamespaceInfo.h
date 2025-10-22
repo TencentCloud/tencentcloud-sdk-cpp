@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -133,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取环境描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 环境描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置环境描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 环境描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -410,18 +406,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId 用户AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppId() const;
 
                     /**
                      * 设置用户AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appId 用户AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppId(const std::string& _appId);
@@ -435,18 +427,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 用户Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置用户Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uin 用户Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -460,18 +448,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户SubAccountUin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubAccountUin 用户SubAccountUin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubAccountUin() const;
 
                     /**
                      * 设置用户SubAccountUin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subAccountUin 用户SubAccountUin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubAccountUin(const std::string& _subAccountUin);
@@ -485,18 +469,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterId 集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterId 集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -510,18 +490,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -535,18 +511,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源是否有权限
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HasAuthority 资源是否有权限
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetHasAuthority() const;
 
                     /**
                      * 设置资源是否有权限
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hasAuthority 资源是否有权限
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHasAuthority(const bool& _hasAuthority);
@@ -560,18 +532,14 @@ namespace TencentCloud
 
                     /**
                      * 获取环境类型: test、pre、prod
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnvType 环境类型: test、pre、prod
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEnvType() const;
 
                     /**
                      * 设置环境类型: test、pre、prod
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _envType 环境类型: test、pre、prod
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnvType(const std::string& _envType);
@@ -585,18 +553,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionId 地域码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegionId() const;
 
                     /**
                      * 设置地域码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionId 地域码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionId(const std::string& _regionId);
@@ -636,7 +600,6 @@ namespace TencentCloud
 
                     /**
                      * 环境描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
@@ -715,56 +678,48 @@ namespace TencentCloud
 
                     /**
                      * 用户AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
                      * 用户Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
                      * 用户SubAccountUin
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subAccountUin;
                     bool m_subAccountUinHasBeenSet;
 
                     /**
                      * 集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
                      * 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
                      * 资源是否有权限
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_hasAuthority;
                     bool m_hasAuthorityHasBeenSet;
 
                     /**
                      * 环境类型: test、pre、prod
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_envType;
                     bool m_envTypeHasBeenSet;
 
                     /**
                      * 地域码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regionId;
                     bool m_regionIdHasBeenSet;

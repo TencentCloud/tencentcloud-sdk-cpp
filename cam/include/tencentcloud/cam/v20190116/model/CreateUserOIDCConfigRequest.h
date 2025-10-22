@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool ScopeHasBeenSet() const;
 
                     /**
-                     * 获取描述
-                     * @return Description 描述
+                     * 获取描述信息。由用户自行定义。
+                     * @return Description 描述信息。由用户自行定义。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述
-                     * @param _description 描述
+                     * 设置描述信息。由用户自行定义。
+                     * @param _description 描述信息。由用户自行定义。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -287,7 +287,7 @@ namespace TencentCloud
                     bool m_scopeHasBeenSet;
 
                     /**
-                     * 描述
+                     * 描述信息。由用户自行定义。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

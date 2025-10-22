@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Binlog跨地域配置更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BinlogCrossRegionsConfigUpdateTime Binlog跨地域配置更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBinlogCrossRegionsConfigUpdateTime() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Binlog配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BinlogConfig Binlog配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BinlogConfigInfo GetBinlogConfig() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * Binlog跨地域配置更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_binlogCrossRegionsConfigUpdateTime;
                     bool m_binlogCrossRegionsConfigUpdateTimeHasBeenSet;
 
                     /**
                      * Binlog配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BinlogConfigInfo m_binlogConfig;
                     bool m_binlogConfigHasBeenSet;

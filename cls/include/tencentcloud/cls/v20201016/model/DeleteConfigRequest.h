@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取采集规则配置ID
-                     * @return ConfigId 采集规则配置ID
+                     * 获取采集配置ID
+ - 通过[获取采集规则配置](https://cloud.tencent.com/document/product/614/58616)获取采集配置Id。
+                     * @return ConfigId 采集配置ID
+ - 通过[获取采集规则配置](https://cloud.tencent.com/document/product/614/58616)获取采集配置Id。
                      * 
                      */
                     std::string GetConfigId() const;
 
                     /**
-                     * 设置采集规则配置ID
-                     * @param _configId 采集规则配置ID
+                     * 设置采集配置ID
+ - 通过[获取采集规则配置](https://cloud.tencent.com/document/product/614/58616)获取采集配置Id。
+                     * @param _configId 采集配置ID
+ - 通过[获取采集规则配置](https://cloud.tencent.com/document/product/614/58616)获取采集配置Id。
                      * 
                      */
                     void SetConfigId(const std::string& _configId);
@@ -66,7 +70,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 采集规则配置ID
+                     * 采集配置ID
+ - 通过[获取采集规则配置](https://cloud.tencent.com/document/product/614/58616)获取采集配置Id。
                      */
                     std::string m_configId;
                     bool m_configIdHasBeenSet;

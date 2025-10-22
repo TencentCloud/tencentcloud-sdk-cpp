@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool SpecNameHasBeenSet() const;
 
                     /**
-                     * 获取角色（MATER/CORE），MASTER 对应 FE，CORE对应BE
-                     * @return Type 角色（MATER/CORE），MASTER 对应 FE，CORE对应BE
+                     * 获取角色（MASTER/CORE），MASTER 对应 FE，CORE对应BE
+                     * @return Type 角色（MASTER/CORE），MASTER 对应 FE，CORE对应BE
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置角色（MATER/CORE），MASTER 对应 FE，CORE对应BE
-                     * @param _type 角色（MATER/CORE），MASTER 对应 FE，CORE对应BE
+                     * 设置角色（MASTER/CORE），MASTER 对应 FE，CORE对应BE
+                     * @param _type 角色（MASTER/CORE），MASTER 对应 FE，CORE对应BE
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -104,6 +104,48 @@ namespace TencentCloud
                      * 
                      */
                     bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取前端鉴权使用，后端API调用传false，传true不会执行变配
+                     * @return CheckAuth 前端鉴权使用，后端API调用传false，传true不会执行变配
+                     * 
+                     */
+                    bool GetCheckAuth() const;
+
+                    /**
+                     * 设置前端鉴权使用，后端API调用传false，传true不会执行变配
+                     * @param _checkAuth 前端鉴权使用，后端API调用传false，传true不会执行变配
+                     * 
+                     */
+                    void SetCheckAuth(const bool& _checkAuth);
+
+                    /**
+                     * 判断参数 CheckAuth 是否已赋值
+                     * @return CheckAuth 是否已赋值
+                     * 
+                     */
+                    bool CheckAuthHasBeenSet() const;
+
+                    /**
+                     * 获取是否滚动重启
+                     * @return RollingRestart 是否滚动重启
+                     * 
+                     */
+                    bool GetRollingRestart() const;
+
+                    /**
+                     * 设置是否滚动重启
+                     * @param _rollingRestart 是否滚动重启
+                     * 
+                     */
+                    void SetRollingRestart(const bool& _rollingRestart);
+
+                    /**
+                     * 判断参数 RollingRestart 是否已赋值
+                     * @return RollingRestart 是否已赋值
+                     * 
+                     */
+                    bool RollingRestartHasBeenSet() const;
 
                 private:
 
@@ -120,10 +162,22 @@ namespace TencentCloud
                     bool m_specNameHasBeenSet;
 
                     /**
-                     * 角色（MATER/CORE），MASTER 对应 FE，CORE对应BE
+                     * 角色（MASTER/CORE），MASTER 对应 FE，CORE对应BE
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * 前端鉴权使用，后端API调用传false，传true不会执行变配
+                     */
+                    bool m_checkAuth;
+                    bool m_checkAuthHasBeenSet;
+
+                    /**
+                     * 是否滚动重启
+                     */
+                    bool m_rollingRestart;
+                    bool m_rollingRestartHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tsf/v20180326/model/ServiceConfig.h>
+#include <tencentcloud/tsf/v20180326/model/ServiceGovernanceConfig.h>
 
 
 namespace TencentCloud
@@ -44,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用ID
-                     * @return ApplicationId 应用ID
+                     * 获取应用ID，可通过调用[DescribeApplications](https://cloud.tencent.com/document/api/649/36090)查询已创建的应用列表或登录控制台进行查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/api/649/36094)创建新的应用。
+                     * @return ApplicationId 应用ID，可通过调用[DescribeApplications](https://cloud.tencent.com/document/api/649/36090)查询已创建的应用列表或登录控制台进行查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/api/649/36094)创建新的应用。
                      * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
-                     * 设置应用ID
-                     * @param _applicationId 应用ID
+                     * 设置应用ID，可通过调用[DescribeApplications](https://cloud.tencent.com/document/api/649/36090)查询已创建的应用列表或登录控制台进行查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/api/649/36094)创建新的应用。
+                     * @param _applicationId 应用ID，可通过调用[DescribeApplications](https://cloud.tencent.com/document/api/649/36090)查询已创建的应用列表或登录控制台进行查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/api/649/36094)创建新的应用。
                      * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
@@ -148,10 +149,73 @@ namespace TencentCloud
                      */
                     bool ServiceConfigListHasBeenSet() const;
 
+                    /**
+                     * 获取应用的微服务类型，N表示普通应用，M表示Mesh应用，G表示网关应用，NATIVE表示原生应用，RAW表示裸应用
+                     * @return MicroserviceType 应用的微服务类型，N表示普通应用，M表示Mesh应用，G表示网关应用，NATIVE表示原生应用，RAW表示裸应用
+                     * 
+                     */
+                    std::string GetMicroserviceType() const;
+
+                    /**
+                     * 设置应用的微服务类型，N表示普通应用，M表示Mesh应用，G表示网关应用，NATIVE表示原生应用，RAW表示裸应用
+                     * @param _microserviceType 应用的微服务类型，N表示普通应用，M表示Mesh应用，G表示网关应用，NATIVE表示原生应用，RAW表示裸应用
+                     * 
+                     */
+                    void SetMicroserviceType(const std::string& _microserviceType);
+
+                    /**
+                     * 判断参数 MicroserviceType 是否已赋值
+                     * @return MicroserviceType 是否已赋值
+                     * 
+                     */
+                    bool MicroserviceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取注册配置治理信息
+                     * @return ServiceGovernanceConfig 注册配置治理信息
+                     * 
+                     */
+                    ServiceGovernanceConfig GetServiceGovernanceConfig() const;
+
+                    /**
+                     * 设置注册配置治理信息
+                     * @param _serviceGovernanceConfig 注册配置治理信息
+                     * 
+                     */
+                    void SetServiceGovernanceConfig(const ServiceGovernanceConfig& _serviceGovernanceConfig);
+
+                    /**
+                     * 判断参数 ServiceGovernanceConfig 是否已赋值
+                     * @return ServiceGovernanceConfig 是否已赋值
+                     * 
+                     */
+                    bool ServiceGovernanceConfigHasBeenSet() const;
+
+                    /**
+                     * 获取应用开发框架，SpringCloud表示SpringCloud应用，Dubbo表示Dubbo应用，Go-GRPC表示Go-GRPC应用，Other表示其他应用
+                     * @return FrameworkType 应用开发框架，SpringCloud表示SpringCloud应用，Dubbo表示Dubbo应用，Go-GRPC表示Go-GRPC应用，Other表示其他应用
+                     * 
+                     */
+                    std::string GetFrameworkType() const;
+
+                    /**
+                     * 设置应用开发框架，SpringCloud表示SpringCloud应用，Dubbo表示Dubbo应用，Go-GRPC表示Go-GRPC应用，Other表示其他应用
+                     * @param _frameworkType 应用开发框架，SpringCloud表示SpringCloud应用，Dubbo表示Dubbo应用，Go-GRPC表示Go-GRPC应用，Other表示其他应用
+                     * 
+                     */
+                    void SetFrameworkType(const std::string& _frameworkType);
+
+                    /**
+                     * 判断参数 FrameworkType 是否已赋值
+                     * @return FrameworkType 是否已赋值
+                     * 
+                     */
+                    bool FrameworkTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 应用ID
+                     * 应用ID，可通过调用[DescribeApplications](https://cloud.tencent.com/document/api/649/36090)查询已创建的应用列表或登录控制台进行查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/api/649/36094)创建新的应用。
                      */
                     std::string m_applicationId;
                     bool m_applicationIdHasBeenSet;
@@ -179,6 +243,24 @@ namespace TencentCloud
                      */
                     std::vector<ServiceConfig> m_serviceConfigList;
                     bool m_serviceConfigListHasBeenSet;
+
+                    /**
+                     * 应用的微服务类型，N表示普通应用，M表示Mesh应用，G表示网关应用，NATIVE表示原生应用，RAW表示裸应用
+                     */
+                    std::string m_microserviceType;
+                    bool m_microserviceTypeHasBeenSet;
+
+                    /**
+                     * 注册配置治理信息
+                     */
+                    ServiceGovernanceConfig m_serviceGovernanceConfig;
+                    bool m_serviceGovernanceConfigHasBeenSet;
+
+                    /**
+                     * 应用开发框架，SpringCloud表示SpringCloud应用，Dubbo表示Dubbo应用，Go-GRPC表示Go-GRPC应用，Other表示其他应用
+                     */
+                    std::string m_frameworkType;
+                    bool m_frameworkTypeHasBeenSet;
 
                 };
             }

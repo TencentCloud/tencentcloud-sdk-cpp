@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -174,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略优先级，数字越小，级别越高，该规则越靠前匹配，取值1-1000
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Priority 策略优先级，数字越小，级别越高，该规则越靠前匹配，取值1-1000
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPriority() const;
 
                     /**
                      * 设置策略优先级，数字越小，级别越高，该规则越靠前匹配，取值1-1000
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _priority 策略优先级，数字越小，级别越高，该规则越靠前匹配，取值1-1000
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPriority(const uint64_t& _priority);
@@ -237,7 +233,6 @@ namespace TencentCloud
 
                     /**
                      * 策略优先级，数字越小，级别越高，该规则越靠前匹配，取值1-1000
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_priority;
                     bool m_priorityHasBeenSet;

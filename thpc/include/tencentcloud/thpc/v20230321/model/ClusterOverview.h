@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -178,18 +178,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群调度器版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SchedulerVersion 集群调度器版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSchedulerVersion() const;
 
                     /**
                      * 设置集群调度器版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _schedulerVersion 集群调度器版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSchedulerVersion(const std::string& _schedulerVersion);
@@ -369,6 +365,27 @@ namespace TencentCloud
                      */
                     bool VpcIdHasBeenSet() const;
 
+                    /**
+                     * 获取集群类型
+                     * @return ClusterType 集群类型
+                     * 
+                     */
+                    std::string GetClusterType() const;
+
+                    /**
+                     * 设置集群类型
+                     * @param _clusterType 集群类型
+                     * 
+                     */
+                    void SetClusterType(const std::string& _clusterType);
+
+                    /**
+                     * 判断参数 ClusterType 是否已赋值
+                     * @return ClusterType 是否已赋值
+                     * 
+                     */
+                    bool ClusterTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -409,7 +426,6 @@ namespace TencentCloud
 
                     /**
                      * 集群调度器版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_schedulerVersion;
                     bool m_schedulerVersionHasBeenSet;
@@ -461,6 +477,12 @@ namespace TencentCloud
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
+
+                    /**
+                     * 集群类型
+                     */
+                    std::string m_clusterType;
+                    bool m_clusterTypeHasBeenSet;
 
                 };
             }

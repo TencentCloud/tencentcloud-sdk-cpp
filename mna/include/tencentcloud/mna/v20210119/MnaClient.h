@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,18 +35,16 @@
 #include <tencentcloud/mna/v20210119/model/AddL3ConnResponse.h>
 #include <tencentcloud/mna/v20210119/model/CreateEncryptedKeyRequest.h>
 #include <tencentcloud/mna/v20210119/model/CreateEncryptedKeyResponse.h>
-#include <tencentcloud/mna/v20210119/model/CreateQosRequest.h>
-#include <tencentcloud/mna/v20210119/model/CreateQosResponse.h>
 #include <tencentcloud/mna/v20210119/model/DeleteDeviceRequest.h>
 #include <tencentcloud/mna/v20210119/model/DeleteDeviceResponse.h>
 #include <tencentcloud/mna/v20210119/model/DeleteGroupRequest.h>
 #include <tencentcloud/mna/v20210119/model/DeleteGroupResponse.h>
 #include <tencentcloud/mna/v20210119/model/DeleteL3ConnRequest.h>
 #include <tencentcloud/mna/v20210119/model/DeleteL3ConnResponse.h>
-#include <tencentcloud/mna/v20210119/model/DeleteQosRequest.h>
-#include <tencentcloud/mna/v20210119/model/DeleteQosResponse.h>
-#include <tencentcloud/mna/v20210119/model/DescribeQosRequest.h>
-#include <tencentcloud/mna/v20210119/model/DescribeQosResponse.h>
+#include <tencentcloud/mna/v20210119/model/DownloadActiveDeviceCountRequest.h>
+#include <tencentcloud/mna/v20210119/model/DownloadActiveDeviceCountResponse.h>
+#include <tencentcloud/mna/v20210119/model/GetActiveDeviceCountRequest.h>
+#include <tencentcloud/mna/v20210119/model/GetActiveDeviceCountResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetDeviceRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetDeviceResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetDevicePayModeRequest.h>
@@ -91,6 +89,8 @@
 #include <tencentcloud/mna/v20210119/model/OrderFlowPackageResponse.h>
 #include <tencentcloud/mna/v20210119/model/OrderPerLicenseRequest.h>
 #include <tencentcloud/mna/v20210119/model/OrderPerLicenseResponse.h>
+#include <tencentcloud/mna/v20210119/model/ReportOrderRequest.h>
+#include <tencentcloud/mna/v20210119/model/ReportOrderResponse.h>
 #include <tencentcloud/mna/v20210119/model/SetNotifyUrlRequest.h>
 #include <tencentcloud/mna/v20210119/model/SetNotifyUrlResponse.h>
 #include <tencentcloud/mna/v20210119/model/UpdateDeviceRequest.h>
@@ -137,9 +137,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateEncryptedKeyResponse> CreateEncryptedKeyOutcome;
                 typedef std::future<CreateEncryptedKeyOutcome> CreateEncryptedKeyOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::CreateEncryptedKeyRequest&, CreateEncryptedKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEncryptedKeyAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateQosResponse> CreateQosOutcome;
-                typedef std::future<CreateQosOutcome> CreateQosOutcomeCallable;
-                typedef std::function<void(const MnaClient*, const Model::CreateQosRequest&, CreateQosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateQosAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDeviceResponse> DeleteDeviceOutcome;
                 typedef std::future<DeleteDeviceOutcome> DeleteDeviceOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::DeleteDeviceRequest&, DeleteDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeviceAsyncHandler;
@@ -149,12 +146,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteL3ConnResponse> DeleteL3ConnOutcome;
                 typedef std::future<DeleteL3ConnOutcome> DeleteL3ConnOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::DeleteL3ConnRequest&, DeleteL3ConnOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteL3ConnAsyncHandler;
-                typedef Outcome<Core::Error, Model::DeleteQosResponse> DeleteQosOutcome;
-                typedef std::future<DeleteQosOutcome> DeleteQosOutcomeCallable;
-                typedef std::function<void(const MnaClient*, const Model::DeleteQosRequest&, DeleteQosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteQosAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeQosResponse> DescribeQosOutcome;
-                typedef std::future<DescribeQosOutcome> DescribeQosOutcomeCallable;
-                typedef std::function<void(const MnaClient*, const Model::DescribeQosRequest&, DescribeQosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQosAsyncHandler;
+                typedef Outcome<Core::Error, Model::DownloadActiveDeviceCountResponse> DownloadActiveDeviceCountOutcome;
+                typedef std::future<DownloadActiveDeviceCountOutcome> DownloadActiveDeviceCountOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::DownloadActiveDeviceCountRequest&, DownloadActiveDeviceCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadActiveDeviceCountAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetActiveDeviceCountResponse> GetActiveDeviceCountOutcome;
+                typedef std::future<GetActiveDeviceCountOutcome> GetActiveDeviceCountOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::GetActiveDeviceCountRequest&, GetActiveDeviceCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetActiveDeviceCountAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetDeviceResponse> GetDeviceOutcome;
                 typedef std::future<GetDeviceOutcome> GetDeviceOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetDeviceRequest&, GetDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDeviceAsyncHandler;
@@ -221,6 +218,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::OrderPerLicenseResponse> OrderPerLicenseOutcome;
                 typedef std::future<OrderPerLicenseOutcome> OrderPerLicenseOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::OrderPerLicenseRequest&, OrderPerLicenseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OrderPerLicenseAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReportOrderResponse> ReportOrderOutcome;
+                typedef std::future<ReportOrderOutcome> ReportOrderOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::ReportOrderRequest&, ReportOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReportOrderAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetNotifyUrlResponse> SetNotifyUrlOutcome;
                 typedef std::future<SetNotifyUrlOutcome> SetNotifyUrlOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::SetNotifyUrlRequest&, SetNotifyUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetNotifyUrlAsyncHandler;
@@ -300,15 +300,6 @@ namespace TencentCloud
                 CreateEncryptedKeyOutcomeCallable CreateEncryptedKeyCallable(const Model::CreateEncryptedKeyRequest& request);
 
                 /**
-                 *移动网络发起Qos加速过程
-                 * @param req CreateQosRequest
-                 * @return CreateQosOutcome
-                 */
-                CreateQosOutcome CreateQos(const Model::CreateQosRequest &request);
-                void CreateQosAsync(const Model::CreateQosRequest& request, const CreateQosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateQosOutcomeCallable CreateQosCallable(const Model::CreateQosRequest& request);
-
-                /**
                  *删除设备信息
                  * @param req DeleteDeviceRequest
                  * @return DeleteDeviceOutcome
@@ -336,22 +327,22 @@ namespace TencentCloud
                 DeleteL3ConnOutcomeCallable DeleteL3ConnCallable(const Model::DeleteL3ConnRequest& request);
 
                 /**
-                 *移动网络停止Qos加速过程
-                 * @param req DeleteQosRequest
-                 * @return DeleteQosOutcome
+                 *下载活跃设备数量统计
+                 * @param req DownloadActiveDeviceCountRequest
+                 * @return DownloadActiveDeviceCountOutcome
                  */
-                DeleteQosOutcome DeleteQos(const Model::DeleteQosRequest &request);
-                void DeleteQosAsync(const Model::DeleteQosRequest& request, const DeleteQosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DeleteQosOutcomeCallable DeleteQosCallable(const Model::DeleteQosRequest& request);
+                DownloadActiveDeviceCountOutcome DownloadActiveDeviceCount(const Model::DownloadActiveDeviceCountRequest &request);
+                void DownloadActiveDeviceCountAsync(const Model::DownloadActiveDeviceCountRequest& request, const DownloadActiveDeviceCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DownloadActiveDeviceCountOutcomeCallable DownloadActiveDeviceCountCallable(const Model::DownloadActiveDeviceCountRequest& request);
 
                 /**
-                 *获取Qos加速状态
-                 * @param req DescribeQosRequest
-                 * @return DescribeQosOutcome
+                 *活跃设备数量统计
+                 * @param req GetActiveDeviceCountRequest
+                 * @return GetActiveDeviceCountOutcome
                  */
-                DescribeQosOutcome DescribeQos(const Model::DescribeQosRequest &request);
-                void DescribeQosAsync(const Model::DescribeQosRequest& request, const DescribeQosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeQosOutcomeCallable DescribeQosCallable(const Model::DescribeQosRequest& request);
+                GetActiveDeviceCountOutcome GetActiveDeviceCount(const Model::GetActiveDeviceCountRequest &request);
+                void GetActiveDeviceCountAsync(const Model::GetActiveDeviceCountRequest& request, const GetActiveDeviceCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetActiveDeviceCountOutcomeCallable GetActiveDeviceCountCallable(const Model::GetActiveDeviceCountRequest& request);
 
                 /**
                  *通过指定设备的ID查找设备详细信息
@@ -550,6 +541,15 @@ namespace TencentCloud
                 OrderPerLicenseOutcome OrderPerLicense(const Model::OrderPerLicenseRequest &request);
                 void OrderPerLicenseAsync(const Model::OrderPerLicenseRequest& request, const OrderPerLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 OrderPerLicenseOutcomeCallable OrderPerLicenseCallable(const Model::OrderPerLicenseRequest& request);
+
+                /**
+                 *用户上报自定义的订单信息，多网聚合加速服务将相关信息进行保存
+                 * @param req ReportOrderRequest
+                 * @return ReportOrderOutcome
+                 */
+                ReportOrderOutcome ReportOrder(const Model::ReportOrderRequest &request);
+                void ReportOrderAsync(const Model::ReportOrderRequest& request, const ReportOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReportOrderOutcomeCallable ReportOrderCallable(const Model::ReportOrderRequest& request);
 
                 /**
                  *设置用户流量告警信息接口，通过该接口设置流量包告警阈值以及告警时回调的url和key

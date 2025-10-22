@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取BGP通道CIDR
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TunnelCidr BGP通道CIDR
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTunnelCidr() const;
 
                     /**
                      * 设置BGP通道CIDR
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tunnelCidr BGP通道CIDR
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTunnelCidr(const std::string& _tunnelCidr);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取本端BGP IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LocalBgpIp 本端BGP IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLocalBgpIp() const;
 
                     /**
                      * 设置本端BGP IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _localBgpIp 本端BGP IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLocalBgpIp(const std::string& _localBgpIp);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对端BGP IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemoteBgpIp 对端BGP IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemoteBgpIp() const;
 
                     /**
                      * 设置对端BGP IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remoteBgpIp 对端BGP IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemoteBgpIp(const std::string& _remoteBgpIp);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取本端BGP ASN号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LocalBgpAsn 本端BGP ASN号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLocalBgpAsn() const;
 
                     /**
                      * 设置本端BGP ASN号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _localBgpAsn 本端BGP ASN号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLocalBgpAsn(const std::string& _localBgpAsn);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对端BGP ASN号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemoteBgpAsn 对端BGP ASN号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemoteBgpAsn() const;
 
                     /**
                      * 设置对端BGP ASN号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remoteBgpAsn 对端BGP ASN号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemoteBgpAsn(const std::string& _remoteBgpAsn);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * BGP通道CIDR
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tunnelCidr;
                     bool m_tunnelCidrHasBeenSet;
 
                     /**
                      * 本端BGP IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_localBgpIp;
                     bool m_localBgpIpHasBeenSet;
 
                     /**
                      * 对端BGP IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remoteBgpIp;
                     bool m_remoteBgpIpHasBeenSet;
 
                     /**
                      * 本端BGP ASN号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_localBgpAsn;
                     bool m_localBgpAsnHasBeenSet;
 
                     /**
                      * 对端BGP ASN号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remoteBgpAsn;
                     bool m_remoteBgpAsnHasBeenSet;

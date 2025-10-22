@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取vpc限制效力，ALLOW 允许；DENY 拒绝。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcRestrictionEffect vpc限制效力，ALLOW 允许；DENY 拒绝。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcRestrictionEffect() const;
@@ -75,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取允许或拒绝下载备份文件的vpcId列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcIdSet 允许或拒绝下载备份文件的vpcId列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetVpcIdSet() const;
@@ -91,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取ip限制效力，ALLOW 允许；DENY 拒绝。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IpRestrictionEffect ip限制效力，ALLOW 允许；DENY 拒绝。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIpRestrictionEffect() const;
@@ -107,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取允许或拒绝下载备份文件的ip列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IpSet 允许或拒绝下载备份文件的ip列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetIpSet() const;
@@ -131,28 +123,24 @@ namespace TencentCloud
 
                     /**
                      * vpc限制效力，ALLOW 允许；DENY 拒绝。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcRestrictionEffect;
                     bool m_vpcRestrictionEffectHasBeenSet;
 
                     /**
                      * 允许或拒绝下载备份文件的vpcId列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_vpcIdSet;
                     bool m_vpcIdSetHasBeenSet;
 
                     /**
                      * ip限制效力，ALLOW 允许；DENY 拒绝。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ipRestrictionEffect;
                     bool m_ipRestrictionEffectHasBeenSet;
 
                     /**
                      * 允许或拒绝下载备份文件的ip列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_ipSet;
                     bool m_ipSetHasBeenSet;

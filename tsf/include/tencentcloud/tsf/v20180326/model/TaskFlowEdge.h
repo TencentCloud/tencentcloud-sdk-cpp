@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取节点 ID
-                     * @return NodeId 节点 ID
+                     * 获取节点 ID，节点类型为任务时为任务ID，节点类型为逻辑节点"且"时为 AND，为逻辑节点"或"时为 OR，节点类型为头节点时为字符串"head"
+                     * @return NodeId 节点 ID，节点类型为任务时为任务ID，节点类型为逻辑节点"且"时为 AND，为逻辑节点"或"时为 OR，节点类型为头节点时为字符串"head"
                      * 
                      */
                     std::string GetNodeId() const;
 
                     /**
-                     * 设置节点 ID
-                     * @param _nodeId 节点 ID
+                     * 设置节点 ID，节点类型为任务时为任务ID，节点类型为逻辑节点"且"时为 AND，为逻辑节点"或"时为 OR，节点类型为头节点时为字符串"head"
+                     * @param _nodeId 节点 ID，节点类型为任务时为任务ID，节点类型为逻辑节点"且"时为 AND，为逻辑节点"或"时为 OR，节点类型为头节点时为字符串"head"
                      * 
                      */
                     void SetNodeId(const std::string& _nodeId);
@@ -68,19 +68,15 @@ namespace TencentCloud
                     bool NodeIdHasBeenSet() const;
 
                     /**
-                     * 获取子节点 ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ChildNodeId 子节点 ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取子节点 ID，节点类型为任务时为任务ID，节点类型为逻辑节点"且"时为 AND，为逻辑节点"或"时为 OR
+                     * @return ChildNodeId 子节点 ID，节点类型为任务时为任务ID，节点类型为逻辑节点"且"时为 AND，为逻辑节点"或"时为 OR
                      * 
                      */
                     std::string GetChildNodeId() const;
 
                     /**
-                     * 设置子节点 ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _childNodeId 子节点 ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置子节点 ID，节点类型为任务时为任务ID，节点类型为逻辑节点"且"时为 AND，为逻辑节点"或"时为 OR
+                     * @param _childNodeId 子节点 ID，节点类型为任务时为任务ID，节点类型为逻辑节点"且"时为 AND，为逻辑节点"或"时为 OR
                      * 
                      */
                     void SetChildNodeId(const std::string& _childNodeId);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否核心任务,Y/N
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CoreNode 是否核心任务,Y/N
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCoreNode() const;
 
                     /**
                      * 设置是否核心任务,Y/N
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _coreNode 是否核心任务,Y/N
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCoreNode(const std::string& _coreNode);
@@ -118,19 +110,15 @@ namespace TencentCloud
                     bool CoreNodeHasBeenSet() const;
 
                     /**
-                     * 获取边类型
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EdgeType 边类型
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取边类型，上下游任务依赖触发关系。一共2个值，Y：成功触发，N：失败触发
+                     * @return EdgeType 边类型，上下游任务依赖触发关系。一共2个值，Y：成功触发，N：失败触发
                      * 
                      */
                     std::string GetEdgeType() const;
 
                     /**
-                     * 设置边类型
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _edgeType 边类型
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置边类型，上下游任务依赖触发关系。一共2个值，Y：成功触发，N：失败触发
+                     * @param _edgeType 边类型，上下游任务依赖触发关系。一共2个值，Y：成功触发，N：失败触发
                      * 
                      */
                     void SetEdgeType(const std::string& _edgeType);
@@ -143,15 +131,15 @@ namespace TencentCloud
                     bool EdgeTypeHasBeenSet() const;
 
                     /**
-                     * 获取任务节点类型
-                     * @return NodeType 任务节点类型
+                     * 获取任务节点类型，一共有4种类型，AND：逻辑节点且，OR：逻辑节点或，TASK：任务节点，START：头节点
+                     * @return NodeType 任务节点类型，一共有4种类型，AND：逻辑节点且，OR：逻辑节点或，TASK：任务节点，START：头节点
                      * 
                      */
                     std::string GetNodeType() const;
 
                     /**
-                     * 设置任务节点类型
-                     * @param _nodeType 任务节点类型
+                     * 设置任务节点类型，一共有4种类型，AND：逻辑节点且，OR：逻辑节点或，TASK：任务节点，START：头节点
+                     * @param _nodeType 任务节点类型，一共有4种类型，AND：逻辑节点且，OR：逻辑节点或，TASK：任务节点，START：头节点
                      * 
                      */
                     void SetNodeType(const std::string& _nodeType);
@@ -165,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取X轴坐标位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PositionX X轴坐标位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPositionX() const;
 
                     /**
                      * 设置X轴坐标位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _positionX X轴坐标位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPositionX(const std::string& _positionX);
@@ -190,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Y轴坐标位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PositionY Y轴坐标位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPositionY() const;
 
                     /**
                      * 设置Y轴坐标位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _positionY Y轴坐标位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPositionY(const std::string& _positionY);
@@ -214,19 +194,15 @@ namespace TencentCloud
                     bool PositionYHasBeenSet() const;
 
                     /**
-                     * 获取图 ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GraphId 图 ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取图 ID，新建工作流时自动生成，不需要填写，查看工作流图时后端返回
+                     * @return GraphId 图 ID，新建工作流时自动生成，不需要填写，查看工作流图时后端返回
                      * 
                      */
                     std::string GetGraphId() const;
 
                     /**
-                     * 设置图 ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _graphId 图 ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置图 ID，新建工作流时自动生成，不需要填写，查看工作流图时后端返回
+                     * @param _graphId 图 ID，新建工作流时自动生成，不需要填写，查看工作流图时后端返回
                      * 
                      */
                     void SetGraphId(const std::string& _graphId);
@@ -239,19 +215,15 @@ namespace TencentCloud
                     bool GraphIdHasBeenSet() const;
 
                     /**
-                     * 获取工作流 ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FlowId 工作流 ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取工作流 ID，新建工作流时自动生成，不需要填写，查看工作流图时后端返回
+                     * @return FlowId 工作流 ID，新建工作流时自动生成，不需要填写，查看工作流图时后端返回
                      * 
                      */
                     std::string GetFlowId() const;
 
                     /**
-                     * 设置工作流 ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _flowId 工作流 ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置工作流 ID，新建工作流时自动生成，不需要填写，查看工作流图时后端返回
+                     * @param _flowId 工作流 ID，新建工作流时自动生成，不需要填写，查看工作流图时后端返回
                      * 
                      */
                     void SetFlowId(const std::string& _flowId);
@@ -265,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeName 节点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNodeName() const;
 
                     /**
                      * 设置节点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodeName 节点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodeName(const std::string& _nodeName);
@@ -289,19 +257,15 @@ namespace TencentCloud
                     bool NodeNameHasBeenSet() const;
 
                     /**
-                     * 获取任务ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskId 任务ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取任务ID，新建工作流时不需要填写，查看工作流图时后端返回
+                     * @return TaskId 任务ID，新建工作流时不需要填写，查看工作流图时后端返回
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskId 任务ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置任务ID，新建工作流时不需要填写，查看工作流图时后端返回
+                     * @param _taskId 任务ID，新建工作流时不需要填写，查看工作流图时后端返回
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -314,19 +278,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取任务历史ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskLogId 任务历史ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取任务历史ID，新建工作流时不需要填写，查看工作流图时后端返回
+                     * @return TaskLogId 任务历史ID，新建工作流时不需要填写，查看工作流图时后端返回
                      * 
                      */
                     std::string GetTaskLogId() const;
 
                     /**
-                     * 设置任务历史ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskLogId 任务历史ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置任务历史ID，新建工作流时不需要填写，查看工作流图时后端返回
+                     * @param _taskLogId 任务历史ID，新建工作流时不需要填写，查看工作流图时后端返回
                      * 
                      */
                     void SetTaskLogId(const std::string& _taskLogId);
@@ -341,83 +301,73 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 节点 ID
+                     * 节点 ID，节点类型为任务时为任务ID，节点类型为逻辑节点"且"时为 AND，为逻辑节点"或"时为 OR，节点类型为头节点时为字符串"head"
                      */
                     std::string m_nodeId;
                     bool m_nodeIdHasBeenSet;
 
                     /**
-                     * 子节点 ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 子节点 ID，节点类型为任务时为任务ID，节点类型为逻辑节点"且"时为 AND，为逻辑节点"或"时为 OR
                      */
                     std::string m_childNodeId;
                     bool m_childNodeIdHasBeenSet;
 
                     /**
                      * 是否核心任务,Y/N
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_coreNode;
                     bool m_coreNodeHasBeenSet;
 
                     /**
-                     * 边类型
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 边类型，上下游任务依赖触发关系。一共2个值，Y：成功触发，N：失败触发
                      */
                     std::string m_edgeType;
                     bool m_edgeTypeHasBeenSet;
 
                     /**
-                     * 任务节点类型
+                     * 任务节点类型，一共有4种类型，AND：逻辑节点且，OR：逻辑节点或，TASK：任务节点，START：头节点
                      */
                     std::string m_nodeType;
                     bool m_nodeTypeHasBeenSet;
 
                     /**
                      * X轴坐标位置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_positionX;
                     bool m_positionXHasBeenSet;
 
                     /**
                      * Y轴坐标位置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_positionY;
                     bool m_positionYHasBeenSet;
 
                     /**
-                     * 图 ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 图 ID，新建工作流时自动生成，不需要填写，查看工作流图时后端返回
                      */
                     std::string m_graphId;
                     bool m_graphIdHasBeenSet;
 
                     /**
-                     * 工作流 ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 工作流 ID，新建工作流时自动生成，不需要填写，查看工作流图时后端返回
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
                      * 节点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nodeName;
                     bool m_nodeNameHasBeenSet;
 
                     /**
-                     * 任务ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 任务ID，新建工作流时不需要填写，查看工作流图时后端返回
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 任务历史ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 任务历史ID，新建工作流时不需要填写，查看工作流图时后端返回
                      */
                     std::string m_taskLogId;
                     bool m_taskLogIdHasBeenSet;

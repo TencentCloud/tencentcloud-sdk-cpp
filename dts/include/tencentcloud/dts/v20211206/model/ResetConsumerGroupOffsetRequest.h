@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取订阅实例id
-                     * @return SubscribeId 订阅实例id
+                     * 获取订阅实例id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
+                     * @return SubscribeId 订阅实例id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
                      * 
                      */
                     std::string GetSubscribeId() const;
 
                     /**
-                     * 设置订阅实例id
-                     * @param _subscribeId 订阅实例id
+                     * 设置订阅实例id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
+                     * @param _subscribeId 订阅实例id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
                      * 
                      */
                     void SetSubscribeId(const std::string& _subscribeId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SubscribeIdHasBeenSet() const;
 
                     /**
-                     * 获取订阅的kafka topic
-                     * @return TopicName 订阅的kafka topic
+                     * 获取订阅的kafka topic，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
+                     * @return TopicName 订阅的kafka topic，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
-                     * 设置订阅的kafka topic
-                     * @param _topicName 订阅的kafka topic
+                     * 设置订阅的kafka topic，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
+                     * @param _topicName 订阅的kafka topic，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool TopicNameHasBeenSet() const;
 
                     /**
-                     * 获取消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}
-                     * @return ConsumerGroupName 消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}
+                     * 获取消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}。可通过[DescribeConsumerGroups](https://cloud.tencent.com/document/api/571/102947)接口获取。
+                     * @return ConsumerGroupName 消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}。可通过[DescribeConsumerGroups](https://cloud.tencent.com/document/api/571/102947)接口获取。
                      * 
                      */
                     std::string GetConsumerGroupName() const;
 
                     /**
-                     * 设置消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}
-                     * @param _consumerGroupName 消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}
+                     * 设置消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}。可通过[DescribeConsumerGroups](https://cloud.tencent.com/document/api/571/102947)接口获取。
+                     * @param _consumerGroupName 消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}。可通过[DescribeConsumerGroups](https://cloud.tencent.com/document/api/571/102947)接口获取。
                      * 
                      */
                     void SetConsumerGroupName(const std::string& _consumerGroupName);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ConsumerGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取需要修改offset的分区编号
-                     * @return PartitionNos 需要修改offset的分区编号
+                     * 获取需要修改offset的分区编号，可通过[DescribeOffsetByTime](https://cloud.tencent.com/document/api/571/102946)接口获取。
+                     * @return PartitionNos 需要修改offset的分区编号，可通过[DescribeOffsetByTime](https://cloud.tencent.com/document/api/571/102946)接口获取。
                      * 
                      */
                     std::vector<int64_t> GetPartitionNos() const;
 
                     /**
-                     * 设置需要修改offset的分区编号
-                     * @param _partitionNos 需要修改offset的分区编号
+                     * 设置需要修改offset的分区编号，可通过[DescribeOffsetByTime](https://cloud.tencent.com/document/api/571/102946)接口获取。
+                     * @param _partitionNos 需要修改offset的分区编号，可通过[DescribeOffsetByTime](https://cloud.tencent.com/document/api/571/102946)接口获取。
                      * 
                      */
                     void SetPartitionNos(const std::vector<int64_t>& _partitionNos);
@@ -171,25 +171,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 订阅实例id
+                     * 订阅实例id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
                      */
                     std::string m_subscribeId;
                     bool m_subscribeIdHasBeenSet;
 
                     /**
-                     * 订阅的kafka topic
+                     * 订阅的kafka topic，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
 
                     /**
-                     * 消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}
+                     * 消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}。可通过[DescribeConsumerGroups](https://cloud.tencent.com/document/api/571/102947)接口获取。
                      */
                     std::string m_consumerGroupName;
                     bool m_consumerGroupNameHasBeenSet;
 
                     /**
-                     * 需要修改offset的分区编号
+                     * 需要修改offset的分区编号，可通过[DescribeOffsetByTime](https://cloud.tencent.com/document/api/571/102946)接口获取。
                      */
                     std::vector<int64_t> m_partitionNos;
                     bool m_partitionNosHasBeenSet;

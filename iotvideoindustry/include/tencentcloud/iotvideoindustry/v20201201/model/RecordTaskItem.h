@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取录像任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordTaskId 录像任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRecordTaskId() const;
 
                     /**
                      * 设置录像任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recordTaskId 录像任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecordTaskId(const std::string& _recordTaskId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取录制计划ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordPlanId 录制计划ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRecordPlanId() const;
 
                     /**
                      * 设置录制计划ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recordPlanId 录制计划ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecordPlanId(const std::string& _recordPlanId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取本录制片段开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 本录制片段开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 设置本录制片段开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTime 本录制片段开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTime(const int64_t& _startTime);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取本录制片段结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 本录制片段结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置本录制片段结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 本录制片段结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取录制模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventId 录制模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEventId() const;
 
                     /**
                      * 设置录制模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eventId 录制模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEventId(const int64_t& _eventId);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取本录制片段对应的录制文件URL
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VideoUrl 本录制片段对应的录制文件URL
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVideoUrl() const;
 
                     /**
                      * 设置本录制片段对应的录制文件URL
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _videoUrl 本录制片段对应的录制文件URL
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVideoUrl(const std::string& _videoUrl);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取本录制片段当前的录制状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordStatus 本录制片段当前的录制状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRecordStatus() const;
 
                     /**
                      * 设置本录制片段当前的录制状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recordStatus 本录制片段当前的录制状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecordStatus(const int64_t& _recordStatus);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取场景ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SceneId 场景ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSceneId() const;
 
                     /**
                      * 设置场景ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sceneId 场景ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSceneId(const int64_t& _sceneId);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WarnId 告警ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetWarnId() const;
 
                     /**
                      * 设置告警ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _warnId 告警ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWarnId(const int64_t& _warnId);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取录制id，NVR下属设备有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordId 录制id，NVR下属设备有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRecordId() const;
 
                     /**
                      * 设置录制id，NVR下属设备有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recordId 录制id，NVR下属设备有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecordId(const std::string& _recordId);
@@ -300,70 +260,60 @@ namespace TencentCloud
 
                     /**
                      * 录像任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_recordTaskId;
                     bool m_recordTaskIdHasBeenSet;
 
                     /**
                      * 录制计划ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_recordPlanId;
                     bool m_recordPlanIdHasBeenSet;
 
                     /**
                      * 本录制片段开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 本录制片段结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
                      * 录制模式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_eventId;
                     bool m_eventIdHasBeenSet;
 
                     /**
                      * 本录制片段对应的录制文件URL
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_videoUrl;
                     bool m_videoUrlHasBeenSet;
 
                     /**
                      * 本录制片段当前的录制状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_recordStatus;
                     bool m_recordStatusHasBeenSet;
 
                     /**
                      * 场景ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sceneId;
                     bool m_sceneIdHasBeenSet;
 
                     /**
                      * 告警ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_warnId;
                     bool m_warnIdHasBeenSet;
 
                     /**
                      * 录制id，NVR下属设备有效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_recordId;
                     bool m_recordIdHasBeenSet;

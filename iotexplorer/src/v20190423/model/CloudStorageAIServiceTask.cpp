@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,10 +27,13 @@ CloudStorageAIServiceTask::CloudStorageAIServiceTask() :
     m_channelIdHasBeenSet(false),
     m_serviceTypeHasBeenSet(false),
     m_startTimeHasBeenSet(false),
+    m_startTimeMsHasBeenSet(false),
     m_endTimeHasBeenSet(false),
+    m_endTimeMsHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_resultHasBeenSet(false),
     m_filesHasBeenSet(false),
+    m_filesInfoHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_customIdHasBeenSet(false)
@@ -102,6 +105,16 @@ CoreInternalOutcome CloudStorageAIServiceTask::Deserialize(const rapidjson::Valu
         m_startTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("StartTimeMs") && !value["StartTimeMs"].IsNull())
+    {
+        if (!value["StartTimeMs"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudStorageAIServiceTask.StartTimeMs` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_startTimeMs = value["StartTimeMs"].GetInt64();
+        m_startTimeMsHasBeenSet = true;
+    }
+
     if (value.HasMember("EndTime") && !value["EndTime"].IsNull())
     {
         if (!value["EndTime"].IsInt64())
@@ -110,6 +123,16 @@ CoreInternalOutcome CloudStorageAIServiceTask::Deserialize(const rapidjson::Valu
         }
         m_endTime = value["EndTime"].GetInt64();
         m_endTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("EndTimeMs") && !value["EndTimeMs"].IsNull())
+    {
+        if (!value["EndTimeMs"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudStorageAIServiceTask.EndTimeMs` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_endTimeMs = value["EndTimeMs"].GetInt64();
+        m_endTimeMsHasBeenSet = true;
     }
 
     if (value.HasMember("Status") && !value["Status"].IsNull())
@@ -143,6 +166,26 @@ CoreInternalOutcome CloudStorageAIServiceTask::Deserialize(const rapidjson::Valu
             m_files.push_back((*itr).GetString());
         }
         m_filesHasBeenSet = true;
+    }
+
+    if (value.HasMember("FilesInfo") && !value["FilesInfo"].IsNull())
+    {
+        if (!value["FilesInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CloudStorageAIServiceTask.FilesInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["FilesInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CloudStorageAIServiceTaskFileInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_filesInfo.push_back(item);
+        }
+        m_filesInfoHasBeenSet = true;
     }
 
     if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
@@ -230,12 +273,28 @@ void CloudStorageAIServiceTask::ToJsonObject(rapidjson::Value &value, rapidjson:
         value.AddMember(iKey, m_startTime, allocator);
     }
 
+    if (m_startTimeMsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTimeMs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_startTimeMs, allocator);
+    }
+
     if (m_endTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endTime, allocator);
+    }
+
+    if (m_endTimeMsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTimeMs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_endTimeMs, allocator);
     }
 
     if (m_statusHasBeenSet)
@@ -264,6 +323,21 @@ void CloudStorageAIServiceTask::ToJsonObject(rapidjson::Value &value, rapidjson:
         for (auto itr = m_files.begin(); itr != m_files.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_filesInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilesInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filesInfo.begin(); itr != m_filesInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -390,6 +464,22 @@ bool CloudStorageAIServiceTask::StartTimeHasBeenSet() const
     return m_startTimeHasBeenSet;
 }
 
+int64_t CloudStorageAIServiceTask::GetStartTimeMs() const
+{
+    return m_startTimeMs;
+}
+
+void CloudStorageAIServiceTask::SetStartTimeMs(const int64_t& _startTimeMs)
+{
+    m_startTimeMs = _startTimeMs;
+    m_startTimeMsHasBeenSet = true;
+}
+
+bool CloudStorageAIServiceTask::StartTimeMsHasBeenSet() const
+{
+    return m_startTimeMsHasBeenSet;
+}
+
 int64_t CloudStorageAIServiceTask::GetEndTime() const
 {
     return m_endTime;
@@ -404,6 +494,22 @@ void CloudStorageAIServiceTask::SetEndTime(const int64_t& _endTime)
 bool CloudStorageAIServiceTask::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+int64_t CloudStorageAIServiceTask::GetEndTimeMs() const
+{
+    return m_endTimeMs;
+}
+
+void CloudStorageAIServiceTask::SetEndTimeMs(const int64_t& _endTimeMs)
+{
+    m_endTimeMs = _endTimeMs;
+    m_endTimeMsHasBeenSet = true;
+}
+
+bool CloudStorageAIServiceTask::EndTimeMsHasBeenSet() const
+{
+    return m_endTimeMsHasBeenSet;
 }
 
 uint64_t CloudStorageAIServiceTask::GetStatus() const
@@ -452,6 +558,22 @@ void CloudStorageAIServiceTask::SetFiles(const vector<string>& _files)
 bool CloudStorageAIServiceTask::FilesHasBeenSet() const
 {
     return m_filesHasBeenSet;
+}
+
+vector<CloudStorageAIServiceTaskFileInfo> CloudStorageAIServiceTask::GetFilesInfo() const
+{
+    return m_filesInfo;
+}
+
+void CloudStorageAIServiceTask::SetFilesInfo(const vector<CloudStorageAIServiceTaskFileInfo>& _filesInfo)
+{
+    m_filesInfo = _filesInfo;
+    m_filesInfoHasBeenSet = true;
+}
+
+bool CloudStorageAIServiceTask::FilesInfoHasBeenSet() const
+{
+    return m_filesInfoHasBeenSet;
 }
 
 int64_t CloudStorageAIServiceTask::GetCreateTime() const

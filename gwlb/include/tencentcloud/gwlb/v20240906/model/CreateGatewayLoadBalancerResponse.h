@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,9 @@ namespace TencentCloud
 
                     /**
                      * 获取由网关负载均衡实例唯一 ID 组成的数组。
-存在某些场景，如创建出现延迟时，此字段可能返回为空；此时可以根据接口返回的RequestId或DealName参数，通过DescribeTaskStatus接口查询创建的资源ID。
-注意：此字段可能返回 null，表示取不到有效值。
+存在某些场景，如创建出现延迟时，此字段可能返回为空；此时可以根据接口返回的RequestId或DealName参数，通过[DescribeTaskStatus](https://cloud.tencent.com/document/api/1782/111700)接口查询创建的资源ID。
                      * @return LoadBalancerIds 由网关负载均衡实例唯一 ID 组成的数组。
-存在某些场景，如创建出现延迟时，此字段可能返回为空；此时可以根据接口返回的RequestId或DealName参数，通过DescribeTaskStatus接口查询创建的资源ID。
-注意：此字段可能返回 null，表示取不到有效值。
+存在某些场景，如创建出现延迟时，此字段可能返回为空；此时可以根据接口返回的RequestId或DealName参数，通过[DescribeTaskStatus](https://cloud.tencent.com/document/api/1782/111700)接口查询创建的资源ID。
                      * 
                      */
                     std::vector<std::string> GetLoadBalancerIds() const;
@@ -63,9 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 获取订单号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DealName 订单号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDealName() const;
@@ -81,15 +77,13 @@ namespace TencentCloud
 
                     /**
                      * 由网关负载均衡实例唯一 ID 组成的数组。
-存在某些场景，如创建出现延迟时，此字段可能返回为空；此时可以根据接口返回的RequestId或DealName参数，通过DescribeTaskStatus接口查询创建的资源ID。
-注意：此字段可能返回 null，表示取不到有效值。
+存在某些场景，如创建出现延迟时，此字段可能返回为空；此时可以根据接口返回的RequestId或DealName参数，通过[DescribeTaskStatus](https://cloud.tencent.com/document/api/1782/111700)接口查询创建的资源ID。
                      */
                     std::vector<std::string> m_loadBalancerIds;
                     bool m_loadBalancerIdsHasBeenSet;
 
                     /**
                      * 订单号。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dealName;
                     bool m_dealNameHasBeenSet;

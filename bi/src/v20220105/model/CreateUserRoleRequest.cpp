@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ using namespace std;
 CreateUserRoleRequest::CreateUserRoleRequest() :
     m_roleIdListHasBeenSet(false),
     m_userListHasBeenSet(false),
-    m_userInfoListHasBeenSet(false)
+    m_userInfoListHasBeenSet(false),
+    m_userGroupsHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,19 @@ string CreateUserRoleRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_userGroupsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserGroups";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_userGroups.begin(); itr != m_userGroups.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
     }
 
@@ -133,6 +147,22 @@ void CreateUserRoleRequest::SetUserInfoList(const vector<UserInfo>& _userInfoLis
 bool CreateUserRoleRequest::UserInfoListHasBeenSet() const
 {
     return m_userInfoListHasBeenSet;
+}
+
+vector<uint64_t> CreateUserRoleRequest::GetUserGroups() const
+{
+    return m_userGroups;
+}
+
+void CreateUserRoleRequest::SetUserGroups(const vector<uint64_t>& _userGroups)
+{
+    m_userGroups = _userGroups;
+    m_userGroupsHasBeenSet = true;
+}
+
+bool CreateUserRoleRequest::UserGroupsHasBeenSet() const
+{
+    return m_userGroupsHasBeenSet;
 }
 
 

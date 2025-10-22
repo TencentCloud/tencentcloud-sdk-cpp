@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取密钥对 ID 列表，每次请求批量密钥对的上限为 100。
-                     * @return KeyIds 密钥对 ID 列表，每次请求批量密钥对的上限为 100。
+                     * 获取密钥对 ID 列表。可通过[DescribeKeyPairs](https://cloud.tencent.com/document/product/1207/55540)接口返回值字段KeyPairSet获取。列表长度最大值为100。
+                     * @return KeyIds 密钥对 ID 列表。可通过[DescribeKeyPairs](https://cloud.tencent.com/document/product/1207/55540)接口返回值字段KeyPairSet获取。列表长度最大值为100。
                      * 
                      */
                     std::vector<std::string> GetKeyIds() const;
 
                     /**
-                     * 设置密钥对 ID 列表，每次请求批量密钥对的上限为 100。
-                     * @param _keyIds 密钥对 ID 列表，每次请求批量密钥对的上限为 100。
+                     * 设置密钥对 ID 列表。可通过[DescribeKeyPairs](https://cloud.tencent.com/document/product/1207/55540)接口返回值字段KeyPairSet获取。列表长度最大值为100。
+                     * @param _keyIds 密钥对 ID 列表。可通过[DescribeKeyPairs](https://cloud.tencent.com/document/product/1207/55540)接口返回值字段KeyPairSet获取。列表长度最大值为100。
                      * 
                      */
                     void SetKeyIds(const std::vector<std::string>& _keyIds);
@@ -114,6 +114,12 @@ namespace TencentCloud
 <li>key-name</li>按照【密钥对名称】进行过滤（支持模糊匹配）。
 类型：String
 必选：否
+<li>tag-key</li>
+按照【标签键】进行过滤。 类型：String 必选：否
+<li>tag-value</li>
+按照【标签值】进行过滤。 类型：String 必选：否
+<li>tag:tag-key</li>
+按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 KeyIds 和 Filters。
                      * @return Filters 过滤器列表。
 <li>key-id</li>按照【密钥对ID】进行过滤。
@@ -122,6 +128,12 @@ namespace TencentCloud
 <li>key-name</li>按照【密钥对名称】进行过滤（支持模糊匹配）。
 类型：String
 必选：否
+<li>tag-key</li>
+按照【标签键】进行过滤。 类型：String 必选：否
+<li>tag-value</li>
+按照【标签值】进行过滤。 类型：String 必选：否
+<li>tag:tag-key</li>
+按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 KeyIds 和 Filters。
                      * 
                      */
@@ -135,6 +147,12 @@ namespace TencentCloud
 <li>key-name</li>按照【密钥对名称】进行过滤（支持模糊匹配）。
 类型：String
 必选：否
+<li>tag-key</li>
+按照【标签键】进行过滤。 类型：String 必选：否
+<li>tag-value</li>
+按照【标签值】进行过滤。 类型：String 必选：否
+<li>tag:tag-key</li>
+按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 KeyIds 和 Filters。
                      * @param _filters 过滤器列表。
 <li>key-id</li>按照【密钥对ID】进行过滤。
@@ -143,6 +161,12 @@ namespace TencentCloud
 <li>key-name</li>按照【密钥对名称】进行过滤（支持模糊匹配）。
 类型：String
 必选：否
+<li>tag-key</li>
+按照【标签键】进行过滤。 类型：String 必选：否
+<li>tag-value</li>
+按照【标签值】进行过滤。 类型：String 必选：否
+<li>tag:tag-key</li>
+按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 KeyIds 和 Filters。
                      * 
                      */
@@ -158,7 +182,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 密钥对 ID 列表，每次请求批量密钥对的上限为 100。
+                     * 密钥对 ID 列表。可通过[DescribeKeyPairs](https://cloud.tencent.com/document/product/1207/55540)接口返回值字段KeyPairSet获取。列表长度最大值为100。
                      */
                     std::vector<std::string> m_keyIds;
                     bool m_keyIdsHasBeenSet;
@@ -183,6 +207,12 @@ namespace TencentCloud
 <li>key-name</li>按照【密钥对名称】进行过滤（支持模糊匹配）。
 类型：String
 必选：否
+<li>tag-key</li>
+按照【标签键】进行过滤。 类型：String 必选：否
+<li>tag-value</li>
+按照【标签值】进行过滤。 类型：String 必选：否
+<li>tag:tag-key</li>
+按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 KeyIds 和 Filters。
                      */
                     std::vector<Filter> m_filters;

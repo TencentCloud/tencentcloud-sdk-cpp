@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取id（可不参考）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id id（可不参考）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置id（可不参考）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id id（可不参考）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取风险账户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskAccount 风险账户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiskAccount() const;
 
                     /**
                      * 设置风险账户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskAccount 风险账户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskAccount(const std::string& _riskAccount);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * id（可不参考）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 风险账户
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riskAccount;
                     bool m_riskAccountHasBeenSet;

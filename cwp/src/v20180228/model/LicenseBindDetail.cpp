@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,9 @@ LicenseBindDetail::LicenseBindDetail() :
     m_agentStatusHasBeenSet(false),
     m_isUnBindHasBeenSet(false),
     m_isSwitchBindHasBeenSet(false),
-    m_machineExtraInfoHasBeenSet(false)
+    m_machineExtraInfoHasBeenSet(false),
+    m_instanceStateHasBeenSet(false),
+    m_agentStateHasBeenSet(false)
 {
 }
 
@@ -149,6 +151,26 @@ CoreInternalOutcome LicenseBindDetail::Deserialize(const rapidjson::Value &value
         m_machineExtraInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceState") && !value["InstanceState"].IsNull())
+    {
+        if (!value["InstanceState"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LicenseBindDetail.InstanceState` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceState = string(value["InstanceState"].GetString());
+        m_instanceStateHasBeenSet = true;
+    }
+
+    if (value.HasMember("AgentState") && !value["AgentState"].IsNull())
+    {
+        if (!value["AgentState"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LicenseBindDetail.AgentState` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_agentState = string(value["AgentState"].GetString());
+        m_agentStateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -240,6 +262,22 @@ void LicenseBindDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_machineExtraInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_instanceStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceState.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agentStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_agentState.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -403,5 +441,37 @@ void LicenseBindDetail::SetMachineExtraInfo(const MachineExtraInfo& _machineExtr
 bool LicenseBindDetail::MachineExtraInfoHasBeenSet() const
 {
     return m_machineExtraInfoHasBeenSet;
+}
+
+string LicenseBindDetail::GetInstanceState() const
+{
+    return m_instanceState;
+}
+
+void LicenseBindDetail::SetInstanceState(const string& _instanceState)
+{
+    m_instanceState = _instanceState;
+    m_instanceStateHasBeenSet = true;
+}
+
+bool LicenseBindDetail::InstanceStateHasBeenSet() const
+{
+    return m_instanceStateHasBeenSet;
+}
+
+string LicenseBindDetail::GetAgentState() const
+{
+    return m_agentState;
+}
+
+void LicenseBindDetail::SetAgentState(const string& _agentState)
+{
+    m_agentState = _agentState;
+    m_agentStateHasBeenSet = true;
+}
+
+bool LicenseBindDetail::AgentStateHasBeenSet() const
+{
+    return m_agentStateHasBeenSet;
 }
 

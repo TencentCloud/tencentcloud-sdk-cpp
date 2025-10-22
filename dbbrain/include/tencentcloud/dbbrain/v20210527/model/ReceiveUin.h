@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UinName 用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUinName() const;
 
                     /**
                      * 设置用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uinName 用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUinName(const std::string& _uinName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 用户id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置用户id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uin 用户id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uinName;
                     bool m_uinNameHasBeenSet;
 
                     /**
                      * 用户id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -194,15 +194,27 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取防护状态: 已防护: Defended 未防护: UnDefended
-                     * @return DefenderStatus 防护状态: 已防护: Defended 未防护: UnDefended
+                     * 获取防护状态: 
+已防护: Defended 
+未防护: UnDefended
+部分防护: PartDefened
+                     * @return DefenderStatus 防护状态: 
+已防护: Defended 
+未防护: UnDefended
+部分防护: PartDefened
                      * 
                      */
                     std::string GetDefenderStatus() const;
 
                     /**
-                     * 设置防护状态: 已防护: Defended 未防护: UnDefended
-                     * @param _defenderStatus 防护状态: 已防护: Defended 未防护: UnDefended
+                     * 设置防护状态: 
+已防护: Defended 
+未防护: UnDefended
+部分防护: PartDefened
+                     * @param _defenderStatus 防护状态: 
+已防护: Defended 
+未防护: UnDefended
+部分防护: PartDefened
                      * 
                      */
                     void SetDefenderStatus(const std::string& _defenderStatus);
@@ -497,7 +509,6 @@ namespace TencentCloud
 卸载异常: AccessedUninstallException
 接入中: AccessedInstalling
 卸载中: AccessedUninstalling
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccessedStatus 接入状态:
 未接入: AccessedNone
 已防护: AccessedDefended
@@ -507,7 +518,6 @@ namespace TencentCloud
 卸载异常: AccessedUninstallException
 接入中: AccessedInstalling
 卸载中: AccessedUninstalling
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccessedStatus() const;
@@ -522,7 +532,6 @@ namespace TencentCloud
 卸载异常: AccessedUninstallException
 接入中: AccessedInstalling
 卸载中: AccessedUninstalling
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accessedStatus 接入状态:
 未接入: AccessedNone
 已防护: AccessedDefended
@@ -532,7 +541,6 @@ namespace TencentCloud
 卸载异常: AccessedUninstallException
 接入中: AccessedInstalling
 卸载中: AccessedUninstalling
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccessedStatus(const std::string& _accessedStatus);
@@ -546,18 +554,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接入失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccessedSubStatus 接入失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccessedSubStatus() const;
 
                     /**
                      * 设置接入失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accessedSubStatus 接入失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccessedSubStatus(const std::string& _accessedSubStatus);
@@ -570,19 +574,36 @@ namespace TencentCloud
                     bool AccessedSubStatusHasBeenSet() const;
 
                     /**
+                     * 获取接入/卸载失败原因
+                     * @return AccessedErrorReason 接入/卸载失败原因
+                     * 
+                     */
+                    std::string GetAccessedErrorReason() const;
+
+                    /**
+                     * 设置接入/卸载失败原因
+                     * @param _accessedErrorReason 接入/卸载失败原因
+                     * 
+                     */
+                    void SetAccessedErrorReason(const std::string& _accessedErrorReason);
+
+                    /**
+                     * 判断参数 AccessedErrorReason 是否已赋值
+                     * @return AccessedErrorReason 是否已赋值
+                     * 
+                     */
+                    bool AccessedErrorReasonHasBeenSet() const;
+
+                    /**
                      * 获取节点总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeCount 节点总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetNodeCount() const;
 
                     /**
                      * 设置节点总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodeCount 节点总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodeCount(const uint64_t& _nodeCount);
@@ -596,18 +617,14 @@ namespace TencentCloud
 
                     /**
                      * 获取离线节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OffLineNodeCount 离线节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetOffLineNodeCount() const;
 
                     /**
                      * 设置离线节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _offLineNodeCount 离线节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOffLineNodeCount(const uint64_t& _offLineNodeCount);
@@ -621,18 +638,14 @@ namespace TencentCloud
 
                     /**
                      * 获取未安装agent节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnInstallAgentNodeCount 未安装agent节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetUnInstallAgentNodeCount() const;
 
                     /**
                      * 设置未安装agent节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _unInstallAgentNodeCount 未安装agent节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUnInstallAgentNodeCount(const uint64_t& _unInstallAgentNodeCount);
@@ -646,18 +659,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计费核数(弹性计费核数+普通计费核数)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChargeCoresCnt 计费核数(弹性计费核数+普通计费核数)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetChargeCoresCnt() const;
 
                     /**
                      * 设置计费核数(弹性计费核数+普通计费核数)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _chargeCoresCnt 计费核数(弹性计费核数+普通计费核数)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChargeCoresCnt(const uint64_t& _chargeCoresCnt);
@@ -757,6 +766,27 @@ namespace TencentCloud
                      */
                     bool ClusterAuditFailedInfoHasBeenSet() const;
 
+                    /**
+                     * 获取所有者名称
+                     * @return OwnerName 所有者名称
+                     * 
+                     */
+                    std::string GetOwnerName() const;
+
+                    /**
+                     * 设置所有者名称
+                     * @param _ownerName 所有者名称
+                     * 
+                     */
+                    void SetOwnerName(const std::string& _ownerName);
+
+                    /**
+                     * 判断参数 OwnerName 是否已赋值
+                     * @return OwnerName 是否已赋值
+                     * 
+                     */
+                    bool OwnerNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -802,7 +832,10 @@ namespace TencentCloud
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 防护状态: 已防护: Defended 未防护: UnDefended
+                     * 防护状态: 
+已防护: Defended 
+未防护: UnDefended
+部分防护: PartDefened
                      */
                     std::string m_defenderStatus;
                     bool m_defenderStatusHasBeenSet;
@@ -895,42 +928,42 @@ namespace TencentCloud
 卸载异常: AccessedUninstallException
 接入中: AccessedInstalling
 卸载中: AccessedUninstalling
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accessedStatus;
                     bool m_accessedStatusHasBeenSet;
 
                     /**
                      * 接入失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accessedSubStatus;
                     bool m_accessedSubStatusHasBeenSet;
 
                     /**
+                     * 接入/卸载失败原因
+                     */
+                    std::string m_accessedErrorReason;
+                    bool m_accessedErrorReasonHasBeenSet;
+
+                    /**
                      * 节点总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_nodeCount;
                     bool m_nodeCountHasBeenSet;
 
                     /**
                      * 离线节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_offLineNodeCount;
                     bool m_offLineNodeCountHasBeenSet;
 
                     /**
                      * 未安装agent节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_unInstallAgentNodeCount;
                     bool m_unInstallAgentNodeCountHasBeenSet;
 
                     /**
                      * 计费核数(弹性计费核数+普通计费核数)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_chargeCoresCnt;
                     bool m_chargeCoresCntHasBeenSet;
@@ -959,6 +992,12 @@ namespace TencentCloud
                      */
                     std::string m_clusterAuditFailedInfo;
                     bool m_clusterAuditFailedInfoHasBeenSet;
+
+                    /**
+                     * 所有者名称
+                     */
+                    std::string m_ownerName;
+                    bool m_ownerNameHasBeenSet;
 
                 };
             }

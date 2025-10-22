@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,18 +75,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计算环境名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnvName 计算环境名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEnvName() const;
 
                     /**
                      * 设置计算环境名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _envName 计算环境名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnvName(const std::string& _envName);
@@ -100,18 +96,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计算环境描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnvDescription 计算环境描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEnvDescription() const;
 
                     /**
                      * 设置计算环境描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _envDescription 计算环境描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnvDescription(const std::string& _envDescription);
@@ -167,18 +159,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据盘挂载选项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MountDataDisks 数据盘挂载选项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<MountDataDisk> GetMountDataDisks() const;
 
                     /**
                      * 设置数据盘挂载选项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mountDataDisks 数据盘挂载选项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMountDataDisks(const std::vector<MountDataDisk>& _mountDataDisks);
@@ -192,18 +180,14 @@ namespace TencentCloud
 
                     /**
                      * 获取输入映射
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InputMappings 输入映射
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<InputMapping> GetInputMappings() const;
 
                     /**
                      * 设置输入映射
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _inputMappings 输入映射
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInputMappings(const std::vector<InputMapping>& _inputMappings);
@@ -217,18 +201,14 @@ namespace TencentCloud
 
                     /**
                      * 获取授权信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Authentications 授权信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Authentication> GetAuthentications() const;
 
                     /**
                      * 设置授权信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _authentications 授权信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuthentications(const std::vector<Authentication>& _authentications);
@@ -242,18 +222,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通知信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Notifications 通知信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Notification> GetNotifications() const;
 
                     /**
                      * 设置通知信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _notifications 通知信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNotifications(const std::vector<Notification>& _notifications);
@@ -288,18 +264,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计算环境标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 计算环境标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置计算环境标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 计算环境标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -321,14 +293,12 @@ namespace TencentCloud
 
                     /**
                      * 计算环境名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_envName;
                     bool m_envNameHasBeenSet;
 
                     /**
                      * 计算环境描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_envDescription;
                     bool m_envDescriptionHasBeenSet;
@@ -347,28 +317,24 @@ namespace TencentCloud
 
                     /**
                      * 数据盘挂载选项
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MountDataDisk> m_mountDataDisks;
                     bool m_mountDataDisksHasBeenSet;
 
                     /**
                      * 输入映射
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<InputMapping> m_inputMappings;
                     bool m_inputMappingsHasBeenSet;
 
                     /**
                      * 授权信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Authentication> m_authentications;
                     bool m_authenticationsHasBeenSet;
 
                     /**
                      * 通知信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Notification> m_notifications;
                     bool m_notificationsHasBeenSet;
@@ -381,7 +347,6 @@ namespace TencentCloud
 
                     /**
                      * 计算环境标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;

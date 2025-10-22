@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,38 +48,74 @@ namespace TencentCloud
 
                     /**
                      * 获取配额名称，取值范围：
-- `TOTAL_EIP_QUOTA`：用户当前地域下EIP的配额数；
-- `DAILY_EIP_APPLY`：用户当前地域下今日申购次数；
+- `TOTAL_EIP_QUOTA`：用户当前地域下，EIP的配额数；
+- `LOCALBGP_EIP_QUOTA`：用户当前地域下，本地BGP IP配额数；
+- `SINGLEISP_EIP_QUOTA`：用户当前地域下，静态单线 IP 配额数；
+- `DAILY_EIP_APPLY`：用户当前地域下，除静态单线 IP外今日申购次数；
+- `DAILY_SINGLEISP_APPLY`：用户当前地域下，静态单线 IP今日申购次数；
 - `DAILY_PUBLIC_IP_ASSIGN`：用户当前地域下，重新分配公网 IP次数；
+- `MONTHLY_RECOVER_QUOTA`：用户当前地域下，每月申请指定 IP次数；
 - `TOTAL_EIP6_QUOTA`：用户当前地域下，传统弹性公网IPv6的配额数；
 - `BGP_EIPv6_QUOTA`：用户当前地域下，可申请的 BGP 弹性公网IPv6 的配额数；
 - `SINGLEISP_EIPv6_QUOTA`：用户当前地域下，可申请的静态单线弹性公网IPv6 的配额数；
+- `TOTAL_BANDWIDTHPKG_QUOTA`：用户当前地域下，可申请的带宽包总配额；
+- `PRIMARY_TRAFFIC_SINGLE_BWP_QUOTA`：用户当前地域下，可申请的静态单线主流量带宽包配额数；
+- `PRIMARY_TRAFFIC_BGP_BWP_QUOTA`：用户当前地域下，可申请的BGP主流量带宽包配额数；
+- `BandwidthGuaranteedRatio`：用户当前地域下，保底带宽包默认保底比例；
+- `TezBandwidthGuaranteedRatio`：用户当前地域下，边缘可用区保底带宽包默认保底比例；
                      * @return QuotaId 配额名称，取值范围：
-- `TOTAL_EIP_QUOTA`：用户当前地域下EIP的配额数；
-- `DAILY_EIP_APPLY`：用户当前地域下今日申购次数；
+- `TOTAL_EIP_QUOTA`：用户当前地域下，EIP的配额数；
+- `LOCALBGP_EIP_QUOTA`：用户当前地域下，本地BGP IP配额数；
+- `SINGLEISP_EIP_QUOTA`：用户当前地域下，静态单线 IP 配额数；
+- `DAILY_EIP_APPLY`：用户当前地域下，除静态单线 IP外今日申购次数；
+- `DAILY_SINGLEISP_APPLY`：用户当前地域下，静态单线 IP今日申购次数；
 - `DAILY_PUBLIC_IP_ASSIGN`：用户当前地域下，重新分配公网 IP次数；
+- `MONTHLY_RECOVER_QUOTA`：用户当前地域下，每月申请指定 IP次数；
 - `TOTAL_EIP6_QUOTA`：用户当前地域下，传统弹性公网IPv6的配额数；
 - `BGP_EIPv6_QUOTA`：用户当前地域下，可申请的 BGP 弹性公网IPv6 的配额数；
 - `SINGLEISP_EIPv6_QUOTA`：用户当前地域下，可申请的静态单线弹性公网IPv6 的配额数；
+- `TOTAL_BANDWIDTHPKG_QUOTA`：用户当前地域下，可申请的带宽包总配额；
+- `PRIMARY_TRAFFIC_SINGLE_BWP_QUOTA`：用户当前地域下，可申请的静态单线主流量带宽包配额数；
+- `PRIMARY_TRAFFIC_BGP_BWP_QUOTA`：用户当前地域下，可申请的BGP主流量带宽包配额数；
+- `BandwidthGuaranteedRatio`：用户当前地域下，保底带宽包默认保底比例；
+- `TezBandwidthGuaranteedRatio`：用户当前地域下，边缘可用区保底带宽包默认保底比例；
                      * 
                      */
                     std::string GetQuotaId() const;
 
                     /**
                      * 设置配额名称，取值范围：
-- `TOTAL_EIP_QUOTA`：用户当前地域下EIP的配额数；
-- `DAILY_EIP_APPLY`：用户当前地域下今日申购次数；
+- `TOTAL_EIP_QUOTA`：用户当前地域下，EIP的配额数；
+- `LOCALBGP_EIP_QUOTA`：用户当前地域下，本地BGP IP配额数；
+- `SINGLEISP_EIP_QUOTA`：用户当前地域下，静态单线 IP 配额数；
+- `DAILY_EIP_APPLY`：用户当前地域下，除静态单线 IP外今日申购次数；
+- `DAILY_SINGLEISP_APPLY`：用户当前地域下，静态单线 IP今日申购次数；
 - `DAILY_PUBLIC_IP_ASSIGN`：用户当前地域下，重新分配公网 IP次数；
+- `MONTHLY_RECOVER_QUOTA`：用户当前地域下，每月申请指定 IP次数；
 - `TOTAL_EIP6_QUOTA`：用户当前地域下，传统弹性公网IPv6的配额数；
 - `BGP_EIPv6_QUOTA`：用户当前地域下，可申请的 BGP 弹性公网IPv6 的配额数；
 - `SINGLEISP_EIPv6_QUOTA`：用户当前地域下，可申请的静态单线弹性公网IPv6 的配额数；
+- `TOTAL_BANDWIDTHPKG_QUOTA`：用户当前地域下，可申请的带宽包总配额；
+- `PRIMARY_TRAFFIC_SINGLE_BWP_QUOTA`：用户当前地域下，可申请的静态单线主流量带宽包配额数；
+- `PRIMARY_TRAFFIC_BGP_BWP_QUOTA`：用户当前地域下，可申请的BGP主流量带宽包配额数；
+- `BandwidthGuaranteedRatio`：用户当前地域下，保底带宽包默认保底比例；
+- `TezBandwidthGuaranteedRatio`：用户当前地域下，边缘可用区保底带宽包默认保底比例；
                      * @param _quotaId 配额名称，取值范围：
-- `TOTAL_EIP_QUOTA`：用户当前地域下EIP的配额数；
-- `DAILY_EIP_APPLY`：用户当前地域下今日申购次数；
+- `TOTAL_EIP_QUOTA`：用户当前地域下，EIP的配额数；
+- `LOCALBGP_EIP_QUOTA`：用户当前地域下，本地BGP IP配额数；
+- `SINGLEISP_EIP_QUOTA`：用户当前地域下，静态单线 IP 配额数；
+- `DAILY_EIP_APPLY`：用户当前地域下，除静态单线 IP外今日申购次数；
+- `DAILY_SINGLEISP_APPLY`：用户当前地域下，静态单线 IP今日申购次数；
 - `DAILY_PUBLIC_IP_ASSIGN`：用户当前地域下，重新分配公网 IP次数；
+- `MONTHLY_RECOVER_QUOTA`：用户当前地域下，每月申请指定 IP次数；
 - `TOTAL_EIP6_QUOTA`：用户当前地域下，传统弹性公网IPv6的配额数；
 - `BGP_EIPv6_QUOTA`：用户当前地域下，可申请的 BGP 弹性公网IPv6 的配额数；
 - `SINGLEISP_EIPv6_QUOTA`：用户当前地域下，可申请的静态单线弹性公网IPv6 的配额数；
+- `TOTAL_BANDWIDTHPKG_QUOTA`：用户当前地域下，可申请的带宽包总配额；
+- `PRIMARY_TRAFFIC_SINGLE_BWP_QUOTA`：用户当前地域下，可申请的静态单线主流量带宽包配额数；
+- `PRIMARY_TRAFFIC_BGP_BWP_QUOTA`：用户当前地域下，可申请的BGP主流量带宽包配额数；
+- `BandwidthGuaranteedRatio`：用户当前地域下，保底带宽包默认保底比例；
+- `TezBandwidthGuaranteedRatio`：用户当前地域下，边缘可用区保底带宽包默认保底比例；
                      * 
                      */
                     void SetQuotaId(const std::string& _quotaId);
@@ -135,18 +171,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配额所属的网络组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QuotaGroup 配额所属的网络组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQuotaGroup() const;
 
                     /**
                      * 设置配额所属的网络组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _quotaGroup 配额所属的网络组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQuotaGroup(const std::string& _quotaGroup);
@@ -162,12 +194,21 @@ namespace TencentCloud
 
                     /**
                      * 配额名称，取值范围：
-- `TOTAL_EIP_QUOTA`：用户当前地域下EIP的配额数；
-- `DAILY_EIP_APPLY`：用户当前地域下今日申购次数；
+- `TOTAL_EIP_QUOTA`：用户当前地域下，EIP的配额数；
+- `LOCALBGP_EIP_QUOTA`：用户当前地域下，本地BGP IP配额数；
+- `SINGLEISP_EIP_QUOTA`：用户当前地域下，静态单线 IP 配额数；
+- `DAILY_EIP_APPLY`：用户当前地域下，除静态单线 IP外今日申购次数；
+- `DAILY_SINGLEISP_APPLY`：用户当前地域下，静态单线 IP今日申购次数；
 - `DAILY_PUBLIC_IP_ASSIGN`：用户当前地域下，重新分配公网 IP次数；
+- `MONTHLY_RECOVER_QUOTA`：用户当前地域下，每月申请指定 IP次数；
 - `TOTAL_EIP6_QUOTA`：用户当前地域下，传统弹性公网IPv6的配额数；
 - `BGP_EIPv6_QUOTA`：用户当前地域下，可申请的 BGP 弹性公网IPv6 的配额数；
 - `SINGLEISP_EIPv6_QUOTA`：用户当前地域下，可申请的静态单线弹性公网IPv6 的配额数；
+- `TOTAL_BANDWIDTHPKG_QUOTA`：用户当前地域下，可申请的带宽包总配额；
+- `PRIMARY_TRAFFIC_SINGLE_BWP_QUOTA`：用户当前地域下，可申请的静态单线主流量带宽包配额数；
+- `PRIMARY_TRAFFIC_BGP_BWP_QUOTA`：用户当前地域下，可申请的BGP主流量带宽包配额数；
+- `BandwidthGuaranteedRatio`：用户当前地域下，保底带宽包默认保底比例；
+- `TezBandwidthGuaranteedRatio`：用户当前地域下，边缘可用区保底带宽包默认保底比例；
                      */
                     std::string m_quotaId;
                     bool m_quotaIdHasBeenSet;
@@ -186,7 +227,6 @@ namespace TencentCloud
 
                     /**
                      * 配额所属的网络组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_quotaGroup;
                     bool m_quotaGroupHasBeenSet;

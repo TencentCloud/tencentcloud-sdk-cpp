@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Redis实例ID
-                     * @return InstanceId Redis实例ID
+                     * 获取实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
+                     * @return InstanceId 实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置Redis实例ID
-                     * @param _instanceId Redis实例ID
+                     * 设置实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
+                     * @param _instanceId 实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,27 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取重置的密码（切换为免密实例时，可不传；其他情况必传）
-                     * @return Password 重置的密码（切换为免密实例时，可不传；其他情况必传）
+                     * 获取重置的密码。若切换为免密实例时，可不配置该参数。
+- 长度8-32位, 推荐使用12位以上的密码。
+- 不能以"/"开头。
+- 至少包含小写字母a- z、大写字母A - Z、数字0 - 9、特殊字符 ()~!@#$%^&*-+=_|{}[]:;<>,.?/中的两项。
+                     * @return Password 重置的密码。若切换为免密实例时，可不配置该参数。
+- 长度8-32位, 推荐使用12位以上的密码。
+- 不能以"/"开头。
+- 至少包含小写字母a- z、大写字母A - Z、数字0 - 9、特殊字符 ()~!@#$%^&*-+=_|{}[]:;<>,.?/中的两项。
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置重置的密码（切换为免密实例时，可不传；其他情况必传）
-                     * @param _password 重置的密码（切换为免密实例时，可不传；其他情况必传）
+                     * 设置重置的密码。若切换为免密实例时，可不配置该参数。
+- 长度8-32位, 推荐使用12位以上的密码。
+- 不能以"/"开头。
+- 至少包含小写字母a- z、大写字母A - Z、数字0 - 9、特殊字符 ()~!@#$%^&*-+=_|{}[]:;<>,.?/中的两项。
+                     * @param _password 重置的密码。若切换为免密实例时，可不配置该参数。
+- 长度8-32位, 推荐使用12位以上的密码。
+- 不能以"/"开头。
+- 至少包含小写字母a- z、大写字母A - Z、数字0 - 9、特殊字符 ()~!@#$%^&*-+=_|{}[]:;<>,.?/中的两项。
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -85,15 +97,23 @@ namespace TencentCloud
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取是否切换免密实例，false-切换为非免密码实例，true-切换为免密码实例；默认false
-                     * @return NoAuth 是否切换免密实例，false-切换为非免密码实例，true-切换为免密码实例；默认false
+                     * 获取是否切换免密实例。
+- false：切换为非免密码实例。默认 false。
+- true：切换为免密码实例。
+                     * @return NoAuth 是否切换免密实例。
+- false：切换为非免密码实例。默认 false。
+- true：切换为免密码实例。
                      * 
                      */
                     bool GetNoAuth() const;
 
                     /**
-                     * 设置是否切换免密实例，false-切换为非免密码实例，true-切换为免密码实例；默认false
-                     * @param _noAuth 是否切换免密实例，false-切换为非免密码实例，true-切换为免密码实例；默认false
+                     * 设置是否切换免密实例。
+- false：切换为非免密码实例。默认 false。
+- true：切换为免密码实例。
+                     * @param _noAuth 是否切换免密实例。
+- false：切换为非免密码实例。默认 false。
+- true：切换为免密码实例。
                      * 
                      */
                     void SetNoAuth(const bool& _noAuth);
@@ -105,25 +125,67 @@ namespace TencentCloud
                      */
                     bool NoAuthHasBeenSet() const;
 
+                    /**
+                     * 获取是否加密密码。
+- false：非加密密码。默认 false。
+- true：加密密码。
+                     * @return EncryptPassword 是否加密密码。
+- false：非加密密码。默认 false。
+- true：加密密码。
+                     * 
+                     */
+                    bool GetEncryptPassword() const;
+
+                    /**
+                     * 设置是否加密密码。
+- false：非加密密码。默认 false。
+- true：加密密码。
+                     * @param _encryptPassword 是否加密密码。
+- false：非加密密码。默认 false。
+- true：加密密码。
+                     * 
+                     */
+                    void SetEncryptPassword(const bool& _encryptPassword);
+
+                    /**
+                     * 判断参数 EncryptPassword 是否已赋值
+                     * @return EncryptPassword 是否已赋值
+                     * 
+                     */
+                    bool EncryptPasswordHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Redis实例ID
+                     * 实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 重置的密码（切换为免密实例时，可不传；其他情况必传）
+                     * 重置的密码。若切换为免密实例时，可不配置该参数。
+- 长度8-32位, 推荐使用12位以上的密码。
+- 不能以"/"开头。
+- 至少包含小写字母a- z、大写字母A - Z、数字0 - 9、特殊字符 ()~!@#$%^&*-+=_|{}[]:;<>,.?/中的两项。
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 是否切换免密实例，false-切换为非免密码实例，true-切换为免密码实例；默认false
+                     * 是否切换免密实例。
+- false：切换为非免密码实例。默认 false。
+- true：切换为免密码实例。
                      */
                     bool m_noAuth;
                     bool m_noAuthHasBeenSet;
+
+                    /**
+                     * 是否加密密码。
+- false：非加密密码。默认 false。
+- true：加密密码。
+                     */
+                    bool m_encryptPassword;
+                    bool m_encryptPasswordHasBeenSet;
 
                 };
             }

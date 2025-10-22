@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -172,18 +172,14 @@ namespace TencentCloud
 
                     /**
                      * 获取操作扩展服务的操作人UserId，员工在腾讯电子签平台的唯一身份标识，为32位字符串。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperatorUserId 操作扩展服务的操作人UserId，员工在腾讯电子签平台的唯一身份标识，为32位字符串。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperatorUserId() const;
 
                     /**
                      * 设置操作扩展服务的操作人UserId，员工在腾讯电子签平台的唯一身份标识，为32位字符串。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _operatorUserId 操作扩展服务的操作人UserId，员工在腾讯电子签平台的唯一身份标识，为32位字符串。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOperatorUserId(const std::string& _operatorUserId);
@@ -197,18 +193,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扩展服务的操作时间，格式为Unix标准时间戳（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperateOn 扩展服务的操作时间，格式为Unix标准时间戳（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOperateOn() const;
 
                     /**
                      * 设置扩展服务的操作时间，格式为Unix标准时间戳（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _operateOn 扩展服务的操作时间，格式为Unix标准时间戳（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOperateOn(const int64_t& _operateOn);
@@ -222,18 +214,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该扩展服务若可以授权，此参数对应授权人员的列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HasAuthUserList 该扩展服务若可以授权，此参数对应授权人员的列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<HasAuthUser> GetHasAuthUserList() const;
 
                     /**
                      * 设置该扩展服务若可以授权，此参数对应授权人员的列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hasAuthUserList 该扩展服务若可以授权，此参数对应授权人员的列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHasAuthUserList(const std::vector<HasAuthUser>& _hasAuthUserList);
@@ -282,21 +270,18 @@ namespace TencentCloud
 
                     /**
                      * 操作扩展服务的操作人UserId，员工在腾讯电子签平台的唯一身份标识，为32位字符串。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operatorUserId;
                     bool m_operatorUserIdHasBeenSet;
 
                     /**
                      * 扩展服务的操作时间，格式为Unix标准时间戳（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_operateOn;
                     bool m_operateOnHasBeenSet;
 
                     /**
                      * 该扩展服务若可以授权，此参数对应授权人员的列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<HasAuthUser> m_hasAuthUserList;
                     bool m_hasAuthUserListHasBeenSet;

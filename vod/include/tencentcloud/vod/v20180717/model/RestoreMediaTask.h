@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -166,42 +166,42 @@ namespace TencentCloud
                     /**
                      * 获取该字段已废弃。
                      * @return Status 该字段已废弃。
-                     * 
+                     * @deprecated
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置该字段已废弃。
                      * @param _status 该字段已废弃。
-                     * 
+                     * @deprecated
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取该字段已废弃。
                      * @return Message 该字段已废弃。
-                     * 
+                     * @deprecated
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置该字段已废弃。
                      * @param _message 该字段已废弃。
-                     * 
+                     * @deprecated
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool MessageHasBeenSet() const;
 

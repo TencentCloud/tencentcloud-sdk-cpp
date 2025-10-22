@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取人员库ID，取值为创建人员库接口中的GroupId
-                     * @return GroupId 人员库ID，取值为创建人员库接口中的GroupId
+                     * 获取人员库ID，取值为创建人员库接口中的GroupId。
+                     * @return GroupId 人员库ID，取值为创建人员库接口中的GroupId。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置人员库ID，取值为创建人员库接口中的GroupId
-                     * @param _groupId 人员库ID，取值为创建人员库接口中的GroupId
+                     * 设置人员库ID，取值为创建人员库接口中的GroupId。
+                     * @param _groupId 人员库ID，取值为创建人员库接口中的GroupId。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取人员库名称
-                     * @return GroupName 人员库名称
+                     * 获取人员库名称。
+                     * @return GroupName 人员库名称。
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置人员库名称
-                     * @param _groupName 人员库名称
+                     * 设置人员库名称。
+                     * @param _groupName 人员库名称。
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取需要修改的人员库自定义描述字段，key-value
-                     * @return GroupExDescriptionInfos 需要修改的人员库自定义描述字段，key-value
+                     * 获取需要修改的人员库自定义描述字段，key-value。
+                     * @return GroupExDescriptionInfos 需要修改的人员库自定义描述字段，key-value。
                      * 
                      */
                     std::vector<GroupExDescriptionInfo> GetGroupExDescriptionInfos() const;
 
                     /**
-                     * 设置需要修改的人员库自定义描述字段，key-value
-                     * @param _groupExDescriptionInfos 需要修改的人员库自定义描述字段，key-value
+                     * 设置需要修改的人员库自定义描述字段，key-value。
+                     * @param _groupExDescriptionInfos 需要修改的人员库自定义描述字段，key-value。
                      * 
                      */
                     void SetGroupExDescriptionInfos(const std::vector<GroupExDescriptionInfo>& _groupExDescriptionInfos);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool GroupExDescriptionInfosHasBeenSet() const;
 
                     /**
-                     * 获取人员库信息备注
-                     * @return Tag 人员库信息备注
+                     * 获取人员库信息备注。
+                     * @return Tag 人员库信息备注。
                      * 
                      */
                     std::string GetTag() const;
 
                     /**
-                     * 设置人员库信息备注
-                     * @param _tag 人员库信息备注
+                     * 设置人员库信息备注。
+                     * @param _tag 人员库信息备注。
                      * 
                      */
                     void SetTag(const std::string& _tag);
@@ -130,25 +130,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 人员库ID，取值为创建人员库接口中的GroupId
+                     * 人员库ID，取值为创建人员库接口中的GroupId。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 人员库名称
+                     * 人员库名称。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 需要修改的人员库自定义描述字段，key-value
+                     * 需要修改的人员库自定义描述字段，key-value。
                      */
                     std::vector<GroupExDescriptionInfo> m_groupExDescriptionInfos;
                     bool m_groupExDescriptionInfosHasBeenSet;
 
                     /**
-                     * 人员库信息备注
+                     * 人员库信息备注。
                      */
                     std::string m_tag;
                     bool m_tagHasBeenSet;

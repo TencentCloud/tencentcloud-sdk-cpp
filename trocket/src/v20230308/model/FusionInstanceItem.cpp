@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,9 @@ FusionInstanceItem::FusionInstanceItem() :
     m_maxMessageDelayHasBeenSet(false),
     m_renewFlagHasBeenSet(false),
     m_instanceItemExtraInfoHasBeenSet(false),
-    m_destroyTimeHasBeenSet(false)
+    m_destroyTimeHasBeenSet(false),
+    m_zoneIdsHasBeenSet(false),
+    m_enableDeletionProtectionHasBeenSet(false)
 {
 }
 
@@ -277,6 +279,29 @@ CoreInternalOutcome FusionInstanceItem::Deserialize(const rapidjson::Value &valu
         m_destroyTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ZoneIds") && !value["ZoneIds"].IsNull())
+    {
+        if (!value["ZoneIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FusionInstanceItem.ZoneIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ZoneIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_zoneIds.push_back((*itr).GetInt64());
+        }
+        m_zoneIdsHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableDeletionProtection") && !value["EnableDeletionProtection"].IsNull())
+    {
+        if (!value["EnableDeletionProtection"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `FusionInstanceItem.EnableDeletionProtection` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableDeletionProtection = value["EnableDeletionProtection"].GetBool();
+        m_enableDeletionProtectionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -458,6 +483,27 @@ void FusionInstanceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "DestroyTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_destroyTime, allocator);
+    }
+
+    if (m_zoneIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_zoneIds.begin(); itr != m_zoneIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_enableDeletionProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableDeletionProtection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableDeletionProtection, allocator);
     }
 
 }
@@ -797,5 +843,37 @@ void FusionInstanceItem::SetDestroyTime(const int64_t& _destroyTime)
 bool FusionInstanceItem::DestroyTimeHasBeenSet() const
 {
     return m_destroyTimeHasBeenSet;
+}
+
+vector<int64_t> FusionInstanceItem::GetZoneIds() const
+{
+    return m_zoneIds;
+}
+
+void FusionInstanceItem::SetZoneIds(const vector<int64_t>& _zoneIds)
+{
+    m_zoneIds = _zoneIds;
+    m_zoneIdsHasBeenSet = true;
+}
+
+bool FusionInstanceItem::ZoneIdsHasBeenSet() const
+{
+    return m_zoneIdsHasBeenSet;
+}
+
+bool FusionInstanceItem::GetEnableDeletionProtection() const
+{
+    return m_enableDeletionProtection;
+}
+
+void FusionInstanceItem::SetEnableDeletionProtection(const bool& _enableDeletionProtection)
+{
+    m_enableDeletionProtection = _enableDeletionProtection;
+    m_enableDeletionProtectionHasBeenSet = true;
+}
+
+bool FusionInstanceItem::EnableDeletionProtectionHasBeenSet() const
+{
+    return m_enableDeletionProtectionHasBeenSet;
 }
 

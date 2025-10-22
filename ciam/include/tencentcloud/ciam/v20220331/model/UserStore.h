@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -203,18 +203,14 @@ namespace TencentCloud
 
                     /**
                      * 获取上次切换的用户池
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastStatus 上次切换的用户池
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetLastStatus() const;
 
                     /**
                      * 设置上次切换的用户池
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastStatus 上次切换的用户池
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastStatus(const bool& _lastStatus);
@@ -228,18 +224,14 @@ namespace TencentCloud
 
                     /**
                      * 获取默认用户池
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefaultStatus 默认用户池
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetDefaultStatus() const;
 
                     /**
                      * 设置默认用户池
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _defaultStatus 默认用户池
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefaultStatus(const bool& _defaultStatus);
@@ -253,18 +245,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateDate 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCreateDate() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createDate 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateDate(const int64_t& _createDate);
@@ -374,21 +362,18 @@ namespace TencentCloud
 
                     /**
                      * 上次切换的用户池
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_lastStatus;
                     bool m_lastStatusHasBeenSet;
 
                     /**
                      * 默认用户池
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_defaultStatus;
                     bool m_defaultStatusHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_createDate;
                     bool m_createDateHasBeenSet;

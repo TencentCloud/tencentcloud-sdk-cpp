@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -210,18 +210,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内部字段，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupSize 内部字段，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBackupSize() const;
 
                     /**
                      * 设置内部字段，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _backupSize 内部字段，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBackupSize(const int64_t& _backupSize);
@@ -235,18 +231,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内部字段，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FullBackup 内部字段，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFullBackup() const;
 
                     /**
                      * 设置内部字段，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fullBackup 内部字段，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFullBackup(const int64_t& _fullBackup);
@@ -260,18 +252,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内部字段，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType 内部字段，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInstanceType() const;
 
                     /**
                      * 设置内部字段，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceType 内部字段，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceType(const int64_t& _instanceType);
@@ -458,21 +446,18 @@ namespace TencentCloud
 
                     /**
                      * 内部字段，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_backupSize;
                     bool m_backupSizeHasBeenSet;
 
                     /**
                      * 内部字段，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_fullBackup;
                     bool m_fullBackupHasBeenSet;
 
                     /**
                      * 内部字段，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_instanceType;
                     bool m_instanceTypeHasBeenSet;

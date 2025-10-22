@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取无效原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Reason 无效原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 设置无效原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reason 无效原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReason(const std::string& _reason);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取1:有效，2:无效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 1:有效，2:无效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置1:有效，2:无效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 1:有效，2:无效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -161,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取收件人地址id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EmailId 收件人地址id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetEmailId() const;
 
                     /**
                      * 设置收件人地址id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _emailId 收件人地址id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEmailId(const uint64_t& _emailId);
@@ -206,21 +194,18 @@ namespace TencentCloud
 
                     /**
                      * 无效原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reason;
                     bool m_reasonHasBeenSet;
 
                     /**
                      * 1:有效，2:无效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 收件人地址id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_emailId;
                     bool m_emailIdHasBeenSet;

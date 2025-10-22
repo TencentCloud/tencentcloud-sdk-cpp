@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -381,6 +381,9 @@ false -- 不开启
 
 12: 存在不兼容的多倍行距设置
 -- 自动处理方式： 不支持处理
+
+13: 存在带有特殊符号内容的datetime类型的a:fld标签元素
+-- 自动处理方式： a:fld标签替换为普通文本
                      * @return AutoHandleUnsupportedElementTypes 此参数仅在`AutoHandleUnsupportedElement`参数为`true`的情况下有效。
 
 指定需要自动处理的不兼容元素类型，默认对所有不兼容的元素进行自动处理。
@@ -424,6 +427,9 @@ false -- 不开启
 
 12: 存在不兼容的多倍行距设置
 -- 自动处理方式： 不支持处理
+
+13: 存在带有特殊符号内容的datetime类型的a:fld标签元素
+-- 自动处理方式： a:fld标签替换为普通文本
                      * 
                      */
                     std::vector<int64_t> GetAutoHandleUnsupportedElementTypes() const;
@@ -472,6 +478,9 @@ false -- 不开启
 
 12: 存在不兼容的多倍行距设置
 -- 自动处理方式： 不支持处理
+
+13: 存在带有特殊符号内容的datetime类型的a:fld标签元素
+-- 自动处理方式： a:fld标签替换为普通文本
                      * @param _autoHandleUnsupportedElementTypes 此参数仅在`AutoHandleUnsupportedElement`参数为`true`的情况下有效。
 
 指定需要自动处理的不兼容元素类型，默认对所有不兼容的元素进行自动处理。
@@ -515,6 +524,9 @@ false -- 不开启
 
 12: 存在不兼容的多倍行距设置
 -- 自动处理方式： 不支持处理
+
+13: 存在带有特殊符号内容的datetime类型的a:fld标签元素
+-- 自动处理方式： a:fld标签替换为普通文本
                      * 
                      */
                     void SetAutoHandleUnsupportedElementTypes(const std::vector<int64_t>& _autoHandleUnsupportedElementTypes);
@@ -674,6 +686,9 @@ false -- 不开启
 
 12: 存在不兼容的多倍行距设置
 -- 自动处理方式： 不支持处理
+
+13: 存在带有特殊符号内容的datetime类型的a:fld标签元素
+-- 自动处理方式： a:fld标签替换为普通文本
                      */
                     std::vector<int64_t> m_autoHandleUnsupportedElementTypes;
                     bool m_autoHandleUnsupportedElementTypesHasBeenSet;

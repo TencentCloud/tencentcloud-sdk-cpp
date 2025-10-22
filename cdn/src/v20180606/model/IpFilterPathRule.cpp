@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ IpFilterPathRule::IpFilterPathRule() :
     m_filterTypeHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_ruleTypeHasBeenSet(false),
-    m_rulePathsHasBeenSet(false)
+    m_rulePathsHasBeenSet(false),
+    m_remarkHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,16 @@ CoreInternalOutcome IpFilterPathRule::Deserialize(const rapidjson::Value &value)
         m_rulePathsHasBeenSet = true;
     }
 
+    if (value.HasMember("Remark") && !value["Remark"].IsNull())
+    {
+        if (!value["Remark"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IpFilterPathRule.Remark` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_remark = string(value["Remark"].GetString());
+        m_remarkHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ void IpFilterPathRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_remarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Remark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -193,5 +212,21 @@ void IpFilterPathRule::SetRulePaths(const vector<string>& _rulePaths)
 bool IpFilterPathRule::RulePathsHasBeenSet() const
 {
     return m_rulePathsHasBeenSet;
+}
+
+string IpFilterPathRule::GetRemark() const
+{
+    return m_remark;
+}
+
+void IpFilterPathRule::SetRemark(const string& _remark)
+{
+    m_remark = _remark;
+    m_remarkHasBeenSet = true;
+}
+
+bool IpFilterPathRule::RemarkHasBeenSet() const
+{
+    return m_remarkHasBeenSet;
 }
 

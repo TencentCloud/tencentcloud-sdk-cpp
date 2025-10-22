@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取zookeeper节点规格描述
-                     * @return MasterSpec zookeeper节点规格描述
+                     * 获取fe节点规格描述
+                     * @return MasterSpec fe节点规格描述
                      * 
                      */
                     std::vector<ResourceSpec> GetMasterSpec() const;
@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool MasterSpecHasBeenSet() const;
 
                     /**
-                     * 获取数据节点规格描述
-                     * @return CoreSpec 数据节点规格描述
+                     * 获取be节点规格描述
+                     * @return CoreSpec be节点规格描述
                      * 
                      */
                     std::vector<ResourceSpec> GetCoreSpec() const;
@@ -75,9 +75,7 @@ namespace TencentCloud
 
                     /**
                      * 获取云盘列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttachCBSSpec 云盘列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DiskSpec> GetAttachCBSSpec() const;
@@ -89,26 +87,45 @@ namespace TencentCloud
                      */
                     bool AttachCBSSpecHasBeenSet() const;
 
+                    /**
+                     * 获取cn节点列表
+                     * @return CNSpec cn节点列表
+                     * 
+                     */
+                    std::vector<ResourceSpec> GetCNSpec() const;
+
+                    /**
+                     * 判断参数 CNSpec 是否已赋值
+                     * @return CNSpec 是否已赋值
+                     * 
+                     */
+                    bool CNSpecHasBeenSet() const;
+
                 private:
 
                     /**
-                     * zookeeper节点规格描述
+                     * fe节点规格描述
                      */
                     std::vector<ResourceSpec> m_masterSpec;
                     bool m_masterSpecHasBeenSet;
 
                     /**
-                     * 数据节点规格描述
+                     * be节点规格描述
                      */
                     std::vector<ResourceSpec> m_coreSpec;
                     bool m_coreSpecHasBeenSet;
 
                     /**
                      * 云盘列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DiskSpec> m_attachCBSSpec;
                     bool m_attachCBSSpecHasBeenSet;
+
+                    /**
+                     * cn节点列表
+                     */
+                    std::vector<ResourceSpec> m_cNSpec;
+                    bool m_cNSpecHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@
 #include <tencentcloud/teo/v20220901/model/DropPageConfig.h>
 #include <tencentcloud/teo/v20220901/model/TemplateConfig.h>
 #include <tencentcloud/teo/v20220901/model/SlowPostConfig.h>
+#include <tencentcloud/teo/v20220901/model/DetectLengthLimitConfig.h>
 
 
 namespace TencentCloud
@@ -45,7 +46,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 安全配置
+                * Web安全配置
                 */
                 class SecurityConfig : public AbstractModel
                 {
@@ -58,18 +59,14 @@ namespace TencentCloud
 
                     /**
                      * 获取托管规则。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WafConfig 托管规则。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     WafConfig GetWafConfig() const;
 
                     /**
                      * 设置托管规则。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _wafConfig 托管规则。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWafConfig(const WafConfig& _wafConfig);
@@ -83,18 +80,14 @@ namespace TencentCloud
 
                     /**
                      * 获取速率限制。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RateLimitConfig 速率限制。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RateLimitConfig GetRateLimitConfig() const;
 
                     /**
                      * 设置速率限制。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rateLimitConfig 速率限制。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRateLimitConfig(const RateLimitConfig& _rateLimitConfig);
@@ -108,18 +101,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义规则。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AclConfig 自定义规则。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AclConfig GetAclConfig() const;
 
                     /**
                      * 设置自定义规则。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _aclConfig 自定义规则。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAclConfig(const AclConfig& _aclConfig);
@@ -133,18 +122,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Bot配置。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BotConfig Bot配置。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BotConfig GetBotConfig() const;
 
                     /**
                      * 设置Bot配置。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _botConfig Bot配置。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBotConfig(const BotConfig& _botConfig);
@@ -158,18 +143,14 @@ namespace TencentCloud
 
                     /**
                      * 获取七层防护总开关。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SwitchConfig 七层防护总开关。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SwitchConfig GetSwitchConfig() const;
 
                     /**
                      * 设置七层防护总开关。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _switchConfig 七层防护总开关。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSwitchConfig(const SwitchConfig& _switchConfig);
@@ -183,18 +164,14 @@ namespace TencentCloud
 
                     /**
                      * 获取基础访问管控。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IpTableConfig 基础访问管控。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     IpTableConfig GetIpTableConfig() const;
 
                     /**
                      * 设置基础访问管控。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ipTableConfig 基础访问管控。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIpTableConfig(const IpTableConfig& _ipTableConfig);
@@ -208,18 +185,14 @@ namespace TencentCloud
 
                     /**
                      * 获取例外规则配置。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExceptConfig 例外规则配置。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ExceptConfig GetExceptConfig() const;
 
                     /**
                      * 设置例外规则配置。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _exceptConfig 例外规则配置。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExceptConfig(const ExceptConfig& _exceptConfig);
@@ -233,18 +206,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义拦截页面配置。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DropPageConfig 自定义拦截页面配置。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DropPageConfig GetDropPageConfig() const;
 
                     /**
                      * 设置自定义拦截页面配置。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dropPageConfig 自定义拦截页面配置。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDropPageConfig(const DropPageConfig& _dropPageConfig);
@@ -258,18 +227,14 @@ namespace TencentCloud
 
                     /**
                      * 获取模板配置。此处仅出参数使用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TemplateConfig 模板配置。此处仅出参数使用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TemplateConfig GetTemplateConfig() const;
 
                     /**
                      * 设置模板配置。此处仅出参数使用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _templateConfig 模板配置。此处仅出参数使用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTemplateConfig(const TemplateConfig& _templateConfig);
@@ -283,18 +248,14 @@ namespace TencentCloud
 
                     /**
                      * 获取慢速攻击配置。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SlowPostConfig 慢速攻击配置。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SlowPostConfig GetSlowPostConfig() const;
 
                     /**
                      * 设置慢速攻击配置。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _slowPostConfig 慢速攻击配置。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSlowPostConfig(const SlowPostConfig& _slowPostConfig);
@@ -306,77 +267,94 @@ namespace TencentCloud
                      */
                     bool SlowPostConfigHasBeenSet() const;
 
+                    /**
+                     * 获取检测长度限制配置。仅出参使用。
+                     * @return DetectLengthLimitConfig 检测长度限制配置。仅出参使用。
+                     * 
+                     */
+                    DetectLengthLimitConfig GetDetectLengthLimitConfig() const;
+
+                    /**
+                     * 设置检测长度限制配置。仅出参使用。
+                     * @param _detectLengthLimitConfig 检测长度限制配置。仅出参使用。
+                     * 
+                     */
+                    void SetDetectLengthLimitConfig(const DetectLengthLimitConfig& _detectLengthLimitConfig);
+
+                    /**
+                     * 判断参数 DetectLengthLimitConfig 是否已赋值
+                     * @return DetectLengthLimitConfig 是否已赋值
+                     * 
+                     */
+                    bool DetectLengthLimitConfigHasBeenSet() const;
+
                 private:
 
                     /**
                      * 托管规则。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     WafConfig m_wafConfig;
                     bool m_wafConfigHasBeenSet;
 
                     /**
                      * 速率限制。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RateLimitConfig m_rateLimitConfig;
                     bool m_rateLimitConfigHasBeenSet;
 
                     /**
                      * 自定义规则。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AclConfig m_aclConfig;
                     bool m_aclConfigHasBeenSet;
 
                     /**
                      * Bot配置。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BotConfig m_botConfig;
                     bool m_botConfigHasBeenSet;
 
                     /**
                      * 七层防护总开关。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SwitchConfig m_switchConfig;
                     bool m_switchConfigHasBeenSet;
 
                     /**
                      * 基础访问管控。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     IpTableConfig m_ipTableConfig;
                     bool m_ipTableConfigHasBeenSet;
 
                     /**
                      * 例外规则配置。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ExceptConfig m_exceptConfig;
                     bool m_exceptConfigHasBeenSet;
 
                     /**
                      * 自定义拦截页面配置。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DropPageConfig m_dropPageConfig;
                     bool m_dropPageConfigHasBeenSet;
 
                     /**
                      * 模板配置。此处仅出参数使用。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TemplateConfig m_templateConfig;
                     bool m_templateConfigHasBeenSet;
 
                     /**
                      * 慢速攻击配置。如果入参为空或不填，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SlowPostConfig m_slowPostConfig;
                     bool m_slowPostConfigHasBeenSet;
+
+                    /**
+                     * 检测长度限制配置。仅出参使用。
+                     */
+                    DetectLengthLimitConfig m_detectLengthLimitConfig;
+                    bool m_detectLengthLimitConfigHasBeenSet;
 
                 };
             }

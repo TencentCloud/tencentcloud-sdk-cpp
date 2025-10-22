@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流量包名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrafficPackageName 流量包名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTrafficPackageName() const;
 
                     /**
                      * 设置流量包名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _trafficPackageName 流量包名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTrafficPackageName(const std::string& _trafficPackageName);
@@ -178,15 +174,19 @@ namespace TencentCloud
                     bool TimeHasBeenSet() const;
 
                     /**
-                     * 获取资源类型。可能的值: CVM, LB, NAT, HAVIP, EIP
-                     * @return ResourceType 资源类型。可能的值: CVM, LB, NAT, HAVIP, EIP
+                     * 获取资源类型。可选值: EIP, BWP, LB
+
+                     * @return ResourceType 资源类型。可选值: EIP, BWP, LB
+
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置资源类型。可能的值: CVM, LB, NAT, HAVIP, EIP
-                     * @param _resourceType 资源类型。可能的值: CVM, LB, NAT, HAVIP, EIP
+                     * 设置资源类型。可选值: EIP, BWP, LB
+
+                     * @param _resourceType 资源类型。可选值: EIP, BWP, LB
+
                      * 
                      */
                     void SetResourceType(const std::string& _resourceType);
@@ -271,7 +271,6 @@ namespace TencentCloud
 
                     /**
                      * 流量包名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_trafficPackageName;
                     bool m_trafficPackageNameHasBeenSet;
@@ -301,7 +300,8 @@ namespace TencentCloud
                     bool m_timeHasBeenSet;
 
                     /**
-                     * 资源类型。可能的值: CVM, LB, NAT, HAVIP, EIP
+                     * 资源类型。可选值: EIP, BWP, LB
+
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;

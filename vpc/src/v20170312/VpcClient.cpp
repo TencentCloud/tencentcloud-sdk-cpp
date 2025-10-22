@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -334,6 +334,49 @@ VpcClient::AllocateAddressesOutcomeCallable VpcClient::AllocateAddressesCallable
         [this, request]()
         {
             return this->AllocateAddresses(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::AllocateIPv6AddressesOutcome VpcClient::AllocateIPv6Addresses(const AllocateIPv6AddressesRequest &request)
+{
+    auto outcome = MakeRequest(request, "AllocateIPv6Addresses");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AllocateIPv6AddressesResponse rsp = AllocateIPv6AddressesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AllocateIPv6AddressesOutcome(rsp);
+        else
+            return AllocateIPv6AddressesOutcome(o.GetError());
+    }
+    else
+    {
+        return AllocateIPv6AddressesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::AllocateIPv6AddressesAsync(const AllocateIPv6AddressesRequest& request, const AllocateIPv6AddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AllocateIPv6Addresses(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::AllocateIPv6AddressesOutcomeCallable VpcClient::AllocateIPv6AddressesCallable(const AllocateIPv6AddressesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AllocateIPv6AddressesOutcome()>>(
+        [this, request]()
+        {
+            return this->AllocateIPv6Addresses(request);
         }
     );
 
@@ -678,6 +721,92 @@ VpcClient::AssociateDirectConnectGatewayNatGatewayOutcomeCallable VpcClient::Ass
         [this, request]()
         {
             return this->AssociateDirectConnectGatewayNatGateway(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::AssociateHaVipInstanceOutcome VpcClient::AssociateHaVipInstance(const AssociateHaVipInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "AssociateHaVipInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AssociateHaVipInstanceResponse rsp = AssociateHaVipInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AssociateHaVipInstanceOutcome(rsp);
+        else
+            return AssociateHaVipInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return AssociateHaVipInstanceOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::AssociateHaVipInstanceAsync(const AssociateHaVipInstanceRequest& request, const AssociateHaVipInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AssociateHaVipInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::AssociateHaVipInstanceOutcomeCallable VpcClient::AssociateHaVipInstanceCallable(const AssociateHaVipInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AssociateHaVipInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->AssociateHaVipInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::AssociateIPv6AddressOutcome VpcClient::AssociateIPv6Address(const AssociateIPv6AddressRequest &request)
+{
+    auto outcome = MakeRequest(request, "AssociateIPv6Address");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AssociateIPv6AddressResponse rsp = AssociateIPv6AddressResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AssociateIPv6AddressOutcome(rsp);
+        else
+            return AssociateIPv6AddressOutcome(o.GetError());
+    }
+    else
+    {
+        return AssociateIPv6AddressOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::AssociateIPv6AddressAsync(const AssociateIPv6AddressRequest& request, const AssociateIPv6AddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AssociateIPv6Address(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::AssociateIPv6AddressOutcomeCallable VpcClient::AssociateIPv6AddressCallable(const AssociateIPv6AddressRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AssociateIPv6AddressOutcome()>>(
+        [this, request]()
+        {
+            return this->AssociateIPv6Address(request);
         }
     );
 
@@ -1158,6 +1287,49 @@ VpcClient::CheckDefaultSubnetOutcomeCallable VpcClient::CheckDefaultSubnetCallab
     return task->get_future();
 }
 
+VpcClient::CheckGatewayFlowMonitorOutcome VpcClient::CheckGatewayFlowMonitor(const CheckGatewayFlowMonitorRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckGatewayFlowMonitor");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckGatewayFlowMonitorResponse rsp = CheckGatewayFlowMonitorResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckGatewayFlowMonitorOutcome(rsp);
+        else
+            return CheckGatewayFlowMonitorOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckGatewayFlowMonitorOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::CheckGatewayFlowMonitorAsync(const CheckGatewayFlowMonitorRequest& request, const CheckGatewayFlowMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CheckGatewayFlowMonitor(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::CheckGatewayFlowMonitorOutcomeCallable VpcClient::CheckGatewayFlowMonitorCallable(const CheckGatewayFlowMonitorRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CheckGatewayFlowMonitorOutcome()>>(
+        [this, request]()
+        {
+            return this->CheckGatewayFlowMonitor(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::CheckNetDetectStateOutcome VpcClient::CheckNetDetectState(const CheckNetDetectStateRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckNetDetectState");
@@ -1194,6 +1366,49 @@ VpcClient::CheckNetDetectStateOutcomeCallable VpcClient::CheckNetDetectStateCall
         [this, request]()
         {
             return this->CheckNetDetectState(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::CheckTrafficMirrorOutcome VpcClient::CheckTrafficMirror(const CheckTrafficMirrorRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckTrafficMirror");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckTrafficMirrorResponse rsp = CheckTrafficMirrorResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckTrafficMirrorOutcome(rsp);
+        else
+            return CheckTrafficMirrorOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckTrafficMirrorOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::CheckTrafficMirrorAsync(const CheckTrafficMirrorRequest& request, const CheckTrafficMirrorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CheckTrafficMirror(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::CheckTrafficMirrorOutcomeCallable VpcClient::CheckTrafficMirrorCallable(const CheckTrafficMirrorRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CheckTrafficMirrorOutcome()>>(
+        [this, request]()
+        {
+            return this->CheckTrafficMirror(request);
         }
     );
 
@@ -1975,6 +2190,49 @@ VpcClient::CreateFlowLogOutcomeCallable VpcClient::CreateFlowLogCallable(const C
     return task->get_future();
 }
 
+VpcClient::CreateGlobalRoutesOutcome VpcClient::CreateGlobalRoutes(const CreateGlobalRoutesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateGlobalRoutes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateGlobalRoutesResponse rsp = CreateGlobalRoutesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateGlobalRoutesOutcome(rsp);
+        else
+            return CreateGlobalRoutesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateGlobalRoutesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::CreateGlobalRoutesAsync(const CreateGlobalRoutesRequest& request, const CreateGlobalRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateGlobalRoutes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::CreateGlobalRoutesOutcomeCallable VpcClient::CreateGlobalRoutesCallable(const CreateGlobalRoutesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateGlobalRoutesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateGlobalRoutes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::CreateHaVipOutcome VpcClient::CreateHaVip(const CreateHaVipRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateHaVip");
@@ -2706,6 +2964,178 @@ VpcClient::CreatePrivateNatGatewayTranslationNatRuleOutcomeCallable VpcClient::C
     return task->get_future();
 }
 
+VpcClient::CreateReserveIpAddressesOutcome VpcClient::CreateReserveIpAddresses(const CreateReserveIpAddressesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateReserveIpAddresses");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateReserveIpAddressesResponse rsp = CreateReserveIpAddressesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateReserveIpAddressesOutcome(rsp);
+        else
+            return CreateReserveIpAddressesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateReserveIpAddressesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::CreateReserveIpAddressesAsync(const CreateReserveIpAddressesRequest& request, const CreateReserveIpAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateReserveIpAddresses(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::CreateReserveIpAddressesOutcomeCallable VpcClient::CreateReserveIpAddressesCallable(const CreateReserveIpAddressesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateReserveIpAddressesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateReserveIpAddresses(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::CreateRoutePolicyOutcome VpcClient::CreateRoutePolicy(const CreateRoutePolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRoutePolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRoutePolicyResponse rsp = CreateRoutePolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRoutePolicyOutcome(rsp);
+        else
+            return CreateRoutePolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRoutePolicyOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::CreateRoutePolicyAsync(const CreateRoutePolicyRequest& request, const CreateRoutePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateRoutePolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::CreateRoutePolicyOutcomeCallable VpcClient::CreateRoutePolicyCallable(const CreateRoutePolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateRoutePolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateRoutePolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::CreateRoutePolicyAssociationsOutcome VpcClient::CreateRoutePolicyAssociations(const CreateRoutePolicyAssociationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRoutePolicyAssociations");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRoutePolicyAssociationsResponse rsp = CreateRoutePolicyAssociationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRoutePolicyAssociationsOutcome(rsp);
+        else
+            return CreateRoutePolicyAssociationsOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRoutePolicyAssociationsOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::CreateRoutePolicyAssociationsAsync(const CreateRoutePolicyAssociationsRequest& request, const CreateRoutePolicyAssociationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateRoutePolicyAssociations(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::CreateRoutePolicyAssociationsOutcomeCallable VpcClient::CreateRoutePolicyAssociationsCallable(const CreateRoutePolicyAssociationsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateRoutePolicyAssociationsOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateRoutePolicyAssociations(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::CreateRoutePolicyEntriesOutcome VpcClient::CreateRoutePolicyEntries(const CreateRoutePolicyEntriesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRoutePolicyEntries");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRoutePolicyEntriesResponse rsp = CreateRoutePolicyEntriesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRoutePolicyEntriesOutcome(rsp);
+        else
+            return CreateRoutePolicyEntriesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRoutePolicyEntriesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::CreateRoutePolicyEntriesAsync(const CreateRoutePolicyEntriesRequest& request, const CreateRoutePolicyEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateRoutePolicyEntries(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::CreateRoutePolicyEntriesOutcomeCallable VpcClient::CreateRoutePolicyEntriesCallable(const CreateRoutePolicyEntriesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateRoutePolicyEntriesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateRoutePolicyEntries(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::CreateRouteTableOutcome VpcClient::CreateRouteTable(const CreateRouteTableRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateRouteTable");
@@ -3129,6 +3559,49 @@ VpcClient::CreateSubnetsOutcomeCallable VpcClient::CreateSubnetsCallable(const C
         [this, request]()
         {
             return this->CreateSubnets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::CreateTrafficMirrorOutcome VpcClient::CreateTrafficMirror(const CreateTrafficMirrorRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTrafficMirror");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTrafficMirrorResponse rsp = CreateTrafficMirrorResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTrafficMirrorOutcome(rsp);
+        else
+            return CreateTrafficMirrorOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTrafficMirrorOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::CreateTrafficMirrorAsync(const CreateTrafficMirrorRequest& request, const CreateTrafficMirrorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateTrafficMirror(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::CreateTrafficMirrorOutcomeCallable VpcClient::CreateTrafficMirrorCallable(const CreateTrafficMirrorRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateTrafficMirrorOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateTrafficMirror(request);
         }
     );
 
@@ -4168,6 +4641,49 @@ VpcClient::DeleteFlowLogOutcomeCallable VpcClient::DeleteFlowLogCallable(const D
     return task->get_future();
 }
 
+VpcClient::DeleteGlobalRoutesOutcome VpcClient::DeleteGlobalRoutes(const DeleteGlobalRoutesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteGlobalRoutes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteGlobalRoutesResponse rsp = DeleteGlobalRoutesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteGlobalRoutesOutcome(rsp);
+        else
+            return DeleteGlobalRoutesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteGlobalRoutesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DeleteGlobalRoutesAsync(const DeleteGlobalRoutesRequest& request, const DeleteGlobalRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteGlobalRoutes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DeleteGlobalRoutesOutcomeCallable VpcClient::DeleteGlobalRoutesCallable(const DeleteGlobalRoutesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteGlobalRoutesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteGlobalRoutes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DeleteHaVipOutcome VpcClient::DeleteHaVip(const DeleteHaVipRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteHaVip");
@@ -4899,6 +5415,178 @@ VpcClient::DeletePrivateNatGatewayTranslationNatRuleOutcomeCallable VpcClient::D
     return task->get_future();
 }
 
+VpcClient::DeleteReserveIpAddressesOutcome VpcClient::DeleteReserveIpAddresses(const DeleteReserveIpAddressesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteReserveIpAddresses");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteReserveIpAddressesResponse rsp = DeleteReserveIpAddressesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteReserveIpAddressesOutcome(rsp);
+        else
+            return DeleteReserveIpAddressesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteReserveIpAddressesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DeleteReserveIpAddressesAsync(const DeleteReserveIpAddressesRequest& request, const DeleteReserveIpAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteReserveIpAddresses(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DeleteReserveIpAddressesOutcomeCallable VpcClient::DeleteReserveIpAddressesCallable(const DeleteReserveIpAddressesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteReserveIpAddressesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteReserveIpAddresses(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DeleteRoutePolicyOutcome VpcClient::DeleteRoutePolicy(const DeleteRoutePolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRoutePolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRoutePolicyResponse rsp = DeleteRoutePolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRoutePolicyOutcome(rsp);
+        else
+            return DeleteRoutePolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRoutePolicyOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DeleteRoutePolicyAsync(const DeleteRoutePolicyRequest& request, const DeleteRoutePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRoutePolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DeleteRoutePolicyOutcomeCallable VpcClient::DeleteRoutePolicyCallable(const DeleteRoutePolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRoutePolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRoutePolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DeleteRoutePolicyAssociationsOutcome VpcClient::DeleteRoutePolicyAssociations(const DeleteRoutePolicyAssociationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRoutePolicyAssociations");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRoutePolicyAssociationsResponse rsp = DeleteRoutePolicyAssociationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRoutePolicyAssociationsOutcome(rsp);
+        else
+            return DeleteRoutePolicyAssociationsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRoutePolicyAssociationsOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DeleteRoutePolicyAssociationsAsync(const DeleteRoutePolicyAssociationsRequest& request, const DeleteRoutePolicyAssociationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRoutePolicyAssociations(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DeleteRoutePolicyAssociationsOutcomeCallable VpcClient::DeleteRoutePolicyAssociationsCallable(const DeleteRoutePolicyAssociationsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRoutePolicyAssociationsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRoutePolicyAssociations(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DeleteRoutePolicyEntriesOutcome VpcClient::DeleteRoutePolicyEntries(const DeleteRoutePolicyEntriesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRoutePolicyEntries");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRoutePolicyEntriesResponse rsp = DeleteRoutePolicyEntriesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRoutePolicyEntriesOutcome(rsp);
+        else
+            return DeleteRoutePolicyEntriesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRoutePolicyEntriesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DeleteRoutePolicyEntriesAsync(const DeleteRoutePolicyEntriesRequest& request, const DeleteRoutePolicyEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRoutePolicyEntries(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DeleteRoutePolicyEntriesOutcomeCallable VpcClient::DeleteRoutePolicyEntriesCallable(const DeleteRoutePolicyEntriesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRoutePolicyEntriesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRoutePolicyEntries(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DeleteRouteTableOutcome VpcClient::DeleteRouteTable(const DeleteRouteTableRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteRouteTable");
@@ -5279,6 +5967,49 @@ VpcClient::DeleteTemplateMemberOutcomeCallable VpcClient::DeleteTemplateMemberCa
         [this, request]()
         {
             return this->DeleteTemplateMember(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DeleteTrafficMirrorOutcome VpcClient::DeleteTrafficMirror(const DeleteTrafficMirrorRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteTrafficMirror");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteTrafficMirrorResponse rsp = DeleteTrafficMirrorResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteTrafficMirrorOutcome(rsp);
+        else
+            return DeleteTrafficMirrorOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteTrafficMirrorOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DeleteTrafficMirrorAsync(const DeleteTrafficMirrorRequest& request, const DeleteTrafficMirrorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteTrafficMirror(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DeleteTrafficMirrorOutcomeCallable VpcClient::DeleteTrafficMirrorCallable(const DeleteTrafficMirrorRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteTrafficMirrorOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteTrafficMirror(request);
         }
     );
 
@@ -5802,6 +6533,49 @@ VpcClient::DescribeAccountAttributesOutcomeCallable VpcClient::DescribeAccountAt
     return task->get_future();
 }
 
+VpcClient::DescribeAddressBandwidthRangeOutcome VpcClient::DescribeAddressBandwidthRange(const DescribeAddressBandwidthRangeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAddressBandwidthRange");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAddressBandwidthRangeResponse rsp = DescribeAddressBandwidthRangeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAddressBandwidthRangeOutcome(rsp);
+        else
+            return DescribeAddressBandwidthRangeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAddressBandwidthRangeOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeAddressBandwidthRangeAsync(const DescribeAddressBandwidthRangeRequest& request, const DescribeAddressBandwidthRangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAddressBandwidthRange(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeAddressBandwidthRangeOutcomeCallable VpcClient::DescribeAddressBandwidthRangeCallable(const DescribeAddressBandwidthRangeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAddressBandwidthRangeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAddressBandwidthRange(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DescribeAddressQuotaOutcome VpcClient::DescribeAddressQuota(const DescribeAddressQuotaRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAddressQuota");
@@ -5845,6 +6619,49 @@ VpcClient::DescribeAddressQuotaOutcomeCallable VpcClient::DescribeAddressQuotaCa
     return task->get_future();
 }
 
+VpcClient::DescribeAddressTemplateGroupInstancesOutcome VpcClient::DescribeAddressTemplateGroupInstances(const DescribeAddressTemplateGroupInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAddressTemplateGroupInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAddressTemplateGroupInstancesResponse rsp = DescribeAddressTemplateGroupInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAddressTemplateGroupInstancesOutcome(rsp);
+        else
+            return DescribeAddressTemplateGroupInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAddressTemplateGroupInstancesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeAddressTemplateGroupInstancesAsync(const DescribeAddressTemplateGroupInstancesRequest& request, const DescribeAddressTemplateGroupInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAddressTemplateGroupInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeAddressTemplateGroupInstancesOutcomeCallable VpcClient::DescribeAddressTemplateGroupInstancesCallable(const DescribeAddressTemplateGroupInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAddressTemplateGroupInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAddressTemplateGroupInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DescribeAddressTemplateGroupsOutcome VpcClient::DescribeAddressTemplateGroups(const DescribeAddressTemplateGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAddressTemplateGroups");
@@ -5881,6 +6698,49 @@ VpcClient::DescribeAddressTemplateGroupsOutcomeCallable VpcClient::DescribeAddre
         [this, request]()
         {
             return this->DescribeAddressTemplateGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeAddressTemplateInstancesOutcome VpcClient::DescribeAddressTemplateInstances(const DescribeAddressTemplateInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAddressTemplateInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAddressTemplateInstancesResponse rsp = DescribeAddressTemplateInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAddressTemplateInstancesOutcome(rsp);
+        else
+            return DescribeAddressTemplateInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAddressTemplateInstancesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeAddressTemplateInstancesAsync(const DescribeAddressTemplateInstancesRequest& request, const DescribeAddressTemplateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAddressTemplateInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeAddressTemplateInstancesOutcomeCallable VpcClient::DescribeAddressTemplateInstancesCallable(const DescribeAddressTemplateInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAddressTemplateInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAddressTemplateInstances(request);
         }
     );
 
@@ -6010,6 +6870,49 @@ VpcClient::DescribeAssistantCidrOutcomeCallable VpcClient::DescribeAssistantCidr
         [this, request]()
         {
             return this->DescribeAssistantCidr(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeBandwidthPackageBandwidthRangeOutcome VpcClient::DescribeBandwidthPackageBandwidthRange(const DescribeBandwidthPackageBandwidthRangeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBandwidthPackageBandwidthRange");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBandwidthPackageBandwidthRangeResponse rsp = DescribeBandwidthPackageBandwidthRangeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBandwidthPackageBandwidthRangeOutcome(rsp);
+        else
+            return DescribeBandwidthPackageBandwidthRangeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBandwidthPackageBandwidthRangeOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeBandwidthPackageBandwidthRangeAsync(const DescribeBandwidthPackageBandwidthRangeRequest& request, const DescribeBandwidthPackageBandwidthRangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBandwidthPackageBandwidthRange(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeBandwidthPackageBandwidthRangeOutcomeCallable VpcClient::DescribeBandwidthPackageBandwidthRangeCallable(const DescribeBandwidthPackageBandwidthRangeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBandwidthPackageBandwidthRangeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBandwidthPackageBandwidthRange(request);
         }
     );
 
@@ -7178,6 +8081,49 @@ VpcClient::DescribeGatewayFlowQosOutcomeCallable VpcClient::DescribeGatewayFlowQ
     return task->get_future();
 }
 
+VpcClient::DescribeGlobalRoutesOutcome VpcClient::DescribeGlobalRoutes(const DescribeGlobalRoutesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGlobalRoutes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGlobalRoutesResponse rsp = DescribeGlobalRoutesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGlobalRoutesOutcome(rsp);
+        else
+            return DescribeGlobalRoutesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGlobalRoutesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeGlobalRoutesAsync(const DescribeGlobalRoutesRequest& request, const DescribeGlobalRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGlobalRoutes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeGlobalRoutesOutcomeCallable VpcClient::DescribeGlobalRoutesCallable(const DescribeGlobalRoutesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGlobalRoutesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGlobalRoutes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DescribeHaVipsOutcome VpcClient::DescribeHaVips(const DescribeHaVipsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeHaVips");
@@ -7300,6 +8246,92 @@ VpcClient::DescribeHighPriorityRoutesOutcomeCallable VpcClient::DescribeHighPrio
         [this, request]()
         {
             return this->DescribeHighPriorityRoutes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeIPv6AddressesOutcome VpcClient::DescribeIPv6Addresses(const DescribeIPv6AddressesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIPv6Addresses");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIPv6AddressesResponse rsp = DescribeIPv6AddressesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIPv6AddressesOutcome(rsp);
+        else
+            return DescribeIPv6AddressesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIPv6AddressesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeIPv6AddressesAsync(const DescribeIPv6AddressesRequest& request, const DescribeIPv6AddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeIPv6Addresses(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeIPv6AddressesOutcomeCallable VpcClient::DescribeIPv6AddressesCallable(const DescribeIPv6AddressesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeIPv6AddressesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeIPv6Addresses(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeInstanceJumboOutcome VpcClient::DescribeInstanceJumbo(const DescribeInstanceJumboRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceJumbo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceJumboResponse rsp = DescribeInstanceJumboResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceJumboOutcome(rsp);
+        else
+            return DescribeInstanceJumboOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceJumboOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeInstanceJumboAsync(const DescribeInstanceJumboRequest& request, const DescribeInstanceJumboAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceJumbo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeInstanceJumboOutcomeCallable VpcClient::DescribeInstanceJumboCallable(const DescribeInstanceJumboRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceJumboOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceJumbo(request);
         }
     );
 
@@ -7644,6 +8676,49 @@ VpcClient::DescribeNatGatewayDirectConnectGatewayRouteOutcomeCallable VpcClient:
         [this, request]()
         {
             return this->DescribeNatGatewayDirectConnectGatewayRoute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeNatGatewayFlowMonitorDetailOutcome VpcClient::DescribeNatGatewayFlowMonitorDetail(const DescribeNatGatewayFlowMonitorDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNatGatewayFlowMonitorDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNatGatewayFlowMonitorDetailResponse rsp = DescribeNatGatewayFlowMonitorDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNatGatewayFlowMonitorDetailOutcome(rsp);
+        else
+            return DescribeNatGatewayFlowMonitorDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNatGatewayFlowMonitorDetailOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeNatGatewayFlowMonitorDetailAsync(const DescribeNatGatewayFlowMonitorDetailRequest& request, const DescribeNatGatewayFlowMonitorDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNatGatewayFlowMonitorDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeNatGatewayFlowMonitorDetailOutcomeCallable VpcClient::DescribeNatGatewayFlowMonitorDetailCallable(const DescribeNatGatewayFlowMonitorDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNatGatewayFlowMonitorDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNatGatewayFlowMonitorDetail(request);
         }
     );
 
@@ -8339,6 +9414,49 @@ VpcClient::DescribeProductQuotaOutcomeCallable VpcClient::DescribeProductQuotaCa
     return task->get_future();
 }
 
+VpcClient::DescribeReserveIpAddressesOutcome VpcClient::DescribeReserveIpAddresses(const DescribeReserveIpAddressesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeReserveIpAddresses");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeReserveIpAddressesResponse rsp = DescribeReserveIpAddressesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeReserveIpAddressesOutcome(rsp);
+        else
+            return DescribeReserveIpAddressesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeReserveIpAddressesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeReserveIpAddressesAsync(const DescribeReserveIpAddressesRequest& request, const DescribeReserveIpAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeReserveIpAddresses(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeReserveIpAddressesOutcomeCallable VpcClient::DescribeReserveIpAddressesCallable(const DescribeReserveIpAddressesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeReserveIpAddressesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeReserveIpAddresses(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DescribeRouteConflictsOutcome VpcClient::DescribeRouteConflicts(const DescribeRouteConflictsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRouteConflicts");
@@ -8375,6 +9493,92 @@ VpcClient::DescribeRouteConflictsOutcomeCallable VpcClient::DescribeRouteConflic
         [this, request]()
         {
             return this->DescribeRouteConflicts(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeRouteListOutcome VpcClient::DescribeRouteList(const DescribeRouteListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRouteList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRouteListResponse rsp = DescribeRouteListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRouteListOutcome(rsp);
+        else
+            return DescribeRouteListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRouteListOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeRouteListAsync(const DescribeRouteListRequest& request, const DescribeRouteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRouteList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeRouteListOutcomeCallable VpcClient::DescribeRouteListCallable(const DescribeRouteListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRouteListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRouteList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeRoutePolicyEntriesOutcome VpcClient::DescribeRoutePolicyEntries(const DescribeRoutePolicyEntriesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRoutePolicyEntries");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRoutePolicyEntriesResponse rsp = DescribeRoutePolicyEntriesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRoutePolicyEntriesOutcome(rsp);
+        else
+            return DescribeRoutePolicyEntriesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRoutePolicyEntriesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeRoutePolicyEntriesAsync(const DescribeRoutePolicyEntriesRequest& request, const DescribeRoutePolicyEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRoutePolicyEntries(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeRoutePolicyEntriesOutcomeCallable VpcClient::DescribeRoutePolicyEntriesCallable(const DescribeRoutePolicyEntriesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRoutePolicyEntriesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRoutePolicyEntries(request);
         }
     );
 
@@ -8769,6 +9973,49 @@ VpcClient::DescribeSecurityGroupsOutcomeCallable VpcClient::DescribeSecurityGrou
     return task->get_future();
 }
 
+VpcClient::DescribeServiceTemplateGroupInstancesOutcome VpcClient::DescribeServiceTemplateGroupInstances(const DescribeServiceTemplateGroupInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeServiceTemplateGroupInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeServiceTemplateGroupInstancesResponse rsp = DescribeServiceTemplateGroupInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeServiceTemplateGroupInstancesOutcome(rsp);
+        else
+            return DescribeServiceTemplateGroupInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeServiceTemplateGroupInstancesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeServiceTemplateGroupInstancesAsync(const DescribeServiceTemplateGroupInstancesRequest& request, const DescribeServiceTemplateGroupInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeServiceTemplateGroupInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeServiceTemplateGroupInstancesOutcomeCallable VpcClient::DescribeServiceTemplateGroupInstancesCallable(const DescribeServiceTemplateGroupInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeServiceTemplateGroupInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeServiceTemplateGroupInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DescribeServiceTemplateGroupsOutcome VpcClient::DescribeServiceTemplateGroups(const DescribeServiceTemplateGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeServiceTemplateGroups");
@@ -8805,6 +10052,49 @@ VpcClient::DescribeServiceTemplateGroupsOutcomeCallable VpcClient::DescribeServi
         [this, request]()
         {
             return this->DescribeServiceTemplateGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeServiceTemplateInstancesOutcome VpcClient::DescribeServiceTemplateInstances(const DescribeServiceTemplateInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeServiceTemplateInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeServiceTemplateInstancesResponse rsp = DescribeServiceTemplateInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeServiceTemplateInstancesOutcome(rsp);
+        else
+            return DescribeServiceTemplateInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeServiceTemplateInstancesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeServiceTemplateInstancesAsync(const DescribeServiceTemplateInstancesRequest& request, const DescribeServiceTemplateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeServiceTemplateInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeServiceTemplateInstancesOutcomeCallable VpcClient::DescribeServiceTemplateInstancesCallable(const DescribeServiceTemplateInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeServiceTemplateInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeServiceTemplateInstances(request);
         }
     );
 
@@ -9285,6 +10575,49 @@ VpcClient::DescribeTenantCcnsOutcomeCallable VpcClient::DescribeTenantCcnsCallab
     return task->get_future();
 }
 
+VpcClient::DescribeTrafficMirrorsOutcome VpcClient::DescribeTrafficMirrors(const DescribeTrafficMirrorsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTrafficMirrors");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTrafficMirrorsResponse rsp = DescribeTrafficMirrorsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTrafficMirrorsOutcome(rsp);
+        else
+            return DescribeTrafficMirrorsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTrafficMirrorsOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeTrafficMirrorsAsync(const DescribeTrafficMirrorsRequest& request, const DescribeTrafficMirrorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTrafficMirrors(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeTrafficMirrorsOutcomeCallable VpcClient::DescribeTrafficMirrorsCallable(const DescribeTrafficMirrorsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTrafficMirrorsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTrafficMirrors(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DescribeTrafficPackagesOutcome VpcClient::DescribeTrafficPackages(const DescribeTrafficPackagesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTrafficPackages");
@@ -9321,6 +10654,49 @@ VpcClient::DescribeTrafficPackagesOutcomeCallable VpcClient::DescribeTrafficPack
         [this, request]()
         {
             return this->DescribeTrafficPackages(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeTrafficQosPolicyOutcome VpcClient::DescribeTrafficQosPolicy(const DescribeTrafficQosPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTrafficQosPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTrafficQosPolicyResponse rsp = DescribeTrafficQosPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTrafficQosPolicyOutcome(rsp);
+        else
+            return DescribeTrafficQosPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTrafficQosPolicyOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeTrafficQosPolicyAsync(const DescribeTrafficQosPolicyRequest& request, const DescribeTrafficQosPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTrafficQosPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeTrafficQosPolicyOutcomeCallable VpcClient::DescribeTrafficQosPolicyCallable(const DescribeTrafficQosPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTrafficQosPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTrafficQosPolicy(request);
         }
     );
 
@@ -10661,6 +12037,92 @@ VpcClient::DisassociateDirectConnectGatewayNatGatewayOutcomeCallable VpcClient::
     return task->get_future();
 }
 
+VpcClient::DisassociateHaVipInstanceOutcome VpcClient::DisassociateHaVipInstance(const DisassociateHaVipInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisassociateHaVipInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisassociateHaVipInstanceResponse rsp = DisassociateHaVipInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisassociateHaVipInstanceOutcome(rsp);
+        else
+            return DisassociateHaVipInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return DisassociateHaVipInstanceOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DisassociateHaVipInstanceAsync(const DisassociateHaVipInstanceRequest& request, const DisassociateHaVipInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisassociateHaVipInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DisassociateHaVipInstanceOutcomeCallable VpcClient::DisassociateHaVipInstanceCallable(const DisassociateHaVipInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisassociateHaVipInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->DisassociateHaVipInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DisassociateIPv6AddressOutcome VpcClient::DisassociateIPv6Address(const DisassociateIPv6AddressRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisassociateIPv6Address");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisassociateIPv6AddressResponse rsp = DisassociateIPv6AddressResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisassociateIPv6AddressOutcome(rsp);
+        else
+            return DisassociateIPv6AddressOutcome(o.GetError());
+    }
+    else
+    {
+        return DisassociateIPv6AddressOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DisassociateIPv6AddressAsync(const DisassociateIPv6AddressRequest& request, const DisassociateIPv6AddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisassociateIPv6Address(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DisassociateIPv6AddressOutcomeCallable VpcClient::DisassociateIPv6AddressCallable(const DisassociateIPv6AddressRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisassociateIPv6AddressOutcome()>>(
+        [this, request]()
+        {
+            return this->DisassociateIPv6Address(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DisassociateNatGatewayAddressOutcome VpcClient::DisassociateNatGatewayAddress(const DisassociateNatGatewayAddressRequest &request)
 {
     auto outcome = MakeRequest(request, "DisassociateNatGatewayAddress");
@@ -11435,6 +12897,49 @@ VpcClient::InquirePriceCreateDirectConnectGatewayOutcomeCallable VpcClient::Inqu
     return task->get_future();
 }
 
+VpcClient::InquiryPriceAllocateAddressesOutcome VpcClient::InquiryPriceAllocateAddresses(const InquiryPriceAllocateAddressesRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquiryPriceAllocateAddresses");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquiryPriceAllocateAddressesResponse rsp = InquiryPriceAllocateAddressesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquiryPriceAllocateAddressesOutcome(rsp);
+        else
+            return InquiryPriceAllocateAddressesOutcome(o.GetError());
+    }
+    else
+    {
+        return InquiryPriceAllocateAddressesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::InquiryPriceAllocateAddressesAsync(const InquiryPriceAllocateAddressesRequest& request, const InquiryPriceAllocateAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InquiryPriceAllocateAddresses(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::InquiryPriceAllocateAddressesOutcomeCallable VpcClient::InquiryPriceAllocateAddressesCallable(const InquiryPriceAllocateAddressesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InquiryPriceAllocateAddressesOutcome()>>(
+        [this, request]()
+        {
+            return this->InquiryPriceAllocateAddresses(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::InquiryPriceCreateVpnGatewayOutcome VpcClient::InquiryPriceCreateVpnGateway(const InquiryPriceCreateVpnGatewayRequest &request)
 {
     auto outcome = MakeRequest(request, "InquiryPriceCreateVpnGateway");
@@ -11471,6 +12976,92 @@ VpcClient::InquiryPriceCreateVpnGatewayOutcomeCallable VpcClient::InquiryPriceCr
         [this, request]()
         {
             return this->InquiryPriceCreateVpnGateway(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::InquiryPriceModifyAddressesBandwidthOutcome VpcClient::InquiryPriceModifyAddressesBandwidth(const InquiryPriceModifyAddressesBandwidthRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquiryPriceModifyAddressesBandwidth");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquiryPriceModifyAddressesBandwidthResponse rsp = InquiryPriceModifyAddressesBandwidthResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquiryPriceModifyAddressesBandwidthOutcome(rsp);
+        else
+            return InquiryPriceModifyAddressesBandwidthOutcome(o.GetError());
+    }
+    else
+    {
+        return InquiryPriceModifyAddressesBandwidthOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::InquiryPriceModifyAddressesBandwidthAsync(const InquiryPriceModifyAddressesBandwidthRequest& request, const InquiryPriceModifyAddressesBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InquiryPriceModifyAddressesBandwidth(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::InquiryPriceModifyAddressesBandwidthOutcomeCallable VpcClient::InquiryPriceModifyAddressesBandwidthCallable(const InquiryPriceModifyAddressesBandwidthRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InquiryPriceModifyAddressesBandwidthOutcome()>>(
+        [this, request]()
+        {
+            return this->InquiryPriceModifyAddressesBandwidth(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::InquiryPriceRenewAddressesOutcome VpcClient::InquiryPriceRenewAddresses(const InquiryPriceRenewAddressesRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquiryPriceRenewAddresses");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquiryPriceRenewAddressesResponse rsp = InquiryPriceRenewAddressesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquiryPriceRenewAddressesOutcome(rsp);
+        else
+            return InquiryPriceRenewAddressesOutcome(o.GetError());
+    }
+    else
+    {
+        return InquiryPriceRenewAddressesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::InquiryPriceRenewAddressesAsync(const InquiryPriceRenewAddressesRequest& request, const InquiryPriceRenewAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InquiryPriceRenewAddresses(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::InquiryPriceRenewAddressesOutcomeCallable VpcClient::InquiryPriceRenewAddressesCallable(const InquiryPriceRenewAddressesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InquiryPriceRenewAddressesOutcome()>>(
+        [this, request]()
+        {
+            return this->InquiryPriceRenewAddresses(request);
         }
     );
 
@@ -11643,6 +13234,49 @@ VpcClient::LockCcnsOutcomeCallable VpcClient::LockCcnsCallable(const LockCcnsReq
         [this, request]()
         {
             return this->LockCcns(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::MigrateBandwidthPackageResourcesOutcome VpcClient::MigrateBandwidthPackageResources(const MigrateBandwidthPackageResourcesRequest &request)
+{
+    auto outcome = MakeRequest(request, "MigrateBandwidthPackageResources");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        MigrateBandwidthPackageResourcesResponse rsp = MigrateBandwidthPackageResourcesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return MigrateBandwidthPackageResourcesOutcome(rsp);
+        else
+            return MigrateBandwidthPackageResourcesOutcome(o.GetError());
+    }
+    else
+    {
+        return MigrateBandwidthPackageResourcesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::MigrateBandwidthPackageResourcesAsync(const MigrateBandwidthPackageResourcesRequest& request, const MigrateBandwidthPackageResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->MigrateBandwidthPackageResources(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::MigrateBandwidthPackageResourcesOutcomeCallable VpcClient::MigrateBandwidthPackageResourcesCallable(const MigrateBandwidthPackageResourcesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<MigrateBandwidthPackageResourcesOutcome()>>(
+        [this, request]()
+        {
+            return this->MigrateBandwidthPackageResources(request);
         }
     );
 
@@ -12596,6 +14230,92 @@ VpcClient::ModifyGatewayFlowQosOutcomeCallable VpcClient::ModifyGatewayFlowQosCa
     return task->get_future();
 }
 
+VpcClient::ModifyGlobalRouteECMPAlgorithmOutcome VpcClient::ModifyGlobalRouteECMPAlgorithm(const ModifyGlobalRouteECMPAlgorithmRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyGlobalRouteECMPAlgorithm");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyGlobalRouteECMPAlgorithmResponse rsp = ModifyGlobalRouteECMPAlgorithmResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyGlobalRouteECMPAlgorithmOutcome(rsp);
+        else
+            return ModifyGlobalRouteECMPAlgorithmOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyGlobalRouteECMPAlgorithmOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyGlobalRouteECMPAlgorithmAsync(const ModifyGlobalRouteECMPAlgorithmRequest& request, const ModifyGlobalRouteECMPAlgorithmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyGlobalRouteECMPAlgorithm(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ModifyGlobalRouteECMPAlgorithmOutcomeCallable VpcClient::ModifyGlobalRouteECMPAlgorithmCallable(const ModifyGlobalRouteECMPAlgorithmRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyGlobalRouteECMPAlgorithmOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyGlobalRouteECMPAlgorithm(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::ModifyGlobalRoutesOutcome VpcClient::ModifyGlobalRoutes(const ModifyGlobalRoutesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyGlobalRoutes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyGlobalRoutesResponse rsp = ModifyGlobalRoutesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyGlobalRoutesOutcome(rsp);
+        else
+            return ModifyGlobalRoutesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyGlobalRoutesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyGlobalRoutesAsync(const ModifyGlobalRoutesRequest& request, const ModifyGlobalRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyGlobalRoutes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ModifyGlobalRoutesOutcomeCallable VpcClient::ModifyGlobalRoutesCallable(const ModifyGlobalRoutesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyGlobalRoutesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyGlobalRoutes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::ModifyHaVipAttributeOutcome VpcClient::ModifyHaVipAttribute(const ModifyHaVipAttributeRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyHaVipAttribute");
@@ -12761,6 +14481,92 @@ VpcClient::ModifyHighPriorityRouteTableAttributeOutcomeCallable VpcClient::Modif
         [this, request]()
         {
             return this->ModifyHighPriorityRouteTableAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::ModifyIPv6AddressesAttributesOutcome VpcClient::ModifyIPv6AddressesAttributes(const ModifyIPv6AddressesAttributesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyIPv6AddressesAttributes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyIPv6AddressesAttributesResponse rsp = ModifyIPv6AddressesAttributesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyIPv6AddressesAttributesOutcome(rsp);
+        else
+            return ModifyIPv6AddressesAttributesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyIPv6AddressesAttributesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyIPv6AddressesAttributesAsync(const ModifyIPv6AddressesAttributesRequest& request, const ModifyIPv6AddressesAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyIPv6AddressesAttributes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ModifyIPv6AddressesAttributesOutcomeCallable VpcClient::ModifyIPv6AddressesAttributesCallable(const ModifyIPv6AddressesAttributesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyIPv6AddressesAttributesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyIPv6AddressesAttributes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::ModifyIPv6AddressesBandwidthOutcome VpcClient::ModifyIPv6AddressesBandwidth(const ModifyIPv6AddressesBandwidthRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyIPv6AddressesBandwidth");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyIPv6AddressesBandwidthResponse rsp = ModifyIPv6AddressesBandwidthResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyIPv6AddressesBandwidthOutcome(rsp);
+        else
+            return ModifyIPv6AddressesBandwidthOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyIPv6AddressesBandwidthOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyIPv6AddressesBandwidthAsync(const ModifyIPv6AddressesBandwidthRequest& request, const ModifyIPv6AddressesBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyIPv6AddressesBandwidth(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ModifyIPv6AddressesBandwidthOutcomeCallable VpcClient::ModifyIPv6AddressesBandwidthCallable(const ModifyIPv6AddressesBandwidthRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyIPv6AddressesBandwidthOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyIPv6AddressesBandwidth(request);
         }
     );
 
@@ -13585,6 +15391,92 @@ VpcClient::ModifyPrivateNatGatewayTranslationNatRuleOutcomeCallable VpcClient::M
     return task->get_future();
 }
 
+VpcClient::ModifyReserveIpAddressOutcome VpcClient::ModifyReserveIpAddress(const ModifyReserveIpAddressRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyReserveIpAddress");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyReserveIpAddressResponse rsp = ModifyReserveIpAddressResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyReserveIpAddressOutcome(rsp);
+        else
+            return ModifyReserveIpAddressOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyReserveIpAddressOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyReserveIpAddressAsync(const ModifyReserveIpAddressRequest& request, const ModifyReserveIpAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyReserveIpAddress(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ModifyReserveIpAddressOutcomeCallable VpcClient::ModifyReserveIpAddressCallable(const ModifyReserveIpAddressRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyReserveIpAddressOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyReserveIpAddress(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::ModifyRoutePolicyAttributeOutcome VpcClient::ModifyRoutePolicyAttribute(const ModifyRoutePolicyAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRoutePolicyAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRoutePolicyAttributeResponse rsp = ModifyRoutePolicyAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRoutePolicyAttributeOutcome(rsp);
+        else
+            return ModifyRoutePolicyAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRoutePolicyAttributeOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyRoutePolicyAttributeAsync(const ModifyRoutePolicyAttributeRequest& request, const ModifyRoutePolicyAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyRoutePolicyAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ModifyRoutePolicyAttributeOutcomeCallable VpcClient::ModifyRoutePolicyAttributeCallable(const ModifyRoutePolicyAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyRoutePolicyAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyRoutePolicyAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::ModifyRouteTableAttributeOutcome VpcClient::ModifyRouteTableAttribute(const ModifyRouteTableAttributeRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyRouteTableAttribute");
@@ -13965,6 +15857,49 @@ VpcClient::ModifyTemplateMemberOutcomeCallable VpcClient::ModifyTemplateMemberCa
         [this, request]()
         {
             return this->ModifyTemplateMember(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::ModifyTrafficMirrorAttributeOutcome VpcClient::ModifyTrafficMirrorAttribute(const ModifyTrafficMirrorAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyTrafficMirrorAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyTrafficMirrorAttributeResponse rsp = ModifyTrafficMirrorAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyTrafficMirrorAttributeOutcome(rsp);
+        else
+            return ModifyTrafficMirrorAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyTrafficMirrorAttributeOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyTrafficMirrorAttributeAsync(const ModifyTrafficMirrorAttributeRequest& request, const ModifyTrafficMirrorAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyTrafficMirrorAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ModifyTrafficMirrorAttributeOutcomeCallable VpcClient::ModifyTrafficMirrorAttributeCallable(const ModifyTrafficMirrorAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyTrafficMirrorAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyTrafficMirrorAttribute(request);
         }
     );
 
@@ -14660,6 +16595,49 @@ VpcClient::ReleaseAddressesOutcomeCallable VpcClient::ReleaseAddressesCallable(c
     return task->get_future();
 }
 
+VpcClient::ReleaseIPv6AddressesOutcome VpcClient::ReleaseIPv6Addresses(const ReleaseIPv6AddressesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReleaseIPv6Addresses");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReleaseIPv6AddressesResponse rsp = ReleaseIPv6AddressesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReleaseIPv6AddressesOutcome(rsp);
+        else
+            return ReleaseIPv6AddressesOutcome(o.GetError());
+    }
+    else
+    {
+        return ReleaseIPv6AddressesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ReleaseIPv6AddressesAsync(const ReleaseIPv6AddressesRequest& request, const ReleaseIPv6AddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReleaseIPv6Addresses(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ReleaseIPv6AddressesOutcomeCallable VpcClient::ReleaseIPv6AddressesCallable(const ReleaseIPv6AddressesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReleaseIPv6AddressesOutcome()>>(
+        [this, request]()
+        {
+            return this->ReleaseIPv6Addresses(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::ReleaseIp6AddressesBandwidthOutcome VpcClient::ReleaseIp6AddressesBandwidth(const ReleaseIp6AddressesBandwidthRequest &request)
 {
     auto outcome = MakeRequest(request, "ReleaseIp6AddressesBandwidth");
@@ -15090,6 +17068,92 @@ VpcClient::ReplaceHighPriorityRoutesOutcomeCallable VpcClient::ReplaceHighPriori
     return task->get_future();
 }
 
+VpcClient::ReplaceRoutePolicyAssociationsOutcome VpcClient::ReplaceRoutePolicyAssociations(const ReplaceRoutePolicyAssociationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReplaceRoutePolicyAssociations");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReplaceRoutePolicyAssociationsResponse rsp = ReplaceRoutePolicyAssociationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReplaceRoutePolicyAssociationsOutcome(rsp);
+        else
+            return ReplaceRoutePolicyAssociationsOutcome(o.GetError());
+    }
+    else
+    {
+        return ReplaceRoutePolicyAssociationsOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ReplaceRoutePolicyAssociationsAsync(const ReplaceRoutePolicyAssociationsRequest& request, const ReplaceRoutePolicyAssociationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReplaceRoutePolicyAssociations(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ReplaceRoutePolicyAssociationsOutcomeCallable VpcClient::ReplaceRoutePolicyAssociationsCallable(const ReplaceRoutePolicyAssociationsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReplaceRoutePolicyAssociationsOutcome()>>(
+        [this, request]()
+        {
+            return this->ReplaceRoutePolicyAssociations(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::ReplaceRoutePolicyEntriesOutcome VpcClient::ReplaceRoutePolicyEntries(const ReplaceRoutePolicyEntriesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReplaceRoutePolicyEntries");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReplaceRoutePolicyEntriesResponse rsp = ReplaceRoutePolicyEntriesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReplaceRoutePolicyEntriesOutcome(rsp);
+        else
+            return ReplaceRoutePolicyEntriesOutcome(o.GetError());
+    }
+    else
+    {
+        return ReplaceRoutePolicyEntriesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ReplaceRoutePolicyEntriesAsync(const ReplaceRoutePolicyEntriesRequest& request, const ReplaceRoutePolicyEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReplaceRoutePolicyEntries(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ReplaceRoutePolicyEntriesOutcomeCallable VpcClient::ReplaceRoutePolicyEntriesCallable(const ReplaceRoutePolicyEntriesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReplaceRoutePolicyEntriesOutcome()>>(
+        [this, request]()
+        {
+            return this->ReplaceRoutePolicyEntries(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::ReplaceRouteTableAssociationOutcome VpcClient::ReplaceRouteTableAssociation(const ReplaceRouteTableAssociationRequest &request)
 {
     auto outcome = MakeRequest(request, "ReplaceRouteTableAssociation");
@@ -15391,6 +17455,92 @@ VpcClient::ResetNatGatewayConnectionOutcomeCallable VpcClient::ResetNatGatewayCo
     return task->get_future();
 }
 
+VpcClient::ResetRoutePolicyAssociationsOutcome VpcClient::ResetRoutePolicyAssociations(const ResetRoutePolicyAssociationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetRoutePolicyAssociations");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetRoutePolicyAssociationsResponse rsp = ResetRoutePolicyAssociationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetRoutePolicyAssociationsOutcome(rsp);
+        else
+            return ResetRoutePolicyAssociationsOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetRoutePolicyAssociationsOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ResetRoutePolicyAssociationsAsync(const ResetRoutePolicyAssociationsRequest& request, const ResetRoutePolicyAssociationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResetRoutePolicyAssociations(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ResetRoutePolicyAssociationsOutcomeCallable VpcClient::ResetRoutePolicyAssociationsCallable(const ResetRoutePolicyAssociationsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResetRoutePolicyAssociationsOutcome()>>(
+        [this, request]()
+        {
+            return this->ResetRoutePolicyAssociations(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::ResetRoutePolicyEntriesOutcome VpcClient::ResetRoutePolicyEntries(const ResetRoutePolicyEntriesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetRoutePolicyEntries");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetRoutePolicyEntriesResponse rsp = ResetRoutePolicyEntriesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetRoutePolicyEntriesOutcome(rsp);
+        else
+            return ResetRoutePolicyEntriesOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetRoutePolicyEntriesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ResetRoutePolicyEntriesAsync(const ResetRoutePolicyEntriesRequest& request, const ResetRoutePolicyEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResetRoutePolicyEntries(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ResetRoutePolicyEntriesOutcomeCallable VpcClient::ResetRoutePolicyEntriesCallable(const ResetRoutePolicyEntriesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResetRoutePolicyEntriesOutcome()>>(
+        [this, request]()
+        {
+            return this->ResetRoutePolicyEntries(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::ResetRoutesOutcome VpcClient::ResetRoutes(const ResetRoutesRequest &request)
 {
     auto outcome = MakeRequest(request, "ResetRoutes");
@@ -15427,6 +17577,135 @@ VpcClient::ResetRoutesOutcomeCallable VpcClient::ResetRoutesCallable(const Reset
         [this, request]()
         {
             return this->ResetRoutes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::ResetTrafficMirrorFilterOutcome VpcClient::ResetTrafficMirrorFilter(const ResetTrafficMirrorFilterRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetTrafficMirrorFilter");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetTrafficMirrorFilterResponse rsp = ResetTrafficMirrorFilterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetTrafficMirrorFilterOutcome(rsp);
+        else
+            return ResetTrafficMirrorFilterOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetTrafficMirrorFilterOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ResetTrafficMirrorFilterAsync(const ResetTrafficMirrorFilterRequest& request, const ResetTrafficMirrorFilterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResetTrafficMirrorFilter(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ResetTrafficMirrorFilterOutcomeCallable VpcClient::ResetTrafficMirrorFilterCallable(const ResetTrafficMirrorFilterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResetTrafficMirrorFilterOutcome()>>(
+        [this, request]()
+        {
+            return this->ResetTrafficMirrorFilter(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::ResetTrafficMirrorSrcsOutcome VpcClient::ResetTrafficMirrorSrcs(const ResetTrafficMirrorSrcsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetTrafficMirrorSrcs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetTrafficMirrorSrcsResponse rsp = ResetTrafficMirrorSrcsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetTrafficMirrorSrcsOutcome(rsp);
+        else
+            return ResetTrafficMirrorSrcsOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetTrafficMirrorSrcsOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ResetTrafficMirrorSrcsAsync(const ResetTrafficMirrorSrcsRequest& request, const ResetTrafficMirrorSrcsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResetTrafficMirrorSrcs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ResetTrafficMirrorSrcsOutcomeCallable VpcClient::ResetTrafficMirrorSrcsCallable(const ResetTrafficMirrorSrcsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResetTrafficMirrorSrcsOutcome()>>(
+        [this, request]()
+        {
+            return this->ResetTrafficMirrorSrcs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::ResetTrafficMirrorTargetOutcome VpcClient::ResetTrafficMirrorTarget(const ResetTrafficMirrorTargetRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetTrafficMirrorTarget");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetTrafficMirrorTargetResponse rsp = ResetTrafficMirrorTargetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetTrafficMirrorTargetOutcome(rsp);
+        else
+            return ResetTrafficMirrorTargetOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetTrafficMirrorTargetOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ResetTrafficMirrorTargetAsync(const ResetTrafficMirrorTargetRequest& request, const ResetTrafficMirrorTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResetTrafficMirrorTarget(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ResetTrafficMirrorTargetOutcomeCallable VpcClient::ResetTrafficMirrorTargetCallable(const ResetTrafficMirrorTargetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResetTrafficMirrorTargetOutcome()>>(
+        [this, request]()
+        {
+            return this->ResetTrafficMirrorTarget(request);
         }
     );
 
@@ -15685,6 +17964,92 @@ VpcClient::SetVpnGatewaysRenewFlagOutcomeCallable VpcClient::SetVpnGatewaysRenew
         [this, request]()
         {
             return this->SetVpnGatewaysRenewFlag(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::StartTrafficMirrorOutcome VpcClient::StartTrafficMirror(const StartTrafficMirrorRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartTrafficMirror");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartTrafficMirrorResponse rsp = StartTrafficMirrorResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartTrafficMirrorOutcome(rsp);
+        else
+            return StartTrafficMirrorOutcome(o.GetError());
+    }
+    else
+    {
+        return StartTrafficMirrorOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::StartTrafficMirrorAsync(const StartTrafficMirrorRequest& request, const StartTrafficMirrorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartTrafficMirror(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::StartTrafficMirrorOutcomeCallable VpcClient::StartTrafficMirrorCallable(const StartTrafficMirrorRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartTrafficMirrorOutcome()>>(
+        [this, request]()
+        {
+            return this->StartTrafficMirror(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::StopTrafficMirrorOutcome VpcClient::StopTrafficMirror(const StopTrafficMirrorRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopTrafficMirror");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopTrafficMirrorResponse rsp = StopTrafficMirrorResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopTrafficMirrorOutcome(rsp);
+        else
+            return StopTrafficMirrorOutcome(o.GetError());
+    }
+    else
+    {
+        return StopTrafficMirrorOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::StopTrafficMirrorAsync(const StopTrafficMirrorRequest& request, const StopTrafficMirrorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopTrafficMirror(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::StopTrafficMirrorOutcomeCallable VpcClient::StopTrafficMirrorCallable(const StopTrafficMirrorRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopTrafficMirrorOutcome()>>(
+        [this, request]()
+        {
+            return this->StopTrafficMirror(request);
         }
     );
 
@@ -15986,6 +18351,92 @@ VpcClient::UnlockCcnsOutcomeCallable VpcClient::UnlockCcnsCallable(const UnlockC
         [this, request]()
         {
             return this->UnlockCcns(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::UpdateTrafficMirrorAllFilterOutcome VpcClient::UpdateTrafficMirrorAllFilter(const UpdateTrafficMirrorAllFilterRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateTrafficMirrorAllFilter");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateTrafficMirrorAllFilterResponse rsp = UpdateTrafficMirrorAllFilterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateTrafficMirrorAllFilterOutcome(rsp);
+        else
+            return UpdateTrafficMirrorAllFilterOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateTrafficMirrorAllFilterOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::UpdateTrafficMirrorAllFilterAsync(const UpdateTrafficMirrorAllFilterRequest& request, const UpdateTrafficMirrorAllFilterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateTrafficMirrorAllFilter(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::UpdateTrafficMirrorAllFilterOutcomeCallable VpcClient::UpdateTrafficMirrorAllFilterCallable(const UpdateTrafficMirrorAllFilterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateTrafficMirrorAllFilterOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateTrafficMirrorAllFilter(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::UpdateTrafficMirrorDirectionOutcome VpcClient::UpdateTrafficMirrorDirection(const UpdateTrafficMirrorDirectionRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateTrafficMirrorDirection");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateTrafficMirrorDirectionResponse rsp = UpdateTrafficMirrorDirectionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateTrafficMirrorDirectionOutcome(rsp);
+        else
+            return UpdateTrafficMirrorDirectionOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateTrafficMirrorDirectionOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::UpdateTrafficMirrorDirectionAsync(const UpdateTrafficMirrorDirectionRequest& request, const UpdateTrafficMirrorDirectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateTrafficMirrorDirection(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::UpdateTrafficMirrorDirectionOutcomeCallable VpcClient::UpdateTrafficMirrorDirectionCallable(const UpdateTrafficMirrorDirectionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateTrafficMirrorDirectionOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateTrafficMirrorDirection(request);
         }
     );
 

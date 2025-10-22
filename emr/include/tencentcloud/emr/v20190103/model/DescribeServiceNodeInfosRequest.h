@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -285,39 +285,15 @@ namespace TencentCloud
                     bool ServiceNameHasBeenSet() const;
 
                     /**
-                     * 获取节点名称
-master
-core
-task
-common
-router
-
-                     * @return NodeTypeName 节点名称
-master
-core
-task
-common
-router
-
+                     * 获取节点名称master,core,task,common,router
+                     * @return NodeTypeName 节点名称master,core,task,common,router
                      * 
                      */
                     std::string GetNodeTypeName() const;
 
                     /**
-                     * 设置节点名称
-master
-core
-task
-common
-router
-
-                     * @param _nodeTypeName 节点名称
-master
-core
-task
-common
-router
-
+                     * 设置节点名称master,core,task,common,router
+                     * @param _nodeTypeName 节点名称master,core,task,common,router
                      * 
                      */
                     void SetNodeTypeName(const std::string& _nodeTypeName);
@@ -359,15 +335,15 @@ router
                     bool DataNodeMaintenanceIdHasBeenSet() const;
 
                     /**
-                     * 获取支持搜索的字段
-                     * @return SearchFields 支持搜索的字段
+                     * 获取支持搜索的字段，目前支持 SearchType	：ipv4
+                     * @return SearchFields 支持搜索的字段，目前支持 SearchType	：ipv4
                      * 
                      */
                     std::vector<SearchItem> GetSearchFields() const;
 
                     /**
-                     * 设置支持搜索的字段
-                     * @param _searchFields 支持搜索的字段
+                     * 设置支持搜索的字段，目前支持 SearchType	：ipv4
+                     * @param _searchFields 支持搜索的字段，目前支持 SearchType	：ipv4
                      * 
                      */
                     void SetSearchFields(const std::vector<SearchItem>& _searchFields);
@@ -449,13 +425,7 @@ router
                     bool m_serviceNameHasBeenSet;
 
                     /**
-                     * 节点名称
-master
-core
-task
-common
-router
-
+                     * 节点名称master,core,task,common,router
                      */
                     std::string m_nodeTypeName;
                     bool m_nodeTypeNameHasBeenSet;
@@ -469,7 +439,7 @@ router
                     bool m_dataNodeMaintenanceIdHasBeenSet;
 
                     /**
-                     * 支持搜索的字段
+                     * 支持搜索的字段，目前支持 SearchType	：ipv4
                      */
                     std::vector<SearchItem> m_searchFields;
                     bool m_searchFieldsHasBeenSet;

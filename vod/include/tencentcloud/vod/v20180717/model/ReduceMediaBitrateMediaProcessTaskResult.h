@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -79,18 +79,14 @@ namespace TencentCloud
 
                     /**
                      * 获取降码率任务中视频转码任务的查询结果，当任务类型为 Transcode 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TranscodeTask 降码率任务中视频转码任务的查询结果，当任务类型为 Transcode 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ReduceMediaBitrateTranscodeResult GetTranscodeTask() const;
 
                     /**
                      * 设置降码率任务中视频转码任务的查询结果，当任务类型为 Transcode 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _transcodeTask 降码率任务中视频转码任务的查询结果，当任务类型为 Transcode 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTranscodeTask(const ReduceMediaBitrateTranscodeResult& _transcodeTask);
@@ -104,18 +100,14 @@ namespace TencentCloud
 
                     /**
                      * 获取降码率任务中对视频转自适应码流任务的查询结果，当任务类型为 AdaptiveDynamicStreaming 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdaptiveDynamicStreamingTask 降码率任务中对视频转自适应码流任务的查询结果，当任务类型为 AdaptiveDynamicStreaming 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ReduceMediaBitrateAdaptiveDynamicStreamingResult GetAdaptiveDynamicStreamingTask() const;
 
                     /**
                      * 设置降码率任务中对视频转自适应码流任务的查询结果，当任务类型为 AdaptiveDynamicStreaming 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _adaptiveDynamicStreamingTask 降码率任务中对视频转自适应码流任务的查询结果，当任务类型为 AdaptiveDynamicStreaming 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdaptiveDynamicStreamingTask(const ReduceMediaBitrateAdaptiveDynamicStreamingResult& _adaptiveDynamicStreamingTask);
@@ -139,14 +131,12 @@ namespace TencentCloud
 
                     /**
                      * 降码率任务中视频转码任务的查询结果，当任务类型为 Transcode 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ReduceMediaBitrateTranscodeResult m_transcodeTask;
                     bool m_transcodeTaskHasBeenSet;
 
                     /**
                      * 降码率任务中对视频转自适应码流任务的查询结果，当任务类型为 AdaptiveDynamicStreaming 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ReduceMediaBitrateAdaptiveDynamicStreamingResult m_adaptiveDynamicStreamingTask;
                     bool m_adaptiveDynamicStreamingTaskHasBeenSet;

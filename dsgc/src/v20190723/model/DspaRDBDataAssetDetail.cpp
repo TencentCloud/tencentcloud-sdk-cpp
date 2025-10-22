@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,8 @@ DspaRDBDataAssetDetail::DspaRDBDataAssetDetail() :
     m_categoryFullPathHasBeenSet(false),
     m_identifyTypeHasBeenSet(false),
     m_checkStatusHasBeenSet(false),
-    m_isSensitiveDataHasBeenSet(false)
+    m_isSensitiveDataHasBeenSet(false),
+    m_schemaNameHasBeenSet(false)
 {
 }
 
@@ -267,6 +268,16 @@ CoreInternalOutcome DspaRDBDataAssetDetail::Deserialize(const rapidjson::Value &
         m_isSensitiveDataHasBeenSet = true;
     }
 
+    if (value.HasMember("SchemaName") && !value["SchemaName"].IsNull())
+    {
+        if (!value["SchemaName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspaRDBDataAssetDetail.SchemaName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_schemaName = string(value["SchemaName"].GetString());
+        m_schemaNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -441,6 +452,14 @@ void DspaRDBDataAssetDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "IsSensitiveData";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isSensitiveData, allocator);
+    }
+
+    if (m_schemaNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SchemaName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_schemaName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -780,5 +799,21 @@ void DspaRDBDataAssetDetail::SetIsSensitiveData(const int64_t& _isSensitiveData)
 bool DspaRDBDataAssetDetail::IsSensitiveDataHasBeenSet() const
 {
     return m_isSensitiveDataHasBeenSet;
+}
+
+string DspaRDBDataAssetDetail::GetSchemaName() const
+{
+    return m_schemaName;
+}
+
+void DspaRDBDataAssetDetail::SetSchemaName(const string& _schemaName)
+{
+    m_schemaName = _schemaName;
+    m_schemaNameHasBeenSet = true;
+}
+
+bool DspaRDBDataAssetDetail::SchemaNameHasBeenSet() const
+{
+    return m_schemaNameHasBeenSet;
 }
 

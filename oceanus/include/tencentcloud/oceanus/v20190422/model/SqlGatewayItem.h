@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -273,6 +273,48 @@ namespace TencentCloud
                      */
                     bool PropertiesHasBeenSet() const;
 
+                    /**
+                     * 获取Cpu
+                     * @return Cpu Cpu
+                     * 
+                     */
+                    double GetCpu() const;
+
+                    /**
+                     * 设置Cpu
+                     * @param _cpu Cpu
+                     * 
+                     */
+                    void SetCpu(const double& _cpu);
+
+                    /**
+                     * 判断参数 Cpu 是否已赋值
+                     * @return Cpu 是否已赋值
+                     * 
+                     */
+                    bool CpuHasBeenSet() const;
+
+                    /**
+                     * 获取Mem
+                     * @return Mem Mem
+                     * 
+                     */
+                    double GetMem() const;
+
+                    /**
+                     * 设置Mem
+                     * @param _mem Mem
+                     * 
+                     */
+                    void SetMem(const double& _mem);
+
+                    /**
+                     * 判断参数 Mem 是否已赋值
+                     * @return Mem 是否已赋值
+                     * 
+                     */
+                    bool MemHasBeenSet() const;
+
                 private:
 
                     /**
@@ -337,6 +379,18 @@ namespace TencentCloud
                      */
                     std::vector<Property> m_properties;
                     bool m_propertiesHasBeenSet;
+
+                    /**
+                     * Cpu
+                     */
+                    double m_cpu;
+                    bool m_cpuHasBeenSet;
+
+                    /**
+                     * Mem
+                     */
+                    double m_mem;
+                    bool m_memHasBeenSet;
 
                 };
             }

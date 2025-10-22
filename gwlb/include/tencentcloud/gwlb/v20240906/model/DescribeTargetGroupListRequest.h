@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,15 +65,27 @@ namespace TencentCloud
                     bool TargetGroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件数组，支持TargetGroupVpcId和TargetGroupName。
-                     * @return Filters 过滤条件数组，支持TargetGroupVpcId和TargetGroupName。
+                     * 获取过滤条件数组。
+
+- TargetGroupVpcId - String - 是否必填：否 - （过滤条件）按照目标组所属的私有网络过滤，可以通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)获取，如“vpc-bhqk****”。
+- TargetGroupName - String - 是否必填：否 - （过滤条件）按照目标组的名称过滤，如“tg_name”
+                     * @return Filters 过滤条件数组。
+
+- TargetGroupVpcId - String - 是否必填：否 - （过滤条件）按照目标组所属的私有网络过滤，可以通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)获取，如“vpc-bhqk****”。
+- TargetGroupName - String - 是否必填：否 - （过滤条件）按照目标组的名称过滤，如“tg_name”
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件数组，支持TargetGroupVpcId和TargetGroupName。
-                     * @param _filters 过滤条件数组，支持TargetGroupVpcId和TargetGroupName。
+                     * 设置过滤条件数组。
+
+- TargetGroupVpcId - String - 是否必填：否 - （过滤条件）按照目标组所属的私有网络过滤，可以通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)获取，如“vpc-bhqk****”。
+- TargetGroupName - String - 是否必填：否 - （过滤条件）按照目标组的名称过滤，如“tg_name”
+                     * @param _filters 过滤条件数组。
+
+- TargetGroupVpcId - String - 是否必填：否 - （过滤条件）按照目标组所属的私有网络过滤，可以通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)获取，如“vpc-bhqk****”。
+- TargetGroupName - String - 是否必填：否 - （过滤条件）按照目标组的名称过滤，如“tg_name”
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -86,15 +98,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取显示的偏移起始量。
-                     * @return Offset 显示的偏移起始量。
+                     * 获取显示的偏移起始量，默认为0。
+                     * @return Offset 显示的偏移起始量，默认为0。
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置显示的偏移起始量。
-                     * @param _offset 显示的偏移起始量。
+                     * 设置显示的偏移起始量，默认为0。
+                     * @param _offset 显示的偏移起始量，默认为0。
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -107,15 +119,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取显示条数限制，默认为20。
-                     * @return Limit 显示条数限制，默认为20。
+                     * 获取显示条数限制，默认为20，最大值为1000。
+                     * @return Limit 显示条数限制，默认为20，最大值为1000。
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置显示条数限制，默认为20。
-                     * @param _limit 显示条数限制，默认为20。
+                     * 设置显示条数限制，默认为20，最大值为1000。
+                     * @param _limit 显示条数限制，默认为20，最大值为1000。
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -136,19 +148,22 @@ namespace TencentCloud
                     bool m_targetGroupIdsHasBeenSet;
 
                     /**
-                     * 过滤条件数组，支持TargetGroupVpcId和TargetGroupName。
+                     * 过滤条件数组。
+
+- TargetGroupVpcId - String - 是否必填：否 - （过滤条件）按照目标组所属的私有网络过滤，可以通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)获取，如“vpc-bhqk****”。
+- TargetGroupName - String - 是否必填：否 - （过滤条件）按照目标组的名称过滤，如“tg_name”
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 显示的偏移起始量。
+                     * 显示的偏移起始量，默认为0。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 显示条数限制，默认为20。
+                     * 显示条数限制，默认为20，最大值为1000。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

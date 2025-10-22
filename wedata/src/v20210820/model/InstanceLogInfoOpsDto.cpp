@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,9 @@ InstanceLogInfoOpsDto::InstanceLogInfoOpsDto() :
     m_lineCountHasBeenSet(false),
     m_extInfoHasBeenSet(false),
     m_isEndHasBeenSet(false),
-    m_fileSizeHasBeenSet(false)
+    m_fileSizeHasBeenSet(false),
+    m_matchedBrokerIpHasBeenSet(false),
+    m_executionExtendedPropsHasBeenSet(false)
 {
 }
 
@@ -131,6 +133,36 @@ CoreInternalOutcome InstanceLogInfoOpsDto::Deserialize(const rapidjson::Value &v
         m_fileSizeHasBeenSet = true;
     }
 
+    if (value.HasMember("MatchedBrokerIp") && !value["MatchedBrokerIp"].IsNull())
+    {
+        if (!value["MatchedBrokerIp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceLogInfoOpsDto.MatchedBrokerIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_matchedBrokerIp = string(value["MatchedBrokerIp"].GetString());
+        m_matchedBrokerIpHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExecutionExtendedProps") && !value["ExecutionExtendedProps"].IsNull())
+    {
+        if (!value["ExecutionExtendedProps"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceLogInfoOpsDto.ExecutionExtendedProps` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ExecutionExtendedProps"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            PairDto item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_executionExtendedProps.push_back(item);
+        }
+        m_executionExtendedPropsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -213,6 +245,29 @@ void InstanceLogInfoOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "FileSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_fileSize.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_matchedBrokerIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MatchedBrokerIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_matchedBrokerIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_executionExtendedPropsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecutionExtendedProps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_executionExtendedProps.begin(); itr != m_executionExtendedProps.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -360,5 +415,37 @@ void InstanceLogInfoOpsDto::SetFileSize(const string& _fileSize)
 bool InstanceLogInfoOpsDto::FileSizeHasBeenSet() const
 {
     return m_fileSizeHasBeenSet;
+}
+
+string InstanceLogInfoOpsDto::GetMatchedBrokerIp() const
+{
+    return m_matchedBrokerIp;
+}
+
+void InstanceLogInfoOpsDto::SetMatchedBrokerIp(const string& _matchedBrokerIp)
+{
+    m_matchedBrokerIp = _matchedBrokerIp;
+    m_matchedBrokerIpHasBeenSet = true;
+}
+
+bool InstanceLogInfoOpsDto::MatchedBrokerIpHasBeenSet() const
+{
+    return m_matchedBrokerIpHasBeenSet;
+}
+
+vector<PairDto> InstanceLogInfoOpsDto::GetExecutionExtendedProps() const
+{
+    return m_executionExtendedProps;
+}
+
+void InstanceLogInfoOpsDto::SetExecutionExtendedProps(const vector<PairDto>& _executionExtendedProps)
+{
+    m_executionExtendedProps = _executionExtendedProps;
+    m_executionExtendedPropsHasBeenSet = true;
+}
+
+bool InstanceLogInfoOpsDto::ExecutionExtendedPropsHasBeenSet() const
+{
+    return m_executionExtendedPropsHasBeenSet;
 }
 

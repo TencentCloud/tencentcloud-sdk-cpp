@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1300,6 +1300,106 @@ namespace TencentCloud
                      */
                     bool ProjectNameHasBeenSet() const;
 
+                    /**
+                     * 获取更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpdateTime 更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUpdateTime() const;
+
+                    /**
+                     * 设置更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _updateTime 更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUpdateTime(const std::string& _updateTime);
+
+                    /**
+                     * 判断参数 UpdateTime 是否已赋值
+                     * @return UpdateTime 是否已赋值
+                     * 
+                     */
+                    bool UpdateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取数据源名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DatasourceName 数据源名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDatasourceName() const;
+
+                    /**
+                     * 设置数据源名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _datasourceName 数据源名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDatasourceName(const std::string& _datasourceName);
+
+                    /**
+                     * 判断参数 DatasourceName 是否已赋值
+                     * @return DatasourceName 是否已赋值
+                     * 
+                     */
+                    bool DatasourceNameHasBeenSet() const;
+
+                    /**
+                     * 获取数据库名称 
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DatabaseName 数据库名称 
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDatabaseName() const;
+
+                    /**
+                     * 设置数据库名称 
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _databaseName 数据库名称 
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDatabaseName(const std::string& _databaseName);
+
+                    /**
+                     * 判断参数 DatabaseName 是否已赋值
+                     * @return DatabaseName 是否已赋值
+                     * 
+                     */
+                    bool DatabaseNameHasBeenSet() const;
+
+                    /**
+                     * 获取失败原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FailMsg 失败原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetFailMsg() const;
+
+                    /**
+                     * 设置失败原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _failMsg 失败原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFailMsg(const std::string& _failMsg);
+
+                    /**
+                     * 判断参数 FailMsg 是否已赋值
+                     * @return FailMsg 是否已赋值
+                     * 
+                     */
+                    bool FailMsgHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1651,6 +1751,34 @@ namespace TencentCloud
                      */
                     std::string m_projectName;
                     bool m_projectNameHasBeenSet;
+
+                    /**
+                     * 更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_updateTime;
+                    bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 数据源名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_datasourceName;
+                    bool m_datasourceNameHasBeenSet;
+
+                    /**
+                     * 数据库名称 
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_databaseName;
+                    bool m_databaseNameHasBeenSet;
+
+                    /**
+                     * 失败原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_failMsg;
+                    bool m_failMsgHasBeenSet;
 
                 };
             }

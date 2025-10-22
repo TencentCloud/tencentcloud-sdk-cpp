@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ set(scf_public_header_model
   include/tencentcloud/scf/v20180416/model/ListTriggersResponse.h
   include/tencentcloud/scf/v20180416/model/ListAliasesResponse.h
   include/tencentcloud/scf/v20180416/model/DeleteLayerVersionResponse.h
+  include/tencentcloud/scf/v20180416/model/DeleteFunctionVersionRequest.h
   include/tencentcloud/scf/v20180416/model/GetReservedConcurrencyConfigResponse.h
   include/tencentcloud/scf/v20180416/model/ProtocolParams.h
   include/tencentcloud/scf/v20180416/model/RoutingConfig.h
@@ -138,9 +139,10 @@ set(scf_public_header_model
   include/tencentcloud/scf/v20180416/model/FunctionLog.h
   include/tencentcloud/scf/v20180416/model/InvokeFunctionRequest.h
   include/tencentcloud/scf/v20180416/model/RetryConfig.h
-  include/tencentcloud/scf/v20180416/model/GetFunctionAddressResponse.h
+  include/tencentcloud/scf/v20180416/model/GetProvisionedConcurrencyConfigResponse.h
   include/tencentcloud/scf/v20180416/model/CfsInsInfo.h
   include/tencentcloud/scf/v20180416/model/InstanceConcurrencyConfig.h
+  include/tencentcloud/scf/v20180416/model/DeleteFunctionVersionResponse.h
   include/tencentcloud/scf/v20180416/model/UpdateTriggerStatusRequest.h
   include/tencentcloud/scf/v20180416/model/TriggerAction.h
   include/tencentcloud/scf/v20180416/model/LimitsInfo.h
@@ -173,7 +175,7 @@ set(scf_public_header_model
   include/tencentcloud/scf/v20180416/model/SearchKey.h
   include/tencentcloud/scf/v20180416/model/DeleteTriggerRequest.h
   include/tencentcloud/scf/v20180416/model/VpcConfig.h
-  include/tencentcloud/scf/v20180416/model/GetProvisionedConcurrencyConfigResponse.h
+  include/tencentcloud/scf/v20180416/model/GetFunctionAddressResponse.h
   include/tencentcloud/scf/v20180416/model/ListAsyncEventsResponse.h
   include/tencentcloud/scf/v20180416/model/ListNamespacesResponse.h
   include/tencentcloud/scf/v20180416/model/EipConfigOut.h
@@ -192,6 +194,7 @@ set(scf_src
   src/v20180416/model/ListTriggersResponse.cpp
   src/v20180416/model/ListAliasesResponse.cpp
   src/v20180416/model/DeleteLayerVersionResponse.cpp
+  src/v20180416/model/DeleteFunctionVersionRequest.cpp
   src/v20180416/model/GetReservedConcurrencyConfigResponse.cpp
   src/v20180416/model/ProtocolParams.cpp
   src/v20180416/model/RoutingConfig.cpp
@@ -304,9 +307,10 @@ set(scf_src
   src/v20180416/model/FunctionLog.cpp
   src/v20180416/model/InvokeFunctionRequest.cpp
   src/v20180416/model/RetryConfig.cpp
-  src/v20180416/model/GetFunctionAddressResponse.cpp
+  src/v20180416/model/GetProvisionedConcurrencyConfigResponse.cpp
   src/v20180416/model/CfsInsInfo.cpp
   src/v20180416/model/InstanceConcurrencyConfig.cpp
+  src/v20180416/model/DeleteFunctionVersionResponse.cpp
   src/v20180416/model/UpdateTriggerStatusRequest.cpp
   src/v20180416/model/TriggerAction.cpp
   src/v20180416/model/LimitsInfo.cpp
@@ -339,7 +343,7 @@ set(scf_src
   src/v20180416/model/SearchKey.cpp
   src/v20180416/model/DeleteTriggerRequest.cpp
   src/v20180416/model/VpcConfig.cpp
-  src/v20180416/model/GetProvisionedConcurrencyConfigResponse.cpp
+  src/v20180416/model/GetFunctionAddressResponse.cpp
   src/v20180416/model/ListAsyncEventsResponse.cpp
   src/v20180416/model/ListNamespacesResponse.cpp
   src/v20180416/model/EipConfigOut.cpp

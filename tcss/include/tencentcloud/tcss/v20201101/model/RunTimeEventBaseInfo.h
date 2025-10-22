@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -364,18 +364,14 @@ MountNamespace逃逸、
 
                     /**
                      * 获取内网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostIP 内网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHostIP() const;
 
                     /**
                      * 设置内网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostIP 内网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostIP(const std::string& _hostIP);
@@ -389,18 +385,14 @@ MountNamespace逃逸、
 
                     /**
                      * 获取外网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientIP 外网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClientIP() const;
 
                     /**
                      * 设置外网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clientIP 外网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClientIP(const std::string& _clientIP);
@@ -420,7 +412,6 @@ MountNamespace逃逸、
 隔离失败	ISOLATE_FAILED
 解除隔离中  RESTORING
 解除隔离失败 RESTORE_FAILED
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerNetStatus 网络状态
 未隔离  	NORMAL
 已隔离		ISOLATED
@@ -428,7 +419,6 @@ MountNamespace逃逸、
 隔离失败	ISOLATE_FAILED
 解除隔离中  RESTORING
 解除隔离失败 RESTORE_FAILED
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContainerNetStatus() const;
@@ -441,7 +431,6 @@ MountNamespace逃逸、
 隔离失败	ISOLATE_FAILED
 解除隔离中  RESTORING
 解除隔离失败 RESTORE_FAILED
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _containerNetStatus 网络状态
 未隔离  	NORMAL
 已隔离		ISOLATED
@@ -449,7 +438,6 @@ MountNamespace逃逸、
 隔离失败	ISOLATE_FAILED
 解除隔离中  RESTORING
 解除隔离失败 RESTORE_FAILED
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContainerNetStatus(const std::string& _containerNetStatus);
@@ -470,7 +458,6 @@ MountNamespace逃逸、
 "SHARED_HOST"         // 容器与主机共享网络
 "RESOURCE_LIMIT"      //隔离操作资源超限
 "UNKNOW"              // 原因未知
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerNetSubStatus 容器子状态
 "AGENT_OFFLINE"       //Agent离线
 "NODE_DESTROYED"      //节点已销毁
@@ -479,7 +466,6 @@ MountNamespace逃逸、
 "SHARED_HOST"         // 容器与主机共享网络
 "RESOURCE_LIMIT"      //隔离操作资源超限
 "UNKNOW"              // 原因未知
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContainerNetSubStatus() const;
@@ -493,7 +479,6 @@ MountNamespace逃逸、
 "SHARED_HOST"         // 容器与主机共享网络
 "RESOURCE_LIMIT"      //隔离操作资源超限
 "UNKNOW"              // 原因未知
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _containerNetSubStatus 容器子状态
 "AGENT_OFFLINE"       //Agent离线
 "NODE_DESTROYED"      //节点已销毁
@@ -502,7 +487,6 @@ MountNamespace逃逸、
 "SHARED_HOST"         // 容器与主机共享网络
 "RESOURCE_LIMIT"      //隔离操作资源超限
 "UNKNOW"              // 原因未知
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContainerNetSubStatus(const std::string& _containerNetSubStatus);
@@ -516,18 +500,14 @@ MountNamespace逃逸、
 
                     /**
                      * 获取容器隔离操作来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerIsolateOperationSrc 容器隔离操作来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContainerIsolateOperationSrc() const;
 
                     /**
                      * 设置容器隔离操作来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _containerIsolateOperationSrc 容器隔离操作来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContainerIsolateOperationSrc(const std::string& _containerIsolateOperationSrc);
@@ -833,6 +813,27 @@ MountNamespace逃逸、
                      */
                     bool WorkloadTypeHasBeenSet() const;
 
+                    /**
+                     * 获取容器运行状态
+                     * @return ContainerStatus 容器运行状态
+                     * 
+                     */
+                    std::string GetContainerStatus() const;
+
+                    /**
+                     * 设置容器运行状态
+                     * @param _containerStatus 容器运行状态
+                     * 
+                     */
+                    void SetContainerStatus(const std::string& _containerStatus);
+
+                    /**
+                     * 判断参数 ContainerStatus 是否已赋值
+                     * @return ContainerStatus 是否已赋值
+                     * 
+                     */
+                    bool ContainerStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -925,14 +926,12 @@ MountNamespace逃逸、
 
                     /**
                      * 内网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostIP;
                     bool m_hostIPHasBeenSet;
 
                     /**
                      * 外网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clientIP;
                     bool m_clientIPHasBeenSet;
@@ -945,7 +944,6 @@ MountNamespace逃逸、
 隔离失败	ISOLATE_FAILED
 解除隔离中  RESTORING
 解除隔离失败 RESTORE_FAILED
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_containerNetStatus;
                     bool m_containerNetStatusHasBeenSet;
@@ -959,14 +957,12 @@ MountNamespace逃逸、
 "SHARED_HOST"         // 容器与主机共享网络
 "RESOURCE_LIMIT"      //隔离操作资源超限
 "UNKNOW"              // 原因未知
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_containerNetSubStatus;
                     bool m_containerNetSubStatusHasBeenSet;
 
                     /**
                      * 容器隔离操作来源
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_containerIsolateOperationSrc;
                     bool m_containerIsolateOperationSrcHasBeenSet;
@@ -1054,6 +1050,12 @@ MountNamespace逃逸、
                      */
                     std::string m_workloadType;
                     bool m_workloadTypeHasBeenSet;
+
+                    /**
+                     * 容器运行状态
+                     */
+                    std::string m_containerStatus;
+                    bool m_containerStatusHasBeenSet;
 
                 };
             }

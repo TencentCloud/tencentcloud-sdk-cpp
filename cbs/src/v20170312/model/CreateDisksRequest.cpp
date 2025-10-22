@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ CreateDisksRequest::CreateDisksRequest() :
     m_snapshotIdHasBeenSet(false),
     m_diskCountHasBeenSet(false),
     m_throughputPerformanceHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false),
     m_diskSizeHasBeenSet(false),
     m_shareableHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
@@ -39,7 +40,8 @@ CreateDisksRequest::CreateDisksRequest() :
     m_deleteSnapshotHasBeenSet(false),
     m_autoMountConfigurationHasBeenSet(false),
     m_diskBackupQuotaHasBeenSet(false),
-    m_burstPerformanceHasBeenSet(false)
+    m_burstPerformanceHasBeenSet(false),
+    m_encryptTypeHasBeenSet(false)
 {
 }
 
@@ -122,6 +124,14 @@ string CreateDisksRequest::ToJsonString() const
         d.AddMember(iKey, m_throughputPerformance, allocator);
     }
 
+    if (m_kmsKeyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KmsKeyId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_kmsKeyId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_diskSizeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -194,6 +204,14 @@ string CreateDisksRequest::ToJsonString() const
         string key = "BurstPerformance";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_burstPerformance, allocator);
+    }
+
+    if (m_encryptTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_encryptType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -330,6 +348,22 @@ void CreateDisksRequest::SetThroughputPerformance(const uint64_t& _throughputPer
 bool CreateDisksRequest::ThroughputPerformanceHasBeenSet() const
 {
     return m_throughputPerformanceHasBeenSet;
+}
+
+string CreateDisksRequest::GetKmsKeyId() const
+{
+    return m_kmsKeyId;
+}
+
+void CreateDisksRequest::SetKmsKeyId(const string& _kmsKeyId)
+{
+    m_kmsKeyId = _kmsKeyId;
+    m_kmsKeyIdHasBeenSet = true;
+}
+
+bool CreateDisksRequest::KmsKeyIdHasBeenSet() const
+{
+    return m_kmsKeyIdHasBeenSet;
 }
 
 uint64_t CreateDisksRequest::GetDiskSize() const
@@ -474,6 +508,22 @@ void CreateDisksRequest::SetBurstPerformance(const bool& _burstPerformance)
 bool CreateDisksRequest::BurstPerformanceHasBeenSet() const
 {
     return m_burstPerformanceHasBeenSet;
+}
+
+string CreateDisksRequest::GetEncryptType() const
+{
+    return m_encryptType;
+}
+
+void CreateDisksRequest::SetEncryptType(const string& _encryptType)
+{
+    m_encryptType = _encryptType;
+    m_encryptTypeHasBeenSet = true;
+}
+
+bool CreateDisksRequest::EncryptTypeHasBeenSet() const
+{
+    return m_encryptTypeHasBeenSet;
 }
 
 

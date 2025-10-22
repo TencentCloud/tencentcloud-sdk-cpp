@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,7 +40,11 @@ MQTTInstanceItem::MQTTInstanceItem() :
     m_destroyTimeHasBeenSet(false),
     m_authorizationPolicyLimitHasBeenSet(false),
     m_maxCaNumHasBeenSet(false),
-    m_maxSubscriptionHasBeenSet(false)
+    m_maxSubscriptionHasBeenSet(false),
+    m_sharedSubscriptionGroupLimitHasBeenSet(false),
+    m_maxTopicFilterPerSharedSubscriptionGroupHasBeenSet(false),
+    m_autoSubscriptionPolicyLimitHasBeenSet(false),
+    m_maxTopicFilterPerAutoSubscriptionPolicyHasBeenSet(false)
 {
 }
 
@@ -249,6 +253,46 @@ CoreInternalOutcome MQTTInstanceItem::Deserialize(const rapidjson::Value &value)
         m_maxSubscriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("SharedSubscriptionGroupLimit") && !value["SharedSubscriptionGroupLimit"].IsNull())
+    {
+        if (!value["SharedSubscriptionGroupLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MQTTInstanceItem.SharedSubscriptionGroupLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sharedSubscriptionGroupLimit = value["SharedSubscriptionGroupLimit"].GetInt64();
+        m_sharedSubscriptionGroupLimitHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxTopicFilterPerSharedSubscriptionGroup") && !value["MaxTopicFilterPerSharedSubscriptionGroup"].IsNull())
+    {
+        if (!value["MaxTopicFilterPerSharedSubscriptionGroup"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MQTTInstanceItem.MaxTopicFilterPerSharedSubscriptionGroup` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxTopicFilterPerSharedSubscriptionGroup = value["MaxTopicFilterPerSharedSubscriptionGroup"].GetInt64();
+        m_maxTopicFilterPerSharedSubscriptionGroupHasBeenSet = true;
+    }
+
+    if (value.HasMember("AutoSubscriptionPolicyLimit") && !value["AutoSubscriptionPolicyLimit"].IsNull())
+    {
+        if (!value["AutoSubscriptionPolicyLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MQTTInstanceItem.AutoSubscriptionPolicyLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoSubscriptionPolicyLimit = value["AutoSubscriptionPolicyLimit"].GetInt64();
+        m_autoSubscriptionPolicyLimitHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxTopicFilterPerAutoSubscriptionPolicy") && !value["MaxTopicFilterPerAutoSubscriptionPolicy"].IsNull())
+    {
+        if (!value["MaxTopicFilterPerAutoSubscriptionPolicy"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MQTTInstanceItem.MaxTopicFilterPerAutoSubscriptionPolicy` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxTopicFilterPerAutoSubscriptionPolicy = value["MaxTopicFilterPerAutoSubscriptionPolicy"].GetInt64();
+        m_maxTopicFilterPerAutoSubscriptionPolicyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -414,6 +458,38 @@ void MQTTInstanceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "MaxSubscription";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxSubscription, allocator);
+    }
+
+    if (m_sharedSubscriptionGroupLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SharedSubscriptionGroupLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sharedSubscriptionGroupLimit, allocator);
+    }
+
+    if (m_maxTopicFilterPerSharedSubscriptionGroupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxTopicFilterPerSharedSubscriptionGroup";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxTopicFilterPerSharedSubscriptionGroup, allocator);
+    }
+
+    if (m_autoSubscriptionPolicyLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoSubscriptionPolicyLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoSubscriptionPolicyLimit, allocator);
+    }
+
+    if (m_maxTopicFilterPerAutoSubscriptionPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxTopicFilterPerAutoSubscriptionPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxTopicFilterPerAutoSubscriptionPolicy, allocator);
     }
 
 }
@@ -737,5 +813,69 @@ void MQTTInstanceItem::SetMaxSubscription(const int64_t& _maxSubscription)
 bool MQTTInstanceItem::MaxSubscriptionHasBeenSet() const
 {
     return m_maxSubscriptionHasBeenSet;
+}
+
+int64_t MQTTInstanceItem::GetSharedSubscriptionGroupLimit() const
+{
+    return m_sharedSubscriptionGroupLimit;
+}
+
+void MQTTInstanceItem::SetSharedSubscriptionGroupLimit(const int64_t& _sharedSubscriptionGroupLimit)
+{
+    m_sharedSubscriptionGroupLimit = _sharedSubscriptionGroupLimit;
+    m_sharedSubscriptionGroupLimitHasBeenSet = true;
+}
+
+bool MQTTInstanceItem::SharedSubscriptionGroupLimitHasBeenSet() const
+{
+    return m_sharedSubscriptionGroupLimitHasBeenSet;
+}
+
+int64_t MQTTInstanceItem::GetMaxTopicFilterPerSharedSubscriptionGroup() const
+{
+    return m_maxTopicFilterPerSharedSubscriptionGroup;
+}
+
+void MQTTInstanceItem::SetMaxTopicFilterPerSharedSubscriptionGroup(const int64_t& _maxTopicFilterPerSharedSubscriptionGroup)
+{
+    m_maxTopicFilterPerSharedSubscriptionGroup = _maxTopicFilterPerSharedSubscriptionGroup;
+    m_maxTopicFilterPerSharedSubscriptionGroupHasBeenSet = true;
+}
+
+bool MQTTInstanceItem::MaxTopicFilterPerSharedSubscriptionGroupHasBeenSet() const
+{
+    return m_maxTopicFilterPerSharedSubscriptionGroupHasBeenSet;
+}
+
+int64_t MQTTInstanceItem::GetAutoSubscriptionPolicyLimit() const
+{
+    return m_autoSubscriptionPolicyLimit;
+}
+
+void MQTTInstanceItem::SetAutoSubscriptionPolicyLimit(const int64_t& _autoSubscriptionPolicyLimit)
+{
+    m_autoSubscriptionPolicyLimit = _autoSubscriptionPolicyLimit;
+    m_autoSubscriptionPolicyLimitHasBeenSet = true;
+}
+
+bool MQTTInstanceItem::AutoSubscriptionPolicyLimitHasBeenSet() const
+{
+    return m_autoSubscriptionPolicyLimitHasBeenSet;
+}
+
+int64_t MQTTInstanceItem::GetMaxTopicFilterPerAutoSubscriptionPolicy() const
+{
+    return m_maxTopicFilterPerAutoSubscriptionPolicy;
+}
+
+void MQTTInstanceItem::SetMaxTopicFilterPerAutoSubscriptionPolicy(const int64_t& _maxTopicFilterPerAutoSubscriptionPolicy)
+{
+    m_maxTopicFilterPerAutoSubscriptionPolicy = _maxTopicFilterPerAutoSubscriptionPolicy;
+    m_maxTopicFilterPerAutoSubscriptionPolicyHasBeenSet = true;
+}
+
+bool MQTTInstanceItem::MaxTopicFilterPerAutoSubscriptionPolicyHasBeenSet() const
+{
+    return m_maxTopicFilterPerAutoSubscriptionPolicyHasBeenSet;
 }
 

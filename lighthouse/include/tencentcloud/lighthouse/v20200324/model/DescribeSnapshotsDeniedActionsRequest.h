@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取快照 ID 列表, 可通过 <a href="https://cloud.tencent.com/document/product/1207/54388" target="_blank">DescribeSnapshots</a> 查询。
-                     * @return SnapshotIds 快照 ID 列表, 可通过 <a href="https://cloud.tencent.com/document/product/1207/54388" target="_blank">DescribeSnapshots</a> 查询。
+                     * 获取快照 ID 列表,每次请求批量快照的上限是100个。 可通过 <a href="https://cloud.tencent.com/document/product/1207/54388" target="_blank">DescribeSnapshots</a> 查询。
+                     * @return SnapshotIds 快照 ID 列表,每次请求批量快照的上限是100个。 可通过 <a href="https://cloud.tencent.com/document/product/1207/54388" target="_blank">DescribeSnapshots</a> 查询。
                      * 
                      */
                     std::vector<std::string> GetSnapshotIds() const;
 
                     /**
-                     * 设置快照 ID 列表, 可通过 <a href="https://cloud.tencent.com/document/product/1207/54388" target="_blank">DescribeSnapshots</a> 查询。
-                     * @param _snapshotIds 快照 ID 列表, 可通过 <a href="https://cloud.tencent.com/document/product/1207/54388" target="_blank">DescribeSnapshots</a> 查询。
+                     * 设置快照 ID 列表,每次请求批量快照的上限是100个。 可通过 <a href="https://cloud.tencent.com/document/product/1207/54388" target="_blank">DescribeSnapshots</a> 查询。
+                     * @param _snapshotIds 快照 ID 列表,每次请求批量快照的上限是100个。 可通过 <a href="https://cloud.tencent.com/document/product/1207/54388" target="_blank">DescribeSnapshots</a> 查询。
                      * 
                      */
                     void SetSnapshotIds(const std::vector<std::string>& _snapshotIds);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 快照 ID 列表, 可通过 <a href="https://cloud.tencent.com/document/product/1207/54388" target="_blank">DescribeSnapshots</a> 查询。
+                     * 快照 ID 列表,每次请求批量快照的上限是100个。 可通过 <a href="https://cloud.tencent.com/document/product/1207/54388" target="_blank">DescribeSnapshots</a> 查询。
                      */
                     std::vector<std::string> m_snapshotIds;
                     bool m_snapshotIdsHasBeenSet;

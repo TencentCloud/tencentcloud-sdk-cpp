@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -313,14 +313,14 @@ namespace TencentCloud
 
                     /**
                      * 获取经办人的证件类型，支持以下类型
-<ul><li>ID_CARD : 居民身份证  (默认值)</li>
-<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
-<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
+<ul><li>ID_CARD : 中国大陆居民身份证  (默认值)</li>
+<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>
 
                      * @return AdminIdCardType 经办人的证件类型，支持以下类型
-<ul><li>ID_CARD : 居民身份证  (默认值)</li>
-<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
-<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
+<ul><li>ID_CARD : 中国大陆居民身份证  (默认值)</li>
+<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>
 
                      * 
                      */
@@ -328,14 +328,14 @@ namespace TencentCloud
 
                     /**
                      * 设置经办人的证件类型，支持以下类型
-<ul><li>ID_CARD : 居民身份证  (默认值)</li>
-<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
-<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
+<ul><li>ID_CARD : 中国大陆居民身份证  (默认值)</li>
+<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>
 
                      * @param _adminIdCardType 经办人的证件类型，支持以下类型
-<ul><li>ID_CARD : 居民身份证  (默认值)</li>
-<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
-<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
+<ul><li>ID_CARD : 中国大陆居民身份证  (默认值)</li>
+<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>
 
                      * 
                      */
@@ -529,9 +529,9 @@ p.s. 如果上传授权书 ，需遵循以下条件
 
                     /**
                      * 经办人的证件类型，支持以下类型
-<ul><li>ID_CARD : 居民身份证  (默认值)</li>
-<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
-<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
+<ul><li>ID_CARD : 中国大陆居民身份证  (默认值)</li>
+<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>
 
                      */
                     std::string m_adminIdCardType;

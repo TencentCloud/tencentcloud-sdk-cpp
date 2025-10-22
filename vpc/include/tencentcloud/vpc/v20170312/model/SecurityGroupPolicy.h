@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取安全组规则索引号，值会随着安全组规则的变更动态变化。使用PolicyIndex时，请先调用`DescribeSecurityGroupPolicies`获取到规则的PolicyIndex，并且结合返回值中的Version一起使用处理规则。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyIndex 安全组规则索引号，值会随着安全组规则的变更动态变化。使用PolicyIndex时，请先调用`DescribeSecurityGroupPolicies`获取到规则的PolicyIndex，并且结合返回值中的Version一起使用处理规则。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPolicyIndex() const;
 
                     /**
                      * 设置安全组规则索引号，值会随着安全组规则的变更动态变化。使用PolicyIndex时，请先调用`DescribeSecurityGroupPolicies`获取到规则的PolicyIndex，并且结合返回值中的Version一起使用处理规则。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _policyIndex 安全组规则索引号，值会随着安全组规则的变更动态变化。使用PolicyIndex时，请先调用`DescribeSecurityGroupPolicies`获取到规则的PolicyIndex，并且结合返回值中的Version一起使用处理规则。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPolicyIndex(const int64_t& _policyIndex);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取协议, 取值: TCP,UDP,ICMP,ICMPv6,ALL。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocol 协议, 取值: TCP,UDP,ICMP,ICMPv6,ALL。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置协议, 取值: TCP,UDP,ICMP,ICMPv6,ALL。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _protocol 协议, 取值: TCP,UDP,ICMP,ICMPv6,ALL。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -101,10 +93,8 @@ namespace TencentCloud
                     /**
                      * 获取端口(all, 离散port,  range)。
 说明：如果Protocol设置为ALL，则Port也需要设置为all。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port 端口(all, 离散port,  range)。
 说明：如果Protocol设置为ALL，则Port也需要设置为all。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPort() const;
@@ -112,10 +102,8 @@ namespace TencentCloud
                     /**
                      * 设置端口(all, 离散port,  range)。
 说明：如果Protocol设置为ALL，则Port也需要设置为all。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _port 端口(all, 离散port,  range)。
 说明：如果Protocol设置为ALL，则Port也需要设置为all。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPort(const std::string& _port);
@@ -129,18 +117,14 @@ namespace TencentCloud
 
                     /**
                      * 获取协议端口ID或者协议端口组ID。ServiceTemplate和Protocol+Port互斥。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceTemplate 协议端口ID或者协议端口组ID。ServiceTemplate和Protocol+Port互斥。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ServiceTemplateSpecification GetServiceTemplate() const;
 
                     /**
                      * 设置协议端口ID或者协议端口组ID。ServiceTemplate和Protocol+Port互斥。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceTemplate 协议端口ID或者协议端口组ID。ServiceTemplate和Protocol+Port互斥。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceTemplate(const ServiceTemplateSpecification& _serviceTemplate);
@@ -154,18 +138,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网段或IP(互斥)，特殊说明：0.0.0.0/n 都会映射为0.0.0.0/0。作为入参时，可使用字符串`MY_PUBLIC_IP`指代发起请求的公网IP地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CidrBlock 网段或IP(互斥)，特殊说明：0.0.0.0/n 都会映射为0.0.0.0/0。作为入参时，可使用字符串`MY_PUBLIC_IP`指代发起请求的公网IP地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCidrBlock() const;
 
                     /**
                      * 设置网段或IP(互斥)，特殊说明：0.0.0.0/n 都会映射为0.0.0.0/0。作为入参时，可使用字符串`MY_PUBLIC_IP`指代发起请求的公网IP地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cidrBlock 网段或IP(互斥)，特殊说明：0.0.0.0/n 都会映射为0.0.0.0/0。作为入参时，可使用字符串`MY_PUBLIC_IP`指代发起请求的公网IP地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCidrBlock(const std::string& _cidrBlock);
@@ -179,18 +159,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网段或IPv6(互斥)。作为入参时，可使用字符串`MY_PUBLIC_IP`指代发起请求的公网IPv6地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ipv6CidrBlock 网段或IPv6(互斥)。作为入参时，可使用字符串`MY_PUBLIC_IP`指代发起请求的公网IPv6地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIpv6CidrBlock() const;
 
                     /**
                      * 设置网段或IPv6(互斥)。作为入参时，可使用字符串`MY_PUBLIC_IP`指代发起请求的公网IPv6地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ipv6CidrBlock 网段或IPv6(互斥)。作为入参时，可使用字符串`MY_PUBLIC_IP`指代发起请求的公网IPv6地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIpv6CidrBlock(const std::string& _ipv6CidrBlock);
@@ -204,18 +180,14 @@ namespace TencentCloud
 
                     /**
                      * 获取安全组实例ID，例如：sg-ohuuioma。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecurityGroupId 安全组实例ID，例如：sg-ohuuioma。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSecurityGroupId() const;
 
                     /**
                      * 设置安全组实例ID，例如：sg-ohuuioma。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _securityGroupId 安全组实例ID，例如：sg-ohuuioma。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecurityGroupId(const std::string& _securityGroupId);
@@ -229,18 +201,14 @@ namespace TencentCloud
 
                     /**
                      * 获取IP地址ID或者IP地址组ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddressTemplate IP地址ID或者IP地址组ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AddressTemplateSpecification GetAddressTemplate() const;
 
                     /**
                      * 设置IP地址ID或者IP地址组ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _addressTemplate IP地址ID或者IP地址组ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddressTemplate(const AddressTemplateSpecification& _addressTemplate);
@@ -254,18 +222,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ACCEPT 或 DROP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Action ACCEPT 或 DROP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAction() const;
 
                     /**
                      * 设置ACCEPT 或 DROP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _action ACCEPT 或 DROP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAction(const std::string& _action);
@@ -279,18 +243,14 @@ namespace TencentCloud
 
                     /**
                      * 获取安全组规则描述。作为入参时，当未传递该参数或值为空，且参数CidrBlock或Ipv6CidrBlock值为MY_PUBLIC_IP时，该参数的值将会被自动填充为Replaced-From-MY_PUBLIC_IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyDescription 安全组规则描述。作为入参时，当未传递该参数或值为空，且参数CidrBlock或Ipv6CidrBlock值为MY_PUBLIC_IP时，该参数的值将会被自动填充为Replaced-From-MY_PUBLIC_IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPolicyDescription() const;
 
                     /**
                      * 设置安全组规则描述。作为入参时，当未传递该参数或值为空，且参数CidrBlock或Ipv6CidrBlock值为MY_PUBLIC_IP时，该参数的值将会被自动填充为Replaced-From-MY_PUBLIC_IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _policyDescription 安全组规则描述。作为入参时，当未传递该参数或值为空，且参数CidrBlock或Ipv6CidrBlock值为MY_PUBLIC_IP时，该参数的值将会被自动填充为Replaced-From-MY_PUBLIC_IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPolicyDescription(const std::string& _policyDescription);
@@ -304,18 +264,14 @@ namespace TencentCloud
 
                     /**
                      * 获取安全组最近修改时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyTime 安全组最近修改时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置安全组最近修改时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyTime 安全组最近修改时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -331,14 +287,12 @@ namespace TencentCloud
 
                     /**
                      * 安全组规则索引号，值会随着安全组规则的变更动态变化。使用PolicyIndex时，请先调用`DescribeSecurityGroupPolicies`获取到规则的PolicyIndex，并且结合返回值中的Version一起使用处理规则。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_policyIndex;
                     bool m_policyIndexHasBeenSet;
 
                     /**
                      * 协议, 取值: TCP,UDP,ICMP,ICMPv6,ALL。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
@@ -346,63 +300,54 @@ namespace TencentCloud
                     /**
                      * 端口(all, 离散port,  range)。
 说明：如果Protocol设置为ALL，则Port也需要设置为all。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_port;
                     bool m_portHasBeenSet;
 
                     /**
                      * 协议端口ID或者协议端口组ID。ServiceTemplate和Protocol+Port互斥。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ServiceTemplateSpecification m_serviceTemplate;
                     bool m_serviceTemplateHasBeenSet;
 
                     /**
                      * 网段或IP(互斥)，特殊说明：0.0.0.0/n 都会映射为0.0.0.0/0。作为入参时，可使用字符串`MY_PUBLIC_IP`指代发起请求的公网IP地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cidrBlock;
                     bool m_cidrBlockHasBeenSet;
 
                     /**
                      * 网段或IPv6(互斥)。作为入参时，可使用字符串`MY_PUBLIC_IP`指代发起请求的公网IPv6地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ipv6CidrBlock;
                     bool m_ipv6CidrBlockHasBeenSet;
 
                     /**
                      * 安全组实例ID，例如：sg-ohuuioma。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_securityGroupId;
                     bool m_securityGroupIdHasBeenSet;
 
                     /**
                      * IP地址ID或者IP地址组ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AddressTemplateSpecification m_addressTemplate;
                     bool m_addressTemplateHasBeenSet;
 
                     /**
                      * ACCEPT 或 DROP。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_action;
                     bool m_actionHasBeenSet;
 
                     /**
                      * 安全组规则描述。作为入参时，当未传递该参数或值为空，且参数CidrBlock或Ipv6CidrBlock值为MY_PUBLIC_IP时，该参数的值将会被自动填充为Replaced-From-MY_PUBLIC_IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_policyDescription;
                     bool m_policyDescriptionHasBeenSet;
 
                     /**
                      * 安全组最近修改时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;

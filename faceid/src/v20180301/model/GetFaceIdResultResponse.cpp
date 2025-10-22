@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,9 @@ GetFaceIdResultResponse::GetFaceIdResultResponse() :
     m_deviceInfoTagHasBeenSet(false),
     m_riskInfoTagHasBeenSet(false),
     m_livenessInfoTagHasBeenSet(false),
-    m_deviceInfoLevelHasBeenSet(false)
+    m_deviceInfoLevelHasBeenSet(false),
+    m_encryptionHasBeenSet(false),
+    m_encryptedBodyHasBeenSet(false)
 {
 }
 
@@ -193,6 +195,33 @@ CoreInternalOutcome GetFaceIdResultResponse::Deserialize(const string &payload)
         m_deviceInfoLevelHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Encryption") && !rsp["Encryption"].IsNull())
+    {
+        if (!rsp["Encryption"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Encryption` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_encryption.Deserialize(rsp["Encryption"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_encryptionHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("EncryptedBody") && !rsp["EncryptedBody"].IsNull())
+    {
+        if (!rsp["EncryptedBody"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EncryptedBody` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_encryptedBody = string(rsp["EncryptedBody"].GetString());
+        m_encryptedBodyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -299,11 +328,28 @@ string GetFaceIdResultResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_deviceInfoLevel.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_encryptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Encryption";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_encryption.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_encryptedBodyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptedBody";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_encryptedBody.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -429,6 +475,26 @@ string GetFaceIdResultResponse::GetDeviceInfoLevel() const
 bool GetFaceIdResultResponse::DeviceInfoLevelHasBeenSet() const
 {
     return m_deviceInfoLevelHasBeenSet;
+}
+
+Encryption GetFaceIdResultResponse::GetEncryption() const
+{
+    return m_encryption;
+}
+
+bool GetFaceIdResultResponse::EncryptionHasBeenSet() const
+{
+    return m_encryptionHasBeenSet;
+}
+
+string GetFaceIdResultResponse::GetEncryptedBody() const
+{
+    return m_encryptedBody;
+}
+
+bool GetFaceIdResultResponse::EncryptedBodyHasBeenSet() const
+{
+    return m_encryptedBodyHasBeenSet;
 }
 
 

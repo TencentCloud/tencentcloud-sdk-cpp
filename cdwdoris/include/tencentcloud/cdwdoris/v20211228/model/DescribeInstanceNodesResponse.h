@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取实例节点总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceNodesList 实例节点总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<InstanceNode> GetInstanceNodesList() const;
@@ -74,6 +72,20 @@ namespace TencentCloud
                      */
                     bool InstanceNodesListHasBeenSet() const;
 
+                    /**
+                     * 获取节点类型
+                     * @return NodeRoles 节点类型
+                     * 
+                     */
+                    std::vector<std::string> GetNodeRoles() const;
+
+                    /**
+                     * 判断参数 NodeRoles 是否已赋值
+                     * @return NodeRoles 是否已赋值
+                     * 
+                     */
+                    bool NodeRolesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -84,10 +96,15 @@ namespace TencentCloud
 
                     /**
                      * 实例节点总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<InstanceNode> m_instanceNodesList;
                     bool m_instanceNodesListHasBeenSet;
+
+                    /**
+                     * 节点类型
+                     */
+                    std::vector<std::string> m_nodeRoles;
+                    bool m_nodeRolesHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool SortIdHasBeenSet() const;
 
                     /**
-                     * 获取规则生效截止时间，0：永久生效，其它值为对应时间的时间戳。
-                     * @return ExpireTime 规则生效截止时间，0：永久生效，其它值为对应时间的时间戳。
+                     * 获取如果没有设置JobDateTime字段则用此字段，0表示永久生效，其它表示定时生效的截止时间（单位为秒）
+                     * @return ExpireTime 如果没有设置JobDateTime字段则用此字段，0表示永久生效，其它表示定时生效的截止时间（单位为秒）
                      * 
                      */
                     uint64_t GetExpireTime() const;
 
                     /**
-                     * 设置规则生效截止时间，0：永久生效，其它值为对应时间的时间戳。
-                     * @param _expireTime 规则生效截止时间，0：永久生效，其它值为对应时间的时间戳。
+                     * 设置如果没有设置JobDateTime字段则用此字段，0表示永久生效，其它表示定时生效的截止时间（单位为秒）
+                     * @param _expireTime 如果没有设置JobDateTime字段则用此字段，0表示永久生效，其它表示定时生效的截止时间（单位为秒）
                      * 
                      */
                     void SetExpireTime(const uint64_t& _expireTime);
@@ -233,6 +233,27 @@ namespace TencentCloud
                      */
                     bool JobDateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系
+                     * @return LogicalOp 匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系
+                     * 
+                     */
+                    std::string GetLogicalOp() const;
+
+                    /**
+                     * 设置匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系
+                     * @param _logicalOp 匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系
+                     * 
+                     */
+                    void SetLogicalOp(const std::string& _logicalOp);
+
+                    /**
+                     * 判断参数 LogicalOp 是否已赋值
+                     * @return LogicalOp 是否已赋值
+                     * 
+                     */
+                    bool LogicalOpHasBeenSet() const;
+
                 private:
 
                     /**
@@ -266,7 +287,7 @@ namespace TencentCloud
                     bool m_sortIdHasBeenSet;
 
                     /**
-                     * 规则生效截止时间，0：永久生效，其它值为对应时间的时间戳。
+                     * 如果没有设置JobDateTime字段则用此字段，0表示永久生效，其它表示定时生效的截止时间（单位为秒）
                      */
                     uint64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;
@@ -288,6 +309,12 @@ namespace TencentCloud
                      */
                     JobDateTime m_jobDateTime;
                     bool m_jobDateTimeHasBeenSet;
+
+                    /**
+                     * 匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系
+                     */
+                    std::string m_logicalOp;
+                    bool m_logicalOpHasBeenSet;
 
                 };
             }

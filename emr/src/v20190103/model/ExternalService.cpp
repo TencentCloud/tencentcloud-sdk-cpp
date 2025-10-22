@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,9 +22,9 @@ using namespace std;
 
 ExternalService::ExternalService() :
     m_shareTypeHasBeenSet(false),
-    m_customServiceDefineListHasBeenSet(false),
     m_serviceHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_customServiceDefineListHasBeenSet(false)
 {
 }
 
@@ -41,26 +41,6 @@ CoreInternalOutcome ExternalService::Deserialize(const rapidjson::Value &value)
         }
         m_shareType = string(value["ShareType"].GetString());
         m_shareTypeHasBeenSet = true;
-    }
-
-    if (value.HasMember("CustomServiceDefineList") && !value["CustomServiceDefineList"].IsNull())
-    {
-        if (!value["CustomServiceDefineList"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `ExternalService.CustomServiceDefineList` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["CustomServiceDefineList"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            CustomServiceDefine item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_customServiceDefineList.push_back(item);
-        }
-        m_customServiceDefineListHasBeenSet = true;
     }
 
     if (value.HasMember("Service") && !value["Service"].IsNull())
@@ -83,6 +63,26 @@ CoreInternalOutcome ExternalService::Deserialize(const rapidjson::Value &value)
         m_instanceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("CustomServiceDefineList") && !value["CustomServiceDefineList"].IsNull())
+    {
+        if (!value["CustomServiceDefineList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ExternalService.CustomServiceDefineList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CustomServiceDefineList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CustomServiceDefine item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_customServiceDefineList.push_back(item);
+        }
+        m_customServiceDefineListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -96,21 +96,6 @@ void ExternalService::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ShareType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_shareType.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_customServiceDefineListHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CustomServiceDefineList";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_customServiceDefineList.begin(); itr != m_customServiceDefineList.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
     }
 
     if (m_serviceHasBeenSet)
@@ -127,6 +112,21 @@ void ExternalService::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customServiceDefineListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomServiceDefineList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_customServiceDefineList.begin(); itr != m_customServiceDefineList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -146,22 +146,6 @@ void ExternalService::SetShareType(const string& _shareType)
 bool ExternalService::ShareTypeHasBeenSet() const
 {
     return m_shareTypeHasBeenSet;
-}
-
-vector<CustomServiceDefine> ExternalService::GetCustomServiceDefineList() const
-{
-    return m_customServiceDefineList;
-}
-
-void ExternalService::SetCustomServiceDefineList(const vector<CustomServiceDefine>& _customServiceDefineList)
-{
-    m_customServiceDefineList = _customServiceDefineList;
-    m_customServiceDefineListHasBeenSet = true;
-}
-
-bool ExternalService::CustomServiceDefineListHasBeenSet() const
-{
-    return m_customServiceDefineListHasBeenSet;
 }
 
 string ExternalService::GetService() const
@@ -194,5 +178,21 @@ void ExternalService::SetInstanceId(const string& _instanceId)
 bool ExternalService::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+vector<CustomServiceDefine> ExternalService::GetCustomServiceDefineList() const
+{
+    return m_customServiceDefineList;
+}
+
+void ExternalService::SetCustomServiceDefineList(const vector<CustomServiceDefine>& _customServiceDefineList)
+{
+    m_customServiceDefineList = _customServiceDefineList;
+    m_customServiceDefineListHasBeenSet = true;
+}
+
+bool ExternalService::CustomServiceDefineListHasBeenSet() const
+{
+    return m_customServiceDefineListHasBeenSet;
 }
 

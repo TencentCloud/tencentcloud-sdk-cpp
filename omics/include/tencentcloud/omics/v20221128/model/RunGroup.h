@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@
 #include <tencentcloud/omics/v20221128/model/VolumeInfo.h>
 #include <tencentcloud/omics/v20221128/model/RunStatusCount.h>
 #include <tencentcloud/omics/v20221128/model/ExecutionTime.h>
+#include <tencentcloud/omics/v20221128/model/RunGroupNotification.h>
 
 
 namespace TencentCloud
@@ -180,18 +181,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationVersion 应用版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ApplicationVersion GetApplicationVersion() const;
 
                     /**
                      * 设置应用版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationVersion 应用版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationVersion(const ApplicationVersion& _applicationVersion);
@@ -207,11 +204,9 @@ namespace TencentCloud
                      * 获取应用访问类型：
 - PRIVATE 私有应用
 - PUBLIC 公共应用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccessMode 应用访问类型：
 - PRIVATE 私有应用
 - PUBLIC 公共应用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccessMode() const;
@@ -220,11 +215,9 @@ namespace TencentCloud
                      * 设置应用访问类型：
 - PRIVATE 私有应用
 - PUBLIC 公共应用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accessMode 应用访问类型：
 - PRIVATE 私有应用
 - PUBLIC 公共应用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccessMode(const std::string& _accessMode);
@@ -280,18 +273,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表格ID，单例运行为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableId 表格ID，单例运行为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTableId() const;
 
                     /**
                      * 设置表格ID，单例运行为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tableId 表格ID，单例运行为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTableId(const std::string& _tableId);
@@ -370,11 +359,9 @@ namespace TencentCloud
                      * 获取任务批次类型 ：
 - WDL
 - NEXTFLOW
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 任务批次类型 ：
 - WDL
 - NEXTFLOW
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
@@ -383,11 +370,9 @@ namespace TencentCloud
                      * 设置任务批次类型 ：
 - WDL
 - NEXTFLOW
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 任务批次类型 ：
 - WDL
 - NEXTFLOW
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -401,18 +386,14 @@ namespace TencentCloud
 
                     /**
                      * 获取工作目录。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WorkDir 工作目录。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWorkDir() const;
 
                     /**
                      * 设置工作目录。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _workDir 工作目录。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWorkDir(const std::string& _workDir);
@@ -450,12 +431,10 @@ namespace TencentCloud
 - JSON: 导入JSON
 - MANUAL: 手动输入
 - COS: COS文件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InputType 任务输入类型：
 - JSON: 导入JSON
 - MANUAL: 手动输入
 - COS: COS文件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInputType() const;
@@ -465,12 +444,10 @@ namespace TencentCloud
 - JSON: 导入JSON
 - MANUAL: 手动输入
 - COS: COS文件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _inputType 任务输入类型：
 - JSON: 导入JSON
 - MANUAL: 手动输入
 - COS: COS文件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInputType(const std::string& _inputType);
@@ -484,18 +461,14 @@ namespace TencentCloud
 
                     /**
                      * 获取输入COS地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InputCosUri 输入COS地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInputCosUri() const;
 
                     /**
                      * 设置输入COS地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _inputCosUri 输入COS地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInputCosUri(const std::string& _inputCosUri);
@@ -508,19 +481,15 @@ namespace TencentCloud
                     bool InputCosUriHasBeenSet() const;
 
                     /**
-                     * 获取输入模版ID。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InputTemplateId 输入模版ID。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取输入模板ID。
+                     * @return InputTemplateId 输入模板ID。
                      * 
                      */
                     std::string GetInputTemplateId() const;
 
                     /**
-                     * 设置输入模版ID。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _inputTemplateId 输入模版ID。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置输入模板ID。
+                     * @param _inputTemplateId 输入模板ID。
                      * 
                      */
                     void SetInputTemplateId(const std::string& _inputTemplateId);
@@ -555,18 +524,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Nextflow运行选项。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NFOption Nextflow运行选项。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     NFOption GetNFOption() const;
 
                     /**
                      * 设置Nextflow运行选项。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nFOption Nextflow运行选项。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNFOption(const NFOption& _nFOption);
@@ -580,18 +545,14 @@ namespace TencentCloud
 
                     /**
                      * 获取使用的缓存卷。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Volumes 使用的缓存卷。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VolumeInfo> GetVolumes() const;
 
                     /**
                      * 设置使用的缓存卷。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _volumes 使用的缓存卷。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVolumes(const std::vector<VolumeInfo>& _volumes);
@@ -688,29 +649,25 @@ namespace TencentCloud
                     bool ErrorMessageHasBeenSet() const;
 
                     /**
-                     * 获取运行结果通知方式。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResultNotify 运行结果通知方式。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取任务批次通知。
+                     * @return Notification 任务批次通知。
                      * 
                      */
-                    std::string GetResultNotify() const;
+                    RunGroupNotification GetNotification() const;
 
                     /**
-                     * 设置运行结果通知方式。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _resultNotify 运行结果通知方式。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置任务批次通知。
+                     * @param _notification 任务批次通知。
                      * 
                      */
-                    void SetResultNotify(const std::string& _resultNotify);
+                    void SetNotification(const RunGroupNotification& _notification);
 
                     /**
-                     * 判断参数 ResultNotify 是否已赋值
-                     * @return ResultNotify 是否已赋值
+                     * 判断参数 Notification 是否已赋值
+                     * @return Notification 是否已赋值
                      * 
                      */
-                    bool ResultNotifyHasBeenSet() const;
+                    bool NotificationHasBeenSet() const;
 
                     /**
                      * 获取创建时间。
@@ -756,18 +713,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建者。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Creator 创建者。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreator() const;
 
                     /**
                      * 设置创建者。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _creator 创建者。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreator(const std::string& _creator);
@@ -781,18 +734,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建者ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatorId 创建者ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatorId() const;
 
                     /**
                      * 设置创建者ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _creatorId 创建者ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatorId(const std::string& _creatorId);
@@ -803,6 +752,27 @@ namespace TencentCloud
                      * 
                      */
                     bool CreatorIdHasBeenSet() const;
+
+                    /**
+                     * 获取运行结果通知方式。
+                     * @return ResultNotify 运行结果通知方式。
+                     * 
+                     */
+                    std::string GetResultNotify() const;
+
+                    /**
+                     * 设置运行结果通知方式。
+                     * @param _resultNotify 运行结果通知方式。
+                     * 
+                     */
+                    void SetResultNotify(const std::string& _resultNotify);
+
+                    /**
+                     * 判断参数 ResultNotify 是否已赋值
+                     * @return ResultNotify 是否已赋值
+                     * 
+                     */
+                    bool ResultNotifyHasBeenSet() const;
 
                 private:
 
@@ -844,7 +814,6 @@ namespace TencentCloud
 
                     /**
                      * 应用版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ApplicationVersion m_applicationVersion;
                     bool m_applicationVersionHasBeenSet;
@@ -853,7 +822,6 @@ namespace TencentCloud
                      * 应用访问类型：
 - PRIVATE 私有应用
 - PUBLIC 公共应用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accessMode;
                     bool m_accessModeHasBeenSet;
@@ -872,7 +840,6 @@ namespace TencentCloud
 
                     /**
                      * 表格ID，单例运行为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tableId;
                     bool m_tableIdHasBeenSet;
@@ -899,14 +866,12 @@ namespace TencentCloud
                      * 任务批次类型 ：
 - WDL
 - NEXTFLOW
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 工作目录。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_workDir;
                     bool m_workDirHasBeenSet;
@@ -922,21 +887,18 @@ namespace TencentCloud
 - JSON: 导入JSON
 - MANUAL: 手动输入
 - COS: COS文件
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_inputType;
                     bool m_inputTypeHasBeenSet;
 
                     /**
                      * 输入COS地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_inputCosUri;
                     bool m_inputCosUriHasBeenSet;
 
                     /**
-                     * 输入模版ID。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 输入模板ID。
                      */
                     std::string m_inputTemplateId;
                     bool m_inputTemplateIdHasBeenSet;
@@ -949,14 +911,12 @@ namespace TencentCloud
 
                     /**
                      * Nextflow运行选项。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     NFOption m_nFOption;
                     bool m_nFOptionHasBeenSet;
 
                     /**
                      * 使用的缓存卷。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VolumeInfo> m_volumes;
                     bool m_volumesHasBeenSet;
@@ -986,11 +946,10 @@ namespace TencentCloud
                     bool m_errorMessageHasBeenSet;
 
                     /**
-                     * 运行结果通知方式。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 任务批次通知。
                      */
-                    std::string m_resultNotify;
-                    bool m_resultNotifyHasBeenSet;
+                    RunGroupNotification m_notification;
+                    bool m_notificationHasBeenSet;
 
                     /**
                      * 创建时间。
@@ -1006,17 +965,21 @@ namespace TencentCloud
 
                     /**
                      * 创建者。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_creator;
                     bool m_creatorHasBeenSet;
 
                     /**
                      * 创建者ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_creatorId;
                     bool m_creatorIdHasBeenSet;
+
+                    /**
+                     * 运行结果通知方式。
+                     */
+                    std::string m_resultNotify;
+                    bool m_resultNotifyHasBeenSet;
 
                 };
             }

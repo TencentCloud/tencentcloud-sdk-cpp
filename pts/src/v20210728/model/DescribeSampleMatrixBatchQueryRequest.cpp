@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ DescribeSampleMatrixBatchQueryRequest::DescribeSampleMatrixBatchQueryRequest() :
     m_jobIdHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_scenarioIdHasBeenSet(false),
-    m_queriesHasBeenSet(false)
+    m_queriesHasBeenSet(false),
+    m_maxPointHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,14 @@ string DescribeSampleMatrixBatchQueryRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_maxPointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxPoint";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxPoint, allocator);
     }
 
 
@@ -146,6 +155,22 @@ void DescribeSampleMatrixBatchQueryRequest::SetQueries(const vector<InternalMetr
 bool DescribeSampleMatrixBatchQueryRequest::QueriesHasBeenSet() const
 {
     return m_queriesHasBeenSet;
+}
+
+int64_t DescribeSampleMatrixBatchQueryRequest::GetMaxPoint() const
+{
+    return m_maxPoint;
+}
+
+void DescribeSampleMatrixBatchQueryRequest::SetMaxPoint(const int64_t& _maxPoint)
+{
+    m_maxPoint = _maxPoint;
+    m_maxPointHasBeenSet = true;
+}
+
+bool DescribeSampleMatrixBatchQueryRequest::MaxPointHasBeenSet() const
+{
+    return m_maxPointHasBeenSet;
 }
 
 

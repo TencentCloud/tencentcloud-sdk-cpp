@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,8 @@ using namespace TencentCloud::Scf::V20180416::Model;
 using namespace std;
 
 NamespaceResourceEnv::NamespaceResourceEnv() :
-    m_tKEHasBeenSet(false)
+    m_tKEHasBeenSet(false),
+    m_oFFLINEHasBeenSet(false)
 {
 }
 
@@ -47,6 +48,16 @@ CoreInternalOutcome NamespaceResourceEnv::Deserialize(const rapidjson::Value &va
         m_tKEHasBeenSet = true;
     }
 
+    if (value.HasMember("OFFLINE") && !value["OFFLINE"].IsNull())
+    {
+        if (!value["OFFLINE"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `NamespaceResourceEnv.OFFLINE` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_oFFLINE = value["OFFLINE"].GetBool();
+        m_oFFLINEHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -61,6 +72,14 @@ void NamespaceResourceEnv::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_tKE.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_oFFLINEHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OFFLINE";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_oFFLINE, allocator);
     }
 
 }
@@ -80,5 +99,21 @@ void NamespaceResourceEnv::SetTKE(const NamespaceResourceEnvTKE& _tKE)
 bool NamespaceResourceEnv::TKEHasBeenSet() const
 {
     return m_tKEHasBeenSet;
+}
+
+bool NamespaceResourceEnv::GetOFFLINE() const
+{
+    return m_oFFLINE;
+}
+
+void NamespaceResourceEnv::SetOFFLINE(const bool& _oFFLINE)
+{
+    m_oFFLINE = _oFFLINE;
+    m_oFFLINEHasBeenSet = true;
+}
+
+bool NamespaceResourceEnv::OFFLINEHasBeenSet() const
+{
+    return m_oFFLINEHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,18 +51,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备ID， wid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WID 设备ID， wid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWID() const;
 
                     /**
                      * 设置设备ID， wid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _wID 设备ID， wid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWID(const std::string& _wID);
@@ -76,18 +72,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceName 设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceName 设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
@@ -101,18 +93,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备类型Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceTypeCode 设备类型Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceTypeCode() const;
 
                     /**
                      * 设置设备类型Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceTypeCode 设备类型Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceTypeCode(const std::string& _deviceTypeCode);
@@ -126,18 +114,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceTypeName 设备类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceTypeName() const;
 
                     /**
                      * 设置设备类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceTypeName 设备类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceTypeName(const std::string& _deviceTypeName);
@@ -151,18 +135,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductId 产品Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetProductId() const;
 
                     /**
                      * 设置产品Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productId 产品Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductId(const int64_t& _productId);
@@ -176,18 +156,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductName 产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductName() const;
 
                     /**
                      * 设置产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productName 产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductName(const std::string& _productName);
@@ -201,18 +177,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品能力:信令数据、音视频。二进制数值中第0位表示信令数据、第1位表示音视频 。1（信令数据），3（具有信令数据以及音视频能力）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductAbility 产品能力:信令数据、音视频。二进制数值中第0位表示信令数据、第1位表示音视频 。1（信令数据），3（具有信令数据以及音视频能力）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetProductAbility() const;
 
                     /**
                      * 设置产品能力:信令数据、音视频。二进制数值中第0位表示信令数据、第1位表示音视频 。1（信令数据），3（具有信令数据以及音视频能力）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productAbility 产品能力:信令数据、音视频。二进制数值中第0位表示信令数据、第1位表示音视频 。1（信令数据），3（具有信令数据以及音视频能力）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductAbility(const int64_t& _productAbility);
@@ -226,18 +198,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备位置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpaceInfoSet 设备位置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DeviceSpaceInfo> GetSpaceInfoSet() const;
 
                     /**
                      * 设置设备位置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _spaceInfoSet 设备位置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSpaceInfoSet(const std::vector<DeviceSpaceInfo>& _spaceInfoSet);
@@ -251,18 +219,14 @@ namespace TencentCloud
 
                     /**
                      * 获取模型id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModelId 模型id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModelId() const;
 
                     /**
                      * 设置模型id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modelId 模型id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModelId(const std::string& _modelId);
@@ -276,18 +240,14 @@ namespace TencentCloud
 
                     /**
                      * 获取模型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModelName 模型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModelName() const;
 
                     /**
                      * 设置模型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modelName 模型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModelName(const std::string& _modelName);
@@ -301,18 +261,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备标签名，非必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceTagSet 设备标签名，非必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetDeviceTagSet() const;
 
                     /**
                      * 设置设备标签名，非必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceTagSet 设备标签名，非必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceTagSet(const std::vector<std::string>& _deviceTagSet);
@@ -326,18 +282,14 @@ namespace TencentCloud
 
                     /**
                      * 获取激活状态（1激活、0未激活）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsActive 激活状态（1激活、0未激活）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsActive() const;
 
                     /**
                      * 设置激活状态（1激活、0未激活）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isActive 激活状态（1激活、0未激活）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsActive(const int64_t& _isActive);
@@ -351,18 +303,14 @@ namespace TencentCloud
 
                     /**
                      * 获取 激活时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActiveTime  激活时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetActiveTime() const;
 
                     /**
                      * 设置 激活时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _activeTime  激活时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActiveTime(const std::string& _activeTime);
@@ -376,18 +324,14 @@ namespace TencentCloud
 
                     /**
                      * 获取推流状态（推流中、未推流） 仅摄像机有的状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsLive 推流状态（推流中、未推流） 仅摄像机有的状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsLive() const;
 
                     /**
                      * 设置推流状态（推流中、未推流） 仅摄像机有的状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isLive 推流状态（推流中、未推流） 仅摄像机有的状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsLive(const bool& _isLive);
@@ -401,18 +345,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备所属父设备id（子设备才有）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParentWID 设备所属父设备id（子设备才有）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParentWID() const;
 
                     /**
                      * 设置设备所属父设备id（子设备才有）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _parentWID 设备所属父设备id（子设备才有）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParentWID(const std::string& _parentWID);
@@ -426,18 +366,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备所有父设备名称（子设备才有）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParentWIDName 设备所有父设备名称（子设备才有）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParentWIDName() const;
 
                     /**
                      * 设置设备所有父设备名称（子设备才有）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _parentWIDName 设备所有父设备名称（子设备才有）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParentWIDName(const std::string& _parentWIDName);
@@ -451,18 +387,14 @@ namespace TencentCloud
 
                     /**
                      * 获取序列号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SN 序列号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSN() const;
 
                     /**
                      * 设置序列号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sN 序列号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSN(const std::string& _sN);
@@ -476,18 +408,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备点位坐标值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Location 设备点位坐标值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DeviceLocation GetLocation() const;
 
                     /**
                      * 设置设备点位坐标值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _location 设备点位坐标值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLocation(const DeviceLocation& _location);
@@ -501,18 +429,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FieldList 自定义字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CustomFieldInfo> GetFieldList() const;
 
                     /**
                      * 设置自定义字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fieldList 自定义字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFieldList(const std::vector<CustomFieldInfo>& _fieldList);
@@ -526,18 +450,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupInfo 分组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupInfo() const;
 
                     /**
                      * 设置分组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupInfo 分组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupInfo(const std::string& _groupInfo);
@@ -551,18 +471,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通信在/离线状态（online=normal+fault，offline）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceStatus 通信在/离线状态（online=normal+fault，offline）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceStatus() const;
 
                     /**
                      * 设置通信在/离线状态（online=normal+fault，offline）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceStatus 通信在/离线状态（online=normal+fault，offline）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceStatus(const std::string& _deviceStatus);
@@ -576,18 +492,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备业务状态（normal、fault、offline）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 设备业务状态（normal、fault、offline）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置设备业务状态（normal、fault、offline）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 设备业务状态（normal、fault、offline）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -603,154 +515,132 @@ namespace TencentCloud
 
                     /**
                      * 设备ID， wid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_wID;
                     bool m_wIDHasBeenSet;
 
                     /**
                      * 设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceName;
                     bool m_deviceNameHasBeenSet;
 
                     /**
                      * 设备类型Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceTypeCode;
                     bool m_deviceTypeCodeHasBeenSet;
 
                     /**
                      * 设备类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceTypeName;
                     bool m_deviceTypeNameHasBeenSet;
 
                     /**
                      * 产品Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_productId;
                     bool m_productIdHasBeenSet;
 
                     /**
                      * 产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productName;
                     bool m_productNameHasBeenSet;
 
                     /**
                      * 产品能力:信令数据、音视频。二进制数值中第0位表示信令数据、第1位表示音视频 。1（信令数据），3（具有信令数据以及音视频能力）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_productAbility;
                     bool m_productAbilityHasBeenSet;
 
                     /**
                      * 设备位置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DeviceSpaceInfo> m_spaceInfoSet;
                     bool m_spaceInfoSetHasBeenSet;
 
                     /**
                      * 模型id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modelId;
                     bool m_modelIdHasBeenSet;
 
                     /**
                      * 模型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modelName;
                     bool m_modelNameHasBeenSet;
 
                     /**
                      * 设备标签名，非必填
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_deviceTagSet;
                     bool m_deviceTagSetHasBeenSet;
 
                     /**
                      * 激活状态（1激活、0未激活）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isActive;
                     bool m_isActiveHasBeenSet;
 
                     /**
                      *  激活时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_activeTime;
                     bool m_activeTimeHasBeenSet;
 
                     /**
                      * 推流状态（推流中、未推流） 仅摄像机有的状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isLive;
                     bool m_isLiveHasBeenSet;
 
                     /**
                      * 设备所属父设备id（子设备才有）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_parentWID;
                     bool m_parentWIDHasBeenSet;
 
                     /**
                      * 设备所有父设备名称（子设备才有）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_parentWIDName;
                     bool m_parentWIDNameHasBeenSet;
 
                     /**
                      * 序列号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sN;
                     bool m_sNHasBeenSet;
 
                     /**
                      * 设备点位坐标值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DeviceLocation m_location;
                     bool m_locationHasBeenSet;
 
                     /**
                      * 自定义字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CustomFieldInfo> m_fieldList;
                     bool m_fieldListHasBeenSet;
 
                     /**
                      * 分组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupInfo;
                     bool m_groupInfoHasBeenSet;
 
                     /**
                      * 通信在/离线状态（online=normal+fault，offline）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceStatus;
                     bool m_deviceStatusHasBeenSet;
 
                     /**
                      * 设备业务状态（normal、fault、offline）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

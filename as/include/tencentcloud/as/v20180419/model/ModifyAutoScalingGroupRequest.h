@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,15 +46,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取伸缩组ID
-                     * @return AutoScalingGroupId 伸缩组ID
+                     * 获取伸缩组ID。可以通过如下方式获取可用的伸缩组ID:
+<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 查询伸缩组ID。</li>
+<li>通过调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li>
+                     * @return AutoScalingGroupId 伸缩组ID。可以通过如下方式获取可用的伸缩组ID:
+<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 查询伸缩组ID。</li>
+<li>通过调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li>
                      * 
                      */
                     std::string GetAutoScalingGroupId() const;
 
                     /**
-                     * 设置伸缩组ID
-                     * @param _autoScalingGroupId 伸缩组ID
+                     * 设置伸缩组ID。可以通过如下方式获取可用的伸缩组ID:
+<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 查询伸缩组ID。</li>
+<li>通过调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li>
+                     * @param _autoScalingGroupId 伸缩组ID。可以通过如下方式获取可用的伸缩组ID:
+<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 查询伸缩组ID。</li>
+<li>通过调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li>
                      * 
                      */
                     void SetAutoScalingGroupId(const std::string& _autoScalingGroupId);
@@ -88,15 +96,15 @@ namespace TencentCloud
                     bool AutoScalingGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取默认冷却时间，单位秒，默认值为300
-                     * @return DefaultCooldown 默认冷却时间，单位秒，默认值为300
+                     * 获取默认冷却时间，单位秒，取值范围 [0,3600]，默认值为300。
+                     * @return DefaultCooldown 默认冷却时间，单位秒，取值范围 [0,3600]，默认值为300。
                      * 
                      */
                     uint64_t GetDefaultCooldown() const;
 
                     /**
-                     * 设置默认冷却时间，单位秒，默认值为300
-                     * @param _defaultCooldown 默认冷却时间，单位秒，默认值为300
+                     * 设置默认冷却时间，单位秒，取值范围 [0,3600]，默认值为300。
+                     * @param _defaultCooldown 默认冷却时间，单位秒，取值范围 [0,3600]，默认值为300。
                      * 
                      */
                     void SetDefaultCooldown(const uint64_t& _defaultCooldown);
@@ -109,15 +117,15 @@ namespace TencentCloud
                     bool DefaultCooldownHasBeenSet() const;
 
                     /**
-                     * 获取期望实例数，大小介于最小实例数和最大实例数之间
-                     * @return DesiredCapacity 期望实例数，大小介于最小实例数和最大实例数之间
+                     * 获取期望实例数，取值范围 [0,2000]。需满足最大值大于等于期望值，期望值大于等于最小值。
+                     * @return DesiredCapacity 期望实例数，取值范围 [0,2000]。需满足最大值大于等于期望值，期望值大于等于最小值。
                      * 
                      */
                     uint64_t GetDesiredCapacity() const;
 
                     /**
-                     * 设置期望实例数，大小介于最小实例数和最大实例数之间
-                     * @param _desiredCapacity 期望实例数，大小介于最小实例数和最大实例数之间
+                     * 设置期望实例数，取值范围 [0,2000]。需满足最大值大于等于期望值，期望值大于等于最小值。
+                     * @param _desiredCapacity 期望实例数，取值范围 [0,2000]。需满足最大值大于等于期望值，期望值大于等于最小值。
                      * 
                      */
                     void SetDesiredCapacity(const uint64_t& _desiredCapacity);
@@ -130,15 +138,23 @@ namespace TencentCloud
                     bool DesiredCapacityHasBeenSet() const;
 
                     /**
-                     * 获取启动配置ID
-                     * @return LaunchConfigurationId 启动配置ID
+                     * 获取启动配置ID。可以通过如下方式获取可用的启动配置ID:
+<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/config) 查询启动配置ID。</li>
+<li>通过调用接口 [DescribeLaunchConfigurations](https://cloud.tencent.com/document/api/377/20445) ，取返回信息中的 LaunchConfigurationId 获取启动配置ID。</li>
+                     * @return LaunchConfigurationId 启动配置ID。可以通过如下方式获取可用的启动配置ID:
+<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/config) 查询启动配置ID。</li>
+<li>通过调用接口 [DescribeLaunchConfigurations](https://cloud.tencent.com/document/api/377/20445) ，取返回信息中的 LaunchConfigurationId 获取启动配置ID。</li>
                      * 
                      */
                     std::string GetLaunchConfigurationId() const;
 
                     /**
-                     * 设置启动配置ID
-                     * @param _launchConfigurationId 启动配置ID
+                     * 设置启动配置ID。可以通过如下方式获取可用的启动配置ID:
+<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/config) 查询启动配置ID。</li>
+<li>通过调用接口 [DescribeLaunchConfigurations](https://cloud.tencent.com/document/api/377/20445) ，取返回信息中的 LaunchConfigurationId 获取启动配置ID。</li>
+                     * @param _launchConfigurationId 启动配置ID。可以通过如下方式获取可用的启动配置ID:
+<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/config) 查询启动配置ID。</li>
+<li>通过调用接口 [DescribeLaunchConfigurations](https://cloud.tencent.com/document/api/377/20445) ，取返回信息中的 LaunchConfigurationId 获取启动配置ID。</li>
                      * 
                      */
                     void SetLaunchConfigurationId(const std::string& _launchConfigurationId);
@@ -151,15 +167,15 @@ namespace TencentCloud
                     bool LaunchConfigurationIdHasBeenSet() const;
 
                     /**
-                     * 获取最大实例数，取值范围为0-2000。
-                     * @return MaxSize 最大实例数，取值范围为0-2000。
+                     * 获取最大实例数，取值范围为 [0,2000]。需满足最大值大于等于期望值，期望值大于等于最小值。
+                     * @return MaxSize 最大实例数，取值范围为 [0,2000]。需满足最大值大于等于期望值，期望值大于等于最小值。
                      * 
                      */
                     uint64_t GetMaxSize() const;
 
                     /**
-                     * 设置最大实例数，取值范围为0-2000。
-                     * @param _maxSize 最大实例数，取值范围为0-2000。
+                     * 设置最大实例数，取值范围为 [0,2000]。需满足最大值大于等于期望值，期望值大于等于最小值。
+                     * @param _maxSize 最大实例数，取值范围为 [0,2000]。需满足最大值大于等于期望值，期望值大于等于最小值。
                      * 
                      */
                     void SetMaxSize(const uint64_t& _maxSize);
@@ -172,15 +188,15 @@ namespace TencentCloud
                     bool MaxSizeHasBeenSet() const;
 
                     /**
-                     * 获取最小实例数，取值范围为0-2000。
-                     * @return MinSize 最小实例数，取值范围为0-2000。
+                     * 获取最小实例数，取值范围为 [0,2000]。需满足最大值大于等于期望值，期望值大于等于最小值。
+                     * @return MinSize 最小实例数，取值范围为 [0,2000]。需满足最大值大于等于期望值，期望值大于等于最小值。
                      * 
                      */
                     uint64_t GetMinSize() const;
 
                     /**
-                     * 设置最小实例数，取值范围为0-2000。
-                     * @param _minSize 最小实例数，取值范围为0-2000。
+                     * 设置最小实例数，取值范围为 [0,2000]。需满足最大值大于等于期望值，期望值大于等于最小值。
+                     * @param _minSize 最小实例数，取值范围为 [0,2000]。需满足最大值大于等于期望值，期望值大于等于最小值。
                      * 
                      */
                     void SetMinSize(const uint64_t& _minSize);
@@ -193,15 +209,15 @@ namespace TencentCloud
                     bool MinSizeHasBeenSet() const;
 
                     /**
-                     * 获取项目ID
-                     * @return ProjectId 项目ID
+                     * 获取项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 ProjectId 字段来获取。默认值为 0，表示使用默认项目。
+                     * @return ProjectId 项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 ProjectId 字段来获取。默认值为 0，表示使用默认项目。
                      * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
-                     * 设置项目ID
-                     * @param _projectId 项目ID
+                     * 设置项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 ProjectId 字段来获取。默认值为 0，表示使用默认项目。
+                     * @param _projectId 项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 ProjectId 字段来获取。默认值为 0，表示使用默认项目。
                      * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
@@ -214,15 +230,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取子网ID列表
-                     * @return SubnetIds 子网ID列表
+                     * 获取子网ID列表。有效的私有网络子网ID可通过登录[控制台](https://console.cloud.tencent.com/vpc/subnet)查询；也可以调用接口 [DescribeSubnets](https://cloud.tencent.com/document/product/215/15784) ，从接口返回中的SubnetId字段获取。
+                     * @return SubnetIds 子网ID列表。有效的私有网络子网ID可通过登录[控制台](https://console.cloud.tencent.com/vpc/subnet)查询；也可以调用接口 [DescribeSubnets](https://cloud.tencent.com/document/product/215/15784) ，从接口返回中的SubnetId字段获取。
                      * 
                      */
                     std::vector<std::string> GetSubnetIds() const;
 
                     /**
-                     * 设置子网ID列表
-                     * @param _subnetIds 子网ID列表
+                     * 设置子网ID列表。有效的私有网络子网ID可通过登录[控制台](https://console.cloud.tencent.com/vpc/subnet)查询；也可以调用接口 [DescribeSubnets](https://cloud.tencent.com/document/product/215/15784) ，从接口返回中的SubnetId字段获取。
+                     * @param _subnetIds 子网ID列表。有效的私有网络子网ID可通过登录[控制台](https://console.cloud.tencent.com/vpc/subnet)查询；也可以调用接口 [DescribeSubnets](https://cloud.tencent.com/document/product/215/15784) ，从接口返回中的SubnetId字段获取。
                      * 
                      */
                     void SetSubnetIds(const std::vector<std::string>& _subnetIds);
@@ -264,15 +280,15 @@ namespace TencentCloud
                     bool TerminationPoliciesHasBeenSet() const;
 
                     /**
-                     * 获取VPC ID，基础网络则填空字符串。修改为具体VPC ID时，需指定相应的SubnetIds；修改为基础网络时，需指定相应的Zones。
-                     * @return VpcId VPC ID，基础网络则填空字符串。修改为具体VPC ID时，需指定相应的SubnetIds；修改为基础网络时，需指定相应的Zones。
+                     * 获取私有网络ID。修改私有网络时，需将 SubnetIds 参数同步修改为该私有网络的子网。有效的 VpcId 可通过登录[控制台](https://console.cloud.tencent.com/vpc/vpc)查询；也可以调用接口 [DescribeVpc](https://cloud.tencent.com/document/api/215/15778) ，从接口返回中的 VpcId 字段获取。
+                     * @return VpcId 私有网络ID。修改私有网络时，需将 SubnetIds 参数同步修改为该私有网络的子网。有效的 VpcId 可通过登录[控制台](https://console.cloud.tencent.com/vpc/vpc)查询；也可以调用接口 [DescribeVpc](https://cloud.tencent.com/document/api/215/15778) ，从接口返回中的 VpcId 字段获取。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置VPC ID，基础网络则填空字符串。修改为具体VPC ID时，需指定相应的SubnetIds；修改为基础网络时，需指定相应的Zones。
-                     * @param _vpcId VPC ID，基础网络则填空字符串。修改为具体VPC ID时，需指定相应的SubnetIds；修改为基础网络时，需指定相应的Zones。
+                     * 设置私有网络ID。修改私有网络时，需将 SubnetIds 参数同步修改为该私有网络的子网。有效的 VpcId 可通过登录[控制台](https://console.cloud.tencent.com/vpc/vpc)查询；也可以调用接口 [DescribeVpc](https://cloud.tencent.com/document/api/215/15778) ，从接口返回中的 VpcId 字段获取。
+                     * @param _vpcId 私有网络ID。修改私有网络时，需将 SubnetIds 参数同步修改为该私有网络的子网。有效的 VpcId 可通过登录[控制台](https://console.cloud.tencent.com/vpc/vpc)查询；也可以调用接口 [DescribeVpc](https://cloud.tencent.com/document/api/215/15778) ，从接口返回中的 VpcId 字段获取。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -401,15 +417,15 @@ namespace TencentCloud
                     bool ServiceSettingsHasBeenSet() const;
 
                     /**
-                     * 获取实例具有IPv6地址数量的配置，取值包括0、1。
-                     * @return Ipv6AddressCount 实例具有IPv6地址数量的配置，取值包括0、1。
+                     * 获取实例具有IPv6地址数量的配置，取值包括0、1。默认值为 0，表示实例不分配 IPv6 地址。需使用支持 IPv6 的私有网络，需在子网中开启 IPv6 CIDR，其他使用限制可参考 [IPv6使用限制](https://cloud.tencent.com/document/product/1142/38369)。
+                     * @return Ipv6AddressCount 实例具有IPv6地址数量的配置，取值包括0、1。默认值为 0，表示实例不分配 IPv6 地址。需使用支持 IPv6 的私有网络，需在子网中开启 IPv6 CIDR，其他使用限制可参考 [IPv6使用限制](https://cloud.tencent.com/document/product/1142/38369)。
                      * 
                      */
                     int64_t GetIpv6AddressCount() const;
 
                     /**
-                     * 设置实例具有IPv6地址数量的配置，取值包括0、1。
-                     * @param _ipv6AddressCount 实例具有IPv6地址数量的配置，取值包括0、1。
+                     * 设置实例具有IPv6地址数量的配置，取值包括0、1。默认值为 0，表示实例不分配 IPv6 地址。需使用支持 IPv6 的私有网络，需在子网中开启 IPv6 CIDR，其他使用限制可参考 [IPv6使用限制](https://cloud.tencent.com/document/product/1142/38369)。
+                     * @param _ipv6AddressCount 实例具有IPv6地址数量的配置，取值包括0、1。默认值为 0，表示实例不分配 IPv6 地址。需使用支持 IPv6 的私有网络，需在子网中开启 IPv6 CIDR，其他使用限制可参考 [IPv6使用限制](https://cloud.tencent.com/document/product/1142/38369)。
                      * 
                      */
                     void SetIpv6AddressCount(const int64_t& _ipv6AddressCount);
@@ -627,7 +643,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 伸缩组ID
+                     * 伸缩组ID。可以通过如下方式获取可用的伸缩组ID:
+<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 查询伸缩组ID。</li>
+<li>通过调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li>
                      */
                     std::string m_autoScalingGroupId;
                     bool m_autoScalingGroupIdHasBeenSet;
@@ -639,43 +657,45 @@ namespace TencentCloud
                     bool m_autoScalingGroupNameHasBeenSet;
 
                     /**
-                     * 默认冷却时间，单位秒，默认值为300
+                     * 默认冷却时间，单位秒，取值范围 [0,3600]，默认值为300。
                      */
                     uint64_t m_defaultCooldown;
                     bool m_defaultCooldownHasBeenSet;
 
                     /**
-                     * 期望实例数，大小介于最小实例数和最大实例数之间
+                     * 期望实例数，取值范围 [0,2000]。需满足最大值大于等于期望值，期望值大于等于最小值。
                      */
                     uint64_t m_desiredCapacity;
                     bool m_desiredCapacityHasBeenSet;
 
                     /**
-                     * 启动配置ID
+                     * 启动配置ID。可以通过如下方式获取可用的启动配置ID:
+<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/config) 查询启动配置ID。</li>
+<li>通过调用接口 [DescribeLaunchConfigurations](https://cloud.tencent.com/document/api/377/20445) ，取返回信息中的 LaunchConfigurationId 获取启动配置ID。</li>
                      */
                     std::string m_launchConfigurationId;
                     bool m_launchConfigurationIdHasBeenSet;
 
                     /**
-                     * 最大实例数，取值范围为0-2000。
+                     * 最大实例数，取值范围为 [0,2000]。需满足最大值大于等于期望值，期望值大于等于最小值。
                      */
                     uint64_t m_maxSize;
                     bool m_maxSizeHasBeenSet;
 
                     /**
-                     * 最小实例数，取值范围为0-2000。
+                     * 最小实例数，取值范围为 [0,2000]。需满足最大值大于等于期望值，期望值大于等于最小值。
                      */
                     uint64_t m_minSize;
                     bool m_minSizeHasBeenSet;
 
                     /**
-                     * 项目ID
+                     * 项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 ProjectId 字段来获取。默认值为 0，表示使用默认项目。
                      */
                     uint64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 子网ID列表
+                     * 子网ID列表。有效的私有网络子网ID可通过登录[控制台](https://console.cloud.tencent.com/vpc/subnet)查询；也可以调用接口 [DescribeSubnets](https://cloud.tencent.com/document/product/215/15784) ，从接口返回中的SubnetId字段获取。
                      */
                     std::vector<std::string> m_subnetIds;
                     bool m_subnetIdsHasBeenSet;
@@ -689,7 +709,7 @@ namespace TencentCloud
                     bool m_terminationPoliciesHasBeenSet;
 
                     /**
-                     * VPC ID，基础网络则填空字符串。修改为具体VPC ID时，需指定相应的SubnetIds；修改为基础网络时，需指定相应的Zones。
+                     * 私有网络ID。修改私有网络时，需将 SubnetIds 参数同步修改为该私有网络的子网。有效的 VpcId 可通过登录[控制台](https://console.cloud.tencent.com/vpc/vpc)查询；也可以调用接口 [DescribeVpc](https://cloud.tencent.com/document/api/215/15778) ，从接口返回中的 VpcId 字段获取。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
@@ -727,7 +747,7 @@ namespace TencentCloud
                     bool m_serviceSettingsHasBeenSet;
 
                     /**
-                     * 实例具有IPv6地址数量的配置，取值包括0、1。
+                     * 实例具有IPv6地址数量的配置，取值包括0、1。默认值为 0，表示实例不分配 IPv6 地址。需使用支持 IPv6 的私有网络，需在子网中开启 IPv6 CIDR，其他使用限制可参考 [IPv6使用限制](https://cloud.tencent.com/document/product/1142/38369)。
                      */
                     int64_t m_ipv6AddressCount;
                     bool m_ipv6AddressCountHasBeenSet;

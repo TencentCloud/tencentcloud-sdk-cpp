@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,12 @@ InstanceApiOpsRequest::InstanceApiOpsRequest() :
     m_tenantIdHasBeenSet(false),
     m_dataTimeCycleHasBeenSet(false),
     m_executorGroupIdListHasBeenSet(false),
-    m_onlyRerunHasBeenSet(false)
+    m_onlyRerunHasBeenSet(false),
+    m_scheduleTimeZoneHasBeenSet(false),
+    m_scheduleTimeFromHasBeenSet(false),
+    m_scheduleTimeToHasBeenSet(false),
+    m_runPriorityListHasBeenSet(false),
+    m_instanceCycleTypeHasBeenSet(false)
 {
 }
 
@@ -431,6 +436,62 @@ CoreInternalOutcome InstanceApiOpsRequest::Deserialize(const rapidjson::Value &v
         m_onlyRerunHasBeenSet = true;
     }
 
+    if (value.HasMember("ScheduleTimeZone") && !value["ScheduleTimeZone"].IsNull())
+    {
+        if (!value["ScheduleTimeZone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceApiOpsRequest.ScheduleTimeZone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scheduleTimeZone = string(value["ScheduleTimeZone"].GetString());
+        m_scheduleTimeZoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("ScheduleTimeFrom") && !value["ScheduleTimeFrom"].IsNull())
+    {
+        if (!value["ScheduleTimeFrom"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceApiOpsRequest.ScheduleTimeFrom` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scheduleTimeFrom = string(value["ScheduleTimeFrom"].GetString());
+        m_scheduleTimeFromHasBeenSet = true;
+    }
+
+    if (value.HasMember("ScheduleTimeTo") && !value["ScheduleTimeTo"].IsNull())
+    {
+        if (!value["ScheduleTimeTo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceApiOpsRequest.ScheduleTimeTo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scheduleTimeTo = string(value["ScheduleTimeTo"].GetString());
+        m_scheduleTimeToHasBeenSet = true;
+    }
+
+    if (value.HasMember("RunPriorityList") && !value["RunPriorityList"].IsNull())
+    {
+        if (!value["RunPriorityList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceApiOpsRequest.RunPriorityList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RunPriorityList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_runPriorityList.push_back((*itr).GetInt64());
+        }
+        m_runPriorityListHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceCycleType") && !value["InstanceCycleType"].IsNull())
+    {
+        if (!value["InstanceCycleType"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceApiOpsRequest.InstanceCycleType` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["InstanceCycleType"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_instanceCycleType.push_back((*itr).GetString());
+        }
+        m_instanceCycleTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -755,6 +816,56 @@ void InstanceApiOpsRequest::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "OnlyRerun";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_onlyRerun, allocator);
+    }
+
+    if (m_scheduleTimeZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleTimeZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scheduleTimeZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scheduleTimeFromHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleTimeFrom";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scheduleTimeFrom.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scheduleTimeToHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleTimeTo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scheduleTimeTo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_runPriorityListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunPriorityList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_runPriorityList.begin(); itr != m_runPriorityList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_instanceCycleTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceCycleType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_instanceCycleType.begin(); itr != m_instanceCycleType.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -1270,5 +1381,85 @@ void InstanceApiOpsRequest::SetOnlyRerun(const bool& _onlyRerun)
 bool InstanceApiOpsRequest::OnlyRerunHasBeenSet() const
 {
     return m_onlyRerunHasBeenSet;
+}
+
+string InstanceApiOpsRequest::GetScheduleTimeZone() const
+{
+    return m_scheduleTimeZone;
+}
+
+void InstanceApiOpsRequest::SetScheduleTimeZone(const string& _scheduleTimeZone)
+{
+    m_scheduleTimeZone = _scheduleTimeZone;
+    m_scheduleTimeZoneHasBeenSet = true;
+}
+
+bool InstanceApiOpsRequest::ScheduleTimeZoneHasBeenSet() const
+{
+    return m_scheduleTimeZoneHasBeenSet;
+}
+
+string InstanceApiOpsRequest::GetScheduleTimeFrom() const
+{
+    return m_scheduleTimeFrom;
+}
+
+void InstanceApiOpsRequest::SetScheduleTimeFrom(const string& _scheduleTimeFrom)
+{
+    m_scheduleTimeFrom = _scheduleTimeFrom;
+    m_scheduleTimeFromHasBeenSet = true;
+}
+
+bool InstanceApiOpsRequest::ScheduleTimeFromHasBeenSet() const
+{
+    return m_scheduleTimeFromHasBeenSet;
+}
+
+string InstanceApiOpsRequest::GetScheduleTimeTo() const
+{
+    return m_scheduleTimeTo;
+}
+
+void InstanceApiOpsRequest::SetScheduleTimeTo(const string& _scheduleTimeTo)
+{
+    m_scheduleTimeTo = _scheduleTimeTo;
+    m_scheduleTimeToHasBeenSet = true;
+}
+
+bool InstanceApiOpsRequest::ScheduleTimeToHasBeenSet() const
+{
+    return m_scheduleTimeToHasBeenSet;
+}
+
+vector<int64_t> InstanceApiOpsRequest::GetRunPriorityList() const
+{
+    return m_runPriorityList;
+}
+
+void InstanceApiOpsRequest::SetRunPriorityList(const vector<int64_t>& _runPriorityList)
+{
+    m_runPriorityList = _runPriorityList;
+    m_runPriorityListHasBeenSet = true;
+}
+
+bool InstanceApiOpsRequest::RunPriorityListHasBeenSet() const
+{
+    return m_runPriorityListHasBeenSet;
+}
+
+vector<string> InstanceApiOpsRequest::GetInstanceCycleType() const
+{
+    return m_instanceCycleType;
+}
+
+void InstanceApiOpsRequest::SetInstanceCycleType(const vector<string>& _instanceCycleType)
+{
+    m_instanceCycleType = _instanceCycleType;
+    m_instanceCycleTypeHasBeenSet = true;
+}
+
+bool InstanceApiOpsRequest::InstanceCycleTypeHasBeenSet() const
+{
+    return m_instanceCycleTypeHasBeenSet;
 }
 

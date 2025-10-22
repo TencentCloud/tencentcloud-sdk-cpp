@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取扫描任务结果项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 扫描任务结果项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DspaCOSDiscoveryTaskResult> GetItems() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取符合条件的数据结果数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 符合条件的数据结果数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -76,21 +72,39 @@ namespace TencentCloud
                      */
                     bool TotalCountHasBeenSet() const;
 
+                    /**
+                     * 获取最大展示扫描结果次数
+                     * @return MaxCount 最大展示扫描结果次数
+                     * 
+                     */
+                    int64_t GetMaxCount() const;
+
+                    /**
+                     * 判断参数 MaxCount 是否已赋值
+                     * @return MaxCount 是否已赋值
+                     * 
+                     */
+                    bool MaxCountHasBeenSet() const;
+
                 private:
 
                     /**
                      * 扫描任务结果项
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DspaCOSDiscoveryTaskResult> m_items;
                     bool m_itemsHasBeenSet;
 
                     /**
                      * 符合条件的数据结果数目
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
+
+                    /**
+                     * 最大展示扫描结果次数
+                     */
+                    int64_t m_maxCount;
+                    bool m_maxCountHasBeenSet;
 
                 };
             }

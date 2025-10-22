@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取心率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HeartRate 心率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EcgItem GetHeartRate() const;
 
                     /**
                      * 设置心率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _heartRate 心率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHeartRate(const EcgItem& _heartRate);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取心房率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuricularRate 心房率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EcgItem GetAuricularRate() const;
 
                     /**
                      * 设置心房率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _auricularRate 心房率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuricularRate(const EcgItem& _auricularRate);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取心室率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VentricularRate 心室率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EcgItem GetVentricularRate() const;
 
                     /**
                      * 设置心室率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ventricularRate 心室率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVentricularRate(const EcgItem& _ventricularRate);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节律
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rhythm 节律
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EcgItem GetRhythm() const;
 
                     /**
                      * 设置节律
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rhythm 节律
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRhythm(const EcgItem& _rhythm);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取P波时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PDuration P波时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EcgItem GetPDuration() const;
 
                     /**
                      * 设置P波时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pDuration P波时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPDuration(const EcgItem& _pDuration);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取QRS时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QrsDuration QRS时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EcgItem GetQrsDuration() const;
 
                     /**
                      * 设置QRS时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _qrsDuration QRS时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQrsDuration(const EcgItem& _qrsDuration);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取QRS电轴
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QrsAxis QRS电轴
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EcgItem GetQrsAxis() const;
 
                     /**
                      * 设置QRS电轴
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _qrsAxis QRS电轴
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQrsAxis(const EcgItem& _qrsAxis);
@@ -224,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取P-R间期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PRInterval P-R间期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EcgItem GetPRInterval() const;
 
                     /**
                      * 设置P-R间期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pRInterval P-R间期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPRInterval(const EcgItem& _pRInterval);
@@ -249,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取P-P间期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PPInterval P-P间期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EcgItem GetPPInterval() const;
 
                     /**
                      * 设置P-P间期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pPInterval P-P间期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPPInterval(const EcgItem& _pPInterval);
@@ -274,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取R-R间期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RRInterval R-R间期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EcgItem GetRRInterval() const;
 
                     /**
                      * 设置R-R间期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rRInterval R-R间期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRRInterval(const EcgItem& _rRInterval);
@@ -299,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取P-J间期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PJInterval P-J间期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EcgItem GetPJInterval() const;
 
                     /**
                      * 设置P-J间期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pJInterval P-J间期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPJInterval(const EcgItem& _pJInterval);
@@ -324,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Q-T间期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QTInterval Q-T间期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EcgItem GetQTInterval() const;
 
                     /**
                      * 设置Q-T间期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _qTInterval Q-T间期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQTInterval(const EcgItem& _qTInterval);
@@ -349,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取qt/qtc间期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QTCInterval qt/qtc间期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EcgItem GetQTCInterval() const;
 
                     /**
                      * 设置qt/qtc间期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _qTCInterval qt/qtc间期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQTCInterval(const EcgItem& _qTCInterval);
@@ -374,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取RV5/SV1振幅
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rv5SV1Amplitude RV5/SV1振幅
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EcgItem GetRv5SV1Amplitude() const;
 
                     /**
                      * 设置RV5/SV1振幅
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rv5SV1Amplitude RV5/SV1振幅
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRv5SV1Amplitude(const EcgItem& _rv5SV1Amplitude);
@@ -399,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取RV5+SV1振幅
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rv5AddSV1Amplitude RV5+SV1振幅
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EcgItem GetRv5AddSV1Amplitude() const;
 
                     /**
                      * 设置RV5+SV1振幅
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rv5AddSV1Amplitude RV5+SV1振幅
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRv5AddSV1Amplitude(const EcgItem& _rv5AddSV1Amplitude);
@@ -424,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取PRT电轴
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PRTAxis PRT电轴
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EcgItem GetPRTAxis() const;
 
                     /**
                      * 设置PRT电轴
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pRTAxis PRT电轴
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPRTAxis(const EcgItem& _pRTAxis);
@@ -449,18 +385,14 @@ namespace TencentCloud
 
                     /**
                      * 获取RV5振幅
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rv5Amplitude RV5振幅
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EcgItem GetRv5Amplitude() const;
 
                     /**
                      * 设置RV5振幅
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rv5Amplitude RV5振幅
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRv5Amplitude(const EcgItem& _rv5Amplitude);
@@ -474,18 +406,14 @@ namespace TencentCloud
 
                     /**
                      * 获取SV1振幅
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SV1Amplitude SV1振幅
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EcgItem GetSV1Amplitude() const;
 
                     /**
                      * 设置SV1振幅
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sV1Amplitude SV1振幅
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSV1Amplitude(const EcgItem& _sV1Amplitude);
@@ -499,18 +427,14 @@ namespace TencentCloud
 
                     /**
                      * 获取RV6/SV2
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RV6SV2 RV6/SV2
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EcgItem GetRV6SV2() const;
 
                     /**
                      * 设置RV6/SV2
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rV6SV2 RV6/SV2
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRV6SV2(const EcgItem& _rV6SV2);
@@ -524,18 +448,14 @@ namespace TencentCloud
 
                     /**
                      * 获取P/QRS/T电轴
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PQRSTAxis P/QRS/T电轴
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EcgItem GetPQRSTAxis() const;
 
                     /**
                      * 设置P/QRS/T电轴
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pQRSTAxis P/QRS/T电轴
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPQRSTAxis(const EcgItem& _pQRSTAxis);
@@ -551,140 +471,120 @@ namespace TencentCloud
 
                     /**
                      * 心率
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EcgItem m_heartRate;
                     bool m_heartRateHasBeenSet;
 
                     /**
                      * 心房率
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EcgItem m_auricularRate;
                     bool m_auricularRateHasBeenSet;
 
                     /**
                      * 心室率
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EcgItem m_ventricularRate;
                     bool m_ventricularRateHasBeenSet;
 
                     /**
                      * 节律
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EcgItem m_rhythm;
                     bool m_rhythmHasBeenSet;
 
                     /**
                      * P波时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EcgItem m_pDuration;
                     bool m_pDurationHasBeenSet;
 
                     /**
                      * QRS时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EcgItem m_qrsDuration;
                     bool m_qrsDurationHasBeenSet;
 
                     /**
                      * QRS电轴
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EcgItem m_qrsAxis;
                     bool m_qrsAxisHasBeenSet;
 
                     /**
                      * P-R间期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EcgItem m_pRInterval;
                     bool m_pRIntervalHasBeenSet;
 
                     /**
                      * P-P间期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EcgItem m_pPInterval;
                     bool m_pPIntervalHasBeenSet;
 
                     /**
                      * R-R间期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EcgItem m_rRInterval;
                     bool m_rRIntervalHasBeenSet;
 
                     /**
                      * P-J间期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EcgItem m_pJInterval;
                     bool m_pJIntervalHasBeenSet;
 
                     /**
                      * Q-T间期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EcgItem m_qTInterval;
                     bool m_qTIntervalHasBeenSet;
 
                     /**
                      * qt/qtc间期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EcgItem m_qTCInterval;
                     bool m_qTCIntervalHasBeenSet;
 
                     /**
                      * RV5/SV1振幅
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EcgItem m_rv5SV1Amplitude;
                     bool m_rv5SV1AmplitudeHasBeenSet;
 
                     /**
                      * RV5+SV1振幅
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EcgItem m_rv5AddSV1Amplitude;
                     bool m_rv5AddSV1AmplitudeHasBeenSet;
 
                     /**
                      * PRT电轴
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EcgItem m_pRTAxis;
                     bool m_pRTAxisHasBeenSet;
 
                     /**
                      * RV5振幅
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EcgItem m_rv5Amplitude;
                     bool m_rv5AmplitudeHasBeenSet;
 
                     /**
                      * SV1振幅
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EcgItem m_sV1Amplitude;
                     bool m_sV1AmplitudeHasBeenSet;
 
                     /**
                      * RV6/SV2
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EcgItem m_rV6SV2;
                     bool m_rV6SV2HasBeenSet;
 
                     /**
                      * P/QRS/T电轴
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EcgItem m_pQRSTAxis;
                     bool m_pQRSTAxisHasBeenSet;

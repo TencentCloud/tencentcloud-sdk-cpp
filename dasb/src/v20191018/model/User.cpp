@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ User::User() :
     m_departmentIdHasBeenSet(false),
     m_activeStatusHasBeenSet(false),
     m_lockStatusHasBeenSet(false),
+    m_uKeyStatusHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_aclVersionHasBeenSet(false)
 {
@@ -202,6 +203,16 @@ CoreInternalOutcome User::Deserialize(const rapidjson::Value &value)
         m_lockStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("UKeyStatus") && !value["UKeyStatus"].IsNull())
+    {
+        if (!value["UKeyStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `User.UKeyStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_uKeyStatus = value["UKeyStatus"].GetInt64();
+        m_uKeyStatusHasBeenSet = true;
+    }
+
     if (value.HasMember("Status") && !value["Status"].IsNull())
     {
         if (!value["Status"].IsString())
@@ -347,6 +358,14 @@ void User::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "LockStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lockStatus, allocator);
+    }
+
+    if (m_uKeyStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UKeyStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_uKeyStatus, allocator);
     }
 
     if (m_statusHasBeenSet)
@@ -590,6 +609,22 @@ void User::SetLockStatus(const uint64_t& _lockStatus)
 bool User::LockStatusHasBeenSet() const
 {
     return m_lockStatusHasBeenSet;
+}
+
+int64_t User::GetUKeyStatus() const
+{
+    return m_uKeyStatus;
+}
+
+void User::SetUKeyStatus(const int64_t& _uKeyStatus)
+{
+    m_uKeyStatus = _uKeyStatus;
+    m_uKeyStatusHasBeenSet = true;
+}
+
+bool User::UKeyStatusHasBeenSet() const
+{
+    return m_uKeyStatusHasBeenSet;
 }
 
 string User::GetStatus() const

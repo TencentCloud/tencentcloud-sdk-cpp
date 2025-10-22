@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,8 @@ CreateJobRequest::CreateJobRequest() :
     m_flinkVersionHasBeenSet(false),
     m_workSpaceIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_openJobDefaultAlarmHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,14 @@ string CreateJobRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_openJobDefaultAlarmHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OpenJobDefaultAlarm";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_openJobDefaultAlarm, allocator);
     }
 
 
@@ -321,6 +330,22 @@ void CreateJobRequest::SetDescription(const string& _description)
 bool CreateJobRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+int64_t CreateJobRequest::GetOpenJobDefaultAlarm() const
+{
+    return m_openJobDefaultAlarm;
+}
+
+void CreateJobRequest::SetOpenJobDefaultAlarm(const int64_t& _openJobDefaultAlarm)
+{
+    m_openJobDefaultAlarm = _openJobDefaultAlarm;
+    m_openJobDefaultAlarmHasBeenSet = true;
+}
+
+bool CreateJobRequest::OpenJobDefaultAlarmHasBeenSet() const
+{
+    return m_openJobDefaultAlarmHasBeenSet;
 }
 
 

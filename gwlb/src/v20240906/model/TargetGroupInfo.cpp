@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,15 @@ TargetGroupInfo::TargetGroupInfo() :
     m_healthCheckHasBeenSet(false),
     m_allDeadToAliveHasBeenSet(false),
     m_associatedRuleCountHasBeenSet(false),
-    m_registeredInstancesCountHasBeenSet(false)
+    m_registeredInstancesCountHasBeenSet(false),
+    m_tagHasBeenSet(false),
+    m_forwardingModeHasBeenSet(false),
+    m_tcpIdleConnectTimeoutHasBeenSet(false),
+    m_othersIdleConnectTimeoutHasBeenSet(false),
+    m_rescheduleUnbindRsHasBeenSet(false),
+    m_rescheduleUnbindRsStartTimeHasBeenSet(false),
+    m_rescheduleUnhealthyHasBeenSet(false),
+    m_rescheduleUnhealthyStartTimeHasBeenSet(false)
 {
 }
 
@@ -189,6 +197,96 @@ CoreInternalOutcome TargetGroupInfo::Deserialize(const rapidjson::Value &value)
         m_registeredInstancesCountHasBeenSet = true;
     }
 
+    if (value.HasMember("Tag") && !value["Tag"].IsNull())
+    {
+        if (!value["Tag"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.Tag` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tag"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TagInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tag.push_back(item);
+        }
+        m_tagHasBeenSet = true;
+    }
+
+    if (value.HasMember("ForwardingMode") && !value["ForwardingMode"].IsNull())
+    {
+        if (!value["ForwardingMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.ForwardingMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_forwardingMode = string(value["ForwardingMode"].GetString());
+        m_forwardingModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TcpIdleConnectTimeout") && !value["TcpIdleConnectTimeout"].IsNull())
+    {
+        if (!value["TcpIdleConnectTimeout"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.TcpIdleConnectTimeout` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tcpIdleConnectTimeout = value["TcpIdleConnectTimeout"].GetInt64();
+        m_tcpIdleConnectTimeoutHasBeenSet = true;
+    }
+
+    if (value.HasMember("OthersIdleConnectTimeout") && !value["OthersIdleConnectTimeout"].IsNull())
+    {
+        if (!value["OthersIdleConnectTimeout"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.OthersIdleConnectTimeout` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_othersIdleConnectTimeout = value["OthersIdleConnectTimeout"].GetInt64();
+        m_othersIdleConnectTimeoutHasBeenSet = true;
+    }
+
+    if (value.HasMember("RescheduleUnbindRs") && !value["RescheduleUnbindRs"].IsNull())
+    {
+        if (!value["RescheduleUnbindRs"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.RescheduleUnbindRs` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_rescheduleUnbindRs = value["RescheduleUnbindRs"].GetBool();
+        m_rescheduleUnbindRsHasBeenSet = true;
+    }
+
+    if (value.HasMember("RescheduleUnbindRsStartTime") && !value["RescheduleUnbindRsStartTime"].IsNull())
+    {
+        if (!value["RescheduleUnbindRsStartTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.RescheduleUnbindRsStartTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_rescheduleUnbindRsStartTime = value["RescheduleUnbindRsStartTime"].GetInt64();
+        m_rescheduleUnbindRsStartTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RescheduleUnhealthy") && !value["RescheduleUnhealthy"].IsNull())
+    {
+        if (!value["RescheduleUnhealthy"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.RescheduleUnhealthy` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_rescheduleUnhealthy = value["RescheduleUnhealthy"].GetBool();
+        m_rescheduleUnhealthyHasBeenSet = true;
+    }
+
+    if (value.HasMember("RescheduleUnhealthyStartTime") && !value["RescheduleUnhealthyStartTime"].IsNull())
+    {
+        if (!value["RescheduleUnhealthyStartTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.RescheduleUnhealthyStartTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_rescheduleUnhealthyStartTime = value["RescheduleUnhealthyStartTime"].GetInt64();
+        m_rescheduleUnhealthyStartTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -306,6 +404,77 @@ void TargetGroupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "RegisteredInstancesCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_registeredInstancesCount, allocator);
+    }
+
+    if (m_tagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tag.begin(); itr != m_tag.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_forwardingModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForwardingMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_forwardingMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tcpIdleConnectTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TcpIdleConnectTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tcpIdleConnectTimeout, allocator);
+    }
+
+    if (m_othersIdleConnectTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OthersIdleConnectTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_othersIdleConnectTimeout, allocator);
+    }
+
+    if (m_rescheduleUnbindRsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RescheduleUnbindRs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rescheduleUnbindRs, allocator);
+    }
+
+    if (m_rescheduleUnbindRsStartTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RescheduleUnbindRsStartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rescheduleUnbindRsStartTime, allocator);
+    }
+
+    if (m_rescheduleUnhealthyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RescheduleUnhealthy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rescheduleUnhealthy, allocator);
+    }
+
+    if (m_rescheduleUnhealthyStartTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RescheduleUnhealthyStartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rescheduleUnhealthyStartTime, allocator);
     }
 
 }
@@ -517,5 +686,133 @@ void TargetGroupInfo::SetRegisteredInstancesCount(const int64_t& _registeredInst
 bool TargetGroupInfo::RegisteredInstancesCountHasBeenSet() const
 {
     return m_registeredInstancesCountHasBeenSet;
+}
+
+vector<TagInfo> TargetGroupInfo::GetTag() const
+{
+    return m_tag;
+}
+
+void TargetGroupInfo::SetTag(const vector<TagInfo>& _tag)
+{
+    m_tag = _tag;
+    m_tagHasBeenSet = true;
+}
+
+bool TargetGroupInfo::TagHasBeenSet() const
+{
+    return m_tagHasBeenSet;
+}
+
+string TargetGroupInfo::GetForwardingMode() const
+{
+    return m_forwardingMode;
+}
+
+void TargetGroupInfo::SetForwardingMode(const string& _forwardingMode)
+{
+    m_forwardingMode = _forwardingMode;
+    m_forwardingModeHasBeenSet = true;
+}
+
+bool TargetGroupInfo::ForwardingModeHasBeenSet() const
+{
+    return m_forwardingModeHasBeenSet;
+}
+
+int64_t TargetGroupInfo::GetTcpIdleConnectTimeout() const
+{
+    return m_tcpIdleConnectTimeout;
+}
+
+void TargetGroupInfo::SetTcpIdleConnectTimeout(const int64_t& _tcpIdleConnectTimeout)
+{
+    m_tcpIdleConnectTimeout = _tcpIdleConnectTimeout;
+    m_tcpIdleConnectTimeoutHasBeenSet = true;
+}
+
+bool TargetGroupInfo::TcpIdleConnectTimeoutHasBeenSet() const
+{
+    return m_tcpIdleConnectTimeoutHasBeenSet;
+}
+
+int64_t TargetGroupInfo::GetOthersIdleConnectTimeout() const
+{
+    return m_othersIdleConnectTimeout;
+}
+
+void TargetGroupInfo::SetOthersIdleConnectTimeout(const int64_t& _othersIdleConnectTimeout)
+{
+    m_othersIdleConnectTimeout = _othersIdleConnectTimeout;
+    m_othersIdleConnectTimeoutHasBeenSet = true;
+}
+
+bool TargetGroupInfo::OthersIdleConnectTimeoutHasBeenSet() const
+{
+    return m_othersIdleConnectTimeoutHasBeenSet;
+}
+
+bool TargetGroupInfo::GetRescheduleUnbindRs() const
+{
+    return m_rescheduleUnbindRs;
+}
+
+void TargetGroupInfo::SetRescheduleUnbindRs(const bool& _rescheduleUnbindRs)
+{
+    m_rescheduleUnbindRs = _rescheduleUnbindRs;
+    m_rescheduleUnbindRsHasBeenSet = true;
+}
+
+bool TargetGroupInfo::RescheduleUnbindRsHasBeenSet() const
+{
+    return m_rescheduleUnbindRsHasBeenSet;
+}
+
+int64_t TargetGroupInfo::GetRescheduleUnbindRsStartTime() const
+{
+    return m_rescheduleUnbindRsStartTime;
+}
+
+void TargetGroupInfo::SetRescheduleUnbindRsStartTime(const int64_t& _rescheduleUnbindRsStartTime)
+{
+    m_rescheduleUnbindRsStartTime = _rescheduleUnbindRsStartTime;
+    m_rescheduleUnbindRsStartTimeHasBeenSet = true;
+}
+
+bool TargetGroupInfo::RescheduleUnbindRsStartTimeHasBeenSet() const
+{
+    return m_rescheduleUnbindRsStartTimeHasBeenSet;
+}
+
+bool TargetGroupInfo::GetRescheduleUnhealthy() const
+{
+    return m_rescheduleUnhealthy;
+}
+
+void TargetGroupInfo::SetRescheduleUnhealthy(const bool& _rescheduleUnhealthy)
+{
+    m_rescheduleUnhealthy = _rescheduleUnhealthy;
+    m_rescheduleUnhealthyHasBeenSet = true;
+}
+
+bool TargetGroupInfo::RescheduleUnhealthyHasBeenSet() const
+{
+    return m_rescheduleUnhealthyHasBeenSet;
+}
+
+int64_t TargetGroupInfo::GetRescheduleUnhealthyStartTime() const
+{
+    return m_rescheduleUnhealthyStartTime;
+}
+
+void TargetGroupInfo::SetRescheduleUnhealthyStartTime(const int64_t& _rescheduleUnhealthyStartTime)
+{
+    m_rescheduleUnhealthyStartTime = _rescheduleUnhealthyStartTime;
+    m_rescheduleUnhealthyStartTimeHasBeenSet = true;
+}
+
+bool TargetGroupInfo::RescheduleUnhealthyStartTimeHasBeenSet() const
+{
+    return m_rescheduleUnhealthyStartTimeHasBeenSet;
 }
 

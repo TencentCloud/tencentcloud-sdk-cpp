@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,8 +45,6 @@
 #include <tencentcloud/tiia/v20190529/model/DetectEnvelopeResponse.h>
 #include <tencentcloud/tiia/v20190529/model/DetectLabelRequest.h>
 #include <tencentcloud/tiia/v20190529/model/DetectLabelResponse.h>
-#include <tencentcloud/tiia/v20190529/model/DetectLabelBetaRequest.h>
-#include <tencentcloud/tiia/v20190529/model/DetectLabelBetaResponse.h>
 #include <tencentcloud/tiia/v20190529/model/DetectLabelProRequest.h>
 #include <tencentcloud/tiia/v20190529/model/DetectLabelProResponse.h>
 #include <tencentcloud/tiia/v20190529/model/DetectMisbehaviorRequest.h>
@@ -114,9 +112,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DetectLabelResponse> DetectLabelOutcome;
                 typedef std::future<DetectLabelOutcome> DetectLabelOutcomeCallable;
                 typedef std::function<void(const TiiaClient*, const Model::DetectLabelRequest&, DetectLabelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectLabelAsyncHandler;
-                typedef Outcome<Core::Error, Model::DetectLabelBetaResponse> DetectLabelBetaOutcome;
-                typedef std::future<DetectLabelBetaOutcome> DetectLabelBetaOutcomeCallable;
-                typedef std::function<void(const TiiaClient*, const Model::DetectLabelBetaRequest&, DetectLabelBetaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectLabelBetaAsyncHandler;
                 typedef Outcome<Core::Error, Model::DetectLabelProResponse> DetectLabelProOutcome;
                 typedef std::future<DetectLabelProOutcome> DetectLabelProOutcomeCallable;
                 typedef std::function<void(const TiiaClient*, const Model::DetectLabelProRequest&, DetectLabelProOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectLabelProAsyncHandler;
@@ -208,8 +203,6 @@ namespace TencentCloud
 
 >   
 - 可前往 [图像搜索](https://cloud.tencent.com/document/product/1589) 产品文档中查看更多产品信息。
-
-
                  * @param req CreateImageRequest
                  * @return CreateImageOutcome
                  */
@@ -235,7 +228,6 @@ namespace TencentCloud
 
 >   
 - 可前往 [图像搜索](https://cloud.tencent.com/document/product/1589) 产品文档中查看更多产品信息。
-
                  * @param req DeleteImagesRequest
                  * @return DeleteImagesOutcome
                  */
@@ -260,7 +252,6 @@ namespace TencentCloud
 
 >   
 - 可前往 [图像搜索](https://cloud.tencent.com/document/product/1589) 产品文档中查看更多产品信息。
-
                  * @param req DescribeImagesRequest
                  * @return DescribeImagesOutcome
                  */
@@ -276,11 +267,11 @@ namespace TencentCloud
 
 |序号 | 标签名称 | 标签值 |
 | :-----|  :----------   |:-----------------  |
-| 1 | 厨师服识别<div style="width: 70pt"> |无厨师服、有厨师服、被优选过滤|
-| 2 | 厨师服识别（酒店版）<div style="width: 70pt"> |无厨师服、有厨师服、被优选过滤|
-| 3 | 厨师帽识别<div style="width: 70pt"> |无厨师帽、有厨师帽、被优选过滤	|
-| 4 | 赤膊识别<div style="width: 70pt"> |非赤膊、赤膊、被优选过滤|
-| 5 | 口罩识别<div style="width: 70pt"> |无口罩、有口罩、口罩不确定、被优选过滤	|
+| 1 | 厨师服识别<div style="width: 70pt"/> |无厨师服、有厨师服、被优选过滤|
+| 2 | 厨师服识别（酒店版）<div style="width: 70pt"/> |无厨师服、有厨师服、被优选过滤|
+| 3 | 厨师帽识别<div style="width: 70pt"/> |无厨师帽、有厨师帽、被优选过滤	|
+| 4 | 赤膊识别<div style="width: 70pt"/> |非赤膊、赤膊、被优选过滤|
+| 5 | 口罩识别<div style="width: 70pt"/> |无口罩、有口罩、口罩不确定、被优选过滤	|
                  * @param req DetectChefDressRequest
                  * @return DetectChefDressOutcome
                  */
@@ -337,25 +328,12 @@ namespace TencentCloud
 >   
 - 可前往 [图像标签](https://cloud.tencent.com/document/product/1588) 产品文档中查看更多产品信息。
 - 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。
-
                  * @param req DetectLabelRequest
                  * @return DetectLabelOutcome
                  */
                 DetectLabelOutcome DetectLabel(const Model::DetectLabelRequest &request);
                 void DetectLabelAsync(const Model::DetectLabelRequest& request, const DetectLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DetectLabelOutcomeCallable DetectLabelCallable(const Model::DetectLabelRequest& request);
-
-                /**
-                 *图像标签测试接口
-
->     
-- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。
-                 * @param req DetectLabelBetaRequest
-                 * @return DetectLabelBetaOutcome
-                 */
-                DetectLabelBetaOutcome DetectLabelBeta(const Model::DetectLabelBetaRequest &request);
-                void DetectLabelBetaAsync(const Model::DetectLabelBetaRequest& request, const DetectLabelBetaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DetectLabelBetaOutcomeCallable DetectLabelBetaCallable(const Model::DetectLabelBetaRequest& request);
 
                 /**
                  *通用图像标签可识别数千种常见物体或场景，覆盖日常物品、场景、动物、植物、食物、饮品、交通工具等多个大类，返回主体的标签名称和所属细分类目等。
@@ -409,15 +387,15 @@ namespace TencentCloud
 
 |序号 | 标签名称 | 标签值 |
 | :-----|  :----------   |:-----------------  |
-| 1 | 安全帽识别<div style="width: 70pt"> |无安全帽、有安全帽、被优选过滤|
-| 2 | 玩手机识别<div style="width: 70pt"> |没有电话、打电话、玩手机、被优选过滤|
-| 3 | 抽烟识别<div style="width: 70pt"> |没有抽烟、抽烟、被优选过滤	|
-| 4 | 口罩识别<div style="width: 70pt"> |无口罩、有口罩、口罩不确定、被优选过滤|
-| 5 | 工地安全带识别<div style="width: 70pt"> |无工地安全带、工地安全带、被优选过滤	|
-| 6 | 手套识别<div style="width: 70pt"> |无手套、有手套、手套不确定、被优选过滤	|
-| 7 | 工服识别<div style="width: 70pt"> |无工服、有工服、被优选过滤|
-| 8 | 护目镜识别<div style="width: 70pt"> |无护目镜、有护目镜、被优选过滤|
-| 9 | 反光衣识别<div style="width: 70pt"> |无反光衣、有反光衣、被优选过滤|
+| 1 | 安全帽识别<div style="width: 70pt"/> |无安全帽、有安全帽、被优选过滤|
+| 2 | 玩手机识别<div style="width: 70pt"/> |没有电话、打电话、玩手机、被优选过滤|
+| 3 | 抽烟识别<div style="width: 70pt"/> |没有抽烟、抽烟、被优选过滤	|
+| 4 | 口罩识别<div style="width: 70pt"/> |无口罩、有口罩、口罩不确定、被优选过滤|
+| 5 | 工地安全带识别<div style="width: 70pt"/> |无工地安全带、工地安全带、被优选过滤	|
+| 6 | 手套识别<div style="width: 70pt"/> |无手套、有手套、手套不确定、被优选过滤	|
+| 7 | 工服识别<div style="width: 70pt"/> |无工服、有工服、被优选过滤|
+| 8 | 护目镜识别<div style="width: 70pt"/> |无护目镜、有护目镜、被优选过滤|
+| 9 | 反光衣识别<div style="width: 70pt"/> |无反光衣、有反光衣、被优选过滤|
                  * @param req DetectSecurityRequest
                  * @return DetectSecurityOutcome
                  */
@@ -469,8 +447,6 @@ namespace TencentCloud
 
 >   
 - 可前往 [图像搜索](https://cloud.tencent.com/document/product/1589) 产品文档中查看更多产品信息。
-
-
                  * @param req SearchImageRequest
                  * @return SearchImageOutcome
                  */
@@ -483,8 +459,6 @@ namespace TencentCloud
 
 >   
 - 可前往 [图像搜索](https://cloud.tencent.com/document/product/1589) 产品文档中查看更多产品信息。
-
-
                  * @param req UpdateImageRequest
                  * @return UpdateImageOutcome
                  */

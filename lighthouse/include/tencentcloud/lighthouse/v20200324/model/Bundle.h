@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -310,24 +310,24 @@ namespace TencentCloud
                     /**
                      * 获取套餐类型。
 取值范围：
-<li>STARTER_BUNDLE：入门型</li>
 <li>GENERAL_BUNDLE：通用型</li>
-<li>ENTERPRISE_BUNDLE：企业型</li>
 <li>STORAGE_BUNDLE：存储型</li>
+<li>ENTERPRISE_BUNDLE：企业型</li>
 <li>EXCLUSIVE_BUNDLE：专属型</li>
-<li>HK_EXCLUSIVE_BUNDLE：香港专属型 </li>
-<li>CAREFREE_BUNDLE：无忧型</li>
 <li>BEFAST_BUNDLE：蜂驰型 </li>
+<li>STARTER_BUNDLE：入门型</li>
+<li>CAREFREE_BUNDLE：无忧型</li>
+<li>RAZOR_SPEED_BUNDLE：锐驰型</li>
                      * @return BundleType 套餐类型。
 取值范围：
-<li>STARTER_BUNDLE：入门型</li>
 <li>GENERAL_BUNDLE：通用型</li>
-<li>ENTERPRISE_BUNDLE：企业型</li>
 <li>STORAGE_BUNDLE：存储型</li>
+<li>ENTERPRISE_BUNDLE：企业型</li>
 <li>EXCLUSIVE_BUNDLE：专属型</li>
-<li>HK_EXCLUSIVE_BUNDLE：香港专属型 </li>
-<li>CAREFREE_BUNDLE：无忧型</li>
 <li>BEFAST_BUNDLE：蜂驰型 </li>
+<li>STARTER_BUNDLE：入门型</li>
+<li>CAREFREE_BUNDLE：无忧型</li>
+<li>RAZOR_SPEED_BUNDLE：锐驰型</li>
                      * 
                      */
                     std::string GetBundleType() const;
@@ -335,24 +335,24 @@ namespace TencentCloud
                     /**
                      * 设置套餐类型。
 取值范围：
-<li>STARTER_BUNDLE：入门型</li>
 <li>GENERAL_BUNDLE：通用型</li>
-<li>ENTERPRISE_BUNDLE：企业型</li>
 <li>STORAGE_BUNDLE：存储型</li>
+<li>ENTERPRISE_BUNDLE：企业型</li>
 <li>EXCLUSIVE_BUNDLE：专属型</li>
-<li>HK_EXCLUSIVE_BUNDLE：香港专属型 </li>
-<li>CAREFREE_BUNDLE：无忧型</li>
 <li>BEFAST_BUNDLE：蜂驰型 </li>
+<li>STARTER_BUNDLE：入门型</li>
+<li>CAREFREE_BUNDLE：无忧型</li>
+<li>RAZOR_SPEED_BUNDLE：锐驰型</li>
                      * @param _bundleType 套餐类型。
 取值范围：
-<li>STARTER_BUNDLE：入门型</li>
 <li>GENERAL_BUNDLE：通用型</li>
-<li>ENTERPRISE_BUNDLE：企业型</li>
 <li>STORAGE_BUNDLE：存储型</li>
+<li>ENTERPRISE_BUNDLE：企业型</li>
 <li>EXCLUSIVE_BUNDLE：专属型</li>
-<li>HK_EXCLUSIVE_BUNDLE：香港专属型 </li>
-<li>CAREFREE_BUNDLE：无忧型</li>
 <li>BEFAST_BUNDLE：蜂驰型 </li>
+<li>STARTER_BUNDLE：入门型</li>
+<li>CAREFREE_BUNDLE：无忧型</li>
+<li>RAZOR_SPEED_BUNDLE：锐驰型</li>
                      * 
                      */
                     void SetBundleType(const std::string& _bundleType);
@@ -366,18 +366,14 @@ namespace TencentCloud
 
                     /**
                      * 获取套餐类型描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BundleTypeDescription 套餐类型描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBundleTypeDescription() const;
 
                     /**
                      * 设置套餐类型描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bundleTypeDescription 套餐类型描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBundleTypeDescription(const std::string& _bundleTypeDescription);
@@ -425,6 +421,27 @@ namespace TencentCloud
                      * 
                      */
                     bool BundleDisplayLabelHasBeenSet() const;
+
+                    /**
+                     * 获取流量是否无上限。
+                     * @return TrafficUnlimited 流量是否无上限。
+                     * 
+                     */
+                    bool GetTrafficUnlimited() const;
+
+                    /**
+                     * 设置流量是否无上限。
+                     * @param _trafficUnlimited 流量是否无上限。
+                     * 
+                     */
+                    void SetTrafficUnlimited(const bool& _trafficUnlimited);
+
+                    /**
+                     * 判断参数 TrafficUnlimited 是否已赋值
+                     * @return TrafficUnlimited 是否已赋值
+                     * 
+                     */
+                    bool TrafficUnlimitedHasBeenSet() const;
 
                 private:
 
@@ -505,21 +522,20 @@ namespace TencentCloud
                     /**
                      * 套餐类型。
 取值范围：
-<li>STARTER_BUNDLE：入门型</li>
 <li>GENERAL_BUNDLE：通用型</li>
-<li>ENTERPRISE_BUNDLE：企业型</li>
 <li>STORAGE_BUNDLE：存储型</li>
+<li>ENTERPRISE_BUNDLE：企业型</li>
 <li>EXCLUSIVE_BUNDLE：专属型</li>
-<li>HK_EXCLUSIVE_BUNDLE：香港专属型 </li>
-<li>CAREFREE_BUNDLE：无忧型</li>
 <li>BEFAST_BUNDLE：蜂驰型 </li>
+<li>STARTER_BUNDLE：入门型</li>
+<li>CAREFREE_BUNDLE：无忧型</li>
+<li>RAZOR_SPEED_BUNDLE：锐驰型</li>
                      */
                     std::string m_bundleType;
                     bool m_bundleTypeHasBeenSet;
 
                     /**
                      * 套餐类型描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bundleTypeDescription;
                     bool m_bundleTypeDescriptionHasBeenSet;
@@ -533,6 +549,12 @@ namespace TencentCloud
                      */
                     std::string m_bundleDisplayLabel;
                     bool m_bundleDisplayLabelHasBeenSet;
+
+                    /**
+                     * 流量是否无上限。
+                     */
+                    bool m_trafficUnlimited;
+                    bool m_trafficUnlimitedHasBeenSet;
 
                 };
             }

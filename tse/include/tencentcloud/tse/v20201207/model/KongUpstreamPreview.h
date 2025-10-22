@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ID 服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetID() const;
 
                     /**
                      * 设置服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iD 服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetID(const std::string& _iD);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 服务名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置服务名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 服务名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取后端配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Target 后端配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<KongTarget> GetTarget() const;
 
                     /**
                      * 设置后端配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _target 后端配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTarget(const std::vector<KongTarget>& _target);
@@ -126,21 +114,18 @@ namespace TencentCloud
 
                     /**
                      * 服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
                      * 服务名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 后端配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<KongTarget> m_target;
                     bool m_targetHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,9 @@ ModifyJWTAuthenticatorRequest::ModifyJWTAuthenticatorRequest() :
     m_fromHasBeenSet(false),
     m_secretHasBeenSet(false),
     m_publicKeyHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_remarkHasBeenSet(false),
+    m_textHasBeenSet(false)
 {
 }
 
@@ -80,12 +81,12 @@ string ModifyJWTAuthenticatorRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_publicKey.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_textHasBeenSet)
+    if (m_statusHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Text";
+        string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_text.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
     if (m_remarkHasBeenSet)
@@ -94,6 +95,14 @@ string ModifyJWTAuthenticatorRequest::ToJsonString() const
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_textHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Text";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_text.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -184,20 +193,20 @@ bool ModifyJWTAuthenticatorRequest::PublicKeyHasBeenSet() const
     return m_publicKeyHasBeenSet;
 }
 
-string ModifyJWTAuthenticatorRequest::GetText() const
+string ModifyJWTAuthenticatorRequest::GetStatus() const
 {
-    return m_text;
+    return m_status;
 }
 
-void ModifyJWTAuthenticatorRequest::SetText(const string& _text)
+void ModifyJWTAuthenticatorRequest::SetStatus(const string& _status)
 {
-    m_text = _text;
-    m_textHasBeenSet = true;
+    m_status = _status;
+    m_statusHasBeenSet = true;
 }
 
-bool ModifyJWTAuthenticatorRequest::TextHasBeenSet() const
+bool ModifyJWTAuthenticatorRequest::StatusHasBeenSet() const
 {
-    return m_textHasBeenSet;
+    return m_statusHasBeenSet;
 }
 
 string ModifyJWTAuthenticatorRequest::GetRemark() const
@@ -214,6 +223,22 @@ void ModifyJWTAuthenticatorRequest::SetRemark(const string& _remark)
 bool ModifyJWTAuthenticatorRequest::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+string ModifyJWTAuthenticatorRequest::GetText() const
+{
+    return m_text;
+}
+
+void ModifyJWTAuthenticatorRequest::SetText(const string& _text)
+{
+    m_text = _text;
+    m_textHasBeenSet = true;
+}
+
+bool ModifyJWTAuthenticatorRequest::TextHasBeenSet() const
+{
+    return m_textHasBeenSet;
 }
 
 

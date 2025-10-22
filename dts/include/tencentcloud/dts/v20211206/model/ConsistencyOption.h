@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,8 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dts/v20211206/model/DatabaseTableObject.h>
+#include <tencentcloud/dts/v20211206/model/CompareOptions.h>
 
 
 namespace TencentCloud
@@ -48,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取一致性检测类型: full(全量检测迁移对象)、noCheck(不检测)、notConfigured(未配置)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Mode 一致性检测类型: full(全量检测迁移对象)、noCheck(不检测)、notConfigured(未配置)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMode() const;
 
                     /**
                      * 设置一致性检测类型: full(全量检测迁移对象)、noCheck(不检测)、notConfigured(未配置)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mode 一致性检测类型: full(全量检测迁移对象)、noCheck(不检测)、notConfigured(未配置)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMode(const std::string& _mode);
@@ -71,14 +69,99 @@ namespace TencentCloud
                      */
                     bool ModeHasBeenSet() const;
 
+                    /**
+                     * 获取校验对象选择。枚举值：sameAsMigrate-与迁移同步任务相同、custom-用户自定义，搭配Objects操作
+                     * @return ObjectMode 校验对象选择。枚举值：sameAsMigrate-与迁移同步任务相同、custom-用户自定义，搭配Objects操作
+                     * 
+                     */
+                    std::string GetObjectMode() const;
+
+                    /**
+                     * 设置校验对象选择。枚举值：sameAsMigrate-与迁移同步任务相同、custom-用户自定义，搭配Objects操作
+                     * @param _objectMode 校验对象选择。枚举值：sameAsMigrate-与迁移同步任务相同、custom-用户自定义，搭配Objects操作
+                     * 
+                     */
+                    void SetObjectMode(const std::string& _objectMode);
+
+                    /**
+                     * 判断参数 ObjectMode 是否已赋值
+                     * @return ObjectMode 是否已赋值
+                     * 
+                     */
+                    bool ObjectModeHasBeenSet() const;
+
+                    /**
+                     * 获取校验对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Objects 校验对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    DatabaseTableObject GetObjects() const;
+
+                    /**
+                     * 设置校验对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _objects 校验对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetObjects(const DatabaseTableObject& _objects);
+
+                    /**
+                     * 判断参数 Objects 是否已赋值
+                     * @return Objects 是否已赋值
+                     * 
+                     */
+                    bool ObjectsHasBeenSet() const;
+
+                    /**
+                     * 获取校验配置
+                     * @return Options 校验配置
+                     * 
+                     */
+                    CompareOptions GetOptions() const;
+
+                    /**
+                     * 设置校验配置
+                     * @param _options 校验配置
+                     * 
+                     */
+                    void SetOptions(const CompareOptions& _options);
+
+                    /**
+                     * 判断参数 Options 是否已赋值
+                     * @return Options 是否已赋值
+                     * 
+                     */
+                    bool OptionsHasBeenSet() const;
+
                 private:
 
                     /**
                      * 一致性检测类型: full(全量检测迁移对象)、noCheck(不检测)、notConfigured(未配置)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mode;
                     bool m_modeHasBeenSet;
+
+                    /**
+                     * 校验对象选择。枚举值：sameAsMigrate-与迁移同步任务相同、custom-用户自定义，搭配Objects操作
+                     */
+                    std::string m_objectMode;
+                    bool m_objectModeHasBeenSet;
+
+                    /**
+                     * 校验对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DatabaseTableObject m_objects;
+                    bool m_objectsHasBeenSet;
+
+                    /**
+                     * 校验配置
+                     */
+                    CompareOptions m_options;
+                    bool m_optionsHasBeenSet;
 
                 };
             }

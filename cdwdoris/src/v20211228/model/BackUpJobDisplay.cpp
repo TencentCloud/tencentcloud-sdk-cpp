@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,10 @@ BackUpJobDisplay::BackUpJobDisplay() :
     m_dorisSourceInfoHasBeenSet(false),
     m_jobStatusNumHasBeenSet(false),
     m_backupCosInfoHasBeenSet(false),
-    m_isUserDefineBucketHasBeenSet(false)
+    m_isUserDefineBucketHasBeenSet(false),
+    m_errorReasonHasBeenSet(false),
+    m_snapshotRemainPolicyHasBeenSet(false),
+    m_isolationCountHasBeenSet(false)
 {
 }
 
@@ -186,6 +189,43 @@ CoreInternalOutcome BackUpJobDisplay::Deserialize(const rapidjson::Value &value)
         m_isUserDefineBucketHasBeenSet = true;
     }
 
+    if (value.HasMember("ErrorReason") && !value["ErrorReason"].IsNull())
+    {
+        if (!value["ErrorReason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackUpJobDisplay.ErrorReason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errorReason = string(value["ErrorReason"].GetString());
+        m_errorReasonHasBeenSet = true;
+    }
+
+    if (value.HasMember("SnapshotRemainPolicy") && !value["SnapshotRemainPolicy"].IsNull())
+    {
+        if (!value["SnapshotRemainPolicy"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackUpJobDisplay.SnapshotRemainPolicy` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_snapshotRemainPolicy.Deserialize(value["SnapshotRemainPolicy"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_snapshotRemainPolicyHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsolationCount") && !value["IsolationCount"].IsNull())
+    {
+        if (!value["IsolationCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackUpJobDisplay.IsolationCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isolationCount = value["IsolationCount"].GetInt64();
+        m_isolationCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -297,6 +337,31 @@ void BackUpJobDisplay::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "IsUserDefineBucket";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isUserDefineBucket, allocator);
+    }
+
+    if (m_errorReasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorReason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorReason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_snapshotRemainPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SnapshotRemainPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_snapshotRemainPolicy.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_isolationCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsolationCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isolationCount, allocator);
     }
 
 }
@@ -508,5 +573,53 @@ void BackUpJobDisplay::SetIsUserDefineBucket(const bool& _isUserDefineBucket)
 bool BackUpJobDisplay::IsUserDefineBucketHasBeenSet() const
 {
     return m_isUserDefineBucketHasBeenSet;
+}
+
+string BackUpJobDisplay::GetErrorReason() const
+{
+    return m_errorReason;
+}
+
+void BackUpJobDisplay::SetErrorReason(const string& _errorReason)
+{
+    m_errorReason = _errorReason;
+    m_errorReasonHasBeenSet = true;
+}
+
+bool BackUpJobDisplay::ErrorReasonHasBeenSet() const
+{
+    return m_errorReasonHasBeenSet;
+}
+
+SnapshotRemainPolicy BackUpJobDisplay::GetSnapshotRemainPolicy() const
+{
+    return m_snapshotRemainPolicy;
+}
+
+void BackUpJobDisplay::SetSnapshotRemainPolicy(const SnapshotRemainPolicy& _snapshotRemainPolicy)
+{
+    m_snapshotRemainPolicy = _snapshotRemainPolicy;
+    m_snapshotRemainPolicyHasBeenSet = true;
+}
+
+bool BackUpJobDisplay::SnapshotRemainPolicyHasBeenSet() const
+{
+    return m_snapshotRemainPolicyHasBeenSet;
+}
+
+int64_t BackUpJobDisplay::GetIsolationCount() const
+{
+    return m_isolationCount;
+}
+
+void BackUpJobDisplay::SetIsolationCount(const int64_t& _isolationCount)
+{
+    m_isolationCount = _isolationCount;
+    m_isolationCountHasBeenSet = true;
+}
+
+bool BackUpJobDisplay::IsolationCountHasBeenSet() const
+{
+    return m_isolationCountHasBeenSet;
 }
 

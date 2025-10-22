@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccountName 账户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAccountName() const;
 
                     /**
                      * 设置账户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accountName 账户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccountName(const std::vector<std::string>& _accountName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableName 表名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTableName() const;
 
                     /**
                      * 设置表名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tableName 表名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTableName(const std::string& _tableName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取说明
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 说明
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置说明
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 说明
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 账户名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_accountName;
                     bool m_accountNameHasBeenSet;
 
                     /**
                      * 表名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tableName;
                     bool m_tableNameHasBeenSet;
 
                     /**
                      * 说明
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

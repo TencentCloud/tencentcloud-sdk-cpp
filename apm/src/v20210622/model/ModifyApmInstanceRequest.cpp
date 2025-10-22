@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,8 +42,29 @@ ModifyApmInstanceRequest::ModifyApmInstanceRequest() :
     m_customShowTagsHasBeenSet(false),
     m_payModeHasBeenSet(false),
     m_responseDurationWarningThresholdHasBeenSet(false),
+    m_freeHasBeenSet(false),
     m_isRelatedDashboardHasBeenSet(false),
-    m_dashboardTopicIDHasBeenSet(false)
+    m_dashboardTopicIDHasBeenSet(false),
+    m_isSqlInjectionAnalysisHasBeenSet(false),
+    m_isInstrumentationVulnerabilityScanHasBeenSet(false),
+    m_isRemoteCommandExecutionAnalysisHasBeenSet(false),
+    m_isMemoryHijackingAnalysisHasBeenSet(false),
+    m_logIndexTypeHasBeenSet(false),
+    m_logTraceIdKeyHasBeenSet(false),
+    m_isDeleteAnyFileAnalysisHasBeenSet(false),
+    m_isReadAnyFileAnalysisHasBeenSet(false),
+    m_isUploadAnyFileAnalysisHasBeenSet(false),
+    m_isIncludeAnyFileAnalysisHasBeenSet(false),
+    m_isDirectoryTraversalAnalysisHasBeenSet(false),
+    m_isTemplateEngineInjectionAnalysisHasBeenSet(false),
+    m_isScriptEngineInjectionAnalysisHasBeenSet(false),
+    m_isExpressionInjectionAnalysisHasBeenSet(false),
+    m_isJNDIInjectionAnalysisHasBeenSet(false),
+    m_isJNIInjectionAnalysisHasBeenSet(false),
+    m_isWebshellBackdoorAnalysisHasBeenSet(false),
+    m_isDeserializationAnalysisHasBeenSet(false),
+    m_urlLongSegmentThresholdHasBeenSet(false),
+    m_urlNumberSegmentThresholdHasBeenSet(false)
 {
 }
 
@@ -218,6 +239,14 @@ string ModifyApmInstanceRequest::ToJsonString() const
         d.AddMember(iKey, m_responseDurationWarningThreshold, allocator);
     }
 
+    if (m_freeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Free";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_free, allocator);
+    }
+
     if (m_isRelatedDashboardHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -232,6 +261,166 @@ string ModifyApmInstanceRequest::ToJsonString() const
         string key = "DashboardTopicID";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dashboardTopicID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isSqlInjectionAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSqlInjectionAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isSqlInjectionAnalysis, allocator);
+    }
+
+    if (m_isInstrumentationVulnerabilityScanHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsInstrumentationVulnerabilityScan";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isInstrumentationVulnerabilityScan, allocator);
+    }
+
+    if (m_isRemoteCommandExecutionAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsRemoteCommandExecutionAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isRemoteCommandExecutionAnalysis, allocator);
+    }
+
+    if (m_isMemoryHijackingAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsMemoryHijackingAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isMemoryHijackingAnalysis, allocator);
+    }
+
+    if (m_logIndexTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogIndexType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_logIndexType, allocator);
+    }
+
+    if (m_logTraceIdKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogTraceIdKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_logTraceIdKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isDeleteAnyFileAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDeleteAnyFileAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isDeleteAnyFileAnalysis, allocator);
+    }
+
+    if (m_isReadAnyFileAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsReadAnyFileAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isReadAnyFileAnalysis, allocator);
+    }
+
+    if (m_isUploadAnyFileAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsUploadAnyFileAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isUploadAnyFileAnalysis, allocator);
+    }
+
+    if (m_isIncludeAnyFileAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsIncludeAnyFileAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isIncludeAnyFileAnalysis, allocator);
+    }
+
+    if (m_isDirectoryTraversalAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDirectoryTraversalAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isDirectoryTraversalAnalysis, allocator);
+    }
+
+    if (m_isTemplateEngineInjectionAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsTemplateEngineInjectionAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isTemplateEngineInjectionAnalysis, allocator);
+    }
+
+    if (m_isScriptEngineInjectionAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsScriptEngineInjectionAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isScriptEngineInjectionAnalysis, allocator);
+    }
+
+    if (m_isExpressionInjectionAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsExpressionInjectionAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isExpressionInjectionAnalysis, allocator);
+    }
+
+    if (m_isJNDIInjectionAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsJNDIInjectionAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isJNDIInjectionAnalysis, allocator);
+    }
+
+    if (m_isJNIInjectionAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsJNIInjectionAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isJNIInjectionAnalysis, allocator);
+    }
+
+    if (m_isWebshellBackdoorAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsWebshellBackdoorAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isWebshellBackdoorAnalysis, allocator);
+    }
+
+    if (m_isDeserializationAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDeserializationAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isDeserializationAnalysis, allocator);
+    }
+
+    if (m_urlLongSegmentThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UrlLongSegmentThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_urlLongSegmentThreshold, allocator);
+    }
+
+    if (m_urlNumberSegmentThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UrlNumberSegmentThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_urlNumberSegmentThreshold, allocator);
     }
 
 
@@ -546,6 +735,22 @@ bool ModifyApmInstanceRequest::ResponseDurationWarningThresholdHasBeenSet() cons
     return m_responseDurationWarningThresholdHasBeenSet;
 }
 
+int64_t ModifyApmInstanceRequest::GetFree() const
+{
+    return m_free;
+}
+
+void ModifyApmInstanceRequest::SetFree(const int64_t& _free)
+{
+    m_free = _free;
+    m_freeHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::FreeHasBeenSet() const
+{
+    return m_freeHasBeenSet;
+}
+
 int64_t ModifyApmInstanceRequest::GetIsRelatedDashboard() const
 {
     return m_isRelatedDashboard;
@@ -576,6 +781,326 @@ void ModifyApmInstanceRequest::SetDashboardTopicID(const string& _dashboardTopic
 bool ModifyApmInstanceRequest::DashboardTopicIDHasBeenSet() const
 {
     return m_dashboardTopicIDHasBeenSet;
+}
+
+int64_t ModifyApmInstanceRequest::GetIsSqlInjectionAnalysis() const
+{
+    return m_isSqlInjectionAnalysis;
+}
+
+void ModifyApmInstanceRequest::SetIsSqlInjectionAnalysis(const int64_t& _isSqlInjectionAnalysis)
+{
+    m_isSqlInjectionAnalysis = _isSqlInjectionAnalysis;
+    m_isSqlInjectionAnalysisHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::IsSqlInjectionAnalysisHasBeenSet() const
+{
+    return m_isSqlInjectionAnalysisHasBeenSet;
+}
+
+int64_t ModifyApmInstanceRequest::GetIsInstrumentationVulnerabilityScan() const
+{
+    return m_isInstrumentationVulnerabilityScan;
+}
+
+void ModifyApmInstanceRequest::SetIsInstrumentationVulnerabilityScan(const int64_t& _isInstrumentationVulnerabilityScan)
+{
+    m_isInstrumentationVulnerabilityScan = _isInstrumentationVulnerabilityScan;
+    m_isInstrumentationVulnerabilityScanHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::IsInstrumentationVulnerabilityScanHasBeenSet() const
+{
+    return m_isInstrumentationVulnerabilityScanHasBeenSet;
+}
+
+int64_t ModifyApmInstanceRequest::GetIsRemoteCommandExecutionAnalysis() const
+{
+    return m_isRemoteCommandExecutionAnalysis;
+}
+
+void ModifyApmInstanceRequest::SetIsRemoteCommandExecutionAnalysis(const int64_t& _isRemoteCommandExecutionAnalysis)
+{
+    m_isRemoteCommandExecutionAnalysis = _isRemoteCommandExecutionAnalysis;
+    m_isRemoteCommandExecutionAnalysisHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::IsRemoteCommandExecutionAnalysisHasBeenSet() const
+{
+    return m_isRemoteCommandExecutionAnalysisHasBeenSet;
+}
+
+int64_t ModifyApmInstanceRequest::GetIsMemoryHijackingAnalysis() const
+{
+    return m_isMemoryHijackingAnalysis;
+}
+
+void ModifyApmInstanceRequest::SetIsMemoryHijackingAnalysis(const int64_t& _isMemoryHijackingAnalysis)
+{
+    m_isMemoryHijackingAnalysis = _isMemoryHijackingAnalysis;
+    m_isMemoryHijackingAnalysisHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::IsMemoryHijackingAnalysisHasBeenSet() const
+{
+    return m_isMemoryHijackingAnalysisHasBeenSet;
+}
+
+int64_t ModifyApmInstanceRequest::GetLogIndexType() const
+{
+    return m_logIndexType;
+}
+
+void ModifyApmInstanceRequest::SetLogIndexType(const int64_t& _logIndexType)
+{
+    m_logIndexType = _logIndexType;
+    m_logIndexTypeHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::LogIndexTypeHasBeenSet() const
+{
+    return m_logIndexTypeHasBeenSet;
+}
+
+string ModifyApmInstanceRequest::GetLogTraceIdKey() const
+{
+    return m_logTraceIdKey;
+}
+
+void ModifyApmInstanceRequest::SetLogTraceIdKey(const string& _logTraceIdKey)
+{
+    m_logTraceIdKey = _logTraceIdKey;
+    m_logTraceIdKeyHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::LogTraceIdKeyHasBeenSet() const
+{
+    return m_logTraceIdKeyHasBeenSet;
+}
+
+int64_t ModifyApmInstanceRequest::GetIsDeleteAnyFileAnalysis() const
+{
+    return m_isDeleteAnyFileAnalysis;
+}
+
+void ModifyApmInstanceRequest::SetIsDeleteAnyFileAnalysis(const int64_t& _isDeleteAnyFileAnalysis)
+{
+    m_isDeleteAnyFileAnalysis = _isDeleteAnyFileAnalysis;
+    m_isDeleteAnyFileAnalysisHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::IsDeleteAnyFileAnalysisHasBeenSet() const
+{
+    return m_isDeleteAnyFileAnalysisHasBeenSet;
+}
+
+int64_t ModifyApmInstanceRequest::GetIsReadAnyFileAnalysis() const
+{
+    return m_isReadAnyFileAnalysis;
+}
+
+void ModifyApmInstanceRequest::SetIsReadAnyFileAnalysis(const int64_t& _isReadAnyFileAnalysis)
+{
+    m_isReadAnyFileAnalysis = _isReadAnyFileAnalysis;
+    m_isReadAnyFileAnalysisHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::IsReadAnyFileAnalysisHasBeenSet() const
+{
+    return m_isReadAnyFileAnalysisHasBeenSet;
+}
+
+int64_t ModifyApmInstanceRequest::GetIsUploadAnyFileAnalysis() const
+{
+    return m_isUploadAnyFileAnalysis;
+}
+
+void ModifyApmInstanceRequest::SetIsUploadAnyFileAnalysis(const int64_t& _isUploadAnyFileAnalysis)
+{
+    m_isUploadAnyFileAnalysis = _isUploadAnyFileAnalysis;
+    m_isUploadAnyFileAnalysisHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::IsUploadAnyFileAnalysisHasBeenSet() const
+{
+    return m_isUploadAnyFileAnalysisHasBeenSet;
+}
+
+int64_t ModifyApmInstanceRequest::GetIsIncludeAnyFileAnalysis() const
+{
+    return m_isIncludeAnyFileAnalysis;
+}
+
+void ModifyApmInstanceRequest::SetIsIncludeAnyFileAnalysis(const int64_t& _isIncludeAnyFileAnalysis)
+{
+    m_isIncludeAnyFileAnalysis = _isIncludeAnyFileAnalysis;
+    m_isIncludeAnyFileAnalysisHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::IsIncludeAnyFileAnalysisHasBeenSet() const
+{
+    return m_isIncludeAnyFileAnalysisHasBeenSet;
+}
+
+int64_t ModifyApmInstanceRequest::GetIsDirectoryTraversalAnalysis() const
+{
+    return m_isDirectoryTraversalAnalysis;
+}
+
+void ModifyApmInstanceRequest::SetIsDirectoryTraversalAnalysis(const int64_t& _isDirectoryTraversalAnalysis)
+{
+    m_isDirectoryTraversalAnalysis = _isDirectoryTraversalAnalysis;
+    m_isDirectoryTraversalAnalysisHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::IsDirectoryTraversalAnalysisHasBeenSet() const
+{
+    return m_isDirectoryTraversalAnalysisHasBeenSet;
+}
+
+int64_t ModifyApmInstanceRequest::GetIsTemplateEngineInjectionAnalysis() const
+{
+    return m_isTemplateEngineInjectionAnalysis;
+}
+
+void ModifyApmInstanceRequest::SetIsTemplateEngineInjectionAnalysis(const int64_t& _isTemplateEngineInjectionAnalysis)
+{
+    m_isTemplateEngineInjectionAnalysis = _isTemplateEngineInjectionAnalysis;
+    m_isTemplateEngineInjectionAnalysisHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::IsTemplateEngineInjectionAnalysisHasBeenSet() const
+{
+    return m_isTemplateEngineInjectionAnalysisHasBeenSet;
+}
+
+int64_t ModifyApmInstanceRequest::GetIsScriptEngineInjectionAnalysis() const
+{
+    return m_isScriptEngineInjectionAnalysis;
+}
+
+void ModifyApmInstanceRequest::SetIsScriptEngineInjectionAnalysis(const int64_t& _isScriptEngineInjectionAnalysis)
+{
+    m_isScriptEngineInjectionAnalysis = _isScriptEngineInjectionAnalysis;
+    m_isScriptEngineInjectionAnalysisHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::IsScriptEngineInjectionAnalysisHasBeenSet() const
+{
+    return m_isScriptEngineInjectionAnalysisHasBeenSet;
+}
+
+int64_t ModifyApmInstanceRequest::GetIsExpressionInjectionAnalysis() const
+{
+    return m_isExpressionInjectionAnalysis;
+}
+
+void ModifyApmInstanceRequest::SetIsExpressionInjectionAnalysis(const int64_t& _isExpressionInjectionAnalysis)
+{
+    m_isExpressionInjectionAnalysis = _isExpressionInjectionAnalysis;
+    m_isExpressionInjectionAnalysisHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::IsExpressionInjectionAnalysisHasBeenSet() const
+{
+    return m_isExpressionInjectionAnalysisHasBeenSet;
+}
+
+int64_t ModifyApmInstanceRequest::GetIsJNDIInjectionAnalysis() const
+{
+    return m_isJNDIInjectionAnalysis;
+}
+
+void ModifyApmInstanceRequest::SetIsJNDIInjectionAnalysis(const int64_t& _isJNDIInjectionAnalysis)
+{
+    m_isJNDIInjectionAnalysis = _isJNDIInjectionAnalysis;
+    m_isJNDIInjectionAnalysisHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::IsJNDIInjectionAnalysisHasBeenSet() const
+{
+    return m_isJNDIInjectionAnalysisHasBeenSet;
+}
+
+int64_t ModifyApmInstanceRequest::GetIsJNIInjectionAnalysis() const
+{
+    return m_isJNIInjectionAnalysis;
+}
+
+void ModifyApmInstanceRequest::SetIsJNIInjectionAnalysis(const int64_t& _isJNIInjectionAnalysis)
+{
+    m_isJNIInjectionAnalysis = _isJNIInjectionAnalysis;
+    m_isJNIInjectionAnalysisHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::IsJNIInjectionAnalysisHasBeenSet() const
+{
+    return m_isJNIInjectionAnalysisHasBeenSet;
+}
+
+int64_t ModifyApmInstanceRequest::GetIsWebshellBackdoorAnalysis() const
+{
+    return m_isWebshellBackdoorAnalysis;
+}
+
+void ModifyApmInstanceRequest::SetIsWebshellBackdoorAnalysis(const int64_t& _isWebshellBackdoorAnalysis)
+{
+    m_isWebshellBackdoorAnalysis = _isWebshellBackdoorAnalysis;
+    m_isWebshellBackdoorAnalysisHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::IsWebshellBackdoorAnalysisHasBeenSet() const
+{
+    return m_isWebshellBackdoorAnalysisHasBeenSet;
+}
+
+int64_t ModifyApmInstanceRequest::GetIsDeserializationAnalysis() const
+{
+    return m_isDeserializationAnalysis;
+}
+
+void ModifyApmInstanceRequest::SetIsDeserializationAnalysis(const int64_t& _isDeserializationAnalysis)
+{
+    m_isDeserializationAnalysis = _isDeserializationAnalysis;
+    m_isDeserializationAnalysisHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::IsDeserializationAnalysisHasBeenSet() const
+{
+    return m_isDeserializationAnalysisHasBeenSet;
+}
+
+int64_t ModifyApmInstanceRequest::GetUrlLongSegmentThreshold() const
+{
+    return m_urlLongSegmentThreshold;
+}
+
+void ModifyApmInstanceRequest::SetUrlLongSegmentThreshold(const int64_t& _urlLongSegmentThreshold)
+{
+    m_urlLongSegmentThreshold = _urlLongSegmentThreshold;
+    m_urlLongSegmentThresholdHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::UrlLongSegmentThresholdHasBeenSet() const
+{
+    return m_urlLongSegmentThresholdHasBeenSet;
+}
+
+int64_t ModifyApmInstanceRequest::GetUrlNumberSegmentThreshold() const
+{
+    return m_urlNumberSegmentThreshold;
+}
+
+void ModifyApmInstanceRequest::SetUrlNumberSegmentThreshold(const int64_t& _urlNumberSegmentThreshold)
+{
+    m_urlNumberSegmentThreshold = _urlNumberSegmentThreshold;
+    m_urlNumberSegmentThresholdHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::UrlNumberSegmentThresholdHasBeenSet() const
+{
+    return m_urlNumberSegmentThresholdHasBeenSet;
 }
 
 

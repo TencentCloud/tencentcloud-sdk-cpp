@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -154,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该标签用于返回所识别出的实体名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Names 该标签用于返回所识别出的实体名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetNames() const;
 
                     /**
                      * 设置该标签用于返回所识别出的实体名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _names 该标签用于返回所识别出的实体名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNames(const std::vector<std::string>& _names);
@@ -180,10 +176,8 @@ namespace TencentCloud
                     /**
                      * 获取该标签用于返回所识别出实体的详细信息，如：序号、命中标签名称、位置坐标等信息，详细返回内容敬请参考相应数据结构（[ObjectDetail
 ](https://cloud.tencent.com/document/api/1125/53274#ObjectDetail)）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Details 该标签用于返回所识别出实体的详细信息，如：序号、命中标签名称、位置坐标等信息，详细返回内容敬请参考相应数据结构（[ObjectDetail
 ](https://cloud.tencent.com/document/api/1125/53274#ObjectDetail)）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ObjectDetail> GetDetails() const;
@@ -191,10 +185,8 @@ namespace TencentCloud
                     /**
                      * 设置该标签用于返回所识别出实体的详细信息，如：序号、命中标签名称、位置坐标等信息，详细返回内容敬请参考相应数据结构（[ObjectDetail
 ](https://cloud.tencent.com/document/api/1125/53274#ObjectDetail)）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _details 该标签用于返回所识别出实体的详细信息，如：序号、命中标签名称、位置坐标等信息，详细返回内容敬请参考相应数据结构（[ObjectDetail
 ](https://cloud.tencent.com/document/api/1125/53274#ObjectDetail)）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDetails(const std::vector<ObjectDetail>& _details);
@@ -240,7 +232,6 @@ namespace TencentCloud
 
                     /**
                      * 该标签用于返回所识别出的实体名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_names;
                     bool m_namesHasBeenSet;
@@ -248,7 +239,6 @@ namespace TencentCloud
                     /**
                      * 该标签用于返回所识别出实体的详细信息，如：序号、命中标签名称、位置坐标等信息，详细返回内容敬请参考相应数据结构（[ObjectDetail
 ](https://cloud.tencent.com/document/api/1125/53274#ObjectDetail)）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ObjectDetail> m_details;
                     bool m_detailsHasBeenSet;

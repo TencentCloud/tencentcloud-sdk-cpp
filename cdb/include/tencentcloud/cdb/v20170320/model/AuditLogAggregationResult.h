@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取聚合维度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AggregationField 聚合维度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAggregationField() const;
 
                     /**
                      * 设置聚合维度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _aggregationField 聚合维度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAggregationField(const std::string& _aggregationField);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取聚合桶的结果集
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Buckets 聚合桶的结果集
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Bucket> GetBuckets() const;
 
                     /**
                      * 设置聚合桶的结果集
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _buckets 聚合桶的结果集
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBuckets(const std::vector<Bucket>& _buckets);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 聚合维度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_aggregationField;
                     bool m_aggregationFieldHasBeenSet;
 
                     /**
                      * 聚合桶的结果集
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Bucket> m_buckets;
                     bool m_bucketsHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取过滤条件，当前仅支持TargetGroupId，BindIP，InstanceId过滤。
-                     * @return Filters 过滤条件，当前仅支持TargetGroupId，BindIP，InstanceId过滤。
+                     * 获取过滤条件，当前支持按照 TargetGroupId，BindIP，InstanceId 多个条件组合过滤。
+                     * @return Filters 过滤条件，当前支持按照 TargetGroupId，BindIP，InstanceId 多个条件组合过滤。
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件，当前仅支持TargetGroupId，BindIP，InstanceId过滤。
-                     * @param _filters 过滤条件，当前仅支持TargetGroupId，BindIP，InstanceId过滤。
+                     * 设置过滤条件，当前支持按照 TargetGroupId，BindIP，InstanceId 多个条件组合过滤。
+                     * @param _filters 过滤条件，当前支持按照 TargetGroupId，BindIP，InstanceId 多个条件组合过滤。
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -109,7 +109,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 过滤条件，当前仅支持TargetGroupId，BindIP，InstanceId过滤。
+                     * 过滤条件，当前支持按照 TargetGroupId，BindIP，InstanceId 多个条件组合过滤。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

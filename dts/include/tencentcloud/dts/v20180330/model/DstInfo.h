@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,42 +91,42 @@ namespace TencentCloud
                     /**
                      * 获取目标实例vip。已废弃，无需填写
                      * @return Ip 目标实例vip。已废弃，无需填写
-                     * 
+                     * @deprecated
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置目标实例vip。已废弃，无需填写
                      * @param _ip 目标实例vip。已废弃，无需填写
-                     * 
+                     * @deprecated
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool IpHasBeenSet() const;
 
                     /**
                      * 获取目标实例vport。已废弃，无需填写
                      * @return Port 目标实例vport。已废弃，无需填写
-                     * 
+                     * @deprecated
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置目标实例vport。已废弃，无需填写
                      * @param _port 目标实例vport。已废弃，无需填写
-                     * 
+                     * @deprecated
                      */
                     void SetPort(const int64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool PortHasBeenSet() const;
 

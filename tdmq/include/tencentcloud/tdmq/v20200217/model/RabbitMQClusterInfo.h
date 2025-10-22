@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tdmq/v20200217/model/VpcEndpointInfo.h>
+#include <tencentcloud/tdmq/v20200217/model/Tag.h>
 
 
 namespace TencentCloud
@@ -36,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * RabbiteMQ集群基本信息
+                * RabbitMQ 集群基本信息
                 */
                 class RabbitMQClusterInfo : public AbstractModel
                 {
@@ -48,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取集群 ID
+                     * @return ClusterId 集群 ID
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置集群 ID
+                     * @param _clusterId 集群 ID
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -111,15 +112,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取创建时间，毫秒为单位
-                     * @return CreateTime 创建时间，毫秒为单位
+                     * 获取创建时间，毫秒为单位。unix 时间戳
+                     * @return CreateTime 创建时间，毫秒为单位。unix 时间戳
                      * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
-                     * 设置创建时间，毫秒为单位
-                     * @param _createTime 创建时间，毫秒为单位
+                     * 设置创建时间，毫秒为单位。unix 时间戳
+                     * @param _createTime 创建时间，毫秒为单位。unix 时间戳
                      * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
@@ -133,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群说明信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 集群说明信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置集群说明信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 集群说明信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -179,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneIds 可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetZoneIds() const;
 
                     /**
                      * 设置可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zoneIds 可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZoneIds(const std::vector<int64_t>& _zoneIds);
@@ -287,15 +280,15 @@ namespace TencentCloud
                     bool MessageStackNumberHasBeenSet() const;
 
                     /**
-                     * 获取过期时间
-                     * @return ExpireTime 过期时间
+                     * 获取实例到期时间，按量付费的资源该值为 0，毫秒为单位。unix 时间戳
+                     * @return ExpireTime 实例到期时间，按量付费的资源该值为 0，毫秒为单位。unix 时间戳
                      * 
                      */
                     int64_t GetExpireTime() const;
 
                     /**
-                     * 设置过期时间
-                     * @param _expireTime 过期时间
+                     * 设置实例到期时间，按量付费的资源该值为 0，毫秒为单位。unix 时间戳
+                     * @param _expireTime 实例到期时间，按量付费的资源该值为 0，毫秒为单位。unix 时间戳
                      * 
                      */
                     void SetExpireTime(const int64_t& _expireTime);
@@ -439,18 +432,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoRenewFlag 自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAutoRenewFlag() const;
 
                     /**
                      * 设置自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _autoRenewFlag 自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
@@ -464,18 +453,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启镜像队列策略。1表示开启，0表示没开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MirrorQueuePolicyFlag 是否开启镜像队列策略。1表示开启，0表示没开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMirrorQueuePolicyFlag() const;
 
                     /**
                      * 设置是否开启镜像队列策略。1表示开启，0表示没开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mirrorQueuePolicyFlag 是否开启镜像队列策略。1表示开启，0表示没开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMirrorQueuePolicyFlag(const int64_t& _mirrorQueuePolicyFlag);
@@ -489,18 +474,14 @@ namespace TencentCloud
 
                     /**
                      * 获取每秒消费消息数 单位：条/秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MessageConsumeRate 每秒消费消息数 单位：条/秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetMessageConsumeRate() const;
 
                     /**
                      * 设置每秒消费消息数 单位：条/秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _messageConsumeRate 每秒消费消息数 单位：条/秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMessageConsumeRate(const double& _messageConsumeRate);
@@ -514,18 +495,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群版本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterVersion 集群版本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterVersion() const;
 
                     /**
                      * 设置集群版本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterVersion 集群版本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterVersion(const std::string& _clusterVersion);
@@ -539,18 +516,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计费模式，0-后付费，1-预付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayMode 计费模式，0-后付费，1-预付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPayMode() const;
 
                     /**
                      * 设置计费模式，0-后付费，1-预付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _payMode 计费模式，0-后付费，1-预付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPayMode(const uint64_t& _payMode);
@@ -562,10 +535,115 @@ namespace TencentCloud
                      */
                     bool PayModeHasBeenSet() const;
 
+                    /**
+                     * 获取实例类型，0 专享版、1 Serverless 版
+                     * @return InstanceType 实例类型，0 专享版、1 Serverless 版
+                     * 
+                     */
+                    uint64_t GetInstanceType() const;
+
+                    /**
+                     * 设置实例类型，0 专享版、1 Serverless 版
+                     * @param _instanceType 实例类型，0 专享版、1 Serverless 版
+                     * 
+                     */
+                    void SetInstanceType(const uint64_t& _instanceType);
+
+                    /**
+                     * 判断参数 InstanceType 是否已赋值
+                     * @return InstanceType 是否已赋值
+                     * 
+                     */
+                    bool InstanceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取开始隔离时间。unix 时间戳
+                     * @return IsolatedTime 开始隔离时间。unix 时间戳
+                     * 
+                     */
+                    int64_t GetIsolatedTime() const;
+
+                    /**
+                     * 设置开始隔离时间。unix 时间戳
+                     * @param _isolatedTime 开始隔离时间。unix 时间戳
+                     * 
+                     */
+                    void SetIsolatedTime(const int64_t& _isolatedTime);
+
+                    /**
+                     * 判断参数 IsolatedTime 是否已赋值
+                     * @return IsolatedTime 是否已赋值
+                     * 
+                     */
+                    bool IsolatedTimeHasBeenSet() const;
+
+                    /**
+                     * 获取是否为容器实例，默认 true
+                     * @return Container 是否为容器实例，默认 true
+                     * 
+                     */
+                    bool GetContainer() const;
+
+                    /**
+                     * 设置是否为容器实例，默认 true
+                     * @param _container 是否为容器实例，默认 true
+                     * 
+                     */
+                    void SetContainer(const bool& _container);
+
+                    /**
+                     * 判断参数 Container 是否已赋值
+                     * @return Container 是否已赋值
+                     * 
+                     */
+                    bool ContainerHasBeenSet() const;
+
+                    /**
+                     * 获取标签列表
+                     * @return Tags 标签列表
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置标签列表
+                     * @param _tags 标签列表
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
+                    /**
+                     * 获取是否已开启删除保护
+                     * @return EnableDeletionProtection 是否已开启删除保护
+                     * 
+                     */
+                    bool GetEnableDeletionProtection() const;
+
+                    /**
+                     * 设置是否已开启删除保护
+                     * @param _enableDeletionProtection 是否已开启删除保护
+                     * 
+                     */
+                    void SetEnableDeletionProtection(const bool& _enableDeletionProtection);
+
+                    /**
+                     * 判断参数 EnableDeletionProtection 是否已赋值
+                     * @return EnableDeletionProtection 是否已赋值
+                     * 
+                     */
+                    bool EnableDeletionProtectionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 集群ID
+                     * 集群 ID
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
@@ -583,14 +661,13 @@ namespace TencentCloud
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 创建时间，毫秒为单位
+                     * 创建时间，毫秒为单位。unix 时间戳
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 集群说明信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
@@ -603,7 +680,6 @@ namespace TencentCloud
 
                     /**
                      * 可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;
@@ -633,7 +709,7 @@ namespace TencentCloud
                     bool m_messageStackNumberHasBeenSet;
 
                     /**
-                     * 过期时间
+                     * 实例到期时间，按量付费的资源该值为 0，毫秒为单位。unix 时间戳
                      */
                     int64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;
@@ -677,38 +753,63 @@ namespace TencentCloud
 
                     /**
                      * 自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
 
                     /**
                      * 是否开启镜像队列策略。1表示开启，0表示没开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_mirrorQueuePolicyFlag;
                     bool m_mirrorQueuePolicyFlagHasBeenSet;
 
                     /**
                      * 每秒消费消息数 单位：条/秒
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_messageConsumeRate;
                     bool m_messageConsumeRateHasBeenSet;
 
                     /**
                      * 集群版本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterVersion;
                     bool m_clusterVersionHasBeenSet;
 
                     /**
                      * 计费模式，0-后付费，1-预付费
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_payMode;
                     bool m_payModeHasBeenSet;
+
+                    /**
+                     * 实例类型，0 专享版、1 Serverless 版
+                     */
+                    uint64_t m_instanceType;
+                    bool m_instanceTypeHasBeenSet;
+
+                    /**
+                     * 开始隔离时间。unix 时间戳
+                     */
+                    int64_t m_isolatedTime;
+                    bool m_isolatedTimeHasBeenSet;
+
+                    /**
+                     * 是否为容器实例，默认 true
+                     */
+                    bool m_container;
+                    bool m_containerHasBeenSet;
+
+                    /**
+                     * 标签列表
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
+
+                    /**
+                     * 是否已开启删除保护
+                     */
+                    bool m_enableDeletionProtection;
+                    bool m_enableDeletionProtectionHasBeenSet;
 
                 };
             }

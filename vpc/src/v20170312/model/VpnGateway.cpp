@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,7 +40,8 @@ VpnGateway::VpnGateway() :
     m_versionHasBeenSet(false),
     m_networkInstanceIdHasBeenSet(false),
     m_cdcIdHasBeenSet(false),
-    m_maxConnectionHasBeenSet(false)
+    m_maxConnectionHasBeenSet(false),
+    m_bgpAsnHasBeenSet(false)
 {
 }
 
@@ -259,6 +260,16 @@ CoreInternalOutcome VpnGateway::Deserialize(const rapidjson::Value &value)
         m_maxConnectionHasBeenSet = true;
     }
 
+    if (value.HasMember("BgpAsn") && !value["BgpAsn"].IsNull())
+    {
+        if (!value["BgpAsn"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpnGateway.BgpAsn` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_bgpAsn = value["BgpAsn"].GetUint64();
+        m_bgpAsnHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -431,6 +442,14 @@ void VpnGateway::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "MaxConnection";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxConnection, allocator);
+    }
+
+    if (m_bgpAsnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BgpAsn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bgpAsn, allocator);
     }
 
 }
@@ -754,5 +773,21 @@ void VpnGateway::SetMaxConnection(const uint64_t& _maxConnection)
 bool VpnGateway::MaxConnectionHasBeenSet() const
 {
     return m_maxConnectionHasBeenSet;
+}
+
+uint64_t VpnGateway::GetBgpAsn() const
+{
+    return m_bgpAsn;
+}
+
+void VpnGateway::SetBgpAsn(const uint64_t& _bgpAsn)
+{
+    m_bgpAsn = _bgpAsn;
+    m_bgpAsnHasBeenSet = true;
+}
+
+bool VpnGateway::BgpAsnHasBeenSet() const
+{
+    return m_bgpAsnHasBeenSet;
 }
 

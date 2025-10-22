@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取条件覆盖的列
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConditionColumn 条件覆盖的列
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConditionColumn() const;
 
                     /**
                      * 设置条件覆盖的列
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _conditionColumn 条件覆盖的列
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConditionColumn(const std::string& _conditionColumn);
@@ -72,19 +68,15 @@ namespace TencentCloud
                     bool ConditionColumnHasBeenSet() const;
 
                     /**
-                     * 获取条件覆盖操作
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ConditionOperator 条件覆盖操作
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取条件覆盖操作，目前仅支持>
+                     * @return ConditionOperator 条件覆盖操作，目前仅支持>
                      * 
                      */
                     std::string GetConditionOperator() const;
 
                     /**
-                     * 设置条件覆盖操作
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _conditionOperator 条件覆盖操作
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置条件覆盖操作，目前仅支持>
+                     * @param _conditionOperator 条件覆盖操作，目前仅支持>
                      * 
                      */
                     void SetConditionOperator(const std::string& _conditionOperator);
@@ -97,19 +89,15 @@ namespace TencentCloud
                     bool ConditionOperatorHasBeenSet() const;
 
                     /**
-                     * 获取条件覆盖优先级处理
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ConditionOrderInSrcAndDst 条件覆盖优先级处理
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取条件覆盖优先级处理，支持类型有>,<,=
+                     * @return ConditionOrderInSrcAndDst 条件覆盖优先级处理，支持类型有>,<,=
                      * 
                      */
                     std::string GetConditionOrderInSrcAndDst() const;
 
                     /**
-                     * 设置条件覆盖优先级处理
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _conditionOrderInSrcAndDst 条件覆盖优先级处理
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置条件覆盖优先级处理，支持类型有>,<,=
+                     * @param _conditionOrderInSrcAndDst 条件覆盖优先级处理，支持类型有>,<,=
                      * 
                      */
                     void SetConditionOrderInSrcAndDst(const std::string& _conditionOrderInSrcAndDst);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 条件覆盖的列
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_conditionColumn;
                     bool m_conditionColumnHasBeenSet;
 
                     /**
-                     * 条件覆盖操作
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 条件覆盖操作，目前仅支持>
                      */
                     std::string m_conditionOperator;
                     bool m_conditionOperatorHasBeenSet;
 
                     /**
-                     * 条件覆盖优先级处理
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 条件覆盖优先级处理，支持类型有>,<,=
                      */
                     std::string m_conditionOrderInSrcAndDst;
                     bool m_conditionOrderInSrcAndDstHasBeenSet;

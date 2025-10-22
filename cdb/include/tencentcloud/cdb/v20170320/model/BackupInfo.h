@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -448,18 +448,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备份文件是否加密， on-加密， off-未加密
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EncryptionFlag 备份文件是否加密， on-加密， off-未加密
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEncryptionFlag() const;
 
                     /**
                      * 设置备份文件是否加密， on-加密， off-未加密
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _encryptionFlag 备份文件是否加密， on-加密， off-未加密
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEncryptionFlag(const std::string& _encryptionFlag);
@@ -473,18 +469,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备份GTID点位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExecutedGTIDSet 备份GTID点位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExecutedGTIDSet() const;
 
                     /**
                      * 设置备份GTID点位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _executedGTIDSet 备份GTID点位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExecutedGTIDSet(const std::string& _executedGTIDSet);
@@ -495,6 +487,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ExecutedGTIDSetHasBeenSet() const;
+
+                    /**
+                     * 获取备份文件MD5值
+                     * @return MD5 备份文件MD5值
+                     * 
+                     */
+                    std::string GetMD5() const;
+
+                    /**
+                     * 设置备份文件MD5值
+                     * @param _mD5 备份文件MD5值
+                     * 
+                     */
+                    void SetMD5(const std::string& _mD5);
+
+                    /**
+                     * 判断参数 MD5 是否已赋值
+                     * @return MD5 是否已赋值
+                     * 
+                     */
+                    bool MD5HasBeenSet() const;
 
                 private:
 
@@ -614,17 +627,21 @@ namespace TencentCloud
 
                     /**
                      * 备份文件是否加密， on-加密， off-未加密
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_encryptionFlag;
                     bool m_encryptionFlagHasBeenSet;
 
                     /**
                      * 备份GTID点位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_executedGTIDSet;
                     bool m_executedGTIDSetHasBeenSet;
+
+                    /**
+                     * 备份文件MD5值
+                     */
+                    std::string m_mD5;
+                    bool m_mD5HasBeenSet;
 
                 };
             }

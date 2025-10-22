@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ CompanyStateInfo::CompanyStateInfo() :
     m_checkMsgHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_businessIdHasBeenSet(false),
-    m_modifyTimeHasBeenSet(false)
+    m_modifyTimeHasBeenSet(false),
+    m_contractNoHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome CompanyStateInfo::Deserialize(const rapidjson::Value &value)
         m_modifyTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ContractNo") && !value["ContractNo"].IsNull())
+    {
+        if (!value["ContractNo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompanyStateInfo.ContractNo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_contractNo = string(value["ContractNo"].GetString());
+        m_contractNoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void CompanyStateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ModifyTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_modifyTime, allocator);
+    }
+
+    if (m_contractNoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContractNo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_contractNo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void CompanyStateInfo::SetModifyTime(const int64_t& _modifyTime)
 bool CompanyStateInfo::ModifyTimeHasBeenSet() const
 {
     return m_modifyTimeHasBeenSet;
+}
+
+string CompanyStateInfo::GetContractNo() const
+{
+    return m_contractNo;
+}
+
+void CompanyStateInfo::SetContractNo(const string& _contractNo)
+{
+    m_contractNo = _contractNo;
+    m_contractNoHasBeenSet = true;
+}
+
+bool CompanyStateInfo::ContractNoHasBeenSet() const
+{
+    return m_contractNoHasBeenSet;
 }
 

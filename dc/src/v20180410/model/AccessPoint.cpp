@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,12 @@ AccessPoint::AccessPoint() :
     m_coordinateHasBeenSet(false),
     m_cityHasBeenSet(false),
     m_areaHasBeenSet(false),
-    m_accessPointTypeHasBeenSet(false)
+    m_accessPointTypeHasBeenSet(false),
+    m_availablePortInfoHasBeenSet(false),
+    m_addressHasBeenSet(false),
+    m_isMacSecHasBeenSet(false),
+    m_versionHasBeenSet(false),
+    m_accessPointServiceTypeHasBeenSet(false)
 {
 }
 
@@ -163,6 +168,66 @@ CoreInternalOutcome AccessPoint::Deserialize(const rapidjson::Value &value)
         m_accessPointTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("AvailablePortInfo") && !value["AvailablePortInfo"].IsNull())
+    {
+        if (!value["AvailablePortInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AccessPoint.AvailablePortInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AvailablePortInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            PortSpecification item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_availablePortInfo.push_back(item);
+        }
+        m_availablePortInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("Address") && !value["Address"].IsNull())
+    {
+        if (!value["Address"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessPoint.Address` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_address = string(value["Address"].GetString());
+        m_addressHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsMacSec") && !value["IsMacSec"].IsNull())
+    {
+        if (!value["IsMacSec"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessPoint.IsMacSec` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isMacSec = value["IsMacSec"].GetBool();
+        m_isMacSecHasBeenSet = true;
+    }
+
+    if (value.HasMember("Version") && !value["Version"].IsNull())
+    {
+        if (!value["Version"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessPoint.Version` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_version = string(value["Version"].GetString());
+        m_versionHasBeenSet = true;
+    }
+
+    if (value.HasMember("AccessPointServiceType") && !value["AccessPointServiceType"].IsNull())
+    {
+        if (!value["AccessPointServiceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessPoint.AccessPointServiceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_accessPointServiceType = string(value["AccessPointServiceType"].GetString());
+        m_accessPointServiceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -267,6 +332,53 @@ void AccessPoint::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "AccessPointType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_accessPointType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_availablePortInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvailablePortInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_availablePortInfo.begin(); itr != m_availablePortInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_addressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Address";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_address.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isMacSecHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsMacSec";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isMacSec, allocator);
+    }
+
+    if (m_versionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Version";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accessPointServiceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessPointServiceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accessPointServiceType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -446,5 +558,85 @@ void AccessPoint::SetAccessPointType(const string& _accessPointType)
 bool AccessPoint::AccessPointTypeHasBeenSet() const
 {
     return m_accessPointTypeHasBeenSet;
+}
+
+vector<PortSpecification> AccessPoint::GetAvailablePortInfo() const
+{
+    return m_availablePortInfo;
+}
+
+void AccessPoint::SetAvailablePortInfo(const vector<PortSpecification>& _availablePortInfo)
+{
+    m_availablePortInfo = _availablePortInfo;
+    m_availablePortInfoHasBeenSet = true;
+}
+
+bool AccessPoint::AvailablePortInfoHasBeenSet() const
+{
+    return m_availablePortInfoHasBeenSet;
+}
+
+string AccessPoint::GetAddress() const
+{
+    return m_address;
+}
+
+void AccessPoint::SetAddress(const string& _address)
+{
+    m_address = _address;
+    m_addressHasBeenSet = true;
+}
+
+bool AccessPoint::AddressHasBeenSet() const
+{
+    return m_addressHasBeenSet;
+}
+
+bool AccessPoint::GetIsMacSec() const
+{
+    return m_isMacSec;
+}
+
+void AccessPoint::SetIsMacSec(const bool& _isMacSec)
+{
+    m_isMacSec = _isMacSec;
+    m_isMacSecHasBeenSet = true;
+}
+
+bool AccessPoint::IsMacSecHasBeenSet() const
+{
+    return m_isMacSecHasBeenSet;
+}
+
+string AccessPoint::GetVersion() const
+{
+    return m_version;
+}
+
+void AccessPoint::SetVersion(const string& _version)
+{
+    m_version = _version;
+    m_versionHasBeenSet = true;
+}
+
+bool AccessPoint::VersionHasBeenSet() const
+{
+    return m_versionHasBeenSet;
+}
+
+string AccessPoint::GetAccessPointServiceType() const
+{
+    return m_accessPointServiceType;
+}
+
+void AccessPoint::SetAccessPointServiceType(const string& _accessPointServiceType)
+{
+    m_accessPointServiceType = _accessPointServiceType;
+    m_accessPointServiceTypeHasBeenSet = true;
+}
+
+bool AccessPoint::AccessPointServiceTypeHasBeenSet() const
+{
+    return m_accessPointServiceTypeHasBeenSet;
 }
 

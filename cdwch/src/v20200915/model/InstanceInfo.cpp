@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,7 +72,9 @@ InstanceInfo::InstanceInfo() :
     m_clickHouseKeeperHasBeenSet(false),
     m_detailsHasBeenSet(false),
     m_isWhiteSGsHasBeenSet(false),
-    m_bindSGsHasBeenSet(false)
+    m_bindSGsHasBeenSet(false),
+    m_hasPublicCloudClbHasBeenSet(false),
+    m_upgradeZkVersionsHasBeenSet(false)
 {
 }
 
@@ -652,6 +654,26 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_bindSGsHasBeenSet = true;
     }
 
+    if (value.HasMember("HasPublicCloudClb") && !value["HasPublicCloudClb"].IsNull())
+    {
+        if (!value["HasPublicCloudClb"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.HasPublicCloudClb` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_hasPublicCloudClb = value["HasPublicCloudClb"].GetBool();
+        m_hasPublicCloudClbHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpgradeZkVersions") && !value["UpgradeZkVersions"].IsNull())
+    {
+        if (!value["UpgradeZkVersions"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.UpgradeZkVersions` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_upgradeZkVersions = string(value["UpgradeZkVersions"].GetString());
+        m_upgradeZkVersionsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1096,6 +1118,22 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_hasPublicCloudClbHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HasPublicCloudClb";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hasPublicCloudClb, allocator);
+    }
+
+    if (m_upgradeZkVersionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpgradeZkVersions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_upgradeZkVersions.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1931,5 +1969,37 @@ void InstanceInfo::SetBindSGs(const vector<string>& _bindSGs)
 bool InstanceInfo::BindSGsHasBeenSet() const
 {
     return m_bindSGsHasBeenSet;
+}
+
+bool InstanceInfo::GetHasPublicCloudClb() const
+{
+    return m_hasPublicCloudClb;
+}
+
+void InstanceInfo::SetHasPublicCloudClb(const bool& _hasPublicCloudClb)
+{
+    m_hasPublicCloudClb = _hasPublicCloudClb;
+    m_hasPublicCloudClbHasBeenSet = true;
+}
+
+bool InstanceInfo::HasPublicCloudClbHasBeenSet() const
+{
+    return m_hasPublicCloudClbHasBeenSet;
+}
+
+string InstanceInfo::GetUpgradeZkVersions() const
+{
+    return m_upgradeZkVersions;
+}
+
+void InstanceInfo::SetUpgradeZkVersions(const string& _upgradeZkVersions)
+{
+    m_upgradeZkVersions = _upgradeZkVersions;
+    m_upgradeZkVersionsHasBeenSet = true;
+}
+
+bool InstanceInfo::UpgradeZkVersionsHasBeenSet() const
+{
+    return m_upgradeZkVersionsHasBeenSet;
 }
 

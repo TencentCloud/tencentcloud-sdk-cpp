@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取弹性网卡实例ID，例如：eni-m6dyj72l。
-                     * @return NetworkInterfaceId 弹性网卡实例ID，例如：eni-m6dyj72l。
+                     * 获取弹性网卡实例ID，例如：eni-m6dyj72l。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
+
+                     * @return NetworkInterfaceId 弹性网卡实例ID，例如：eni-m6dyj72l。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
+
                      * 
                      */
                     std::string GetNetworkInterfaceId() const;
 
                     /**
-                     * 设置弹性网卡实例ID，例如：eni-m6dyj72l。
-                     * @param _networkInterfaceId 弹性网卡实例ID，例如：eni-m6dyj72l。
+                     * 设置弹性网卡实例ID，例如：eni-m6dyj72l。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
+
+                     * @param _networkInterfaceId 弹性网卡实例ID，例如：eni-m6dyj72l。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
+
                      * 
                      */
                     void SetNetworkInterfaceId(const std::string& _networkInterfaceId);
@@ -86,15 +90,19 @@ namespace TencentCloud
                     bool PrivateIpAddressesHasBeenSet() const;
 
                     /**
-                     * 获取网卡绑定的子机实例ID，该参数仅用于指定网卡退还IP并解绑子机的场景，如果不涉及解绑子机，请勿填写。
-                     * @return InstanceId 网卡绑定的子机实例ID，该参数仅用于指定网卡退还IP并解绑子机的场景，如果不涉及解绑子机，请勿填写。
+                     * 获取网卡绑定的子机实例ID，该参数仅用于指定网卡退还IP并解绑子机的场景，如果不涉及解绑子机，请勿填写。可通过[DescribeInstances](https://cloud.tencent.com/document/product/213/15728)接口获取。
+
+                     * @return InstanceId 网卡绑定的子机实例ID，该参数仅用于指定网卡退还IP并解绑子机的场景，如果不涉及解绑子机，请勿填写。可通过[DescribeInstances](https://cloud.tencent.com/document/product/213/15728)接口获取。
+
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置网卡绑定的子机实例ID，该参数仅用于指定网卡退还IP并解绑子机的场景，如果不涉及解绑子机，请勿填写。
-                     * @param _instanceId 网卡绑定的子机实例ID，该参数仅用于指定网卡退还IP并解绑子机的场景，如果不涉及解绑子机，请勿填写。
+                     * 设置网卡绑定的子机实例ID，该参数仅用于指定网卡退还IP并解绑子机的场景，如果不涉及解绑子机，请勿填写。可通过[DescribeInstances](https://cloud.tencent.com/document/product/213/15728)接口获取。
+
+                     * @param _instanceId 网卡绑定的子机实例ID，该参数仅用于指定网卡退还IP并解绑子机的场景，如果不涉及解绑子机，请勿填写。可通过[DescribeInstances](https://cloud.tencent.com/document/product/213/15728)接口获取。
+
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -109,7 +117,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 弹性网卡实例ID，例如：eni-m6dyj72l。
+                     * 弹性网卡实例ID，例如：eni-m6dyj72l。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
+
                      */
                     std::string m_networkInterfaceId;
                     bool m_networkInterfaceIdHasBeenSet;
@@ -121,7 +130,8 @@ namespace TencentCloud
                     bool m_privateIpAddressesHasBeenSet;
 
                     /**
-                     * 网卡绑定的子机实例ID，该参数仅用于指定网卡退还IP并解绑子机的场景，如果不涉及解绑子机，请勿填写。
+                     * 网卡绑定的子机实例ID，该参数仅用于指定网卡退还IP并解绑子机的场景，如果不涉及解绑子机，请勿填写。可通过[DescribeInstances](https://cloud.tencent.com/document/product/213/15728)接口获取。
+
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

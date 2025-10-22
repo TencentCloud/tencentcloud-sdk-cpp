@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,9 +48,7 @@ namespace TencentCloud
 
                     /**
                      * 获取老师视频区域的水印参数配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TeacherLogo 老师视频区域的水印参数配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     WatermarkConfig GetTeacherLogo() const;
@@ -64,9 +62,7 @@ namespace TencentCloud
 
                     /**
                      * 获取白板区域的水印参数配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BoardLogo 白板区域的水印参数配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     WatermarkConfig GetBoardLogo() const;
@@ -80,9 +76,7 @@ namespace TencentCloud
 
                     /**
                      * 获取背景图片配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackgroundPicture 背景图片配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BackgroundPictureConfig GetBackgroundPicture() const;
@@ -96,9 +90,7 @@ namespace TencentCloud
 
                     /**
                      * 获取文字水印配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 文字水印配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TextMarkConfig GetText() const;
@@ -114,28 +106,24 @@ namespace TencentCloud
 
                     /**
                      * 老师视频区域的水印参数配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     WatermarkConfig m_teacherLogo;
                     bool m_teacherLogoHasBeenSet;
 
                     /**
                      * 白板区域的水印参数配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     WatermarkConfig m_boardLogo;
                     bool m_boardLogoHasBeenSet;
 
                     /**
                      * 背景图片配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BackgroundPictureConfig m_backgroundPicture;
                     bool m_backgroundPictureHasBeenSet;
 
                     /**
                      * 文字水印配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TextMarkConfig m_text;
                     bool m_textHasBeenSet;

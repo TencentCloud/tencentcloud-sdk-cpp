@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 	端口对象
+                * 端口对象
                 */
                 class ProtocolPort : public AbstractModel
                 {
@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodePort 主机端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNodePort() const;
 
                     /**
                      * 设置主机端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodePort 主机端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodePort(const int64_t& _nodePort);
@@ -133,6 +129,27 @@ namespace TencentCloud
                      * 
                      */
                     bool NodePortHasBeenSet() const;
+
+                    /**
+                     * 获取端口名称
+                     * @return Name 端口名称
+                     * 
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置端口名称
+                     * @param _name 端口名称
+                     * 
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     * 
+                     */
+                    bool NameHasBeenSet() const;
 
                 private:
 
@@ -156,10 +173,15 @@ namespace TencentCloud
 
                     /**
                      * 主机端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_nodePort;
                     bool m_nodePortHasBeenSet;
+
+                    /**
+                     * 端口名称
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
 
                 };
             }

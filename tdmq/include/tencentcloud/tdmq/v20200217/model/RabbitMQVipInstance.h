@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tdmq/v20200217/model/VpcEndpointInfo.h>
+#include <tencentcloud/tdmq/v20200217/model/Tag.h>
 
 
 namespace TencentCloud
@@ -36,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * RabbitMQ专享实例信息
+                * RabbitMQ 托管版实例信息
                 */
                 class RabbitMQVipInstance : public AbstractModel
                 {
@@ -48,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例id
-                     * @return InstanceId 实例id
+                     * 获取实例 ID
+                     * @return InstanceId 实例 ID
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例id
-                     * @param _instanceId 实例id
+                     * 设置实例 ID
+                     * @param _instanceId 实例 ID
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -91,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceVersion 实例版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceVersion() const;
 
                     /**
                      * 设置实例版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceVersion 实例版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceVersion(const std::string& _instanceVersion);
@@ -241,15 +238,15 @@ namespace TencentCloud
                     bool MaxStorageHasBeenSet() const;
 
                     /**
-                     * 获取实例到期时间，毫秒为单位
-                     * @return ExpireTime 实例到期时间，毫秒为单位
+                     * 获取实例到期时间，按量付费的资源该值为 0，毫秒为单位。unix 时间戳
+                     * @return ExpireTime 实例到期时间，按量付费的资源该值为 0，毫秒为单位。unix 时间戳
                      * 
                      */
                     uint64_t GetExpireTime() const;
 
                     /**
-                     * 设置实例到期时间，毫秒为单位
-                     * @param _expireTime 实例到期时间，毫秒为单位
+                     * 设置实例到期时间，按量付费的资源该值为 0，毫秒为单位。unix 时间戳
+                     * @param _expireTime 实例到期时间，按量付费的资源该值为 0，毫秒为单位。unix 时间戳
                      * 
                      */
                     void SetExpireTime(const uint64_t& _expireTime);
@@ -283,15 +280,15 @@ namespace TencentCloud
                     bool AutoRenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取0-后付费，1-预付费
-                     * @return PayMode 0-后付费，1-预付费
+                     * 获取1 表示预付费，0 表示后付费
+                     * @return PayMode 1 表示预付费，0 表示后付费
                      * 
                      */
                     uint64_t GetPayMode() const;
 
                     /**
-                     * 设置0-后付费，1-预付费
-                     * @param _payMode 0-后付费，1-预付费
+                     * 设置1 表示预付费，0 表示后付费
+                     * @param _payMode 1 表示预付费，0 表示后付费
                      * 
                      */
                     void SetPayMode(const uint64_t& _payMode);
@@ -305,18 +302,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -329,15 +322,51 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取实例配置ID
-                     * @return SpecName 实例配置ID
+                     * 获取集群的节点规格，需要输入对应的规格标识：
+2C8G：rabbit-vip-basic-2c8g
+4C16G：rabbit-vip-basic-4c16g
+8C32G：rabbit-vip-basic-8c32g
+16C32G：rabbit-vip-basic-4
+16C64G：rabbit-vip-basic-16c64g
+2C4G：rabbit-vip-basic-5
+4C8G：rabbit-vip-basic-1
+8C16G（已售罄）：rabbit-vip-basic-2
+不传默认为4C8G：rabbit-vip-basic-1
+                     * @return SpecName 集群的节点规格，需要输入对应的规格标识：
+2C8G：rabbit-vip-basic-2c8g
+4C16G：rabbit-vip-basic-4c16g
+8C32G：rabbit-vip-basic-8c32g
+16C32G：rabbit-vip-basic-4
+16C64G：rabbit-vip-basic-16c64g
+2C4G：rabbit-vip-basic-5
+4C8G：rabbit-vip-basic-1
+8C16G（已售罄）：rabbit-vip-basic-2
+不传默认为4C8G：rabbit-vip-basic-1
                      * 
                      */
                     std::string GetSpecName() const;
 
                     /**
-                     * 设置实例配置ID
-                     * @param _specName 实例配置ID
+                     * 设置集群的节点规格，需要输入对应的规格标识：
+2C8G：rabbit-vip-basic-2c8g
+4C16G：rabbit-vip-basic-4c16g
+8C32G：rabbit-vip-basic-8c32g
+16C32G：rabbit-vip-basic-4
+16C64G：rabbit-vip-basic-16c64g
+2C4G：rabbit-vip-basic-5
+4C8G：rabbit-vip-basic-1
+8C16G（已售罄）：rabbit-vip-basic-2
+不传默认为4C8G：rabbit-vip-basic-1
+                     * @param _specName 集群的节点规格，需要输入对应的规格标识：
+2C8G：rabbit-vip-basic-2c8g
+4C16G：rabbit-vip-basic-4c16g
+8C32G：rabbit-vip-basic-8c32g
+16C32G：rabbit-vip-basic-4
+16C64G：rabbit-vip-basic-16c64g
+2C4G：rabbit-vip-basic-5
+4C8G：rabbit-vip-basic-1
+8C16G（已售罄）：rabbit-vip-basic-2
+不传默认为4C8G：rabbit-vip-basic-1
                      * 
                      */
                     void SetSpecName(const std::string& _specName);
@@ -350,18 +379,18 @@ namespace TencentCloud
                     bool SpecNameHasBeenSet() const;
 
                     /**
-                     * 获取集群异常。
+                     * 获取集群异常信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExceptionInformation 集群异常。
+                     * @return ExceptionInformation 集群异常信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExceptionInformation() const;
 
                     /**
-                     * 设置集群异常。
+                     * 设置集群异常信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _exceptionInformation 集群异常。
+                     * @param _exceptionInformation 集群异常信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -426,18 +455,14 @@ namespace TencentCloud
 
                     /**
                      * 获取VPC 接入点列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vpcs VPC 接入点列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VpcEndpointInfo> GetVpcs() const;
 
                     /**
                      * 设置VPC 接入点列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcs VPC 接入点列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcs(const std::vector<VpcEndpointInfo>& _vpcs);
@@ -450,19 +475,15 @@ namespace TencentCloud
                     bool VpcsHasBeenSet() const;
 
                     /**
-                     * 获取创建时间，毫秒为单位
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 创建时间，毫秒为单位
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取创建时间，毫秒为单位。unix 时间戳
+                     * @return CreateTime 创建时间，毫秒为单位。unix 时间戳
                      * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
-                     * 设置创建时间，毫秒为单位
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTime 创建时间，毫秒为单位
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置创建时间，毫秒为单位。unix 时间戳
+                     * @param _createTime 创建时间，毫秒为单位。unix 时间戳
                      * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
@@ -474,10 +495,94 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取实例类型，0 托管版、1 Serverless 版
+                     * @return InstanceType 实例类型，0 托管版、1 Serverless 版
+                     * 
+                     */
+                    uint64_t GetInstanceType() const;
+
+                    /**
+                     * 设置实例类型，0 托管版、1 Serverless 版
+                     * @param _instanceType 实例类型，0 托管版、1 Serverless 版
+                     * 
+                     */
+                    void SetInstanceType(const uint64_t& _instanceType);
+
+                    /**
+                     * 判断参数 InstanceType 是否已赋值
+                     * @return InstanceType 是否已赋值
+                     * 
+                     */
+                    bool InstanceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取隔离时间，毫秒为单位。unix 时间戳
+                     * @return IsolatedTime 隔离时间，毫秒为单位。unix 时间戳
+                     * 
+                     */
+                    uint64_t GetIsolatedTime() const;
+
+                    /**
+                     * 设置隔离时间，毫秒为单位。unix 时间戳
+                     * @param _isolatedTime 隔离时间，毫秒为单位。unix 时间戳
+                     * 
+                     */
+                    void SetIsolatedTime(const uint64_t& _isolatedTime);
+
+                    /**
+                     * 判断参数 IsolatedTime 是否已赋值
+                     * @return IsolatedTime 是否已赋值
+                     * 
+                     */
+                    bool IsolatedTimeHasBeenSet() const;
+
+                    /**
+                     * 获取是否已开启删除保护
+                     * @return EnableDeletionProtection 是否已开启删除保护
+                     * 
+                     */
+                    bool GetEnableDeletionProtection() const;
+
+                    /**
+                     * 设置是否已开启删除保护
+                     * @param _enableDeletionProtection 是否已开启删除保护
+                     * 
+                     */
+                    void SetEnableDeletionProtection(const bool& _enableDeletionProtection);
+
+                    /**
+                     * 判断参数 EnableDeletionProtection 是否已赋值
+                     * @return EnableDeletionProtection 是否已赋值
+                     * 
+                     */
+                    bool EnableDeletionProtectionHasBeenSet() const;
+
+                    /**
+                     * 获取标签列表
+                     * @return Tags 标签列表
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置标签列表
+                     * @param _tags 标签列表
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例id
+                     * 实例 ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -490,7 +595,6 @@ namespace TencentCloud
 
                     /**
                      * 实例版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceVersion;
                     bool m_instanceVersionHasBeenSet;
@@ -532,7 +636,7 @@ namespace TencentCloud
                     bool m_maxStorageHasBeenSet;
 
                     /**
-                     * 实例到期时间，毫秒为单位
+                     * 实例到期时间，按量付费的资源该值为 0，毫秒为单位。unix 时间戳
                      */
                     uint64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;
@@ -544,26 +648,34 @@ namespace TencentCloud
                     bool m_autoRenewFlagHasBeenSet;
 
                     /**
-                     * 0-后付费，1-预付费
+                     * 1 表示预付费，0 表示后付费
                      */
                     uint64_t m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
                      * 备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 实例配置ID
+                     * 集群的节点规格，需要输入对应的规格标识：
+2C8G：rabbit-vip-basic-2c8g
+4C16G：rabbit-vip-basic-4c16g
+8C32G：rabbit-vip-basic-8c32g
+16C32G：rabbit-vip-basic-4
+16C64G：rabbit-vip-basic-16c64g
+2C4G：rabbit-vip-basic-5
+4C8G：rabbit-vip-basic-1
+8C16G（已售罄）：rabbit-vip-basic-2
+不传默认为4C8G：rabbit-vip-basic-1
                      */
                     std::string m_specName;
                     bool m_specNameHasBeenSet;
 
                     /**
-                     * 集群异常。
+                     * 集群异常信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_exceptionInformation;
@@ -585,17 +697,39 @@ namespace TencentCloud
 
                     /**
                      * VPC 接入点列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VpcEndpointInfo> m_vpcs;
                     bool m_vpcsHasBeenSet;
 
                     /**
-                     * 创建时间，毫秒为单位
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 创建时间，毫秒为单位。unix 时间戳
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 实例类型，0 托管版、1 Serverless 版
+                     */
+                    uint64_t m_instanceType;
+                    bool m_instanceTypeHasBeenSet;
+
+                    /**
+                     * 隔离时间，毫秒为单位。unix 时间戳
+                     */
+                    uint64_t m_isolatedTime;
+                    bool m_isolatedTimeHasBeenSet;
+
+                    /**
+                     * 是否已开启删除保护
+                     */
+                    bool m_enableDeletionProtection;
+                    bool m_enableDeletionProtectionHasBeenSet;
+
+                    /**
+                     * 标签列表
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

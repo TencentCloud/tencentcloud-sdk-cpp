@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取X方向偏移量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return X X方向偏移量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetX() const;
 
                     /**
                      * 设置X方向偏移量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _x X方向偏移量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetX(const double& _x);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Y方向偏移量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Y Y方向偏移量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetY() const;
 
                     /**
                      * 设置Y方向偏移量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _y Y方向偏移量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetY(const double& _y);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Z方向偏移量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Z Z方向偏移量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetZ() const;
 
                     /**
                      * 设置Z方向偏移量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _z Z方向偏移量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZ(const double& _z);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * X方向偏移量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_x;
                     bool m_xHasBeenSet;
 
                     /**
                      * Y方向偏移量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_y;
                     bool m_yHasBeenSet;
 
                     /**
                      * Z方向偏移量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_z;
                     bool m_zHasBeenSet;

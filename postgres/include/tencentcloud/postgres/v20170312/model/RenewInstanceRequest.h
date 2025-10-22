@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID，形如postgres-6fego161
-                     * @return DBInstanceId 实例ID，形如postgres-6fego161
+                     * 获取实例ID，形如postgres-6fego161。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取。仅支持预付费（包年包月）实例。
+                     * @return DBInstanceId 实例ID，形如postgres-6fego161。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取。仅支持预付费（包年包月）实例。
                      * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
-                     * 设置实例ID，形如postgres-6fego161
-                     * @param _dBInstanceId 实例ID，形如postgres-6fego161
+                     * 设置实例ID，形如postgres-6fego161。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取。仅支持预付费（包年包月）实例。
+                     * @param _dBInstanceId 实例ID，形如postgres-6fego161。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取。仅支持预付费（包年包月）实例。
                      * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
@@ -64,15 +64,19 @@ namespace TencentCloud
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取续费多少个月
-                     * @return Period 续费多少个月
+                     * 获取购买时长，单位：月。
+<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36</li>
+                     * @return Period 购买时长，单位：月。
+<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36</li>
                      * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
-                     * 设置续费多少个月
-                     * @param _period 续费多少个月
+                     * 设置购买时长，单位：月。
+<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36</li>
+                     * @param _period 购买时长，单位：月。
+<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36</li>
                      * 
                      */
                     void SetPeriod(const int64_t& _period);
@@ -85,15 +89,27 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取是否自动使用代金券,1是,0否，默认不使用
-                     * @return AutoVoucher 是否自动使用代金券,1是,0否，默认不使用
+                     * 获取是否自动使用代金券：
+<li>0：否</li>
+<li>1：是</li>
+默认值：0
+                     * @return AutoVoucher 是否自动使用代金券：
+<li>0：否</li>
+<li>1：是</li>
+默认值：0
                      * 
                      */
                     int64_t GetAutoVoucher() const;
 
                     /**
-                     * 设置是否自动使用代金券,1是,0否，默认不使用
-                     * @param _autoVoucher 是否自动使用代金券,1是,0否，默认不使用
+                     * 设置是否自动使用代金券：
+<li>0：否</li>
+<li>1：是</li>
+默认值：0
+                     * @param _autoVoucher 是否自动使用代金券：
+<li>0：否</li>
+<li>1：是</li>
+默认值：0
                      * 
                      */
                     void SetAutoVoucher(const int64_t& _autoVoucher);
@@ -129,19 +145,23 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID，形如postgres-6fego161
+                     * 实例ID，形如postgres-6fego161。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取。仅支持预付费（包年包月）实例。
                      */
                     std::string m_dBInstanceId;
                     bool m_dBInstanceIdHasBeenSet;
 
                     /**
-                     * 续费多少个月
+                     * 购买时长，单位：月。
+<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36</li>
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 是否自动使用代金券,1是,0否，默认不使用
+                     * 是否自动使用代金券：
+<li>0：否</li>
+<li>1：是</li>
+默认值：0
                      */
                     int64_t m_autoVoucher;
                     bool m_autoVoucherHasBeenSet;

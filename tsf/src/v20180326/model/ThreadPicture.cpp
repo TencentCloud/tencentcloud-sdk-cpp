@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ using namespace std;
 ThreadPicture::ThreadPicture() :
     m_threadCountHasBeenSet(false),
     m_threadActiveHasBeenSet(false),
-    m_deamonThreadCountHasBeenSet(false)
+    m_deamonThreadCountHasBeenSet(false),
+    m_daemonThreadCountHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,26 @@ CoreInternalOutcome ThreadPicture::Deserialize(const rapidjson::Value &value)
         m_deamonThreadCountHasBeenSet = true;
     }
 
+    if (value.HasMember("DaemonThreadCount") && !value["DaemonThreadCount"].IsNull())
+    {
+        if (!value["DaemonThreadCount"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ThreadPicture.DaemonThreadCount` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DaemonThreadCount"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CurvePoint item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_daemonThreadCount.push_back(item);
+        }
+        m_daemonThreadCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -138,6 +159,21 @@ void ThreadPicture::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
 
         int i=0;
         for (auto itr = m_deamonThreadCount.begin(); itr != m_deamonThreadCount.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_daemonThreadCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DaemonThreadCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_daemonThreadCount.begin(); itr != m_daemonThreadCount.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -193,5 +229,21 @@ void ThreadPicture::SetDeamonThreadCount(const vector<CurvePoint>& _deamonThread
 bool ThreadPicture::DeamonThreadCountHasBeenSet() const
 {
     return m_deamonThreadCountHasBeenSet;
+}
+
+vector<CurvePoint> ThreadPicture::GetDaemonThreadCount() const
+{
+    return m_daemonThreadCount;
+}
+
+void ThreadPicture::SetDaemonThreadCount(const vector<CurvePoint>& _daemonThreadCount)
+{
+    m_daemonThreadCount = _daemonThreadCount;
+    m_daemonThreadCountHasBeenSet = true;
+}
+
+bool ThreadPicture::DaemonThreadCountHasBeenSet() const
+{
+    return m_daemonThreadCountHasBeenSet;
 }
 

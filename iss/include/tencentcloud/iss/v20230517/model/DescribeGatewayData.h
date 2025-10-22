@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网关索引ID，用于网关查询，更新，删除操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GatewayId 网关索引ID，用于网关查询，更新，删除操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGatewayId() const;
 
                     /**
                      * 设置网关索引ID，用于网关查询，更新，删除操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gatewayId 网关索引ID，用于网关查询，更新，删除操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网关编码，由网关设备生成的唯一编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GwId 网关编码，由网关设备生成的唯一编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGwId() const;
 
                     /**
                      * 设置网关编码，由网关设备生成的唯一编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gwId 网关编码，由网关设备生成的唯一编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGwId(const std::string& _gwId);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网关名称，仅支持中文、英文、数字、_、-，长度不超过32个字符
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 网关名称，仅支持中文、英文、数字、_、-，长度不超过32个字符
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置网关名称，仅支持中文、英文、数字、_、-，长度不超过32个字符
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 网关名称，仅支持中文、英文、数字、_、-，长度不超过32个字符
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网关描述，仅支持中文、英文、数字、_、-，长度不超过128个字符
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 网关描述，仅支持中文、英文、数字、_、-，长度不超过128个字符
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置网关描述，仅支持中文、英文、数字、_、-，长度不超过128个字符
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 网关描述，仅支持中文、英文、数字、_、-，长度不超过128个字符
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务节点id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterId 服务节点id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置服务节点id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterId 服务节点id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务节点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterName 服务节点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 设置服务节点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterName 服务节点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterName(const std::string& _clusterName);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网关状态，0：离线，1:在线
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 网关状态，0：离线，1:在线
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置网关状态，0：离线，1:在线
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 网关状态，0：离线，1:在线
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -249,18 +221,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网关下挂设备数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceNum 网关下挂设备数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDeviceNum() const;
 
                     /**
                      * 设置网关下挂设备数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceNum 网关下挂设备数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceNum(const int64_t& _deviceNum);
@@ -274,18 +242,14 @@ namespace TencentCloud
 
                     /**
                      * 获取激活时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedAt 激活时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
                      * 设置激活时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdAt 激活时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedAt(const std::string& _createdAt);
@@ -299,18 +263,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -326,49 +286,42 @@ namespace TencentCloud
 
                     /**
                      * 网关索引ID，用于网关查询，更新，删除操作
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gatewayId;
                     bool m_gatewayIdHasBeenSet;
 
                     /**
                      * 网关编码，由网关设备生成的唯一编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gwId;
                     bool m_gwIdHasBeenSet;
 
                     /**
                      * 网关名称，仅支持中文、英文、数字、_、-，长度不超过32个字符
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 网关描述，仅支持中文、英文、数字、_、-，长度不超过128个字符
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 服务节点id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
                      * 服务节点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
 
                     /**
                      * 网关状态，0：离线，1:在线
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
@@ -382,21 +335,18 @@ namespace TencentCloud
 
                     /**
                      * 网关下挂设备数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_deviceNum;
                     bool m_deviceNumHasBeenSet;
 
                     /**
                      * 激活时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdAt;
                     bool m_createdAtHasBeenSet;
 
                     /**
                      * 所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;

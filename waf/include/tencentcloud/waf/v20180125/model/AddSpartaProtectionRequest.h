@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/waf/v20180125/model/PortItem.h>
+#include <tencentcloud/waf/v20180125/model/UpstreamRule.h>
 
 
 namespace TencentCloud
@@ -317,6 +318,90 @@ UpstreamProtocol：与Protocol相同
                     bool InstanceIDHasBeenSet() const;
 
                     /**
+                     * 获取是否开启HTTP强制跳转到HTTPS。0：不强制跳转1：开启强制跳转
+                     * @return HttpsRewrite 是否开启HTTP强制跳转到HTTPS。0：不强制跳转1：开启强制跳转
+                     * 
+                     */
+                    int64_t GetHttpsRewrite() const;
+
+                    /**
+                     * 设置是否开启HTTP强制跳转到HTTPS。0：不强制跳转1：开启强制跳转
+                     * @param _httpsRewrite 是否开启HTTP强制跳转到HTTPS。0：不强制跳转1：开启强制跳转
+                     * 
+                     */
+                    void SetHttpsRewrite(const int64_t& _httpsRewrite);
+
+                    /**
+                     * 判断参数 HttpsRewrite 是否已赋值
+                     * @return HttpsRewrite 是否已赋值
+                     * 
+                     */
+                    bool HttpsRewriteHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启HTTP2，需要开启HTTPS协议支持。0：关闭1：开启
+                     * @return IsHttp2 是否开启HTTP2，需要开启HTTPS协议支持。0：关闭1：开启
+                     * 
+                     */
+                    int64_t GetIsHttp2() const;
+
+                    /**
+                     * 设置是否开启HTTP2，需要开启HTTPS协议支持。0：关闭1：开启
+                     * @param _isHttp2 是否开启HTTP2，需要开启HTTPS协议支持。0：关闭1：开启
+                     * 
+                     */
+                    void SetIsHttp2(const int64_t& _isHttp2);
+
+                    /**
+                     * 判断参数 IsHttp2 是否已赋值
+                     * @return IsHttp2 是否已赋值
+                     * 
+                     */
+                    bool IsHttp2HasBeenSet() const;
+
+                    /**
+                     * 获取是否开启主动健康检测。0：不开启1：开启
+                     * @return ActiveCheck 是否开启主动健康检测。0：不开启1：开启
+                     * 
+                     */
+                    int64_t GetActiveCheck() const;
+
+                    /**
+                     * 设置是否开启主动健康检测。0：不开启1：开启
+                     * @param _activeCheck 是否开启主动健康检测。0：不开启1：开启
+                     * 
+                     */
+                    void SetActiveCheck(const int64_t& _activeCheck);
+
+                    /**
+                     * 判断参数 ActiveCheck 是否已赋值
+                     * @return ActiveCheck 是否已赋值
+                     * 
+                     */
+                    bool ActiveCheckHasBeenSet() const;
+
+                    /**
+                     * 获取加密套件模板。0：不支持选择，使用默认模板  1：通用型模板 2：安全型模板3：自定义模板
+                     * @return CipherTemplate 加密套件模板。0：不支持选择，使用默认模板  1：通用型模板 2：安全型模板3：自定义模板
+                     * 
+                     */
+                    int64_t GetCipherTemplate() const;
+
+                    /**
+                     * 设置加密套件模板。0：不支持选择，使用默认模板  1：通用型模板 2：安全型模板3：自定义模板
+                     * @param _cipherTemplate 加密套件模板。0：不支持选择，使用默认模板  1：通用型模板 2：安全型模板3：自定义模板
+                     * 
+                     */
+                    void SetCipherTemplate(const int64_t& _cipherTemplate);
+
+                    /**
+                     * 判断参数 CipherTemplate 是否已赋值
+                     * @return CipherTemplate 是否已赋值
+                     * 
+                     */
+                    bool CipherTemplateHasBeenSet() const;
+
+                    /**
                      * 获取CertType为1时，需要填充此参数，表示自有证书的证书链
                      * @return Cert CertType为1时，需要填充此参数，表示自有证书的证书链
                      * 
@@ -380,23 +465,23 @@ UpstreamProtocol：与Protocol相同
                     bool SSLIdHasBeenSet() const;
 
                     /**
-                     * 获取待废弃，可不填。Waf的资源ID。
-                     * @return ResourceId 待废弃，可不填。Waf的资源ID。
-                     * 
+                     * 获取Waf的资源ID。
+                     * @return ResourceId Waf的资源ID。
+                     * @deprecated
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置待废弃，可不填。Waf的资源ID。
-                     * @param _resourceId 待废弃，可不填。Waf的资源ID。
-                     * 
+                     * 设置Waf的资源ID。
+                     * @param _resourceId Waf的资源ID。
+                     * @deprecated
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ResourceIdHasBeenSet() const;
 
@@ -472,75 +557,46 @@ https：使用https协议回源
                     bool HttpsUpstreamPortHasBeenSet() const;
 
                     /**
-                     * 获取待废弃，可不填。是否开启灰度，0表示不开启灰度。
-                     * @return IsGray 待废弃，可不填。是否开启灰度，0表示不开启灰度。
-                     * 
+                     * 获取是否开启灰度，0表示不开启灰度。
+                     * @return IsGray 是否开启灰度，0表示不开启灰度。
+                     * @deprecated
                      */
                     int64_t GetIsGray() const;
 
                     /**
-                     * 设置待废弃，可不填。是否开启灰度，0表示不开启灰度。
-                     * @param _isGray 待废弃，可不填。是否开启灰度，0表示不开启灰度。
-                     * 
+                     * 设置是否开启灰度，0表示不开启灰度。
+                     * @param _isGray 是否开启灰度，0表示不开启灰度。
+                     * @deprecated
                      */
                     void SetIsGray(const int64_t& _isGray);
 
                     /**
                      * 判断参数 IsGray 是否已赋值
                      * @return IsGray 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool IsGrayHasBeenSet() const;
 
                     /**
-                     * 获取待废弃，可不填。灰度的地区
-                     * @return GrayAreas 待废弃，可不填。灰度的地区
-                     * 
+                     * 获取灰度的地区
+                     * @return GrayAreas 灰度的地区
+                     * @deprecated
                      */
                     std::vector<std::string> GetGrayAreas() const;
 
                     /**
-                     * 设置待废弃，可不填。灰度的地区
-                     * @param _grayAreas 待废弃，可不填。灰度的地区
-                     * 
+                     * 设置灰度的地区
+                     * @param _grayAreas 灰度的地区
+                     * @deprecated
                      */
                     void SetGrayAreas(const std::vector<std::string>& _grayAreas);
 
                     /**
                      * 判断参数 GrayAreas 是否已赋值
                      * @return GrayAreas 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool GrayAreasHasBeenSet() const;
-
-                    /**
-                     * 获取必填项，是否开启HTTP强制跳转到HTTPS。
-0：不强制跳转
-1：开启强制跳转
-                     * @return HttpsRewrite 必填项，是否开启HTTP强制跳转到HTTPS。
-0：不强制跳转
-1：开启强制跳转
-                     * 
-                     */
-                    int64_t GetHttpsRewrite() const;
-
-                    /**
-                     * 设置必填项，是否开启HTTP强制跳转到HTTPS。
-0：不强制跳转
-1：开启强制跳转
-                     * @param _httpsRewrite 必填项，是否开启HTTP强制跳转到HTTPS。
-0：不强制跳转
-1：开启强制跳转
-                     * 
-                     */
-                    void SetHttpsRewrite(const int64_t& _httpsRewrite);
-
-                    /**
-                     * 判断参数 HttpsRewrite 是否已赋值
-                     * @return HttpsRewrite 是否已赋值
-                     * 
-                     */
-                    bool HttpsRewriteHasBeenSet() const;
 
                     /**
                      * 获取域名回源时的回源域名。UpstreamType为1时，需要填充此字段
@@ -585,85 +641,56 @@ https：使用https协议回源
                     bool SrcListHasBeenSet() const;
 
                     /**
-                     * 获取必填项，是否开启HTTP2，需要开启HTTPS协议支持。
-0：关闭
-1：开启
-                     * @return IsHttp2 必填项，是否开启HTTP2，需要开启HTTPS协议支持。
-0：关闭
-1：开启
-                     * 
-                     */
-                    int64_t GetIsHttp2() const;
-
-                    /**
-                     * 设置必填项，是否开启HTTP2，需要开启HTTPS协议支持。
-0：关闭
-1：开启
-                     * @param _isHttp2 必填项，是否开启HTTP2，需要开启HTTPS协议支持。
-0：关闭
-1：开启
-                     * 
-                     */
-                    void SetIsHttp2(const int64_t& _isHttp2);
-
-                    /**
-                     * 判断参数 IsHttp2 是否已赋值
-                     * @return IsHttp2 是否已赋值
-                     * 
-                     */
-                    bool IsHttp2HasBeenSet() const;
-
-                    /**
-                     * 获取待废弃，可不填。WAF实例类型。
+                     * 获取WAF实例类型。
 sparta-waf：SAAS型WAF
 clb-waf：负载均衡型WAF
 cdn-waf：CDN上的Web防护能力
-                     * @return Edition 待废弃，可不填。WAF实例类型。
+                     * @return Edition WAF实例类型。
 sparta-waf：SAAS型WAF
 clb-waf：负载均衡型WAF
 cdn-waf：CDN上的Web防护能力
-                     * 
+                     * @deprecated
                      */
                     std::string GetEdition() const;
 
                     /**
-                     * 设置待废弃，可不填。WAF实例类型。
+                     * 设置WAF实例类型。
 sparta-waf：SAAS型WAF
 clb-waf：负载均衡型WAF
 cdn-waf：CDN上的Web防护能力
-                     * @param _edition 待废弃，可不填。WAF实例类型。
+                     * @param _edition WAF实例类型。
 sparta-waf：SAAS型WAF
 clb-waf：负载均衡型WAF
 cdn-waf：CDN上的Web防护能力
-                     * 
+                     * @deprecated
                      */
                     void SetEdition(const std::string& _edition);
 
                     /**
                      * 判断参数 Edition 是否已赋值
                      * @return Edition 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool EditionHasBeenSet() const;
 
                     /**
-                     * 获取待废弃，目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
-                     * @return Anycast 待废弃，目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
-                     * 
+                     * 获取目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
+                     * @return Anycast 目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
+                     * @deprecated
                      */
                     int64_t GetAnycast() const;
 
                     /**
-                     * 设置待废弃，目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
-                     * @param _anycast 待废弃，目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
-                     * 
+                     * 设置目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
+                     * @param _anycast 目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
+                     * @deprecated
                      */
                     void SetAnycast(const int64_t& _anycast);
 
                     /**
                      * 判断参数 Anycast 是否已赋值
                      * @return Anycast 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AnycastHasBeenSet() const;
 
@@ -689,35 +716,6 @@ cdn-waf：CDN上的Web防护能力
                     bool WeightsHasBeenSet() const;
 
                     /**
-                     * 获取必填项，是否开启主动健康检测。
-0：不开启
-1：开启
-                     * @return ActiveCheck 必填项，是否开启主动健康检测。
-0：不开启
-1：开启
-                     * 
-                     */
-                    int64_t GetActiveCheck() const;
-
-                    /**
-                     * 设置必填项，是否开启主动健康检测。
-0：不开启
-1：开启
-                     * @param _activeCheck 必填项，是否开启主动健康检测。
-0：不开启
-1：开启
-                     * 
-                     */
-                    void SetActiveCheck(const int64_t& _activeCheck);
-
-                    /**
-                     * 判断参数 ActiveCheck 是否已赋值
-                     * @return ActiveCheck 是否已赋值
-                     * 
-                     */
-                    bool ActiveCheckHasBeenSet() const;
-
-                    /**
                      * 获取TLS版本信息
                      * @return TLSVersion TLS版本信息
                      * 
@@ -739,43 +737,6 @@ cdn-waf：CDN上的Web防护能力
                     bool TLSVersionHasBeenSet() const;
 
                     /**
-                     * 获取必填项，加密套件模板。
-0：不支持选择，使用默认模板  
-1：通用型模板 
-2：安全型模板
-3：自定义模板
-                     * @return CipherTemplate 必填项，加密套件模板。
-0：不支持选择，使用默认模板  
-1：通用型模板 
-2：安全型模板
-3：自定义模板
-                     * 
-                     */
-                    int64_t GetCipherTemplate() const;
-
-                    /**
-                     * 设置必填项，加密套件模板。
-0：不支持选择，使用默认模板  
-1：通用型模板 
-2：安全型模板
-3：自定义模板
-                     * @param _cipherTemplate 必填项，加密套件模板。
-0：不支持选择，使用默认模板  
-1：通用型模板 
-2：安全型模板
-3：自定义模板
-                     * 
-                     */
-                    void SetCipherTemplate(const int64_t& _cipherTemplate);
-
-                    /**
-                     * 判断参数 CipherTemplate 是否已赋值
-                     * @return CipherTemplate 是否已赋值
-                     * 
-                     */
-                    bool CipherTemplateHasBeenSet() const;
-
-                    /**
                      * 获取自定义的加密套件列表。CipherTemplate为3时需要填此字段，表示自定义的加密套件，值通过DescribeCiphersDetail接口获取。
                      * @return Ciphers 自定义的加密套件列表。CipherTemplate为3时需要填此字段，表示自定义的加密套件，值通过DescribeCiphersDetail接口获取。
                      * 
@@ -795,6 +756,27 @@ cdn-waf：CDN上的Web防护能力
                      * 
                      */
                     bool CiphersHasBeenSet() const;
+
+                    /**
+                     * 获取WAF与源站的连接超时，默认10s。
+                     * @return ProxyConnectTimeout WAF与源站的连接超时，默认10s。
+                     * 
+                     */
+                    int64_t GetProxyConnectTimeout() const;
+
+                    /**
+                     * 设置WAF与源站的连接超时，默认10s。
+                     * @param _proxyConnectTimeout WAF与源站的连接超时，默认10s。
+                     * 
+                     */
+                    void SetProxyConnectTimeout(const int64_t& _proxyConnectTimeout);
+
+                    /**
+                     * 判断参数 ProxyConnectTimeout 是否已赋值
+                     * @return ProxyConnectTimeout 是否已赋值
+                     * 
+                     */
+                    bool ProxyConnectTimeoutHasBeenSet() const;
 
                     /**
                      * 获取WAF与源站的读超时时间，默认300s。
@@ -1148,6 +1130,90 @@ cdn-waf：CDN上的Web防护能力
                      */
                     bool GmSSLIdHasBeenSet() const;
 
+                    /**
+                     * 获取回源策略，支持负载均衡回源和分流回源两种方式。0：默认值，负载均衡回源；1：分流回源
+                     * @return UpstreamPolicy 回源策略，支持负载均衡回源和分流回源两种方式。0：默认值，负载均衡回源；1：分流回源
+                     * 
+                     */
+                    int64_t GetUpstreamPolicy() const;
+
+                    /**
+                     * 设置回源策略，支持负载均衡回源和分流回源两种方式。0：默认值，负载均衡回源；1：分流回源
+                     * @param _upstreamPolicy 回源策略，支持负载均衡回源和分流回源两种方式。0：默认值，负载均衡回源；1：分流回源
+                     * 
+                     */
+                    void SetUpstreamPolicy(const int64_t& _upstreamPolicy);
+
+                    /**
+                     * 判断参数 UpstreamPolicy 是否已赋值
+                     * @return UpstreamPolicy 是否已赋值
+                     * 
+                     */
+                    bool UpstreamPolicyHasBeenSet() const;
+
+                    /**
+                     * 获取分流回源时生效，分流回源的规则。
+                     * @return UpstreamRules 分流回源时生效，分流回源的规则。
+                     * 
+                     */
+                    std::vector<UpstreamRule> GetUpstreamRules() const;
+
+                    /**
+                     * 设置分流回源时生效，分流回源的规则。
+                     * @param _upstreamRules 分流回源时生效，分流回源的规则。
+                     * 
+                     */
+                    void SetUpstreamRules(const std::vector<UpstreamRule>& _upstreamRules);
+
+                    /**
+                     * 判断参数 UpstreamRules 是否已赋值
+                     * @return UpstreamRules 是否已赋值
+                     * 
+                     */
+                    bool UpstreamRulesHasBeenSet() const;
+
+                    /**
+                     * 获取业务场景。0：默认值，表示常规业务场景 1：大模型业务场景
+                     * @return UseCase 业务场景。0：默认值，表示常规业务场景 1：大模型业务场景
+                     * 
+                     */
+                    int64_t GetUseCase() const;
+
+                    /**
+                     * 设置业务场景。0：默认值，表示常规业务场景 1：大模型业务场景
+                     * @param _useCase 业务场景。0：默认值，表示常规业务场景 1：大模型业务场景
+                     * 
+                     */
+                    void SetUseCase(const int64_t& _useCase);
+
+                    /**
+                     * 判断参数 UseCase 是否已赋值
+                     * @return UseCase 是否已赋值
+                     * 
+                     */
+                    bool UseCaseHasBeenSet() const;
+
+                    /**
+                     * 获取gzip开关。0：关闭 1：默认值，打开。
+                     * @return Gzip gzip开关。0：关闭 1：默认值，打开。
+                     * 
+                     */
+                    int64_t GetGzip() const;
+
+                    /**
+                     * 设置gzip开关。0：关闭 1：默认值，打开。
+                     * @param _gzip gzip开关。0：关闭 1：默认值，打开。
+                     * 
+                     */
+                    void SetGzip(const int64_t& _gzip);
+
+                    /**
+                     * 判断参数 Gzip 是否已赋值
+                     * @return Gzip 是否已赋值
+                     * 
+                     */
+                    bool GzipHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1226,6 +1292,30 @@ UpstreamProtocol：与Protocol相同
                     bool m_instanceIDHasBeenSet;
 
                     /**
+                     * 是否开启HTTP强制跳转到HTTPS。0：不强制跳转1：开启强制跳转
+                     */
+                    int64_t m_httpsRewrite;
+                    bool m_httpsRewriteHasBeenSet;
+
+                    /**
+                     * 是否开启HTTP2，需要开启HTTPS协议支持。0：关闭1：开启
+                     */
+                    int64_t m_isHttp2;
+                    bool m_isHttp2HasBeenSet;
+
+                    /**
+                     * 是否开启主动健康检测。0：不开启1：开启
+                     */
+                    int64_t m_activeCheck;
+                    bool m_activeCheckHasBeenSet;
+
+                    /**
+                     * 加密套件模板。0：不支持选择，使用默认模板  1：通用型模板 2：安全型模板3：自定义模板
+                     */
+                    int64_t m_cipherTemplate;
+                    bool m_cipherTemplateHasBeenSet;
+
+                    /**
                      * CertType为1时，需要填充此参数，表示自有证书的证书链
                      */
                     std::string m_cert;
@@ -1244,7 +1334,7 @@ UpstreamProtocol：与Protocol相同
                     bool m_sSLIdHasBeenSet;
 
                     /**
-                     * 待废弃，可不填。Waf的资源ID。
+                     * Waf的资源ID。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
@@ -1270,24 +1360,16 @@ https：使用https协议回源
                     bool m_httpsUpstreamPortHasBeenSet;
 
                     /**
-                     * 待废弃，可不填。是否开启灰度，0表示不开启灰度。
+                     * 是否开启灰度，0表示不开启灰度。
                      */
                     int64_t m_isGray;
                     bool m_isGrayHasBeenSet;
 
                     /**
-                     * 待废弃，可不填。灰度的地区
+                     * 灰度的地区
                      */
                     std::vector<std::string> m_grayAreas;
                     bool m_grayAreasHasBeenSet;
-
-                    /**
-                     * 必填项，是否开启HTTP强制跳转到HTTPS。
-0：不强制跳转
-1：开启强制跳转
-                     */
-                    int64_t m_httpsRewrite;
-                    bool m_httpsRewriteHasBeenSet;
 
                     /**
                      * 域名回源时的回源域名。UpstreamType为1时，需要填充此字段
@@ -1302,15 +1384,7 @@ https：使用https协议回源
                     bool m_srcListHasBeenSet;
 
                     /**
-                     * 必填项，是否开启HTTP2，需要开启HTTPS协议支持。
-0：关闭
-1：开启
-                     */
-                    int64_t m_isHttp2;
-                    bool m_isHttp2HasBeenSet;
-
-                    /**
-                     * 待废弃，可不填。WAF实例类型。
+                     * WAF实例类型。
 sparta-waf：SAAS型WAF
 clb-waf：负载均衡型WAF
 cdn-waf：CDN上的Web防护能力
@@ -1319,7 +1393,7 @@ cdn-waf：CDN上的Web防护能力
                     bool m_editionHasBeenSet;
 
                     /**
-                     * 待废弃，目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
+                     * 目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
                      */
                     int64_t m_anycast;
                     bool m_anycastHasBeenSet;
@@ -1331,34 +1405,22 @@ cdn-waf：CDN上的Web防护能力
                     bool m_weightsHasBeenSet;
 
                     /**
-                     * 必填项，是否开启主动健康检测。
-0：不开启
-1：开启
-                     */
-                    int64_t m_activeCheck;
-                    bool m_activeCheckHasBeenSet;
-
-                    /**
                      * TLS版本信息
                      */
                     int64_t m_tLSVersion;
                     bool m_tLSVersionHasBeenSet;
 
                     /**
-                     * 必填项，加密套件模板。
-0：不支持选择，使用默认模板  
-1：通用型模板 
-2：安全型模板
-3：自定义模板
-                     */
-                    int64_t m_cipherTemplate;
-                    bool m_cipherTemplateHasBeenSet;
-
-                    /**
                      * 自定义的加密套件列表。CipherTemplate为3时需要填此字段，表示自定义的加密套件，值通过DescribeCiphersDetail接口获取。
                      */
                     std::vector<int64_t> m_ciphers;
                     bool m_ciphersHasBeenSet;
+
+                    /**
+                     * WAF与源站的连接超时，默认10s。
+                     */
+                    int64_t m_proxyConnectTimeout;
+                    bool m_proxyConnectTimeoutHasBeenSet;
 
                     /**
                      * WAF与源站的读超时时间，默认300s。
@@ -1459,6 +1521,30 @@ cdn-waf：CDN上的Web防护能力
                      */
                     std::string m_gmSSLId;
                     bool m_gmSSLIdHasBeenSet;
+
+                    /**
+                     * 回源策略，支持负载均衡回源和分流回源两种方式。0：默认值，负载均衡回源；1：分流回源
+                     */
+                    int64_t m_upstreamPolicy;
+                    bool m_upstreamPolicyHasBeenSet;
+
+                    /**
+                     * 分流回源时生效，分流回源的规则。
+                     */
+                    std::vector<UpstreamRule> m_upstreamRules;
+                    bool m_upstreamRulesHasBeenSet;
+
+                    /**
+                     * 业务场景。0：默认值，表示常规业务场景 1：大模型业务场景
+                     */
+                    int64_t m_useCase;
+                    bool m_useCaseHasBeenSet;
+
+                    /**
+                     * gzip开关。0：关闭 1：默认值，打开。
+                     */
+                    int64_t m_gzip;
+                    bool m_gzipHasBeenSet;
 
                 };
             }

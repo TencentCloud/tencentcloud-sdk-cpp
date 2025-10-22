@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,18 +56,14 @@ namespace TencentCloud
 
                     /**
                      * 获取建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Advice 建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Advice GetAdvice() const;
 
                     /**
                      * 设置建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _advice 建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdvice(const Advice& _advice);
@@ -81,18 +77,14 @@ namespace TencentCloud
 
                     /**
                      * 获取诊断结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Diagnosis 诊断结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DiagCertItem> GetDiagnosis() const;
 
                     /**
                      * 设置诊断结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diagnosis 诊断结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiagnosis(const std::vector<DiagCertItem>& _diagnosis);
@@ -106,18 +98,14 @@ namespace TencentCloud
 
                     /**
                      * 获取疾病史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiseaseMedicalHistory 疾病史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DiseaseMedicalHistory GetDiseaseMedicalHistory() const;
 
                     /**
                      * 设置疾病史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diseaseMedicalHistory 疾病史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiseaseMedicalHistory(const DiseaseMedicalHistory& _diseaseMedicalHistory);
@@ -236,18 +224,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Page 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPage() const;
 
                     /**
                      * 设置数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _page 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPage(const int64_t& _page);
@@ -263,21 +247,18 @@ namespace TencentCloud
 
                     /**
                      * 建议
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Advice m_advice;
                     bool m_adviceHasBeenSet;
 
                     /**
                      * 诊断结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DiagCertItem> m_diagnosis;
                     bool m_diagnosisHasBeenSet;
 
                     /**
                      * 疾病史
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DiseaseMedicalHistory m_diseaseMedicalHistory;
                     bool m_diseaseMedicalHistoryHasBeenSet;
@@ -314,7 +295,6 @@ namespace TencentCloud
 
                     /**
                      * 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_page;
                     bool m_pageHasBeenSet;

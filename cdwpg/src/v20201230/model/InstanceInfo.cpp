@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,12 +36,17 @@ InstanceInfo::InstanceInfo() :
     m_tagsHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_charsetHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_gTMNodesHasBeenSet(false),
     m_cNNodesHasBeenSet(false),
     m_dNNodesHasBeenSet(false),
-    m_backupStorageHasBeenSet(false),
-    m_fNNodesHasBeenSet(false)
+    m_regionIdHasBeenSet(false),
+    m_zoneIdHasBeenSet(false),
+    m_vpcIdHasBeenSet(false),
+    m_subnetIdHasBeenSet(false),
+    m_expireTimeHasBeenSet(false),
+    m_payModeHasBeenSet(false),
+    m_renewFlagHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
+    m_accessDetailsHasBeenSet(false)
 {
 }
 
@@ -217,36 +222,6 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_charsetHasBeenSet = true;
     }
 
-    if (value.HasMember("EngineVersion") && !value["EngineVersion"].IsNull())
-    {
-        if (!value["EngineVersion"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `InstanceInfo.EngineVersion` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_engineVersion = string(value["EngineVersion"].GetString());
-        m_engineVersionHasBeenSet = true;
-    }
-
-    if (value.HasMember("GTMNodes") && !value["GTMNodes"].IsNull())
-    {
-        if (!value["GTMNodes"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `InstanceInfo.GTMNodes` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["GTMNodes"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            InstanceNodeGroup item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_gTMNodes.push_back(item);
-        }
-        m_gTMNodesHasBeenSet = true;
-    }
-
     if (value.HasMember("CNNodes") && !value["CNNodes"].IsNull())
     {
         if (!value["CNNodes"].IsArray())
@@ -287,44 +262,104 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_dNNodesHasBeenSet = true;
     }
 
-    if (value.HasMember("BackupStorage") && !value["BackupStorage"].IsNull())
+    if (value.HasMember("RegionId") && !value["RegionId"].IsNull())
     {
-        if (!value["BackupStorage"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `InstanceInfo.BackupStorage` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["BackupStorage"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!value["RegionId"].IsInt64())
         {
-            InstanceNodeGroup item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_backupStorage.push_back(item);
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.RegionId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_backupStorageHasBeenSet = true;
+        m_regionId = value["RegionId"].GetInt64();
+        m_regionIdHasBeenSet = true;
     }
 
-    if (value.HasMember("FNNodes") && !value["FNNodes"].IsNull())
+    if (value.HasMember("ZoneId") && !value["ZoneId"].IsNull())
     {
-        if (!value["FNNodes"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `InstanceInfo.FNNodes` is not array type"));
+        if (!value["ZoneId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.ZoneId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_zoneId = value["ZoneId"].GetInt64();
+        m_zoneIdHasBeenSet = true;
+    }
 
-        const rapidjson::Value &tmpValue = value["FNNodes"];
+    if (value.HasMember("VpcId") && !value["VpcId"].IsNull())
+    {
+        if (!value["VpcId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpcId = string(value["VpcId"].GetString());
+        m_vpcIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubnetId") && !value["SubnetId"].IsNull())
+    {
+        if (!value["SubnetId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subnetId = string(value["SubnetId"].GetString());
+        m_subnetIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExpireTime") && !value["ExpireTime"].IsNull())
+    {
+        if (!value["ExpireTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_expireTime = string(value["ExpireTime"].GetString());
+        m_expireTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("PayMode") && !value["PayMode"].IsNull())
+    {
+        if (!value["PayMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.PayMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_payMode = string(value["PayMode"].GetString());
+        m_payModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RenewFlag") && !value["RenewFlag"].IsNull())
+    {
+        if (!value["RenewFlag"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.RenewFlag` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_renewFlag = value["RenewFlag"].GetBool();
+        m_renewFlagHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("AccessDetails") && !value["AccessDetails"].IsNull())
+    {
+        if (!value["AccessDetails"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.AccessDetails` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AccessDetails"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            InstanceNodeGroup item;
+            AccessInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_fNNodes.push_back(item);
+            m_accessDetails.push_back(item);
         }
-        m_fNNodesHasBeenSet = true;
+        m_accessDetailsHasBeenSet = true;
     }
 
 
@@ -462,29 +497,6 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         value.AddMember(iKey, rapidjson::Value(m_charset.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_engineVersionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "EngineVersion";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_engineVersion.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_gTMNodesHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "GTMNodes";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_gTMNodes.begin(); itr != m_gTMNodes.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
-    }
-
     if (m_cNNodesHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -515,30 +527,79 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         }
     }
 
-    if (m_backupStorageHasBeenSet)
+    if (m_regionIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BackupStorage";
+        string key = "RegionId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_backupStorage.begin(); itr != m_backupStorage.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+        value.AddMember(iKey, m_regionId, allocator);
     }
 
-    if (m_fNNodesHasBeenSet)
+    if (m_zoneIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FNNodes";
+        string key = "ZoneId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_zoneId, allocator);
+    }
+
+    if (m_vpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subnetIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubnetId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_expireTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_payModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_payMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_renewFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RenewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_renewFlag, allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accessDetailsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessDetails";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_fNNodes.begin(); itr != m_fNNodes.end(); ++itr, ++i)
+        for (auto itr = m_accessDetails.begin(); itr != m_accessDetails.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -788,38 +849,6 @@ bool InstanceInfo::CharsetHasBeenSet() const
     return m_charsetHasBeenSet;
 }
 
-string InstanceInfo::GetEngineVersion() const
-{
-    return m_engineVersion;
-}
-
-void InstanceInfo::SetEngineVersion(const string& _engineVersion)
-{
-    m_engineVersion = _engineVersion;
-    m_engineVersionHasBeenSet = true;
-}
-
-bool InstanceInfo::EngineVersionHasBeenSet() const
-{
-    return m_engineVersionHasBeenSet;
-}
-
-vector<InstanceNodeGroup> InstanceInfo::GetGTMNodes() const
-{
-    return m_gTMNodes;
-}
-
-void InstanceInfo::SetGTMNodes(const vector<InstanceNodeGroup>& _gTMNodes)
-{
-    m_gTMNodes = _gTMNodes;
-    m_gTMNodesHasBeenSet = true;
-}
-
-bool InstanceInfo::GTMNodesHasBeenSet() const
-{
-    return m_gTMNodesHasBeenSet;
-}
-
 vector<InstanceNodeGroup> InstanceInfo::GetCNNodes() const
 {
     return m_cNNodes;
@@ -852,35 +881,147 @@ bool InstanceInfo::DNNodesHasBeenSet() const
     return m_dNNodesHasBeenSet;
 }
 
-vector<InstanceNodeGroup> InstanceInfo::GetBackupStorage() const
+int64_t InstanceInfo::GetRegionId() const
 {
-    return m_backupStorage;
+    return m_regionId;
 }
 
-void InstanceInfo::SetBackupStorage(const vector<InstanceNodeGroup>& _backupStorage)
+void InstanceInfo::SetRegionId(const int64_t& _regionId)
 {
-    m_backupStorage = _backupStorage;
-    m_backupStorageHasBeenSet = true;
+    m_regionId = _regionId;
+    m_regionIdHasBeenSet = true;
 }
 
-bool InstanceInfo::BackupStorageHasBeenSet() const
+bool InstanceInfo::RegionIdHasBeenSet() const
 {
-    return m_backupStorageHasBeenSet;
+    return m_regionIdHasBeenSet;
 }
 
-vector<InstanceNodeGroup> InstanceInfo::GetFNNodes() const
+int64_t InstanceInfo::GetZoneId() const
 {
-    return m_fNNodes;
+    return m_zoneId;
 }
 
-void InstanceInfo::SetFNNodes(const vector<InstanceNodeGroup>& _fNNodes)
+void InstanceInfo::SetZoneId(const int64_t& _zoneId)
 {
-    m_fNNodes = _fNNodes;
-    m_fNNodesHasBeenSet = true;
+    m_zoneId = _zoneId;
+    m_zoneIdHasBeenSet = true;
 }
 
-bool InstanceInfo::FNNodesHasBeenSet() const
+bool InstanceInfo::ZoneIdHasBeenSet() const
 {
-    return m_fNNodesHasBeenSet;
+    return m_zoneIdHasBeenSet;
+}
+
+string InstanceInfo::GetVpcId() const
+{
+    return m_vpcId;
+}
+
+void InstanceInfo::SetVpcId(const string& _vpcId)
+{
+    m_vpcId = _vpcId;
+    m_vpcIdHasBeenSet = true;
+}
+
+bool InstanceInfo::VpcIdHasBeenSet() const
+{
+    return m_vpcIdHasBeenSet;
+}
+
+string InstanceInfo::GetSubnetId() const
+{
+    return m_subnetId;
+}
+
+void InstanceInfo::SetSubnetId(const string& _subnetId)
+{
+    m_subnetId = _subnetId;
+    m_subnetIdHasBeenSet = true;
+}
+
+bool InstanceInfo::SubnetIdHasBeenSet() const
+{
+    return m_subnetIdHasBeenSet;
+}
+
+string InstanceInfo::GetExpireTime() const
+{
+    return m_expireTime;
+}
+
+void InstanceInfo::SetExpireTime(const string& _expireTime)
+{
+    m_expireTime = _expireTime;
+    m_expireTimeHasBeenSet = true;
+}
+
+bool InstanceInfo::ExpireTimeHasBeenSet() const
+{
+    return m_expireTimeHasBeenSet;
+}
+
+string InstanceInfo::GetPayMode() const
+{
+    return m_payMode;
+}
+
+void InstanceInfo::SetPayMode(const string& _payMode)
+{
+    m_payMode = _payMode;
+    m_payModeHasBeenSet = true;
+}
+
+bool InstanceInfo::PayModeHasBeenSet() const
+{
+    return m_payModeHasBeenSet;
+}
+
+bool InstanceInfo::GetRenewFlag() const
+{
+    return m_renewFlag;
+}
+
+void InstanceInfo::SetRenewFlag(const bool& _renewFlag)
+{
+    m_renewFlag = _renewFlag;
+    m_renewFlagHasBeenSet = true;
+}
+
+bool InstanceInfo::RenewFlagHasBeenSet() const
+{
+    return m_renewFlagHasBeenSet;
+}
+
+string InstanceInfo::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void InstanceInfo::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool InstanceInfo::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+vector<AccessInfo> InstanceInfo::GetAccessDetails() const
+{
+    return m_accessDetails;
+}
+
+void InstanceInfo::SetAccessDetails(const vector<AccessInfo>& _accessDetails)
+{
+    m_accessDetails = _accessDetails;
+    m_accessDetailsHasBeenSet = true;
+}
+
+bool InstanceInfo::AccessDetailsHasBeenSet() const
+{
+    return m_accessDetailsHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用状态详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Condition 应用状态详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCondition() const;
 
                     /**
                      * 设置应用状态详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _condition 应用状态详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCondition(const std::string& _condition);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ID 应用ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetID() const;
 
                     /**
                      * 设置应用ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iD 应用ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetID(const std::string& _iD);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Namespace 应用命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置应用命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _namespace 应用命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNamespace(const std::string& _namespace);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用状态(参考helm的发布状态： unknown, deployed, uninstalled, superseded, failed, uninstalling, pending-install, pending-upgrade 或 pending-rollback)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 应用状态(参考helm的发布状态： unknown, deployed, uninstalled, superseded, failed, uninstalling, pending-install, pending-upgrade 或 pending-rollback)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置应用状态(参考helm的发布状态： unknown, deployed, uninstalled, superseded, failed, uninstalling, pending-install, pending-upgrade 或 pending-rollback)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 应用状态(参考helm的发布状态： unknown, deployed, uninstalled, superseded, failed, uninstalling, pending-install, pending-upgrade 或 pending-rollback)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdatedTime() const;
 
                     /**
                      * 设置更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updatedTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdatedTime(const std::string& _updatedTime);
@@ -225,49 +197,42 @@ namespace TencentCloud
 
                     /**
                      * 应用状态详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_condition;
                     bool m_conditionHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
                      * 应用ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
                      * 应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 应用命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
 
                     /**
                      * 应用状态(参考helm的发布状态： unknown, deployed, uninstalled, superseded, failed, uninstalling, pending-install, pending-upgrade 或 pending-rollback)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updatedTime;
                     bool m_updatedTimeHasBeenSet;

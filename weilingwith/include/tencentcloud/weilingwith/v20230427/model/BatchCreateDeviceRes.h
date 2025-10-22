@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取新增成功的设备列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuccessSet 新增成功的设备列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CreateDeviceSucceeded> GetSuccessSet() const;
 
                     /**
                      * 设置新增成功的设备列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _successSet 新增成功的设备列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSuccessSet(const std::vector<CreateDeviceSucceeded>& _successSet);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取新增失败的设备列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailSet 新增失败的设备列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CreateDeviceFailed> GetFailSet() const;
 
                     /**
                      * 设置新增失败的设备列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _failSet 新增失败的设备列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFailSet(const std::vector<CreateDeviceFailed>& _failSet);
@@ -102,14 +94,12 @@ namespace TencentCloud
 
                     /**
                      * 新增成功的设备列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CreateDeviceSucceeded> m_successSet;
                     bool m_successSetHasBeenSet;
 
                     /**
                      * 新增失败的设备列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CreateDeviceFailed> m_failSet;
                     bool m_failSetHasBeenSet;

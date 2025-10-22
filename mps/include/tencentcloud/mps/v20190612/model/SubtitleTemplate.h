@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/mps/v20190612/model/MediaInputInfo.h>
 
 
 namespace TencentCloud
@@ -72,18 +73,34 @@ namespace TencentCloud
                     bool PathHasBeenSet() const;
 
                     /**
-                     * 获取指定要压制到视频中的字幕轨道，如果有指定Path，则Path 优先级更高。Path 和 StreamIndex 至少指定一个。
+                     * 获取指定要压制到视频中的字幕轨道，Streamindex的取值从0开始，0表示使用源视频中的第一条字幕轨。如果指定了Path，则优先使用Path。Path 和 StreamIndex 至少指定一个。
+
+- 注意：StreamIndex必须与源文件中的字幕轨索引一致。例如，源文件中的字幕轨为stream#0:3，则StreamIndex应为3，否则可能导致任务处理失败。
+
+
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StreamIndex 指定要压制到视频中的字幕轨道，如果有指定Path，则Path 优先级更高。Path 和 StreamIndex 至少指定一个。
+                     * @return StreamIndex 指定要压制到视频中的字幕轨道，Streamindex的取值从0开始，0表示使用源视频中的第一条字幕轨。如果指定了Path，则优先使用Path。Path 和 StreamIndex 至少指定一个。
+
+- 注意：StreamIndex必须与源文件中的字幕轨索引一致。例如，源文件中的字幕轨为stream#0:3，则StreamIndex应为3，否则可能导致任务处理失败。
+
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStreamIndex() const;
 
                     /**
-                     * 设置指定要压制到视频中的字幕轨道，如果有指定Path，则Path 优先级更高。Path 和 StreamIndex 至少指定一个。
+                     * 设置指定要压制到视频中的字幕轨道，Streamindex的取值从0开始，0表示使用源视频中的第一条字幕轨。如果指定了Path，则优先使用Path。Path 和 StreamIndex 至少指定一个。
+
+- 注意：StreamIndex必须与源文件中的字幕轨索引一致。例如，源文件中的字幕轨为stream#0:3，则StreamIndex应为3，否则可能导致任务处理失败。
+
+
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _streamIndex 指定要压制到视频中的字幕轨道，如果有指定Path，则Path 优先级更高。Path 和 StreamIndex 至少指定一个。
+                     * @param _streamIndex 指定要压制到视频中的字幕轨道，Streamindex的取值从0开始，0表示使用源视频中的第一条字幕轨。如果指定了Path，则优先使用Path。Path 和 StreamIndex 至少指定一个。
+
+- 注意：StreamIndex必须与源文件中的字幕轨索引一致。例如，源文件中的字幕轨为stream#0:3，则StreamIndex应为3，否则可能导致任务处理失败。
+
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,38 +114,115 @@ namespace TencentCloud
                     bool StreamIndexHasBeenSet() const;
 
                     /**
-                     * 获取字体类型，
-<li>hei.ttf：黑体</li>
-<li>song.ttf：宋体</li>
-<li>simkai.ttf：楷体</li>
-<li>arial.ttf：仅支持英文</li>
-默认hei.ttf
+                     * 获取要压制到视频中的字幕文件的输入信息，目前仅支持存储在COS的字幕文件
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FontType 字体类型，
+                     * @return SubtitleFileInput 要压制到视频中的字幕文件的输入信息，目前仅支持存储在COS的字幕文件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    MediaInputInfo GetSubtitleFileInput() const;
+
+                    /**
+                     * 设置要压制到视频中的字幕文件的输入信息，目前仅支持存储在COS的字幕文件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subtitleFileInput 要压制到视频中的字幕文件的输入信息，目前仅支持存储在COS的字幕文件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubtitleFileInput(const MediaInputInfo& _subtitleFileInput);
+
+                    /**
+                     * 判断参数 SubtitleFileInput 是否已赋值
+                     * @return SubtitleFileInput 是否已赋值
+                     * 
+                     */
+                    bool SubtitleFileInputHasBeenSet() const;
+
+                    /**
+                     * 获取字体类型，支持：
 <li>hei.ttf：黑体</li>
 <li>song.ttf：宋体</li>
-<li>simkai.ttf：楷体</li>
+<li>kai.ttf（推荐）或 simkai.ttf：楷体</li>
+<li>msyh.ttf：微软雅黑</li>
+<li>msyhbd.ttf：微软雅黑加粗</li>
+<li>hkjgt.ttf：华康金刚体</li>
+<li>dhttx.ttf：典黑体特细</li>
+<li>xqgdzt.ttf：喜鹊古字典体</li>
+<li>qpcyt.ttf：巧拼超圆体</li>
 <li>arial.ttf：仅支持英文</li>
-默认hei.ttf
+<li>dinalternate.ttf：DIN Alternate Bold</li>
+<li>helveticalt.ttf：Helvetica</li>
+<li>helveticains.ttf：Helvetica Inserat</li>
+<li>trajanpro.ttf：TrajanPro-Bold</li>
+<li>korean.ttf：韩语</li>
+<li>japanese.ttf：日语</li>
+<li>thai.ttf：泰语</li>
+默认：hei.ttf 黑体。注意：楷体推荐使用kai.ttf
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FontType 字体类型，支持：
+<li>hei.ttf：黑体</li>
+<li>song.ttf：宋体</li>
+<li>kai.ttf（推荐）或 simkai.ttf：楷体</li>
+<li>msyh.ttf：微软雅黑</li>
+<li>msyhbd.ttf：微软雅黑加粗</li>
+<li>hkjgt.ttf：华康金刚体</li>
+<li>dhttx.ttf：典黑体特细</li>
+<li>xqgdzt.ttf：喜鹊古字典体</li>
+<li>qpcyt.ttf：巧拼超圆体</li>
+<li>arial.ttf：仅支持英文</li>
+<li>dinalternate.ttf：DIN Alternate Bold</li>
+<li>helveticalt.ttf：Helvetica</li>
+<li>helveticains.ttf：Helvetica Inserat</li>
+<li>trajanpro.ttf：TrajanPro-Bold</li>
+<li>korean.ttf：韩语</li>
+<li>japanese.ttf：日语</li>
+<li>thai.ttf：泰语</li>
+默认：hei.ttf 黑体。注意：楷体推荐使用kai.ttf
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFontType() const;
 
                     /**
-                     * 设置字体类型，
+                     * 设置字体类型，支持：
 <li>hei.ttf：黑体</li>
 <li>song.ttf：宋体</li>
-<li>simkai.ttf：楷体</li>
+<li>kai.ttf（推荐）或 simkai.ttf：楷体</li>
+<li>msyh.ttf：微软雅黑</li>
+<li>msyhbd.ttf：微软雅黑加粗</li>
+<li>hkjgt.ttf：华康金刚体</li>
+<li>dhttx.ttf：典黑体特细</li>
+<li>xqgdzt.ttf：喜鹊古字典体</li>
+<li>qpcyt.ttf：巧拼超圆体</li>
 <li>arial.ttf：仅支持英文</li>
-默认hei.ttf
+<li>dinalternate.ttf：DIN Alternate Bold</li>
+<li>helveticalt.ttf：Helvetica</li>
+<li>helveticains.ttf：Helvetica Inserat</li>
+<li>trajanpro.ttf：TrajanPro-Bold</li>
+<li>korean.ttf：韩语</li>
+<li>japanese.ttf：日语</li>
+<li>thai.ttf：泰语</li>
+默认：hei.ttf 黑体。注意：楷体推荐使用kai.ttf
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _fontType 字体类型，
+                     * @param _fontType 字体类型，支持：
 <li>hei.ttf：黑体</li>
 <li>song.ttf：宋体</li>
-<li>simkai.ttf：楷体</li>
+<li>kai.ttf（推荐）或 simkai.ttf：楷体</li>
+<li>msyh.ttf：微软雅黑</li>
+<li>msyhbd.ttf：微软雅黑加粗</li>
+<li>hkjgt.ttf：华康金刚体</li>
+<li>dhttx.ttf：典黑体特细</li>
+<li>xqgdzt.ttf：喜鹊古字典体</li>
+<li>qpcyt.ttf：巧拼超圆体</li>
 <li>arial.ttf：仅支持英文</li>
-默认hei.ttf
+<li>dinalternate.ttf：DIN Alternate Bold</li>
+<li>helveticalt.ttf：Helvetica</li>
+<li>helveticains.ttf：Helvetica Inserat</li>
+<li>trajanpro.ttf：TrajanPro-Bold</li>
+<li>korean.ttf：韩语</li>
+<li>japanese.ttf：日语</li>
+<li>thai.ttf：泰语</li>
+默认：hei.ttf 黑体。注意：楷体推荐使用kai.ttf
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -143,8 +237,10 @@ namespace TencentCloud
 
                     /**
                      * 获取字体大小，格式：Npx，N 为数值，不指定则以字幕文件中为准。
+默认源视频高度的5%。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FontSize 字体大小，格式：Npx，N 为数值，不指定则以字幕文件中为准。
+默认源视频高度的5%。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -152,8 +248,10 @@ namespace TencentCloud
 
                     /**
                      * 设置字体大小，格式：Npx，N 为数值，不指定则以字幕文件中为准。
+默认源视频高度的5%。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fontSize 字体大小，格式：Npx，N 为数值，不指定则以字幕文件中为准。
+默认源视频高度的5%。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -167,18 +265,18 @@ namespace TencentCloud
                     bool FontSizeHasBeenSet() const;
 
                     /**
-                     * 获取字体颜色，格式：0xRRGGBB，默认值：0xFFFFFF（白色）
+                     * 获取字体颜色，格式：0xRRGGBB，默认值：0xFFFFFF（白色）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FontColor 字体颜色，格式：0xRRGGBB，默认值：0xFFFFFF（白色）
+                     * @return FontColor 字体颜色，格式：0xRRGGBB，默认值：0xFFFFFF（白色）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFontColor() const;
 
                     /**
-                     * 设置字体颜色，格式：0xRRGGBB，默认值：0xFFFFFF（白色）
+                     * 设置字体颜色，格式：0xRRGGBB，默认值：0xFFFFFF（白色）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _fontColor 字体颜色，格式：0xRRGGBB，默认值：0xFFFFFF（白色）
+                     * @param _fontColor 字体颜色，格式：0xRRGGBB，默认值：0xFFFFFF（白色）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -228,6 +326,448 @@ namespace TencentCloud
                      */
                     bool FontAlphaHasBeenSet() const;
 
+                    /**
+                     * 获取字幕y轴坐标位置，指定此参数会忽略字幕文件自带坐标；支持像素和百分比格式：
+
+- 像素：Npx，N范围：[0,4096]。
+- 百分百：N%，N范围：[0,100]；例如10%表示字幕y坐标=10%*源视频高度。
+
+默认值：源视频高度*4%。
+注意：坐标轴原点在源视频中轴线底部，字幕基准点在字幕中轴线底部，参考下图：
+![image](https://ie-mps-1258344699.cos.ap-nanjing.tencentcos.cn/common/cloud/mps-demo/102_ai_subtitle/subtitle_style.png)
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return YPos 字幕y轴坐标位置，指定此参数会忽略字幕文件自带坐标；支持像素和百分比格式：
+
+- 像素：Npx，N范围：[0,4096]。
+- 百分百：N%，N范围：[0,100]；例如10%表示字幕y坐标=10%*源视频高度。
+
+默认值：源视频高度*4%。
+注意：坐标轴原点在源视频中轴线底部，字幕基准点在字幕中轴线底部，参考下图：
+![image](https://ie-mps-1258344699.cos.ap-nanjing.tencentcos.cn/common/cloud/mps-demo/102_ai_subtitle/subtitle_style.png)
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetYPos() const;
+
+                    /**
+                     * 设置字幕y轴坐标位置，指定此参数会忽略字幕文件自带坐标；支持像素和百分比格式：
+
+- 像素：Npx，N范围：[0,4096]。
+- 百分百：N%，N范围：[0,100]；例如10%表示字幕y坐标=10%*源视频高度。
+
+默认值：源视频高度*4%。
+注意：坐标轴原点在源视频中轴线底部，字幕基准点在字幕中轴线底部，参考下图：
+![image](https://ie-mps-1258344699.cos.ap-nanjing.tencentcos.cn/common/cloud/mps-demo/102_ai_subtitle/subtitle_style.png)
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _yPos 字幕y轴坐标位置，指定此参数会忽略字幕文件自带坐标；支持像素和百分比格式：
+
+- 像素：Npx，N范围：[0,4096]。
+- 百分百：N%，N范围：[0,100]；例如10%表示字幕y坐标=10%*源视频高度。
+
+默认值：源视频高度*4%。
+注意：坐标轴原点在源视频中轴线底部，字幕基准点在字幕中轴线底部，参考下图：
+![image](https://ie-mps-1258344699.cos.ap-nanjing.tencentcos.cn/common/cloud/mps-demo/102_ai_subtitle/subtitle_style.png)
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetYPos(const std::string& _yPos);
+
+                    /**
+                     * 判断参数 YPos 是否已赋值
+                     * @return YPos 是否已赋值
+                     * 
+                     */
+                    bool YPosHasBeenSet() const;
+
+                    /**
+                     * 获取字幕背景底板的y轴坐标位置；支持像素和百分比格式：
+
+- 像素：Npx，N范围：[0,4096]。
+- 百分百：N%，N范围：[0,100]；例如10%表示字幕背景底板y坐标=10%*源视频高度。
+
+不传表示不开启字幕背景底板。
+注意：坐标轴原点位于源视频的中轴线底部，字幕背景底板的基准点在其中轴线底部，参考下图：
+![image](https://ie-mps-1258344699.cos.ap-nanjing.tencentcos.cn/common/cloud/mps-demo/102_ai_subtitle/subtitle_style.png)
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BoardY 字幕背景底板的y轴坐标位置；支持像素和百分比格式：
+
+- 像素：Npx，N范围：[0,4096]。
+- 百分百：N%，N范围：[0,100]；例如10%表示字幕背景底板y坐标=10%*源视频高度。
+
+不传表示不开启字幕背景底板。
+注意：坐标轴原点位于源视频的中轴线底部，字幕背景底板的基准点在其中轴线底部，参考下图：
+![image](https://ie-mps-1258344699.cos.ap-nanjing.tencentcos.cn/common/cloud/mps-demo/102_ai_subtitle/subtitle_style.png)
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBoardY() const;
+
+                    /**
+                     * 设置字幕背景底板的y轴坐标位置；支持像素和百分比格式：
+
+- 像素：Npx，N范围：[0,4096]。
+- 百分百：N%，N范围：[0,100]；例如10%表示字幕背景底板y坐标=10%*源视频高度。
+
+不传表示不开启字幕背景底板。
+注意：坐标轴原点位于源视频的中轴线底部，字幕背景底板的基准点在其中轴线底部，参考下图：
+![image](https://ie-mps-1258344699.cos.ap-nanjing.tencentcos.cn/common/cloud/mps-demo/102_ai_subtitle/subtitle_style.png)
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _boardY 字幕背景底板的y轴坐标位置；支持像素和百分比格式：
+
+- 像素：Npx，N范围：[0,4096]。
+- 百分百：N%，N范围：[0,100]；例如10%表示字幕背景底板y坐标=10%*源视频高度。
+
+不传表示不开启字幕背景底板。
+注意：坐标轴原点位于源视频的中轴线底部，字幕背景底板的基准点在其中轴线底部，参考下图：
+![image](https://ie-mps-1258344699.cos.ap-nanjing.tencentcos.cn/common/cloud/mps-demo/102_ai_subtitle/subtitle_style.png)
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBoardY(const std::string& _boardY);
+
+                    /**
+                     * 判断参数 BoardY 是否已赋值
+                     * @return BoardY 是否已赋值
+                     * 
+                     */
+                    bool BoardYHasBeenSet() const;
+
+                    /**
+                     * 获取底板的宽度，单位为像素，取值范围：[0,4096]。
+默认源视频宽像素的90%。
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BoardWidth 底板的宽度，单位为像素，取值范围：[0,4096]。
+默认源视频宽像素的90%。
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetBoardWidth() const;
+
+                    /**
+                     * 设置底板的宽度，单位为像素，取值范围：[0,4096]。
+默认源视频宽像素的90%。
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _boardWidth 底板的宽度，单位为像素，取值范围：[0,4096]。
+默认源视频宽像素的90%。
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBoardWidth(const int64_t& _boardWidth);
+
+                    /**
+                     * 判断参数 BoardWidth 是否已赋值
+                     * @return BoardWidth 是否已赋值
+                     * 
+                     */
+                    bool BoardWidthHasBeenSet() const;
+
+                    /**
+                     * 获取底板的高度。单位为像素，取值范围：[0,4096]。
+默认为源视频高像素的15%。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BoardHeight 底板的高度。单位为像素，取值范围：[0,4096]。
+默认为源视频高像素的15%。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetBoardHeight() const;
+
+                    /**
+                     * 设置底板的高度。单位为像素，取值范围：[0,4096]。
+默认为源视频高像素的15%。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _boardHeight 底板的高度。单位为像素，取值范围：[0,4096]。
+默认为源视频高像素的15%。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBoardHeight(const int64_t& _boardHeight);
+
+                    /**
+                     * 判断参数 BoardHeight 是否已赋值
+                     * @return BoardHeight 是否已赋值
+                     * 
+                     */
+                    bool BoardHeightHasBeenSet() const;
+
+                    /**
+                     * 获取底板颜色。格式：0xRRGGBB，
+默认值：0x000000（黑色）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BoardColor 底板颜色。格式：0xRRGGBB，
+默认值：0x000000（黑色）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBoardColor() const;
+
+                    /**
+                     * 设置底板颜色。格式：0xRRGGBB，
+默认值：0x000000（黑色）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _boardColor 底板颜色。格式：0xRRGGBB，
+默认值：0x000000（黑色）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBoardColor(const std::string& _boardColor);
+
+                    /**
+                     * 判断参数 BoardColor 是否已赋值
+                     * @return BoardColor 是否已赋值
+                     * 
+                     */
+                    bool BoardColorHasBeenSet() const;
+
+                    /**
+                     * 获取字幕背景板透明度，取值范围：[0, 1]
+<li>0：完全透明</li>
+<li>1：完全不透明</li>
+默认值：0.8。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BoardAlpha 字幕背景板透明度，取值范围：[0, 1]
+<li>0：完全透明</li>
+<li>1：完全不透明</li>
+默认值：0.8。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetBoardAlpha() const;
+
+                    /**
+                     * 设置字幕背景板透明度，取值范围：[0, 1]
+<li>0：完全透明</li>
+<li>1：完全不透明</li>
+默认值：0.8。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _boardAlpha 字幕背景板透明度，取值范围：[0, 1]
+<li>0：完全透明</li>
+<li>1：完全不透明</li>
+默认值：0.8。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBoardAlpha(const double& _boardAlpha);
+
+                    /**
+                     * 判断参数 BoardAlpha 是否已赋值
+                     * @return BoardAlpha 是否已赋值
+                     * 
+                     */
+                    bool BoardAlphaHasBeenSet() const;
+
+                    /**
+                     * 获取描边宽度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OutlineWidth 描边宽度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetOutlineWidth() const;
+
+                    /**
+                     * 设置描边宽度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _outlineWidth 描边宽度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOutlineWidth(const double& _outlineWidth);
+
+                    /**
+                     * 判断参数 OutlineWidth 是否已赋值
+                     * @return OutlineWidth 是否已赋值
+                     * 
+                     */
+                    bool OutlineWidthHasBeenSet() const;
+
+                    /**
+                     * 获取描边颜色。6位16进制RGB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OutlineColor 描边颜色。6位16进制RGB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetOutlineColor() const;
+
+                    /**
+                     * 设置描边颜色。6位16进制RGB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _outlineColor 描边颜色。6位16进制RGB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOutlineColor(const std::string& _outlineColor);
+
+                    /**
+                     * 判断参数 OutlineColor 是否已赋值
+                     * @return OutlineColor 是否已赋值
+                     * 
+                     */
+                    bool OutlineColorHasBeenSet() const;
+
+                    /**
+                     * 获取描边透明度。(0，1] 正浮点数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OutlineAlpha 描边透明度。(0，1] 正浮点数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetOutlineAlpha() const;
+
+                    /**
+                     * 设置描边透明度。(0，1] 正浮点数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _outlineAlpha 描边透明度。(0，1] 正浮点数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOutlineAlpha(const double& _outlineAlpha);
+
+                    /**
+                     * 判断参数 OutlineAlpha 是否已赋值
+                     * @return OutlineAlpha 是否已赋值
+                     * 
+                     */
+                    bool OutlineAlphaHasBeenSet() const;
+
+                    /**
+                     * 获取阴影宽度。浮点数  [0, 1000]
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ShadowWidth 阴影宽度。浮点数  [0, 1000]
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetShadowWidth() const;
+
+                    /**
+                     * 设置阴影宽度。浮点数  [0, 1000]
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _shadowWidth 阴影宽度。浮点数  [0, 1000]
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetShadowWidth(const double& _shadowWidth);
+
+                    /**
+                     * 判断参数 ShadowWidth 是否已赋值
+                     * @return ShadowWidth 是否已赋值
+                     * 
+                     */
+                    bool ShadowWidthHasBeenSet() const;
+
+                    /**
+                     * 获取阴影颜色。6位16进制RGB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ShadowColor 阴影颜色。6位16进制RGB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetShadowColor() const;
+
+                    /**
+                     * 设置阴影颜色。6位16进制RGB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _shadowColor 阴影颜色。6位16进制RGB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetShadowColor(const std::string& _shadowColor);
+
+                    /**
+                     * 判断参数 ShadowColor 是否已赋值
+                     * @return ShadowColor 是否已赋值
+                     * 
+                     */
+                    bool ShadowColorHasBeenSet() const;
+
+                    /**
+                     * 获取阴影透明度。(0，1] 正浮点数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ShadowAlpha 阴影透明度。(0，1] 正浮点数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetShadowAlpha() const;
+
+                    /**
+                     * 设置阴影透明度。(0，1] 正浮点数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _shadowAlpha 阴影透明度。(0，1] 正浮点数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetShadowAlpha(const double& _shadowAlpha);
+
+                    /**
+                     * 判断参数 ShadowAlpha 是否已赋值
+                     * @return ShadowAlpha 是否已赋值
+                     * 
+                     */
+                    bool ShadowAlphaHasBeenSet() const;
+
+                    /**
+                     * 获取行间距。正整数  [0, 1000]
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LineSpacing 行间距。正整数  [0, 1000]
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetLineSpacing() const;
+
+                    /**
+                     * 设置行间距。正整数  [0, 1000]
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _lineSpacing 行间距。正整数  [0, 1000]
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLineSpacing(const int64_t& _lineSpacing);
+
+                    /**
+                     * 判断参数 LineSpacing 是否已赋值
+                     * @return LineSpacing 是否已赋值
+                     * 
+                     */
+                    bool LineSpacingHasBeenSet() const;
+
+                    /**
+                     * 获取对齐方式，，取值：top: 顶部对齐，字幕顶部按位置固定，底部随行数变化。bottom: 底部对齐，字幕底部按位置固定，顶部随行数变化。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Alignment 对齐方式，，取值：top: 顶部对齐，字幕顶部按位置固定，底部随行数变化。bottom: 底部对齐，字幕底部按位置固定，顶部随行数变化。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAlignment() const;
+
+                    /**
+                     * 设置对齐方式，，取值：top: 顶部对齐，字幕顶部按位置固定，底部随行数变化。bottom: 底部对齐，字幕底部按位置固定，顶部随行数变化。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _alignment 对齐方式，，取值：top: 顶部对齐，字幕顶部按位置固定，底部随行数变化。bottom: 底部对齐，字幕底部按位置固定，顶部随行数变化。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAlignment(const std::string& _alignment);
+
+                    /**
+                     * 判断参数 Alignment 是否已赋值
+                     * @return Alignment 是否已赋值
+                     * 
+                     */
+                    bool AlignmentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -238,19 +778,43 @@ namespace TencentCloud
                     bool m_pathHasBeenSet;
 
                     /**
-                     * 指定要压制到视频中的字幕轨道，如果有指定Path，则Path 优先级更高。Path 和 StreamIndex 至少指定一个。
+                     * 指定要压制到视频中的字幕轨道，Streamindex的取值从0开始，0表示使用源视频中的第一条字幕轨。如果指定了Path，则优先使用Path。Path 和 StreamIndex 至少指定一个。
+
+- 注意：StreamIndex必须与源文件中的字幕轨索引一致。例如，源文件中的字幕轨为stream#0:3，则StreamIndex应为3，否则可能导致任务处理失败。
+
+
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_streamIndex;
                     bool m_streamIndexHasBeenSet;
 
                     /**
-                     * 字体类型，
+                     * 要压制到视频中的字幕文件的输入信息，目前仅支持存储在COS的字幕文件
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MediaInputInfo m_subtitleFileInput;
+                    bool m_subtitleFileInputHasBeenSet;
+
+                    /**
+                     * 字体类型，支持：
 <li>hei.ttf：黑体</li>
 <li>song.ttf：宋体</li>
-<li>simkai.ttf：楷体</li>
+<li>kai.ttf（推荐）或 simkai.ttf：楷体</li>
+<li>msyh.ttf：微软雅黑</li>
+<li>msyhbd.ttf：微软雅黑加粗</li>
+<li>hkjgt.ttf：华康金刚体</li>
+<li>dhttx.ttf：典黑体特细</li>
+<li>xqgdzt.ttf：喜鹊古字典体</li>
+<li>qpcyt.ttf：巧拼超圆体</li>
 <li>arial.ttf：仅支持英文</li>
-默认hei.ttf
+<li>dinalternate.ttf：DIN Alternate Bold</li>
+<li>helveticalt.ttf：Helvetica</li>
+<li>helveticains.ttf：Helvetica Inserat</li>
+<li>trajanpro.ttf：TrajanPro-Bold</li>
+<li>korean.ttf：韩语</li>
+<li>japanese.ttf：日语</li>
+<li>thai.ttf：泰语</li>
+默认：hei.ttf 黑体。注意：楷体推荐使用kai.ttf
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fontType;
@@ -258,13 +822,14 @@ namespace TencentCloud
 
                     /**
                      * 字体大小，格式：Npx，N 为数值，不指定则以字幕文件中为准。
+默认源视频高度的5%。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fontSize;
                     bool m_fontSizeHasBeenSet;
 
                     /**
-                     * 字体颜色，格式：0xRRGGBB，默认值：0xFFFFFF（白色）
+                     * 字体颜色，格式：0xRRGGBB，默认值：0xFFFFFF（白色）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fontColor;
@@ -279,6 +844,127 @@ namespace TencentCloud
                      */
                     double m_fontAlpha;
                     bool m_fontAlphaHasBeenSet;
+
+                    /**
+                     * 字幕y轴坐标位置，指定此参数会忽略字幕文件自带坐标；支持像素和百分比格式：
+
+- 像素：Npx，N范围：[0,4096]。
+- 百分百：N%，N范围：[0,100]；例如10%表示字幕y坐标=10%*源视频高度。
+
+默认值：源视频高度*4%。
+注意：坐标轴原点在源视频中轴线底部，字幕基准点在字幕中轴线底部，参考下图：
+![image](https://ie-mps-1258344699.cos.ap-nanjing.tencentcos.cn/common/cloud/mps-demo/102_ai_subtitle/subtitle_style.png)
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_yPos;
+                    bool m_yPosHasBeenSet;
+
+                    /**
+                     * 字幕背景底板的y轴坐标位置；支持像素和百分比格式：
+
+- 像素：Npx，N范围：[0,4096]。
+- 百分百：N%，N范围：[0,100]；例如10%表示字幕背景底板y坐标=10%*源视频高度。
+
+不传表示不开启字幕背景底板。
+注意：坐标轴原点位于源视频的中轴线底部，字幕背景底板的基准点在其中轴线底部，参考下图：
+![image](https://ie-mps-1258344699.cos.ap-nanjing.tencentcos.cn/common/cloud/mps-demo/102_ai_subtitle/subtitle_style.png)
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_boardY;
+                    bool m_boardYHasBeenSet;
+
+                    /**
+                     * 底板的宽度，单位为像素，取值范围：[0,4096]。
+默认源视频宽像素的90%。
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_boardWidth;
+                    bool m_boardWidthHasBeenSet;
+
+                    /**
+                     * 底板的高度。单位为像素，取值范围：[0,4096]。
+默认为源视频高像素的15%。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_boardHeight;
+                    bool m_boardHeightHasBeenSet;
+
+                    /**
+                     * 底板颜色。格式：0xRRGGBB，
+默认值：0x000000（黑色）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_boardColor;
+                    bool m_boardColorHasBeenSet;
+
+                    /**
+                     * 字幕背景板透明度，取值范围：[0, 1]
+<li>0：完全透明</li>
+<li>1：完全不透明</li>
+默认值：0.8。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_boardAlpha;
+                    bool m_boardAlphaHasBeenSet;
+
+                    /**
+                     * 描边宽度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_outlineWidth;
+                    bool m_outlineWidthHasBeenSet;
+
+                    /**
+                     * 描边颜色。6位16进制RGB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_outlineColor;
+                    bool m_outlineColorHasBeenSet;
+
+                    /**
+                     * 描边透明度。(0，1] 正浮点数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_outlineAlpha;
+                    bool m_outlineAlphaHasBeenSet;
+
+                    /**
+                     * 阴影宽度。浮点数  [0, 1000]
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_shadowWidth;
+                    bool m_shadowWidthHasBeenSet;
+
+                    /**
+                     * 阴影颜色。6位16进制RGB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_shadowColor;
+                    bool m_shadowColorHasBeenSet;
+
+                    /**
+                     * 阴影透明度。(0，1] 正浮点数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_shadowAlpha;
+                    bool m_shadowAlphaHasBeenSet;
+
+                    /**
+                     * 行间距。正整数  [0, 1000]
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_lineSpacing;
+                    bool m_lineSpacingHasBeenSet;
+
+                    /**
+                     * 对齐方式，，取值：top: 顶部对齐，字幕顶部按位置固定，底部随行数变化。bottom: 底部对齐，字幕底部按位置固定，顶部随行数变化。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_alignment;
+                    bool m_alignmentHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,15 +69,27 @@ namespace TencentCloud
                     bool BlueprintInfoHasBeenSet() const;
 
                     /**
-                     * 获取实例镜像是否可重置为目标镜像
-                     * @return IsResettable 实例镜像是否可重置为目标镜像
+                     * 获取实例镜像是否可重置为目标镜像。
+取值：
+true（允许）
+false（不允许）
+                     * @return IsResettable 实例镜像是否可重置为目标镜像。
+取值：
+true（允许）
+false（不允许）
                      * 
                      */
                     bool GetIsResettable() const;
 
                     /**
-                     * 设置实例镜像是否可重置为目标镜像
-                     * @param _isResettable 实例镜像是否可重置为目标镜像
+                     * 设置实例镜像是否可重置为目标镜像。
+取值：
+true（允许）
+false（不允许）
+                     * @param _isResettable 实例镜像是否可重置为目标镜像。
+取值：
+true（允许）
+false（不允许）
                      * 
                      */
                     void SetIsResettable(const bool& _isResettable);
@@ -119,7 +131,10 @@ namespace TencentCloud
                     bool m_blueprintInfoHasBeenSet;
 
                     /**
-                     * 实例镜像是否可重置为目标镜像
+                     * 实例镜像是否可重置为目标镜像。
+取值：
+true（允许）
+false（不允许）
                      */
                     bool m_isResettable;
                     bool m_isResettableHasBeenSet;

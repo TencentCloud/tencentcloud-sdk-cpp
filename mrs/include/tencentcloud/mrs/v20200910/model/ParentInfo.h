@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取年龄
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Age 年龄
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAge() const;
 
                     /**
                      * 设置年龄
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _age 年龄
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAge(const std::string& _age);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证件号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdCard 证件号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIdCard() const;
 
                     /**
                      * 设置证件号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _idCard 证件号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIdCard(const std::string& _idCard);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取民族
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ethnicity 民族
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEthnicity() const;
 
                     /**
                      * 设置民族
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ethnicity 民族
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEthnicity(const std::string& _ethnicity);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取国籍
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Nationality 国籍
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNationality() const;
 
                     /**
                      * 设置国籍
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nationality 国籍
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNationality(const std::string& _nationality);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Address 地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAddress() const;
 
                     /**
                      * 设置地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _address 地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddress(const std::string& _address);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * 名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 年龄
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_age;
                     bool m_ageHasBeenSet;
 
                     /**
                      * 证件号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_idCard;
                     bool m_idCardHasBeenSet;
 
                     /**
                      * 民族
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ethnicity;
                     bool m_ethnicityHasBeenSet;
 
                     /**
                      * 国籍
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nationality;
                     bool m_nationalityHasBeenSet;
 
                     /**
                      * 地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_address;
                     bool m_addressHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,8 @@ ModifyPrivateZoneRecordRequest::ModifyPrivateZoneRecordRequest() :
     m_recordValueHasBeenSet(false),
     m_weightHasBeenSet(false),
     m_mXHasBeenSet(false),
-    m_tTLHasBeenSet(false)
+    m_tTLHasBeenSet(false),
+    m_remarkHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string ModifyPrivateZoneRecordRequest::ToJsonString() const
         string key = "TTL";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_tTL, allocator);
+    }
+
+    if (m_remarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Remark";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -239,6 +248,22 @@ void ModifyPrivateZoneRecordRequest::SetTTL(const int64_t& _tTL)
 bool ModifyPrivateZoneRecordRequest::TTLHasBeenSet() const
 {
     return m_tTLHasBeenSet;
+}
+
+string ModifyPrivateZoneRecordRequest::GetRemark() const
+{
+    return m_remark;
+}
+
+void ModifyPrivateZoneRecordRequest::SetRemark(const string& _remark)
+{
+    m_remark = _remark;
+    m_remarkHasBeenSet = true;
+}
+
+bool ModifyPrivateZoneRecordRequest::RemarkHasBeenSet() const
+{
+    return m_remarkHasBeenSet;
 }
 
 

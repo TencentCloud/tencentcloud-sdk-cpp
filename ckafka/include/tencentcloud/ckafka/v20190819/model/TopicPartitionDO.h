@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Partition ID
-                     * @return Partition Partition ID
+                     * 获取Partition 分区ID
+                     * @return Partition Partition 分区ID
                      * 
                      */
                     int64_t GetPartition() const;
 
                     /**
-                     * 设置Partition ID
-                     * @param _partition Partition ID
+                     * 设置Partition 分区ID
+                     * @param _partition Partition 分区ID
                      * 
                      */
                     void SetPartition(const int64_t& _partition);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool PartitionHasBeenSet() const;
 
                     /**
-                     * 获取Leader 运行状态
-                     * @return LeaderStatus Leader 运行状态
+                     * 获取Leader 运行状态，0表示正常运行
+                     * @return LeaderStatus Leader 运行状态，0表示正常运行
                      * 
                      */
                     int64_t GetLeaderStatus() const;
 
                     /**
-                     * 设置Leader 运行状态
-                     * @param _leaderStatus Leader 运行状态
+                     * 设置Leader 运行状态，0表示正常运行
+                     * @param _leaderStatus Leader 运行状态，0表示正常运行
                      * 
                      */
                     void SetLeaderStatus(const int64_t& _leaderStatus);
@@ -133,13 +133,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Partition ID
+                     * Partition 分区ID
                      */
                     int64_t m_partition;
                     bool m_partitionHasBeenSet;
 
                     /**
-                     * Leader 运行状态
+                     * Leader 运行状态，0表示正常运行
                      */
                     int64_t m_leaderStatus;
                     bool m_leaderStatusHasBeenSet;

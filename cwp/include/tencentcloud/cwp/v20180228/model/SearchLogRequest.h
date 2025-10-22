@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取检索分析语句，最大长度为12KB
-                     * @return QueryString 检索分析语句，最大长度为12KB
+                     * 获取检索分析语句，最大长度为12KB，查询语法可参考文档 https://cloud.tencent.com/document/product/296/50508
+                     * @return QueryString 检索分析语句，最大长度为12KB，查询语法可参考文档 https://cloud.tencent.com/document/product/296/50508
                      * 
                      */
                     std::string GetQueryString() const;
 
                     /**
-                     * 设置检索分析语句，最大长度为12KB
-                     * @param _queryString 检索分析语句，最大长度为12KB
+                     * 设置检索分析语句，最大长度为12KB，查询语法可参考文档 https://cloud.tencent.com/document/product/296/50508
+                     * @param _queryString 检索分析语句，最大长度为12KB，查询语法可参考文档 https://cloud.tencent.com/document/product/296/50508
                      * 
                      */
                     void SetQueryString(const std::string& _queryString);
@@ -183,7 +183,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 检索分析语句，最大长度为12KB
+                     * 检索分析语句，最大长度为12KB，查询语法可参考文档 https://cloud.tencent.com/document/product/296/50508
                      */
                     std::string m_queryString;
                     bool m_queryStringHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原绑定证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OldCertId 原绑定证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOldCertId() const;
 
                     /**
                      * 设置原绑定证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _oldCertId 原绑定证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOldCertId(const std::string& _oldCertId);
@@ -157,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部署监听器ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ListenerId 部署监听器ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetListenerId() const;
 
                     /**
                      * 设置部署监听器ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _listenerId 部署监听器ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetListenerId(const std::string& _listenerId);
@@ -203,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部署监听器协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocol 部署监听器协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置部署监听器协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _protocol 部署监听器协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -249,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部署错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorMsg 部署错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrorMsg() const;
 
                     /**
                      * 设置部署错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errorMsg 部署错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrorMsg(const std::string& _errorMsg);
@@ -358,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取COS存储桶名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bucket COS存储桶名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBucket() const;
 
                     /**
                      * 设置COS存储桶名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bucket COS存储桶名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBucket(const std::string& _bucket);
@@ -383,18 +363,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命名空间名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Namespace 命名空间名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置命名空间名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _namespace 命名空间名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNamespace(const std::string& _namespace);
@@ -408,18 +384,14 @@ namespace TencentCloud
 
                     /**
                      * 获取secret名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecretName secret名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSecretName() const;
 
                     /**
                      * 设置secret名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _secretName secret名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecretName(const std::string& _secretName);
@@ -433,18 +405,14 @@ namespace TencentCloud
 
                     /**
                      * 获取端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _port 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -458,18 +426,14 @@ namespace TencentCloud
 
                     /**
                      * 获取TCB环境ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnvId TCB环境ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置TCB环境ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _envId TCB环境ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnvId(const std::string& _envId);
@@ -483,18 +447,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部署的TCB类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TCBType 部署的TCB类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTCBType() const;
 
                     /**
                      * 设置部署的TCB类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tCBType 部署的TCB类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTCBType(const std::string& _tCBType);
@@ -508,18 +468,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部署的TCB地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 部署的TCB地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置部署的TCB地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 部署的TCB地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -533,18 +489,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部署CLB监听器的Url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url 部署CLB监听器的Url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetUrl() const;
 
                     /**
                      * 设置部署CLB监听器的Url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _url 部署CLB监听器的Url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUrl(const std::vector<std::string>& _url);
@@ -555,6 +507,69 @@ namespace TencentCloud
                      * 
                      */
                     bool UrlHasBeenSet() const;
+
+                    /**
+                     * 获取当前部署证书加密算法
+                     * @return Algorithm 当前部署证书加密算法
+                     * 
+                     */
+                    std::string GetAlgorithm() const;
+
+                    /**
+                     * 设置当前部署证书加密算法
+                     * @param _algorithm 当前部署证书加密算法
+                     * 
+                     */
+                    void SetAlgorithm(const std::string& _algorithm);
+
+                    /**
+                     * 判断参数 Algorithm 是否已赋值
+                     * @return Algorithm 是否已赋值
+                     * 
+                     */
+                    bool AlgorithmHasBeenSet() const;
+
+                    /**
+                     * 获取原证书加密算法
+                     * @return OldAlgorithm 原证书加密算法
+                     * 
+                     */
+                    std::string GetOldAlgorithm() const;
+
+                    /**
+                     * 设置原证书加密算法
+                     * @param _oldAlgorithm 原证书加密算法
+                     * 
+                     */
+                    void SetOldAlgorithm(const std::string& _oldAlgorithm);
+
+                    /**
+                     * 判断参数 OldAlgorithm 是否已赋值
+                     * @return OldAlgorithm 是否已赋值
+                     * 
+                     */
+                    bool OldAlgorithmHasBeenSet() const;
+
+                    /**
+                     * 获取实例状态，不同云产品状态不一样
+                     * @return InstanceStatus 实例状态，不同云产品状态不一样
+                     * 
+                     */
+                    std::string GetInstanceStatus() const;
+
+                    /**
+                     * 设置实例状态，不同云产品状态不一样
+                     * @param _instanceStatus 实例状态，不同云产品状态不一样
+                     * 
+                     */
+                    void SetInstanceStatus(const std::string& _instanceStatus);
+
+                    /**
+                     * 判断参数 InstanceStatus 是否已赋值
+                     * @return InstanceStatus 是否已赋值
+                     * 
+                     */
+                    bool InstanceStatusHasBeenSet() const;
 
                 private:
 
@@ -572,7 +587,6 @@ namespace TencentCloud
 
                     /**
                      * 原绑定证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_oldCertId;
                     bool m_oldCertIdHasBeenSet;
@@ -591,7 +605,6 @@ namespace TencentCloud
 
                     /**
                      * 部署监听器ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_listenerId;
                     bool m_listenerIdHasBeenSet;
@@ -604,7 +617,6 @@ namespace TencentCloud
 
                     /**
                      * 部署监听器协议
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
@@ -617,7 +629,6 @@ namespace TencentCloud
 
                     /**
                      * 部署错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorMsg;
                     bool m_errorMsgHasBeenSet;
@@ -648,59 +659,69 @@ namespace TencentCloud
 
                     /**
                      * COS存储桶名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bucket;
                     bool m_bucketHasBeenSet;
 
                     /**
                      * 命名空间名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
 
                     /**
                      * secret名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_secretName;
                     bool m_secretNameHasBeenSet;
 
                     /**
                      * 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
                      * TCB环境ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_envId;
                     bool m_envIdHasBeenSet;
 
                     /**
                      * 部署的TCB类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tCBType;
                     bool m_tCBTypeHasBeenSet;
 
                     /**
                      * 部署的TCB地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * 部署CLB监听器的Url
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_url;
                     bool m_urlHasBeenSet;
+
+                    /**
+                     * 当前部署证书加密算法
+                     */
+                    std::string m_algorithm;
+                    bool m_algorithmHasBeenSet;
+
+                    /**
+                     * 原证书加密算法
+                     */
+                    std::string m_oldAlgorithm;
+                    bool m_oldAlgorithmHasBeenSet;
+
+                    /**
+                     * 实例状态，不同云产品状态不一样
+                     */
+                    std::string m_instanceStatus;
+                    bool m_instanceStatusHasBeenSet;
 
                 };
             }

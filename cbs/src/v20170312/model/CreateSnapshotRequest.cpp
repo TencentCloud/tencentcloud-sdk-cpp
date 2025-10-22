@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,8 @@ CreateSnapshotRequest::CreateSnapshotRequest() :
     m_snapshotNameHasBeenSet(false),
     m_deadlineHasBeenSet(false),
     m_diskBackupIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_diskUsageHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,14 @@ string CreateSnapshotRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_diskUsageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskUsage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_diskUsage.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -171,6 +180,22 @@ void CreateSnapshotRequest::SetTags(const vector<Tag>& _tags)
 bool CreateSnapshotRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string CreateSnapshotRequest::GetDiskUsage() const
+{
+    return m_diskUsage;
+}
+
+void CreateSnapshotRequest::SetDiskUsage(const string& _diskUsage)
+{
+    m_diskUsage = _diskUsage;
+    m_diskUsageHasBeenSet = true;
+}
+
+bool CreateSnapshotRequest::DiskUsageHasBeenSet() const
+{
+    return m_diskUsageHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,11 +32,14 @@
 #include <tencentcloud/tione/v20211111/model/HorizontalPodAutoscaler.h>
 #include <tencentcloud/tione/v20211111/model/WorkloadStatus.h>
 #include <tencentcloud/tione/v20211111/model/CronScaleJob.h>
+#include <tencentcloud/tione/v20211111/model/ScheduledAction.h>
 #include <tencentcloud/tione/v20211111/model/Pod.h>
 #include <tencentcloud/tione/v20211111/model/ServiceLimit.h>
 #include <tencentcloud/tione/v20211111/model/VolumeMount.h>
 #include <tencentcloud/tione/v20211111/model/InferCodeInfo.h>
 #include <tencentcloud/tione/v20211111/model/ServiceEIP.h>
+#include <tencentcloud/tione/v20211111/model/HealthProbe.h>
+#include <tencentcloud/tione/v20211111/model/RollingUpdate.h>
 
 
 namespace TencentCloud
@@ -513,6 +516,27 @@ HYBRID_PAID:
                     bool ModelHotUpdateEnableHasBeenSet() const;
 
                     /**
+                     * 获取服务的规格别名
+                     * @return InstanceAlias 服务的规格别名
+                     * 
+                     */
+                    std::string GetInstanceAlias() const;
+
+                    /**
+                     * 设置服务的规格别名
+                     * @param _instanceAlias 服务的规格别名
+                     * 
+                     */
+                    void SetInstanceAlias(const std::string& _instanceAlias);
+
+                    /**
+                     * 判断参数 InstanceAlias 是否已赋值
+                     * @return InstanceAlias 是否已赋值
+                     * 
+                     */
+                    bool InstanceAliasHasBeenSet() const;
+
+                    /**
                      * 获取实例数量调节方式,默认为手动
 支持：自动 - "AUTO", 手动 - "MANUAL"
 注意：此字段可能返回 null，表示取不到有效值。
@@ -598,7 +622,7 @@ HYBRID_PAID:
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::string GetScheduledAction() const;
+                    ScheduledAction GetScheduledAction() const;
 
                     /**
                      * 设置定时停止的配置
@@ -607,7 +631,7 @@ HYBRID_PAID:
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetScheduledAction(const std::string& _scheduledAction);
+                    void SetScheduledAction(const ScheduledAction& _scheduledAction);
 
                     /**
                      * 判断参数 ScheduledAction 是否已赋值
@@ -866,6 +890,153 @@ HYBRID_PAID:
                      */
                     bool ServicePortHasBeenSet() const;
 
+                    /**
+                     * 获取服务的优雅退出时限。单位为秒，默认值为30，最小为1
+                     * @return TerminationGracePeriodSeconds 服务的优雅退出时限。单位为秒，默认值为30，最小为1
+                     * 
+                     */
+                    int64_t GetTerminationGracePeriodSeconds() const;
+
+                    /**
+                     * 设置服务的优雅退出时限。单位为秒，默认值为30，最小为1
+                     * @param _terminationGracePeriodSeconds 服务的优雅退出时限。单位为秒，默认值为30，最小为1
+                     * 
+                     */
+                    void SetTerminationGracePeriodSeconds(const int64_t& _terminationGracePeriodSeconds);
+
+                    /**
+                     * 判断参数 TerminationGracePeriodSeconds 是否已赋值
+                     * @return TerminationGracePeriodSeconds 是否已赋值
+                     * 
+                     */
+                    bool TerminationGracePeriodSecondsHasBeenSet() const;
+
+                    /**
+                     * 获取服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束
+                     * @return PreStopCommand 服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束
+                     * 
+                     */
+                    std::vector<std::string> GetPreStopCommand() const;
+
+                    /**
+                     * 设置服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束
+                     * @param _preStopCommand 服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束
+                     * 
+                     */
+                    void SetPreStopCommand(const std::vector<std::string>& _preStopCommand);
+
+                    /**
+                     * 判断参数 PreStopCommand 是否已赋值
+                     * @return PreStopCommand 是否已赋值
+                     * 
+                     */
+                    bool PreStopCommandHasBeenSet() const;
+
+                    /**
+                     * 获取是否启用grpc端口
+                     * @return GrpcEnable 是否启用grpc端口
+                     * 
+                     */
+                    bool GetGrpcEnable() const;
+
+                    /**
+                     * 设置是否启用grpc端口
+                     * @param _grpcEnable 是否启用grpc端口
+                     * 
+                     */
+                    void SetGrpcEnable(const bool& _grpcEnable);
+
+                    /**
+                     * 判断参数 GrpcEnable 是否已赋值
+                     * @return GrpcEnable 是否已赋值
+                     * 
+                     */
+                    bool GrpcEnableHasBeenSet() const;
+
+                    /**
+                     * 获取健康探针
+                     * @return HealthProbe 健康探针
+                     * 
+                     */
+                    HealthProbe GetHealthProbe() const;
+
+                    /**
+                     * 设置健康探针
+                     * @param _healthProbe 健康探针
+                     * 
+                     */
+                    void SetHealthProbe(const HealthProbe& _healthProbe);
+
+                    /**
+                     * 判断参数 HealthProbe 是否已赋值
+                     * @return HealthProbe 是否已赋值
+                     * 
+                     */
+                    bool HealthProbeHasBeenSet() const;
+
+                    /**
+                     * 获取滚动更新配置
+                     * @return RollingUpdate 滚动更新配置
+                     * 
+                     */
+                    RollingUpdate GetRollingUpdate() const;
+
+                    /**
+                     * 设置滚动更新配置
+                     * @param _rollingUpdate 滚动更新配置
+                     * 
+                     */
+                    void SetRollingUpdate(const RollingUpdate& _rollingUpdate);
+
+                    /**
+                     * 判断参数 RollingUpdate 是否已赋值
+                     * @return RollingUpdate 是否已赋值
+                     * 
+                     */
+                    bool RollingUpdateHasBeenSet() const;
+
+                    /**
+                     * 获取单副本下的实例数，仅在部署类型为DIST、ROLE时生效，默认1
+                     * @return InstancePerReplicas 单副本下的实例数，仅在部署类型为DIST、ROLE时生效，默认1
+                     * 
+                     */
+                    int64_t GetInstancePerReplicas() const;
+
+                    /**
+                     * 设置单副本下的实例数，仅在部署类型为DIST、ROLE时生效，默认1
+                     * @param _instancePerReplicas 单副本下的实例数，仅在部署类型为DIST、ROLE时生效，默认1
+                     * 
+                     */
+                    void SetInstancePerReplicas(const int64_t& _instancePerReplicas);
+
+                    /**
+                     * 判断参数 InstancePerReplicas 是否已赋值
+                     * @return InstancePerReplicas 是否已赋值
+                     * 
+                     */
+                    bool InstancePerReplicasHasBeenSet() const;
+
+                    /**
+                     * 获取批量数据盘挂载配置
+                     * @return VolumeMounts 批量数据盘挂载配置
+                     * 
+                     */
+                    std::vector<VolumeMount> GetVolumeMounts() const;
+
+                    /**
+                     * 设置批量数据盘挂载配置
+                     * @param _volumeMounts 批量数据盘挂载配置
+                     * 
+                     */
+                    void SetVolumeMounts(const std::vector<VolumeMount>& _volumeMounts);
+
+                    /**
+                     * 判断参数 VolumeMounts 是否已赋值
+                     * @return VolumeMounts 是否已赋值
+                     * 
+                     */
+                    bool VolumeMountsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -995,6 +1166,12 @@ HYBRID_PAID:
                     bool m_modelHotUpdateEnableHasBeenSet;
 
                     /**
+                     * 服务的规格别名
+                     */
+                    std::string m_instanceAlias;
+                    bool m_instanceAliasHasBeenSet;
+
+                    /**
                      * 实例数量调节方式,默认为手动
 支持：自动 - "AUTO", 手动 - "MANUAL"
 注意：此字段可能返回 null，表示取不到有效值。
@@ -1020,7 +1197,7 @@ HYBRID_PAID:
                      * 定时停止的配置
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_scheduledAction;
+                    ScheduledAction m_scheduledAction;
                     bool m_scheduledActionHasBeenSet;
 
                     /**
@@ -1092,6 +1269,48 @@ HYBRID_PAID:
                      */
                     int64_t m_servicePort;
                     bool m_servicePortHasBeenSet;
+
+                    /**
+                     * 服务的优雅退出时限。单位为秒，默认值为30，最小为1
+                     */
+                    int64_t m_terminationGracePeriodSeconds;
+                    bool m_terminationGracePeriodSecondsHasBeenSet;
+
+                    /**
+                     * 服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束
+                     */
+                    std::vector<std::string> m_preStopCommand;
+                    bool m_preStopCommandHasBeenSet;
+
+                    /**
+                     * 是否启用grpc端口
+                     */
+                    bool m_grpcEnable;
+                    bool m_grpcEnableHasBeenSet;
+
+                    /**
+                     * 健康探针
+                     */
+                    HealthProbe m_healthProbe;
+                    bool m_healthProbeHasBeenSet;
+
+                    /**
+                     * 滚动更新配置
+                     */
+                    RollingUpdate m_rollingUpdate;
+                    bool m_rollingUpdateHasBeenSet;
+
+                    /**
+                     * 单副本下的实例数，仅在部署类型为DIST、ROLE时生效，默认1
+                     */
+                    int64_t m_instancePerReplicas;
+                    bool m_instancePerReplicasHasBeenSet;
+
+                    /**
+                     * 批量数据盘挂载配置
+                     */
+                    std::vector<VolumeMount> m_volumeMounts;
+                    bool m_volumeMountsHasBeenSet;
 
                 };
             }

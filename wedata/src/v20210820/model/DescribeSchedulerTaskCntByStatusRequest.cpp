@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,9 @@ DescribeSchedulerTaskCntByStatusRequest::DescribeSchedulerTaskCntByStatusRequest
     m_typeNameHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_inChargeHasBeenSet(false),
-    m_workflowIdHasBeenSet(false)
+    m_workflowIdHasBeenSet(false),
+    m_projectIdsHasBeenSet(false),
+    m_resourceGroupIdsHasBeenSet(false)
 {
 }
 
@@ -76,6 +78,32 @@ string DescribeSchedulerTaskCntByStatusRequest::ToJsonString() const
         string key = "WorkflowId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_workflowId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_projectIds.begin(); itr != m_projectIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_resourceGroupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_resourceGroupIds.begin(); itr != m_resourceGroupIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -164,6 +192,38 @@ void DescribeSchedulerTaskCntByStatusRequest::SetWorkflowId(const string& _workf
 bool DescribeSchedulerTaskCntByStatusRequest::WorkflowIdHasBeenSet() const
 {
     return m_workflowIdHasBeenSet;
+}
+
+vector<string> DescribeSchedulerTaskCntByStatusRequest::GetProjectIds() const
+{
+    return m_projectIds;
+}
+
+void DescribeSchedulerTaskCntByStatusRequest::SetProjectIds(const vector<string>& _projectIds)
+{
+    m_projectIds = _projectIds;
+    m_projectIdsHasBeenSet = true;
+}
+
+bool DescribeSchedulerTaskCntByStatusRequest::ProjectIdsHasBeenSet() const
+{
+    return m_projectIdsHasBeenSet;
+}
+
+vector<string> DescribeSchedulerTaskCntByStatusRequest::GetResourceGroupIds() const
+{
+    return m_resourceGroupIds;
+}
+
+void DescribeSchedulerTaskCntByStatusRequest::SetResourceGroupIds(const vector<string>& _resourceGroupIds)
+{
+    m_resourceGroupIds = _resourceGroupIds;
+    m_resourceGroupIdsHasBeenSet = true;
+}
+
+bool DescribeSchedulerTaskCntByStatusRequest::ResourceGroupIdsHasBeenSet() const
+{
+    return m_resourceGroupIdsHasBeenSet;
 }
 
 

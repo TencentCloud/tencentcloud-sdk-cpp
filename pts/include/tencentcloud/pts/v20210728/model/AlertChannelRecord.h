@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Notice ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NoticeId Notice ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNoticeId() const;
 
                     /**
                      * 设置Notice ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _noticeId Notice ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNoticeId(const std::string& _noticeId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Consumer ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AMPConsumerId Consumer ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAMPConsumerId() const;
 
                     /**
                      * 设置Consumer ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _aMPConsumerId Consumer ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAMPConsumerId(const std::string& _aMPConsumerId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取项目 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectId 项目 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _projectId 项目 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedAt 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdAt 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedAt(const std::string& _createdAt);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedAt 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdatedAt() const;
 
                     /**
                      * 设置更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updatedAt 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdatedAt(const std::string& _updatedAt);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取App ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId App ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAppId() const;
 
                     /**
                      * 设置App ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appId App ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppId(const int64_t& _appId);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 主账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置主账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uin 主账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubAccountUin 子账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubAccountUin() const;
 
                     /**
                      * 设置子账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subAccountUin 子账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubAccountUin(const std::string& _subAccountUin);
@@ -275,63 +239,54 @@ namespace TencentCloud
 
                     /**
                      * Notice ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_noticeId;
                     bool m_noticeIdHasBeenSet;
 
                     /**
                      * Consumer ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_aMPConsumerId;
                     bool m_aMPConsumerIdHasBeenSet;
 
                     /**
                      * 项目 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
                      * 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdAt;
                     bool m_createdAtHasBeenSet;
 
                     /**
                      * 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updatedAt;
                     bool m_updatedAtHasBeenSet;
 
                     /**
                      * App ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
                      * 主账号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
                      * 子账号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subAccountUin;
                     bool m_subAccountUinHasBeenSet;

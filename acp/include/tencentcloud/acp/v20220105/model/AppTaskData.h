@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -112,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskErrMsg 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskErrMsg() const;
 
                     /**
                      * 设置错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskErrMsg 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskErrMsg(const std::string& _taskErrMsg);
@@ -221,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取联系人信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContactName 联系人信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContactName() const;
 
                     /**
                      * 设置联系人信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _contactName 联系人信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContactName(const std::string& _contactName);
@@ -266,7 +258,6 @@ namespace TencentCloud
 
                     /**
                      * 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskErrMsg;
                     bool m_taskErrMsgHasBeenSet;
@@ -297,7 +288,6 @@ namespace TencentCloud
 
                     /**
                      * 联系人信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_contactName;
                     bool m_contactNameHasBeenSet;

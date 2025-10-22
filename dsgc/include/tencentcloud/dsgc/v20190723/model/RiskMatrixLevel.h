@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取就是id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 就是id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置就是id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 就是id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Score 分数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetScore() const;
 
                     /**
                      * 设置分数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _score 分数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScore(const double& _score);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 就是id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 分数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_score;
                     bool m_scoreHasBeenSet;

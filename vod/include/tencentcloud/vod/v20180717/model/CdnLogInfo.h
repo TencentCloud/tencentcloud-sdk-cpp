@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,18 +69,18 @@ namespace TencentCloud
 
                     /**
                      * 获取日志名称，格式为：日期小时-域名
-如 2018120101-test.vod2.mqcloud.com。
+如 example.com。
                      * @return Name 日志名称，格式为：日期小时-域名
-如 2018120101-test.vod2.mqcloud.com。
+如 example.com。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置日志名称，格式为：日期小时-域名
-如 2018120101-test.vod2.mqcloud.com。
+如 example.com。
                      * @param _name 日志名称，格式为：日期小时-域名
-如 2018120101-test.vod2.mqcloud.com。
+如 example.com。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -165,7 +165,7 @@ namespace TencentCloud
 
                     /**
                      * 日志名称，格式为：日期小时-域名
-如 2018120101-test.vod2.mqcloud.com。
+如 example.com。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

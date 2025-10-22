@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppName 应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appName 应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppName(const std::string& _appName);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用状态 1正常 2停用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return State 应用状态 1正常 2停用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetState() const;
 
                     /**
                      * 设置应用状态 1正常 2停用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _state 应用状态 1正常 2停用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetState(const int64_t& _state);
@@ -119,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取1试用 2轻量版 3标准版 4旗舰版
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppVersion 1试用 2轻量版 3标准版 4旗舰版
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAppVersion() const;
 
                     /**
                      * 设置1试用 2轻量版 3标准版 4旗舰版
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appVersion 1试用 2轻量版 3标准版 4旗舰版
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppVersion(const int64_t& _appVersion);
@@ -144,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedAt 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdAt 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedAt(const std::string& _createdAt);
@@ -169,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取回调
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Callback 回调
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCallback() const;
 
                     /**
                      * 设置回调
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _callback 回调
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCallback(const std::string& _callback);
@@ -194,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取回调Key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CallbackKey 回调Key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCallbackKey() const;
 
                     /**
                      * 设置回调Key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _callbackKey 回调Key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCallbackKey(const std::string& _callbackKey);
@@ -227,42 +203,36 @@ namespace TencentCloud
 
                     /**
                      * 应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appName;
                     bool m_appNameHasBeenSet;
 
                     /**
                      * 应用状态 1正常 2停用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_state;
                     bool m_stateHasBeenSet;
 
                     /**
                      * 1试用 2轻量版 3标准版 4旗舰版
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_appVersion;
                     bool m_appVersionHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdAt;
                     bool m_createdAtHasBeenSet;
 
                     /**
                      * 回调
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_callback;
                     bool m_callbackHasBeenSet;
 
                     /**
                      * 回调Key
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_callbackKey;
                     bool m_callbackKeyHasBeenSet;

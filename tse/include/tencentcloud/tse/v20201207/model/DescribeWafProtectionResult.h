@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取全局防护状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GlobalStatus 全局防护状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGlobalStatus() const;
 
                     /**
                      * 设置全局防护状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _globalStatus 全局防护状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGlobalStatus(const std::string& _globalStatus);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务防护状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServicesStatus 服务防护状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ServiceWafStatus> GetServicesStatus() const;
 
                     /**
                      * 设置服务防护状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _servicesStatus 服务防护状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServicesStatus(const std::vector<ServiceWafStatus>& _servicesStatus);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取路由防护状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RouteStatus 路由防护状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RouteWafStatus> GetRouteStatus() const;
 
                     /**
                      * 设置路由防护状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _routeStatus 路由防护状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRouteStatus(const std::vector<RouteWafStatus>& _routeStatus);
@@ -125,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对象防护状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObjectStatus 对象防护状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetObjectStatus() const;
 
                     /**
                      * 设置对象防护状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _objectStatus 对象防护状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetObjectStatus(const std::string& _objectStatus);
@@ -152,28 +136,24 @@ namespace TencentCloud
 
                     /**
                      * 全局防护状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_globalStatus;
                     bool m_globalStatusHasBeenSet;
 
                     /**
                      * 服务防护状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ServiceWafStatus> m_servicesStatus;
                     bool m_servicesStatusHasBeenSet;
 
                     /**
                      * 路由防护状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RouteWafStatus> m_routeStatus;
                     bool m_routeStatusHasBeenSet;
 
                     /**
                      * 对象防护状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_objectStatus;
                     bool m_objectStatusHasBeenSet;

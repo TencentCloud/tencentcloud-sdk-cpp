@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,18 +52,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出入院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DischargeDiagnosis 出入院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DischargeDiagnosis> GetDischargeDiagnosis() const;
 
                     /**
                      * 设置出入院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dischargeDiagnosis 出入院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDischargeDiagnosis(const std::vector<DischargeDiagnosis>& _dischargeDiagnosis);
@@ -77,18 +73,14 @@ namespace TencentCloud
 
                     /**
                      * 获取病理诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PathologicalDiagnosis 病理诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetPathologicalDiagnosis() const;
 
                     /**
                      * 设置病理诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pathologicalDiagnosis 病理诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPathologicalDiagnosis(const BlockInfo& _pathologicalDiagnosis);
@@ -102,18 +94,14 @@ namespace TencentCloud
 
                     /**
                      * 获取临床诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClinicalDiagnosis 临床诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetClinicalDiagnosis() const;
 
                     /**
                      * 设置临床诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clinicalDiagnosis 临床诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClinicalDiagnosis(const BlockInfo& _clinicalDiagnosis);
@@ -127,18 +115,14 @@ namespace TencentCloud
 
                     /**
                      * 获取受伤中毒的外部原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DamagePoi 受伤中毒的外部原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfoV2 GetDamagePoi() const;
 
                     /**
                      * 设置受伤中毒的外部原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _damagePoi 受伤中毒的外部原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDamagePoi(const BlockInfoV2& _damagePoi);
@@ -152,18 +136,14 @@ namespace TencentCloud
 
                     /**
                      * 获取病案首页第二页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Fp2NdItems 病案首页第二页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Fp2NdItem> GetFp2NdItems() const;
 
                     /**
                      * 设置病案首页第二页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fp2NdItems 病案首页第二页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFp2NdItems(const std::vector<Fp2NdItem>& _fp2NdItems);
@@ -177,18 +157,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Page 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPage() const;
 
                     /**
                      * 设置数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _page 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPage(const int64_t& _page);
@@ -204,42 +180,36 @@ namespace TencentCloud
 
                     /**
                      * 出入院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DischargeDiagnosis> m_dischargeDiagnosis;
                     bool m_dischargeDiagnosisHasBeenSet;
 
                     /**
                      * 病理诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_pathologicalDiagnosis;
                     bool m_pathologicalDiagnosisHasBeenSet;
 
                     /**
                      * 临床诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_clinicalDiagnosis;
                     bool m_clinicalDiagnosisHasBeenSet;
 
                     /**
                      * 受伤中毒的外部原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfoV2 m_damagePoi;
                     bool m_damagePoiHasBeenSet;
 
                     /**
                      * 病案首页第二页
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Fp2NdItem> m_fp2NdItems;
                     bool m_fp2NdItemsHasBeenSet;
 
                     /**
                      * 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_page;
                     bool m_pageHasBeenSet;

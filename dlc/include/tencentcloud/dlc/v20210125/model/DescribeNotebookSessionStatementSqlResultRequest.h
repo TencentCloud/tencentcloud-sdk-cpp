@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -105,6 +105,48 @@ namespace TencentCloud
                      */
                     bool NextTokenHasBeenSet() const;
 
+                    /**
+                     * 获取批次Id
+                     * @return BatchId 批次Id
+                     * 
+                     */
+                    std::string GetBatchId() const;
+
+                    /**
+                     * 设置批次Id
+                     * @param _batchId 批次Id
+                     * 
+                     */
+                    void SetBatchId(const std::string& _batchId);
+
+                    /**
+                     * 判断参数 BatchId 是否已赋值
+                     * @return BatchId 是否已赋值
+                     * 
+                     */
+                    bool BatchIdHasBeenSet() const;
+
+                    /**
+                     * 获取返回结果集中字段值长度截取，如果超过该长度则截取到该长度
+                     * @return DataFieldCutLen 返回结果集中字段值长度截取，如果超过该长度则截取到该长度
+                     * 
+                     */
+                    int64_t GetDataFieldCutLen() const;
+
+                    /**
+                     * 设置返回结果集中字段值长度截取，如果超过该长度则截取到该长度
+                     * @param _dataFieldCutLen 返回结果集中字段值长度截取，如果超过该长度则截取到该长度
+                     * 
+                     */
+                    void SetDataFieldCutLen(const int64_t& _dataFieldCutLen);
+
+                    /**
+                     * 判断参数 DataFieldCutLen 是否已赋值
+                     * @return DataFieldCutLen 是否已赋值
+                     * 
+                     */
+                    bool DataFieldCutLenHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +166,18 @@ namespace TencentCloud
                      */
                     std::string m_nextToken;
                     bool m_nextTokenHasBeenSet;
+
+                    /**
+                     * 批次Id
+                     */
+                    std::string m_batchId;
+                    bool m_batchIdHasBeenSet;
+
+                    /**
+                     * 返回结果集中字段值长度截取，如果超过该长度则截取到该长度
+                     */
+                    int64_t m_dataFieldCutLen;
+                    bool m_dataFieldCutLenHasBeenSet;
 
                 };
             }

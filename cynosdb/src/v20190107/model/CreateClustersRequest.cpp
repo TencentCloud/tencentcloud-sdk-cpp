@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ CreateClustersRequest::CreateClustersRequest() :
     m_projectIdHasBeenSet(false),
     m_cpuHasBeenSet(false),
     m_memoryHasBeenSet(false),
+    m_instanceCountHasBeenSet(false),
     m_storageHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
     m_adminPasswordHasBeenSet(false),
@@ -43,7 +44,6 @@ CreateClustersRequest::CreateClustersRequest() :
     m_expectTimeHasBeenSet(false),
     m_expectTimeThreshHasBeenSet(false),
     m_storageLimitHasBeenSet(false),
-    m_instanceCountHasBeenSet(false),
     m_timeSpanHasBeenSet(false),
     m_timeUnitHasBeenSet(false),
     m_autoRenewFlagHasBeenSet(false),
@@ -63,7 +63,11 @@ CreateClustersRequest::CreateClustersRequest() :
     m_dealModeHasBeenSet(false),
     m_paramTemplateIdHasBeenSet(false),
     m_slaveZoneHasBeenSet(false),
-    m_instanceInitInfosHasBeenSet(false)
+    m_instanceInitInfosHasBeenSet(false),
+    m_gdnIdHasBeenSet(false),
+    m_proxyConfigHasBeenSet(false),
+    m_autoArchiveHasBeenSet(false),
+    m_autoArchiveDelayHoursHasBeenSet(false)
 {
 }
 
@@ -136,6 +140,14 @@ string CreateClustersRequest::ToJsonString() const
         string key = "Memory";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_memory, allocator);
+    }
+
+    if (m_instanceCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceCount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_instanceCount, allocator);
     }
 
     if (m_storageHasBeenSet)
@@ -232,14 +244,6 @@ string CreateClustersRequest::ToJsonString() const
         string key = "StorageLimit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_storageLimit, allocator);
-    }
-
-    if (m_instanceCountHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceCount";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_instanceCount, allocator);
     }
 
     if (m_timeSpanHasBeenSet)
@@ -433,6 +437,39 @@ string CreateClustersRequest::ToJsonString() const
         }
     }
 
+    if (m_gdnIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GdnId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_gdnId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_proxyConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_proxyConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_autoArchiveHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoArchive";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_autoArchive.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoArchiveDelayHoursHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoArchiveDelayHours";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoArchiveDelayHours, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -567,6 +604,22 @@ void CreateClustersRequest::SetMemory(const int64_t& _memory)
 bool CreateClustersRequest::MemoryHasBeenSet() const
 {
     return m_memoryHasBeenSet;
+}
+
+int64_t CreateClustersRequest::GetInstanceCount() const
+{
+    return m_instanceCount;
+}
+
+void CreateClustersRequest::SetInstanceCount(const int64_t& _instanceCount)
+{
+    m_instanceCount = _instanceCount;
+    m_instanceCountHasBeenSet = true;
+}
+
+bool CreateClustersRequest::InstanceCountHasBeenSet() const
+{
+    return m_instanceCountHasBeenSet;
 }
 
 int64_t CreateClustersRequest::GetStorage() const
@@ -759,22 +812,6 @@ void CreateClustersRequest::SetStorageLimit(const int64_t& _storageLimit)
 bool CreateClustersRequest::StorageLimitHasBeenSet() const
 {
     return m_storageLimitHasBeenSet;
-}
-
-int64_t CreateClustersRequest::GetInstanceCount() const
-{
-    return m_instanceCount;
-}
-
-void CreateClustersRequest::SetInstanceCount(const int64_t& _instanceCount)
-{
-    m_instanceCount = _instanceCount;
-    m_instanceCountHasBeenSet = true;
-}
-
-bool CreateClustersRequest::InstanceCountHasBeenSet() const
-{
-    return m_instanceCountHasBeenSet;
 }
 
 int64_t CreateClustersRequest::GetTimeSpan() const
@@ -1095,6 +1132,70 @@ void CreateClustersRequest::SetInstanceInitInfos(const vector<InstanceInitInfo>&
 bool CreateClustersRequest::InstanceInitInfosHasBeenSet() const
 {
     return m_instanceInitInfosHasBeenSet;
+}
+
+string CreateClustersRequest::GetGdnId() const
+{
+    return m_gdnId;
+}
+
+void CreateClustersRequest::SetGdnId(const string& _gdnId)
+{
+    m_gdnId = _gdnId;
+    m_gdnIdHasBeenSet = true;
+}
+
+bool CreateClustersRequest::GdnIdHasBeenSet() const
+{
+    return m_gdnIdHasBeenSet;
+}
+
+ProxyConfig CreateClustersRequest::GetProxyConfig() const
+{
+    return m_proxyConfig;
+}
+
+void CreateClustersRequest::SetProxyConfig(const ProxyConfig& _proxyConfig)
+{
+    m_proxyConfig = _proxyConfig;
+    m_proxyConfigHasBeenSet = true;
+}
+
+bool CreateClustersRequest::ProxyConfigHasBeenSet() const
+{
+    return m_proxyConfigHasBeenSet;
+}
+
+string CreateClustersRequest::GetAutoArchive() const
+{
+    return m_autoArchive;
+}
+
+void CreateClustersRequest::SetAutoArchive(const string& _autoArchive)
+{
+    m_autoArchive = _autoArchive;
+    m_autoArchiveHasBeenSet = true;
+}
+
+bool CreateClustersRequest::AutoArchiveHasBeenSet() const
+{
+    return m_autoArchiveHasBeenSet;
+}
+
+int64_t CreateClustersRequest::GetAutoArchiveDelayHours() const
+{
+    return m_autoArchiveDelayHours;
+}
+
+void CreateClustersRequest::SetAutoArchiveDelayHours(const int64_t& _autoArchiveDelayHours)
+{
+    m_autoArchiveDelayHours = _autoArchiveDelayHours;
+    m_autoArchiveDelayHoursHasBeenSet = true;
+}
+
+bool CreateClustersRequest::AutoArchiveDelayHoursHasBeenSet() const
+{
+    return m_autoArchiveDelayHoursHasBeenSet;
 }
 
 

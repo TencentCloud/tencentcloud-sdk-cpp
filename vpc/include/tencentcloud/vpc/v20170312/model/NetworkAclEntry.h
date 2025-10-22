@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -216,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取IPv4网络ACL条目唯一ID。当修改ACL条目时，NetworkAclIpv4EntryId和NetworkAclIpv6EntryID至少提供一个。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetworkAclIpv4EntryId IPv4网络ACL条目唯一ID。当修改ACL条目时，NetworkAclIpv4EntryId和NetworkAclIpv6EntryID至少提供一个。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNetworkAclIpv4EntryId() const;
 
                     /**
                      * 设置IPv4网络ACL条目唯一ID。当修改ACL条目时，NetworkAclIpv4EntryId和NetworkAclIpv6EntryID至少提供一个。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _networkAclIpv4EntryId IPv4网络ACL条目唯一ID。当修改ACL条目时，NetworkAclIpv4EntryId和NetworkAclIpv6EntryID至少提供一个。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNetworkAclIpv4EntryId(const std::string& _networkAclIpv4EntryId);
@@ -241,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取IPv6网络ACL条目唯一ID。当修改ACL条目时，NetworkAclIpv4EntryId和NetworkAclIpv6EntryId至少提供一个。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetworkAclIpv6EntryId IPv6网络ACL条目唯一ID。当修改ACL条目时，NetworkAclIpv4EntryId和NetworkAclIpv6EntryId至少提供一个。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNetworkAclIpv6EntryId() const;
 
                     /**
                      * 设置IPv6网络ACL条目唯一ID。当修改ACL条目时，NetworkAclIpv4EntryId和NetworkAclIpv6EntryId至少提供一个。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _networkAclIpv6EntryId IPv6网络ACL条目唯一ID。当修改ACL条目时，NetworkAclIpv4EntryId和NetworkAclIpv6EntryId至少提供一个。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNetworkAclIpv6EntryId(const std::string& _networkAclIpv6EntryId);
@@ -316,14 +308,12 @@ namespace TencentCloud
 
                     /**
                      * IPv4网络ACL条目唯一ID。当修改ACL条目时，NetworkAclIpv4EntryId和NetworkAclIpv6EntryID至少提供一个。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_networkAclIpv4EntryId;
                     bool m_networkAclIpv4EntryIdHasBeenSet;
 
                     /**
                      * IPv6网络ACL条目唯一ID。当修改ACL条目时，NetworkAclIpv4EntryId和NetworkAclIpv6EntryId至少提供一个。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_networkAclIpv6EntryId;
                     bool m_networkAclIpv6EntryIdHasBeenSet;

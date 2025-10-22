@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云硬盘备份点ID，可通过 DescribeDiskBackups 查询。
-                     * @return DiskBackupId 云硬盘备份点ID，可通过 DescribeDiskBackups 查询。
+                     * 获取云硬盘备份点ID，可以通过[DescribeDiskBackups](/document/product/362/80278)接口查询。
+                     * @return DiskBackupId 云硬盘备份点ID，可以通过[DescribeDiskBackups](/document/product/362/80278)接口查询。
                      * 
                      */
                     std::string GetDiskBackupId() const;
 
                     /**
-                     * 设置云硬盘备份点ID，可通过 DescribeDiskBackups 查询。
-                     * @param _diskBackupId 云硬盘备份点ID，可通过 DescribeDiskBackups 查询。
+                     * 设置云硬盘备份点ID，可以通过[DescribeDiskBackups](/document/product/362/80278)接口查询。
+                     * @param _diskBackupId 云硬盘备份点ID，可以通过[DescribeDiskBackups](/document/product/362/80278)接口查询。
                      * 
                      */
                     void SetDiskBackupId(const std::string& _diskBackupId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DiskBackupIdHasBeenSet() const;
 
                     /**
-                     * 获取云硬盘备份点原云硬盘ID，可通过DescribeDisks接口查询。
-                     * @return DiskId 云硬盘备份点原云硬盘ID，可通过DescribeDisks接口查询。
+                     * 获取云硬盘备份点原云硬盘ID，可以通过[DescribeDisks](/document/product/362/16315)接口查。
+                     * @return DiskId 云硬盘备份点原云硬盘ID，可以通过[DescribeDisks](/document/product/362/16315)接口查。
                      * 
                      */
                     std::string GetDiskId() const;
 
                     /**
-                     * 设置云硬盘备份点原云硬盘ID，可通过DescribeDisks接口查询。
-                     * @param _diskId 云硬盘备份点原云硬盘ID，可通过DescribeDisks接口查询。
+                     * 设置云硬盘备份点原云硬盘ID，可以通过[DescribeDisks](/document/product/362/16315)接口查。
+                     * @param _diskId 云硬盘备份点原云硬盘ID，可以通过[DescribeDisks](/document/product/362/16315)接口查。
                      * 
                      */
                     void SetDiskId(const std::string& _diskId);
@@ -84,19 +84,73 @@ namespace TencentCloud
                      */
                     bool DiskIdHasBeenSet() const;
 
+                    /**
+                     * 获取回滚云硬盘备份点前是否自动关机，默认为FALSE，表示不自动关机
+                     * @return AutoStopInstance 回滚云硬盘备份点前是否自动关机，默认为FALSE，表示不自动关机
+                     * 
+                     */
+                    bool GetAutoStopInstance() const;
+
+                    /**
+                     * 设置回滚云硬盘备份点前是否自动关机，默认为FALSE，表示不自动关机
+                     * @param _autoStopInstance 回滚云硬盘备份点前是否自动关机，默认为FALSE，表示不自动关机
+                     * 
+                     */
+                    void SetAutoStopInstance(const bool& _autoStopInstance);
+
+                    /**
+                     * 判断参数 AutoStopInstance 是否已赋值
+                     * @return AutoStopInstance 是否已赋值
+                     * 
+                     */
+                    bool AutoStopInstanceHasBeenSet() const;
+
+                    /**
+                     * 获取回滚云硬盘备份点完成后是否自动开机，默认为FALSE，表示不自动开机; AutoStartInstance参数需要在AutoStopInstance为true时才能为true。
+                     * @return AutoStartInstance 回滚云硬盘备份点完成后是否自动开机，默认为FALSE，表示不自动开机; AutoStartInstance参数需要在AutoStopInstance为true时才能为true。
+                     * 
+                     */
+                    bool GetAutoStartInstance() const;
+
+                    /**
+                     * 设置回滚云硬盘备份点完成后是否自动开机，默认为FALSE，表示不自动开机; AutoStartInstance参数需要在AutoStopInstance为true时才能为true。
+                     * @param _autoStartInstance 回滚云硬盘备份点完成后是否自动开机，默认为FALSE，表示不自动开机; AutoStartInstance参数需要在AutoStopInstance为true时才能为true。
+                     * 
+                     */
+                    void SetAutoStartInstance(const bool& _autoStartInstance);
+
+                    /**
+                     * 判断参数 AutoStartInstance 是否已赋值
+                     * @return AutoStartInstance 是否已赋值
+                     * 
+                     */
+                    bool AutoStartInstanceHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 云硬盘备份点ID，可通过 DescribeDiskBackups 查询。
+                     * 云硬盘备份点ID，可以通过[DescribeDiskBackups](/document/product/362/80278)接口查询。
                      */
                     std::string m_diskBackupId;
                     bool m_diskBackupIdHasBeenSet;
 
                     /**
-                     * 云硬盘备份点原云硬盘ID，可通过DescribeDisks接口查询。
+                     * 云硬盘备份点原云硬盘ID，可以通过[DescribeDisks](/document/product/362/16315)接口查。
                      */
                     std::string m_diskId;
                     bool m_diskIdHasBeenSet;
+
+                    /**
+                     * 回滚云硬盘备份点前是否自动关机，默认为FALSE，表示不自动关机
+                     */
+                    bool m_autoStopInstance;
+                    bool m_autoStopInstanceHasBeenSet;
+
+                    /**
+                     * 回滚云硬盘备份点完成后是否自动开机，默认为FALSE，表示不自动开机; AutoStartInstance参数需要在AutoStopInstance为true时才能为true。
+                     */
+                    bool m_autoStartInstance;
+                    bool m_autoStartInstanceHasBeenSet;
 
                 };
             }

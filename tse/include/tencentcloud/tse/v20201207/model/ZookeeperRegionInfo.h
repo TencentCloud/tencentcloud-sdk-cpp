@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,13 +53,11 @@ namespace TencentCloud
 - SingleRegion: 普通单地域
 - MultiRegion: 普通多地域场景
 - MasterSlave: 两地域，主备地域场景
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeployMode 部署架构信息
 
 - SingleRegion: 普通单地域
 - MultiRegion: 普通多地域场景
 - MasterSlave: 两地域，主备地域场景
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeployMode() const;
@@ -70,13 +68,11 @@ namespace TencentCloud
 - SingleRegion: 普通单地域
 - MultiRegion: 普通多地域场景
 - MasterSlave: 两地域，主备地域场景
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deployMode 部署架构信息
 
 - SingleRegion: 普通单地域
 - MultiRegion: 普通多地域场景
 - MasterSlave: 两地域，主备地域场景
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeployMode(const std::string& _deployMode);
@@ -90,18 +86,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主地域的额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MainRegion 主地域的额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ZookeeperRegionMyIdInfo GetMainRegion() const;
 
                     /**
                      * 设置主地域的额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mainRegion 主地域的额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMainRegion(const ZookeeperRegionMyIdInfo& _mainRegion);
@@ -115,18 +107,14 @@ namespace TencentCloud
 
                     /**
                      * 获取其他地域的额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OtherRegions 其他地域的额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ZookeeperRegionMyIdInfo> GetOtherRegions() const;
 
                     /**
                      * 设置其他地域的额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _otherRegions 其他地域的额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOtherRegions(const std::vector<ZookeeperRegionMyIdInfo>& _otherRegions);
@@ -146,21 +134,18 @@ namespace TencentCloud
 - SingleRegion: 普通单地域
 - MultiRegion: 普通多地域场景
 - MasterSlave: 两地域，主备地域场景
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deployMode;
                     bool m_deployModeHasBeenSet;
 
                     /**
                      * 主地域的额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ZookeeperRegionMyIdInfo m_mainRegion;
                     bool m_mainRegionHasBeenSet;
 
                     /**
                      * 其他地域的额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ZookeeperRegionMyIdInfo> m_otherRegions;
                     bool m_otherRegionsHasBeenSet;

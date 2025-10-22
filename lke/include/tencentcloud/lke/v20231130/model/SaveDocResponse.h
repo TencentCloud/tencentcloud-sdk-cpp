@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -99,6 +99,20 @@ namespace TencentCloud
                      */
                     bool ErrorLinkTextHasBeenSet() const;
 
+                    /**
+                     * 获取重复类型，0：未重复，其他取值请参考入参DuplicateFileHandle结构体的CheckType字段
+                     * @return DuplicateFileCheckType 重复类型，0：未重复，其他取值请参考入参DuplicateFileHandle结构体的CheckType字段
+                     * 
+                     */
+                    uint64_t GetDuplicateFileCheckType() const;
+
+                    /**
+                     * 判断参数 DuplicateFileCheckType 是否已赋值
+                     * @return DuplicateFileCheckType 是否已赋值
+                     * 
+                     */
+                    bool DuplicateFileCheckTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +138,12 @@ namespace TencentCloud
                      */
                     std::string m_errorLinkText;
                     bool m_errorLinkTextHasBeenSet;
+
+                    /**
+                     * 重复类型，0：未重复，其他取值请参考入参DuplicateFileHandle结构体的CheckType字段
+                     */
+                    uint64_t m_duplicateFileCheckType;
+                    bool m_duplicateFileCheckTypeHasBeenSet;
 
                 };
             }

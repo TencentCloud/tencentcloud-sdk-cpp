@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取运行时类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuntimeType 运行时类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuntimeType() const;
 
                     /**
                      * 设置运行时类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _runtimeType 运行时类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuntimeType(const std::string& _runtimeType);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取运行时版本列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuntimeVersions 运行时版本列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetRuntimeVersions() const;
 
                     /**
                      * 设置运行时版本列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _runtimeVersions 运行时版本列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuntimeVersions(const std::vector<std::string>& _runtimeVersions);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该类型的默认运行时版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefaultVersion 该类型的默认运行时版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDefaultVersion() const;
 
                     /**
                      * 设置该类型的默认运行时版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _defaultVersion 该类型的默认运行时版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefaultVersion(const std::string& _defaultVersion);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 运行时类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_runtimeType;
                     bool m_runtimeTypeHasBeenSet;
 
                     /**
                      * 运行时版本列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_runtimeVersions;
                     bool m_runtimeVersionsHasBeenSet;
 
                     /**
                      * 该类型的默认运行时版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_defaultVersion;
                     bool m_defaultVersionHasBeenSet;

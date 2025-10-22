@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,12 +49,10 @@ namespace TencentCloud
 建议开发者妥善保存此流程ID，以便于顺利进行后续操作。
 
 [点击查看FlowId在控制台上的位置](https://qcloudimg.tencent-cloud.cn/raw/05af26573d5106763b4cfbb9f7c64b41.png)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowId 合同流程ID，为32位字符串。
 建议开发者妥善保存此流程ID，以便于顺利进行后续操作。
 
 [点击查看FlowId在控制台上的位置](https://qcloudimg.tencent-cloud.cn/raw/05af26573d5106763b4cfbb9f7c64b41.png)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlowId() const;
@@ -68,9 +66,7 @@ namespace TencentCloud
 
                     /**
                      * 获取签署方信息，如角色ID、角色名称等
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Approvers 签署方信息，如角色ID、角色名称等
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ApproverItem> GetApprovers() const;
@@ -82,6 +78,22 @@ namespace TencentCloud
                      */
                     bool ApproversHasBeenSet() const;
 
+                    /**
+                     * 获取预览链接，有效期5分钟
+注：如果是预览模式(即NeedPreview设置为true)时, 才会有此预览链接URL
+                     * @return PreviewUrl 预览链接，有效期5分钟
+注：如果是预览模式(即NeedPreview设置为true)时, 才会有此预览链接URL
+                     * 
+                     */
+                    std::string GetPreviewUrl() const;
+
+                    /**
+                     * 判断参数 PreviewUrl 是否已赋值
+                     * @return PreviewUrl 是否已赋值
+                     * 
+                     */
+                    bool PreviewUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -89,17 +101,22 @@ namespace TencentCloud
 建议开发者妥善保存此流程ID，以便于顺利进行后续操作。
 
 [点击查看FlowId在控制台上的位置](https://qcloudimg.tencent-cloud.cn/raw/05af26573d5106763b4cfbb9f7c64b41.png)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
                      * 签署方信息，如角色ID、角色名称等
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ApproverItem> m_approvers;
                     bool m_approversHasBeenSet;
+
+                    /**
+                     * 预览链接，有效期5分钟
+注：如果是预览模式(即NeedPreview设置为true)时, 才会有此预览链接URL
+                     */
+                    std::string m_previewUrl;
+                    bool m_previewUrlHasBeenSet;
 
                 };
             }

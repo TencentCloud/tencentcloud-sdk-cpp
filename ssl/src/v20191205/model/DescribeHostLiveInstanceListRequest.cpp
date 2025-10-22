@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ using namespace std;
 
 DescribeHostLiveInstanceListRequest::DescribeHostLiveInstanceListRequest() :
     m_certificateIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
     m_isCacheHasBeenSet(false),
     m_filtersHasBeenSet(false),
+    m_resourceTypeHasBeenSet(false),
     m_oldCertificateIdHasBeenSet(false)
 {
 }
@@ -44,14 +44,6 @@ string DescribeHostLiveInstanceListRequest::ToJsonString() const
         string key = "CertificateId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_certificateId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_resourceTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ResourceType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_resourceType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isCacheHasBeenSet)
@@ -75,6 +67,14 @@ string DescribeHostLiveInstanceListRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_resourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_oldCertificateIdHasBeenSet)
@@ -109,22 +109,6 @@ bool DescribeHostLiveInstanceListRequest::CertificateIdHasBeenSet() const
     return m_certificateIdHasBeenSet;
 }
 
-string DescribeHostLiveInstanceListRequest::GetResourceType() const
-{
-    return m_resourceType;
-}
-
-void DescribeHostLiveInstanceListRequest::SetResourceType(const string& _resourceType)
-{
-    m_resourceType = _resourceType;
-    m_resourceTypeHasBeenSet = true;
-}
-
-bool DescribeHostLiveInstanceListRequest::ResourceTypeHasBeenSet() const
-{
-    return m_resourceTypeHasBeenSet;
-}
-
 uint64_t DescribeHostLiveInstanceListRequest::GetIsCache() const
 {
     return m_isCache;
@@ -155,6 +139,22 @@ void DescribeHostLiveInstanceListRequest::SetFilters(const vector<Filter>& _filt
 bool DescribeHostLiveInstanceListRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+string DescribeHostLiveInstanceListRequest::GetResourceType() const
+{
+    return m_resourceType;
+}
+
+void DescribeHostLiveInstanceListRequest::SetResourceType(const string& _resourceType)
+{
+    m_resourceType = _resourceType;
+    m_resourceTypeHasBeenSet = true;
+}
+
+bool DescribeHostLiveInstanceListRequest::ResourceTypeHasBeenSet() const
+{
+    return m_resourceTypeHasBeenSet;
 }
 
 string DescribeHostLiveInstanceListRequest::GetOldCertificateId() const

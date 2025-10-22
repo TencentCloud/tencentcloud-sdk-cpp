@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -723,6 +723,48 @@ zk专业版可以为：CLOUD_SSD,CLOUD_SSD_PLUS,CLOUD_PREMIUM
                      */
                     bool AffinityConstraintHasBeenSet() const;
 
+                    /**
+                     * 获取指定zone id列表
+                     * @return ZoneIds 指定zone id列表
+                     * 
+                     */
+                    std::vector<int64_t> GetZoneIds() const;
+
+                    /**
+                     * 设置指定zone id列表
+                     * @param _zoneIds 指定zone id列表
+                     * 
+                     */
+                    void SetZoneIds(const std::vector<int64_t>& _zoneIds);
+
+                    /**
+                     * 判断参数 ZoneIds 是否已赋值
+                     * @return ZoneIds 是否已赋值
+                     * 
+                     */
+                    bool ZoneIdsHasBeenSet() const;
+
+                    /**
+                     * 获取地域特殊标签，用于区分相同地域，不通的业务属性
+                     * @return EngineRegionTag 地域特殊标签，用于区分相同地域，不通的业务属性
+                     * 
+                     */
+                    std::string GetEngineRegionTag() const;
+
+                    /**
+                     * 设置地域特殊标签，用于区分相同地域，不通的业务属性
+                     * @param _engineRegionTag 地域特殊标签，用于区分相同地域，不通的业务属性
+                     * 
+                     */
+                    void SetEngineRegionTag(const std::string& _engineRegionTag);
+
+                    /**
+                     * 判断参数 EngineRegionTag 是否已赋值
+                     * @return EngineRegionTag 是否已赋值
+                     * 
+                     */
+                    bool EngineRegionTagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -908,6 +950,18 @@ zk专业版可以为：CLOUD_SSD,CLOUD_SSD_PLUS,CLOUD_PREMIUM
                      */
                     std::string m_affinityConstraint;
                     bool m_affinityConstraintHasBeenSet;
+
+                    /**
+                     * 指定zone id列表
+                     */
+                    std::vector<int64_t> m_zoneIds;
+                    bool m_zoneIdsHasBeenSet;
+
+                    /**
+                     * 地域特殊标签，用于区分相同地域，不通的业务属性
+                     */
+                    std::string m_engineRegionTag;
+                    bool m_engineRegionTagHasBeenSet;
 
                 };
             }

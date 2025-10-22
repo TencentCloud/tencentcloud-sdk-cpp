@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -132,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备份文件大小，单位：Byte。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileSize 备份文件大小，单位：Byte。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFileSize() const;
 
                     /**
                      * 设置备份文件大小，单位：Byte。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileSize 备份文件大小，单位：Byte。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileSize(const int64_t& _fileSize);
@@ -183,7 +179,6 @@ namespace TencentCloud
 
                     /**
                      * 备份文件大小，单位：Byte。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_fileSize;
                     bool m_fileSizeHasBeenSet;

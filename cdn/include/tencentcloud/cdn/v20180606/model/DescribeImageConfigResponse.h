@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,9 +49,7 @@ namespace TencentCloud
 
                     /**
                      * 获取WebpAdapter配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WebpAdapter WebpAdapter配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     WebpAdapter GetWebpAdapter() const;
@@ -65,9 +63,7 @@ namespace TencentCloud
 
                     /**
                      * 获取TpgAdapter配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TpgAdapter TpgAdapter配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TpgAdapter GetTpgAdapter() const;
@@ -81,9 +77,7 @@ namespace TencentCloud
 
                     /**
                      * 获取GuetzliAdapter配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GuetzliAdapter GuetzliAdapter配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     GuetzliAdapter GetGuetzliAdapter() const;
@@ -97,9 +91,7 @@ namespace TencentCloud
 
                     /**
                      * 获取AvifAdapter配置项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AvifAdapter AvifAdapter配置项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AvifAdapter GetAvifAdapter() const;
@@ -115,28 +107,24 @@ namespace TencentCloud
 
                     /**
                      * WebpAdapter配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     WebpAdapter m_webpAdapter;
                     bool m_webpAdapterHasBeenSet;
 
                     /**
                      * TpgAdapter配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TpgAdapter m_tpgAdapter;
                     bool m_tpgAdapterHasBeenSet;
 
                     /**
                      * GuetzliAdapter配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     GuetzliAdapter m_guetzliAdapter;
                     bool m_guetzliAdapterHasBeenSet;
 
                     /**
                      * AvifAdapter配置项
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AvifAdapter m_avifAdapter;
                     bool m_avifAdapterHasBeenSet;

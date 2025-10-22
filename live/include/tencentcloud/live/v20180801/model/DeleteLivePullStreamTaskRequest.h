@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool OperatorHasBeenSet() const;
 
+                    /**
+                     * 获取指定任务 ID。注意：用于删除使用自定义任务 ID 创建的任务。
+                     * @return SpecifyTaskId 指定任务 ID。注意：用于删除使用自定义任务 ID 创建的任务。
+                     * 
+                     */
+                    std::string GetSpecifyTaskId() const;
+
+                    /**
+                     * 设置指定任务 ID。注意：用于删除使用自定义任务 ID 创建的任务。
+                     * @param _specifyTaskId 指定任务 ID。注意：用于删除使用自定义任务 ID 创建的任务。
+                     * 
+                     */
+                    void SetSpecifyTaskId(const std::string& _specifyTaskId);
+
+                    /**
+                     * 判断参数 SpecifyTaskId 是否已赋值
+                     * @return SpecifyTaskId 是否已赋值
+                     * 
+                     */
+                    bool SpecifyTaskIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;
+
+                    /**
+                     * 指定任务 ID。注意：用于删除使用自定义任务 ID 创建的任务。
+                     */
+                    std::string m_specifyTaskId;
+                    bool m_specifyTaskIdHasBeenSet;
 
                 };
             }

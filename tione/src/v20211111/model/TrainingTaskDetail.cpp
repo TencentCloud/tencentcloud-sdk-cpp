@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ TrainingTaskDetail::TrainingTaskDetail() :
     m_nameHasBeenSet(false),
     m_uinHasBeenSet(false),
     m_subUinHasBeenSet(false),
+    m_subUinNameHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_frameworkNameHasBeenSet(false),
     m_frameworkVersionHasBeenSet(false),
@@ -59,7 +60,8 @@ TrainingTaskDetail::TrainingTaskDetail() :
     m_resourceGroupNameHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_callbackUrlHasBeenSet(false)
+    m_callbackUrlHasBeenSet(false),
+    m_codeReposHasBeenSet(false)
 {
 }
 
@@ -106,6 +108,16 @@ CoreInternalOutcome TrainingTaskDetail::Deserialize(const rapidjson::Value &valu
         }
         m_subUin = string(value["SubUin"].GetString());
         m_subUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubUinName") && !value["SubUinName"].IsNull())
+    {
+        if (!value["SubUinName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingTaskDetail.SubUinName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subUinName = string(value["SubUinName"].GetString());
+        m_subUinNameHasBeenSet = true;
     }
 
     if (value.HasMember("Region") && !value["Region"].IsNull())
@@ -523,6 +535,26 @@ CoreInternalOutcome TrainingTaskDetail::Deserialize(const rapidjson::Value &valu
         m_callbackUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("CodeRepos") && !value["CodeRepos"].IsNull())
+    {
+        if (!value["CodeRepos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TrainingTaskDetail.CodeRepos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CodeRepos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CodeRepoConfig item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_codeRepos.push_back(item);
+        }
+        m_codeReposHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -560,6 +592,14 @@ void TrainingTaskDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "SubUin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subUinNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubUinName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subUinName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_regionHasBeenSet)
@@ -868,6 +908,21 @@ void TrainingTaskDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         value.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_codeReposHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CodeRepos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_codeRepos.begin(); itr != m_codeRepos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
 }
 
 
@@ -933,6 +988,22 @@ void TrainingTaskDetail::SetSubUin(const string& _subUin)
 bool TrainingTaskDetail::SubUinHasBeenSet() const
 {
     return m_subUinHasBeenSet;
+}
+
+string TrainingTaskDetail::GetSubUinName() const
+{
+    return m_subUinName;
+}
+
+void TrainingTaskDetail::SetSubUinName(const string& _subUinName)
+{
+    m_subUinName = _subUinName;
+    m_subUinNameHasBeenSet = true;
+}
+
+bool TrainingTaskDetail::SubUinNameHasBeenSet() const
+{
+    return m_subUinNameHasBeenSet;
 }
 
 string TrainingTaskDetail::GetRegion() const
@@ -1493,5 +1564,21 @@ void TrainingTaskDetail::SetCallbackUrl(const string& _callbackUrl)
 bool TrainingTaskDetail::CallbackUrlHasBeenSet() const
 {
     return m_callbackUrlHasBeenSet;
+}
+
+vector<CodeRepoConfig> TrainingTaskDetail::GetCodeRepos() const
+{
+    return m_codeRepos;
+}
+
+void TrainingTaskDetail::SetCodeRepos(const vector<CodeRepoConfig>& _codeRepos)
+{
+    m_codeRepos = _codeRepos;
+    m_codeReposHasBeenSet = true;
+}
+
+bool TrainingTaskDetail::CodeReposHasBeenSet() const
+{
+    return m_codeReposHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool IsForceHasBeenSet() const;
 
                     /**
-                     * 获取操作记录
-                     * @return OperatorRemark 操作记录
+                     * 获取操作者记录
+                     * @return OperatorRemark 操作者记录
                      * 
                      */
                     std::string GetOperatorRemark() const;
 
                     /**
-                     * 设置操作记录
-                     * @param _operatorRemark 操作记录
+                     * 设置操作者记录
+                     * @param _operatorRemark 操作者记录
                      * 
                      */
                     void SetOperatorRemark(const std::string& _operatorRemark);
@@ -228,7 +228,7 @@ namespace TencentCloud
                     bool m_isForceHasBeenSet;
 
                     /**
-                     * 操作记录
+                     * 操作者记录
                      */
                     std::string m_operatorRemark;
                     bool m_operatorRemarkHasBeenSet;

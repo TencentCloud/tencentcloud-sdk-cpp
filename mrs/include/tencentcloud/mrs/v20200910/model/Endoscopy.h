@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,18 +51,14 @@ namespace TencentCloud
 
                     /**
                      * 获取活检部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BiopsyPart 活检部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BiopsyPart GetBiopsyPart() const;
 
                     /**
                      * 设置活检部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _biopsyPart 活检部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBiopsyPart(const BiopsyPart& _biopsyPart);
@@ -76,18 +72,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可见描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Desc 可见描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EndoscopyDesc GetDesc() const;
 
                     /**
                      * 设置可见描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _desc 可见描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDesc(const EndoscopyDesc& _desc);
@@ -101,18 +93,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结论
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Summary 结论
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Summary GetSummary() const;
 
                     /**
                      * 设置结论
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _summary 结论
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSummary(const Summary& _summary);
@@ -126,18 +114,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Page 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPage() const;
 
                     /**
                      * 设置数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _page 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPage(const int64_t& _page);
@@ -153,28 +137,24 @@ namespace TencentCloud
 
                     /**
                      * 活检部位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BiopsyPart m_biopsyPart;
                     bool m_biopsyPartHasBeenSet;
 
                     /**
                      * 可见描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EndoscopyDesc m_desc;
                     bool m_descHasBeenSet;
 
                     /**
                      * 结论
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Summary m_summary;
                     bool m_summaryHasBeenSet;
 
                     /**
                      * 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_page;
                     bool m_pageHasBeenSet;

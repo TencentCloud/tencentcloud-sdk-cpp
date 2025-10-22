@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool RuleTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否覆盖重复数据，1覆盖，非1不覆盖，跳过重复数据
-                     * @return CoverDuplicate 是否覆盖重复数据，1覆盖，非1不覆盖，跳过重复数据
+                     * 获取删除白名单冲突地址并继续添加/删除封禁列表冲突地址并继续添加；表示是否覆盖重复数据，1为覆盖，非1不覆盖，跳过重复数据
+                     * @return CoverDuplicate 删除白名单冲突地址并继续添加/删除封禁列表冲突地址并继续添加；表示是否覆盖重复数据，1为覆盖，非1不覆盖，跳过重复数据
                      * 
                      */
                     int64_t GetCoverDuplicate() const;
 
                     /**
-                     * 设置是否覆盖重复数据，1覆盖，非1不覆盖，跳过重复数据
-                     * @param _coverDuplicate 是否覆盖重复数据，1覆盖，非1不覆盖，跳过重复数据
+                     * 设置删除白名单冲突地址并继续添加/删除封禁列表冲突地址并继续添加；表示是否覆盖重复数据，1为覆盖，非1不覆盖，跳过重复数据
+                     * @param _coverDuplicate 删除白名单冲突地址并继续添加/删除封禁列表冲突地址并继续添加；表示是否覆盖重复数据，1为覆盖，非1不覆盖，跳过重复数据
                      * 
                      */
                     void SetCoverDuplicate(const int64_t& _coverDuplicate);
@@ -121,7 +121,7 @@ namespace TencentCloud
                     bool m_ruleTypeHasBeenSet;
 
                     /**
-                     * 是否覆盖重复数据，1覆盖，非1不覆盖，跳过重复数据
+                     * 删除白名单冲突地址并继续添加/删除封禁列表冲突地址并继续添加；表示是否覆盖重复数据，1为覆盖，非1不覆盖，跳过重复数据
                      */
                     int64_t m_coverDuplicate;
                     bool m_coverDuplicateHasBeenSet;

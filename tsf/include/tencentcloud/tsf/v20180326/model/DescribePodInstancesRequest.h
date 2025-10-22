@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例所属groupId
-                     * @return GroupId 实例所属groupId
+                     * 获取部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。
+                     * @return GroupId 部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置实例所属groupId
-                     * @param _groupId 实例所属groupId
+                     * 设置部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。
+                     * @param _groupId 部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取过滤字段
-                     * @return PodNameList 过滤字段
+                     * 获取用于通过PodName字段过滤返回结果。
+                     * @return PodNameList 用于通过PodName字段过滤返回结果。
                      * 
                      */
                     std::vector<std::string> GetPodNameList() const;
 
                     /**
-                     * 设置过滤字段
-                     * @param _podNameList 过滤字段
+                     * 设置用于通过PodName字段过滤返回结果。
+                     * @param _podNameList 用于通过PodName字段过滤返回结果。
                      * 
                      */
                     void SetPodNameList(const std::vector<std::string>& _podNameList);
@@ -126,10 +126,52 @@ namespace TencentCloud
                      */
                     bool PodNameListHasBeenSet() const;
 
+                    /**
+                     * 获取新老版本pod批次标识，old表示老版本，new表示新版本。
+                     * @return DeployVersion 新老版本pod批次标识，old表示老版本，new表示新版本。
+                     * 
+                     */
+                    std::string GetDeployVersion() const;
+
+                    /**
+                     * 设置新老版本pod批次标识，old表示老版本，new表示新版本。
+                     * @param _deployVersion 新老版本pod批次标识，old表示老版本，new表示新版本。
+                     * 
+                     */
+                    void SetDeployVersion(const std::string& _deployVersion);
+
+                    /**
+                     * 判断参数 DeployVersion 是否已赋值
+                     * @return DeployVersion 是否已赋值
+                     * 
+                     */
+                    bool DeployVersionHasBeenSet() const;
+
+                    /**
+                     * 获取实例所属任务ID，登录控制台进行查看。
+                     * @return TaskId 实例所属任务ID，登录控制台进行查看。
+                     * 
+                     */
+                    std::string GetTaskId() const;
+
+                    /**
+                     * 设置实例所属任务ID，登录控制台进行查看。
+                     * @param _taskId 实例所属任务ID，登录控制台进行查看。
+                     * 
+                     */
+                    void SetTaskId(const std::string& _taskId);
+
+                    /**
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
+                     * 
+                     */
+                    bool TaskIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例所属groupId
+                     * 部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
@@ -147,10 +189,22 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 过滤字段
+                     * 用于通过PodName字段过滤返回结果。
                      */
                     std::vector<std::string> m_podNameList;
                     bool m_podNameListHasBeenSet;
+
+                    /**
+                     * 新老版本pod批次标识，old表示老版本，new表示新版本。
+                     */
+                    std::string m_deployVersion;
+                    bool m_deployVersionHasBeenSet;
+
+                    /**
+                     * 实例所属任务ID，登录控制台进行查看。
+                     */
+                    std::string m_taskId;
+                    bool m_taskIdHasBeenSet;
 
                 };
             }

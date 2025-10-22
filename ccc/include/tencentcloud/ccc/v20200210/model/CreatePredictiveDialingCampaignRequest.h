@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,9 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ccc/v20200210/model/Variable.h>
+#include <tencentcloud/ccc/v20200210/model/CalleeAttribute.h>
+#include <tencentcloud/ccc/v20200210/model/TimeRange.h>
 
 
 namespace TencentCloud
@@ -315,6 +318,111 @@ namespace TencentCloud
                      */
                     bool RetryTimesHasBeenSet() const;
 
+                    /**
+                     * 获取自定义变量
+                     * @return Variables 自定义变量
+                     * 
+                     */
+                    std::vector<Variable> GetVariables() const;
+
+                    /**
+                     * 设置自定义变量
+                     * @param _variables 自定义变量
+                     * 
+                     */
+                    void SetVariables(const std::vector<Variable>& _variables);
+
+                    /**
+                     * 判断参数 Variables 是否已赋值
+                     * @return Variables 是否已赋值
+                     * 
+                     */
+                    bool VariablesHasBeenSet() const;
+
+                    /**
+                     * 获取UUI
+                     * @return UUI UUI
+                     * 
+                     */
+                    std::string GetUUI() const;
+
+                    /**
+                     * 设置UUI
+                     * @param _uUI UUI
+                     * 
+                     */
+                    void SetUUI(const std::string& _uUI);
+
+                    /**
+                     * 判断参数 UUI 是否已赋值
+                     * @return UUI 是否已赋值
+                     * 
+                     */
+                    bool UUIHasBeenSet() const;
+
+                    /**
+                     * 获取被叫属性
+                     * @return CalleeAttributes 被叫属性
+                     * 
+                     */
+                    std::vector<CalleeAttribute> GetCalleeAttributes() const;
+
+                    /**
+                     * 设置被叫属性
+                     * @param _calleeAttributes 被叫属性
+                     * 
+                     */
+                    void SetCalleeAttributes(const std::vector<CalleeAttribute>& _calleeAttributes);
+
+                    /**
+                     * 判断参数 CalleeAttributes 是否已赋值
+                     * @return CalleeAttributes 是否已赋值
+                     * 
+                     */
+                    bool CalleeAttributesHasBeenSet() const;
+
+                    /**
+                     * 获取IANA 时区名称，参考 https://datatracker.ietf.org/doc/html/draft-ietf-netmod-iana-timezones
+                     * @return TimeZone IANA 时区名称，参考 https://datatracker.ietf.org/doc/html/draft-ietf-netmod-iana-timezones
+                     * 
+                     */
+                    std::string GetTimeZone() const;
+
+                    /**
+                     * 设置IANA 时区名称，参考 https://datatracker.ietf.org/doc/html/draft-ietf-netmod-iana-timezones
+                     * @param _timeZone IANA 时区名称，参考 https://datatracker.ietf.org/doc/html/draft-ietf-netmod-iana-timezones
+                     * 
+                     */
+                    void SetTimeZone(const std::string& _timeZone);
+
+                    /**
+                     * 判断参数 TimeZone 是否已赋值
+                     * @return TimeZone 是否已赋值
+                     * 
+                     */
+                    bool TimeZoneHasBeenSet() const;
+
+                    /**
+                     * 获取可用时间段
+                     * @return AvailableTime 可用时间段
+                     * 
+                     */
+                    std::vector<TimeRange> GetAvailableTime() const;
+
+                    /**
+                     * 设置可用时间段
+                     * @param _availableTime 可用时间段
+                     * 
+                     */
+                    void SetAvailableTime(const std::vector<TimeRange>& _availableTime);
+
+                    /**
+                     * 判断参数 AvailableTime 是否已赋值
+                     * @return AvailableTime 是否已赋值
+                     * 
+                     */
+                    bool AvailableTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -394,6 +502,36 @@ namespace TencentCloud
                      */
                     int64_t m_retryTimes;
                     bool m_retryTimesHasBeenSet;
+
+                    /**
+                     * 自定义变量
+                     */
+                    std::vector<Variable> m_variables;
+                    bool m_variablesHasBeenSet;
+
+                    /**
+                     * UUI
+                     */
+                    std::string m_uUI;
+                    bool m_uUIHasBeenSet;
+
+                    /**
+                     * 被叫属性
+                     */
+                    std::vector<CalleeAttribute> m_calleeAttributes;
+                    bool m_calleeAttributesHasBeenSet;
+
+                    /**
+                     * IANA 时区名称，参考 https://datatracker.ietf.org/doc/html/draft-ietf-netmod-iana-timezones
+                     */
+                    std::string m_timeZone;
+                    bool m_timeZoneHasBeenSet;
+
+                    /**
+                     * 可用时间段
+                     */
+                    std::vector<TimeRange> m_availableTime;
+                    bool m_availableTimeHasBeenSet;
 
                 };
             }

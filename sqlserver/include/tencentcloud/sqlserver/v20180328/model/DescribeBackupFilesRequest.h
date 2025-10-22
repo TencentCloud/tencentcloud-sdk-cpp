@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool DatabaseNameHasBeenSet() const;
 
                     /**
-                     * 获取列表项排序，目前只按照备份大小排序（desc-降序，asc-升序），默认desc
-                     * @return OrderBy 列表项排序，目前只按照备份大小排序（desc-降序，asc-升序），默认desc
+                     * 获取列表项排序，desc-降序、asc-升序，按size排序默认desc，按database排序默认asc
+                     * @return OrderBy 列表项排序，desc-降序、asc-升序，按size排序默认desc，按database排序默认asc
                      * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置列表项排序，目前只按照备份大小排序（desc-降序，asc-升序），默认desc
-                     * @param _orderBy 列表项排序，目前只按照备份大小排序（desc-降序，asc-升序），默认desc
+                     * 设置列表项排序，desc-降序、asc-升序，按size排序默认desc，按database排序默认asc
+                     * @param _orderBy 列表项排序，desc-降序、asc-升序，按size排序默认desc，按database排序默认asc
                      * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
@@ -167,6 +167,27 @@ namespace TencentCloud
                      * 
                      */
                     bool OrderByHasBeenSet() const;
+
+                    /**
+                     * 获取排序字段（Size-按备份大小排序，DBs-按数据库名称排序），默认size
+                     * @return OrderByType 排序字段（Size-按备份大小排序，DBs-按数据库名称排序），默认size
+                     * 
+                     */
+                    std::string GetOrderByType() const;
+
+                    /**
+                     * 设置排序字段（Size-按备份大小排序，DBs-按数据库名称排序），默认size
+                     * @param _orderByType 排序字段（Size-按备份大小排序，DBs-按数据库名称排序），默认size
+                     * 
+                     */
+                    void SetOrderByType(const std::string& _orderByType);
+
+                    /**
+                     * 判断参数 OrderByType 是否已赋值
+                     * @return OrderByType 是否已赋值
+                     * 
+                     */
+                    bool OrderByTypeHasBeenSet() const;
 
                 private:
 
@@ -201,10 +222,16 @@ namespace TencentCloud
                     bool m_databaseNameHasBeenSet;
 
                     /**
-                     * 列表项排序，目前只按照备份大小排序（desc-降序，asc-升序），默认desc
+                     * 列表项排序，desc-降序、asc-升序，按size排序默认desc，按database排序默认asc
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
+
+                    /**
+                     * 排序字段（Size-按备份大小排序，DBs-按数据库名称排序），默认size
+                     */
+                    std::string m_orderByType;
+                    bool m_orderByTypeHasBeenSet;
 
                 };
             }

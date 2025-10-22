@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务名称
-                     * @return TaskName 任务名称
+                     * 获取任务名称,只能以字母起始,允许包含字母、数字、- 、.  、 下划线且长度不超过64 (、为分割符号规则不包含)
+                     * @return TaskName 任务名称,只能以字母起始,允许包含字母、数字、- 、.  、 下划线且长度不超过64 (、为分割符号规则不包含)
                      * 
                      */
                     std::string GetTaskName() const;
 
                     /**
-                     * 设置任务名称
-                     * @param _taskName 任务名称
+                     * 设置任务名称,只能以字母起始,允许包含字母、数字、- 、.  、 下划线且长度不超过64 (、为分割符号规则不包含)
+                     * @param _taskName 任务名称,只能以字母起始,允许包含字母、数字、- 、.  、 下划线且长度不超过64 (、为分割符号规则不包含)
                      * 
                      */
                     void SetTaskName(const std::string& _taskName);
@@ -155,21 +155,21 @@ namespace TencentCloud
                     /**
                      * 获取实例连接参数【已废弃】
                      * @return PrivateLinkParam 实例连接参数【已废弃】
-                     * 
+                     * @deprecated
                      */
                     PrivateLinkParam GetPrivateLinkParam() const;
 
                     /**
                      * 设置实例连接参数【已废弃】
                      * @param _privateLinkParam 实例连接参数【已废弃】
-                     * 
+                     * @deprecated
                      */
                     void SetPrivateLinkParam(const PrivateLinkParam& _privateLinkParam);
 
                     /**
                      * 判断参数 PrivateLinkParam 是否已赋值
                      * @return PrivateLinkParam 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool PrivateLinkParamHasBeenSet() const;
 
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool TransformsParamHasBeenSet() const;
 
                     /**
-                     * 获取任务ID
-                     * @return TaskId 任务ID
+                     * 获取任务Id
+                     * @return TaskId 任务Id
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务ID
-                     * @param _taskId 任务ID
+                     * 设置任务Id
+                     * @param _taskId 任务Id
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -257,10 +257,31 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取任务描述信息
+                     * @return Description 任务描述信息
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置任务描述信息
+                     * @param _description 任务描述信息
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 任务名称
+                     * 任务名称,只能以字母起始,允许包含字母、数字、- 、.  、 下划线且长度不超过64 (、为分割符号规则不包含)
                      */
                     std::string m_taskName;
                     bool m_taskNameHasBeenSet;
@@ -308,7 +329,7 @@ namespace TencentCloud
                     bool m_transformsParamHasBeenSet;
 
                     /**
-                     * 任务ID
+                     * 任务Id
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
@@ -318,6 +339,12 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 任务描述信息
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                 };
             }

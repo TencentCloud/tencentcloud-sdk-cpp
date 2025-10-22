@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ CreateBackupRequest::CreateBackupRequest() :
     m_instanceIdHasBeenSet(false),
     m_backupMethodHasBeenSet(false),
     m_backupDBTableListHasBeenSet(false),
-    m_manualBackupNameHasBeenSet(false)
+    m_manualBackupNameHasBeenSet(false),
+    m_encryptionFlagHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,14 @@ string CreateBackupRequest::ToJsonString() const
         string key = "ManualBackupName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_manualBackupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptionFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptionFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_encryptionFlag.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -146,6 +155,22 @@ void CreateBackupRequest::SetManualBackupName(const string& _manualBackupName)
 bool CreateBackupRequest::ManualBackupNameHasBeenSet() const
 {
     return m_manualBackupNameHasBeenSet;
+}
+
+string CreateBackupRequest::GetEncryptionFlag() const
+{
+    return m_encryptionFlag;
+}
+
+void CreateBackupRequest::SetEncryptionFlag(const string& _encryptionFlag)
+{
+    m_encryptionFlag = _encryptionFlag;
+    m_encryptionFlagHasBeenSet = true;
+}
+
+bool CreateBackupRequest::EncryptionFlagHasBeenSet() const
+{
+    return m_encryptionFlagHasBeenSet;
 }
 
 

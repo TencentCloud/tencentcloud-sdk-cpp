@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -266,12 +266,12 @@ namespace TencentCloud
 
                     /**
                      * 获取地域，取值有：
-<li>mainland：国内；</li>
-<li>overseas：海外。</li>
+<li>mainland：中国大陆境内；</li>
+<li>overseas：中国大陆境外。</li>
 <li>global：全球。</li>
                      * @return Area 地域，取值有：
-<li>mainland：国内；</li>
-<li>overseas：海外。</li>
+<li>mainland：中国大陆境内；</li>
+<li>overseas：中国大陆境外。</li>
 <li>global：全球。</li>
                      * 
                      */
@@ -279,12 +279,12 @@ namespace TencentCloud
 
                     /**
                      * 设置地域，取值有：
-<li>mainland：国内；</li>
-<li>overseas：海外。</li>
+<li>mainland：中国大陆境内；</li>
+<li>overseas：中国大陆境外。</li>
 <li>global：全球。</li>
                      * @param _area 地域，取值有：
-<li>mainland：国内；</li>
-<li>overseas：海外。</li>
+<li>mainland：中国大陆境内；</li>
+<li>overseas：中国大陆境外。</li>
 <li>global：全球。</li>
                      * 
                      */
@@ -449,8 +449,8 @@ namespace TencentCloud
 
                     /**
                      * 地域，取值有：
-<li>mainland：国内；</li>
-<li>overseas：海外。</li>
+<li>mainland：中国大陆境内；</li>
+<li>overseas：中国大陆境外。</li>
 <li>global：全球。</li>
                      */
                     std::string m_area;

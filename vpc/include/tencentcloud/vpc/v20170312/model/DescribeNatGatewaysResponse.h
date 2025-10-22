@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,6 +72,20 @@ namespace TencentCloud
                      */
                     bool TotalCountHasBeenSet() const;
 
+                    /**
+                     * 获取输出信息详细程度，DETAIL代表输出实例所有信息；COMPACT代表不输出NAT规则和自定义路由，输出实例基本信息、特性开关和EIP信息；SIMPLE代表仅输出实例基本信息和特性开关
+                     * @return VerboseLevel 输出信息详细程度，DETAIL代表输出实例所有信息；COMPACT代表不输出NAT规则和自定义路由，输出实例基本信息、特性开关和EIP信息；SIMPLE代表仅输出实例基本信息和特性开关
+                     * 
+                     */
+                    std::string GetVerboseLevel() const;
+
+                    /**
+                     * 判断参数 VerboseLevel 是否已赋值
+                     * @return VerboseLevel 是否已赋值
+                     * 
+                     */
+                    bool VerboseLevelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -85,6 +99,12 @@ namespace TencentCloud
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
+
+                    /**
+                     * 输出信息详细程度，DETAIL代表输出实例所有信息；COMPACT代表不输出NAT规则和自定义路由，输出实例基本信息、特性开关和EIP信息；SIMPLE代表仅输出实例基本信息和特性开关
+                     */
+                    std::string m_verboseLevel;
+                    bool m_verboseLevelHasBeenSet;
 
                 };
             }

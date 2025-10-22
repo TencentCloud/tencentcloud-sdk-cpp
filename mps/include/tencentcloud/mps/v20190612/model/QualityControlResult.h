@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,7 +64,9 @@ BarCode：条形码，
 LowVoice：低音，
 HighVoice：爆音，
 NoVoice：静音，
-LowEvaluation：无参考打分低于阈值。
+LowEvaluation：视频无参考评分（MOS）低于阈值，
+AudioEvaluation：音频无参考评分（MOS）低于阈值，
+AudioNoise：音频噪声。
                      * @return Type 异常类型，取值范围：
 Jitter：抖动，
 Blur：模糊，
@@ -81,7 +83,9 @@ BarCode：条形码，
 LowVoice：低音，
 HighVoice：爆音，
 NoVoice：静音，
-LowEvaluation：无参考打分低于阈值。
+LowEvaluation：视频无参考评分（MOS）低于阈值，
+AudioEvaluation：音频无参考评分（MOS）低于阈值，
+AudioNoise：音频噪声。
                      * 
                      */
                     std::string GetType() const;
@@ -103,7 +107,9 @@ BarCode：条形码，
 LowVoice：低音，
 HighVoice：爆音，
 NoVoice：静音，
-LowEvaluation：无参考打分低于阈值。
+LowEvaluation：视频无参考评分（MOS）低于阈值，
+AudioEvaluation：音频无参考评分（MOS）低于阈值，
+AudioNoise：音频噪声。
                      * @param _type 异常类型，取值范围：
 Jitter：抖动，
 Blur：模糊，
@@ -120,7 +126,9 @@ BarCode：条形码，
 LowVoice：低音，
 HighVoice：爆音，
 NoVoice：静音，
-LowEvaluation：无参考打分低于阈值。
+LowEvaluation：视频无参考评分（MOS）低于阈值，
+AudioEvaluation：音频无参考评分（MOS）低于阈值，
+AudioNoise：音频噪声。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -172,7 +180,9 @@ BarCode：条形码，
 LowVoice：低音，
 HighVoice：爆音，
 NoVoice：静音，
-LowEvaluation：无参考打分低于阈值。
+LowEvaluation：视频无参考评分（MOS）低于阈值，
+AudioEvaluation：音频无参考评分（MOS）低于阈值，
+AudioNoise：音频噪声。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

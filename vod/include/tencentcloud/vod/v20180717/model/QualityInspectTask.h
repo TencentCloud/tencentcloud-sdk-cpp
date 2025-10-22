@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -168,18 +168,14 @@ namespace TencentCloud
 
                     /**
                      * 获取音画质检测任务输入。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Input 音画质检测任务输入。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     QualityInspectTaskInput GetInput() const;
 
                     /**
                      * 设置音画质检测任务输入。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _input 音画质检测任务输入。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInput(const QualityInspectTaskInput& _input);
@@ -193,18 +189,14 @@ namespace TencentCloud
 
                     /**
                      * 获取音画质检测任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Output 音画质检测任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     QualityInspectTaskOutput GetOutput() const;
 
                     /**
                      * 设置音画质检测任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _output 音画质检测任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutput(const QualityInspectTaskOutput& _output);
@@ -295,14 +287,12 @@ namespace TencentCloud
 
                     /**
                      * 音画质检测任务输入。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     QualityInspectTaskInput m_input;
                     bool m_inputHasBeenSet;
 
                     /**
                      * 音画质检测任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     QualityInspectTaskOutput m_output;
                     bool m_outputHasBeenSet;

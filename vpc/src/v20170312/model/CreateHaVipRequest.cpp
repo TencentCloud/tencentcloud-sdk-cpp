@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,10 @@ CreateHaVipRequest::CreateHaVipRequest() :
     m_subnetIdHasBeenSet(false),
     m_vipHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
-    m_checkAssociateHasBeenSet(false)
+    m_checkAssociateHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_haVipAssociationSetHasBeenSet(false),
+    m_clientTokenHasBeenSet(false)
 {
 }
 
@@ -85,6 +88,44 @@ string CreateHaVipRequest::ToJsonString() const
         string key = "CheckAssociate";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_checkAssociate, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_haVipAssociationSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HaVipAssociationSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_haVipAssociationSet.begin(); itr != m_haVipAssociationSet.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_clientTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clientToken.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +230,54 @@ void CreateHaVipRequest::SetCheckAssociate(const bool& _checkAssociate)
 bool CreateHaVipRequest::CheckAssociateHasBeenSet() const
 {
     return m_checkAssociateHasBeenSet;
+}
+
+vector<Tag> CreateHaVipRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateHaVipRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateHaVipRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+vector<HaVipAssociation> CreateHaVipRequest::GetHaVipAssociationSet() const
+{
+    return m_haVipAssociationSet;
+}
+
+void CreateHaVipRequest::SetHaVipAssociationSet(const vector<HaVipAssociation>& _haVipAssociationSet)
+{
+    m_haVipAssociationSet = _haVipAssociationSet;
+    m_haVipAssociationSetHasBeenSet = true;
+}
+
+bool CreateHaVipRequest::HaVipAssociationSetHasBeenSet() const
+{
+    return m_haVipAssociationSetHasBeenSet;
+}
+
+string CreateHaVipRequest::GetClientToken() const
+{
+    return m_clientToken;
+}
+
+void CreateHaVipRequest::SetClientToken(const string& _clientToken)
+{
+    m_clientToken = _clientToken;
+    m_clientTokenHasBeenSet = true;
+}
+
+bool CreateHaVipRequest::ClientTokenHasBeenSet() const
+{
+    return m_clientTokenHasBeenSet;
 }
 
 

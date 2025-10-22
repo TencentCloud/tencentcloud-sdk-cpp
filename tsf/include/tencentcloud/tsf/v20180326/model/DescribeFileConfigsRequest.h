@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取配置项ID
-                     * @return ConfigId 配置项ID
+                     * 获取配置ID。该参数可以通过调用 [DescribeFileConfigs](https://cloud.tencent.com/document/product/649/58593) 的返回值中的 ConfigId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?rid=1&subTab=file)配置详情-配置版本页查看；也可以调用[CreateFileConfig](https://cloud.tencent.com/document/product/649/58594)创建新的配置。
+                     * @return ConfigId 配置ID。该参数可以通过调用 [DescribeFileConfigs](https://cloud.tencent.com/document/product/649/58593) 的返回值中的 ConfigId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?rid=1&subTab=file)配置详情-配置版本页查看；也可以调用[CreateFileConfig](https://cloud.tencent.com/document/product/649/58594)创建新的配置。
                      * 
                      */
                     std::string GetConfigId() const;
 
                     /**
-                     * 设置配置项ID
-                     * @param _configId 配置项ID
+                     * 设置配置ID。该参数可以通过调用 [DescribeFileConfigs](https://cloud.tencent.com/document/product/649/58593) 的返回值中的 ConfigId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?rid=1&subTab=file)配置详情-配置版本页查看；也可以调用[CreateFileConfig](https://cloud.tencent.com/document/product/649/58594)创建新的配置。
+                     * @param _configId 配置ID。该参数可以通过调用 [DescribeFileConfigs](https://cloud.tencent.com/document/product/649/58593) 的返回值中的 ConfigId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?rid=1&subTab=file)配置详情-配置版本页查看；也可以调用[CreateFileConfig](https://cloud.tencent.com/document/product/649/58594)创建新的配置。
                      * 
                      */
                     void SetConfigId(const std::string& _configId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ConfigIdHasBeenSet() const;
 
                     /**
-                     * 获取配置项ID列表
-                     * @return ConfigIdList 配置项ID列表
+                     * 获取配置项ID列表。该参数可以通过调用 [DescribeFileConfigs](https://cloud.tencent.com/document/product/649/58593) 的返回值中的 ConfigId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?rid=1&subTab=file)配置详情-配置版本页查看；也可以调用[CreateFileConfig](https://cloud.tencent.com/document/product/649/58594)创建新的配置。
+                     * @return ConfigIdList 配置项ID列表。该参数可以通过调用 [DescribeFileConfigs](https://cloud.tencent.com/document/product/649/58593) 的返回值中的 ConfigId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?rid=1&subTab=file)配置详情-配置版本页查看；也可以调用[CreateFileConfig](https://cloud.tencent.com/document/product/649/58594)创建新的配置。
                      * 
                      */
                     std::vector<std::string> GetConfigIdList() const;
 
                     /**
-                     * 设置配置项ID列表
-                     * @param _configIdList 配置项ID列表
+                     * 设置配置项ID列表。该参数可以通过调用 [DescribeFileConfigs](https://cloud.tencent.com/document/product/649/58593) 的返回值中的 ConfigId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?rid=1&subTab=file)配置详情-配置版本页查看；也可以调用[CreateFileConfig](https://cloud.tencent.com/document/product/649/58594)创建新的配置。
+                     * @param _configIdList 配置项ID列表。该参数可以通过调用 [DescribeFileConfigs](https://cloud.tencent.com/document/product/649/58593) 的返回值中的 ConfigId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?rid=1&subTab=file)配置详情-配置版本页查看；也可以调用[CreateFileConfig](https://cloud.tencent.com/document/product/649/58594)创建新的配置。
                      * 
                      */
                     void SetConfigIdList(const std::vector<std::string>& _configIdList);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ConfigIdListHasBeenSet() const;
 
                     /**
-                     * 获取配置项名称
-                     * @return ConfigName 配置项名称
+                     * 获取配置项名称。
+                     * @return ConfigName 配置项名称。
                      * 
                      */
                     std::string GetConfigName() const;
 
                     /**
-                     * 设置配置项名称
-                     * @param _configName 配置项名称
+                     * 设置配置项名称。
+                     * @param _configName 配置项名称。
                      * 
                      */
                     void SetConfigName(const std::string& _configName);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ConfigNameHasBeenSet() const;
 
                     /**
-                     * 获取应用ID
-                     * @return ApplicationId 应用ID
+                     * 获取应用ID。该参数可以通过调用 [DescribeApplications](https://cloud.tencent.com/document/product/649/36090) 的返回值中的 ApplicationId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/app)查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/product/649/36094)创建新的应用。
+                     * @return ApplicationId 应用ID。该参数可以通过调用 [DescribeApplications](https://cloud.tencent.com/document/product/649/36090) 的返回值中的 ApplicationId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/app)查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/product/649/36094)创建新的应用。
                      * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
-                     * 设置应用ID
-                     * @param _applicationId 应用ID
+                     * 设置应用ID。该参数可以通过调用 [DescribeApplications](https://cloud.tencent.com/document/product/649/36090) 的返回值中的 ApplicationId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/app)查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/product/649/36094)创建新的应用。
+                     * @param _applicationId 应用ID。该参数可以通过调用 [DescribeApplications](https://cloud.tencent.com/document/product/649/36090) 的返回值中的 ApplicationId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/app)查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/product/649/36094)创建新的应用。
                      * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取偏移量，默认为0。
+                     * @return Offset 偏移量，默认为0。
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param _offset 偏移量
+                     * 设置偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取每页条数
-                     * @return Limit 每页条数
+                     * 获取返回数量，默认为20，最大值为100。
+                     * @return Limit 返回数量，默认为20，最大值为100。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置每页条数
-                     * @param _limit 每页条数
+                     * 设置返回数量，默认为20，最大值为100。
+                     * @param _limit 返回数量，默认为20，最大值为100。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取配置项版本
-                     * @return ConfigVersion 配置项版本
+                     * 获取配置项版本。
+                     * @return ConfigVersion 配置项版本。
                      * 
                      */
                     std::string GetConfigVersion() const;
 
                     /**
-                     * 设置配置项版本
-                     * @param _configVersion 配置项版本
+                     * 设置配置项版本。
+                     * @param _configVersion 配置项版本。
                      * 
                      */
                     void SetConfigVersion(const std::string& _configVersion);
@@ -192,43 +192,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 配置项ID
+                     * 配置ID。该参数可以通过调用 [DescribeFileConfigs](https://cloud.tencent.com/document/product/649/58593) 的返回值中的 ConfigId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?rid=1&subTab=file)配置详情-配置版本页查看；也可以调用[CreateFileConfig](https://cloud.tencent.com/document/product/649/58594)创建新的配置。
                      */
                     std::string m_configId;
                     bool m_configIdHasBeenSet;
 
                     /**
-                     * 配置项ID列表
+                     * 配置项ID列表。该参数可以通过调用 [DescribeFileConfigs](https://cloud.tencent.com/document/product/649/58593) 的返回值中的 ConfigId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?rid=1&subTab=file)配置详情-配置版本页查看；也可以调用[CreateFileConfig](https://cloud.tencent.com/document/product/649/58594)创建新的配置。
                      */
                     std::vector<std::string> m_configIdList;
                     bool m_configIdListHasBeenSet;
 
                     /**
-                     * 配置项名称
+                     * 配置项名称。
                      */
                     std::string m_configName;
                     bool m_configNameHasBeenSet;
 
                     /**
-                     * 应用ID
+                     * 应用ID。该参数可以通过调用 [DescribeApplications](https://cloud.tencent.com/document/product/649/36090) 的返回值中的 ApplicationId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/app)查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/product/649/36094)创建新的应用。
                      */
                     std::string m_applicationId;
                     bool m_applicationIdHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * 偏移量，默认为0。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 每页条数
+                     * 返回数量，默认为20，最大值为100。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 配置项版本
+                     * 配置项版本。
                      */
                     std::string m_configVersion;
                     bool m_configVersionHasBeenSet;

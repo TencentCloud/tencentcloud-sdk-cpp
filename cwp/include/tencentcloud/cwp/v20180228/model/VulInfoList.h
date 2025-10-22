@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -384,14 +384,46 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞标签 多个逗号分割
+
+存在EXP:EXP
+在野攻击:KNOWN_EXPLOITED
+本地利用:LOCAL
+必修漏洞:NEED_FIX
+远程利用:NETWORK
+存在POC:POC
+系统重启:RESTART
                      * @return Labels 漏洞标签 多个逗号分割
+
+存在EXP:EXP
+在野攻击:KNOWN_EXPLOITED
+本地利用:LOCAL
+必修漏洞:NEED_FIX
+远程利用:NETWORK
+存在POC:POC
+系统重启:RESTART
                      * 
                      */
                     std::string GetLabels() const;
 
                     /**
                      * 设置漏洞标签 多个逗号分割
+
+存在EXP:EXP
+在野攻击:KNOWN_EXPLOITED
+本地利用:LOCAL
+必修漏洞:NEED_FIX
+远程利用:NETWORK
+存在POC:POC
+系统重启:RESTART
                      * @param _labels 漏洞标签 多个逗号分割
+
+存在EXP:EXP
+在野攻击:KNOWN_EXPLOITED
+本地利用:LOCAL
+必修漏洞:NEED_FIX
+远程利用:NETWORK
+存在POC:POC
+系统重启:RESTART
                      * 
                      */
                     void SetLabels(const std::string& _labels);
@@ -613,6 +645,27 @@ namespace TencentCloud
                      */
                     bool VulFixSwitchHasBeenSet() const;
 
+                    /**
+                     * 获取最近修复时间
+                     * @return LatestFixTime 最近修复时间
+                     * 
+                     */
+                    std::string GetLatestFixTime() const;
+
+                    /**
+                     * 设置最近修复时间
+                     * @param _latestFixTime 最近修复时间
+                     * 
+                     */
+                    void SetLatestFixTime(const std::string& _latestFixTime);
+
+                    /**
+                     * 判断参数 LatestFixTime 是否已赋值
+                     * @return LatestFixTime 是否已赋值
+                     * 
+                     */
+                    bool LatestFixTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -713,6 +766,14 @@ namespace TencentCloud
 
                     /**
                      * 漏洞标签 多个逗号分割
+
+存在EXP:EXP
+在野攻击:KNOWN_EXPLOITED
+本地利用:LOCAL
+必修漏洞:NEED_FIX
+远程利用:NETWORK
+存在POC:POC
+系统重启:RESTART
                      */
                     std::string m_labels;
                     bool m_labelsHasBeenSet;
@@ -776,6 +837,12 @@ namespace TencentCloud
                      */
                     uint64_t m_vulFixSwitch;
                     bool m_vulFixSwitchHasBeenSet;
+
+                    /**
+                     * 最近修复时间
+                     */
+                    std::string m_latestFixTime;
+                    bool m_latestFixTimeHasBeenSet;
 
                 };
             }

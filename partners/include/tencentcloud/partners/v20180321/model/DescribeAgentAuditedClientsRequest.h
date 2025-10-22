@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool ClientRemarkHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取*偏移量 【请保持必传】
+                     * @return Offset *偏移量 【请保持必传】
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param _offset 偏移量
+                     * 设置*偏移量 【请保持必传】
+                     * @param _offset *偏移量 【请保持必传】
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取限制数目
-                     * @return Limit 限制数目
+                     * 获取*限制数目 【请保持必传】最大2000
+                     * @return Limit *限制数目 【请保持必传】最大2000
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置限制数目
-                     * @param _limit 限制数目
+                     * 设置*限制数目 【请保持必传】最大2000
+                     * @param _limit *限制数目 【请保持必传】最大2000
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -360,13 +360,13 @@ namespace TencentCloud
                     bool m_clientRemarkHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * *偏移量 【请保持必传】
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 限制数目
+                     * *限制数目 【请保持必传】最大2000
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

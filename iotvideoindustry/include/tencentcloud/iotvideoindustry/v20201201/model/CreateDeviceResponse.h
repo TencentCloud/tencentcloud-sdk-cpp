@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取设备编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceCode 设备编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceCode() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取设备唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceId 设备唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceId() const;
@@ -77,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取设备虚拟组信息，仅在创建NVR时返回该值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VirtualGroupId 设备虚拟组信息，仅在创建NVR时返回该值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVirtualGroupId() const;
@@ -95,21 +89,18 @@ namespace TencentCloud
 
                     /**
                      * 设备编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceCode;
                     bool m_deviceCodeHasBeenSet;
 
                     /**
                      * 设备唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;
 
                     /**
                      * 设备虚拟组信息，仅在创建NVR时返回该值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_virtualGroupId;
                     bool m_virtualGroupIdHasBeenSet;

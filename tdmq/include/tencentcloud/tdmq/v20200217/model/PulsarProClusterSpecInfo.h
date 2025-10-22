@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -205,6 +205,27 @@ namespace TencentCloud
                      */
                     bool MaxPartitionsHasBeenSet() const;
 
+                    /**
+                     * 获取商品最大延迟消息数量。0代表没有限制	
+                     * @return MaxDelayedMessages 商品最大延迟消息数量。0代表没有限制	
+                     * 
+                     */
+                    int64_t GetMaxDelayedMessages() const;
+
+                    /**
+                     * 设置商品最大延迟消息数量。0代表没有限制	
+                     * @param _maxDelayedMessages 商品最大延迟消息数量。0代表没有限制	
+                     * 
+                     */
+                    void SetMaxDelayedMessages(const int64_t& _maxDelayedMessages);
+
+                    /**
+                     * 判断参数 MaxDelayedMessages 是否已赋值
+                     * @return MaxDelayedMessages 是否已赋值
+                     * 
+                     */
+                    bool MaxDelayedMessagesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -251,6 +272,12 @@ namespace TencentCloud
                      */
                     uint64_t m_maxPartitions;
                     bool m_maxPartitionsHasBeenSet;
+
+                    /**
+                     * 商品最大延迟消息数量。0代表没有限制	
+                     */
+                    int64_t m_maxDelayedMessages;
+                    bool m_maxDelayedMessagesHasBeenSet;
 
                 };
             }

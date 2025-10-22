@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskGroupInstanceObjectId 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskGroupInstanceObjectId() const;
 
                     /**
                      * 设置实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskGroupInstanceObjectId 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskGroupInstanceObjectId(const std::string& _taskGroupInstanceObjectId);
@@ -178,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取执行开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskGroupInstanceStartTime 执行开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskGroupInstanceStartTime() const;
 
                     /**
                      * 设置执行开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskGroupInstanceStartTime 执行开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskGroupInstanceStartTime(const std::string& _taskGroupInstanceStartTime);
@@ -203,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取执行结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskGroupInstanceEndTime 执行结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskGroupInstanceEndTime() const;
 
                     /**
                      * 设置执行结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskGroupInstanceEndTime 执行结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskGroupInstanceEndTime(const std::string& _taskGroupInstanceEndTime);
@@ -253,18 +241,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例是否可重试
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskGroupInstanceIsRedo 实例是否可重试
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetTaskGroupInstanceIsRedo() const;
 
                     /**
                      * 设置实例是否可重试
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskGroupInstanceIsRedo 实例是否可重试
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskGroupInstanceIsRedo(const bool& _taskGroupInstanceIsRedo);
@@ -278,18 +262,14 @@ namespace TencentCloud
 
                     /**
                      * 获取动作实例执行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskGroupInstanceExecuteTime 动作实例执行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTaskGroupInstanceExecuteTime() const;
 
                     /**
                      * 设置动作实例执行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskGroupInstanceExecuteTime 动作实例执行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskGroupInstanceExecuteTime(const int64_t& _taskGroupInstanceExecuteTime);
@@ -311,7 +291,6 @@ namespace TencentCloud
 
                     /**
                      * 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskGroupInstanceObjectId;
                     bool m_taskGroupInstanceObjectIdHasBeenSet;
@@ -342,14 +321,12 @@ namespace TencentCloud
 
                     /**
                      * 执行开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskGroupInstanceStartTime;
                     bool m_taskGroupInstanceStartTimeHasBeenSet;
 
                     /**
                      * 执行结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskGroupInstanceEndTime;
                     bool m_taskGroupInstanceEndTimeHasBeenSet;
@@ -363,14 +340,12 @@ namespace TencentCloud
 
                     /**
                      * 实例是否可重试
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_taskGroupInstanceIsRedo;
                     bool m_taskGroupInstanceIsRedoHasBeenSet;
 
                     /**
                      * 动作实例执行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_taskGroupInstanceExecuteTime;
                     bool m_taskGroupInstanceExecuteTimeHasBeenSet;

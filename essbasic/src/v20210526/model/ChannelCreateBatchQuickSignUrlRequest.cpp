@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,9 @@ ChannelCreateBatchQuickSignUrlRequest::ChannelCreateBatchQuickSignUrlRequest() :
     m_signTypeSelectorHasBeenSet(false),
     m_flowBatchUrlInfoHasBeenSet(false),
     m_intentionHasBeenSet(false),
-    m_cacheApproverInfoHasBeenSet(false)
+    m_cacheApproverInfoHasBeenSet(false),
+    m_canBatchRejectHasBeenSet(false),
+    m_presetApproverInfoHasBeenSet(false)
 {
 }
 
@@ -149,6 +151,23 @@ string ChannelCreateBatchQuickSignUrlRequest::ToJsonString() const
         string key = "CacheApproverInfo";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_cacheApproverInfo, allocator);
+    }
+
+    if (m_canBatchRejectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CanBatchReject";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_canBatchReject, allocator);
+    }
+
+    if (m_presetApproverInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PresetApproverInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_presetApproverInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -333,6 +352,38 @@ void ChannelCreateBatchQuickSignUrlRequest::SetCacheApproverInfo(const bool& _ca
 bool ChannelCreateBatchQuickSignUrlRequest::CacheApproverInfoHasBeenSet() const
 {
     return m_cacheApproverInfoHasBeenSet;
+}
+
+bool ChannelCreateBatchQuickSignUrlRequest::GetCanBatchReject() const
+{
+    return m_canBatchReject;
+}
+
+void ChannelCreateBatchQuickSignUrlRequest::SetCanBatchReject(const bool& _canBatchReject)
+{
+    m_canBatchReject = _canBatchReject;
+    m_canBatchRejectHasBeenSet = true;
+}
+
+bool ChannelCreateBatchQuickSignUrlRequest::CanBatchRejectHasBeenSet() const
+{
+    return m_canBatchRejectHasBeenSet;
+}
+
+PresetApproverInfo ChannelCreateBatchQuickSignUrlRequest::GetPresetApproverInfo() const
+{
+    return m_presetApproverInfo;
+}
+
+void ChannelCreateBatchQuickSignUrlRequest::SetPresetApproverInfo(const PresetApproverInfo& _presetApproverInfo)
+{
+    m_presetApproverInfo = _presetApproverInfo;
+    m_presetApproverInfoHasBeenSet = true;
+}
+
+bool ChannelCreateBatchQuickSignUrlRequest::PresetApproverInfoHasBeenSet() const
+{
+    return m_presetApproverInfoHasBeenSet;
 }
 
 

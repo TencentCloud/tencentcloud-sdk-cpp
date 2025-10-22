@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,6 +39,92 @@ ConfigClient::ConfigClient(const Credential &credential, const string &region, c
 {
 }
 
+
+ConfigClient::DescribeAggregateDiscoveredResourceOutcome ConfigClient::DescribeAggregateDiscoveredResource(const DescribeAggregateDiscoveredResourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAggregateDiscoveredResource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAggregateDiscoveredResourceResponse rsp = DescribeAggregateDiscoveredResourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAggregateDiscoveredResourceOutcome(rsp);
+        else
+            return DescribeAggregateDiscoveredResourceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAggregateDiscoveredResourceOutcome(outcome.GetError());
+    }
+}
+
+void ConfigClient::DescribeAggregateDiscoveredResourceAsync(const DescribeAggregateDiscoveredResourceRequest& request, const DescribeAggregateDiscoveredResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAggregateDiscoveredResource(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ConfigClient::DescribeAggregateDiscoveredResourceOutcomeCallable ConfigClient::DescribeAggregateDiscoveredResourceCallable(const DescribeAggregateDiscoveredResourceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAggregateDiscoveredResourceOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAggregateDiscoveredResource(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ConfigClient::DescribeDiscoveredResourceOutcome ConfigClient::DescribeDiscoveredResource(const DescribeDiscoveredResourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDiscoveredResource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDiscoveredResourceResponse rsp = DescribeDiscoveredResourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDiscoveredResourceOutcome(rsp);
+        else
+            return DescribeDiscoveredResourceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDiscoveredResourceOutcome(outcome.GetError());
+    }
+}
+
+void ConfigClient::DescribeDiscoveredResourceAsync(const DescribeDiscoveredResourceRequest& request, const DescribeDiscoveredResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDiscoveredResource(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ConfigClient::DescribeDiscoveredResourceOutcomeCallable ConfigClient::DescribeDiscoveredResourceCallable(const DescribeDiscoveredResourceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDiscoveredResourceOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDiscoveredResource(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
 
 ConfigClient::ListAggregateConfigRulesOutcome ConfigClient::ListAggregateConfigRules(const ListAggregateConfigRulesRequest &request)
 {
@@ -83,6 +169,49 @@ ConfigClient::ListAggregateConfigRulesOutcomeCallable ConfigClient::ListAggregat
     return task->get_future();
 }
 
+ConfigClient::ListAggregateDiscoveredResourcesOutcome ConfigClient::ListAggregateDiscoveredResources(const ListAggregateDiscoveredResourcesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListAggregateDiscoveredResources");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListAggregateDiscoveredResourcesResponse rsp = ListAggregateDiscoveredResourcesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListAggregateDiscoveredResourcesOutcome(rsp);
+        else
+            return ListAggregateDiscoveredResourcesOutcome(o.GetError());
+    }
+    else
+    {
+        return ListAggregateDiscoveredResourcesOutcome(outcome.GetError());
+    }
+}
+
+void ConfigClient::ListAggregateDiscoveredResourcesAsync(const ListAggregateDiscoveredResourcesRequest& request, const ListAggregateDiscoveredResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListAggregateDiscoveredResources(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ConfigClient::ListAggregateDiscoveredResourcesOutcomeCallable ConfigClient::ListAggregateDiscoveredResourcesCallable(const ListAggregateDiscoveredResourcesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListAggregateDiscoveredResourcesOutcome()>>(
+        [this, request]()
+        {
+            return this->ListAggregateDiscoveredResources(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ConfigClient::ListConfigRulesOutcome ConfigClient::ListConfigRules(const ListConfigRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "ListConfigRules");
@@ -119,6 +248,49 @@ ConfigClient::ListConfigRulesOutcomeCallable ConfigClient::ListConfigRulesCallab
         [this, request]()
         {
             return this->ListConfigRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ConfigClient::ListDiscoveredResourcesOutcome ConfigClient::ListDiscoveredResources(const ListDiscoveredResourcesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListDiscoveredResources");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListDiscoveredResourcesResponse rsp = ListDiscoveredResourcesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListDiscoveredResourcesOutcome(rsp);
+        else
+            return ListDiscoveredResourcesOutcome(o.GetError());
+    }
+    else
+    {
+        return ListDiscoveredResourcesOutcome(outcome.GetError());
+    }
+}
+
+void ConfigClient::ListDiscoveredResourcesAsync(const ListDiscoveredResourcesRequest& request, const ListDiscoveredResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListDiscoveredResources(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ConfigClient::ListDiscoveredResourcesOutcomeCallable ConfigClient::ListDiscoveredResourcesCallable(const ListDiscoveredResourcesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListDiscoveredResourcesOutcome()>>(
+        [this, request]()
+        {
+            return this->ListDiscoveredResources(request);
         }
     );
 

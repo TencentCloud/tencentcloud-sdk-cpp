@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置文件组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 配置文件组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置配置文件组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 配置文件组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const uint64_t& _id);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置文件组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 配置文件组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置配置文件组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 配置文件组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Namespace 命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _namespace 命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNamespace(const std::string& _namespace);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Comment 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComment() const;
 
                     /**
                      * 设置备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _comment 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComment(const std::string& _comment);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建者
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateBy 创建者
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateBy() const;
 
                     /**
                      * 设置创建者
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createBy 创建者
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateBy(const std::string& _createBy);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyTime 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyTime 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -224,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修改者
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyBy 修改者
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyBy() const;
 
                     /**
                      * 设置修改者
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyBy 修改者
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyBy(const std::string& _modifyBy);
@@ -249,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileCount 文件数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetFileCount() const;
 
                     /**
                      * 设置文件数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileCount 文件数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileCount(const uint64_t& _fileCount);
@@ -274,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联用户，link_users
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserIds 关联用户，link_users
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetUserIds() const;
 
                     /**
                      * 设置关联用户，link_users
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userIds 关联用户，link_users
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserIds(const std::vector<std::string>& _userIds);
@@ -299,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组id，link_groups
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupIds 组id，link_groups
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetGroupIds() const;
 
                     /**
                      * 设置组id，link_groups
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupIds 组id，link_groups
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupIds(const std::vector<std::string>& _groupIds);
@@ -324,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取remove_link_users
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemoveUserIds remove_link_users
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetRemoveUserIds() const;
 
                     /**
                      * 设置remove_link_users
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _removeUserIds remove_link_users
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemoveUserIds(const std::vector<std::string>& _removeUserIds);
@@ -349,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取remove_link_groups
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemoveGroupIds remove_link_groups
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetRemoveGroupIds() const;
 
                     /**
                      * 设置remove_link_groups
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _removeGroupIds remove_link_groups
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemoveGroupIds(const std::vector<std::string>& _removeGroupIds);
@@ -374,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否可编辑
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Editable 是否可编辑
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEditable() const;
 
                     /**
                      * 设置是否可编辑
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _editable 是否可编辑
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEditable(const bool& _editable);
@@ -399,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取归属者
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Owner 归属者
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOwner() const;
 
                     /**
                      * 设置归属者
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _owner 归属者
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOwner(const std::string& _owner);
@@ -424,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部门
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Department 部门
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDepartment() const;
 
                     /**
                      * 设置部门
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _department 部门
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDepartment(const std::string& _department);
@@ -449,18 +385,14 @@ namespace TencentCloud
 
                     /**
                      * 获取业务
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Business 业务
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBusiness() const;
 
                     /**
                      * 设置业务
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _business 业务
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBusiness(const std::string& _business);
@@ -474,18 +406,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置文件组标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigFileGroupTags 配置文件组标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ConfigFileGroupTag> GetConfigFileGroupTags() const;
 
                     /**
                      * 设置配置文件组标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configFileGroupTags 配置文件组标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigFileGroupTags(const std::vector<ConfigFileGroupTag>& _configFileGroupTags);
@@ -501,126 +429,108 @@ namespace TencentCloud
 
                     /**
                      * 配置文件组id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 配置文件组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
 
                     /**
                      * 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 创建者
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createBy;
                     bool m_createByHasBeenSet;
 
                     /**
                      * 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
                      * 修改者
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyBy;
                     bool m_modifyByHasBeenSet;
 
                     /**
                      * 文件数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_fileCount;
                     bool m_fileCountHasBeenSet;
 
                     /**
                      * 关联用户，link_users
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_userIds;
                     bool m_userIdsHasBeenSet;
 
                     /**
                      * 组id，link_groups
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_groupIds;
                     bool m_groupIdsHasBeenSet;
 
                     /**
                      * remove_link_users
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_removeUserIds;
                     bool m_removeUserIdsHasBeenSet;
 
                     /**
                      * remove_link_groups
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_removeGroupIds;
                     bool m_removeGroupIdsHasBeenSet;
 
                     /**
                      * 是否可编辑
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_editable;
                     bool m_editableHasBeenSet;
 
                     /**
                      * 归属者
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_owner;
                     bool m_ownerHasBeenSet;
 
                     /**
                      * 部门
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_department;
                     bool m_departmentHasBeenSet;
 
                     /**
                      * 业务
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_business;
                     bool m_businessHasBeenSet;
 
                     /**
                      * 配置文件组标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ConfigFileGroupTag> m_configFileGroupTags;
                     bool m_configFileGroupTagsHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取vpc的id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId vpc的id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置vpc的id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId vpc的id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetIds 子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSubnetIds() const;
 
                     /**
                      * 设置子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetIds 子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetIds(const std::vector<std::string>& _subnetIds);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建类型(0=继承; 1=新建; 2=指定)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateType 创建类型(0=继承; 1=新建; 2=指定)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCreateType() const;
 
                     /**
                      * 设置创建类型(0=继承; 1=新建; 2=指定)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createType 创建类型(0=继承; 1=新建; 2=指定)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateType(const int64_t& _createType);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * vpc的id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * 子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_subnetIds;
                     bool m_subnetIdsHasBeenSet;
 
                     /**
                      * 创建类型(0=继承; 1=新建; 2=指定)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_createType;
                     bool m_createTypeHasBeenSet;

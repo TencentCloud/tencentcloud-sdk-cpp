@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取标识 IPV6 的唯一 ID 列表。IPV6 唯一 ID 形如：`eip-11112222`。参数不支持同时指定`Ip6AddressIds`和`Filters`。
-                     * @return Ip6AddressIds 标识 IPV6 的唯一 ID 列表。IPV6 唯一 ID 形如：`eip-11112222`。参数不支持同时指定`Ip6AddressIds`和`Filters`。
+                     * 获取标识 IPv6 的唯一 ID 列表。IPv6 唯一 ID 形如：`eip-11112222`。参数不支持同时指定`Ip6AddressIds`和`Filters`。可以使用[DescribeIp6Addresses](https://cloud.tencent.com/document/product/215/40089)接口查询Ip6AddressIds。
+                     * @return Ip6AddressIds 标识 IPv6 的唯一 ID 列表。IPv6 唯一 ID 形如：`eip-11112222`。参数不支持同时指定`Ip6AddressIds`和`Filters`。可以使用[DescribeIp6Addresses](https://cloud.tencent.com/document/product/215/40089)接口查询Ip6AddressIds。
                      * 
                      */
                     std::vector<std::string> GetIp6AddressIds() const;
 
                     /**
-                     * 设置标识 IPV6 的唯一 ID 列表。IPV6 唯一 ID 形如：`eip-11112222`。参数不支持同时指定`Ip6AddressIds`和`Filters`。
-                     * @param _ip6AddressIds 标识 IPV6 的唯一 ID 列表。IPV6 唯一 ID 形如：`eip-11112222`。参数不支持同时指定`Ip6AddressIds`和`Filters`。
+                     * 设置标识 IPv6 的唯一 ID 列表。IPv6 唯一 ID 形如：`eip-11112222`。参数不支持同时指定`Ip6AddressIds`和`Filters`。可以使用[DescribeIp6Addresses](https://cloud.tencent.com/document/product/215/40089)接口查询Ip6AddressIds。
+                     * @param _ip6AddressIds 标识 IPv6 的唯一 ID 列表。IPv6 唯一 ID 形如：`eip-11112222`。参数不支持同时指定`Ip6AddressIds`和`Filters`。可以使用[DescribeIp6Addresses](https://cloud.tencent.com/document/product/215/40089)接口查询Ip6AddressIds。
                      * 
                      */
                     void SetIp6AddressIds(const std::vector<std::string>& _ip6AddressIds);
@@ -66,22 +66,22 @@ namespace TencentCloud
 
                     /**
                      * 获取每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。参数不支持同时指定`AddressIds`和`Filters`。详细的过滤条件如下：
-<li> address-ip - String - 是否必填：否 - （过滤条件）按照 IPV6 的 IP 地址过滤。</li>
-<li> network-interface-id - String - 是否必填：否 - （过滤条件）按照弹性网卡的唯一ID过滤。</li>
+<li> address-ip - String - 是否必填：否 - （过滤条件）按照 IPv6 的 IP 地址过滤。可以使用[DescribeIp6Addresses](https://cloud.tencent.com/document/product/215/40089)接口查询address-ip。</li>
+<li> network-interface-id - String - 是否必填：否 - （过滤条件）按照弹性网卡的唯一ID过滤。可以使用[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口查询network-interface-id。</li>
                      * @return Filters 每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。参数不支持同时指定`AddressIds`和`Filters`。详细的过滤条件如下：
-<li> address-ip - String - 是否必填：否 - （过滤条件）按照 IPV6 的 IP 地址过滤。</li>
-<li> network-interface-id - String - 是否必填：否 - （过滤条件）按照弹性网卡的唯一ID过滤。</li>
+<li> address-ip - String - 是否必填：否 - （过滤条件）按照 IPv6 的 IP 地址过滤。可以使用[DescribeIp6Addresses](https://cloud.tencent.com/document/product/215/40089)接口查询address-ip。</li>
+<li> network-interface-id - String - 是否必填：否 - （过滤条件）按照弹性网卡的唯一ID过滤。可以使用[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口查询network-interface-id。</li>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。参数不支持同时指定`AddressIds`和`Filters`。详细的过滤条件如下：
-<li> address-ip - String - 是否必填：否 - （过滤条件）按照 IPV6 的 IP 地址过滤。</li>
-<li> network-interface-id - String - 是否必填：否 - （过滤条件）按照弹性网卡的唯一ID过滤。</li>
+<li> address-ip - String - 是否必填：否 - （过滤条件）按照 IPv6 的 IP 地址过滤。可以使用[DescribeIp6Addresses](https://cloud.tencent.com/document/product/215/40089)接口查询address-ip。</li>
+<li> network-interface-id - String - 是否必填：否 - （过滤条件）按照弹性网卡的唯一ID过滤。可以使用[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口查询network-interface-id。</li>
                      * @param _filters 每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。参数不支持同时指定`AddressIds`和`Filters`。详细的过滤条件如下：
-<li> address-ip - String - 是否必填：否 - （过滤条件）按照 IPV6 的 IP 地址过滤。</li>
-<li> network-interface-id - String - 是否必填：否 - （过滤条件）按照弹性网卡的唯一ID过滤。</li>
+<li> address-ip - String - 是否必填：否 - （过滤条件）按照 IPv6 的 IP 地址过滤。可以使用[DescribeIp6Addresses](https://cloud.tencent.com/document/product/215/40089)接口查询address-ip。</li>
+<li> network-interface-id - String - 是否必填：否 - （过滤条件）按照弹性网卡的唯一ID过滤。可以使用[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口查询network-interface-id。</li>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -138,15 +138,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 标识 IPV6 的唯一 ID 列表。IPV6 唯一 ID 形如：`eip-11112222`。参数不支持同时指定`Ip6AddressIds`和`Filters`。
+                     * 标识 IPv6 的唯一 ID 列表。IPv6 唯一 ID 形如：`eip-11112222`。参数不支持同时指定`Ip6AddressIds`和`Filters`。可以使用[DescribeIp6Addresses](https://cloud.tencent.com/document/product/215/40089)接口查询Ip6AddressIds。
                      */
                     std::vector<std::string> m_ip6AddressIds;
                     bool m_ip6AddressIdsHasBeenSet;
 
                     /**
                      * 每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。参数不支持同时指定`AddressIds`和`Filters`。详细的过滤条件如下：
-<li> address-ip - String - 是否必填：否 - （过滤条件）按照 IPV6 的 IP 地址过滤。</li>
-<li> network-interface-id - String - 是否必填：否 - （过滤条件）按照弹性网卡的唯一ID过滤。</li>
+<li> address-ip - String - 是否必填：否 - （过滤条件）按照 IPv6 的 IP 地址过滤。可以使用[DescribeIp6Addresses](https://cloud.tencent.com/document/product/215/40089)接口查询address-ip。</li>
+<li> network-interface-id - String - 是否必填：否 - （过滤条件）按照弹性网卡的唯一ID过滤。可以使用[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口查询network-interface-id。</li>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

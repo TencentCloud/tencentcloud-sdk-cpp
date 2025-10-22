@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool CopyPolicyHasBeenSet() const;
 
                     /**
-                     * 获取如果该资源实例为域名化资产则，该参数必填
-                     * @return FilterRegion 如果该资源实例为域名化资产则，该参数必填
+                     * 获取如果该资源实例为域名化资产以及跨地域绑定则，该参数必填
+                     * @return FilterRegion 如果该资源实例为域名化资产以及跨地域绑定则，该参数必填
                      * 
                      */
                     std::string GetFilterRegion() const;
 
                     /**
-                     * 设置如果该资源实例为域名化资产则，该参数必填
-                     * @param _filterRegion 如果该资源实例为域名化资产则，该参数必填
+                     * 设置如果该资源实例为域名化资产以及跨地域绑定则，该参数必填
+                     * @param _filterRegion 如果该资源实例为域名化资产以及跨地域绑定则，该参数必填
                      * 
                      */
                     void SetFilterRegion(const std::string& _filterRegion);
@@ -202,7 +202,7 @@ namespace TencentCloud
                     bool m_copyPolicyHasBeenSet;
 
                     /**
-                     * 如果该资源实例为域名化资产则，该参数必填
+                     * 如果该资源实例为域名化资产以及跨地域绑定则，该参数必填
                      */
                     std::string m_filterRegion;
                     bool m_filterRegionHasBeenSet;

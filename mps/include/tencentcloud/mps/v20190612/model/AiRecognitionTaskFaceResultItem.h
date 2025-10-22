@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -143,11 +143,9 @@ namespace TencentCloud
                      * 获取人物性别：
 <li>Male：男性；</li>
 <li>Female：女性。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Gender 人物性别：
 <li>Male：男性；</li>
 <li>Female：女性。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGender() const;
@@ -156,11 +154,9 @@ namespace TencentCloud
                      * 设置人物性别：
 <li>Male：男性；</li>
 <li>Female：女性。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gender 人物性别：
 <li>Male：男性；</li>
 <li>Female：女性。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGender(const std::string& _gender);
@@ -174,18 +170,14 @@ namespace TencentCloud
 
                     /**
                      * 获取人物出生日期。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Birthday 人物出生日期。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBirthday() const;
 
                     /**
                      * 设置人物出生日期。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _birthday 人物出生日期。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBirthday(const std::string& _birthday);
@@ -199,18 +191,14 @@ namespace TencentCloud
 
                     /**
                      * 获取人物职业或者职务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Profession 人物职业或者职务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProfession() const;
 
                     /**
                      * 设置人物职业或者职务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _profession 人物职业或者职务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProfession(const std::string& _profession);
@@ -224,18 +212,14 @@ namespace TencentCloud
 
                     /**
                      * 获取人物毕业院校。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SchoolOfGraduation 人物毕业院校。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSchoolOfGraduation() const;
 
                     /**
                      * 设置人物毕业院校。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _schoolOfGraduation 人物毕业院校。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSchoolOfGraduation(const std::string& _schoolOfGraduation);
@@ -249,18 +233,14 @@ namespace TencentCloud
 
                     /**
                      * 获取人物简介。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Abstract 人物简介。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAbstract() const;
 
                     /**
                      * 设置人物简介。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _abstract 人物简介。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAbstract(const std::string& _abstract);
@@ -274,18 +254,14 @@ namespace TencentCloud
 
                     /**
                      * 获取人物出生地或者籍贯。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PlaceOfBirth 人物出生地或者籍贯。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPlaceOfBirth() const;
 
                     /**
                      * 设置人物出生地或者籍贯。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _placeOfBirth 人物出生地或者籍贯。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPlaceOfBirth(const std::string& _placeOfBirth);
@@ -301,11 +277,9 @@ namespace TencentCloud
                      * 获取人物类型：
 <li>Politician：官员；</li>
 <li>Artist：艺人。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PersonType 人物类型：
 <li>Politician：官员；</li>
 <li>Artist：艺人。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPersonType() const;
@@ -314,11 +288,9 @@ namespace TencentCloud
                      * 设置人物类型：
 <li>Politician：官员；</li>
 <li>Artist：艺人。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _personType 人物类型：
 <li>Politician：官员；</li>
 <li>Artist：艺人。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPersonType(const std::string& _personType);
@@ -334,11 +306,9 @@ namespace TencentCloud
                      * 获取敏感度标注：
 <li>Normal：正常；</li>
 <li>Sensitive：敏感。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 敏感度标注：
 <li>Normal：正常；</li>
 <li>Sensitive：敏感。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
@@ -347,11 +317,9 @@ namespace TencentCloud
                      * 设置敏感度标注：
 <li>Normal：正常；</li>
 <li>Sensitive：敏感。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 敏感度标注：
 <li>Normal：正常；</li>
 <li>Sensitive：敏感。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -365,18 +333,14 @@ namespace TencentCloud
 
                     /**
                      * 获取截图链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url 截图链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置截图链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _url 截图链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -420,42 +384,36 @@ namespace TencentCloud
                      * 人物性别：
 <li>Male：男性；</li>
 <li>Female：女性。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gender;
                     bool m_genderHasBeenSet;
 
                     /**
                      * 人物出生日期。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_birthday;
                     bool m_birthdayHasBeenSet;
 
                     /**
                      * 人物职业或者职务。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_profession;
                     bool m_professionHasBeenSet;
 
                     /**
                      * 人物毕业院校。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_schoolOfGraduation;
                     bool m_schoolOfGraduationHasBeenSet;
 
                     /**
                      * 人物简介。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_abstract;
                     bool m_abstractHasBeenSet;
 
                     /**
                      * 人物出生地或者籍贯。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_placeOfBirth;
                     bool m_placeOfBirthHasBeenSet;
@@ -464,7 +422,6 @@ namespace TencentCloud
                      * 人物类型：
 <li>Politician：官员；</li>
 <li>Artist：艺人。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_personType;
                     bool m_personTypeHasBeenSet;
@@ -473,14 +430,12 @@ namespace TencentCloud
                      * 敏感度标注：
 <li>Normal：正常；</li>
 <li>Sensitive：敏感。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
                      * 截图链接
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;

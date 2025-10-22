@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/CreateOutputSRTSettingsDestinations.h>
+#include <tencentcloud/mps/v20190612/model/SRTFECFullOptions.h>
 
 
 namespace TencentCloud
@@ -90,15 +91,15 @@ namespace TencentCloud
                     bool StreamIdHasBeenSet() const;
 
                     /**
-                     * 获取转推SRT的总延迟，默认0，单位ms，范围为[0, 3000]。
-                     * @return Latency 转推SRT的总延迟，默认0，单位ms，范围为[0, 3000]。
+                     * 获取转推SRT的延迟，默认120，单位ms，范围为[0, 3000]。此参数同时设置了发送方和接收方的延迟（recvlatency和peerlatency）为相同的值。建议配置为至少3倍RTT，以确保在网络拥塞时能够有效处理数据包的重传和确认
+                     * @return Latency 转推SRT的延迟，默认120，单位ms，范围为[0, 3000]。此参数同时设置了发送方和接收方的延迟（recvlatency和peerlatency）为相同的值。建议配置为至少3倍RTT，以确保在网络拥塞时能够有效处理数据包的重传和确认
                      * 
                      */
                     int64_t GetLatency() const;
 
                     /**
-                     * 设置转推SRT的总延迟，默认0，单位ms，范围为[0, 3000]。
-                     * @param _latency 转推SRT的总延迟，默认0，单位ms，范围为[0, 3000]。
+                     * 设置转推SRT的延迟，默认120，单位ms，范围为[0, 3000]。此参数同时设置了发送方和接收方的延迟（recvlatency和peerlatency）为相同的值。建议配置为至少3倍RTT，以确保在网络拥塞时能够有效处理数据包的重传和确认
+                     * @param _latency 转推SRT的延迟，默认120，单位ms，范围为[0, 3000]。此参数同时设置了发送方和接收方的延迟（recvlatency和peerlatency）为相同的值。建议配置为至少3倍RTT，以确保在网络拥塞时能够有效处理数据包的重传和确认
                      * 
                      */
                     void SetLatency(const int64_t& _latency);
@@ -111,15 +112,15 @@ namespace TencentCloud
                     bool LatencyHasBeenSet() const;
 
                     /**
-                     * 获取转推SRT的接收延迟，默认120，单位ms，范围为[0, 3000]。
-                     * @return RecvLatency 转推SRT的接收延迟，默认120，单位ms，范围为[0, 3000]。
+                     * 获取转推SRT的接收延迟，默认120，单位ms，范围为[0, 3000]。 此参数表示接收方用于缓存数据包的时间长度
+                     * @return RecvLatency 转推SRT的接收延迟，默认120，单位ms，范围为[0, 3000]。 此参数表示接收方用于缓存数据包的时间长度
                      * 
                      */
                     int64_t GetRecvLatency() const;
 
                     /**
-                     * 设置转推SRT的接收延迟，默认120，单位ms，范围为[0, 3000]。
-                     * @param _recvLatency 转推SRT的接收延迟，默认120，单位ms，范围为[0, 3000]。
+                     * 设置转推SRT的接收延迟，默认120，单位ms，范围为[0, 3000]。 此参数表示接收方用于缓存数据包的时间长度
+                     * @param _recvLatency 转推SRT的接收延迟，默认120，单位ms，范围为[0, 3000]。 此参数表示接收方用于缓存数据包的时间长度
                      * 
                      */
                     void SetRecvLatency(const int64_t& _recvLatency);
@@ -132,15 +133,15 @@ namespace TencentCloud
                     bool RecvLatencyHasBeenSet() const;
 
                     /**
-                     * 获取转推SRT的对端延迟，默认0，单位ms，范围为[0, 3000]。
-                     * @return PeerLatency 转推SRT的对端延迟，默认0，单位ms，范围为[0, 3000]。
+                     * 获取转推SRT的对端延迟，默认120，单位ms，范围为[0, 3000]。 此参数由发送方设置，用于告知接收方其期望的延迟缓冲时间
+                     * @return PeerLatency 转推SRT的对端延迟，默认120，单位ms，范围为[0, 3000]。 此参数由发送方设置，用于告知接收方其期望的延迟缓冲时间
                      * 
                      */
                     int64_t GetPeerLatency() const;
 
                     /**
-                     * 设置转推SRT的对端延迟，默认0，单位ms，范围为[0, 3000]。
-                     * @param _peerLatency 转推SRT的对端延迟，默认0，单位ms，范围为[0, 3000]。
+                     * 设置转推SRT的对端延迟，默认120，单位ms，范围为[0, 3000]。 此参数由发送方设置，用于告知接收方其期望的延迟缓冲时间
+                     * @param _peerLatency 转推SRT的对端延迟，默认120，单位ms，范围为[0, 3000]。 此参数由发送方设置，用于告知接收方其期望的延迟缓冲时间
                      * 
                      */
                     void SetPeerLatency(const int64_t& _peerLatency);
@@ -153,15 +154,15 @@ namespace TencentCloud
                     bool PeerLatencyHasBeenSet() const;
 
                     /**
-                     * 获取转推SRT的对端空闲超时时间，默认5000，单位ms，范围为[1000, 10000]。
-                     * @return PeerIdleTimeout 转推SRT的对端空闲超时时间，默认5000，单位ms，范围为[1000, 10000]。
+                     * 获取转推SRT的对端空闲超时时间，默认5000，单位ms，范围为[1000, 10000]。 如果连接在设定的超时时间内没有活动，将会被关闭
+                     * @return PeerIdleTimeout 转推SRT的对端空闲超时时间，默认5000，单位ms，范围为[1000, 10000]。 如果连接在设定的超时时间内没有活动，将会被关闭
                      * 
                      */
                     int64_t GetPeerIdleTimeout() const;
 
                     /**
-                     * 设置转推SRT的对端空闲超时时间，默认5000，单位ms，范围为[1000, 10000]。
-                     * @param _peerIdleTimeout 转推SRT的对端空闲超时时间，默认5000，单位ms，范围为[1000, 10000]。
+                     * 设置转推SRT的对端空闲超时时间，默认5000，单位ms，范围为[1000, 10000]。 如果连接在设定的超时时间内没有活动，将会被关闭
+                     * @param _peerIdleTimeout 转推SRT的对端空闲超时时间，默认5000，单位ms，范围为[1000, 10000]。 如果连接在设定的超时时间内没有活动，将会被关闭
                      * 
                      */
                     void SetPeerIdleTimeout(const int64_t& _peerIdleTimeout);
@@ -236,6 +237,27 @@ namespace TencentCloud
                      */
                     bool ModeHasBeenSet() const;
 
+                    /**
+                     * 获取SRT FEC 设置
+                     * @return FEC SRT FEC 设置
+                     * 
+                     */
+                    SRTFECFullOptions GetFEC() const;
+
+                    /**
+                     * 设置SRT FEC 设置
+                     * @param _fEC SRT FEC 设置
+                     * 
+                     */
+                    void SetFEC(const SRTFECFullOptions& _fEC);
+
+                    /**
+                     * 判断参数 FEC 是否已赋值
+                     * @return FEC 是否已赋值
+                     * 
+                     */
+                    bool FECHasBeenSet() const;
+
                 private:
 
                     /**
@@ -251,25 +273,25 @@ namespace TencentCloud
                     bool m_streamIdHasBeenSet;
 
                     /**
-                     * 转推SRT的总延迟，默认0，单位ms，范围为[0, 3000]。
+                     * 转推SRT的延迟，默认120，单位ms，范围为[0, 3000]。此参数同时设置了发送方和接收方的延迟（recvlatency和peerlatency）为相同的值。建议配置为至少3倍RTT，以确保在网络拥塞时能够有效处理数据包的重传和确认
                      */
                     int64_t m_latency;
                     bool m_latencyHasBeenSet;
 
                     /**
-                     * 转推SRT的接收延迟，默认120，单位ms，范围为[0, 3000]。
+                     * 转推SRT的接收延迟，默认120，单位ms，范围为[0, 3000]。 此参数表示接收方用于缓存数据包的时间长度
                      */
                     int64_t m_recvLatency;
                     bool m_recvLatencyHasBeenSet;
 
                     /**
-                     * 转推SRT的对端延迟，默认0，单位ms，范围为[0, 3000]。
+                     * 转推SRT的对端延迟，默认120，单位ms，范围为[0, 3000]。 此参数由发送方设置，用于告知接收方其期望的延迟缓冲时间
                      */
                     int64_t m_peerLatency;
                     bool m_peerLatencyHasBeenSet;
 
                     /**
-                     * 转推SRT的对端空闲超时时间，默认5000，单位ms，范围为[1000, 10000]。
+                     * 转推SRT的对端空闲超时时间，默认5000，单位ms，范围为[1000, 10000]。 如果连接在设定的超时时间内没有活动，将会被关闭
                      */
                     int64_t m_peerIdleTimeout;
                     bool m_peerIdleTimeoutHasBeenSet;
@@ -291,6 +313,12 @@ namespace TencentCloud
                      */
                     std::string m_mode;
                     bool m_modeHasBeenSet;
+
+                    /**
+                     * SRT FEC 设置
+                     */
+                    SRTFECFullOptions m_fEC;
+                    bool m_fECHasBeenSet;
 
                 };
             }

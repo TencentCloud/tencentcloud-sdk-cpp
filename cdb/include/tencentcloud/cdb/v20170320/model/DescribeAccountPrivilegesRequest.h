@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取数据库的账号名称。
-                     * @return User 数据库的账号名称。
+                     * 获取数据库的账号名称。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。
+                     * @return User 数据库的账号名称。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。
                      * 
                      */
                     std::string GetUser() const;
 
                     /**
-                     * 设置数据库的账号名称。
-                     * @param _user 数据库的账号名称。
+                     * 设置数据库的账号名称。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。
+                     * @param _user 数据库的账号名称。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。
                      * 
                      */
                     void SetUser(const std::string& _user);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool UserHasBeenSet() const;
 
                     /**
-                     * 获取数据库的账号域名。
-                     * @return Host 数据库的账号域名。
+                     * 获取数据库的账号域名。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。
+                     * @return Host 数据库的账号域名。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。
                      * 
                      */
                     std::string GetHost() const;
 
                     /**
-                     * 设置数据库的账号域名。
-                     * @param _host 数据库的账号域名。
+                     * 设置数据库的账号域名。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。
+                     * @param _host 数据库的账号域名。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。
                      * 
                      */
                     void SetHost(const std::string& _host);
@@ -114,13 +114,13 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 数据库的账号名称。
+                     * 数据库的账号名称。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。
                      */
                     std::string m_user;
                     bool m_userHasBeenSet;
 
                     /**
-                     * 数据库的账号域名。
+                     * 数据库的账号域名。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;

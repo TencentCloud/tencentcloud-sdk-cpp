@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启自定义podcidr，默认为false，已安装eniipamd组件才意义
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableCustomizedPodCidr 是否开启自定义podcidr，默认为false，已安装eniipamd组件才意义
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableCustomizedPodCidr() const;
@@ -75,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取是否不开启vpccni模式，默认为false，已安装eniipamd组件才意义
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DisableVpcCniMode 是否不开启vpccni模式，默认为false，已安装eniipamd组件才意义
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetDisableVpcCniMode() const;
@@ -91,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取组件状态，已安装eniipamd组件才会有值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Phase 组件状态，已安装eniipamd组件才会有值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPhase() const;
@@ -107,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取错误信息，已安装eniipamd组件且状态为非running才会有错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Reason 错误信息，已安装eniipamd组件且状态为非running才会有错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReason() const;
@@ -139,9 +131,7 @@ namespace TencentCloud
 
                     /**
                      * 获取固定ip回收时间，已安装eniipamd组件才会有值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClaimExpiredDuration 固定ip回收时间，已安装eniipamd组件才会有值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClaimExpiredDuration() const;
@@ -155,9 +145,7 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启了中继网卡模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableTrunkingENI 是否开启了中继网卡模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableTrunkingENI() const;
@@ -179,28 +167,24 @@ namespace TencentCloud
 
                     /**
                      * 是否开启自定义podcidr，默认为false，已安装eniipamd组件才意义
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableCustomizedPodCidr;
                     bool m_enableCustomizedPodCidrHasBeenSet;
 
                     /**
                      * 是否不开启vpccni模式，默认为false，已安装eniipamd组件才意义
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_disableVpcCniMode;
                     bool m_disableVpcCniModeHasBeenSet;
 
                     /**
                      * 组件状态，已安装eniipamd组件才会有值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_phase;
                     bool m_phaseHasBeenSet;
 
                     /**
                      * 错误信息，已安装eniipamd组件且状态为非running才会有错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reason;
                     bool m_reasonHasBeenSet;
@@ -214,14 +198,12 @@ namespace TencentCloud
 
                     /**
                      * 固定ip回收时间，已安装eniipamd组件才会有值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_claimExpiredDuration;
                     bool m_claimExpiredDurationHasBeenSet;
 
                     /**
                      * 是否开启了中继网卡模式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableTrunkingENI;
                     bool m_enableTrunkingENIHasBeenSet;

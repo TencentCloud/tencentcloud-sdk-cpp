@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 #include <tencentcloud/trtc/v20190722/model/StorageParams.h>
 #include <tencentcloud/trtc/v20190722/model/WebRecordVideoParams.h>
 #include <tencentcloud/trtc/v20190722/model/McuPublishCdnParam.h>
+#include <tencentcloud/trtc/v20190722/model/EmulateMobileParams.h>
 
 
 namespace TencentCloud
@@ -225,6 +226,27 @@ namespace TencentCloud
                      */
                     bool ReadyTimeoutHasBeenSet() const;
 
+                    /**
+                     * 获取渲染移动模式参数；不准备渲染移动模式页面时，请勿设置此参数。
+                     * @return EmulateMobileParams 渲染移动模式参数；不准备渲染移动模式页面时，请勿设置此参数。
+                     * 
+                     */
+                    EmulateMobileParams GetEmulateMobileParams() const;
+
+                    /**
+                     * 设置渲染移动模式参数；不准备渲染移动模式页面时，请勿设置此参数。
+                     * @param _emulateMobileParams 渲染移动模式参数；不准备渲染移动模式页面时，请勿设置此参数。
+                     * 
+                     */
+                    void SetEmulateMobileParams(const EmulateMobileParams& _emulateMobileParams);
+
+                    /**
+                     * 判断参数 EmulateMobileParams 是否已赋值
+                     * @return EmulateMobileParams 是否已赋值
+                     * 
+                     */
+                    bool EmulateMobileParamsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -277,6 +299,12 @@ namespace TencentCloud
                      */
                     uint64_t m_readyTimeout;
                     bool m_readyTimeoutHasBeenSet;
+
+                    /**
+                     * 渲染移动模式参数；不准备渲染移动模式页面时，请勿设置此参数。
+                     */
+                    EmulateMobileParams m_emulateMobileParams;
+                    bool m_emulateMobileParamsHasBeenSet;
 
                 };
             }

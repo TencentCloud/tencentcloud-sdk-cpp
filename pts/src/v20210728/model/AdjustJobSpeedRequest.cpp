@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,9 @@ using namespace std;
 
 AdjustJobSpeedRequest::AdjustJobSpeedRequest() :
     m_jobIdHasBeenSet(false),
-    m_targetRequestsPerSecondHasBeenSet(false)
+    m_targetRequestsPerSecondHasBeenSet(false),
+    m_projectIdHasBeenSet(false),
+    m_scenarioIdHasBeenSet(false)
 {
 }
 
@@ -49,6 +51,22 @@ string AdjustJobSpeedRequest::ToJsonString() const
         string key = "TargetRequestsPerSecond";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_targetRequestsPerSecond, allocator);
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scenarioIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScenarioId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_scenarioId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +107,38 @@ void AdjustJobSpeedRequest::SetTargetRequestsPerSecond(const int64_t& _targetReq
 bool AdjustJobSpeedRequest::TargetRequestsPerSecondHasBeenSet() const
 {
     return m_targetRequestsPerSecondHasBeenSet;
+}
+
+string AdjustJobSpeedRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void AdjustJobSpeedRequest::SetProjectId(const string& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool AdjustJobSpeedRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
+}
+
+string AdjustJobSpeedRequest::GetScenarioId() const
+{
+    return m_scenarioId;
+}
+
+void AdjustJobSpeedRequest::SetScenarioId(const string& _scenarioId)
+{
+    m_scenarioId = _scenarioId;
+    m_scenarioIdHasBeenSet = true;
+}
+
+bool AdjustJobSpeedRequest::ScenarioIdHasBeenSet() const
+{
+    return m_scenarioIdHasBeenSet;
 }
 
 

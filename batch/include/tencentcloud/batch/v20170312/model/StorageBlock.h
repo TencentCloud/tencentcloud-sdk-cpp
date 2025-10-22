@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取HDD本地存储类型，值为：LOCAL_PRO.
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type HDD本地存储类型，值为：LOCAL_PRO.
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置HDD本地存储类型，值为：LOCAL_PRO.
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type HDD本地存储类型，值为：LOCAL_PRO.
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -72,19 +68,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取HDD本地存储的最小容量
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MinSize HDD本地存储的最小容量
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取HDD本地存储的最小容量。单位：GiB。
+                     * @return MinSize HDD本地存储的最小容量。单位：GiB。
                      * 
                      */
                     int64_t GetMinSize() const;
 
                     /**
-                     * 设置HDD本地存储的最小容量
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _minSize HDD本地存储的最小容量
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置HDD本地存储的最小容量。单位：GiB。
+                     * @param _minSize HDD本地存储的最小容量。单位：GiB。
                      * 
                      */
                     void SetMinSize(const int64_t& _minSize);
@@ -97,19 +89,15 @@ namespace TencentCloud
                     bool MinSizeHasBeenSet() const;
 
                     /**
-                     * 获取HDD本地存储的最大容量
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxSize HDD本地存储的最大容量
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取HDD本地存储的最大容量。单位：GiB。
+                     * @return MaxSize HDD本地存储的最大容量。单位：GiB。
                      * 
                      */
                     int64_t GetMaxSize() const;
 
                     /**
-                     * 设置HDD本地存储的最大容量
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _maxSize HDD本地存储的最大容量
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置HDD本地存储的最大容量。单位：GiB。
+                     * @param _maxSize HDD本地存储的最大容量。单位：GiB。
                      * 
                      */
                     void SetMaxSize(const int64_t& _maxSize);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * HDD本地存储类型，值为：LOCAL_PRO.
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * HDD本地存储的最小容量
-注意：此字段可能返回 null，表示取不到有效值。
+                     * HDD本地存储的最小容量。单位：GiB。
                      */
                     int64_t m_minSize;
                     bool m_minSizeHasBeenSet;
 
                     /**
-                     * HDD本地存储的最大容量
-注意：此字段可能返回 null，表示取不到有效值。
+                     * HDD本地存储的最大容量。单位：GiB。
                      */
                     int64_t m_maxSize;
                     bool m_maxSizeHasBeenSet;

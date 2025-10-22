@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,9 @@ namespace TencentCloud
                      * 获取开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Switch 开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSwitch() const;
@@ -63,11 +61,9 @@ namespace TencentCloud
                      * 设置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _switch 开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -81,18 +77,14 @@ namespace TencentCloud
 
                     /**
                      * 获取首段包的统计时长，单位是秒，即期望首段包的统计时长是多少，默认5秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatTime 首段包的统计时长，单位是秒，即期望首段包的统计时长是多少，默认5秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStatTime() const;
 
                     /**
                      * 设置首段包的统计时长，单位是秒，即期望首段包的统计时长是多少，默认5秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _statTime 首段包的统计时长，单位是秒，即期望首段包的统计时长是多少，默认5秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatTime(const uint64_t& _statTime);
@@ -110,14 +102,12 @@ namespace TencentCloud
                      * 开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
                      * 首段包的统计时长，单位是秒，即期望首段包的统计时长是多少，默认5秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_statTime;
                     bool m_statTimeHasBeenSet;

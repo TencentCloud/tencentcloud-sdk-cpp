@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,8 @@ DescribeServerlessStrategyResponse::DescribeServerlessStrategyResponse() :
     m_autoScaleDownDelayHasBeenSet(false),
     m_autoPauseHasBeenSet(false),
     m_autoScaleUpHasBeenSet(false),
-    m_autoScaleDownHasBeenSet(false)
+    m_autoScaleDownHasBeenSet(false),
+    m_autoArchiveHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,16 @@ CoreInternalOutcome DescribeServerlessStrategyResponse::Deserialize(const string
         m_autoScaleDownHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AutoArchive") && !rsp["AutoArchive"].IsNull())
+    {
+        if (!rsp["AutoArchive"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoArchive` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoArchive = string(rsp["AutoArchive"].GetString());
+        m_autoArchiveHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -185,11 +196,19 @@ string DescribeServerlessStrategyResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_autoScaleDown.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_autoArchiveHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoArchive";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_autoArchive.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -255,6 +274,16 @@ string DescribeServerlessStrategyResponse::GetAutoScaleDown() const
 bool DescribeServerlessStrategyResponse::AutoScaleDownHasBeenSet() const
 {
     return m_autoScaleDownHasBeenSet;
+}
+
+string DescribeServerlessStrategyResponse::GetAutoArchive() const
+{
+    return m_autoArchive;
+}
+
+bool DescribeServerlessStrategyResponse::AutoArchiveHasBeenSet() const
+{
+    return m_autoArchiveHasBeenSet;
 }
 
 

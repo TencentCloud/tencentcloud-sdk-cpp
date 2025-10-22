@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,21 +68,21 @@ namespace TencentCloud
                     /**
                      * 获取用户列表（废弃）
                      * @return UserList 用户列表（废弃）
-                     * 
+                     * @deprecated
                      */
                     std::vector<UserIdAndUserName> GetUserList() const;
 
                     /**
                      * 设置用户列表（废弃）
                      * @param _userList 用户列表（废弃）
-                     * 
+                     * @deprecated
                      */
                     void SetUserList(const std::vector<UserIdAndUserName>& _userList);
 
                     /**
                      * 判断参数 UserList 是否已赋值
                      * @return UserList 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool UserListHasBeenSet() const;
 
@@ -107,6 +107,27 @@ namespace TencentCloud
                      */
                     bool UserInfoListHasBeenSet() const;
 
+                    /**
+                     * 获取用户组id列表
+                     * @return UserGroups 用户组id列表
+                     * 
+                     */
+                    std::vector<uint64_t> GetUserGroups() const;
+
+                    /**
+                     * 设置用户组id列表
+                     * @param _userGroups 用户组id列表
+                     * 
+                     */
+                    void SetUserGroups(const std::vector<uint64_t>& _userGroups);
+
+                    /**
+                     * 判断参数 UserGroups 是否已赋值
+                     * @return UserGroups 是否已赋值
+                     * 
+                     */
+                    bool UserGroupsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -126,6 +147,12 @@ namespace TencentCloud
                      */
                     std::vector<UserInfo> m_userInfoList;
                     bool m_userInfoListHasBeenSet;
+
+                    /**
+                     * 用户组id列表
+                     */
+                    std::vector<uint64_t> m_userGroups;
+                    bool m_userGroupsHasBeenSet;
 
                 };
             }

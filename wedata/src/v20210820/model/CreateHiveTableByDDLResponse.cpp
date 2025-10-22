@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ using namespace TencentCloud::Wedata::V20210820::Model;
 using namespace std;
 
 CreateHiveTableByDDLResponse::CreateHiveTableByDDLResponse() :
-    m_dataHasBeenSet(false)
+    m_dataHasBeenSet(false),
+    m_taskIdHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome CreateHiveTableByDDLResponse::Deserialize(const string &payl
         m_dataHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
+    {
+        if (!rsp["TaskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskId = string(rsp["TaskId"].GetString());
+        m_taskIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -90,11 +101,19 @@ string CreateHiveTableByDDLResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_data.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_taskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -110,6 +129,16 @@ string CreateHiveTableByDDLResponse::GetData() const
 bool CreateHiveTableByDDLResponse::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
+}
+
+string CreateHiveTableByDDLResponse::GetTaskId() const
+{
+    return m_taskId;
+}
+
+bool CreateHiveTableByDDLResponse::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
 }
 
 

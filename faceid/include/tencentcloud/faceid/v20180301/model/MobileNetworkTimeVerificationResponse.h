@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,10 +91,10 @@ namespace TencentCloud
 
                     /**
                      * 获取在网时长区间。
-- 格式为(a,b]，表示在网时长在a个月以上，b个月以下。
+- 格式为[a,b)，表示在网时长在a个月以上，b个月以下。
 - 若b为+时表示没有上限。
                      * @return Range 在网时长区间。
-- 格式为(a,b]，表示在网时长在a个月以上，b个月以下。
+- 格式为[a,b)，表示在网时长在a个月以上，b个月以下。
 - 若b为+时表示没有上限。
                      * 
                      */
@@ -132,7 +132,7 @@ namespace TencentCloud
 
                     /**
                      * 在网时长区间。
-- 格式为(a,b]，表示在网时长在a个月以上，b个月以下。
+- 格式为[a,b)，表示在网时长在a个月以上，b个月以下。
 - 若b为+时表示没有上限。
                      */
                     std::string m_range;

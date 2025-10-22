@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 分片信息
+                * 分片信息。
                 */
                 class ReplicaSetInfo : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取副本集ID
-                     * @return ReplicaSetId 副本集ID
+                     * 获取副本集 ID。
+                     * @return ReplicaSetId 副本集 ID。
                      * 
                      */
                     std::string GetReplicaSetId() const;
 
                     /**
-                     * 设置副本集ID
-                     * @param _replicaSetId 副本集ID
+                     * 设置副本集 ID。
+                     * @param _replicaSetId 副本集 ID。
                      * 
                      */
                     void SetReplicaSetId(const std::string& _replicaSetId);
@@ -70,7 +70,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 副本集ID
+                     * 副本集 ID。
                      */
                     std::string m_replicaSetId;
                     bool m_replicaSetIdHasBeenSet;

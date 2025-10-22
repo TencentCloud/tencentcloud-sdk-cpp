@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,19 +85,19 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取License 类型，默认为 DRM 。目前支持的 License 类型包括：
-<li> DRM: DRM 加密播放 License</li>
-                     * @return LicenseType License 类型，默认为 DRM 。目前支持的 License 类型包括：
-<li> DRM: DRM 加密播放 License</li>
+                     * 获取License 类型，默认为 CommercialDRMLicense 。目前支持的 License 类型包括：
+<li> CommercialDRMLicense: 商业级 DRM License</li>
+                     * @return LicenseType License 类型，默认为 CommercialDRMLicense 。目前支持的 License 类型包括：
+<li> CommercialDRMLicense: 商业级 DRM License</li>
                      * 
                      */
                     std::string GetLicenseType() const;
 
                     /**
-                     * 设置License 类型，默认为 DRM 。目前支持的 License 类型包括：
-<li> DRM: DRM 加密播放 License</li>
-                     * @param _licenseType License 类型，默认为 DRM 。目前支持的 License 类型包括：
-<li> DRM: DRM 加密播放 License</li>
+                     * 设置License 类型，默认为 CommercialDRMLicense 。目前支持的 License 类型包括：
+<li> CommercialDRMLicense: 商业级 DRM License</li>
+                     * @param _licenseType License 类型，默认为 CommercialDRMLicense 。目前支持的 License 类型包括：
+<li> CommercialDRMLicense: 商业级 DRM License</li>
                      * 
                      */
                     void SetLicenseType(const std::string& _licenseType);
@@ -145,8 +145,8 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * License 类型，默认为 DRM 。目前支持的 License 类型包括：
-<li> DRM: DRM 加密播放 License</li>
+                     * License 类型，默认为 CommercialDRMLicense 。目前支持的 License 类型包括：
+<li> CommercialDRMLicense: 商业级 DRM License</li>
                      */
                     std::string m_licenseType;
                     bool m_licenseTypeHasBeenSet;

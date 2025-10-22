@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -291,18 +291,14 @@ namespace TencentCloud
 
                     /**
                      * 获取绑定的专线网关ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DirectConnectGatewayIds 绑定的专线网关ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetDirectConnectGatewayIds() const;
 
                     /**
                      * 设置绑定的专线网关ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _directConnectGatewayIds 绑定的专线网关ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDirectConnectGatewayIds(const std::vector<std::string>& _directConnectGatewayIds);
@@ -316,18 +312,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所属子网ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 所属子网ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置所属子网ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetId 所属子网ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -362,18 +354,14 @@ namespace TencentCloud
 
                     /**
                      * 获取NAT网关绑定的安全组列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecurityGroupSet NAT网关绑定的安全组列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupSet() const;
 
                     /**
                      * 设置NAT网关绑定的安全组列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _securityGroupSet NAT网关绑定的安全组列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecurityGroupSet(const std::vector<std::string>& _securityGroupSet);
@@ -387,18 +375,14 @@ namespace TencentCloud
 
                     /**
                      * 获取NAT网关的SNAT转发规则。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceIpTranslationNatRuleSet NAT网关的SNAT转发规则。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SourceIpTranslationNatRule> GetSourceIpTranslationNatRuleSet() const;
 
                     /**
                      * 设置NAT网关的SNAT转发规则。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sourceIpTranslationNatRuleSet NAT网关的SNAT转发规则。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSourceIpTranslationNatRuleSet(const std::vector<SourceIpTranslationNatRule>& _sourceIpTranslationNatRuleSet);
@@ -412,18 +396,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否独享型NAT。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsExclusive 是否独享型NAT。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsExclusive() const;
 
                     /**
                      * 设置是否独享型NAT。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isExclusive 是否独享型NAT。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsExclusive(const bool& _isExclusive);
@@ -437,18 +417,14 @@ namespace TencentCloud
 
                     /**
                      * 获取独享型NAT所在的网关集群的带宽(单位:Mbps)，当IsExclusive为false时无此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExclusiveGatewayBandwidth 独享型NAT所在的网关集群的带宽(单位:Mbps)，当IsExclusive为false时无此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetExclusiveGatewayBandwidth() const;
 
                     /**
                      * 设置独享型NAT所在的网关集群的带宽(单位:Mbps)，当IsExclusive为false时无此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _exclusiveGatewayBandwidth 独享型NAT所在的网关集群的带宽(单位:Mbps)，当IsExclusive为false时无此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExclusiveGatewayBandwidth(const uint64_t& _exclusiveGatewayBandwidth);
@@ -462,18 +438,14 @@ namespace TencentCloud
 
                     /**
                      * 获取NAT网关是否被封禁。“NORMAL”：未被封禁，“RESTRICTED”：已被封禁。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RestrictState NAT网关是否被封禁。“NORMAL”：未被封禁，“RESTRICTED”：已被封禁。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRestrictState() const;
 
                     /**
                      * 设置NAT网关是否被封禁。“NORMAL”：未被封禁，“RESTRICTED”：已被封禁。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _restrictState NAT网关是否被封禁。“NORMAL”：未被封禁，“RESTRICTED”：已被封禁。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRestrictState(const std::string& _restrictState);
@@ -487,18 +459,14 @@ namespace TencentCloud
 
                     /**
                      * 获取NAT网关类型，1表示传统型NAT网关，2表示标准型NAT网关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NatProductVersion NAT网关类型，1表示传统型NAT网关，2表示标准型NAT网关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetNatProductVersion() const;
 
                     /**
                      * 设置NAT网关类型，1表示传统型NAT网关，2表示标准型NAT网关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _natProductVersion NAT网关类型，1表示传统型NAT网关，2表示标准型NAT网关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNatProductVersion(const uint64_t& _natProductVersion);
@@ -512,18 +480,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否启用根据目的网段选择SNAT使用的EIP功能	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SmartScheduleMode 是否启用根据目的网段选择SNAT使用的EIP功能	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSmartScheduleMode() const;
 
                     /**
                      * 设置是否启用根据目的网段选择SNAT使用的EIP功能	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _smartScheduleMode 是否启用根据目的网段选择SNAT使用的EIP功能	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSmartScheduleMode(const bool& _smartScheduleMode);
@@ -537,18 +501,14 @@ namespace TencentCloud
 
                     /**
                      * 获取NAT实例归属的专属集群id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DedicatedClusterId NAT实例归属的专属集群id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDedicatedClusterId() const;
 
                     /**
                      * 设置NAT实例归属的专属集群id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dedicatedClusterId NAT实例归属的专属集群id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDedicatedClusterId(const std::string& _dedicatedClusterId);
@@ -559,6 +519,27 @@ namespace TencentCloud
                      * 
                      */
                     bool DedicatedClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取NAT实例是否开启删除保护
+                     * @return DeletionProtectionEnabled NAT实例是否开启删除保护
+                     * 
+                     */
+                    bool GetDeletionProtectionEnabled() const;
+
+                    /**
+                     * 设置NAT实例是否开启删除保护
+                     * @param _deletionProtectionEnabled NAT实例是否开启删除保护
+                     * 
+                     */
+                    void SetDeletionProtectionEnabled(const bool& _deletionProtectionEnabled);
+
+                    /**
+                     * 判断参数 DeletionProtectionEnabled 是否已赋值
+                     * @return DeletionProtectionEnabled 是否已赋值
+                     * 
+                     */
+                    bool DeletionProtectionEnabledHasBeenSet() const;
 
                 private:
 
@@ -632,14 +613,12 @@ namespace TencentCloud
 
                     /**
                      * 绑定的专线网关ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_directConnectGatewayIds;
                     bool m_directConnectGatewayIdsHasBeenSet;
 
                     /**
                      * 所属子网ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
@@ -652,59 +631,57 @@ namespace TencentCloud
 
                     /**
                      * NAT网关绑定的安全组列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_securityGroupSet;
                     bool m_securityGroupSetHasBeenSet;
 
                     /**
                      * NAT网关的SNAT转发规则。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SourceIpTranslationNatRule> m_sourceIpTranslationNatRuleSet;
                     bool m_sourceIpTranslationNatRuleSetHasBeenSet;
 
                     /**
                      * 是否独享型NAT。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isExclusive;
                     bool m_isExclusiveHasBeenSet;
 
                     /**
                      * 独享型NAT所在的网关集群的带宽(单位:Mbps)，当IsExclusive为false时无此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_exclusiveGatewayBandwidth;
                     bool m_exclusiveGatewayBandwidthHasBeenSet;
 
                     /**
                      * NAT网关是否被封禁。“NORMAL”：未被封禁，“RESTRICTED”：已被封禁。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_restrictState;
                     bool m_restrictStateHasBeenSet;
 
                     /**
                      * NAT网关类型，1表示传统型NAT网关，2表示标准型NAT网关
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_natProductVersion;
                     bool m_natProductVersionHasBeenSet;
 
                     /**
                      * 是否启用根据目的网段选择SNAT使用的EIP功能	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_smartScheduleMode;
                     bool m_smartScheduleModeHasBeenSet;
 
                     /**
                      * NAT实例归属的专属集群id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dedicatedClusterId;
                     bool m_dedicatedClusterIdHasBeenSet;
+
+                    /**
+                     * NAT实例是否开启删除保护
+                     */
+                    bool m_deletionProtectionEnabled;
+                    bool m_deletionProtectionEnabledHasBeenSet;
 
                 };
             }

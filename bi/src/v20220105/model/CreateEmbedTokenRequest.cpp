@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,8 @@ CreateEmbedTokenRequest::CreateEmbedTokenRequest() :
     m_ticketNumHasBeenSet(false),
     m_globalParamHasBeenSet(false),
     m_tokenTypeHasBeenSet(false),
-    m_tokenNumHasBeenSet(false)
+    m_tokenNumHasBeenSet(false),
+    m_configParamHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,14 @@ string CreateEmbedTokenRequest::ToJsonString() const
         string key = "TokenNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_tokenNum, allocator);
+    }
+
+    if (m_configParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigParam";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_configParam.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -339,6 +348,22 @@ void CreateEmbedTokenRequest::SetTokenNum(const int64_t& _tokenNum)
 bool CreateEmbedTokenRequest::TokenNumHasBeenSet() const
 {
     return m_tokenNumHasBeenSet;
+}
+
+string CreateEmbedTokenRequest::GetConfigParam() const
+{
+    return m_configParam;
+}
+
+void CreateEmbedTokenRequest::SetConfigParam(const string& _configParam)
+{
+    m_configParam = _configParam;
+    m_configParamHasBeenSet = true;
+}
+
+bool CreateEmbedTokenRequest::ConfigParamHasBeenSet() const
+{
+    return m_configParamHasBeenSet;
 }
 
 

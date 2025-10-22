@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,7 @@ InquiryPriceRunInstancesRequest::InquiryPriceRunInstancesRequest() :
     m_hostNameHasBeenSet(false),
     m_tagSpecificationHasBeenSet(false),
     m_instanceMarketOptionsHasBeenSet(false),
+    m_metadataHasBeenSet(false),
     m_hpcClusterIdHasBeenSet(false),
     m_cpuTopologyHasBeenSet(false),
     m_launchTemplateHasBeenSet(false)
@@ -223,6 +224,15 @@ string InquiryPriceRunInstancesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_instanceMarketOptions.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_metadataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Metadata";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_metadata.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_hpcClusterIdHasBeenSet)
@@ -545,6 +555,22 @@ void InquiryPriceRunInstancesRequest::SetInstanceMarketOptions(const InstanceMar
 bool InquiryPriceRunInstancesRequest::InstanceMarketOptionsHasBeenSet() const
 {
     return m_instanceMarketOptionsHasBeenSet;
+}
+
+Metadata InquiryPriceRunInstancesRequest::GetMetadata() const
+{
+    return m_metadata;
+}
+
+void InquiryPriceRunInstancesRequest::SetMetadata(const Metadata& _metadata)
+{
+    m_metadata = _metadata;
+    m_metadataHasBeenSet = true;
+}
+
+bool InquiryPriceRunInstancesRequest::MetadataHasBeenSet() const
+{
+    return m_metadataHasBeenSet;
 }
 
 string InquiryPriceRunInstancesRequest::GetHpcClusterId() const

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool CpuHasBeenSet() const;
 
                     /**
-                     * 获取内存
-                     * @return Memory 内存
+                     * 获取内存，单位：GiB
+                     * @return Memory 内存，单位：GiB
                      * 
                      */
                     double GetMemory() const;
 
                     /**
-                     * 设置内存
-                     * @param _memory 内存
+                     * 设置内存，单位：GiB
+                     * @param _memory 内存，单位：GiB
                      * 
                      */
                     void SetMemory(const double& _memory);
@@ -145,7 +145,7 @@ namespace TencentCloud
                     bool m_cpuHasBeenSet;
 
                     /**
-                     * 内存
+                     * 内存，单位：GiB
                      */
                     double m_memory;
                     bool m_memoryHasBeenSet;

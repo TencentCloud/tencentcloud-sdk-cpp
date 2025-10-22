@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
-                     * @return InstanceId 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
+                     * 获取实例ID，格式如：cmgo-p8vnipr5。请登录[MongoDB 控制台](https://console.cloud.tencent.com/mongodb#/)在实例列表复制实例 ID。
+                     * @return InstanceId 实例ID，格式如：cmgo-p8vnipr5。请登录[MongoDB 控制台](https://console.cloud.tencent.com/mongodb#/)在实例列表复制实例 ID。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
-                     * @param _instanceId 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
+                     * 设置实例ID，格式如：cmgo-p8vnipr5。请登录[MongoDB 控制台](https://console.cloud.tencent.com/mongodb#/)在实例列表复制实例 ID。
+                     * @param _instanceId 实例ID，格式如：cmgo-p8vnipr5。请登录[MongoDB 控制台](https://console.cloud.tencent.com/mongodb#/)在实例列表复制实例 ID。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取自定义实例名称，名称只支持长度为60个字符的中文、英文、数字、下划线_、分隔符 -
-                     * @return NewName 自定义实例名称，名称只支持长度为60个字符的中文、英文、数字、下划线_、分隔符 -
+                     * 获取自定义实例名称，要求为1～128 长度的任意字符。
+                     * @return NewName 自定义实例名称，要求为1～128 长度的任意字符。
                      * 
                      */
                     std::string GetNewName() const;
 
                     /**
-                     * 设置自定义实例名称，名称只支持长度为60个字符的中文、英文、数字、下划线_、分隔符 -
-                     * @param _newName 自定义实例名称，名称只支持长度为60个字符的中文、英文、数字、下划线_、分隔符 -
+                     * 设置自定义实例名称，要求为1～128 长度的任意字符。
+                     * @param _newName 自定义实例名称，要求为1～128 长度的任意字符。
                      * 
                      */
                     void SetNewName(const std::string& _newName);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
+                     * 实例ID，格式如：cmgo-p8vnipr5。请登录[MongoDB 控制台](https://console.cloud.tencent.com/mongodb#/)在实例列表复制实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 自定义实例名称，名称只支持长度为60个字符的中文、英文、数字、下划线_、分隔符 -
+                     * 自定义实例名称，要求为1～128 长度的任意字符。
                      */
                     std::string m_newName;
                     bool m_newNameHasBeenSet;

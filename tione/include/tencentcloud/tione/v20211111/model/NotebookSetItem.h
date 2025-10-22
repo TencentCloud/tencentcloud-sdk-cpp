@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -710,6 +710,77 @@ namespace TencentCloud
                      */
                     bool VolumeSourceGooseFSHasBeenSet() const;
 
+                    /**
+                     * 获取子用户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubUin 子用户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSubUin() const;
+
+                    /**
+                     * 设置子用户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subUin 子用户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubUin(const std::string& _subUin);
+
+                    /**
+                     * 判断参数 SubUin 是否已赋值
+                     * @return SubUin 是否已赋值
+                     * 
+                     */
+                    bool SubUinHasBeenSet() const;
+
+                    /**
+                     * 获取子用户名称
+                     * @return SubUinName 子用户名称
+                     * 
+                     */
+                    std::string GetSubUinName() const;
+
+                    /**
+                     * 设置子用户名称
+                     * @param _subUinName 子用户名称
+                     * 
+                     */
+                    void SetSubUinName(const std::string& _subUinName);
+
+                    /**
+                     * 判断参数 SubUinName 是否已赋值
+                     * @return SubUinName 是否已赋值
+                     * 
+                     */
+                    bool SubUinNameHasBeenSet() const;
+
+                    /**
+                     * 获取AppId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AppId AppId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAppId() const;
+
+                    /**
+                     * 设置AppId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _appId AppId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAppId(const std::string& _appId);
+
+                    /**
+                     * 判断参数 AppId 是否已赋值
+                     * @return AppId 是否已赋值
+                     * 
+                     */
+                    bool AppIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -896,6 +967,26 @@ namespace TencentCloud
                      */
                     GooseFS m_volumeSourceGooseFS;
                     bool m_volumeSourceGooseFSHasBeenSet;
+
+                    /**
+                     * 子用户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subUin;
+                    bool m_subUinHasBeenSet;
+
+                    /**
+                     * 子用户名称
+                     */
+                    std::string m_subUinName;
+                    bool m_subUinNameHasBeenSet;
+
+                    /**
+                     * AppId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_appId;
+                    bool m_appIdHasBeenSet;
 
                 };
             }

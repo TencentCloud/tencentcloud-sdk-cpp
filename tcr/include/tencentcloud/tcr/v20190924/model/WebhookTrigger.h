@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -215,6 +215,27 @@ namespace TencentCloud
                      */
                     bool NamespaceIdHasBeenSet() const;
 
+                    /**
+                     * 获取触发器所属命名空间名称
+                     * @return NamespaceName 触发器所属命名空间名称
+                     * 
+                     */
+                    std::string GetNamespaceName() const;
+
+                    /**
+                     * 设置触发器所属命名空间名称
+                     * @param _namespaceName 触发器所属命名空间名称
+                     * 
+                     */
+                    void SetNamespaceName(const std::string& _namespaceName);
+
+                    /**
+                     * 判断参数 NamespaceName 是否已赋值
+                     * @return NamespaceName 是否已赋值
+                     * 
+                     */
+                    bool NamespaceNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -264,6 +285,12 @@ namespace TencentCloud
                      */
                     int64_t m_namespaceId;
                     bool m_namespaceIdHasBeenSet;
+
+                    /**
+                     * 触发器所属命名空间名称
+                     */
+                    std::string m_namespaceName;
+                    bool m_namespaceNameHasBeenSet;
 
                 };
             }

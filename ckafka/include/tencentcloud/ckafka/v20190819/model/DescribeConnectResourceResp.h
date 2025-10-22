@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,18 +60,14 @@ namespace TencentCloud
 
                     /**
                      * 获取连接源的Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceId 连接源的Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置连接源的Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceId 连接源的Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -85,18 +81,14 @@ namespace TencentCloud
 
                     /**
                      * 获取连接源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceName 连接源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceName() const;
 
                     /**
                      * 设置连接源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceName 连接源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceName(const std::string& _resourceName);
@@ -110,18 +102,14 @@ namespace TencentCloud
 
                     /**
                      * 获取连接源描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 连接源描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置连接源描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 连接源描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -135,18 +123,14 @@ namespace TencentCloud
 
                     /**
                      * 获取连接源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 连接源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置连接源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 连接源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -159,19 +143,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取连接源的状态
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 连接源的状态
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取连接源的状态  枚举值: -1 (创建失败) 、0 (创建中) 、 1 (运行中)、 2 (删除中) 、 4 (删除失败) 、 5 (配置更改中) 、 6 (配置更改失败) 、 7 (异常)
+                     * @return Status 连接源的状态  枚举值: -1 (创建失败) 、0 (创建中) 、 1 (运行中)、 2 (删除中) 、 4 (删除失败) 、 5 (配置更改中) 、 6 (配置更改失败) 、 7 (异常)
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置连接源的状态
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 连接源的状态
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置连接源的状态  枚举值: -1 (创建失败) 、0 (创建中) 、 1 (运行中)、 2 (删除中) 、 4 (删除失败) 、 5 (配置更改中) 、 6 (配置更改失败) 、 7 (异常)
+                     * @param _status 连接源的状态  枚举值: -1 (创建失败) 、0 (创建中) 、 1 (运行中)、 2 (删除中) 、 4 (删除失败) 、 5 (配置更改中) 、 6 (配置更改失败) 、 7 (异常)
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -185,18 +165,14 @@ namespace TencentCloud
 
                     /**
                      * 获取连接源的创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 连接源的创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置连接源的创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 连接源的创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -210,18 +186,14 @@ namespace TencentCloud
 
                     /**
                      * 获取连接源的异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorMessage 连接源的异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrorMessage() const;
 
                     /**
                      * 设置连接源的异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errorMessage 连接源的异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrorMessage(const std::string& _errorMessage);
@@ -235,18 +207,14 @@ namespace TencentCloud
 
                     /**
                      * 获取连接源的当前所处步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurrentStep 连接源的当前所处步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCurrentStep() const;
 
                     /**
                      * 设置连接源的当前所处步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _currentStep 连接源的当前所处步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCurrentStep(const std::string& _currentStep);
@@ -587,56 +555,48 @@ namespace TencentCloud
 
                     /**
                      * 连接源的Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
                      * 连接源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceName;
                     bool m_resourceNameHasBeenSet;
 
                     /**
                      * 连接源描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 连接源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 连接源的状态
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 连接源的状态  枚举值: -1 (创建失败) 、0 (创建中) 、 1 (运行中)、 2 (删除中) 、 4 (删除失败) 、 5 (配置更改中) 、 6 (配置更改失败) 、 7 (异常)
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 连接源的创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 连接源的异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorMessage;
                     bool m_errorMessageHasBeenSet;
 
                     /**
                      * 连接源的当前所处步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_currentStep;
                     bool m_currentStepHasBeenSet;

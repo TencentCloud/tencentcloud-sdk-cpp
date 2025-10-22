@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取跨域私网NAT关联的云联网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CcnId 跨域私网NAT关联的云联网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCcnId() const;
 
                     /**
                      * 设置跨域私网NAT关联的云联网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ccnId 跨域私网NAT关联的云联网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCcnId(const std::string& _ccnId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取跨域私网NAT本端Vpc
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LocalVpcId 跨域私网NAT本端Vpc
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLocalVpcId() const;
 
                     /**
                      * 设置跨域私网NAT本端Vpc
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _localVpcId 跨域私网NAT本端Vpc
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLocalVpcId(const std::string& _localVpcId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取跨域私网NAT对端Vpc
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PeerVpcId 跨域私网NAT对端Vpc
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPeerVpcId() const;
 
                     /**
                      * 设置跨域私网NAT对端Vpc
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _peerVpcId 跨域私网NAT对端Vpc
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPeerVpcId(const std::string& _peerVpcId);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 跨域私网NAT关联的云联网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ccnId;
                     bool m_ccnIdHasBeenSet;
 
                     /**
                      * 跨域私网NAT本端Vpc
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_localVpcId;
                     bool m_localVpcIdHasBeenSet;
 
                     /**
                      * 跨域私网NAT对端Vpc
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_peerVpcId;
                     bool m_peerVpcIdHasBeenSet;

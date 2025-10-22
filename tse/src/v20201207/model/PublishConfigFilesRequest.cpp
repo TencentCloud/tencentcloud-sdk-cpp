@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ using namespace std;
 
 PublishConfigFilesRequest::PublishConfigFilesRequest() :
     m_instanceIdHasBeenSet(false),
-    m_configFileReleasesHasBeenSet(false)
+    m_configFileReleasesHasBeenSet(false),
+    m_strictEnableHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string PublishConfigFilesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_configFileReleases.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_strictEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StrictEnable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_strictEnable, allocator);
     }
 
 
@@ -90,6 +99,22 @@ void PublishConfigFilesRequest::SetConfigFileReleases(const ConfigFileRelease& _
 bool PublishConfigFilesRequest::ConfigFileReleasesHasBeenSet() const
 {
     return m_configFileReleasesHasBeenSet;
+}
+
+bool PublishConfigFilesRequest::GetStrictEnable() const
+{
+    return m_strictEnable;
+}
+
+void PublishConfigFilesRequest::SetStrictEnable(const bool& _strictEnable)
+{
+    m_strictEnable = _strictEnable;
+    m_strictEnableHasBeenSet = true;
+}
+
+bool PublishConfigFilesRequest::StrictEnableHasBeenSet() const
+{
+    return m_strictEnableHasBeenSet;
 }
 
 

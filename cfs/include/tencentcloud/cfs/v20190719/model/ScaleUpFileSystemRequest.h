@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件系统Id
-                     * @return FileSystemId 文件系统Id
+                     * 获取文件系统Id,该参数通过查询文件系统列表接口获取
+                     * @return FileSystemId 文件系统Id,该参数通过查询文件系统列表接口获取
                      * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
-                     * 设置文件系统Id
-                     * @param _fileSystemId 文件系统Id
+                     * 设置文件系统Id,该参数通过查询文件系统列表接口获取
+                     * @param _fileSystemId 文件系统Id,该参数通过查询文件系统列表接口获取
                      * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
@@ -87,7 +87,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件系统Id
+                     * 文件系统Id,该参数通过查询文件系统列表接口获取
                      */
                     std::string m_fileSystemId;
                     bool m_fileSystemIdHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 日志内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置日志内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _content 日志内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContent(const std::string& _content);
@@ -97,19 +89,15 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取日志时间戳
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Timestamp 日志时间戳
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取日志时间戳，单位毫秒
+                     * @return Timestamp 日志时间戳，单位毫秒
                      * 
                      */
                     uint64_t GetTimestamp() const;
 
                     /**
-                     * 设置日志时间戳
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _timestamp 日志时间戳
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置日志时间戳，单位毫秒
+                     * @param _timestamp 日志时间戳，单位毫秒
                      * 
                      */
                     void SetTimestamp(const uint64_t& _timestamp);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceIp 实例IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceIp() const;
 
                     /**
                      * 设置实例IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceIp 实例IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceIp(const std::string& _instanceIp);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogId 日志ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogId() const;
 
                     /**
                      * 设置日志ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logId 日志ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogId(const std::string& _logId);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部署组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId 部署组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置部署组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupId 部署组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 日志内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 日志时间戳
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 日志时间戳，单位毫秒
                      */
                     uint64_t m_timestamp;
                     bool m_timestampHasBeenSet;
 
                     /**
                      * 实例IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceIp;
                     bool m_instanceIpHasBeenSet;
 
                     /**
                      * 日志ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logId;
                     bool m_logIdHasBeenSet;
 
                     /**
                      * 部署组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;

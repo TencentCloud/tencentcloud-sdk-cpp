@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,6 +39,49 @@ EssbasicClient::EssbasicClient(const Credential &credential, const string &regio
 {
 }
 
+
+EssbasicClient::ArchiveDynamicFlowOutcome EssbasicClient::ArchiveDynamicFlow(const ArchiveDynamicFlowRequest &request)
+{
+    auto outcome = MakeRequest(request, "ArchiveDynamicFlow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ArchiveDynamicFlowResponse rsp = ArchiveDynamicFlowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ArchiveDynamicFlowOutcome(rsp);
+        else
+            return ArchiveDynamicFlowOutcome(o.GetError());
+    }
+    else
+    {
+        return ArchiveDynamicFlowOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ArchiveDynamicFlowAsync(const ArchiveDynamicFlowRequest& request, const ArchiveDynamicFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ArchiveDynamicFlow(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ArchiveDynamicFlowOutcomeCallable EssbasicClient::ArchiveDynamicFlowCallable(const ArchiveDynamicFlowRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ArchiveDynamicFlowOutcome()>>(
+        [this, request]()
+        {
+            return this->ArchiveDynamicFlow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
 
 EssbasicClient::ChannelBatchCancelFlowsOutcome EssbasicClient::ChannelBatchCancelFlows(const ChannelBatchCancelFlowsRequest &request)
 {
@@ -420,6 +463,49 @@ EssbasicClient::ChannelCreateConvertTaskApiOutcomeCallable EssbasicClient::Chann
         [this, request]()
         {
             return this->ChannelCreateConvertTaskApi(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssbasicClient::ChannelCreateDynamicFlowApproverOutcome EssbasicClient::ChannelCreateDynamicFlowApprover(const ChannelCreateDynamicFlowApproverRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelCreateDynamicFlowApprover");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelCreateDynamicFlowApproverResponse rsp = ChannelCreateDynamicFlowApproverResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelCreateDynamicFlowApproverOutcome(rsp);
+        else
+            return ChannelCreateDynamicFlowApproverOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelCreateDynamicFlowApproverOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelCreateDynamicFlowApproverAsync(const ChannelCreateDynamicFlowApproverRequest& request, const ChannelCreateDynamicFlowApproverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelCreateDynamicFlowApprover(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelCreateDynamicFlowApproverOutcomeCallable EssbasicClient::ChannelCreateDynamicFlowApproverCallable(const ChannelCreateDynamicFlowApproverRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelCreateDynamicFlowApproverOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelCreateDynamicFlowApprover(request);
         }
     );
 
@@ -936,6 +1022,49 @@ EssbasicClient::ChannelCreatePrepareFlowOutcomeCallable EssbasicClient::ChannelC
         [this, request]()
         {
             return this->ChannelCreatePrepareFlow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssbasicClient::ChannelCreatePrepareFlowGroupOutcome EssbasicClient::ChannelCreatePrepareFlowGroup(const ChannelCreatePrepareFlowGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelCreatePrepareFlowGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelCreatePrepareFlowGroupResponse rsp = ChannelCreatePrepareFlowGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelCreatePrepareFlowGroupOutcome(rsp);
+        else
+            return ChannelCreatePrepareFlowGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelCreatePrepareFlowGroupOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelCreatePrepareFlowGroupAsync(const ChannelCreatePrepareFlowGroupRequest& request, const ChannelCreatePrepareFlowGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelCreatePrepareFlowGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelCreatePrepareFlowGroupOutcomeCallable EssbasicClient::ChannelCreatePrepareFlowGroupCallable(const ChannelCreatePrepareFlowGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelCreatePrepareFlowGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelCreatePrepareFlowGroup(request);
         }
     );
 
@@ -2061,6 +2190,49 @@ EssbasicClient::CreateBatchInitOrganizationUrlOutcomeCallable EssbasicClient::Cr
     return task->get_future();
 }
 
+EssbasicClient::CreateBatchOrganizationAuthorizationUrlOutcome EssbasicClient::CreateBatchOrganizationAuthorizationUrl(const CreateBatchOrganizationAuthorizationUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBatchOrganizationAuthorizationUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBatchOrganizationAuthorizationUrlResponse rsp = CreateBatchOrganizationAuthorizationUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBatchOrganizationAuthorizationUrlOutcome(rsp);
+        else
+            return CreateBatchOrganizationAuthorizationUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBatchOrganizationAuthorizationUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::CreateBatchOrganizationAuthorizationUrlAsync(const CreateBatchOrganizationAuthorizationUrlRequest& request, const CreateBatchOrganizationAuthorizationUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBatchOrganizationAuthorizationUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::CreateBatchOrganizationAuthorizationUrlOutcomeCallable EssbasicClient::CreateBatchOrganizationAuthorizationUrlCallable(const CreateBatchOrganizationAuthorizationUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBatchOrganizationAuthorizationUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBatchOrganizationAuthorizationUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::CreateBatchOrganizationRegistrationTasksOutcome EssbasicClient::CreateBatchOrganizationRegistrationTasks(const CreateBatchOrganizationRegistrationTasksRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateBatchOrganizationRegistrationTasks");
@@ -2319,6 +2491,49 @@ EssbasicClient::CreateConsoleLoginUrlOutcomeCallable EssbasicClient::CreateConso
     return task->get_future();
 }
 
+EssbasicClient::CreateEmployeeChangeUrlOutcome EssbasicClient::CreateEmployeeChangeUrl(const CreateEmployeeChangeUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateEmployeeChangeUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateEmployeeChangeUrlResponse rsp = CreateEmployeeChangeUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateEmployeeChangeUrlOutcome(rsp);
+        else
+            return CreateEmployeeChangeUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateEmployeeChangeUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::CreateEmployeeChangeUrlAsync(const CreateEmployeeChangeUrlRequest& request, const CreateEmployeeChangeUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateEmployeeChangeUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::CreateEmployeeChangeUrlOutcomeCallable EssbasicClient::CreateEmployeeChangeUrlCallable(const CreateEmployeeChangeUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateEmployeeChangeUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateEmployeeChangeUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::CreateEmployeeQualificationSealQrCodeOutcome EssbasicClient::CreateEmployeeQualificationSealQrCode(const CreateEmployeeQualificationSealQrCodeRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateEmployeeQualificationSealQrCode");
@@ -2398,6 +2613,49 @@ EssbasicClient::CreateFlowBlockchainEvidenceUrlOutcomeCallable EssbasicClient::C
         [this, request]()
         {
             return this->CreateFlowBlockchainEvidenceUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssbasicClient::CreateFlowForwardsOutcome EssbasicClient::CreateFlowForwards(const CreateFlowForwardsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateFlowForwards");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateFlowForwardsResponse rsp = CreateFlowForwardsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateFlowForwardsOutcome(rsp);
+        else
+            return CreateFlowForwardsOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateFlowForwardsOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::CreateFlowForwardsAsync(const CreateFlowForwardsRequest& request, const CreateFlowForwardsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateFlowForwards(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::CreateFlowForwardsOutcomeCallable EssbasicClient::CreateFlowForwardsCallable(const CreateFlowForwardsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateFlowForwardsOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateFlowForwards(request);
         }
     );
 
@@ -2527,6 +2785,92 @@ EssbasicClient::CreateLegalSealQrCodeOutcomeCallable EssbasicClient::CreateLegal
         [this, request]()
         {
             return this->CreateLegalSealQrCode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssbasicClient::CreateModifyAdminAuthorizationUrlOutcome EssbasicClient::CreateModifyAdminAuthorizationUrl(const CreateModifyAdminAuthorizationUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateModifyAdminAuthorizationUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateModifyAdminAuthorizationUrlResponse rsp = CreateModifyAdminAuthorizationUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateModifyAdminAuthorizationUrlOutcome(rsp);
+        else
+            return CreateModifyAdminAuthorizationUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateModifyAdminAuthorizationUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::CreateModifyAdminAuthorizationUrlAsync(const CreateModifyAdminAuthorizationUrlRequest& request, const CreateModifyAdminAuthorizationUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateModifyAdminAuthorizationUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::CreateModifyAdminAuthorizationUrlOutcomeCallable EssbasicClient::CreateModifyAdminAuthorizationUrlCallable(const CreateModifyAdminAuthorizationUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateModifyAdminAuthorizationUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateModifyAdminAuthorizationUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssbasicClient::CreateOrganizationAuthFileOutcome EssbasicClient::CreateOrganizationAuthFile(const CreateOrganizationAuthFileRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateOrganizationAuthFile");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateOrganizationAuthFileResponse rsp = CreateOrganizationAuthFileResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateOrganizationAuthFileOutcome(rsp);
+        else
+            return CreateOrganizationAuthFileOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateOrganizationAuthFileOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::CreateOrganizationAuthFileAsync(const CreateOrganizationAuthFileRequest& request, const CreateOrganizationAuthFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateOrganizationAuthFile(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::CreateOrganizationAuthFileOutcomeCallable EssbasicClient::CreateOrganizationAuthFileCallable(const CreateOrganizationAuthFileRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateOrganizationAuthFileOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateOrganizationAuthFile(request);
         }
     );
 
@@ -2742,6 +3086,49 @@ EssbasicClient::DeleteOrganizationAuthorizationsOutcomeCallable EssbasicClient::
         [this, request]()
         {
             return this->DeleteOrganizationAuthorizations(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssbasicClient::DescribeBatchOrganizationRegistrationTasksOutcome EssbasicClient::DescribeBatchOrganizationRegistrationTasks(const DescribeBatchOrganizationRegistrationTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBatchOrganizationRegistrationTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBatchOrganizationRegistrationTasksResponse rsp = DescribeBatchOrganizationRegistrationTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBatchOrganizationRegistrationTasksOutcome(rsp);
+        else
+            return DescribeBatchOrganizationRegistrationTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBatchOrganizationRegistrationTasksOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::DescribeBatchOrganizationRegistrationTasksAsync(const DescribeBatchOrganizationRegistrationTasksRequest& request, const DescribeBatchOrganizationRegistrationTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBatchOrganizationRegistrationTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::DescribeBatchOrganizationRegistrationTasksOutcomeCallable EssbasicClient::DescribeBatchOrganizationRegistrationTasksCallable(const DescribeBatchOrganizationRegistrationTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBatchOrganizationRegistrationTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBatchOrganizationRegistrationTasks(request);
         }
     );
 
@@ -3222,6 +3609,49 @@ EssbasicClient::DescribeUsageOutcomeCallable EssbasicClient::DescribeUsageCallab
     return task->get_future();
 }
 
+EssbasicClient::DescribeUserFlowTypeOutcome EssbasicClient::DescribeUserFlowType(const DescribeUserFlowTypeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserFlowType");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserFlowTypeResponse rsp = DescribeUserFlowTypeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserFlowTypeOutcome(rsp);
+        else
+            return DescribeUserFlowTypeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserFlowTypeOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::DescribeUserFlowTypeAsync(const DescribeUserFlowTypeRequest& request, const DescribeUserFlowTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserFlowType(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::DescribeUserFlowTypeOutcomeCallable EssbasicClient::DescribeUserFlowTypeCallable(const DescribeUserFlowTypeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserFlowTypeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserFlowType(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::GetDownloadFlowUrlOutcome EssbasicClient::GetDownloadFlowUrl(const GetDownloadFlowUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "GetDownloadFlowUrl");
@@ -3351,6 +3781,49 @@ EssbasicClient::ModifyFlowDeadlineOutcomeCallable EssbasicClient::ModifyFlowDead
     return task->get_future();
 }
 
+EssbasicClient::ModifyPartnerAutoSignAuthUrlOutcome EssbasicClient::ModifyPartnerAutoSignAuthUrl(const ModifyPartnerAutoSignAuthUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyPartnerAutoSignAuthUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyPartnerAutoSignAuthUrlResponse rsp = ModifyPartnerAutoSignAuthUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyPartnerAutoSignAuthUrlOutcome(rsp);
+        else
+            return ModifyPartnerAutoSignAuthUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyPartnerAutoSignAuthUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ModifyPartnerAutoSignAuthUrlAsync(const ModifyPartnerAutoSignAuthUrlRequest& request, const ModifyPartnerAutoSignAuthUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyPartnerAutoSignAuthUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ModifyPartnerAutoSignAuthUrlOutcomeCallable EssbasicClient::ModifyPartnerAutoSignAuthUrlCallable(const ModifyPartnerAutoSignAuthUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyPartnerAutoSignAuthUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyPartnerAutoSignAuthUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::OperateChannelTemplateOutcome EssbasicClient::OperateChannelTemplate(const OperateChannelTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "OperateChannelTemplate");
@@ -3387,6 +3860,49 @@ EssbasicClient::OperateChannelTemplateOutcomeCallable EssbasicClient::OperateCha
         [this, request]()
         {
             return this->OperateChannelTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssbasicClient::OperateTemplateOutcome EssbasicClient::OperateTemplate(const OperateTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "OperateTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OperateTemplateResponse rsp = OperateTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OperateTemplateOutcome(rsp);
+        else
+            return OperateTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return OperateTemplateOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::OperateTemplateAsync(const OperateTemplateRequest& request, const OperateTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->OperateTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::OperateTemplateOutcomeCallable EssbasicClient::OperateTemplateCallable(const OperateTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<OperateTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->OperateTemplate(request);
         }
     );
 

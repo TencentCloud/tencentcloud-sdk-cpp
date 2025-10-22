@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,9 @@ using namespace std;
 HorizontalPodAutoscaler::HorizontalPodAutoscaler() :
     m_minReplicasHasBeenSet(false),
     m_maxReplicasHasBeenSet(false),
-    m_hpaMetricsHasBeenSet(false)
+    m_hpaMetricsHasBeenSet(false),
+    m_scaleUpStabilizationWindowSecondsHasBeenSet(false),
+    m_scaleDownStabilizationWindowSecondsHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,26 @@ CoreInternalOutcome HorizontalPodAutoscaler::Deserialize(const rapidjson::Value 
         m_hpaMetricsHasBeenSet = true;
     }
 
+    if (value.HasMember("ScaleUpStabilizationWindowSeconds") && !value["ScaleUpStabilizationWindowSeconds"].IsNull())
+    {
+        if (!value["ScaleUpStabilizationWindowSeconds"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `HorizontalPodAutoscaler.ScaleUpStabilizationWindowSeconds` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_scaleUpStabilizationWindowSeconds = value["ScaleUpStabilizationWindowSeconds"].GetInt64();
+        m_scaleUpStabilizationWindowSecondsHasBeenSet = true;
+    }
+
+    if (value.HasMember("ScaleDownStabilizationWindowSeconds") && !value["ScaleDownStabilizationWindowSeconds"].IsNull())
+    {
+        if (!value["ScaleDownStabilizationWindowSeconds"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `HorizontalPodAutoscaler.ScaleDownStabilizationWindowSeconds` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_scaleDownStabilizationWindowSeconds = value["ScaleDownStabilizationWindowSeconds"].GetInt64();
+        m_scaleDownStabilizationWindowSecondsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -108,6 +130,22 @@ void HorizontalPodAutoscaler::ToJsonObject(rapidjson::Value &value, rapidjson::D
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_scaleUpStabilizationWindowSecondsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScaleUpStabilizationWindowSeconds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scaleUpStabilizationWindowSeconds, allocator);
+    }
+
+    if (m_scaleDownStabilizationWindowSecondsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScaleDownStabilizationWindowSeconds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scaleDownStabilizationWindowSeconds, allocator);
     }
 
 }
@@ -159,5 +197,37 @@ void HorizontalPodAutoscaler::SetHpaMetrics(const vector<Option>& _hpaMetrics)
 bool HorizontalPodAutoscaler::HpaMetricsHasBeenSet() const
 {
     return m_hpaMetricsHasBeenSet;
+}
+
+int64_t HorizontalPodAutoscaler::GetScaleUpStabilizationWindowSeconds() const
+{
+    return m_scaleUpStabilizationWindowSeconds;
+}
+
+void HorizontalPodAutoscaler::SetScaleUpStabilizationWindowSeconds(const int64_t& _scaleUpStabilizationWindowSeconds)
+{
+    m_scaleUpStabilizationWindowSeconds = _scaleUpStabilizationWindowSeconds;
+    m_scaleUpStabilizationWindowSecondsHasBeenSet = true;
+}
+
+bool HorizontalPodAutoscaler::ScaleUpStabilizationWindowSecondsHasBeenSet() const
+{
+    return m_scaleUpStabilizationWindowSecondsHasBeenSet;
+}
+
+int64_t HorizontalPodAutoscaler::GetScaleDownStabilizationWindowSeconds() const
+{
+    return m_scaleDownStabilizationWindowSeconds;
+}
+
+void HorizontalPodAutoscaler::SetScaleDownStabilizationWindowSeconds(const int64_t& _scaleDownStabilizationWindowSeconds)
+{
+    m_scaleDownStabilizationWindowSeconds = _scaleDownStabilizationWindowSeconds;
+    m_scaleDownStabilizationWindowSecondsHasBeenSet = true;
+}
+
+bool HorizontalPodAutoscaler::ScaleDownStabilizationWindowSecondsHasBeenSet() const
+{
+    return m_scaleDownStabilizationWindowSecondsHasBeenSet;
 }
 

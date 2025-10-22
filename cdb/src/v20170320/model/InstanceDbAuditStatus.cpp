@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,12 @@ InstanceDbAuditStatus::InstanceDbAuditStatus() :
     m_instanceInfoHasBeenSet(false),
     m_realStorageHasBeenSet(false),
     m_oldRuleHasBeenSet(false),
-    m_ruleTemplateIdsHasBeenSet(false)
+    m_ruleTemplateIdsHasBeenSet(false),
+    m_trialStatusHasBeenSet(false),
+    m_trialStartTimeHasBeenSet(false),
+    m_trialDurationHasBeenSet(false),
+    m_trialCloseTimeHasBeenSet(false),
+    m_trialDescribeLogHoursHasBeenSet(false)
 {
 }
 
@@ -204,6 +209,56 @@ CoreInternalOutcome InstanceDbAuditStatus::Deserialize(const rapidjson::Value &v
         m_ruleTemplateIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("TrialStatus") && !value["TrialStatus"].IsNull())
+    {
+        if (!value["TrialStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceDbAuditStatus.TrialStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_trialStatus = string(value["TrialStatus"].GetString());
+        m_trialStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("TrialStartTime") && !value["TrialStartTime"].IsNull())
+    {
+        if (!value["TrialStartTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceDbAuditStatus.TrialStartTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_trialStartTime = value["TrialStartTime"].GetInt64();
+        m_trialStartTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TrialDuration") && !value["TrialDuration"].IsNull())
+    {
+        if (!value["TrialDuration"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceDbAuditStatus.TrialDuration` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_trialDuration = value["TrialDuration"].GetInt64();
+        m_trialDurationHasBeenSet = true;
+    }
+
+    if (value.HasMember("TrialCloseTime") && !value["TrialCloseTime"].IsNull())
+    {
+        if (!value["TrialCloseTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceDbAuditStatus.TrialCloseTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_trialCloseTime = value["TrialCloseTime"].GetInt64();
+        m_trialCloseTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TrialDescribeLogHours") && !value["TrialDescribeLogHours"].IsNull())
+    {
+        if (!value["TrialDescribeLogHours"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceDbAuditStatus.TrialDescribeLogHours` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_trialDescribeLogHours = value["TrialDescribeLogHours"].GetInt64();
+        m_trialDescribeLogHoursHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -335,6 +390,46 @@ void InstanceDbAuditStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_trialStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrialStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_trialStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_trialStartTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrialStartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_trialStartTime, allocator);
+    }
+
+    if (m_trialDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrialDuration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_trialDuration, allocator);
+    }
+
+    if (m_trialCloseTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrialCloseTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_trialCloseTime, allocator);
+    }
+
+    if (m_trialDescribeLogHoursHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrialDescribeLogHours";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_trialDescribeLogHours, allocator);
     }
 
 }
@@ -578,5 +673,85 @@ void InstanceDbAuditStatus::SetRuleTemplateIds(const vector<string>& _ruleTempla
 bool InstanceDbAuditStatus::RuleTemplateIdsHasBeenSet() const
 {
     return m_ruleTemplateIdsHasBeenSet;
+}
+
+string InstanceDbAuditStatus::GetTrialStatus() const
+{
+    return m_trialStatus;
+}
+
+void InstanceDbAuditStatus::SetTrialStatus(const string& _trialStatus)
+{
+    m_trialStatus = _trialStatus;
+    m_trialStatusHasBeenSet = true;
+}
+
+bool InstanceDbAuditStatus::TrialStatusHasBeenSet() const
+{
+    return m_trialStatusHasBeenSet;
+}
+
+int64_t InstanceDbAuditStatus::GetTrialStartTime() const
+{
+    return m_trialStartTime;
+}
+
+void InstanceDbAuditStatus::SetTrialStartTime(const int64_t& _trialStartTime)
+{
+    m_trialStartTime = _trialStartTime;
+    m_trialStartTimeHasBeenSet = true;
+}
+
+bool InstanceDbAuditStatus::TrialStartTimeHasBeenSet() const
+{
+    return m_trialStartTimeHasBeenSet;
+}
+
+int64_t InstanceDbAuditStatus::GetTrialDuration() const
+{
+    return m_trialDuration;
+}
+
+void InstanceDbAuditStatus::SetTrialDuration(const int64_t& _trialDuration)
+{
+    m_trialDuration = _trialDuration;
+    m_trialDurationHasBeenSet = true;
+}
+
+bool InstanceDbAuditStatus::TrialDurationHasBeenSet() const
+{
+    return m_trialDurationHasBeenSet;
+}
+
+int64_t InstanceDbAuditStatus::GetTrialCloseTime() const
+{
+    return m_trialCloseTime;
+}
+
+void InstanceDbAuditStatus::SetTrialCloseTime(const int64_t& _trialCloseTime)
+{
+    m_trialCloseTime = _trialCloseTime;
+    m_trialCloseTimeHasBeenSet = true;
+}
+
+bool InstanceDbAuditStatus::TrialCloseTimeHasBeenSet() const
+{
+    return m_trialCloseTimeHasBeenSet;
+}
+
+int64_t InstanceDbAuditStatus::GetTrialDescribeLogHours() const
+{
+    return m_trialDescribeLogHours;
+}
+
+void InstanceDbAuditStatus::SetTrialDescribeLogHours(const int64_t& _trialDescribeLogHours)
+{
+    m_trialDescribeLogHours = _trialDescribeLogHours;
+    m_trialDescribeLogHoursHasBeenSet = true;
+}
+
+bool InstanceDbAuditStatus::TrialDescribeLogHoursHasBeenSet() const
+{
+    return m_trialDescribeLogHoursHasBeenSet;
 }
 

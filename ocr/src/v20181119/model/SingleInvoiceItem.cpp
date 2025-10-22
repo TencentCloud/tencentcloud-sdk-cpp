@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,7 +47,17 @@ SingleInvoiceItem::SingleInvoiceItem() :
     m_medicalHospitalizedInvoiceHasBeenSet(false),
     m_vatSalesListHasBeenSet(false),
     m_electronicTrainTicketFullHasBeenSet(false),
-    m_electronicFlightTicketFullHasBeenSet(false)
+    m_electronicFlightTicketFullHasBeenSet(false),
+    m_taxPaymentHasBeenSet(false),
+    m_customsPaymentReceiptHasBeenSet(false),
+    m_bankSlipHasBeenSet(false),
+    m_onlineTaxiItineraryHasBeenSet(false),
+    m_customsDeclarationHasBeenSet(false),
+    m_overseasInvoiceHasBeenSet(false),
+    m_shoppingReceiptHasBeenSet(false),
+    m_saleInventoryHasBeenSet(false),
+    m_motorVehicleSaleInvoiceElectronicHasBeenSet(false),
+    m_usedCarPurchaseInvoiceElectronicHasBeenSet(false)
 {
 }
 
@@ -515,6 +525,176 @@ CoreInternalOutcome SingleInvoiceItem::Deserialize(const rapidjson::Value &value
         m_electronicFlightTicketFullHasBeenSet = true;
     }
 
+    if (value.HasMember("TaxPayment") && !value["TaxPayment"].IsNull())
+    {
+        if (!value["TaxPayment"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SingleInvoiceItem.TaxPayment` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_taxPayment.Deserialize(value["TaxPayment"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_taxPaymentHasBeenSet = true;
+    }
+
+    if (value.HasMember("CustomsPaymentReceipt") && !value["CustomsPaymentReceipt"].IsNull())
+    {
+        if (!value["CustomsPaymentReceipt"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SingleInvoiceItem.CustomsPaymentReceipt` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_customsPaymentReceipt.Deserialize(value["CustomsPaymentReceipt"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_customsPaymentReceiptHasBeenSet = true;
+    }
+
+    if (value.HasMember("BankSlip") && !value["BankSlip"].IsNull())
+    {
+        if (!value["BankSlip"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SingleInvoiceItem.BankSlip` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_bankSlip.Deserialize(value["BankSlip"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_bankSlipHasBeenSet = true;
+    }
+
+    if (value.HasMember("OnlineTaxiItinerary") && !value["OnlineTaxiItinerary"].IsNull())
+    {
+        if (!value["OnlineTaxiItinerary"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SingleInvoiceItem.OnlineTaxiItinerary` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_onlineTaxiItinerary.Deserialize(value["OnlineTaxiItinerary"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_onlineTaxiItineraryHasBeenSet = true;
+    }
+
+    if (value.HasMember("CustomsDeclaration") && !value["CustomsDeclaration"].IsNull())
+    {
+        if (!value["CustomsDeclaration"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SingleInvoiceItem.CustomsDeclaration` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_customsDeclaration.Deserialize(value["CustomsDeclaration"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_customsDeclarationHasBeenSet = true;
+    }
+
+    if (value.HasMember("OverseasInvoice") && !value["OverseasInvoice"].IsNull())
+    {
+        if (!value["OverseasInvoice"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SingleInvoiceItem.OverseasInvoice` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_overseasInvoice.Deserialize(value["OverseasInvoice"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_overseasInvoiceHasBeenSet = true;
+    }
+
+    if (value.HasMember("ShoppingReceipt") && !value["ShoppingReceipt"].IsNull())
+    {
+        if (!value["ShoppingReceipt"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SingleInvoiceItem.ShoppingReceipt` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_shoppingReceipt.Deserialize(value["ShoppingReceipt"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_shoppingReceiptHasBeenSet = true;
+    }
+
+    if (value.HasMember("SaleInventory") && !value["SaleInventory"].IsNull())
+    {
+        if (!value["SaleInventory"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SingleInvoiceItem.SaleInventory` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_saleInventory.Deserialize(value["SaleInventory"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_saleInventoryHasBeenSet = true;
+    }
+
+    if (value.HasMember("MotorVehicleSaleInvoiceElectronic") && !value["MotorVehicleSaleInvoiceElectronic"].IsNull())
+    {
+        if (!value["MotorVehicleSaleInvoiceElectronic"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SingleInvoiceItem.MotorVehicleSaleInvoiceElectronic` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_motorVehicleSaleInvoiceElectronic.Deserialize(value["MotorVehicleSaleInvoiceElectronic"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_motorVehicleSaleInvoiceElectronicHasBeenSet = true;
+    }
+
+    if (value.HasMember("UsedCarPurchaseInvoiceElectronic") && !value["UsedCarPurchaseInvoiceElectronic"].IsNull())
+    {
+        if (!value["UsedCarPurchaseInvoiceElectronic"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SingleInvoiceItem.UsedCarPurchaseInvoiceElectronic` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_usedCarPurchaseInvoiceElectronic.Deserialize(value["UsedCarPurchaseInvoiceElectronic"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_usedCarPurchaseInvoiceElectronicHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -763,6 +943,96 @@ void SingleInvoiceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_electronicFlightTicketFull.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_taxPaymentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaxPayment";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_taxPayment.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_customsPaymentReceiptHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomsPaymentReceipt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_customsPaymentReceipt.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_bankSlipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BankSlip";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_bankSlip.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_onlineTaxiItineraryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OnlineTaxiItinerary";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_onlineTaxiItinerary.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_customsDeclarationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomsDeclaration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_customsDeclaration.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_overseasInvoiceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OverseasInvoice";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_overseasInvoice.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_shoppingReceiptHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShoppingReceipt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_shoppingReceipt.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_saleInventoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SaleInventory";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_saleInventory.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_motorVehicleSaleInvoiceElectronicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MotorVehicleSaleInvoiceElectronic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_motorVehicleSaleInvoiceElectronic.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_usedCarPurchaseInvoiceElectronicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UsedCarPurchaseInvoiceElectronic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_usedCarPurchaseInvoiceElectronic.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1198,5 +1468,165 @@ void SingleInvoiceItem::SetElectronicFlightTicketFull(const ElectronicFlightTick
 bool SingleInvoiceItem::ElectronicFlightTicketFullHasBeenSet() const
 {
     return m_electronicFlightTicketFullHasBeenSet;
+}
+
+TaxPayment SingleInvoiceItem::GetTaxPayment() const
+{
+    return m_taxPayment;
+}
+
+void SingleInvoiceItem::SetTaxPayment(const TaxPayment& _taxPayment)
+{
+    m_taxPayment = _taxPayment;
+    m_taxPaymentHasBeenSet = true;
+}
+
+bool SingleInvoiceItem::TaxPaymentHasBeenSet() const
+{
+    return m_taxPaymentHasBeenSet;
+}
+
+CustomsPaymentReceipt SingleInvoiceItem::GetCustomsPaymentReceipt() const
+{
+    return m_customsPaymentReceipt;
+}
+
+void SingleInvoiceItem::SetCustomsPaymentReceipt(const CustomsPaymentReceipt& _customsPaymentReceipt)
+{
+    m_customsPaymentReceipt = _customsPaymentReceipt;
+    m_customsPaymentReceiptHasBeenSet = true;
+}
+
+bool SingleInvoiceItem::CustomsPaymentReceiptHasBeenSet() const
+{
+    return m_customsPaymentReceiptHasBeenSet;
+}
+
+BankSlip SingleInvoiceItem::GetBankSlip() const
+{
+    return m_bankSlip;
+}
+
+void SingleInvoiceItem::SetBankSlip(const BankSlip& _bankSlip)
+{
+    m_bankSlip = _bankSlip;
+    m_bankSlipHasBeenSet = true;
+}
+
+bool SingleInvoiceItem::BankSlipHasBeenSet() const
+{
+    return m_bankSlipHasBeenSet;
+}
+
+OnlineTaxiItinerary SingleInvoiceItem::GetOnlineTaxiItinerary() const
+{
+    return m_onlineTaxiItinerary;
+}
+
+void SingleInvoiceItem::SetOnlineTaxiItinerary(const OnlineTaxiItinerary& _onlineTaxiItinerary)
+{
+    m_onlineTaxiItinerary = _onlineTaxiItinerary;
+    m_onlineTaxiItineraryHasBeenSet = true;
+}
+
+bool SingleInvoiceItem::OnlineTaxiItineraryHasBeenSet() const
+{
+    return m_onlineTaxiItineraryHasBeenSet;
+}
+
+CustomsDeclaration SingleInvoiceItem::GetCustomsDeclaration() const
+{
+    return m_customsDeclaration;
+}
+
+void SingleInvoiceItem::SetCustomsDeclaration(const CustomsDeclaration& _customsDeclaration)
+{
+    m_customsDeclaration = _customsDeclaration;
+    m_customsDeclarationHasBeenSet = true;
+}
+
+bool SingleInvoiceItem::CustomsDeclarationHasBeenSet() const
+{
+    return m_customsDeclarationHasBeenSet;
+}
+
+OverseasInvoice SingleInvoiceItem::GetOverseasInvoice() const
+{
+    return m_overseasInvoice;
+}
+
+void SingleInvoiceItem::SetOverseasInvoice(const OverseasInvoice& _overseasInvoice)
+{
+    m_overseasInvoice = _overseasInvoice;
+    m_overseasInvoiceHasBeenSet = true;
+}
+
+bool SingleInvoiceItem::OverseasInvoiceHasBeenSet() const
+{
+    return m_overseasInvoiceHasBeenSet;
+}
+
+ShoppingReceipt SingleInvoiceItem::GetShoppingReceipt() const
+{
+    return m_shoppingReceipt;
+}
+
+void SingleInvoiceItem::SetShoppingReceipt(const ShoppingReceipt& _shoppingReceipt)
+{
+    m_shoppingReceipt = _shoppingReceipt;
+    m_shoppingReceiptHasBeenSet = true;
+}
+
+bool SingleInvoiceItem::ShoppingReceiptHasBeenSet() const
+{
+    return m_shoppingReceiptHasBeenSet;
+}
+
+SaleInventory SingleInvoiceItem::GetSaleInventory() const
+{
+    return m_saleInventory;
+}
+
+void SingleInvoiceItem::SetSaleInventory(const SaleInventory& _saleInventory)
+{
+    m_saleInventory = _saleInventory;
+    m_saleInventoryHasBeenSet = true;
+}
+
+bool SingleInvoiceItem::SaleInventoryHasBeenSet() const
+{
+    return m_saleInventoryHasBeenSet;
+}
+
+MotorVehicleSaleInvoice SingleInvoiceItem::GetMotorVehicleSaleInvoiceElectronic() const
+{
+    return m_motorVehicleSaleInvoiceElectronic;
+}
+
+void SingleInvoiceItem::SetMotorVehicleSaleInvoiceElectronic(const MotorVehicleSaleInvoice& _motorVehicleSaleInvoiceElectronic)
+{
+    m_motorVehicleSaleInvoiceElectronic = _motorVehicleSaleInvoiceElectronic;
+    m_motorVehicleSaleInvoiceElectronicHasBeenSet = true;
+}
+
+bool SingleInvoiceItem::MotorVehicleSaleInvoiceElectronicHasBeenSet() const
+{
+    return m_motorVehicleSaleInvoiceElectronicHasBeenSet;
+}
+
+UsedCarPurchaseInvoice SingleInvoiceItem::GetUsedCarPurchaseInvoiceElectronic() const
+{
+    return m_usedCarPurchaseInvoiceElectronic;
+}
+
+void SingleInvoiceItem::SetUsedCarPurchaseInvoiceElectronic(const UsedCarPurchaseInvoice& _usedCarPurchaseInvoiceElectronic)
+{
+    m_usedCarPurchaseInvoiceElectronic = _usedCarPurchaseInvoiceElectronic;
+    m_usedCarPurchaseInvoiceElectronicHasBeenSet = true;
+}
+
+bool SingleInvoiceItem::UsedCarPurchaseInvoiceElectronicHasBeenSet() const
+{
+    return m_usedCarPurchaseInvoiceElectronicHasBeenSet;
 }
 

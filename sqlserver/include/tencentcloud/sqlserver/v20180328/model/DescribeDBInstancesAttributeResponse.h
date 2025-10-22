@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -188,8 +188,8 @@ namespace TencentCloud
                     bool SSLConfigHasBeenSet() const;
 
                     /**
-                     * 获取备机只读信息
-                     * @return DrReadableInfo 备机只读信息
+                     * 获取双节点备机只读信息
+                     * @return DrReadableInfo 双节点备机只读信息
                      * 
                      */
                     DrReadableInfo GetDrReadableInfo() const;
@@ -214,6 +214,92 @@ namespace TencentCloud
                      * 
                      */
                     bool OldVipListHasBeenSet() const;
+
+                    /**
+                     * 获取操作日志采集状态，enable-采集中，disable-不可用，renew_doing-配置开启或关闭中
+                     * @return XEventStatus 操作日志采集状态，enable-采集中，disable-不可用，renew_doing-配置开启或关闭中
+                     * 
+                     */
+                    std::string GetXEventStatus() const;
+
+                    /**
+                     * 判断参数 XEventStatus 是否已赋值
+                     * @return XEventStatus 是否已赋值
+                     * 
+                     */
+                    bool XEventStatusHasBeenSet() const;
+
+                    /**
+                     * 获取多节点备机只读信息
+                     * @return MultiDrReadableInfo 多节点备机只读信息
+                     * 
+                     */
+                    std::vector<DrReadableInfo> GetMultiDrReadableInfo() const;
+
+                    /**
+                     * 判断参数 MultiDrReadableInfo 是否已赋值
+                     * @return MultiDrReadableInfo 是否已赋值
+                     * 
+                     */
+                    bool MultiDrReadableInfoHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启磁盘加密，1-开启，0-未开启
+                     * @return IsDiskEncryptFlag 是否开启磁盘加密，1-开启，0-未开启
+                     * 
+                     */
+                    int64_t GetIsDiskEncryptFlag() const;
+
+                    /**
+                     * 判断参数 IsDiskEncryptFlag 是否已赋值
+                     * @return IsDiskEncryptFlag 是否已赋值
+                     * 
+                     */
+                    bool IsDiskEncryptFlagHasBeenSet() const;
+
+                    /**
+                     * 获取是否安全限制部分功能，0-没有限制，1-有限制。限制的功能有：修改可用区、迁移变配、DTS数据迁移等
+                     * @return IsSafetyLimited 是否安全限制部分功能，0-没有限制，1-有限制。限制的功能有：修改可用区、迁移变配、DTS数据迁移等
+                     * 
+                     */
+                    uint64_t GetIsSafetyLimited() const;
+
+                    /**
+                     * 判断参数 IsSafetyLimited 是否已赋值
+                     * @return IsSafetyLimited 是否已赋值
+                     * 
+                     */
+                    bool IsSafetyLimitedHasBeenSet() const;
+
+                    /**
+                     * 获取是否支持创建SA权限账号，0-不支持，1-支持
+                     * @return IsSupportSA 是否支持创建SA权限账号，0-不支持，1-支持
+                     * 
+                     */
+                    uint64_t GetIsSupportSA() const;
+
+                    /**
+                     * 判断参数 IsSupportSA 是否已赋值
+                     * @return IsSupportSA 是否已赋值
+                     * 
+                     */
+                    bool IsSupportSAHasBeenSet() const;
+
+                    /**
+                     * 获取慢SQL阈值，单位毫秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SlowLogThreshold 慢SQL阈值，单位毫秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetSlowLogThreshold() const;
+
+                    /**
+                     * 判断参数 SlowLogThreshold 是否已赋值
+                     * @return SlowLogThreshold 是否已赋值
+                     * 
+                     */
+                    bool SlowLogThresholdHasBeenSet() const;
 
                 private:
 
@@ -278,7 +364,7 @@ namespace TencentCloud
                     bool m_sSLConfigHasBeenSet;
 
                     /**
-                     * 备机只读信息
+                     * 双节点备机只读信息
                      */
                     DrReadableInfo m_drReadableInfo;
                     bool m_drReadableInfoHasBeenSet;
@@ -288,6 +374,43 @@ namespace TencentCloud
                      */
                     std::vector<OldVip> m_oldVipList;
                     bool m_oldVipListHasBeenSet;
+
+                    /**
+                     * 操作日志采集状态，enable-采集中，disable-不可用，renew_doing-配置开启或关闭中
+                     */
+                    std::string m_xEventStatus;
+                    bool m_xEventStatusHasBeenSet;
+
+                    /**
+                     * 多节点备机只读信息
+                     */
+                    std::vector<DrReadableInfo> m_multiDrReadableInfo;
+                    bool m_multiDrReadableInfoHasBeenSet;
+
+                    /**
+                     * 是否开启磁盘加密，1-开启，0-未开启
+                     */
+                    int64_t m_isDiskEncryptFlag;
+                    bool m_isDiskEncryptFlagHasBeenSet;
+
+                    /**
+                     * 是否安全限制部分功能，0-没有限制，1-有限制。限制的功能有：修改可用区、迁移变配、DTS数据迁移等
+                     */
+                    uint64_t m_isSafetyLimited;
+                    bool m_isSafetyLimitedHasBeenSet;
+
+                    /**
+                     * 是否支持创建SA权限账号，0-不支持，1-支持
+                     */
+                    uint64_t m_isSupportSA;
+                    bool m_isSupportSAHasBeenSet;
+
+                    /**
+                     * 慢SQL阈值，单位毫秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_slowLogThreshold;
+                    bool m_slowLogThresholdHasBeenSet;
 
                 };
             }

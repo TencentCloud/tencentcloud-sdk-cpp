@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,9 @@ CreateAlarmPolicyRequest::CreateAlarmPolicyRequest() :
     m_logAlarmReqInfoHasBeenSet(false),
     m_hierarchicalNoticesHasBeenSet(false),
     m_migrateFlagHasBeenSet(false),
-    m_ebSubjectHasBeenSet(false)
+    m_ebSubjectHasBeenSet(false),
+    m_additionalAlarmContentHasBeenSet(false),
+    m_noticeContentTmplBindInfosHasBeenSet(false)
 {
 }
 
@@ -237,6 +239,29 @@ string CreateAlarmPolicyRequest::ToJsonString() const
         string key = "EbSubject";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_ebSubject.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_additionalAlarmContentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdditionalAlarmContent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_additionalAlarmContent.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_noticeContentTmplBindInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NoticeContentTmplBindInfos";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_noticeContentTmplBindInfos.begin(); itr != m_noticeContentTmplBindInfos.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -549,6 +574,38 @@ void CreateAlarmPolicyRequest::SetEbSubject(const string& _ebSubject)
 bool CreateAlarmPolicyRequest::EbSubjectHasBeenSet() const
 {
     return m_ebSubjectHasBeenSet;
+}
+
+string CreateAlarmPolicyRequest::GetAdditionalAlarmContent() const
+{
+    return m_additionalAlarmContent;
+}
+
+void CreateAlarmPolicyRequest::SetAdditionalAlarmContent(const string& _additionalAlarmContent)
+{
+    m_additionalAlarmContent = _additionalAlarmContent;
+    m_additionalAlarmContentHasBeenSet = true;
+}
+
+bool CreateAlarmPolicyRequest::AdditionalAlarmContentHasBeenSet() const
+{
+    return m_additionalAlarmContentHasBeenSet;
+}
+
+vector<NoticeContentTmplBindInfo> CreateAlarmPolicyRequest::GetNoticeContentTmplBindInfos() const
+{
+    return m_noticeContentTmplBindInfos;
+}
+
+void CreateAlarmPolicyRequest::SetNoticeContentTmplBindInfos(const vector<NoticeContentTmplBindInfo>& _noticeContentTmplBindInfos)
+{
+    m_noticeContentTmplBindInfos = _noticeContentTmplBindInfos;
+    m_noticeContentTmplBindInfosHasBeenSet = true;
+}
+
+bool CreateAlarmPolicyRequest::NoticeContentTmplBindInfosHasBeenSet() const
+{
+    return m_noticeContentTmplBindInfosHasBeenSet;
 }
 
 

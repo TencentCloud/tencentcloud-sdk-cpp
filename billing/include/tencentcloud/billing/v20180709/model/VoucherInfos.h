@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -239,18 +239,14 @@ namespace TencentCloud
 
                     /**
                      * 获取适用商品信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicableProducts 适用商品信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ApplicableProducts GetApplicableProducts() const;
 
                     /**
                      * 设置适用商品信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicableProducts 适用商品信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicableProducts(const ApplicableProducts& _applicableProducts);
@@ -264,18 +260,14 @@ namespace TencentCloud
 
                     /**
                      * 获取不适用商品信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExcludedProducts 不适用商品信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ExcludedProducts> GetExcludedProducts() const;
 
                     /**
                      * 设置不适用商品信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _excludedProducts 不适用商品信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExcludedProducts(const std::vector<ExcludedProducts>& _excludedProducts);
@@ -286,6 +278,48 @@ namespace TencentCloud
                      * 
                      */
                     bool ExcludedProductsHasBeenSet() const;
+
+                    /**
+                     * 获取使用说明/批次备注
+                     * @return PolicyRemark 使用说明/批次备注
+                     * 
+                     */
+                    std::string GetPolicyRemark() const;
+
+                    /**
+                     * 设置使用说明/批次备注
+                     * @param _policyRemark 使用说明/批次备注
+                     * 
+                     */
+                    void SetPolicyRemark(const std::string& _policyRemark);
+
+                    /**
+                     * 判断参数 PolicyRemark 是否已赋值
+                     * @return PolicyRemark 是否已赋值
+                     * 
+                     */
+                    bool PolicyRemarkHasBeenSet() const;
+
+                    /**
+                     * 获取发券时间
+                     * @return CreateTime 发券时间
+                     * 
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置发券时间
+                     * @param _createTime 发券时间
+                     * 
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
 
                 private:
 
@@ -345,17 +379,27 @@ namespace TencentCloud
 
                     /**
                      * 适用商品信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ApplicableProducts m_applicableProducts;
                     bool m_applicableProductsHasBeenSet;
 
                     /**
                      * 不适用商品信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ExcludedProducts> m_excludedProducts;
                     bool m_excludedProductsHasBeenSet;
+
+                    /**
+                     * 使用说明/批次备注
+                     */
+                    std::string m_policyRemark;
+                    bool m_policyRemarkHasBeenSet;
+
+                    /**
+                     * 发券时间
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@
 #include <tencentcloud/essbasic/v20210526/model/FormField.h>
 #include <tencentcloud/essbasic/v20210526/model/CcInfo.h>
 #include <tencentcloud/essbasic/v20210526/model/Component.h>
+#include <tencentcloud/essbasic/v20210526/model/CommonFlowApprover.h>
 
 
 namespace TencentCloud
@@ -374,18 +375,18 @@ namespace TencentCloud
                     bool ComponentsHasBeenSet() const;
 
                     /**
-                     * 获取在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
+                     * 获取在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li><li> <b>3</b> :文书</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
 
-                     * @return FlowDisplayType 在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
+                     * @return FlowDisplayType 在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li><li> <b>3</b> :文书</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
 
                      * 
                      */
                     int64_t GetFlowDisplayType() const;
 
                     /**
-                     * 设置在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
+                     * 设置在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li><li> <b>3</b> :文书</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
 
-                     * @param _flowDisplayType 在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
+                     * @param _flowDisplayType 在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li><li> <b>3</b> :文书</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
 
                      * 
                      */
@@ -397,6 +398,48 @@ namespace TencentCloud
                      * 
                      */
                     bool FlowDisplayTypeHasBeenSet() const;
+
+                    /**
+                     * 获取签署文件资源Id列表，目前仅支持单个文件
+                     * @return FileIds 签署文件资源Id列表，目前仅支持单个文件
+                     * 
+                     */
+                    std::vector<std::string> GetFileIds() const;
+
+                    /**
+                     * 设置签署文件资源Id列表，目前仅支持单个文件
+                     * @param _fileIds 签署文件资源Id列表，目前仅支持单个文件
+                     * 
+                     */
+                    void SetFileIds(const std::vector<std::string>& _fileIds);
+
+                    /**
+                     * 判断参数 FileIds 是否已赋值
+                     * @return FileIds 是否已赋值
+                     * 
+                     */
+                    bool FileIdsHasBeenSet() const;
+
+                    /**
+                     * 获取合同签署人信息
+                     * @return Approvers 合同签署人信息
+                     * 
+                     */
+                    std::vector<CommonFlowApprover> GetApprovers() const;
+
+                    /**
+                     * 设置合同签署人信息
+                     * @param _approvers 合同签署人信息
+                     * 
+                     */
+                    void SetApprovers(const std::vector<CommonFlowApprover>& _approvers);
+
+                    /**
+                     * 判断参数 Approvers 是否已赋值
+                     * @return Approvers 是否已赋值
+                     * 
+                     */
+                    bool ApproversHasBeenSet() const;
 
                 private:
 
@@ -491,11 +534,23 @@ namespace TencentCloud
                     bool m_componentsHasBeenSet;
 
                     /**
-                     * 在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
+                     * 在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li><li> <b>3</b> :文书</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
 
                      */
                     int64_t m_flowDisplayType;
                     bool m_flowDisplayTypeHasBeenSet;
+
+                    /**
+                     * 签署文件资源Id列表，目前仅支持单个文件
+                     */
+                    std::vector<std::string> m_fileIds;
+                    bool m_fileIdsHasBeenSet;
+
+                    /**
+                     * 合同签署人信息
+                     */
+                    std::vector<CommonFlowApprover> m_approvers;
+                    bool m_approversHasBeenSet;
 
                 };
             }

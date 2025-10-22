@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@
 #include <tencentcloud/dlc/v20210125/model/DatasourceConnectionConfig.h>
 #include <tencentcloud/dlc/v20210125/model/DataEngineInfo.h>
 #include <tencentcloud/dlc/v20210125/model/NetworkConnection.h>
+#include <tencentcloud/dlc/v20210125/model/CustomConfig.h>
 
 
 namespace TencentCloud
@@ -332,18 +333,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建人
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserAlias 创建人
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserAlias() const;
 
                     /**
                      * 设置创建人
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userAlias 创建人
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserAlias(const std::string& _userAlias);
@@ -382,18 +379,14 @@ namespace TencentCloud
 
                     /**
                      * 获取连通性状态：0（未测试，默认）、1（正常）、2（失败）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConnectivityState 连通性状态：0（未测试，默认）、1（正常）、2（失败）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetConnectivityState() const;
 
                     /**
                      * 设置连通性状态：0（未测试，默认）、1（正常）、2（失败）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _connectivityState 连通性状态：0（未测试，默认）、1（正常）、2（失败）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConnectivityState(const uint64_t& _connectivityState);
@@ -407,18 +400,14 @@ namespace TencentCloud
 
                     /**
                      * 获取连通性测试提示信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConnectivityTips 连通性测试提示信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConnectivityTips() const;
 
                     /**
                      * 设置连通性测试提示信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _connectivityTips 连通性测试提示信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConnectivityTips(const std::string& _connectivityTips);
@@ -429,6 +418,48 @@ namespace TencentCloud
                      * 
                      */
                     bool ConnectivityTipsHasBeenSet() const;
+
+                    /**
+                     * 获取自定义参数
+                     * @return CustomConfig 自定义参数
+                     * 
+                     */
+                    std::vector<CustomConfig> GetCustomConfig() const;
+
+                    /**
+                     * 设置自定义参数
+                     * @param _customConfig 自定义参数
+                     * 
+                     */
+                    void SetCustomConfig(const std::vector<CustomConfig>& _customConfig);
+
+                    /**
+                     * 判断参数 CustomConfig 是否已赋值
+                     * @return CustomConfig 是否已赋值
+                     * 
+                     */
+                    bool CustomConfigHasBeenSet() const;
+
+                    /**
+                     * 获取是否允许回退
+                     * @return AllowRollback 是否允许回退
+                     * 
+                     */
+                    bool GetAllowRollback() const;
+
+                    /**
+                     * 设置是否允许回退
+                     * @param _allowRollback 是否允许回退
+                     * 
+                     */
+                    void SetAllowRollback(const bool& _allowRollback);
+
+                    /**
+                     * 判断参数 AllowRollback 是否已赋值
+                     * @return AllowRollback 是否已赋值
+                     * 
+                     */
+                    bool AllowRollbackHasBeenSet() const;
 
                 private:
 
@@ -514,7 +545,6 @@ namespace TencentCloud
 
                     /**
                      * 创建人
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userAlias;
                     bool m_userAliasHasBeenSet;
@@ -528,17 +558,27 @@ namespace TencentCloud
 
                     /**
                      * 连通性状态：0（未测试，默认）、1（正常）、2（失败）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_connectivityState;
                     bool m_connectivityStateHasBeenSet;
 
                     /**
                      * 连通性测试提示信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_connectivityTips;
                     bool m_connectivityTipsHasBeenSet;
+
+                    /**
+                     * 自定义参数
+                     */
+                    std::vector<CustomConfig> m_customConfig;
+                    bool m_customConfigHasBeenSet;
+
+                    /**
+                     * 是否允许回退
+                     */
+                    bool m_allowRollback;
+                    bool m_allowRollbackHasBeenSet;
 
                 };
             }

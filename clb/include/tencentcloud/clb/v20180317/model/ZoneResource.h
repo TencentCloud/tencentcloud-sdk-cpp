@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceSet 资源列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Resource> GetResourceSet() const;
 
                     /**
                      * 设置资源列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceSet 资源列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceSet(const std::vector<Resource>& _resourceSet);
@@ -225,18 +221,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络出口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Egress 网络出口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEgress() const;
 
                     /**
                      * 设置网络出口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _egress 网络出口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEgress(const std::string& _egress);
@@ -258,7 +250,6 @@ namespace TencentCloud
 
                     /**
                      * 资源列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Resource> m_resourceSet;
                     bool m_resourceSetHasBeenSet;
@@ -302,7 +293,6 @@ namespace TencentCloud
 
                     /**
                      * 网络出口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_egress;
                     bool m_egressHasBeenSet;

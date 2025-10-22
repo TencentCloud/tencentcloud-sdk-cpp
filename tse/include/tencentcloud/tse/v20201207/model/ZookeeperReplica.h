@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetId 子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 可用区ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zone 可用区ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -161,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneId 可用区ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置可用区ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zoneId 可用区ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZoneId(const std::string& _zoneId);
@@ -186,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AliasName 别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAliasName() const;
 
                     /**
                      * 设置别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _aliasName 别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAliasName(const std::string& _aliasName);
@@ -211,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取VPC ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId VPC ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置VPC ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId VPC ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -256,35 +236,30 @@ namespace TencentCloud
 
                     /**
                      * 子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
                      * 可用区ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
                      * 可用区ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
                      * 别名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_aliasName;
                     bool m_aliasNameHasBeenSet;
 
                     /**
                      * VPC ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;

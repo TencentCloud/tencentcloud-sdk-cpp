@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取段落文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 段落文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BaseInfo GetText() const;
 
                     /**
                      * 设置段落文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _text 段落文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetText(const BaseInfo& _text);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结论详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 结论详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BaseInfo> GetItems() const;
 
                     /**
                      * 设置结论详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _items 结论详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetItems(const std::vector<BaseInfo>& _items);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Page 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPage() const;
 
                     /**
                      * 设置数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _page 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPage(const int64_t& _page);
@@ -126,21 +114,18 @@ namespace TencentCloud
 
                     /**
                      * 段落文本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BaseInfo m_text;
                     bool m_textHasBeenSet;
 
                     /**
                      * 结论详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BaseInfo> m_items;
                     bool m_itemsHasBeenSet;
 
                     /**
                      * 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_page;
                     bool m_pageHasBeenSet;

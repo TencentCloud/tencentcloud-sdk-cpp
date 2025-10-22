@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,13 @@ AudioResult::AudioResult() :
     m_moanResultsHasBeenSet(false),
     m_languageResultsHasBeenSet(false),
     m_subLabelHasBeenSet(false),
-    m_recognitionResultsHasBeenSet(false)
+    m_recognitionResultsHasBeenSet(false),
+    m_speakerResultsHasBeenSet(false),
+    m_travelResultsHasBeenSet(false),
+    m_subTagHasBeenSet(false),
+    m_subTagCodeHasBeenSet(false),
+    m_labelResultsHasBeenSet(false),
+    m_hitTypeHasBeenSet(false)
 {
 }
 
@@ -212,6 +218,96 @@ CoreInternalOutcome AudioResult::Deserialize(const rapidjson::Value &value)
         m_recognitionResultsHasBeenSet = true;
     }
 
+    if (value.HasMember("SpeakerResults") && !value["SpeakerResults"].IsNull())
+    {
+        if (!value["SpeakerResults"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AudioResult.SpeakerResults` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SpeakerResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SpeakerResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_speakerResults.push_back(item);
+        }
+        m_speakerResultsHasBeenSet = true;
+    }
+
+    if (value.HasMember("TravelResults") && !value["TravelResults"].IsNull())
+    {
+        if (!value["TravelResults"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AudioResult.TravelResults` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TravelResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TravelResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_travelResults.push_back(item);
+        }
+        m_travelResultsHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubTag") && !value["SubTag"].IsNull())
+    {
+        if (!value["SubTag"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AudioResult.SubTag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subTag = string(value["SubTag"].GetString());
+        m_subTagHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubTagCode") && !value["SubTagCode"].IsNull())
+    {
+        if (!value["SubTagCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AudioResult.SubTagCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subTagCode = string(value["SubTagCode"].GetString());
+        m_subTagCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("LabelResults") && !value["LabelResults"].IsNull())
+    {
+        if (!value["LabelResults"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AudioResult.LabelResults` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["LabelResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            LabelResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_labelResults.push_back(item);
+        }
+        m_labelResultsHasBeenSet = true;
+    }
+
+    if (value.HasMember("HitType") && !value["HitType"].IsNull())
+    {
+        if (!value["HitType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AudioResult.HitType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hitType = string(value["HitType"].GetString());
+        m_hitTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -349,6 +445,75 @@ void AudioResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_speakerResultsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpeakerResults";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_speakerResults.begin(); itr != m_speakerResults.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_travelResultsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TravelResults";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_travelResults.begin(); itr != m_travelResults.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_subTagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubTag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subTag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subTagCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubTagCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subTagCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_labelResultsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LabelResults";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_labelResults.begin(); itr != m_labelResults.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_hitTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HitType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hitType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -560,5 +725,101 @@ void AudioResult::SetRecognitionResults(const vector<RecognitionResult>& _recogn
 bool AudioResult::RecognitionResultsHasBeenSet() const
 {
     return m_recognitionResultsHasBeenSet;
+}
+
+vector<SpeakerResult> AudioResult::GetSpeakerResults() const
+{
+    return m_speakerResults;
+}
+
+void AudioResult::SetSpeakerResults(const vector<SpeakerResult>& _speakerResults)
+{
+    m_speakerResults = _speakerResults;
+    m_speakerResultsHasBeenSet = true;
+}
+
+bool AudioResult::SpeakerResultsHasBeenSet() const
+{
+    return m_speakerResultsHasBeenSet;
+}
+
+vector<TravelResult> AudioResult::GetTravelResults() const
+{
+    return m_travelResults;
+}
+
+void AudioResult::SetTravelResults(const vector<TravelResult>& _travelResults)
+{
+    m_travelResults = _travelResults;
+    m_travelResultsHasBeenSet = true;
+}
+
+bool AudioResult::TravelResultsHasBeenSet() const
+{
+    return m_travelResultsHasBeenSet;
+}
+
+string AudioResult::GetSubTag() const
+{
+    return m_subTag;
+}
+
+void AudioResult::SetSubTag(const string& _subTag)
+{
+    m_subTag = _subTag;
+    m_subTagHasBeenSet = true;
+}
+
+bool AudioResult::SubTagHasBeenSet() const
+{
+    return m_subTagHasBeenSet;
+}
+
+string AudioResult::GetSubTagCode() const
+{
+    return m_subTagCode;
+}
+
+void AudioResult::SetSubTagCode(const string& _subTagCode)
+{
+    m_subTagCode = _subTagCode;
+    m_subTagCodeHasBeenSet = true;
+}
+
+bool AudioResult::SubTagCodeHasBeenSet() const
+{
+    return m_subTagCodeHasBeenSet;
+}
+
+vector<LabelResult> AudioResult::GetLabelResults() const
+{
+    return m_labelResults;
+}
+
+void AudioResult::SetLabelResults(const vector<LabelResult>& _labelResults)
+{
+    m_labelResults = _labelResults;
+    m_labelResultsHasBeenSet = true;
+}
+
+bool AudioResult::LabelResultsHasBeenSet() const
+{
+    return m_labelResultsHasBeenSet;
+}
+
+string AudioResult::GetHitType() const
+{
+    return m_hitType;
+}
+
+void AudioResult::SetHitType(const string& _hitType)
+{
+    m_hitType = _hitType;
+    m_hitTypeHasBeenSet = true;
+}
+
+bool AudioResult::HitTypeHasBeenSet() const
+{
+    return m_hitTypeHasBeenSet;
 }
 

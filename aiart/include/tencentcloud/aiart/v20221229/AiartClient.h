@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,26 +27,42 @@
 #include <tencentcloud/aiart/v20221229/model/ChangeClothesResponse.h>
 #include <tencentcloud/aiart/v20221229/model/GenerateAvatarRequest.h>
 #include <tencentcloud/aiart/v20221229/model/GenerateAvatarResponse.h>
+#include <tencentcloud/aiart/v20221229/model/ImageInpaintingRemovalRequest.h>
+#include <tencentcloud/aiart/v20221229/model/ImageInpaintingRemovalResponse.h>
+#include <tencentcloud/aiart/v20221229/model/ImageOutpaintingRequest.h>
+#include <tencentcloud/aiart/v20221229/model/ImageOutpaintingResponse.h>
 #include <tencentcloud/aiart/v20221229/model/ImageToImageRequest.h>
 #include <tencentcloud/aiart/v20221229/model/ImageToImageResponse.h>
 #include <tencentcloud/aiart/v20221229/model/QueryDrawPortraitJobRequest.h>
 #include <tencentcloud/aiart/v20221229/model/QueryDrawPortraitJobResponse.h>
+#include <tencentcloud/aiart/v20221229/model/QueryGlamPicJobRequest.h>
+#include <tencentcloud/aiart/v20221229/model/QueryGlamPicJobResponse.h>
+#include <tencentcloud/aiart/v20221229/model/QueryMemeJobRequest.h>
+#include <tencentcloud/aiart/v20221229/model/QueryMemeJobResponse.h>
 #include <tencentcloud/aiart/v20221229/model/QueryTextToImageProJobRequest.h>
 #include <tencentcloud/aiart/v20221229/model/QueryTextToImageProJobResponse.h>
 #include <tencentcloud/aiart/v20221229/model/QueryTrainPortraitModelJobRequest.h>
 #include <tencentcloud/aiart/v20221229/model/QueryTrainPortraitModelJobResponse.h>
+#include <tencentcloud/aiart/v20221229/model/RefineImageRequest.h>
+#include <tencentcloud/aiart/v20221229/model/RefineImageResponse.h>
 #include <tencentcloud/aiart/v20221229/model/ReplaceBackgroundRequest.h>
 #include <tencentcloud/aiart/v20221229/model/ReplaceBackgroundResponse.h>
 #include <tencentcloud/aiart/v20221229/model/SketchToImageRequest.h>
 #include <tencentcloud/aiart/v20221229/model/SketchToImageResponse.h>
 #include <tencentcloud/aiart/v20221229/model/SubmitDrawPortraitJobRequest.h>
 #include <tencentcloud/aiart/v20221229/model/SubmitDrawPortraitJobResponse.h>
+#include <tencentcloud/aiart/v20221229/model/SubmitGlamPicJobRequest.h>
+#include <tencentcloud/aiart/v20221229/model/SubmitGlamPicJobResponse.h>
+#include <tencentcloud/aiart/v20221229/model/SubmitMemeJobRequest.h>
+#include <tencentcloud/aiart/v20221229/model/SubmitMemeJobResponse.h>
 #include <tencentcloud/aiart/v20221229/model/SubmitTextToImageProJobRequest.h>
 #include <tencentcloud/aiart/v20221229/model/SubmitTextToImageProJobResponse.h>
 #include <tencentcloud/aiart/v20221229/model/SubmitTrainPortraitModelJobRequest.h>
 #include <tencentcloud/aiart/v20221229/model/SubmitTrainPortraitModelJobResponse.h>
-#include <tencentcloud/aiart/v20221229/model/TextToImageRequest.h>
-#include <tencentcloud/aiart/v20221229/model/TextToImageResponse.h>
+#include <tencentcloud/aiart/v20221229/model/TextToImageLiteRequest.h>
+#include <tencentcloud/aiart/v20221229/model/TextToImageLiteResponse.h>
+#include <tencentcloud/aiart/v20221229/model/TextToImageRapidRequest.h>
+#include <tencentcloud/aiart/v20221229/model/TextToImageRapidResponse.h>
 #include <tencentcloud/aiart/v20221229/model/UploadTrainPortraitImagesRequest.h>
 #include <tencentcloud/aiart/v20221229/model/UploadTrainPortraitImagesResponse.h>
 
@@ -69,18 +85,33 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GenerateAvatarResponse> GenerateAvatarOutcome;
                 typedef std::future<GenerateAvatarOutcome> GenerateAvatarOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::GenerateAvatarRequest&, GenerateAvatarOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenerateAvatarAsyncHandler;
+                typedef Outcome<Core::Error, Model::ImageInpaintingRemovalResponse> ImageInpaintingRemovalOutcome;
+                typedef std::future<ImageInpaintingRemovalOutcome> ImageInpaintingRemovalOutcomeCallable;
+                typedef std::function<void(const AiartClient*, const Model::ImageInpaintingRemovalRequest&, ImageInpaintingRemovalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageInpaintingRemovalAsyncHandler;
+                typedef Outcome<Core::Error, Model::ImageOutpaintingResponse> ImageOutpaintingOutcome;
+                typedef std::future<ImageOutpaintingOutcome> ImageOutpaintingOutcomeCallable;
+                typedef std::function<void(const AiartClient*, const Model::ImageOutpaintingRequest&, ImageOutpaintingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageOutpaintingAsyncHandler;
                 typedef Outcome<Core::Error, Model::ImageToImageResponse> ImageToImageOutcome;
                 typedef std::future<ImageToImageOutcome> ImageToImageOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::ImageToImageRequest&, ImageToImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageToImageAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryDrawPortraitJobResponse> QueryDrawPortraitJobOutcome;
                 typedef std::future<QueryDrawPortraitJobOutcome> QueryDrawPortraitJobOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::QueryDrawPortraitJobRequest&, QueryDrawPortraitJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryDrawPortraitJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryGlamPicJobResponse> QueryGlamPicJobOutcome;
+                typedef std::future<QueryGlamPicJobOutcome> QueryGlamPicJobOutcomeCallable;
+                typedef std::function<void(const AiartClient*, const Model::QueryGlamPicJobRequest&, QueryGlamPicJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryGlamPicJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryMemeJobResponse> QueryMemeJobOutcome;
+                typedef std::future<QueryMemeJobOutcome> QueryMemeJobOutcomeCallable;
+                typedef std::function<void(const AiartClient*, const Model::QueryMemeJobRequest&, QueryMemeJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryMemeJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryTextToImageProJobResponse> QueryTextToImageProJobOutcome;
                 typedef std::future<QueryTextToImageProJobOutcome> QueryTextToImageProJobOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::QueryTextToImageProJobRequest&, QueryTextToImageProJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryTextToImageProJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryTrainPortraitModelJobResponse> QueryTrainPortraitModelJobOutcome;
                 typedef std::future<QueryTrainPortraitModelJobOutcome> QueryTrainPortraitModelJobOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::QueryTrainPortraitModelJobRequest&, QueryTrainPortraitModelJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryTrainPortraitModelJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::RefineImageResponse> RefineImageOutcome;
+                typedef std::future<RefineImageOutcome> RefineImageOutcomeCallable;
+                typedef std::function<void(const AiartClient*, const Model::RefineImageRequest&, RefineImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RefineImageAsyncHandler;
                 typedef Outcome<Core::Error, Model::ReplaceBackgroundResponse> ReplaceBackgroundOutcome;
                 typedef std::future<ReplaceBackgroundOutcome> ReplaceBackgroundOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::ReplaceBackgroundRequest&, ReplaceBackgroundOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceBackgroundAsyncHandler;
@@ -90,15 +121,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SubmitDrawPortraitJobResponse> SubmitDrawPortraitJobOutcome;
                 typedef std::future<SubmitDrawPortraitJobOutcome> SubmitDrawPortraitJobOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::SubmitDrawPortraitJobRequest&, SubmitDrawPortraitJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitDrawPortraitJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::SubmitGlamPicJobResponse> SubmitGlamPicJobOutcome;
+                typedef std::future<SubmitGlamPicJobOutcome> SubmitGlamPicJobOutcomeCallable;
+                typedef std::function<void(const AiartClient*, const Model::SubmitGlamPicJobRequest&, SubmitGlamPicJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitGlamPicJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::SubmitMemeJobResponse> SubmitMemeJobOutcome;
+                typedef std::future<SubmitMemeJobOutcome> SubmitMemeJobOutcomeCallable;
+                typedef std::function<void(const AiartClient*, const Model::SubmitMemeJobRequest&, SubmitMemeJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitMemeJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::SubmitTextToImageProJobResponse> SubmitTextToImageProJobOutcome;
                 typedef std::future<SubmitTextToImageProJobOutcome> SubmitTextToImageProJobOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::SubmitTextToImageProJobRequest&, SubmitTextToImageProJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitTextToImageProJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::SubmitTrainPortraitModelJobResponse> SubmitTrainPortraitModelJobOutcome;
                 typedef std::future<SubmitTrainPortraitModelJobOutcome> SubmitTrainPortraitModelJobOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::SubmitTrainPortraitModelJobRequest&, SubmitTrainPortraitModelJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitTrainPortraitModelJobAsyncHandler;
-                typedef Outcome<Core::Error, Model::TextToImageResponse> TextToImageOutcome;
-                typedef std::future<TextToImageOutcome> TextToImageOutcomeCallable;
-                typedef std::function<void(const AiartClient*, const Model::TextToImageRequest&, TextToImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextToImageAsyncHandler;
+                typedef Outcome<Core::Error, Model::TextToImageLiteResponse> TextToImageLiteOutcome;
+                typedef std::future<TextToImageLiteOutcome> TextToImageLiteOutcomeCallable;
+                typedef std::function<void(const AiartClient*, const Model::TextToImageLiteRequest&, TextToImageLiteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextToImageLiteAsyncHandler;
+                typedef Outcome<Core::Error, Model::TextToImageRapidResponse> TextToImageRapidOutcome;
+                typedef std::future<TextToImageRapidOutcome> TextToImageRapidOutcomeCallable;
+                typedef std::function<void(const AiartClient*, const Model::TextToImageRapidRequest&, TextToImageRapidOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextToImageRapidAsyncHandler;
                 typedef Outcome<Core::Error, Model::UploadTrainPortraitImagesResponse> UploadTrainPortraitImagesOutcome;
                 typedef std::future<UploadTrainPortraitImagesOutcome> UploadTrainPortraitImagesOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::UploadTrainPortraitImagesRequest&, UploadTrainPortraitImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadTrainPortraitImagesAsyncHandler;
@@ -127,6 +167,26 @@ namespace TencentCloud
                 GenerateAvatarOutcomeCallable GenerateAvatarCallable(const Model::GenerateAvatarRequest& request);
 
                 /**
+                 *局部消除接口通过图像 mask 指定需要消除的人、物、文字等区域，在选定区域对图像内容进行消除与重绘补全。
+默认提供1个并发，代表最多能同时处理1个已提交的任务。
+                 * @param req ImageInpaintingRemovalRequest
+                 * @return ImageInpaintingRemovalOutcome
+                 */
+                ImageInpaintingRemovalOutcome ImageInpaintingRemoval(const Model::ImageInpaintingRemovalRequest &request);
+                void ImageInpaintingRemovalAsync(const Model::ImageInpaintingRemovalRequest& request, const ImageInpaintingRemovalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ImageInpaintingRemovalOutcomeCallable ImageInpaintingRemovalCallable(const Model::ImageInpaintingRemovalRequest& request);
+
+                /**
+                 *扩图接口支持对输入图像按指定宽高比实现智能扩图。
+默认提供1个并发，代表最多能同时处理1个已提交的任务。
+                 * @param req ImageOutpaintingRequest
+                 * @return ImageOutpaintingOutcome
+                 */
+                ImageOutpaintingOutcome ImageOutpainting(const Model::ImageOutpaintingRequest &request);
+                void ImageOutpaintingAsync(const Model::ImageOutpaintingRequest& request, const ImageOutpaintingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ImageOutpaintingOutcomeCallable ImageOutpaintingCallable(const Model::ImageOutpaintingRequest& request);
+
+                /**
                  *图像风格化（图生图）接口提供生成式的图生图风格转化能力，将根据输入的图像及文本描述，智能生成风格转化后的图像。建议避免输入人像过小、姿势复杂、人数较多的人像图片。
 图像风格化（图生图）默认提供3个并发任务数，代表最多能同时处理3个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。
                  * @param req ImageToImageRequest
@@ -150,6 +210,32 @@ namespace TencentCloud
                 QueryDrawPortraitJobOutcome QueryDrawPortraitJob(const Model::QueryDrawPortraitJobRequest &request);
                 void QueryDrawPortraitJobAsync(const Model::QueryDrawPortraitJobRequest& request, const QueryDrawPortraitJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryDrawPortraitJobOutcomeCallable QueryDrawPortraitJobCallable(const Model::QueryDrawPortraitJobRequest& request);
+
+                /**
+                 *AI 美照接口将根据模板为用户生成精美照片。分为提交任务和查询任务2个接口。
+- 提交任务：提交一个美照生成异步任务，获得任务 ID。
+- 查询任务：根据任务 ID 查询任务的处理状态、处理结果，任务处理完成后可获得生成图像结果。
+
+AI 美照默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。
+                 * @param req QueryGlamPicJobRequest
+                 * @return QueryGlamPicJobOutcome
+                 */
+                QueryGlamPicJobOutcome QueryGlamPicJob(const Model::QueryGlamPicJobRequest &request);
+                void QueryGlamPicJobAsync(const Model::QueryGlamPicJobRequest& request, const QueryGlamPicJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryGlamPicJobOutcomeCallable QueryGlamPicJobCallable(const Model::QueryGlamPicJobRequest& request);
+
+                /**
+                 *表情动图生成接口将静态照片制作成动态的表情包。分为提交任务和查询任务2个接口。
+- 提交任务：提交一个表情动图生成异步任务，获得任务 ID。
+- 查询任务：根据任务 ID 查询任务的处理状态、处理结果，任务处理完成后可获得生成图像结果。
+
+表情动图生成默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。
+                 * @param req QueryMemeJobRequest
+                 * @return QueryMemeJobOutcome
+                 */
+                QueryMemeJobOutcome QueryMemeJob(const Model::QueryMemeJobRequest &request);
+                void QueryMemeJobAsync(const Model::QueryMemeJobRequest& request, const QueryMemeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryMemeJobOutcomeCallable QueryMemeJobCallable(const Model::QueryMemeJobRequest& request);
 
                 /**
                  *本接口已迁移至腾讯混元大模型-混元生图，即将停止此处维护，可切换至 [混元生图 API](https://cloud.tencent.com/document/product/1729/105970) 继续使用。
@@ -179,6 +265,16 @@ namespace TencentCloud
                 QueryTrainPortraitModelJobOutcome QueryTrainPortraitModelJob(const Model::QueryTrainPortraitModelJobRequest &request);
                 void QueryTrainPortraitModelJobAsync(const Model::QueryTrainPortraitModelJobRequest& request, const QueryTrainPortraitModelJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryTrainPortraitModelJobOutcomeCallable QueryTrainPortraitModelJobCallable(const Model::QueryTrainPortraitModelJobRequest& request);
+
+                /**
+                 *将图像变清晰，增强图像细节。变清晰后的图片将保持原图比例，长边为2048。
+默认提供1个并发，代表最多能同时处理1个已提交的任务。
+                 * @param req RefineImageRequest
+                 * @return RefineImageOutcome
+                 */
+                RefineImageOutcome RefineImage(const Model::RefineImageRequest &request);
+                void RefineImageAsync(const Model::RefineImageRequest& request, const RefineImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RefineImageOutcomeCallable RefineImageCallable(const Model::RefineImageRequest& request);
 
                 /**
                  *商品背景生成接口根据指定的背景描述 Prompt，将商品图中的原背景替换为自定义的新背景并保留商品主体形象，实现商品背景的自由生成与更换。
@@ -218,6 +314,33 @@ namespace TencentCloud
                 SubmitDrawPortraitJobOutcomeCallable SubmitDrawPortraitJobCallable(const Model::SubmitDrawPortraitJobRequest& request);
 
                 /**
+                 *AI 美照接口将根据模板为用户生成精美照片。分为提交任务和查询任务2个接口。
+- 提交任务：提交一个美照生成异步任务，获得任务 ID。
+- 查询任务：根据任务 ID 查询任务的处理状态、处理结果，任务处理完成后可获得生成图像结果。
+
+AI 美照默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。
+                 * @param req SubmitGlamPicJobRequest
+                 * @return SubmitGlamPicJobOutcome
+                 */
+                SubmitGlamPicJobOutcome SubmitGlamPicJob(const Model::SubmitGlamPicJobRequest &request);
+                void SubmitGlamPicJobAsync(const Model::SubmitGlamPicJobRequest& request, const SubmitGlamPicJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitGlamPicJobOutcomeCallable SubmitGlamPicJobCallable(const Model::SubmitGlamPicJobRequest& request);
+
+                /**
+                 *表情动图生成接口将静态照片制作成动态的表情包。分为提交任务和查询任务2个接口。
+
+- 提交任务：提交一个表情动图生成异步任务，获得任务 ID。
+- 查询任务：根据任务 ID 查询任务的处理状态、处理结果，任务处理完成后可获得生成图像结果。
+
+表情动图生成默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。
+                 * @param req SubmitMemeJobRequest
+                 * @return SubmitMemeJobOutcome
+                 */
+                SubmitMemeJobOutcome SubmitMemeJob(const Model::SubmitMemeJobRequest &request);
+                void SubmitMemeJobAsync(const Model::SubmitMemeJobRequest& request, const SubmitMemeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitMemeJobOutcomeCallable SubmitMemeJobCallable(const Model::SubmitMemeJobRequest& request);
+
+                /**
                  *本接口已迁移至腾讯混元大模型-混元生图，即将停止此处维护，可切换至 [混元生图 API](https://cloud.tencent.com/document/product/1729/105969) 继续使用。
 文生图（高级版）接口基于高级版文生图大模型，将根据输入的文本描述，智能生成与之相关的结果图。分为提交任务和查询任务2个接口。
 提交任务：输入文本等，提交一个文生图（高级版）异步任务，获得任务 ID。
@@ -247,17 +370,24 @@ namespace TencentCloud
                 SubmitTrainPortraitModelJobOutcomeCallable SubmitTrainPortraitModelJobCallable(const Model::SubmitTrainPortraitModelJobRequest& request);
 
                 /**
-                 ***本接口已迁移至腾讯混元大模型-文生图轻量版，即将停止此处维护，可切换至 [文生图轻量版 API](https://cloud.tencent.com/document/product/1729/108738) 继续使用。**
-
-智能文生图接口基于文生图（标准版）模型，将根据输入的文本描述，智能生成与之相关的结果图。
-
-智能文生图默认提供3个并发任务数，代表最多能同时处理3个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。
-                 * @param req TextToImageRequest
-                 * @return TextToImageOutcome
+                 *混元文生图接口，基于混元大模型，根据输入的文本描述智能生成图片
+默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。
+                 * @param req TextToImageLiteRequest
+                 * @return TextToImageLiteOutcome
                  */
-                TextToImageOutcome TextToImage(const Model::TextToImageRequest &request);
-                void TextToImageAsync(const Model::TextToImageRequest& request, const TextToImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                TextToImageOutcomeCallable TextToImageCallable(const Model::TextToImageRequest& request);
+                TextToImageLiteOutcome TextToImageLite(const Model::TextToImageLiteRequest &request);
+                void TextToImageLiteAsync(const Model::TextToImageLiteRequest& request, const TextToImageLiteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TextToImageLiteOutcomeCallable TextToImageLiteCallable(const Model::TextToImageLiteRequest& request);
+
+                /**
+                 *混元文生图接口，基于混元大模型，根据输入的文本描述智能生成图片
+默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。
+                 * @param req TextToImageRapidRequest
+                 * @return TextToImageRapidOutcome
+                 */
+                TextToImageRapidOutcome TextToImageRapid(const Model::TextToImageRapidRequest &request);
+                void TextToImageRapidAsync(const Model::TextToImageRapidRequest& request, const TextToImageRapidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TextToImageRapidOutcomeCallable TextToImageRapidCallable(const Model::TextToImageRapidRequest& request);
 
                 /**
                  *AI 写真分为上传训练图片、训练写真模型（可选跳过）、生成写真图片3个环节，需要依次调用对应接口。

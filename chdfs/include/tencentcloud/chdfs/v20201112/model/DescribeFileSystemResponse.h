@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取文件系统已使用容量（byte）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CapacityUsed 文件系统已使用容量（byte）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCapacityUsed() const;
@@ -76,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取已使用COS归档存储容量（byte）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ArchiveCapacityUsed 已使用COS归档存储容量（byte）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetArchiveCapacityUsed() const;
@@ -92,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取已使用COS标准存储容量（byte）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StandardCapacityUsed 已使用COS标准存储容量（byte）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStandardCapacityUsed() const;
@@ -108,9 +102,7 @@ namespace TencentCloud
 
                     /**
                      * 获取已使用COS低频存储容量（byte）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DegradeCapacityUsed 已使用COS低频存储容量（byte）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDegradeCapacityUsed() const;
@@ -124,9 +116,7 @@ namespace TencentCloud
 
                     /**
                      * 获取已使用COS深度归档存储容量（byte）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeepArchiveCapacityUsed 已使用COS深度归档存储容量（byte）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDeepArchiveCapacityUsed() const;
@@ -140,9 +130,7 @@ namespace TencentCloud
 
                     /**
                      * 获取已使用COS智能分层存储容量（byte）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IntelligentCapacityUsed 已使用COS智能分层存储容量（byte）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIntelligentCapacityUsed() const;
@@ -164,42 +152,36 @@ namespace TencentCloud
 
                     /**
                      * 文件系统已使用容量（byte）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_capacityUsed;
                     bool m_capacityUsedHasBeenSet;
 
                     /**
                      * 已使用COS归档存储容量（byte）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_archiveCapacityUsed;
                     bool m_archiveCapacityUsedHasBeenSet;
 
                     /**
                      * 已使用COS标准存储容量（byte）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_standardCapacityUsed;
                     bool m_standardCapacityUsedHasBeenSet;
 
                     /**
                      * 已使用COS低频存储容量（byte）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_degradeCapacityUsed;
                     bool m_degradeCapacityUsedHasBeenSet;
 
                     /**
                      * 已使用COS深度归档存储容量（byte）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_deepArchiveCapacityUsed;
                     bool m_deepArchiveCapacityUsedHasBeenSet;
 
                     /**
                      * 已使用COS智能分层存储容量（byte）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_intelligentCapacityUsed;
                     bool m_intelligentCapacityUsedHasBeenSet;

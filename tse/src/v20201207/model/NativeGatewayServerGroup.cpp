@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,10 @@ NativeGatewayServerGroup::NativeGatewayServerGroup() :
     m_internetMaxBandwidthOutHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
-    m_defaultWeightHasBeenSet(false)
+    m_defaultWeightHasBeenSet(false),
+    m_elasticNumberHasBeenSet(false),
+    m_supportTOAHasBeenSet(false),
+    m_supportIPV6HasBeenSet(false)
 {
 }
 
@@ -186,6 +189,36 @@ CoreInternalOutcome NativeGatewayServerGroup::Deserialize(const rapidjson::Value
         m_defaultWeightHasBeenSet = true;
     }
 
+    if (value.HasMember("ElasticNumber") && !value["ElasticNumber"].IsNull())
+    {
+        if (!value["ElasticNumber"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NativeGatewayServerGroup.ElasticNumber` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_elasticNumber = value["ElasticNumber"].GetUint64();
+        m_elasticNumberHasBeenSet = true;
+    }
+
+    if (value.HasMember("SupportTOA") && !value["SupportTOA"].IsNull())
+    {
+        if (!value["SupportTOA"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `NativeGatewayServerGroup.SupportTOA` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_supportTOA = value["SupportTOA"].GetBool();
+        m_supportTOAHasBeenSet = true;
+    }
+
+    if (value.HasMember("SupportIPV6") && !value["SupportIPV6"].IsNull())
+    {
+        if (!value["SupportIPV6"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `NativeGatewayServerGroup.SupportIPV6` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_supportIPV6 = value["SupportIPV6"].GetBool();
+        m_supportIPV6HasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -297,6 +330,30 @@ void NativeGatewayServerGroup::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "DefaultWeight";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_defaultWeight, allocator);
+    }
+
+    if (m_elasticNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElasticNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_elasticNumber, allocator);
+    }
+
+    if (m_supportTOAHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SupportTOA";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_supportTOA, allocator);
+    }
+
+    if (m_supportIPV6HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SupportIPV6";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_supportIPV6, allocator);
     }
 
 }
@@ -508,5 +565,53 @@ void NativeGatewayServerGroup::SetDefaultWeight(const int64_t& _defaultWeight)
 bool NativeGatewayServerGroup::DefaultWeightHasBeenSet() const
 {
     return m_defaultWeightHasBeenSet;
+}
+
+uint64_t NativeGatewayServerGroup::GetElasticNumber() const
+{
+    return m_elasticNumber;
+}
+
+void NativeGatewayServerGroup::SetElasticNumber(const uint64_t& _elasticNumber)
+{
+    m_elasticNumber = _elasticNumber;
+    m_elasticNumberHasBeenSet = true;
+}
+
+bool NativeGatewayServerGroup::ElasticNumberHasBeenSet() const
+{
+    return m_elasticNumberHasBeenSet;
+}
+
+bool NativeGatewayServerGroup::GetSupportTOA() const
+{
+    return m_supportTOA;
+}
+
+void NativeGatewayServerGroup::SetSupportTOA(const bool& _supportTOA)
+{
+    m_supportTOA = _supportTOA;
+    m_supportTOAHasBeenSet = true;
+}
+
+bool NativeGatewayServerGroup::SupportTOAHasBeenSet() const
+{
+    return m_supportTOAHasBeenSet;
+}
+
+bool NativeGatewayServerGroup::GetSupportIPV6() const
+{
+    return m_supportIPV6;
+}
+
+void NativeGatewayServerGroup::SetSupportIPV6(const bool& _supportIPV6)
+{
+    m_supportIPV6 = _supportIPV6;
+    m_supportIPV6HasBeenSet = true;
+}
+
+bool NativeGatewayServerGroup::SupportIPV6HasBeenSet() const
+{
+    return m_supportIPV6HasBeenSet;
 }
 

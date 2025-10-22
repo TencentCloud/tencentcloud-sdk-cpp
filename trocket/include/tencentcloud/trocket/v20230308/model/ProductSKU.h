@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -107,18 +107,14 @@ PLATINUM，铂金版
 
                     /**
                      * 获取TPS上限
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TpsLimit TPS上限
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTpsLimit() const;
 
                     /**
                      * 设置TPS上限
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tpsLimit TPS上限
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTpsLimit(const int64_t& _tpsLimit);
@@ -132,18 +128,14 @@ PLATINUM，铂金版
 
                     /**
                      * 获取弹性TPS上限
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScaledTpsLimit 弹性TPS上限
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScaledTpsLimit() const;
 
                     /**
                      * 设置弹性TPS上限
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scaledTpsLimit 弹性TPS上限
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScaledTpsLimit(const int64_t& _scaledTpsLimit);
@@ -157,18 +149,14 @@ PLATINUM，铂金版
 
                     /**
                      * 获取主题数量上限默认值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicNumLimit 主题数量上限默认值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTopicNumLimit() const;
 
                     /**
                      * 设置主题数量上限默认值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicNumLimit 主题数量上限默认值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicNumLimit(const int64_t& _topicNumLimit);
@@ -182,18 +170,14 @@ PLATINUM，铂金版
 
                     /**
                      * 获取消费组数量上限
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupNumLimit 消费组数量上限
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetGroupNumLimit() const;
 
                     /**
                      * 设置消费组数量上限
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupNumLimit 消费组数量上限
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupNumLimit(const int64_t& _groupNumLimit);
@@ -207,18 +191,14 @@ PLATINUM，铂金版
 
                     /**
                      * 获取默认消息保留时间，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefaultRetention 默认消息保留时间，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDefaultRetention() const;
 
                     /**
                      * 设置默认消息保留时间，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _defaultRetention 默认消息保留时间，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefaultRetention(const int64_t& _defaultRetention);
@@ -232,18 +212,14 @@ PLATINUM，铂金版
 
                     /**
                      * 获取可调整消息保留时间上限，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RetentionUpperLimit 可调整消息保留时间上限，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRetentionUpperLimit() const;
 
                     /**
                      * 设置可调整消息保留时间上限，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _retentionUpperLimit 可调整消息保留时间上限，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRetentionUpperLimit(const int64_t& _retentionUpperLimit);
@@ -257,18 +233,14 @@ PLATINUM，铂金版
 
                     /**
                      * 获取可调整消息保留时间下限，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RetentionLowerLimit 可调整消息保留时间下限，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRetentionLowerLimit() const;
 
                     /**
                      * 设置可调整消息保留时间下限，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _retentionLowerLimit 可调整消息保留时间下限，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRetentionLowerLimit(const int64_t& _retentionLowerLimit);
@@ -282,18 +254,14 @@ PLATINUM，铂金版
 
                     /**
                      * 获取延时消息最大时长，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxMessageDelay 延时消息最大时长，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxMessageDelay() const;
 
                     /**
                      * 设置延时消息最大时长，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxMessageDelay 延时消息最大时长，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxMessageDelay(const int64_t& _maxMessageDelay);
@@ -349,18 +317,14 @@ PLATINUM，铂金版
 
                     /**
                      * 获取主题数量上限默认最大值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicNumUpperLimit 主题数量上限默认最大值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTopicNumUpperLimit() const;
 
                     /**
                      * 设置主题数量上限默认最大值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicNumUpperLimit 主题数量上限默认最大值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicNumUpperLimit(const int64_t& _topicNumUpperLimit);
@@ -392,56 +356,48 @@ PLATINUM，铂金版
 
                     /**
                      * TPS上限
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_tpsLimit;
                     bool m_tpsLimitHasBeenSet;
 
                     /**
                      * 弹性TPS上限
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_scaledTpsLimit;
                     bool m_scaledTpsLimitHasBeenSet;
 
                     /**
                      * 主题数量上限默认值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_topicNumLimit;
                     bool m_topicNumLimitHasBeenSet;
 
                     /**
                      * 消费组数量上限
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_groupNumLimit;
                     bool m_groupNumLimitHasBeenSet;
 
                     /**
                      * 默认消息保留时间，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_defaultRetention;
                     bool m_defaultRetentionHasBeenSet;
 
                     /**
                      * 可调整消息保留时间上限，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_retentionUpperLimit;
                     bool m_retentionUpperLimitHasBeenSet;
 
                     /**
                      * 可调整消息保留时间下限，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_retentionLowerLimit;
                     bool m_retentionLowerLimitHasBeenSet;
 
                     /**
                      * 延时消息最大时长，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxMessageDelay;
                     bool m_maxMessageDelayHasBeenSet;
@@ -460,7 +416,6 @@ PLATINUM，铂金版
 
                     /**
                      * 主题数量上限默认最大值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_topicNumUpperLimit;
                     bool m_topicNumUpperLimitHasBeenSet;

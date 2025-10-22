@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -166,9 +166,11 @@ TDE：支持数据加密。
                     /**
                      * 获取数据库版本状态，包括：
 AVAILABLE：可用；
+UPGRADE_ONLY：不可创建，此版本仅可升级至高版本；
 DEPRECATED：已弃用。
                      * @return Status 数据库版本状态，包括：
 AVAILABLE：可用；
+UPGRADE_ONLY：不可创建，此版本仅可升级至高版本；
 DEPRECATED：已弃用。
                      * 
                      */
@@ -177,9 +179,11 @@ DEPRECATED：已弃用。
                     /**
                      * 设置数据库版本状态，包括：
 AVAILABLE：可用；
+UPGRADE_ONLY：不可创建，此版本仅可升级至高版本；
 DEPRECATED：已弃用。
                      * @param _status 数据库版本状态，包括：
 AVAILABLE：可用；
+UPGRADE_ONLY：不可创建，此版本仅可升级至高版本；
 DEPRECATED：已弃用。
                      * 
                      */
@@ -251,6 +255,7 @@ TDE：支持数据加密。
                     /**
                      * 数据库版本状态，包括：
 AVAILABLE：可用；
+UPGRADE_ONLY：不可创建，此版本仅可升级至高版本；
 DEPRECATED：已弃用。
                      */
                     std::string m_status;

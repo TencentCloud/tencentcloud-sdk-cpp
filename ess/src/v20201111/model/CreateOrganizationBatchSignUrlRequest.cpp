@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,9 @@ CreateOrganizationBatchSignUrlRequest::CreateOrganizationBatchSignUrlRequest() :
     m_userIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_mobileHasBeenSet(false),
-    m_recipientIdsHasBeenSet(false)
+    m_recipientIdsHasBeenSet(false),
+    m_flowGroupIdHasBeenSet(false),
+    m_canBatchRejectHasBeenSet(false)
 {
 }
 
@@ -106,6 +108,22 @@ string CreateOrganizationBatchSignUrlRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_flowGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_flowGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_canBatchRejectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CanBatchReject";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_canBatchReject, allocator);
     }
 
 
@@ -226,6 +244,38 @@ void CreateOrganizationBatchSignUrlRequest::SetRecipientIds(const vector<string>
 bool CreateOrganizationBatchSignUrlRequest::RecipientIdsHasBeenSet() const
 {
     return m_recipientIdsHasBeenSet;
+}
+
+string CreateOrganizationBatchSignUrlRequest::GetFlowGroupId() const
+{
+    return m_flowGroupId;
+}
+
+void CreateOrganizationBatchSignUrlRequest::SetFlowGroupId(const string& _flowGroupId)
+{
+    m_flowGroupId = _flowGroupId;
+    m_flowGroupIdHasBeenSet = true;
+}
+
+bool CreateOrganizationBatchSignUrlRequest::FlowGroupIdHasBeenSet() const
+{
+    return m_flowGroupIdHasBeenSet;
+}
+
+bool CreateOrganizationBatchSignUrlRequest::GetCanBatchReject() const
+{
+    return m_canBatchReject;
+}
+
+void CreateOrganizationBatchSignUrlRequest::SetCanBatchReject(const bool& _canBatchReject)
+{
+    m_canBatchReject = _canBatchReject;
+    m_canBatchRejectHasBeenSet = true;
+}
+
+bool CreateOrganizationBatchSignUrlRequest::CanBatchRejectHasBeenSet() const
+{
+    return m_canBatchRejectHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取es 索引成员名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ColumnName es 索引成员名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetColumnName() const;
 
                     /**
                      * 设置es 索引成员名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _columnName es 索引成员名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetColumnName(const std::string& _columnName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消息字段名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JsonKey 消息字段名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJsonKey() const;
 
                     /**
                      * 设置消息字段名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _jsonKey 消息字段名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJsonKey(const std::string& _jsonKey);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * es 索引成员名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_columnName;
                     bool m_columnNameHasBeenSet;
 
                     /**
                      * 消息字段名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_jsonKey;
                     bool m_jsonKeyHasBeenSet;

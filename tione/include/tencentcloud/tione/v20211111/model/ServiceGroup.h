@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tione/v20211111/model/Service.h>
 #include <tencentcloud/tione/v20211111/model/Tag.h>
+#include <tencentcloud/tione/v20211111/model/AuthToken.h>
 
 
 namespace TencentCloud
@@ -542,6 +543,132 @@ UPDATING 更新中
                      */
                     bool AvailableReplicasCountHasBeenSet() const;
 
+                    /**
+                     * 获取服务组的subuin
+                     * @return SubUin 服务组的subuin
+                     * 
+                     */
+                    std::string GetSubUin() const;
+
+                    /**
+                     * 设置服务组的subuin
+                     * @param _subUin 服务组的subuin
+                     * 
+                     */
+                    void SetSubUin(const std::string& _subUin);
+
+                    /**
+                     * 判断参数 SubUin 是否已赋值
+                     * @return SubUin 是否已赋值
+                     * 
+                     */
+                    bool SubUinHasBeenSet() const;
+
+                    /**
+                     * 获取服务组的app_id
+                     * @return AppId 服务组的app_id
+                     * 
+                     */
+                    int64_t GetAppId() const;
+
+                    /**
+                     * 设置服务组的app_id
+                     * @param _appId 服务组的app_id
+                     * 
+                     */
+                    void SetAppId(const int64_t& _appId);
+
+                    /**
+                     * 判断参数 AppId 是否已赋值
+                     * @return AppId 是否已赋值
+                     * 
+                     */
+                    bool AppIdHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启鉴权
+                     * @return AuthorizationEnable 是否开启鉴权
+                     * 
+                     */
+                    bool GetAuthorizationEnable() const;
+
+                    /**
+                     * 设置是否开启鉴权
+                     * @param _authorizationEnable 是否开启鉴权
+                     * 
+                     */
+                    void SetAuthorizationEnable(const bool& _authorizationEnable);
+
+                    /**
+                     * 判断参数 AuthorizationEnable 是否已赋值
+                     * @return AuthorizationEnable 是否已赋值
+                     * 
+                     */
+                    bool AuthorizationEnableHasBeenSet() const;
+
+                    /**
+                     * 获取限流鉴权 token 列表
+                     * @return AuthTokens 限流鉴权 token 列表
+                     * 
+                     */
+                    std::vector<AuthToken> GetAuthTokens() const;
+
+                    /**
+                     * 设置限流鉴权 token 列表
+                     * @param _authTokens 限流鉴权 token 列表
+                     * 
+                     */
+                    void SetAuthTokens(const std::vector<AuthToken>& _authTokens);
+
+                    /**
+                     * 判断参数 AuthTokens 是否已赋值
+                     * @return AuthTokens 是否已赋值
+                     * 
+                     */
+                    bool AuthTokensHasBeenSet() const;
+
+                    /**
+                     * 获取用于监控的创建来源字段
+                     * @return MonitorSource 用于监控的创建来源字段
+                     * 
+                     */
+                    std::string GetMonitorSource() const;
+
+                    /**
+                     * 设置用于监控的创建来源字段
+                     * @param _monitorSource 用于监控的创建来源字段
+                     * 
+                     */
+                    void SetMonitorSource(const std::string& _monitorSource);
+
+                    /**
+                     * 判断参数 MonitorSource 是否已赋值
+                     * @return MonitorSource 是否已赋值
+                     * 
+                     */
+                    bool MonitorSourceHasBeenSet() const;
+
+                    /**
+                     * 获取子用户的 nickname
+                     * @return SubUinName 子用户的 nickname
+                     * 
+                     */
+                    std::string GetSubUinName() const;
+
+                    /**
+                     * 设置子用户的 nickname
+                     * @param _subUinName 子用户的 nickname
+                     * 
+                     */
+                    void SetSubUinName(const std::string& _subUinName);
+
+                    /**
+                     * 判断参数 SubUinName 是否已赋值
+                     * @return SubUinName 是否已赋值
+                     * 
+                     */
+                    bool SubUinNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -680,6 +807,42 @@ UPDATING 更新中
                      */
                     uint64_t m_availableReplicasCount;
                     bool m_availableReplicasCountHasBeenSet;
+
+                    /**
+                     * 服务组的subuin
+                     */
+                    std::string m_subUin;
+                    bool m_subUinHasBeenSet;
+
+                    /**
+                     * 服务组的app_id
+                     */
+                    int64_t m_appId;
+                    bool m_appIdHasBeenSet;
+
+                    /**
+                     * 是否开启鉴权
+                     */
+                    bool m_authorizationEnable;
+                    bool m_authorizationEnableHasBeenSet;
+
+                    /**
+                     * 限流鉴权 token 列表
+                     */
+                    std::vector<AuthToken> m_authTokens;
+                    bool m_authTokensHasBeenSet;
+
+                    /**
+                     * 用于监控的创建来源字段
+                     */
+                    std::string m_monitorSource;
+                    bool m_monitorSourceHasBeenSet;
+
+                    /**
+                     * 子用户的 nickname
+                     */
+                    std::string m_subUinName;
+                    bool m_subUinNameHasBeenSet;
 
                 };
             }

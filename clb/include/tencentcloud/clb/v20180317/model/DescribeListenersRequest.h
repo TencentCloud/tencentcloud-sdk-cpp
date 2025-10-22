@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取负载均衡实例 ID。
-                     * @return LoadBalancerId 负载均衡实例 ID。
+                     * 获取负载均衡实例 ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/api/214/30685) 接口获取。
+                     * @return LoadBalancerId 负载均衡实例 ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/api/214/30685) 接口获取。
                      * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
-                     * 设置负载均衡实例 ID。
-                     * @param _loadBalancerId 负载均衡实例 ID。
+                     * 设置负载均衡实例 ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/api/214/30685) 接口获取。
+                     * @param _loadBalancerId 负载均衡实例 ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/api/214/30685) 接口获取。
                      * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
-                     * 获取要查询的负载均衡监听器 ID 数组，最大为100个。
-                     * @return ListenerIds 要查询的负载均衡监听器 ID 数组，最大为100个。
+                     * 获取要查询的负载均衡监听器 ID 数组，最大为100个，可以通过 [DescribeListeners](https://cloud.tencent.com/document/api/214/30686) 接口获取。
+                     * @return ListenerIds 要查询的负载均衡监听器 ID 数组，最大为100个，可以通过 [DescribeListeners](https://cloud.tencent.com/document/api/214/30686) 接口获取。
                      * 
                      */
                     std::vector<std::string> GetListenerIds() const;
 
                     /**
-                     * 设置要查询的负载均衡监听器 ID 数组，最大为100个。
-                     * @param _listenerIds 要查询的负载均衡监听器 ID 数组，最大为100个。
+                     * 设置要查询的负载均衡监听器 ID 数组，最大为100个，可以通过 [DescribeListeners](https://cloud.tencent.com/document/api/214/30686) 接口获取。
+                     * @param _listenerIds 要查询的负载均衡监听器 ID 数组，最大为100个，可以通过 [DescribeListeners](https://cloud.tencent.com/document/api/214/30686) 接口获取。
                      * 
                      */
                     void SetListenerIds(const std::vector<std::string>& _listenerIds);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取要查询的监听器的端口。
-                     * @return Port 要查询的监听器的端口。
+                     * 获取要查询的监听器的端口，端口范围：1-65535
+                     * @return Port 要查询的监听器的端口，端口范围：1-65535
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
-                     * 设置要查询的监听器的端口。
-                     * @param _port 要查询的监听器的端口。
+                     * 设置要查询的监听器的端口，端口范围：1-65535
+                     * @param _port 要查询的监听器的端口，端口范围：1-65535
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -129,13 +129,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 负载均衡实例 ID。
+                     * 负载均衡实例 ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/api/214/30685) 接口获取。
                      */
                     std::string m_loadBalancerId;
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
-                     * 要查询的负载均衡监听器 ID 数组，最大为100个。
+                     * 要查询的负载均衡监听器 ID 数组，最大为100个，可以通过 [DescribeListeners](https://cloud.tencent.com/document/api/214/30686) 接口获取。
                      */
                     std::vector<std::string> m_listenerIds;
                     bool m_listenerIdsHasBeenSet;
@@ -147,7 +147,7 @@ namespace TencentCloud
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 要查询的监听器的端口。
+                     * 要查询的监听器的端口，端口范围：1-65535
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;

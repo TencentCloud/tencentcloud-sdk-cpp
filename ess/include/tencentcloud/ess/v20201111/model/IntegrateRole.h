@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取角色id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoleId 角色id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRoleId() const;
 
                     /**
                      * 设置角色id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _roleId 角色id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRoleId(const std::string& _roleId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取角色名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoleName 角色名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRoleName() const;
 
                     /**
                      * 设置角色名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _roleName 角色名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRoleName(const std::string& _roleName);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取角色状态，1-启用，2-禁用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoleStatus 角色状态，1-启用，2-禁用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRoleStatus() const;
 
                     /**
                      * 设置角色状态，1-启用，2-禁用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _roleStatus 角色状态，1-启用，2-禁用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRoleStatus(const uint64_t& _roleStatus);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否是集团角色，true-是，false-否
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsGroupRole 是否是集团角色，true-是，false-否
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsGroupRole() const;
 
                     /**
                      * 设置是否是集团角色，true-是，false-否
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isGroupRole 是否是集团角色，true-是，false-否
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsGroupRole(const bool& _isGroupRole);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取管辖的子企业列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubOrgIdList 管辖的子企业列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSubOrgIdList() const;
 
                     /**
                      * 设置管辖的子企业列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subOrgIdList 管辖的子企业列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubOrgIdList(const std::vector<std::string>& _subOrgIdList);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取权限树
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PermissionGroups 权限树
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PermissionGroup> GetPermissionGroups() const;
 
                     /**
                      * 设置权限树
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _permissionGroups 权限树
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPermissionGroups(const std::vector<PermissionGroup>& _permissionGroups);
@@ -201,42 +177,36 @@ namespace TencentCloud
 
                     /**
                      * 角色id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_roleId;
                     bool m_roleIdHasBeenSet;
 
                     /**
                      * 角色名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_roleName;
                     bool m_roleNameHasBeenSet;
 
                     /**
                      * 角色状态，1-启用，2-禁用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_roleStatus;
                     bool m_roleStatusHasBeenSet;
 
                     /**
                      * 是否是集团角色，true-是，false-否
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isGroupRole;
                     bool m_isGroupRoleHasBeenSet;
 
                     /**
                      * 管辖的子企业列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_subOrgIdList;
                     bool m_subOrgIdListHasBeenSet;
 
                     /**
                      * 权限树
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PermissionGroup> m_permissionGroups;
                     bool m_permissionGroupsHasBeenSet;

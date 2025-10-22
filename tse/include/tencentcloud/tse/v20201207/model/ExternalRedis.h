@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取redis ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RedisHost redis ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRedisHost() const;
 
                     /**
                      * 设置redis ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _redisHost redis ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRedisHost(const std::string& _redisHost);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取redis密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RedisPassword redis密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRedisPassword() const;
 
                     /**
                      * 设置redis密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _redisPassword redis密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRedisPassword(const std::string& _redisPassword);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取redis端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RedisPort redis端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRedisPort() const;
 
                     /**
                      * 设置redis端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _redisPort redis端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRedisPort(const int64_t& _redisPort);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取超时时间  ms
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RedisTimeout 超时时间  ms
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRedisTimeout() const;
 
                     /**
                      * 设置超时时间  ms
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _redisTimeout 超时时间  ms
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRedisTimeout(const int64_t& _redisTimeout);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * redis ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_redisHost;
                     bool m_redisHostHasBeenSet;
 
                     /**
                      * redis密码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_redisPassword;
                     bool m_redisPasswordHasBeenSet;
 
                     /**
                      * redis端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_redisPort;
                     bool m_redisPortHasBeenSet;
 
                     /**
                      * 超时时间  ms
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_redisTimeout;
                     bool m_redisTimeoutHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -132,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取同步的集团账号目标账号的类型，ManagerUin管理账号;MemberUin成员账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetType 同步的集团账号目标账号的类型，ManagerUin管理账号;MemberUin成员账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTargetType() const;
 
                     /**
                      * 设置同步的集团账号目标账号的类型，ManagerUin管理账号;MemberUin成员账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _targetType 同步的集团账号目标账号的类型，ManagerUin管理账号;MemberUin成员账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTargetType(const std::string& _targetType);
@@ -157,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskType 任务类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskType() const;
 
                     /**
                      * 设置任务类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskType 任务类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskType(const std::string& _taskType);
@@ -182,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务状态：InProgress: 进行中，Failed: 失败 3:Success: 成功
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskStatus 任务状态：InProgress: 进行中，Failed: 失败 3:Success: 成功
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskStatus() const;
 
                     /**
                      * 设置任务状态：InProgress: 进行中，Failed: 失败 3:Success: 成功
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskStatus 任务状态：InProgress: 进行中，Failed: 失败 3:Success: 成功
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskStatus(const std::string& _taskStatus);
@@ -233,21 +221,18 @@ namespace TencentCloud
 
                     /**
                      * 同步的集团账号目标账号的类型，ManagerUin管理账号;MemberUin成员账号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_targetType;
                     bool m_targetTypeHasBeenSet;
 
                     /**
                      * 任务类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
                      * 任务状态：InProgress: 进行中，Failed: 失败 3:Success: 成功
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskStatus;
                     bool m_taskStatusHasBeenSet;

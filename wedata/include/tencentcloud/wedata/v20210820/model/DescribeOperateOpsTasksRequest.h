@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -568,6 +568,90 @@ namespace TencentCloud
                      */
                     bool RequestResourceTypesHasBeenSet() const;
 
+                    /**
+                     * 获取项目ID列表
+                     * @return ProjectIds 项目ID列表
+                     * 
+                     */
+                    std::vector<std::string> GetProjectIds() const;
+
+                    /**
+                     * 设置项目ID列表
+                     * @param _projectIds 项目ID列表
+                     * 
+                     */
+                    void SetProjectIds(const std::vector<std::string>& _projectIds);
+
+                    /**
+                     * 判断参数 ProjectIds 是否已赋值
+                     * @return ProjectIds 是否已赋值
+                     * 
+                     */
+                    bool ProjectIdsHasBeenSet() const;
+
+                    /**
+                     * 获取黑名单任务ID列表，传了该值在筛选的时候会将列表中的任务ID剔除
+                     * @return BlackTaskIdList 黑名单任务ID列表，传了该值在筛选的时候会将列表中的任务ID剔除
+                     * 
+                     */
+                    std::vector<std::string> GetBlackTaskIdList() const;
+
+                    /**
+                     * 设置黑名单任务ID列表，传了该值在筛选的时候会将列表中的任务ID剔除
+                     * @param _blackTaskIdList 黑名单任务ID列表，传了该值在筛选的时候会将列表中的任务ID剔除
+                     * 
+                     */
+                    void SetBlackTaskIdList(const std::vector<std::string>& _blackTaskIdList);
+
+                    /**
+                     * 判断参数 BlackTaskIdList 是否已赋值
+                     * @return BlackTaskIdList 是否已赋值
+                     * 
+                     */
+                    bool BlackTaskIdListHasBeenSet() const;
+
+                    /**
+                     * 获取时区
+                     * @return ScheduleTimeZone 时区
+                     * 
+                     */
+                    std::string GetScheduleTimeZone() const;
+
+                    /**
+                     * 设置时区
+                     * @param _scheduleTimeZone 时区
+                     * 
+                     */
+                    void SetScheduleTimeZone(const std::string& _scheduleTimeZone);
+
+                    /**
+                     * 判断参数 ScheduleTimeZone 是否已赋值
+                     * @return ScheduleTimeZone 是否已赋值
+                     * 
+                     */
+                    bool ScheduleTimeZoneHasBeenSet() const;
+
+                    /**
+                     * 获取根据任务优先级筛选
+                     * @return RunPriorityList 根据任务优先级筛选
+                     * 
+                     */
+                    std::vector<int64_t> GetRunPriorityList() const;
+
+                    /**
+                     * 设置根据任务优先级筛选
+                     * @param _runPriorityList 根据任务优先级筛选
+                     * 
+                     */
+                    void SetRunPriorityList(const std::vector<int64_t>& _runPriorityList);
+
+                    /**
+                     * 判断参数 RunPriorityList 是否已赋值
+                     * @return RunPriorityList 是否已赋值
+                     * 
+                     */
+                    bool RunPriorityListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -719,6 +803,30 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_requestResourceTypes;
                     bool m_requestResourceTypesHasBeenSet;
+
+                    /**
+                     * 项目ID列表
+                     */
+                    std::vector<std::string> m_projectIds;
+                    bool m_projectIdsHasBeenSet;
+
+                    /**
+                     * 黑名单任务ID列表，传了该值在筛选的时候会将列表中的任务ID剔除
+                     */
+                    std::vector<std::string> m_blackTaskIdList;
+                    bool m_blackTaskIdListHasBeenSet;
+
+                    /**
+                     * 时区
+                     */
+                    std::string m_scheduleTimeZone;
+                    bool m_scheduleTimeZoneHasBeenSet;
+
+                    /**
+                     * 根据任务优先级筛选
+                     */
+                    std::vector<int64_t> m_runPriorityList;
+                    bool m_runPriorityListHasBeenSet;
 
                 };
             }

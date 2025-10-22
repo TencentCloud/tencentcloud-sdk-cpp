@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,7 +43,9 @@ ClbObject::ClbObject() :
     m_botStatusHasBeenSet(false),
     m_apiStatusHasBeenSet(false),
     m_objectFlowModeHasBeenSet(false),
-    m_numericalVpcIdHasBeenSet(false)
+    m_numericalVpcIdHasBeenSet(false),
+    m_modifyTimeHasBeenSet(false),
+    m_addTimeHasBeenSet(false)
 {
 }
 
@@ -294,6 +296,26 @@ CoreInternalOutcome ClbObject::Deserialize(const rapidjson::Value &value)
         m_numericalVpcIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ModifyTime") && !value["ModifyTime"].IsNull())
+    {
+        if (!value["ModifyTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClbObject.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modifyTime = string(value["ModifyTime"].GetString());
+        m_modifyTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AddTime") && !value["AddTime"].IsNull())
+    {
+        if (!value["AddTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClbObject.AddTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_addTime = string(value["AddTime"].GetString());
+        m_addTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -503,6 +525,22 @@ void ClbObject::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "NumericalVpcId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_numericalVpcId, allocator);
+    }
+
+    if (m_modifyTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modifyTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_addTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_addTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -874,5 +912,37 @@ void ClbObject::SetNumericalVpcId(const int64_t& _numericalVpcId)
 bool ClbObject::NumericalVpcIdHasBeenSet() const
 {
     return m_numericalVpcIdHasBeenSet;
+}
+
+string ClbObject::GetModifyTime() const
+{
+    return m_modifyTime;
+}
+
+void ClbObject::SetModifyTime(const string& _modifyTime)
+{
+    m_modifyTime = _modifyTime;
+    m_modifyTimeHasBeenSet = true;
+}
+
+bool ClbObject::ModifyTimeHasBeenSet() const
+{
+    return m_modifyTimeHasBeenSet;
+}
+
+string ClbObject::GetAddTime() const
+{
+    return m_addTime;
+}
+
+void ClbObject::SetAddTime(const string& _addTime)
+{
+    m_addTime = _addTime;
+    m_addTimeHasBeenSet = true;
+}
+
+bool ClbObject::AddTimeHasBeenSet() const
+{
+    return m_addTimeHasBeenSet;
 }
 

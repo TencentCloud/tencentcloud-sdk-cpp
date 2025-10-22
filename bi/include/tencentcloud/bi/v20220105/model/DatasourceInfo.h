@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -908,6 +908,131 @@ namespace TencentCloud
                      */
                     bool DbTypeNameHasBeenSet() const;
 
+                    /**
+                     * 获取开启vpc
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UseVPC 开启vpc
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetUseVPC() const;
+
+                    /**
+                     * 设置开启vpc
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _useVPC 开启vpc
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUseVPC(const bool& _useVPC);
+
+                    /**
+                     * 判断参数 UseVPC 是否已赋值
+                     * @return UseVPC 是否已赋值
+                     * 
+                     */
+                    bool UseVPCHasBeenSet() const;
+
+                    /**
+                     * 获取所属人ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Owner 所属人ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetOwner() const;
+
+                    /**
+                     * 设置所属人ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _owner 所属人ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOwner(const std::string& _owner);
+
+                    /**
+                     * 判断参数 Owner 是否已赋值
+                     * @return Owner 是否已赋值
+                     * 
+                     */
+                    bool OwnerHasBeenSet() const;
+
+                    /**
+                     * 获取所属人名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OwnerName 所属人名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetOwnerName() const;
+
+                    /**
+                     * 设置所属人名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ownerName 所属人名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOwnerName(const std::string& _ownerName);
+
+                    /**
+                     * 判断参数 OwnerName 是否已赋值
+                     * @return OwnerName 是否已赋值
+                     * 
+                     */
+                    bool OwnerNameHasBeenSet() const;
+
+                    /**
+                     * 获取数据库schema
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Schema 数据库schema
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSchema() const;
+
+                    /**
+                     * 设置数据库schema
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _schema 数据库schema
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSchema(const std::string& _schema);
+
+                    /**
+                     * 判断参数 Schema 是否已赋值
+                     * @return Schema 是否已赋值
+                     * 
+                     */
+                    bool SchemaHasBeenSet() const;
+
+                    /**
+                     * 获取数据库版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DbVersion 数据库版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDbVersion() const;
+
+                    /**
+                     * 设置数据库版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dbVersion 数据库版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDbVersion(const std::string& _dbVersion);
+
+                    /**
+                     * 判断参数 DbVersion 是否已赋值
+                     * @return DbVersion 是否已赋值
+                     * 
+                     */
+                    bool DbVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1151,6 +1276,41 @@ namespace TencentCloud
                      */
                     std::string m_dbTypeName;
                     bool m_dbTypeNameHasBeenSet;
+
+                    /**
+                     * 开启vpc
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_useVPC;
+                    bool m_useVPCHasBeenSet;
+
+                    /**
+                     * 所属人ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_owner;
+                    bool m_ownerHasBeenSet;
+
+                    /**
+                     * 所属人名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ownerName;
+                    bool m_ownerNameHasBeenSet;
+
+                    /**
+                     * 数据库schema
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_schema;
+                    bool m_schemaHasBeenSet;
+
+                    /**
+                     * 数据库版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dbVersion;
+                    bool m_dbVersionHasBeenSet;
 
                 };
             }

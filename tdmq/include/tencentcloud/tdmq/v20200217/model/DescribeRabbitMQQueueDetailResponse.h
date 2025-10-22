@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Vhost参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VirtualHost Vhost参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVirtualHost() const;
@@ -77,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取队列名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QueueName 队列名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQueueName() const;
@@ -93,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取队列类型,取值classic或quorum
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QueueType 队列类型,取值classic或quorum
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQueueType() const;
@@ -125,9 +117,7 @@ namespace TencentCloud
 
                     /**
                      * 获取持久标记
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Durable 持久标记
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetDurable() const;
@@ -397,9 +387,7 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间戳,单位秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间戳,单位秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCreateTime() const;
@@ -477,9 +465,7 @@ namespace TencentCloud
 
                     /**
                      * 获取是否为独占队列
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Exclusive 是否为独占队列
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetExclusive() const;
@@ -509,9 +495,7 @@ namespace TencentCloud
 
                     /**
                      * 获取扩展参数 key-value
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Arguments 扩展参数 key-value
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetArguments() const;
@@ -523,32 +507,56 @@ namespace TencentCloud
                      */
                     bool ArgumentsHasBeenSet() const;
 
+                    /**
+                     * 获取创建时间时间戳
+                     * @return CreateTs 创建时间时间戳
+                     * 
+                     */
+                    uint64_t GetCreateTs() const;
+
+                    /**
+                     * 判断参数 CreateTs 是否已赋值
+                     * @return CreateTs 是否已赋值
+                     * 
+                     */
+                    bool CreateTsHasBeenSet() const;
+
+                    /**
+                     * 获取修改时间时间戳
+                     * @return ModifyTs 修改时间时间戳
+                     * 
+                     */
+                    uint64_t GetModifyTs() const;
+
+                    /**
+                     * 判断参数 ModifyTs 是否已赋值
+                     * @return ModifyTs 是否已赋值
+                     * 
+                     */
+                    bool ModifyTsHasBeenSet() const;
+
                 private:
 
                     /**
                      * 实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * Vhost参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_virtualHost;
                     bool m_virtualHostHasBeenSet;
 
                     /**
                      * 队列名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_queueName;
                     bool m_queueNameHasBeenSet;
 
                     /**
                      * 队列类型,取值classic或quorum
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_queueType;
                     bool m_queueTypeHasBeenSet;
@@ -562,7 +570,6 @@ namespace TencentCloud
 
                     /**
                      * 持久标记
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_durable;
                     bool m_durableHasBeenSet;
@@ -681,7 +688,6 @@ namespace TencentCloud
 
                     /**
                      * 创建时间戳,单位秒
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_createTime;
                     bool m_createTimeHasBeenSet;
@@ -716,7 +722,6 @@ namespace TencentCloud
 
                     /**
                      * 是否为独占队列
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_exclusive;
                     bool m_exclusiveHasBeenSet;
@@ -730,10 +735,21 @@ namespace TencentCloud
 
                     /**
                      * 扩展参数 key-value
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_arguments;
                     bool m_argumentsHasBeenSet;
+
+                    /**
+                     * 创建时间时间戳
+                     */
+                    uint64_t m_createTs;
+                    bool m_createTsHasBeenSet;
+
+                    /**
+                     * 修改时间时间戳
+                     */
+                    uint64_t m_modifyTs;
+                    bool m_modifyTsHasBeenSet;
 
                 };
             }

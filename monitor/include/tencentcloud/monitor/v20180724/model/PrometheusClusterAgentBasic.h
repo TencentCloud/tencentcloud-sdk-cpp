@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取集群类型。可填入tke、eks、tkeedge、tdcc，分别代表标准集群、弹性集群、边缘集群、注册集群
-                     * @return ClusterType 集群类型。可填入tke、eks、tkeedge、tdcc，分别代表标准集群、弹性集群、边缘集群、注册集群
+                     * 获取集群类型。可填入tke、eks、tkeedge、tdcc、external，分别代表标准集群、弹性集群、边缘集群、注册集群 和外部集群
+                     * @return ClusterType 集群类型。可填入tke、eks、tkeedge、tdcc、external，分别代表标准集群、弹性集群、边缘集群、注册集群 和外部集群
                      * 
                      */
                     std::string GetClusterType() const;
 
                     /**
-                     * 设置集群类型。可填入tke、eks、tkeedge、tdcc，分别代表标准集群、弹性集群、边缘集群、注册集群
-                     * @param _clusterType 集群类型。可填入tke、eks、tkeedge、tdcc，分别代表标准集群、弹性集群、边缘集群、注册集群
+                     * 设置集群类型。可填入tke、eks、tkeedge、tdcc、external，分别代表标准集群、弹性集群、边缘集群、注册集群 和外部集群
+                     * @param _clusterType 集群类型。可填入tke、eks、tkeedge、tdcc、external，分别代表标准集群、弹性集群、边缘集群、注册集群 和外部集群
                      * 
                      */
                     void SetClusterType(const std::string& _clusterType);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取集群 ID
+                     * @return ClusterId 集群 ID
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置集群 ID
+                     * @param _clusterId 集群 ID
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取是否开启公网CLB
-                     * @return EnableExternal 是否开启公网CLB
+                     * 获取是否开启公网 CLB
+                     * @return EnableExternal 是否开启公网 CLB
                      * 
                      */
                     bool GetEnableExternal() const;
 
                     /**
-                     * 设置是否开启公网CLB
-                     * @param _enableExternal 是否开启公网CLB
+                     * 设置是否开启公网 CLB
+                     * @param _enableExternal 是否开启公网 CLB
                      * 
                      */
                     void SetEnableExternal(const bool& _enableExternal);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool EnableExternalHasBeenSet() const;
 
                     /**
-                     * 获取集群内部署组件的pod配置
-                     * @return InClusterPodConfig 集群内部署组件的pod配置
+                     * 获取集群内部署组件的pod 配置
+                     * @return InClusterPodConfig 集群内部署组件的pod 配置
                      * 
                      */
                     PrometheusClusterAgentPodConfig GetInClusterPodConfig() const;
 
                     /**
-                     * 设置集群内部署组件的pod配置
-                     * @param _inClusterPodConfig 集群内部署组件的pod配置
+                     * 设置集群内部署组件的pod 配置
+                     * @param _inClusterPodConfig 集群内部署组件的pod 配置
                      * 
                      */
                     void SetInClusterPodConfig(const PrometheusClusterAgentPodConfig& _inClusterPodConfig);
@@ -175,15 +175,15 @@ namespace TencentCloud
                     bool ExternalLabelsHasBeenSet() const;
 
                     /**
-                     * 获取是否安装默认采集配置
-                     * @return NotInstallBasicScrape 是否安装默认采集配置
+                     * 获取是否安装默认采集 exporter 和采集配置
+                     * @return NotInstallBasicScrape 是否安装默认采集 exporter 和采集配置
                      * 
                      */
                     bool GetNotInstallBasicScrape() const;
 
                     /**
-                     * 设置是否安装默认采集配置
-                     * @param _notInstallBasicScrape 是否安装默认采集配置
+                     * 设置是否安装默认采集 exporter 和采集配置
+                     * @param _notInstallBasicScrape 是否安装默认采集 exporter 和采集配置
                      * 
                      */
                     void SetNotInstallBasicScrape(const bool& _notInstallBasicScrape);
@@ -196,15 +196,15 @@ namespace TencentCloud
                     bool NotInstallBasicScrapeHasBeenSet() const;
 
                     /**
-                     * 获取是否采集指标，true代表drop所有指标，false代表采集默认指标
-                     * @return NotScrape 是否采集指标，true代表drop所有指标，false代表采集默认指标
+                     * 获取是否安装采集配置，true 只安装采集 exporter 不会安装采集配置，false 会同时安装采集配置
+                     * @return NotScrape 是否安装采集配置，true 只安装采集 exporter 不会安装采集配置，false 会同时安装采集配置
                      * 
                      */
                     bool GetNotScrape() const;
 
                     /**
-                     * 设置是否采集指标，true代表drop所有指标，false代表采集默认指标
-                     * @param _notScrape 是否采集指标，true代表drop所有指标，false代表采集默认指标
+                     * 设置是否安装采集配置，true 只安装采集 exporter 不会安装采集配置，false 会同时安装采集配置
+                     * @param _notScrape 是否安装采集配置，true 只安装采集 exporter 不会安装采集配置，false 会同时安装采集配置
                      * 
                      */
                     void SetNotScrape(const bool& _notScrape);
@@ -215,6 +215,27 @@ namespace TencentCloud
                      * 
                      */
                     bool NotScrapeHasBeenSet() const;
+
+                    /**
+                     * 获取是否丢弃所有指标，true 代表丢弃所有指标，false 代表采集默认指标
+                     * @return DropAll 是否丢弃所有指标，true 代表丢弃所有指标，false 代表采集默认指标
+                     * 
+                     */
+                    bool GetDropAll() const;
+
+                    /**
+                     * 设置是否丢弃所有指标，true 代表丢弃所有指标，false 代表采集默认指标
+                     * @param _dropAll 是否丢弃所有指标，true 代表丢弃所有指标，false 代表采集默认指标
+                     * 
+                     */
+                    void SetDropAll(const bool& _dropAll);
+
+                    /**
+                     * 判断参数 DropAll 是否已赋值
+                     * @return DropAll 是否已赋值
+                     * 
+                     */
+                    bool DropAllHasBeenSet() const;
 
                     /**
                      * 获取是否开启默认预聚合规则
@@ -246,25 +267,25 @@ namespace TencentCloud
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 集群类型。可填入tke、eks、tkeedge、tdcc，分别代表标准集群、弹性集群、边缘集群、注册集群
+                     * 集群类型。可填入tke、eks、tkeedge、tdcc、external，分别代表标准集群、弹性集群、边缘集群、注册集群 和外部集群
                      */
                     std::string m_clusterType;
                     bool m_clusterTypeHasBeenSet;
 
                     /**
-                     * 集群ID
+                     * 集群 ID
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 是否开启公网CLB
+                     * 是否开启公网 CLB
                      */
                     bool m_enableExternal;
                     bool m_enableExternalHasBeenSet;
 
                     /**
-                     * 集群内部署组件的pod配置
+                     * 集群内部署组件的pod 配置
                      */
                     PrometheusClusterAgentPodConfig m_inClusterPodConfig;
                     bool m_inClusterPodConfigHasBeenSet;
@@ -276,16 +297,22 @@ namespace TencentCloud
                     bool m_externalLabelsHasBeenSet;
 
                     /**
-                     * 是否安装默认采集配置
+                     * 是否安装默认采集 exporter 和采集配置
                      */
                     bool m_notInstallBasicScrape;
                     bool m_notInstallBasicScrapeHasBeenSet;
 
                     /**
-                     * 是否采集指标，true代表drop所有指标，false代表采集默认指标
+                     * 是否安装采集配置，true 只安装采集 exporter 不会安装采集配置，false 会同时安装采集配置
                      */
                     bool m_notScrape;
                     bool m_notScrapeHasBeenSet;
+
+                    /**
+                     * 是否丢弃所有指标，true 代表丢弃所有指标，false 代表采集默认指标
+                     */
+                    bool m_dropAll;
+                    bool m_dropAllHasBeenSet;
 
                     /**
                      * 是否开启默认预聚合规则

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tdmq/v20200217/model/DetailedRolePerm.h>
 
 
 namespace TencentCloud
@@ -126,6 +127,27 @@ namespace TencentCloud
                      */
                     bool ClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取Topic&Group维度权限配置
+                     * @return DetailedPerms Topic&Group维度权限配置
+                     * 
+                     */
+                    std::vector<DetailedRolePerm> GetDetailedPerms() const;
+
+                    /**
+                     * 设置Topic&Group维度权限配置
+                     * @param _detailedPerms Topic&Group维度权限配置
+                     * 
+                     */
+                    void SetDetailedPerms(const std::vector<DetailedRolePerm>& _detailedPerms);
+
+                    /**
+                     * 判断参数 DetailedPerms 是否已赋值
+                     * @return DetailedPerms 是否已赋值
+                     * 
+                     */
+                    bool DetailedPermsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +173,12 @@ namespace TencentCloud
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * Topic&Group维度权限配置
+                     */
+                    std::vector<DetailedRolePerm> m_detailedPerms;
+                    bool m_detailedPermsHasBeenSet;
 
                 };
             }

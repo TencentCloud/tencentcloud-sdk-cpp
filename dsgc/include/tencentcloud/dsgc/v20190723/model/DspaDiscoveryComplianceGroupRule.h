@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感数据识别规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleId 敏感数据识别规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRuleId() const;
 
                     /**
                      * 设置敏感数据识别规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleId 敏感数据识别规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleId(const int64_t& _ruleId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感数据识别规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleName 敏感数据识别规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置敏感数据识别规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleName 敏感数据识别规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleName(const std::string& _ruleName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感数据分类ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CategoryId 敏感数据分类ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCategoryId() const;
 
                     /**
                      * 设置敏感数据分类ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _categoryId 敏感数据分类ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCategoryId(const int64_t& _categoryId);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感数据分级ID, 目前只支持高、中、低三级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LevelId 敏感数据分级ID, 目前只支持高、中、低三级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLevelId() const;
 
                     /**
                      * 设置敏感数据分级ID, 目前只支持高、中、低三级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _levelId 敏感数据分级ID, 目前只支持高、中、低三级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevelId(const int64_t& _levelId);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取合规组对应的分类信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CategoryName 合规组对应的分类信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCategoryName() const;
 
                     /**
                      * 设置合规组对应的分类信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _categoryName 合规组对应的分类信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCategoryName(const std::string& _categoryName);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分级名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LevelRiskName 分级名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLevelRiskName() const;
 
                     /**
                      * 设置分级名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _levelRiskName 分级名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevelRiskName(const std::string& _levelRiskName);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * 敏感数据识别规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ruleId;
                     bool m_ruleIdHasBeenSet;
 
                     /**
                      * 敏感数据识别规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;
 
                     /**
                      * 敏感数据分类ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_categoryId;
                     bool m_categoryIdHasBeenSet;
 
                     /**
                      * 敏感数据分级ID, 目前只支持高、中、低三级
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_levelId;
                     bool m_levelIdHasBeenSet;
 
                     /**
                      * 合规组对应的分类信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_categoryName;
                     bool m_categoryNameHasBeenSet;
 
                     /**
                      * 分级名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_levelRiskName;
                     bool m_levelRiskNameHasBeenSet;

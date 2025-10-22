@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -83,6 +83,49 @@ VdbClient::AssociateSecurityGroupsOutcomeCallable VdbClient::AssociateSecurityGr
     return task->get_future();
 }
 
+VdbClient::CreateInstanceOutcome VdbClient::CreateInstance(const CreateInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateInstanceResponse rsp = CreateInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateInstanceOutcome(rsp);
+        else
+            return CreateInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateInstanceOutcome(outcome.GetError());
+    }
+}
+
+void VdbClient::CreateInstanceAsync(const CreateInstanceRequest& request, const CreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VdbClient::CreateInstanceOutcomeCallable VdbClient::CreateInstanceCallable(const CreateInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VdbClient::DescribeDBSecurityGroupsOutcome VdbClient::DescribeDBSecurityGroups(const DescribeDBSecurityGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBSecurityGroups");
@@ -119,6 +162,49 @@ VdbClient::DescribeDBSecurityGroupsOutcomeCallable VdbClient::DescribeDBSecurity
         [this, request]()
         {
             return this->DescribeDBSecurityGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VdbClient::DescribeInstanceMaintenanceWindowOutcome VdbClient::DescribeInstanceMaintenanceWindow(const DescribeInstanceMaintenanceWindowRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceMaintenanceWindow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceMaintenanceWindowResponse rsp = DescribeInstanceMaintenanceWindowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceMaintenanceWindowOutcome(rsp);
+        else
+            return DescribeInstanceMaintenanceWindowOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceMaintenanceWindowOutcome(outcome.GetError());
+    }
+}
+
+void VdbClient::DescribeInstanceMaintenanceWindowAsync(const DescribeInstanceMaintenanceWindowRequest& request, const DescribeInstanceMaintenanceWindowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceMaintenanceWindow(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VdbClient::DescribeInstanceMaintenanceWindowOutcomeCallable VdbClient::DescribeInstanceMaintenanceWindowCallable(const DescribeInstanceMaintenanceWindowRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceMaintenanceWindowOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceMaintenanceWindow(request);
         }
     );
 
@@ -212,6 +298,49 @@ VdbClient::DescribeInstancesOutcomeCallable VdbClient::DescribeInstancesCallable
     return task->get_future();
 }
 
+VdbClient::DestroyInstancesOutcome VdbClient::DestroyInstances(const DestroyInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DestroyInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DestroyInstancesResponse rsp = DestroyInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DestroyInstancesOutcome(rsp);
+        else
+            return DestroyInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DestroyInstancesOutcome(outcome.GetError());
+    }
+}
+
+void VdbClient::DestroyInstancesAsync(const DestroyInstancesRequest& request, const DestroyInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DestroyInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VdbClient::DestroyInstancesOutcomeCallable VdbClient::DestroyInstancesCallable(const DestroyInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DestroyInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DestroyInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VdbClient::DisassociateSecurityGroupsOutcome VdbClient::DisassociateSecurityGroups(const DisassociateSecurityGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "DisassociateSecurityGroups");
@@ -255,6 +384,49 @@ VdbClient::DisassociateSecurityGroupsOutcomeCallable VdbClient::DisassociateSecu
     return task->get_future();
 }
 
+VdbClient::IsolateInstanceOutcome VdbClient::IsolateInstance(const IsolateInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "IsolateInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        IsolateInstanceResponse rsp = IsolateInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return IsolateInstanceOutcome(rsp);
+        else
+            return IsolateInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return IsolateInstanceOutcome(outcome.GetError());
+    }
+}
+
+void VdbClient::IsolateInstanceAsync(const IsolateInstanceRequest& request, const IsolateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->IsolateInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VdbClient::IsolateInstanceOutcomeCallable VdbClient::IsolateInstanceCallable(const IsolateInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<IsolateInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->IsolateInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VdbClient::ModifyDBInstanceSecurityGroupsOutcome VdbClient::ModifyDBInstanceSecurityGroups(const ModifyDBInstanceSecurityGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDBInstanceSecurityGroups");
@@ -291,6 +463,178 @@ VdbClient::ModifyDBInstanceSecurityGroupsOutcomeCallable VdbClient::ModifyDBInst
         [this, request]()
         {
             return this->ModifyDBInstanceSecurityGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VdbClient::ModifyInstanceMaintenanceWindowOutcome VdbClient::ModifyInstanceMaintenanceWindow(const ModifyInstanceMaintenanceWindowRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstanceMaintenanceWindow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceMaintenanceWindowResponse rsp = ModifyInstanceMaintenanceWindowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceMaintenanceWindowOutcome(rsp);
+        else
+            return ModifyInstanceMaintenanceWindowOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceMaintenanceWindowOutcome(outcome.GetError());
+    }
+}
+
+void VdbClient::ModifyInstanceMaintenanceWindowAsync(const ModifyInstanceMaintenanceWindowRequest& request, const ModifyInstanceMaintenanceWindowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstanceMaintenanceWindow(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VdbClient::ModifyInstanceMaintenanceWindowOutcomeCallable VdbClient::ModifyInstanceMaintenanceWindowCallable(const ModifyInstanceMaintenanceWindowRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstanceMaintenanceWindowOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstanceMaintenanceWindow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VdbClient::RecoverInstanceOutcome VdbClient::RecoverInstance(const RecoverInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "RecoverInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RecoverInstanceResponse rsp = RecoverInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RecoverInstanceOutcome(rsp);
+        else
+            return RecoverInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return RecoverInstanceOutcome(outcome.GetError());
+    }
+}
+
+void VdbClient::RecoverInstanceAsync(const RecoverInstanceRequest& request, const RecoverInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RecoverInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VdbClient::RecoverInstanceOutcomeCallable VdbClient::RecoverInstanceCallable(const RecoverInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RecoverInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->RecoverInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VdbClient::ScaleOutInstanceOutcome VdbClient::ScaleOutInstance(const ScaleOutInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ScaleOutInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ScaleOutInstanceResponse rsp = ScaleOutInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ScaleOutInstanceOutcome(rsp);
+        else
+            return ScaleOutInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return ScaleOutInstanceOutcome(outcome.GetError());
+    }
+}
+
+void VdbClient::ScaleOutInstanceAsync(const ScaleOutInstanceRequest& request, const ScaleOutInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ScaleOutInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VdbClient::ScaleOutInstanceOutcomeCallable VdbClient::ScaleOutInstanceCallable(const ScaleOutInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ScaleOutInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->ScaleOutInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VdbClient::ScaleUpInstanceOutcome VdbClient::ScaleUpInstance(const ScaleUpInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ScaleUpInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ScaleUpInstanceResponse rsp = ScaleUpInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ScaleUpInstanceOutcome(rsp);
+        else
+            return ScaleUpInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return ScaleUpInstanceOutcome(outcome.GetError());
+    }
+}
+
+void VdbClient::ScaleUpInstanceAsync(const ScaleUpInstanceRequest& request, const ScaleUpInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ScaleUpInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VdbClient::ScaleUpInstanceOutcomeCallable VdbClient::ScaleUpInstanceCallable(const ScaleUpInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ScaleUpInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->ScaleUpInstance(request);
         }
     );
 

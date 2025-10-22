@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取一个或多个待操作的云硬盘ID。如果传入多个云盘ID，仅支持所有云盘修改为同一属性。
-                     * @return DiskIds 一个或多个待操作的云硬盘ID。如果传入多个云盘ID，仅支持所有云盘修改为同一属性。
+                     * 获取一个或多个待操作的云硬盘ID，可以通过[DescribeDisks](/document/product/362/16315)接口查询。如果传入多个云盘ID，仅支持将所有云盘修改为同一属性。
+
+                     * @return DiskIds 一个或多个待操作的云硬盘ID，可以通过[DescribeDisks](/document/product/362/16315)接口查询。如果传入多个云盘ID，仅支持将所有云盘修改为同一属性。
+
                      * 
                      */
                     std::vector<std::string> GetDiskIds() const;
 
                     /**
-                     * 设置一个或多个待操作的云硬盘ID。如果传入多个云盘ID，仅支持所有云盘修改为同一属性。
-                     * @param _diskIds 一个或多个待操作的云硬盘ID。如果传入多个云盘ID，仅支持所有云盘修改为同一属性。
+                     * 设置一个或多个待操作的云硬盘ID，可以通过[DescribeDisks](/document/product/362/16315)接口查询。如果传入多个云盘ID，仅支持将所有云盘修改为同一属性。
+
+                     * @param _diskIds 一个或多个待操作的云硬盘ID，可以通过[DescribeDisks](/document/product/362/16315)接口查询。如果传入多个云盘ID，仅支持将所有云盘修改为同一属性。
+
                      * 
                      */
                     void SetDiskIds(const std::vector<std::string>& _diskIds);
@@ -149,14 +153,18 @@ namespace TencentCloud
 
                     /**
                      * 获取变更云盘类型时，可传入该参数，表示变更的目标类型，取值范围：<br><li>CLOUD_PREMIUM：表示高性能云硬盘</li><li>CLOUD_SSD：表示SSD云硬盘。</li>当前不支持批量变更类型，即传入DiskType时，DiskIds仅支持传入一块云盘；<br>变更云盘类型时不支持同时变更其他属性。
+具体说明请参考[调整云硬盘类型](https://cloud.tencent.com/document/product/362/32540)
                      * @return DiskType 变更云盘类型时，可传入该参数，表示变更的目标类型，取值范围：<br><li>CLOUD_PREMIUM：表示高性能云硬盘</li><li>CLOUD_SSD：表示SSD云硬盘。</li>当前不支持批量变更类型，即传入DiskType时，DiskIds仅支持传入一块云盘；<br>变更云盘类型时不支持同时变更其他属性。
+具体说明请参考[调整云硬盘类型](https://cloud.tencent.com/document/product/362/32540)
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
                      * 设置变更云盘类型时，可传入该参数，表示变更的目标类型，取值范围：<br><li>CLOUD_PREMIUM：表示高性能云硬盘</li><li>CLOUD_SSD：表示SSD云硬盘。</li>当前不支持批量变更类型，即传入DiskType时，DiskIds仅支持传入一块云盘；<br>变更云盘类型时不支持同时变更其他属性。
+具体说明请参考[调整云硬盘类型](https://cloud.tencent.com/document/product/362/32540)
                      * @param _diskType 变更云盘类型时，可传入该参数，表示变更的目标类型，取值范围：<br><li>CLOUD_PREMIUM：表示高性能云硬盘</li><li>CLOUD_SSD：表示SSD云硬盘。</li>当前不支持批量变更类型，即传入DiskType时，DiskIds仅支持传入一块云盘；<br>变更云盘类型时不支持同时变更其他属性。
+具体说明请参考[调整云硬盘类型](https://cloud.tencent.com/document/product/362/32540)
                      * 
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -169,15 +177,23 @@ namespace TencentCloud
                     bool DiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取开启/关闭云盘性能突发功能
-                     * @return BurstPerformanceOperation 开启/关闭云盘性能突发功能
+                     * 获取开启/关闭云盘性能突发功能，取值范围： 
+CREATE：开启
+CANCEL：关闭
+                     * @return BurstPerformanceOperation 开启/关闭云盘性能突发功能，取值范围： 
+CREATE：开启
+CANCEL：关闭
                      * 
                      */
                     std::string GetBurstPerformanceOperation() const;
 
                     /**
-                     * 设置开启/关闭云盘性能突发功能
-                     * @param _burstPerformanceOperation 开启/关闭云盘性能突发功能
+                     * 设置开启/关闭云盘性能突发功能，取值范围： 
+CREATE：开启
+CANCEL：关闭
+                     * @param _burstPerformanceOperation 开启/关闭云盘性能突发功能，取值范围： 
+CREATE：开启
+CANCEL：关闭
                      * 
                      */
                     void SetBurstPerformanceOperation(const std::string& _burstPerformanceOperation);
@@ -192,7 +208,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 一个或多个待操作的云硬盘ID。如果传入多个云盘ID，仅支持所有云盘修改为同一属性。
+                     * 一个或多个待操作的云硬盘ID，可以通过[DescribeDisks](/document/product/362/16315)接口查询。如果传入多个云盘ID，仅支持将所有云盘修改为同一属性。
+
                      */
                     std::vector<std::string> m_diskIds;
                     bool m_diskIdsHasBeenSet;
@@ -223,12 +240,15 @@ namespace TencentCloud
 
                     /**
                      * 变更云盘类型时，可传入该参数，表示变更的目标类型，取值范围：<br><li>CLOUD_PREMIUM：表示高性能云硬盘</li><li>CLOUD_SSD：表示SSD云硬盘。</li>当前不支持批量变更类型，即传入DiskType时，DiskIds仅支持传入一块云盘；<br>变更云盘类型时不支持同时变更其他属性。
+具体说明请参考[调整云硬盘类型](https://cloud.tencent.com/document/product/362/32540)
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
 
                     /**
-                     * 开启/关闭云盘性能突发功能
+                     * 开启/关闭云盘性能突发功能，取值范围： 
+CREATE：开启
+CANCEL：关闭
                      */
                     std::string m_burstPerformanceOperation;
                     bool m_burstPerformanceOperationHasBeenSet;

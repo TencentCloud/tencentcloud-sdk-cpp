@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/omics/v20221128/model/VolumeAutoScaleUpRule.h>
 
 
 namespace TencentCloud
@@ -48,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取缓存卷ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VolumeId 缓存卷ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVolumeId() const;
 
                     /**
                      * 设置缓存卷ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _volumeId 缓存卷ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVolumeId(const std::string& _volumeId);
@@ -73,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -98,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -123,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取环境ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnvironmentId 环境ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEnvironmentId() const;
 
                     /**
                      * 设置环境ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _environmentId 环境ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnvironmentId(const std::string& _environmentId);
@@ -149,10 +134,8 @@ namespace TencentCloud
                     /**
                      * 获取缓存卷类型，取值范围：
 * SHARED：多点挂载共享存储
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 缓存卷类型，取值范围：
 * SHARED：多点挂载共享存储
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
@@ -160,10 +143,8 @@ namespace TencentCloud
                     /**
                      * 设置缓存卷类型，取值范围：
 * SHARED：多点挂载共享存储
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 缓存卷类型，取值范围：
 * SHARED：多点挂载共享存储
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -182,14 +163,12 @@ namespace TencentCloud
 - HP：通用性能型
 - TB：turbo标准型
 - TP：turbo性能型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Spec 缓存卷规格，取值范围：
 
 - SD：通用标准型
 - HP：通用性能型
 - TB：turbo标准型
 - TP：turbo性能型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSpec() const;
@@ -201,14 +180,12 @@ namespace TencentCloud
 - HP：通用性能型
 - TB：turbo标准型
 - TP：turbo性能型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _spec 缓存卷规格，取值范围：
 
 - SD：通用标准型
 - HP：通用性能型
 - TB：turbo标准型
 - TP：turbo性能型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSpec(const std::string& _spec);
@@ -222,18 +199,14 @@ namespace TencentCloud
 
                     /**
                      * 获取缓存卷大小（GB）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Capacity 缓存卷大小（GB）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCapacity() const;
 
                     /**
                      * 设置缓存卷大小（GB）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _capacity 缓存卷大小（GB）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCapacity(const uint64_t& _capacity);
@@ -247,18 +220,14 @@ namespace TencentCloud
 
                     /**
                      * 获取缓存卷使用量（Byte）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Usage 缓存卷使用量（Byte）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetUsage() const;
 
                     /**
                      * 设置缓存卷使用量（Byte）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _usage 缓存卷使用量（Byte）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUsage(const uint64_t& _usage);
@@ -272,18 +241,14 @@ namespace TencentCloud
 
                     /**
                      * 获取缓存卷吞吐上限（MiB/s）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BandwidthLimit 缓存卷吞吐上限（MiB/s）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetBandwidthLimit() const;
 
                     /**
                      * 设置缓存卷吞吐上限（MiB/s）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bandwidthLimit 缓存卷吞吐上限（MiB/s）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBandwidthLimit(const double& _bandwidthLimit);
@@ -297,18 +262,14 @@ namespace TencentCloud
 
                     /**
                      * 获取默认挂载路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefaultMountPath 默认挂载路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDefaultMountPath() const;
 
                     /**
                      * 设置默认挂载路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _defaultMountPath 默认挂载路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefaultMountPath(const std::string& _defaultMountPath);
@@ -322,18 +283,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否为默认缓存卷。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsDefault 是否为默认缓存卷。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsDefault() const;
 
                     /**
                      * 设置是否为默认缓存卷。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isDefault 是否为默认缓存卷。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsDefault(const bool& _isDefault);
@@ -347,18 +304,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -370,32 +323,91 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取turbo自动扩容策略
+                     * @return AutoScaleUpRule turbo自动扩容策略
+                     * 
+                     */
+                    VolumeAutoScaleUpRule GetAutoScaleUpRule() const;
+
+                    /**
+                     * 设置turbo自动扩容策略
+                     * @param _autoScaleUpRule turbo自动扩容策略
+                     * 
+                     */
+                    void SetAutoScaleUpRule(const VolumeAutoScaleUpRule& _autoScaleUpRule);
+
+                    /**
+                     * 判断参数 AutoScaleUpRule 是否已赋值
+                     * @return AutoScaleUpRule 是否已赋值
+                     * 
+                     */
+                    bool AutoScaleUpRuleHasBeenSet() const;
+
+                    /**
+                     * 获取turbo元数据属性
+                     * @return MetaType turbo元数据属性
+                     * 
+                     */
+                    std::string GetMetaType() const;
+
+                    /**
+                     * 设置turbo元数据属性
+                     * @param _metaType turbo元数据属性
+                     * 
+                     */
+                    void SetMetaType(const std::string& _metaType);
+
+                    /**
+                     * 判断参数 MetaType 是否已赋值
+                     * @return MetaType 是否已赋值
+                     * 
+                     */
+                    bool MetaTypeHasBeenSet() const;
+
+                    /**
+                     * 获取可用区
+                     * @return Zone 可用区
+                     * 
+                     */
+                    std::string GetZone() const;
+
+                    /**
+                     * 设置可用区
+                     * @param _zone 可用区
+                     * 
+                     */
+                    void SetZone(const std::string& _zone);
+
+                    /**
+                     * 判断参数 Zone 是否已赋值
+                     * @return Zone 是否已赋值
+                     * 
+                     */
+                    bool ZoneHasBeenSet() const;
+
                 private:
 
                     /**
                      * 缓存卷ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_volumeId;
                     bool m_volumeIdHasBeenSet;
 
                     /**
                      * 名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 环境ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_environmentId;
                     bool m_environmentIdHasBeenSet;
@@ -403,7 +415,6 @@ namespace TencentCloud
                     /**
                      * 缓存卷类型，取值范围：
 * SHARED：多点挂载共享存储
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -415,52 +426,63 @@ namespace TencentCloud
 - HP：通用性能型
 - TB：turbo标准型
 - TP：turbo性能型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_spec;
                     bool m_specHasBeenSet;
 
                     /**
                      * 缓存卷大小（GB）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_capacity;
                     bool m_capacityHasBeenSet;
 
                     /**
                      * 缓存卷使用量（Byte）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_usage;
                     bool m_usageHasBeenSet;
 
                     /**
                      * 缓存卷吞吐上限（MiB/s）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_bandwidthLimit;
                     bool m_bandwidthLimitHasBeenSet;
 
                     /**
                      * 默认挂载路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_defaultMountPath;
                     bool m_defaultMountPathHasBeenSet;
 
                     /**
                      * 是否为默认缓存卷。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isDefault;
                     bool m_isDefaultHasBeenSet;
 
                     /**
                      * 状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * turbo自动扩容策略
+                     */
+                    VolumeAutoScaleUpRule m_autoScaleUpRule;
+                    bool m_autoScaleUpRuleHasBeenSet;
+
+                    /**
+                     * turbo元数据属性
+                     */
+                    std::string m_metaType;
+                    bool m_metaTypeHasBeenSet;
+
+                    /**
+                     * 可用区
+                     */
+                    std::string m_zone;
+                    bool m_zoneHasBeenSet;
 
                 };
             }

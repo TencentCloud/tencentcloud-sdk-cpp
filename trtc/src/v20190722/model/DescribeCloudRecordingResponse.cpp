@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ using namespace std;
 DescribeCloudRecordingResponse::DescribeCloudRecordingResponse() :
     m_taskIdHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_storageFileListHasBeenSet(false)
+    m_storageFileListHasBeenSet(false),
+    m_recorderKeyHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,16 @@ CoreInternalOutcome DescribeCloudRecordingResponse::Deserialize(const string &pa
         m_storageFileListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RecorderKey") && !rsp["RecorderKey"].IsNull())
+    {
+        if (!rsp["RecorderKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecorderKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_recorderKey = string(rsp["RecorderKey"].GetString());
+        m_recorderKeyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,11 +156,19 @@ string DescribeCloudRecordingResponse::ToJsonString() const
         }
     }
 
+    if (m_recorderKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecorderKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recorderKey.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -185,6 +204,16 @@ vector<StorageFile> DescribeCloudRecordingResponse::GetStorageFileList() const
 bool DescribeCloudRecordingResponse::StorageFileListHasBeenSet() const
 {
     return m_storageFileListHasBeenSet;
+}
+
+string DescribeCloudRecordingResponse::GetRecorderKey() const
+{
+    return m_recorderKey;
+}
+
+bool DescribeCloudRecordingResponse::RecorderKeyHasBeenSet() const
+{
+    return m_recorderKeyHasBeenSet;
 }
 
 

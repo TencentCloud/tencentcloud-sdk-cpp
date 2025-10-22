@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ocr/v20181119/model/Polygon.h>
+#include <tencentcloud/ocr/v20181119/model/WordPolygon.h>
 
 
 namespace TencentCloud
@@ -89,6 +90,48 @@ namespace TencentCloud
                      */
                     bool CoordHasBeenSet() const;
 
+                    /**
+                     * 获取描述性信息
+                     * @return AdvancedInfo 描述性信息
+                     * 
+                     */
+                    std::string GetAdvancedInfo() const;
+
+                    /**
+                     * 设置描述性信息
+                     * @param _advancedInfo 描述性信息
+                     * 
+                     */
+                    void SetAdvancedInfo(const std::string& _advancedInfo);
+
+                    /**
+                     * 判断参数 AdvancedInfo 是否已赋值
+                     * @return AdvancedInfo 是否已赋值
+                     * 
+                     */
+                    bool AdvancedInfoHasBeenSet() const;
+
+                    /**
+                     * 获取单词的四点坐标
+                     * @return WordCoord 单词的四点坐标
+                     * 
+                     */
+                    std::vector<WordPolygon> GetWordCoord() const;
+
+                    /**
+                     * 设置单词的四点坐标
+                     * @param _wordCoord 单词的四点坐标
+                     * 
+                     */
+                    void SetWordCoord(const std::vector<WordPolygon>& _wordCoord);
+
+                    /**
+                     * 判断参数 WordCoord 是否已赋值
+                     * @return WordCoord 是否已赋值
+                     * 
+                     */
+                    bool WordCoordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -102,6 +145,18 @@ namespace TencentCloud
                      */
                     Polygon m_coord;
                     bool m_coordHasBeenSet;
+
+                    /**
+                     * 描述性信息
+                     */
+                    std::string m_advancedInfo;
+                    bool m_advancedInfoHasBeenSet;
+
+                    /**
+                     * 单词的四点坐标
+                     */
+                    std::vector<WordPolygon> m_wordCoord;
+                    bool m_wordCoordHasBeenSet;
 
                 };
             }

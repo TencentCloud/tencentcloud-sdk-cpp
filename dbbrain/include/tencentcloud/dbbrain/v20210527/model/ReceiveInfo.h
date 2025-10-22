@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接收组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReceiveGroup 接收组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetReceiveGroup() const;
 
                     /**
                      * 设置接收组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _receiveGroup 接收组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReceiveGroup(const std::vector<int64_t>& _receiveGroup);
@@ -73,19 +69,15 @@ namespace TencentCloud
                     bool ReceiveGroupHasBeenSet() const;
 
                     /**
-                     * 获取最后接收时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EndReceiveTime 最后接收时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取最后接收时间，格式: "HH:mm:ss"
+                     * @return EndReceiveTime 最后接收时间，格式: "HH:mm:ss"
                      * 
                      */
                     std::string GetEndReceiveTime() const;
 
                     /**
-                     * 设置最后接收时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _endReceiveTime 最后接收时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置最后接收时间，格式: "HH:mm:ss"
+                     * @param _endReceiveTime 最后接收时间，格式: "HH:mm:ss"
                      * 
                      */
                     void SetEndReceiveTime(const std::string& _endReceiveTime);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接收名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReceiveName 接收名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReceiveName() const;
 
                     /**
                      * 设置接收名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _receiveName 接收名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReceiveName(const std::string& _receiveName);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取推送渠道
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SendChannel 推送渠道
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetSendChannel() const;
 
                     /**
                      * 设置推送渠道
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sendChannel 推送渠道
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSendChannel(const std::vector<int64_t>& _sendChannel);
@@ -148,19 +132,15 @@ namespace TencentCloud
                     bool SendChannelHasBeenSet() const;
 
                     /**
-                     * 获取开始时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StartReceiveTime 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取开始时间，格式: "HH:mm:ss"
+                     * @return StartReceiveTime 开始时间，格式: "HH:mm:ss"
                      * 
                      */
                     std::string GetStartReceiveTime() const;
 
                     /**
-                     * 设置开始时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _startReceiveTime 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置开始时间，格式: "HH:mm:ss"
+                     * @param _startReceiveTime 开始时间，格式: "HH:mm:ss"
                      * 
                      */
                     void SetStartReceiveTime(const std::string& _startReceiveTime);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接收用户列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReceiveUin 接收用户列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ReceiveUin> GetReceiveUin() const;
 
                     /**
                      * 设置接收用户列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _receiveUin 接收用户列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReceiveUin(const std::vector<ReceiveUin>& _receiveUin);
@@ -201,42 +177,36 @@ namespace TencentCloud
 
                     /**
                      * 接收组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_receiveGroup;
                     bool m_receiveGroupHasBeenSet;
 
                     /**
-                     * 最后接收时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 最后接收时间，格式: "HH:mm:ss"
                      */
                     std::string m_endReceiveTime;
                     bool m_endReceiveTimeHasBeenSet;
 
                     /**
                      * 接收名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_receiveName;
                     bool m_receiveNameHasBeenSet;
 
                     /**
                      * 推送渠道
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_sendChannel;
                     bool m_sendChannelHasBeenSet;
 
                     /**
-                     * 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 开始时间，格式: "HH:mm:ss"
                      */
                     std::string m_startReceiveTime;
                     bool m_startReceiveTimeHasBeenSet;
 
                     /**
                      * 接收用户列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ReceiveUin> m_receiveUin;
                     bool m_receiveUinHasBeenSet;

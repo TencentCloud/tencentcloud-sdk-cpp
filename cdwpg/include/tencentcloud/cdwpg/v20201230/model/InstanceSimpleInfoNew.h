@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ID 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取ID
+                     * @return ID ID
                      * 
                      */
                     int64_t GetID() const;
 
                     /**
-                     * 设置1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _iD 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置ID
+                     * @param _iD ID
                      * 
                      */
                     void SetID(const int64_t& _iD);
@@ -72,19 +68,15 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
-                     * 获取1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceId 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取集群Id
+                     * @return InstanceId 集群Id
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceId 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置集群Id
+                     * @param _instanceId 集群Id
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -97,19 +89,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceName 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取集群名字
+                     * @return InstanceName 集群名字
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceName 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置集群名字
+                     * @param _instanceName 集群名字
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -122,19 +110,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Version 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取内核版本
+                     * @return Version 内核版本
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
-                     * 设置1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _version 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置内核版本
+                     * @param _version 内核版本
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -147,19 +131,15 @@ namespace TencentCloud
                     bool VersionHasBeenSet() const;
 
                     /**
-                     * 获取1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Region 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取地域
+                     * @return Region 地域
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _region 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置地域
+                     * @param _region 地域
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -172,19 +152,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RegionId 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取地域Id
+                     * @return RegionId 地域Id
                      * 
                      */
                     int64_t GetRegionId() const;
 
                     /**
-                     * 设置1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _regionId 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置地域Id
+                     * @param _regionId 地域Id
                      * 
                      */
                     void SetRegionId(const int64_t& _regionId);
@@ -197,19 +173,15 @@ namespace TencentCloud
                     bool RegionIdHasBeenSet() const;
 
                     /**
-                     * 获取1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RegionDesc 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取地域详情
+                     * @return RegionDesc 地域详情
                      * 
                      */
                     std::string GetRegionDesc() const;
 
                     /**
-                     * 设置1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _regionDesc 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置地域详情
+                     * @param _regionDesc 地域详情
                      * 
                      */
                     void SetRegionDesc(const std::string& _regionDesc);
@@ -222,19 +194,15 @@ namespace TencentCloud
                     bool RegionDescHasBeenSet() const;
 
                     /**
-                     * 获取1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Zone 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取地区
+                     * @return Zone 地区
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _zone 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置地区
+                     * @param _zone 地区
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -247,19 +215,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ZoneId 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取地区id
+                     * @return ZoneId 地区id
                      * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
-                     * 设置1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _zoneId 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置地区id
+                     * @param _zoneId 地区id
                      * 
                      */
                     void SetZoneId(const int64_t& _zoneId);
@@ -272,19 +236,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ZoneDesc 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取地区详情
+                     * @return ZoneDesc 地区详情
                      * 
                      */
                     std::string GetZoneDesc() const;
 
                     /**
-                     * 设置1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _zoneDesc 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置地区详情
+                     * @param _zoneDesc 地区详情
                      * 
                      */
                     void SetZoneDesc(const std::string& _zoneDesc);
@@ -297,19 +257,15 @@ namespace TencentCloud
                     bool ZoneDescHasBeenSet() const;
 
                     /**
-                     * 获取1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VpcId 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取私有网络
+                     * @return VpcId 私有网络
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _vpcId 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置私有网络
+                     * @param _vpcId 私有网络
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -322,19 +278,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SubnetId 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取子网
+                     * @return SubnetId 子网
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _subnetId 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置子网
+                     * @param _subnetId 子网
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -347,19 +299,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取开始时间
+                     * @return CreateTime 开始时间
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTime 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置开始时间
+                     * @param _createTime 开始时间
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -372,19 +320,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExpireTime 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取过期时间
+                     * @return ExpireTime 过期时间
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
-                     * 设置1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _expireTime 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置过期时间
+                     * @param _expireTime 过期时间
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -397,19 +341,15 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AccessInfo 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取访问地址
+                     * @return AccessInfo 访问地址
                      * 
                      */
                     std::string GetAccessInfo() const;
 
                     /**
-                     * 设置1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _accessInfo 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置访问地址
+                     * @param _accessInfo 访问地址
                      * 
                      */
                     void SetAccessInfo(const std::string& _accessInfo);
@@ -422,19 +362,15 @@ namespace TencentCloud
                     bool AccessInfoHasBeenSet() const;
 
                     /**
-                     * 获取1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PayMode 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取计费方式
+                     * @return PayMode 计费方式
                      * 
                      */
                     std::string GetPayMode() const;
 
                     /**
-                     * 设置1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _payMode 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置计费方式
+                     * @param _payMode 计费方式
                      * 
                      */
                     void SetPayMode(const std::string& _payMode);
@@ -447,19 +383,15 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RenewFlag 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取自动续费
+                     * @return RenewFlag 自动续费
                      * 
                      */
                     bool GetRenewFlag() const;
 
                     /**
-                     * 设置1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _renewFlag 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置自动续费
+                     * @param _renewFlag 自动续费
                      * 
                      */
                     void SetRenewFlag(const bool& _renewFlag);
@@ -474,120 +406,103 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * ID
                      */
                     int64_t m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
-                     * 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 集群Id
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 集群名字
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 内核版本
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
-                     * 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 地域
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 地域Id
                      */
                     int64_t m_regionId;
                     bool m_regionIdHasBeenSet;
 
                     /**
-                     * 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 地域详情
                      */
                     std::string m_regionDesc;
                     bool m_regionDescHasBeenSet;
 
                     /**
-                     * 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 地区
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 地区id
                      */
                     int64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 地区详情
                      */
                     std::string m_zoneDesc;
                     bool m_zoneDescHasBeenSet;
 
                     /**
-                     * 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 私有网络
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 子网
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 开始时间
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 过期时间
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 访问地址
                      */
                     std::string m_accessInfo;
                     bool m_accessInfoHasBeenSet;
 
                     /**
-                     * 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 计费方式
                      */
                     std::string m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 1
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 自动续费
                      */
                     bool m_renewFlag;
                     bool m_renewFlagHasBeenSet;

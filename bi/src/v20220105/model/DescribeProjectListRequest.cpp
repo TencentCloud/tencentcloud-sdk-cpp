@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,8 @@ DescribeProjectListRequest::DescribeProjectListRequest() :
     m_pageNoHasBeenSet(false),
     m_keywordHasBeenSet(false),
     m_allPageHasBeenSet(false),
-    m_moduleCollectionHasBeenSet(false)
+    m_moduleCollectionHasBeenSet(false),
+    m_moduleIdListHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,19 @@ string DescribeProjectListRequest::ToJsonString() const
         string key = "ModuleCollection";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_moduleCollection.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_moduleIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModuleIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_moduleIdList.begin(); itr != m_moduleIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -164,6 +178,22 @@ void DescribeProjectListRequest::SetModuleCollection(const string& _moduleCollec
 bool DescribeProjectListRequest::ModuleCollectionHasBeenSet() const
 {
     return m_moduleCollectionHasBeenSet;
+}
+
+vector<string> DescribeProjectListRequest::GetModuleIdList() const
+{
+    return m_moduleIdList;
+}
+
+void DescribeProjectListRequest::SetModuleIdList(const vector<string>& _moduleIdList)
+{
+    m_moduleIdList = _moduleIdList;
+    m_moduleIdListHasBeenSet = true;
+}
+
+bool DescribeProjectListRequest::ModuleIdListHasBeenSet() const
+{
+    return m_moduleIdListHasBeenSet;
 }
 
 

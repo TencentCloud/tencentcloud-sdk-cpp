@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取IP或域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Host IP或域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHost() const;
 
                     /**
                      * 设置IP或域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _host IP或域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHost(const std::string& _host);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _port 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务来源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceID 服务来源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSourceID() const;
 
                     /**
                      * 设置服务来源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sourceID 服务来源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSourceID(const std::string& _sourceID);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Namespace 命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _namespace 命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNamespace(const std::string& _namespace);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务（注册中心或Kubernetes中的服务）名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceName 服务（注册中心或Kubernetes中的服务）名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceName() const;
 
                     /**
                      * 设置服务（注册中心或Kubernetes中的服务）名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceName 服务（注册中心或Kubernetes中的服务）名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceName(const std::string& _serviceName);
@@ -199,18 +179,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务来源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceType 服务来源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSourceType() const;
 
                     /**
                      * 设置服务来源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sourceType 服务来源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSourceType(const std::string& _sourceType);
@@ -224,18 +200,14 @@ namespace TencentCloud
 
                     /**
                      * 获取SCF函数类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScfType SCF函数类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScfType() const;
 
                     /**
                      * 设置SCF函数类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scfType SCF函数类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScfType(const std::string& _scfType);
@@ -249,18 +221,14 @@ namespace TencentCloud
 
                     /**
                      * 获取SCF函数命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScfNamespace SCF函数命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScfNamespace() const;
 
                     /**
                      * 设置SCF函数命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scfNamespace SCF函数命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScfNamespace(const std::string& _scfNamespace);
@@ -274,18 +242,14 @@ namespace TencentCloud
 
                     /**
                      * 获取SCF函数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScfLambdaName SCF函数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScfLambdaName() const;
 
                     /**
                      * 设置SCF函数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scfLambdaName SCF函数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScfLambdaName(const std::string& _scfLambdaName);
@@ -299,18 +263,14 @@ namespace TencentCloud
 
                     /**
                      * 获取SCF函数版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScfLambdaQualifier SCF函数版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScfLambdaQualifier() const;
 
                     /**
                      * 设置SCF函数版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scfLambdaQualifier SCF函数版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScfLambdaQualifier(const std::string& _scfLambdaQualifier);
@@ -324,18 +284,14 @@ namespace TencentCloud
 
                     /**
                      * 获取冷启动时间，单位秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SlowStart 冷启动时间，单位秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSlowStart() const;
 
                     /**
                      * 设置冷启动时间，单位秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _slowStart 冷启动时间，单位秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSlowStart(const int64_t& _slowStart);
@@ -349,18 +305,14 @@ namespace TencentCloud
 
                     /**
                      * 获取负载均衡算法，默认为 round-robin，还支持 least-connections，consisten_hashing
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Algorithm 负载均衡算法，默认为 round-robin，还支持 least-connections，consisten_hashing
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAlgorithm() const;
 
                     /**
                      * 设置负载均衡算法，默认为 round-robin，还支持 least-connections，consisten_hashing
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _algorithm 负载均衡算法，默认为 round-robin，还支持 least-connections，consisten_hashing
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAlgorithm(const std::string& _algorithm);
@@ -374,18 +326,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CVM弹性伸缩组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoScalingGroupID CVM弹性伸缩组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAutoScalingGroupID() const;
 
                     /**
                      * 设置CVM弹性伸缩组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _autoScalingGroupID CVM弹性伸缩组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAutoScalingGroupID(const std::string& _autoScalingGroupID);
@@ -399,18 +347,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CVM弹性伸缩组端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoScalingCvmPort CVM弹性伸缩组端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAutoScalingCvmPort() const;
 
                     /**
                      * 设置CVM弹性伸缩组端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _autoScalingCvmPort CVM弹性伸缩组端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAutoScalingCvmPort(const uint64_t& _autoScalingCvmPort);
@@ -424,18 +368,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CVM弹性伸缩组使用的CVM TAT命令状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoScalingTatCmdStatus CVM弹性伸缩组使用的CVM TAT命令状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAutoScalingTatCmdStatus() const;
 
                     /**
                      * 设置CVM弹性伸缩组使用的CVM TAT命令状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _autoScalingTatCmdStatus CVM弹性伸缩组使用的CVM TAT命令状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAutoScalingTatCmdStatus(const std::string& _autoScalingTatCmdStatus);
@@ -449,18 +389,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CVM弹性伸缩组生命周期挂钩状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoScalingHookStatus CVM弹性伸缩组生命周期挂钩状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAutoScalingHookStatus() const;
 
                     /**
                      * 设置CVM弹性伸缩组生命周期挂钩状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _autoScalingHookStatus CVM弹性伸缩组生命周期挂钩状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAutoScalingHookStatus(const std::string& _autoScalingHookStatus);
@@ -474,18 +410,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务来源的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceName 服务来源的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSourceName() const;
 
                     /**
                      * 设置服务来源的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sourceName 服务来源的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSourceName(const std::string& _sourceName);
@@ -499,18 +431,14 @@ namespace TencentCloud
 
                     /**
                      * 获取精确的服务来源类型，新建服务来源时候传入的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealSourceType 精确的服务来源类型，新建服务来源时候传入的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRealSourceType() const;
 
                     /**
                      * 设置精确的服务来源类型，新建服务来源时候传入的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _realSourceType 精确的服务来源类型，新建服务来源时候传入的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRealSourceType(const std::string& _realSourceType);
@@ -524,18 +452,14 @@ namespace TencentCloud
 
                     /**
                      * 获取upstream健康状态HEALTHY（健康）, UNHEALTHY（异常）, HEALTHCHECKS_OFF（未开启）和NONE（不支持健康检查）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HealthStatus upstream健康状态HEALTHY（健康）, UNHEALTHY（异常）, HEALTHCHECKS_OFF（未开启）和NONE（不支持健康检查）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHealthStatus() const;
 
                     /**
                      * 设置upstream健康状态HEALTHY（健康）, UNHEALTHY（异常）, HEALTHCHECKS_OFF（未开启）和NONE（不支持健康检查）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _healthStatus upstream健康状态HEALTHY（健康）, UNHEALTHY（异常）, HEALTHCHECKS_OFF（未开启）和NONE（不支持健康检查）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHealthStatus(const std::string& _healthStatus);
@@ -549,18 +473,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云函数是否开启CAM鉴权，不填时默认为开启(true)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScfCamAuthEnable 云函数是否开启CAM鉴权，不填时默认为开启(true)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetScfCamAuthEnable() const;
 
                     /**
                      * 设置云函数是否开启CAM鉴权，不填时默认为开启(true)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scfCamAuthEnable 云函数是否开启CAM鉴权，不填时默认为开启(true)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScfCamAuthEnable(const bool& _scfCamAuthEnable);
@@ -574,18 +494,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云函数是否开启Base64编码，默认为false
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScfIsBase64Encoded 云函数是否开启Base64编码，默认为false
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetScfIsBase64Encoded() const;
 
                     /**
                      * 设置云函数是否开启Base64编码，默认为false
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scfIsBase64Encoded 云函数是否开启Base64编码，默认为false
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScfIsBase64Encoded(const bool& _scfIsBase64Encoded);
@@ -599,18 +515,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云函数是否开启响应集成，默认为false
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScfIsIntegratedResponse 云函数是否开启响应集成，默认为false
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetScfIsIntegratedResponse() const;
 
                     /**
                      * 设置云函数是否开启响应集成，默认为false
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scfIsIntegratedResponse 云函数是否开启响应集成，默认为false
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScfIsIntegratedResponse(const bool& _scfIsIntegratedResponse);
@@ -626,35 +538,30 @@ namespace TencentCloud
 
                     /**
                      * IP或域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;
 
                     /**
                      * 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
                      * 服务来源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sourceID;
                     bool m_sourceIDHasBeenSet;
 
                     /**
                      * 命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
 
                     /**
                      * 服务（注册中心或Kubernetes中的服务）名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceName;
                     bool m_serviceNameHasBeenSet;
@@ -668,119 +575,102 @@ namespace TencentCloud
 
                     /**
                      * 服务来源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sourceType;
                     bool m_sourceTypeHasBeenSet;
 
                     /**
                      * SCF函数类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scfType;
                     bool m_scfTypeHasBeenSet;
 
                     /**
                      * SCF函数命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scfNamespace;
                     bool m_scfNamespaceHasBeenSet;
 
                     /**
                      * SCF函数名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scfLambdaName;
                     bool m_scfLambdaNameHasBeenSet;
 
                     /**
                      * SCF函数版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scfLambdaQualifier;
                     bool m_scfLambdaQualifierHasBeenSet;
 
                     /**
                      * 冷启动时间，单位秒
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_slowStart;
                     bool m_slowStartHasBeenSet;
 
                     /**
                      * 负载均衡算法，默认为 round-robin，还支持 least-connections，consisten_hashing
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_algorithm;
                     bool m_algorithmHasBeenSet;
 
                     /**
                      * CVM弹性伸缩组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_autoScalingGroupID;
                     bool m_autoScalingGroupIDHasBeenSet;
 
                     /**
                      * CVM弹性伸缩组端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_autoScalingCvmPort;
                     bool m_autoScalingCvmPortHasBeenSet;
 
                     /**
                      * CVM弹性伸缩组使用的CVM TAT命令状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_autoScalingTatCmdStatus;
                     bool m_autoScalingTatCmdStatusHasBeenSet;
 
                     /**
                      * CVM弹性伸缩组生命周期挂钩状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_autoScalingHookStatus;
                     bool m_autoScalingHookStatusHasBeenSet;
 
                     /**
                      * 服务来源的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sourceName;
                     bool m_sourceNameHasBeenSet;
 
                     /**
                      * 精确的服务来源类型，新建服务来源时候传入的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_realSourceType;
                     bool m_realSourceTypeHasBeenSet;
 
                     /**
                      * upstream健康状态HEALTHY（健康）, UNHEALTHY（异常）, HEALTHCHECKS_OFF（未开启）和NONE（不支持健康检查）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_healthStatus;
                     bool m_healthStatusHasBeenSet;
 
                     /**
                      * 云函数是否开启CAM鉴权，不填时默认为开启(true)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_scfCamAuthEnable;
                     bool m_scfCamAuthEnableHasBeenSet;
 
                     /**
                      * 云函数是否开启Base64编码，默认为false
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_scfIsBase64Encoded;
                     bool m_scfIsBase64EncodedHasBeenSet;
 
                     /**
                      * 云函数是否开启响应集成，默认为false
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_scfIsIntegratedResponse;
                     bool m_scfIsIntegratedResponseHasBeenSet;

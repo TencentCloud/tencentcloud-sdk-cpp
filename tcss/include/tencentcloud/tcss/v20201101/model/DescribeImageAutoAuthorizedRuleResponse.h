@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取授权范围类别，MANUAL:自选主机节点，ALL:全部镜像
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RangeType 授权范围类别，MANUAL:自选主机节点，ALL:全部镜像
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRangeType() const;
@@ -75,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取授权范围是自选主机时的主机数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostCount 授权范围是自选主机时的主机数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHostCount() const;
@@ -91,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取每天最大的镜像授权数限制, 0表示无限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxDailyCount 每天最大的镜像授权数限制, 0表示无限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxDailyCount() const;
@@ -107,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取规则id，用未设置时为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleId 规则id，用未设置时为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRuleId() const;
@@ -159,28 +151,24 @@ namespace TencentCloud
 
                     /**
                      * 授权范围类别，MANUAL:自选主机节点，ALL:全部镜像
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_rangeType;
                     bool m_rangeTypeHasBeenSet;
 
                     /**
                      * 授权范围是自选主机时的主机数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_hostCount;
                     bool m_hostCountHasBeenSet;
 
                     /**
                      * 每天最大的镜像授权数限制, 0表示无限制
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxDailyCount;
                     bool m_maxDailyCountHasBeenSet;
 
                     /**
                      * 规则id，用未设置时为0
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ruleId;
                     bool m_ruleIdHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,11 +21,11 @@ using namespace TencentCloud::Tke::V20180525::Model;
 using namespace std;
 
 Probe::Probe() :
+    m_failureThresholdHasBeenSet(false),
     m_initialDelaySecondsHasBeenSet(false),
-    m_timeoutSecondsHasBeenSet(false),
     m_periodSecondsHasBeenSet(false),
     m_successThresholdHasBeenSet(false),
-    m_failureThresholdHasBeenSet(false)
+    m_timeoutSecondsHasBeenSet(false)
 {
 }
 
@@ -33,6 +33,16 @@ CoreInternalOutcome Probe::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("FailureThreshold") && !value["FailureThreshold"].IsNull())
+    {
+        if (!value["FailureThreshold"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Probe.FailureThreshold` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_failureThreshold = value["FailureThreshold"].GetInt64();
+        m_failureThresholdHasBeenSet = true;
+    }
 
     if (value.HasMember("InitialDelaySeconds") && !value["InitialDelaySeconds"].IsNull())
     {
@@ -42,16 +52,6 @@ CoreInternalOutcome Probe::Deserialize(const rapidjson::Value &value)
         }
         m_initialDelaySeconds = value["InitialDelaySeconds"].GetInt64();
         m_initialDelaySecondsHasBeenSet = true;
-    }
-
-    if (value.HasMember("TimeoutSeconds") && !value["TimeoutSeconds"].IsNull())
-    {
-        if (!value["TimeoutSeconds"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `Probe.TimeoutSeconds` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_timeoutSeconds = value["TimeoutSeconds"].GetInt64();
-        m_timeoutSecondsHasBeenSet = true;
     }
 
     if (value.HasMember("PeriodSeconds") && !value["PeriodSeconds"].IsNull())
@@ -74,14 +74,14 @@ CoreInternalOutcome Probe::Deserialize(const rapidjson::Value &value)
         m_successThresholdHasBeenSet = true;
     }
 
-    if (value.HasMember("FailureThreshold") && !value["FailureThreshold"].IsNull())
+    if (value.HasMember("TimeoutSeconds") && !value["TimeoutSeconds"].IsNull())
     {
-        if (!value["FailureThreshold"].IsInt64())
+        if (!value["TimeoutSeconds"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `Probe.FailureThreshold` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Probe.TimeoutSeconds` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_failureThreshold = value["FailureThreshold"].GetInt64();
-        m_failureThresholdHasBeenSet = true;
+        m_timeoutSeconds = value["TimeoutSeconds"].GetInt64();
+        m_timeoutSecondsHasBeenSet = true;
     }
 
 
@@ -91,20 +91,20 @@ CoreInternalOutcome Probe::Deserialize(const rapidjson::Value &value)
 void Probe::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_failureThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailureThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_failureThreshold, allocator);
+    }
+
     if (m_initialDelaySecondsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InitialDelaySeconds";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_initialDelaySeconds, allocator);
-    }
-
-    if (m_timeoutSecondsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TimeoutSeconds";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_timeoutSeconds, allocator);
     }
 
     if (m_periodSecondsHasBeenSet)
@@ -123,16 +123,32 @@ void Probe::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         value.AddMember(iKey, m_successThreshold, allocator);
     }
 
-    if (m_failureThresholdHasBeenSet)
+    if (m_timeoutSecondsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FailureThreshold";
+        string key = "TimeoutSeconds";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_failureThreshold, allocator);
+        value.AddMember(iKey, m_timeoutSeconds, allocator);
     }
 
 }
 
+
+int64_t Probe::GetFailureThreshold() const
+{
+    return m_failureThreshold;
+}
+
+void Probe::SetFailureThreshold(const int64_t& _failureThreshold)
+{
+    m_failureThreshold = _failureThreshold;
+    m_failureThresholdHasBeenSet = true;
+}
+
+bool Probe::FailureThresholdHasBeenSet() const
+{
+    return m_failureThresholdHasBeenSet;
+}
 
 int64_t Probe::GetInitialDelaySeconds() const
 {
@@ -148,22 +164,6 @@ void Probe::SetInitialDelaySeconds(const int64_t& _initialDelaySeconds)
 bool Probe::InitialDelaySecondsHasBeenSet() const
 {
     return m_initialDelaySecondsHasBeenSet;
-}
-
-int64_t Probe::GetTimeoutSeconds() const
-{
-    return m_timeoutSeconds;
-}
-
-void Probe::SetTimeoutSeconds(const int64_t& _timeoutSeconds)
-{
-    m_timeoutSeconds = _timeoutSeconds;
-    m_timeoutSecondsHasBeenSet = true;
-}
-
-bool Probe::TimeoutSecondsHasBeenSet() const
-{
-    return m_timeoutSecondsHasBeenSet;
 }
 
 int64_t Probe::GetPeriodSeconds() const
@@ -198,19 +198,19 @@ bool Probe::SuccessThresholdHasBeenSet() const
     return m_successThresholdHasBeenSet;
 }
 
-int64_t Probe::GetFailureThreshold() const
+int64_t Probe::GetTimeoutSeconds() const
 {
-    return m_failureThreshold;
+    return m_timeoutSeconds;
 }
 
-void Probe::SetFailureThreshold(const int64_t& _failureThreshold)
+void Probe::SetTimeoutSeconds(const int64_t& _timeoutSeconds)
 {
-    m_failureThreshold = _failureThreshold;
-    m_failureThresholdHasBeenSet = true;
+    m_timeoutSeconds = _timeoutSeconds;
+    m_timeoutSecondsHasBeenSet = true;
 }
 
-bool Probe::FailureThresholdHasBeenSet() const
+bool Probe::TimeoutSecondsHasBeenSet() const
 {
-    return m_failureThresholdHasBeenSet;
+    return m_timeoutSecondsHasBeenSet;
 }
 

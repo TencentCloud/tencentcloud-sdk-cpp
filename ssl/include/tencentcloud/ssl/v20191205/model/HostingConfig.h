@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取托管资源替换时间， 默认为证书过期前30天存在续费证书则替换
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReplaceTime 托管资源替换时间， 默认为证书过期前30天存在续费证书则替换
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetReplaceTime() const;
 
                     /**
                      * 设置托管资源替换时间， 默认为证书过期前30天存在续费证书则替换
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _replaceTime 托管资源替换时间， 默认为证书过期前30天存在续费证书则替换
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReplaceTime(const int64_t& _replaceTime);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取托管发送消息类型：0，托管开始前消息提醒（没有续费证书也会收到该提示消息）； 1， 托管开始消息提醒（存在续费证书才会收到消息提醒）； 2， 托管资源替换失败消息提醒； 3 托管资源替换成功消息提醒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MessageTypes 托管发送消息类型：0，托管开始前消息提醒（没有续费证书也会收到该提示消息）； 1， 托管开始消息提醒（存在续费证书才会收到消息提醒）； 2， 托管资源替换失败消息提醒； 3 托管资源替换成功消息提醒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetMessageTypes() const;
 
                     /**
                      * 设置托管发送消息类型：0，托管开始前消息提醒（没有续费证书也会收到该提示消息）； 1， 托管开始消息提醒（存在续费证书才会收到消息提醒）； 2， 托管资源替换失败消息提醒； 3 托管资源替换成功消息提醒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _messageTypes 托管发送消息类型：0，托管开始前消息提醒（没有续费证书也会收到该提示消息）； 1， 托管开始消息提醒（存在续费证书才会收到消息提醒）； 2， 托管资源替换失败消息提醒； 3 托管资源替换成功消息提醒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMessageTypes(const std::vector<int64_t>& _messageTypes);
@@ -142,14 +134,12 @@ namespace TencentCloud
 
                     /**
                      * 托管资源替换时间， 默认为证书过期前30天存在续费证书则替换
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_replaceTime;
                     bool m_replaceTimeHasBeenSet;
 
                     /**
                      * 托管发送消息类型：0，托管开始前消息提醒（没有续费证书也会收到该提示消息）； 1， 托管开始消息提醒（存在续费证书才会收到消息提醒）； 2， 托管资源替换失败消息提醒； 3 托管资源替换成功消息提醒
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_messageTypes;
                     bool m_messageTypesHasBeenSet;

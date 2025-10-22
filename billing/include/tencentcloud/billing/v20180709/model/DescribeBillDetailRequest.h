@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -196,21 +196,21 @@ namespace TencentCloud
                     /**
                      * 获取已废弃参数，未开放
                      * @return ProductCode 已废弃参数，未开放
-                     * 
+                     * @deprecated
                      */
                     std::string GetProductCode() const;
 
                     /**
                      * 设置已废弃参数，未开放
                      * @param _productCode 已废弃参数，未开放
-                     * 
+                     * @deprecated
                      */
                     void SetProductCode(const std::string& _productCode);
 
                     /**
                      * 判断参数 ProductCode 是否已赋值
                      * @return ProductCode 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ProductCodeHasBeenSet() const;
 

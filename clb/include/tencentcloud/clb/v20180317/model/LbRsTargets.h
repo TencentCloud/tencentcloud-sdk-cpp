@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取rs的vpcId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId rs的vpcId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetVpcId() const;
 
                     /**
                      * 设置rs的vpcId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId rs的vpcId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const int64_t& _vpcId);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取rs的权重
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Weight rs的权重
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetWeight() const;
 
                     /**
                      * 设置rs的权重
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _weight rs的权重
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWeight(const int64_t& _weight);
@@ -181,14 +173,12 @@ namespace TencentCloud
 
                     /**
                      * rs的vpcId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * rs的权重
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_weight;
                     bool m_weightHasBeenSet;

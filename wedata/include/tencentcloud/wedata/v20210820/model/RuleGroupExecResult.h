@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -649,14 +649,18 @@ namespace TencentCloud
 
                     /**
                      * 获取实例运行的开始时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 实例运行的开始时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置实例运行的开始时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTime 实例运行的开始时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -670,14 +674,18 @@ namespace TencentCloud
 
                     /**
                      * 获取实例运行的结束时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return FinishTime 实例运行的结束时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFinishTime() const;
 
                     /**
                      * 设置实例运行的结束时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _finishTime 实例运行的结束时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFinishTime(const std::string& _finishTime);
@@ -688,6 +696,56 @@ namespace TencentCloud
                      * 
                      */
                     bool FinishTimeHasBeenSet() const;
+
+                    /**
+                     * 获取监控名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleGroupName 监控名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRuleGroupName() const;
+
+                    /**
+                     * 设置监控名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ruleGroupName 监控名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRuleGroupName(const std::string& _ruleGroupName);
+
+                    /**
+                     * 判断参数 RuleGroupName 是否已赋值
+                     * @return RuleGroupName 是否已赋值
+                     * 
+                     */
+                    bool RuleGroupNameHasBeenSet() const;
+
+                    /**
+                     * 获取判断是否屏蔽监控 0.屏蔽 1.不屏蔽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleGroupExist 判断是否屏蔽监控 0.屏蔽 1.不屏蔽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRuleGroupExist() const;
+
+                    /**
+                     * 设置判断是否屏蔽监控 0.屏蔽 1.不屏蔽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ruleGroupExist 判断是否屏蔽监控 0.屏蔽 1.不屏蔽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRuleGroupExist(const std::string& _ruleGroupExist);
+
+                    /**
+                     * 判断参数 RuleGroupExist 是否已赋值
+                     * @return RuleGroupExist 是否已赋值
+                     * 
+                     */
+                    bool RuleGroupExistHasBeenSet() const;
 
                 private:
 
@@ -861,15 +919,31 @@ namespace TencentCloud
 
                     /**
                      * 实例运行的开始时间
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 实例运行的结束时间
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_finishTime;
                     bool m_finishTimeHasBeenSet;
+
+                    /**
+                     * 监控名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ruleGroupName;
+                    bool m_ruleGroupNameHasBeenSet;
+
+                    /**
+                     * 判断是否屏蔽监控 0.屏蔽 1.不屏蔽
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ruleGroupExist;
+                    bool m_ruleGroupExistHasBeenSet;
 
                 };
             }

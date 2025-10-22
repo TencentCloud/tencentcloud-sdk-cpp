@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取校验任务执行状态，如：notStarted(未开始)、running(校验中)、failed(校验任务失败)、success(任务成功)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 校验任务执行状态，如：notStarted(未开始)、running(校验中)、failed(校验任务失败)、success(任务成功)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取步骤总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StepCount 步骤总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStepCount() const;
@@ -78,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取当前所在步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StepCur 当前所在步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStepCur() const;
@@ -94,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总体进度，范围为[0,100]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Progress 总体进度，范围为[0,100]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetProgress() const;
@@ -128,28 +120,24 @@ namespace TencentCloud
 
                     /**
                      * 校验任务执行状态，如：notStarted(未开始)、running(校验中)、failed(校验任务失败)、success(任务成功)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 步骤总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_stepCount;
                     bool m_stepCountHasBeenSet;
 
                     /**
                      * 当前所在步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_stepCur;
                     bool m_stepCurHasBeenSet;
 
                     /**
                      * 总体进度，范围为[0,100]
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_progress;
                     bool m_progressHasBeenSet;

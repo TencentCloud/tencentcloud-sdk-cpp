@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -167,18 +167,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自适应码流任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Output 自适应码流任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ComplexAdaptiveDynamicStreamingTaskOutput GetOutput() const;
 
                     /**
                      * 设置自适应码流任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _output 自适应码流任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutput(const ComplexAdaptiveDynamicStreamingTaskOutput& _output);
@@ -227,7 +223,6 @@ namespace TencentCloud
 
                     /**
                      * 自适应码流任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ComplexAdaptiveDynamicStreamingTaskOutput m_output;
                     bool m_outputHasBeenSet;

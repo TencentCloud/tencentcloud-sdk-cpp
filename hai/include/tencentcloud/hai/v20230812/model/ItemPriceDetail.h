@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例价格详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstancePrice 实例价格详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ItemPrice GetInstancePrice() const;
 
                     /**
                      * 设置实例价格详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instancePrice 实例价格详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstancePrice(const ItemPrice& _instancePrice);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取磁盘价格详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CloudDiskPrice 磁盘价格详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ItemPrice GetCloudDiskPrice() const;
 
                     /**
                      * 设置磁盘价格详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cloudDiskPrice 磁盘价格详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCloudDiskPrice(const ItemPrice& _cloudDiskPrice);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该实例的总价钱
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceTotalPrice 该实例的总价钱
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ItemPrice GetInstanceTotalPrice() const;
 
                     /**
                      * 设置该实例的总价钱
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceTotalPrice 该实例的总价钱
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceTotalPrice(const ItemPrice& _instanceTotalPrice);
@@ -151,28 +135,24 @@ namespace TencentCloud
 
                     /**
                      * 实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 实例价格详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ItemPrice m_instancePrice;
                     bool m_instancePriceHasBeenSet;
 
                     /**
                      * 磁盘价格详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ItemPrice m_cloudDiskPrice;
                     bool m_cloudDiskPriceHasBeenSet;
 
                     /**
                      * 该实例的总价钱
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ItemPrice m_instanceTotalPrice;
                     bool m_instanceTotalPriceHasBeenSet;

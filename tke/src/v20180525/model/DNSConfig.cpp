@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +22,8 @@ using namespace std;
 
 DNSConfig::DNSConfig() :
     m_nameserversHasBeenSet(false),
-    m_searchesHasBeenSet(false),
-    m_optionsHasBeenSet(false)
+    m_optionsHasBeenSet(false),
+    m_searchesHasBeenSet(false)
 {
 }
 
@@ -43,19 +43,6 @@ CoreInternalOutcome DNSConfig::Deserialize(const rapidjson::Value &value)
             m_nameservers.push_back((*itr).GetString());
         }
         m_nameserversHasBeenSet = true;
-    }
-
-    if (value.HasMember("Searches") && !value["Searches"].IsNull())
-    {
-        if (!value["Searches"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `DNSConfig.Searches` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["Searches"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            m_searches.push_back((*itr).GetString());
-        }
-        m_searchesHasBeenSet = true;
     }
 
     if (value.HasMember("Options") && !value["Options"].IsNull())
@@ -78,6 +65,19 @@ CoreInternalOutcome DNSConfig::Deserialize(const rapidjson::Value &value)
         m_optionsHasBeenSet = true;
     }
 
+    if (value.HasMember("Searches") && !value["Searches"].IsNull())
+    {
+        if (!value["Searches"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DNSConfig.Searches` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Searches"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_searches.push_back((*itr).GetString());
+        }
+        m_searchesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -98,19 +98,6 @@ void DNSConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         }
     }
 
-    if (m_searchesHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Searches";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_searches.begin(); itr != m_searches.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
-
     if (m_optionsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -123,6 +110,19 @@ void DNSConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_searchesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Searches";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_searches.begin(); itr != m_searches.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -145,22 +145,6 @@ bool DNSConfig::NameserversHasBeenSet() const
     return m_nameserversHasBeenSet;
 }
 
-vector<string> DNSConfig::GetSearches() const
-{
-    return m_searches;
-}
-
-void DNSConfig::SetSearches(const vector<string>& _searches)
-{
-    m_searches = _searches;
-    m_searchesHasBeenSet = true;
-}
-
-bool DNSConfig::SearchesHasBeenSet() const
-{
-    return m_searchesHasBeenSet;
-}
-
 vector<DNSConfigOption> DNSConfig::GetOptions() const
 {
     return m_options;
@@ -175,5 +159,21 @@ void DNSConfig::SetOptions(const vector<DNSConfigOption>& _options)
 bool DNSConfig::OptionsHasBeenSet() const
 {
     return m_optionsHasBeenSet;
+}
+
+vector<string> DNSConfig::GetSearches() const
+{
+    return m_searches;
+}
+
+void DNSConfig::SetSearches(const vector<string>& _searches)
+{
+    m_searches = _searches;
+    m_searchesHasBeenSet = true;
+}
+
+bool DNSConfig::SearchesHasBeenSet() const
+{
+    return m_searchesHasBeenSet;
 }
 

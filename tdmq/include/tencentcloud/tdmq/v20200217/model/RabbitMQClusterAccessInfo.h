@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tdmq/v20200217/model/PrometheusEndpointInfo.h>
+#include <tencentcloud/tdmq/v20200217/model/VpcEndpointInfo.h>
 
 
 namespace TencentCloud
@@ -221,18 +222,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公网管控台开关状态，示例值，OFF/ON/CREATING/DELETING
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicWebConsoleSwitchStatus 公网管控台开关状态，示例值，OFF/ON/CREATING/DELETING
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublicWebConsoleSwitchStatus() const;
 
                     /**
                      * 设置公网管控台开关状态，示例值，OFF/ON/CREATING/DELETING
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publicWebConsoleSwitchStatus 公网管控台开关状态，示例值，OFF/ON/CREATING/DELETING
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublicWebConsoleSwitchStatus(const std::string& _publicWebConsoleSwitchStatus);
@@ -247,10 +244,8 @@ namespace TencentCloud
                     /**
                      * 获取Vpc管控台开关状态，示例值，
 OFF/ON/CREATING/DELETING
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcWebConsoleSwitchStatus Vpc管控台开关状态，示例值，
 OFF/ON/CREATING/DELETING
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcWebConsoleSwitchStatus() const;
@@ -258,10 +253,8 @@ OFF/ON/CREATING/DELETING
                     /**
                      * 设置Vpc管控台开关状态，示例值，
 OFF/ON/CREATING/DELETING
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcWebConsoleSwitchStatus Vpc管控台开关状态，示例值，
 OFF/ON/CREATING/DELETING
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcWebConsoleSwitchStatus(const std::string& _vpcWebConsoleSwitchStatus);
@@ -275,18 +268,14 @@ OFF/ON/CREATING/DELETING
 
                     /**
                      * 获取公网管控台开关状态，示例值，OFF/ON/CREATING/DELETING
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicDataStreamStatus 公网管控台开关状态，示例值，OFF/ON/CREATING/DELETING
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublicDataStreamStatus() const;
 
                     /**
                      * 设置公网管控台开关状态，示例值，OFF/ON/CREATING/DELETING
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publicDataStreamStatus 公网管控台开关状态，示例值，OFF/ON/CREATING/DELETING
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublicDataStreamStatus(const std::string& _publicDataStreamStatus);
@@ -300,18 +289,14 @@ OFF/ON/CREATING/DELETING
 
                     /**
                      * 获取Prometheus信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrometheusEndpointInfo Prometheus信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PrometheusEndpointInfo GetPrometheusEndpointInfo() const;
 
                     /**
                      * 设置Prometheus信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _prometheusEndpointInfo Prometheus信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrometheusEndpointInfo(const PrometheusEndpointInfo& _prometheusEndpointInfo);
@@ -325,18 +310,14 @@ OFF/ON/CREATING/DELETING
 
                     /**
                      * 获取公网域名接入点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WebConsoleDomainEndpoint 公网域名接入点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWebConsoleDomainEndpoint() const;
 
                     /**
                      * 设置公网域名接入点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _webConsoleDomainEndpoint 公网域名接入点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWebConsoleDomainEndpoint(const std::string& _webConsoleDomainEndpoint);
@@ -347,6 +328,48 @@ OFF/ON/CREATING/DELETING
                      * 
                      */
                     bool WebConsoleDomainEndpointHasBeenSet() const;
+
+                    /**
+                     * 获取控制面所使用的VPC信息
+                     * @return ControlPlaneEndpointInfo 控制面所使用的VPC信息
+                     * 
+                     */
+                    VpcEndpointInfo GetControlPlaneEndpointInfo() const;
+
+                    /**
+                     * 设置控制面所使用的VPC信息
+                     * @param _controlPlaneEndpointInfo 控制面所使用的VPC信息
+                     * 
+                     */
+                    void SetControlPlaneEndpointInfo(const VpcEndpointInfo& _controlPlaneEndpointInfo);
+
+                    /**
+                     * 判断参数 ControlPlaneEndpointInfo 是否已赋值
+                     * @return ControlPlaneEndpointInfo 是否已赋值
+                     * 
+                     */
+                    bool ControlPlaneEndpointInfoHasBeenSet() const;
+
+                    /**
+                     * 获取TLS加密的数据流公网接入点
+                     * @return PublicTlsAccessEndpoint TLS加密的数据流公网接入点
+                     * 
+                     */
+                    std::string GetPublicTlsAccessEndpoint() const;
+
+                    /**
+                     * 设置TLS加密的数据流公网接入点
+                     * @param _publicTlsAccessEndpoint TLS加密的数据流公网接入点
+                     * 
+                     */
+                    void SetPublicTlsAccessEndpoint(const std::string& _publicTlsAccessEndpoint);
+
+                    /**
+                     * 判断参数 PublicTlsAccessEndpoint 是否已赋值
+                     * @return PublicTlsAccessEndpoint 是否已赋值
+                     * 
+                     */
+                    bool PublicTlsAccessEndpointHasBeenSet() const;
 
                 private:
 
@@ -401,7 +424,6 @@ OFF/ON/CREATING/DELETING
 
                     /**
                      * 公网管控台开关状态，示例值，OFF/ON/CREATING/DELETING
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publicWebConsoleSwitchStatus;
                     bool m_publicWebConsoleSwitchStatusHasBeenSet;
@@ -409,31 +431,39 @@ OFF/ON/CREATING/DELETING
                     /**
                      * Vpc管控台开关状态，示例值，
 OFF/ON/CREATING/DELETING
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcWebConsoleSwitchStatus;
                     bool m_vpcWebConsoleSwitchStatusHasBeenSet;
 
                     /**
                      * 公网管控台开关状态，示例值，OFF/ON/CREATING/DELETING
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publicDataStreamStatus;
                     bool m_publicDataStreamStatusHasBeenSet;
 
                     /**
                      * Prometheus信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PrometheusEndpointInfo m_prometheusEndpointInfo;
                     bool m_prometheusEndpointInfoHasBeenSet;
 
                     /**
                      * 公网域名接入点
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_webConsoleDomainEndpoint;
                     bool m_webConsoleDomainEndpointHasBeenSet;
+
+                    /**
+                     * 控制面所使用的VPC信息
+                     */
+                    VpcEndpointInfo m_controlPlaneEndpointInfo;
+                    bool m_controlPlaneEndpointInfoHasBeenSet;
+
+                    /**
+                     * TLS加密的数据流公网接入点
+                     */
+                    std::string m_publicTlsAccessEndpoint;
+                    bool m_publicTlsAccessEndpointHasBeenSet;
 
                 };
             }

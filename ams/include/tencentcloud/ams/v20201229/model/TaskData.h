@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,18 +51,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该字段用于返回音频审核任务数据所对应的数据ID，方便后续查询和管理审核任务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataId 该字段用于返回音频审核任务数据所对应的数据ID，方便后续查询和管理审核任务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataId() const;
 
                     /**
                      * 设置该字段用于返回音频审核任务数据所对应的数据ID，方便后续查询和管理审核任务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataId 该字段用于返回音频审核任务数据所对应的数据ID，方便后续查询和管理审核任务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataId(const std::string& _dataId);
@@ -122,18 +118,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该字段用于返回音频审核任务所对应的任务名称，方便后续查询和管理审核任务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 该字段用于返回音频审核任务所对应的任务名称，方便后续查询和管理审核任务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置该字段用于返回音频审核任务所对应的任务名称，方便后续查询和管理审核任务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 该字段用于返回音频审核任务所对应的任务名称，方便后续查询和管理审核任务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -147,18 +139,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该字段用于返回调用音频审核接口时传入的BizType参数，方便数据的辨别和管理。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BizType 该字段用于返回调用音频审核接口时传入的BizType参数，方便数据的辨别和管理。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBizType() const;
 
                     /**
                      * 设置该字段用于返回调用音频审核接口时传入的BizType参数，方便数据的辨别和管理。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bizType 该字段用于返回调用音频审核接口时传入的BizType参数，方便数据的辨别和管理。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBizType(const std::string& _bizType);
@@ -172,18 +160,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该字段用于返回调用音频审核接口时输入的音频审核类型，取值为：**AUDIO**（点播音频）和**LIVE_AUDIO**（直播音频），默认值为AUDIO。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 该字段用于返回调用音频审核接口时输入的音频审核类型，取值为：**AUDIO**（点播音频）和**LIVE_AUDIO**（直播音频），默认值为AUDIO。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置该字段用于返回调用音频审核接口时输入的音频审核类型，取值为：**AUDIO**（点播音频）和**LIVE_AUDIO**（直播音频），默认值为AUDIO。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 该字段用于返回调用音频审核接口时输入的音频审核类型，取值为：**AUDIO**（点播音频）和**LIVE_AUDIO**（直播音频），默认值为AUDIO。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -197,18 +181,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该字段用于返回基于恶意标签的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Suggestion 该字段用于返回基于恶意标签的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSuggestion() const;
 
                     /**
                      * 设置该字段用于返回基于恶意标签的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _suggestion 该字段用于返回基于恶意标签的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
@@ -222,18 +202,14 @@ namespace TencentCloud
 
                     /**
                      * 获取输入信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MediaInfo 输入信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MediaInfo GetMediaInfo() const;
 
                     /**
                      * 设置输入信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mediaInfo 输入信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMediaInfo(const MediaInfo& _mediaInfo);
@@ -247,18 +223,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Labels 该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TaskLabel> GetLabels() const;
 
                     /**
                      * 设置该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _labels 该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabels(const std::vector<TaskLabel>& _labels);
@@ -293,18 +265,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该字段用于返回被查询任务最后更新时间，格式采用 ISO 8601标准。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedAt 该字段用于返回被查询任务最后更新时间，格式采用 ISO 8601标准。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdatedAt() const;
 
                     /**
                      * 设置该字段用于返回被查询任务最后更新时间，格式采用 ISO 8601标准。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updatedAt 该字段用于返回被查询任务最后更新时间，格式采用 ISO 8601标准。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdatedAt(const std::string& _updatedAt);
@@ -318,18 +286,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InputInfo 任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     InputInfo GetInputInfo() const;
 
                     /**
                      * 设置任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _inputInfo 任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInputInfo(const InputInfo& _inputInfo);
@@ -345,7 +309,6 @@ namespace TencentCloud
 
                     /**
                      * 该字段用于返回音频审核任务数据所对应的数据ID，方便后续查询和管理审核任务。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataId;
                     bool m_dataIdHasBeenSet;
@@ -365,42 +328,36 @@ namespace TencentCloud
 
                     /**
                      * 该字段用于返回音频审核任务所对应的任务名称，方便后续查询和管理审核任务。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 该字段用于返回调用音频审核接口时传入的BizType参数，方便数据的辨别和管理。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bizType;
                     bool m_bizTypeHasBeenSet;
 
                     /**
                      * 该字段用于返回调用音频审核接口时输入的音频审核类型，取值为：**AUDIO**（点播音频）和**LIVE_AUDIO**（直播音频），默认值为AUDIO。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 该字段用于返回基于恶意标签的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_suggestion;
                     bool m_suggestionHasBeenSet;
 
                     /**
                      * 输入信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaInfo m_mediaInfo;
                     bool m_mediaInfoHasBeenSet;
 
                     /**
                      * 该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TaskLabel> m_labels;
                     bool m_labelsHasBeenSet;
@@ -413,14 +370,12 @@ namespace TencentCloud
 
                     /**
                      * 该字段用于返回被查询任务最后更新时间，格式采用 ISO 8601标准。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updatedAt;
                     bool m_updatedAtHasBeenSet;
 
                     /**
                      * 任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InputInfo m_inputInfo;
                     bool m_inputInfoHasBeenSet;

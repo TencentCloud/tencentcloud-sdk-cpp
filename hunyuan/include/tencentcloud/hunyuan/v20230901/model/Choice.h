@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -131,6 +131,48 @@ tool_calls 标识函数调用。
                      */
                     bool MessageHasBeenSet() const;
 
+                    /**
+                     * 获取索引值，流式调用时使用该字段。
+                     * @return Index 索引值，流式调用时使用该字段。
+                     * 
+                     */
+                    int64_t GetIndex() const;
+
+                    /**
+                     * 设置索引值，流式调用时使用该字段。
+                     * @param _index 索引值，流式调用时使用该字段。
+                     * 
+                     */
+                    void SetIndex(const int64_t& _index);
+
+                    /**
+                     * 判断参数 Index 是否已赋值
+                     * @return Index 是否已赋值
+                     * 
+                     */
+                    bool IndexHasBeenSet() const;
+
+                    /**
+                     * 获取多轮会话风险审核，值为1时，表明存在信息安全风险，建议终止客户多轮会话。
+                     * @return ModerationLevel 多轮会话风险审核，值为1时，表明存在信息安全风险，建议终止客户多轮会话。
+                     * 
+                     */
+                    std::string GetModerationLevel() const;
+
+                    /**
+                     * 设置多轮会话风险审核，值为1时，表明存在信息安全风险，建议终止客户多轮会话。
+                     * @param _moderationLevel 多轮会话风险审核，值为1时，表明存在信息安全风险，建议终止客户多轮会话。
+                     * 
+                     */
+                    void SetModerationLevel(const std::string& _moderationLevel);
+
+                    /**
+                     * 判断参数 ModerationLevel 是否已赋值
+                     * @return ModerationLevel 是否已赋值
+                     * 
+                     */
+                    bool ModerationLevelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +197,18 @@ tool_calls 标识函数调用。
                      */
                     Message m_message;
                     bool m_messageHasBeenSet;
+
+                    /**
+                     * 索引值，流式调用时使用该字段。
+                     */
+                    int64_t m_index;
+                    bool m_indexHasBeenSet;
+
+                    /**
+                     * 多轮会话风险审核，值为1时，表明存在信息安全风险，建议终止客户多轮会话。
+                     */
+                    std::string m_moderationLevel;
+                    bool m_moderationLevelHasBeenSet;
 
                 };
             }

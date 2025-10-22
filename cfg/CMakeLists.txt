@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -33,16 +33,18 @@ set(cfg_public_header_model
   include/tencentcloud/cfg/v20210820/model/ActionFieldConfigDetail.h
   include/tencentcloud/cfg/v20210820/model/TemplateGroupAction.h
   include/tencentcloud/cfg/v20210820/model/Template.h
-  include/tencentcloud/cfg/v20210820/model/DescribeTaskExecuteLogsRequest.h
   include/tencentcloud/cfg/v20210820/model/DescribeObjectTypeListResponse.h
+  include/tencentcloud/cfg/v20210820/model/DescribeTaskExecuteLogsRequest.h
   include/tencentcloud/cfg/v20210820/model/ModifyTaskRunStatusRequest.h
   include/tencentcloud/cfg/v20210820/model/DescribeTemplateResponse.h
   include/tencentcloud/cfg/v20210820/model/DescribePolicy.h
   include/tencentcloud/cfg/v20210820/model/ActionFilter.h
   include/tencentcloud/cfg/v20210820/model/PolicyTriggerLog.h
+  include/tencentcloud/cfg/v20210820/model/TaskTarget.h
+  include/tencentcloud/cfg/v20210820/model/ModifyTaskRunStatusResponse.h
   include/tencentcloud/cfg/v20210820/model/DescribeTemplateRequest.h
   include/tencentcloud/cfg/v20210820/model/ExecuteTaskInstanceRequest.h
-  include/tencentcloud/cfg/v20210820/model/TaskGroupInstance.h
+  include/tencentcloud/cfg/v20210820/model/TaskGroupForAction.h
   include/tencentcloud/cfg/v20210820/model/ExecuteTaskRequest.h
   include/tencentcloud/cfg/v20210820/model/DescribeTaskListResponse.h
   include/tencentcloud/cfg/v20210820/model/ResourceOffline.h
@@ -60,6 +62,7 @@ set(cfg_public_header_model
   include/tencentcloud/cfg/v20210820/model/TaskOrg.h
   include/tencentcloud/cfg/v20210820/model/TaskReportInfo.h
   include/tencentcloud/cfg/v20210820/model/CreateTaskFromTemplateRequest.h
+  include/tencentcloud/cfg/v20210820/model/CreateTaskFromMultiActionRequest.h
   include/tencentcloud/cfg/v20210820/model/TriggerPolicyRequest.h
   include/tencentcloud/cfg/v20210820/model/TaskConfig.h
   include/tencentcloud/cfg/v20210820/model/TriggerPolicyResponse.h
@@ -73,10 +76,11 @@ set(cfg_public_header_model
   include/tencentcloud/cfg/v20210820/model/TemplateMonitor.h
   include/tencentcloud/cfg/v20210820/model/TemplateGroup.h
   include/tencentcloud/cfg/v20210820/model/TemplatePolicy.h
+  include/tencentcloud/cfg/v20210820/model/TaskGroupInstance.h
   include/tencentcloud/cfg/v20210820/model/ActionFieldConfigResult.h
   include/tencentcloud/cfg/v20210820/model/TaskGroupActionConfig.h
   include/tencentcloud/cfg/v20210820/model/ActionLibraryListResult.h
-  include/tencentcloud/cfg/v20210820/model/ModifyTaskRunStatusResponse.h
+  include/tencentcloud/cfg/v20210820/model/CreateTaskFromMultiActionResponse.h
   include/tencentcloud/cfg/v20210820/model/DescribeTaskResponse.h
   include/tencentcloud/cfg/v20210820/model/CreateTaskFromActionResponse.h
   include/tencentcloud/cfg/v20210820/model/TemplateListItem.h
@@ -101,16 +105,18 @@ set(cfg_src
   src/v20210820/model/ActionFieldConfigDetail.cpp
   src/v20210820/model/TemplateGroupAction.cpp
   src/v20210820/model/Template.cpp
-  src/v20210820/model/DescribeTaskExecuteLogsRequest.cpp
   src/v20210820/model/DescribeObjectTypeListResponse.cpp
+  src/v20210820/model/DescribeTaskExecuteLogsRequest.cpp
   src/v20210820/model/ModifyTaskRunStatusRequest.cpp
   src/v20210820/model/DescribeTemplateResponse.cpp
   src/v20210820/model/DescribePolicy.cpp
   src/v20210820/model/ActionFilter.cpp
   src/v20210820/model/PolicyTriggerLog.cpp
+  src/v20210820/model/TaskTarget.cpp
+  src/v20210820/model/ModifyTaskRunStatusResponse.cpp
   src/v20210820/model/DescribeTemplateRequest.cpp
   src/v20210820/model/ExecuteTaskInstanceRequest.cpp
-  src/v20210820/model/TaskGroupInstance.cpp
+  src/v20210820/model/TaskGroupForAction.cpp
   src/v20210820/model/ExecuteTaskRequest.cpp
   src/v20210820/model/DescribeTaskListResponse.cpp
   src/v20210820/model/ResourceOffline.cpp
@@ -128,6 +134,7 @@ set(cfg_src
   src/v20210820/model/TaskOrg.cpp
   src/v20210820/model/TaskReportInfo.cpp
   src/v20210820/model/CreateTaskFromTemplateRequest.cpp
+  src/v20210820/model/CreateTaskFromMultiActionRequest.cpp
   src/v20210820/model/TriggerPolicyRequest.cpp
   src/v20210820/model/TaskConfig.cpp
   src/v20210820/model/TriggerPolicyResponse.cpp
@@ -141,10 +148,11 @@ set(cfg_src
   src/v20210820/model/TemplateMonitor.cpp
   src/v20210820/model/TemplateGroup.cpp
   src/v20210820/model/TemplatePolicy.cpp
+  src/v20210820/model/TaskGroupInstance.cpp
   src/v20210820/model/ActionFieldConfigResult.cpp
   src/v20210820/model/TaskGroupActionConfig.cpp
   src/v20210820/model/ActionLibraryListResult.cpp
-  src/v20210820/model/ModifyTaskRunStatusResponse.cpp
+  src/v20210820/model/CreateTaskFromMultiActionResponse.cpp
   src/v20210820/model/DescribeTaskResponse.cpp
   src/v20210820/model/CreateTaskFromActionResponse.cpp
   src/v20210820/model/TemplateListItem.cpp

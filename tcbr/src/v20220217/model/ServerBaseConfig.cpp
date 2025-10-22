@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,16 @@ ServerBaseConfig::ServerBaseConfig() :
     m_logSetIdHasBeenSet(false),
     m_logTopicIdHasBeenSet(false),
     m_logParseTypeHasBeenSet(false),
-    m_tagHasBeenSet(false)
+    m_tagHasBeenSet(false),
+    m_internalAccessHasBeenSet(false),
+    m_internalDomainHasBeenSet(false),
+    m_operationModeHasBeenSet(false),
+    m_timerScaleHasBeenSet(false),
+    m_entryPointHasBeenSet(false),
+    m_cmdHasBeenSet(false),
+    m_sessionAffinityHasBeenSet(false),
+    m_vpcConfHasBeenSet(false),
+    m_volumesConfHasBeenSet(false)
 {
 }
 
@@ -273,6 +282,129 @@ CoreInternalOutcome ServerBaseConfig::Deserialize(const rapidjson::Value &value)
         m_tagHasBeenSet = true;
     }
 
+    if (value.HasMember("InternalAccess") && !value["InternalAccess"].IsNull())
+    {
+        if (!value["InternalAccess"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerBaseConfig.InternalAccess` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_internalAccess = string(value["InternalAccess"].GetString());
+        m_internalAccessHasBeenSet = true;
+    }
+
+    if (value.HasMember("InternalDomain") && !value["InternalDomain"].IsNull())
+    {
+        if (!value["InternalDomain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerBaseConfig.InternalDomain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_internalDomain = string(value["InternalDomain"].GetString());
+        m_internalDomainHasBeenSet = true;
+    }
+
+    if (value.HasMember("OperationMode") && !value["OperationMode"].IsNull())
+    {
+        if (!value["OperationMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerBaseConfig.OperationMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_operationMode = string(value["OperationMode"].GetString());
+        m_operationModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TimerScale") && !value["TimerScale"].IsNull())
+    {
+        if (!value["TimerScale"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ServerBaseConfig.TimerScale` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TimerScale"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TimerScale item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_timerScale.push_back(item);
+        }
+        m_timerScaleHasBeenSet = true;
+    }
+
+    if (value.HasMember("EntryPoint") && !value["EntryPoint"].IsNull())
+    {
+        if (!value["EntryPoint"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ServerBaseConfig.EntryPoint` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["EntryPoint"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_entryPoint.push_back((*itr).GetString());
+        }
+        m_entryPointHasBeenSet = true;
+    }
+
+    if (value.HasMember("Cmd") && !value["Cmd"].IsNull())
+    {
+        if (!value["Cmd"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ServerBaseConfig.Cmd` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Cmd"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_cmd.push_back((*itr).GetString());
+        }
+        m_cmdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SessionAffinity") && !value["SessionAffinity"].IsNull())
+    {
+        if (!value["SessionAffinity"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerBaseConfig.SessionAffinity` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionAffinity = string(value["SessionAffinity"].GetString());
+        m_sessionAffinityHasBeenSet = true;
+    }
+
+    if (value.HasMember("VpcConf") && !value["VpcConf"].IsNull())
+    {
+        if (!value["VpcConf"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerBaseConfig.VpcConf` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_vpcConf.Deserialize(value["VpcConf"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_vpcConfHasBeenSet = true;
+    }
+
+    if (value.HasMember("VolumesConf") && !value["VolumesConf"].IsNull())
+    {
+        if (!value["VolumesConf"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ServerBaseConfig.VolumesConf` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["VolumesConf"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            VolumeConf item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_volumesConf.push_back(item);
+        }
+        m_volumesConfHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -458,6 +590,103 @@ void ServerBaseConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "Tag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_tag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_internalAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InternalAccess";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_internalAccess.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_internalDomainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InternalDomain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_internalDomain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operationModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operationMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_timerScaleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimerScale";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_timerScale.begin(); itr != m_timerScale.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_entryPointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EntryPoint";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_entryPoint.begin(); itr != m_entryPoint.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_cmdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Cmd";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_cmd.begin(); itr != m_cmd.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_sessionAffinityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionAffinity";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sessionAffinity.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcConfHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcConf";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_vpcConf.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_volumesConfHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VolumesConf";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_volumesConf.begin(); itr != m_volumesConf.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -797,5 +1026,149 @@ void ServerBaseConfig::SetTag(const string& _tag)
 bool ServerBaseConfig::TagHasBeenSet() const
 {
     return m_tagHasBeenSet;
+}
+
+string ServerBaseConfig::GetInternalAccess() const
+{
+    return m_internalAccess;
+}
+
+void ServerBaseConfig::SetInternalAccess(const string& _internalAccess)
+{
+    m_internalAccess = _internalAccess;
+    m_internalAccessHasBeenSet = true;
+}
+
+bool ServerBaseConfig::InternalAccessHasBeenSet() const
+{
+    return m_internalAccessHasBeenSet;
+}
+
+string ServerBaseConfig::GetInternalDomain() const
+{
+    return m_internalDomain;
+}
+
+void ServerBaseConfig::SetInternalDomain(const string& _internalDomain)
+{
+    m_internalDomain = _internalDomain;
+    m_internalDomainHasBeenSet = true;
+}
+
+bool ServerBaseConfig::InternalDomainHasBeenSet() const
+{
+    return m_internalDomainHasBeenSet;
+}
+
+string ServerBaseConfig::GetOperationMode() const
+{
+    return m_operationMode;
+}
+
+void ServerBaseConfig::SetOperationMode(const string& _operationMode)
+{
+    m_operationMode = _operationMode;
+    m_operationModeHasBeenSet = true;
+}
+
+bool ServerBaseConfig::OperationModeHasBeenSet() const
+{
+    return m_operationModeHasBeenSet;
+}
+
+vector<TimerScale> ServerBaseConfig::GetTimerScale() const
+{
+    return m_timerScale;
+}
+
+void ServerBaseConfig::SetTimerScale(const vector<TimerScale>& _timerScale)
+{
+    m_timerScale = _timerScale;
+    m_timerScaleHasBeenSet = true;
+}
+
+bool ServerBaseConfig::TimerScaleHasBeenSet() const
+{
+    return m_timerScaleHasBeenSet;
+}
+
+vector<string> ServerBaseConfig::GetEntryPoint() const
+{
+    return m_entryPoint;
+}
+
+void ServerBaseConfig::SetEntryPoint(const vector<string>& _entryPoint)
+{
+    m_entryPoint = _entryPoint;
+    m_entryPointHasBeenSet = true;
+}
+
+bool ServerBaseConfig::EntryPointHasBeenSet() const
+{
+    return m_entryPointHasBeenSet;
+}
+
+vector<string> ServerBaseConfig::GetCmd() const
+{
+    return m_cmd;
+}
+
+void ServerBaseConfig::SetCmd(const vector<string>& _cmd)
+{
+    m_cmd = _cmd;
+    m_cmdHasBeenSet = true;
+}
+
+bool ServerBaseConfig::CmdHasBeenSet() const
+{
+    return m_cmdHasBeenSet;
+}
+
+string ServerBaseConfig::GetSessionAffinity() const
+{
+    return m_sessionAffinity;
+}
+
+void ServerBaseConfig::SetSessionAffinity(const string& _sessionAffinity)
+{
+    m_sessionAffinity = _sessionAffinity;
+    m_sessionAffinityHasBeenSet = true;
+}
+
+bool ServerBaseConfig::SessionAffinityHasBeenSet() const
+{
+    return m_sessionAffinityHasBeenSet;
+}
+
+VpcConf ServerBaseConfig::GetVpcConf() const
+{
+    return m_vpcConf;
+}
+
+void ServerBaseConfig::SetVpcConf(const VpcConf& _vpcConf)
+{
+    m_vpcConf = _vpcConf;
+    m_vpcConfHasBeenSet = true;
+}
+
+bool ServerBaseConfig::VpcConfHasBeenSet() const
+{
+    return m_vpcConfHasBeenSet;
+}
+
+vector<VolumeConf> ServerBaseConfig::GetVolumesConf() const
+{
+    return m_volumesConf;
+}
+
+void ServerBaseConfig::SetVolumesConf(const vector<VolumeConf>& _volumesConf)
+{
+    m_volumesConf = _volumesConf;
+    m_volumesConfHasBeenSet = true;
+}
+
+bool ServerBaseConfig::VolumesConfHasBeenSet() const
+{
+    return m_volumesConfHasBeenSet;
 }
 

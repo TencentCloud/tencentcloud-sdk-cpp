@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool ClusterNameHasBeenSet() const;
 
                     /**
-                     * 获取集群读写地址信息。
-                     * @return ReadWriteAddress 集群读写地址信息。
+                     * 获取云盘版实例的读写地址信息。
+                     * @return ReadWriteAddress 云盘版实例的读写地址信息。
                      * 
                      */
                     AddressInfo GetReadWriteAddress() const;
@@ -74,8 +74,8 @@ namespace TencentCloud
                     bool ReadWriteAddressHasBeenSet() const;
 
                     /**
-                     * 获取集群只读地址信息。
-                     * @return ReadOnlyAddress 集群只读地址信息。
+                     * 获取云盘版实例的只读地址信息。
+                     * @return ReadOnlyAddress 云盘版实例的只读地址信息。
                      * 
                      */
                     std::vector<AddressInfo> GetReadOnlyAddress() const;
@@ -88,8 +88,8 @@ namespace TencentCloud
                     bool ReadOnlyAddressHasBeenSet() const;
 
                     /**
-                     * 获取集群节点列表信息。
-                     * @return NodeList 集群节点列表信息。
+                     * 获取云盘版实例的节点列表信息。
+                     * @return NodeList 云盘版实例的节点列表信息。
                      * 
                      */
                     std::vector<ClusterNodeInfo> GetNodeList() const;
@@ -138,19 +138,19 @@ namespace TencentCloud
                     bool m_clusterNameHasBeenSet;
 
                     /**
-                     * 集群读写地址信息。
+                     * 云盘版实例的读写地址信息。
                      */
                     AddressInfo m_readWriteAddress;
                     bool m_readWriteAddressHasBeenSet;
 
                     /**
-                     * 集群只读地址信息。
+                     * 云盘版实例的只读地址信息。
                      */
                     std::vector<AddressInfo> m_readOnlyAddress;
                     bool m_readOnlyAddressHasBeenSet;
 
                     /**
-                     * 集群节点列表信息。
+                     * 云盘版实例的节点列表信息。
                      */
                     std::vector<ClusterNodeInfo> m_nodeList;
                     bool m_nodeListHasBeenSet;

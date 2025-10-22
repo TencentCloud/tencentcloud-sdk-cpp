@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,9 @@ VoucherInfos::VoucherInfos() :
     m_beginTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_applicableProductsHasBeenSet(false),
-    m_excludedProductsHasBeenSet(false)
+    m_excludedProductsHasBeenSet(false),
+    m_policyRemarkHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -167,6 +169,26 @@ CoreInternalOutcome VoucherInfos::Deserialize(const rapidjson::Value &value)
         m_excludedProductsHasBeenSet = true;
     }
 
+    if (value.HasMember("PolicyRemark") && !value["PolicyRemark"].IsNull())
+    {
+        if (!value["PolicyRemark"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VoucherInfos.PolicyRemark` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_policyRemark = string(value["PolicyRemark"].GetString());
+        m_policyRemarkHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VoucherInfos.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -268,6 +290,22 @@ void VoucherInfos::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_policyRemarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolicyRemark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_policyRemark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -447,5 +485,37 @@ void VoucherInfos::SetExcludedProducts(const vector<ExcludedProducts>& _excluded
 bool VoucherInfos::ExcludedProductsHasBeenSet() const
 {
     return m_excludedProductsHasBeenSet;
+}
+
+string VoucherInfos::GetPolicyRemark() const
+{
+    return m_policyRemark;
+}
+
+void VoucherInfos::SetPolicyRemark(const string& _policyRemark)
+{
+    m_policyRemark = _policyRemark;
+    m_policyRemarkHasBeenSet = true;
+}
+
+bool VoucherInfos::PolicyRemarkHasBeenSet() const
+{
+    return m_policyRemarkHasBeenSet;
+}
+
+string VoucherInfos::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void VoucherInfos::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool VoucherInfos::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 

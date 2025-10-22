@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取搜索的集群id名称
-                     * @return SearchInstanceId 搜索的集群id名称
+                     * 获取用集群id搜索
+                     * @return SearchInstanceId 用集群id搜索
                      * 
                      */
                     std::string GetSearchInstanceId() const;
 
                     /**
-                     * 设置搜索的集群id名称
-                     * @param _searchInstanceId 搜索的集群id名称
+                     * 设置用集群id搜索
+                     * @param _searchInstanceId 用集群id搜索
                      * 
                      */
                     void SetSearchInstanceId(const std::string& _searchInstanceId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool SearchInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取搜索的集群name
-                     * @return SearchInstanceName 搜索的集群name
+                     * 获取用集群名字搜索
+                     * @return SearchInstanceName 用集群名字搜索
                      * 
                      */
                     std::string GetSearchInstanceName() const;
 
                     /**
-                     * 设置搜索的集群name
-                     * @param _searchInstanceName 搜索的集群name
+                     * 设置用集群名字搜索
+                     * @param _searchInstanceName 用集群名字搜索
                      * 
                      */
                     void SetSearchInstanceName(const std::string& _searchInstanceName);
@@ -151,13 +151,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 搜索的集群id名称
+                     * 用集群id搜索
                      */
                     std::string m_searchInstanceId;
                     bool m_searchInstanceIdHasBeenSet;
 
                     /**
-                     * 搜索的集群name
+                     * 用集群名字搜索
                      */
                     std::string m_searchInstanceName;
                     bool m_searchInstanceNameHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Src 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSrc() const;
 
                     /**
                      * 设置原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _src 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrc(const std::string& _src);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取疾病名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiseaseName 疾病名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDiseaseName() const;
 
                     /**
                      * 设置疾病名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diseaseName 疾病名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiseaseName(const std::string& _diseaseName);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取归一化值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Norm 归一化值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNorm() const;
 
                     /**
                      * 设置归一化值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _norm 归一化值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNorm(const std::string& _norm);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Unit 单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUnit() const;
 
                     /**
                      * 设置单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _unit 单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUnit(const std::string& _unit);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timestamp 时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTimestamp() const;
 
                     /**
                      * 设置时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timestamp 时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimestamp(const std::string& _timestamp);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对外输出值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 对外输出值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置对外输出值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 对外输出值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -250,56 +218,48 @@ namespace TencentCloud
 
                     /**
                      * 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_src;
                     bool m_srcHasBeenSet;
 
                     /**
                      * 疾病名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_diseaseName;
                     bool m_diseaseNameHasBeenSet;
 
                     /**
                      * 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 归一化值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_norm;
                     bool m_normHasBeenSet;
 
                     /**
                      * 单位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_unit;
                     bool m_unitHasBeenSet;
 
                     /**
                      * 时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timestamp;
                     bool m_timestampHasBeenSet;
 
                     /**
                      * 对外输出值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

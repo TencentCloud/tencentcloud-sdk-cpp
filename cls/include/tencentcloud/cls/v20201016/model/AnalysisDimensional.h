@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分析名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 分析名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置分析名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 分析名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -73,19 +69,19 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取分析类型：query，field ，original
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Type 分析类型：query，field ，original
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取分析类型：query(自定义检索分析)，field(字段TOP5及占比统计) ，original(相关原始日志)
+
+                     * @return Type 分析类型：query(自定义检索分析)，field(字段TOP5及占比统计) ，original(相关原始日志)
+
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置分析类型：query，field ，original
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _type 分析类型：query，field ，original
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置分析类型：query(自定义检索分析)，field(字段TOP5及占比统计) ，original(相关原始日志)
+
+                     * @param _type 分析类型：query(自定义检索分析)，field(字段TOP5及占比统计) ，original(相关原始日志)
+
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -99,18 +95,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分析内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 分析内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置分析内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _content 分析内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContent(const std::string& _content);
@@ -164,7 +156,6 @@ namespace TencentCloud
     "Key": "SyntaxRule", // 查不到这个字段也是老语法
     "Value": "0"//0:Lucene, 1:CQL
 }
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigInfo 多维分析配置。
 
 当Analysis的Type字段为query（自定义）时，支持
@@ -206,7 +197,6 @@ namespace TencentCloud
     "Key": "SyntaxRule", // 查不到这个字段也是老语法
     "Value": "0"//0:Lucene, 1:CQL
 }
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AlarmAnalysisConfig> GetConfigInfo() const;
@@ -253,7 +243,6 @@ namespace TencentCloud
     "Key": "SyntaxRule", // 查不到这个字段也是老语法
     "Value": "0"//0:Lucene, 1:CQL
 }
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configInfo 多维分析配置。
 
 当Analysis的Type字段为query（自定义）时，支持
@@ -295,7 +284,6 @@ namespace TencentCloud
     "Key": "SyntaxRule", // 查不到这个字段也是老语法
     "Value": "0"//0:Lucene, 1:CQL
 }
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigInfo(const std::vector<AlarmAnalysisConfig>& _configInfo);
@@ -311,21 +299,19 @@ namespace TencentCloud
 
                     /**
                      * 分析名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 分析类型：query，field ，original
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 分析类型：query(自定义检索分析)，field(字段TOP5及占比统计) ，original(相关原始日志)
+
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 分析内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
@@ -372,7 +358,6 @@ namespace TencentCloud
     "Key": "SyntaxRule", // 查不到这个字段也是老语法
     "Value": "0"//0:Lucene, 1:CQL
 }
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AlarmAnalysisConfig> m_configInfo;
                     bool m_configInfoHasBeenSet;

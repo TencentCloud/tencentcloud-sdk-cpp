@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -219,18 +219,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎关联CLS日志主题信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CLSTopics 引擎关联CLS日志主题信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PolarisCLSTopicInfo> GetCLSTopics() const;
 
                     /**
                      * 设置引擎关联CLS日志主题信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cLSTopics 引擎关联CLS日志主题信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCLSTopics(const std::vector<PolarisCLSTopicInfo>& _cLSTopics);
@@ -241,6 +237,27 @@ namespace TencentCloud
                      * 
                      */
                     bool CLSTopicsHasBeenSet() const;
+
+                    /**
+                     * 获取子用户密码
+                     * @return SubPassword 子用户密码
+                     * 
+                     */
+                    std::string GetSubPassword() const;
+
+                    /**
+                     * 设置子用户密码
+                     * @param _subPassword 子用户密码
+                     * 
+                     */
+                    void SetSubPassword(const std::string& _subPassword);
+
+                    /**
+                     * 判断参数 SubPassword 是否已赋值
+                     * @return SubPassword 是否已赋值
+                     * 
+                     */
+                    bool SubPasswordHasBeenSet() const;
 
                 private:
 
@@ -294,10 +311,15 @@ namespace TencentCloud
 
                     /**
                      * 引擎关联CLS日志主题信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PolarisCLSTopicInfo> m_cLSTopics;
                     bool m_cLSTopicsHasBeenSet;
+
+                    /**
+                     * 子用户密码
+                     */
+                    std::string m_subPassword;
+                    bool m_subPasswordHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取心电图详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EcgDescription 心电图详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EcgDescription GetEcgDescription() const;
 
                     /**
                      * 设置心电图详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ecgDescription 心电图详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEcgDescription(const EcgDescription& _ecgDescription);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取心电图诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EcgDiagnosis 心电图诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EcgDiagnosis GetEcgDiagnosis() const;
 
                     /**
                      * 设置心电图诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ecgDiagnosis 心电图诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEcgDiagnosis(const EcgDiagnosis& _ecgDiagnosis);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Page 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPage() const;
 
                     /**
                      * 设置数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _page 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPage(const int64_t& _page);
@@ -127,21 +115,18 @@ namespace TencentCloud
 
                     /**
                      * 心电图详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EcgDescription m_ecgDescription;
                     bool m_ecgDescriptionHasBeenSet;
 
                     /**
                      * 心电图诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EcgDiagnosis m_ecgDiagnosis;
                     bool m_ecgDiagnosisHasBeenSet;
 
                     /**
                      * 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_page;
                     bool m_pageHasBeenSet;

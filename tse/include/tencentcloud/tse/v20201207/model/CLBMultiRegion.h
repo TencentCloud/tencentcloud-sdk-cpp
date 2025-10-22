@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否启用多可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CLBMultiZoneFlag 是否启用多可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetCLBMultiZoneFlag() const;
 
                     /**
                      * 设置是否启用多可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cLBMultiZoneFlag 是否启用多可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCLBMultiZoneFlag(const bool& _cLBMultiZoneFlag);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CLBMasterZone 主可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCLBMasterZone() const;
 
                     /**
                      * 设置主可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cLBMasterZone 主可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCLBMasterZone(const std::string& _cLBMasterZone);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CLBSlaveZone 备可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCLBSlaveZone() const;
 
                     /**
                      * 设置备可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cLBSlaveZone 备可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCLBSlaveZone(const std::string& _cLBSlaveZone);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 是否启用多可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_cLBMultiZoneFlag;
                     bool m_cLBMultiZoneFlagHasBeenSet;
 
                     /**
                      * 主可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cLBMasterZone;
                     bool m_cLBMasterZoneHasBeenSet;
 
                     /**
                      * 备可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cLBSlaveZone;
                     bool m_cLBSlaveZoneHasBeenSet;

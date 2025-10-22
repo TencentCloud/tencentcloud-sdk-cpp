@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,7 +46,11 @@ GenHiveTableDDLSqlRequest::GenHiveTableDDLSqlRequest() :
     m_targetDatasourceIdHasBeenSet(false),
     m_upsertKeysHasBeenSet(false),
     m_tableBaseInfoHasBeenSet(false),
-    m_sinkSchemaNameHasBeenSet(false)
+    m_sinkSchemaNameHasBeenSet(false),
+    m_envHasBeenSet(false),
+    m_writeModeHasBeenSet(false),
+    m_taskTypeHasBeenSet(false),
+    m_sinkTableNameHasBeenSet(false)
 {
 }
 
@@ -274,6 +278,38 @@ string GenHiveTableDDLSqlRequest::ToJsonString() const
         string key = "SinkSchemaName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sinkSchemaName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_envHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Env";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_env.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_writeModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WriteMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_writeMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_taskType, allocator);
+    }
+
+    if (m_sinkTableNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SinkTableName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sinkTableName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -666,6 +702,70 @@ void GenHiveTableDDLSqlRequest::SetSinkSchemaName(const string& _sinkSchemaName)
 bool GenHiveTableDDLSqlRequest::SinkSchemaNameHasBeenSet() const
 {
     return m_sinkSchemaNameHasBeenSet;
+}
+
+string GenHiveTableDDLSqlRequest::GetEnv() const
+{
+    return m_env;
+}
+
+void GenHiveTableDDLSqlRequest::SetEnv(const string& _env)
+{
+    m_env = _env;
+    m_envHasBeenSet = true;
+}
+
+bool GenHiveTableDDLSqlRequest::EnvHasBeenSet() const
+{
+    return m_envHasBeenSet;
+}
+
+string GenHiveTableDDLSqlRequest::GetWriteMode() const
+{
+    return m_writeMode;
+}
+
+void GenHiveTableDDLSqlRequest::SetWriteMode(const string& _writeMode)
+{
+    m_writeMode = _writeMode;
+    m_writeModeHasBeenSet = true;
+}
+
+bool GenHiveTableDDLSqlRequest::WriteModeHasBeenSet() const
+{
+    return m_writeModeHasBeenSet;
+}
+
+int64_t GenHiveTableDDLSqlRequest::GetTaskType() const
+{
+    return m_taskType;
+}
+
+void GenHiveTableDDLSqlRequest::SetTaskType(const int64_t& _taskType)
+{
+    m_taskType = _taskType;
+    m_taskTypeHasBeenSet = true;
+}
+
+bool GenHiveTableDDLSqlRequest::TaskTypeHasBeenSet() const
+{
+    return m_taskTypeHasBeenSet;
+}
+
+string GenHiveTableDDLSqlRequest::GetSinkTableName() const
+{
+    return m_sinkTableName;
+}
+
+void GenHiveTableDDLSqlRequest::SetSinkTableName(const string& _sinkTableName)
+{
+    m_sinkTableName = _sinkTableName;
+    m_sinkTableNameHasBeenSet = true;
+}
+
+bool GenHiveTableDDLSqlRequest::SinkTableNameHasBeenSet() const
+{
+    return m_sinkTableNameHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,14 +45,38 @@ namespace TencentCloud
 
                     /**
                      * 获取待查询的实例ID列表。
+
+可通过对应云产品的查询实例接口获取实例 ID。目前支持实例类型：CVM、Lighthouse、TAT 托管实例。
+
+每次请求的上限为 100。
+
+参数不支持同时指定 `InstanceIds ` 和 `Filters ` 。
                      * @return InstanceIds 待查询的实例ID列表。
+
+可通过对应云产品的查询实例接口获取实例 ID。目前支持实例类型：CVM、Lighthouse、TAT 托管实例。
+
+每次请求的上限为 100。
+
+参数不支持同时指定 `InstanceIds ` 和 `Filters ` 。
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置待查询的实例ID列表。
+
+可通过对应云产品的查询实例接口获取实例 ID。目前支持实例类型：CVM、Lighthouse、TAT 托管实例。
+
+每次请求的上限为 100。
+
+参数不支持同时指定 `InstanceIds ` 和 `Filters ` 。
                      * @param _instanceIds 待查询的实例ID列表。
+
+可通过对应云产品的查询实例接口获取实例 ID。目前支持实例类型：CVM、Lighthouse、TAT 托管实例。
+
+每次请求的上限为 100。
+
+参数不支持同时指定 `InstanceIds ` 和 `Filters ` 。
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -65,15 +89,31 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取<li>agent-status - String - 是否必填：否 -（过滤条件）按照agent状态过滤，取值：Online 在线，Offline 离线。</li><br><li>environment - String - 是否必填：否 -（过滤条件）按照agent运行环境查询，取值：Linux, Windows。</li><br><li>instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。</li>
-                     * @return Filters <li>agent-status - String - 是否必填：否 -（过滤条件）按照agent状态过滤，取值：Online 在线，Offline 离线。</li><br><li>environment - String - 是否必填：否 -（过滤条件）按照agent运行环境查询，取值：Linux, Windows。</li><br><li>instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。</li>
+                     * 获取- agent-status - String - 是否必填：否 -（过滤条件）按照agent状态过滤，取值：Online 在线，Offline 离线。 
+- environment - String - 是否必填：否 -（过滤条件）按照agent运行环境查询，取值：Linux, Windows。
+- instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。 可通过对应云产品的查询实例接口获取实例 ID。目前支持实例类型：CVM、Lighthouse、TAT 托管实例。
+
+每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `InstanceIds ` 和 `Filters ` 。
+                     * @return Filters - agent-status - String - 是否必填：否 -（过滤条件）按照agent状态过滤，取值：Online 在线，Offline 离线。 
+- environment - String - 是否必填：否 -（过滤条件）按照agent运行环境查询，取值：Linux, Windows。
+- instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。 可通过对应云产品的查询实例接口获取实例 ID。目前支持实例类型：CVM、Lighthouse、TAT 托管实例。
+
+每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `InstanceIds ` 和 `Filters ` 。
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置<li>agent-status - String - 是否必填：否 -（过滤条件）按照agent状态过滤，取值：Online 在线，Offline 离线。</li><br><li>environment - String - 是否必填：否 -（过滤条件）按照agent运行环境查询，取值：Linux, Windows。</li><br><li>instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。</li>
-                     * @param _filters <li>agent-status - String - 是否必填：否 -（过滤条件）按照agent状态过滤，取值：Online 在线，Offline 离线。</li><br><li>environment - String - 是否必填：否 -（过滤条件）按照agent运行环境查询，取值：Linux, Windows。</li><br><li>instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。</li>
+                     * 设置- agent-status - String - 是否必填：否 -（过滤条件）按照agent状态过滤，取值：Online 在线，Offline 离线。 
+- environment - String - 是否必填：否 -（过滤条件）按照agent运行环境查询，取值：Linux, Windows。
+- instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。 可通过对应云产品的查询实例接口获取实例 ID。目前支持实例类型：CVM、Lighthouse、TAT 托管实例。
+
+每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `InstanceIds ` 和 `Filters ` 。
+                     * @param _filters - agent-status - String - 是否必填：否 -（过滤条件）按照agent状态过滤，取值：Online 在线，Offline 离线。 
+- environment - String - 是否必填：否 -（过滤条件）按照agent运行环境查询，取值：Linux, Windows。
+- instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。 可通过对应云产品的查询实例接口获取实例 ID。目前支持实例类型：CVM、Lighthouse、TAT 托管实例。
+
+每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `InstanceIds ` 和 `Filters ` 。
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -131,12 +171,22 @@ namespace TencentCloud
 
                     /**
                      * 待查询的实例ID列表。
+
+可通过对应云产品的查询实例接口获取实例 ID。目前支持实例类型：CVM、Lighthouse、TAT 托管实例。
+
+每次请求的上限为 100。
+
+参数不支持同时指定 `InstanceIds ` 和 `Filters ` 。
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * <li>agent-status - String - 是否必填：否 -（过滤条件）按照agent状态过滤，取值：Online 在线，Offline 离线。</li><br><li>environment - String - 是否必填：否 -（过滤条件）按照agent运行环境查询，取值：Linux, Windows。</li><br><li>instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。</li>
+                     * - agent-status - String - 是否必填：否 -（过滤条件）按照agent状态过滤，取值：Online 在线，Offline 离线。 
+- environment - String - 是否必填：否 -（过滤条件）按照agent运行环境查询，取值：Linux, Windows。
+- instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。 可通过对应云产品的查询实例接口获取实例 ID。目前支持实例类型：CVM、Lighthouse、TAT 托管实例。
+
+每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `InstanceIds ` 和 `Filters ` 。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

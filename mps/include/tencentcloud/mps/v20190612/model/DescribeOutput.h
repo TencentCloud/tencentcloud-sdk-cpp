@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,9 @@
 #include <tencentcloud/mps/v20190612/model/DescribeOutputRTMPPullSettings.h>
 #include <tencentcloud/mps/v20190612/model/DescribeOutputRTSPPullSettings.h>
 #include <tencentcloud/mps/v20190612/model/DescribeOutputHLSPullSettings.h>
+#include <tencentcloud/mps/v20190612/model/DescribeOutputRISTSettings.h>
+#include <tencentcloud/mps/v20190612/model/PidSelector.h>
+#include <tencentcloud/mps/v20190612/model/StreamUrlDetail.h>
 
 
 namespace TencentCloud
@@ -115,6 +118,27 @@ namespace TencentCloud
                      * 
                      */
                     bool OutputTypeHasBeenSet() const;
+
+                    /**
+                     * 获取输出模块类型，包括Pinpoint（单点输出，最多支持四路并发输出）；MultiMesh（多路输出，支持大于四路的并发输出，目前可以达到200路）。默认类型为 Pinpoint 输出。对于单个 Flow 一个区域最多只能有一个 MultiMesh 输出。
+                     * @return OutputKind 输出模块类型，包括Pinpoint（单点输出，最多支持四路并发输出）；MultiMesh（多路输出，支持大于四路的并发输出，目前可以达到200路）。默认类型为 Pinpoint 输出。对于单个 Flow 一个区域最多只能有一个 MultiMesh 输出。
+                     * 
+                     */
+                    std::string GetOutputKind() const;
+
+                    /**
+                     * 设置输出模块类型，包括Pinpoint（单点输出，最多支持四路并发输出）；MultiMesh（多路输出，支持大于四路的并发输出，目前可以达到200路）。默认类型为 Pinpoint 输出。对于单个 Flow 一个区域最多只能有一个 MultiMesh 输出。
+                     * @param _outputKind 输出模块类型，包括Pinpoint（单点输出，最多支持四路并发输出）；MultiMesh（多路输出，支持大于四路的并发输出，目前可以达到200路）。默认类型为 Pinpoint 输出。对于单个 Flow 一个区域最多只能有一个 MultiMesh 输出。
+                     * 
+                     */
+                    void SetOutputKind(const std::string& _outputKind);
+
+                    /**
+                     * 判断参数 OutputKind 是否已赋值
+                     * @return OutputKind 是否已赋值
+                     * 
+                     */
+                    bool OutputKindHasBeenSet() const;
 
                     /**
                      * 获取输出描述。
@@ -454,6 +478,73 @@ namespace TencentCloud
                      */
                     bool ZonesHasBeenSet() const;
 
+                    /**
+                     * 获取输出的RIST配置信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RISTSettings 输出的RIST配置信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    DescribeOutputRISTSettings GetRISTSettings() const;
+
+                    /**
+                     * 设置输出的RIST配置信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _rISTSettings 输出的RIST配置信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRISTSettings(const DescribeOutputRISTSettings& _rISTSettings);
+
+                    /**
+                     * 判断参数 RISTSettings 是否已赋值
+                     * @return RISTSettings 是否已赋值
+                     * 
+                     */
+                    bool RISTSettingsHasBeenSet() const;
+
+                    /**
+                     * 获取对于含有多个音/视频轨的流，可以指定需要使用的轨道
+                     * @return PidSelector 对于含有多个音/视频轨的流，可以指定需要使用的轨道
+                     * 
+                     */
+                    PidSelector GetPidSelector() const;
+
+                    /**
+                     * 设置对于含有多个音/视频轨的流，可以指定需要使用的轨道
+                     * @param _pidSelector 对于含有多个音/视频轨的流，可以指定需要使用的轨道
+                     * 
+                     */
+                    void SetPidSelector(const PidSelector& _pidSelector);
+
+                    /**
+                     * 判断参数 PidSelector 是否已赋值
+                     * @return PidSelector 是否已赋值
+                     * 
+                     */
+                    bool PidSelectorHasBeenSet() const;
+
+                    /**
+                     * 获取输出模块配置，相关的URL，包括提供的拉流地址，或者配置的输出到第三方的转推地址
+                     * @return StreamUrls 输出模块配置，相关的URL，包括提供的拉流地址，或者配置的输出到第三方的转推地址
+                     * 
+                     */
+                    std::vector<StreamUrlDetail> GetStreamUrls() const;
+
+                    /**
+                     * 设置输出模块配置，相关的URL，包括提供的拉流地址，或者配置的输出到第三方的转推地址
+                     * @param _streamUrls 输出模块配置，相关的URL，包括提供的拉流地址，或者配置的输出到第三方的转推地址
+                     * 
+                     */
+                    void SetStreamUrls(const std::vector<StreamUrlDetail>& _streamUrls);
+
+                    /**
+                     * 判断参数 StreamUrls 是否已赋值
+                     * @return StreamUrls 是否已赋值
+                     * 
+                     */
+                    bool StreamUrlsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -473,6 +564,12 @@ namespace TencentCloud
                      */
                     std::string m_outputType;
                     bool m_outputTypeHasBeenSet;
+
+                    /**
+                     * 输出模块类型，包括Pinpoint（单点输出，最多支持四路并发输出）；MultiMesh（多路输出，支持大于四路的并发输出，目前可以达到200路）。默认类型为 Pinpoint 输出。对于单个 Flow 一个区域最多只能有一个 MultiMesh 输出。
+                     */
+                    std::string m_outputKind;
+                    bool m_outputKindHasBeenSet;
 
                     /**
                      * 输出描述。
@@ -568,6 +665,25 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_zones;
                     bool m_zonesHasBeenSet;
+
+                    /**
+                     * 输出的RIST配置信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DescribeOutputRISTSettings m_rISTSettings;
+                    bool m_rISTSettingsHasBeenSet;
+
+                    /**
+                     * 对于含有多个音/视频轨的流，可以指定需要使用的轨道
+                     */
+                    PidSelector m_pidSelector;
+                    bool m_pidSelectorHasBeenSet;
+
+                    /**
+                     * 输出模块配置，相关的URL，包括提供的拉流地址，或者配置的输出到第三方的转推地址
+                     */
+                    std::vector<StreamUrlDetail> m_streamUrls;
+                    bool m_streamUrlsHasBeenSet;
 
                 };
             }

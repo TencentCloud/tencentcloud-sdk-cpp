@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,18 +51,14 @@ namespace TencentCloud
 
                     /**
                      * 获取名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -76,18 +72,14 @@ namespace TencentCloud
 
                     /**
                      * 获取NFS的挂载方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NFS NFS的挂载方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CloudBaseRunNfsVolumeSource GetNFS() const;
 
                     /**
                      * 设置NFS的挂载方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nFS NFS的挂载方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNFS(const CloudBaseRunNfsVolumeSource& _nFS);
@@ -101,18 +93,14 @@ namespace TencentCloud
 
                     /**
                      * 获取secret名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecretName secret名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSecretName() const;
 
                     /**
                      * 设置secret名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _secretName secret名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecretName(const std::string& _secretName);
@@ -126,18 +114,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启临时目录逐步废弃，请使用 EmptyDir
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableEmptyDirVolume 是否开启临时目录逐步废弃，请使用 EmptyDir
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableEmptyDirVolume() const;
 
                     /**
                      * 设置是否开启临时目录逐步废弃，请使用 EmptyDir
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableEmptyDirVolume 是否开启临时目录逐步废弃，请使用 EmptyDir
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableEmptyDirVolume(const bool& _enableEmptyDirVolume);
@@ -151,18 +135,14 @@ namespace TencentCloud
 
                     /**
                      * 获取emptydir数据卷详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EmptyDir emptydir数据卷详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CloudBaseRunEmptyDirVolumeSource GetEmptyDir() const;
 
                     /**
                      * 设置emptydir数据卷详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _emptyDir emptydir数据卷详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEmptyDir(const CloudBaseRunEmptyDirVolumeSource& _emptyDir);
@@ -176,18 +156,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机路径挂载信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostPath 主机路径挂载信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CloudBaseRunServiceVolumeHostPath GetHostPath() const;
 
                     /**
                      * 设置主机路径挂载信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostPath 主机路径挂载信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostPath(const CloudBaseRunServiceVolumeHostPath& _hostPath);
@@ -203,42 +179,36 @@ namespace TencentCloud
 
                     /**
                      * 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * NFS的挂载方式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CloudBaseRunNfsVolumeSource m_nFS;
                     bool m_nFSHasBeenSet;
 
                     /**
                      * secret名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_secretName;
                     bool m_secretNameHasBeenSet;
 
                     /**
                      * 是否开启临时目录逐步废弃，请使用 EmptyDir
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableEmptyDirVolume;
                     bool m_enableEmptyDirVolumeHasBeenSet;
 
                     /**
                      * emptydir数据卷详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CloudBaseRunEmptyDirVolumeSource m_emptyDir;
                     bool m_emptyDirHasBeenSet;
 
                     /**
                      * 主机路径挂载信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CloudBaseRunServiceVolumeHostPath m_hostPath;
                     bool m_hostPathHasBeenSet;

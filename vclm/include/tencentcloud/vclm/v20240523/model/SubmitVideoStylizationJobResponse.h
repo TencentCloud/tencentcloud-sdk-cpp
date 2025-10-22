@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务ID
-                     * @return JobId 任务ID
+                     * 获取任务ID。任务有效期为48小时。
+                     * @return JobId 任务ID。任务有效期为48小时。
                      * 
                      */
                     std::string GetJobId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务ID
+                     * 任务ID。任务有效期为48小时。
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;

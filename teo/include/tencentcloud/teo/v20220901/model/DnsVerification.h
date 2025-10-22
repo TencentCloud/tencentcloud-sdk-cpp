@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * CNAME 接入，使用 DNS 解析验证时所需的信息。
+                * 站点 CNAME 模式接入验证归属权或域名申请免费证书时，使用 DNS 解析验证时所需的信息。
                 */
                 class DnsVerification : public AbstractModel
                 {

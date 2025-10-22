@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,10 +75,10 @@ namespace TencentCloud
                     /**
                      * 获取线稿图 Base64 数据。
 Base64 和 Url 必须提供一个，如果都提供以Url 为准。
-图片限制：黑白线稿图片，单边分辨率小于5000且大于512（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
+图片限制：黑白线稿图片，单边分辨率小于5000且大于128（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
                      * @return InputImage 线稿图 Base64 数据。
 Base64 和 Url 必须提供一个，如果都提供以Url 为准。
-图片限制：黑白线稿图片，单边分辨率小于5000且大于512（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
+图片限制：黑白线稿图片，单边分辨率小于5000且大于128（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
                      * 
                      */
                     std::string GetInputImage() const;
@@ -86,10 +86,10 @@ Base64 和 Url 必须提供一个，如果都提供以Url 为准。
                     /**
                      * 设置线稿图 Base64 数据。
 Base64 和 Url 必须提供一个，如果都提供以Url 为准。
-图片限制：黑白线稿图片，单边分辨率小于5000且大于512（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
+图片限制：黑白线稿图片，单边分辨率小于5000且大于128（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
                      * @param _inputImage 线稿图 Base64 数据。
 Base64 和 Url 必须提供一个，如果都提供以Url 为准。
-图片限制：黑白线稿图片，单边分辨率小于5000且大于512（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
+图片限制：黑白线稿图片，单边分辨率小于5000且大于128（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
                      * 
                      */
                     void SetInputImage(const std::string& _inputImage);
@@ -104,10 +104,10 @@ Base64 和 Url 必须提供一个，如果都提供以Url 为准。
                     /**
                      * 获取线稿图 Url。
 Base64 和 Url 必须提供一个，如果都提供以Url 为准。
-图片限制：黑白线稿图片，单边分辨率小于5000且大于512（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
+图片限制：黑白线稿图片，单边分辨率小于5000且大于128（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
                      * @return InputUrl 线稿图 Url。
 Base64 和 Url 必须提供一个，如果都提供以Url 为准。
-图片限制：黑白线稿图片，单边分辨率小于5000且大于512（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
+图片限制：黑白线稿图片，单边分辨率小于5000且大于128（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
                      * 
                      */
                     std::string GetInputUrl() const;
@@ -115,10 +115,10 @@ Base64 和 Url 必须提供一个，如果都提供以Url 为准。
                     /**
                      * 设置线稿图 Url。
 Base64 和 Url 必须提供一个，如果都提供以Url 为准。
-图片限制：黑白线稿图片，单边分辨率小于5000且大于512（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
+图片限制：黑白线稿图片，单边分辨率小于5000且大于128（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
                      * @param _inputUrl 线稿图 Url。
 Base64 和 Url 必须提供一个，如果都提供以Url 为准。
-图片限制：黑白线稿图片，单边分辨率小于5000且大于512（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
+图片限制：黑白线稿图片，单边分辨率小于5000且大于128（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
                      * 
                      */
                     void SetInputUrl(const std::string& _inputUrl);
@@ -226,7 +226,7 @@ Base64 和 Url 必须提供一个，如果都提供以Url 为准。
                     /**
                      * 线稿图 Base64 数据。
 Base64 和 Url 必须提供一个，如果都提供以Url 为准。
-图片限制：黑白线稿图片，单边分辨率小于5000且大于512（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
+图片限制：黑白线稿图片，单边分辨率小于5000且大于128（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
                      */
                     std::string m_inputImage;
                     bool m_inputImageHasBeenSet;
@@ -234,7 +234,7 @@ Base64 和 Url 必须提供一个，如果都提供以Url 为准。
                     /**
                      * 线稿图 Url。
 Base64 和 Url 必须提供一个，如果都提供以Url 为准。
-图片限制：黑白线稿图片，单边分辨率小于5000且大于512（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
+图片限制：黑白线稿图片，单边分辨率小于5000且大于128（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
                      */
                     std::string m_inputUrl;
                     bool m_inputUrlHasBeenSet;

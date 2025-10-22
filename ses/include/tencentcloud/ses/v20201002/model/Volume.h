@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SendDate 日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSendDate() const;
 
                     /**
                      * 设置日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sendDate 日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSendDate(const std::string& _sendDate);
@@ -199,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取取消订阅的用户数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnsubscribeCount 取消订阅的用户数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetUnsubscribeCount() const;
 
                     /**
                      * 设置取消订阅的用户数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _unsubscribeCount 取消订阅的用户数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUnsubscribeCount(const uint64_t& _unsubscribeCount);
@@ -226,7 +218,6 @@ namespace TencentCloud
 
                     /**
                      * 日期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sendDate;
                     bool m_sendDateHasBeenSet;
@@ -269,7 +260,6 @@ namespace TencentCloud
 
                     /**
                      * 取消订阅的用户数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_unsubscribeCount;
                     bool m_unsubscribeCountHasBeenSet;

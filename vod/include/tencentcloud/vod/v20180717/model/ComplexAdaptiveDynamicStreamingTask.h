@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -102,15 +102,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取自适应码流任务的执行状态与结果，每个元素对应一个自适应码流模版。
-                     * @return ComplexAdaptiveDynamicStreamingTaskResultSet 自适应码流任务的执行状态与结果，每个元素对应一个自适应码流模版。
+                     * 获取自适应码流任务的执行状态与结果，每个元素对应一个自适应码流模板。
+                     * @return ComplexAdaptiveDynamicStreamingTaskResultSet 自适应码流任务的执行状态与结果，每个元素对应一个自适应码流模板。
                      * 
                      */
                     std::vector<ComplexAdaptiveDynamicStreamingTaskResult> GetComplexAdaptiveDynamicStreamingTaskResultSet() const;
 
                     /**
-                     * 设置自适应码流任务的执行状态与结果，每个元素对应一个自适应码流模版。
-                     * @param _complexAdaptiveDynamicStreamingTaskResultSet 自适应码流任务的执行状态与结果，每个元素对应一个自适应码流模版。
+                     * 设置自适应码流任务的执行状态与结果，每个元素对应一个自适应码流模板。
+                     * @param _complexAdaptiveDynamicStreamingTaskResultSet 自适应码流任务的执行状态与结果，每个元素对应一个自适应码流模板。
                      * 
                      */
                     void SetComplexAdaptiveDynamicStreamingTaskResultSet(const std::vector<ComplexAdaptiveDynamicStreamingTaskResult>& _complexAdaptiveDynamicStreamingTaskResultSet);
@@ -140,7 +140,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 自适应码流任务的执行状态与结果，每个元素对应一个自适应码流模版。
+                     * 自适应码流任务的执行状态与结果，每个元素对应一个自适应码流模板。
                      */
                     std::vector<ComplexAdaptiveDynamicStreamingTaskResult> m_complexAdaptiveDynamicStreamingTaskResultSet;
                     bool m_complexAdaptiveDynamicStreamingTaskResultSetHasBeenSet;

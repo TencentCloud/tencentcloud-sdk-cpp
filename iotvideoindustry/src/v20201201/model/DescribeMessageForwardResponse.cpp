@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,8 @@ DescribeMessageForwardResponse::DescribeMessageForwardResponse() :
     m_topicIdHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_uinHasBeenSet(false),
-    m_topicNameHasBeenSet(false)
+    m_topicNameHasBeenSet(false),
+    m_updateTimeHasBeenSet(false)
 {
 }
 
@@ -171,6 +172,16 @@ CoreInternalOutcome DescribeMessageForwardResponse::Deserialize(const string &pa
         m_topicNameHasBeenSet = true;
     }
 
+    if (rsp.HasMember("UpdateTime") && !rsp["UpdateTime"].IsNull())
+    {
+        if (!rsp["UpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = string(rsp["UpdateTime"].GetString());
+        m_updateTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -261,11 +272,19 @@ string DescribeMessageForwardResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_topicName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_updateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -371,6 +390,16 @@ string DescribeMessageForwardResponse::GetTopicName() const
 bool DescribeMessageForwardResponse::TopicNameHasBeenSet() const
 {
     return m_topicNameHasBeenSet;
+}
+
+string DescribeMessageForwardResponse::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+bool DescribeMessageForwardResponse::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
 }
 
 

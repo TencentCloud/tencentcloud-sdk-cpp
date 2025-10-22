@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -443,19 +443,15 @@ namespace TencentCloud
                     bool FilterBasicPlusFlagHasBeenSet() const;
 
                     /**
-                     * 获取是否商业模式优化-普惠版 0: 包含商业模式优化-普惠版 1: 只查询商业模式优化-普惠版 
-
-                     * @return FilterPlanCntFlag 是否商业模式优化-普惠版 0: 包含商业模式优化-普惠版 1: 只查询商业模式优化-普惠版 
-
+                     * 获取是否标准版2.0 0: 包含标准版2.0 0 1: 只查询标准版2.0 0 2: 不查标准版2.0
+                     * @return FilterPlanCntFlag 是否标准版2.0 0: 包含标准版2.0 0 1: 只查询标准版2.0 0 2: 不查标准版2.0
                      * 
                      */
                     uint64_t GetFilterPlanCntFlag() const;
 
                     /**
-                     * 设置是否商业模式优化-普惠版 0: 包含商业模式优化-普惠版 1: 只查询商业模式优化-普惠版 
-
-                     * @param _filterPlanCntFlag 是否商业模式优化-普惠版 0: 包含商业模式优化-普惠版 1: 只查询商业模式优化-普惠版 
-
+                     * 设置是否标准版2.0 0: 包含标准版2.0 0 1: 只查询标准版2.0 0 2: 不查标准版2.0
+                     * @param _filterPlanCntFlag 是否标准版2.0 0: 包含标准版2.0 0 1: 只查询标准版2.0 0 2: 不查标准版2.0
                      * 
                      */
                     void SetFilterPlanCntFlag(const uint64_t& _filterPlanCntFlag);
@@ -489,15 +485,15 @@ namespace TencentCloud
                     bool FilterTransRegionFlagHasBeenSet() const;
 
                     /**
-                     * 获取zoenid列表
-                     * @return FilterZoneIdList zoenid列表
+                     * 获取ZoneID列表
+                     * @return FilterZoneIdList ZoneID列表
                      * 
                      */
                     std::vector<int64_t> GetFilterZoneIdList() const;
 
                     /**
-                     * 设置zoenid列表
-                     * @param _filterZoneIdList zoenid列表
+                     * 设置ZoneID列表
+                     * @param _filterZoneIdList ZoneID列表
                      * 
                      */
                     void SetFilterZoneIdList(const std::vector<int64_t>& _filterZoneIdList);
@@ -626,8 +622,7 @@ namespace TencentCloud
                     bool m_filterBasicPlusFlagHasBeenSet;
 
                     /**
-                     * 是否商业模式优化-普惠版 0: 包含商业模式优化-普惠版 1: 只查询商业模式优化-普惠版 
-
+                     * 是否标准版2.0 0: 包含标准版2.0 0 1: 只查询标准版2.0 0 2: 不查标准版2.0
                      */
                     uint64_t m_filterPlanCntFlag;
                     bool m_filterPlanCntFlagHasBeenSet;
@@ -639,7 +634,7 @@ namespace TencentCloud
                     bool m_filterTransRegionFlagHasBeenSet;
 
                     /**
-                     * zoenid列表
+                     * ZoneID列表
                      */
                     std::vector<int64_t> m_filterZoneIdList;
                     bool m_filterZoneIdListHasBeenSet;

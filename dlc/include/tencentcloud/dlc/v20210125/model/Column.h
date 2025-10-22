@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -116,18 +116,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表示整个 numeric 的长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Precision 表示整个 numeric 的长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPrecision() const;
 
                     /**
                      * 设置表示整个 numeric 的长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _precision 表示整个 numeric 的长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrecision(const int64_t& _precision);
@@ -141,18 +137,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表示小数部分的长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Scale 表示小数部分的长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScale() const;
 
                     /**
                      * 设置表示小数部分的长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scale 表示小数部分的长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScale(const int64_t& _scale);
@@ -166,18 +158,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否为null
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Nullable 是否为null
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNullable() const;
 
                     /**
                      * 设置是否为null
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nullable 是否为null
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNullable(const std::string& _nullable);
@@ -191,18 +179,14 @@ namespace TencentCloud
 
                     /**
                      * 获取字段位置，小的在前
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Position 字段位置，小的在前
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPosition() const;
 
                     /**
                      * 设置字段位置，小的在前
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _position 字段位置，小的在前
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPosition(const int64_t& _position);
@@ -216,18 +200,14 @@ namespace TencentCloud
 
                     /**
                      * 获取字段创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 字段创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置字段创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 字段创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -241,18 +221,14 @@ namespace TencentCloud
 
                     /**
                      * 获取字段修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifiedTime 字段修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifiedTime() const;
 
                     /**
                      * 设置字段修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifiedTime 字段修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifiedTime(const std::string& _modifiedTime);
@@ -266,18 +242,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否为分区字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsPartition 是否为分区字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsPartition() const;
 
                     /**
                      * 设置是否为分区字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isPartition 是否为分区字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsPartition(const bool& _isPartition);
@@ -337,49 +309,42 @@ namespace TencentCloud
 
                     /**
                      * 表示整个 numeric 的长度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_precision;
                     bool m_precisionHasBeenSet;
 
                     /**
                      * 表示小数部分的长度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_scale;
                     bool m_scaleHasBeenSet;
 
                     /**
                      * 是否为null
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nullable;
                     bool m_nullableHasBeenSet;
 
                     /**
                      * 字段位置，小的在前
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_position;
                     bool m_positionHasBeenSet;
 
                     /**
                      * 字段创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 字段修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifiedTime;
                     bool m_modifiedTimeHasBeenSet;
 
                     /**
                      * 是否为分区字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isPartition;
                     bool m_isPartitionHasBeenSet;

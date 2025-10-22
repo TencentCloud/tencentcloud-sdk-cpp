@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,18 +51,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主要病史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MainDiseaseHistory 主要病史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MainDiseaseHistoryBlock GetMainDiseaseHistory() const;
 
                     /**
                      * 设置主要病史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mainDiseaseHistory 主要病史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMainDiseaseHistory(const MainDiseaseHistoryBlock& _mainDiseaseHistory);
@@ -76,18 +72,14 @@ namespace TencentCloud
 
                     /**
                      * 获取过敏史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AllergyHistory 过敏史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MainDiseaseHistoryBlock GetAllergyHistory() const;
 
                     /**
                      * 设置过敏史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _allergyHistory 过敏史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAllergyHistory(const MainDiseaseHistoryBlock& _allergyHistory);
@@ -101,18 +93,14 @@ namespace TencentCloud
 
                     /**
                      * 获取注射史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InfectHistory 注射史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MainDiseaseHistoryBlock GetInfectHistory() const;
 
                     /**
                      * 设置注射史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _infectHistory 注射史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInfectHistory(const MainDiseaseHistoryBlock& _infectHistory);
@@ -126,18 +114,14 @@ namespace TencentCloud
 
                     /**
                      * 获取手术史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SurgeryHistory 手术史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SurgeryHistoryBlock GetSurgeryHistory() const;
 
                     /**
                      * 设置手术史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _surgeryHistory 手术史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSurgeryHistory(const SurgeryHistoryBlock& _surgeryHistory);
@@ -151,18 +135,14 @@ namespace TencentCloud
 
                     /**
                      * 获取输血史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransfusionHistory 输血史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TransfusionHistoryBlock GetTransfusionHistory() const;
 
                     /**
                      * 设置输血史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _transfusionHistory 输血史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTransfusionHistory(const TransfusionHistoryBlock& _transfusionHistory);
@@ -178,35 +158,30 @@ namespace TencentCloud
 
                     /**
                      * 主要病史
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MainDiseaseHistoryBlock m_mainDiseaseHistory;
                     bool m_mainDiseaseHistoryHasBeenSet;
 
                     /**
                      * 过敏史
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MainDiseaseHistoryBlock m_allergyHistory;
                     bool m_allergyHistoryHasBeenSet;
 
                     /**
                      * 注射史
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MainDiseaseHistoryBlock m_infectHistory;
                     bool m_infectHistoryHasBeenSet;
 
                     /**
                      * 手术史
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SurgeryHistoryBlock m_surgeryHistory;
                     bool m_surgeryHistoryHasBeenSet;
 
                     /**
                      * 输血史
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TransfusionHistoryBlock m_transfusionHistory;
                     bool m_transfusionHistoryHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,9 @@ using namespace std;
 ModifyDSPAAssessmentRiskTemplateRequest::ModifyDSPAAssessmentRiskTemplateRequest() :
     m_dspaIdHasBeenSet(false),
     m_templateNameHasBeenSet(false),
-    m_templateDescriptionHasBeenSet(false),
     m_templateIdHasBeenSet(false),
     m_riskLevelIdHasBeenSet(false),
+    m_templateDescriptionHasBeenSet(false),
     m_riskIdListHasBeenSet(false)
 {
 }
@@ -55,14 +55,6 @@ string ModifyDSPAAssessmentRiskTemplateRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_templateName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_templateDescriptionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TemplateDescription";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_templateDescription.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_templateIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -77,6 +69,14 @@ string ModifyDSPAAssessmentRiskTemplateRequest::ToJsonString() const
         string key = "RiskLevelId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_riskLevelId, allocator);
+    }
+
+    if (m_templateDescriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateDescription";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_templateDescription.c_str(), allocator).Move(), allocator);
     }
 
     if (m_riskIdListHasBeenSet)
@@ -132,22 +132,6 @@ bool ModifyDSPAAssessmentRiskTemplateRequest::TemplateNameHasBeenSet() const
     return m_templateNameHasBeenSet;
 }
 
-string ModifyDSPAAssessmentRiskTemplateRequest::GetTemplateDescription() const
-{
-    return m_templateDescription;
-}
-
-void ModifyDSPAAssessmentRiskTemplateRequest::SetTemplateDescription(const string& _templateDescription)
-{
-    m_templateDescription = _templateDescription;
-    m_templateDescriptionHasBeenSet = true;
-}
-
-bool ModifyDSPAAssessmentRiskTemplateRequest::TemplateDescriptionHasBeenSet() const
-{
-    return m_templateDescriptionHasBeenSet;
-}
-
 int64_t ModifyDSPAAssessmentRiskTemplateRequest::GetTemplateId() const
 {
     return m_templateId;
@@ -178,6 +162,22 @@ void ModifyDSPAAssessmentRiskTemplateRequest::SetRiskLevelId(const int64_t& _ris
 bool ModifyDSPAAssessmentRiskTemplateRequest::RiskLevelIdHasBeenSet() const
 {
     return m_riskLevelIdHasBeenSet;
+}
+
+string ModifyDSPAAssessmentRiskTemplateRequest::GetTemplateDescription() const
+{
+    return m_templateDescription;
+}
+
+void ModifyDSPAAssessmentRiskTemplateRequest::SetTemplateDescription(const string& _templateDescription)
+{
+    m_templateDescription = _templateDescription;
+    m_templateDescriptionHasBeenSet = true;
+}
+
+bool ModifyDSPAAssessmentRiskTemplateRequest::TemplateDescriptionHasBeenSet() const
+{
+    return m_templateDescriptionHasBeenSet;
 }
 
 vector<int64_t> ModifyDSPAAssessmentRiskTemplateRequest::GetRiskIdList() const

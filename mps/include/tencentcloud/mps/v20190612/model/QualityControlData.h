@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取为true时表示视频无音频轨。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NoAudio 为true时表示视频无音频轨。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetNoAudio() const;
 
                     /**
                      * 设置为true时表示视频无音频轨。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _noAudio 为true时表示视频无音频轨。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNoAudio(const bool& _noAudio);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取为true时表示视频无视频轨。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NoVideo 为true时表示视频无视频轨。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetNoVideo() const;
 
                     /**
                      * 设置为true时表示视频无视频轨。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _noVideo 为true时表示视频无视频轨。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNoVideo(const bool& _noVideo);
@@ -99,19 +91,15 @@ namespace TencentCloud
                     bool NoVideoHasBeenSet() const;
 
                     /**
-                     * 获取视频无参考质量打分，百分制。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return QualityEvaluationScore 视频无参考质量打分，百分制。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取视频无参考质量评分，百分制。
+                     * @return QualityEvaluationScore 视频无参考质量评分，百分制。
                      * 
                      */
                     int64_t GetQualityEvaluationScore() const;
 
                     /**
-                     * 设置视频无参考质量打分，百分制。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _qualityEvaluationScore 视频无参考质量打分，百分制。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置视频无参考质量评分，百分制。
+                     * @param _qualityEvaluationScore 视频无参考质量评分，百分制。
                      * 
                      */
                     void SetQualityEvaluationScore(const int64_t& _qualityEvaluationScore);
@@ -124,19 +112,36 @@ namespace TencentCloud
                     bool QualityEvaluationScoreHasBeenSet() const;
 
                     /**
+                     * 获取视频无参考质量评分，MOS分数。
+                     * @return QualityEvaluationMeanOpinionScore 视频无参考质量评分，MOS分数。
+                     * 
+                     */
+                    double GetQualityEvaluationMeanOpinionScore() const;
+
+                    /**
+                     * 设置视频无参考质量评分，MOS分数。
+                     * @param _qualityEvaluationMeanOpinionScore 视频无参考质量评分，MOS分数。
+                     * 
+                     */
+                    void SetQualityEvaluationMeanOpinionScore(const double& _qualityEvaluationMeanOpinionScore);
+
+                    /**
+                     * 判断参数 QualityEvaluationMeanOpinionScore 是否已赋值
+                     * @return QualityEvaluationMeanOpinionScore 是否已赋值
+                     * 
+                     */
+                    bool QualityEvaluationMeanOpinionScoreHasBeenSet() const;
+
+                    /**
                      * 获取内容质检检出异常项。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QualityControlResultSet 内容质检检出异常项。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<QualityControlResult> GetQualityControlResultSet() const;
 
                     /**
                      * 设置内容质检检出异常项。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _qualityControlResultSet 内容质检检出异常项。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQualityControlResultSet(const std::vector<QualityControlResult>& _qualityControlResultSet);
@@ -149,19 +154,15 @@ namespace TencentCloud
                     bool QualityControlResultSetHasBeenSet() const;
 
                     /**
-                     * 获取格式诊断检出异常项
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ContainerDiagnoseResultSet 格式诊断检出异常项
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取格式诊断检出异常项。
+                     * @return ContainerDiagnoseResultSet 格式诊断检出异常项。
                      * 
                      */
                     std::vector<ContainerDiagnoseResultItem> GetContainerDiagnoseResultSet() const;
 
                     /**
-                     * 设置格式诊断检出异常项
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _containerDiagnoseResultSet 格式诊断检出异常项
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置格式诊断检出异常项。
+                     * @param _containerDiagnoseResultSet 格式诊断检出异常项。
                      * 
                      */
                     void SetContainerDiagnoseResultSet(const std::vector<ContainerDiagnoseResultItem>& _containerDiagnoseResultSet);
@@ -177,35 +178,36 @@ namespace TencentCloud
 
                     /**
                      * 为true时表示视频无音频轨。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_noAudio;
                     bool m_noAudioHasBeenSet;
 
                     /**
                      * 为true时表示视频无视频轨。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_noVideo;
                     bool m_noVideoHasBeenSet;
 
                     /**
-                     * 视频无参考质量打分，百分制。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 视频无参考质量评分，百分制。
                      */
                     int64_t m_qualityEvaluationScore;
                     bool m_qualityEvaluationScoreHasBeenSet;
 
                     /**
+                     * 视频无参考质量评分，MOS分数。
+                     */
+                    double m_qualityEvaluationMeanOpinionScore;
+                    bool m_qualityEvaluationMeanOpinionScoreHasBeenSet;
+
+                    /**
                      * 内容质检检出异常项。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<QualityControlResult> m_qualityControlResultSet;
                     bool m_qualityControlResultSetHasBeenSet;
 
                     /**
-                     * 格式诊断检出异常项
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 格式诊断检出异常项。
                      */
                     std::vector<ContainerDiagnoseResultItem> m_containerDiagnoseResultSet;
                     bool m_containerDiagnoseResultSetHasBeenSet;

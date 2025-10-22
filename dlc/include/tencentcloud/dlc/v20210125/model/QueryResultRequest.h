@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取lastReadFile为上一次读取的文件，lastReadOffset为上一次读取到的位置
-                     * @return NextToken lastReadFile为上一次读取的文件，lastReadOffset为上一次读取到的位置
+                     * 获取objectListMarker={marker}&lastReadFile={filename}&lastReadOffsetlastReadFile为上一次读取的文件，lastReadOffset为上一次读取到的位置
+                     * @return NextToken objectListMarker={marker}&lastReadFile={filename}&lastReadOffsetlastReadFile为上一次读取的文件，lastReadOffset为上一次读取到的位置
                      * 
                      */
                     std::string GetNextToken() const;
 
                     /**
-                     * 设置lastReadFile为上一次读取的文件，lastReadOffset为上一次读取到的位置
-                     * @param _nextToken lastReadFile为上一次读取的文件，lastReadOffset为上一次读取到的位置
+                     * 设置objectListMarker={marker}&lastReadFile={filename}&lastReadOffsetlastReadFile为上一次读取的文件，lastReadOffset为上一次读取到的位置
+                     * @param _nextToken objectListMarker={marker}&lastReadFile={filename}&lastReadOffsetlastReadFile为上一次读取的文件，lastReadOffset为上一次读取到的位置
                      * 
                      */
                     void SetNextToken(const std::string& _nextToken);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * lastReadFile为上一次读取的文件，lastReadOffset为上一次读取到的位置
+                     * objectListMarker={marker}&lastReadFile={filename}&lastReadOffsetlastReadFile为上一次读取的文件，lastReadOffset为上一次读取到的位置
                      */
                     std::string m_nextToken;
                     bool m_nextTokenHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,11 +26,8 @@ AddRecordBatch::AddRecordBatch() :
     m_subDomainHasBeenSet(false),
     m_recordLineHasBeenSet(false),
     m_recordLineIdHasBeenSet(false),
-    m_weightHasBeenSet(false),
     m_mXHasBeenSet(false),
-    m_tTLHasBeenSet(false),
-    m_enabledHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_tTLHasBeenSet(false)
 {
 }
 
@@ -89,16 +86,6 @@ CoreInternalOutcome AddRecordBatch::Deserialize(const rapidjson::Value &value)
         m_recordLineIdHasBeenSet = true;
     }
 
-    if (value.HasMember("Weight") && !value["Weight"].IsNull())
-    {
-        if (!value["Weight"].IsUint64())
-        {
-            return CoreInternalOutcome(Core::Error("response `AddRecordBatch.Weight` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_weight = value["Weight"].GetUint64();
-        m_weightHasBeenSet = true;
-    }
-
     if (value.HasMember("MX") && !value["MX"].IsNull())
     {
         if (!value["MX"].IsUint64())
@@ -117,26 +104,6 @@ CoreInternalOutcome AddRecordBatch::Deserialize(const rapidjson::Value &value)
         }
         m_tTL = value["TTL"].GetUint64();
         m_tTLHasBeenSet = true;
-    }
-
-    if (value.HasMember("Enabled") && !value["Enabled"].IsNull())
-    {
-        if (!value["Enabled"].IsUint64())
-        {
-            return CoreInternalOutcome(Core::Error("response `AddRecordBatch.Enabled` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_enabled = value["Enabled"].GetUint64();
-        m_enabledHasBeenSet = true;
-    }
-
-    if (value.HasMember("Remark") && !value["Remark"].IsNull())
-    {
-        if (!value["Remark"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `AddRecordBatch.Remark` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_remark = string(value["Remark"].GetString());
-        m_remarkHasBeenSet = true;
     }
 
 
@@ -186,14 +153,6 @@ void AddRecordBatch::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, rapidjson::Value(m_recordLineId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_weightHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Weight";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_weight, allocator);
-    }
-
     if (m_mXHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -208,22 +167,6 @@ void AddRecordBatch::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "TTL";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tTL, allocator);
-    }
-
-    if (m_enabledHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Enabled";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_enabled, allocator);
-    }
-
-    if (m_remarkHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Remark";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -309,22 +252,6 @@ bool AddRecordBatch::RecordLineIdHasBeenSet() const
     return m_recordLineIdHasBeenSet;
 }
 
-uint64_t AddRecordBatch::GetWeight() const
-{
-    return m_weight;
-}
-
-void AddRecordBatch::SetWeight(const uint64_t& _weight)
-{
-    m_weight = _weight;
-    m_weightHasBeenSet = true;
-}
-
-bool AddRecordBatch::WeightHasBeenSet() const
-{
-    return m_weightHasBeenSet;
-}
-
 uint64_t AddRecordBatch::GetMX() const
 {
     return m_mX;
@@ -355,37 +282,5 @@ void AddRecordBatch::SetTTL(const uint64_t& _tTL)
 bool AddRecordBatch::TTLHasBeenSet() const
 {
     return m_tTLHasBeenSet;
-}
-
-uint64_t AddRecordBatch::GetEnabled() const
-{
-    return m_enabled;
-}
-
-void AddRecordBatch::SetEnabled(const uint64_t& _enabled)
-{
-    m_enabled = _enabled;
-    m_enabledHasBeenSet = true;
-}
-
-bool AddRecordBatch::EnabledHasBeenSet() const
-{
-    return m_enabledHasBeenSet;
-}
-
-string AddRecordBatch::GetRemark() const
-{
-    return m_remark;
-}
-
-void AddRecordBatch::SetRemark(const string& _remark)
-{
-    m_remark = _remark;
-    m_remarkHasBeenSet = true;
-}
-
-bool AddRecordBatch::RemarkHasBeenSet() const
-{
-    return m_remarkHasBeenSet;
 }
 

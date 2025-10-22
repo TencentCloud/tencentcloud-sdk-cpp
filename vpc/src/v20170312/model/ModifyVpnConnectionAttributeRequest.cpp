@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,8 @@ ModifyVpnConnectionAttributeRequest::ModifyVpnConnectionAttributeRequest() :
     m_dpdTimeoutHasBeenSet(false),
     m_dpdActionHasBeenSet(false),
     m_customerGatewayIdHasBeenSet(false),
-    m_healthCheckConfigHasBeenSet(false)
+    m_healthCheckConfigHasBeenSet(false),
+    m_bgpConfigHasBeenSet(false)
 {
 }
 
@@ -176,6 +177,15 @@ string ModifyVpnConnectionAttributeRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_healthCheckConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_bgpConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BgpConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_bgpConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -424,6 +434,22 @@ void ModifyVpnConnectionAttributeRequest::SetHealthCheckConfig(const HealthCheck
 bool ModifyVpnConnectionAttributeRequest::HealthCheckConfigHasBeenSet() const
 {
     return m_healthCheckConfigHasBeenSet;
+}
+
+BgpConfig ModifyVpnConnectionAttributeRequest::GetBgpConfig() const
+{
+    return m_bgpConfig;
+}
+
+void ModifyVpnConnectionAttributeRequest::SetBgpConfig(const BgpConfig& _bgpConfig)
+{
+    m_bgpConfig = _bgpConfig;
+    m_bgpConfigHasBeenSet = true;
+}
+
+bool ModifyVpnConnectionAttributeRequest::BgpConfigHasBeenSet() const
+{
+    return m_bgpConfigHasBeenSet;
 }
 
 

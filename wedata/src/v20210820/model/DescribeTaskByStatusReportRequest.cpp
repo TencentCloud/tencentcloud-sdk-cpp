@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,8 @@ DescribeTaskByStatusReportRequest::DescribeTaskByStatusReportRequest() :
     m_cycleUnitHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_inChargeHasBeenSet(false),
-    m_workflowIdHasBeenSet(false)
+    m_workflowIdHasBeenSet(false),
+    m_projectIdsHasBeenSet(false)
 {
 }
 
@@ -130,6 +131,19 @@ string DescribeTaskByStatusReportRequest::ToJsonString() const
         string key = "WorkflowId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_workflowId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_projectIds.begin(); itr != m_projectIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -314,6 +328,22 @@ void DescribeTaskByStatusReportRequest::SetWorkflowId(const string& _workflowId)
 bool DescribeTaskByStatusReportRequest::WorkflowIdHasBeenSet() const
 {
     return m_workflowIdHasBeenSet;
+}
+
+vector<string> DescribeTaskByStatusReportRequest::GetProjectIds() const
+{
+    return m_projectIds;
+}
+
+void DescribeTaskByStatusReportRequest::SetProjectIds(const vector<string>& _projectIds)
+{
+    m_projectIds = _projectIds;
+    m_projectIdsHasBeenSet = true;
+}
+
+bool DescribeTaskByStatusReportRequest::ProjectIdsHasBeenSet() const
+{
+    return m_projectIdsHasBeenSet;
 }
 
 

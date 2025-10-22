@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -321,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取业务员ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SalesUin 业务员ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSalesUin() const;
 
                     /**
                      * 设置业务员ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _salesUin 业务员ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSalesUin(const std::string& _salesUin);
@@ -346,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取业务员姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SalesName 业务员姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSalesName() const;
 
                     /**
                      * 设置业务员姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _salesName 业务员姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSalesName(const std::string& _salesName);
@@ -371,18 +363,14 @@ namespace TencentCloud
 
                     /**
                      * 获取代客邮箱
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Mail 代客邮箱
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMail() const;
 
                     /**
                      * 设置代客邮箱
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mail 代客邮箱
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMail(const std::string& _mail);
@@ -396,18 +384,14 @@ namespace TencentCloud
 
                     /**
                      * 获取交易类型:交易类型 1-原类型 2-代理型  3-代采型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransactionType 交易类型:交易类型 1-原类型 2-代理型  3-代采型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTransactionType() const;
 
                     /**
                      * 设置交易类型:交易类型 1-原类型 2-代理型  3-代采型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _transactionType 交易类型:交易类型 1-原类型 2-代理型  3-代采型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTransactionType(const std::string& _transactionType);
@@ -501,28 +485,24 @@ namespace TencentCloud
 
                     /**
                      * 业务员ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_salesUin;
                     bool m_salesUinHasBeenSet;
 
                     /**
                      * 业务员姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_salesName;
                     bool m_salesNameHasBeenSet;
 
                     /**
                      * 代客邮箱
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mail;
                     bool m_mailHasBeenSet;
 
                     /**
                      * 交易类型:交易类型 1-原类型 2-代理型  3-代采型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_transactionType;
                     bool m_transactionTypeHasBeenSet;

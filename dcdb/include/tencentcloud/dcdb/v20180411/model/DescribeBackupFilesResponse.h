@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,6 +72,20 @@ namespace TencentCloud
                      */
                     bool TotalCountHasBeenSet() const;
 
+                    /**
+                     * 获取下载链接前缀
+                     * @return UrlPrefix 下载链接前缀
+                     * 
+                     */
+                    std::string GetUrlPrefix() const;
+
+                    /**
+                     * 判断参数 UrlPrefix 是否已赋值
+                     * @return UrlPrefix 是否已赋值
+                     * 
+                     */
+                    bool UrlPrefixHasBeenSet() const;
+
                 private:
 
                     /**
@@ -85,6 +99,12 @@ namespace TencentCloud
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
+
+                    /**
+                     * 下载链接前缀
+                     */
+                    std::string m_urlPrefix;
+                    bool m_urlPrefixHasBeenSet;
 
                 };
             }

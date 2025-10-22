@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源当前实际配置。长度为0~256位字符，即资源不合规配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Configuration 资源当前实际配置。长度为0~256位字符，即资源不合规配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConfiguration() const;
 
                     /**
                      * 设置资源当前实际配置。长度为0~256位字符，即资源不合规配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configuration 资源当前实际配置。长度为0~256位字符，即资源不合规配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfiguration(const std::string& _configuration);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源期望配置。长度为0~256位字符，即资源合规配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DesiredValue 资源期望配置。长度为0~256位字符，即资源合规配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDesiredValue() const;
 
                     /**
                      * 设置资源期望配置。长度为0~256位字符，即资源合规配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _desiredValue 资源期望配置。长度为0~256位字符，即资源合规配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDesiredValue(const std::string& _desiredValue);
@@ -142,14 +134,12 @@ namespace TencentCloud
 
                     /**
                      * 资源当前实际配置。长度为0~256位字符，即资源不合规配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_configuration;
                     bool m_configurationHasBeenSet;
 
                     /**
                      * 资源期望配置。长度为0~256位字符，即资源合规配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_desiredValue;
                     bool m_desiredValueHasBeenSet;

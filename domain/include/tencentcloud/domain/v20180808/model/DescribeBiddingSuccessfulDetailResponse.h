@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,7 +59,9 @@ namespace TencentCloud
 
                     /**
                      * 获取得标时间
+格式:YYYY-MM-DD HH:mm:ss
                      * @return SuccessfulTime 得标时间
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetSuccessfulTime() const;
@@ -72,8 +74,8 @@ namespace TencentCloud
                     bool SuccessfulTimeHasBeenSet() const;
 
                     /**
-                     * 获取得标价格
-                     * @return SuccessfulPrice 得标价格
+                     * 获取得标价格 单位元
+                     * @return SuccessfulPrice 得标价格 单位元
                      * 
                      */
                     double GetSuccessfulPrice() const;
@@ -87,7 +89,9 @@ namespace TencentCloud
 
                     /**
                      * 获取 注册时间
+格式:YYYY-MM-DD HH:mm:ss
                      * @return RegTime  注册时间
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetRegTime() const;
@@ -101,7 +105,9 @@ namespace TencentCloud
 
                     /**
                      * 获取过期时间
+格式:YYYY-MM-DD HH:mm:ss
                      * @return ExpireTime 过期时间
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetExpireTime() const;
@@ -115,7 +121,9 @@ namespace TencentCloud
 
                     /**
                      * 获取删除时间
+格式:YYYY-MM-DD HH:mm:ss
                      * @return DeleteTime 删除时间
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetDeleteTime() const;
@@ -129,7 +137,9 @@ namespace TencentCloud
 
                     /**
                      * 获取付款结束时间
+格式:YYYY-MM-DD HH:mm:ss
                      * @return PayEndTime 付款结束时间
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetPayEndTime() const;
@@ -156,8 +166,8 @@ namespace TencentCloud
                     bool BiddingBondRefundHasBeenSet() const;
 
                     /**
-                     * 获取保证金
-                     * @return BiddingBondPrice 保证金
+                     * 获取保证金 单位元
+                     * @return BiddingBondPrice 保证金 单位元
                      * 
                      */
                     double GetBiddingBondPrice() const;
@@ -193,36 +203,41 @@ namespace TencentCloud
 
                     /**
                      * 得标时间
+格式:YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_successfulTime;
                     bool m_successfulTimeHasBeenSet;
 
                     /**
-                     * 得标价格
+                     * 得标价格 单位元
                      */
                     double m_successfulPrice;
                     bool m_successfulPriceHasBeenSet;
 
                     /**
                      *  注册时间
+格式:YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_regTime;
                     bool m_regTimeHasBeenSet;
 
                     /**
                      * 过期时间
+格式:YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
                      * 删除时间
+格式:YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_deleteTime;
                     bool m_deleteTimeHasBeenSet;
 
                     /**
                      * 付款结束时间
+格式:YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_payEndTime;
                     bool m_payEndTimeHasBeenSet;
@@ -234,7 +249,7 @@ namespace TencentCloud
                     bool m_biddingBondRefundHasBeenSet;
 
                     /**
-                     * 保证金
+                     * 保证金 单位元
                      */
                     double m_biddingBondPrice;
                     bool m_biddingBondPriceHasBeenSet;

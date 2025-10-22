@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,12 +62,10 @@ namespace TencentCloud
 该编号会合成到个人用户证书证明图片。
 
 注: `个人用户认证证书的编号和证明图片绑定, 获取新的证明图片编号会变动`
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageCertId 个人用户认证证书的编号, 为20位数字组成的字符串,  由腾讯电子签下发此编号 。
 该编号会合成到个人用户证书证明图片。
 
 注: `个人用户认证证书的编号和证明图片绑定, 获取新的证明图片编号会变动`
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetImageCertId() const;
@@ -81,9 +79,7 @@ namespace TencentCloud
 
                     /**
                      * 获取在数字证书申请过程中，系统会自动生成一个独一无二的序列号。请注意，当证书到期并自动续期时，该序列号将会发生变化。值得注意的是，此序列号不会被合成至个人用户证书的证明图片中。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SerialNumber 在数字证书申请过程中，系统会自动生成一个独一无二的序列号。请注意，当证书到期并自动续期时，该序列号将会发生变化。值得注意的是，此序列号不会被合成至个人用户证书的证明图片中。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSerialNumber() const;
@@ -98,10 +94,8 @@ namespace TencentCloud
                     /**
                      * 获取CA证书颁发时间，格式为Unix标准时间戳（秒）   
 该时间格式化后会合成到个人用户证书证明图片
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValidFrom CA证书颁发时间，格式为Unix标准时间戳（秒）   
 该时间格式化后会合成到个人用户证书证明图片
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetValidFrom() const;
@@ -116,10 +110,8 @@ namespace TencentCloud
                     /**
                      * 获取CA证书有效截止时间，格式为Unix标准时间戳（秒）
 该时间格式化后会合成到个人用户证书证明图片
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValidTo CA证书有效截止时间，格式为Unix标准时间戳（秒）
 该时间格式化后会合成到个人用户证书证明图片
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetValidTo() const;
@@ -144,14 +136,12 @@ namespace TencentCloud
 该编号会合成到个人用户证书证明图片。
 
 注: `个人用户认证证书的编号和证明图片绑定, 获取新的证明图片编号会变动`
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_imageCertId;
                     bool m_imageCertIdHasBeenSet;
 
                     /**
                      * 在数字证书申请过程中，系统会自动生成一个独一无二的序列号。请注意，当证书到期并自动续期时，该序列号将会发生变化。值得注意的是，此序列号不会被合成至个人用户证书的证明图片中。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serialNumber;
                     bool m_serialNumberHasBeenSet;
@@ -159,7 +149,6 @@ namespace TencentCloud
                     /**
                      * CA证书颁发时间，格式为Unix标准时间戳（秒）   
 该时间格式化后会合成到个人用户证书证明图片
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_validFrom;
                     bool m_validFromHasBeenSet;
@@ -167,7 +156,6 @@ namespace TencentCloud
                     /**
                      * CA证书有效截止时间，格式为Unix标准时间戳（秒）
 该时间格式化后会合成到个人用户证书证明图片
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_validTo;
                     bool m_validToHasBeenSet;

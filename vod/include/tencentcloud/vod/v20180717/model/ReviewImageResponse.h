@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,14 +50,14 @@ namespace TencentCloud
 <font color=red>注意：该字段已废弃，建议使用 MediaReviewResult。</font> 
                      * @return ReviewResultSet 图片审核任务结果。
 <font color=red>注意：该字段已废弃，建议使用 MediaReviewResult。</font> 
-                     * 
+                     * @deprecated
                      */
                     std::vector<ContentReviewResult> GetReviewResultSet() const;
 
                     /**
                      * 判断参数 ReviewResultSet 是否已赋值
                      * @return ReviewResultSet 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ReviewResultSetHasBeenSet() const;
 

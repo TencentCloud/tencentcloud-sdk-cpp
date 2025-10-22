@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待变更实例 ID。
-                     * @return InstanceId 待变更实例 ID。
+                     * 获取待变更实例 ID。请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
+                     * @return InstanceId 待变更实例 ID。请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置待变更实例 ID。
-                     * @param _instanceId 待变更实例 ID。
+                     * 设置待变更实例 ID。请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
+                     * @param _instanceId 待变更实例 ID。请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -148,10 +148,39 @@ namespace TencentCloud
                      */
                     bool NodeSetHasBeenSet() const;
 
+                    /**
+                     * 获取切换时间。 
+- 1：维护时间窗操作：指升级规格在设置的维护时间窗内执行。请通过接口[DescribeMaintenanceWindow](https://cloud.tencent.com/document/product/239/46336)查询设置的维护时间窗时间段。增减副本、增减分片、扩缩内存均支持在维护时间窗执行操作。维护时间窗升级规格正在分地域逐步测试发布中，部分区域已支持，未覆盖地域若需紧急接入，请[提交工单](https://console.cloud.tencent.com/workorder/category)申请白名单。
+- 2：立即操作：操作将立即执行，无需等待维护时间窗。系统默认设置为立即操作。
+                     * @return SwitchOption 切换时间。 
+- 1：维护时间窗操作：指升级规格在设置的维护时间窗内执行。请通过接口[DescribeMaintenanceWindow](https://cloud.tencent.com/document/product/239/46336)查询设置的维护时间窗时间段。增减副本、增减分片、扩缩内存均支持在维护时间窗执行操作。维护时间窗升级规格正在分地域逐步测试发布中，部分区域已支持，未覆盖地域若需紧急接入，请[提交工单](https://console.cloud.tencent.com/workorder/category)申请白名单。
+- 2：立即操作：操作将立即执行，无需等待维护时间窗。系统默认设置为立即操作。
+                     * 
+                     */
+                    uint64_t GetSwitchOption() const;
+
+                    /**
+                     * 设置切换时间。 
+- 1：维护时间窗操作：指升级规格在设置的维护时间窗内执行。请通过接口[DescribeMaintenanceWindow](https://cloud.tencent.com/document/product/239/46336)查询设置的维护时间窗时间段。增减副本、增减分片、扩缩内存均支持在维护时间窗执行操作。维护时间窗升级规格正在分地域逐步测试发布中，部分区域已支持，未覆盖地域若需紧急接入，请[提交工单](https://console.cloud.tencent.com/workorder/category)申请白名单。
+- 2：立即操作：操作将立即执行，无需等待维护时间窗。系统默认设置为立即操作。
+                     * @param _switchOption 切换时间。 
+- 1：维护时间窗操作：指升级规格在设置的维护时间窗内执行。请通过接口[DescribeMaintenanceWindow](https://cloud.tencent.com/document/product/239/46336)查询设置的维护时间窗时间段。增减副本、增减分片、扩缩内存均支持在维护时间窗执行操作。维护时间窗升级规格正在分地域逐步测试发布中，部分区域已支持，未覆盖地域若需紧急接入，请[提交工单](https://console.cloud.tencent.com/workorder/category)申请白名单。
+- 2：立即操作：操作将立即执行，无需等待维护时间窗。系统默认设置为立即操作。
+                     * 
+                     */
+                    void SetSwitchOption(const uint64_t& _switchOption);
+
+                    /**
+                     * 判断参数 SwitchOption 是否已赋值
+                     * @return SwitchOption 是否已赋值
+                     * 
+                     */
+                    bool SwitchOptionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 待变更实例 ID。
+                     * 待变更实例 ID。请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -179,6 +208,14 @@ namespace TencentCloud
                      */
                     std::vector<RedisNodeInfo> m_nodeSet;
                     bool m_nodeSetHasBeenSet;
+
+                    /**
+                     * 切换时间。 
+- 1：维护时间窗操作：指升级规格在设置的维护时间窗内执行。请通过接口[DescribeMaintenanceWindow](https://cloud.tencent.com/document/product/239/46336)查询设置的维护时间窗时间段。增减副本、增减分片、扩缩内存均支持在维护时间窗执行操作。维护时间窗升级规格正在分地域逐步测试发布中，部分区域已支持，未覆盖地域若需紧急接入，请[提交工单](https://console.cloud.tencent.com/workorder/category)申请白名单。
+- 2：立即操作：操作将立即执行，无需等待维护时间窗。系统默认设置为立即操作。
+                     */
+                    uint64_t m_switchOption;
+                    bool m_switchOptionHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ using namespace std;
 
 CreateFileSystemRequest::CreateFileSystemRequest() :
     m_fileSystemNameHasBeenSet(false),
-    m_capacityQuotaHasBeenSet(false),
     m_posixAclHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_capacityQuotaHasBeenSet(false),
     m_superUsersHasBeenSet(false),
     m_rootInodeUserHasBeenSet(false),
     m_rootInodeGroupHasBeenSet(false),
@@ -51,14 +51,6 @@ string CreateFileSystemRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_fileSystemName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_capacityQuotaHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CapacityQuota";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_capacityQuota, allocator);
-    }
-
     if (m_posixAclHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -73,6 +65,14 @@ string CreateFileSystemRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_capacityQuotaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CapacityQuota";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_capacityQuota, allocator);
     }
 
     if (m_superUsersHasBeenSet)
@@ -164,22 +164,6 @@ bool CreateFileSystemRequest::FileSystemNameHasBeenSet() const
     return m_fileSystemNameHasBeenSet;
 }
 
-uint64_t CreateFileSystemRequest::GetCapacityQuota() const
-{
-    return m_capacityQuota;
-}
-
-void CreateFileSystemRequest::SetCapacityQuota(const uint64_t& _capacityQuota)
-{
-    m_capacityQuota = _capacityQuota;
-    m_capacityQuotaHasBeenSet = true;
-}
-
-bool CreateFileSystemRequest::CapacityQuotaHasBeenSet() const
-{
-    return m_capacityQuotaHasBeenSet;
-}
-
 bool CreateFileSystemRequest::GetPosixAcl() const
 {
     return m_posixAcl;
@@ -210,6 +194,22 @@ void CreateFileSystemRequest::SetDescription(const string& _description)
 bool CreateFileSystemRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+uint64_t CreateFileSystemRequest::GetCapacityQuota() const
+{
+    return m_capacityQuota;
+}
+
+void CreateFileSystemRequest::SetCapacityQuota(const uint64_t& _capacityQuota)
+{
+    m_capacityQuota = _capacityQuota;
+    m_capacityQuotaHasBeenSet = true;
+}
+
+bool CreateFileSystemRequest::CapacityQuotaHasBeenSet() const
+{
+    return m_capacityQuotaHasBeenSet;
 }
 
 vector<string> CreateFileSystemRequest::GetSuperUsers() const

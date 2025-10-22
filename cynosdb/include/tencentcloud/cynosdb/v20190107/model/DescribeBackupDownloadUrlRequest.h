@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cynosdb/v20190107/model/BackupLimitRestriction.h>
 
 
 namespace TencentCloud
@@ -84,6 +85,27 @@ namespace TencentCloud
                      */
                     bool BackupIdHasBeenSet() const;
 
+                    /**
+                     * 获取备份下载来源限制条件
+                     * @return DownloadRestriction 备份下载来源限制条件
+                     * 
+                     */
+                    BackupLimitRestriction GetDownloadRestriction() const;
+
+                    /**
+                     * 设置备份下载来源限制条件
+                     * @param _downloadRestriction 备份下载来源限制条件
+                     * 
+                     */
+                    void SetDownloadRestriction(const BackupLimitRestriction& _downloadRestriction);
+
+                    /**
+                     * 判断参数 DownloadRestriction 是否已赋值
+                     * @return DownloadRestriction 是否已赋值
+                     * 
+                     */
+                    bool DownloadRestrictionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +119,12 @@ namespace TencentCloud
                      */
                     int64_t m_backupId;
                     bool m_backupIdHasBeenSet;
+
+                    /**
+                     * 备份下载来源限制条件
+                     */
+                    BackupLimitRestriction m_downloadRestriction;
+                    bool m_downloadRestrictionHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,6 +58,20 @@ namespace TencentCloud
                      */
                     bool EnvBaseInfoHasBeenSet() const;
 
+                    /**
+                     * 获取是否存在
+                     * @return IsExist 是否存在
+                     * 
+                     */
+                    bool GetIsExist() const;
+
+                    /**
+                     * 判断参数 IsExist 是否已赋值
+                     * @return IsExist 是否已赋值
+                     * 
+                     */
+                    bool IsExistHasBeenSet() const;
+
                 private:
 
                     /**
@@ -65,6 +79,12 @@ namespace TencentCloud
                      */
                     EnvBaseInfo m_envBaseInfo;
                     bool m_envBaseInfoHasBeenSet;
+
+                    /**
+                     * 是否存在
+                     */
+                    bool m_isExist;
+                    bool m_isExistHasBeenSet;
 
                 };
             }

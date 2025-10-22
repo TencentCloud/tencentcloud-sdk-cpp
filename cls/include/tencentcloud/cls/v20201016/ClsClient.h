@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,8 +39,8 @@
 #include <tencentcloud/cls/v20201016/model/CreateAlarmNoticeResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateAlarmShieldRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateAlarmShieldResponse.h>
-#include <tencentcloud/cls/v20201016/model/CreateCloudProductLogTaskRequest.h>
-#include <tencentcloud/cls/v20201016/model/CreateCloudProductLogTaskResponse.h>
+#include <tencentcloud/cls/v20201016/model/CreateCloudProductLogCollectionRequest.h>
+#include <tencentcloud/cls/v20201016/model/CreateCloudProductLogCollectionResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateConfigRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateConfigResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateConfigExtraRequest.h>
@@ -75,14 +75,16 @@
 #include <tencentcloud/cls/v20201016/model/CreateShipperResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateTopicRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateTopicResponse.h>
+#include <tencentcloud/cls/v20201016/model/CreateWebCallbackRequest.h>
+#include <tencentcloud/cls/v20201016/model/CreateWebCallbackResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteAlarmRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteAlarmResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteAlarmNoticeRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteAlarmNoticeResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteAlarmShieldRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteAlarmShieldResponse.h>
-#include <tencentcloud/cls/v20201016/model/DeleteCloudProductLogTaskRequest.h>
-#include <tencentcloud/cls/v20201016/model/DeleteCloudProductLogTaskResponse.h>
+#include <tencentcloud/cls/v20201016/model/DeleteCloudProductLogCollectionRequest.h>
+#include <tencentcloud/cls/v20201016/model/DeleteCloudProductLogCollectionResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteConfigRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteConfigResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteConfigExtraRequest.h>
@@ -93,6 +95,8 @@
 #include <tencentcloud/cls/v20201016/model/DeleteConsoleSharingResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteConsumerRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteConsumerResponse.h>
+#include <tencentcloud/cls/v20201016/model/DeleteCosRechargeRequest.h>
+#include <tencentcloud/cls/v20201016/model/DeleteCosRechargeResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteDashboardSubscribeRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteDashboardSubscribeResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteDataTransformRequest.h>
@@ -117,6 +121,8 @@
 #include <tencentcloud/cls/v20201016/model/DeleteShipperResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteTopicRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteTopicResponse.h>
+#include <tencentcloud/cls/v20201016/model/DeleteWebCallbackRequest.h>
+#include <tencentcloud/cls/v20201016/model/DeleteWebCallbackResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeAlarmNoticesRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeAlarmNoticesResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeAlarmShieldsRequest.h>
@@ -151,6 +157,10 @@
 #include <tencentcloud/cls/v20201016/model/DescribeIndexResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeKafkaConsumerRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeKafkaConsumerResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeKafkaConsumerGroupDetailRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeKafkaConsumerGroupDetailResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeKafkaConsumerGroupListRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeKafkaConsumerGroupListResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeKafkaRechargesRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeKafkaRechargesResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeLogContextRequest.h>
@@ -177,6 +187,8 @@
 #include <tencentcloud/cls/v20201016/model/DescribeShippersResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeTopicsRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeTopicsResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeWebCallbacksRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeWebCallbacksResponse.h>
 #include <tencentcloud/cls/v20201016/model/GetAlarmLogRequest.h>
 #include <tencentcloud/cls/v20201016/model/GetAlarmLogResponse.h>
 #include <tencentcloud/cls/v20201016/model/MergePartitionRequest.h>
@@ -187,8 +199,8 @@
 #include <tencentcloud/cls/v20201016/model/ModifyAlarmNoticeResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyAlarmShieldRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyAlarmShieldResponse.h>
-#include <tencentcloud/cls/v20201016/model/ModifyCloudProductLogTaskRequest.h>
-#include <tencentcloud/cls/v20201016/model/ModifyCloudProductLogTaskResponse.h>
+#include <tencentcloud/cls/v20201016/model/ModifyCloudProductLogCollectionRequest.h>
+#include <tencentcloud/cls/v20201016/model/ModifyCloudProductLogCollectionResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyConfigRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyConfigResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyConfigExtraRequest.h>
@@ -207,6 +219,8 @@
 #include <tencentcloud/cls/v20201016/model/ModifyIndexResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyKafkaConsumerRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyKafkaConsumerResponse.h>
+#include <tencentcloud/cls/v20201016/model/ModifyKafkaConsumerGroupOffsetRequest.h>
+#include <tencentcloud/cls/v20201016/model/ModifyKafkaConsumerGroupOffsetResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyKafkaRechargeRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyKafkaRechargeResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyLogsetRequest.h>
@@ -221,6 +235,8 @@
 #include <tencentcloud/cls/v20201016/model/ModifyShipperResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyTopicRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyTopicResponse.h>
+#include <tencentcloud/cls/v20201016/model/ModifyWebCallbackRequest.h>
+#include <tencentcloud/cls/v20201016/model/ModifyWebCallbackResponse.h>
 #include <tencentcloud/cls/v20201016/model/OpenKafkaConsumerRequest.h>
 #include <tencentcloud/cls/v20201016/model/OpenKafkaConsumerResponse.h>
 #include <tencentcloud/cls/v20201016/model/PreviewKafkaRechargeRequest.h>
@@ -279,9 +295,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAlarmShieldResponse> CreateAlarmShieldOutcome;
                 typedef std::future<CreateAlarmShieldOutcome> CreateAlarmShieldOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateAlarmShieldRequest&, CreateAlarmShieldOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAlarmShieldAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateCloudProductLogTaskResponse> CreateCloudProductLogTaskOutcome;
-                typedef std::future<CreateCloudProductLogTaskOutcome> CreateCloudProductLogTaskOutcomeCallable;
-                typedef std::function<void(const ClsClient*, const Model::CreateCloudProductLogTaskRequest&, CreateCloudProductLogTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudProductLogTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCloudProductLogCollectionResponse> CreateCloudProductLogCollectionOutcome;
+                typedef std::future<CreateCloudProductLogCollectionOutcome> CreateCloudProductLogCollectionOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::CreateCloudProductLogCollectionRequest&, CreateCloudProductLogCollectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudProductLogCollectionAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateConfigResponse> CreateConfigOutcome;
                 typedef std::future<CreateConfigOutcome> CreateConfigOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateConfigRequest&, CreateConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConfigAsyncHandler;
@@ -333,6 +349,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateTopicResponse> CreateTopicOutcome;
                 typedef std::future<CreateTopicOutcome> CreateTopicOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateTopicRequest&, CreateTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTopicAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateWebCallbackResponse> CreateWebCallbackOutcome;
+                typedef std::future<CreateWebCallbackOutcome> CreateWebCallbackOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::CreateWebCallbackRequest&, CreateWebCallbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWebCallbackAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAlarmResponse> DeleteAlarmOutcome;
                 typedef std::future<DeleteAlarmOutcome> DeleteAlarmOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteAlarmRequest&, DeleteAlarmOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAlarmAsyncHandler;
@@ -342,9 +361,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAlarmShieldResponse> DeleteAlarmShieldOutcome;
                 typedef std::future<DeleteAlarmShieldOutcome> DeleteAlarmShieldOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteAlarmShieldRequest&, DeleteAlarmShieldOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAlarmShieldAsyncHandler;
-                typedef Outcome<Core::Error, Model::DeleteCloudProductLogTaskResponse> DeleteCloudProductLogTaskOutcome;
-                typedef std::future<DeleteCloudProductLogTaskOutcome> DeleteCloudProductLogTaskOutcomeCallable;
-                typedef std::function<void(const ClsClient*, const Model::DeleteCloudProductLogTaskRequest&, DeleteCloudProductLogTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudProductLogTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCloudProductLogCollectionResponse> DeleteCloudProductLogCollectionOutcome;
+                typedef std::future<DeleteCloudProductLogCollectionOutcome> DeleteCloudProductLogCollectionOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DeleteCloudProductLogCollectionRequest&, DeleteCloudProductLogCollectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudProductLogCollectionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteConfigResponse> DeleteConfigOutcome;
                 typedef std::future<DeleteConfigOutcome> DeleteConfigOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteConfigRequest&, DeleteConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConfigAsyncHandler;
@@ -360,6 +379,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteConsumerResponse> DeleteConsumerOutcome;
                 typedef std::future<DeleteConsumerOutcome> DeleteConsumerOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteConsumerRequest&, DeleteConsumerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConsumerAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCosRechargeResponse> DeleteCosRechargeOutcome;
+                typedef std::future<DeleteCosRechargeOutcome> DeleteCosRechargeOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DeleteCosRechargeRequest&, DeleteCosRechargeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCosRechargeAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDashboardSubscribeResponse> DeleteDashboardSubscribeOutcome;
                 typedef std::future<DeleteDashboardSubscribeOutcome> DeleteDashboardSubscribeOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteDashboardSubscribeRequest&, DeleteDashboardSubscribeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDashboardSubscribeAsyncHandler;
@@ -396,6 +418,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteTopicResponse> DeleteTopicOutcome;
                 typedef std::future<DeleteTopicOutcome> DeleteTopicOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteTopicRequest&, DeleteTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTopicAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteWebCallbackResponse> DeleteWebCallbackOutcome;
+                typedef std::future<DeleteWebCallbackOutcome> DeleteWebCallbackOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DeleteWebCallbackRequest&, DeleteWebCallbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWebCallbackAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAlarmNoticesResponse> DescribeAlarmNoticesOutcome;
                 typedef std::future<DescribeAlarmNoticesOutcome> DescribeAlarmNoticesOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeAlarmNoticesRequest&, DescribeAlarmNoticesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlarmNoticesAsyncHandler;
@@ -447,6 +472,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeKafkaConsumerResponse> DescribeKafkaConsumerOutcome;
                 typedef std::future<DescribeKafkaConsumerOutcome> DescribeKafkaConsumerOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeKafkaConsumerRequest&, DescribeKafkaConsumerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKafkaConsumerAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeKafkaConsumerGroupDetailResponse> DescribeKafkaConsumerGroupDetailOutcome;
+                typedef std::future<DescribeKafkaConsumerGroupDetailOutcome> DescribeKafkaConsumerGroupDetailOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeKafkaConsumerGroupDetailRequest&, DescribeKafkaConsumerGroupDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKafkaConsumerGroupDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeKafkaConsumerGroupListResponse> DescribeKafkaConsumerGroupListOutcome;
+                typedef std::future<DescribeKafkaConsumerGroupListOutcome> DescribeKafkaConsumerGroupListOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeKafkaConsumerGroupListRequest&, DescribeKafkaConsumerGroupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKafkaConsumerGroupListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeKafkaRechargesResponse> DescribeKafkaRechargesOutcome;
                 typedef std::future<DescribeKafkaRechargesOutcome> DescribeKafkaRechargesOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeKafkaRechargesRequest&, DescribeKafkaRechargesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKafkaRechargesAsyncHandler;
@@ -486,6 +517,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTopicsResponse> DescribeTopicsOutcome;
                 typedef std::future<DescribeTopicsOutcome> DescribeTopicsOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeTopicsRequest&, DescribeTopicsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeWebCallbacksResponse> DescribeWebCallbacksOutcome;
+                typedef std::future<DescribeWebCallbacksOutcome> DescribeWebCallbacksOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeWebCallbacksRequest&, DescribeWebCallbacksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWebCallbacksAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetAlarmLogResponse> GetAlarmLogOutcome;
                 typedef std::future<GetAlarmLogOutcome> GetAlarmLogOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::GetAlarmLogRequest&, GetAlarmLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAlarmLogAsyncHandler;
@@ -501,9 +535,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAlarmShieldResponse> ModifyAlarmShieldOutcome;
                 typedef std::future<ModifyAlarmShieldOutcome> ModifyAlarmShieldOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyAlarmShieldRequest&, ModifyAlarmShieldOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAlarmShieldAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyCloudProductLogTaskResponse> ModifyCloudProductLogTaskOutcome;
-                typedef std::future<ModifyCloudProductLogTaskOutcome> ModifyCloudProductLogTaskOutcomeCallable;
-                typedef std::function<void(const ClsClient*, const Model::ModifyCloudProductLogTaskRequest&, ModifyCloudProductLogTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCloudProductLogTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCloudProductLogCollectionResponse> ModifyCloudProductLogCollectionOutcome;
+                typedef std::future<ModifyCloudProductLogCollectionOutcome> ModifyCloudProductLogCollectionOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::ModifyCloudProductLogCollectionRequest&, ModifyCloudProductLogCollectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCloudProductLogCollectionAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyConfigResponse> ModifyConfigOutcome;
                 typedef std::future<ModifyConfigOutcome> ModifyConfigOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyConfigRequest&, ModifyConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConfigAsyncHandler;
@@ -531,6 +565,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyKafkaConsumerResponse> ModifyKafkaConsumerOutcome;
                 typedef std::future<ModifyKafkaConsumerOutcome> ModifyKafkaConsumerOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyKafkaConsumerRequest&, ModifyKafkaConsumerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyKafkaConsumerAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyKafkaConsumerGroupOffsetResponse> ModifyKafkaConsumerGroupOffsetOutcome;
+                typedef std::future<ModifyKafkaConsumerGroupOffsetOutcome> ModifyKafkaConsumerGroupOffsetOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::ModifyKafkaConsumerGroupOffsetRequest&, ModifyKafkaConsumerGroupOffsetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyKafkaConsumerGroupOffsetAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyKafkaRechargeResponse> ModifyKafkaRechargeOutcome;
                 typedef std::future<ModifyKafkaRechargeOutcome> ModifyKafkaRechargeOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyKafkaRechargeRequest&, ModifyKafkaRechargeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyKafkaRechargeAsyncHandler;
@@ -552,6 +589,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyTopicResponse> ModifyTopicOutcome;
                 typedef std::future<ModifyTopicOutcome> ModifyTopicOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyTopicRequest&, ModifyTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTopicAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyWebCallbackResponse> ModifyWebCallbackOutcome;
+                typedef std::future<ModifyWebCallbackOutcome> ModifyWebCallbackOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::ModifyWebCallbackRequest&, ModifyWebCallbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWebCallbackAsyncHandler;
                 typedef Outcome<Core::Error, Model::OpenKafkaConsumerResponse> OpenKafkaConsumerOutcome;
                 typedef std::future<OpenKafkaConsumerOutcome> OpenKafkaConsumerOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::OpenKafkaConsumerRequest&, OpenKafkaConsumerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenKafkaConsumerAsyncHandler;
@@ -666,12 +706,12 @@ namespace TencentCloud
 
                 /**
                  *内部云产品接入使用相关接口
-                 * @param req CreateCloudProductLogTaskRequest
-                 * @return CreateCloudProductLogTaskOutcome
+                 * @param req CreateCloudProductLogCollectionRequest
+                 * @return CreateCloudProductLogCollectionOutcome
                  */
-                CreateCloudProductLogTaskOutcome CreateCloudProductLogTask(const Model::CreateCloudProductLogTaskRequest &request);
-                void CreateCloudProductLogTaskAsync(const Model::CreateCloudProductLogTaskRequest& request, const CreateCloudProductLogTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateCloudProductLogTaskOutcomeCallable CreateCloudProductLogTaskCallable(const Model::CreateCloudProductLogTaskRequest& request);
+                CreateCloudProductLogCollectionOutcome CreateCloudProductLogCollection(const Model::CreateCloudProductLogCollectionRequest &request);
+                void CreateCloudProductLogCollectionAsync(const Model::CreateCloudProductLogCollectionRequest& request, const CreateCloudProductLogCollectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCloudProductLogCollectionOutcomeCallable CreateCloudProductLogCollectionCallable(const Model::CreateCloudProductLogCollectionRequest& request);
 
                 /**
                  *创建采集规则配置
@@ -746,7 +786,7 @@ namespace TencentCloud
                 CreateDeliverCloudFunctionOutcomeCallable CreateDeliverCloudFunctionCallable(const Model::CreateDeliverCloudFunctionRequest& request);
 
                 /**
-                 *本接口仅创建下载任务，任务返回的下载地址，请用户调用DescribeExports查看任务列表。其中有下载地址CosPath参数。参考文档https://cloud.tencent.com/document/product/614/56449
+                 *本接口仅创建下载任务。任务返回的下载地址，请用户调用[DescribeExports](https://cloud.tencent.com/document/product/614/56449)查看任务列表，其中有下载地址CosPath参数。
                  * @param req CreateExportRequest
                  * @return CreateExportOutcome
                  */
@@ -818,13 +858,22 @@ namespace TencentCloud
                 CreateShipperOutcomeCallable CreateShipperCallable(const Model::CreateShipperRequest& request);
 
                 /**
-                 *本接口用于创建日志主题。
+                 *本接口用于创建日志或指标主题。
                  * @param req CreateTopicRequest
                  * @return CreateTopicOutcome
                  */
                 CreateTopicOutcome CreateTopic(const Model::CreateTopicRequest &request);
                 void CreateTopicAsync(const Model::CreateTopicRequest& request, const CreateTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateTopicOutcomeCallable CreateTopicCallable(const Model::CreateTopicRequest& request);
+
+                /**
+                 *该接口用于创建告警渠道回调配置。
+                 * @param req CreateWebCallbackRequest
+                 * @return CreateWebCallbackOutcome
+                 */
+                CreateWebCallbackOutcome CreateWebCallback(const Model::CreateWebCallbackRequest &request);
+                void CreateWebCallbackAsync(const Model::CreateWebCallbackRequest& request, const CreateWebCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateWebCallbackOutcomeCallable CreateWebCallbackCallable(const Model::CreateWebCallbackRequest& request);
 
                 /**
                  *本接口用于删除告警策略。
@@ -845,7 +894,7 @@ namespace TencentCloud
                 DeleteAlarmNoticeOutcomeCallable DeleteAlarmNoticeCallable(const Model::DeleteAlarmNoticeRequest& request);
 
                 /**
-                 *该接口用于删除告警屏蔽规则。
+                 *该接口用于删除告警屏蔽规则。当告警屏蔽规则在生效中或者是在失效中，无法被删除
                  * @param req DeleteAlarmShieldRequest
                  * @return DeleteAlarmShieldOutcome
                  */
@@ -855,12 +904,12 @@ namespace TencentCloud
 
                 /**
                  *内部云产品接入使用相关接口
-                 * @param req DeleteCloudProductLogTaskRequest
-                 * @return DeleteCloudProductLogTaskOutcome
+                 * @param req DeleteCloudProductLogCollectionRequest
+                 * @return DeleteCloudProductLogCollectionOutcome
                  */
-                DeleteCloudProductLogTaskOutcome DeleteCloudProductLogTask(const Model::DeleteCloudProductLogTaskRequest &request);
-                void DeleteCloudProductLogTaskAsync(const Model::DeleteCloudProductLogTaskRequest& request, const DeleteCloudProductLogTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DeleteCloudProductLogTaskOutcomeCallable DeleteCloudProductLogTaskCallable(const Model::DeleteCloudProductLogTaskRequest& request);
+                DeleteCloudProductLogCollectionOutcome DeleteCloudProductLogCollection(const Model::DeleteCloudProductLogCollectionRequest &request);
+                void DeleteCloudProductLogCollectionAsync(const Model::DeleteCloudProductLogCollectionRequest& request, const DeleteCloudProductLogCollectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCloudProductLogCollectionOutcomeCallable DeleteCloudProductLogCollectionCallable(const Model::DeleteCloudProductLogCollectionRequest& request);
 
                 /**
                  *删除采集规则配置
@@ -899,13 +948,22 @@ namespace TencentCloud
                 DeleteConsoleSharingOutcomeCallable DeleteConsoleSharingCallable(const Model::DeleteConsoleSharingRequest& request);
 
                 /**
-                 *本接口用于删除投递配置
+                 *删除投递Ckafka任务
                  * @param req DeleteConsumerRequest
                  * @return DeleteConsumerOutcome
                  */
                 DeleteConsumerOutcome DeleteConsumer(const Model::DeleteConsumerRequest &request);
                 void DeleteConsumerAsync(const Model::DeleteConsumerRequest& request, const DeleteConsumerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteConsumerOutcomeCallable DeleteConsumerCallable(const Model::DeleteConsumerRequest& request);
+
+                /**
+                 *本接口用于删除cos导入任务
+                 * @param req DeleteCosRechargeRequest
+                 * @return DeleteCosRechargeOutcome
+                 */
+                DeleteCosRechargeOutcome DeleteCosRecharge(const Model::DeleteCosRechargeRequest &request);
+                void DeleteCosRechargeAsync(const Model::DeleteCosRechargeRequest& request, const DeleteCosRechargeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCosRechargeOutcomeCallable DeleteCosRechargeCallable(const Model::DeleteCosRechargeRequest& request);
 
                 /**
                  *此接口用于删除仪表盘订阅
@@ -1007,13 +1065,22 @@ namespace TencentCloud
                 DeleteShipperOutcomeCallable DeleteShipperCallable(const Model::DeleteShipperRequest& request);
 
                 /**
-                 *本接口用于删除日志主题。
+                 *本接口用于删除日志或指标主题。
                  * @param req DeleteTopicRequest
                  * @return DeleteTopicOutcome
                  */
                 DeleteTopicOutcome DeleteTopic(const Model::DeleteTopicRequest &request);
                 void DeleteTopicAsync(const Model::DeleteTopicRequest& request, const DeleteTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteTopicOutcomeCallable DeleteTopicCallable(const Model::DeleteTopicRequest& request);
+
+                /**
+                 *该接口用于删除告警渠道回调配置。
+                 * @param req DeleteWebCallbackRequest
+                 * @return DeleteWebCallbackOutcome
+                 */
+                DeleteWebCallbackOutcome DeleteWebCallback(const Model::DeleteWebCallbackRequest &request);
+                void DeleteWebCallbackAsync(const Model::DeleteWebCallbackRequest& request, const DeleteWebCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteWebCallbackOutcomeCallable DeleteWebCallbackCallable(const Model::DeleteWebCallbackRequest& request);
 
                 /**
                  *该接口用于获取通知渠道组列表
@@ -1169,6 +1236,24 @@ namespace TencentCloud
                 DescribeKafkaConsumerOutcomeCallable DescribeKafkaConsumerCallable(const Model::DescribeKafkaConsumerRequest& request);
 
                 /**
+                 *获取Kafka协议消费组详情
+                 * @param req DescribeKafkaConsumerGroupDetailRequest
+                 * @return DescribeKafkaConsumerGroupDetailOutcome
+                 */
+                DescribeKafkaConsumerGroupDetailOutcome DescribeKafkaConsumerGroupDetail(const Model::DescribeKafkaConsumerGroupDetailRequest &request);
+                void DescribeKafkaConsumerGroupDetailAsync(const Model::DescribeKafkaConsumerGroupDetailRequest& request, const DescribeKafkaConsumerGroupDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeKafkaConsumerGroupDetailOutcomeCallable DescribeKafkaConsumerGroupDetailCallable(const Model::DescribeKafkaConsumerGroupDetailRequest& request);
+
+                /**
+                 *获取Kafka协议消费组信息列表
+                 * @param req DescribeKafkaConsumerGroupListRequest
+                 * @return DescribeKafkaConsumerGroupListOutcome
+                 */
+                DescribeKafkaConsumerGroupListOutcome DescribeKafkaConsumerGroupList(const Model::DescribeKafkaConsumerGroupListRequest &request);
+                void DescribeKafkaConsumerGroupListAsync(const Model::DescribeKafkaConsumerGroupListRequest& request, const DescribeKafkaConsumerGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeKafkaConsumerGroupListOutcomeCallable DescribeKafkaConsumerGroupListCallable(const Model::DescribeKafkaConsumerGroupListRequest& request);
+
+                /**
                  *本接口用于获取Kafka数据订阅任务
                  * @param req DescribeKafkaRechargesRequest
                  * @return DescribeKafkaRechargesOutcome
@@ -1278,13 +1363,22 @@ API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Ac
                 DescribeShippersOutcomeCallable DescribeShippersCallable(const Model::DescribeShippersRequest& request);
 
                 /**
-                 *本接口用于获取日志主题列表，支持分页
+                 *本接口用于获取日志或指标主题列表，支持分页
                  * @param req DescribeTopicsRequest
                  * @return DescribeTopicsOutcome
                  */
                 DescribeTopicsOutcome DescribeTopics(const Model::DescribeTopicsRequest &request);
                 void DescribeTopicsAsync(const Model::DescribeTopicsRequest& request, const DescribeTopicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTopicsOutcomeCallable DescribeTopicsCallable(const Model::DescribeTopicsRequest& request);
+
+                /**
+                 *获取告警渠道回调配置列表。
+                 * @param req DescribeWebCallbacksRequest
+                 * @return DescribeWebCallbacksOutcome
+                 */
+                DescribeWebCallbacksOutcome DescribeWebCallbacks(const Model::DescribeWebCallbacksRequest &request);
+                void DescribeWebCallbacksAsync(const Model::DescribeWebCallbacksRequest& request, const DescribeWebCallbacksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWebCallbacksOutcomeCallable DescribeWebCallbacksCallable(const Model::DescribeWebCallbacksRequest& request);
 
                 /**
                  *本接口用于获取告警策略执行详情
@@ -1323,7 +1417,7 @@ API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Ac
                 ModifyAlarmNoticeOutcomeCallable ModifyAlarmNoticeCallable(const Model::ModifyAlarmNoticeRequest& request);
 
                 /**
-                 *该接口用于修改告警屏蔽规则。
+                 *该接口用于修改告警屏蔽规则。当告警屏蔽规则为失效中时，无法对其进行修改
                  * @param req ModifyAlarmShieldRequest
                  * @return ModifyAlarmShieldOutcome
                  */
@@ -1333,12 +1427,12 @@ API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Ac
 
                 /**
                  *内部云产品接入使用相关接口
-                 * @param req ModifyCloudProductLogTaskRequest
-                 * @return ModifyCloudProductLogTaskOutcome
+                 * @param req ModifyCloudProductLogCollectionRequest
+                 * @return ModifyCloudProductLogCollectionOutcome
                  */
-                ModifyCloudProductLogTaskOutcome ModifyCloudProductLogTask(const Model::ModifyCloudProductLogTaskRequest &request);
-                void ModifyCloudProductLogTaskAsync(const Model::ModifyCloudProductLogTaskRequest& request, const ModifyCloudProductLogTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyCloudProductLogTaskOutcomeCallable ModifyCloudProductLogTaskCallable(const Model::ModifyCloudProductLogTaskRequest& request);
+                ModifyCloudProductLogCollectionOutcome ModifyCloudProductLogCollection(const Model::ModifyCloudProductLogCollectionRequest &request);
+                void ModifyCloudProductLogCollectionAsync(const Model::ModifyCloudProductLogCollectionRequest& request, const ModifyCloudProductLogCollectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCloudProductLogCollectionOutcomeCallable ModifyCloudProductLogCollectionCallable(const Model::ModifyCloudProductLogCollectionRequest& request);
 
                 /**
                  *修改采集规则配置
@@ -1422,6 +1516,15 @@ API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Ac
                 ModifyKafkaConsumerOutcomeCallable ModifyKafkaConsumerCallable(const Model::ModifyKafkaConsumerRequest& request);
 
                 /**
+                 *修改Kafka协议消费组点位
+                 * @param req ModifyKafkaConsumerGroupOffsetRequest
+                 * @return ModifyKafkaConsumerGroupOffsetOutcome
+                 */
+                ModifyKafkaConsumerGroupOffsetOutcome ModifyKafkaConsumerGroupOffset(const Model::ModifyKafkaConsumerGroupOffsetRequest &request);
+                void ModifyKafkaConsumerGroupOffsetAsync(const Model::ModifyKafkaConsumerGroupOffsetRequest& request, const ModifyKafkaConsumerGroupOffsetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyKafkaConsumerGroupOffsetOutcomeCallable ModifyKafkaConsumerGroupOffsetCallable(const Model::ModifyKafkaConsumerGroupOffsetRequest& request);
+
+                /**
                  *本接口用于修改Kafka数据订阅任务
                  * @param req ModifyKafkaRechargeRequest
                  * @return ModifyKafkaRechargeOutcome
@@ -1440,7 +1543,8 @@ API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Ac
                 ModifyLogsetOutcomeCallable ModifyLogsetCallable(const Model::ModifyLogsetRequest& request);
 
                 /**
-                 *修改机器组
+                 *修改机器组。
+注意：修改接口直接覆盖历史数据，改为本次合法入参数据，请谨慎调用此接口。
                  * @param req ModifyMachineGroupRequest
                  * @return ModifyMachineGroupOutcome
                  */
@@ -1476,13 +1580,22 @@ API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Ac
                 ModifyShipperOutcomeCallable ModifyShipperCallable(const Model::ModifyShipperRequest& request);
 
                 /**
-                 *本接口用于修改日志主题。
+                 *本接口用于修改日志或指标主题。
                  * @param req ModifyTopicRequest
                  * @return ModifyTopicOutcome
                  */
                 ModifyTopicOutcome ModifyTopic(const Model::ModifyTopicRequest &request);
                 void ModifyTopicAsync(const Model::ModifyTopicRequest& request, const ModifyTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyTopicOutcomeCallable ModifyTopicCallable(const Model::ModifyTopicRequest& request);
+
+                /**
+                 *该接口用于修改告警渠道回调配置。
+                 * @param req ModifyWebCallbackRequest
+                 * @return ModifyWebCallbackOutcome
+                 */
+                ModifyWebCallbackOutcome ModifyWebCallback(const Model::ModifyWebCallbackRequest &request);
+                void ModifyWebCallbackAsync(const Model::ModifyWebCallbackRequest& request, const ModifyWebCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyWebCallbackOutcomeCallable ModifyWebCallbackCallable(const Model::ModifyWebCallbackRequest& request);
 
                 /**
                  *打开Kafka协议消费功能
@@ -1551,7 +1664,7 @@ API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Ac
                 /**
                  *本接口用于检索分析日志，使用该接口时请注意如下事项：
 1. 该接口除受默认接口请求频率限制外，针对单个日志主题，查询并发数不能超过15。
-2. 检索语法建议使用CQL语法规则，请使用SyntaxRule参数，将值设置为1。
+2. 检索语法建议使用日志服务专用检索语法CQL，请使用SyntaxRule参数，将值设置为1，控制台默认也使用该语法规则。
 3. API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Accept-Encoding:gzip）。
                  * @param req SearchLogRequest
                  * @return SearchLogOutcome

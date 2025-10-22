@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/lighthouse/v20200324/model/Tag.h>
 
 
 namespace TencentCloud
@@ -211,18 +212,14 @@ namespace TencentCloud
 
                     /**
                      * 获取上一次操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LatestOperation 上一次操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLatestOperation() const;
 
                     /**
                      * 设置上一次操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _latestOperation 上一次操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLatestOperation(const std::string& _latestOperation);
@@ -236,18 +233,14 @@ namespace TencentCloud
 
                     /**
                      * 获取上一次操作状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LatestOperationState 上一次操作状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLatestOperationState() const;
 
                     /**
                      * 设置上一次操作状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _latestOperationState 上一次操作状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLatestOperationState(const std::string& _latestOperationState);
@@ -261,18 +254,14 @@ namespace TencentCloud
 
                     /**
                      * 获取上一次请求ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LatestOperationRequestId 上一次请求ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLatestOperationRequestId() const;
 
                     /**
                      * 设置上一次请求ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _latestOperationRequestId 上一次请求ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLatestOperationRequestId(const std::string& _latestOperationRequestId);
@@ -308,6 +297,27 @@ namespace TencentCloud
                      * 
                      */
                     bool CreatedTimeHasBeenSet() const;
+
+                    /**
+                     * 获取云硬盘备份点绑定的标签列表。
+                     * @return Tags 云硬盘备份点绑定的标签列表。
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置云硬盘备份点绑定的标签列表。
+                     * @param _tags 云硬盘备份点绑定的标签列表。
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
 
                 private:
 
@@ -359,21 +369,18 @@ namespace TencentCloud
 
                     /**
                      * 上一次操作
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_latestOperation;
                     bool m_latestOperationHasBeenSet;
 
                     /**
                      * 上一次操作状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_latestOperationState;
                     bool m_latestOperationStateHasBeenSet;
 
                     /**
                      * 上一次请求ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_latestOperationRequestId;
                     bool m_latestOperationRequestIdHasBeenSet;
@@ -384,6 +391,12 @@ namespace TencentCloud
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
+
+                    /**
+                     * 云硬盘备份点绑定的标签列表。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

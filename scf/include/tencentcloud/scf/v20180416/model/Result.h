@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool FunctionRequestIdHasBeenSet() const;
 
                     /**
-                     * 获取请求 Invoke 接口，该参数已弃用。请求 InvokeFunction 接口，该参数值为请求执行[状态码](https://cloud.tencent.com/document/product/583/42611)。
-                     * @return InvokeResult 请求 Invoke 接口，该参数已弃用。请求 InvokeFunction 接口，该参数值为请求执行[状态码](https://cloud.tencent.com/document/product/583/42611)。
+                     * 获取该参数不再维护，不推荐用户继续使用。
+                     * @return InvokeResult 该参数不再维护，不推荐用户继续使用。
                      * 
                      */
                     int64_t GetInvokeResult() const;
 
                     /**
-                     * 设置请求 Invoke 接口，该参数已弃用。请求 InvokeFunction 接口，该参数值为请求执行[状态码](https://cloud.tencent.com/document/product/583/42611)。
-                     * @param _invokeResult 请求 Invoke 接口，该参数已弃用。请求 InvokeFunction 接口，该参数值为请求执行[状态码](https://cloud.tencent.com/document/product/583/42611)。
+                     * 设置该参数不再维护，不推荐用户继续使用。
+                     * @param _invokeResult 该参数不再维护，不推荐用户继续使用。
                      * 
                      */
                     void SetInvokeResult(const int64_t& _invokeResult);
@@ -259,7 +259,7 @@ namespace TencentCloud
                     bool m_functionRequestIdHasBeenSet;
 
                     /**
-                     * 请求 Invoke 接口，该参数已弃用。请求 InvokeFunction 接口，该参数值为请求执行[状态码](https://cloud.tencent.com/document/product/583/42611)。
+                     * 该参数不再维护，不推荐用户继续使用。
                      */
                     int64_t m_invokeResult;
                     bool m_invokeResultHasBeenSet;

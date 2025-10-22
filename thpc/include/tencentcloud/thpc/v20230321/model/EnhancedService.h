@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,18 +51,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开启云安全服务。若不指定该参数，则默认开启云安全服务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecurityService 开启云安全服务。若不指定该参数，则默认开启云安全服务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RunSecurityServiceEnabled GetSecurityService() const;
 
                     /**
                      * 设置开启云安全服务。若不指定该参数，则默认开启云安全服务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _securityService 开启云安全服务。若不指定该参数，则默认开启云安全服务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecurityService(const RunSecurityServiceEnabled& _securityService);
@@ -76,18 +72,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开启腾讯云可观测平台服务。若不指定该参数，则默认开启腾讯云可观测平台服务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MonitorService 开启腾讯云可观测平台服务。若不指定该参数，则默认开启腾讯云可观测平台服务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RunMonitorServiceEnabled GetMonitorService() const;
 
                     /**
                      * 设置开启腾讯云可观测平台服务。若不指定该参数，则默认开启腾讯云可观测平台服务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _monitorService 开启腾讯云可观测平台服务。若不指定该参数，则默认开启腾讯云可观测平台服务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMonitorService(const RunMonitorServiceEnabled& _monitorService);
@@ -101,18 +93,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开启云自动化助手服务（TencentCloud Automation Tools，TAT）。若不指定该参数，默认开启云自动化助手服务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutomationService 开启云自动化助手服务（TencentCloud Automation Tools，TAT）。若不指定该参数，默认开启云自动化助手服务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RunAutomationServiceEnabled GetAutomationService() const;
 
                     /**
                      * 设置开启云自动化助手服务（TencentCloud Automation Tools，TAT）。若不指定该参数，默认开启云自动化助手服务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _automationService 开启云自动化助手服务（TencentCloud Automation Tools，TAT）。若不指定该参数，默认开启云自动化助手服务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAutomationService(const RunAutomationServiceEnabled& _automationService);
@@ -128,21 +116,18 @@ namespace TencentCloud
 
                     /**
                      * 开启云安全服务。若不指定该参数，则默认开启云安全服务。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RunSecurityServiceEnabled m_securityService;
                     bool m_securityServiceHasBeenSet;
 
                     /**
                      * 开启腾讯云可观测平台服务。若不指定该参数，则默认开启腾讯云可观测平台服务。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RunMonitorServiceEnabled m_monitorService;
                     bool m_monitorServiceHasBeenSet;
 
                     /**
                      * 开启云自动化助手服务（TencentCloud Automation Tools，TAT）。若不指定该参数，默认开启云自动化助手服务。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RunAutomationServiceEnabled m_automationService;
                     bool m_automationServiceHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,8 @@ ModifyInstanceAccountRequest::ModifyInstanceAccountRequest() :
     m_remarkHasBeenSet(false),
     m_readonlyPolicyHasBeenSet(false),
     m_privilegeHasBeenSet(false),
-    m_noAuthHasBeenSet(false)
+    m_noAuthHasBeenSet(false),
+    m_encryptPasswordHasBeenSet(false)
 {
 }
 
@@ -99,6 +100,14 @@ string ModifyInstanceAccountRequest::ToJsonString() const
         string key = "NoAuth";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_noAuth, allocator);
+    }
+
+    if (m_encryptPasswordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptPassword";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_encryptPassword, allocator);
     }
 
 
@@ -219,6 +228,22 @@ void ModifyInstanceAccountRequest::SetNoAuth(const bool& _noAuth)
 bool ModifyInstanceAccountRequest::NoAuthHasBeenSet() const
 {
     return m_noAuthHasBeenSet;
+}
+
+bool ModifyInstanceAccountRequest::GetEncryptPassword() const
+{
+    return m_encryptPassword;
+}
+
+void ModifyInstanceAccountRequest::SetEncryptPassword(const bool& _encryptPassword)
+{
+    m_encryptPassword = _encryptPassword;
+    m_encryptPasswordHasBeenSet = true;
+}
+
+bool ModifyInstanceAccountRequest::EncryptPasswordHasBeenSet() const
+{
+    return m_encryptPasswordHasBeenSet;
 }
 
 

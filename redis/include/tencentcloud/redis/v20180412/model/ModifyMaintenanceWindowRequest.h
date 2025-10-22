@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
+                     * @return InstanceId 实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
+                     * @param _instanceId 实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取维护时间窗起始时间，如：17:00
-                     * @return StartTime 维护时间窗起始时间，如：17:00
+                     * 获取维护时间窗起始时间，如：17:00。
+                     * @return StartTime 维护时间窗起始时间，如：17:00。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置维护时间窗起始时间，如：17:00
-                     * @param _startTime 维护时间窗起始时间，如：17:00
+                     * 设置维护时间窗起始时间，如：17:00。
+                     * @param _startTime 维护时间窗起始时间，如：17:00。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -85,15 +85,19 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取维护时间窗结束时间，如：19:00
-                     * @return EndTime 维护时间窗结束时间，如：19:00
+                     * 获取维护时间窗结束时间，如：19:00。
+**说明：**维护时间窗时长，当前支持：30分钟、1小时、1.5小时、2小时、3小时。
+                     * @return EndTime 维护时间窗结束时间，如：19:00。
+**说明：**维护时间窗时长，当前支持：30分钟、1小时、1.5小时、2小时、3小时。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置维护时间窗结束时间，如：19:00
-                     * @param _endTime 维护时间窗结束时间，如：19:00
+                     * 设置维护时间窗结束时间，如：19:00。
+**说明：**维护时间窗时长，当前支持：30分钟、1小时、1.5小时、2小时、3小时。
+                     * @param _endTime 维护时间窗结束时间，如：19:00。
+**说明：**维护时间窗时长，当前支持：30分钟、1小时、1.5小时、2小时、3小时。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -108,19 +112,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * 实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 维护时间窗起始时间，如：17:00
+                     * 维护时间窗起始时间，如：17:00。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 维护时间窗结束时间，如：19:00
+                     * 维护时间窗结束时间，如：19:00。
+**说明：**维护时间窗时长，当前支持：30分钟、1小时、1.5小时、2小时、3小时。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

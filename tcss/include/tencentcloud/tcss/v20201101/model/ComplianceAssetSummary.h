@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -152,18 +152,14 @@ CHECK_FAILED, 检测失败
 
                     /**
                      * 获取此类别的检测进度，为 0~100 的数。若未在检测中，无此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckProgress 此类别的检测进度，为 0~100 的数。若未在检测中，无此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetCheckProgress() const;
 
                     /**
                      * 设置此类别的检测进度，为 0~100 的数。若未在检测中，无此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _checkProgress 此类别的检测进度，为 0~100 的数。若未在检测中，无此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCheckProgress(const double& _checkProgress);
@@ -408,18 +404,14 @@ CHECK_FAILED, 检测失败
 
                     /**
                      * 获取上次检测的耗时，单位为秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckCostTime 上次检测的耗时，单位为秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetCheckCostTime() const;
 
                     /**
                      * 设置上次检测的耗时，单位为秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _checkCostTime 上次检测的耗时，单位为秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCheckCostTime(const double& _checkCostTime);
@@ -433,18 +425,14 @@ CHECK_FAILED, 检测失败
 
                     /**
                      * 获取上次检测的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastCheckTime 上次检测的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastCheckTime() const;
 
                     /**
                      * 设置上次检测的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastCheckTime 上次检测的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastCheckTime(const std::string& _lastCheckTime);
@@ -479,18 +467,14 @@ CHECK_FAILED, 检测失败
 
                     /**
                      * 获取已开启的检查项总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OpenPolicyItemCount 已开启的检查项总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetOpenPolicyItemCount() const;
 
                     /**
                      * 设置已开启的检查项总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _openPolicyItemCount 已开启的检查项总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOpenPolicyItemCount(const uint64_t& _openPolicyItemCount);
@@ -504,18 +488,14 @@ CHECK_FAILED, 检测失败
 
                     /**
                      * 获取已忽略的检查项总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IgnoredPolicyItemCount 已忽略的检查项总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIgnoredPolicyItemCount() const;
 
                     /**
                      * 设置已忽略的检查项总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ignoredPolicyItemCount 已忽略的检查项总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIgnoredPolicyItemCount(const uint64_t& _ignoredPolicyItemCount);
@@ -529,18 +509,14 @@ CHECK_FAILED, 检测失败
 
                     /**
                      * 获取总检测项数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalPolicyItemCount 总检测项数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalPolicyItemCount() const;
 
                     /**
                      * 设置总检测项数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalPolicyItemCount 总检测项数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalPolicyItemCount(const uint64_t& _totalPolicyItemCount);
@@ -554,18 +530,14 @@ CHECK_FAILED, 检测失败
 
                     /**
                      * 获取检测主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DetectHostCount 检测主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDetectHostCount() const;
 
                     /**
                      * 设置检测主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _detectHostCount 检测主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDetectHostCount(const uint64_t& _detectHostCount);
@@ -579,18 +551,14 @@ CHECK_FAILED, 检测失败
 
                     /**
                      * 获取当前任务剩余时间，单位秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LeftTime 当前任务剩余时间，单位秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLeftTime() const;
 
                     /**
                      * 设置当前任务剩余时间，单位秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _leftTime 当前任务剩余时间，单位秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLeftTime(const uint64_t& _leftTime);
@@ -634,7 +602,6 @@ CHECK_FAILED, 检测失败
 
                     /**
                      * 此类别的检测进度，为 0~100 的数。若未在检测中，无此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_checkProgress;
                     bool m_checkProgressHasBeenSet;
@@ -707,14 +674,12 @@ CHECK_FAILED, 检测失败
 
                     /**
                      * 上次检测的耗时，单位为秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_checkCostTime;
                     bool m_checkCostTimeHasBeenSet;
 
                     /**
                      * 上次检测的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastCheckTime;
                     bool m_lastCheckTimeHasBeenSet;
@@ -727,35 +692,30 @@ CHECK_FAILED, 检测失败
 
                     /**
                      * 已开启的检查项总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_openPolicyItemCount;
                     bool m_openPolicyItemCountHasBeenSet;
 
                     /**
                      * 已忽略的检查项总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_ignoredPolicyItemCount;
                     bool m_ignoredPolicyItemCountHasBeenSet;
 
                     /**
                      * 总检测项数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalPolicyItemCount;
                     bool m_totalPolicyItemCountHasBeenSet;
 
                     /**
                      * 检测主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_detectHostCount;
                     bool m_detectHostCountHasBeenSet;
 
                     /**
                      * 当前任务剩余时间，单位秒
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_leftTime;
                     bool m_leftTimeHasBeenSet;

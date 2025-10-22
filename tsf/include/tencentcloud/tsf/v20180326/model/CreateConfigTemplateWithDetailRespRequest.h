@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取配置模板名称
-                     * @return ConfigTemplateName 配置模板名称
+                     * 获取配置模板名称，最多支持60个字符，只能包含字母、数字及分隔符（“-”），且不能以分隔符开头或结尾。
+                     * @return ConfigTemplateName 配置模板名称，最多支持60个字符，只能包含字母、数字及分隔符（“-”），且不能以分隔符开头或结尾。
                      * 
                      */
                     std::string GetConfigTemplateName() const;
 
                     /**
-                     * 设置配置模板名称
-                     * @param _configTemplateName 配置模板名称
+                     * 设置配置模板名称，最多支持60个字符，只能包含字母、数字及分隔符（“-”），且不能以分隔符开头或结尾。
+                     * @param _configTemplateName 配置模板名称，最多支持60个字符，只能包含字母、数字及分隔符（“-”），且不能以分隔符开头或结尾。
                      * 
                      */
                     void SetConfigTemplateName(const std::string& _configTemplateName);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ConfigTemplateNameHasBeenSet() const;
 
                     /**
-                     * 获取配置模板对应的微服务框架
-                     * @return ConfigTemplateType 配置模板对应的微服务框架
+                     * 获取配置模板对应的微服务框架。- Ribbon：Ribbon类型配置模板- Hystrix：Hystrix类型配置模板- Zuul：Zuul类型配置模板- customize：自定义类型配置模板。
+                     * @return ConfigTemplateType 配置模板对应的微服务框架。- Ribbon：Ribbon类型配置模板- Hystrix：Hystrix类型配置模板- Zuul：Zuul类型配置模板- customize：自定义类型配置模板。
                      * 
                      */
                     std::string GetConfigTemplateType() const;
 
                     /**
-                     * 设置配置模板对应的微服务框架
-                     * @param _configTemplateType 配置模板对应的微服务框架
+                     * 设置配置模板对应的微服务框架。- Ribbon：Ribbon类型配置模板- Hystrix：Hystrix类型配置模板- Zuul：Zuul类型配置模板- customize：自定义类型配置模板。
+                     * @param _configTemplateType 配置模板对应的微服务框架。- Ribbon：Ribbon类型配置模板- Hystrix：Hystrix类型配置模板- Zuul：Zuul类型配置模板- customize：自定义类型配置模板。
                      * 
                      */
                     void SetConfigTemplateType(const std::string& _configTemplateType);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ConfigTemplateTypeHasBeenSet() const;
 
                     /**
-                     * 获取配置模板数据
-                     * @return ConfigTemplateValue 配置模板数据
+                     * 获取配置模板数据。
+                     * @return ConfigTemplateValue 配置模板数据。
                      * 
                      */
                     std::string GetConfigTemplateValue() const;
 
                     /**
-                     * 设置配置模板数据
-                     * @param _configTemplateValue 配置模板数据
+                     * 设置配置模板数据。
+                     * @param _configTemplateValue 配置模板数据。
                      * 
                      */
                     void SetConfigTemplateValue(const std::string& _configTemplateValue);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ConfigTemplateValueHasBeenSet() const;
 
                     /**
-                     * 获取配置模板描述
-                     * @return ConfigTemplateDesc 配置模板描述
+                     * 获取配置模板描述，最多支持200个字符。
+                     * @return ConfigTemplateDesc 配置模板描述，最多支持200个字符。
                      * 
                      */
                     std::string GetConfigTemplateDesc() const;
 
                     /**
-                     * 设置配置模板描述
-                     * @param _configTemplateDesc 配置模板描述
+                     * 设置配置模板描述，最多支持200个字符。
+                     * @param _configTemplateDesc 配置模板描述，最多支持200个字符。
                      * 
                      */
                     void SetConfigTemplateDesc(const std::string& _configTemplateDesc);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool ConfigTemplateDescHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return ProgramIdList 无
+                     * 获取需要绑定的数据集ID。该参数可以通过调用 [DescribePrograms](https://cloud.tencent.com/document/product/649/73477) 的返回值中的 ProgramId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/privilege?tab=program&roleId=role-yrle4doy)查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。
+                     * @return ProgramIdList 需要绑定的数据集ID。该参数可以通过调用 [DescribePrograms](https://cloud.tencent.com/document/product/649/73477) 的返回值中的 ProgramId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/privilege?tab=program&roleId=role-yrle4doy)查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。
                      * 
                      */
                     std::vector<std::string> GetProgramIdList() const;
 
                     /**
-                     * 设置无
-                     * @param _programIdList 无
+                     * 设置需要绑定的数据集ID。该参数可以通过调用 [DescribePrograms](https://cloud.tencent.com/document/product/649/73477) 的返回值中的 ProgramId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/privilege?tab=program&roleId=role-yrle4doy)查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。
+                     * @param _programIdList 需要绑定的数据集ID。该参数可以通过调用 [DescribePrograms](https://cloud.tencent.com/document/product/649/73477) 的返回值中的 ProgramId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/privilege?tab=program&roleId=role-yrle4doy)查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。
                      * 
                      */
                     void SetProgramIdList(const std::vector<std::string>& _programIdList);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 配置模板名称
+                     * 配置模板名称，最多支持60个字符，只能包含字母、数字及分隔符（“-”），且不能以分隔符开头或结尾。
                      */
                     std::string m_configTemplateName;
                     bool m_configTemplateNameHasBeenSet;
 
                     /**
-                     * 配置模板对应的微服务框架
+                     * 配置模板对应的微服务框架。- Ribbon：Ribbon类型配置模板- Hystrix：Hystrix类型配置模板- Zuul：Zuul类型配置模板- customize：自定义类型配置模板。
                      */
                     std::string m_configTemplateType;
                     bool m_configTemplateTypeHasBeenSet;
 
                     /**
-                     * 配置模板数据
+                     * 配置模板数据。
                      */
                     std::string m_configTemplateValue;
                     bool m_configTemplateValueHasBeenSet;
 
                     /**
-                     * 配置模板描述
+                     * 配置模板描述，最多支持200个字符。
                      */
                     std::string m_configTemplateDesc;
                     bool m_configTemplateDescHasBeenSet;
 
                     /**
-                     * 无
+                     * 需要绑定的数据集ID。该参数可以通过调用 [DescribePrograms](https://cloud.tencent.com/document/product/649/73477) 的返回值中的 ProgramId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/privilege?tab=program&roleId=role-yrle4doy)查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。
                      */
                     std::vector<std::string> m_programIdList;
                     bool m_programIdListHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,8 @@ DatasourceConnectionConfig::DatasourceConnectionConfig() :
     m_clickHouseHasBeenSet(false),
     m_elasticsearchHasBeenSet(false),
     m_tDSQLPostgreSqlHasBeenSet(false),
-    m_tCHouseDHasBeenSet(false)
+    m_tCHouseDHasBeenSet(false),
+    m_tccHiveHasBeenSet(false)
 {
 }
 
@@ -209,6 +210,23 @@ CoreInternalOutcome DatasourceConnectionConfig::Deserialize(const rapidjson::Val
         m_tCHouseDHasBeenSet = true;
     }
 
+    if (value.HasMember("TccHive") && !value["TccHive"].IsNull())
+    {
+        if (!value["TccHive"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatasourceConnectionConfig.TccHive` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_tccHive.Deserialize(value["TccHive"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_tccHiveHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -304,6 +322,15 @@ void DatasourceConnectionConfig::ToJsonObject(rapidjson::Value &value, rapidjson
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_tCHouseD.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_tccHiveHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TccHive";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tccHive.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -467,5 +494,21 @@ void DatasourceConnectionConfig::SetTCHouseD(const TCHouseD& _tCHouseD)
 bool DatasourceConnectionConfig::TCHouseDHasBeenSet() const
 {
     return m_tCHouseDHasBeenSet;
+}
+
+TccHive DatasourceConnectionConfig::GetTccHive() const
+{
+    return m_tccHive;
+}
+
+void DatasourceConnectionConfig::SetTccHive(const TccHive& _tccHive)
+{
+    m_tccHive = _tccHive;
+    m_tccHiveHasBeenSet = true;
+}
+
+bool DatasourceConnectionConfig::TccHiveHasBeenSet() const
+{
+    return m_tccHiveHasBeenSet;
 }
 

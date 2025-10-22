@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,9 @@ BackUpJobDisplay::BackUpJobDisplay() :
     m_backUpSizeHasBeenSet(false),
     m_backUpTimeHasBeenSet(false),
     m_expireTimeHasBeenSet(false),
-    m_jobStatusHasBeenSet(false)
+    m_jobStatusHasBeenSet(false),
+    m_processSizeHasBeenSet(false),
+    m_errorReasonHasBeenSet(false)
 {
 }
 
@@ -106,6 +108,26 @@ CoreInternalOutcome BackUpJobDisplay::Deserialize(const rapidjson::Value &value)
         m_jobStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("ProcessSize") && !value["ProcessSize"].IsNull())
+    {
+        if (!value["ProcessSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackUpJobDisplay.ProcessSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_processSize = value["ProcessSize"].GetInt64();
+        m_processSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ErrorReason") && !value["ErrorReason"].IsNull())
+    {
+        if (!value["ErrorReason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackUpJobDisplay.ErrorReason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errorReason = string(value["ErrorReason"].GetString());
+        m_errorReasonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +189,22 @@ void BackUpJobDisplay::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "JobStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_jobStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_processSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_processSize, allocator);
+    }
+
+    if (m_errorReasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorReason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorReason.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +320,37 @@ void BackUpJobDisplay::SetJobStatus(const string& _jobStatus)
 bool BackUpJobDisplay::JobStatusHasBeenSet() const
 {
     return m_jobStatusHasBeenSet;
+}
+
+int64_t BackUpJobDisplay::GetProcessSize() const
+{
+    return m_processSize;
+}
+
+void BackUpJobDisplay::SetProcessSize(const int64_t& _processSize)
+{
+    m_processSize = _processSize;
+    m_processSizeHasBeenSet = true;
+}
+
+bool BackUpJobDisplay::ProcessSizeHasBeenSet() const
+{
+    return m_processSizeHasBeenSet;
+}
+
+string BackUpJobDisplay::GetErrorReason() const
+{
+    return m_errorReason;
+}
+
+void BackUpJobDisplay::SetErrorReason(const string& _errorReason)
+{
+    m_errorReason = _errorReason;
+    m_errorReasonHasBeenSet = true;
+}
+
+bool BackUpJobDisplay::ErrorReasonHasBeenSet() const
+{
+    return m_errorReasonHasBeenSet;
 }
 

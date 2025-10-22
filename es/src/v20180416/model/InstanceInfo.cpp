@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,7 +111,12 @@ InstanceInfo::InstanceInfo() :
     m_disasterRecoverGroupAffinityHasBeenSet(false),
     m_subProductCodeHasBeenSet(false),
     m_cosBucketStorageSizeHasBeenSet(false),
-    m_readWriteModeHasBeenSet(false)
+    m_readWriteModeHasBeenSet(false),
+    m_enableScheduleRecoverGroupHasBeenSet(false),
+    m_enableScheduleOperationDurationHasBeenSet(false),
+    m_enableDestroyProtectionHasBeenSet(false),
+    m_showKibanaIpPortHasBeenSet(false),
+    m_isCdzLiteHasBeenSet(false)
 {
 }
 
@@ -1149,6 +1154,63 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_readWriteModeHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableScheduleRecoverGroup") && !value["EnableScheduleRecoverGroup"].IsNull())
+    {
+        if (!value["EnableScheduleRecoverGroup"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.EnableScheduleRecoverGroup` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableScheduleRecoverGroup = value["EnableScheduleRecoverGroup"].GetBool();
+        m_enableScheduleRecoverGroupHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableScheduleOperationDuration") && !value["EnableScheduleOperationDuration"].IsNull())
+    {
+        if (!value["EnableScheduleOperationDuration"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.EnableScheduleOperationDuration` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_enableScheduleOperationDuration.Deserialize(value["EnableScheduleOperationDuration"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_enableScheduleOperationDurationHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableDestroyProtection") && !value["EnableDestroyProtection"].IsNull())
+    {
+        if (!value["EnableDestroyProtection"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.EnableDestroyProtection` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableDestroyProtection = string(value["EnableDestroyProtection"].GetString());
+        m_enableDestroyProtectionHasBeenSet = true;
+    }
+
+    if (value.HasMember("ShowKibanaIpPort") && !value["ShowKibanaIpPort"].IsNull())
+    {
+        if (!value["ShowKibanaIpPort"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.ShowKibanaIpPort` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_showKibanaIpPort = string(value["ShowKibanaIpPort"].GetString());
+        m_showKibanaIpPortHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsCdzLite") && !value["IsCdzLite"].IsNull())
+    {
+        if (!value["IsCdzLite"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.IsCdzLite` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isCdzLite = value["IsCdzLite"].GetBool();
+        m_isCdzLiteHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1937,6 +1999,47 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ReadWriteMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_readWriteMode, allocator);
+    }
+
+    if (m_enableScheduleRecoverGroupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableScheduleRecoverGroup";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableScheduleRecoverGroup, allocator);
+    }
+
+    if (m_enableScheduleOperationDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableScheduleOperationDuration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_enableScheduleOperationDuration.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_enableDestroyProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableDestroyProtection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_enableDestroyProtection.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_showKibanaIpPortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShowKibanaIpPort";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_showKibanaIpPort.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isCdzLiteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCdzLite";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isCdzLite, allocator);
     }
 
 }
@@ -3396,5 +3499,85 @@ void InstanceInfo::SetReadWriteMode(const int64_t& _readWriteMode)
 bool InstanceInfo::ReadWriteModeHasBeenSet() const
 {
     return m_readWriteModeHasBeenSet;
+}
+
+bool InstanceInfo::GetEnableScheduleRecoverGroup() const
+{
+    return m_enableScheduleRecoverGroup;
+}
+
+void InstanceInfo::SetEnableScheduleRecoverGroup(const bool& _enableScheduleRecoverGroup)
+{
+    m_enableScheduleRecoverGroup = _enableScheduleRecoverGroup;
+    m_enableScheduleRecoverGroupHasBeenSet = true;
+}
+
+bool InstanceInfo::EnableScheduleRecoverGroupHasBeenSet() const
+{
+    return m_enableScheduleRecoverGroupHasBeenSet;
+}
+
+EnableScheduleOperationDuration InstanceInfo::GetEnableScheduleOperationDuration() const
+{
+    return m_enableScheduleOperationDuration;
+}
+
+void InstanceInfo::SetEnableScheduleOperationDuration(const EnableScheduleOperationDuration& _enableScheduleOperationDuration)
+{
+    m_enableScheduleOperationDuration = _enableScheduleOperationDuration;
+    m_enableScheduleOperationDurationHasBeenSet = true;
+}
+
+bool InstanceInfo::EnableScheduleOperationDurationHasBeenSet() const
+{
+    return m_enableScheduleOperationDurationHasBeenSet;
+}
+
+string InstanceInfo::GetEnableDestroyProtection() const
+{
+    return m_enableDestroyProtection;
+}
+
+void InstanceInfo::SetEnableDestroyProtection(const string& _enableDestroyProtection)
+{
+    m_enableDestroyProtection = _enableDestroyProtection;
+    m_enableDestroyProtectionHasBeenSet = true;
+}
+
+bool InstanceInfo::EnableDestroyProtectionHasBeenSet() const
+{
+    return m_enableDestroyProtectionHasBeenSet;
+}
+
+string InstanceInfo::GetShowKibanaIpPort() const
+{
+    return m_showKibanaIpPort;
+}
+
+void InstanceInfo::SetShowKibanaIpPort(const string& _showKibanaIpPort)
+{
+    m_showKibanaIpPort = _showKibanaIpPort;
+    m_showKibanaIpPortHasBeenSet = true;
+}
+
+bool InstanceInfo::ShowKibanaIpPortHasBeenSet() const
+{
+    return m_showKibanaIpPortHasBeenSet;
+}
+
+bool InstanceInfo::GetIsCdzLite() const
+{
+    return m_isCdzLite;
+}
+
+void InstanceInfo::SetIsCdzLite(const bool& _isCdzLite)
+{
+    m_isCdzLite = _isCdzLite;
+    m_isCdzLiteHasBeenSet = true;
+}
+
+bool InstanceInfo::IsCdzLiteHasBeenSet() const
+{
+    return m_isCdzLiteHasBeenSet;
 }
 

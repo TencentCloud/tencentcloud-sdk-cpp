@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,14 +30,14 @@ TextToVoiceRequest::TextToVoiceRequest() :
     m_projectIdHasBeenSet(false),
     m_modelTypeHasBeenSet(false),
     m_voiceTypeHasBeenSet(false),
+    m_fastVoiceTypeHasBeenSet(false),
     m_primaryLanguageHasBeenSet(false),
     m_sampleRateHasBeenSet(false),
     m_codecHasBeenSet(false),
     m_enableSubtitleHasBeenSet(false),
     m_segmentRateHasBeenSet(false),
     m_emotionCategoryHasBeenSet(false),
-    m_emotionIntensityHasBeenSet(false),
-    m_fastVoiceTypeHasBeenSet(false)
+    m_emotionIntensityHasBeenSet(false)
 {
 }
 
@@ -104,6 +104,14 @@ string TextToVoiceRequest::ToJsonString() const
         d.AddMember(iKey, m_voiceType, allocator);
     }
 
+    if (m_fastVoiceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FastVoiceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_fastVoiceType.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_primaryLanguageHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -158,14 +166,6 @@ string TextToVoiceRequest::ToJsonString() const
         string key = "EmotionIntensity";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_emotionIntensity, allocator);
-    }
-
-    if (m_fastVoiceTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FastVoiceType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_fastVoiceType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -288,6 +288,22 @@ bool TextToVoiceRequest::VoiceTypeHasBeenSet() const
     return m_voiceTypeHasBeenSet;
 }
 
+string TextToVoiceRequest::GetFastVoiceType() const
+{
+    return m_fastVoiceType;
+}
+
+void TextToVoiceRequest::SetFastVoiceType(const string& _fastVoiceType)
+{
+    m_fastVoiceType = _fastVoiceType;
+    m_fastVoiceTypeHasBeenSet = true;
+}
+
+bool TextToVoiceRequest::FastVoiceTypeHasBeenSet() const
+{
+    return m_fastVoiceTypeHasBeenSet;
+}
+
 int64_t TextToVoiceRequest::GetPrimaryLanguage() const
 {
     return m_primaryLanguage;
@@ -398,22 +414,6 @@ void TextToVoiceRequest::SetEmotionIntensity(const int64_t& _emotionIntensity)
 bool TextToVoiceRequest::EmotionIntensityHasBeenSet() const
 {
     return m_emotionIntensityHasBeenSet;
-}
-
-string TextToVoiceRequest::GetFastVoiceType() const
-{
-    return m_fastVoiceType;
-}
-
-void TextToVoiceRequest::SetFastVoiceType(const string& _fastVoiceType)
-{
-    m_fastVoiceType = _fastVoiceType;
-    m_fastVoiceTypeHasBeenSet = true;
-}
-
-bool TextToVoiceRequest::FastVoiceTypeHasBeenSet() const
-{
-    return m_fastVoiceTypeHasBeenSet;
 }
 
 

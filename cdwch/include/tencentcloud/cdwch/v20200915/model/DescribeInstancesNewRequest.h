@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -169,6 +169,27 @@ namespace TencentCloud
                      */
                     bool IsSimpleHasBeenSet() const;
 
+                    /**
+                     * 获取vip列表
+                     * @return Vips vip列表
+                     * 
+                     */
+                    std::vector<std::string> GetVips() const;
+
+                    /**
+                     * 设置vip列表
+                     * @param _vips vip列表
+                     * 
+                     */
+                    void SetVips(const std::vector<std::string>& _vips);
+
+                    /**
+                     * 判断参数 Vips 是否已赋值
+                     * @return Vips 是否已赋值
+                     * 
+                     */
+                    bool VipsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,6 +227,12 @@ namespace TencentCloud
                      */
                     bool m_isSimple;
                     bool m_isSimpleHasBeenSet;
+
+                    /**
+                     * vip列表
+                     */
+                    std::vector<std::string> m_vips;
+                    bool m_vipsHasBeenSet;
 
                 };
             }

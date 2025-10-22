@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,8 @@ AccountInfo::AccountInfo() :
     m_modifyTimeHasBeenSet(false),
     m_modifyPasswordTimeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_maxUserConnectionsHasBeenSet(false)
+    m_maxUserConnectionsHasBeenSet(false),
+    m_openCamHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome AccountInfo::Deserialize(const rapidjson::Value &value)
         m_maxUserConnectionsHasBeenSet = true;
     }
 
+    if (value.HasMember("OpenCam") && !value["OpenCam"].IsNull())
+    {
+        if (!value["OpenCam"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccountInfo.OpenCam` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_openCam = value["OpenCam"].GetBool();
+        m_openCamHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void AccountInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "MaxUserConnections";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxUserConnections, allocator);
+    }
+
+    if (m_openCamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OpenCam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_openCam, allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void AccountInfo::SetMaxUserConnections(const int64_t& _maxUserConnections)
 bool AccountInfo::MaxUserConnectionsHasBeenSet() const
 {
     return m_maxUserConnectionsHasBeenSet;
+}
+
+bool AccountInfo::GetOpenCam() const
+{
+    return m_openCam;
+}
+
+void AccountInfo::SetOpenCam(const bool& _openCam)
+{
+    m_openCam = _openCam;
+    m_openCamHasBeenSet = true;
+}
+
+bool AccountInfo::OpenCamHasBeenSet() const
+{
+    return m_openCamHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@
 #include <tencentcloud/emr/v20190103/model/CustomMetaInfo.h>
 #include <tencentcloud/emr/v20190103/model/ExternalService.h>
 #include <tencentcloud/emr/v20190103/model/MultiZoneSetting.h>
+#include <tencentcloud/emr/v20190103/model/NodeMark.h>
 
 
 namespace TencentCloud
@@ -901,6 +902,90 @@ Hadoop-Hbase
                      */
                     bool CosBucketHasBeenSet() const;
 
+                    /**
+                     * 获取节点标识信息，目前只提供给tf平台使用
+                     * @return NodeMarks 节点标识信息，目前只提供给tf平台使用
+                     * 
+                     */
+                    std::vector<NodeMark> GetNodeMarks() const;
+
+                    /**
+                     * 设置节点标识信息，目前只提供给tf平台使用
+                     * @param _nodeMarks 节点标识信息，目前只提供给tf平台使用
+                     * 
+                     */
+                    void SetNodeMarks(const std::vector<NodeMark>& _nodeMarks);
+
+                    /**
+                     * 判断参数 NodeMarks 是否已赋值
+                     * @return NodeMarks 是否已赋值
+                     * 
+                     */
+                    bool NodeMarksHasBeenSet() const;
+
+                    /**
+                     * 获取CLB id
+                     * @return LoadBalancerId CLB id
+                     * 
+                     */
+                    std::string GetLoadBalancerId() const;
+
+                    /**
+                     * 设置CLB id
+                     * @param _loadBalancerId CLB id
+                     * 
+                     */
+                    void SetLoadBalancerId(const std::string& _loadBalancerId);
+
+                    /**
+                     * 判断参数 LoadBalancerId 是否已赋值
+                     * @return LoadBalancerId 是否已赋值
+                     * 
+                     */
+                    bool LoadBalancerIdHasBeenSet() const;
+
+                    /**
+                     * 获取数据库类型：mysql8/tdsql8
+                     * @return DefaultMetaVersion 数据库类型：mysql8/tdsql8
+                     * 
+                     */
+                    std::string GetDefaultMetaVersion() const;
+
+                    /**
+                     * 设置数据库类型：mysql8/tdsql8
+                     * @param _defaultMetaVersion 数据库类型：mysql8/tdsql8
+                     * 
+                     */
+                    void SetDefaultMetaVersion(const std::string& _defaultMetaVersion);
+
+                    /**
+                     * 判断参数 DefaultMetaVersion 是否已赋值
+                     * @return DefaultMetaVersion 是否已赋值
+                     * 
+                     */
+                    bool DefaultMetaVersionHasBeenSet() const;
+
+                    /**
+                     * 获取是否开通审计：0:不开通,1:开通
+                     * @return NeedCdbAudit 是否开通审计：0:不开通,1:开通
+                     * 
+                     */
+                    int64_t GetNeedCdbAudit() const;
+
+                    /**
+                     * 设置是否开通审计：0:不开通,1:开通
+                     * @param _needCdbAudit 是否开通审计：0:不开通,1:开通
+                     * 
+                     */
+                    void SetNeedCdbAudit(const int64_t& _needCdbAudit);
+
+                    /**
+                     * 判断参数 NeedCdbAudit 是否已赋值
+                     * @return NeedCdbAudit 是否已赋值
+                     * 
+                     */
+                    bool NeedCdbAuditHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1139,6 +1224,30 @@ Hadoop-Hbase
                      */
                     std::string m_cosBucket;
                     bool m_cosBucketHasBeenSet;
+
+                    /**
+                     * 节点标识信息，目前只提供给tf平台使用
+                     */
+                    std::vector<NodeMark> m_nodeMarks;
+                    bool m_nodeMarksHasBeenSet;
+
+                    /**
+                     * CLB id
+                     */
+                    std::string m_loadBalancerId;
+                    bool m_loadBalancerIdHasBeenSet;
+
+                    /**
+                     * 数据库类型：mysql8/tdsql8
+                     */
+                    std::string m_defaultMetaVersion;
+                    bool m_defaultMetaVersionHasBeenSet;
+
+                    /**
+                     * 是否开通审计：0:不开通,1:开通
+                     */
+                    int64_t m_needCdbAudit;
+                    bool m_needCdbAuditHasBeenSet;
 
                 };
             }

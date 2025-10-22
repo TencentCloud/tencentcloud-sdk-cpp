@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool SchemaNameHasBeenSet() const;
 
                     /**
-                     * 获取匹配规则
-                     * @return Pattern 匹配规则
+                     * 获取匹配规则，只支持填*
+                     * @return Pattern 匹配规则，只支持填*
                      * 
                      */
                     std::string GetPattern() const;
 
                     /**
-                     * 设置匹配规则
-                     * @param _pattern 匹配规则
+                     * 设置匹配规则，只支持填*
+                     * @param _pattern 匹配规则，只支持填*
                      * 
                      */
                     void SetPattern(const std::string& _pattern);
@@ -104,6 +104,27 @@ namespace TencentCloud
                      * 
                      */
                     bool PatternHasBeenSet() const;
+
+                    /**
+                     * 获取数据源连接名
+                     * @return DatasourceConnectionName 数据源连接名
+                     * 
+                     */
+                    std::string GetDatasourceConnectionName() const;
+
+                    /**
+                     * 设置数据源连接名
+                     * @param _datasourceConnectionName 数据源连接名
+                     * 
+                     */
+                    void SetDatasourceConnectionName(const std::string& _datasourceConnectionName);
+
+                    /**
+                     * 判断参数 DatasourceConnectionName 是否已赋值
+                     * @return DatasourceConnectionName 是否已赋值
+                     * 
+                     */
+                    bool DatasourceConnectionNameHasBeenSet() const;
 
                 private:
 
@@ -120,10 +141,16 @@ namespace TencentCloud
                     bool m_schemaNameHasBeenSet;
 
                     /**
-                     * 匹配规则
+                     * 匹配规则，只支持填*
                      */
                     std::string m_pattern;
                     bool m_patternHasBeenSet;
+
+                    /**
+                     * 数据源连接名
+                     */
+                    std::string m_datasourceConnectionName;
+                    bool m_datasourceConnectionNameHasBeenSet;
 
                 };
             }

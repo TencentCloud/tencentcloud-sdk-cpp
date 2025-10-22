@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,14 +71,18 @@ namespace TencentCloud
 
                     /**
                      * 获取日志主题id
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * @return TopicId 日志主题id
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置日志主题id
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * @param _topicId 日志主题id
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -191,14 +195,18 @@ namespace TencentCloud
 
                     /**
                      * 获取日志集id
+- 通过[获取日志集列表](https://cloud.tencent.com/document/api/614/58624)获取日志集Id。
                      * @return LogsetId 日志集id
+- 通过[获取日志集列表](https://cloud.tencent.com/document/api/614/58624)获取日志集Id。
                      * 
                      */
                     std::string GetLogsetId() const;
 
                     /**
                      * 设置日志集id
+- 通过[获取日志集列表](https://cloud.tencent.com/document/api/614/58624)获取日志集Id。
                      * @param _logsetId 日志集id
+- 通过[获取日志集列表](https://cloud.tencent.com/document/api/614/58624)获取日志集Id。
                      * 
                      */
                     void SetLogsetId(const std::string& _logsetId);
@@ -211,15 +219,19 @@ namespace TencentCloud
                     bool LogsetIdHasBeenSet() const;
 
                     /**
-                     * 获取日志集name
-                     * @return LogsetName 日志集name
+                     * 获取日志集名称
+- 通过[获取日志集列表](https://cloud.tencent.com/document/api/614/58624)获取日志集名称。
+                     * @return LogsetName 日志集名称
+- 通过[获取日志集列表](https://cloud.tencent.com/document/api/614/58624)获取日志集名称。
                      * 
                      */
                     std::string GetLogsetName() const;
 
                     /**
-                     * 设置日志集name
-                     * @param _logsetName 日志集name
+                     * 设置日志集名称
+- 通过[获取日志集列表](https://cloud.tencent.com/document/api/614/58624)获取日志集名称。
+                     * @param _logsetName 日志集名称
+- 通过[获取日志集列表](https://cloud.tencent.com/document/api/614/58624)获取日志集名称。
                      * 
                      */
                     void SetLogsetName(const std::string& _logsetName);
@@ -233,14 +245,18 @@ namespace TencentCloud
 
                     /**
                      * 获取日志主题名称
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题名称。
                      * @return TopicName 日志主题名称
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题名称。
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置日志主题名称
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题名称。
                      * @param _topicName 日志主题名称
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题名称。
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -253,15 +269,23 @@ namespace TencentCloud
                     bool TopicNameHasBeenSet() const;
 
                     /**
-                     * 获取节点文件路径类型配置。
-                     * @return HostFile 节点文件路径类型配置。
+                     * 获取自建k8s-节点文件配置信息,包括文件路径、名称及元数据相关信息。
+
+- 详细参考 [HostFileInfo](https://cloud.tencent.com/document/api/614/56471#HostFileInfo) 信息。
+                     * @return HostFile 自建k8s-节点文件配置信息,包括文件路径、名称及元数据相关信息。
+
+- 详细参考 [HostFileInfo](https://cloud.tencent.com/document/api/614/56471#HostFileInfo) 信息。
                      * 
                      */
                     HostFileInfo GetHostFile() const;
 
                     /**
-                     * 设置节点文件路径类型配置。
-                     * @param _hostFile 节点文件路径类型配置。
+                     * 设置自建k8s-节点文件配置信息,包括文件路径、名称及元数据相关信息。
+
+- 详细参考 [HostFileInfo](https://cloud.tencent.com/document/api/614/56471#HostFileInfo) 信息。
+                     * @param _hostFile 自建k8s-节点文件配置信息,包括文件路径、名称及元数据相关信息。
+
+- 详细参考 [HostFileInfo](https://cloud.tencent.com/document/api/614/56471#HostFileInfo) 信息。
                      * 
                      */
                     void SetHostFile(const HostFileInfo& _hostFile);
@@ -295,15 +319,23 @@ namespace TencentCloud
                     bool ContainerFileHasBeenSet() const;
 
                     /**
-                     * 获取容器标准输出类型配置。
-                     * @return ContainerStdout 容器标准输出类型配置。
+                     * 获取自建k8s-容器标准输出信息，包括容器、命名空间等。
+
+- 详细参考 [ContainerStdoutInfo](https://cloud.tencent.com/document/api/614/56471#ContainerStdoutInfo) 信息。
+                     * @return ContainerStdout 自建k8s-容器标准输出信息，包括容器、命名空间等。
+
+- 详细参考 [ContainerStdoutInfo](https://cloud.tencent.com/document/api/614/56471#ContainerStdoutInfo) 信息。
                      * 
                      */
                     ContainerStdoutInfo GetContainerStdout() const;
 
                     /**
-                     * 设置容器标准输出类型配置。
-                     * @param _containerStdout 容器标准输出类型配置。
+                     * 设置自建k8s-容器标准输出信息，包括容器、命名空间等。
+
+- 详细参考 [ContainerStdoutInfo](https://cloud.tencent.com/document/api/614/56471#ContainerStdoutInfo) 信息。
+                     * @param _containerStdout 自建k8s-容器标准输出信息，包括容器、命名空间等。
+
+- 详细参考 [ContainerStdoutInfo](https://cloud.tencent.com/document/api/614/56471#ContainerStdoutInfo) 信息。
                      * 
                      */
                     void SetContainerStdout(const ContainerStdoutInfo& _containerStdout);
@@ -322,7 +354,7 @@ namespace TencentCloud
                      * @return LogFormat 日志格式化方式，用于容器采集场景。
 - stdout-docker-json：用于docker容器采集场景
 - stdout-containerd：用于containerd容器采集场景
-                     * 
+                     * @deprecated
                      */
                     std::string GetLogFormat() const;
 
@@ -333,14 +365,14 @@ namespace TencentCloud
                      * @param _logFormat 日志格式化方式，用于容器采集场景。
 - stdout-docker-json：用于docker容器采集场景
 - stdout-containerd：用于containerd容器采集场景
-                     * 
+                     * @deprecated
                      */
                     void SetLogFormat(const std::string& _logFormat);
 
                     /**
                      * 判断参数 LogFormat 是否已赋值
                      * @return LogFormat 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool LogFormatHasBeenSet() const;
 
@@ -416,15 +448,23 @@ namespace TencentCloud
                     bool UserDefineRuleHasBeenSet() const;
 
                     /**
-                     * 获取绑定的机器组id
-                     * @return GroupId 绑定的机器组id
+                     * 获取绑定的机器组ID
+- 通过[获取机器组列表](https://cloud.tencent.com/document/api/614/56438)获取机器组Id。
+- GroupId 与 GroupIds 选择其一即可，不可同时为空。
+                     * @return GroupId 绑定的机器组ID
+- 通过[获取机器组列表](https://cloud.tencent.com/document/api/614/56438)获取机器组Id。
+- GroupId 与 GroupIds 选择其一即可，不可同时为空。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置绑定的机器组id
-                     * @param _groupId 绑定的机器组id
+                     * 设置绑定的机器组ID
+- 通过[获取机器组列表](https://cloud.tencent.com/document/api/614/56438)获取机器组Id。
+- GroupId 与 GroupIds 选择其一即可，不可同时为空。
+                     * @param _groupId 绑定的机器组ID
+- 通过[获取机器组列表](https://cloud.tencent.com/document/api/614/56438)获取机器组Id。
+- GroupId 与 GroupIds 选择其一即可，不可同时为空。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -437,15 +477,23 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取绑定的机器组id列表
-                     * @return GroupIds 绑定的机器组id列表
+                     * 获取绑定的机器组ID列表
+- 通过[获取机器组列表](https://cloud.tencent.com/document/api/614/56438)获取机器组Id信息。
+- GroupId 与 GroupIds 选择其一即可，不可同时为空。
+                     * @return GroupIds 绑定的机器组ID列表
+- 通过[获取机器组列表](https://cloud.tencent.com/document/api/614/56438)获取机器组Id信息。
+- GroupId 与 GroupIds 选择其一即可，不可同时为空。
                      * 
                      */
                     std::vector<std::string> GetGroupIds() const;
 
                     /**
-                     * 设置绑定的机器组id列表
-                     * @param _groupIds 绑定的机器组id列表
+                     * 设置绑定的机器组ID列表
+- 通过[获取机器组列表](https://cloud.tencent.com/document/api/614/56438)获取机器组Id信息。
+- GroupId 与 GroupIds 选择其一即可，不可同时为空。
+                     * @param _groupIds 绑定的机器组ID列表
+- 通过[获取机器组列表](https://cloud.tencent.com/document/api/614/56438)获取机器组Id信息。
+- GroupId 与 GroupIds 选择其一即可，不可同时为空。
                      * 
                      */
                     void SetGroupIds(const std::vector<std::string>& _groupIds);
@@ -458,15 +506,15 @@ namespace TencentCloud
                     bool GroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取采集相关配置信息。详情见CollectInfo复杂类型配置。
-                     * @return CollectInfos 采集相关配置信息。详情见CollectInfo复杂类型配置。
+                     * 获取采集相关配置信息。详细参考 [CollectInfo](https://cloud.tencent.com/document/api/614/56471#CollectInfo) 信息。
+                     * @return CollectInfos 采集相关配置信息。详细参考 [CollectInfo](https://cloud.tencent.com/document/api/614/56471#CollectInfo) 信息。
                      * 
                      */
                     std::vector<CollectInfo> GetCollectInfos() const;
 
                     /**
-                     * 设置采集相关配置信息。详情见CollectInfo复杂类型配置。
-                     * @param _collectInfos 采集相关配置信息。详情见CollectInfo复杂类型配置。
+                     * 设置采集相关配置信息。详细参考 [CollectInfo](https://cloud.tencent.com/document/api/614/56471#CollectInfo) 信息。
+                     * @param _collectInfos 采集相关配置信息。详细参考 [CollectInfo](https://cloud.tencent.com/document/api/614/56471#CollectInfo) 信息。
                      * 
                      */
                     void SetCollectInfos(const std::vector<CollectInfo>& _collectInfos);
@@ -529,6 +577,7 @@ namespace TencentCloud
 
                     /**
                      * 日志主题id
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
@@ -562,24 +611,29 @@ namespace TencentCloud
 
                     /**
                      * 日志集id
+- 通过[获取日志集列表](https://cloud.tencent.com/document/api/614/58624)获取日志集Id。
                      */
                     std::string m_logsetId;
                     bool m_logsetIdHasBeenSet;
 
                     /**
-                     * 日志集name
+                     * 日志集名称
+- 通过[获取日志集列表](https://cloud.tencent.com/document/api/614/58624)获取日志集名称。
                      */
                     std::string m_logsetName;
                     bool m_logsetNameHasBeenSet;
 
                     /**
                      * 日志主题名称
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题名称。
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
 
                     /**
-                     * 节点文件路径类型配置。
+                     * 自建k8s-节点文件配置信息,包括文件路径、名称及元数据相关信息。
+
+- 详细参考 [HostFileInfo](https://cloud.tencent.com/document/api/614/56471#HostFileInfo) 信息。
                      */
                     HostFileInfo m_hostFile;
                     bool m_hostFileHasBeenSet;
@@ -591,7 +645,9 @@ namespace TencentCloud
                     bool m_containerFileHasBeenSet;
 
                     /**
-                     * 容器标准输出类型配置。
+                     * 自建k8s-容器标准输出信息，包括容器、命名空间等。
+
+- 详细参考 [ContainerStdoutInfo](https://cloud.tencent.com/document/api/614/56471#ContainerStdoutInfo) 信息。
                      */
                     ContainerStdoutInfo m_containerStdout;
                     bool m_containerStdoutHasBeenSet;
@@ -625,19 +681,23 @@ namespace TencentCloud
                     bool m_userDefineRuleHasBeenSet;
 
                     /**
-                     * 绑定的机器组id
+                     * 绑定的机器组ID
+- 通过[获取机器组列表](https://cloud.tencent.com/document/api/614/56438)获取机器组Id。
+- GroupId 与 GroupIds 选择其一即可，不可同时为空。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 绑定的机器组id列表
+                     * 绑定的机器组ID列表
+- 通过[获取机器组列表](https://cloud.tencent.com/document/api/614/56438)获取机器组Id信息。
+- GroupId 与 GroupIds 选择其一即可，不可同时为空。
                      */
                     std::vector<std::string> m_groupIds;
                     bool m_groupIdsHasBeenSet;
 
                     /**
-                     * 采集相关配置信息。详情见CollectInfo复杂类型配置。
+                     * 采集相关配置信息。详细参考 [CollectInfo](https://cloud.tencent.com/document/api/614/56471#CollectInfo) 信息。
                      */
                     std::vector<CollectInfo> m_collectInfos;
                     bool m_collectInfosHasBeenSet;

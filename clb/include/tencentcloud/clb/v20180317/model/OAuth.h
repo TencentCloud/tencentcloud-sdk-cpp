@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,11 @@ namespace TencentCloud
                      * 获取开启或关闭鉴权。
 True: 开启;
 False: 关闭
-注意：此字段可能返回 null，表示取不到有效值。
+默认为关闭。
                      * @return OAuthEnable 开启或关闭鉴权。
 True: 开启;
 False: 关闭
-注意：此字段可能返回 null，表示取不到有效值。
+默认为关闭。
                      * 
                      */
                     bool GetOAuthEnable() const;
@@ -63,11 +63,11 @@ False: 关闭
                      * 设置开启或关闭鉴权。
 True: 开启;
 False: 关闭
-注意：此字段可能返回 null，表示取不到有效值。
+默认为关闭。
                      * @param _oAuthEnable 开启或关闭鉴权。
 True: 开启;
 False: 关闭
-注意：此字段可能返回 null，表示取不到有效值。
+默认为关闭。
                      * 
                      */
                     void SetOAuthEnable(const bool& _oAuthEnable);
@@ -80,23 +80,27 @@ False: 关闭
                     bool OAuthEnableHasBeenSet() const;
 
                     /**
-                     * 获取IAP全部故障后，拒绝请求还是放行。BYPASS:通过,
+                     * 获取IAP全部故障后，拒绝请求还是放行。
+BYPASS: 通过
 REJECT: 拒绝
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OAuthFailureStatus IAP全部故障后，拒绝请求还是放行。BYPASS:通过,
+默认为 BYPASS
+                     * @return OAuthFailureStatus IAP全部故障后，拒绝请求还是放行。
+BYPASS: 通过
 REJECT: 拒绝
-注意：此字段可能返回 null，表示取不到有效值。
+默认为 BYPASS
                      * 
                      */
                     std::string GetOAuthFailureStatus() const;
 
                     /**
-                     * 设置IAP全部故障后，拒绝请求还是放行。BYPASS:通过,
+                     * 设置IAP全部故障后，拒绝请求还是放行。
+BYPASS: 通过
 REJECT: 拒绝
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _oAuthFailureStatus IAP全部故障后，拒绝请求还是放行。BYPASS:通过,
+默认为 BYPASS
+                     * @param _oAuthFailureStatus IAP全部故障后，拒绝请求还是放行。
+BYPASS: 通过
 REJECT: 拒绝
-注意：此字段可能返回 null，表示取不到有效值。
+默认为 BYPASS
                      * 
                      */
                     void SetOAuthFailureStatus(const std::string& _oAuthFailureStatus);
@@ -114,15 +118,16 @@ REJECT: 拒绝
                      * 开启或关闭鉴权。
 True: 开启;
 False: 关闭
-注意：此字段可能返回 null，表示取不到有效值。
+默认为关闭。
                      */
                     bool m_oAuthEnable;
                     bool m_oAuthEnableHasBeenSet;
 
                     /**
-                     * IAP全部故障后，拒绝请求还是放行。BYPASS:通过,
+                     * IAP全部故障后，拒绝请求还是放行。
+BYPASS: 通过
 REJECT: 拒绝
-注意：此字段可能返回 null，表示取不到有效值。
+默认为 BYPASS
                      */
                     std::string m_oAuthFailureStatus;
                     bool m_oAuthFailureStatusHasBeenSet;

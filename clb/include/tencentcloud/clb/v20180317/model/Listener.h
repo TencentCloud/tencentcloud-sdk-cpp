@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,15 +72,15 @@ namespace TencentCloud
                     bool ListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取监听器协议
-                     * @return Protocol 监听器协议
+                     * 获取监听器协议，可选值：TCP、UDP、HTTP、HTTPS、TCP_SSL、QUIC
+                     * @return Protocol 监听器协议，可选值：TCP、UDP、HTTP、HTTPS、TCP_SSL、QUIC
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置监听器协议
-                     * @param _protocol 监听器协议
+                     * 设置监听器协议，可选值：TCP、UDP、HTTP、HTTPS、TCP_SSL、QUIC
+                     * @param _protocol 监听器协议，可选值：TCP、UDP、HTTP、HTTPS、TCP_SSL、QUIC
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -93,15 +93,15 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取监听器端口
-                     * @return Port 监听器端口
+                     * 获取监听器端口，端口范围：1-65535
+                     * @return Port 监听器端口，端口范围：1-65535
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
-                     * 设置监听器端口
-                     * @param _port 监听器端口
+                     * 设置监听器端口，端口范围：1-65535
+                     * @param _port 监听器端口，端口范围：1-65535
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -189,18 +189,18 @@ namespace TencentCloud
                     bool SchedulerHasBeenSet() const;
 
                     /**
-                     * 获取会话保持时间
+                     * 获取会话保持时间，单位：秒。可选值：30~3600，默认 0，默认不开启。此参数仅适用于TCP/UDP监听器。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SessionExpireTime 会话保持时间
+                     * @return SessionExpireTime 会话保持时间，单位：秒。可选值：30~3600，默认 0，默认不开启。此参数仅适用于TCP/UDP监听器。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSessionExpireTime() const;
 
                     /**
-                     * 设置会话保持时间
+                     * 设置会话保持时间，单位：秒。可选值：30~3600，默认 0，默认不开启。此参数仅适用于TCP/UDP监听器。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sessionExpireTime 会话保持时间
+                     * @param _sessionExpireTime 会话保持时间，单位：秒。可选值：30~3600，默认 0，默认不开启。此参数仅适用于TCP/UDP监听器。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -215,18 +215,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启SNI特性，1：表示开启，0：表示不开启（本参数仅对于HTTPS监听器有意义）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SniSwitch 是否开启SNI特性，1：表示开启，0：表示不开启（本参数仅对于HTTPS监听器有意义）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSniSwitch() const;
 
                     /**
                      * 设置是否开启SNI特性，1：表示开启，0：表示不开启（本参数仅对于HTTPS监听器有意义）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sniSwitch 是否开启SNI特性，1：表示开启，0：表示不开启（本参数仅对于HTTPS监听器有意义）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSniSwitch(const int64_t& _sniSwitch);
@@ -265,18 +261,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监听器的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ListenerName 监听器的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetListenerName() const;
 
                     /**
                      * 设置监听器的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _listenerName 监听器的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetListenerName(const std::string& _listenerName);
@@ -290,18 +282,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监听器的创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 监听器的创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置监听器的创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 监听器的创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -314,19 +302,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取端口段结束端口
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EndPort 端口段结束端口
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取端口段结束端口，端口范围：2-65535
+                     * @return EndPort 端口段结束端口，端口范围：2-65535
                      * 
                      */
                     int64_t GetEndPort() const;
 
                     /**
-                     * 设置端口段结束端口
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _endPort 端口段结束端口
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置端口段结束端口，端口范围：2-65535
+                     * @param _endPort 端口段结束端口，端口范围：2-65535
                      * 
                      */
                     void SetEndPort(const int64_t& _endPort);
@@ -339,18 +323,18 @@ namespace TencentCloud
                     bool EndPortHasBeenSet() const;
 
                     /**
-                     * 获取后端服务器类型
+                     * 获取后端服务器类型，可选值：NODE、POLARIS、TARGETGROUP、TARGETGROUP-V2
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TargetType 后端服务器类型
+                     * @return TargetType 后端服务器类型，可选值：NODE、POLARIS、TARGETGROUP、TARGETGROUP-V2
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTargetType() const;
 
                     /**
-                     * 设置后端服务器类型
+                     * 设置后端服务器类型，可选值：NODE、POLARIS、TARGETGROUP、TARGETGROUP-V2
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _targetType 后端服务器类型
+                     * @param _targetType 后端服务器类型，可选值：NODE、POLARIS、TARGETGROUP、TARGETGROUP-V2
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -390,18 +374,14 @@ namespace TencentCloud
 
                     /**
                      * 获取会话保持类型。NORMAL表示默认会话保持类型。QUIC_CID 表示根据Quic Connection ID做会话保持。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SessionType 会话保持类型。NORMAL表示默认会话保持类型。QUIC_CID 表示根据Quic Connection ID做会话保持。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSessionType() const;
 
                     /**
                      * 设置会话保持类型。NORMAL表示默认会话保持类型。QUIC_CID 表示根据Quic Connection ID做会话保持。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sessionType 会话保持类型。NORMAL表示默认会话保持类型。QUIC_CID 表示根据Quic Connection ID做会话保持。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSessionType(const std::string& _sessionType);
@@ -440,18 +420,14 @@ namespace TencentCloud
 
                     /**
                      * 获取仅支持Nat64 CLB TCP监听器
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Toa 仅支持Nat64 CLB TCP监听器
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetToa() const;
 
                     /**
                      * 设置仅支持Nat64 CLB TCP监听器
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _toa 仅支持Nat64 CLB TCP监听器
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetToa(const bool& _toa);
@@ -465,18 +441,14 @@ namespace TencentCloud
 
                     /**
                      * 获取解绑后端目标时，是否发RST给客户端，（此参数仅对于TCP监听器有意义）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeregisterTargetRst 解绑后端目标时，是否发RST给客户端，（此参数仅对于TCP监听器有意义）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetDeregisterTargetRst() const;
 
                     /**
                      * 设置解绑后端目标时，是否发RST给客户端，（此参数仅对于TCP监听器有意义）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deregisterTargetRst 解绑后端目标时，是否发RST给客户端，（此参数仅对于TCP监听器有意义）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeregisterTargetRst(const bool& _deregisterTargetRst);
@@ -490,18 +462,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监听器的属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttrFlags 监听器的属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAttrFlags() const;
 
                     /**
                      * 设置监听器的属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _attrFlags 监听器的属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAttrFlags(const std::vector<std::string>& _attrFlags);
@@ -540,18 +508,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监听器最大连接数，-1表示监听器维度不限速。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxConn 监听器最大连接数，-1表示监听器维度不限速。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxConn() const;
 
                     /**
                      * 设置监听器最大连接数，-1表示监听器维度不限速。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxConn 监听器最大连接数，-1表示监听器维度不限速。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxConn(const int64_t& _maxConn);
@@ -565,18 +529,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监听器最大新增连接数，-1表示监听器维度不限速。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxCps 监听器最大新增连接数，-1表示监听器维度不限速。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxCps() const;
 
                     /**
                      * 设置监听器最大新增连接数，-1表示监听器维度不限速。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxCps 监听器最大新增连接数，-1表示监听器维度不限速。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxCps(const int64_t& _maxCps);
@@ -615,18 +575,14 @@ namespace TencentCloud
 
                     /**
                      * 获取调度时间。触发强制重新调度后，长连接将会在设置的调度时间内断开并完成重新分配
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RescheduleInterval 调度时间。触发强制重新调度后，长连接将会在设置的调度时间内断开并完成重新分配
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRescheduleInterval() const;
 
                     /**
                      * 设置调度时间。触发强制重新调度后，长连接将会在设置的调度时间内断开并完成重新分配
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rescheduleInterval 调度时间。触发强制重新调度后，长连接将会在设置的调度时间内断开并完成重新分配
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRescheduleInterval(const uint64_t& _rescheduleInterval);
@@ -638,6 +594,27 @@ namespace TencentCloud
                      */
                     bool RescheduleIntervalHasBeenSet() const;
 
+                    /**
+                     * 获取数据压缩模式
+                     * @return DataCompressMode 数据压缩模式
+                     * 
+                     */
+                    std::string GetDataCompressMode() const;
+
+                    /**
+                     * 设置数据压缩模式
+                     * @param _dataCompressMode 数据压缩模式
+                     * 
+                     */
+                    void SetDataCompressMode(const std::string& _dataCompressMode);
+
+                    /**
+                     * 判断参数 DataCompressMode 是否已赋值
+                     * @return DataCompressMode 是否已赋值
+                     * 
+                     */
+                    bool DataCompressModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -647,13 +624,13 @@ namespace TencentCloud
                     bool m_listenerIdHasBeenSet;
 
                     /**
-                     * 监听器协议
+                     * 监听器协议，可选值：TCP、UDP、HTTP、HTTPS、TCP_SSL、QUIC
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 监听器端口
+                     * 监听器端口，端口范围：1-65535
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
@@ -680,7 +657,7 @@ namespace TencentCloud
                     bool m_schedulerHasBeenSet;
 
                     /**
-                     * 会话保持时间
+                     * 会话保持时间，单位：秒。可选值：30~3600，默认 0，默认不开启。此参数仅适用于TCP/UDP监听器。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sessionExpireTime;
@@ -688,7 +665,6 @@ namespace TencentCloud
 
                     /**
                      * 是否开启SNI特性，1：表示开启，0：表示不开启（本参数仅对于HTTPS监听器有意义）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sniSwitch;
                     bool m_sniSwitchHasBeenSet;
@@ -702,27 +678,24 @@ namespace TencentCloud
 
                     /**
                      * 监听器的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_listenerName;
                     bool m_listenerNameHasBeenSet;
 
                     /**
                      * 监听器的创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 端口段结束端口
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 端口段结束端口，端口范围：2-65535
                      */
                     int64_t m_endPort;
                     bool m_endPortHasBeenSet;
 
                     /**
-                     * 后端服务器类型
+                     * 后端服务器类型，可选值：NODE、POLARIS、TARGETGROUP、TARGETGROUP-V2
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_targetType;
@@ -737,7 +710,6 @@ namespace TencentCloud
 
                     /**
                      * 会话保持类型。NORMAL表示默认会话保持类型。QUIC_CID 表示根据Quic Connection ID做会话保持。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sessionType;
                     bool m_sessionTypeHasBeenSet;
@@ -751,21 +723,18 @@ namespace TencentCloud
 
                     /**
                      * 仅支持Nat64 CLB TCP监听器
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_toa;
                     bool m_toaHasBeenSet;
 
                     /**
                      * 解绑后端目标时，是否发RST给客户端，（此参数仅对于TCP监听器有意义）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_deregisterTargetRst;
                     bool m_deregisterTargetRstHasBeenSet;
 
                     /**
                      * 监听器的属性
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_attrFlags;
                     bool m_attrFlagsHasBeenSet;
@@ -779,14 +748,12 @@ namespace TencentCloud
 
                     /**
                      * 监听器最大连接数，-1表示监听器维度不限速。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxConn;
                     bool m_maxConnHasBeenSet;
 
                     /**
                      * 监听器最大新增连接数，-1表示监听器维度不限速。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxCps;
                     bool m_maxCpsHasBeenSet;
@@ -800,10 +767,15 @@ namespace TencentCloud
 
                     /**
                      * 调度时间。触发强制重新调度后，长连接将会在设置的调度时间内断开并完成重新分配
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_rescheduleInterval;
                     bool m_rescheduleIntervalHasBeenSet;
+
+                    /**
+                     * 数据压缩模式
+                     */
+                    std::string m_dataCompressMode;
+                    bool m_dataCompressModeHasBeenSet;
 
                 };
             }

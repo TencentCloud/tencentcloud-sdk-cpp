@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取不显示的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DisabledReason 不显示的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDisabledReason() const;
 
                     /**
                      * 设置不显示的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _disabledReason 不显示的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDisabledReason(const std::string& _disabledReason);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该按钮是否可点击
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Enabled 该按钮是否可点击
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnabled() const;
 
                     /**
                      * 设置该按钮是否可点击
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enabled 该按钮是否可点击
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnabled(const bool& _enabled);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否显示该按钮
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Supported 是否显示该按钮
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSupported() const;
 
                     /**
                      * 设置是否显示该按钮
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _supported 是否显示该按钮
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSupported(const bool& _supported);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 不显示的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_disabledReason;
                     bool m_disabledReasonHasBeenSet;
 
                     /**
                      * 该按钮是否可点击
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enabled;
                     bool m_enabledHasBeenSet;
 
                     /**
                      * 是否显示该按钮
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_supported;
                     bool m_supportedHasBeenSet;

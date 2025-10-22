@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ RunInstancesRequest::RunInstancesRequest() :
     m_virtualPrivateCloudHasBeenSet(false),
     m_internetAccessibleHasBeenSet(false),
     m_instanceCountHasBeenSet(false),
+    m_minCountHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
     m_loginSettingsHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
@@ -44,6 +45,7 @@ RunInstancesRequest::RunInstancesRequest() :
     m_tagSpecificationHasBeenSet(false),
     m_instanceMarketOptionsHasBeenSet(false),
     m_userDataHasBeenSet(false),
+    m_metadataHasBeenSet(false),
     m_dryRunHasBeenSet(false),
     m_cpuTopologyHasBeenSet(false),
     m_camRoleNameHasBeenSet(false),
@@ -51,7 +53,8 @@ RunInstancesRequest::RunInstancesRequest() :
     m_launchTemplateHasBeenSet(false),
     m_dedicatedClusterIdHasBeenSet(false),
     m_chcIdsHasBeenSet(false),
-    m_disableApiTerminationHasBeenSet(false)
+    m_disableApiTerminationHasBeenSet(false),
+    m_enableJumboFrameHasBeenSet(false)
 {
 }
 
@@ -152,6 +155,14 @@ string RunInstancesRequest::ToJsonString() const
         string key = "InstanceCount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_instanceCount, allocator);
+    }
+
+    if (m_minCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MinCount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_minCount, allocator);
     }
 
     if (m_instanceNameHasBeenSet)
@@ -263,6 +274,15 @@ string RunInstancesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_userData.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_metadataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Metadata";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_metadata.ToJsonObject(d[key.c_str()], allocator);
+    }
+
     if (m_dryRunHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -332,6 +352,14 @@ string RunInstancesRequest::ToJsonString() const
         string key = "DisableApiTermination";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_disableApiTermination, allocator);
+    }
+
+    if (m_enableJumboFrameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableJumboFrame";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableJumboFrame, allocator);
     }
 
 
@@ -500,6 +528,22 @@ void RunInstancesRequest::SetInstanceCount(const int64_t& _instanceCount)
 bool RunInstancesRequest::InstanceCountHasBeenSet() const
 {
     return m_instanceCountHasBeenSet;
+}
+
+int64_t RunInstancesRequest::GetMinCount() const
+{
+    return m_minCount;
+}
+
+void RunInstancesRequest::SetMinCount(const int64_t& _minCount)
+{
+    m_minCount = _minCount;
+    m_minCountHasBeenSet = true;
+}
+
+bool RunInstancesRequest::MinCountHasBeenSet() const
+{
+    return m_minCountHasBeenSet;
 }
 
 string RunInstancesRequest::GetInstanceName() const
@@ -678,6 +722,22 @@ bool RunInstancesRequest::UserDataHasBeenSet() const
     return m_userDataHasBeenSet;
 }
 
+Metadata RunInstancesRequest::GetMetadata() const
+{
+    return m_metadata;
+}
+
+void RunInstancesRequest::SetMetadata(const Metadata& _metadata)
+{
+    m_metadata = _metadata;
+    m_metadataHasBeenSet = true;
+}
+
+bool RunInstancesRequest::MetadataHasBeenSet() const
+{
+    return m_metadataHasBeenSet;
+}
+
 bool RunInstancesRequest::GetDryRun() const
 {
     return m_dryRun;
@@ -804,6 +864,22 @@ void RunInstancesRequest::SetDisableApiTermination(const bool& _disableApiTermin
 bool RunInstancesRequest::DisableApiTerminationHasBeenSet() const
 {
     return m_disableApiTerminationHasBeenSet;
+}
+
+bool RunInstancesRequest::GetEnableJumboFrame() const
+{
+    return m_enableJumboFrame;
+}
+
+void RunInstancesRequest::SetEnableJumboFrame(const bool& _enableJumboFrame)
+{
+    m_enableJumboFrame = _enableJumboFrame;
+    m_enableJumboFrameHasBeenSet = true;
+}
+
+bool RunInstancesRequest::EnableJumboFrameHasBeenSet() const
+{
+    return m_enableJumboFrameHasBeenSet;
 }
 
 

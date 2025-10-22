@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,31 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取当前账号具有的权限信息。<ul><li>0：无权限。</li><li>1：只读。</li><li>2：只写。</li><li>3：读写。</li></ul>
-                     * @return Mask 当前账号具有的权限信息。<ul><li>0：无权限。</li><li>1：只读。</li><li>2：只写。</li><li>3：读写。</li></ul>
+                     * 获取当前账号具有的权限信息。
+- 0：无权限。
+- 1：只读。
+- 3：读写。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Mask 当前账号具有的权限信息。
+- 0：无权限。
+- 1：只读。
+- 3：读写。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMask() const;
 
                     /**
-                     * 设置当前账号具有的权限信息。<ul><li>0：无权限。</li><li>1：只读。</li><li>2：只写。</li><li>3：读写。</li></ul>
-                     * @param _mask 当前账号具有的权限信息。<ul><li>0：无权限。</li><li>1：只读。</li><li>2：只写。</li><li>3：读写。</li></ul>
+                     * 设置当前账号具有的权限信息。
+- 0：无权限。
+- 1：只读。
+- 3：读写。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _mask 当前账号具有的权限信息。
+- 0：无权限。
+- 1：只读。
+- 3：读写。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMask(const int64_t& _mask);
@@ -69,18 +85,26 @@ namespace TencentCloud
 
                     /**
                      * 获取指具有当前账号权限的数据库名。
-<ul><li>* ：表示所有数据库。</li><li>db.name：表示特定name的数据库。</li></ul>
+- \* ：表示所有数据库。
+- db.name：表示特定 name 的数据库。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return NameSpace 指具有当前账号权限的数据库名。
-<ul><li>* ：表示所有数据库。</li><li>db.name：表示特定name的数据库。</li></ul>
+- \* ：表示所有数据库。
+- db.name：表示特定 name 的数据库。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNameSpace() const;
 
                     /**
                      * 设置指具有当前账号权限的数据库名。
-<ul><li>* ：表示所有数据库。</li><li>db.name：表示特定name的数据库。</li></ul>
+- \* ：表示所有数据库。
+- db.name：表示特定 name 的数据库。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nameSpace 指具有当前账号权限的数据库名。
-<ul><li>* ：表示所有数据库。</li><li>db.name：表示特定name的数据库。</li></ul>
+- \* ：表示所有数据库。
+- db.name：表示特定 name 的数据库。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNameSpace(const std::string& _nameSpace);
@@ -95,14 +119,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 当前账号具有的权限信息。<ul><li>0：无权限。</li><li>1：只读。</li><li>2：只写。</li><li>3：读写。</li></ul>
+                     * 当前账号具有的权限信息。
+- 0：无权限。
+- 1：只读。
+- 3：读写。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_mask;
                     bool m_maskHasBeenSet;
 
                     /**
                      * 指具有当前账号权限的数据库名。
-<ul><li>* ：表示所有数据库。</li><li>db.name：表示特定name的数据库。</li></ul>
+- \* ：表示所有数据库。
+- db.name：表示特定 name 的数据库。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nameSpace;
                     bool m_nameSpaceHasBeenSet;

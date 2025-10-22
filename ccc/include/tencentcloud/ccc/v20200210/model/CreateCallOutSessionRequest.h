@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取客服用户 ID，一般为客服邮箱
-                     * @return UserId 客服用户 ID，一般为客服邮箱
+                     * 获取客服用户 ID，一般为客服邮箱，确保已经绑定了手机号 https://cloud.tencent.com/document/product/679/76067#.E6.AD.A5.E9.AA.A42.EF.BC.9A.E5.AE.8C.E5.96.84.E8.B4.A6.E5.8F.B7.E4.BF.A1.E6.81.AF
+                     * @return UserId 客服用户 ID，一般为客服邮箱，确保已经绑定了手机号 https://cloud.tencent.com/document/product/679/76067#.E6.AD.A5.E9.AA.A42.EF.BC.9A.E5.AE.8C.E5.96.84.E8.B4.A6.E5.8F.B7.E4.BF.A1.E6.81.AF
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置客服用户 ID，一般为客服邮箱
-                     * @param _userId 客服用户 ID，一般为客服邮箱
+                     * 设置客服用户 ID，一般为客服邮箱，确保已经绑定了手机号 https://cloud.tencent.com/document/product/679/76067#.E6.AD.A5.E9.AA.A42.EF.BC.9A.E5.AE.8C.E5.96.84.E8.B4.A6.E5.8F.B7.E4.BF.A1.E6.81.AF
+                     * @param _userId 客服用户 ID，一般为客服邮箱，确保已经绑定了手机号 https://cloud.tencent.com/document/product/679/76067#.E6.AD.A5.E9.AA.A42.EF.BC.9A.E5.AE.8C.E5.96.84.E8.B4.A6.E5.8F.B7.E4.BF.A1.E6.81.AF
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool CallersHasBeenSet() const;
 
                     /**
-                     * 获取是否强制使用手机外呼，当前只支持 true，若为 true 请确保已配置白名单
-                     * @return IsForceUseMobile 是否强制使用手机外呼，当前只支持 true，若为 true 请确保已配置白名单
+                     * 获取是否强制使用手机外呼，当前只支持 true，若为 true 请确保已配置白名单 https://cloud.tencent.com/document/product/679/76744#.E6.93.8D.E4.BD.9C.E6.AD.A5.E9.AA.A4
+                     * @return IsForceUseMobile 是否强制使用手机外呼，当前只支持 true，若为 true 请确保已配置白名单 https://cloud.tencent.com/document/product/679/76744#.E6.93.8D.E4.BD.9C.E6.AD.A5.E9.AA.A4
                      * 
                      */
                     bool GetIsForceUseMobile() const;
 
                     /**
-                     * 设置是否强制使用手机外呼，当前只支持 true，若为 true 请确保已配置白名单
-                     * @param _isForceUseMobile 是否强制使用手机外呼，当前只支持 true，若为 true 请确保已配置白名单
+                     * 设置是否强制使用手机外呼，当前只支持 true，若为 true 请确保已配置白名单 https://cloud.tencent.com/document/product/679/76744#.E6.93.8D.E4.BD.9C.E6.AD.A5.E9.AA.A4
+                     * @param _isForceUseMobile 是否强制使用手机外呼，当前只支持 true，若为 true 请确保已配置白名单 https://cloud.tencent.com/document/product/679/76744#.E6.93.8D.E4.BD.9C.E6.AD.A5.E9.AA.A4
                      * 
                      */
                     void SetIsForceUseMobile(const bool& _isForceUseMobile);
@@ -219,7 +219,7 @@ namespace TencentCloud
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 客服用户 ID，一般为客服邮箱
+                     * 客服用户 ID，一般为客服邮箱，确保已经绑定了手机号 https://cloud.tencent.com/document/product/679/76067#.E6.AD.A5.E9.AA.A42.EF.BC.9A.E5.AE.8C.E5.96.84.E8.B4.A6.E5.8F.B7.E4.BF.A1.E6.81.AF
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
@@ -243,7 +243,7 @@ namespace TencentCloud
                     bool m_callersHasBeenSet;
 
                     /**
-                     * 是否强制使用手机外呼，当前只支持 true，若为 true 请确保已配置白名单
+                     * 是否强制使用手机外呼，当前只支持 true，若为 true 请确保已配置白名单 https://cloud.tencent.com/document/product/679/76744#.E6.93.8D.E4.BD.9C.E6.AD.A5.E9.AA.A4
                      */
                     bool m_isForceUseMobile;
                     bool m_isForceUseMobileHasBeenSet;

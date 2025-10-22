@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ using namespace TencentCloud::Tcbr::V20220217::Model;
 using namespace std;
 
 DescribeEnvBaseInfoResponse::DescribeEnvBaseInfoResponse() :
-    m_envBaseInfoHasBeenSet(false)
+    m_envBaseInfoHasBeenSet(false),
+    m_isExistHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,16 @@ CoreInternalOutcome DescribeEnvBaseInfoResponse::Deserialize(const string &paylo
         m_envBaseInfoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IsExist") && !rsp["IsExist"].IsNull())
+    {
+        if (!rsp["IsExist"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsExist` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isExist = rsp["IsExist"].GetBool();
+        m_isExistHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -98,11 +109,19 @@ string DescribeEnvBaseInfoResponse::ToJsonString() const
         m_envBaseInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_isExistHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsExist";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isExist, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -118,6 +137,16 @@ EnvBaseInfo DescribeEnvBaseInfoResponse::GetEnvBaseInfo() const
 bool DescribeEnvBaseInfoResponse::EnvBaseInfoHasBeenSet() const
 {
     return m_envBaseInfoHasBeenSet;
+}
+
+bool DescribeEnvBaseInfoResponse::GetIsExist() const
+{
+    return m_isExist;
+}
+
+bool DescribeEnvBaseInfoResponse::IsExistHasBeenSet() const
+{
+    return m_isExistHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -274,6 +274,27 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取开启默认告警
+                     * @return OpenJobDefaultAlarm 开启默认告警
+                     * 
+                     */
+                    int64_t GetOpenJobDefaultAlarm() const;
+
+                    /**
+                     * 设置开启默认告警
+                     * @param _openJobDefaultAlarm 开启默认告警
+                     * 
+                     */
+                    void SetOpenJobDefaultAlarm(const int64_t& _openJobDefaultAlarm);
+
+                    /**
+                     * 判断参数 OpenJobDefaultAlarm 是否已赋值
+                     * @return OpenJobDefaultAlarm 是否已赋值
+                     * 
+                     */
+                    bool OpenJobDefaultAlarmHasBeenSet() const;
+
                 private:
 
                     /**
@@ -341,6 +362,12 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 开启默认告警
+                     */
+                    int64_t m_openJobDefaultAlarm;
+                    bool m_openJobDefaultAlarmHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,18 +47,50 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例状态
+                     * 获取**实例状态**
+- [0] 表示 等待事件
+- [12] 表示 等待上游
+- [6, 7, 9, 10, 18] 表示 等待运行
+- [1, 19, 22] 表示 运行中
+- [21] 表示 跳过运行
+- [3] 表示 失败重试
+- [8, 4, 5, 13] 表示 失败
+- [2] 表示 成功
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return State 实例状态
+                     * @return State **实例状态**
+- [0] 表示 等待事件
+- [12] 表示 等待上游
+- [6, 7, 9, 10, 18] 表示 等待运行
+- [1, 19, 22] 表示 运行中
+- [21] 表示 跳过运行
+- [3] 表示 失败重试
+- [8, 4, 5, 13] 表示 失败
+- [2] 表示 成功
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetState() const;
 
                     /**
-                     * 设置实例状态
+                     * 设置**实例状态**
+- [0] 表示 等待事件
+- [12] 表示 等待上游
+- [6, 7, 9, 10, 18] 表示 等待运行
+- [1, 19, 22] 表示 运行中
+- [21] 表示 跳过运行
+- [3] 表示 失败重试
+- [8, 4, 5, 13] 表示 失败
+- [2] 表示 成功
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _state 实例状态
+                     * @param _state **实例状态**
+- [0] 表示 等待事件
+- [12] 表示 等待上游
+- [6, 7, 9, 10, 18] 表示 等待运行
+- [1, 19, 22] 表示 运行中
+- [21] 表示 跳过运行
+- [3] 表示 失败重试
+- [8, 4, 5, 13] 表示 失败
+- [2] 表示 成功
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +129,54 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取实例生命周期阶段状态
+                     * 获取**实例生命周期阶段状态**
+
+- WAIT_UPSTREAM 表示 等待事件/上游状态
+- WAIT_RUN 表示 等待运行状态
+- RUNNING 表示 运行中状态
+- COMPLETE 表示 终态-完成
+- FAILED 表示 终态-失败重试
+- EXPIRED 表示 终态-失败
+- SKIP_RUNNING 表示 终态-被上游分支节点跳过的分支
+- HISTORY 表示 兼容2024-03-30之前的历史实例，之后实例无需关注次枚举类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DetailState 实例生命周期阶段状态
+                     * @return DetailState **实例生命周期阶段状态**
+
+- WAIT_UPSTREAM 表示 等待事件/上游状态
+- WAIT_RUN 表示 等待运行状态
+- RUNNING 表示 运行中状态
+- COMPLETE 表示 终态-完成
+- FAILED 表示 终态-失败重试
+- EXPIRED 表示 终态-失败
+- SKIP_RUNNING 表示 终态-被上游分支节点跳过的分支
+- HISTORY 表示 兼容2024-03-30之前的历史实例，之后实例无需关注次枚举类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDetailState() const;
 
                     /**
-                     * 设置实例生命周期阶段状态
+                     * 设置**实例生命周期阶段状态**
+
+- WAIT_UPSTREAM 表示 等待事件/上游状态
+- WAIT_RUN 表示 等待运行状态
+- RUNNING 表示 运行中状态
+- COMPLETE 表示 终态-完成
+- FAILED 表示 终态-失败重试
+- EXPIRED 表示 终态-失败
+- SKIP_RUNNING 表示 终态-被上游分支节点跳过的分支
+- HISTORY 表示 兼容2024-03-30之前的历史实例，之后实例无需关注次枚举类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _detailState 实例生命周期阶段状态
+                     * @param _detailState **实例生命周期阶段状态**
+
+- WAIT_UPSTREAM 表示 等待事件/上游状态
+- WAIT_RUN 表示 等待运行状态
+- RUNNING 表示 运行中状态
+- COMPLETE 表示 终态-完成
+- FAILED 表示 终态-失败重试
+- EXPIRED 表示 终态-失败
+- SKIP_RUNNING 表示 终态-被上游分支节点跳过的分支
+- HISTORY 表示 兼容2024-03-30之前的历史实例，之后实例无需关注次枚举类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -149,7 +217,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例状态
+                     * **实例状态**
+- [0] 表示 等待事件
+- [12] 表示 等待上游
+- [6, 7, 9, 10, 18] 表示 等待运行
+- [1, 19, 22] 表示 运行中
+- [21] 表示 跳过运行
+- [3] 表示 失败重试
+- [8, 4, 5, 13] 表示 失败
+- [2] 表示 成功
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_state;
@@ -163,7 +239,16 @@ namespace TencentCloud
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 实例生命周期阶段状态
+                     * **实例生命周期阶段状态**
+
+- WAIT_UPSTREAM 表示 等待事件/上游状态
+- WAIT_RUN 表示 等待运行状态
+- RUNNING 表示 运行中状态
+- COMPLETE 表示 终态-完成
+- FAILED 表示 终态-失败重试
+- EXPIRED 表示 终态-失败
+- SKIP_RUNNING 表示 终态-被上游分支节点跳过的分支
+- HISTORY 表示 兼容2024-03-30之前的历史实例，之后实例无需关注次枚举类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_detailState;

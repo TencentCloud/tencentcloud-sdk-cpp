@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,9 @@ using namespace std;
 DescribeEnvsRequest::DescribeEnvsRequest() :
     m_envIdHasBeenSet(false),
     m_isVisibleHasBeenSet(false),
-    m_channelsHasBeenSet(false)
+    m_channelsHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_offsetHasBeenSet(false)
 {
 }
 
@@ -63,6 +65,22 @@ string DescribeEnvsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
     }
 
 
@@ -119,6 +137,38 @@ void DescribeEnvsRequest::SetChannels(const vector<string>& _channels)
 bool DescribeEnvsRequest::ChannelsHasBeenSet() const
 {
     return m_channelsHasBeenSet;
+}
+
+int64_t DescribeEnvsRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeEnvsRequest::SetLimit(const int64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeEnvsRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+int64_t DescribeEnvsRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeEnvsRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeEnvsRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
 }
 
 

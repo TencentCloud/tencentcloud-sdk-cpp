@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,15 +85,23 @@ namespace TencentCloud
                     bool NamespaceNameHasBeenSet() const;
 
                     /**
-                     * 获取仓库名称
-                     * @return RepositoryName 仓库名称
+                     * 获取仓库名称，需满足以下规则：
+1. 长度需 ​大于2且小于245个字符 
+2. 仅允许小写字母、数字及符号 . _ -
+                     * @return RepositoryName 仓库名称，需满足以下规则：
+1. 长度需 ​大于2且小于245个字符 
+2. 仅允许小写字母、数字及符号 . _ -
                      * 
                      */
                     std::string GetRepositoryName() const;
 
                     /**
-                     * 设置仓库名称
-                     * @param _repositoryName 仓库名称
+                     * 设置仓库名称，需满足以下规则：
+1. 长度需 ​大于2且小于245个字符 
+2. 仅允许小写字母、数字及符号 . _ -
+                     * @param _repositoryName 仓库名称，需满足以下规则：
+1. 长度需 ​大于2且小于245个字符 
+2. 仅允许小写字母、数字及符号 . _ -
                      * 
                      */
                     void SetRepositoryName(const std::string& _repositoryName);
@@ -162,7 +170,9 @@ namespace TencentCloud
                     bool m_namespaceNameHasBeenSet;
 
                     /**
-                     * 仓库名称
+                     * 仓库名称，需满足以下规则：
+1. 长度需 ​大于2且小于245个字符 
+2. 仅允许小写字母、数字及符号 . _ -
                      */
                     std::string m_repositoryName;
                     bool m_repositoryNameHasBeenSet;

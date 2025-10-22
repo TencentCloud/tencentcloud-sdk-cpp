@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取家庭ID，所有者带该参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FamilyId 家庭ID，所有者带该参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFamilyId() const;
 
                     /**
                      * 设置家庭ID，所有者带该参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _familyId 家庭ID，所有者带该参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFamilyId(const std::string& _familyId);
@@ -115,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取家庭名称，所有者带该参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FamilyName 家庭名称，所有者带该参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFamilyName() const;
 
                     /**
                      * 设置家庭名称，所有者带该参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _familyName 家庭名称，所有者带该参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFamilyName(const std::string& _familyName);
@@ -154,14 +146,12 @@ namespace TencentCloud
 
                     /**
                      * 家庭ID，所有者带该参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_familyId;
                     bool m_familyIdHasBeenSet;
 
                     /**
                      * 家庭名称，所有者带该参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_familyName;
                     bool m_familyNameHasBeenSet;

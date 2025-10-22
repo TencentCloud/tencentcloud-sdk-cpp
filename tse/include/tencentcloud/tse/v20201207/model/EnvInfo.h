@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -343,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取客户端内网开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableConfigIntranet 客户端内网开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableConfigIntranet() const;
 
                     /**
                      * 设置客户端内网开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableConfigIntranet 客户端内网开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableConfigIntranet(const bool& _enableConfigIntranet);
@@ -454,7 +450,6 @@ namespace TencentCloud
 
                     /**
                      * 客户端内网开关
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableConfigIntranet;
                     bool m_enableConfigIntranetHasBeenSet;

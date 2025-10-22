@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -113,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监听器下的规则信息（仅适用于HTTP/HTTPS监听器）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rules 监听器下的规则信息（仅适用于HTTP/HTTPS监听器）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RuleTargets> GetRules() const;
 
                     /**
                      * 设置监听器下的规则信息（仅适用于HTTP/HTTPS监听器）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rules 监听器下的规则信息（仅适用于HTTP/HTTPS监听器）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRules(const std::vector<RuleTargets>& _rules);
@@ -138,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监听器上绑定的后端服务列表（仅适用于TCP/UDP/TCP_SSL监听器）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Targets 监听器上绑定的后端服务列表（仅适用于TCP/UDP/TCP_SSL监听器）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Backend> GetTargets() const;
 
                     /**
                      * 设置监听器上绑定的后端服务列表（仅适用于TCP/UDP/TCP_SSL监听器）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _targets 监听器上绑定的后端服务列表（仅适用于TCP/UDP/TCP_SSL监听器）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTargets(const std::vector<Backend>& _targets);
@@ -163,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取若支持端口段，则为端口段结束端口；若不支持端口段，则为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndPort 若支持端口段，则为端口段结束端口；若不支持端口段，则为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEndPort() const;
 
                     /**
                      * 设置若支持端口段，则为端口段结束端口；若不支持端口段，则为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endPort 若支持端口段，则为端口段结束端口；若不支持端口段，则为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndPort(const int64_t& _endPort);
@@ -208,21 +196,18 @@ namespace TencentCloud
 
                     /**
                      * 监听器下的规则信息（仅适用于HTTP/HTTPS监听器）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RuleTargets> m_rules;
                     bool m_rulesHasBeenSet;
 
                     /**
                      * 监听器上绑定的后端服务列表（仅适用于TCP/UDP/TCP_SSL监听器）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Backend> m_targets;
                     bool m_targetsHasBeenSet;
 
                     /**
                      * 若支持端口段，则为端口段结束端口；若不支持端口段，则为0
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_endPort;
                     bool m_endPortHasBeenSet;

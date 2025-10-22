@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,9 @@ CreateLiveCallbackTemplateRequest::CreateLiveCallbackTemplateRequest() :
     m_callbackKeyHasBeenSet(false),
     m_streamMixNotifyUrlHasBeenSet(false),
     m_pushExceptionNotifyUrlHasBeenSet(false),
-    m_audioAuditNotifyUrlHasBeenSet(false)
+    m_audioAuditNotifyUrlHasBeenSet(false),
+    m_recordExceptionNotifyUrlHasBeenSet(false),
+    m_recordExceptionLevelsHasBeenSet(false)
 {
 }
 
@@ -139,6 +141,27 @@ string CreateLiveCallbackTemplateRequest::ToJsonString() const
         string key = "AudioAuditNotifyUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_audioAuditNotifyUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recordExceptionNotifyUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordExceptionNotifyUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_recordExceptionNotifyUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recordExceptionLevelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordExceptionLevels";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_recordExceptionLevels.begin(); itr != m_recordExceptionLevels.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -339,6 +362,38 @@ void CreateLiveCallbackTemplateRequest::SetAudioAuditNotifyUrl(const string& _au
 bool CreateLiveCallbackTemplateRequest::AudioAuditNotifyUrlHasBeenSet() const
 {
     return m_audioAuditNotifyUrlHasBeenSet;
+}
+
+string CreateLiveCallbackTemplateRequest::GetRecordExceptionNotifyUrl() const
+{
+    return m_recordExceptionNotifyUrl;
+}
+
+void CreateLiveCallbackTemplateRequest::SetRecordExceptionNotifyUrl(const string& _recordExceptionNotifyUrl)
+{
+    m_recordExceptionNotifyUrl = _recordExceptionNotifyUrl;
+    m_recordExceptionNotifyUrlHasBeenSet = true;
+}
+
+bool CreateLiveCallbackTemplateRequest::RecordExceptionNotifyUrlHasBeenSet() const
+{
+    return m_recordExceptionNotifyUrlHasBeenSet;
+}
+
+vector<string> CreateLiveCallbackTemplateRequest::GetRecordExceptionLevels() const
+{
+    return m_recordExceptionLevels;
+}
+
+void CreateLiveCallbackTemplateRequest::SetRecordExceptionLevels(const vector<string>& _recordExceptionLevels)
+{
+    m_recordExceptionLevels = _recordExceptionLevels;
+    m_recordExceptionLevelsHasBeenSet = true;
+}
+
+bool CreateLiveCallbackTemplateRequest::RecordExceptionLevelsHasBeenSet() const
+{
+    return m_recordExceptionLevelsHasBeenSet;
 }
 
 

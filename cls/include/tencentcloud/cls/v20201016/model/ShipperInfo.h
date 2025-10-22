@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -219,18 +219,14 @@ namespace TencentCloud
 
                     /**
                      * 获取投递日志的过滤规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FilterRules 投递日志的过滤规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FilterRuleInfo> GetFilterRules() const;
 
                     /**
                      * 设置投递日志的过滤规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _filterRules 投递日志的过滤规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFilterRules(const std::vector<FilterRuleInfo>& _filterRules);
@@ -265,18 +261,14 @@ namespace TencentCloud
 
                     /**
                      * 获取投递日志的压缩配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Compress 投递日志的压缩配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CompressInfo GetCompress() const;
 
                     /**
                      * 设置投递日志的压缩配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _compress 投递日志的压缩配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCompress(const CompressInfo& _compress);
@@ -290,18 +282,14 @@ namespace TencentCloud
 
                     /**
                      * 获取投递日志的内容格式配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 投递日志的内容格式配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ContentInfo GetContent() const;
 
                     /**
                      * 设置投递日志的内容格式配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _content 投递日志的内容格式配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContent(const ContentInfo& _content);
@@ -314,15 +302,15 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取投递日志的创建时间
-                     * @return CreateTime 投递日志的创建时间
+                     * 获取投递日志的创建时间。格式：YYYY-MM-DD HH:MM:SS
+                     * @return CreateTime 投递日志的创建时间。格式：YYYY-MM-DD HH:MM:SS
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置投递日志的创建时间
-                     * @param _createTime 投递日志的创建时间
+                     * 设置投递日志的创建时间。格式：YYYY-MM-DD HH:MM:SS
+                     * @param _createTime 投递日志的创建时间。格式：YYYY-MM-DD HH:MM:SS
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -336,18 +324,14 @@ namespace TencentCloud
 
                     /**
                      * 获取投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FilenameMode 投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetFilenameMode() const;
 
                     /**
                      * 设置投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _filenameMode 投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFilenameMode(const uint64_t& _filenameMode);
@@ -361,18 +345,14 @@ namespace TencentCloud
 
                     /**
                      * 获取投递数据范围的开始时间点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 投递数据范围的开始时间点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 设置投递数据范围的开始时间点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTime 投递数据范围的开始时间点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTime(const int64_t& _startTime);
@@ -386,18 +366,14 @@ namespace TencentCloud
 
                     /**
                      * 获取投递数据范围的结束时间点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 投递数据范围的结束时间点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置投递数据范围的结束时间点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 投递数据范围的结束时间点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -411,18 +387,14 @@ namespace TencentCloud
 
                     /**
                      * 获取历史数据投递的进度（仅当用户选择的数据内中历史数据时才有效）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Progress 历史数据投递的进度（仅当用户选择的数据内中历史数据时才有效）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetProgress() const;
 
                     /**
                      * 设置历史数据投递的进度（仅当用户选择的数据内中历史数据时才有效）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _progress 历史数据投递的进度（仅当用户选择的数据内中历史数据时才有效）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProgress(const double& _progress);
@@ -436,18 +408,14 @@ namespace TencentCloud
 
                     /**
                      * 获取历史数据全部投递完成剩余的时间（仅当用户选择的数据中有历史数据时才有效）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemainTime 历史数据全部投递完成剩余的时间（仅当用户选择的数据中有历史数据时才有效）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRemainTime() const;
 
                     /**
                      * 设置历史数据全部投递完成剩余的时间（仅当用户选择的数据中有历史数据时才有效）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remainTime 历史数据全部投递完成剩余的时间（仅当用户选择的数据中有历史数据时才有效）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemainTime(const int64_t& _remainTime);
@@ -466,14 +434,12 @@ namespace TencentCloud
 2：任务运行中
 3：任务运行异常
 4：任务运行结束
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HistoryStatus 历史任务状态：
 0：实时任务
 1：任务准备中
 2：任务运行中
 3：任务运行异常
 4：任务运行结束
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHistoryStatus() const;
@@ -485,14 +451,12 @@ namespace TencentCloud
 2：任务运行中
 3：任务运行异常
 4：任务运行结束
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _historyStatus 历史任务状态：
 0：实时任务
 1：任务准备中
 2：任务运行中
 3：任务运行异常
 4：任务运行结束
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHistoryStatus(const int64_t& _historyStatus);
@@ -505,19 +469,51 @@ namespace TencentCloud
                     bool HistoryStatusHasBeenSet() const;
 
                     /**
-                     * 获取cos桶类型
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StorageType cos桶类型
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取对象存储类型，默认值为 STANDARD。枚举值请参见[ 存储类型概述](https://cloud.tencent.com/document/product/436/33417) 文档。
+参考值有：
+STANDARD：标准存储
+STANDARD_IA：低频存储
+ARCHIVE：归档存储
+DEEP_ARCHIVE：深度归档存储
+MAZ_STANDARD：标准存储（多 AZ）
+MAZ_STANDARD_IA：低频存储（多 AZ）
+INTELLIGENT_TIERING：智能分层存储
+MAZ_INTELLIGENT_TIERING：智能分层存储（多 AZ）
+                     * @return StorageType 对象存储类型，默认值为 STANDARD。枚举值请参见[ 存储类型概述](https://cloud.tencent.com/document/product/436/33417) 文档。
+参考值有：
+STANDARD：标准存储
+STANDARD_IA：低频存储
+ARCHIVE：归档存储
+DEEP_ARCHIVE：深度归档存储
+MAZ_STANDARD：标准存储（多 AZ）
+MAZ_STANDARD_IA：低频存储（多 AZ）
+INTELLIGENT_TIERING：智能分层存储
+MAZ_INTELLIGENT_TIERING：智能分层存储（多 AZ）
                      * 
                      */
                     std::string GetStorageType() const;
 
                     /**
-                     * 设置cos桶类型
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _storageType cos桶类型
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置对象存储类型，默认值为 STANDARD。枚举值请参见[ 存储类型概述](https://cloud.tencent.com/document/product/436/33417) 文档。
+参考值有：
+STANDARD：标准存储
+STANDARD_IA：低频存储
+ARCHIVE：归档存储
+DEEP_ARCHIVE：深度归档存储
+MAZ_STANDARD：标准存储（多 AZ）
+MAZ_STANDARD_IA：低频存储（多 AZ）
+INTELLIGENT_TIERING：智能分层存储
+MAZ_INTELLIGENT_TIERING：智能分层存储（多 AZ）
+                     * @param _storageType 对象存储类型，默认值为 STANDARD。枚举值请参见[ 存储类型概述](https://cloud.tencent.com/document/product/436/33417) 文档。
+参考值有：
+STANDARD：标准存储
+STANDARD_IA：低频存储
+ARCHIVE：归档存储
+DEEP_ARCHIVE：深度归档存储
+MAZ_STANDARD：标准存储（多 AZ）
+MAZ_STANDARD_IA：低频存储（多 AZ）
+INTELLIGENT_TIERING：智能分层存储
+MAZ_INTELLIGENT_TIERING：智能分层存储（多 AZ）
                      * 
                      */
                     void SetStorageType(const std::string& _storageType);
@@ -581,7 +577,6 @@ namespace TencentCloud
 
                     /**
                      * 投递日志的过滤规则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FilterRuleInfo> m_filterRules;
                     bool m_filterRulesHasBeenSet;
@@ -594,55 +589,48 @@ namespace TencentCloud
 
                     /**
                      * 投递日志的压缩配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CompressInfo m_compress;
                     bool m_compressHasBeenSet;
 
                     /**
                      * 投递日志的内容格式配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ContentInfo m_content;
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 投递日志的创建时间
+                     * 投递日志的创建时间。格式：YYYY-MM-DD HH:MM:SS
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_filenameMode;
                     bool m_filenameModeHasBeenSet;
 
                     /**
                      * 投递数据范围的开始时间点
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 投递数据范围的结束时间点
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
                      * 历史数据投递的进度（仅当用户选择的数据内中历史数据时才有效）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_progress;
                     bool m_progressHasBeenSet;
 
                     /**
                      * 历史数据全部投递完成剩余的时间（仅当用户选择的数据中有历史数据时才有效）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_remainTime;
                     bool m_remainTimeHasBeenSet;
@@ -654,14 +642,21 @@ namespace TencentCloud
 2：任务运行中
 3：任务运行异常
 4：任务运行结束
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_historyStatus;
                     bool m_historyStatusHasBeenSet;
 
                     /**
-                     * cos桶类型
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 对象存储类型，默认值为 STANDARD。枚举值请参见[ 存储类型概述](https://cloud.tencent.com/document/product/436/33417) 文档。
+参考值有：
+STANDARD：标准存储
+STANDARD_IA：低频存储
+ARCHIVE：归档存储
+DEEP_ARCHIVE：深度归档存储
+MAZ_STANDARD：标准存储（多 AZ）
+MAZ_STANDARD_IA：低频存储（多 AZ）
+INTELLIGENT_TIERING：智能分层存储
+MAZ_INTELLIGENT_TIERING：智能分层存储（多 AZ）
                      */
                     std::string m_storageType;
                     bool m_storageTypeHasBeenSet;

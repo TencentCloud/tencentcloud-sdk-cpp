@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志毫秒时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timestamp 日志毫秒时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTimestamp() const;
 
                     /**
                      * 设置日志毫秒时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timestamp 日志毫秒时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimestamp(const std::string& _timestamp);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取采样日志属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Attributes 采样日志属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Attributes GetAttributes() const;
 
                     /**
                      * 设置采样日志属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _attributes 采样日志属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAttributes(const Attributes& _attributes);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取har格式的采样请求
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Body har格式的采样请求
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBody() const;
 
                     /**
                      * 设置har格式的采样请求
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _body har格式的采样请求
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBody(const std::string& _body);
@@ -126,21 +114,18 @@ namespace TencentCloud
 
                     /**
                      * 日志毫秒时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timestamp;
                     bool m_timestampHasBeenSet;
 
                     /**
                      * 采样日志属性
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Attributes m_attributes;
                     bool m_attributesHasBeenSet;
 
                     /**
                      * har格式的采样请求
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_body;
                     bool m_bodyHasBeenSet;

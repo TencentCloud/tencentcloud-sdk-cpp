@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取该房间的事件总数，keyword搜索不影响该值。
-                     * @return Total 该房间的事件总数，keyword搜索不影响该值。
+                     * 获取该课堂的事件总数，keyword搜索不影响该值。
+                     * @return Total 该课堂的事件总数，keyword搜索不影响该值。
                      * 
                      */
                     uint64_t GetTotal() const;
@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取详细事件内容。包含相应的类型、发生的时间戳。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Events 详细事件内容。包含相应的类型、发生的时间戳。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<EventInfo> GetEvents() const;
@@ -77,14 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 该房间的事件总数，keyword搜索不影响该值。
+                     * 该课堂的事件总数，keyword搜索不影响该值。
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
                      * 详细事件内容。包含相应的类型、发生的时间戳。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<EventInfo> m_events;
                     bool m_eventsHasBeenSet;

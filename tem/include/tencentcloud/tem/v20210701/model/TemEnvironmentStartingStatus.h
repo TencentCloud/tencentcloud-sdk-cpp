@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取需要启动的应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationNumNeedToStart 需要启动的应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetApplicationNumNeedToStart() const;
 
                     /**
                      * 设置需要启动的应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationNumNeedToStart 需要启动的应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationNumNeedToStart(const int64_t& _applicationNumNeedToStart);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已经启动的应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartedApplicationNum 已经启动的应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStartedApplicationNum() const;
 
                     /**
                      * 设置已经启动的应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startedApplicationNum 已经启动的应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartedApplicationNum(const int64_t& _startedApplicationNum);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取启动失败的应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartFailedApplicationNum 启动失败的应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStartFailedApplicationNum() const;
 
                     /**
                      * 设置启动失败的应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startFailedApplicationNum 启动失败的应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartFailedApplicationNum(const int64_t& _startFailedApplicationNum);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 需要启动的应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_applicationNumNeedToStart;
                     bool m_applicationNumNeedToStartHasBeenSet;
 
                     /**
                      * 已经启动的应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_startedApplicationNum;
                     bool m_startedApplicationNumHasBeenSet;
 
                     /**
                      * 启动失败的应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_startFailedApplicationNum;
                     bool m_startFailedApplicationNumHasBeenSet;

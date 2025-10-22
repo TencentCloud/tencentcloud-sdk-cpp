@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -786,18 +786,14 @@ REJECTED:拒绝
 
                     /**
                      * 获取是否开启IPv6
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IPv6Enable 是否开启IPv6
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIPv6Enable() const;
 
                     /**
                      * 设置是否开启IPv6
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iPv6Enable 是否开启IPv6
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIPv6Enable(const int64_t& _iPv6Enable);
@@ -811,18 +807,14 @@ REJECTED:拒绝
 
                     /**
                      * 获取腾讯侧互联IPv6地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TencentIPv6Address 腾讯侧互联IPv6地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTencentIPv6Address() const;
 
                     /**
                      * 设置腾讯侧互联IPv6地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tencentIPv6Address 腾讯侧互联IPv6地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTencentIPv6Address(const std::string& _tencentIPv6Address);
@@ -836,18 +828,14 @@ REJECTED:拒绝
 
                     /**
                      * 获取腾讯侧备用互联IPv6地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TencentBackupIPv6Address 腾讯侧备用互联IPv6地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTencentBackupIPv6Address() const;
 
                     /**
                      * 设置腾讯侧备用互联IPv6地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tencentBackupIPv6Address 腾讯侧备用互联IPv6地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTencentBackupIPv6Address(const std::string& _tencentBackupIPv6Address);
@@ -861,18 +849,14 @@ REJECTED:拒绝
 
                     /**
                      * 获取BGPv6状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BgpIPv6Status BGPv6状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BGPStatus GetBgpIPv6Status() const;
 
                     /**
                      * 设置BGPv6状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bgpIPv6Status BGPv6状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBgpIPv6Status(const BGPStatus& _bgpIPv6Status);
@@ -886,18 +870,14 @@ REJECTED:拒绝
 
                     /**
                      * 获取用户侧互联IPv6地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomerIPv6Address 用户侧互联IPv6地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCustomerIPv6Address() const;
 
                     /**
                      * 设置用户侧互联IPv6地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _customerIPv6Address 用户侧互联IPv6地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCustomerIPv6Address(const std::string& _customerIPv6Address);
@@ -911,18 +891,14 @@ REJECTED:拒绝
 
                     /**
                      * 获取专用通道是否支持巨帧。1 支持，0 不支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JumboEnable 专用通道是否支持巨帧。1 支持，0 不支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetJumboEnable() const;
 
                     /**
                      * 设置专用通道是否支持巨帧。1 支持，0 不支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _jumboEnable 专用通道是否支持巨帧。1 支持，0 不支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJumboEnable(const int64_t& _jumboEnable);
@@ -936,18 +912,14 @@ REJECTED:拒绝
 
                     /**
                      * 获取专用通道是否支持高精度BFD。1支持，0不支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HighPrecisionBFDEnable 专用通道是否支持高精度BFD。1支持，0不支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHighPrecisionBFDEnable() const;
 
                     /**
                      * 设置专用通道是否支持高精度BFD。1支持，0不支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _highPrecisionBFDEnable 专用通道是否支持高精度BFD。1支持，0不支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHighPrecisionBFDEnable(const int64_t& _highPrecisionBFDEnable);
@@ -1171,49 +1143,42 @@ REJECTED:拒绝
 
                     /**
                      * 是否开启IPv6
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_iPv6Enable;
                     bool m_iPv6EnableHasBeenSet;
 
                     /**
                      * 腾讯侧互联IPv6地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tencentIPv6Address;
                     bool m_tencentIPv6AddressHasBeenSet;
 
                     /**
                      * 腾讯侧备用互联IPv6地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tencentBackupIPv6Address;
                     bool m_tencentBackupIPv6AddressHasBeenSet;
 
                     /**
                      * BGPv6状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BGPStatus m_bgpIPv6Status;
                     bool m_bgpIPv6StatusHasBeenSet;
 
                     /**
                      * 用户侧互联IPv6地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_customerIPv6Address;
                     bool m_customerIPv6AddressHasBeenSet;
 
                     /**
                      * 专用通道是否支持巨帧。1 支持，0 不支持
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_jumboEnable;
                     bool m_jumboEnableHasBeenSet;
 
                     /**
                      * 专用通道是否支持高精度BFD。1支持，0不支持
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_highPrecisionBFDEnable;
                     bool m_highPrecisionBFDEnableHasBeenSet;

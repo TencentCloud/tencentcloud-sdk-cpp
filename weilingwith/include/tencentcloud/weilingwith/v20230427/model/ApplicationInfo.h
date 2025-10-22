@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用分配的appId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationId 应用分配的appId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置应用分配的appId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationId 应用分配的appId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用中文名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 应用中文名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置应用中文名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 应用中文名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Address 应用地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAddress() const;
 
                     /**
                      * 设置应用地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _address 应用地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddress(const std::string& _address);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用logo
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationLogo 应用logo
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ApplicationLogo GetApplicationLogo() const;
 
                     /**
                      * 设置应用logo
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationLogo 应用logo
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationLogo(const ApplicationLogo& _applicationLogo);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用类型，0:saas应用 1:平台应用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 应用类型，0:saas应用 1:平台应用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetType() const;
 
                     /**
                      * 设置应用类型，0:saas应用 1:平台应用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 应用类型，0:saas应用 1:平台应用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const uint64_t& _type);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取engine
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnglishName engine
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEnglishName() const;
 
                     /**
                      * 设置engine
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _englishName engine
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnglishName(const std::string& _englishName);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取能源管理应用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 能源管理应用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置能源管理应用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 能源管理应用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -226,49 +198,42 @@ namespace TencentCloud
 
                     /**
                      * 应用分配的appId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applicationId;
                     bool m_applicationIdHasBeenSet;
 
                     /**
                      * 应用中文名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 应用地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_address;
                     bool m_addressHasBeenSet;
 
                     /**
                      * 应用logo
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ApplicationLogo m_applicationLogo;
                     bool m_applicationLogoHasBeenSet;
 
                     /**
                      * 应用类型，0:saas应用 1:平台应用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * engine
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_englishName;
                     bool m_englishNameHasBeenSet;
 
                     /**
                      * 能源管理应用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

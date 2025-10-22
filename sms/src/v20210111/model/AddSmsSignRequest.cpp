@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,8 @@ AddSmsSignRequest::AddSmsSignRequest() :
     m_signPurposeHasBeenSet(false),
     m_proofImageHasBeenSet(false),
     m_commissionImageHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_qualificationIdHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string AddSmsSignRequest::ToJsonString() const
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_qualificationIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QualificationId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_qualificationId, allocator);
     }
 
 
@@ -239,6 +248,22 @@ void AddSmsSignRequest::SetRemark(const string& _remark)
 bool AddSmsSignRequest::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+uint64_t AddSmsSignRequest::GetQualificationId() const
+{
+    return m_qualificationId;
+}
+
+void AddSmsSignRequest::SetQualificationId(const uint64_t& _qualificationId)
+{
+    m_qualificationId = _qualificationId;
+    m_qualificationIdHasBeenSet = true;
+}
+
+bool AddSmsSignRequest::QualificationIdHasBeenSet() const
+{
+    return m_qualificationIdHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待重试部署记录ID
-                     * @return DeployRecordId 待重试部署记录ID
+                     * 获取更新证书待回滚的记录ID, 通过UpdateCertificateInstance获得
+                     * @return DeployRecordId 更新证书待回滚的记录ID, 通过UpdateCertificateInstance获得
                      * 
                      */
                     int64_t GetDeployRecordId() const;
 
                     /**
-                     * 设置待重试部署记录ID
-                     * @param _deployRecordId 待重试部署记录ID
+                     * 设置更新证书待回滚的记录ID, 通过UpdateCertificateInstance获得
+                     * @param _deployRecordId 更新证书待回滚的记录ID, 通过UpdateCertificateInstance获得
                      * 
                      */
                     void SetDeployRecordId(const int64_t& _deployRecordId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 待重试部署记录ID
+                     * 更新证书待回滚的记录ID, 通过UpdateCertificateInstance获得
                      */
                     int64_t m_deployRecordId;
                     bool m_deployRecordIdHasBeenSet;

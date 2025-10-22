@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页查询限制数目，默认为 100，最大可设置为 1000
-                     * @return Limit 分页查询限制数目，默认为 100，最大可设置为 1000
+                     * 获取分页查询限制数目，默认为 100，最大可设置为 100
+                     * @return Limit 分页查询限制数目，默认为 100，最大可设置为 100
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页查询限制数目，默认为 100，最大可设置为 1000
-                     * @param _limit 分页查询限制数目，默认为 100，最大可设置为 1000
+                     * 设置分页查询限制数目，默认为 100，最大可设置为 100
+                     * @param _limit 分页查询限制数目，默认为 100，最大可设置为 100
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -137,7 +137,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页查询限制数目，默认为 100，最大可设置为 1000
+                     * 分页查询限制数目，默认为 100，最大可设置为 100
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取unique vpc id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId unique vpc id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置unique vpc id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId unique vpc id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ENABLE代表已经开启，DISABLE代表未开启，ERROR代表查询出错
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status ENABLE代表已经开启，DISABLE代表未开启，ERROR代表查询出错
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置ENABLE代表已经开启，DISABLE代表未开启，ERROR代表查询出错
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status ENABLE代表已经开启，DISABLE代表未开启，ERROR代表查询出错
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * unique vpc id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * ENABLE代表已经开启，DISABLE代表未开启，ERROR代表查询出错
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

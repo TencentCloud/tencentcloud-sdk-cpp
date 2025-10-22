@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取雪碧图中小图的宽度，取值范围： [128, 4096]，单位：px。
-                     * @return Width 雪碧图中小图的宽度，取值范围： [128, 4096]，单位：px。
+                     * 获取雪碧图中小图的宽度，取值范围： [32, 4096]，单位：px。
+                     * @return Width 雪碧图中小图的宽度，取值范围： [32, 4096]，单位：px。
                      * 
                      */
                     uint64_t GetWidth() const;
 
                     /**
-                     * 设置雪碧图中小图的宽度，取值范围： [128, 4096]，单位：px。
-                     * @param _width 雪碧图中小图的宽度，取值范围： [128, 4096]，单位：px。
+                     * 设置雪碧图中小图的宽度，取值范围： [32, 4096]，单位：px。
+                     * @param _width 雪碧图中小图的宽度，取值范围： [32, 4096]，单位：px。
                      * 
                      */
                     void SetWidth(const uint64_t& _width);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取雪碧图中小图的高度，取值范围： [128, 4096]，单位：px。
-                     * @return Height 雪碧图中小图的高度，取值范围： [128, 4096]，单位：px。
+                     * 获取雪碧图中小图的高度，取值范围： [32, 4096]，单位：px。
+                     * @return Height 雪碧图中小图的高度，取值范围： [32, 4096]，单位：px。
                      * 
                      */
                     uint64_t GetHeight() const;
 
                     /**
-                     * 设置雪碧图中小图的高度，取值范围： [128, 4096]，单位：px。
-                     * @param _height 雪碧图中小图的高度，取值范围： [128, 4096]，单位：px。
+                     * 设置雪碧图中小图的高度，取值范围： [32, 4096]，单位：px。
+                     * @param _height 雪碧图中小图的高度，取值范围： [32, 4096]，单位：px。
                      * 
                      */
                     void SetHeight(const uint64_t& _height);
@@ -281,27 +281,15 @@ namespace TencentCloud
                     bool ColumnCountHasBeenSet() const;
 
                     /**
-                     * 获取填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：
-<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>
-<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>
-默认值：black 。
-                     * @return FillType 填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：
-<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>
-<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>
-默认值：black 。
+                     * 获取填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li><li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li><li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li><li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊。</li>默认值：black 。
+                     * @return FillType 填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li><li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li><li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li><li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊。</li>默认值：black 。
                      * 
                      */
                     std::string GetFillType() const;
 
                     /**
-                     * 设置填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：
-<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>
-<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>
-默认值：black 。
-                     * @param _fillType 填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：
-<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>
-<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>
-默认值：black 。
+                     * 设置填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li><li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li><li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li><li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊。</li>默认值：black 。
+                     * @param _fillType 填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li><li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li><li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li><li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊。</li>默认值：black 。
                      * 
                      */
                     void SetFillType(const std::string& _fillType);
@@ -388,13 +376,13 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 雪碧图中小图的宽度，取值范围： [128, 4096]，单位：px。
+                     * 雪碧图中小图的宽度，取值范围： [32, 4096]，单位：px。
                      */
                     uint64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * 雪碧图中小图的高度，取值范围： [128, 4096]，单位：px。
+                     * 雪碧图中小图的高度，取值范围： [32, 4096]，单位：px。
                      */
                     uint64_t m_height;
                     bool m_heightHasBeenSet;
@@ -437,10 +425,7 @@ namespace TencentCloud
                     bool m_columnCountHasBeenSet;
 
                     /**
-                     * 填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：
-<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>
-<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>
-默认值：black 。
+                     * 填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li><li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li><li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li><li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊。</li>默认值：black 。
                      */
                     std::string m_fillType;
                     bool m_fillTypeHasBeenSet;

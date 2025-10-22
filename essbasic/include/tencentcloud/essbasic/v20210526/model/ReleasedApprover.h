@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -158,26 +158,26 @@ namespace TencentCloud
 
                     /**
                      * 获取签署方经办人的证件类型，支持以下类型
-<ul><li>ID_CARD : 居民身份证(默认值)</li>
-<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
-<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
+<ul><li>ID_CARD : 中国大陆居民身份证(默认值)</li>
+<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>
                      * @return IdCardType 签署方经办人的证件类型，支持以下类型
-<ul><li>ID_CARD : 居民身份证(默认值)</li>
-<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
-<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
+<ul><li>ID_CARD : 中国大陆居民身份证(默认值)</li>
+<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>
                      * 
                      */
                     std::string GetIdCardType() const;
 
                     /**
                      * 设置签署方经办人的证件类型，支持以下类型
-<ul><li>ID_CARD : 居民身份证(默认值)</li>
-<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
-<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
+<ul><li>ID_CARD : 中国大陆居民身份证(默认值)</li>
+<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>
                      * @param _idCardType 签署方经办人的证件类型，支持以下类型
-<ul><li>ID_CARD : 居民身份证(默认值)</li>
-<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
-<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
+<ul><li>ID_CARD : 中国大陆居民身份证(默认值)</li>
+<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>
                      * 
                      */
                     void SetIdCardType(const std::string& _idCardType);
@@ -191,30 +191,30 @@ namespace TencentCloud
 
                     /**
                      * 获取证件号码，应符合以下规则
-<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li>
-<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。
+<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li>
+<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。
 </li>
-<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
                      * @return IdCardNumber 证件号码，应符合以下规则
-<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li>
-<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。
+<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li>
+<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。
 </li>
-<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
                      * 
                      */
                     std::string GetIdCardNumber() const;
 
                     /**
                      * 设置证件号码，应符合以下规则
-<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li>
-<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。
+<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li>
+<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。
 </li>
-<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
                      * @param _idCardNumber 证件号码，应符合以下规则
-<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li>
-<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。
+<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li>
+<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。
 </li>
-<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
                      * 
                      */
                     void SetIdCardNumber(const std::string& _idCardNumber);
@@ -282,18 +282,18 @@ namespace TencentCloud
 
                     /**
                      * 获取第三方平台子客企业的唯一标识，定义Agent中的ProxyOrganizationOpenId一样, 可以参考<a href="https://qian.tencent.com/developers/partnerApis/dataTypes/#agent" target="_blank">Agent结构体</a>。
-当为子客企业指定经办人时，此OrganizationOpenId必传。
+<font color="red">当为子客企业指定经办人时，此OrganizationOpenId必传。</font>
                      * @return OrganizationOpenId 第三方平台子客企业的唯一标识，定义Agent中的ProxyOrganizationOpenId一样, 可以参考<a href="https://qian.tencent.com/developers/partnerApis/dataTypes/#agent" target="_blank">Agent结构体</a>。
-当为子客企业指定经办人时，此OrganizationOpenId必传。
+<font color="red">当为子客企业指定经办人时，此OrganizationOpenId必传。</font>
                      * 
                      */
                     std::string GetOrganizationOpenId() const;
 
                     /**
                      * 设置第三方平台子客企业的唯一标识，定义Agent中的ProxyOrganizationOpenId一样, 可以参考<a href="https://qian.tencent.com/developers/partnerApis/dataTypes/#agent" target="_blank">Agent结构体</a>。
-当为子客企业指定经办人时，此OrganizationOpenId必传。
+<font color="red">当为子客企业指定经办人时，此OrganizationOpenId必传。</font>
                      * @param _organizationOpenId 第三方平台子客企业的唯一标识，定义Agent中的ProxyOrganizationOpenId一样, 可以参考<a href="https://qian.tencent.com/developers/partnerApis/dataTypes/#agent" target="_blank">Agent结构体</a>。
-当为子客企业指定经办人时，此OrganizationOpenId必传。
+<font color="red">当为子客企业指定经办人时，此OrganizationOpenId必传。</font>
                      * 
                      */
                     void SetOrganizationOpenId(const std::string& _organizationOpenId);
@@ -307,18 +307,18 @@ namespace TencentCloud
 
                     /**
                      * 获取第三方平台子客企业员工的唯一标识，长度不能超过64，只能由字母和数字组成。
-当签署方为同一第三方平台下的员工时，此OpenId必传。
+<font color="red">当签署方为同一第三方平台下的员工时，此OpenId必传。</font>
                      * @return OpenId 第三方平台子客企业员工的唯一标识，长度不能超过64，只能由字母和数字组成。
-当签署方为同一第三方平台下的员工时，此OpenId必传。
+<font color="red">当签署方为同一第三方平台下的员工时，此OpenId必传。</font>
                      * 
                      */
                     std::string GetOpenId() const;
 
                     /**
                      * 设置第三方平台子客企业员工的唯一标识，长度不能超过64，只能由字母和数字组成。
-当签署方为同一第三方平台下的员工时，此OpenId必传。
+<font color="red">当签署方为同一第三方平台下的员工时，此OpenId必传。</font>
                      * @param _openId 第三方平台子客企业员工的唯一标识，长度不能超过64，只能由字母和数字组成。
-当签署方为同一第三方平台下的员工时，此OpenId必传。
+<font color="red">当签署方为同一第三方平台下的员工时，此OpenId必传。</font>
                      * 
                      */
                     void SetOpenId(const std::string& _openId);
@@ -445,19 +445,19 @@ namespace TencentCloud
 
                     /**
                      * 签署方经办人的证件类型，支持以下类型
-<ul><li>ID_CARD : 居民身份证(默认值)</li>
-<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
-<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
+<ul><li>ID_CARD : 中国大陆居民身份证(默认值)</li>
+<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>
                      */
                     std::string m_idCardType;
                     bool m_idCardTypeHasBeenSet;
 
                     /**
                      * 证件号码，应符合以下规则
-<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li>
-<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。
+<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li>
+<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。
 </li>
-<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
                      */
                     std::string m_idCardNumber;
                     bool m_idCardNumberHasBeenSet;
@@ -479,14 +479,14 @@ namespace TencentCloud
 
                     /**
                      * 第三方平台子客企业的唯一标识，定义Agent中的ProxyOrganizationOpenId一样, 可以参考<a href="https://qian.tencent.com/developers/partnerApis/dataTypes/#agent" target="_blank">Agent结构体</a>。
-当为子客企业指定经办人时，此OrganizationOpenId必传。
+<font color="red">当为子客企业指定经办人时，此OrganizationOpenId必传。</font>
                      */
                     std::string m_organizationOpenId;
                     bool m_organizationOpenIdHasBeenSet;
 
                     /**
                      * 第三方平台子客企业员工的唯一标识，长度不能超过64，只能由字母和数字组成。
-当签署方为同一第三方平台下的员工时，此OpenId必传。
+<font color="red">当签署方为同一第三方平台下的员工时，此OpenId必传。</font>
                      */
                     std::string m_openId;
                     bool m_openIdHasBeenSet;

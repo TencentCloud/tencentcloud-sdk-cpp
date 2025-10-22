@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -129,9 +129,7 @@ namespace TencentCloud
 
                     /**
                      * 获取成功数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuccessCount 成功数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSuccessCount() const;
@@ -145,9 +143,7 @@ namespace TencentCloud
 
                     /**
                      * 获取量产最后失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastFailedReason 量产最后失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastFailedReason() const;
@@ -158,6 +154,20 @@ namespace TencentCloud
                      * 
                      */
                     bool LastFailedReasonHasBeenSet() const;
+
+                    /**
+                     * 获取量产状态  0：任务创建，未量产；1：处理中；2：量产结束上传结果中；3：任务完成
+                     * @return Status 量产状态  0：任务创建，未量产；1：处理中；2：量产结束上传结果中；3：任务完成
+                     * 
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
 
                 private:
 
@@ -199,17 +209,21 @@ namespace TencentCloud
 
                     /**
                      * 成功数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_successCount;
                     bool m_successCountHasBeenSet;
 
                     /**
                      * 量产最后失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastFailedReason;
                     bool m_lastFailedReasonHasBeenSet;
+
+                    /**
+                     * 量产状态  0：任务创建，未量产；1：处理中；2：量产结束上传结果中；3：任务完成
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

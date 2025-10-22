@@ -1,0 +1,80 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_IGTM_V20231024_MODEL_DESCRIBEADDRESSPOOLDETAILREQUEST_H_
+#define TENCENTCLOUD_IGTM_V20231024_MODEL_DESCRIBEADDRESSPOOLDETAILREQUEST_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Igtm
+    {
+        namespace V20231024
+        {
+            namespace Model
+            {
+                /**
+                * DescribeAddressPoolDetail请求参数结构体
+                */
+                class DescribeAddressPoolDetailRequest : public AbstractModel
+                {
+                public:
+                    DescribeAddressPoolDetailRequest();
+                    ~DescribeAddressPoolDetailRequest() = default;
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取地址池id
+                     * @return PoolId 地址池id
+                     * 
+                     */
+                    int64_t GetPoolId() const;
+
+                    /**
+                     * 设置地址池id
+                     * @param _poolId 地址池id
+                     * 
+                     */
+                    void SetPoolId(const int64_t& _poolId);
+
+                    /**
+                     * 判断参数 PoolId 是否已赋值
+                     * @return PoolId 是否已赋值
+                     * 
+                     */
+                    bool PoolIdHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 地址池id
+                     */
+                    int64_t m_poolId;
+                    bool m_poolIdHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_IGTM_V20231024_MODEL_DESCRIBEADDRESSPOOLDETAILREQUEST_H_

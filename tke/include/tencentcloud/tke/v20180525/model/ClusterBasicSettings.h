@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool ClusterDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取私有网络ID，形如vpc-xxx。创建托管空集群时必传。
-                     * @return VpcId 私有网络ID，形如vpc-xxx。创建托管空集群时必传。
+                     * 获取私有网络ID，形如vpc-e55paxnt。创建托管空集群时必传。
+                     * @return VpcId 私有网络ID，形如vpc-e55paxnt。创建托管空集群时必传。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私有网络ID，形如vpc-xxx。创建托管空集群时必传。
-                     * @param _vpcId 私有网络ID，形如vpc-xxx。创建托管空集群时必传。
+                     * 设置私有网络ID，形如vpc-e55paxnt。创建托管空集群时必传。
+                     * @param _vpcId 私有网络ID，形如vpc-e55paxnt。创建托管空集群时必传。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -238,15 +238,23 @@ namespace TencentCloud
                     bool NeedWorkSecurityGroupHasBeenSet() const;
 
                     /**
-                     * 获取当选择Cilium Overlay网络插件时，TKE会从该子网获取2个IP用来创建内网负载均衡
-                     * @return SubnetId 当选择Cilium Overlay网络插件时，TKE会从该子网获取2个IP用来创建内网负载均衡
+                     * 获取控制面子网信息，仅在以下场景使用时要求必填。
+- 容器网络插件为CiliumOverlay时，TKE会从该子网获取2个IP用来创建内网负载均衡。
+- 创建支持CDC的托管集群，且网络插件为VPC-CNI时，要求预留至少12个IP。
+                     * @return SubnetId 控制面子网信息，仅在以下场景使用时要求必填。
+- 容器网络插件为CiliumOverlay时，TKE会从该子网获取2个IP用来创建内网负载均衡。
+- 创建支持CDC的托管集群，且网络插件为VPC-CNI时，要求预留至少12个IP。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置当选择Cilium Overlay网络插件时，TKE会从该子网获取2个IP用来创建内网负载均衡
-                     * @param _subnetId 当选择Cilium Overlay网络插件时，TKE会从该子网获取2个IP用来创建内网负载均衡
+                     * 设置控制面子网信息，仅在以下场景使用时要求必填。
+- 容器网络插件为CiliumOverlay时，TKE会从该子网获取2个IP用来创建内网负载均衡。
+- 创建支持CDC的托管集群，且网络插件为VPC-CNI时，要求预留至少12个IP。
+                     * @param _subnetId 控制面子网信息，仅在以下场景使用时要求必填。
+- 容器网络插件为CiliumOverlay时，TKE会从该子网获取2个IP用来创建内网负载均衡。
+- 创建支持CDC的托管集群，且网络插件为VPC-CNI时，要求预留至少12个IP。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -327,7 +335,7 @@ namespace TencentCloud
                     bool m_clusterDescriptionHasBeenSet;
 
                     /**
-                     * 私有网络ID，形如vpc-xxx。创建托管空集群时必传。
+                     * 私有网络ID，形如vpc-e55paxnt。创建托管空集群时必传。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
@@ -357,7 +365,9 @@ namespace TencentCloud
                     bool m_needWorkSecurityGroupHasBeenSet;
 
                     /**
-                     * 当选择Cilium Overlay网络插件时，TKE会从该子网获取2个IP用来创建内网负载均衡
+                     * 控制面子网信息，仅在以下场景使用时要求必填。
+- 容器网络插件为CiliumOverlay时，TKE会从该子网获取2个IP用来创建内网负载均衡。
+- 创建支持CDC的托管集群，且网络插件为VPC-CNI时，要求预留至少12个IP。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;

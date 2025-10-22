@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -399,6 +399,132 @@ namespace TencentCloud
                      */
                     bool VoucherSubTypeHasBeenSet() const;
 
+                    /**
+                     * 获取券有效时间开始时间
+                     * @return StartTimeFrom 券有效时间开始时间
+                     * 
+                     */
+                    std::string GetStartTimeFrom() const;
+
+                    /**
+                     * 设置券有效时间开始时间
+                     * @param _startTimeFrom 券有效时间开始时间
+                     * 
+                     */
+                    void SetStartTimeFrom(const std::string& _startTimeFrom);
+
+                    /**
+                     * 判断参数 StartTimeFrom 是否已赋值
+                     * @return StartTimeFrom 是否已赋值
+                     * 
+                     */
+                    bool StartTimeFromHasBeenSet() const;
+
+                    /**
+                     * 获取券有效时间结束时间
+                     * @return StartTimeTo 券有效时间结束时间
+                     * 
+                     */
+                    std::string GetStartTimeTo() const;
+
+                    /**
+                     * 设置券有效时间结束时间
+                     * @param _startTimeTo 券有效时间结束时间
+                     * 
+                     */
+                    void SetStartTimeTo(const std::string& _startTimeTo);
+
+                    /**
+                     * 判断参数 StartTimeTo 是否已赋值
+                     * @return StartTimeTo 是否已赋值
+                     * 
+                     */
+                    bool StartTimeToHasBeenSet() const;
+
+                    /**
+                     * 获取券失效时间开始时间
+                     * @return EndTimeFrom 券失效时间开始时间
+                     * 
+                     */
+                    std::string GetEndTimeFrom() const;
+
+                    /**
+                     * 设置券失效时间开始时间
+                     * @param _endTimeFrom 券失效时间开始时间
+                     * 
+                     */
+                    void SetEndTimeFrom(const std::string& _endTimeFrom);
+
+                    /**
+                     * 判断参数 EndTimeFrom 是否已赋值
+                     * @return EndTimeFrom 是否已赋值
+                     * 
+                     */
+                    bool EndTimeFromHasBeenSet() const;
+
+                    /**
+                     * 获取券失效时间结束时间
+                     * @return EndTimeTo 券失效时间结束时间
+                     * 
+                     */
+                    std::string GetEndTimeTo() const;
+
+                    /**
+                     * 设置券失效时间结束时间
+                     * @param _endTimeTo 券失效时间结束时间
+                     * 
+                     */
+                    void SetEndTimeTo(const std::string& _endTimeTo);
+
+                    /**
+                     * 判断参数 EndTimeTo 是否已赋值
+                     * @return EndTimeTo 是否已赋值
+                     * 
+                     */
+                    bool EndTimeToHasBeenSet() const;
+
+                    /**
+                     * 获取发券时间开始时间
+                     * @return CreateTimeFrom 发券时间开始时间
+                     * 
+                     */
+                    std::string GetCreateTimeFrom() const;
+
+                    /**
+                     * 设置发券时间开始时间
+                     * @param _createTimeFrom 发券时间开始时间
+                     * 
+                     */
+                    void SetCreateTimeFrom(const std::string& _createTimeFrom);
+
+                    /**
+                     * 判断参数 CreateTimeFrom 是否已赋值
+                     * @return CreateTimeFrom 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeFromHasBeenSet() const;
+
+                    /**
+                     * 获取发券时间结束时间
+                     * @return CreateTimeTo 发券时间结束时间
+                     * 
+                     */
+                    std::string GetCreateTimeTo() const;
+
+                    /**
+                     * 设置发券时间结束时间
+                     * @param _createTimeTo 发券时间结束时间
+                     * 
+                     */
+                    void SetCreateTimeTo(const std::string& _createTimeTo);
+
+                    /**
+                     * 判断参数 CreateTimeTo 是否已赋值
+                     * @return CreateTimeTo 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeToHasBeenSet() const;
+
                 private:
 
                     /**
@@ -502,6 +628,42 @@ namespace TencentCloud
                      */
                     std::string m_voucherSubType;
                     bool m_voucherSubTypeHasBeenSet;
+
+                    /**
+                     * 券有效时间开始时间
+                     */
+                    std::string m_startTimeFrom;
+                    bool m_startTimeFromHasBeenSet;
+
+                    /**
+                     * 券有效时间结束时间
+                     */
+                    std::string m_startTimeTo;
+                    bool m_startTimeToHasBeenSet;
+
+                    /**
+                     * 券失效时间开始时间
+                     */
+                    std::string m_endTimeFrom;
+                    bool m_endTimeFromHasBeenSet;
+
+                    /**
+                     * 券失效时间结束时间
+                     */
+                    std::string m_endTimeTo;
+                    bool m_endTimeToHasBeenSet;
+
+                    /**
+                     * 发券时间开始时间
+                     */
+                    std::string m_createTimeFrom;
+                    bool m_createTimeFromHasBeenSet;
+
+                    /**
+                     * 发券时间结束时间
+                     */
+                    std::string m_createTimeTo;
+                    bool m_createTimeToHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,7 +69,12 @@ IntegrationTaskInfo::IntegrationTaskInfo() :
     m_readPhaseHasBeenSet(false),
     m_instanceVersionHasBeenSet(false),
     m_arrangeSpaceTaskIdHasBeenSet(false),
-    m_offlineTaskStatusHasBeenSet(false)
+    m_offlineTaskStatusHasBeenSet(false),
+    m_taskImportInfoHasBeenSet(false),
+    m_businessLatencyHasBeenSet(false),
+    m_currentSyncPositionHasBeenSet(false),
+    m_tagListHasBeenSet(false),
+    m_errorMessageHasBeenSet(false)
 {
 }
 
@@ -631,6 +636,73 @@ CoreInternalOutcome IntegrationTaskInfo::Deserialize(const rapidjson::Value &val
         m_offlineTaskStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskImportInfo") && !value["TaskImportInfo"].IsNull())
+    {
+        if (!value["TaskImportInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntegrationTaskInfo.TaskImportInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_taskImportInfo.Deserialize(value["TaskImportInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_taskImportInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("BusinessLatency") && !value["BusinessLatency"].IsNull())
+    {
+        if (!value["BusinessLatency"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntegrationTaskInfo.BusinessLatency` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_businessLatency = value["BusinessLatency"].GetInt64();
+        m_businessLatencyHasBeenSet = true;
+    }
+
+    if (value.HasMember("CurrentSyncPosition") && !value["CurrentSyncPosition"].IsNull())
+    {
+        if (!value["CurrentSyncPosition"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntegrationTaskInfo.CurrentSyncPosition` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_currentSyncPosition = value["CurrentSyncPosition"].GetInt64();
+        m_currentSyncPositionHasBeenSet = true;
+    }
+
+    if (value.HasMember("TagList") && !value["TagList"].IsNull())
+    {
+        if (!value["TagList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `IntegrationTaskInfo.TagList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TagList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            IntegrationTag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagList.push_back(item);
+        }
+        m_tagListHasBeenSet = true;
+    }
+
+    if (value.HasMember("ErrorMessage") && !value["ErrorMessage"].IsNull())
+    {
+        if (!value["ErrorMessage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntegrationTaskInfo.ErrorMessage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errorMessage = string(value["ErrorMessage"].GetString());
+        m_errorMessageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1074,6 +1146,54 @@ void IntegrationTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "OfflineTaskStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_offlineTaskStatus, allocator);
+    }
+
+    if (m_taskImportInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskImportInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_taskImportInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_businessLatencyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BusinessLatency";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_businessLatency, allocator);
+    }
+
+    if (m_currentSyncPositionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CurrentSyncPosition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_currentSyncPosition, allocator);
+    }
+
+    if (m_tagListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagList.begin(); itr != m_tagList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_errorMessageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorMessage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorMessage.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1861,5 +1981,85 @@ void IntegrationTaskInfo::SetOfflineTaskStatus(const int64_t& _offlineTaskStatus
 bool IntegrationTaskInfo::OfflineTaskStatusHasBeenSet() const
 {
     return m_offlineTaskStatusHasBeenSet;
+}
+
+TaskImportInfo IntegrationTaskInfo::GetTaskImportInfo() const
+{
+    return m_taskImportInfo;
+}
+
+void IntegrationTaskInfo::SetTaskImportInfo(const TaskImportInfo& _taskImportInfo)
+{
+    m_taskImportInfo = _taskImportInfo;
+    m_taskImportInfoHasBeenSet = true;
+}
+
+bool IntegrationTaskInfo::TaskImportInfoHasBeenSet() const
+{
+    return m_taskImportInfoHasBeenSet;
+}
+
+int64_t IntegrationTaskInfo::GetBusinessLatency() const
+{
+    return m_businessLatency;
+}
+
+void IntegrationTaskInfo::SetBusinessLatency(const int64_t& _businessLatency)
+{
+    m_businessLatency = _businessLatency;
+    m_businessLatencyHasBeenSet = true;
+}
+
+bool IntegrationTaskInfo::BusinessLatencyHasBeenSet() const
+{
+    return m_businessLatencyHasBeenSet;
+}
+
+int64_t IntegrationTaskInfo::GetCurrentSyncPosition() const
+{
+    return m_currentSyncPosition;
+}
+
+void IntegrationTaskInfo::SetCurrentSyncPosition(const int64_t& _currentSyncPosition)
+{
+    m_currentSyncPosition = _currentSyncPosition;
+    m_currentSyncPositionHasBeenSet = true;
+}
+
+bool IntegrationTaskInfo::CurrentSyncPositionHasBeenSet() const
+{
+    return m_currentSyncPositionHasBeenSet;
+}
+
+vector<IntegrationTag> IntegrationTaskInfo::GetTagList() const
+{
+    return m_tagList;
+}
+
+void IntegrationTaskInfo::SetTagList(const vector<IntegrationTag>& _tagList)
+{
+    m_tagList = _tagList;
+    m_tagListHasBeenSet = true;
+}
+
+bool IntegrationTaskInfo::TagListHasBeenSet() const
+{
+    return m_tagListHasBeenSet;
+}
+
+string IntegrationTaskInfo::GetErrorMessage() const
+{
+    return m_errorMessage;
+}
+
+void IntegrationTaskInfo::SetErrorMessage(const string& _errorMessage)
+{
+    m_errorMessage = _errorMessage;
+    m_errorMessageHasBeenSet = true;
+}
+
+bool IntegrationTaskInfo::ErrorMessageHasBeenSet() const
+{
+    return m_errorMessageHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取执行器类型。
-                     * @return Type 执行器类型。
+                     * 获取执行器类型。目前仅支持 SCHEDULE 一种。
+                     * @return Type 执行器类型。目前仅支持 SCHEDULE 一种。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置执行器类型。
-                     * @param _type 执行器类型。
+                     * 设置执行器类型。目前仅支持 SCHEDULE 一种。
+                     * @param _type 执行器类型。目前仅支持 SCHEDULE 一种。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -217,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取执行器周期计划。周期执行器会返回此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScheduleSettings 执行器周期计划。周期执行器会返回此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ScheduleSettings GetScheduleSettings() const;
 
                     /**
                      * 设置执行器周期计划。周期执行器会返回此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scheduleSettings 执行器周期计划。周期执行器会返回此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScheduleSettings(const ScheduleSettings& _scheduleSettings);
@@ -241,15 +237,15 @@ namespace TencentCloud
                     bool ScheduleSettingsHasBeenSet() const;
 
                     /**
-                     * 获取创建时间。
-                     * @return CreatedTime 创建时间。
+                     * 获取创建时间。格式为：YYYY-MM-DDThh:mm:ssZ
+                     * @return CreatedTime 创建时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置创建时间。
-                     * @param _createdTime 创建时间。
+                     * 设置创建时间。格式为：YYYY-MM-DDThh:mm:ssZ
+                     * @param _createdTime 创建时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -262,15 +258,15 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取修改时间。
-                     * @return UpdatedTime 修改时间。
+                     * 获取修改时间。格式为：YYYY-MM-DDThh:mm:ssZ
+                     * @return UpdatedTime 修改时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      * 
                      */
                     std::string GetUpdatedTime() const;
 
                     /**
-                     * 设置修改时间。
-                     * @param _updatedTime 修改时间。
+                     * 设置修改时间。格式为：YYYY-MM-DDThh:mm:ssZ
+                     * @param _updatedTime 修改时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      * 
                      */
                     void SetUpdatedTime(const std::string& _updatedTime);
@@ -297,7 +293,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 执行器类型。
+                     * 执行器类型。目前仅支持 SCHEDULE 一种。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -334,19 +330,18 @@ namespace TencentCloud
 
                     /**
                      * 执行器周期计划。周期执行器会返回此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ScheduleSettings m_scheduleSettings;
                     bool m_scheduleSettingsHasBeenSet;
 
                     /**
-                     * 创建时间。
+                     * 创建时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 修改时间。
+                     * 修改时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      */
                     std::string m_updatedTime;
                     bool m_updatedTimeHasBeenSet;

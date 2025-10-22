@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,12 +23,6 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
-#include <tencentcloud/ecdn/v20191012/model/AddEcdnDomainRequest.h>
-#include <tencentcloud/ecdn/v20191012/model/AddEcdnDomainResponse.h>
-#include <tencentcloud/ecdn/v20191012/model/CreateVerifyRecordRequest.h>
-#include <tencentcloud/ecdn/v20191012/model/CreateVerifyRecordResponse.h>
-#include <tencentcloud/ecdn/v20191012/model/DeleteEcdnDomainRequest.h>
-#include <tencentcloud/ecdn/v20191012/model/DeleteEcdnDomainResponse.h>
 #include <tencentcloud/ecdn/v20191012/model/DescribeDomainsRequest.h>
 #include <tencentcloud/ecdn/v20191012/model/DescribeDomainsResponse.h>
 #include <tencentcloud/ecdn/v20191012/model/DescribeDomainsConfigRequest.h>
@@ -41,20 +35,6 @@
 #include <tencentcloud/ecdn/v20191012/model/DescribeEcdnStatisticsResponse.h>
 #include <tencentcloud/ecdn/v20191012/model/DescribeIpStatusRequest.h>
 #include <tencentcloud/ecdn/v20191012/model/DescribeIpStatusResponse.h>
-#include <tencentcloud/ecdn/v20191012/model/DescribePurgeQuotaRequest.h>
-#include <tencentcloud/ecdn/v20191012/model/DescribePurgeQuotaResponse.h>
-#include <tencentcloud/ecdn/v20191012/model/DescribePurgeTasksRequest.h>
-#include <tencentcloud/ecdn/v20191012/model/DescribePurgeTasksResponse.h>
-#include <tencentcloud/ecdn/v20191012/model/PurgePathCacheRequest.h>
-#include <tencentcloud/ecdn/v20191012/model/PurgePathCacheResponse.h>
-#include <tencentcloud/ecdn/v20191012/model/PurgeUrlsCacheRequest.h>
-#include <tencentcloud/ecdn/v20191012/model/PurgeUrlsCacheResponse.h>
-#include <tencentcloud/ecdn/v20191012/model/StartEcdnDomainRequest.h>
-#include <tencentcloud/ecdn/v20191012/model/StartEcdnDomainResponse.h>
-#include <tencentcloud/ecdn/v20191012/model/StopEcdnDomainRequest.h>
-#include <tencentcloud/ecdn/v20191012/model/StopEcdnDomainResponse.h>
-#include <tencentcloud/ecdn/v20191012/model/UpdateDomainConfigRequest.h>
-#include <tencentcloud/ecdn/v20191012/model/UpdateDomainConfigResponse.h>
 
 
 namespace TencentCloud
@@ -69,15 +49,6 @@ namespace TencentCloud
                 EcdnClient(const Credential &credential, const std::string &region);
                 EcdnClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Core::Error, Model::AddEcdnDomainResponse> AddEcdnDomainOutcome;
-                typedef std::future<AddEcdnDomainOutcome> AddEcdnDomainOutcomeCallable;
-                typedef std::function<void(const EcdnClient*, const Model::AddEcdnDomainRequest&, AddEcdnDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddEcdnDomainAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateVerifyRecordResponse> CreateVerifyRecordOutcome;
-                typedef std::future<CreateVerifyRecordOutcome> CreateVerifyRecordOutcomeCallable;
-                typedef std::function<void(const EcdnClient*, const Model::CreateVerifyRecordRequest&, CreateVerifyRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVerifyRecordAsyncHandler;
-                typedef Outcome<Core::Error, Model::DeleteEcdnDomainResponse> DeleteEcdnDomainOutcome;
-                typedef std::future<DeleteEcdnDomainOutcome> DeleteEcdnDomainOutcomeCallable;
-                typedef std::function<void(const EcdnClient*, const Model::DeleteEcdnDomainRequest&, DeleteEcdnDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEcdnDomainAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDomainsResponse> DescribeDomainsOutcome;
                 typedef std::future<DescribeDomainsOutcome> DescribeDomainsOutcomeCallable;
                 typedef std::function<void(const EcdnClient*, const Model::DescribeDomainsRequest&, DescribeDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainsAsyncHandler;
@@ -96,71 +67,13 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIpStatusResponse> DescribeIpStatusOutcome;
                 typedef std::future<DescribeIpStatusOutcome> DescribeIpStatusOutcomeCallable;
                 typedef std::function<void(const EcdnClient*, const Model::DescribeIpStatusRequest&, DescribeIpStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpStatusAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribePurgeQuotaResponse> DescribePurgeQuotaOutcome;
-                typedef std::future<DescribePurgeQuotaOutcome> DescribePurgeQuotaOutcomeCallable;
-                typedef std::function<void(const EcdnClient*, const Model::DescribePurgeQuotaRequest&, DescribePurgeQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePurgeQuotaAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribePurgeTasksResponse> DescribePurgeTasksOutcome;
-                typedef std::future<DescribePurgeTasksOutcome> DescribePurgeTasksOutcomeCallable;
-                typedef std::function<void(const EcdnClient*, const Model::DescribePurgeTasksRequest&, DescribePurgeTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePurgeTasksAsyncHandler;
-                typedef Outcome<Core::Error, Model::PurgePathCacheResponse> PurgePathCacheOutcome;
-                typedef std::future<PurgePathCacheOutcome> PurgePathCacheOutcomeCallable;
-                typedef std::function<void(const EcdnClient*, const Model::PurgePathCacheRequest&, PurgePathCacheOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PurgePathCacheAsyncHandler;
-                typedef Outcome<Core::Error, Model::PurgeUrlsCacheResponse> PurgeUrlsCacheOutcome;
-                typedef std::future<PurgeUrlsCacheOutcome> PurgeUrlsCacheOutcomeCallable;
-                typedef std::function<void(const EcdnClient*, const Model::PurgeUrlsCacheRequest&, PurgeUrlsCacheOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PurgeUrlsCacheAsyncHandler;
-                typedef Outcome<Core::Error, Model::StartEcdnDomainResponse> StartEcdnDomainOutcome;
-                typedef std::future<StartEcdnDomainOutcome> StartEcdnDomainOutcomeCallable;
-                typedef std::function<void(const EcdnClient*, const Model::StartEcdnDomainRequest&, StartEcdnDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartEcdnDomainAsyncHandler;
-                typedef Outcome<Core::Error, Model::StopEcdnDomainResponse> StopEcdnDomainOutcome;
-                typedef std::future<StopEcdnDomainOutcome> StopEcdnDomainOutcomeCallable;
-                typedef std::function<void(const EcdnClient*, const Model::StopEcdnDomainRequest&, StopEcdnDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopEcdnDomainAsyncHandler;
-                typedef Outcome<Core::Error, Model::UpdateDomainConfigResponse> UpdateDomainConfigOutcome;
-                typedef std::future<UpdateDomainConfigOutcome> UpdateDomainConfigOutcomeCallable;
-                typedef std::function<void(const EcdnClient*, const Model::UpdateDomainConfigRequest&, UpdateDomainConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDomainConfigAsyncHandler;
 
 
 
                 /**
-                 *ECDN融合CDN后，接口都用CDN的，此接口已经废弃
+                 *ECDN平台下线，接口开始预下线处理
 
-本接口（AddEcdnDomain）用于创建加速域名。
-
->?  若您的业务已迁移至 CDN 控制台，请参考<a href="https://cloud.tencent.com/document/api/228/41123"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。
-                 * @param req AddEcdnDomainRequest
-                 * @return AddEcdnDomainOutcome
-                 */
-                AddEcdnDomainOutcome AddEcdnDomain(const Model::AddEcdnDomainRequest &request);
-                void AddEcdnDomainAsync(const Model::AddEcdnDomainRequest& request, const AddEcdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                AddEcdnDomainOutcomeCallable AddEcdnDomainCallable(const Model::AddEcdnDomainRequest& request);
-
-                /**
-                 *ECDN融合CDN后，接口都用CDN的，此接口已经废弃
-
-生成一条子域名解析，提示客户添加到域名解析上，用于泛域名及域名取回校验归属权。
-
->?  若您的业务已迁移至 CDN 控制台，请参考<a href="	https://cloud.tencent.com/document/api/228/48118"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。
-                 * @param req CreateVerifyRecordRequest
-                 * @return CreateVerifyRecordOutcome
-                 */
-                CreateVerifyRecordOutcome CreateVerifyRecord(const Model::CreateVerifyRecordRequest &request);
-                void CreateVerifyRecordAsync(const Model::CreateVerifyRecordRequest& request, const CreateVerifyRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateVerifyRecordOutcomeCallable CreateVerifyRecordCallable(const Model::CreateVerifyRecordRequest& request);
-
-                /**
-                 *ECDN融合CDN后，接口都用CDN的，此接口已经废弃
-
-本接口（DeleteEcdnDomain）用于删除指定加速域名。待删除域名必须处于已停用状态。
-
->?  若您的业务已迁移至 CDN 控制台，请参考<a href="https://cloud.tencent.com/document/api/228/41122"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。
-                 * @param req DeleteEcdnDomainRequest
-                 * @return DeleteEcdnDomainOutcome
-                 */
-                DeleteEcdnDomainOutcome DeleteEcdnDomain(const Model::DeleteEcdnDomainRequest &request);
-                void DeleteEcdnDomainAsync(const Model::DeleteEcdnDomainRequest& request, const DeleteEcdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DeleteEcdnDomainOutcomeCallable DeleteEcdnDomainCallable(const Model::DeleteEcdnDomainRequest& request);
-
-                /**
-                 *本接口（DescribeDomains）用于查询CDN域名基本信息，包括项目id，状态，业务类型，创建时间，更新时间等。
+本接口（DescribeDomains）用于查询CDN域名基本信息，包括项目id，状态，业务类型，创建时间，更新时间等。
 
 >?  若您的业务已迁移至 CDN 控制台，请参考<a href="https://cloud.tencent.com/document/api/228/41118"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。
                  * @param req DescribeDomainsRequest
@@ -171,7 +84,9 @@ namespace TencentCloud
                 DescribeDomainsOutcomeCallable DescribeDomainsCallable(const Model::DescribeDomainsRequest& request);
 
                 /**
-                 *本接口（DescribeDomainsConfig）用于查询CDN加速域名详细配置信息。
+                 *ECDN平台下线，接口开始预下线处理
+
+本接口（DescribeDomainsConfig）用于查询CDN加速域名详细配置信息。
 
 >?  若您的业务已迁移至 CDN 控制台，请参考<a href="https://cloud.tencent.com/document/api/228/41117"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。
                  * @param req DescribeDomainsConfigRequest
@@ -182,7 +97,9 @@ namespace TencentCloud
                 DescribeDomainsConfigOutcomeCallable DescribeDomainsConfigCallable(const Model::DescribeDomainsConfigRequest& request);
 
                 /**
-                 *本接口（DescribeEcdnDomainLogs）用于查询域名的访问日志下载地址。
+                 *ECDN平台下线，接口开始预下线处理
+
+本接口（DescribeEcdnDomainLogs）用于查询域名的访问日志下载地址。
                  * @param req DescribeEcdnDomainLogsRequest
                  * @return DescribeEcdnDomainLogsOutcome
                  */
@@ -191,7 +108,9 @@ namespace TencentCloud
                 DescribeEcdnDomainLogsOutcomeCallable DescribeEcdnDomainLogsCallable(const Model::DescribeEcdnDomainLogsRequest& request);
 
                 /**
-                 *本接口（DescribeEcdnDomainStatistics）用于查询指定时间段内的域名访问统计指标。
+                 *ECDN平台下线，接口开始预下线处理
+
+本接口（DescribeEcdnDomainStatistics）用于查询指定时间段内的域名访问统计指标。
 
 >?  若您的业务已迁移至 CDN 控制台，请参考<a href="https://cloud.tencent.com/document/api/228/30986"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。
                  * @param req DescribeEcdnDomainStatisticsRequest
@@ -202,7 +121,9 @@ namespace TencentCloud
                 DescribeEcdnDomainStatisticsOutcomeCallable DescribeEcdnDomainStatisticsCallable(const Model::DescribeEcdnDomainStatisticsRequest& request);
 
                 /**
-                 *DescribeEcdnStatistics用于查询 ECDN 实时访问监控数据，支持以下指标查询：
+                 *ECDN平台下线，接口开始预下线处理
+
+DescribeEcdnStatistics用于查询 ECDN 实时访问监控数据，支持以下指标查询：
 
 + 流量（单位为 byte）
 + 带宽（单位为 bps）
@@ -219,7 +140,9 @@ namespace TencentCloud
                 DescribeEcdnStatisticsOutcomeCallable DescribeEcdnStatisticsCallable(const Model::DescribeEcdnStatisticsRequest& request);
 
                 /**
-                 *DescribeIpStatus 用于查询域名所在加速平台的所有节点信息, 如果您的源站有白名单设置,可以通过本接口获取ECDN服务的节点IP进行加白, 本接口为内测接口,请联系腾讯云工程师开白。
+                 *ECDN平台下线，接口开始预下线处理
+
+DescribeIpStatus 用于查询域名所在加速平台的所有节点信息, 如果您的源站有白名单设置,可以通过本接口获取ECDN服务的节点IP进行加白, 本接口为内测接口,请联系腾讯云工程师开白。
 
 由于产品服务节点常有更新，对于源站开白的使用场景，请定期调用接口获取最新节点信息，若新增服务节点发布7日后您尚未更新加白导致回源失败等问题，ECDN侧不对此承担责任。
                  * @param req DescribeIpStatusRequest
@@ -228,95 +151,6 @@ namespace TencentCloud
                 DescribeIpStatusOutcome DescribeIpStatus(const Model::DescribeIpStatusRequest &request);
                 void DescribeIpStatusAsync(const Model::DescribeIpStatusRequest& request, const DescribeIpStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeIpStatusOutcomeCallable DescribeIpStatusCallable(const Model::DescribeIpStatusRequest& request);
-
-                /**
-                 *ECDN融合CDN后，接口都用CDN的，此接口已经废弃
-
-查询刷新接口的用量配额。
-
->?  若您的业务已迁移至 CDN 控制台，请参考<a href="https://cloud.tencent.com/document/api/228/41956"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。
-                 * @param req DescribePurgeQuotaRequest
-                 * @return DescribePurgeQuotaOutcome
-                 */
-                DescribePurgeQuotaOutcome DescribePurgeQuota(const Model::DescribePurgeQuotaRequest &request);
-                void DescribePurgeQuotaAsync(const Model::DescribePurgeQuotaRequest& request, const DescribePurgeQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribePurgeQuotaOutcomeCallable DescribePurgeQuotaCallable(const Model::DescribePurgeQuotaRequest& request);
-
-                /**
-                 *DescribePurgeTasks 用于查询刷新任务提交历史记录及执行进度。
-
->?  若您的业务已迁移至 CDN 控制台，请参考<a href="https://cloud.tencent.com/document/api/228/37873"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。
-                 * @param req DescribePurgeTasksRequest
-                 * @return DescribePurgeTasksOutcome
-                 */
-                DescribePurgeTasksOutcome DescribePurgeTasks(const Model::DescribePurgeTasksRequest &request);
-                void DescribePurgeTasksAsync(const Model::DescribePurgeTasksRequest& request, const DescribePurgeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribePurgeTasksOutcomeCallable DescribePurgeTasksCallable(const Model::DescribePurgeTasksRequest& request);
-
-                /**
-                 *ECDN融合CDN后，接口都用CDN的，此接口已经废弃
-
-PurgePathCache 用于批量刷新目录缓存，一次提交将返回一个刷新任务id。
-
->?  若您的业务已迁移至 CDN 控制台，请参考<a href="	https://cloud.tencent.com/document/api/570/42475"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。
-                 * @param req PurgePathCacheRequest
-                 * @return PurgePathCacheOutcome
-                 */
-                PurgePathCacheOutcome PurgePathCache(const Model::PurgePathCacheRequest &request);
-                void PurgePathCacheAsync(const Model::PurgePathCacheRequest& request, const PurgePathCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                PurgePathCacheOutcomeCallable PurgePathCacheCallable(const Model::PurgePathCacheRequest& request);
-
-                /**
-                 *PurgeUrlsCache 用于批量刷新Url，一次提交将返回一个刷新任务id。
-
->?  若您的业务已迁移至 CDN 控制台，请参考<a href="https://cloud.tencent.com/document/api/228/37870"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。
-                 * @param req PurgeUrlsCacheRequest
-                 * @return PurgeUrlsCacheOutcome
-                 */
-                PurgeUrlsCacheOutcome PurgeUrlsCache(const Model::PurgeUrlsCacheRequest &request);
-                void PurgeUrlsCacheAsync(const Model::PurgeUrlsCacheRequest& request, const PurgeUrlsCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                PurgeUrlsCacheOutcomeCallable PurgeUrlsCacheCallable(const Model::PurgeUrlsCacheRequest& request);
-
-                /**
-                 *ECDN融合CDN后，接口都用CDN的，此接口已经废弃
-
-本接口（StartEcdnDomain）用于启用加速域名，待启用域名必须处于已下线状态。
-
->?  若您的业务已迁移至 CDN 控制台，请参考<a href="https://cloud.tencent.com/document/product/228/41121"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。
-                 * @param req StartEcdnDomainRequest
-                 * @return StartEcdnDomainOutcome
-                 */
-                StartEcdnDomainOutcome StartEcdnDomain(const Model::StartEcdnDomainRequest &request);
-                void StartEcdnDomainAsync(const Model::StartEcdnDomainRequest& request, const StartEcdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                StartEcdnDomainOutcomeCallable StartEcdnDomainCallable(const Model::StartEcdnDomainRequest& request);
-
-                /**
-                 *ECDN融合CDN后，接口都用CDN的，此接口已经废弃
-
-本接口（StopCdnDomain）用于停止加速域名，待停用加速域名必须处于已上线或部署中状态。
-
->?  若您的业务已迁移至 CDN 控制台，请参考<a href="https://cloud.tencent.com/document/product/228/41120"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。
-                 * @param req StopEcdnDomainRequest
-                 * @return StopEcdnDomainOutcome
-                 */
-                StopEcdnDomainOutcome StopEcdnDomain(const Model::StopEcdnDomainRequest &request);
-                void StopEcdnDomainAsync(const Model::StopEcdnDomainRequest& request, const StopEcdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                StopEcdnDomainOutcomeCallable StopEcdnDomainCallable(const Model::StopEcdnDomainRequest& request);
-
-                /**
-                 *ECDN融合CDN后，接口都用CDN的，此接口已经废弃
-
-本接口（UpdateDomainConfig）用于更新ECDN加速域名配置信息。
-注意：如果需要更新复杂类型的配置项，必须传递整个对象的所有属性，未传递的属性将使用默认值。建议通过查询接口获取配置属性后，直接修改后传递给本接口。Https配置由于证书的特殊性，更新时不用传递证书和密钥字段。
-
->?  若您的业务已迁移至 CDN 控制台，请参考<a href="https://cloud.tencent.com/document/product/228/41116"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。
-
-                 * @param req UpdateDomainConfigRequest
-                 * @return UpdateDomainConfigOutcome
-                 */
-                UpdateDomainConfigOutcome UpdateDomainConfig(const Model::UpdateDomainConfigRequest &request);
-                void UpdateDomainConfigAsync(const Model::UpdateDomainConfigRequest& request, const UpdateDomainConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                UpdateDomainConfigOutcomeCallable UpdateDomainConfigCallable(const Model::UpdateDomainConfigRequest& request);
 
             };
         }

@@ -1,0 +1,369 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/iotexplorer/v20190423/model/InvokeAISearchServiceRequest.h>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+
+using namespace TencentCloud::Iotexplorer::V20190423::Model;
+using namespace std;
+
+InvokeAISearchServiceRequest::InvokeAISearchServiceRequest() :
+    m_productIdHasBeenSet(false),
+    m_deviceNameHasBeenSet(false),
+    m_queryHasBeenSet(false),
+    m_summaryLangHasBeenSet(false),
+    m_channelIdHasBeenSet(false),
+    m_enableSummaryHasBeenSet(false),
+    m_startTimeMsHasBeenSet(false),
+    m_endTimeMsHasBeenSet(false),
+    m_timeZoneHasBeenSet(false),
+    m_searchModeHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_vectorSearchRadiusHasBeenSet(false),
+    m_vectorSearchTopKHasBeenSet(false)
+{
+}
+
+string InvokeAISearchServiceRequest::ToJsonString() const
+{
+    rapidjson::Document d;
+    d.SetObject();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
+
+
+    if (m_productIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_productId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_deviceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_queryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Query";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_query.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_summaryLangHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SummaryLang";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_summaryLang.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_channelIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_channelId, allocator);
+    }
+
+    if (m_enableSummaryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableSummary";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableSummary, allocator);
+    }
+
+    if (m_startTimeMsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTimeMs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_startTimeMs, allocator);
+    }
+
+    if (m_endTimeMsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTimeMs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_endTimeMs, allocator);
+    }
+
+    if (m_timeZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeZone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_timeZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_searchModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SearchMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_searchMode, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_vectorSearchRadiusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VectorSearchRadius";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_vectorSearchRadius, allocator);
+    }
+
+    if (m_vectorSearchTopKHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VectorSearchTopK";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_vectorSearchTopK, allocator);
+    }
+
+
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    d.Accept(writer);
+    return buffer.GetString();
+}
+
+
+string InvokeAISearchServiceRequest::GetProductId() const
+{
+    return m_productId;
+}
+
+void InvokeAISearchServiceRequest::SetProductId(const string& _productId)
+{
+    m_productId = _productId;
+    m_productIdHasBeenSet = true;
+}
+
+bool InvokeAISearchServiceRequest::ProductIdHasBeenSet() const
+{
+    return m_productIdHasBeenSet;
+}
+
+string InvokeAISearchServiceRequest::GetDeviceName() const
+{
+    return m_deviceName;
+}
+
+void InvokeAISearchServiceRequest::SetDeviceName(const string& _deviceName)
+{
+    m_deviceName = _deviceName;
+    m_deviceNameHasBeenSet = true;
+}
+
+bool InvokeAISearchServiceRequest::DeviceNameHasBeenSet() const
+{
+    return m_deviceNameHasBeenSet;
+}
+
+string InvokeAISearchServiceRequest::GetQuery() const
+{
+    return m_query;
+}
+
+void InvokeAISearchServiceRequest::SetQuery(const string& _query)
+{
+    m_query = _query;
+    m_queryHasBeenSet = true;
+}
+
+bool InvokeAISearchServiceRequest::QueryHasBeenSet() const
+{
+    return m_queryHasBeenSet;
+}
+
+string InvokeAISearchServiceRequest::GetSummaryLang() const
+{
+    return m_summaryLang;
+}
+
+void InvokeAISearchServiceRequest::SetSummaryLang(const string& _summaryLang)
+{
+    m_summaryLang = _summaryLang;
+    m_summaryLangHasBeenSet = true;
+}
+
+bool InvokeAISearchServiceRequest::SummaryLangHasBeenSet() const
+{
+    return m_summaryLangHasBeenSet;
+}
+
+uint64_t InvokeAISearchServiceRequest::GetChannelId() const
+{
+    return m_channelId;
+}
+
+void InvokeAISearchServiceRequest::SetChannelId(const uint64_t& _channelId)
+{
+    m_channelId = _channelId;
+    m_channelIdHasBeenSet = true;
+}
+
+bool InvokeAISearchServiceRequest::ChannelIdHasBeenSet() const
+{
+    return m_channelIdHasBeenSet;
+}
+
+bool InvokeAISearchServiceRequest::GetEnableSummary() const
+{
+    return m_enableSummary;
+}
+
+void InvokeAISearchServiceRequest::SetEnableSummary(const bool& _enableSummary)
+{
+    m_enableSummary = _enableSummary;
+    m_enableSummaryHasBeenSet = true;
+}
+
+bool InvokeAISearchServiceRequest::EnableSummaryHasBeenSet() const
+{
+    return m_enableSummaryHasBeenSet;
+}
+
+int64_t InvokeAISearchServiceRequest::GetStartTimeMs() const
+{
+    return m_startTimeMs;
+}
+
+void InvokeAISearchServiceRequest::SetStartTimeMs(const int64_t& _startTimeMs)
+{
+    m_startTimeMs = _startTimeMs;
+    m_startTimeMsHasBeenSet = true;
+}
+
+bool InvokeAISearchServiceRequest::StartTimeMsHasBeenSet() const
+{
+    return m_startTimeMsHasBeenSet;
+}
+
+int64_t InvokeAISearchServiceRequest::GetEndTimeMs() const
+{
+    return m_endTimeMs;
+}
+
+void InvokeAISearchServiceRequest::SetEndTimeMs(const int64_t& _endTimeMs)
+{
+    m_endTimeMs = _endTimeMs;
+    m_endTimeMsHasBeenSet = true;
+}
+
+bool InvokeAISearchServiceRequest::EndTimeMsHasBeenSet() const
+{
+    return m_endTimeMsHasBeenSet;
+}
+
+string InvokeAISearchServiceRequest::GetTimeZone() const
+{
+    return m_timeZone;
+}
+
+void InvokeAISearchServiceRequest::SetTimeZone(const string& _timeZone)
+{
+    m_timeZone = _timeZone;
+    m_timeZoneHasBeenSet = true;
+}
+
+bool InvokeAISearchServiceRequest::TimeZoneHasBeenSet() const
+{
+    return m_timeZoneHasBeenSet;
+}
+
+int64_t InvokeAISearchServiceRequest::GetSearchMode() const
+{
+    return m_searchMode;
+}
+
+void InvokeAISearchServiceRequest::SetSearchMode(const int64_t& _searchMode)
+{
+    m_searchMode = _searchMode;
+    m_searchModeHasBeenSet = true;
+}
+
+bool InvokeAISearchServiceRequest::SearchModeHasBeenSet() const
+{
+    return m_searchModeHasBeenSet;
+}
+
+int64_t InvokeAISearchServiceRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void InvokeAISearchServiceRequest::SetLimit(const int64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool InvokeAISearchServiceRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+double InvokeAISearchServiceRequest::GetVectorSearchRadius() const
+{
+    return m_vectorSearchRadius;
+}
+
+void InvokeAISearchServiceRequest::SetVectorSearchRadius(const double& _vectorSearchRadius)
+{
+    m_vectorSearchRadius = _vectorSearchRadius;
+    m_vectorSearchRadiusHasBeenSet = true;
+}
+
+bool InvokeAISearchServiceRequest::VectorSearchRadiusHasBeenSet() const
+{
+    return m_vectorSearchRadiusHasBeenSet;
+}
+
+int64_t InvokeAISearchServiceRequest::GetVectorSearchTopK() const
+{
+    return m_vectorSearchTopK;
+}
+
+void InvokeAISearchServiceRequest::SetVectorSearchTopK(const int64_t& _vectorSearchTopK)
+{
+    m_vectorSearchTopK = _vectorSearchTopK;
+    m_vectorSearchTopKHasBeenSet = true;
+}
+
+bool InvokeAISearchServiceRequest::VectorSearchTopKHasBeenSet() const
+{
+    return m_vectorSearchTopKHasBeenSet;
+}
+
+

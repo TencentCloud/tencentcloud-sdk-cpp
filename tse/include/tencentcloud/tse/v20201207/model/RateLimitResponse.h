@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义响应体
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Body 自定义响应体
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBody() const;
 
                     /**
                      * 设置自定义响应体
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _body 自定义响应体
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBody(const std::string& _body);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Headers
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Headers Headers
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<KVMapping> GetHeaders() const;
 
                     /**
                      * 设置Headers
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _headers Headers
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHeaders(const std::vector<KVMapping>& _headers);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取http状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HttpStatus http状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHttpStatus() const;
 
                     /**
                      * 设置http状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _httpStatus http状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHttpStatus(const int64_t& _httpStatus);
@@ -126,21 +114,18 @@ namespace TencentCloud
 
                     /**
                      * 自定义响应体
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_body;
                     bool m_bodyHasBeenSet;
 
                     /**
                      * Headers
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<KVMapping> m_headers;
                     bool m_headersHasBeenSet;
 
                     /**
                      * http状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_httpStatus;
                     bool m_httpStatusHasBeenSet;

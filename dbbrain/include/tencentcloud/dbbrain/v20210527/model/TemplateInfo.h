@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模板id
-                     * @return TemplateId 模板id
+                     * 获取模板id,通过接口[通知模板查询](https://cloud.tencent.com/document/product/1130/97726)获得。
+                     * @return TemplateId 模板id,通过接口[通知模板查询](https://cloud.tencent.com/document/product/1130/97726)获得。
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置模板id
-                     * @param _templateId 模板id
+                     * 设置模板id,通过接口[通知模板查询](https://cloud.tencent.com/document/product/1130/97726)获得。
+                     * @param _templateId 模板id,通过接口[通知模板查询](https://cloud.tencent.com/document/product/1130/97726)获得。
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取模板名
-                     * @return TemplateName 模板名
+                     * 获取模板名,通过接口[通知模板查询](https://cloud.tencent.com/document/product/1130/97726)获得。
+                     * @return TemplateName 模板名,通过接口[通知模板查询](https://cloud.tencent.com/document/product/1130/97726)获得。
                      * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
-                     * 设置模板名
-                     * @param _templateName 模板名
+                     * 设置模板名,通过接口[通知模板查询](https://cloud.tencent.com/document/product/1130/97726)获得。
+                     * @param _templateName 模板名,通过接口[通知模板查询](https://cloud.tencent.com/document/product/1130/97726)获得。
                      * 
                      */
                     void SetTemplateName(const std::string& _templateName);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模板id
+                     * 模板id,通过接口[通知模板查询](https://cloud.tencent.com/document/product/1130/97726)获得。
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 模板名
+                     * 模板名,通过接口[通知模板查询](https://cloud.tencent.com/document/product/1130/97726)获得。
                      */
                     std::string m_templateName;
                     bool m_templateNameHasBeenSet;

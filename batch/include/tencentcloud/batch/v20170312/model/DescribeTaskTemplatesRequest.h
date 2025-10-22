@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务模板ID列表，与Filters参数不能同时指定。
-                     * @return TaskTemplateIds 任务模板ID列表，与Filters参数不能同时指定。
+                     * 获取任务模板ID列表，与Filters参数不能同时指定。模版ID最大限制100.
+                     * @return TaskTemplateIds 任务模板ID列表，与Filters参数不能同时指定。模版ID最大限制100.
                      * 
                      */
                     std::vector<std::string> GetTaskTemplateIds() const;
 
                     /**
-                     * 设置任务模板ID列表，与Filters参数不能同时指定。
-                     * @param _taskTemplateIds 任务模板ID列表，与Filters参数不能同时指定。
+                     * 设置任务模板ID列表，与Filters参数不能同时指定。模版ID最大限制100.
+                     * @param _taskTemplateIds 任务模板ID列表，与Filters参数不能同时指定。模版ID最大限制100.
                      * 
                      */
                     void SetTaskTemplateIds(const std::vector<std::string>& _taskTemplateIds);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量
-                     * @return Limit 返回数量
+                     * 获取返回数量; 可选范围[1-100]；默认值为20。
+                     * @return Limit 返回数量; 可选范围[1-100]；默认值为20。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量
-                     * @param _limit 返回数量
+                     * 设置返回数量; 可选范围[1-100]；默认值为20。
+                     * @param _limit 返回数量; 可选范围[1-100]；默认值为20。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -150,7 +150,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务模板ID列表，与Filters参数不能同时指定。
+                     * 任务模板ID列表，与Filters参数不能同时指定。模版ID最大限制100.
                      */
                     std::vector<std::string> m_taskTemplateIds;
                     bool m_taskTemplateIdsHasBeenSet;
@@ -173,7 +173,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量
+                     * 返回数量; 可选范围[1-100]；默认值为20。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

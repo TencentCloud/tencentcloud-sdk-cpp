@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ CreateDisclosedCredentialRequest::CreateDisclosedCredentialRequest() :
     m_policyIdHasBeenSet(false),
     m_credentialDataHasBeenSet(false),
     m_policyJsonHasBeenSet(false),
-    m_dAPIdHasBeenSet(false)
+    m_dAPIdHasBeenSet(false),
+    m_uAPIdHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string CreateDisclosedCredentialRequest::ToJsonString() const
         string key = "DAPId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_dAPId, allocator);
+    }
+
+    if (m_uAPIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UAPId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_uAPId, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void CreateDisclosedCredentialRequest::SetDAPId(const uint64_t& _dAPId)
 bool CreateDisclosedCredentialRequest::DAPIdHasBeenSet() const
 {
     return m_dAPIdHasBeenSet;
+}
+
+uint64_t CreateDisclosedCredentialRequest::GetUAPId() const
+{
+    return m_uAPId;
+}
+
+void CreateDisclosedCredentialRequest::SetUAPId(const uint64_t& _uAPId)
+{
+    m_uAPId = _uAPId;
+    m_uAPIdHasBeenSet = true;
+}
+
+bool CreateDisclosedCredentialRequest::UAPIdHasBeenSet() const
+{
+    return m_uAPIdHasBeenSet;
 }
 
 

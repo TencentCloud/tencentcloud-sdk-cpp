@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,8 @@ DescribeDMSTableRequest::DescribeDMSTableRequest() :
     m_catalogHasBeenSet(false),
     m_keywordHasBeenSet(false),
     m_patternHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_datasourceConnectionNameHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string DescribeDMSTableRequest::ToJsonString() const
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_datasourceConnectionNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceConnectionName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_datasourceConnectionName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -214,6 +223,22 @@ void DescribeDMSTableRequest::SetType(const string& _type)
 bool DescribeDMSTableRequest::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+string DescribeDMSTableRequest::GetDatasourceConnectionName() const
+{
+    return m_datasourceConnectionName;
+}
+
+void DescribeDMSTableRequest::SetDatasourceConnectionName(const string& _datasourceConnectionName)
+{
+    m_datasourceConnectionName = _datasourceConnectionName;
+    m_datasourceConnectionNameHasBeenSet = true;
+}
+
+bool DescribeDMSTableRequest::DatasourceConnectionNameHasBeenSet() const
+{
+    return m_datasourceConnectionNameHasBeenSet;
 }
 
 

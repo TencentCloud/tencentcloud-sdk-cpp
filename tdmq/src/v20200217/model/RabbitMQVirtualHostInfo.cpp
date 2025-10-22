@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,9 @@ RabbitMQVirtualHostInfo::RabbitMQVirtualHostInfo() :
     m_messageHeapCountHasBeenSet(false),
     m_messageRateInHasBeenSet(false),
     m_messageRateOutHasBeenSet(false),
-    m_mirrorQueuePolicyFlagHasBeenSet(false)
+    m_mirrorQueuePolicyFlagHasBeenSet(false),
+    m_createTsHasBeenSet(false),
+    m_modifyTsHasBeenSet(false)
 {
 }
 
@@ -182,6 +184,26 @@ CoreInternalOutcome RabbitMQVirtualHostInfo::Deserialize(const rapidjson::Value 
         m_mirrorQueuePolicyFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateTs") && !value["CreateTs"].IsNull())
+    {
+        if (!value["CreateTs"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQVirtualHostInfo.CreateTs` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTs = value["CreateTs"].GetUint64();
+        m_createTsHasBeenSet = true;
+    }
+
+    if (value.HasMember("ModifyTs") && !value["ModifyTs"].IsNull())
+    {
+        if (!value["ModifyTs"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQVirtualHostInfo.ModifyTs` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_modifyTs = value["ModifyTs"].GetUint64();
+        m_modifyTsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -297,6 +319,22 @@ void RabbitMQVirtualHostInfo::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "MirrorQueuePolicyFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mirrorQueuePolicyFlag, allocator);
+    }
+
+    if (m_createTsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_createTs, allocator);
+    }
+
+    if (m_modifyTsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyTs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_modifyTs, allocator);
     }
 
 }
@@ -508,5 +546,37 @@ void RabbitMQVirtualHostInfo::SetMirrorQueuePolicyFlag(const bool& _mirrorQueueP
 bool RabbitMQVirtualHostInfo::MirrorQueuePolicyFlagHasBeenSet() const
 {
     return m_mirrorQueuePolicyFlagHasBeenSet;
+}
+
+uint64_t RabbitMQVirtualHostInfo::GetCreateTs() const
+{
+    return m_createTs;
+}
+
+void RabbitMQVirtualHostInfo::SetCreateTs(const uint64_t& _createTs)
+{
+    m_createTs = _createTs;
+    m_createTsHasBeenSet = true;
+}
+
+bool RabbitMQVirtualHostInfo::CreateTsHasBeenSet() const
+{
+    return m_createTsHasBeenSet;
+}
+
+uint64_t RabbitMQVirtualHostInfo::GetModifyTs() const
+{
+    return m_modifyTs;
+}
+
+void RabbitMQVirtualHostInfo::SetModifyTs(const uint64_t& _modifyTs)
+{
+    m_modifyTs = _modifyTs;
+    m_modifyTsHasBeenSet = true;
+}
+
+bool RabbitMQVirtualHostInfo::ModifyTsHasBeenSet() const
+{
+    return m_modifyTsHasBeenSet;
 }
 

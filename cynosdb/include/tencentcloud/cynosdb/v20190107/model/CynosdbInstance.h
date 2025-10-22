@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -922,18 +922,14 @@ pause
 
                     /**
                      * 获取预付费存储Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StorageId 预付费存储Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStorageId() const;
 
                     /**
                      * 设置预付费存储Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _storageId 预付费存储Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStorageId(const std::string& _storageId);
@@ -989,18 +985,14 @@ pause
 
                     /**
                      * 获取商业类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BusinessType 商业类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBusinessType() const;
 
                     /**
                      * 设置商业类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _businessType 商业类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBusinessType(const std::string& _businessType);
@@ -1014,18 +1006,14 @@ pause
 
                     /**
                      * 获取任务
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tasks 任务
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ObjectTask> GetTasks() const;
 
                     /**
                      * 设置任务
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tasks 任务
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTasks(const std::vector<ObjectTask>& _tasks);
@@ -1039,18 +1027,14 @@ pause
 
                     /**
                      * 获取是否冻结
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsFreeze 是否冻结
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIsFreeze() const;
 
                     /**
                      * 设置是否冻结
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isFreeze 是否冻结
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsFreeze(const std::string& _isFreeze);
@@ -1089,18 +1073,14 @@ pause
 
                     /**
                      * 获取主可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MasterZone 主可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMasterZone() const;
 
                     /**
                      * 设置主可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _masterZone 主可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMasterZone(const std::string& _masterZone);
@@ -1139,18 +1119,14 @@ pause
 
                     /**
                      * 获取实例网络信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceNetInfo 实例网络信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<InstanceNetInfo> GetInstanceNetInfo() const;
 
                     /**
                      * 设置实例网络信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceNetInfo 实例网络信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceNetInfo(const std::vector<InstanceNetInfo>& _instanceNetInfo);
@@ -1189,18 +1165,14 @@ pause
 
                     /**
                      * 获取实例索引形态,可选值【mixedRowColumn（行列混存），onlyRowIndex（仅行存）】
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceIndexMode 实例索引形态,可选值【mixedRowColumn（行列混存），onlyRowIndex（仅行存）】
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceIndexMode() const;
 
                     /**
                      * 设置实例索引形态,可选值【mixedRowColumn（行列混存），onlyRowIndex（仅行存）】
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceIndexMode 实例索引形态,可选值【mixedRowColumn（行列混存），onlyRowIndex（仅行存）】
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceIndexMode(const std::string& _instanceIndexMode);
@@ -1214,18 +1186,14 @@ pause
 
                     /**
                      * 获取当前实例支持的能力
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceAbility 当前实例支持的能力
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     InstanceAbility GetInstanceAbility() const;
 
                     /**
                      * 设置当前实例支持的能力
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceAbility 当前实例支持的能力
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceAbility(const InstanceAbility& _instanceAbility);
@@ -1239,18 +1207,14 @@ pause
 
                     /**
                      * 获取实例机器类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceType 实例机器类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceType() const;
 
                     /**
                      * 设置实例机器类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceType 实例机器类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceType(const std::string& _deviceType);
@@ -1264,18 +1228,14 @@ pause
 
                     /**
                      * 获取实例存储类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceStorageType 实例存储类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceStorageType() const;
 
                     /**
                      * 设置实例存储类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceStorageType 实例存储类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceStorageType(const std::string& _instanceStorageType);
@@ -1286,6 +1246,69 @@ pause
                      * 
                      */
                     bool InstanceStorageTypeHasBeenSet() const;
+
+                    /**
+                     * 获取未知字段
+                     * @return CynosVersionTag 未知字段
+                     * 
+                     */
+                    std::string GetCynosVersionTag() const;
+
+                    /**
+                     * 设置未知字段
+                     * @param _cynosVersionTag 未知字段
+                     * 
+                     */
+                    void SetCynosVersionTag(const std::string& _cynosVersionTag);
+
+                    /**
+                     * 判断参数 CynosVersionTag 是否已赋值
+                     * @return CynosVersionTag 是否已赋值
+                     * 
+                     */
+                    bool CynosVersionTagHasBeenSet() const;
+
+                    /**
+                     * 获取libradb 节点信息
+                     * @return NodeList libradb 节点信息
+                     * 
+                     */
+                    std::vector<std::string> GetNodeList() const;
+
+                    /**
+                     * 设置libradb 节点信息
+                     * @param _nodeList libradb 节点信息
+                     * 
+                     */
+                    void SetNodeList(const std::vector<std::string>& _nodeList);
+
+                    /**
+                     * 判断参数 NodeList 是否已赋值
+                     * @return NodeList 是否已赋值
+                     * 
+                     */
+                    bool NodeListHasBeenSet() const;
+
+                    /**
+                     * 获取全球数据库唯一标识
+                     * @return GdnId 全球数据库唯一标识
+                     * 
+                     */
+                    std::string GetGdnId() const;
+
+                    /**
+                     * 设置全球数据库唯一标识
+                     * @param _gdnId 全球数据库唯一标识
+                     * 
+                     */
+                    void SetGdnId(const std::string& _gdnId);
+
+                    /**
+                     * 判断参数 GdnId 是否已赋值
+                     * @return GdnId 是否已赋值
+                     * 
+                     */
+                    bool GdnIdHasBeenSet() const;
 
                 private:
 
@@ -1539,7 +1562,6 @@ pause
 
                     /**
                      * 预付费存储Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_storageId;
                     bool m_storageIdHasBeenSet;
@@ -1558,21 +1580,18 @@ pause
 
                     /**
                      * 商业类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_businessType;
                     bool m_businessTypeHasBeenSet;
 
                     /**
                      * 任务
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ObjectTask> m_tasks;
                     bool m_tasksHasBeenSet;
 
                     /**
                      * 是否冻结
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_isFreeze;
                     bool m_isFreezeHasBeenSet;
@@ -1586,7 +1605,6 @@ pause
 
                     /**
                      * 主可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_masterZone;
                     bool m_masterZoneHasBeenSet;
@@ -1600,7 +1618,6 @@ pause
 
                     /**
                      * 实例网络信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<InstanceNetInfo> m_instanceNetInfo;
                     bool m_instanceNetInfoHasBeenSet;
@@ -1614,31 +1631,45 @@ pause
 
                     /**
                      * 实例索引形态,可选值【mixedRowColumn（行列混存），onlyRowIndex（仅行存）】
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceIndexMode;
                     bool m_instanceIndexModeHasBeenSet;
 
                     /**
                      * 当前实例支持的能力
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InstanceAbility m_instanceAbility;
                     bool m_instanceAbilityHasBeenSet;
 
                     /**
                      * 实例机器类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceType;
                     bool m_deviceTypeHasBeenSet;
 
                     /**
                      * 实例存储类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceStorageType;
                     bool m_instanceStorageTypeHasBeenSet;
+
+                    /**
+                     * 未知字段
+                     */
+                    std::string m_cynosVersionTag;
+                    bool m_cynosVersionTagHasBeenSet;
+
+                    /**
+                     * libradb 节点信息
+                     */
+                    std::vector<std::string> m_nodeList;
+                    bool m_nodeListHasBeenSet;
+
+                    /**
+                     * 全球数据库唯一标识
+                     */
+                    std::string m_gdnId;
+                    bool m_gdnIdHasBeenSet;
 
                 };
             }

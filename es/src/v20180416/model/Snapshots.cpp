@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ using namespace std;
 Snapshots::Snapshots() :
     m_snapshotNameHasBeenSet(false),
     m_uuidHasBeenSet(false),
+    m_repositoryHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_indicesHasBeenSet(false),
     m_dataStreamsHasBeenSet(false),
@@ -33,7 +34,8 @@ Snapshots::Snapshots() :
     m_totalShardsHasBeenSet(false),
     m_failedShardsHasBeenSet(false),
     m_successfulShardsHasBeenSet(false),
-    m_failuresHasBeenSet(false)
+    m_failuresHasBeenSet(false),
+    m_userBackUpHasBeenSet(false)
 {
 }
 
@@ -60,6 +62,16 @@ CoreInternalOutcome Snapshots::Deserialize(const rapidjson::Value &value)
         }
         m_uuid = string(value["Uuid"].GetString());
         m_uuidHasBeenSet = true;
+    }
+
+    if (value.HasMember("Repository") && !value["Repository"].IsNull())
+    {
+        if (!value["Repository"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Snapshots.Repository` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_repository = string(value["Repository"].GetString());
+        m_repositoryHasBeenSet = true;
     }
 
     if (value.HasMember("Version") && !value["Version"].IsNull())
@@ -188,6 +200,16 @@ CoreInternalOutcome Snapshots::Deserialize(const rapidjson::Value &value)
         m_failuresHasBeenSet = true;
     }
 
+    if (value.HasMember("UserBackUp") && !value["UserBackUp"].IsNull())
+    {
+        if (!value["UserBackUp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Snapshots.UserBackUp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userBackUp = string(value["UserBackUp"].GetString());
+        m_userBackUpHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -209,6 +231,14 @@ void Snapshots::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Uuid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_uuid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_repositoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Repository";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_repository.c_str(), allocator).Move(), allocator);
     }
 
     if (m_versionHasBeenSet)
@@ -316,6 +346,14 @@ void Snapshots::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         }
     }
 
+    if (m_userBackUpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserBackUp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userBackUp.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
 
@@ -349,6 +387,22 @@ void Snapshots::SetUuid(const string& _uuid)
 bool Snapshots::UuidHasBeenSet() const
 {
     return m_uuidHasBeenSet;
+}
+
+string Snapshots::GetRepository() const
+{
+    return m_repository;
+}
+
+void Snapshots::SetRepository(const string& _repository)
+{
+    m_repository = _repository;
+    m_repositoryHasBeenSet = true;
+}
+
+bool Snapshots::RepositoryHasBeenSet() const
+{
+    return m_repositoryHasBeenSet;
 }
 
 string Snapshots::GetVersion() const
@@ -525,5 +579,21 @@ void Snapshots::SetFailures(const vector<Failures>& _failures)
 bool Snapshots::FailuresHasBeenSet() const
 {
     return m_failuresHasBeenSet;
+}
+
+string Snapshots::GetUserBackUp() const
+{
+    return m_userBackUp;
+}
+
+void Snapshots::SetUserBackUp(const string& _userBackUp)
+{
+    m_userBackUp = _userBackUp;
+    m_userBackUpHasBeenSet = true;
+}
+
+bool Snapshots::UserBackUpHasBeenSet() const
+{
+    return m_userBackUpHasBeenSet;
 }
 

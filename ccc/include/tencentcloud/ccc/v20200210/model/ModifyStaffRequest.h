@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ccc/v20200210/model/ForwardingConfig.h>
 
 
 namespace TencentCloud
@@ -231,6 +232,48 @@ namespace TencentCloud
                      */
                     bool UseMobileAcceptHasBeenSet() const;
 
+                    /**
+                     * 获取座席分机号（1 到 8 打头，4 - 6 位）
+                     * @return ExtensionNumber 座席分机号（1 到 8 打头，4 - 6 位）
+                     * 
+                     */
+                    std::string GetExtensionNumber() const;
+
+                    /**
+                     * 设置座席分机号（1 到 8 打头，4 - 6 位）
+                     * @param _extensionNumber 座席分机号（1 到 8 打头，4 - 6 位）
+                     * 
+                     */
+                    void SetExtensionNumber(const std::string& _extensionNumber);
+
+                    /**
+                     * 判断参数 ExtensionNumber 是否已赋值
+                     * @return ExtensionNumber 是否已赋值
+                     * 
+                     */
+                    bool ExtensionNumberHasBeenSet() const;
+
+                    /**
+                     * 获取呼叫转移配置
+                     * @return ForwardingConfig 呼叫转移配置
+                     * 
+                     */
+                    ForwardingConfig GetForwardingConfig() const;
+
+                    /**
+                     * 设置呼叫转移配置
+                     * @param _forwardingConfig 呼叫转移配置
+                     * 
+                     */
+                    void SetForwardingConfig(const ForwardingConfig& _forwardingConfig);
+
+                    /**
+                     * 判断参数 ForwardingConfig 是否已赋值
+                     * @return ForwardingConfig 是否已赋值
+                     * 
+                     */
+                    bool ForwardingConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -286,6 +329,18 @@ namespace TencentCloud
                      */
                     int64_t m_useMobileAccept;
                     bool m_useMobileAcceptHasBeenSet;
+
+                    /**
+                     * 座席分机号（1 到 8 打头，4 - 6 位）
+                     */
+                    std::string m_extensionNumber;
+                    bool m_extensionNumberHasBeenSet;
+
+                    /**
+                     * 呼叫转移配置
+                     */
+                    ForwardingConfig m_forwardingConfig;
+                    bool m_forwardingConfigHasBeenSet;
 
                 };
             }

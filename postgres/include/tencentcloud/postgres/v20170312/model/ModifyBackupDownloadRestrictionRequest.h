@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取备份文件下载限制类型，NONE 无限制，内外网都可以下载；INTRANET 只允许内网下载；CUSTOMIZE 自定义限制下载的vpc或ip。
-                     * @return RestrictionType 备份文件下载限制类型，NONE 无限制，内外网都可以下载；INTRANET 只允许内网下载；CUSTOMIZE 自定义限制下载的vpc或ip。
+                     * 获取备份文件下载限制类型，NONE 无限制，内外网都可以下载；INTRANET 只允许内网下载；CUSTOMIZE 自定义限制下载的vpc或ip。当该参数取值为CUSTOMIZE时，Vpc限制和Ip限制需要至少填写一项。
+                     * @return RestrictionType 备份文件下载限制类型，NONE 无限制，内外网都可以下载；INTRANET 只允许内网下载；CUSTOMIZE 自定义限制下载的vpc或ip。当该参数取值为CUSTOMIZE时，Vpc限制和Ip限制需要至少填写一项。
                      * 
                      */
                     std::string GetRestrictionType() const;
 
                     /**
-                     * 设置备份文件下载限制类型，NONE 无限制，内外网都可以下载；INTRANET 只允许内网下载；CUSTOMIZE 自定义限制下载的vpc或ip。
-                     * @param _restrictionType 备份文件下载限制类型，NONE 无限制，内外网都可以下载；INTRANET 只允许内网下载；CUSTOMIZE 自定义限制下载的vpc或ip。
+                     * 设置备份文件下载限制类型，NONE 无限制，内外网都可以下载；INTRANET 只允许内网下载；CUSTOMIZE 自定义限制下载的vpc或ip。当该参数取值为CUSTOMIZE时，Vpc限制和Ip限制需要至少填写一项。
+                     * @param _restrictionType 备份文件下载限制类型，NONE 无限制，内外网都可以下载；INTRANET 只允许内网下载；CUSTOMIZE 自定义限制下载的vpc或ip。当该参数取值为CUSTOMIZE时，Vpc限制和Ip限制需要至少填写一项。
                      * 
                      */
                     void SetRestrictionType(const std::string& _restrictionType);
@@ -86,14 +86,18 @@ namespace TencentCloud
 
                     /**
                      * 获取允许或拒绝下载备份文件的vpcId列表。
+**注意：**该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。
                      * @return VpcIdSet 允许或拒绝下载备份文件的vpcId列表。
+**注意：**该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。
                      * 
                      */
                     std::vector<std::string> GetVpcIdSet() const;
 
                     /**
                      * 设置允许或拒绝下载备份文件的vpcId列表。
+**注意：**该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。
                      * @param _vpcIdSet 允许或拒绝下载备份文件的vpcId列表。
+**注意：**该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。
                      * 
                      */
                     void SetVpcIdSet(const std::vector<std::string>& _vpcIdSet);
@@ -128,14 +132,18 @@ namespace TencentCloud
 
                     /**
                      * 获取允许或拒绝下载备份文件的ip列表。
+**注意：**该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。
                      * @return IpSet 允许或拒绝下载备份文件的ip列表。
+**注意：**该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。
                      * 
                      */
                     std::vector<std::string> GetIpSet() const;
 
                     /**
                      * 设置允许或拒绝下载备份文件的ip列表。
+**注意：**该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。
                      * @param _ipSet 允许或拒绝下载备份文件的ip列表。
+**注意：**该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。
                      * 
                      */
                     void SetIpSet(const std::vector<std::string>& _ipSet);
@@ -150,7 +158,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 备份文件下载限制类型，NONE 无限制，内外网都可以下载；INTRANET 只允许内网下载；CUSTOMIZE 自定义限制下载的vpc或ip。
+                     * 备份文件下载限制类型，NONE 无限制，内外网都可以下载；INTRANET 只允许内网下载；CUSTOMIZE 自定义限制下载的vpc或ip。当该参数取值为CUSTOMIZE时，Vpc限制和Ip限制需要至少填写一项。
                      */
                     std::string m_restrictionType;
                     bool m_restrictionTypeHasBeenSet;
@@ -163,6 +171,7 @@ namespace TencentCloud
 
                     /**
                      * 允许或拒绝下载备份文件的vpcId列表。
+**注意：**该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。
                      */
                     std::vector<std::string> m_vpcIdSet;
                     bool m_vpcIdSetHasBeenSet;
@@ -175,6 +184,7 @@ namespace TencentCloud
 
                     /**
                      * 允许或拒绝下载备份文件的ip列表。
+**注意：**该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。
                      */
                     std::vector<std::string> m_ipSet;
                     bool m_ipSetHasBeenSet;

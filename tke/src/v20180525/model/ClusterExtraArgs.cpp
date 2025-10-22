@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,10 +21,10 @@ using namespace TencentCloud::Tke::V20180525::Model;
 using namespace std;
 
 ClusterExtraArgs::ClusterExtraArgs() :
+    m_etcdHasBeenSet(false),
     m_kubeAPIServerHasBeenSet(false),
     m_kubeControllerManagerHasBeenSet(false),
-    m_kubeSchedulerHasBeenSet(false),
-    m_etcdHasBeenSet(false)
+    m_kubeSchedulerHasBeenSet(false)
 {
 }
 
@@ -32,6 +32,19 @@ CoreInternalOutcome ClusterExtraArgs::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("Etcd") && !value["Etcd"].IsNull())
+    {
+        if (!value["Etcd"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ClusterExtraArgs.Etcd` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Etcd"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_etcd.push_back((*itr).GetString());
+        }
+        m_etcdHasBeenSet = true;
+    }
 
     if (value.HasMember("KubeAPIServer") && !value["KubeAPIServer"].IsNull())
     {
@@ -72,25 +85,25 @@ CoreInternalOutcome ClusterExtraArgs::Deserialize(const rapidjson::Value &value)
         m_kubeSchedulerHasBeenSet = true;
     }
 
-    if (value.HasMember("Etcd") && !value["Etcd"].IsNull())
-    {
-        if (!value["Etcd"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `ClusterExtraArgs.Etcd` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["Etcd"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            m_etcd.push_back((*itr).GetString());
-        }
-        m_etcdHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
 void ClusterExtraArgs::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
+
+    if (m_etcdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Etcd";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_etcd.begin(); itr != m_etcd.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
 
     if (m_kubeAPIServerHasBeenSet)
     {
@@ -131,21 +144,24 @@ void ClusterExtraArgs::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         }
     }
 
-    if (m_etcdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Etcd";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_etcd.begin(); itr != m_etcd.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
-
 }
 
+
+vector<string> ClusterExtraArgs::GetEtcd() const
+{
+    return m_etcd;
+}
+
+void ClusterExtraArgs::SetEtcd(const vector<string>& _etcd)
+{
+    m_etcd = _etcd;
+    m_etcdHasBeenSet = true;
+}
+
+bool ClusterExtraArgs::EtcdHasBeenSet() const
+{
+    return m_etcdHasBeenSet;
+}
 
 vector<string> ClusterExtraArgs::GetKubeAPIServer() const
 {
@@ -193,21 +209,5 @@ void ClusterExtraArgs::SetKubeScheduler(const vector<string>& _kubeScheduler)
 bool ClusterExtraArgs::KubeSchedulerHasBeenSet() const
 {
     return m_kubeSchedulerHasBeenSet;
-}
-
-vector<string> ClusterExtraArgs::GetEtcd() const
-{
-    return m_etcd;
-}
-
-void ClusterExtraArgs::SetEtcd(const vector<string>& _etcd)
-{
-    m_etcd = _etcd;
-    m_etcdHasBeenSet = true;
-}
-
-bool ClusterExtraArgs::EtcdHasBeenSet() const
-{
-    return m_etcdHasBeenSet;
 }
 

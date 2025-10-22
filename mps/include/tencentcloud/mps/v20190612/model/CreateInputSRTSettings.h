@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/SRTSourceAddressReq.h>
+#include <tencentcloud/mps/v20190612/model/SRTFECSimpleOptions.h>
 
 
 namespace TencentCloud
@@ -90,15 +91,15 @@ namespace TencentCloud
                     bool StreamIdHasBeenSet() const;
 
                     /**
-                     * 获取延迟，默认0，单位ms，范围为[0, 3000]。
-                     * @return Latency 延迟，默认0，单位ms，范围为[0, 3000]。
+                     * 获取延迟，默认120，单位ms，范围为[0, 3000]。
+                     * @return Latency 延迟，默认120，单位ms，范围为[0, 3000]。
                      * 
                      */
                     int64_t GetLatency() const;
 
                     /**
-                     * 设置延迟，默认0，单位ms，范围为[0, 3000]。
-                     * @param _latency 延迟，默认0，单位ms，范围为[0, 3000]。
+                     * 设置延迟，默认120，单位ms，范围为[0, 3000]。
+                     * @param _latency 延迟，默认120，单位ms，范围为[0, 3000]。
                      * 
                      */
                     void SetLatency(const int64_t& _latency);
@@ -132,15 +133,15 @@ namespace TencentCloud
                     bool RecvLatencyHasBeenSet() const;
 
                     /**
-                     * 获取对端延迟，默认0，单位ms，范围为[0, 3000]。
-                     * @return PeerLatency 对端延迟，默认0，单位ms，范围为[0, 3000]。
+                     * 获取对端延迟，默认120，单位ms，范围为[0, 3000]。
+                     * @return PeerLatency 对端延迟，默认120，单位ms，范围为[0, 3000]。
                      * 
                      */
                     int64_t GetPeerLatency() const;
 
                     /**
-                     * 设置对端延迟，默认0，单位ms，范围为[0, 3000]。
-                     * @param _peerLatency 对端延迟，默认0，单位ms，范围为[0, 3000]。
+                     * 设置对端延迟，默认120，单位ms，范围为[0, 3000]。
+                     * @param _peerLatency 对端延迟，默认120，单位ms，范围为[0, 3000]。
                      * 
                      */
                     void SetPeerLatency(const int64_t& _peerLatency);
@@ -236,6 +237,27 @@ namespace TencentCloud
                      */
                     bool SourceAddressesHasBeenSet() const;
 
+                    /**
+                     * 获取SRT FEC 设置
+                     * @return FEC SRT FEC 设置
+                     * 
+                     */
+                    SRTFECSimpleOptions GetFEC() const;
+
+                    /**
+                     * 设置SRT FEC 设置
+                     * @param _fEC SRT FEC 设置
+                     * 
+                     */
+                    void SetFEC(const SRTFECSimpleOptions& _fEC);
+
+                    /**
+                     * 判断参数 FEC 是否已赋值
+                     * @return FEC 是否已赋值
+                     * 
+                     */
+                    bool FECHasBeenSet() const;
+
                 private:
 
                     /**
@@ -251,7 +273,7 @@ namespace TencentCloud
                     bool m_streamIdHasBeenSet;
 
                     /**
-                     * 延迟，默认0，单位ms，范围为[0, 3000]。
+                     * 延迟，默认120，单位ms，范围为[0, 3000]。
                      */
                     int64_t m_latency;
                     bool m_latencyHasBeenSet;
@@ -263,7 +285,7 @@ namespace TencentCloud
                     bool m_recvLatencyHasBeenSet;
 
                     /**
-                     * 对端延迟，默认0，单位ms，范围为[0, 3000]。
+                     * 对端延迟，默认120，单位ms，范围为[0, 3000]。
                      */
                     int64_t m_peerLatency;
                     bool m_peerLatencyHasBeenSet;
@@ -291,6 +313,12 @@ namespace TencentCloud
                      */
                     std::vector<SRTSourceAddressReq> m_sourceAddresses;
                     bool m_sourceAddressesHasBeenSet;
+
+                    /**
+                     * SRT FEC 设置
+                     */
+                    SRTFECSimpleOptions m_fEC;
+                    bool m_fECHasBeenSet;
 
                 };
             }

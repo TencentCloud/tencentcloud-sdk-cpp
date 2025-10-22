@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,11 +54,13 @@ namespace TencentCloud
 <li>AiReviewResult：内容审核结果；</li>
 <li>AiRecognitionResult：内容识别结果；</li>
 <li>LiveRecordResult：直播录制结果；</li>
+<li>AiQualityControlResult：媒体质检结果；</li>
 <li>ProcessEof：直播流处理结束。</li>
                      * @return NotificationType 直播流处理结果类型，包含：
 <li>AiReviewResult：内容审核结果；</li>
 <li>AiRecognitionResult：内容识别结果；</li>
 <li>LiveRecordResult：直播录制结果；</li>
+<li>AiQualityControlResult：媒体质检结果；</li>
 <li>ProcessEof：直播流处理结束。</li>
                      * 
                      */
@@ -209,6 +211,34 @@ namespace TencentCloud
                      */
                     bool SessionContextHasBeenSet() const;
 
+                    /**
+                     * 获取- 过期时间，事件通知签名过期 UNIX 时间戳。 - 来自媒体处理的消息通知默认过期时间是10分钟，如果一条消息通知中的 Timestamp 值所指定的时间已经过期，则可以判定这条通知无效，进而可以防止网络重放攻击。 - Timestamp 的格式为十进制 UNIX 时间戳，即从1970年01月01日（UTC/GMT 的午夜）开始所经过的秒数。
+                     * @return Timestamp - 过期时间，事件通知签名过期 UNIX 时间戳。 - 来自媒体处理的消息通知默认过期时间是10分钟，如果一条消息通知中的 Timestamp 值所指定的时间已经过期，则可以判定这条通知无效，进而可以防止网络重放攻击。 - Timestamp 的格式为十进制 UNIX 时间戳，即从1970年01月01日（UTC/GMT 的午夜）开始所经过的秒数。
+                     * 
+                     */
+                    int64_t GetTimestamp() const;
+
+                    /**
+                     * 判断参数 Timestamp 是否已赋值
+                     * @return Timestamp 是否已赋值
+                     * 
+                     */
+                    bool TimestampHasBeenSet() const;
+
+                    /**
+                     * 获取事件通知安全签名 Sign = MD5（Timestamp + NotifyKey）。说明：媒体处理把Timestamp 和 TaskNotifyConfig 里面的NotifyKey 进行字符串拼接后通过 MD5 计算得出 Sign 值，并将其放在通知消息里，您的后台服务器在收到通知消息后可以根据同样的算法确认 Sign 是否正确，进而确认消息是否确实来自媒体处理后台。
+                     * @return Sign 事件通知安全签名 Sign = MD5（Timestamp + NotifyKey）。说明：媒体处理把Timestamp 和 TaskNotifyConfig 里面的NotifyKey 进行字符串拼接后通过 MD5 计算得出 Sign 值，并将其放在通知消息里，您的后台服务器在收到通知消息后可以根据同样的算法确认 Sign 是否正确，进而确认消息是否确实来自媒体处理后台。
+                     * 
+                     */
+                    std::string GetSign() const;
+
+                    /**
+                     * 判断参数 Sign 是否已赋值
+                     * @return Sign 是否已赋值
+                     * 
+                     */
+                    bool SignHasBeenSet() const;
+
                 private:
 
                     /**
@@ -216,6 +246,7 @@ namespace TencentCloud
 <li>AiReviewResult：内容审核结果；</li>
 <li>AiRecognitionResult：内容识别结果；</li>
 <li>LiveRecordResult：直播录制结果；</li>
+<li>AiQualityControlResult：媒体质检结果；</li>
 <li>ProcessEof：直播流处理结束。</li>
                      */
                     std::string m_notificationType;
@@ -280,6 +311,18 @@ namespace TencentCloud
                      */
                     std::string m_sessionContext;
                     bool m_sessionContextHasBeenSet;
+
+                    /**
+                     * - 过期时间，事件通知签名过期 UNIX 时间戳。 - 来自媒体处理的消息通知默认过期时间是10分钟，如果一条消息通知中的 Timestamp 值所指定的时间已经过期，则可以判定这条通知无效，进而可以防止网络重放攻击。 - Timestamp 的格式为十进制 UNIX 时间戳，即从1970年01月01日（UTC/GMT 的午夜）开始所经过的秒数。
+                     */
+                    int64_t m_timestamp;
+                    bool m_timestampHasBeenSet;
+
+                    /**
+                     * 事件通知安全签名 Sign = MD5（Timestamp + NotifyKey）。说明：媒体处理把Timestamp 和 TaskNotifyConfig 里面的NotifyKey 进行字符串拼接后通过 MD5 计算得出 Sign 值，并将其放在通知消息里，您的后台服务器在收到通知消息后可以根据同样的算法确认 Sign 是否正确，进而确认消息是否确实来自媒体处理后台。
+                     */
+                    std::string m_sign;
+                    bool m_signHasBeenSet;
 
                 };
             }

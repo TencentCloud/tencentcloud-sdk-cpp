@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -772,6 +772,48 @@ EVENT_ADD_WHITE：已加白
                      */
                     bool ClusterNameHasBeenSet() const;
 
+                    /**
+                     * 获取镜像ID
+                     * @return ImageId 镜像ID
+                     * 
+                     */
+                    std::string GetImageId() const;
+
+                    /**
+                     * 设置镜像ID
+                     * @param _imageId 镜像ID
+                     * 
+                     */
+                    void SetImageId(const std::string& _imageId);
+
+                    /**
+                     * 判断参数 ImageId 是否已赋值
+                     * @return ImageId 是否已赋值
+                     * 
+                     */
+                    bool ImageIdHasBeenSet() const;
+
+                    /**
+                     * 获取容器ID
+                     * @return ContainerId 容器ID
+                     * 
+                     */
+                    std::string GetContainerId() const;
+
+                    /**
+                     * 设置容器ID
+                     * @param _containerId 容器ID
+                     * 
+                     */
+                    void SetContainerId(const std::string& _containerId);
+
+                    /**
+                     * 判断参数 ContainerId 是否已赋值
+                     * @return ContainerId 是否已赋值
+                     * 
+                     */
+                    bool ContainerIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -977,6 +1019,18 @@ EVENT_ADD_WHITE：已加白
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
+
+                    /**
+                     * 镜像ID
+                     */
+                    std::string m_imageId;
+                    bool m_imageIdHasBeenSet;
+
+                    /**
+                     * 容器ID
+                     */
+                    std::string m_containerId;
+                    bool m_containerIdHasBeenSet;
 
                 };
             }

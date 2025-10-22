@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -112,9 +112,7 @@ namespace TencentCloud
                     /**
                      * 获取首次上线时间
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FirstOnlineTime 首次上线时间
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -123,9 +121,7 @@ namespace TencentCloud
                     /**
                      * 设置首次上线时间
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _firstOnlineTime 首次上线时间
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -140,18 +136,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最后一次上线时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoginTime 最后一次上线时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLoginTime() const;
 
                     /**
                      * 设置最后一次上线时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _loginTime 最后一次上线时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLoginTime(const int64_t& _loginTime);
@@ -165,18 +157,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 设备创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
                      * 设置设备创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 设备创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
@@ -190,18 +178,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备固件版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 设备固件版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置设备固件版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _version 设备固件版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -215,18 +199,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备证书
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceCert 设备证书
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceCert() const;
 
                     /**
                      * 设置设备证书
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceCert 设备证书
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceCert(const std::string& _deviceCert);
@@ -240,18 +220,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogLevel 日志级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLogLevel() const;
 
                     /**
                      * 设置日志级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logLevel 日志级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogLevel(const int64_t& _logLevel);
@@ -265,18 +241,14 @@ namespace TencentCloud
 
                     /**
                      * 获取LoRaWAN 设备地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DevAddr LoRaWAN 设备地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDevAddr() const;
 
                     /**
                      * 设置LoRaWAN 设备地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _devAddr LoRaWAN 设备地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDevAddr(const std::string& _devAddr);
@@ -290,18 +262,14 @@ namespace TencentCloud
 
                     /**
                      * 获取LoRaWAN 应用密钥
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppKey LoRaWAN 应用密钥
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppKey() const;
 
                     /**
                      * 设置LoRaWAN 应用密钥
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appKey LoRaWAN 应用密钥
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppKey(const std::string& _appKey);
@@ -315,18 +283,14 @@ namespace TencentCloud
 
                     /**
                      * 获取LoRaWAN 设备唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DevEUI LoRaWAN 设备唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDevEUI() const;
 
                     /**
                      * 设置LoRaWAN 设备唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _devEUI LoRaWAN 设备唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDevEUI(const std::string& _devEUI);
@@ -340,18 +304,14 @@ namespace TencentCloud
 
                     /**
                      * 获取LoRaWAN 应用会话密钥
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppSKey LoRaWAN 应用会话密钥
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppSKey() const;
 
                     /**
                      * 设置LoRaWAN 应用会话密钥
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appSKey LoRaWAN 应用会话密钥
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppSKey(const std::string& _appSKey);
@@ -365,18 +325,14 @@ namespace TencentCloud
 
                     /**
                      * 获取LoRaWAN 网络会话密钥
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NwkSKey LoRaWAN 网络会话密钥
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNwkSKey() const;
 
                     /**
                      * 设置LoRaWAN 网络会话密钥
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nwkSKey LoRaWAN 网络会话密钥
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNwkSKey(const std::string& _nwkSKey);
@@ -390,18 +346,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建人Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateUserId 创建人Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCreateUserId() const;
 
                     /**
                      * 设置创建人Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createUserId 创建人Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateUserId(const int64_t& _createUserId);
@@ -415,18 +367,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建人昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatorNickName 创建人昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatorNickName() const;
 
                     /**
                      * 设置创建人昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _creatorNickName 创建人昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatorNickName(const std::string& _creatorNickName);
@@ -440,18 +388,14 @@ namespace TencentCloud
 
                     /**
                      * 获取启用/禁用状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableState 启用/禁用状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEnableState() const;
 
                     /**
                      * 设置启用/禁用状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableState 启用/禁用状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableState(const int64_t& _enableState);
@@ -465,18 +409,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductId 产品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productId 产品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductId(const std::string& _productId);
@@ -490,18 +430,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductName 产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductName() const;
 
                     /**
                      * 设置产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productName 产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductName(const std::string& _productName);
@@ -515,18 +451,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备类型（设备、子设备、网关）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceType 设备类型（设备、子设备、网关）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceType() const;
 
                     /**
                      * 设置设备类型（设备、子设备、网关）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceType 设备类型（设备、子设备、网关）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceType(const std::string& _deviceType);
@@ -540,18 +472,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否是 lora 设备
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsLora 是否是 lora 设备
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsLora() const;
 
                     /**
                      * 设置是否是 lora 设备
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isLora 是否是 lora 设备
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsLora(const bool& _isLora);
@@ -586,126 +514,108 @@ namespace TencentCloud
                     /**
                      * 首次上线时间
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_firstOnlineTime;
                     bool m_firstOnlineTimeHasBeenSet;
 
                     /**
                      * 最后一次上线时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_loginTime;
                     bool m_loginTimeHasBeenSet;
 
                     /**
                      * 设备创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 设备固件版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
                      * 设备证书
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceCert;
                     bool m_deviceCertHasBeenSet;
 
                     /**
                      * 日志级别
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_logLevel;
                     bool m_logLevelHasBeenSet;
 
                     /**
                      * LoRaWAN 设备地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_devAddr;
                     bool m_devAddrHasBeenSet;
 
                     /**
                      * LoRaWAN 应用密钥
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appKey;
                     bool m_appKeyHasBeenSet;
 
                     /**
                      * LoRaWAN 设备唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_devEUI;
                     bool m_devEUIHasBeenSet;
 
                     /**
                      * LoRaWAN 应用会话密钥
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appSKey;
                     bool m_appSKeyHasBeenSet;
 
                     /**
                      * LoRaWAN 网络会话密钥
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nwkSKey;
                     bool m_nwkSKeyHasBeenSet;
 
                     /**
                      * 创建人Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_createUserId;
                     bool m_createUserIdHasBeenSet;
 
                     /**
                      * 创建人昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_creatorNickName;
                     bool m_creatorNickNameHasBeenSet;
 
                     /**
                      * 启用/禁用状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_enableState;
                     bool m_enableStateHasBeenSet;
 
                     /**
                      * 产品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productId;
                     bool m_productIdHasBeenSet;
 
                     /**
                      * 产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productName;
                     bool m_productNameHasBeenSet;
 
                     /**
                      * 设备类型（设备、子设备、网关）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceType;
                     bool m_deviceTypeHasBeenSet;
 
                     /**
                      * 是否是 lora 设备
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isLora;
                     bool m_isLoraHasBeenSet;

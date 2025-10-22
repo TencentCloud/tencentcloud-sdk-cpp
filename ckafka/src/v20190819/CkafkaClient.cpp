@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -592,49 +592,6 @@ CkafkaClient::CreateDatahubTopicOutcomeCallable CkafkaClient::CreateDatahubTopic
         [this, request]()
         {
             return this->CreateDatahubTopic(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-CkafkaClient::CreateInstancePostOutcome CkafkaClient::CreateInstancePost(const CreateInstancePostRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateInstancePost");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateInstancePostResponse rsp = CreateInstancePostResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateInstancePostOutcome(rsp);
-        else
-            return CreateInstancePostOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateInstancePostOutcome(outcome.GetError());
-    }
-}
-
-void CkafkaClient::CreateInstancePostAsync(const CreateInstancePostRequest& request, const CreateInstancePostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateInstancePost(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CkafkaClient::CreateInstancePostOutcomeCallable CkafkaClient::CreateInstancePostCallable(const CreateInstancePostRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateInstancePostOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateInstancePost(request);
         }
     );
 
@@ -1889,6 +1846,49 @@ CkafkaClient::DescribeConsumerGroupOutcomeCallable CkafkaClient::DescribeConsume
     return task->get_future();
 }
 
+CkafkaClient::DescribeCvmInfoOutcome CkafkaClient::DescribeCvmInfo(const DescribeCvmInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCvmInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCvmInfoResponse rsp = DescribeCvmInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCvmInfoOutcome(rsp);
+        else
+            return DescribeCvmInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCvmInfoOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::DescribeCvmInfoAsync(const DescribeCvmInfoRequest& request, const DescribeCvmInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCvmInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::DescribeCvmInfoOutcomeCallable CkafkaClient::DescribeCvmInfoCallable(const DescribeCvmInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCvmInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCvmInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::DescribeDatahubGroupOffsetsOutcome CkafkaClient::DescribeDatahubGroupOffsets(const DescribeDatahubGroupOffsetsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDatahubGroupOffsets");
@@ -2491,6 +2491,49 @@ CkafkaClient::DescribeRouteOutcomeCallable CkafkaClient::DescribeRouteCallable(c
     return task->get_future();
 }
 
+CkafkaClient::DescribeSecurityGroupRoutesOutcome CkafkaClient::DescribeSecurityGroupRoutes(const DescribeSecurityGroupRoutesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSecurityGroupRoutes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSecurityGroupRoutesResponse rsp = DescribeSecurityGroupRoutesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSecurityGroupRoutesOutcome(rsp);
+        else
+            return DescribeSecurityGroupRoutesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSecurityGroupRoutesOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::DescribeSecurityGroupRoutesAsync(const DescribeSecurityGroupRoutesRequest& request, const DescribeSecurityGroupRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSecurityGroupRoutes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::DescribeSecurityGroupRoutesOutcomeCallable CkafkaClient::DescribeSecurityGroupRoutesCallable(const DescribeSecurityGroupRoutesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSecurityGroupRoutesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSecurityGroupRoutes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::DescribeTaskStatusOutcome CkafkaClient::DescribeTaskStatus(const DescribeTaskStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTaskStatus");
@@ -2828,6 +2871,49 @@ CkafkaClient::DescribeTopicSyncReplicaOutcomeCallable CkafkaClient::DescribeTopi
         [this, request]()
         {
             return this->DescribeTopicSyncReplica(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CkafkaClient::DescribeTypeInstancesOutcome CkafkaClient::DescribeTypeInstances(const DescribeTypeInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTypeInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTypeInstancesResponse rsp = DescribeTypeInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTypeInstancesOutcome(rsp);
+        else
+            return DescribeTypeInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTypeInstancesOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::DescribeTypeInstancesAsync(const DescribeTypeInstancesRequest& request, const DescribeTypeInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTypeInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::DescribeTypeInstancesOutcomeCallable CkafkaClient::DescribeTypeInstancesCallable(const DescribeTypeInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTypeInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTypeInstances(request);
         }
     );
 

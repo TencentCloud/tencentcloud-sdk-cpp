@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,8 @@ Condition::Condition() :
     m_isAdvancedHasBeenSet(false),
     m_isOpenHasBeenSet(false),
     m_productIdHasBeenSet(false),
-    m_hierarchicalValueHasBeenSet(false)
+    m_hierarchicalValueHasBeenSet(false),
+    m_ruleTypeHasBeenSet(false)
 {
 }
 
@@ -190,6 +191,16 @@ CoreInternalOutcome Condition::Deserialize(const rapidjson::Value &value)
         m_hierarchicalValueHasBeenSet = true;
     }
 
+    if (value.HasMember("RuleType") && !value["RuleType"].IsNull())
+    {
+        if (!value["RuleType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Condition.RuleType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleType = string(value["RuleType"].GetString());
+        m_ruleTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -308,6 +319,14 @@ void Condition::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_hierarchicalValue.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_ruleTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -535,5 +554,21 @@ void Condition::SetHierarchicalValue(const AlarmHierarchicalValue& _hierarchical
 bool Condition::HierarchicalValueHasBeenSet() const
 {
     return m_hierarchicalValueHasBeenSet;
+}
+
+string Condition::GetRuleType() const
+{
+    return m_ruleType;
+}
+
+void Condition::SetRuleType(const string& _ruleType)
+{
+    m_ruleType = _ruleType;
+    m_ruleTypeHasBeenSet = true;
+}
+
+bool Condition::RuleTypeHasBeenSet() const
+{
+    return m_ruleTypeHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,44 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取小程序ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ModelId 小程序ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetModelId() const;
-
-                    /**
-                     * 设置小程序ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _modelId 小程序ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetModelId(const std::string& _modelId);
-
-                    /**
-                     * 判断参数 ModelId 是否已赋值
-                     * @return ModelId 是否已赋值
-                     * 
-                     */
-                    bool ModelIdHasBeenSet() const;
-
-                    /**
                      * 获取Sn信息，SN格式：产品ID_设备名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Sn Sn信息，SN格式：产品ID_设备名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSn() const;
 
                     /**
                      * 设置Sn信息，SN格式：产品ID_设备名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sn Sn信息，SN格式：产品ID_设备名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSn(const std::string& _sn);
@@ -97,11 +68,36 @@ namespace TencentCloud
                     bool SnHasBeenSet() const;
 
                     /**
+                     * 获取小程序ID，参数已弃用，不用传参
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ModelId 小程序ID，参数已弃用，不用传参
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @deprecated
+                     */
+                    std::string GetModelId() const;
+
+                    /**
+                     * 设置小程序ID，参数已弃用，不用传参
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _modelId 小程序ID，参数已弃用，不用传参
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @deprecated
+                     */
+                    void SetModelId(const std::string& _modelId);
+
+                    /**
+                     * 判断参数 ModelId 是否已赋值
+                     * @return ModelId 是否已赋值
+                     * @deprecated
+                     */
+                    bool ModelIdHasBeenSet() const;
+
+                    /**
                      * 获取激活数
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActiveNum 激活数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     int64_t GetActiveNum() const;
 
@@ -110,32 +106,31 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _activeNum 激活数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetActiveNum(const int64_t& _activeNum);
 
                     /**
                      * 判断参数 ActiveNum 是否已赋值
                      * @return ActiveNum 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ActiveNumHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 小程序ID
+                     * Sn信息，SN格式：产品ID_设备名
+                     */
+                    std::string m_sn;
+                    bool m_snHasBeenSet;
+
+                    /**
+                     * 小程序ID，参数已弃用，不用传参
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modelId;
                     bool m_modelIdHasBeenSet;
-
-                    /**
-                     * Sn信息，SN格式：产品ID_设备名
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_sn;
-                    bool m_snHasBeenSet;
 
                     /**
                      * 激活数

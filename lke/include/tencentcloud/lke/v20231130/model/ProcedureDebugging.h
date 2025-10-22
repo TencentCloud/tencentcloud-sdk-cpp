@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,8 @@
 #include <tencentcloud/lke/v20231130/model/HistorySummary.h>
 #include <tencentcloud/lke/v20231130/model/KnowledgeSummary.h>
 #include <tencentcloud/lke/v20231130/model/TaskFlowSummary.h>
+#include <tencentcloud/lke/v20231130/model/WorkFlowSummary.h>
+#include <tencentcloud/lke/v20231130/model/AgentDebugInfo.h>
 
 
 namespace TencentCloud
@@ -174,6 +176,81 @@ namespace TencentCloud
                      */
                     bool TaskFlowHasBeenSet() const;
 
+                    /**
+                     * 获取工作流调试信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WorkFlow 工作流调试信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    WorkFlowSummary GetWorkFlow() const;
+
+                    /**
+                     * 设置工作流调试信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _workFlow 工作流调试信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWorkFlow(const WorkFlowSummary& _workFlow);
+
+                    /**
+                     * 判断参数 WorkFlow 是否已赋值
+                     * @return WorkFlow 是否已赋值
+                     * 
+                     */
+                    bool WorkFlowHasBeenSet() const;
+
+                    /**
+                     * 获取Agent调试信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Agent Agent调试信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AgentDebugInfo GetAgent() const;
+
+                    /**
+                     * 设置Agent调试信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _agent Agent调试信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAgent(const AgentDebugInfo& _agent);
+
+                    /**
+                     * 判断参数 Agent 是否已赋值
+                     * @return Agent 是否已赋值
+                     * 
+                     */
+                    bool AgentHasBeenSet() const;
+
+                    /**
+                     * 获取自定义参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CustomVariables 自定义参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetCustomVariables() const;
+
+                    /**
+                     * 设置自定义参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _customVariables 自定义参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCustomVariables(const std::vector<std::string>& _customVariables);
+
+                    /**
+                     * 判断参数 CustomVariables 是否已赋值
+                     * @return CustomVariables 是否已赋值
+                     * 
+                     */
+                    bool CustomVariablesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -210,6 +287,27 @@ namespace TencentCloud
                      */
                     TaskFlowSummary m_taskFlow;
                     bool m_taskFlowHasBeenSet;
+
+                    /**
+                     * 工作流调试信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    WorkFlowSummary m_workFlow;
+                    bool m_workFlowHasBeenSet;
+
+                    /**
+                     * Agent调试信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AgentDebugInfo m_agent;
+                    bool m_agentHasBeenSet;
+
+                    /**
+                     * 自定义参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_customVariables;
+                    bool m_customVariablesHasBeenSet;
 
                 };
             }

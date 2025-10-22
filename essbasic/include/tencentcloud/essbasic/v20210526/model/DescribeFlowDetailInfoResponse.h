@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,10 +75,8 @@ namespace TencentCloud
                     /**
                      * 获取合同流程的详细信息。
 如果查询的是合同组信息，则返回的是组内所有子合同流程的详细信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowInfo 合同流程的详细信息。
 如果查询的是合同组信息，则返回的是组内所有子合同流程的详细信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FlowDetailInfo> GetFlowInfo() const;
@@ -92,9 +90,7 @@ namespace TencentCloud
 
                     /**
                      * 获取合同组ID，只有在查询合同组信息时才会返回。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowGroupId 合同组ID，只有在查询合同组信息时才会返回。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlowGroupId() const;
@@ -108,9 +104,7 @@ namespace TencentCloud
 
                     /**
                      * 获取合同组名称，只有在查询合同组信息时才会返回。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowGroupName 合同组名称，只有在查询合同组信息时才会返回。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlowGroupName() const;
@@ -139,21 +133,18 @@ namespace TencentCloud
                     /**
                      * 合同流程的详细信息。
 如果查询的是合同组信息，则返回的是组内所有子合同流程的详细信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FlowDetailInfo> m_flowInfo;
                     bool m_flowInfoHasBeenSet;
 
                     /**
                      * 合同组ID，只有在查询合同组信息时才会返回。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowGroupId;
                     bool m_flowGroupIdHasBeenSet;
 
                     /**
                      * 合同组名称，只有在查询合同组信息时才会返回。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowGroupName;
                     bool m_flowGroupNameHasBeenSet;

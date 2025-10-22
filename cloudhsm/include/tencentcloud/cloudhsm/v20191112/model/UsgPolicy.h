@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cidr格式地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ip cidr格式地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置cidr格式地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ip cidr格式地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取安全组id代表的地址集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 安全组id代表的地址集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置安全组id代表的地址集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 安全组id代表的地址集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地址组id代表的地址集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddressModule 地址组id代表的地址集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAddressModule() const;
 
                     /**
                      * 设置地址组id代表的地址集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _addressModule 地址组id代表的地址集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddressModule(const std::string& _addressModule);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Proto 协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProto() const;
 
                     /**
                      * 设置协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _proto 协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProto(const std::string& _proto);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPort() const;
 
                     /**
                      * 设置端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _port 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPort(const std::string& _port);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务组id代表的协议和端口集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceModule 服务组id代表的协议和端口集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceModule() const;
 
                     /**
                      * 设置服务组id代表的协议和端口集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceModule 服务组id代表的协议和端口集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceModule(const std::string& _serviceModule);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Desc 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDesc() const;
 
                     /**
                      * 设置备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _desc 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDesc(const std::string& _desc);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取匹配后行为:ACCEPT/DROP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Action 匹配后行为:ACCEPT/DROP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAction() const;
 
                     /**
                      * 设置匹配后行为:ACCEPT/DROP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _action 匹配后行为:ACCEPT/DROP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAction(const std::string& _action);
@@ -250,56 +218,48 @@ namespace TencentCloud
 
                     /**
                      * cidr格式地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
                      * 安全组id代表的地址集合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 地址组id代表的地址集合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_addressModule;
                     bool m_addressModuleHasBeenSet;
 
                     /**
                      * 协议
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_proto;
                     bool m_protoHasBeenSet;
 
                     /**
                      * 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_port;
                     bool m_portHasBeenSet;
 
                     /**
                      * 服务组id代表的协议和端口集合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceModule;
                     bool m_serviceModuleHasBeenSet;
 
                     /**
                      * 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_desc;
                     bool m_descHasBeenSet;
 
                     /**
                      * 匹配后行为:ACCEPT/DROP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_action;
                     bool m_actionHasBeenSet;

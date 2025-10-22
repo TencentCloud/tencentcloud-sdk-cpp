@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,6 +106,27 @@ namespace TencentCloud
                      */
                     bool CanaryRuleHasBeenSet() const;
 
+                    /**
+                     * 获取灰度规则配置列表，如果配置了此参数，将以此参数为准，忽略CanaryRule参数
+                     * @return CanaryRuleList 灰度规则配置列表，如果配置了此参数，将以此参数为准，忽略CanaryRule参数
+                     * 
+                     */
+                    std::vector<CloudNativeAPIGatewayCanaryRule> GetCanaryRuleList() const;
+
+                    /**
+                     * 设置灰度规则配置列表，如果配置了此参数，将以此参数为准，忽略CanaryRule参数
+                     * @param _canaryRuleList 灰度规则配置列表，如果配置了此参数，将以此参数为准，忽略CanaryRule参数
+                     * 
+                     */
+                    void SetCanaryRuleList(const std::vector<CloudNativeAPIGatewayCanaryRule>& _canaryRuleList);
+
+                    /**
+                     * 判断参数 CanaryRuleList 是否已赋值
+                     * @return CanaryRuleList 是否已赋值
+                     * 
+                     */
+                    bool CanaryRuleListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +146,12 @@ namespace TencentCloud
                      */
                     CloudNativeAPIGatewayCanaryRule m_canaryRule;
                     bool m_canaryRuleHasBeenSet;
+
+                    /**
+                     * 灰度规则配置列表，如果配置了此参数，将以此参数为准，忽略CanaryRule参数
+                     */
+                    std::vector<CloudNativeAPIGatewayCanaryRule> m_canaryRuleList;
+                    bool m_canaryRuleListHasBeenSet;
 
                 };
             }

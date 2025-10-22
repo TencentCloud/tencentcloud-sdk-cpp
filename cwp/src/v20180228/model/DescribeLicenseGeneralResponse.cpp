@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,7 +42,9 @@ DescribeLicenseGeneralResponse::DescribeLicenseGeneralResponse() :
     m_autoRepurchaseSwitchHasBeenSet(false),
     m_autoRepurchaseRenewSwitchHasBeenSet(false),
     m_destroyOrderNumHasBeenSet(false),
-    m_repurchaseRenewSwitchHasBeenSet(false)
+    m_repurchaseRenewSwitchHasBeenSet(false),
+    m_autoBindRaspSwitchHasBeenSet(false),
+    m_autoOpenRaspSwitchHasBeenSet(false)
 {
 }
 
@@ -270,6 +272,26 @@ CoreInternalOutcome DescribeLicenseGeneralResponse::Deserialize(const string &pa
         m_repurchaseRenewSwitchHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AutoBindRaspSwitch") && !rsp["AutoBindRaspSwitch"].IsNull())
+    {
+        if (!rsp["AutoBindRaspSwitch"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoBindRaspSwitch` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoBindRaspSwitch = rsp["AutoBindRaspSwitch"].GetBool();
+        m_autoBindRaspSwitchHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AutoOpenRaspSwitch") && !rsp["AutoOpenRaspSwitch"].IsNull())
+    {
+        if (!rsp["AutoOpenRaspSwitch"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoOpenRaspSwitch` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoOpenRaspSwitch = rsp["AutoOpenRaspSwitch"].GetBool();
+        m_autoOpenRaspSwitchHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -432,11 +454,27 @@ string DescribeLicenseGeneralResponse::ToJsonString() const
         value.AddMember(iKey, m_repurchaseRenewSwitch, allocator);
     }
 
+    if (m_autoBindRaspSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoBindRaspSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoBindRaspSwitch, allocator);
+    }
+
+    if (m_autoOpenRaspSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoOpenRaspSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoOpenRaspSwitch, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -632,6 +670,26 @@ bool DescribeLicenseGeneralResponse::GetRepurchaseRenewSwitch() const
 bool DescribeLicenseGeneralResponse::RepurchaseRenewSwitchHasBeenSet() const
 {
     return m_repurchaseRenewSwitchHasBeenSet;
+}
+
+bool DescribeLicenseGeneralResponse::GetAutoBindRaspSwitch() const
+{
+    return m_autoBindRaspSwitch;
+}
+
+bool DescribeLicenseGeneralResponse::AutoBindRaspSwitchHasBeenSet() const
+{
+    return m_autoBindRaspSwitchHasBeenSet;
+}
+
+bool DescribeLicenseGeneralResponse::GetAutoOpenRaspSwitch() const
+{
+    return m_autoOpenRaspSwitch;
+}
+
+bool DescribeLicenseGeneralResponse::AutoOpenRaspSwitchHasBeenSet() const
+{
+    return m_autoOpenRaspSwitchHasBeenSet;
 }
 
 

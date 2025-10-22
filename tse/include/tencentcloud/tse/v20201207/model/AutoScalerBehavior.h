@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扩容行为配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScaleUp 扩容行为配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AutoScalerRules GetScaleUp() const;
 
                     /**
                      * 设置扩容行为配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scaleUp 扩容行为配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScaleUp(const AutoScalerRules& _scaleUp);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取缩容行为配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScaleDown 缩容行为配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AutoScalerRules GetScaleDown() const;
 
                     /**
                      * 设置缩容行为配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scaleDown 缩容行为配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScaleDown(const AutoScalerRules& _scaleDown);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 扩容行为配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AutoScalerRules m_scaleUp;
                     bool m_scaleUpHasBeenSet;
 
                     /**
                      * 缩容行为配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AutoScalerRules m_scaleDown;
                     bool m_scaleDownHasBeenSet;

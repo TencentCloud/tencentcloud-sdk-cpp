@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -194,15 +194,31 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取本次投递的结果，"success","running","failed"
-                     * @return Status 本次投递的结果，"success","running","failed"
+                     * 获取本次投递的结果。"success"，"running"，"failed"
+
+- success：任务成功。
+- running：任务处理中。
+- failed：任务失败。
+                     * @return Status 本次投递的结果。"success"，"running"，"failed"
+
+- success：任务成功。
+- running：任务处理中。
+- failed：任务失败。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置本次投递的结果，"success","running","failed"
-                     * @param _status 本次投递的结果，"success","running","failed"
+                     * 设置本次投递的结果。"success"，"running"，"failed"
+
+- success：任务成功。
+- running：任务处理中。
+- failed：任务失败。
+                     * @param _status 本次投递的结果。"success"，"running"，"failed"
+
+- success：任务成功。
+- running：任务处理中。
+- failed：任务失败。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -280,7 +296,11 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 本次投递的结果，"success","running","failed"
+                     * 本次投递的结果。"success"，"running"，"failed"
+
+- success：任务成功。
+- running：任务处理中。
+- failed：任务失败。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,11 @@ AddAssetImageRegistryRegistryDetailRequest::AddAssetImageRegistryRegistryDetailR
     m_speedLimitHasBeenSet(false),
     m_insecureHasBeenSet(false),
     m_connDetectConfigHasBeenSet(false),
-    m_needScanHasBeenSet(false)
+    m_needScanHasBeenSet(false),
+    m_syncModeHasBeenSet(false),
+    m_webhookUrlHasBeenSet(false),
+    m_webhookTokenHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -146,6 +150,38 @@ string AddAssetImageRegistryRegistryDetailRequest::ToJsonString() const
         string key = "NeedScan";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_needScan, allocator);
+    }
+
+    if (m_syncModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_syncMode, allocator);
+    }
+
+    if (m_webhookUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebhookUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_webhookUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_webhookTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebhookToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_webhookToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -346,6 +382,70 @@ void AddAssetImageRegistryRegistryDetailRequest::SetNeedScan(const bool& _needSc
 bool AddAssetImageRegistryRegistryDetailRequest::NeedScanHasBeenSet() const
 {
     return m_needScanHasBeenSet;
+}
+
+uint64_t AddAssetImageRegistryRegistryDetailRequest::GetSyncMode() const
+{
+    return m_syncMode;
+}
+
+void AddAssetImageRegistryRegistryDetailRequest::SetSyncMode(const uint64_t& _syncMode)
+{
+    m_syncMode = _syncMode;
+    m_syncModeHasBeenSet = true;
+}
+
+bool AddAssetImageRegistryRegistryDetailRequest::SyncModeHasBeenSet() const
+{
+    return m_syncModeHasBeenSet;
+}
+
+string AddAssetImageRegistryRegistryDetailRequest::GetWebhookUrl() const
+{
+    return m_webhookUrl;
+}
+
+void AddAssetImageRegistryRegistryDetailRequest::SetWebhookUrl(const string& _webhookUrl)
+{
+    m_webhookUrl = _webhookUrl;
+    m_webhookUrlHasBeenSet = true;
+}
+
+bool AddAssetImageRegistryRegistryDetailRequest::WebhookUrlHasBeenSet() const
+{
+    return m_webhookUrlHasBeenSet;
+}
+
+string AddAssetImageRegistryRegistryDetailRequest::GetWebhookToken() const
+{
+    return m_webhookToken;
+}
+
+void AddAssetImageRegistryRegistryDetailRequest::SetWebhookToken(const string& _webhookToken)
+{
+    m_webhookToken = _webhookToken;
+    m_webhookTokenHasBeenSet = true;
+}
+
+bool AddAssetImageRegistryRegistryDetailRequest::WebhookTokenHasBeenSet() const
+{
+    return m_webhookTokenHasBeenSet;
+}
+
+string AddAssetImageRegistryRegistryDetailRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void AddAssetImageRegistryRegistryDetailRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool AddAssetImageRegistryRegistryDetailRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 
 

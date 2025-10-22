@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,54 +19,52 @@ set(vclm_public_header
   )
 
 set(vclm_public_header_model
-  include/tencentcloud/vclm/v20240523/model/AsrTimestamps.h
-  include/tencentcloud/vclm/v20240523/model/SubmitVideoStylizationJobRequest.h
-  include/tencentcloud/vclm/v20240523/model/LogoParam.h
-  include/tencentcloud/vclm/v20240523/model/SubmitImageAnimateJobRequest.h
-  include/tencentcloud/vclm/v20240523/model/SubmitVideoStylizationJobResponse.h
-  include/tencentcloud/vclm/v20240523/model/ConfirmVideoTranslateJobRequest.h
-  include/tencentcloud/vclm/v20240523/model/DescribePortraitSingJobRequest.h
-  include/tencentcloud/vclm/v20240523/model/SubmitImageAnimateJobResponse.h
-  include/tencentcloud/vclm/v20240523/model/SubmitPortraitSingJobResponse.h
-  include/tencentcloud/vclm/v20240523/model/SubmitVideoTranslateJobResponse.h
-  include/tencentcloud/vclm/v20240523/model/DescribeVideoTranslateJobResponse.h
+  include/tencentcloud/vclm/v20240523/model/CheckAnimateImageJobResponse.h
+  include/tencentcloud/vclm/v20240523/model/SubmitTemplateToVideoJobRequest.h
+  include/tencentcloud/vclm/v20240523/model/SubmitTemplateToVideoJobResponse.h
+  include/tencentcloud/vclm/v20240523/model/CheckAnimateImageJobRequest.h
   include/tencentcloud/vclm/v20240523/model/DescribeVideoStylizationJobRequest.h
+  include/tencentcloud/vclm/v20240523/model/DescribePortraitSingJobRequest.h
   include/tencentcloud/vclm/v20240523/model/DescribeImageAnimateJobResponse.h
+  include/tencentcloud/vclm/v20240523/model/SubmitVideoStylizationJobRequest.h
   include/tencentcloud/vclm/v20240523/model/SubmitPortraitSingJobRequest.h
+  include/tencentcloud/vclm/v20240523/model/Image.h
   include/tencentcloud/vclm/v20240523/model/LogoRect.h
+  include/tencentcloud/vclm/v20240523/model/SubmitImageAnimateJobResponse.h
+  include/tencentcloud/vclm/v20240523/model/DescribeTemplateToVideoJobResponse.h
+  include/tencentcloud/vclm/v20240523/model/DescribeTemplateToVideoJobRequest.h
+  include/tencentcloud/vclm/v20240523/model/SubmitVideoStylizationJobResponse.h
   include/tencentcloud/vclm/v20240523/model/DescribeVideoStylizationJobResponse.h
-  include/tencentcloud/vclm/v20240523/model/TranslateResult.h
-  include/tencentcloud/vclm/v20240523/model/SubmitVideoTranslateJobRequest.h
-  include/tencentcloud/vclm/v20240523/model/ConfirmVideoTranslateJobResponse.h
-  include/tencentcloud/vclm/v20240523/model/DescribeVideoTranslateJobRequest.h
+  include/tencentcloud/vclm/v20240523/model/SubmitImageAnimateJobRequest.h
   include/tencentcloud/vclm/v20240523/model/DescribeImageAnimateJobRequest.h
   include/tencentcloud/vclm/v20240523/model/DescribePortraitSingJobResponse.h
+  include/tencentcloud/vclm/v20240523/model/SubmitPortraitSingJobResponse.h
+  include/tencentcloud/vclm/v20240523/model/LogoParam.h
   )
 
 set(vclm_src
   src/v20240523/VclmClient.cpp
-  src/v20240523/model/AsrTimestamps.cpp
-  src/v20240523/model/SubmitVideoStylizationJobRequest.cpp
-  src/v20240523/model/LogoParam.cpp
-  src/v20240523/model/SubmitImageAnimateJobRequest.cpp
-  src/v20240523/model/SubmitVideoStylizationJobResponse.cpp
-  src/v20240523/model/ConfirmVideoTranslateJobRequest.cpp
-  src/v20240523/model/DescribePortraitSingJobRequest.cpp
-  src/v20240523/model/SubmitImageAnimateJobResponse.cpp
-  src/v20240523/model/SubmitPortraitSingJobResponse.cpp
-  src/v20240523/model/SubmitVideoTranslateJobResponse.cpp
-  src/v20240523/model/DescribeVideoTranslateJobResponse.cpp
+  src/v20240523/model/CheckAnimateImageJobResponse.cpp
+  src/v20240523/model/SubmitTemplateToVideoJobRequest.cpp
+  src/v20240523/model/SubmitTemplateToVideoJobResponse.cpp
+  src/v20240523/model/CheckAnimateImageJobRequest.cpp
   src/v20240523/model/DescribeVideoStylizationJobRequest.cpp
+  src/v20240523/model/DescribePortraitSingJobRequest.cpp
   src/v20240523/model/DescribeImageAnimateJobResponse.cpp
+  src/v20240523/model/SubmitVideoStylizationJobRequest.cpp
   src/v20240523/model/SubmitPortraitSingJobRequest.cpp
+  src/v20240523/model/Image.cpp
   src/v20240523/model/LogoRect.cpp
+  src/v20240523/model/SubmitImageAnimateJobResponse.cpp
+  src/v20240523/model/DescribeTemplateToVideoJobResponse.cpp
+  src/v20240523/model/DescribeTemplateToVideoJobRequest.cpp
+  src/v20240523/model/SubmitVideoStylizationJobResponse.cpp
   src/v20240523/model/DescribeVideoStylizationJobResponse.cpp
-  src/v20240523/model/TranslateResult.cpp
-  src/v20240523/model/SubmitVideoTranslateJobRequest.cpp
-  src/v20240523/model/ConfirmVideoTranslateJobResponse.cpp
-  src/v20240523/model/DescribeVideoTranslateJobRequest.cpp
+  src/v20240523/model/SubmitImageAnimateJobRequest.cpp
   src/v20240523/model/DescribeImageAnimateJobRequest.cpp
   src/v20240523/model/DescribePortraitSingJobResponse.cpp
+  src/v20240523/model/SubmitPortraitSingJobResponse.cpp
+  src/v20240523/model/LogoParam.cpp
   )
 
 set(vclm_include

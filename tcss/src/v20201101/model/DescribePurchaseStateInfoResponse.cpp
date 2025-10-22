@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,7 +43,8 @@ DescribePurchaseStateInfoResponse::DescribePurchaseStateInfoResponse() :
     m_defendPolicyHasBeenSet(false),
     m_flexibleCoresLimitHasBeenSet(false),
     m_defendClusterCoresCntHasBeenSet(false),
-    m_defendHostCoresCntHasBeenSet(false)
+    m_defendHostCoresCntHasBeenSet(false),
+    m_trialCoresCntHasBeenSet(false)
 {
 }
 
@@ -281,6 +282,16 @@ CoreInternalOutcome DescribePurchaseStateInfoResponse::Deserialize(const string 
         m_defendHostCoresCntHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TrialCoresCnt") && !rsp["TrialCoresCnt"].IsNull())
+    {
+        if (!rsp["TrialCoresCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrialCoresCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_trialCoresCnt = rsp["TrialCoresCnt"].GetUint64();
+        m_trialCoresCntHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -451,11 +462,19 @@ string DescribePurchaseStateInfoResponse::ToJsonString() const
         value.AddMember(iKey, m_defendHostCoresCnt, allocator);
     }
 
+    if (m_trialCoresCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrialCoresCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_trialCoresCnt, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -661,6 +680,16 @@ uint64_t DescribePurchaseStateInfoResponse::GetDefendHostCoresCnt() const
 bool DescribePurchaseStateInfoResponse::DefendHostCoresCntHasBeenSet() const
 {
     return m_defendHostCoresCntHasBeenSet;
+}
+
+uint64_t DescribePurchaseStateInfoResponse::GetTrialCoresCnt() const
+{
+    return m_trialCoresCnt;
+}
+
+bool DescribePurchaseStateInfoResponse::TrialCoresCntHasBeenSet() const
+{
+    return m_trialCoresCntHasBeenSet;
 }
 
 

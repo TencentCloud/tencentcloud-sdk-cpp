@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ using namespace std;
 DescribeReleaseFileSignRequest::DescribeReleaseFileSignRequest() :
     m_timeoutHasBeenSet(false),
     m_fileTypeHasBeenSet(false),
-    m_siteHasBeenSet(false)
+    m_siteHasBeenSet(false),
+    m_iDHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeReleaseFileSignRequest::ToJsonString() const
         string key = "Site";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_site, allocator);
+    }
+
+    if (m_iDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ID";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_iD, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeReleaseFileSignRequest::SetSite(const int64_t& _site)
 bool DescribeReleaseFileSignRequest::SiteHasBeenSet() const
 {
     return m_siteHasBeenSet;
+}
+
+int64_t DescribeReleaseFileSignRequest::GetID() const
+{
+    return m_iD;
+}
+
+void DescribeReleaseFileSignRequest::SetID(const int64_t& _iD)
+{
+    m_iD = _iD;
+    m_iDHasBeenSet = true;
+}
+
+bool DescribeReleaseFileSignRequest::IDHasBeenSet() const
+{
+    return m_iDHasBeenSet;
 }
 
 

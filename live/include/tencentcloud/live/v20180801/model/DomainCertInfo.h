@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -254,10 +254,8 @@ namespace TencentCloud
                     /**
                      * 获取证书本身标识的域名列表。
 比如: ["*.x.com"]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertDomains 证书本身标识的域名列表。
 比如: ["*.x.com"]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetCertDomains() const;
@@ -265,10 +263,8 @@ namespace TencentCloud
                     /**
                      * 设置证书本身标识的域名列表。
 比如: ["*.x.com"]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _certDomains 证书本身标识的域名列表。
 比如: ["*.x.com"]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCertDomains(const std::vector<std::string>& _certDomains);
@@ -282,18 +278,14 @@ namespace TencentCloud
 
                     /**
                      * 获取腾讯云ssl的证书Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CloudCertId 腾讯云ssl的证书Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCloudCertId() const;
 
                     /**
                      * 设置腾讯云ssl的证书Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cloudCertId 腾讯云ssl的证书Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCloudCertId(const std::string& _cloudCertId);
@@ -368,14 +360,12 @@ namespace TencentCloud
                     /**
                      * 证书本身标识的域名列表。
 比如: ["*.x.com"]
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_certDomains;
                     bool m_certDomainsHasBeenSet;
 
                     /**
                      * 腾讯云ssl的证书Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cloudCertId;
                     bool m_cloudCertIdHasBeenSet;

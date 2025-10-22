@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取最高价格
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxPrice 最高价格
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取最高价格 单位元
+                     * @return MaxPrice 最高价格 单位元
                      * 
                      */
                     double GetMaxPrice() const;
 
                     /**
-                     * 设置最高价格
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _maxPrice 最高价格
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置最高价格 单位元
+                     * @param _maxPrice 最高价格 单位元
                      * 
                      */
                     void SetMaxPrice(const double& _maxPrice);
@@ -72,19 +68,15 @@ namespace TencentCloud
                     bool MaxPriceHasBeenSet() const;
 
                     /**
-                     * 获取最低价格
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MinPrice 最低价格
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取最低价格 单位元
+                     * @return MinPrice 最低价格 单位元
                      * 
                      */
                     double GetMinPrice() const;
 
                     /**
-                     * 设置最低价格
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _minPrice 最低价格
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置最低价格 单位元
+                     * @param _minPrice 最低价格 单位元
                      * 
                      */
                     void SetMinPrice(const double& _minPrice);
@@ -97,19 +89,15 @@ namespace TencentCloud
                     bool MinPriceHasBeenSet() const;
 
                     /**
-                     * 获取价格幅度
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Price 价格幅度
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取价格幅度 单位元
+                     * @return Price 价格幅度 单位元
                      * 
                      */
                     double GetPrice() const;
 
                     /**
-                     * 设置价格幅度
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _price 价格幅度
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置价格幅度 单位元
+                     * @param _price 价格幅度 单位元
                      * 
                      */
                     void SetPrice(const double& _price);
@@ -122,19 +110,15 @@ namespace TencentCloud
                     bool PriceHasBeenSet() const;
 
                     /**
-                     * 获取保证金
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DepositPrice 保证金
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取保证金 单位元
+                     * @return DepositPrice 保证金 单位元
                      * 
                      */
                     double GetDepositPrice() const;
 
                     /**
-                     * 设置保证金
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _depositPrice 保证金
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置保证金 单位元
+                     * @param _depositPrice 保证金 单位元
                      * 
                      */
                     void SetDepositPrice(const double& _depositPrice);
@@ -149,29 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 最高价格
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 最高价格 单位元
                      */
                     double m_maxPrice;
                     bool m_maxPriceHasBeenSet;
 
                     /**
-                     * 最低价格
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 最低价格 单位元
                      */
                     double m_minPrice;
                     bool m_minPriceHasBeenSet;
 
                     /**
-                     * 价格幅度
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 价格幅度 单位元
                      */
                     double m_price;
                     bool m_priceHasBeenSet;
 
                     /**
-                     * 保证金
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 保证金 单位元
                      */
                     double m_depositPrice;
                     bool m_depositPriceHasBeenSet;

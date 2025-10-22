@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,19 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。
-                     * @return SecurityGroupIdSet 要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。
+                     * 获取要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。可通过 DescribeDBSecurityGroups 接口获取。输入的安全组 ID 数组无长度限制。
+注意：该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。
+                     * @return SecurityGroupIdSet 要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。可通过 DescribeDBSecurityGroups 接口获取。输入的安全组 ID 数组无长度限制。
+注意：该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIdSet() const;
 
                     /**
-                     * 设置要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。
-                     * @param _securityGroupIdSet 要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。
+                     * 设置要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。可通过 DescribeDBSecurityGroups 接口获取。输入的安全组 ID 数组无长度限制。
+注意：该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。
+                     * @param _securityGroupIdSet 要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。可通过 DescribeDBSecurityGroups 接口获取。输入的安全组 ID 数组无长度限制。
+注意：该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。
                      * 
                      */
                     void SetSecurityGroupIdSet(const std::vector<std::string>& _securityGroupIdSet);
@@ -93,7 +97,8 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。
+                     * 要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。可通过 DescribeDBSecurityGroups 接口获取。输入的安全组 ID 数组无长度限制。
+注意：该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。
                      */
                     std::vector<std::string> m_securityGroupIdSet;
                     bool m_securityGroupIdSetHasBeenSet;

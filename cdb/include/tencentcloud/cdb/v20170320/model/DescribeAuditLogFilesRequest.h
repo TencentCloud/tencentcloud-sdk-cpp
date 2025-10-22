@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取分页大小参数。默认值为 20，最小值为 1，最大值为 100。
-                     * @return Limit 分页大小参数。默认值为 20，最小值为 1，最大值为 100。
+                     * 获取分页大小参数。默认值为20，最小值为1，最大值为300。
+                     * @return Limit 分页大小参数。默认值为20，最小值为1，最大值为300。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页大小参数。默认值为 20，最小值为 1，最大值为 100。
-                     * @param _limit 分页大小参数。默认值为 20，最小值为 1，最大值为 100。
+                     * 设置分页大小参数。默认值为20，最小值为1，最大值为300。
+                     * @param _limit 分页大小参数。默认值为20，最小值为1，最大值为300。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 分页大小参数。默认值为 20，最小值为 1，最大值为 100。
+                     * 分页大小参数。默认值为20，最小值为1，最大值为300。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

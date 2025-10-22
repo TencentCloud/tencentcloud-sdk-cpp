@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,8 +40,10 @@ CreateNativeNodePoolParam::CreateNativeNodePoolParam() :
     m_replicasHasBeenSet(false),
     m_internetAccessibleHasBeenSet(false),
     m_dataDisksHasBeenSet(false),
+    m_qGPUEnableHasBeenSet(false),
     m_keyIdsHasBeenSet(false),
-    m_machineTypeHasBeenSet(false)
+    m_machineTypeHasBeenSet(false),
+    m_automationServiceHasBeenSet(false)
 {
 }
 
@@ -311,6 +313,16 @@ CoreInternalOutcome CreateNativeNodePoolParam::Deserialize(const rapidjson::Valu
         m_dataDisksHasBeenSet = true;
     }
 
+    if (value.HasMember("QGPUEnable") && !value["QGPUEnable"].IsNull())
+    {
+        if (!value["QGPUEnable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateNativeNodePoolParam.QGPUEnable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_qGPUEnable = value["QGPUEnable"].GetBool();
+        m_qGPUEnableHasBeenSet = true;
+    }
+
     if (value.HasMember("KeyIds") && !value["KeyIds"].IsNull())
     {
         if (!value["KeyIds"].IsArray())
@@ -332,6 +344,16 @@ CoreInternalOutcome CreateNativeNodePoolParam::Deserialize(const rapidjson::Valu
         }
         m_machineType = string(value["MachineType"].GetString());
         m_machineTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AutomationService") && !value["AutomationService"].IsNull())
+    {
+        if (!value["AutomationService"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateNativeNodePoolParam.AutomationService` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_automationService = value["AutomationService"].GetBool();
+        m_automationServiceHasBeenSet = true;
     }
 
 
@@ -527,6 +549,14 @@ void CreateNativeNodePoolParam::ToJsonObject(rapidjson::Value &value, rapidjson:
         }
     }
 
+    if (m_qGPUEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QGPUEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_qGPUEnable, allocator);
+    }
+
     if (m_keyIdsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -546,6 +576,14 @@ void CreateNativeNodePoolParam::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "MachineType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_machineType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_automationServiceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutomationService";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_automationService, allocator);
     }
 
 }
@@ -855,6 +893,22 @@ bool CreateNativeNodePoolParam::DataDisksHasBeenSet() const
     return m_dataDisksHasBeenSet;
 }
 
+bool CreateNativeNodePoolParam::GetQGPUEnable() const
+{
+    return m_qGPUEnable;
+}
+
+void CreateNativeNodePoolParam::SetQGPUEnable(const bool& _qGPUEnable)
+{
+    m_qGPUEnable = _qGPUEnable;
+    m_qGPUEnableHasBeenSet = true;
+}
+
+bool CreateNativeNodePoolParam::QGPUEnableHasBeenSet() const
+{
+    return m_qGPUEnableHasBeenSet;
+}
+
 vector<string> CreateNativeNodePoolParam::GetKeyIds() const
 {
     return m_keyIds;
@@ -885,5 +939,21 @@ void CreateNativeNodePoolParam::SetMachineType(const string& _machineType)
 bool CreateNativeNodePoolParam::MachineTypeHasBeenSet() const
 {
     return m_machineTypeHasBeenSet;
+}
+
+bool CreateNativeNodePoolParam::GetAutomationService() const
+{
+    return m_automationService;
+}
+
+void CreateNativeNodePoolParam::SetAutomationService(const bool& _automationService)
+{
+    m_automationService = _automationService;
+    m_automationServiceHasBeenSet = true;
+}
+
+bool CreateNativeNodePoolParam::AutomationServiceHasBeenSet() const
+{
+    return m_automationServiceHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例Id
-                     * @return InstanceId 实例Id
+                     * 获取实例Id，可通过DescribeInstances接口获取。
+                     * @return InstanceId 实例Id，可通过DescribeInstances接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例Id
-                     * @param _instanceId 实例Id
+                     * 设置实例Id，可通过DescribeInstances接口获取。
+                     * @param _instanceId 实例Id，可通过DescribeInstances接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取主题名称，是一个不超过 128 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
-                     * @return TopicName 主题名称，是一个不超过 128 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
+                     * 获取只能包含字母、数字、下划线、“-”、“.”
+                     * @return TopicName 只能包含字母、数字、下划线、“-”、“.”
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
-                     * 设置主题名称，是一个不超过 128 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
-                     * @param _topicName 主题名称，是一个不超过 128 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
+                     * 设置只能包含字母、数字、下划线、“-”、“.”
+                     * @param _topicName 只能包含字母、数字、下划线、“-”、“.”
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool CleanUpPolicyHasBeenSet() const;
 
                     /**
-                     * 获取主题备注，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
-                     * @return Note 主题备注，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
+                     * 获取主题备注，是一个不超过 64 个字符的字符串，可以用字母和数字为首字符，剩余部分可以包含字母、数字和横划线(-)
+                     * @return Note 主题备注，是一个不超过 64 个字符的字符串，可以用字母和数字为首字符，剩余部分可以包含字母、数字和横划线(-)
                      * 
                      */
                     std::string GetNote() const;
 
                     /**
-                     * 设置主题备注，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
-                     * @param _note 主题备注，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
+                     * 设置主题备注，是一个不超过 64 个字符的字符串，可以用字母和数字为首字符，剩余部分可以包含字母、数字和横划线(-)
+                     * @param _note 主题备注，是一个不超过 64 个字符的字符串，可以用字母和数字为首字符，剩余部分可以包含字母、数字和横划线(-)
                      * 
                      */
                     void SetNote(const std::string& _note);
@@ -212,15 +212,15 @@ namespace TencentCloud
                     bool NoteHasBeenSet() const;
 
                     /**
-                     * 获取默认为1
-                     * @return MinInsyncReplicas 默认为1
+                     * 获取最小同步副本数，默认为1
+                     * @return MinInsyncReplicas 最小同步副本数，默认为1
                      * 
                      */
                     int64_t GetMinInsyncReplicas() const;
 
                     /**
-                     * 设置默认为1
-                     * @param _minInsyncReplicas 默认为1
+                     * 设置最小同步副本数，默认为1
+                     * @param _minInsyncReplicas 最小同步副本数，默认为1
                      * 
                      */
                     void SetMinInsyncReplicas(const int64_t& _minInsyncReplicas);
@@ -233,15 +233,15 @@ namespace TencentCloud
                     bool MinInsyncReplicasHasBeenSet() const;
 
                     /**
-                     * 获取是否允许未同步的副本选为leader，false:不允许，true:允许，默认不允许
-                     * @return UncleanLeaderElectionEnable 是否允许未同步的副本选为leader，false:不允许，true:允许，默认不允许
+                     * 获取是否允许未同步的副本选为leader，0:不允许，1:允许，默认不允许
+                     * @return UncleanLeaderElectionEnable 是否允许未同步的副本选为leader，0:不允许，1:允许，默认不允许
                      * 
                      */
                     int64_t GetUncleanLeaderElectionEnable() const;
 
                     /**
-                     * 设置是否允许未同步的副本选为leader，false:不允许，true:允许，默认不允许
-                     * @param _uncleanLeaderElectionEnable 是否允许未同步的副本选为leader，false:不允许，true:允许，默认不允许
+                     * 设置是否允许未同步的副本选为leader，0:不允许，1:允许，默认不允许
+                     * @param _uncleanLeaderElectionEnable 是否允许未同步的副本选为leader，0:不允许，1:允许，默认不允许
                      * 
                      */
                     void SetUncleanLeaderElectionEnable(const int64_t& _uncleanLeaderElectionEnable);
@@ -254,15 +254,15 @@ namespace TencentCloud
                     bool UncleanLeaderElectionEnableHasBeenSet() const;
 
                     /**
-                     * 获取可选参数。消息保留时间，单位ms，当前最小值为60000ms
-                     * @return RetentionMs 可选参数。消息保留时间，单位ms，当前最小值为60000ms
+                     * 获取可选参数。消息保留时间，单位ms，当前最小值为60000。默认值为7200000ms（2小时），最大值为7776000000 ms（90天）。
+                     * @return RetentionMs 可选参数。消息保留时间，单位ms，当前最小值为60000。默认值为7200000ms（2小时），最大值为7776000000 ms（90天）。
                      * 
                      */
                     int64_t GetRetentionMs() const;
 
                     /**
-                     * 设置可选参数。消息保留时间，单位ms，当前最小值为60000ms
-                     * @param _retentionMs 可选参数。消息保留时间，单位ms，当前最小值为60000ms
+                     * 设置可选参数。消息保留时间，单位ms，当前最小值为60000。默认值为7200000ms（2小时），最大值为7776000000 ms（90天）。
+                     * @param _retentionMs 可选参数。消息保留时间，单位ms，当前最小值为60000。默认值为7200000ms（2小时），最大值为7776000000 ms（90天）。
                      * 
                      */
                     void SetRetentionMs(const int64_t& _retentionMs);
@@ -275,15 +275,15 @@ namespace TencentCloud
                     bool RetentionMsHasBeenSet() const;
 
                     /**
-                     * 获取Segment分片滚动的时长，单位ms，当前最小为3600000ms
-                     * @return SegmentMs Segment分片滚动的时长，单位ms，当前最小为3600000ms
+                     * 获取Segment分片滚动的时长，单位ms，最小值为86400000ms（1天）。
+                     * @return SegmentMs Segment分片滚动的时长，单位ms，最小值为86400000ms（1天）。
                      * 
                      */
                     int64_t GetSegmentMs() const;
 
                     /**
-                     * 设置Segment分片滚动的时长，单位ms，当前最小为3600000ms
-                     * @param _segmentMs Segment分片滚动的时长，单位ms，当前最小为3600000ms
+                     * 设置Segment分片滚动的时长，单位ms，最小值为86400000ms（1天）。
+                     * @param _segmentMs Segment分片滚动的时长，单位ms，最小值为86400000ms（1天）。
                      * 
                      */
                     void SetSegmentMs(const int64_t& _segmentMs);
@@ -296,15 +296,15 @@ namespace TencentCloud
                     bool SegmentMsHasBeenSet() const;
 
                     /**
-                     * 获取主题消息最大值，单位为 Byte，最小值1024Byte(即1KB)，最大值为12582912Byte（即12MB）
-                     * @return MaxMessageBytes 主题消息最大值，单位为 Byte，最小值1024Byte(即1KB)，最大值为12582912Byte（即12MB）
+                     * 获取主题消息最大值，单位为 Byte，最小值1024Bytes(即1KB)，最大值为12582912Bytes（即12MB）
+                     * @return MaxMessageBytes 主题消息最大值，单位为 Byte，最小值1024Bytes(即1KB)，最大值为12582912Bytes（即12MB）
                      * 
                      */
                     int64_t GetMaxMessageBytes() const;
 
                     /**
-                     * 设置主题消息最大值，单位为 Byte，最小值1024Byte(即1KB)，最大值为12582912Byte（即12MB）
-                     * @param _maxMessageBytes 主题消息最大值，单位为 Byte，最小值1024Byte(即1KB)，最大值为12582912Byte（即12MB）
+                     * 设置主题消息最大值，单位为 Byte，最小值1024Bytes(即1KB)，最大值为12582912Bytes（即12MB）
+                     * @param _maxMessageBytes 主题消息最大值，单位为 Byte，最小值1024Bytes(即1KB)，最大值为12582912Bytes（即12MB）
                      * 
                      */
                     void SetMaxMessageBytes(const int64_t& _maxMessageBytes);
@@ -359,15 +359,15 @@ namespace TencentCloud
                     bool AclRuleNameHasBeenSet() const;
 
                     /**
-                     * 获取可选, 保留文件大小. 默认为-1,单位bytes, 当前最小值为1048576B
-                     * @return RetentionBytes 可选, 保留文件大小. 默认为-1,单位bytes, 当前最小值为1048576B
+                     * 获取可选, 保留文件大小. 默认为-1,单位Byte, 当前最小值为1073741824。
+                     * @return RetentionBytes 可选, 保留文件大小. 默认为-1,单位Byte, 当前最小值为1073741824。
                      * 
                      */
                     int64_t GetRetentionBytes() const;
 
                     /**
-                     * 设置可选, 保留文件大小. 默认为-1,单位bytes, 当前最小值为1048576B
-                     * @param _retentionBytes 可选, 保留文件大小. 默认为-1,单位bytes, 当前最小值为1048576B
+                     * 设置可选, 保留文件大小. 默认为-1,单位Byte, 当前最小值为1073741824。
+                     * @param _retentionBytes 可选, 保留文件大小. 默认为-1,单位Byte, 当前最小值为1073741824。
                      * 
                      */
                     void SetRetentionBytes(const int64_t& _retentionBytes);
@@ -403,13 +403,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例Id
+                     * 实例Id，可通过DescribeInstances接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 主题名称，是一个不超过 128 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
+                     * 只能包含字母、数字、下划线、“-”、“.”
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
@@ -445,37 +445,37 @@ namespace TencentCloud
                     bool m_cleanUpPolicyHasBeenSet;
 
                     /**
-                     * 主题备注，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
+                     * 主题备注，是一个不超过 64 个字符的字符串，可以用字母和数字为首字符，剩余部分可以包含字母、数字和横划线(-)
                      */
                     std::string m_note;
                     bool m_noteHasBeenSet;
 
                     /**
-                     * 默认为1
+                     * 最小同步副本数，默认为1
                      */
                     int64_t m_minInsyncReplicas;
                     bool m_minInsyncReplicasHasBeenSet;
 
                     /**
-                     * 是否允许未同步的副本选为leader，false:不允许，true:允许，默认不允许
+                     * 是否允许未同步的副本选为leader，0:不允许，1:允许，默认不允许
                      */
                     int64_t m_uncleanLeaderElectionEnable;
                     bool m_uncleanLeaderElectionEnableHasBeenSet;
 
                     /**
-                     * 可选参数。消息保留时间，单位ms，当前最小值为60000ms
+                     * 可选参数。消息保留时间，单位ms，当前最小值为60000。默认值为7200000ms（2小时），最大值为7776000000 ms（90天）。
                      */
                     int64_t m_retentionMs;
                     bool m_retentionMsHasBeenSet;
 
                     /**
-                     * Segment分片滚动的时长，单位ms，当前最小为3600000ms
+                     * Segment分片滚动的时长，单位ms，最小值为86400000ms（1天）。
                      */
                     int64_t m_segmentMs;
                     bool m_segmentMsHasBeenSet;
 
                     /**
-                     * 主题消息最大值，单位为 Byte，最小值1024Byte(即1KB)，最大值为12582912Byte（即12MB）
+                     * 主题消息最大值，单位为 Byte，最小值1024Bytes(即1KB)，最大值为12582912Bytes（即12MB）
                      */
                     int64_t m_maxMessageBytes;
                     bool m_maxMessageBytesHasBeenSet;
@@ -493,7 +493,7 @@ namespace TencentCloud
                     bool m_aclRuleNameHasBeenSet;
 
                     /**
-                     * 可选, 保留文件大小. 默认为-1,单位bytes, 当前最小值为1048576B
+                     * 可选, 保留文件大小. 默认为-1,单位Byte, 当前最小值为1073741824。
                      */
                     int64_t m_retentionBytes;
                     bool m_retentionBytesHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取通知渠道组名称。
-                     * @return Name 通知渠道组名称。
+                     * 获取通知渠道组名称。最大支持255个字节。 不支持 '|'。
+                     * @return Name 通知渠道组名称。最大支持255个字节。 不支持 '|'。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置通知渠道组名称。
-                     * @param _name 通知渠道组名称。
+                     * 设置通知渠道组名称。最大支持255个字节。 不支持 '|'。
+                     * @param _name 通知渠道组名称。最大支持255个字节。 不支持 '|'。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -308,7 +308,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 通知渠道组名称。
+                     * 通知渠道组名称。最大支持255个字节。 不支持 '|'。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

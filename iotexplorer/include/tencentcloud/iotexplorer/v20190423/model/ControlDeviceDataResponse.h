@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,11 +61,9 @@ namespace TencentCloud
                      * 获取JSON字符串， 返回下发控制的结果信息, 
 Sent = 1 表示设备已经在线并且订阅了控制下发的mqtt topic.
 pushResult 是表示发送结果，其中 0 表示成功， 23101 表示设备未在线或没有订阅相关的 MQTT Topic。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result JSON字符串， 返回下发控制的结果信息, 
 Sent = 1 表示设备已经在线并且订阅了控制下发的mqtt topic.
 pushResult 是表示发送结果，其中 0 表示成功， 23101 表示设备未在线或没有订阅相关的 MQTT Topic。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResult() const;
@@ -89,7 +87,6 @@ pushResult 是表示发送结果，其中 0 表示成功， 23101 表示设备�
                      * JSON字符串， 返回下发控制的结果信息, 
 Sent = 1 表示设备已经在线并且订阅了控制下发的mqtt topic.
 pushResult 是表示发送结果，其中 0 表示成功， 23101 表示设备未在线或没有订阅相关的 MQTT Topic。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;

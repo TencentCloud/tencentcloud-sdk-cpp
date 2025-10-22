@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -376,6 +376,31 @@ namespace TencentCloud
                     bool IndexSettingsFieldHasBeenSet() const;
 
                     /**
+                     * 获取索引别名字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IndexAliasesField 索引别名字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetIndexAliasesField() const;
+
+                    /**
+                     * 设置索引别名字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _indexAliasesField 索引别名字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIndexAliasesField(const std::vector<std::string>& _indexAliasesField);
+
+                    /**
+                     * 判断参数 IndexAliasesField 是否已赋值
+                     * @return IndexAliasesField 是否已赋值
+                     * 
+                     */
+                    bool IndexAliasesFieldHasBeenSet() const;
+
+                    /**
                      * 获取索引所属集群APP ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId 索引所属集群APP ID
@@ -517,6 +542,13 @@ namespace TencentCloud
                      */
                     IndexSettingsField m_indexSettingsField;
                     bool m_indexSettingsFieldHasBeenSet;
+
+                    /**
+                     * 索引别名字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_indexAliasesField;
+                    bool m_indexAliasesFieldHasBeenSet;
 
                     /**
                      * 索引所属集群APP ID

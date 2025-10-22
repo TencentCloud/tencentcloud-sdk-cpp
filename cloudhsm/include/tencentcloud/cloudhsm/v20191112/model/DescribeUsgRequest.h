@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取搜索关键字
-                     * @return SearchWord 搜索关键字
+                     * 获取过滤条件，支持安全组id
+                     * @return SearchWord 过滤条件，支持安全组id
                      * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
-                     * 设置搜索关键字
-                     * @param _searchWord 搜索关键字
+                     * 设置过滤条件，支持安全组id
+                     * @param _searchWord 过滤条件，支持安全组id
                      * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 搜索关键字
+                     * 过滤条件，支持安全组id
                      */
                     std::string m_searchWord;
                     bool m_searchWordHasBeenSet;

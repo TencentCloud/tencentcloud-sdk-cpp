@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ set(cdz_public_header_model
   include/tencentcloud/cdz/v20221123/model/DescribeCloudDedicatedZoneResourceSummaryRequest.h
   include/tencentcloud/cdz/v20221123/model/CloudDedicatedZoneResourceStatisticsInfo.h
   include/tencentcloud/cdz/v20221123/model/DescribeCloudDedicatedZoneHostsResponse.h
+  include/tencentcloud/cdz/v20221123/model/ExtraInfo.h
   include/tencentcloud/cdz/v20221123/model/CloudDedicatedZoneHostsInfo.h
   include/tencentcloud/cdz/v20221123/model/DescribeCloudDedicatedZoneHostsRequest.h
   include/tencentcloud/cdz/v20221123/model/CloudDedicatedZoneResourceSummaryInfo.h
@@ -33,6 +34,7 @@ set(cdz_src
   src/v20221123/model/DescribeCloudDedicatedZoneResourceSummaryRequest.cpp
   src/v20221123/model/CloudDedicatedZoneResourceStatisticsInfo.cpp
   src/v20221123/model/DescribeCloudDedicatedZoneHostsResponse.cpp
+  src/v20221123/model/ExtraInfo.cpp
   src/v20221123/model/CloudDedicatedZoneHostsInfo.cpp
   src/v20221123/model/DescribeCloudDedicatedZoneHostsRequest.cpp
   src/v20221123/model/CloudDedicatedZoneResourceSummaryInfo.cpp

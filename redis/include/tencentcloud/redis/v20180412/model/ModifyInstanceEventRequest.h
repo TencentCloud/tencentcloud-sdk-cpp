@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取事件 ID。请通过 DescribeInstanceEvents 获取需修改的事件 ID。
-                     * @return EventId 事件 ID。请通过 DescribeInstanceEvents 获取需修改的事件 ID。
+                     * 获取事件 ID。请通过 [DescribeInstanceEvents](https://cloud.tencent.com/document/product/239/104779) 获取需修改的事件 ID。
+                     * @return EventId 事件 ID。请通过 [DescribeInstanceEvents](https://cloud.tencent.com/document/product/239/104779) 获取需修改的事件 ID。
                      * 
                      */
                     int64_t GetEventId() const;
 
                     /**
-                     * 设置事件 ID。请通过 DescribeInstanceEvents 获取需修改的事件 ID。
-                     * @param _eventId 事件 ID。请通过 DescribeInstanceEvents 获取需修改的事件 ID。
+                     * 设置事件 ID。请通过 [DescribeInstanceEvents](https://cloud.tencent.com/document/product/239/104779) 获取需修改的事件 ID。
+                     * @param _eventId 事件 ID。请通过 [DescribeInstanceEvents](https://cloud.tencent.com/document/product/239/104779) 获取需修改的事件 ID。
                      * 
                      */
                     void SetEventId(const int64_t& _eventId);
@@ -185,7 +185,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 事件 ID。请通过 DescribeInstanceEvents 获取需修改的事件 ID。
+                     * 事件 ID。请通过 [DescribeInstanceEvents](https://cloud.tencent.com/document/product/239/104779) 获取需修改的事件 ID。
                      */
                     int64_t m_eventId;
                     bool m_eventIdHasBeenSet;

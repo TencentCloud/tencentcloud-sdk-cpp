@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NameSpace 命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNameSpace() const;
 
                     /**
                      * 设置命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nameSpace 命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNameSpace(const std::string& _nameSpace);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取工作负载名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WorkloadName 工作负载名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWorkloadName() const;
 
                     /**
                      * 设置工作负载名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _workloadName 工作负载名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWorkloadName(const std::string& _workloadName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LanIP 节点IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLanIP() const;
 
                     /**
                      * 设置节点IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lanIP 节点IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLanIP(const std::string& _lanIP);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nameSpace;
                     bool m_nameSpaceHasBeenSet;
 
                     /**
                      * 工作负载名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_workloadName;
                     bool m_workloadNameHasBeenSet;
 
                     /**
                      * 节点IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lanIP;
                     bool m_lanIPHasBeenSet;
 
                     /**
                      * 节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

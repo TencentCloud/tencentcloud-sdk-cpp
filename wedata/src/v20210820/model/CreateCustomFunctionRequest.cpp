@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ CreateCustomFunctionRequest::CreateCustomFunctionRequest() :
     m_nameHasBeenSet(false),
     m_clusterIdentifierHasBeenSet(false),
     m_dbNameHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_functionResourceFileTypeHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string CreateCustomFunctionRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_functionResourceFileTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FunctionResourceFileType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_functionResourceFileType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +198,22 @@ void CreateCustomFunctionRequest::SetProjectId(const string& _projectId)
 bool CreateCustomFunctionRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+string CreateCustomFunctionRequest::GetFunctionResourceFileType() const
+{
+    return m_functionResourceFileType;
+}
+
+void CreateCustomFunctionRequest::SetFunctionResourceFileType(const string& _functionResourceFileType)
+{
+    m_functionResourceFileType = _functionResourceFileType;
+    m_functionResourceFileTypeHasBeenSet = true;
+}
+
+bool CreateCustomFunctionRequest::FunctionResourceFileTypeHasBeenSet() const
+{
+    return m_functionResourceFileTypeHasBeenSet;
 }
 
 

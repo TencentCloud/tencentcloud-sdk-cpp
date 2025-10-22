@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,13 +29,16 @@ DescribeInstancesRequest::DescribeInstancesRequest() :
     m_statusHasBeenSet(false),
     m_engineNamesHasBeenSet(false),
     m_engineVersionsHasBeenSet(false),
+    m_apiVersionsHasBeenSet(false),
     m_createAtHasBeenSet(false),
     m_zonesHasBeenSet(false),
     m_orderByHasBeenSet(false),
     m_orderDirectionHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false)
+    m_resourceTagsHasBeenSet(false),
+    m_taskStatusHasBeenSet(false),
+    m_networksHasBeenSet(false)
 {
 }
 
@@ -124,6 +127,19 @@ string DescribeInstancesRequest::ToJsonString() const
         }
     }
 
+    if (m_apiVersionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiVersions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_apiVersions.begin(); itr != m_apiVersions.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
     if (m_createAtHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -189,6 +205,32 @@ string DescribeInstancesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_taskStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskStatus";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_taskStatus.begin(); itr != m_taskStatus.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_networksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Networks";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_networks.begin(); itr != m_networks.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -294,6 +336,22 @@ void DescribeInstancesRequest::SetEngineVersions(const vector<string>& _engineVe
 bool DescribeInstancesRequest::EngineVersionsHasBeenSet() const
 {
     return m_engineVersionsHasBeenSet;
+}
+
+vector<string> DescribeInstancesRequest::GetApiVersions() const
+{
+    return m_apiVersions;
+}
+
+void DescribeInstancesRequest::SetApiVersions(const vector<string>& _apiVersions)
+{
+    m_apiVersions = _apiVersions;
+    m_apiVersionsHasBeenSet = true;
+}
+
+bool DescribeInstancesRequest::ApiVersionsHasBeenSet() const
+{
+    return m_apiVersionsHasBeenSet;
 }
 
 string DescribeInstancesRequest::GetCreateAt() const
@@ -406,6 +464,38 @@ void DescribeInstancesRequest::SetResourceTags(const vector<Tag>& _resourceTags)
 bool DescribeInstancesRequest::ResourceTagsHasBeenSet() const
 {
     return m_resourceTagsHasBeenSet;
+}
+
+vector<int64_t> DescribeInstancesRequest::GetTaskStatus() const
+{
+    return m_taskStatus;
+}
+
+void DescribeInstancesRequest::SetTaskStatus(const vector<int64_t>& _taskStatus)
+{
+    m_taskStatus = _taskStatus;
+    m_taskStatusHasBeenSet = true;
+}
+
+bool DescribeInstancesRequest::TaskStatusHasBeenSet() const
+{
+    return m_taskStatusHasBeenSet;
+}
+
+vector<string> DescribeInstancesRequest::GetNetworks() const
+{
+    return m_networks;
+}
+
+void DescribeInstancesRequest::SetNetworks(const vector<string>& _networks)
+{
+    m_networks = _networks;
+    m_networksHasBeenSet = true;
+}
+
+bool DescribeInstancesRequest::NetworksHasBeenSet() const
+{
+    return m_networksHasBeenSet;
 }
 
 

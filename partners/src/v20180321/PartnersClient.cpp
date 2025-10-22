@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -470,6 +470,49 @@ PartnersClient::DescribeAgentDealsByCacheOutcomeCallable PartnersClient::Describ
     return task->get_future();
 }
 
+PartnersClient::DescribeAgentDealsPriceDetailByDealNameOutcome PartnersClient::DescribeAgentDealsPriceDetailByDealName(const DescribeAgentDealsPriceDetailByDealNameRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAgentDealsPriceDetailByDealName");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAgentDealsPriceDetailByDealNameResponse rsp = DescribeAgentDealsPriceDetailByDealNameResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAgentDealsPriceDetailByDealNameOutcome(rsp);
+        else
+            return DescribeAgentDealsPriceDetailByDealNameOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAgentDealsPriceDetailByDealNameOutcome(outcome.GetError());
+    }
+}
+
+void PartnersClient::DescribeAgentDealsPriceDetailByDealNameAsync(const DescribeAgentDealsPriceDetailByDealNameRequest& request, const DescribeAgentDealsPriceDetailByDealNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAgentDealsPriceDetailByDealName(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PartnersClient::DescribeAgentDealsPriceDetailByDealNameOutcomeCallable PartnersClient::DescribeAgentDealsPriceDetailByDealNameCallable(const DescribeAgentDealsPriceDetailByDealNameRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAgentDealsPriceDetailByDealNameOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAgentDealsPriceDetailByDealName(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PartnersClient::DescribeAgentPayDealsV2Outcome PartnersClient::DescribeAgentPayDealsV2(const DescribeAgentPayDealsV2Request &request)
 {
     auto outcome = MakeRequest(request, "DescribeAgentPayDealsV2");
@@ -635,6 +678,92 @@ PartnersClient::DescribeClientBalanceNewOutcomeCallable PartnersClient::Describe
         [this, request]()
         {
             return this->DescribeClientBalanceNew(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PartnersClient::DescribeClientJoinIncreaseListOutcome PartnersClient::DescribeClientJoinIncreaseList(const DescribeClientJoinIncreaseListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClientJoinIncreaseList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClientJoinIncreaseListResponse rsp = DescribeClientJoinIncreaseListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClientJoinIncreaseListOutcome(rsp);
+        else
+            return DescribeClientJoinIncreaseListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClientJoinIncreaseListOutcome(outcome.GetError());
+    }
+}
+
+void PartnersClient::DescribeClientJoinIncreaseListAsync(const DescribeClientJoinIncreaseListRequest& request, const DescribeClientJoinIncreaseListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClientJoinIncreaseList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PartnersClient::DescribeClientJoinIncreaseListOutcomeCallable PartnersClient::DescribeClientJoinIncreaseListCallable(const DescribeClientJoinIncreaseListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClientJoinIncreaseListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClientJoinIncreaseList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PartnersClient::DescribeClientSwitchTraTaskInfoOutcome PartnersClient::DescribeClientSwitchTraTaskInfo(const DescribeClientSwitchTraTaskInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClientSwitchTraTaskInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClientSwitchTraTaskInfoResponse rsp = DescribeClientSwitchTraTaskInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClientSwitchTraTaskInfoOutcome(rsp);
+        else
+            return DescribeClientSwitchTraTaskInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClientSwitchTraTaskInfoOutcome(outcome.GetError());
+    }
+}
+
+void PartnersClient::DescribeClientSwitchTraTaskInfoAsync(const DescribeClientSwitchTraTaskInfoRequest& request, const DescribeClientSwitchTraTaskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClientSwitchTraTaskInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PartnersClient::DescribeClientSwitchTraTaskInfoOutcomeCallable PartnersClient::DescribeClientSwitchTraTaskInfoCallable(const DescribeClientSwitchTraTaskInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClientSwitchTraTaskInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClientSwitchTraTaskInfo(request);
         }
     );
 

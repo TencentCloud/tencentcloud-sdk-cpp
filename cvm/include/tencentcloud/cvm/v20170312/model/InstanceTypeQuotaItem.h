@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -92,15 +92,15 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例计费模式。取值范围： <br><li>PREPAID：表示预付费，即包年包月<br></li>POSTPAID_BY_HOUR：表示后付费，即按量计费<br><li>CDHPAID：表示[专用宿主机](https://cloud.tencent.com/document/product/416)付费，即只对`专用宿主机`计费，不对`专用宿主机`上的实例计费。<br></li>`SPOTPAID`：表示竞价实例付费。
-                     * @return InstanceChargeType 实例计费模式。取值范围： <br><li>PREPAID：表示预付费，即包年包月<br></li>POSTPAID_BY_HOUR：表示后付费，即按量计费<br><li>CDHPAID：表示[专用宿主机](https://cloud.tencent.com/document/product/416)付费，即只对`专用宿主机`计费，不对`专用宿主机`上的实例计费。<br></li>`SPOTPAID`：表示竞价实例付费。
+                     * 获取实例计费模式。取值范围： <br><li>PREPAID：表示预付费，即包年包月<br></li><li>POSTPAID_BY_HOUR：表示后付费，即按量计费</li><li>CDHPAID：表示[专用宿主机](https://cloud.tencent.com/document/product/416)付费，即只对`专用宿主机`计费，不对`专用宿主机`上的实例计费。<br></li><li>SPOTPAID：表示竞价实例付费。</li>
+                     * @return InstanceChargeType 实例计费模式。取值范围： <br><li>PREPAID：表示预付费，即包年包月<br></li><li>POSTPAID_BY_HOUR：表示后付费，即按量计费</li><li>CDHPAID：表示[专用宿主机](https://cloud.tencent.com/document/product/416)付费，即只对`专用宿主机`计费，不对`专用宿主机`上的实例计费。<br></li><li>SPOTPAID：表示竞价实例付费。</li>
                      * 
                      */
                     std::string GetInstanceChargeType() const;
 
                     /**
-                     * 设置实例计费模式。取值范围： <br><li>PREPAID：表示预付费，即包年包月<br></li>POSTPAID_BY_HOUR：表示后付费，即按量计费<br><li>CDHPAID：表示[专用宿主机](https://cloud.tencent.com/document/product/416)付费，即只对`专用宿主机`计费，不对`专用宿主机`上的实例计费。<br></li>`SPOTPAID`：表示竞价实例付费。
-                     * @param _instanceChargeType 实例计费模式。取值范围： <br><li>PREPAID：表示预付费，即包年包月<br></li>POSTPAID_BY_HOUR：表示后付费，即按量计费<br><li>CDHPAID：表示[专用宿主机](https://cloud.tencent.com/document/product/416)付费，即只对`专用宿主机`计费，不对`专用宿主机`上的实例计费。<br></li>`SPOTPAID`：表示竞价实例付费。
+                     * 设置实例计费模式。取值范围： <br><li>PREPAID：表示预付费，即包年包月<br></li><li>POSTPAID_BY_HOUR：表示后付费，即按量计费</li><li>CDHPAID：表示[专用宿主机](https://cloud.tencent.com/document/product/416)付费，即只对`专用宿主机`计费，不对`专用宿主机`上的实例计费。<br></li><li>SPOTPAID：表示竞价实例付费。</li>
+                     * @param _instanceChargeType 实例计费模式。取值范围： <br><li>PREPAID：表示预付费，即包年包月<br></li><li>POSTPAID_BY_HOUR：表示后付费，即按量计费</li><li>CDHPAID：表示[专用宿主机](https://cloud.tencent.com/document/product/416)付费，即只对`专用宿主机`计费，不对`专用宿主机`上的实例计费。<br></li><li>SPOTPAID：表示竞价实例付费。</li>
                      * 
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
@@ -135,18 +135,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扩展属性。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Externals 扩展属性。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Externals GetExternals() const;
 
                     /**
                      * 设置扩展属性。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _externals 扩展属性。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExternals(const Externals& _externals);
@@ -264,15 +260,15 @@ namespace TencentCloud
                     bool LocalDiskTypeListHasBeenSet() const;
 
                     /**
-                     * 获取实例是否售卖。取值范围： <br><li>SELL：表示实例可购买<br></li>SOLD_OUT：表示实例已售罄。
-                     * @return Status 实例是否售卖。取值范围： <br><li>SELL：表示实例可购买<br></li>SOLD_OUT：表示实例已售罄。
+                     * 获取实例是否售卖。取值范围： <br><li>SELL：表示实例可购买<br></li><li>SOLD_OUT：表示实例已售罄。</li>
+                     * @return Status 实例是否售卖。取值范围： <br><li>SELL：表示实例可购买<br></li><li>SOLD_OUT：表示实例已售罄。</li>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置实例是否售卖。取值范围： <br><li>SELL：表示实例可购买<br></li>SOLD_OUT：表示实例已售罄。
-                     * @param _status 实例是否售卖。取值范围： <br><li>SELL：表示实例可购买<br></li>SOLD_OUT：表示实例已售罄。
+                     * 设置实例是否售卖。取值范围： <br><li>SELL：表示实例可购买<br></li><li>SOLD_OUT：表示实例已售罄。</li>
+                     * @param _status 实例是否售卖。取值范围： <br><li>SELL：表示实例可购买<br></li><li>SOLD_OUT：表示实例已售罄。</li>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -307,18 +303,14 @@ namespace TencentCloud
 
                     /**
                      * 获取售罄原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SoldOutReason 售罄原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSoldOutReason() const;
 
                     /**
                      * 设置售罄原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _soldOutReason 售罄原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSoldOutReason(const std::string& _soldOutReason);
@@ -521,34 +513,18 @@ namespace TencentCloud
 
                     /**
                      * 获取描述库存情况。取值范围：
-<li> EnoughStock：表示对应库存非常充足</li> 
-<li>NormalStock：表示对应库存供应有保障</li>
-<li> UnderStock：表示对应库存即将售罄</li> 
-<li>WithoutStock：表示对应库存已经售罄</li>
-注意：此字段可能返回 null，表示取不到有效值。
+<li> EnoughStock：表示对应库存非常充足</li> <li>NormalStock：表示对应库存供应有保障</li><li> UnderStock：表示对应库存即将售罄</li> <li>WithoutStock：表示对应库存已经售罄</li>
                      * @return StatusCategory 描述库存情况。取值范围：
-<li> EnoughStock：表示对应库存非常充足</li> 
-<li>NormalStock：表示对应库存供应有保障</li>
-<li> UnderStock：表示对应库存即将售罄</li> 
-<li>WithoutStock：表示对应库存已经售罄</li>
-注意：此字段可能返回 null，表示取不到有效值。
+<li> EnoughStock：表示对应库存非常充足</li> <li>NormalStock：表示对应库存供应有保障</li><li> UnderStock：表示对应库存即将售罄</li> <li>WithoutStock：表示对应库存已经售罄</li>
                      * 
                      */
                     std::string GetStatusCategory() const;
 
                     /**
                      * 设置描述库存情况。取值范围：
-<li> EnoughStock：表示对应库存非常充足</li> 
-<li>NormalStock：表示对应库存供应有保障</li>
-<li> UnderStock：表示对应库存即将售罄</li> 
-<li>WithoutStock：表示对应库存已经售罄</li>
-注意：此字段可能返回 null，表示取不到有效值。
+<li> EnoughStock：表示对应库存非常充足</li> <li>NormalStock：表示对应库存供应有保障</li><li> UnderStock：表示对应库存即将售罄</li> <li>WithoutStock：表示对应库存已经售罄</li>
                      * @param _statusCategory 描述库存情况。取值范围：
-<li> EnoughStock：表示对应库存非常充足</li> 
-<li>NormalStock：表示对应库存供应有保障</li>
-<li> UnderStock：表示对应库存即将售罄</li> 
-<li>WithoutStock：表示对应库存已经售罄</li>
-注意：此字段可能返回 null，表示取不到有效值。
+<li> EnoughStock：表示对应库存非常充足</li> <li>NormalStock：表示对应库存供应有保障</li><li> UnderStock：表示对应库存即将售罄</li> <li>WithoutStock：表示对应库存已经售罄</li>
                      * 
                      */
                     void SetStatusCategory(const std::string& _statusCategory);
@@ -575,7 +551,7 @@ namespace TencentCloud
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 实例计费模式。取值范围： <br><li>PREPAID：表示预付费，即包年包月<br></li>POSTPAID_BY_HOUR：表示后付费，即按量计费<br><li>CDHPAID：表示[专用宿主机](https://cloud.tencent.com/document/product/416)付费，即只对`专用宿主机`计费，不对`专用宿主机`上的实例计费。<br></li>`SPOTPAID`：表示竞价实例付费。
+                     * 实例计费模式。取值范围： <br><li>PREPAID：表示预付费，即包年包月<br></li><li>POSTPAID_BY_HOUR：表示后付费，即按量计费</li><li>CDHPAID：表示[专用宿主机](https://cloud.tencent.com/document/product/416)付费，即只对`专用宿主机`计费，不对`专用宿主机`上的实例计费。<br></li><li>SPOTPAID：表示竞价实例付费。</li>
                      */
                     std::string m_instanceChargeType;
                     bool m_instanceChargeTypeHasBeenSet;
@@ -588,7 +564,6 @@ namespace TencentCloud
 
                     /**
                      * 扩展属性。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Externals m_externals;
                     bool m_externalsHasBeenSet;
@@ -624,7 +599,7 @@ namespace TencentCloud
                     bool m_localDiskTypeListHasBeenSet;
 
                     /**
-                     * 实例是否售卖。取值范围： <br><li>SELL：表示实例可购买<br></li>SOLD_OUT：表示实例已售罄。
+                     * 实例是否售卖。取值范围： <br><li>SELL：表示实例可购买<br></li><li>SOLD_OUT：表示实例已售罄。</li>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
@@ -637,7 +612,6 @@ namespace TencentCloud
 
                     /**
                      * 售罄原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_soldOutReason;
                     bool m_soldOutReasonHasBeenSet;
@@ -698,11 +672,7 @@ namespace TencentCloud
 
                     /**
                      * 描述库存情况。取值范围：
-<li> EnoughStock：表示对应库存非常充足</li> 
-<li>NormalStock：表示对应库存供应有保障</li>
-<li> UnderStock：表示对应库存即将售罄</li> 
-<li>WithoutStock：表示对应库存已经售罄</li>
-注意：此字段可能返回 null，表示取不到有效值。
+<li> EnoughStock：表示对应库存非常充足</li> <li>NormalStock：表示对应库存供应有保障</li><li> UnderStock：表示对应库存即将售罄</li> <li>WithoutStock：表示对应库存已经售罄</li>
                      */
                     std::string m_statusCategory;
                     bool m_statusCategoryHasBeenSet;

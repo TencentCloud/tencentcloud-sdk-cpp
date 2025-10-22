@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -195,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取service的网络模式，当前参数只适用于ipvs+bpf模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KubeProxyMode service的网络模式，当前参数只适用于ipvs+bpf模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKubeProxyMode() const;
 
                     /**
                      * 设置service的网络模式，当前参数只适用于ipvs+bpf模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _kubeProxyMode service的网络模式，当前参数只适用于ipvs+bpf模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKubeProxyMode(const std::string& _kubeProxyMode);
@@ -220,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用于分配service的IP range，不得与 VPC CIDR 冲突，也不得与同 VPC 内其他集群 CIDR 冲突
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceCIDR 用于分配service的IP range，不得与 VPC CIDR 冲突，也不得与同 VPC 内其他集群 CIDR 冲突
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceCIDR() const;
 
                     /**
                      * 设置用于分配service的IP range，不得与 VPC CIDR 冲突，也不得与同 VPC 内其他集群 CIDR 冲突
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceCIDR 用于分配service的IP range，不得与 VPC CIDR 冲突，也不得与同 VPC 内其他集群 CIDR 冲突
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceCIDR(const std::string& _serviceCIDR);
@@ -270,18 +262,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否忽略 ServiceCIDR 冲突错误, 仅在 VPC-CNI 模式生效，默认不忽略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IgnoreServiceCIDRConflict 是否忽略 ServiceCIDR 冲突错误, 仅在 VPC-CNI 模式生效，默认不忽略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIgnoreServiceCIDRConflict() const;
 
                     /**
                      * 设置是否忽略 ServiceCIDR 冲突错误, 仅在 VPC-CNI 模式生效，默认不忽略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ignoreServiceCIDRConflict 是否忽略 ServiceCIDR 冲突错误, 仅在 VPC-CNI 模式生效，默认不忽略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIgnoreServiceCIDRConflict(const bool& _ignoreServiceCIDRConflict);
@@ -295,18 +283,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群VPC-CNI模式是否为非双栈集群，默认false，非双栈。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsDualStack 集群VPC-CNI模式是否为非双栈集群，默认false，非双栈。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsDualStack() const;
 
                     /**
                      * 设置集群VPC-CNI模式是否为非双栈集群，默认false，非双栈。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isDualStack 集群VPC-CNI模式是否为非双栈集群，默认false，非双栈。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsDualStack(const bool& _isDualStack);
@@ -320,18 +304,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用于分配service的IP range，由系统自动分配
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ipv6ServiceCIDR 用于分配service的IP range，由系统自动分配
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIpv6ServiceCIDR() const;
 
                     /**
                      * 设置用于分配service的IP range，由系统自动分配
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ipv6ServiceCIDR 用于分配service的IP range，由系统自动分配
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIpv6ServiceCIDR(const std::string& _ipv6ServiceCIDR);
@@ -346,10 +326,8 @@ namespace TencentCloud
                     /**
                      * 获取集群Cilium Mode配置
 - clusterIP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CiliumMode 集群Cilium Mode配置
 - clusterIP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCiliumMode() const;
@@ -357,10 +335,8 @@ namespace TencentCloud
                     /**
                      * 设置集群Cilium Mode配置
 - clusterIP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ciliumMode 集群Cilium Mode配置
 - clusterIP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCiliumMode(const std::string& _ciliumMode);
@@ -371,6 +347,56 @@ namespace TencentCloud
                      * 
                      */
                     bool CiliumModeHasBeenSet() const;
+
+                    /**
+                     * 获取控制面子网信息，仅在以下场景返回。
+- 容器网络插件为CiliumOverlay。
+- 支持CDC的托管集群，且网络插件为VPC-CNI。
+                     * @return SubnetId 控制面子网信息，仅在以下场景返回。
+- 容器网络插件为CiliumOverlay。
+- 支持CDC的托管集群，且网络插件为VPC-CNI。
+                     * 
+                     */
+                    std::string GetSubnetId() const;
+
+                    /**
+                     * 设置控制面子网信息，仅在以下场景返回。
+- 容器网络插件为CiliumOverlay。
+- 支持CDC的托管集群，且网络插件为VPC-CNI。
+                     * @param _subnetId 控制面子网信息，仅在以下场景返回。
+- 容器网络插件为CiliumOverlay。
+- 支持CDC的托管集群，且网络插件为VPC-CNI。
+                     * 
+                     */
+                    void SetSubnetId(const std::string& _subnetId);
+
+                    /**
+                     * 判断参数 SubnetId 是否已赋值
+                     * @return SubnetId 是否已赋值
+                     * 
+                     */
+                    bool SubnetIdHasBeenSet() const;
+
+                    /**
+                     * 获取是否启用了 DataPlaneV2（cilium替代kube-proxy）
+                     * @return DataPlaneV2 是否启用了 DataPlaneV2（cilium替代kube-proxy）
+                     * 
+                     */
+                    bool GetDataPlaneV2() const;
+
+                    /**
+                     * 设置是否启用了 DataPlaneV2（cilium替代kube-proxy）
+                     * @param _dataPlaneV2 是否启用了 DataPlaneV2（cilium替代kube-proxy）
+                     * 
+                     */
+                    void SetDataPlaneV2(const bool& _dataPlaneV2);
+
+                    /**
+                     * 判断参数 DataPlaneV2 是否已赋值
+                     * @return DataPlaneV2 是否已赋值
+                     * 
+                     */
+                    bool DataPlaneV2HasBeenSet() const;
 
                 private:
 
@@ -418,14 +444,12 @@ namespace TencentCloud
 
                     /**
                      * service的网络模式，当前参数只适用于ipvs+bpf模式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_kubeProxyMode;
                     bool m_kubeProxyModeHasBeenSet;
 
                     /**
                      * 用于分配service的IP range，不得与 VPC CIDR 冲突，也不得与同 VPC 内其他集群 CIDR 冲突
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceCIDR;
                     bool m_serviceCIDRHasBeenSet;
@@ -439,21 +463,18 @@ namespace TencentCloud
 
                     /**
                      * 是否忽略 ServiceCIDR 冲突错误, 仅在 VPC-CNI 模式生效，默认不忽略
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_ignoreServiceCIDRConflict;
                     bool m_ignoreServiceCIDRConflictHasBeenSet;
 
                     /**
                      * 集群VPC-CNI模式是否为非双栈集群，默认false，非双栈。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isDualStack;
                     bool m_isDualStackHasBeenSet;
 
                     /**
                      * 用于分配service的IP range，由系统自动分配
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ipv6ServiceCIDR;
                     bool m_ipv6ServiceCIDRHasBeenSet;
@@ -461,10 +482,23 @@ namespace TencentCloud
                     /**
                      * 集群Cilium Mode配置
 - clusterIP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ciliumMode;
                     bool m_ciliumModeHasBeenSet;
+
+                    /**
+                     * 控制面子网信息，仅在以下场景返回。
+- 容器网络插件为CiliumOverlay。
+- 支持CDC的托管集群，且网络插件为VPC-CNI。
+                     */
+                    std::string m_subnetId;
+                    bool m_subnetIdHasBeenSet;
+
+                    /**
+                     * 是否启用了 DataPlaneV2（cilium替代kube-proxy）
+                     */
+                    bool m_dataPlaneV2;
+                    bool m_dataPlaneV2HasBeenSet;
 
                 };
             }

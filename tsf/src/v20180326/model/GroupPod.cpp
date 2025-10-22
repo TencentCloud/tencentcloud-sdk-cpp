@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,8 @@ GroupPod::GroupPod() :
     m_serviceInstanceStatusHasBeenSet(false),
     m_instanceAvailableStatusHasBeenSet(false),
     m_instanceStatusHasBeenSet(false),
-    m_nodeInstanceIdHasBeenSet(false)
+    m_nodeInstanceIdHasBeenSet(false),
+    m_specTotalCountHasBeenSet(false)
 {
 }
 
@@ -183,6 +184,16 @@ CoreInternalOutcome GroupPod::Deserialize(const rapidjson::Value &value)
         m_nodeInstanceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("SpecTotalCount") && !value["SpecTotalCount"].IsNull())
+    {
+        if (!value["SpecTotalCount"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GroupPod.SpecTotalCount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_specTotalCount = string(value["SpecTotalCount"].GetString());
+        m_specTotalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +311,14 @@ void GroupPod::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "NodeInstanceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_nodeInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_specTotalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpecTotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_specTotalCount.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -527,5 +546,21 @@ void GroupPod::SetNodeInstanceId(const string& _nodeInstanceId)
 bool GroupPod::NodeInstanceIdHasBeenSet() const
 {
     return m_nodeInstanceIdHasBeenSet;
+}
+
+string GroupPod::GetSpecTotalCount() const
+{
+    return m_specTotalCount;
+}
+
+void GroupPod::SetSpecTotalCount(const string& _specTotalCount)
+{
+    m_specTotalCount = _specTotalCount;
+    m_specTotalCountHasBeenSet = true;
+}
+
+bool GroupPod::SpecTotalCountHasBeenSet() const
+{
+    return m_specTotalCountHasBeenSet;
 }
 

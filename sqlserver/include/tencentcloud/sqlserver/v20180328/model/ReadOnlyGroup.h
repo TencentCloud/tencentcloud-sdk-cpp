@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -383,6 +383,48 @@ namespace TencentCloud
                      */
                     bool TgwWanVPortHasBeenSet() const;
 
+                    /**
+                     * 获取RO只读组类型，1-按照一个实例一个只读组的方式发货，2-新建只读组后发货的所有实例都在这个只读组下面， 3-发货的所有实例都在已有的只读组下面
+                     * @return ReadOnlyGroupType RO只读组类型，1-按照一个实例一个只读组的方式发货，2-新建只读组后发货的所有实例都在这个只读组下面， 3-发货的所有实例都在已有的只读组下面
+                     * 
+                     */
+                    int64_t GetReadOnlyGroupType() const;
+
+                    /**
+                     * 设置RO只读组类型，1-按照一个实例一个只读组的方式发货，2-新建只读组后发货的所有实例都在这个只读组下面， 3-发货的所有实例都在已有的只读组下面
+                     * @param _readOnlyGroupType RO只读组类型，1-按照一个实例一个只读组的方式发货，2-新建只读组后发货的所有实例都在这个只读组下面， 3-发货的所有实例都在已有的只读组下面
+                     * 
+                     */
+                    void SetReadOnlyGroupType(const int64_t& _readOnlyGroupType);
+
+                    /**
+                     * 判断参数 ReadOnlyGroupType 是否已赋值
+                     * @return ReadOnlyGroupType 是否已赋值
+                     * 
+                     */
+                    bool ReadOnlyGroupTypeHasBeenSet() const;
+
+                    /**
+                     * 获取部署RO副本模式，0-默认不升级主实例，1-强制升级主实例完成RO部署
+                     * @return ReadOnlyGroupForcedUpgrade 部署RO副本模式，0-默认不升级主实例，1-强制升级主实例完成RO部署
+                     * 
+                     */
+                    int64_t GetReadOnlyGroupForcedUpgrade() const;
+
+                    /**
+                     * 设置部署RO副本模式，0-默认不升级主实例，1-强制升级主实例完成RO部署
+                     * @param _readOnlyGroupForcedUpgrade 部署RO副本模式，0-默认不升级主实例，1-强制升级主实例完成RO部署
+                     * 
+                     */
+                    void SetReadOnlyGroupForcedUpgrade(const int64_t& _readOnlyGroupForcedUpgrade);
+
+                    /**
+                     * 判断参数 ReadOnlyGroupForcedUpgrade 是否已赋值
+                     * @return ReadOnlyGroupForcedUpgrade 是否已赋值
+                     * 
+                     */
+                    bool ReadOnlyGroupForcedUpgradeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -480,6 +522,18 @@ namespace TencentCloud
                      */
                     uint64_t m_tgwWanVPort;
                     bool m_tgwWanVPortHasBeenSet;
+
+                    /**
+                     * RO只读组类型，1-按照一个实例一个只读组的方式发货，2-新建只读组后发货的所有实例都在这个只读组下面， 3-发货的所有实例都在已有的只读组下面
+                     */
+                    int64_t m_readOnlyGroupType;
+                    bool m_readOnlyGroupTypeHasBeenSet;
+
+                    /**
+                     * 部署RO副本模式，0-默认不升级主实例，1-强制升级主实例完成RO部署
+                     */
+                    int64_t m_readOnlyGroupForcedUpgrade;
+                    bool m_readOnlyGroupForcedUpgradeHasBeenSet;
 
                 };
             }

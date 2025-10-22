@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BatchId 任务id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBatchId() const;
 
                     /**
                      * 设置任务id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _batchId 任务id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBatchId(const std::string& _batchId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataEngineName 引擎名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataEngineName() const;
 
                     /**
                      * 设置引擎名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataEngineName 引擎名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataEngineName(const std::string& _dataEngineName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataEngineId 引擎id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataEngineId() const;
 
                     /**
                      * 设置引擎id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataEngineId 引擎id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataEngineId(const std::string& _dataEngineId);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取本次消耗，单位cu
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cost 本次消耗，单位cu
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetCost() const;
 
                     /**
                      * 设置本次消耗，单位cu
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cost 本次消耗，单位cu
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCost(const double& _cost);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时间开销，秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeCost 时间开销，秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTimeCost() const;
 
                     /**
                      * 设置时间开销，秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeCost 时间开销，秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeCost(const int64_t& _timeCost);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取操作者
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Operator 操作者
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置操作者
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _operator 操作者
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOperator(const std::string& _operator);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * 任务id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_batchId;
                     bool m_batchIdHasBeenSet;
 
                     /**
                      * 引擎名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataEngineName;
                     bool m_dataEngineNameHasBeenSet;
 
                     /**
                      * 引擎id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataEngineId;
                     bool m_dataEngineIdHasBeenSet;
 
                     /**
                      * 本次消耗，单位cu
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_cost;
                     bool m_costHasBeenSet;
 
                     /**
                      * 时间开销，秒
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_timeCost;
                     bool m_timeCostHasBeenSet;
 
                     /**
                      * 操作者
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;

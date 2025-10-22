@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -358,18 +358,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomAttributes 自定义属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<MemberMap> GetCustomAttributes() const;
 
                     /**
                      * 设置自定义属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _customAttributes 自定义属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCustomAttributes(const std::vector<MemberMap>& _customAttributes);
@@ -683,18 +679,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否已经实名核验
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdentityVerified 是否已经实名核验
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIdentityVerified() const;
 
                     /**
                      * 设置是否已经实名核验
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _identityVerified 是否已经实名核验
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIdentityVerified(const bool& _identityVerified);
@@ -758,18 +750,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否主账号（进行过账号融合后，主账号为true，从账号为false）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Primary 是否主账号（进行过账号融合后，主账号为true，从账号为false）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetPrimary() const;
 
                     /**
                      * 设置是否主账号（进行过账号融合后，主账号为true，从账号为false）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _primary 是否主账号（进行过账号融合后，主账号为true，从账号为false）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrimary(const bool& _primary);
@@ -808,18 +796,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否已经首次登录
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlreadyFirstLogin 是否已经首次登录
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetAlreadyFirstLogin() const;
 
                     /**
                      * 设置是否已经首次登录
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _alreadyFirstLogin 是否已经首次登录
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAlreadyFirstLogin(const bool& _alreadyFirstLogin);
@@ -833,18 +817,14 @@ namespace TencentCloud
 
                     /**
                      * 获取租户id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TenantId 租户id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTenantId() const;
 
                     /**
                      * 设置租户id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tenantId 租户id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTenantId(const std::string& _tenantId);
@@ -858,18 +838,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户目录id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserStoreId 用户目录id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserStoreId() const;
 
                     /**
                      * 设置用户目录id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userStoreId 用户目录id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserStoreId(const std::string& _userStoreId);
@@ -1172,7 +1148,6 @@ namespace TencentCloud
 
                     /**
                      * 自定义属性
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MemberMap> m_customAttributes;
                     bool m_customAttributesHasBeenSet;
@@ -1263,7 +1238,6 @@ namespace TencentCloud
 
                     /**
                      * 是否已经实名核验
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_identityVerified;
                     bool m_identityVerifiedHasBeenSet;
@@ -1284,7 +1258,6 @@ namespace TencentCloud
 
                     /**
                      * 是否主账号（进行过账号融合后，主账号为true，从账号为false）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_primary;
                     bool m_primaryHasBeenSet;
@@ -1298,21 +1271,18 @@ namespace TencentCloud
 
                     /**
                      * 是否已经首次登录
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_alreadyFirstLogin;
                     bool m_alreadyFirstLoginHasBeenSet;
 
                     /**
                      * 租户id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tenantId;
                     bool m_tenantIdHasBeenSet;
 
                     /**
                      * 用户目录id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userStoreId;
                     bool m_userStoreIdHasBeenSet;

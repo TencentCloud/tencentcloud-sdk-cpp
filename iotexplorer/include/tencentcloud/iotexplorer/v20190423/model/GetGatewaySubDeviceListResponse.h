@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取设备的总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 设备的总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotal() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取设备列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceList 设备列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     FamilySubDevice GetDeviceList() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 设备的总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
                      * 设备列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     FamilySubDevice m_deviceList;
                     bool m_deviceListHasBeenSet;

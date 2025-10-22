@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -322,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取码层级详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackSpec 码层级详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PackSpec> GetPackSpec() const;
 
                     /**
                      * 设置码层级详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packSpec 码层级详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackSpec(const std::vector<PackSpec>& _packSpec);
@@ -347,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取场景码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SceneCode 场景码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSceneCode() const;
 
                     /**
                      * 设置场景码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sceneCode 场景码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSceneCode(const uint64_t& _sceneCode);
@@ -372,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流水码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SerialCode 流水码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSerialCode() const;
 
                     /**
                      * 设置流水码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serialCode 流水码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSerialCode(const uint64_t& _serialCode);
@@ -477,21 +465,18 @@ namespace TencentCloud
 
                     /**
                      * 码层级详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PackSpec> m_packSpec;
                     bool m_packSpecHasBeenSet;
 
                     /**
                      * 场景码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_sceneCode;
                     bool m_sceneCodeHasBeenSet;
 
                     /**
                      * 流水码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_serialCode;
                     bool m_serialCodeHasBeenSet;

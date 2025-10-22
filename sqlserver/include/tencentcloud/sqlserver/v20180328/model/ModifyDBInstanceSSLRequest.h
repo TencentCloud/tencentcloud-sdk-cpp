@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -105,6 +105,69 @@ namespace TencentCloud
                      */
                     bool WaitSwitchHasBeenSet() const;
 
+                    /**
+                     * 获取是否被KMS加密保护，0-表示否，1表示被KMS保护，默认取值0
+                     * @return IsKMS 是否被KMS加密保护，0-表示否，1表示被KMS保护，默认取值0
+                     * 
+                     */
+                    int64_t GetIsKMS() const;
+
+                    /**
+                     * 设置是否被KMS加密保护，0-表示否，1表示被KMS保护，默认取值0
+                     * @param _isKMS 是否被KMS加密保护，0-表示否，1表示被KMS保护，默认取值0
+                     * 
+                     */
+                    void SetIsKMS(const int64_t& _isKMS);
+
+                    /**
+                     * 判断参数 IsKMS 是否已赋值
+                     * @return IsKMS 是否已赋值
+                     * 
+                     */
+                    bool IsKMSHasBeenSet() const;
+
+                    /**
+                     * 获取IsKMS为1时必填
+                     * @return KeyId IsKMS为1时必填
+                     * 
+                     */
+                    std::string GetKeyId() const;
+
+                    /**
+                     * 设置IsKMS为1时必填
+                     * @param _keyId IsKMS为1时必填
+                     * 
+                     */
+                    void SetKeyId(const std::string& _keyId);
+
+                    /**
+                     * 判断参数 KeyId 是否已赋值
+                     * @return KeyId 是否已赋值
+                     * 
+                     */
+                    bool KeyIdHasBeenSet() const;
+
+                    /**
+                     * 获取IsKMS为1时必填
+                     * @return KeyRegion IsKMS为1时必填
+                     * 
+                     */
+                    std::string GetKeyRegion() const;
+
+                    /**
+                     * 设置IsKMS为1时必填
+                     * @param _keyRegion IsKMS为1时必填
+                     * 
+                     */
+                    void SetKeyRegion(const std::string& _keyRegion);
+
+                    /**
+                     * 判断参数 KeyRegion 是否已赋值
+                     * @return KeyRegion 是否已赋值
+                     * 
+                     */
+                    bool KeyRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +187,24 @@ namespace TencentCloud
                      */
                     uint64_t m_waitSwitch;
                     bool m_waitSwitchHasBeenSet;
+
+                    /**
+                     * 是否被KMS加密保护，0-表示否，1表示被KMS保护，默认取值0
+                     */
+                    int64_t m_isKMS;
+                    bool m_isKMSHasBeenSet;
+
+                    /**
+                     * IsKMS为1时必填
+                     */
+                    std::string m_keyId;
+                    bool m_keyIdHasBeenSet;
+
+                    /**
+                     * IsKMS为1时必填
+                     */
+                    std::string m_keyRegion;
+                    bool m_keyRegionHasBeenSet;
 
                 };
             }

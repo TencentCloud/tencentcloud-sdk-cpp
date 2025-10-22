@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,9 @@ using namespace std;
 
 ApplyDiskBackupRequest::ApplyDiskBackupRequest() :
     m_diskBackupIdHasBeenSet(false),
-    m_diskIdHasBeenSet(false)
+    m_diskIdHasBeenSet(false),
+    m_autoStopInstanceHasBeenSet(false),
+    m_autoStartInstanceHasBeenSet(false)
 {
 }
 
@@ -49,6 +51,22 @@ string ApplyDiskBackupRequest::ToJsonString() const
         string key = "DiskId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_diskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoStopInstanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoStopInstance";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoStopInstance, allocator);
+    }
+
+    if (m_autoStartInstanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoStartInstance";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoStartInstance, allocator);
     }
 
 
@@ -89,6 +107,38 @@ void ApplyDiskBackupRequest::SetDiskId(const string& _diskId)
 bool ApplyDiskBackupRequest::DiskIdHasBeenSet() const
 {
     return m_diskIdHasBeenSet;
+}
+
+bool ApplyDiskBackupRequest::GetAutoStopInstance() const
+{
+    return m_autoStopInstance;
+}
+
+void ApplyDiskBackupRequest::SetAutoStopInstance(const bool& _autoStopInstance)
+{
+    m_autoStopInstance = _autoStopInstance;
+    m_autoStopInstanceHasBeenSet = true;
+}
+
+bool ApplyDiskBackupRequest::AutoStopInstanceHasBeenSet() const
+{
+    return m_autoStopInstanceHasBeenSet;
+}
+
+bool ApplyDiskBackupRequest::GetAutoStartInstance() const
+{
+    return m_autoStartInstance;
+}
+
+void ApplyDiskBackupRequest::SetAutoStartInstance(const bool& _autoStartInstance)
+{
+    m_autoStartInstance = _autoStartInstance;
+    m_autoStartInstanceHasBeenSet = true;
+}
+
+bool ApplyDiskBackupRequest::AutoStartInstanceHasBeenSet() const
+{
+    return m_autoStartInstanceHasBeenSet;
 }
 
 

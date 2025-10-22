@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,6 +58,8 @@ ja：日语
 pt：葡萄牙语
 ru：俄语
 ko：韩语
+tr：土耳其语
+vi：越南语
 th：泰语
                      * @return Source 源语言，支持
 zh：简体中文
@@ -74,6 +76,8 @@ ja：日语
 pt：葡萄牙语
 ru：俄语
 ko：韩语
+tr：土耳其语
+vi：越南语
 th：泰语
                      * 
                      */
@@ -95,6 +99,8 @@ ja：日语
 pt：葡萄牙语
 ru：俄语
 ko：韩语
+tr：土耳其语
+vi：越南语
 th：泰语
                      * @param _source 源语言，支持
 zh：简体中文
@@ -111,6 +117,8 @@ ja：日语
 pt：葡萄牙语
 ru：俄语
 ko：韩语
+tr：土耳其语
+vi：越南语
 th：泰语
                      * 
                      */
@@ -356,6 +364,8 @@ ja：日语
 pt：葡萄牙语
 ru：俄语
 ko：韩语
+tr：土耳其语
+vi：越南语
 th：泰语
                      */
                     std::string m_source;

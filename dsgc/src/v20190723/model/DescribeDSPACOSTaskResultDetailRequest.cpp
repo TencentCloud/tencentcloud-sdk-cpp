@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,15 +25,16 @@ using namespace std;
 DescribeDSPACOSTaskResultDetailRequest::DescribeDSPACOSTaskResultDetailRequest() :
     m_dspaIdHasBeenSet(false),
     m_taskIdHasBeenSet(false),
-    m_bucketResultIdHasBeenSet(false),
     m_complianceIdHasBeenSet(false),
+    m_bucketResultIdHasBeenSet(false),
     m_fileNameHasBeenSet(false),
     m_categoryIdHasBeenSet(false),
     m_levelIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_bucketNameHasBeenSet(false),
-    m_categoryIdListHasBeenSet(false)
+    m_categoryIdListHasBeenSet(false),
+    m_scanResultIdHasBeenSet(false)
 {
 }
 
@@ -60,20 +61,20 @@ string DescribeDSPACOSTaskResultDetailRequest::ToJsonString() const
         d.AddMember(iKey, m_taskId, allocator);
     }
 
-    if (m_bucketResultIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BucketResultId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_bucketResultId, allocator);
-    }
-
     if (m_complianceIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ComplianceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_complianceId, allocator);
+    }
+
+    if (m_bucketResultIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BucketResultId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_bucketResultId, allocator);
     }
 
     if (m_fileNameHasBeenSet)
@@ -137,6 +138,14 @@ string DescribeDSPACOSTaskResultDetailRequest::ToJsonString() const
         }
     }
 
+    if (m_scanResultIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScanResultId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_scanResultId, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -177,22 +186,6 @@ bool DescribeDSPACOSTaskResultDetailRequest::TaskIdHasBeenSet() const
     return m_taskIdHasBeenSet;
 }
 
-int64_t DescribeDSPACOSTaskResultDetailRequest::GetBucketResultId() const
-{
-    return m_bucketResultId;
-}
-
-void DescribeDSPACOSTaskResultDetailRequest::SetBucketResultId(const int64_t& _bucketResultId)
-{
-    m_bucketResultId = _bucketResultId;
-    m_bucketResultIdHasBeenSet = true;
-}
-
-bool DescribeDSPACOSTaskResultDetailRequest::BucketResultIdHasBeenSet() const
-{
-    return m_bucketResultIdHasBeenSet;
-}
-
 int64_t DescribeDSPACOSTaskResultDetailRequest::GetComplianceId() const
 {
     return m_complianceId;
@@ -207,6 +200,22 @@ void DescribeDSPACOSTaskResultDetailRequest::SetComplianceId(const int64_t& _com
 bool DescribeDSPACOSTaskResultDetailRequest::ComplianceIdHasBeenSet() const
 {
     return m_complianceIdHasBeenSet;
+}
+
+int64_t DescribeDSPACOSTaskResultDetailRequest::GetBucketResultId() const
+{
+    return m_bucketResultId;
+}
+
+void DescribeDSPACOSTaskResultDetailRequest::SetBucketResultId(const int64_t& _bucketResultId)
+{
+    m_bucketResultId = _bucketResultId;
+    m_bucketResultIdHasBeenSet = true;
+}
+
+bool DescribeDSPACOSTaskResultDetailRequest::BucketResultIdHasBeenSet() const
+{
+    return m_bucketResultIdHasBeenSet;
 }
 
 string DescribeDSPACOSTaskResultDetailRequest::GetFileName() const
@@ -319,6 +328,22 @@ void DescribeDSPACOSTaskResultDetailRequest::SetCategoryIdList(const vector<int6
 bool DescribeDSPACOSTaskResultDetailRequest::CategoryIdListHasBeenSet() const
 {
     return m_categoryIdListHasBeenSet;
+}
+
+int64_t DescribeDSPACOSTaskResultDetailRequest::GetScanResultId() const
+{
+    return m_scanResultId;
+}
+
+void DescribeDSPACOSTaskResultDetailRequest::SetScanResultId(const int64_t& _scanResultId)
+{
+    m_scanResultId = _scanResultId;
+    m_scanResultIdHasBeenSet = true;
+}
+
+bool DescribeDSPACOSTaskResultDetailRequest::ScanResultIdHasBeenSet() const
+{
+    return m_scanResultIdHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@
 #include <tencentcloud/cdb/v20170320/model/DrInfo.h>
 #include <tencentcloud/cdb/v20170320/model/TagInfoItem.h>
 #include <tencentcloud/cdb/v20170320/model/ClusterInfo.h>
+#include <tencentcloud/cdb/v20170320/model/AnalysisNodeInfo.h>
 
 
 namespace TencentCloud
@@ -118,18 +119,14 @@ namespace TencentCloud
 
                     /**
                      * 获取只读vip信息。单独开通只读实例访问的只读实例才有该字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoVipInfo 只读vip信息。单独开通只读实例访问的只读实例才有该字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RoVipInfo GetRoVipInfo() const;
 
                     /**
                      * 设置只读vip信息。单独开通只读实例访问的只读实例才有该字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _roVipInfo 只读vip信息。单独开通只读实例访问的只读实例才有该字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRoVipInfo(const RoVipInfo& _roVipInfo);
@@ -206,18 +203,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备机信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SlaveInfo 备机信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SlaveInfo GetSlaveInfo() const;
 
                     /**
                      * 设置备机信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _slaveInfo 备机信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSlaveInfo(const SlaveInfo& _slaveInfo);
@@ -315,18 +308,14 @@ namespace TencentCloud
 
                     /**
                      * 获取只读组详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoGroups 只读组详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RoGroup> GetRoGroups() const;
 
                     /**
                      * 设置只读组详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _roGroups 只读组详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRoGroups(const std::vector<RoGroup>& _roGroups);
@@ -487,18 +476,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主实例详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MasterInfo 主实例详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MasterInfo GetMasterInfo() const;
 
                     /**
                      * 设置主实例详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _masterInfo 主实例详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMasterInfo(const MasterInfo& _masterInfo);
@@ -575,18 +560,14 @@ namespace TencentCloud
 
                     /**
                      * 获取灾备实例详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DrInfo 灾备实例详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DrInfo> GetDrInfo() const;
 
                     /**
                      * 设置灾备实例详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _drInfo 灾备实例详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDrInfo(const std::vector<DrInfo>& _drInfo);
@@ -873,18 +854,14 @@ namespace TencentCloud
 
                     /**
                      * 获取物理机型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceClass 物理机型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceClass() const;
 
                     /**
                      * 设置物理机型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceClass 物理机型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceClass(const std::string& _deviceClass);
@@ -898,18 +875,14 @@ namespace TencentCloud
 
                     /**
                      * 获取置放群组 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeployGroupId 置放群组 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeployGroupId() const;
 
                     /**
                      * 设置置放群组 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deployGroupId 置放群组 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeployGroupId(const std::string& _deployGroupId);
@@ -923,18 +896,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneId 可用区 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
                      * 设置可用区 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zoneId 可用区 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZoneId(const int64_t& _zoneId);
@@ -969,18 +938,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagList 标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TagInfoItem> GetTagList() const;
 
                     /**
                      * 设置标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tagList 标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTagList(const std::vector<TagInfoItem>& _tagList);
@@ -994,18 +959,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EngineType 引擎类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEngineType() const;
 
                     /**
                      * 设置引擎类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _engineType 引擎类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEngineType(const std::string& _engineType);
@@ -1019,18 +980,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最大延迟阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxDelayTime 最大延迟阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxDelayTime() const;
 
                     /**
                      * 设置最大延迟阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxDelayTime 最大延迟阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxDelayTime(const int64_t& _maxDelayTime);
@@ -1043,15 +1000,31 @@ namespace TencentCloud
                     bool MaxDelayTimeHasBeenSet() const;
 
                     /**
-                     * 获取实例磁盘类型，仅云盘版实例才返回该值。可能的值为 CLOUD_SSD：SSD云硬盘， CLOUD_HSSD：增强型SSD云硬盘
-                     * @return DiskType 实例磁盘类型，仅云盘版实例才返回该值。可能的值为 CLOUD_SSD：SSD云硬盘， CLOUD_HSSD：增强型SSD云硬盘
+                     * 获取实例磁盘类型，仅云盘版和单节点（云盘）实例才会返回有效值。
+说明：
+1. 若返回："DiskType": "CLOUD_HSSD"，则表示该实例磁盘类型为增强型 SSD 云硬盘。
+2. 若返回："DiskType": "CLOUD_SSD"，则表示该实例磁盘类型为 SSD 云硬盘。
+3. 若返回："DiskType": ""，且参数 DeviceType 值为 UNIVERSAL 或 EXCLUSIVE，则表示该实例采用的是本地 SSD 盘。
+                     * @return DiskType 实例磁盘类型，仅云盘版和单节点（云盘）实例才会返回有效值。
+说明：
+1. 若返回："DiskType": "CLOUD_HSSD"，则表示该实例磁盘类型为增强型 SSD 云硬盘。
+2. 若返回："DiskType": "CLOUD_SSD"，则表示该实例磁盘类型为 SSD 云硬盘。
+3. 若返回："DiskType": ""，且参数 DeviceType 值为 UNIVERSAL 或 EXCLUSIVE，则表示该实例采用的是本地 SSD 盘。
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置实例磁盘类型，仅云盘版实例才返回该值。可能的值为 CLOUD_SSD：SSD云硬盘， CLOUD_HSSD：增强型SSD云硬盘
-                     * @param _diskType 实例磁盘类型，仅云盘版实例才返回该值。可能的值为 CLOUD_SSD：SSD云硬盘， CLOUD_HSSD：增强型SSD云硬盘
+                     * 设置实例磁盘类型，仅云盘版和单节点（云盘）实例才会返回有效值。
+说明：
+1. 若返回："DiskType": "CLOUD_HSSD"，则表示该实例磁盘类型为增强型 SSD 云硬盘。
+2. 若返回："DiskType": "CLOUD_SSD"，则表示该实例磁盘类型为 SSD 云硬盘。
+3. 若返回："DiskType": ""，且参数 DeviceType 值为 UNIVERSAL 或 EXCLUSIVE，则表示该实例采用的是本地 SSD 盘。
+                     * @param _diskType 实例磁盘类型，仅云盘版和单节点（云盘）实例才会返回有效值。
+说明：
+1. 若返回："DiskType": "CLOUD_HSSD"，则表示该实例磁盘类型为增强型 SSD 云硬盘。
+2. 若返回："DiskType": "CLOUD_SSD"，则表示该实例磁盘类型为 SSD 云硬盘。
+3. 若返回："DiskType": ""，且参数 DeviceType 值为 UNIVERSAL 或 EXCLUSIVE，则表示该实例采用的是本地 SSD 盘。
                      * 
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -1065,18 +1038,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前扩容的CPU核心数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpandCpu 当前扩容的CPU核心数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetExpandCpu() const;
 
                     /**
                      * 设置当前扩容的CPU核心数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expandCpu 当前扩容的CPU核心数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpandCpu(const int64_t& _expandCpu);
@@ -1089,19 +1058,15 @@ namespace TencentCloud
                     bool ExpandCpuHasBeenSet() const;
 
                     /**
-                     * 获取实例集群版节点信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClusterInfo 实例集群版节点信息
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取云盘版实例节点信息
+                     * @return ClusterInfo 云盘版实例节点信息
                      * 
                      */
                     std::vector<ClusterInfo> GetClusterInfo() const;
 
                     /**
-                     * 设置实例集群版节点信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _clusterInfo 实例集群版节点信息
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置云盘版实例节点信息
+                     * @param _clusterInfo 云盘版实例节点信息
                      * 
                      */
                     void SetClusterInfo(const std::vector<ClusterInfo>& _clusterInfo);
@@ -1112,6 +1077,69 @@ namespace TencentCloud
                      * 
                      */
                     bool ClusterInfoHasBeenSet() const;
+
+                    /**
+                     * 获取分析引擎节点列表
+                     * @return AnalysisNodeInfos 分析引擎节点列表
+                     * 
+                     */
+                    std::vector<AnalysisNodeInfo> GetAnalysisNodeInfos() const;
+
+                    /**
+                     * 设置分析引擎节点列表
+                     * @param _analysisNodeInfos 分析引擎节点列表
+                     * 
+                     */
+                    void SetAnalysisNodeInfos(const std::vector<AnalysisNodeInfo>& _analysisNodeInfos);
+
+                    /**
+                     * 判断参数 AnalysisNodeInfos 是否已赋值
+                     * @return AnalysisNodeInfos 是否已赋值
+                     * 
+                     */
+                    bool AnalysisNodeInfosHasBeenSet() const;
+
+                    /**
+                     * 获取设备带宽，单位G。当DeviceClass不为空时此参数才有效。例：25-表示当前设备带宽为25G；10-表示当前设备带宽为10G。
+                     * @return DeviceBandwidth 设备带宽，单位G。当DeviceClass不为空时此参数才有效。例：25-表示当前设备带宽为25G；10-表示当前设备带宽为10G。
+                     * 
+                     */
+                    uint64_t GetDeviceBandwidth() const;
+
+                    /**
+                     * 设置设备带宽，单位G。当DeviceClass不为空时此参数才有效。例：25-表示当前设备带宽为25G；10-表示当前设备带宽为10G。
+                     * @param _deviceBandwidth 设备带宽，单位G。当DeviceClass不为空时此参数才有效。例：25-表示当前设备带宽为25G；10-表示当前设备带宽为10G。
+                     * 
+                     */
+                    void SetDeviceBandwidth(const uint64_t& _deviceBandwidth);
+
+                    /**
+                     * 判断参数 DeviceBandwidth 是否已赋值
+                     * @return DeviceBandwidth 是否已赋值
+                     * 
+                     */
+                    bool DeviceBandwidthHasBeenSet() const;
+
+                    /**
+                     * 获取实例销毁保护状态，on表示开启保护，否则为关闭保护
+                     * @return DestroyProtect 实例销毁保护状态，on表示开启保护，否则为关闭保护
+                     * 
+                     */
+                    std::string GetDestroyProtect() const;
+
+                    /**
+                     * 设置实例销毁保护状态，on表示开启保护，否则为关闭保护
+                     * @param _destroyProtect 实例销毁保护状态，on表示开启保护，否则为关闭保护
+                     * 
+                     */
+                    void SetDestroyProtect(const std::string& _destroyProtect);
+
+                    /**
+                     * 判断参数 DestroyProtect 是否已赋值
+                     * @return DestroyProtect 是否已赋值
+                     * 
+                     */
+                    bool DestroyProtectHasBeenSet() const;
 
                 private:
 
@@ -1135,7 +1163,6 @@ namespace TencentCloud
 
                     /**
                      * 只读vip信息。单独开通只读实例访问的只读实例才有该字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RoVipInfo m_roVipInfo;
                     bool m_roVipInfoHasBeenSet;
@@ -1160,7 +1187,6 @@ namespace TencentCloud
 
                     /**
                      * 备机信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SlaveInfo m_slaveInfo;
                     bool m_slaveInfoHasBeenSet;
@@ -1191,7 +1217,6 @@ namespace TencentCloud
 
                     /**
                      * 只读组详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RoGroup> m_roGroups;
                     bool m_roGroupsHasBeenSet;
@@ -1240,7 +1265,6 @@ namespace TencentCloud
 
                     /**
                      * 主实例详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MasterInfo m_masterInfo;
                     bool m_masterInfoHasBeenSet;
@@ -1265,7 +1289,6 @@ namespace TencentCloud
 
                     /**
                      * 灾备实例详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DrInfo> m_drInfo;
                     bool m_drInfoHasBeenSet;
@@ -1350,21 +1373,18 @@ namespace TencentCloud
 
                     /**
                      * 物理机型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceClass;
                     bool m_deviceClassHasBeenSet;
 
                     /**
                      * 置放群组 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deployGroupId;
                     bool m_deployGroupIdHasBeenSet;
 
                     /**
                      * 可用区 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
@@ -1377,44 +1397,61 @@ namespace TencentCloud
 
                     /**
                      * 标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TagInfoItem> m_tagList;
                     bool m_tagListHasBeenSet;
 
                     /**
                      * 引擎类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_engineType;
                     bool m_engineTypeHasBeenSet;
 
                     /**
                      * 最大延迟阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxDelayTime;
                     bool m_maxDelayTimeHasBeenSet;
 
                     /**
-                     * 实例磁盘类型，仅云盘版实例才返回该值。可能的值为 CLOUD_SSD：SSD云硬盘， CLOUD_HSSD：增强型SSD云硬盘
+                     * 实例磁盘类型，仅云盘版和单节点（云盘）实例才会返回有效值。
+说明：
+1. 若返回："DiskType": "CLOUD_HSSD"，则表示该实例磁盘类型为增强型 SSD 云硬盘。
+2. 若返回："DiskType": "CLOUD_SSD"，则表示该实例磁盘类型为 SSD 云硬盘。
+3. 若返回："DiskType": ""，且参数 DeviceType 值为 UNIVERSAL 或 EXCLUSIVE，则表示该实例采用的是本地 SSD 盘。
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
 
                     /**
                      * 当前扩容的CPU核心数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_expandCpu;
                     bool m_expandCpuHasBeenSet;
 
                     /**
-                     * 实例集群版节点信息
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 云盘版实例节点信息
                      */
                     std::vector<ClusterInfo> m_clusterInfo;
                     bool m_clusterInfoHasBeenSet;
+
+                    /**
+                     * 分析引擎节点列表
+                     */
+                    std::vector<AnalysisNodeInfo> m_analysisNodeInfos;
+                    bool m_analysisNodeInfosHasBeenSet;
+
+                    /**
+                     * 设备带宽，单位G。当DeviceClass不为空时此参数才有效。例：25-表示当前设备带宽为25G；10-表示当前设备带宽为10G。
+                     */
+                    uint64_t m_deviceBandwidth;
+                    bool m_deviceBandwidthHasBeenSet;
+
+                    /**
+                     * 实例销毁保护状态，on表示开启保护，否则为关闭保护
+                     */
+                    std::string m_destroyProtect;
+                    bool m_destroyProtectHasBeenSet;
 
                 };
             }

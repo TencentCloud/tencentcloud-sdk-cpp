@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,6 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/tione/v20211111/model/ImageSecret.h>
 
 
 namespace TencentCloud
@@ -214,31 +213,6 @@ namespace TencentCloud
                      */
                     bool SupportDataPipelineHasBeenSet() const;
 
-                    /**
-                     * 获取镜像仓库用户名密码信息(仅当ImageType为CUSTOM第三方镜像的时候需要)
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ImageSecret 镜像仓库用户名密码信息(仅当ImageType为CUSTOM第三方镜像的时候需要)
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    ImageSecret GetImageSecret() const;
-
-                    /**
-                     * 设置镜像仓库用户名密码信息(仅当ImageType为CUSTOM第三方镜像的时候需要)
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _imageSecret 镜像仓库用户名密码信息(仅当ImageType为CUSTOM第三方镜像的时候需要)
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetImageSecret(const ImageSecret& _imageSecret);
-
-                    /**
-                     * 判断参数 ImageSecret 是否已赋值
-                     * @return ImageSecret 是否已赋值
-                     * 
-                     */
-                    bool ImageSecretHasBeenSet() const;
-
                 private:
 
                     /**
@@ -287,13 +261,6 @@ namespace TencentCloud
                      */
                     bool m_supportDataPipeline;
                     bool m_supportDataPipelineHasBeenSet;
-
-                    /**
-                     * 镜像仓库用户名密码信息(仅当ImageType为CUSTOM第三方镜像的时候需要)
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    ImageSecret m_imageSecret;
-                    bool m_imageSecretHasBeenSet;
 
                 };
             }

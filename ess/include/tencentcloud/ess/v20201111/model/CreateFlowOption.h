@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ess/v20201111/model/CreateResultPageConfig.h>
+#include <tencentcloud/ess/v20201111/model/SignComponentConfig.h>
 
 
 namespace TencentCloud
@@ -337,18 +338,18 @@ namespace TencentCloud
                     bool CustomCreateFlowDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取  禁止添加签署方，若为true则在发起流程的可嵌入页面隐藏“添加签署人按钮”
+                     * 获取 禁止添加签署方，若为true则在发起流程的可嵌入页面隐藏“添加签署人按钮”
 
-                     * @return ForbidAddApprover   禁止添加签署方，若为true则在发起流程的可嵌入页面隐藏“添加签署人按钮”
+                     * @return ForbidAddApprover  禁止添加签署方，若为true则在发起流程的可嵌入页面隐藏“添加签署人按钮”
 
                      * 
                      */
                     bool GetForbidAddApprover() const;
 
                     /**
-                     * 设置  禁止添加签署方，若为true则在发起流程的可嵌入页面隐藏“添加签署人按钮”
+                     * 设置 禁止添加签署方，若为true则在发起流程的可嵌入页面隐藏“添加签署人按钮”
 
-                     * @param _forbidAddApprover   禁止添加签署方，若为true则在发起流程的可嵌入页面隐藏“添加签署人按钮”
+                     * @param _forbidAddApprover  禁止添加签署方，若为true则在发起流程的可嵌入页面隐藏“添加签署人按钮”
 
                      * 
                      */
@@ -360,6 +361,39 @@ namespace TencentCloud
                      * 
                      */
                     bool ForbidAddApproverHasBeenSet() const;
+
+                    /**
+                     * 获取是否可以编辑签署人包括新增，修改，删除 
+<ul><li>（默认） false -可以编辑签署人</li> <li> true - 禁止编辑签署人</li></ul>
+
+注意：如果设置参数为  true， 则 参数签署人 [FlowApproverList](https://qian.tencent.com/developers/partnerApis/embedPages/ChannelCreatePrepareFlow) 不能为空
+                     * @return ForbidEditApprover 是否可以编辑签署人包括新增，修改，删除 
+<ul><li>（默认） false -可以编辑签署人</li> <li> true - 禁止编辑签署人</li></ul>
+
+注意：如果设置参数为  true， 则 参数签署人 [FlowApproverList](https://qian.tencent.com/developers/partnerApis/embedPages/ChannelCreatePrepareFlow) 不能为空
+                     * 
+                     */
+                    bool GetForbidEditApprover() const;
+
+                    /**
+                     * 设置是否可以编辑签署人包括新增，修改，删除 
+<ul><li>（默认） false -可以编辑签署人</li> <li> true - 禁止编辑签署人</li></ul>
+
+注意：如果设置参数为  true， 则 参数签署人 [FlowApproverList](https://qian.tencent.com/developers/partnerApis/embedPages/ChannelCreatePrepareFlow) 不能为空
+                     * @param _forbidEditApprover 是否可以编辑签署人包括新增，修改，删除 
+<ul><li>（默认） false -可以编辑签署人</li> <li> true - 禁止编辑签署人</li></ul>
+
+注意：如果设置参数为  true， 则 参数签署人 [FlowApproverList](https://qian.tencent.com/developers/partnerApis/embedPages/ChannelCreatePrepareFlow) 不能为空
+                     * 
+                     */
+                    void SetForbidEditApprover(const bool& _forbidEditApprover);
+
+                    /**
+                     * 判断参数 ForbidEditApprover 是否已赋值
+                     * @return ForbidEditApprover 是否已赋值
+                     * 
+                     */
+                    bool ForbidEditApproverHasBeenSet() const;
 
                     /**
                      * 获取  禁止设置设置签署流程属性 (顺序、合同签署认证方式等)，若为true则在发起流程的可嵌入页面隐藏签署流程设置面板
@@ -387,13 +421,16 @@ namespace TencentCloud
                     bool ForbidEditFlowPropertiesHasBeenSet() const;
 
                     /**
-                     * 获取在发起流程的可嵌入页面要隐藏的控件列表，和 ShowComponentTypes 参数 只能二选一使用，具体的控件类型如下
+                     * 获取在发起流程的可嵌入页面要隐藏的控件列表，和 ShowComponentTypes 参数 只能二选一使用（注: 
+<font color='red'>空数组代表未指定</font>），具体的控件类型如下
+
 <ul><li>SIGN_SIGNATURE : 个人签名/印章</li>
 <li>SIGN_SEAL : 企业印章</li>
 <li>SIGN_PAGING_SEAL : 骑缝章</li>
 <li>SIGN_LEGAL_PERSON_SEAL : 法定代表人章</li>
 <li>SIGN_APPROVE : 签批</li>
 <li>SIGN_OPINION : 签署意见</li>
+<li>SIGN_PAGING_SIGNATURE : 手写签名骑缝控件</li>
 <li>BUSI-FULL-NAME  : 企业全称</li>
 <li>BUSI-CREDIT-CODE : 统一社会信用代码</li>
 <li>BUSI-LEGAL-NAME : 法人/经营者姓名</li>
@@ -414,13 +451,16 @@ namespace TencentCloud
 <li>EDUCATION : 学历</li>
 <li>GENDER : 性别</li>
 <li>DISTRICT : 省市区</li></ul>
-                     * @return HideComponentTypes 在发起流程的可嵌入页面要隐藏的控件列表，和 ShowComponentTypes 参数 只能二选一使用，具体的控件类型如下
+                     * @return HideComponentTypes 在发起流程的可嵌入页面要隐藏的控件列表，和 ShowComponentTypes 参数 只能二选一使用（注: 
+<font color='red'>空数组代表未指定</font>），具体的控件类型如下
+
 <ul><li>SIGN_SIGNATURE : 个人签名/印章</li>
 <li>SIGN_SEAL : 企业印章</li>
 <li>SIGN_PAGING_SEAL : 骑缝章</li>
 <li>SIGN_LEGAL_PERSON_SEAL : 法定代表人章</li>
 <li>SIGN_APPROVE : 签批</li>
 <li>SIGN_OPINION : 签署意见</li>
+<li>SIGN_PAGING_SIGNATURE : 手写签名骑缝控件</li>
 <li>BUSI-FULL-NAME  : 企业全称</li>
 <li>BUSI-CREDIT-CODE : 统一社会信用代码</li>
 <li>BUSI-LEGAL-NAME : 法人/经营者姓名</li>
@@ -446,13 +486,16 @@ namespace TencentCloud
                     std::vector<std::string> GetHideComponentTypes() const;
 
                     /**
-                     * 设置在发起流程的可嵌入页面要隐藏的控件列表，和 ShowComponentTypes 参数 只能二选一使用，具体的控件类型如下
+                     * 设置在发起流程的可嵌入页面要隐藏的控件列表，和 ShowComponentTypes 参数 只能二选一使用（注: 
+<font color='red'>空数组代表未指定</font>），具体的控件类型如下
+
 <ul><li>SIGN_SIGNATURE : 个人签名/印章</li>
 <li>SIGN_SEAL : 企业印章</li>
 <li>SIGN_PAGING_SEAL : 骑缝章</li>
 <li>SIGN_LEGAL_PERSON_SEAL : 法定代表人章</li>
 <li>SIGN_APPROVE : 签批</li>
 <li>SIGN_OPINION : 签署意见</li>
+<li>SIGN_PAGING_SIGNATURE : 手写签名骑缝控件</li>
 <li>BUSI-FULL-NAME  : 企业全称</li>
 <li>BUSI-CREDIT-CODE : 统一社会信用代码</li>
 <li>BUSI-LEGAL-NAME : 法人/经营者姓名</li>
@@ -473,13 +516,16 @@ namespace TencentCloud
 <li>EDUCATION : 学历</li>
 <li>GENDER : 性别</li>
 <li>DISTRICT : 省市区</li></ul>
-                     * @param _hideComponentTypes 在发起流程的可嵌入页面要隐藏的控件列表，和 ShowComponentTypes 参数 只能二选一使用，具体的控件类型如下
+                     * @param _hideComponentTypes 在发起流程的可嵌入页面要隐藏的控件列表，和 ShowComponentTypes 参数 只能二选一使用（注: 
+<font color='red'>空数组代表未指定</font>），具体的控件类型如下
+
 <ul><li>SIGN_SIGNATURE : 个人签名/印章</li>
 <li>SIGN_SEAL : 企业印章</li>
 <li>SIGN_PAGING_SEAL : 骑缝章</li>
 <li>SIGN_LEGAL_PERSON_SEAL : 法定代表人章</li>
 <li>SIGN_APPROVE : 签批</li>
 <li>SIGN_OPINION : 签署意见</li>
+<li>SIGN_PAGING_SIGNATURE : 手写签名骑缝控件</li>
 <li>BUSI-FULL-NAME  : 企业全称</li>
 <li>BUSI-CREDIT-CODE : 统一社会信用代码</li>
 <li>BUSI-LEGAL-NAME : 法人/经营者姓名</li>
@@ -512,13 +558,15 @@ namespace TencentCloud
                     bool HideComponentTypesHasBeenSet() const;
 
                     /**
-                     * 获取在发起流程的可嵌入页面要显示的控件列表，和 HideComponentTypes 参数 只能二选一使用，具体的控件类型如下
+                     * 获取在发起流程的可嵌入页面要显示的控件列表，和 HideComponentTypes 参数 只能二选一使用（注: 
+<font color='red'>空数组代表未指定</font>），具体的控件类型如下
 <ul><li>SIGN_SIGNATURE : 个人签名/印章</li>
 <li>SIGN_SEAL : 企业印章</li>
 <li>SIGN_PAGING_SEAL : 骑缝章</li>
 <li>SIGN_LEGAL_PERSON_SEAL : 法定代表人章</li>
 <li>SIGN_APPROVE : 签批</li>
 <li>SIGN_OPINION : 签署意见</li>
+<li>SIGN_PAGING_SIGNATURE : 手写签名骑缝控件</li>
 <li>BUSI-FULL-NAME  : 企业全称</li>
 <li>BUSI-CREDIT-CODE : 统一社会信用代码</li>
 <li>BUSI-LEGAL-NAME : 法人/经营者姓名</li>
@@ -539,13 +587,15 @@ namespace TencentCloud
 <li>EDUCATION : 学历</li>
 <li>GENDER : 性别</li>
 <li>DISTRICT : 省市区</li></ul>
-                     * @return ShowComponentTypes 在发起流程的可嵌入页面要显示的控件列表，和 HideComponentTypes 参数 只能二选一使用，具体的控件类型如下
+                     * @return ShowComponentTypes 在发起流程的可嵌入页面要显示的控件列表，和 HideComponentTypes 参数 只能二选一使用（注: 
+<font color='red'>空数组代表未指定</font>），具体的控件类型如下
 <ul><li>SIGN_SIGNATURE : 个人签名/印章</li>
 <li>SIGN_SEAL : 企业印章</li>
 <li>SIGN_PAGING_SEAL : 骑缝章</li>
 <li>SIGN_LEGAL_PERSON_SEAL : 法定代表人章</li>
 <li>SIGN_APPROVE : 签批</li>
 <li>SIGN_OPINION : 签署意见</li>
+<li>SIGN_PAGING_SIGNATURE : 手写签名骑缝控件</li>
 <li>BUSI-FULL-NAME  : 企业全称</li>
 <li>BUSI-CREDIT-CODE : 统一社会信用代码</li>
 <li>BUSI-LEGAL-NAME : 法人/经营者姓名</li>
@@ -571,13 +621,15 @@ namespace TencentCloud
                     std::vector<std::string> GetShowComponentTypes() const;
 
                     /**
-                     * 设置在发起流程的可嵌入页面要显示的控件列表，和 HideComponentTypes 参数 只能二选一使用，具体的控件类型如下
+                     * 设置在发起流程的可嵌入页面要显示的控件列表，和 HideComponentTypes 参数 只能二选一使用（注: 
+<font color='red'>空数组代表未指定</font>），具体的控件类型如下
 <ul><li>SIGN_SIGNATURE : 个人签名/印章</li>
 <li>SIGN_SEAL : 企业印章</li>
 <li>SIGN_PAGING_SEAL : 骑缝章</li>
 <li>SIGN_LEGAL_PERSON_SEAL : 法定代表人章</li>
 <li>SIGN_APPROVE : 签批</li>
 <li>SIGN_OPINION : 签署意见</li>
+<li>SIGN_PAGING_SIGNATURE : 手写签名骑缝控件</li>
 <li>BUSI-FULL-NAME  : 企业全称</li>
 <li>BUSI-CREDIT-CODE : 统一社会信用代码</li>
 <li>BUSI-LEGAL-NAME : 法人/经营者姓名</li>
@@ -598,13 +650,15 @@ namespace TencentCloud
 <li>EDUCATION : 学历</li>
 <li>GENDER : 性别</li>
 <li>DISTRICT : 省市区</li></ul>
-                     * @param _showComponentTypes 在发起流程的可嵌入页面要显示的控件列表，和 HideComponentTypes 参数 只能二选一使用，具体的控件类型如下
+                     * @param _showComponentTypes 在发起流程的可嵌入页面要显示的控件列表，和 HideComponentTypes 参数 只能二选一使用（注: 
+<font color='red'>空数组代表未指定</font>），具体的控件类型如下
 <ul><li>SIGN_SIGNATURE : 个人签名/印章</li>
 <li>SIGN_SEAL : 企业印章</li>
 <li>SIGN_PAGING_SEAL : 骑缝章</li>
 <li>SIGN_LEGAL_PERSON_SEAL : 法定代表人章</li>
 <li>SIGN_APPROVE : 签批</li>
 <li>SIGN_OPINION : 签署意见</li>
+<li>SIGN_PAGING_SIGNATURE : 手写签名骑缝控件</li>
 <li>BUSI-FULL-NAME  : 企业全称</li>
 <li>BUSI-CREDIT-CODE : 统一社会信用代码</li>
 <li>BUSI-LEGAL-NAME : 法人/经营者姓名</li>
@@ -656,6 +710,56 @@ namespace TencentCloud
                      * 
                      */
                     bool ResultPageConfigHasBeenSet() const;
+
+                    /**
+                     * 获取签署控件的配置信息，用在嵌入式发起的页面配置，包括 
+ - 签署控件 是否默认展示日期.
+                     * @return SignComponentConfig 签署控件的配置信息，用在嵌入式发起的页面配置，包括 
+ - 签署控件 是否默认展示日期.
+                     * 
+                     */
+                    SignComponentConfig GetSignComponentConfig() const;
+
+                    /**
+                     * 设置签署控件的配置信息，用在嵌入式发起的页面配置，包括 
+ - 签署控件 是否默认展示日期.
+                     * @param _signComponentConfig 签署控件的配置信息，用在嵌入式发起的页面配置，包括 
+ - 签署控件 是否默认展示日期.
+                     * 
+                     */
+                    void SetSignComponentConfig(const SignComponentConfig& _signComponentConfig);
+
+                    /**
+                     * 判断参数 SignComponentConfig 是否已赋值
+                     * @return SignComponentConfig 是否已赋值
+                     * 
+                     */
+                    bool SignComponentConfigHasBeenSet() const;
+
+                    /**
+                     * 获取是否禁止编辑（展示）水印控件属性
+<ul><li>（默认） false -否</li> <li> true - 禁止编辑</li></ul>
+                     * @return ForbidEditWatermark 是否禁止编辑（展示）水印控件属性
+<ul><li>（默认） false -否</li> <li> true - 禁止编辑</li></ul>
+                     * 
+                     */
+                    bool GetForbidEditWatermark() const;
+
+                    /**
+                     * 设置是否禁止编辑（展示）水印控件属性
+<ul><li>（默认） false -否</li> <li> true - 禁止编辑</li></ul>
+                     * @param _forbidEditWatermark 是否禁止编辑（展示）水印控件属性
+<ul><li>（默认） false -否</li> <li> true - 禁止编辑</li></ul>
+                     * 
+                     */
+                    void SetForbidEditWatermark(const bool& _forbidEditWatermark);
+
+                    /**
+                     * 判断参数 ForbidEditWatermark 是否已赋值
+                     * @return ForbidEditWatermark 是否已赋值
+                     * 
+                     */
+                    bool ForbidEditWatermarkHasBeenSet() const;
 
                 private:
 
@@ -739,11 +843,20 @@ namespace TencentCloud
                     bool m_customCreateFlowDescriptionHasBeenSet;
 
                     /**
-                     *   禁止添加签署方，若为true则在发起流程的可嵌入页面隐藏“添加签署人按钮”
+                     *  禁止添加签署方，若为true则在发起流程的可嵌入页面隐藏“添加签署人按钮”
 
                      */
                     bool m_forbidAddApprover;
                     bool m_forbidAddApproverHasBeenSet;
+
+                    /**
+                     * 是否可以编辑签署人包括新增，修改，删除 
+<ul><li>（默认） false -可以编辑签署人</li> <li> true - 禁止编辑签署人</li></ul>
+
+注意：如果设置参数为  true， 则 参数签署人 [FlowApproverList](https://qian.tencent.com/developers/partnerApis/embedPages/ChannelCreatePrepareFlow) 不能为空
+                     */
+                    bool m_forbidEditApprover;
+                    bool m_forbidEditApproverHasBeenSet;
 
                     /**
                      *   禁止设置设置签署流程属性 (顺序、合同签署认证方式等)，若为true则在发起流程的可嵌入页面隐藏签署流程设置面板
@@ -753,13 +866,16 @@ namespace TencentCloud
                     bool m_forbidEditFlowPropertiesHasBeenSet;
 
                     /**
-                     * 在发起流程的可嵌入页面要隐藏的控件列表，和 ShowComponentTypes 参数 只能二选一使用，具体的控件类型如下
+                     * 在发起流程的可嵌入页面要隐藏的控件列表，和 ShowComponentTypes 参数 只能二选一使用（注: 
+<font color='red'>空数组代表未指定</font>），具体的控件类型如下
+
 <ul><li>SIGN_SIGNATURE : 个人签名/印章</li>
 <li>SIGN_SEAL : 企业印章</li>
 <li>SIGN_PAGING_SEAL : 骑缝章</li>
 <li>SIGN_LEGAL_PERSON_SEAL : 法定代表人章</li>
 <li>SIGN_APPROVE : 签批</li>
 <li>SIGN_OPINION : 签署意见</li>
+<li>SIGN_PAGING_SIGNATURE : 手写签名骑缝控件</li>
 <li>BUSI-FULL-NAME  : 企业全称</li>
 <li>BUSI-CREDIT-CODE : 统一社会信用代码</li>
 <li>BUSI-LEGAL-NAME : 法人/经营者姓名</li>
@@ -785,13 +901,15 @@ namespace TencentCloud
                     bool m_hideComponentTypesHasBeenSet;
 
                     /**
-                     * 在发起流程的可嵌入页面要显示的控件列表，和 HideComponentTypes 参数 只能二选一使用，具体的控件类型如下
+                     * 在发起流程的可嵌入页面要显示的控件列表，和 HideComponentTypes 参数 只能二选一使用（注: 
+<font color='red'>空数组代表未指定</font>），具体的控件类型如下
 <ul><li>SIGN_SIGNATURE : 个人签名/印章</li>
 <li>SIGN_SEAL : 企业印章</li>
 <li>SIGN_PAGING_SEAL : 骑缝章</li>
 <li>SIGN_LEGAL_PERSON_SEAL : 法定代表人章</li>
 <li>SIGN_APPROVE : 签批</li>
 <li>SIGN_OPINION : 签署意见</li>
+<li>SIGN_PAGING_SIGNATURE : 手写签名骑缝控件</li>
 <li>BUSI-FULL-NAME  : 企业全称</li>
 <li>BUSI-CREDIT-CODE : 统一社会信用代码</li>
 <li>BUSI-LEGAL-NAME : 法人/经营者姓名</li>
@@ -821,6 +939,20 @@ namespace TencentCloud
                      */
                     std::vector<CreateResultPageConfig> m_resultPageConfig;
                     bool m_resultPageConfigHasBeenSet;
+
+                    /**
+                     * 签署控件的配置信息，用在嵌入式发起的页面配置，包括 
+ - 签署控件 是否默认展示日期.
+                     */
+                    SignComponentConfig m_signComponentConfig;
+                    bool m_signComponentConfigHasBeenSet;
+
+                    /**
+                     * 是否禁止编辑（展示）水印控件属性
+<ul><li>（默认） false -否</li> <li> true - 禁止编辑</li></ul>
+                     */
+                    bool m_forbidEditWatermark;
+                    bool m_forbidEditWatermarkHasBeenSet;
 
                 };
             }

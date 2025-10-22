@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ DataSourceLinkApp::DataSourceLinkApp() :
     m_titleHasBeenSet(false),
     m_editStatusUseHasBeenSet(false),
     m_previewStatusUseHasBeenSet(false),
-    m_onlineStatusUseHasBeenSet(false)
+    m_onlineStatusUseHasBeenSet(false),
+    m_dataSourceIdHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome DataSourceLinkApp::Deserialize(const rapidjson::Value &value
         m_onlineStatusUseHasBeenSet = true;
     }
 
+    if (value.HasMember("DataSourceId") && !value["DataSourceId"].IsNull())
+    {
+        if (!value["DataSourceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataSourceLinkApp.DataSourceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataSourceId = string(value["DataSourceId"].GetString());
+        m_dataSourceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void DataSourceLinkApp::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "OnlineStatusUse";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_onlineStatusUse, allocator);
+    }
+
+    if (m_dataSourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataSourceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dataSourceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void DataSourceLinkApp::SetOnlineStatusUse(const int64_t& _onlineStatusUse)
 bool DataSourceLinkApp::OnlineStatusUseHasBeenSet() const
 {
     return m_onlineStatusUseHasBeenSet;
+}
+
+string DataSourceLinkApp::GetDataSourceId() const
+{
+    return m_dataSourceId;
+}
+
+void DataSourceLinkApp::SetDataSourceId(const string& _dataSourceId)
+{
+    m_dataSourceId = _dataSourceId;
+    m_dataSourceIdHasBeenSet = true;
+}
+
+bool DataSourceLinkApp::DataSourceIdHasBeenSet() const
+{
+    return m_dataSourceIdHasBeenSet;
 }
 

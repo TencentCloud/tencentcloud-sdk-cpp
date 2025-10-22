@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,18 +19,24 @@ set(tchd_public_header
   )
 
 set(tchd_public_header_model
-  include/tencentcloud/tchd/v20230306/model/EventDetail.h
+  include/tencentcloud/tchd/v20230306/model/DescribeEventStatisticsResponse.h
   include/tencentcloud/tchd/v20230306/model/DescribeEventsResponse.h
-  include/tencentcloud/tchd/v20230306/model/DescribeEventsRequest.h
+  include/tencentcloud/tchd/v20230306/model/EventDetail.h
   include/tencentcloud/tchd/v20230306/model/ProductEventList.h
+  include/tencentcloud/tchd/v20230306/model/TotalStatus.h
+  include/tencentcloud/tchd/v20230306/model/DescribeEventStatisticsRequest.h
+  include/tencentcloud/tchd/v20230306/model/DescribeEventsRequest.h
   )
 
 set(tchd_src
   src/v20230306/TchdClient.cpp
-  src/v20230306/model/EventDetail.cpp
+  src/v20230306/model/DescribeEventStatisticsResponse.cpp
   src/v20230306/model/DescribeEventsResponse.cpp
-  src/v20230306/model/DescribeEventsRequest.cpp
+  src/v20230306/model/EventDetail.cpp
   src/v20230306/model/ProductEventList.cpp
+  src/v20230306/model/TotalStatus.cpp
+  src/v20230306/model/DescribeEventStatisticsRequest.cpp
+  src/v20230306/model/DescribeEventsRequest.cpp
   )
 
 set(tchd_include

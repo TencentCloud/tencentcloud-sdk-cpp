@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ using namespace std;
 TextData::TextData() :
     m_contentHasBeenSet(false),
     m_summaryHasBeenSet(false),
-    m_textTagSetHasBeenSet(false)
+    m_textTagSetHasBeenSet(false),
+    m_webMediaURLHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,16 @@ CoreInternalOutcome TextData::Deserialize(const rapidjson::Value &value)
         m_textTagSetHasBeenSet = true;
     }
 
+    if (value.HasMember("WebMediaURL") && !value["WebMediaURL"].IsNull())
+    {
+        if (!value["WebMediaURL"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TextData.WebMediaURL` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_webMediaURL = string(value["WebMediaURL"].GetString());
+        m_webMediaURLHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +110,14 @@ void TextData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_textTagSet.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_webMediaURLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebMediaURL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_webMediaURL.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -150,5 +169,21 @@ void TextData::SetTextTagSet(const MultiLevelTag& _textTagSet)
 bool TextData::TextTagSetHasBeenSet() const
 {
     return m_textTagSetHasBeenSet;
+}
+
+string TextData::GetWebMediaURL() const
+{
+    return m_webMediaURL;
+}
+
+void TextData::SetWebMediaURL(const string& _webMediaURL)
+{
+    m_webMediaURL = _webMediaURL;
+    m_webMediaURLHasBeenSet = true;
+}
+
+bool TextData::WebMediaURLHasBeenSet() const
+{
+    return m_webMediaURLHasBeenSet;
 }
 

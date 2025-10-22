@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ using namespace std;
 Credentials::Credentials() :
     m_tokenHasBeenSet(false),
     m_tmpSecretIdHasBeenSet(false),
-    m_tmpSecretKeyHasBeenSet(false)
+    m_tmpSecretKeyHasBeenSet(false),
+    m_appIdHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome Credentials::Deserialize(const rapidjson::Value &value)
         m_tmpSecretKeyHasBeenSet = true;
     }
 
+    if (value.HasMember("AppId") && !value["AppId"].IsNull())
+    {
+        if (!value["AppId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Credentials.AppId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_appId = value["AppId"].GetUint64();
+        m_appIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void Credentials::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "TmpSecretKey";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_tmpSecretKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_appId, allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void Credentials::SetTmpSecretKey(const string& _tmpSecretKey)
 bool Credentials::TmpSecretKeyHasBeenSet() const
 {
     return m_tmpSecretKeyHasBeenSet;
+}
+
+uint64_t Credentials::GetAppId() const
+{
+    return m_appId;
+}
+
+void Credentials::SetAppId(const uint64_t& _appId)
+{
+    m_appId = _appId;
+    m_appIdHasBeenSet = true;
+}
+
+bool Credentials::AppIdHasBeenSet() const
+{
+    return m_appIdHasBeenSet;
 }
 

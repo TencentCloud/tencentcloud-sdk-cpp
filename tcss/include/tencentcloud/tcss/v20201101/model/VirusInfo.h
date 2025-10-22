@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -582,18 +582,14 @@ VALIDATION: 参数非法
 
                     /**
                      * 获取md5值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MD5 md5值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMD5() const;
 
                     /**
                      * 设置md5值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mD5 md5值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMD5(const std::string& _mD5);
@@ -607,18 +603,14 @@ VALIDATION: 参数非法
 
                     /**
                      * 获取风险等级 RISK_CRITICAL, RISK_HIGH, RISK_MEDIUM, RISK_LOW, RISK_NOTICE。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskLevel 风险等级 RISK_CRITICAL, RISK_HIGH, RISK_MEDIUM, RISK_LOW, RISK_NOTICE。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiskLevel() const;
 
                     /**
                      * 设置风险等级 RISK_CRITICAL, RISK_HIGH, RISK_MEDIUM, RISK_LOW, RISK_NOTICE。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskLevel 风险等级 RISK_CRITICAL, RISK_HIGH, RISK_MEDIUM, RISK_LOW, RISK_NOTICE。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskLevel(const std::string& _riskLevel);
@@ -637,14 +629,12 @@ VALIDATION: 参数非法
 3: binaryAi
 4: 异常行为
 5: 威胁情报
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckPlatform 检测平台
 1: 云查杀引擎
 2: tav
 3: binaryAi
 4: 异常行为
 5: 威胁情报
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetCheckPlatform() const;
@@ -656,14 +646,12 @@ VALIDATION: 参数非法
 3: binaryAi
 4: 异常行为
 5: 威胁情报
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _checkPlatform 检测平台
 1: 云查杀引擎
 2: tav
 3: binaryAi
 4: 异常行为
 5: 威胁情报
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCheckPlatform(const std::vector<std::string>& _checkPlatform);
@@ -906,6 +894,27 @@ VALIDATION: 参数非法
                      */
                     bool ClusterNameHasBeenSet() const;
 
+                    /**
+                     * 获取节点内网IP，同innerIP
+                     * @return HostIP 节点内网IP，同innerIP
+                     * 
+                     */
+                    std::string GetHostIP() const;
+
+                    /**
+                     * 设置节点内网IP，同innerIP
+                     * @param _hostIP 节点内网IP，同innerIP
+                     * 
+                     */
+                    void SetHostIP(const std::string& _hostIP);
+
+                    /**
+                     * 判断参数 HostIP 是否已赋值
+                     * @return HostIP 是否已赋值
+                     * 
+                     */
+                    bool HostIPHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1057,14 +1066,12 @@ VALIDATION: 参数非法
 
                     /**
                      * md5值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mD5;
                     bool m_mD5HasBeenSet;
 
                     /**
                      * 风险等级 RISK_CRITICAL, RISK_HIGH, RISK_MEDIUM, RISK_LOW, RISK_NOTICE。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riskLevel;
                     bool m_riskLevelHasBeenSet;
@@ -1076,7 +1083,6 @@ VALIDATION: 参数非法
 3: binaryAi
 4: 异常行为
 5: 威胁情报
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_checkPlatform;
                     bool m_checkPlatformHasBeenSet;
@@ -1146,6 +1152,12 @@ VALIDATION: 参数非法
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
+
+                    /**
+                     * 节点内网IP，同innerIP
+                     */
+                    std::string m_hostIP;
+                    bool m_hostIPHasBeenSet;
 
                 };
             }

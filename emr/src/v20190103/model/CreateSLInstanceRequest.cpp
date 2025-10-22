@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,10 @@ CreateSLInstanceRequest::CreateSLInstanceRequest() :
     m_diskSizeHasBeenSet(false),
     m_nodeTypeHasBeenSet(false),
     m_zoneSettingsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_prePaySettingHasBeenSet(false),
+    m_clientTokenHasBeenSet(false),
+    m_deploymentModeHasBeenSet(false)
 {
 }
 
@@ -108,6 +111,31 @@ string CreateSLInstanceRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_prePaySettingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PrePaySetting";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_prePaySetting.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_clientTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clientToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deploymentModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeploymentMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_deploymentMode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -228,6 +256,54 @@ void CreateSLInstanceRequest::SetTags(const vector<Tag>& _tags)
 bool CreateSLInstanceRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+PrePaySetting CreateSLInstanceRequest::GetPrePaySetting() const
+{
+    return m_prePaySetting;
+}
+
+void CreateSLInstanceRequest::SetPrePaySetting(const PrePaySetting& _prePaySetting)
+{
+    m_prePaySetting = _prePaySetting;
+    m_prePaySettingHasBeenSet = true;
+}
+
+bool CreateSLInstanceRequest::PrePaySettingHasBeenSet() const
+{
+    return m_prePaySettingHasBeenSet;
+}
+
+string CreateSLInstanceRequest::GetClientToken() const
+{
+    return m_clientToken;
+}
+
+void CreateSLInstanceRequest::SetClientToken(const string& _clientToken)
+{
+    m_clientToken = _clientToken;
+    m_clientTokenHasBeenSet = true;
+}
+
+bool CreateSLInstanceRequest::ClientTokenHasBeenSet() const
+{
+    return m_clientTokenHasBeenSet;
+}
+
+string CreateSLInstanceRequest::GetDeploymentMode() const
+{
+    return m_deploymentMode;
+}
+
+void CreateSLInstanceRequest::SetDeploymentMode(const string& _deploymentMode)
+{
+    m_deploymentMode = _deploymentMode;
+    m_deploymentModeHasBeenSet = true;
+}
+
+bool CreateSLInstanceRequest::DeploymentModeHasBeenSet() const
+{
+    return m_deploymentModeHasBeenSet;
 }
 
 

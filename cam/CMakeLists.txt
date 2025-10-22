@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/ListAttachedRolePoliciesResponse.h
   include/tencentcloud/cam/v20190116/model/CreateMessageReceiverRequest.h
   include/tencentcloud/cam/v20190116/model/UpdateUserOIDCConfigResponse.h
+  include/tencentcloud/cam/v20190116/model/UpdateRoleSessionDurationResponse.h
   include/tencentcloud/cam/v20190116/model/Receiver.h
   include/tencentcloud/cam/v20190116/model/ListAccessKeysRequest.h
   include/tencentcloud/cam/v20190116/model/SetMfaFlagResponse.h
@@ -36,7 +37,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/LoginActionFlagIntl.h
   include/tencentcloud/cam/v20190116/model/GetRoleRequest.h
   include/tencentcloud/cam/v20190116/model/CreateServiceLinkedRoleRequest.h
-  include/tencentcloud/cam/v20190116/model/ListAttachedGroupPoliciesRequest.h
+  include/tencentcloud/cam/v20190116/model/CreateSAMLProviderRequest.h
   include/tencentcloud/cam/v20190116/model/ListGroupsForUserRequest.h
   include/tencentcloud/cam/v20190116/model/AttachRolePolicyResponse.h
   include/tencentcloud/cam/v20190116/model/GetUserPermissionBoundaryRequest.h
@@ -51,7 +52,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/GetAccountSummaryRequest.h
   include/tencentcloud/cam/v20190116/model/DeletePolicyResponse.h
   include/tencentcloud/cam/v20190116/model/GetUserAppIdResponse.h
-  include/tencentcloud/cam/v20190116/model/GetUserAppIdRequest.h
+  include/tencentcloud/cam/v20190116/model/CreateSubAccountLoginIpPolicyResponse.h
   include/tencentcloud/cam/v20190116/model/DescribeOIDCConfigResponse.h
   include/tencentcloud/cam/v20190116/model/ListPolicyVersionsRequest.h
   include/tencentcloud/cam/v20190116/model/GetCustomMFATokenInfoRequest.h
@@ -68,6 +69,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/DescribeSubAccountsRequest.h
   include/tencentcloud/cam/v20190116/model/DeleteUserPermissionsBoundaryRequest.h
   include/tencentcloud/cam/v20190116/model/ListSAMLProvidersRequest.h
+  include/tencentcloud/cam/v20190116/model/UpdateRoleSessionDurationRequest.h
   include/tencentcloud/cam/v20190116/model/CreateAccessKeyResponse.h
   include/tencentcloud/cam/v20190116/model/DeletePolicyVersionResponse.h
   include/tencentcloud/cam/v20190116/model/CreateAccessKeyRequest.h
@@ -97,6 +99,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/DeleteGroupRequest.h
   include/tencentcloud/cam/v20190116/model/GetUserResponse.h
   include/tencentcloud/cam/v20190116/model/GetUserPermissionBoundaryResponse.h
+  include/tencentcloud/cam/v20190116/model/ListAttachedGroupPoliciesRequest.h
   include/tencentcloud/cam/v20190116/model/CreatePolicyResponse.h
   include/tencentcloud/cam/v20190116/model/ListGroupsResponse.h
   include/tencentcloud/cam/v20190116/model/DetachRolePolicyRequest.h
@@ -131,7 +134,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/UpdateAccessKeyRequest.h
   include/tencentcloud/cam/v20190116/model/UpdateUserRequest.h
   include/tencentcloud/cam/v20190116/model/ListWeChatWorkSubAccountsResponse.h
-  include/tencentcloud/cam/v20190116/model/CreateSAMLProviderRequest.h
+  include/tencentcloud/cam/v20190116/model/CreateSubAccountLoginIpPolicyRequest.h
   include/tencentcloud/cam/v20190116/model/AttachPolicyInfo.h
   include/tencentcloud/cam/v20190116/model/DisableUserSSOResponse.h
   include/tencentcloud/cam/v20190116/model/UpdateRoleConsoleLoginResponse.h
@@ -178,6 +181,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/CreateRoleResponse.h
   include/tencentcloud/cam/v20190116/model/GetSAMLProviderResponse.h
   include/tencentcloud/cam/v20190116/model/DescribeSafeAuthFlagIntlResponse.h
+  include/tencentcloud/cam/v20190116/model/IpPolicy.h
   include/tencentcloud/cam/v20190116/model/ListGroupsRequest.h
   include/tencentcloud/cam/v20190116/model/ListPolicyVersionsResponse.h
   include/tencentcloud/cam/v20190116/model/GetPolicyRequest.h
@@ -202,6 +206,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/DeleteServiceLinkedRoleResponse.h
   include/tencentcloud/cam/v20190116/model/ListUsersForGroupResponse.h
   include/tencentcloud/cam/v20190116/model/GetPolicyResponse.h
+  include/tencentcloud/cam/v20190116/model/GetUserAppIdRequest.h
   include/tencentcloud/cam/v20190116/model/DescribeSafeAuthFlagRequest.h
   include/tencentcloud/cam/v20190116/model/DeleteServiceLinkedRoleRequest.h
   include/tencentcloud/cam/v20190116/model/AttachEntityOfPolicy.h
@@ -237,6 +242,7 @@ set(cam_src
   src/v20190116/model/ListAttachedRolePoliciesResponse.cpp
   src/v20190116/model/CreateMessageReceiverRequest.cpp
   src/v20190116/model/UpdateUserOIDCConfigResponse.cpp
+  src/v20190116/model/UpdateRoleSessionDurationResponse.cpp
   src/v20190116/model/Receiver.cpp
   src/v20190116/model/ListAccessKeysRequest.cpp
   src/v20190116/model/SetMfaFlagResponse.cpp
@@ -250,7 +256,7 @@ set(cam_src
   src/v20190116/model/LoginActionFlagIntl.cpp
   src/v20190116/model/GetRoleRequest.cpp
   src/v20190116/model/CreateServiceLinkedRoleRequest.cpp
-  src/v20190116/model/ListAttachedGroupPoliciesRequest.cpp
+  src/v20190116/model/CreateSAMLProviderRequest.cpp
   src/v20190116/model/ListGroupsForUserRequest.cpp
   src/v20190116/model/AttachRolePolicyResponse.cpp
   src/v20190116/model/GetUserPermissionBoundaryRequest.cpp
@@ -265,7 +271,7 @@ set(cam_src
   src/v20190116/model/GetAccountSummaryRequest.cpp
   src/v20190116/model/DeletePolicyResponse.cpp
   src/v20190116/model/GetUserAppIdResponse.cpp
-  src/v20190116/model/GetUserAppIdRequest.cpp
+  src/v20190116/model/CreateSubAccountLoginIpPolicyResponse.cpp
   src/v20190116/model/DescribeOIDCConfigResponse.cpp
   src/v20190116/model/ListPolicyVersionsRequest.cpp
   src/v20190116/model/GetCustomMFATokenInfoRequest.cpp
@@ -282,6 +288,7 @@ set(cam_src
   src/v20190116/model/DescribeSubAccountsRequest.cpp
   src/v20190116/model/DeleteUserPermissionsBoundaryRequest.cpp
   src/v20190116/model/ListSAMLProvidersRequest.cpp
+  src/v20190116/model/UpdateRoleSessionDurationRequest.cpp
   src/v20190116/model/CreateAccessKeyResponse.cpp
   src/v20190116/model/DeletePolicyVersionResponse.cpp
   src/v20190116/model/CreateAccessKeyRequest.cpp
@@ -311,6 +318,7 @@ set(cam_src
   src/v20190116/model/DeleteGroupRequest.cpp
   src/v20190116/model/GetUserResponse.cpp
   src/v20190116/model/GetUserPermissionBoundaryResponse.cpp
+  src/v20190116/model/ListAttachedGroupPoliciesRequest.cpp
   src/v20190116/model/CreatePolicyResponse.cpp
   src/v20190116/model/ListGroupsResponse.cpp
   src/v20190116/model/DetachRolePolicyRequest.cpp
@@ -345,7 +353,7 @@ set(cam_src
   src/v20190116/model/UpdateAccessKeyRequest.cpp
   src/v20190116/model/UpdateUserRequest.cpp
   src/v20190116/model/ListWeChatWorkSubAccountsResponse.cpp
-  src/v20190116/model/CreateSAMLProviderRequest.cpp
+  src/v20190116/model/CreateSubAccountLoginIpPolicyRequest.cpp
   src/v20190116/model/AttachPolicyInfo.cpp
   src/v20190116/model/DisableUserSSOResponse.cpp
   src/v20190116/model/UpdateRoleConsoleLoginResponse.cpp
@@ -392,6 +400,7 @@ set(cam_src
   src/v20190116/model/CreateRoleResponse.cpp
   src/v20190116/model/GetSAMLProviderResponse.cpp
   src/v20190116/model/DescribeSafeAuthFlagIntlResponse.cpp
+  src/v20190116/model/IpPolicy.cpp
   src/v20190116/model/ListGroupsRequest.cpp
   src/v20190116/model/ListPolicyVersionsResponse.cpp
   src/v20190116/model/GetPolicyRequest.cpp
@@ -416,6 +425,7 @@ set(cam_src
   src/v20190116/model/DeleteServiceLinkedRoleResponse.cpp
   src/v20190116/model/ListUsersForGroupResponse.cpp
   src/v20190116/model/GetPolicyResponse.cpp
+  src/v20190116/model/GetUserAppIdRequest.cpp
   src/v20190116/model/DescribeSafeAuthFlagRequest.cpp
   src/v20190116/model/DeleteServiceLinkedRoleRequest.cpp
   src/v20190116/model/AttachEntityOfPolicy.cpp

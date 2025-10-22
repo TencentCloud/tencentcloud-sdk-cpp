@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -112,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当资产为镜像时，这个字段为镜像Tag。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageTag 当资产为镜像时，这个字段为镜像Tag。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetImageTag() const;
 
                     /**
                      * 设置当资产为镜像时，这个字段为镜像Tag。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _imageTag 当资产为镜像时，这个字段为镜像Tag。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImageTag(const std::string& _imageTag);
@@ -232,18 +228,14 @@ CHECK_FAILED, 检测失败
 
                     /**
                      * 获取此类资产通过的检测项的数目。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PassedPolicyItemCount 此类资产通过的检测项的数目。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPassedPolicyItemCount() const;
 
                     /**
                      * 设置此类资产通过的检测项的数目。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _passedPolicyItemCount 此类资产通过的检测项的数目。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPassedPolicyItemCount(const uint64_t& _passedPolicyItemCount);
@@ -257,18 +249,14 @@ CHECK_FAILED, 检测失败
 
                     /**
                      * 获取此类资产未通过的检测的数目。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedPolicyItemCount 此类资产未通过的检测的数目。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetFailedPolicyItemCount() const;
 
                     /**
                      * 设置此类资产未通过的检测的数目。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _failedPolicyItemCount 此类资产未通过的检测的数目。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFailedPolicyItemCount(const uint64_t& _failedPolicyItemCount);
@@ -282,18 +270,14 @@ CHECK_FAILED, 检测失败
 
                     /**
                      * 获取上次检测的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastCheckTime 上次检测的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastCheckTime() const;
 
                     /**
                      * 设置上次检测的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastCheckTime 上次检测的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastCheckTime(const std::string& _lastCheckTime);
@@ -309,11 +293,9 @@ CHECK_FAILED, 检测失败
                      * 获取检测结果：
 RESULT_FAILED: 未通过。
 RESULT_PASSED: 通过。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckResult 检测结果：
 RESULT_FAILED: 未通过。
 RESULT_PASSED: 通过。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCheckResult() const;
@@ -322,11 +304,9 @@ RESULT_PASSED: 通过。
                      * 设置检测结果：
 RESULT_FAILED: 未通过。
 RESULT_PASSED: 通过。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _checkResult 检测结果：
 RESULT_FAILED: 未通过。
 RESULT_PASSED: 通过。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCheckResult(const std::string& _checkResult);
@@ -340,18 +320,14 @@ RESULT_PASSED: 通过。
 
                     /**
                      * 获取主机节点的实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 主机节点的实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置主机节点的实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 主机节点的实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -448,7 +424,6 @@ RESULT_PASSED: 通过。
 
                     /**
                      * 当资产为镜像时，这个字段为镜像Tag。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_imageTag;
                     bool m_imageTagHasBeenSet;
@@ -481,21 +456,18 @@ CHECK_FAILED, 检测失败
 
                     /**
                      * 此类资产通过的检测项的数目。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_passedPolicyItemCount;
                     bool m_passedPolicyItemCountHasBeenSet;
 
                     /**
                      * 此类资产未通过的检测的数目。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_failedPolicyItemCount;
                     bool m_failedPolicyItemCountHasBeenSet;
 
                     /**
                      * 上次检测的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastCheckTime;
                     bool m_lastCheckTimeHasBeenSet;
@@ -504,14 +476,12 @@ CHECK_FAILED, 检测失败
                      * 检测结果：
 RESULT_FAILED: 未通过。
 RESULT_PASSED: 通过。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_checkResult;
                     bool m_checkResultHasBeenSet;
 
                     /**
                      * 主机节点的实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool DstRegionHasBeenSet() const;
 
                     /**
-                     * 获取同步任务规格，Standard:标准版
-                     * @return Specification 同步任务规格，Standard:标准版
+                     * 获取同步任务规格，Standard:标准版，目前仅支持Standard规格。
+                     * @return Specification 同步任务规格，Standard:标准版，目前仅支持Standard规格。
                      * 
                      */
                     std::string GetSpecification() const;
 
                     /**
-                     * 设置同步任务规格，Standard:标准版
-                     * @param _specification 同步任务规格，Standard:标准版
+                     * 设置同步任务规格，Standard:标准版，目前仅支持Standard规格。
+                     * @param _specification 同步任务规格，Standard:标准版，目前仅支持Standard规格。
                      * 
                      */
                     void SetSpecification(const std::string& _specification);
@@ -168,6 +168,27 @@ namespace TencentCloud
                      * 
                      */
                     bool SpecificationHasBeenSet() const;
+
+                    /**
+                     * 获取购买时长（单位：月），当PayMode值为PrePay则此项配置有意义，默认为1月，取值范围为[1,100]
+                     * @return TimeSpan 购买时长（单位：月），当PayMode值为PrePay则此项配置有意义，默认为1月，取值范围为[1,100]
+                     * 
+                     */
+                    uint64_t GetTimeSpan() const;
+
+                    /**
+                     * 设置购买时长（单位：月），当PayMode值为PrePay则此项配置有意义，默认为1月，取值范围为[1,100]
+                     * @param _timeSpan 购买时长（单位：月），当PayMode值为PrePay则此项配置有意义，默认为1月，取值范围为[1,100]
+                     * 
+                     */
+                    void SetTimeSpan(const uint64_t& _timeSpan);
+
+                    /**
+                     * 判断参数 TimeSpan 是否已赋值
+                     * @return TimeSpan 是否已赋值
+                     * 
+                     */
+                    bool TimeSpanHasBeenSet() const;
 
                     /**
                      * 获取标签信息
@@ -328,10 +349,16 @@ namespace TencentCloud
                     bool m_dstRegionHasBeenSet;
 
                     /**
-                     * 同步任务规格，Standard:标准版
+                     * 同步任务规格，Standard:标准版，目前仅支持Standard规格。
                      */
                     std::string m_specification;
                     bool m_specificationHasBeenSet;
+
+                    /**
+                     * 购买时长（单位：月），当PayMode值为PrePay则此项配置有意义，默认为1月，取值范围为[1,100]
+                     */
+                    uint64_t m_timeSpan;
+                    bool m_timeSpanHasBeenSet;
 
                     /**
                      * 标签信息

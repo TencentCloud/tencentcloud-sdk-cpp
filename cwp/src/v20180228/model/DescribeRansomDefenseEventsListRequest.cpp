@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,9 @@ DescribeRansomDefenseEventsListRequest::DescribeRansomDefenseEventsListRequest()
     m_offsetHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_orderHasBeenSet(false),
-    m_byHasBeenSet(false)
+    m_byHasBeenSet(false),
+    m_createBeginTimeHasBeenSet(false),
+    m_createEndTimeHasBeenSet(false)
 {
 }
 
@@ -83,6 +85,22 @@ string DescribeRansomDefenseEventsListRequest::ToJsonString() const
         string key = "By";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_by.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createBeginTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateBeginTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_createBeginTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createEndTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateEndTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_createEndTime.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -171,6 +189,38 @@ void DescribeRansomDefenseEventsListRequest::SetBy(const string& _by)
 bool DescribeRansomDefenseEventsListRequest::ByHasBeenSet() const
 {
     return m_byHasBeenSet;
+}
+
+string DescribeRansomDefenseEventsListRequest::GetCreateBeginTime() const
+{
+    return m_createBeginTime;
+}
+
+void DescribeRansomDefenseEventsListRequest::SetCreateBeginTime(const string& _createBeginTime)
+{
+    m_createBeginTime = _createBeginTime;
+    m_createBeginTimeHasBeenSet = true;
+}
+
+bool DescribeRansomDefenseEventsListRequest::CreateBeginTimeHasBeenSet() const
+{
+    return m_createBeginTimeHasBeenSet;
+}
+
+string DescribeRansomDefenseEventsListRequest::GetCreateEndTime() const
+{
+    return m_createEndTime;
+}
+
+void DescribeRansomDefenseEventsListRequest::SetCreateEndTime(const string& _createEndTime)
+{
+    m_createEndTime = _createEndTime;
+    m_createEndTimeHasBeenSet = true;
+}
+
+bool DescribeRansomDefenseEventsListRequest::CreateEndTimeHasBeenSet() const
+{
+    return m_createEndTimeHasBeenSet;
 }
 
 

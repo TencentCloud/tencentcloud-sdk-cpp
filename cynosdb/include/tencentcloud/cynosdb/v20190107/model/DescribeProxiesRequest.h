@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID（该参数必传，例如cynosdbmysql-xxxxxx）
-                     * @return ClusterId 集群ID（该参数必传，例如cynosdbmysql-xxxxxx）
+                     * 获取集群 ID（该参数必传，例如 cynosdbmysql-2u2mh111）。
+                     * @return ClusterId 集群 ID（该参数必传，例如 cynosdbmysql-2u2mh111）。
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID（该参数必传，例如cynosdbmysql-xxxxxx）
-                     * @param _clusterId 集群ID（该参数必传，例如cynosdbmysql-xxxxxx）
+                     * 设置集群 ID（该参数必传，例如 cynosdbmysql-2u2mh111）。
+                     * @param _clusterId 集群 ID（该参数必传，例如 cynosdbmysql-2u2mh111）。
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -188,7 +188,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID（该参数必传，例如cynosdbmysql-xxxxxx）
+                     * 集群 ID（该参数必传，例如 cynosdbmysql-2u2mh111）。
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;

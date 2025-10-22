@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -610,6 +610,77 @@ STARTING启动中、RUNNING运行中、STOPPING停止中、STOPPED已停止、FA
                      */
                     bool CallbackUrlHasBeenSet() const;
 
+                    /**
+                     * 获取任务subUin信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubUin 任务subUin信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSubUin() const;
+
+                    /**
+                     * 设置任务subUin信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subUin 任务subUin信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubUin(const std::string& _subUin);
+
+                    /**
+                     * 判断参数 SubUin 是否已赋值
+                     * @return SubUin 是否已赋值
+                     * 
+                     */
+                    bool SubUinHasBeenSet() const;
+
+                    /**
+                     * 获取任务创建者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubUinName 任务创建者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSubUinName() const;
+
+                    /**
+                     * 设置任务创建者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subUinName 任务创建者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubUinName(const std::string& _subUinName);
+
+                    /**
+                     * 判断参数 SubUinName 是否已赋值
+                     * @return SubUinName 是否已赋值
+                     * 
+                     */
+                    bool SubUinNameHasBeenSet() const;
+
+                    /**
+                     * 获取任务AppId
+                     * @return AppId 任务AppId
+                     * 
+                     */
+                    std::string GetAppId() const;
+
+                    /**
+                     * 设置任务AppId
+                     * @param _appId 任务AppId
+                     * 
+                     */
+                    void SetAppId(const std::string& _appId);
+
+                    /**
+                     * 判断参数 AppId 是否已赋值
+                     * @return AppId 是否已赋值
+                     * 
+                     */
+                    bool AppIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -769,6 +840,26 @@ STARTING启动中、RUNNING运行中、STOPPING停止中、STOPPED已停止、FA
                      */
                     std::string m_callbackUrl;
                     bool m_callbackUrlHasBeenSet;
+
+                    /**
+                     * 任务subUin信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subUin;
+                    bool m_subUinHasBeenSet;
+
+                    /**
+                     * 任务创建者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subUinName;
+                    bool m_subUinNameHasBeenSet;
+
+                    /**
+                     * 任务AppId
+                     */
+                    std::string m_appId;
+                    bool m_appIdHasBeenSet;
 
                 };
             }

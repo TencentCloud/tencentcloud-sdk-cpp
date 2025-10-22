@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ using namespace TencentCloud::Iotexplorer::V20190423::Model;
 using namespace std;
 
 DescribeCloudStorageAIServiceTaskRequest::DescribeCloudStorageAIServiceTaskRequest() :
-    m_taskIdHasBeenSet(false)
+    m_taskIdHasBeenSet(false),
+    m_fileURLExpireTimeHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeCloudStorageAIServiceTaskRequest::ToJsonString() const
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileURLExpireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileURLExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_fileURLExpireTime, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeCloudStorageAIServiceTaskRequest::SetTaskId(const string& _taskId)
 bool DescribeCloudStorageAIServiceTaskRequest::TaskIdHasBeenSet() const
 {
     return m_taskIdHasBeenSet;
+}
+
+int64_t DescribeCloudStorageAIServiceTaskRequest::GetFileURLExpireTime() const
+{
+    return m_fileURLExpireTime;
+}
+
+void DescribeCloudStorageAIServiceTaskRequest::SetFileURLExpireTime(const int64_t& _fileURLExpireTime)
+{
+    m_fileURLExpireTime = _fileURLExpireTime;
+    m_fileURLExpireTimeHasBeenSet = true;
+}
+
+bool DescribeCloudStorageAIServiceTaskRequest::FileURLExpireTimeHasBeenSet() const
+{
+    return m_fileURLExpireTimeHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,15 +85,23 @@ namespace TencentCloud
                     bool DocumentIdHasBeenSet() const;
 
                     /**
-                     * 获取绑定类型。后台可透传到客户端，默认为0。客户端可以根据这个字段实现业务逻辑。
-                     * @return BindType 绑定类型。后台可透传到客户端，默认为0。客户端可以根据这个字段实现业务逻辑。
+                     * 获取绑定类型。后台可透传到客户端，默认为0。除以下例值外支持自定义该字段，并在前端实现相应业务逻辑，示例参考：
+示例值：0，仅绑定课件到房间
+示例值：1，绑定课件到房间后，默认展示课件
+                     * @return BindType 绑定类型。后台可透传到客户端，默认为0。除以下例值外支持自定义该字段，并在前端实现相应业务逻辑，示例参考：
+示例值：0，仅绑定课件到房间
+示例值：1，绑定课件到房间后，默认展示课件
                      * 
                      */
                     uint64_t GetBindType() const;
 
                     /**
-                     * 设置绑定类型。后台可透传到客户端，默认为0。客户端可以根据这个字段实现业务逻辑。
-                     * @param _bindType 绑定类型。后台可透传到客户端，默认为0。客户端可以根据这个字段实现业务逻辑。
+                     * 设置绑定类型。后台可透传到客户端，默认为0。除以下例值外支持自定义该字段，并在前端实现相应业务逻辑，示例参考：
+示例值：0，仅绑定课件到房间
+示例值：1，绑定课件到房间后，默认展示课件
+                     * @param _bindType 绑定类型。后台可透传到客户端，默认为0。除以下例值外支持自定义该字段，并在前端实现相应业务逻辑，示例参考：
+示例值：0，仅绑定课件到房间
+示例值：1，绑定课件到房间后，默认展示课件
                      * 
                      */
                     void SetBindType(const uint64_t& _bindType);
@@ -120,7 +128,9 @@ namespace TencentCloud
                     bool m_documentIdHasBeenSet;
 
                     /**
-                     * 绑定类型。后台可透传到客户端，默认为0。客户端可以根据这个字段实现业务逻辑。
+                     * 绑定类型。后台可透传到客户端，默认为0。除以下例值外支持自定义该字段，并在前端实现相应业务逻辑，示例参考：
+示例值：0，仅绑定课件到房间
+示例值：1，绑定课件到房间后，默认展示课件
                      */
                     uint64_t m_bindType;
                     bool m_bindTypeHasBeenSet;

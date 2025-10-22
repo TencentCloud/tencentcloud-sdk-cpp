@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取部署组ID
-                     * @return GroupId 部署组ID
+                     * 获取部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。
+                     * @return GroupId 部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置部署组ID
-                     * @param _groupId 部署组ID
+                     * 设置部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。
+                     * @param _groupId 部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -67,15 +67,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取程序包ID
-                     * @return PkgId 程序包ID
+                     * 获取软件包ID，可通过调用DescribeUploadInfo接口时[获取上传程序包信息](https://cloud.tencent.com/document/api/649/36078)返回的COS上传信息获取，登录[控制台](https://console.cloud.tencent.com/tsf/product?rid=1)进行查看
+                     * @return PkgId 软件包ID，可通过调用DescribeUploadInfo接口时[获取上传程序包信息](https://cloud.tencent.com/document/api/649/36078)返回的COS上传信息获取，登录[控制台](https://console.cloud.tencent.com/tsf/product?rid=1)进行查看
                      * 
                      */
                     std::string GetPkgId() const;
 
                     /**
-                     * 设置程序包ID
-                     * @param _pkgId 程序包ID
+                     * 设置软件包ID，可通过调用DescribeUploadInfo接口时[获取上传程序包信息](https://cloud.tencent.com/document/api/649/36078)返回的COS上传信息获取，登录[控制台](https://console.cloud.tencent.com/tsf/product?rid=1)进行查看
+                     * @param _pkgId 软件包ID，可通过调用DescribeUploadInfo接口时[获取上传程序包信息](https://cloud.tencent.com/document/api/649/36078)返回的COS上传信息获取，登录[控制台](https://console.cloud.tencent.com/tsf/product?rid=1)进行查看
                      * 
                      */
                     void SetPkgId(const std::string& _pkgId);
@@ -277,15 +277,15 @@ namespace TencentCloud
                     bool DeployExeModeHasBeenSet() const;
 
                     /**
-                     * 获取滚动发布每个批次的时间间隔
-                     * @return DeployWaitTime 滚动发布每个批次的时间间隔
+                     * 获取滚动发布每个批次的时间间隔，单位min。默认值是0，不等待。
+                     * @return DeployWaitTime 滚动发布每个批次的时间间隔，单位min。默认值是0，不等待。
                      * 
                      */
                     uint64_t GetDeployWaitTime() const;
 
                     /**
-                     * 设置滚动发布每个批次的时间间隔
-                     * @param _deployWaitTime 滚动发布每个批次的时间间隔
+                     * 设置滚动发布每个批次的时间间隔，单位min。默认值是0，不等待。
+                     * @param _deployWaitTime 滚动发布每个批次的时间间隔，单位min。默认值是0，不等待。
                      * 
                      */
                     void SetDeployWaitTime(const uint64_t& _deployWaitTime);
@@ -472,13 +472,13 @@ openJDK版本：8、17
                 private:
 
                     /**
-                     * 部署组ID
+                     * 部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 程序包ID
+                     * 软件包ID，可通过调用DescribeUploadInfo接口时[获取上传程序包信息](https://cloud.tencent.com/document/api/649/36078)返回的COS上传信息获取，登录[控制台](https://console.cloud.tencent.com/tsf/product?rid=1)进行查看
                      */
                     std::string m_pkgId;
                     bool m_pkgIdHasBeenSet;
@@ -538,7 +538,7 @@ openJDK版本：8、17
                     bool m_deployExeModeHasBeenSet;
 
                     /**
-                     * 滚动发布每个批次的时间间隔
+                     * 滚动发布每个批次的时间间隔，单位min。默认值是0，不等待。
                      */
                     uint64_t m_deployWaitTime;
                     bool m_deployWaitTimeHasBeenSet;

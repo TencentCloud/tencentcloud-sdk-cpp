@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取`IPv6`子网段。形如：`3402:4e00:20:1001::/64`
-                     * @return Ipv6CidrBlock `IPv6`子网段。形如：`3402:4e00:20:1001::/64`
+                     * 获取`IPv6`子网段。形如：`3402:4e00:20:1001::/64`。作为AssignIpv6SubnetCidrBlock接口入参时，该参数必填。
+                     * @return Ipv6CidrBlock `IPv6`子网段。形如：`3402:4e00:20:1001::/64`。作为AssignIpv6SubnetCidrBlock接口入参时，该参数必填。
                      * 
                      */
                     std::string GetIpv6CidrBlock() const;
 
                     /**
-                     * 设置`IPv6`子网段。形如：`3402:4e00:20:1001::/64`
-                     * @param _ipv6CidrBlock `IPv6`子网段。形如：`3402:4e00:20:1001::/64`
+                     * 设置`IPv6`子网段。形如：`3402:4e00:20:1001::/64`。作为AssignIpv6SubnetCidrBlock接口入参时，该参数必填。
+                     * @param _ipv6CidrBlock `IPv6`子网段。形如：`3402:4e00:20:1001::/64`。作为AssignIpv6SubnetCidrBlock接口入参时，该参数必填。
                      * 
                      */
                     void SetIpv6CidrBlock(const std::string& _ipv6CidrBlock);
@@ -97,7 +97,7 @@ namespace TencentCloud
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * `IPv6`子网段。形如：`3402:4e00:20:1001::/64`
+                     * `IPv6`子网段。形如：`3402:4e00:20:1001::/64`。作为AssignIpv6SubnetCidrBlock接口入参时，该参数必填。
                      */
                     std::string m_ipv6CidrBlock;
                     bool m_ipv6CidrBlockHasBeenSet;

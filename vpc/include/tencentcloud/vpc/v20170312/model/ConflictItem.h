@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取冲突资源的ID
-                     * @return ConfilctId 冲突资源的ID
+                     * 获取冲突资源的ID。已废弃
+                     * @return ConfilctId 冲突资源的ID。已废弃
                      * 
                      */
                     std::string GetConfilctId() const;
 
                     /**
-                     * 设置冲突资源的ID
-                     * @param _confilctId 冲突资源的ID
+                     * 设置冲突资源的ID。已废弃
+                     * @param _confilctId 冲突资源的ID。已废弃
                      * 
                      */
                     void SetConfilctId(const std::string& _confilctId);
@@ -88,10 +88,31 @@ namespace TencentCloud
                      */
                     bool DestinationItemHasBeenSet() const;
 
+                    /**
+                     * 获取冲突资源的ID
+                     * @return ConflictId 冲突资源的ID
+                     * 
+                     */
+                    std::string GetConflictId() const;
+
+                    /**
+                     * 设置冲突资源的ID
+                     * @param _conflictId 冲突资源的ID
+                     * 
+                     */
+                    void SetConflictId(const std::string& _conflictId);
+
+                    /**
+                     * 判断参数 ConflictId 是否已赋值
+                     * @return ConflictId 是否已赋值
+                     * 
+                     */
+                    bool ConflictIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 冲突资源的ID
+                     * 冲突资源的ID。已废弃
                      */
                     std::string m_confilctId;
                     bool m_confilctIdHasBeenSet;
@@ -101,6 +122,12 @@ namespace TencentCloud
                      */
                     std::string m_destinationItem;
                     bool m_destinationItemHasBeenSet;
+
+                    /**
+                     * 冲突资源的ID
+                     */
+                    std::string m_conflictId;
+                    bool m_conflictIdHasBeenSet;
 
                 };
             }

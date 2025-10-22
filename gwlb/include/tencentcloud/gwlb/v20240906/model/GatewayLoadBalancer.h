@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网关负载均衡所属私有网络。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId 网关负载均衡所属私有网络。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置网关负载均衡所属私有网络。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId 网关负载均衡所属私有网络。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -183,18 +179,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联的目标组唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetGroupId 关联的目标组唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTargetGroupId() const;
 
                     /**
                      * 设置关联的目标组唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _targetGroupId 关联的目标组唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTargetGroupId(const std::string& _targetGroupId);
@@ -208,18 +200,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启删除保护功能。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeleteProtect 是否开启删除保护功能。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetDeleteProtect() const;
 
                     /**
                      * 设置是否开启删除保护功能。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deleteProtect 是否开启删除保护功能。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeleteProtect(const bool& _deleteProtect);
@@ -233,18 +221,14 @@ namespace TencentCloud
 
                     /**
                      * 获取负载均衡实例的标签信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 负载均衡实例的标签信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TagInfo> GetTags() const;
 
                     /**
                      * 设置负载均衡实例的标签信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 负载均衡实例的标签信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<TagInfo>& _tags);
@@ -279,18 +263,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网关负载均衡实例的计费类型，POSTPAID_BY_HOUR：按量计费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChargeType 网关负载均衡实例的计费类型，POSTPAID_BY_HOUR：按量计费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetChargeType() const;
 
                     /**
                      * 设置网关负载均衡实例的计费类型，POSTPAID_BY_HOUR：按量计费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _chargeType 网关负载均衡实例的计费类型，POSTPAID_BY_HOUR：按量计费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChargeType(const std::string& _chargeType);
@@ -304,18 +284,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0：表示未被隔离，1：表示被隔离。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Isolation 0：表示未被隔离，1：表示被隔离。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsolation() const;
 
                     /**
                      * 设置0：表示未被隔离，1：表示被隔离。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isolation 0：表示未被隔离，1：表示被隔离。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsolation(const uint64_t& _isolation);
@@ -328,19 +304,15 @@ namespace TencentCloud
                     bool IsolationHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡实例被隔离的时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsolatedTime 负载均衡实例被隔离的时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取网关负载均衡实例被隔离的时间
+                     * @return IsolatedTime 网关负载均衡实例被隔离的时间
                      * 
                      */
                     std::string GetIsolatedTime() const;
 
                     /**
-                     * 设置负载均衡实例被隔离的时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isolatedTime 负载均衡实例被隔离的时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置网关负载均衡实例被隔离的时间
+                     * @param _isolatedTime 网关负载均衡实例被隔离的时间
                      * 
                      */
                     void SetIsolatedTime(const std::string& _isolatedTime);
@@ -351,6 +323,27 @@ namespace TencentCloud
                      * 
                      */
                     bool IsolatedTimeHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启配置修改保护功能。
+                     * @return OperateProtect 是否开启配置修改保护功能。
+                     * 
+                     */
+                    bool GetOperateProtect() const;
+
+                    /**
+                     * 设置是否开启配置修改保护功能。
+                     * @param _operateProtect 是否开启配置修改保护功能。
+                     * 
+                     */
+                    void SetOperateProtect(const bool& _operateProtect);
+
+                    /**
+                     * 判断参数 OperateProtect 是否已赋值
+                     * @return OperateProtect 是否已赋值
+                     * 
+                     */
+                    bool OperateProtectHasBeenSet() const;
 
                 private:
 
@@ -368,7 +361,6 @@ namespace TencentCloud
 
                     /**
                      * 网关负载均衡所属私有网络。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
@@ -394,21 +386,18 @@ namespace TencentCloud
 
                     /**
                      * 关联的目标组唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_targetGroupId;
                     bool m_targetGroupIdHasBeenSet;
 
                     /**
                      * 是否开启删除保护功能。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_deleteProtect;
                     bool m_deleteProtectHasBeenSet;
 
                     /**
                      * 负载均衡实例的标签信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TagInfo> m_tags;
                     bool m_tagsHasBeenSet;
@@ -421,24 +410,27 @@ namespace TencentCloud
 
                     /**
                      * 网关负载均衡实例的计费类型，POSTPAID_BY_HOUR：按量计费
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_chargeType;
                     bool m_chargeTypeHasBeenSet;
 
                     /**
                      * 0：表示未被隔离，1：表示被隔离。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isolation;
                     bool m_isolationHasBeenSet;
 
                     /**
-                     * 负载均衡实例被隔离的时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 网关负载均衡实例被隔离的时间
                      */
                     std::string m_isolatedTime;
                     bool m_isolatedTimeHasBeenSet;
+
+                    /**
+                     * 是否开启配置修改保护功能。
+                     */
+                    bool m_operateProtect;
+                    bool m_operateProtectHasBeenSet;
 
                 };
             }

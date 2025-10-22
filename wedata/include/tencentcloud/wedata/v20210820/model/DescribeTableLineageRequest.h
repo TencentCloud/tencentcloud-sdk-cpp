@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,15 +45,31 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询方向，INPUT,OUTPUT,BOTH枚举值
-                     * @return Direction 查询方向，INPUT,OUTPUT,BOTH枚举值
+                     * 获取查询方向枚举值
+
+- INPUT
+- OUTPUT
+- BOTH
+                     * @return Direction 查询方向枚举值
+
+- INPUT
+- OUTPUT
+- BOTH
                      * 
                      */
                     std::string GetDirection() const;
 
                     /**
-                     * 设置查询方向，INPUT,OUTPUT,BOTH枚举值
-                     * @param _direction 查询方向，INPUT,OUTPUT,BOTH枚举值
+                     * 设置查询方向枚举值
+
+- INPUT
+- OUTPUT
+- BOTH
+                     * @param _direction 查询方向枚举值
+
+- INPUT
+- OUTPUT
+- BOTH
                      * 
                      */
                     void SetDirection(const std::string& _direction);
@@ -194,7 +210,11 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询方向，INPUT,OUTPUT,BOTH枚举值
+                     * 查询方向枚举值
+
+- INPUT
+- OUTPUT
+- BOTH
                      */
                     std::string m_direction;
                     bool m_directionHasBeenSet;

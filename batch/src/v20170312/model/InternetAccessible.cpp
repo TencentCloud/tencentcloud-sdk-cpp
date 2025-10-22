@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,11 @@ InternetAccessible::InternetAccessible() :
     m_internetChargeTypeHasBeenSet(false),
     m_internetMaxBandwidthOutHasBeenSet(false),
     m_publicIpAssignedHasBeenSet(false),
-    m_bandwidthPackageIdHasBeenSet(false)
+    m_bandwidthPackageIdHasBeenSet(false),
+    m_internetServiceProviderHasBeenSet(false),
+    m_iPv4AddressTypeHasBeenSet(false),
+    m_iPv6AddressTypeHasBeenSet(false),
+    m_antiDDoSPackageIdHasBeenSet(false)
 {
 }
 
@@ -73,6 +77,46 @@ CoreInternalOutcome InternetAccessible::Deserialize(const rapidjson::Value &valu
         m_bandwidthPackageIdHasBeenSet = true;
     }
 
+    if (value.HasMember("InternetServiceProvider") && !value["InternetServiceProvider"].IsNull())
+    {
+        if (!value["InternetServiceProvider"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InternetAccessible.InternetServiceProvider` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_internetServiceProvider = string(value["InternetServiceProvider"].GetString());
+        m_internetServiceProviderHasBeenSet = true;
+    }
+
+    if (value.HasMember("IPv4AddressType") && !value["IPv4AddressType"].IsNull())
+    {
+        if (!value["IPv4AddressType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InternetAccessible.IPv4AddressType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_iPv4AddressType = string(value["IPv4AddressType"].GetString());
+        m_iPv4AddressTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("IPv6AddressType") && !value["IPv6AddressType"].IsNull())
+    {
+        if (!value["IPv6AddressType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InternetAccessible.IPv6AddressType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_iPv6AddressType = string(value["IPv6AddressType"].GetString());
+        m_iPv6AddressTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AntiDDoSPackageId") && !value["AntiDDoSPackageId"].IsNull())
+    {
+        if (!value["AntiDDoSPackageId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InternetAccessible.AntiDDoSPackageId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_antiDDoSPackageId = string(value["AntiDDoSPackageId"].GetString());
+        m_antiDDoSPackageIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +154,38 @@ void InternetAccessible::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "BandwidthPackageId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_bandwidthPackageId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_internetServiceProviderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InternetServiceProvider";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_internetServiceProvider.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iPv4AddressTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IPv4AddressType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iPv4AddressType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iPv6AddressTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IPv6AddressType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iPv6AddressType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_antiDDoSPackageIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AntiDDoSPackageId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_antiDDoSPackageId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +253,69 @@ void InternetAccessible::SetBandwidthPackageId(const string& _bandwidthPackageId
 bool InternetAccessible::BandwidthPackageIdHasBeenSet() const
 {
     return m_bandwidthPackageIdHasBeenSet;
+}
+
+string InternetAccessible::GetInternetServiceProvider() const
+{
+    return m_internetServiceProvider;
+}
+
+void InternetAccessible::SetInternetServiceProvider(const string& _internetServiceProvider)
+{
+    m_internetServiceProvider = _internetServiceProvider;
+    m_internetServiceProviderHasBeenSet = true;
+}
+
+bool InternetAccessible::InternetServiceProviderHasBeenSet() const
+{
+    return m_internetServiceProviderHasBeenSet;
+}
+
+string InternetAccessible::GetIPv4AddressType() const
+{
+    return m_iPv4AddressType;
+}
+
+void InternetAccessible::SetIPv4AddressType(const string& _iPv4AddressType)
+{
+    m_iPv4AddressType = _iPv4AddressType;
+    m_iPv4AddressTypeHasBeenSet = true;
+}
+
+bool InternetAccessible::IPv4AddressTypeHasBeenSet() const
+{
+    return m_iPv4AddressTypeHasBeenSet;
+}
+
+string InternetAccessible::GetIPv6AddressType() const
+{
+    return m_iPv6AddressType;
+}
+
+void InternetAccessible::SetIPv6AddressType(const string& _iPv6AddressType)
+{
+    m_iPv6AddressType = _iPv6AddressType;
+    m_iPv6AddressTypeHasBeenSet = true;
+}
+
+bool InternetAccessible::IPv6AddressTypeHasBeenSet() const
+{
+    return m_iPv6AddressTypeHasBeenSet;
+}
+
+string InternetAccessible::GetAntiDDoSPackageId() const
+{
+    return m_antiDDoSPackageId;
+}
+
+void InternetAccessible::SetAntiDDoSPackageId(const string& _antiDDoSPackageId)
+{
+    m_antiDDoSPackageId = _antiDDoSPackageId;
+    m_antiDDoSPackageIdHasBeenSet = true;
+}
+
+bool InternetAccessible::AntiDDoSPackageIdHasBeenSet() const
+{
+    return m_antiDDoSPackageIdHasBeenSet;
 }
 

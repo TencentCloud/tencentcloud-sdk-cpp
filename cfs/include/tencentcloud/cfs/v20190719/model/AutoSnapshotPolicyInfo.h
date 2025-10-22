@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool AutoSnapshotPolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取快照策略ID
-                     * @return PolicyName 快照策略ID
+                     * 获取快照策略名称
+                     * @return PolicyName 快照策略名称
                      * 
                      */
                     std::string GetPolicyName() const;
 
                     /**
-                     * 设置快照策略ID
-                     * @param _policyName 快照策略ID
+                     * 设置快照策略名称
+                     * @param _policyName 快照策略名称
                      * 
                      */
                     void SetPolicyName(const std::string& _policyName);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool NextActiveTimeHasBeenSet() const;
 
                     /**
-                     * 获取快照策略状态，1代表快照策略状态正常。这里只有一种状态
-                     * @return Status 快照策略状态，1代表快照策略状态正常。这里只有一种状态
+                     * 获取快照策略状态，available代表快照策略状态正常。这里只有一种状态
+                     * @return Status 快照策略状态，available代表快照策略状态正常。这里只有一种状态
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置快照策略状态，1代表快照策略状态正常。这里只有一种状态
-                     * @param _status 快照策略状态，1代表快照策略状态正常。这里只有一种状态
+                     * 设置快照策略状态，available代表快照策略状态正常。这里只有一种状态
+                     * @param _status 快照策略状态，available代表快照策略状态正常。这里只有一种状态
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -400,7 +400,7 @@ namespace TencentCloud
                     bool m_autoSnapshotPolicyIdHasBeenSet;
 
                     /**
-                     * 快照策略ID
+                     * 快照策略名称
                      */
                     std::string m_policyName;
                     bool m_policyNameHasBeenSet;
@@ -442,7 +442,7 @@ namespace TencentCloud
                     bool m_nextActiveTimeHasBeenSet;
 
                     /**
-                     * 快照策略状态，1代表快照策略状态正常。这里只有一种状态
+                     * 快照策略状态，available代表快照策略状态正常。这里只有一种状态
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

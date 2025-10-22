@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -389,6 +389,31 @@ namespace TencentCloud
                     bool GlobalUserNameHasBeenSet() const;
 
                     /**
+                     * 获取全局角色编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GlobalUserCode 全局角色编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetGlobalUserCode() const;
+
+                    /**
+                     * 设置全局角色编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _globalUserCode 全局角色编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGlobalUserCode(const std::string& _globalUserCode);
+
+                    /**
+                     * 判断参数 GlobalUserCode 是否已赋值
+                     * @return GlobalUserCode 是否已赋值
+                     * 
+                     */
+                    bool GlobalUserCodeHasBeenSet() const;
+
+                    /**
                      * 获取手机号
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Mobile 手机号
@@ -538,6 +563,56 @@ namespace TencentCloud
                      */
                     bool InValidateAppRangeHasBeenSet() const;
 
+                    /**
+                     * 获取-1 免激活  0 未激活  1 已激活 空代表待绑定
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EmailActivationStatus -1 免激活  0 未激活  1 已激活 空代表待绑定
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetEmailActivationStatus() const;
+
+                    /**
+                     * 设置-1 免激活  0 未激活  1 已激活 空代表待绑定
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _emailActivationStatus -1 免激活  0 未激活  1 已激活 空代表待绑定
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEmailActivationStatus(const int64_t& _emailActivationStatus);
+
+                    /**
+                     * 判断参数 EmailActivationStatus 是否已赋值
+                     * @return EmailActivationStatus 是否已赋值
+                     * 
+                     */
+                    bool EmailActivationStatusHasBeenSet() const;
+
+                    /**
+                     * 获取1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Id 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetId() const;
+
+                    /**
+                     * 设置1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _id 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetId(const uint64_t& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     * 
+                     */
+                    bool IdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -637,6 +712,13 @@ namespace TencentCloud
                     bool m_globalUserNameHasBeenSet;
 
                     /**
+                     * 全局角色编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_globalUserCode;
+                    bool m_globalUserCodeHasBeenSet;
+
+                    /**
                      * 手机号
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -677,6 +759,20 @@ namespace TencentCloud
                      */
                     bool m_inValidateAppRange;
                     bool m_inValidateAppRangeHasBeenSet;
+
+                    /**
+                     * -1 免激活  0 未激活  1 已激活 空代表待绑定
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_emailActivationStatus;
+                    bool m_emailActivationStatusHasBeenSet;
+
+                    /**
+                     * 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_id;
+                    bool m_idHasBeenSet;
 
                 };
             }

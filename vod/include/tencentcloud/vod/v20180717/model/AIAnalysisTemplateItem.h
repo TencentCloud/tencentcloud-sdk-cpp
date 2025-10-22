@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -116,18 +116,14 @@ namespace TencentCloud
 
                     /**
                      * 获取智能分类任务控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClassificationConfigure 智能分类任务控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ClassificationConfigureInfo GetClassificationConfigure() const;
 
                     /**
                      * 设置智能分类任务控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _classificationConfigure 智能分类任务控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClassificationConfigure(const ClassificationConfigureInfo& _classificationConfigure);
@@ -141,18 +137,14 @@ namespace TencentCloud
 
                     /**
                      * 获取智能标签任务控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagConfigure 智能标签任务控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TagConfigureInfo GetTagConfigure() const;
 
                     /**
                      * 设置智能标签任务控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tagConfigure 智能标签任务控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTagConfigure(const TagConfigureInfo& _tagConfigure);
@@ -166,18 +158,14 @@ namespace TencentCloud
 
                     /**
                      * 获取智能封面任务控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CoverConfigure 智能封面任务控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CoverConfigureInfo GetCoverConfigure() const;
 
                     /**
                      * 设置智能封面任务控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _coverConfigure 智能封面任务控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCoverConfigure(const CoverConfigureInfo& _coverConfigure);
@@ -191,18 +179,14 @@ namespace TencentCloud
 
                     /**
                      * 获取智能按帧标签任务控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FrameTagConfigure 智能按帧标签任务控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     FrameTagConfigureInfo GetFrameTagConfigure() const;
 
                     /**
                      * 设置智能按帧标签任务控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _frameTagConfigure 智能按帧标签任务控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFrameTagConfigure(const FrameTagConfigureInfo& _frameTagConfigure);
@@ -299,28 +283,24 @@ namespace TencentCloud
 
                     /**
                      * 智能分类任务控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ClassificationConfigureInfo m_classificationConfigure;
                     bool m_classificationConfigureHasBeenSet;
 
                     /**
                      * 智能标签任务控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TagConfigureInfo m_tagConfigure;
                     bool m_tagConfigureHasBeenSet;
 
                     /**
                      * 智能封面任务控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CoverConfigureInfo m_coverConfigure;
                     bool m_coverConfigureHasBeenSet;
 
                     /**
                      * 智能按帧标签任务控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     FrameTagConfigureInfo m_frameTagConfigure;
                     bool m_frameTagConfigureHasBeenSet;

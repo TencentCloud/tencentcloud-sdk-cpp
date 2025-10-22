@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,9 @@ using namespace std;
 
 KillOpsMakePlanInstancesRequest::KillOpsMakePlanInstancesRequest() :
     m_projectIdHasBeenSet(false),
-    m_planIdHasBeenSet(false)
+    m_planIdHasBeenSet(false),
+    m_asyncModeHasBeenSet(false),
+    m_planNameHasBeenSet(false)
 {
 }
 
@@ -49,6 +51,22 @@ string KillOpsMakePlanInstancesRequest::ToJsonString() const
         string key = "PlanId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_planId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_asyncModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AsyncMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_asyncMode, allocator);
+    }
+
+    if (m_planNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PlanName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_planName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +107,38 @@ void KillOpsMakePlanInstancesRequest::SetPlanId(const string& _planId)
 bool KillOpsMakePlanInstancesRequest::PlanIdHasBeenSet() const
 {
     return m_planIdHasBeenSet;
+}
+
+bool KillOpsMakePlanInstancesRequest::GetAsyncMode() const
+{
+    return m_asyncMode;
+}
+
+void KillOpsMakePlanInstancesRequest::SetAsyncMode(const bool& _asyncMode)
+{
+    m_asyncMode = _asyncMode;
+    m_asyncModeHasBeenSet = true;
+}
+
+bool KillOpsMakePlanInstancesRequest::AsyncModeHasBeenSet() const
+{
+    return m_asyncModeHasBeenSet;
+}
+
+string KillOpsMakePlanInstancesRequest::GetPlanName() const
+{
+    return m_planName;
+}
+
+void KillOpsMakePlanInstancesRequest::SetPlanName(const string& _planName)
+{
+    m_planName = _planName;
+    m_planNameHasBeenSet = true;
+}
+
+bool KillOpsMakePlanInstancesRequest::PlanNameHasBeenSet() const
+{
+    return m_planNameHasBeenSet;
 }
 
 

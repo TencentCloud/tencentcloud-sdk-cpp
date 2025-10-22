@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,7 +55,11 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_versionIDHasBeenSet(false),
     m_multiZoneHasBeenSet(false),
     m_multiZoneSettingsHasBeenSet(false),
-    m_cosBucketHasBeenSet(false)
+    m_cosBucketHasBeenSet(false),
+    m_nodeMarksHasBeenSet(false),
+    m_loadBalancerIdHasBeenSet(false),
+    m_defaultMetaVersionHasBeenSet(false),
+    m_needCdbAuditHasBeenSet(false)
 {
 }
 
@@ -372,6 +376,45 @@ string CreateInstanceRequest::ToJsonString() const
         string key = "CosBucket";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cosBucket.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeMarksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeMarks";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_nodeMarks.begin(); itr != m_nodeMarks.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_loadBalancerIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoadBalancerId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_loadBalancerId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_defaultMetaVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultMetaVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_defaultMetaVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_needCdbAuditHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedCdbAudit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needCdbAudit, allocator);
     }
 
 
@@ -908,6 +951,70 @@ void CreateInstanceRequest::SetCosBucket(const string& _cosBucket)
 bool CreateInstanceRequest::CosBucketHasBeenSet() const
 {
     return m_cosBucketHasBeenSet;
+}
+
+vector<NodeMark> CreateInstanceRequest::GetNodeMarks() const
+{
+    return m_nodeMarks;
+}
+
+void CreateInstanceRequest::SetNodeMarks(const vector<NodeMark>& _nodeMarks)
+{
+    m_nodeMarks = _nodeMarks;
+    m_nodeMarksHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::NodeMarksHasBeenSet() const
+{
+    return m_nodeMarksHasBeenSet;
+}
+
+string CreateInstanceRequest::GetLoadBalancerId() const
+{
+    return m_loadBalancerId;
+}
+
+void CreateInstanceRequest::SetLoadBalancerId(const string& _loadBalancerId)
+{
+    m_loadBalancerId = _loadBalancerId;
+    m_loadBalancerIdHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::LoadBalancerIdHasBeenSet() const
+{
+    return m_loadBalancerIdHasBeenSet;
+}
+
+string CreateInstanceRequest::GetDefaultMetaVersion() const
+{
+    return m_defaultMetaVersion;
+}
+
+void CreateInstanceRequest::SetDefaultMetaVersion(const string& _defaultMetaVersion)
+{
+    m_defaultMetaVersion = _defaultMetaVersion;
+    m_defaultMetaVersionHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::DefaultMetaVersionHasBeenSet() const
+{
+    return m_defaultMetaVersionHasBeenSet;
+}
+
+int64_t CreateInstanceRequest::GetNeedCdbAudit() const
+{
+    return m_needCdbAudit;
+}
+
+void CreateInstanceRequest::SetNeedCdbAudit(const int64_t& _needCdbAudit)
+{
+    m_needCdbAudit = _needCdbAudit;
+    m_needCdbAuditHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::NeedCdbAuditHasBeenSet() const
+{
+    return m_needCdbAuditHasBeenSet;
 }
 
 

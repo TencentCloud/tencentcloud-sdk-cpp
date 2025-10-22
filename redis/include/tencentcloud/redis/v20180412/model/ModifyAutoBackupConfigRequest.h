@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -130,6 +130,27 @@ namespace TencentCloud
                      */
                     bool AutoBackupTypeHasBeenSet() const;
 
+                    /**
+                     * 获取全量备份文件保存天数。单位：天。
+                     * @return BackupStorageDays 全量备份文件保存天数。单位：天。
+                     * 
+                     */
+                    int64_t GetBackupStorageDays() const;
+
+                    /**
+                     * 设置全量备份文件保存天数。单位：天。
+                     * @param _backupStorageDays 全量备份文件保存天数。单位：天。
+                     * 
+                     */
+                    void SetBackupStorageDays(const int64_t& _backupStorageDays);
+
+                    /**
+                     * 判断参数 BackupStorageDays 是否已赋值
+                     * @return BackupStorageDays 是否已赋值
+                     * 
+                     */
+                    bool BackupStorageDaysHasBeenSet() const;
+
                 private:
 
                     /**
@@ -156,6 +177,12 @@ namespace TencentCloud
                      */
                     int64_t m_autoBackupType;
                     bool m_autoBackupTypeHasBeenSet;
+
+                    /**
+                     * 全量备份文件保存天数。单位：天。
+                     */
+                    int64_t m_backupStorageDays;
+                    bool m_backupStorageDaysHasBeenSet;
 
                 };
             }

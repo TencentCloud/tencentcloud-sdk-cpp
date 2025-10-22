@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 新套餐套餐详情
+                * 云开发新套餐详情
                 */
                 class BaasPackageInfo : public AbstractModel
                 {
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取DAU产品套餐ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageName DAU产品套餐ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPackageName() const;
 
                     /**
                      * 设置DAU产品套餐ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packageName DAU产品套餐ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackageName(const std::string& _packageName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取DAU套餐中文名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageTitle DAU套餐中文名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPackageTitle() const;
 
                     /**
                      * 设置DAU套餐中文名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packageTitle DAU套餐中文名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackageTitle(const std::string& _packageTitle);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取套餐分组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupName 套餐分组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置套餐分组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupName 套餐分组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取套餐分组中文名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupTitle 套餐分组中文名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupTitle() const;
 
                     /**
                      * 设置套餐分组中文名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupTitle 套餐分组中文名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupTitle(const std::string& _groupTitle);
@@ -149,10 +133,8 @@ namespace TencentCloud
                     /**
                      * 获取json格式化计费标签，例如：
 {"pid":2, "cids":{"create": 2, "renew": 2, "modify": 2}, "productCode":"p_tcb_mp", "subProductCode":"sp_tcb_mp_cloudbase_dau"}
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BillTags json格式化计费标签，例如：
 {"pid":2, "cids":{"create": 2, "renew": 2, "modify": 2}, "productCode":"p_tcb_mp", "subProductCode":"sp_tcb_mp_cloudbase_dau"}
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBillTags() const;
@@ -160,10 +142,8 @@ namespace TencentCloud
                     /**
                      * 设置json格式化计费标签，例如：
 {"pid":2, "cids":{"create": 2, "renew": 2, "modify": 2}, "productCode":"p_tcb_mp", "subProductCode":"sp_tcb_mp_cloudbase_dau"}
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _billTags json格式化计费标签，例如：
 {"pid":2, "cids":{"create": 2, "renew": 2, "modify": 2}, "productCode":"p_tcb_mp", "subProductCode":"sp_tcb_mp_cloudbase_dau"}
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBillTags(const std::string& _billTags);
@@ -178,10 +158,8 @@ namespace TencentCloud
                     /**
                      * 获取json格式化用户资源限制，例如：
 {"Qps":1000,"InvokeNum":{"TimeUnit":"m", "Unit":"万次", "MaxSize": 100},"Capacity":{"TimeUnit":"m", "Unit":"GB", "MaxSize": 100}, "Cdn":{"Flux":{"TimeUnit":"m", "Unit":"GB", "MaxSize": 100}, "BackFlux":{"TimeUnit":"m", "Unit":"GB", "MaxSize": 100}},"Scf":{"Concurrency":1000,"OutFlux":{"TimeUnit":"m", "Unit":"GB", "MaxSize": 100},"MemoryUse":{"TimeUnit":"m", "Unit":"WGBS", "MaxSize": 100000}}}
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceLimit json格式化用户资源限制，例如：
 {"Qps":1000,"InvokeNum":{"TimeUnit":"m", "Unit":"万次", "MaxSize": 100},"Capacity":{"TimeUnit":"m", "Unit":"GB", "MaxSize": 100}, "Cdn":{"Flux":{"TimeUnit":"m", "Unit":"GB", "MaxSize": 100}, "BackFlux":{"TimeUnit":"m", "Unit":"GB", "MaxSize": 100}},"Scf":{"Concurrency":1000,"OutFlux":{"TimeUnit":"m", "Unit":"GB", "MaxSize": 100},"MemoryUse":{"TimeUnit":"m", "Unit":"WGBS", "MaxSize": 100000}}}
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceLimit() const;
@@ -189,10 +167,8 @@ namespace TencentCloud
                     /**
                      * 设置json格式化用户资源限制，例如：
 {"Qps":1000,"InvokeNum":{"TimeUnit":"m", "Unit":"万次", "MaxSize": 100},"Capacity":{"TimeUnit":"m", "Unit":"GB", "MaxSize": 100}, "Cdn":{"Flux":{"TimeUnit":"m", "Unit":"GB", "MaxSize": 100}, "BackFlux":{"TimeUnit":"m", "Unit":"GB", "MaxSize": 100}},"Scf":{"Concurrency":1000,"OutFlux":{"TimeUnit":"m", "Unit":"GB", "MaxSize": 100},"MemoryUse":{"TimeUnit":"m", "Unit":"WGBS", "MaxSize": 100000}}}
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceLimit json格式化用户资源限制，例如：
 {"Qps":1000,"InvokeNum":{"TimeUnit":"m", "Unit":"万次", "MaxSize": 100},"Capacity":{"TimeUnit":"m", "Unit":"GB", "MaxSize": 100}, "Cdn":{"Flux":{"TimeUnit":"m", "Unit":"GB", "MaxSize": 100}, "BackFlux":{"TimeUnit":"m", "Unit":"GB", "MaxSize": 100}},"Scf":{"Concurrency":1000,"OutFlux":{"TimeUnit":"m", "Unit":"GB", "MaxSize": 100},"MemoryUse":{"TimeUnit":"m", "Unit":"WGBS", "MaxSize": 100000}}}
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceLimit(const std::string& _resourceLimit);
@@ -207,10 +183,8 @@ namespace TencentCloud
                     /**
                      * 获取json格式化高级限制，例如：
 {"CMSEnable":false,"ProvisionedConcurrencyMem":512000, "PictureProcessing":false, "SecurityAudit":false, "RealTimePush":false, "TemplateMessageBatchPush":false, "Payment":false}
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdvanceLimit json格式化高级限制，例如：
 {"CMSEnable":false,"ProvisionedConcurrencyMem":512000, "PictureProcessing":false, "SecurityAudit":false, "RealTimePush":false, "TemplateMessageBatchPush":false, "Payment":false}
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAdvanceLimit() const;
@@ -218,10 +192,8 @@ namespace TencentCloud
                     /**
                      * 设置json格式化高级限制，例如：
 {"CMSEnable":false,"ProvisionedConcurrencyMem":512000, "PictureProcessing":false, "SecurityAudit":false, "RealTimePush":false, "TemplateMessageBatchPush":false, "Payment":false}
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _advanceLimit json格式化高级限制，例如：
 {"CMSEnable":false,"ProvisionedConcurrencyMem":512000, "PictureProcessing":false, "SecurityAudit":false, "RealTimePush":false, "TemplateMessageBatchPush":false, "Payment":false}
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdvanceLimit(const std::string& _advanceLimit);
@@ -235,18 +207,14 @@ namespace TencentCloud
 
                     /**
                      * 获取套餐描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageDescription 套餐描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPackageDescription() const;
 
                     /**
                      * 设置套餐描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packageDescription 套餐描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackageDescription(const std::string& _packageDescription);
@@ -260,18 +228,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否对外展示
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsExternal 是否对外展示
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsExternal() const;
 
                     /**
                      * 设置是否对外展示
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isExternal 是否对外展示
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsExternal(const bool& _isExternal);
@@ -287,28 +251,24 @@ namespace TencentCloud
 
                     /**
                      * DAU产品套餐ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packageName;
                     bool m_packageNameHasBeenSet;
 
                     /**
                      * DAU套餐中文名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packageTitle;
                     bool m_packageTitleHasBeenSet;
 
                     /**
                      * 套餐分组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
                      * 套餐分组中文名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupTitle;
                     bool m_groupTitleHasBeenSet;
@@ -316,7 +276,6 @@ namespace TencentCloud
                     /**
                      * json格式化计费标签，例如：
 {"pid":2, "cids":{"create": 2, "renew": 2, "modify": 2}, "productCode":"p_tcb_mp", "subProductCode":"sp_tcb_mp_cloudbase_dau"}
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_billTags;
                     bool m_billTagsHasBeenSet;
@@ -324,7 +283,6 @@ namespace TencentCloud
                     /**
                      * json格式化用户资源限制，例如：
 {"Qps":1000,"InvokeNum":{"TimeUnit":"m", "Unit":"万次", "MaxSize": 100},"Capacity":{"TimeUnit":"m", "Unit":"GB", "MaxSize": 100}, "Cdn":{"Flux":{"TimeUnit":"m", "Unit":"GB", "MaxSize": 100}, "BackFlux":{"TimeUnit":"m", "Unit":"GB", "MaxSize": 100}},"Scf":{"Concurrency":1000,"OutFlux":{"TimeUnit":"m", "Unit":"GB", "MaxSize": 100},"MemoryUse":{"TimeUnit":"m", "Unit":"WGBS", "MaxSize": 100000}}}
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceLimit;
                     bool m_resourceLimitHasBeenSet;
@@ -332,21 +290,18 @@ namespace TencentCloud
                     /**
                      * json格式化高级限制，例如：
 {"CMSEnable":false,"ProvisionedConcurrencyMem":512000, "PictureProcessing":false, "SecurityAudit":false, "RealTimePush":false, "TemplateMessageBatchPush":false, "Payment":false}
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_advanceLimit;
                     bool m_advanceLimitHasBeenSet;
 
                     /**
                      * 套餐描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packageDescription;
                     bool m_packageDescriptionHasBeenSet;
 
                     /**
                      * 是否对外展示
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isExternal;
                     bool m_isExternalHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,9 @@ using namespace TencentCloud::Dts::V20211206::Model;
 using namespace std;
 
 SubsErr::SubsErr() :
-    m_messageHasBeenSet(false)
+    m_messageHasBeenSet(false),
+    m_reasonHasBeenSet(false),
+    m_solutionHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,26 @@ CoreInternalOutcome SubsErr::Deserialize(const rapidjson::Value &value)
         m_messageHasBeenSet = true;
     }
 
+    if (value.HasMember("Reason") && !value["Reason"].IsNull())
+    {
+        if (!value["Reason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubsErr.Reason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_reason = string(value["Reason"].GetString());
+        m_reasonHasBeenSet = true;
+    }
+
+    if (value.HasMember("Solution") && !value["Solution"].IsNull())
+    {
+        if (!value["Solution"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubsErr.Solution` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_solution = string(value["Solution"].GetString());
+        m_solutionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +75,22 @@ void SubsErr::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "Message";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Reason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_solutionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Solution";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_solution.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -72,5 +110,37 @@ void SubsErr::SetMessage(const string& _message)
 bool SubsErr::MessageHasBeenSet() const
 {
     return m_messageHasBeenSet;
+}
+
+string SubsErr::GetReason() const
+{
+    return m_reason;
+}
+
+void SubsErr::SetReason(const string& _reason)
+{
+    m_reason = _reason;
+    m_reasonHasBeenSet = true;
+}
+
+bool SubsErr::ReasonHasBeenSet() const
+{
+    return m_reasonHasBeenSet;
+}
+
+string SubsErr::GetSolution() const
+{
+    return m_solution;
+}
+
+void SubsErr::SetSolution(const string& _solution)
+{
+    m_solution = _solution;
+    m_solutionHasBeenSet = true;
+}
+
+bool SubsErr::SolutionHasBeenSet() const
+{
+    return m_solutionHasBeenSet;
 }
 

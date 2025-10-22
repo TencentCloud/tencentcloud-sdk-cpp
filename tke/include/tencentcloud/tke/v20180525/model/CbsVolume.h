@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * EKS Instnace CBS volume
+                * EKS Instance CBS volume
                 */
                 class CbsVolume : public AbstractModel
                 {
@@ -45,27 +45,6 @@ namespace TencentCloud
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
-
-                    /**
-                     * 获取cbs volume 数据卷名称
-                     * @return Name cbs volume 数据卷名称
-                     * 
-                     */
-                    std::string GetName() const;
-
-                    /**
-                     * 设置cbs volume 数据卷名称
-                     * @param _name cbs volume 数据卷名称
-                     * 
-                     */
-                    void SetName(const std::string& _name);
-
-                    /**
-                     * 判断参数 Name 是否已赋值
-                     * @return Name 是否已赋值
-                     * 
-                     */
-                    bool NameHasBeenSet() const;
 
                     /**
                      * 获取腾讯云cbs盘Id
@@ -88,19 +67,40 @@ namespace TencentCloud
                      */
                     bool CbsDiskIdHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取cbs volume 数据卷名称
+                     * @return Name cbs volume 数据卷名称
+                     * 
+                     */
+                    std::string GetName() const;
 
                     /**
-                     * cbs volume 数据卷名称
+                     * 设置cbs volume 数据卷名称
+                     * @param _name cbs volume 数据卷名称
+                     * 
                      */
-                    std::string m_name;
-                    bool m_nameHasBeenSet;
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     * 
+                     */
+                    bool NameHasBeenSet() const;
+
+                private:
 
                     /**
                      * 腾讯云cbs盘Id
                      */
                     std::string m_cbsDiskId;
                     bool m_cbsDiskIdHasBeenSet;
+
+                    /**
+                     * cbs volume 数据卷名称
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
 
                 };
             }

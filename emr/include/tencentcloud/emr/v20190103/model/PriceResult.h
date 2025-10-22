@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原价
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginalCost 原价
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetOriginalCost() const;
 
                     /**
                      * 设置原价
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _originalCost 原价
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOriginalCost(const double& _originalCost);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取折扣价
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiscountCost 折扣价
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetDiscountCost() const;
 
                     /**
                      * 设置折扣价
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _discountCost 折扣价
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiscountCost(const double& _discountCost);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 原价
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_originalCost;
                     bool m_originalCostHasBeenSet;
 
                     /**
                      * 折扣价
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_discountCost;
                     bool m_discountCostHasBeenSet;

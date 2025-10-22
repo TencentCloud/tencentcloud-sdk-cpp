@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取预置位ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PresetId 预置位ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPresetId() const;
 
                     /**
                      * 设置预置位ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _presetId 预置位ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPresetId(const int64_t& _presetId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取预置位名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PresetName 预置位名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPresetName() const;
 
                     /**
                      * 设置预置位名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _presetName 预置位名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPresetName(const std::string& _presetName);
@@ -142,14 +134,12 @@ namespace TencentCloud
 
                     /**
                      * 预置位ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_presetId;
                     bool m_presetIdHasBeenSet;
 
                     /**
                      * 预置位名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_presetName;
                     bool m_presetNameHasBeenSet;

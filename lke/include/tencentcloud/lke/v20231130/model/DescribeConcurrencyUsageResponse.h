@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取可用并发数
-                     * @return AvailableConcurrency 可用并发数
+                     * 获取可用并发数上限
+                     * @return AvailableConcurrency 可用并发数上限
                      * 
                      */
                     uint64_t GetAvailableConcurrency() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool ConcurrencyPeakHasBeenSet() const;
 
                     /**
-                     * 获取调用超可用次数
-                     * @return ExceedUsageTime 调用超可用次数
+                     * 获取超出可用并发数上限的次数
+                     * @return ExceedUsageTime 超出可用并发数上限的次数
                      * 
                      */
                     uint64_t GetExceedUsageTime() const;
@@ -88,7 +88,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 可用并发数
+                     * 可用并发数上限
                      */
                     uint64_t m_availableConcurrency;
                     bool m_availableConcurrencyHasBeenSet;
@@ -100,7 +100,7 @@ namespace TencentCloud
                     bool m_concurrencyPeakHasBeenSet;
 
                     /**
-                     * 调用超可用次数
+                     * 超出可用并发数上限的次数
                      */
                     uint64_t m_exceedUsageTime;
                     bool m_exceedUsageTimeHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取节点名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NodeName 节点名称
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取节点名称，此字段在出参中有效。
+                     * @return NodeName 节点名称，此字段在出参中有效。
                      * 
                      */
                     std::string GetNodeName() const;
 
                     /**
-                     * 设置节点名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _nodeName 节点名称
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置节点名称，此字段在出参中有效。
+                     * @param _nodeName 节点名称，此字段在出参中有效。
                      * 
                      */
                     void SetNodeName(const std::string& _nodeName);
@@ -72,19 +68,15 @@ namespace TencentCloud
                     bool NodeNameHasBeenSet() const;
 
                     /**
-                     * 获取节点上的资源总数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Num 节点上的资源总数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取节点上的资源总数，QuotaType为 exact 时，表示创建指定规格的精确配额数量。
+                     * @return Num 节点上的资源总数，QuotaType为 exact 时，表示创建指定规格的精确配额数量。
                      * 
                      */
                     uint64_t GetNum() const;
 
                     /**
-                     * 设置节点上的资源总数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _num 节点上的资源总数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置节点上的资源总数，QuotaType为 exact 时，表示创建指定规格的精确配额数量。
+                     * @param _num 节点上的资源总数，QuotaType为 exact 时，表示创建指定规格的精确配额数量。
                      * 
                      */
                     void SetNum(const uint64_t& _num);
@@ -97,19 +89,15 @@ namespace TencentCloud
                     bool NumHasBeenSet() const;
 
                     /**
-                     * 获取节点上的总核数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Cpu 节点上的总核数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取节点上的总核数，QuotaType为 exact 时表示指定规格的核数。
+                     * @return Cpu 节点上的总核数，QuotaType为 exact 时表示指定规格的核数。
                      * 
                      */
                     double GetCpu() const;
 
                     /**
-                     * 设置节点上的总核数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cpu 节点上的总核数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置节点上的总核数，QuotaType为 exact 时表示指定规格的核数。
+                     * @param _cpu 节点上的总核数，QuotaType为 exact 时表示指定规格的核数。
                      * 
                      */
                     void SetCpu(const double& _cpu);
@@ -122,19 +110,15 @@ namespace TencentCloud
                     bool CpuHasBeenSet() const;
 
                     /**
-                     * 获取节点上的总内存数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Memory 节点上的总内存数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取节点上的总内存数，QuotaType为 exact 时表示指定规格的内存，单位：Gi
+                     * @return Memory 节点上的总内存数，QuotaType为 exact 时表示指定规格的内存，单位：Gi
                      * 
                      */
                     double GetMemory() const;
 
                     /**
-                     * 设置节点上的总内存数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _memory 节点上的总内存数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置节点上的总内存数，QuotaType为 exact 时表示指定规格的内存，单位：Gi
+                     * @param _memory 节点上的总内存数，QuotaType为 exact 时表示指定规格的内存，单位：Gi
                      * 
                      */
                     void SetMemory(const double& _memory);
@@ -147,19 +131,15 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取节点上的总 GPU 卡数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Gpu 节点上的总 GPU 卡数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取节点上的总 GPU 卡数，QuotaType为 exact 时表示指定规格的GPU卡数。
+                     * @return Gpu 节点上的总 GPU 卡数，QuotaType为 exact 时表示指定规格的GPU卡数。
                      * 
                      */
                     double GetGpu() const;
 
                     /**
-                     * 设置节点上的总 GPU 卡数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _gpu 节点上的总 GPU 卡数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置节点上的总 GPU 卡数，QuotaType为 exact 时表示指定规格的GPU卡数。
+                     * @param _gpu 节点上的总 GPU 卡数，QuotaType为 exact 时表示指定规格的GPU卡数。
                      * 
                      */
                     void SetGpu(const double& _gpu);
@@ -171,42 +151,145 @@ namespace TencentCloud
                      */
                     bool GpuHasBeenSet() const;
 
+                    /**
+                     * 获取节点资源的配额类型，exact表示精确配额，fuzzy 表示模糊配额。
+                     * @return QuotaType 节点资源的配额类型，exact表示精确配额，fuzzy 表示模糊配额。
+                     * 
+                     */
+                    std::string GetQuotaType() const;
+
+                    /**
+                     * 设置节点资源的配额类型，exact表示精确配额，fuzzy 表示模糊配额。
+                     * @param _quotaType 节点资源的配额类型，exact表示精确配额，fuzzy 表示模糊配额。
+                     * 
+                     */
+                    void SetQuotaType(const std::string& _quotaType);
+
+                    /**
+                     * 判断参数 QuotaType 是否已赋值
+                     * @return QuotaType 是否已赋值
+                     * 
+                     */
+                    bool QuotaTypeHasBeenSet() const;
+
+                    /**
+                     * 获取配额的计费类型，PREPAID表示包月，POSTPAID_BY_HOUR表示按量。
+                     * @return ChargeType 配额的计费类型，PREPAID表示包月，POSTPAID_BY_HOUR表示按量。
+                     * 
+                     */
+                    std::string GetChargeType() const;
+
+                    /**
+                     * 设置配额的计费类型，PREPAID表示包月，POSTPAID_BY_HOUR表示按量。
+                     * @param _chargeType 配额的计费类型，PREPAID表示包月，POSTPAID_BY_HOUR表示按量。
+                     * 
+                     */
+                    void SetChargeType(const std::string& _chargeType);
+
+                    /**
+                     * 判断参数 ChargeType 是否已赋值
+                     * @return ChargeType 是否已赋值
+                     * 
+                     */
+                    bool ChargeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取QuotaType为 exact 时，此字段有效，表示精确配额的资源类型。
+                     * @return ResourceType QuotaType为 exact 时，此字段有效，表示精确配额的资源类型。
+                     * 
+                     */
+                    std::string GetResourceType() const;
+
+                    /**
+                     * 设置QuotaType为 exact 时，此字段有效，表示精确配额的资源类型。
+                     * @param _resourceType QuotaType为 exact 时，此字段有效，表示精确配额的资源类型。
+                     * 
+                     */
+                    void SetResourceType(const std::string& _resourceType);
+
+                    /**
+                     * 判断参数 ResourceType 是否已赋值
+                     * @return ResourceType 是否已赋值
+                     * 
+                     */
+                    bool ResourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取置放群组 ID，QuotaType为 exact 时有效，表示购买的精确配额需满足置放群组。可通过 [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/product/213/17810) 接口返回值中的DisasterRecoverGroupId获取。
+                     * @return DisasterRecoverGroupId 置放群组 ID，QuotaType为 exact 时有效，表示购买的精确配额需满足置放群组。可通过 [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/product/213/17810) 接口返回值中的DisasterRecoverGroupId获取。
+                     * 
+                     */
+                    std::string GetDisasterRecoverGroupId() const;
+
+                    /**
+                     * 设置置放群组 ID，QuotaType为 exact 时有效，表示购买的精确配额需满足置放群组。可通过 [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/product/213/17810) 接口返回值中的DisasterRecoverGroupId获取。
+                     * @param _disasterRecoverGroupId 置放群组 ID，QuotaType为 exact 时有效，表示购买的精确配额需满足置放群组。可通过 [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/product/213/17810) 接口返回值中的DisasterRecoverGroupId获取。
+                     * 
+                     */
+                    void SetDisasterRecoverGroupId(const std::string& _disasterRecoverGroupId);
+
+                    /**
+                     * 判断参数 DisasterRecoverGroupId 是否已赋值
+                     * @return DisasterRecoverGroupId 是否已赋值
+                     * 
+                     */
+                    bool DisasterRecoverGroupIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 节点名称
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 节点名称，此字段在出参中有效。
                      */
                     std::string m_nodeName;
                     bool m_nodeNameHasBeenSet;
 
                     /**
-                     * 节点上的资源总数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 节点上的资源总数，QuotaType为 exact 时，表示创建指定规格的精确配额数量。
                      */
                     uint64_t m_num;
                     bool m_numHasBeenSet;
 
                     /**
-                     * 节点上的总核数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 节点上的总核数，QuotaType为 exact 时表示指定规格的核数。
                      */
                     double m_cpu;
                     bool m_cpuHasBeenSet;
 
                     /**
-                     * 节点上的总内存数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 节点上的总内存数，QuotaType为 exact 时表示指定规格的内存，单位：Gi
                      */
                     double m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * 节点上的总 GPU 卡数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 节点上的总 GPU 卡数，QuotaType为 exact 时表示指定规格的GPU卡数。
                      */
                     double m_gpu;
                     bool m_gpuHasBeenSet;
+
+                    /**
+                     * 节点资源的配额类型，exact表示精确配额，fuzzy 表示模糊配额。
+                     */
+                    std::string m_quotaType;
+                    bool m_quotaTypeHasBeenSet;
+
+                    /**
+                     * 配额的计费类型，PREPAID表示包月，POSTPAID_BY_HOUR表示按量。
+                     */
+                    std::string m_chargeType;
+                    bool m_chargeTypeHasBeenSet;
+
+                    /**
+                     * QuotaType为 exact 时，此字段有效，表示精确配额的资源类型。
+                     */
+                    std::string m_resourceType;
+                    bool m_resourceTypeHasBeenSet;
+
+                    /**
+                     * 置放群组 ID，QuotaType为 exact 时有效，表示购买的精确配额需满足置放群组。可通过 [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/product/213/17810) 接口返回值中的DisasterRecoverGroupId获取。
+                     */
+                    std::string m_disasterRecoverGroupId;
+                    bool m_disasterRecoverGroupIdHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启公网访问LB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Enabled 是否开启公网访问LB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnabled() const;
 
                     /**
                      * 设置是否开启公网访问LB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enabled 是否开启公网访问LB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnabled(const bool& _enabled);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取允许访问的公网cidr
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AllowFromCidrs 允许访问的公网cidr
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAllowFromCidrs() const;
 
                     /**
                      * 设置允许访问的公网cidr
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _allowFromCidrs 允许访问的公网cidr
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAllowFromCidrs(const std::vector<std::string>& _allowFromCidrs);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 是否开启公网访问LB
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enabled;
                     bool m_enabledHasBeenSet;
 
                     /**
                      * 允许访问的公网cidr
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_allowFromCidrs;
                     bool m_allowFromCidrsHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,7 +42,8 @@ CreatePrepareFlowRequest::CreatePrepareFlowRequest() :
     m_flowIdHasBeenSet(false),
     m_agentHasBeenSet(false),
     m_initiatorComponentsHasBeenSet(false),
-    m_flowDisplayTypeHasBeenSet(false)
+    m_flowDisplayTypeHasBeenSet(false),
+    m_signComponentConfigHasBeenSet(false)
 {
 }
 
@@ -188,8 +189,14 @@ string CreatePrepareFlowRequest::ToJsonString() const
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CcInfos";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_ccInfos.ToJsonObject(d[key.c_str()], allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_ccInfos.begin(); itr != m_ccInfos.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_flowIdHasBeenSet)
@@ -230,6 +237,15 @@ string CreatePrepareFlowRequest::ToJsonString() const
         string key = "FlowDisplayType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_flowDisplayType, allocator);
+    }
+
+    if (m_signComponentConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignComponentConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_signComponentConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -480,12 +496,12 @@ bool CreatePrepareFlowRequest::UserDataHasBeenSet() const
     return m_userDataHasBeenSet;
 }
 
-CcInfo CreatePrepareFlowRequest::GetCcInfos() const
+vector<CcInfo> CreatePrepareFlowRequest::GetCcInfos() const
 {
     return m_ccInfos;
 }
 
-void CreatePrepareFlowRequest::SetCcInfos(const CcInfo& _ccInfos)
+void CreatePrepareFlowRequest::SetCcInfos(const vector<CcInfo>& _ccInfos)
 {
     m_ccInfos = _ccInfos;
     m_ccInfosHasBeenSet = true;
@@ -558,6 +574,22 @@ void CreatePrepareFlowRequest::SetFlowDisplayType(const int64_t& _flowDisplayTyp
 bool CreatePrepareFlowRequest::FlowDisplayTypeHasBeenSet() const
 {
     return m_flowDisplayTypeHasBeenSet;
+}
+
+SignComponentConfig CreatePrepareFlowRequest::GetSignComponentConfig() const
+{
+    return m_signComponentConfig;
+}
+
+void CreatePrepareFlowRequest::SetSignComponentConfig(const SignComponentConfig& _signComponentConfig)
+{
+    m_signComponentConfig = _signComponentConfig;
+    m_signComponentConfigHasBeenSet = true;
+}
+
+bool CreatePrepareFlowRequest::SignComponentConfigHasBeenSet() const
+{
+    return m_signComponentConfigHasBeenSet;
 }
 
 

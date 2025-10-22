@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文本内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 文本内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置文本内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _text 文本内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetText(const std::string& _text);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通用名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GenericName 通用名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGenericName() const;
 
                     /**
                      * 设置通用名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _genericName 通用名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGenericName(const std::string& _genericName);
@@ -101,7 +93,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BarndName 品牌名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetBarndName() const;
 
@@ -110,31 +102,27 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _barndName 品牌名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetBarndName(const std::string& _barndName);
 
                     /**
                      * 判断参数 BarndName 是否已赋值
                      * @return BarndName 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool BarndNameHasBeenSet() const;
 
                     /**
                      * 获取英文名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnName 英文名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEnName() const;
 
                     /**
                      * 设置英文名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enName 英文名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnName(const std::string& _enName);
@@ -148,18 +136,14 @@ namespace TencentCloud
 
                     /**
                      * 获取拼音
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Pinyin 拼音
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPinyin() const;
 
                     /**
                      * 设置拼音
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pinyin 拼音
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPinyin(const std::string& _pinyin);
@@ -171,18 +155,37 @@ namespace TencentCloud
                      */
                     bool PinyinHasBeenSet() const;
 
+                    /**
+                     * 获取品牌名
+                     * @return BrandName 品牌名
+                     * 
+                     */
+                    std::string GetBrandName() const;
+
+                    /**
+                     * 设置品牌名
+                     * @param _brandName 品牌名
+                     * 
+                     */
+                    void SetBrandName(const std::string& _brandName);
+
+                    /**
+                     * 判断参数 BrandName 是否已赋值
+                     * @return BrandName 是否已赋值
+                     * 
+                     */
+                    bool BrandNameHasBeenSet() const;
+
                 private:
 
                     /**
                      * 文本内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;
 
                     /**
                      * 通用名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_genericName;
                     bool m_genericNameHasBeenSet;
@@ -196,17 +199,21 @@ namespace TencentCloud
 
                     /**
                      * 英文名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_enName;
                     bool m_enNameHasBeenSet;
 
                     /**
                      * 拼音
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pinyin;
                     bool m_pinyinHasBeenSet;
+
+                    /**
+                     * 品牌名
+                     */
+                    std::string m_brandName;
+                    bool m_brandNameHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取页码
-                     * @return PageNumber 页码
+                     * 获取页码 默认1
+                     * @return PageNumber 页码 默认1
                      * 
                      */
                     int64_t GetPageNumber() const;
 
                     /**
-                     * 设置页码
-                     * @param _pageNumber 页码
+                     * 设置页码 默认1
+                     * @param _pageNumber 页码 默认1
                      * 
                      */
                     void SetPageNumber(const int64_t& _pageNumber);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取条数
-                     * @return PageSize 条数
+                     * 获取条数 默认20 最大100
+                     * @return PageSize 条数 默认20 最大100
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置条数
-                     * @param _pageSize 条数
+                     * 设置条数 默认20 最大100
+                     * @param _pageSize 条数 默认20 最大100
                      * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 页码
+                     * 页码 默认1
                      */
                     int64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * 条数
+                     * 条数 默认20 最大100
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;

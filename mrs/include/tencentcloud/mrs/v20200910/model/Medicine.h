@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取药品名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 药品名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置药品名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 药品名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取商品名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TradeName 商品名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTradeName() const;
 
                     /**
                      * 设置商品名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tradeName 商品名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTradeName(const std::string& _tradeName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取厂商
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Firm 厂商
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFirm() const;
 
                     /**
                      * 设置厂商
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _firm 厂商
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFirm(const std::string& _firm);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取医保类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Category 医保类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCategory() const;
 
                     /**
                      * 设置医保类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _category 医保类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCategory(const std::string& _category);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Specification 规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSpecification() const;
 
                     /**
                      * 设置规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _specification 规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSpecification(const std::string& _specification);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最小包装数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MinQuantity 最小包装数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMinQuantity() const;
 
                     /**
                      * 设置最小包装数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _minQuantity 最小包装数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMinQuantity(const std::string& _minQuantity);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最小制剂单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DosageUnit 最小制剂单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDosageUnit() const;
 
                     /**
                      * 设置最小制剂单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dosageUnit 最小制剂单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDosageUnit(const std::string& _dosageUnit);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最小包装单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackingUnit 最小包装单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPackingUnit() const;
 
                     /**
                      * 设置最小包装单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packingUnit 最小包装单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackingUnit(const std::string& _packingUnit);
@@ -250,56 +218,48 @@ namespace TencentCloud
 
                     /**
                      * 药品名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 商品名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tradeName;
                     bool m_tradeNameHasBeenSet;
 
                     /**
                      * 厂商
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_firm;
                     bool m_firmHasBeenSet;
 
                     /**
                      * 医保类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_category;
                     bool m_categoryHasBeenSet;
 
                     /**
                      * 规格
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_specification;
                     bool m_specificationHasBeenSet;
 
                     /**
                      * 最小包装数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_minQuantity;
                     bool m_minQuantityHasBeenSet;
 
                     /**
                      * 最小制剂单位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dosageUnit;
                     bool m_dosageUnitHasBeenSet;
 
                     /**
                      * 最小包装单位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packingUnit;
                     bool m_packingUnitHasBeenSet;

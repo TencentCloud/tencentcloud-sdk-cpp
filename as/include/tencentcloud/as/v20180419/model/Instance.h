@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -131,91 +131,91 @@ namespace TencentCloud
                     bool LaunchConfigurationNameHasBeenSet() const;
 
                     /**
-                     * 获取生命周期状态，取值如下：<br>
-<li>IN_SERVICE：运行中
-<li>CREATING：创建中
-<li>CREATION_FAILED：创建失败
-<li>TERMINATING：中止中
-<li>TERMINATION_FAILED：中止失败
-<li>ATTACHING：绑定中
-<li>ATTACH_FAILED：绑定失败
-<li>DETACHING：解绑中
-<li>DETACH_FAILED：解绑失败
-<li>ATTACHING_LB：绑定LB中
-<li>DETACHING_LB：解绑LB中
-<li>MODIFYING_LB：修改LB中
-<li>STARTING：开机中
-<li>START_FAILED：开机失败
-<li>STOPPING：关机中
-<li>STOP_FAILED：关机失败
-<li>STOPPED：已关机
-<li>IN_LAUNCHING_HOOK：扩容生命周期挂钩中
-<li>IN_TERMINATING_HOOK：缩容生命周期挂钩中
-                     * @return LifeCycleState 生命周期状态，取值如下：<br>
-<li>IN_SERVICE：运行中
-<li>CREATING：创建中
-<li>CREATION_FAILED：创建失败
-<li>TERMINATING：中止中
-<li>TERMINATION_FAILED：中止失败
-<li>ATTACHING：绑定中
-<li>ATTACH_FAILED：绑定失败
-<li>DETACHING：解绑中
-<li>DETACH_FAILED：解绑失败
-<li>ATTACHING_LB：绑定LB中
-<li>DETACHING_LB：解绑LB中
-<li>MODIFYING_LB：修改LB中
-<li>STARTING：开机中
-<li>START_FAILED：开机失败
-<li>STOPPING：关机中
-<li>STOP_FAILED：关机失败
-<li>STOPPED：已关机
-<li>IN_LAUNCHING_HOOK：扩容生命周期挂钩中
-<li>IN_TERMINATING_HOOK：缩容生命周期挂钩中
+                     * 获取生命周期状态，取值如下：
+<li>IN_SERVICE：运行中</li>
+<li>CREATING：创建中</li>
+<li>CREATION_FAILED：创建失败</li>
+<li>TERMINATING：中止中</li>
+<li>TERMINATION_FAILED：中止失败</li>
+<li>ATTACHING：绑定中</li>
+<li>ATTACH_FAILED：绑定失败</li>
+<li>DETACHING：解绑中</li>
+<li>DETACH_FAILED：解绑失败</li>
+<li>ATTACHING_LB：绑定LB中</li>
+<li>DETACHING_LB：解绑LB中</li>
+<li>MODIFYING_LB：修改LB中</li>
+<li>STARTING：开机中</li>
+<li>START_FAILED：开机失败</li>
+<li>STOPPING：关机中</li>
+<li>STOP_FAILED：关机失败</li>
+<li>STOPPED：已关机</li>
+<li>IN_LAUNCHING_HOOK：扩容生命周期挂钩中</li>
+<li>IN_TERMINATING_HOOK：缩容生命周期挂钩中</li>
+                     * @return LifeCycleState 生命周期状态，取值如下：
+<li>IN_SERVICE：运行中</li>
+<li>CREATING：创建中</li>
+<li>CREATION_FAILED：创建失败</li>
+<li>TERMINATING：中止中</li>
+<li>TERMINATION_FAILED：中止失败</li>
+<li>ATTACHING：绑定中</li>
+<li>ATTACH_FAILED：绑定失败</li>
+<li>DETACHING：解绑中</li>
+<li>DETACH_FAILED：解绑失败</li>
+<li>ATTACHING_LB：绑定LB中</li>
+<li>DETACHING_LB：解绑LB中</li>
+<li>MODIFYING_LB：修改LB中</li>
+<li>STARTING：开机中</li>
+<li>START_FAILED：开机失败</li>
+<li>STOPPING：关机中</li>
+<li>STOP_FAILED：关机失败</li>
+<li>STOPPED：已关机</li>
+<li>IN_LAUNCHING_HOOK：扩容生命周期挂钩中</li>
+<li>IN_TERMINATING_HOOK：缩容生命周期挂钩中</li>
                      * 
                      */
                     std::string GetLifeCycleState() const;
 
                     /**
-                     * 设置生命周期状态，取值如下：<br>
-<li>IN_SERVICE：运行中
-<li>CREATING：创建中
-<li>CREATION_FAILED：创建失败
-<li>TERMINATING：中止中
-<li>TERMINATION_FAILED：中止失败
-<li>ATTACHING：绑定中
-<li>ATTACH_FAILED：绑定失败
-<li>DETACHING：解绑中
-<li>DETACH_FAILED：解绑失败
-<li>ATTACHING_LB：绑定LB中
-<li>DETACHING_LB：解绑LB中
-<li>MODIFYING_LB：修改LB中
-<li>STARTING：开机中
-<li>START_FAILED：开机失败
-<li>STOPPING：关机中
-<li>STOP_FAILED：关机失败
-<li>STOPPED：已关机
-<li>IN_LAUNCHING_HOOK：扩容生命周期挂钩中
-<li>IN_TERMINATING_HOOK：缩容生命周期挂钩中
-                     * @param _lifeCycleState 生命周期状态，取值如下：<br>
-<li>IN_SERVICE：运行中
-<li>CREATING：创建中
-<li>CREATION_FAILED：创建失败
-<li>TERMINATING：中止中
-<li>TERMINATION_FAILED：中止失败
-<li>ATTACHING：绑定中
-<li>ATTACH_FAILED：绑定失败
-<li>DETACHING：解绑中
-<li>DETACH_FAILED：解绑失败
-<li>ATTACHING_LB：绑定LB中
-<li>DETACHING_LB：解绑LB中
-<li>MODIFYING_LB：修改LB中
-<li>STARTING：开机中
-<li>START_FAILED：开机失败
-<li>STOPPING：关机中
-<li>STOP_FAILED：关机失败
-<li>STOPPED：已关机
-<li>IN_LAUNCHING_HOOK：扩容生命周期挂钩中
-<li>IN_TERMINATING_HOOK：缩容生命周期挂钩中
+                     * 设置生命周期状态，取值如下：
+<li>IN_SERVICE：运行中</li>
+<li>CREATING：创建中</li>
+<li>CREATION_FAILED：创建失败</li>
+<li>TERMINATING：中止中</li>
+<li>TERMINATION_FAILED：中止失败</li>
+<li>ATTACHING：绑定中</li>
+<li>ATTACH_FAILED：绑定失败</li>
+<li>DETACHING：解绑中</li>
+<li>DETACH_FAILED：解绑失败</li>
+<li>ATTACHING_LB：绑定LB中</li>
+<li>DETACHING_LB：解绑LB中</li>
+<li>MODIFYING_LB：修改LB中</li>
+<li>STARTING：开机中</li>
+<li>START_FAILED：开机失败</li>
+<li>STOPPING：关机中</li>
+<li>STOP_FAILED：关机失败</li>
+<li>STOPPED：已关机</li>
+<li>IN_LAUNCHING_HOOK：扩容生命周期挂钩中</li>
+<li>IN_TERMINATING_HOOK：缩容生命周期挂钩中</li>
+                     * @param _lifeCycleState 生命周期状态，取值如下：
+<li>IN_SERVICE：运行中</li>
+<li>CREATING：创建中</li>
+<li>CREATION_FAILED：创建失败</li>
+<li>TERMINATING：中止中</li>
+<li>TERMINATION_FAILED：中止失败</li>
+<li>ATTACHING：绑定中</li>
+<li>ATTACH_FAILED：绑定失败</li>
+<li>DETACHING：解绑中</li>
+<li>DETACH_FAILED：解绑失败</li>
+<li>ATTACHING_LB：绑定LB中</li>
+<li>DETACHING_LB：解绑LB中</li>
+<li>MODIFYING_LB：修改LB中</li>
+<li>STARTING：开机中</li>
+<li>START_FAILED：开机失败</li>
+<li>STOPPING：关机中</li>
+<li>STOP_FAILED：关机失败</li>
+<li>STOPPED：已关机</li>
+<li>IN_LAUNCHING_HOOK：扩容生命周期挂钩中</li>
+<li>IN_TERMINATING_HOOK：缩容生命周期挂钩中</li>
                      * 
                      */
                     void SetLifeCycleState(const std::string& _lifeCycleState);
@@ -228,15 +228,27 @@ namespace TencentCloud
                     bool LifeCycleStateHasBeenSet() const;
 
                     /**
-                     * 获取健康状态，取值包括HEALTHY和UNHEALTHY
-                     * @return HealthStatus 健康状态，取值包括HEALTHY和UNHEALTHY
+                     * 获取健康状态，取值范围如下：
+<li>HEALTHY：实例处于健康状态</li>
+<li>UNHEALTHY：实例 ping 不可达</li>
+<li>CLB_UNHEALTHY：CLB 监听的实例端口不健康</li>
+                     * @return HealthStatus 健康状态，取值范围如下：
+<li>HEALTHY：实例处于健康状态</li>
+<li>UNHEALTHY：实例 ping 不可达</li>
+<li>CLB_UNHEALTHY：CLB 监听的实例端口不健康</li>
                      * 
                      */
                     std::string GetHealthStatus() const;
 
                     /**
-                     * 设置健康状态，取值包括HEALTHY和UNHEALTHY
-                     * @param _healthStatus 健康状态，取值包括HEALTHY和UNHEALTHY
+                     * 设置健康状态，取值范围如下：
+<li>HEALTHY：实例处于健康状态</li>
+<li>UNHEALTHY：实例 ping 不可达</li>
+<li>CLB_UNHEALTHY：CLB 监听的实例端口不健康</li>
+                     * @param _healthStatus 健康状态，取值范围如下：
+<li>HEALTHY：实例处于健康状态</li>
+<li>UNHEALTHY：实例 ping 不可达</li>
+<li>CLB_UNHEALTHY：CLB 监听的实例端口不健康</li>
                      * 
                      */
                     void SetHealthStatus(const std::string& _healthStatus);
@@ -312,15 +324,15 @@ namespace TencentCloud
                     bool CreationTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例加入时间
-                     * @return AddTime 实例加入时间
+                     * 获取实例加入时间，按照ISO8601标准表示，并且使用UTC时间。
+                     * @return AddTime 实例加入时间，按照ISO8601标准表示，并且使用UTC时间。
                      * 
                      */
                     std::string GetAddTime() const;
 
                     /**
-                     * 设置实例加入时间
-                     * @param _addTime 实例加入时间
+                     * 设置实例加入时间，按照ISO8601标准表示，并且使用UTC时间。
+                     * @param _addTime 实例加入时间，按照ISO8601标准表示，并且使用UTC时间。
                      * 
                      */
                     void SetAddTime(const std::string& _addTime);
@@ -397,30 +409,30 @@ namespace TencentCloud
 
                     /**
                      * 获取预热状态，取值如下：
-<li>WAITING_ENTER_WARMUP：等待进入预热
-<li>NO_NEED_WARMUP：无需预热
-<li>IN_WARMUP：预热中
-<li>AFTER_WARMUP：完成预热
+<li>WAITING_ENTER_WARMUP：等待进入预热</li>
+<li>NO_NEED_WARMUP：无需预热</li>
+<li>IN_WARMUP：预热中</li>
+<li>AFTER_WARMUP：完成预热</li>
                      * @return WarmupStatus 预热状态，取值如下：
-<li>WAITING_ENTER_WARMUP：等待进入预热
-<li>NO_NEED_WARMUP：无需预热
-<li>IN_WARMUP：预热中
-<li>AFTER_WARMUP：完成预热
+<li>WAITING_ENTER_WARMUP：等待进入预热</li>
+<li>NO_NEED_WARMUP：无需预热</li>
+<li>IN_WARMUP：预热中</li>
+<li>AFTER_WARMUP：完成预热</li>
                      * 
                      */
                     std::string GetWarmupStatus() const;
 
                     /**
                      * 设置预热状态，取值如下：
-<li>WAITING_ENTER_WARMUP：等待进入预热
-<li>NO_NEED_WARMUP：无需预热
-<li>IN_WARMUP：预热中
-<li>AFTER_WARMUP：完成预热
+<li>WAITING_ENTER_WARMUP：等待进入预热</li>
+<li>NO_NEED_WARMUP：无需预热</li>
+<li>IN_WARMUP：预热中</li>
+<li>AFTER_WARMUP：完成预热</li>
                      * @param _warmupStatus 预热状态，取值如下：
-<li>WAITING_ENTER_WARMUP：等待进入预热
-<li>NO_NEED_WARMUP：无需预热
-<li>IN_WARMUP：预热中
-<li>AFTER_WARMUP：完成预热
+<li>WAITING_ENTER_WARMUP：等待进入预热</li>
+<li>NO_NEED_WARMUP：无需预热</li>
+<li>IN_WARMUP：预热中</li>
+<li>AFTER_WARMUP：完成预热</li>
                      * 
                      */
                     void SetWarmupStatus(const std::string& _warmupStatus);
@@ -434,18 +446,14 @@ namespace TencentCloud
 
                     /**
                      * 获取置放群组id，仅支持指定一个。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DisasterRecoverGroupIds 置放群组id，仅支持指定一个。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetDisasterRecoverGroupIds() const;
 
                     /**
                      * 设置置放群组id，仅支持指定一个。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _disasterRecoverGroupIds 置放群组id，仅支持指定一个。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDisasterRecoverGroupIds(const std::vector<std::string>& _disasterRecoverGroupIds);
@@ -484,32 +492,35 @@ namespace TencentCloud
                     bool m_launchConfigurationNameHasBeenSet;
 
                     /**
-                     * 生命周期状态，取值如下：<br>
-<li>IN_SERVICE：运行中
-<li>CREATING：创建中
-<li>CREATION_FAILED：创建失败
-<li>TERMINATING：中止中
-<li>TERMINATION_FAILED：中止失败
-<li>ATTACHING：绑定中
-<li>ATTACH_FAILED：绑定失败
-<li>DETACHING：解绑中
-<li>DETACH_FAILED：解绑失败
-<li>ATTACHING_LB：绑定LB中
-<li>DETACHING_LB：解绑LB中
-<li>MODIFYING_LB：修改LB中
-<li>STARTING：开机中
-<li>START_FAILED：开机失败
-<li>STOPPING：关机中
-<li>STOP_FAILED：关机失败
-<li>STOPPED：已关机
-<li>IN_LAUNCHING_HOOK：扩容生命周期挂钩中
-<li>IN_TERMINATING_HOOK：缩容生命周期挂钩中
+                     * 生命周期状态，取值如下：
+<li>IN_SERVICE：运行中</li>
+<li>CREATING：创建中</li>
+<li>CREATION_FAILED：创建失败</li>
+<li>TERMINATING：中止中</li>
+<li>TERMINATION_FAILED：中止失败</li>
+<li>ATTACHING：绑定中</li>
+<li>ATTACH_FAILED：绑定失败</li>
+<li>DETACHING：解绑中</li>
+<li>DETACH_FAILED：解绑失败</li>
+<li>ATTACHING_LB：绑定LB中</li>
+<li>DETACHING_LB：解绑LB中</li>
+<li>MODIFYING_LB：修改LB中</li>
+<li>STARTING：开机中</li>
+<li>START_FAILED：开机失败</li>
+<li>STOPPING：关机中</li>
+<li>STOP_FAILED：关机失败</li>
+<li>STOPPED：已关机</li>
+<li>IN_LAUNCHING_HOOK：扩容生命周期挂钩中</li>
+<li>IN_TERMINATING_HOOK：缩容生命周期挂钩中</li>
                      */
                     std::string m_lifeCycleState;
                     bool m_lifeCycleStateHasBeenSet;
 
                     /**
-                     * 健康状态，取值包括HEALTHY和UNHEALTHY
+                     * 健康状态，取值范围如下：
+<li>HEALTHY：实例处于健康状态</li>
+<li>UNHEALTHY：实例 ping 不可达</li>
+<li>CLB_UNHEALTHY：CLB 监听的实例端口不健康</li>
                      */
                     std::string m_healthStatus;
                     bool m_healthStatusHasBeenSet;
@@ -533,7 +544,7 @@ namespace TencentCloud
                     bool m_creationTypeHasBeenSet;
 
                     /**
-                     * 实例加入时间
+                     * 实例加入时间，按照ISO8601标准表示，并且使用UTC时间。
                      */
                     std::string m_addTime;
                     bool m_addTimeHasBeenSet;
@@ -558,17 +569,16 @@ namespace TencentCloud
 
                     /**
                      * 预热状态，取值如下：
-<li>WAITING_ENTER_WARMUP：等待进入预热
-<li>NO_NEED_WARMUP：无需预热
-<li>IN_WARMUP：预热中
-<li>AFTER_WARMUP：完成预热
+<li>WAITING_ENTER_WARMUP：等待进入预热</li>
+<li>NO_NEED_WARMUP：无需预热</li>
+<li>IN_WARMUP：预热中</li>
+<li>AFTER_WARMUP：完成预热</li>
                      */
                     std::string m_warmupStatus;
                     bool m_warmupStatusHasBeenSet;
 
                     /**
                      * 置放群组id，仅支持指定一个。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_disasterRecoverGroupIds;
                     bool m_disasterRecoverGroupIdsHasBeenSet;

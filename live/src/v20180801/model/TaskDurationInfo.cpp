@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,8 @@ using namespace std;
 
 TaskDurationInfo::TaskDurationInfo() :
     m_timeHasBeenSet(false),
-    m_durationHasBeenSet(false)
+    m_durationHasBeenSet(false),
+    m_durationSecondHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome TaskDurationInfo::Deserialize(const rapidjson::Value &value)
         m_durationHasBeenSet = true;
     }
 
+    if (value.HasMember("DurationSecond") && !value["DurationSecond"].IsNull())
+    {
+        if (!value["DurationSecond"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskDurationInfo.DurationSecond` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_durationSecond = value["DurationSecond"].GetUint64();
+        m_durationSecondHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void TaskDurationInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "Duration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_duration, allocator);
+    }
+
+    if (m_durationSecondHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DurationSecond";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_durationSecond, allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void TaskDurationInfo::SetDuration(const uint64_t& _duration)
 bool TaskDurationInfo::DurationHasBeenSet() const
 {
     return m_durationHasBeenSet;
+}
+
+uint64_t TaskDurationInfo::GetDurationSecond() const
+{
+    return m_durationSecond;
+}
+
+void TaskDurationInfo::SetDurationSecond(const uint64_t& _durationSecond)
+{
+    m_durationSecond = _durationSecond;
+    m_durationSecondHasBeenSet = true;
+}
+
+bool TaskDurationInfo::DurationSecondHasBeenSet() const
+{
+    return m_durationSecondHasBeenSet;
 }
 

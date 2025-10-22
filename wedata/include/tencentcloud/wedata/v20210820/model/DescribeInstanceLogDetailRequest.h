@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/wedata/v20210820/model/InstanceLifeDetailDto.h>
 
 
 namespace TencentCloud
@@ -148,15 +149,15 @@ namespace TencentCloud
                     bool ExecutionFileTypeHasBeenSet() const;
 
                     /**
-                     * 获取统一执行平台执行id
-                     * @return ExecutionJobId 统一执行平台执行id
+                     * 获取统一执行平台执行id, 注意: ExecutionJobId 跟 "BrokerIp+OriginFileName" 必须有一个不为空
+                     * @return ExecutionJobId 统一执行平台执行id, 注意: ExecutionJobId 跟 "BrokerIp+OriginFileName" 必须有一个不为空
                      * 
                      */
                     std::string GetExecutionJobId() const;
 
                     /**
-                     * 设置统一执行平台执行id
-                     * @param _executionJobId 统一执行平台执行id
+                     * 设置统一执行平台执行id, 注意: ExecutionJobId 跟 "BrokerIp+OriginFileName" 必须有一个不为空
+                     * @param _executionJobId 统一执行平台执行id, 注意: ExecutionJobId 跟 "BrokerIp+OriginFileName" 必须有一个不为空
                      * 
                      */
                     void SetExecutionJobId(const std::string& _executionJobId);
@@ -169,15 +170,15 @@ namespace TencentCloud
                     bool ExecutionJobIdHasBeenSet() const;
 
                     /**
-                     * 获取服务器Ip
-                     * @return BrokerIp 服务器Ip
+                     * 获取服务器Ip, 注意: "BrokerIp+OriginFileName"跟ExecutionJobId必须有一个不为空
+                     * @return BrokerIp 服务器Ip, 注意: "BrokerIp+OriginFileName"跟ExecutionJobId必须有一个不为空
                      * 
                      */
                     std::string GetBrokerIp() const;
 
                     /**
-                     * 设置服务器Ip
-                     * @param _brokerIp 服务器Ip
+                     * 设置服务器Ip, 注意: "BrokerIp+OriginFileName"跟ExecutionJobId必须有一个不为空
+                     * @param _brokerIp 服务器Ip, 注意: "BrokerIp+OriginFileName"跟ExecutionJobId必须有一个不为空
                      * 
                      */
                     void SetBrokerIp(const std::string& _brokerIp);
@@ -190,15 +191,15 @@ namespace TencentCloud
                     bool BrokerIpHasBeenSet() const;
 
                     /**
-                     * 获取文件Name
-                     * @return OriginFileName 文件Name
+                     * 获取文件Name, 注意: "BrokerIp+OriginFileName"跟ExecutionJobId必须有一个不为空
+                     * @return OriginFileName 文件Name, 注意: "BrokerIp+OriginFileName"跟ExecutionJobId必须有一个不为空
                      * 
                      */
                     std::string GetOriginFileName() const;
 
                     /**
-                     * 设置文件Name
-                     * @param _originFileName 文件Name
+                     * 设置文件Name, 注意: "BrokerIp+OriginFileName"跟ExecutionJobId必须有一个不为空
+                     * @param _originFileName 文件Name, 注意: "BrokerIp+OriginFileName"跟ExecutionJobId必须有一个不为空
                      * 
                      */
                     void SetOriginFileName(const std::string& _originFileName);
@@ -294,6 +295,111 @@ namespace TencentCloud
                      */
                     bool RequestFromSourceHasBeenSet() const;
 
+                    /**
+                     * 获取生命周期为基础数据进行日志匹配
+                     * @return InstanceLifeDetailDtoList 生命周期为基础数据进行日志匹配
+                     * 
+                     */
+                    std::vector<InstanceLifeDetailDto> GetInstanceLifeDetailDtoList() const;
+
+                    /**
+                     * 设置生命周期为基础数据进行日志匹配
+                     * @param _instanceLifeDetailDtoList 生命周期为基础数据进行日志匹配
+                     * 
+                     */
+                    void SetInstanceLifeDetailDtoList(const std::vector<InstanceLifeDetailDto>& _instanceLifeDetailDtoList);
+
+                    /**
+                     * 判断参数 InstanceLifeDetailDtoList 是否已赋值
+                     * @return InstanceLifeDetailDtoList 是否已赋值
+                     * 
+                     */
+                    bool InstanceLifeDetailDtoListHasBeenSet() const;
+
+                    /**
+                     * 获取当前生命周期
+                     * @return CurrentLifeRound 当前生命周期
+                     * 
+                     */
+                    int64_t GetCurrentLifeRound() const;
+
+                    /**
+                     * 设置当前生命周期
+                     * @param _currentLifeRound 当前生命周期
+                     * 
+                     */
+                    void SetCurrentLifeRound(const int64_t& _currentLifeRound);
+
+                    /**
+                     * 判断参数 CurrentLifeRound 是否已赋值
+                     * @return CurrentLifeRound 是否已赋值
+                     * 
+                     */
+                    bool CurrentLifeRoundHasBeenSet() const;
+
+                    /**
+                     * 获取生命周期总数
+                     * @return MaxLifeRound 生命周期总数
+                     * 
+                     */
+                    int64_t GetMaxLifeRound() const;
+
+                    /**
+                     * 设置生命周期总数
+                     * @param _maxLifeRound 生命周期总数
+                     * 
+                     */
+                    void SetMaxLifeRound(const int64_t& _maxLifeRound);
+
+                    /**
+                     * 判断参数 MaxLifeRound 是否已赋值
+                     * @return MaxLifeRound 是否已赋值
+                     * 
+                     */
+                    bool MaxLifeRoundHasBeenSet() const;
+
+                    /**
+                     * 获取当前生命周期重试次数
+                     * @return Tries 当前生命周期重试次数
+                     * 
+                     */
+                    int64_t GetTries() const;
+
+                    /**
+                     * 设置当前生命周期重试次数
+                     * @param _tries 当前生命周期重试次数
+                     * 
+                     */
+                    void SetTries(const int64_t& _tries);
+
+                    /**
+                     * 判断参数 Tries 是否已赋值
+                     * @return Tries 是否已赋值
+                     * 
+                     */
+                    bool TriesHasBeenSet() const;
+
+                    /**
+                     * 获取动态加载日志
+                     * @return Dynamic 动态加载日志
+                     * 
+                     */
+                    bool GetDynamic() const;
+
+                    /**
+                     * 设置动态加载日志
+                     * @param _dynamic 动态加载日志
+                     * 
+                     */
+                    void SetDynamic(const bool& _dynamic);
+
+                    /**
+                     * 判断参数 Dynamic 是否已赋值
+                     * @return Dynamic 是否已赋值
+                     * 
+                     */
+                    bool DynamicHasBeenSet() const;
+
                 private:
 
                     /**
@@ -327,19 +433,19 @@ namespace TencentCloud
                     bool m_executionFileTypeHasBeenSet;
 
                     /**
-                     * 统一执行平台执行id
+                     * 统一执行平台执行id, 注意: ExecutionJobId 跟 "BrokerIp+OriginFileName" 必须有一个不为空
                      */
                     std::string m_executionJobId;
                     bool m_executionJobIdHasBeenSet;
 
                     /**
-                     * 服务器Ip
+                     * 服务器Ip, 注意: "BrokerIp+OriginFileName"跟ExecutionJobId必须有一个不为空
                      */
                     std::string m_brokerIp;
                     bool m_brokerIpHasBeenSet;
 
                     /**
-                     * 文件Name
+                     * 文件Name, 注意: "BrokerIp+OriginFileName"跟ExecutionJobId必须有一个不为空
                      */
                     std::string m_originFileName;
                     bool m_originFileNameHasBeenSet;
@@ -367,6 +473,36 @@ namespace TencentCloud
                      */
                     std::string m_requestFromSource;
                     bool m_requestFromSourceHasBeenSet;
+
+                    /**
+                     * 生命周期为基础数据进行日志匹配
+                     */
+                    std::vector<InstanceLifeDetailDto> m_instanceLifeDetailDtoList;
+                    bool m_instanceLifeDetailDtoListHasBeenSet;
+
+                    /**
+                     * 当前生命周期
+                     */
+                    int64_t m_currentLifeRound;
+                    bool m_currentLifeRoundHasBeenSet;
+
+                    /**
+                     * 生命周期总数
+                     */
+                    int64_t m_maxLifeRound;
+                    bool m_maxLifeRoundHasBeenSet;
+
+                    /**
+                     * 当前生命周期重试次数
+                     */
+                    int64_t m_tries;
+                    bool m_triesHasBeenSet;
+
+                    /**
+                     * 动态加载日志
+                     */
+                    bool m_dynamic;
+                    bool m_dynamicHasBeenSet;
 
                 };
             }

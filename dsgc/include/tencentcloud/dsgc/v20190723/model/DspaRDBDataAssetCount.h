@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数组资产类型，0代表关系型数据库资产，1代表对象存储COS资产
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataAssetType 数组资产类型，0代表关系型数据库资产，1代表对象存储COS资产
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDataAssetType() const;
 
                     /**
                      * 设置数组资产类型，0代表关系型数据库资产，1代表对象存储COS资产
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataAssetType 数组资产类型，0代表关系型数据库资产，1代表对象存储COS资产
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataAssetType(const int64_t& _dataAssetType);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已扫描的数据库的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalDbCnt 已扫描的数据库的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalDbCnt() const;
 
                     /**
                      * 设置已扫描的数据库的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalDbCnt 已扫描的数据库的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalDbCnt(const int64_t& _totalDbCnt);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库表的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalTableCnt 数据库表的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalTableCnt() const;
 
                     /**
                      * 设置数据库表的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalTableCnt 数据库表的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalTableCnt(const int64_t& _totalTableCnt);
@@ -125,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感数据类型个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SensitiveCategoryCnt 敏感数据类型个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSensitiveCategoryCnt() const;
 
                     /**
                      * 设置敏感数据类型个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sensitiveCategoryCnt 敏感数据类型个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSensitiveCategoryCnt(const int64_t& _sensitiveCategoryCnt);
@@ -150,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感字段的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SensitiveFieldCnt 敏感字段的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSensitiveFieldCnt() const;
 
                     /**
                      * 设置敏感字段的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sensitiveFieldCnt 敏感字段的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSensitiveFieldCnt(const int64_t& _sensitiveFieldCnt);
@@ -175,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感等级分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SensitiveLevel 敏感等级分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SensitiveLevel> GetSensitiveLevel() const;
 
                     /**
                      * 设置敏感等级分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sensitiveLevel 敏感等级分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSensitiveLevel(const std::vector<SensitiveLevel>& _sensitiveLevel);
@@ -200,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感数据库的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SensitiveDbCnt 敏感数据库的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSensitiveDbCnt() const;
 
                     /**
                      * 设置敏感数据库的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sensitiveDbCnt 敏感数据库的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSensitiveDbCnt(const int64_t& _sensitiveDbCnt);
@@ -225,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感数据库表的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SensitiveTableCnt 敏感数据库表的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSensitiveTableCnt() const;
 
                     /**
                      * 设置敏感数据库表的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sensitiveTableCnt 敏感数据库表的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSensitiveTableCnt(const int64_t& _sensitiveTableCnt);
@@ -250,18 +218,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扫描字段的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalFieldCnt 扫描字段的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalFieldCnt() const;
 
                     /**
                      * 设置扫描字段的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalFieldCnt 扫描字段的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalFieldCnt(const int64_t& _totalFieldCnt);
@@ -275,18 +239,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据分类分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CategoryDistributed 数据分类分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DspaDataCategoryDistributed> GetCategoryDistributed() const;
 
                     /**
                      * 设置数据分类分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _categoryDistributed 数据分类分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCategoryDistributed(const std::vector<DspaDataCategoryDistributed>& _categoryDistributed);
@@ -302,70 +262,60 @@ namespace TencentCloud
 
                     /**
                      * 数组资产类型，0代表关系型数据库资产，1代表对象存储COS资产
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_dataAssetType;
                     bool m_dataAssetTypeHasBeenSet;
 
                     /**
                      * 已扫描的数据库的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalDbCnt;
                     bool m_totalDbCntHasBeenSet;
 
                     /**
                      * 数据库表的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalTableCnt;
                     bool m_totalTableCntHasBeenSet;
 
                     /**
                      * 敏感数据类型个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sensitiveCategoryCnt;
                     bool m_sensitiveCategoryCntHasBeenSet;
 
                     /**
                      * 敏感字段的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sensitiveFieldCnt;
                     bool m_sensitiveFieldCntHasBeenSet;
 
                     /**
                      * 敏感等级分布
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SensitiveLevel> m_sensitiveLevel;
                     bool m_sensitiveLevelHasBeenSet;
 
                     /**
                      * 敏感数据库的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sensitiveDbCnt;
                     bool m_sensitiveDbCntHasBeenSet;
 
                     /**
                      * 敏感数据库表的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sensitiveTableCnt;
                     bool m_sensitiveTableCntHasBeenSet;
 
                     /**
                      * 扫描字段的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalFieldCnt;
                     bool m_totalFieldCntHasBeenSet;
 
                     /**
                      * 数据分类分布
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DspaDataCategoryDistributed> m_categoryDistributed;
                     bool m_categoryDistributedHasBeenSet;

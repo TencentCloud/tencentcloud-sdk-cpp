@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证书名字。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertificateAlias 证书名字。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCertificateAlias() const;
 
                     /**
                      * 设置证书名字。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _certificateAlias 证书名字。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCertificateAlias(const std::string& _certificateAlias);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取密钥内容。仅当证书类型为SSL证书时，返回该字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertificateKey 密钥内容。仅当证书类型为SSL证书时，返回该字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCertificateKey() const;
 
                     /**
                      * 设置密钥内容。仅当证书类型为SSL证书时，返回该字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _certificateKey 密钥内容。仅当证书类型为SSL证书时，返回该字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCertificateKey(const std::string& _certificateKey);
@@ -161,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
@@ -186,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证书生效起始时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BeginTime 证书生效起始时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetBeginTime() const;
 
                     /**
                      * 设置证书生效起始时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _beginTime 证书生效起始时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBeginTime(const uint64_t& _beginTime);
@@ -211,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证书过期时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 证书过期时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
                      * 设置证书过期时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 证书过期时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
@@ -236,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证书签发者通用名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IssuerCN 证书签发者通用名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIssuerCN() const;
 
                     /**
                      * 设置证书签发者通用名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _issuerCN 证书签发者通用名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIssuerCN(const std::string& _issuerCN);
@@ -261,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证书主题通用名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubjectCN 证书主题通用名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubjectCN() const;
 
                     /**
                      * 设置证书主题通用名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subjectCN 证书主题通用名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubjectCN(const std::string& _subjectCN);
@@ -300,7 +272,6 @@ namespace TencentCloud
 
                     /**
                      * 证书名字。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_certificateAlias;
                     bool m_certificateAliasHasBeenSet;
@@ -313,42 +284,36 @@ namespace TencentCloud
 
                     /**
                      * 密钥内容。仅当证书类型为SSL证书时，返回该字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_certificateKey;
                     bool m_certificateKeyHasBeenSet;
 
                     /**
                      * 创建时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 证书生效起始时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
                      * 证书过期时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
                      * 证书签发者通用名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_issuerCN;
                     bool m_issuerCNHasBeenSet;
 
                     /**
                      * 证书主题通用名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subjectCN;
                     bool m_subjectCNHasBeenSet;

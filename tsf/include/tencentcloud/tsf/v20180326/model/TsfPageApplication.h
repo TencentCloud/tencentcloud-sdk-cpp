@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用总数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 应用总数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置应用总数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalCount 应用总数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 应用信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ApplicationForPage> GetContent() const;
 
                     /**
                      * 设置应用信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _content 应用信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContent(const std::vector<ApplicationForPage>& _content);
@@ -97,21 +89,46 @@ namespace TencentCloud
                      */
                     bool ContentHasBeenSet() const;
 
+                    /**
+                     * 获取获取部署组实例列表返回的原始批次个数
+                     * @return SpecTotalCount 获取部署组实例列表返回的原始批次个数
+                     * 
+                     */
+                    int64_t GetSpecTotalCount() const;
+
+                    /**
+                     * 设置获取部署组实例列表返回的原始批次个数
+                     * @param _specTotalCount 获取部署组实例列表返回的原始批次个数
+                     * 
+                     */
+                    void SetSpecTotalCount(const int64_t& _specTotalCount);
+
+                    /**
+                     * 判断参数 SpecTotalCount 是否已赋值
+                     * @return SpecTotalCount 是否已赋值
+                     * 
+                     */
+                    bool SpecTotalCountHasBeenSet() const;
+
                 private:
 
                     /**
                      * 应用总数目
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * 应用信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ApplicationForPage> m_content;
                     bool m_contentHasBeenSet;
+
+                    /**
+                     * 获取部署组实例列表返回的原始批次个数
+                     */
+                    int64_t m_specTotalCount;
+                    bool m_specTotalCountHasBeenSet;
 
                 };
             }

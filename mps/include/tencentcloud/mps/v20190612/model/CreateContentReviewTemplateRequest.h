@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool CommentHasBeenSet() const;
 
                     /**
-                     * 获取令人反感的信息的控制参数。
-                     * @return PornConfigure 令人反感的信息的控制参数。
+                     * 获取鉴黄任务控制参数。
+                     * @return PornConfigure 鉴黄任务控制参数。
                      * 
                      */
                     PornConfigureInfo GetPornConfigure() const;
 
                     /**
-                     * 设置令人反感的信息的控制参数。
-                     * @param _pornConfigure 令人反感的信息的控制参数。
+                     * 设置鉴黄任务控制参数。
+                     * @param _pornConfigure 鉴黄任务控制参数。
                      * 
                      */
                     void SetPornConfigure(const PornConfigureInfo& _pornConfigure);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool PornConfigureHasBeenSet() const;
 
                     /**
-                     * 获取令人不安全的信息的控制参数。
-                     * @return TerrorismConfigure 令人不安全的信息的控制参数。
+                     * 获取涉暴任务控制参数。
+                     * @return TerrorismConfigure 涉暴任务控制参数。
                      * 
                      */
                     TerrorismConfigureInfo GetTerrorismConfigure() const;
 
                     /**
-                     * 设置令人不安全的信息的控制参数。
-                     * @param _terrorismConfigure 令人不安全的信息的控制参数。
+                     * 设置涉暴任务控制参数。
+                     * @param _terrorismConfigure 涉暴任务控制参数。
                      * 
                      */
                     void SetTerrorismConfigure(const TerrorismConfigureInfo& _terrorismConfigure);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool TerrorismConfigureHasBeenSet() const;
 
                     /**
-                     * 获取令人不适宜的信息的控制参数。
-                     * @return PoliticalConfigure 令人不适宜的信息的控制参数。
+                     * 获取涉敏任务控制参数。
+                     * @return PoliticalConfigure 涉敏任务控制参数。
                      * 
                      */
                     PoliticalConfigureInfo GetPoliticalConfigure() const;
 
                     /**
-                     * 设置令人不适宜的信息的控制参数。
-                     * @param _politicalConfigure 令人不适宜的信息的控制参数。
+                     * 设置涉敏任务控制参数。
+                     * @param _politicalConfigure 涉敏任务控制参数。
                      * 
                      */
                     void SetPoliticalConfigure(const PoliticalConfigureInfo& _politicalConfigure);
@@ -221,19 +221,19 @@ namespace TencentCloud
                     bool m_commentHasBeenSet;
 
                     /**
-                     * 令人反感的信息的控制参数。
+                     * 鉴黄任务控制参数。
                      */
                     PornConfigureInfo m_pornConfigure;
                     bool m_pornConfigureHasBeenSet;
 
                     /**
-                     * 令人不安全的信息的控制参数。
+                     * 涉暴任务控制参数。
                      */
                     TerrorismConfigureInfo m_terrorismConfigure;
                     bool m_terrorismConfigureHasBeenSet;
 
                     /**
-                     * 令人不适宜的信息的控制参数。
+                     * 涉敏任务控制参数。
                      */
                     PoliticalConfigureInfo m_politicalConfigure;
                     bool m_politicalConfigureHasBeenSet;

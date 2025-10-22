@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -165,7 +165,6 @@ Quality，图片质量分数，请求 Config.Quality 时返回（取值范围：
 BorderCodeValue，身份证边框不完整告警阈值分数，请求 Config.BorderCheckWarn时返回（取值范围：0 ~ 100，分数越低边框遮挡可能性越低，建议阈值≤50）;
 
 WarnInfos，告警信息，Code 告警码列表和释义：
--9100 身份证有效日期不合法告警，
 -9101 身份证边框不完整告警，
 
 -9102 身份证复印件告警（黑白及彩色复印件）,
@@ -184,7 +183,6 @@ Quality，图片质量分数，请求 Config.Quality 时返回（取值范围：
 BorderCodeValue，身份证边框不完整告警阈值分数，请求 Config.BorderCheckWarn时返回（取值范围：0 ~ 100，分数越低边框遮挡可能性越低，建议阈值≤50）;
 
 WarnInfos，告警信息，Code 告警码列表和释义：
--9100 身份证有效日期不合法告警，
 -9101 身份证边框不完整告警，
 
 -9102 身份证复印件告警（黑白及彩色复印件）,
@@ -279,7 +277,6 @@ Quality，图片质量分数，请求 Config.Quality 时返回（取值范围：
 BorderCodeValue，身份证边框不完整告警阈值分数，请求 Config.BorderCheckWarn时返回（取值范围：0 ~ 100，分数越低边框遮挡可能性越低，建议阈值≤50）;
 
 WarnInfos，告警信息，Code 告警码列表和释义：
--9100 身份证有效日期不合法告警，
 -9101 身份证边框不完整告警，
 
 -9102 身份证复印件告警（黑白及彩色复印件）,

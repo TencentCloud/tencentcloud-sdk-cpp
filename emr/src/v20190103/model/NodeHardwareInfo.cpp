@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,7 +74,13 @@ NodeHardwareInfo::NodeHardwareInfo() :
     m_servicesStatusHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_sharedClusterIdHasBeenSet(false),
-    m_sharedClusterIdDescHasBeenSet(false)
+    m_sharedClusterIdDescHasBeenSet(false),
+    m_timingResourceHasBeenSet(false),
+    m_tkeClusterIdHasBeenSet(false),
+    m_configurableServicesHasBeenSet(false),
+    m_nodeMarkHasBeenSet(false),
+    m_underwriteSetAutoRenewHasBeenSet(false),
+    m_gpuDescHasBeenSet(false)
 {
 }
 
@@ -657,6 +663,69 @@ CoreInternalOutcome NodeHardwareInfo::Deserialize(const rapidjson::Value &value)
         m_sharedClusterIdDescHasBeenSet = true;
     }
 
+    if (value.HasMember("TimingResource") && !value["TimingResource"].IsNull())
+    {
+        if (!value["TimingResource"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeHardwareInfo.TimingResource` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_timingResource = value["TimingResource"].GetBool();
+        m_timingResourceHasBeenSet = true;
+    }
+
+    if (value.HasMember("TkeClusterId") && !value["TkeClusterId"].IsNull())
+    {
+        if (!value["TkeClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeHardwareInfo.TkeClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tkeClusterId = string(value["TkeClusterId"].GetString());
+        m_tkeClusterIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConfigurableServices") && !value["ConfigurableServices"].IsNull())
+    {
+        if (!value["ConfigurableServices"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `NodeHardwareInfo.ConfigurableServices` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ConfigurableServices"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_configurableServices.push_back((*itr).GetString());
+        }
+        m_configurableServicesHasBeenSet = true;
+    }
+
+    if (value.HasMember("NodeMark") && !value["NodeMark"].IsNull())
+    {
+        if (!value["NodeMark"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeHardwareInfo.NodeMark` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeMark = string(value["NodeMark"].GetString());
+        m_nodeMarkHasBeenSet = true;
+    }
+
+    if (value.HasMember("UnderwriteSetAutoRenew") && !value["UnderwriteSetAutoRenew"].IsNull())
+    {
+        if (!value["UnderwriteSetAutoRenew"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeHardwareInfo.UnderwriteSetAutoRenew` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_underwriteSetAutoRenew = value["UnderwriteSetAutoRenew"].GetBool();
+        m_underwriteSetAutoRenewHasBeenSet = true;
+    }
+
+    if (value.HasMember("GpuDesc") && !value["GpuDesc"].IsNull())
+    {
+        if (!value["GpuDesc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeHardwareInfo.GpuDesc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gpuDesc = string(value["GpuDesc"].GetString());
+        m_gpuDescHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1110,6 +1179,59 @@ void NodeHardwareInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "SharedClusterIdDesc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sharedClusterIdDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_timingResourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimingResource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_timingResource, allocator);
+    }
+
+    if (m_tkeClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TkeClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tkeClusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_configurableServicesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigurableServices";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_configurableServices.begin(); itr != m_configurableServices.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_nodeMarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeMark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeMark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_underwriteSetAutoRenewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UnderwriteSetAutoRenew";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_underwriteSetAutoRenew, allocator);
+    }
+
+    if (m_gpuDescHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GpuDesc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gpuDesc.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1977,5 +2099,101 @@ void NodeHardwareInfo::SetSharedClusterIdDesc(const string& _sharedClusterIdDesc
 bool NodeHardwareInfo::SharedClusterIdDescHasBeenSet() const
 {
     return m_sharedClusterIdDescHasBeenSet;
+}
+
+bool NodeHardwareInfo::GetTimingResource() const
+{
+    return m_timingResource;
+}
+
+void NodeHardwareInfo::SetTimingResource(const bool& _timingResource)
+{
+    m_timingResource = _timingResource;
+    m_timingResourceHasBeenSet = true;
+}
+
+bool NodeHardwareInfo::TimingResourceHasBeenSet() const
+{
+    return m_timingResourceHasBeenSet;
+}
+
+string NodeHardwareInfo::GetTkeClusterId() const
+{
+    return m_tkeClusterId;
+}
+
+void NodeHardwareInfo::SetTkeClusterId(const string& _tkeClusterId)
+{
+    m_tkeClusterId = _tkeClusterId;
+    m_tkeClusterIdHasBeenSet = true;
+}
+
+bool NodeHardwareInfo::TkeClusterIdHasBeenSet() const
+{
+    return m_tkeClusterIdHasBeenSet;
+}
+
+vector<string> NodeHardwareInfo::GetConfigurableServices() const
+{
+    return m_configurableServices;
+}
+
+void NodeHardwareInfo::SetConfigurableServices(const vector<string>& _configurableServices)
+{
+    m_configurableServices = _configurableServices;
+    m_configurableServicesHasBeenSet = true;
+}
+
+bool NodeHardwareInfo::ConfigurableServicesHasBeenSet() const
+{
+    return m_configurableServicesHasBeenSet;
+}
+
+string NodeHardwareInfo::GetNodeMark() const
+{
+    return m_nodeMark;
+}
+
+void NodeHardwareInfo::SetNodeMark(const string& _nodeMark)
+{
+    m_nodeMark = _nodeMark;
+    m_nodeMarkHasBeenSet = true;
+}
+
+bool NodeHardwareInfo::NodeMarkHasBeenSet() const
+{
+    return m_nodeMarkHasBeenSet;
+}
+
+bool NodeHardwareInfo::GetUnderwriteSetAutoRenew() const
+{
+    return m_underwriteSetAutoRenew;
+}
+
+void NodeHardwareInfo::SetUnderwriteSetAutoRenew(const bool& _underwriteSetAutoRenew)
+{
+    m_underwriteSetAutoRenew = _underwriteSetAutoRenew;
+    m_underwriteSetAutoRenewHasBeenSet = true;
+}
+
+bool NodeHardwareInfo::UnderwriteSetAutoRenewHasBeenSet() const
+{
+    return m_underwriteSetAutoRenewHasBeenSet;
+}
+
+string NodeHardwareInfo::GetGpuDesc() const
+{
+    return m_gpuDesc;
+}
+
+void NodeHardwareInfo::SetGpuDesc(const string& _gpuDesc)
+{
+    m_gpuDesc = _gpuDesc;
+    m_gpuDescHasBeenSet = true;
+}
+
+bool NodeHardwareInfo::GpuDescHasBeenSet() const
+{
+    return m_gpuDescHasBeenSet;
 }
 

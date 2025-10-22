@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tsf/v20180326/model/ServiceConfig.h>
+#include <tencentcloud/tsf/v20180326/model/ServiceGovernanceConfig.h>
 
 
 namespace TencentCloud
@@ -44,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用名称
-                     * @return ApplicationName 应用名称
+                     * 获取应用名称，最长60字符
+                     * @return ApplicationName 应用名称，最长60字符
                      * 
                      */
                     std::string GetApplicationName() const;
 
                     /**
-                     * 设置应用名称
-                     * @param _applicationName 应用名称
+                     * 设置应用名称，最长60字符
+                     * @param _applicationName 应用名称，最长60字符
                      * 
                      */
                     void SetApplicationName(const std::string& _applicationName);
@@ -130,42 +131,42 @@ namespace TencentCloud
                     /**
                      * 获取应用日志配置项，废弃参数
                      * @return ApplicationLogConfig 应用日志配置项，废弃参数
-                     * 
+                     * @deprecated
                      */
                     std::string GetApplicationLogConfig() const;
 
                     /**
                      * 设置应用日志配置项，废弃参数
                      * @param _applicationLogConfig 应用日志配置项，废弃参数
-                     * 
+                     * @deprecated
                      */
                     void SetApplicationLogConfig(const std::string& _applicationLogConfig);
 
                     /**
                      * 判断参数 ApplicationLogConfig 是否已赋值
                      * @return ApplicationLogConfig 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ApplicationLogConfigHasBeenSet() const;
 
                     /**
                      * 获取应用资源类型，废弃参数
                      * @return ApplicationResourceType 应用资源类型，废弃参数
-                     * 
+                     * @deprecated
                      */
                     std::string GetApplicationResourceType() const;
 
                     /**
                      * 设置应用资源类型，废弃参数
                      * @param _applicationResourceType 应用资源类型，废弃参数
-                     * 
+                     * @deprecated
                      */
                     void SetApplicationResourceType(const std::string& _applicationResourceType);
 
                     /**
                      * 判断参数 ApplicationResourceType 是否已赋值
                      * @return ApplicationResourceType 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ApplicationResourceTypeHasBeenSet() const;
 
@@ -191,15 +192,15 @@ namespace TencentCloud
                     bool ApplicationRuntimeTypeHasBeenSet() const;
 
                     /**
-                     * 获取需要绑定的数据集ID
-                     * @return ProgramId 需要绑定的数据集ID
+                     * 获取【数据集ID】。可通过调用[DescribePrograms](https://cloud.tencent.com/document/product/649/73477)查询已创建的数据集列表或登录[控制台](https://console.cloud.tencent.com/tsf/privilege?rid=1&tab=program&roleId=role-a26486wy)进行查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。
+                     * @return ProgramId 【数据集ID】。可通过调用[DescribePrograms](https://cloud.tencent.com/document/product/649/73477)查询已创建的数据集列表或登录[控制台](https://console.cloud.tencent.com/tsf/privilege?rid=1&tab=program&roleId=role-a26486wy)进行查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。
                      * 
                      */
                     std::string GetProgramId() const;
 
                     /**
-                     * 设置需要绑定的数据集ID
-                     * @param _programId 需要绑定的数据集ID
+                     * 设置【数据集ID】。可通过调用[DescribePrograms](https://cloud.tencent.com/document/product/649/73477)查询已创建的数据集列表或登录[控制台](https://console.cloud.tencent.com/tsf/privilege?rid=1&tab=program&roleId=role-a26486wy)进行查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。
+                     * @param _programId 【数据集ID】。可通过调用[DescribePrograms](https://cloud.tencent.com/document/product/649/73477)查询已创建的数据集列表或登录[控制台](https://console.cloud.tencent.com/tsf/privilege?rid=1&tab=program&roleId=role-a26486wy)进行查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。
                      * 
                      */
                     void SetProgramId(const std::string& _programId);
@@ -254,15 +255,15 @@ namespace TencentCloud
                     bool IgnoreCreateImageRepositoryHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return ProgramIdList 无
+                     * 获取数据集id列表
+                     * @return ProgramIdList 数据集id列表
                      * 
                      */
                     std::vector<std::string> GetProgramIdList() const;
 
                     /**
-                     * 设置无
-                     * @param _programIdList 无
+                     * 设置数据集id列表
+                     * @param _programIdList 数据集id列表
                      * 
                      */
                     void SetProgramIdList(const std::vector<std::string>& _programIdList);
@@ -274,10 +275,115 @@ namespace TencentCloud
                      */
                     bool ProgramIdListHasBeenSet() const;
 
+                    /**
+                     * 获取apm业务系统id
+                     * @return ApmInstanceId apm业务系统id
+                     * 
+                     */
+                    std::string GetApmInstanceId() const;
+
+                    /**
+                     * 设置apm业务系统id
+                     * @param _apmInstanceId apm业务系统id
+                     * 
+                     */
+                    void SetApmInstanceId(const std::string& _apmInstanceId);
+
+                    /**
+                     * 判断参数 ApmInstanceId 是否已赋值
+                     * @return ApmInstanceId 是否已赋值
+                     * 
+                     */
+                    bool ApmInstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取编程语言:  Java；C/C++；Python；Go；Other
+                     * @return ProgramLanguage 编程语言:  Java；C/C++；Python；Go；Other
+                     * 
+                     */
+                    std::string GetProgramLanguage() const;
+
+                    /**
+                     * 设置编程语言:  Java；C/C++；Python；Go；Other
+                     * @param _programLanguage 编程语言:  Java；C/C++；Python；Go；Other
+                     * 
+                     */
+                    void SetProgramLanguage(const std::string& _programLanguage);
+
+                    /**
+                     * 判断参数 ProgramLanguage 是否已赋值
+                     * @return ProgramLanguage 是否已赋值
+                     * 
+                     */
+                    bool ProgramLanguageHasBeenSet() const;
+
+                    /**
+                     * 获取开发框架-SpringCloud/Dubbo/Go-GRPC/Other
+                     * @return FrameworkType 开发框架-SpringCloud/Dubbo/Go-GRPC/Other
+                     * 
+                     */
+                    std::string GetFrameworkType() const;
+
+                    /**
+                     * 设置开发框架-SpringCloud/Dubbo/Go-GRPC/Other
+                     * @param _frameworkType 开发框架-SpringCloud/Dubbo/Go-GRPC/Other
+                     * 
+                     */
+                    void SetFrameworkType(const std::string& _frameworkType);
+
+                    /**
+                     * 判断参数 FrameworkType 是否已赋值
+                     * @return FrameworkType 是否已赋值
+                     * 
+                     */
+                    bool FrameworkTypeHasBeenSet() const;
+
+                    /**
+                     * 获取注册配置治理
+                     * @return ServiceGovernanceConfig 注册配置治理
+                     * 
+                     */
+                    ServiceGovernanceConfig GetServiceGovernanceConfig() const;
+
+                    /**
+                     * 设置注册配置治理
+                     * @param _serviceGovernanceConfig 注册配置治理
+                     * 
+                     */
+                    void SetServiceGovernanceConfig(const ServiceGovernanceConfig& _serviceGovernanceConfig);
+
+                    /**
+                     * 判断参数 ServiceGovernanceConfig 是否已赋值
+                     * @return ServiceGovernanceConfig 是否已赋值
+                     * 
+                     */
+                    bool ServiceGovernanceConfigHasBeenSet() const;
+
+                    /**
+                     * 获取是否创建并关联同名镜像仓库
+                     * @return CreateSameNameImageRepository 是否创建并关联同名镜像仓库
+                     * 
+                     */
+                    bool GetCreateSameNameImageRepository() const;
+
+                    /**
+                     * 设置是否创建并关联同名镜像仓库
+                     * @param _createSameNameImageRepository 是否创建并关联同名镜像仓库
+                     * 
+                     */
+                    void SetCreateSameNameImageRepository(const bool& _createSameNameImageRepository);
+
+                    /**
+                     * 判断参数 CreateSameNameImageRepository 是否已赋值
+                     * @return CreateSameNameImageRepository 是否已赋值
+                     * 
+                     */
+                    bool CreateSameNameImageRepositoryHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 应用名称
+                     * 应用名称，最长60字符
                      */
                     std::string m_applicationName;
                     bool m_applicationNameHasBeenSet;
@@ -319,7 +425,7 @@ namespace TencentCloud
                     bool m_applicationRuntimeTypeHasBeenSet;
 
                     /**
-                     * 需要绑定的数据集ID
+                     * 【数据集ID】。可通过调用[DescribePrograms](https://cloud.tencent.com/document/product/649/73477)查询已创建的数据集列表或登录[控制台](https://console.cloud.tencent.com/tsf/privilege?rid=1&tab=program&roleId=role-a26486wy)进行查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。
                      */
                     std::string m_programId;
                     bool m_programIdHasBeenSet;
@@ -337,10 +443,40 @@ namespace TencentCloud
                     bool m_ignoreCreateImageRepositoryHasBeenSet;
 
                     /**
-                     * 无
+                     * 数据集id列表
                      */
                     std::vector<std::string> m_programIdList;
                     bool m_programIdListHasBeenSet;
+
+                    /**
+                     * apm业务系统id
+                     */
+                    std::string m_apmInstanceId;
+                    bool m_apmInstanceIdHasBeenSet;
+
+                    /**
+                     * 编程语言:  Java；C/C++；Python；Go；Other
+                     */
+                    std::string m_programLanguage;
+                    bool m_programLanguageHasBeenSet;
+
+                    /**
+                     * 开发框架-SpringCloud/Dubbo/Go-GRPC/Other
+                     */
+                    std::string m_frameworkType;
+                    bool m_frameworkTypeHasBeenSet;
+
+                    /**
+                     * 注册配置治理
+                     */
+                    ServiceGovernanceConfig m_serviceGovernanceConfig;
+                    bool m_serviceGovernanceConfigHasBeenSet;
+
+                    /**
+                     * 是否创建并关联同名镜像仓库
+                     */
+                    bool m_createSameNameImageRepository;
+                    bool m_createSameNameImageRepositoryHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,6 +50,7 @@ ModifySpartaProtectionRequest::ModifySpartaProtectionRequest() :
     m_tLSVersionHasBeenSet(false),
     m_ciphersHasBeenSet(false),
     m_cipherTemplateHasBeenSet(false),
+    m_proxyConnectTimeoutHasBeenSet(false),
     m_proxyReadTimeoutHasBeenSet(false),
     m_proxySendTimeoutHasBeenSet(false),
     m_sniTypeHasBeenSet(false),
@@ -66,7 +67,11 @@ ModifySpartaProtectionRequest::ModifySpartaProtectionRequest() :
     m_gmPrivateKeyHasBeenSet(false),
     m_gmEncCertHasBeenSet(false),
     m_gmEncPrivateKeyHasBeenSet(false),
-    m_gmSSLIdHasBeenSet(false)
+    m_gmSSLIdHasBeenSet(false),
+    m_upstreamPolicyHasBeenSet(false),
+    m_upstreamRulesHasBeenSet(false),
+    m_useCaseHasBeenSet(false),
+    m_gzipHasBeenSet(false)
 {
 }
 
@@ -315,6 +320,14 @@ string ModifySpartaProtectionRequest::ToJsonString() const
         d.AddMember(iKey, m_cipherTemplate, allocator);
     }
 
+    if (m_proxyConnectTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyConnectTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_proxyConnectTimeout, allocator);
+    }
+
     if (m_proxyReadTimeoutHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -454,6 +467,45 @@ string ModifySpartaProtectionRequest::ToJsonString() const
         string key = "GmSSLId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_gmSSLId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_upstreamPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpstreamPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_upstreamPolicy, allocator);
+    }
+
+    if (m_upstreamRulesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpstreamRules";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_upstreamRules.begin(); itr != m_upstreamRules.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_useCaseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseCase";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_useCase, allocator);
+    }
+
+    if (m_gzipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Gzip";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_gzip, allocator);
     }
 
 
@@ -896,6 +948,22 @@ bool ModifySpartaProtectionRequest::CipherTemplateHasBeenSet() const
     return m_cipherTemplateHasBeenSet;
 }
 
+int64_t ModifySpartaProtectionRequest::GetProxyConnectTimeout() const
+{
+    return m_proxyConnectTimeout;
+}
+
+void ModifySpartaProtectionRequest::SetProxyConnectTimeout(const int64_t& _proxyConnectTimeout)
+{
+    m_proxyConnectTimeout = _proxyConnectTimeout;
+    m_proxyConnectTimeoutHasBeenSet = true;
+}
+
+bool ModifySpartaProtectionRequest::ProxyConnectTimeoutHasBeenSet() const
+{
+    return m_proxyConnectTimeoutHasBeenSet;
+}
+
 int64_t ModifySpartaProtectionRequest::GetProxyReadTimeout() const
 {
     return m_proxyReadTimeout;
@@ -1166,6 +1234,70 @@ void ModifySpartaProtectionRequest::SetGmSSLId(const string& _gmSSLId)
 bool ModifySpartaProtectionRequest::GmSSLIdHasBeenSet() const
 {
     return m_gmSSLIdHasBeenSet;
+}
+
+int64_t ModifySpartaProtectionRequest::GetUpstreamPolicy() const
+{
+    return m_upstreamPolicy;
+}
+
+void ModifySpartaProtectionRequest::SetUpstreamPolicy(const int64_t& _upstreamPolicy)
+{
+    m_upstreamPolicy = _upstreamPolicy;
+    m_upstreamPolicyHasBeenSet = true;
+}
+
+bool ModifySpartaProtectionRequest::UpstreamPolicyHasBeenSet() const
+{
+    return m_upstreamPolicyHasBeenSet;
+}
+
+vector<UpstreamRule> ModifySpartaProtectionRequest::GetUpstreamRules() const
+{
+    return m_upstreamRules;
+}
+
+void ModifySpartaProtectionRequest::SetUpstreamRules(const vector<UpstreamRule>& _upstreamRules)
+{
+    m_upstreamRules = _upstreamRules;
+    m_upstreamRulesHasBeenSet = true;
+}
+
+bool ModifySpartaProtectionRequest::UpstreamRulesHasBeenSet() const
+{
+    return m_upstreamRulesHasBeenSet;
+}
+
+int64_t ModifySpartaProtectionRequest::GetUseCase() const
+{
+    return m_useCase;
+}
+
+void ModifySpartaProtectionRequest::SetUseCase(const int64_t& _useCase)
+{
+    m_useCase = _useCase;
+    m_useCaseHasBeenSet = true;
+}
+
+bool ModifySpartaProtectionRequest::UseCaseHasBeenSet() const
+{
+    return m_useCaseHasBeenSet;
+}
+
+int64_t ModifySpartaProtectionRequest::GetGzip() const
+{
+    return m_gzip;
+}
+
+void ModifySpartaProtectionRequest::SetGzip(const int64_t& _gzip)
+{
+    m_gzip = _gzip;
+    m_gzipHasBeenSet = true;
+}
+
+bool ModifySpartaProtectionRequest::GzipHasBeenSet() const
+{
+    return m_gzipHasBeenSet;
 }
 
 

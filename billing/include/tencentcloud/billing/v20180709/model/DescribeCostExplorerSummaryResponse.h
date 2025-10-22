@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,9 +48,7 @@ namespace TencentCloud
 
                     /**
                      * 获取数据条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 数据条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotal() const;
@@ -64,9 +62,7 @@ namespace TencentCloud
 
                     /**
                      * 获取表头信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Header 表头信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AnalyseHeaderDetail GetHeader() const;
@@ -80,9 +76,7 @@ namespace TencentCloud
 
                     /**
                      * 获取数据明细
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Detail 数据明细
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AnalyseDetail> GetDetail() const;
@@ -96,9 +90,7 @@ namespace TencentCloud
 
                     /**
                      * 获取数据总计
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalDetail 数据总计
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AnalyseDetail GetTotalDetail() const;
@@ -112,9 +104,7 @@ namespace TencentCloud
 
                     /**
                      * 获取筛选框
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConditionValue 筛选框
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AnalyseConditionDetail GetConditionValue() const;
@@ -130,35 +120,30 @@ namespace TencentCloud
 
                     /**
                      * 数据条数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
                      * 表头信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AnalyseHeaderDetail m_header;
                     bool m_headerHasBeenSet;
 
                     /**
                      * 数据明细
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AnalyseDetail> m_detail;
                     bool m_detailHasBeenSet;
 
                     /**
                      * 数据总计
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AnalyseDetail m_totalDetail;
                     bool m_totalDetailHasBeenSet;
 
                     /**
                      * 筛选框
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AnalyseConditionDetail m_conditionValue;
                     bool m_conditionValueHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool CertificateIdsHasBeenSet() const;
 
                     /**
-                     * 获取资源类型:clb,cdn,live,waf,antiddos
-                     * @return ResourceType 资源类型:clb,cdn,live,waf,antiddos
+                     * 获取资源类型:clb,cdn,live,vod,waf,antiddos,teo
+                     * @return ResourceType 资源类型:clb,cdn,live,vod,waf,antiddos,teo
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置资源类型:clb,cdn,live,waf,antiddos
-                     * @param _resourceType 资源类型:clb,cdn,live,waf,antiddos
+                     * 设置资源类型:clb,cdn,live,vod,waf,antiddos,teo
+                     * @param _resourceType 资源类型:clb,cdn,live,vod,waf,antiddos,teo
                      * 
                      */
                     void SetResourceType(const std::string& _resourceType);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_certificateIdsHasBeenSet;
 
                     /**
-                     * 资源类型:clb,cdn,live,waf,antiddos
+                     * 资源类型:clb,cdn,live,vod,waf,antiddos,teo
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;

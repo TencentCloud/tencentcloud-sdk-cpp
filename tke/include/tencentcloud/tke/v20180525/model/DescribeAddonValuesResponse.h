@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取参数列表，如果addon已安装，会使用已设置的参数做渲染，是一个json格式的字符串
-                     * @return Values 参数列表，如果addon已安装，会使用已设置的参数做渲染，是一个json格式的字符串
+                     * 获取参数列表，如果addon已安装，会使用已设置的参数和chart里的默认参数做渲染，是一个json格式的字符串，未安装addon时返回为空值。
+                     * @return Values 参数列表，如果addon已安装，会使用已设置的参数和chart里的默认参数做渲染，是一个json格式的字符串，未安装addon时返回为空值。
                      * 
                      */
                     std::string GetValues() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool ValuesHasBeenSet() const;
 
                     /**
-                     * 获取addon支持的参数列表，使用默认值，是一个json格式的字符串
-                     * @return DefaultValues addon支持的参数列表，使用默认值，是一个json格式的字符串
+                     * 获取addon支持的参数列表，值为chart的默认值，是一个json格式的字符串。
+                     * @return DefaultValues addon支持的参数列表，值为chart的默认值，是一个json格式的字符串。
                      * 
                      */
                     std::string GetDefaultValues() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 参数列表，如果addon已安装，会使用已设置的参数做渲染，是一个json格式的字符串
+                     * 参数列表，如果addon已安装，会使用已设置的参数和chart里的默认参数做渲染，是一个json格式的字符串，未安装addon时返回为空值。
                      */
                     std::string m_values;
                     bool m_valuesHasBeenSet;
 
                     /**
-                     * addon支持的参数列表，使用默认值，是一个json格式的字符串
+                     * addon支持的参数列表，值为chart的默认值，是一个json格式的字符串。
                      */
                     std::string m_defaultValues;
                     bool m_defaultValuesHasBeenSet;

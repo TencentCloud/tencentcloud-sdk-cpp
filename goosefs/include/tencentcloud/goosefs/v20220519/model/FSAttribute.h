@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -114,18 +114,14 @@ namespace TencentCloud
 
                     /**
                      * 获取GooseFSx文件系统属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GooseFSxAttribute GooseFSx文件系统属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     GooseFSxAttribute GetGooseFSxAttribute() const;
 
                     /**
                      * 设置GooseFSx文件系统属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gooseFSxAttribute GooseFSx文件系统属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGooseFSxAttribute(const GooseFSxAttribute& _gooseFSxAttribute);
@@ -265,18 +261,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Tag数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tag Tag数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTag() const;
 
                     /**
                      * 设置Tag数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tag Tag数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTag(const std::vector<Tag>& _tag);
@@ -311,18 +303,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件系统付费信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChargeAttribute 文件系统付费信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ChargeAttribute GetChargeAttribute() const;
 
                     /**
                      * 设置文件系统付费信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _chargeAttribute 文件系统付费信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChargeAttribute(const ChargeAttribute& _chargeAttribute);
@@ -356,7 +344,6 @@ namespace TencentCloud
 
                     /**
                      * GooseFSx文件系统属性
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     GooseFSxAttribute m_gooseFSxAttribute;
                     bool m_gooseFSxAttributeHasBeenSet;
@@ -399,7 +386,6 @@ namespace TencentCloud
 
                     /**
                      * Tag数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tag;
                     bool m_tagHasBeenSet;
@@ -412,7 +398,6 @@ namespace TencentCloud
 
                     /**
                      * 文件系统付费信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ChargeAttribute m_chargeAttribute;
                     bool m_chargeAttributeHasBeenSet;

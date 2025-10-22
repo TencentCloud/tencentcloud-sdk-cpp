@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,7 +70,14 @@ InstanceInfo::InstanceInfo() :
     m_coolDownBucketHasBeenSet(false),
     m_detailsHasBeenSet(false),
     m_enableDlcHasBeenSet(false),
-    m_accountTypeHasBeenSet(false)
+    m_accountTypeHasBeenSet(false),
+    m_monitorModeHasBeenSet(false),
+    m_cNSummaryHasBeenSet(false),
+    m_computeGroupCountHasBeenSet(false),
+    m_cosStorageSizeHasBeenSet(false),
+    m_isMasterNonVMHasBeenSet(false),
+    m_cosPkgCapacityHasBeenSet(false),
+    m_useManagedBucketHasBeenSet(false)
 {
 }
 
@@ -616,6 +623,83 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_accountTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("MonitorMode") && !value["MonitorMode"].IsNull())
+    {
+        if (!value["MonitorMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.MonitorMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_monitorMode = value["MonitorMode"].GetInt64();
+        m_monitorModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CNSummary") && !value["CNSummary"].IsNull())
+    {
+        if (!value["CNSummary"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.CNSummary` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_cNSummary.Deserialize(value["CNSummary"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_cNSummaryHasBeenSet = true;
+    }
+
+    if (value.HasMember("ComputeGroupCount") && !value["ComputeGroupCount"].IsNull())
+    {
+        if (!value["ComputeGroupCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.ComputeGroupCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_computeGroupCount = value["ComputeGroupCount"].GetInt64();
+        m_computeGroupCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("CosStorageSize") && !value["CosStorageSize"].IsNull())
+    {
+        if (!value["CosStorageSize"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.CosStorageSize` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_cosStorageSize = value["CosStorageSize"].GetDouble();
+        m_cosStorageSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsMasterNonVM") && !value["IsMasterNonVM"].IsNull())
+    {
+        if (!value["IsMasterNonVM"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.IsMasterNonVM` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isMasterNonVM = value["IsMasterNonVM"].GetBool();
+        m_isMasterNonVMHasBeenSet = true;
+    }
+
+    if (value.HasMember("CosPkgCapacity") && !value["CosPkgCapacity"].IsNull())
+    {
+        if (!value["CosPkgCapacity"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.CosPkgCapacity` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cosPkgCapacity = value["CosPkgCapacity"].GetInt64();
+        m_cosPkgCapacityHasBeenSet = true;
+    }
+
+    if (value.HasMember("UseManagedBucket") && !value["UseManagedBucket"].IsNull())
+    {
+        if (!value["UseManagedBucket"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.UseManagedBucket` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_useManagedBucket = value["UseManagedBucket"].GetBool();
+        m_useManagedBucketHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1041,6 +1125,63 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "AccountType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_accountType, allocator);
+    }
+
+    if (m_monitorModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MonitorMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_monitorMode, allocator);
+    }
+
+    if (m_cNSummaryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CNSummary";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_cNSummary.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_computeGroupCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComputeGroupCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_computeGroupCount, allocator);
+    }
+
+    if (m_cosStorageSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CosStorageSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cosStorageSize, allocator);
+    }
+
+    if (m_isMasterNonVMHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsMasterNonVM";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isMasterNonVM, allocator);
+    }
+
+    if (m_cosPkgCapacityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CosPkgCapacity";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cosPkgCapacity, allocator);
+    }
+
+    if (m_useManagedBucketHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseManagedBucket";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_useManagedBucket, allocator);
     }
 
 }
@@ -1844,5 +1985,117 @@ void InstanceInfo::SetAccountType(const int64_t& _accountType)
 bool InstanceInfo::AccountTypeHasBeenSet() const
 {
     return m_accountTypeHasBeenSet;
+}
+
+int64_t InstanceInfo::GetMonitorMode() const
+{
+    return m_monitorMode;
+}
+
+void InstanceInfo::SetMonitorMode(const int64_t& _monitorMode)
+{
+    m_monitorMode = _monitorMode;
+    m_monitorModeHasBeenSet = true;
+}
+
+bool InstanceInfo::MonitorModeHasBeenSet() const
+{
+    return m_monitorModeHasBeenSet;
+}
+
+NodesSummary InstanceInfo::GetCNSummary() const
+{
+    return m_cNSummary;
+}
+
+void InstanceInfo::SetCNSummary(const NodesSummary& _cNSummary)
+{
+    m_cNSummary = _cNSummary;
+    m_cNSummaryHasBeenSet = true;
+}
+
+bool InstanceInfo::CNSummaryHasBeenSet() const
+{
+    return m_cNSummaryHasBeenSet;
+}
+
+int64_t InstanceInfo::GetComputeGroupCount() const
+{
+    return m_computeGroupCount;
+}
+
+void InstanceInfo::SetComputeGroupCount(const int64_t& _computeGroupCount)
+{
+    m_computeGroupCount = _computeGroupCount;
+    m_computeGroupCountHasBeenSet = true;
+}
+
+bool InstanceInfo::ComputeGroupCountHasBeenSet() const
+{
+    return m_computeGroupCountHasBeenSet;
+}
+
+double InstanceInfo::GetCosStorageSize() const
+{
+    return m_cosStorageSize;
+}
+
+void InstanceInfo::SetCosStorageSize(const double& _cosStorageSize)
+{
+    m_cosStorageSize = _cosStorageSize;
+    m_cosStorageSizeHasBeenSet = true;
+}
+
+bool InstanceInfo::CosStorageSizeHasBeenSet() const
+{
+    return m_cosStorageSizeHasBeenSet;
+}
+
+bool InstanceInfo::GetIsMasterNonVM() const
+{
+    return m_isMasterNonVM;
+}
+
+void InstanceInfo::SetIsMasterNonVM(const bool& _isMasterNonVM)
+{
+    m_isMasterNonVM = _isMasterNonVM;
+    m_isMasterNonVMHasBeenSet = true;
+}
+
+bool InstanceInfo::IsMasterNonVMHasBeenSet() const
+{
+    return m_isMasterNonVMHasBeenSet;
+}
+
+int64_t InstanceInfo::GetCosPkgCapacity() const
+{
+    return m_cosPkgCapacity;
+}
+
+void InstanceInfo::SetCosPkgCapacity(const int64_t& _cosPkgCapacity)
+{
+    m_cosPkgCapacity = _cosPkgCapacity;
+    m_cosPkgCapacityHasBeenSet = true;
+}
+
+bool InstanceInfo::CosPkgCapacityHasBeenSet() const
+{
+    return m_cosPkgCapacityHasBeenSet;
+}
+
+bool InstanceInfo::GetUseManagedBucket() const
+{
+    return m_useManagedBucket;
+}
+
+void InstanceInfo::SetUseManagedBucket(const bool& _useManagedBucket)
+{
+    m_useManagedBucket = _useManagedBucket;
+    m_useManagedBucketHasBeenSet = true;
+}
+
+bool InstanceInfo::UseManagedBucketHasBeenSet() const
+{
+    return m_useManagedBucketHasBeenSet;
 }
 

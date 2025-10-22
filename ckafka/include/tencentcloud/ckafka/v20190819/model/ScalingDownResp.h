@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取订单号
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DealNames 订单号
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取订单号列表
+                     * @return DealNames 订单号列表
                      * 
                      */
                     std::vector<std::string> GetDealNames() const;
 
                     /**
-                     * 设置订单号
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dealNames 订单号
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置订单号列表
+                     * @param _dealNames 订单号列表
                      * 
                      */
                     void SetDealNames(const std::vector<std::string>& _dealNames);
@@ -74,8 +70,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 订单号
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 订单号列表
                      */
                     std::vector<std::string> m_dealNames;
                     bool m_dealNamesHasBeenSet;

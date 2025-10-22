@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,8 @@ using namespace std;
 
 NodeInfo::NodeInfo() :
     m_nodeIdHasBeenSet(false),
-    m_roleHasBeenSet(false)
+    m_roleHasBeenSet(false),
+    m_zoneHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome NodeInfo::Deserialize(const rapidjson::Value &value)
         m_roleHasBeenSet = true;
     }
 
+    if (value.HasMember("Zone") && !value["Zone"].IsNull())
+    {
+        if (!value["Zone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeInfo.Zone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zone = string(value["Zone"].GetString());
+        m_zoneHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void NodeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Role";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_role.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void NodeInfo::SetRole(const string& _role)
 bool NodeInfo::RoleHasBeenSet() const
 {
     return m_roleHasBeenSet;
+}
+
+string NodeInfo::GetZone() const
+{
+    return m_zone;
+}
+
+void NodeInfo::SetZone(const string& _zone)
+{
+    m_zone = _zone;
+    m_zoneHasBeenSet = true;
+}
+
+bool NodeInfo::ZoneHasBeenSet() const
+{
+    return m_zoneHasBeenSet;
 }
 

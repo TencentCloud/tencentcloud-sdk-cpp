@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,12 +106,10 @@ namespace TencentCloud
 
 <ul><li> **true** : 是发起方角色</li>
 <li> **false** : 不是发起方角色</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsPromoter 此角色是否是发起方角色
 
 <ul><li> **true** : 是发起方角色</li>
 <li> **false** : 不是发起方角色</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsPromoter() const;
@@ -121,12 +119,10 @@ namespace TencentCloud
 
 <ul><li> **true** : 是发起方角色</li>
 <li> **false** : 不是发起方角色</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isPromoter 此角色是否是发起方角色
 
 <ul><li> **true** : 是发起方角色</li>
 <li> **false** : 不是发起方角色</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsPromoter(const bool& _isPromoter);
@@ -140,18 +136,14 @@ namespace TencentCloud
 
                     /**
                      * 获取此角色的填写控件列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Components 此角色的填写控件列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FilledComponent> GetComponents() const;
 
                     /**
                      * 设置此角色的填写控件列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _components 此角色的填写控件列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComponents(const std::vector<FilledComponent>& _components);
@@ -185,14 +177,12 @@ namespace TencentCloud
 
 <ul><li> **true** : 是发起方角色</li>
 <li> **false** : 不是发起方角色</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isPromoter;
                     bool m_isPromoterHasBeenSet;
 
                     /**
                      * 此角色的填写控件列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FilledComponent> m_components;
                     bool m_componentsHasBeenSet;

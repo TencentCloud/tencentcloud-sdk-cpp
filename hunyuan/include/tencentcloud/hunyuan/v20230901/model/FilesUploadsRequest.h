@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取文件链接。目前仅支持 pdf 格式，单文件大小限制为100M。
-                     * @return URL 文件链接。目前仅支持 pdf 格式，单文件大小限制为100M。
+                     * 获取文件链接。目前支持 csv, doc, docx, pdf, ppt, pptx, txt, xls, xlsx 格式，单文件大小限制为100M。
+                     * @return URL 文件链接。目前支持 csv, doc, docx, pdf, ppt, pptx, txt, xls, xlsx 格式，单文件大小限制为100M。
                      * 
                      */
                     std::string GetURL() const;
 
                     /**
-                     * 设置文件链接。目前仅支持 pdf 格式，单文件大小限制为100M。
-                     * @param _uRL 文件链接。目前仅支持 pdf 格式，单文件大小限制为100M。
+                     * 设置文件链接。目前支持 csv, doc, docx, pdf, ppt, pptx, txt, xls, xlsx 格式，单文件大小限制为100M。
+                     * @param _uRL 文件链接。目前支持 csv, doc, docx, pdf, ppt, pptx, txt, xls, xlsx 格式，单文件大小限制为100M。
                      * 
                      */
                     void SetURL(const std::string& _uRL);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 文件链接。目前仅支持 pdf 格式，单文件大小限制为100M。
+                     * 文件链接。目前支持 csv, doc, docx, pdf, ppt, pptx, txt, xls, xlsx 格式，单文件大小限制为100M。
                      */
                     std::string m_uRL;
                     bool m_uRLHasBeenSet;

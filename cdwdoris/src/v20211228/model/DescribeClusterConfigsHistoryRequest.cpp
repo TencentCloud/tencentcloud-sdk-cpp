@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ DescribeClusterConfigsHistoryRequest::DescribeClusterConfigsHistoryRequest() :
     m_limitHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_configFileNamesHasBeenSet(false)
+    m_configFileNamesHasBeenSet(false),
+    m_computeGroupIdsHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,19 @@ string DescribeClusterConfigsHistoryRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_configFileNames.begin(); itr != m_configFileNames.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_computeGroupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComputeGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_computeGroupIds.begin(); itr != m_computeGroupIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -194,6 +208,22 @@ void DescribeClusterConfigsHistoryRequest::SetConfigFileNames(const vector<strin
 bool DescribeClusterConfigsHistoryRequest::ConfigFileNamesHasBeenSet() const
 {
     return m_configFileNamesHasBeenSet;
+}
+
+vector<string> DescribeClusterConfigsHistoryRequest::GetComputeGroupIds() const
+{
+    return m_computeGroupIds;
+}
+
+void DescribeClusterConfigsHistoryRequest::SetComputeGroupIds(const vector<string>& _computeGroupIds)
+{
+    m_computeGroupIds = _computeGroupIds;
+    m_computeGroupIdsHasBeenSet = true;
+}
+
+bool DescribeClusterConfigsHistoryRequest::ComputeGroupIdsHasBeenSet() const
+{
+    return m_computeGroupIdsHasBeenSet;
 }
 
 

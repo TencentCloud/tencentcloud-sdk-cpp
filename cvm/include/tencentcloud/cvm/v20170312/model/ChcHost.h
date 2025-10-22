@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@
 #include <tencentcloud/cvm/v20170312/model/Placement.h>
 #include <tencentcloud/cvm/v20170312/model/VirtualPrivateCloud.h>
 #include <tencentcloud/cvm/v20170312/model/ChcDeployExtraConfig.h>
+#include <tencentcloud/cvm/v20170312/model/Tag.h>
 
 
 namespace TencentCloud
@@ -167,18 +168,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceType 设备类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceType() const;
 
                     /**
                      * 设置设备类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceType 设备类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceType(const std::string& _deviceType);
@@ -213,18 +210,14 @@ namespace TencentCloud
 
                     /**
                      * 获取带外网络。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BmcVirtualPrivateCloud 带外网络。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     VirtualPrivateCloud GetBmcVirtualPrivateCloud() const;
 
                     /**
                      * 设置带外网络。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bmcVirtualPrivateCloud 带外网络。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBmcVirtualPrivateCloud(const VirtualPrivateCloud& _bmcVirtualPrivateCloud);
@@ -238,18 +231,14 @@ namespace TencentCloud
 
                     /**
                      * 获取带外网络Ip。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BmcIp 带外网络Ip。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBmcIp() const;
 
                     /**
                      * 设置带外网络Ip。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bmcIp 带外网络Ip。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBmcIp(const std::string& _bmcIp);
@@ -263,18 +252,14 @@ namespace TencentCloud
 
                     /**
                      * 获取带外网络安全组Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BmcSecurityGroupIds 带外网络安全组Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetBmcSecurityGroupIds() const;
 
                     /**
                      * 设置带外网络安全组Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bmcSecurityGroupIds 带外网络安全组Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBmcSecurityGroupIds(const std::vector<std::string>& _bmcSecurityGroupIds);
@@ -288,18 +273,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部署网络。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeployVirtualPrivateCloud 部署网络。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     VirtualPrivateCloud GetDeployVirtualPrivateCloud() const;
 
                     /**
                      * 设置部署网络。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deployVirtualPrivateCloud 部署网络。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeployVirtualPrivateCloud(const VirtualPrivateCloud& _deployVirtualPrivateCloud);
@@ -313,18 +294,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部署网络Ip。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeployIp 部署网络Ip。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeployIp() const;
 
                     /**
                      * 设置部署网络Ip。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deployIp 部署网络Ip。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeployIp(const std::string& _deployIp);
@@ -338,18 +315,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部署网络安全组Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeploySecurityGroupIds 部署网络安全组Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetDeploySecurityGroupIds() const;
 
                     /**
                      * 设置部署网络安全组Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deploySecurityGroupIds 部署网络安全组Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeploySecurityGroupIds(const std::vector<std::string>& _deploySecurityGroupIds);
@@ -363,18 +336,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联的云主机Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CvmInstanceId 关联的云主机Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCvmInstanceId() const;
 
                     /**
                      * 设置关联的云主机Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cvmInstanceId 关联的云主机Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCvmInstanceId(const std::string& _cvmInstanceId);
@@ -409,18 +378,14 @@ namespace TencentCloud
 
                     /**
                      * 获取机型的硬件描述，分别为CPU核数，内存容量和磁盘容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HardwareDescription 机型的硬件描述，分别为CPU核数，内存容量和磁盘容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHardwareDescription() const;
 
                     /**
                      * 设置机型的硬件描述，分别为CPU核数，内存容量和磁盘容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hardwareDescription 机型的硬件描述，分别为CPU核数，内存容量和磁盘容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHardwareDescription(const std::string& _hardwareDescription);
@@ -434,18 +399,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CHC物理服务器的CPU核数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CPU CHC物理服务器的CPU核数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCPU() const;
 
                     /**
                      * 设置CHC物理服务器的CPU核数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cPU CHC物理服务器的CPU核数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCPU(const int64_t& _cPU);
@@ -459,18 +420,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CHC物理服务器的内存大小，单位为GB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Memory CHC物理服务器的内存大小，单位为GB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMemory() const;
 
                     /**
                      * 设置CHC物理服务器的内存大小，单位为GB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _memory CHC物理服务器的内存大小，单位为GB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMemory(const int64_t& _memory);
@@ -484,18 +441,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CHC物理服务器的磁盘信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Disk CHC物理服务器的磁盘信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDisk() const;
 
                     /**
                      * 设置CHC物理服务器的磁盘信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _disk CHC物理服务器的磁盘信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDisk(const std::string& _disk);
@@ -509,18 +462,14 @@ namespace TencentCloud
 
                     /**
                      * 获取带外网络下分配的MAC地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BmcMAC 带外网络下分配的MAC地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBmcMAC() const;
 
                     /**
                      * 设置带外网络下分配的MAC地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bmcMAC 带外网络下分配的MAC地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBmcMAC(const std::string& _bmcMAC);
@@ -534,18 +483,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部署网络下分配的MAC地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeployMAC 部署网络下分配的MAC地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeployMAC() const;
 
                     /**
                      * 设置部署网络下分配的MAC地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deployMAC 部署网络下分配的MAC地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeployMAC(const std::string& _deployMAC);
@@ -561,11 +506,9 @@ namespace TencentCloud
                      * 获取设备托管类型。
 HOSTING: 托管
 TENANT: 租赁
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TenantType 设备托管类型。
 HOSTING: 托管
 TENANT: 租赁
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTenantType() const;
@@ -574,11 +517,9 @@ TENANT: 租赁
                      * 设置设备托管类型。
 HOSTING: 托管
 TENANT: 租赁
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tenantType 设备托管类型。
 HOSTING: 托管
 TENANT: 租赁
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTenantType(const std::string& _tenantType);
@@ -591,19 +532,15 @@ TENANT: 租赁
                     bool TenantTypeHasBeenSet() const;
 
                     /**
-                     * 获取chc dhcp选项，用于minios调试
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DeployExtraConfig chc dhcp选项，用于minios调试
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取chc dhcp选项，用于minios调试。
+                     * @return DeployExtraConfig chc dhcp选项，用于minios调试。
                      * 
                      */
                     ChcDeployExtraConfig GetDeployExtraConfig() const;
 
                     /**
-                     * 设置chc dhcp选项，用于minios调试
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _deployExtraConfig chc dhcp选项，用于minios调试
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置chc dhcp选项，用于minios调试。
+                     * @param _deployExtraConfig chc dhcp选项，用于minios调试。
                      * 
                      */
                     void SetDeployExtraConfig(const ChcDeployExtraConfig& _deployExtraConfig);
@@ -614,6 +551,345 @@ TENANT: 租赁
                      * 
                      */
                     bool DeployExtraConfigHasBeenSet() const;
+
+                    /**
+                     * 获取GPU型号。
+                     * @return Gpu GPU型号。
+                     * 
+                     */
+                    std::string GetGpu() const;
+
+                    /**
+                     * 设置GPU型号。
+                     * @param _gpu GPU型号。
+                     * 
+                     */
+                    void SetGpu(const std::string& _gpu);
+
+                    /**
+                     * 判断参数 Gpu 是否已赋值
+                     * @return Gpu 是否已赋值
+                     * 
+                     */
+                    bool GpuHasBeenSet() const;
+
+                    /**
+                     * 获取网卡型号。主要指RDMA网卡。
+                     * @return NetworkCard 网卡型号。主要指RDMA网卡。
+                     * 
+                     */
+                    std::string GetNetworkCard() const;
+
+                    /**
+                     * 设置网卡型号。主要指RDMA网卡。
+                     * @param _networkCard 网卡型号。主要指RDMA网卡。
+                     * 
+                     */
+                    void SetNetworkCard(const std::string& _networkCard);
+
+                    /**
+                     * 判断参数 NetworkCard 是否已赋值
+                     * @return NetworkCard 是否已赋值
+                     * 
+                     */
+                    bool NetworkCardHasBeenSet() const;
+
+                    /**
+                     * 获取是否是预定义机型。
+                     * @return IsPredefinedType 是否是预定义机型。
+                     * 
+                     */
+                    bool GetIsPredefinedType() const;
+
+                    /**
+                     * 设置是否是预定义机型。
+                     * @param _isPredefinedType 是否是预定义机型。
+                     * 
+                     */
+                    void SetIsPredefinedType(const bool& _isPredefinedType);
+
+                    /**
+                     * 判断参数 IsPredefinedType 是否已赋值
+                     * @return IsPredefinedType 是否已赋值
+                     * 
+                     */
+                    bool IsPredefinedTypeHasBeenSet() const;
+
+                    /**
+                     * 获取CHC云主机机型。
+                     * @return ChcInstanceType CHC云主机机型。
+                     * 
+                     */
+                    std::string GetChcInstanceType() const;
+
+                    /**
+                     * 设置CHC云主机机型。
+                     * @param _chcInstanceType CHC云主机机型。
+                     * 
+                     */
+                    void SetChcInstanceType(const std::string& _chcInstanceType);
+
+                    /**
+                     * 判断参数 ChcInstanceType 是否已赋值
+                     * @return ChcInstanceType 是否已赋值
+                     * 
+                     */
+                    bool ChcInstanceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取CHC云主机机型簇。
+                     * @return ChcInstanceFamily CHC云主机机型簇。
+                     * 
+                     */
+                    std::string GetChcInstanceFamily() const;
+
+                    /**
+                     * 设置CHC云主机机型簇。
+                     * @param _chcInstanceFamily CHC云主机机型簇。
+                     * 
+                     */
+                    void SetChcInstanceFamily(const std::string& _chcInstanceFamily);
+
+                    /**
+                     * 判断参数 ChcInstanceFamily 是否已赋值
+                     * @return ChcInstanceFamily 是否已赋值
+                     * 
+                     */
+                    bool ChcInstanceFamilyHasBeenSet() const;
+
+                    /**
+                     * 获取CHC云主机机型簇名称。
+                     * @return ChcInstanceFamilyName CHC云主机机型簇名称。
+                     * 
+                     */
+                    std::string GetChcInstanceFamilyName() const;
+
+                    /**
+                     * 设置CHC云主机机型簇名称。
+                     * @param _chcInstanceFamilyName CHC云主机机型簇名称。
+                     * 
+                     */
+                    void SetChcInstanceFamilyName(const std::string& _chcInstanceFamilyName);
+
+                    /**
+                     * 判断参数 ChcInstanceFamilyName 是否已赋值
+                     * @return ChcInstanceFamilyName 是否已赋值
+                     * 
+                     */
+                    bool ChcInstanceFamilyNameHasBeenSet() const;
+
+                    /**
+                     * 获取转售客户的AppId。
+                     * @return ResaleAppId 转售客户的AppId。
+                     * 
+                     */
+                    std::string GetResaleAppId() const;
+
+                    /**
+                     * 设置转售客户的AppId。
+                     * @param _resaleAppId 转售客户的AppId。
+                     * 
+                     */
+                    void SetResaleAppId(const std::string& _resaleAppId);
+
+                    /**
+                     * 判断参数 ResaleAppId 是否已赋值
+                     * @return ResaleAppId 是否已赋值
+                     * 
+                     */
+                    bool ResaleAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取转售客户的账号ID。
+                     * @return ResaleAccountId 转售客户的账号ID。
+                     * 
+                     */
+                    std::string GetResaleAccountId() const;
+
+                    /**
+                     * 设置转售客户的账号ID。
+                     * @param _resaleAccountId 转售客户的账号ID。
+                     * 
+                     */
+                    void SetResaleAccountId(const std::string& _resaleAccountId);
+
+                    /**
+                     * 判断参数 ResaleAccountId 是否已赋值
+                     * @return ResaleAccountId 是否已赋值
+                     * 
+                     */
+                    bool ResaleAccountIdHasBeenSet() const;
+
+                    /**
+                     * 获取售卖状态。<br/>
+<ul>
+<li>NOT_FOR_SALE:不可售卖</li>
+<li>AVAILABLE: 可售卖</li>
+<li>SOLD: 已售卖</li>
+</ul>
+
+                     * @return SaleStatus 售卖状态。<br/>
+<ul>
+<li>NOT_FOR_SALE:不可售卖</li>
+<li>AVAILABLE: 可售卖</li>
+<li>SOLD: 已售卖</li>
+</ul>
+
+                     * 
+                     */
+                    std::string GetSaleStatus() const;
+
+                    /**
+                     * 设置售卖状态。<br/>
+<ul>
+<li>NOT_FOR_SALE:不可售卖</li>
+<li>AVAILABLE: 可售卖</li>
+<li>SOLD: 已售卖</li>
+</ul>
+
+                     * @param _saleStatus 售卖状态。<br/>
+<ul>
+<li>NOT_FOR_SALE:不可售卖</li>
+<li>AVAILABLE: 可售卖</li>
+<li>SOLD: 已售卖</li>
+</ul>
+
+                     * 
+                     */
+                    void SetSaleStatus(const std::string& _saleStatus);
+
+                    /**
+                     * 判断参数 SaleStatus 是否已赋值
+                     * @return SaleStatus 是否已赋值
+                     * 
+                     */
+                    bool SaleStatusHasBeenSet() const;
+
+                    /**
+                     * 获取CHC物理服务器关联的标签列表。
+                     * @return Tags CHC物理服务器关联的标签列表。
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置CHC物理服务器关联的标签列表。
+                     * @param _tags CHC物理服务器关联的标签列表。
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
+                    /**
+                     * 获取最近操作
+                     * @return LatestOperation 最近操作
+                     * 
+                     */
+                    std::string GetLatestOperation() const;
+
+                    /**
+                     * 设置最近操作
+                     * @param _latestOperation 最近操作
+                     * 
+                     */
+                    void SetLatestOperation(const std::string& _latestOperation);
+
+                    /**
+                     * 判断参数 LatestOperation 是否已赋值
+                     * @return LatestOperation 是否已赋值
+                     * 
+                     */
+                    bool LatestOperationHasBeenSet() const;
+
+                    /**
+                     * 获取最近操作错误码
+                     * @return LatestOperationErrorCode 最近操作错误码
+                     * 
+                     */
+                    std::string GetLatestOperationErrorCode() const;
+
+                    /**
+                     * 设置最近操作错误码
+                     * @param _latestOperationErrorCode 最近操作错误码
+                     * 
+                     */
+                    void SetLatestOperationErrorCode(const std::string& _latestOperationErrorCode);
+
+                    /**
+                     * 判断参数 LatestOperationErrorCode 是否已赋值
+                     * @return LatestOperationErrorCode 是否已赋值
+                     * 
+                     */
+                    bool LatestOperationErrorCodeHasBeenSet() const;
+
+                    /**
+                     * 获取最近操作错误详情和建议项
+                     * @return LatestOperationErrorMsg 最近操作错误详情和建议项
+                     * 
+                     */
+                    std::string GetLatestOperationErrorMsg() const;
+
+                    /**
+                     * 设置最近操作错误详情和建议项
+                     * @param _latestOperationErrorMsg 最近操作错误详情和建议项
+                     * 
+                     */
+                    void SetLatestOperationErrorMsg(const std::string& _latestOperationErrorMsg);
+
+                    /**
+                     * 判断参数 LatestOperationErrorMsg 是否已赋值
+                     * @return LatestOperationErrorMsg 是否已赋值
+                     * 
+                     */
+                    bool LatestOperationErrorMsgHasBeenSet() const;
+
+                    /**
+                     * 获取最近操作名称
+                     * @return LatestOperationName 最近操作名称
+                     * 
+                     */
+                    std::string GetLatestOperationName() const;
+
+                    /**
+                     * 设置最近操作名称
+                     * @param _latestOperationName 最近操作名称
+                     * 
+                     */
+                    void SetLatestOperationName(const std::string& _latestOperationName);
+
+                    /**
+                     * 判断参数 LatestOperationName 是否已赋值
+                     * @return LatestOperationName 是否已赋值
+                     * 
+                     */
+                    bool LatestOperationNameHasBeenSet() const;
+
+                    /**
+                     * 获取最近操作状态
+                     * @return LatestOperationState 最近操作状态
+                     * 
+                     */
+                    std::string GetLatestOperationState() const;
+
+                    /**
+                     * 设置最近操作状态
+                     * @param _latestOperationState 最近操作状态
+                     * 
+                     */
+                    void SetLatestOperationState(const std::string& _latestOperationState);
+
+                    /**
+                     * 判断参数 LatestOperationState 是否已赋值
+                     * @return LatestOperationState 是否已赋值
+                     * 
+                     */
+                    bool LatestOperationStateHasBeenSet() const;
 
                 private:
 
@@ -651,7 +927,6 @@ TENANT: 租赁
 
                     /**
                      * 设备类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceType;
                     bool m_deviceTypeHasBeenSet;
@@ -664,49 +939,42 @@ TENANT: 租赁
 
                     /**
                      * 带外网络。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     VirtualPrivateCloud m_bmcVirtualPrivateCloud;
                     bool m_bmcVirtualPrivateCloudHasBeenSet;
 
                     /**
                      * 带外网络Ip。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bmcIp;
                     bool m_bmcIpHasBeenSet;
 
                     /**
                      * 带外网络安全组Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_bmcSecurityGroupIds;
                     bool m_bmcSecurityGroupIdsHasBeenSet;
 
                     /**
                      * 部署网络。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     VirtualPrivateCloud m_deployVirtualPrivateCloud;
                     bool m_deployVirtualPrivateCloudHasBeenSet;
 
                     /**
                      * 部署网络Ip。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deployIp;
                     bool m_deployIpHasBeenSet;
 
                     /**
                      * 部署网络安全组Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_deploySecurityGroupIds;
                     bool m_deploySecurityGroupIdsHasBeenSet;
 
                     /**
                      * 关联的云主机Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cvmInstanceId;
                     bool m_cvmInstanceIdHasBeenSet;
@@ -719,42 +987,36 @@ TENANT: 租赁
 
                     /**
                      * 机型的硬件描述，分别为CPU核数，内存容量和磁盘容量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hardwareDescription;
                     bool m_hardwareDescriptionHasBeenSet;
 
                     /**
                      * CHC物理服务器的CPU核数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cPU;
                     bool m_cPUHasBeenSet;
 
                     /**
                      * CHC物理服务器的内存大小，单位为GB
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
                      * CHC物理服务器的磁盘信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_disk;
                     bool m_diskHasBeenSet;
 
                     /**
                      * 带外网络下分配的MAC地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bmcMAC;
                     bool m_bmcMACHasBeenSet;
 
                     /**
                      * 部署网络下分配的MAC地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deployMAC;
                     bool m_deployMACHasBeenSet;
@@ -763,17 +1025,111 @@ TENANT: 租赁
                      * 设备托管类型。
 HOSTING: 托管
 TENANT: 租赁
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tenantType;
                     bool m_tenantTypeHasBeenSet;
 
                     /**
-                     * chc dhcp选项，用于minios调试
-注意：此字段可能返回 null，表示取不到有效值。
+                     * chc dhcp选项，用于minios调试。
                      */
                     ChcDeployExtraConfig m_deployExtraConfig;
                     bool m_deployExtraConfigHasBeenSet;
+
+                    /**
+                     * GPU型号。
+                     */
+                    std::string m_gpu;
+                    bool m_gpuHasBeenSet;
+
+                    /**
+                     * 网卡型号。主要指RDMA网卡。
+                     */
+                    std::string m_networkCard;
+                    bool m_networkCardHasBeenSet;
+
+                    /**
+                     * 是否是预定义机型。
+                     */
+                    bool m_isPredefinedType;
+                    bool m_isPredefinedTypeHasBeenSet;
+
+                    /**
+                     * CHC云主机机型。
+                     */
+                    std::string m_chcInstanceType;
+                    bool m_chcInstanceTypeHasBeenSet;
+
+                    /**
+                     * CHC云主机机型簇。
+                     */
+                    std::string m_chcInstanceFamily;
+                    bool m_chcInstanceFamilyHasBeenSet;
+
+                    /**
+                     * CHC云主机机型簇名称。
+                     */
+                    std::string m_chcInstanceFamilyName;
+                    bool m_chcInstanceFamilyNameHasBeenSet;
+
+                    /**
+                     * 转售客户的AppId。
+                     */
+                    std::string m_resaleAppId;
+                    bool m_resaleAppIdHasBeenSet;
+
+                    /**
+                     * 转售客户的账号ID。
+                     */
+                    std::string m_resaleAccountId;
+                    bool m_resaleAccountIdHasBeenSet;
+
+                    /**
+                     * 售卖状态。<br/>
+<ul>
+<li>NOT_FOR_SALE:不可售卖</li>
+<li>AVAILABLE: 可售卖</li>
+<li>SOLD: 已售卖</li>
+</ul>
+
+                     */
+                    std::string m_saleStatus;
+                    bool m_saleStatusHasBeenSet;
+
+                    /**
+                     * CHC物理服务器关联的标签列表。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
+
+                    /**
+                     * 最近操作
+                     */
+                    std::string m_latestOperation;
+                    bool m_latestOperationHasBeenSet;
+
+                    /**
+                     * 最近操作错误码
+                     */
+                    std::string m_latestOperationErrorCode;
+                    bool m_latestOperationErrorCodeHasBeenSet;
+
+                    /**
+                     * 最近操作错误详情和建议项
+                     */
+                    std::string m_latestOperationErrorMsg;
+                    bool m_latestOperationErrorMsgHasBeenSet;
+
+                    /**
+                     * 最近操作名称
+                     */
+                    std::string m_latestOperationName;
+                    bool m_latestOperationNameHasBeenSet;
+
+                    /**
+                     * 最近操作状态
+                     */
+                    std::string m_latestOperationState;
+                    bool m_latestOperationStateHasBeenSet;
 
                 };
             }

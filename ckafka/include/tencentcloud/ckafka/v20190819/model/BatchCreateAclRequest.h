@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
+                     * @return InstanceId ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
+                     * @param _instanceId ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取资源列表数组
-                     * @return ResourceNames 资源列表数组
+                     * 获取资源列表数组，可通过[DescribeTopic](https://cloud.tencent.com/document/product/597/40847)接口获取。
+                     * @return ResourceNames 资源列表数组，可通过[DescribeTopic](https://cloud.tencent.com/document/product/597/40847)接口获取。
                      * 
                      */
                     std::vector<std::string> GetResourceNames() const;
 
                     /**
-                     * 设置资源列表数组
-                     * @param _resourceNames 资源列表数组
+                     * 设置资源列表数组，可通过[DescribeTopic](https://cloud.tencent.com/document/product/597/40847)接口获取。
+                     * @param _resourceNames 资源列表数组，可通过[DescribeTopic](https://cloud.tencent.com/document/product/597/40847)接口获取。
                      * 
                      */
                     void SetResourceNames(const std::vector<std::string>& _resourceNames);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool ResourceNamesHasBeenSet() const;
 
                     /**
-                     * 获取设置的ACL规则列表
-                     * @return RuleList 设置的ACL规则列表
+                     * 获取设置的ACL规则列表，可通过[DescribeAclRule](https://cloud.tencent.com/document/product/597/89217)接口获取。
+                     * @return RuleList 设置的ACL规则列表，可通过[DescribeAclRule](https://cloud.tencent.com/document/product/597/89217)接口获取。
                      * 
                      */
                     std::vector<AclRuleInfo> GetRuleList() const;
 
                     /**
-                     * 设置设置的ACL规则列表
-                     * @param _ruleList 设置的ACL规则列表
+                     * 设置设置的ACL规则列表，可通过[DescribeAclRule](https://cloud.tencent.com/document/product/597/89217)接口获取。
+                     * @param _ruleList 设置的ACL规则列表，可通过[DescribeAclRule](https://cloud.tencent.com/document/product/597/89217)接口获取。
                      * 
                      */
                     void SetRuleList(const std::vector<AclRuleInfo>& _ruleList);
@@ -130,7 +130,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -142,13 +142,13 @@ namespace TencentCloud
                     bool m_resourceTypeHasBeenSet;
 
                     /**
-                     * 资源列表数组
+                     * 资源列表数组，可通过[DescribeTopic](https://cloud.tencent.com/document/product/597/40847)接口获取。
                      */
                     std::vector<std::string> m_resourceNames;
                     bool m_resourceNamesHasBeenSet;
 
                     /**
-                     * 设置的ACL规则列表
+                     * 设置的ACL规则列表，可通过[DescribeAclRule](https://cloud.tencent.com/document/product/597/89217)接口获取。
                      */
                     std::vector<AclRuleInfo> m_ruleList;
                     bool m_ruleListHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用访问端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port 应用访问端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置应用访问端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _port 应用访问端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用监听端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetPort 应用监听端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTargetPort() const;
 
                     /**
                      * 设置应用监听端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _targetPort 应用监听端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTargetPort(const int64_t& _targetPort);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取协议类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocol 协议类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置协议类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _protocol 协议类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 应用访问端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
                      * 应用监听端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_targetPort;
                     bool m_targetPortHasBeenSet;
 
                     /**
                      * 协议类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;

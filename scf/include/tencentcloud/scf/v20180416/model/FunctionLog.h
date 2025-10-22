@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取函数执行结果，如果是 0 表示执行成功，其他值表示失败
-                     * @return RetCode 函数执行结果，如果是 0 表示执行成功，其他值表示失败
+                     * 获取函数执行结果，如果是 0 表示执行成功，2表示函数运行中，3表示函数执行中断，其他值表示失败
+                     * @return RetCode 函数执行结果，如果是 0 表示执行成功，2表示函数运行中，3表示函数执行中断，其他值表示失败
                      * 
                      */
                     int64_t GetRetCode() const;
 
                     /**
-                     * 设置函数执行结果，如果是 0 表示执行成功，其他值表示失败
-                     * @param _retCode 函数执行结果，如果是 0 表示执行成功，其他值表示失败
+                     * 设置函数执行结果，如果是 0 表示执行成功，2表示函数运行中，3表示函数执行中断，其他值表示失败
+                     * @param _retCode 函数执行结果，如果是 0 表示执行成功，2表示函数运行中，3表示函数执行中断，其他值表示失败
                      * 
                      */
                     void SetRetCode(const int64_t& _retCode);
@@ -259,42 +259,42 @@ namespace TencentCloud
                     /**
                      * 获取日志等级
                      * @return Level 日志等级
-                     * 
+                     * @deprecated
                      */
                     std::string GetLevel() const;
 
                     /**
                      * 设置日志等级
                      * @param _level 日志等级
-                     * 
+                     * @deprecated
                      */
                     void SetLevel(const std::string& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool LevelHasBeenSet() const;
 
                     /**
                      * 获取日志来源
                      * @return Source 日志来源
-                     * 
+                     * @deprecated
                      */
                     std::string GetSource() const;
 
                     /**
                      * 设置日志来源
                      * @param _source 日志来源
-                     * 
+                     * @deprecated
                      */
                     void SetSource(const std::string& _source);
 
                     /**
                      * 判断参数 Source 是否已赋值
                      * @return Source 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool SourceHasBeenSet() const;
 
@@ -346,7 +346,7 @@ namespace TencentCloud
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 函数执行结果，如果是 0 表示执行成功，其他值表示失败
+                     * 函数执行结果，如果是 0 表示执行成功，2表示函数运行中，3表示函数执行中断，其他值表示失败
                      */
                     int64_t m_retCode;
                     bool m_retCodeHasBeenSet;

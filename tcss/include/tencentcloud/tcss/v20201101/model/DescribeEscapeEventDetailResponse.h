@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -105,9 +105,7 @@ namespace TencentCloud
 
                     /**
                      * 获取祖先进程信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AncestorProcessInfo 祖先进程信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ProcessBaseInfo GetAncestorProcessInfo() const;
@@ -147,7 +145,6 @@ namespace TencentCloud
 
                     /**
                      * 祖先进程信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ProcessBaseInfo m_ancestorProcessInfo;
                     bool m_ancestorProcessInfoHasBeenSet;

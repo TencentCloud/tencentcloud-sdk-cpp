@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,18 +54,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Identifier 规则标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIdentifier() const;
 
                     /**
                      * 设置规则标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _identifier 规则标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIdentifier(const std::string& _identifier);
@@ -79,18 +75,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleName 规则名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置规则名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleName 规则名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleName(const std::string& _ruleName);
@@ -104,18 +96,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InputParameter 规则参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<InputParameter> GetInputParameter() const;
 
                     /**
                      * 设置规则参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _inputParameter 规则参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInputParameter(const std::vector<InputParameter>& _inputParameter);
@@ -129,18 +117,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则触发条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceCondition 规则触发条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SourceConditionForManage> GetSourceCondition() const;
 
                     /**
                      * 设置规则触发条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sourceCondition 规则触发条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSourceCondition(const std::vector<SourceConditionForManage>& _sourceCondition);
@@ -154,18 +138,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则支持的资源类型，规则仅对指定资源类型的资源生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceType 规则支持的资源类型，规则仅对指定资源类型的资源生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetResourceType() const;
 
                     /**
                      * 设置规则支持的资源类型，规则仅对指定资源类型的资源生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceType 规则支持的资源类型，规则仅对指定资源类型的资源生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceType(const std::vector<std::string>& _resourceType);
@@ -179,18 +159,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则所属标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Labels 规则所属标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetLabels() const;
 
                     /**
                      * 设置规则所属标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _labels 规则所属标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabels(const std::vector<std::string>& _labels);
@@ -207,12 +183,10 @@ namespace TencentCloud
 1:低风险
 2:中风险
 3:高风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskLevel 规则风险等级
 1:低风险
 2:中风险
 3:高风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRiskLevel() const;
@@ -222,12 +196,10 @@ namespace TencentCloud
 1:低风险
 2:中风险
 3:高风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskLevel 规则风险等级
 1:低风险
 2:中风险
 3:高风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskLevel(const int64_t& _riskLevel);
@@ -241,18 +213,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则对应的函数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceFunction 规则对应的函数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceFunction() const;
 
                     /**
                      * 设置规则对应的函数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceFunction 规则对应的函数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceFunction(const std::string& _serviceFunction);
@@ -267,10 +235,8 @@ namespace TencentCloud
                     /**
                      * 获取创建时间
 格式：YYYY-MM-DD h:i:s
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
 格式：YYYY-MM-DD h:i:s
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
@@ -278,10 +244,8 @@ namespace TencentCloud
                     /**
                      * 设置创建时间
 格式：YYYY-MM-DD h:i:s
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
 格式：YYYY-MM-DD h:i:s
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -295,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -321,10 +281,8 @@ namespace TencentCloud
                     /**
                      * 获取ACTIVE：启用
 NO_ACTIVE：停止
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status ACTIVE：启用
 NO_ACTIVE：停止
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
@@ -332,10 +290,8 @@ NO_ACTIVE：停止
                     /**
                      * 设置ACTIVE：启用
 NO_ACTIVE：停止
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status ACTIVE：启用
 NO_ACTIVE：停止
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -351,11 +307,9 @@ NO_ACTIVE：停止
                      * 获取合规： 'COMPLIANT'
 不合规： 'NON_COMPLIANT'
 无法应用规则： 'NOT_APPLICABLE'
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComplianceResult 合规： 'COMPLIANT'
 不合规： 'NON_COMPLIANT'
 无法应用规则： 'NOT_APPLICABLE'
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComplianceResult() const;
@@ -364,11 +318,9 @@ NO_ACTIVE：停止
                      * 设置合规： 'COMPLIANT'
 不合规： 'NON_COMPLIANT'
 无法应用规则： 'NOT_APPLICABLE'
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _complianceResult 合规： 'COMPLIANT'
 不合规： 'NON_COMPLIANT'
 无法应用规则： 'NOT_APPLICABLE'
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComplianceResult(const std::string& _complianceResult);
@@ -382,18 +334,14 @@ NO_ACTIVE：停止
 
                     /**
                      * 获取["",""]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Annotation ["",""]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Annotation GetAnnotation() const;
 
                     /**
                      * 设置["",""]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _annotation ["",""]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAnnotation(const Annotation& _annotation);
@@ -409,11 +357,9 @@ NO_ACTIVE：停止
                      * 获取规则评估时间
 格式：YYYY-MM-DD h:i:s
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigRuleInvokedTime 规则评估时间
 格式：YYYY-MM-DD h:i:s
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConfigRuleInvokedTime() const;
@@ -422,11 +368,9 @@ NO_ACTIVE：停止
                      * 设置规则评估时间
 格式：YYYY-MM-DD h:i:s
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configRuleInvokedTime 规则评估时间
 格式：YYYY-MM-DD h:i:s
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigRuleInvokedTime(const std::string& _configRuleInvokedTime);
@@ -440,18 +384,14 @@ NO_ACTIVE：停止
 
                     /**
                      * 获取规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigRuleId 规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConfigRuleId() const;
 
                     /**
                      * 设置规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configRuleId 规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigRuleId(const std::string& _configRuleId);
@@ -466,10 +406,8 @@ NO_ACTIVE：停止
                     /**
                      * 获取CUSTOMIZE：自定义规则、
 SYSTEM：托管规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdentifierType CUSTOMIZE：自定义规则、
 SYSTEM：托管规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIdentifierType() const;
@@ -477,10 +415,8 @@ SYSTEM：托管规则
                     /**
                      * 设置CUSTOMIZE：自定义规则、
 SYSTEM：托管规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _identifierType CUSTOMIZE：自定义规则、
 SYSTEM：托管规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIdentifierType(const std::string& _identifierType);
@@ -494,18 +430,14 @@ SYSTEM：托管规则
 
                     /**
                      * 获取合规包ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompliancePackId 合规包ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCompliancePackId() const;
 
                     /**
                      * 设置合规包ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _compliancePackId 合规包ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCompliancePackId(const std::string& _compliancePackId);
@@ -521,11 +453,9 @@ SYSTEM：托管规则
                      * 获取触发类型
 ScheduledNotification：周期触发、
 ConfigurationItemChangeNotification：变更触发
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TriggerType 触发类型
 ScheduledNotification：周期触发、
 ConfigurationItemChangeNotification：变更触发
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TriggerType> GetTriggerType() const;
@@ -534,11 +464,9 @@ ConfigurationItemChangeNotification：变更触发
                      * 设置触发类型
 ScheduledNotification：周期触发、
 ConfigurationItemChangeNotification：变更触发
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _triggerType 触发类型
 ScheduledNotification：周期触发、
 ConfigurationItemChangeNotification：变更触发
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTriggerType(const std::vector<TriggerType>& _triggerType);
@@ -552,18 +480,14 @@ ConfigurationItemChangeNotification：变更触发
 
                     /**
                      * 获取参数详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ManageInputParameter 参数详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<InputParameterForManage> GetManageInputParameter() const;
 
                     /**
                      * 设置参数详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _manageInputParameter 参数详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetManageInputParameter(const std::vector<InputParameterForManage>& _manageInputParameter);
@@ -576,19 +500,15 @@ ConfigurationItemChangeNotification：变更触发
                     bool ManageInputParameterHasBeenSet() const;
 
                     /**
-                     * 获取规则名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CompliancePackName 规则名称
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取合规包名称
+                     * @return CompliancePackName 合规包名称
                      * 
                      */
                     std::string GetCompliancePackName() const;
 
                     /**
-                     * 设置规则名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _compliancePackName 规则名称
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置合规包名称
+                     * @param _compliancePackName 合规包名称
                      * 
                      */
                     void SetCompliancePackName(const std::string& _compliancePackName);
@@ -602,18 +522,14 @@ ConfigurationItemChangeNotification：变更触发
 
                     /**
                      * 获取关联地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionsScope 关联地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetRegionsScope() const;
 
                     /**
                      * 设置关联地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionsScope 关联地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionsScope(const std::vector<std::string>& _regionsScope);
@@ -627,18 +543,14 @@ ConfigurationItemChangeNotification：变更触发
 
                     /**
                      * 获取关联标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagsScope 关联标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTagsScope() const;
 
                     /**
                      * 设置关联标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tagsScope 关联标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTagsScope(const std::vector<Tag>& _tagsScope);
@@ -652,18 +564,14 @@ ConfigurationItemChangeNotification：变更触发
 
                     /**
                      * 获取 规则对指定资源ID无效，即不对该资源执行评估。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExcludeResourceIdsScope  规则对指定资源ID无效，即不对该资源执行评估。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetExcludeResourceIdsScope() const;
 
                     /**
                      * 设置 规则对指定资源ID无效，即不对该资源执行评估。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _excludeResourceIdsScope  规则对指定资源ID无效，即不对该资源执行评估。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExcludeResourceIdsScope(const std::vector<std::string>& _excludeResourceIdsScope);
@@ -677,18 +585,14 @@ ConfigurationItemChangeNotification：变更触发
 
                     /**
                      * 获取账号组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccountGroupId 账号组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccountGroupId() const;
 
                     /**
                      * 设置账号组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accountGroupId 账号组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccountGroupId(const std::string& _accountGroupId);
@@ -702,18 +606,14 @@ ConfigurationItemChangeNotification：变更触发
 
                     /**
                      * 获取账号组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccountGroupName 账号组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccountGroupName() const;
 
                     /**
                      * 设置账号组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accountGroupName 账号组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccountGroupName(const std::string& _accountGroupName);
@@ -727,18 +627,14 @@ ConfigurationItemChangeNotification：变更触发
 
                     /**
                      * 获取规则所属用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleOwnerId 规则所属用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRuleOwnerId() const;
 
                     /**
                      * 设置规则所属用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleOwnerId 规则所属用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleOwnerId(const uint64_t& _ruleOwnerId);
@@ -783,42 +679,36 @@ ConfigurationItemChangeNotification：变更触发
 
                     /**
                      * 规则标识
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_identifier;
                     bool m_identifierHasBeenSet;
 
                     /**
                      * 规则名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;
 
                     /**
                      * 规则参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<InputParameter> m_inputParameter;
                     bool m_inputParameterHasBeenSet;
 
                     /**
                      * 规则触发条件
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SourceConditionForManage> m_sourceCondition;
                     bool m_sourceConditionHasBeenSet;
 
                     /**
                      * 规则支持的资源类型，规则仅对指定资源类型的资源生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_resourceType;
                     bool m_resourceTypeHasBeenSet;
 
                     /**
                      * 规则所属标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_labels;
                     bool m_labelsHasBeenSet;
@@ -828,14 +718,12 @@ ConfigurationItemChangeNotification：变更触发
 1:低风险
 2:中风险
 3:高风险
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_riskLevel;
                     bool m_riskLevelHasBeenSet;
 
                     /**
                      * 规则对应的函数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceFunction;
                     bool m_serviceFunctionHasBeenSet;
@@ -843,14 +731,12 @@ ConfigurationItemChangeNotification：变更触发
                     /**
                      * 创建时间
 格式：YYYY-MM-DD h:i:s
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
@@ -858,7 +744,6 @@ ConfigurationItemChangeNotification：变更触发
                     /**
                      * ACTIVE：启用
 NO_ACTIVE：停止
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
@@ -867,14 +752,12 @@ NO_ACTIVE：停止
                      * 合规： 'COMPLIANT'
 不合规： 'NON_COMPLIANT'
 无法应用规则： 'NOT_APPLICABLE'
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_complianceResult;
                     bool m_complianceResultHasBeenSet;
 
                     /**
                      * ["",""]
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Annotation m_annotation;
                     bool m_annotationHasBeenSet;
@@ -883,14 +766,12 @@ NO_ACTIVE：停止
                      * 规则评估时间
 格式：YYYY-MM-DD h:i:s
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_configRuleInvokedTime;
                     bool m_configRuleInvokedTimeHasBeenSet;
 
                     /**
                      * 规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_configRuleId;
                     bool m_configRuleIdHasBeenSet;
@@ -898,14 +779,12 @@ NO_ACTIVE：停止
                     /**
                      * CUSTOMIZE：自定义规则、
 SYSTEM：托管规则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_identifierType;
                     bool m_identifierTypeHasBeenSet;
 
                     /**
                      * 合规包ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_compliancePackId;
                     bool m_compliancePackIdHasBeenSet;
@@ -914,63 +793,54 @@ SYSTEM：托管规则
                      * 触发类型
 ScheduledNotification：周期触发、
 ConfigurationItemChangeNotification：变更触发
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TriggerType> m_triggerType;
                     bool m_triggerTypeHasBeenSet;
 
                     /**
                      * 参数详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<InputParameterForManage> m_manageInputParameter;
                     bool m_manageInputParameterHasBeenSet;
 
                     /**
-                     * 规则名称
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 合规包名称
                      */
                     std::string m_compliancePackName;
                     bool m_compliancePackNameHasBeenSet;
 
                     /**
                      * 关联地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_regionsScope;
                     bool m_regionsScopeHasBeenSet;
 
                     /**
                      * 关联标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tagsScope;
                     bool m_tagsScopeHasBeenSet;
 
                     /**
                      *  规则对指定资源ID无效，即不对该资源执行评估。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_excludeResourceIdsScope;
                     bool m_excludeResourceIdsScopeHasBeenSet;
 
                     /**
                      * 账号组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accountGroupId;
                     bool m_accountGroupIdHasBeenSet;
 
                     /**
                      * 账号组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accountGroupName;
                     bool m_accountGroupNameHasBeenSet;
 
                     /**
                      * 规则所属用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_ruleOwnerId;
                     bool m_ruleOwnerIdHasBeenSet;

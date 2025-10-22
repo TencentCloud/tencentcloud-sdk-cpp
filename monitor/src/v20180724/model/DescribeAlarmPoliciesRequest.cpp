@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,7 +48,9 @@ DescribeAlarmPoliciesRequest::DescribeAlarmPoliciesRequest() :
     m_notInstanceGroupHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_promInsIdHasBeenSet(false),
-    m_receiverOnCallFormIDsHasBeenSet(false)
+    m_receiverOnCallFormIDsHasBeenSet(false),
+    m_noticeContentTmplIDsHasBeenSet(false),
+    m_isPredefinedHasBeenSet(false)
 {
 }
 
@@ -334,6 +336,27 @@ string DescribeAlarmPoliciesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_noticeContentTmplIDsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NoticeContentTmplIDs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_noticeContentTmplIDs.begin(); itr != m_noticeContentTmplIDs.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_isPredefinedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsPredefined";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isPredefined, allocator);
     }
 
 
@@ -758,6 +781,38 @@ void DescribeAlarmPoliciesRequest::SetReceiverOnCallFormIDs(const vector<string>
 bool DescribeAlarmPoliciesRequest::ReceiverOnCallFormIDsHasBeenSet() const
 {
     return m_receiverOnCallFormIDsHasBeenSet;
+}
+
+vector<string> DescribeAlarmPoliciesRequest::GetNoticeContentTmplIDs() const
+{
+    return m_noticeContentTmplIDs;
+}
+
+void DescribeAlarmPoliciesRequest::SetNoticeContentTmplIDs(const vector<string>& _noticeContentTmplIDs)
+{
+    m_noticeContentTmplIDs = _noticeContentTmplIDs;
+    m_noticeContentTmplIDsHasBeenSet = true;
+}
+
+bool DescribeAlarmPoliciesRequest::NoticeContentTmplIDsHasBeenSet() const
+{
+    return m_noticeContentTmplIDsHasBeenSet;
+}
+
+int64_t DescribeAlarmPoliciesRequest::GetIsPredefined() const
+{
+    return m_isPredefined;
+}
+
+void DescribeAlarmPoliciesRequest::SetIsPredefined(const int64_t& _isPredefined)
+{
+    m_isPredefined = _isPredefined;
+    m_isPredefinedHasBeenSet = true;
+}
+
+bool DescribeAlarmPoliciesRequest::IsPredefinedHasBeenSet() const
+{
+    return m_isPredefinedHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,9 @@ namespace TencentCloud
                      * 获取开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭；</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Switch 开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭；</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSwitch() const;
@@ -64,11 +62,9 @@ namespace TencentCloud
                      * 设置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭；</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _switch 开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭；</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -82,18 +78,14 @@ namespace TencentCloud
 
                     /**
                      * 获取基础管控规则。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IpTableRules 基础管控规则。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<IpTableRule> GetIpTableRules() const;
 
                     /**
                      * 设置基础管控规则。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ipTableRules 基础管控规则。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIpTableRules(const std::vector<IpTableRule>& _ipTableRules);
@@ -111,14 +103,12 @@ namespace TencentCloud
                      * 开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭；</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
                      * 基础管控规则。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<IpTableRule> m_ipTableRules;
                     bool m_ipTableRulesHasBeenSet;

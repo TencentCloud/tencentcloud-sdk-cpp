@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,6 +52,7 @@ DomainsPartInfo::DomainsPartInfo() :
     m_tLSVersionHasBeenSet(false),
     m_ciphersHasBeenSet(false),
     m_cipherTemplateHasBeenSet(false),
+    m_proxyConnectTimeoutHasBeenSet(false),
     m_proxyReadTimeoutHasBeenSet(false),
     m_proxySendTimeoutHasBeenSet(false),
     m_sniTypeHasBeenSet(false),
@@ -70,7 +71,12 @@ DomainsPartInfo::DomainsPartInfo() :
     m_gmEncCertHasBeenSet(false),
     m_gmEncPrivateKeyHasBeenSet(false),
     m_gmSSLIdHasBeenSet(false),
-    m_labelsHasBeenSet(false)
+    m_labelsHasBeenSet(false),
+    m_probeStatusHasBeenSet(false),
+    m_upstreamPolicyHasBeenSet(false),
+    m_upstreamRulesHasBeenSet(false),
+    m_useCaseHasBeenSet(false),
+    m_gzipHasBeenSet(false)
 {
 }
 
@@ -405,6 +411,16 @@ CoreInternalOutcome DomainsPartInfo::Deserialize(const rapidjson::Value &value)
         m_cipherTemplateHasBeenSet = true;
     }
 
+    if (value.HasMember("ProxyConnectTimeout") && !value["ProxyConnectTimeout"].IsNull())
+    {
+        if (!value["ProxyConnectTimeout"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.ProxyConnectTimeout` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_proxyConnectTimeout = value["ProxyConnectTimeout"].GetInt64();
+        m_proxyConnectTimeoutHasBeenSet = true;
+    }
+
     if (value.HasMember("ProxyReadTimeout") && !value["ProxyReadTimeout"].IsNull())
     {
         if (!value["ProxyReadTimeout"].IsInt64())
@@ -602,6 +618,66 @@ CoreInternalOutcome DomainsPartInfo::Deserialize(const rapidjson::Value &value)
             m_labels.push_back((*itr).GetString());
         }
         m_labelsHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProbeStatus") && !value["ProbeStatus"].IsNull())
+    {
+        if (!value["ProbeStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.ProbeStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_probeStatus = value["ProbeStatus"].GetInt64();
+        m_probeStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpstreamPolicy") && !value["UpstreamPolicy"].IsNull())
+    {
+        if (!value["UpstreamPolicy"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.UpstreamPolicy` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_upstreamPolicy = value["UpstreamPolicy"].GetInt64();
+        m_upstreamPolicyHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpstreamRules") && !value["UpstreamRules"].IsNull())
+    {
+        if (!value["UpstreamRules"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.UpstreamRules` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["UpstreamRules"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            UpstreamRule item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_upstreamRules.push_back(item);
+        }
+        m_upstreamRulesHasBeenSet = true;
+    }
+
+    if (value.HasMember("UseCase") && !value["UseCase"].IsNull())
+    {
+        if (!value["UseCase"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.UseCase` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_useCase = value["UseCase"].GetInt64();
+        m_useCaseHasBeenSet = true;
+    }
+
+    if (value.HasMember("Gzip") && !value["Gzip"].IsNull())
+    {
+        if (!value["Gzip"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.Gzip` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_gzip = value["Gzip"].GetInt64();
+        m_gzipHasBeenSet = true;
     }
 
 
@@ -876,6 +952,14 @@ void DomainsPartInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         value.AddMember(iKey, m_cipherTemplate, allocator);
     }
 
+    if (m_proxyConnectTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyConnectTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_proxyConnectTimeout, allocator);
+    }
+
     if (m_proxyReadTimeoutHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -1041,6 +1125,53 @@ void DomainsPartInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_probeStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProbeStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_probeStatus, allocator);
+    }
+
+    if (m_upstreamPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpstreamPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_upstreamPolicy, allocator);
+    }
+
+    if (m_upstreamRulesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpstreamRules";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_upstreamRules.begin(); itr != m_upstreamRules.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_useCaseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseCase";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_useCase, allocator);
+    }
+
+    if (m_gzipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Gzip";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_gzip, allocator);
     }
 
 }
@@ -1542,6 +1673,22 @@ bool DomainsPartInfo::CipherTemplateHasBeenSet() const
     return m_cipherTemplateHasBeenSet;
 }
 
+int64_t DomainsPartInfo::GetProxyConnectTimeout() const
+{
+    return m_proxyConnectTimeout;
+}
+
+void DomainsPartInfo::SetProxyConnectTimeout(const int64_t& _proxyConnectTimeout)
+{
+    m_proxyConnectTimeout = _proxyConnectTimeout;
+    m_proxyConnectTimeoutHasBeenSet = true;
+}
+
+bool DomainsPartInfo::ProxyConnectTimeoutHasBeenSet() const
+{
+    return m_proxyConnectTimeoutHasBeenSet;
+}
+
 int64_t DomainsPartInfo::GetProxyReadTimeout() const
 {
     return m_proxyReadTimeout;
@@ -1844,5 +1991,85 @@ void DomainsPartInfo::SetLabels(const vector<string>& _labels)
 bool DomainsPartInfo::LabelsHasBeenSet() const
 {
     return m_labelsHasBeenSet;
+}
+
+int64_t DomainsPartInfo::GetProbeStatus() const
+{
+    return m_probeStatus;
+}
+
+void DomainsPartInfo::SetProbeStatus(const int64_t& _probeStatus)
+{
+    m_probeStatus = _probeStatus;
+    m_probeStatusHasBeenSet = true;
+}
+
+bool DomainsPartInfo::ProbeStatusHasBeenSet() const
+{
+    return m_probeStatusHasBeenSet;
+}
+
+int64_t DomainsPartInfo::GetUpstreamPolicy() const
+{
+    return m_upstreamPolicy;
+}
+
+void DomainsPartInfo::SetUpstreamPolicy(const int64_t& _upstreamPolicy)
+{
+    m_upstreamPolicy = _upstreamPolicy;
+    m_upstreamPolicyHasBeenSet = true;
+}
+
+bool DomainsPartInfo::UpstreamPolicyHasBeenSet() const
+{
+    return m_upstreamPolicyHasBeenSet;
+}
+
+vector<UpstreamRule> DomainsPartInfo::GetUpstreamRules() const
+{
+    return m_upstreamRules;
+}
+
+void DomainsPartInfo::SetUpstreamRules(const vector<UpstreamRule>& _upstreamRules)
+{
+    m_upstreamRules = _upstreamRules;
+    m_upstreamRulesHasBeenSet = true;
+}
+
+bool DomainsPartInfo::UpstreamRulesHasBeenSet() const
+{
+    return m_upstreamRulesHasBeenSet;
+}
+
+int64_t DomainsPartInfo::GetUseCase() const
+{
+    return m_useCase;
+}
+
+void DomainsPartInfo::SetUseCase(const int64_t& _useCase)
+{
+    m_useCase = _useCase;
+    m_useCaseHasBeenSet = true;
+}
+
+bool DomainsPartInfo::UseCaseHasBeenSet() const
+{
+    return m_useCaseHasBeenSet;
+}
+
+int64_t DomainsPartInfo::GetGzip() const
+{
+    return m_gzip;
+}
+
+void DomainsPartInfo::SetGzip(const int64_t& _gzip)
+{
+    m_gzip = _gzip;
+    m_gzipHasBeenSet = true;
+}
+
+bool DomainsPartInfo::GzipHasBeenSet() const
+{
+    return m_gzipHasBeenSet;
 }
 

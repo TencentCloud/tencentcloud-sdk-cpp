@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,31 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取风格ID，取值说明：2d_anime 2D动漫；3d_cartoon 3D卡通；3d_china 3D国潮；pixel_art	像素风。
-                     * @return StyleId 风格ID，取值说明：2d_anime 2D动漫；3d_cartoon 3D卡通；3d_china 3D国潮；pixel_art	像素风。
+                     * 获取风格ID。取值说明：
+2d_anime：2D动漫；
+3d_cartoon：3D卡通；
+3d_china：3D国潮；
+pixel_art：像素风。
+                     * @return StyleId 风格ID。取值说明：
+2d_anime：2D动漫；
+3d_cartoon：3D卡通；
+3d_china：3D国潮；
+pixel_art：像素风。
                      * 
                      */
                     std::string GetStyleId() const;
 
                     /**
-                     * 设置风格ID，取值说明：2d_anime 2D动漫；3d_cartoon 3D卡通；3d_china 3D国潮；pixel_art	像素风。
-                     * @param _styleId 风格ID，取值说明：2d_anime 2D动漫；3d_cartoon 3D卡通；3d_china 3D国潮；pixel_art	像素风。
+                     * 设置风格ID。取值说明：
+2d_anime：2D动漫；
+3d_cartoon：3D卡通；
+3d_china：3D国潮；
+pixel_art：像素风。
+                     * @param _styleId 风格ID。取值说明：
+2d_anime：2D动漫；
+3d_cartoon：3D卡通；
+3d_china：3D国潮；
+pixel_art：像素风。
                      * 
                      */
                     void SetStyleId(const std::string& _styleId);
@@ -105,23 +121,31 @@ namespace TencentCloud
                     bool VideoUrlHasBeenSet() const;
 
                     /**
-                     * 获取风格化强度 可选参数["low","medium","high"] 
-"low":风格化强度弱,"medium":"风格化强度中等","high":"风格化强度强" 
-默认为medium
-                     * @return StyleStrength 风格化强度 可选参数["low","medium","high"] 
-"low":风格化强度弱,"medium":"风格化强度中等","high":"风格化强度强" 
-默认为medium
+                     * 获取风格化强度。取值说明：
+low：风格化强度弱；
+medium：风格化强度中等；
+high：风格化强度强。
+默认值为medium。
+                     * @return StyleStrength 风格化强度。取值说明：
+low：风格化强度弱；
+medium：风格化强度中等；
+high：风格化强度强。
+默认值为medium。
                      * 
                      */
                     std::string GetStyleStrength() const;
 
                     /**
-                     * 设置风格化强度 可选参数["low","medium","high"] 
-"low":风格化强度弱,"medium":"风格化强度中等","high":"风格化强度强" 
-默认为medium
-                     * @param _styleStrength 风格化强度 可选参数["low","medium","high"] 
-"low":风格化强度弱,"medium":"风格化强度中等","high":"风格化强度强" 
-默认为medium
+                     * 设置风格化强度。取值说明：
+low：风格化强度弱；
+medium：风格化强度中等；
+high：风格化强度强。
+默认值为medium。
+                     * @param _styleStrength 风格化强度。取值说明：
+low：风格化强度弱；
+medium：风格化强度中等；
+high：风格化强度强。
+默认值为medium。
                      * 
                      */
                     void SetStyleStrength(const std::string& _styleStrength);
@@ -136,7 +160,11 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 风格ID，取值说明：2d_anime 2D动漫；3d_cartoon 3D卡通；3d_china 3D国潮；pixel_art	像素风。
+                     * 风格ID。取值说明：
+2d_anime：2D动漫；
+3d_cartoon：3D卡通；
+3d_china：3D国潮；
+pixel_art：像素风。
                      */
                     std::string m_styleId;
                     bool m_styleIdHasBeenSet;
@@ -153,9 +181,11 @@ namespace TencentCloud
                     bool m_videoUrlHasBeenSet;
 
                     /**
-                     * 风格化强度 可选参数["low","medium","high"] 
-"low":风格化强度弱,"medium":"风格化强度中等","high":"风格化强度强" 
-默认为medium
+                     * 风格化强度。取值说明：
+low：风格化强度弱；
+medium：风格化强度中等；
+high：风格化强度强。
+默认值为medium。
                      */
                     std::string m_styleStrength;
                     bool m_styleStrengthHasBeenSet;

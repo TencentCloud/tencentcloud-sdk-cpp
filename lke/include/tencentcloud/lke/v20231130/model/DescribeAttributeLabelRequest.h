@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -189,6 +189,27 @@ namespace TencentCloud
                      */
                     bool LastLabelBizIdHasBeenSet() const;
 
+                    /**
+                     * 获取查询范围 all(或者传空):标准词和相似词 standard:标准词 similar:相似词
+                     * @return QueryScope 查询范围 all(或者传空):标准词和相似词 standard:标准词 similar:相似词
+                     * 
+                     */
+                    std::string GetQueryScope() const;
+
+                    /**
+                     * 设置查询范围 all(或者传空):标准词和相似词 standard:标准词 similar:相似词
+                     * @param _queryScope 查询范围 all(或者传空):标准词和相似词 standard:标准词 similar:相似词
+                     * 
+                     */
+                    void SetQueryScope(const std::string& _queryScope);
+
+                    /**
+                     * 判断参数 QueryScope 是否已赋值
+                     * @return QueryScope 是否已赋值
+                     * 
+                     */
+                    bool QueryScopeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -232,6 +253,12 @@ namespace TencentCloud
                      */
                     std::string m_lastLabelBizId;
                     bool m_lastLabelBizIdHasBeenSet;
+
+                    /**
+                     * 查询范围 all(或者传空):标准词和相似词 standard:标准词 similar:相似词
+                     */
+                    std::string m_queryScope;
+                    bool m_queryScopeHasBeenSet;
 
                 };
             }

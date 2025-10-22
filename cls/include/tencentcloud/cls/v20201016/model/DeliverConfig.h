@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,18 +53,18 @@ namespace TencentCloud
  ap-guangzhou  广州地域；
 ap-nanjing 南京地域。
 
-详细信息请查看官网：
+详细信息请查看官网[地域和访问域名](https://cloud.tencent.com/document/product/614/18940)
 
-https://cloud.tencent.com/document/product/614/18940
+
                      * @return Region 地域信息。
 
 示例：
  ap-guangzhou  广州地域；
 ap-nanjing 南京地域。
 
-详细信息请查看官网：
+详细信息请查看官网[地域和访问域名](https://cloud.tencent.com/document/product/614/18940)
 
-https://cloud.tencent.com/document/product/614/18940
+
                      * 
                      */
                     std::string GetRegion() const;
@@ -76,18 +76,18 @@ https://cloud.tencent.com/document/product/614/18940
  ap-guangzhou  广州地域；
 ap-nanjing 南京地域。
 
-详细信息请查看官网：
+详细信息请查看官网[地域和访问域名](https://cloud.tencent.com/document/product/614/18940)
 
-https://cloud.tencent.com/document/product/614/18940
+
                      * @param _region 地域信息。
 
 示例：
  ap-guangzhou  广州地域；
 ap-nanjing 南京地域。
 
-详细信息请查看官网：
+详细信息请查看官网[地域和访问域名](https://cloud.tencent.com/document/product/614/18940)
 
-https://cloud.tencent.com/document/product/614/18940
+
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -100,15 +100,15 @@ https://cloud.tencent.com/document/product/614/18940
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取日志主题ID。
-                     * @return TopicId 日志主题ID。
+                     * 获取日志主题ID。-通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题ID
+                     * @return TopicId 日志主题ID。-通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题ID
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置日志主题ID。
-                     * @param _topicId 日志主题ID。
+                     * 设置日志主题ID。-通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题ID
+                     * @param _topicId 日志主题ID。-通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题ID
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -166,15 +166,15 @@ https://cloud.tencent.com/document/product/614/18940
  ap-guangzhou  广州地域；
 ap-nanjing 南京地域。
 
-详细信息请查看官网：
+详细信息请查看官网[地域和访问域名](https://cloud.tencent.com/document/product/614/18940)
 
-https://cloud.tencent.com/document/product/614/18940
+
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 日志主题ID。
+                     * 日志主题ID。-通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题ID
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;

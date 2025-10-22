@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取代理地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyAddress 代理地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetProxyAddress() const;
 
                     /**
                      * 设置代理地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _proxyAddress 代理地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProxyAddress(const std::vector<std::string>& _proxyAddress);
@@ -95,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataSourceName 数据源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataSourceName() const;
 
                     /**
                      * 设置数据源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataSourceName 数据源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataSourceName(const std::string& _dataSourceName);
@@ -120,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扫描任务条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Condition 扫描任务条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DspaDiscoveryTaskCOSCondition GetCondition() const;
 
                     /**
                      * 设置扫描任务条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _condition 扫描任务条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCondition(const DspaDiscoveryTaskCOSCondition& _condition);
@@ -145,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceRegion 资源所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceRegion() const;
 
                     /**
                      * 设置资源所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceRegion 资源所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceRegion(const std::string& _resourceRegion);
@@ -178,28 +162,24 @@ namespace TencentCloud
 
                     /**
                      * 代理地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_proxyAddress;
                     bool m_proxyAddressHasBeenSet;
 
                     /**
                      * 数据源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataSourceName;
                     bool m_dataSourceNameHasBeenSet;
 
                     /**
                      * 扫描任务条件
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DspaDiscoveryTaskCOSCondition m_condition;
                     bool m_conditionHasBeenSet;
 
                     /**
                      * 资源所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceRegion;
                     bool m_resourceRegionHasBeenSet;

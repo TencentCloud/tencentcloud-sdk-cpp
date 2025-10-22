@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool LastTimeHasBeenSet() const;
 
                     /**
-                     * 获取发布状态
-                     * @return Status 发布状态
+                     * 获取发布状态 ， 1-待发布 , 2-发布中 , 3-发布成功 , 4-发布失败 , 5-审核中 , 6-审核成功 , 7-审核失败 , 8-发布成功回调处理中 , 9-发布暂停 , 10-申诉审核中 , 11-申诉审核通过 , 12-申诉审核不通过
+                     * @return Status 发布状态 ， 1-待发布 , 2-发布中 , 3-发布成功 , 4-发布失败 , 5-审核中 , 6-审核成功 , 7-审核失败 , 8-发布成功回调处理中 , 9-发布暂停 , 10-申诉审核中 , 11-申诉审核通过 , 12-申诉审核不通过
                      * 
                      */
                     int64_t GetStatus() const;
@@ -72,10 +72,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取是否编辑过
-
-                     * @return IsUpdated 是否编辑过
-
+                     * 获取是否编辑过, 当为true的时候表示可以发布
+                     * @return IsUpdated 是否编辑过, 当为true的时候表示可以发布
                      * 
                      */
                     bool GetIsUpdated() const;
@@ -112,14 +110,13 @@ namespace TencentCloud
                     bool m_lastTimeHasBeenSet;
 
                     /**
-                     * 发布状态
+                     * 发布状态 ， 1-待发布 , 2-发布中 , 3-发布成功 , 4-发布失败 , 5-审核中 , 6-审核成功 , 7-审核失败 , 8-发布成功回调处理中 , 9-发布暂停 , 10-申诉审核中 , 11-申诉审核通过 , 12-申诉审核不通过
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 是否编辑过
-
+                     * 是否编辑过, 当为true的时候表示可以发布
                      */
                     bool m_isUpdated;
                     bool m_isUpdatedHasBeenSet;

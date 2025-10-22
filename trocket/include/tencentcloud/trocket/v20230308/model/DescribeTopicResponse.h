@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,8 +111,8 @@ TRANSACTION:事务消息
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取创建时间，秒为单位
-                     * @return CreatedTime 创建时间，秒为单位
+                     * 获取创建时间，**Unix时间戳（毫秒）**
+                     * @return CreatedTime 创建时间，**Unix时间戳（毫秒）**
                      * 
                      */
                     int64_t GetCreatedTime() const;
@@ -125,8 +125,8 @@ TRANSACTION:事务消息
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取最后写入时间，秒为单位
-                     * @return LastUpdateTime 最后写入时间，秒为单位
+                     * 获取最后写入时间，**Unix时间戳（毫秒）**
+                     * @return LastUpdateTime 最后写入时间，**Unix时间戳（毫秒）**
                      * 
                      */
                     int64_t GetLastUpdateTime() const;
@@ -167,8 +167,8 @@ TRANSACTION:事务消息
                     bool SubscriptionDataHasBeenSet() const;
 
                     /**
-                     * 获取消息保留时长
-                     * @return MsgTTL 消息保留时长
+                     * 获取消息保留时长，单位：小时
+                     * @return MsgTTL 消息保留时长，单位：小时
                      * 
                      */
                     int64_t GetMsgTTL() const;
@@ -212,13 +212,13 @@ TRANSACTION:事务消息
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 创建时间，秒为单位
+                     * 创建时间，**Unix时间戳（毫秒）**
                      */
                     int64_t m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 最后写入时间，秒为单位
+                     * 最后写入时间，**Unix时间戳（毫秒）**
                      */
                     int64_t m_lastUpdateTime;
                     bool m_lastUpdateTimeHasBeenSet;
@@ -236,7 +236,7 @@ TRANSACTION:事务消息
                     bool m_subscriptionDataHasBeenSet;
 
                     /**
-                     * 消息保留时长
+                     * 消息保留时长，单位：小时
                      */
                     int64_t m_msgTTL;
                     bool m_msgTTLHasBeenSet;

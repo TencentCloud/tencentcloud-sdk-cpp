@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取源地域，例如：ap-shanghai
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceRegion 源地域，例如：ap-shanghai
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSourceRegion() const;
 
                     /**
                      * 设置源地域，例如：ap-shanghai
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sourceRegion 源地域，例如：ap-shanghai
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSourceRegion(const std::string& _sourceRegion);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取目的地域， 例如：ap-shanghai
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DestinationRegion 目的地域， 例如：ap-shanghai
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDestinationRegion() const;
 
                     /**
                      * 设置目的地域， 例如：ap-shanghai
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _destinationRegion 目的地域， 例如：ap-shanghai
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDestinationRegion(const std::string& _destinationRegion);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出带宽上限，单位：Mbps。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BandwidthLimit 出带宽上限，单位：Mbps。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetBandwidthLimit() const;
 
                     /**
                      * 设置出带宽上限，单位：Mbps。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bandwidthLimit 出带宽上限，单位：Mbps。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBandwidthLimit(const uint64_t& _bandwidthLimit);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 源地域，例如：ap-shanghai
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sourceRegion;
                     bool m_sourceRegionHasBeenSet;
 
                     /**
                      * 目的地域， 例如：ap-shanghai
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_destinationRegion;
                     bool m_destinationRegionHasBeenSet;
 
                     /**
                      * 出带宽上限，单位：Mbps。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_bandwidthLimit;
                     bool m_bandwidthLimitHasBeenSet;

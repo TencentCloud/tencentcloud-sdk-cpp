@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tse/v20201207/model/Metadata.h>
 
 
 namespace TencentCloud
@@ -132,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务别名的描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Comment 服务别名的描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComment() const;
 
                     /**
                      * 设置服务别名的描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _comment 服务别名的描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComment(const std::string& _comment);
@@ -157,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务别名创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 服务别名创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置服务别名创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 服务别名创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -182,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务别名修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyTime 服务别名修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置服务别名修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyTime 服务别名修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -207,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务别名ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 服务别名ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置服务别名ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 服务别名ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -232,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该服务别名是否可以编辑
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Editable 该服务别名是否可以编辑
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEditable() const;
 
                     /**
                      * 设置该服务别名是否可以编辑
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _editable 该服务别名是否可以编辑
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEditable(const bool& _editable);
@@ -254,6 +235,31 @@ namespace TencentCloud
                      * 
                      */
                     bool EditableHasBeenSet() const;
+
+                    /**
+                     * 获取元数据信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Metadatas 元数据信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<Metadata> GetMetadatas() const;
+
+                    /**
+                     * 设置元数据信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _metadatas 元数据信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMetadatas(const std::vector<Metadata>& _metadatas);
+
+                    /**
+                     * 判断参数 Metadatas 是否已赋值
+                     * @return Metadatas 是否已赋值
+                     * 
+                     */
+                    bool MetadatasHasBeenSet() const;
 
                 private:
 
@@ -283,38 +289,40 @@ namespace TencentCloud
 
                     /**
                      * 服务别名的描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
 
                     /**
                      * 服务别名创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 服务别名修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
                      * 服务别名ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 该服务别名是否可以编辑
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_editable;
                     bool m_editableHasBeenSet;
+
+                    /**
+                     * 元数据信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Metadata> m_metadatas;
+                    bool m_metadatasHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,19 +47,93 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取备机状态，enable-运行中，disable-不可用
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SlaveStatus 备机状态，enable-运行中，disable-不可用
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取备机资源ID
+                     * @return DrInstanceId 备机资源ID
+                     * 
+                     */
+                    std::string GetDrInstanceId() const;
+
+                    /**
+                     * 设置备机资源ID
+                     * @param _drInstanceId 备机资源ID
+                     * 
+                     */
+                    void SetDrInstanceId(const std::string& _drInstanceId);
+
+                    /**
+                     * 判断参数 DrInstanceId 是否已赋值
+                     * @return DrInstanceId 是否已赋值
+                     * 
+                     */
+                    bool DrInstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取备机可用区
+                     * @return Zone 备机可用区
+                     * 
+                     */
+                    std::string GetZone() const;
+
+                    /**
+                     * 设置备机可用区
+                     * @param _zone 备机可用区
+                     * 
+                     */
+                    void SetZone(const std::string& _zone);
+
+                    /**
+                     * 判断参数 Zone 是否已赋值
+                     * @return Zone 是否已赋值
+                     * 
+                     */
+                    bool ZoneHasBeenSet() const;
+
+                    /**
+                     * 获取备机状态
+DR_CREATING-备机创建中
+DR_RUNNING-备机运行中
+DR_UNAVAILABLE-备机不可用
+DR_ISOLATED-备机已隔离
+DR_RECYCLING-备机回收中
+DR_RECYCLED-备机已回收
+DR_JOB_RUNNING-备机执行任务中
+DR_OFFLINE-备机已下线
+DR_FAIL_OVER-备机只读故障转移中
+                     * @return SlaveStatus 备机状态
+DR_CREATING-备机创建中
+DR_RUNNING-备机运行中
+DR_UNAVAILABLE-备机不可用
+DR_ISOLATED-备机已隔离
+DR_RECYCLING-备机回收中
+DR_RECYCLED-备机已回收
+DR_JOB_RUNNING-备机执行任务中
+DR_OFFLINE-备机已下线
+DR_FAIL_OVER-备机只读故障转移中
                      * 
                      */
                     std::string GetSlaveStatus() const;
 
                     /**
-                     * 设置备机状态，enable-运行中，disable-不可用
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _slaveStatus 备机状态，enable-运行中，disable-不可用
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置备机状态
+DR_CREATING-备机创建中
+DR_RUNNING-备机运行中
+DR_UNAVAILABLE-备机不可用
+DR_ISOLATED-备机已隔离
+DR_RECYCLING-备机回收中
+DR_RECYCLED-备机已回收
+DR_JOB_RUNNING-备机执行任务中
+DR_OFFLINE-备机已下线
+DR_FAIL_OVER-备机只读故障转移中
+                     * @param _slaveStatus 备机状态
+DR_CREATING-备机创建中
+DR_RUNNING-备机运行中
+DR_UNAVAILABLE-备机不可用
+DR_ISOLATED-备机已隔离
+DR_RECYCLING-备机回收中
+DR_RECYCLED-备机已回收
+DR_JOB_RUNNING-备机执行任务中
+DR_OFFLINE-备机已下线
+DR_FAIL_OVER-备机只读故障转移中
                      * 
                      */
                     void SetSlaveStatus(const std::string& _slaveStatus);
@@ -73,18 +147,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备机可读状态，enable-已开启，disable-已关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReadableStatus 备机可读状态，enable-已开启，disable-已关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReadableStatus() const;
 
                     /**
                      * 设置备机可读状态，enable-已开启，disable-已关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _readableStatus 备机可读状态，enable-已开启，disable-已关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReadableStatus(const std::string& _readableStatus);
@@ -98,18 +168,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备机只读vip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vip 备机只读vip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置备机只读vip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vip 备机只读vip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVip(const std::string& _vip);
@@ -123,18 +189,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备机只读端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VPort 备机只读端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetVPort() const;
 
                     /**
                      * 设置备机只读端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vPort 备机只读端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVPort(const int64_t& _vPort);
@@ -148,18 +210,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备机所在私有网络ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UniqVpcId 备机所在私有网络ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
                      * 设置备机所在私有网络ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uniqVpcId 备机所在私有网络ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
@@ -173,18 +231,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备机所在私有网络子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UniqSubnetId 备机所在私有网络子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUniqSubnetId() const;
 
                     /**
                      * 设置备机所在私有网络子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uniqSubnetId 备机所在私有网络子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUniqSubnetId(const std::string& _uniqSubnetId);
@@ -196,49 +250,118 @@ namespace TencentCloud
                      */
                     bool UniqSubnetIdHasBeenSet() const;
 
+                    /**
+                     * 获取备机只读权重
+                     * @return RoWeight 备机只读权重
+                     * 
+                     */
+                    uint64_t GetRoWeight() const;
+
+                    /**
+                     * 设置备机只读权重
+                     * @param _roWeight 备机只读权重
+                     * 
+                     */
+                    void SetRoWeight(const uint64_t& _roWeight);
+
+                    /**
+                     * 判断参数 RoWeight 是否已赋值
+                     * @return RoWeight 是否已赋值
+                     * 
+                     */
+                    bool RoWeightHasBeenSet() const;
+
+                    /**
+                     * 获取备机只读模式，BalancedReadOnly-多备一读模式，SingleReadOnly-一备一读模式
+                     * @return ReadMode 备机只读模式，BalancedReadOnly-多备一读模式，SingleReadOnly-一备一读模式
+                     * 
+                     */
+                    std::string GetReadMode() const;
+
+                    /**
+                     * 设置备机只读模式，BalancedReadOnly-多备一读模式，SingleReadOnly-一备一读模式
+                     * @param _readMode 备机只读模式，BalancedReadOnly-多备一读模式，SingleReadOnly-一备一读模式
+                     * 
+                     */
+                    void SetReadMode(const std::string& _readMode);
+
+                    /**
+                     * 判断参数 ReadMode 是否已赋值
+                     * @return ReadMode 是否已赋值
+                     * 
+                     */
+                    bool ReadModeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 备机状态，enable-运行中，disable-不可用
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 备机资源ID
+                     */
+                    std::string m_drInstanceId;
+                    bool m_drInstanceIdHasBeenSet;
+
+                    /**
+                     * 备机可用区
+                     */
+                    std::string m_zone;
+                    bool m_zoneHasBeenSet;
+
+                    /**
+                     * 备机状态
+DR_CREATING-备机创建中
+DR_RUNNING-备机运行中
+DR_UNAVAILABLE-备机不可用
+DR_ISOLATED-备机已隔离
+DR_RECYCLING-备机回收中
+DR_RECYCLED-备机已回收
+DR_JOB_RUNNING-备机执行任务中
+DR_OFFLINE-备机已下线
+DR_FAIL_OVER-备机只读故障转移中
                      */
                     std::string m_slaveStatus;
                     bool m_slaveStatusHasBeenSet;
 
                     /**
                      * 备机可读状态，enable-已开启，disable-已关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_readableStatus;
                     bool m_readableStatusHasBeenSet;
 
                     /**
                      * 备机只读vip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
 
                     /**
                      * 备机只读端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_vPort;
                     bool m_vPortHasBeenSet;
 
                     /**
                      * 备机所在私有网络ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uniqVpcId;
                     bool m_uniqVpcIdHasBeenSet;
 
                     /**
                      * 备机所在私有网络子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uniqSubnetId;
                     bool m_uniqSubnetIdHasBeenSet;
+
+                    /**
+                     * 备机只读权重
+                     */
+                    uint64_t m_roWeight;
+                    bool m_roWeightHasBeenSet;
+
+                    /**
+                     * 备机只读模式，BalancedReadOnly-多备一读模式，SingleReadOnly-一备一读模式
+                     */
+                    std::string m_readMode;
+                    bool m_readModeHasBeenSet;
 
                 };
             }

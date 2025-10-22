@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取契约接口ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ID 契约接口ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetID() const;
 
                     /**
                      * 设置契约接口ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iD 契约接口ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetID(const std::string& _iD);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取方法名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Method 方法名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMethod() const;
 
                     /**
                      * 设置方法名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _method 方法名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMethod(const std::string& _method);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取路径/接口名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Path 路径/接口名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置路径/接口名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _path 路径/接口名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPath(const std::string& _path);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _content 内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContent(const std::string& _content);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Source 创建来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSource() const;
 
                     /**
                      * 设置创建来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _source 创建来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSource(const std::string& _source);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取信息摘要
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Revision 信息摘要
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRevision() const;
 
                     /**
                      * 设置信息摘要
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _revision 信息摘要
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRevision(const std::string& _revision);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyTime 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyTime 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接口名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 接口名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置接口名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 接口名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -275,63 +239,54 @@ namespace TencentCloud
 
                     /**
                      * 契约接口ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
                      * 方法名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_method;
                     bool m_methodHasBeenSet;
 
                     /**
                      * 路径/接口名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
 
                     /**
                      * 内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
 
                     /**
                      * 创建来源
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
                      * 信息摘要
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_revision;
                     bool m_revisionHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
                      * 接口名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

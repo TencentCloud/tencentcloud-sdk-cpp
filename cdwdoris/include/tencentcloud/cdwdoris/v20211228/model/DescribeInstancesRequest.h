@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -148,6 +148,27 @@ namespace TencentCloud
                      */
                     bool SearchTagsHasBeenSet() const;
 
+                    /**
+                     * 获取0 : 存算一体,1：存算分离,2:ALL
+                     * @return InstanceType 0 : 存算一体,1：存算分离,2:ALL
+                     * 
+                     */
+                    int64_t GetInstanceType() const;
+
+                    /**
+                     * 设置0 : 存算一体,1：存算分离,2:ALL
+                     * @param _instanceType 0 : 存算一体,1：存算分离,2:ALL
+                     * 
+                     */
+                    void SetInstanceType(const int64_t& _instanceType);
+
+                    /**
+                     * 判断参数 InstanceType 是否已赋值
+                     * @return InstanceType 是否已赋值
+                     * 
+                     */
+                    bool InstanceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +200,12 @@ namespace TencentCloud
                      */
                     std::vector<SearchTags> m_searchTags;
                     bool m_searchTagsHasBeenSet;
+
+                    /**
+                     * 0 : 存算一体,1：存算分离,2:ALL
+                     */
+                    int64_t m_instanceType;
+                    bool m_instanceTypeHasBeenSet;
 
                 };
             }

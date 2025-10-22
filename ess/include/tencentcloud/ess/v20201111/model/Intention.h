@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ess/v20201111/model/IntentionQuestion.h>
 #include <tencentcloud/ess/v20201111/model/IntentionAction.h>
+#include <tencentcloud/ess/v20201111/model/RuleIdConfig.h>
 
 
 namespace TencentCloud
@@ -88,10 +89,10 @@ namespace TencentCloud
                     bool IntentionTypeHasBeenSet() const;
 
                     /**
-                     * 获取意愿核身语音问答模式（即语音播报+语音回答）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。当前仅支持1轮问答。
+                     * 获取意愿核身语音问答模式（即语音播报+语音回答）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。支持传入1～10轮问答，最多为10轮。
 
 注：`选择问答模式时，此字段可不传，不传则使用默认语音文本：请问，您是否同意签署本协议？可语音回复“同意”或“不同意”。`
-                     * @return IntentionQuestions 意愿核身语音问答模式（即语音播报+语音回答）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。当前仅支持1轮问答。
+                     * @return IntentionQuestions 意愿核身语音问答模式（即语音播报+语音回答）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。支持传入1～10轮问答，最多为10轮。
 
 注：`选择问答模式时，此字段可不传，不传则使用默认语音文本：请问，您是否同意签署本协议？可语音回复“同意”或“不同意”。`
                      * 
@@ -99,10 +100,10 @@ namespace TencentCloud
                     std::vector<IntentionQuestion> GetIntentionQuestions() const;
 
                     /**
-                     * 设置意愿核身语音问答模式（即语音播报+语音回答）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。当前仅支持1轮问答。
+                     * 设置意愿核身语音问答模式（即语音播报+语音回答）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。支持传入1～10轮问答，最多为10轮。
 
 注：`选择问答模式时，此字段可不传，不传则使用默认语音文本：请问，您是否同意签署本协议？可语音回复“同意”或“不同意”。`
-                     * @param _intentionQuestions 意愿核身语音问答模式（即语音播报+语音回答）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。当前仅支持1轮问答。
+                     * @param _intentionQuestions 意愿核身语音问答模式（即语音播报+语音回答）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。支持传入1～10轮问答，最多为10轮。
 
 注：`选择问答模式时，此字段可不传，不传则使用默认语音文本：请问，您是否同意签署本协议？可语音回复“同意”或“不同意”。`
                      * 
@@ -117,10 +118,10 @@ namespace TencentCloud
                     bool IntentionQuestionsHasBeenSet() const;
 
                     /**
-                     * 获取意愿核身（点头确认模式）使用的文案，若未使用意愿核身（点头确认模式），则该字段无需传入。当前仅支持一个提示文本。
+                     * 获取意愿核身（点头确认模式）使用的文案，若未使用意愿核身（点头确认模式），则该字段无需传入。支持传入1～10轮点头确认文本，最多支持10轮。
 
 注：`选择点头模式时，此字段可不传，不传则使用默认语音文本：请问，您是否同意签署本协议？可点头同意。`
-                     * @return IntentionActions 意愿核身（点头确认模式）使用的文案，若未使用意愿核身（点头确认模式），则该字段无需传入。当前仅支持一个提示文本。
+                     * @return IntentionActions 意愿核身（点头确认模式）使用的文案，若未使用意愿核身（点头确认模式），则该字段无需传入。支持传入1～10轮点头确认文本，最多支持10轮。
 
 注：`选择点头模式时，此字段可不传，不传则使用默认语音文本：请问，您是否同意签署本协议？可点头同意。`
                      * 
@@ -128,10 +129,10 @@ namespace TencentCloud
                     std::vector<IntentionAction> GetIntentionActions() const;
 
                     /**
-                     * 设置意愿核身（点头确认模式）使用的文案，若未使用意愿核身（点头确认模式），则该字段无需传入。当前仅支持一个提示文本。
+                     * 设置意愿核身（点头确认模式）使用的文案，若未使用意愿核身（点头确认模式），则该字段无需传入。支持传入1～10轮点头确认文本，最多支持10轮。
 
 注：`选择点头模式时，此字段可不传，不传则使用默认语音文本：请问，您是否同意签署本协议？可点头同意。`
-                     * @param _intentionActions 意愿核身（点头确认模式）使用的文案，若未使用意愿核身（点头确认模式），则该字段无需传入。当前仅支持一个提示文本。
+                     * @param _intentionActions 意愿核身（点头确认模式）使用的文案，若未使用意愿核身（点头确认模式），则该字段无需传入。支持传入1～10轮点头确认文本，最多支持10轮。
 
 注：`选择点头模式时，此字段可不传，不传则使用默认语音文本：请问，您是否同意签署本协议？可点头同意。`
                      * 
@@ -144,6 +145,27 @@ namespace TencentCloud
                      * 
                      */
                     bool IntentionActionsHasBeenSet() const;
+
+                    /**
+                     * 获取视频核身相关配置
+                     * @return RuleIdConfig 视频核身相关配置
+                     * 
+                     */
+                    RuleIdConfig GetRuleIdConfig() const;
+
+                    /**
+                     * 设置视频核身相关配置
+                     * @param _ruleIdConfig 视频核身相关配置
+                     * 
+                     */
+                    void SetRuleIdConfig(const RuleIdConfig& _ruleIdConfig);
+
+                    /**
+                     * 判断参数 RuleIdConfig 是否已赋值
+                     * @return RuleIdConfig 是否已赋值
+                     * 
+                     */
+                    bool RuleIdConfigHasBeenSet() const;
 
                 private:
 
@@ -158,7 +180,7 @@ namespace TencentCloud
                     bool m_intentionTypeHasBeenSet;
 
                     /**
-                     * 意愿核身语音问答模式（即语音播报+语音回答）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。当前仅支持1轮问答。
+                     * 意愿核身语音问答模式（即语音播报+语音回答）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。支持传入1～10轮问答，最多为10轮。
 
 注：`选择问答模式时，此字段可不传，不传则使用默认语音文本：请问，您是否同意签署本协议？可语音回复“同意”或“不同意”。`
                      */
@@ -166,12 +188,18 @@ namespace TencentCloud
                     bool m_intentionQuestionsHasBeenSet;
 
                     /**
-                     * 意愿核身（点头确认模式）使用的文案，若未使用意愿核身（点头确认模式），则该字段无需传入。当前仅支持一个提示文本。
+                     * 意愿核身（点头确认模式）使用的文案，若未使用意愿核身（点头确认模式），则该字段无需传入。支持传入1～10轮点头确认文本，最多支持10轮。
 
 注：`选择点头模式时，此字段可不传，不传则使用默认语音文本：请问，您是否同意签署本协议？可点头同意。`
                      */
                     std::vector<IntentionAction> m_intentionActions;
                     bool m_intentionActionsHasBeenSet;
+
+                    /**
+                     * 视频核身相关配置
+                     */
+                    RuleIdConfig m_ruleIdConfig;
+                    bool m_ruleIdConfigHasBeenSet;
 
                 };
             }

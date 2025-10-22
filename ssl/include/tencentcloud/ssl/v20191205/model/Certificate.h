@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取根证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertCaId 根证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCertCaId() const;
 
                     /**
                      * 设置根证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _certCaId 根证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCertCaId(const std::string& _certCaId);
@@ -115,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证书认证模式：UNIDIRECTIONAL单向认证，MUTUAL双向认证
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SSLMode 证书认证模式：UNIDIRECTIONAL单向认证，MUTUAL双向认证
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSSLMode() const;
 
                     /**
                      * 设置证书认证模式：UNIDIRECTIONAL单向认证，MUTUAL双向认证
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sSLMode 证书认证模式：UNIDIRECTIONAL单向认证，MUTUAL双向认证
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSSLMode(const std::string& _sSLMode);
@@ -154,14 +146,12 @@ namespace TencentCloud
 
                     /**
                      * 根证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_certCaId;
                     bool m_certCaIdHasBeenSet;
 
                     /**
                      * 证书认证模式：UNIDIRECTIONAL单向认证，MUTUAL双向认证
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sSLMode;
                     bool m_sSLModeHasBeenSet;

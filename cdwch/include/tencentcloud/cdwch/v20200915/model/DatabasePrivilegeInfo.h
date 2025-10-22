@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,19 +69,15 @@ namespace TencentCloud
                     bool DatabaseNameHasBeenSet() const;
 
                     /**
-                     * 获取//库表权限，SELECT、INSERT_ALL、ALTER、TRUNCATE、DROP_TABLE、CREATE_TABLE、DROP_DATABASE
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DatabasePrivileges //库表权限，SELECT、INSERT_ALL、ALTER、TRUNCATE、DROP_TABLE、CREATE_TABLE、DROP_DATABASE
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取库表权限，SELECT、INSERT_ALL、ALTER、TRUNCATE、DROP_TABLE、CREATE_TABLE、DROP_DATABASE
+                     * @return DatabasePrivileges 库表权限，SELECT、INSERT_ALL、ALTER、TRUNCATE、DROP_TABLE、CREATE_TABLE、DROP_DATABASE
                      * 
                      */
                     std::vector<std::string> GetDatabasePrivileges() const;
 
                     /**
-                     * 设置//库表权限，SELECT、INSERT_ALL、ALTER、TRUNCATE、DROP_TABLE、CREATE_TABLE、DROP_DATABASE
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _databasePrivileges //库表权限，SELECT、INSERT_ALL、ALTER、TRUNCATE、DROP_TABLE、CREATE_TABLE、DROP_DATABASE
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置库表权限，SELECT、INSERT_ALL、ALTER、TRUNCATE、DROP_TABLE、CREATE_TABLE、DROP_DATABASE
+                     * @param _databasePrivileges 库表权限，SELECT、INSERT_ALL、ALTER、TRUNCATE、DROP_TABLE、CREATE_TABLE、DROP_DATABASE
                      * 
                      */
                     void SetDatabasePrivileges(const std::vector<std::string>& _databasePrivileges);
@@ -94,19 +90,15 @@ namespace TencentCloud
                     bool DatabasePrivilegesHasBeenSet() const;
 
                     /**
-                     * 获取// 库下面的表权限
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TablePrivilegeList // 库下面的表权限
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取库下面的表权限
+                     * @return TablePrivilegeList 库下面的表权限
                      * 
                      */
                     std::vector<TablePrivilegeInfo> GetTablePrivilegeList() const;
 
                     /**
-                     * 设置// 库下面的表权限
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tablePrivilegeList // 库下面的表权限
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置库下面的表权限
+                     * @param _tablePrivilegeList 库下面的表权限
                      * 
                      */
                     void SetTablePrivilegeList(const std::vector<TablePrivilegeInfo>& _tablePrivilegeList);
@@ -127,15 +119,13 @@ namespace TencentCloud
                     bool m_databaseNameHasBeenSet;
 
                     /**
-                     * //库表权限，SELECT、INSERT_ALL、ALTER、TRUNCATE、DROP_TABLE、CREATE_TABLE、DROP_DATABASE
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 库表权限，SELECT、INSERT_ALL、ALTER、TRUNCATE、DROP_TABLE、CREATE_TABLE、DROP_DATABASE
                      */
                     std::vector<std::string> m_databasePrivileges;
                     bool m_databasePrivilegesHasBeenSet;
 
                     /**
-                     * // 库下面的表权限
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 库下面的表权限
                      */
                     std::vector<TablePrivilegeInfo> m_tablePrivilegeList;
                     bool m_tablePrivilegeListHasBeenSet;

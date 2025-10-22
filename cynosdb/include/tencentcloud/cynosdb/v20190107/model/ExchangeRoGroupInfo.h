@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取源RO组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SrcRoGroupInfo 源RO组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RollbackRoGroupInfo GetSrcRoGroupInfo() const;
 
                     /**
                      * 设置源RO组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _srcRoGroupInfo 源RO组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrcRoGroupInfo(const RollbackRoGroupInfo& _srcRoGroupInfo);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取目标RO组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DstRoGroupInfo 目标RO组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RollbackRoGroupInfo GetDstRoGroupInfo() const;
 
                     /**
                      * 设置目标RO组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dstRoGroupInfo 目标RO组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDstRoGroupInfo(const RollbackRoGroupInfo& _dstRoGroupInfo);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 源RO组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RollbackRoGroupInfo m_srcRoGroupInfo;
                     bool m_srcRoGroupInfoHasBeenSet;
 
                     /**
                      * 目标RO组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RollbackRoGroupInfo m_dstRoGroupInfo;
                     bool m_dstRoGroupInfoHasBeenSet;

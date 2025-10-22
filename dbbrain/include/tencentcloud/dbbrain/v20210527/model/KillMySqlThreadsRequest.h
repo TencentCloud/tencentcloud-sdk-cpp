@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID。
-                     * @return InstanceId 实例ID。
+                     * 获取实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @return InstanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID。
-                     * @param _instanceId 实例ID。
+                     * 设置实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @param _instanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -85,15 +85,19 @@ namespace TencentCloud
                     bool StageHasBeenSet() const;
 
                     /**
-                     * 获取需要kill的sql会话ID列表，此参数用于Prepare阶段。
-                     * @return Threads 需要kill的sql会话ID列表，此参数用于Prepare阶段。
+                     * 获取需要kill的sql会话ID列表，通过接口[查询实时线程列表](https://cloud.tencent.com/document/product/1130/57824)
+此参数用于Prepare阶段。
+                     * @return Threads 需要kill的sql会话ID列表，通过接口[查询实时线程列表](https://cloud.tencent.com/document/product/1130/57824)
+此参数用于Prepare阶段。
                      * 
                      */
                     std::vector<int64_t> GetThreads() const;
 
                     /**
-                     * 设置需要kill的sql会话ID列表，此参数用于Prepare阶段。
-                     * @param _threads 需要kill的sql会话ID列表，此参数用于Prepare阶段。
+                     * 设置需要kill的sql会话ID列表，通过接口[查询实时线程列表](https://cloud.tencent.com/document/product/1130/57824)
+此参数用于Prepare阶段。
+                     * @param _threads 需要kill的sql会话ID列表，通过接口[查询实时线程列表](https://cloud.tencent.com/document/product/1130/57824)
+此参数用于Prepare阶段。
                      * 
                      */
                     void SetThreads(const std::vector<int64_t>& _threads);
@@ -148,15 +152,15 @@ namespace TencentCloud
                     bool ProductHasBeenSet() const;
 
                     /**
-                     * 获取默认是ture, 记录下kill的记录，为了加快kill，可设置为false。
-                     * @return RecordHistory 默认是ture, 记录下kill的记录，为了加快kill，可设置为false。
+                     * 获取默认是true，会记录下kill的记录；该参数为true, 则在kill操作前校验目标会话是否存在，存在则继续kill，否则取消kill。为了加快kill速度，可设置为false。
+                     * @return RecordHistory 默认是true，会记录下kill的记录；该参数为true, 则在kill操作前校验目标会话是否存在，存在则继续kill，否则取消kill。为了加快kill速度，可设置为false。
                      * 
                      */
                     bool GetRecordHistory() const;
 
                     /**
-                     * 设置默认是ture, 记录下kill的记录，为了加快kill，可设置为false。
-                     * @param _recordHistory 默认是ture, 记录下kill的记录，为了加快kill，可设置为false。
+                     * 设置默认是true，会记录下kill的记录；该参数为true, 则在kill操作前校验目标会话是否存在，存在则继续kill，否则取消kill。为了加快kill速度，可设置为false。
+                     * @param _recordHistory 默认是true，会记录下kill的记录；该参数为true, 则在kill操作前校验目标会话是否存在，存在则继续kill，否则取消kill。为了加快kill速度，可设置为false。
                      * 
                      */
                     void SetRecordHistory(const bool& _recordHistory);
@@ -171,7 +175,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID。
+                     * 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -183,7 +187,8 @@ namespace TencentCloud
                     bool m_stageHasBeenSet;
 
                     /**
-                     * 需要kill的sql会话ID列表，此参数用于Prepare阶段。
+                     * 需要kill的sql会话ID列表，通过接口[查询实时线程列表](https://cloud.tencent.com/document/product/1130/57824)
+此参数用于Prepare阶段。
                      */
                     std::vector<int64_t> m_threads;
                     bool m_threadsHasBeenSet;
@@ -201,7 +206,7 @@ namespace TencentCloud
                     bool m_productHasBeenSet;
 
                     /**
-                     * 默认是ture, 记录下kill的记录，为了加快kill，可设置为false。
+                     * 默认是true，会记录下kill的记录；该参数为true, 则在kill操作前校验目标会话是否存在，存在则继续kill，否则取消kill。为了加快kill速度，可设置为false。
                      */
                     bool m_recordHistory;
                     bool m_recordHistoryHasBeenSet;

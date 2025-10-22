@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -197,6 +197,27 @@ UTC时间，如'2020-01-01T12:00:00Z'。
                      */
                     bool EndTimeHasBeenSet() const;
 
+                    /**
+                     * 获取对端客户端或者服务端的IP地址
+                     * @return RemoteIp 对端客户端或者服务端的IP地址
+                     * 
+                     */
+                    std::string GetRemoteIp() const;
+
+                    /**
+                     * 设置对端客户端或者服务端的IP地址
+                     * @param _remoteIp 对端客户端或者服务端的IP地址
+                     * 
+                     */
+                    void SetRemoteIp(const std::string& _remoteIp);
+
+                    /**
+                     * 判断参数 RemoteIp 是否已赋值
+                     * @return RemoteIp 是否已赋值
+                     * 
+                     */
+                    bool RemoteIpHasBeenSet() const;
+
                 private:
 
                     /**
@@ -242,6 +263,12 @@ UTC时间，如'2020-01-01T12:00:00Z'。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 对端客户端或者服务端的IP地址
+                     */
+                    std::string m_remoteIp;
+                    bool m_remoteIpHasBeenSet;
 
                 };
             }

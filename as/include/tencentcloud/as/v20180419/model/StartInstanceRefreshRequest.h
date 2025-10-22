@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取伸缩组ID。
-                     * @return AutoScalingGroupId 伸缩组ID。
+                     * 获取伸缩组ID。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 或调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。
+                     * @return AutoScalingGroupId 伸缩组ID。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 或调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。
                      * 
                      */
                     std::string GetAutoScalingGroupId() const;
 
                     /**
-                     * 设置伸缩组ID。
-                     * @param _autoScalingGroupId 伸缩组ID。
+                     * 设置伸缩组ID。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 或调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。
+                     * @param _autoScalingGroupId 伸缩组ID。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 或调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。
                      * 
                      */
                     void SetAutoScalingGroupId(const std::string& _autoScalingGroupId);
@@ -86,15 +86,23 @@ namespace TencentCloud
                     bool RefreshSettingsHasBeenSet() const;
 
                     /**
-                     * 获取刷新模式，目前仅支持滚动更新，默认值为 ROLLING_UPDATE_RESET。
-                     * @return RefreshMode 刷新模式，目前仅支持滚动更新，默认值为 ROLLING_UPDATE_RESET。
+                     * 获取刷新模式。默认值为 ROLLING_UPDATE_RESET，取值范围：
+<li>ROLLING_UPDATE_RESET：重装系统进行滚动更新</li>
+<li>ROLLING_UPDATE_REPLACE：新建实例替换进行滚动更新，该模式暂不支持回滚接口</li>
+                     * @return RefreshMode 刷新模式。默认值为 ROLLING_UPDATE_RESET，取值范围：
+<li>ROLLING_UPDATE_RESET：重装系统进行滚动更新</li>
+<li>ROLLING_UPDATE_REPLACE：新建实例替换进行滚动更新，该模式暂不支持回滚接口</li>
                      * 
                      */
                     std::string GetRefreshMode() const;
 
                     /**
-                     * 设置刷新模式，目前仅支持滚动更新，默认值为 ROLLING_UPDATE_RESET。
-                     * @param _refreshMode 刷新模式，目前仅支持滚动更新，默认值为 ROLLING_UPDATE_RESET。
+                     * 设置刷新模式。默认值为 ROLLING_UPDATE_RESET，取值范围：
+<li>ROLLING_UPDATE_RESET：重装系统进行滚动更新</li>
+<li>ROLLING_UPDATE_REPLACE：新建实例替换进行滚动更新，该模式暂不支持回滚接口</li>
+                     * @param _refreshMode 刷新模式。默认值为 ROLLING_UPDATE_RESET，取值范围：
+<li>ROLLING_UPDATE_RESET：重装系统进行滚动更新</li>
+<li>ROLLING_UPDATE_REPLACE：新建实例替换进行滚动更新，该模式暂不支持回滚接口</li>
                      * 
                      */
                     void SetRefreshMode(const std::string& _refreshMode);
@@ -109,7 +117,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 伸缩组ID。
+                     * 伸缩组ID。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 或调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。
                      */
                     std::string m_autoScalingGroupId;
                     bool m_autoScalingGroupIdHasBeenSet;
@@ -121,7 +129,9 @@ namespace TencentCloud
                     bool m_refreshSettingsHasBeenSet;
 
                     /**
-                     * 刷新模式，目前仅支持滚动更新，默认值为 ROLLING_UPDATE_RESET。
+                     * 刷新模式。默认值为 ROLLING_UPDATE_RESET，取值范围：
+<li>ROLLING_UPDATE_RESET：重装系统进行滚动更新</li>
+<li>ROLLING_UPDATE_REPLACE：新建实例替换进行滚动更新，该模式暂不支持回滚接口</li>
                      */
                     std::string m_refreshMode;
                     bool m_refreshModeHasBeenSet;

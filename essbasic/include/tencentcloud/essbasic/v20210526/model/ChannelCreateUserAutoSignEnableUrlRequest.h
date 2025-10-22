@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -167,23 +167,15 @@ namespace TencentCloud
                     bool UrlTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否通知开通方，通知类型:
-<ul><li>默认不设置为不通知开通方</li>
-<li>**SMS** :  短信通知 ,如果需要短信通知则NotifyAddress填写对方的手机号</li></ul>
-                     * @return NotifyType 是否通知开通方，通知类型:
-<ul><li>默认不设置为不通知开通方</li>
-<li>**SMS** :  短信通知 ,如果需要短信通知则NotifyAddress填写对方的手机号</li></ul>
+                     * 获取是否通知开通方，通知类型:<ul><li>默认为不通知开通方</li><li>**SMS** :  短信通知 ,如果需要短信通知则NotifyAddress填写对方的手机号</li></ul>
+                     * @return NotifyType 是否通知开通方，通知类型:<ul><li>默认为不通知开通方</li><li>**SMS** :  短信通知 ,如果需要短信通知则NotifyAddress填写对方的手机号</li></ul>
                      * 
                      */
                     std::string GetNotifyType() const;
 
                     /**
-                     * 设置是否通知开通方，通知类型:
-<ul><li>默认不设置为不通知开通方</li>
-<li>**SMS** :  短信通知 ,如果需要短信通知则NotifyAddress填写对方的手机号</li></ul>
-                     * @param _notifyType 是否通知开通方，通知类型:
-<ul><li>默认不设置为不通知开通方</li>
-<li>**SMS** :  短信通知 ,如果需要短信通知则NotifyAddress填写对方的手机号</li></ul>
+                     * 设置是否通知开通方，通知类型:<ul><li>默认为不通知开通方</li><li>**SMS** :  短信通知 ,如果需要短信通知则NotifyAddress填写对方的手机号</li></ul>
+                     * @param _notifyType 是否通知开通方，通知类型:<ul><li>默认为不通知开通方</li><li>**SMS** :  短信通知 ,如果需要短信通知则NotifyAddress填写对方的手机号</li></ul>
                      * 
                      */
                     void SetNotifyType(const std::string& _notifyType);
@@ -295,9 +287,7 @@ namespace TencentCloud
                     bool m_urlTypeHasBeenSet;
 
                     /**
-                     * 是否通知开通方，通知类型:
-<ul><li>默认不设置为不通知开通方</li>
-<li>**SMS** :  短信通知 ,如果需要短信通知则NotifyAddress填写对方的手机号</li></ul>
+                     * 是否通知开通方，通知类型:<ul><li>默认为不通知开通方</li><li>**SMS** :  短信通知 ,如果需要短信通知则NotifyAddress填写对方的手机号</li></ul>
                      */
                     std::string m_notifyType;
                     bool m_notifyTypeHasBeenSet;

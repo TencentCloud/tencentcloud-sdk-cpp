@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,26 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取是否授权：1已授权，否则未授权。
- 调用全栈式风控引擎接口服务时，客户需先明确授权
-
-
+ 调用全栈式风控引擎接口服务时，客户需先明确授权。
                      * @return IsAuthorized 是否授权：1已授权，否则未授权。
- 调用全栈式风控引擎接口服务时，客户需先明确授权
-
-
+ 调用全栈式风控引擎接口服务时，客户需先明确授权。
                      * 
                      */
                     std::string GetIsAuthorized() const;
 
                     /**
                      * 设置是否授权：1已授权，否则未授权。
- 调用全栈式风控引擎接口服务时，客户需先明确授权
-
-
+ 调用全栈式风控引擎接口服务时，客户需先明确授权。
                      * @param _isAuthorized 是否授权：1已授权，否则未授权。
- 调用全栈式风控引擎接口服务时，客户需先明确授权
-
-
+ 调用全栈式风控引擎接口服务时，客户需先明确授权。
                      * 
                      */
                     void SetIsAuthorized(const std::string& _isAuthorized);
@@ -81,18 +73,14 @@ namespace TencentCloud
 
                     /**
                      * 获取加密类型：1AES加密
-
                      * @return CryptoType 加密类型：1AES加密
-
                      * 
                      */
                     std::string GetCryptoType() const;
 
                     /**
                      * 设置加密类型：1AES加密
-
                      * @param _cryptoType 加密类型：1AES加密
-
                      * 
                      */
                     void SetCryptoType(const std::string& _cryptoType);
@@ -129,16 +117,13 @@ namespace TencentCloud
 
                     /**
                      * 是否授权：1已授权，否则未授权。
- 调用全栈式风控引擎接口服务时，客户需先明确授权
-
-
+ 调用全栈式风控引擎接口服务时，客户需先明确授权。
                      */
                     std::string m_isAuthorized;
                     bool m_isAuthorizedHasBeenSet;
 
                     /**
                      * 加密类型：1AES加密
-
                      */
                     std::string m_cryptoType;
                     bool m_cryptoTypeHasBeenSet;

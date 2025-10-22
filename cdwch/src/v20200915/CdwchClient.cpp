@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -377,6 +377,49 @@ CdwchClient::DescribeBackUpTablesOutcomeCallable CdwchClient::DescribeBackUpTabl
         [this, request]()
         {
             return this->DescribeBackUpTables(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwchClient::DescribeCNInstancesOutcome CdwchClient::DescribeCNInstances(const DescribeCNInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCNInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCNInstancesResponse rsp = DescribeCNInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCNInstancesOutcome(rsp);
+        else
+            return DescribeCNInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCNInstancesOutcome(outcome.GetError());
+    }
+}
+
+void CdwchClient::DescribeCNInstancesAsync(const DescribeCNInstancesRequest& request, const DescribeCNInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCNInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwchClient::DescribeCNInstancesOutcomeCallable CdwchClient::DescribeCNInstancesCallable(const DescribeCNInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCNInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCNInstances(request);
         }
     );
 
@@ -1108,6 +1151,49 @@ CdwchClient::ResizeDiskOutcomeCallable CdwchClient::ResizeDiskCallable(const Res
         [this, request]()
         {
             return this->ResizeDisk(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwchClient::ScaleCNOutUpInstanceOutcome CdwchClient::ScaleCNOutUpInstance(const ScaleCNOutUpInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ScaleCNOutUpInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ScaleCNOutUpInstanceResponse rsp = ScaleCNOutUpInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ScaleCNOutUpInstanceOutcome(rsp);
+        else
+            return ScaleCNOutUpInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return ScaleCNOutUpInstanceOutcome(outcome.GetError());
+    }
+}
+
+void CdwchClient::ScaleCNOutUpInstanceAsync(const ScaleCNOutUpInstanceRequest& request, const ScaleCNOutUpInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ScaleCNOutUpInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwchClient::ScaleCNOutUpInstanceOutcomeCallable CdwchClient::ScaleCNOutUpInstanceCallable(const ScaleCNOutUpInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ScaleCNOutUpInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->ScaleCNOutUpInstance(request);
         }
     );
 

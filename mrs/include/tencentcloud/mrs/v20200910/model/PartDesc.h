@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主要部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MainDir 主要部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMainDir() const;
 
                     /**
                      * 设置主要部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mainDir 主要部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMainDir(const std::string& _mainDir);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Part 部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPart() const;
 
                     /**
                      * 设置部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _part 部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPart(const std::string& _part);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取次要部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecondaryDir 次要部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSecondaryDir() const;
 
                     /**
                      * 设置次要部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _secondaryDir 次要部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecondaryDir(const std::string& _secondaryDir);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 主要部位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mainDir;
                     bool m_mainDirHasBeenSet;
 
                     /**
                      * 部位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_part;
                     bool m_partHasBeenSet;
 
                     /**
                      * 次要部位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_secondaryDir;
                     bool m_secondaryDirHasBeenSet;
 
                     /**
                      * 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

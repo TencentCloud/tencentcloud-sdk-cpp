@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,8 +41,6 @@
 #include <tencentcloud/tbaas/v20180416/model/GetClusterSummaryResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/GetInvokeTxRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/GetInvokeTxResponse.h>
-#include <tencentcloud/tbaas/v20180416/model/GetLatesdTransactionListRequest.h>
-#include <tencentcloud/tbaas/v20180416/model/GetLatesdTransactionListResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/GetLatestTransactionListRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/GetLatestTransactionListResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/GetTransactionDetailForUserRequest.h>
@@ -114,9 +112,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetInvokeTxResponse> GetInvokeTxOutcome;
                 typedef std::future<GetInvokeTxOutcome> GetInvokeTxOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::GetInvokeTxRequest&, GetInvokeTxOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetInvokeTxAsyncHandler;
-                typedef Outcome<Core::Error, Model::GetLatesdTransactionListResponse> GetLatesdTransactionListOutcome;
-                typedef std::future<GetLatesdTransactionListOutcome> GetLatesdTransactionListOutcomeCallable;
-                typedef std::function<void(const TbaasClient*, const Model::GetLatesdTransactionListRequest&, GetLatesdTransactionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetLatesdTransactionListAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetLatestTransactionListResponse> GetLatestTransactionListOutcome;
                 typedef std::future<GetLatestTransactionListOutcome> GetLatestTransactionListOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::GetLatestTransactionListRequest&, GetLatestTransactionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetLatestTransactionListAsyncHandler;
@@ -220,7 +215,7 @@ namespace TencentCloud
                 GetBlockListOutcomeCallable GetBlockListCallable(const Model::GetBlockListRequest& request);
 
                 /**
-                 *获取区块内的交易列表
+                 *获取区块内交易列表
                  * @param req GetBlockTransactionListForUserRequest
                  * @return GetBlockTransactionListForUserOutcome
                  */
@@ -247,15 +242,6 @@ namespace TencentCloud
                 GetInvokeTxOutcomeCallable GetInvokeTxCallable(const Model::GetInvokeTxRequest& request);
 
                 /**
-                 *获取最新交易列表（已废弃）
-                 * @param req GetLatesdTransactionListRequest
-                 * @return GetLatesdTransactionListOutcome
-                 */
-                GetLatesdTransactionListOutcome GetLatesdTransactionList(const Model::GetLatesdTransactionListRequest &request);
-                void GetLatesdTransactionListAsync(const Model::GetLatesdTransactionListRequest& request, const GetLatesdTransactionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                GetLatesdTransactionListOutcomeCallable GetLatesdTransactionListCallable(const Model::GetLatesdTransactionListRequest& request);
-
-                /**
                  *获取fabric最新交易列表
                  * @param req GetLatestTransactionListRequest
                  * @return GetLatestTransactionListOutcome
@@ -265,7 +251,7 @@ namespace TencentCloud
                 GetLatestTransactionListOutcomeCallable GetLatestTransactionListCallable(const Model::GetLatestTransactionListRequest& request);
 
                 /**
-                 *获取交易详情
+                 *获取交易的详情
                  * @param req GetTransactionDetailForUserRequest
                  * @return GetTransactionDetailForUserOutcome
                  */

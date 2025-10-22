@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -133,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取新的错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NewErrorNo 新的错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNewErrorNo() const;
 
                     /**
                      * 设置新的错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _newErrorNo 新的错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNewErrorNo(const int64_t& _newErrorNo);
@@ -158,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取需要清理的响应头
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClearHeaders 需要清理的响应头
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetClearHeaders() const;
 
                     /**
                      * 设置需要清理的响应头
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clearHeaders 需要清理的响应头
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClearHeaders(const std::vector<std::string>& _clearHeaders);
@@ -183,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取需要设置的响应头
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SetHeaders 需要设置的响应头
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<HttpHeaderParam> GetSetHeaders() const;
 
                     /**
                      * 设置需要设置的响应头
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _setHeaders 需要设置的响应头
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSetHeaders(const std::vector<HttpHeaderParam>& _setHeaders);
@@ -208,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设置的响应体(不包括 HTTP头)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Body 设置的响应体(不包括 HTTP头)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBody() const;
 
                     /**
                      * 设置设置的响应体(不包括 HTTP头)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _body 设置的响应体(不包括 HTTP头)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBody(const std::string& _body);
@@ -233,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则状态,0为成功
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 规则状态,0为成功
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置规则状态,0为成功
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 规则状态,0为成功
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -284,35 +264,30 @@ namespace TencentCloud
 
                     /**
                      * 新的错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_newErrorNo;
                     bool m_newErrorNoHasBeenSet;
 
                     /**
                      * 需要清理的响应头
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_clearHeaders;
                     bool m_clearHeadersHasBeenSet;
 
                     /**
                      * 需要设置的响应头
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<HttpHeaderParam> m_setHeaders;
                     bool m_setHeadersHasBeenSet;
 
                     /**
                      * 设置的响应体(不包括 HTTP头)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_body;
                     bool m_bodyHasBeenSet;
 
                     /**
                      * 规则状态,0为成功
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

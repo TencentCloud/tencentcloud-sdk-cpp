@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,9 @@ CreateCloudRunServerRequest::CreateCloudRunServerRequest() :
     m_envIdHasBeenSet(false),
     m_serverNameHasBeenSet(false),
     m_deployInfoHasBeenSet(false),
-    m_serverConfigHasBeenSet(false)
+    m_serverConfigHasBeenSet(false),
+    m_itemsHasBeenSet(false),
+    m_vpcInfoHasBeenSet(false)
 {
 }
 
@@ -69,6 +71,30 @@ string CreateCloudRunServerRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_serverConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_itemsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Items";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_items.begin(); itr != m_items.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_vpcInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_vpcInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -141,6 +167,38 @@ void CreateCloudRunServerRequest::SetServerConfig(const ServerBaseConfig& _serve
 bool CreateCloudRunServerRequest::ServerConfigHasBeenSet() const
 {
     return m_serverConfigHasBeenSet;
+}
+
+vector<DiffConfigItem> CreateCloudRunServerRequest::GetItems() const
+{
+    return m_items;
+}
+
+void CreateCloudRunServerRequest::SetItems(const vector<DiffConfigItem>& _items)
+{
+    m_items = _items;
+    m_itemsHasBeenSet = true;
+}
+
+bool CreateCloudRunServerRequest::ItemsHasBeenSet() const
+{
+    return m_itemsHasBeenSet;
+}
+
+CreateVpcInfo CreateCloudRunServerRequest::GetVpcInfo() const
+{
+    return m_vpcInfo;
+}
+
+void CreateCloudRunServerRequest::SetVpcInfo(const CreateVpcInfo& _vpcInfo)
+{
+    m_vpcInfo = _vpcInfo;
+    m_vpcInfoHasBeenSet = true;
+}
+
+bool CreateCloudRunServerRequest::VpcInfoHasBeenSet() const
+{
+    return m_vpcInfoHasBeenSet;
 }
 
 

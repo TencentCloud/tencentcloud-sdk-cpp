@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,18 +58,14 @@ namespace TencentCloud
 
                     /**
                      * 获取报告类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PathologicalReportType 报告类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Report GetPathologicalReportType() const;
 
                     /**
                      * 设置报告类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pathologicalReportType 报告类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPathologicalReportType(const Report& _pathologicalReportType);
@@ -83,18 +79,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述段落
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Desc 描述段落
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DescInfo GetDesc() const;
 
                     /**
                      * 设置描述段落
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _desc 描述段落
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDesc(const DescInfo& _desc);
@@ -108,18 +100,14 @@ namespace TencentCloud
 
                     /**
                      * 获取诊断结论
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Summary 诊断结论
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SummaryInfo GetSummary() const;
 
                     /**
                      * 设置诊断结论
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _summary 诊断结论
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSummary(const SummaryInfo& _summary);
@@ -133,18 +121,14 @@ namespace TencentCloud
 
                     /**
                      * 获取报告全文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportText 报告全文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReportText() const;
 
                     /**
                      * 设置报告全文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reportText 报告全文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReportText(const std::string& _reportText);
@@ -158,18 +142,14 @@ namespace TencentCloud
 
                     /**
                      * 获取淋巴结总计转移信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LymphTotal 淋巴结总计转移信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<LymphTotal> GetLymphTotal() const;
 
                     /**
                      * 设置淋巴结总计转移信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lymphTotal 淋巴结总计转移信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLymphTotal(const std::vector<LymphTotal>& _lymphTotal);
@@ -183,18 +163,14 @@ namespace TencentCloud
 
                     /**
                      * 获取单淋巴结转移信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LymphNodes 单淋巴结转移信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<LymphNode> GetLymphNodes() const;
 
                     /**
                      * 设置单淋巴结转移信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lymphNodes 单淋巴结转移信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLymphNodes(const std::vector<LymphNode>& _lymphNodes);
@@ -208,18 +184,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ihc信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ihc ihc信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<IHCV2> GetIhc() const;
 
                     /**
                      * 设置ihc信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ihc ihc信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIhc(const std::vector<IHCV2>& _ihc);
@@ -233,18 +205,14 @@ namespace TencentCloud
 
                     /**
                      * 获取临床诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Clinical 临床诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BaseInfo GetClinical() const;
 
                     /**
                      * 设置临床诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clinical 临床诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClinical(const BaseInfo& _clinical);
@@ -258,18 +226,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否癌前病变
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Precancer 是否癌前病变
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     HistologyClass GetPrecancer() const;
 
                     /**
                      * 设置是否癌前病变
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _precancer 是否癌前病变
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrecancer(const HistologyClass& _precancer);
@@ -283,18 +247,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否恶性肿瘤
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Malignant 是否恶性肿瘤
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     HistologyClass GetMalignant() const;
 
                     /**
                      * 设置是否恶性肿瘤
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _malignant 是否恶性肿瘤
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMalignant(const HistologyClass& _malignant);
@@ -308,18 +268,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否良性肿瘤
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Benigntumor 是否良性肿瘤
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     HistologyClass GetBenigntumor() const;
 
                     /**
                      * 设置是否良性肿瘤
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _benigntumor 是否良性肿瘤
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBenigntumor(const HistologyClass& _benigntumor);
@@ -333,18 +289,14 @@ namespace TencentCloud
 
                     /**
                      * 获取送检材料
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SampleType 送检材料
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BaseInfo GetSampleType() const;
 
                     /**
                      * 设置送检材料
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sampleType 送检材料
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSampleType(const BaseInfo& _sampleType);
@@ -358,18 +310,14 @@ namespace TencentCloud
 
                     /**
                      * 获取淋巴结大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LymphSize 淋巴结大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Size> GetLymphSize() const;
 
                     /**
                      * 设置淋巴结大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lymphSize 淋巴结大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLymphSize(const std::vector<Size>& _lymphSize);
@@ -383,18 +331,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分子病理
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Molecular 分子病理
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Molecular> GetMolecular() const;
 
                     /**
                      * 设置分子病理
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _molecular 分子病理
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMolecular(const std::vector<Molecular>& _molecular);
@@ -408,18 +352,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Page 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPage() const;
 
                     /**
                      * 设置数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _page 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPage(const int64_t& _page);
@@ -435,105 +375,90 @@ namespace TencentCloud
 
                     /**
                      * 报告类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Report m_pathologicalReportType;
                     bool m_pathologicalReportTypeHasBeenSet;
 
                     /**
                      * 描述段落
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescInfo m_desc;
                     bool m_descHasBeenSet;
 
                     /**
                      * 诊断结论
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SummaryInfo m_summary;
                     bool m_summaryHasBeenSet;
 
                     /**
                      * 报告全文
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reportText;
                     bool m_reportTextHasBeenSet;
 
                     /**
                      * 淋巴结总计转移信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LymphTotal> m_lymphTotal;
                     bool m_lymphTotalHasBeenSet;
 
                     /**
                      * 单淋巴结转移信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LymphNode> m_lymphNodes;
                     bool m_lymphNodesHasBeenSet;
 
                     /**
                      * ihc信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<IHCV2> m_ihc;
                     bool m_ihcHasBeenSet;
 
                     /**
                      * 临床诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BaseInfo m_clinical;
                     bool m_clinicalHasBeenSet;
 
                     /**
                      * 是否癌前病变
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     HistologyClass m_precancer;
                     bool m_precancerHasBeenSet;
 
                     /**
                      * 是否恶性肿瘤
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     HistologyClass m_malignant;
                     bool m_malignantHasBeenSet;
 
                     /**
                      * 是否良性肿瘤
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     HistologyClass m_benigntumor;
                     bool m_benigntumorHasBeenSet;
 
                     /**
                      * 送检材料
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BaseInfo m_sampleType;
                     bool m_sampleTypeHasBeenSet;
 
                     /**
                      * 淋巴结大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Size> m_lymphSize;
                     bool m_lymphSizeHasBeenSet;
 
                     /**
                      * 分子病理
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Molecular> m_molecular;
                     bool m_molecularHasBeenSet;
 
                     /**
                      * 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_page;
                     bool m_pageHasBeenSet;

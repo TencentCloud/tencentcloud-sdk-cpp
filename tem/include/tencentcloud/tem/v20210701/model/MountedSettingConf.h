@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigDataName 配置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConfigDataName() const;
 
                     /**
                      * 设置配置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configDataName 配置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigDataName(const std::string& _configDataName);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取挂载路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MountedPath 挂载路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMountedPath() const;
 
                     /**
                      * 设置挂载路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mountedPath 挂载路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMountedPath(const std::string& _mountedPath);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 配置内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Pair> GetData() const;
 
                     /**
                      * 设置配置内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _data 配置内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetData(const std::vector<Pair>& _data);
@@ -151,21 +139,18 @@ namespace TencentCloud
 
                     /**
                      * 配置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_configDataName;
                     bool m_configDataNameHasBeenSet;
 
                     /**
                      * 挂载路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mountedPath;
                     bool m_mountedPathHasBeenSet;
 
                     /**
                      * 配置内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Pair> m_data;
                     bool m_dataHasBeenSet;

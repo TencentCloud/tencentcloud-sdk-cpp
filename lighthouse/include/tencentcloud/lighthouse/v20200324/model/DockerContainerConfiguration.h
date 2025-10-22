@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -176,15 +176,31 @@ namespace TencentCloud
                     bool CommandHasBeenSet() const;
 
                     /**
-                     * 获取容器重启策略
-                     * @return RestartPolicy 容器重启策略
+                     * 获取容器重启策略。
+- no -默认策略，在容器退出时不重启容器
+- on-failure -在容器非正常退出时（退出状态非0），才会重启容器
+- on-failure:3 -在容器非正常退出时重启容器，最多重启3次
+- always -在容器退出时总是重启容器
+                     * @return RestartPolicy 容器重启策略。
+- no -默认策略，在容器退出时不重启容器
+- on-failure -在容器非正常退出时（退出状态非0），才会重启容器
+- on-failure:3 -在容器非正常退出时重启容器，最多重启3次
+- always -在容器退出时总是重启容器
                      * 
                      */
                     std::string GetRestartPolicy() const;
 
                     /**
-                     * 设置容器重启策略
-                     * @param _restartPolicy 容器重启策略
+                     * 设置容器重启策略。
+- no -默认策略，在容器退出时不重启容器
+- on-failure -在容器非正常退出时（退出状态非0），才会重启容器
+- on-failure:3 -在容器非正常退出时重启容器，最多重启3次
+- always -在容器退出时总是重启容器
+                     * @param _restartPolicy 容器重启策略。
+- no -默认策略，在容器退出时不重启容器
+- on-failure -在容器非正常退出时（退出状态非0），才会重启容器
+- on-failure:3 -在容器非正常退出时重启容器，最多重启3次
+- always -在容器退出时总是重启容器
                      * 
                      */
                     void SetRestartPolicy(const std::string& _restartPolicy);
@@ -235,7 +251,11 @@ namespace TencentCloud
                     bool m_commandHasBeenSet;
 
                     /**
-                     * 容器重启策略
+                     * 容器重启策略。
+- no -默认策略，在容器退出时不重启容器
+- on-failure -在容器非正常退出时（退出状态非0），才会重启容器
+- on-failure:3 -在容器非正常退出时重启容器，最多重启3次
+- always -在容器退出时总是重启容器
                      */
                     std::string m_restartPolicy;
                     bool m_restartPolicyHasBeenSet;

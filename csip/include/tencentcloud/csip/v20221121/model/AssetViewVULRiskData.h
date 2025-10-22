@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -824,15 +824,15 @@ namespace TencentCloud
                     bool EngineSourceHasBeenSet() const;
 
                     /**
-                     * 获取新的漏洞风险id(同全网漏洞表的riskid)
-                     * @return VulRiskId 新的漏洞风险id(同全网漏洞表的riskid)
+                     * 获取新的漏洞风险id(同全网漏洞表的RiskId)
+                     * @return VulRiskId 新的漏洞风险id(同全网漏洞表的RiskId)
                      * 
                      */
                     std::string GetVulRiskId() const;
 
                     /**
-                     * 设置新的漏洞风险id(同全网漏洞表的riskid)
-                     * @param _vulRiskId 新的漏洞风险id(同全网漏洞表的riskid)
+                     * 设置新的漏洞风险id(同全网漏洞表的RiskId)
+                     * @param _vulRiskId 新的漏洞风险id(同全网漏洞表的RiskId)
                      * 
                      */
                     void SetVulRiskId(const std::string& _vulRiskId);
@@ -885,6 +885,27 @@ namespace TencentCloud
                      * 
                      */
                     bool IsOneClickHasBeenSet() const;
+
+                    /**
+                     * 获取是否POC扫描，0-非POC，1-POC
+                     * @return IsPOC 是否POC扫描，0-非POC，1-POC
+                     * 
+                     */
+                    uint64_t GetIsPOC() const;
+
+                    /**
+                     * 设置是否POC扫描，0-非POC，1-POC
+                     * @param _isPOC 是否POC扫描，0-非POC，1-POC
+                     * 
+                     */
+                    void SetIsPOC(const uint64_t& _isPOC);
+
+                    /**
+                     * 判断参数 IsPOC 是否已赋值
+                     * @return IsPOC 是否已赋值
+                     * 
+                     */
+                    bool IsPOCHasBeenSet() const;
 
                 private:
 
@@ -1111,7 +1132,7 @@ namespace TencentCloud
                     bool m_engineSourceHasBeenSet;
 
                     /**
-                     * 新的漏洞风险id(同全网漏洞表的riskid)
+                     * 新的漏洞风险id(同全网漏洞表的RiskId)
                      */
                     std::string m_vulRiskId;
                     bool m_vulRiskIdHasBeenSet;
@@ -1127,6 +1148,12 @@ namespace TencentCloud
                      */
                     uint64_t m_isOneClick;
                     bool m_isOneClickHasBeenSet;
+
+                    /**
+                     * 是否POC扫描，0-非POC，1-POC
+                     */
+                    uint64_t m_isPOC;
+                    bool m_isPOCHasBeenSet;
 
                 };
             }

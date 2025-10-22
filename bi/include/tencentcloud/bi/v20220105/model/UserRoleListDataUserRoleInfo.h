@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/bi/v20220105/model/UserRoleListDataRoleInfo.h>
+#include <tencentcloud/bi/v20220105/model/UserGroupDTO.h>
 
 
 namespace TencentCloud
@@ -581,6 +582,56 @@ namespace TencentCloud
                      */
                     bool AppOpenUserIdHasBeenSet() const;
 
+                    /**
+                     * 获取邮箱激活状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EmailActivationStatus 邮箱激活状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetEmailActivationStatus() const;
+
+                    /**
+                     * 设置邮箱激活状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _emailActivationStatus 邮箱激活状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEmailActivationStatus(const int64_t& _emailActivationStatus);
+
+                    /**
+                     * 判断参数 EmailActivationStatus 是否已赋值
+                     * @return EmailActivationStatus 是否已赋值
+                     * 
+                     */
+                    bool EmailActivationStatusHasBeenSet() const;
+
+                    /**
+                     * 获取用户组信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserGroupList 用户组信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<UserGroupDTO> GetUserGroupList() const;
+
+                    /**
+                     * 设置用户组信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _userGroupList 用户组信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUserGroupList(const std::vector<UserGroupDTO>& _userGroupList);
+
+                    /**
+                     * 判断参数 UserGroupList 是否已赋值
+                     * @return UserGroupList 是否已赋值
+                     * 
+                     */
+                    bool UserGroupListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -732,6 +783,20 @@ namespace TencentCloud
                      */
                     std::string m_appOpenUserId;
                     bool m_appOpenUserIdHasBeenSet;
+
+                    /**
+                     * 邮箱激活状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_emailActivationStatus;
+                    bool m_emailActivationStatusHasBeenSet;
+
+                    /**
+                     * 用户组信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<UserGroupDTO> m_userGroupList;
+                    bool m_userGroupListHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,6 +58,48 @@ namespace TencentCloud
                      */
                     bool AvailableTablesHasBeenSet() const;
 
+                    /**
+                     * 获取msg
+                     * @return Msg msg
+                     * 
+                     */
+                    std::string GetMsg() const;
+
+                    /**
+                     * 判断参数 Msg 是否已赋值
+                     * @return Msg 是否已赋值
+                     * 
+                     */
+                    bool MsgHasBeenSet() const;
+
+                    /**
+                     * 获取未知version
+                     * @return IsUnknownVersion 未知version
+                     * 
+                     */
+                    bool GetIsUnknownVersion() const;
+
+                    /**
+                     * 判断参数 IsUnknownVersion 是否已赋值
+                     * @return IsUnknownVersion 是否已赋值
+                     * 
+                     */
+                    bool IsUnknownVersionHasBeenSet() const;
+
+                    /**
+                     * 获取错误信息
+                     * @return ErrorMsg 错误信息
+                     * 
+                     */
+                    std::string GetErrorMsg() const;
+
+                    /**
+                     * 判断参数 ErrorMsg 是否已赋值
+                     * @return ErrorMsg 是否已赋值
+                     * 
+                     */
+                    bool ErrorMsgHasBeenSet() const;
+
                 private:
 
                     /**
@@ -65,6 +107,24 @@ namespace TencentCloud
                      */
                     std::vector<BackupTableContent> m_availableTables;
                     bool m_availableTablesHasBeenSet;
+
+                    /**
+                     * msg
+                     */
+                    std::string m_msg;
+                    bool m_msgHasBeenSet;
+
+                    /**
+                     * 未知version
+                     */
+                    bool m_isUnknownVersion;
+                    bool m_isUnknownVersionHasBeenSet;
+
+                    /**
+                     * 错误信息
+                     */
+                    std::string m_errorMsg;
+                    bool m_errorMsgHasBeenSet;
 
                 };
             }

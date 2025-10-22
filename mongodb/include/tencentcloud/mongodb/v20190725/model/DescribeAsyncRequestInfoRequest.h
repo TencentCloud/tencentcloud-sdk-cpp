@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取异步请求Id，涉及到异步流程的接口返回，如CreateBackupDBInstance
-                     * @return AsyncRequestId 异步请求Id，涉及到异步流程的接口返回，如CreateBackupDBInstance
+                     * 获取指定需查询的异步请求 ID。当接口操作涉及异步流程时（如 [CreateBackupDBInstance](https://cloud.tencent.com/document/product/240/46599)），其返回值中的 AsyncRequestId 即为本参数所需填入的 ID。
+                     * @return AsyncRequestId 指定需查询的异步请求 ID。当接口操作涉及异步流程时（如 [CreateBackupDBInstance](https://cloud.tencent.com/document/product/240/46599)），其返回值中的 AsyncRequestId 即为本参数所需填入的 ID。
                      * 
                      */
                     std::string GetAsyncRequestId() const;
 
                     /**
-                     * 设置异步请求Id，涉及到异步流程的接口返回，如CreateBackupDBInstance
-                     * @param _asyncRequestId 异步请求Id，涉及到异步流程的接口返回，如CreateBackupDBInstance
+                     * 设置指定需查询的异步请求 ID。当接口操作涉及异步流程时（如 [CreateBackupDBInstance](https://cloud.tencent.com/document/product/240/46599)），其返回值中的 AsyncRequestId 即为本参数所需填入的 ID。
+                     * @param _asyncRequestId 指定需查询的异步请求 ID。当接口操作涉及异步流程时（如 [CreateBackupDBInstance](https://cloud.tencent.com/document/product/240/46599)），其返回值中的 AsyncRequestId 即为本参数所需填入的 ID。
                      * 
                      */
                     void SetAsyncRequestId(const std::string& _asyncRequestId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 异步请求Id，涉及到异步流程的接口返回，如CreateBackupDBInstance
+                     * 指定需查询的异步请求 ID。当接口操作涉及异步流程时（如 [CreateBackupDBInstance](https://cloud.tencent.com/document/product/240/46599)），其返回值中的 AsyncRequestId 即为本参数所需填入的 ID。
                      */
                     std::string m_asyncRequestId;
                     bool m_asyncRequestIdHasBeenSet;

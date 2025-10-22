@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取域名预定失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailReason 域名预定失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFailReason() const;
 
                     /**
                      * 设置域名预定失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _failReason 域名预定失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFailReason(const std::string& _failReason);
@@ -115,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取预计变更所有权时间（仅用于参考，实际时间会存在误差）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChangeOwnerTime 预计变更所有权时间（仅用于参考，实际时间会存在误差）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetChangeOwnerTime() const;
 
                     /**
                      * 设置预计变更所有权时间（仅用于参考，实际时间会存在误差）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _changeOwnerTime 预计变更所有权时间（仅用于参考，实际时间会存在误差）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChangeOwnerTime(const std::string& _changeOwnerTime);
@@ -140,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取注册时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegTime 注册时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegTime() const;
 
                     /**
                      * 设置注册时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regTime 注册时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegTime(const std::string& _regTime);
@@ -165,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireTime 到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expireTime 到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -190,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源ID，用于删除资源信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceId 资源ID，用于删除资源信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置资源ID，用于删除资源信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceId 资源ID，用于删除资源信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -215,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取业务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BusinessId 业务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBusinessId() const;
 
                     /**
                      * 设置业务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _businessId 业务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBusinessId(const std::string& _businessId);
@@ -254,42 +230,36 @@ namespace TencentCloud
 
                     /**
                      * 域名预定失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_failReason;
                     bool m_failReasonHasBeenSet;
 
                     /**
                      * 预计变更所有权时间（仅用于参考，实际时间会存在误差）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_changeOwnerTime;
                     bool m_changeOwnerTimeHasBeenSet;
 
                     /**
                      * 注册时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regTime;
                     bool m_regTimeHasBeenSet;
 
                     /**
                      * 到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
                      * 资源ID，用于删除资源信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
                      * 业务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_businessId;
                     bool m_businessIdHasBeenSet;

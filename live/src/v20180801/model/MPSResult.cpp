@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,8 @@ using namespace std;
 
 MPSResult::MPSResult() :
     m_aiAsrResultsHasBeenSet(false),
-    m_aiOcrResultsHasBeenSet(false)
+    m_aiOcrResultsHasBeenSet(false),
+    m_streamQuaCtrlResultsHasBeenSet(false)
 {
 }
 
@@ -57,6 +58,19 @@ CoreInternalOutcome MPSResult::Deserialize(const rapidjson::Value &value)
         m_aiOcrResultsHasBeenSet = true;
     }
 
+    if (value.HasMember("StreamQuaCtrlResults") && !value["StreamQuaCtrlResults"].IsNull())
+    {
+        if (!value["StreamQuaCtrlResults"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `MPSResult.StreamQuaCtrlResults` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["StreamQuaCtrlResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_streamQuaCtrlResults.push_back((*itr).GetString());
+        }
+        m_streamQuaCtrlResultsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -85,6 +99,19 @@ void MPSResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_aiOcrResults.begin(); itr != m_aiOcrResults.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_streamQuaCtrlResultsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StreamQuaCtrlResults";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_streamQuaCtrlResults.begin(); itr != m_streamQuaCtrlResults.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -123,5 +150,21 @@ void MPSResult::SetAiOcrResults(const vector<string>& _aiOcrResults)
 bool MPSResult::AiOcrResultsHasBeenSet() const
 {
     return m_aiOcrResultsHasBeenSet;
+}
+
+vector<string> MPSResult::GetStreamQuaCtrlResults() const
+{
+    return m_streamQuaCtrlResults;
+}
+
+void MPSResult::SetStreamQuaCtrlResults(const vector<string>& _streamQuaCtrlResults)
+{
+    m_streamQuaCtrlResults = _streamQuaCtrlResults;
+    m_streamQuaCtrlResultsHasBeenSet = true;
+}
+
+bool MPSResult::StreamQuaCtrlResultsHasBeenSet() const
+{
+    return m_streamQuaCtrlResultsHasBeenSet;
 }
 

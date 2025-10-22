@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool InternetMaxBandwidthOutHasBeenSet() const;
 
                     /**
-                     * 获取NAT网关并发连接数上限，支持参数值：1000000、3000000、10000000，默认值为100000。  当以下NatProductVersion参数值为2即标准型时，此参数无需填写，默认为2000000。
-                     * @return MaxConcurrentConnection NAT网关并发连接数上限，支持参数值：1000000、3000000、10000000，默认值为100000。  当以下NatProductVersion参数值为2即标准型时，此参数无需填写，默认为2000000。
+                     * 获取NAT网关并发连接数上限，支持参数值：1000000、3000000、10000000，默认值为1000000。 当NatProductVersion参数值为2即标准型时，此参数无需填写，默认为2000000。
+                     * @return MaxConcurrentConnection NAT网关并发连接数上限，支持参数值：1000000、3000000、10000000，默认值为1000000。 当NatProductVersion参数值为2即标准型时，此参数无需填写，默认为2000000。
                      * 
                      */
                     uint64_t GetMaxConcurrentConnection() const;
 
                     /**
-                     * 设置NAT网关并发连接数上限，支持参数值：1000000、3000000、10000000，默认值为100000。  当以下NatProductVersion参数值为2即标准型时，此参数无需填写，默认为2000000。
-                     * @param _maxConcurrentConnection NAT网关并发连接数上限，支持参数值：1000000、3000000、10000000，默认值为100000。  当以下NatProductVersion参数值为2即标准型时，此参数无需填写，默认为2000000。
+                     * 设置NAT网关并发连接数上限，支持参数值：1000000、3000000、10000000，默认值为1000000。 当NatProductVersion参数值为2即标准型时，此参数无需填写，默认为2000000。
+                     * @param _maxConcurrentConnection NAT网关并发连接数上限，支持参数值：1000000、3000000、10000000，默认值为1000000。 当NatProductVersion参数值为2即标准型时，此参数无需填写，默认为2000000。
                      * 
                      */
                     void SetMaxConcurrentConnection(const uint64_t& _maxConcurrentConnection);
@@ -316,6 +316,27 @@ namespace TencentCloud
                      */
                     bool NatProductVersionHasBeenSet() const;
 
+                    /**
+                     * 获取NAT实例是否开启删除保护
+                     * @return DeletionProtectionEnabled NAT实例是否开启删除保护
+                     * 
+                     */
+                    bool GetDeletionProtectionEnabled() const;
+
+                    /**
+                     * 设置NAT实例是否开启删除保护
+                     * @param _deletionProtectionEnabled NAT实例是否开启删除保护
+                     * 
+                     */
+                    void SetDeletionProtectionEnabled(const bool& _deletionProtectionEnabled);
+
+                    /**
+                     * 判断参数 DeletionProtectionEnabled 是否已赋值
+                     * @return DeletionProtectionEnabled 是否已赋值
+                     * 
+                     */
+                    bool DeletionProtectionEnabledHasBeenSet() const;
+
                 private:
 
                     /**
@@ -337,7 +358,7 @@ namespace TencentCloud
                     bool m_internetMaxBandwidthOutHasBeenSet;
 
                     /**
-                     * NAT网关并发连接数上限，支持参数值：1000000、3000000、10000000，默认值为100000。  当以下NatProductVersion参数值为2即标准型时，此参数无需填写，默认为2000000。
+                     * NAT网关并发连接数上限，支持参数值：1000000、3000000、10000000，默认值为1000000。 当NatProductVersion参数值为2即标准型时，此参数无需填写，默认为2000000。
                      */
                     uint64_t m_maxConcurrentConnection;
                     bool m_maxConcurrentConnectionHasBeenSet;
@@ -395,6 +416,12 @@ namespace TencentCloud
                      */
                     uint64_t m_natProductVersion;
                     bool m_natProductVersionHasBeenSet;
+
+                    /**
+                     * NAT实例是否开启删除保护
+                     */
+                    bool m_deletionProtectionEnabled;
+                    bool m_deletionProtectionEnabledHasBeenSet;
 
                 };
             }

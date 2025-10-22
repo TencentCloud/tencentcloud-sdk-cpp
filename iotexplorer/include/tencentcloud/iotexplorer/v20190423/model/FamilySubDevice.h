@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AliasName 设备别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAliasName() const;
 
                     /**
                      * 设置设备别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _aliasName 设备别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAliasName(const std::string& _aliasName);
@@ -157,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备所在的房间ID，默认"0"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoomId 设备所在的房间ID，默认"0"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRoomId() const;
 
                     /**
                      * 设置设备所在的房间ID，默认"0"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _roomId 设备所在的房间ID，默认"0"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRoomId(const std::string& _roomId);
@@ -182,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取图标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IconUrl 图标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIconUrl() const;
 
                     /**
                      * 设置图标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iconUrl 图标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIconUrl(const std::string& _iconUrl);
@@ -207,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取grid图标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IconUrlGrid grid图标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIconUrlGrid() const;
 
                     /**
                      * 设置grid图标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iconUrlGrid grid图标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIconUrlGrid(const std::string& _iconUrlGrid);
@@ -294,7 +278,6 @@ namespace TencentCloud
 
                     /**
                      * 设备别名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_aliasName;
                     bool m_aliasNameHasBeenSet;
@@ -307,21 +290,18 @@ namespace TencentCloud
 
                     /**
                      * 设备所在的房间ID，默认"0"
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_roomId;
                     bool m_roomIdHasBeenSet;
 
                     /**
                      * 图标
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_iconUrl;
                     bool m_iconUrlHasBeenSet;
 
                     /**
                      * grid图标
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_iconUrlGrid;
                     bool m_iconUrlGridHasBeenSet;

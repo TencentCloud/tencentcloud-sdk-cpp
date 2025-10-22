@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取播放时长，单位为秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Duration 播放时长，单位为秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetDuration() const;
 
                     /**
                      * 设置播放时长，单位为秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _duration 播放时长，单位为秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDuration(const double& _duration);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取播放进度，单位为秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Progress 播放进度，单位为秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetProgress() const;
 
                     /**
                      * 设置播放进度，单位为秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _progress 播放进度，单位为秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProgress(const double& _progress);
@@ -181,14 +173,12 @@ namespace TencentCloud
 
                     /**
                      * 播放时长，单位为秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_duration;
                     bool m_durationHasBeenSet;
 
                     /**
                      * 播放进度，单位为秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_progress;
                     bool m_progressHasBeenSet;

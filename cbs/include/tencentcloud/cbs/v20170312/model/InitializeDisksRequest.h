@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待重新初始化的云硬盘ID列表， 单次初始化限制20块以内
-                     * @return DiskIds 待重新初始化的云硬盘ID列表， 单次初始化限制20块以内
+                     * 获取待重新初始化的云硬盘ID列表，可以通过[DescribeDisks](/document/product/362/16315)接口查询， 单次初始化限制20块以内
+                     * @return DiskIds 待重新初始化的云硬盘ID列表，可以通过[DescribeDisks](/document/product/362/16315)接口查询， 单次初始化限制20块以内
                      * 
                      */
                     std::vector<std::string> GetDiskIds() const;
 
                     /**
-                     * 设置待重新初始化的云硬盘ID列表， 单次初始化限制20块以内
-                     * @param _diskIds 待重新初始化的云硬盘ID列表， 单次初始化限制20块以内
+                     * 设置待重新初始化的云硬盘ID列表，可以通过[DescribeDisks](/document/product/362/16315)接口查询， 单次初始化限制20块以内
+                     * @param _diskIds 待重新初始化的云硬盘ID列表，可以通过[DescribeDisks](/document/product/362/16315)接口查询， 单次初始化限制20块以内
                      * 
                      */
                     void SetDiskIds(const std::vector<std::string>& _diskIds);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 待重新初始化的云硬盘ID列表， 单次初始化限制20块以内
+                     * 待重新初始化的云硬盘ID列表，可以通过[DescribeDisks](/document/product/362/16315)接口查询， 单次初始化限制20块以内
                      */
                     std::vector<std::string> m_diskIds;
                     bool m_diskIdsHasBeenSet;

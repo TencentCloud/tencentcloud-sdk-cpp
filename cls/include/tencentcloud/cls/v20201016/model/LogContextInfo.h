@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -175,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志来源主机名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostName 日志来源主机名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHostName() const;
 
                     /**
                      * 设置日志来源主机名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostName 日志来源主机名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostName(const std::string& _hostName);
@@ -200,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原始日志(仅在日志创建索引异常时有值)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RawLog 原始日志(仅在日志创建索引异常时有值)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRawLog() const;
 
                     /**
                      * 设置原始日志(仅在日志创建索引异常时有值)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rawLog 原始日志(仅在日志创建索引异常时有值)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRawLog(const std::string& _rawLog);
@@ -225,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志创建索引异常原因(仅在日志创建索引异常时有值)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IndexStatus 日志创建索引异常原因(仅在日志创建索引异常时有值)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIndexStatus() const;
 
                     /**
                      * 设置日志创建索引异常原因(仅在日志创建索引异常时有值)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _indexStatus 日志创建索引异常原因(仅在日志创建索引异常时有值)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIndexStatus(const std::string& _indexStatus);
@@ -250,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志内容的高亮描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HighLights 日志内容的高亮描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<HighLightItem> GetHighLights() const;
 
                     /**
                      * 设置日志内容的高亮描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _highLights 日志内容的高亮描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHighLights(const std::vector<HighLightItem>& _highLights);
@@ -313,28 +297,24 @@ namespace TencentCloud
 
                     /**
                      * 日志来源主机名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostName;
                     bool m_hostNameHasBeenSet;
 
                     /**
                      * 原始日志(仅在日志创建索引异常时有值)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_rawLog;
                     bool m_rawLogHasBeenSet;
 
                     /**
                      * 日志创建索引异常原因(仅在日志创建索引异常时有值)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_indexStatus;
                     bool m_indexStatusHasBeenSet;
 
                     /**
                      * 日志内容的高亮描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<HighLightItem> m_highLights;
                     bool m_highLightsHasBeenSet;

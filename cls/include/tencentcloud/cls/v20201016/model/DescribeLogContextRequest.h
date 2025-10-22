@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要查询的日志主题ID
-                     * @return TopicId 要查询的日志主题ID
+                     * 获取要查询的日志主题Id。
+- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
+- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
+                     * @return TopicId 要查询的日志主题Id。
+- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
+- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置要查询的日志主题ID
-                     * @param _topicId 要查询的日志主题ID
+                     * 设置要查询的日志主题Id。
+- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
+- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
+                     * @param _topicId 要查询的日志主题Id。
+- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
+- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -64,15 +72,15 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取日志时间,  即SearchLog接口返回信息中Results结构体中的Time，需按照 UTC+8 时区将该毫秒级Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。
-                     * @return BTime 日志时间,  即SearchLog接口返回信息中Results结构体中的Time，需按照 UTC+8 时区将该毫秒级Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。
+                     * 获取日志时间,  即 [检索分析日志](https://cloud.tencent.com/document/product/614/56447) 接口返回信息中Results结构体中的Time，需按照 UTC+8 时区将该毫秒级Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。
+                     * @return BTime 日志时间,  即 [检索分析日志](https://cloud.tencent.com/document/product/614/56447) 接口返回信息中Results结构体中的Time，需按照 UTC+8 时区将该毫秒级Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。
                      * 
                      */
                     std::string GetBTime() const;
 
                     /**
-                     * 设置日志时间,  即SearchLog接口返回信息中Results结构体中的Time，需按照 UTC+8 时区将该毫秒级Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。
-                     * @param _bTime 日志时间,  即SearchLog接口返回信息中Results结构体中的Time，需按照 UTC+8 时区将该毫秒级Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。
+                     * 设置日志时间,  即 [检索分析日志](https://cloud.tencent.com/document/product/614/56447) 接口返回信息中Results结构体中的Time，需按照 UTC+8 时区将该毫秒级Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。
+                     * @param _bTime 日志时间,  即 [检索分析日志](https://cloud.tencent.com/document/product/614/56447) 接口返回信息中Results结构体中的Time，需按照 UTC+8 时区将该毫秒级Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。
                      * 
                      */
                     void SetBTime(const std::string& _bTime);
@@ -85,15 +93,15 @@ namespace TencentCloud
                     bool BTimeHasBeenSet() const;
 
                     /**
-                     * 获取日志包序号，即SearchLog接口返回信息中Results结构体中的PkgId。
-                     * @return PkgId 日志包序号，即SearchLog接口返回信息中Results结构体中的PkgId。
+                     * 获取日志包序号，即 [检索分析日志](https://cloud.tencent.com/document/product/614/56447) 接口返回信息中Results结构体中的PkgId。
+                     * @return PkgId 日志包序号，即 [检索分析日志](https://cloud.tencent.com/document/product/614/56447) 接口返回信息中Results结构体中的PkgId。
                      * 
                      */
                     std::string GetPkgId() const;
 
                     /**
-                     * 设置日志包序号，即SearchLog接口返回信息中Results结构体中的PkgId。
-                     * @param _pkgId 日志包序号，即SearchLog接口返回信息中Results结构体中的PkgId。
+                     * 设置日志包序号，即 [检索分析日志](https://cloud.tencent.com/document/product/614/56447) 接口返回信息中Results结构体中的PkgId。
+                     * @param _pkgId 日志包序号，即 [检索分析日志](https://cloud.tencent.com/document/product/614/56447) 接口返回信息中Results结构体中的PkgId。
                      * 
                      */
                     void SetPkgId(const std::string& _pkgId);
@@ -106,15 +114,15 @@ namespace TencentCloud
                     bool PkgIdHasBeenSet() const;
 
                     /**
-                     * 获取日志包内一条日志的序号，即SearchLog接口返回信息中Results结构中的PkgLogId。
-                     * @return PkgLogId 日志包内一条日志的序号，即SearchLog接口返回信息中Results结构中的PkgLogId。
+                     * 获取日志包内一条日志的序号，即 [检索分析日志](https://cloud.tencent.com/document/product/614/56447) 接口返回信息中Results结构中的PkgLogId。
+                     * @return PkgLogId 日志包内一条日志的序号，即 [检索分析日志](https://cloud.tencent.com/document/product/614/56447) 接口返回信息中Results结构中的PkgLogId。
                      * 
                      */
                     int64_t GetPkgLogId() const;
 
                     /**
-                     * 设置日志包内一条日志的序号，即SearchLog接口返回信息中Results结构中的PkgLogId。
-                     * @param _pkgLogId 日志包内一条日志的序号，即SearchLog接口返回信息中Results结构中的PkgLogId。
+                     * 设置日志包内一条日志的序号，即 [检索分析日志](https://cloud.tencent.com/document/product/614/56447) 接口返回信息中Results结构中的PkgLogId。
+                     * @param _pkgLogId 日志包内一条日志的序号，即 [检索分析日志](https://cloud.tencent.com/document/product/614/56447) 接口返回信息中Results结构中的PkgLogId。
                      * 
                      */
                     void SetPkgLogId(const int64_t& _pkgLogId);
@@ -270,25 +278,27 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 要查询的日志主题ID
+                     * 要查询的日志主题Id。
+- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
+- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 日志时间,  即SearchLog接口返回信息中Results结构体中的Time，需按照 UTC+8 时区将该毫秒级Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。
+                     * 日志时间,  即 [检索分析日志](https://cloud.tencent.com/document/product/614/56447) 接口返回信息中Results结构体中的Time，需按照 UTC+8 时区将该毫秒级Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。
                      */
                     std::string m_bTime;
                     bool m_bTimeHasBeenSet;
 
                     /**
-                     * 日志包序号，即SearchLog接口返回信息中Results结构体中的PkgId。
+                     * 日志包序号，即 [检索分析日志](https://cloud.tencent.com/document/product/614/56447) 接口返回信息中Results结构体中的PkgId。
                      */
                     std::string m_pkgId;
                     bool m_pkgIdHasBeenSet;
 
                     /**
-                     * 日志包内一条日志的序号，即SearchLog接口返回信息中Results结构中的PkgLogId。
+                     * 日志包内一条日志的序号，即 [检索分析日志](https://cloud.tencent.com/document/product/614/56447) 接口返回信息中Results结构中的PkgLogId。
                      */
                     int64_t m_pkgLogId;
                     bool m_pkgLogIdHasBeenSet;

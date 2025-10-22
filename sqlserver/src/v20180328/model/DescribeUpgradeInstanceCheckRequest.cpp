@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,8 @@ DescribeUpgradeInstanceCheckRequest::DescribeUpgradeInstanceCheckRequest() :
     m_storageHasBeenSet(false),
     m_dBVersionHasBeenSet(false),
     m_hATypeHasBeenSet(false),
-    m_multiZonesHasBeenSet(false)
+    m_multiZonesHasBeenSet(false),
+    m_drZonesHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,21 @@ string DescribeUpgradeInstanceCheckRequest::ToJsonString() const
         string key = "MultiZones";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_multiZones.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_drZonesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DrZones";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_drZones.begin(); itr != m_drZones.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -214,6 +230,22 @@ void DescribeUpgradeInstanceCheckRequest::SetMultiZones(const string& _multiZone
 bool DescribeUpgradeInstanceCheckRequest::MultiZonesHasBeenSet() const
 {
     return m_multiZonesHasBeenSet;
+}
+
+vector<DrZoneInfo> DescribeUpgradeInstanceCheckRequest::GetDrZones() const
+{
+    return m_drZones;
+}
+
+void DescribeUpgradeInstanceCheckRequest::SetDrZones(const vector<DrZoneInfo>& _drZones)
+{
+    m_drZones = _drZones;
+    m_drZonesHasBeenSet = true;
+}
+
+bool DescribeUpgradeInstanceCheckRequest::DrZonesHasBeenSet() const
+{
+    return m_drZonesHasBeenSet;
 }
 
 

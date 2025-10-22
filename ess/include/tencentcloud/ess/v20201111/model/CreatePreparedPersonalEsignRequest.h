@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,26 +67,26 @@ namespace TencentCloud
 
                     /**
                      * 获取证件号码，应符合以下规则
-<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
-<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。。</li>
-<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+<ul><li> 中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。。</li>
+<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
                      * @return IdCardNumber 证件号码，应符合以下规则
-<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
-<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。。</li>
-<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+<ul><li> 中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。。</li>
+<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
                      * 
                      */
                     std::string GetIdCardNumber() const;
 
                     /**
                      * 设置证件号码，应符合以下规则
-<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
-<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。。</li>
-<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+<ul><li> 中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。。</li>
+<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
                      * @param _idCardNumber 证件号码，应符合以下规则
-<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
-<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。。</li>
-<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+<ul><li> 中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。。</li>
+<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
                      * 
                      */
                     void SetIdCardNumber(const std::string& _idCardNumber);
@@ -147,12 +147,12 @@ namespace TencentCloud
                     /**
                      * 获取证件类型，支持以下类型
 <ul><li>ID_CARD : 中国大陆居民身份证 (默认值)</li>
-<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
-<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
+<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同 中国大陆居民身份证)</li></ul>
                      * @return IdCardType 证件类型，支持以下类型
 <ul><li>ID_CARD : 中国大陆居民身份证 (默认值)</li>
-<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
-<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
+<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同 中国大陆居民身份证)</li></ul>
                      * 
                      */
                     std::string GetIdCardType() const;
@@ -160,12 +160,12 @@ namespace TencentCloud
                     /**
                      * 设置证件类型，支持以下类型
 <ul><li>ID_CARD : 中国大陆居民身份证 (默认值)</li>
-<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
-<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
+<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同 中国大陆居民身份证)</li></ul>
                      * @param _idCardType 证件类型，支持以下类型
 <ul><li>ID_CARD : 中国大陆居民身份证 (默认值)</li>
-<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
-<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
+<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同 中国大陆居民身份证)</li></ul>
                      * 
                      */
                     void SetIdCardType(const std::string& _idCardType);
@@ -178,23 +178,15 @@ namespace TencentCloud
                     bool IdCardTypeHasBeenSet() const;
 
                     /**
-                     * 获取印章图片的base64
-注：已废弃
-请先通过UploadFiles接口上传文件，获取 FileId
-                     * @return SealImage 印章图片的base64
-注：已废弃
-请先通过UploadFiles接口上传文件，获取 FileId
+                     * 获取该字段已不再使用
+                     * @return SealImage 该字段已不再使用
                      * @deprecated
                      */
                     std::string GetSealImage() const;
 
                     /**
-                     * 设置印章图片的base64
-注：已废弃
-请先通过UploadFiles接口上传文件，获取 FileId
-                     * @param _sealImage 印章图片的base64
-注：已废弃
-请先通过UploadFiles接口上传文件，获取 FileId
+                     * 设置该字段已不再使用
+                     * @param _sealImage 该字段已不再使用
                      * @deprecated
                      */
                     void SetSealImage(const std::string& _sealImage);
@@ -249,15 +241,15 @@ namespace TencentCloud
                     bool MobileHasBeenSet() const;
 
                     /**
-                     * 获取此字段已废弃，请勿继续使用。
-                     * @return EnableAutoSign 此字段已废弃，请勿继续使用。
+                     * 获取该字段已不再使用
+                     * @return EnableAutoSign 该字段已不再使用
                      * 
                      */
                     bool GetEnableAutoSign() const;
 
                     /**
-                     * 设置此字段已废弃，请勿继续使用。
-                     * @param _enableAutoSign 此字段已废弃，请勿继续使用。
+                     * 设置该字段已不再使用
+                     * @param _enableAutoSign 该字段已不再使用
                      * 
                      */
                     void SetEnableAutoSign(const bool& _enableAutoSign);
@@ -469,9 +461,9 @@ BLUE 蓝色。
 
                     /**
                      * 证件号码，应符合以下规则
-<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
-<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。。</li>
-<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+<ul><li> 中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。。</li>
+<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
                      */
                     std::string m_idCardNumber;
                     bool m_idCardNumberHasBeenSet;
@@ -492,16 +484,14 @@ BLUE 蓝色。
                     /**
                      * 证件类型，支持以下类型
 <ul><li>ID_CARD : 中国大陆居民身份证 (默认值)</li>
-<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
-<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
+<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同 中国大陆居民身份证)</li></ul>
                      */
                     std::string m_idCardType;
                     bool m_idCardTypeHasBeenSet;
 
                     /**
-                     * 印章图片的base64
-注：已废弃
-请先通过UploadFiles接口上传文件，获取 FileId
+                     * 该字段已不再使用
                      */
                     std::string m_sealImage;
                     bool m_sealImageHasBeenSet;
@@ -519,7 +509,7 @@ BLUE 蓝色。
                     bool m_mobileHasBeenSet;
 
                     /**
-                     * 此字段已废弃，请勿继续使用。
+                     * 该字段已不再使用
                      */
                     bool m_enableAutoSign;
                     bool m_enableAutoSignHasBeenSet;

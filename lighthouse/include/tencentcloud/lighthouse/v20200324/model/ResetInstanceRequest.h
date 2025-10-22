@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -88,14 +88,18 @@ namespace TencentCloud
 
                     /**
                      * 获取要创建的容器配置列表。
+注意：仅重装的镜像类型为Docker时支持传入该参数。
                      * @return Containers 要创建的容器配置列表。
+注意：仅重装的镜像类型为Docker时支持传入该参数。
                      * 
                      */
                     std::vector<DockerContainerConfiguration> GetContainers() const;
 
                     /**
                      * 设置要创建的容器配置列表。
+注意：仅重装的镜像类型为Docker时支持传入该参数。
                      * @param _containers 要创建的容器配置列表。
+注意：仅重装的镜像类型为Docker时支持传入该参数。
                      * 
                      */
                     void SetContainers(const std::vector<DockerContainerConfiguration>& _containers);
@@ -144,6 +148,7 @@ namespace TencentCloud
 
                     /**
                      * 要创建的容器配置列表。
+注意：仅重装的镜像类型为Docker时支持传入该参数。
                      */
                     std::vector<DockerContainerConfiguration> m_containers;
                     bool m_containersHasBeenSet;

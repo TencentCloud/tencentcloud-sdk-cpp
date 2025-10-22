@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务ID
-                     * @return TaskId 任务ID
+                     * 获取任务Id
+                     * @return TaskId 任务Id
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务ID
-                     * @param _taskId 任务ID
+                     * 设置任务Id
+                     * @param _taskId 任务Id
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -133,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceResource 数据源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DatahubResource GetSourceResource() const;
 
                     /**
                      * 设置数据源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sourceResource 数据源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSourceResource(const DatahubResource& _sourceResource);
@@ -158,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据目标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetResource 数据目标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DatahubResource GetTargetResource() const;
 
                     /**
                      * 设置数据目标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _targetResource 数据目标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTargetResource(const DatahubResource& _targetResource);
@@ -183,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 任务创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置任务创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 任务创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -208,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorMessage 异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrorMessage() const;
 
                     /**
                      * 设置异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errorMessage 异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrorMessage(const std::string& _errorMessage);
@@ -233,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建进度百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskProgress 创建进度百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetTaskProgress() const;
 
                     /**
                      * 设置创建进度百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskProgress 创建进度百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskProgress(const double& _taskProgress);
@@ -258,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务当前处于的步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskCurrentStep 任务当前处于的步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskCurrentStep() const;
 
                     /**
                      * 设置任务当前处于的步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskCurrentStep 任务当前处于的步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskCurrentStep(const std::string& _taskCurrentStep);
@@ -283,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Datahub转储Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatahubId Datahub转储Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDatahubId() const;
 
                     /**
                      * 设置Datahub转储Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _datahubId Datahub转储Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDatahubId(const std::string& _datahubId);
@@ -308,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取步骤列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StepList 步骤列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetStepList() const;
 
                     /**
                      * 设置步骤列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stepList 步骤列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStepList(const std::vector<std::string>& _stepList);
@@ -331,10 +299,31 @@ namespace TencentCloud
                      */
                     bool StepListHasBeenSet() const;
 
+                    /**
+                     * 获取任务描述信息
+                     * @return Description 任务描述信息
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置任务描述信息
+                     * @param _description 任务描述信息
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 任务ID
+                     * 任务Id
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
@@ -359,59 +348,57 @@ namespace TencentCloud
 
                     /**
                      * 数据源
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DatahubResource m_sourceResource;
                     bool m_sourceResourceHasBeenSet;
 
                     /**
                      * 数据目标
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DatahubResource m_targetResource;
                     bool m_targetResourceHasBeenSet;
 
                     /**
                      * 任务创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorMessage;
                     bool m_errorMessageHasBeenSet;
 
                     /**
                      * 创建进度百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_taskProgress;
                     bool m_taskProgressHasBeenSet;
 
                     /**
                      * 任务当前处于的步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskCurrentStep;
                     bool m_taskCurrentStepHasBeenSet;
 
                     /**
                      * Datahub转储Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_datahubId;
                     bool m_datahubIdHasBeenSet;
 
                     /**
                      * 步骤列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_stepList;
                     bool m_stepListHasBeenSet;
+
+                    /**
+                     * 任务描述信息
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                 };
             }

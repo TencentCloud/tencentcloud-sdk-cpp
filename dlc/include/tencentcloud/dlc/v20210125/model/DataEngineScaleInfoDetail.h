@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取统计开始时间，格式为：yyyy-MM-dd HH:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 统计开始时间，格式为：yyyy-MM-dd HH:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置统计开始时间，格式为：yyyy-MM-dd HH:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTime 统计开始时间，格式为：yyyy-MM-dd HH:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取统计结束时间，格式为：yyyy-MM-dd HH:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 统计结束时间，格式为：yyyy-MM-dd HH:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置统计结束时间，格式为：yyyy-MM-dd HH:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 统计结束时间，格式为：yyyy-MM-dd HH:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前统计时间段，引擎规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CU 当前统计时间段，引擎规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCU() const;
 
                     /**
                      * 设置当前统计时间段，引擎规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cU 当前统计时间段，引擎规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCU(const int64_t& _cU);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 统计开始时间，格式为：yyyy-MM-dd HH:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 统计结束时间，格式为：yyyy-MM-dd HH:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
                      * 当前统计时间段，引擎规格
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cU;
                     bool m_cUHasBeenSet;

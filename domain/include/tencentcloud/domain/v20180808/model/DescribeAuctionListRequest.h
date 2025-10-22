@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取业务ID，通过接口DescribeBiddingList返回结果中获取
-                     * @return BusinessId 业务ID，通过接口DescribeBiddingList返回结果中获取
+                     * 获取业务ID 
+通过接口[DescribeBiddingList](https://cloud.tencent.com/document/api/242/106598)返回结果中获取
+                     * @return BusinessId 业务ID 
+通过接口[DescribeBiddingList](https://cloud.tencent.com/document/api/242/106598)返回结果中获取
                      * 
                      */
                     std::string GetBusinessId() const;
 
                     /**
-                     * 设置业务ID，通过接口DescribeBiddingList返回结果中获取
-                     * @param _businessId 业务ID，通过接口DescribeBiddingList返回结果中获取
+                     * 设置业务ID 
+通过接口[DescribeBiddingList](https://cloud.tencent.com/document/api/242/106598)返回结果中获取
+                     * @param _businessId 业务ID 
+通过接口[DescribeBiddingList](https://cloud.tencent.com/document/api/242/106598)返回结果中获取
                      * 
                      */
                     void SetBusinessId(const std::string& _businessId);
@@ -64,15 +68,15 @@ namespace TencentCloud
                     bool BusinessIdHasBeenSet() const;
 
                     /**
-                     * 获取条数，默认10条
-                     * @return Limit 条数，默认10条
+                     * 获取条数，默认10，最大100
+                     * @return Limit 条数，默认10，最大100
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置条数，默认10条
-                     * @param _limit 条数，默认10条
+                     * 设置条数，默认10，最大100
+                     * @param _limit 条数，默认10，最大100
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -85,15 +89,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return OffSet 偏移量
+                     * 获取偏移量 默认0
+                     * @return OffSet 偏移量 默认0
                      * 
                      */
                     int64_t GetOffSet() const;
 
                     /**
-                     * 设置偏移量
-                     * @param _offSet 偏移量
+                     * 设置偏移量 默认0
+                     * @param _offSet 偏移量 默认0
                      * 
                      */
                     void SetOffSet(const int64_t& _offSet);
@@ -108,19 +112,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 业务ID，通过接口DescribeBiddingList返回结果中获取
+                     * 业务ID 
+通过接口[DescribeBiddingList](https://cloud.tencent.com/document/api/242/106598)返回结果中获取
                      */
                     std::string m_businessId;
                     bool m_businessIdHasBeenSet;
 
                     /**
-                     * 条数，默认10条
+                     * 条数，默认10，最大100
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * 偏移量 默认0
                      */
                     int64_t m_offSet;
                     bool m_offSetHasBeenSet;

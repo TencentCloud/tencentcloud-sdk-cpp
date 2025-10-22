@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 属性标签详情
+                * 标签详情
                 */
                 class AttrLabelDetail : public AbstractModel
                 {
@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取属性ID
+                     * 获取标签ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AttrBizId 属性ID
+                     * @return AttrBizId 标签ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAttrBizId() const;
 
                     /**
-                     * 设置属性ID
+                     * 设置标签ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _attrBizId 属性ID
+                     * @param _attrBizId 标签ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool AttrBizIdHasBeenSet() const;
 
                     /**
-                     * 获取属性标识
+                     * 获取标签标识
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AttrKey 属性标识
+                     * @return AttrKey 标签标识
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAttrKey() const;
 
                     /**
-                     * 设置属性标识
+                     * 设置标签标识
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _attrKey 属性标识
+                     * @param _attrKey 标签标识
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool AttrKeyHasBeenSet() const;
 
                     /**
-                     * 获取属性名称
+                     * 获取标签名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AttrName 属性名称
+                     * @return AttrName 标签名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAttrName() const;
 
                     /**
-                     * 设置属性名称
+                     * 设置标签名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _attrName 属性名称
+                     * @param _attrName 标签名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool AttrNameHasBeenSet() const;
 
                     /**
-                     * 获取标签名称
+                     * 获取标签值名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LabelNames 标签名称
+                     * @return LabelNames 标签值名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetLabelNames() const;
 
                     /**
-                     * 设置标签名称
+                     * 设置标签值名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _labelNames 标签名称
+                     * @param _labelNames 标签值名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool LabelNamesHasBeenSet() const;
 
                     /**
-                     * 获取属性标签是否在更新中
+                     * 获取标签是否在更新中
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsUpdating 属性标签是否在更新中
+                     * @return IsUpdating 标签是否在更新中
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsUpdating() const;
 
                     /**
-                     * 设置属性标签是否在更新中
+                     * 设置标签是否在更新中
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isUpdating 属性标签是否在更新中
+                     * @param _isUpdating 标签是否在更新中
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -171,42 +171,133 @@ namespace TencentCloud
                      */
                     bool IsUpdatingHasBeenSet() const;
 
+                    /**
+                     * 获取状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 设置状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _status 状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStatus(const int64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取状态描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StatusDesc 状态描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetStatusDesc() const;
+
+                    /**
+                     * 设置状态描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _statusDesc 状态描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStatusDesc(const std::string& _statusDesc);
+
+                    /**
+                     * 判断参数 StatusDesc 是否已赋值
+                     * @return StatusDesc 是否已赋值
+                     * 
+                     */
+                    bool StatusDescHasBeenSet() const;
+
+                    /**
+                     * 获取标签值总数
+                     * @return LabelTotalCount 标签值总数
+                     * 
+                     */
+                    std::string GetLabelTotalCount() const;
+
+                    /**
+                     * 设置标签值总数
+                     * @param _labelTotalCount 标签值总数
+                     * 
+                     */
+                    void SetLabelTotalCount(const std::string& _labelTotalCount);
+
+                    /**
+                     * 判断参数 LabelTotalCount 是否已赋值
+                     * @return LabelTotalCount 是否已赋值
+                     * 
+                     */
+                    bool LabelTotalCountHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 属性ID
+                     * 标签ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_attrBizId;
                     bool m_attrBizIdHasBeenSet;
 
                     /**
-                     * 属性标识
+                     * 标签标识
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_attrKey;
                     bool m_attrKeyHasBeenSet;
 
                     /**
-                     * 属性名称
+                     * 标签名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_attrName;
                     bool m_attrNameHasBeenSet;
 
                     /**
-                     * 标签名称
+                     * 标签值名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_labelNames;
                     bool m_labelNamesHasBeenSet;
 
                     /**
-                     * 属性标签是否在更新中
+                     * 标签是否在更新中
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isUpdating;
                     bool m_isUpdatingHasBeenSet;
+
+                    /**
+                     * 状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 状态描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_statusDesc;
+                    bool m_statusDescHasBeenSet;
+
+                    /**
+                     * 标签值总数
+                     */
+                    std::string m_labelTotalCount;
+                    bool m_labelTotalCountHasBeenSet;
 
                 };
             }

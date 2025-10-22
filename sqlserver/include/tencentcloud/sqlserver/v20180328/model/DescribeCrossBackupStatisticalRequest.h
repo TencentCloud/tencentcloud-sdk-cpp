@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool CrossRegionHasBeenSet() const;
 
                     /**
-                     * 获取排序字段，默认default-按照备份空间降序排序，data-按照数据备份排序，log-按照日志备份培训
-                     * @return OrderBy 排序字段，默认default-按照备份空间降序排序，data-按照数据备份排序，log-按照日志备份培训
+                     * 获取排序字段，默认default-按照备份空间降序排序，data-按照数据备份排序，log-按照日志备份
+                     * @return OrderBy 排序字段，默认default-按照备份空间降序排序，data-按照数据备份排序，log-按照日志备份
                      * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置排序字段，默认default-按照备份空间降序排序，data-按照数据备份排序，log-按照日志备份培训
-                     * @param _orderBy 排序字段，默认default-按照备份空间降序排序，data-按照数据备份排序，log-按照日志备份培训
+                     * 设置排序字段，默认default-按照备份空间降序排序，data-按照数据备份排序，log-按照日志备份
+                     * @param _orderBy 排序字段，默认default-按照备份空间降序排序，data-按照数据备份排序，log-按照日志备份
                      * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
@@ -249,7 +249,7 @@ namespace TencentCloud
                     bool m_crossRegionHasBeenSet;
 
                     /**
-                     * 排序字段，默认default-按照备份空间降序排序，data-按照数据备份排序，log-按照日志备份培训
+                     * 排序字段，默认default-按照备份空间降序排序，data-按照数据备份排序，log-按照日志备份
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;

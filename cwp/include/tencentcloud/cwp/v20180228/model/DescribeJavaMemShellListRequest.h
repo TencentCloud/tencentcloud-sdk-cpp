@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -114,6 +114,48 @@ MachineName主机名模糊查询, Type，Status精确匹配，CreateBeginTime，
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取排序，大小写无关：asc 升序，desc降序
+                     * @return Order 排序，大小写无关：asc 升序，desc降序
+                     * 
+                     */
+                    std::string GetOrder() const;
+
+                    /**
+                     * 设置排序，大小写无关：asc 升序，desc降序
+                     * @param _order 排序，大小写无关：asc 升序，desc降序
+                     * 
+                     */
+                    void SetOrder(const std::string& _order);
+
+                    /**
+                     * 判断参数 Order 是否已赋值
+                     * @return Order 是否已赋值
+                     * 
+                     */
+                    bool OrderHasBeenSet() const;
+
+                    /**
+                     * 获取排序列，严格相等：最近检测时间RecentFoundTime
+                     * @return By 排序列，严格相等：最近检测时间RecentFoundTime
+                     * 
+                     */
+                    std::string GetBy() const;
+
+                    /**
+                     * 设置排序列，严格相等：最近检测时间RecentFoundTime
+                     * @param _by 排序列，严格相等：最近检测时间RecentFoundTime
+                     * 
+                     */
+                    void SetBy(const std::string& _by);
+
+                    /**
+                     * 判断参数 By 是否已赋值
+                     * @return By 是否已赋值
+                     * 
+                     */
+                    bool ByHasBeenSet() const;
+
                 private:
 
                     /**
@@ -135,6 +177,18 @@ MachineName主机名模糊查询, Type，Status精确匹配，CreateBeginTime，
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 排序，大小写无关：asc 升序，desc降序
+                     */
+                    std::string m_order;
+                    bool m_orderHasBeenSet;
+
+                    /**
+                     * 排序列，严格相等：最近检测时间RecentFoundTime
+                     */
+                    std::string m_by;
+                    bool m_byHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 数据库信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DSPADataSourceDbInfo> GetItems() const;
@@ -60,14 +58,33 @@ namespace TencentCloud
                      */
                     bool ItemsHasBeenSet() const;
 
+                    /**
+                     * 获取数据源id
+                     * @return DataSourceId 数据源id
+                     * 
+                     */
+                    std::string GetDataSourceId() const;
+
+                    /**
+                     * 判断参数 DataSourceId 是否已赋值
+                     * @return DataSourceId 是否已赋值
+                     * 
+                     */
+                    bool DataSourceIdHasBeenSet() const;
+
                 private:
 
                     /**
                      * 数据库信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DSPADataSourceDbInfo> m_items;
                     bool m_itemsHasBeenSet;
+
+                    /**
+                     * 数据源id
+                     */
+                    std::string m_dataSourceId;
+                    bool m_dataSourceIdHasBeenSet;
 
                 };
             }

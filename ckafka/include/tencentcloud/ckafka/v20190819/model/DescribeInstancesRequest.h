@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -150,21 +150,21 @@ namespace TencentCloud
                     /**
                      * 获取已废弃。匹配标签key值。
                      * @return TagKey 已废弃。匹配标签key值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetTagKey() const;
 
                     /**
                      * 设置已废弃。匹配标签key值。
                      * @param _tagKey 已废弃。匹配标签key值。
-                     * 
+                     * @deprecated
                      */
                     void SetTagKey(const std::string& _tagKey);
 
                     /**
                      * 判断参数 TagKey 是否已赋值
                      * @return TagKey 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool TagKeyHasBeenSet() const;
 

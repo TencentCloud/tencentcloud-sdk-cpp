@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -124,18 +124,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Bot智能分析。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IntelligenceRule Bot智能分析。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     IntelligenceRule GetIntelligenceRule() const;
 
                     /**
                      * 设置Bot智能分析。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _intelligenceRule Bot智能分析。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIntelligenceRule(const IntelligenceRule& _intelligenceRule);
@@ -191,18 +187,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Bot托管定制策略，入参可不填，仅出参使用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Customizes Bot托管定制策略，入参可不填，仅出参使用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BotUserRule> GetCustomizes() const;
 
                     /**
                      * 设置Bot托管定制策略，入参可不填，仅出参使用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _customizes Bot托管定制策略，入参可不填，仅出参使用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCustomizes(const std::vector<BotUserRule>& _customizes);
@@ -238,7 +230,6 @@ namespace TencentCloud
 
                     /**
                      * Bot智能分析。如果为null，默认使用历史配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     IntelligenceRule m_intelligenceRule;
                     bool m_intelligenceRuleHasBeenSet;
@@ -257,7 +248,6 @@ namespace TencentCloud
 
                     /**
                      * Bot托管定制策略，入参可不填，仅出参使用。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BotUserRule> m_customizes;
                     bool m_customizesHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,8 @@
 #include <tencentcloud/tione/v20211111/model/Tag.h>
 #include <tencentcloud/tione/v20211111/model/ServiceLimit.h>
 #include <tencentcloud/tione/v20211111/model/ScheduledAction.h>
+#include <tencentcloud/tione/v20211111/model/SchedulingPolicy.h>
+#include <tencentcloud/tione/v20211111/model/ResourceGroupInfo.h>
 
 
 namespace TencentCloud
@@ -828,6 +830,169 @@ DEFAULT: 其他来源
                      */
                     bool ResourceGroupSWTypeHasBeenSet() const;
 
+                    /**
+                     * 获取服务的归档状态  Waiting 等待归档中，Archived 已归档
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ArchiveStatus 服务的归档状态  Waiting 等待归档中，Archived 已归档
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetArchiveStatus() const;
+
+                    /**
+                     * 设置服务的归档状态  Waiting 等待归档中，Archived 已归档
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _archiveStatus 服务的归档状态  Waiting 等待归档中，Archived 已归档
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetArchiveStatus(const std::string& _archiveStatus);
+
+                    /**
+                     * 判断参数 ArchiveStatus 是否已赋值
+                     * @return ArchiveStatus 是否已赋值
+                     * 
+                     */
+                    bool ArchiveStatusHasBeenSet() const;
+
+                    /**
+                     * 获取服务的部署类型 [STANDARD 标准部署，DIST 分布式多机部署] 默认STANDARD
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeployType 服务的部署类型 [STANDARD 标准部署，DIST 分布式多机部署] 默认STANDARD
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDeployType() const;
+
+                    /**
+                     * 设置服务的部署类型 [STANDARD 标准部署，DIST 分布式多机部署] 默认STANDARD
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _deployType 服务的部署类型 [STANDARD 标准部署，DIST 分布式多机部署] 默认STANDARD
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDeployType(const std::string& _deployType);
+
+                    /**
+                     * 判断参数 DeployType 是否已赋值
+                     * @return DeployType 是否已赋值
+                     * 
+                     */
+                    bool DeployTypeHasBeenSet() const;
+
+                    /**
+                     * 获取单副本下的实例数，仅在部署类型为DIST时生效，默认1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstancePerReplicas 单副本下的实例数，仅在部署类型为DIST时生效，默认1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInstancePerReplicas() const;
+
+                    /**
+                     * 设置单副本下的实例数，仅在部署类型为DIST时生效，默认1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instancePerReplicas 单副本下的实例数，仅在部署类型为DIST时生效，默认1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstancePerReplicas(const std::string& _instancePerReplicas);
+
+                    /**
+                     * 判断参数 InstancePerReplicas 是否已赋值
+                     * @return InstancePerReplicas 是否已赋值
+                     * 
+                     */
+                    bool InstancePerReplicasHasBeenSet() const;
+
+                    /**
+                     * 获取用于监控查询的Source
+枚举值，部分情况下与CreateSource不同，通过该字段兼容
+                     * @return MonitorSource 用于监控查询的Source
+枚举值，部分情况下与CreateSource不同，通过该字段兼容
+                     * 
+                     */
+                    std::string GetMonitorSource() const;
+
+                    /**
+                     * 设置用于监控查询的Source
+枚举值，部分情况下与CreateSource不同，通过该字段兼容
+                     * @param _monitorSource 用于监控查询的Source
+枚举值，部分情况下与CreateSource不同，通过该字段兼容
+                     * 
+                     */
+                    void SetMonitorSource(const std::string& _monitorSource);
+
+                    /**
+                     * 判断参数 MonitorSource 是否已赋值
+                     * @return MonitorSource 是否已赋值
+                     * 
+                     */
+                    bool MonitorSourceHasBeenSet() const;
+
+                    /**
+                     * 获取服务创建者的子账号名称
+                     * @return SubUinName 服务创建者的子账号名称
+                     * 
+                     */
+                    std::string GetSubUinName() const;
+
+                    /**
+                     * 设置服务创建者的子账号名称
+                     * @param _subUinName 服务创建者的子账号名称
+                     * 
+                     */
+                    void SetSubUinName(const std::string& _subUinName);
+
+                    /**
+                     * 判断参数 SubUinName 是否已赋值
+                     * @return SubUinName 是否已赋值
+                     * 
+                     */
+                    bool SubUinNameHasBeenSet() const;
+
+                    /**
+                     * 获取服务的调度策略
+                     * @return SchedulingPolicy 服务的调度策略
+                     * 
+                     */
+                    SchedulingPolicy GetSchedulingPolicy() const;
+
+                    /**
+                     * 设置服务的调度策略
+                     * @param _schedulingPolicy 服务的调度策略
+                     * 
+                     */
+                    void SetSchedulingPolicy(const SchedulingPolicy& _schedulingPolicy);
+
+                    /**
+                     * 判断参数 SchedulingPolicy 是否已赋值
+                     * @return SchedulingPolicy 是否已赋值
+                     * 
+                     */
+                    bool SchedulingPolicyHasBeenSet() const;
+
+                    /**
+                     * 获取外部的资源组信息，表示借调了哪些资源组的资源
+                     * @return ExternalResourceGroups 外部的资源组信息，表示借调了哪些资源组的资源
+                     * 
+                     */
+                    std::vector<ResourceGroupInfo> GetExternalResourceGroups() const;
+
+                    /**
+                     * 设置外部的资源组信息，表示借调了哪些资源组的资源
+                     * @param _externalResourceGroups 外部的资源组信息，表示借调了哪些资源组的资源
+                     * 
+                     */
+                    void SetExternalResourceGroups(const std::vector<ResourceGroupInfo>& _externalResourceGroups);
+
+                    /**
+                     * 判断参数 ExternalResourceGroups 是否已赋值
+                     * @return ExternalResourceGroups 是否已赋值
+                     * 
+                     */
+                    bool ExternalResourceGroupsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1046,6 +1211,52 @@ DEFAULT: 其他来源
                      */
                     std::string m_resourceGroupSWType;
                     bool m_resourceGroupSWTypeHasBeenSet;
+
+                    /**
+                     * 服务的归档状态  Waiting 等待归档中，Archived 已归档
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_archiveStatus;
+                    bool m_archiveStatusHasBeenSet;
+
+                    /**
+                     * 服务的部署类型 [STANDARD 标准部署，DIST 分布式多机部署] 默认STANDARD
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_deployType;
+                    bool m_deployTypeHasBeenSet;
+
+                    /**
+                     * 单副本下的实例数，仅在部署类型为DIST时生效，默认1
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instancePerReplicas;
+                    bool m_instancePerReplicasHasBeenSet;
+
+                    /**
+                     * 用于监控查询的Source
+枚举值，部分情况下与CreateSource不同，通过该字段兼容
+                     */
+                    std::string m_monitorSource;
+                    bool m_monitorSourceHasBeenSet;
+
+                    /**
+                     * 服务创建者的子账号名称
+                     */
+                    std::string m_subUinName;
+                    bool m_subUinNameHasBeenSet;
+
+                    /**
+                     * 服务的调度策略
+                     */
+                    SchedulingPolicy m_schedulingPolicy;
+                    bool m_schedulingPolicyHasBeenSet;
+
+                    /**
+                     * 外部的资源组信息，表示借调了哪些资源组的资源
+                     */
+                    std::vector<ResourceGroupInfo> m_externalResourceGroups;
+                    bool m_externalResourceGroupsHasBeenSet;
 
                 };
             }

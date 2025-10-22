@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例启动模版本号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LatestVersionNumber 实例启动模版本号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLatestVersionNumber() const;
 
                     /**
                      * 设置实例启动模版本号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _latestVersionNumber 实例启动模版本号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLatestVersionNumber(const uint64_t& _latestVersionNumber);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例启动模板ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LaunchTemplateId 实例启动模板ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLaunchTemplateId() const;
 
                     /**
                      * 设置实例启动模板ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _launchTemplateId 实例启动模板ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLaunchTemplateId(const std::string& _launchTemplateId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例启动模板名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LaunchTemplateName 实例启动模板名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLaunchTemplateName() const;
 
                     /**
                      * 设置实例启动模板名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _launchTemplateName 实例启动模板名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLaunchTemplateName(const std::string& _launchTemplateName);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例启动模板默认版本号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefaultVersionNumber 实例启动模板默认版本号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDefaultVersionNumber() const;
 
                     /**
                      * 设置实例启动模板默认版本号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _defaultVersionNumber 实例启动模板默认版本号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefaultVersionNumber(const uint64_t& _defaultVersionNumber);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例启动模板包含的版本总数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LaunchTemplateVersionCount 实例启动模板包含的版本总数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLaunchTemplateVersionCount() const;
 
                     /**
                      * 设置实例启动模板包含的版本总数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _launchTemplateVersionCount 实例启动模板包含的版本总数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLaunchTemplateVersionCount(const uint64_t& _launchTemplateVersionCount);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建该模板的用户UIN。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedBy 创建该模板的用户UIN。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedBy() const;
 
                     /**
                      * 设置创建该模板的用户UIN。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdBy 创建该模板的用户UIN。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedBy(const std::string& _createdBy);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建该模板的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreationTime 创建该模板的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreationTime() const;
 
                     /**
                      * 设置创建该模板的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _creationTime 创建该模板的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreationTime(const std::string& _creationTime);
@@ -225,49 +197,42 @@ namespace TencentCloud
 
                     /**
                      * 实例启动模版本号。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_latestVersionNumber;
                     bool m_latestVersionNumberHasBeenSet;
 
                     /**
                      * 实例启动模板ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_launchTemplateId;
                     bool m_launchTemplateIdHasBeenSet;
 
                     /**
                      * 实例启动模板名。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_launchTemplateName;
                     bool m_launchTemplateNameHasBeenSet;
 
                     /**
                      * 实例启动模板默认版本号。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_defaultVersionNumber;
                     bool m_defaultVersionNumberHasBeenSet;
 
                     /**
                      * 实例启动模板包含的版本总数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_launchTemplateVersionCount;
                     bool m_launchTemplateVersionCountHasBeenSet;
 
                     /**
                      * 创建该模板的用户UIN。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdBy;
                     bool m_createdByHasBeenSet;
 
                     /**
                      * 创建该模板的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_creationTime;
                     bool m_creationTimeHasBeenSet;

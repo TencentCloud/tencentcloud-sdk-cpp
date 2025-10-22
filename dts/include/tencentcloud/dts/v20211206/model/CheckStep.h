@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取步骤编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StepNo 步骤编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStepNo() const;
 
                     /**
                      * 设置步骤编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stepNo 步骤编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStepNo(const uint64_t& _stepNo);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取步骤Id， 如：ConnectDBCheck、VersionCheck、SrcPrivilegeCheck等，具体校验项和源目标实例相关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StepId 步骤Id， 如：ConnectDBCheck、VersionCheck、SrcPrivilegeCheck等，具体校验项和源目标实例相关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStepId() const;
 
                     /**
                      * 设置步骤Id， 如：ConnectDBCheck、VersionCheck、SrcPrivilegeCheck等，具体校验项和源目标实例相关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stepId 步骤Id， 如：ConnectDBCheck、VersionCheck、SrcPrivilegeCheck等，具体校验项和源目标实例相关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStepId(const std::string& _stepId);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取步骤名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StepName 步骤名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStepName() const;
 
                     /**
                      * 设置步骤名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stepName 步骤名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStepName(const std::string& _stepName);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取此检查步骤的结果，pass(校验通过)、failed(校验失败)、notStarted(校验还未开始进行)、blocked(检验阻塞)、warning(校验有告警，但仍通过)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StepStatus 此检查步骤的结果，pass(校验通过)、failed(校验失败)、notStarted(校验还未开始进行)、blocked(检验阻塞)、warning(校验有告警，但仍通过)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStepStatus() const;
 
                     /**
                      * 设置此检查步骤的结果，pass(校验通过)、failed(校验失败)、notStarted(校验还未开始进行)、blocked(检验阻塞)、warning(校验有告警，但仍通过)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stepStatus 此检查步骤的结果，pass(校验通过)、failed(校验失败)、notStarted(校验还未开始进行)、blocked(检验阻塞)、warning(校验有告警，但仍通过)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStepStatus(const std::string& _stepStatus);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取此检查步骤的错误消息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StepMessage 此检查步骤的错误消息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStepMessage() const;
 
                     /**
                      * 设置此检查步骤的错误消息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stepMessage 此检查步骤的错误消息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStepMessage(const std::string& _stepMessage);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取每个检查步骤里的具体检查项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DetailCheckItems 每个检查步骤里的具体检查项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DetailCheckItem> GetDetailCheckItems() const;
 
                     /**
                      * 设置每个检查步骤里的具体检查项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _detailCheckItems 每个检查步骤里的具体检查项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDetailCheckItems(const std::vector<DetailCheckItem>& _detailCheckItems);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否已跳过
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HasSkipped 是否已跳过
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetHasSkipped() const;
 
                     /**
                      * 设置是否已跳过
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hasSkipped 是否已跳过
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHasSkipped(const bool& _hasSkipped);
@@ -226,49 +198,42 @@ namespace TencentCloud
 
                     /**
                      * 步骤编号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_stepNo;
                     bool m_stepNoHasBeenSet;
 
                     /**
                      * 步骤Id， 如：ConnectDBCheck、VersionCheck、SrcPrivilegeCheck等，具体校验项和源目标实例相关
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stepId;
                     bool m_stepIdHasBeenSet;
 
                     /**
                      * 步骤名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stepName;
                     bool m_stepNameHasBeenSet;
 
                     /**
                      * 此检查步骤的结果，pass(校验通过)、failed(校验失败)、notStarted(校验还未开始进行)、blocked(检验阻塞)、warning(校验有告警，但仍通过)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stepStatus;
                     bool m_stepStatusHasBeenSet;
 
                     /**
                      * 此检查步骤的错误消息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stepMessage;
                     bool m_stepMessageHasBeenSet;
 
                     /**
                      * 每个检查步骤里的具体检查项
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DetailCheckItem> m_detailCheckItems;
                     bool m_detailCheckItemsHasBeenSet;
 
                     /**
                      * 是否已跳过
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_hasSkipped;
                     bool m_hasSkippedHasBeenSet;

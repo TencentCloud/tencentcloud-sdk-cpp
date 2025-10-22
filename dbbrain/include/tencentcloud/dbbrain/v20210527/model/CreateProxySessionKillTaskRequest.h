@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool ProductHasBeenSet() const;
 
+                    /**
+                     * 获取实列代理ID。
+                     * @return InstanceProxyId 实列代理ID。
+                     * 
+                     */
+                    std::string GetInstanceProxyId() const;
+
+                    /**
+                     * 设置实列代理ID。
+                     * @param _instanceProxyId 实列代理ID。
+                     * 
+                     */
+                    void SetInstanceProxyId(const std::string& _instanceProxyId);
+
+                    /**
+                     * 判断参数 InstanceProxyId 是否已赋值
+                     * @return InstanceProxyId 是否已赋值
+                     * 
+                     */
+                    bool InstanceProxyIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;
+
+                    /**
+                     * 实列代理ID。
+                     */
+                    std::string m_instanceProxyId;
+                    bool m_instanceProxyIdHasBeenSet;
 
                 };
             }

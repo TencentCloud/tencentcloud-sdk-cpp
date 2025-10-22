@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取一级标签结果数组。识别是否文件封。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FirstTags 一级标签结果数组。识别是否文件封。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ImageTag> GetFirstTags() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取二级标签结果数组。识别文件封正反面。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecondTags 二级标签结果数组。识别文件封正反面。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ImageTag> GetSecondTags() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 一级标签结果数组。识别是否文件封。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ImageTag> m_firstTags;
                     bool m_firstTagsHasBeenSet;
 
                     /**
                      * 二级标签结果数组。识别文件封正反面。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ImageTag> m_secondTags;
                     bool m_secondTagsHasBeenSet;

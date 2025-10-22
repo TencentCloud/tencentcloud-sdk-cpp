@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,8 @@ using namespace std;
 
 SqlExpression::SqlExpression() :
     m_tableExpressionsHasBeenSet(false),
-    m_paramExpressionsHasBeenSet(false)
+    m_paramExpressionsHasBeenSet(false),
+    m_systemTemplateExpressionsHasBeenSet(false)
 {
 }
 
@@ -64,6 +65,19 @@ CoreInternalOutcome SqlExpression::Deserialize(const rapidjson::Value &value)
         m_paramExpressionsHasBeenSet = true;
     }
 
+    if (value.HasMember("SystemTemplateExpressions") && !value["SystemTemplateExpressions"].IsNull())
+    {
+        if (!value["SystemTemplateExpressions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SqlExpression.SystemTemplateExpressions` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SystemTemplateExpressions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_systemTemplateExpressions.push_back((*itr).GetString());
+        }
+        m_systemTemplateExpressionsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -94,6 +108,19 @@ void SqlExpression::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_paramExpressions.begin(); itr != m_paramExpressions.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_systemTemplateExpressionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SystemTemplateExpressions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_systemTemplateExpressions.begin(); itr != m_systemTemplateExpressions.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -132,5 +159,21 @@ void SqlExpression::SetParamExpressions(const vector<string>& _paramExpressions)
 bool SqlExpression::ParamExpressionsHasBeenSet() const
 {
     return m_paramExpressionsHasBeenSet;
+}
+
+vector<string> SqlExpression::GetSystemTemplateExpressions() const
+{
+    return m_systemTemplateExpressions;
+}
+
+void SqlExpression::SetSystemTemplateExpressions(const vector<string>& _systemTemplateExpressions)
+{
+    m_systemTemplateExpressions = _systemTemplateExpressions;
+    m_systemTemplateExpressionsHasBeenSet = true;
+}
+
+bool SqlExpression::SystemTemplateExpressionsHasBeenSet() const
+{
+    return m_systemTemplateExpressionsHasBeenSet;
 }
 

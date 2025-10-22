@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,8 @@ InsightResult::InsightResult() :
     m_scheduleTaskExecIDHasBeenSet(false),
     m_scheduleFlowNameHasBeenSet(false),
     m_scheduleTaskNameHasBeenSet(false),
-    m_jobConfHasBeenSet(false)
+    m_jobConfHasBeenSet(false),
+    m_contextHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,16 @@ CoreInternalOutcome InsightResult::Deserialize(const rapidjson::Value &value)
         m_jobConfHasBeenSet = true;
     }
 
+    if (value.HasMember("Context") && !value["Context"].IsNull())
+    {
+        if (!value["Context"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InsightResult.Context` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_context = string(value["Context"].GetString());
+        m_contextHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +273,14 @@ void InsightResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "JobConf";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_jobConf.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_contextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Context";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_context.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -457,5 +476,21 @@ void InsightResult::SetJobConf(const string& _jobConf)
 bool InsightResult::JobConfHasBeenSet() const
 {
     return m_jobConfHasBeenSet;
+}
+
+string InsightResult::GetContext() const
+{
+    return m_context;
+}
+
+void InsightResult::SetContext(const string& _context)
+{
+    m_context = _context;
+    m_contextHasBeenSet = true;
+}
+
+bool InsightResult::ContextHasBeenSet() const
+{
+    return m_contextHasBeenSet;
 }
 

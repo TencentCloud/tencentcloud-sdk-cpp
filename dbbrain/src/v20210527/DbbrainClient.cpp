@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -83,6 +83,92 @@ DbbrainClient::AddUserContactOutcomeCallable DbbrainClient::AddUserContactCallab
     return task->get_future();
 }
 
+DbbrainClient::CancelDBAutonomyActionOutcome DbbrainClient::CancelDBAutonomyAction(const CancelDBAutonomyActionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelDBAutonomyAction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelDBAutonomyActionResponse rsp = CancelDBAutonomyActionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelDBAutonomyActionOutcome(rsp);
+        else
+            return CancelDBAutonomyActionOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelDBAutonomyActionOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::CancelDBAutonomyActionAsync(const CancelDBAutonomyActionRequest& request, const CancelDBAutonomyActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CancelDBAutonomyAction(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::CancelDBAutonomyActionOutcomeCallable DbbrainClient::CancelDBAutonomyActionCallable(const CancelDBAutonomyActionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CancelDBAutonomyActionOutcome()>>(
+        [this, request]()
+        {
+            return this->CancelDBAutonomyAction(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::CancelDBAutonomyEventOutcome DbbrainClient::CancelDBAutonomyEvent(const CancelDBAutonomyEventRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelDBAutonomyEvent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelDBAutonomyEventResponse rsp = CancelDBAutonomyEventResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelDBAutonomyEventOutcome(rsp);
+        else
+            return CancelDBAutonomyEventOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelDBAutonomyEventOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::CancelDBAutonomyEventAsync(const CancelDBAutonomyEventRequest& request, const CancelDBAutonomyEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CancelDBAutonomyEvent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::CancelDBAutonomyEventOutcomeCallable DbbrainClient::CancelDBAutonomyEventCallable(const CancelDBAutonomyEventRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CancelDBAutonomyEventOutcome()>>(
+        [this, request]()
+        {
+            return this->CancelDBAutonomyEvent(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::CancelKillTaskOutcome DbbrainClient::CancelKillTask(const CancelKillTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CancelKillTask");
@@ -119,6 +205,49 @@ DbbrainClient::CancelKillTaskOutcomeCallable DbbrainClient::CancelKillTaskCallab
         [this, request]()
         {
             return this->CancelKillTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::CancelRedisBigKeyAnalysisTasksOutcome DbbrainClient::CancelRedisBigKeyAnalysisTasks(const CancelRedisBigKeyAnalysisTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelRedisBigKeyAnalysisTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelRedisBigKeyAnalysisTasksResponse rsp = CancelRedisBigKeyAnalysisTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelRedisBigKeyAnalysisTasksOutcome(rsp);
+        else
+            return CancelRedisBigKeyAnalysisTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelRedisBigKeyAnalysisTasksOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::CancelRedisBigKeyAnalysisTasksAsync(const CancelRedisBigKeyAnalysisTasksRequest& request, const CancelRedisBigKeyAnalysisTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CancelRedisBigKeyAnalysisTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::CancelRedisBigKeyAnalysisTasksOutcomeCallable DbbrainClient::CancelRedisBigKeyAnalysisTasksCallable(const CancelRedisBigKeyAnalysisTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CancelRedisBigKeyAnalysisTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->CancelRedisBigKeyAnalysisTasks(request);
         }
     );
 
@@ -599,6 +728,49 @@ DbbrainClient::CreateSqlFilterOutcomeCallable DbbrainClient::CreateSqlFilterCall
     return task->get_future();
 }
 
+DbbrainClient::CreateUserAutonomyProfileOutcome DbbrainClient::CreateUserAutonomyProfile(const CreateUserAutonomyProfileRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateUserAutonomyProfile");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateUserAutonomyProfileResponse rsp = CreateUserAutonomyProfileResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateUserAutonomyProfileOutcome(rsp);
+        else
+            return CreateUserAutonomyProfileOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateUserAutonomyProfileOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::CreateUserAutonomyProfileAsync(const CreateUserAutonomyProfileRequest& request, const CreateUserAutonomyProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateUserAutonomyProfile(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::CreateUserAutonomyProfileOutcomeCallable DbbrainClient::CreateUserAutonomyProfileCallable(const CreateUserAutonomyProfileRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateUserAutonomyProfileOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateUserAutonomyProfile(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::DeleteAuditLogFileOutcome DbbrainClient::DeleteAuditLogFile(const DeleteAuditLogFileRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAuditLogFile");
@@ -1029,6 +1201,135 @@ DbbrainClient::DescribeAuditLogFilesOutcomeCallable DbbrainClient::DescribeAudit
     return task->get_future();
 }
 
+DbbrainClient::DescribeDBAutonomyActionOutcome DbbrainClient::DescribeDBAutonomyAction(const DescribeDBAutonomyActionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBAutonomyAction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBAutonomyActionResponse rsp = DescribeDBAutonomyActionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBAutonomyActionOutcome(rsp);
+        else
+            return DescribeDBAutonomyActionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBAutonomyActionOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeDBAutonomyActionAsync(const DescribeDBAutonomyActionRequest& request, const DescribeDBAutonomyActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDBAutonomyAction(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeDBAutonomyActionOutcomeCallable DbbrainClient::DescribeDBAutonomyActionCallable(const DescribeDBAutonomyActionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDBAutonomyActionOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDBAutonomyAction(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::DescribeDBAutonomyActionsOutcome DbbrainClient::DescribeDBAutonomyActions(const DescribeDBAutonomyActionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBAutonomyActions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBAutonomyActionsResponse rsp = DescribeDBAutonomyActionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBAutonomyActionsOutcome(rsp);
+        else
+            return DescribeDBAutonomyActionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBAutonomyActionsOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeDBAutonomyActionsAsync(const DescribeDBAutonomyActionsRequest& request, const DescribeDBAutonomyActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDBAutonomyActions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeDBAutonomyActionsOutcomeCallable DbbrainClient::DescribeDBAutonomyActionsCallable(const DescribeDBAutonomyActionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDBAutonomyActionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDBAutonomyActions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::DescribeDBAutonomyEventsOutcome DbbrainClient::DescribeDBAutonomyEvents(const DescribeDBAutonomyEventsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBAutonomyEvents");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBAutonomyEventsResponse rsp = DescribeDBAutonomyEventsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBAutonomyEventsOutcome(rsp);
+        else
+            return DescribeDBAutonomyEventsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBAutonomyEventsOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeDBAutonomyEventsAsync(const DescribeDBAutonomyEventsRequest& request, const DescribeDBAutonomyEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDBAutonomyEvents(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeDBAutonomyEventsOutcomeCallable DbbrainClient::DescribeDBAutonomyEventsCallable(const DescribeDBAutonomyEventsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDBAutonomyEventsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDBAutonomyEvents(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::DescribeDBDiagEventOutcome DbbrainClient::DescribeDBDiagEvent(const DescribeDBDiagEventRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBDiagEvent");
@@ -1158,6 +1459,49 @@ DbbrainClient::DescribeDBDiagHistoryOutcomeCallable DbbrainClient::DescribeDBDia
     return task->get_future();
 }
 
+DbbrainClient::DescribeDBDiagReportContentOutcome DbbrainClient::DescribeDBDiagReportContent(const DescribeDBDiagReportContentRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBDiagReportContent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBDiagReportContentResponse rsp = DescribeDBDiagReportContentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBDiagReportContentOutcome(rsp);
+        else
+            return DescribeDBDiagReportContentOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBDiagReportContentOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeDBDiagReportContentAsync(const DescribeDBDiagReportContentRequest& request, const DescribeDBDiagReportContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDBDiagReportContent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeDBDiagReportContentOutcomeCallable DbbrainClient::DescribeDBDiagReportContentCallable(const DescribeDBDiagReportContentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDBDiagReportContentOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDBDiagReportContent(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::DescribeDBDiagReportTasksOutcome DbbrainClient::DescribeDBDiagReportTasks(const DescribeDBDiagReportTasksRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBDiagReportTasks");
@@ -1194,6 +1538,49 @@ DbbrainClient::DescribeDBDiagReportTasksOutcomeCallable DbbrainClient::DescribeD
         [this, request]()
         {
             return this->DescribeDBDiagReportTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::DescribeDBPerfTimeSeriesOutcome DbbrainClient::DescribeDBPerfTimeSeries(const DescribeDBPerfTimeSeriesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBPerfTimeSeries");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBPerfTimeSeriesResponse rsp = DescribeDBPerfTimeSeriesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBPerfTimeSeriesOutcome(rsp);
+        else
+            return DescribeDBPerfTimeSeriesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBPerfTimeSeriesOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeDBPerfTimeSeriesAsync(const DescribeDBPerfTimeSeriesRequest& request, const DescribeDBPerfTimeSeriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDBPerfTimeSeries(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeDBPerfTimeSeriesOutcomeCallable DbbrainClient::DescribeDBPerfTimeSeriesCallable(const DescribeDBPerfTimeSeriesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDBPerfTimeSeriesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDBPerfTimeSeries(request);
         }
     );
 
@@ -1330,6 +1717,49 @@ DbbrainClient::DescribeHealthScoreOutcomeCallable DbbrainClient::DescribeHealthS
     return task->get_future();
 }
 
+DbbrainClient::DescribeHealthScoreTimeSeriesOutcome DbbrainClient::DescribeHealthScoreTimeSeries(const DescribeHealthScoreTimeSeriesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeHealthScoreTimeSeries");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeHealthScoreTimeSeriesResponse rsp = DescribeHealthScoreTimeSeriesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeHealthScoreTimeSeriesOutcome(rsp);
+        else
+            return DescribeHealthScoreTimeSeriesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeHealthScoreTimeSeriesOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeHealthScoreTimeSeriesAsync(const DescribeHealthScoreTimeSeriesRequest& request, const DescribeHealthScoreTimeSeriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeHealthScoreTimeSeries(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeHealthScoreTimeSeriesOutcomeCallable DbbrainClient::DescribeHealthScoreTimeSeriesCallable(const DescribeHealthScoreTimeSeriesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeHealthScoreTimeSeriesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeHealthScoreTimeSeries(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::DescribeIndexRecommendAggregationSlowLogsOutcome DbbrainClient::DescribeIndexRecommendAggregationSlowLogs(const DescribeIndexRecommendAggregationSlowLogsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeIndexRecommendAggregationSlowLogs");
@@ -1452,6 +1882,49 @@ DbbrainClient::DescribeMailProfileOutcomeCallable DbbrainClient::DescribeMailPro
         [this, request]()
         {
             return this->DescribeMailProfile(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::DescribeMetricTopProxiesOutcome DbbrainClient::DescribeMetricTopProxies(const DescribeMetricTopProxiesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMetricTopProxies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMetricTopProxiesResponse rsp = DescribeMetricTopProxiesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMetricTopProxiesOutcome(rsp);
+        else
+            return DescribeMetricTopProxiesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMetricTopProxiesOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeMetricTopProxiesAsync(const DescribeMetricTopProxiesRequest& request, const DescribeMetricTopProxiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMetricTopProxies(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeMetricTopProxiesOutcomeCallable DbbrainClient::DescribeMetricTopProxiesCallable(const DescribeMetricTopProxiesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMetricTopProxiesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMetricTopProxies(request);
         }
     );
 
@@ -1674,6 +2147,135 @@ DbbrainClient::DescribeRedisBigKeyAnalysisTasksOutcomeCallable DbbrainClient::De
     return task->get_future();
 }
 
+DbbrainClient::DescribeRedisCmdPerfTimeSeriesOutcome DbbrainClient::DescribeRedisCmdPerfTimeSeries(const DescribeRedisCmdPerfTimeSeriesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRedisCmdPerfTimeSeries");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRedisCmdPerfTimeSeriesResponse rsp = DescribeRedisCmdPerfTimeSeriesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRedisCmdPerfTimeSeriesOutcome(rsp);
+        else
+            return DescribeRedisCmdPerfTimeSeriesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRedisCmdPerfTimeSeriesOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeRedisCmdPerfTimeSeriesAsync(const DescribeRedisCmdPerfTimeSeriesRequest& request, const DescribeRedisCmdPerfTimeSeriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRedisCmdPerfTimeSeries(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeRedisCmdPerfTimeSeriesOutcomeCallable DbbrainClient::DescribeRedisCmdPerfTimeSeriesCallable(const DescribeRedisCmdPerfTimeSeriesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRedisCmdPerfTimeSeriesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRedisCmdPerfTimeSeries(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::DescribeRedisCommandCostStatisticsOutcome DbbrainClient::DescribeRedisCommandCostStatistics(const DescribeRedisCommandCostStatisticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRedisCommandCostStatistics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRedisCommandCostStatisticsResponse rsp = DescribeRedisCommandCostStatisticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRedisCommandCostStatisticsOutcome(rsp);
+        else
+            return DescribeRedisCommandCostStatisticsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRedisCommandCostStatisticsOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeRedisCommandCostStatisticsAsync(const DescribeRedisCommandCostStatisticsRequest& request, const DescribeRedisCommandCostStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRedisCommandCostStatistics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeRedisCommandCostStatisticsOutcomeCallable DbbrainClient::DescribeRedisCommandCostStatisticsCallable(const DescribeRedisCommandCostStatisticsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRedisCommandCostStatisticsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRedisCommandCostStatistics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::DescribeRedisCommandOverviewOutcome DbbrainClient::DescribeRedisCommandOverview(const DescribeRedisCommandOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRedisCommandOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRedisCommandOverviewResponse rsp = DescribeRedisCommandOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRedisCommandOverviewOutcome(rsp);
+        else
+            return DescribeRedisCommandOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRedisCommandOverviewOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeRedisCommandOverviewAsync(const DescribeRedisCommandOverviewRequest& request, const DescribeRedisCommandOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRedisCommandOverview(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeRedisCommandOverviewOutcomeCallable DbbrainClient::DescribeRedisCommandOverviewCallable(const DescribeRedisCommandOverviewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRedisCommandOverviewOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRedisCommandOverview(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::DescribeRedisProcessListOutcome DbbrainClient::DescribeRedisProcessList(const DescribeRedisProcessListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRedisProcessList");
@@ -1717,6 +2319,49 @@ DbbrainClient::DescribeRedisProcessListOutcomeCallable DbbrainClient::DescribeRe
     return task->get_future();
 }
 
+DbbrainClient::DescribeRedisSlowLogTopSqlsOutcome DbbrainClient::DescribeRedisSlowLogTopSqls(const DescribeRedisSlowLogTopSqlsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRedisSlowLogTopSqls");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRedisSlowLogTopSqlsResponse rsp = DescribeRedisSlowLogTopSqlsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRedisSlowLogTopSqlsOutcome(rsp);
+        else
+            return DescribeRedisSlowLogTopSqlsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRedisSlowLogTopSqlsOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeRedisSlowLogTopSqlsAsync(const DescribeRedisSlowLogTopSqlsRequest& request, const DescribeRedisSlowLogTopSqlsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRedisSlowLogTopSqls(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeRedisSlowLogTopSqlsOutcomeCallable DbbrainClient::DescribeRedisSlowLogTopSqlsCallable(const DescribeRedisSlowLogTopSqlsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRedisSlowLogTopSqlsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRedisSlowLogTopSqls(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::DescribeRedisTopBigKeysOutcome DbbrainClient::DescribeRedisTopBigKeys(const DescribeRedisTopBigKeysRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRedisTopBigKeys");
@@ -1753,6 +2398,92 @@ DbbrainClient::DescribeRedisTopBigKeysOutcomeCallable DbbrainClient::DescribeRed
         [this, request]()
         {
             return this->DescribeRedisTopBigKeys(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::DescribeRedisTopCostCommandsOutcome DbbrainClient::DescribeRedisTopCostCommands(const DescribeRedisTopCostCommandsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRedisTopCostCommands");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRedisTopCostCommandsResponse rsp = DescribeRedisTopCostCommandsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRedisTopCostCommandsOutcome(rsp);
+        else
+            return DescribeRedisTopCostCommandsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRedisTopCostCommandsOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeRedisTopCostCommandsAsync(const DescribeRedisTopCostCommandsRequest& request, const DescribeRedisTopCostCommandsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRedisTopCostCommands(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeRedisTopCostCommandsOutcomeCallable DbbrainClient::DescribeRedisTopCostCommandsCallable(const DescribeRedisTopCostCommandsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRedisTopCostCommandsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRedisTopCostCommands(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::DescribeRedisTopHotKeysOutcome DbbrainClient::DescribeRedisTopHotKeys(const DescribeRedisTopHotKeysRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRedisTopHotKeys");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRedisTopHotKeysResponse rsp = DescribeRedisTopHotKeysResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRedisTopHotKeysOutcome(rsp);
+        else
+            return DescribeRedisTopHotKeysOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRedisTopHotKeysOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeRedisTopHotKeysAsync(const DescribeRedisTopHotKeysRequest& request, const DescribeRedisTopHotKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRedisTopHotKeys(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeRedisTopHotKeysOutcomeCallable DbbrainClient::DescribeRedisTopHotKeysCallable(const DescribeRedisTopHotKeysRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRedisTopHotKeysOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRedisTopHotKeys(request);
         }
     );
 
@@ -1882,6 +2613,49 @@ DbbrainClient::DescribeSecurityAuditLogExportTasksOutcomeCallable DbbrainClient:
         [this, request]()
         {
             return this->DescribeSecurityAuditLogExportTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::DescribeSlowLogQueryTimeStatsOutcome DbbrainClient::DescribeSlowLogQueryTimeStats(const DescribeSlowLogQueryTimeStatsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSlowLogQueryTimeStats");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSlowLogQueryTimeStatsResponse rsp = DescribeSlowLogQueryTimeStatsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSlowLogQueryTimeStatsOutcome(rsp);
+        else
+            return DescribeSlowLogQueryTimeStatsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSlowLogQueryTimeStatsOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeSlowLogQueryTimeStatsAsync(const DescribeSlowLogQueryTimeStatsRequest& request, const DescribeSlowLogQueryTimeStatsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSlowLogQueryTimeStats(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeSlowLogQueryTimeStatsOutcomeCallable DbbrainClient::DescribeSlowLogQueryTimeStatsCallable(const DescribeSlowLogQueryTimeStatsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSlowLogQueryTimeStatsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSlowLogQueryTimeStats(request);
         }
     );
 
@@ -2319,6 +3093,49 @@ DbbrainClient::DescribeTopSpaceTablesOutcomeCallable DbbrainClient::DescribeTopS
     return task->get_future();
 }
 
+DbbrainClient::DescribeUserAutonomyProfileOutcome DbbrainClient::DescribeUserAutonomyProfile(const DescribeUserAutonomyProfileRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserAutonomyProfile");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserAutonomyProfileResponse rsp = DescribeUserAutonomyProfileResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserAutonomyProfileOutcome(rsp);
+        else
+            return DescribeUserAutonomyProfileOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserAutonomyProfileOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeUserAutonomyProfileAsync(const DescribeUserAutonomyProfileRequest& request, const DescribeUserAutonomyProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserAutonomyProfile(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeUserAutonomyProfileOutcomeCallable DbbrainClient::DescribeUserAutonomyProfileCallable(const DescribeUserAutonomyProfileRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserAutonomyProfileOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserAutonomyProfile(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::DescribeUserSqlAdviceOutcome DbbrainClient::DescribeUserSqlAdvice(const DescribeUserSqlAdviceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUserSqlAdvice");
@@ -2570,6 +3387,49 @@ DbbrainClient::ModifySqlFiltersOutcomeCallable DbbrainClient::ModifySqlFiltersCa
         [this, request]()
         {
             return this->ModifySqlFilters(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::ModifyUserAutonomyProfileOutcome DbbrainClient::ModifyUserAutonomyProfile(const ModifyUserAutonomyProfileRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyUserAutonomyProfile");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyUserAutonomyProfileResponse rsp = ModifyUserAutonomyProfileResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyUserAutonomyProfileOutcome(rsp);
+        else
+            return ModifyUserAutonomyProfileOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyUserAutonomyProfileOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::ModifyUserAutonomyProfileAsync(const ModifyUserAutonomyProfileRequest& request, const ModifyUserAutonomyProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyUserAutonomyProfile(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::ModifyUserAutonomyProfileOutcomeCallable DbbrainClient::ModifyUserAutonomyProfileCallable(const ModifyUserAutonomyProfileRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyUserAutonomyProfileOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyUserAutonomyProfile(request);
         }
     );
 

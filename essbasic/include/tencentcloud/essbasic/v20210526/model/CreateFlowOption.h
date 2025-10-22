@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/essbasic/v20210526/model/SignComponentConfig.h>
 
 
 namespace TencentCloud
@@ -192,6 +193,55 @@ namespace TencentCloud
                     bool CanSkipAddApproverHasBeenSet() const;
 
                     /**
+                     * 获取是否可以编辑签署人包括新增，修改，删除 
+<ul><li>（默认） false -可以编辑签署人</li> <li> true - 禁止编辑签署人</li></ul>
+
+
+
+注意：
+* 如果设置参数为 true， 则 参数签署人 [FlowApproverList](https://qian.tencent.com/developers/partnerApis/embedPages/ChannelCreatePrepareFlow) 不能为空
+* 此参数对子客和自动签无效，不允许进行修改。
+                     * @return ForbidEditApprover 是否可以编辑签署人包括新增，修改，删除 
+<ul><li>（默认） false -可以编辑签署人</li> <li> true - 禁止编辑签署人</li></ul>
+
+
+
+注意：
+* 如果设置参数为 true， 则 参数签署人 [FlowApproverList](https://qian.tencent.com/developers/partnerApis/embedPages/ChannelCreatePrepareFlow) 不能为空
+* 此参数对子客和自动签无效，不允许进行修改。
+                     * 
+                     */
+                    bool GetForbidEditApprover() const;
+
+                    /**
+                     * 设置是否可以编辑签署人包括新增，修改，删除 
+<ul><li>（默认） false -可以编辑签署人</li> <li> true - 禁止编辑签署人</li></ul>
+
+
+
+注意：
+* 如果设置参数为 true， 则 参数签署人 [FlowApproverList](https://qian.tencent.com/developers/partnerApis/embedPages/ChannelCreatePrepareFlow) 不能为空
+* 此参数对子客和自动签无效，不允许进行修改。
+                     * @param _forbidEditApprover 是否可以编辑签署人包括新增，修改，删除 
+<ul><li>（默认） false -可以编辑签署人</li> <li> true - 禁止编辑签署人</li></ul>
+
+
+
+注意：
+* 如果设置参数为 true， 则 参数签署人 [FlowApproverList](https://qian.tencent.com/developers/partnerApis/embedPages/ChannelCreatePrepareFlow) 不能为空
+* 此参数对子客和自动签无效，不允许进行修改。
+                     * 
+                     */
+                    void SetForbidEditApprover(const bool& _forbidEditApprover);
+
+                    /**
+                     * 判断参数 ForbidEditApprover 是否已赋值
+                     * @return ForbidEditApprover 是否已赋值
+                     * 
+                     */
+                    bool ForbidEditApproverHasBeenSet() const;
+
+                    /**
                      * 获取定制化发起合同弹窗的描述信息，长度不能超过500，只能由中文、字母、数字和标点组成。
                      * @return CustomCreateFlowDescription 定制化发起合同弹窗的描述信息，长度不能超过500，只能由中文、字母、数字和标点组成。
                      * 
@@ -278,6 +328,56 @@ namespace TencentCloud
                      */
                     bool SkipUploadFileHasBeenSet() const;
 
+                    /**
+                     * 获取签署控件的配置信息，用在嵌入式发起的页面配置，包括 
+ - 签署控件 是否默认展示日期.
+                     * @return SignComponentConfig 签署控件的配置信息，用在嵌入式发起的页面配置，包括 
+ - 签署控件 是否默认展示日期.
+                     * 
+                     */
+                    SignComponentConfig GetSignComponentConfig() const;
+
+                    /**
+                     * 设置签署控件的配置信息，用在嵌入式发起的页面配置，包括 
+ - 签署控件 是否默认展示日期.
+                     * @param _signComponentConfig 签署控件的配置信息，用在嵌入式发起的页面配置，包括 
+ - 签署控件 是否默认展示日期.
+                     * 
+                     */
+                    void SetSignComponentConfig(const SignComponentConfig& _signComponentConfig);
+
+                    /**
+                     * 判断参数 SignComponentConfig 是否已赋值
+                     * @return SignComponentConfig 是否已赋值
+                     * 
+                     */
+                    bool SignComponentConfigHasBeenSet() const;
+
+                    /**
+                     * 获取是否禁止编辑（展示）水印控件属性
+<ul><li>（默认） false -否</li> <li> true - 禁止编辑</li></ul>
+                     * @return ForbidEditWatermark 是否禁止编辑（展示）水印控件属性
+<ul><li>（默认） false -否</li> <li> true - 禁止编辑</li></ul>
+                     * 
+                     */
+                    bool GetForbidEditWatermark() const;
+
+                    /**
+                     * 设置是否禁止编辑（展示）水印控件属性
+<ul><li>（默认） false -否</li> <li> true - 禁止编辑</li></ul>
+                     * @param _forbidEditWatermark 是否禁止编辑（展示）水印控件属性
+<ul><li>（默认） false -否</li> <li> true - 禁止编辑</li></ul>
+                     * 
+                     */
+                    void SetForbidEditWatermark(const bool& _forbidEditWatermark);
+
+                    /**
+                     * 判断参数 ForbidEditWatermark 是否已赋值
+                     * @return ForbidEditWatermark 是否已赋值
+                     * 
+                     */
+                    bool ForbidEditWatermarkHasBeenSet() const;
+
                 private:
 
                     /**
@@ -321,6 +421,19 @@ namespace TencentCloud
                     bool m_canSkipAddApproverHasBeenSet;
 
                     /**
+                     * 是否可以编辑签署人包括新增，修改，删除 
+<ul><li>（默认） false -可以编辑签署人</li> <li> true - 禁止编辑签署人</li></ul>
+
+
+
+注意：
+* 如果设置参数为 true， 则 参数签署人 [FlowApproverList](https://qian.tencent.com/developers/partnerApis/embedPages/ChannelCreatePrepareFlow) 不能为空
+* 此参数对子客和自动签无效，不允许进行修改。
+                     */
+                    bool m_forbidEditApprover;
+                    bool m_forbidEditApproverHasBeenSet;
+
+                    /**
                      * 定制化发起合同弹窗的描述信息，长度不能超过500，只能由中文、字母、数字和标点组成。
                      */
                     std::string m_customCreateFlowDescription;
@@ -343,6 +456,20 @@ namespace TencentCloud
                      */
                     bool m_skipUploadFile;
                     bool m_skipUploadFileHasBeenSet;
+
+                    /**
+                     * 签署控件的配置信息，用在嵌入式发起的页面配置，包括 
+ - 签署控件 是否默认展示日期.
+                     */
+                    SignComponentConfig m_signComponentConfig;
+                    bool m_signComponentConfigHasBeenSet;
+
+                    /**
+                     * 是否禁止编辑（展示）水印控件属性
+<ul><li>（默认） false -否</li> <li> true - 禁止编辑</li></ul>
+                     */
+                    bool m_forbidEditWatermark;
+                    bool m_forbidEditWatermarkHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -629,6 +629,48 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                      */
                     bool OriginalROInstanceListHasBeenSet() const;
 
+                    /**
+                     * 获取项目id
+                     * @return ProjectId 项目id
+                     * 
+                     */
+                    int64_t GetProjectId() const;
+
+                    /**
+                     * 设置项目id
+                     * @param _projectId 项目id
+                     * 
+                     */
+                    void SetProjectId(const int64_t& _projectId);
+
+                    /**
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
+                     * 
+                     */
+                    bool ProjectIdHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启归档，可选范围<li>yes</li><li>no</li>默认值:yes
+                     * @return AutoArchive 是否开启归档，可选范围<li>yes</li><li>no</li>默认值:yes
+                     * 
+                     */
+                    std::string GetAutoArchive() const;
+
+                    /**
+                     * 设置是否开启归档，可选范围<li>yes</li><li>no</li>默认值:yes
+                     * @param _autoArchive 是否开启归档，可选范围<li>yes</li><li>no</li>默认值:yes
+                     * 
+                     */
+                    void SetAutoArchive(const std::string& _autoArchive);
+
+                    /**
+                     * 判断参数 AutoArchive 是否已赋值
+                     * @return AutoArchive 是否已赋值
+                     * 
+                     */
+                    bool AutoArchiveHasBeenSet() const;
+
                 private:
 
                     /**
@@ -795,6 +837,18 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                      */
                     std::vector<std::string> m_originalROInstanceList;
                     bool m_originalROInstanceListHasBeenSet;
+
+                    /**
+                     * 项目id
+                     */
+                    int64_t m_projectId;
+                    bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 是否开启归档，可选范围<li>yes</li><li>no</li>默认值:yes
+                     */
+                    std::string m_autoArchive;
+                    bool m_autoArchiveHasBeenSet;
 
                 };
             }

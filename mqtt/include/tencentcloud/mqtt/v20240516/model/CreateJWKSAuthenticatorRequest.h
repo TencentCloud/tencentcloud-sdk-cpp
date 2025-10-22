@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * @return InstanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * @param _instanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取jwks端点
-                     * @return Endpoint jwks端点
+                     * 获取JWKS服务地址，（Text字段和Endpoint字段必须选择一个填写）
+                     * @return Endpoint JWKS服务地址，（Text字段和Endpoint字段必须选择一个填写）
                      * 
                      */
                     std::string GetEndpoint() const;
 
                     /**
-                     * 设置jwks端点
-                     * @param _endpoint jwks端点
+                     * 设置JWKS服务地址，（Text字段和Endpoint字段必须选择一个填写）
+                     * @param _endpoint JWKS服务地址，（Text字段和Endpoint字段必须选择一个填写）
                      * 
                      */
                     void SetEndpoint(const std::string& _endpoint);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool EndpointHasBeenSet() const;
 
                     /**
-                     * 获取jwks刷新间隔,单位：秒
-                     * @return RefreshInterval jwks刷新间隔,单位：秒
+                     * 获取认证文本刷新间隔时间，单位：秒，最小值60，默认值60，最大值1000。填写认证服务器地址（Endpoint）时生效。
+                     * @return RefreshInterval 认证文本刷新间隔时间，单位：秒，最小值60，默认值60，最大值1000。填写认证服务器地址（Endpoint）时生效。
                      * 
                      */
                     int64_t GetRefreshInterval() const;
 
                     /**
-                     * 设置jwks刷新间隔,单位：秒
-                     * @param _refreshInterval jwks刷新间隔,单位：秒
+                     * 设置认证文本刷新间隔时间，单位：秒，最小值60，默认值60，最大值1000。填写认证服务器地址（Endpoint）时生效。
+                     * @param _refreshInterval 认证文本刷新间隔时间，单位：秒，最小值60，默认值60，最大值1000。填写认证服务器地址（Endpoint）时生效。
                      * 
                      */
                     void SetRefreshInterval(const int64_t& _refreshInterval);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool RefreshIntervalHasBeenSet() const;
 
                     /**
-                     * 获取jwks文本
-                     * @return Text jwks文本
+                     * 获取jwks文本，（Text字段和Endpoint字段必须选择一个填写）
+                     * @return Text jwks文本，（Text字段和Endpoint字段必须选择一个填写）
                      * 
                      */
                     std::string GetText() const;
 
                     /**
-                     * 设置jwks文本
-                     * @param _text jwks文本
+                     * 设置jwks文本，（Text字段和Endpoint字段必须选择一个填写）
+                     * @param _text jwks文本，（Text字段和Endpoint字段必须选择一个填写）
                      * 
                      */
                     void SetText(const std::string& _text);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool TextHasBeenSet() const;
 
                     /**
-                     * 获取认证器是否开启：open-启用；close-关闭
-                     * @return Status 认证器是否开启：open-启用；close-关闭
+                     * 获取认证器是否开启：open-启用；close-关闭，默认open-启用
+                     * @return Status 认证器是否开启：open-启用；close-关闭，默认open-启用
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置认证器是否开启：open-启用；close-关闭
-                     * @param _status 认证器是否开启：open-启用；close-关闭
+                     * 设置认证器是否开启：open-启用；close-关闭，默认open-启用
+                     * @param _status 认证器是否开启：open-启用；close-关闭，默认open-启用
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取说明
-                     * @return Remark 说明
+                     * 获取说明，不能超过 128 个字符
+                     * @return Remark 说明，不能超过 128 个字符
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置说明
-                     * @param _remark 说明
+                     * 设置说明，不能超过 128 个字符
+                     * @param _remark 说明，不能超过 128 个字符
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -169,15 +169,31 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取设备连接时传递jwt的key；username-使用用户名字段传递；password-使用密码字段传递
-                     * @return From 设备连接时传递jwt的key；username-使用用户名字段传递；password-使用密码字段传递
+                     * 获取认证字段；
+username-对应 MQTT CONNECT Packet 中 username 字段，
+password-对应 MQTT CONNECT Packet 中 password 字段。
+
+默认username
+                     * @return From 认证字段；
+username-对应 MQTT CONNECT Packet 中 username 字段，
+password-对应 MQTT CONNECT Packet 中 password 字段。
+
+默认username
                      * 
                      */
                     std::string GetFrom() const;
 
                     /**
-                     * 设置设备连接时传递jwt的key；username-使用用户名字段传递；password-使用密码字段传递
-                     * @param _from 设备连接时传递jwt的key；username-使用用户名字段传递；password-使用密码字段传递
+                     * 设置认证字段；
+username-对应 MQTT CONNECT Packet 中 username 字段，
+password-对应 MQTT CONNECT Packet 中 password 字段。
+
+默认username
+                     * @param _from 认证字段；
+username-对应 MQTT CONNECT Packet 中 username 字段，
+password-对应 MQTT CONNECT Packet 中 password 字段。
+
+默认username
                      * 
                      */
                     void SetFrom(const std::string& _from);
@@ -192,43 +208,47 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * jwks端点
+                     * JWKS服务地址，（Text字段和Endpoint字段必须选择一个填写）
                      */
                     std::string m_endpoint;
                     bool m_endpointHasBeenSet;
 
                     /**
-                     * jwks刷新间隔,单位：秒
+                     * 认证文本刷新间隔时间，单位：秒，最小值60，默认值60，最大值1000。填写认证服务器地址（Endpoint）时生效。
                      */
                     int64_t m_refreshInterval;
                     bool m_refreshIntervalHasBeenSet;
 
                     /**
-                     * jwks文本
+                     * jwks文本，（Text字段和Endpoint字段必须选择一个填写）
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;
 
                     /**
-                     * 认证器是否开启：open-启用；close-关闭
+                     * 认证器是否开启：open-启用；close-关闭，默认open-启用
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 说明
+                     * 说明，不能超过 128 个字符
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 设备连接时传递jwt的key；username-使用用户名字段传递；password-使用密码字段传递
+                     * 认证字段；
+username-对应 MQTT CONNECT Packet 中 username 字段，
+password-对应 MQTT CONNECT Packet 中 password 字段。
+
+默认username
                      */
                     std::string m_from;
                     bool m_fromHasBeenSet;

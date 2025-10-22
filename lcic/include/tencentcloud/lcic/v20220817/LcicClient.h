@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,6 +67,8 @@
 #include <tencentcloud/lcic/v20220817/model/DeleteSupervisorResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DeleteUserRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DeleteUserResponse.h>
+#include <tencentcloud/lcic/v20220817/model/DeleteWhiteBoardSnapshotRequest.h>
+#include <tencentcloud/lcic/v20220817/model/DeleteWhiteBoardSnapshotResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeAnswerListRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeAnswerListResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeAppDetailRequest.h>
@@ -87,10 +89,16 @@
 #include <tencentcloud/lcic/v20220817/model/DescribeGroupListResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeGroupMemberListRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeGroupMemberListResponse.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeMarqueeRequest.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeMarqueeResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeQuestionListRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeQuestionListResponse.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeRecordRequest.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeRecordResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeRecordStreamRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeRecordStreamResponse.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeRecordTaskRequest.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeRecordTaskResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeRoomRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeRoomResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeRoomForbiddenUserRequest.h>
@@ -105,6 +113,10 @@
 #include <tencentcloud/lcic/v20220817/model/DescribeSupervisorsResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeUserRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeUserResponse.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeUserDetailRequest.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeUserDetailResponse.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeWhiteBoardSnapshotRequest.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeWhiteBoardSnapshotResponse.h>
 #include <tencentcloud/lcic/v20220817/model/EndRoomRequest.h>
 #include <tencentcloud/lcic/v20220817/model/EndRoomResponse.h>
 #include <tencentcloud/lcic/v20220817/model/ForbidSendMsgRequest.h>
@@ -139,10 +151,16 @@
 #include <tencentcloud/lcic/v20220817/model/SendRoomNotificationMessageResponse.h>
 #include <tencentcloud/lcic/v20220817/model/SetAppCustomContentRequest.h>
 #include <tencentcloud/lcic/v20220817/model/SetAppCustomContentResponse.h>
+#include <tencentcloud/lcic/v20220817/model/SetMarqueeRequest.h>
+#include <tencentcloud/lcic/v20220817/model/SetMarqueeResponse.h>
 #include <tencentcloud/lcic/v20220817/model/SetWatermarkRequest.h>
 #include <tencentcloud/lcic/v20220817/model/SetWatermarkResponse.h>
+#include <tencentcloud/lcic/v20220817/model/StartRecordRequest.h>
+#include <tencentcloud/lcic/v20220817/model/StartRecordResponse.h>
 #include <tencentcloud/lcic/v20220817/model/StartRoomRequest.h>
 #include <tencentcloud/lcic/v20220817/model/StartRoomResponse.h>
+#include <tencentcloud/lcic/v20220817/model/StopRecordRequest.h>
+#include <tencentcloud/lcic/v20220817/model/StopRecordResponse.h>
 #include <tencentcloud/lcic/v20220817/model/UnbindDocumentFromRoomRequest.h>
 #include <tencentcloud/lcic/v20220817/model/UnbindDocumentFromRoomResponse.h>
 #include <tencentcloud/lcic/v20220817/model/UnblockKickedUserRequest.h>
@@ -227,6 +245,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteUserResponse> DeleteUserOutcome;
                 typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DeleteUserRequest&, DeleteUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteWhiteBoardSnapshotResponse> DeleteWhiteBoardSnapshotOutcome;
+                typedef std::future<DeleteWhiteBoardSnapshotOutcome> DeleteWhiteBoardSnapshotOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::DeleteWhiteBoardSnapshotRequest&, DeleteWhiteBoardSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWhiteBoardSnapshotAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAnswerListResponse> DescribeAnswerListOutcome;
                 typedef std::future<DescribeAnswerListOutcome> DescribeAnswerListOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeAnswerListRequest&, DescribeAnswerListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAnswerListAsyncHandler;
@@ -257,12 +278,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeGroupMemberListResponse> DescribeGroupMemberListOutcome;
                 typedef std::future<DescribeGroupMemberListOutcome> DescribeGroupMemberListOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeGroupMemberListRequest&, DescribeGroupMemberListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGroupMemberListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMarqueeResponse> DescribeMarqueeOutcome;
+                typedef std::future<DescribeMarqueeOutcome> DescribeMarqueeOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::DescribeMarqueeRequest&, DescribeMarqueeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMarqueeAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeQuestionListResponse> DescribeQuestionListOutcome;
                 typedef std::future<DescribeQuestionListOutcome> DescribeQuestionListOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeQuestionListRequest&, DescribeQuestionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQuestionListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRecordResponse> DescribeRecordOutcome;
+                typedef std::future<DescribeRecordOutcome> DescribeRecordOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::DescribeRecordRequest&, DescribeRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRecordStreamResponse> DescribeRecordStreamOutcome;
                 typedef std::future<DescribeRecordStreamOutcome> DescribeRecordStreamOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeRecordStreamRequest&, DescribeRecordStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordStreamAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRecordTaskResponse> DescribeRecordTaskOutcome;
+                typedef std::future<DescribeRecordTaskOutcome> DescribeRecordTaskOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::DescribeRecordTaskRequest&, DescribeRecordTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRoomResponse> DescribeRoomOutcome;
                 typedef std::future<DescribeRoomOutcome> DescribeRoomOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeRoomRequest&, DescribeRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoomAsyncHandler;
@@ -284,6 +314,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUserResponse> DescribeUserOutcome;
                 typedef std::future<DescribeUserOutcome> DescribeUserOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeUserRequest&, DescribeUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserDetailResponse> DescribeUserDetailOutcome;
+                typedef std::future<DescribeUserDetailOutcome> DescribeUserDetailOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::DescribeUserDetailRequest&, DescribeUserDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeWhiteBoardSnapshotResponse> DescribeWhiteBoardSnapshotOutcome;
+                typedef std::future<DescribeWhiteBoardSnapshotOutcome> DescribeWhiteBoardSnapshotOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::DescribeWhiteBoardSnapshotRequest&, DescribeWhiteBoardSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWhiteBoardSnapshotAsyncHandler;
                 typedef Outcome<Core::Error, Model::EndRoomResponse> EndRoomOutcome;
                 typedef std::future<EndRoomOutcome> EndRoomOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::EndRoomRequest&, EndRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EndRoomAsyncHandler;
@@ -335,12 +371,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SetAppCustomContentResponse> SetAppCustomContentOutcome;
                 typedef std::future<SetAppCustomContentOutcome> SetAppCustomContentOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::SetAppCustomContentRequest&, SetAppCustomContentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetAppCustomContentAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetMarqueeResponse> SetMarqueeOutcome;
+                typedef std::future<SetMarqueeOutcome> SetMarqueeOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::SetMarqueeRequest&, SetMarqueeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetMarqueeAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetWatermarkResponse> SetWatermarkOutcome;
                 typedef std::future<SetWatermarkOutcome> SetWatermarkOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::SetWatermarkRequest&, SetWatermarkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetWatermarkAsyncHandler;
+                typedef Outcome<Core::Error, Model::StartRecordResponse> StartRecordOutcome;
+                typedef std::future<StartRecordOutcome> StartRecordOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::StartRecordRequest&, StartRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartRecordAsyncHandler;
                 typedef Outcome<Core::Error, Model::StartRoomResponse> StartRoomOutcome;
                 typedef std::future<StartRoomOutcome> StartRoomOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::StartRoomRequest&, StartRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartRoomAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopRecordResponse> StopRecordOutcome;
+                typedef std::future<StopRecordOutcome> StopRecordOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::StopRecordRequest&, StopRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopRecordAsyncHandler;
                 typedef Outcome<Core::Error, Model::UnbindDocumentFromRoomResponse> UnbindDocumentFromRoomOutcome;
                 typedef std::future<UnbindDocumentFromRoomOutcome> UnbindDocumentFromRoomOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::UnbindDocumentFromRoomRequest&, UnbindDocumentFromRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindDocumentFromRoomAsyncHandler;
@@ -423,7 +468,27 @@ namespace TencentCloud
                 BatchRegisterOutcomeCallable BatchRegisterCallable(const Model::BatchRegisterRequest& request);
 
                 /**
-                 *绑定文档到房间
+                 *功能概述
+本接口提供教学场景下的课程文档预绑定能力，支持将课件课堂ID进行关联映射，实现课件的自动化预加载。
+
+应用场景建议
+
+绑定时机
+推荐在创建课堂预约阶段同步完成文档绑定操作，确保课件资源在课堂开始前完成上传。
+
+接口限制与频控策略
+
+频控维度
+开发者账号维度限频
+默认频控阈值为20 QPS（每秒请求次数）
+
+最佳实践建议
+
+重试策略
+当触发限频错误时，建议采用以下策略：
+启用退避重试机制（建议使用指数退避算法）
+初始重试间隔不低于500ms
+最大重试次数不超过3次
                  * @param req BindDocumentToRoomRequest
                  * @return BindDocumentToRoomOutcome
                  */
@@ -459,7 +524,7 @@ namespace TencentCloud
                 CreateGroupWithSubGroupOutcomeCallable CreateGroupWithSubGroupCallable(const Model::CreateGroupWithSubGroupRequest& request);
 
                 /**
-                 *创建房间
+                 *创建课堂
                  * @param req CreateRoomRequest
                  * @return CreateRoomOutcome
                  */
@@ -523,6 +588,7 @@ namespace TencentCloud
 
                 /**
                  *删除房间
+删除课堂前，请先删除该课堂下的各类资源（包括录制文件、板书等），并解绑相关课件。
                  * @param req DeleteRoomRequest
                  * @return DeleteRoomOutcome
                  */
@@ -547,6 +613,15 @@ namespace TencentCloud
                 DeleteUserOutcome DeleteUser(const Model::DeleteUserRequest &request);
                 void DeleteUserAsync(const Model::DeleteUserRequest& request, const DeleteUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteUserOutcomeCallable DeleteUserCallable(const Model::DeleteUserRequest& request);
+
+                /**
+                 *删除白板板书截图
+                 * @param req DeleteWhiteBoardSnapshotRequest
+                 * @return DeleteWhiteBoardSnapshotOutcome
+                 */
+                DeleteWhiteBoardSnapshotOutcome DeleteWhiteBoardSnapshot(const Model::DeleteWhiteBoardSnapshotRequest &request);
+                void DeleteWhiteBoardSnapshotAsync(const Model::DeleteWhiteBoardSnapshotRequest& request, const DeleteWhiteBoardSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteWhiteBoardSnapshotOutcomeCallable DeleteWhiteBoardSnapshotCallable(const Model::DeleteWhiteBoardSnapshotRequest& request);
 
                 /**
                  *获取房间答题详情
@@ -641,6 +716,15 @@ namespace TencentCloud
                 DescribeGroupMemberListOutcomeCallable DescribeGroupMemberListCallable(const Model::DescribeGroupMemberListRequest& request);
 
                 /**
+                 *查询跑马灯配置
+                 * @param req DescribeMarqueeRequest
+                 * @return DescribeMarqueeOutcome
+                 */
+                DescribeMarqueeOutcome DescribeMarquee(const Model::DescribeMarqueeRequest &request);
+                void DescribeMarqueeAsync(const Model::DescribeMarqueeRequest& request, const DescribeMarqueeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMarqueeOutcomeCallable DescribeMarqueeCallable(const Model::DescribeMarqueeRequest& request);
+
+                /**
                  *获取房间提问列表
                  * @param req DescribeQuestionListRequest
                  * @return DescribeQuestionListOutcome
@@ -650,6 +734,15 @@ namespace TencentCloud
                 DescribeQuestionListOutcomeCallable DescribeQuestionListCallable(const Model::DescribeQuestionListRequest& request);
 
                 /**
+                 *查询录制信息
+                 * @param req DescribeRecordRequest
+                 * @return DescribeRecordOutcome
+                 */
+                DescribeRecordOutcome DescribeRecord(const Model::DescribeRecordRequest &request);
+                void DescribeRecordAsync(const Model::DescribeRecordRequest& request, const DescribeRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRecordOutcomeCallable DescribeRecordCallable(const Model::DescribeRecordRequest& request);
+
+                /**
                  *录制流查询
                  * @param req DescribeRecordStreamRequest
                  * @return DescribeRecordStreamOutcome
@@ -657,6 +750,15 @@ namespace TencentCloud
                 DescribeRecordStreamOutcome DescribeRecordStream(const Model::DescribeRecordStreamRequest &request);
                 void DescribeRecordStreamAsync(const Model::DescribeRecordStreamRequest& request, const DescribeRecordStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRecordStreamOutcomeCallable DescribeRecordStreamCallable(const Model::DescribeRecordStreamRequest& request);
+
+                /**
+                 *查询录制任务ID
+                 * @param req DescribeRecordTaskRequest
+                 * @return DescribeRecordTaskOutcome
+                 */
+                DescribeRecordTaskOutcome DescribeRecordTask(const Model::DescribeRecordTaskRequest &request);
+                void DescribeRecordTaskAsync(const Model::DescribeRecordTaskRequest& request, const DescribeRecordTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRecordTaskOutcomeCallable DescribeRecordTaskCallable(const Model::DescribeRecordTaskRequest& request);
 
                 /**
                  *获取房间配置信息
@@ -720,6 +822,26 @@ namespace TencentCloud
                 DescribeUserOutcome DescribeUser(const Model::DescribeUserRequest &request);
                 void DescribeUserAsync(const Model::DescribeUserRequest& request, const DescribeUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUserOutcomeCallable DescribeUserCallable(const Model::DescribeUserRequest& request);
+
+                /**
+                 *获取用户信息
+                 * @param req DescribeUserDetailRequest
+                 * @return DescribeUserDetailOutcome
+                 */
+                DescribeUserDetailOutcome DescribeUserDetail(const Model::DescribeUserDetailRequest &request);
+                void DescribeUserDetailAsync(const Model::DescribeUserDetailRequest& request, const DescribeUserDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserDetailOutcomeCallable DescribeUserDetailCallable(const Model::DescribeUserDetailRequest& request);
+
+                /**
+                 *查询白板板书截图
+课程结束后，可以查询和以图片的形式导出这些内容，方便后续查看、整理与分享。
+注意：不支持屏幕共享中的板书导出。
+                 * @param req DescribeWhiteBoardSnapshotRequest
+                 * @return DescribeWhiteBoardSnapshotOutcome
+                 */
+                DescribeWhiteBoardSnapshotOutcome DescribeWhiteBoardSnapshot(const Model::DescribeWhiteBoardSnapshotRequest &request);
+                void DescribeWhiteBoardSnapshotAsync(const Model::DescribeWhiteBoardSnapshotRequest& request, const DescribeWhiteBoardSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWhiteBoardSnapshotOutcomeCallable DescribeWhiteBoardSnapshotCallable(const Model::DescribeWhiteBoardSnapshotRequest& request);
 
                 /**
                  *结束房间的直播
@@ -832,7 +954,7 @@ namespace TencentCloud
                 ModifyRoomOutcomeCallable ModifyRoomCallable(const Model::ModifyRoomRequest& request);
 
                 /**
-                 *此接口用于修改用户配置，如头像，昵称/用户名等。
+                 *此接口用于修改用户信息，例如头像、昵称（用户名）等。注意，课中的用户信息不会立即同步修改，需待下次上课时，修改后的信息才会更新显示。
                  * @param req ModifyUserProfileRequest
                  * @return ModifyUserProfileOutcome
                  */
@@ -877,6 +999,15 @@ namespace TencentCloud
                 SetAppCustomContentOutcomeCallable SetAppCustomContentCallable(const Model::SetAppCustomContentRequest& request);
 
                 /**
+                 *设置跑马灯参数设置
+                 * @param req SetMarqueeRequest
+                 * @return SetMarqueeOutcome
+                 */
+                SetMarqueeOutcome SetMarquee(const Model::SetMarqueeRequest &request);
+                void SetMarqueeAsync(const Model::SetMarqueeRequest& request, const SetMarqueeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetMarqueeOutcomeCallable SetMarqueeCallable(const Model::SetMarqueeRequest& request);
+
+                /**
                  *设置水印
                  * @param req SetWatermarkRequest
                  * @return SetWatermarkOutcome
@@ -886,6 +1017,15 @@ namespace TencentCloud
                 SetWatermarkOutcomeCallable SetWatermarkCallable(const Model::SetWatermarkRequest& request);
 
                 /**
+                 *开始录制
+                 * @param req StartRecordRequest
+                 * @return StartRecordOutcome
+                 */
+                StartRecordOutcome StartRecord(const Model::StartRecordRequest &request);
+                void StartRecordAsync(const Model::StartRecordRequest& request, const StartRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartRecordOutcomeCallable StartRecordCallable(const Model::StartRecordRequest& request);
+
+                /**
                  *开始房间的直播。 说明：开始房间接口调用之前需要有用户进入课堂初始化课堂信息。
                  * @param req StartRoomRequest
                  * @return StartRoomOutcome
@@ -893,6 +1033,15 @@ namespace TencentCloud
                 StartRoomOutcome StartRoom(const Model::StartRoomRequest &request);
                 void StartRoomAsync(const Model::StartRoomRequest& request, const StartRoomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StartRoomOutcomeCallable StartRoomCallable(const Model::StartRoomRequest& request);
+
+                /**
+                 *停止录制
+                 * @param req StopRecordRequest
+                 * @return StopRecordOutcome
+                 */
+                StopRecordOutcome StopRecord(const Model::StopRecordRequest &request);
+                void StopRecordAsync(const Model::StopRecordRequest& request, const StopRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopRecordOutcomeCallable StopRecordCallable(const Model::StopRecordRequest& request);
 
                 /**
                  *文档从房间解绑

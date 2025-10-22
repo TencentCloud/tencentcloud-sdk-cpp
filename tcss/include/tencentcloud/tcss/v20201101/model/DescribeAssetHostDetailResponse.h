@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -451,6 +451,20 @@ namespace TencentCloud
                      */
                     bool ClusterAccessedStatusHasBeenSet() const;
 
+                    /**
+                     * 获取资产同步时间
+                     * @return AssetSyncTime 资产同步时间
+                     * 
+                     */
+                    std::string GetAssetSyncTime() const;
+
+                    /**
+                     * 判断参数 AssetSyncTime 是否已赋值
+                     * @return AssetSyncTime 是否已赋值
+                     * 
+                     */
+                    bool AssetSyncTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -626,6 +640,12 @@ namespace TencentCloud
                      */
                     std::string m_clusterAccessedStatus;
                     bool m_clusterAccessedStatusHasBeenSet;
+
+                    /**
+                     * 资产同步时间
+                     */
+                    std::string m_assetSyncTime;
+                    bool m_assetSyncTimeHasBeenSet;
 
                 };
             }

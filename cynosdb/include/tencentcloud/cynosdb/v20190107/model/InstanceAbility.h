@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例是否支持强制重启，可选值：yes：支持，no：不支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsSupportForceRestart 实例是否支持强制重启，可选值：yes：支持，no：不支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIsSupportForceRestart() const;
 
                     /**
                      * 设置实例是否支持强制重启，可选值：yes：支持，no：不支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isSupportForceRestart 实例是否支持强制重启，可选值：yes：支持，no：不支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsSupportForceRestart(const std::string& _isSupportForceRestart);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取不支持强制重启的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NonsupportForceRestartReason 不支持强制重启的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNonsupportForceRestartReason() const;
 
                     /**
                      * 设置不支持强制重启的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nonsupportForceRestartReason 不支持强制重启的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNonsupportForceRestartReason(const std::string& _nonsupportForceRestartReason);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 实例是否支持强制重启，可选值：yes：支持，no：不支持
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_isSupportForceRestart;
                     bool m_isSupportForceRestartHasBeenSet;
 
                     /**
                      * 不支持强制重启的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nonsupportForceRestartReason;
                     bool m_nonsupportForceRestartReasonHasBeenSet;

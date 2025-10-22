@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取建筑id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BuildingId 建筑id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBuildingId() const;
 
                     /**
                      * 设置建筑id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _buildingId 建筑id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBuildingId(const std::string& _buildingId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取构件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ElementId 构件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetElementId() const;
 
                     /**
                      * 设置构件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _elementId 构件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetElementId(const std::string& _elementId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取构件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EntityType 构件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEntityType() const;
 
                     /**
                      * 设置构件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _entityType 构件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEntityType(const std::string& _entityType);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取构件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ElementName 构件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetElementName() const;
 
                     /**
                      * 设置构件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _elementName 构件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetElementName(const std::string& _elementName);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取构件空间级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 构件空间级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLevel() const;
 
                     /**
                      * 设置构件空间级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _level 构件空间级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevel(const uint64_t& _level);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取底部标高（单位mm）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BottomHeight 底部标高（单位mm）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBottomHeight() const;
 
                     /**
                      * 设置底部标高（单位mm）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bottomHeight 底部标高（单位mm）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBottomHeight(const int64_t& _bottomHeight);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取排序
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Sort 排序
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSort() const;
 
                     /**
                      * 设置排序
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sort 排序
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSort(const uint64_t& _sort);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取空间编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpaceCode 空间编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSpaceCode() const;
 
                     /**
                      * 设置空间编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _spaceCode 空间编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSpaceCode(const std::string& _spaceCode);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取空间分类编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpaceTypeCode 空间分类编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSpaceTypeCode() const;
 
                     /**
                      * 设置空间分类编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _spaceTypeCode 空间分类编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSpaceTypeCode(const std::string& _spaceTypeCode);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取空间分类名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpaceTypeName 空间分类名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSpaceTypeName() const;
 
                     /**
                      * 设置空间分类名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _spaceTypeName 空间分类名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSpaceTypeName(const std::string& _spaceTypeName);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取父级构件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParentElementId 父级构件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParentElementId() const;
 
                     /**
                      * 设置父级构件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _parentElementId 父级构件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParentElementId(const std::string& _parentElementId);
@@ -323,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取空间层级类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpacePoiId 空间层级类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSpacePoiId() const;
 
                     /**
                      * 设置空间层级类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _spacePoiId 空间层级类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSpacePoiId(const std::string& _spacePoiId);
@@ -348,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取构件描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ElementDesc 构件描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetElementDesc() const;
 
                     /**
                      * 设置构件描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _elementDesc 构件描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetElementDesc(const std::string& _elementDesc);
@@ -373,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取删除标记
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsDelete 删除标记
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsDelete() const;
 
                     /**
                      * 设置删除标记
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isDelete 删除标记
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsDelete(const uint64_t& _isDelete);
@@ -400,98 +344,84 @@ namespace TencentCloud
 
                     /**
                      * 建筑id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_buildingId;
                     bool m_buildingIdHasBeenSet;
 
                     /**
                      * 构件id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_elementId;
                     bool m_elementIdHasBeenSet;
 
                     /**
                      * 构件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_entityType;
                     bool m_entityTypeHasBeenSet;
 
                     /**
                      * 构件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_elementName;
                     bool m_elementNameHasBeenSet;
 
                     /**
                      * 构件空间级别
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_level;
                     bool m_levelHasBeenSet;
 
                     /**
                      * 底部标高（单位mm）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_bottomHeight;
                     bool m_bottomHeightHasBeenSet;
 
                     /**
                      * 排序
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_sort;
                     bool m_sortHasBeenSet;
 
                     /**
                      * 空间编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_spaceCode;
                     bool m_spaceCodeHasBeenSet;
 
                     /**
                      * 空间分类编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_spaceTypeCode;
                     bool m_spaceTypeCodeHasBeenSet;
 
                     /**
                      * 空间分类名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_spaceTypeName;
                     bool m_spaceTypeNameHasBeenSet;
 
                     /**
                      * 父级构件id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_parentElementId;
                     bool m_parentElementIdHasBeenSet;
 
                     /**
                      * 空间层级类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_spacePoiId;
                     bool m_spacePoiIdHasBeenSet;
 
                     /**
                      * 构件描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_elementDesc;
                     bool m_elementDescHasBeenSet;
 
                     /**
                      * 删除标记
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isDelete;
                     bool m_isDeleteHasBeenSet;

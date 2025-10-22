@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -252,6 +252,48 @@ namespace TencentCloud
                      */
                     bool MaxCreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取实例状态过滤条件
+                     * @return StateList 实例状态过滤条件
+                     * 
+                     */
+                    std::vector<int64_t> GetStateList() const;
+
+                    /**
+                     * 设置实例状态过滤条件
+                     * @param _stateList 实例状态过滤条件
+                     * 
+                     */
+                    void SetStateList(const std::vector<int64_t>& _stateList);
+
+                    /**
+                     * 判断参数 StateList 是否已赋值
+                     * @return StateList 是否已赋值
+                     * 
+                     */
+                    bool StateListHasBeenSet() const;
+
+                    /**
+                     * 获取模糊查询关键字
+                     * @return Keyword 模糊查询关键字
+                     * 
+                     */
+                    std::string GetKeyword() const;
+
+                    /**
+                     * 设置模糊查询关键字
+                     * @param _keyword 模糊查询关键字
+                     * 
+                     */
+                    void SetKeyword(const std::string& _keyword);
+
+                    /**
+                     * 判断参数 Keyword 是否已赋值
+                     * @return Keyword 是否已赋值
+                     * 
+                     */
+                    bool KeywordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -313,6 +355,18 @@ namespace TencentCloud
                      */
                     std::string m_maxCreateTime;
                     bool m_maxCreateTimeHasBeenSet;
+
+                    /**
+                     * 实例状态过滤条件
+                     */
+                    std::vector<int64_t> m_stateList;
+                    bool m_stateListHasBeenSet;
+
+                    /**
+                     * 模糊查询关键字
+                     */
+                    std::string m_keyword;
+                    bool m_keywordHasBeenSet;
 
                 };
             }

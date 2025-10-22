@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取域名需要转入的账号，支持Uin或者邮箱格式
-                     * @return Account 域名需要转入的账号，支持Uin或者邮箱格式
+                     * 获取域名需要转入的账号Uin
+                     * @return Account 域名需要转入的账号Uin
                      * 
                      */
                     std::string GetAccount() const;
 
                     /**
-                     * 设置域名需要转入的账号，支持Uin或者邮箱格式
-                     * @param _account 域名需要转入的账号，支持Uin或者邮箱格式
+                     * 设置域名需要转入的账号Uin
+                     * @param _account 域名需要转入的账号Uin
                      * 
                      */
                     void SetAccount(const std::string& _account);
@@ -114,7 +114,7 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 域名需要转入的账号，支持Uin或者邮箱格式
+                     * 域名需要转入的账号Uin
                      */
                     std::string m_account;
                     bool m_accountHasBeenSet;

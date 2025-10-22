@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取心脏总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 心脏总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KeyValueItem GetText() const;
 
                     /**
                      * 设置心脏总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _text 心脏总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetText(const KeyValueItem& _text);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取心律
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HeartRhythm 心律
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KeyValueItem GetHeartRhythm() const;
 
                     /**
                      * 设置心律
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _heartRhythm 心律
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHeartRhythm(const KeyValueItem& _heartRhythm);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取心率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HeartRate 心率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ValueUnitItem GetHeartRate() const;
 
                     /**
                      * 设置心率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _heartRate 心率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHeartRate(const ValueUnitItem& _heartRate);
@@ -125,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取心脏听诊
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HeartAuscultation 心脏听诊
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KeyValueItem GetHeartAuscultation() const;
 
                     /**
                      * 设置心脏听诊
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _heartAuscultation 心脏听诊
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHeartAuscultation(const KeyValueItem& _heartAuscultation);
@@ -152,28 +136,24 @@ namespace TencentCloud
 
                     /**
                      * 心脏总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KeyValueItem m_text;
                     bool m_textHasBeenSet;
 
                     /**
                      * 心律
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KeyValueItem m_heartRhythm;
                     bool m_heartRhythmHasBeenSet;
 
                     /**
                      * 心率
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ValueUnitItem m_heartRate;
                     bool m_heartRateHasBeenSet;
 
                     /**
                      * 心脏听诊
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KeyValueItem m_heartAuscultation;
                     bool m_heartAuscultationHasBeenSet;

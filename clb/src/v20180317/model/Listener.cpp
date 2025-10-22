@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,7 +44,8 @@ Listener::Listener() :
     m_maxConnHasBeenSet(false),
     m_maxCpsHasBeenSet(false),
     m_idleConnectTimeoutHasBeenSet(false),
-    m_rescheduleIntervalHasBeenSet(false)
+    m_rescheduleIntervalHasBeenSet(false),
+    m_dataCompressModeHasBeenSet(false)
 {
 }
 
@@ -337,6 +338,16 @@ CoreInternalOutcome Listener::Deserialize(const rapidjson::Value &value)
         m_rescheduleIntervalHasBeenSet = true;
     }
 
+    if (value.HasMember("DataCompressMode") && !value["DataCompressMode"].IsNull())
+    {
+        if (!value["DataCompressMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Listener.DataCompressMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataCompressMode = string(value["DataCompressMode"].GetString());
+        m_dataCompressModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -556,6 +567,14 @@ void Listener::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "RescheduleInterval";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rescheduleInterval, allocator);
+    }
+
+    if (m_dataCompressModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataCompressMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dataCompressMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -943,5 +962,21 @@ void Listener::SetRescheduleInterval(const uint64_t& _rescheduleInterval)
 bool Listener::RescheduleIntervalHasBeenSet() const
 {
     return m_rescheduleIntervalHasBeenSet;
+}
+
+string Listener::GetDataCompressMode() const
+{
+    return m_dataCompressMode;
+}
+
+void Listener::SetDataCompressMode(const string& _dataCompressMode)
+{
+    m_dataCompressMode = _dataCompressMode;
+    m_dataCompressModeHasBeenSet = true;
+}
+
+bool Listener::DataCompressModeHasBeenSet() const
+{
+    return m_dataCompressModeHasBeenSet;
 }
 

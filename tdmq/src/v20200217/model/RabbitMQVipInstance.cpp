@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,11 @@ RabbitMQVipInstance::RabbitMQVipInstance() :
     m_clusterStatusHasBeenSet(false),
     m_publicAccessEndpointHasBeenSet(false),
     m_vpcsHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
+    m_isolatedTimeHasBeenSet(false),
+    m_enableDeletionProtectionHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -248,6 +252,56 @@ CoreInternalOutcome RabbitMQVipInstance::Deserialize(const rapidjson::Value &val
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceType") && !value["InstanceType"].IsNull())
+    {
+        if (!value["InstanceType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQVipInstance.InstanceType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceType = value["InstanceType"].GetUint64();
+        m_instanceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsolatedTime") && !value["IsolatedTime"].IsNull())
+    {
+        if (!value["IsolatedTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQVipInstance.IsolatedTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isolatedTime = value["IsolatedTime"].GetUint64();
+        m_isolatedTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableDeletionProtection") && !value["EnableDeletionProtection"].IsNull())
+    {
+        if (!value["EnableDeletionProtection"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQVipInstance.EnableDeletionProtection` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableDeletionProtection = value["EnableDeletionProtection"].GetBool();
+        m_enableDeletionProtectionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RabbitMQVipInstance.Tags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -412,6 +466,45 @@ void RabbitMQVipInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
+    }
+
+    if (m_instanceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_instanceType, allocator);
+    }
+
+    if (m_isolatedTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsolatedTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isolatedTime, allocator);
+    }
+
+    if (m_enableDeletionProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableDeletionProtection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableDeletionProtection, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -719,5 +812,69 @@ void RabbitMQVipInstance::SetCreateTime(const uint64_t& _createTime)
 bool RabbitMQVipInstance::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+uint64_t RabbitMQVipInstance::GetInstanceType() const
+{
+    return m_instanceType;
+}
+
+void RabbitMQVipInstance::SetInstanceType(const uint64_t& _instanceType)
+{
+    m_instanceType = _instanceType;
+    m_instanceTypeHasBeenSet = true;
+}
+
+bool RabbitMQVipInstance::InstanceTypeHasBeenSet() const
+{
+    return m_instanceTypeHasBeenSet;
+}
+
+uint64_t RabbitMQVipInstance::GetIsolatedTime() const
+{
+    return m_isolatedTime;
+}
+
+void RabbitMQVipInstance::SetIsolatedTime(const uint64_t& _isolatedTime)
+{
+    m_isolatedTime = _isolatedTime;
+    m_isolatedTimeHasBeenSet = true;
+}
+
+bool RabbitMQVipInstance::IsolatedTimeHasBeenSet() const
+{
+    return m_isolatedTimeHasBeenSet;
+}
+
+bool RabbitMQVipInstance::GetEnableDeletionProtection() const
+{
+    return m_enableDeletionProtection;
+}
+
+void RabbitMQVipInstance::SetEnableDeletionProtection(const bool& _enableDeletionProtection)
+{
+    m_enableDeletionProtection = _enableDeletionProtection;
+    m_enableDeletionProtectionHasBeenSet = true;
+}
+
+bool RabbitMQVipInstance::EnableDeletionProtectionHasBeenSet() const
+{
+    return m_enableDeletionProtectionHasBeenSet;
+}
+
+vector<Tag> RabbitMQVipInstance::GetTags() const
+{
+    return m_tags;
+}
+
+void RabbitMQVipInstance::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool RabbitMQVipInstance::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 

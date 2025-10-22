@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取AppID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId AppID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAppId() const;
 
                     /**
                      * 设置AppID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appId AppID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppId(const int64_t& _appId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源包唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageId 资源包唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPackageId() const;
 
                     /**
                      * 设置资源包唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packageId 资源包唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackageId(const std::string& _packageId);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源包名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageName 资源包名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPackageName() const;
 
                     /**
                      * 设置资源包名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packageName 资源包名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackageName(const std::string& _packageName);
@@ -125,10 +113,8 @@ namespace TencentCloud
                     /**
                      * 获取资源包类型
 CCU-计算资源包，DISK-存储资源包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageType 资源包类型
 CCU-计算资源包，DISK-存储资源包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPackageType() const;
@@ -136,10 +122,8 @@ CCU-计算资源包，DISK-存储资源包
                     /**
                      * 设置资源包类型
 CCU-计算资源包，DISK-存储资源包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packageType 资源包类型
 CCU-计算资源包，DISK-存储资源包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackageType(const std::string& _packageType);
@@ -154,10 +138,8 @@ CCU-计算资源包，DISK-存储资源包
                     /**
                      * 获取资源包使用地域
 china-中国内地通用，overseas-港澳台及海外通用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageRegion 资源包使用地域
 china-中国内地通用，overseas-港澳台及海外通用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPackageRegion() const;
@@ -165,10 +147,8 @@ china-中国内地通用，overseas-港澳台及海外通用
                     /**
                      * 设置资源包使用地域
 china-中国内地通用，overseas-港澳台及海外通用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packageRegion 资源包使用地域
 china-中国内地通用，overseas-港澳台及海外通用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackageRegion(const std::string& _packageRegion);
@@ -188,7 +168,6 @@ expired-已过期；
 normal_finish-使用完；
 apply_refund-申请退费中；
 refund-已退费。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 资源包状态
 creating-创建中；
 using-使用中；
@@ -196,7 +175,6 @@ expired-已过期；
 normal_finish-使用完；
 apply_refund-申请退费中；
 refund-已退费。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
@@ -209,7 +187,6 @@ expired-已过期；
 normal_finish-使用完；
 apply_refund-申请退费中；
 refund-已退费。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 资源包状态
 creating-创建中；
 using-使用中；
@@ -217,7 +194,6 @@ expired-已过期；
 normal_finish-使用完；
 apply_refund-申请退费中；
 refund-已退费。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -231,18 +207,14 @@ refund-已退费。
 
                     /**
                      * 获取资源包总量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageTotalSpec 资源包总量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetPackageTotalSpec() const;
 
                     /**
                      * 设置资源包总量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packageTotalSpec 资源包总量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackageTotalSpec(const double& _packageTotalSpec);
@@ -256,18 +228,14 @@ refund-已退费。
 
                     /**
                      * 获取资源包已使用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageUsedSpec 资源包已使用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetPackageUsedSpec() const;
 
                     /**
                      * 设置资源包已使用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packageUsedSpec 资源包已使用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackageUsedSpec(const double& _packageUsedSpec);
@@ -281,18 +249,14 @@ refund-已退费。
 
                     /**
                      * 获取是否还有库存余量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HasQuota 是否还有库存余量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetHasQuota() const;
 
                     /**
                      * 设置是否还有库存余量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hasQuota 是否还有库存余量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHasQuota(const bool& _hasQuota);
@@ -306,18 +270,14 @@ refund-已退费。
 
                     /**
                      * 获取绑定实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BindInstanceInfos 绑定实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BindInstanceInfo> GetBindInstanceInfos() const;
 
                     /**
                      * 设置绑定实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bindInstanceInfos 绑定实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBindInstanceInfos(const std::vector<BindInstanceInfo>& _bindInstanceInfos);
@@ -331,18 +291,14 @@ refund-已退费。
 
                     /**
                      * 获取生效时间：2022-07-01 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 生效时间：2022-07-01 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置生效时间：2022-07-01 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTime 生效时间：2022-07-01 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -356,18 +312,14 @@ refund-已退费。
 
                     /**
                      * 获取失效时间：2022-08-01 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireTime 失效时间：2022-08-01 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置失效时间：2022-08-01 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expireTime 失效时间：2022-08-01 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -381,18 +333,14 @@ refund-已退费。
 
                     /**
                      * 获取资源包历史绑定（已解绑）实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HistoryBindResourceInfos 资源包历史绑定（已解绑）实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BindInstanceInfo> GetHistoryBindResourceInfos() const;
 
                     /**
                      * 设置资源包历史绑定（已解绑）实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _historyBindResourceInfos 资源包历史绑定（已解绑）实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHistoryBindResourceInfos(const std::vector<BindInstanceInfo>& _historyBindResourceInfos);
@@ -408,21 +356,18 @@ refund-已退费。
 
                     /**
                      * AppID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
                      * 资源包唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packageId;
                     bool m_packageIdHasBeenSet;
 
                     /**
                      * 资源包名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packageName;
                     bool m_packageNameHasBeenSet;
@@ -430,7 +375,6 @@ refund-已退费。
                     /**
                      * 资源包类型
 CCU-计算资源包，DISK-存储资源包
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packageType;
                     bool m_packageTypeHasBeenSet;
@@ -438,7 +382,6 @@ CCU-计算资源包，DISK-存储资源包
                     /**
                      * 资源包使用地域
 china-中国内地通用，overseas-港澳台及海外通用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packageRegion;
                     bool m_packageRegionHasBeenSet;
@@ -451,56 +394,48 @@ expired-已过期；
 normal_finish-使用完；
 apply_refund-申请退费中；
 refund-已退费。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 资源包总量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_packageTotalSpec;
                     bool m_packageTotalSpecHasBeenSet;
 
                     /**
                      * 资源包已使用量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_packageUsedSpec;
                     bool m_packageUsedSpecHasBeenSet;
 
                     /**
                      * 是否还有库存余量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_hasQuota;
                     bool m_hasQuotaHasBeenSet;
 
                     /**
                      * 绑定实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BindInstanceInfo> m_bindInstanceInfos;
                     bool m_bindInstanceInfosHasBeenSet;
 
                     /**
                      * 生效时间：2022-07-01 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 失效时间：2022-08-01 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
                      * 资源包历史绑定（已解绑）实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BindInstanceInfo> m_historyBindResourceInfos;
                     bool m_historyBindResourceInfosHasBeenSet;

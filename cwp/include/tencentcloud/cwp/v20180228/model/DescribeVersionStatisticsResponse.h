@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool UltimateVersionNumHasBeenSet() const;
 
                     /**
-                     * 获取普惠版数量
-                     * @return GeneralVersionNum 普惠版数量
+                     * 获取轻量版数量
+                     * @return GeneralVersionNum 轻量版数量
                      * 
                      */
                     uint64_t GetGeneralVersionNum() const;
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_ultimateVersionNumHasBeenSet;
 
                     /**
-                     * 普惠版数量
+                     * 轻量版数量
                      */
                     uint64_t m_generalVersionNum;
                     bool m_generalVersionNumHasBeenSet;

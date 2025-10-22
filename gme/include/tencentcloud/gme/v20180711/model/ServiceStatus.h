@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实时语音服务开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealTimeSpeech 实时语音服务开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     StatusInfo GetRealTimeSpeech() const;
 
                     /**
                      * 设置实时语音服务开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _realTimeSpeech 实时语音服务开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRealTimeSpeech(const StatusInfo& _realTimeSpeech);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取语音消息服务开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VoiceMessage 语音消息服务开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     StatusInfo GetVoiceMessage() const;
 
                     /**
                      * 设置语音消息服务开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _voiceMessage 语音消息服务开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVoiceMessage(const StatusInfo& _voiceMessage);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取语音内容安全服务开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Porn 语音内容安全服务开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     StatusInfo GetPorn() const;
 
                     /**
                      * 设置语音内容安全服务开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _porn 语音内容安全服务开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPorn(const StatusInfo& _porn);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取语音录制服务开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Live 语音录制服务开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     StatusInfo GetLive() const;
 
                     /**
                      * 设置语音录制服务开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _live 语音录制服务开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLive(const StatusInfo& _live);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取语音转文本服务开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealTimeAsr 语音转文本服务开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     StatusInfo GetRealTimeAsr() const;
 
                     /**
                      * 设置语音转文本服务开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _realTimeAsr 语音转文本服务开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRealTimeAsr(const StatusInfo& _realTimeAsr);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文本翻译服务开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TextTranslate 文本翻译服务开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     StatusInfo GetTextTranslate() const;
 
                     /**
                      * 设置文本翻译服务开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _textTranslate 文本翻译服务开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTextTranslate(const StatusInfo& _textTranslate);
@@ -201,42 +177,36 @@ namespace TencentCloud
 
                     /**
                      * 实时语音服务开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     StatusInfo m_realTimeSpeech;
                     bool m_realTimeSpeechHasBeenSet;
 
                     /**
                      * 语音消息服务开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     StatusInfo m_voiceMessage;
                     bool m_voiceMessageHasBeenSet;
 
                     /**
                      * 语音内容安全服务开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     StatusInfo m_porn;
                     bool m_pornHasBeenSet;
 
                     /**
                      * 语音录制服务开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     StatusInfo m_live;
                     bool m_liveHasBeenSet;
 
                     /**
                      * 语音转文本服务开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     StatusInfo m_realTimeAsr;
                     bool m_realTimeAsrHasBeenSet;
 
                     /**
                      * 文本翻译服务开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     StatusInfo m_textTranslate;
                     bool m_textTranslateHasBeenSet;

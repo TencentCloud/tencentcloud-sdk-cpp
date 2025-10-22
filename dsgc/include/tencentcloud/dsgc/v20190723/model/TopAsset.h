@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分级名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LevelName 分级名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLevelName() const;
 
                     /**
                      * 设置分级名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _levelName 分级名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevelName(const std::string& _levelName);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取top数据信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopStat top数据信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TopAssetStat> GetTopStat() const;
 
                     /**
                      * 设置top数据信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topStat top数据信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopStat(const std::vector<TopAssetStat>& _topStat);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 分级名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_levelName;
                     bool m_levelNameHasBeenSet;
 
                     /**
                      * top数据信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TopAssetStat> m_topStat;
                     bool m_topStatHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -133,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取现金
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CashPayAmount 现金
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCashPayAmount() const;
 
                     /**
                      * 设置现金
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cashPayAmount 现金
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCashPayAmount(const std::string& _cashPayAmount);
@@ -158,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取赠送金
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IncentivePayAmount 赠送金
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIncentivePayAmount() const;
 
                     /**
                      * 设置赠送金
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _incentivePayAmount 赠送金
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIncentivePayAmount(const std::string& _incentivePayAmount);
@@ -183,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取代金券
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VoucherPayAmount 代金券
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVoucherPayAmount() const;
 
                     /**
                      * 设置代金券
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _voucherPayAmount 代金券
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVoucherPayAmount(const std::string& _voucherPayAmount);
@@ -208,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分成金
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransferPayAmount 分成金
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTransferPayAmount() const;
 
                     /**
                      * 设置分成金
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _transferPayAmount 分成金
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTransferPayAmount(const std::string& _transferPayAmount);
@@ -233,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域名称（仅在地域汇总总展示）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionName 地域名称（仅在地域汇总总展示）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegionName() const;
 
                     /**
                      * 设置地域名称（仅在地域汇总总展示）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionName 地域名称（仅在地域汇总总展示）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionName(const std::string& _regionName);
@@ -284,35 +264,30 @@ namespace TencentCloud
 
                     /**
                      * 现金
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cashPayAmount;
                     bool m_cashPayAmountHasBeenSet;
 
                     /**
                      * 赠送金
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_incentivePayAmount;
                     bool m_incentivePayAmountHasBeenSet;
 
                     /**
                      * 代金券
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_voucherPayAmount;
                     bool m_voucherPayAmountHasBeenSet;
 
                     /**
                      * 分成金
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_transferPayAmount;
                     bool m_transferPayAmountHasBeenSet;
 
                     /**
                      * 地域名称（仅在地域汇总总展示）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regionName;
                     bool m_regionNameHasBeenSet;

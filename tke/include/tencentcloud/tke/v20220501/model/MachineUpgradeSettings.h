@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启自动升级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoUpgrade 是否开启自动升级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetAutoUpgrade() const;
 
                     /**
                      * 设置是否开启自动升级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _autoUpgrade 是否开启自动升级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAutoUpgrade(const bool& _autoUpgrade);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取运维窗口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpgradeOptions 运维窗口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AutoUpgradeOptions GetUpgradeOptions() const;
 
                     /**
                      * 设置运维窗口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _upgradeOptions 运维窗口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpgradeOptions(const AutoUpgradeOptions& _upgradeOptions);
@@ -125,18 +117,14 @@ namespace TencentCloud
 
                     /**
                      * 获取升级时，最大不可升级的节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxUnavailable 升级时，最大不可升级的节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     IntOrString GetMaxUnavailable() const;
 
                     /**
                      * 设置升级时，最大不可升级的节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxUnavailable 升级时，最大不可升级的节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxUnavailable(const IntOrString& _maxUnavailable);
@@ -152,14 +140,12 @@ namespace TencentCloud
 
                     /**
                      * 是否开启自动升级
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_autoUpgrade;
                     bool m_autoUpgradeHasBeenSet;
 
                     /**
                      * 运维窗口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AutoUpgradeOptions m_upgradeOptions;
                     bool m_upgradeOptionsHasBeenSet;
@@ -173,7 +159,6 @@ namespace TencentCloud
 
                     /**
                      * 升级时，最大不可升级的节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     IntOrString m_maxUnavailable;
                     bool m_maxUnavailableHasBeenSet;

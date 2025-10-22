@@ -90,7 +90,9 @@ namespace
 }
 
 HttpClient::HttpClient() :
-    m_curlHandle(curl_easy_init())
+    m_curlHandle(curl_easy_init()),
+    m_caInfo(""),
+    m_caPath("")
 {
     m_curlm = curl_multi_init();
     m_asyncRunning = true;
@@ -124,6 +126,16 @@ void HttpClient::SetReqTimeout(int64_t timeoutOfMs)
 void HttpClient::SetConnectTimeout(int64_t timeoutOfMs)
 {
     m_connectTimeout = timeoutOfMs;
+}
+
+void HttpClient::SetCaInfo(std::string caInfo)
+{
+    m_caInfo = caInfo;
+}
+
+void HttpClient::SetCaPath(std::string caPath)
+{
+    m_caPath = caPath;
 }
 
 void HttpClient::SetProxy(const NetworkProxy &proxy)
@@ -171,6 +183,14 @@ HttpClient::HttpResponseOutcome HttpClient::SendRequest(const HttpRequest &reque
     curl_easy_setopt(m_curlHandle, CURLOPT_URL, url.c_str());
     curl_easy_setopt(m_curlHandle, CURLOPT_SSL_VERIFYPEER, 1L);
     curl_easy_setopt(m_curlHandle, CURLOPT_SSL_VERIFYHOST, 2L);
+
+    if (m_caInfo != ""){
+        curl_easy_setopt(m_curlHandle, CURLOPT_CAINFO, m_caInfo.c_str());
+    }
+    if (m_caPath != ""){
+        curl_easy_setopt(m_curlHandle, CURLOPT_CAPATH, m_caPath.c_str());
+    }
+
     curl_easy_setopt(m_curlHandle, CURLOPT_HEADERDATA, &response);
     curl_easy_setopt(m_curlHandle, CURLOPT_HEADERFUNCTION, recvHeaders);
 
@@ -209,7 +229,7 @@ HttpClient::HttpResponseOutcome HttpClient::SendRequest(const HttpRequest &reque
         {
             std::string decompressData;
             if (TryDecompress(out.str().c_str(), out.str().size(), decompressData)) {
-                
+
                 response.SetBody(decompressData);
             }
         }

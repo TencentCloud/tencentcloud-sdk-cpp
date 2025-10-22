@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -404,6 +404,111 @@ namespace TencentCloud
                     bool CriticalVulListCountHasBeenSet() const;
 
                     /**
+                     * 获取操作系统名称
+                     * @return Os 操作系统名称
+                     * 
+                     */
+                    std::string GetOs() const;
+
+                    /**
+                     * 设置操作系统名称
+                     * @param _os 操作系统名称
+                     * 
+                     */
+                    void SetOs(const std::string& _os);
+
+                    /**
+                     * 判断参数 Os 是否已赋值
+                     * @return Os 是否已赋值
+                     * 
+                     */
+                    bool OsHasBeenSet() const;
+
+                    /**
+                     * 获取操作系统位数
+                     * @return OsBits 操作系统位数
+                     * 
+                     */
+                    int64_t GetOsBits() const;
+
+                    /**
+                     * 设置操作系统位数
+                     * @param _osBits 操作系统位数
+                     * 
+                     */
+                    void SetOsBits(const int64_t& _osBits);
+
+                    /**
+                     * 判断参数 OsBits 是否已赋值
+                     * @return OsBits 是否已赋值
+                     * 
+                     */
+                    bool OsBitsHasBeenSet() const;
+
+                    /**
+                     * 获取操作系统版本
+                     * @return OsVersion 操作系统版本
+                     * 
+                     */
+                    std::string GetOsVersion() const;
+
+                    /**
+                     * 设置操作系统版本
+                     * @param _osVersion 操作系统版本
+                     * 
+                     */
+                    void SetOsVersion(const std::string& _osVersion);
+
+                    /**
+                     * 判断参数 OsVersion 是否已赋值
+                     * @return OsVersion 是否已赋值
+                     * 
+                     */
+                    bool OsVersionHasBeenSet() const;
+
+                    /**
+                     * 获取操作系统语言
+                     * @return OsLanguage 操作系统语言
+                     * 
+                     */
+                    std::string GetOsLanguage() const;
+
+                    /**
+                     * 设置操作系统语言
+                     * @param _osLanguage 操作系统语言
+                     * 
+                     */
+                    void SetOsLanguage(const std::string& _osLanguage);
+
+                    /**
+                     * 判断参数 OsLanguage 是否已赋值
+                     * @return OsLanguage 是否已赋值
+                     * 
+                     */
+                    bool OsLanguageHasBeenSet() const;
+
+                    /**
+                     * 获取操作系统安装时间
+                     * @return OsInstallDate 操作系统安装时间
+                     * 
+                     */
+                    std::string GetOsInstallDate() const;
+
+                    /**
+                     * 设置操作系统安装时间
+                     * @param _osInstallDate 操作系统安装时间
+                     * 
+                     */
+                    void SetOsInstallDate(const std::string& _osInstallDate);
+
+                    /**
+                     * 判断参数 OsInstallDate 是否已赋值
+                     * @return OsInstallDate 是否已赋值
+                     * 
+                     */
+                    bool OsInstallDateHasBeenSet() const;
+
+                    /**
                      * 获取设备名，和Name相同
                      * @return ComputerName 设备名，和Name相同
                      * 
@@ -719,15 +824,15 @@ namespace TencentCloud
                     bool NGNStrategyVerHasBeenSet() const;
 
                     /**
-                     * 获取最近登录账户的账号
-                     * @return IOAUserName 最近登录账户的账号
+                     * 获取最近登录账户的账号(账号系统用户账号)
+                     * @return IOAUserName 最近登录账户的账号(账号系统用户账号)
                      * 
                      */
                     std::string GetIOAUserName() const;
 
                     /**
-                     * 设置最近登录账户的账号
-                     * @param _iOAUserName 最近登录账户的账号
+                     * 设置最近登录账户的账号(账号系统用户账号)
+                     * @param _iOAUserName 最近登录账户的账号(账号系统用户账号)
                      * 
                      */
                     void SetIOAUserName(const std::string& _iOAUserName);
@@ -908,15 +1013,15 @@ namespace TencentCloud
                     bool AccountGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取最近登录账户的姓名
-                     * @return AccountName 最近登录账户的姓名
+                     * 获取最近登录账户的姓名(账号系统用户姓名)
+                     * @return AccountName 最近登录账户的姓名(账号系统用户姓名)
                      * 
                      */
                     std::string GetAccountName() const;
 
                     /**
-                     * 设置最近登录账户的姓名
-                     * @param _accountName 最近登录账户的姓名
+                     * 设置最近登录账户的姓名(账号系统用户姓名)
+                     * @param _accountName 最近登录账户的姓名(账号系统用户姓名)
                      * 
                      */
                     void SetAccountName(const std::string& _accountName);
@@ -948,6 +1053,27 @@ namespace TencentCloud
                      * 
                      */
                     bool AccountGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取终端备注名
+                     * @return RemarkName 终端备注名
+                     * 
+                     */
+                    std::string GetRemarkName() const;
+
+                    /**
+                     * 设置终端备注名
+                     * @param _remarkName 终端备注名
+                     * 
+                     */
+                    void SetRemarkName(const std::string& _remarkName);
+
+                    /**
+                     * 判断参数 RemarkName 是否已赋值
+                     * @return RemarkName 是否已赋值
+                     * 
+                     */
+                    bool RemarkNameHasBeenSet() const;
 
                 private:
 
@@ -1054,6 +1180,36 @@ namespace TencentCloud
                     bool m_criticalVulListCountHasBeenSet;
 
                     /**
+                     * 操作系统名称
+                     */
+                    std::string m_os;
+                    bool m_osHasBeenSet;
+
+                    /**
+                     * 操作系统位数
+                     */
+                    int64_t m_osBits;
+                    bool m_osBitsHasBeenSet;
+
+                    /**
+                     * 操作系统版本
+                     */
+                    std::string m_osVersion;
+                    bool m_osVersionHasBeenSet;
+
+                    /**
+                     * 操作系统语言
+                     */
+                    std::string m_osLanguage;
+                    bool m_osLanguageHasBeenSet;
+
+                    /**
+                     * 操作系统安装时间
+                     */
+                    std::string m_osInstallDate;
+                    bool m_osInstallDateHasBeenSet;
+
+                    /**
                      * 设备名，和Name相同
                      */
                     std::string m_computerName;
@@ -1144,7 +1300,7 @@ namespace TencentCloud
                     bool m_nGNStrategyVerHasBeenSet;
 
                     /**
-                     * 最近登录账户的账号
+                     * 最近登录账户的账号(账号系统用户账号)
                      */
                     std::string m_iOAUserName;
                     bool m_iOAUserNameHasBeenSet;
@@ -1198,7 +1354,7 @@ namespace TencentCloud
                     bool m_accountGroupNameHasBeenSet;
 
                     /**
-                     * 最近登录账户的姓名
+                     * 最近登录账户的姓名(账号系统用户姓名)
                      */
                     std::string m_accountName;
                     bool m_accountNameHasBeenSet;
@@ -1208,6 +1364,12 @@ namespace TencentCloud
                      */
                     int64_t m_accountGroupId;
                     bool m_accountGroupIdHasBeenSet;
+
+                    /**
+                     * 终端备注名
+                     */
+                    std::string m_remarkName;
+                    bool m_remarkNameHasBeenSet;
 
                 };
             }

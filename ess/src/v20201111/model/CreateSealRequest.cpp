@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,9 @@ CreateSealRequest::CreateSealRequest() :
     m_fileTokenHasBeenSet(false),
     m_sealStyleHasBeenSet(false),
     m_sealSizeHasBeenSet(false),
-    m_taxIdentifyCodeHasBeenSet(false)
+    m_taxIdentifyCodeHasBeenSet(false),
+    m_sealDescriptionHasBeenSet(false),
+    m_optionsHasBeenSet(false)
 {
 }
 
@@ -186,6 +188,29 @@ string CreateSealRequest::ToJsonString() const
         string key = "TaxIdentifyCode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_taxIdentifyCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sealDescriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SealDescription";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sealDescription.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_optionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Options";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_options.begin(); itr != m_options.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -466,6 +491,38 @@ void CreateSealRequest::SetTaxIdentifyCode(const string& _taxIdentifyCode)
 bool CreateSealRequest::TaxIdentifyCodeHasBeenSet() const
 {
     return m_taxIdentifyCodeHasBeenSet;
+}
+
+string CreateSealRequest::GetSealDescription() const
+{
+    return m_sealDescription;
+}
+
+void CreateSealRequest::SetSealDescription(const string& _sealDescription)
+{
+    m_sealDescription = _sealDescription;
+    m_sealDescriptionHasBeenSet = true;
+}
+
+bool CreateSealRequest::SealDescriptionHasBeenSet() const
+{
+    return m_sealDescriptionHasBeenSet;
+}
+
+vector<Option> CreateSealRequest::GetOptions() const
+{
+    return m_options;
+}
+
+void CreateSealRequest::SetOptions(const vector<Option>& _options)
+{
+    m_options = _options;
+    m_optionsHasBeenSet = true;
+}
+
+bool CreateSealRequest::OptionsHasBeenSet() const
+{
+    return m_optionsHasBeenSet;
 }
 
 

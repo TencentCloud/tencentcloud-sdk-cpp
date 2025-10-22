@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool RouteOverlapFlagHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启qos功能。`False` 不开启，`True` 开启。
+                     * @return TrafficMarkingPolicyFlag 是否开启qos功能。`False` 不开启，`True` 开启。
+                     * 
+                     */
+                    bool GetTrafficMarkingPolicyFlag() const;
+
+                    /**
+                     * 设置是否开启qos功能。`False` 不开启，`True` 开启。
+                     * @param _trafficMarkingPolicyFlag 是否开启qos功能。`False` 不开启，`True` 开启。
+                     * 
+                     */
+                    void SetTrafficMarkingPolicyFlag(const bool& _trafficMarkingPolicyFlag);
+
+                    /**
+                     * 判断参数 TrafficMarkingPolicyFlag 是否已赋值
+                     * @return TrafficMarkingPolicyFlag 是否已赋值
+                     * 
+                     */
+                    bool TrafficMarkingPolicyFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     bool m_routeOverlapFlag;
                     bool m_routeOverlapFlagHasBeenSet;
+
+                    /**
+                     * 是否开启qos功能。`False` 不开启，`True` 开启。
+                     */
+                    bool m_trafficMarkingPolicyFlag;
+                    bool m_trafficMarkingPolicyFlagHasBeenSet;
 
                 };
             }

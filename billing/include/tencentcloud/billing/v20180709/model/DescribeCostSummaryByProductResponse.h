@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,9 +75,7 @@ namespace TencentCloud
 
                     /**
                      * 获取消耗按产品汇总详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 消耗按产品汇总详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ConsumptionBusinessSummaryDataItem> GetData() const;
@@ -90,10 +88,8 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取记录数量，NeedRecordNum为0是返回null
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RecordNum 记录数量，NeedRecordNum为0是返回null
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取记录数量，NeedRecordNum为0时返回null
+                     * @return RecordNum 记录数量，NeedRecordNum为0时返回null
                      * 
                      */
                     uint64_t GetRecordNum() const;
@@ -121,14 +117,12 @@ namespace TencentCloud
 
                     /**
                      * 消耗按产品汇总详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ConsumptionBusinessSummaryDataItem> m_data;
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 记录数量，NeedRecordNum为0是返回null
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 记录数量，NeedRecordNum为0时返回null
                      */
                     uint64_t m_recordNum;
                     bool m_recordNumHasBeenSet;

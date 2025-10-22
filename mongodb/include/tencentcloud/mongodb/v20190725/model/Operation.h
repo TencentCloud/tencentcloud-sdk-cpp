@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 需要终止的操作
+                * 需要终止的操作。
                 */
                 class Operation : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取操作所在的分片名
-                     * @return ReplicaSetName 操作所在的分片名
+                     * 获取操作所在的分片名称。请通过接口 [DescribeCurrentOp](https://cloud.tencent.com/document/product/240/48120) 查询分片名称。
+                     * @return ReplicaSetName 操作所在的分片名称。请通过接口 [DescribeCurrentOp](https://cloud.tencent.com/document/product/240/48120) 查询分片名称。
                      * 
                      */
                     std::string GetReplicaSetName() const;
 
                     /**
-                     * 设置操作所在的分片名
-                     * @param _replicaSetName 操作所在的分片名
+                     * 设置操作所在的分片名称。请通过接口 [DescribeCurrentOp](https://cloud.tencent.com/document/product/240/48120) 查询分片名称。
+                     * @param _replicaSetName 操作所在的分片名称。请通过接口 [DescribeCurrentOp](https://cloud.tencent.com/document/product/240/48120) 查询分片名称。
                      * 
                      */
                     void SetReplicaSetName(const std::string& _replicaSetName);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ReplicaSetNameHasBeenSet() const;
 
                     /**
-                     * 获取操作所在的节点名
-                     * @return NodeName 操作所在的节点名
+                     * 获取操作所在的节点名。请通过接口 [DescribeCurrentOp](https://cloud.tencent.com/document/product/240/48120) 查询节点名称。
+                     * @return NodeName 操作所在的节点名。请通过接口 [DescribeCurrentOp](https://cloud.tencent.com/document/product/240/48120) 查询节点名称。
                      * 
                      */
                     std::string GetNodeName() const;
 
                     /**
-                     * 设置操作所在的节点名
-                     * @param _nodeName 操作所在的节点名
+                     * 设置操作所在的节点名。请通过接口 [DescribeCurrentOp](https://cloud.tencent.com/document/product/240/48120) 查询节点名称。
+                     * @param _nodeName 操作所在的节点名。请通过接口 [DescribeCurrentOp](https://cloud.tencent.com/document/product/240/48120) 查询节点名称。
                      * 
                      */
                     void SetNodeName(const std::string& _nodeName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool NodeNameHasBeenSet() const;
 
                     /**
-                     * 获取操作序号
-                     * @return OpId 操作序号
+                     * 获取操作序号。请通过接口 [DescribeCurrentOp](https://cloud.tencent.com/document/product/240/48120) 查询操作序号。
+                     * @return OpId 操作序号。请通过接口 [DescribeCurrentOp](https://cloud.tencent.com/document/product/240/48120) 查询操作序号。
                      * 
                      */
                     int64_t GetOpId() const;
 
                     /**
-                     * 设置操作序号
-                     * @param _opId 操作序号
+                     * 设置操作序号。请通过接口 [DescribeCurrentOp](https://cloud.tencent.com/document/product/240/48120) 查询操作序号。
+                     * @param _opId 操作序号。请通过接口 [DescribeCurrentOp](https://cloud.tencent.com/document/product/240/48120) 查询操作序号。
                      * 
                      */
                     void SetOpId(const int64_t& _opId);
@@ -112,19 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 操作所在的分片名
+                     * 操作所在的分片名称。请通过接口 [DescribeCurrentOp](https://cloud.tencent.com/document/product/240/48120) 查询分片名称。
                      */
                     std::string m_replicaSetName;
                     bool m_replicaSetNameHasBeenSet;
 
                     /**
-                     * 操作所在的节点名
+                     * 操作所在的节点名。请通过接口 [DescribeCurrentOp](https://cloud.tencent.com/document/product/240/48120) 查询节点名称。
                      */
                     std::string m_nodeName;
                     bool m_nodeNameHasBeenSet;
 
                     /**
-                     * 操作序号
+                     * 操作序号。请通过接口 [DescribeCurrentOp](https://cloud.tencent.com/document/product/240/48120) 查询操作序号。
                      */
                     int64_t m_opId;
                     bool m_opIdHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -115,15 +115,15 @@ namespace TencentCloud
                     bool SpaceChargePrepaidHasBeenSet() const;
 
                     /**
-                     * 获取工作空间计费类型
-                     * @return SpaceChargeType 工作空间计费类型
+                     * 获取工作空间计费类型，包括：PREPAID，UNDERWRITE。工作空间计费类型，包括：PREPAID，UNDERWRITE。
+                     * @return SpaceChargeType 工作空间计费类型，包括：PREPAID，UNDERWRITE。工作空间计费类型，包括：PREPAID，UNDERWRITE。
                      * 
                      */
                     std::string GetSpaceChargeType() const;
 
                     /**
-                     * 设置工作空间计费类型
-                     * @param _spaceChargeType 工作空间计费类型
+                     * 设置工作空间计费类型，包括：PREPAID，UNDERWRITE。工作空间计费类型，包括：PREPAID，UNDERWRITE。
+                     * @param _spaceChargeType 工作空间计费类型，包括：PREPAID，UNDERWRITE。工作空间计费类型，包括：PREPAID，UNDERWRITE。
                      * 
                      */
                     void SetSpaceChargeType(const std::string& _spaceChargeType);
@@ -262,15 +262,15 @@ namespace TencentCloud
                     bool InternetAccessibleHasBeenSet() const;
 
                     /**
-                     * 获取购买工作空间数量
-                     * @return SpaceCount 购买工作空间数量
+                     * 获取购买工作空间实例的数量
+                     * @return SpaceCount 购买工作空间实例的数量
                      * 
                      */
                     int64_t GetSpaceCount() const;
 
                     /**
-                     * 设置购买工作空间数量
-                     * @param _spaceCount 购买工作空间数量
+                     * 设置购买工作空间实例的数量
+                     * @param _spaceCount 购买工作空间实例的数量
                      * 
                      */
                     void SetSpaceCount(const int64_t& _spaceCount);
@@ -534,7 +534,7 @@ namespace TencentCloud
                     bool m_spaceChargePrepaidHasBeenSet;
 
                     /**
-                     * 工作空间计费类型
+                     * 工作空间计费类型，包括：PREPAID，UNDERWRITE。工作空间计费类型，包括：PREPAID，UNDERWRITE。
                      */
                     std::string m_spaceChargeType;
                     bool m_spaceChargeTypeHasBeenSet;
@@ -576,7 +576,7 @@ namespace TencentCloud
                     bool m_internetAccessibleHasBeenSet;
 
                     /**
-                     * 购买工作空间数量
+                     * 购买工作空间实例的数量
                      */
                     int64_t m_spaceCount;
                     bool m_spaceCountHasBeenSet;

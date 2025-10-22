@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取HTTP链接地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HttpUrl HTTP链接地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHttpUrl() const;
 
                     /**
                      * 设置HTTP链接地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _httpUrl HTTP链接地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHttpUrl(const std::string& _httpUrl);
@@ -137,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取管理员用户名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdminUser 管理员用户名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAdminUser() const;
 
                     /**
                      * 设置管理员用户名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _adminUser 管理员用户名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdminUser(const std::string& _adminUser);
@@ -162,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取管理员密码。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdminPassword 管理员密码。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAdminPassword() const;
 
                     /**
                      * 设置管理员密码。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _adminPassword 管理员密码。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdminPassword(const std::string& _adminPassword);
@@ -187,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络状态, Open|Closed|Updating
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 网络状态, Open|Closed|Updating
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置网络状态, Open|Closed|Updating
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 网络状态, Open|Closed|Updating
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -237,18 +221,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内网子网 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 内网子网 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置内网子网 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetId 内网子网 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -262,18 +242,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内网VPC ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId 内网VPC ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置内网VPC ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId 内网VPC ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -287,18 +263,14 @@ namespace TencentCloud
 
                     /**
                      * 获取负载均衡的描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 负载均衡的描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置负载均衡的描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 负载均衡的描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -312,18 +284,14 @@ namespace TencentCloud
 
                     /**
                      * 获取负载均衡的规格类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SlaType 负载均衡的规格类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSlaType() const;
 
                     /**
                      * 设置负载均衡的规格类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _slaType 负载均衡的规格类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSlaType(const std::string& _slaType);
@@ -337,18 +305,14 @@ namespace TencentCloud
 
                     /**
                      * 获取clb规格名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SlaName clb规格名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSlaName() const;
 
                     /**
                      * 设置clb规格名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _slaName clb规格名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSlaName(const std::string& _slaName);
@@ -362,18 +326,14 @@ namespace TencentCloud
 
                     /**
                      * 获取clb vip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vip clb vip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置clb vip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vip clb vip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVip(const std::string& _vip);
@@ -387,18 +347,14 @@ namespace TencentCloud
 
                     /**
                      * 获取带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InternetMaxBandwidthOut 带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetInternetMaxBandwidthOut() const;
 
                     /**
                      * 设置带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _internetMaxBandwidthOut 带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInternetMaxBandwidthOut(const uint64_t& _internetMaxBandwidthOut);
@@ -412,18 +368,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否多可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MultiZoneFlag 是否多可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetMultiZoneFlag() const;
 
                     /**
                      * 设置是否多可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _multiZoneFlag 是否多可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMultiZoneFlag(const bool& _multiZoneFlag);
@@ -437,18 +389,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MasterZoneId 主可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMasterZoneId() const;
 
                     /**
                      * 设置主可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _masterZoneId 主可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMasterZoneId(const std::string& _masterZoneId);
@@ -462,18 +410,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SlaveZoneId 备可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSlaveZoneId() const;
 
                     /**
                      * 设置备可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _slaveZoneId 备可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSlaveZoneId(const std::string& _slaveZoneId);
@@ -487,18 +431,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主可用区名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MasterZoneName 主可用区名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMasterZoneName() const;
 
                     /**
                      * 设置主可用区名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _masterZoneName 主可用区名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMasterZoneName(const std::string& _masterZoneName);
@@ -512,18 +452,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备可用区名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SlaveZoneName 备可用区名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSlaveZoneName() const;
 
                     /**
                      * 设置备可用区名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _slaveZoneName 备可用区名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSlaveZoneName(const std::string& _slaveZoneName);
@@ -537,18 +473,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetworkId 网络 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNetworkId() const;
 
                     /**
                      * 设置网络 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _networkId 网络 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNetworkId(const std::string& _networkId);
@@ -560,6 +492,48 @@ namespace TencentCloud
                      */
                     bool NetworkIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否为新 ipv6 CLB
+                     * @return IPV6FullChain 是否为新 ipv6 CLB
+                     * 
+                     */
+                    bool GetIPV6FullChain() const;
+
+                    /**
+                     * 设置是否为新 ipv6 CLB
+                     * @param _iPV6FullChain 是否为新 ipv6 CLB
+                     * 
+                     */
+                    void SetIPV6FullChain(const bool& _iPV6FullChain);
+
+                    /**
+                     * 判断参数 IPV6FullChain 是否已赋值
+                     * @return IPV6FullChain 是否已赋值
+                     * 
+                     */
+                    bool IPV6FullChainHasBeenSet() const;
+
+                    /**
+                     * 获取负载均衡个性化配置内容
+                     * @return CustomizedConfigContent 负载均衡个性化配置内容
+                     * 
+                     */
+                    std::string GetCustomizedConfigContent() const;
+
+                    /**
+                     * 设置负载均衡个性化配置内容
+                     * @param _customizedConfigContent 负载均衡个性化配置内容
+                     * 
+                     */
+                    void SetCustomizedConfigContent(const std::string& _customizedConfigContent);
+
+                    /**
+                     * 判断参数 CustomizedConfigContent 是否已赋值
+                     * @return CustomizedConfigContent 是否已赋值
+                     * 
+                     */
+                    bool CustomizedConfigContentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -570,7 +544,6 @@ namespace TencentCloud
 
                     /**
                      * HTTP链接地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_httpUrl;
                     bool m_httpUrlHasBeenSet;
@@ -589,21 +562,18 @@ namespace TencentCloud
 
                     /**
                      * 管理员用户名。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_adminUser;
                     bool m_adminUserHasBeenSet;
 
                     /**
                      * 管理员密码。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_adminPassword;
                     bool m_adminPasswordHasBeenSet;
 
                     /**
                      * 网络状态, Open|Closed|Updating
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
@@ -617,94 +587,93 @@ namespace TencentCloud
 
                     /**
                      * 内网子网 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
                      * 内网VPC ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * 负载均衡的描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 负载均衡的规格类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_slaType;
                     bool m_slaTypeHasBeenSet;
 
                     /**
                      * clb规格名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_slaName;
                     bool m_slaNameHasBeenSet;
 
                     /**
                      * clb vip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
 
                     /**
                      * 带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_internetMaxBandwidthOut;
                     bool m_internetMaxBandwidthOutHasBeenSet;
 
                     /**
                      * 是否多可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_multiZoneFlag;
                     bool m_multiZoneFlagHasBeenSet;
 
                     /**
                      * 主可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_masterZoneId;
                     bool m_masterZoneIdHasBeenSet;
 
                     /**
                      * 备可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_slaveZoneId;
                     bool m_slaveZoneIdHasBeenSet;
 
                     /**
                      * 主可用区名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_masterZoneName;
                     bool m_masterZoneNameHasBeenSet;
 
                     /**
                      * 备可用区名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_slaveZoneName;
                     bool m_slaveZoneNameHasBeenSet;
 
                     /**
                      * 网络 id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_networkId;
                     bool m_networkIdHasBeenSet;
+
+                    /**
+                     * 是否为新 ipv6 CLB
+                     */
+                    bool m_iPV6FullChain;
+                    bool m_iPV6FullChainHasBeenSet;
+
+                    /**
+                     * 负载均衡个性化配置内容
+                     */
+                    std::string m_customizedConfigContent;
+                    bool m_customizedConfigContentHasBeenSet;
 
                 };
             }

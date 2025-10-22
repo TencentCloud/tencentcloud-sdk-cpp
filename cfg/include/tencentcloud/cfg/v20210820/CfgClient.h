@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/cfg/v20210820/model/CreateTaskFromActionRequest.h>
 #include <tencentcloud/cfg/v20210820/model/CreateTaskFromActionResponse.h>
+#include <tencentcloud/cfg/v20210820/model/CreateTaskFromMultiActionRequest.h>
+#include <tencentcloud/cfg/v20210820/model/CreateTaskFromMultiActionResponse.h>
 #include <tencentcloud/cfg/v20210820/model/CreateTaskFromTemplateRequest.h>
 #include <tencentcloud/cfg/v20210820/model/CreateTaskFromTemplateResponse.h>
 #include <tencentcloud/cfg/v20210820/model/DeleteTaskRequest.h>
@@ -72,6 +74,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateTaskFromActionResponse> CreateTaskFromActionOutcome;
                 typedef std::future<CreateTaskFromActionOutcome> CreateTaskFromActionOutcomeCallable;
                 typedef std::function<void(const CfgClient*, const Model::CreateTaskFromActionRequest&, CreateTaskFromActionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTaskFromActionAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateTaskFromMultiActionResponse> CreateTaskFromMultiActionOutcome;
+                typedef std::future<CreateTaskFromMultiActionOutcome> CreateTaskFromMultiActionOutcomeCallable;
+                typedef std::function<void(const CfgClient*, const Model::CreateTaskFromMultiActionRequest&, CreateTaskFromMultiActionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTaskFromMultiActionAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTaskFromTemplateResponse> CreateTaskFromTemplateOutcome;
                 typedef std::future<CreateTaskFromTemplateOutcome> CreateTaskFromTemplateOutcomeCallable;
                 typedef std::function<void(const CfgClient*, const Model::CreateTaskFromTemplateRequest&, CreateTaskFromTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTaskFromTemplateAsyncHandler;
@@ -128,6 +133,15 @@ namespace TencentCloud
                 CreateTaskFromActionOutcome CreateTaskFromAction(const Model::CreateTaskFromActionRequest &request);
                 void CreateTaskFromActionAsync(const Model::CreateTaskFromActionRequest& request, const CreateTaskFromActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateTaskFromActionOutcomeCallable CreateTaskFromActionCallable(const Model::CreateTaskFromActionRequest& request);
+
+                /**
+                 *以多个动作创建演练
+                 * @param req CreateTaskFromMultiActionRequest
+                 * @return CreateTaskFromMultiActionOutcome
+                 */
+                CreateTaskFromMultiActionOutcome CreateTaskFromMultiAction(const Model::CreateTaskFromMultiActionRequest &request);
+                void CreateTaskFromMultiActionAsync(const Model::CreateTaskFromMultiActionRequest& request, const CreateTaskFromMultiActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTaskFromMultiActionOutcomeCallable CreateTaskFromMultiActionCallable(const Model::CreateTaskFromMultiActionRequest& request);
 
                 /**
                  *从经验库创建演练

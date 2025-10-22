@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -93,7 +93,6 @@ namespace TencentCloud
 0：正常。
 1：停机。
 2：销号。
-3：空号。
 4：不在网。
 99：未知状态。
                      * @return StatusCode 状态码。
@@ -101,7 +100,6 @@ namespace TencentCloud
 0：正常。
 1：停机。
 2：销号。
-3：空号。
 4：不在网。
 99：未知状态。
                      * 
@@ -143,7 +141,6 @@ namespace TencentCloud
 0：正常。
 1：停机。
 2：销号。
-3：空号。
 4：不在网。
 99：未知状态。
                      */

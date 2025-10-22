@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ using namespace std;
 
 CreateReleaseRequest::CreateReleaseRequest() :
     m_botBizIdHasBeenSet(false),
-    m_descHasBeenSet(false)
+    m_descHasBeenSet(false),
+    m_channelBizIdsHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,19 @@ string CreateReleaseRequest::ToJsonString() const
         string key = "Desc";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_desc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_channelBizIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelBizIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_channelBizIds.begin(); itr != m_channelBizIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -89,6 +103,22 @@ void CreateReleaseRequest::SetDesc(const string& _desc)
 bool CreateReleaseRequest::DescHasBeenSet() const
 {
     return m_descHasBeenSet;
+}
+
+vector<string> CreateReleaseRequest::GetChannelBizIds() const
+{
+    return m_channelBizIds;
+}
+
+void CreateReleaseRequest::SetChannelBizIds(const vector<string>& _channelBizIds)
+{
+    m_channelBizIds = _channelBizIds;
+    m_channelBizIdsHasBeenSet = true;
+}
+
+bool CreateReleaseRequest::ChannelBizIdsHasBeenSet() const
+{
+    return m_channelBizIdsHasBeenSet;
 }
 
 

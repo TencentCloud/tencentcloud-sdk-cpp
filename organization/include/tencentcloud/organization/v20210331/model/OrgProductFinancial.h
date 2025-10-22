@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品Code。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductName 产品Code。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductName() const;
 
                     /**
                      * 设置产品Code。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productName 产品Code。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductName(const std::string& _productName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductCode 产品名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductCode() const;
 
                     /**
                      * 设置产品名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productCode 产品名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductCode(const std::string& _productCode);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品消耗，单位：元。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCost 产品消耗，单位：元。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetTotalCost() const;
 
                     /**
                      * 设置产品消耗，单位：元。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalCost 产品消耗，单位：元。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalCost(const double& _totalCost);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取占比%。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ratio 占比%。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRatio() const;
 
                     /**
                      * 设置占比%。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ratio 占比%。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRatio(const std::string& _ratio);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 产品Code。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productName;
                     bool m_productNameHasBeenSet;
 
                     /**
                      * 产品名。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productCode;
                     bool m_productCodeHasBeenSet;
 
                     /**
                      * 产品消耗，单位：元。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_totalCost;
                     bool m_totalCostHasBeenSet;
 
                     /**
                      * 占比%。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ratio;
                     bool m_ratioHasBeenSet;

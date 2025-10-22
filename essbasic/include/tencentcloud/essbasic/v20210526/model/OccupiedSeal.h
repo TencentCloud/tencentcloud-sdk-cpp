@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -175,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取审核失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailReason 审核失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFailReason() const;
 
                     /**
                      * 设置审核失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _failReason 审核失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFailReason(const std::string& _failReason);
@@ -306,6 +302,69 @@ namespace TencentCloud
                      */
                     bool AuthorizedUsersHasBeenSet() const;
 
+                    /**
+                     * 获取印章的真实宽度，单位毫米	
+                     * @return RealWidth 印章的真实宽度，单位毫米	
+                     * 
+                     */
+                    int64_t GetRealWidth() const;
+
+                    /**
+                     * 设置印章的真实宽度，单位毫米	
+                     * @param _realWidth 印章的真实宽度，单位毫米	
+                     * 
+                     */
+                    void SetRealWidth(const int64_t& _realWidth);
+
+                    /**
+                     * 判断参数 RealWidth 是否已赋值
+                     * @return RealWidth 是否已赋值
+                     * 
+                     */
+                    bool RealWidthHasBeenSet() const;
+
+                    /**
+                     * 获取印章的真实高度，单位毫米	
+                     * @return RealHeight 印章的真实高度，单位毫米	
+                     * 
+                     */
+                    int64_t GetRealHeight() const;
+
+                    /**
+                     * 设置印章的真实高度，单位毫米	
+                     * @param _realHeight 印章的真实高度，单位毫米	
+                     * 
+                     */
+                    void SetRealHeight(const int64_t& _realHeight);
+
+                    /**
+                     * 判断参数 RealHeight 是否已赋值
+                     * @return RealHeight 是否已赋值
+                     * 
+                     */
+                    bool RealHeightHasBeenSet() const;
+
+                    /**
+                     * 获取印章描述
+                     * @return SealDescription 印章描述
+                     * 
+                     */
+                    std::string GetSealDescription() const;
+
+                    /**
+                     * 设置印章描述
+                     * @param _sealDescription 印章描述
+                     * 
+                     */
+                    void SetSealDescription(const std::string& _sealDescription);
+
+                    /**
+                     * 判断参数 SealDescription 是否已赋值
+                     * @return SealDescription 是否已赋值
+                     * 
+                     */
+                    bool SealDescriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -346,7 +405,6 @@ namespace TencentCloud
 
                     /**
                      * 审核失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_failReason;
                     bool m_failReasonHasBeenSet;
@@ -380,6 +438,24 @@ namespace TencentCloud
                      */
                     std::vector<AuthorizedUser> m_authorizedUsers;
                     bool m_authorizedUsersHasBeenSet;
+
+                    /**
+                     * 印章的真实宽度，单位毫米	
+                     */
+                    int64_t m_realWidth;
+                    bool m_realWidthHasBeenSet;
+
+                    /**
+                     * 印章的真实高度，单位毫米	
+                     */
+                    int64_t m_realHeight;
+                    bool m_realHeightHasBeenSet;
+
+                    /**
+                     * 印章描述
+                     */
+                    std::string m_sealDescription;
+                    bool m_sealDescriptionHasBeenSet;
 
                 };
             }

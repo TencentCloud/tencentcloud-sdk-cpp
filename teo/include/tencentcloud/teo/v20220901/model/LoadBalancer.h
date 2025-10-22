@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -249,15 +249,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取该负载均衡实例绑的定四层层代理实例的列表。
-                     * @return L4UsedList 该负载均衡实例绑的定四层层代理实例的列表。
+                     * 获取该负载均衡实例绑的四层代理实例的列表。
+                     * @return L4UsedList 该负载均衡实例绑的四层代理实例的列表。
                      * 
                      */
                     std::vector<std::string> GetL4UsedList() const;
 
                     /**
-                     * 设置该负载均衡实例绑的定四层层代理实例的列表。
-                     * @param _l4UsedList 该负载均衡实例绑的定四层层代理实例的列表。
+                     * 设置该负载均衡实例绑的四层代理实例的列表。
+                     * @param _l4UsedList 该负载均衡实例绑的四层代理实例的列表。
                      * 
                      */
                     void SetL4UsedList(const std::vector<std::string>& _l4UsedList);
@@ -349,7 +349,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 该负载均衡实例绑的定四层层代理实例的列表。
+                     * 该负载均衡实例绑的四层代理实例的列表。
                      */
                     std::vector<std::string> m_l4UsedList;
                     bool m_l4UsedListHasBeenSet;

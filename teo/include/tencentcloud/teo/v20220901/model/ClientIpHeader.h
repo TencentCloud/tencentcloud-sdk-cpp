@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -77,18 +77,14 @@ namespace TencentCloud
 
                     /**
                      * 获取回源时，存放客户端 IP 的请求头名称。当 Switch 为 on 时，该参数必填。该参数不允许填写 X-Forwarded-For。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HeaderName 回源时，存放客户端 IP 的请求头名称。当 Switch 为 on 时，该参数必填。该参数不允许填写 X-Forwarded-For。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHeaderName() const;
 
                     /**
                      * 设置回源时，存放客户端 IP 的请求头名称。当 Switch 为 on 时，该参数必填。该参数不允许填写 X-Forwarded-For。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _headerName 回源时，存放客户端 IP 的请求头名称。当 Switch 为 on 时，该参数必填。该参数不允许填写 X-Forwarded-For。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHeaderName(const std::string& _headerName);
@@ -112,7 +108,6 @@ namespace TencentCloud
 
                     /**
                      * 回源时，存放客户端 IP 的请求头名称。当 Switch 为 on 时，该参数必填。该参数不允许填写 X-Forwarded-For。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_headerName;
                     bool m_headerNameHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -232,6 +232,27 @@ namespace TencentCloud
                      */
                     bool VersionIdHasBeenSet() const;
 
+                    /**
+                     * 获取提交任务测试运行类型
+                     * @return SubmitTaskTestRunType 提交任务测试运行类型
+                     * 
+                     */
+                    std::string GetSubmitTaskTestRunType() const;
+
+                    /**
+                     * 设置提交任务测试运行类型
+                     * @param _submitTaskTestRunType 提交任务测试运行类型
+                     * 
+                     */
+                    void SetSubmitTaskTestRunType(const std::string& _submitTaskTestRunType);
+
+                    /**
+                     * 判断参数 SubmitTaskTestRunType 是否已赋值
+                     * @return SubmitTaskTestRunType 是否已赋值
+                     * 
+                     */
+                    bool SubmitTaskTestRunTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -287,6 +308,12 @@ namespace TencentCloud
                      */
                     std::string m_versionId;
                     bool m_versionIdHasBeenSet;
+
+                    /**
+                     * 提交任务测试运行类型
+                     */
+                    std::string m_submitTaskTestRunType;
+                    bool m_submitTaskTestRunTypeHasBeenSet;
 
                 };
             }

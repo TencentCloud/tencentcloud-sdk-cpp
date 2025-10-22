@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartAt 任务开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartAt() const;
 
                     /**
                      * 设置任务开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startAt 任务开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartAt(const std::string& _startAt);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndAt 任务结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndAt() const;
 
                     /**
                      * 设置任务结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endAt 任务结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndAt(const std::string& _endAt);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务步骤信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Progress 任务步骤信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ProcessProgress GetProgress() const;
 
                     /**
                      * 设置任务步骤信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _progress 任务步骤信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProgress(const ProcessProgress& _progress);
@@ -126,21 +114,18 @@ namespace TencentCloud
 
                     /**
                      * 任务开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startAt;
                     bool m_startAtHasBeenSet;
 
                     /**
                      * 任务结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endAt;
                     bool m_endAtHasBeenSet;
 
                     /**
                      * 任务步骤信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ProcessProgress m_progress;
                     bool m_progressHasBeenSet;

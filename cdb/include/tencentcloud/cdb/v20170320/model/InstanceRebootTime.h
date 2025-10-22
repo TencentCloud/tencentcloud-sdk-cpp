@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceId 实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * @return InstanceId 实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceId 实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * @param _instanceId 实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -72,19 +68,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取预期重启时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TimeInSeconds 预期重启时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取预期重启时间，单位：秒。
+                     * @return TimeInSeconds 预期重启时间，单位：秒。
                      * 
                      */
                     int64_t GetTimeInSeconds() const;
 
                     /**
-                     * 设置预期重启时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _timeInSeconds 预期重启时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置预期重启时间，单位：秒。
+                     * @param _timeInSeconds 预期重启时间，单位：秒。
                      * 
                      */
                     void SetTimeInSeconds(const int64_t& _timeInSeconds);
@@ -99,15 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 预期重启时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 预期重启时间，单位：秒。
                      */
                     int64_t m_timeInSeconds;
                     bool m_timeInSecondsHasBeenSet;

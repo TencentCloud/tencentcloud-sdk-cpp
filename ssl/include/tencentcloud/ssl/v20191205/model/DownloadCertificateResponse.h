@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取ZIP base64 编码内容，base64 解码后可保存为 ZIP 文件。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content ZIP base64 编码内容，base64 解码后可保存为 ZIP 文件。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContent() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取MIME 类型：application/zip = ZIP 压缩文件。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContentType MIME 类型：application/zip = ZIP 压缩文件。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContentType() const;
@@ -79,14 +75,12 @@ namespace TencentCloud
 
                     /**
                      * ZIP base64 编码内容，base64 解码后可保存为 ZIP 文件。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
 
                     /**
                      * MIME 类型：application/zip = ZIP 压缩文件。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_contentType;
                     bool m_contentTypeHasBeenSet;

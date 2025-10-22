@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取房间人数，用户重复进入同一个房间为1次
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserNumber 房间人数，用户重复进入同一个房间为1次
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetUserNumber() const;
 
                     /**
                      * 设置房间人数，用户重复进入同一个房间为1次
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userNumber 房间人数，用户重复进入同一个房间为1次
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserNumber(const uint64_t& _userNumber);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取房间人次，用户每次进入房间为一次
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserCount 房间人次，用户每次进入房间为一次
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetUserCount() const;
 
                     /**
                      * 设置房间人次，用户每次进入房间为一次
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userCount 房间人次，用户每次进入房间为一次
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserCount(const uint64_t& _userCount);
@@ -119,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取sdkappid下一天内的房间数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoomNumbers sdkappid下一天内的房间数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRoomNumbers() const;
 
                     /**
                      * 设置sdkappid下一天内的房间数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _roomNumbers sdkappid下一天内的房间数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRoomNumbers(const uint64_t& _roomNumbers);
@@ -152,21 +140,18 @@ namespace TencentCloud
 
                     /**
                      * 房间人数，用户重复进入同一个房间为1次
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_userNumber;
                     bool m_userNumberHasBeenSet;
 
                     /**
                      * 房间人次，用户每次进入房间为一次
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_userCount;
                     bool m_userCountHasBeenSet;
 
                     /**
                      * sdkappid下一天内的房间数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_roomNumbers;
                     bool m_roomNumbersHasBeenSet;

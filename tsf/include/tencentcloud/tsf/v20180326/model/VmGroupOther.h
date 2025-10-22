@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部署组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId 部署组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置部署组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupId 部署组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -149,18 +145,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部署组实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceCount 部署组实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInstanceCount() const;
 
                     /**
                      * 设置部署组实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceCount 部署组实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceCount(const int64_t& _instanceCount);
@@ -174,18 +166,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部署组运行中实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RunInstanceCount 部署组运行中实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRunInstanceCount() const;
 
                     /**
                      * 设置部署组运行中实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _runInstanceCount 部署组运行中实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRunInstanceCount(const int64_t& _runInstanceCount);
@@ -199,18 +187,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部署组中停止实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OffInstanceCount 部署组中停止实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOffInstanceCount() const;
 
                     /**
                      * 设置部署组中停止实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _offInstanceCount 部署组中停止实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOffInstanceCount(const int64_t& _offInstanceCount);
@@ -223,19 +207,15 @@ namespace TencentCloud
                     bool OffInstanceCountHasBeenSet() const;
 
                     /**
-                     * 获取部署组状态
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GroupStatus 部署组状态
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取部署组状态，Running运行中，Waiting等待中，Paused暂停中，Updating更新中，RollingBack回滚中，Abnormal异常，Unknown未知
+                     * @return GroupStatus 部署组状态，Running运行中，Waiting等待中，Paused暂停中，Updating更新中，RollingBack回滚中，Abnormal异常，Unknown未知
                      * 
                      */
                     std::string GetGroupStatus() const;
 
                     /**
-                     * 设置部署组状态
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _groupStatus 部署组状态
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置部署组状态，Running运行中，Waiting等待中，Paused暂停中，Updating更新中，RollingBack回滚中，Abnormal异常，Unknown未知
+                     * @param _groupStatus 部署组状态，Running运行中，Waiting等待中，Paused暂停中，Updating更新中，RollingBack回滚中，Abnormal异常，Unknown未知
                      * 
                      */
                     void SetGroupStatus(const std::string& _groupStatus);
@@ -249,18 +229,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务配置信息是否匹配
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsNotEqualServiceConfig 服务配置信息是否匹配
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsNotEqualServiceConfig() const;
 
                     /**
                      * 设置服务配置信息是否匹配
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isNotEqualServiceConfig 服务配置信息是否匹配
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsNotEqualServiceConfig(const bool& _isNotEqualServiceConfig);
@@ -301,7 +277,6 @@ namespace TencentCloud
 
                     /**
                      * 部署组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
@@ -329,35 +304,30 @@ namespace TencentCloud
 
                     /**
                      * 部署组实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_instanceCount;
                     bool m_instanceCountHasBeenSet;
 
                     /**
                      * 部署组运行中实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_runInstanceCount;
                     bool m_runInstanceCountHasBeenSet;
 
                     /**
                      * 部署组中停止实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_offInstanceCount;
                     bool m_offInstanceCountHasBeenSet;
 
                     /**
-                     * 部署组状态
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 部署组状态，Running运行中，Waiting等待中，Paused暂停中，Updating更新中，RollingBack回滚中，Abnormal异常，Unknown未知
                      */
                     std::string m_groupStatus;
                     bool m_groupStatusHasBeenSet;
 
                     /**
                      * 服务配置信息是否匹配
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isNotEqualServiceConfig;
                     bool m_isNotEqualServiceConfigHasBeenSet;

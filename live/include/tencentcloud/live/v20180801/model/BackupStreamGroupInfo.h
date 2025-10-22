@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StreamName 流名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStreamName() const;
 
                     /**
                      * 设置流名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _streamName 流名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStreamName(const std::string& _streamName);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主备流信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupList 主备流信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BackupStreamDetailData> GetBackupList() const;
 
                     /**
                      * 设置主备流信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _backupList 主备流信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBackupList(const std::vector<BackupStreamDetailData>& _backupList);
@@ -101,11 +93,9 @@ namespace TencentCloud
                      * 获取是否对该流开启了择优调度。
 0 - 未开启。
 1 - 已开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OptimalEnable 是否对该流开启了择优调度。
 0 - 未开启。
 1 - 已开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOptimalEnable() const;
@@ -114,11 +104,9 @@ namespace TencentCloud
                      * 设置是否对该流开启了择优调度。
 0 - 未开启。
 1 - 已开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _optimalEnable 是否对该流开启了择优调度。
 0 - 未开启。
 1 - 已开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOptimalEnable(const int64_t& _optimalEnable);
@@ -132,18 +120,14 @@ namespace TencentCloud
 
                     /**
                      * 获取域名分组的分组名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostGroupName 域名分组的分组名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHostGroupName() const;
 
                     /**
                      * 设置域名分组的分组名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostGroupName 域名分组的分组名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostGroupName(const std::string& _hostGroupName);
@@ -159,14 +143,12 @@ namespace TencentCloud
 
                     /**
                      * 流名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_streamName;
                     bool m_streamNameHasBeenSet;
 
                     /**
                      * 主备流信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BackupStreamDetailData> m_backupList;
                     bool m_backupListHasBeenSet;
@@ -175,14 +157,12 @@ namespace TencentCloud
                      * 是否对该流开启了择优调度。
 0 - 未开启。
 1 - 已开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_optimalEnable;
                     bool m_optimalEnableHasBeenSet;
 
                     /**
                      * 域名分组的分组名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostGroupName;
                     bool m_hostGroupNameHasBeenSet;

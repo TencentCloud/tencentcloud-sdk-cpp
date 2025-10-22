@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceName 实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceName 实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例类型：1 master 主实例; 2 ro 只读实例; 3 dr 灾备实例; 4 sdr 小灾备实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType 实例类型：1 master 主实例; 2 ro 只读实例; 3 dr 灾备实例; 4 sdr 小灾备实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInstanceType() const;
 
                     /**
                      * 设置实例类型：1 master 主实例; 2 ro 只读实例; 3 dr 灾备实例; 4 sdr 小灾备实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceType 实例类型：1 master 主实例; 2 ro 只读实例; 3 dr 灾备实例; 4 sdr 小灾备实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceType(const int64_t& _instanceType);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例状态，可能的返回值：0-创建中；1-运行中；4-隔离中；5-已隔离
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 实例状态，可能的返回值：0-创建中；1-运行中；4-隔离中；5-已隔离
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置实例状态，可能的返回值：0-创建中；1-运行中；4-隔离中；5-已隔离
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 实例状态，可能的返回值：0-创建中；1-运行中；4-隔离中；5-已隔离
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取只读权重,如果权重为系统自动分配，改值不生效，只代表是否启用该实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Weight 只读权重,如果权重为系统自动分配，改值不生效，只代表是否启用该实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetWeight() const;
 
                     /**
                      * 设置只读权重,如果权重为系统自动分配，改值不生效，只代表是否启用该实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _weight 只读权重,如果权重为系统自动分配，改值不生效，只代表是否启用该实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWeight(const uint64_t& _weight);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 实例所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置实例所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 实例所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例所属可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 实例所属可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置实例所属可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zone 实例所属可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstNodeId 实例节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstNodeId() const;
 
                     /**
                      * 设置实例节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instNodeId 实例节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstNodeId(const std::string& _instNodeId);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点角色
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstNodeRole 节点角色
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstNodeRole() const;
 
                     /**
                      * 设置节点角色
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instNodeRole 节点角色
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstNodeRole(const std::string& _instNodeRole);
@@ -275,63 +239,54 @@ namespace TencentCloud
 
                     /**
                      * 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
                      * 实例类型：1 master 主实例; 2 ro 只读实例; 3 dr 灾备实例; 4 sdr 小灾备实例
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
                      * 实例状态，可能的返回值：0-创建中；1-运行中；4-隔离中；5-已隔离
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 只读权重,如果权重为系统自动分配，改值不生效，只代表是否启用该实例
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_weight;
                     bool m_weightHasBeenSet;
 
                     /**
                      * 实例所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * 实例所属可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
                      * 实例节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instNodeId;
                     bool m_instNodeIdHasBeenSet;
 
                     /**
                      * 节点角色
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instNodeRole;
                     bool m_instNodeRoleHasBeenSet;

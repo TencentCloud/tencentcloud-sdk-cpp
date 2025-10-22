@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取高性能计算集群ID。
-                     * @return HpcClusterId 高性能计算集群ID。
+                     * 获取高性能计算集群ID。集群ID可通过 [查询高性能集群信息](https://cloud.tencent.com/document/api/213/83220) 接口获取。
+                     * @return HpcClusterId 高性能计算集群ID。集群ID可通过 [查询高性能集群信息](https://cloud.tencent.com/document/api/213/83220) 接口获取。
                      * 
                      */
                     std::string GetHpcClusterId() const;
 
                     /**
-                     * 设置高性能计算集群ID。
-                     * @param _hpcClusterId 高性能计算集群ID。
+                     * 设置高性能计算集群ID。集群ID可通过 [查询高性能集群信息](https://cloud.tencent.com/document/api/213/83220) 接口获取。
+                     * @param _hpcClusterId 高性能计算集群ID。集群ID可通过 [查询高性能集群信息](https://cloud.tencent.com/document/api/213/83220) 接口获取。
                      * 
                      */
                     void SetHpcClusterId(const std::string& _hpcClusterId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool HpcClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取高性能计算集群新名称。
-                     * @return Name 高性能计算集群新名称。
+                     * 获取高性能计算集群新名称，长度限制[1-60]。
+                     * @return Name 高性能计算集群新名称，长度限制[1-60]。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置高性能计算集群新名称。
-                     * @param _name 高性能计算集群新名称。
+                     * 设置高性能计算集群新名称，长度限制[1-60]。
+                     * @param _name 高性能计算集群新名称，长度限制[1-60]。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取高性能计算集群新备注。
-                     * @return Remark 高性能计算集群新备注。
+                     * 获取高性能计算集群新备注，长度[1-256]。
+                     * @return Remark 高性能计算集群新备注，长度[1-256]。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置高性能计算集群新备注。
-                     * @param _remark 高性能计算集群新备注。
+                     * 设置高性能计算集群新备注，长度[1-256]。
+                     * @param _remark 高性能计算集群新备注，长度[1-256]。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 高性能计算集群ID。
+                     * 高性能计算集群ID。集群ID可通过 [查询高性能集群信息](https://cloud.tencent.com/document/api/213/83220) 接口获取。
                      */
                     std::string m_hpcClusterId;
                     bool m_hpcClusterIdHasBeenSet;
 
                     /**
-                     * 高性能计算集群新名称。
+                     * 高性能计算集群新名称，长度限制[1-60]。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 高性能计算集群新备注。
+                     * 高性能计算集群新备注，长度[1-256]。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;

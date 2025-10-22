@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Zone id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneId Zone id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置Zone id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zoneId Zone id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZoneId(const std::string& _zoneId);
@@ -115,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Zone
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone Zone
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置Zone
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zone Zone
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -140,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId 分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupId 分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -165,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分组名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupName 分组名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置分组名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupName 分组名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -190,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -215,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点权重
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Weight 节点权重
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetWeight() const;
 
                     /**
                      * 设置节点权重
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _weight 节点权重
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWeight(const int64_t& _weight);
@@ -240,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否默认权重
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsDefaultWeight 是否默认权重
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsDefaultWeight() const;
 
                     /**
                      * 设置是否默认权重
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isDefaultWeight 是否默认权重
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsDefaultWeight(const bool& _isDefaultWeight);
@@ -279,49 +251,42 @@ namespace TencentCloud
 
                     /**
                      * Zone id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
                      * Zone
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
                      * 分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
                      * 分组名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
                      * 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 节点权重
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_weight;
                     bool m_weightHasBeenSet;
 
                     /**
                      * 是否默认权重
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isDefaultWeight;
                     bool m_isDefaultWeightHasBeenSet;

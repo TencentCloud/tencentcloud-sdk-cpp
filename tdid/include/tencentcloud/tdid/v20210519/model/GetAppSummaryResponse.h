@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取用户参与应用的统计指标 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppCounter 用户参与应用的统计指标 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ResourceCounterData GetAppCounter() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取用户创建资源的统计指标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserCounter 用户创建资源的统计指标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ResourceCounterData GetUserCounter() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 用户参与应用的统计指标 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ResourceCounterData m_appCounter;
                     bool m_appCounterHasBeenSet;
 
                     /**
                      * 用户创建资源的统计指标
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ResourceCounterData m_userCounter;
                     bool m_userCounterHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,6 +39,92 @@ HaiClient::HaiClient(const Credential &credential, const string &region, const C
 {
 }
 
+
+HaiClient::CreateApplicationOutcome HaiClient::CreateApplication(const CreateApplicationRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateApplication");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateApplicationResponse rsp = CreateApplicationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateApplicationOutcome(rsp);
+        else
+            return CreateApplicationOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateApplicationOutcome(outcome.GetError());
+    }
+}
+
+void HaiClient::CreateApplicationAsync(const CreateApplicationRequest& request, const CreateApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateApplication(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HaiClient::CreateApplicationOutcomeCallable HaiClient::CreateApplicationCallable(const CreateApplicationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateApplicationOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateApplication(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+HaiClient::CreateMuskPromptOutcome HaiClient::CreateMuskPrompt(const CreateMuskPromptRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMuskPrompt");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMuskPromptResponse rsp = CreateMuskPromptResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMuskPromptOutcome(rsp);
+        else
+            return CreateMuskPromptOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMuskPromptOutcome(outcome.GetError());
+    }
+}
+
+void HaiClient::CreateMuskPromptAsync(const CreateMuskPromptRequest& request, const CreateMuskPromptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateMuskPrompt(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HaiClient::CreateMuskPromptOutcomeCallable HaiClient::CreateMuskPromptCallable(const CreateMuskPromptRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateMuskPromptOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateMuskPrompt(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
 
 HaiClient::DescribeApplicationsOutcome HaiClient::DescribeApplications(const DescribeApplicationsRequest &request)
 {
@@ -162,6 +248,49 @@ HaiClient::DescribeInstancesOutcomeCallable HaiClient::DescribeInstancesCallable
         [this, request]()
         {
             return this->DescribeInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+HaiClient::DescribeMuskPromptsOutcome HaiClient::DescribeMuskPrompts(const DescribeMuskPromptsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMuskPrompts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMuskPromptsResponse rsp = DescribeMuskPromptsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMuskPromptsOutcome(rsp);
+        else
+            return DescribeMuskPromptsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMuskPromptsOutcome(outcome.GetError());
+    }
+}
+
+void HaiClient::DescribeMuskPromptsAsync(const DescribeMuskPromptsRequest& request, const DescribeMuskPromptsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMuskPrompts(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HaiClient::DescribeMuskPromptsOutcomeCallable HaiClient::DescribeMuskPromptsCallable(const DescribeMuskPromptsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMuskPromptsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMuskPrompts(request);
         }
     );
 
@@ -334,6 +463,92 @@ HaiClient::InquirePriceRunInstancesOutcomeCallable HaiClient::InquirePriceRunIns
         [this, request]()
         {
             return this->InquirePriceRunInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+HaiClient::ResetInstancesPasswordOutcome HaiClient::ResetInstancesPassword(const ResetInstancesPasswordRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetInstancesPassword");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetInstancesPasswordResponse rsp = ResetInstancesPasswordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetInstancesPasswordOutcome(rsp);
+        else
+            return ResetInstancesPasswordOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetInstancesPasswordOutcome(outcome.GetError());
+    }
+}
+
+void HaiClient::ResetInstancesPasswordAsync(const ResetInstancesPasswordRequest& request, const ResetInstancesPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResetInstancesPassword(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HaiClient::ResetInstancesPasswordOutcomeCallable HaiClient::ResetInstancesPasswordCallable(const ResetInstancesPasswordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResetInstancesPasswordOutcome()>>(
+        [this, request]()
+        {
+            return this->ResetInstancesPassword(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+HaiClient::ResizeInstanceDiskOutcome HaiClient::ResizeInstanceDisk(const ResizeInstanceDiskRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResizeInstanceDisk");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResizeInstanceDiskResponse rsp = ResizeInstanceDiskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResizeInstanceDiskOutcome(rsp);
+        else
+            return ResizeInstanceDiskOutcome(o.GetError());
+    }
+    else
+    {
+        return ResizeInstanceDiskOutcome(outcome.GetError());
+    }
+}
+
+void HaiClient::ResizeInstanceDiskAsync(const ResizeInstanceDiskRequest& request, const ResizeInstanceDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResizeInstanceDisk(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HaiClient::ResizeInstanceDiskOutcomeCallable HaiClient::ResizeInstanceDiskCallable(const ResizeInstanceDiskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResizeInstanceDiskOutcome()>>(
+        [this, request]()
+        {
+            return this->ResizeInstanceDisk(request);
         }
     );
 

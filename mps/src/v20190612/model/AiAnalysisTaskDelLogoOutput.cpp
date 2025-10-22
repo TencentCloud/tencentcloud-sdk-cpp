@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,10 @@ AiAnalysisTaskDelLogoOutput::AiAnalysisTaskDelLogoOutput() :
     m_pathHasBeenSet(false),
     m_outputStorageHasBeenSet(false),
     m_originSubtitlePathHasBeenSet(false),
-    m_translateSubtitlePathHasBeenSet(false)
+    m_translateSubtitlePathHasBeenSet(false),
+    m_subtitlePosHasBeenSet(false),
+    m_voiceClonedVideoHasBeenSet(false),
+    m_voiceClonedMarkFileHasBeenSet(false)
 {
 }
 
@@ -80,6 +83,43 @@ CoreInternalOutcome AiAnalysisTaskDelLogoOutput::Deserialize(const rapidjson::Va
         m_translateSubtitlePathHasBeenSet = true;
     }
 
+    if (value.HasMember("SubtitlePos") && !value["SubtitlePos"].IsNull())
+    {
+        if (!value["SubtitlePos"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisTaskDelLogoOutput.SubtitlePos` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_subtitlePos.Deserialize(value["SubtitlePos"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_subtitlePosHasBeenSet = true;
+    }
+
+    if (value.HasMember("VoiceClonedVideo") && !value["VoiceClonedVideo"].IsNull())
+    {
+        if (!value["VoiceClonedVideo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisTaskDelLogoOutput.VoiceClonedVideo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_voiceClonedVideo = string(value["VoiceClonedVideo"].GetString());
+        m_voiceClonedVideoHasBeenSet = true;
+    }
+
+    if (value.HasMember("VoiceClonedMarkFile") && !value["VoiceClonedMarkFile"].IsNull())
+    {
+        if (!value["VoiceClonedMarkFile"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisTaskDelLogoOutput.VoiceClonedMarkFile` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_voiceClonedMarkFile = string(value["VoiceClonedMarkFile"].GetString());
+        m_voiceClonedMarkFileHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -118,6 +158,31 @@ void AiAnalysisTaskDelLogoOutput::ToJsonObject(rapidjson::Value &value, rapidjso
         string key = "TranslateSubtitlePath";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_translateSubtitlePath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subtitlePosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitlePos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_subtitlePos.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_voiceClonedVideoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VoiceClonedVideo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_voiceClonedVideo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_voiceClonedMarkFileHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VoiceClonedMarkFile";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_voiceClonedMarkFile.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -185,5 +250,53 @@ void AiAnalysisTaskDelLogoOutput::SetTranslateSubtitlePath(const string& _transl
 bool AiAnalysisTaskDelLogoOutput::TranslateSubtitlePathHasBeenSet() const
 {
     return m_translateSubtitlePathHasBeenSet;
+}
+
+SubtitlePosition AiAnalysisTaskDelLogoOutput::GetSubtitlePos() const
+{
+    return m_subtitlePos;
+}
+
+void AiAnalysisTaskDelLogoOutput::SetSubtitlePos(const SubtitlePosition& _subtitlePos)
+{
+    m_subtitlePos = _subtitlePos;
+    m_subtitlePosHasBeenSet = true;
+}
+
+bool AiAnalysisTaskDelLogoOutput::SubtitlePosHasBeenSet() const
+{
+    return m_subtitlePosHasBeenSet;
+}
+
+string AiAnalysisTaskDelLogoOutput::GetVoiceClonedVideo() const
+{
+    return m_voiceClonedVideo;
+}
+
+void AiAnalysisTaskDelLogoOutput::SetVoiceClonedVideo(const string& _voiceClonedVideo)
+{
+    m_voiceClonedVideo = _voiceClonedVideo;
+    m_voiceClonedVideoHasBeenSet = true;
+}
+
+bool AiAnalysisTaskDelLogoOutput::VoiceClonedVideoHasBeenSet() const
+{
+    return m_voiceClonedVideoHasBeenSet;
+}
+
+string AiAnalysisTaskDelLogoOutput::GetVoiceClonedMarkFile() const
+{
+    return m_voiceClonedMarkFile;
+}
+
+void AiAnalysisTaskDelLogoOutput::SetVoiceClonedMarkFile(const string& _voiceClonedMarkFile)
+{
+    m_voiceClonedMarkFile = _voiceClonedMarkFile;
+    m_voiceClonedMarkFileHasBeenSet = true;
+}
+
+bool AiAnalysisTaskDelLogoOutput::VoiceClonedMarkFileHasBeenSet() const
+{
+    return m_voiceClonedMarkFileHasBeenSet;
 }
 

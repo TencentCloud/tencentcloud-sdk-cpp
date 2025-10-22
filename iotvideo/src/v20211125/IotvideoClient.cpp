@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -384,6 +384,49 @@ IotvideoClient::CancelDeviceFirmwareTaskOutcomeCallable IotvideoClient::CancelDe
     return task->get_future();
 }
 
+IotvideoClient::ChangeP2PRouteOutcome IotvideoClient::ChangeP2PRoute(const ChangeP2PRouteRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChangeP2PRoute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChangeP2PRouteResponse rsp = ChangeP2PRouteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChangeP2PRouteOutcome(rsp);
+        else
+            return ChangeP2PRouteOutcome(o.GetError());
+    }
+    else
+    {
+        return ChangeP2PRouteOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::ChangeP2PRouteAsync(const ChangeP2PRouteRequest& request, const ChangeP2PRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChangeP2PRoute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::ChangeP2PRouteOutcomeCallable IotvideoClient::ChangeP2PRouteCallable(const ChangeP2PRouteRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChangeP2PRouteOutcome()>>(
+        [this, request]()
+        {
+            return this->ChangeP2PRoute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoClient::CheckForwardAuthOutcome IotvideoClient::CheckForwardAuth(const CheckForwardAuthRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckForwardAuth");
@@ -685,6 +728,49 @@ IotvideoClient::CreateDataForwardOutcomeCallable IotvideoClient::CreateDataForwa
     return task->get_future();
 }
 
+IotvideoClient::CreateDeviceChannelOutcome IotvideoClient::CreateDeviceChannel(const CreateDeviceChannelRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDeviceChannel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDeviceChannelResponse rsp = CreateDeviceChannelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDeviceChannelOutcome(rsp);
+        else
+            return CreateDeviceChannelOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDeviceChannelOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::CreateDeviceChannelAsync(const CreateDeviceChannelRequest& request, const CreateDeviceChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDeviceChannel(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::CreateDeviceChannelOutcomeCallable IotvideoClient::CreateDeviceChannelCallable(const CreateDeviceChannelRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDeviceChannelOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDeviceChannel(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoClient::CreateForwardRuleOutcome IotvideoClient::CreateForwardRule(const CreateForwardRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateForwardRule");
@@ -721,6 +807,49 @@ IotvideoClient::CreateForwardRuleOutcomeCallable IotvideoClient::CreateForwardRu
         [this, request]()
         {
             return this->CreateForwardRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotvideoClient::CreateFreeCloudStorageOutcome IotvideoClient::CreateFreeCloudStorage(const CreateFreeCloudStorageRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateFreeCloudStorage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateFreeCloudStorageResponse rsp = CreateFreeCloudStorageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateFreeCloudStorageOutcome(rsp);
+        else
+            return CreateFreeCloudStorageOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateFreeCloudStorageOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::CreateFreeCloudStorageAsync(const CreateFreeCloudStorageRequest& request, const CreateFreeCloudStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateFreeCloudStorage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::CreateFreeCloudStorageOutcomeCallable IotvideoClient::CreateFreeCloudStorageCallable(const CreateFreeCloudStorageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateFreeCloudStorageOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateFreeCloudStorage(request);
         }
     );
 
@@ -2018,6 +2147,49 @@ IotvideoClient::DescribeCloudStorageUsersOutcomeCallable IotvideoClient::Describ
     return task->get_future();
 }
 
+IotvideoClient::DescribeCsReportCountDataInfoOutcome IotvideoClient::DescribeCsReportCountDataInfo(const DescribeCsReportCountDataInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCsReportCountDataInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCsReportCountDataInfoResponse rsp = DescribeCsReportCountDataInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCsReportCountDataInfoOutcome(rsp);
+        else
+            return DescribeCsReportCountDataInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCsReportCountDataInfoOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::DescribeCsReportCountDataInfoAsync(const DescribeCsReportCountDataInfoRequest& request, const DescribeCsReportCountDataInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCsReportCountDataInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::DescribeCsReportCountDataInfoOutcomeCallable IotvideoClient::DescribeCsReportCountDataInfoCallable(const DescribeCsReportCountDataInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCsReportCountDataInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCsReportCountDataInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoClient::DescribeDataForwardListOutcome IotvideoClient::DescribeDataForwardList(const DescribeDataForwardListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDataForwardList");
@@ -2792,6 +2964,49 @@ IotvideoClient::DescribeForwardRuleOutcomeCallable IotvideoClient::DescribeForwa
     return task->get_future();
 }
 
+IotvideoClient::DescribeFreeCloudStorageNumOutcome IotvideoClient::DescribeFreeCloudStorageNum(const DescribeFreeCloudStorageNumRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFreeCloudStorageNum");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFreeCloudStorageNumResponse rsp = DescribeFreeCloudStorageNumResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFreeCloudStorageNumOutcome(rsp);
+        else
+            return DescribeFreeCloudStorageNumOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFreeCloudStorageNumOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::DescribeFreeCloudStorageNumAsync(const DescribeFreeCloudStorageNumRequest& request, const DescribeFreeCloudStorageNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFreeCloudStorageNum(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::DescribeFreeCloudStorageNumOutcomeCallable IotvideoClient::DescribeFreeCloudStorageNumCallable(const DescribeFreeCloudStorageNumRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFreeCloudStorageNumOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFreeCloudStorageNum(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoClient::DescribeMessageDataStatsOutcome IotvideoClient::DescribeMessageDataStats(const DescribeMessageDataStatsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeMessageDataStats");
@@ -2914,6 +3129,49 @@ IotvideoClient::DescribeP2PInfoOutcomeCallable IotvideoClient::DescribeP2PInfoCa
         [this, request]()
         {
             return this->DescribeP2PInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotvideoClient::DescribeP2PRouteOutcome IotvideoClient::DescribeP2PRoute(const DescribeP2PRouteRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeP2PRoute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeP2PRouteResponse rsp = DescribeP2PRouteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeP2PRouteOutcome(rsp);
+        else
+            return DescribeP2PRouteOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeP2PRouteOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::DescribeP2PRouteAsync(const DescribeP2PRouteRequest& request, const DescribeP2PRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeP2PRoute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::DescribeP2PRouteOutcomeCallable IotvideoClient::DescribeP2PRouteCallable(const DescribeP2PRouteRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeP2PRouteOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeP2PRoute(request);
         }
     );
 

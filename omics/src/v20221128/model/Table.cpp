@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,8 @@ Table::Table() :
     m_descriptionHasBeenSet(false),
     m_columnsHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_creatorHasBeenSet(false)
+    m_creatorHasBeenSet(false),
+    m_creatorIdHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,16 @@ CoreInternalOutcome Table::Deserialize(const rapidjson::Value &value)
         m_creatorHasBeenSet = true;
     }
 
+    if (value.HasMember("CreatorId") && !value["CreatorId"].IsNull())
+    {
+        if (!value["CreatorId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Table.CreatorId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_creatorId = string(value["CreatorId"].GetString());
+        m_creatorIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +195,14 @@ void Table::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "Creator";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_creator.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_creatorIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreatorId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_creatorId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -299,5 +318,21 @@ void Table::SetCreator(const string& _creator)
 bool Table::CreatorHasBeenSet() const
 {
     return m_creatorHasBeenSet;
+}
+
+string Table::GetCreatorId() const
+{
+    return m_creatorId;
+}
+
+void Table::SetCreatorId(const string& _creatorId)
+{
+    m_creatorId = _creatorId;
+    m_creatorIdHasBeenSet = true;
+}
+
+bool Table::CreatorIdHasBeenSet() const
+{
+    return m_creatorIdHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 事件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置事件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 事件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 事件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置事件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 事件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件触发类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 事件触发类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置事件触发类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 事件触发类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时间触发条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Condition 时间触发条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCondition() const;
 
                     /**
                      * 设置时间触发条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _condition 时间触发条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCondition(const std::string& _condition);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 事件id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 事件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 事件触发类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 时间触发条件
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_condition;
                     bool m_conditionHasBeenSet;

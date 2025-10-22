@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,9 @@ VehicleLicenseOCRResponse::VehicleLicenseOCRResponse() :
     m_frontInfoHasBeenSet(false),
     m_backInfoHasBeenSet(false),
     m_recognizeWarnCodeHasBeenSet(false),
-    m_recognizeWarnMsgHasBeenSet(false)
+    m_recognizeWarnMsgHasBeenSet(false),
+    m_vehicleLicenseTypeHasBeenSet(false),
+    m_tractorBackInfoHasBeenSet(false)
 {
 }
 
@@ -125,6 +127,33 @@ CoreInternalOutcome VehicleLicenseOCRResponse::Deserialize(const string &payload
         m_recognizeWarnMsgHasBeenSet = true;
     }
 
+    if (rsp.HasMember("VehicleLicenseType") && !rsp["VehicleLicenseType"].IsNull())
+    {
+        if (!rsp["VehicleLicenseType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VehicleLicenseType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vehicleLicenseType = string(rsp["VehicleLicenseType"].GetString());
+        m_vehicleLicenseTypeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TractorBackInfo") && !rsp["TractorBackInfo"].IsNull())
+    {
+        if (!rsp["TractorBackInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TractorBackInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_tractorBackInfo.Deserialize(rsp["TractorBackInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_tractorBackInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -179,11 +208,28 @@ string VehicleLicenseOCRResponse::ToJsonString() const
         }
     }
 
+    if (m_vehicleLicenseTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VehicleLicenseType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vehicleLicenseType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tractorBackInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TractorBackInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tractorBackInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -229,6 +275,26 @@ vector<string> VehicleLicenseOCRResponse::GetRecognizeWarnMsg() const
 bool VehicleLicenseOCRResponse::RecognizeWarnMsgHasBeenSet() const
 {
     return m_recognizeWarnMsgHasBeenSet;
+}
+
+string VehicleLicenseOCRResponse::GetVehicleLicenseType() const
+{
+    return m_vehicleLicenseType;
+}
+
+bool VehicleLicenseOCRResponse::VehicleLicenseTypeHasBeenSet() const
+{
+    return m_vehicleLicenseTypeHasBeenSet;
+}
+
+TextTractorVehicleBack VehicleLicenseOCRResponse::GetTractorBackInfo() const
+{
+    return m_tractorBackInfo;
+}
+
+bool VehicleLicenseOCRResponse::TractorBackInfoHasBeenSet() const
+{
+    return m_tractorBackInfoHasBeenSet;
 }
 
 

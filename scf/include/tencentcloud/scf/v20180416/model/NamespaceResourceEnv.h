@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,6 +72,27 @@ namespace TencentCloud
                      */
                     bool TKEHasBeenSet() const;
 
+                    /**
+                     * 获取近离线计算类型的命名空间
+                     * @return OFFLINE 近离线计算类型的命名空间
+                     * 
+                     */
+                    bool GetOFFLINE() const;
+
+                    /**
+                     * 设置近离线计算类型的命名空间
+                     * @param _oFFLINE 近离线计算类型的命名空间
+                     * 
+                     */
+                    void SetOFFLINE(const bool& _oFFLINE);
+
+                    /**
+                     * 判断参数 OFFLINE 是否已赋值
+                     * @return OFFLINE 是否已赋值
+                     * 
+                     */
+                    bool OFFLINEHasBeenSet() const;
+
                 private:
 
                     /**
@@ -80,6 +101,12 @@ namespace TencentCloud
                      */
                     NamespaceResourceEnvTKE m_tKE;
                     bool m_tKEHasBeenSet;
+
+                    /**
+                     * 近离线计算类型的命名空间
+                     */
+                    bool m_oFFLINE;
+                    bool m_oFFLINEHasBeenSet;
 
                 };
             }

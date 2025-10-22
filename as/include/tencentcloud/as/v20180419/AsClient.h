@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,6 +91,8 @@
 #include <tencentcloud/as/v20180419/model/DisableAutoScalingGroupResponse.h>
 #include <tencentcloud/as/v20180419/model/EnableAutoScalingGroupRequest.h>
 #include <tencentcloud/as/v20180419/model/EnableAutoScalingGroupResponse.h>
+#include <tencentcloud/as/v20180419/model/EnterStandbyRequest.h>
+#include <tencentcloud/as/v20180419/model/EnterStandbyResponse.h>
 #include <tencentcloud/as/v20180419/model/ExecuteScalingPolicyRequest.h>
 #include <tencentcloud/as/v20180419/model/ExecuteScalingPolicyResponse.h>
 #include <tencentcloud/as/v20180419/model/ExitStandbyRequest.h>
@@ -253,6 +255,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::EnableAutoScalingGroupResponse> EnableAutoScalingGroupOutcome;
                 typedef std::future<EnableAutoScalingGroupOutcome> EnableAutoScalingGroupOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::EnableAutoScalingGroupRequest&, EnableAutoScalingGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableAutoScalingGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnterStandbyResponse> EnterStandbyOutcome;
+                typedef std::future<EnterStandbyOutcome> EnterStandbyOutcomeCallable;
+                typedef std::function<void(const AsClient*, const Model::EnterStandbyRequest&, EnterStandbyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnterStandbyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ExecuteScalingPolicyResponse> ExecuteScalingPolicyOutcome;
                 typedef std::future<ExecuteScalingPolicyOutcome> ExecuteScalingPolicyOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::ExecuteScalingPolicyRequest&, ExecuteScalingPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteScalingPolicyAsyncHandler;
@@ -329,7 +334,6 @@ namespace TencentCloud
                  *本接口（AttachInstances）用于将 CVM 实例添加到伸缩组。
 * 仅支持添加处于`RUNNING`（运行中）或`STOPPED`（已关机）状态的 CVM 实例
 * 添加的 CVM 实例需要和伸缩组 VPC 网络一致
-
                  * @param req AttachInstancesRequest
                  * @return AttachInstancesOutcome
                  */
@@ -348,7 +352,8 @@ namespace TencentCloud
 
                 /**
                  *取消伸缩组的实例刷新活动。
-* 已刷新/正在刷新的批次不受影响，待刷新批次被取消
+* 已刷新的批次不受影响，待刷新批次被取消
+* 如存在正在刷新的批次，不允许取消；可先暂停活动，等待当前批次结束后再取消
 * 刷新失败的实例保持备用中状态，需用户手动处理后尝试退出备用中状态或销毁
 * 取消后不允许回滚操作，也不支持恢复操作
 * 因 maxSurge 参数而临时扩容的实例在取消后会自动销毁
@@ -403,9 +408,9 @@ namespace TencentCloud
                 /**
                  *本接口（CreateLaunchConfiguration）用于创建新的启动配置。
 
-* 启动配置，可以通过 `ModifyLaunchConfigurationAttributes` 修改少量字段。如需使用新的启动配置，建议重新创建启动配置。
+* 启动配置，可以通过 [ModifyLaunchConfigurationAttributes](https://cloud.tencent.com/document/api/377/31298) 修改少量字段。如需使用新的启动配置，建议重新创建启动配置。
 
-* 每个项目最多只能创建20个启动配置，详见[使用限制](https://cloud.tencent.com/document/product/377/3120)。
+* 每个地域默认只能创建50个启动配置，详见[使用限制](https://cloud.tencent.com/document/product/377/3120)。
                  * @param req CreateLaunchConfigurationRequest
                  * @return CreateLaunchConfigurationOutcome
                  */
@@ -426,11 +431,11 @@ namespace TencentCloud
 	"Time": "2019-03-14T10:15:11Z",
 	"AppId": "1251783334",
 	"ActivityId": "asa-fznnvrja",
-	"AutoScalingGroupId": "asg-rrrrtttt",
-	"LifecycleHookId": "ash-xxxxyyyy",
+	"AutoScalingGroupId": "asg-ft6y7u8n",
+	"LifecycleHookId": "ash-p9i7y6t5",
 	"LifecycleHookName": "my-hook",
 	"LifecycleActionToken": "3080e1c9-0efe-4dd7-ad3b-90cd6618298f",
-	"InstanceId": "ins-aaaabbbb",
+	"InstanceId": "ins-y6dr5e43",
 	"LifecycleTransition": "INSTANCE_LAUNCHING",
 	"NotificationMetadata": ""
 }
@@ -509,7 +514,6 @@ namespace TencentCloud
                  *本接口（DeleteLaunchConfiguration）用于删除启动配置。
 
 * 若启动配置在伸缩组中属于生效状态，则该启动配置不允许删除。
-
                  * @param req DeleteLaunchConfigurationRequest
                  * @return DeleteLaunchConfigurationOutcome
                  */
@@ -563,7 +567,7 @@ namespace TencentCloud
                 DescribeAccountLimitsOutcomeCallable DescribeAccountLimitsCallable(const Model::DescribeAccountLimitsRequest& request);
 
                 /**
-                 *本接口（DescribeAutoScalingActivities）用于查询伸缩组的伸缩活动记录。
+                 *本接口（DescribeAutoScalingActivities）用于查询伸缩组的伸缩活动记录。当前仅保存近两年的伸缩活动。
                  * @param req DescribeAutoScalingActivitiesRequest
                  * @return DescribeAutoScalingActivitiesOutcome
                  */
@@ -732,6 +736,18 @@ namespace TencentCloud
                 EnableAutoScalingGroupOutcomeCallable EnableAutoScalingGroupCallable(const Model::EnableAutoScalingGroupRequest& request);
 
                 /**
+                 *伸缩组内实例进入备用中状态。
+* 备用中状态实例的 CLB 权重值为 0，不会被自动缩容、不健康替换、实例刷新操作选中
+* 调用弹性伸缩开关机接口会使得备用中状态发生变化，而云服务器开关机接口不会影响
+* 实例进入备用中状态后，伸缩组会尝试下调期望实例数，新期望数不会小于最小值
+                 * @param req EnterStandbyRequest
+                 * @return EnterStandbyOutcome
+                 */
+                EnterStandbyOutcome EnterStandby(const Model::EnterStandbyRequest &request);
+                void EnterStandbyAsync(const Model::EnterStandbyRequest& request, const EnterStandbyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnterStandbyOutcomeCallable EnterStandbyCallable(const Model::EnterStandbyRequest& request);
+
+                /**
                  *本接口（ExecuteScalingPolicy）用于执行伸缩策略。
 
 * 可以根据伸缩策略ID执行伸缩策略。
@@ -746,8 +762,9 @@ namespace TencentCloud
 
                 /**
                  *伸缩组内实例退出备用中状态。
-* 备用中状态的实例负载均衡器权重值为 0，退出备用中状态后，权重值也会恢复
-* 对备用中状态实例进行开关机操作也会使其退出备用中状态
+* 退出备用中状态后，实例会进入运行中状态，CLB 权重值恢复为预设值
+* 调用弹性伸缩开关机接口会使得备用中状态发生变化，而云服务器开关机接口不会影响
+* 实例退出备用中状态后，伸缩组会上调期望实例数，新期望数不能大于最大值
                  * @param req ExitStandbyRequest
                  * @return ExitStandbyOutcome
                  */
@@ -777,7 +794,6 @@ namespace TencentCloud
                  *本接口（ModifyLaunchConfigurationAttributes）用于修改启动配置部分属性。
 
 * 修改启动配置后，已经使用该启动配置扩容的存量实例不会发生变更，此后使用该启动配置的新增实例会按照新的配置进行扩容。
-* 本接口支持修改部分简单类型。
                  * @param req ModifyLaunchConfigurationAttributesRequest
                  * @return ModifyLaunchConfigurationAttributesOutcome
                  */
@@ -988,7 +1004,6 @@ namespace TencentCloud
                  *本接口（UpgradeLifecycleHook）用于升级生命周期挂钩。
 
 * 本接口用于升级生命周期挂钩，采用“完全覆盖”风格，无论之前参数如何，统一按照接口参数设置为新的配置。对于非必填字段，不填写则按照默认值赋值。
-
                  * @param req UpgradeLifecycleHookRequest
                  * @return UpgradeLifecycleHookOutcome
                  */

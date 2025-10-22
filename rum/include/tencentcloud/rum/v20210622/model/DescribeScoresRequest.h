@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -108,21 +108,21 @@ namespace TencentCloud
                     /**
                      * 获取该参数已废弃
                      * @return IsDemo 该参数已废弃
-                     * 
+                     * @deprecated
                      */
                     int64_t GetIsDemo() const;
 
                     /**
                      * 设置该参数已废弃
                      * @param _isDemo 该参数已废弃
-                     * 
+                     * @deprecated
                      */
                     void SetIsDemo(const int64_t& _isDemo);
 
                     /**
                      * 判断参数 IsDemo 是否已赋值
                      * @return IsDemo 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool IsDemoHasBeenSet() const;
 

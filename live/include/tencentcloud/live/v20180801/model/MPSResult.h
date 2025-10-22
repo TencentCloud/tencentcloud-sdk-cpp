@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取智能语音识别结果
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AiAsrResults 智能语音识别结果
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取智能语音识别结果。
+                     * @return AiAsrResults 智能语音识别结果。
                      * 
                      */
                     std::vector<std::string> GetAiAsrResults() const;
 
                     /**
-                     * 设置智能语音识别结果
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _aiAsrResults 智能语音识别结果
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置智能语音识别结果。
+                     * @param _aiAsrResults 智能语音识别结果。
                      * 
                      */
                     void SetAiAsrResults(const std::vector<std::string>& _aiAsrResults);
@@ -72,19 +68,15 @@ namespace TencentCloud
                     bool AiAsrResultsHasBeenSet() const;
 
                     /**
-                     * 获取智能文字识别结果
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AiOcrResults 智能文字识别结果
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取智能文字识别结果。
+                     * @return AiOcrResults 智能文字识别结果。
                      * 
                      */
                     std::vector<std::string> GetAiOcrResults() const;
 
                     /**
-                     * 设置智能文字识别结果
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _aiOcrResults 智能文字识别结果
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置智能文字识别结果。
+                     * @param _aiOcrResults 智能文字识别结果。
                      * 
                      */
                     void SetAiOcrResults(const std::vector<std::string>& _aiOcrResults);
@@ -96,21 +88,46 @@ namespace TencentCloud
                      */
                     bool AiOcrResultsHasBeenSet() const;
 
+                    /**
+                     * 获取内容质检结果。
+                     * @return StreamQuaCtrlResults 内容质检结果。
+                     * 
+                     */
+                    std::vector<std::string> GetStreamQuaCtrlResults() const;
+
+                    /**
+                     * 设置内容质检结果。
+                     * @param _streamQuaCtrlResults 内容质检结果。
+                     * 
+                     */
+                    void SetStreamQuaCtrlResults(const std::vector<std::string>& _streamQuaCtrlResults);
+
+                    /**
+                     * 判断参数 StreamQuaCtrlResults 是否已赋值
+                     * @return StreamQuaCtrlResults 是否已赋值
+                     * 
+                     */
+                    bool StreamQuaCtrlResultsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 智能语音识别结果
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 智能语音识别结果。
                      */
                     std::vector<std::string> m_aiAsrResults;
                     bool m_aiAsrResultsHasBeenSet;
 
                     /**
-                     * 智能文字识别结果
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 智能文字识别结果。
                      */
                     std::vector<std::string> m_aiOcrResults;
                     bool m_aiOcrResultsHasBeenSet;
+
+                    /**
+                     * 内容质检结果。
+                     */
+                    std::vector<std::string> m_streamQuaCtrlResults;
+                    bool m_streamQuaCtrlResultsHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1538,6 +1538,49 @@ EsClient::DiagnoseInstanceOutcomeCallable EsClient::DiagnoseInstanceCallable(con
         [this, request]()
         {
             return this->DiagnoseInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EsClient::ExportIpTraceLogOutcome EsClient::ExportIpTraceLog(const ExportIpTraceLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportIpTraceLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportIpTraceLogResponse rsp = ExportIpTraceLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportIpTraceLogOutcome(rsp);
+        else
+            return ExportIpTraceLogOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportIpTraceLogOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::ExportIpTraceLogAsync(const ExportIpTraceLogRequest& request, const ExportIpTraceLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExportIpTraceLog(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::ExportIpTraceLogOutcomeCallable EsClient::ExportIpTraceLogCallable(const ExportIpTraceLogRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExportIpTraceLogOutcome()>>(
+        [this, request]()
+        {
+            return this->ExportIpTraceLog(request);
         }
     );
 

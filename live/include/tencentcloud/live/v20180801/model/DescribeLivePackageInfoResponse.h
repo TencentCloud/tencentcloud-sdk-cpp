@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取套餐包信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LivePackageInfoList 套餐包信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<LivePackageInfo> GetLivePackageInfoList() const;
@@ -71,7 +69,6 @@ namespace TencentCloud
 205: 日结时长
 206: 月结时长
 304: 日结流量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageBillMode 套餐包当前计费方式:
 -1: 无计费方式或获取失败
 0: 无计费方式
@@ -82,7 +79,6 @@ namespace TencentCloud
 205: 日结时长
 206: 月结时长
 304: 日结流量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPackageBillMode() const;
@@ -164,13 +160,11 @@ namespace TencentCloud
 标准直播，国际/港澳台（境外多地区）计费方式。
 快直播，中国大陆（境内全地区）计费方式。
 快直播，国际/港澳台（境外多地区）计费方式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FluxPackageBillMode 当请求参数 PackageType = 0 时生效，逗号分隔，从第一个到最后一个分别表示：
 标准直播，中国大陆（境内全地区）计费方式。
 标准直播，国际/港澳台（境外多地区）计费方式。
 快直播，中国大陆（境内全地区）计费方式。
 快直播，国际/港澳台（境外多地区）计费方式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFluxPackageBillMode() const;
@@ -186,7 +180,6 @@ namespace TencentCloud
 
                     /**
                      * 套餐包信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LivePackageInfo> m_livePackageInfoList;
                     bool m_livePackageInfoListHasBeenSet;
@@ -202,7 +195,6 @@ namespace TencentCloud
 205: 日结时长
 206: 月结时长
 304: 日结流量。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_packageBillMode;
                     bool m_packageBillModeHasBeenSet;
@@ -241,7 +233,6 @@ namespace TencentCloud
 标准直播，国际/港澳台（境外多地区）计费方式。
 快直播，中国大陆（境内全地区）计费方式。
 快直播，国际/港澳台（境外多地区）计费方式。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fluxPackageBillMode;
                     bool m_fluxPackageBillModeHasBeenSet;

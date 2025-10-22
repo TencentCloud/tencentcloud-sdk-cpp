@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规格类型，如S2.MEDIUM8
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType 规格类型，如S2.MEDIUM8
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置规格类型，如S2.MEDIUM8
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceType 规格类型，如S2.MEDIUM8
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -177,7 +173,6 @@ namespace TencentCloud
 
                     /**
                      * 规格类型，如S2.MEDIUM8
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,9 @@ GovernanceNamespaceInput::GovernanceNamespaceInput() :
     m_userIdsHasBeenSet(false),
     m_groupIdsHasBeenSet(false),
     m_removeUserIdsHasBeenSet(false),
-    m_removeGroupIdsHasBeenSet(false)
+    m_removeGroupIdsHasBeenSet(false),
+    m_serviceExportToHasBeenSet(false),
+    m_syncToGlobalRegistryHasBeenSet(false)
 {
 }
 
@@ -107,6 +109,29 @@ CoreInternalOutcome GovernanceNamespaceInput::Deserialize(const rapidjson::Value
         m_removeGroupIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("ServiceExportTo") && !value["ServiceExportTo"].IsNull())
+    {
+        if (!value["ServiceExportTo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `GovernanceNamespaceInput.ServiceExportTo` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ServiceExportTo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_serviceExportTo.push_back((*itr).GetString());
+        }
+        m_serviceExportToHasBeenSet = true;
+    }
+
+    if (value.HasMember("SyncToGlobalRegistry") && !value["SyncToGlobalRegistry"].IsNull())
+    {
+        if (!value["SyncToGlobalRegistry"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `GovernanceNamespaceInput.SyncToGlobalRegistry` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_syncToGlobalRegistry = value["SyncToGlobalRegistry"].GetBool();
+        m_syncToGlobalRegistryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -180,6 +205,27 @@ void GovernanceNamespaceInput::ToJsonObject(rapidjson::Value &value, rapidjson::
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_serviceExportToHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceExportTo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_serviceExportTo.begin(); itr != m_serviceExportTo.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_syncToGlobalRegistryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncToGlobalRegistry";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_syncToGlobalRegistry, allocator);
     }
 
 }
@@ -279,5 +325,37 @@ void GovernanceNamespaceInput::SetRemoveGroupIds(const vector<string>& _removeGr
 bool GovernanceNamespaceInput::RemoveGroupIdsHasBeenSet() const
 {
     return m_removeGroupIdsHasBeenSet;
+}
+
+vector<string> GovernanceNamespaceInput::GetServiceExportTo() const
+{
+    return m_serviceExportTo;
+}
+
+void GovernanceNamespaceInput::SetServiceExportTo(const vector<string>& _serviceExportTo)
+{
+    m_serviceExportTo = _serviceExportTo;
+    m_serviceExportToHasBeenSet = true;
+}
+
+bool GovernanceNamespaceInput::ServiceExportToHasBeenSet() const
+{
+    return m_serviceExportToHasBeenSet;
+}
+
+bool GovernanceNamespaceInput::GetSyncToGlobalRegistry() const
+{
+    return m_syncToGlobalRegistry;
+}
+
+void GovernanceNamespaceInput::SetSyncToGlobalRegistry(const bool& _syncToGlobalRegistry)
+{
+    m_syncToGlobalRegistry = _syncToGlobalRegistry;
+    m_syncToGlobalRegistryHasBeenSet = true;
+}
+
+bool GovernanceNamespaceInput::SyncToGlobalRegistryHasBeenSet() const
+{
+    return m_syncToGlobalRegistryHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -96,6 +96,31 @@ namespace TencentCloud
                      * 
                      */
                     bool UuidHasBeenSet() const;
+
+                    /**
+                     * 获取仓库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Repository 仓库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRepository() const;
+
+                    /**
+                     * 设置仓库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _repository 仓库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRepository(const std::string& _repository);
+
+                    /**
+                     * 判断参数 Repository 是否已赋值
+                     * @return Repository 是否已赋值
+                     * 
+                     */
+                    bool RepositoryHasBeenSet() const;
 
                     /**
                      * 获取该快照所属集群的版本号
@@ -404,6 +429,31 @@ SUCCESS     备份成功
                      */
                     bool FailuresHasBeenSet() const;
 
+                    /**
+                     * 获取是否用户备份
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserBackUp 是否用户备份
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUserBackUp() const;
+
+                    /**
+                     * 设置是否用户备份
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _userBackUp 是否用户备份
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUserBackUp(const std::string& _userBackUp);
+
+                    /**
+                     * 判断参数 UserBackUp 是否已赋值
+                     * @return UserBackUp 是否已赋值
+                     * 
+                     */
+                    bool UserBackUpHasBeenSet() const;
+
                 private:
 
                     /**
@@ -419,6 +469,13 @@ SUCCESS     备份成功
                      */
                     std::string m_uuid;
                     bool m_uuidHasBeenSet;
+
+                    /**
+                     * 仓库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_repository;
+                    bool m_repositoryHasBeenSet;
 
                     /**
                      * 该快照所属集群的版本号
@@ -504,6 +561,13 @@ SUCCESS     备份成功
                      */
                     std::vector<Failures> m_failures;
                     bool m_failuresHasBeenSet;
+
+                    /**
+                     * 是否用户备份
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_userBackUp;
+                    bool m_userBackUpHasBeenSet;
 
                 };
             }

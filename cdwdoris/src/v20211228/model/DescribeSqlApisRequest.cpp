@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,8 @@ DescribeSqlApisRequest::DescribeSqlApisRequest() :
     m_catalogHasBeenSet(false),
     m_catalogsHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false)
+    m_tableNameHasBeenSet(false),
+    m_userNamesHasBeenSet(false)
 {
 }
 
@@ -108,6 +109,19 @@ string DescribeSqlApisRequest::ToJsonString() const
         string key = "TableName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_tableName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserNames";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_userNames.begin(); itr != m_userNames.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -244,6 +258,22 @@ void DescribeSqlApisRequest::SetTableName(const string& _tableName)
 bool DescribeSqlApisRequest::TableNameHasBeenSet() const
 {
     return m_tableNameHasBeenSet;
+}
+
+vector<string> DescribeSqlApisRequest::GetUserNames() const
+{
+    return m_userNames;
+}
+
+void DescribeSqlApisRequest::SetUserNames(const vector<string>& _userNames)
+{
+    m_userNames = _userNames;
+    m_userNamesHasBeenSet = true;
+}
+
+bool DescribeSqlApisRequest::UserNamesHasBeenSet() const
+{
+    return m_userNamesHasBeenSet;
 }
 
 

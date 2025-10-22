@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/wedata/v20210820/model/GovDatasourceInfo.h>
+#include <tencentcloud/wedata/v20210820/model/OperateOption.h>
 
 
 namespace TencentCloud
@@ -672,6 +673,156 @@ namespace TencentCloud
                      */
                     bool ClusterNameHasBeenSet() const;
 
+                    /**
+                     * 获取库下表的最新更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ModifiedTimeByTables 库下表的最新更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetModifiedTimeByTables() const;
+
+                    /**
+                     * 设置库下表的最新更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _modifiedTimeByTables 库下表的最新更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetModifiedTimeByTables(const uint64_t& _modifiedTimeByTables);
+
+                    /**
+                     * 判断参数 ModifiedTimeByTables 是否已赋值
+                     * @return ModifiedTimeByTables 是否已赋值
+                     * 
+                     */
+                    bool ModifiedTimeByTablesHasBeenSet() const;
+
+                    /**
+                     * 获取库下表的最新访问时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LastAccessTimeByTables 库下表的最新访问时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetLastAccessTimeByTables() const;
+
+                    /**
+                     * 设置库下表的最新访问时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _lastAccessTimeByTables 库下表的最新访问时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLastAccessTimeByTables(const uint64_t& _lastAccessTimeByTables);
+
+                    /**
+                     * 判断参数 LastAccessTimeByTables 是否已赋值
+                     * @return LastAccessTimeByTables 是否已赋值
+                     * 
+                     */
+                    bool LastAccessTimeByTablesHasBeenSet() const;
+
+                    /**
+                     * 获取库guid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DatabaseGuid 库guid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDatabaseGuid() const;
+
+                    /**
+                     * 设置库guid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _databaseGuid 库guid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDatabaseGuid(const std::string& _databaseGuid);
+
+                    /**
+                     * 判断参数 DatabaseGuid 是否已赋值
+                     * @return DatabaseGuid 是否已赋值
+                     * 
+                     */
+                    bool DatabaseGuidHasBeenSet() const;
+
+                    /**
+                     * 获取环境，取值 prod或者 dev
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Environment 环境，取值 prod或者 dev
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEnvironment() const;
+
+                    /**
+                     * 设置环境，取值 prod或者 dev
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _environment 环境，取值 prod或者 dev
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEnvironment(const std::string& _environment);
+
+                    /**
+                     * 判断参数 Environment 是否已赋值
+                     * @return Environment 是否已赋值
+                     * 
+                     */
+                    bool EnvironmentHasBeenSet() const;
+
+                    /**
+                     * 获取Owner的账户信息：账号信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OwnerAccount Owner的账户信息：账号信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetOwnerAccount() const;
+
+                    /**
+                     * 设置Owner的账户信息：账号信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ownerAccount Owner的账户信息：账号信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOwnerAccount(const uint64_t& _ownerAccount);
+
+                    /**
+                     * 判断参数 OwnerAccount 是否已赋值
+                     * @return OwnerAccount 是否已赋值
+                     * 
+                     */
+                    bool OwnerAccountHasBeenSet() const;
+
+                    /**
+                     * 获取操作权限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OperateOption 操作权限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    OperateOption GetOperateOption() const;
+
+                    /**
+                     * 设置操作权限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _operateOption 操作权限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOperateOption(const OperateOption& _operateOption);
+
+                    /**
+                     * 判断参数 OperateOption 是否已赋值
+                     * @return OperateOption 是否已赋值
+                     * 
+                     */
+                    bool OperateOptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -848,6 +999,48 @@ namespace TencentCloud
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
+
+                    /**
+                     * 库下表的最新更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_modifiedTimeByTables;
+                    bool m_modifiedTimeByTablesHasBeenSet;
+
+                    /**
+                     * 库下表的最新访问时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_lastAccessTimeByTables;
+                    bool m_lastAccessTimeByTablesHasBeenSet;
+
+                    /**
+                     * 库guid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_databaseGuid;
+                    bool m_databaseGuidHasBeenSet;
+
+                    /**
+                     * 环境，取值 prod或者 dev
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_environment;
+                    bool m_environmentHasBeenSet;
+
+                    /**
+                     * Owner的账户信息：账号信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_ownerAccount;
+                    bool m_ownerAccountHasBeenSet;
+
+                    /**
+                     * 操作权限
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OperateOption m_operateOption;
+                    bool m_operateOptionHasBeenSet;
 
                 };
             }

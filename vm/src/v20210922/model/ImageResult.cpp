@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,10 @@ ImageResult::ImageResult() :
     m_scoreHasBeenSet(false),
     m_resultsHasBeenSet(false),
     m_urlHasBeenSet(false),
-    m_extraHasBeenSet(false)
+    m_extraHasBeenSet(false),
+    m_subLabelHasBeenSet(false),
+    m_recognitionResultsHasBeenSet(false),
+    m_hitTypeHasBeenSet(false)
 {
 }
 
@@ -116,6 +119,46 @@ CoreInternalOutcome ImageResult::Deserialize(const rapidjson::Value &value)
         m_extraHasBeenSet = true;
     }
 
+    if (value.HasMember("SubLabel") && !value["SubLabel"].IsNull())
+    {
+        if (!value["SubLabel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageResult.SubLabel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subLabel = string(value["SubLabel"].GetString());
+        m_subLabelHasBeenSet = true;
+    }
+
+    if (value.HasMember("RecognitionResults") && !value["RecognitionResults"].IsNull())
+    {
+        if (!value["RecognitionResults"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ImageResult.RecognitionResults` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RecognitionResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RecognitionResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_recognitionResults.push_back(item);
+        }
+        m_recognitionResultsHasBeenSet = true;
+    }
+
+    if (value.HasMember("HitType") && !value["HitType"].IsNull())
+    {
+        if (!value["HitType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageResult.HitType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hitType = string(value["HitType"].GetString());
+        m_hitTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +227,37 @@ void ImageResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Extra";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_extra.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subLabelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubLabel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subLabel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recognitionResultsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecognitionResults";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_recognitionResults.begin(); itr != m_recognitionResults.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_hitTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HitType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hitType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -299,5 +373,53 @@ void ImageResult::SetExtra(const string& _extra)
 bool ImageResult::ExtraHasBeenSet() const
 {
     return m_extraHasBeenSet;
+}
+
+string ImageResult::GetSubLabel() const
+{
+    return m_subLabel;
+}
+
+void ImageResult::SetSubLabel(const string& _subLabel)
+{
+    m_subLabel = _subLabel;
+    m_subLabelHasBeenSet = true;
+}
+
+bool ImageResult::SubLabelHasBeenSet() const
+{
+    return m_subLabelHasBeenSet;
+}
+
+vector<RecognitionResult> ImageResult::GetRecognitionResults() const
+{
+    return m_recognitionResults;
+}
+
+void ImageResult::SetRecognitionResults(const vector<RecognitionResult>& _recognitionResults)
+{
+    m_recognitionResults = _recognitionResults;
+    m_recognitionResultsHasBeenSet = true;
+}
+
+bool ImageResult::RecognitionResultsHasBeenSet() const
+{
+    return m_recognitionResultsHasBeenSet;
+}
+
+string ImageResult::GetHitType() const
+{
+    return m_hitType;
+}
+
+void ImageResult::SetHitType(const string& _hitType)
+{
+    m_hitType = _hitType;
+    m_hitTypeHasBeenSet = true;
+}
+
+bool ImageResult::HitTypeHasBeenSet() const
+{
+    return m_hitTypeHasBeenSet;
 }
 

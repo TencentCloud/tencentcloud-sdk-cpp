@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 服务开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置服务开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTime 服务开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 服务结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置服务结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 服务结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配额ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QuotaId 配额ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetQuotaId() const;
 
                     /**
                      * 设置配额ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _quotaId 配额ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQuotaId(const uint64_t& _quotaId);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取企业ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CorpId 企业ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCorpId() const;
 
                     /**
                      * 设置企业ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _corpId 企业ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCorpId(const uint64_t& _corpId);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开通服务
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Services 开通服务
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetServices() const;
 
                     /**
                      * 设置开通服务
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _services 开通服务
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServices(const std::vector<std::string>& _services);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取商户配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FactoryQuota 商户配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFactoryQuota() const;
 
                     /**
                      * 设置商户配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _factoryQuota 商户配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFactoryQuota(const int64_t& _factoryQuota);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取商品配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ItemQuota 商品配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetItemQuota() const;
 
                     /**
                      * 设置商品配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _itemQuota 商品配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetItemQuota(const int64_t& _itemQuota);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取溯源码配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrackQuota 溯源码配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTrackQuota() const;
 
                     /**
                      * 设置溯源码配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _trackQuota 溯源码配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTrackQuota(const int64_t& _trackQuota);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取销售码配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SaleQuota 销售码配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSaleQuota() const;
 
                     /**
                      * 设置销售码配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _saleQuota 销售码配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSaleQuota(const int64_t& _saleQuota);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取上链配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChainQuota 上链配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetChainQuota() const;
 
                     /**
                      * 设置上链配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _chainQuota 上链配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChainQuota(const int64_t& _chainQuota);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取风控配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskQuota 风控配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRiskQuota() const;
 
                     /**
                      * 设置风控配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskQuota 风控配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskQuota(const int64_t& _riskQuota);
@@ -323,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取AI文字数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AigcTextQuota AI文字数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAigcTextQuota() const;
 
                     /**
                      * 设置AI文字数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _aigcTextQuota AI文字数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAigcTextQuota(const int64_t& _aigcTextQuota);
@@ -348,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取AI图片数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AigcImageQuota AI图片数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAigcImageQuota() const;
 
                     /**
                      * 设置AI图片数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _aigcImageQuota AI图片数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAigcImageQuota(const int64_t& _aigcImageQuota);
@@ -373,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取溯源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrackType 溯源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTrackType() const;
 
                     /**
                      * 设置溯源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _trackType 溯源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTrackType(const int64_t& _trackType);
@@ -398,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开通版本 lite:轻量版, basic:基础版, standard:标准版
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 开通版本 lite:轻量版, basic:基础版, standard:标准版
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置开通版本 lite:轻量版, basic:基础版, standard:标准版
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _version 开通版本 lite:轻量版, basic:基础版, standard:标准版
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -423,18 +363,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启企业认证
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductCertify 是否开启企业认证
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetProductCertify() const;
 
                     /**
                      * 设置是否开启企业认证
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productCertify 是否开启企业认证
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductCertify(const uint64_t& _productCertify);
@@ -450,112 +386,96 @@ namespace TencentCloud
 
                     /**
                      * 服务开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 服务结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
                      * 配额ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_quotaId;
                     bool m_quotaIdHasBeenSet;
 
                     /**
                      * 企业ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_corpId;
                     bool m_corpIdHasBeenSet;
 
                     /**
                      * 开通服务
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_services;
                     bool m_servicesHasBeenSet;
 
                     /**
                      * 商户配额
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_factoryQuota;
                     bool m_factoryQuotaHasBeenSet;
 
                     /**
                      * 商品配额
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_itemQuota;
                     bool m_itemQuotaHasBeenSet;
 
                     /**
                      * 溯源码配额
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_trackQuota;
                     bool m_trackQuotaHasBeenSet;
 
                     /**
                      * 销售码配额
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_saleQuota;
                     bool m_saleQuotaHasBeenSet;
 
                     /**
                      * 上链配额
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_chainQuota;
                     bool m_chainQuotaHasBeenSet;
 
                     /**
                      * 风控配额
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_riskQuota;
                     bool m_riskQuotaHasBeenSet;
 
                     /**
                      * AI文字数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_aigcTextQuota;
                     bool m_aigcTextQuotaHasBeenSet;
 
                     /**
                      * AI图片数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_aigcImageQuota;
                     bool m_aigcImageQuotaHasBeenSet;
 
                     /**
                      * 溯源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_trackType;
                     bool m_trackTypeHasBeenSet;
 
                     /**
                      * 开通版本 lite:轻量版, basic:基础版, standard:标准版
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
                      * 是否开启企业认证
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_productCertify;
                     bool m_productCertifyHasBeenSet;

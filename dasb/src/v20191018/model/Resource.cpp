@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,7 +56,11 @@ Resource::Resource() :
     m_trialHasBeenSet(false),
     m_cdcClusterIdHasBeenSet(false),
     m_logDeliveryHasBeenSet(false),
-    m_deployModelHasBeenSet(false)
+    m_deployModelHasBeenSet(false),
+    m_intranetAccessHasBeenSet(false),
+    m_intranetPrivateIpSetHasBeenSet(false),
+    m_intranetVpcIdHasBeenSet(false),
+    m_intranetVpcCidrHasBeenSet(false)
 {
 }
 
@@ -444,6 +448,49 @@ CoreInternalOutcome Resource::Deserialize(const rapidjson::Value &value)
         m_deployModelHasBeenSet = true;
     }
 
+    if (value.HasMember("IntranetAccess") && !value["IntranetAccess"].IsNull())
+    {
+        if (!value["IntranetAccess"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.IntranetAccess` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_intranetAccess = value["IntranetAccess"].GetUint64();
+        m_intranetAccessHasBeenSet = true;
+    }
+
+    if (value.HasMember("IntranetPrivateIpSet") && !value["IntranetPrivateIpSet"].IsNull())
+    {
+        if (!value["IntranetPrivateIpSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Resource.IntranetPrivateIpSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["IntranetPrivateIpSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_intranetPrivateIpSet.push_back((*itr).GetString());
+        }
+        m_intranetPrivateIpSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("IntranetVpcId") && !value["IntranetVpcId"].IsNull())
+    {
+        if (!value["IntranetVpcId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.IntranetVpcId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_intranetVpcId = string(value["IntranetVpcId"].GetString());
+        m_intranetVpcIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("IntranetVpcCidr") && !value["IntranetVpcCidr"].IsNull())
+    {
+        if (!value["IntranetVpcCidr"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.IntranetVpcCidr` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_intranetVpcCidr = string(value["IntranetVpcCidr"].GetString());
+        m_intranetVpcCidrHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -759,6 +806,43 @@ void Resource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "DeployModel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deployModel, allocator);
+    }
+
+    if (m_intranetAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntranetAccess";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_intranetAccess, allocator);
+    }
+
+    if (m_intranetPrivateIpSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntranetPrivateIpSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_intranetPrivateIpSet.begin(); itr != m_intranetPrivateIpSet.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_intranetVpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntranetVpcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_intranetVpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_intranetVpcCidrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntranetVpcCidr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_intranetVpcCidr.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1338,5 +1422,69 @@ void Resource::SetDeployModel(const int64_t& _deployModel)
 bool Resource::DeployModelHasBeenSet() const
 {
     return m_deployModelHasBeenSet;
+}
+
+uint64_t Resource::GetIntranetAccess() const
+{
+    return m_intranetAccess;
+}
+
+void Resource::SetIntranetAccess(const uint64_t& _intranetAccess)
+{
+    m_intranetAccess = _intranetAccess;
+    m_intranetAccessHasBeenSet = true;
+}
+
+bool Resource::IntranetAccessHasBeenSet() const
+{
+    return m_intranetAccessHasBeenSet;
+}
+
+vector<string> Resource::GetIntranetPrivateIpSet() const
+{
+    return m_intranetPrivateIpSet;
+}
+
+void Resource::SetIntranetPrivateIpSet(const vector<string>& _intranetPrivateIpSet)
+{
+    m_intranetPrivateIpSet = _intranetPrivateIpSet;
+    m_intranetPrivateIpSetHasBeenSet = true;
+}
+
+bool Resource::IntranetPrivateIpSetHasBeenSet() const
+{
+    return m_intranetPrivateIpSetHasBeenSet;
+}
+
+string Resource::GetIntranetVpcId() const
+{
+    return m_intranetVpcId;
+}
+
+void Resource::SetIntranetVpcId(const string& _intranetVpcId)
+{
+    m_intranetVpcId = _intranetVpcId;
+    m_intranetVpcIdHasBeenSet = true;
+}
+
+bool Resource::IntranetVpcIdHasBeenSet() const
+{
+    return m_intranetVpcIdHasBeenSet;
+}
+
+string Resource::GetIntranetVpcCidr() const
+{
+    return m_intranetVpcCidr;
+}
+
+void Resource::SetIntranetVpcCidr(const string& _intranetVpcCidr)
+{
+    m_intranetVpcCidr = _intranetVpcCidr;
+    m_intranetVpcCidrHasBeenSet = true;
+}
+
+bool Resource::IntranetVpcCidrHasBeenSet() const
+{
+    return m_intranetVpcCidrHasBeenSet;
 }
 

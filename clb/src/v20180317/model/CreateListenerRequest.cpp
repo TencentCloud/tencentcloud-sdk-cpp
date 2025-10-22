@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,10 +41,12 @@ CreateListenerRequest::CreateListenerRequest() :
     m_maxConnHasBeenSet(false),
     m_maxCpsHasBeenSet(false),
     m_idleConnectTimeoutHasBeenSet(false),
+    m_proxyProtocolHasBeenSet(false),
     m_snatEnableHasBeenSet(false),
     m_fullEndPortsHasBeenSet(false),
     m_h2cSwitchHasBeenSet(false),
-    m_sslCloseSwitchHasBeenSet(false)
+    m_sslCloseSwitchHasBeenSet(false),
+    m_dataCompressModeHasBeenSet(false)
 {
 }
 
@@ -212,6 +214,14 @@ string CreateListenerRequest::ToJsonString() const
         d.AddMember(iKey, m_idleConnectTimeout, allocator);
     }
 
+    if (m_proxyProtocolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyProtocol";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_proxyProtocol, allocator);
+    }
+
     if (m_snatEnableHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -247,6 +257,14 @@ string CreateListenerRequest::ToJsonString() const
         string key = "SslCloseSwitch";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sslCloseSwitch, allocator);
+    }
+
+    if (m_dataCompressModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataCompressMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dataCompressMode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -545,6 +563,22 @@ bool CreateListenerRequest::IdleConnectTimeoutHasBeenSet() const
     return m_idleConnectTimeoutHasBeenSet;
 }
 
+bool CreateListenerRequest::GetProxyProtocol() const
+{
+    return m_proxyProtocol;
+}
+
+void CreateListenerRequest::SetProxyProtocol(const bool& _proxyProtocol)
+{
+    m_proxyProtocol = _proxyProtocol;
+    m_proxyProtocolHasBeenSet = true;
+}
+
+bool CreateListenerRequest::ProxyProtocolHasBeenSet() const
+{
+    return m_proxyProtocolHasBeenSet;
+}
+
 bool CreateListenerRequest::GetSnatEnable() const
 {
     return m_snatEnable;
@@ -607,6 +641,22 @@ void CreateListenerRequest::SetSslCloseSwitch(const bool& _sslCloseSwitch)
 bool CreateListenerRequest::SslCloseSwitchHasBeenSet() const
 {
     return m_sslCloseSwitchHasBeenSet;
+}
+
+string CreateListenerRequest::GetDataCompressMode() const
+{
+    return m_dataCompressMode;
+}
+
+void CreateListenerRequest::SetDataCompressMode(const string& _dataCompressMode)
+{
+    m_dataCompressMode = _dataCompressMode;
+    m_dataCompressModeHasBeenSet = true;
+}
+
+bool CreateListenerRequest::DataCompressModeHasBeenSet() const
+{
+    return m_dataCompressModeHasBeenSet;
 }
 
 

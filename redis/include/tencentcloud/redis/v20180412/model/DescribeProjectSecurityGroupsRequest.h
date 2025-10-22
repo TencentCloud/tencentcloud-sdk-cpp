@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProductHasBeenSet() const;
 
                     /**
-                     * 获取项目 ID。
-                     * @return ProjectId 项目 ID。
+                     * 获取项目 ID，请登录[Redis控制台的项目管理](https://console.cloud.tencent.com/project)页面，在**项目名称**中复制项目 ID。
+                     * @return ProjectId 项目 ID，请登录[Redis控制台的项目管理](https://console.cloud.tencent.com/project)页面，在**项目名称**中复制项目 ID。
                      * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
-                     * 设置项目 ID。
-                     * @param _projectId 项目 ID。
+                     * 设置项目 ID，请登录[Redis控制台的项目管理](https://console.cloud.tencent.com/project)页面，在**项目名称**中复制项目 ID。
+                     * @param _projectId 项目 ID，请登录[Redis控制台的项目管理](https://console.cloud.tencent.com/project)页面，在**项目名称**中复制项目 ID。
                      * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
@@ -156,7 +156,7 @@ namespace TencentCloud
                     bool m_productHasBeenSet;
 
                     /**
-                     * 项目 ID。
+                     * 项目 ID，请登录[Redis控制台的项目管理](https://console.cloud.tencent.com/project)页面，在**项目名称**中复制项目 ID。
                      */
                     uint64_t m_projectId;
                     bool m_projectIdHasBeenSet;

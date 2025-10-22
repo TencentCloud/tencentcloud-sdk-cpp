@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Step 步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStep() const;
 
                     /**
                      * 设置步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _step 步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStep(const std::string& _step);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Progress 进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProgress() const;
 
                     /**
                      * 设置进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _progress 进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProgress(const std::string& _progress);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取失败信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailReason 失败信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFailReason() const;
 
                     /**
                      * 设置失败信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _failReason 失败信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFailReason(const std::string& _failReason);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用来获取详情的id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobId 用来获取详情的id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetJobId() const;
 
                     /**
                      * 设置用来获取详情的id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _jobId 用来获取详情的id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJobId(const uint64_t& _jobId);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_step;
                     bool m_stepHasBeenSet;
 
                     /**
                      * 进度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_progress;
                     bool m_progressHasBeenSet;
 
                     /**
                      * 失败信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_failReason;
                     bool m_failReasonHasBeenSet;
 
                     /**
                      * 用来获取详情的id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_jobId;
                     bool m_jobIdHasBeenSet;

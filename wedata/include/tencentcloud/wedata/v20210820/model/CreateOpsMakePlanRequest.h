@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -602,6 +602,69 @@ namespace TencentCloud
                      */
                     bool SelfWorkflowDependencyHasBeenSet() const;
 
+                    /**
+                     * 获取任务 TASK； 项目： PROJECT
+                     * @return MakeType 任务 TASK； 项目： PROJECT
+                     * 
+                     */
+                    std::string GetMakeType() const;
+
+                    /**
+                     * 设置任务 TASK； 项目： PROJECT
+                     * @param _makeType 任务 TASK； 项目： PROJECT
+                     * 
+                     */
+                    void SetMakeType(const std::string& _makeType);
+
+                    /**
+                     * 判断参数 MakeType 是否已赋值
+                     * @return MakeType 是否已赋值
+                     * 
+                     */
+                    bool MakeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取任务状态
+                     * @return StatusList 任务状态
+                     * 
+                     */
+                    std::string GetStatusList() const;
+
+                    /**
+                     * 设置任务状态
+                     * @param _statusList 任务状态
+                     * 
+                     */
+                    void SetStatusList(const std::string& _statusList);
+
+                    /**
+                     * 判断参数 StatusList 是否已赋值
+                     * @return StatusList 是否已赋值
+                     * 
+                     */
+                    bool StatusListHasBeenSet() const;
+
+                    /**
+                     * 获取补录是否跳过事件检查
+                     * @return MakeCheckEventType 补录是否跳过事件检查
+                     * 
+                     */
+                    std::string GetMakeCheckEventType() const;
+
+                    /**
+                     * 设置补录是否跳过事件检查
+                     * @param _makeCheckEventType 补录是否跳过事件检查
+                     * 
+                     */
+                    void SetMakeCheckEventType(const std::string& _makeCheckEventType);
+
+                    /**
+                     * 判断参数 MakeCheckEventType 是否已赋值
+                     * @return MakeCheckEventType 是否已赋值
+                     * 
+                     */
+                    bool MakeCheckEventTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -762,6 +825,24 @@ namespace TencentCloud
                      */
                     std::string m_selfWorkflowDependency;
                     bool m_selfWorkflowDependencyHasBeenSet;
+
+                    /**
+                     * 任务 TASK； 项目： PROJECT
+                     */
+                    std::string m_makeType;
+                    bool m_makeTypeHasBeenSet;
+
+                    /**
+                     * 任务状态
+                     */
+                    std::string m_statusList;
+                    bool m_statusListHasBeenSet;
+
+                    /**
+                     * 补录是否跳过事件检查
+                     */
+                    std::string m_makeCheckEventType;
+                    bool m_makeCheckEventTypeHasBeenSet;
 
                 };
             }

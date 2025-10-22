@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ ModifyRocketMQEnvironmentRoleRequest::ModifyRocketMQEnvironmentRoleRequest() :
     m_environmentIdHasBeenSet(false),
     m_roleNameHasBeenSet(false),
     m_permissionsHasBeenSet(false),
-    m_clusterIdHasBeenSet(false)
+    m_clusterIdHasBeenSet(false),
+    m_detailedPermsHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,21 @@ string ModifyRocketMQEnvironmentRoleRequest::ToJsonString() const
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_detailedPermsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DetailedPerms";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_detailedPerms.begin(); itr != m_detailedPerms.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -144,6 +160,22 @@ void ModifyRocketMQEnvironmentRoleRequest::SetClusterId(const string& _clusterId
 bool ModifyRocketMQEnvironmentRoleRequest::ClusterIdHasBeenSet() const
 {
     return m_clusterIdHasBeenSet;
+}
+
+vector<DetailedRolePerm> ModifyRocketMQEnvironmentRoleRequest::GetDetailedPerms() const
+{
+    return m_detailedPerms;
+}
+
+void ModifyRocketMQEnvironmentRoleRequest::SetDetailedPerms(const vector<DetailedRolePerm>& _detailedPerms)
+{
+    m_detailedPerms = _detailedPerms;
+    m_detailedPermsHasBeenSet = true;
+}
+
+bool ModifyRocketMQEnvironmentRoleRequest::DetailedPermsHasBeenSet() const
+{
+    return m_detailedPermsHasBeenSet;
 }
 
 

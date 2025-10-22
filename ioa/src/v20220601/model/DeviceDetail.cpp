@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,6 +38,11 @@ DeviceDetail::DeviceDetail() :
     m_groupNameHasBeenSet(false),
     m_groupNamePathHasBeenSet(false),
     m_criticalVulListCountHasBeenSet(false),
+    m_osHasBeenSet(false),
+    m_osBitsHasBeenSet(false),
+    m_osVersionHasBeenSet(false),
+    m_osLanguageHasBeenSet(false),
+    m_osInstallDateHasBeenSet(false),
     m_computerNameHasBeenSet(false),
     m_domainNameHasBeenSet(false),
     m_macAddrHasBeenSet(false),
@@ -63,7 +68,8 @@ DeviceDetail::DeviceDetail() :
     m_identityNewStrategyVerHasBeenSet(false),
     m_accountGroupNameHasBeenSet(false),
     m_accountNameHasBeenSet(false),
-    m_accountGroupIdHasBeenSet(false)
+    m_accountGroupIdHasBeenSet(false),
+    m_remarkNameHasBeenSet(false)
 {
 }
 
@@ -240,6 +246,56 @@ CoreInternalOutcome DeviceDetail::Deserialize(const rapidjson::Value &value)
         }
         m_criticalVulListCount = value["CriticalVulListCount"].GetInt64();
         m_criticalVulListCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("Os") && !value["Os"].IsNull())
+    {
+        if (!value["Os"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceDetail.Os` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_os = string(value["Os"].GetString());
+        m_osHasBeenSet = true;
+    }
+
+    if (value.HasMember("OsBits") && !value["OsBits"].IsNull())
+    {
+        if (!value["OsBits"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceDetail.OsBits` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_osBits = value["OsBits"].GetInt64();
+        m_osBitsHasBeenSet = true;
+    }
+
+    if (value.HasMember("OsVersion") && !value["OsVersion"].IsNull())
+    {
+        if (!value["OsVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceDetail.OsVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_osVersion = string(value["OsVersion"].GetString());
+        m_osVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("OsLanguage") && !value["OsLanguage"].IsNull())
+    {
+        if (!value["OsLanguage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceDetail.OsLanguage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_osLanguage = string(value["OsLanguage"].GetString());
+        m_osLanguageHasBeenSet = true;
+    }
+
+    if (value.HasMember("OsInstallDate") && !value["OsInstallDate"].IsNull())
+    {
+        if (!value["OsInstallDate"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceDetail.OsInstallDate` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_osInstallDate = string(value["OsInstallDate"].GetString());
+        m_osInstallDateHasBeenSet = true;
     }
 
     if (value.HasMember("ComputerName") && !value["ComputerName"].IsNull())
@@ -505,6 +561,16 @@ CoreInternalOutcome DeviceDetail::Deserialize(const rapidjson::Value &value)
         m_accountGroupIdHasBeenSet = true;
     }
 
+    if (value.HasMember("RemarkName") && !value["RemarkName"].IsNull())
+    {
+        if (!value["RemarkName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceDetail.RemarkName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_remarkName = string(value["RemarkName"].GetString());
+        m_remarkNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -646,6 +712,46 @@ void DeviceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "CriticalVulListCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_criticalVulListCount, allocator);
+    }
+
+    if (m_osHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Os";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_os.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_osBitsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OsBits";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_osBits, allocator);
+    }
+
+    if (m_osVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OsVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_osVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_osLanguageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OsLanguage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_osLanguage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_osInstallDateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OsInstallDate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_osInstallDate.c_str(), allocator).Move(), allocator);
     }
 
     if (m_computerNameHasBeenSet)
@@ -859,6 +965,14 @@ void DeviceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "AccountGroupId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_accountGroupId, allocator);
+    }
+
+    if (m_remarkNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemarkName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_remarkName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1134,6 +1248,86 @@ void DeviceDetail::SetCriticalVulListCount(const int64_t& _criticalVulListCount)
 bool DeviceDetail::CriticalVulListCountHasBeenSet() const
 {
     return m_criticalVulListCountHasBeenSet;
+}
+
+string DeviceDetail::GetOs() const
+{
+    return m_os;
+}
+
+void DeviceDetail::SetOs(const string& _os)
+{
+    m_os = _os;
+    m_osHasBeenSet = true;
+}
+
+bool DeviceDetail::OsHasBeenSet() const
+{
+    return m_osHasBeenSet;
+}
+
+int64_t DeviceDetail::GetOsBits() const
+{
+    return m_osBits;
+}
+
+void DeviceDetail::SetOsBits(const int64_t& _osBits)
+{
+    m_osBits = _osBits;
+    m_osBitsHasBeenSet = true;
+}
+
+bool DeviceDetail::OsBitsHasBeenSet() const
+{
+    return m_osBitsHasBeenSet;
+}
+
+string DeviceDetail::GetOsVersion() const
+{
+    return m_osVersion;
+}
+
+void DeviceDetail::SetOsVersion(const string& _osVersion)
+{
+    m_osVersion = _osVersion;
+    m_osVersionHasBeenSet = true;
+}
+
+bool DeviceDetail::OsVersionHasBeenSet() const
+{
+    return m_osVersionHasBeenSet;
+}
+
+string DeviceDetail::GetOsLanguage() const
+{
+    return m_osLanguage;
+}
+
+void DeviceDetail::SetOsLanguage(const string& _osLanguage)
+{
+    m_osLanguage = _osLanguage;
+    m_osLanguageHasBeenSet = true;
+}
+
+bool DeviceDetail::OsLanguageHasBeenSet() const
+{
+    return m_osLanguageHasBeenSet;
+}
+
+string DeviceDetail::GetOsInstallDate() const
+{
+    return m_osInstallDate;
+}
+
+void DeviceDetail::SetOsInstallDate(const string& _osInstallDate)
+{
+    m_osInstallDate = _osInstallDate;
+    m_osInstallDateHasBeenSet = true;
+}
+
+bool DeviceDetail::OsInstallDateHasBeenSet() const
+{
+    return m_osInstallDateHasBeenSet;
 }
 
 string DeviceDetail::GetComputerName() const
@@ -1550,5 +1744,21 @@ void DeviceDetail::SetAccountGroupId(const int64_t& _accountGroupId)
 bool DeviceDetail::AccountGroupIdHasBeenSet() const
 {
     return m_accountGroupIdHasBeenSet;
+}
+
+string DeviceDetail::GetRemarkName() const
+{
+    return m_remarkName;
+}
+
+void DeviceDetail::SetRemarkName(const string& _remarkName)
+{
+    m_remarkName = _remarkName;
+    m_remarkNameHasBeenSet = true;
+}
+
+bool DeviceDetail::RemarkNameHasBeenSet() const
+{
+    return m_remarkNameHasBeenSet;
 }
 

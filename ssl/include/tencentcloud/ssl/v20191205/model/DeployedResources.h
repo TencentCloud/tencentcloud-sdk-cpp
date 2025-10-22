@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取不建议使用。字段返回和Resources相同。本字段后续只返回null
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceIds 不建议使用。字段返回和Resources相同。本字段后续只返回null
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetResourceIds() const;
 
                     /**
                      * 设置不建议使用。字段返回和Resources相同。本字段后续只返回null
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceIds 不建议使用。字段返回和Resources相同。本字段后续只返回null
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceIds(const std::vector<std::string>& _resourceIds);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联资源ID或关联域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resources 关联资源ID或关联域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetResources() const;
 
                     /**
                      * 设置关联资源ID或关联域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resources 关联资源ID或关联域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResources(const std::vector<std::string>& _resources);
@@ -181,14 +173,12 @@ namespace TencentCloud
 
                     /**
                      * 不建议使用。字段返回和Resources相同。本字段后续只返回null
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_resourceIds;
                     bool m_resourceIdsHasBeenSet;
 
                     /**
                      * 关联资源ID或关联域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_resources;
                     bool m_resourcesHasBeenSet;

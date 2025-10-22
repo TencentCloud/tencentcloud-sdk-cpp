@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取生命周期挂钩ID
-                     * @return LifecycleHookId 生命周期挂钩ID
+                     * 获取生命周期挂钩ID。可以通过调用接口 [DescribeLifecycleHooks](https://cloud.tencent.com/document/api/377/34452) ，取返回信息中的 LifecycleHookId 获取生命周期挂钩ID。
+                     * @return LifecycleHookId 生命周期挂钩ID。可以通过调用接口 [DescribeLifecycleHooks](https://cloud.tencent.com/document/api/377/34452) ，取返回信息中的 LifecycleHookId 获取生命周期挂钩ID。
                      * 
                      */
                     std::string GetLifecycleHookId() const;
 
                     /**
-                     * 设置生命周期挂钩ID
-                     * @param _lifecycleHookId 生命周期挂钩ID
+                     * 设置生命周期挂钩ID。可以通过调用接口 [DescribeLifecycleHooks](https://cloud.tencent.com/document/api/377/34452) ，取返回信息中的 LifecycleHookId 获取生命周期挂钩ID。
+                     * @param _lifecycleHookId 生命周期挂钩ID。可以通过调用接口 [DescribeLifecycleHooks](https://cloud.tencent.com/document/api/377/34452) ，取返回信息中的 LifecycleHookId 获取生命周期挂钩ID。
                      * 
                      */
                     void SetLifecycleHookId(const std::string& _lifecycleHookId);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool LifecycleHookIdHasBeenSet() const;
 
                     /**
-                     * 获取生命周期挂钩名称
-                     * @return LifecycleHookName 生命周期挂钩名称
+                     * 获取生命周期挂钩名称。名称仅支持中文、英文、数字、下划线（_）、短横线（-）、小数点（.），最大长度不能超128个字符。
+                     * @return LifecycleHookName 生命周期挂钩名称。名称仅支持中文、英文、数字、下划线（_）、短横线（-）、小数点（.），最大长度不能超128个字符。
                      * 
                      */
                     std::string GetLifecycleHookName() const;
 
                     /**
-                     * 设置生命周期挂钩名称
-                     * @param _lifecycleHookName 生命周期挂钩名称
+                     * 设置生命周期挂钩名称。名称仅支持中文、英文、数字、下划线（_）、短横线（-）、小数点（.），最大长度不能超128个字符。
+                     * @param _lifecycleHookName 生命周期挂钩名称。名称仅支持中文、英文、数字、下划线（_）、短横线（-）、小数点（.），最大长度不能超128个字符。
                      * 
                      */
                     void SetLifecycleHookName(const std::string& _lifecycleHookName);
@@ -87,15 +87,23 @@ namespace TencentCloud
                     bool LifecycleHookNameHasBeenSet() const;
 
                     /**
-                     * 获取进行生命周期挂钩的场景，取值范围包括“INSTANCE_LAUNCHING”和“INSTANCE_TERMINATING”
-                     * @return LifecycleTransition 进行生命周期挂钩的场景，取值范围包括“INSTANCE_LAUNCHING”和“INSTANCE_TERMINATING”
+                     * 获取进行生命周期挂钩的场景，取值范围如下:
+* INSTANCE_LAUNCHING: 扩容生命周期挂钩
+* INSTANCE_TERMINATING: 缩容生命周期挂钩
+                     * @return LifecycleTransition 进行生命周期挂钩的场景，取值范围如下:
+* INSTANCE_LAUNCHING: 扩容生命周期挂钩
+* INSTANCE_TERMINATING: 缩容生命周期挂钩
                      * 
                      */
                     std::string GetLifecycleTransition() const;
 
                     /**
-                     * 设置进行生命周期挂钩的场景，取值范围包括“INSTANCE_LAUNCHING”和“INSTANCE_TERMINATING”
-                     * @param _lifecycleTransition 进行生命周期挂钩的场景，取值范围包括“INSTANCE_LAUNCHING”和“INSTANCE_TERMINATING”
+                     * 设置进行生命周期挂钩的场景，取值范围如下:
+* INSTANCE_LAUNCHING: 扩容生命周期挂钩
+* INSTANCE_TERMINATING: 缩容生命周期挂钩
+                     * @param _lifecycleTransition 进行生命周期挂钩的场景，取值范围如下:
+* INSTANCE_LAUNCHING: 扩容生命周期挂钩
+* INSTANCE_TERMINATING: 缩容生命周期挂钩
                      * 
                      */
                     void SetLifecycleTransition(const std::string& _lifecycleTransition);
@@ -108,15 +116,23 @@ namespace TencentCloud
                     bool LifecycleTransitionHasBeenSet() const;
 
                     /**
-                     * 获取定义伸缩组在生命周期挂钩超时的情况下应采取的操作，取值范围是“CONTINUE”或“ABANDON”，默认值为“CONTINUE”
-                     * @return DefaultResult 定义伸缩组在生命周期挂钩超时的情况下应采取的操作，取值范围是“CONTINUE”或“ABANDON”，默认值为“CONTINUE”
+                     * 获取定义伸缩组在生命周期挂钩超时或 LifecycleCommand 执行失败时应采取的操作，取值范围是如下：
+* CONTINUE: 默认值，表示继续执行扩缩容活动
+* ABANDON: 针对扩容挂钩，挂钩超时或 LifecycleCommand 执行失败的 CVM 实例会直接释放或移出；而针对缩容挂钩，会继续执行缩容活动。
+                     * @return DefaultResult 定义伸缩组在生命周期挂钩超时或 LifecycleCommand 执行失败时应采取的操作，取值范围是如下：
+* CONTINUE: 默认值，表示继续执行扩缩容活动
+* ABANDON: 针对扩容挂钩，挂钩超时或 LifecycleCommand 执行失败的 CVM 实例会直接释放或移出；而针对缩容挂钩，会继续执行缩容活动。
                      * 
                      */
                     std::string GetDefaultResult() const;
 
                     /**
-                     * 设置定义伸缩组在生命周期挂钩超时的情况下应采取的操作，取值范围是“CONTINUE”或“ABANDON”，默认值为“CONTINUE”
-                     * @param _defaultResult 定义伸缩组在生命周期挂钩超时的情况下应采取的操作，取值范围是“CONTINUE”或“ABANDON”，默认值为“CONTINUE”
+                     * 设置定义伸缩组在生命周期挂钩超时或 LifecycleCommand 执行失败时应采取的操作，取值范围是如下：
+* CONTINUE: 默认值，表示继续执行扩缩容活动
+* ABANDON: 针对扩容挂钩，挂钩超时或 LifecycleCommand 执行失败的 CVM 实例会直接释放或移出；而针对缩容挂钩，会继续执行缩容活动。
+                     * @param _defaultResult 定义伸缩组在生命周期挂钩超时或 LifecycleCommand 执行失败时应采取的操作，取值范围是如下：
+* CONTINUE: 默认值，表示继续执行扩缩容活动
+* ABANDON: 针对扩容挂钩，挂钩超时或 LifecycleCommand 执行失败的 CVM 实例会直接释放或移出；而针对缩容挂钩，会继续执行缩容活动。
                      * 
                      */
                     void SetDefaultResult(const std::string& _defaultResult);
@@ -150,15 +166,15 @@ namespace TencentCloud
                     bool HeartbeatTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取弹性伸缩向通知目标发送的附加信息，配置通知时使用，默认值为空字符串""
-                     * @return NotificationMetadata 弹性伸缩向通知目标发送的附加信息，配置通知时使用，默认值为空字符串""
+                     * 获取弹性伸缩向通知目标发送的附加信息，配置通知时使用，默认值为空字符串。NotificationMetadata 和 LifecycleCommand参数互斥，二者不可同时指定。
+                     * @return NotificationMetadata 弹性伸缩向通知目标发送的附加信息，配置通知时使用，默认值为空字符串。NotificationMetadata 和 LifecycleCommand参数互斥，二者不可同时指定。
                      * 
                      */
                     std::string GetNotificationMetadata() const;
 
                     /**
-                     * 设置弹性伸缩向通知目标发送的附加信息，配置通知时使用，默认值为空字符串""
-                     * @param _notificationMetadata 弹性伸缩向通知目标发送的附加信息，配置通知时使用，默认值为空字符串""
+                     * 设置弹性伸缩向通知目标发送的附加信息，配置通知时使用，默认值为空字符串。NotificationMetadata 和 LifecycleCommand参数互斥，二者不可同时指定。
+                     * @param _notificationMetadata 弹性伸缩向通知目标发送的附加信息，配置通知时使用，默认值为空字符串。NotificationMetadata 和 LifecycleCommand参数互斥，二者不可同时指定。
                      * 
                      */
                     void SetNotificationMetadata(const std::string& _notificationMetadata);
@@ -213,15 +229,15 @@ namespace TencentCloud
                     bool LifecycleTransitionTypeHasBeenSet() const;
 
                     /**
-                     * 获取远程命令执行对象。NotificationTarget和LifecycleCommand参数互斥，二者不可同时指定。
-                     * @return LifecycleCommand 远程命令执行对象。NotificationTarget和LifecycleCommand参数互斥，二者不可同时指定。
+                     * 获取远程命令执行对象。通知参数 NotificationMetadata、NotificationTarget 与 LifecycleCommand 互斥，不可同时指定。
+                     * @return LifecycleCommand 远程命令执行对象。通知参数 NotificationMetadata、NotificationTarget 与 LifecycleCommand 互斥，不可同时指定。
                      * 
                      */
                     LifecycleCommand GetLifecycleCommand() const;
 
                     /**
-                     * 设置远程命令执行对象。NotificationTarget和LifecycleCommand参数互斥，二者不可同时指定。
-                     * @param _lifecycleCommand 远程命令执行对象。NotificationTarget和LifecycleCommand参数互斥，二者不可同时指定。
+                     * 设置远程命令执行对象。通知参数 NotificationMetadata、NotificationTarget 与 LifecycleCommand 互斥，不可同时指定。
+                     * @param _lifecycleCommand 远程命令执行对象。通知参数 NotificationMetadata、NotificationTarget 与 LifecycleCommand 互斥，不可同时指定。
                      * 
                      */
                     void SetLifecycleCommand(const LifecycleCommand& _lifecycleCommand);
@@ -236,25 +252,29 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 生命周期挂钩ID
+                     * 生命周期挂钩ID。可以通过调用接口 [DescribeLifecycleHooks](https://cloud.tencent.com/document/api/377/34452) ，取返回信息中的 LifecycleHookId 获取生命周期挂钩ID。
                      */
                     std::string m_lifecycleHookId;
                     bool m_lifecycleHookIdHasBeenSet;
 
                     /**
-                     * 生命周期挂钩名称
+                     * 生命周期挂钩名称。名称仅支持中文、英文、数字、下划线（_）、短横线（-）、小数点（.），最大长度不能超128个字符。
                      */
                     std::string m_lifecycleHookName;
                     bool m_lifecycleHookNameHasBeenSet;
 
                     /**
-                     * 进行生命周期挂钩的场景，取值范围包括“INSTANCE_LAUNCHING”和“INSTANCE_TERMINATING”
+                     * 进行生命周期挂钩的场景，取值范围如下:
+* INSTANCE_LAUNCHING: 扩容生命周期挂钩
+* INSTANCE_TERMINATING: 缩容生命周期挂钩
                      */
                     std::string m_lifecycleTransition;
                     bool m_lifecycleTransitionHasBeenSet;
 
                     /**
-                     * 定义伸缩组在生命周期挂钩超时的情况下应采取的操作，取值范围是“CONTINUE”或“ABANDON”，默认值为“CONTINUE”
+                     * 定义伸缩组在生命周期挂钩超时或 LifecycleCommand 执行失败时应采取的操作，取值范围是如下：
+* CONTINUE: 默认值，表示继续执行扩缩容活动
+* ABANDON: 针对扩容挂钩，挂钩超时或 LifecycleCommand 执行失败的 CVM 实例会直接释放或移出；而针对缩容挂钩，会继续执行缩容活动。
                      */
                     std::string m_defaultResult;
                     bool m_defaultResultHasBeenSet;
@@ -266,7 +286,7 @@ namespace TencentCloud
                     bool m_heartbeatTimeoutHasBeenSet;
 
                     /**
-                     * 弹性伸缩向通知目标发送的附加信息，配置通知时使用，默认值为空字符串""
+                     * 弹性伸缩向通知目标发送的附加信息，配置通知时使用，默认值为空字符串。NotificationMetadata 和 LifecycleCommand参数互斥，二者不可同时指定。
                      */
                     std::string m_notificationMetadata;
                     bool m_notificationMetadataHasBeenSet;
@@ -284,7 +304,7 @@ namespace TencentCloud
                     bool m_lifecycleTransitionTypeHasBeenSet;
 
                     /**
-                     * 远程命令执行对象。NotificationTarget和LifecycleCommand参数互斥，二者不可同时指定。
+                     * 远程命令执行对象。通知参数 NotificationMetadata、NotificationTarget 与 LifecycleCommand 互斥，不可同时指定。
                      */
                     LifecycleCommand m_lifecycleCommand;
                     bool m_lifecycleCommandHasBeenSet;

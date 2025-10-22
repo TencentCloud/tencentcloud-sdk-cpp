@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -488,6 +488,69 @@ namespace TencentCloud
                      */
                     bool SimilarQuestionNumHasBeenSet() const;
 
+                    /**
+                     * 获取返回问答关联的相似问,联动搜索,仅展示一条
+                     * @return SimilarQuestionTips 返回问答关联的相似问,联动搜索,仅展示一条
+                     * 
+                     */
+                    std::string GetSimilarQuestionTips() const;
+
+                    /**
+                     * 设置返回问答关联的相似问,联动搜索,仅展示一条
+                     * @param _similarQuestionTips 返回问答关联的相似问,联动搜索,仅展示一条
+                     * 
+                     */
+                    void SetSimilarQuestionTips(const std::string& _similarQuestionTips);
+
+                    /**
+                     * 判断参数 SimilarQuestionTips 是否已赋值
+                     * @return SimilarQuestionTips 是否已赋值
+                     * 
+                     */
+                    bool SimilarQuestionTipsHasBeenSet() const;
+
+                    /**
+                     * 获取问答是否停用，false:未停用，ture:已停用
+                     * @return IsDisabled 问答是否停用，false:未停用，ture:已停用
+                     * 
+                     */
+                    bool GetIsDisabled() const;
+
+                    /**
+                     * 设置问答是否停用，false:未停用，ture:已停用
+                     * @param _isDisabled 问答是否停用，false:未停用，ture:已停用
+                     * 
+                     */
+                    void SetIsDisabled(const bool& _isDisabled);
+
+                    /**
+                     * 判断参数 IsDisabled 是否已赋值
+                     * @return IsDisabled 是否已赋值
+                     * 
+                     */
+                    bool IsDisabledHasBeenSet() const;
+
+                    /**
+                     * 获取员工名称
+                     * @return StaffName 员工名称
+                     * 
+                     */
+                    std::string GetStaffName() const;
+
+                    /**
+                     * 设置员工名称
+                     * @param _staffName 员工名称
+                     * 
+                     */
+                    void SetStaffName(const std::string& _staffName);
+
+                    /**
+                     * 判断参数 StaffName 是否已赋值
+                     * @return StaffName 是否已赋值
+                     * 
+                     */
+                    bool StaffNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -615,6 +678,24 @@ namespace TencentCloud
                      */
                     uint64_t m_similarQuestionNum;
                     bool m_similarQuestionNumHasBeenSet;
+
+                    /**
+                     * 返回问答关联的相似问,联动搜索,仅展示一条
+                     */
+                    std::string m_similarQuestionTips;
+                    bool m_similarQuestionTipsHasBeenSet;
+
+                    /**
+                     * 问答是否停用，false:未停用，ture:已停用
+                     */
+                    bool m_isDisabled;
+                    bool m_isDisabledHasBeenSet;
+
+                    /**
+                     * 员工名称
+                     */
+                    std::string m_staffName;
+                    bool m_staffNameHasBeenSet;
 
                 };
             }

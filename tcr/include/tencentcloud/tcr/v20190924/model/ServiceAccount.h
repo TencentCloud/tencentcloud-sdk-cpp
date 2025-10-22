@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务级账号名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 服务级账号名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置服务级账号名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 服务级账号名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否禁用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Disable 是否禁用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetDisable() const;
 
                     /**
                      * 设置是否禁用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _disable 是否禁用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDisable(const bool& _disable);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpiresAt 过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetExpiresAt() const;
 
                     /**
                      * 设置过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expiresAt 过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpiresAt(const int64_t& _expiresAt);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Permissions 策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Permission> GetPermissions() const;
 
                     /**
                      * 设置策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _permissions 策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPermissions(const std::vector<Permission>& _permissions);
@@ -226,49 +198,42 @@ namespace TencentCloud
 
                     /**
                      * 服务级账号名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 是否禁用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_disable;
                     bool m_disableHasBeenSet;
 
                     /**
                      * 过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_expiresAt;
                     bool m_expiresAtHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
                      * 策略
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Permission> m_permissions;
                     bool m_permissionsHasBeenSet;

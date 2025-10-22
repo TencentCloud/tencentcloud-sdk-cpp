@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,57 +47,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Ckafka 的 Vip
-                     * @return Vip Ckafka 的 Vip
-                     * 
-                     */
-                    std::string GetVip() const;
-
-                    /**
-                     * 设置Ckafka 的 Vip
-                     * @param _vip Ckafka 的 Vip
-                     * 
-                     */
-                    void SetVip(const std::string& _vip);
-
-                    /**
-                     * 判断参数 Vip 是否已赋值
-                     * @return Vip 是否已赋值
-                     * 
-                     */
-                    bool VipHasBeenSet() const;
-
-                    /**
-                     * 获取Ckafka 的 Vport
-                     * @return Vport Ckafka 的 Vport
-                     * 
-                     */
-                    std::string GetVport() const;
-
-                    /**
-                     * 设置Ckafka 的 Vport
-                     * @param _vport Ckafka 的 Vport
-                     * 
-                     */
-                    void SetVport(const std::string& _vport);
-
-                    /**
-                     * 判断参数 Vport 是否已赋值
-                     * @return Vport 是否已赋值
-                     * 
-                     */
-                    bool VportHasBeenSet() const;
-
-                    /**
-                     * 获取Ckafka 的 InstanceId
-                     * @return InstanceId Ckafka 的 InstanceId
+                     * 获取Ckafka 的 InstanceId。
+- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取实例id。
+- 通过 [创建实例](https://cloud.tencent.com/document/product/597/53207) 获取实例id。
+                     * @return InstanceId Ckafka 的 InstanceId。
+- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取实例id。
+- 通过 [创建实例](https://cloud.tencent.com/document/product/597/53207) 获取实例id。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置Ckafka 的 InstanceId
-                     * @param _instanceId Ckafka 的 InstanceId
+                     * 设置Ckafka 的 InstanceId。
+- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取实例id。
+- 通过 [创建实例](https://cloud.tencent.com/document/product/597/53207) 获取实例id。
+                     * @param _instanceId Ckafka 的 InstanceId。
+- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取实例id。
+- 通过 [创建实例](https://cloud.tencent.com/document/product/597/53207) 获取实例id。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -110,15 +76,114 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取Ckafka 的 InstanceName
-                     * @return InstanceName Ckafka 的 InstanceName
+                     * 获取Ckafka 的 TopicName。
+- 通过 [创建 Topic](https://cloud.tencent.com/document/product/597/73566) 获得TopicName。
+- 通过 [获取主题列表](https://cloud.tencent.com/document/product/597/40847) 获得TopicName。
+                     * @return TopicName Ckafka 的 TopicName。
+- 通过 [创建 Topic](https://cloud.tencent.com/document/product/597/73566) 获得TopicName。
+- 通过 [获取主题列表](https://cloud.tencent.com/document/product/597/40847) 获得TopicName。
+                     * 
+                     */
+                    std::string GetTopicName() const;
+
+                    /**
+                     * 设置Ckafka 的 TopicName。
+- 通过 [创建 Topic](https://cloud.tencent.com/document/product/597/73566) 获得TopicName。
+- 通过 [获取主题列表](https://cloud.tencent.com/document/product/597/40847) 获得TopicName。
+                     * @param _topicName Ckafka 的 TopicName。
+- 通过 [创建 Topic](https://cloud.tencent.com/document/product/597/73566) 获得TopicName。
+- 通过 [获取主题列表](https://cloud.tencent.com/document/product/597/40847) 获得TopicName。
+                     * 
+                     */
+                    void SetTopicName(const std::string& _topicName);
+
+                    /**
+                     * 判断参数 TopicName 是否已赋值
+                     * @return TopicName 是否已赋值
+                     * 
+                     */
+                    bool TopicNameHasBeenSet() const;
+
+                    /**
+                     * 获取Ckafka 的 Vip。
+- 通过 [获取实例属性 ](https://cloud.tencent.com/document/product/597/40836) 获取vip信息。
+- 如果是通过 角色ARN 方式创建投递任务，则Vip字段可为空。
+                     * @return Vip Ckafka 的 Vip。
+- 通过 [获取实例属性 ](https://cloud.tencent.com/document/product/597/40836) 获取vip信息。
+- 如果是通过 角色ARN 方式创建投递任务，则Vip字段可为空。
+                     * 
+                     */
+                    std::string GetVip() const;
+
+                    /**
+                     * 设置Ckafka 的 Vip。
+- 通过 [获取实例属性 ](https://cloud.tencent.com/document/product/597/40836) 获取vip信息。
+- 如果是通过 角色ARN 方式创建投递任务，则Vip字段可为空。
+                     * @param _vip Ckafka 的 Vip。
+- 通过 [获取实例属性 ](https://cloud.tencent.com/document/product/597/40836) 获取vip信息。
+- 如果是通过 角色ARN 方式创建投递任务，则Vip字段可为空。
+                     * 
+                     */
+                    void SetVip(const std::string& _vip);
+
+                    /**
+                     * 判断参数 Vip 是否已赋值
+                     * @return Vip 是否已赋值
+                     * 
+                     */
+                    bool VipHasBeenSet() const;
+
+                    /**
+                     * 获取Ckafka 的 Vport。
+- 通过 [获取实例属性 ](https://cloud.tencent.com/document/product/597/40836) 获取vip port信息。
+- 如果是通过 角色ARN 方式创建投递任务，则Vport字段可为空。
+                     * @return Vport Ckafka 的 Vport。
+- 通过 [获取实例属性 ](https://cloud.tencent.com/document/product/597/40836) 获取vip port信息。
+- 如果是通过 角色ARN 方式创建投递任务，则Vport字段可为空。
+                     * 
+                     */
+                    std::string GetVport() const;
+
+                    /**
+                     * 设置Ckafka 的 Vport。
+- 通过 [获取实例属性 ](https://cloud.tencent.com/document/product/597/40836) 获取vip port信息。
+- 如果是通过 角色ARN 方式创建投递任务，则Vport字段可为空。
+                     * @param _vport Ckafka 的 Vport。
+- 通过 [获取实例属性 ](https://cloud.tencent.com/document/product/597/40836) 获取vip port信息。
+- 如果是通过 角色ARN 方式创建投递任务，则Vport字段可为空。
+                     * 
+                     */
+                    void SetVport(const std::string& _vport);
+
+                    /**
+                     * 判断参数 Vport 是否已赋值
+                     * @return Vport 是否已赋值
+                     * 
+                     */
+                    bool VportHasBeenSet() const;
+
+                    /**
+                     * 获取Ckafka 的 InstanceName。
+- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取InstanceName。
+- 通过 [创建实例](https://cloud.tencent.com/document/product/597/53207) 获取InstanceName。
+- 如果是通过 角色ARN 方式创建投递任务，则InstanceName字段可为空。
+                     * @return InstanceName Ckafka 的 InstanceName。
+- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取InstanceName。
+- 通过 [创建实例](https://cloud.tencent.com/document/product/597/53207) 获取InstanceName。
+- 如果是通过 角色ARN 方式创建投递任务，则InstanceName字段可为空。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置Ckafka 的 InstanceName
-                     * @param _instanceName Ckafka 的 InstanceName
+                     * 设置Ckafka 的 InstanceName。
+- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取InstanceName。
+- 通过 [创建实例](https://cloud.tencent.com/document/product/597/53207) 获取InstanceName。
+- 如果是通过 角色ARN 方式创建投递任务，则InstanceName字段可为空。
+                     * @param _instanceName Ckafka 的 InstanceName。
+- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取InstanceName。
+- 通过 [创建实例](https://cloud.tencent.com/document/product/597/53207) 获取InstanceName。
+- 如果是通过 角色ARN 方式创建投递任务，则InstanceName字段可为空。
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -131,15 +196,27 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取Ckafka 的 TopicId
-                     * @return TopicId Ckafka 的 TopicId
+                     * 获取Ckafka 的 TopicId。
+- 通过 [创建 Topic](https://cloud.tencent.com/document/product/597/73566) 获得TopicId。
+- 通过 [获取主题列表](https://cloud.tencent.com/document/product/597/40847) 获得TopicId。
+- 如果是通过 角色ARN 方式创建投递任务，则TopicId字段可为空。
+                     * @return TopicId Ckafka 的 TopicId。
+- 通过 [创建 Topic](https://cloud.tencent.com/document/product/597/73566) 获得TopicId。
+- 通过 [获取主题列表](https://cloud.tencent.com/document/product/597/40847) 获得TopicId。
+- 如果是通过 角色ARN 方式创建投递任务，则TopicId字段可为空。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置Ckafka 的 TopicId
-                     * @param _topicId Ckafka 的 TopicId
+                     * 设置Ckafka 的 TopicId。
+- 通过 [创建 Topic](https://cloud.tencent.com/document/product/597/73566) 获得TopicId。
+- 通过 [获取主题列表](https://cloud.tencent.com/document/product/597/40847) 获得TopicId。
+- 如果是通过 角色ARN 方式创建投递任务，则TopicId字段可为空。
+                     * @param _topicId Ckafka 的 TopicId。
+- 通过 [创建 Topic](https://cloud.tencent.com/document/product/597/73566) 获得TopicId。
+- 通过 [获取主题列表](https://cloud.tencent.com/document/product/597/40847) 获得TopicId。
+- 如果是通过 角色ARN 方式创建投递任务，则TopicId字段可为空。
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -151,64 +228,57 @@ namespace TencentCloud
                      */
                     bool TopicIdHasBeenSet() const;
 
-                    /**
-                     * 获取Ckafka 的 TopicName
-                     * @return TopicName Ckafka 的 TopicName
-                     * 
-                     */
-                    std::string GetTopicName() const;
-
-                    /**
-                     * 设置Ckafka 的 TopicName
-                     * @param _topicName Ckafka 的 TopicName
-                     * 
-                     */
-                    void SetTopicName(const std::string& _topicName);
-
-                    /**
-                     * 判断参数 TopicName 是否已赋值
-                     * @return TopicName 是否已赋值
-                     * 
-                     */
-                    bool TopicNameHasBeenSet() const;
-
                 private:
 
                     /**
-                     * Ckafka 的 Vip
-                     */
-                    std::string m_vip;
-                    bool m_vipHasBeenSet;
-
-                    /**
-                     * Ckafka 的 Vport
-                     */
-                    std::string m_vport;
-                    bool m_vportHasBeenSet;
-
-                    /**
-                     * Ckafka 的 InstanceId
+                     * Ckafka 的 InstanceId。
+- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取实例id。
+- 通过 [创建实例](https://cloud.tencent.com/document/product/597/53207) 获取实例id。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * Ckafka 的 InstanceName
+                     * Ckafka 的 TopicName。
+- 通过 [创建 Topic](https://cloud.tencent.com/document/product/597/73566) 获得TopicName。
+- 通过 [获取主题列表](https://cloud.tencent.com/document/product/597/40847) 获得TopicName。
+                     */
+                    std::string m_topicName;
+                    bool m_topicNameHasBeenSet;
+
+                    /**
+                     * Ckafka 的 Vip。
+- 通过 [获取实例属性 ](https://cloud.tencent.com/document/product/597/40836) 获取vip信息。
+- 如果是通过 角色ARN 方式创建投递任务，则Vip字段可为空。
+                     */
+                    std::string m_vip;
+                    bool m_vipHasBeenSet;
+
+                    /**
+                     * Ckafka 的 Vport。
+- 通过 [获取实例属性 ](https://cloud.tencent.com/document/product/597/40836) 获取vip port信息。
+- 如果是通过 角色ARN 方式创建投递任务，则Vport字段可为空。
+                     */
+                    std::string m_vport;
+                    bool m_vportHasBeenSet;
+
+                    /**
+                     * Ckafka 的 InstanceName。
+- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取InstanceName。
+- 通过 [创建实例](https://cloud.tencent.com/document/product/597/53207) 获取InstanceName。
+- 如果是通过 角色ARN 方式创建投递任务，则InstanceName字段可为空。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * Ckafka 的 TopicId
+                     * Ckafka 的 TopicId。
+- 通过 [创建 Topic](https://cloud.tencent.com/document/product/597/73566) 获得TopicId。
+- 通过 [获取主题列表](https://cloud.tencent.com/document/product/597/40847) 获得TopicId。
+- 如果是通过 角色ARN 方式创建投递任务，则TopicId字段可为空。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
-
-                    /**
-                     * Ckafka 的 TopicName
-                     */
-                    std::string m_topicName;
-                    bool m_topicNameHasBeenSet;
 
                 };
             }

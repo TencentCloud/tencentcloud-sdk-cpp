@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -371,6 +371,8 @@ namespace TencentCloud
 
                 /**
                  *创建自定义DNS Host
+域名在“正常状态”下可创建，域名如果“未实名”则无法创建，账户如果未实名则无法创建。
+默认每个域名 自定义DNS Host 数量不超过10个
                  * @param req CreateCustomDnsHostRequest
                  * @return CreateCustomDnsHostOutcome
                  */
@@ -388,7 +390,7 @@ namespace TencentCloud
                 CreateDomainBatchOutcomeCallable CreateDomainBatchCallable(const Model::CreateDomainBatchRequest& request);
 
                 /**
-                 *创建赎回订单。
+                 *创建赎回订单。需要域名状态为：RedemptionPending：赎回期
                  * @param req CreateDomainRedemptionRequest
                  * @return CreateDomainRedemptionOutcome
                  */
@@ -425,6 +427,7 @@ namespace TencentCloud
 
                 /**
                  *删除自定义DNS Host
+仅能删除域名在“正常状态”下，已经创建过的自定义Host，域名如果“未实名”或账户未实名，则无法操作
                  * @param req DeleteCustomDnsHostRequest
                  * @return DeleteCustomDnsHostOutcome
                  */
@@ -542,6 +545,7 @@ namespace TencentCloud
 
                 /**
                  *查询自定义DNS Host
+当前域名在任意状态下均可获取(根据域名当前状态，不一定能获取到具体数据)
                  * @param req DescribeCustomDnsHostSetRequest
                  * @return DescribeCustomDnsHostSetOutcome
                  */
@@ -686,6 +690,7 @@ namespace TencentCloud
 
                 /**
                  *修改自定义DNS Host
+域名在“正常状态”下可修改已经存在的自定义DNS Host，域名如果“未实名”则无法修改，账户如果未实名则无法修改。 默认每个域名 自定义DNS Host 数量不超过10个
                  * @param req ModifyCustomDnsHostRequest
                  * @return ModifyCustomDnsHostOutcome
                  */
@@ -694,7 +699,7 @@ namespace TencentCloud
                 ModifyCustomDnsHostOutcomeCallable ModifyCustomDnsHostCallable(const Model::ModifyCustomDnsHostRequest& request);
 
                 /**
-                 *本接口 ( ModifyDomainDNSBatch) 用于批量域名 DNS 修改 。
+                 *本接口 ( ModifyDomainDNSBatch) 用于批量域名 DNS 修改 。
                  * @param req ModifyDomainDNSBatchRequest
                  * @return ModifyDomainDNSBatchOutcome
                  */
@@ -721,7 +726,7 @@ namespace TencentCloud
                 ModifyIntlCustomDnsHostOutcomeCallable ModifyIntlCustomDnsHostCallable(const Model::ModifyIntlCustomDnsHostRequest& request);
 
                 /**
-                 *修改模板信息
+                 *修改模板信息,仅能修改模板未通过审核的，即[模板详情](https://cloud.tencent.com/document/product/242/50018)中：AuditStatus不为Approved状态的
                  * @param req ModifyTemplateRequest
                  * @return ModifyTemplateOutcome
                  */
@@ -758,6 +763,7 @@ namespace TencentCloud
 
                 /**
                  *本接口 ( SetDomainAutoRenew ) 用于设置域名自动续费。
+当前操作暂不受域名状态限制
                  * @param req SetDomainAutoRenewRequest
                  * @return SetDomainAutoRenewOutcome
                  */
@@ -766,7 +772,7 @@ namespace TencentCloud
                 SetDomainAutoRenewOutcomeCallable SetDomainAutoRenewCallable(const Model::SetDomainAutoRenewRequest& request);
 
                 /**
-                 *同步自定义DNS Host
+                 *同步自定义DNS Host，将域名已经设置的host配置数据从注册局同步下来
                  * @param req SyncCustomDnsHostRequest
                  * @return SyncCustomDnsHostOutcome
                  */

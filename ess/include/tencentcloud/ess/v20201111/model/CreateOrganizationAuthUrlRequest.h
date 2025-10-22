@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,16 +68,14 @@ namespace TencentCloud
                      * 获取指定授权方式 支持多选:
 
 <ul>
-<li><strong>1</strong>:上传授权书方式</li>
 <li><strong>2</strong>: 法人授权方式</li>
-<li><strong>3</strong>: 法人身份认证方式</li>
+<li><strong>5</strong>: 授权书+对公打款方式</li>
 </ul>
                      * @return AuthorizationTypes 指定授权方式 支持多选:
 
 <ul>
-<li><strong>1</strong>:上传授权书方式</li>
 <li><strong>2</strong>: 法人授权方式</li>
-<li><strong>3</strong>: 法人身份认证方式</li>
+<li><strong>5</strong>: 授权书+对公打款方式</li>
 </ul>
                      * 
                      */
@@ -87,16 +85,14 @@ namespace TencentCloud
                      * 设置指定授权方式 支持多选:
 
 <ul>
-<li><strong>1</strong>:上传授权书方式</li>
 <li><strong>2</strong>: 法人授权方式</li>
-<li><strong>3</strong>: 法人身份认证方式</li>
+<li><strong>5</strong>: 授权书+对公打款方式</li>
 </ul>
                      * @param _authorizationTypes 指定授权方式 支持多选:
 
 <ul>
-<li><strong>1</strong>:上传授权书方式</li>
 <li><strong>2</strong>: 法人授权方式</li>
-<li><strong>3</strong>: 法人身份认证方式</li>
+<li><strong>5</strong>: 授权书+对公打款方式</li>
 </ul>
                      * 
                      */
@@ -308,13 +304,13 @@ namespace TencentCloud
                     /**
                      * 获取认证人证件类型， 支持以下类型
 <ul><li><b>ID_CARD</b> : 中国大陆居民身份证  (默认值)</li>
-<li><b>HONGKONG_AND_MACAO</b>  : 港澳居民来往内地通行证</li>
-<li><b>HONGKONG_MACAO_AND_TAIWAN</b>  : 港澳台居民居住证(格式同居民身份证)</li></ul>
+<li><b>HONGKONG_AND_MACAO</b>  : 中国港澳居民来往内地通行证</li>
+<li><b>HONGKONG_MACAO_AND_TAIWAN</b>  : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>
 
                      * @return AdminIdCardType 认证人证件类型， 支持以下类型
 <ul><li><b>ID_CARD</b> : 中国大陆居民身份证  (默认值)</li>
-<li><b>HONGKONG_AND_MACAO</b>  : 港澳居民来往内地通行证</li>
-<li><b>HONGKONG_MACAO_AND_TAIWAN</b>  : 港澳台居民居住证(格式同居民身份证)</li></ul>
+<li><b>HONGKONG_AND_MACAO</b>  : 中国港澳居民来往内地通行证</li>
+<li><b>HONGKONG_MACAO_AND_TAIWAN</b>  : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>
 
                      * 
                      */
@@ -323,13 +319,13 @@ namespace TencentCloud
                     /**
                      * 设置认证人证件类型， 支持以下类型
 <ul><li><b>ID_CARD</b> : 中国大陆居民身份证  (默认值)</li>
-<li><b>HONGKONG_AND_MACAO</b>  : 港澳居民来往内地通行证</li>
-<li><b>HONGKONG_MACAO_AND_TAIWAN</b>  : 港澳台居民居住证(格式同居民身份证)</li></ul>
+<li><b>HONGKONG_AND_MACAO</b>  : 中国港澳居民来往内地通行证</li>
+<li><b>HONGKONG_MACAO_AND_TAIWAN</b>  : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>
 
                      * @param _adminIdCardType 认证人证件类型， 支持以下类型
 <ul><li><b>ID_CARD</b> : 中国大陆居民身份证  (默认值)</li>
-<li><b>HONGKONG_AND_MACAO</b>  : 港澳居民来往内地通行证</li>
-<li><b>HONGKONG_MACAO_AND_TAIWAN</b>  : 港澳台居民居住证(格式同居民身份证)</li></ul>
+<li><b>HONGKONG_AND_MACAO</b>  : 中国港澳居民来往内地通行证</li>
+<li><b>HONGKONG_MACAO_AND_TAIWAN</b>  : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>
 
                      * 
                      */
@@ -365,14 +361,22 @@ namespace TencentCloud
 
                     /**
                      * 获取对方打开链接认证时，法人姓名是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+p.s. 仅在法人姓名不为空时有效
                      * @return LegalNameSame 对方打开链接认证时，法人姓名是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+p.s. 仅在法人姓名不为空时有效
                      * 
                      */
                     bool GetLegalNameSame() const;
 
                     /**
                      * 设置对方打开链接认证时，法人姓名是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+p.s. 仅在法人姓名不为空时有效
                      * @param _legalNameSame 对方打开链接认证时，法人姓名是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+p.s. 仅在法人姓名不为空时有效
                      * 
                      */
                     void SetLegalNameSame(const bool& _legalNameSame);
@@ -386,14 +390,22 @@ namespace TencentCloud
 
                     /**
                      * 获取对方打开链接认证时，认证人姓名是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+p.s. 仅在认证人姓名不为空时有效
                      * @return AdminNameSame 对方打开链接认证时，认证人姓名是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+p.s. 仅在认证人姓名不为空时有效
                      * 
                      */
                     bool GetAdminNameSame() const;
 
                     /**
                      * 设置对方打开链接认证时，认证人姓名是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+p.s. 仅在认证人姓名不为空时有效
                      * @param _adminNameSame 对方打开链接认证时，认证人姓名是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+p.s. 仅在认证人姓名不为空时有效
                      * 
                      */
                     void SetAdminNameSame(const bool& _adminNameSame);
@@ -407,14 +419,26 @@ namespace TencentCloud
 
                     /**
                      * 获取对方打开链接认证时，认证人居民身份证件号是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+p.s. 仅在认证人身份证号不为空时有效
+
                      * @return AdminIdCardNumberSame 对方打开链接认证时，认证人居民身份证件号是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+p.s. 仅在认证人身份证号不为空时有效
+
                      * 
                      */
                     bool GetAdminIdCardNumberSame() const;
 
                     /**
                      * 设置对方打开链接认证时，认证人居民身份证件号是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+p.s. 仅在认证人身份证号不为空时有效
+
                      * @param _adminIdCardNumberSame 对方打开链接认证时，认证人居民身份证件号是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+p.s. 仅在认证人身份证号不为空时有效
+
                      * 
                      */
                     void SetAdminIdCardNumberSame(const bool& _adminIdCardNumberSame);
@@ -431,10 +455,14 @@ namespace TencentCloud
 <li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li>
 <li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li>
 </ul>
+
+p.s. 仅在认证人手机号不为空时有效
                      * @return AdminMobileSame 对方打开链接认证时，认证人手机号是否要与接口传递上来的保持一致。<ul>
 <li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li>
 <li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li>
 </ul>
+
+p.s. 仅在认证人手机号不为空时有效
                      * 
                      */
                     bool GetAdminMobileSame() const;
@@ -444,10 +472,14 @@ namespace TencentCloud
 <li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li>
 <li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li>
 </ul>
+
+p.s. 仅在认证人手机号不为空时有效
                      * @param _adminMobileSame 对方打开链接认证时，认证人手机号是否要与接口传递上来的保持一致。<ul>
 <li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li>
 <li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li>
 </ul>
+
+p.s. 仅在认证人手机号不为空时有效
                      * 
                      */
                     void SetAdminMobileSame(const bool& _adminMobileSame);
@@ -461,14 +493,26 @@ namespace TencentCloud
 
                     /**
                      * 获取对方打开链接认证时，企业名称是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+
+p.s. 仅在企业名称不为空时有效
                      * @return OrganizationNameSame 对方打开链接认证时，企业名称是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+
+p.s. 仅在企业名称不为空时有效
                      * 
                      */
                     bool GetOrganizationNameSame() const;
 
                     /**
                      * 设置对方打开链接认证时，企业名称是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+
+p.s. 仅在企业名称不为空时有效
                      * @param _organizationNameSame 对方打开链接认证时，企业名称是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+
+p.s. 仅在企业名称不为空时有效
                      * 
                      */
                     void SetOrganizationNameSame(const bool& _organizationNameSame);
@@ -558,6 +602,171 @@ namespace TencentCloud
                      */
                     bool EndpointHasBeenSet() const;
 
+                    /**
+                     * 获取指定企业初始化引导，现在可以配置如下的选项：
+
+<b>1</b>: 启用此选项后，在企业认证的最终步骤将添加创建印章的引导。如下图的位置
+![image](https://qcloudimg.tencent-cloud.cn/raw/88e0b45095a5c589de8995462ad755dc.jpg)
+                     * @return Initialization 指定企业初始化引导，现在可以配置如下的选项：
+
+<b>1</b>: 启用此选项后，在企业认证的最终步骤将添加创建印章的引导。如下图的位置
+![image](https://qcloudimg.tencent-cloud.cn/raw/88e0b45095a5c589de8995462ad755dc.jpg)
+                     * 
+                     */
+                    std::vector<uint64_t> GetInitialization() const;
+
+                    /**
+                     * 设置指定企业初始化引导，现在可以配置如下的选项：
+
+<b>1</b>: 启用此选项后，在企业认证的最终步骤将添加创建印章的引导。如下图的位置
+![image](https://qcloudimg.tencent-cloud.cn/raw/88e0b45095a5c589de8995462ad755dc.jpg)
+                     * @param _initialization 指定企业初始化引导，现在可以配置如下的选项：
+
+<b>1</b>: 启用此选项后，在企业认证的最终步骤将添加创建印章的引导。如下图的位置
+![image](https://qcloudimg.tencent-cloud.cn/raw/88e0b45095a5c589de8995462ad755dc.jpg)
+                     * 
+                     */
+                    void SetInitialization(const std::vector<uint64_t>& _initialization);
+
+                    /**
+                     * 判断参数 Initialization 是否已赋值
+                     * @return Initialization 是否已赋值
+                     * 
+                     */
+                    bool InitializationHasBeenSet() const;
+
+                    /**
+                     * 获取授权书(PNG或JPG或PDF) base64格式, 大小不超过8M 。 
+授权书可以通过接口[生成企业授权书](https://qian.tencent.com/developers/companyApis/organizations/CreateOrganizationAuthFile) 来获得。
+p.s. 如果上传授权书 ，需遵循以下条件 
+1.  超管的信息（超管姓名，超管手机号）必须为必填参数。
+2.  认证方式AuthorizationTypes必须只能是上传授权书方式 
+                     * @return PowerOfAttorneys 授权书(PNG或JPG或PDF) base64格式, 大小不超过8M 。 
+授权书可以通过接口[生成企业授权书](https://qian.tencent.com/developers/companyApis/organizations/CreateOrganizationAuthFile) 来获得。
+p.s. 如果上传授权书 ，需遵循以下条件 
+1.  超管的信息（超管姓名，超管手机号）必须为必填参数。
+2.  认证方式AuthorizationTypes必须只能是上传授权书方式 
+                     * 
+                     */
+                    std::vector<std::string> GetPowerOfAttorneys() const;
+
+                    /**
+                     * 设置授权书(PNG或JPG或PDF) base64格式, 大小不超过8M 。 
+授权书可以通过接口[生成企业授权书](https://qian.tencent.com/developers/companyApis/organizations/CreateOrganizationAuthFile) 来获得。
+p.s. 如果上传授权书 ，需遵循以下条件 
+1.  超管的信息（超管姓名，超管手机号）必须为必填参数。
+2.  认证方式AuthorizationTypes必须只能是上传授权书方式 
+                     * @param _powerOfAttorneys 授权书(PNG或JPG或PDF) base64格式, 大小不超过8M 。 
+授权书可以通过接口[生成企业授权书](https://qian.tencent.com/developers/companyApis/organizations/CreateOrganizationAuthFile) 来获得。
+p.s. 如果上传授权书 ，需遵循以下条件 
+1.  超管的信息（超管姓名，超管手机号）必须为必填参数。
+2.  认证方式AuthorizationTypes必须只能是上传授权书方式 
+                     * 
+                     */
+                    void SetPowerOfAttorneys(const std::vector<std::string>& _powerOfAttorneys);
+
+                    /**
+                     * 判断参数 PowerOfAttorneys 是否已赋值
+                     * @return PowerOfAttorneys 是否已赋值
+                     * 
+                     */
+                    bool PowerOfAttorneysHasBeenSet() const;
+
+                    /**
+                     * 获取调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 4096长度。
+
+在. 企业引导企业实名认证后回调中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的<a href="https://qian.tencent.com/developers/company/callback_types_staffs" target="_blank">回调通知</a>模块。
+                     * @return UserData 调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 4096长度。
+
+在. 企业引导企业实名认证后回调中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的<a href="https://qian.tencent.com/developers/company/callback_types_staffs" target="_blank">回调通知</a>模块。
+                     * 
+                     */
+                    std::string GetUserData() const;
+
+                    /**
+                     * 设置调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 4096长度。
+
+在. 企业引导企业实名认证后回调中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的<a href="https://qian.tencent.com/developers/company/callback_types_staffs" target="_blank">回调通知</a>模块。
+                     * @param _userData 调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 4096长度。
+
+在. 企业引导企业实名认证后回调中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的<a href="https://qian.tencent.com/developers/company/callback_types_staffs" target="_blank">回调通知</a>模块。
+                     * 
+                     */
+                    void SetUserData(const std::string& _userData);
+
+                    /**
+                     * 判断参数 UserData 是否已赋值
+                     * @return UserData 是否已赋值
+                     * 
+                     */
+                    bool UserDataHasBeenSet() const;
+
+                    /**
+                     * 获取组织机构对公打款账号，账户名跟企业名称一致。
+
+p.s.
+只有认证方式是授权书+对公打款时才生效。
+                     * @return BankAccountNumber 组织机构对公打款账号，账户名跟企业名称一致。
+
+p.s.
+只有认证方式是授权书+对公打款时才生效。
+                     * 
+                     */
+                    std::string GetBankAccountNumber() const;
+
+                    /**
+                     * 设置组织机构对公打款账号，账户名跟企业名称一致。
+
+p.s.
+只有认证方式是授权书+对公打款时才生效。
+                     * @param _bankAccountNumber 组织机构对公打款账号，账户名跟企业名称一致。
+
+p.s.
+只有认证方式是授权书+对公打款时才生效。
+                     * 
+                     */
+                    void SetBankAccountNumber(const std::string& _bankAccountNumber);
+
+                    /**
+                     * 判断参数 BankAccountNumber 是否已赋值
+                     * @return BankAccountNumber 是否已赋值
+                     * 
+                     */
+                    bool BankAccountNumberHasBeenSet() const;
+
+                    /**
+                     * 获取对方打开链接认证时，对公打款账号是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+
+p.s. 仅在对公打款不为空时有效
+                     * @return BankAccountNumberSame 对方打开链接认证时，对公打款账号是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+
+p.s. 仅在对公打款不为空时有效
+                     * 
+                     */
+                    bool GetBankAccountNumberSame() const;
+
+                    /**
+                     * 设置对方打开链接认证时，对公打款账号是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+
+p.s. 仅在对公打款不为空时有效
+                     * @param _bankAccountNumberSame 对方打开链接认证时，对公打款账号是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+
+p.s. 仅在对公打款不为空时有效
+                     * 
+                     */
+                    void SetBankAccountNumberSame(const bool& _bankAccountNumberSame);
+
+                    /**
+                     * 判断参数 BankAccountNumberSame 是否已赋值
+                     * @return BankAccountNumberSame 是否已赋值
+                     * 
+                     */
+                    bool BankAccountNumberSameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -570,9 +779,8 @@ namespace TencentCloud
                      * 指定授权方式 支持多选:
 
 <ul>
-<li><strong>1</strong>:上传授权书方式</li>
 <li><strong>2</strong>: 法人授权方式</li>
-<li><strong>3</strong>: 法人身份认证方式</li>
+<li><strong>5</strong>: 授权书+对公打款方式</li>
 </ul>
                      */
                     std::vector<uint64_t> m_authorizationTypes;
@@ -636,8 +844,8 @@ namespace TencentCloud
                     /**
                      * 认证人证件类型， 支持以下类型
 <ul><li><b>ID_CARD</b> : 中国大陆居民身份证  (默认值)</li>
-<li><b>HONGKONG_AND_MACAO</b>  : 港澳居民来往内地通行证</li>
-<li><b>HONGKONG_MACAO_AND_TAIWAN</b>  : 港澳台居民居住证(格式同居民身份证)</li></ul>
+<li><b>HONGKONG_AND_MACAO</b>  : 中国港澳居民来往内地通行证</li>
+<li><b>HONGKONG_MACAO_AND_TAIWAN</b>  : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>
 
                      */
                     std::string m_adminIdCardType;
@@ -651,18 +859,25 @@ namespace TencentCloud
 
                     /**
                      * 对方打开链接认证时，法人姓名是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+p.s. 仅在法人姓名不为空时有效
                      */
                     bool m_legalNameSame;
                     bool m_legalNameSameHasBeenSet;
 
                     /**
                      * 对方打开链接认证时，认证人姓名是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+p.s. 仅在认证人姓名不为空时有效
                      */
                     bool m_adminNameSame;
                     bool m_adminNameSameHasBeenSet;
 
                     /**
                      * 对方打开链接认证时，认证人居民身份证件号是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+p.s. 仅在认证人身份证号不为空时有效
+
                      */
                     bool m_adminIdCardNumberSame;
                     bool m_adminIdCardNumberSameHasBeenSet;
@@ -672,12 +887,17 @@ namespace TencentCloud
 <li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li>
 <li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li>
 </ul>
+
+p.s. 仅在认证人手机号不为空时有效
                      */
                     bool m_adminMobileSame;
                     bool m_adminMobileSameHasBeenSet;
 
                     /**
                      * 对方打开链接认证时，企业名称是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+
+p.s. 仅在企业名称不为空时有效
                      */
                     bool m_organizationNameSame;
                     bool m_organizationNameSameHasBeenSet;
@@ -702,6 +922,51 @@ namespace TencentCloud
                      */
                     std::string m_endpoint;
                     bool m_endpointHasBeenSet;
+
+                    /**
+                     * 指定企业初始化引导，现在可以配置如下的选项：
+
+<b>1</b>: 启用此选项后，在企业认证的最终步骤将添加创建印章的引导。如下图的位置
+![image](https://qcloudimg.tencent-cloud.cn/raw/88e0b45095a5c589de8995462ad755dc.jpg)
+                     */
+                    std::vector<uint64_t> m_initialization;
+                    bool m_initializationHasBeenSet;
+
+                    /**
+                     * 授权书(PNG或JPG或PDF) base64格式, 大小不超过8M 。 
+授权书可以通过接口[生成企业授权书](https://qian.tencent.com/developers/companyApis/organizations/CreateOrganizationAuthFile) 来获得。
+p.s. 如果上传授权书 ，需遵循以下条件 
+1.  超管的信息（超管姓名，超管手机号）必须为必填参数。
+2.  认证方式AuthorizationTypes必须只能是上传授权书方式 
+                     */
+                    std::vector<std::string> m_powerOfAttorneys;
+                    bool m_powerOfAttorneysHasBeenSet;
+
+                    /**
+                     * 调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 4096长度。
+
+在. 企业引导企业实名认证后回调中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的<a href="https://qian.tencent.com/developers/company/callback_types_staffs" target="_blank">回调通知</a>模块。
+                     */
+                    std::string m_userData;
+                    bool m_userDataHasBeenSet;
+
+                    /**
+                     * 组织机构对公打款账号，账户名跟企业名称一致。
+
+p.s.
+只有认证方式是授权书+对公打款时才生效。
+                     */
+                    std::string m_bankAccountNumber;
+                    bool m_bankAccountNumberHasBeenSet;
+
+                    /**
+                     * 对方打开链接认证时，对公打款账号是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+
+p.s. 仅在对公打款不为空时有效
+                     */
+                    bool m_bankAccountNumberSame;
+                    bool m_bankAccountNumberSameHasBeenSet;
 
                 };
             }

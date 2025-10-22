@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取企业版实例名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnterpriseInstanceName 企业版实例名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEnterpriseInstanceName() const;
 
                     /**
                      * 设置企业版实例名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enterpriseInstanceName 企业版实例名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnterpriseInstanceName(const std::string& _enterpriseInstanceName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取企业版收费类型  0 按量收费   1 包年包月
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnterpriseInstanceChargeType 企业版收费类型  0 按量收费   1 包年包月
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEnterpriseInstanceChargeType() const;
 
                     /**
                      * 设置企业版收费类型  0 按量收费   1 包年包月
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enterpriseInstanceChargeType 企业版收费类型  0 按量收费   1 包年包月
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnterpriseInstanceChargeType(const int64_t& _enterpriseInstanceChargeType);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取企业版规格：basic-基础班 ，standard-标准版，premium-高级版
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnterpriseInstanceType 企业版规格：basic-基础班 ，standard-标准版，premium-高级版
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEnterpriseInstanceType() const;
 
                     /**
                      * 设置企业版规格：basic-基础班 ，standard-标准版，premium-高级版
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enterpriseInstanceType 企业版规格：basic-基础班 ，standard-标准版，premium-高级版
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnterpriseInstanceType(const std::string& _enterpriseInstanceType);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 企业版实例名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_enterpriseInstanceName;
                     bool m_enterpriseInstanceNameHasBeenSet;
 
                     /**
                      * 企业版收费类型  0 按量收费   1 包年包月
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_enterpriseInstanceChargeType;
                     bool m_enterpriseInstanceChargeTypeHasBeenSet;
 
                     /**
                      * 企业版规格：basic-基础班 ，standard-标准版，premium-高级版
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_enterpriseInstanceType;
                     bool m_enterpriseInstanceTypeHasBeenSet;

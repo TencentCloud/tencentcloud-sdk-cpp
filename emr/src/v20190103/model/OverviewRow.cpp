@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ OverviewRow::OverviewRow() :
     m_writeRequestCountHasBeenSet(false),
     m_memstoreSizeHasBeenSet(false),
     m_storeFileSizeHasBeenSet(false),
-    m_operationHasBeenSet(false)
+    m_operationHasBeenSet(false),
+    m_storeFileNumHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome OverviewRow::Deserialize(const rapidjson::Value &value)
         m_operationHasBeenSet = true;
     }
 
+    if (value.HasMember("StoreFileNum") && !value["StoreFileNum"].IsNull())
+    {
+        if (!value["StoreFileNum"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `OverviewRow.StoreFileNum` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_storeFileNum = value["StoreFileNum"].GetDouble();
+        m_storeFileNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void OverviewRow::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Operation";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_operation.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storeFileNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StoreFileNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_storeFileNum, allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void OverviewRow::SetOperation(const string& _operation)
 bool OverviewRow::OperationHasBeenSet() const
 {
     return m_operationHasBeenSet;
+}
+
+double OverviewRow::GetStoreFileNum() const
+{
+    return m_storeFileNum;
+}
+
+void OverviewRow::SetStoreFileNum(const double& _storeFileNum)
+{
+    m_storeFileNum = _storeFileNum;
+    m_storeFileNumHasBeenSet = true;
+}
+
+bool OverviewRow::StoreFileNumHasBeenSet() const
+{
+    return m_storeFileNumHasBeenSet;
 }
 

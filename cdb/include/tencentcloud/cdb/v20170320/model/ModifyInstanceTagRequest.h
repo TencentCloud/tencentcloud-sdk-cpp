@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID。
-                     * @return InstanceId 实例 ID。
+                     * 获取实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @return InstanceId 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID。
-                     * @param _instanceId 实例 ID。
+                     * 设置实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @param _instanceId 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取要增加或修改的标签。
-                     * @return ReplaceTags 要增加或修改的标签。
+                     * 获取要增加或修改的标签。ReplaceTags 和 DeleteTags 必填一个。
+                     * @return ReplaceTags 要增加或修改的标签。ReplaceTags 和 DeleteTags 必填一个。
                      * 
                      */
                     std::vector<TagInfo> GetReplaceTags() const;
 
                     /**
-                     * 设置要增加或修改的标签。
-                     * @param _replaceTags 要增加或修改的标签。
+                     * 设置要增加或修改的标签。ReplaceTags 和 DeleteTags 必填一个。
+                     * @param _replaceTags 要增加或修改的标签。ReplaceTags 和 DeleteTags 必填一个。
                      * 
                      */
                     void SetReplaceTags(const std::vector<TagInfo>& _replaceTags);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool ReplaceTagsHasBeenSet() const;
 
                     /**
-                     * 获取要删除的标签。
-                     * @return DeleteTags 要删除的标签。
+                     * 获取要删除的标签。ReplaceTags 和 DeleteTags 必填一个。
+                     * @return DeleteTags 要删除的标签。ReplaceTags 和 DeleteTags 必填一个。
                      * 
                      */
                     std::vector<TagInfo> GetDeleteTags() const;
 
                     /**
-                     * 设置要删除的标签。
-                     * @param _deleteTags 要删除的标签。
+                     * 设置要删除的标签。ReplaceTags 和 DeleteTags 必填一个。
+                     * @param _deleteTags 要删除的标签。ReplaceTags 和 DeleteTags 必填一个。
                      * 
                      */
                     void SetDeleteTags(const std::vector<TagInfo>& _deleteTags);
@@ -109,19 +109,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID。
+                     * 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 要增加或修改的标签。
+                     * 要增加或修改的标签。ReplaceTags 和 DeleteTags 必填一个。
                      */
                     std::vector<TagInfo> m_replaceTags;
                     bool m_replaceTagsHasBeenSet;
 
                     /**
-                     * 要删除的标签。
+                     * 要删除的标签。ReplaceTags 和 DeleteTags 必填一个。
                      */
                     std::vector<TagInfo> m_deleteTags;
                     bool m_deleteTagsHasBeenSet;

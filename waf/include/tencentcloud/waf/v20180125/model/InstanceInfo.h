@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,10 @@
 #include <tencentcloud/waf/v20180125/model/ApiPkg.h>
 #include <tencentcloud/waf/v20180125/model/MiniPkg.h>
 #include <tencentcloud/waf/v20180125/model/MiniExtendPkg.h>
+#include <tencentcloud/waf/v20180125/model/MajorEventsProPkg.h>
+#include <tencentcloud/waf/v20180125/model/NetworkConfig.h>
+#include <tencentcloud/waf/v20180125/model/RCEPkg.h>
+#include <tencentcloud/waf/v20180125/model/LLMPkg.h>
 
 
 namespace TencentCloud
@@ -957,6 +961,199 @@ namespace TencentCloud
                      */
                     bool FreeDelayFlagHasBeenSet() const;
 
+                    /**
+                     * 获取最近3天最大qps
+                     * @return Last3MaxQPS 最近3天最大qps
+                     * 
+                     */
+                    uint64_t GetLast3MaxQPS() const;
+
+                    /**
+                     * 设置最近3天最大qps
+                     * @param _last3MaxQPS 最近3天最大qps
+                     * 
+                     */
+                    void SetLast3MaxQPS(const uint64_t& _last3MaxQPS);
+
+                    /**
+                     * 判断参数 Last3MaxQPS 是否已赋值
+                     * @return Last3MaxQPS 是否已赋值
+                     * 
+                     */
+                    bool Last3MaxQPSHasBeenSet() const;
+
+                    /**
+                     * 获取最近3天最大带宽
+                     * @return Last3MaxBandwidth 最近3天最大带宽
+                     * 
+                     */
+                    uint64_t GetLast3MaxBandwidth() const;
+
+                    /**
+                     * 设置最近3天最大带宽
+                     * @param _last3MaxBandwidth 最近3天最大带宽
+                     * 
+                     */
+                    void SetLast3MaxBandwidth(const uint64_t& _last3MaxBandwidth);
+
+                    /**
+                     * 判断参数 Last3MaxBandwidth 是否已赋值
+                     * @return Last3MaxBandwidth 是否已赋值
+                     * 
+                     */
+                    bool Last3MaxBandwidthHasBeenSet() const;
+
+                    /**
+                     * 获取重保增强包
+                     * @return MajorEventsProPkg 重保增强包
+                     * 
+                     */
+                    MajorEventsProPkg GetMajorEventsProPkg() const;
+
+                    /**
+                     * 设置重保增强包
+                     * @param _majorEventsProPkg 重保增强包
+                     * 
+                     */
+                    void SetMajorEventsProPkg(const MajorEventsProPkg& _majorEventsProPkg);
+
+                    /**
+                     * 判断参数 MajorEventsProPkg 是否已赋值
+                     * @return MajorEventsProPkg 是否已赋值
+                     * 
+                     */
+                    bool MajorEventsProPkgHasBeenSet() const;
+
+                    /**
+                     * 获取1是基础2025版本；0不是
+                     * @return BasicFlag 1是基础2025版本；0不是
+                     * 
+                     */
+                    uint64_t GetBasicFlag() const;
+
+                    /**
+                     * 设置1是基础2025版本；0不是
+                     * @param _basicFlag 1是基础2025版本；0不是
+                     * 
+                     */
+                    void SetBasicFlag(const uint64_t& _basicFlag);
+
+                    /**
+                     * 判断参数 BasicFlag 是否已赋值
+                     * @return BasicFlag 是否已赋值
+                     * 
+                     */
+                    bool BasicFlagHasBeenSet() const;
+
+                    /**
+                     * 获取实例的网络配置
+                     * @return NetworkConfig 实例的网络配置
+                     * 
+                     */
+                    NetworkConfig GetNetworkConfig() const;
+
+                    /**
+                     * 设置实例的网络配置
+                     * @param _networkConfig 实例的网络配置
+                     * 
+                     */
+                    void SetNetworkConfig(const NetworkConfig& _networkConfig);
+
+                    /**
+                     * 判断参数 NetworkConfig 是否已赋值
+                     * @return NetworkConfig 是否已赋值
+                     * 
+                     */
+                    bool NetworkConfigHasBeenSet() const;
+
+                    /**
+                     * 获取RCE设备安全信息包
+                     * @return RCEPkg RCE设备安全信息包
+                     * 
+                     */
+                    RCEPkg GetRCEPkg() const;
+
+                    /**
+                     * 设置RCE设备安全信息包
+                     * @param _rCEPkg RCE设备安全信息包
+                     * 
+                     */
+                    void SetRCEPkg(const RCEPkg& _rCEPkg);
+
+                    /**
+                     * 判断参数 RCEPkg 是否已赋值
+                     * @return RCEPkg 是否已赋值
+                     * 
+                     */
+                    bool RCEPkgHasBeenSet() const;
+
+                    /**
+                     * 获取超量策略。0：超量沙箱
+1：超量限流
+                     * @return ExceedPolicy 超量策略。0：超量沙箱
+1：超量限流
+                     * 
+                     */
+                    int64_t GetExceedPolicy() const;
+
+                    /**
+                     * 设置超量策略。0：超量沙箱
+1：超量限流
+                     * @param _exceedPolicy 超量策略。0：超量沙箱
+1：超量限流
+                     * 
+                     */
+                    void SetExceedPolicy(const int64_t& _exceedPolicy);
+
+                    /**
+                     * 判断参数 ExceedPolicy 是否已赋值
+                     * @return ExceedPolicy 是否已赋值
+                     * 
+                     */
+                    bool ExceedPolicyHasBeenSet() const;
+
+                    /**
+                     * 获取大模型安全信息包
+                     * @return LLMPkg 大模型安全信息包
+                     * 
+                     */
+                    LLMPkg GetLLMPkg() const;
+
+                    /**
+                     * 设置大模型安全信息包
+                     * @param _lLMPkg 大模型安全信息包
+                     * 
+                     */
+                    void SetLLMPkg(const LLMPkg& _lLMPkg);
+
+                    /**
+                     * 判断参数 LLMPkg 是否已赋值
+                     * @return LLMPkg 是否已赋值
+                     * 
+                     */
+                    bool LLMPkgHasBeenSet() const;
+
+                    /**
+                     * 获取弹性资源Id
+                     * @return ElasticResourceId 弹性资源Id
+                     * 
+                     */
+                    std::string GetElasticResourceId() const;
+
+                    /**
+                     * 设置弹性资源Id
+                     * @param _elasticResourceId 弹性资源Id
+                     * 
+                     */
+                    void SetElasticResourceId(const std::string& _elasticResourceId);
+
+                    /**
+                     * 判断参数 ElasticResourceId 是否已赋值
+                     * @return ElasticResourceId 是否已赋值
+                     * 
+                     */
+                    bool ElasticResourceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1214,6 +1411,61 @@ namespace TencentCloud
                      */
                     uint64_t m_freeDelayFlag;
                     bool m_freeDelayFlagHasBeenSet;
+
+                    /**
+                     * 最近3天最大qps
+                     */
+                    uint64_t m_last3MaxQPS;
+                    bool m_last3MaxQPSHasBeenSet;
+
+                    /**
+                     * 最近3天最大带宽
+                     */
+                    uint64_t m_last3MaxBandwidth;
+                    bool m_last3MaxBandwidthHasBeenSet;
+
+                    /**
+                     * 重保增强包
+                     */
+                    MajorEventsProPkg m_majorEventsProPkg;
+                    bool m_majorEventsProPkgHasBeenSet;
+
+                    /**
+                     * 1是基础2025版本；0不是
+                     */
+                    uint64_t m_basicFlag;
+                    bool m_basicFlagHasBeenSet;
+
+                    /**
+                     * 实例的网络配置
+                     */
+                    NetworkConfig m_networkConfig;
+                    bool m_networkConfigHasBeenSet;
+
+                    /**
+                     * RCE设备安全信息包
+                     */
+                    RCEPkg m_rCEPkg;
+                    bool m_rCEPkgHasBeenSet;
+
+                    /**
+                     * 超量策略。0：超量沙箱
+1：超量限流
+                     */
+                    int64_t m_exceedPolicy;
+                    bool m_exceedPolicyHasBeenSet;
+
+                    /**
+                     * 大模型安全信息包
+                     */
+                    LLMPkg m_lLMPkg;
+                    bool m_lLMPkgHasBeenSet;
+
+                    /**
+                     * 弹性资源Id
+                     */
+                    std::string m_elasticResourceId;
+                    bool m_elasticResourceIdHasBeenSet;
 
                 };
             }

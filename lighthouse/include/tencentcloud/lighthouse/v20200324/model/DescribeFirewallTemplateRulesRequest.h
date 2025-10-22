@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取防火墙模板ID。
-                     * @return TemplateId 防火墙模板ID。
+                     * 获取防火墙模板ID列表。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。列表长度最大值为100。
+                     * @return TemplateId 防火墙模板ID列表。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。列表长度最大值为100。
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置防火墙模板ID。
-                     * @param _templateId 防火墙模板ID。
+                     * 设置防火墙模板ID列表。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。列表长度最大值为100。
+                     * @param _templateId 防火墙模板ID列表。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。列表长度最大值为100。
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取防火墙模板规则ID列表。
-                     * @return TemplateRuleIds 防火墙模板规则ID列表。
+                     * 获取防火墙模板规则ID列表。可通过[DescribeFirewallTemplateRules](https://cloud.tencent.com/document/product/1207/96875)接口返回值字段TemplateRuleSet获取。列表长度最大值为100。
+                     * @return TemplateRuleIds 防火墙模板规则ID列表。可通过[DescribeFirewallTemplateRules](https://cloud.tencent.com/document/product/1207/96875)接口返回值字段TemplateRuleSet获取。列表长度最大值为100。
                      * 
                      */
                     std::vector<std::string> GetTemplateRuleIds() const;
 
                     /**
-                     * 设置防火墙模板规则ID列表。
-                     * @param _templateRuleIds 防火墙模板规则ID列表。
+                     * 设置防火墙模板规则ID列表。可通过[DescribeFirewallTemplateRules](https://cloud.tencent.com/document/product/1207/96875)接口返回值字段TemplateRuleSet获取。列表长度最大值为100。
+                     * @param _templateRuleIds 防火墙模板规则ID列表。可通过[DescribeFirewallTemplateRules](https://cloud.tencent.com/document/product/1207/96875)接口返回值字段TemplateRuleSet获取。列表长度最大值为100。
                      * 
                      */
                     void SetTemplateRuleIds(const std::vector<std::string>& _templateRuleIds);
@@ -129,13 +129,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 防火墙模板ID。
+                     * 防火墙模板ID列表。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。列表长度最大值为100。
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 防火墙模板规则ID列表。
+                     * 防火墙模板规则ID列表。可通过[DescribeFirewallTemplateRules](https://cloud.tencent.com/document/product/1207/96875)接口返回值字段TemplateRuleSet获取。列表长度最大值为100。
                      */
                     std::vector<std::string> m_templateRuleIds;
                     bool m_templateRuleIdsHasBeenSet;

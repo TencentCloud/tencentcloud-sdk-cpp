@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取该字段用于返回当前查询的任务总量，格式为int字符串。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 该字段用于返回当前查询的任务总量，格式为int字符串。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTotal() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取该字段用于返回当前页的任务详细数据，具体输出内容请参见TaskData数据结构的详细描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 该字段用于返回当前页的任务详细数据，具体输出内容请参见TaskData数据结构的详细描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TaskData> GetData() const;
@@ -78,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取该字段用于返回翻页时使用的Token信息，由系统自动生成，并在翻页时向下一个生成的页面传递此参数，以方便快速翻页功能的实现。当到最后一页时，该字段为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PageToken 该字段用于返回翻页时使用的Token信息，由系统自动生成，并在翻页时向下一个生成的页面传递此参数，以方便快速翻页功能的实现。当到最后一页时，该字段为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPageToken() const;
@@ -96,21 +90,18 @@ namespace TencentCloud
 
                     /**
                      * 该字段用于返回当前查询的任务总量，格式为int字符串。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_total;
                     bool m_totalHasBeenSet;
 
                     /**
                      * 该字段用于返回当前页的任务详细数据，具体输出内容请参见TaskData数据结构的详细描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TaskData> m_data;
                     bool m_dataHasBeenSet;
 
                     /**
                      * 该字段用于返回翻页时使用的Token信息，由系统自动生成，并在翻页时向下一个生成的页面传递此参数，以方便快速翻页功能的实现。当到最后一页时，该字段为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pageToken;
                     bool m_pageTokenHasBeenSet;

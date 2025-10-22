@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,8 @@ InstanceItemExtraInfo::InstanceItemExtraInfo() :
     m_maxStorageHasBeenSet(false),
     m_maxRetentionHasBeenSet(false),
     m_minRetentionHasBeenSet(false),
-    m_instanceStatusHasBeenSet(false)
+    m_instanceStatusHasBeenSet(false),
+    m_isFrozenHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome InstanceItemExtraInfo::Deserialize(const rapidjson::Value &v
         m_instanceStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("IsFrozen") && !value["IsFrozen"].IsNull())
+    {
+        if (!value["IsFrozen"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceItemExtraInfo.IsFrozen` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isFrozen = value["IsFrozen"].GetBool();
+        m_isFrozenHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void InstanceItemExtraInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "InstanceStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_instanceStatus, allocator);
+    }
+
+    if (m_isFrozenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsFrozen";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isFrozen, allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void InstanceItemExtraInfo::SetInstanceStatus(const int64_t& _instanceStatus)
 bool InstanceItemExtraInfo::InstanceStatusHasBeenSet() const
 {
     return m_instanceStatusHasBeenSet;
+}
+
+bool InstanceItemExtraInfo::GetIsFrozen() const
+{
+    return m_isFrozen;
+}
+
+void InstanceItemExtraInfo::SetIsFrozen(const bool& _isFrozen)
+{
+    m_isFrozen = _isFrozen;
+    m_isFrozenHasBeenSet = true;
+}
+
+bool InstanceItemExtraInfo::IsFrozenHasBeenSet() const
+{
+    return m_isFrozenHasBeenSet;
 }
 

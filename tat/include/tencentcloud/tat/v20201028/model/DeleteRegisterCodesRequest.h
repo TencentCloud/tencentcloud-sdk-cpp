@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,14 +44,22 @@ namespace TencentCloud
 
                     /**
                      * 获取注册码ID列表。限制输入的注册码ID数量大于0小于100。
+
+可通过 [DescribeRegisterCodes(查询注册码)](https://cloud.tencent.com/document/api/1340/96925) 接口获取。
                      * @return RegisterCodeIds 注册码ID列表。限制输入的注册码ID数量大于0小于100。
+
+可通过 [DescribeRegisterCodes(查询注册码)](https://cloud.tencent.com/document/api/1340/96925) 接口获取。
                      * 
                      */
                     std::vector<std::string> GetRegisterCodeIds() const;
 
                     /**
                      * 设置注册码ID列表。限制输入的注册码ID数量大于0小于100。
+
+可通过 [DescribeRegisterCodes(查询注册码)](https://cloud.tencent.com/document/api/1340/96925) 接口获取。
                      * @param _registerCodeIds 注册码ID列表。限制输入的注册码ID数量大于0小于100。
+
+可通过 [DescribeRegisterCodes(查询注册码)](https://cloud.tencent.com/document/api/1340/96925) 接口获取。
                      * 
                      */
                     void SetRegisterCodeIds(const std::vector<std::string>& _registerCodeIds);
@@ -67,6 +75,8 @@ namespace TencentCloud
 
                     /**
                      * 注册码ID列表。限制输入的注册码ID数量大于0小于100。
+
+可通过 [DescribeRegisterCodes(查询注册码)](https://cloud.tencent.com/document/api/1340/96925) 接口获取。
                      */
                     std::vector<std::string> m_registerCodeIds;
                     bool m_registerCodeIdsHasBeenSet;

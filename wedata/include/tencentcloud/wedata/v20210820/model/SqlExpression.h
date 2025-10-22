@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -97,6 +97,31 @@ namespace TencentCloud
                      */
                     bool ParamExpressionsHasBeenSet() const;
 
+                    /**
+                     * 获取新增模型检测类系统模板sql中占位符集合
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SystemTemplateExpressions 新增模型检测类系统模板sql中占位符集合
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetSystemTemplateExpressions() const;
+
+                    /**
+                     * 设置新增模型检测类系统模板sql中占位符集合
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _systemTemplateExpressions 新增模型检测类系统模板sql中占位符集合
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSystemTemplateExpressions(const std::vector<std::string>& _systemTemplateExpressions);
+
+                    /**
+                     * 判断参数 SystemTemplateExpressions 是否已赋值
+                     * @return SystemTemplateExpressions 是否已赋值
+                     * 
+                     */
+                    bool SystemTemplateExpressionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -112,6 +137,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_paramExpressions;
                     bool m_paramExpressionsHasBeenSet;
+
+                    /**
+                     * 新增模型检测类系统模板sql中占位符集合
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_systemTemplateExpressions;
+                    bool m_systemTemplateExpressionsHasBeenSet;
 
                 };
             }

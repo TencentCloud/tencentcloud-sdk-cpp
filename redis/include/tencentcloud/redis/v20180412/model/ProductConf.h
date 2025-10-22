@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -361,7 +361,7 @@ namespace TencentCloud
                      * @return EnableRepicaReadOnly 该参数名因存在拼写不规范的问题，建议使用**EnableReplicaReadOnly**参数取代。其含义为是否支持副本只读。
 - true：支持副本只读。
 - false：不支持。
-                     * 
+                     * @deprecated
                      */
                     bool GetEnableRepicaReadOnly() const;
 
@@ -372,14 +372,14 @@ namespace TencentCloud
                      * @param _enableRepicaReadOnly 该参数名因存在拼写不规范的问题，建议使用**EnableReplicaReadOnly**参数取代。其含义为是否支持副本只读。
 - true：支持副本只读。
 - false：不支持。
-                     * 
+                     * @deprecated
                      */
                     void SetEnableRepicaReadOnly(const bool& _enableRepicaReadOnly);
 
                     /**
                      * 判断参数 EnableRepicaReadOnly 是否已赋值
                      * @return EnableRepicaReadOnly 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool EnableRepicaReadOnlyHasBeenSet() const;
 
@@ -387,11 +387,9 @@ namespace TencentCloud
                      * 获取是否支持副本只读。
 - true：支持副本只读。
 - false：不支持。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableReplicaReadOnly 是否支持副本只读。
 - true：支持副本只读。
 - false：不支持。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableReplicaReadOnly() const;
@@ -400,11 +398,9 @@ namespace TencentCloud
                      * 设置是否支持副本只读。
 - true：支持副本只读。
 - false：不支持。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableReplicaReadOnly 是否支持副本只读。
 - true：支持副本只读。
 - false：不支持。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableReplicaReadOnly(const bool& _enableReplicaReadOnly);
@@ -516,7 +512,6 @@ namespace TencentCloud
                      * 是否支持副本只读。
 - true：支持副本只读。
 - false：不支持。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableReplicaReadOnly;
                     bool m_enableReplicaReadOnlyHasBeenSet;

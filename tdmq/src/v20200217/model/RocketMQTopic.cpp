@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,8 @@ RocketMQTopic::RocketMQTopic() :
     m_partitionNumHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
+    m_namespaceHasBeenSet(false),
     m_lastUpdateTimeHasBeenSet(false),
     m_subscriptionCountHasBeenSet(false),
     m_subscriptionDataHasBeenSet(false)
@@ -107,6 +109,26 @@ CoreInternalOutcome RocketMQTopic::Deserialize(const rapidjson::Value &value)
         }
         m_updateTime = value["UpdateTime"].GetUint64();
         m_updateTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQTopic.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Namespace") && !value["Namespace"].IsNull())
+    {
+        if (!value["Namespace"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQTopic.Namespace` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_namespace = string(value["Namespace"].GetString());
+        m_namespaceHasBeenSet = true;
     }
 
     if (value.HasMember("LastUpdateTime") && !value["LastUpdateTime"].IsNull())
@@ -210,6 +232,22 @@ void RocketMQTopic::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_updateTime, allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_namespaceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Namespace";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_namespace.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lastUpdateTimeHasBeenSet)
@@ -356,6 +394,38 @@ void RocketMQTopic::SetUpdateTime(const uint64_t& _updateTime)
 bool RocketMQTopic::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string RocketMQTopic::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void RocketMQTopic::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool RocketMQTopic::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+string RocketMQTopic::GetNamespace() const
+{
+    return m_namespace;
+}
+
+void RocketMQTopic::SetNamespace(const string& _namespace)
+{
+    m_namespace = _namespace;
+    m_namespaceHasBeenSet = true;
+}
+
+bool RocketMQTopic::NamespaceHasBeenSet() const
+{
+    return m_namespaceHasBeenSet;
 }
 
 int64_t RocketMQTopic::GetLastUpdateTime() const

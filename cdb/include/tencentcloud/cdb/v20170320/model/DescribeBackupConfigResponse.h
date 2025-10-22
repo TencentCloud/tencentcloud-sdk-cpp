@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,28 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取自动备份开始的最早时间点，单位为时刻。例如，2 - 凌晨 2:00。（该字段已废弃，建议使用 BackupTimeWindow 字段）
                      * @return StartTimeMin 自动备份开始的最早时间点，单位为时刻。例如，2 - 凌晨 2:00。（该字段已废弃，建议使用 BackupTimeWindow 字段）
-                     * 
+                     * @deprecated
                      */
                     int64_t GetStartTimeMin() const;
 
                     /**
                      * 判断参数 StartTimeMin 是否已赋值
                      * @return StartTimeMin 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool StartTimeMinHasBeenSet() const;
 
                     /**
                      * 获取自动备份开始的最晚时间点，单位为时刻。例如，6 - 凌晨 6:00。（该字段已废弃，建议使用 BackupTimeWindow 字段）
                      * @return StartTimeMax 自动备份开始的最晚时间点，单位为时刻。例如，6 - 凌晨 6:00。（该字段已废弃，建议使用 BackupTimeWindow 字段）
-                     * 
+                     * @deprecated
                      */
                     int64_t GetStartTimeMax() const;
 
                     /**
                      * 判断参数 StartTimeMax 是否已赋值
                      * @return StartTimeMax 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool StartTimeMaxHasBeenSet() const;
 

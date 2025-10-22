@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -159,14 +159,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组织机构超管证件类型支持以下类型
-- ID_CARD : 居民身份证 (默认值)
--  HONGKONG_AND_MACAO : 港澳居民来往内地通行证
-- HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)
+- ID_CARD : 中国大陆居民身份证 (默认值)
+-  HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证
+- HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)
 此参数需要跟[创建企业批量认证链接](https://qian.tencent.com/developers/companyApis/organizations/CreateBatchOrganizationRegistrationTasks)中 AdminIdCardType保持一致。
                      * @return AdminIdCardType 组织机构超管证件类型支持以下类型
-- ID_CARD : 居民身份证 (默认值)
--  HONGKONG_AND_MACAO : 港澳居民来往内地通行证
-- HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)
+- ID_CARD : 中国大陆居民身份证 (默认值)
+-  HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证
+- HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)
 此参数需要跟[创建企业批量认证链接](https://qian.tencent.com/developers/companyApis/organizations/CreateBatchOrganizationRegistrationTasks)中 AdminIdCardType保持一致。
                      * 
                      */
@@ -174,14 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 设置组织机构超管证件类型支持以下类型
-- ID_CARD : 居民身份证 (默认值)
--  HONGKONG_AND_MACAO : 港澳居民来往内地通行证
-- HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)
+- ID_CARD : 中国大陆居民身份证 (默认值)
+-  HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证
+- HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)
 此参数需要跟[创建企业批量认证链接](https://qian.tencent.com/developers/companyApis/organizations/CreateBatchOrganizationRegistrationTasks)中 AdminIdCardType保持一致。
                      * @param _adminIdCardType 组织机构超管证件类型支持以下类型
-- ID_CARD : 居民身份证 (默认值)
--  HONGKONG_AND_MACAO : 港澳居民来往内地通行证
-- HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)
+- ID_CARD : 中国大陆居民身份证 (默认值)
+-  HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证
+- HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)
 此参数需要跟[创建企业批量认证链接](https://qian.tencent.com/developers/companyApis/organizations/CreateBatchOrganizationRegistrationTasks)中 AdminIdCardType保持一致。
                      * 
                      */
@@ -272,9 +272,9 @@ namespace TencentCloud
 
                     /**
                      * 组织机构超管证件类型支持以下类型
-- ID_CARD : 居民身份证 (默认值)
--  HONGKONG_AND_MACAO : 港澳居民来往内地通行证
-- HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)
+- ID_CARD : 中国大陆居民身份证 (默认值)
+-  HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证
+- HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)
 此参数需要跟[创建企业批量认证链接](https://qian.tencent.com/developers/companyApis/organizations/CreateBatchOrganizationRegistrationTasks)中 AdminIdCardType保持一致。
                      */
                     std::string m_adminIdCardType;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,8 @@
 #include <tencentcloud/mps/v20190612/model/AiAnalysisResult.h>
 #include <tencentcloud/mps/v20190612/model/AiRecognitionResult.h>
 #include <tencentcloud/mps/v20190612/model/ScheduleQualityControlTaskResult.h>
+#include <tencentcloud/mps/v20190612/model/SmartSubtitlesResult.h>
+#include <tencentcloud/mps/v20190612/model/SmartEraseTaskResult.h>
 
 
 namespace TencentCloud
@@ -304,6 +306,56 @@ namespace TencentCloud
                      */
                     bool AiQualityControlTaskResultHasBeenSet() const;
 
+                    /**
+                     * 获取智能字幕任务的执行结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SmartSubtitlesTaskResult 智能字幕任务的执行结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<SmartSubtitlesResult> GetSmartSubtitlesTaskResult() const;
+
+                    /**
+                     * 设置智能字幕任务的执行结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _smartSubtitlesTaskResult 智能字幕任务的执行结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSmartSubtitlesTaskResult(const std::vector<SmartSubtitlesResult>& _smartSubtitlesTaskResult);
+
+                    /**
+                     * 判断参数 SmartSubtitlesTaskResult 是否已赋值
+                     * @return SmartSubtitlesTaskResult 是否已赋值
+                     * 
+                     */
+                    bool SmartSubtitlesTaskResultHasBeenSet() const;
+
+                    /**
+                     * 获取智能擦除任务的执行结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SmartEraseTaskResult 智能擦除任务的执行结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    SmartEraseTaskResult GetSmartEraseTaskResult() const;
+
+                    /**
+                     * 设置智能擦除任务的执行结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _smartEraseTaskResult 智能擦除任务的执行结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSmartEraseTaskResult(const SmartEraseTaskResult& _smartEraseTaskResult);
+
+                    /**
+                     * 判断参数 SmartEraseTaskResult 是否已赋值
+                     * @return SmartEraseTaskResult 是否已赋值
+                     * 
+                     */
+                    bool SmartEraseTaskResultHasBeenSet() const;
+
                 private:
 
                     /**
@@ -376,6 +428,20 @@ namespace TencentCloud
                      */
                     ScheduleQualityControlTaskResult m_aiQualityControlTaskResult;
                     bool m_aiQualityControlTaskResultHasBeenSet;
+
+                    /**
+                     * 智能字幕任务的执行结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SmartSubtitlesResult> m_smartSubtitlesTaskResult;
+                    bool m_smartSubtitlesTaskResultHasBeenSet;
+
+                    /**
+                     * 智能擦除任务的执行结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SmartEraseTaskResult m_smartEraseTaskResult;
+                    bool m_smartEraseTaskResultHasBeenSet;
 
                 };
             }

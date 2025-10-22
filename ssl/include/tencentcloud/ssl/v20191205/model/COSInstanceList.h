@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceList 实例详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CosInstanceDetail> GetInstanceList() const;
 
                     /**
                      * 设置实例详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceList 实例详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceList(const std::vector<CosInstanceDetail>& _instanceList);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域下总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 地域下总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置地域下总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalCount 地域下总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Error 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetError() const;
 
                     /**
                      * 设置错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _error 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetError(const std::string& _error);
@@ -151,28 +135,24 @@ namespace TencentCloud
 
                     /**
                      * 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * 实例详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CosInstanceDetail> m_instanceList;
                     bool m_instanceListHasBeenSet;
 
                     /**
                      * 地域下总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_error;
                     bool m_errorHasBeenSet;

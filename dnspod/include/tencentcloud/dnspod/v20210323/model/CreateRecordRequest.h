@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取记录类型，通过 API 记录类型获得，大写英文，比如：A 。
-                     * @return RecordType 记录类型，通过 API 记录类型获得，大写英文，比如：A 。
+                     * 获取记录类型，可通过接口DescribeRecordType获得，大写英文，比如：A 。
+                     * @return RecordType 记录类型，可通过接口DescribeRecordType获得，大写英文，比如：A 。
                      * 
                      */
                     std::string GetRecordType() const;
 
                     /**
-                     * 设置记录类型，通过 API 记录类型获得，大写英文，比如：A 。
-                     * @param _recordType 记录类型，通过 API 记录类型获得，大写英文，比如：A 。
+                     * 设置记录类型，可通过接口DescribeRecordType获得，大写英文，比如：A 。
+                     * @param _recordType 记录类型，可通过接口DescribeRecordType获得，大写英文，比如：A 。
                      * 
                      */
                     void SetRecordType(const std::string& _recordType);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool RecordTypeHasBeenSet() const;
 
                     /**
-                     * 获取记录线路，通过 API 记录线路获得，中文，比如：默认。
-                     * @return RecordLine 记录线路，通过 API 记录线路获得，中文，比如：默认。
+                     * 获取记录线路，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息，中文，比如：默认。
+                     * @return RecordLine 记录线路，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息，中文，比如：默认。
                      * 
                      */
                     std::string GetRecordLine() const;
 
                     /**
-                     * 设置记录线路，通过 API 记录线路获得，中文，比如：默认。
-                     * @param _recordLine 记录线路，通过 API 记录线路获得，中文，比如：默认。
+                     * 设置记录线路，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息，中文，比如：默认。
+                     * @param _recordLine 记录线路，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息，中文，比如：默认。
                      * 
                      */
                     void SetRecordLine(const std::string& _recordLine);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool SubDomainHasBeenSet() const;
 
                     /**
-                     * 获取线路的 ID，通过 API 记录线路获得，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
-                     * @return RecordLineId 线路的 ID，通过 API 记录线路获得，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
+                     * 获取线路的 ID，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
+                     * @return RecordLineId 线路的 ID，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
                      * 
                      */
                     std::string GetRecordLineId() const;
 
                     /**
-                     * 设置线路的 ID，通过 API 记录线路获得，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
-                     * @param _recordLineId 线路的 ID，通过 API 记录线路获得，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
+                     * 设置线路的 ID，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
+                     * @param _recordLineId 线路的 ID，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
                      * 
                      */
                     void SetRecordLineId(const std::string& _recordLineId);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool RecordLineIdHasBeenSet() const;
 
                     /**
-                     * 获取MX 优先级，当记录类型是 MX 时有效，范围1-20，MX 记录时必选。
-                     * @return MX MX 优先级，当记录类型是 MX 时有效，范围1-20，MX 记录时必选。
+                     * 获取MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围1-65535。
+                     * @return MX MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围1-65535。
                      * 
                      */
                     uint64_t GetMX() const;
 
                     /**
-                     * 设置MX 优先级，当记录类型是 MX 时有效，范围1-20，MX 记录时必选。
-                     * @param _mX MX 优先级，当记录类型是 MX 时有效，范围1-20，MX 记录时必选。
+                     * 设置MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围1-65535。
+                     * @param _mX MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围1-65535。
                      * 
                      */
                     void SetMX(const uint64_t& _mX);
@@ -345,13 +345,13 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 记录类型，通过 API 记录类型获得，大写英文，比如：A 。
+                     * 记录类型，可通过接口DescribeRecordType获得，大写英文，比如：A 。
                      */
                     std::string m_recordType;
                     bool m_recordTypeHasBeenSet;
 
                     /**
-                     * 记录线路，通过 API 记录线路获得，中文，比如：默认。
+                     * 记录线路，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息，中文，比如：默认。
                      */
                     std::string m_recordLine;
                     bool m_recordLineHasBeenSet;
@@ -375,13 +375,13 @@ namespace TencentCloud
                     bool m_subDomainHasBeenSet;
 
                     /**
-                     * 线路的 ID，通过 API 记录线路获得，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
+                     * 线路的 ID，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
                      */
                     std::string m_recordLineId;
                     bool m_recordLineIdHasBeenSet;
 
                     /**
-                     * MX 优先级，当记录类型是 MX 时有效，范围1-20，MX 记录时必选。
+                     * MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围1-65535。
                      */
                     uint64_t m_mX;
                     bool m_mXHasBeenSet;

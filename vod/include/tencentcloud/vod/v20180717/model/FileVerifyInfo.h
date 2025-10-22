@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件校验文件名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileVerifyName 文件校验文件名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileVerifyName() const;
 
                     /**
                      * 设置文件校验文件名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileVerifyName 文件校验文件名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileVerifyName(const std::string& _fileVerifyName);
@@ -129,7 +125,6 @@ namespace TencentCloud
 
                     /**
                      * 文件校验文件名。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileVerifyName;
                     bool m_fileVerifyNameHasBeenSet;

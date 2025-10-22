@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TemplateNameRegexpHasBeenSet() const;
 
                     /**
-                     * 获取返回限制长度
-                     * @return Limit 返回限制长度
+                     * 获取返回限制长度，最大值: 50，默认值: 50
+                     * @return Limit 返回限制长度，最大值: 50，默认值: 50
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回限制长度
-                     * @param _limit 返回限制长度
+                     * 设置返回限制长度，最大值: 50，默认值: 50
+                     * @param _limit 返回限制长度，最大值: 50，默认值: 50
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏置
-                     * @return Offset 偏置
+                     * 获取偏置，最大值: 无限制，默认值: 0
+                     * @return Offset 偏置，最大值: 无限制，默认值: 0
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏置
-                     * @param _offset 偏置
+                     * 设置偏置，最大值: 无限制，默认值: 0
+                     * @param _offset 偏置，最大值: 无限制，默认值: 0
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -106,19 +106,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取mysql -  mysql
-cynosdb -  tdsql-c
-                     * @return Product mysql -  mysql
-cynosdb -  tdsql-c
+                     * 获取服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL
+                     * @return Product 服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL
                      * 
                      */
                     std::string GetProduct() const;
 
                     /**
-                     * 设置mysql -  mysql
-cynosdb -  tdsql-c
-                     * @param _product mysql -  mysql
-cynosdb -  tdsql-c
+                     * 设置服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL
+                     * @param _product 服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL
                      * 
                      */
                     void SetProduct(const std::string& _product);
@@ -139,20 +135,19 @@ cynosdb -  tdsql-c
                     bool m_templateNameRegexpHasBeenSet;
 
                     /**
-                     * 返回限制长度
+                     * 返回限制长度，最大值: 50，默认值: 50
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏置
+                     * 偏置，最大值: 无限制，默认值: 0
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * mysql -  mysql
-cynosdb -  tdsql-c
+                     * 服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;

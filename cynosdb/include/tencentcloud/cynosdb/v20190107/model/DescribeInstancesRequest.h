@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -255,6 +255,27 @@ offlined 已下线
                      */
                     bool InstanceIdsHasBeenSet() const;
 
+                    /**
+                     * 获取集群类型，取值范围<li> CYNOSDB：事务集群 </li><li> LIBRADB：分析集群 </li><li> ALL：全部 </li>，缺省为 ALL
+                     * @return ClusterType 集群类型，取值范围<li> CYNOSDB：事务集群 </li><li> LIBRADB：分析集群 </li><li> ALL：全部 </li>，缺省为 ALL
+                     * 
+                     */
+                    std::string GetClusterType() const;
+
+                    /**
+                     * 设置集群类型，取值范围<li> CYNOSDB：事务集群 </li><li> LIBRADB：分析集群 </li><li> ALL：全部 </li>，缺省为 ALL
+                     * @param _clusterType 集群类型，取值范围<li> CYNOSDB：事务集群 </li><li> LIBRADB：分析集群 </li><li> ALL：全部 </li>，缺省为 ALL
+                     * 
+                     */
+                    void SetClusterType(const std::string& _clusterType);
+
+                    /**
+                     * 判断参数 ClusterType 是否已赋值
+                     * @return ClusterType 是否已赋值
+                     * 
+                     */
+                    bool ClusterTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -315,6 +336,12 @@ offlined 已下线
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
+
+                    /**
+                     * 集群类型，取值范围<li> CYNOSDB：事务集群 </li><li> LIBRADB：分析集群 </li><li> ALL：全部 </li>，缺省为 ALL
+                     */
+                    std::string m_clusterType;
+                    bool m_clusterTypeHasBeenSet;
 
                 };
             }

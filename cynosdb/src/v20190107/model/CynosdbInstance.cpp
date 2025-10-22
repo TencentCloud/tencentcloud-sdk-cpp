@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,7 +76,10 @@ CynosdbInstance::CynosdbInstance() :
     m_instanceIndexModeHasBeenSet(false),
     m_instanceAbilityHasBeenSet(false),
     m_deviceTypeHasBeenSet(false),
-    m_instanceStorageTypeHasBeenSet(false)
+    m_instanceStorageTypeHasBeenSet(false),
+    m_cynosVersionTagHasBeenSet(false),
+    m_nodeListHasBeenSet(false),
+    m_gdnIdHasBeenSet(false)
 {
 }
 
@@ -695,6 +698,39 @@ CoreInternalOutcome CynosdbInstance::Deserialize(const rapidjson::Value &value)
         m_instanceStorageTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("CynosVersionTag") && !value["CynosVersionTag"].IsNull())
+    {
+        if (!value["CynosVersionTag"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstance.CynosVersionTag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cynosVersionTag = string(value["CynosVersionTag"].GetString());
+        m_cynosVersionTagHasBeenSet = true;
+    }
+
+    if (value.HasMember("NodeList") && !value["NodeList"].IsNull())
+    {
+        if (!value["NodeList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstance.NodeList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["NodeList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_nodeList.push_back((*itr).GetString());
+        }
+        m_nodeListHasBeenSet = true;
+    }
+
+    if (value.HasMember("GdnId") && !value["GdnId"].IsNull())
+    {
+        if (!value["GdnId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstance.GdnId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gdnId = string(value["GdnId"].GetString());
+        m_gdnIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1182,6 +1218,35 @@ void CynosdbInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "InstanceStorageType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceStorageType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cynosVersionTagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CynosVersionTag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cynosVersionTag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_nodeList.begin(); itr != m_nodeList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_gdnIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GdnId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gdnId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2081,5 +2146,53 @@ void CynosdbInstance::SetInstanceStorageType(const string& _instanceStorageType)
 bool CynosdbInstance::InstanceStorageTypeHasBeenSet() const
 {
     return m_instanceStorageTypeHasBeenSet;
+}
+
+string CynosdbInstance::GetCynosVersionTag() const
+{
+    return m_cynosVersionTag;
+}
+
+void CynosdbInstance::SetCynosVersionTag(const string& _cynosVersionTag)
+{
+    m_cynosVersionTag = _cynosVersionTag;
+    m_cynosVersionTagHasBeenSet = true;
+}
+
+bool CynosdbInstance::CynosVersionTagHasBeenSet() const
+{
+    return m_cynosVersionTagHasBeenSet;
+}
+
+vector<string> CynosdbInstance::GetNodeList() const
+{
+    return m_nodeList;
+}
+
+void CynosdbInstance::SetNodeList(const vector<string>& _nodeList)
+{
+    m_nodeList = _nodeList;
+    m_nodeListHasBeenSet = true;
+}
+
+bool CynosdbInstance::NodeListHasBeenSet() const
+{
+    return m_nodeListHasBeenSet;
+}
+
+string CynosdbInstance::GetGdnId() const
+{
+    return m_gdnId;
+}
+
+void CynosdbInstance::SetGdnId(const string& _gdnId)
+{
+    m_gdnId = _gdnId;
+    m_gdnIdHasBeenSet = true;
+}
+
+bool CynosdbInstance::GdnIdHasBeenSet() const
+{
+    return m_gdnIdHasBeenSet;
 }
 

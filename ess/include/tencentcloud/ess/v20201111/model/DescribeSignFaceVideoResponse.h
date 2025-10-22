@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,9 +48,7 @@ namespace TencentCloud
 
                     /**
                      * 获取核身视频结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VideoData 核身视频结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DetectInfoVideoData GetVideoData() const;
@@ -64,9 +62,7 @@ namespace TencentCloud
 
                     /**
                      * 获取意愿核身问答模式结果。若未使用该意愿核身功能，该字段返回值可以不处理。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IntentionQuestionResult 意愿核身问答模式结果。若未使用该意愿核身功能，该字段返回值可以不处理。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     IntentionQuestionResult GetIntentionQuestionResult() const;
@@ -98,14 +94,12 @@ namespace TencentCloud
 
                     /**
                      * 核身视频结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DetectInfoVideoData m_videoData;
                     bool m_videoDataHasBeenSet;
 
                     /**
                      * 意愿核身问答模式结果。若未使用该意愿核身功能，该字段返回值可以不处理。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     IntentionQuestionResult m_intentionQuestionResult;
                     bool m_intentionQuestionResultHasBeenSet;

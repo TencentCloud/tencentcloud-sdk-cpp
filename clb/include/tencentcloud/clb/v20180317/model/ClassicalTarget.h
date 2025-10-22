@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取后端服务的外网 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicIpAddresses 后端服务的外网 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetPublicIpAddresses() const;
 
                     /**
                      * 设置后端服务的外网 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publicIpAddresses 后端服务的外网 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublicIpAddresses(const std::vector<std::string>& _publicIpAddresses);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取后端服务的内网 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrivateIpAddresses 后端服务的内网 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetPrivateIpAddresses() const;
 
                     /**
                      * 设置后端服务的内网 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _privateIpAddresses 后端服务的内网 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrivateIpAddresses(const std::vector<std::string>& _privateIpAddresses);
@@ -161,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取后端服务的实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceName 后端服务的实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置后端服务的实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceName 后端服务的实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -187,10 +175,8 @@ namespace TencentCloud
                     /**
                      * 获取后端服务的状态
 1：故障，2：运行中，3：创建中，4：已关机，5：已退还，6：退还中， 7：重启中，8：开机中，9：关机中，10：密码重置中，11：格式化中，12：镜像制作中，13：带宽设置中，14：重装系统中，19：升级中，21：热迁移中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RunFlag 后端服务的状态
 1：故障，2：运行中，3：创建中，4：已关机，5：已退还，6：退还中， 7：重启中，8：开机中，9：关机中，10：密码重置中，11：格式化中，12：镜像制作中，13：带宽设置中，14：重装系统中，19：升级中，21：热迁移中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRunFlag() const;
@@ -198,10 +184,8 @@ namespace TencentCloud
                     /**
                      * 设置后端服务的状态
 1：故障，2：运行中，3：创建中，4：已关机，5：已退还，6：退还中， 7：重启中，8：开机中，9：关机中，10：密码重置中，11：格式化中，12：镜像制作中，13：带宽设置中，14：重装系统中，19：升级中，21：热迁移中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _runFlag 后端服务的状态
 1：故障，2：运行中，3：创建中，4：已关机，5：已退还，6：退还中， 7：重启中，8：开机中，9：关机中，10：密码重置中，11：格式化中，12：镜像制作中，13：带宽设置中，14：重装系统中，19：升级中，21：热迁移中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRunFlag(const int64_t& _runFlag);
@@ -235,21 +219,18 @@ namespace TencentCloud
 
                     /**
                      * 后端服务的外网 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_publicIpAddresses;
                     bool m_publicIpAddressesHasBeenSet;
 
                     /**
                      * 后端服务的内网 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_privateIpAddresses;
                     bool m_privateIpAddressesHasBeenSet;
 
                     /**
                      * 后端服务的实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
@@ -257,7 +238,6 @@ namespace TencentCloud
                     /**
                      * 后端服务的状态
 1：故障，2：运行中，3：创建中，4：已关机，5：已退还，6：退还中， 7：重启中，8：开机中，9：关机中，10：密码重置中，11：格式化中，12：镜像制作中，13：带宽设置中，14：重装系统中，19：升级中，21：热迁移中
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_runFlag;
                     bool m_runFlagHasBeenSet;

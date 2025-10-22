@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool CertificateIdHasBeenSet() const;
 
                     /**
-                     * 获取下载的服务类型: nginx tomcat apache iis jks other root
-                     * @return ServiceType 下载的服务类型: nginx tomcat apache iis jks other root
+                     * 获取下载的服务类型: nginx tomcat apache iis jks other root， 不传则默认下载nginx格式
+                     * @return ServiceType 下载的服务类型: nginx tomcat apache iis jks other root， 不传则默认下载nginx格式
                      * 
                      */
                     std::string GetServiceType() const;
 
                     /**
-                     * 设置下载的服务类型: nginx tomcat apache iis jks other root
-                     * @param _serviceType 下载的服务类型: nginx tomcat apache iis jks other root
+                     * 设置下载的服务类型: nginx tomcat apache iis jks other root， 不传则默认下载nginx格式
+                     * @param _serviceType 下载的服务类型: nginx tomcat apache iis jks other root， 不传则默认下载nginx格式
                      * 
                      */
                     void SetServiceType(const std::string& _serviceType);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_certificateIdHasBeenSet;
 
                     /**
-                     * 下载的服务类型: nginx tomcat apache iis jks other root
+                     * 下载的服务类型: nginx tomcat apache iis jks other root， 不传则默认下载nginx格式
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;

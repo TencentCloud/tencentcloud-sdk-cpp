@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取详情记录id
-                     * @return Id 详情记录id
+                     * 获取更新详情记录id
+                     * @return Id 更新详情记录id
                      * 
                      */
                     uint64_t GetId() const;
 
                     /**
-                     * 设置详情记录id
-                     * @param _id 详情记录id
+                     * 设置更新详情记录id
+                     * @param _id 更新详情记录id
                      * 
                      */
                     void SetId(const uint64_t& _id);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取新证书ID
-                     * @return CertId 新证书ID
+                     * 获取新旧证书更新 - 新证书ID
+                     * @return CertId 新旧证书更新 - 新证书ID
                      * 
                      */
                     std::string GetCertId() const;
 
                     /**
-                     * 设置新证书ID
-                     * @param _certId 新证书ID
+                     * 设置新旧证书更新 - 新证书ID
+                     * @param _certId 新旧证书更新 - 新证书ID
                      * 
                      */
                     void SetCertId(const std::string& _certId);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool CertIdHasBeenSet() const;
 
                     /**
-                     * 获取旧证书ID
-                     * @return OldCertId 旧证书ID
+                     * 获取新旧证书更新 - 旧证书ID
+                     * @return OldCertId 新旧证书更新 - 旧证书ID
                      * 
                      */
                     std::string GetOldCertId() const;
 
                     /**
-                     * 设置旧证书ID
-                     * @param _oldCertId 旧证书ID
+                     * 设置新旧证书更新 - 旧证书ID
+                     * @param _oldCertId 新旧证书更新 - 旧证书ID
                      * 
                      */
                     void SetOldCertId(const std::string& _oldCertId);
@@ -135,15 +135,63 @@ namespace TencentCloud
                     bool DomainsHasBeenSet() const;
 
                     /**
-                     * 获取部署资源类型
-                     * @return ResourceType 部署资源类型
+                     * 获取新旧证书更新云资源的云资源类型：
+- clb
+- cdn
+- ddos
+- live
+- vod
+- waf
+- apigateway
+- teo
+- tke
+- cos
+- tse
+- tcb
+                     * @return ResourceType 新旧证书更新云资源的云资源类型：
+- clb
+- cdn
+- ddos
+- live
+- vod
+- waf
+- apigateway
+- teo
+- tke
+- cos
+- tse
+- tcb
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置部署资源类型
-                     * @param _resourceType 部署资源类型
+                     * 设置新旧证书更新云资源的云资源类型：
+- clb
+- cdn
+- ddos
+- live
+- vod
+- waf
+- apigateway
+- teo
+- tke
+- cos
+- tse
+- tcb
+                     * @param _resourceType 新旧证书更新云资源的云资源类型：
+- clb
+- cdn
+- ddos
+- live
+- vod
+- waf
+- apigateway
+- teo
+- tke
+- cos
+- tse
+- tcb
                      * 
                      */
                     void SetResourceType(const std::string& _resourceType);
@@ -181,15 +229,43 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取部署状态
-                     * @return Status 部署状态
+                     * 获取部署状态， 取值范围：
+0：待部署
+1：部署成功
+2：部署失败
+3：部署中
+4：回滚成功
+5：回滚失败
+6：无资源，无需部署
+                     * @return Status 部署状态， 取值范围：
+0：待部署
+1：部署成功
+2：部署失败
+3：部署中
+4：回滚成功
+5：回滚失败
+6：无资源，无需部署
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置部署状态
-                     * @param _status 部署状态
+                     * 设置部署状态， 取值范围：
+0：待部署
+1：部署成功
+2：部署失败
+3：部署中
+4：回滚成功
+5：回滚失败
+6：无资源，无需部署
+                     * @param _status 部署状态， 取值范围：
+0：待部署
+1：部署成功
+2：部署失败
+3：部署中
+4：回滚成功
+5：回滚失败
+6：无资源，无需部署
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -520,18 +596,14 @@ namespace TencentCloud
 
                     /**
                      * 获取环境ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnvId 环境ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置环境ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _envId 环境ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnvId(const std::string& _envId);
@@ -545,18 +617,14 @@ namespace TencentCloud
 
                     /**
                      * 获取TCB部署类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TCBType TCB部署类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTCBType() const;
 
                     /**
                      * 设置TCB部署类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tCBType TCB部署类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTCBType(const std::string& _tCBType);
@@ -570,18 +638,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监听器Url(clb专属)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url 监听器Url(clb专属)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置监听器Url(clb专属)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _url 监听器Url(clb专属)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -593,22 +657,64 @@ namespace TencentCloud
                      */
                     bool UrlHasBeenSet() const;
 
+                    /**
+                     * 获取新证书加密算法
+                     * @return Algorithm 新证书加密算法
+                     * 
+                     */
+                    std::string GetAlgorithm() const;
+
+                    /**
+                     * 设置新证书加密算法
+                     * @param _algorithm 新证书加密算法
+                     * 
+                     */
+                    void SetAlgorithm(const std::string& _algorithm);
+
+                    /**
+                     * 判断参数 Algorithm 是否已赋值
+                     * @return Algorithm 是否已赋值
+                     * 
+                     */
+                    bool AlgorithmHasBeenSet() const;
+
+                    /**
+                     * 获取旧证书加密算法
+                     * @return OldAlgorithm 旧证书加密算法
+                     * 
+                     */
+                    std::string GetOldAlgorithm() const;
+
+                    /**
+                     * 设置旧证书加密算法
+                     * @param _oldAlgorithm 旧证书加密算法
+                     * 
+                     */
+                    void SetOldAlgorithm(const std::string& _oldAlgorithm);
+
+                    /**
+                     * 判断参数 OldAlgorithm 是否已赋值
+                     * @return OldAlgorithm 是否已赋值
+                     * 
+                     */
+                    bool OldAlgorithmHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 详情记录id
+                     * 更新详情记录id
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 新证书ID
+                     * 新旧证书更新 - 新证书ID
                      */
                     std::string m_certId;
                     bool m_certIdHasBeenSet;
 
                     /**
-                     * 旧证书ID
+                     * 新旧证书更新 - 旧证书ID
                      */
                     std::string m_oldCertId;
                     bool m_oldCertIdHasBeenSet;
@@ -621,7 +727,19 @@ namespace TencentCloud
                     bool m_domainsHasBeenSet;
 
                     /**
-                     * 部署资源类型
+                     * 新旧证书更新云资源的云资源类型：
+- clb
+- cdn
+- ddos
+- live
+- vod
+- waf
+- apigateway
+- teo
+- tke
+- cos
+- tse
+- tcb
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;
@@ -634,7 +752,14 @@ namespace TencentCloud
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 部署状态
+                     * 部署状态， 取值范围：
+0：待部署
+1：部署成功
+2：部署失败
+3：部署中
+4：回滚成功
+5：回滚失败
+6：无资源，无需部署
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
@@ -730,24 +855,33 @@ namespace TencentCloud
 
                     /**
                      * 环境ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_envId;
                     bool m_envIdHasBeenSet;
 
                     /**
                      * TCB部署类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tCBType;
                     bool m_tCBTypeHasBeenSet;
 
                     /**
                      * 监听器Url(clb专属)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
+
+                    /**
+                     * 新证书加密算法
+                     */
+                    std::string m_algorithm;
+                    bool m_algorithmHasBeenSet;
+
+                    /**
+                     * 旧证书加密算法
+                     */
+                    std::string m_oldAlgorithm;
+                    bool m_oldAlgorithmHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,13 @@ DescribeTokenUsageResponse::DescribeTokenUsageResponse() :
     m_inputTokenUsageHasBeenSet(false),
     m_outputTokenUsageHasBeenSet(false),
     m_apiCallStatsHasBeenSet(false),
-    m_searchUsageHasBeenSet(false)
+    m_searchUsageHasBeenSet(false),
+    m_pageUsageHasBeenSet(false),
+    m_splitTokenUsageHasBeenSet(false),
+    m_ragSearchUsageHasBeenSet(false),
+    m_internetSearchUsageHasBeenSet(false),
+    m_dosageTypeLimitHasBeenSet(false),
+    m_dosageTypeCurrHasBeenSet(false)
 {
 }
 
@@ -116,6 +122,66 @@ CoreInternalOutcome DescribeTokenUsageResponse::Deserialize(const string &payloa
         m_searchUsageHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PageUsage") && !rsp["PageUsage"].IsNull())
+    {
+        if (!rsp["PageUsage"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PageUsage` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pageUsage = rsp["PageUsage"].GetUint64();
+        m_pageUsageHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SplitTokenUsage") && !rsp["SplitTokenUsage"].IsNull())
+    {
+        if (!rsp["SplitTokenUsage"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `SplitTokenUsage` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_splitTokenUsage = rsp["SplitTokenUsage"].GetDouble();
+        m_splitTokenUsageHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RagSearchUsage") && !rsp["RagSearchUsage"].IsNull())
+    {
+        if (!rsp["RagSearchUsage"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `RagSearchUsage` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_ragSearchUsage = rsp["RagSearchUsage"].GetDouble();
+        m_ragSearchUsageHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("InternetSearchUsage") && !rsp["InternetSearchUsage"].IsNull())
+    {
+        if (!rsp["InternetSearchUsage"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `InternetSearchUsage` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_internetSearchUsage = rsp["InternetSearchUsage"].GetDouble();
+        m_internetSearchUsageHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("DosageTypeLimit") && !rsp["DosageTypeLimit"].IsNull())
+    {
+        if (!rsp["DosageTypeLimit"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `DosageTypeLimit` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_dosageTypeLimit = rsp["DosageTypeLimit"].GetDouble();
+        m_dosageTypeLimitHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("DosageTypeCurr") && !rsp["DosageTypeCurr"].IsNull())
+    {
+        if (!rsp["DosageTypeCurr"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `DosageTypeCurr` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_dosageTypeCurr = rsp["DosageTypeCurr"].GetDouble();
+        m_dosageTypeCurrHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -166,11 +232,59 @@ string DescribeTokenUsageResponse::ToJsonString() const
         value.AddMember(iKey, m_searchUsage, allocator);
     }
 
+    if (m_pageUsageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageUsage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pageUsage, allocator);
+    }
+
+    if (m_splitTokenUsageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SplitTokenUsage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_splitTokenUsage, allocator);
+    }
+
+    if (m_ragSearchUsageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RagSearchUsage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ragSearchUsage, allocator);
+    }
+
+    if (m_internetSearchUsageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InternetSearchUsage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_internetSearchUsage, allocator);
+    }
+
+    if (m_dosageTypeLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DosageTypeLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dosageTypeLimit, allocator);
+    }
+
+    if (m_dosageTypeCurrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DosageTypeCurr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dosageTypeCurr, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -226,6 +340,66 @@ double DescribeTokenUsageResponse::GetSearchUsage() const
 bool DescribeTokenUsageResponse::SearchUsageHasBeenSet() const
 {
     return m_searchUsageHasBeenSet;
+}
+
+uint64_t DescribeTokenUsageResponse::GetPageUsage() const
+{
+    return m_pageUsage;
+}
+
+bool DescribeTokenUsageResponse::PageUsageHasBeenSet() const
+{
+    return m_pageUsageHasBeenSet;
+}
+
+double DescribeTokenUsageResponse::GetSplitTokenUsage() const
+{
+    return m_splitTokenUsage;
+}
+
+bool DescribeTokenUsageResponse::SplitTokenUsageHasBeenSet() const
+{
+    return m_splitTokenUsageHasBeenSet;
+}
+
+double DescribeTokenUsageResponse::GetRagSearchUsage() const
+{
+    return m_ragSearchUsage;
+}
+
+bool DescribeTokenUsageResponse::RagSearchUsageHasBeenSet() const
+{
+    return m_ragSearchUsageHasBeenSet;
+}
+
+double DescribeTokenUsageResponse::GetInternetSearchUsage() const
+{
+    return m_internetSearchUsage;
+}
+
+bool DescribeTokenUsageResponse::InternetSearchUsageHasBeenSet() const
+{
+    return m_internetSearchUsageHasBeenSet;
+}
+
+double DescribeTokenUsageResponse::GetDosageTypeLimit() const
+{
+    return m_dosageTypeLimit;
+}
+
+bool DescribeTokenUsageResponse::DosageTypeLimitHasBeenSet() const
+{
+    return m_dosageTypeLimitHasBeenSet;
+}
+
+double DescribeTokenUsageResponse::GetDosageTypeCurr() const
+{
+    return m_dosageTypeCurr;
+}
+
+bool DescribeTokenUsageResponse::DosageTypeCurrHasBeenSet() const
+{
+    return m_dosageTypeCurrHasBeenSet;
 }
 
 

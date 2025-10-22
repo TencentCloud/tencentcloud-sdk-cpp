@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取返回的实例信息。
-                     * @return Items 返回的实例信息。
+                     * 获取实例中的数据库名称列表。
+                     * @return Items 实例中的数据库名称列表。
                      * 
                      */
                     std::vector<std::string> GetItems() const;
@@ -95,7 +95,7 @@ namespace TencentCloud
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 返回的实例信息。
+                     * 实例中的数据库名称列表。
                      */
                     std::vector<std::string> m_items;
                     bool m_itemsHasBeenSet;

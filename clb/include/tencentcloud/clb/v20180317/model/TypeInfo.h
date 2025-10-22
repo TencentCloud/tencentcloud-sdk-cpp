@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取运营商类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 运营商类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置运营商类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 运营商类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规格可用性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpecAvailabilitySet 规格可用性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SpecAvailability> GetSpecAvailabilitySet() const;
 
                     /**
                      * 设置规格可用性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _specAvailabilitySet 规格可用性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSpecAvailabilitySet(const std::vector<SpecAvailability>& _specAvailabilitySet);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 运营商类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 规格可用性
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SpecAvailability> m_specAvailabilitySet;
                     bool m_specAvailabilitySetHasBeenSet;

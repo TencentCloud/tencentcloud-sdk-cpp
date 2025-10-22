@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取第一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。
-                     * @return StartTime 第一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。
+                     * 获取第一个任务的开始时间，用于范围查询，时间格式如：2019-09-10T12:13:14+08:00。
+                     * @return StartTime 第一个任务的开始时间，用于范围查询，时间格式如：2019-09-10T12:13:14+08:00。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置第一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。
-                     * @param _startTime 第一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。
+                     * 设置第一个任务的开始时间，用于范围查询，时间格式如：2019-09-10T12:13:14+08:00。
+                     * @param _startTime 第一个任务的开始时间，用于范围查询，时间格式如：2019-09-10T12:13:14+08:00。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取最后一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。
-                     * @return EndTime 最后一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。
+                     * 获取最后一个任务的开始时间，用于范围查询，时间格式如：2019-09-10T12:13:14+08:00。
+                     * @return EndTime 最后一个任务的开始时间，用于范围查询，时间格式如：2019-09-10T12:13:14+08:00。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置最后一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。
-                     * @param _endTime 最后一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。
+                     * 设置最后一个任务的开始时间，用于范围查询，时间格式如：2019-09-10T12:13:14+08:00。
+                     * @param _endTime 最后一个任务的开始时间，用于范围查询，时间格式如：2019-09-10T12:13:14+08:00。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取实例ID数组，用于筛选指定实例的任务列表。
-                     * @return InstanceIds 实例ID数组，用于筛选指定实例的任务列表。
+                     * 获取实例ID数组，用于筛选指定实例的任务列表，可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @return InstanceIds 实例ID数组，用于筛选指定实例的任务列表，可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置实例ID数组，用于筛选指定实例的任务列表。
-                     * @param _instanceIds 实例ID数组，用于筛选指定实例的任务列表。
+                     * 设置实例ID数组，用于筛选指定实例的任务列表，可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @param _instanceIds 实例ID数组，用于筛选指定实例的任务列表，可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取任务的触发来源，支持的取值包括："DAILY_INSPECTION" - 实例巡检；"SCHEDULED" - 定时生成；"MANUAL" - 手动触发。
-                     * @return Sources 任务的触发来源，支持的取值包括："DAILY_INSPECTION" - 实例巡检；"SCHEDULED" - 定时生成；"MANUAL" - 手动触发。
+                     * 获取任务的触发来源，支持的取值包括："DAILY_INSPECTION" - 实例巡检；"SCHEDULED" - 计划任务；"MANUAL" - 手动触发。
+                     * @return Sources 任务的触发来源，支持的取值包括："DAILY_INSPECTION" - 实例巡检；"SCHEDULED" - 计划任务；"MANUAL" - 手动触发。
                      * 
                      */
                     std::vector<std::string> GetSources() const;
 
                     /**
-                     * 设置任务的触发来源，支持的取值包括："DAILY_INSPECTION" - 实例巡检；"SCHEDULED" - 定时生成；"MANUAL" - 手动触发。
-                     * @param _sources 任务的触发来源，支持的取值包括："DAILY_INSPECTION" - 实例巡检；"SCHEDULED" - 定时生成；"MANUAL" - 手动触发。
+                     * 设置任务的触发来源，支持的取值包括："DAILY_INSPECTION" - 实例巡检；"SCHEDULED" - 计划任务；"MANUAL" - 手动触发。
+                     * @param _sources 任务的触发来源，支持的取值包括："DAILY_INSPECTION" - 实例巡检；"SCHEDULED" - 计划任务；"MANUAL" - 手动触发。
                      * 
                      */
                     void SetSources(const std::vector<std::string>& _sources);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL，默认为"mysql"。
-                     * @return Product 服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL，默认为"mysql"。
+                     * 获取服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL；"redis" - 云数据库 Redis，默认为"mysql"。
+                     * @return Product 服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL；"redis" - 云数据库 Redis，默认为"mysql"。
                      * 
                      */
                     std::string GetProduct() const;
 
                     /**
-                     * 设置服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL，默认为"mysql"。
-                     * @param _product 服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL，默认为"mysql"。
+                     * 设置服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL；"redis" - 云数据库 Redis，默认为"mysql"。
+                     * @param _product 服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL；"redis" - 云数据库 Redis，默认为"mysql"。
                      * 
                      */
                     void SetProduct(const std::string& _product);
@@ -234,25 +234,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 第一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。
+                     * 第一个任务的开始时间，用于范围查询，时间格式如：2019-09-10T12:13:14+08:00。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 最后一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。
+                     * 最后一个任务的开始时间，用于范围查询，时间格式如：2019-09-10T12:13:14+08:00。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 实例ID数组，用于筛选指定实例的任务列表。
+                     * 实例ID数组，用于筛选指定实例的任务列表，可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 任务的触发来源，支持的取值包括："DAILY_INSPECTION" - 实例巡检；"SCHEDULED" - 定时生成；"MANUAL" - 手动触发。
+                     * 任务的触发来源，支持的取值包括："DAILY_INSPECTION" - 实例巡检；"SCHEDULED" - 计划任务；"MANUAL" - 手动触发。
                      */
                     std::vector<std::string> m_sources;
                     bool m_sourcesHasBeenSet;
@@ -282,7 +282,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL，默认为"mysql"。
+                     * 服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL；"redis" - 云数据库 Redis，默认为"mysql"。
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;

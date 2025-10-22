@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,18 +51,14 @@ namespace TencentCloud
 
                     /**
                      * 获取新生儿信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NeonatalInfo 新生儿信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     NeonatalInfo GetNeonatalInfo() const;
 
                     /**
                      * 设置新生儿信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _neonatalInfo 新生儿信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNeonatalInfo(const NeonatalInfo& _neonatalInfo);
@@ -76,18 +72,14 @@ namespace TencentCloud
 
                     /**
                      * 获取母亲信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MotherInfo 母亲信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ParentInfo GetMotherInfo() const;
 
                     /**
                      * 设置母亲信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _motherInfo 母亲信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMotherInfo(const ParentInfo& _motherInfo);
@@ -101,18 +93,14 @@ namespace TencentCloud
 
                     /**
                      * 获取父亲信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FatherInfo 父亲信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ParentInfo GetFatherInfo() const;
 
                     /**
                      * 设置父亲信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fatherInfo 父亲信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFatherInfo(const ParentInfo& _fatherInfo);
@@ -126,18 +114,14 @@ namespace TencentCloud
 
                     /**
                      * 获取签发信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IssueInfo 签发信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     IssueInfo GetIssueInfo() const;
 
                     /**
                      * 设置签发信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _issueInfo 签发信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIssueInfo(const IssueInfo& _issueInfo);
@@ -151,18 +135,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Page 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPage() const;
 
                     /**
                      * 设置数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _page 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPage(const int64_t& _page);
@@ -178,35 +158,30 @@ namespace TencentCloud
 
                     /**
                      * 新生儿信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     NeonatalInfo m_neonatalInfo;
                     bool m_neonatalInfoHasBeenSet;
 
                     /**
                      * 母亲信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ParentInfo m_motherInfo;
                     bool m_motherInfoHasBeenSet;
 
                     /**
                      * 父亲信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ParentInfo m_fatherInfo;
                     bool m_fatherInfoHasBeenSet;
 
                     /**
                      * 签发信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     IssueInfo m_issueInfo;
                     bool m_issueInfoHasBeenSet;
 
                     /**
                      * 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_page;
                     bool m_pageHasBeenSet;

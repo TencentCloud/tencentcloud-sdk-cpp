@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,15 +85,23 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取发布视频所对应的转码模板 ID，为0代表原始视频。
-                     * @return SourceDefinition 发布视频所对应的转码模板 ID，为0代表原始视频。
+                     * 获取发布视频所对应的转码模板 ID，为 0 代表原始视频。支持的视频格式：
+<li>当 SourceDefinition 为 0 时，视频格式支持 MP4、3GP 格式；</li>
+<li>当 SourceDefinition 大于 0 时，视频格式支持 MP4、3GP 及 M3U8 格式。</li>不填默认值为 0。
+                     * @return SourceDefinition 发布视频所对应的转码模板 ID，为 0 代表原始视频。支持的视频格式：
+<li>当 SourceDefinition 为 0 时，视频格式支持 MP4、3GP 格式；</li>
+<li>当 SourceDefinition 大于 0 时，视频格式支持 MP4、3GP 及 M3U8 格式。</li>不填默认值为 0。
                      * 
                      */
                     int64_t GetSourceDefinition() const;
 
                     /**
-                     * 设置发布视频所对应的转码模板 ID，为0代表原始视频。
-                     * @param _sourceDefinition 发布视频所对应的转码模板 ID，为0代表原始视频。
+                     * 设置发布视频所对应的转码模板 ID，为 0 代表原始视频。支持的视频格式：
+<li>当 SourceDefinition 为 0 时，视频格式支持 MP4、3GP 格式；</li>
+<li>当 SourceDefinition 大于 0 时，视频格式支持 MP4、3GP 及 M3U8 格式。</li>不填默认值为 0。
+                     * @param _sourceDefinition 发布视频所对应的转码模板 ID，为 0 代表原始视频。支持的视频格式：
+<li>当 SourceDefinition 为 0 时，视频格式支持 MP4、3GP 格式；</li>
+<li>当 SourceDefinition 大于 0 时，视频格式支持 MP4、3GP 及 M3U8 格式。</li>不填默认值为 0。
                      * 
                      */
                     void SetSourceDefinition(const int64_t& _sourceDefinition);
@@ -120,7 +128,9 @@ namespace TencentCloud
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * 发布视频所对应的转码模板 ID，为0代表原始视频。
+                     * 发布视频所对应的转码模板 ID，为 0 代表原始视频。支持的视频格式：
+<li>当 SourceDefinition 为 0 时，视频格式支持 MP4、3GP 格式；</li>
+<li>当 SourceDefinition 大于 0 时，视频格式支持 MP4、3GP 及 M3U8 格式。</li>不填默认值为 0。
                      */
                     int64_t m_sourceDefinition;
                     bool m_sourceDefinitionHasBeenSet;

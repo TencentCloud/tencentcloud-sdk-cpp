@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ using namespace std;
 GetCOSURLRequest::GetCOSURLRequest() :
     m_productIDHasBeenSet(false),
     m_firmwareVersionHasBeenSet(false),
-    m_fileSizeHasBeenSet(false)
+    m_fileSizeHasBeenSet(false),
+    m_fwTypeHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string GetCOSURLRequest::ToJsonString() const
         string key = "FileSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_fileSize, allocator);
+    }
+
+    if (m_fwTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FwType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_fwType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void GetCOSURLRequest::SetFileSize(const uint64_t& _fileSize)
 bool GetCOSURLRequest::FileSizeHasBeenSet() const
 {
     return m_fileSizeHasBeenSet;
+}
+
+string GetCOSURLRequest::GetFwType() const
+{
+    return m_fwType;
+}
+
+void GetCOSURLRequest::SetFwType(const string& _fwType)
+{
+    m_fwType = _fwType;
+    m_fwTypeHasBeenSet = true;
+}
+
+bool GetCOSURLRequest::FwTypeHasBeenSet() const
+{
+    return m_fwTypeHasBeenSet;
 }
 
 

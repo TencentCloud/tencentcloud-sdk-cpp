@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -496,9 +496,7 @@ namespace TencentCloud
 
                     /**
                      * 获取内网IPv6
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vip6 内网IPv6
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVip6() const;
@@ -512,9 +510,7 @@ namespace TencentCloud
 
                     /**
                      * 获取实例Cpu核数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cpu 实例Cpu核数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCpu() const;
@@ -528,9 +524,7 @@ namespace TencentCloud
 
                     /**
                      * 获取实例QPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Qps 实例QPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetQps() const;
@@ -544,9 +538,7 @@ namespace TencentCloud
 
                     /**
                      * 获取DB引擎
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbEngine DB引擎
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDbEngine() const;
@@ -560,9 +552,7 @@ namespace TencentCloud
 
                     /**
                      * 获取是否支持IPv6
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ipv6Flag 是否支持IPv6
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIpv6Flag() const;
@@ -576,9 +566,7 @@ namespace TencentCloud
 
                     /**
                      * 获取外网IPv6地址，公网可访问
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WanVipv6 外网IPv6地址，公网可访问
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWanVipv6() const;
@@ -592,9 +580,7 @@ namespace TencentCloud
 
                     /**
                      * 获取外网状态，0-未开通；1-已开通；2-关闭；3-开通中；4-关闭中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WanStatusIpv6 外网状态，0-未开通；1-已开通；2-关闭；3-开通中；4-关闭中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetWanStatusIpv6() const;
@@ -608,9 +594,7 @@ namespace TencentCloud
 
                     /**
                      * 获取外网IPv6端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WanPortIpv6 外网IPv6端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetWanPortIpv6() const;
@@ -638,9 +622,7 @@ namespace TencentCloud
 
                     /**
                      * 获取DCN标志，0-无，1-主实例，2-灾备实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DcnFlag DCN标志，0-无，1-主实例，2-灾备实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDcnFlag() const;
@@ -654,9 +636,7 @@ namespace TencentCloud
 
                     /**
                      * 获取DCN状态，0-无，1-创建中，2-同步中，3-已断开
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DcnStatus DCN状态，0-无，1-创建中，2-同步中，3-已断开
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDcnStatus() const;
@@ -670,9 +650,7 @@ namespace TencentCloud
 
                     /**
                      * 获取DCN灾备实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DcnDstNum DCN灾备实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDcnDstNum() const;
@@ -686,9 +664,7 @@ namespace TencentCloud
 
                     /**
                      * 获取1： 主实例（独享型）, 2: 主实例, 3： 灾备实例, 4： 灾备实例（独享型）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType 1： 主实例（独享型）, 2: 主实例, 3： 灾备实例, 4： 灾备实例（独享型）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInstanceType() const;
@@ -702,9 +678,7 @@ namespace TencentCloud
 
                     /**
                      * 获取实例是否支持设置用户连接数限制，内核为10.1暂不支持。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsMaxUserConnectionsSupported 实例是否支持设置用户连接数限制，内核为10.1暂不支持。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsMaxUserConnectionsSupported() const;
@@ -718,9 +692,7 @@ namespace TencentCloud
 
                     /**
                      * 获取对外显示的数据库版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbVersionId 对外显示的数据库版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDbVersionId() const;
@@ -734,9 +706,7 @@ namespace TencentCloud
 
                     /**
                      * 获取加密状态, 0-未开启，1-已开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EncryptStatus 加密状态, 0-未开启，1-已开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEncryptStatus() const;
@@ -750,9 +720,7 @@ namespace TencentCloud
 
                     /**
                      * 获取独享集群类型，0:公有云, 1:金融围笼, 2:CDC集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExclusterType 独享集群类型，0:公有云, 1:金融围笼, 2:CDC集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetExclusterType() const;
@@ -766,9 +734,7 @@ namespace TencentCloud
 
                     /**
                      * 获取VPC就近访问
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RsAccessStrategy VPC就近访问
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRsAccessStrategy() const;
@@ -835,6 +801,34 @@ namespace TencentCloud
                      * 
                      */
                     bool IsDcnSwitchSupportedHasBeenSet() const;
+
+                    /**
+                     * 获取cpu类型，英特尔：Intel/AMD，海光：Hygon，默认Intel/AMD	
+                     * @return CpuType cpu类型，英特尔：Intel/AMD，海光：Hygon，默认Intel/AMD	
+                     * 
+                     */
+                    std::string GetCpuType() const;
+
+                    /**
+                     * 判断参数 CpuType 是否已赋值
+                     * @return CpuType 是否已赋值
+                     * 
+                     */
+                    bool CpuTypeHasBeenSet() const;
+
+                    /**
+                     * 获取实例删除保护标签，1: 已开启删除保护，0: 未开启删除保护
+                     * @return ProtectedProperty 实例删除保护标签，1: 已开启删除保护，0: 未开启删除保护
+                     * 
+                     */
+                    int64_t GetProtectedProperty() const;
+
+                    /**
+                     * 判断参数 ProtectedProperty 是否已赋值
+                     * @return ProtectedProperty 是否已赋值
+                     * 
+                     */
+                    bool ProtectedPropertyHasBeenSet() const;
 
                 private:
 
@@ -1032,56 +1026,48 @@ namespace TencentCloud
 
                     /**
                      * 内网IPv6
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vip6;
                     bool m_vip6HasBeenSet;
 
                     /**
                      * 实例Cpu核数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cpu;
                     bool m_cpuHasBeenSet;
 
                     /**
                      * 实例QPS
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_qps;
                     bool m_qpsHasBeenSet;
 
                     /**
                      * DB引擎
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dbEngine;
                     bool m_dbEngineHasBeenSet;
 
                     /**
                      * 是否支持IPv6
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ipv6Flag;
                     bool m_ipv6FlagHasBeenSet;
 
                     /**
                      * 外网IPv6地址，公网可访问
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_wanVipv6;
                     bool m_wanVipv6HasBeenSet;
 
                     /**
                      * 外网状态，0-未开通；1-已开通；2-关闭；3-开通中；4-关闭中
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_wanStatusIpv6;
                     bool m_wanStatusIpv6HasBeenSet;
 
                     /**
                      * 外网IPv6端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_wanPortIpv6;
                     bool m_wanPortIpv6HasBeenSet;
@@ -1094,63 +1080,54 @@ namespace TencentCloud
 
                     /**
                      * DCN标志，0-无，1-主实例，2-灾备实例
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_dcnFlag;
                     bool m_dcnFlagHasBeenSet;
 
                     /**
                      * DCN状态，0-无，1-创建中，2-同步中，3-已断开
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_dcnStatus;
                     bool m_dcnStatusHasBeenSet;
 
                     /**
                      * DCN灾备实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_dcnDstNum;
                     bool m_dcnDstNumHasBeenSet;
 
                     /**
                      * 1： 主实例（独享型）, 2: 主实例, 3： 灾备实例, 4： 灾备实例（独享型）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
                      * 实例是否支持设置用户连接数限制，内核为10.1暂不支持。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isMaxUserConnectionsSupported;
                     bool m_isMaxUserConnectionsSupportedHasBeenSet;
 
                     /**
                      * 对外显示的数据库版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dbVersionId;
                     bool m_dbVersionIdHasBeenSet;
 
                     /**
                      * 加密状态, 0-未开启，1-已开启
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_encryptStatus;
                     bool m_encryptStatusHasBeenSet;
 
                     /**
                      * 独享集群类型，0:公有云, 1:金融围笼, 2:CDC集群
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_exclusterType;
                     bool m_exclusterTypeHasBeenSet;
 
                     /**
                      * VPC就近访问
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_rsAccessStrategy;
                     bool m_rsAccessStrategyHasBeenSet;
@@ -1178,6 +1155,18 @@ namespace TencentCloud
                      */
                     int64_t m_isDcnSwitchSupported;
                     bool m_isDcnSwitchSupportedHasBeenSet;
+
+                    /**
+                     * cpu类型，英特尔：Intel/AMD，海光：Hygon，默认Intel/AMD	
+                     */
+                    std::string m_cpuType;
+                    bool m_cpuTypeHasBeenSet;
+
+                    /**
+                     * 实例删除保护标签，1: 已开启删除保护，0: 未开启删除保护
+                     */
+                    int64_t m_protectedProperty;
+                    bool m_protectedPropertyHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取名单名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ListName 名单名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetListName() const;
 
                     /**
                      * 设置名单名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _listName 名单名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetListName(const std::string& _listName);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取名单类型 [1 黑名单 2 白名单]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ListType 名单类型 [1 黑名单 2 白名单]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetListType() const;
 
                     /**
                      * 设置名单类型 [1 黑名单 2 白名单]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _listType 名单类型 [1 黑名单 2 白名单]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetListType(const int64_t& _listType);
@@ -161,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -185,15 +173,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取创建时间，时间格式示例"2024-05-05 12:10:15"
-                     * @return CreateTime 创建时间，时间格式示例"2024-05-05 12:10:15"
+                     * 获取创建时间
+                     * @return CreateTime 创建时间
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间，时间格式示例"2024-05-05 12:10:15"
-                     * @param _createTime 创建时间，时间格式示例"2024-05-05 12:10:15"
+                     * 设置创建时间
+                     * @param _createTime 创建时间
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -206,15 +194,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间，时间格式示例"2024-05-05 12:10:15"
-                     * @return UpdateTime 更新时间，时间格式示例"2024-05-05 12:10:15"
+                     * 获取更新时间
+                     * @return UpdateTime 更新时间
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间，时间格式示例"2024-05-05 12:10:15"
-                     * @param _updateTime 更新时间，时间格式示例"2024-05-05 12:10:15"
+                     * 设置更新时间
+                     * @param _updateTime 更新时间
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -249,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取加密类型[0 无需加密 1 MD5加密 2 SHA256加密]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EncryptionType 加密类型[0 无需加密 1 MD5加密 2 SHA256加密]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEncryptionType() const;
 
                     /**
                      * 设置加密类型[0 无需加密 1 MD5加密 2 SHA256加密]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _encryptionType 加密类型[0 无需加密 1 MD5加密 2 SHA256加密]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEncryptionType(const int64_t& _encryptionType);
@@ -274,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取场景Code，all_scene代表全部场景
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SceneCode 场景Code，all_scene代表全部场景
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSceneCode() const;
 
                     /**
                      * 设置场景Code，all_scene代表全部场景
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sceneCode 场景Code，all_scene代表全部场景
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSceneCode(const std::string& _sceneCode);
@@ -307,14 +287,12 @@ namespace TencentCloud
 
                     /**
                      * 名单名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_listName;
                     bool m_listNameHasBeenSet;
 
                     /**
                      * 名单类型 [1 黑名单 2 白名单]
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_listType;
                     bool m_listTypeHasBeenSet;
@@ -333,19 +311,18 @@ namespace TencentCloud
 
                     /**
                      * 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 创建时间，时间格式示例"2024-05-05 12:10:15"
+                     * 创建时间
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 更新时间，时间格式示例"2024-05-05 12:10:15"
+                     * 更新时间
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
@@ -358,14 +335,12 @@ namespace TencentCloud
 
                     /**
                      * 加密类型[0 无需加密 1 MD5加密 2 SHA256加密]
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_encryptionType;
                     bool m_encryptionTypeHasBeenSet;
 
                     /**
                      * 场景Code，all_scene代表全部场景
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sceneCode;
                     bool m_sceneCodeHasBeenSet;

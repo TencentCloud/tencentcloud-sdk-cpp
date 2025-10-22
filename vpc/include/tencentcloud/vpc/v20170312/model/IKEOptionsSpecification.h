@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBS-192', 'AES-CBC-256', 'DES-CBC'，'SM4', 默认为3DES-CBC
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PropoEncryAlgorithm 加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBS-192', 'AES-CBC-256', 'DES-CBC'，'SM4', 默认为3DES-CBC
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC'，'SM4', 默认为3DES-CBC
+                     * @return PropoEncryAlgorithm 加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC'，'SM4', 默认为3DES-CBC
                      * 
                      */
                     std::string GetPropoEncryAlgorithm() const;
 
                     /**
-                     * 设置加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBS-192', 'AES-CBC-256', 'DES-CBC'，'SM4', 默认为3DES-CBC
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _propoEncryAlgorithm 加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBS-192', 'AES-CBC-256', 'DES-CBC'，'SM4', 默认为3DES-CBC
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC'，'SM4', 默认为3DES-CBC
+                     * @param _propoEncryAlgorithm 加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC'，'SM4', 默认为3DES-CBC
                      * 
                      */
                     void SetPropoEncryAlgorithm(const std::string& _propoEncryAlgorithm);
@@ -72,19 +68,15 @@ namespace TencentCloud
                     bool PropoEncryAlgorithmHasBeenSet() const;
 
                     /**
-                     * 获取认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为MD5
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PropoAuthenAlgorithm 认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为MD5
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取认证算法：可选值：'MD5'，'SHA'，'SHA-256'，'SHA-512'， 默认为SHA。
+                     * @return PropoAuthenAlgorithm 认证算法：可选值：'MD5'，'SHA'，'SHA-256'，'SHA-512'， 默认为SHA。
                      * 
                      */
                     std::string GetPropoAuthenAlgorithm() const;
 
                     /**
-                     * 设置认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为MD5
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _propoAuthenAlgorithm 认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为MD5
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置认证算法：可选值：'MD5'，'SHA'，'SHA-256'，'SHA-512'， 默认为SHA。
+                     * @param _propoAuthenAlgorithm 认证算法：可选值：'MD5'，'SHA'，'SHA-256'，'SHA-512'， 默认为SHA。
                      * 
                      */
                     void SetPropoAuthenAlgorithm(const std::string& _propoAuthenAlgorithm);
@@ -97,19 +89,15 @@ namespace TencentCloud
                     bool PropoAuthenAlgorithmHasBeenSet() const;
 
                     /**
-                     * 获取协商模式：可选值：'AGGRESSIVE', 'MAIN'，默认为MAIN
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExchangeMode 协商模式：可选值：'AGGRESSIVE', 'MAIN'，默认为MAIN
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取协商模式：可选值：'AGGRESSIVE'， 'MAIN'，默认为MAIN。
+                     * @return ExchangeMode 协商模式：可选值：'AGGRESSIVE'， 'MAIN'，默认为MAIN。
                      * 
                      */
                     std::string GetExchangeMode() const;
 
                     /**
-                     * 设置协商模式：可选值：'AGGRESSIVE', 'MAIN'，默认为MAIN
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _exchangeMode 协商模式：可选值：'AGGRESSIVE', 'MAIN'，默认为MAIN
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置协商模式：可选值：'AGGRESSIVE'， 'MAIN'，默认为MAIN。
+                     * @param _exchangeMode 协商模式：可选值：'AGGRESSIVE'， 'MAIN'，默认为MAIN。
                      * 
                      */
                     void SetExchangeMode(const std::string& _exchangeMode);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取本端标识类型：可选值：'ADDRESS', 'FQDN'，默认为ADDRESS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LocalIdentity 本端标识类型：可选值：'ADDRESS', 'FQDN'，默认为ADDRESS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLocalIdentity() const;
 
                     /**
                      * 设置本端标识类型：可选值：'ADDRESS', 'FQDN'，默认为ADDRESS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _localIdentity 本端标识类型：可选值：'ADDRESS', 'FQDN'，默认为ADDRESS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLocalIdentity(const std::string& _localIdentity);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对端标识类型：可选值：'ADDRESS', 'FQDN'，默认为ADDRESS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemoteIdentity 对端标识类型：可选值：'ADDRESS', 'FQDN'，默认为ADDRESS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemoteIdentity() const;
 
                     /**
                      * 设置对端标识类型：可选值：'ADDRESS', 'FQDN'，默认为ADDRESS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remoteIdentity 对端标识类型：可选值：'ADDRESS', 'FQDN'，默认为ADDRESS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemoteIdentity(const std::string& _remoteIdentity);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取本端标识，当LocalIdentity选为ADDRESS时，LocalAddress必填。localAddress默认为vpn网关公网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LocalAddress 本端标识，当LocalIdentity选为ADDRESS时，LocalAddress必填。localAddress默认为vpn网关公网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLocalAddress() const;
 
                     /**
                      * 设置本端标识，当LocalIdentity选为ADDRESS时，LocalAddress必填。localAddress默认为vpn网关公网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _localAddress 本端标识，当LocalIdentity选为ADDRESS时，LocalAddress必填。localAddress默认为vpn网关公网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLocalAddress(const std::string& _localAddress);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对端标识，当RemoteIdentity选为ADDRESS时，RemoteAddress必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemoteAddress 对端标识，当RemoteIdentity选为ADDRESS时，RemoteAddress必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemoteAddress() const;
 
                     /**
                      * 设置对端标识，当RemoteIdentity选为ADDRESS时，RemoteAddress必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remoteAddress 对端标识，当RemoteIdentity选为ADDRESS时，RemoteAddress必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemoteAddress(const std::string& _remoteAddress);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取本端标识，当LocalIdentity选为FQDN时，LocalFqdnName必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LocalFqdnName 本端标识，当LocalIdentity选为FQDN时，LocalFqdnName必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLocalFqdnName() const;
 
                     /**
                      * 设置本端标识，当LocalIdentity选为FQDN时，LocalFqdnName必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _localFqdnName 本端标识，当LocalIdentity选为FQDN时，LocalFqdnName必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLocalFqdnName(const std::string& _localFqdnName);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对端标识，当remoteIdentity选为FQDN时，RemoteFqdnName必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemoteFqdnName 对端标识，当remoteIdentity选为FQDN时，RemoteFqdnName必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemoteFqdnName() const;
 
                     /**
                      * 设置对端标识，当remoteIdentity选为FQDN时，RemoteFqdnName必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remoteFqdnName 对端标识，当remoteIdentity选为FQDN时，RemoteFqdnName必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemoteFqdnName(const std::string& _remoteFqdnName);
@@ -272,19 +236,15 @@ namespace TencentCloud
                     bool RemoteFqdnNameHasBeenSet() const;
 
                     /**
-                     * 获取DH group，指定IKE交换密钥时使用的DH组，可选值：'GROUP1', 'GROUP2', 'GROUP5', 'GROUP14', 'GROUP24'，
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DhGroupName DH group，指定IKE交换密钥时使用的DH组，可选值：'GROUP1', 'GROUP2', 'GROUP5', 'GROUP14', 'GROUP24'，
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取DH group，指定IKE交换密钥时使用的DH组，可选值：'GROUP1', 'GROUP2', 'GROUP5', 'GROUP14', 'GROUP24'，默认是GROUP1。
+                     * @return DhGroupName DH group，指定IKE交换密钥时使用的DH组，可选值：'GROUP1', 'GROUP2', 'GROUP5', 'GROUP14', 'GROUP24'，默认是GROUP1。
                      * 
                      */
                     std::string GetDhGroupName() const;
 
                     /**
-                     * 设置DH group，指定IKE交换密钥时使用的DH组，可选值：'GROUP1', 'GROUP2', 'GROUP5', 'GROUP14', 'GROUP24'，
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dhGroupName DH group，指定IKE交换密钥时使用的DH组，可选值：'GROUP1', 'GROUP2', 'GROUP5', 'GROUP14', 'GROUP24'，
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置DH group，指定IKE交换密钥时使用的DH组，可选值：'GROUP1', 'GROUP2', 'GROUP5', 'GROUP14', 'GROUP24'，默认是GROUP1。
+                     * @param _dhGroupName DH group，指定IKE交换密钥时使用的DH组，可选值：'GROUP1', 'GROUP2', 'GROUP5', 'GROUP14', 'GROUP24'，默认是GROUP1。
                      * 
                      */
                     void SetDhGroupName(const std::string& _dhGroupName);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取IKE SA Lifetime，单位：秒，设置IKE SA的生存周期，取值范围：60-604800
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IKESaLifetimeSeconds IKE SA Lifetime，单位：秒，设置IKE SA的生存周期，取值范围：60-604800
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIKESaLifetimeSeconds() const;
 
                     /**
                      * 设置IKE SA Lifetime，单位：秒，设置IKE SA的生存周期，取值范围：60-604800
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iKESaLifetimeSeconds IKE SA Lifetime，单位：秒，设置IKE SA的生存周期，取值范围：60-604800
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIKESaLifetimeSeconds(const uint64_t& _iKESaLifetimeSeconds);
@@ -323,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取IKE版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IKEVersion IKE版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIKEVersion() const;
 
                     /**
                      * 设置IKE版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iKEVersion IKE版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIKEVersion(const std::string& _iKEVersion);
@@ -349,85 +301,73 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBS-192', 'AES-CBC-256', 'DES-CBC'，'SM4', 默认为3DES-CBC
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC'，'SM4', 默认为3DES-CBC
                      */
                     std::string m_propoEncryAlgorithm;
                     bool m_propoEncryAlgorithmHasBeenSet;
 
                     /**
-                     * 认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为MD5
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 认证算法：可选值：'MD5'，'SHA'，'SHA-256'，'SHA-512'， 默认为SHA。
                      */
                     std::string m_propoAuthenAlgorithm;
                     bool m_propoAuthenAlgorithmHasBeenSet;
 
                     /**
-                     * 协商模式：可选值：'AGGRESSIVE', 'MAIN'，默认为MAIN
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 协商模式：可选值：'AGGRESSIVE'， 'MAIN'，默认为MAIN。
                      */
                     std::string m_exchangeMode;
                     bool m_exchangeModeHasBeenSet;
 
                     /**
                      * 本端标识类型：可选值：'ADDRESS', 'FQDN'，默认为ADDRESS
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_localIdentity;
                     bool m_localIdentityHasBeenSet;
 
                     /**
                      * 对端标识类型：可选值：'ADDRESS', 'FQDN'，默认为ADDRESS
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remoteIdentity;
                     bool m_remoteIdentityHasBeenSet;
 
                     /**
                      * 本端标识，当LocalIdentity选为ADDRESS时，LocalAddress必填。localAddress默认为vpn网关公网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_localAddress;
                     bool m_localAddressHasBeenSet;
 
                     /**
                      * 对端标识，当RemoteIdentity选为ADDRESS时，RemoteAddress必填
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remoteAddress;
                     bool m_remoteAddressHasBeenSet;
 
                     /**
                      * 本端标识，当LocalIdentity选为FQDN时，LocalFqdnName必填
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_localFqdnName;
                     bool m_localFqdnNameHasBeenSet;
 
                     /**
                      * 对端标识，当remoteIdentity选为FQDN时，RemoteFqdnName必填
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remoteFqdnName;
                     bool m_remoteFqdnNameHasBeenSet;
 
                     /**
-                     * DH group，指定IKE交换密钥时使用的DH组，可选值：'GROUP1', 'GROUP2', 'GROUP5', 'GROUP14', 'GROUP24'，
-注意：此字段可能返回 null，表示取不到有效值。
+                     * DH group，指定IKE交换密钥时使用的DH组，可选值：'GROUP1', 'GROUP2', 'GROUP5', 'GROUP14', 'GROUP24'，默认是GROUP1。
                      */
                     std::string m_dhGroupName;
                     bool m_dhGroupNameHasBeenSet;
 
                     /**
                      * IKE SA Lifetime，单位：秒，设置IKE SA的生存周期，取值范围：60-604800
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_iKESaLifetimeSeconds;
                     bool m_iKESaLifetimeSecondsHasBeenSet;
 
                     /**
                      * IKE版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_iKEVersion;
                     bool m_iKEVersionHasBeenSet;

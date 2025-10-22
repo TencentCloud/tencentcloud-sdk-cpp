@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,11 +75,9 @@ namespace TencentCloud
                      * 获取指标资源名称
 - cpu
 - memory
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceName 指标资源名称
 - cpu
 - memory
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceName() const;
@@ -88,11 +86,9 @@ namespace TencentCloud
                      * 设置指标资源名称
 - cpu
 - memory
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceName 指标资源名称
 - cpu
 - memory
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceName(const std::string& _resourceName);
@@ -106,18 +102,14 @@ namespace TencentCloud
 
                     /**
                      * 获取指标目标类型，目前只支持百分比Utilization
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetType 指标目标类型，目前只支持百分比Utilization
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTargetType() const;
 
                     /**
                      * 设置指标目标类型，目前只支持百分比Utilization
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _targetType 指标目标类型，目前只支持百分比Utilization
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTargetType(const std::string& _targetType);
@@ -131,18 +123,14 @@ namespace TencentCloud
 
                     /**
                      * 获取指标目标值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetValue 指标目标值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTargetValue() const;
 
                     /**
                      * 设置指标目标值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _targetValue 指标目标值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTargetValue(const int64_t& _targetValue);
@@ -167,21 +155,18 @@ namespace TencentCloud
                      * 指标资源名称
 - cpu
 - memory
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceName;
                     bool m_resourceNameHasBeenSet;
 
                     /**
                      * 指标目标类型，目前只支持百分比Utilization
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_targetType;
                     bool m_targetTypeHasBeenSet;
 
                     /**
                      * 指标目标值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_targetValue;
                     bool m_targetValueHasBeenSet;

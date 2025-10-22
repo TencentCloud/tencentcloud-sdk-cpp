@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 评估模版的详情数据
+                * 评估模板的详情数据
                 */
                 class TemplateInfo : public AbstractModel
                 {
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取模板id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TemplateId 模板id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTemplateId() const;
 
                     /**
                      * 设置模板id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _templateId 模板id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTemplateId(const int64_t& _templateId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TemplateName 模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
                      * 设置模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _templateName 模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTemplateName(const std::string& _templateName);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 模板id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
                      * 模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_templateName;
                     bool m_templateNameHasBeenSet;

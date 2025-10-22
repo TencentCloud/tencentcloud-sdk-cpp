@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/CosOutputStorage.h>
 #include <tencentcloud/mps/v20190612/model/S3OutputStorage.h>
+#include <tencentcloud/mps/v20190612/model/VODOutputStorage.h>
 
 
 namespace TencentCloud
@@ -52,9 +53,11 @@ namespace TencentCloud
                      * 获取媒体处理输出对象存储位置的类型，支持：
 <li>COS：COS存储</li>
 <li>AWS-S3：AWS 存储，只适用于AWS任务，且要求同区域</li>
+<li> VOD：点播专业版 </li>
                      * @return Type 媒体处理输出对象存储位置的类型，支持：
 <li>COS：COS存储</li>
 <li>AWS-S3：AWS 存储，只适用于AWS任务，且要求同区域</li>
+<li> VOD：点播专业版 </li>
                      * 
                      */
                     std::string GetType() const;
@@ -63,9 +66,11 @@ namespace TencentCloud
                      * 设置媒体处理输出对象存储位置的类型，支持：
 <li>COS：COS存储</li>
 <li>AWS-S3：AWS 存储，只适用于AWS任务，且要求同区域</li>
+<li> VOD：点播专业版 </li>
                      * @param _type 媒体处理输出对象存储位置的类型，支持：
 <li>COS：COS存储</li>
 <li>AWS-S3：AWS 存储，只适用于AWS任务，且要求同区域</li>
+<li> VOD：点播专业版 </li>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -127,12 +132,38 @@ namespace TencentCloud
                      */
                     bool S3OutputStorageHasBeenSet() const;
 
+                    /**
+                     * 获取当 Type 为 VOD 时有效，则该项为必填，表示媒体处理 点播专业版 输出位置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VODOutputStorage 当 Type 为 VOD 时有效，则该项为必填，表示媒体处理 点播专业版 输出位置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    VODOutputStorage GetVODOutputStorage() const;
+
+                    /**
+                     * 设置当 Type 为 VOD 时有效，则该项为必填，表示媒体处理 点播专业版 输出位置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _vODOutputStorage 当 Type 为 VOD 时有效，则该项为必填，表示媒体处理 点播专业版 输出位置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVODOutputStorage(const VODOutputStorage& _vODOutputStorage);
+
+                    /**
+                     * 判断参数 VODOutputStorage 是否已赋值
+                     * @return VODOutputStorage 是否已赋值
+                     * 
+                     */
+                    bool VODOutputStorageHasBeenSet() const;
+
                 private:
 
                     /**
                      * 媒体处理输出对象存储位置的类型，支持：
 <li>COS：COS存储</li>
 <li>AWS-S3：AWS 存储，只适用于AWS任务，且要求同区域</li>
+<li> VOD：点播专业版 </li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -150,6 +181,13 @@ namespace TencentCloud
                      */
                     S3OutputStorage m_s3OutputStorage;
                     bool m_s3OutputStorageHasBeenSet;
+
+                    /**
+                     * 当 Type 为 VOD 时有效，则该项为必填，表示媒体处理 点播专业版 输出位置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    VODOutputStorage m_vODOutputStorage;
+                    bool m_vODOutputStorageHasBeenSet;
 
                 };
             }

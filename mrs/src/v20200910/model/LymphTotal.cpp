@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,21 +47,21 @@ CoreInternalOutcome LymphTotal::Deserialize(const rapidjson::Value &value)
 
     if (value.HasMember("TransferNum") && !value["TransferNum"].IsNull())
     {
-        if (!value["TransferNum"].IsString())
+        if (!value["TransferNum"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `LymphTotal.TransferNum` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LymphTotal.TransferNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_transferNum = string(value["TransferNum"].GetString());
+        m_transferNum = value["TransferNum"].GetInt64();
         m_transferNumHasBeenSet = true;
     }
 
     if (value.HasMember("Total") && !value["Total"].IsNull())
     {
-        if (!value["Total"].IsString())
+        if (!value["Total"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `LymphTotal.Total` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `LymphTotal.Total` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_total = string(value["Total"].GetString());
+        m_total = value["Total"].GetInt64();
         m_totalHasBeenSet = true;
     }
 
@@ -128,7 +128,7 @@ void LymphTotal::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TransferNum";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_transferNum.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_transferNum, allocator);
     }
 
     if (m_totalHasBeenSet)
@@ -136,7 +136,7 @@ void LymphTotal::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Total";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_total.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_total, allocator);
     }
 
     if (m_srcHasBeenSet)
@@ -194,12 +194,12 @@ bool LymphTotal::NameHasBeenSet() const
     return m_nameHasBeenSet;
 }
 
-string LymphTotal::GetTransferNum() const
+int64_t LymphTotal::GetTransferNum() const
 {
     return m_transferNum;
 }
 
-void LymphTotal::SetTransferNum(const string& _transferNum)
+void LymphTotal::SetTransferNum(const int64_t& _transferNum)
 {
     m_transferNum = _transferNum;
     m_transferNumHasBeenSet = true;
@@ -210,12 +210,12 @@ bool LymphTotal::TransferNumHasBeenSet() const
     return m_transferNumHasBeenSet;
 }
 
-string LymphTotal::GetTotal() const
+int64_t LymphTotal::GetTotal() const
 {
     return m_total;
 }
 
-void LymphTotal::SetTotal(const string& _total)
+void LymphTotal::SetTotal(const int64_t& _total)
 {
     m_total = _total;
     m_totalHasBeenSet = true;

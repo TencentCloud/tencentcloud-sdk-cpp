@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -409,6 +409,69 @@ namespace TencentCloud
                      */
                     bool HeadersHasBeenSet() const;
 
+                    /**
+                     * 获取是否缓存请求body，默认true
+                     * @return RequestBuffering 是否缓存请求body，默认true
+                     * 
+                     */
+                    bool GetRequestBuffering() const;
+
+                    /**
+                     * 设置是否缓存请求body，默认true
+                     * @param _requestBuffering 是否缓存请求body，默认true
+                     * 
+                     */
+                    void SetRequestBuffering(const bool& _requestBuffering);
+
+                    /**
+                     * 判断参数 RequestBuffering 是否已赋值
+                     * @return RequestBuffering 是否已赋值
+                     * 
+                     */
+                    bool RequestBufferingHasBeenSet() const;
+
+                    /**
+                     * 获取是否缓存响应body，默认true
+                     * @return ResponseBuffering 是否缓存响应body，默认true
+                     * 
+                     */
+                    bool GetResponseBuffering() const;
+
+                    /**
+                     * 设置是否缓存响应body，默认true
+                     * @param _responseBuffering 是否缓存响应body，默认true
+                     * 
+                     */
+                    void SetResponseBuffering(const bool& _responseBuffering);
+
+                    /**
+                     * 判断参数 ResponseBuffering 是否已赋值
+                     * @return ResponseBuffering 是否已赋值
+                     * 
+                     */
+                    bool ResponseBufferingHasBeenSet() const;
+
+                    /**
+                     * 获取增加优先级
+                     * @return RegexPriority 增加优先级
+                     * 
+                     */
+                    int64_t GetRegexPriority() const;
+
+                    /**
+                     * 设置增加优先级
+                     * @param _regexPriority 增加优先级
+                     * 
+                     */
+                    void SetRegexPriority(const int64_t& _regexPriority);
+
+                    /**
+                     * 判断参数 RegexPriority 是否已赋值
+                     * @return RegexPriority 是否已赋值
+                     * 
+                     */
+                    bool RegexPriorityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -512,6 +575,24 @@ namespace TencentCloud
                      */
                     std::vector<KVMapping> m_headers;
                     bool m_headersHasBeenSet;
+
+                    /**
+                     * 是否缓存请求body，默认true
+                     */
+                    bool m_requestBuffering;
+                    bool m_requestBufferingHasBeenSet;
+
+                    /**
+                     * 是否缓存响应body，默认true
+                     */
+                    bool m_responseBuffering;
+                    bool m_responseBufferingHasBeenSet;
+
+                    /**
+                     * 增加优先级
+                     */
+                    int64_t m_regexPriority;
+                    bool m_regexPriorityHasBeenSet;
 
                 };
             }

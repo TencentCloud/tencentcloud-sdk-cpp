@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,8 +21,8 @@ using namespace TencentCloud::Vpc::V20170312::Model;
 using namespace std;
 
 HaVipAssociation::HaVipAssociation() :
-    m_haVipIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
+    m_haVipIdHasBeenSet(false),
     m_instanceTypeHasBeenSet(false)
 {
 }
@@ -32,16 +32,6 @@ CoreInternalOutcome HaVipAssociation::Deserialize(const rapidjson::Value &value)
     string requestId = "";
 
 
-    if (value.HasMember("HaVipId") && !value["HaVipId"].IsNull())
-    {
-        if (!value["HaVipId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `HaVipAssociation.HaVipId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_haVipId = string(value["HaVipId"].GetString());
-        m_haVipIdHasBeenSet = true;
-    }
-
     if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
     {
         if (!value["InstanceId"].IsString())
@@ -50,6 +40,16 @@ CoreInternalOutcome HaVipAssociation::Deserialize(const rapidjson::Value &value)
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("HaVipId") && !value["HaVipId"].IsNull())
+    {
+        if (!value["HaVipId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HaVipAssociation.HaVipId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_haVipId = string(value["HaVipId"].GetString());
+        m_haVipIdHasBeenSet = true;
     }
 
     if (value.HasMember("InstanceType") && !value["InstanceType"].IsNull())
@@ -69,20 +69,20 @@ CoreInternalOutcome HaVipAssociation::Deserialize(const rapidjson::Value &value)
 void HaVipAssociation::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_haVipIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "HaVipId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_haVipId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_instanceIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_haVipIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HaVipId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_haVipId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceTypeHasBeenSet)
@@ -95,22 +95,6 @@ void HaVipAssociation::ToJsonObject(rapidjson::Value &value, rapidjson::Document
 
 }
 
-
-string HaVipAssociation::GetHaVipId() const
-{
-    return m_haVipId;
-}
-
-void HaVipAssociation::SetHaVipId(const string& _haVipId)
-{
-    m_haVipId = _haVipId;
-    m_haVipIdHasBeenSet = true;
-}
-
-bool HaVipAssociation::HaVipIdHasBeenSet() const
-{
-    return m_haVipIdHasBeenSet;
-}
 
 string HaVipAssociation::GetInstanceId() const
 {
@@ -126,6 +110,22 @@ void HaVipAssociation::SetInstanceId(const string& _instanceId)
 bool HaVipAssociation::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+string HaVipAssociation::GetHaVipId() const
+{
+    return m_haVipId;
+}
+
+void HaVipAssociation::SetHaVipId(const string& _haVipId)
+{
+    m_haVipId = _haVipId;
+    m_haVipIdHasBeenSet = true;
+}
+
+bool HaVipAssociation::HaVipIdHasBeenSet() const
+{
+    return m_haVipIdHasBeenSet;
 }
 
 string HaVipAssociation::GetInstanceType() const

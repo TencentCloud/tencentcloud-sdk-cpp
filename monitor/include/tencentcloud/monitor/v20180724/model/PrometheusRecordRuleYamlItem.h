@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取Yaml内容
-                     * @return TemplateId Yaml内容
+                     * 获取如果该聚合规则来至模板，则TemplateId为模板id
+                     * @return TemplateId 如果该聚合规则来至模板，则TemplateId为模板id
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置Yaml内容
-                     * @param _templateId Yaml内容
+                     * 设置如果该聚合规则来至模板，则TemplateId为模板id
+                     * @param _templateId 如果该聚合规则来至模板，则TemplateId为模板id
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -110,18 +110,18 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取如果该聚合规则来至模板，则TemplateId为模板id
+                     * 获取Yaml内容
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Content 如果该聚合规则来至模板，则TemplateId为模板id
+                     * @return Content Yaml内容
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
-                     * 设置如果该聚合规则来至模板，则TemplateId为模板id
+                     * 设置Yaml内容
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _content 如果该聚合规则来至模板，则TemplateId为模板id
+                     * @param _content Yaml内容
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -249,13 +249,13 @@ namespace TencentCloud
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * Yaml内容
+                     * 如果该聚合规则来至模板，则TemplateId为模板id
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 如果该聚合规则来至模板，则TemplateId为模板id
+                     * Yaml内容
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_content;

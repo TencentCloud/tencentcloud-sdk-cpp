@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,15 +111,15 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool ForwardHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡实例的名称。
-                     * @return LoadBalancerName 负载均衡实例的名称。
+                     * 获取负载均衡实例的名称，支持模糊查询。
+                     * @return LoadBalancerName 负载均衡实例的名称，支持模糊查询。
                      * 
                      */
                     std::string GetLoadBalancerName() const;
 
                     /**
-                     * 设置负载均衡实例的名称。
-                     * @param _loadBalancerName 负载均衡实例的名称。
+                     * 设置负载均衡实例的名称，支持模糊查询。
+                     * @param _loadBalancerName 负载均衡实例的名称，支持模糊查询。
                      * 
                      */
                     void SetLoadBalancerName(const std::string& _loadBalancerName);
@@ -132,15 +132,15 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool LoadBalancerNameHasBeenSet() const;
 
                     /**
-                     * 获取腾讯云为负载均衡实例分配的域名。
-                     * @return Domain 腾讯云为负载均衡实例分配的域名。
+                     * 获取腾讯云为负载均衡实例分配的域名，支持模糊查询。
+                     * @return Domain 腾讯云为负载均衡实例分配的域名，支持模糊查询。
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置腾讯云为负载均衡实例分配的域名。
-                     * @param _domain 腾讯云为负载均衡实例分配的域名。
+                     * 设置腾讯云为负载均衡实例分配的域名，支持模糊查询。
+                     * @param _domain 腾讯云为负载均衡实例分配的域名，支持模糊查询。
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -258,15 +258,43 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取排序参数，支持以下字段：LoadBalancerName，CreateTime，Domain，LoadBalancerType。
-                     * @return OrderBy 排序参数，支持以下字段：LoadBalancerName，CreateTime，Domain，LoadBalancerType。
+                     * 获取排序参数，支持以下字段：
+- LoadBalancerName
+- CreateTime
+- Domain
+- LoadBalancerType
+
+默认为 CreateTime。
+
+                     * @return OrderBy 排序参数，支持以下字段：
+- LoadBalancerName
+- CreateTime
+- Domain
+- LoadBalancerType
+
+默认为 CreateTime。
+
                      * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置排序参数，支持以下字段：LoadBalancerName，CreateTime，Domain，LoadBalancerType。
-                     * @param _orderBy 排序参数，支持以下字段：LoadBalancerName，CreateTime，Domain，LoadBalancerType。
+                     * 设置排序参数，支持以下字段：
+- LoadBalancerName
+- CreateTime
+- Domain
+- LoadBalancerType
+
+默认为 CreateTime。
+
+                     * @param _orderBy 排序参数，支持以下字段：
+- LoadBalancerName
+- CreateTime
+- Domain
+- LoadBalancerType
+
+默认为 CreateTime。
+
                      * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
@@ -279,15 +307,15 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取1：倒序，0：顺序，默认按照创建时间倒序。
-                     * @return OrderType 1：倒序，0：顺序，默认按照创建时间倒序。
+                     * 获取1：倒序，0：顺序，默认为1，按照创建时间倒序。
+                     * @return OrderType 1：倒序，0：顺序，默认为1，按照创建时间倒序。
                      * 
                      */
                     int64_t GetOrderType() const;
 
                     /**
-                     * 设置1：倒序，0：顺序，默认按照创建时间倒序。
-                     * @param _orderType 1：倒序，0：顺序，默认按照创建时间倒序。
+                     * 设置1：倒序，0：顺序，默认为1，按照创建时间倒序。
+                     * @param _orderType 1：倒序，0：顺序，默认为1，按照创建时间倒序。
                      * 
                      */
                     void SetOrderType(const int64_t& _orderType);
@@ -300,15 +328,15 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool OrderTypeHasBeenSet() const;
 
                     /**
-                     * 获取搜索字段，模糊匹配名称、域名、VIP。
-                     * @return SearchKey 搜索字段，模糊匹配名称、域名、VIP。
+                     * 获取模糊搜索字段，模糊匹配负载均衡实例的名称、域名、负载均衡实例的 VIP 地址，负载均衡实例ID。
+                     * @return SearchKey 模糊搜索字段，模糊匹配负载均衡实例的名称、域名、负载均衡实例的 VIP 地址，负载均衡实例ID。
                      * 
                      */
                     std::string GetSearchKey() const;
 
                     /**
-                     * 设置搜索字段，模糊匹配名称、域名、VIP。
-                     * @param _searchKey 搜索字段，模糊匹配名称、域名、VIP。
+                     * 设置模糊搜索字段，模糊匹配负载均衡实例的名称、域名、负载均衡实例的 VIP 地址，负载均衡实例ID。
+                     * @param _searchKey 模糊搜索字段，模糊匹配负载均衡实例的名称、域名、负载均衡实例的 VIP 地址，负载均衡实例ID。
                      * 
                      */
                     void SetSearchKey(const std::string& _searchKey);
@@ -321,15 +349,15 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool SearchKeyHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡实例所属的项目 ID，可以通过 DescribeProject 接口获取。
-                     * @return ProjectId 负载均衡实例所属的项目 ID，可以通过 DescribeProject 接口获取。
+                     * 获取负载均衡实例所属的项目 ID，可以通过[DescribeProject](https://cloud.tencent.com/document/api/651/78725)接口获取，不传默认所有项目。
+                     * @return ProjectId 负载均衡实例所属的项目 ID，可以通过[DescribeProject](https://cloud.tencent.com/document/api/651/78725)接口获取，不传默认所有项目。
                      * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置负载均衡实例所属的项目 ID，可以通过 DescribeProject 接口获取。
-                     * @param _projectId 负载均衡实例所属的项目 ID，可以通过 DescribeProject 接口获取。
+                     * 设置负载均衡实例所属的项目 ID，可以通过[DescribeProject](https://cloud.tencent.com/document/api/651/78725)接口获取，不传默认所有项目。
+                     * @param _projectId 负载均衡实例所属的项目 ID，可以通过[DescribeProject](https://cloud.tencent.com/document/api/651/78725)接口获取，不传默认所有项目。
                      * 
                      */
                     void SetProjectId(const int64_t& _projectId);
@@ -363,19 +391,19 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool WithRsHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡实例所属私有网络唯一ID，如 vpc-bhqkbhdx，
-基础网络可传入'0'。
-                     * @return VpcId 负载均衡实例所属私有网络唯一ID，如 vpc-bhqkbhdx，
-基础网络可传入'0'。
+                     * 获取负载均衡实例所属私有网络唯一ID，如 vpc-bhqkbhdx，可以通过[DescribeVpcs](https://cloud.tencent.com/document/api/215/15778)接口获取。
+查找基础网络类型的负载均衡可传入'0'。
+                     * @return VpcId 负载均衡实例所属私有网络唯一ID，如 vpc-bhqkbhdx，可以通过[DescribeVpcs](https://cloud.tencent.com/document/api/215/15778)接口获取。
+查找基础网络类型的负载均衡可传入'0'。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置负载均衡实例所属私有网络唯一ID，如 vpc-bhqkbhdx，
-基础网络可传入'0'。
-                     * @param _vpcId 负载均衡实例所属私有网络唯一ID，如 vpc-bhqkbhdx，
-基础网络可传入'0'。
+                     * 设置负载均衡实例所属私有网络唯一ID，如 vpc-bhqkbhdx，可以通过[DescribeVpcs](https://cloud.tencent.com/document/api/215/15778)接口获取。
+查找基础网络类型的负载均衡可传入'0'。
+                     * @param _vpcId 负载均衡实例所属私有网络唯一ID，如 vpc-bhqkbhdx，可以通过[DescribeVpcs](https://cloud.tencent.com/document/api/215/15778)接口获取。
+查找基础网络类型的负载均衡可传入'0'。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -388,15 +416,15 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取安全组ID，如 sg-m1cc****。
-                     * @return SecurityGroup 安全组ID，如 sg-m1cc****。
+                     * 获取安全组ID，如 sg-m1cc****，可以通过接口[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)获取。
+                     * @return SecurityGroup 安全组ID，如 sg-m1cc****，可以通过接口[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)获取。
                      * 
                      */
                     std::string GetSecurityGroup() const;
 
                     /**
-                     * 设置安全组ID，如 sg-m1cc****。
-                     * @param _securityGroup 安全组ID，如 sg-m1cc****。
+                     * 设置安全组ID，如 sg-m1cc****，可以通过接口[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)获取。
+                     * @param _securityGroup 安全组ID，如 sg-m1cc****，可以通过接口[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)获取。
                      * 
                      */
                     void SetSecurityGroup(const std::string& _securityGroup);
@@ -431,46 +459,202 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 获取每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。<br/>`Filter.Name`和`Filter.Values`皆为必填项。详细的过滤条件如下：
-<li> charge-type - String - 是否必填：否 - （过滤条件）按照 CLB 的实例计费模式过滤，包括"PREPAID","POSTPAID_BY_HOUR"。</li>
-<li> internet-charge-type - String - 是否必填：否 - （过滤条件）按照 CLB 的网络计费模式过滤，包括"BANDWIDTH_PREPAID","TRAFFIC_POSTPAID_BY_HOUR","BANDWIDTH_POSTPAID_BY_HOUR","BANDWIDTH_PACKAGE"。</li>
-<li> master-zone-id - String - 是否必填：否 - （过滤条件）按照 CLB 的主可用区ID过滤，如 ："100001" （对应的是广州一区）。</li>
-<li> tag-key - String - 是否必填：否 - （过滤条件）按照 CLB 标签的键过滤。</li>
-<li> tag:tag-key - String - 是否必填：否 - （过滤条件）按照CLB标签键值对进行过滤，tag-key使用具体的标签键进行替换。</li>
-<li> function-name - String - 是否必填：否 - （过滤条件）按照 CLB 后端绑定的SCF云函数的函数名称过滤。</li>
-<li> vip-isp - String - 是否必填：否 - （过滤条件）按照 CLB VIP的运营商类型过滤，如："BGP","INTERNAL","CMCC","CTCC","CUCC"等。</li>
-<li> sla-type - String - 是否必填：否 - （过滤条件）按照 CLB 的性能容量型规格过滤，包括"clb.c2.medium","clb.c3.small","clb.c3.medium","clb.c4.small","clb.c4.medium","clb.c4.large","clb.c4.xlarge"。</li>
+- charge-type
+按照【实例计费模式】进行过滤。实例计费模式例如：PREPAID。
+类型：String
+必选：否
+可选项：PREPAID(预付费)、POSTPAID_BY_HOUR(后付费)
+- internet-charge-type
+按照【网络计费模式】进行过滤。网络计费模式例如：BANDWIDTH_PREPAID。
+类型：String
+必选：否
+可选项：BANDWIDTH_PREPAID(预付费按带宽结算)、 TRAFFIC_POSTPAID_BY_HOUR(流量按小时后付费)、BANDWIDTH_POSTPAID_BY_HOUR(带宽按小时后付费)、BANDWIDTH_PACKAGE(带宽包用户)
+- master-zone-id
+按照【CLB主可用区ID】进行过滤。例如：100001（对应的是广州一区）。
+类型：String
+必选：否
+获取方式：[DescribeZones](https://cloud.tencent.com/document/product/213/15707)
+- tag-key
+按照【CLB 标签的键】进行过滤，例如：tag-key。
+类型：String
+必选：否
+获取方式：[DescribeTags](https://cloud.tencent.com/document/api/651/35316)
+- tag:tag-key
+按照【CLB标签键值】进行过滤，例如：tag-test。
+类型：String
+必选：否
+获取方式：[DescribeTagKeys](https://cloud.tencent.com/document/api/651/35318)
+- function-name
+按照【后端绑定SCF云函数的函数名称】进行过滤，例如：helloworld-1744958255。
+类型：String
+必选：否
+获取方式：[ListFunctions](https://cloud.tencent.com/document/api/583/18582)
+- vip-isp
+按照【CLB VIP的运营商类型】进行过滤，例如：BGP。
+类型：String
+必选：否
+公网类型可选项：BGP(多线)、CMCC(中国移动)、CTCC(中国电信)、CUCC(中国联通)
+内网类型可选项：INTERNAL(内网)
+- sla-type
+按照【CLB 的性能容量型规格】进行过滤，例如：clb.c4.xlarge。
+类型：String
+必选：否
+可选项：clb.c2.medium(标准型)、clb.c3.small(高阶型1)、clb.c3.medium(高阶型2)、clb.c4.small(超强型1)、clb.c4.medium(超强型2)、clb.c4.large(超强型3)、clb.c4.xlarge(超强型4)
+具体规格参数参考：
+- exclusive
+按照【独占实例】进行过滤。例如：1，代表筛选独占型实例。
+类型：String
+必选：否
+可选项：0、1
                      * @return Filters 每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。<br/>`Filter.Name`和`Filter.Values`皆为必填项。详细的过滤条件如下：
-<li> charge-type - String - 是否必填：否 - （过滤条件）按照 CLB 的实例计费模式过滤，包括"PREPAID","POSTPAID_BY_HOUR"。</li>
-<li> internet-charge-type - String - 是否必填：否 - （过滤条件）按照 CLB 的网络计费模式过滤，包括"BANDWIDTH_PREPAID","TRAFFIC_POSTPAID_BY_HOUR","BANDWIDTH_POSTPAID_BY_HOUR","BANDWIDTH_PACKAGE"。</li>
-<li> master-zone-id - String - 是否必填：否 - （过滤条件）按照 CLB 的主可用区ID过滤，如 ："100001" （对应的是广州一区）。</li>
-<li> tag-key - String - 是否必填：否 - （过滤条件）按照 CLB 标签的键过滤。</li>
-<li> tag:tag-key - String - 是否必填：否 - （过滤条件）按照CLB标签键值对进行过滤，tag-key使用具体的标签键进行替换。</li>
-<li> function-name - String - 是否必填：否 - （过滤条件）按照 CLB 后端绑定的SCF云函数的函数名称过滤。</li>
-<li> vip-isp - String - 是否必填：否 - （过滤条件）按照 CLB VIP的运营商类型过滤，如："BGP","INTERNAL","CMCC","CTCC","CUCC"等。</li>
-<li> sla-type - String - 是否必填：否 - （过滤条件）按照 CLB 的性能容量型规格过滤，包括"clb.c2.medium","clb.c3.small","clb.c3.medium","clb.c4.small","clb.c4.medium","clb.c4.large","clb.c4.xlarge"。</li>
+- charge-type
+按照【实例计费模式】进行过滤。实例计费模式例如：PREPAID。
+类型：String
+必选：否
+可选项：PREPAID(预付费)、POSTPAID_BY_HOUR(后付费)
+- internet-charge-type
+按照【网络计费模式】进行过滤。网络计费模式例如：BANDWIDTH_PREPAID。
+类型：String
+必选：否
+可选项：BANDWIDTH_PREPAID(预付费按带宽结算)、 TRAFFIC_POSTPAID_BY_HOUR(流量按小时后付费)、BANDWIDTH_POSTPAID_BY_HOUR(带宽按小时后付费)、BANDWIDTH_PACKAGE(带宽包用户)
+- master-zone-id
+按照【CLB主可用区ID】进行过滤。例如：100001（对应的是广州一区）。
+类型：String
+必选：否
+获取方式：[DescribeZones](https://cloud.tencent.com/document/product/213/15707)
+- tag-key
+按照【CLB 标签的键】进行过滤，例如：tag-key。
+类型：String
+必选：否
+获取方式：[DescribeTags](https://cloud.tencent.com/document/api/651/35316)
+- tag:tag-key
+按照【CLB标签键值】进行过滤，例如：tag-test。
+类型：String
+必选：否
+获取方式：[DescribeTagKeys](https://cloud.tencent.com/document/api/651/35318)
+- function-name
+按照【后端绑定SCF云函数的函数名称】进行过滤，例如：helloworld-1744958255。
+类型：String
+必选：否
+获取方式：[ListFunctions](https://cloud.tencent.com/document/api/583/18582)
+- vip-isp
+按照【CLB VIP的运营商类型】进行过滤，例如：BGP。
+类型：String
+必选：否
+公网类型可选项：BGP(多线)、CMCC(中国移动)、CTCC(中国电信)、CUCC(中国联通)
+内网类型可选项：INTERNAL(内网)
+- sla-type
+按照【CLB 的性能容量型规格】进行过滤，例如：clb.c4.xlarge。
+类型：String
+必选：否
+可选项：clb.c2.medium(标准型)、clb.c3.small(高阶型1)、clb.c3.medium(高阶型2)、clb.c4.small(超强型1)、clb.c4.medium(超强型2)、clb.c4.large(超强型3)、clb.c4.xlarge(超强型4)
+具体规格参数参考：
+- exclusive
+按照【独占实例】进行过滤。例如：1，代表筛选独占型实例。
+类型：String
+必选：否
+可选项：0、1
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。<br/>`Filter.Name`和`Filter.Values`皆为必填项。详细的过滤条件如下：
-<li> charge-type - String - 是否必填：否 - （过滤条件）按照 CLB 的实例计费模式过滤，包括"PREPAID","POSTPAID_BY_HOUR"。</li>
-<li> internet-charge-type - String - 是否必填：否 - （过滤条件）按照 CLB 的网络计费模式过滤，包括"BANDWIDTH_PREPAID","TRAFFIC_POSTPAID_BY_HOUR","BANDWIDTH_POSTPAID_BY_HOUR","BANDWIDTH_PACKAGE"。</li>
-<li> master-zone-id - String - 是否必填：否 - （过滤条件）按照 CLB 的主可用区ID过滤，如 ："100001" （对应的是广州一区）。</li>
-<li> tag-key - String - 是否必填：否 - （过滤条件）按照 CLB 标签的键过滤。</li>
-<li> tag:tag-key - String - 是否必填：否 - （过滤条件）按照CLB标签键值对进行过滤，tag-key使用具体的标签键进行替换。</li>
-<li> function-name - String - 是否必填：否 - （过滤条件）按照 CLB 后端绑定的SCF云函数的函数名称过滤。</li>
-<li> vip-isp - String - 是否必填：否 - （过滤条件）按照 CLB VIP的运营商类型过滤，如："BGP","INTERNAL","CMCC","CTCC","CUCC"等。</li>
-<li> sla-type - String - 是否必填：否 - （过滤条件）按照 CLB 的性能容量型规格过滤，包括"clb.c2.medium","clb.c3.small","clb.c3.medium","clb.c4.small","clb.c4.medium","clb.c4.large","clb.c4.xlarge"。</li>
+- charge-type
+按照【实例计费模式】进行过滤。实例计费模式例如：PREPAID。
+类型：String
+必选：否
+可选项：PREPAID(预付费)、POSTPAID_BY_HOUR(后付费)
+- internet-charge-type
+按照【网络计费模式】进行过滤。网络计费模式例如：BANDWIDTH_PREPAID。
+类型：String
+必选：否
+可选项：BANDWIDTH_PREPAID(预付费按带宽结算)、 TRAFFIC_POSTPAID_BY_HOUR(流量按小时后付费)、BANDWIDTH_POSTPAID_BY_HOUR(带宽按小时后付费)、BANDWIDTH_PACKAGE(带宽包用户)
+- master-zone-id
+按照【CLB主可用区ID】进行过滤。例如：100001（对应的是广州一区）。
+类型：String
+必选：否
+获取方式：[DescribeZones](https://cloud.tencent.com/document/product/213/15707)
+- tag-key
+按照【CLB 标签的键】进行过滤，例如：tag-key。
+类型：String
+必选：否
+获取方式：[DescribeTags](https://cloud.tencent.com/document/api/651/35316)
+- tag:tag-key
+按照【CLB标签键值】进行过滤，例如：tag-test。
+类型：String
+必选：否
+获取方式：[DescribeTagKeys](https://cloud.tencent.com/document/api/651/35318)
+- function-name
+按照【后端绑定SCF云函数的函数名称】进行过滤，例如：helloworld-1744958255。
+类型：String
+必选：否
+获取方式：[ListFunctions](https://cloud.tencent.com/document/api/583/18582)
+- vip-isp
+按照【CLB VIP的运营商类型】进行过滤，例如：BGP。
+类型：String
+必选：否
+公网类型可选项：BGP(多线)、CMCC(中国移动)、CTCC(中国电信)、CUCC(中国联通)
+内网类型可选项：INTERNAL(内网)
+- sla-type
+按照【CLB 的性能容量型规格】进行过滤，例如：clb.c4.xlarge。
+类型：String
+必选：否
+可选项：clb.c2.medium(标准型)、clb.c3.small(高阶型1)、clb.c3.medium(高阶型2)、clb.c4.small(超强型1)、clb.c4.medium(超强型2)、clb.c4.large(超强型3)、clb.c4.xlarge(超强型4)
+具体规格参数参考：
+- exclusive
+按照【独占实例】进行过滤。例如：1，代表筛选独占型实例。
+类型：String
+必选：否
+可选项：0、1
                      * @param _filters 每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。<br/>`Filter.Name`和`Filter.Values`皆为必填项。详细的过滤条件如下：
-<li> charge-type - String - 是否必填：否 - （过滤条件）按照 CLB 的实例计费模式过滤，包括"PREPAID","POSTPAID_BY_HOUR"。</li>
-<li> internet-charge-type - String - 是否必填：否 - （过滤条件）按照 CLB 的网络计费模式过滤，包括"BANDWIDTH_PREPAID","TRAFFIC_POSTPAID_BY_HOUR","BANDWIDTH_POSTPAID_BY_HOUR","BANDWIDTH_PACKAGE"。</li>
-<li> master-zone-id - String - 是否必填：否 - （过滤条件）按照 CLB 的主可用区ID过滤，如 ："100001" （对应的是广州一区）。</li>
-<li> tag-key - String - 是否必填：否 - （过滤条件）按照 CLB 标签的键过滤。</li>
-<li> tag:tag-key - String - 是否必填：否 - （过滤条件）按照CLB标签键值对进行过滤，tag-key使用具体的标签键进行替换。</li>
-<li> function-name - String - 是否必填：否 - （过滤条件）按照 CLB 后端绑定的SCF云函数的函数名称过滤。</li>
-<li> vip-isp - String - 是否必填：否 - （过滤条件）按照 CLB VIP的运营商类型过滤，如："BGP","INTERNAL","CMCC","CTCC","CUCC"等。</li>
-<li> sla-type - String - 是否必填：否 - （过滤条件）按照 CLB 的性能容量型规格过滤，包括"clb.c2.medium","clb.c3.small","clb.c3.medium","clb.c4.small","clb.c4.medium","clb.c4.large","clb.c4.xlarge"。</li>
+- charge-type
+按照【实例计费模式】进行过滤。实例计费模式例如：PREPAID。
+类型：String
+必选：否
+可选项：PREPAID(预付费)、POSTPAID_BY_HOUR(后付费)
+- internet-charge-type
+按照【网络计费模式】进行过滤。网络计费模式例如：BANDWIDTH_PREPAID。
+类型：String
+必选：否
+可选项：BANDWIDTH_PREPAID(预付费按带宽结算)、 TRAFFIC_POSTPAID_BY_HOUR(流量按小时后付费)、BANDWIDTH_POSTPAID_BY_HOUR(带宽按小时后付费)、BANDWIDTH_PACKAGE(带宽包用户)
+- master-zone-id
+按照【CLB主可用区ID】进行过滤。例如：100001（对应的是广州一区）。
+类型：String
+必选：否
+获取方式：[DescribeZones](https://cloud.tencent.com/document/product/213/15707)
+- tag-key
+按照【CLB 标签的键】进行过滤，例如：tag-key。
+类型：String
+必选：否
+获取方式：[DescribeTags](https://cloud.tencent.com/document/api/651/35316)
+- tag:tag-key
+按照【CLB标签键值】进行过滤，例如：tag-test。
+类型：String
+必选：否
+获取方式：[DescribeTagKeys](https://cloud.tencent.com/document/api/651/35318)
+- function-name
+按照【后端绑定SCF云函数的函数名称】进行过滤，例如：helloworld-1744958255。
+类型：String
+必选：否
+获取方式：[ListFunctions](https://cloud.tencent.com/document/api/583/18582)
+- vip-isp
+按照【CLB VIP的运营商类型】进行过滤，例如：BGP。
+类型：String
+必选：否
+公网类型可选项：BGP(多线)、CMCC(中国移动)、CTCC(中国电信)、CUCC(中国联通)
+内网类型可选项：INTERNAL(内网)
+- sla-type
+按照【CLB 的性能容量型规格】进行过滤，例如：clb.c4.xlarge。
+类型：String
+必选：否
+可选项：clb.c2.medium(标准型)、clb.c3.small(高阶型1)、clb.c3.medium(高阶型2)、clb.c4.small(超强型1)、clb.c4.medium(超强型2)、clb.c4.large(超强型3)、clb.c4.xlarge(超强型4)
+具体规格参数参考：
+- exclusive
+按照【独占实例】进行过滤。例如：1，代表筛选独占型实例。
+类型：String
+必选：否
+可选项：0、1
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -481,6 +665,31 @@ OPEN：公网属性， INTERNAL：内网属性。
                      * 
                      */
                     bool FiltersHasBeenSet() const;
+
+                    /**
+                     * 获取选择返回的扩充字段，不指定时，扩充字段默认不返回。详细支持的扩充字段如下：
+<li> TargetCount：绑定的后端服务数量</li>
+                     * @return AdditionalFields 选择返回的扩充字段，不指定时，扩充字段默认不返回。详细支持的扩充字段如下：
+<li> TargetCount：绑定的后端服务数量</li>
+                     * 
+                     */
+                    std::vector<std::string> GetAdditionalFields() const;
+
+                    /**
+                     * 设置选择返回的扩充字段，不指定时，扩充字段默认不返回。详细支持的扩充字段如下：
+<li> TargetCount：绑定的后端服务数量</li>
+                     * @param _additionalFields 选择返回的扩充字段，不指定时，扩充字段默认不返回。详细支持的扩充字段如下：
+<li> TargetCount：绑定的后端服务数量</li>
+                     * 
+                     */
+                    void SetAdditionalFields(const std::vector<std::string>& _additionalFields);
+
+                    /**
+                     * 判断参数 AdditionalFields 是否已赋值
+                     * @return AdditionalFields 是否已赋值
+                     * 
+                     */
+                    bool AdditionalFieldsHasBeenSet() const;
 
                 private:
 
@@ -504,13 +713,13 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_forwardHasBeenSet;
 
                     /**
-                     * 负载均衡实例的名称。
+                     * 负载均衡实例的名称，支持模糊查询。
                      */
                     std::string m_loadBalancerName;
                     bool m_loadBalancerNameHasBeenSet;
 
                     /**
-                     * 腾讯云为负载均衡实例分配的域名。
+                     * 腾讯云为负载均衡实例分配的域名，支持模糊查询。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
@@ -546,25 +755,32 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 排序参数，支持以下字段：LoadBalancerName，CreateTime，Domain，LoadBalancerType。
+                     * 排序参数，支持以下字段：
+- LoadBalancerName
+- CreateTime
+- Domain
+- LoadBalancerType
+
+默认为 CreateTime。
+
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 1：倒序，0：顺序，默认按照创建时间倒序。
+                     * 1：倒序，0：顺序，默认为1，按照创建时间倒序。
                      */
                     int64_t m_orderType;
                     bool m_orderTypeHasBeenSet;
 
                     /**
-                     * 搜索字段，模糊匹配名称、域名、VIP。
+                     * 模糊搜索字段，模糊匹配负载均衡实例的名称、域名、负载均衡实例的 VIP 地址，负载均衡实例ID。
                      */
                     std::string m_searchKey;
                     bool m_searchKeyHasBeenSet;
 
                     /**
-                     * 负载均衡实例所属的项目 ID，可以通过 DescribeProject 接口获取。
+                     * 负载均衡实例所属的项目 ID，可以通过[DescribeProject](https://cloud.tencent.com/document/api/651/78725)接口获取，不传默认所有项目。
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
@@ -576,14 +792,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_withRsHasBeenSet;
 
                     /**
-                     * 负载均衡实例所属私有网络唯一ID，如 vpc-bhqkbhdx，
-基础网络可传入'0'。
+                     * 负载均衡实例所属私有网络唯一ID，如 vpc-bhqkbhdx，可以通过[DescribeVpcs](https://cloud.tencent.com/document/api/215/15778)接口获取。
+查找基础网络类型的负载均衡可传入'0'。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 安全组ID，如 sg-m1cc****。
+                     * 安全组ID，如 sg-m1cc****，可以通过接口[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)获取。
                      */
                     std::string m_securityGroup;
                     bool m_securityGroupHasBeenSet;
@@ -596,17 +812,63 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。<br/>`Filter.Name`和`Filter.Values`皆为必填项。详细的过滤条件如下：
-<li> charge-type - String - 是否必填：否 - （过滤条件）按照 CLB 的实例计费模式过滤，包括"PREPAID","POSTPAID_BY_HOUR"。</li>
-<li> internet-charge-type - String - 是否必填：否 - （过滤条件）按照 CLB 的网络计费模式过滤，包括"BANDWIDTH_PREPAID","TRAFFIC_POSTPAID_BY_HOUR","BANDWIDTH_POSTPAID_BY_HOUR","BANDWIDTH_PACKAGE"。</li>
-<li> master-zone-id - String - 是否必填：否 - （过滤条件）按照 CLB 的主可用区ID过滤，如 ："100001" （对应的是广州一区）。</li>
-<li> tag-key - String - 是否必填：否 - （过滤条件）按照 CLB 标签的键过滤。</li>
-<li> tag:tag-key - String - 是否必填：否 - （过滤条件）按照CLB标签键值对进行过滤，tag-key使用具体的标签键进行替换。</li>
-<li> function-name - String - 是否必填：否 - （过滤条件）按照 CLB 后端绑定的SCF云函数的函数名称过滤。</li>
-<li> vip-isp - String - 是否必填：否 - （过滤条件）按照 CLB VIP的运营商类型过滤，如："BGP","INTERNAL","CMCC","CTCC","CUCC"等。</li>
-<li> sla-type - String - 是否必填：否 - （过滤条件）按照 CLB 的性能容量型规格过滤，包括"clb.c2.medium","clb.c3.small","clb.c3.medium","clb.c4.small","clb.c4.medium","clb.c4.large","clb.c4.xlarge"。</li>
+- charge-type
+按照【实例计费模式】进行过滤。实例计费模式例如：PREPAID。
+类型：String
+必选：否
+可选项：PREPAID(预付费)、POSTPAID_BY_HOUR(后付费)
+- internet-charge-type
+按照【网络计费模式】进行过滤。网络计费模式例如：BANDWIDTH_PREPAID。
+类型：String
+必选：否
+可选项：BANDWIDTH_PREPAID(预付费按带宽结算)、 TRAFFIC_POSTPAID_BY_HOUR(流量按小时后付费)、BANDWIDTH_POSTPAID_BY_HOUR(带宽按小时后付费)、BANDWIDTH_PACKAGE(带宽包用户)
+- master-zone-id
+按照【CLB主可用区ID】进行过滤。例如：100001（对应的是广州一区）。
+类型：String
+必选：否
+获取方式：[DescribeZones](https://cloud.tencent.com/document/product/213/15707)
+- tag-key
+按照【CLB 标签的键】进行过滤，例如：tag-key。
+类型：String
+必选：否
+获取方式：[DescribeTags](https://cloud.tencent.com/document/api/651/35316)
+- tag:tag-key
+按照【CLB标签键值】进行过滤，例如：tag-test。
+类型：String
+必选：否
+获取方式：[DescribeTagKeys](https://cloud.tencent.com/document/api/651/35318)
+- function-name
+按照【后端绑定SCF云函数的函数名称】进行过滤，例如：helloworld-1744958255。
+类型：String
+必选：否
+获取方式：[ListFunctions](https://cloud.tencent.com/document/api/583/18582)
+- vip-isp
+按照【CLB VIP的运营商类型】进行过滤，例如：BGP。
+类型：String
+必选：否
+公网类型可选项：BGP(多线)、CMCC(中国移动)、CTCC(中国电信)、CUCC(中国联通)
+内网类型可选项：INTERNAL(内网)
+- sla-type
+按照【CLB 的性能容量型规格】进行过滤，例如：clb.c4.xlarge。
+类型：String
+必选：否
+可选项：clb.c2.medium(标准型)、clb.c3.small(高阶型1)、clb.c3.medium(高阶型2)、clb.c4.small(超强型1)、clb.c4.medium(超强型2)、clb.c4.large(超强型3)、clb.c4.xlarge(超强型4)
+具体规格参数参考：
+- exclusive
+按照【独占实例】进行过滤。例如：1，代表筛选独占型实例。
+类型：String
+必选：否
+可选项：0、1
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * 选择返回的扩充字段，不指定时，扩充字段默认不返回。详细支持的扩充字段如下：
+<li> TargetCount：绑定的后端服务数量</li>
+                     */
+                    std::vector<std::string> m_additionalFields;
+                    bool m_additionalFieldsHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取模板ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TemplateId 模板ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
                      * 设置模板ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _templateId 模板ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TemplateName 模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
                      * 设置模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _templateName 模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTemplateName(const std::string& _templateName);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取上云时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeSections 上云时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RecordTemplateTimeSections> GetTimeSections() const;
 
                     /**
                      * 设置上云时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeSections 上云时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeSections(const std::vector<RecordTemplateTimeSections>& _timeSections);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取录像时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DevTimeSections 录像时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RecordTemplateTimeSections> GetDevTimeSections() const;
 
                     /**
                      * 设置录像时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _devTimeSections 录像时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDevTimeSections(const std::vector<RecordTemplateTimeSections>& _devTimeSections);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取上云倍速（支持1，2，4倍速）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Scale 上云倍速（支持1，2，4倍速）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScale() const;
 
                     /**
                      * 设置上云倍速（支持1，2，4倍速）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scale 上云倍速（支持1，2，4倍速）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScale(const int64_t& _scale);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateAt 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateAt() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createAt 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateAt(const std::string& _createAt);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateAt 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateAt() const;
 
                     /**
                      * 设置更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateAt 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateAt(const std::string& _updateAt);
@@ -226,49 +198,42 @@ namespace TencentCloud
 
                     /**
                      * 模板ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
                      * 模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_templateName;
                     bool m_templateNameHasBeenSet;
 
                     /**
                      * 上云时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RecordTemplateTimeSections> m_timeSections;
                     bool m_timeSectionsHasBeenSet;
 
                     /**
                      * 录像时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RecordTemplateTimeSections> m_devTimeSections;
                     bool m_devTimeSectionsHasBeenSet;
 
                     /**
                      * 上云倍速（支持1，2，4倍速）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_scale;
                     bool m_scaleHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createAt;
                     bool m_createAtHasBeenSet;
 
                     /**
                      * 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateAt;
                     bool m_updateAtHasBeenSet;

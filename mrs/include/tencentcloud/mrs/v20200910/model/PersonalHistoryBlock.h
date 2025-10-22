@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,18 +53,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出生地
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BirthPlace 出生地
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BirthPlaceBlock GetBirthPlace() const;
 
                     /**
                      * 设置出生地
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _birthPlace 出生地
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBirthPlace(const BirthPlaceBlock& _birthPlace);
@@ -78,18 +74,14 @@ namespace TencentCloud
 
                     /**
                      * 获取居住地
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LivePlace 居住地
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BirthPlaceBlock GetLivePlace() const;
 
                     /**
                      * 设置居住地
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _livePlace 居住地
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLivePlace(const BirthPlaceBlock& _livePlace);
@@ -103,18 +95,14 @@ namespace TencentCloud
 
                     /**
                      * 获取职业
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Job 职业
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BirthPlaceBlock GetJob() const;
 
                     /**
                      * 设置职业
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _job 职业
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJob(const BirthPlaceBlock& _job);
@@ -128,18 +116,14 @@ namespace TencentCloud
 
                     /**
                      * 获取吸烟
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SmokeHistory 吸烟
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SmokeHistoryBlock GetSmokeHistory() const;
 
                     /**
                      * 设置吸烟
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _smokeHistory 吸烟
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSmokeHistory(const SmokeHistoryBlock& _smokeHistory);
@@ -153,18 +137,14 @@ namespace TencentCloud
 
                     /**
                      * 获取喝酒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlcoholicHistory 喝酒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SmokeHistoryBlock GetAlcoholicHistory() const;
 
                     /**
                      * 设置喝酒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _alcoholicHistory 喝酒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAlcoholicHistory(const SmokeHistoryBlock& _alcoholicHistory);
@@ -178,18 +158,14 @@ namespace TencentCloud
 
                     /**
                      * 获取月经史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MenstrualHistory 月经史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MenstrualHistoryBlock GetMenstrualHistory() const;
 
                     /**
                      * 设置月经史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _menstrualHistory 月经史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMenstrualHistory(const MenstrualHistoryBlock& _menstrualHistory);
@@ -203,18 +179,14 @@ namespace TencentCloud
 
                     /**
                      * 获取婚姻-生育史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObstericalHistory 婚姻-生育史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ObstetricalHistoryBlock GetObstericalHistory() const;
 
                     /**
                      * 设置婚姻-生育史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _obstericalHistory 婚姻-生育史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetObstericalHistory(const ObstetricalHistoryBlock& _obstericalHistory);
@@ -228,18 +200,14 @@ namespace TencentCloud
 
                     /**
                      * 获取家族史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FamilyHistory 家族史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     FamilyHistoryBlock GetFamilyHistory() const;
 
                     /**
                      * 设置家族史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _familyHistory 家族史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFamilyHistory(const FamilyHistoryBlock& _familyHistory);
@@ -255,56 +223,48 @@ namespace TencentCloud
 
                     /**
                      * 出生地
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BirthPlaceBlock m_birthPlace;
                     bool m_birthPlaceHasBeenSet;
 
                     /**
                      * 居住地
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BirthPlaceBlock m_livePlace;
                     bool m_livePlaceHasBeenSet;
 
                     /**
                      * 职业
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BirthPlaceBlock m_job;
                     bool m_jobHasBeenSet;
 
                     /**
                      * 吸烟
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SmokeHistoryBlock m_smokeHistory;
                     bool m_smokeHistoryHasBeenSet;
 
                     /**
                      * 喝酒
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SmokeHistoryBlock m_alcoholicHistory;
                     bool m_alcoholicHistoryHasBeenSet;
 
                     /**
                      * 月经史
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MenstrualHistoryBlock m_menstrualHistory;
                     bool m_menstrualHistoryHasBeenSet;
 
                     /**
                      * 婚姻-生育史
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ObstetricalHistoryBlock m_obstericalHistory;
                     bool m_obstericalHistoryHasBeenSet;
 
                     /**
                      * 家族史
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     FamilyHistoryBlock m_familyHistory;
                     bool m_familyHistoryHasBeenSet;

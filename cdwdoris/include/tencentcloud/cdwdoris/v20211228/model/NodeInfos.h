@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -174,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -199,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zone 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -221,6 +213,90 @@ namespace TencentCloud
                      * 
                      */
                     bool ZoneHasBeenSet() const;
+
+                    /**
+                     * 获取创建时间
+                     * @return CreateTime 创建时间
+                     * 
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置创建时间
+                     * @param _createTime 创建时间
+                     * 
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取计算组id
+                     * @return ComputeGroupId 计算组id
+                     * 
+                     */
+                    std::string GetComputeGroupId() const;
+
+                    /**
+                     * 设置计算组id
+                     * @param _computeGroupId 计算组id
+                     * 
+                     */
+                    void SetComputeGroupId(const std::string& _computeGroupId);
+
+                    /**
+                     * 判断参数 ComputeGroupId 是否已赋值
+                     * @return ComputeGroupId 是否已赋值
+                     * 
+                     */
+                    bool ComputeGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取rip
+                     * @return RIp rip
+                     * 
+                     */
+                    std::string GetRIp() const;
+
+                    /**
+                     * 设置rip
+                     * @param _rIp rip
+                     * 
+                     */
+                    void SetRIp(const std::string& _rIp);
+
+                    /**
+                     * 判断参数 RIp 是否已赋值
+                     * @return RIp 是否已赋值
+                     * 
+                     */
+                    bool RIpHasBeenSet() const;
+
+                    /**
+                     * 获取虚拟可用区
+                     * @return VirtualZone 虚拟可用区
+                     * 
+                     */
+                    std::string GetVirtualZone() const;
+
+                    /**
+                     * 设置虚拟可用区
+                     * @param _virtualZone 虚拟可用区
+                     * 
+                     */
+                    void SetVirtualZone(const std::string& _virtualZone);
+
+                    /**
+                     * 判断参数 VirtualZone 是否已赋值
+                     * @return VirtualZone 是否已赋值
+                     * 
+                     */
+                    bool VirtualZoneHasBeenSet() const;
 
                 private:
 
@@ -262,17 +338,39 @@ namespace TencentCloud
 
                     /**
                      * id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
+
+                    /**
+                     * 创建时间
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 计算组id
+                     */
+                    std::string m_computeGroupId;
+                    bool m_computeGroupIdHasBeenSet;
+
+                    /**
+                     * rip
+                     */
+                    std::string m_rIp;
+                    bool m_rIpHasBeenSet;
+
+                    /**
+                     * 虚拟可用区
+                     */
+                    std::string m_virtualZone;
+                    bool m_virtualZoneHasBeenSet;
 
                 };
             }

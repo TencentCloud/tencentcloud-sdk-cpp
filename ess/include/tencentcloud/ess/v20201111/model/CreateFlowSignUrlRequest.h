@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -132,12 +132,24 @@ namespace TencentCloud
                     /**
                      * 获取流程签署人列表中，结构体的ApproverName、ApproverMobile和ApproverType为必传字段。如果是企业签署人，还需传递OrganizationName。
 
+此结构体和CreateFlow发起接口参与方结构体复用，除了上述参数外，可传递的参数有：
+1. RecipientId: 发起合同会返回，可以直接用于指定需要生成链接的签署方。
+2. ApproverSignTypes: 指定签署方签署时候的认证方式，仅此链接生效。
+3. SignTypeSelector: 可以指定签署方签署合同的认证校验方式的选择模式。
+4. Intention: 指定H5签署视频核身的意图配置，仅视频签署需要使用。
+
 注：
 1. 签署人<b>只能使用手写签名、时间类型、印章类型、签批类型的签署控件和内容填写控件</b>，其他类型的签署控件暂时不支持。
 2. 生成发起方预览链接时，该字段（FlowApproverInfos）可以传空或者不传。
 
 
                      * @return FlowApproverInfos 流程签署人列表中，结构体的ApproverName、ApproverMobile和ApproverType为必传字段。如果是企业签署人，还需传递OrganizationName。
+
+此结构体和CreateFlow发起接口参与方结构体复用，除了上述参数外，可传递的参数有：
+1. RecipientId: 发起合同会返回，可以直接用于指定需要生成链接的签署方。
+2. ApproverSignTypes: 指定签署方签署时候的认证方式，仅此链接生效。
+3. SignTypeSelector: 可以指定签署方签署合同的认证校验方式的选择模式。
+4. Intention: 指定H5签署视频核身的意图配置，仅视频签署需要使用。
 
 注：
 1. 签署人<b>只能使用手写签名、时间类型、印章类型、签批类型的签署控件和内容填写控件</b>，其他类型的签署控件暂时不支持。
@@ -151,12 +163,24 @@ namespace TencentCloud
                     /**
                      * 设置流程签署人列表中，结构体的ApproverName、ApproverMobile和ApproverType为必传字段。如果是企业签署人，还需传递OrganizationName。
 
+此结构体和CreateFlow发起接口参与方结构体复用，除了上述参数外，可传递的参数有：
+1. RecipientId: 发起合同会返回，可以直接用于指定需要生成链接的签署方。
+2. ApproverSignTypes: 指定签署方签署时候的认证方式，仅此链接生效。
+3. SignTypeSelector: 可以指定签署方签署合同的认证校验方式的选择模式。
+4. Intention: 指定H5签署视频核身的意图配置，仅视频签署需要使用。
+
 注：
 1. 签署人<b>只能使用手写签名、时间类型、印章类型、签批类型的签署控件和内容填写控件</b>，其他类型的签署控件暂时不支持。
 2. 生成发起方预览链接时，该字段（FlowApproverInfos）可以传空或者不传。
 
 
                      * @param _flowApproverInfos 流程签署人列表中，结构体的ApproverName、ApproverMobile和ApproverType为必传字段。如果是企业签署人，还需传递OrganizationName。
+
+此结构体和CreateFlow发起接口参与方结构体复用，除了上述参数外，可传递的参数有：
+1. RecipientId: 发起合同会返回，可以直接用于指定需要生成链接的签署方。
+2. ApproverSignTypes: 指定签署方签署时候的认证方式，仅此链接生效。
+3. SignTypeSelector: 可以指定签署方签署合同的认证校验方式的选择模式。
+4. Intention: 指定H5签署视频核身的意图配置，仅视频签署需要使用。
 
 注：
 1. 签署人<b>只能使用手写签名、时间类型、印章类型、签批类型的签署控件和内容填写控件</b>，其他类型的签署控件暂时不支持。
@@ -296,6 +320,12 @@ namespace TencentCloud
 
                     /**
                      * 流程签署人列表中，结构体的ApproverName、ApproverMobile和ApproverType为必传字段。如果是企业签署人，还需传递OrganizationName。
+
+此结构体和CreateFlow发起接口参与方结构体复用，除了上述参数外，可传递的参数有：
+1. RecipientId: 发起合同会返回，可以直接用于指定需要生成链接的签署方。
+2. ApproverSignTypes: 指定签署方签署时候的认证方式，仅此链接生效。
+3. SignTypeSelector: 可以指定签署方签署合同的认证校验方式的选择模式。
+4. Intention: 指定H5签署视频核身的意图配置，仅视频签署需要使用。
 
 注：
 1. 签署人<b>只能使用手写签名、时间类型、印章类型、签批类型的签署控件和内容填写控件</b>，其他类型的签署控件暂时不支持。

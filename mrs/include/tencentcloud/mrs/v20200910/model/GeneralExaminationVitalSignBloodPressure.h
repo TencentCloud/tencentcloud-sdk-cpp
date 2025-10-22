@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取血压
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 血压
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BloodPressureItem GetText() const;
 
                     /**
                      * 设置血压
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _text 血压
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetText(const BloodPressureItem& _text);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取收缩压/舒张压
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SystolicDiastolicPressure 收缩压/舒张压
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BloodPressureItem> GetSystolicDiastolicPressure() const;
 
                     /**
                      * 设置收缩压/舒张压
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _systolicDiastolicPressure 收缩压/舒张压
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSystolicDiastolicPressure(const std::vector<BloodPressureItem>& _systolicDiastolicPressure);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取收缩压
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SystolicPressure 收缩压
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BloodPressureItem> GetSystolicPressure() const;
 
                     /**
                      * 设置收缩压
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _systolicPressure 收缩压
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSystolicPressure(const std::vector<BloodPressureItem>& _systolicPressure);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取舒张压
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiastolicPressure 舒张压
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BloodPressureItem> GetDiastolicPressure() const;
 
                     /**
                      * 设置舒张压
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diastolicPressure 舒张压
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiastolicPressure(const std::vector<BloodPressureItem>& _diastolicPressure);
@@ -151,28 +135,24 @@ namespace TencentCloud
 
                     /**
                      * 血压
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BloodPressureItem m_text;
                     bool m_textHasBeenSet;
 
                     /**
                      * 收缩压/舒张压
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BloodPressureItem> m_systolicDiastolicPressure;
                     bool m_systolicDiastolicPressureHasBeenSet;
 
                     /**
                      * 收缩压
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BloodPressureItem> m_systolicPressure;
                     bool m_systolicPressureHasBeenSet;
 
                     /**
                      * 舒张压
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BloodPressureItem> m_diastolicPressure;
                     bool m_diastolicPressureHasBeenSet;

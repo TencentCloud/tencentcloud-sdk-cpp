@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,7 +42,11 @@ ChannelCreateFlowByFilesRequest::ChannelCreateFlowByFilesRequest() :
     m_ccNotifyTypeHasBeenSet(false),
     m_autoSignSceneHasBeenSet(false),
     m_operatorHasBeenSet(false),
-    m_flowDisplayTypeHasBeenSet(false)
+    m_flowDisplayTypeHasBeenSet(false),
+    m_needPreviewHasBeenSet(false),
+    m_previewTypeHasBeenSet(false),
+    m_openDynamicFlowHasBeenSet(false),
+    m_openDynamicSignFlowHasBeenSet(false)
 {
 }
 
@@ -239,6 +243,38 @@ string ChannelCreateFlowByFilesRequest::ToJsonString() const
         string key = "FlowDisplayType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_flowDisplayType, allocator);
+    }
+
+    if (m_needPreviewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedPreview";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needPreview, allocator);
+    }
+
+    if (m_previewTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreviewType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_previewType, allocator);
+    }
+
+    if (m_openDynamicFlowHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OpenDynamicFlow";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_openDynamicFlow, allocator);
+    }
+
+    if (m_openDynamicSignFlowHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OpenDynamicSignFlow";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_openDynamicSignFlow, allocator);
     }
 
 
@@ -567,6 +603,70 @@ void ChannelCreateFlowByFilesRequest::SetFlowDisplayType(const int64_t& _flowDis
 bool ChannelCreateFlowByFilesRequest::FlowDisplayTypeHasBeenSet() const
 {
     return m_flowDisplayTypeHasBeenSet;
+}
+
+bool ChannelCreateFlowByFilesRequest::GetNeedPreview() const
+{
+    return m_needPreview;
+}
+
+void ChannelCreateFlowByFilesRequest::SetNeedPreview(const bool& _needPreview)
+{
+    m_needPreview = _needPreview;
+    m_needPreviewHasBeenSet = true;
+}
+
+bool ChannelCreateFlowByFilesRequest::NeedPreviewHasBeenSet() const
+{
+    return m_needPreviewHasBeenSet;
+}
+
+int64_t ChannelCreateFlowByFilesRequest::GetPreviewType() const
+{
+    return m_previewType;
+}
+
+void ChannelCreateFlowByFilesRequest::SetPreviewType(const int64_t& _previewType)
+{
+    m_previewType = _previewType;
+    m_previewTypeHasBeenSet = true;
+}
+
+bool ChannelCreateFlowByFilesRequest::PreviewTypeHasBeenSet() const
+{
+    return m_previewTypeHasBeenSet;
+}
+
+bool ChannelCreateFlowByFilesRequest::GetOpenDynamicFlow() const
+{
+    return m_openDynamicFlow;
+}
+
+void ChannelCreateFlowByFilesRequest::SetOpenDynamicFlow(const bool& _openDynamicFlow)
+{
+    m_openDynamicFlow = _openDynamicFlow;
+    m_openDynamicFlowHasBeenSet = true;
+}
+
+bool ChannelCreateFlowByFilesRequest::OpenDynamicFlowHasBeenSet() const
+{
+    return m_openDynamicFlowHasBeenSet;
+}
+
+bool ChannelCreateFlowByFilesRequest::GetOpenDynamicSignFlow() const
+{
+    return m_openDynamicSignFlow;
+}
+
+void ChannelCreateFlowByFilesRequest::SetOpenDynamicSignFlow(const bool& _openDynamicSignFlow)
+{
+    m_openDynamicSignFlow = _openDynamicSignFlow;
+    m_openDynamicSignFlowHasBeenSet = true;
+}
+
+bool ChannelCreateFlowByFilesRequest::OpenDynamicSignFlowHasBeenSet() const
+{
+    return m_openDynamicSignFlowHasBeenSet;
 }
 
 

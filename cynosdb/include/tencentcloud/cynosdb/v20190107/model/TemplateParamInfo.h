@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数类型为enum时可选的值类型集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnumValue 参数类型为enum时可选的值类型集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetEnumValue() const;
 
                     /**
                      * 设置参数类型为enum时可选的值类型集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enumValue 参数类型为enum时可选的值类型集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnumValue(const std::vector<std::string>& _enumValue);
@@ -115,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数类型为float/integer时的最大值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Max 参数类型为float/integer时的最大值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMax() const;
 
                     /**
                      * 设置参数类型为float/integer时的最大值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _max 参数类型为float/integer时的最大值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMax(const std::string& _max);
@@ -140,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数类型为float/integer时的最小值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Min 参数类型为float/integer时的最小值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMin() const;
 
                     /**
                      * 设置参数类型为float/integer时的最小值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _min 参数类型为float/integer时的最小值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMin(const std::string& _min);
@@ -263,21 +251,18 @@ namespace TencentCloud
 
                     /**
                      * 参数类型为enum时可选的值类型集合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_enumValue;
                     bool m_enumValueHasBeenSet;
 
                     /**
                      * 参数类型为float/integer时的最大值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_max;
                     bool m_maxHasBeenSet;
 
                     /**
                      * 参数类型为float/integer时的最小值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_min;
                     bool m_minHasBeenSet;

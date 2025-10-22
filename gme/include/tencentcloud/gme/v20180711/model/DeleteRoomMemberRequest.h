@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool BizIdHasBeenSet() const;
 
                     /**
-                     * 获取要剔除的用户列表
-                     * @return Uids 要剔除的用户列表
+                     * 获取要剔除的用户列表（整型）
+                     * @return Uids 要剔除的用户列表（整型）
                      * 
                      */
                     std::vector<std::string> GetUids() const;
 
                     /**
-                     * 设置要剔除的用户列表
-                     * @param _uids 要剔除的用户列表
+                     * 设置要剔除的用户列表（整型）
+                     * @param _uids 要剔除的用户列表（整型）
                      * 
                      */
                     void SetUids(const std::vector<std::string>& _uids);
@@ -125,6 +125,27 @@ namespace TencentCloud
                      * 
                      */
                     bool UidsHasBeenSet() const;
+
+                    /**
+                     * 获取要剔除的用户列表（字符串类型）
+                     * @return StrUids 要剔除的用户列表（字符串类型）
+                     * 
+                     */
+                    std::vector<std::string> GetStrUids() const;
+
+                    /**
+                     * 设置要剔除的用户列表（字符串类型）
+                     * @param _strUids 要剔除的用户列表（字符串类型）
+                     * 
+                     */
+                    void SetStrUids(const std::vector<std::string>& _strUids);
+
+                    /**
+                     * 判断参数 StrUids 是否已赋值
+                     * @return StrUids 是否已赋值
+                     * 
+                     */
+                    bool StrUidsHasBeenSet() const;
 
                 private:
 
@@ -147,10 +168,16 @@ namespace TencentCloud
                     bool m_bizIdHasBeenSet;
 
                     /**
-                     * 要剔除的用户列表
+                     * 要剔除的用户列表（整型）
                      */
                     std::vector<std::string> m_uids;
                     bool m_uidsHasBeenSet;
+
+                    /**
+                     * 要剔除的用户列表（字符串类型）
+                     */
+                    std::vector<std::string> m_strUids;
+                    bool m_strUidsHasBeenSet;
 
                 };
             }

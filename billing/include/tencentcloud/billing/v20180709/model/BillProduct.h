@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductCode 子产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductCode() const;
 
                     /**
                      * 设置子产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productCode 子产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductCode(const std::string& _productCode);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子产品名称：用户采购的具体产品细分类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductCodeName 子产品名称：用户采购的具体产品细分类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductCodeName() const;
 
                     /**
                      * 设置子产品名称：用户采购的具体产品细分类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productCodeName 子产品名称：用户采购的具体产品细分类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductCodeName(const std::string& _productCodeName);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 子产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productCode;
                     bool m_productCodeHasBeenSet;
 
                     /**
                      * 子产品名称：用户采购的具体产品细分类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productCodeName;
                     bool m_productCodeNameHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -149,14 +149,18 @@ namespace TencentCloud
 
                     /**
                      * 获取房间名称。
+字符数不超过256
                      * @return Name 房间名称。
+字符数不超过256
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置房间名称。
+字符数不超过256
                      * @param _name 房间名称。
+字符数不超过256
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -664,6 +668,98 @@ video 纯视频
                      */
                     bool RecordLangHasBeenSet() const;
 
+                    /**
+                     * 获取板书截图生成类型。0 不生成板书；1 全量模式；2 单页去重模式
+                     * @return WhiteBoardSnapshotMode 板书截图生成类型。0 不生成板书；1 全量模式；2 单页去重模式
+                     * 
+                     */
+                    uint64_t GetWhiteBoardSnapshotMode() const;
+
+                    /**
+                     * 设置板书截图生成类型。0 不生成板书；1 全量模式；2 单页去重模式
+                     * @param _whiteBoardSnapshotMode 板书截图生成类型。0 不生成板书；1 全量模式；2 单页去重模式
+                     * 
+                     */
+                    void SetWhiteBoardSnapshotMode(const uint64_t& _whiteBoardSnapshotMode);
+
+                    /**
+                     * 判断参数 WhiteBoardSnapshotMode 是否已赋值
+                     * @return WhiteBoardSnapshotMode 是否已赋值
+                     * 
+                     */
+                    bool WhiteBoardSnapshotModeHasBeenSet() const;
+
+                    /**
+                     * 获取字幕转写功能开关。可以有以下取值：
+0 不开启字幕转写功能（默认值）
+1 自动转写模式：上课自动开启，下课自动停止
+                     * @return SubtitlesTranscription 字幕转写功能开关。可以有以下取值：
+0 不开启字幕转写功能（默认值）
+1 自动转写模式：上课自动开启，下课自动停止
+                     * 
+                     */
+                    uint64_t GetSubtitlesTranscription() const;
+
+                    /**
+                     * 设置字幕转写功能开关。可以有以下取值：
+0 不开启字幕转写功能（默认值）
+1 自动转写模式：上课自动开启，下课自动停止
+                     * @param _subtitlesTranscription 字幕转写功能开关。可以有以下取值：
+0 不开启字幕转写功能（默认值）
+1 自动转写模式：上课自动开启，下课自动停止
+                     * 
+                     */
+                    void SetSubtitlesTranscription(const uint64_t& _subtitlesTranscription);
+
+                    /**
+                     * 判断参数 SubtitlesTranscription 是否已赋值
+                     * @return SubtitlesTranscription 是否已赋值
+                     * 
+                     */
+                    bool SubtitlesTranscriptionHasBeenSet() const;
+
+                    /**
+                     * 获取嘉宾Id列表。当圆桌会议模式（RoomType==3）时生效
+                     * @return Guests 嘉宾Id列表。当圆桌会议模式（RoomType==3）时生效
+                     * 
+                     */
+                    std::vector<std::string> GetGuests() const;
+
+                    /**
+                     * 设置嘉宾Id列表。当圆桌会议模式（RoomType==3）时生效
+                     * @param _guests 嘉宾Id列表。当圆桌会议模式（RoomType==3）时生效
+                     * 
+                     */
+                    void SetGuests(const std::vector<std::string>& _guests);
+
+                    /**
+                     * 判断参数 Guests 是否已赋值
+                     * @return Guests 是否已赋值
+                     * 
+                     */
+                    bool GuestsHasBeenSet() const;
+
+                    /**
+                     * 获取录制文件合并开关。0 关闭 1 开启 注：只有在一节课多次启用手动录制时，此功能才有效
+                     * @return RecordMerge 录制文件合并开关。0 关闭 1 开启 注：只有在一节课多次启用手动录制时，此功能才有效
+                     * 
+                     */
+                    uint64_t GetRecordMerge() const;
+
+                    /**
+                     * 设置录制文件合并开关。0 关闭 1 开启 注：只有在一节课多次启用手动录制时，此功能才有效
+                     * @param _recordMerge 录制文件合并开关。0 关闭 1 开启 注：只有在一节课多次启用手动录制时，此功能才有效
+                     * 
+                     */
+                    void SetRecordMerge(const uint64_t& _recordMerge);
+
+                    /**
+                     * 判断参数 RecordMerge 是否已赋值
+                     * @return RecordMerge 是否已赋值
+                     * 
+                     */
+                    bool RecordMergeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -698,6 +794,7 @@ video 纯视频
 
                     /**
                      * 房间名称。
+字符数不超过256
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -840,6 +937,32 @@ video 纯视频
                      */
                     std::string m_recordLang;
                     bool m_recordLangHasBeenSet;
+
+                    /**
+                     * 板书截图生成类型。0 不生成板书；1 全量模式；2 单页去重模式
+                     */
+                    uint64_t m_whiteBoardSnapshotMode;
+                    bool m_whiteBoardSnapshotModeHasBeenSet;
+
+                    /**
+                     * 字幕转写功能开关。可以有以下取值：
+0 不开启字幕转写功能（默认值）
+1 自动转写模式：上课自动开启，下课自动停止
+                     */
+                    uint64_t m_subtitlesTranscription;
+                    bool m_subtitlesTranscriptionHasBeenSet;
+
+                    /**
+                     * 嘉宾Id列表。当圆桌会议模式（RoomType==3）时生效
+                     */
+                    std::vector<std::string> m_guests;
+                    bool m_guestsHasBeenSet;
+
+                    /**
+                     * 录制文件合并开关。0 关闭 1 开启 注：只有在一节课多次启用手动录制时，此功能才有效
+                     */
+                    uint64_t m_recordMerge;
+                    bool m_recordMergeHasBeenSet;
 
                 };
             }

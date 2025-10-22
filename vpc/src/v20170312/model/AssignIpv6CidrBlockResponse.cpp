@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ using namespace TencentCloud::Vpc::V20170312::Model;
 using namespace std;
 
 AssignIpv6CidrBlockResponse::AssignIpv6CidrBlockResponse() :
-    m_ipv6CidrBlockHasBeenSet(false)
+    m_ipv6CidrBlockHasBeenSet(false),
+    m_addressTypeHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome AssignIpv6CidrBlockResponse::Deserialize(const string &paylo
         m_ipv6CidrBlockHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AddressType") && !rsp["AddressType"].IsNull())
+    {
+        if (!rsp["AddressType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AddressType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_addressType = string(rsp["AddressType"].GetString());
+        m_addressTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -90,11 +101,19 @@ string AssignIpv6CidrBlockResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_ipv6CidrBlock.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_addressTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddressType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_addressType.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -110,6 +129,16 @@ string AssignIpv6CidrBlockResponse::GetIpv6CidrBlock() const
 bool AssignIpv6CidrBlockResponse::Ipv6CidrBlockHasBeenSet() const
 {
     return m_ipv6CidrBlockHasBeenSet;
+}
+
+string AssignIpv6CidrBlockResponse::GetAddressType() const
+{
+    return m_addressType;
+}
+
+bool AssignIpv6CidrBlockResponse::AddressTypeHasBeenSet() const
+{
+    return m_addressTypeHasBeenSet;
 }
 
 

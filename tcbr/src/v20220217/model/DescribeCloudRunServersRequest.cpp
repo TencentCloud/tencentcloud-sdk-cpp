@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,10 @@ using namespace std;
 DescribeCloudRunServersRequest::DescribeCloudRunServersRequest() :
     m_envIdHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
-    m_pageNumHasBeenSet(false)
+    m_pageNumHasBeenSet(false),
+    m_serverNameHasBeenSet(false),
+    m_serverTypeHasBeenSet(false),
+    m_vpcIdHasBeenSet(false)
 {
 }
 
@@ -58,6 +61,30 @@ string DescribeCloudRunServersRequest::ToJsonString() const
         string key = "PageNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pageNum, allocator);
+    }
+
+    if (m_serverNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServerName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serverName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serverTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServerType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serverType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +141,54 @@ void DescribeCloudRunServersRequest::SetPageNum(const int64_t& _pageNum)
 bool DescribeCloudRunServersRequest::PageNumHasBeenSet() const
 {
     return m_pageNumHasBeenSet;
+}
+
+string DescribeCloudRunServersRequest::GetServerName() const
+{
+    return m_serverName;
+}
+
+void DescribeCloudRunServersRequest::SetServerName(const string& _serverName)
+{
+    m_serverName = _serverName;
+    m_serverNameHasBeenSet = true;
+}
+
+bool DescribeCloudRunServersRequest::ServerNameHasBeenSet() const
+{
+    return m_serverNameHasBeenSet;
+}
+
+string DescribeCloudRunServersRequest::GetServerType() const
+{
+    return m_serverType;
+}
+
+void DescribeCloudRunServersRequest::SetServerType(const string& _serverType)
+{
+    m_serverType = _serverType;
+    m_serverTypeHasBeenSet = true;
+}
+
+bool DescribeCloudRunServersRequest::ServerTypeHasBeenSet() const
+{
+    return m_serverTypeHasBeenSet;
+}
+
+string DescribeCloudRunServersRequest::GetVpcId() const
+{
+    return m_vpcId;
+}
+
+void DescribeCloudRunServersRequest::SetVpcId(const string& _vpcId)
+{
+    m_vpcId = _vpcId;
+    m_vpcIdHasBeenSet = true;
+}
+
+bool DescribeCloudRunServersRequest::VpcIdHasBeenSet() const
+{
+    return m_vpcIdHasBeenSet;
 }
 
 

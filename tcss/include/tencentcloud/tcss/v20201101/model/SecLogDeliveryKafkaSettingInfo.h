@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志类型
-                     * @return LogType 日志类型
+                     * 获取安全日志模块
+                     * @return LogType 安全日志模块
                      * 
                      */
                     std::string GetLogType() const;
 
                     /**
-                     * 设置日志类型
-                     * @param _logType 日志类型
+                     * 设置安全日志模块
+                     * @param _logType 安全日志模块
                      * 
                      */
                     void SetLogType(const std::string& _logType);
@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主题名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicName 主题名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置主题名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicName 主题名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -134,10 +130,52 @@ namespace TencentCloud
                      */
                     bool StateHasBeenSet() const;
 
+                    /**
+                     * 获取日志类型
+                     * @return SubLogType 日志类型
+                     * 
+                     */
+                    std::vector<std::string> GetSubLogType() const;
+
+                    /**
+                     * 设置日志类型
+                     * @param _subLogType 日志类型
+                     * 
+                     */
+                    void SetSubLogType(const std::vector<std::string>& _subLogType);
+
+                    /**
+                     * 判断参数 SubLogType 是否已赋值
+                     * @return SubLogType 是否已赋值
+                     * 
+                     */
+                    bool SubLogTypeHasBeenSet() const;
+
+                    /**
+                     * 获取错误信息
+                     * @return ErrMsg 错误信息
+                     * 
+                     */
+                    std::string GetErrMsg() const;
+
+                    /**
+                     * 设置错误信息
+                     * @param _errMsg 错误信息
+                     * 
+                     */
+                    void SetErrMsg(const std::string& _errMsg);
+
+                    /**
+                     * 判断参数 ErrMsg 是否已赋值
+                     * @return ErrMsg 是否已赋值
+                     * 
+                     */
+                    bool ErrMsgHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 日志类型
+                     * 安全日志模块
                      */
                     std::string m_logType;
                     bool m_logTypeHasBeenSet;
@@ -150,7 +188,6 @@ namespace TencentCloud
 
                     /**
                      * 主题名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
@@ -160,6 +197,18 @@ namespace TencentCloud
                      */
                     bool m_state;
                     bool m_stateHasBeenSet;
+
+                    /**
+                     * 日志类型
+                     */
+                    std::vector<std::string> m_subLogType;
+                    bool m_subLogTypeHasBeenSet;
+
+                    /**
+                     * 错误信息
+                     */
+                    std::string m_errMsg;
+                    bool m_errMsgHasBeenSet;
 
                 };
             }

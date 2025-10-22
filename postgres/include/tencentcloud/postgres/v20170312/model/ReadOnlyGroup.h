@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,18 +51,14 @@ namespace TencentCloud
 
                     /**
                      * 获取只读组标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReadOnlyGroupId 只读组标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReadOnlyGroupId() const;
 
                     /**
                      * 设置只读组标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _readOnlyGroupId 只读组标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReadOnlyGroupId(const std::string& _readOnlyGroupId);
@@ -76,18 +72,14 @@ namespace TencentCloud
 
                     /**
                      * 获取只读组名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReadOnlyGroupName 只读组名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReadOnlyGroupName() const;
 
                     /**
                      * 设置只读组名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _readOnlyGroupName 只读组名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReadOnlyGroupName(const std::string& _readOnlyGroupName);
@@ -101,18 +93,14 @@ namespace TencentCloud
 
                     /**
                      * 获取项目id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectId 项目id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
                      * 设置项目id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _projectId 项目id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
@@ -126,18 +114,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MasterDBInstanceId 主实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMasterDBInstanceId() const;
 
                     /**
                      * 设置主实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _masterDBInstanceId 主实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMasterDBInstanceId(const std::string& _masterDBInstanceId);
@@ -151,18 +135,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最小保留实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MinDelayEliminateReserve 最小保留实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMinDelayEliminateReserve() const;
 
                     /**
                      * 设置最小保留实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _minDelayEliminateReserve 最小保留实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMinDelayEliminateReserve(const int64_t& _minDelayEliminateReserve);
@@ -175,15 +155,15 @@ namespace TencentCloud
                     bool MinDelayEliminateReserveHasBeenSet() const;
 
                     /**
-                     * 获取延迟空间大小阈值
-                     * @return MaxReplayLatency 延迟空间大小阈值
+                     * 获取延迟空间大小阈值。单位MB。
+                     * @return MaxReplayLatency 延迟空间大小阈值。单位MB。
                      * 
                      */
                     int64_t GetMaxReplayLatency() const;
 
                     /**
-                     * 设置延迟空间大小阈值
-                     * @param _maxReplayLatency 延迟空间大小阈值
+                     * 设置延迟空间大小阈值。单位MB。
+                     * @param _maxReplayLatency 延迟空间大小阈值。单位MB。
                      * 
                      */
                     void SetMaxReplayLatency(const int64_t& _maxReplayLatency);
@@ -196,15 +176,15 @@ namespace TencentCloud
                     bool MaxReplayLatencyHasBeenSet() const;
 
                     /**
-                     * 获取延迟大小开关
-                     * @return ReplayLatencyEliminate 延迟大小开关
+                     * 获取延迟大小开关。0 - 关闭； 1 - 开启。
+                     * @return ReplayLatencyEliminate 延迟大小开关。0 - 关闭； 1 - 开启。
                      * 
                      */
                     int64_t GetReplayLatencyEliminate() const;
 
                     /**
-                     * 设置延迟大小开关
-                     * @param _replayLatencyEliminate 延迟大小开关
+                     * 设置延迟大小开关。0 - 关闭； 1 - 开启。
+                     * @param _replayLatencyEliminate 延迟大小开关。0 - 关闭； 1 - 开启。
                      * 
                      */
                     void SetReplayLatencyEliminate(const int64_t& _replayLatencyEliminate);
@@ -217,15 +197,15 @@ namespace TencentCloud
                     bool ReplayLatencyEliminateHasBeenSet() const;
 
                     /**
-                     * 获取延迟时间大小阈值
-                     * @return MaxReplayLag 延迟时间大小阈值
+                     * 获取延迟时间大小阈值，单位：秒。
+                     * @return MaxReplayLag 延迟时间大小阈值，单位：秒。
                      * 
                      */
                     double GetMaxReplayLag() const;
 
                     /**
-                     * 设置延迟时间大小阈值
-                     * @param _maxReplayLag 延迟时间大小阈值
+                     * 设置延迟时间大小阈值，单位：秒。
+                     * @param _maxReplayLag 延迟时间大小阈值，单位：秒。
                      * 
                      */
                     void SetMaxReplayLag(const double& _maxReplayLag);
@@ -238,15 +218,15 @@ namespace TencentCloud
                     bool MaxReplayLagHasBeenSet() const;
 
                     /**
-                     * 获取延迟时间开关
-                     * @return ReplayLagEliminate 延迟时间开关
+                     * 获取延迟时间开关。0 - 关闭； 1 - 开启。
+                     * @return ReplayLagEliminate 延迟时间开关。0 - 关闭； 1 - 开启。
                      * 
                      */
                     int64_t GetReplayLagEliminate() const;
 
                     /**
-                     * 设置延迟时间开关
-                     * @param _replayLagEliminate 延迟时间开关
+                     * 设置延迟时间开关。0 - 关闭； 1 - 开启。
+                     * @param _replayLagEliminate 延迟时间开关。0 - 关闭； 1 - 开启。
                      * 
                      */
                     void SetReplayLagEliminate(const int64_t& _replayLagEliminate);
@@ -281,18 +261,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetId 子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -347,15 +323,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取状态
-                     * @return Status 状态
+                     * 获取状态。枚举值：creating、ok、modifying、deleting、deleted
+                     * @return Status 状态。枚举值：creating、ok、modifying、deleting、deleted
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置状态
-                     * @param _status 状态
+                     * 设置状态。枚举值：creating、ok、modifying、deleting、deleted
+                     * @param _status 状态。枚举值：creating、ok、modifying、deleting、deleted
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -459,59 +435,54 @@ namespace TencentCloud
 
                     /**
                      * 只读组标识
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_readOnlyGroupId;
                     bool m_readOnlyGroupIdHasBeenSet;
 
                     /**
                      * 只读组名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_readOnlyGroupName;
                     bool m_readOnlyGroupNameHasBeenSet;
 
                     /**
                      * 项目id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
                      * 主实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_masterDBInstanceId;
                     bool m_masterDBInstanceIdHasBeenSet;
 
                     /**
                      * 最小保留实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_minDelayEliminateReserve;
                     bool m_minDelayEliminateReserveHasBeenSet;
 
                     /**
-                     * 延迟空间大小阈值
+                     * 延迟空间大小阈值。单位MB。
                      */
                     int64_t m_maxReplayLatency;
                     bool m_maxReplayLatencyHasBeenSet;
 
                     /**
-                     * 延迟大小开关
+                     * 延迟大小开关。0 - 关闭； 1 - 开启。
                      */
                     int64_t m_replayLatencyEliminate;
                     bool m_replayLatencyEliminateHasBeenSet;
 
                     /**
-                     * 延迟时间大小阈值
+                     * 延迟时间大小阈值，单位：秒。
                      */
                     double m_maxReplayLag;
                     bool m_maxReplayLagHasBeenSet;
 
                     /**
-                     * 延迟时间开关
+                     * 延迟时间开关。0 - 关闭； 1 - 开启。
                      */
                     int64_t m_replayLagEliminate;
                     bool m_replayLagEliminateHasBeenSet;
@@ -524,7 +495,6 @@ namespace TencentCloud
 
                     /**
                      * 子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
@@ -542,7 +512,7 @@ namespace TencentCloud
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 状态
+                     * 状态。枚举值：creating、ok、modifying、deleting、deleted
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

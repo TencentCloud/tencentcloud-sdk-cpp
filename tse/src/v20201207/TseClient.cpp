@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -850,6 +850,49 @@ TseClient::CreateNativeGatewayServerGroupOutcomeCallable TseClient::CreateNative
         [this, request]()
         {
             return this->CreateNativeGatewayServerGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::CreateNativeGatewayServiceSourceOutcome TseClient::CreateNativeGatewayServiceSource(const CreateNativeGatewayServiceSourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateNativeGatewayServiceSource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateNativeGatewayServiceSourceResponse rsp = CreateNativeGatewayServiceSourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateNativeGatewayServiceSourceOutcome(rsp);
+        else
+            return CreateNativeGatewayServiceSourceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateNativeGatewayServiceSourceOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::CreateNativeGatewayServiceSourceAsync(const CreateNativeGatewayServiceSourceRequest& request, const CreateNativeGatewayServiceSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateNativeGatewayServiceSource(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::CreateNativeGatewayServiceSourceOutcomeCallable TseClient::CreateNativeGatewayServiceSourceCallable(const CreateNativeGatewayServiceSourceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateNativeGatewayServiceSourceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateNativeGatewayServiceSource(request);
         }
     );
 
@@ -1760,6 +1803,49 @@ TseClient::DeleteNativeGatewayServerGroupOutcomeCallable TseClient::DeleteNative
     return task->get_future();
 }
 
+TseClient::DeleteNativeGatewayServiceSourceOutcome TseClient::DeleteNativeGatewayServiceSource(const DeleteNativeGatewayServiceSourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteNativeGatewayServiceSource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteNativeGatewayServiceSourceResponse rsp = DeleteNativeGatewayServiceSourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteNativeGatewayServiceSourceOutcome(rsp);
+        else
+            return DeleteNativeGatewayServiceSourceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteNativeGatewayServiceSourceOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DeleteNativeGatewayServiceSourceAsync(const DeleteNativeGatewayServiceSourceRequest& request, const DeleteNativeGatewayServiceSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteNativeGatewayServiceSource(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DeleteNativeGatewayServiceSourceOutcomeCallable TseClient::DeleteNativeGatewayServiceSourceCallable(const DeleteNativeGatewayServiceSourceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteNativeGatewayServiceSourceOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteNativeGatewayServiceSource(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TseClient::DeleteWafDomainsOutcome TseClient::DeleteWafDomains(const DeleteWafDomainsRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteWafDomains");
@@ -2147,6 +2233,49 @@ TseClient::DescribeCloudNativeAPIGatewayConfigOutcomeCallable TseClient::Describ
     return task->get_future();
 }
 
+TseClient::DescribeCloudNativeAPIGatewayInfoByIpOutcome TseClient::DescribeCloudNativeAPIGatewayInfoByIp(const DescribeCloudNativeAPIGatewayInfoByIpRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewayInfoByIp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudNativeAPIGatewayInfoByIpResponse rsp = DescribeCloudNativeAPIGatewayInfoByIpResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudNativeAPIGatewayInfoByIpOutcome(rsp);
+        else
+            return DescribeCloudNativeAPIGatewayInfoByIpOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudNativeAPIGatewayInfoByIpOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeCloudNativeAPIGatewayInfoByIpAsync(const DescribeCloudNativeAPIGatewayInfoByIpRequest& request, const DescribeCloudNativeAPIGatewayInfoByIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudNativeAPIGatewayInfoByIp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeCloudNativeAPIGatewayInfoByIpOutcomeCallable TseClient::DescribeCloudNativeAPIGatewayInfoByIpCallable(const DescribeCloudNativeAPIGatewayInfoByIpRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudNativeAPIGatewayInfoByIpOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudNativeAPIGatewayInfoByIp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TseClient::DescribeCloudNativeAPIGatewayNodesOutcome TseClient::DescribeCloudNativeAPIGatewayNodes(const DescribeCloudNativeAPIGatewayNodesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewayNodes");
@@ -2398,6 +2527,49 @@ TseClient::DescribeCloudNativeAPIGatewayServicesOutcomeCallable TseClient::Descr
         [this, request]()
         {
             return this->DescribeCloudNativeAPIGatewayServices(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DescribeCloudNativeAPIGatewayServicesLightOutcome TseClient::DescribeCloudNativeAPIGatewayServicesLight(const DescribeCloudNativeAPIGatewayServicesLightRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewayServicesLight");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudNativeAPIGatewayServicesLightResponse rsp = DescribeCloudNativeAPIGatewayServicesLightResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudNativeAPIGatewayServicesLightOutcome(rsp);
+        else
+            return DescribeCloudNativeAPIGatewayServicesLightOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudNativeAPIGatewayServicesLightOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeCloudNativeAPIGatewayServicesLightAsync(const DescribeCloudNativeAPIGatewayServicesLightRequest& request, const DescribeCloudNativeAPIGatewayServicesLightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudNativeAPIGatewayServicesLight(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeCloudNativeAPIGatewayServicesLightOutcomeCallable TseClient::DescribeCloudNativeAPIGatewayServicesLightCallable(const DescribeCloudNativeAPIGatewayServicesLightRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudNativeAPIGatewayServicesLightOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudNativeAPIGatewayServicesLight(request);
         }
     );
 
@@ -3258,6 +3430,49 @@ TseClient::DescribeNativeGatewayServerGroupsOutcomeCallable TseClient::DescribeN
         [this, request]()
         {
             return this->DescribeNativeGatewayServerGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DescribeNativeGatewayServiceSourcesOutcome TseClient::DescribeNativeGatewayServiceSources(const DescribeNativeGatewayServiceSourcesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNativeGatewayServiceSources");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNativeGatewayServiceSourcesResponse rsp = DescribeNativeGatewayServiceSourcesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNativeGatewayServiceSourcesOutcome(rsp);
+        else
+            return DescribeNativeGatewayServiceSourcesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNativeGatewayServiceSourcesOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeNativeGatewayServiceSourcesAsync(const DescribeNativeGatewayServiceSourcesRequest& request, const DescribeNativeGatewayServiceSourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNativeGatewayServiceSources(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeNativeGatewayServiceSourcesOutcomeCallable TseClient::DescribeNativeGatewayServiceSourcesCallable(const DescribeNativeGatewayServiceSourcesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNativeGatewayServiceSourcesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNativeGatewayServiceSources(request);
         }
     );
 
@@ -4376,6 +4591,49 @@ TseClient::ModifyNativeGatewayServerGroupOutcomeCallable TseClient::ModifyNative
         [this, request]()
         {
             return this->ModifyNativeGatewayServerGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::ModifyNativeGatewayServiceSourceOutcome TseClient::ModifyNativeGatewayServiceSource(const ModifyNativeGatewayServiceSourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyNativeGatewayServiceSource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyNativeGatewayServiceSourceResponse rsp = ModifyNativeGatewayServiceSourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyNativeGatewayServiceSourceOutcome(rsp);
+        else
+            return ModifyNativeGatewayServiceSourceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyNativeGatewayServiceSourceOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::ModifyNativeGatewayServiceSourceAsync(const ModifyNativeGatewayServiceSourceRequest& request, const ModifyNativeGatewayServiceSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyNativeGatewayServiceSource(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::ModifyNativeGatewayServiceSourceOutcomeCallable TseClient::ModifyNativeGatewayServiceSourceCallable(const ModifyNativeGatewayServiceSourceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyNativeGatewayServiceSourceOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyNativeGatewayServiceSource(request);
         }
     );
 

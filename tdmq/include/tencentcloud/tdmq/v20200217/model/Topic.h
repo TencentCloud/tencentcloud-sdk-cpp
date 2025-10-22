@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -662,6 +662,94 @@ namespace TencentCloud
                      */
                     bool MsgTTLHasBeenSet() const;
 
+                    /**
+                     * 获取集群 ID
+                     * @return ClusterId 集群 ID
+                     * 
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 设置集群 ID
+                     * @param _clusterId 集群 ID
+                     * 
+                     */
+                    void SetClusterId(const std::string& _clusterId);
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     * 
+                     */
+                    bool ClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取用户自定义的租户别名，如果没有，会复用专业集群 ID
+
+                     * @return Tenant 用户自定义的租户别名，如果没有，会复用专业集群 ID
+
+                     * 
+                     */
+                    std::string GetTenant() const;
+
+                    /**
+                     * 设置用户自定义的租户别名，如果没有，会复用专业集群 ID
+
+                     * @param _tenant 用户自定义的租户别名，如果没有，会复用专业集群 ID
+
+                     * 
+                     */
+                    void SetTenant(const std::string& _tenant);
+
+                    /**
+                     * 判断参数 Tenant 是否已赋值
+                     * @return Tenant 是否已赋值
+                     * 
+                     */
+                    bool TenantHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启异常消费者隔离
+                     * @return IsolateConsumerEnable 是否开启异常消费者隔离
+                     * 
+                     */
+                    bool GetIsolateConsumerEnable() const;
+
+                    /**
+                     * 设置是否开启异常消费者隔离
+                     * @param _isolateConsumerEnable 是否开启异常消费者隔离
+                     * 
+                     */
+                    void SetIsolateConsumerEnable(const bool& _isolateConsumerEnable);
+
+                    /**
+                     * 判断参数 IsolateConsumerEnable 是否已赋值
+                     * @return IsolateConsumerEnable 是否已赋值
+                     * 
+                     */
+                    bool IsolateConsumerEnableHasBeenSet() const;
+
+                    /**
+                     * 获取消费者 Ack 超时时间，单位：秒
+                     * @return AckTimeOut 消费者 Ack 超时时间，单位：秒
+                     * 
+                     */
+                    int64_t GetAckTimeOut() const;
+
+                    /**
+                     * 设置消费者 Ack 超时时间，单位：秒
+                     * @param _ackTimeOut 消费者 Ack 超时时间，单位：秒
+                     * 
+                     */
+                    void SetAckTimeOut(const int64_t& _ackTimeOut);
+
+                    /**
+                     * 判断参数 AckTimeOut 是否已赋值
+                     * @return AckTimeOut 是否已赋值
+                     * 
+                     */
+                    bool AckTimeOutHasBeenSet() const;
+
                 private:
 
                     /**
@@ -834,6 +922,31 @@ namespace TencentCloud
                      */
                     uint64_t m_msgTTL;
                     bool m_msgTTLHasBeenSet;
+
+                    /**
+                     * 集群 ID
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * 用户自定义的租户别名，如果没有，会复用专业集群 ID
+
+                     */
+                    std::string m_tenant;
+                    bool m_tenantHasBeenSet;
+
+                    /**
+                     * 是否开启异常消费者隔离
+                     */
+                    bool m_isolateConsumerEnable;
+                    bool m_isolateConsumerEnableHasBeenSet;
+
+                    /**
+                     * 消费者 Ack 超时时间，单位：秒
+                     */
+                    int64_t m_ackTimeOut;
+                    bool m_ackTimeOutHasBeenSet;
 
                 };
             }

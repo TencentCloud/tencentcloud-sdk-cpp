@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1839,6 +1839,49 @@ TemClient::ModifyEnvironmentOutcomeCallable TemClient::ModifyEnvironmentCallable
         [this, request]()
         {
             return this->ModifyEnvironment(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TemClient::ModifyGatewayIngressOutcome TemClient::ModifyGatewayIngress(const ModifyGatewayIngressRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyGatewayIngress");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyGatewayIngressResponse rsp = ModifyGatewayIngressResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyGatewayIngressOutcome(rsp);
+        else
+            return ModifyGatewayIngressOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyGatewayIngressOutcome(outcome.GetError());
+    }
+}
+
+void TemClient::ModifyGatewayIngressAsync(const ModifyGatewayIngressRequest& request, const ModifyGatewayIngressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyGatewayIngress(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TemClient::ModifyGatewayIngressOutcomeCallable TemClient::ModifyGatewayIngressCallable(const ModifyGatewayIngressRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyGatewayIngressOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyGatewayIngress(request);
         }
     );
 

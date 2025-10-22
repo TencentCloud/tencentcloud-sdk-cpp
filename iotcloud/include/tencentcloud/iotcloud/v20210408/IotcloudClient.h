@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -415,7 +415,7 @@ namespace TencentCloud
                 BatchUpdateFirmwareOutcomeCallable BatchUpdateFirmwareCallable(const Model::BatchUpdateFirmwareRequest& request);
 
                 /**
-                 *本接口（BindDevices）用于网关设备批量绑定子设备 
+                 *本接口（BindDevices）用于网关设备批量绑定子设备
                  * @param req BindDevicesRequest
                  * @return BindDevicesOutcome
                  */
@@ -433,7 +433,7 @@ namespace TencentCloud
                 CancelDeviceFirmwareTaskOutcomeCallable CancelDeviceFirmwareTaskCallable(const Model::CancelDeviceFirmwareTaskRequest& request);
 
                 /**
-                 *本接口（CreateDevice）用于新建一个物联网通信设备。 
+                 *本接口（CreateDevice）用于新建一个物联网通信设备。
                  * @param req CreateDeviceRequest
                  * @return CreateDeviceOutcome
                  */
@@ -460,7 +460,7 @@ namespace TencentCloud
                 CreatePrivateCAOutcomeCallable CreatePrivateCACallable(const Model::CreatePrivateCARequest& request);
 
                 /**
-                 *本接口（CreateProduct）用于创建一个新的物联网通信产品 
+                 *本接口（CreateProduct）用于创建一个新的物联网通信产品
                  * @param req CreateProductRequest
                  * @return CreateProductOutcome
                  */
@@ -478,7 +478,7 @@ namespace TencentCloud
                 CreateTaskFileUrlOutcomeCallable CreateTaskFileUrlCallable(const Model::CreateTaskFileUrlRequest& request);
 
                 /**
-                 *本接口（CreateTopicPolicy）用于创建一个Topic 
+                 *本接口（CreateTopicPolicy）用于创建一个Topic
                  * @param req CreateTopicPolicyRequest
                  * @return CreateTopicPolicyOutcome
                  */
@@ -487,7 +487,7 @@ namespace TencentCloud
                 CreateTopicPolicyOutcomeCallable CreateTopicPolicyCallable(const Model::CreateTopicPolicyRequest& request);
 
                 /**
-                 *本接口（CreateTopicRule）用于创建一个规则 
+                 *本接口（CreateTopicRule）用于创建一个规则
                  * @param req CreateTopicRuleRequest
                  * @return CreateTopicRuleOutcome
                  */
@@ -496,7 +496,7 @@ namespace TencentCloud
                 CreateTopicRuleOutcomeCallable CreateTopicRuleCallable(const Model::CreateTopicRuleRequest& request);
 
                 /**
-                 *本接口（DeleteDevice）用于删除物联网通信设备。 
+                 *本接口（DeleteDevice）用于删除物联网通信设备。
                  * @param req DeleteDeviceRequest
                  * @return DeleteDeviceOutcome
                  */
@@ -514,7 +514,7 @@ namespace TencentCloud
                 DeleteDeviceResourceOutcomeCallable DeleteDeviceResourceCallable(const Model::DeleteDeviceResourceRequest& request);
 
                 /**
-                 *本接口（DeleteDeviceShadow）用于删除设备影子 
+                 *本接口（DeleteDeviceShadow）用于删除设备影子
                  * @param req DeleteDeviceShadowRequest
                  * @return DeleteDeviceShadowOutcome
                  */
@@ -568,7 +568,7 @@ namespace TencentCloud
                 DescribeDeviceOutcomeCallable DescribeDeviceCallable(const Model::DescribeDeviceRequest& request);
 
                 /**
-                 *获取证书认证类型设备的私钥，刚生成或者重置设备后仅可调用一次 
+                 *获取证书认证类型设备的私钥，刚生成或者重置设备后仅可调用一次
                  * @param req DescribeDeviceClientKeyRequest
                  * @return DescribeDeviceClientKeyOutcome
                  */
@@ -577,7 +577,7 @@ namespace TencentCloud
                 DescribeDeviceClientKeyOutcomeCallable DescribeDeviceClientKeyCallable(const Model::DescribeDeviceClientKeyRequest& request);
 
                 /**
-                 *本接口（DescribeDeviceResource）用于查询设备资源详情。 
+                 *本接口（DescribeDeviceResource）用于查询设备资源详情。
                  * @param req DescribeDeviceResourceRequest
                  * @return DescribeDeviceResourceOutcome
                  */
@@ -586,7 +586,7 @@ namespace TencentCloud
                 DescribeDeviceResourceOutcomeCallable DescribeDeviceResourceCallable(const Model::DescribeDeviceResourceRequest& request);
 
                 /**
-                 *本接口（DescribeDeviceResources）用于查询设备资源列表。 
+                 *本接口（DescribeDeviceResources）用于查询设备资源列表。
                  * @param req DescribeDeviceResourcesRequest
                  * @return DescribeDeviceResourcesOutcome
                  */
@@ -595,7 +595,7 @@ namespace TencentCloud
                 DescribeDeviceResourcesOutcomeCallable DescribeDeviceResourcesCallable(const Model::DescribeDeviceResourcesRequest& request);
 
                 /**
-                 *本接口（DescribeDeviceShadow）用于查询虚拟设备信息。 
+                 *本接口（DescribeDeviceShadow）用于查询虚拟设备信息。
                  * @param req DescribeDeviceShadowRequest
                  * @return DescribeDeviceShadowOutcome
                  */
@@ -604,7 +604,7 @@ namespace TencentCloud
                 DescribeDeviceShadowOutcomeCallable DescribeDeviceShadowCallable(const Model::DescribeDeviceShadowRequest& request);
 
                 /**
-                 *本接口（DescribeDevices）用于查询物联网通信设备的设备列表。 
+                 *本接口（DescribeDevices）用于查询物联网通信设备的设备列表。
                  * @param req DescribeDevicesRequest
                  * @return DescribeDevicesOutcome
                  */
@@ -667,7 +667,7 @@ namespace TencentCloud
                 DescribeFirmwareTasksOutcomeCallable DescribeFirmwareTasksCallable(const Model::DescribeFirmwareTasksRequest& request);
 
                 /**
-                 *本接口（DescribeGatewayBindDevices）用于获取网关绑定的子设备列表 
+                 *本接口（DescribeGatewayBindDevices）用于获取网关绑定的子设备列表
                  * @param req DescribeGatewayBindDevicesRequest
                  * @return DescribeGatewayBindDevicesOutcome
                  */
@@ -721,7 +721,7 @@ namespace TencentCloud
                 DescribeProductCAOutcomeCallable DescribeProductCACallable(const Model::DescribeProductCARequest& request);
 
                 /**
-                 *本接口（DescribeProductResource）用于查询产品资源详情。 
+                 *本接口（DescribeProductResource）用于查询产品资源详情。
                  * @param req DescribeProductResourceRequest
                  * @return DescribeProductResourceOutcome
                  */
@@ -730,7 +730,7 @@ namespace TencentCloud
                 DescribeProductResourceOutcomeCallable DescribeProductResourceCallable(const Model::DescribeProductResourceRequest& request);
 
                 /**
-                 *本接口（DescribeProductResources）用于查询产品资源列表。 
+                 *本接口（DescribeProductResources）用于查询产品资源列表。
                  * @param req DescribeProductResourcesRequest
                  * @return DescribeProductResourcesOutcome
                  */
@@ -757,7 +757,7 @@ namespace TencentCloud
                 DescribeProductTasksOutcomeCallable DescribeProductTasksCallable(const Model::DescribeProductTasksRequest& request);
 
                 /**
-                 *本接口（DescribeProducts）用于列出产品列表。 
+                 *本接口（DescribeProducts）用于列出产品列表。
                  * @param req DescribeProductsRequest
                  * @return DescribeProductsOutcome
                  */
@@ -811,7 +811,7 @@ namespace TencentCloud
                 EditFirmwareOutcomeCallable EditFirmwareCallable(const Model::EditFirmwareRequest& request);
 
                 /**
-                 *本接口（EnableTopicRule）用于启用规则 
+                 *本接口（EnableTopicRule）用于启用规则
                  * @param req EnableTopicRuleRequest
                  * @return EnableTopicRuleOutcome
                  */
@@ -820,7 +820,7 @@ namespace TencentCloud
                 EnableTopicRuleOutcomeCallable EnableTopicRuleCallable(const Model::EnableTopicRuleRequest& request);
 
                 /**
-                 *本接口（GetAllVersion）用于获取所有的版本列表 
+                 *本接口（GetAllVersion）用于获取所有的版本列表
                  * @param req GetAllVersionRequest
                  * @return GetAllVersionOutcome
                  */
@@ -829,7 +829,7 @@ namespace TencentCloud
                 GetAllVersionOutcomeCallable GetAllVersionCallable(const Model::GetAllVersionRequest& request);
 
                 /**
-                 *本接口（GetCOSURL）用于获取固件存储在COS的URL 
+                 *本接口（GetCOSURL）用于获取固件存储在COS的URL
                  * @param req GetCOSURLRequest
                  * @return GetCOSURLOutcome
                  */
@@ -856,7 +856,7 @@ namespace TencentCloud
                 ListFirmwaresOutcomeCallable ListFirmwaresCallable(const Model::ListFirmwaresRequest& request);
 
                 /**
-                 *本接口（ListLog）用于查看日志信息 
+                 *本接口（ListLog）用于查看日志信息
                  * @param req ListLogRequest
                  * @return ListLogOutcome
                  */
@@ -919,7 +919,7 @@ namespace TencentCloud
                 PublishRRPCMessageOutcomeCallable PublishRRPCMessageCallable(const Model::PublishRRPCMessageRequest& request);
 
                 /**
-                 *本接口（ReplaceTopicRule）用于修改替换规则 
+                 *本接口（ReplaceTopicRule）用于修改替换规则
                  * @param req ReplaceTopicRuleRequest
                  * @return ReplaceTopicRuleOutcome
                  */
@@ -928,7 +928,7 @@ namespace TencentCloud
                 ReplaceTopicRuleOutcomeCallable ReplaceTopicRuleCallable(const Model::ReplaceTopicRuleRequest& request);
 
                 /**
-                 *重置设备的连接状态 
+                 *重置设备的连接状态
                  * @param req ResetDeviceStateRequest
                  * @return ResetDeviceStateOutcome
                  */
@@ -955,7 +955,7 @@ namespace TencentCloud
                 SetProductsForbiddenStatusOutcomeCallable SetProductsForbiddenStatusCallable(const Model::SetProductsForbiddenStatusRequest& request);
 
                 /**
-                 *本接口（UnbindDevices）用于网关设备批量解绑子设备 
+                 *本接口（UnbindDevices）用于网关设备批量解绑子设备
                  * @param req UnbindDevicesRequest
                  * @return UnbindDevicesOutcome
                  */
@@ -973,7 +973,7 @@ namespace TencentCloud
                 UpdateDeviceAvailableStateOutcomeCallable UpdateDeviceAvailableStateCallable(const Model::UpdateDeviceAvailableStateRequest& request);
 
                 /**
-                 *设置设备上报的日志级别  
+                 *设置设备上报的日志级别
                  * @param req UpdateDeviceLogLevelRequest
                  * @return UpdateDeviceLogLevelOutcome
                  */
@@ -982,7 +982,7 @@ namespace TencentCloud
                 UpdateDeviceLogLevelOutcomeCallable UpdateDeviceLogLevelCallable(const Model::UpdateDeviceLogLevelRequest& request);
 
                 /**
-                 *本接口（UpdateDevicePSK）用于更新设备的PSK 
+                 *本接口（UpdateDevicePSK）用于更新设备的PSK
                  * @param req UpdateDevicePSKRequest
                  * @return UpdateDevicePSKOutcome
                  */
@@ -1027,7 +1027,7 @@ namespace TencentCloud
                 UpdatePrivateCAOutcomeCallable UpdatePrivateCACallable(const Model::UpdatePrivateCARequest& request);
 
                 /**
-                 *更新产品动态注册的配置 
+                 *更新产品动态注册的配置
                  * @param req UpdateProductDynamicRegisterRequest
                  * @return UpdateProductDynamicRegisterOutcome
                  */

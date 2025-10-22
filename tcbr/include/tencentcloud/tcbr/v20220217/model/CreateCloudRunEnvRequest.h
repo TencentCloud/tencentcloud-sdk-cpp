@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -198,15 +198,15 @@ Activity：活动来源
                     bool ReqKeyHasBeenSet() const;
 
                     /**
-                     * 获取来源：wechat | cloud
-                     * @return Source 来源：wechat | cloud
+                     * 获取来源：wechat | cloud | weda
+                     * @return Source 来源：wechat | cloud | weda
                      * 
                      */
                     std::string GetSource() const;
 
                     /**
-                     * 设置来源：wechat | cloud
-                     * @param _source 来源：wechat | cloud
+                     * 设置来源：wechat | cloud | weda
+                     * @param _source 来源：wechat | cloud | weda
                      * 
                      */
                     void SetSource(const std::string& _source);
@@ -219,15 +219,15 @@ Activity：活动来源
                     bool SourceHasBeenSet() const;
 
                     /**
-                     * 获取渠道：wechat | cloud
-                     * @return Channel 渠道：wechat | cloud
+                     * 获取渠道：wechat | cloud | weda
+                     * @return Channel 渠道：wechat | cloud | weda
                      * 
                      */
                     std::string GetChannel() const;
 
                     /**
-                     * 设置渠道：wechat | cloud
-                     * @param _channel 渠道：wechat | cloud
+                     * 设置渠道：wechat | cloud | weda
+                     * @param _channel 渠道：wechat | cloud | weda
                      * 
                      */
                     void SetChannel(const std::string& _channel);
@@ -240,15 +240,15 @@ Activity：活动来源
                     bool ChannelHasBeenSet() const;
 
                     /**
-                     * 获取环境ID
-                     * @return EnvId 环境ID
+                     * 获取环境ID 云开发平台必填
+                     * @return EnvId 环境ID 云开发平台必填
                      * 
                      */
                     std::string GetEnvId() const;
 
                     /**
-                     * 设置环境ID
-                     * @param _envId 环境ID
+                     * 设置环境ID 云开发平台必填
+                     * @param _envId 环境ID 云开发平台必填
                      * 
                      */
                     void SetEnvId(const std::string& _envId);
@@ -307,19 +307,19 @@ Activity：活动来源
                     bool m_reqKeyHasBeenSet;
 
                     /**
-                     * 来源：wechat | cloud
+                     * 来源：wechat | cloud | weda
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
-                     * 渠道：wechat | cloud
+                     * 渠道：wechat | cloud | weda
                      */
                     std::string m_channel;
                     bool m_channelHasBeenSet;
 
                     /**
-                     * 环境ID
+                     * 环境ID 云开发平台必填
                      */
                     std::string m_envId;
                     bool m_envIdHasBeenSet;

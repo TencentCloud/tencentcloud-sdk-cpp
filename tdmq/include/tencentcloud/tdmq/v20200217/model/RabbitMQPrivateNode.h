@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * RabbitMQ节点信息
+                * RabbitMQ 节点信息
                 */
                 class RabbitMQPrivateNode : public AbstractModel
                 {
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool NodeNameHasBeenSet() const;
 
                     /**
-                     * 获取节点状态
+                     * 获取节点状态，running 运行中，down 异常
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NodeStatus 节点状态
+                     * @return NodeStatus 节点状态，running 运行中，down 异常
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNodeStatus() const;
 
                     /**
-                     * 设置节点状态
+                     * 设置节点状态，running 运行中，down 异常
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _nodeStatus 节点状态
+                     * @param _nodeStatus 节点状态，running 运行中，down 异常
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -206,7 +206,7 @@ namespace TencentCloud
                     bool m_nodeNameHasBeenSet;
 
                     /**
-                     * 节点状态
+                     * 节点状态，running 运行中，down 异常
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nodeStatus;

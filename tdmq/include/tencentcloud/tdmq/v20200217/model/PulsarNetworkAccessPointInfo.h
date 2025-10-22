@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -315,14 +315,18 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneName 可用区信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZoneName() const;
 
                     /**
                      * 设置可用区信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zoneName 可用区信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZoneName(const std::string& _zoneName);
@@ -333,6 +337,48 @@ namespace TencentCloud
                      * 
                      */
                     bool ZoneNameHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启TLS加密
+                     * @return Tls 是否开启TLS加密
+                     * 
+                     */
+                    bool GetTls() const;
+
+                    /**
+                     * 设置是否开启TLS加密
+                     * @param _tls 是否开启TLS加密
+                     * 
+                     */
+                    void SetTls(const bool& _tls);
+
+                    /**
+                     * 判断参数 Tls 是否已赋值
+                     * @return Tls 是否已赋值
+                     * 
+                     */
+                    bool TlsHasBeenSet() const;
+
+                    /**
+                     * 获取接入点自定义域名
+                     * @return CustomUrl 接入点自定义域名
+                     * 
+                     */
+                    std::string GetCustomUrl() const;
+
+                    /**
+                     * 设置接入点自定义域名
+                     * @param _customUrl 接入点自定义域名
+                     * 
+                     */
+                    void SetCustomUrl(const std::string& _customUrl);
+
+                    /**
+                     * 判断参数 CustomUrl 是否已赋值
+                     * @return CustomUrl 是否已赋值
+                     * 
+                     */
+                    bool CustomUrlHasBeenSet() const;
 
                 private:
 
@@ -412,9 +458,22 @@ namespace TencentCloud
 
                     /**
                      * 可用区信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zoneName;
                     bool m_zoneNameHasBeenSet;
+
+                    /**
+                     * 是否开启TLS加密
+                     */
+                    bool m_tls;
+                    bool m_tlsHasBeenSet;
+
+                    /**
+                     * 接入点自定义域名
+                     */
+                    std::string m_customUrl;
+                    bool m_customUrlHasBeenSet;
 
                 };
             }

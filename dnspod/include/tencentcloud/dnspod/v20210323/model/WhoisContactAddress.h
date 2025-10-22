@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取无
+                     * 获取城市
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return City 无
+                     * @return City 城市
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCity() const;
 
                     /**
-                     * 设置无
+                     * 设置城市
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _city 无
+                     * @param _city 城市
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool CityHasBeenSet() const;
 
                     /**
-                     * 获取无
+                     * 获取国家
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Country 无
+                     * @return Country 国家
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCountry() const;
 
                     /**
-                     * 设置无
+                     * 设置国家
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _country 无
+                     * @param _country 国家
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool CountryHasBeenSet() const;
 
                     /**
-                     * 获取无
+                     * 获取电子邮箱
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Email 无
+                     * @return Email 电子邮箱
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEmail() const;
 
                     /**
-                     * 设置无
+                     * 设置电子邮箱
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _email 无
+                     * @param _email 电子邮箱
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool EmailHasBeenSet() const;
 
                     /**
-                     * 获取无
+                     * 获取传真
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Fax 无
+                     * @return Fax 传真
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFax() const;
 
                     /**
-                     * 设置无
+                     * 设置传真
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _fax 无
+                     * @param _fax 传真
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool FaxHasBeenSet() const;
 
                     /**
-                     * 获取无
+                     * 获取传真分机号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FaxExt 无
+                     * @return FaxExt 传真分机号
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFaxExt() const;
 
                     /**
-                     * 设置无
+                     * 设置传真分机号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _faxExt 无
+                     * @param _faxExt 传真分机号
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -197,18 +197,18 @@ namespace TencentCloud
                     bool HandleHasBeenSet() const;
 
                     /**
-                     * 获取无
+                     * 获取名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 无
+                     * @return Name 名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置无
+                     * 设置名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name 无
+                     * @param _name 名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -222,18 +222,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取无
+                     * 获取组织机构
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Organization 无
+                     * @return Organization 组织机构
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOrganization() const;
 
                     /**
-                     * 设置无
+                     * 设置组织机构
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _organization 无
+                     * @param _organization 组织机构
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -247,18 +247,18 @@ namespace TencentCloud
                     bool OrganizationHasBeenSet() const;
 
                     /**
-                     * 获取无
+                     * 获取电话
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Phone 无
+                     * @return Phone 电话
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPhone() const;
 
                     /**
-                     * 设置无
+                     * 设置电话
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _phone 无
+                     * @param _phone 电话
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -272,18 +272,18 @@ namespace TencentCloud
                     bool PhoneHasBeenSet() const;
 
                     /**
-                     * 获取无
+                     * 获取邮编
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PostalCode 无
+                     * @return PostalCode 邮编
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPostalCode() const;
 
                     /**
-                     * 设置无
+                     * 设置邮编
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _postalCode 无
+                     * @param _postalCode 邮编
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -297,18 +297,18 @@ namespace TencentCloud
                     bool PostalCodeHasBeenSet() const;
 
                     /**
-                     * 获取无
+                     * 获取省份/州
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return State 无
+                     * @return State 省份/州
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetState() const;
 
                     /**
-                     * 设置无
+                     * 设置省份/州
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _state 无
+                     * @param _state 省份/州
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -322,18 +322,18 @@ namespace TencentCloud
                     bool StateHasBeenSet() const;
 
                     /**
-                     * 获取无
+                     * 获取街道地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Street 无
+                     * @return Street 街道地址
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStreet() const;
 
                     /**
-                     * 设置无
+                     * 设置街道地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _street 无
+                     * @param _street 街道地址
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -349,35 +349,35 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 无
+                     * 城市
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_city;
                     bool m_cityHasBeenSet;
 
                     /**
-                     * 无
+                     * 国家
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_country;
                     bool m_countryHasBeenSet;
 
                     /**
-                     * 无
+                     * 电子邮箱
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_email;
                     bool m_emailHasBeenSet;
 
                     /**
-                     * 无
+                     * 传真
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fax;
                     bool m_faxHasBeenSet;
 
                     /**
-                     * 无
+                     * 传真分机号
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_faxExt;
@@ -391,42 +391,42 @@ namespace TencentCloud
                     bool m_handleHasBeenSet;
 
                     /**
-                     * 无
+                     * 名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 无
+                     * 组织机构
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_organization;
                     bool m_organizationHasBeenSet;
 
                     /**
-                     * 无
+                     * 电话
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_phone;
                     bool m_phoneHasBeenSet;
 
                     /**
-                     * 无
+                     * 邮编
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_postalCode;
                     bool m_postalCodeHasBeenSet;
 
                     /**
-                     * 无
+                     * 省份/州
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
 
                     /**
-                     * 无
+                     * 街道地址
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_street;

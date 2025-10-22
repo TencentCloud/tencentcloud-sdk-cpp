@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群实例Id
-                     * @return InstanceId 集群实例Id
+                     * 获取实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
+                     * @return InstanceId 实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置集群实例Id
-                     * @param _instanceId 集群实例Id
+                     * 设置实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
+                     * @param _instanceId 实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool SearchUserHasBeenSet() const;
 
                     /**
-                     * 获取分页Offset
-                     * @return Offset 分页Offset
+                     * 获取分页 Offset，默认 0
+                     * @return Offset 分页 Offset，默认 0
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页Offset
-                     * @param _offset 分页Offset
+                     * 设置分页 Offset，默认 0
+                     * @param _offset 分页 Offset，默认 0
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页Limit
-                     * @return Limit 分页Limit
+                     * 获取分页 Limit，默认 20
+                     * @return Limit 分页 Limit，默认 20
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页Limit
-                     * @param _limit 分页Limit
+                     * 设置分页 Limit，默认 20
+                     * @param _limit 分页 Limit，默认 20
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -148,15 +148,19 @@ namespace TencentCloud
                     bool UserHasBeenSet() const;
 
                     /**
-                     * 获取用户标签，根据标签过滤列表
-                     * @return Tags 用户标签，根据标签过滤列表
+                     * 获取用户标签，用于决定改用户访问 RabbitMQ Management 的权限范围
+management：普通控制台用户，monitoring：管理型控制台用户，其他值：非控制台用户
+                     * @return Tags 用户标签，用于决定改用户访问 RabbitMQ Management 的权限范围
+management：普通控制台用户，monitoring：管理型控制台用户，其他值：非控制台用户
                      * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
-                     * 设置用户标签，根据标签过滤列表
-                     * @param _tags 用户标签，根据标签过滤列表
+                     * 设置用户标签，用于决定改用户访问 RabbitMQ Management 的权限范围
+management：普通控制台用户，monitoring：管理型控制台用户，其他值：非控制台用户
+                     * @param _tags 用户标签，用于决定改用户访问 RabbitMQ Management 的权限范围
+management：普通控制台用户，monitoring：管理型控制台用户，其他值：非控制台用户
                      * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
@@ -171,7 +175,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群实例Id
+                     * 实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -183,13 +187,13 @@ namespace TencentCloud
                     bool m_searchUserHasBeenSet;
 
                     /**
-                     * 分页Offset
+                     * 分页 Offset，默认 0
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页Limit
+                     * 分页 Limit，默认 20
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -201,7 +205,8 @@ namespace TencentCloud
                     bool m_userHasBeenSet;
 
                     /**
-                     * 用户标签，根据标签过滤列表
+                     * 用户标签，用于决定改用户访问 RabbitMQ Management 的权限范围
+management：普通控制台用户，monitoring：管理型控制台用户，其他值：非控制台用户
                      */
                     std::vector<std::string> m_tags;
                     bool m_tagsHasBeenSet;

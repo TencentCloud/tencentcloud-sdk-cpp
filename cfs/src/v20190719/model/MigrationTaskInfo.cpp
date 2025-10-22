@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,7 +45,8 @@ MigrationTaskInfo::MigrationTaskInfo() :
     m_fileTotalListHasBeenSet(false),
     m_fileCompletedListHasBeenSet(false),
     m_fileFailedListHasBeenSet(false),
-    m_bucketPathHasBeenSet(false)
+    m_bucketPathHasBeenSet(false),
+    m_directionHasBeenSet(false)
 {
 }
 
@@ -304,6 +305,16 @@ CoreInternalOutcome MigrationTaskInfo::Deserialize(const rapidjson::Value &value
         m_bucketPathHasBeenSet = true;
     }
 
+    if (value.HasMember("Direction") && !value["Direction"].IsNull())
+    {
+        if (!value["Direction"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MigrationTaskInfo.Direction` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_direction = value["Direction"].GetUint64();
+        m_directionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -509,6 +520,14 @@ void MigrationTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "BucketPath";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_bucketPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_directionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Direction";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_direction, allocator);
     }
 
 }
@@ -912,5 +931,21 @@ void MigrationTaskInfo::SetBucketPath(const string& _bucketPath)
 bool MigrationTaskInfo::BucketPathHasBeenSet() const
 {
     return m_bucketPathHasBeenSet;
+}
+
+uint64_t MigrationTaskInfo::GetDirection() const
+{
+    return m_direction;
+}
+
+void MigrationTaskInfo::SetDirection(const uint64_t& _direction)
+{
+    m_direction = _direction;
+    m_directionHasBeenSet = true;
+}
+
+bool MigrationTaskInfo::DirectionHasBeenSet() const
+{
+    return m_directionHasBeenSet;
 }
 

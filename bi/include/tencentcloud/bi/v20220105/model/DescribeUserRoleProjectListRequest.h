@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -126,6 +126,90 @@ namespace TencentCloud
                      */
                     bool IsOnlyBindAppUserHasBeenSet() const;
 
+                    /**
+                     * 获取是否获取全部数据
+                     * @return AllPage 是否获取全部数据
+                     * 
+                     */
+                    bool GetAllPage() const;
+
+                    /**
+                     * 设置是否获取全部数据
+                     * @param _allPage 是否获取全部数据
+                     * 
+                     */
+                    void SetAllPage(const bool& _allPage);
+
+                    /**
+                     * 判断参数 AllPage 是否已赋值
+                     * @return AllPage 是否已赋值
+                     * 
+                     */
+                    bool AllPageHasBeenSet() const;
+
+                    /**
+                     * 获取角色编码
+                     * @return RoleCode 角色编码
+                     * 
+                     */
+                    std::string GetRoleCode() const;
+
+                    /**
+                     * 设置角色编码
+                     * @param _roleCode 角色编码
+                     * 
+                     */
+                    void SetRoleCode(const std::string& _roleCode);
+
+                    /**
+                     * 判断参数 RoleCode 是否已赋值
+                     * @return RoleCode 是否已赋值
+                     * 
+                     */
+                    bool RoleCodeHasBeenSet() const;
+
+                    /**
+                     * 获取用户id列表
+                     * @return UserIdList 用户id列表
+                     * 
+                     */
+                    std::vector<std::string> GetUserIdList() const;
+
+                    /**
+                     * 设置用户id列表
+                     * @param _userIdList 用户id列表
+                     * 
+                     */
+                    void SetUserIdList(const std::vector<std::string>& _userIdList);
+
+                    /**
+                     * 判断参数 UserIdList 是否已赋值
+                     * @return UserIdList 是否已赋值
+                     * 
+                     */
+                    bool UserIdListHasBeenSet() const;
+
+                    /**
+                     * 获取搜索关键词
+                     * @return Keyword 搜索关键词
+                     * 
+                     */
+                    std::string GetKeyword() const;
+
+                    /**
+                     * 设置搜索关键词
+                     * @param _keyword 搜索关键词
+                     * 
+                     */
+                    void SetKeyword(const std::string& _keyword);
+
+                    /**
+                     * 判断参数 Keyword 是否已赋值
+                     * @return Keyword 是否已赋值
+                     * 
+                     */
+                    bool KeywordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +235,30 @@ namespace TencentCloud
                      */
                     bool m_isOnlyBindAppUser;
                     bool m_isOnlyBindAppUserHasBeenSet;
+
+                    /**
+                     * 是否获取全部数据
+                     */
+                    bool m_allPage;
+                    bool m_allPageHasBeenSet;
+
+                    /**
+                     * 角色编码
+                     */
+                    std::string m_roleCode;
+                    bool m_roleCodeHasBeenSet;
+
+                    /**
+                     * 用户id列表
+                     */
+                    std::vector<std::string> m_userIdList;
+                    bool m_userIdListHasBeenSet;
+
+                    /**
+                     * 搜索关键词
+                     */
+                    std::string m_keyword;
+                    bool m_keywordHasBeenSet;
 
                 };
             }

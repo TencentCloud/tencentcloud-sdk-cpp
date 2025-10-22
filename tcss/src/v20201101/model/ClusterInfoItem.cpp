@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,7 @@ ClusterInfoItem::ClusterInfoItem() :
     m_taskCreateTimeHasBeenSet(false),
     m_accessedStatusHasBeenSet(false),
     m_accessedSubStatusHasBeenSet(false),
+    m_accessedErrorReasonHasBeenSet(false),
     m_nodeCountHasBeenSet(false),
     m_offLineNodeCountHasBeenSet(false),
     m_unInstallAgentNodeCountHasBeenSet(false),
@@ -51,7 +52,8 @@ ClusterInfoItem::ClusterInfoItem() :
     m_masterAddressesHasBeenSet(false),
     m_coresCntHasBeenSet(false),
     m_clusterAuditStatusHasBeenSet(false),
-    m_clusterAuditFailedInfoHasBeenSet(false)
+    m_clusterAuditFailedInfoHasBeenSet(false),
+    m_ownerNameHasBeenSet(false)
 {
 }
 
@@ -290,6 +292,16 @@ CoreInternalOutcome ClusterInfoItem::Deserialize(const rapidjson::Value &value)
         m_accessedSubStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("AccessedErrorReason") && !value["AccessedErrorReason"].IsNull())
+    {
+        if (!value["AccessedErrorReason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInfoItem.AccessedErrorReason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_accessedErrorReason = string(value["AccessedErrorReason"].GetString());
+        m_accessedErrorReasonHasBeenSet = true;
+    }
+
     if (value.HasMember("NodeCount") && !value["NodeCount"].IsNull())
     {
         if (!value["NodeCount"].IsUint64())
@@ -371,6 +383,16 @@ CoreInternalOutcome ClusterInfoItem::Deserialize(const rapidjson::Value &value)
         }
         m_clusterAuditFailedInfo = string(value["ClusterAuditFailedInfo"].GetString());
         m_clusterAuditFailedInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("OwnerName") && !value["OwnerName"].IsNull())
+    {
+        if (!value["OwnerName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInfoItem.OwnerName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ownerName = string(value["OwnerName"].GetString());
+        m_ownerNameHasBeenSet = true;
     }
 
 
@@ -564,6 +586,14 @@ void ClusterInfoItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         value.AddMember(iKey, rapidjson::Value(m_accessedSubStatus.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_accessedErrorReasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessedErrorReason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accessedErrorReason.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_nodeCountHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -631,6 +661,14 @@ void ClusterInfoItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ClusterAuditFailedInfo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clusterAuditFailedInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ownerNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OwnerName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ownerName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1004,6 +1042,22 @@ bool ClusterInfoItem::AccessedSubStatusHasBeenSet() const
     return m_accessedSubStatusHasBeenSet;
 }
 
+string ClusterInfoItem::GetAccessedErrorReason() const
+{
+    return m_accessedErrorReason;
+}
+
+void ClusterInfoItem::SetAccessedErrorReason(const string& _accessedErrorReason)
+{
+    m_accessedErrorReason = _accessedErrorReason;
+    m_accessedErrorReasonHasBeenSet = true;
+}
+
+bool ClusterInfoItem::AccessedErrorReasonHasBeenSet() const
+{
+    return m_accessedErrorReasonHasBeenSet;
+}
+
 uint64_t ClusterInfoItem::GetNodeCount() const
 {
     return m_nodeCount;
@@ -1130,5 +1184,21 @@ void ClusterInfoItem::SetClusterAuditFailedInfo(const string& _clusterAuditFaile
 bool ClusterInfoItem::ClusterAuditFailedInfoHasBeenSet() const
 {
     return m_clusterAuditFailedInfoHasBeenSet;
+}
+
+string ClusterInfoItem::GetOwnerName() const
+{
+    return m_ownerName;
+}
+
+void ClusterInfoItem::SetOwnerName(const string& _ownerName)
+{
+    m_ownerName = _ownerName;
+    m_ownerNameHasBeenSet = true;
+}
+
+bool ClusterInfoItem::OwnerNameHasBeenSet() const
+{
+    return m_ownerNameHasBeenSet;
 }
 

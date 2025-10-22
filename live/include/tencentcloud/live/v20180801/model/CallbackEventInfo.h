@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,15 +84,15 @@ namespace TencentCloud
                     bool EventTimeHasBeenSet() const;
 
                     /**
-                     * 获取事件类型
-                     * @return EventType 事件类型
+                     * 获取事件类型。
+                     * @return EventType 事件类型。
                      * 
                      */
                     uint64_t GetEventType() const;
 
                     /**
-                     * 设置事件类型
-                     * @param _eventType 事件类型
+                     * 设置事件类型。
+                     * @param _eventType 事件类型。
                      * 
                      */
                     void SetEventType(const uint64_t& _eventType);
@@ -105,15 +105,15 @@ namespace TencentCloud
                     bool EventTypeHasBeenSet() const;
 
                     /**
-                     * 获取回调请求
-                     * @return Request 回调请求
+                     * 获取回调请求。
+                     * @return Request 回调请求。
                      * 
                      */
                     std::string GetRequest() const;
 
                     /**
-                     * 设置回调请求
-                     * @param _request 回调请求
+                     * 设置回调请求。
+                     * @param _request 回调请求。
                      * 
                      */
                     void SetRequest(const std::string& _request);
@@ -126,15 +126,15 @@ namespace TencentCloud
                     bool RequestHasBeenSet() const;
 
                     /**
-                     * 获取回调响应
-                     * @return Response 回调响应
+                     * 获取回调响应。
+                     * @return Response 回调响应。
                      * 
                      */
                     std::string GetResponse() const;
 
                     /**
-                     * 设置回调响应
-                     * @param _response 回调响应
+                     * 设置回调响应。
+                     * @param _response 回调响应。
                      * 
                      */
                     void SetResponse(const std::string& _response);
@@ -184,15 +184,15 @@ namespace TencentCloud
                     bool ResponseTimeHasBeenSet() const;
 
                     /**
-                     * 获取回调结果
-                     * @return ResultCode 回调结果
+                     * 获取回调结果。
+                     * @return ResultCode 回调结果。
                      * 
                      */
                     uint64_t GetResultCode() const;
 
                     /**
-                     * 设置回调结果
-                     * @param _resultCode 回调结果
+                     * 设置回调结果。
+                     * @param _resultCode 回调结果。
                      * 
                      */
                     void SetResultCode(const uint64_t& _resultCode);
@@ -205,15 +205,15 @@ namespace TencentCloud
                     bool ResultCodeHasBeenSet() const;
 
                     /**
-                     * 获取流名称
-                     * @return StreamId 流名称
+                     * 获取流名称。
+                     * @return StreamId 流名称。
                      * 
                      */
                     std::string GetStreamId() const;
 
                     /**
-                     * 设置流名称
-                     * @param _streamId 流名称
+                     * 设置流名称。
+                     * @param _streamId 流名称。
                      * 
                      */
                     void SetStreamId(const std::string& _streamId);
@@ -238,19 +238,19 @@ namespace TencentCloud
                     bool m_eventTimeHasBeenSet;
 
                     /**
-                     * 事件类型
+                     * 事件类型。
                      */
                     uint64_t m_eventType;
                     bool m_eventTypeHasBeenSet;
 
                     /**
-                     * 回调请求
+                     * 回调请求。
                      */
                     std::string m_request;
                     bool m_requestHasBeenSet;
 
                     /**
-                     * 回调响应
+                     * 回调响应。
                      */
                     std::string m_response;
                     bool m_responseHasBeenSet;
@@ -266,13 +266,13 @@ namespace TencentCloud
                     bool m_responseTimeHasBeenSet;
 
                     /**
-                     * 回调结果
+                     * 回调结果。
                      */
                     uint64_t m_resultCode;
                     bool m_resultCodeHasBeenSet;
 
                     /**
-                     * 流名称
+                     * 流名称。
                      */
                     std::string m_streamId;
                     bool m_streamIdHasBeenSet;

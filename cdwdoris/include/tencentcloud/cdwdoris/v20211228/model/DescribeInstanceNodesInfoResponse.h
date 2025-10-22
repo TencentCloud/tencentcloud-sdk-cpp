@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Be节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BeNodes Be节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetBeNodes() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Fe节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FeNodes Fe节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetFeNodes() const;
@@ -92,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Be节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BeNodeInfos Be节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<NodeInfo> GetBeNodeInfos() const;
@@ -108,9 +102,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Fe节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FeNodeInfos Fe节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<NodeInfo> GetFeNodeInfos() const;
@@ -126,14 +118,12 @@ namespace TencentCloud
 
                     /**
                      * Be节点
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_beNodes;
                     bool m_beNodesHasBeenSet;
 
                     /**
                      * Fe节点
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_feNodes;
                     bool m_feNodesHasBeenSet;
@@ -146,14 +136,12 @@ namespace TencentCloud
 
                     /**
                      * Be节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NodeInfo> m_beNodeInfos;
                     bool m_beNodeInfosHasBeenSet;
 
                     /**
                      * Fe节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NodeInfo> m_feNodeInfos;
                     bool m_feNodeInfosHasBeenSet;

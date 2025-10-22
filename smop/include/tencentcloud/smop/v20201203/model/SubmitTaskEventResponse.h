@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取任务的唯一订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrderId 任务的唯一订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOrderId() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取信息码。0表示成功，-1标识失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Code 信息码。0表示成功，-1标识失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCode() const;
@@ -78,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取提示信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 提示信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMessage() const;
@@ -94,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取任务处理结果列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 任务处理结果列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TaskEventData> GetData() const;
@@ -112,28 +104,24 @@ namespace TencentCloud
 
                     /**
                      * 任务的唯一订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_orderId;
                     bool m_orderIdHasBeenSet;
 
                     /**
                      * 信息码。0表示成功，-1标识失败
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_code;
                     bool m_codeHasBeenSet;
 
                     /**
                      * 提示信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
                      * 任务处理结果列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TaskEventData> m_data;
                     bool m_dataHasBeenSet;

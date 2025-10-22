@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool SAMLMetadataHasBeenSet() const;
 
                     /**
-                     * 获取状态：0:未设置，1:已开启，2:已禁用
-                     * @return Status 状态：0:未设置，1:已开启，2:已禁用
+                     * 获取状态：0:未设置，11:已开启，2:已禁用
+                     * @return Status 状态：0:未设置，11:已开启，2:已禁用
                      * 
                      */
                     uint64_t GetStatus() const;
@@ -94,7 +94,7 @@ namespace TencentCloud
                     bool m_sAMLMetadataHasBeenSet;
 
                     /**
-                     * 状态：0:未设置，1:已开启，2:已禁用
+                     * 状态：0:未设置，11:已开启，2:已禁用
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;

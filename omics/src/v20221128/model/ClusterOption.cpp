@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,10 @@ ClusterOption::ClusterOption() :
     m_typeHasBeenSet(false),
     m_serviceCidrHasBeenSet(false),
     m_resourceQuotaHasBeenSet(false),
-    m_limitRangeHasBeenSet(false)
+    m_limitRangeHasBeenSet(false),
+    m_systemNodeInstanceTypeHasBeenSet(false),
+    m_systemNodeCountHasBeenSet(false),
+    m_autoUpgradeClusterLevelHasBeenSet(false)
 {
 }
 
@@ -98,6 +101,36 @@ CoreInternalOutcome ClusterOption::Deserialize(const rapidjson::Value &value)
         m_limitRangeHasBeenSet = true;
     }
 
+    if (value.HasMember("SystemNodeInstanceType") && !value["SystemNodeInstanceType"].IsNull())
+    {
+        if (!value["SystemNodeInstanceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterOption.SystemNodeInstanceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_systemNodeInstanceType = string(value["SystemNodeInstanceType"].GetString());
+        m_systemNodeInstanceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SystemNodeCount") && !value["SystemNodeCount"].IsNull())
+    {
+        if (!value["SystemNodeCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterOption.SystemNodeCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_systemNodeCount = value["SystemNodeCount"].GetUint64();
+        m_systemNodeCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("AutoUpgradeClusterLevel") && !value["AutoUpgradeClusterLevel"].IsNull())
+    {
+        if (!value["AutoUpgradeClusterLevel"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterOption.AutoUpgradeClusterLevel` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoUpgradeClusterLevel = value["AutoUpgradeClusterLevel"].GetBool();
+        m_autoUpgradeClusterLevelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,6 +178,30 @@ void ClusterOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_limitRange.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_systemNodeInstanceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SystemNodeInstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_systemNodeInstanceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_systemNodeCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SystemNodeCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_systemNodeCount, allocator);
+    }
+
+    if (m_autoUpgradeClusterLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoUpgradeClusterLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoUpgradeClusterLevel, allocator);
     }
 
 }
@@ -228,5 +285,53 @@ void ClusterOption::SetLimitRange(const LimitRange& _limitRange)
 bool ClusterOption::LimitRangeHasBeenSet() const
 {
     return m_limitRangeHasBeenSet;
+}
+
+string ClusterOption::GetSystemNodeInstanceType() const
+{
+    return m_systemNodeInstanceType;
+}
+
+void ClusterOption::SetSystemNodeInstanceType(const string& _systemNodeInstanceType)
+{
+    m_systemNodeInstanceType = _systemNodeInstanceType;
+    m_systemNodeInstanceTypeHasBeenSet = true;
+}
+
+bool ClusterOption::SystemNodeInstanceTypeHasBeenSet() const
+{
+    return m_systemNodeInstanceTypeHasBeenSet;
+}
+
+uint64_t ClusterOption::GetSystemNodeCount() const
+{
+    return m_systemNodeCount;
+}
+
+void ClusterOption::SetSystemNodeCount(const uint64_t& _systemNodeCount)
+{
+    m_systemNodeCount = _systemNodeCount;
+    m_systemNodeCountHasBeenSet = true;
+}
+
+bool ClusterOption::SystemNodeCountHasBeenSet() const
+{
+    return m_systemNodeCountHasBeenSet;
+}
+
+bool ClusterOption::GetAutoUpgradeClusterLevel() const
+{
+    return m_autoUpgradeClusterLevel;
+}
+
+void ClusterOption::SetAutoUpgradeClusterLevel(const bool& _autoUpgradeClusterLevel)
+{
+    m_autoUpgradeClusterLevel = _autoUpgradeClusterLevel;
+    m_autoUpgradeClusterLevelHasBeenSet = true;
+}
+
+bool ClusterOption::AutoUpgradeClusterLevelHasBeenSet() const
+{
+    return m_autoUpgradeClusterLevelHasBeenSet;
 }
 

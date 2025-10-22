@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要获取的解析记录所属的域名
-                     * @return Domain 要获取的解析记录所属的域名
+                     * 获取域名
+                     * @return Domain 域名
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置要获取的解析记录所属的域名
-                     * @param _domain 要获取的解析记录所属的域名
+                     * 设置域名
+                     * @param _domain 域名
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取要获取的解析记录所属的域名Id，如果传了DomainId，系统将会忽略Domain参数。 可以通过接口DescribeDomainList查到所有的Domain以及DomainId
-                     * @return DomainId 要获取的解析记录所属的域名Id，如果传了DomainId，系统将会忽略Domain参数。 可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * 获取域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * @return DomainId 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
                      * 
                      */
                     uint64_t GetDomainId() const;
 
                     /**
-                     * 设置要获取的解析记录所属的域名Id，如果传了DomainId，系统将会忽略Domain参数。 可以通过接口DescribeDomainList查到所有的Domain以及DomainId
-                     * @param _domainId 要获取的解析记录所属的域名Id，如果传了DomainId，系统将会忽略Domain参数。 可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * 设置域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * @param _domainId 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
                      * 
                      */
                     void SetDomainId(const uint64_t& _domainId);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool RecordLineIdHasBeenSet() const;
 
                     /**
-                     * 获取获取某个分组下的解析记录时，传这个分组Id。
-                     * @return GroupId 获取某个分组下的解析记录时，传这个分组Id。
+                     * 获取获取某个分组下的解析记录时，传这个分组Id。可通过DescribeRecordGroupList接口获取所有分组
+                     * @return GroupId 获取某个分组下的解析记录时，传这个分组Id。可通过DescribeRecordGroupList接口获取所有分组
                      * 
                      */
                     uint64_t GetGroupId() const;
 
                     /**
-                     * 设置获取某个分组下的解析记录时，传这个分组Id。
-                     * @param _groupId 获取某个分组下的解析记录时，传这个分组Id。
+                     * 设置获取某个分组下的解析记录时，传这个分组Id。可通过DescribeRecordGroupList接口获取所有分组
+                     * @param _groupId 获取某个分组下的解析记录时，传这个分组Id。可通过DescribeRecordGroupList接口获取所有分组
                      * 
                      */
                     void SetGroupId(const uint64_t& _groupId);
@@ -297,13 +297,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 要获取的解析记录所属的域名
+                     * 域名
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 要获取的解析记录所属的域名Id，如果传了DomainId，系统将会忽略Domain参数。 可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
                      */
                     uint64_t m_domainId;
                     bool m_domainIdHasBeenSet;
@@ -333,7 +333,7 @@ namespace TencentCloud
                     bool m_recordLineIdHasBeenSet;
 
                     /**
-                     * 获取某个分组下的解析记录时，传这个分组Id。
+                     * 获取某个分组下的解析记录时，传这个分组Id。可通过DescribeRecordGroupList接口获取所有分组
                      */
                     uint64_t m_groupId;
                     bool m_groupIdHasBeenSet;

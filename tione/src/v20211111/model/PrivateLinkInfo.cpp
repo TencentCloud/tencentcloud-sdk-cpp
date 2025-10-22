@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ PrivateLinkInfo::PrivateLinkInfo() :
     m_subnetIdHasBeenSet(false),
     m_innerHttpAddrHasBeenSet(false),
     m_innerHttpsAddrHasBeenSet(false),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_innerGrpcAddrHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,19 @@ CoreInternalOutcome PrivateLinkInfo::Deserialize(const rapidjson::Value &value)
         m_stateHasBeenSet = true;
     }
 
+    if (value.HasMember("InnerGrpcAddr") && !value["InnerGrpcAddr"].IsNull())
+    {
+        if (!value["InnerGrpcAddr"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `PrivateLinkInfo.InnerGrpcAddr` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["InnerGrpcAddr"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_innerGrpcAddr.push_back((*itr).GetString());
+        }
+        m_innerGrpcAddrHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,6 +159,19 @@ void PrivateLinkInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "State";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_state.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_innerGrpcAddrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InnerGrpcAddr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_innerGrpcAddr.begin(); itr != m_innerGrpcAddr.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -228,5 +255,21 @@ void PrivateLinkInfo::SetState(const string& _state)
 bool PrivateLinkInfo::StateHasBeenSet() const
 {
     return m_stateHasBeenSet;
+}
+
+vector<string> PrivateLinkInfo::GetInnerGrpcAddr() const
+{
+    return m_innerGrpcAddr;
+}
+
+void PrivateLinkInfo::SetInnerGrpcAddr(const vector<string>& _innerGrpcAddr)
+{
+    m_innerGrpcAddr = _innerGrpcAddr;
+    m_innerGrpcAddrHasBeenSet = true;
+}
+
+bool PrivateLinkInfo::InnerGrpcAddrHasBeenSet() const
+{
+    return m_innerGrpcAddrHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,8 @@
 #include <tencentcloud/wedata/v20210820/model/RecordField.h>
 #include <tencentcloud/wedata/v20210820/model/IntegrationNodeMapping.h>
 #include <tencentcloud/wedata/v20210820/model/OfflineTaskAddParam.h>
+#include <tencentcloud/wedata/v20210820/model/TaskImportInfo.h>
+#include <tencentcloud/wedata/v20210820/model/IntegrationTag.h>
 
 
 namespace TencentCloud
@@ -1263,6 +1265,131 @@ namespace TencentCloud
                      */
                     bool OfflineTaskStatusHasBeenSet() const;
 
+                    /**
+                     * 获取导入到编排空间配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskImportInfo 导入到编排空间配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    TaskImportInfo GetTaskImportInfo() const;
+
+                    /**
+                     * 设置导入到编排空间配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _taskImportInfo 导入到编排空间配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTaskImportInfo(const TaskImportInfo& _taskImportInfo);
+
+                    /**
+                     * 判断参数 TaskImportInfo 是否已赋值
+                     * @return TaskImportInfo 是否已赋值
+                     * 
+                     */
+                    bool TaskImportInfoHasBeenSet() const;
+
+                    /**
+                     * 获取业务延迟
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BusinessLatency 业务延迟
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetBusinessLatency() const;
+
+                    /**
+                     * 设置业务延迟
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _businessLatency 业务延迟
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBusinessLatency(const int64_t& _businessLatency);
+
+                    /**
+                     * 判断参数 BusinessLatency 是否已赋值
+                     * @return BusinessLatency 是否已赋值
+                     * 
+                     */
+                    bool BusinessLatencyHasBeenSet() const;
+
+                    /**
+                     * 获取当前同步位点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CurrentSyncPosition 当前同步位点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetCurrentSyncPosition() const;
+
+                    /**
+                     * 设置当前同步位点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _currentSyncPosition 当前同步位点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCurrentSyncPosition(const int64_t& _currentSyncPosition);
+
+                    /**
+                     * 判断参数 CurrentSyncPosition 是否已赋值
+                     * @return CurrentSyncPosition 是否已赋值
+                     * 
+                     */
+                    bool CurrentSyncPositionHasBeenSet() const;
+
+                    /**
+                     * 获取标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TagList 标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<IntegrationTag> GetTagList() const;
+
+                    /**
+                     * 设置标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tagList 标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTagList(const std::vector<IntegrationTag>& _tagList);
+
+                    /**
+                     * 判断参数 TagList 是否已赋值
+                     * @return TagList 是否已赋值
+                     * 
+                     */
+                    bool TagListHasBeenSet() const;
+
+                    /**
+                     * 获取错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ErrorMessage 错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetErrorMessage() const;
+
+                    /**
+                     * 设置错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _errorMessage 错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetErrorMessage(const std::string& _errorMessage);
+
+                    /**
+                     * 判断参数 ErrorMessage 是否已赋值
+                     * @return ErrorMessage 是否已赋值
+                     * 
+                     */
+                    bool ErrorMessageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1604,6 +1731,41 @@ namespace TencentCloud
                      */
                     int64_t m_offlineTaskStatus;
                     bool m_offlineTaskStatusHasBeenSet;
+
+                    /**
+                     * 导入到编排空间配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TaskImportInfo m_taskImportInfo;
+                    bool m_taskImportInfoHasBeenSet;
+
+                    /**
+                     * 业务延迟
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_businessLatency;
+                    bool m_businessLatencyHasBeenSet;
+
+                    /**
+                     * 当前同步位点
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_currentSyncPosition;
+                    bool m_currentSyncPositionHasBeenSet;
+
+                    /**
+                     * 标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<IntegrationTag> m_tagList;
+                    bool m_tagListHasBeenSet;
+
+                    /**
+                     * 错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_errorMessage;
+                    bool m_errorMessageHasBeenSet;
 
                 };
             }

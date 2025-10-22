@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool PartitionNumHasBeenSet() const;
 
                     /**
-                     * 获取过期时间
-                     * @return RetentionMs 过期时间
+                     * 获取过期时间，单位ms
+                     * @return RetentionMs 过期时间，单位ms
                      * 
                      */
                     uint64_t GetRetentionMs() const;
 
                     /**
-                     * 设置过期时间
-                     * @param _retentionMs 过期时间
+                     * 设置过期时间，单位ms
+                     * @param _retentionMs 过期时间，单位ms
                      * 
                      */
                     void SetRetentionMs(const uint64_t& _retentionMs);
@@ -153,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Note 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNote() const;
 
                     /**
                      * 设置备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _note 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNote(const std::string& _note);
@@ -241,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务路由地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Address 服务路由地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAddress() const;
 
                     /**
                      * 设置服务路由地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _address 服务路由地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddress(const std::string& _address);
@@ -291,14 +283,13 @@ namespace TencentCloud
                     bool m_partitionNumHasBeenSet;
 
                     /**
-                     * 过期时间
+                     * 过期时间，单位ms
                      */
                     uint64_t m_retentionMs;
                     bool m_retentionMsHasBeenSet;
 
                     /**
                      * 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_note;
                     bool m_noteHasBeenSet;
@@ -323,7 +314,6 @@ namespace TencentCloud
 
                     /**
                      * 服务路由地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_address;
                     bool m_addressHasBeenSet;

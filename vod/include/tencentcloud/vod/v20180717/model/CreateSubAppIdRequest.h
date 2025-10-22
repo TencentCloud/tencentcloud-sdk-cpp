@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取应用简介，长度限制： 300个字符。
-                     * @return Description 应用简介，长度限制： 300个字符。
+                     * 获取应用简介，长度限制： 300个字符。不填则应用简介默认为空。
+                     * @return Description 应用简介，长度限制： 300个字符。不填则应用简介默认为空。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置应用简介，长度限制： 300个字符。
-                     * @param _description 应用简介，长度限制： 300个字符。
+                     * 设置应用简介，长度限制： 300个字符。不填则应用简介默认为空。
+                     * @param _description 应用简介，长度限制： 300个字符。不填则应用简介默认为空。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取应用类型， 取值有：<li>AllInOne：一体化；</li><li>Professional：专业版。</li>默认值为 AllInOne。
+                     * @return Type 应用类型， 取值有：<li>AllInOne：一体化；</li><li>Professional：专业版。</li>默认值为 AllInOne。
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置应用类型， 取值有：<li>AllInOne：一体化；</li><li>Professional：专业版。</li>默认值为 AllInOne。
+                     * @param _type 应用类型， 取值有：<li>AllInOne：一体化；</li><li>Professional：专业版。</li>默认值为 AllInOne。
+                     * 
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -93,10 +114,16 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 应用简介，长度限制： 300个字符。
+                     * 应用简介，长度限制： 300个字符。不填则应用简介默认为空。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 应用类型， 取值有：<li>AllInOne：一体化；</li><li>Professional：专业版。</li>默认值为 AllInOne。
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

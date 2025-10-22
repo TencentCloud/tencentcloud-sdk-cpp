@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return InstanceId 集群ID
+                     * 获取腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。
+                     * @return InstanceId 腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _instanceId 集群ID
+                     * 设置腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。
+                     * @param _instanceId 腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取查询条件列表
-                     * @return Filters 查询条件列表
+                     * 获取过滤查询条件列表，请在引用此参数的API说明中了解使用方法。
+                     * @return Filters 过滤查询条件列表，请在引用此参数的API说明中了解使用方法。
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置查询条件列表
-                     * @param _filters 查询条件列表
+                     * 设置过滤查询条件列表，请在引用此参数的API说明中了解使用方法。
+                     * @param _filters 过滤查询条件列表，请在引用此参数的API说明中了解使用方法。
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取查询起始位置
-                     * @return Offset 查询起始位置
+                     * 获取查询起始位置，默认为0。
+                     * @return Offset 查询起始位置，默认为0。
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置查询起始位置
-                     * @param _offset 查询起始位置
+                     * 设置查询起始位置，默认为0。
+                     * @param _offset 查询起始位置，默认为0。
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取查询结果限制数量
-                     * @return Limit 查询结果限制数量
+                     * 获取查询结果限制数量，默认20。
+                     * @return Limit 查询结果限制数量，默认20。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置查询结果限制数量
-                     * @param _limit 查询结果限制数量
+                     * 设置查询结果限制数量，默认20。
+                     * @param _limit 查询结果限制数量，默认20。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -127,31 +127,58 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取按照消费组查询订阅的主题
+                     * @return FromGroup 按照消费组查询订阅的主题
+                     * 
+                     */
+                    std::string GetFromGroup() const;
+
+                    /**
+                     * 设置按照消费组查询订阅的主题
+                     * @param _fromGroup 按照消费组查询订阅的主题
+                     * 
+                     */
+                    void SetFromGroup(const std::string& _fromGroup);
+
+                    /**
+                     * 判断参数 FromGroup 是否已赋值
+                     * @return FromGroup 是否已赋值
+                     * 
+                     */
+                    bool FromGroupHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 集群ID
+                     * 腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 查询条件列表
+                     * 过滤查询条件列表，请在引用此参数的API说明中了解使用方法。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 查询起始位置
+                     * 查询起始位置，默认为0。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 查询结果限制数量
+                     * 查询结果限制数量，默认20。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 按照消费组查询订阅的主题
+                     */
+                    std::string m_fromGroup;
+                    bool m_fromGroupHasBeenSet;
 
                 };
             }

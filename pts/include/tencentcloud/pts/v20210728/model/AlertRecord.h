@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,18 +74,14 @@ namespace TencentCloud
 
                     /**
                      * 获取项目 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectId 项目 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _projectId 项目 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -99,18 +95,14 @@ namespace TencentCloud
 
                     /**
                      * 获取场景 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScenarioId 场景 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScenarioId() const;
 
                     /**
                      * 设置场景 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scenarioId 场景 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScenarioId(const std::string& _scenarioId);
@@ -124,18 +116,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AlertRecordStatus GetStatus() const;
 
                     /**
                      * 设置状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const AlertRecordStatus& _status);
@@ -149,18 +137,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedAt 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdAt 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedAt(const std::string& _createdAt);
@@ -174,18 +158,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedAt 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdatedAt() const;
 
                     /**
                      * 设置修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updatedAt 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdatedAt(const std::string& _updatedAt);
@@ -199,18 +179,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobId 任务 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置任务 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _jobId 任务 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJobId(const std::string& _jobId);
@@ -224,18 +200,14 @@ namespace TencentCloud
 
                     /**
                      * 获取App ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId App ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAppId() const;
 
                     /**
                      * 设置App ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appId App ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppId(const int64_t& _appId);
@@ -249,18 +221,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 主账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置主账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uin 主账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -274,18 +242,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubAccountUin 子账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubAccountUin() const;
 
                     /**
                      * 设置子账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subAccountUin 子账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubAccountUin(const std::string& _subAccountUin);
@@ -299,18 +263,14 @@ namespace TencentCloud
 
                     /**
                      * 获取场景名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScenarioName 场景名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScenarioName() const;
 
                     /**
                      * 设置场景名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scenarioName 场景名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScenarioName(const std::string& _scenarioName);
@@ -324,18 +284,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Target 告警对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTarget() const;
 
                     /**
                      * 设置告警对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _target 告警对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTarget(const std::string& _target);
@@ -349,18 +305,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警规则 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobSLAId 告警规则 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJobSLAId() const;
 
                     /**
                      * 设置告警规则 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _jobSLAId 告警规则 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJobSLAId(const std::string& _jobSLAId);
@@ -374,18 +326,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobSLADescription 告警规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJobSLADescription() const;
 
                     /**
                      * 设置告警规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _jobSLADescription 告警规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJobSLADescription(const std::string& _jobSLADescription);
@@ -408,91 +356,78 @@ namespace TencentCloud
 
                     /**
                      * 项目 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
                      * 场景 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scenarioId;
                     bool m_scenarioIdHasBeenSet;
 
                     /**
                      * 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AlertRecordStatus m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdAt;
                     bool m_createdAtHasBeenSet;
 
                     /**
                      * 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updatedAt;
                     bool m_updatedAtHasBeenSet;
 
                     /**
                      * 任务 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
                      * App ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
                      * 主账号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
                      * 子账号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subAccountUin;
                     bool m_subAccountUinHasBeenSet;
 
                     /**
                      * 场景名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scenarioName;
                     bool m_scenarioNameHasBeenSet;
 
                     /**
                      * 告警对象
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_target;
                     bool m_targetHasBeenSet;
 
                     /**
                      * 告警规则 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_jobSLAId;
                     bool m_jobSLAIdHasBeenSet;
 
                     /**
                      * 告警规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_jobSLADescription;
                     bool m_jobSLADescriptionHasBeenSet;

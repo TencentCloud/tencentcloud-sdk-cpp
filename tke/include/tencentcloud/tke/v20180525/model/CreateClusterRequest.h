@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -260,6 +260,27 @@ namespace TencentCloud
                      */
                     bool CdcIdHasBeenSet() const;
 
+                    /**
+                     * 获取屏蔽安装指定Addon组件，填写相应的AddonName
+                     * @return DisableAddons 屏蔽安装指定Addon组件，填写相应的AddonName
+                     * 
+                     */
+                    std::vector<std::string> GetDisableAddons() const;
+
+                    /**
+                     * 设置屏蔽安装指定Addon组件，填写相应的AddonName
+                     * @param _disableAddons 屏蔽安装指定Addon组件，填写相应的AddonName
+                     * 
+                     */
+                    void SetDisableAddons(const std::vector<std::string>& _disableAddons);
+
+                    /**
+                     * 判断参数 DisableAddons 是否已赋值
+                     * @return DisableAddons 是否已赋值
+                     * 
+                     */
+                    bool DisableAddonsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -321,6 +342,12 @@ namespace TencentCloud
                      */
                     std::string m_cdcId;
                     bool m_cdcIdHasBeenSet;
+
+                    /**
+                     * 屏蔽安装指定Addon组件，填写相应的AddonName
+                     */
+                    std::vector<std::string> m_disableAddons;
+                    bool m_disableAddonsHasBeenSet;
 
                 };
             }

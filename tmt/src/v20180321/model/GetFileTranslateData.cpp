@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ GetFileTranslateData::GetFileTranslateData() :
     m_statusHasBeenSet(false),
     m_fileDataHasBeenSet(false),
     m_messageHasBeenSet(false),
-    m_progressHasBeenSet(false)
+    m_progressHasBeenSet(false),
+    m_usedAmountHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome GetFileTranslateData::Deserialize(const rapidjson::Value &va
         m_progressHasBeenSet = true;
     }
 
+    if (value.HasMember("UsedAmount") && !value["UsedAmount"].IsNull())
+    {
+        if (!value["UsedAmount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `GetFileTranslateData.UsedAmount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_usedAmount = value["UsedAmount"].GetInt64();
+        m_usedAmountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void GetFileTranslateData::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "Progress";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_progress, allocator);
+    }
+
+    if (m_usedAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UsedAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_usedAmount, allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void GetFileTranslateData::SetProgress(const int64_t& _progress)
 bool GetFileTranslateData::ProgressHasBeenSet() const
 {
     return m_progressHasBeenSet;
+}
+
+int64_t GetFileTranslateData::GetUsedAmount() const
+{
+    return m_usedAmount;
+}
+
+void GetFileTranslateData::SetUsedAmount(const int64_t& _usedAmount)
+{
+    m_usedAmount = _usedAmount;
+    m_usedAmountHasBeenSet = true;
+}
+
+bool GetFileTranslateData::UsedAmountHasBeenSet() const
+{
+    return m_usedAmountHasBeenSet;
 }
 

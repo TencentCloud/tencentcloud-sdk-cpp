@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -289,6 +289,186 @@ false 否
                      */
                     bool IncludeTaskFolderHasBeenSet() const;
 
+                    /**
+                     * 获取是否使用最新模式展示目录树
+                     * @return NewFolderTreeMode 是否使用最新模式展示目录树
+                     * 
+                     */
+                    bool GetNewFolderTreeMode() const;
+
+                    /**
+                     * 设置是否使用最新模式展示目录树
+                     * @param _newFolderTreeMode 是否使用最新模式展示目录树
+                     * 
+                     */
+                    void SetNewFolderTreeMode(const bool& _newFolderTreeMode);
+
+                    /**
+                     * 判断参数 NewFolderTreeMode 是否已赋值
+                     * @return NewFolderTreeMode 是否已赋值
+                     * 
+                     */
+                    bool NewFolderTreeModeHasBeenSet() const;
+
+                    /**
+                     * 获取节点分类ID
+                     * @return TaskNodeId 节点分类ID
+                     * 
+                     */
+                    std::string GetTaskNodeId() const;
+
+                    /**
+                     * 设置节点分类ID
+                     * @param _taskNodeId 节点分类ID
+                     * 
+                     */
+                    void SetTaskNodeId(const std::string& _taskNodeId);
+
+                    /**
+                     * 判断参数 TaskNodeId 是否已赋值
+                     * @return TaskNodeId 是否已赋值
+                     * 
+                     */
+                    bool TaskNodeIdHasBeenSet() const;
+
+                    /**
+                     * 获取工作流类型, 使用场景: 任务复制,选择工作流. 取值范围
+
+- cycle    周期工作流
+- manual    手动工作流
+                     * @return WorkflowType 工作流类型, 使用场景: 任务复制,选择工作流. 取值范围
+
+- cycle    周期工作流
+- manual    手动工作流
+                     * 
+                     */
+                    std::string GetWorkflowType() const;
+
+                    /**
+                     * 设置工作流类型, 使用场景: 任务复制,选择工作流. 取值范围
+
+- cycle    周期工作流
+- manual    手动工作流
+                     * @param _workflowType 工作流类型, 使用场景: 任务复制,选择工作流. 取值范围
+
+- cycle    周期工作流
+- manual    手动工作流
+                     * 
+                     */
+                    void SetWorkflowType(const std::string& _workflowType);
+
+                    /**
+                     * 判断参数 WorkflowType 是否已赋值
+                     * @return WorkflowType 是否已赋值
+                     * 
+                     */
+                    bool WorkflowTypeHasBeenSet() const;
+
+                    /**
+                     * 获取任务类型id列表
+                     * @return TaskTypeIdList 任务类型id列表
+                     * 
+                     */
+                    std::vector<int64_t> GetTaskTypeIdList() const;
+
+                    /**
+                     * 设置任务类型id列表
+                     * @param _taskTypeIdList 任务类型id列表
+                     * 
+                     */
+                    void SetTaskTypeIdList(const std::vector<int64_t>& _taskTypeIdList);
+
+                    /**
+                     * 判断参数 TaskTypeIdList 是否已赋值
+                     * @return TaskTypeIdList 是否已赋值
+                     * 
+                     */
+                    bool TaskTypeIdListHasBeenSet() const;
+
+                    /**
+                     * 获取责任人id列表
+                     * @return InChargeIdList 责任人id列表
+                     * 
+                     */
+                    std::vector<std::string> GetInChargeIdList() const;
+
+                    /**
+                     * 设置责任人id列表
+                     * @param _inChargeIdList 责任人id列表
+                     * 
+                     */
+                    void SetInChargeIdList(const std::vector<std::string>& _inChargeIdList);
+
+                    /**
+                     * 判断参数 InChargeIdList 是否已赋值
+                     * @return InChargeIdList 是否已赋值
+                     * 
+                     */
+                    bool InChargeIdListHasBeenSet() const;
+
+                    /**
+                     * 获取自身责任人
+                     * @return OnlyMe 自身责任人
+                     * 
+                     */
+                    bool GetOnlyMe() const;
+
+                    /**
+                     * 设置自身责任人
+                     * @param _onlyMe 自身责任人
+                     * 
+                     */
+                    void SetOnlyMe(const bool& _onlyMe);
+
+                    /**
+                     * 判断参数 OnlyMe 是否已赋值
+                     * @return OnlyMe 是否已赋值
+                     * 
+                     */
+                    bool OnlyMeHasBeenSet() const;
+
+                    /**
+                     * 获取是否包含代码模版
+                     * @return IncludeCodeTemplate 是否包含代码模版
+                     * 
+                     */
+                    bool GetIncludeCodeTemplate() const;
+
+                    /**
+                     * 设置是否包含代码模版
+                     * @param _includeCodeTemplate 是否包含代码模版
+                     * 
+                     */
+                    void SetIncludeCodeTemplate(const bool& _includeCodeTemplate);
+
+                    /**
+                     * 判断参数 IncludeCodeTemplate 是否已赋值
+                     * @return IncludeCodeTemplate 是否已赋值
+                     * 
+                     */
+                    bool IncludeCodeTemplateHasBeenSet() const;
+
+                    /**
+                     * 获取编排空间 或代码模版 orchestrationSpace 编排空间 template模版管理
+                     * @return FolderForm 编排空间 或代码模版 orchestrationSpace 编排空间 template模版管理
+                     * 
+                     */
+                    std::string GetFolderForm() const;
+
+                    /**
+                     * 设置编排空间 或代码模版 orchestrationSpace 编排空间 template模版管理
+                     * @param _folderForm 编排空间 或代码模版 orchestrationSpace 编排空间 template模版管理
+                     * 
+                     */
+                    void SetFolderForm(const std::string& _folderForm);
+
+                    /**
+                     * 判断参数 FolderForm 是否已赋值
+                     * @return FolderForm 是否已赋值
+                     * 
+                     */
+                    bool FolderFormHasBeenSet() const;
+
                 private:
 
                     /**
@@ -360,6 +540,57 @@ false 否
                      */
                     bool m_includeTaskFolder;
                     bool m_includeTaskFolderHasBeenSet;
+
+                    /**
+                     * 是否使用最新模式展示目录树
+                     */
+                    bool m_newFolderTreeMode;
+                    bool m_newFolderTreeModeHasBeenSet;
+
+                    /**
+                     * 节点分类ID
+                     */
+                    std::string m_taskNodeId;
+                    bool m_taskNodeIdHasBeenSet;
+
+                    /**
+                     * 工作流类型, 使用场景: 任务复制,选择工作流. 取值范围
+
+- cycle    周期工作流
+- manual    手动工作流
+                     */
+                    std::string m_workflowType;
+                    bool m_workflowTypeHasBeenSet;
+
+                    /**
+                     * 任务类型id列表
+                     */
+                    std::vector<int64_t> m_taskTypeIdList;
+                    bool m_taskTypeIdListHasBeenSet;
+
+                    /**
+                     * 责任人id列表
+                     */
+                    std::vector<std::string> m_inChargeIdList;
+                    bool m_inChargeIdListHasBeenSet;
+
+                    /**
+                     * 自身责任人
+                     */
+                    bool m_onlyMe;
+                    bool m_onlyMeHasBeenSet;
+
+                    /**
+                     * 是否包含代码模版
+                     */
+                    bool m_includeCodeTemplate;
+                    bool m_includeCodeTemplateHasBeenSet;
+
+                    /**
+                     * 编排空间 或代码模版 orchestrationSpace 编排空间 template模版管理
+                     */
+                    std::string m_folderForm;
+                    bool m_folderFormHasBeenSet;
 
                 };
             }

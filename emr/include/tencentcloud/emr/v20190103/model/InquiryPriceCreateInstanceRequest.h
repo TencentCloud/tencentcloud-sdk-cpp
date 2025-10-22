@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -370,31 +370,15 @@ namespace TencentCloud
                     bool ProductIdHasBeenSet() const;
 
                     /**
-                     * 获取场景化取值：
-Hadoop-Kudu
-Hadoop-Zookeeper
-Hadoop-Presto
-Hadoop-Hbase
-                     * @return SceneName 场景化取值：
-Hadoop-Kudu
-Hadoop-Zookeeper
-Hadoop-Presto
-Hadoop-Hbase
+                     * 获取场景化取值：Hadoop-Kudu，Hadoop-Zookeeper，Hadoop-Presto，Hadoop-Hbase
+                     * @return SceneName 场景化取值：Hadoop-Kudu，Hadoop-Zookeeper，Hadoop-Presto，Hadoop-Hbase
                      * 
                      */
                     std::string GetSceneName() const;
 
                     /**
-                     * 设置场景化取值：
-Hadoop-Kudu
-Hadoop-Zookeeper
-Hadoop-Presto
-Hadoop-Hbase
-                     * @param _sceneName 场景化取值：
-Hadoop-Kudu
-Hadoop-Zookeeper
-Hadoop-Presto
-Hadoop-Hbase
+                     * 设置场景化取值：Hadoop-Kudu，Hadoop-Zookeeper，Hadoop-Presto，Hadoop-Hbase
+                     * @param _sceneName 场景化取值：Hadoop-Kudu，Hadoop-Zookeeper，Hadoop-Presto，Hadoop-Hbase
                      * 
                      */
                     void SetSceneName(const std::string& _sceneName);
@@ -468,6 +452,48 @@ Hadoop-Hbase
                      * 
                      */
                     bool MultiZoneSettingsHasBeenSet() const;
+
+                    /**
+                     * 获取数据库版本
+                     * @return DefaultMetaVersion 数据库版本
+                     * 
+                     */
+                    std::string GetDefaultMetaVersion() const;
+
+                    /**
+                     * 设置数据库版本
+                     * @param _defaultMetaVersion 数据库版本
+                     * 
+                     */
+                    void SetDefaultMetaVersion(const std::string& _defaultMetaVersion);
+
+                    /**
+                     * 判断参数 DefaultMetaVersion 是否已赋值
+                     * @return DefaultMetaVersion 是否已赋值
+                     * 
+                     */
+                    bool DefaultMetaVersionHasBeenSet() const;
+
+                    /**
+                     * 获取0:不开通审计；1:开通审计
+                     * @return NeedCdbAudit 0:不开通审计；1:开通审计
+                     * 
+                     */
+                    int64_t GetNeedCdbAudit() const;
+
+                    /**
+                     * 设置0:不开通审计；1:开通审计
+                     * @param _needCdbAudit 0:不开通审计；1:开通审计
+                     * 
+                     */
+                    void SetNeedCdbAudit(const int64_t& _needCdbAudit);
+
+                    /**
+                     * 判断参数 NeedCdbAudit 是否已赋值
+                     * @return NeedCdbAudit 是否已赋值
+                     * 
+                     */
+                    bool NeedCdbAuditHasBeenSet() const;
 
                 private:
 
@@ -562,11 +588,7 @@ Hadoop-Hbase
                     bool m_productIdHasBeenSet;
 
                     /**
-                     * 场景化取值：
-Hadoop-Kudu
-Hadoop-Zookeeper
-Hadoop-Presto
-Hadoop-Hbase
+                     * 场景化取值：Hadoop-Kudu，Hadoop-Zookeeper，Hadoop-Presto，Hadoop-Hbase
                      */
                     std::string m_sceneName;
                     bool m_sceneNameHasBeenSet;
@@ -588,6 +610,18 @@ Hadoop-Hbase
                      */
                     std::vector<MultiZoneSetting> m_multiZoneSettings;
                     bool m_multiZoneSettingsHasBeenSet;
+
+                    /**
+                     * 数据库版本
+                     */
+                    std::string m_defaultMetaVersion;
+                    bool m_defaultMetaVersionHasBeenSet;
+
+                    /**
+                     * 0:不开通审计；1:开通审计
+                     */
+                    int64_t m_needCdbAudit;
+                    bool m_needCdbAuditHasBeenSet;
 
                 };
             }

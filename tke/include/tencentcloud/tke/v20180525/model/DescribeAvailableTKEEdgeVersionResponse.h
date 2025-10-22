@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取边缘集群最新版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EdgeVersionLatest 边缘集群最新版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEdgeVersionLatest() const;
@@ -75,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取边缘集群当前版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EdgeVersionCurrent 边缘集群当前版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEdgeVersionCurrent() const;
@@ -99,14 +95,12 @@ namespace TencentCloud
 
                     /**
                      * 边缘集群最新版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_edgeVersionLatest;
                     bool m_edgeVersionLatestHasBeenSet;
 
                     /**
                      * 边缘集群当前版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_edgeVersionCurrent;
                     bool m_edgeVersionCurrentHasBeenSet;

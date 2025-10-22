@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,10 +23,14 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/oceanus/v20190422/model/CheckConnectorNameRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/CheckConnectorNameResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/CheckSavepointRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/CheckSavepointResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/CopyJobsRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/CopyJobsResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/CreateConnectorRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/CreateConnectorResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/CreateFolderRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/CreateFolderResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/CreateJobRequest.h>
@@ -37,6 +41,8 @@
 #include <tencentcloud/oceanus/v20190422/model/CreateResourceResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/CreateResourceConfigRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/CreateResourceConfigResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/CreateVariableRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/CreateVariableResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/CreateWorkSpaceRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/CreateWorkSpaceResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DeleteFoldersRequest.h>
@@ -81,18 +87,24 @@
 #include <tencentcloud/oceanus/v20190422/model/DescribeTreeJobsResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeTreeResourcesRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeTreeResourcesResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/DescribeVariablesRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/DescribeVariablesResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeWorkSpacesRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeWorkSpacesResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/FetchSqlGatewayStatementResultRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/FetchSqlGatewayStatementResultResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/GetMetaTableRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/GetMetaTableResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/ModifyConnectorRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/ModifyConnectorResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/ModifyFolderRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/ModifyFolderResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/ModifyJobRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/ModifyJobResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/ModifyWorkSpaceRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/ModifyWorkSpaceResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/ParseConnectorRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/ParseConnectorResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/RunJobsRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/RunJobsResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/RunSqlGatewayStatementRequest.h>
@@ -115,12 +127,18 @@ namespace TencentCloud
                 OceanusClient(const Credential &credential, const std::string &region);
                 OceanusClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CheckConnectorNameResponse> CheckConnectorNameOutcome;
+                typedef std::future<CheckConnectorNameOutcome> CheckConnectorNameOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::CheckConnectorNameRequest&, CheckConnectorNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckConnectorNameAsyncHandler;
                 typedef Outcome<Core::Error, Model::CheckSavepointResponse> CheckSavepointOutcome;
                 typedef std::future<CheckSavepointOutcome> CheckSavepointOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::CheckSavepointRequest&, CheckSavepointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckSavepointAsyncHandler;
                 typedef Outcome<Core::Error, Model::CopyJobsResponse> CopyJobsOutcome;
                 typedef std::future<CopyJobsOutcome> CopyJobsOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::CopyJobsRequest&, CopyJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CopyJobsAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateConnectorResponse> CreateConnectorOutcome;
+                typedef std::future<CreateConnectorOutcome> CreateConnectorOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::CreateConnectorRequest&, CreateConnectorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConnectorAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateFolderResponse> CreateFolderOutcome;
                 typedef std::future<CreateFolderOutcome> CreateFolderOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::CreateFolderRequest&, CreateFolderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFolderAsyncHandler;
@@ -136,6 +154,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateResourceConfigResponse> CreateResourceConfigOutcome;
                 typedef std::future<CreateResourceConfigOutcome> CreateResourceConfigOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::CreateResourceConfigRequest&, CreateResourceConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateResourceConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateVariableResponse> CreateVariableOutcome;
+                typedef std::future<CreateVariableOutcome> CreateVariableOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::CreateVariableRequest&, CreateVariableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVariableAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateWorkSpaceResponse> CreateWorkSpaceOutcome;
                 typedef std::future<CreateWorkSpaceOutcome> CreateWorkSpaceOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::CreateWorkSpaceRequest&, CreateWorkSpaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWorkSpaceAsyncHandler;
@@ -202,6 +223,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTreeResourcesResponse> DescribeTreeResourcesOutcome;
                 typedef std::future<DescribeTreeResourcesOutcome> DescribeTreeResourcesOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::DescribeTreeResourcesRequest&, DescribeTreeResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTreeResourcesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVariablesResponse> DescribeVariablesOutcome;
+                typedef std::future<DescribeVariablesOutcome> DescribeVariablesOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::DescribeVariablesRequest&, DescribeVariablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVariablesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeWorkSpacesResponse> DescribeWorkSpacesOutcome;
                 typedef std::future<DescribeWorkSpacesOutcome> DescribeWorkSpacesOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::DescribeWorkSpacesRequest&, DescribeWorkSpacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkSpacesAsyncHandler;
@@ -211,6 +235,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetMetaTableResponse> GetMetaTableOutcome;
                 typedef std::future<GetMetaTableOutcome> GetMetaTableOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::GetMetaTableRequest&, GetMetaTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetMetaTableAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyConnectorResponse> ModifyConnectorOutcome;
+                typedef std::future<ModifyConnectorOutcome> ModifyConnectorOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::ModifyConnectorRequest&, ModifyConnectorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConnectorAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyFolderResponse> ModifyFolderOutcome;
                 typedef std::future<ModifyFolderOutcome> ModifyFolderOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::ModifyFolderRequest&, ModifyFolderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFolderAsyncHandler;
@@ -220,6 +247,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyWorkSpaceResponse> ModifyWorkSpaceOutcome;
                 typedef std::future<ModifyWorkSpaceOutcome> ModifyWorkSpaceOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::ModifyWorkSpaceRequest&, ModifyWorkSpaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWorkSpaceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ParseConnectorResponse> ParseConnectorOutcome;
+                typedef std::future<ParseConnectorOutcome> ParseConnectorOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::ParseConnectorRequest&, ParseConnectorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ParseConnectorAsyncHandler;
                 typedef Outcome<Core::Error, Model::RunJobsResponse> RunJobsOutcome;
                 typedef std::future<RunJobsOutcome> RunJobsOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::RunJobsRequest&, RunJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunJobsAsyncHandler;
@@ -234,6 +264,15 @@ namespace TencentCloud
                 typedef std::function<void(const OceanusClient*, const Model::TriggerJobSavepointRequest&, TriggerJobSavepointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TriggerJobSavepointAsyncHandler;
 
 
+
+                /**
+                 *查询资源名是否重复
+                 * @param req CheckConnectorNameRequest
+                 * @return CheckConnectorNameOutcome
+                 */
+                CheckConnectorNameOutcome CheckConnectorName(const Model::CheckConnectorNameRequest &request);
+                void CheckConnectorNameAsync(const Model::CheckConnectorNameRequest& request, const CheckConnectorNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckConnectorNameOutcomeCallable CheckConnectorNameCallable(const Model::CheckConnectorNameRequest& request);
 
                 /**
                  *检查快照是否可用
@@ -252,6 +291,15 @@ namespace TencentCloud
                 CopyJobsOutcome CopyJobs(const Model::CopyJobsRequest &request);
                 void CopyJobsAsync(const Model::CopyJobsRequest& request, const CopyJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CopyJobsOutcomeCallable CopyJobsCallable(const Model::CopyJobsRequest& request);
+
+                /**
+                 *创建Connector
+                 * @param req CreateConnectorRequest
+                 * @return CreateConnectorOutcome
+                 */
+                CreateConnectorOutcome CreateConnector(const Model::CreateConnectorRequest &request);
+                void CreateConnectorAsync(const Model::CreateConnectorRequest& request, const CreateConnectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateConnectorOutcomeCallable CreateConnectorCallable(const Model::CreateConnectorRequest& request);
 
                 /**
                  *作业列表页面新建文件夹请求
@@ -297,6 +345,15 @@ namespace TencentCloud
                 CreateResourceConfigOutcome CreateResourceConfig(const Model::CreateResourceConfigRequest &request);
                 void CreateResourceConfigAsync(const Model::CreateResourceConfigRequest& request, const CreateResourceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateResourceConfigOutcomeCallable CreateResourceConfigCallable(const Model::CreateResourceConfigRequest& request);
+
+                /**
+                 *创建变量 
+                 * @param req CreateVariableRequest
+                 * @return CreateVariableOutcome
+                 */
+                CreateVariableOutcome CreateVariable(const Model::CreateVariableRequest &request);
+                void CreateVariableAsync(const Model::CreateVariableRequest& request, const CreateVariableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateVariableOutcomeCallable CreateVariableCallable(const Model::CreateVariableRequest& request);
 
                 /**
                  *创建工作空间
@@ -398,7 +455,7 @@ namespace TencentCloud
                 DescribeJobConfigsOutcomeCallable DescribeJobConfigsCallable(const Model::DescribeJobConfigsRequest& request);
 
                 /**
-                 *获取指定作业的事件，包括作业启动停止、运行失败、快照失败、作业异常等各种事件类型
+                 *请求参数不包含 "RunningOrderIds"时，接口获取指定作业的事件，包括作业启动停止、运行失败、快照失败、作业异常等各种事件类型;请求参数不包含 "RunningOrderIds"时，接口为查询作业实例ID接口,获取作业实例
                  * @param req DescribeJobEventsRequest
                  * @return DescribeJobEventsOutcome
                  */
@@ -497,6 +554,15 @@ namespace TencentCloud
                 DescribeTreeResourcesOutcomeCallable DescribeTreeResourcesCallable(const Model::DescribeTreeResourcesRequest& request);
 
                 /**
+                 *变量列表展示
+                 * @param req DescribeVariablesRequest
+                 * @return DescribeVariablesOutcome
+                 */
+                DescribeVariablesOutcome DescribeVariables(const Model::DescribeVariablesRequest &request);
+                void DescribeVariablesAsync(const Model::DescribeVariablesRequest& request, const DescribeVariablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVariablesOutcomeCallable DescribeVariablesCallable(const Model::DescribeVariablesRequest& request);
+
+                /**
                  *授权工作空间列表
                  * @param req DescribeWorkSpacesRequest
                  * @return DescribeWorkSpacesOutcome
@@ -522,6 +588,15 @@ namespace TencentCloud
                 GetMetaTableOutcome GetMetaTable(const Model::GetMetaTableRequest &request);
                 void GetMetaTableAsync(const Model::GetMetaTableRequest& request, const GetMetaTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetMetaTableOutcomeCallable GetMetaTableCallable(const Model::GetMetaTableRequest& request);
+
+                /**
+                 *修改Connector
+                 * @param req ModifyConnectorRequest
+                 * @return ModifyConnectorOutcome
+                 */
+                ModifyConnectorOutcome ModifyConnector(const Model::ModifyConnectorRequest &request);
+                void ModifyConnectorAsync(const Model::ModifyConnectorRequest& request, const ModifyConnectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyConnectorOutcomeCallable ModifyConnectorCallable(const Model::ModifyConnectorRequest& request);
 
                 /**
                  *自定义树状结构页面拖拽文件夹
@@ -557,6 +632,15 @@ namespace TencentCloud
                 ModifyWorkSpaceOutcome ModifyWorkSpace(const Model::ModifyWorkSpaceRequest &request);
                 void ModifyWorkSpaceAsync(const Model::ModifyWorkSpaceRequest& request, const ModifyWorkSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyWorkSpaceOutcomeCallable ModifyWorkSpaceCallable(const Model::ModifyWorkSpaceRequest& request);
+
+                /**
+                 *解析用户上传connector
+                 * @param req ParseConnectorRequest
+                 * @return ParseConnectorOutcome
+                 */
+                ParseConnectorOutcome ParseConnector(const Model::ParseConnectorRequest &request);
+                void ParseConnectorAsync(const Model::ParseConnectorRequest& request, const ParseConnectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ParseConnectorOutcomeCallable ParseConnectorCallable(const Model::ParseConnectorRequest& request);
 
                 /**
                  *批量启动或者恢复作业，批量操作数量上限20

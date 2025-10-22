@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部门ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeptId 部门ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeptId() const;
 
                     /**
                      * 设置部门ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deptId 部门ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeptId(const std::string& _deptId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部门名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeptName 部门名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeptName() const;
 
                     /**
                      * 设置部门名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deptName 部门名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeptName(const std::string& _deptName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取父部门ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParentDeptId 父部门ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParentDeptId() const;
 
                     /**
                      * 设置父部门ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _parentDeptId 父部门ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParentDeptId(const std::string& _parentDeptId);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取客户系统部门ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeptOpenId 客户系统部门ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeptOpenId() const;
 
                     /**
                      * 设置客户系统部门ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deptOpenId 客户系统部门ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeptOpenId(const std::string& _deptOpenId);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取序列号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrderNo 序列号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetOrderNo() const;
 
                     /**
                      * 设置序列号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _orderNo 序列号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOrderNo(const uint64_t& _orderNo);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 部门ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deptId;
                     bool m_deptIdHasBeenSet;
 
                     /**
                      * 部门名。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deptName;
                     bool m_deptNameHasBeenSet;
 
                     /**
                      * 父部门ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_parentDeptId;
                     bool m_parentDeptIdHasBeenSet;
 
                     /**
                      * 客户系统部门ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deptOpenId;
                     bool m_deptOpenIdHasBeenSet;
 
                     /**
                      * 序列号。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_orderNo;
                     bool m_orderNoHasBeenSet;

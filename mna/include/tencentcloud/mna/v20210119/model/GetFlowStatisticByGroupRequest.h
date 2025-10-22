@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -189,6 +189,27 @@ namespace TencentCloud
                      */
                     bool GatewayTypeHasBeenSet() const;
 
+                    /**
+                     * 获取应用ID, 查询分组流量时无需使用。 查询应用流量时该字段为应用ID，GroupId 填写 "-1"
+                     * @return MpApplicationId 应用ID, 查询分组流量时无需使用。 查询应用流量时该字段为应用ID，GroupId 填写 "-1"
+                     * 
+                     */
+                    std::string GetMpApplicationId() const;
+
+                    /**
+                     * 设置应用ID, 查询分组流量时无需使用。 查询应用流量时该字段为应用ID，GroupId 填写 "-1"
+                     * @param _mpApplicationId 应用ID, 查询分组流量时无需使用。 查询应用流量时该字段为应用ID，GroupId 填写 "-1"
+                     * 
+                     */
+                    void SetMpApplicationId(const std::string& _mpApplicationId);
+
+                    /**
+                     * 判断参数 MpApplicationId 是否已赋值
+                     * @return MpApplicationId 是否已赋值
+                     * 
+                     */
+                    bool MpApplicationIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -232,6 +253,12 @@ namespace TencentCloud
                      */
                     int64_t m_gatewayType;
                     bool m_gatewayTypeHasBeenSet;
+
+                    /**
+                     * 应用ID, 查询分组流量时无需使用。 查询应用流量时该字段为应用ID，GroupId 填写 "-1"
+                     */
+                    std::string m_mpApplicationId;
+                    bool m_mpApplicationIdHasBeenSet;
 
                 };
             }

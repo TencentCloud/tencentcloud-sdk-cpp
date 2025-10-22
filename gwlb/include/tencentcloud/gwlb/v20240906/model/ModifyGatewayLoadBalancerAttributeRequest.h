@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取网关负载均衡的唯一ID。
-                     * @return LoadBalancerId 网关负载均衡的唯一ID。
+                     * 获取网关负载均衡的唯一ID。可通过[DescribeGatewayLoadBalancers](https://cloud.tencent.com/document/api/1782/111683) 接口获取。
+                     * @return LoadBalancerId 网关负载均衡的唯一ID。可通过[DescribeGatewayLoadBalancers](https://cloud.tencent.com/document/api/1782/111683) 接口获取。
                      * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
-                     * 设置网关负载均衡的唯一ID。
-                     * @param _loadBalancerId 网关负载均衡的唯一ID。
+                     * 设置网关负载均衡的唯一ID。可通过[DescribeGatewayLoadBalancers](https://cloud.tencent.com/document/api/1782/111683) 接口获取。
+                     * @param _loadBalancerId 网关负载均衡的唯一ID。可通过[DescribeGatewayLoadBalancers](https://cloud.tencent.com/document/api/1782/111683) 接口获取。
                      * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
@@ -84,10 +84,31 @@ namespace TencentCloud
                      */
                     bool LoadBalancerNameHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启删除保护。
+                     * @return DeleteProtect 是否开启删除保护。
+                     * 
+                     */
+                    bool GetDeleteProtect() const;
+
+                    /**
+                     * 设置是否开启删除保护。
+                     * @param _deleteProtect 是否开启删除保护。
+                     * 
+                     */
+                    void SetDeleteProtect(const bool& _deleteProtect);
+
+                    /**
+                     * 判断参数 DeleteProtect 是否已赋值
+                     * @return DeleteProtect 是否已赋值
+                     * 
+                     */
+                    bool DeleteProtectHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 网关负载均衡的唯一ID。
+                     * 网关负载均衡的唯一ID。可通过[DescribeGatewayLoadBalancers](https://cloud.tencent.com/document/api/1782/111683) 接口获取。
                      */
                     std::string m_loadBalancerId;
                     bool m_loadBalancerIdHasBeenSet;
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_loadBalancerName;
                     bool m_loadBalancerNameHasBeenSet;
+
+                    /**
+                     * 是否开启删除保护。
+                     */
+                    bool m_deleteProtect;
+                    bool m_deleteProtectHasBeenSet;
 
                 };
             }

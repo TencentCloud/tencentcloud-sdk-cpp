@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -80,9 +80,7 @@ Exited：表示当前录制任务正在退出的过程中。
 
                     /**
                      * 获取录制文件信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StorageFileList 录制文件信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<StorageFile> GetStorageFileList() const;
@@ -93,6 +91,20 @@ Exited：表示当前录制任务正在退出的过程中。
                      * 
                      */
                     bool StorageFileListHasBeenSet() const;
+
+                    /**
+                     * 获取转推录制任务发起时所填，标识一次录制
+                     * @return RecorderKey 转推录制任务发起时所填，标识一次录制
+                     * 
+                     */
+                    std::string GetRecorderKey() const;
+
+                    /**
+                     * 判断参数 RecorderKey 是否已赋值
+                     * @return RecorderKey 是否已赋值
+                     * 
+                     */
+                    bool RecorderKeyHasBeenSet() const;
 
                 private:
 
@@ -113,10 +125,15 @@ Exited：表示当前录制任务正在退出的过程中。
 
                     /**
                      * 录制文件信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<StorageFile> m_storageFileList;
                     bool m_storageFileListHasBeenSet;
+
+                    /**
+                     * 转推录制任务发起时所填，标识一次录制
+                     */
+                    std::string m_recorderKey;
+                    bool m_recorderKeyHasBeenSet;
 
                 };
             }

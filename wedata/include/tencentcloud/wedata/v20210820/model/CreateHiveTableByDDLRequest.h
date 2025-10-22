@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool DatabaseHasBeenSet() const;
 
                     /**
-                     * 获取建hive表ddl
-                     * @return DDLSql 建hive表ddl
+                     * 获取建hive表ddl的base64编码
+                     * @return DDLSql 建hive表ddl的base64编码
                      * 
                      */
                     std::string GetDDLSql() const;
 
                     /**
-                     * 设置建hive表ddl
-                     * @param _dDLSql 建hive表ddl
+                     * 设置建hive表ddl的base64编码
+                     * @param _dDLSql 建hive表ddl的base64编码
                      * 
                      */
                     void SetDDLSql(const std::string& _dDLSql);
@@ -210,6 +210,111 @@ namespace TencentCloud
                      */
                     bool SchemaNameHasBeenSet() const;
 
+                    /**
+                     * 获取是否异步建表
+                     * @return Async 是否异步建表
+                     * 
+                     */
+                    bool GetAsync() const;
+
+                    /**
+                     * 设置是否异步建表
+                     * @param _async 是否异步建表
+                     * 
+                     */
+                    void SetAsync(const bool& _async);
+
+                    /**
+                     * 判断参数 Async 是否已赋值
+                     * @return Async 是否已赋值
+                     * 
+                     */
+                    bool AsyncHasBeenSet() const;
+
+                    /**
+                     * 获取数据优化使用的资源
+                     * @return DataOptimizationResource 数据优化使用的资源
+                     * 
+                     */
+                    std::string GetDataOptimizationResource() const;
+
+                    /**
+                     * 设置数据优化使用的资源
+                     * @param _dataOptimizationResource 数据优化使用的资源
+                     * 
+                     */
+                    void SetDataOptimizationResource(const std::string& _dataOptimizationResource);
+
+                    /**
+                     * 判断参数 DataOptimizationResource 是否已赋值
+                     * @return DataOptimizationResource 是否已赋值
+                     * 
+                     */
+                    bool DataOptimizationResourceHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启数据优化
+                     * @return SmartOptimizerWritten 是否开启数据优化
+                     * 
+                     */
+                    std::string GetSmartOptimizerWritten() const;
+
+                    /**
+                     * 设置是否开启数据优化
+                     * @param _smartOptimizerWritten 是否开启数据优化
+                     * 
+                     */
+                    void SetSmartOptimizerWritten(const std::string& _smartOptimizerWritten);
+
+                    /**
+                     * 判断参数 SmartOptimizerWritten 是否已赋值
+                     * @return SmartOptimizerWritten 是否已赋值
+                     * 
+                     */
+                    bool SmartOptimizerWrittenHasBeenSet() const;
+
+                    /**
+                     * 获取数据优化表名
+                     * @return TableName 数据优化表名
+                     * 
+                     */
+                    std::string GetTableName() const;
+
+                    /**
+                     * 设置数据优化表名
+                     * @param _tableName 数据优化表名
+                     * 
+                     */
+                    void SetTableName(const std::string& _tableName);
+
+                    /**
+                     * 判断参数 TableName 是否已赋值
+                     * @return TableName 是否已赋值
+                     * 
+                     */
+                    bool TableNameHasBeenSet() const;
+
+                    /**
+                     * 获取数据优化资源组
+                     * @return ResourceGroupName 数据优化资源组
+                     * 
+                     */
+                    std::string GetResourceGroupName() const;
+
+                    /**
+                     * 设置数据优化资源组
+                     * @param _resourceGroupName 数据优化资源组
+                     * 
+                     */
+                    void SetResourceGroupName(const std::string& _resourceGroupName);
+
+                    /**
+                     * 判断参数 ResourceGroupName 是否已赋值
+                     * @return ResourceGroupName 是否已赋值
+                     * 
+                     */
+                    bool ResourceGroupNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -225,7 +330,7 @@ namespace TencentCloud
                     bool m_databaseHasBeenSet;
 
                     /**
-                     * 建hive表ddl
+                     * 建hive表ddl的base64编码
                      */
                     std::string m_dDLSql;
                     bool m_dDLSqlHasBeenSet;
@@ -259,6 +364,36 @@ namespace TencentCloud
                      */
                     std::string m_schemaName;
                     bool m_schemaNameHasBeenSet;
+
+                    /**
+                     * 是否异步建表
+                     */
+                    bool m_async;
+                    bool m_asyncHasBeenSet;
+
+                    /**
+                     * 数据优化使用的资源
+                     */
+                    std::string m_dataOptimizationResource;
+                    bool m_dataOptimizationResourceHasBeenSet;
+
+                    /**
+                     * 是否开启数据优化
+                     */
+                    std::string m_smartOptimizerWritten;
+                    bool m_smartOptimizerWrittenHasBeenSet;
+
+                    /**
+                     * 数据优化表名
+                     */
+                    std::string m_tableName;
+                    bool m_tableNameHasBeenSet;
+
+                    /**
+                     * 数据优化资源组
+                     */
+                    std::string m_resourceGroupName;
+                    bool m_resourceGroupNameHasBeenSet;
 
                 };
             }

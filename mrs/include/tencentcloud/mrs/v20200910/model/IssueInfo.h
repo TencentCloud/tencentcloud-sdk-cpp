@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertNumber 编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCertNumber() const;
 
                     /**
                      * 设置编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _certNumber 编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCertNumber(const std::string& _certNumber);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取签发机构
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IssuedAuthority 签发机构
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIssuedAuthority() const;
 
                     /**
                      * 设置签发机构
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _issuedAuthority 签发机构
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIssuedAuthority(const std::string& _issuedAuthority);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取签发日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IssuedDate 签发日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIssuedDate() const;
 
                     /**
                      * 设置签发日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _issuedDate 签发日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIssuedDate(const std::string& _issuedDate);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 编号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_certNumber;
                     bool m_certNumberHasBeenSet;
 
                     /**
                      * 签发机构
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_issuedAuthority;
                     bool m_issuedAuthorityHasBeenSet;
 
                     /**
                      * 签发日期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_issuedDate;
                     bool m_issuedDateHasBeenSet;

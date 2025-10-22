@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -467,6 +467,27 @@ namespace TencentCloud
                      */
                     bool MaxConnectionHasBeenSet() const;
 
+                    /**
+                     * 获取Bgp ASN
+                     * @return BgpAsn Bgp ASN
+                     * 
+                     */
+                    uint64_t GetBgpAsn() const;
+
+                    /**
+                     * 设置Bgp ASN
+                     * @param _bgpAsn Bgp ASN
+                     * 
+                     */
+                    void SetBgpAsn(const uint64_t& _bgpAsn);
+
+                    /**
+                     * 判断参数 BgpAsn 是否已赋值
+                     * @return BgpAsn 是否已赋值
+                     * 
+                     */
+                    bool BgpAsnHasBeenSet() const;
+
                 private:
 
                     /**
@@ -588,6 +609,12 @@ namespace TencentCloud
                      */
                     uint64_t m_maxConnection;
                     bool m_maxConnectionHasBeenSet;
+
+                    /**
+                     * Bgp ASN
+                     */
+                    uint64_t m_bgpAsn;
+                    bool m_bgpAsnHasBeenSet;
 
                 };
             }

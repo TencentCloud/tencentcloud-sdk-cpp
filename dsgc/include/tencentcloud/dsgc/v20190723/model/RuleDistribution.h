@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleId 规则id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRuleId() const;
 
                     /**
                      * 设置规则id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleId 规则id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleId(const int64_t& _ruleId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleName 规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleName 规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleName(const std::string& _ruleName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分级id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LevelId 分级id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLevelId() const;
 
                     /**
                      * 设置分级id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _levelId 分级id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevelId(const int64_t& _levelId);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分级名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LevelName 分级名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLevelName() const;
 
                     /**
                      * 设置分级名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _levelName 分级名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevelName(const std::string& _levelName);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleCnt 规则数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRuleCnt() const;
 
                     /**
                      * 设置规则数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleCnt 规则数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleCnt(const int64_t& _ruleCnt);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 规则id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ruleId;
                     bool m_ruleIdHasBeenSet;
 
                     /**
                      * 规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;
 
                     /**
                      * 分级id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_levelId;
                     bool m_levelIdHasBeenSet;
 
                     /**
                      * 分级名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_levelName;
                     bool m_levelNameHasBeenSet;
 
                     /**
                      * 规则数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ruleCnt;
                     bool m_ruleCntHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ using namespace std;
 DescribeDatasetsResponse::DescribeDatasetsResponse() :
     m_totalCountHasBeenSet(false),
     m_datasetGroupsHasBeenSet(false),
-    m_datasetIdNumsHasBeenSet(false)
+    m_datasetIdNumsHasBeenSet(false),
+    m_cFSNotReadyHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,16 @@ CoreInternalOutcome DescribeDatasetsResponse::Deserialize(const string &payload)
         m_datasetIdNumsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CFSNotReady") && !rsp["CFSNotReady"].IsNull())
+    {
+        if (!rsp["CFSNotReady"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CFSNotReady` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_cFSNotReady = rsp["CFSNotReady"].GetBool();
+        m_cFSNotReadyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,11 +156,19 @@ string DescribeDatasetsResponse::ToJsonString() const
         value.AddMember(iKey, m_datasetIdNums, allocator);
     }
 
+    if (m_cFSNotReadyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CFSNotReady";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cFSNotReady, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -185,6 +204,16 @@ uint64_t DescribeDatasetsResponse::GetDatasetIdNums() const
 bool DescribeDatasetsResponse::DatasetIdNumsHasBeenSet() const
 {
     return m_datasetIdNumsHasBeenSet;
+}
+
+bool DescribeDatasetsResponse::GetCFSNotReady() const
+{
+    return m_cFSNotReady;
+}
+
+bool DescribeDatasetsResponse::CFSNotReadyHasBeenSet() const
+{
+    return m_cFSNotReadyHasBeenSet;
 }
 
 

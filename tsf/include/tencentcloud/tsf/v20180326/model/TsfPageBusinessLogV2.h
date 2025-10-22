@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalCount 总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取业务日志列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 业务日志列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BusinessLogV2> GetContent() const;
 
                     /**
                      * 设置业务日志列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _content 业务日志列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContent(const std::vector<BusinessLogV2>& _content);
@@ -123,18 +115,18 @@ namespace TencentCloud
                     bool ScrollIdHasBeenSet() const;
 
                     /**
-                     * 获取查询状态
+                     * 获取查询状态，SUCCESS：查询成功完成，ERROR_RANGE_EXCEED：查询范围过大异常，ERROR_COMPLEX_CONDITION：查询条件复杂异常，ERROR_OTHER_CAUSE：其他异常
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 查询状态
+                     * @return Status 查询状态，SUCCESS：查询成功完成，ERROR_RANGE_EXCEED：查询范围过大异常，ERROR_COMPLEX_CONDITION：查询条件复杂异常，ERROR_OTHER_CAUSE：其他异常
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置查询状态
+                     * 设置查询状态，SUCCESS：查询成功完成，ERROR_RANGE_EXCEED：查询范围过大异常，ERROR_COMPLEX_CONDITION：查询条件复杂异常，ERROR_OTHER_CAUSE：其他异常
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 查询状态
+                     * @param _status 查询状态，SUCCESS：查询成功完成，ERROR_RANGE_EXCEED：查询范围过大异常，ERROR_COMPLEX_CONDITION：查询条件复杂异常，ERROR_OTHER_CAUSE：其他异常
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +139,37 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取查询es时，使用searchAfter返回的游标
+                     * @return SearchAfter 查询es时，使用searchAfter返回的游标
+                     * 
+                     */
+                    std::vector<std::string> GetSearchAfter() const;
+
+                    /**
+                     * 设置查询es时，使用searchAfter返回的游标
+                     * @param _searchAfter 查询es时，使用searchAfter返回的游标
+                     * 
+                     */
+                    void SetSearchAfter(const std::vector<std::string>& _searchAfter);
+
+                    /**
+                     * 判断参数 SearchAfter 是否已赋值
+                     * @return SearchAfter 是否已赋值
+                     * 
+                     */
+                    bool SearchAfterHasBeenSet() const;
+
                 private:
 
                     /**
                      * 总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * 业务日志列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BusinessLogV2> m_content;
                     bool m_contentHasBeenSet;
@@ -171,11 +182,17 @@ namespace TencentCloud
                     bool m_scrollIdHasBeenSet;
 
                     /**
-                     * 查询状态
+                     * 查询状态，SUCCESS：查询成功完成，ERROR_RANGE_EXCEED：查询范围过大异常，ERROR_COMPLEX_CONDITION：查询条件复杂异常，ERROR_OTHER_CAUSE：其他异常
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 查询es时，使用searchAfter返回的游标
+                     */
+                    std::vector<std::string> m_searchAfter;
+                    bool m_searchAfterHasBeenSet;
 
                 };
             }

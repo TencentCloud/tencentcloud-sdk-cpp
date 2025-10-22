@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -165,18 +165,18 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取验证码
+                     * 获取分享链接加密访问验证码。支持0-9和a-z(不区分大小写)在内的6个字符，可为空，代表免验证码访问
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VerifyCode 验证码
+                     * @return VerifyCode 分享链接加密访问验证码。支持0-9和a-z(不区分大小写)在内的6个字符，可为空，代表免验证码访问
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVerifyCode() const;
 
                     /**
-                     * 设置验证码
+                     * 设置分享链接加密访问验证码。支持0-9和a-z(不区分大小写)在内的6个字符，可为空，代表免验证码访问
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _verifyCode 验证码
+                     * @param _verifyCode 分享链接加密访问验证码。支持0-9和a-z(不区分大小写)在内的6个字符，可为空，代表免验证码访问
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -384,7 +384,7 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 验证码
+                     * 分享链接加密访问验证码。支持0-9和a-z(不区分大小写)在内的6个字符，可为空，代表免验证码访问
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_verifyCode;

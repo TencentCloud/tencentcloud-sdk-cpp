@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,9 @@
 #include <tencentcloud/lke/v20231130/model/TaskFlowInfo.h>
 #include <tencentcloud/lke/v20231130/model/FileInfo.h>
 #include <tencentcloud/lke/v20231130/model/QuoteInfo.h>
+#include <tencentcloud/lke/v20231130/model/AgentThought.h>
+#include <tencentcloud/lke/v20231130/model/ExtraInfo.h>
+#include <tencentcloud/lke/v20231130/model/WorkflowInfo.h>
 
 
 namespace TencentCloud
@@ -626,6 +629,81 @@ namespace TencentCloud
                      */
                     bool QuoteInfosHasBeenSet() const;
 
+                    /**
+                     * 获取Agent的思考过程信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AgentThought Agent的思考过程信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AgentThought GetAgentThought() const;
+
+                    /**
+                     * 设置Agent的思考过程信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _agentThought Agent的思考过程信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAgentThought(const AgentThought& _agentThought);
+
+                    /**
+                     * 判断参数 AgentThought 是否已赋值
+                     * @return AgentThought 是否已赋值
+                     * 
+                     */
+                    bool AgentThoughtHasBeenSet() const;
+
+                    /**
+                     * 获取扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExtraInfo 扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ExtraInfo GetExtraInfo() const;
+
+                    /**
+                     * 设置扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _extraInfo 扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExtraInfo(const ExtraInfo& _extraInfo);
+
+                    /**
+                     * 判断参数 ExtraInfo 是否已赋值
+                     * @return ExtraInfo 是否已赋值
+                     * 
+                     */
+                    bool ExtraInfoHasBeenSet() const;
+
+                    /**
+                     * 获取工作流信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WorkFlow 工作流信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    WorkflowInfo GetWorkFlow() const;
+
+                    /**
+                     * 设置工作流信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _workFlow 工作流信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWorkFlow(const WorkflowInfo& _workFlow);
+
+                    /**
+                     * 判断参数 WorkFlow 是否已赋值
+                     * @return WorkFlow 是否已赋值
+                     * 
+                     */
+                    bool WorkFlowHasBeenSet() const;
+
                 private:
 
                     /**
@@ -788,6 +866,27 @@ namespace TencentCloud
                      */
                     std::vector<QuoteInfo> m_quoteInfos;
                     bool m_quoteInfosHasBeenSet;
+
+                    /**
+                     * Agent的思考过程信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AgentThought m_agentThought;
+                    bool m_agentThoughtHasBeenSet;
+
+                    /**
+                     * 扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ExtraInfo m_extraInfo;
+                    bool m_extraInfoHasBeenSet;
+
+                    /**
+                     * 工作流信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    WorkflowInfo m_workFlow;
+                    bool m_workFlowHasBeenSet;
 
                 };
             }

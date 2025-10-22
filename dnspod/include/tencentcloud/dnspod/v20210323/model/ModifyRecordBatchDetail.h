@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取见RecordInfoBatchModify
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordList 见RecordInfoBatchModify
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BatchRecordInfo> GetRecordList() const;
 
                     /**
                      * 设置见RecordInfoBatchModify
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recordList 见RecordInfoBatchModify
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecordList(const std::vector<BatchRecordInfo>& _recordList);
@@ -95,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domain 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -120,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取域名等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DomainGrade 域名等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomainGrade() const;
 
                     /**
                      * 设置域名等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domainGrade 域名等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomainGrade(const std::string& _domainGrade);
@@ -170,18 +158,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该条任务运行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 该条任务运行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置该条任务运行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 该条任务运行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -220,18 +204,14 @@ namespace TencentCloud
 
                     /**
                      * 获取域名ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DomainId 域名ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDomainId() const;
 
                     /**
                      * 设置域名ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domainId 域名ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomainId(const uint64_t& _domainId);
@@ -247,7 +227,6 @@ namespace TencentCloud
 
                     /**
                      * 见RecordInfoBatchModify
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BatchRecordInfo> m_recordList;
                     bool m_recordListHasBeenSet;
@@ -260,14 +239,12 @@ namespace TencentCloud
 
                     /**
                      * 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
                      * 域名等级
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domainGrade;
                     bool m_domainGradeHasBeenSet;
@@ -281,7 +258,6 @@ namespace TencentCloud
 
                     /**
                      * 该条任务运行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
@@ -295,7 +271,6 @@ namespace TencentCloud
 
                     /**
                      * 域名ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_domainId;
                     bool m_domainIdHasBeenSet;

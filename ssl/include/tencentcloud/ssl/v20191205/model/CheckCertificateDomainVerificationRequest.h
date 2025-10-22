@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取证书ID。
-                     * @return CertificateId 证书ID。
+                     * 获取证书ID。 
+                     * @return CertificateId 证书ID。 
                      * 
                      */
                     std::string GetCertificateId() const;
 
                     /**
-                     * 设置证书ID。
-                     * @param _certificateId 证书ID。
+                     * 设置证书ID。 
+                     * @param _certificateId 证书ID。 
                      * 
                      */
                     void SetCertificateId(const std::string& _certificateId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 证书ID。
+                     * 证书ID。 
                      */
                     std::string m_certificateId;
                     bool m_certificateIdHasBeenSet;

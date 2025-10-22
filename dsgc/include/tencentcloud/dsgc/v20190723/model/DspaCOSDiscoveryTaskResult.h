@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -237,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataSourceName 数据源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataSourceName() const;
 
                     /**
                      * 设置数据源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataSourceName 数据源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataSourceName(const std::string& _dataSourceName);
@@ -283,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Bucket扫描结果错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorInfo Bucket扫描结果错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrorInfo() const;
 
                     /**
                      * 设置Bucket扫描结果错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errorInfo Bucket扫描结果错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrorInfo(const std::string& _errorInfo);
@@ -308,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceRegion 资源所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceRegion() const;
 
                     /**
                      * 设置资源所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceRegion 资源所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceRegion(const std::string& _resourceRegion);
@@ -333,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否超额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OverSize 是否超额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOverSize() const;
 
                     /**
                      * 设置是否超额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _overSize 是否超额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOverSize(const std::string& _overSize);
@@ -355,6 +339,48 @@ namespace TencentCloud
                      * 
                      */
                     bool OverSizeHasBeenSet() const;
+
+                    /**
+                     * 获取任务实例id
+                     * @return TaskInstanceId 任务实例id
+                     * 
+                     */
+                    std::string GetTaskInstanceId() const;
+
+                    /**
+                     * 设置任务实例id
+                     * @param _taskInstanceId 任务实例id
+                     * 
+                     */
+                    void SetTaskInstanceId(const std::string& _taskInstanceId);
+
+                    /**
+                     * 判断参数 TaskInstanceId 是否已赋值
+                     * @return TaskInstanceId 是否已赋值
+                     * 
+                     */
+                    bool TaskInstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取开始时间
+                     * @return StartTime 开始时间
+                     * 
+                     */
+                    std::string GetStartTime() const;
+
+                    /**
+                     * 设置开始时间
+                     * @param _startTime 开始时间
+                     * 
+                     */
+                    void SetStartTime(const std::string& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     * 
+                     */
+                    bool StartTimeHasBeenSet() const;
 
                 private:
 
@@ -414,7 +440,6 @@ namespace TencentCloud
 
                     /**
                      * 数据源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataSourceName;
                     bool m_dataSourceNameHasBeenSet;
@@ -427,24 +452,33 @@ namespace TencentCloud
 
                     /**
                      * Bucket扫描结果错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorInfo;
                     bool m_errorInfoHasBeenSet;
 
                     /**
                      * 资源所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceRegion;
                     bool m_resourceRegionHasBeenSet;
 
                     /**
                      * 是否超额
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_overSize;
                     bool m_overSizeHasBeenSet;
+
+                    /**
+                     * 任务实例id
+                     */
+                    std::string m_taskInstanceId;
+                    bool m_taskInstanceIdHasBeenSet;
+
+                    /**
+                     * 开始时间
+                     */
+                    std::string m_startTime;
+                    bool m_startTimeHasBeenSet;
 
                 };
             }

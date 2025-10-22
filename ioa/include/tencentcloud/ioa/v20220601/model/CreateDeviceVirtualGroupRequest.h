@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,6 +65,27 @@ namespace TencentCloud
                     bool DeviceVirtualGroupNameHasBeenSet() const;
 
                     /**
+                     * 获取管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域"1"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。
+                     * @return DomainInstanceId 管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域"1"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。
+                     * 
+                     */
+                    std::string GetDomainInstanceId() const;
+
+                    /**
+                     * 设置管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域"1"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。
+                     * @param _domainInstanceId 管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域"1"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。
+                     * 
+                     */
+                    void SetDomainInstanceId(const std::string& _domainInstanceId);
+
+                    /**
+                     * 判断参数 DomainInstanceId 是否已赋值
+                     * @return DomainInstanceId 是否已赋值
+                     * 
+                     */
+                    bool DomainInstanceIdHasBeenSet() const;
+
+                    /**
                      * 获取详情
                      * @return Description 详情
                      * 
@@ -86,15 +107,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取必填，系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios ）(只支持32位)
-                     * @return OsType 必填，系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios ）(只支持32位)
+                     * 获取系统类型（0: win，1：linux，2: mac，4：android，5：ios ； 默认值0）(只支持32位)
+                     * @return OsType 系统类型（0: win，1：linux，2: mac，4：android，5：ios ； 默认值0）(只支持32位)
                      * 
                      */
                     int64_t GetOsType() const;
 
                     /**
-                     * 设置必填，系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios ）(只支持32位)
-                     * @param _osType 必填，系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios ）(只支持32位)
+                     * 设置系统类型（0: win，1：linux，2: mac，4：android，5：ios ； 默认值0）(只支持32位)
+                     * @param _osType 系统类型（0: win，1：linux，2: mac，4：android，5：ios ； 默认值0）(只支持32位)
                      * 
                      */
                     void SetOsType(const int64_t& _osType);
@@ -107,15 +128,15 @@ namespace TencentCloud
                     bool OsTypeHasBeenSet() const;
 
                     /**
-                     * 获取必填，分组类型（0:手动分组；非0为自动划分分组；具体枚举值为：1:自动每小时划分分组、2:自动每天划分分组、3:自定义时间划分分组）(只支持32位)
-                     * @return TimeType 必填，分组类型（0:手动分组；非0为自动划分分组；具体枚举值为：1:自动每小时划分分组、2:自动每天划分分组、3:自定义时间划分分组）(只支持32位)
+                     * 获取分组类型（0:手动分组；非0为自动划分分组；具体枚举值为：1:自动每小时划分分组、2:自动每天划分分组、3:自定义时间划分分组； 默认值0）(只支持32位)
+                     * @return TimeType 分组类型（0:手动分组；非0为自动划分分组；具体枚举值为：1:自动每小时划分分组、2:自动每天划分分组、3:自定义时间划分分组； 默认值0）(只支持32位)
                      * 
                      */
                     int64_t GetTimeType() const;
 
                     /**
-                     * 设置必填，分组类型（0:手动分组；非0为自动划分分组；具体枚举值为：1:自动每小时划分分组、2:自动每天划分分组、3:自定义时间划分分组）(只支持32位)
-                     * @param _timeType 必填，分组类型（0:手动分组；非0为自动划分分组；具体枚举值为：1:自动每小时划分分组、2:自动每天划分分组、3:自定义时间划分分组）(只支持32位)
+                     * 设置分组类型（0:手动分组；非0为自动划分分组；具体枚举值为：1:自动每小时划分分组、2:自动每天划分分组、3:自定义时间划分分组； 默认值0）(只支持32位)
+                     * @param _timeType 分组类型（0:手动分组；非0为自动划分分组；具体枚举值为：1:自动每小时划分分组、2:自动每天划分分组、3:自定义时间划分分组； 默认值0）(只支持32位)
                      * 
                      */
                     void SetTimeType(const int64_t& _timeType);
@@ -178,19 +199,25 @@ namespace TencentCloud
                     bool m_deviceVirtualGroupNameHasBeenSet;
 
                     /**
+                     * 管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域"1"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。
+                     */
+                    std::string m_domainInstanceId;
+                    bool m_domainInstanceIdHasBeenSet;
+
+                    /**
                      * 详情
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 必填，系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios ）(只支持32位)
+                     * 系统类型（0: win，1：linux，2: mac，4：android，5：ios ； 默认值0）(只支持32位)
                      */
                     int64_t m_osType;
                     bool m_osTypeHasBeenSet;
 
                     /**
-                     * 必填，分组类型（0:手动分组；非0为自动划分分组；具体枚举值为：1:自动每小时划分分组、2:自动每天划分分组、3:自定义时间划分分组）(只支持32位)
+                     * 分组类型（0:手动分组；非0为自动划分分组；具体枚举值为：1:自动每小时划分分组、2:自动每天划分分组、3:自定义时间划分分组； 默认值0）(只支持32位)
                      */
                     int64_t m_timeType;
                     bool m_timeTypeHasBeenSet;

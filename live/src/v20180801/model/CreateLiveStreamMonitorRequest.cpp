@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,9 @@ CreateLiveStreamMonitorRequest::CreateLiveStreamMonitorRequest() :
     m_checkStreamLowFrameRateHasBeenSet(false),
     m_allowMonitorReportHasBeenSet(false),
     m_aiFormatDiagnoseHasBeenSet(false),
-    m_aiQualityControlHasBeenSet(false)
+    m_aiQualityControlHasBeenSet(false),
+    m_casterIdHasBeenSet(false),
+    m_pullPushTaskIdHasBeenSet(false)
 {
 }
 
@@ -167,6 +169,22 @@ string CreateLiveStreamMonitorRequest::ToJsonString() const
         string key = "AiQualityControl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_aiQualityControl, allocator);
+    }
+
+    if (m_casterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CasterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_casterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pullPushTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PullPushTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_pullPushTaskId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -383,6 +401,38 @@ void CreateLiveStreamMonitorRequest::SetAiQualityControl(const uint64_t& _aiQual
 bool CreateLiveStreamMonitorRequest::AiQualityControlHasBeenSet() const
 {
     return m_aiQualityControlHasBeenSet;
+}
+
+string CreateLiveStreamMonitorRequest::GetCasterId() const
+{
+    return m_casterId;
+}
+
+void CreateLiveStreamMonitorRequest::SetCasterId(const string& _casterId)
+{
+    m_casterId = _casterId;
+    m_casterIdHasBeenSet = true;
+}
+
+bool CreateLiveStreamMonitorRequest::CasterIdHasBeenSet() const
+{
+    return m_casterIdHasBeenSet;
+}
+
+string CreateLiveStreamMonitorRequest::GetPullPushTaskId() const
+{
+    return m_pullPushTaskId;
+}
+
+void CreateLiveStreamMonitorRequest::SetPullPushTaskId(const string& _pullPushTaskId)
+{
+    m_pullPushTaskId = _pullPushTaskId;
+    m_pullPushTaskIdHasBeenSet = true;
+}
+
+bool CreateLiveStreamMonitorRequest::PullPushTaskIdHasBeenSet() const
+{
+    return m_pullPushTaskIdHasBeenSet;
 }
 
 

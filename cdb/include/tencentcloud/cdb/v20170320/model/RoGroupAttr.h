@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,15 +68,19 @@ namespace TencentCloud
                     bool RoGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取RO 实例最大延迟阈值。单位为秒，最小值为 1。注意，RO 组必须设置了开启实例延迟剔除策略，该值才有效。
-                     * @return RoMaxDelayTime RO 实例最大延迟阈值。单位为秒，最小值为 1。注意，RO 组必须设置了开启实例延迟剔除策略，该值才有效。
+                     * 获取RO 实例最大延迟阈值。单位为秒，最小值为 1。范围：[1,10000]，整数。
+注意：RO 组必须设置了开启实例延迟剔除策略，该值才有效。
+                     * @return RoMaxDelayTime RO 实例最大延迟阈值。单位为秒，最小值为 1。范围：[1,10000]，整数。
+注意：RO 组必须设置了开启实例延迟剔除策略，该值才有效。
                      * 
                      */
                     int64_t GetRoMaxDelayTime() const;
 
                     /**
-                     * 设置RO 实例最大延迟阈值。单位为秒，最小值为 1。注意，RO 组必须设置了开启实例延迟剔除策略，该值才有效。
-                     * @param _roMaxDelayTime RO 实例最大延迟阈值。单位为秒，最小值为 1。注意，RO 组必须设置了开启实例延迟剔除策略，该值才有效。
+                     * 设置RO 实例最大延迟阈值。单位为秒，最小值为 1。范围：[1,10000]，整数。
+注意：RO 组必须设置了开启实例延迟剔除策略，该值才有效。
+                     * @param _roMaxDelayTime RO 实例最大延迟阈值。单位为秒，最小值为 1。范围：[1,10000]，整数。
+注意：RO 组必须设置了开启实例延迟剔除策略，该值才有效。
                      * 
                      */
                     void SetRoMaxDelayTime(const int64_t& _roMaxDelayTime);
@@ -110,15 +114,19 @@ namespace TencentCloud
                     bool RoOfflineDelayHasBeenSet() const;
 
                     /**
-                     * 获取最少保留实例数。可设置为小于或等于该 RO 组下 RO 实例个数的任意值。注意，若设置值大于 RO 实例数量将不做剔除；若设置为 0，所有实例延迟超限都会被剔除。
-                     * @return MinRoInGroup 最少保留实例数。可设置为小于或等于该 RO 组下 RO 实例个数的任意值。注意，若设置值大于 RO 实例数量将不做剔除；若设置为 0，所有实例延迟超限都会被剔除。
+                     * 获取最少保留实例数。可设置为小于或等于该 RO 组下 RO 实例个数的任意值。默认值为1。
+注意：若设置值大于 RO 实例数量将不做剔除；若设置为 0，所有实例延迟超限都会被剔除。
+                     * @return MinRoInGroup 最少保留实例数。可设置为小于或等于该 RO 组下 RO 实例个数的任意值。默认值为1。
+注意：若设置值大于 RO 实例数量将不做剔除；若设置为 0，所有实例延迟超限都会被剔除。
                      * 
                      */
                     int64_t GetMinRoInGroup() const;
 
                     /**
-                     * 设置最少保留实例数。可设置为小于或等于该 RO 组下 RO 实例个数的任意值。注意，若设置值大于 RO 实例数量将不做剔除；若设置为 0，所有实例延迟超限都会被剔除。
-                     * @param _minRoInGroup 最少保留实例数。可设置为小于或等于该 RO 组下 RO 实例个数的任意值。注意，若设置值大于 RO 实例数量将不做剔除；若设置为 0，所有实例延迟超限都会被剔除。
+                     * 设置最少保留实例数。可设置为小于或等于该 RO 组下 RO 实例个数的任意值。默认值为1。
+注意：若设置值大于 RO 实例数量将不做剔除；若设置为 0，所有实例延迟超限都会被剔除。
+                     * @param _minRoInGroup 最少保留实例数。可设置为小于或等于该 RO 组下 RO 实例个数的任意值。默认值为1。
+注意：若设置值大于 RO 实例数量将不做剔除；若设置为 0，所有实例延迟超限都会被剔除。
                      * 
                      */
                     void SetMinRoInGroup(const int64_t& _minRoInGroup);
@@ -152,15 +160,15 @@ namespace TencentCloud
                     bool WeightModeHasBeenSet() const;
 
                     /**
-                     * 获取延迟复制时间。
-                     * @return ReplicationDelayTime 延迟复制时间。
+                     * 获取延迟复制时间。单位：秒，范围：1 - 259200秒，不传此参数表示不开启实例延迟复制。
+                     * @return ReplicationDelayTime 延迟复制时间。单位：秒，范围：1 - 259200秒，不传此参数表示不开启实例延迟复制。
                      * 
                      */
                     int64_t GetReplicationDelayTime() const;
 
                     /**
-                     * 设置延迟复制时间。
-                     * @param _replicationDelayTime 延迟复制时间。
+                     * 设置延迟复制时间。单位：秒，范围：1 - 259200秒，不传此参数表示不开启实例延迟复制。
+                     * @param _replicationDelayTime 延迟复制时间。单位：秒，范围：1 - 259200秒，不传此参数表示不开启实例延迟复制。
                      * 
                      */
                     void SetReplicationDelayTime(const int64_t& _replicationDelayTime);
@@ -181,7 +189,8 @@ namespace TencentCloud
                     bool m_roGroupNameHasBeenSet;
 
                     /**
-                     * RO 实例最大延迟阈值。单位为秒，最小值为 1。注意，RO 组必须设置了开启实例延迟剔除策略，该值才有效。
+                     * RO 实例最大延迟阈值。单位为秒，最小值为 1。范围：[1,10000]，整数。
+注意：RO 组必须设置了开启实例延迟剔除策略，该值才有效。
                      */
                     int64_t m_roMaxDelayTime;
                     bool m_roMaxDelayTimeHasBeenSet;
@@ -193,7 +202,8 @@ namespace TencentCloud
                     bool m_roOfflineDelayHasBeenSet;
 
                     /**
-                     * 最少保留实例数。可设置为小于或等于该 RO 组下 RO 实例个数的任意值。注意，若设置值大于 RO 实例数量将不做剔除；若设置为 0，所有实例延迟超限都会被剔除。
+                     * 最少保留实例数。可设置为小于或等于该 RO 组下 RO 实例个数的任意值。默认值为1。
+注意：若设置值大于 RO 实例数量将不做剔除；若设置为 0，所有实例延迟超限都会被剔除。
                      */
                     int64_t m_minRoInGroup;
                     bool m_minRoInGroupHasBeenSet;
@@ -205,7 +215,7 @@ namespace TencentCloud
                     bool m_weightModeHasBeenSet;
 
                     /**
-                     * 延迟复制时间。
+                     * 延迟复制时间。单位：秒，范围：1 - 259200秒，不传此参数表示不开启实例延迟复制。
                      */
                     int64_t m_replicationDelayTime;
                     bool m_replicationDelayTimeHasBeenSet;

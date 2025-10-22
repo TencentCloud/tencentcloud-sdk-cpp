@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,8 @@ VulFixStatusSnapshotInfo::VulFixStatusSnapshotInfo() :
     m_snapshotIdHasBeenSet(false),
     m_idHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_failReasonHasBeenSet(false)
+    m_failReasonHasBeenSet(false),
+    m_machineTypeHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome VulFixStatusSnapshotInfo::Deserialize(const rapidjson::Value
         m_failReasonHasBeenSet = true;
     }
 
+    if (value.HasMember("MachineType") && !value["MachineType"].IsNull())
+    {
+        if (!value["MachineType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulFixStatusSnapshotInfo.MachineType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_machineType = string(value["MachineType"].GetString());
+        m_machineTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void VulFixStatusSnapshotInfo::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "FailReason";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_failReason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_machineTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void VulFixStatusSnapshotInfo::SetFailReason(const string& _failReason)
 bool VulFixStatusSnapshotInfo::FailReasonHasBeenSet() const
 {
     return m_failReasonHasBeenSet;
+}
+
+string VulFixStatusSnapshotInfo::GetMachineType() const
+{
+    return m_machineType;
+}
+
+void VulFixStatusSnapshotInfo::SetMachineType(const string& _machineType)
+{
+    m_machineType = _machineType;
+    m_machineTypeHasBeenSet = true;
+}
+
+bool VulFixStatusSnapshotInfo::MachineTypeHasBeenSet() const
+{
+    return m_machineTypeHasBeenSet;
 }
 

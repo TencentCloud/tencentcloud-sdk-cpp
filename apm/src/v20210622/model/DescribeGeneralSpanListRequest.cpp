@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,14 +23,14 @@ using namespace TencentCloud::Apm::V20210622::Model;
 using namespace std;
 
 DescribeGeneralSpanListRequest::DescribeGeneralSpanListRequest() :
-    m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false),
-    m_orderByHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false),
     m_filtersHasBeenSet(false),
+    m_orderByHasBeenSet(false),
     m_businessNameHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_offsetHasBeenSet(false)
 {
 }
 
@@ -41,29 +41,12 @@ string DescribeGeneralSpanListRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_offsetHasBeenSet)
+    if (m_instanceIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Offset";
+        string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
-    }
-
-    if (m_limitHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Limit";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_limit, allocator);
-    }
-
-    if (m_orderByHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OrderBy";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_orderBy.ToJsonObject(d[key.c_str()], allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_startTimeHasBeenSet)
@@ -74,12 +57,12 @@ string DescribeGeneralSpanListRequest::ToJsonString() const
         d.AddMember(iKey, m_startTime, allocator);
     }
 
-    if (m_instanceIdHasBeenSet)
+    if (m_endTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceId";
+        string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_endTime, allocator);
     }
 
     if (m_filtersHasBeenSet)
@@ -97,6 +80,15 @@ string DescribeGeneralSpanListRequest::ToJsonString() const
         }
     }
 
+    if (m_orderByHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderBy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_orderBy.ToJsonObject(d[key.c_str()], allocator);
+    }
+
     if (m_businessNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -105,12 +97,20 @@ string DescribeGeneralSpanListRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_businessName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_endTimeHasBeenSet)
+    if (m_limitHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "EndTime";
+        string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_endTime, allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
     }
 
 
@@ -121,52 +121,20 @@ string DescribeGeneralSpanListRequest::ToJsonString() const
 }
 
 
-int64_t DescribeGeneralSpanListRequest::GetOffset() const
+string DescribeGeneralSpanListRequest::GetInstanceId() const
 {
-    return m_offset;
+    return m_instanceId;
 }
 
-void DescribeGeneralSpanListRequest::SetOffset(const int64_t& _offset)
+void DescribeGeneralSpanListRequest::SetInstanceId(const string& _instanceId)
 {
-    m_offset = _offset;
-    m_offsetHasBeenSet = true;
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
 }
 
-bool DescribeGeneralSpanListRequest::OffsetHasBeenSet() const
+bool DescribeGeneralSpanListRequest::InstanceIdHasBeenSet() const
 {
-    return m_offsetHasBeenSet;
-}
-
-int64_t DescribeGeneralSpanListRequest::GetLimit() const
-{
-    return m_limit;
-}
-
-void DescribeGeneralSpanListRequest::SetLimit(const int64_t& _limit)
-{
-    m_limit = _limit;
-    m_limitHasBeenSet = true;
-}
-
-bool DescribeGeneralSpanListRequest::LimitHasBeenSet() const
-{
-    return m_limitHasBeenSet;
-}
-
-OrderBy DescribeGeneralSpanListRequest::GetOrderBy() const
-{
-    return m_orderBy;
-}
-
-void DescribeGeneralSpanListRequest::SetOrderBy(const OrderBy& _orderBy)
-{
-    m_orderBy = _orderBy;
-    m_orderByHasBeenSet = true;
-}
-
-bool DescribeGeneralSpanListRequest::OrderByHasBeenSet() const
-{
-    return m_orderByHasBeenSet;
+    return m_instanceIdHasBeenSet;
 }
 
 int64_t DescribeGeneralSpanListRequest::GetStartTime() const
@@ -185,20 +153,20 @@ bool DescribeGeneralSpanListRequest::StartTimeHasBeenSet() const
     return m_startTimeHasBeenSet;
 }
 
-string DescribeGeneralSpanListRequest::GetInstanceId() const
+int64_t DescribeGeneralSpanListRequest::GetEndTime() const
 {
-    return m_instanceId;
+    return m_endTime;
 }
 
-void DescribeGeneralSpanListRequest::SetInstanceId(const string& _instanceId)
+void DescribeGeneralSpanListRequest::SetEndTime(const int64_t& _endTime)
 {
-    m_instanceId = _instanceId;
-    m_instanceIdHasBeenSet = true;
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
 }
 
-bool DescribeGeneralSpanListRequest::InstanceIdHasBeenSet() const
+bool DescribeGeneralSpanListRequest::EndTimeHasBeenSet() const
 {
-    return m_instanceIdHasBeenSet;
+    return m_endTimeHasBeenSet;
 }
 
 vector<Filter> DescribeGeneralSpanListRequest::GetFilters() const
@@ -217,6 +185,22 @@ bool DescribeGeneralSpanListRequest::FiltersHasBeenSet() const
     return m_filtersHasBeenSet;
 }
 
+OrderBy DescribeGeneralSpanListRequest::GetOrderBy() const
+{
+    return m_orderBy;
+}
+
+void DescribeGeneralSpanListRequest::SetOrderBy(const OrderBy& _orderBy)
+{
+    m_orderBy = _orderBy;
+    m_orderByHasBeenSet = true;
+}
+
+bool DescribeGeneralSpanListRequest::OrderByHasBeenSet() const
+{
+    return m_orderByHasBeenSet;
+}
+
 string DescribeGeneralSpanListRequest::GetBusinessName() const
 {
     return m_businessName;
@@ -233,20 +217,36 @@ bool DescribeGeneralSpanListRequest::BusinessNameHasBeenSet() const
     return m_businessNameHasBeenSet;
 }
 
-int64_t DescribeGeneralSpanListRequest::GetEndTime() const
+int64_t DescribeGeneralSpanListRequest::GetLimit() const
 {
-    return m_endTime;
+    return m_limit;
 }
 
-void DescribeGeneralSpanListRequest::SetEndTime(const int64_t& _endTime)
+void DescribeGeneralSpanListRequest::SetLimit(const int64_t& _limit)
 {
-    m_endTime = _endTime;
-    m_endTimeHasBeenSet = true;
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
 }
 
-bool DescribeGeneralSpanListRequest::EndTimeHasBeenSet() const
+bool DescribeGeneralSpanListRequest::LimitHasBeenSet() const
 {
-    return m_endTimeHasBeenSet;
+    return m_limitHasBeenSet;
+}
+
+int64_t DescribeGeneralSpanListRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeGeneralSpanListRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeGeneralSpanListRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
 }
 
 

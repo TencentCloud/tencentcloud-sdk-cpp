@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,9 @@
 #include <tencentcloud/tione/v20211111/model/ServiceLimit.h>
 #include <tencentcloud/tione/v20211111/model/VolumeMount.h>
 #include <tencentcloud/tione/v20211111/model/ServiceEIP.h>
+#include <tencentcloud/tione/v20211111/model/HealthProbe.h>
+#include <tencentcloud/tione/v20211111/model/RollingUpdate.h>
+#include <tencentcloud/tione/v20211111/model/SidecarSpec.h>
 
 
 namespace TencentCloud
@@ -670,6 +673,195 @@ HYBRID_PAID:
                      */
                     bool ServicePortHasBeenSet() const;
 
+                    /**
+                     * 获取单副本下的实例数，仅在部署类型为DIST时生效，默认1
+                     * @return InstancePerReplicas 单副本下的实例数，仅在部署类型为DIST时生效，默认1
+                     * 
+                     */
+                    int64_t GetInstancePerReplicas() const;
+
+                    /**
+                     * 设置单副本下的实例数，仅在部署类型为DIST时生效，默认1
+                     * @param _instancePerReplicas 单副本下的实例数，仅在部署类型为DIST时生效，默认1
+                     * 
+                     */
+                    void SetInstancePerReplicas(const int64_t& _instancePerReplicas);
+
+                    /**
+                     * 判断参数 InstancePerReplicas 是否已赋值
+                     * @return InstancePerReplicas 是否已赋值
+                     * 
+                     */
+                    bool InstancePerReplicasHasBeenSet() const;
+
+                    /**
+                     * 获取服务的优雅退出时限。单位为秒，默认值为30，最小为1
+                     * @return TerminationGracePeriodSeconds 服务的优雅退出时限。单位为秒，默认值为30，最小为1
+                     * 
+                     */
+                    int64_t GetTerminationGracePeriodSeconds() const;
+
+                    /**
+                     * 设置服务的优雅退出时限。单位为秒，默认值为30，最小为1
+                     * @param _terminationGracePeriodSeconds 服务的优雅退出时限。单位为秒，默认值为30，最小为1
+                     * 
+                     */
+                    void SetTerminationGracePeriodSeconds(const int64_t& _terminationGracePeriodSeconds);
+
+                    /**
+                     * 判断参数 TerminationGracePeriodSeconds 是否已赋值
+                     * @return TerminationGracePeriodSeconds 是否已赋值
+                     * 
+                     */
+                    bool TerminationGracePeriodSecondsHasBeenSet() const;
+
+                    /**
+                     * 获取服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束
+                     * @return PreStopCommand 服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束
+                     * 
+                     */
+                    std::vector<std::string> GetPreStopCommand() const;
+
+                    /**
+                     * 设置服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束
+                     * @param _preStopCommand 服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束
+                     * 
+                     */
+                    void SetPreStopCommand(const std::vector<std::string>& _preStopCommand);
+
+                    /**
+                     * 判断参数 PreStopCommand 是否已赋值
+                     * @return PreStopCommand 是否已赋值
+                     * 
+                     */
+                    bool PreStopCommandHasBeenSet() const;
+
+                    /**
+                     * 获取是否启动grpc端口
+                     * @return GrpcEnable 是否启动grpc端口
+                     * 
+                     */
+                    bool GetGrpcEnable() const;
+
+                    /**
+                     * 设置是否启动grpc端口
+                     * @param _grpcEnable 是否启动grpc端口
+                     * 
+                     */
+                    void SetGrpcEnable(const bool& _grpcEnable);
+
+                    /**
+                     * 判断参数 GrpcEnable 是否已赋值
+                     * @return GrpcEnable 是否已赋值
+                     * 
+                     */
+                    bool GrpcEnableHasBeenSet() const;
+
+                    /**
+                     * 获取健康探针
+                     * @return HealthProbe 健康探针
+                     * 
+                     */
+                    HealthProbe GetHealthProbe() const;
+
+                    /**
+                     * 设置健康探针
+                     * @param _healthProbe 健康探针
+                     * 
+                     */
+                    void SetHealthProbe(const HealthProbe& _healthProbe);
+
+                    /**
+                     * 判断参数 HealthProbe 是否已赋值
+                     * @return HealthProbe 是否已赋值
+                     * 
+                     */
+                    bool HealthProbeHasBeenSet() const;
+
+                    /**
+                     * 获取滚动更新策略
+                     * @return RollingUpdate 滚动更新策略
+                     * 
+                     */
+                    RollingUpdate GetRollingUpdate() const;
+
+                    /**
+                     * 设置滚动更新策略
+                     * @param _rollingUpdate 滚动更新策略
+                     * 
+                     */
+                    void SetRollingUpdate(const RollingUpdate& _rollingUpdate);
+
+                    /**
+                     * 判断参数 RollingUpdate 是否已赋值
+                     * @return RollingUpdate 是否已赋值
+                     * 
+                     */
+                    bool RollingUpdateHasBeenSet() const;
+
+                    /**
+                     * 获取sidecar配置
+                     * @return Sidecar sidecar配置
+                     * 
+                     */
+                    SidecarSpec GetSidecar() const;
+
+                    /**
+                     * 设置sidecar配置
+                     * @param _sidecar sidecar配置
+                     * 
+                     */
+                    void SetSidecar(const SidecarSpec& _sidecar);
+
+                    /**
+                     * 判断参数 Sidecar 是否已赋值
+                     * @return Sidecar 是否已赋值
+                     * 
+                     */
+                    bool SidecarHasBeenSet() const;
+
+                    /**
+                     * 获取资源组 id
+                     * @return ResourceGroupId 资源组 id
+                     * 
+                     */
+                    std::string GetResourceGroupId() const;
+
+                    /**
+                     * 设置资源组 id
+                     * @param _resourceGroupId 资源组 id
+                     * 
+                     */
+                    void SetResourceGroupId(const std::string& _resourceGroupId);
+
+                    /**
+                     * 判断参数 ResourceGroupId 是否已赋值
+                     * @return ResourceGroupId 是否已赋值
+                     * 
+                     */
+                    bool ResourceGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-资源组缓存”。
+                     * @return VolumeMounts 数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-资源组缓存”。
+                     * 
+                     */
+                    std::vector<VolumeMount> GetVolumeMounts() const;
+
+                    /**
+                     * 设置数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-资源组缓存”。
+                     * @param _volumeMounts 数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-资源组缓存”。
+                     * 
+                     */
+                    void SetVolumeMounts(const std::vector<VolumeMount>& _volumeMounts);
+
+                    /**
+                     * 判断参数 VolumeMounts 是否已赋值
+                     * @return VolumeMounts 是否已赋值
+                     * 
+                     */
+                    bool VolumeMountsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -844,6 +1036,60 @@ HYBRID_PAID:
                      */
                     int64_t m_servicePort;
                     bool m_servicePortHasBeenSet;
+
+                    /**
+                     * 单副本下的实例数，仅在部署类型为DIST时生效，默认1
+                     */
+                    int64_t m_instancePerReplicas;
+                    bool m_instancePerReplicasHasBeenSet;
+
+                    /**
+                     * 服务的优雅退出时限。单位为秒，默认值为30，最小为1
+                     */
+                    int64_t m_terminationGracePeriodSeconds;
+                    bool m_terminationGracePeriodSecondsHasBeenSet;
+
+                    /**
+                     * 服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束
+                     */
+                    std::vector<std::string> m_preStopCommand;
+                    bool m_preStopCommandHasBeenSet;
+
+                    /**
+                     * 是否启动grpc端口
+                     */
+                    bool m_grpcEnable;
+                    bool m_grpcEnableHasBeenSet;
+
+                    /**
+                     * 健康探针
+                     */
+                    HealthProbe m_healthProbe;
+                    bool m_healthProbeHasBeenSet;
+
+                    /**
+                     * 滚动更新策略
+                     */
+                    RollingUpdate m_rollingUpdate;
+                    bool m_rollingUpdateHasBeenSet;
+
+                    /**
+                     * sidecar配置
+                     */
+                    SidecarSpec m_sidecar;
+                    bool m_sidecarHasBeenSet;
+
+                    /**
+                     * 资源组 id
+                     */
+                    std::string m_resourceGroupId;
+                    bool m_resourceGroupIdHasBeenSet;
+
+                    /**
+                     * 数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-资源组缓存”。
+                     */
+                    std::vector<VolumeMount> m_volumeMounts;
+                    bool m_volumeMountsHasBeenSet;
 
                 };
             }

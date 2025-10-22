@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,7 +45,15 @@ namespace TencentCloud
 
                     /**
                      * 获取加密状态
+- Opening: 开启中
+- Opened: 已开启
+- Closing: 关闭中
+- Closed: 已关闭
                      * @return Status 加密状态
+- Opening: 开启中
+- Opened: 已开启
+- Closing: 关闭中
+- Closed: 已关闭
                      * 
                      */
                     std::string GetStatus() const;
@@ -75,6 +83,10 @@ namespace TencentCloud
 
                     /**
                      * 加密状态
+- Opening: 开启中
+- Opened: 已开启
+- Closing: 关闭中
+- Closed: 已关闭
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取参数模板对应实例版本
-                     * @return EngineVersion 参数模板对应实例版本
+                     * 获取参数模板对应实例版本，可取值：5.5、5.6、5.7、8.0。
+                     * @return EngineVersion 参数模板对应实例版本，可取值：5.5、5.6、5.7、8.0。
                      * 
                      */
                     std::string GetEngineVersion() const;
@@ -144,9 +144,7 @@ namespace TencentCloud
 
                     /**
                      * 获取参数模板引擎。支持值包括："InnoDB"，"RocksDB"。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EngineType 参数模板引擎。支持值包括："InnoDB"，"RocksDB"。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEngineType() const;
@@ -173,7 +171,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 参数模板对应实例版本
+                     * 参数模板对应实例版本，可取值：5.5、5.6、5.7、8.0。
                      */
                     std::string m_engineVersion;
                     bool m_engineVersionHasBeenSet;
@@ -204,7 +202,6 @@ namespace TencentCloud
 
                     /**
                      * 参数模板引擎。支持值包括："InnoDB"，"RocksDB"。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_engineType;
                     bool m_engineTypeHasBeenSet;

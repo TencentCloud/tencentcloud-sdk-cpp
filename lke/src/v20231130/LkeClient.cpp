@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -126,49 +126,6 @@ LkeClient::CheckAttributeLabelReferOutcomeCallable LkeClient::CheckAttributeLabe
     return task->get_future();
 }
 
-LkeClient::ConvertDocumentOutcome LkeClient::ConvertDocument(const ConvertDocumentRequest &request)
-{
-    auto outcome = MakeRequest(request, "ConvertDocument");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ConvertDocumentResponse rsp = ConvertDocumentResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ConvertDocumentOutcome(rsp);
-        else
-            return ConvertDocumentOutcome(o.GetError());
-    }
-    else
-    {
-        return ConvertDocumentOutcome(outcome.GetError());
-    }
-}
-
-void LkeClient::ConvertDocumentAsync(const ConvertDocumentRequest& request, const ConvertDocumentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ConvertDocument(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-LkeClient::ConvertDocumentOutcomeCallable LkeClient::ConvertDocumentCallable(const ConvertDocumentRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ConvertDocumentOutcome()>>(
-        [this, request]()
-        {
-            return this->ConvertDocument(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 LkeClient::CreateAppOutcome LkeClient::CreateApp(const CreateAppRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateApp");
@@ -255,42 +212,42 @@ LkeClient::CreateAttributeLabelOutcomeCallable LkeClient::CreateAttributeLabelCa
     return task->get_future();
 }
 
-LkeClient::CreateCorpOutcome LkeClient::CreateCorp(const CreateCorpRequest &request)
+LkeClient::CreateDocCateOutcome LkeClient::CreateDocCate(const CreateDocCateRequest &request)
 {
-    auto outcome = MakeRequest(request, "CreateCorp");
+    auto outcome = MakeRequest(request, "CreateDocCate");
     if (outcome.IsSuccess())
     {
         auto r = outcome.GetResult();
         string payload = string(r.Body(), r.BodySize());
-        CreateCorpResponse rsp = CreateCorpResponse();
+        CreateDocCateResponse rsp = CreateDocCateResponse();
         auto o = rsp.Deserialize(payload);
         if (o.IsSuccess())
-            return CreateCorpOutcome(rsp);
+            return CreateDocCateOutcome(rsp);
         else
-            return CreateCorpOutcome(o.GetError());
+            return CreateDocCateOutcome(o.GetError());
     }
     else
     {
-        return CreateCorpOutcome(outcome.GetError());
+        return CreateDocCateOutcome(outcome.GetError());
     }
 }
 
-void LkeClient::CreateCorpAsync(const CreateCorpRequest& request, const CreateCorpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+void LkeClient::CreateDocCateAsync(const CreateDocCateRequest& request, const CreateDocCateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
     auto fn = [this, request, handler, context]()
     {
-        handler(this, request, this->CreateCorp(request), context);
+        handler(this, request, this->CreateDocCate(request), context);
     };
 
     Executor::GetInstance()->Submit(new Runnable(fn));
 }
 
-LkeClient::CreateCorpOutcomeCallable LkeClient::CreateCorpCallable(const CreateCorpRequest &request)
+LkeClient::CreateDocCateOutcomeCallable LkeClient::CreateDocCateCallable(const CreateDocCateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCorpOutcome()>>(
+    auto task = std::make_shared<std::packaged_task<CreateDocCateOutcome()>>(
         [this, request]()
         {
-            return this->CreateCorp(request);
+            return this->CreateDocCate(request);
         }
     );
 
@@ -384,49 +341,6 @@ LkeClient::CreateQACateOutcomeCallable LkeClient::CreateQACateCallable(const Cre
     return task->get_future();
 }
 
-LkeClient::CreateReconstructDocumentFlowOutcome LkeClient::CreateReconstructDocumentFlow(const CreateReconstructDocumentFlowRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateReconstructDocumentFlow");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateReconstructDocumentFlowResponse rsp = CreateReconstructDocumentFlowResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateReconstructDocumentFlowOutcome(rsp);
-        else
-            return CreateReconstructDocumentFlowOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateReconstructDocumentFlowOutcome(outcome.GetError());
-    }
-}
-
-void LkeClient::CreateReconstructDocumentFlowAsync(const CreateReconstructDocumentFlowRequest& request, const CreateReconstructDocumentFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateReconstructDocumentFlow(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-LkeClient::CreateReconstructDocumentFlowOutcomeCallable LkeClient::CreateReconstructDocumentFlowCallable(const CreateReconstructDocumentFlowRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateReconstructDocumentFlowOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateReconstructDocumentFlow(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 LkeClient::CreateRejectedQuestionOutcome LkeClient::CreateRejectedQuestion(const CreateRejectedQuestionRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateRejectedQuestion");
@@ -506,6 +420,178 @@ LkeClient::CreateReleaseOutcomeCallable LkeClient::CreateReleaseCallable(const C
         [this, request]()
         {
             return this->CreateRelease(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LkeClient::CreateSharedKnowledgeOutcome LkeClient::CreateSharedKnowledge(const CreateSharedKnowledgeRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSharedKnowledge");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSharedKnowledgeResponse rsp = CreateSharedKnowledgeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSharedKnowledgeOutcome(rsp);
+        else
+            return CreateSharedKnowledgeOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSharedKnowledgeOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::CreateSharedKnowledgeAsync(const CreateSharedKnowledgeRequest& request, const CreateSharedKnowledgeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSharedKnowledge(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::CreateSharedKnowledgeOutcomeCallable LkeClient::CreateSharedKnowledgeCallable(const CreateSharedKnowledgeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSharedKnowledgeOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSharedKnowledge(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LkeClient::CreateVarOutcome LkeClient::CreateVar(const CreateVarRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateVar");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateVarResponse rsp = CreateVarResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateVarOutcome(rsp);
+        else
+            return CreateVarOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateVarOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::CreateVarAsync(const CreateVarRequest& request, const CreateVarAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateVar(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::CreateVarOutcomeCallable LkeClient::CreateVarCallable(const CreateVarRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateVarOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateVar(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LkeClient::CreateWorkflowRunOutcome LkeClient::CreateWorkflowRun(const CreateWorkflowRunRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateWorkflowRun");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateWorkflowRunResponse rsp = CreateWorkflowRunResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateWorkflowRunOutcome(rsp);
+        else
+            return CreateWorkflowRunOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateWorkflowRunOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::CreateWorkflowRunAsync(const CreateWorkflowRunRequest& request, const CreateWorkflowRunAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateWorkflowRun(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::CreateWorkflowRunOutcomeCallable LkeClient::CreateWorkflowRunCallable(const CreateWorkflowRunRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateWorkflowRunOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateWorkflowRun(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LkeClient::DeleteAgentOutcome LkeClient::DeleteAgent(const DeleteAgentRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAgent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAgentResponse rsp = DeleteAgentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAgentOutcome(rsp);
+        else
+            return DeleteAgentOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAgentOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::DeleteAgentAsync(const DeleteAgentRequest& request, const DeleteAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAgent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::DeleteAgentOutcomeCallable LkeClient::DeleteAgentCallable(const DeleteAgentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAgentOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAgent(request);
         }
     );
 
@@ -642,6 +728,49 @@ LkeClient::DeleteDocOutcomeCallable LkeClient::DeleteDocCallable(const DeleteDoc
     return task->get_future();
 }
 
+LkeClient::DeleteDocCateOutcome LkeClient::DeleteDocCate(const DeleteDocCateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDocCate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDocCateResponse rsp = DeleteDocCateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDocCateOutcome(rsp);
+        else
+            return DeleteDocCateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDocCateOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::DeleteDocCateAsync(const DeleteDocCateRequest& request, const DeleteDocCateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteDocCate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::DeleteDocCateOutcomeCallable LkeClient::DeleteDocCateCallable(const DeleteDocCateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteDocCateOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteDocCate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LkeClient::DeleteQAOutcome LkeClient::DeleteQA(const DeleteQARequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteQA");
@@ -771,6 +900,92 @@ LkeClient::DeleteRejectedQuestionOutcomeCallable LkeClient::DeleteRejectedQuesti
     return task->get_future();
 }
 
+LkeClient::DeleteSharedKnowledgeOutcome LkeClient::DeleteSharedKnowledge(const DeleteSharedKnowledgeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSharedKnowledge");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSharedKnowledgeResponse rsp = DeleteSharedKnowledgeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSharedKnowledgeOutcome(rsp);
+        else
+            return DeleteSharedKnowledgeOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSharedKnowledgeOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::DeleteSharedKnowledgeAsync(const DeleteSharedKnowledgeRequest& request, const DeleteSharedKnowledgeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteSharedKnowledge(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::DeleteSharedKnowledgeOutcomeCallable LkeClient::DeleteSharedKnowledgeCallable(const DeleteSharedKnowledgeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteSharedKnowledgeOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteSharedKnowledge(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LkeClient::DeleteVarOutcome LkeClient::DeleteVar(const DeleteVarRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteVar");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteVarResponse rsp = DeleteVarResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteVarOutcome(rsp);
+        else
+            return DeleteVarOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteVarOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::DeleteVarAsync(const DeleteVarRequest& request, const DeleteVarAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteVar(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::DeleteVarOutcomeCallable LkeClient::DeleteVarCallable(const DeleteVarRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteVarOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteVar(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LkeClient::DescribeAppOutcome LkeClient::DescribeApp(const DescribeAppRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeApp");
@@ -807,6 +1022,49 @@ LkeClient::DescribeAppOutcomeCallable LkeClient::DescribeAppCallable(const Descr
         [this, request]()
         {
             return this->DescribeApp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LkeClient::DescribeAppAgentListOutcome LkeClient::DescribeAppAgentList(const DescribeAppAgentListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAppAgentList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAppAgentListResponse rsp = DescribeAppAgentListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAppAgentListOutcome(rsp);
+        else
+            return DescribeAppAgentListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAppAgentListOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::DescribeAppAgentListAsync(const DescribeAppAgentListRequest& request, const DescribeAppAgentListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAppAgentList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::DescribeAppAgentListOutcomeCallable LkeClient::DescribeAppAgentListCallable(const DescribeAppAgentListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAppAgentListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAppAgentList(request);
         }
     );
 
@@ -986,49 +1244,6 @@ LkeClient::DescribeConcurrencyUsageGraphOutcomeCallable LkeClient::DescribeConcu
     return task->get_future();
 }
 
-LkeClient::DescribeCorpOutcome LkeClient::DescribeCorp(const DescribeCorpRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeCorp");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeCorpResponse rsp = DescribeCorpResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeCorpOutcome(rsp);
-        else
-            return DescribeCorpOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeCorpOutcome(outcome.GetError());
-    }
-}
-
-void LkeClient::DescribeCorpAsync(const DescribeCorpRequest& request, const DescribeCorpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCorp(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-LkeClient::DescribeCorpOutcomeCallable LkeClient::DescribeCorpCallable(const DescribeCorpRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeCorpOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCorp(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 LkeClient::DescribeDocOutcome LkeClient::DescribeDoc(const DescribeDocRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDoc");
@@ -1151,6 +1366,49 @@ LkeClient::DescribeKnowledgeUsagePieGraphOutcomeCallable LkeClient::DescribeKnow
         [this, request]()
         {
             return this->DescribeKnowledgeUsagePieGraph(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LkeClient::DescribeNodeRunOutcome LkeClient::DescribeNodeRun(const DescribeNodeRunRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNodeRun");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNodeRunResponse rsp = DescribeNodeRunResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNodeRunOutcome(rsp);
+        else
+            return DescribeNodeRunOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNodeRunOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::DescribeNodeRunAsync(const DescribeNodeRunRequest& request, const DescribeNodeRunAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNodeRun(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::DescribeNodeRunOutcomeCallable LkeClient::DescribeNodeRunCallable(const DescribeNodeRunRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNodeRunOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNodeRun(request);
         }
     );
 
@@ -1459,6 +1717,49 @@ LkeClient::DescribeSegmentsOutcomeCallable LkeClient::DescribeSegmentsCallable(c
     return task->get_future();
 }
 
+LkeClient::DescribeSharedKnowledgeOutcome LkeClient::DescribeSharedKnowledge(const DescribeSharedKnowledgeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSharedKnowledge");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSharedKnowledgeResponse rsp = DescribeSharedKnowledgeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSharedKnowledgeOutcome(rsp);
+        else
+            return DescribeSharedKnowledgeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSharedKnowledgeOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::DescribeSharedKnowledgeAsync(const DescribeSharedKnowledgeRequest& request, const DescribeSharedKnowledgeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSharedKnowledge(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::DescribeSharedKnowledgeOutcomeCallable LkeClient::DescribeSharedKnowledgeCallable(const DescribeSharedKnowledgeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSharedKnowledgeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSharedKnowledge(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LkeClient::DescribeStorageCredentialOutcome LkeClient::DescribeStorageCredential(const DescribeStorageCredentialRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeStorageCredential");
@@ -1624,6 +1925,49 @@ LkeClient::DescribeUnsatisfiedReplyContextOutcomeCallable LkeClient::DescribeUns
         [this, request]()
         {
             return this->DescribeUnsatisfiedReplyContext(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LkeClient::DescribeWorkflowRunOutcome LkeClient::DescribeWorkflowRun(const DescribeWorkflowRunRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWorkflowRun");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWorkflowRunResponse rsp = DescribeWorkflowRunResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWorkflowRunOutcome(rsp);
+        else
+            return DescribeWorkflowRunOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWorkflowRunOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::DescribeWorkflowRunAsync(const DescribeWorkflowRunRequest& request, const DescribeWorkflowRunAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWorkflowRun(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::DescribeWorkflowRunOutcomeCallable LkeClient::DescribeWorkflowRunCallable(const DescribeWorkflowRunRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWorkflowRunOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWorkflowRun(request);
         }
     );
 
@@ -1975,49 +2319,6 @@ LkeClient::GetDocPreviewOutcomeCallable LkeClient::GetDocPreviewCallable(const G
     return task->get_future();
 }
 
-LkeClient::GetEmbeddingOutcome LkeClient::GetEmbedding(const GetEmbeddingRequest &request)
-{
-    auto outcome = MakeRequest(request, "GetEmbedding");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        GetEmbeddingResponse rsp = GetEmbeddingResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return GetEmbeddingOutcome(rsp);
-        else
-            return GetEmbeddingOutcome(o.GetError());
-    }
-    else
-    {
-        return GetEmbeddingOutcome(outcome.GetError());
-    }
-}
-
-void LkeClient::GetEmbeddingAsync(const GetEmbeddingRequest& request, const GetEmbeddingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetEmbedding(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-LkeClient::GetEmbeddingOutcomeCallable LkeClient::GetEmbeddingCallable(const GetEmbeddingRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<GetEmbeddingOutcome()>>(
-        [this, request]()
-        {
-            return this->GetEmbedding(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 LkeClient::GetLikeDataCountOutcome LkeClient::GetLikeDataCount(const GetLikeDataCountRequest &request)
 {
     auto outcome = MakeRequest(request, "GetLikeDataCount");
@@ -2104,49 +2405,6 @@ LkeClient::GetMsgRecordOutcomeCallable LkeClient::GetMsgRecordCallable(const Get
     return task->get_future();
 }
 
-LkeClient::GetReconstructDocumentResultOutcome LkeClient::GetReconstructDocumentResult(const GetReconstructDocumentResultRequest &request)
-{
-    auto outcome = MakeRequest(request, "GetReconstructDocumentResult");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        GetReconstructDocumentResultResponse rsp = GetReconstructDocumentResultResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return GetReconstructDocumentResultOutcome(rsp);
-        else
-            return GetReconstructDocumentResultOutcome(o.GetError());
-    }
-    else
-    {
-        return GetReconstructDocumentResultOutcome(outcome.GetError());
-    }
-}
-
-void LkeClient::GetReconstructDocumentResultAsync(const GetReconstructDocumentResultRequest& request, const GetReconstructDocumentResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetReconstructDocumentResult(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-LkeClient::GetReconstructDocumentResultOutcomeCallable LkeClient::GetReconstructDocumentResultCallable(const GetReconstructDocumentResultRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<GetReconstructDocumentResultOutcome()>>(
-        [this, request]()
-        {
-            return this->GetReconstructDocumentResult(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 LkeClient::GetTaskStatusOutcome LkeClient::GetTaskStatus(const GetTaskStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "GetTaskStatus");
@@ -2190,6 +2448,49 @@ LkeClient::GetTaskStatusOutcomeCallable LkeClient::GetTaskStatusCallable(const G
     return task->get_future();
 }
 
+LkeClient::GetVarListOutcome LkeClient::GetVarList(const GetVarListRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetVarList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetVarListResponse rsp = GetVarListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetVarListOutcome(rsp);
+        else
+            return GetVarListOutcome(o.GetError());
+    }
+    else
+    {
+        return GetVarListOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::GetVarListAsync(const GetVarListRequest& request, const GetVarListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetVarList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::GetVarListOutcomeCallable LkeClient::GetVarListCallable(const GetVarListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetVarListOutcome()>>(
+        [this, request]()
+        {
+            return this->GetVarList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LkeClient::GetWsTokenOutcome LkeClient::GetWsToken(const GetWsTokenRequest &request)
 {
     auto outcome = MakeRequest(request, "GetWsToken");
@@ -2226,6 +2527,49 @@ LkeClient::GetWsTokenOutcomeCallable LkeClient::GetWsTokenCallable(const GetWsTo
         [this, request]()
         {
             return this->GetWsToken(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LkeClient::GroupDocOutcome LkeClient::GroupDoc(const GroupDocRequest &request)
+{
+    auto outcome = MakeRequest(request, "GroupDoc");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GroupDocResponse rsp = GroupDocResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GroupDocOutcome(rsp);
+        else
+            return GroupDocOutcome(o.GetError());
+    }
+    else
+    {
+        return GroupDocOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::GroupDocAsync(const GroupDocRequest& request, const GroupDocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GroupDoc(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::GroupDocOutcomeCallable LkeClient::GroupDocCallable(const GroupDocRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GroupDocOutcome()>>(
+        [this, request]()
+        {
+            return this->GroupDoc(request);
         }
     );
 
@@ -2405,42 +2749,42 @@ LkeClient::ListAppOutcomeCallable LkeClient::ListAppCallable(const ListAppReques
     return task->get_future();
 }
 
-LkeClient::ListAppCategoryOutcome LkeClient::ListAppCategory(const ListAppCategoryRequest &request)
+LkeClient::ListAppKnowledgeDetailOutcome LkeClient::ListAppKnowledgeDetail(const ListAppKnowledgeDetailRequest &request)
 {
-    auto outcome = MakeRequest(request, "ListAppCategory");
+    auto outcome = MakeRequest(request, "ListAppKnowledgeDetail");
     if (outcome.IsSuccess())
     {
         auto r = outcome.GetResult();
         string payload = string(r.Body(), r.BodySize());
-        ListAppCategoryResponse rsp = ListAppCategoryResponse();
+        ListAppKnowledgeDetailResponse rsp = ListAppKnowledgeDetailResponse();
         auto o = rsp.Deserialize(payload);
         if (o.IsSuccess())
-            return ListAppCategoryOutcome(rsp);
+            return ListAppKnowledgeDetailOutcome(rsp);
         else
-            return ListAppCategoryOutcome(o.GetError());
+            return ListAppKnowledgeDetailOutcome(o.GetError());
     }
     else
     {
-        return ListAppCategoryOutcome(outcome.GetError());
+        return ListAppKnowledgeDetailOutcome(outcome.GetError());
     }
 }
 
-void LkeClient::ListAppCategoryAsync(const ListAppCategoryRequest& request, const ListAppCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+void LkeClient::ListAppKnowledgeDetailAsync(const ListAppKnowledgeDetailRequest& request, const ListAppKnowledgeDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
     auto fn = [this, request, handler, context]()
     {
-        handler(this, request, this->ListAppCategory(request), context);
+        handler(this, request, this->ListAppKnowledgeDetail(request), context);
     };
 
     Executor::GetInstance()->Submit(new Runnable(fn));
 }
 
-LkeClient::ListAppCategoryOutcomeCallable LkeClient::ListAppCategoryCallable(const ListAppCategoryRequest &request)
+LkeClient::ListAppKnowledgeDetailOutcomeCallable LkeClient::ListAppKnowledgeDetailCallable(const ListAppKnowledgeDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListAppCategoryOutcome()>>(
+    auto task = std::make_shared<std::packaged_task<ListAppKnowledgeDetailOutcome()>>(
         [this, request]()
         {
-            return this->ListAppCategory(request);
+            return this->ListAppKnowledgeDetail(request);
         }
     );
 
@@ -2491,6 +2835,49 @@ LkeClient::ListAttributeLabelOutcomeCallable LkeClient::ListAttributeLabelCallab
     return task->get_future();
 }
 
+LkeClient::ListChannelOutcome LkeClient::ListChannel(const ListChannelRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListChannel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListChannelResponse rsp = ListChannelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListChannelOutcome(rsp);
+        else
+            return ListChannelOutcome(o.GetError());
+    }
+    else
+    {
+        return ListChannelOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::ListChannelAsync(const ListChannelRequest& request, const ListChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListChannel(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::ListChannelOutcomeCallable LkeClient::ListChannelCallable(const ListChannelRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListChannelOutcome()>>(
+        [this, request]()
+        {
+            return this->ListChannel(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LkeClient::ListDocOutcome LkeClient::ListDoc(const ListDocRequest &request)
 {
     auto outcome = MakeRequest(request, "ListDoc");
@@ -2527,6 +2914,49 @@ LkeClient::ListDocOutcomeCallable LkeClient::ListDocCallable(const ListDocReques
         [this, request]()
         {
             return this->ListDoc(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LkeClient::ListDocCateOutcome LkeClient::ListDocCate(const ListDocCateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListDocCate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListDocCateResponse rsp = ListDocCateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListDocCateOutcome(rsp);
+        else
+            return ListDocCateOutcome(o.GetError());
+    }
+    else
+    {
+        return ListDocCateOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::ListDocCateAsync(const ListDocCateRequest& request, const ListDocCateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListDocCate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::ListDocCateOutcomeCallable LkeClient::ListDocCateCallable(const ListDocCateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListDocCateOutcome()>>(
+        [this, request]()
+        {
+            return this->ListDocCate(request);
         }
     );
 
@@ -2656,6 +3086,49 @@ LkeClient::ListQACateOutcomeCallable LkeClient::ListQACateCallable(const ListQAC
         [this, request]()
         {
             return this->ListQACate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LkeClient::ListReferShareKnowledgeOutcome LkeClient::ListReferShareKnowledge(const ListReferShareKnowledgeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListReferShareKnowledge");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListReferShareKnowledgeResponse rsp = ListReferShareKnowledgeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListReferShareKnowledgeOutcome(rsp);
+        else
+            return ListReferShareKnowledgeOutcome(o.GetError());
+    }
+    else
+    {
+        return ListReferShareKnowledgeOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::ListReferShareKnowledgeAsync(const ListReferShareKnowledgeRequest& request, const ListReferShareKnowledgeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListReferShareKnowledge(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::ListReferShareKnowledgeOutcomeCallable LkeClient::ListReferShareKnowledgeCallable(const ListReferShareKnowledgeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListReferShareKnowledgeOutcome()>>(
+        [this, request]()
+        {
+            return this->ListReferShareKnowledge(request);
         }
     );
 
@@ -2964,6 +3437,49 @@ LkeClient::ListSelectDocOutcomeCallable LkeClient::ListSelectDocCallable(const L
     return task->get_future();
 }
 
+LkeClient::ListSharedKnowledgeOutcome LkeClient::ListSharedKnowledge(const ListSharedKnowledgeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListSharedKnowledge");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListSharedKnowledgeResponse rsp = ListSharedKnowledgeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListSharedKnowledgeOutcome(rsp);
+        else
+            return ListSharedKnowledgeOutcome(o.GetError());
+    }
+    else
+    {
+        return ListSharedKnowledgeOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::ListSharedKnowledgeAsync(const ListSharedKnowledgeRequest& request, const ListSharedKnowledgeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListSharedKnowledge(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::ListSharedKnowledgeOutcomeCallable LkeClient::ListSharedKnowledgeCallable(const ListSharedKnowledgeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListSharedKnowledgeOutcome()>>(
+        [this, request]()
+        {
+            return this->ListSharedKnowledge(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LkeClient::ListUnsatisfiedReplyOutcome LkeClient::ListUnsatisfiedReply(const ListUnsatisfiedReplyRequest &request)
 {
     auto outcome = MakeRequest(request, "ListUnsatisfiedReply");
@@ -3000,6 +3516,92 @@ LkeClient::ListUnsatisfiedReplyOutcomeCallable LkeClient::ListUnsatisfiedReplyCa
         [this, request]()
         {
             return this->ListUnsatisfiedReply(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LkeClient::ListUsageCallDetailOutcome LkeClient::ListUsageCallDetail(const ListUsageCallDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListUsageCallDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListUsageCallDetailResponse rsp = ListUsageCallDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListUsageCallDetailOutcome(rsp);
+        else
+            return ListUsageCallDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return ListUsageCallDetailOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::ListUsageCallDetailAsync(const ListUsageCallDetailRequest& request, const ListUsageCallDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListUsageCallDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::ListUsageCallDetailOutcomeCallable LkeClient::ListUsageCallDetailCallable(const ListUsageCallDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListUsageCallDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->ListUsageCallDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LkeClient::ListWorkflowRunsOutcome LkeClient::ListWorkflowRuns(const ListWorkflowRunsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListWorkflowRuns");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListWorkflowRunsResponse rsp = ListWorkflowRunsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListWorkflowRunsOutcome(rsp);
+        else
+            return ListWorkflowRunsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListWorkflowRunsOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::ListWorkflowRunsAsync(const ListWorkflowRunsRequest& request, const ListWorkflowRunsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListWorkflowRuns(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::ListWorkflowRunsOutcomeCallable LkeClient::ListWorkflowRunsCallable(const ListWorkflowRunsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListWorkflowRunsOutcome()>>(
+        [this, request]()
+        {
+            return this->ListWorkflowRuns(request);
         }
     );
 
@@ -3179,6 +3781,49 @@ LkeClient::ModifyDocAttrRangeOutcomeCallable LkeClient::ModifyDocAttrRangeCallab
     return task->get_future();
 }
 
+LkeClient::ModifyDocCateOutcome LkeClient::ModifyDocCate(const ModifyDocCateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDocCate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDocCateResponse rsp = ModifyDocCateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDocCateOutcome(rsp);
+        else
+            return ModifyDocCateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDocCateOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::ModifyDocCateAsync(const ModifyDocCateRequest& request, const ModifyDocCateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDocCate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::ModifyDocCateOutcomeCallable LkeClient::ModifyDocCateCallable(const ModifyDocCateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDocCateOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDocCate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LkeClient::ModifyQAOutcome LkeClient::ModifyQA(const ModifyQARequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyQA");
@@ -3351,135 +3996,6 @@ LkeClient::ModifyRejectedQuestionOutcomeCallable LkeClient::ModifyRejectedQuesti
     return task->get_future();
 }
 
-LkeClient::ParseDocOutcome LkeClient::ParseDoc(const ParseDocRequest &request)
-{
-    auto outcome = MakeRequest(request, "ParseDoc");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ParseDocResponse rsp = ParseDocResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ParseDocOutcome(rsp);
-        else
-            return ParseDocOutcome(o.GetError());
-    }
-    else
-    {
-        return ParseDocOutcome(outcome.GetError());
-    }
-}
-
-void LkeClient::ParseDocAsync(const ParseDocRequest& request, const ParseDocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ParseDoc(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-LkeClient::ParseDocOutcomeCallable LkeClient::ParseDocCallable(const ParseDocRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ParseDocOutcome()>>(
-        [this, request]()
-        {
-            return this->ParseDoc(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-LkeClient::QueryParseDocResultOutcome LkeClient::QueryParseDocResult(const QueryParseDocResultRequest &request)
-{
-    auto outcome = MakeRequest(request, "QueryParseDocResult");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        QueryParseDocResultResponse rsp = QueryParseDocResultResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return QueryParseDocResultOutcome(rsp);
-        else
-            return QueryParseDocResultOutcome(o.GetError());
-    }
-    else
-    {
-        return QueryParseDocResultOutcome(outcome.GetError());
-    }
-}
-
-void LkeClient::QueryParseDocResultAsync(const QueryParseDocResultRequest& request, const QueryParseDocResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryParseDocResult(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-LkeClient::QueryParseDocResultOutcomeCallable LkeClient::QueryParseDocResultCallable(const QueryParseDocResultRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<QueryParseDocResultOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryParseDocResult(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-LkeClient::QueryRewriteOutcome LkeClient::QueryRewrite(const QueryRewriteRequest &request)
-{
-    auto outcome = MakeRequest(request, "QueryRewrite");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        QueryRewriteResponse rsp = QueryRewriteResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return QueryRewriteOutcome(rsp);
-        else
-            return QueryRewriteOutcome(o.GetError());
-    }
-    else
-    {
-        return QueryRewriteOutcome(outcome.GetError());
-    }
-}
-
-void LkeClient::QueryRewriteAsync(const QueryRewriteRequest& request, const QueryRewriteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryRewrite(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-LkeClient::QueryRewriteOutcomeCallable LkeClient::QueryRewriteCallable(const QueryRewriteRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<QueryRewriteOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryRewrite(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 LkeClient::RateMsgRecordOutcome LkeClient::RateMsgRecord(const RateMsgRecordRequest &request)
 {
     auto outcome = MakeRequest(request, "RateMsgRecord");
@@ -3523,42 +4039,42 @@ LkeClient::RateMsgRecordOutcomeCallable LkeClient::RateMsgRecordCallable(const R
     return task->get_future();
 }
 
-LkeClient::ReconstructDocumentOutcome LkeClient::ReconstructDocument(const ReconstructDocumentRequest &request)
+LkeClient::ReferShareKnowledgeOutcome LkeClient::ReferShareKnowledge(const ReferShareKnowledgeRequest &request)
 {
-    auto outcome = MakeRequest(request, "ReconstructDocument");
+    auto outcome = MakeRequest(request, "ReferShareKnowledge");
     if (outcome.IsSuccess())
     {
         auto r = outcome.GetResult();
         string payload = string(r.Body(), r.BodySize());
-        ReconstructDocumentResponse rsp = ReconstructDocumentResponse();
+        ReferShareKnowledgeResponse rsp = ReferShareKnowledgeResponse();
         auto o = rsp.Deserialize(payload);
         if (o.IsSuccess())
-            return ReconstructDocumentOutcome(rsp);
+            return ReferShareKnowledgeOutcome(rsp);
         else
-            return ReconstructDocumentOutcome(o.GetError());
+            return ReferShareKnowledgeOutcome(o.GetError());
     }
     else
     {
-        return ReconstructDocumentOutcome(outcome.GetError());
+        return ReferShareKnowledgeOutcome(outcome.GetError());
     }
 }
 
-void LkeClient::ReconstructDocumentAsync(const ReconstructDocumentRequest& request, const ReconstructDocumentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+void LkeClient::ReferShareKnowledgeAsync(const ReferShareKnowledgeRequest& request, const ReferShareKnowledgeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
     auto fn = [this, request, handler, context]()
     {
-        handler(this, request, this->ReconstructDocument(request), context);
+        handler(this, request, this->ReferShareKnowledge(request), context);
     };
 
     Executor::GetInstance()->Submit(new Runnable(fn));
 }
 
-LkeClient::ReconstructDocumentOutcomeCallable LkeClient::ReconstructDocumentCallable(const ReconstructDocumentRequest &request)
+LkeClient::ReferShareKnowledgeOutcomeCallable LkeClient::ReferShareKnowledgeCallable(const ReferShareKnowledgeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ReconstructDocumentOutcome()>>(
+    auto task = std::make_shared<std::packaged_task<ReferShareKnowledgeOutcome()>>(
         [this, request]()
         {
-            return this->ReconstructDocument(request);
+            return this->ReferShareKnowledge(request);
         }
     );
 
@@ -3566,42 +4082,42 @@ LkeClient::ReconstructDocumentOutcomeCallable LkeClient::ReconstructDocumentCall
     return task->get_future();
 }
 
-LkeClient::ResetSessionOutcome LkeClient::ResetSession(const ResetSessionRequest &request)
+LkeClient::RenameDocOutcome LkeClient::RenameDoc(const RenameDocRequest &request)
 {
-    auto outcome = MakeRequest(request, "ResetSession");
+    auto outcome = MakeRequest(request, "RenameDoc");
     if (outcome.IsSuccess())
     {
         auto r = outcome.GetResult();
         string payload = string(r.Body(), r.BodySize());
-        ResetSessionResponse rsp = ResetSessionResponse();
+        RenameDocResponse rsp = RenameDocResponse();
         auto o = rsp.Deserialize(payload);
         if (o.IsSuccess())
-            return ResetSessionOutcome(rsp);
+            return RenameDocOutcome(rsp);
         else
-            return ResetSessionOutcome(o.GetError());
+            return RenameDocOutcome(o.GetError());
     }
     else
     {
-        return ResetSessionOutcome(outcome.GetError());
+        return RenameDocOutcome(outcome.GetError());
     }
 }
 
-void LkeClient::ResetSessionAsync(const ResetSessionRequest& request, const ResetSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+void LkeClient::RenameDocAsync(const RenameDocRequest& request, const RenameDocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
     auto fn = [this, request, handler, context]()
     {
-        handler(this, request, this->ResetSession(request), context);
+        handler(this, request, this->RenameDoc(request), context);
     };
 
     Executor::GetInstance()->Submit(new Runnable(fn));
 }
 
-LkeClient::ResetSessionOutcomeCallable LkeClient::ResetSessionCallable(const ResetSessionRequest &request)
+LkeClient::RenameDocOutcomeCallable LkeClient::RenameDocCallable(const RenameDocRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResetSessionOutcome()>>(
+    auto task = std::make_shared<std::packaged_task<RenameDocOutcome()>>(
         [this, request]()
         {
-            return this->ResetSession(request);
+            return this->RenameDoc(request);
         }
     );
 
@@ -3817,6 +4333,135 @@ LkeClient::StopDocParseOutcomeCallable LkeClient::StopDocParseCallable(const Sto
         [this, request]()
         {
             return this->StopDocParse(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LkeClient::StopWorkflowRunOutcome LkeClient::StopWorkflowRun(const StopWorkflowRunRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopWorkflowRun");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopWorkflowRunResponse rsp = StopWorkflowRunResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopWorkflowRunOutcome(rsp);
+        else
+            return StopWorkflowRunOutcome(o.GetError());
+    }
+    else
+    {
+        return StopWorkflowRunOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::StopWorkflowRunAsync(const StopWorkflowRunRequest& request, const StopWorkflowRunAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopWorkflowRun(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::StopWorkflowRunOutcomeCallable LkeClient::StopWorkflowRunCallable(const StopWorkflowRunRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopWorkflowRunOutcome()>>(
+        [this, request]()
+        {
+            return this->StopWorkflowRun(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LkeClient::UpdateSharedKnowledgeOutcome LkeClient::UpdateSharedKnowledge(const UpdateSharedKnowledgeRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateSharedKnowledge");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateSharedKnowledgeResponse rsp = UpdateSharedKnowledgeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateSharedKnowledgeOutcome(rsp);
+        else
+            return UpdateSharedKnowledgeOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateSharedKnowledgeOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::UpdateSharedKnowledgeAsync(const UpdateSharedKnowledgeRequest& request, const UpdateSharedKnowledgeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateSharedKnowledge(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::UpdateSharedKnowledgeOutcomeCallable LkeClient::UpdateSharedKnowledgeCallable(const UpdateSharedKnowledgeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateSharedKnowledgeOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateSharedKnowledge(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LkeClient::UpdateVarOutcome LkeClient::UpdateVar(const UpdateVarRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateVar");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateVarResponse rsp = UpdateVarResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateVarOutcome(rsp);
+        else
+            return UpdateVarOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateVarOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::UpdateVarAsync(const UpdateVarRequest& request, const UpdateVarAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateVar(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::UpdateVarOutcomeCallable LkeClient::UpdateVarCallable(const UpdateVarRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateVarOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateVar(request);
         }
     );
 

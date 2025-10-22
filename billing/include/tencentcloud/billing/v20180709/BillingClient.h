@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,12 +23,26 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/billing/v20180709/model/CreateAllocationRuleRequest.h>
+#include <tencentcloud/billing/v20180709/model/CreateAllocationRuleResponse.h>
 #include <tencentcloud/billing/v20180709/model/CreateAllocationTagRequest.h>
 #include <tencentcloud/billing/v20180709/model/CreateAllocationTagResponse.h>
-#include <tencentcloud/billing/v20180709/model/CreateSavingPlanOrderRequest.h>
-#include <tencentcloud/billing/v20180709/model/CreateSavingPlanOrderResponse.h>
+#include <tencentcloud/billing/v20180709/model/CreateAllocationUnitRequest.h>
+#include <tencentcloud/billing/v20180709/model/CreateAllocationUnitResponse.h>
+#include <tencentcloud/billing/v20180709/model/CreateBudgetRequest.h>
+#include <tencentcloud/billing/v20180709/model/CreateBudgetResponse.h>
+#include <tencentcloud/billing/v20180709/model/CreateGatherRuleRequest.h>
+#include <tencentcloud/billing/v20180709/model/CreateGatherRuleResponse.h>
+#include <tencentcloud/billing/v20180709/model/DeleteAllocationRuleRequest.h>
+#include <tencentcloud/billing/v20180709/model/DeleteAllocationRuleResponse.h>
 #include <tencentcloud/billing/v20180709/model/DeleteAllocationTagRequest.h>
 #include <tencentcloud/billing/v20180709/model/DeleteAllocationTagResponse.h>
+#include <tencentcloud/billing/v20180709/model/DeleteAllocationUnitRequest.h>
+#include <tencentcloud/billing/v20180709/model/DeleteAllocationUnitResponse.h>
+#include <tencentcloud/billing/v20180709/model/DeleteBudgetRequest.h>
+#include <tencentcloud/billing/v20180709/model/DeleteBudgetResponse.h>
+#include <tencentcloud/billing/v20180709/model/DeleteGatherRuleRequest.h>
+#include <tencentcloud/billing/v20180709/model/DeleteGatherRuleResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeAccountBalanceRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeAccountBalanceResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeAllocateConditionsRequest.h>
@@ -41,14 +55,22 @@
 #include <tencentcloud/billing/v20180709/model/DescribeAllocationMonthOverviewResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeAllocationOverviewRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeAllocationOverviewResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeAllocationRuleDetailRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeAllocationRuleDetailResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeAllocationRuleSummaryRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeAllocationRuleSummaryResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeAllocationSummaryByBusinessRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeAllocationSummaryByBusinessResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeAllocationSummaryByItemRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeAllocationSummaryByItemResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeAllocationSummaryByResourceRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeAllocationSummaryByResourceResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeAllocationTreeRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeAllocationTreeResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeAllocationTrendByMonthRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeAllocationTrendByMonthResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeAllocationUnitDetailRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeAllocationUnitDetailResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeBillAdjustInfoRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeBillAdjustInfoResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeBillDetailRequest.h>
@@ -77,6 +99,12 @@
 #include <tencentcloud/billing/v20180709/model/DescribeBillSummaryByTagResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeBillSummaryForOrganizationRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeBillSummaryForOrganizationResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeBudgetRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeBudgetResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeBudgetOperationLogRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeBudgetOperationLogResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeBudgetRemindRecordListRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeBudgetRemindRecordListResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeCostDetailRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeCostDetailResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeCostExplorerSummaryRequest.h>
@@ -99,20 +127,24 @@
 #include <tencentcloud/billing/v20180709/model/DescribeDosageDetailListResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeGatherResourceRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeGatherResourceResponse.h>
-#include <tencentcloud/billing/v20180709/model/DescribeSavingPlanCoverageRequest.h>
-#include <tencentcloud/billing/v20180709/model/DescribeSavingPlanCoverageResponse.h>
-#include <tencentcloud/billing/v20180709/model/DescribeSavingPlanOverviewRequest.h>
-#include <tencentcloud/billing/v20180709/model/DescribeSavingPlanOverviewResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeGatherRuleDetailRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeGatherRuleDetailResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeSavingPlanResourceInfoRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeSavingPlanResourceInfoResponse.h>
-#include <tencentcloud/billing/v20180709/model/DescribeSavingPlanUsageRequest.h>
-#include <tencentcloud/billing/v20180709/model/DescribeSavingPlanUsageResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeTagListRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeTagListResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeVoucherInfoRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeVoucherInfoResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeVoucherUsageDetailsRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeVoucherUsageDetailsResponse.h>
+#include <tencentcloud/billing/v20180709/model/ModifyAllocationRuleRequest.h>
+#include <tencentcloud/billing/v20180709/model/ModifyAllocationRuleResponse.h>
+#include <tencentcloud/billing/v20180709/model/ModifyAllocationUnitRequest.h>
+#include <tencentcloud/billing/v20180709/model/ModifyAllocationUnitResponse.h>
+#include <tencentcloud/billing/v20180709/model/ModifyBudgetRequest.h>
+#include <tencentcloud/billing/v20180709/model/ModifyBudgetResponse.h>
+#include <tencentcloud/billing/v20180709/model/ModifyGatherRuleRequest.h>
+#include <tencentcloud/billing/v20180709/model/ModifyGatherRuleResponse.h>
 #include <tencentcloud/billing/v20180709/model/PayDealsRequest.h>
 #include <tencentcloud/billing/v20180709/model/PayDealsResponse.h>
 
@@ -129,15 +161,36 @@ namespace TencentCloud
                 BillingClient(const Credential &credential, const std::string &region);
                 BillingClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CreateAllocationRuleResponse> CreateAllocationRuleOutcome;
+                typedef std::future<CreateAllocationRuleOutcome> CreateAllocationRuleOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::CreateAllocationRuleRequest&, CreateAllocationRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAllocationRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAllocationTagResponse> CreateAllocationTagOutcome;
                 typedef std::future<CreateAllocationTagOutcome> CreateAllocationTagOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::CreateAllocationTagRequest&, CreateAllocationTagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAllocationTagAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateSavingPlanOrderResponse> CreateSavingPlanOrderOutcome;
-                typedef std::future<CreateSavingPlanOrderOutcome> CreateSavingPlanOrderOutcomeCallable;
-                typedef std::function<void(const BillingClient*, const Model::CreateSavingPlanOrderRequest&, CreateSavingPlanOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSavingPlanOrderAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAllocationUnitResponse> CreateAllocationUnitOutcome;
+                typedef std::future<CreateAllocationUnitOutcome> CreateAllocationUnitOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::CreateAllocationUnitRequest&, CreateAllocationUnitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAllocationUnitAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateBudgetResponse> CreateBudgetOutcome;
+                typedef std::future<CreateBudgetOutcome> CreateBudgetOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::CreateBudgetRequest&, CreateBudgetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBudgetAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateGatherRuleResponse> CreateGatherRuleOutcome;
+                typedef std::future<CreateGatherRuleOutcome> CreateGatherRuleOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::CreateGatherRuleRequest&, CreateGatherRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGatherRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAllocationRuleResponse> DeleteAllocationRuleOutcome;
+                typedef std::future<DeleteAllocationRuleOutcome> DeleteAllocationRuleOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DeleteAllocationRuleRequest&, DeleteAllocationRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAllocationRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAllocationTagResponse> DeleteAllocationTagOutcome;
                 typedef std::future<DeleteAllocationTagOutcome> DeleteAllocationTagOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DeleteAllocationTagRequest&, DeleteAllocationTagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAllocationTagAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAllocationUnitResponse> DeleteAllocationUnitOutcome;
+                typedef std::future<DeleteAllocationUnitOutcome> DeleteAllocationUnitOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DeleteAllocationUnitRequest&, DeleteAllocationUnitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAllocationUnitAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteBudgetResponse> DeleteBudgetOutcome;
+                typedef std::future<DeleteBudgetOutcome> DeleteBudgetOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DeleteBudgetRequest&, DeleteBudgetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBudgetAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteGatherRuleResponse> DeleteGatherRuleOutcome;
+                typedef std::future<DeleteGatherRuleOutcome> DeleteGatherRuleOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DeleteGatherRuleRequest&, DeleteGatherRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGatherRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAccountBalanceResponse> DescribeAccountBalanceOutcome;
                 typedef std::future<DescribeAccountBalanceOutcome> DescribeAccountBalanceOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeAccountBalanceRequest&, DescribeAccountBalanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountBalanceAsyncHandler;
@@ -156,6 +209,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAllocationOverviewResponse> DescribeAllocationOverviewOutcome;
                 typedef std::future<DescribeAllocationOverviewOutcome> DescribeAllocationOverviewOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeAllocationOverviewRequest&, DescribeAllocationOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllocationOverviewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAllocationRuleDetailResponse> DescribeAllocationRuleDetailOutcome;
+                typedef std::future<DescribeAllocationRuleDetailOutcome> DescribeAllocationRuleDetailOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeAllocationRuleDetailRequest&, DescribeAllocationRuleDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllocationRuleDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAllocationRuleSummaryResponse> DescribeAllocationRuleSummaryOutcome;
+                typedef std::future<DescribeAllocationRuleSummaryOutcome> DescribeAllocationRuleSummaryOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeAllocationRuleSummaryRequest&, DescribeAllocationRuleSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllocationRuleSummaryAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAllocationSummaryByBusinessResponse> DescribeAllocationSummaryByBusinessOutcome;
                 typedef std::future<DescribeAllocationSummaryByBusinessOutcome> DescribeAllocationSummaryByBusinessOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeAllocationSummaryByBusinessRequest&, DescribeAllocationSummaryByBusinessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllocationSummaryByBusinessAsyncHandler;
@@ -165,9 +224,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAllocationSummaryByResourceResponse> DescribeAllocationSummaryByResourceOutcome;
                 typedef std::future<DescribeAllocationSummaryByResourceOutcome> DescribeAllocationSummaryByResourceOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeAllocationSummaryByResourceRequest&, DescribeAllocationSummaryByResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllocationSummaryByResourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAllocationTreeResponse> DescribeAllocationTreeOutcome;
+                typedef std::future<DescribeAllocationTreeOutcome> DescribeAllocationTreeOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeAllocationTreeRequest&, DescribeAllocationTreeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllocationTreeAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAllocationTrendByMonthResponse> DescribeAllocationTrendByMonthOutcome;
                 typedef std::future<DescribeAllocationTrendByMonthOutcome> DescribeAllocationTrendByMonthOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeAllocationTrendByMonthRequest&, DescribeAllocationTrendByMonthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllocationTrendByMonthAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAllocationUnitDetailResponse> DescribeAllocationUnitDetailOutcome;
+                typedef std::future<DescribeAllocationUnitDetailOutcome> DescribeAllocationUnitDetailOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeAllocationUnitDetailRequest&, DescribeAllocationUnitDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllocationUnitDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBillAdjustInfoResponse> DescribeBillAdjustInfoOutcome;
                 typedef std::future<DescribeBillAdjustInfoOutcome> DescribeBillAdjustInfoOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeBillAdjustInfoRequest&, DescribeBillAdjustInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillAdjustInfoAsyncHandler;
@@ -210,6 +275,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBillSummaryForOrganizationResponse> DescribeBillSummaryForOrganizationOutcome;
                 typedef std::future<DescribeBillSummaryForOrganizationOutcome> DescribeBillSummaryForOrganizationOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeBillSummaryForOrganizationRequest&, DescribeBillSummaryForOrganizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillSummaryForOrganizationAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBudgetResponse> DescribeBudgetOutcome;
+                typedef std::future<DescribeBudgetOutcome> DescribeBudgetOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeBudgetRequest&, DescribeBudgetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBudgetAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBudgetOperationLogResponse> DescribeBudgetOperationLogOutcome;
+                typedef std::future<DescribeBudgetOperationLogOutcome> DescribeBudgetOperationLogOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeBudgetOperationLogRequest&, DescribeBudgetOperationLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBudgetOperationLogAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBudgetRemindRecordListResponse> DescribeBudgetRemindRecordListOutcome;
+                typedef std::future<DescribeBudgetRemindRecordListOutcome> DescribeBudgetRemindRecordListOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeBudgetRemindRecordListRequest&, DescribeBudgetRemindRecordListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBudgetRemindRecordListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCostDetailResponse> DescribeCostDetailOutcome;
                 typedef std::future<DescribeCostDetailOutcome> DescribeCostDetailOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeCostDetailRequest&, DescribeCostDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCostDetailAsyncHandler;
@@ -243,18 +317,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeGatherResourceResponse> DescribeGatherResourceOutcome;
                 typedef std::future<DescribeGatherResourceOutcome> DescribeGatherResourceOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeGatherResourceRequest&, DescribeGatherResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGatherResourceAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeSavingPlanCoverageResponse> DescribeSavingPlanCoverageOutcome;
-                typedef std::future<DescribeSavingPlanCoverageOutcome> DescribeSavingPlanCoverageOutcomeCallable;
-                typedef std::function<void(const BillingClient*, const Model::DescribeSavingPlanCoverageRequest&, DescribeSavingPlanCoverageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSavingPlanCoverageAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeSavingPlanOverviewResponse> DescribeSavingPlanOverviewOutcome;
-                typedef std::future<DescribeSavingPlanOverviewOutcome> DescribeSavingPlanOverviewOutcomeCallable;
-                typedef std::function<void(const BillingClient*, const Model::DescribeSavingPlanOverviewRequest&, DescribeSavingPlanOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSavingPlanOverviewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGatherRuleDetailResponse> DescribeGatherRuleDetailOutcome;
+                typedef std::future<DescribeGatherRuleDetailOutcome> DescribeGatherRuleDetailOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeGatherRuleDetailRequest&, DescribeGatherRuleDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGatherRuleDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSavingPlanResourceInfoResponse> DescribeSavingPlanResourceInfoOutcome;
                 typedef std::future<DescribeSavingPlanResourceInfoOutcome> DescribeSavingPlanResourceInfoOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeSavingPlanResourceInfoRequest&, DescribeSavingPlanResourceInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSavingPlanResourceInfoAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeSavingPlanUsageResponse> DescribeSavingPlanUsageOutcome;
-                typedef std::future<DescribeSavingPlanUsageOutcome> DescribeSavingPlanUsageOutcomeCallable;
-                typedef std::function<void(const BillingClient*, const Model::DescribeSavingPlanUsageRequest&, DescribeSavingPlanUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSavingPlanUsageAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTagListResponse> DescribeTagListOutcome;
                 typedef std::future<DescribeTagListOutcome> DescribeTagListOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeTagListRequest&, DescribeTagListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTagListAsyncHandler;
@@ -264,11 +332,32 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVoucherUsageDetailsResponse> DescribeVoucherUsageDetailsOutcome;
                 typedef std::future<DescribeVoucherUsageDetailsOutcome> DescribeVoucherUsageDetailsOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeVoucherUsageDetailsRequest&, DescribeVoucherUsageDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVoucherUsageDetailsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAllocationRuleResponse> ModifyAllocationRuleOutcome;
+                typedef std::future<ModifyAllocationRuleOutcome> ModifyAllocationRuleOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::ModifyAllocationRuleRequest&, ModifyAllocationRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAllocationRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAllocationUnitResponse> ModifyAllocationUnitOutcome;
+                typedef std::future<ModifyAllocationUnitOutcome> ModifyAllocationUnitOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::ModifyAllocationUnitRequest&, ModifyAllocationUnitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAllocationUnitAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyBudgetResponse> ModifyBudgetOutcome;
+                typedef std::future<ModifyBudgetOutcome> ModifyBudgetOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::ModifyBudgetRequest&, ModifyBudgetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBudgetAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyGatherRuleResponse> ModifyGatherRuleOutcome;
+                typedef std::future<ModifyGatherRuleOutcome> ModifyGatherRuleOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::ModifyGatherRuleRequest&, ModifyGatherRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGatherRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::PayDealsResponse> PayDealsOutcome;
                 typedef std::future<PayDealsOutcome> PayDealsOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::PayDealsRequest&, PayDealsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PayDealsAsyncHandler;
 
 
+
+                /**
+                 *创建公摊规则
+                 * @param req CreateAllocationRuleRequest
+                 * @return CreateAllocationRuleOutcome
+                 */
+                CreateAllocationRuleOutcome CreateAllocationRule(const Model::CreateAllocationRuleRequest &request);
+                void CreateAllocationRuleAsync(const Model::CreateAllocationRuleRequest& request, const CreateAllocationRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAllocationRuleOutcomeCallable CreateAllocationRuleCallable(const Model::CreateAllocationRuleRequest& request);
 
                 /**
                  *批量设置分账标签
@@ -280,13 +369,40 @@ namespace TencentCloud
                 CreateAllocationTagOutcomeCallable CreateAllocationTagCallable(const Model::CreateAllocationTagRequest& request);
 
                 /**
-                 *创建节省计划订单，创建订单完成需调用PayDeals接口完成订单支付
-                 * @param req CreateSavingPlanOrderRequest
-                 * @return CreateSavingPlanOrderOutcome
+                 *创建分账单元
+                 * @param req CreateAllocationUnitRequest
+                 * @return CreateAllocationUnitOutcome
                  */
-                CreateSavingPlanOrderOutcome CreateSavingPlanOrder(const Model::CreateSavingPlanOrderRequest &request);
-                void CreateSavingPlanOrderAsync(const Model::CreateSavingPlanOrderRequest& request, const CreateSavingPlanOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateSavingPlanOrderOutcomeCallable CreateSavingPlanOrderCallable(const Model::CreateSavingPlanOrderRequest& request);
+                CreateAllocationUnitOutcome CreateAllocationUnit(const Model::CreateAllocationUnitRequest &request);
+                void CreateAllocationUnitAsync(const Model::CreateAllocationUnitRequest& request, const CreateAllocationUnitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAllocationUnitOutcomeCallable CreateAllocationUnitCallable(const Model::CreateAllocationUnitRequest& request);
+
+                /**
+                 *创建预算信息
+                 * @param req CreateBudgetRequest
+                 * @return CreateBudgetOutcome
+                 */
+                CreateBudgetOutcome CreateBudget(const Model::CreateBudgetRequest &request);
+                void CreateBudgetAsync(const Model::CreateBudgetRequest& request, const CreateBudgetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBudgetOutcomeCallable CreateBudgetCallable(const Model::CreateBudgetRequest& request);
+
+                /**
+                 *创建归集规则
+                 * @param req CreateGatherRuleRequest
+                 * @return CreateGatherRuleOutcome
+                 */
+                CreateGatherRuleOutcome CreateGatherRule(const Model::CreateGatherRuleRequest &request);
+                void CreateGatherRuleAsync(const Model::CreateGatherRuleRequest& request, const CreateGatherRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateGatherRuleOutcomeCallable CreateGatherRuleCallable(const Model::CreateGatherRuleRequest& request);
+
+                /**
+                 *公摊规则删除接口
+                 * @param req DeleteAllocationRuleRequest
+                 * @return DeleteAllocationRuleOutcome
+                 */
+                DeleteAllocationRuleOutcome DeleteAllocationRule(const Model::DeleteAllocationRuleRequest &request);
+                void DeleteAllocationRuleAsync(const Model::DeleteAllocationRuleRequest& request, const DeleteAllocationRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAllocationRuleOutcomeCallable DeleteAllocationRuleCallable(const Model::DeleteAllocationRuleRequest& request);
 
                 /**
                  *批量取消设置分账标签
@@ -296,6 +412,33 @@ namespace TencentCloud
                 DeleteAllocationTagOutcome DeleteAllocationTag(const Model::DeleteAllocationTagRequest &request);
                 void DeleteAllocationTagAsync(const Model::DeleteAllocationTagRequest& request, const DeleteAllocationTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteAllocationTagOutcomeCallable DeleteAllocationTagCallable(const Model::DeleteAllocationTagRequest& request);
+
+                /**
+                 *删除分账单元
+                 * @param req DeleteAllocationUnitRequest
+                 * @return DeleteAllocationUnitOutcome
+                 */
+                DeleteAllocationUnitOutcome DeleteAllocationUnit(const Model::DeleteAllocationUnitRequest &request);
+                void DeleteAllocationUnitAsync(const Model::DeleteAllocationUnitRequest& request, const DeleteAllocationUnitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAllocationUnitOutcomeCallable DeleteAllocationUnitCallable(const Model::DeleteAllocationUnitRequest& request);
+
+                /**
+                 *依据预算ID删除对应预算项目
+                 * @param req DeleteBudgetRequest
+                 * @return DeleteBudgetOutcome
+                 */
+                DeleteBudgetOutcome DeleteBudget(const Model::DeleteBudgetRequest &request);
+                void DeleteBudgetAsync(const Model::DeleteBudgetRequest& request, const DeleteBudgetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteBudgetOutcomeCallable DeleteBudgetCallable(const Model::DeleteBudgetRequest& request);
+
+                /**
+                 *删除归集规则
+                 * @param req DeleteGatherRuleRequest
+                 * @return DeleteGatherRuleOutcome
+                 */
+                DeleteGatherRuleOutcome DeleteGatherRule(const Model::DeleteGatherRuleRequest &request);
+                void DeleteGatherRuleAsync(const Model::DeleteGatherRuleRequest& request, const DeleteGatherRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteGatherRuleOutcomeCallable DeleteGatherRuleCallable(const Model::DeleteGatherRuleRequest& request);
 
                 /**
                  *获取云账户余额信息。
@@ -352,6 +495,24 @@ namespace TencentCloud
                 DescribeAllocationOverviewOutcomeCallable DescribeAllocationOverviewCallable(const Model::DescribeAllocationOverviewRequest& request);
 
                 /**
+                 *查询公摊规则详情
+                 * @param req DescribeAllocationRuleDetailRequest
+                 * @return DescribeAllocationRuleDetailOutcome
+                 */
+                DescribeAllocationRuleDetailOutcome DescribeAllocationRuleDetail(const Model::DescribeAllocationRuleDetailRequest &request);
+                void DescribeAllocationRuleDetailAsync(const Model::DescribeAllocationRuleDetailRequest& request, const DescribeAllocationRuleDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAllocationRuleDetailOutcomeCallable DescribeAllocationRuleDetailCallable(const Model::DescribeAllocationRuleDetailRequest& request);
+
+                /**
+                 *查询所有公摊规则概览
+                 * @param req DescribeAllocationRuleSummaryRequest
+                 * @return DescribeAllocationRuleSummaryOutcome
+                 */
+                DescribeAllocationRuleSummaryOutcome DescribeAllocationRuleSummary(const Model::DescribeAllocationRuleSummaryRequest &request);
+                void DescribeAllocationRuleSummaryAsync(const Model::DescribeAllocationRuleSummaryRequest& request, const DescribeAllocationRuleSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAllocationRuleSummaryOutcomeCallable DescribeAllocationRuleSummaryCallable(const Model::DescribeAllocationRuleSummaryRequest& request);
+
+                /**
                  *查询分账账单按产品汇总
                  * @param req DescribeAllocationSummaryByBusinessRequest
                  * @return DescribeAllocationSummaryByBusinessOutcome
@@ -379,6 +540,15 @@ namespace TencentCloud
                 DescribeAllocationSummaryByResourceOutcomeCallable DescribeAllocationSummaryByResourceCallable(const Model::DescribeAllocationSummaryByResourceRequest& request);
 
                 /**
+                 *查询分账目录树
+                 * @param req DescribeAllocationTreeRequest
+                 * @return DescribeAllocationTreeOutcome
+                 */
+                DescribeAllocationTreeOutcome DescribeAllocationTree(const Model::DescribeAllocationTreeRequest &request);
+                void DescribeAllocationTreeAsync(const Model::DescribeAllocationTreeRequest& request, const DescribeAllocationTreeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAllocationTreeOutcomeCallable DescribeAllocationTreeCallable(const Model::DescribeAllocationTreeRequest& request);
+
+                /**
                  *查询分账账单费用趋势
                  * @param req DescribeAllocationTrendByMonthRequest
                  * @return DescribeAllocationTrendByMonthOutcome
@@ -386,6 +556,15 @@ namespace TencentCloud
                 DescribeAllocationTrendByMonthOutcome DescribeAllocationTrendByMonth(const Model::DescribeAllocationTrendByMonthRequest &request);
                 void DescribeAllocationTrendByMonthAsync(const Model::DescribeAllocationTrendByMonthRequest& request, const DescribeAllocationTrendByMonthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAllocationTrendByMonthOutcomeCallable DescribeAllocationTrendByMonthCallable(const Model::DescribeAllocationTrendByMonthRequest& request);
+
+                /**
+                 *查询分账单元详情
+                 * @param req DescribeAllocationUnitDetailRequest
+                 * @return DescribeAllocationUnitDetailOutcome
+                 */
+                DescribeAllocationUnitDetailOutcome DescribeAllocationUnitDetail(const Model::DescribeAllocationUnitDetailRequest &request);
+                void DescribeAllocationUnitDetailAsync(const Model::DescribeAllocationUnitDetailRequest& request, const DescribeAllocationUnitDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAllocationUnitDetailOutcomeCallable DescribeAllocationUnitDetailCallable(const Model::DescribeAllocationUnitDetailRequest& request);
 
                 /**
                  *可以通过API获取当前UIN是否有调账，客户可以更快地主动地获取调账情况。
@@ -518,6 +697,33 @@ namespace TencentCloud
                 DescribeBillSummaryForOrganizationOutcomeCallable DescribeBillSummaryForOrganizationCallable(const Model::DescribeBillSummaryForOrganizationRequest& request);
 
                 /**
+                 *获取预算详细信息
+                 * @param req DescribeBudgetRequest
+                 * @return DescribeBudgetOutcome
+                 */
+                DescribeBudgetOutcome DescribeBudget(const Model::DescribeBudgetRequest &request);
+                void DescribeBudgetAsync(const Model::DescribeBudgetRequest& request, const DescribeBudgetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBudgetOutcomeCallable DescribeBudgetCallable(const Model::DescribeBudgetRequest& request);
+
+                /**
+                 *查询预算修改记录
+                 * @param req DescribeBudgetOperationLogRequest
+                 * @return DescribeBudgetOperationLogOutcome
+                 */
+                DescribeBudgetOperationLogOutcome DescribeBudgetOperationLog(const Model::DescribeBudgetOperationLogRequest &request);
+                void DescribeBudgetOperationLogAsync(const Model::DescribeBudgetOperationLogRequest& request, const DescribeBudgetOperationLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBudgetOperationLogOutcomeCallable DescribeBudgetOperationLogCallable(const Model::DescribeBudgetOperationLogRequest& request);
+
+                /**
+                 *返回预算提醒记录，包括预算周期、检测时间、提醒时间、提醒类型、提醒内容
+                 * @param req DescribeBudgetRemindRecordListRequest
+                 * @return DescribeBudgetRemindRecordListOutcome
+                 */
+                DescribeBudgetRemindRecordListOutcome DescribeBudgetRemindRecordList(const Model::DescribeBudgetRemindRecordListRequest &request);
+                void DescribeBudgetRemindRecordListAsync(const Model::DescribeBudgetRemindRecordListRequest& request, const DescribeBudgetRemindRecordListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBudgetRemindRecordListOutcomeCallable DescribeBudgetRemindRecordListCallable(const Model::DescribeBudgetRemindRecordListRequest& request);
+
+                /**
                  *查询消耗明细
 
 注意事项：
@@ -620,22 +826,13 @@ namespace TencentCloud
                 DescribeGatherResourceOutcomeCallable DescribeGatherResourceCallable(const Model::DescribeGatherResourceRequest& request);
 
                 /**
-                 *查询当前用户节省计划覆盖率明细数据，如无特别说明，金额单位均为元（国内站）或者美元（国际站）。
-                 * @param req DescribeSavingPlanCoverageRequest
-                 * @return DescribeSavingPlanCoverageOutcome
+                 *查询归集规则详情
+                 * @param req DescribeGatherRuleDetailRequest
+                 * @return DescribeGatherRuleDetailOutcome
                  */
-                DescribeSavingPlanCoverageOutcome DescribeSavingPlanCoverage(const Model::DescribeSavingPlanCoverageRequest &request);
-                void DescribeSavingPlanCoverageAsync(const Model::DescribeSavingPlanCoverageRequest& request, const DescribeSavingPlanCoverageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeSavingPlanCoverageOutcomeCallable DescribeSavingPlanCoverageCallable(const Model::DescribeSavingPlanCoverageRequest& request);
-
-                /**
-                 *查用当前用户明细节省计划总览查询时段内的使用情况
-                 * @param req DescribeSavingPlanOverviewRequest
-                 * @return DescribeSavingPlanOverviewOutcome
-                 */
-                DescribeSavingPlanOverviewOutcome DescribeSavingPlanOverview(const Model::DescribeSavingPlanOverviewRequest &request);
-                void DescribeSavingPlanOverviewAsync(const Model::DescribeSavingPlanOverviewRequest& request, const DescribeSavingPlanOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeSavingPlanOverviewOutcomeCallable DescribeSavingPlanOverviewCallable(const Model::DescribeSavingPlanOverviewRequest& request);
+                DescribeGatherRuleDetailOutcome DescribeGatherRuleDetail(const Model::DescribeGatherRuleDetailRequest &request);
+                void DescribeGatherRuleDetailAsync(const Model::DescribeGatherRuleDetailRequest& request, const DescribeGatherRuleDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGatherRuleDetailOutcomeCallable DescribeGatherRuleDetailCallable(const Model::DescribeGatherRuleDetailRequest& request);
 
                 /**
                  *查询节省计划详情
@@ -645,15 +842,6 @@ namespace TencentCloud
                 DescribeSavingPlanResourceInfoOutcome DescribeSavingPlanResourceInfo(const Model::DescribeSavingPlanResourceInfoRequest &request);
                 void DescribeSavingPlanResourceInfoAsync(const Model::DescribeSavingPlanResourceInfoRequest& request, const DescribeSavingPlanResourceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSavingPlanResourceInfoOutcomeCallable DescribeSavingPlanResourceInfoCallable(const Model::DescribeSavingPlanResourceInfoRequest& request);
-
-                /**
-                 *查用当前用户明细节省计划查询时段内的使用情况
-                 * @param req DescribeSavingPlanUsageRequest
-                 * @return DescribeSavingPlanUsageOutcome
-                 */
-                DescribeSavingPlanUsageOutcome DescribeSavingPlanUsage(const Model::DescribeSavingPlanUsageRequest &request);
-                void DescribeSavingPlanUsageAsync(const Model::DescribeSavingPlanUsageRequest& request, const DescribeSavingPlanUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeSavingPlanUsageOutcomeCallable DescribeSavingPlanUsageCallable(const Model::DescribeSavingPlanUsageRequest& request);
 
                 /**
                  *获取分账标签
@@ -681,6 +869,42 @@ namespace TencentCloud
                 DescribeVoucherUsageDetailsOutcome DescribeVoucherUsageDetails(const Model::DescribeVoucherUsageDetailsRequest &request);
                 void DescribeVoucherUsageDetailsAsync(const Model::DescribeVoucherUsageDetailsRequest& request, const DescribeVoucherUsageDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeVoucherUsageDetailsOutcomeCallable DescribeVoucherUsageDetailsCallable(const Model::DescribeVoucherUsageDetailsRequest& request);
+
+                /**
+                 *编辑公摊规则
+                 * @param req ModifyAllocationRuleRequest
+                 * @return ModifyAllocationRuleOutcome
+                 */
+                ModifyAllocationRuleOutcome ModifyAllocationRule(const Model::ModifyAllocationRuleRequest &request);
+                void ModifyAllocationRuleAsync(const Model::ModifyAllocationRuleRequest& request, const ModifyAllocationRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAllocationRuleOutcomeCallable ModifyAllocationRuleCallable(const Model::ModifyAllocationRuleRequest& request);
+
+                /**
+                 *修改分账单元信息
+                 * @param req ModifyAllocationUnitRequest
+                 * @return ModifyAllocationUnitOutcome
+                 */
+                ModifyAllocationUnitOutcome ModifyAllocationUnit(const Model::ModifyAllocationUnitRequest &request);
+                void ModifyAllocationUnitAsync(const Model::ModifyAllocationUnitRequest& request, const ModifyAllocationUnitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAllocationUnitOutcomeCallable ModifyAllocationUnitCallable(const Model::ModifyAllocationUnitRequest& request);
+
+                /**
+                 *更新预算信息
+                 * @param req ModifyBudgetRequest
+                 * @return ModifyBudgetOutcome
+                 */
+                ModifyBudgetOutcome ModifyBudget(const Model::ModifyBudgetRequest &request);
+                void ModifyBudgetAsync(const Model::ModifyBudgetRequest& request, const ModifyBudgetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyBudgetOutcomeCallable ModifyBudgetCallable(const Model::ModifyBudgetRequest& request);
+
+                /**
+                 *编辑归集规则
+                 * @param req ModifyGatherRuleRequest
+                 * @return ModifyGatherRuleOutcome
+                 */
+                ModifyGatherRuleOutcome ModifyGatherRule(const Model::ModifyGatherRuleRequest &request);
+                void ModifyGatherRuleAsync(const Model::ModifyGatherRuleRequest& request, const ModifyGatherRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyGatherRuleOutcomeCallable ModifyGatherRuleCallable(const Model::ModifyGatherRuleRequest& request);
 
                 /**
                  *支付订单

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,6 +91,34 @@ PROCESSED:已完成
                      */
                     bool TaskProcessHasBeenSet() const;
 
+                    /**
+                     * 获取失败主机数
+                     * @return FailedHostCount 失败主机数
+                     * 
+                     */
+                    uint64_t GetFailedHostCount() const;
+
+                    /**
+                     * 判断参数 FailedHostCount 是否已赋值
+                     * @return FailedHostCount 是否已赋值
+                     * 
+                     */
+                    bool FailedHostCountHasBeenSet() const;
+
+                    /**
+                     * 获取任务id
+                     * @return TaskId 任务id
+                     * 
+                     */
+                    uint64_t GetTaskId() const;
+
+                    /**
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
+                     * 
+                     */
+                    bool TaskIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -113,6 +141,18 @@ PROCESSED:已完成
                      */
                     int64_t m_taskProcess;
                     bool m_taskProcessHasBeenSet;
+
+                    /**
+                     * 失败主机数
+                     */
+                    uint64_t m_failedHostCount;
+                    bool m_failedHostCountHasBeenSet;
+
+                    /**
+                     * 任务id
+                     */
+                    uint64_t m_taskId;
+                    bool m_taskIdHasBeenSet;
 
                 };
             }

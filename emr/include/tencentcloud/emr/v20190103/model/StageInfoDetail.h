@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取步骤id
-                     * @return Stage 步骤id
+                     * 获取步骤
+                     * @return Stage 步骤
                      * 
                      */
                     std::string GetStage() const;
 
                     /**
-                     * 设置步骤id
-                     * @param _stage 步骤id
+                     * 设置步骤
+                     * @param _stage 步骤
                      * 
                      */
                     void SetStage(const std::string& _stage);
@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取步骤名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 步骤名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置步骤名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 步骤名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子流程标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubFlowFlag 子流程标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubFlowFlag() const;
 
                     /**
                      * 设置子流程标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subFlowFlag 子流程标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubFlowFlag(const std::string& _subFlowFlag);
@@ -182,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取步骤运行状态描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Desc 步骤运行状态描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDesc() const;
 
                     /**
                      * 设置步骤运行状态描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _desc 步骤运行状态描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDesc(const std::string& _desc);
@@ -207,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取运行进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Progress 运行进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetProgress() const;
 
                     /**
                      * 设置运行进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _progress 运行进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProgress(const double& _progress);
@@ -282,18 +266,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否有详情信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HadWoodDetail 是否有详情信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetHadWoodDetail() const;
 
                     /**
                      * 设置是否有详情信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hadWoodDetail 是否有详情信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHadWoodDetail(const bool& _hadWoodDetail);
@@ -307,18 +287,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Wood子流程Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WoodJobId Wood子流程Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetWoodJobId() const;
 
                     /**
                      * 设置Wood子流程Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _woodJobId Wood子流程Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWoodJobId(const uint64_t& _woodJobId);
@@ -332,18 +308,14 @@ namespace TencentCloud
 
                     /**
                      * 获取多语言版本Key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LanguageKey 多语言版本Key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLanguageKey() const;
 
                     /**
                      * 设置多语言版本Key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _languageKey 多语言版本Key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLanguageKey(const std::string& _languageKey);
@@ -357,18 +329,14 @@ namespace TencentCloud
 
                     /**
                      * 获取如果stage失败，失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedReason 如果stage失败，失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFailedReason() const;
 
                     /**
                      * 设置如果stage失败，失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _failedReason 如果stage失败，失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFailedReason(const std::string& _failedReason);
@@ -382,18 +350,14 @@ namespace TencentCloud
 
                     /**
                      * 获取步骤耗时
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeConsuming 步骤耗时
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTimeConsuming() const;
 
                     /**
                      * 设置步骤耗时
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeConsuming 步骤耗时
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeConsuming(const std::string& _timeConsuming);
@@ -405,17 +369,37 @@ namespace TencentCloud
                      */
                     bool TimeConsumingHasBeenSet() const;
 
+                    /**
+                     * 获取id，前端用
+                     * @return Id id，前端用
+                     * 
+                     */
+                    int64_t GetId() const;
+
+                    /**
+                     * 设置id，前端用
+                     * @param _id id，前端用
+                     * 
+                     */
+                    void SetId(const int64_t& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     * 
+                     */
+                    bool IdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 步骤id
+                     * 步骤
                      */
                     std::string m_stage;
                     bool m_stageHasBeenSet;
 
                     /**
                      * 步骤名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -434,7 +418,6 @@ namespace TencentCloud
 
                     /**
                      * 子流程标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subFlowFlag;
                     bool m_subFlowFlagHasBeenSet;
@@ -447,14 +430,12 @@ namespace TencentCloud
 
                     /**
                      * 步骤运行状态描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_desc;
                     bool m_descHasBeenSet;
 
                     /**
                      * 运行进度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_progress;
                     bool m_progressHasBeenSet;
@@ -475,38 +456,39 @@ namespace TencentCloud
 
                     /**
                      * 是否有详情信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_hadWoodDetail;
                     bool m_hadWoodDetailHasBeenSet;
 
                     /**
                      * Wood子流程Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_woodJobId;
                     bool m_woodJobIdHasBeenSet;
 
                     /**
                      * 多语言版本Key
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_languageKey;
                     bool m_languageKeyHasBeenSet;
 
                     /**
                      * 如果stage失败，失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_failedReason;
                     bool m_failedReasonHasBeenSet;
 
                     /**
                      * 步骤耗时
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timeConsuming;
                     bool m_timeConsumingHasBeenSet;
+
+                    /**
+                     * id，前端用
+                     */
+                    int64_t m_id;
+                    bool m_idHasBeenSet;
 
                 };
             }

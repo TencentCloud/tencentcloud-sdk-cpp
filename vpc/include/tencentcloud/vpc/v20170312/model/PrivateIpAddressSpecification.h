@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -210,15 +210,15 @@ AVAILABLE：可用的
                     bool StateHasBeenSet() const;
 
                     /**
-                     * 获取IP服务质量等级，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。
-                     * @return QosLevel IP服务质量等级，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。
+                     * 获取IP服务质量等级，可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
+                     * @return QosLevel IP服务质量等级，可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
                      * 
                      */
                     std::string GetQosLevel() const;
 
                     /**
-                     * 设置IP服务质量等级，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。
-                     * @param _qosLevel IP服务质量等级，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。
+                     * 设置IP服务质量等级，可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
+                     * @param _qosLevel IP服务质量等级，可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
                      * 
                      */
                     void SetQosLevel(const std::string& _qosLevel);
@@ -279,7 +279,7 @@ AVAILABLE：可用的
                     bool m_stateHasBeenSet;
 
                     /**
-                     * IP服务质量等级，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。
+                     * IP服务质量等级，可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
                      */
                     std::string m_qosLevel;
                     bool m_qosLevelHasBeenSet;

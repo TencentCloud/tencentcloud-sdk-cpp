@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,26 @@ namespace TencentCloud
 
                     /**
                      * 获取模块名称，取值为：
-<li>waf：托管规则。</li>
+<li>managed-rule：托管规则 Id；</li>
+<li>managed-group：托管规则组；</li>
+<li>waf：待废弃，托管规则。</li>
                      * @return Module 模块名称，取值为：
-<li>waf：托管规则。</li>
+<li>managed-rule：托管规则 Id；</li>
+<li>managed-group：托管规则组；</li>
+<li>waf：待废弃，托管规则。</li>
                      * 
                      */
                     std::string GetModule() const;
 
                     /**
                      * 设置模块名称，取值为：
-<li>waf：托管规则。</li>
+<li>managed-rule：托管规则 Id；</li>
+<li>managed-group：托管规则组；</li>
+<li>waf：待废弃，托管规则。</li>
                      * @param _module 模块名称，取值为：
-<li>waf：托管规则。</li>
+<li>managed-rule：托管规则 Id；</li>
+<li>managed-group：托管规则组；</li>
+<li>waf：待废弃，托管规则。</li>
                      * 
                      */
                     void SetModule(const std::string& _module);
@@ -73,18 +81,14 @@ namespace TencentCloud
 
                     /**
                      * 获取模块下的需要例外的具体规则ID列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Include 模块下的需要例外的具体规则ID列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetInclude() const;
 
                     /**
                      * 设置模块下的需要例外的具体规则ID列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _include 模块下的需要例外的具体规则ID列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInclude(const std::vector<int64_t>& _include);
@@ -100,14 +104,15 @@ namespace TencentCloud
 
                     /**
                      * 模块名称，取值为：
-<li>waf：托管规则。</li>
+<li>managed-rule：托管规则 Id；</li>
+<li>managed-group：托管规则组；</li>
+<li>waf：待废弃，托管规则。</li>
                      */
                     std::string m_module;
                     bool m_moduleHasBeenSet;
 
                     /**
                      * 模块下的需要例外的具体规则ID列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_include;
                     bool m_includeHasBeenSet;

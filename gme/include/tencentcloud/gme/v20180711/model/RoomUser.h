@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取房间里用户uin列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uins 房间里用户uin列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<uint64_t> GetUins() const;
 
                     /**
                      * 设置房间里用户uin列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uins 房间里用户uin列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUins(const std::vector<uint64_t>& _uins);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取字符串房间id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrRoomId 字符串房间id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStrRoomId() const;
 
                     /**
                      * 设置字符串房间id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _strRoomId 字符串房间id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStrRoomId(const std::string& _strRoomId);
@@ -119,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取房间里用户字符串uin列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrUins 房间里用户字符串uin列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetStrUins() const;
 
                     /**
                      * 设置房间里用户字符串uin列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _strUins 房间里用户字符串uin列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStrUins(const std::vector<std::string>& _strUins);
@@ -152,21 +140,18 @@ namespace TencentCloud
 
                     /**
                      * 房间里用户uin列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<uint64_t> m_uins;
                     bool m_uinsHasBeenSet;
 
                     /**
                      * 字符串房间id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_strRoomId;
                     bool m_strRoomIdHasBeenSet;
 
                     /**
                      * 房间里用户字符串uin列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_strUins;
                     bool m_strUinsHasBeenSet;

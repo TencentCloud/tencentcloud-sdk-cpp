@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -355,23 +355,128 @@ namespace TencentCloud
                     /**
                      * 获取开启多可用区后，用户的所有可用区和子网信息
                      * @return UserMultiZoneInfos 开启多可用区后，用户的所有可用区和子网信息
-                     * 
+                     * @deprecated
                      */
                     NetworkInfo GetUserMultiZoneInfos() const;
 
                     /**
                      * 设置开启多可用区后，用户的所有可用区和子网信息
                      * @param _userMultiZoneInfos 开启多可用区后，用户的所有可用区和子网信息
-                     * 
+                     * @deprecated
                      */
                     void SetUserMultiZoneInfos(const NetworkInfo& _userMultiZoneInfos);
 
                     /**
                      * 判断参数 UserMultiZoneInfos 是否已赋值
                      * @return UserMultiZoneInfos 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool UserMultiZoneInfosHasBeenSet() const;
+
+                    /**
+                     * 获取开启多可用区后，用户的所有可用区和子网信息
+                     * @return UserMultiZoneInfoArr 开启多可用区后，用户的所有可用区和子网信息
+                     * 
+                     */
+                    std::vector<NetworkInfo> GetUserMultiZoneInfoArr() const;
+
+                    /**
+                     * 设置开启多可用区后，用户的所有可用区和子网信息
+                     * @param _userMultiZoneInfoArr 开启多可用区后，用户的所有可用区和子网信息
+                     * 
+                     */
+                    void SetUserMultiZoneInfoArr(const std::vector<NetworkInfo>& _userMultiZoneInfoArr);
+
+                    /**
+                     * 判断参数 UserMultiZoneInfoArr 是否已赋值
+                     * @return UserMultiZoneInfoArr 是否已赋值
+                     * 
+                     */
+                    bool UserMultiZoneInfoArrHasBeenSet() const;
+
+                    /**
+                     * 获取是否存算分离
+                     * @return IsSSC 是否存算分离
+                     * 
+                     */
+                    bool GetIsSSC() const;
+
+                    /**
+                     * 设置是否存算分离
+                     * @param _isSSC 是否存算分离
+                     * 
+                     */
+                    void SetIsSSC(const bool& _isSSC);
+
+                    /**
+                     * 判断参数 IsSSC 是否已赋值
+                     * @return IsSSC 是否已赋值
+                     * 
+                     */
+                    bool IsSSCHasBeenSet() const;
+
+                    /**
+                     * 获取CU数
+                     * @return SSCCU CU数
+                     * 
+                     */
+                    int64_t GetSSCCU() const;
+
+                    /**
+                     * 设置CU数
+                     * @param _sSCCU CU数
+                     * 
+                     */
+                    void SetSSCCU(const int64_t& _sSCCU);
+
+                    /**
+                     * 判断参数 SSCCU 是否已赋值
+                     * @return SSCCU 是否已赋值
+                     * 
+                     */
+                    bool SSCCUHasBeenSet() const;
+
+                    /**
+                     * 获取缓存盘大小
+                     * @return CacheDiskSize 缓存盘大小
+                     * @deprecated
+                     */
+                    std::string GetCacheDiskSize() const;
+
+                    /**
+                     * 设置缓存盘大小
+                     * @param _cacheDiskSize 缓存盘大小
+                     * @deprecated
+                     */
+                    void SetCacheDiskSize(const std::string& _cacheDiskSize);
+
+                    /**
+                     * 判断参数 CacheDiskSize 是否已赋值
+                     * @return CacheDiskSize 是否已赋值
+                     * @deprecated
+                     */
+                    bool CacheDiskSizeHasBeenSet() const;
+
+                    /**
+                     * 获取缓存盘大小
+                     * @return CacheDataDiskSize 缓存盘大小
+                     * 
+                     */
+                    int64_t GetCacheDataDiskSize() const;
+
+                    /**
+                     * 设置缓存盘大小
+                     * @param _cacheDataDiskSize 缓存盘大小
+                     * 
+                     */
+                    void SetCacheDataDiskSize(const int64_t& _cacheDataDiskSize);
+
+                    /**
+                     * 判断参数 CacheDataDiskSize 是否已赋值
+                     * @return CacheDataDiskSize 是否已赋值
+                     * 
+                     */
+                    bool CacheDataDiskSizeHasBeenSet() const;
 
                 private:
 
@@ -467,6 +572,36 @@ namespace TencentCloud
                      */
                     NetworkInfo m_userMultiZoneInfos;
                     bool m_userMultiZoneInfosHasBeenSet;
+
+                    /**
+                     * 开启多可用区后，用户的所有可用区和子网信息
+                     */
+                    std::vector<NetworkInfo> m_userMultiZoneInfoArr;
+                    bool m_userMultiZoneInfoArrHasBeenSet;
+
+                    /**
+                     * 是否存算分离
+                     */
+                    bool m_isSSC;
+                    bool m_isSSCHasBeenSet;
+
+                    /**
+                     * CU数
+                     */
+                    int64_t m_sSCCU;
+                    bool m_sSCCUHasBeenSet;
+
+                    /**
+                     * 缓存盘大小
+                     */
+                    std::string m_cacheDiskSize;
+                    bool m_cacheDiskSizeHasBeenSet;
+
+                    /**
+                     * 缓存盘大小
+                     */
+                    int64_t m_cacheDataDiskSize;
+                    bool m_cacheDataDiskSizeHasBeenSet;
 
                 };
             }

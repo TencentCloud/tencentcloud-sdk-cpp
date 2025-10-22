@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return InstanceId 集群ID
+                     * 获取腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。
+                     * @return InstanceId 腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _instanceId 集群ID
+                     * 设置腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。
+                     * @param _instanceId 腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取消费组名称
-                     * @return ConsumerGroup 消费组名称
+                     * 获取消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。
+                     * @return ConsumerGroup 消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。
                      * 
                      */
                     std::string GetConsumerGroup() const;
 
                     /**
-                     * 设置消费组名称
-                     * @param _consumerGroup 消费组名称
+                     * 设置消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。
+                     * @param _consumerGroup 消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。
                      * 
                      */
                     void SetConsumerGroup(const std::string& _consumerGroup);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool ConsumeMessageOrderlyHasBeenSet() const;
 
                     /**
-                     * 获取最大重试次数
-                     * @return MaxRetryTimes 最大重试次数
+                     * 获取最大重试次数，取值范围0～1000
+                     * @return MaxRetryTimes 最大重试次数，取值范围0～1000
                      * 
                      */
                     int64_t GetMaxRetryTimes() const;
 
                     /**
-                     * 设置最大重试次数
-                     * @param _maxRetryTimes 最大重试次数
+                     * 设置最大重试次数，取值范围0～1000
+                     * @param _maxRetryTimes 最大重试次数，取值范围0～1000
                      * 
                      */
                     void SetMaxRetryTimes(const int64_t& _maxRetryTimes);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool MaxRetryTimesHasBeenSet() const;
 
                     /**
-                     * 获取备注
-                     * @return Remark 备注
+                     * 获取备注信息，最多 128 个字符
+                     * @return Remark 备注信息，最多 128 个字符
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注
-                     * @param _remark 备注
+                     * 设置备注信息，最多 128 个字符
+                     * @param _remark 备注信息，最多 128 个字符
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -175,13 +175,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID
+                     * 腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 消费组名称
+                     * 消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。
                      */
                     std::string m_consumerGroup;
                     bool m_consumerGroupHasBeenSet;
@@ -200,13 +200,13 @@ namespace TencentCloud
                     bool m_consumeMessageOrderlyHasBeenSet;
 
                     /**
-                     * 最大重试次数
+                     * 最大重试次数，取值范围0～1000
                      */
                     int64_t m_maxRetryTimes;
                     bool m_maxRetryTimesHasBeenSet;
 
                     /**
-                     * 备注
+                     * 备注信息，最多 128 个字符
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;

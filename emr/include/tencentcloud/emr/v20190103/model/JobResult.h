@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务步骤名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 任务步骤名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置任务步骤名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 任务步骤名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -76,12 +72,10 @@ namespace TencentCloud
 "CONTINUE"，跳过当前失败步骤，继续后续步骤。
 “TERMINATE_CLUSTER”，终止当前及后续步骤，并销毁集群。
 “CANCEL_AND_WAIT”，取消当前步骤并阻塞等待处理。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActionOnFailure 任务步骤失败时的处理策略，可以为以下值：
 "CONTINUE"，跳过当前失败步骤，继续后续步骤。
 “TERMINATE_CLUSTER”，终止当前及后续步骤，并销毁集群。
 “CANCEL_AND_WAIT”，取消当前步骤并阻塞等待处理。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetActionOnFailure() const;
@@ -91,12 +85,10 @@ namespace TencentCloud
 "CONTINUE"，跳过当前失败步骤，继续后续步骤。
 “TERMINATE_CLUSTER”，终止当前及后续步骤，并销毁集群。
 “CANCEL_AND_WAIT”，取消当前步骤并阻塞等待处理。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _actionOnFailure 任务步骤失败时的处理策略，可以为以下值：
 "CONTINUE"，跳过当前失败步骤，继续后续步骤。
 “TERMINATE_CLUSTER”，终止当前及后续步骤，并销毁集群。
 “CANCEL_AND_WAIT”，取消当前步骤并阻塞等待处理。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActionOnFailure(const std::string& _actionOnFailure);
@@ -114,13 +106,11 @@ namespace TencentCloud
 “JobFlowStepStatusRunning”，任务步骤正在执行。
 “JobFlowStepStatusFailed”，任务步骤执行失败。
 “JobFlowStepStatusSucceed”，任务步骤执行成功。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobState 当前步骤的状态，可以为以下值：
 “JobFlowStepStatusInit”，初始化状态，等待执行。
 “JobFlowStepStatusRunning”，任务步骤正在执行。
 “JobFlowStepStatusFailed”，任务步骤执行失败。
 “JobFlowStepStatusSucceed”，任务步骤执行成功。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJobState() const;
@@ -131,13 +121,11 @@ namespace TencentCloud
 “JobFlowStepStatusRunning”，任务步骤正在执行。
 “JobFlowStepStatusFailed”，任务步骤执行失败。
 “JobFlowStepStatusSucceed”，任务步骤执行成功。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _jobState 当前步骤的状态，可以为以下值：
 “JobFlowStepStatusInit”，初始化状态，等待执行。
 “JobFlowStepStatusRunning”，任务步骤正在执行。
 “JobFlowStepStatusFailed”，任务步骤执行失败。
 “JobFlowStepStatusSucceed”，任务步骤执行成功。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJobState(const std::string& _jobState);
@@ -151,18 +139,14 @@ namespace TencentCloud
 
                     /**
                      * 获取YARN任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationId YARN任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置YARN任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationId YARN任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
@@ -178,7 +162,6 @@ namespace TencentCloud
 
                     /**
                      * 任务步骤名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -188,7 +171,6 @@ namespace TencentCloud
 "CONTINUE"，跳过当前失败步骤，继续后续步骤。
 “TERMINATE_CLUSTER”，终止当前及后续步骤，并销毁集群。
 “CANCEL_AND_WAIT”，取消当前步骤并阻塞等待处理。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_actionOnFailure;
                     bool m_actionOnFailureHasBeenSet;
@@ -199,14 +181,12 @@ namespace TencentCloud
 “JobFlowStepStatusRunning”，任务步骤正在执行。
 “JobFlowStepStatusFailed”，任务步骤执行失败。
 “JobFlowStepStatusSucceed”，任务步骤执行成功。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_jobState;
                     bool m_jobStateHasBeenSet;
 
                     /**
                      * YARN任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applicationId;
                     bool m_applicationIdHasBeenSet;

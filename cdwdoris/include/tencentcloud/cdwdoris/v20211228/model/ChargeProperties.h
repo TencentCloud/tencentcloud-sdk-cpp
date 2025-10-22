@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计费类型，“PREPAID” 预付费，“POSTPAID_BY_HOUR” 后付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChargeType 计费类型，“PREPAID” 预付费，“POSTPAID_BY_HOUR” 后付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetChargeType() const;
 
                     /**
                      * 设置计费类型，“PREPAID” 预付费，“POSTPAID_BY_HOUR” 后付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _chargeType 计费类型，“PREPAID” 预付费，“POSTPAID_BY_HOUR” 后付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChargeType(const std::string& _chargeType);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否自动续费，1表示自动续费开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RenewFlag 是否自动续费，1表示自动续费开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRenewFlag() const;
 
                     /**
                      * 设置是否自动续费，1表示自动续费开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _renewFlag 是否自动续费，1表示自动续费开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRenewFlag(const int64_t& _renewFlag);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计费时间长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeSpan 计费时间长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTimeSpan() const;
 
                     /**
                      * 设置计费时间长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeSpan 计费时间长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeSpan(const int64_t& _timeSpan);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计费时间单位，“m”表示月等
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeUnit 计费时间单位，“m”表示月等
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTimeUnit() const;
 
                     /**
                      * 设置计费时间单位，“m”表示月等
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeUnit 计费时间单位，“m”表示月等
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeUnit(const std::string& _timeUnit);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 计费类型，“PREPAID” 预付费，“POSTPAID_BY_HOUR” 后付费
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_chargeType;
                     bool m_chargeTypeHasBeenSet;
 
                     /**
                      * 是否自动续费，1表示自动续费开启
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_renewFlag;
                     bool m_renewFlagHasBeenSet;
 
                     /**
                      * 计费时间长度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
 
                     /**
                      * 计费时间单位，“m”表示月等
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timeUnit;
                     bool m_timeUnitHasBeenSet;

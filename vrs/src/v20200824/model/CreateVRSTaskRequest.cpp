@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,8 @@ CreateVRSTaskRequest::CreateVRSTaskRequest() :
     m_callbackUrlHasBeenSet(false),
     m_modelTypeHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
-    m_vPRAudioIdHasBeenSet(false)
+    m_vPRAudioIdHasBeenSet(false),
+    m_enableVoiceEnhanceHasBeenSet(false)
 {
 }
 
@@ -135,6 +136,14 @@ string CreateVRSTaskRequest::ToJsonString() const
         string key = "VPRAudioId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_vPRAudioId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableVoiceEnhanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableVoiceEnhance";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableVoiceEnhance, allocator);
     }
 
 
@@ -319,6 +328,22 @@ void CreateVRSTaskRequest::SetVPRAudioId(const string& _vPRAudioId)
 bool CreateVRSTaskRequest::VPRAudioIdHasBeenSet() const
 {
     return m_vPRAudioIdHasBeenSet;
+}
+
+uint64_t CreateVRSTaskRequest::GetEnableVoiceEnhance() const
+{
+    return m_enableVoiceEnhance;
+}
+
+void CreateVRSTaskRequest::SetEnableVoiceEnhance(const uint64_t& _enableVoiceEnhance)
+{
+    m_enableVoiceEnhance = _enableVoiceEnhance;
+    m_enableVoiceEnhanceHasBeenSet = true;
+}
+
+bool CreateVRSTaskRequest::EnableVoiceEnhanceHasBeenSet() const
+{
+    return m_enableVoiceEnhanceHasBeenSet;
 }
 
 

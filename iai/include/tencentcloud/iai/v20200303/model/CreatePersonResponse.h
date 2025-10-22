@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,9 +76,9 @@ namespace TencentCloud
 
                     /**
                      * 获取疑似同一人的PersonId。 
-当 UniquePersonControl 参数不为0且人员库中有疑似的同一人，此参数才有意义。
+- 当 UniquePersonControl 参数不为0且人员库中有疑似的同一人，此参数才有意义。
                      * @return SimilarPersonId 疑似同一人的PersonId。 
-当 UniquePersonControl 参数不为0且人员库中有疑似的同一人，此参数才有意义。
+- 当 UniquePersonControl 参数不为0且人员库中有疑似的同一人，此参数才有意义。
                      * 
                      */
                     std::string GetSimilarPersonId() const;
@@ -121,7 +121,7 @@ namespace TencentCloud
 
                     /**
                      * 疑似同一人的PersonId。 
-当 UniquePersonControl 参数不为0且人员库中有疑似的同一人，此参数才有意义。
+- 当 UniquePersonControl 参数不为0且人员库中有疑似的同一人，此参数才有意义。
                      */
                     std::string m_similarPersonId;
                     bool m_similarPersonIdHasBeenSet;

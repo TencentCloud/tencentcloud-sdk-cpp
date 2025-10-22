@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -113,14 +113,30 @@ namespace TencentCloud
 
                     /**
                      * 获取应用模板的执行状态。
+
+- SUCCESS：成功
+- RUNNING：运行中
+- FAILED：失败
                      * @return ApplyState 应用模板的执行状态。
+
+- SUCCESS：成功
+- RUNNING：运行中
+- FAILED：失败
                      * 
                      */
                     std::string GetApplyState() const;
 
                     /**
                      * 设置应用模板的执行状态。
+
+- SUCCESS：成功
+- RUNNING：运行中
+- FAILED：失败
                      * @param _applyState 应用模板的执行状态。
+
+- SUCCESS：成功
+- RUNNING：运行中
+- FAILED：失败
                      * 
                      */
                     void SetApplyState(const std::string& _applyState);
@@ -238,6 +254,10 @@ namespace TencentCloud
 
                     /**
                      * 应用模板的执行状态。
+
+- SUCCESS：成功
+- RUNNING：运行中
+- FAILED：失败
                      */
                     std::string m_applyState;
                     bool m_applyStateHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取doris集群的fe的ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Host doris集群的fe的ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHost() const;
 
                     /**
                      * 设置doris集群的fe的ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _host doris集群的fe的ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHost(const std::string& _host);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取doris集群的fe的端口号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port doris集群的fe的端口号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置doris集群的fe的端口号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _port doris集群的fe的端口号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取doris集群的账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return User doris集群的账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUser() const;
 
                     /**
                      * 设置doris集群的账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _user doris集群的账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUser(const std::string& _user);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取base64编码的doris集群对应用户的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Password base64编码的doris集群对应用户的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置base64编码的doris集群对应用户的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _password base64编码的doris集群对应用户的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * doris集群的fe的ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;
 
                     /**
                      * doris集群的fe的端口号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
                      * doris集群的账号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_user;
                     bool m_userHasBeenSet;
 
                     /**
                      * base64编码的doris集群对应用户的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;

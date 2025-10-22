@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取脆弱项id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 脆弱项id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置脆弱项id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 脆弱项id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskName 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiskName() const;
 
                     /**
                      * 设置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskName 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskName(const std::string& _riskName);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取脆弱性级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 脆弱性级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLevel() const;
 
                     /**
                      * 设置脆弱性级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _level 脆弱性级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevel(const std::string& _level);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取说明
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 说明
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置说明
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 说明
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取风险类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskType 风险类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiskType() const;
 
                     /**
                      * 设置风险类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskType 风险类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskType(const std::string& _riskType);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联模板个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReferTemplateCount 关联模板个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetReferTemplateCount() const;
 
                     /**
                      * 设置关联模板个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _referTemplateCount 关联模板个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReferTemplateCount(const int64_t& _referTemplateCount);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取支持的数据源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportDataSource 支持的数据源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSupportDataSource() const;
 
                     /**
                      * 设置支持的数据源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _supportDataSource 支持的数据源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSupportDataSource(const std::vector<std::string>& _supportDataSource);
@@ -224,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取风险面
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskSide 风险面
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiskSide() const;
 
                     /**
                      * 设置风险面
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskSide 风险面
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskSide(const std::string& _riskSide);
@@ -249,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联模板列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReferTemplateList 关联模板列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TemplateInfo> GetReferTemplateList() const;
 
                     /**
                      * 设置关联模板列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _referTemplateList 关联模板列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReferTemplateList(const std::vector<TemplateInfo>& _referTemplateList);
@@ -276,63 +240,54 @@ namespace TencentCloud
 
                     /**
                      * 脆弱项id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riskName;
                     bool m_riskNameHasBeenSet;
 
                     /**
                      * 脆弱性级别
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_level;
                     bool m_levelHasBeenSet;
 
                     /**
                      * 说明
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 风险类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riskType;
                     bool m_riskTypeHasBeenSet;
 
                     /**
                      * 关联模板个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_referTemplateCount;
                     bool m_referTemplateCountHasBeenSet;
 
                     /**
                      * 支持的数据源
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_supportDataSource;
                     bool m_supportDataSourceHasBeenSet;
 
                     /**
                      * 风险面
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riskSide;
                     bool m_riskSideHasBeenSet;
 
                     /**
                      * 关联模板列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TemplateInfo> m_referTemplateList;
                     bool m_referTemplateListHasBeenSet;

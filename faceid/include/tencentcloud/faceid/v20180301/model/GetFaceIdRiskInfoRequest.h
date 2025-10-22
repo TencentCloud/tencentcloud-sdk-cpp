@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取SDK人脸核身流程的标识，调用GetFaceidRiskInfoToken接口时生成。
-                     * @return FaceIdToken SDK人脸核身流程的标识，调用GetFaceidRiskInfoToken接口时生成。
+                     * 获取SDK人脸核身流程的标识，调用[GetFaceidRiskInfoToken](https://cloud.tencent.com/document/product/1007/104581)接口时生成。
+                     * @return FaceIdToken SDK人脸核身流程的标识，调用[GetFaceidRiskInfoToken](https://cloud.tencent.com/document/product/1007/104581)接口时生成。
                      * 
                      */
                     std::string GetFaceIdToken() const;
 
                     /**
-                     * 设置SDK人脸核身流程的标识，调用GetFaceidRiskInfoToken接口时生成。
-                     * @param _faceIdToken SDK人脸核身流程的标识，调用GetFaceidRiskInfoToken接口时生成。
+                     * 设置SDK人脸核身流程的标识，调用[GetFaceidRiskInfoToken](https://cloud.tencent.com/document/product/1007/104581)接口时生成。
+                     * @param _faceIdToken SDK人脸核身流程的标识，调用[GetFaceidRiskInfoToken](https://cloud.tencent.com/document/product/1007/104581)接口时生成。
                      * 
                      */
                     void SetFaceIdToken(const std::string& _faceIdToken);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * SDK人脸核身流程的标识，调用GetFaceidRiskInfoToken接口时生成。
+                     * SDK人脸核身流程的标识，调用[GetFaceidRiskInfoToken](https://cloud.tencent.com/document/product/1007/104581)接口时生成。
                      */
                     std::string m_faceIdToken;
                     bool m_faceIdTokenHasBeenSet;

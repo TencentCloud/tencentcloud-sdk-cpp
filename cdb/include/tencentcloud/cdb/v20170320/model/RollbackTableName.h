@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取回档前的原数据库表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableName 回档前的原数据库表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTableName() const;
 
                     /**
                      * 设置回档前的原数据库表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tableName 回档前的原数据库表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTableName(const std::string& _tableName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取回档后的新数据库表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NewTableName 回档后的新数据库表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNewTableName() const;
 
                     /**
                      * 设置回档后的新数据库表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _newTableName 回档后的新数据库表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNewTableName(const std::string& _newTableName);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 回档前的原数据库表名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tableName;
                     bool m_tableNameHasBeenSet;
 
                     /**
                      * 回档后的新数据库表名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_newTableName;
                     bool m_newTableNameHasBeenSet;

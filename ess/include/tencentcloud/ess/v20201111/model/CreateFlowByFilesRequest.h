@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,27 +48,27 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取执行本接口操作的员工信息。使用此接口时，必须填写userId。
-支持填入集团子公司经办人 userId 代发合同。
+                     * 获取本合同的发起人  <a href="https://qcloudimg.tencent-cloud.cn/raw/f850cfbe163a1cb38439a9f551c2505c.png" target="_blank">点击查看合同发起人展示的位置</a>
 
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
-                     * @return Operator 执行本接口操作的员工信息。使用此接口时，必须填写userId。
-支持填入集团子公司经办人 userId 代发合同。
+注： 支持填入集团子公司经办人 userId 代发合同。
 
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * @return Operator 本合同的发起人  <a href="https://qcloudimg.tencent-cloud.cn/raw/f850cfbe163a1cb38439a9f551c2505c.png" target="_blank">点击查看合同发起人展示的位置</a>
+
+注： 支持填入集团子公司经办人 userId 代发合同。
+
                      * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置执行本接口操作的员工信息。使用此接口时，必须填写userId。
-支持填入集团子公司经办人 userId 代发合同。
+                     * 设置本合同的发起人  <a href="https://qcloudimg.tencent-cloud.cn/raw/f850cfbe163a1cb38439a9f551c2505c.png" target="_blank">点击查看合同发起人展示的位置</a>
 
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
-                     * @param _operator 执行本接口操作的员工信息。使用此接口时，必须填写userId。
-支持填入集团子公司经办人 userId 代发合同。
+注： 支持填入集团子公司经办人 userId 代发合同。
 
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * @param _operator 本合同的发起人  <a href="https://qcloudimg.tencent-cloud.cn/raw/f850cfbe163a1cb38439a9f551c2505c.png" target="_blank">点击查看合同发起人展示的位置</a>
+
+注： 支持填入集团子公司经办人 userId 代发合同。
+
                      * 
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -218,43 +218,51 @@ namespace TencentCloud
                     bool FlowTypeHasBeenSet() const;
 
                     /**
-                     * 获取模板或者合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体
+                     * 获取发起的时候合成到PDF上的填写控件（需要提供填写控件的内容）
 <ul><li> 单行文本控件      </li>
 <li> 多行文本控件      </li>
 <li> 勾选框控件        </li>
 <li> 数字控件          </li>
 <li> 图片控件          </li>
-<li> 水印控件          </li>
-<li> 动态表格等填写控件</li></ul>
-                     * @return Components 模板或者合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体
+<li> 水印控件等          </li>
+</ul>
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/e004195ee4cb98a7f9bc12eb4a0a0b77.png)
+                     * @return Components 发起的时候合成到PDF上的填写控件（需要提供填写控件的内容）
 <ul><li> 单行文本控件      </li>
 <li> 多行文本控件      </li>
 <li> 勾选框控件        </li>
 <li> 数字控件          </li>
 <li> 图片控件          </li>
-<li> 水印控件          </li>
-<li> 动态表格等填写控件</li></ul>
+<li> 水印控件等          </li>
+</ul>
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/e004195ee4cb98a7f9bc12eb4a0a0b77.png)
                      * 
                      */
                     std::vector<Component> GetComponents() const;
 
                     /**
-                     * 设置模板或者合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体
+                     * 设置发起的时候合成到PDF上的填写控件（需要提供填写控件的内容）
 <ul><li> 单行文本控件      </li>
 <li> 多行文本控件      </li>
 <li> 勾选框控件        </li>
 <li> 数字控件          </li>
 <li> 图片控件          </li>
-<li> 水印控件          </li>
-<li> 动态表格等填写控件</li></ul>
-                     * @param _components 模板或者合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体
+<li> 水印控件等          </li>
+</ul>
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/e004195ee4cb98a7f9bc12eb4a0a0b77.png)
+                     * @param _components 发起的时候合成到PDF上的填写控件（需要提供填写控件的内容）
 <ul><li> 单行文本控件      </li>
 <li> 多行文本控件      </li>
 <li> 勾选框控件        </li>
 <li> 数字控件          </li>
 <li> 图片控件          </li>
-<li> 水印控件          </li>
-<li> 动态表格等填写控件</li></ul>
+<li> 水印控件等          </li>
+</ul>
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/e004195ee4cb98a7f9bc12eb4a0a0b77.png)
                      * 
                      */
                     void SetComponents(const std::vector<Component>& _components);
@@ -547,9 +555,13 @@ namespace TencentCloud
                      * 获取签署方签署控件（印章/签名等）的生成方式：
 <ul><li> **0**：在合同流程发起时，由发起人指定签署方的签署控件的位置和数量。</li>
 <li> **1**：签署方在签署时自行添加签署控件，可以拖动位置和控制数量。</li></ul>
+
+注：签署方在签署时自行添加签署控件仅支持电子签小程序或web控制台签署，不支持H5
                      * @return SignBeanTag 签署方签署控件（印章/签名等）的生成方式：
 <ul><li> **0**：在合同流程发起时，由发起人指定签署方的签署控件的位置和数量。</li>
 <li> **1**：签署方在签署时自行添加签署控件，可以拖动位置和控制数量。</li></ul>
+
+注：签署方在签署时自行添加签署控件仅支持电子签小程序或web控制台签署，不支持H5
                      * 
                      */
                     int64_t GetSignBeanTag() const;
@@ -558,9 +570,13 @@ namespace TencentCloud
                      * 设置签署方签署控件（印章/签名等）的生成方式：
 <ul><li> **0**：在合同流程发起时，由发起人指定签署方的签署控件的位置和数量。</li>
 <li> **1**：签署方在签署时自行添加签署控件，可以拖动位置和控制数量。</li></ul>
+
+注：签署方在签署时自行添加签署控件仅支持电子签小程序或web控制台签署，不支持H5
                      * @param _signBeanTag 签署方签署控件（印章/签名等）的生成方式：
 <ul><li> **0**：在合同流程发起时，由发起人指定签署方的签署控件的位置和数量。</li>
 <li> **1**：签署方在签署时自行添加签署控件，可以拖动位置和控制数量。</li></ul>
+
+注：签署方在签署时自行添加签署控件仅支持电子签小程序或web控制台签署，不支持H5
                      * 
                      */
                     void SetSignBeanTag(const int64_t& _signBeanTag);
@@ -761,15 +777,15 @@ namespace TencentCloud
                     bool NeedSignReviewHasBeenSet() const;
 
                     /**
-                     * 获取在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
-                     * @return FlowDisplayType 在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
+                     * 获取在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li><li> <b>3</b> :文书</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
+                     * @return FlowDisplayType 在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li><li> <b>3</b> :文书</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
                      * 
                      */
                     int64_t GetFlowDisplayType() const;
 
                     /**
-                     * 设置在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
-                     * @param _flowDisplayType 在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
+                     * 设置在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li><li> <b>3</b> :文书</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
+                     * @param _flowDisplayType 在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li><li> <b>3</b> :文书</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
                      * 
                      */
                     void SetFlowDisplayType(const int64_t& _flowDisplayType);
@@ -813,10 +829,10 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 执行本接口操作的员工信息。使用此接口时，必须填写userId。
-支持填入集团子公司经办人 userId 代发合同。
+                     * 本合同的发起人  <a href="https://qcloudimg.tencent-cloud.cn/raw/f850cfbe163a1cb38439a9f551c2505c.png" target="_blank">点击查看合同发起人展示的位置</a>
 
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+注： 支持填入集团子公司经办人 userId 代发合同。
+
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
@@ -860,14 +876,16 @@ namespace TencentCloud
                     bool m_flowTypeHasBeenSet;
 
                     /**
-                     * 模板或者合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体
+                     * 发起的时候合成到PDF上的填写控件（需要提供填写控件的内容）
 <ul><li> 单行文本控件      </li>
 <li> 多行文本控件      </li>
 <li> 勾选框控件        </li>
 <li> 数字控件          </li>
 <li> 图片控件          </li>
-<li> 水印控件          </li>
-<li> 动态表格等填写控件</li></ul>
+<li> 水印控件等          </li>
+</ul>
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/e004195ee4cb98a7f9bc12eb4a0a0b77.png)
                      */
                     std::vector<Component> m_components;
                     bool m_componentsHasBeenSet;
@@ -952,6 +970,8 @@ namespace TencentCloud
                      * 签署方签署控件（印章/签名等）的生成方式：
 <ul><li> **0**：在合同流程发起时，由发起人指定签署方的签署控件的位置和数量。</li>
 <li> **1**：签署方在签署时自行添加签署控件，可以拖动位置和控制数量。</li></ul>
+
+注：签署方在签署时自行添加签署控件仅支持电子签小程序或web控制台签署，不支持H5
                      */
                     int64_t m_signBeanTag;
                     bool m_signBeanTagHasBeenSet;
@@ -1007,7 +1027,7 @@ namespace TencentCloud
                     bool m_needSignReviewHasBeenSet;
 
                     /**
-                     * 在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
+                     * 在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li><li> <b>3</b> :文书</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
                      */
                     int64_t m_flowDisplayType;
                     bool m_flowDisplayTypeHasBeenSet;

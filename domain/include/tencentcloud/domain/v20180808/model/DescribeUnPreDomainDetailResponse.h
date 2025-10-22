@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,8 +72,10 @@ namespace TencentCloud
                     bool PreCountHasBeenSet() const;
 
                     /**
-                     * 获取域名注册时间
-                     * @return RegTime 域名注册时间
+                     * 获取域名注册时间 
+格式:YYYY-MM-DD HH:mm:ss
+                     * @return RegTime 域名注册时间 
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetRegTime() const;
@@ -86,8 +88,10 @@ namespace TencentCloud
                     bool RegTimeHasBeenSet() const;
 
                     /**
-                     * 获取域名删除时间
-                     * @return DeleteTime 域名删除时间
+                     * 获取域名删除时间 
+格式:YYYY-MM-DD HH:mm:ss
+                     * @return DeleteTime 域名删除时间 
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetDeleteTime() const;
@@ -100,8 +104,10 @@ namespace TencentCloud
                     bool DeleteTimeHasBeenSet() const;
 
                     /**
-                     * 获取到期时间
-                     * @return ExpireTime 到期时间
+                     * 获取到期时间 
+格式:YYYY-MM-DD HH:mm:ss
+                     * @return ExpireTime 到期时间 
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetExpireTime() const;
@@ -115,7 +121,11 @@ namespace TencentCloud
 
                     /**
                      * 获取域名状态
+ bid：出价
+noAction：无法操作
                      * @return Status 域名状态
+ bid：出价
+noAction：无法操作
                      * 
                      */
                     std::string GetStatus() const;
@@ -128,8 +138,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取域名价格
-                     * @return CurrentPrice 域名价格
+                     * 获取域名价格 单位元
+                     * @return CurrentPrice 域名价格 单位元
                      * 
                      */
                     double GetCurrentPrice() const;
@@ -142,8 +152,8 @@ namespace TencentCloud
                     bool CurrentPriceHasBeenSet() const;
 
                     /**
-                     * 获取域名保证金
-                     * @return AppointBondPrice 域名保证金
+                     * 获取域名保证金 单位元
+                     * @return AppointBondPrice 域名保证金 单位元
                      * 
                      */
                     double GetAppointBondPrice() const;
@@ -212,37 +222,42 @@ namespace TencentCloud
                     bool m_preCountHasBeenSet;
 
                     /**
-                     * 域名注册时间
+                     * 域名注册时间 
+格式:YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_regTime;
                     bool m_regTimeHasBeenSet;
 
                     /**
-                     * 域名删除时间
+                     * 域名删除时间 
+格式:YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_deleteTime;
                     bool m_deleteTimeHasBeenSet;
 
                     /**
-                     * 到期时间
+                     * 到期时间 
+格式:YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
                      * 域名状态
+ bid：出价
+noAction：无法操作
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 域名价格
+                     * 域名价格 单位元
                      */
                     double m_currentPrice;
                     bool m_currentPriceHasBeenSet;
 
                     /**
-                     * 域名保证金
+                     * 域名保证金 单位元
                      */
                     double m_appointBondPrice;
                     bool m_appointBondPriceHasBeenSet;

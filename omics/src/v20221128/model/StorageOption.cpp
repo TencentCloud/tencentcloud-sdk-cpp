@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,9 @@ using namespace std;
 StorageOption::StorageOption() :
     m_storageTypeHasBeenSet(false),
     m_zoneHasBeenSet(false),
-    m_capacityHasBeenSet(false)
+    m_capacityHasBeenSet(false),
+    m_enableAutoScaleUpHasBeenSet(false),
+    m_metaTypeHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,26 @@ CoreInternalOutcome StorageOption::Deserialize(const rapidjson::Value &value)
         m_capacityHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableAutoScaleUp") && !value["EnableAutoScaleUp"].IsNull())
+    {
+        if (!value["EnableAutoScaleUp"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `StorageOption.EnableAutoScaleUp` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableAutoScaleUp = value["EnableAutoScaleUp"].GetBool();
+        m_enableAutoScaleUpHasBeenSet = true;
+    }
+
+    if (value.HasMember("MetaType") && !value["MetaType"].IsNull())
+    {
+        if (!value["MetaType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `StorageOption.MetaType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_metaType = string(value["MetaType"].GetString());
+        m_metaTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +113,22 @@ void StorageOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Capacity";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_capacity, allocator);
+    }
+
+    if (m_enableAutoScaleUpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableAutoScaleUp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableAutoScaleUp, allocator);
+    }
+
+    if (m_metaTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetaType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_metaType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +180,37 @@ void StorageOption::SetCapacity(const uint64_t& _capacity)
 bool StorageOption::CapacityHasBeenSet() const
 {
     return m_capacityHasBeenSet;
+}
+
+bool StorageOption::GetEnableAutoScaleUp() const
+{
+    return m_enableAutoScaleUp;
+}
+
+void StorageOption::SetEnableAutoScaleUp(const bool& _enableAutoScaleUp)
+{
+    m_enableAutoScaleUp = _enableAutoScaleUp;
+    m_enableAutoScaleUpHasBeenSet = true;
+}
+
+bool StorageOption::EnableAutoScaleUpHasBeenSet() const
+{
+    return m_enableAutoScaleUpHasBeenSet;
+}
+
+string StorageOption::GetMetaType() const
+{
+    return m_metaType;
+}
+
+void StorageOption::SetMetaType(const string& _metaType)
+{
+    m_metaType = _metaType;
+    m_metaTypeHasBeenSet = true;
+}
+
+bool StorageOption::MetaTypeHasBeenSet() const
+{
+    return m_metaTypeHasBeenSet;
 }
 

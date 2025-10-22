@@ -1,5 +1,5 @@
 # 简介
-欢迎使用腾讯云开发者工具套件（SDK）3.0，SDK3.0是云 API3.0 平台的配套工具。目前已经支持cvm、vpc、cbs等产品，后续所有的云服务产品都会接入进来。新版SDK实现了统一化，具有各个语言版本的SDK使用方法相同，接口调用方式相同，统一的错误码和返回包格式这些优点。
+欢迎使用腾讯云开发者工具套件（SDK），此 SDK 是云 API 3.0 平台的配套开发工具。
 为方便 C++ 开发者调试和接入腾讯云产品 API，这里向您介绍适用于 C++ 的腾讯云开发工具包，并提供首次使用开发工具包的简单示例。让您快速获取腾讯云 C++ SDK 并开始调用。
 
 # 环境依赖
@@ -81,13 +81,14 @@ vcpkg install openssl:x64-windows
 
 # 从源代码构建 SDK
 
-1. 前往 [Github 仓库](https://github.com/tencentcloud/tencentcloud-sdk-cpp) 或者 [Gitee 仓库](https://gitee.com/tencentcloud/tencentcloud-sdk-cpp) 下载最新代码
+## 安装指定产品 SDK（推荐）
+1. 前往 [CNB](https://cnb.cool/tencent/cloud/api/sdk/tencentcloud-sdk-cpp)、[Github](https://github.com/tencentcloud/tencentcloud-sdk-cpp) 或者 [Gitee](https://gitee.com/tencentcloud/tencentcloud-sdk-cpp) 下载最新代码
 2. 进入 SDK 创建生成必要的构建文件
 
 - linux / macos
 ```bash
 # build
-# 通过 BUILD_MODULES 指定产品编译，使用分号;分隔（可选）
+# 通过 BUILD_MODULES 指定产品编译，使用分号;分隔（可选），以cvm和cbs为例
 ./build.sh build -DBUILD_MODULES="cvm;cbs"
 
 # install
@@ -100,7 +101,7 @@ vcpkg install openssl:x64-windows
 Set-ExecutionPolicy Bypass -Scope Process
 
 # 64位build
-# 通过 BUILD_MODULES 指定产品编译，使用分号;分隔（可选）
+# 通过 BUILD_MODULES 指定产品编译，使用分号;分隔（可选），以cvm和cbs为例
 # 通过 CMAKE_TOOLCHAIN_FILE 指定 vcpkg 目录（必须）
 .\build.ps1 build -DBUILD_MODULES="cvm;cbs" -DCMAKE_TOOLCHAIN_FILE='[path to vcpkg]/scripts/buildsystems/vcpkg.cmake'
 
@@ -113,15 +114,21 @@ Set-ExecutionPolicy Bypass -Scope Process
 # install，需要 Administrator 权限
 .\build.ps1 install
 ```
+具体产品的包名缩写请参考 [products.md](./products.md) 中的包名字段。
 
-注意：从3.0.387版本开始，默认将不再编译所有产品。因为对于低版本编译器将需要约 8GB 内存才能编译完成，且未来随着产品和接口的增长，内存需求会逐渐增加。
+## 安装全产品 SDK
+指定参数 `-DBUILD_MODULES_ALL=on`。
 
-通过指定编译选项，可以控制部分编译行为。注意：某些选项的变更需要删除 `sdk_build` 目录后才会生效。更多选项可以参考 `CMakeLists.txt` 文件：
+全产品 SDK 包含了所有云产品的调用代码，体积偏大，对体积敏感的场景，推荐安装指定产品 SDK。
 
-1. 生成静态库文件：`cmake -DBUILD_SHARED_LIBS=off ..`。
-2. 指定产品编译，分号;分隔：`cmake -DBUILD_MODULES="cvm;vpc;cdb" ..`
-3. 编译所有产品：`cmake -DBUILD_MODULES_ALL=on ..`
-4. 如果产品列表过长，以上参数都不方便使用，可以直接编辑根路径下的 `CMakeLists.txt` 文件，关闭不需要产品的编译，例如云服务器 cvm，用 `#` 符号注释掉 `add_subdirectory(cvm)` 及附近相关代码，改为 `#add_subdirectory(cvm)`。
+从3.0.387版本开始，默认将不再编译所有产品。因为对于低版本编译器将需要约 8GB 内存才能编译完成，且未来随着产品和接口的增长，内存需求会逐渐增加。
+
+## 注意事项
+- 安装全产品 SDK 和安装指定产品的 SDK 两种方式只能选择其中一种。
+- 如果同时安装多个产品的包，建议多个产品的包和 common 包保持在同一个版本
+- 通过指定编译选项，可以控制部分编译行为。注意：某些选项的变更需要删除 `sdk_build` 目录后才会生效。更多选项可以参考 `CMakeLists.txt` 文件：
+- 生成静态库文件：`cmake -DBUILD_SHARED_LIBS=off ..`。
+- 如果产品列表过长，以上参数都不方便使用，可以直接编辑根路径下的 `CMakeLists.txt` 文件，关闭不需要产品的编译，例如云服务器 cvm，用 `#` 符号注释掉 `add_subdirectory(cvm)` 及附近相关代码，改为 `#add_subdirectory(cvm)`。
 
 # 使用 C++ SDK 示例
 下文以 cvm 产品的 DescribeInstances 接口为例：
@@ -227,10 +234,14 @@ int main()
     httpProfile.SetReqTimeout(30);  // 请求超时时间，单位为秒(默认60秒)
     httpProfile.SetConnectTimeout(30); // 响应超时时间，单位是秒(默认是60秒)
 
+    // 使用SSL默认CA证书的，无需调用SetCaInfo和SetCaPath
+    // httpProfile.SetCaInfo("/etc/pki/tls/certs/ca-bundle.crt"); // 如果指定了CA文件，设置的CaPath不会生效，请求会使用CaInfo设置的CA证书
+    // httpProfile.SetCaPath("/etc/pki/tls/"); // 未指定CaInfo的情况下，使用CaPath路径下的CA证书
+
     ClientProfile clientProfile = ClientProfile(httpProfile);
 
     DescribeInstancesRequest req = DescribeInstancesRequest();
-   
+
     Filter respFilter;
     respFilter.SetName("zone");
     respFilter.SetValues({ "ap-guangzhou-1", "ap-guangzhou-2" });
@@ -302,7 +313,7 @@ target_link_libraries(DescribeInstancesAsync tencentcloud-sdk-cpp-cvm tencentclo
 
 **注意，您必须明确知道您调用的接口所需参数，否则可能会调用失败。**
 
-Common Client参考[example](https://github.com/TencentCloud/tencentcloud-sdk-cpp/blob/master/example/common_client/DescribeInstances.cpp)
+Common Client参考[example](example/common_client/DescribeInstances.cpp)
 
 
 ## C++ SDK支持压缩协议使用方式

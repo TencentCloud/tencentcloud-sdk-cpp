@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicId 日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicId 日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorMsg 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrorMsg() const;
 
                     /**
                      * 设置错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errorMsg 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrorMsg(const std::string& _errorMsg);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorCodeStr 错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrorCodeStr() const;
 
                     /**
                      * 设置错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errorCodeStr 错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrorCodeStr(const std::string& _errorCodeStr);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
                      * 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorMsg;
                     bool m_errorMsgHasBeenSet;
 
                     /**
                      * 错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorCodeStr;
                     bool m_errorCodeStrHasBeenSet;

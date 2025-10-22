@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,8 @@ using namespace std;
 
 AccountPassword::AccountPassword() :
     m_userNameHasBeenSet(false),
-    m_passwordHasBeenSet(false)
+    m_passwordHasBeenSet(false),
+    m_encryptedVersionHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome AccountPassword::Deserialize(const rapidjson::Value &value)
         m_passwordHasBeenSet = true;
     }
 
+    if (value.HasMember("EncryptedVersion") && !value["EncryptedVersion"].IsNull())
+    {
+        if (!value["EncryptedVersion"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccountPassword.EncryptedVersion` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_encryptedVersion = value["EncryptedVersion"].GetInt64();
+        m_encryptedVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void AccountPassword::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Password";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_password.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptedVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptedVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_encryptedVersion, allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void AccountPassword::SetPassword(const string& _password)
 bool AccountPassword::PasswordHasBeenSet() const
 {
     return m_passwordHasBeenSet;
+}
+
+int64_t AccountPassword::GetEncryptedVersion() const
+{
+    return m_encryptedVersion;
+}
+
+void AccountPassword::SetEncryptedVersion(const int64_t& _encryptedVersion)
+{
+    m_encryptedVersion = _encryptedVersion;
+    m_encryptedVersionHasBeenSet = true;
+}
+
+bool AccountPassword::EncryptedVersionHasBeenSet() const
+{
+    return m_encryptedVersionHasBeenSet;
 }
 

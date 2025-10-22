@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取集群APIServer的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterDomain 集群APIServer的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterDomain() const;
@@ -119,9 +117,7 @@ namespace TencentCloud
 
                     /**
                      * 获取外网域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterExternalDomain 外网域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterExternalDomain() const;
@@ -135,9 +131,7 @@ namespace TencentCloud
 
                     /**
                      * 获取内网域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterIntranetDomain 内网域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterIntranetDomain() const;
@@ -151,9 +145,7 @@ namespace TencentCloud
 
                     /**
                      * 获取外网安全组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecurityGroup 外网安全组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSecurityGroup() const;
@@ -167,9 +159,7 @@ namespace TencentCloud
 
                     /**
                      * 获取内网访问所属子网
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterIntranetSubnetId 内网访问所属子网
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterIntranetSubnetId() const;
@@ -203,7 +193,6 @@ namespace TencentCloud
 
                     /**
                      * 集群APIServer的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterDomain;
                     bool m_clusterDomainHasBeenSet;
@@ -217,28 +206,24 @@ namespace TencentCloud
 
                     /**
                      * 外网域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterExternalDomain;
                     bool m_clusterExternalDomainHasBeenSet;
 
                     /**
                      * 内网域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterIntranetDomain;
                     bool m_clusterIntranetDomainHasBeenSet;
 
                     /**
                      * 外网安全组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_securityGroup;
                     bool m_securityGroupHasBeenSet;
 
                     /**
                      * 内网访问所属子网
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterIntranetSubnetId;
                     bool m_clusterIntranetSubnetIdHasBeenSet;

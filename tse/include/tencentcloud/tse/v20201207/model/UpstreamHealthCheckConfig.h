@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开启主动健康检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableActiveHealthCheck 开启主动健康检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableActiveHealthCheck() const;
 
                     /**
                      * 设置开启主动健康检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableActiveHealthCheck 开启主动健康检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableActiveHealthCheck(const bool& _enableActiveHealthCheck);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主动健康检查配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActiveHealthCheck 主动健康检查配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KongActiveHealthCheck GetActiveHealthCheck() const;
 
                     /**
                      * 设置主动健康检查配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _activeHealthCheck 主动健康检查配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActiveHealthCheck(const KongActiveHealthCheck& _activeHealthCheck);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开启被动健康检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnablePassiveHealthCheck 开启被动健康检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnablePassiveHealthCheck() const;
 
                     /**
                      * 设置开启被动健康检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enablePassiveHealthCheck 开启被动健康检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnablePassiveHealthCheck(const bool& _enablePassiveHealthCheck);
@@ -125,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取被动健康检查配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PassiveHealthCheck 被动健康检查配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KongPassiveHealthCheck GetPassiveHealthCheck() const;
 
                     /**
                      * 设置被动健康检查配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _passiveHealthCheck 被动健康检查配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPassiveHealthCheck(const KongPassiveHealthCheck& _passiveHealthCheck);
@@ -150,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取连续健康阈值，单位：次
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Successes 连续健康阈值，单位：次
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSuccesses() const;
 
                     /**
                      * 设置连续健康阈值，单位：次
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _successes 连续健康阈值，单位：次
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSuccesses(const uint64_t& _successes);
@@ -175,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取连续异常阈值，单位：次	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Failures 连续异常阈值，单位：次	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetFailures() const;
 
                     /**
                      * 设置连续异常阈值，单位：次	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _failures 连续异常阈值，单位：次	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFailures(const uint64_t& _failures);
@@ -200,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取超时阈值，单位：次
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timeouts 超时阈值，单位：次
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTimeouts() const;
 
                     /**
                      * 设置超时阈值，单位：次
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeouts 超时阈值，单位：次
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeouts(const uint64_t& _timeouts);
@@ -225,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取健康HTTP状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HealthyHttpStatuses 健康HTTP状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<uint64_t> GetHealthyHttpStatuses() const;
 
                     /**
                      * 设置健康HTTP状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _healthyHttpStatuses 健康HTTP状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHealthyHttpStatuses(const std::vector<uint64_t>& _healthyHttpStatuses);
@@ -250,18 +218,14 @@ namespace TencentCloud
 
                     /**
                      * 获取异常HTTP状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnhealthyHttpStatuses 异常HTTP状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<uint64_t> GetUnhealthyHttpStatuses() const;
 
                     /**
                      * 设置异常HTTP状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _unhealthyHttpStatuses 异常HTTP状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUnhealthyHttpStatuses(const std::vector<uint64_t>& _unhealthyHttpStatuses);
@@ -300,18 +264,14 @@ namespace TencentCloud
 
                     /**
                      * 获取健康检查支持权重为0节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZeroWeightHeathCheck 健康检查支持权重为0节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetZeroWeightHeathCheck() const;
 
                     /**
                      * 设置健康检查支持权重为0节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zeroWeightHeathCheck 健康检查支持权重为0节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZeroWeightHeathCheck(const bool& _zeroWeightHeathCheck);
@@ -327,63 +287,54 @@ namespace TencentCloud
 
                     /**
                      * 开启主动健康检查
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableActiveHealthCheck;
                     bool m_enableActiveHealthCheckHasBeenSet;
 
                     /**
                      * 主动健康检查配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KongActiveHealthCheck m_activeHealthCheck;
                     bool m_activeHealthCheckHasBeenSet;
 
                     /**
                      * 开启被动健康检查
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enablePassiveHealthCheck;
                     bool m_enablePassiveHealthCheckHasBeenSet;
 
                     /**
                      * 被动健康检查配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KongPassiveHealthCheck m_passiveHealthCheck;
                     bool m_passiveHealthCheckHasBeenSet;
 
                     /**
                      * 连续健康阈值，单位：次
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_successes;
                     bool m_successesHasBeenSet;
 
                     /**
                      * 连续异常阈值，单位：次	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_failures;
                     bool m_failuresHasBeenSet;
 
                     /**
                      * 超时阈值，单位：次
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_timeouts;
                     bool m_timeoutsHasBeenSet;
 
                     /**
                      * 健康HTTP状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<uint64_t> m_healthyHttpStatuses;
                     bool m_healthyHttpStatusesHasBeenSet;
 
                     /**
                      * 异常HTTP状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<uint64_t> m_unhealthyHttpStatuses;
                     bool m_unhealthyHttpStatusesHasBeenSet;
@@ -397,7 +348,6 @@ namespace TencentCloud
 
                     /**
                      * 健康检查支持权重为0节点
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_zeroWeightHeathCheck;
                     bool m_zeroWeightHeathCheckHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -315,6 +315,90 @@ namespace TencentCloud
                      */
                     bool SortTypeHasBeenSet() const;
 
+                    /**
+                     * 获取项目ID列表，用于多项目工作流筛选
+                     * @return ProjectIds 项目ID列表，用于多项目工作流筛选
+                     * 
+                     */
+                    std::vector<std::string> GetProjectIds() const;
+
+                    /**
+                     * 设置项目ID列表，用于多项目工作流筛选
+                     * @param _projectIds 项目ID列表，用于多项目工作流筛选
+                     * 
+                     */
+                    void SetProjectIds(const std::vector<std::string>& _projectIds);
+
+                    /**
+                     * 判断参数 ProjectIds 是否已赋值
+                     * @return ProjectIds 是否已赋值
+                     * 
+                     */
+                    bool ProjectIdsHasBeenSet() const;
+
+                    /**
+                     * 获取工作流类型列表 多个用英文逗号连接 cycle,manual. 默认只查询 cycle
+                     * @return WorkflowTypeList 工作流类型列表 多个用英文逗号连接 cycle,manual. 默认只查询 cycle
+                     * 
+                     */
+                    std::vector<std::string> GetWorkflowTypeList() const;
+
+                    /**
+                     * 设置工作流类型列表 多个用英文逗号连接 cycle,manual. 默认只查询 cycle
+                     * @param _workflowTypeList 工作流类型列表 多个用英文逗号连接 cycle,manual. 默认只查询 cycle
+                     * 
+                     */
+                    void SetWorkflowTypeList(const std::vector<std::string>& _workflowTypeList);
+
+                    /**
+                     * 判断参数 WorkflowTypeList 是否已赋值
+                     * @return WorkflowTypeList 是否已赋值
+                     * 
+                     */
+                    bool WorkflowTypeListHasBeenSet() const;
+
+                    /**
+                     * 获取工作流过滤keyword，支持工作流 id/name 模糊匹配， 多个用|分割
+                     * @return KeyWord 工作流过滤keyword，支持工作流 id/name 模糊匹配， 多个用|分割
+                     * 
+                     */
+                    std::string GetKeyWord() const;
+
+                    /**
+                     * 设置工作流过滤keyword，支持工作流 id/name 模糊匹配， 多个用|分割
+                     * @param _keyWord 工作流过滤keyword，支持工作流 id/name 模糊匹配， 多个用|分割
+                     * 
+                     */
+                    void SetKeyWord(const std::string& _keyWord);
+
+                    /**
+                     * 判断参数 KeyWord 是否已赋值
+                     * @return KeyWord 是否已赋值
+                     * 
+                     */
+                    bool KeyWordHasBeenSet() const;
+
+                    /**
+                     * 获取**时区** timeZone, 默认UTC+8
+                     * @return ScheduleTimeZone **时区** timeZone, 默认UTC+8
+                     * 
+                     */
+                    std::string GetScheduleTimeZone() const;
+
+                    /**
+                     * 设置**时区** timeZone, 默认UTC+8
+                     * @param _scheduleTimeZone **时区** timeZone, 默认UTC+8
+                     * 
+                     */
+                    void SetScheduleTimeZone(const std::string& _scheduleTimeZone);
+
+                    /**
+                     * 判断参数 ScheduleTimeZone 是否已赋值
+                     * @return ScheduleTimeZone 是否已赋值
+                     * 
+                     */
+                    bool ScheduleTimeZoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -394,6 +478,30 @@ namespace TencentCloud
                      */
                     std::string m_sortType;
                     bool m_sortTypeHasBeenSet;
+
+                    /**
+                     * 项目ID列表，用于多项目工作流筛选
+                     */
+                    std::vector<std::string> m_projectIds;
+                    bool m_projectIdsHasBeenSet;
+
+                    /**
+                     * 工作流类型列表 多个用英文逗号连接 cycle,manual. 默认只查询 cycle
+                     */
+                    std::vector<std::string> m_workflowTypeList;
+                    bool m_workflowTypeListHasBeenSet;
+
+                    /**
+                     * 工作流过滤keyword，支持工作流 id/name 模糊匹配， 多个用|分割
+                     */
+                    std::string m_keyWord;
+                    bool m_keyWordHasBeenSet;
+
+                    /**
+                     * **时区** timeZone, 默认UTC+8
+                     */
+                    std::string m_scheduleTimeZone;
+                    bool m_scheduleTimeZoneHasBeenSet;
 
                 };
             }

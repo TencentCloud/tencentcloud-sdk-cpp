@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取kafka分区编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PartitionNo kafka分区编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPartitionNo() const;
 
                     /**
                      * 设置kafka分区编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _partitionNo kafka分区编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPartitionNo(const uint64_t& _partitionNo);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取kafka offset
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Offset kafka offset
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置kafka offset
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _offset kafka offset
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * kafka分区编号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_partitionNo;
                     bool m_partitionNoHasBeenSet;
 
                     /**
                      * kafka offset
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,6 +65,27 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
+                     * 获取源站记录信息，此参数必填。
+                     * @return Records 源站记录信息，此参数必填。
+                     * 
+                     */
+                    std::vector<OriginRecord> GetRecords() const;
+
+                    /**
+                     * 设置源站记录信息，此参数必填。
+                     * @param _records 源站记录信息，此参数必填。
+                     * 
+                     */
+                    void SetRecords(const std::vector<OriginRecord>& _records);
+
+                    /**
+                     * 判断参数 Records 是否已赋值
+                     * @return Records 是否已赋值
+                     * 
+                     */
+                    bool RecordsHasBeenSet() const;
+
+                    /**
                      * 获取源站组名称，可输入1 - 200个字符，允许的字符为 a - z, A - Z, 0 - 9, _, - 。
                      * @return Name 源站组名称，可输入1 - 200个字符，允许的字符为 a - z, A - Z, 0 - 9, _, - 。
                      * 
@@ -115,27 +136,6 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取源站记录信息，此参数必填。
-                     * @return Records 源站记录信息，此参数必填。
-                     * 
-                     */
-                    std::vector<OriginRecord> GetRecords() const;
-
-                    /**
-                     * 设置源站记录信息，此参数必填。
-                     * @param _records 源站记录信息，此参数必填。
-                     * 
-                     */
-                    void SetRecords(const std::vector<OriginRecord>& _records);
-
-                    /**
-                     * 判断参数 Records 是否已赋值
-                     * @return Records 是否已赋值
-                     * 
-                     */
-                    bool RecordsHasBeenSet() const;
-
-                    /**
                      * 获取回源 Host Header，仅 Type = HTTP 时传入生效，规则引擎修改 Host Header 配置优先级高于源站组的 Host Header。
                      * @return HostHeader 回源 Host Header，仅 Type = HTTP 时传入生效，规则引擎修改 Host Header 配置优先级高于源站组的 Host Header。
                      * 
@@ -165,6 +165,12 @@ namespace TencentCloud
                     bool m_zoneIdHasBeenSet;
 
                     /**
+                     * 源站记录信息，此参数必填。
+                     */
+                    std::vector<OriginRecord> m_records;
+                    bool m_recordsHasBeenSet;
+
+                    /**
                      * 源站组名称，可输入1 - 200个字符，允许的字符为 a - z, A - Z, 0 - 9, _, - 。
                      */
                     std::string m_name;
@@ -177,12 +183,6 @@ namespace TencentCloud
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
-
-                    /**
-                     * 源站记录信息，此参数必填。
-                     */
-                    std::vector<OriginRecord> m_records;
-                    bool m_recordsHasBeenSet;
 
                     /**
                      * 回源 Host Header，仅 Type = HTTP 时传入生效，规则引擎修改 Host Header 配置优先级高于源站组的 Host Header。

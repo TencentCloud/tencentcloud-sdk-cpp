@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取存储方式 (nvr或cosmtav)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SaveType 存储方式 (nvr或cosmtav)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSaveType() const;
 
                     /**
                      * 设置存储方式 (nvr或cosmtav)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _saveType 存储方式 (nvr或cosmtav)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSaveType(const std::string& _saveType);
@@ -74,10 +70,8 @@ namespace TencentCloud
                     /**
                      * 获取云存储天数（save_type是cosmtav时这个参数才有效）
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SaveDay 云存储天数（save_type是cosmtav时这个参数才有效）
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSaveDay() const;
@@ -85,10 +79,8 @@ namespace TencentCloud
                     /**
                      * 设置云存储天数（save_type是cosmtav时这个参数才有效）
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _saveDay 云存储天数（save_type是cosmtav时这个参数才有效）
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSaveDay(const int64_t& _saveDay);
@@ -102,18 +94,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实时分辨率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LiveResolution 实时分辨率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLiveResolution() const;
 
                     /**
                      * 设置实时分辨率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _liveResolution 实时分辨率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLiveResolution(const int64_t& _liveResolution);
@@ -127,18 +115,14 @@ namespace TencentCloud
 
                     /**
                      * 获取历史分辨率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HistoryResolution 历史分辨率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHistoryResolution() const;
 
                     /**
                      * 设置历史分辨率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _historyResolution 历史分辨率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHistoryResolution(const int64_t& _historyResolution);
@@ -154,7 +138,6 @@ namespace TencentCloud
 
                     /**
                      * 存储方式 (nvr或cosmtav)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_saveType;
                     bool m_saveTypeHasBeenSet;
@@ -162,21 +145,18 @@ namespace TencentCloud
                     /**
                      * 云存储天数（save_type是cosmtav时这个参数才有效）
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_saveDay;
                     bool m_saveDayHasBeenSet;
 
                     /**
                      * 实时分辨率
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_liveResolution;
                     bool m_liveResolutionHasBeenSet;
 
                     /**
                      * 历史分辨率
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_historyResolution;
                     bool m_historyResolutionHasBeenSet;

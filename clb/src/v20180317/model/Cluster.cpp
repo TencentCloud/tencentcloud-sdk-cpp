@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,7 +45,8 @@ Cluster::Cluster() :
     m_clustersVersionHasBeenSet(false),
     m_disasterRecoveryTypeHasBeenSet(false),
     m_egressHasBeenSet(false),
-    m_iPVersionHasBeenSet(false)
+    m_iPVersionHasBeenSet(false),
+    m_tagHasBeenSet(false)
 {
 }
 
@@ -311,6 +312,26 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         m_iPVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("Tag") && !value["Tag"].IsNull())
+    {
+        if (!value["Tag"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Cluster.Tag` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tag"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TagInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tag.push_back(item);
+        }
+        m_tagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -517,6 +538,21 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "IPVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_iPVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tag.begin(); itr != m_tag.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -920,5 +956,21 @@ void Cluster::SetIPVersion(const string& _iPVersion)
 bool Cluster::IPVersionHasBeenSet() const
 {
     return m_iPVersionHasBeenSet;
+}
+
+vector<TagInfo> Cluster::GetTag() const
+{
+    return m_tag;
+}
+
+void Cluster::SetTag(const vector<TagInfo>& _tag)
+{
+    m_tag = _tag;
+    m_tagHasBeenSet = true;
+}
+
+bool Cluster::TagHasBeenSet() const
+{
+    return m_tagHasBeenSet;
 }
 

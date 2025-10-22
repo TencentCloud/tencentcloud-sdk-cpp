@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -172,21 +172,21 @@ namespace TencentCloud
                     /**
                      * 获取分页偏移量，默认值：0。已经废弃，请根据 ScrollToken 参数进行分批次查询。
                      * @return Offset 分页偏移量，默认值：0。已经废弃，请根据 ScrollToken 参数进行分批次查询。
-                     * 
+                     * @deprecated
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页偏移量，默认值：0。已经废弃，请根据 ScrollToken 参数进行分批次查询。
                      * @param _offset 分页偏移量，默认值：0。已经废弃，请根据 ScrollToken 参数进行分批次查询。
-                     * 
+                     * @deprecated
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool OffsetHasBeenSet() const;
 

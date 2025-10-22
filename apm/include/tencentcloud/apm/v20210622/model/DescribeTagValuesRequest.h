@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取业务系统 ID
+                     * @return InstanceId 业务系统 ID
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置业务系统 ID
+                     * @param _instanceId 业务系统 ID
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
                      * 获取维度名
                      * @return TagKey 维度名
                      * 
@@ -65,36 +86,36 @@ namespace TencentCloud
                     bool TagKeyHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取开始时间（单位为秒）
+                     * @return StartTime 开始时间（单位为秒）
                      * 
                      */
-                    std::string GetInstanceId() const;
+                    int64_t GetStartTime() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置开始时间（单位为秒）
+                     * @param _startTime 开始时间（单位为秒）
                      * 
                      */
-                    void SetInstanceId(const std::string& _instanceId);
+                    void SetStartTime(const int64_t& _startTime);
 
                     /**
-                     * 判断参数 InstanceId 是否已赋值
-                     * @return InstanceId 是否已赋值
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
                      * 
                      */
-                    bool InstanceIdHasBeenSet() const;
+                    bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取结束时间（单位为秒）
+                     * @return EndTime 结束时间（单位为秒）
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param _endTime 结束时间
+                     * 设置结束时间（单位为秒）
+                     * @param _endTime 结束时间（单位为秒）
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -128,36 +149,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
-                     * 
-                     */
-                    int64_t GetStartTime() const;
-
-                    /**
-                     * 设置开始时间
-                     * @param _startTime 开始时间
-                     * 
-                     */
-                    void SetStartTime(const int64_t& _startTime);
-
-                    /**
-                     * 判断参数 StartTime 是否已赋值
-                     * @return StartTime 是否已赋值
-                     * 
-                     */
-                    bool StartTimeHasBeenSet() const;
-
-                    /**
-                     * 获取Or过滤条件
-                     * @return OrFilters Or过滤条件
+                     * 获取Or 过滤条件
+                     * @return OrFilters Or 过滤条件
                      * 
                      */
                     std::vector<Filter> GetOrFilters() const;
 
                     /**
-                     * 设置Or过滤条件
-                     * @param _orFilters Or过滤条件
+                     * 设置Or 过滤条件
+                     * @param _orFilters Or 过滤条件
                      * 
                      */
                     void SetOrFilters(const std::vector<Filter>& _orFilters);
@@ -193,19 +193,25 @@ namespace TencentCloud
                 private:
 
                     /**
+                     * 业务系统 ID
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
                      * 维度名
                      */
                     std::string m_tagKey;
                     bool m_tagKeyHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * 开始时间（单位为秒）
                      */
-                    std::string m_instanceId;
-                    bool m_instanceIdHasBeenSet;
+                    int64_t m_startTime;
+                    bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * 结束时间（单位为秒）
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -217,13 +223,7 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 开始时间
-                     */
-                    int64_t m_startTime;
-                    bool m_startTimeHasBeenSet;
-
-                    /**
-                     * Or过滤条件
+                     * Or 过滤条件
                      */
                     std::vector<Filter> m_orFilters;
                     bool m_orFiltersHasBeenSet;

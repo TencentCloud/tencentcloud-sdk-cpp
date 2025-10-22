@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,7 +48,7 @@ namespace TencentCloud
                      * @return FlowId 开启流程ID
                      * 
                      */
-                    std::string GetFlowId() const;
+                    int64_t GetFlowId() const;
 
                     /**
                      * 判断参数 FlowId 是否已赋值
@@ -62,7 +62,7 @@ namespace TencentCloud
                     /**
                      * 开启流程ID
                      */
-                    std::string m_flowId;
+                    int64_t m_flowId;
                     bool m_flowIdHasBeenSet;
 
                 };

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取归属类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttributionType 归属类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAttributionType() const;
 
                     /**
                      * 设置归属类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _attributionType 归属类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAttributionType(const std::string& _attributionType);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceType 资源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
                      * 设置资源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceType 资源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceType(const std::string& _resourceType);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 引擎名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置引擎名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 引擎名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取如资源类型为spark-sql 取值为Name, 如为spark-batch 取值为session app_name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Instance 如资源类型为spark-sql 取值为Name, 如为spark-batch 取值为session app_name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstance() const;
 
                     /**
                      * 设置如资源类型为spark-sql 取值为Name, 如为spark-batch 取值为session app_name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instance 如资源类型为spark-sql 取值为Name, 如为spark-batch 取值为session app_name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstance(const std::string& _instance);
@@ -174,18 +158,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -199,18 +179,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标准引擎资源组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceGroupName 标准引擎资源组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceGroupName() const;
 
                     /**
                      * 设置标准引擎资源组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceGroupName 标准引擎资源组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceGroupName(const std::string& _resourceGroupName);
@@ -226,28 +202,24 @@ namespace TencentCloud
 
                     /**
                      * 归属类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_attributionType;
                     bool m_attributionTypeHasBeenSet;
 
                     /**
                      * 资源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;
 
                     /**
                      * 引擎名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 如资源类型为spark-sql 取值为Name, 如为spark-batch 取值为session app_name
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instance;
                     bool m_instanceHasBeenSet;
@@ -261,14 +233,12 @@ namespace TencentCloud
 
                     /**
                      * 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 标准引擎资源组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceGroupName;
                     bool m_resourceGroupNameHasBeenSet;

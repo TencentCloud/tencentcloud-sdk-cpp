@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取别名的路由信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoutingConfig 别名的路由信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RoutingConfig GetRoutingConfig() const;
 
                     /**
                      * 设置别名的路由信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _routingConfig 别名的路由信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRoutingConfig(const RoutingConfig& _routingConfig);
@@ -116,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -141,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAddTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _addTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddTime(const std::string& _addTime);
@@ -166,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModTime() const;
 
                     /**
                      * 设置更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModTime(const std::string& _modTime);
@@ -205,28 +189,24 @@ namespace TencentCloud
 
                     /**
                      * 别名的路由信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RoutingConfig m_routingConfig;
                     bool m_routingConfigHasBeenSet;
 
                     /**
                      * 描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_addTime;
                     bool m_addTimeHasBeenSet;
 
                     /**
                      * 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modTime;
                     bool m_modTimeHasBeenSet;

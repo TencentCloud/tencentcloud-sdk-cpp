@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例GPU个数。值小于1代表VGPU类型，大于1代表GPU直通类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GPUCount 实例GPU个数。值小于1代表VGPU类型，大于1代表GPU直通类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetGPUCount() const;
 
                     /**
                      * 设置实例GPU个数。值小于1代表VGPU类型，大于1代表GPU直通类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gPUCount 实例GPU个数。值小于1代表VGPU类型，大于1代表GPU直通类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGPUCount(const double& _gPUCount);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例GPU地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GPUId 实例GPU地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetGPUId() const;
 
                     /**
                      * 设置实例GPU地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gPUId 实例GPU地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGPUId(const std::vector<std::string>& _gPUId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例GPU类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GPUType 实例GPU类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGPUType() const;
 
                     /**
                      * 设置实例GPU类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gPUType 实例GPU类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGPUType(const std::string& _gPUType);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 实例GPU个数。值小于1代表VGPU类型，大于1代表GPU直通类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_gPUCount;
                     bool m_gPUCountHasBeenSet;
 
                     /**
                      * 实例GPU地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_gPUId;
                     bool m_gPUIdHasBeenSet;
 
                     /**
                      * 实例GPU类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gPUType;
                     bool m_gPUTypeHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -186,9 +186,9 @@ namespace TencentCloud
 
 
                 /**
-                 *取消一台或多台CVM实例执行的命令
+                 *取消一台或多台实例执行的命令
 
-* 如果命令还未下发到agent，任务状态处于处于PENDING、DELIVERING、DELIVER_DELAYED，取消后任务状态是CANCELLED
+* 如果命令还未下发到agent，任务状态处于PENDING、DELIVERING、DELIVER_DELAYED，取消后任务状态是CANCELLED
 * 如果命令已下发到agent，任务状态处于RUNNING， 取消后任务状态是TERMINATED
                  * @param req CancelInvocationRequest
                  * @return CancelInvocationOutcome

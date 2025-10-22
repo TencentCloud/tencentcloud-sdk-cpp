@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Time 日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTime() const;
 
                     /**
                      * 设置日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _time 日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTime(const std::string& _time);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Money 金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMoney() const;
 
                     /**
                      * 设置金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _money 金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMoney(const std::string& _money);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 日期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_time;
                     bool m_timeHasBeenSet;
 
                     /**
                      * 金额
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_money;
                     bool m_moneyHasBeenSet;

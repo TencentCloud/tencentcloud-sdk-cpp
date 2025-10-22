@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,27 +68,6 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取NFS 服务器地址
-                     * @return Server NFS 服务器地址
-                     * 
-                     */
-                    std::string GetServer() const;
-
-                    /**
-                     * 设置NFS 服务器地址
-                     * @param _server NFS 服务器地址
-                     * 
-                     */
-                    void SetServer(const std::string& _server);
-
-                    /**
-                     * 判断参数 Server 是否已赋值
-                     * @return Server 是否已赋值
-                     * 
-                     */
-                    bool ServerHasBeenSet() const;
-
-                    /**
                      * 获取NFS 数据卷路径
                      * @return Path NFS 数据卷路径
                      * 
@@ -108,6 +87,27 @@ namespace TencentCloud
                      * 
                      */
                     bool PathHasBeenSet() const;
+
+                    /**
+                     * 获取NFS 服务器地址
+                     * @return Server NFS 服务器地址
+                     * 
+                     */
+                    std::string GetServer() const;
+
+                    /**
+                     * 设置NFS 服务器地址
+                     * @param _server NFS 服务器地址
+                     * 
+                     */
+                    void SetServer(const std::string& _server);
+
+                    /**
+                     * 判断参数 Server 是否已赋值
+                     * @return Server 是否已赋值
+                     * 
+                     */
+                    bool ServerHasBeenSet() const;
 
                     /**
                      * 获取默认为 False
@@ -139,16 +139,16 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * NFS 服务器地址
-                     */
-                    std::string m_server;
-                    bool m_serverHasBeenSet;
-
-                    /**
                      * NFS 数据卷路径
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
+
+                    /**
+                     * NFS 服务器地址
+                     */
+                    std::string m_server;
+                    bool m_serverHasBeenSet;
 
                     /**
                      * 默认为 False

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取验证子域名。验证站点时，该值为空。验证子域名是为具体子域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 验证子域名。验证站点时，该值为空。验证子域名是为具体子域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置验证子域名。验证站点时，该值为空。验证子域名是为具体子域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domain 验证子域名。验证站点时，该值为空。验证子域名是为具体子域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -146,18 +142,14 @@ namespace TencentCloud
 
                     /**
                      * 获取域名当前的 NS 记录。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginalNameServers 域名当前的 NS 记录。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetOriginalNameServers() const;
 
                     /**
                      * 设置域名当前的 NS 记录。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _originalNameServers 域名当前的 NS 记录。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOriginalNameServers(const std::vector<std::string>& _originalNameServers);
@@ -200,7 +192,6 @@ namespace TencentCloud
 
                     /**
                      * 验证子域名。验证站点时，该值为空。验证子域名是为具体子域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
@@ -221,7 +212,6 @@ namespace TencentCloud
 
                     /**
                      * 域名当前的 NS 记录。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_originalNameServers;
                     bool m_originalNameServersHasBeenSet;

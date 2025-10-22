@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 属性标签引用信息
+                * 标签引用信息
                 */
                 class AttrLabelRefer : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取属性标签来源，1：属性标签
-                     * @return Source 属性标签来源，1：属性标签
+                     * 获取标签来源，1：标签
+                     * @return Source 标签来源，1：标签
                      * 
                      */
                     uint64_t GetSource() const;
 
                     /**
-                     * 设置属性标签来源，1：属性标签
-                     * @param _source 属性标签来源，1：属性标签
+                     * 设置标签来源，1：标签
+                     * @param _source 标签来源，1：标签
                      * 
                      */
                     void SetSource(const uint64_t& _source);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool SourceHasBeenSet() const;
 
                     /**
-                     * 获取属性ID
-                     * @return AttributeBizId 属性ID
+                     * 获取标签ID
+                     * @return AttributeBizId 标签ID
                      * 
                      */
                     std::string GetAttributeBizId() const;
 
                     /**
-                     * 设置属性ID
-                     * @param _attributeBizId 属性ID
+                     * 设置标签ID
+                     * @param _attributeBizId 标签ID
                      * 
                      */
                     void SetAttributeBizId(const std::string& _attributeBizId);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool AttributeBizIdHasBeenSet() const;
 
                     /**
-                     * 获取标签ID
-                     * @return LabelBizIds 标签ID
+                     * 获取标签值ID
+                     * @return LabelBizIds 标签值ID
                      * 
                      */
                     std::vector<std::string> GetLabelBizIds() const;
 
                     /**
-                     * 设置标签ID
-                     * @param _labelBizIds 标签ID
+                     * 设置标签值ID
+                     * @param _labelBizIds 标签值ID
                      * 
                      */
                     void SetLabelBizIds(const std::vector<std::string>& _labelBizIds);
@@ -112,19 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 属性标签来源，1：属性标签
+                     * 标签来源，1：标签
                      */
                     uint64_t m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
-                     * 属性ID
+                     * 标签ID
                      */
                     std::string m_attributeBizId;
                     bool m_attributeBizIdHasBeenSet;
 
                     /**
-                     * 标签ID
+                     * 标签值ID
                      */
                     std::vector<std::string> m_labelBizIds;
                     bool m_labelBizIdsHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例名称，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
-                     * @return InstanceName 实例名称，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
+                     * 获取ckafka集群实例Name，是一个不超过 128 个字符的任意字符串。
+                     * @return InstanceName ckafka集群实例Name，是一个不超过 128 个字符的任意字符串。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
-                     * @param _instanceName 实例名称，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
+                     * 设置ckafka集群实例Name，是一个不超过 128 个字符的任意字符串。
+                     * @param _instanceName ckafka集群实例Name，是一个不超过 128 个字符的任意字符串。
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取可用区。当购买多可用区实例时，当前参数为主可用区。需要保证传入的参数和 SubnetId 所在子网属于同一个可用区
-                     * @return ZoneId 可用区。当购买多可用区实例时，当前参数为主可用区。需要保证传入的参数和 SubnetId 所在子网属于同一个可用区
+                     * 获取可用区。当购买多可用区实例时，当前参数为主可用区。  [查看可用区](https://cloud.tencent.com/document/product/597/55246)
+                     * @return ZoneId 可用区。当购买多可用区实例时，当前参数为主可用区。  [查看可用区](https://cloud.tencent.com/document/product/597/55246)
                      * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
-                     * 设置可用区。当购买多可用区实例时，当前参数为主可用区。需要保证传入的参数和 SubnetId 所在子网属于同一个可用区
-                     * @param _zoneId 可用区。当购买多可用区实例时，当前参数为主可用区。需要保证传入的参数和 SubnetId 所在子网属于同一个可用区
+                     * 设置可用区。当购买多可用区实例时，当前参数为主可用区。  [查看可用区](https://cloud.tencent.com/document/product/597/55246)
+                     * @param _zoneId 可用区。当购买多可用区实例时，当前参数为主可用区。  [查看可用区](https://cloud.tencent.com/document/product/597/55246)
                      * 
                      */
                     void SetZoneId(const int64_t& _zoneId);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取预付费购买时长，例如 "1m",就是一个月
-                     * @return Period 预付费购买时长，例如 "1m",就是一个月
+                     * 获取预付费购买时长，例如 "1m",就是一个月,取值范围 1m~36m
+                     * @return Period 预付费购买时长，例如 "1m",就是一个月,取值范围 1m~36m
                      * 
                      */
                     std::string GetPeriod() const;
 
                     /**
-                     * 设置预付费购买时长，例如 "1m",就是一个月
-                     * @param _period 预付费购买时长，例如 "1m",就是一个月
+                     * 设置预付费购买时长，例如 "1m",就是一个月,取值范围 1m~36m
+                     * @param _period 预付费购买时长，例如 "1m",就是一个月,取值范围 1m~36m
                      * 
                      */
                     void SetPeriod(const std::string& _period);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取vpcId，必填
-                     * @return VpcId vpcId，必填
+                     * 获取私有网络Id
+                     * @return VpcId 私有网络Id
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置vpcId，必填
-                     * @param _vpcId vpcId，必填
+                     * 设置私有网络Id
+                     * @param _vpcId 私有网络Id
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网id，必填
-                     * @return SubnetId 子网id，必填
+                     * 获取子网id
+                     * @return SubnetId 子网id
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网id，必填
-                     * @param _subnetId 子网id，必填
+                     * 设置子网id
+                     * @param _subnetId 子网id
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取可选。实例日志的最长保留时间，单位分钟，默认为10080（7天），最大30天，不填默认0，代表不开启日志保留时间回收策略
-                     * @return MsgRetentionTime 可选。实例日志的最长保留时间，单位分钟，默认为10080（7天），最大30天，不填默认0，代表不开启日志保留时间回收策略
+                     * 获取可选。实例日志的最长保留时间，单位分钟，不填默认为1440（1天），可设置范围为1分钟到90天。
+                     * @return MsgRetentionTime 可选。实例日志的最长保留时间，单位分钟，不填默认为1440（1天），可设置范围为1分钟到90天。
                      * 
                      */
                     int64_t GetMsgRetentionTime() const;
 
                     /**
-                     * 设置可选。实例日志的最长保留时间，单位分钟，默认为10080（7天），最大30天，不填默认0，代表不开启日志保留时间回收策略
-                     * @param _msgRetentionTime 可选。实例日志的最长保留时间，单位分钟，默认为10080（7天），最大30天，不填默认0，代表不开启日志保留时间回收策略
+                     * 设置可选。实例日志的最长保留时间，单位分钟，不填默认为1440（1天），可设置范围为1分钟到90天。
+                     * @param _msgRetentionTime 可选。实例日志的最长保留时间，单位分钟，不填默认为1440（1天），可设置范围为1分钟到90天。
                      * 
                      */
                     void SetMsgRetentionTime(const int64_t& _msgRetentionTime);
@@ -233,15 +233,15 @@ namespace TencentCloud
                     bool RenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取CKafka版本号[0.10.2、1.1.1、2.4.1、2.4.2、2.8.1、3.2.3], 默认是1.1.1。2.4.1 与 2.4.2 属于同一个版本，传任意一个均可。
-                     * @return KafkaVersion CKafka版本号[0.10.2、1.1.1、2.4.1、2.4.2、2.8.1、3.2.3], 默认是1.1.1。2.4.1 与 2.4.2 属于同一个版本，传任意一个均可。
+                     * 获取CKafka版本号[2.4.1, 2.4.2, 2.8.1, 3.2.3], 默认取值是2.4.1。2.4.1 与 2.4.2 属于同一个版本，传任意一个均可。
+                     * @return KafkaVersion CKafka版本号[2.4.1, 2.4.2, 2.8.1, 3.2.3], 默认取值是2.4.1。2.4.1 与 2.4.2 属于同一个版本，传任意一个均可。
                      * 
                      */
                     std::string GetKafkaVersion() const;
 
                     /**
-                     * 设置CKafka版本号[0.10.2、1.1.1、2.4.1、2.4.2、2.8.1、3.2.3], 默认是1.1.1。2.4.1 与 2.4.2 属于同一个版本，传任意一个均可。
-                     * @param _kafkaVersion CKafka版本号[0.10.2、1.1.1、2.4.1、2.4.2、2.8.1、3.2.3], 默认是1.1.1。2.4.1 与 2.4.2 属于同一个版本，传任意一个均可。
+                     * 设置CKafka版本号[2.4.1, 2.4.2, 2.8.1, 3.2.3], 默认取值是2.4.1。2.4.1 与 2.4.2 属于同一个版本，传任意一个均可。
+                     * @param _kafkaVersion CKafka版本号[2.4.1, 2.4.2, 2.8.1, 3.2.3], 默认取值是2.4.1。2.4.1 与 2.4.2 属于同一个版本，传任意一个均可。
                      * 
                      */
                     void SetKafkaVersion(const std::string& _kafkaVersion);
@@ -275,15 +275,15 @@ namespace TencentCloud
                     bool SpecificationsTypeHasBeenSet() const;
 
                     /**
-                     * 获取磁盘大小，如果跟控制台规格配比不相符，则无法创建成功
-                     * @return DiskSize 磁盘大小，如果跟控制台规格配比不相符，则无法创建成功
+                     * 获取磁盘大小，如果跟控制台规格配比不相符，则无法创建成功。默认取值为500，步长设置为100。可以通过以下链接查看计费规格：https://cloud.tencent.com/document/product/597/122562
+                     * @return DiskSize 磁盘大小，如果跟控制台规格配比不相符，则无法创建成功。默认取值为500，步长设置为100。可以通过以下链接查看计费规格：https://cloud.tencent.com/document/product/597/122562
                      * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
-                     * 设置磁盘大小，如果跟控制台规格配比不相符，则无法创建成功
-                     * @param _diskSize 磁盘大小，如果跟控制台规格配比不相符，则无法创建成功
+                     * 设置磁盘大小，如果跟控制台规格配比不相符，则无法创建成功。默认取值为500，步长设置为100。可以通过以下链接查看计费规格：https://cloud.tencent.com/document/product/597/122562
+                     * @param _diskSize 磁盘大小，如果跟控制台规格配比不相符，则无法创建成功。默认取值为500，步长设置为100。可以通过以下链接查看计费规格：https://cloud.tencent.com/document/product/597/122562
                      * 
                      */
                     void SetDiskSize(const int64_t& _diskSize);
@@ -296,15 +296,15 @@ namespace TencentCloud
                     bool DiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取带宽，如果跟控制台规格配比不相符，则无法创建成功
-                     * @return BandWidth 带宽，如果跟控制台规格配比不相符，则无法创建成功
+                     * 获取实例带宽,默认值为40，单位MB/s; 最小值:20MB/s, 高级版最大值:360MB/s,专业版最大值:100000MB/s  标准版固定带宽规格: 40MB/s, 100MB/s, 150MB/s。可以通过以下链接查看计费规格：https://cloud.tencent.com/document/product/597/11745
+                     * @return BandWidth 实例带宽,默认值为40，单位MB/s; 最小值:20MB/s, 高级版最大值:360MB/s,专业版最大值:100000MB/s  标准版固定带宽规格: 40MB/s, 100MB/s, 150MB/s。可以通过以下链接查看计费规格：https://cloud.tencent.com/document/product/597/11745
                      * 
                      */
                     int64_t GetBandWidth() const;
 
                     /**
-                     * 设置带宽，如果跟控制台规格配比不相符，则无法创建成功
-                     * @param _bandWidth 带宽，如果跟控制台规格配比不相符，则无法创建成功
+                     * 设置实例带宽,默认值为40，单位MB/s; 最小值:20MB/s, 高级版最大值:360MB/s,专业版最大值:100000MB/s  标准版固定带宽规格: 40MB/s, 100MB/s, 150MB/s。可以通过以下链接查看计费规格：https://cloud.tencent.com/document/product/597/11745
+                     * @param _bandWidth 实例带宽,默认值为40，单位MB/s; 最小值:20MB/s, 高级版最大值:360MB/s,专业版最大值:100000MB/s  标准版固定带宽规格: 40MB/s, 100MB/s, 150MB/s。可以通过以下链接查看计费规格：https://cloud.tencent.com/document/product/597/11745
                      * 
                      */
                     void SetBandWidth(const int64_t& _bandWidth);
@@ -317,15 +317,15 @@ namespace TencentCloud
                     bool BandWidthHasBeenSet() const;
 
                     /**
-                     * 获取分区大小，如果跟控制台规格配比不相符，则无法创建成功
-                     * @return Partition 分区大小，如果跟控制台规格配比不相符，则无法创建成功
+                     * 获取分区大小，如果跟控制台规格配比不相符，则无法创建成功。默认值为800，步长为100。可以通过以下链接查看计费规格：https://cloud.tencent.com/document/product/597/122563
+                     * @return Partition 分区大小，如果跟控制台规格配比不相符，则无法创建成功。默认值为800，步长为100。可以通过以下链接查看计费规格：https://cloud.tencent.com/document/product/597/122563
                      * 
                      */
                     int64_t GetPartition() const;
 
                     /**
-                     * 设置分区大小，如果跟控制台规格配比不相符，则无法创建成功
-                     * @param _partition 分区大小，如果跟控制台规格配比不相符，则无法创建成功
+                     * 设置分区大小，如果跟控制台规格配比不相符，则无法创建成功。默认值为800，步长为100。可以通过以下链接查看计费规格：https://cloud.tencent.com/document/product/597/122563
+                     * @param _partition 分区大小，如果跟控制台规格配比不相符，则无法创建成功。默认值为800，步长为100。可以通过以下链接查看计费规格：https://cloud.tencent.com/document/product/597/122563
                      * 
                      */
                     void SetPartition(const int64_t& _partition);
@@ -484,22 +484,43 @@ namespace TencentCloud
                      */
                     bool AutoVoucherHasBeenSet() const;
 
+                    /**
+                     * 获取弹性带宽开关 0不开启  1开启（0默认）
+                     * @return ElasticBandwidthSwitch 弹性带宽开关 0不开启  1开启（0默认）
+                     * 
+                     */
+                    int64_t GetElasticBandwidthSwitch() const;
+
+                    /**
+                     * 设置弹性带宽开关 0不开启  1开启（0默认）
+                     * @param _elasticBandwidthSwitch 弹性带宽开关 0不开启  1开启（0默认）
+                     * 
+                     */
+                    void SetElasticBandwidthSwitch(const int64_t& _elasticBandwidthSwitch);
+
+                    /**
+                     * 判断参数 ElasticBandwidthSwitch 是否已赋值
+                     * @return ElasticBandwidthSwitch 是否已赋值
+                     * 
+                     */
+                    bool ElasticBandwidthSwitchHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例名称，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
+                     * ckafka集群实例Name，是一个不超过 128 个字符的任意字符串。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 可用区。当购买多可用区实例时，当前参数为主可用区。需要保证传入的参数和 SubnetId 所在子网属于同一个可用区
+                     * 可用区。当购买多可用区实例时，当前参数为主可用区。  [查看可用区](https://cloud.tencent.com/document/product/597/55246)
                      */
                     int64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 预付费购买时长，例如 "1m",就是一个月
+                     * 预付费购买时长，例如 "1m",就是一个月,取值范围 1m~36m
                      */
                     std::string m_period;
                     bool m_periodHasBeenSet;
@@ -511,19 +532,19 @@ namespace TencentCloud
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * vpcId，必填
+                     * 私有网络Id
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 子网id，必填
+                     * 子网id
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 可选。实例日志的最长保留时间，单位分钟，默认为10080（7天），最大30天，不填默认0，代表不开启日志保留时间回收策略
+                     * 可选。实例日志的最长保留时间，单位分钟，不填默认为1440（1天），可设置范围为1分钟到90天。
                      */
                     int64_t m_msgRetentionTime;
                     bool m_msgRetentionTimeHasBeenSet;
@@ -541,7 +562,7 @@ namespace TencentCloud
                     bool m_renewFlagHasBeenSet;
 
                     /**
-                     * CKafka版本号[0.10.2、1.1.1、2.4.1、2.4.2、2.8.1、3.2.3], 默认是1.1.1。2.4.1 与 2.4.2 属于同一个版本，传任意一个均可。
+                     * CKafka版本号[2.4.1, 2.4.2, 2.8.1, 3.2.3], 默认取值是2.4.1。2.4.1 与 2.4.2 属于同一个版本，传任意一个均可。
                      */
                     std::string m_kafkaVersion;
                     bool m_kafkaVersionHasBeenSet;
@@ -553,19 +574,19 @@ namespace TencentCloud
                     bool m_specificationsTypeHasBeenSet;
 
                     /**
-                     * 磁盘大小，如果跟控制台规格配比不相符，则无法创建成功
+                     * 磁盘大小，如果跟控制台规格配比不相符，则无法创建成功。默认取值为500，步长设置为100。可以通过以下链接查看计费规格：https://cloud.tencent.com/document/product/597/122562
                      */
                     int64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
 
                     /**
-                     * 带宽，如果跟控制台规格配比不相符，则无法创建成功
+                     * 实例带宽,默认值为40，单位MB/s; 最小值:20MB/s, 高级版最大值:360MB/s,专业版最大值:100000MB/s  标准版固定带宽规格: 40MB/s, 100MB/s, 150MB/s。可以通过以下链接查看计费规格：https://cloud.tencent.com/document/product/597/11745
                      */
                     int64_t m_bandWidth;
                     bool m_bandWidthHasBeenSet;
 
                     /**
-                     * 分区大小，如果跟控制台规格配比不相符，则无法创建成功
+                     * 分区大小，如果跟控制台规格配比不相符，则无法创建成功。默认值为800，步长为100。可以通过以下链接查看计费规格：https://cloud.tencent.com/document/product/597/122563
                      */
                     int64_t m_partition;
                     bool m_partitionHasBeenSet;
@@ -611,6 +632,12 @@ namespace TencentCloud
                      */
                     int64_t m_autoVoucher;
                     bool m_autoVoucherHasBeenSet;
+
+                    /**
+                     * 弹性带宽开关 0不开启  1开启（0默认）
+                     */
+                    int64_t m_elasticBandwidthSwitch;
+                    bool m_elasticBandwidthSwitchHasBeenSet;
 
                 };
             }

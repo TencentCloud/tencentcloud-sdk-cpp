@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取投递类型，store（存储类），mq（消息通道）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeliverType 投递类型，store（存储类），mq（消息通道）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeliverType() const;
 
                     /**
                      * 设置投递类型，store（存储类），mq（消息通道）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deliverType 投递类型，store（存储类），mq（消息通道）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeliverType(const std::string& _deliverType);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取投递子类型：cls，ckafka。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeliverSubType 投递子类型：cls，ckafka。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeliverSubType() const;
 
                     /**
                      * 设置投递子类型：cls，ckafka。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deliverSubType 投递子类型：cls，ckafka。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeliverSubType(const std::string& _deliverSubType);
@@ -96,21 +88,73 @@ namespace TencentCloud
                      */
                     bool DeliverSubTypeHasBeenSet() const;
 
+                    /**
+                     * 获取投递者
+                     * @return DeliverConsumer 投递者
+                     * 
+                     */
+                    std::string GetDeliverConsumer() const;
+
+                    /**
+                     * 设置投递者
+                     * @param _deliverConsumer 投递者
+                     * 
+                     */
+                    void SetDeliverConsumer(const std::string& _deliverConsumer);
+
+                    /**
+                     * 判断参数 DeliverConsumer 是否已赋值
+                     * @return DeliverConsumer 是否已赋值
+                     * 
+                     */
+                    bool DeliverConsumerHasBeenSet() const;
+
+                    /**
+                     * 获取投递者名称
+                     * @return DeliverConsumerName 投递者名称
+                     * 
+                     */
+                    std::string GetDeliverConsumerName() const;
+
+                    /**
+                     * 设置投递者名称
+                     * @param _deliverConsumerName 投递者名称
+                     * 
+                     */
+                    void SetDeliverConsumerName(const std::string& _deliverConsumerName);
+
+                    /**
+                     * 判断参数 DeliverConsumerName 是否已赋值
+                     * @return DeliverConsumerName 是否已赋值
+                     * 
+                     */
+                    bool DeliverConsumerNameHasBeenSet() const;
+
                 private:
 
                     /**
                      * 投递类型，store（存储类），mq（消息通道）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deliverType;
                     bool m_deliverTypeHasBeenSet;
 
                     /**
                      * 投递子类型：cls，ckafka。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deliverSubType;
                     bool m_deliverSubTypeHasBeenSet;
+
+                    /**
+                     * 投递者
+                     */
+                    std::string m_deliverConsumer;
+                    bool m_deliverConsumerHasBeenSet;
+
+                    /**
+                     * 投递者名称
+                     */
+                    std::string m_deliverConsumerName;
+                    bool m_deliverConsumerNameHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -134,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取tke接口json解析规则，null不需要解析
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObjectTypeJsonParse tke接口json解析规则，null不需要解析
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ObjectTypeJsonParse GetObjectTypeJsonParse() const;
 
                     /**
                      * 设置tke接口json解析规则，null不需要解析
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _objectTypeJsonParse tke接口json解析规则，null不需要解析
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetObjectTypeJsonParse(const ObjectTypeJsonParse& _objectTypeJsonParse);
@@ -159,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否包含新动作
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObjectHasNewAction 是否包含新动作
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetObjectHasNewAction() const;
 
                     /**
                      * 设置是否包含新动作
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _objectHasNewAction 是否包含新动作
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetObjectHasNewAction(const bool& _objectHasNewAction);
@@ -184,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对应在平台架构图中的资源类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObjectPlatformName 对应在平台架构图中的资源类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetObjectPlatformName() const;
 
                     /**
                      * 设置对应在平台架构图中的资源类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _objectPlatformName 对应在平台架构图中的资源类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetObjectPlatformName(const std::string& _objectPlatformName);
@@ -209,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取1：平台支持的对象 2：应用支持的部分对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObjectSupportType 1：平台支持的对象 2：应用支持的部分对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetObjectSupportType() const;
 
                     /**
                      * 设置1：平台支持的对象 2：应用支持的部分对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _objectSupportType 1：平台支持的对象 2：应用支持的部分对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetObjectSupportType(const int64_t& _objectSupportType);
@@ -231,6 +215,48 @@ namespace TencentCloud
                      * 
                      */
                     bool ObjectSupportTypeHasBeenSet() const;
+
+                    /**
+                     * 获取1.接入层 2.逻辑层 3. 数据层
+                     * @return ArchLayer 1.接入层 2.逻辑层 3. 数据层
+                     * 
+                     */
+                    int64_t GetArchLayer() const;
+
+                    /**
+                     * 设置1.接入层 2.逻辑层 3. 数据层
+                     * @param _archLayer 1.接入层 2.逻辑层 3. 数据层
+                     * 
+                     */
+                    void SetArchLayer(const int64_t& _archLayer);
+
+                    /**
+                     * 判断参数 ArchLayer 是否已赋值
+                     * @return ArchLayer 是否已赋值
+                     * 
+                     */
+                    bool ArchLayerHasBeenSet() const;
+
+                    /**
+                     * 获取是否支持演练生图
+                     * @return IsArchSvg 是否支持演练生图
+                     * 
+                     */
+                    bool GetIsArchSvg() const;
+
+                    /**
+                     * 设置是否支持演练生图
+                     * @param _isArchSvg 是否支持演练生图
+                     * 
+                     */
+                    void SetIsArchSvg(const bool& _isArchSvg);
+
+                    /**
+                     * 判断参数 IsArchSvg 是否已赋值
+                     * @return IsArchSvg 是否已赋值
+                     * 
+                     */
+                    bool IsArchSvgHasBeenSet() const;
 
                 private:
 
@@ -260,31 +286,39 @@ namespace TencentCloud
 
                     /**
                      * tke接口json解析规则，null不需要解析
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ObjectTypeJsonParse m_objectTypeJsonParse;
                     bool m_objectTypeJsonParseHasBeenSet;
 
                     /**
                      * 是否包含新动作
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_objectHasNewAction;
                     bool m_objectHasNewActionHasBeenSet;
 
                     /**
                      * 对应在平台架构图中的资源类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_objectPlatformName;
                     bool m_objectPlatformNameHasBeenSet;
 
                     /**
                      * 1：平台支持的对象 2：应用支持的部分对象
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_objectSupportType;
                     bool m_objectSupportTypeHasBeenSet;
+
+                    /**
+                     * 1.接入层 2.逻辑层 3. 数据层
+                     */
+                    int64_t m_archLayer;
+                    bool m_archLayerHasBeenSet;
+
+                    /**
+                     * 是否支持演练生图
+                     */
+                    bool m_isArchSvg;
+                    bool m_isArchSvgHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,8 @@ AgentClientElem::AgentClientElem() :
     m_statusHasBeenSet(false),
     m_salesUinHasBeenSet(false),
     m_salesNameHasBeenSet(false),
-    m_clientNameHasBeenSet(false)
+    m_clientNameHasBeenSet(false),
+    m_increaseGoalHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,16 @@ CoreInternalOutcome AgentClientElem::Deserialize(const rapidjson::Value &value)
         m_clientNameHasBeenSet = true;
     }
 
+    if (value.HasMember("IncreaseGoal") && !value["IncreaseGoal"].IsNull())
+    {
+        if (!value["IncreaseGoal"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentClientElem.IncreaseGoal` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_increaseGoal = string(value["IncreaseGoal"].GetString());
+        m_increaseGoalHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +254,14 @@ void AgentClientElem::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ClientName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clientName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_increaseGoalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IncreaseGoal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_increaseGoal.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -422,5 +441,21 @@ void AgentClientElem::SetClientName(const string& _clientName)
 bool AgentClientElem::ClientNameHasBeenSet() const
 {
     return m_clientNameHasBeenSet;
+}
+
+string AgentClientElem::GetIncreaseGoal() const
+{
+    return m_increaseGoal;
+}
+
+void AgentClientElem::SetIncreaseGoal(const string& _increaseGoal)
+{
+    m_increaseGoal = _increaseGoal;
+    m_increaseGoalHasBeenSet = true;
+}
+
+bool AgentClientElem::IncreaseGoalHasBeenSet() const
+{
+    return m_increaseGoalHasBeenSet;
 }
 

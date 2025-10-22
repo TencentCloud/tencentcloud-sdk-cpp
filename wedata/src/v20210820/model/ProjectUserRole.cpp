@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,8 @@ ProjectUserRole::ProjectUserRole() :
     m_phoneNumHasBeenSet(false),
     m_emailHasBeenSet(false),
     m_ownerUinHasBeenSet(false),
-    m_appIdHasBeenSet(false)
+    m_appIdHasBeenSet(false),
+    m_isProjectOwnerHasBeenSet(false)
 {
 }
 
@@ -160,6 +161,16 @@ CoreInternalOutcome ProjectUserRole::Deserialize(const rapidjson::Value &value)
         m_appIdHasBeenSet = true;
     }
 
+    if (value.HasMember("IsProjectOwner") && !value["IsProjectOwner"].IsNull())
+    {
+        if (!value["IsProjectOwner"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProjectUserRole.IsProjectOwner` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isProjectOwner = value["IsProjectOwner"].GetBool();
+        m_isProjectOwnerHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -260,6 +271,14 @@ void ProjectUserRole::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "AppId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_appId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isProjectOwnerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsProjectOwner";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isProjectOwner, allocator);
     }
 
 }
@@ -439,5 +458,21 @@ void ProjectUserRole::SetAppId(const string& _appId)
 bool ProjectUserRole::AppIdHasBeenSet() const
 {
     return m_appIdHasBeenSet;
+}
+
+bool ProjectUserRole::GetIsProjectOwner() const
+{
+    return m_isProjectOwner;
+}
+
+void ProjectUserRole::SetIsProjectOwner(const bool& _isProjectOwner)
+{
+    m_isProjectOwner = _isProjectOwner;
+    m_isProjectOwnerHasBeenSet = true;
+}
+
+bool ProjectUserRole::IsProjectOwnerHasBeenSet() const
+{
+    return m_isProjectOwnerHasBeenSet;
 }
 

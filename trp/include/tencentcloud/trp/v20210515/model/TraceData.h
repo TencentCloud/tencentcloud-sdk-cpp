@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -114,18 +114,14 @@ namespace TencentCloud
 
                     /**
                      * 获取码值，跟码类型一一对应
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Code 码值，跟码类型一一对应
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置码值，跟码类型一一对应
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _code 码值，跟码类型一一对应
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCode(const std::string& _code);
@@ -202,18 +198,14 @@ namespace TencentCloud
 
                     /**
                      * 获取溯源时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TraceTime 溯源时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTraceTime() const;
 
                     /**
                      * 设置溯源时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _traceTime 溯源时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTraceTime(const std::string& _traceTime);
@@ -227,18 +219,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -252,18 +240,14 @@ namespace TencentCloud
 
                     /**
                      * 获取上链状态 0: 未上链 1: 上链中 2: 已上链 -1: 异常
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChainStatus 上链状态 0: 未上链 1: 上链中 2: 已上链 -1: 异常
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetChainStatus() const;
 
                     /**
                      * 设置上链状态 0: 未上链 1: 上链中 2: 已上链 -1: 异常
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _chainStatus 上链状态 0: 未上链 1: 上链中 2: 已上链 -1: 异常
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChainStatus(const uint64_t& _chainStatus);
@@ -277,18 +261,14 @@ namespace TencentCloud
 
                     /**
                      * 获取上链时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChainTime 上链时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetChainTime() const;
 
                     /**
                      * 设置上链时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _chainTime 上链时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChainTime(const std::string& _chainTime);
@@ -302,18 +282,14 @@ namespace TencentCloud
 
                     /**
                      * 获取上链数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChainData 上链数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ChainData GetChainData() const;
 
                     /**
                      * 设置上链数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _chainData 上链数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChainData(const ChainData& _chainData);
@@ -327,18 +303,14 @@ namespace TencentCloud
 
                     /**
                      * 获取溯源阶段配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PhaseData 溯源阶段配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PhaseData GetPhaseData() const;
 
                     /**
                      * 设置溯源阶段配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _phaseData 溯源阶段配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPhaseData(const PhaseData& _phaseData);
@@ -414,7 +386,6 @@ namespace TencentCloud
 
                     /**
                      * 码值，跟码类型一一对应
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_code;
                     bool m_codeHasBeenSet;
@@ -439,42 +410,36 @@ namespace TencentCloud
 
                     /**
                      * 溯源时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_traceTime;
                     bool m_traceTimeHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 上链状态 0: 未上链 1: 上链中 2: 已上链 -1: 异常
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_chainStatus;
                     bool m_chainStatusHasBeenSet;
 
                     /**
                      * 上链时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_chainTime;
                     bool m_chainTimeHasBeenSet;
 
                     /**
                      * 上链数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ChainData m_chainData;
                     bool m_chainDataHasBeenSet;
 
                     /**
                      * 溯源阶段配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PhaseData m_phaseData;
                     bool m_phaseDataHasBeenSet;

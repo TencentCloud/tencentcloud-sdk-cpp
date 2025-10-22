@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -154,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该字段用于返回OCR识别出的结果的详细内容，如：文本内容、对应标签、识别框位置等信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Details 该字段用于返回OCR识别出的结果的详细内容，如：文本内容、对应标签、识别框位置等信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<OcrTextDetail> GetDetails() const;
 
                     /**
                      * 设置该字段用于返回OCR识别出的结果的详细内容，如：文本内容、对应标签、识别框位置等信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _details 该字段用于返回OCR识别出的结果的详细内容，如：文本内容、对应标签、识别框位置等信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDetails(const std::vector<OcrTextDetail>& _details);
@@ -232,7 +228,6 @@ namespace TencentCloud
 
                     /**
                      * 该字段用于返回OCR识别出的结果的详细内容，如：文本内容、对应标签、识别框位置等信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<OcrTextDetail> m_details;
                     bool m_detailsHasBeenSet;

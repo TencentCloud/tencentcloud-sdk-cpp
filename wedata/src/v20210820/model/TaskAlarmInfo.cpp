@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,7 +53,12 @@ TaskAlarmInfo::TaskAlarmInfo() :
     m_latestAlarmTimeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_larkWebHooksHasBeenSet(false),
-    m_dingDingWebHooksHasBeenSet(false)
+    m_dingDingWebHooksHasBeenSet(false),
+    m_businessTypeHasBeenSet(false),
+    m_alarmMessageRuleHasBeenSet(false),
+    m_reportTargetHasBeenSet(false),
+    m_alarmReceiverGroupsHasBeenSet(false),
+    m_alarmReceiverGroupFlagHasBeenSet(false)
 {
 }
 
@@ -415,6 +420,66 @@ CoreInternalOutcome TaskAlarmInfo::Deserialize(const rapidjson::Value &value)
         m_dingDingWebHooksHasBeenSet = true;
     }
 
+    if (value.HasMember("BusinessType") && !value["BusinessType"].IsNull())
+    {
+        if (!value["BusinessType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskAlarmInfo.BusinessType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_businessType = value["BusinessType"].GetInt64();
+        m_businessTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AlarmMessageRule") && !value["AlarmMessageRule"].IsNull())
+    {
+        if (!value["AlarmMessageRule"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskAlarmInfo.AlarmMessageRule` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_alarmMessageRule = string(value["AlarmMessageRule"].GetString());
+        m_alarmMessageRuleHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReportTarget") && !value["ReportTarget"].IsNull())
+    {
+        if (!value["ReportTarget"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskAlarmInfo.ReportTarget` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_reportTarget = value["ReportTarget"].GetInt64();
+        m_reportTargetHasBeenSet = true;
+    }
+
+    if (value.HasMember("AlarmReceiverGroups") && !value["AlarmReceiverGroups"].IsNull())
+    {
+        if (!value["AlarmReceiverGroups"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TaskAlarmInfo.AlarmReceiverGroups` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AlarmReceiverGroups"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AlarmReceiverGroup item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_alarmReceiverGroups.push_back(item);
+        }
+        m_alarmReceiverGroupsHasBeenSet = true;
+    }
+
+    if (value.HasMember("AlarmReceiverGroupFlag") && !value["AlarmReceiverGroupFlag"].IsNull())
+    {
+        if (!value["AlarmReceiverGroupFlag"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskAlarmInfo.AlarmReceiverGroupFlag` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_alarmReceiverGroupFlag = value["AlarmReceiverGroupFlag"].GetUint64();
+        m_alarmReceiverGroupFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -703,6 +768,53 @@ void TaskAlarmInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "DingDingWebHooks";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dingDingWebHooks.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_businessTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BusinessType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_businessType, allocator);
+    }
+
+    if (m_alarmMessageRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmMessageRule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_alarmMessageRule.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reportTargetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReportTarget";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_reportTarget, allocator);
+    }
+
+    if (m_alarmReceiverGroupsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmReceiverGroups";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_alarmReceiverGroups.begin(); itr != m_alarmReceiverGroups.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_alarmReceiverGroupFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmReceiverGroupFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_alarmReceiverGroupFlag, allocator);
     }
 
 }
@@ -1234,5 +1346,85 @@ void TaskAlarmInfo::SetDingDingWebHooks(const string& _dingDingWebHooks)
 bool TaskAlarmInfo::DingDingWebHooksHasBeenSet() const
 {
     return m_dingDingWebHooksHasBeenSet;
+}
+
+int64_t TaskAlarmInfo::GetBusinessType() const
+{
+    return m_businessType;
+}
+
+void TaskAlarmInfo::SetBusinessType(const int64_t& _businessType)
+{
+    m_businessType = _businessType;
+    m_businessTypeHasBeenSet = true;
+}
+
+bool TaskAlarmInfo::BusinessTypeHasBeenSet() const
+{
+    return m_businessTypeHasBeenSet;
+}
+
+string TaskAlarmInfo::GetAlarmMessageRule() const
+{
+    return m_alarmMessageRule;
+}
+
+void TaskAlarmInfo::SetAlarmMessageRule(const string& _alarmMessageRule)
+{
+    m_alarmMessageRule = _alarmMessageRule;
+    m_alarmMessageRuleHasBeenSet = true;
+}
+
+bool TaskAlarmInfo::AlarmMessageRuleHasBeenSet() const
+{
+    return m_alarmMessageRuleHasBeenSet;
+}
+
+int64_t TaskAlarmInfo::GetReportTarget() const
+{
+    return m_reportTarget;
+}
+
+void TaskAlarmInfo::SetReportTarget(const int64_t& _reportTarget)
+{
+    m_reportTarget = _reportTarget;
+    m_reportTargetHasBeenSet = true;
+}
+
+bool TaskAlarmInfo::ReportTargetHasBeenSet() const
+{
+    return m_reportTargetHasBeenSet;
+}
+
+vector<AlarmReceiverGroup> TaskAlarmInfo::GetAlarmReceiverGroups() const
+{
+    return m_alarmReceiverGroups;
+}
+
+void TaskAlarmInfo::SetAlarmReceiverGroups(const vector<AlarmReceiverGroup>& _alarmReceiverGroups)
+{
+    m_alarmReceiverGroups = _alarmReceiverGroups;
+    m_alarmReceiverGroupsHasBeenSet = true;
+}
+
+bool TaskAlarmInfo::AlarmReceiverGroupsHasBeenSet() const
+{
+    return m_alarmReceiverGroupsHasBeenSet;
+}
+
+uint64_t TaskAlarmInfo::GetAlarmReceiverGroupFlag() const
+{
+    return m_alarmReceiverGroupFlag;
+}
+
+void TaskAlarmInfo::SetAlarmReceiverGroupFlag(const uint64_t& _alarmReceiverGroupFlag)
+{
+    m_alarmReceiverGroupFlag = _alarmReceiverGroupFlag;
+    m_alarmReceiverGroupFlagHasBeenSet = true;
+}
+
+bool TaskAlarmInfo::AlarmReceiverGroupFlagHasBeenSet() const
+{
+    return m_alarmReceiverGroupFlagHasBeenSet;
 }
 

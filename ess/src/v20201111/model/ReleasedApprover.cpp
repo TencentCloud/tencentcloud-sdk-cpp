@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,8 @@ ReleasedApprover::ReleasedApprover() :
     m_approverTypeHasBeenSet(false),
     m_approverSignComponentTypeHasBeenSet(false),
     m_approverSignRoleHasBeenSet(false),
-    m_approverSignSealIdHasBeenSet(false)
+    m_approverSignSealIdHasBeenSet(false),
+    m_relievedApproverRecipientIdHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome ReleasedApprover::Deserialize(const rapidjson::Value &value)
         m_approverSignSealIdHasBeenSet = true;
     }
 
+    if (value.HasMember("RelievedApproverRecipientId") && !value["RelievedApproverRecipientId"].IsNull())
+    {
+        if (!value["RelievedApproverRecipientId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReleasedApprover.RelievedApproverRecipientId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_relievedApproverRecipientId = string(value["RelievedApproverRecipientId"].GetString());
+        m_relievedApproverRecipientIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void ReleasedApprover::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ApproverSignSealId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_approverSignSealId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_relievedApproverRecipientIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RelievedApproverRecipientId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_relievedApproverRecipientId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void ReleasedApprover::SetApproverSignSealId(const string& _approverSignSealId)
 bool ReleasedApprover::ApproverSignSealIdHasBeenSet() const
 {
     return m_approverSignSealIdHasBeenSet;
+}
+
+string ReleasedApprover::GetRelievedApproverRecipientId() const
+{
+    return m_relievedApproverRecipientId;
+}
+
+void ReleasedApprover::SetRelievedApproverRecipientId(const string& _relievedApproverRecipientId)
+{
+    m_relievedApproverRecipientId = _relievedApproverRecipientId;
+    m_relievedApproverRecipientIdHasBeenSet = true;
+}
+
+bool ReleasedApprover::RelievedApproverRecipientIdHasBeenSet() const
+{
+    return m_relievedApproverRecipientIdHasBeenSet;
 }
 

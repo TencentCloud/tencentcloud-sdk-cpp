@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取正在安装中应用列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReleaseSet 正在安装中应用列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PendingRelease> GetReleaseSet() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取每页返回数量限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Limit 每页返回数量限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLimit() const;
@@ -78,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取页偏移量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Offset 页偏移量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOffset() const;
@@ -94,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotal() const;
@@ -112,28 +104,24 @@ namespace TencentCloud
 
                     /**
                      * 正在安装中应用列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PendingRelease> m_releaseSet;
                     bool m_releaseSetHasBeenSet;
 
                     /**
                      * 每页返回数量限制
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
                      * 页偏移量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
                      * 总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;

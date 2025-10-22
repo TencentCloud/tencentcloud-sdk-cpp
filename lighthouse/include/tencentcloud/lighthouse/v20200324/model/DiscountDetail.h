@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,15 +69,27 @@ namespace TencentCloud
                     bool TimeSpanHasBeenSet() const;
 
                     /**
-                     * 获取计费单元。
-                     * @return TimeUnit 计费单元。
+                     * 获取时间单位。
+取值为：
+- m - 月
+- d - 日
+                     * @return TimeUnit 时间单位。
+取值为：
+- m - 月
+- d - 日
                      * 
                      */
                     std::string GetTimeUnit() const;
 
                     /**
-                     * 设置计费单元。
-                     * @param _timeUnit 计费单元。
+                     * 设置时间单位。
+取值为：
+- m - 月
+- d - 日
+                     * @param _timeUnit 时间单位。
+取值为：
+- m - 月
+- d - 日
                      * 
                      */
                     void SetTimeUnit(const std::string& _timeUnit);
@@ -182,7 +194,10 @@ namespace TencentCloud
                     bool m_timeSpanHasBeenSet;
 
                     /**
-                     * 计费单元。
+                     * 时间单位。
+取值为：
+- m - 月
+- d - 日
                      */
                     std::string m_timeUnit;
                     bool m_timeUnitHasBeenSet;

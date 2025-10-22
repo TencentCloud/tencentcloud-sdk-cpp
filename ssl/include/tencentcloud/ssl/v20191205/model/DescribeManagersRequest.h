@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取公司ID
-                     * @return CompanyId 公司ID
+                     * 获取公司ID,可以从DescribeCompanies接口获取
+                     * @return CompanyId 公司ID,可以从DescribeCompanies接口获取
                      * 
                      */
                     int64_t GetCompanyId() const;
 
                     /**
-                     * 设置公司ID
-                     * @param _companyId 公司ID
+                     * 设置公司ID,可以从DescribeCompanies接口获取
+                     * @param _companyId 公司ID,可以从DescribeCompanies接口获取
                      * 
                      */
                     void SetCompanyId(const int64_t& _companyId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool CompanyIdHasBeenSet() const;
 
                     /**
-                     * 获取分页偏移量
-                     * @return Offset 分页偏移量
+                     * 获取分页偏移量，如果不传默认值为0
+                     * @return Offset 分页偏移量，如果不传默认值为0
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页偏移量
-                     * @param _offset 分页偏移量
+                     * 设置分页偏移量，如果不传默认值为0
+                     * @param _offset 分页偏移量，如果不传默认值为0
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页每页数量
-                     * @return Limit 分页每页数量
+                     * 获取分页每页数量，如果不传默认值为10，最大值为1000
+                     * @return Limit 分页每页数量，如果不传默认值为10，最大值为1000
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页每页数量
-                     * @param _limit 分页每页数量
+                     * 设置分页每页数量，如果不传默认值为10，最大值为1000
+                     * @param _limit 分页每页数量，如果不传默认值为10，最大值为1000
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -197,15 +197,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取管理人姓/管理人名/邮箱/部门精准匹配
-                     * @return SearchKey 管理人姓/管理人名/邮箱/部门精准匹配
+                     * 获取根据这样的格式:管理人姓|管理人名|邮箱|部门 ,进行精准匹配
+                     * @return SearchKey 根据这样的格式:管理人姓|管理人名|邮箱|部门 ,进行精准匹配
                      * 
                      */
                     std::string GetSearchKey() const;
 
                     /**
-                     * 设置管理人姓/管理人名/邮箱/部门精准匹配
-                     * @param _searchKey 管理人姓/管理人名/邮箱/部门精准匹配
+                     * 设置根据这样的格式:管理人姓|管理人名|邮箱|部门 ,进行精准匹配
+                     * @param _searchKey 根据这样的格式:管理人姓|管理人名|邮箱|部门 ,进行精准匹配
                      * 
                      */
                     void SetSearchKey(const std::string& _searchKey);
@@ -220,19 +220,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 公司ID
+                     * 公司ID,可以从DescribeCompanies接口获取
                      */
                     int64_t m_companyId;
                     bool m_companyIdHasBeenSet;
 
                     /**
-                     * 分页偏移量
+                     * 分页偏移量，如果不传默认值为0
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页每页数量
+                     * 分页每页数量，如果不传默认值为10，最大值为1000
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -263,7 +263,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 管理人姓/管理人名/邮箱/部门精准匹配
+                     * 根据这样的格式:管理人姓|管理人名|邮箱|部门 ,进行精准匹配
                      */
                     std::string m_searchKey;
                     bool m_searchKeyHasBeenSet;

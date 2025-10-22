@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取快照 ID
-                     * @return SnapshotId 快照 ID
+                     * 获取快照 ID。可以通过接口DescribeSnapshotList查询快照 ID
+                     * @return SnapshotId 快照 ID。可以通过接口DescribeSnapshotList查询快照 ID
                      * 
                      */
                     std::string GetSnapshotId() const;
 
                     /**
-                     * 设置快照 ID
-                     * @param _snapshotId 快照 ID
+                     * 设置快照 ID。可以通过接口DescribeSnapshotList查询快照 ID
+                     * @param _snapshotId 快照 ID。可以通过接口DescribeSnapshotList查询快照 ID
                      * 
                      */
                     void SetSnapshotId(const std::string& _snapshotId);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool RecordListHasBeenSet() const;
 
                     /**
-                     * 获取之前的快照回滚任务 ID
-                     * @return TaskId 之前的快照回滚任务 ID
+                     * 获取之前的快照回滚任务 ID。可从RollbackSnapshot接口获取
+                     * @return TaskId 之前的快照回滚任务 ID。可从RollbackSnapshot接口获取
                      * 
                      */
                     uint64_t GetTaskId() const;
 
                     /**
-                     * 设置之前的快照回滚任务 ID
-                     * @param _taskId 之前的快照回滚任务 ID
+                     * 设置之前的快照回滚任务 ID。可从RollbackSnapshot接口获取
+                     * @param _taskId 之前的快照回滚任务 ID。可从RollbackSnapshot接口获取
                      * 
                      */
                     void SetTaskId(const uint64_t& _taskId);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。
-                     * @return DomainId 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。
+                     * 获取域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * @return DomainId 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
                      * 
                      */
                     uint64_t GetDomainId() const;
 
                     /**
-                     * 设置域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。
-                     * @param _domainId 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。
+                     * 设置域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * @param _domainId 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
                      * 
                      */
                     void SetDomainId(const uint64_t& _domainId);
@@ -157,7 +157,7 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 快照 ID
+                     * 快照 ID。可以通过接口DescribeSnapshotList查询快照 ID
                      */
                     std::string m_snapshotId;
                     bool m_snapshotIdHasBeenSet;
@@ -169,13 +169,13 @@ namespace TencentCloud
                     bool m_recordListHasBeenSet;
 
                     /**
-                     * 之前的快照回滚任务 ID
+                     * 之前的快照回滚任务 ID。可从RollbackSnapshot接口获取
                      */
                     uint64_t m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。
+                     * 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
                      */
                     uint64_t m_domainId;
                     bool m_domainIdHasBeenSet;

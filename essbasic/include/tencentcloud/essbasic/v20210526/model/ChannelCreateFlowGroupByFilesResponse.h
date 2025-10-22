@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,10 +47,8 @@ namespace TencentCloud
                     /**
                      * 获取合同组ID，为32位字符串。
 建议开发者妥善保存此合同组ID，以便于顺利进行后续操作。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowGroupId 合同组ID，为32位字符串。
 建议开发者妥善保存此合同组ID，以便于顺利进行后续操作。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlowGroupId() const;
@@ -67,12 +65,10 @@ namespace TencentCloud
 
 注:
 `此数组的顺序和入参中的FlowGroupInfos顺序一致`
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowIds 合同组中每个合同流程ID，每个ID均为32位字符串。
 
 注:
 `此数组的顺序和入参中的FlowGroupInfos顺序一致`
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetFlowIds() const;
@@ -103,7 +99,6 @@ namespace TencentCloud
                     /**
                      * 合同组ID，为32位字符串。
 建议开发者妥善保存此合同组ID，以便于顺利进行后续操作。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowGroupId;
                     bool m_flowGroupIdHasBeenSet;
@@ -113,7 +108,6 @@ namespace TencentCloud
 
 注:
 `此数组的顺序和入参中的FlowGroupInfos顺序一致`
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_flowIds;
                     bool m_flowIdsHasBeenSet;

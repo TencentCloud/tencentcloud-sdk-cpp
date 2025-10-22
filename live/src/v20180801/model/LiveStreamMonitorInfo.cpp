@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,7 +40,9 @@ LiveStreamMonitorInfo::LiveStreamMonitorInfo() :
     m_aiOcrInputIndexListHasBeenSet(false),
     m_allowMonitorReportHasBeenSet(false),
     m_aiFormatDiagnoseHasBeenSet(false),
-    m_aiQualityControlHasBeenSet(false)
+    m_aiQualityControlHasBeenSet(false),
+    m_casterIdHasBeenSet(false),
+    m_pullPushTaskIdHasBeenSet(false)
 {
 }
 
@@ -282,6 +284,26 @@ CoreInternalOutcome LiveStreamMonitorInfo::Deserialize(const rapidjson::Value &v
         m_aiQualityControlHasBeenSet = true;
     }
 
+    if (value.HasMember("CasterId") && !value["CasterId"].IsNull())
+    {
+        if (!value["CasterId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LiveStreamMonitorInfo.CasterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_casterId = string(value["CasterId"].GetString());
+        m_casterIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("PullPushTaskId") && !value["PullPushTaskId"].IsNull())
+    {
+        if (!value["PullPushTaskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LiveStreamMonitorInfo.PullPushTaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pullPushTaskId = string(value["PullPushTaskId"].GetString());
+        m_pullPushTaskIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -471,6 +493,22 @@ void LiveStreamMonitorInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "AiQualityControl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_aiQualityControl, allocator);
+    }
+
+    if (m_casterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CasterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_casterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pullPushTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PullPushTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pullPushTaskId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -794,5 +832,37 @@ void LiveStreamMonitorInfo::SetAiQualityControl(const uint64_t& _aiQualityContro
 bool LiveStreamMonitorInfo::AiQualityControlHasBeenSet() const
 {
     return m_aiQualityControlHasBeenSet;
+}
+
+string LiveStreamMonitorInfo::GetCasterId() const
+{
+    return m_casterId;
+}
+
+void LiveStreamMonitorInfo::SetCasterId(const string& _casterId)
+{
+    m_casterId = _casterId;
+    m_casterIdHasBeenSet = true;
+}
+
+bool LiveStreamMonitorInfo::CasterIdHasBeenSet() const
+{
+    return m_casterIdHasBeenSet;
+}
+
+string LiveStreamMonitorInfo::GetPullPushTaskId() const
+{
+    return m_pullPushTaskId;
+}
+
+void LiveStreamMonitorInfo::SetPullPushTaskId(const string& _pullPushTaskId)
+{
+    m_pullPushTaskId = _pullPushTaskId;
+    m_pullPushTaskIdHasBeenSet = true;
+}
+
+bool LiveStreamMonitorInfo::PullPushTaskIdHasBeenSet() const
+{
+    return m_pullPushTaskIdHasBeenSet;
 }
 

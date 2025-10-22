@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,10 @@ ConfigFileRelease::ConfigFileRelease() :
     m_modifyByHasBeenSet(false),
     m_releaseDescriptionHasBeenSet(false),
     m_activeHasBeenSet(false),
-    m_formatHasBeenSet(false)
+    m_formatHasBeenSet(false),
+    m_configFileIdHasBeenSet(false),
+    m_configFileSupportedClientHasBeenSet(false),
+    m_configFilePersistentHasBeenSet(false)
 {
 }
 
@@ -205,6 +208,43 @@ CoreInternalOutcome ConfigFileRelease::Deserialize(const rapidjson::Value &value
         m_formatHasBeenSet = true;
     }
 
+    if (value.HasMember("ConfigFileId") && !value["ConfigFileId"].IsNull())
+    {
+        if (!value["ConfigFileId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConfigFileRelease.ConfigFileId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_configFileId = string(value["ConfigFileId"].GetString());
+        m_configFileIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConfigFileSupportedClient") && !value["ConfigFileSupportedClient"].IsNull())
+    {
+        if (!value["ConfigFileSupportedClient"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConfigFileRelease.ConfigFileSupportedClient` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_configFileSupportedClient = value["ConfigFileSupportedClient"].GetInt64();
+        m_configFileSupportedClientHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConfigFilePersistent") && !value["ConfigFilePersistent"].IsNull())
+    {
+        if (!value["ConfigFilePersistent"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConfigFileRelease.ConfigFilePersistent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_configFilePersistent.Deserialize(value["ConfigFilePersistent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_configFilePersistentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -338,6 +378,31 @@ void ConfigFileRelease::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Format";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_format.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_configFileIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigFileId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_configFileId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_configFileSupportedClientHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigFileSupportedClient";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_configFileSupportedClient, allocator);
+    }
+
+    if (m_configFilePersistentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigFilePersistent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_configFilePersistent.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -597,5 +662,53 @@ void ConfigFileRelease::SetFormat(const string& _format)
 bool ConfigFileRelease::FormatHasBeenSet() const
 {
     return m_formatHasBeenSet;
+}
+
+string ConfigFileRelease::GetConfigFileId() const
+{
+    return m_configFileId;
+}
+
+void ConfigFileRelease::SetConfigFileId(const string& _configFileId)
+{
+    m_configFileId = _configFileId;
+    m_configFileIdHasBeenSet = true;
+}
+
+bool ConfigFileRelease::ConfigFileIdHasBeenSet() const
+{
+    return m_configFileIdHasBeenSet;
+}
+
+int64_t ConfigFileRelease::GetConfigFileSupportedClient() const
+{
+    return m_configFileSupportedClient;
+}
+
+void ConfigFileRelease::SetConfigFileSupportedClient(const int64_t& _configFileSupportedClient)
+{
+    m_configFileSupportedClient = _configFileSupportedClient;
+    m_configFileSupportedClientHasBeenSet = true;
+}
+
+bool ConfigFileRelease::ConfigFileSupportedClientHasBeenSet() const
+{
+    return m_configFileSupportedClientHasBeenSet;
+}
+
+ConfigFilePersistent ConfigFileRelease::GetConfigFilePersistent() const
+{
+    return m_configFilePersistent;
+}
+
+void ConfigFileRelease::SetConfigFilePersistent(const ConfigFilePersistent& _configFilePersistent)
+{
+    m_configFilePersistent = _configFilePersistent;
+    m_configFilePersistentHasBeenSet = true;
+}
+
+bool ConfigFileRelease::ConfigFilePersistentHasBeenSet() const
+{
+    return m_configFilePersistentHasBeenSet;
 }
 

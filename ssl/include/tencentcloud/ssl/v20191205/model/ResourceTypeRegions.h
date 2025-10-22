@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云资源类型
-                     * @return ResourceType 云资源类型
+                     * 获取云资源类型，支持clb、waf、apigateway、cos、tke、tse、tcb
+                     * @return ResourceType 云资源类型，支持clb、waf、apigateway、cos、tke、tse、tcb
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置云资源类型
-                     * @param _resourceType 云资源类型
+                     * 设置云资源类型，支持clb、waf、apigateway、cos、tke、tse、tcb
+                     * @param _resourceType 云资源类型，支持clb、waf、apigateway、cos、tke、tse、tcb
                      * 
                      */
                     void SetResourceType(const std::string& _resourceType);
@@ -91,7 +91,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 云资源类型
+                     * 云资源类型，支持clb、waf、apigateway、cos、tke、tse、tcb
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;

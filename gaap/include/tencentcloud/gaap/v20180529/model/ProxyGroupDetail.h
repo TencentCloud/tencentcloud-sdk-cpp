@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -326,18 +326,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagSet 标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TagPair> GetTagSet() const;
 
                     /**
                      * 设置标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tagSet 标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTagSet(const std::vector<TagPair>& _tagSet);
@@ -351,18 +347,14 @@ namespace TencentCloud
 
                     /**
                      * 获取安全策略ID，当设置了安全策略时，存在该字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyId 安全策略ID，当设置了安全策略时，存在该字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPolicyId() const;
 
                     /**
                      * 设置安全策略ID，当设置了安全策略时，存在该字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _policyId 安全策略ID，当设置了安全策略时，存在该字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPolicyId(const std::string& _policyId);
@@ -376,18 +368,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通道组版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 通道组版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置通道组版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _version 通道组版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -401,18 +389,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通道获取客户端IP的方式，0表示TOA，1表示Proxy Protocol
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientIPMethod 通道获取客户端IP的方式，0表示TOA，1表示Proxy Protocol
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetClientIPMethod() const;
 
                     /**
                      * 设置通道获取客户端IP的方式，0表示TOA，1表示Proxy Protocol
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clientIPMethod 通道获取客户端IP的方式，0表示TOA，1表示Proxy Protocol
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClientIPMethod(const std::vector<int64_t>& _clientIPMethod);
@@ -426,18 +410,14 @@ namespace TencentCloud
 
                     /**
                      * 获取IP版本，可取值：IPv4、IPv6，默认值IPv4
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IPAddressVersion IP版本，可取值：IPv4、IPv6，默认值IPv4
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIPAddressVersion() const;
 
                     /**
                      * 设置IP版本，可取值：IPv4、IPv6，默认值IPv4
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iPAddressVersion IP版本，可取值：IPv4、IPv6，默认值IPv4
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIPAddressVersion(const std::string& _iPAddressVersion);
@@ -451,18 +431,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通道组套餐类型：Thunder表示标准通道组，Accelerator表示银牌加速通道组，CrossBorder表示跨境通道组。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageType 通道组套餐类型：Thunder表示标准通道组，Accelerator表示银牌加速通道组，CrossBorder表示跨境通道组。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPackageType() const;
 
                     /**
                      * 设置通道组套餐类型：Thunder表示标准通道组，Accelerator表示银牌加速通道组，CrossBorder表示跨境通道组。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packageType 通道组套餐类型：Thunder表示标准通道组，Accelerator表示银牌加速通道组，CrossBorder表示跨境通道组。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackageType(const std::string& _packageType);
@@ -478,11 +454,9 @@ namespace TencentCloud
                      * 获取支持Http3特性的标识，其中：
 0表示关闭；
 1表示启用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Http3Supported 支持Http3特性的标识，其中：
 0表示关闭；
 1表示启用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHttp3Supported() const;
@@ -491,11 +465,9 @@ namespace TencentCloud
                      * 设置支持Http3特性的标识，其中：
 0表示关闭；
 1表示启用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _http3Supported 支持Http3特性的标识，其中：
 0表示关闭；
 1表示启用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHttp3Supported(const int64_t& _http3Supported);
@@ -520,7 +492,6 @@ namespace TencentCloud
 第6个bit，支持三网接入；
 第7个bit，支持接入段Qos加速。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FeatureBitmap 特性位图，每个bit位代表一种特性，其中：
 0，表示不支持该特性；
 1，表示支持该特性。
@@ -532,7 +503,6 @@ namespace TencentCloud
 第5个bit，支持精品BGP接入；
 第6个bit，支持三网接入；
 第7个bit，支持接入段Qos加速。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -551,7 +521,6 @@ namespace TencentCloud
 第6个bit，支持三网接入；
 第7个bit，支持接入段Qos加速。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _featureBitmap 特性位图，每个bit位代表一种特性，其中：
 0，表示不支持该特性；
 1，表示支持该特性。
@@ -563,7 +532,6 @@ namespace TencentCloud
 第5个bit，支持精品BGP接入；
 第6个bit，支持三网接入；
 第7个bit，支持接入段Qos加速。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -580,11 +548,9 @@ namespace TencentCloud
                      * 获取是否支持设置TLS设置
 0表示不支持；
 1表示支持。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsSupportTLSChoice 是否支持设置TLS设置
 0表示不支持；
 1表示支持。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsSupportTLSChoice() const;
@@ -593,11 +559,9 @@ namespace TencentCloud
                      * 设置是否支持设置TLS设置
 0表示不支持；
 1表示支持。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isSupportTLSChoice 是否支持设置TLS设置
 0表示不支持；
 1表示支持。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsSupportTLSChoice(const uint64_t& _isSupportTLSChoice);
@@ -691,42 +655,36 @@ namespace TencentCloud
 
                     /**
                      * 标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TagPair> m_tagSet;
                     bool m_tagSetHasBeenSet;
 
                     /**
                      * 安全策略ID，当设置了安全策略时，存在该字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_policyId;
                     bool m_policyIdHasBeenSet;
 
                     /**
                      * 通道组版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
                      * 通道获取客户端IP的方式，0表示TOA，1表示Proxy Protocol
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_clientIPMethod;
                     bool m_clientIPMethodHasBeenSet;
 
                     /**
                      * IP版本，可取值：IPv4、IPv6，默认值IPv4
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_iPAddressVersion;
                     bool m_iPAddressVersionHasBeenSet;
 
                     /**
                      * 通道组套餐类型：Thunder表示标准通道组，Accelerator表示银牌加速通道组，CrossBorder表示跨境通道组。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packageType;
                     bool m_packageTypeHasBeenSet;
@@ -735,7 +693,6 @@ namespace TencentCloud
                      * 支持Http3特性的标识，其中：
 0表示关闭；
 1表示启用。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_http3Supported;
                     bool m_http3SupportedHasBeenSet;
@@ -753,7 +710,6 @@ namespace TencentCloud
 第6个bit，支持三网接入；
 第7个bit，支持接入段Qos加速。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_featureBitmap;
                     bool m_featureBitmapHasBeenSet;
@@ -762,7 +718,6 @@ namespace TencentCloud
                      * 是否支持设置TLS设置
 0表示不支持；
 1表示支持。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isSupportTLSChoice;
                     bool m_isSupportTLSChoiceHasBeenSet;

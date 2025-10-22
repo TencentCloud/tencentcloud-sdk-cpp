@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -278,6 +278,27 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取主机类型
+                     * @return MachineType 主机类型
+                     * 
+                     */
+                    std::string GetMachineType() const;
+
+                    /**
+                     * 设置主机类型
+                     * @param _machineType 主机类型
+                     * 
+                     */
+                    void SetMachineType(const std::string& _machineType);
+
+                    /**
+                     * 判断参数 MachineType 是否已赋值
+                     * @return MachineType 是否已赋值
+                     * 
+                     */
+                    bool MachineTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -345,6 +366,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 主机类型
+                     */
+                    std::string m_machineType;
+                    bool m_machineTypeHasBeenSet;
 
                 };
             }

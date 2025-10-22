@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -112,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取上云计划描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Describe 上云计划描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescribe() const;
 
                     /**
                      * 设置上云计划描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _describe 上云计划描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescribe(const std::string& _describe);
@@ -137,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取码流类型，default:设备默认码流类型，main:主码流，sub:子码流，其他根据设备能力集自定义
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StreamType 码流类型，default:设备默认码流类型，main:主码流，sub:子码流，其他根据设备能力集自定义
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStreamType() const;
 
                     /**
                      * 设置码流类型，default:设备默认码流类型，main:主码流，sub:子码流，其他根据设备能力集自定义
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _streamType 码流类型，default:设备默认码流类型，main:主码流，sub:子码流，其他根据设备能力集自定义
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStreamType(const std::string& _streamType);
@@ -266,14 +258,12 @@ namespace TencentCloud
 
                     /**
                      * 上云计划描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_describe;
                     bool m_describeHasBeenSet;
 
                     /**
                      * 码流类型，default:设备默认码流类型，main:主码流，sub:子码流，其他根据设备能力集自定义
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_streamType;
                     bool m_streamTypeHasBeenSet;

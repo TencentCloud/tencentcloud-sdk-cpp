@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -117,6 +117,31 @@ namespace TencentCloud
                      */
                     bool PageSizeHasBeenSet() const;
 
+                    /**
+                     * 获取使用指定任务 ID 查询任务信息。
+注意：仅供使用指定 ID 创建的任务查询。
+                     * @return SpecifyTaskId 使用指定任务 ID 查询任务信息。
+注意：仅供使用指定 ID 创建的任务查询。
+                     * 
+                     */
+                    std::string GetSpecifyTaskId() const;
+
+                    /**
+                     * 设置使用指定任务 ID 查询任务信息。
+注意：仅供使用指定 ID 创建的任务查询。
+                     * @param _specifyTaskId 使用指定任务 ID 查询任务信息。
+注意：仅供使用指定 ID 创建的任务查询。
+                     * 
+                     */
+                    void SetSpecifyTaskId(const std::string& _specifyTaskId);
+
+                    /**
+                     * 判断参数 SpecifyTaskId 是否已赋值
+                     * @return SpecifyTaskId 是否已赋值
+                     * 
+                     */
+                    bool SpecifyTaskIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +164,13 @@ namespace TencentCloud
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
+
+                    /**
+                     * 使用指定任务 ID 查询任务信息。
+注意：仅供使用指定 ID 创建的任务查询。
+                     */
+                    std::string m_specifyTaskId;
+                    bool m_specifyTaskIdHasBeenSet;
 
                 };
             }

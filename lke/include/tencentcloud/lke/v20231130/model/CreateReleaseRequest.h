@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取机器人ID
-                     * @return BotBizId 机器人ID
+                     * 获取应用ID
+                     * @return BotBizId 应用ID
                      * 
                      */
                     std::string GetBotBizId() const;
 
                     /**
-                     * 设置机器人ID
-                     * @param _botBizId 机器人ID
+                     * 设置应用ID
+                     * @param _botBizId 应用ID
                      * 
                      */
                     void SetBotBizId(const std::string& _botBizId);
@@ -84,10 +84,31 @@ namespace TencentCloud
                      */
                     bool DescHasBeenSet() const;
 
+                    /**
+                     * 获取渠道业务ID，从ListChannel接口的响应字段ChannelId获取
+                     * @return ChannelBizIds 渠道业务ID，从ListChannel接口的响应字段ChannelId获取
+                     * 
+                     */
+                    std::vector<std::string> GetChannelBizIds() const;
+
+                    /**
+                     * 设置渠道业务ID，从ListChannel接口的响应字段ChannelId获取
+                     * @param _channelBizIds 渠道业务ID，从ListChannel接口的响应字段ChannelId获取
+                     * 
+                     */
+                    void SetChannelBizIds(const std::vector<std::string>& _channelBizIds);
+
+                    /**
+                     * 判断参数 ChannelBizIds 是否已赋值
+                     * @return ChannelBizIds 是否已赋值
+                     * 
+                     */
+                    bool ChannelBizIdsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 机器人ID
+                     * 应用ID
                      */
                     std::string m_botBizId;
                     bool m_botBizIdHasBeenSet;
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_desc;
                     bool m_descHasBeenSet;
+
+                    /**
+                     * 渠道业务ID，从ListChannel接口的响应字段ChannelId获取
+                     */
+                    std::vector<std::string> m_channelBizIds;
+                    bool m_channelBizIdsHasBeenSet;
 
                 };
             }

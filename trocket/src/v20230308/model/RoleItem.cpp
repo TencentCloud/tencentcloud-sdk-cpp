@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ RoleItem::RoleItem() :
     m_secretKeyHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
-    m_modifiedTimeHasBeenSet(false)
+    m_modifiedTimeHasBeenSet(false),
+    m_permTypeHasBeenSet(false),
+    m_detailedRolePermsHasBeenSet(false)
 {
 }
 
@@ -117,6 +119,36 @@ CoreInternalOutcome RoleItem::Deserialize(const rapidjson::Value &value)
         m_modifiedTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("PermType") && !value["PermType"].IsNull())
+    {
+        if (!value["PermType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RoleItem.PermType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_permType = string(value["PermType"].GetString());
+        m_permTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DetailedRolePerms") && !value["DetailedRolePerms"].IsNull())
+    {
+        if (!value["DetailedRolePerms"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RoleItem.DetailedRolePerms` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DetailedRolePerms"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DetailedRolePerm item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_detailedRolePerms.push_back(item);
+        }
+        m_detailedRolePermsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +218,29 @@ void RoleItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "ModifiedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_modifiedTime, allocator);
+    }
+
+    if (m_permTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PermType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_permType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_detailedRolePermsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DetailedRolePerms";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_detailedRolePerms.begin(); itr != m_detailedRolePerms.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -317,5 +372,37 @@ void RoleItem::SetModifiedTime(const int64_t& _modifiedTime)
 bool RoleItem::ModifiedTimeHasBeenSet() const
 {
     return m_modifiedTimeHasBeenSet;
+}
+
+string RoleItem::GetPermType() const
+{
+    return m_permType;
+}
+
+void RoleItem::SetPermType(const string& _permType)
+{
+    m_permType = _permType;
+    m_permTypeHasBeenSet = true;
+}
+
+bool RoleItem::PermTypeHasBeenSet() const
+{
+    return m_permTypeHasBeenSet;
+}
+
+vector<DetailedRolePerm> RoleItem::GetDetailedRolePerms() const
+{
+    return m_detailedRolePerms;
+}
+
+void RoleItem::SetDetailedRolePerms(const vector<DetailedRolePerm>& _detailedRolePerms)
+{
+    m_detailedRolePerms = _detailedRolePerms;
+    m_detailedRolePermsHasBeenSet = true;
+}
+
+bool RoleItem::DetailedRolePermsHasBeenSet() const
+{
+    return m_detailedRolePermsHasBeenSet;
 }
 

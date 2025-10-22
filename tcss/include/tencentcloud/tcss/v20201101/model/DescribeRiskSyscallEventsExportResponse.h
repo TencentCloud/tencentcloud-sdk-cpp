@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Excel下载地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DownloadUrl Excel下载地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDownloadUrl() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取任务Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobId 任务Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJobId() const;
@@ -79,14 +75,12 @@ namespace TencentCloud
 
                     /**
                      * Excel下载地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_downloadUrl;
                     bool m_downloadUrlHasBeenSet;
 
                     /**
                      * 任务Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;

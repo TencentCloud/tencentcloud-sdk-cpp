@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool SizeHasBeenSet() const;
 
                     /**
-                     * 获取主机个数
-                     * @return HostCnt 主机个数
+                     * 获取主机个数(包含普通节点数和超级节点数)
+                     * @return HostCnt 主机个数(包含普通节点数和超级节点数)
                      * 
                      */
                     uint64_t GetHostCnt() const;
 
                     /**
-                     * 设置主机个数
-                     * @param _hostCnt 主机个数
+                     * 设置主机个数(包含普通节点数和超级节点数)
+                     * @param _hostCnt 主机个数(包含普通节点数和超级节点数)
                      * 
                      */
                     void SetHostCnt(const uint64_t& _hostCnt);
@@ -150,6 +150,27 @@ namespace TencentCloud
                      * 
                      */
                     bool HostCntHasBeenSet() const;
+
+                    /**
+                     * 获取超级节点数
+                     * @return SuperNodeCnt 超级节点数
+                     * 
+                     */
+                    uint64_t GetSuperNodeCnt() const;
+
+                    /**
+                     * 设置超级节点数
+                     * @param _superNodeCnt 超级节点数
+                     * 
+                     */
+                    void SetSuperNodeCnt(const uint64_t& _superNodeCnt);
+
+                    /**
+                     * 判断参数 SuperNodeCnt 是否已赋值
+                     * @return SuperNodeCnt 是否已赋值
+                     * 
+                     */
+                    bool SuperNodeCntHasBeenSet() const;
 
                     /**
                      * 获取容器个数
@@ -640,10 +661,16 @@ namespace TencentCloud
                     bool m_sizeHasBeenSet;
 
                     /**
-                     * 主机个数
+                     * 主机个数(包含普通节点数和超级节点数)
                      */
                     uint64_t m_hostCnt;
                     bool m_hostCntHasBeenSet;
+
+                    /**
+                     * 超级节点数
+                     */
+                    uint64_t m_superNodeCnt;
+                    bool m_superNodeCntHasBeenSet;
 
                     /**
                      * 容器个数

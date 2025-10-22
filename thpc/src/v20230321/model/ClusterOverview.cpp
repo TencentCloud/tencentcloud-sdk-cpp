@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,8 @@ ClusterOverview::ClusterOverview() :
     m_loginNodeSetHasBeenSet(false),
     m_loginNodeCountHasBeenSet(false),
     m_autoScalingTypeHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_clusterTypeHasBeenSet(false)
 {
 }
 
@@ -231,6 +232,16 @@ CoreInternalOutcome ClusterOverview::Deserialize(const rapidjson::Value &value)
         m_vpcIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterType") && !value["ClusterType"].IsNull())
+    {
+        if (!value["ClusterType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterOverview.ClusterType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterType = string(value["ClusterType"].GetString());
+        m_clusterTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -378,6 +389,14 @@ void ClusterOverview::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "VpcId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -621,5 +640,21 @@ void ClusterOverview::SetVpcId(const string& _vpcId)
 bool ClusterOverview::VpcIdHasBeenSet() const
 {
     return m_vpcIdHasBeenSet;
+}
+
+string ClusterOverview::GetClusterType() const
+{
+    return m_clusterType;
+}
+
+void ClusterOverview::SetClusterType(const string& _clusterType)
+{
+    m_clusterType = _clusterType;
+    m_clusterTypeHasBeenSet = true;
+}
+
+bool ClusterOverview::ClusterTypeHasBeenSet() const
+{
+    return m_clusterTypeHasBeenSet;
 }
 

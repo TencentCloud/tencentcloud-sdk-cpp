@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ DifferenceData::DifferenceData() :
     m_dstChunkHasBeenSet(false),
     m_srcItemHasBeenSet(false),
     m_dstItemHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
 {
 }
@@ -96,6 +97,16 @@ CoreInternalOutcome DifferenceData::Deserialize(const rapidjson::Value &value)
         m_dstItemHasBeenSet = true;
     }
 
+    if (value.HasMember("CreatedAt") && !value["CreatedAt"].IsNull())
+    {
+        if (!value["CreatedAt"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DifferenceData.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createdAt = string(value["CreatedAt"].GetString());
+        m_createdAtHasBeenSet = true;
+    }
+
     if (value.HasMember("UpdatedAt") && !value["UpdatedAt"].IsNull())
     {
         if (!value["UpdatedAt"].IsString())
@@ -159,6 +170,14 @@ void DifferenceData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "DstItem";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dstItem.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createdAtHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreatedAt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdAt.c_str(), allocator).Move(), allocator);
     }
 
     if (m_updatedAtHasBeenSet)
@@ -266,6 +285,22 @@ void DifferenceData::SetDstItem(const string& _dstItem)
 bool DifferenceData::DstItemHasBeenSet() const
 {
     return m_dstItemHasBeenSet;
+}
+
+string DifferenceData::GetCreatedAt() const
+{
+    return m_createdAt;
+}
+
+void DifferenceData::SetCreatedAt(const string& _createdAt)
+{
+    m_createdAt = _createdAt;
+    m_createdAtHasBeenSet = true;
+}
+
+bool DifferenceData::CreatedAtHasBeenSet() const
+{
+    return m_createdAtHasBeenSet;
 }
 
 string DifferenceData::GetUpdatedAt() const

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ using namespace TencentCloud::Dc::V20180410::Model;
 using namespace std;
 
 BgpPeer::BgpPeer() :
+    m_cloudAsnHasBeenSet(false),
     m_asnHasBeenSet(false),
     m_authKeyHasBeenSet(false)
 {
@@ -30,6 +31,16 @@ CoreInternalOutcome BgpPeer::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("CloudAsn") && !value["CloudAsn"].IsNull())
+    {
+        if (!value["CloudAsn"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BgpPeer.CloudAsn` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cloudAsn = value["CloudAsn"].GetInt64();
+        m_cloudAsnHasBeenSet = true;
+    }
 
     if (value.HasMember("Asn") && !value["Asn"].IsNull())
     {
@@ -58,6 +69,14 @@ CoreInternalOutcome BgpPeer::Deserialize(const rapidjson::Value &value)
 void BgpPeer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_cloudAsnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloudAsn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cloudAsn, allocator);
+    }
+
     if (m_asnHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -76,6 +95,22 @@ void BgpPeer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
 
 }
 
+
+int64_t BgpPeer::GetCloudAsn() const
+{
+    return m_cloudAsn;
+}
+
+void BgpPeer::SetCloudAsn(const int64_t& _cloudAsn)
+{
+    m_cloudAsn = _cloudAsn;
+    m_cloudAsnHasBeenSet = true;
+}
+
+bool BgpPeer::CloudAsnHasBeenSet() const
+{
+    return m_cloudAsnHasBeenSet;
+}
 
 int64_t BgpPeer::GetAsn() const
 {

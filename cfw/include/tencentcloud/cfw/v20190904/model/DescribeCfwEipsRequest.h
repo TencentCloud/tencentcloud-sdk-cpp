@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool NatGatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取防火墙实例id，当前仅支持接入模式的实例
-                     * @return CfwInstance 防火墙实例id，当前仅支持接入模式的实例
+                     * 获取防火墙实例id，当前仅支持接入模式的实例，该字段必填
+                     * @return CfwInstance 防火墙实例id，当前仅支持接入模式的实例，该字段必填
                      * 
                      */
                     std::string GetCfwInstance() const;
 
                     /**
-                     * 设置防火墙实例id，当前仅支持接入模式的实例
-                     * @param _cfwInstance 防火墙实例id，当前仅支持接入模式的实例
+                     * 设置防火墙实例id，当前仅支持接入模式的实例，该字段必填
+                     * @param _cfwInstance 防火墙实例id，当前仅支持接入模式的实例，该字段必填
                      * 
                      */
                     void SetCfwInstance(const std::string& _cfwInstance);
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_natGatewayIdHasBeenSet;
 
                     /**
-                     * 防火墙实例id，当前仅支持接入模式的实例
+                     * 防火墙实例id，当前仅支持接入模式的实例，该字段必填
                      */
                     std::string m_cfwInstance;
                     bool m_cfwInstanceHasBeenSet;

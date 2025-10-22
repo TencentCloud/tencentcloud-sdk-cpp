@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,12 @@ CCRuleItems::CCRuleItems() :
     m_ruleIdHasBeenSet(false),
     m_eventIdHasBeenSet(false),
     m_sessionAppliedHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_limitMethodHasBeenSet(false),
+    m_celRuleHasBeenSet(false),
+    m_logicalOpHasBeenSet(false),
+    m_pageIdHasBeenSet(false),
+    m_actionRatioHasBeenSet(false)
 {
 }
 
@@ -208,6 +213,56 @@ CoreInternalOutcome CCRuleItems::Deserialize(const rapidjson::Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("LimitMethod") && !value["LimitMethod"].IsNull())
+    {
+        if (!value["LimitMethod"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CCRuleItems.LimitMethod` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_limitMethod = string(value["LimitMethod"].GetString());
+        m_limitMethodHasBeenSet = true;
+    }
+
+    if (value.HasMember("CelRule") && !value["CelRule"].IsNull())
+    {
+        if (!value["CelRule"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CCRuleItems.CelRule` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_celRule = string(value["CelRule"].GetString());
+        m_celRuleHasBeenSet = true;
+    }
+
+    if (value.HasMember("LogicalOp") && !value["LogicalOp"].IsNull())
+    {
+        if (!value["LogicalOp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CCRuleItems.LogicalOp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logicalOp = string(value["LogicalOp"].GetString());
+        m_logicalOpHasBeenSet = true;
+    }
+
+    if (value.HasMember("PageId") && !value["PageId"].IsNull())
+    {
+        if (!value["PageId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CCRuleItems.PageId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pageId = string(value["PageId"].GetString());
+        m_pageIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ActionRatio") && !value["ActionRatio"].IsNull())
+    {
+        if (!value["ActionRatio"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CCRuleItems.ActionRatio` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_actionRatio = value["ActionRatio"].GetUint64();
+        m_actionRatioHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -346,6 +401,46 @@ void CCRuleItems::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
+    }
+
+    if (m_limitMethodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LimitMethod";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_limitMethod.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_celRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CelRule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_celRule.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logicalOpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogicalOp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logicalOp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pageIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pageId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_actionRatioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ActionRatio";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_actionRatio, allocator);
     }
 
 }
@@ -605,5 +700,85 @@ void CCRuleItems::SetCreateTime(const uint64_t& _createTime)
 bool CCRuleItems::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+string CCRuleItems::GetLimitMethod() const
+{
+    return m_limitMethod;
+}
+
+void CCRuleItems::SetLimitMethod(const string& _limitMethod)
+{
+    m_limitMethod = _limitMethod;
+    m_limitMethodHasBeenSet = true;
+}
+
+bool CCRuleItems::LimitMethodHasBeenSet() const
+{
+    return m_limitMethodHasBeenSet;
+}
+
+string CCRuleItems::GetCelRule() const
+{
+    return m_celRule;
+}
+
+void CCRuleItems::SetCelRule(const string& _celRule)
+{
+    m_celRule = _celRule;
+    m_celRuleHasBeenSet = true;
+}
+
+bool CCRuleItems::CelRuleHasBeenSet() const
+{
+    return m_celRuleHasBeenSet;
+}
+
+string CCRuleItems::GetLogicalOp() const
+{
+    return m_logicalOp;
+}
+
+void CCRuleItems::SetLogicalOp(const string& _logicalOp)
+{
+    m_logicalOp = _logicalOp;
+    m_logicalOpHasBeenSet = true;
+}
+
+bool CCRuleItems::LogicalOpHasBeenSet() const
+{
+    return m_logicalOpHasBeenSet;
+}
+
+string CCRuleItems::GetPageId() const
+{
+    return m_pageId;
+}
+
+void CCRuleItems::SetPageId(const string& _pageId)
+{
+    m_pageId = _pageId;
+    m_pageIdHasBeenSet = true;
+}
+
+bool CCRuleItems::PageIdHasBeenSet() const
+{
+    return m_pageIdHasBeenSet;
+}
+
+uint64_t CCRuleItems::GetActionRatio() const
+{
+    return m_actionRatio;
+}
+
+void CCRuleItems::SetActionRatio(const uint64_t& _actionRatio)
+{
+    m_actionRatio = _actionRatio;
+    m_actionRatioHasBeenSet = true;
+}
+
+bool CCRuleItems::ActionRatioHasBeenSet() const
+{
+    return m_actionRatioHasBeenSet;
 }
 

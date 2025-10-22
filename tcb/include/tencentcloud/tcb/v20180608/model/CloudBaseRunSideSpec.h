@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取容器镜像
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerImage 容器镜像
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContainerImage() const;
 
                     /**
                      * 设置容器镜像
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _containerImage 容器镜像
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContainerImage(const std::string& _containerImage);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取容器端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerPort 容器端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetContainerPort() const;
 
                     /**
                      * 设置容器端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _containerPort 容器端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContainerPort(const int64_t& _containerPort);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取容器的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerName 容器的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContainerName() const;
 
                     /**
                      * 设置容器的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _containerName 容器的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContainerName(const std::string& _containerName);
@@ -125,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取kv的json字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnvVar kv的json字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEnvVar() const;
 
                     /**
                      * 设置kv的json字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _envVar kv的json字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnvVar(const std::string& _envVar);
@@ -150,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取InitialDelaySeconds 延迟多长时间启动健康检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InitialDelaySeconds InitialDelaySeconds 延迟多长时间启动健康检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInitialDelaySeconds() const;
 
                     /**
                      * 设置InitialDelaySeconds 延迟多长时间启动健康检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _initialDelaySeconds InitialDelaySeconds 延迟多长时间启动健康检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInitialDelaySeconds(const int64_t& _initialDelaySeconds);
@@ -175,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CPU大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cpu CPU大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCpu() const;
 
                     /**
                      * 设置CPU大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cpu CPU大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCpu(const int64_t& _cpu);
@@ -200,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内存大小（单位：M）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Mem 内存大小（单位：M）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMem() const;
 
                     /**
                      * 设置内存大小（单位：M）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mem 内存大小（单位：M）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMem(const int64_t& _mem);
@@ -225,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取安全特性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Security 安全特性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CloudBaseSecurityContext GetSecurity() const;
 
                     /**
                      * 设置安全特性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _security 安全特性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecurity(const CloudBaseSecurityContext& _security);
@@ -250,18 +218,14 @@ namespace TencentCloud
 
                     /**
                      * 获取挂载信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VolumeMountInfos 挂载信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CloudBaseRunVolumeMount> GetVolumeMountInfos() const;
 
                     /**
                      * 设置挂载信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _volumeMountInfos 挂载信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVolumeMountInfos(const std::vector<CloudBaseRunVolumeMount>& _volumeMountInfos);
@@ -277,63 +241,54 @@ namespace TencentCloud
 
                     /**
                      * 容器镜像
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_containerImage;
                     bool m_containerImageHasBeenSet;
 
                     /**
                      * 容器端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_containerPort;
                     bool m_containerPortHasBeenSet;
 
                     /**
                      * 容器的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_containerName;
                     bool m_containerNameHasBeenSet;
 
                     /**
                      * kv的json字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_envVar;
                     bool m_envVarHasBeenSet;
 
                     /**
                      * InitialDelaySeconds 延迟多长时间启动健康检查
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_initialDelaySeconds;
                     bool m_initialDelaySecondsHasBeenSet;
 
                     /**
                      * CPU大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cpu;
                     bool m_cpuHasBeenSet;
 
                     /**
                      * 内存大小（单位：M）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_mem;
                     bool m_memHasBeenSet;
 
                     /**
                      * 安全特性
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CloudBaseSecurityContext m_security;
                     bool m_securityHasBeenSet;
 
                     /**
                      * 挂载信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CloudBaseRunVolumeMount> m_volumeMountInfos;
                     bool m_volumeMountInfosHasBeenSet;

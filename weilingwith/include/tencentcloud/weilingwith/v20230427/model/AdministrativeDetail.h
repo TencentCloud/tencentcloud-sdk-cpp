@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取行政区域类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdministrativeTypeCode 行政区域类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAdministrativeTypeCode() const;
 
                     /**
                      * 设置行政区域类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _administrativeTypeCode 行政区域类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdministrativeTypeCode(const std::string& _administrativeTypeCode);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取行政区域编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdministrativeCode 行政区域编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAdministrativeCode() const;
 
                     /**
                      * 设置行政区域编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _administrativeCode 行政区域编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdministrativeCode(const std::string& _administrativeCode);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取行政区域名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdministrativeName 行政区域名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAdministrativeName() const;
 
                     /**
                      * 设置行政区域名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _administrativeName 行政区域名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdministrativeName(const std::string& _administrativeName);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 行政区域类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_administrativeTypeCode;
                     bool m_administrativeTypeCodeHasBeenSet;
 
                     /**
                      * 行政区域编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_administrativeCode;
                     bool m_administrativeCodeHasBeenSet;
 
                     /**
                      * 行政区域名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_administrativeName;
                     bool m_administrativeNameHasBeenSet;

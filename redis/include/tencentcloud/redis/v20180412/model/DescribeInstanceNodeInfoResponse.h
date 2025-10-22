@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,9 +62,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Proxy节点信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Proxy Proxy节点信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ProxyNodes> GetProxy() const;
@@ -92,9 +90,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Redis节点信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Redis Redis节点信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RedisNodes> GetRedis() const;
@@ -122,9 +118,7 @@ namespace TencentCloud
 
                     /**
                      * 获取该参数不再使用，请忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tendis 该参数不再使用，请忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TendisNodes> GetTendis() const;
@@ -146,7 +140,6 @@ namespace TencentCloud
 
                     /**
                      * Proxy节点信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ProxyNodes> m_proxy;
                     bool m_proxyHasBeenSet;
@@ -159,7 +152,6 @@ namespace TencentCloud
 
                     /**
                      * Redis节点信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RedisNodes> m_redis;
                     bool m_redisHasBeenSet;
@@ -172,7 +164,6 @@ namespace TencentCloud
 
                     /**
                      * 该参数不再使用，请忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TendisNodes> m_tendis;
                     bool m_tendisHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取不支持从可用区的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NonsupportSlaveZoneReason 不支持从可用区的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNonsupportSlaveZoneReason() const;
 
                     /**
                      * 设置不支持从可用区的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nonsupportSlaveZoneReason 不支持从可用区的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNonsupportSlaveZoneReason(const std::string& _nonsupportSlaveZoneReason);
@@ -115,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取不支持RO实例的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NonsupportRoReason 不支持RO实例的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNonsupportRoReason() const;
 
                     /**
                      * 设置不支持RO实例的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nonsupportRoReason 不支持RO实例的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNonsupportRoReason(const std::string& _nonsupportRoReason);
@@ -140,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否支持手动发起快照备份
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsSupportManualSnapshot 是否支持手动发起快照备份
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIsSupportManualSnapshot() const;
 
                     /**
                      * 设置是否支持手动发起快照备份
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isSupportManualSnapshot 是否支持手动发起快照备份
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsSupportManualSnapshot(const std::string& _isSupportManualSnapshot);
@@ -165,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否支持透明数据加密
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsSupportTransparentDataEncryption 是否支持透明数据加密
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIsSupportTransparentDataEncryption() const;
 
                     /**
                      * 设置是否支持透明数据加密
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isSupportTransparentDataEncryption 是否支持透明数据加密
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsSupportTransparentDataEncryption(const std::string& _isSupportTransparentDataEncryption);
@@ -190,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取不支持透明数据加密原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NoSupportTransparentDataEncryptionReason 不支持透明数据加密原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNoSupportTransparentDataEncryptionReason() const;
 
                     /**
                      * 设置不支持透明数据加密原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _noSupportTransparentDataEncryptionReason 不支持透明数据加密原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNoSupportTransparentDataEncryptionReason(const std::string& _noSupportTransparentDataEncryptionReason);
@@ -215,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否支持手动发起逻辑备份
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsSupportManualLogic 是否支持手动发起逻辑备份
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIsSupportManualLogic() const;
 
                     /**
                      * 设置是否支持手动发起逻辑备份
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isSupportManualLogic 是否支持手动发起逻辑备份
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsSupportManualLogic(const std::string& _isSupportManualLogic);
@@ -248,7 +224,6 @@ namespace TencentCloud
 
                     /**
                      * 不支持从可用区的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nonsupportSlaveZoneReason;
                     bool m_nonsupportSlaveZoneReasonHasBeenSet;
@@ -261,35 +236,30 @@ namespace TencentCloud
 
                     /**
                      * 不支持RO实例的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nonsupportRoReason;
                     bool m_nonsupportRoReasonHasBeenSet;
 
                     /**
                      * 是否支持手动发起快照备份
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_isSupportManualSnapshot;
                     bool m_isSupportManualSnapshotHasBeenSet;
 
                     /**
                      * 是否支持透明数据加密
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_isSupportTransparentDataEncryption;
                     bool m_isSupportTransparentDataEncryptionHasBeenSet;
 
                     /**
                      * 不支持透明数据加密原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_noSupportTransparentDataEncryptionReason;
                     bool m_noSupportTransparentDataEncryptionReasonHasBeenSet;
 
                     /**
                      * 是否支持手动发起逻辑备份
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_isSupportManualLogic;
                     bool m_isSupportManualLogicHasBeenSet;

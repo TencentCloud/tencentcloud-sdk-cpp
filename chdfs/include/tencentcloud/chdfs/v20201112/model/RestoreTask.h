@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool FilePathHasBeenSet() const;
 
                     /**
-                     * 获取回热任务类型（1：标准；2：极速；3：批量，暂时仅支持极速）
-                     * @return Type 回热任务类型（1：标准；2：极速；3：批量，暂时仅支持极速）
+                     * 获取回热任务类型（1：标准；2：极速；3：批量，暂时仅支持标准）
+                     * @return Type 回热任务类型（1：标准；2：极速；3：批量，暂时仅支持标准）
                      * 
                      */
                     uint64_t GetType() const;
 
                     /**
-                     * 设置回热任务类型（1：标准；2：极速；3：批量，暂时仅支持极速）
-                     * @param _type 回热任务类型（1：标准；2：极速；3：批量，暂时仅支持极速）
+                     * 设置回热任务类型（1：标准；2：极速；3：批量，暂时仅支持标准）
+                     * @param _type 回热任务类型（1：标准；2：极速；3：批量，暂时仅支持标准）
                      * 
                      */
                     void SetType(const uint64_t& _type);
@@ -187,7 +187,7 @@ namespace TencentCloud
                     bool m_filePathHasBeenSet;
 
                     /**
-                     * 回热任务类型（1：标准；2：极速；3：批量，暂时仅支持极速）
+                     * 回热任务类型（1：标准；2：极速；3：批量，暂时仅支持标准）
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;

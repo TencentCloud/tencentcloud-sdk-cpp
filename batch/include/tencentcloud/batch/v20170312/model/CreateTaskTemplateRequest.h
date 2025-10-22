@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务模板名称
-                     * @return TaskTemplateName 任务模板名称
+                     * 获取任务模板名称，最大长度限制60个字符。
+                     * @return TaskTemplateName 任务模板名称，最大长度限制60个字符。
                      * 
                      */
                     std::string GetTaskTemplateName() const;
 
                     /**
-                     * 设置任务模板名称
-                     * @param _taskTemplateName 任务模板名称
+                     * 设置任务模板名称，最大长度限制60个字符。
+                     * @param _taskTemplateName 任务模板名称，最大长度限制60个字符。
                      * 
                      */
                     void SetTaskTemplateName(const std::string& _taskTemplateName);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool TaskTemplateInfoHasBeenSet() const;
 
                     /**
-                     * 获取任务模板描述
-                     * @return TaskTemplateDescription 任务模板描述
+                     * 获取任务模板描述，最大长度限制200个字符。
+                     * @return TaskTemplateDescription 任务模板描述，最大长度限制200个字符。
                      * 
                      */
                     std::string GetTaskTemplateDescription() const;
 
                     /**
-                     * 设置任务模板描述
-                     * @param _taskTemplateDescription 任务模板描述
+                     * 设置任务模板描述，最大长度限制200个字符。
+                     * @param _taskTemplateDescription 任务模板描述，最大长度限制200个字符。
                      * 
                      */
                     void SetTaskTemplateDescription(const std::string& _taskTemplateDescription);
@@ -131,7 +131,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务模板名称
+                     * 任务模板名称，最大长度限制60个字符。
                      */
                     std::string m_taskTemplateName;
                     bool m_taskTemplateNameHasBeenSet;
@@ -143,7 +143,7 @@ namespace TencentCloud
                     bool m_taskTemplateInfoHasBeenSet;
 
                     /**
-                     * 任务模板描述
+                     * 任务模板描述，最大长度限制200个字符。
                      */
                     std::string m_taskTemplateDescription;
                     bool m_taskTemplateDescriptionHasBeenSet;

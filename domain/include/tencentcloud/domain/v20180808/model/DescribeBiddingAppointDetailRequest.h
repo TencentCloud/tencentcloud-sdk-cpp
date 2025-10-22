@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取business_id
-                     * @return BusinessID business_id
+                     * 获取预约ID
+可通过[DescribeBiddingAppointList](https://cloud.tencent.com/document/api/242/106600)接口获取
+                     * @return BusinessID 预约ID
+可通过[DescribeBiddingAppointList](https://cloud.tencent.com/document/api/242/106600)接口获取
                      * 
                      */
                     std::string GetBusinessID() const;
 
                     /**
-                     * 设置business_id
-                     * @param _businessID business_id
+                     * 设置预约ID
+可通过[DescribeBiddingAppointList](https://cloud.tencent.com/document/api/242/106600)接口获取
+                     * @param _businessID 预约ID
+可通过[DescribeBiddingAppointList](https://cloud.tencent.com/document/api/242/106600)接口获取
                      * 
                      */
                     void SetBusinessID(const std::string& _businessID);
@@ -66,7 +70,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * business_id
+                     * 预约ID
+可通过[DescribeBiddingAppointList](https://cloud.tencent.com/document/api/242/106600)接口获取
                      */
                     std::string m_businessID;
                     bool m_businessIDHasBeenSet;

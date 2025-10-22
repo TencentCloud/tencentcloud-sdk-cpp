@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -126,6 +126,48 @@ namespace TencentCloud
                      */
                     bool AccountRegexpHasBeenSet() const;
 
+                    /**
+                     * 获取默认无排序，支持：ASC、DESC、asc、desc
+                     * @return SortBy 默认无排序，支持：ASC、DESC、asc、desc
+                     * 
+                     */
+                    std::string GetSortBy() const;
+
+                    /**
+                     * 设置默认无排序，支持：ASC、DESC、asc、desc
+                     * @param _sortBy 默认无排序，支持：ASC、DESC、asc、desc
+                     * 
+                     */
+                    void SetSortBy(const std::string& _sortBy);
+
+                    /**
+                     * 判断参数 SortBy 是否已赋值
+                     * @return SortBy 是否已赋值
+                     * 
+                     */
+                    bool SortByHasBeenSet() const;
+
+                    /**
+                     * 获取待排序的时间字段，可选：CreateTime(账号创建时间)、ModifyTime(账号更新时间)、ModifyPasswordTime(密码修改时间)
+                     * @return OrderBy 待排序的时间字段，可选：CreateTime(账号创建时间)、ModifyTime(账号更新时间)、ModifyPasswordTime(密码修改时间)
+                     * 
+                     */
+                    std::string GetOrderBy() const;
+
+                    /**
+                     * 设置待排序的时间字段，可选：CreateTime(账号创建时间)、ModifyTime(账号更新时间)、ModifyPasswordTime(密码修改时间)
+                     * @param _orderBy 待排序的时间字段，可选：CreateTime(账号创建时间)、ModifyTime(账号更新时间)、ModifyPasswordTime(密码修改时间)
+                     * 
+                     */
+                    void SetOrderBy(const std::string& _orderBy);
+
+                    /**
+                     * 判断参数 OrderBy 是否已赋值
+                     * @return OrderBy 是否已赋值
+                     * 
+                     */
+                    bool OrderByHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +193,18 @@ namespace TencentCloud
                      */
                     std::string m_accountRegexp;
                     bool m_accountRegexpHasBeenSet;
+
+                    /**
+                     * 默认无排序，支持：ASC、DESC、asc、desc
+                     */
+                    std::string m_sortBy;
+                    bool m_sortByHasBeenSet;
+
+                    /**
+                     * 待排序的时间字段，可选：CreateTime(账号创建时间)、ModifyTime(账号更新时间)、ModifyPasswordTime(密码修改时间)
+                     */
+                    std::string m_orderBy;
+                    bool m_orderByHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,34 +65,26 @@ namespace TencentCloud
                     bool ActivityIdsHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件。
-<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>
-<li> activity-status-code - String - 是否必填：否 -（过滤条件）按照伸缩活动状态过滤。（INIT：初始化中|RUNNING：运行中|SUCCESSFUL：活动成功|PARTIALLY_SUCCESSFUL：活动部分成功|FAILED：活动失败|CANCELLED：活动取消）</li>
-<li> activity-type - String - 是否必填：否 -（过滤条件）按照伸缩活动类型过滤。（SCALE_OUT：扩容活动|SCALE_IN：缩容活动|ATTACH_INSTANCES：添加实例|REMOVE_INSTANCES：销毁实例|DETACH_INSTANCES：移出实例|TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁|REPLACE_UNHEALTHY_INSTANCE：替换不健康实例|UPDATE_LOAD_BALANCERS：更新负载均衡器）</li>
-<li> activity-id - String - 是否必填：否 -（过滤条件）按照伸缩活动ID过滤。</li>
+                     * 获取过滤条件。过滤字段取值范围如下：
+<ul>
+<li><strong>auto-scaling-group-id</strong><ul><li>按照【<strong>伸缩组ID</strong>】进行过滤。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 或调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li><li>类型：String</li><li>必选：否</li><li>示例值: asg-kiju7yt5</li></ul></li><li><strong>activity-status-code</strong><ul><li>按照【<strong>伸缩活动状态</strong>】进行过滤</li><li>类型：String</li><li>必选：否</li><li>可选项: </li><ul><li>INIT：初始化中</li><li>RUNNING：运行中</li><li>SUCCESSFUL：活动成功</li><li>PARTIALLY_SUCCESSFUL：活动部分成功</li><li>FAILED：活动失败</li><li>CANCELLED：活动取消</li></ul></ul></li><li><strong>activity-type</strong><ul><li>按照【<strong>伸缩活动类型</strong>】进行过滤</li><li>类型：String</li><li>必选：否</li><li>可选项: </li><ul><li>SCALE_OUT：扩容活动</li><li>SCALE_IN：缩容活动</li><li>ATTACH_INSTANCES：添加实例</li><li>REMOVE_INSTANCES：销毁实例</li><li>DETACH_INSTANCES：移出实例</li><li>TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁</li><li>REPLACE_UNHEALTHY_INSTANCE：替换不健康实例</li><li>START_INSTANCES：开启实例</li><li>STOP_INSTANCES：关闭实例</li><li>INVOKE_COMMAND：执行命令</li></ul></ul></li><li><strong>activity-id</strong><ul><li>按照【<strong>伸缩活动ID</strong>】进行过滤。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 获取伸缩活动ID。</li><li>类型：String</li><li>必选：否</li><li>示例值: asa-hy6tr4ed</li></ul></li></ul>
 每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`ActivityIds`和`Filters`。
-                     * @return Filters 过滤条件。
-<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>
-<li> activity-status-code - String - 是否必填：否 -（过滤条件）按照伸缩活动状态过滤。（INIT：初始化中|RUNNING：运行中|SUCCESSFUL：活动成功|PARTIALLY_SUCCESSFUL：活动部分成功|FAILED：活动失败|CANCELLED：活动取消）</li>
-<li> activity-type - String - 是否必填：否 -（过滤条件）按照伸缩活动类型过滤。（SCALE_OUT：扩容活动|SCALE_IN：缩容活动|ATTACH_INSTANCES：添加实例|REMOVE_INSTANCES：销毁实例|DETACH_INSTANCES：移出实例|TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁|REPLACE_UNHEALTHY_INSTANCE：替换不健康实例|UPDATE_LOAD_BALANCERS：更新负载均衡器）</li>
-<li> activity-id - String - 是否必填：否 -（过滤条件）按照伸缩活动ID过滤。</li>
+                     * @return Filters 过滤条件。过滤字段取值范围如下：
+<ul>
+<li><strong>auto-scaling-group-id</strong><ul><li>按照【<strong>伸缩组ID</strong>】进行过滤。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 或调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li><li>类型：String</li><li>必选：否</li><li>示例值: asg-kiju7yt5</li></ul></li><li><strong>activity-status-code</strong><ul><li>按照【<strong>伸缩活动状态</strong>】进行过滤</li><li>类型：String</li><li>必选：否</li><li>可选项: </li><ul><li>INIT：初始化中</li><li>RUNNING：运行中</li><li>SUCCESSFUL：活动成功</li><li>PARTIALLY_SUCCESSFUL：活动部分成功</li><li>FAILED：活动失败</li><li>CANCELLED：活动取消</li></ul></ul></li><li><strong>activity-type</strong><ul><li>按照【<strong>伸缩活动类型</strong>】进行过滤</li><li>类型：String</li><li>必选：否</li><li>可选项: </li><ul><li>SCALE_OUT：扩容活动</li><li>SCALE_IN：缩容活动</li><li>ATTACH_INSTANCES：添加实例</li><li>REMOVE_INSTANCES：销毁实例</li><li>DETACH_INSTANCES：移出实例</li><li>TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁</li><li>REPLACE_UNHEALTHY_INSTANCE：替换不健康实例</li><li>START_INSTANCES：开启实例</li><li>STOP_INSTANCES：关闭实例</li><li>INVOKE_COMMAND：执行命令</li></ul></ul></li><li><strong>activity-id</strong><ul><li>按照【<strong>伸缩活动ID</strong>】进行过滤。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 获取伸缩活动ID。</li><li>类型：String</li><li>必选：否</li><li>示例值: asa-hy6tr4ed</li></ul></li></ul>
 每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`ActivityIds`和`Filters`。
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件。
-<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>
-<li> activity-status-code - String - 是否必填：否 -（过滤条件）按照伸缩活动状态过滤。（INIT：初始化中|RUNNING：运行中|SUCCESSFUL：活动成功|PARTIALLY_SUCCESSFUL：活动部分成功|FAILED：活动失败|CANCELLED：活动取消）</li>
-<li> activity-type - String - 是否必填：否 -（过滤条件）按照伸缩活动类型过滤。（SCALE_OUT：扩容活动|SCALE_IN：缩容活动|ATTACH_INSTANCES：添加实例|REMOVE_INSTANCES：销毁实例|DETACH_INSTANCES：移出实例|TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁|REPLACE_UNHEALTHY_INSTANCE：替换不健康实例|UPDATE_LOAD_BALANCERS：更新负载均衡器）</li>
-<li> activity-id - String - 是否必填：否 -（过滤条件）按照伸缩活动ID过滤。</li>
+                     * 设置过滤条件。过滤字段取值范围如下：
+<ul>
+<li><strong>auto-scaling-group-id</strong><ul><li>按照【<strong>伸缩组ID</strong>】进行过滤。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 或调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li><li>类型：String</li><li>必选：否</li><li>示例值: asg-kiju7yt5</li></ul></li><li><strong>activity-status-code</strong><ul><li>按照【<strong>伸缩活动状态</strong>】进行过滤</li><li>类型：String</li><li>必选：否</li><li>可选项: </li><ul><li>INIT：初始化中</li><li>RUNNING：运行中</li><li>SUCCESSFUL：活动成功</li><li>PARTIALLY_SUCCESSFUL：活动部分成功</li><li>FAILED：活动失败</li><li>CANCELLED：活动取消</li></ul></ul></li><li><strong>activity-type</strong><ul><li>按照【<strong>伸缩活动类型</strong>】进行过滤</li><li>类型：String</li><li>必选：否</li><li>可选项: </li><ul><li>SCALE_OUT：扩容活动</li><li>SCALE_IN：缩容活动</li><li>ATTACH_INSTANCES：添加实例</li><li>REMOVE_INSTANCES：销毁实例</li><li>DETACH_INSTANCES：移出实例</li><li>TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁</li><li>REPLACE_UNHEALTHY_INSTANCE：替换不健康实例</li><li>START_INSTANCES：开启实例</li><li>STOP_INSTANCES：关闭实例</li><li>INVOKE_COMMAND：执行命令</li></ul></ul></li><li><strong>activity-id</strong><ul><li>按照【<strong>伸缩活动ID</strong>】进行过滤。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 获取伸缩活动ID。</li><li>类型：String</li><li>必选：否</li><li>示例值: asa-hy6tr4ed</li></ul></li></ul>
 每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`ActivityIds`和`Filters`。
-                     * @param _filters 过滤条件。
-<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>
-<li> activity-status-code - String - 是否必填：否 -（过滤条件）按照伸缩活动状态过滤。（INIT：初始化中|RUNNING：运行中|SUCCESSFUL：活动成功|PARTIALLY_SUCCESSFUL：活动部分成功|FAILED：活动失败|CANCELLED：活动取消）</li>
-<li> activity-type - String - 是否必填：否 -（过滤条件）按照伸缩活动类型过滤。（SCALE_OUT：扩容活动|SCALE_IN：缩容活动|ATTACH_INSTANCES：添加实例|REMOVE_INSTANCES：销毁实例|DETACH_INSTANCES：移出实例|TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁|REPLACE_UNHEALTHY_INSTANCE：替换不健康实例|UPDATE_LOAD_BALANCERS：更新负载均衡器）</li>
-<li> activity-id - String - 是否必填：否 -（过滤条件）按照伸缩活动ID过滤。</li>
+                     * @param _filters 过滤条件。过滤字段取值范围如下：
+<ul>
+<li><strong>auto-scaling-group-id</strong><ul><li>按照【<strong>伸缩组ID</strong>】进行过滤。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 或调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li><li>类型：String</li><li>必选：否</li><li>示例值: asg-kiju7yt5</li></ul></li><li><strong>activity-status-code</strong><ul><li>按照【<strong>伸缩活动状态</strong>】进行过滤</li><li>类型：String</li><li>必选：否</li><li>可选项: </li><ul><li>INIT：初始化中</li><li>RUNNING：运行中</li><li>SUCCESSFUL：活动成功</li><li>PARTIALLY_SUCCESSFUL：活动部分成功</li><li>FAILED：活动失败</li><li>CANCELLED：活动取消</li></ul></ul></li><li><strong>activity-type</strong><ul><li>按照【<strong>伸缩活动类型</strong>】进行过滤</li><li>类型：String</li><li>必选：否</li><li>可选项: </li><ul><li>SCALE_OUT：扩容活动</li><li>SCALE_IN：缩容活动</li><li>ATTACH_INSTANCES：添加实例</li><li>REMOVE_INSTANCES：销毁实例</li><li>DETACH_INSTANCES：移出实例</li><li>TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁</li><li>REPLACE_UNHEALTHY_INSTANCE：替换不健康实例</li><li>START_INSTANCES：开启实例</li><li>STOP_INSTANCES：关闭实例</li><li>INVOKE_COMMAND：执行命令</li></ul></ul></li><li><strong>activity-id</strong><ul><li>按照【<strong>伸缩活动ID</strong>】进行过滤。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 获取伸缩活动ID。</li><li>类型：String</li><li>必选：否</li><li>示例值: asa-hy6tr4ed</li></ul></li></ul>
 每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`ActivityIds`和`Filters`。
                      * 
                      */
@@ -148,15 +140,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取伸缩活动最早的开始时间，如果指定了ActivityIds，此参数将被忽略。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。
-                     * @return StartTime 伸缩活动最早的开始时间，如果指定了ActivityIds，此参数将被忽略。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。
+                     * 获取伸缩活动最早的开始时间，如果指定了ActivityIds，此参数将被忽略。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。注意：当前仅保存近两年的伸缩活动。
+                     * @return StartTime 伸缩活动最早的开始时间，如果指定了ActivityIds，此参数将被忽略。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。注意：当前仅保存近两年的伸缩活动。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置伸缩活动最早的开始时间，如果指定了ActivityIds，此参数将被忽略。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。
-                     * @param _startTime 伸缩活动最早的开始时间，如果指定了ActivityIds，此参数将被忽略。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。
+                     * 设置伸缩活动最早的开始时间，如果指定了ActivityIds，此参数将被忽略。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。注意：当前仅保存近两年的伸缩活动。
+                     * @param _startTime 伸缩活动最早的开始时间，如果指定了ActivityIds，此参数将被忽略。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。注意：当前仅保存近两年的伸缩活动。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -198,11 +190,9 @@ namespace TencentCloud
                     bool m_activityIdsHasBeenSet;
 
                     /**
-                     * 过滤条件。
-<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>
-<li> activity-status-code - String - 是否必填：否 -（过滤条件）按照伸缩活动状态过滤。（INIT：初始化中|RUNNING：运行中|SUCCESSFUL：活动成功|PARTIALLY_SUCCESSFUL：活动部分成功|FAILED：活动失败|CANCELLED：活动取消）</li>
-<li> activity-type - String - 是否必填：否 -（过滤条件）按照伸缩活动类型过滤。（SCALE_OUT：扩容活动|SCALE_IN：缩容活动|ATTACH_INSTANCES：添加实例|REMOVE_INSTANCES：销毁实例|DETACH_INSTANCES：移出实例|TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁|REPLACE_UNHEALTHY_INSTANCE：替换不健康实例|UPDATE_LOAD_BALANCERS：更新负载均衡器）</li>
-<li> activity-id - String - 是否必填：否 -（过滤条件）按照伸缩活动ID过滤。</li>
+                     * 过滤条件。过滤字段取值范围如下：
+<ul>
+<li><strong>auto-scaling-group-id</strong><ul><li>按照【<strong>伸缩组ID</strong>】进行过滤。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 或调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li><li>类型：String</li><li>必选：否</li><li>示例值: asg-kiju7yt5</li></ul></li><li><strong>activity-status-code</strong><ul><li>按照【<strong>伸缩活动状态</strong>】进行过滤</li><li>类型：String</li><li>必选：否</li><li>可选项: </li><ul><li>INIT：初始化中</li><li>RUNNING：运行中</li><li>SUCCESSFUL：活动成功</li><li>PARTIALLY_SUCCESSFUL：活动部分成功</li><li>FAILED：活动失败</li><li>CANCELLED：活动取消</li></ul></ul></li><li><strong>activity-type</strong><ul><li>按照【<strong>伸缩活动类型</strong>】进行过滤</li><li>类型：String</li><li>必选：否</li><li>可选项: </li><ul><li>SCALE_OUT：扩容活动</li><li>SCALE_IN：缩容活动</li><li>ATTACH_INSTANCES：添加实例</li><li>REMOVE_INSTANCES：销毁实例</li><li>DETACH_INSTANCES：移出实例</li><li>TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁</li><li>REPLACE_UNHEALTHY_INSTANCE：替换不健康实例</li><li>START_INSTANCES：开启实例</li><li>STOP_INSTANCES：关闭实例</li><li>INVOKE_COMMAND：执行命令</li></ul></ul></li><li><strong>activity-id</strong><ul><li>按照【<strong>伸缩活动ID</strong>】进行过滤。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 获取伸缩活动ID。</li><li>类型：String</li><li>必选：否</li><li>示例值: asa-hy6tr4ed</li></ul></li></ul>
 每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`ActivityIds`和`Filters`。
                      */
                     std::vector<Filter> m_filters;
@@ -221,7 +211,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 伸缩活动最早的开始时间，如果指定了ActivityIds，此参数将被忽略。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。
+                     * 伸缩活动最早的开始时间，如果指定了ActivityIds，此参数将被忽略。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。注意：当前仅保存近两年的伸缩活动。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;

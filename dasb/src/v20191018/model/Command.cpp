@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,8 @@ Command::Command() :
     m_userDepartmentNameHasBeenSet(false),
     m_deviceDepartmentIdHasBeenSet(false),
     m_deviceDepartmentNameHasBeenSet(false),
-    m_sizeHasBeenSet(false)
+    m_sizeHasBeenSet(false),
+    m_signValueHasBeenSet(false)
 {
 }
 
@@ -216,6 +217,16 @@ CoreInternalOutcome Command::Deserialize(const rapidjson::Value &value)
         m_sizeHasBeenSet = true;
     }
 
+    if (value.HasMember("SignValue") && !value["SignValue"].IsNull())
+    {
+        if (!value["SignValue"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Command.SignValue` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_signValue = string(value["SignValue"].GetString());
+        m_signValueHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -357,6 +368,14 @@ void Command::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "Size";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_size, allocator);
+    }
+
+    if (m_signValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignValue";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_signValue.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -632,5 +651,21 @@ void Command::SetSize(const uint64_t& _size)
 bool Command::SizeHasBeenSet() const
 {
     return m_sizeHasBeenSet;
+}
+
+string Command::GetSignValue() const
+{
+    return m_signValue;
+}
+
+void Command::SetSignValue(const string& _signValue)
+{
+    m_signValue = _signValue;
+    m_signValueHasBeenSet = true;
+}
+
+bool Command::SignValueHasBeenSet() const
+{
+    return m_signValueHasBeenSet;
 }
 

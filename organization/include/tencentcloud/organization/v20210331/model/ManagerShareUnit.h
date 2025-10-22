@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -153,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -178,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -203,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取共享单元资源数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ShareResourceNum 共享单元资源数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetShareResourceNum() const;
 
                     /**
                      * 设置共享单元资源数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _shareResourceNum 共享单元资源数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetShareResourceNum(const int64_t& _shareResourceNum);
@@ -228,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取共享单元成员数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ShareMemberNum 共享单元成员数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetShareMemberNum() const;
 
                     /**
                      * 设置共享单元成员数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _shareMemberNum 共享单元成员数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetShareMemberNum(const int64_t& _shareMemberNum);
@@ -253,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取共享范围。取值：1-仅允许集团组织内共享 2-允许共享给任意账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ShareScope 共享范围。取值：1-仅允许集团组织内共享 2-允许共享给任意账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetShareScope() const;
 
                     /**
                      * 设置共享范围。取值：1-仅允许集团组织内共享 2-允许共享给任意账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _shareScope 共享范围。取值：1-仅允许集团组织内共享 2-允许共享给任意账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetShareScope(const uint64_t& _shareScope);
@@ -310,35 +290,30 @@ namespace TencentCloud
 
                     /**
                      * 描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 共享单元资源数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_shareResourceNum;
                     bool m_shareResourceNumHasBeenSet;
 
                     /**
                      * 共享单元成员数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_shareMemberNum;
                     bool m_shareMemberNumHasBeenSet;
 
                     /**
                      * 共享范围。取值：1-仅允许集团组织内共享 2-允许共享给任意账号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_shareScope;
                     bool m_shareScopeHasBeenSet;

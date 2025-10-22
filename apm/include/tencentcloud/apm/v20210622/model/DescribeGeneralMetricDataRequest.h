@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,76 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要过滤的维度信息：
-service_metric视图支持：service.name（服务名）、span.kind（客户端/服务端视角）为维度进行过滤，service.name（服务名）必填。
-span.kind:
-	server:服务端视角
-	client:客户端视角
-默认为服务端视角进行查询。
-runtime_metric视图支持：service.name（服务名）维度进行过滤，service.name（服务名）必填。
-sql_metric视图支持：service.name（服务名）、db.instance（数据库名称）、db.ip（数据库实例ip）维度进行过滤，查询service_slow_sql_count（慢sql）指标时service.name必填，查询sql_duration_avg（耗时）指标时db.instance（数据库名称）必填。
-                     * @return Filters 要过滤的维度信息：
-service_metric视图支持：service.name（服务名）、span.kind（客户端/服务端视角）为维度进行过滤，service.name（服务名）必填。
-span.kind:
-	server:服务端视角
-	client:客户端视角
-默认为服务端视角进行查询。
-runtime_metric视图支持：service.name（服务名）维度进行过滤，service.name（服务名）必填。
-sql_metric视图支持：service.name（服务名）、db.instance（数据库名称）、db.ip（数据库实例ip）维度进行过滤，查询service_slow_sql_count（慢sql）指标时service.name必填，查询sql_duration_avg（耗时）指标时db.instance（数据库名称）必填。
-                     * 
-                     */
-                    std::vector<GeneralFilter> GetFilters() const;
-
-                    /**
-                     * 设置要过滤的维度信息：
-service_metric视图支持：service.name（服务名）、span.kind（客户端/服务端视角）为维度进行过滤，service.name（服务名）必填。
-span.kind:
-	server:服务端视角
-	client:客户端视角
-默认为服务端视角进行查询。
-runtime_metric视图支持：service.name（服务名）维度进行过滤，service.name（服务名）必填。
-sql_metric视图支持：service.name（服务名）、db.instance（数据库名称）、db.ip（数据库实例ip）维度进行过滤，查询service_slow_sql_count（慢sql）指标时service.name必填，查询sql_duration_avg（耗时）指标时db.instance（数据库名称）必填。
-                     * @param _filters 要过滤的维度信息：
-service_metric视图支持：service.name（服务名）、span.kind（客户端/服务端视角）为维度进行过滤，service.name（服务名）必填。
-span.kind:
-	server:服务端视角
-	client:客户端视角
-默认为服务端视角进行查询。
-runtime_metric视图支持：service.name（服务名）维度进行过滤，service.name（服务名）必填。
-sql_metric视图支持：service.name（服务名）、db.instance（数据库名称）、db.ip（数据库实例ip）维度进行过滤，查询service_slow_sql_count（慢sql）指标时service.name必填，查询sql_duration_avg（耗时）指标时db.instance（数据库名称）必填。
-                     * 
-                     */
-                    void SetFilters(const std::vector<GeneralFilter>& _filters);
-
-                    /**
-                     * 判断参数 Filters 是否已赋值
-                     * @return Filters 是否已赋值
-                     * 
-                     */
-                    bool FiltersHasBeenSet() const;
-
-                    /**
-                     * 获取需要查询的指标，不可自定义输入。
-service_metric视图支持：service_request_count（总请求）、service_duration（平均响应时间）、service_error_req_rate（平均错误率）、service_slow_call_count（慢调用）、service_error_request_count（异常数量）。
-runtime_metric视图支持：service_gc_full_count（Full GC）。
-sql_metric视图支持：service_slow_sql_count（慢sql）、sql_duration_avg（耗时）。
-                     * @return Metrics 需要查询的指标，不可自定义输入。
-service_metric视图支持：service_request_count（总请求）、service_duration（平均响应时间）、service_error_req_rate（平均错误率）、service_slow_call_count（慢调用）、service_error_request_count（异常数量）。
-runtime_metric视图支持：service_gc_full_count（Full GC）。
-sql_metric视图支持：service_slow_sql_count（慢sql）、sql_duration_avg（耗时）。
+                     * 获取需要查询的指标名称，不可自定义输入，[详情请见。](https://cloud.tencent.com/document/product/248/101681)
+                     * @return Metrics 需要查询的指标名称，不可自定义输入，[详情请见。](https://cloud.tencent.com/document/product/248/101681)
                      * 
                      */
                     std::vector<std::string> GetMetrics() const;
 
                     /**
-                     * 设置需要查询的指标，不可自定义输入。
-service_metric视图支持：service_request_count（总请求）、service_duration（平均响应时间）、service_error_req_rate（平均错误率）、service_slow_call_count（慢调用）、service_error_request_count（异常数量）。
-runtime_metric视图支持：service_gc_full_count（Full GC）。
-sql_metric视图支持：service_slow_sql_count（慢sql）、sql_duration_avg（耗时）。
-                     * @param _metrics 需要查询的指标，不可自定义输入。
-service_metric视图支持：service_request_count（总请求）、service_duration（平均响应时间）、service_error_req_rate（平均错误率）、service_slow_call_count（慢调用）、service_error_request_count（异常数量）。
-runtime_metric视图支持：service_gc_full_count（Full GC）。
-sql_metric视图支持：service_slow_sql_count（慢sql）、sql_duration_avg（耗时）。
+                     * 设置需要查询的指标名称，不可自定义输入，[详情请见。](https://cloud.tencent.com/document/product/248/101681)
+                     * @param _metrics 需要查询的指标名称，不可自定义输入，[详情请见。](https://cloud.tencent.com/document/product/248/101681)
                      * 
                      */
                     void SetMetrics(const std::vector<std::string>& _metrics);
@@ -127,15 +66,15 @@ sql_metric视图支持：service_slow_sql_count（慢sql）、sql_duration_avg�
                     bool MetricsHasBeenSet() const;
 
                     /**
-                     * 获取业务系统ID
-                     * @return InstanceId 业务系统ID
+                     * 获取业务系统 ID
+                     * @return InstanceId 业务系统 ID
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置业务系统ID
-                     * @param _instanceId 业务系统ID
+                     * 设置业务系统 ID
+                     * @param _instanceId 业务系统 ID
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -148,15 +87,15 @@ sql_metric视图支持：service_slow_sql_count（慢sql）、sql_duration_avg�
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取视图名称，不可自定义输入。支持：service_metric、runtime_metric、sql_metric。
-                     * @return ViewName 视图名称，不可自定义输入。支持：service_metric、runtime_metric、sql_metric。
+                     * 获取视图名称，不可自定义输入。[详情请见。](https://cloud.tencent.com/document/product/248/101681)
+                     * @return ViewName 视图名称，不可自定义输入。[详情请见。](https://cloud.tencent.com/document/product/248/101681)
                      * 
                      */
                     std::string GetViewName() const;
 
                     /**
-                     * 设置视图名称，不可自定义输入。支持：service_metric、runtime_metric、sql_metric。
-                     * @param _viewName 视图名称，不可自定义输入。支持：service_metric、runtime_metric、sql_metric。
+                     * 设置视图名称，不可自定义输入。[详情请见。](https://cloud.tencent.com/document/product/248/101681)
+                     * @param _viewName 视图名称，不可自定义输入。[详情请见。](https://cloud.tencent.com/document/product/248/101681)
                      * 
                      */
                     void SetViewName(const std::string& _viewName);
@@ -169,27 +108,36 @@ sql_metric视图支持：service_slow_sql_count（慢sql）、sql_duration_avg�
                     bool ViewNameHasBeenSet() const;
 
                     /**
-                     * 获取聚合维度：
-service_metric视图支持：service.name（服务名）、span.kind （客户端/服务端视角）维度进行聚合，service.name（服务名）必填。
-runtime_metric视图支持：service.name（服务名）维度进行聚合，service.name（服务名）必填。
-sql_metric视图支持：service.name（服务名）、db.statement（sql语句）维度进行聚合，查询service_slow_sql_count（慢sql）时service.name（服务名）必填，查询sql_duration_avg（耗时）指标时service.name（服务名）、db.statement（sql语句）必填。
-                     * @return GroupBy 聚合维度：
-service_metric视图支持：service.name（服务名）、span.kind （客户端/服务端视角）维度进行聚合，service.name（服务名）必填。
-runtime_metric视图支持：service.name（服务名）维度进行聚合，service.name（服务名）必填。
-sql_metric视图支持：service.name（服务名）、db.statement（sql语句）维度进行聚合，查询service_slow_sql_count（慢sql）时service.name（服务名）必填，查询sql_duration_avg（耗时）指标时service.name（服务名）、db.statement（sql语句）必填。
+                     * 获取要过滤的维度信息，不同视图有对应的指标维度，[详情请见。](https://cloud.tencent.com/document/product/248/101681)
+                     * @return Filters 要过滤的维度信息，不同视图有对应的指标维度，[详情请见。](https://cloud.tencent.com/document/product/248/101681)
+                     * 
+                     */
+                    std::vector<GeneralFilter> GetFilters() const;
+
+                    /**
+                     * 设置要过滤的维度信息，不同视图有对应的指标维度，[详情请见。](https://cloud.tencent.com/document/product/248/101681)
+                     * @param _filters 要过滤的维度信息，不同视图有对应的指标维度，[详情请见。](https://cloud.tencent.com/document/product/248/101681)
+                     * 
+                     */
+                    void SetFilters(const std::vector<GeneralFilter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
+
+                    /**
+                     * 获取聚合维度，不同视图有对应的指标维度，[详情请见。](https://cloud.tencent.com/document/product/248/101681)
+                     * @return GroupBy 聚合维度，不同视图有对应的指标维度，[详情请见。](https://cloud.tencent.com/document/product/248/101681)
                      * 
                      */
                     std::vector<std::string> GetGroupBy() const;
 
                     /**
-                     * 设置聚合维度：
-service_metric视图支持：service.name（服务名）、span.kind （客户端/服务端视角）维度进行聚合，service.name（服务名）必填。
-runtime_metric视图支持：service.name（服务名）维度进行聚合，service.name（服务名）必填。
-sql_metric视图支持：service.name（服务名）、db.statement（sql语句）维度进行聚合，查询service_slow_sql_count（慢sql）时service.name（服务名）必填，查询sql_duration_avg（耗时）指标时service.name（服务名）、db.statement（sql语句）必填。
-                     * @param _groupBy 聚合维度：
-service_metric视图支持：service.name（服务名）、span.kind （客户端/服务端视角）维度进行聚合，service.name（服务名）必填。
-runtime_metric视图支持：service.name（服务名）维度进行聚合，service.name（服务名）必填。
-sql_metric视图支持：service.name（服务名）、db.statement（sql语句）维度进行聚合，查询service_slow_sql_count（慢sql）时service.name（服务名）必填，查询sql_duration_avg（耗时）指标时service.name（服务名）、db.statement（sql语句）必填。
+                     * 设置聚合维度，不同视图有对应的指标维度，[详情请见。](https://cloud.tencent.com/document/product/248/101681)
+                     * @param _groupBy 聚合维度，不同视图有对应的指标维度，[详情请见。](https://cloud.tencent.com/document/product/248/101681)
                      * 
                      */
                     void SetGroupBy(const std::vector<std::string>& _groupBy);
@@ -202,15 +150,15 @@ sql_metric视图支持：service.name（服务名）、db.statement（sql语句�
                     bool GroupByHasBeenSet() const;
 
                     /**
-                     * 获取起始时间的时间戳，单位为秒，只支持查询2天内最多1小时的指标数据。
-                     * @return StartTime 起始时间的时间戳，单位为秒，只支持查询2天内最多1小时的指标数据。
+                     * 获取起始时间的时间戳，支持查询30天内的指标数据。（单位：秒）
+                     * @return StartTime 起始时间的时间戳，支持查询30天内的指标数据。（单位：秒）
                      * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
-                     * 设置起始时间的时间戳，单位为秒，只支持查询2天内最多1小时的指标数据。
-                     * @param _startTime 起始时间的时间戳，单位为秒，只支持查询2天内最多1小时的指标数据。
+                     * 设置起始时间的时间戳，支持查询30天内的指标数据。（单位：秒）
+                     * @param _startTime 起始时间的时间戳，支持查询30天内的指标数据。（单位：秒）
                      * 
                      */
                     void SetStartTime(const int64_t& _startTime);
@@ -223,15 +171,15 @@ sql_metric视图支持：service.name（服务名）、db.statement（sql语句�
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间的时间戳，单位为秒，只支持查询2天内最多1小时的指标数据。
-                     * @return EndTime 结束时间的时间戳，单位为秒，只支持查询2天内最多1小时的指标数据。
+                     * 获取结束时间的时间戳，支持查询30天内的指标数据。（单位：秒）
+                     * @return EndTime 结束时间的时间戳，支持查询30天内的指标数据。（单位：秒）
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置结束时间的时间戳，单位为秒，只支持查询2天内最多1小时的指标数据。
-                     * @param _endTime 结束时间的时间戳，单位为秒，只支持查询2天内最多1小时的指标数据。
+                     * 设置结束时间的时间戳，支持查询30天内的指标数据。（单位：秒）
+                     * @param _endTime 结束时间的时间戳，支持查询30天内的指标数据。（单位：秒）
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -244,15 +192,35 @@ sql_metric视图支持：service.name（服务名）、db.statement（sql语句�
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取聚合粒度，单位为秒，最小为60s，即一分钟的聚合粒度；如果为空或0则计算开始时间到截止时间的指标数据，上报其他值会报错。
-                     * @return Period 聚合粒度，单位为秒，最小为60s，即一分钟的聚合粒度；如果为空或0则计算开始时间到截止时间的指标数据，上报其他值会报错。
+                     * 获取是否按固定时间跨度聚合，填入1及大于1的值按1处理，不填按0处理。
+- 填入0，则计算开始时间到截止时间的指标数据。
+- 填入1，则会按照开始时间到截止时间的时间跨度选择聚合粒度：
+ - 时间跨度 (0,12) 小时，则按一分钟粒度聚合。
+ - 时间跨度 [12,48] 小时，则按五分钟粒度聚合。
+ - 时间跨度 (48, +∞) 小时，则按一小时粒度聚合。
+                     * @return Period 是否按固定时间跨度聚合，填入1及大于1的值按1处理，不填按0处理。
+- 填入0，则计算开始时间到截止时间的指标数据。
+- 填入1，则会按照开始时间到截止时间的时间跨度选择聚合粒度：
+ - 时间跨度 (0,12) 小时，则按一分钟粒度聚合。
+ - 时间跨度 [12,48] 小时，则按五分钟粒度聚合。
+ - 时间跨度 (48, +∞) 小时，则按一小时粒度聚合。
                      * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
-                     * 设置聚合粒度，单位为秒，最小为60s，即一分钟的聚合粒度；如果为空或0则计算开始时间到截止时间的指标数据，上报其他值会报错。
-                     * @param _period 聚合粒度，单位为秒，最小为60s，即一分钟的聚合粒度；如果为空或0则计算开始时间到截止时间的指标数据，上报其他值会报错。
+                     * 设置是否按固定时间跨度聚合，填入1及大于1的值按1处理，不填按0处理。
+- 填入0，则计算开始时间到截止时间的指标数据。
+- 填入1，则会按照开始时间到截止时间的时间跨度选择聚合粒度：
+ - 时间跨度 (0,12) 小时，则按一分钟粒度聚合。
+ - 时间跨度 [12,48] 小时，则按五分钟粒度聚合。
+ - 时间跨度 (48, +∞) 小时，则按一小时粒度聚合。
+                     * @param _period 是否按固定时间跨度聚合，填入1及大于1的值按1处理，不填按0处理。
+- 填入0，则计算开始时间到截止时间的指标数据。
+- 填入1，则会按照开始时间到截止时间的时间跨度选择聚合粒度：
+ - 时间跨度 (0,12) 小时，则按一分钟粒度聚合。
+ - 时间跨度 [12,48] 小时，则按五分钟粒度聚合。
+ - 时间跨度 (48, +∞) 小时，则按一小时粒度聚合。
                      * 
                      */
                     void SetPeriod(const int64_t& _period);
@@ -266,34 +234,30 @@ sql_metric视图支持：service.name（服务名）、db.statement（sql语句�
 
                     /**
                      * 获取对查询指标进行排序：
-service_metric视图支持：service_request_count（总请求）、service_duration（平均响应时间）、service_error_req_rate（平均错误率）、service_slow_call_count（慢调用）、service_error_request_count（异常数量）。
-runtime_metric视图支持：service_gc_full_count（Full GC）。
-sql_metric视图支持：service_slow_sql_count（慢sql）、sql_duration_avg（耗时）。
-asc:对查询指标进行升序排序
-desc：对查询指标进行降序排序
+Key 填写云 API 指标名称，[详情请见。](https://cloud.tencent.com/document/product/248/101681)
+Value 填写排序方式：     
+- asc：对查询指标进行升序排序
+- desc：对查询指标进行降序排序
                      * @return OrderBy 对查询指标进行排序：
-service_metric视图支持：service_request_count（总请求）、service_duration（平均响应时间）、service_error_req_rate（平均错误率）、service_slow_call_count（慢调用）、service_error_request_count（异常数量）。
-runtime_metric视图支持：service_gc_full_count（Full GC）。
-sql_metric视图支持：service_slow_sql_count（慢sql）、sql_duration_avg（耗时）。
-asc:对查询指标进行升序排序
-desc：对查询指标进行降序排序
+Key 填写云 API 指标名称，[详情请见。](https://cloud.tencent.com/document/product/248/101681)
+Value 填写排序方式：     
+- asc：对查询指标进行升序排序
+- desc：对查询指标进行降序排序
                      * 
                      */
                     OrderBy GetOrderBy() const;
 
                     /**
                      * 设置对查询指标进行排序：
-service_metric视图支持：service_request_count（总请求）、service_duration（平均响应时间）、service_error_req_rate（平均错误率）、service_slow_call_count（慢调用）、service_error_request_count（异常数量）。
-runtime_metric视图支持：service_gc_full_count（Full GC）。
-sql_metric视图支持：service_slow_sql_count（慢sql）、sql_duration_avg（耗时）。
-asc:对查询指标进行升序排序
-desc：对查询指标进行降序排序
+Key 填写云 API 指标名称，[详情请见。](https://cloud.tencent.com/document/product/248/101681)
+Value 填写排序方式：     
+- asc：对查询指标进行升序排序
+- desc：对查询指标进行降序排序
                      * @param _orderBy 对查询指标进行排序：
-service_metric视图支持：service_request_count（总请求）、service_duration（平均响应时间）、service_error_req_rate（平均错误率）、service_slow_call_count（慢调用）、service_error_request_count（异常数量）。
-runtime_metric视图支持：service_gc_full_count（Full GC）。
-sql_metric视图支持：service_slow_sql_count（慢sql）、sql_duration_avg（耗时）。
-asc:对查询指标进行升序排序
-desc：对查询指标进行降序排序
+Key 填写云 API 指标名称，[详情请见。](https://cloud.tencent.com/document/product/248/101681)
+Value 填写排序方式：     
+- asc：对查询指标进行升序排序
+- desc：对查询指标进行降序排序
                      * 
                      */
                     void SetOrderBy(const OrderBy& _orderBy);
@@ -329,73 +293,64 @@ desc：对查询指标进行降序排序
                 private:
 
                     /**
-                     * 要过滤的维度信息：
-service_metric视图支持：service.name（服务名）、span.kind（客户端/服务端视角）为维度进行过滤，service.name（服务名）必填。
-span.kind:
-	server:服务端视角
-	client:客户端视角
-默认为服务端视角进行查询。
-runtime_metric视图支持：service.name（服务名）维度进行过滤，service.name（服务名）必填。
-sql_metric视图支持：service.name（服务名）、db.instance（数据库名称）、db.ip（数据库实例ip）维度进行过滤，查询service_slow_sql_count（慢sql）指标时service.name必填，查询sql_duration_avg（耗时）指标时db.instance（数据库名称）必填。
-                     */
-                    std::vector<GeneralFilter> m_filters;
-                    bool m_filtersHasBeenSet;
-
-                    /**
-                     * 需要查询的指标，不可自定义输入。
-service_metric视图支持：service_request_count（总请求）、service_duration（平均响应时间）、service_error_req_rate（平均错误率）、service_slow_call_count（慢调用）、service_error_request_count（异常数量）。
-runtime_metric视图支持：service_gc_full_count（Full GC）。
-sql_metric视图支持：service_slow_sql_count（慢sql）、sql_duration_avg（耗时）。
+                     * 需要查询的指标名称，不可自定义输入，[详情请见。](https://cloud.tencent.com/document/product/248/101681)
                      */
                     std::vector<std::string> m_metrics;
                     bool m_metricsHasBeenSet;
 
                     /**
-                     * 业务系统ID
+                     * 业务系统 ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 视图名称，不可自定义输入。支持：service_metric、runtime_metric、sql_metric。
+                     * 视图名称，不可自定义输入。[详情请见。](https://cloud.tencent.com/document/product/248/101681)
                      */
                     std::string m_viewName;
                     bool m_viewNameHasBeenSet;
 
                     /**
-                     * 聚合维度：
-service_metric视图支持：service.name（服务名）、span.kind （客户端/服务端视角）维度进行聚合，service.name（服务名）必填。
-runtime_metric视图支持：service.name（服务名）维度进行聚合，service.name（服务名）必填。
-sql_metric视图支持：service.name（服务名）、db.statement（sql语句）维度进行聚合，查询service_slow_sql_count（慢sql）时service.name（服务名）必填，查询sql_duration_avg（耗时）指标时service.name（服务名）、db.statement（sql语句）必填。
+                     * 要过滤的维度信息，不同视图有对应的指标维度，[详情请见。](https://cloud.tencent.com/document/product/248/101681)
+                     */
+                    std::vector<GeneralFilter> m_filters;
+                    bool m_filtersHasBeenSet;
+
+                    /**
+                     * 聚合维度，不同视图有对应的指标维度，[详情请见。](https://cloud.tencent.com/document/product/248/101681)
                      */
                     std::vector<std::string> m_groupBy;
                     bool m_groupByHasBeenSet;
 
                     /**
-                     * 起始时间的时间戳，单位为秒，只支持查询2天内最多1小时的指标数据。
+                     * 起始时间的时间戳，支持查询30天内的指标数据。（单位：秒）
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间的时间戳，单位为秒，只支持查询2天内最多1小时的指标数据。
+                     * 结束时间的时间戳，支持查询30天内的指标数据。（单位：秒）
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 聚合粒度，单位为秒，最小为60s，即一分钟的聚合粒度；如果为空或0则计算开始时间到截止时间的指标数据，上报其他值会报错。
+                     * 是否按固定时间跨度聚合，填入1及大于1的值按1处理，不填按0处理。
+- 填入0，则计算开始时间到截止时间的指标数据。
+- 填入1，则会按照开始时间到截止时间的时间跨度选择聚合粒度：
+ - 时间跨度 (0,12) 小时，则按一分钟粒度聚合。
+ - 时间跨度 [12,48] 小时，则按五分钟粒度聚合。
+ - 时间跨度 (48, +∞) 小时，则按一小时粒度聚合。
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;
 
                     /**
                      * 对查询指标进行排序：
-service_metric视图支持：service_request_count（总请求）、service_duration（平均响应时间）、service_error_req_rate（平均错误率）、service_slow_call_count（慢调用）、service_error_request_count（异常数量）。
-runtime_metric视图支持：service_gc_full_count（Full GC）。
-sql_metric视图支持：service_slow_sql_count（慢sql）、sql_duration_avg（耗时）。
-asc:对查询指标进行升序排序
-desc：对查询指标进行降序排序
+Key 填写云 API 指标名称，[详情请见。](https://cloud.tencent.com/document/product/248/101681)
+Value 填写排序方式：     
+- asc：对查询指标进行升序排序
+- desc：对查询指标进行降序排序
                      */
                     OrderBy m_orderBy;
                     bool m_orderByHasBeenSet;

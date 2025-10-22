@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,8 +44,16 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群状态，例如：Serving
-                     * @return InstanceState 集群状态，例如：Serving
+                     * 获取集群状态 
+ Init  创建中 
+Serving   运行中 
+Isolated   已隔离 
+Changing  变更中
+                     * @return InstanceState 集群状态 
+ Init  创建中 
+Serving   运行中 
+Isolated   已隔离 
+Changing  变更中
                      * 
                      */
                     std::string GetInstanceState() const;
@@ -59,9 +67,7 @@ namespace TencentCloud
 
                     /**
                      * 获取集群操作创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowCreateTime 集群操作创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlowCreateTime() const;
@@ -75,9 +81,7 @@ namespace TencentCloud
 
                     /**
                      * 获取集群操作名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowName 集群操作名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlowName() const;
@@ -91,9 +95,7 @@ namespace TencentCloud
 
                     /**
                      * 获取集群操作进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowProgress 集群操作进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetFlowProgress() const;
@@ -107,9 +109,7 @@ namespace TencentCloud
 
                     /**
                      * 获取集群状态描述，例如：运行中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceStateDesc 集群状态描述，例如：运行中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceStateDesc() const;
@@ -123,9 +123,7 @@ namespace TencentCloud
 
                     /**
                      * 获取集群流程错误信息，例如：“创建失败，资源不足”
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowMsg 集群流程错误信息，例如：“创建失败，资源不足”
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlowMsg() const;
@@ -137,48 +135,87 @@ namespace TencentCloud
                      */
                     bool FlowMsgHasBeenSet() const;
 
+                    /**
+                     * 获取流程ProcessId
+                     * @return ProcessId 流程ProcessId
+                     * 
+                     */
+                    std::string GetProcessId() const;
+
+                    /**
+                     * 判断参数 ProcessId 是否已赋值
+                     * @return ProcessId 是否已赋值
+                     * 
+                     */
+                    bool ProcessIdHasBeenSet() const;
+
+                    /**
+                     * 获取Job名称
+                     * @return JobName Job名称
+                     * 
+                     */
+                    std::string GetJobName() const;
+
+                    /**
+                     * 判断参数 JobName 是否已赋值
+                     * @return JobName 是否已赋值
+                     * 
+                     */
+                    bool JobNameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 集群状态，例如：Serving
+                     * 集群状态 
+ Init  创建中 
+Serving   运行中 
+Isolated   已隔离 
+Changing  变更中
                      */
                     std::string m_instanceState;
                     bool m_instanceStateHasBeenSet;
 
                     /**
                      * 集群操作创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowCreateTime;
                     bool m_flowCreateTimeHasBeenSet;
 
                     /**
                      * 集群操作名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowName;
                     bool m_flowNameHasBeenSet;
 
                     /**
                      * 集群操作进度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_flowProgress;
                     bool m_flowProgressHasBeenSet;
 
                     /**
                      * 集群状态描述，例如：运行中
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceStateDesc;
                     bool m_instanceStateDescHasBeenSet;
 
                     /**
                      * 集群流程错误信息，例如：“创建失败，资源不足”
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowMsg;
                     bool m_flowMsgHasBeenSet;
+
+                    /**
+                     * 流程ProcessId
+                     */
+                    std::string m_processId;
+                    bool m_processIdHasBeenSet;
+
+                    /**
+                     * Job名称
+                     */
+                    std::string m_jobName;
+                    bool m_jobNameHasBeenSet;
 
                 };
             }

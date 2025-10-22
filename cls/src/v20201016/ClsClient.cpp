@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -384,42 +384,42 @@ ClsClient::CreateAlarmShieldOutcomeCallable ClsClient::CreateAlarmShieldCallable
     return task->get_future();
 }
 
-ClsClient::CreateCloudProductLogTaskOutcome ClsClient::CreateCloudProductLogTask(const CreateCloudProductLogTaskRequest &request)
+ClsClient::CreateCloudProductLogCollectionOutcome ClsClient::CreateCloudProductLogCollection(const CreateCloudProductLogCollectionRequest &request)
 {
-    auto outcome = MakeRequest(request, "CreateCloudProductLogTask");
+    auto outcome = MakeRequest(request, "CreateCloudProductLogCollection");
     if (outcome.IsSuccess())
     {
         auto r = outcome.GetResult();
         string payload = string(r.Body(), r.BodySize());
-        CreateCloudProductLogTaskResponse rsp = CreateCloudProductLogTaskResponse();
+        CreateCloudProductLogCollectionResponse rsp = CreateCloudProductLogCollectionResponse();
         auto o = rsp.Deserialize(payload);
         if (o.IsSuccess())
-            return CreateCloudProductLogTaskOutcome(rsp);
+            return CreateCloudProductLogCollectionOutcome(rsp);
         else
-            return CreateCloudProductLogTaskOutcome(o.GetError());
+            return CreateCloudProductLogCollectionOutcome(o.GetError());
     }
     else
     {
-        return CreateCloudProductLogTaskOutcome(outcome.GetError());
+        return CreateCloudProductLogCollectionOutcome(outcome.GetError());
     }
 }
 
-void ClsClient::CreateCloudProductLogTaskAsync(const CreateCloudProductLogTaskRequest& request, const CreateCloudProductLogTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+void ClsClient::CreateCloudProductLogCollectionAsync(const CreateCloudProductLogCollectionRequest& request, const CreateCloudProductLogCollectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
     auto fn = [this, request, handler, context]()
     {
-        handler(this, request, this->CreateCloudProductLogTask(request), context);
+        handler(this, request, this->CreateCloudProductLogCollection(request), context);
     };
 
     Executor::GetInstance()->Submit(new Runnable(fn));
 }
 
-ClsClient::CreateCloudProductLogTaskOutcomeCallable ClsClient::CreateCloudProductLogTaskCallable(const CreateCloudProductLogTaskRequest &request)
+ClsClient::CreateCloudProductLogCollectionOutcomeCallable ClsClient::CreateCloudProductLogCollectionCallable(const CreateCloudProductLogCollectionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCloudProductLogTaskOutcome()>>(
+    auto task = std::make_shared<std::packaged_task<CreateCloudProductLogCollectionOutcome()>>(
         [this, request]()
         {
-            return this->CreateCloudProductLogTask(request);
+            return this->CreateCloudProductLogCollection(request);
         }
     );
 
@@ -1158,6 +1158,49 @@ ClsClient::CreateTopicOutcomeCallable ClsClient::CreateTopicCallable(const Creat
     return task->get_future();
 }
 
+ClsClient::CreateWebCallbackOutcome ClsClient::CreateWebCallback(const CreateWebCallbackRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateWebCallback");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateWebCallbackResponse rsp = CreateWebCallbackResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateWebCallbackOutcome(rsp);
+        else
+            return CreateWebCallbackOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateWebCallbackOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::CreateWebCallbackAsync(const CreateWebCallbackRequest& request, const CreateWebCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateWebCallback(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::CreateWebCallbackOutcomeCallable ClsClient::CreateWebCallbackCallable(const CreateWebCallbackRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateWebCallbackOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateWebCallback(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::DeleteAlarmOutcome ClsClient::DeleteAlarm(const DeleteAlarmRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAlarm");
@@ -1287,42 +1330,42 @@ ClsClient::DeleteAlarmShieldOutcomeCallable ClsClient::DeleteAlarmShieldCallable
     return task->get_future();
 }
 
-ClsClient::DeleteCloudProductLogTaskOutcome ClsClient::DeleteCloudProductLogTask(const DeleteCloudProductLogTaskRequest &request)
+ClsClient::DeleteCloudProductLogCollectionOutcome ClsClient::DeleteCloudProductLogCollection(const DeleteCloudProductLogCollectionRequest &request)
 {
-    auto outcome = MakeRequest(request, "DeleteCloudProductLogTask");
+    auto outcome = MakeRequest(request, "DeleteCloudProductLogCollection");
     if (outcome.IsSuccess())
     {
         auto r = outcome.GetResult();
         string payload = string(r.Body(), r.BodySize());
-        DeleteCloudProductLogTaskResponse rsp = DeleteCloudProductLogTaskResponse();
+        DeleteCloudProductLogCollectionResponse rsp = DeleteCloudProductLogCollectionResponse();
         auto o = rsp.Deserialize(payload);
         if (o.IsSuccess())
-            return DeleteCloudProductLogTaskOutcome(rsp);
+            return DeleteCloudProductLogCollectionOutcome(rsp);
         else
-            return DeleteCloudProductLogTaskOutcome(o.GetError());
+            return DeleteCloudProductLogCollectionOutcome(o.GetError());
     }
     else
     {
-        return DeleteCloudProductLogTaskOutcome(outcome.GetError());
+        return DeleteCloudProductLogCollectionOutcome(outcome.GetError());
     }
 }
 
-void ClsClient::DeleteCloudProductLogTaskAsync(const DeleteCloudProductLogTaskRequest& request, const DeleteCloudProductLogTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+void ClsClient::DeleteCloudProductLogCollectionAsync(const DeleteCloudProductLogCollectionRequest& request, const DeleteCloudProductLogCollectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
     auto fn = [this, request, handler, context]()
     {
-        handler(this, request, this->DeleteCloudProductLogTask(request), context);
+        handler(this, request, this->DeleteCloudProductLogCollection(request), context);
     };
 
     Executor::GetInstance()->Submit(new Runnable(fn));
 }
 
-ClsClient::DeleteCloudProductLogTaskOutcomeCallable ClsClient::DeleteCloudProductLogTaskCallable(const DeleteCloudProductLogTaskRequest &request)
+ClsClient::DeleteCloudProductLogCollectionOutcomeCallable ClsClient::DeleteCloudProductLogCollectionCallable(const DeleteCloudProductLogCollectionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteCloudProductLogTaskOutcome()>>(
+    auto task = std::make_shared<std::packaged_task<DeleteCloudProductLogCollectionOutcome()>>(
         [this, request]()
         {
-            return this->DeleteCloudProductLogTask(request);
+            return this->DeleteCloudProductLogCollection(request);
         }
     );
 
@@ -1538,6 +1581,49 @@ ClsClient::DeleteConsumerOutcomeCallable ClsClient::DeleteConsumerCallable(const
         [this, request]()
         {
             return this->DeleteConsumer(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::DeleteCosRechargeOutcome ClsClient::DeleteCosRecharge(const DeleteCosRechargeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCosRecharge");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCosRechargeResponse rsp = DeleteCosRechargeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCosRechargeOutcome(rsp);
+        else
+            return DeleteCosRechargeOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCosRechargeOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DeleteCosRechargeAsync(const DeleteCosRechargeRequest& request, const DeleteCosRechargeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCosRecharge(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DeleteCosRechargeOutcomeCallable ClsClient::DeleteCosRechargeCallable(const DeleteCosRechargeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCosRechargeOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCosRecharge(request);
         }
     );
 
@@ -2054,6 +2140,49 @@ ClsClient::DeleteTopicOutcomeCallable ClsClient::DeleteTopicCallable(const Delet
         [this, request]()
         {
             return this->DeleteTopic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::DeleteWebCallbackOutcome ClsClient::DeleteWebCallback(const DeleteWebCallbackRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteWebCallback");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteWebCallbackResponse rsp = DeleteWebCallbackResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteWebCallbackOutcome(rsp);
+        else
+            return DeleteWebCallbackOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteWebCallbackOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DeleteWebCallbackAsync(const DeleteWebCallbackRequest& request, const DeleteWebCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteWebCallback(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DeleteWebCallbackOutcomeCallable ClsClient::DeleteWebCallbackCallable(const DeleteWebCallbackRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteWebCallbackOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteWebCallback(request);
         }
     );
 
@@ -2792,6 +2921,92 @@ ClsClient::DescribeKafkaConsumerOutcomeCallable ClsClient::DescribeKafkaConsumer
     return task->get_future();
 }
 
+ClsClient::DescribeKafkaConsumerGroupDetailOutcome ClsClient::DescribeKafkaConsumerGroupDetail(const DescribeKafkaConsumerGroupDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeKafkaConsumerGroupDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeKafkaConsumerGroupDetailResponse rsp = DescribeKafkaConsumerGroupDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeKafkaConsumerGroupDetailOutcome(rsp);
+        else
+            return DescribeKafkaConsumerGroupDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeKafkaConsumerGroupDetailOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeKafkaConsumerGroupDetailAsync(const DescribeKafkaConsumerGroupDetailRequest& request, const DescribeKafkaConsumerGroupDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeKafkaConsumerGroupDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DescribeKafkaConsumerGroupDetailOutcomeCallable ClsClient::DescribeKafkaConsumerGroupDetailCallable(const DescribeKafkaConsumerGroupDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeKafkaConsumerGroupDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeKafkaConsumerGroupDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::DescribeKafkaConsumerGroupListOutcome ClsClient::DescribeKafkaConsumerGroupList(const DescribeKafkaConsumerGroupListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeKafkaConsumerGroupList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeKafkaConsumerGroupListResponse rsp = DescribeKafkaConsumerGroupListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeKafkaConsumerGroupListOutcome(rsp);
+        else
+            return DescribeKafkaConsumerGroupListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeKafkaConsumerGroupListOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeKafkaConsumerGroupListAsync(const DescribeKafkaConsumerGroupListRequest& request, const DescribeKafkaConsumerGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeKafkaConsumerGroupList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DescribeKafkaConsumerGroupListOutcomeCallable ClsClient::DescribeKafkaConsumerGroupListCallable(const DescribeKafkaConsumerGroupListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeKafkaConsumerGroupListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeKafkaConsumerGroupList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::DescribeKafkaRechargesOutcome ClsClient::DescribeKafkaRecharges(const DescribeKafkaRechargesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeKafkaRecharges");
@@ -3351,6 +3566,49 @@ ClsClient::DescribeTopicsOutcomeCallable ClsClient::DescribeTopicsCallable(const
     return task->get_future();
 }
 
+ClsClient::DescribeWebCallbacksOutcome ClsClient::DescribeWebCallbacks(const DescribeWebCallbacksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWebCallbacks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWebCallbacksResponse rsp = DescribeWebCallbacksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWebCallbacksOutcome(rsp);
+        else
+            return DescribeWebCallbacksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWebCallbacksOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeWebCallbacksAsync(const DescribeWebCallbacksRequest& request, const DescribeWebCallbacksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWebCallbacks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DescribeWebCallbacksOutcomeCallable ClsClient::DescribeWebCallbacksCallable(const DescribeWebCallbacksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWebCallbacksOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWebCallbacks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::GetAlarmLogOutcome ClsClient::GetAlarmLog(const GetAlarmLogRequest &request)
 {
     auto outcome = MakeRequest(request, "GetAlarmLog");
@@ -3566,42 +3824,42 @@ ClsClient::ModifyAlarmShieldOutcomeCallable ClsClient::ModifyAlarmShieldCallable
     return task->get_future();
 }
 
-ClsClient::ModifyCloudProductLogTaskOutcome ClsClient::ModifyCloudProductLogTask(const ModifyCloudProductLogTaskRequest &request)
+ClsClient::ModifyCloudProductLogCollectionOutcome ClsClient::ModifyCloudProductLogCollection(const ModifyCloudProductLogCollectionRequest &request)
 {
-    auto outcome = MakeRequest(request, "ModifyCloudProductLogTask");
+    auto outcome = MakeRequest(request, "ModifyCloudProductLogCollection");
     if (outcome.IsSuccess())
     {
         auto r = outcome.GetResult();
         string payload = string(r.Body(), r.BodySize());
-        ModifyCloudProductLogTaskResponse rsp = ModifyCloudProductLogTaskResponse();
+        ModifyCloudProductLogCollectionResponse rsp = ModifyCloudProductLogCollectionResponse();
         auto o = rsp.Deserialize(payload);
         if (o.IsSuccess())
-            return ModifyCloudProductLogTaskOutcome(rsp);
+            return ModifyCloudProductLogCollectionOutcome(rsp);
         else
-            return ModifyCloudProductLogTaskOutcome(o.GetError());
+            return ModifyCloudProductLogCollectionOutcome(o.GetError());
     }
     else
     {
-        return ModifyCloudProductLogTaskOutcome(outcome.GetError());
+        return ModifyCloudProductLogCollectionOutcome(outcome.GetError());
     }
 }
 
-void ClsClient::ModifyCloudProductLogTaskAsync(const ModifyCloudProductLogTaskRequest& request, const ModifyCloudProductLogTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+void ClsClient::ModifyCloudProductLogCollectionAsync(const ModifyCloudProductLogCollectionRequest& request, const ModifyCloudProductLogCollectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
     auto fn = [this, request, handler, context]()
     {
-        handler(this, request, this->ModifyCloudProductLogTask(request), context);
+        handler(this, request, this->ModifyCloudProductLogCollection(request), context);
     };
 
     Executor::GetInstance()->Submit(new Runnable(fn));
 }
 
-ClsClient::ModifyCloudProductLogTaskOutcomeCallable ClsClient::ModifyCloudProductLogTaskCallable(const ModifyCloudProductLogTaskRequest &request)
+ClsClient::ModifyCloudProductLogCollectionOutcomeCallable ClsClient::ModifyCloudProductLogCollectionCallable(const ModifyCloudProductLogCollectionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyCloudProductLogTaskOutcome()>>(
+    auto task = std::make_shared<std::packaged_task<ModifyCloudProductLogCollectionOutcome()>>(
         [this, request]()
         {
-            return this->ModifyCloudProductLogTask(request);
+            return this->ModifyCloudProductLogCollection(request);
         }
     );
 
@@ -3996,6 +4254,49 @@ ClsClient::ModifyKafkaConsumerOutcomeCallable ClsClient::ModifyKafkaConsumerCall
     return task->get_future();
 }
 
+ClsClient::ModifyKafkaConsumerGroupOffsetOutcome ClsClient::ModifyKafkaConsumerGroupOffset(const ModifyKafkaConsumerGroupOffsetRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyKafkaConsumerGroupOffset");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyKafkaConsumerGroupOffsetResponse rsp = ModifyKafkaConsumerGroupOffsetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyKafkaConsumerGroupOffsetOutcome(rsp);
+        else
+            return ModifyKafkaConsumerGroupOffsetOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyKafkaConsumerGroupOffsetOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::ModifyKafkaConsumerGroupOffsetAsync(const ModifyKafkaConsumerGroupOffsetRequest& request, const ModifyKafkaConsumerGroupOffsetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyKafkaConsumerGroupOffset(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::ModifyKafkaConsumerGroupOffsetOutcomeCallable ClsClient::ModifyKafkaConsumerGroupOffsetCallable(const ModifyKafkaConsumerGroupOffsetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyKafkaConsumerGroupOffsetOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyKafkaConsumerGroupOffset(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::ModifyKafkaRechargeOutcome ClsClient::ModifyKafkaRecharge(const ModifyKafkaRechargeRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyKafkaRecharge");
@@ -4290,6 +4591,49 @@ ClsClient::ModifyTopicOutcomeCallable ClsClient::ModifyTopicCallable(const Modif
         [this, request]()
         {
             return this->ModifyTopic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::ModifyWebCallbackOutcome ClsClient::ModifyWebCallback(const ModifyWebCallbackRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyWebCallback");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyWebCallbackResponse rsp = ModifyWebCallbackResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyWebCallbackOutcome(rsp);
+        else
+            return ModifyWebCallbackOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyWebCallbackOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::ModifyWebCallbackAsync(const ModifyWebCallbackRequest& request, const ModifyWebCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyWebCallback(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::ModifyWebCallbackOutcomeCallable ClsClient::ModifyWebCallbackCallable(const ModifyWebCallbackRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyWebCallbackOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyWebCallback(request);
         }
     );
 

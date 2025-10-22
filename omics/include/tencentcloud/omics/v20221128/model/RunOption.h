@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -119,18 +119,14 @@ namespace TencentCloud
 
                     /**
                      * 获取输出归档COS路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FinalWorkflowOutputsDir 输出归档COS路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFinalWorkflowOutputsDir() const;
 
                     /**
                      * 设置输出归档COS路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _finalWorkflowOutputsDir 输出归档COS路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFinalWorkflowOutputsDir(const std::string& _finalWorkflowOutputsDir);
@@ -144,18 +140,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否使用相对目录归档输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UseRelativeOutputPaths 是否使用相对目录归档输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetUseRelativeOutputPaths() const;
 
                     /**
                      * 设置是否使用相对目录归档输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _useRelativeOutputPaths 是否使用相对目录归档输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUseRelativeOutputPaths(const bool& _useRelativeOutputPaths);
@@ -169,18 +161,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否添加运行信息到输出目录中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddRunInfoToOutputDir 是否添加运行信息到输出目录中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetAddRunInfoToOutputDir() const;
 
                     /**
                      * 设置是否添加运行信息到输出目录中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _addRunInfoToOutputDir 是否添加运行信息到输出目录中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddRunInfoToOutputDir(const bool& _addRunInfoToOutputDir);
@@ -216,21 +204,18 @@ namespace TencentCloud
 
                     /**
                      * 输出归档COS路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_finalWorkflowOutputsDir;
                     bool m_finalWorkflowOutputsDirHasBeenSet;
 
                     /**
                      * 是否使用相对目录归档输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_useRelativeOutputPaths;
                     bool m_useRelativeOutputPathsHasBeenSet;
 
                     /**
                      * 是否添加运行信息到输出目录中
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_addRunInfoToOutputDir;
                     bool m_addRunInfoToOutputDirHasBeenSet;

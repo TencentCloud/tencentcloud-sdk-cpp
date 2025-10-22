@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ DescribeCrossBorderComplianceRequest::DescribeCrossBorderComplianceRequest() :
     m_companyHasBeenSet(false),
     m_uniformSocialCreditCodeHasBeenSet(false),
     m_legalPersonHasBeenSet(false),
+    m_legalPersonIdHasBeenSet(false),
     m_issuingAuthorityHasBeenSet(false),
     m_businessAddressHasBeenSet(false),
     m_postCodeHasBeenSet(false),
@@ -89,6 +90,14 @@ string DescribeCrossBorderComplianceRequest::ToJsonString() const
         string key = "LegalPerson";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_legalPerson.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_legalPersonIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LegalPersonId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_legalPersonId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_issuingAuthorityHasBeenSet)
@@ -281,6 +290,22 @@ void DescribeCrossBorderComplianceRequest::SetLegalPerson(const string& _legalPe
 bool DescribeCrossBorderComplianceRequest::LegalPersonHasBeenSet() const
 {
     return m_legalPersonHasBeenSet;
+}
+
+string DescribeCrossBorderComplianceRequest::GetLegalPersonId() const
+{
+    return m_legalPersonId;
+}
+
+void DescribeCrossBorderComplianceRequest::SetLegalPersonId(const string& _legalPersonId)
+{
+    m_legalPersonId = _legalPersonId;
+    m_legalPersonIdHasBeenSet = true;
+}
+
+bool DescribeCrossBorderComplianceRequest::LegalPersonIdHasBeenSet() const
+{
+    return m_legalPersonIdHasBeenSet;
 }
 
 string DescribeCrossBorderComplianceRequest::GetIssuingAuthority() const

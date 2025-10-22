@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool BotBizIdHasBeenSet() const;
 
                     /**
-                     * 获取父级业务ID
-                     * @return ParentBizId 父级业务ID
+                     * 获取父级业务ID，创建顶级分类时传字符串"0"
+                     * @return ParentBizId 父级业务ID，创建顶级分类时传字符串"0"
                      * 
                      */
                     std::string GetParentBizId() const;
 
                     /**
-                     * 设置父级业务ID
-                     * @param _parentBizId 父级业务ID
+                     * 设置父级业务ID，创建顶级分类时传字符串"0"
+                     * @param _parentBizId 父级业务ID，创建顶级分类时传字符串"0"
                      * 
                      */
                     void SetParentBizId(const std::string& _parentBizId);
@@ -118,7 +118,7 @@ namespace TencentCloud
                     bool m_botBizIdHasBeenSet;
 
                     /**
-                     * 父级业务ID
+                     * 父级业务ID，创建顶级分类时传字符串"0"
                      */
                     std::string m_parentBizId;
                     bool m_parentBizIdHasBeenSet;

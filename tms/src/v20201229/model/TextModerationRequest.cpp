@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,9 @@ TextModerationRequest::TextModerationRequest() :
     m_bizTypeHasBeenSet(false),
     m_dataIdHasBeenSet(false),
     m_userHasBeenSet(false),
-    m_deviceHasBeenSet(false)
+    m_deviceHasBeenSet(false),
+    m_sourceLanguageHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -78,6 +80,22 @@ string TextModerationRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_device.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_sourceLanguageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceLanguage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sourceLanguage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -166,6 +184,38 @@ void TextModerationRequest::SetDevice(const Device& _device)
 bool TextModerationRequest::DeviceHasBeenSet() const
 {
     return m_deviceHasBeenSet;
+}
+
+string TextModerationRequest::GetSourceLanguage() const
+{
+    return m_sourceLanguage;
+}
+
+void TextModerationRequest::SetSourceLanguage(const string& _sourceLanguage)
+{
+    m_sourceLanguage = _sourceLanguage;
+    m_sourceLanguageHasBeenSet = true;
+}
+
+bool TextModerationRequest::SourceLanguageHasBeenSet() const
+{
+    return m_sourceLanguageHasBeenSet;
+}
+
+string TextModerationRequest::GetType() const
+{
+    return m_type;
+}
+
+void TextModerationRequest::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool TextModerationRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 
 

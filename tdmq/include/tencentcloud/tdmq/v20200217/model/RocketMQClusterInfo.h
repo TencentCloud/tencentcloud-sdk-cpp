@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -648,6 +648,140 @@ namespace TencentCloud
                      */
                     bool ZoneIdsHasBeenSet() const;
 
+                    /**
+                     * 获取是否已冻结
+                     * @return IsFrozen 是否已冻结
+                     * 
+                     */
+                    bool GetIsFrozen() const;
+
+                    /**
+                     * 设置是否已冻结
+                     * @param _isFrozen 是否已冻结
+                     * 
+                     */
+                    void SetIsFrozen(const bool& _isFrozen);
+
+                    /**
+                     * 判断参数 IsFrozen 是否已赋值
+                     * @return IsFrozen 是否已赋值
+                     * 
+                     */
+                    bool IsFrozenHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启自动创建主题
+                     * @return AutoCreateTopicEnabled 是否开启自动创建主题
+                     * 
+                     */
+                    bool GetAutoCreateTopicEnabled() const;
+
+                    /**
+                     * 设置是否开启自动创建主题
+                     * @param _autoCreateTopicEnabled 是否开启自动创建主题
+                     * 
+                     */
+                    void SetAutoCreateTopicEnabled(const bool& _autoCreateTopicEnabled);
+
+                    /**
+                     * 判断参数 AutoCreateTopicEnabled 是否已赋值
+                     * @return AutoCreateTopicEnabled 是否已赋值
+                     * 
+                     */
+                    bool AutoCreateTopicEnabledHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启集群Admin能力
+                     * @return AdminFeatureEnabled 是否开启集群Admin能力
+                     * 
+                     */
+                    bool GetAdminFeatureEnabled() const;
+
+                    /**
+                     * 设置是否开启集群Admin能力
+                     * @param _adminFeatureEnabled 是否开启集群Admin能力
+                     * 
+                     */
+                    void SetAdminFeatureEnabled(const bool& _adminFeatureEnabled);
+
+                    /**
+                     * 判断参数 AdminFeatureEnabled 是否已赋值
+                     * @return AdminFeatureEnabled 是否已赋值
+                     * 
+                     */
+                    bool AdminFeatureEnabledHasBeenSet() const;
+
+                    /**
+                     * 获取Admin AK
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AdminAccessKey Admin AK
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAdminAccessKey() const;
+
+                    /**
+                     * 设置Admin AK
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _adminAccessKey Admin AK
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAdminAccessKey(const std::string& _adminAccessKey);
+
+                    /**
+                     * 判断参数 AdminAccessKey 是否已赋值
+                     * @return AdminAccessKey 是否已赋值
+                     * 
+                     */
+                    bool AdminAccessKeyHasBeenSet() const;
+
+                    /**
+                     * 获取Admin SK
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AdminSecretKey Admin SK
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAdminSecretKey() const;
+
+                    /**
+                     * 设置Admin SK
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _adminSecretKey Admin SK
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAdminSecretKey(const std::string& _adminSecretKey);
+
+                    /**
+                     * 判断参数 AdminSecretKey 是否已赋值
+                     * @return AdminSecretKey 是否已赋值
+                     * 
+                     */
+                    bool AdminSecretKeyHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启删除保护
+                     * @return EnableDeletionProtection 是否开启删除保护
+                     * 
+                     */
+                    bool GetEnableDeletionProtection() const;
+
+                    /**
+                     * 设置是否开启删除保护
+                     * @param _enableDeletionProtection 是否开启删除保护
+                     * 
+                     */
+                    void SetEnableDeletionProtection(const bool& _enableDeletionProtection);
+
+                    /**
+                     * 判断参数 EnableDeletionProtection 是否已赋值
+                     * @return EnableDeletionProtection 是否已赋值
+                     * 
+                     */
+                    bool EnableDeletionProtectionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -818,6 +952,44 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;
+
+                    /**
+                     * 是否已冻结
+                     */
+                    bool m_isFrozen;
+                    bool m_isFrozenHasBeenSet;
+
+                    /**
+                     * 是否开启自动创建主题
+                     */
+                    bool m_autoCreateTopicEnabled;
+                    bool m_autoCreateTopicEnabledHasBeenSet;
+
+                    /**
+                     * 是否开启集群Admin能力
+                     */
+                    bool m_adminFeatureEnabled;
+                    bool m_adminFeatureEnabledHasBeenSet;
+
+                    /**
+                     * Admin AK
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_adminAccessKey;
+                    bool m_adminAccessKeyHasBeenSet;
+
+                    /**
+                     * Admin SK
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_adminSecretKey;
+                    bool m_adminSecretKeyHasBeenSet;
+
+                    /**
+                     * 是否开启删除保护
+                     */
+                    bool m_enableDeletionProtection;
+                    bool m_enableDeletionProtectionHasBeenSet;
 
                 };
             }

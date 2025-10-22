@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -175,18 +175,18 @@ namespace TencentCloud
 
                     /**
                      * 获取视频流的码率，取值范围：0 和 [128, 10000]，单位：kbps。
-当取值为 0，表示视频码率和原始视频保持一致。
+当取值为 0，表示由云点播自动设置码率。
                      * @return Bitrate 视频流的码率，取值范围：0 和 [128, 10000]，单位：kbps。
-当取值为 0，表示视频码率和原始视频保持一致。
+当取值为 0，表示由云点播自动设置码率。
                      * 
                      */
                     int64_t GetBitrate() const;
 
                     /**
                      * 设置视频流的码率，取值范围：0 和 [128, 10000]，单位：kbps。
-当取值为 0，表示视频码率和原始视频保持一致。
+当取值为 0，表示由云点播自动设置码率。
                      * @param _bitrate 视频流的码率，取值范围：0 和 [128, 10000]，单位：kbps。
-当取值为 0，表示视频码率和原始视频保持一致。
+当取值为 0，表示由云点播自动设置码率。
                      * 
                      */
                     void SetBitrate(const int64_t& _bitrate);
@@ -236,7 +236,7 @@ namespace TencentCloud
 
                     /**
                      * 视频流的码率，取值范围：0 和 [128, 10000]，单位：kbps。
-当取值为 0，表示视频码率和原始视频保持一致。
+当取值为 0，表示由云点播自动设置码率。
                      */
                     int64_t m_bitrate;
                     bool m_bitrateHasBeenSet;

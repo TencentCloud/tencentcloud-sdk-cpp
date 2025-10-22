@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取启动配置ID。
-                     * @return LaunchConfigurationId 启动配置ID。
+                     * 获取启动配置ID。可通过如下方式获取：
+<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/config) 查询启动配置ID。</li>
+<li>通过调用接口 [DescribeLaunchConfigurations](https://cloud.tencent.com/document/api/377/20445) ，取返回信息中的 LaunchConfigurationId 获取启动配置ID。</li>
+                     * @return LaunchConfigurationId 启动配置ID。可通过如下方式获取：
+<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/config) 查询启动配置ID。</li>
+<li>通过调用接口 [DescribeLaunchConfigurations](https://cloud.tencent.com/document/api/377/20445) ，取返回信息中的 LaunchConfigurationId 获取启动配置ID。</li>
                      * 
                      */
                     std::string GetLaunchConfigurationId() const;
 
                     /**
-                     * 设置启动配置ID。
-                     * @param _launchConfigurationId 启动配置ID。
+                     * 设置启动配置ID。可通过如下方式获取：
+<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/config) 查询启动配置ID。</li>
+<li>通过调用接口 [DescribeLaunchConfigurations](https://cloud.tencent.com/document/api/377/20445) ，取返回信息中的 LaunchConfigurationId 获取启动配置ID。</li>
+                     * @param _launchConfigurationId 启动配置ID。可通过如下方式获取：
+<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/config) 查询启动配置ID。</li>
+<li>通过调用接口 [DescribeLaunchConfigurations](https://cloud.tencent.com/document/api/377/20445) ，取返回信息中的 LaunchConfigurationId 获取启动配置ID。</li>
                      * 
                      */
                     void SetLaunchConfigurationId(const std::string& _launchConfigurationId);
@@ -188,10 +196,33 @@ namespace TencentCloud
                      */
                     bool ClearInstanceTagsHasBeenSet() const;
 
+                    /**
+                     * 获取是否清空 MetaData，非必填，默认为 false。填 true 代表清空 MetaData，清空后基于此新创建的云主机将不会关联自定义的 Metadata。
+                     * @return ClearMetadata 是否清空 MetaData，非必填，默认为 false。填 true 代表清空 MetaData，清空后基于此新创建的云主机将不会关联自定义的 Metadata。
+                     * 
+                     */
+                    bool GetClearMetadata() const;
+
+                    /**
+                     * 设置是否清空 MetaData，非必填，默认为 false。填 true 代表清空 MetaData，清空后基于此新创建的云主机将不会关联自定义的 Metadata。
+                     * @param _clearMetadata 是否清空 MetaData，非必填，默认为 false。填 true 代表清空 MetaData，清空后基于此新创建的云主机将不会关联自定义的 Metadata。
+                     * 
+                     */
+                    void SetClearMetadata(const bool& _clearMetadata);
+
+                    /**
+                     * 判断参数 ClearMetadata 是否已赋值
+                     * @return ClearMetadata 是否已赋值
+                     * 
+                     */
+                    bool ClearMetadataHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 启动配置ID。
+                     * 启动配置ID。可通过如下方式获取：
+<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/config) 查询启动配置ID。</li>
+<li>通过调用接口 [DescribeLaunchConfigurations](https://cloud.tencent.com/document/api/377/20445) ，取返回信息中的 LaunchConfigurationId 获取启动配置ID。</li>
                      */
                     std::string m_launchConfigurationId;
                     bool m_launchConfigurationIdHasBeenSet;
@@ -230,6 +261,12 @@ namespace TencentCloud
                      */
                     bool m_clearInstanceTags;
                     bool m_clearInstanceTagsHasBeenSet;
+
+                    /**
+                     * 是否清空 MetaData，非必填，默认为 false。填 true 代表清空 MetaData，清空后基于此新创建的云主机将不会关联自定义的 Metadata。
+                     */
+                    bool m_clearMetadata;
+                    bool m_clearMetadataHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志主题ID
-                     * @return FromTopicId 日志主题ID
+                     * 获取日志主题Id。
+- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
+- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
+                     * @return FromTopicId 日志主题Id。
+- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
+- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
                      * 
                      */
                     std::string GetFromTopicId() const;
 
                     /**
-                     * 设置日志主题ID
-                     * @param _fromTopicId 日志主题ID
+                     * 设置日志主题Id。
+- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
+- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
+                     * @param _fromTopicId 日志主题Id。
+- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
+- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
                      * 
                      */
                     void SetFromTopicId(const std::string& _fromTopicId);
@@ -65,15 +73,15 @@ namespace TencentCloud
                     bool FromTopicIdHasBeenSet() const;
 
                     /**
-                     * 获取压缩方式[0:NONE；2:SNAPPY；3:LZ4]
-                     * @return Compression 压缩方式[0:NONE；2:SNAPPY；3:LZ4]
+                     * 获取压缩方式。0：不压缩；2：使用Snappy压缩；3：使用LZ4压缩
+                     * @return Compression 压缩方式。0：不压缩；2：使用Snappy压缩；3：使用LZ4压缩
                      * 
                      */
                     int64_t GetCompression() const;
 
                     /**
-                     * 设置压缩方式[0:NONE；2:SNAPPY；3:LZ4]
-                     * @param _compression 压缩方式[0:NONE；2:SNAPPY；3:LZ4]
+                     * 设置压缩方式。0：不压缩；2：使用Snappy压缩；3：使用LZ4压缩
+                     * @param _compression 压缩方式。0：不压缩；2：使用Snappy压缩；3：使用LZ4压缩
                      * 
                      */
                     void SetCompression(const int64_t& _compression);
@@ -109,13 +117,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日志主题ID
+                     * 日志主题Id。
+- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
+- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
                      */
                     std::string m_fromTopicId;
                     bool m_fromTopicIdHasBeenSet;
 
                     /**
-                     * 压缩方式[0:NONE；2:SNAPPY；3:LZ4]
+                     * 压缩方式。0：不压缩；2：使用Snappy压缩；3：使用LZ4压缩
                      */
                     int64_t m_compression;
                     bool m_compressionHasBeenSet;

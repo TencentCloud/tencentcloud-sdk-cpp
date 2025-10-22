@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络策略协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocol 网络策略协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置网络策略协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _protocol 网络策略协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络策略策略端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port 网络策略策略端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPort() const;
 
                     /**
                      * 设置网络策略策略端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _port 网络策略策略端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPort(const std::string& _port);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 网络策略协议
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
                      * 网络策略策略端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_port;
                     bool m_portHasBeenSet;

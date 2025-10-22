@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取备份方式：物理备份、逻辑备份。
-                     * @return BackupMethod 备份方式：物理备份、逻辑备份。
+                     * 获取备份方式：physical - 物理备份、logical - 逻辑备份。
+                     * @return BackupMethod 备份方式：physical - 物理备份、logical - 逻辑备份。
                      * 
                      */
                     std::string GetBackupMethod() const;
 
                     /**
-                     * 设置备份方式：物理备份、逻辑备份。
-                     * @param _backupMethod 备份方式：物理备份、逻辑备份。
+                     * 设置备份方式：physical - 物理备份、logical - 逻辑备份。
+                     * @param _backupMethod 备份方式：physical - 物理备份、logical - 逻辑备份。
                      * 
                      */
                     void SetBackupMethod(const std::string& _backupMethod);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool BackupMethodHasBeenSet() const;
 
                     /**
-                     * 获取备份模式：自动备份、手动备份。
-                     * @return BackupMode 备份模式：自动备份、手动备份。
+                     * 获取备份模式：automatic - 自动备份、manual - 手动备份。
+                     * @return BackupMode 备份模式：automatic - 自动备份、manual - 手动备份。
                      * 
                      */
                     std::string GetBackupMode() const;
 
                     /**
-                     * 设置备份模式：自动备份、手动备份。
-                     * @param _backupMode 备份模式：自动备份、手动备份。
+                     * 设置备份模式：automatic - 自动备份、manual - 手动备份。
+                     * @param _backupMode 备份模式：automatic - 自动备份、manual - 手动备份。
                      * 
                      */
                     void SetBackupMode(const std::string& _backupMode);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool BackupModeHasBeenSet() const;
 
                     /**
-                     * 获取备份任务状态。
-                     * @return State 备份任务状态。
+                     * 获取备份任务状态。枚举值：init、running、finished、failed、canceled
+                     * @return State 备份任务状态。枚举值：init、running、finished、failed、canceled
                      * 
                      */
                     std::string GetState() const;
 
                     /**
-                     * 设置备份任务状态。
-                     * @param _state 备份任务状态。
+                     * 设置备份任务状态。枚举值：init、running、finished、failed、canceled
+                     * @param _state 备份任务状态。枚举值：init、running、finished、failed、canceled
                      * 
                      */
                     void SetState(const std::string& _state);
@@ -277,19 +277,19 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 备份方式：物理备份、逻辑备份。
+                     * 备份方式：physical - 物理备份、logical - 逻辑备份。
                      */
                     std::string m_backupMethod;
                     bool m_backupMethodHasBeenSet;
 
                     /**
-                     * 备份模式：自动备份、手动备份。
+                     * 备份模式：automatic - 自动备份、manual - 手动备份。
                      */
                     std::string m_backupMode;
                     bool m_backupModeHasBeenSet;
 
                     /**
-                     * 备份任务状态。
+                     * 备份任务状态。枚举值：init、running、finished、failed、canceled
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;

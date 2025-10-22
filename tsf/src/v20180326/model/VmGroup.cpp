@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,7 +59,13 @@ VmGroup::VmGroup() :
     m_agentProfileListHasBeenSet(false),
     m_warmupSettingHasBeenSet(false),
     m_gatewayConfigHasBeenSet(false),
-    m_enableBatchHealthCheckHasBeenSet(false)
+    m_enableBatchHealthCheckHasBeenSet(false),
+    m_filebeatCgroupEnableHasBeenSet(false),
+    m_filebeatMaxCpuHasBeenSet(false),
+    m_filebeatMaxMemHasBeenSet(false),
+    m_repositoryIdHasBeenSet(false),
+    m_repositoryNameHasBeenSet(false),
+    m_repositoryTypeHasBeenSet(false)
 {
 }
 
@@ -492,6 +498,66 @@ CoreInternalOutcome VmGroup::Deserialize(const rapidjson::Value &value)
         m_enableBatchHealthCheckHasBeenSet = true;
     }
 
+    if (value.HasMember("FilebeatCgroupEnable") && !value["FilebeatCgroupEnable"].IsNull())
+    {
+        if (!value["FilebeatCgroupEnable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `VmGroup.FilebeatCgroupEnable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_filebeatCgroupEnable = value["FilebeatCgroupEnable"].GetBool();
+        m_filebeatCgroupEnableHasBeenSet = true;
+    }
+
+    if (value.HasMember("FilebeatMaxCpu") && !value["FilebeatMaxCpu"].IsNull())
+    {
+        if (!value["FilebeatMaxCpu"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `VmGroup.FilebeatMaxCpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_filebeatMaxCpu = value["FilebeatMaxCpu"].GetDouble();
+        m_filebeatMaxCpuHasBeenSet = true;
+    }
+
+    if (value.HasMember("FilebeatMaxMem") && !value["FilebeatMaxMem"].IsNull())
+    {
+        if (!value["FilebeatMaxMem"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VmGroup.FilebeatMaxMem` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_filebeatMaxMem = value["FilebeatMaxMem"].GetInt64();
+        m_filebeatMaxMemHasBeenSet = true;
+    }
+
+    if (value.HasMember("RepositoryId") && !value["RepositoryId"].IsNull())
+    {
+        if (!value["RepositoryId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VmGroup.RepositoryId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_repositoryId = string(value["RepositoryId"].GetString());
+        m_repositoryIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("RepositoryName") && !value["RepositoryName"].IsNull())
+    {
+        if (!value["RepositoryName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VmGroup.RepositoryName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_repositoryName = string(value["RepositoryName"].GetString());
+        m_repositoryNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("RepositoryType") && !value["RepositoryType"].IsNull())
+    {
+        if (!value["RepositoryType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VmGroup.RepositoryType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_repositoryType = string(value["RepositoryType"].GetString());
+        m_repositoryTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -824,6 +890,54 @@ void VmGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "EnableBatchHealthCheck";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableBatchHealthCheck, allocator);
+    }
+
+    if (m_filebeatCgroupEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilebeatCgroupEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_filebeatCgroupEnable, allocator);
+    }
+
+    if (m_filebeatMaxCpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilebeatMaxCpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_filebeatMaxCpu, allocator);
+    }
+
+    if (m_filebeatMaxMemHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilebeatMaxMem";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_filebeatMaxMem, allocator);
+    }
+
+    if (m_repositoryIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RepositoryId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_repositoryId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_repositoryNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RepositoryName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_repositoryName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_repositoryTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RepositoryType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_repositoryType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1451,5 +1565,101 @@ void VmGroup::SetEnableBatchHealthCheck(const bool& _enableBatchHealthCheck)
 bool VmGroup::EnableBatchHealthCheckHasBeenSet() const
 {
     return m_enableBatchHealthCheckHasBeenSet;
+}
+
+bool VmGroup::GetFilebeatCgroupEnable() const
+{
+    return m_filebeatCgroupEnable;
+}
+
+void VmGroup::SetFilebeatCgroupEnable(const bool& _filebeatCgroupEnable)
+{
+    m_filebeatCgroupEnable = _filebeatCgroupEnable;
+    m_filebeatCgroupEnableHasBeenSet = true;
+}
+
+bool VmGroup::FilebeatCgroupEnableHasBeenSet() const
+{
+    return m_filebeatCgroupEnableHasBeenSet;
+}
+
+double VmGroup::GetFilebeatMaxCpu() const
+{
+    return m_filebeatMaxCpu;
+}
+
+void VmGroup::SetFilebeatMaxCpu(const double& _filebeatMaxCpu)
+{
+    m_filebeatMaxCpu = _filebeatMaxCpu;
+    m_filebeatMaxCpuHasBeenSet = true;
+}
+
+bool VmGroup::FilebeatMaxCpuHasBeenSet() const
+{
+    return m_filebeatMaxCpuHasBeenSet;
+}
+
+int64_t VmGroup::GetFilebeatMaxMem() const
+{
+    return m_filebeatMaxMem;
+}
+
+void VmGroup::SetFilebeatMaxMem(const int64_t& _filebeatMaxMem)
+{
+    m_filebeatMaxMem = _filebeatMaxMem;
+    m_filebeatMaxMemHasBeenSet = true;
+}
+
+bool VmGroup::FilebeatMaxMemHasBeenSet() const
+{
+    return m_filebeatMaxMemHasBeenSet;
+}
+
+string VmGroup::GetRepositoryId() const
+{
+    return m_repositoryId;
+}
+
+void VmGroup::SetRepositoryId(const string& _repositoryId)
+{
+    m_repositoryId = _repositoryId;
+    m_repositoryIdHasBeenSet = true;
+}
+
+bool VmGroup::RepositoryIdHasBeenSet() const
+{
+    return m_repositoryIdHasBeenSet;
+}
+
+string VmGroup::GetRepositoryName() const
+{
+    return m_repositoryName;
+}
+
+void VmGroup::SetRepositoryName(const string& _repositoryName)
+{
+    m_repositoryName = _repositoryName;
+    m_repositoryNameHasBeenSet = true;
+}
+
+bool VmGroup::RepositoryNameHasBeenSet() const
+{
+    return m_repositoryNameHasBeenSet;
+}
+
+string VmGroup::GetRepositoryType() const
+{
+    return m_repositoryType;
+}
+
+void VmGroup::SetRepositoryType(const string& _repositoryType)
+{
+    m_repositoryType = _repositoryType;
+    m_repositoryTypeHasBeenSet = true;
+}
+
+bool VmGroup::RepositoryTypeHasBeenSet() const
+{
+    return m_repositoryTypeHasBeenSet;
 }
 

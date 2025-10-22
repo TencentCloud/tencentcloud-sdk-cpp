@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ Line::Line() :
     m_metricNameCNHasBeenSet(false),
     m_timeSerialHasBeenSet(false),
     m_dataSerialHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_metricUnitHasBeenSet(false)
 {
 }
 
@@ -100,6 +101,16 @@ CoreInternalOutcome Line::Deserialize(const rapidjson::Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("MetricUnit") && !value["MetricUnit"].IsNull())
+    {
+        if (!value["MetricUnit"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Line.MetricUnit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_metricUnit = string(value["MetricUnit"].GetString());
+        m_metricUnitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -162,6 +173,14 @@ void Line::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_metricUnitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetricUnit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_metricUnit.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -245,5 +264,21 @@ void Line::SetTags(const vector<ApmTag>& _tags)
 bool Line::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string Line::GetMetricUnit() const
+{
+    return m_metricUnit;
+}
+
+void Line::SetMetricUnit(const string& _metricUnit)
+{
+    m_metricUnit = _metricUnit;
+    m_metricUnitHasBeenSet = true;
+}
+
+bool Line::MetricUnitHasBeenSet() const
+{
+    return m_metricUnitHasBeenSet;
 }
 

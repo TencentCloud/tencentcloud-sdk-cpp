@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TemplateNameHasBeenSet() const;
 
                     /**
-                     * 获取数据库大版本号，例如：11，12，13
-                     * @return DBMajorVersion 数据库大版本号，例如：11，12，13
+                     * 获取数据库大版本号，例如：11，12，13。可通过[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)接口获取
+                     * @return DBMajorVersion 数据库大版本号，例如：11，12，13。可通过[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)接口获取
                      * 
                      */
                     std::string GetDBMajorVersion() const;
 
                     /**
-                     * 设置数据库大版本号，例如：11，12，13
-                     * @param _dBMajorVersion 数据库大版本号，例如：11，12，13
+                     * 设置数据库大版本号，例如：11，12，13。可通过[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)接口获取
+                     * @param _dBMajorVersion 数据库大版本号，例如：11，12，13。可通过[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)接口获取
                      * 
                      */
                     void SetDBMajorVersion(const std::string& _dBMajorVersion);
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_templateNameHasBeenSet;
 
                     /**
-                     * 数据库大版本号，例如：11，12，13
+                     * 数据库大版本号，例如：11，12，13。可通过[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)接口获取
                      */
                     std::string m_dBMajorVersion;
                     bool m_dBMajorVersionHasBeenSet;

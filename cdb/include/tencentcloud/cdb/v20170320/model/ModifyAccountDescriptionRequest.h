@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取云数据库账号。
-                     * @return Accounts 云数据库账号。
+                     * 获取云数据库账号。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。
+                     * @return Accounts 云数据库账号。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。
                      * 
                      */
                     std::vector<Account> GetAccounts() const;
 
                     /**
-                     * 设置云数据库账号。
-                     * @param _accounts 云数据库账号。
+                     * 设置云数据库账号。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。
+                     * @param _accounts 云数据库账号。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。
                      * 
                      */
                     void SetAccounts(const std::vector<Account>& _accounts);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool AccountsHasBeenSet() const;
 
                     /**
-                     * 获取数据库账号的备注信息。
-                     * @return Description 数据库账号的备注信息。
+                     * 获取数据库账号的备注信息。最多支持输入255个字符。
+                     * @return Description 数据库账号的备注信息。最多支持输入255个字符。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置数据库账号的备注信息。
-                     * @param _description 数据库账号的备注信息。
+                     * 设置数据库账号的备注信息。最多支持输入255个字符。
+                     * @param _description 数据库账号的备注信息。最多支持输入255个字符。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -115,13 +115,13 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 云数据库账号。
+                     * 云数据库账号。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。
                      */
                     std::vector<Account> m_accounts;
                     bool m_accountsHasBeenSet;
 
                     /**
-                     * 数据库账号的备注信息。
+                     * 数据库账号的备注信息。最多支持输入255个字符。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

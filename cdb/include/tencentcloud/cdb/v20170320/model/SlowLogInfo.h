@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool SizeHasBeenSet() const;
 
                     /**
-                     * 获取备份快照时间，时间格式：2016-03-17 02:10:37
-                     * @return Date 备份快照时间，时间格式：2016-03-17 02:10:37
+                     * 获取备份快照时间，时间格式：2016-03-17
+                     * @return Date 备份快照时间，时间格式：2016-03-17
                      * 
                      */
                     std::string GetDate() const;
 
                     /**
-                     * 设置备份快照时间，时间格式：2016-03-17 02:10:37
-                     * @param _date 备份快照时间，时间格式：2016-03-17 02:10:37
+                     * 设置备份快照时间，时间格式：2016-03-17
+                     * @param _date 备份快照时间，时间格式：2016-03-17
                      * 
                      */
                     void SetDate(const std::string& _date);
@@ -187,7 +187,7 @@ namespace TencentCloud
                     bool m_sizeHasBeenSet;
 
                     /**
-                     * 备份快照时间，时间格式：2016-03-17 02:10:37
+                     * 备份快照时间，时间格式：2016-03-17
                      */
                     std::string m_date;
                     bool m_dateHasBeenSet;

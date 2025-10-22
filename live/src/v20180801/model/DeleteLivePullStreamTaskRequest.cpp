@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ using namespace std;
 
 DeleteLivePullStreamTaskRequest::DeleteLivePullStreamTaskRequest() :
     m_taskIdHasBeenSet(false),
-    m_operatorHasBeenSet(false)
+    m_operatorHasBeenSet(false),
+    m_specifyTaskIdHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DeleteLivePullStreamTaskRequest::ToJsonString() const
         string key = "Operator";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_operator.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_specifyTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpecifyTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_specifyTaskId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DeleteLivePullStreamTaskRequest::SetOperator(const string& _operator)
 bool DeleteLivePullStreamTaskRequest::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
+}
+
+string DeleteLivePullStreamTaskRequest::GetSpecifyTaskId() const
+{
+    return m_specifyTaskId;
+}
+
+void DeleteLivePullStreamTaskRequest::SetSpecifyTaskId(const string& _specifyTaskId)
+{
+    m_specifyTaskId = _specifyTaskId;
+    m_specifyTaskIdHasBeenSet = true;
+}
+
+bool DeleteLivePullStreamTaskRequest::SpecifyTaskIdHasBeenSet() const
+{
+    return m_specifyTaskIdHasBeenSet;
 }
 
 

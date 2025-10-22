@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -414,7 +414,7 @@ namespace TencentCloud
 
 设置为true之后， 返回参数PdfUrl，为模板PDF文件链接，有效期5分钟, 可以用于将PDF文件下载到本地
 
-注: `此功能为白名单功能，使用前请联系对接的客户经理沟通。`
+注: `此功能需要开通功能白名单【第三方应用集成企业获取模板PDF下载链接】，使用前请联系对接的客户经理沟通。`
                      * @return WithPdfUrl 是否获取模板的PDF文件链接。
 
 <ul><li>**false**：不获取（默认）</li>
@@ -422,7 +422,7 @@ namespace TencentCloud
 
 设置为true之后， 返回参数PdfUrl，为模板PDF文件链接，有效期5分钟, 可以用于将PDF文件下载到本地
 
-注: `此功能为白名单功能，使用前请联系对接的客户经理沟通。`
+注: `此功能需要开通功能白名单【第三方应用集成企业获取模板PDF下载链接】，使用前请联系对接的客户经理沟通。`
                      * 
                      */
                     bool GetWithPdfUrl() const;
@@ -435,7 +435,7 @@ namespace TencentCloud
 
 设置为true之后， 返回参数PdfUrl，为模板PDF文件链接，有效期5分钟, 可以用于将PDF文件下载到本地
 
-注: `此功能为白名单功能，使用前请联系对接的客户经理沟通。`
+注: `此功能需要开通功能白名单【第三方应用集成企业获取模板PDF下载链接】，使用前请联系对接的客户经理沟通。`
                      * @param _withPdfUrl 是否获取模板的PDF文件链接。
 
 <ul><li>**false**：不获取（默认）</li>
@@ -443,7 +443,7 @@ namespace TencentCloud
 
 设置为true之后， 返回参数PdfUrl，为模板PDF文件链接，有效期5分钟, 可以用于将PDF文件下载到本地
 
-注: `此功能为白名单功能，使用前请联系对接的客户经理沟通。`
+注: `此功能需要开通功能白名单【第三方应用集成企业获取模板PDF下载链接】，使用前请联系对接的客户经理沟通。`
                      * 
                      */
                     void SetWithPdfUrl(const bool& _withPdfUrl);
@@ -475,6 +475,27 @@ namespace TencentCloud
                      * @deprecated
                      */
                     bool OperatorHasBeenSet() const;
+
+                    /**
+                     * 获取用户合同类型id
+                     * @return UserFlowTypeId 用户合同类型id
+                     * 
+                     */
+                    std::string GetUserFlowTypeId() const;
+
+                    /**
+                     * 设置用户合同类型id
+                     * @param _userFlowTypeId 用户合同类型id
+                     * 
+                     */
+                    void SetUserFlowTypeId(const std::string& _userFlowTypeId);
+
+                    /**
+                     * 判断参数 UserFlowTypeId 是否已赋值
+                     * @return UserFlowTypeId 是否已赋值
+                     * 
+                     */
+                    bool UserFlowTypeIdHasBeenSet() const;
 
                 private:
 
@@ -584,7 +605,7 @@ namespace TencentCloud
 
 设置为true之后， 返回参数PdfUrl，为模板PDF文件链接，有效期5分钟, 可以用于将PDF文件下载到本地
 
-注: `此功能为白名单功能，使用前请联系对接的客户经理沟通。`
+注: `此功能需要开通功能白名单【第三方应用集成企业获取模板PDF下载链接】，使用前请联系对接的客户经理沟通。`
                      */
                     bool m_withPdfUrl;
                     bool m_withPdfUrlHasBeenSet;
@@ -594,6 +615,12 @@ namespace TencentCloud
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
+
+                    /**
+                     * 用户合同类型id
+                     */
+                    std::string m_userFlowTypeId;
+                    bool m_userFlowTypeIdHasBeenSet;
 
                 };
             }

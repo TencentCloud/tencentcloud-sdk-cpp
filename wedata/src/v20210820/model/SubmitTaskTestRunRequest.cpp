@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,8 @@ SubmitTaskTestRunRequest::SubmitTaskTestRunRequest() :
     m_descriptionHasBeenSet(false),
     m_runParamsHasBeenSet(false),
     m_scriptContentHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
+    m_versionIdHasBeenSet(false),
+    m_submitTaskTestRunTypeHasBeenSet(false)
 {
 }
 
@@ -119,6 +120,14 @@ string SubmitTaskTestRunRequest::ToJsonString() const
         string key = "VersionId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_versionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_submitTaskTestRunTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubmitTaskTestRunType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_submitTaskTestRunType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -271,6 +280,22 @@ void SubmitTaskTestRunRequest::SetVersionId(const string& _versionId)
 bool SubmitTaskTestRunRequest::VersionIdHasBeenSet() const
 {
     return m_versionIdHasBeenSet;
+}
+
+string SubmitTaskTestRunRequest::GetSubmitTaskTestRunType() const
+{
+    return m_submitTaskTestRunType;
+}
+
+void SubmitTaskTestRunRequest::SetSubmitTaskTestRunType(const string& _submitTaskTestRunType)
+{
+    m_submitTaskTestRunType = _submitTaskTestRunType;
+    m_submitTaskTestRunTypeHasBeenSet = true;
+}
+
+bool SubmitTaskTestRunRequest::SubmitTaskTestRunTypeHasBeenSet() const
+{
+    return m_submitTaskTestRunTypeHasBeenSet;
 }
 
 

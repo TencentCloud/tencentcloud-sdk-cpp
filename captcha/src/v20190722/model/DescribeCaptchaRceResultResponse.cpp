@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,8 @@ DescribeCaptchaRceResultResponse::DescribeCaptchaRceResultResponse() :
     m_getCaptchaTimeHasBeenSet(false),
     m_evilBitmapHasBeenSet(false),
     m_submitCaptchaTimeHasBeenSet(false),
-    m_rceResultHasBeenSet(false)
+    m_rceResultHasBeenSet(false),
+    m_deviceRiskCategoryHasBeenSet(false)
 {
 }
 
@@ -145,6 +146,16 @@ CoreInternalOutcome DescribeCaptchaRceResultResponse::Deserialize(const string &
         m_rceResultHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DeviceRiskCategory") && !rsp["DeviceRiskCategory"].IsNull())
+    {
+        if (!rsp["DeviceRiskCategory"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceRiskCategory` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deviceRiskCategory = string(rsp["DeviceRiskCategory"].GetString());
+        m_deviceRiskCategoryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -212,11 +223,19 @@ string DescribeCaptchaRceResultResponse::ToJsonString() const
         m_rceResult.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_deviceRiskCategoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceRiskCategory";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceRiskCategory.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -292,6 +311,16 @@ RceResult DescribeCaptchaRceResultResponse::GetRceResult() const
 bool DescribeCaptchaRceResultResponse::RceResultHasBeenSet() const
 {
     return m_rceResultHasBeenSet;
+}
+
+string DescribeCaptchaRceResultResponse::GetDeviceRiskCategory() const
+{
+    return m_deviceRiskCategory;
+}
+
+bool DescribeCaptchaRceResultResponse::DeviceRiskCategoryHasBeenSet() const
+{
+    return m_deviceRiskCategoryHasBeenSet;
 }
 
 

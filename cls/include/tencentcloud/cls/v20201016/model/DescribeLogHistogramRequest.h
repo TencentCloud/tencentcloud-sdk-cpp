@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,15 +85,23 @@ namespace TencentCloud
                     bool ToHasBeenSet() const;
 
                     /**
-                     * 获取查询语句
-                     * @return Query 查询语句
+                     * 获取检索分析语句。
+语句由 [检索条件] | [SQL语句]构成，无需对日志进行统计分析时，可省略其中的管道符 | 及SQL语句。
+使用*或空字符串可查询所有日志。
+                     * @return Query 检索分析语句。
+语句由 [检索条件] | [SQL语句]构成，无需对日志进行统计分析时，可省略其中的管道符 | 及SQL语句。
+使用*或空字符串可查询所有日志。
                      * 
                      */
                     std::string GetQuery() const;
 
                     /**
-                     * 设置查询语句
-                     * @param _query 查询语句
+                     * 设置检索分析语句。
+语句由 [检索条件] | [SQL语句]构成，无需对日志进行统计分析时，可省略其中的管道符 | 及SQL语句。
+使用*或空字符串可查询所有日志。
+                     * @param _query 检索分析语句。
+语句由 [检索条件] | [SQL语句]构成，无需对日志进行统计分析时，可省略其中的管道符 | 及SQL语句。
+使用*或空字符串可查询所有日志。
                      * 
                      */
                     void SetQuery(const std::string& _query);
@@ -107,14 +115,18 @@ namespace TencentCloud
 
                     /**
                      * 获取要查询的日志主题ID
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * @return TopicId 要查询的日志主题ID
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置要查询的日志主题ID
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * @param _topicId 要查询的日志主题ID
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -191,13 +203,16 @@ namespace TencentCloud
                     bool m_toHasBeenSet;
 
                     /**
-                     * 查询语句
+                     * 检索分析语句。
+语句由 [检索条件] | [SQL语句]构成，无需对日志进行统计分析时，可省略其中的管道符 | 及SQL语句。
+使用*或空字符串可查询所有日志。
                      */
                     std::string m_query;
                     bool m_queryHasBeenSet;
 
                     /**
                      * 要查询的日志主题ID
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;

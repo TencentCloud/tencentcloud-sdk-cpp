@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取上传地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UploadURL 上传地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUploadURL() const;
 
                     /**
                      * 设置上传地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uploadURL 上传地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUploadURL(const std::string& _uploadURL);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileId 文件Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileId() const;
 
                     /**
                      * 设置文件Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileId 文件Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileId(const std::string& _fileId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取下载地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DownloadURL 下载地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDownloadURL() const;
 
                     /**
                      * 设置下载地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _downloadURL 下载地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDownloadURL(const std::string& _downloadURL);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 上传地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uploadURL;
                     bool m_uploadURLHasBeenSet;
 
                     /**
                      * 文件Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
                      * 下载地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_downloadURL;
                     bool m_downloadURLHasBeenSet;

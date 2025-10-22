@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool ApiDurationHasBeenSet() const;
 
                     /**
-                     * 获取分数
-                     * @return Score 分数
+                     * 获取项目总分
+                     * @return Score 项目总分
                      * 
                      */
                     std::string GetScore() const;
 
                     /**
-                     * 设置分数
-                     * @param _score 分数
+                     * 设置项目总分
+                     * @param _score 项目总分
                      * 
                      */
                     void SetScore(const std::string& _score);
@@ -321,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -343,6 +339,132 @@ namespace TencentCloud
                      * 
                      */
                     bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取页面性能评分
+                     * @return PagePerformanceScore 页面性能评分
+                     * 
+                     */
+                    std::string GetPagePerformanceScore() const;
+
+                    /**
+                     * 设置页面性能评分
+                     * @param _pagePerformanceScore 页面性能评分
+                     * 
+                     */
+                    void SetPagePerformanceScore(const std::string& _pagePerformanceScore);
+
+                    /**
+                     * 判断参数 PagePerformanceScore 是否已赋值
+                     * @return PagePerformanceScore 是否已赋值
+                     * 
+                     */
+                    bool PagePerformanceScoreHasBeenSet() const;
+
+                    /**
+                     * 获取js错误评分
+                     * @return JsErrorScore js错误评分
+                     * 
+                     */
+                    std::string GetJsErrorScore() const;
+
+                    /**
+                     * 设置js错误评分
+                     * @param _jsErrorScore js错误评分
+                     * 
+                     */
+                    void SetJsErrorScore(const std::string& _jsErrorScore);
+
+                    /**
+                     * 判断参数 JsErrorScore 是否已赋值
+                     * @return JsErrorScore 是否已赋值
+                     * 
+                     */
+                    bool JsErrorScoreHasBeenSet() const;
+
+                    /**
+                     * 获取API性能评分
+                     * @return ApiPerformanceScore API性能评分
+                     * 
+                     */
+                    std::string GetApiPerformanceScore() const;
+
+                    /**
+                     * 设置API性能评分
+                     * @param _apiPerformanceScore API性能评分
+                     * 
+                     */
+                    void SetApiPerformanceScore(const std::string& _apiPerformanceScore);
+
+                    /**
+                     * 判断参数 ApiPerformanceScore 是否已赋值
+                     * @return ApiPerformanceScore 是否已赋值
+                     * 
+                     */
+                    bool ApiPerformanceScoreHasBeenSet() const;
+
+                    /**
+                     * 获取API可用性评分
+                     * @return ApiAvaliableScore API可用性评分
+                     * 
+                     */
+                    std::string GetApiAvaliableScore() const;
+
+                    /**
+                     * 设置API可用性评分
+                     * @param _apiAvaliableScore API可用性评分
+                     * 
+                     */
+                    void SetApiAvaliableScore(const std::string& _apiAvaliableScore);
+
+                    /**
+                     * 判断参数 ApiAvaliableScore 是否已赋值
+                     * @return ApiAvaliableScore 是否已赋值
+                     * 
+                     */
+                    bool ApiAvaliableScoreHasBeenSet() const;
+
+                    /**
+                     * 获取静态资源性能评分
+                     * @return StaticPerformanceScore 静态资源性能评分
+                     * 
+                     */
+                    std::string GetStaticPerformanceScore() const;
+
+                    /**
+                     * 设置静态资源性能评分
+                     * @param _staticPerformanceScore 静态资源性能评分
+                     * 
+                     */
+                    void SetStaticPerformanceScore(const std::string& _staticPerformanceScore);
+
+                    /**
+                     * 判断参数 StaticPerformanceScore 是否已赋值
+                     * @return StaticPerformanceScore 是否已赋值
+                     * 
+                     */
+                    bool StaticPerformanceScoreHasBeenSet() const;
+
+                    /**
+                     * 获取静态资源可用性评分
+                     * @return StaticAvaliableScore 静态资源可用性评分
+                     * 
+                     */
+                    std::string GetStaticAvaliableScore() const;
+
+                    /**
+                     * 设置静态资源可用性评分
+                     * @param _staticAvaliableScore 静态资源可用性评分
+                     * 
+                     */
+                    void SetStaticAvaliableScore(const std::string& _staticAvaliableScore);
+
+                    /**
+                     * 判断参数 StaticAvaliableScore 是否已赋值
+                     * @return StaticAvaliableScore 是否已赋值
+                     * 
+                     */
+                    bool StaticAvaliableScoreHasBeenSet() const;
 
                 private:
 
@@ -395,7 +517,7 @@ namespace TencentCloud
                     bool m_apiDurationHasBeenSet;
 
                     /**
-                     * 分数
+                     * 项目总分
                      */
                     std::string m_score;
                     bool m_scoreHasBeenSet;
@@ -426,10 +548,45 @@ namespace TencentCloud
 
                     /**
                      * 时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 页面性能评分
+                     */
+                    std::string m_pagePerformanceScore;
+                    bool m_pagePerformanceScoreHasBeenSet;
+
+                    /**
+                     * js错误评分
+                     */
+                    std::string m_jsErrorScore;
+                    bool m_jsErrorScoreHasBeenSet;
+
+                    /**
+                     * API性能评分
+                     */
+                    std::string m_apiPerformanceScore;
+                    bool m_apiPerformanceScoreHasBeenSet;
+
+                    /**
+                     * API可用性评分
+                     */
+                    std::string m_apiAvaliableScore;
+                    bool m_apiAvaliableScoreHasBeenSet;
+
+                    /**
+                     * 静态资源性能评分
+                     */
+                    std::string m_staticPerformanceScore;
+                    bool m_staticPerformanceScoreHasBeenSet;
+
+                    /**
+                     * 静态资源可用性评分
+                     */
+                    std::string m_staticAvaliableScore;
+                    bool m_staticAvaliableScoreHasBeenSet;
 
                 };
             }

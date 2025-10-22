@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取备份表详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableContents 备份表详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BackupTableContent> GetTableContents() const;
@@ -60,14 +58,73 @@ namespace TencentCloud
                      */
                     bool TableContentsHasBeenSet() const;
 
+                    /**
+                     * 获取错误信息
+                     * @return ErrorMsg 错误信息
+                     * 
+                     */
+                    std::string GetErrorMsg() const;
+
+                    /**
+                     * 判断参数 ErrorMsg 是否已赋值
+                     * @return ErrorMsg 是否已赋值
+                     * 
+                     */
+                    bool ErrorMsgHasBeenSet() const;
+
+                    /**
+                     * 获取是否是未知版本
+                     * @return IsUnknownVersion 是否是未知版本
+                     * 
+                     */
+                    bool GetIsUnknownVersion() const;
+
+                    /**
+                     * 判断参数 IsUnknownVersion 是否已赋值
+                     * @return IsUnknownVersion 是否已赋值
+                     * 
+                     */
+                    bool IsUnknownVersionHasBeenSet() const;
+
+                    /**
+                     * 获取返回对象用字符串表示
+                     * @return Msg 返回对象用字符串表示
+                     * 
+                     */
+                    std::string GetMsg() const;
+
+                    /**
+                     * 判断参数 Msg 是否已赋值
+                     * @return Msg 是否已赋值
+                     * 
+                     */
+                    bool MsgHasBeenSet() const;
+
                 private:
 
                     /**
                      * 备份表详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BackupTableContent> m_tableContents;
                     bool m_tableContentsHasBeenSet;
+
+                    /**
+                     * 错误信息
+                     */
+                    std::string m_errorMsg;
+                    bool m_errorMsgHasBeenSet;
+
+                    /**
+                     * 是否是未知版本
+                     */
+                    bool m_isUnknownVersion;
+                    bool m_isUnknownVersionHasBeenSet;
+
+                    /**
+                     * 返回对象用字符串表示
+                     */
+                    std::string m_msg;
+                    bool m_msgHasBeenSet;
 
                 };
             }

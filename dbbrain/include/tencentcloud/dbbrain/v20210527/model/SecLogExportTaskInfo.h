@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务开始时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 任务开始时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置任务开始时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTime 任务开始时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 任务结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置任务结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 任务结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -182,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取导出日志开始时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogStartTime 导出日志开始时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogStartTime() const;
 
                     /**
                      * 设置导出日志开始时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logStartTime 导出日志开始时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogStartTime(const std::string& _logStartTime);
@@ -207,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取导出日志结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogEndTime 导出日志结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogEndTime() const;
 
                     /**
                      * 设置导出日志结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logEndTime 导出日志结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogEndTime(const std::string& _logEndTime);
@@ -232,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志文件总大小，单位KB。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalSize 日志文件总大小，单位KB。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalSize() const;
 
                     /**
                      * 设置日志文件总大小，单位KB。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalSize 日志文件总大小，单位KB。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalSize(const uint64_t& _totalSize);
@@ -257,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取风险等级列表。0 无风险；1 低风险；2 中风险；3 高风险。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DangerLevels 风险等级列表。0 无风险；1 低风险；2 中风险；3 高风险。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<uint64_t> GetDangerLevels() const;
 
                     /**
                      * 设置风险等级列表。0 无风险；1 低风险；2 中风险；3 高风险。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dangerLevels 风险等级列表。0 无风险；1 低风险；2 中风险；3 高风险。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDangerLevels(const std::vector<uint64_t>& _dangerLevels);
@@ -290,14 +266,12 @@ namespace TencentCloud
 
                     /**
                      * 任务开始时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 任务结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -322,28 +296,24 @@ namespace TencentCloud
 
                     /**
                      * 导出日志开始时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logStartTime;
                     bool m_logStartTimeHasBeenSet;
 
                     /**
                      * 导出日志结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logEndTime;
                     bool m_logEndTimeHasBeenSet;
 
                     /**
                      * 日志文件总大小，单位KB。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalSize;
                     bool m_totalSizeHasBeenSet;
 
                     /**
                      * 风险等级列表。0 无风险；1 低风险；2 中风险；3 高风险。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<uint64_t> m_dangerLevels;
                     bool m_dangerLevelsHasBeenSet;

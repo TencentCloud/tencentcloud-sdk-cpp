@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群实例Id
-                     * @return InstanceId 集群实例Id
+                     * 获取实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
+                     * @return InstanceId 实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置集群实例Id
-                     * @param _instanceId 集群实例Id
+                     * 设置实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
+                     * @param _instanceId 实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取用户名，登录时使用
-                     * @return User 用户名，登录时使用
+                     * 获取用户名，形如 admin。有效的 User 名称可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询，点击集群列表中的集群，进入集群详情，并在用户与权限页签中找到用户列表，从而找到用户名称。
+                     * @return User 用户名，形如 admin。有效的 User 名称可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询，点击集群列表中的集群，进入集群详情，并在用户与权限页签中找到用户列表，从而找到用户名称。
                      * 
                      */
                     std::string GetUser() const;
 
                     /**
-                     * 设置用户名，登录时使用
-                     * @param _user 用户名，登录时使用
+                     * 设置用户名，形如 admin。有效的 User 名称可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询，点击集群列表中的集群，进入集群详情，并在用户与权限页签中找到用户列表，从而找到用户名称。
+                     * @param _user 用户名，形如 admin。有效的 User 名称可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询，点击集群列表中的集群，进入集群详情，并在用户与权限页签中找到用户列表，从而找到用户名称。
                      * 
                      */
                     void SetUser(const std::string& _user);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool UserHasBeenSet() const;
 
                     /**
-                     * 获取密码，登录时使用
-                     * @return Password 密码，登录时使用
+                     * 获取密码，登录时使用。规范：不能为空，8-64个字符，至少要包含小写字母、大写字母、数字、特殊字符【()`~!@#$%^&*_=|{}[]:;',.?/】中的两项
+                     * @return Password 密码，登录时使用。规范：不能为空，8-64个字符，至少要包含小写字母、大写字母、数字、特殊字符【()`~!@#$%^&*_=|{}[]:;',.?/】中的两项
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置密码，登录时使用
-                     * @param _password 密码，登录时使用
+                     * 设置密码，登录时使用。规范：不能为空，8-64个字符，至少要包含小写字母、大写字母、数字、特殊字符【()`~!@#$%^&*_=|{}[]:;',.?/】中的两项
+                     * @param _password 密码，登录时使用。规范：不能为空，8-64个字符，至少要包含小写字母、大写字母、数字、特殊字符【()`~!@#$%^&*_=|{}[]:;',.?/】中的两项
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -127,15 +127,19 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取用户标签，用于决定改用户访问RabbitMQ Management的权限范围，不传则不修改
-                     * @return Tags 用户标签，用于决定改用户访问RabbitMQ Management的权限范围，不传则不修改
+                     * 获取用户标签，用于决定改用户访问 RabbitMQ Management 的权限范围
+management：普通控制台用户，monitoring：管理型控制台用户，其他值：非控制台用户
+                     * @return Tags 用户标签，用于决定改用户访问 RabbitMQ Management 的权限范围
+management：普通控制台用户，monitoring：管理型控制台用户，其他值：非控制台用户
                      * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
-                     * 设置用户标签，用于决定改用户访问RabbitMQ Management的权限范围，不传则不修改
-                     * @param _tags 用户标签，用于决定改用户访问RabbitMQ Management的权限范围，不传则不修改
+                     * 设置用户标签，用于决定改用户访问 RabbitMQ Management 的权限范围
+management：普通控制台用户，monitoring：管理型控制台用户，其他值：非控制台用户
+                     * @param _tags 用户标签，用于决定改用户访问 RabbitMQ Management 的权限范围
+management：普通控制台用户，monitoring：管理型控制台用户，其他值：非控制台用户
                      * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
@@ -192,19 +196,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群实例Id
+                     * 实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 用户名，登录时使用
+                     * 用户名，形如 admin。有效的 User 名称可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询，点击集群列表中的集群，进入集群详情，并在用户与权限页签中找到用户列表，从而找到用户名称。
                      */
                     std::string m_user;
                     bool m_userHasBeenSet;
 
                     /**
-                     * 密码，登录时使用
+                     * 密码，登录时使用。规范：不能为空，8-64个字符，至少要包含小写字母、大写字母、数字、特殊字符【()`~!@#$%^&*_=|{}[]:;',.?/】中的两项
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
@@ -216,7 +220,8 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 用户标签，用于决定改用户访问RabbitMQ Management的权限范围，不传则不修改
+                     * 用户标签，用于决定改用户访问 RabbitMQ Management 的权限范围
+management：普通控制台用户，monitoring：管理型控制台用户，其他值：非控制台用户
                      */
                     std::vector<std::string> m_tags;
                     bool m_tagsHasBeenSet;

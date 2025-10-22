@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,18 +54,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Part 部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Part GetPart() const;
 
                     /**
                      * 设置部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _part 部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPart(const Part& _part);
@@ -79,18 +75,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组织大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TissueSizes 组织大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Size> GetTissueSizes() const;
 
                     /**
                      * 设置组织大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tissueSizes 组织大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTissueSizes(const std::vector<Size>& _tissueSizes);
@@ -104,18 +96,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结节大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TuberSizes 结节大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Size> GetTuberSizes() const;
 
                     /**
                      * 设置结节大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tuberSizes 结节大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTuberSizes(const std::vector<Size>& _tuberSizes);
@@ -129,18 +117,14 @@ namespace TencentCloud
 
                     /**
                      * 获取肿瘤大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CancerSizes 肿瘤大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Size> GetCancerSizes() const;
 
                     /**
                      * 设置肿瘤大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cancerSizes 肿瘤大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCancerSizes(const std::vector<Size>& _cancerSizes);
@@ -154,18 +138,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组织学等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HistologyLevel 组织学等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BaseInfo GetHistologyLevel() const;
 
                     /**
                      * 设置组织学等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _histologyLevel 组织学等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHistologyLevel(const BaseInfo& _histologyLevel);
@@ -179,18 +159,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组织学类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HistologyType 组织学类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     HistologyTypeV2 GetHistologyType() const;
 
                     /**
                      * 设置组织学类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _histologyType 组织学类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHistologyType(const HistologyTypeV2& _histologyType);
@@ -204,18 +180,14 @@ namespace TencentCloud
 
                     /**
                      * 获取侵犯
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Invasive 侵犯
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<InvasiveV2> GetInvasive() const;
 
                     /**
                      * 设置侵犯
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _invasive 侵犯
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInvasive(const std::vector<InvasiveV2>& _invasive);
@@ -229,18 +201,14 @@ namespace TencentCloud
 
                     /**
                      * 获取pTNM
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PTNM pTNM
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PTNM GetPTNM() const;
 
                     /**
                      * 设置pTNM
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pTNM pTNM
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPTNM(const PTNM& _pTNM);
@@ -254,18 +222,14 @@ namespace TencentCloud
 
                     /**
                      * 获取浸润深度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InfiltrationDepth 浸润深度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BaseInfo GetInfiltrationDepth() const;
 
                     /**
                      * 设置浸润深度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _infiltrationDepth 浸润深度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInfiltrationDepth(const BaseInfo& _infiltrationDepth);
@@ -279,18 +243,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结节数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TuberNum 结节数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BaseInfo GetTuberNum() const;
 
                     /**
                      * 设置结节数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tuberNum 结节数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTuberNum(const BaseInfo& _tuberNum);
@@ -304,18 +264,14 @@ namespace TencentCloud
 
                     /**
                      * 获取钙化
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Calcification 钙化
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BaseInfo GetCalcification() const;
 
                     /**
                      * 设置钙化
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _calcification 钙化
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCalcification(const BaseInfo& _calcification);
@@ -329,18 +285,14 @@ namespace TencentCloud
 
                     /**
                      * 获取坏死
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Necrosis 坏死
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BaseInfo GetNecrosis() const;
 
                     /**
                      * 设置坏死
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _necrosis 坏死
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNecrosis(const BaseInfo& _necrosis);
@@ -354,18 +306,14 @@ namespace TencentCloud
 
                     /**
                      * 获取异形
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Abnormity 异形
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BaseInfo GetAbnormity() const;
 
                     /**
                      * 设置异形
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _abnormity 异形
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAbnormity(const BaseInfo& _abnormity);
@@ -379,18 +327,14 @@ namespace TencentCloud
 
                     /**
                      * 获取断链
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Breaked 断链
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BaseInfo GetBreaked() const;
 
                     /**
                      * 设置断链
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _breaked 断链
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBreaked(const BaseInfo& _breaked);
@@ -406,98 +350,84 @@ namespace TencentCloud
 
                     /**
                      * 部位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Part m_part;
                     bool m_partHasBeenSet;
 
                     /**
                      * 组织大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Size> m_tissueSizes;
                     bool m_tissueSizesHasBeenSet;
 
                     /**
                      * 结节大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Size> m_tuberSizes;
                     bool m_tuberSizesHasBeenSet;
 
                     /**
                      * 肿瘤大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Size> m_cancerSizes;
                     bool m_cancerSizesHasBeenSet;
 
                     /**
                      * 组织学等级
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BaseInfo m_histologyLevel;
                     bool m_histologyLevelHasBeenSet;
 
                     /**
                      * 组织学类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     HistologyTypeV2 m_histologyType;
                     bool m_histologyTypeHasBeenSet;
 
                     /**
                      * 侵犯
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<InvasiveV2> m_invasive;
                     bool m_invasiveHasBeenSet;
 
                     /**
                      * pTNM
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PTNM m_pTNM;
                     bool m_pTNMHasBeenSet;
 
                     /**
                      * 浸润深度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BaseInfo m_infiltrationDepth;
                     bool m_infiltrationDepthHasBeenSet;
 
                     /**
                      * 结节数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BaseInfo m_tuberNum;
                     bool m_tuberNumHasBeenSet;
 
                     /**
                      * 钙化
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BaseInfo m_calcification;
                     bool m_calcificationHasBeenSet;
 
                     /**
                      * 坏死
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BaseInfo m_necrosis;
                     bool m_necrosisHasBeenSet;
 
                     /**
                      * 异形
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BaseInfo m_abnormity;
                     bool m_abnormityHasBeenSet;
 
                     /**
                      * 断链
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BaseInfo m_breaked;
                     bool m_breakedHasBeenSet;

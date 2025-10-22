@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,23 +64,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取指定安全 IP 组 ID。
-<li>提供该参数时，仅查询指定 ID 的安全 IP 组配置；</li>
-<li>不传递参数时，返回站点下所有安全 IP 组信息。</li>
-                     * @return GroupIds 指定安全 IP 组 ID。
-<li>提供该参数时，仅查询指定 ID 的安全 IP 组配置；</li>
-<li>不传递参数时，返回站点下所有安全 IP 组信息。</li>
+                     * 获取指定安全 IP 组 ID。 <li>提供该参数时，仅查询指定 ID 的安全 IP 组配置；</li> <li>不传递参数时，返回站点下所有安全 IP 组信息。</li>
+                     * @return GroupIds 指定安全 IP 组 ID。 <li>提供该参数时，仅查询指定 ID 的安全 IP 组配置；</li> <li>不传递参数时，返回站点下所有安全 IP 组信息。</li>
                      * 
                      */
                     std::vector<int64_t> GetGroupIds() const;
 
                     /**
-                     * 设置指定安全 IP 组 ID。
-<li>提供该参数时，仅查询指定 ID 的安全 IP 组配置；</li>
-<li>不传递参数时，返回站点下所有安全 IP 组信息。</li>
-                     * @param _groupIds 指定安全 IP 组 ID。
-<li>提供该参数时，仅查询指定 ID 的安全 IP 组配置；</li>
-<li>不传递参数时，返回站点下所有安全 IP 组信息。</li>
+                     * 设置指定安全 IP 组 ID。 <li>提供该参数时，仅查询指定 ID 的安全 IP 组配置；</li> <li>不传递参数时，返回站点下所有安全 IP 组信息。</li>
+                     * @param _groupIds 指定安全 IP 组 ID。 <li>提供该参数时，仅查询指定 ID 的安全 IP 组配置；</li> <li>不传递参数时，返回站点下所有安全 IP 组信息。</li>
                      * 
                      */
                     void SetGroupIds(const std::vector<int64_t>& _groupIds);
@@ -101,9 +93,7 @@ namespace TencentCloud
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 指定安全 IP 组 ID。
-<li>提供该参数时，仅查询指定 ID 的安全 IP 组配置；</li>
-<li>不传递参数时，返回站点下所有安全 IP 组信息。</li>
+                     * 指定安全 IP 组 ID。 <li>提供该参数时，仅查询指定 ID 的安全 IP 组配置；</li> <li>不传递参数时，返回站点下所有安全 IP 组信息。</li>
                      */
                     std::vector<int64_t> m_groupIds;
                     bool m_groupIdsHasBeenSet;

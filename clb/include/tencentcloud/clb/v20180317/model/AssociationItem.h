@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -247,6 +247,48 @@ namespace TencentCloud
                      */
                     bool ListenerNameHasBeenSet() const;
 
+                    /**
+                     * 获取关联目标组的权重， 该参数只有v2新版目标组生效。
+                     * @return Weight 关联目标组的权重， 该参数只有v2新版目标组生效。
+                     * 
+                     */
+                    uint64_t GetWeight() const;
+
+                    /**
+                     * 设置关联目标组的权重， 该参数只有v2新版目标组生效。
+                     * @param _weight 关联目标组的权重， 该参数只有v2新版目标组生效。
+                     * 
+                     */
+                    void SetWeight(const uint64_t& _weight);
+
+                    /**
+                     * 判断参数 Weight 是否已赋值
+                     * @return Weight 是否已赋值
+                     * 
+                     */
+                    bool WeightHasBeenSet() const;
+
+                    /**
+                     * 获取高级路由规则ID
+                     * @return RuleId 高级路由规则ID
+                     * 
+                     */
+                    std::string GetRuleId() const;
+
+                    /**
+                     * 设置高级路由规则ID
+                     * @param _ruleId 高级路由规则ID
+                     * 
+                     */
+                    void SetRuleId(const std::string& _ruleId);
+
+                    /**
+                     * 判断参数 RuleId 是否已赋值
+                     * @return RuleId 是否已赋值
+                     * 
+                     */
+                    bool RuleIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -305,6 +347,18 @@ namespace TencentCloud
                      */
                     std::string m_listenerName;
                     bool m_listenerNameHasBeenSet;
+
+                    /**
+                     * 关联目标组的权重， 该参数只有v2新版目标组生效。
+                     */
+                    uint64_t m_weight;
+                    bool m_weightHasBeenSet;
+
+                    /**
+                     * 高级路由规则ID
+                     */
+                    std::string m_ruleId;
+                    bool m_ruleIdHasBeenSet;
 
                 };
             }

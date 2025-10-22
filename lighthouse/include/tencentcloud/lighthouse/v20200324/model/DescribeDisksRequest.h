@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云硬盘ID列表。每次批量请求云硬盘的上限为 100。
-                     * @return DiskIds 云硬盘ID列表。每次批量请求云硬盘的上限为 100。
+                     * 获取云硬盘ID列表。可通过[DescribeDisks](https://cloud.tencent.com/document/product/1207/66093)接口返回值字段KeyPairSet获取。列表长度最大值为100。
+                     * @return DiskIds 云硬盘ID列表。可通过[DescribeDisks](https://cloud.tencent.com/document/product/1207/66093)接口返回值字段KeyPairSet获取。列表长度最大值为100。
                      * 
                      */
                     std::vector<std::string> GetDiskIds() const;
 
                     /**
-                     * 设置云硬盘ID列表。每次批量请求云硬盘的上限为 100。
-                     * @param _diskIds 云硬盘ID列表。每次批量请求云硬盘的上限为 100。
+                     * 设置云硬盘ID列表。可通过[DescribeDisks](https://cloud.tencent.com/document/product/1207/66093)接口返回值字段KeyPairSet获取。列表长度最大值为100。
+                     * @param _diskIds 云硬盘ID列表。可通过[DescribeDisks](https://cloud.tencent.com/document/product/1207/66093)接口返回值字段KeyPairSet获取。列表长度最大值为100。
                      * 
                      */
                     void SetDiskIds(const std::vector<std::string>& _diskIds);
@@ -86,12 +86,18 @@ disk-usage
 按照【云硬盘类型】进行过滤。
 类型：String
 必选：否
-取值：SYSTEM_DISK或DATA_DISK
+取值：SYSTEM_DISK（系统盘）或 DATA_DISK（数据盘）
 disk-state
 按照【云硬盘状态】进行过滤。
 类型：String
 必选：否
 取值：参考数据结构[Disk](https://cloud.tencent.com/document/api/1207/47576#Disk)中DiskState取值。
+tag-key
+按照【标签键】进行过滤。 类型：String 必选：否
+tag-value
+按照【标签值】进行过滤。 类型：String 必选：否
+tag:tag-key
+按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 DiskIds 和 Filters。
                      * @return Filters 过滤器列表。
 disk-id
@@ -114,12 +120,18 @@ disk-usage
 按照【云硬盘类型】进行过滤。
 类型：String
 必选：否
-取值：SYSTEM_DISK或DATA_DISK
+取值：SYSTEM_DISK（系统盘）或 DATA_DISK（数据盘）
 disk-state
 按照【云硬盘状态】进行过滤。
 类型：String
 必选：否
 取值：参考数据结构[Disk](https://cloud.tencent.com/document/api/1207/47576#Disk)中DiskState取值。
+tag-key
+按照【标签键】进行过滤。 类型：String 必选：否
+tag-value
+按照【标签值】进行过滤。 类型：String 必选：否
+tag:tag-key
+按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 DiskIds 和 Filters。
                      * 
                      */
@@ -147,12 +159,18 @@ disk-usage
 按照【云硬盘类型】进行过滤。
 类型：String
 必选：否
-取值：SYSTEM_DISK或DATA_DISK
+取值：SYSTEM_DISK（系统盘）或 DATA_DISK（数据盘）
 disk-state
 按照【云硬盘状态】进行过滤。
 类型：String
 必选：否
 取值：参考数据结构[Disk](https://cloud.tencent.com/document/api/1207/47576#Disk)中DiskState取值。
+tag-key
+按照【标签键】进行过滤。 类型：String 必选：否
+tag-value
+按照【标签值】进行过滤。 类型：String 必选：否
+tag:tag-key
+按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 DiskIds 和 Filters。
                      * @param _filters 过滤器列表。
 disk-id
@@ -175,12 +193,18 @@ disk-usage
 按照【云硬盘类型】进行过滤。
 类型：String
 必选：否
-取值：SYSTEM_DISK或DATA_DISK
+取值：SYSTEM_DISK（系统盘）或 DATA_DISK（数据盘）
 disk-state
 按照【云硬盘状态】进行过滤。
 类型：String
 必选：否
 取值：参考数据结构[Disk](https://cloud.tencent.com/document/api/1207/47576#Disk)中DiskState取值。
+tag-key
+按照【标签键】进行过滤。 类型：String 必选：否
+tag-value
+按照【标签值】进行过滤。 类型：String 必选：否
+tag:tag-key
+按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 DiskIds 和 Filters。
                      * 
                      */
@@ -280,7 +304,7 @@ disk-state
                 private:
 
                     /**
-                     * 云硬盘ID列表。每次批量请求云硬盘的上限为 100。
+                     * 云硬盘ID列表。可通过[DescribeDisks](https://cloud.tencent.com/document/product/1207/66093)接口返回值字段KeyPairSet获取。列表长度最大值为100。
                      */
                     std::vector<std::string> m_diskIds;
                     bool m_diskIdsHasBeenSet;
@@ -307,12 +331,18 @@ disk-usage
 按照【云硬盘类型】进行过滤。
 类型：String
 必选：否
-取值：SYSTEM_DISK或DATA_DISK
+取值：SYSTEM_DISK（系统盘）或 DATA_DISK（数据盘）
 disk-state
 按照【云硬盘状态】进行过滤。
 类型：String
 必选：否
 取值：参考数据结构[Disk](https://cloud.tencent.com/document/api/1207/47576#Disk)中DiskState取值。
+tag-key
+按照【标签键】进行过滤。 类型：String 必选：否
+tag-value
+按照【标签值】进行过滤。 类型：String 必选：否
+tag:tag-key
+按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 DiskIds 和 Filters。
                      */
                     std::vector<Filter> m_filters;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,9 @@ UpdateCloudRunServerRequest::UpdateCloudRunServerRequest() :
     m_envIdHasBeenSet(false),
     m_serverNameHasBeenSet(false),
     m_deployInfoHasBeenSet(false),
-    m_serverConfigHasBeenSet(false)
+    m_serverConfigHasBeenSet(false),
+    m_businessHasBeenSet(false),
+    m_itemsHasBeenSet(false)
 {
 }
 
@@ -69,6 +71,29 @@ string UpdateCloudRunServerRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_serverConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_businessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Business";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_business.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_itemsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Items";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_items.begin(); itr != m_items.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -141,6 +166,38 @@ void UpdateCloudRunServerRequest::SetServerConfig(const ServerBaseConfig& _serve
 bool UpdateCloudRunServerRequest::ServerConfigHasBeenSet() const
 {
     return m_serverConfigHasBeenSet;
+}
+
+string UpdateCloudRunServerRequest::GetBusiness() const
+{
+    return m_business;
+}
+
+void UpdateCloudRunServerRequest::SetBusiness(const string& _business)
+{
+    m_business = _business;
+    m_businessHasBeenSet = true;
+}
+
+bool UpdateCloudRunServerRequest::BusinessHasBeenSet() const
+{
+    return m_businessHasBeenSet;
+}
+
+vector<DiffConfigItem> UpdateCloudRunServerRequest::GetItems() const
+{
+    return m_items;
+}
+
+void UpdateCloudRunServerRequest::SetItems(const vector<DiffConfigItem>& _items)
+{
+    m_items = _items;
+    m_itemsHasBeenSet = true;
+}
+
+bool UpdateCloudRunServerRequest::ItemsHasBeenSet() const
+{
+    return m_itemsHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,8 @@ CreateVpnGatewayRequest::CreateVpnGatewayRequest() :
     m_typeHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_cdcIdHasBeenSet(false),
-    m_maxConnectionHasBeenSet(false)
+    m_maxConnectionHasBeenSet(false),
+    m_bgpAsnHasBeenSet(false)
 {
 }
 
@@ -129,6 +130,14 @@ string CreateVpnGatewayRequest::ToJsonString() const
         string key = "MaxConnection";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxConnection, allocator);
+    }
+
+    if (m_bgpAsnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BgpAsn";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_bgpAsn, allocator);
     }
 
 
@@ -297,6 +306,22 @@ void CreateVpnGatewayRequest::SetMaxConnection(const uint64_t& _maxConnection)
 bool CreateVpnGatewayRequest::MaxConnectionHasBeenSet() const
 {
     return m_maxConnectionHasBeenSet;
+}
+
+uint64_t CreateVpnGatewayRequest::GetBgpAsn() const
+{
+    return m_bgpAsn;
+}
+
+void CreateVpnGatewayRequest::SetBgpAsn(const uint64_t& _bgpAsn)
+{
+    m_bgpAsn = _bgpAsn;
+    m_bgpAsnHasBeenSet = true;
+}
+
+bool CreateVpnGatewayRequest::BgpAsnHasBeenSet() const
+{
+    return m_bgpAsnHasBeenSet;
 }
 
 

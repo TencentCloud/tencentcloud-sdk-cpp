@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模板Id。
-                     * @return TemplateId 模板Id。
+                     * 获取模板ID。
+                     * @return TemplateId 模板ID。
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置模板Id。
-                     * @param _templateId 模板Id。
+                     * 设置模板ID。
+                     * @param _templateId 模板ID。
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool TemplateNameHasBeenSet() const;
 
                     /**
-                     * 获取模板类型。
-                     * @return TemplateType 模板类型。
+                     * 获取模板类型。取值: "PRIVATE"(个人模板)
+                     * @return TemplateType 模板类型。取值: "PRIVATE"(个人模板)
                      * 
                      */
                     std::string GetTemplateType() const;
 
                     /**
-                     * 设置模板类型。
-                     * @param _templateType 模板类型。
+                     * 设置模板类型。取值: "PRIVATE"(个人模板)
+                     * @param _templateType 模板类型。取值: "PRIVATE"(个人模板)
                      * 
                      */
                     void SetTemplateType(const std::string& _templateType);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool TemplateTypeHasBeenSet() const;
 
                     /**
-                     * 获取模板状态。
-                     * @return TemplateState 模板状态。
+                     * 获取模板状态。取值: "NORMAL"(正常)
+                     * @return TemplateState 模板状态。取值: "NORMAL"(正常)
                      * 
                      */
                     std::string GetTemplateState() const;
 
                     /**
-                     * 设置模板状态。
-                     * @param _templateState 模板状态。
+                     * 设置模板状态。取值: "NORMAL"(正常)
+                     * @param _templateState 模板状态。取值: "NORMAL"(正常)
                      * 
                      */
                     void SetTemplateState(const std::string& _templateState);
@@ -154,7 +154,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模板Id。
+                     * 模板ID。
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
@@ -166,13 +166,13 @@ namespace TencentCloud
                     bool m_templateNameHasBeenSet;
 
                     /**
-                     * 模板类型。
+                     * 模板类型。取值: "PRIVATE"(个人模板)
                      */
                     std::string m_templateType;
                     bool m_templateTypeHasBeenSet;
 
                     /**
-                     * 模板状态。
+                     * 模板状态。取值: "NORMAL"(正常)
                      */
                     std::string m_templateState;
                     bool m_templateStateHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取法人姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LegalName 法人姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLegalName() const;
 
                     /**
                      * 设置法人姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _legalName 法人姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLegalName(const std::string& _legalName);
@@ -98,18 +94,14 @@ namespace TencentCloud
 
                     /**
                      * 获取社会统一信用代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnifiedSocialCreditCode 社会统一信用代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUnifiedSocialCreditCode() const;
 
                     /**
                      * 设置社会统一信用代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _unifiedSocialCreditCode 社会统一信用代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUnifiedSocialCreditCode(const std::string& _unifiedSocialCreditCode);
@@ -121,11 +113,113 @@ namespace TencentCloud
                      */
                     bool UnifiedSocialCreditCodeHasBeenSet() const;
 
+                    /**
+                     * 获取组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。
+                     * @return OrganizationAddress 组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。
+                     * 
+                     */
+                    std::string GetOrganizationAddress() const;
+
+                    /**
+                     * 设置组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。
+                     * @param _organizationAddress 组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。
+                     * 
+                     */
+                    void SetOrganizationAddress(const std::string& _organizationAddress);
+
+                    /**
+                     * 判断参数 OrganizationAddress 是否已赋值
+                     * @return OrganizationAddress 是否已赋值
+                     * 
+                     */
+                    bool OrganizationAddressHasBeenSet() const;
+
+                    /**
+                     * 获取指定企业认证的授权方式 支持多选:
+
+<ul>
+<li><strong>2</strong>: 法人授权方式</li>
+<li><strong>5</strong>: 授权书+对公打款方式</li>
+</ul>
+                     * @return AuthorizationTypes 指定企业认证的授权方式 支持多选:
+
+<ul>
+<li><strong>2</strong>: 法人授权方式</li>
+<li><strong>5</strong>: 授权书+对公打款方式</li>
+</ul>
+                     * @deprecated
+                     */
+                    std::vector<uint64_t> GetAuthorizationTypes() const;
+
+                    /**
+                     * 设置指定企业认证的授权方式 支持多选:
+
+<ul>
+<li><strong>2</strong>: 法人授权方式</li>
+<li><strong>5</strong>: 授权书+对公打款方式</li>
+</ul>
+                     * @param _authorizationTypes 指定企业认证的授权方式 支持多选:
+
+<ul>
+<li><strong>2</strong>: 法人授权方式</li>
+<li><strong>5</strong>: 授权书+对公打款方式</li>
+</ul>
+                     * @deprecated
+                     */
+                    void SetAuthorizationTypes(const std::vector<uint64_t>& _authorizationTypes);
+
+                    /**
+                     * 判断参数 AuthorizationTypes 是否已赋值
+                     * @return AuthorizationTypes 是否已赋值
+                     * @deprecated
+                     */
+                    bool AuthorizationTypesHasBeenSet() const;
+
+                    /**
+                     * 获取指定企业认证的授权方式:
+
+<ul>
+<li><strong>2</strong>: 法人授权方式</li>
+<li><strong>5</strong>: 授权书+对公打款方式</li>
+</ul>
+                     * @return AuthorizationType 指定企业认证的授权方式:
+
+<ul>
+<li><strong>2</strong>: 法人授权方式</li>
+<li><strong>5</strong>: 授权书+对公打款方式</li>
+</ul>
+                     * 
+                     */
+                    int64_t GetAuthorizationType() const;
+
+                    /**
+                     * 设置指定企业认证的授权方式:
+
+<ul>
+<li><strong>2</strong>: 法人授权方式</li>
+<li><strong>5</strong>: 授权书+对公打款方式</li>
+</ul>
+                     * @param _authorizationType 指定企业认证的授权方式:
+
+<ul>
+<li><strong>2</strong>: 法人授权方式</li>
+<li><strong>5</strong>: 授权书+对公打款方式</li>
+</ul>
+                     * 
+                     */
+                    void SetAuthorizationType(const int64_t& _authorizationType);
+
+                    /**
+                     * 判断参数 AuthorizationType 是否已赋值
+                     * @return AuthorizationType 是否已赋值
+                     * 
+                     */
+                    bool AuthorizationTypeHasBeenSet() const;
+
                 private:
 
                     /**
                      * 法人姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_legalName;
                     bool m_legalNameHasBeenSet;
@@ -139,10 +233,37 @@ namespace TencentCloud
 
                     /**
                      * 社会统一信用代码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_unifiedSocialCreditCode;
                     bool m_unifiedSocialCreditCodeHasBeenSet;
+
+                    /**
+                     * 组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。
+                     */
+                    std::string m_organizationAddress;
+                    bool m_organizationAddressHasBeenSet;
+
+                    /**
+                     * 指定企业认证的授权方式 支持多选:
+
+<ul>
+<li><strong>2</strong>: 法人授权方式</li>
+<li><strong>5</strong>: 授权书+对公打款方式</li>
+</ul>
+                     */
+                    std::vector<uint64_t> m_authorizationTypes;
+                    bool m_authorizationTypesHasBeenSet;
+
+                    /**
+                     * 指定企业认证的授权方式:
+
+<ul>
+<li><strong>2</strong>: 法人授权方式</li>
+<li><strong>5</strong>: 授权书+对公打款方式</li>
+</ul>
+                     */
+                    int64_t m_authorizationType;
+                    bool m_authorizationTypeHasBeenSet;
 
                 };
             }

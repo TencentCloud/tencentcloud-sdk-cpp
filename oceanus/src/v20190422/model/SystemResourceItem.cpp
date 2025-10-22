@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ SystemResourceItem::SystemResourceItem() :
     m_resourceTypeHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_regionHasBeenSet(false),
-    m_latestResourceConfigVersionHasBeenSet(false)
+    m_latestResourceConfigVersionHasBeenSet(false),
+    m_systemProvideHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome SystemResourceItem::Deserialize(const rapidjson::Value &valu
         m_latestResourceConfigVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("SystemProvide") && !value["SystemProvide"].IsNull())
+    {
+        if (!value["SystemProvide"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SystemResourceItem.SystemProvide` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_systemProvide = value["SystemProvide"].GetInt64();
+        m_systemProvideHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void SystemResourceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "LatestResourceConfigVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_latestResourceConfigVersion, allocator);
+    }
+
+    if (m_systemProvideHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SystemProvide";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_systemProvide, allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void SystemResourceItem::SetLatestResourceConfigVersion(const int64_t& _latestRe
 bool SystemResourceItem::LatestResourceConfigVersionHasBeenSet() const
 {
     return m_latestResourceConfigVersionHasBeenSet;
+}
+
+int64_t SystemResourceItem::GetSystemProvide() const
+{
+    return m_systemProvide;
+}
+
+void SystemResourceItem::SetSystemProvide(const int64_t& _systemProvide)
+{
+    m_systemProvide = _systemProvide;
+    m_systemProvideHasBeenSet = true;
+}
+
+bool SystemResourceItem::SystemProvideHasBeenSet() const
+{
+    return m_systemProvideHasBeenSet;
 }
 

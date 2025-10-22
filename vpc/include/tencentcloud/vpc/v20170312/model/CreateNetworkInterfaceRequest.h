@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
-                     * @return VpcId VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
+                     * 获取VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取。
+                     * @return VpcId VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
-                     * @param _vpcId VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
+                     * 设置VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取。
+                     * @param _vpcId VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool NetworkInterfaceNameHasBeenSet() const;
 
                     /**
-                     * 获取弹性网卡所在的子网实例ID，例如：subnet-0ap8nwca。
-                     * @return SubnetId 弹性网卡所在的子网实例ID，例如：subnet-0ap8nwca。
+                     * 获取弹性网卡所在的子网实例ID，例如：subnet-0ap8nwca。可通过[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)接口获取。
+                     * @return SubnetId 弹性网卡所在的子网实例ID，例如：subnet-0ap8nwca。可通过[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)接口获取。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置弹性网卡所在的子网实例ID，例如：subnet-0ap8nwca。
-                     * @param _subnetId 弹性网卡所在的子网实例ID，例如：subnet-0ap8nwca。
+                     * 设置弹性网卡所在的子网实例ID，例如：subnet-0ap8nwca。可通过[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)接口获取。
+                     * @param _subnetId 弹性网卡所在的子网实例ID，例如：subnet-0ap8nwca。可通过[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)接口获取。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -130,14 +130,18 @@ namespace TencentCloud
 
                     /**
                      * 获取新申请的内网IP地址个数，内网IP地址个数总和不能超过配额数。
+配额数查询：[DescribeVpcLimits](https://cloud.tencent.com/document/api/215/42942)。
                      * @return SecondaryPrivateIpAddressCount 新申请的内网IP地址个数，内网IP地址个数总和不能超过配额数。
+配额数查询：[DescribeVpcLimits](https://cloud.tencent.com/document/api/215/42942)。
                      * 
                      */
                     uint64_t GetSecondaryPrivateIpAddressCount() const;
 
                     /**
                      * 设置新申请的内网IP地址个数，内网IP地址个数总和不能超过配额数。
+配额数查询：[DescribeVpcLimits](https://cloud.tencent.com/document/api/215/42942)。
                      * @param _secondaryPrivateIpAddressCount 新申请的内网IP地址个数，内网IP地址个数总和不能超过配额数。
+配额数查询：[DescribeVpcLimits](https://cloud.tencent.com/document/api/215/42942)。
                      * 
                      */
                     void SetSecondaryPrivateIpAddressCount(const uint64_t& _secondaryPrivateIpAddressCount);
@@ -150,15 +154,15 @@ namespace TencentCloud
                     bool SecondaryPrivateIpAddressCountHasBeenSet() const;
 
                     /**
-                     * 获取IP服务质量等级，和SecondaryPrivateIpAddressCount配合使用，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。
-                     * @return QosLevel IP服务质量等级，和SecondaryPrivateIpAddressCount配合使用，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。
+                     * 获取IP服务质量等级，和SecondaryPrivateIpAddressCount配合使用，可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
+                     * @return QosLevel IP服务质量等级，和SecondaryPrivateIpAddressCount配合使用，可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
                      * 
                      */
                     std::string GetQosLevel() const;
 
                     /**
-                     * 设置IP服务质量等级，和SecondaryPrivateIpAddressCount配合使用，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。
-                     * @param _qosLevel IP服务质量等级，和SecondaryPrivateIpAddressCount配合使用，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。
+                     * 设置IP服务质量等级，和SecondaryPrivateIpAddressCount配合使用，可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
+                     * @param _qosLevel IP服务质量等级，和SecondaryPrivateIpAddressCount配合使用，可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
                      * 
                      */
                     void SetQosLevel(const std::string& _qosLevel);
@@ -171,15 +175,19 @@ namespace TencentCloud
                     bool QosLevelHasBeenSet() const;
 
                     /**
-                     * 获取指定绑定的安全组，例如：['sg-1dd51d']。
-                     * @return SecurityGroupIds 指定绑定的安全组，例如：['sg-1dd51d']。
+                     * 获取指定绑定的安全组，例如：['sg-1dd51d']。可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)接口获取。
+
+                     * @return SecurityGroupIds 指定绑定的安全组，例如：['sg-1dd51d']。可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)接口获取。
+
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
-                     * 设置指定绑定的安全组，例如：['sg-1dd51d']。
-                     * @param _securityGroupIds 指定绑定的安全组，例如：['sg-1dd51d']。
+                     * 设置指定绑定的安全组，例如：['sg-1dd51d']。可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)接口获取。
+
+                     * @param _securityGroupIds 指定绑定的安全组，例如：['sg-1dd51d']。可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)接口获取。
+
                      * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
@@ -255,6 +263,27 @@ namespace TencentCloud
                     bool TrunkingFlagHasBeenSet() const;
 
                     /**
+                     * 获取是否创建RDMA弹性网卡，true:创建rdma弹性网卡，false:普通弹性网卡。不填默认为false
+                     * @return IsRdma 是否创建RDMA弹性网卡，true:创建rdma弹性网卡，false:普通弹性网卡。不填默认为false
+                     * 
+                     */
+                    bool GetIsRdma() const;
+
+                    /**
+                     * 设置是否创建RDMA弹性网卡，true:创建rdma弹性网卡，false:普通弹性网卡。不填默认为false
+                     * @param _isRdma 是否创建RDMA弹性网卡，true:创建rdma弹性网卡，false:普通弹性网卡。不填默认为false
+                     * 
+                     */
+                    void SetIsRdma(const bool& _isRdma);
+
+                    /**
+                     * 判断参数 IsRdma 是否已赋值
+                     * @return IsRdma 是否已赋值
+                     * 
+                     */
+                    bool IsRdmaHasBeenSet() const;
+
+                    /**
                      * 获取用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。	
                      * @return ClientToken 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。	
                      * 
@@ -278,7 +307,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
+                     * VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
@@ -290,7 +319,7 @@ namespace TencentCloud
                     bool m_networkInterfaceNameHasBeenSet;
 
                     /**
-                     * 弹性网卡所在的子网实例ID，例如：subnet-0ap8nwca。
+                     * 弹性网卡所在的子网实例ID，例如：subnet-0ap8nwca。可通过[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)接口获取。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
@@ -303,18 +332,20 @@ namespace TencentCloud
 
                     /**
                      * 新申请的内网IP地址个数，内网IP地址个数总和不能超过配额数。
+配额数查询：[DescribeVpcLimits](https://cloud.tencent.com/document/api/215/42942)。
                      */
                     uint64_t m_secondaryPrivateIpAddressCount;
                     bool m_secondaryPrivateIpAddressCountHasBeenSet;
 
                     /**
-                     * IP服务质量等级，和SecondaryPrivateIpAddressCount配合使用，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。
+                     * IP服务质量等级，和SecondaryPrivateIpAddressCount配合使用，可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
                      */
                     std::string m_qosLevel;
                     bool m_qosLevelHasBeenSet;
 
                     /**
-                     * 指定绑定的安全组，例如：['sg-1dd51d']。
+                     * 指定绑定的安全组，例如：['sg-1dd51d']。可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)接口获取。
+
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;
@@ -336,6 +367,12 @@ namespace TencentCloud
                      */
                     std::string m_trunkingFlag;
                     bool m_trunkingFlagHasBeenSet;
+
+                    /**
+                     * 是否创建RDMA弹性网卡，true:创建rdma弹性网卡，false:普通弹性网卡。不填默认为false
+                     */
+                    bool m_isRdma;
+                    bool m_isRdmaHasBeenSet;
 
                     /**
                      * 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。	

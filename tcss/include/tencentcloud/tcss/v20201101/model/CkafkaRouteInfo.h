@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * ckafkal路由详情
+                * Ckafka路由详情
                 */
                 class CkafkaRouteInfo : public AbstractModel
                 {
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取路由ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RouteID 路由ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRouteID() const;
 
                     /**
                      * 设置路由ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _routeID 路由ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRouteID(const int64_t& _routeID);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取域名名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 域名名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domain 域名名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取域名端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DomainPort 域名端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDomainPort() const;
 
                     /**
                      * 设置域名端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domainPort 域名端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomainPort(const uint64_t& _domainPort);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取虚拟ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vip 虚拟ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置虚拟ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vip 虚拟ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVip(const std::string& _vip);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取虚拟ip类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VipType 虚拟ip类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetVipType() const;
 
                     /**
                      * 设置虚拟ip类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vipType 虚拟ip类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVipType(const int64_t& _vipType);
@@ -177,13 +157,11 @@ namespace TencentCloud
 	// 1：SASL_PLAINTEXT（明文方式，不过在数据开始时，会通过SASL方式登录鉴权，仅社区版本支持）
 	// 2：SSL（SSL加密通信，没有带用户信息，老版本及社区版本都支持）
 	// 3：SASL_SSL（SSL加密通信，在数据开始时，会通过SASL方式登录鉴权，仅社区版本支持）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccessType 接入类型
 // 0：PLAINTEXT (明文方式，没有带用户信息老版本及社区版本都支持)
 	// 1：SASL_PLAINTEXT（明文方式，不过在数据开始时，会通过SASL方式登录鉴权，仅社区版本支持）
 	// 2：SSL（SSL加密通信，没有带用户信息，老版本及社区版本都支持）
 	// 3：SASL_SSL（SSL加密通信，在数据开始时，会通过SASL方式登录鉴权，仅社区版本支持）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAccessType() const;
@@ -194,13 +172,11 @@ namespace TencentCloud
 	// 1：SASL_PLAINTEXT（明文方式，不过在数据开始时，会通过SASL方式登录鉴权，仅社区版本支持）
 	// 2：SSL（SSL加密通信，没有带用户信息，老版本及社区版本都支持）
 	// 3：SASL_SSL（SSL加密通信，在数据开始时，会通过SASL方式登录鉴权，仅社区版本支持）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accessType 接入类型
 // 0：PLAINTEXT (明文方式，没有带用户信息老版本及社区版本都支持)
 	// 1：SASL_PLAINTEXT（明文方式，不过在数据开始时，会通过SASL方式登录鉴权，仅社区版本支持）
 	// 2：SSL（SSL加密通信，没有带用户信息，老版本及社区版本都支持）
 	// 3：SASL_SSL（SSL加密通信，在数据开始时，会通过SASL方式登录鉴权，仅社区版本支持）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccessType(const int64_t& _accessType);
@@ -216,35 +192,30 @@ namespace TencentCloud
 
                     /**
                      * 路由ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_routeID;
                     bool m_routeIDHasBeenSet;
 
                     /**
                      * 域名名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
                      * 域名端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_domainPort;
                     bool m_domainPortHasBeenSet;
 
                     /**
                      * 虚拟ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
 
                     /**
                      * 虚拟ip类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_vipType;
                     bool m_vipTypeHasBeenSet;
@@ -255,7 +226,6 @@ namespace TencentCloud
 	// 1：SASL_PLAINTEXT（明文方式，不过在数据开始时，会通过SASL方式登录鉴权，仅社区版本支持）
 	// 2：SSL（SSL加密通信，没有带用户信息，老版本及社区版本都支持）
 	// 3：SASL_SSL（SSL加密通信，在数据开始时，会通过SASL方式登录鉴权，仅社区版本支持）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_accessType;
                     bool m_accessTypeHasBeenSet;

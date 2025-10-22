@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/lighthouse/v20200324/model/Tag.h>
 
 
 namespace TencentCloud
@@ -198,15 +199,15 @@ namespace TencentCloud
                     bool PlatformTypeHasBeenSet() const;
 
                     /**
-                     * 获取镜像类型，如 APP_OS、PURE_OS、PRIVATE。
-                     * @return BlueprintType 镜像类型，如 APP_OS、PURE_OS、PRIVATE。
+                     * 获取镜像类型，如 APP_OS（应用镜像）, PURE_OS（系统镜像）, DOCKER（容器）, PRIVATE（私有镜像）, SHARED（共享镜像）, GAME_PORTAL（游戏专区镜像）。
+                     * @return BlueprintType 镜像类型，如 APP_OS（应用镜像）, PURE_OS（系统镜像）, DOCKER（容器）, PRIVATE（私有镜像）, SHARED（共享镜像）, GAME_PORTAL（游戏专区镜像）。
                      * 
                      */
                     std::string GetBlueprintType() const;
 
                     /**
-                     * 设置镜像类型，如 APP_OS、PURE_OS、PRIVATE。
-                     * @param _blueprintType 镜像类型，如 APP_OS、PURE_OS、PRIVATE。
+                     * 设置镜像类型，如 APP_OS（应用镜像）, PURE_OS（系统镜像）, DOCKER（容器）, PRIVATE（私有镜像）, SHARED（共享镜像）, GAME_PORTAL（游戏专区镜像）。
+                     * @param _blueprintType 镜像类型，如 APP_OS（应用镜像）, PURE_OS（系统镜像）, DOCKER（容器）, PRIVATE（私有镜像）, SHARED（共享镜像）, GAME_PORTAL（游戏专区镜像）。
                      * 
                      */
                     void SetBlueprintType(const std::string& _blueprintType);
@@ -262,14 +263,22 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像状态。
+可选值：
+NORMAL（正常）、SYNCING（同步中）、OFFLINE（下线）、ISOLATED（已隔离）、CREATEFAILED（创建失败）、SYNCING_FAILED（目的地域同步失败）、ISOLATING（隔离中）、ISOLATED（已隔离）、DELETING（删除中）、DESTROYING（销毁中）。
                      * @return BlueprintState 镜像状态。
+可选值：
+NORMAL（正常）、SYNCING（同步中）、OFFLINE（下线）、ISOLATED（已隔离）、CREATEFAILED（创建失败）、SYNCING_FAILED（目的地域同步失败）、ISOLATING（隔离中）、ISOLATED（已隔离）、DELETING（删除中）、DESTROYING（销毁中）。
                      * 
                      */
                     std::string GetBlueprintState() const;
 
                     /**
                      * 设置镜像状态。
+可选值：
+NORMAL（正常）、SYNCING（同步中）、OFFLINE（下线）、ISOLATED（已隔离）、CREATEFAILED（创建失败）、SYNCING_FAILED（目的地域同步失败）、ISOLATING（隔离中）、ISOLATED（已隔离）、DELETING（删除中）、DESTROYING（销毁中）。
                      * @param _blueprintState 镜像状态。
+可选值：
+NORMAL（正常）、SYNCING（同步中）、OFFLINE（下线）、ISOLATED（已隔离）、CREATEFAILED（创建失败）、SYNCING_FAILED（目的地域同步失败）、ISOLATING（隔离中）、ISOLATED（已隔离）、DELETING（删除中）、DESTROYING（销毁中）。
                      * 
                      */
                     void SetBlueprintState(const std::string& _blueprintState);
@@ -375,18 +384,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CVM镜像共享到轻量应用服务器轻量应用服务器后的CVM镜像ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageId CVM镜像共享到轻量应用服务器轻量应用服务器后的CVM镜像ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetImageId() const;
 
                     /**
                      * 设置CVM镜像共享到轻量应用服务器轻量应用服务器后的CVM镜像ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _imageId CVM镜像共享到轻量应用服务器轻量应用服务器后的CVM镜像ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImageId(const std::string& _imageId);
@@ -442,18 +447,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像关联使用场景Id列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SceneIdSet 镜像关联使用场景Id列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSceneIdSet() const;
 
                     /**
                      * 设置镜像关联使用场景Id列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sceneIdSet 镜像关联使用场景Id列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSceneIdSet(const std::vector<std::string>& _sceneIdSet);
@@ -511,6 +512,27 @@ namespace TencentCloud
                      */
                     bool BlueprintSharedHasBeenSet() const;
 
+                    /**
+                     * 获取镜像绑定的标签列表。
+                     * @return Tags 镜像绑定的标签列表。
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置镜像绑定的标签列表。
+                     * @param _tags 镜像绑定的标签列表。
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -557,7 +579,7 @@ namespace TencentCloud
                     bool m_platformTypeHasBeenSet;
 
                     /**
-                     * 镜像类型，如 APP_OS、PURE_OS、PRIVATE。
+                     * 镜像类型，如 APP_OS（应用镜像）, PURE_OS（系统镜像）, DOCKER（容器）, PRIVATE（私有镜像）, SHARED（共享镜像）, GAME_PORTAL（游戏专区镜像）。
                      */
                     std::string m_blueprintType;
                     bool m_blueprintTypeHasBeenSet;
@@ -576,6 +598,8 @@ namespace TencentCloud
 
                     /**
                      * 镜像状态。
+可选值：
+NORMAL（正常）、SYNCING（同步中）、OFFLINE（下线）、ISOLATED（已隔离）、CREATEFAILED（创建失败）、SYNCING_FAILED（目的地域同步失败）、ISOLATING（隔离中）、ISOLATED（已隔离）、DELETING（删除中）、DESTROYING（销毁中）。
                      */
                     std::string m_blueprintState;
                     bool m_blueprintStateHasBeenSet;
@@ -608,7 +632,6 @@ namespace TencentCloud
 
                     /**
                      * CVM镜像共享到轻量应用服务器轻量应用服务器后的CVM镜像ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_imageId;
                     bool m_imageIdHasBeenSet;
@@ -627,7 +650,6 @@ namespace TencentCloud
 
                     /**
                      * 镜像关联使用场景Id列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_sceneIdSet;
                     bool m_sceneIdSetHasBeenSet;
@@ -644,6 +666,12 @@ namespace TencentCloud
                      */
                     bool m_blueprintShared;
                     bool m_blueprintSharedHasBeenSet;
+
+                    /**
+                     * 镜像绑定的标签列表。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

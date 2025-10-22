@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,8 @@ SubscriptionData::SubscriptionData() :
     m_lastUpdateTimeHasBeenSet(false),
     m_maxRetryTimesHasBeenSet(false),
     m_consumeMessageOrderlyHasBeenSet(false),
-    m_messageModelHasBeenSet(false)
+    m_messageModelHasBeenSet(false),
+    m_clientSubscriptionInfosHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,26 @@ CoreInternalOutcome SubscriptionData::Deserialize(const rapidjson::Value &value)
         m_messageModelHasBeenSet = true;
     }
 
+    if (value.HasMember("ClientSubscriptionInfos") && !value["ClientSubscriptionInfos"].IsNull())
+    {
+        if (!value["ClientSubscriptionInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SubscriptionData.ClientSubscriptionInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ClientSubscriptionInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ClientSubscriptionInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_clientSubscriptionInfos.push_back(item);
+        }
+        m_clientSubscriptionInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +340,21 @@ void SubscriptionData::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "MessageModel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_messageModel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clientSubscriptionInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientSubscriptionInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_clientSubscriptionInfos.begin(); itr != m_clientSubscriptionInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -562,5 +598,21 @@ void SubscriptionData::SetMessageModel(const string& _messageModel)
 bool SubscriptionData::MessageModelHasBeenSet() const
 {
     return m_messageModelHasBeenSet;
+}
+
+vector<ClientSubscriptionInfo> SubscriptionData::GetClientSubscriptionInfos() const
+{
+    return m_clientSubscriptionInfos;
+}
+
+void SubscriptionData::SetClientSubscriptionInfos(const vector<ClientSubscriptionInfo>& _clientSubscriptionInfos)
+{
+    m_clientSubscriptionInfos = _clientSubscriptionInfos;
+    m_clientSubscriptionInfosHasBeenSet = true;
+}
+
+bool SubscriptionData::ClientSubscriptionInfosHasBeenSet() const
+{
+    return m_clientSubscriptionInfosHasBeenSet;
 }
 

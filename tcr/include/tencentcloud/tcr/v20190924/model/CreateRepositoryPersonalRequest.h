@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取仓库名称
-                     * @return RepoName 仓库名称
+                     * 获取仓库名称，格式为 {Namespace}/{lmageName}。
+                     * @return RepoName 仓库名称，格式为 {Namespace}/{lmageName}。
                      * 
                      */
                     std::string GetRepoName() const;
 
                     /**
-                     * 设置仓库名称
-                     * @param _repoName 仓库名称
+                     * 设置仓库名称，格式为 {Namespace}/{lmageName}。
+                     * @param _repoName 仓库名称，格式为 {Namespace}/{lmageName}。
                      * 
                      */
                     void SetRepoName(const std::string& _repoName);
@@ -108,7 +108,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 仓库名称
+                     * 仓库名称，格式为 {Namespace}/{lmageName}。
                      */
                     std::string m_repoName;
                     bool m_repoNameHasBeenSet;

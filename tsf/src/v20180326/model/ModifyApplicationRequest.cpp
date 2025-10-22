@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,10 @@ ModifyApplicationRequest::ModifyApplicationRequest() :
     m_applicationNameHasBeenSet(false),
     m_applicationDescHasBeenSet(false),
     m_applicationRemarkNameHasBeenSet(false),
-    m_serviceConfigListHasBeenSet(false)
+    m_serviceConfigListHasBeenSet(false),
+    m_microserviceTypeHasBeenSet(false),
+    m_serviceGovernanceConfigHasBeenSet(false),
+    m_frameworkTypeHasBeenSet(false)
 {
 }
 
@@ -83,6 +86,31 @@ string ModifyApplicationRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_microserviceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MicroserviceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_microserviceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceGovernanceConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceGovernanceConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_serviceGovernanceConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_frameworkTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FrameworkType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_frameworkType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -171,6 +199,54 @@ void ModifyApplicationRequest::SetServiceConfigList(const vector<ServiceConfig>&
 bool ModifyApplicationRequest::ServiceConfigListHasBeenSet() const
 {
     return m_serviceConfigListHasBeenSet;
+}
+
+string ModifyApplicationRequest::GetMicroserviceType() const
+{
+    return m_microserviceType;
+}
+
+void ModifyApplicationRequest::SetMicroserviceType(const string& _microserviceType)
+{
+    m_microserviceType = _microserviceType;
+    m_microserviceTypeHasBeenSet = true;
+}
+
+bool ModifyApplicationRequest::MicroserviceTypeHasBeenSet() const
+{
+    return m_microserviceTypeHasBeenSet;
+}
+
+ServiceGovernanceConfig ModifyApplicationRequest::GetServiceGovernanceConfig() const
+{
+    return m_serviceGovernanceConfig;
+}
+
+void ModifyApplicationRequest::SetServiceGovernanceConfig(const ServiceGovernanceConfig& _serviceGovernanceConfig)
+{
+    m_serviceGovernanceConfig = _serviceGovernanceConfig;
+    m_serviceGovernanceConfigHasBeenSet = true;
+}
+
+bool ModifyApplicationRequest::ServiceGovernanceConfigHasBeenSet() const
+{
+    return m_serviceGovernanceConfigHasBeenSet;
+}
+
+string ModifyApplicationRequest::GetFrameworkType() const
+{
+    return m_frameworkType;
+}
+
+void ModifyApplicationRequest::SetFrameworkType(const string& _frameworkType)
+{
+    m_frameworkType = _frameworkType;
+    m_frameworkTypeHasBeenSet = true;
+}
+
+bool ModifyApplicationRequest::FrameworkTypeHasBeenSet() const
+{
+    return m_frameworkTypeHasBeenSet;
 }
 
 

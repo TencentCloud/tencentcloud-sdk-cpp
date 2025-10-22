@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -322,15 +322,15 @@ namespace TencentCloud
                     bool VersionSetHasBeenSet() const;
 
                     /**
-                     * 获取实例可用区，格式如：ap-guangzhou-2
-                     * @return Zone 实例可用区，格式如：ap-guangzhou-2
+                     * 获取实例可用区
+                     * @return Zone 实例可用区
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置实例可用区，格式如：ap-guangzhou-2
-                     * @param _zone 实例可用区，格式如：ap-guangzhou-2
+                     * 设置实例可用区
+                     * @param _zone 实例可用区
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -406,15 +406,15 @@ namespace TencentCloud
                     bool UidSetHasBeenSet() const;
 
                     /**
-                     * 获取实例类型 HA-高可用 RO-只读实例 SI-基础版 BI-商业智能服务
-                     * @return InstanceType 实例类型 HA-高可用 RO-只读实例 SI-基础版 BI-商业智能服务
+                     * 获取实例类型 HA-高可用 RO-只读实例 SI-基础版 BI-商业智能服务,cvmHA-云盘双机高可用，cvmRO-云盘只读副本,MultiHA-多节点,cvmMultiHA-云盘多节点
+                     * @return InstanceType 实例类型 HA-高可用 RO-只读实例 SI-基础版 BI-商业智能服务,cvmHA-云盘双机高可用，cvmRO-云盘只读副本,MultiHA-多节点,cvmMultiHA-云盘多节点
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置实例类型 HA-高可用 RO-只读实例 SI-基础版 BI-商业智能服务
-                     * @param _instanceType 实例类型 HA-高可用 RO-只读实例 SI-基础版 BI-商业智能服务
+                     * 设置实例类型 HA-高可用 RO-只读实例 SI-基础版 BI-商业智能服务,cvmHA-云盘双机高可用，cvmRO-云盘只读副本,MultiHA-多节点,cvmMultiHA-云盘多节点
+                     * @param _instanceType 实例类型 HA-高可用 RO-只读实例 SI-基础版 BI-商业智能服务,cvmHA-云盘双机高可用，cvmRO-云盘只读副本,MultiHA-多节点,cvmMultiHA-云盘多节点
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -528,7 +528,7 @@ namespace TencentCloud
                     bool m_versionSetHasBeenSet;
 
                     /**
-                     * 实例可用区，格式如：ap-guangzhou-2
+                     * 实例可用区
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
@@ -552,7 +552,7 @@ namespace TencentCloud
                     bool m_uidSetHasBeenSet;
 
                     /**
-                     * 实例类型 HA-高可用 RO-只读实例 SI-基础版 BI-商业智能服务
+                     * 实例类型 HA-高可用 RO-只读实例 SI-基础版 BI-商业智能服务,cvmHA-云盘双机高可用，cvmRO-云盘只读副本,MultiHA-多节点,cvmMultiHA-云盘多节点
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;

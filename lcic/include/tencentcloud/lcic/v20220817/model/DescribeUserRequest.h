@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户Id。
-                     * @return UserId 用户Id。
+                     * 获取用户id。支持通过 user_id 或 OriginId 查询用户信息，优先使用 user_id 进行查询。
+                     * @return UserId 用户id。支持通过 user_id 或 OriginId 查询用户信息，优先使用 user_id 进行查询。
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置用户Id。
-                     * @param _userId 用户Id。
+                     * 设置用户id。支持通过 user_id 或 OriginId 查询用户信息，优先使用 user_id 进行查询。
+                     * @param _userId 用户id。支持通过 user_id 或 OriginId 查询用户信息，优先使用 user_id 进行查询。
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -63,13 +63,40 @@ namespace TencentCloud
                      */
                     bool UserIdHasBeenSet() const;
 
+                    /**
+                     * 获取用户在客户系统的Id。支持通过 user_id 或 OriginId 查询用户信息，优先使用 user_id 进行查询（UserId不为空时，OriginId不生效）。
+                     * @return OriginId 用户在客户系统的Id。支持通过 user_id 或 OriginId 查询用户信息，优先使用 user_id 进行查询（UserId不为空时，OriginId不生效）。
+                     * 
+                     */
+                    std::string GetOriginId() const;
+
+                    /**
+                     * 设置用户在客户系统的Id。支持通过 user_id 或 OriginId 查询用户信息，优先使用 user_id 进行查询（UserId不为空时，OriginId不生效）。
+                     * @param _originId 用户在客户系统的Id。支持通过 user_id 或 OriginId 查询用户信息，优先使用 user_id 进行查询（UserId不为空时，OriginId不生效）。
+                     * 
+                     */
+                    void SetOriginId(const std::string& _originId);
+
+                    /**
+                     * 判断参数 OriginId 是否已赋值
+                     * @return OriginId 是否已赋值
+                     * 
+                     */
+                    bool OriginIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 用户Id。
+                     * 用户id。支持通过 user_id 或 OriginId 查询用户信息，优先使用 user_id 进行查询。
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
+
+                    /**
+                     * 用户在客户系统的Id。支持通过 user_id 或 OriginId 查询用户信息，优先使用 user_id 进行查询（UserId不为空时，OriginId不生效）。
+                     */
+                    std::string m_originId;
+                    bool m_originIdHasBeenSet;
 
                 };
             }

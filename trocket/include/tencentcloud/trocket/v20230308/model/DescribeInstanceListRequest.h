@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询条件列表
-                     * @return Filters 查询条件列表
+                     * 获取过滤查询条件列表，请在引用此参数的API说明中了解使用方法。
+                     * @return Filters 过滤查询条件列表，请在引用此参数的API说明中了解使用方法。
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置查询条件列表
-                     * @param _filters 查询条件列表
+                     * 设置过滤查询条件列表，请在引用此参数的API说明中了解使用方法。
+                     * @param _filters 过滤查询条件列表，请在引用此参数的API说明中了解使用方法。
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool TagFiltersHasBeenSet() const;
 
                     /**
-                     * 获取查询起始位置
-                     * @return Offset 查询起始位置
+                     * 获取查询起始位置，默认为0。
+                     * @return Offset 查询起始位置，默认为0。
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置查询起始位置
-                     * @param _offset 查询起始位置
+                     * 设置查询起始位置，默认为0。
+                     * @param _offset 查询起始位置，默认为0。
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取查询结果限制数量
-                     * @return Limit 查询结果限制数量
+                     * 获取查询结果限制数量，默认20。
+                     * @return Limit 查询结果限制数量，默认20。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置查询结果限制数量
-                     * @param _limit 查询结果限制数量
+                     * 设置查询结果限制数量，默认20。
+                     * @param _limit 查询结果限制数量，默认20。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -131,7 +131,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询条件列表
+                     * 过滤查询条件列表，请在引用此参数的API说明中了解使用方法。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
@@ -143,13 +143,13 @@ namespace TencentCloud
                     bool m_tagFiltersHasBeenSet;
 
                     /**
-                     * 查询起始位置
+                     * 查询起始位置，默认为0。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 查询结果限制数量
+                     * 查询结果限制数量，默认20。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

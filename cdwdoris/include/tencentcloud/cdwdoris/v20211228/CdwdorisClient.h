@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -647,7 +647,7 @@ namespace TencentCloud
                 DescribeSlowQueryRecordsDownloadOutcomeCallable DescribeSlowQueryRecordsDownloadCallable(const Model::DescribeSlowQueryRecordsDownloadRequest& request);
 
                 /**
-                 *购买页拉取集群的数据节点和zookeeper节点的规格列表
+                 *拉取集群节点规格列表
                  * @param req DescribeSpecRequest
                  * @return DescribeSpecOutcome
                  */

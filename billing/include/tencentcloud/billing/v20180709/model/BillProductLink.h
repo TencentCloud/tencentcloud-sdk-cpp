@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/billing/v20180709/model/BillItem.h>
 
 
 namespace TencentCloud
@@ -46,7 +47,88 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
+                    /**
+                     * 获取子产品编码
+                     * @return ProductCode 子产品编码
+                     * 
+                     */
+                    std::string GetProductCode() const;
+
+                    /**
+                     * 设置子产品编码
+                     * @param _productCode 子产品编码
+                     * 
+                     */
+                    void SetProductCode(const std::string& _productCode);
+
+                    /**
+                     * 判断参数 ProductCode 是否已赋值
+                     * @return ProductCode 是否已赋值
+                     * 
+                     */
+                    bool ProductCodeHasBeenSet() const;
+
+                    /**
+                     * 获取子产品名称
+                     * @return ProductCodeName 子产品名称
+                     * 
+                     */
+                    std::string GetProductCodeName() const;
+
+                    /**
+                     * 设置子产品名称
+                     * @param _productCodeName 子产品名称
+                     * 
+                     */
+                    void SetProductCodeName(const std::string& _productCodeName);
+
+                    /**
+                     * 判断参数 ProductCodeName 是否已赋值
+                     * @return ProductCodeName 是否已赋值
+                     * 
+                     */
+                    bool ProductCodeNameHasBeenSet() const;
+
+                    /**
+                     * 获取组件名称
+                     * @return Children 组件名称
+                     * 
+                     */
+                    std::vector<BillItem> GetChildren() const;
+
+                    /**
+                     * 设置组件名称
+                     * @param _children 组件名称
+                     * 
+                     */
+                    void SetChildren(const std::vector<BillItem>& _children);
+
+                    /**
+                     * 判断参数 Children 是否已赋值
+                     * @return Children 是否已赋值
+                     * 
+                     */
+                    bool ChildrenHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 子产品编码
+                     */
+                    std::string m_productCode;
+                    bool m_productCodeHasBeenSet;
+
+                    /**
+                     * 子产品名称
+                     */
+                    std::string m_productCodeName;
+                    bool m_productCodeNameHasBeenSet;
+
+                    /**
+                     * 组件名称
+                     */
+                    std::vector<BillItem> m_children;
+                    bool m_childrenHasBeenSet;
 
                 };
             }

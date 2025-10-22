@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,9 @@ using namespace std;
 UpdateStreamIngestRequest::UpdateStreamIngestRequest() :
     m_sdkAppIdHasBeenSet(false),
     m_taskIdHasBeenSet(false),
-    m_streamUrlHasBeenSet(false)
+    m_streamUrlHasBeenSet(false),
+    m_volumeHasBeenSet(false),
+    m_isPauseHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,22 @@ string UpdateStreamIngestRequest::ToJsonString() const
         string key = "StreamUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_streamUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_volumeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Volume";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_volume, allocator);
+    }
+
+    if (m_isPauseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsPause";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isPause, allocator);
     }
 
 
@@ -114,6 +132,38 @@ void UpdateStreamIngestRequest::SetStreamUrl(const string& _streamUrl)
 bool UpdateStreamIngestRequest::StreamUrlHasBeenSet() const
 {
     return m_streamUrlHasBeenSet;
+}
+
+uint64_t UpdateStreamIngestRequest::GetVolume() const
+{
+    return m_volume;
+}
+
+void UpdateStreamIngestRequest::SetVolume(const uint64_t& _volume)
+{
+    m_volume = _volume;
+    m_volumeHasBeenSet = true;
+}
+
+bool UpdateStreamIngestRequest::VolumeHasBeenSet() const
+{
+    return m_volumeHasBeenSet;
+}
+
+bool UpdateStreamIngestRequest::GetIsPause() const
+{
+    return m_isPause;
+}
+
+void UpdateStreamIngestRequest::SetIsPause(const bool& _isPause)
+{
+    m_isPause = _isPause;
+    m_isPauseHasBeenSet = true;
+}
+
+bool UpdateStreamIngestRequest::IsPauseHasBeenSet() const
+{
+    return m_isPauseHasBeenSet;
 }
 
 

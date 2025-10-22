@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证书名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 证书名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置证书名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 证书名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取绑定的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BindDomains 绑定的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetBindDomains() const;
 
                     /**
                      * 设置绑定的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bindDomains 绑定的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBindDomains(const std::vector<std::string>& _bindDomains);
@@ -124,10 +112,8 @@ namespace TencentCloud
                     /**
                      * 获取证书状态：expired(已过期)
                    active(生效中)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 证书状态：expired(已过期)
                    active(生效中)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
@@ -135,10 +121,8 @@ namespace TencentCloud
                     /**
                      * 设置证书状态：expired(已过期)
                    active(生效中)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 证书状态：expired(已过期)
                    active(生效中)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -152,18 +136,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证书pem格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Crt 证书pem格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCrt() const;
 
                     /**
                      * 设置证书pem格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _crt 证书pem格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCrt(const std::string& _crt);
@@ -177,18 +157,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证书私钥
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Key 证书私钥
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置证书私钥
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _key 证书私钥
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -202,18 +178,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证书过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireTime 证书过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置证书过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expireTime 证书过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -227,18 +199,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证书上传时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 证书上传时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置证书上传时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 证书上传时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -252,18 +220,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证书签发时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IssueTime 证书签发时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIssueTime() const;
 
                     /**
                      * 设置证书签发时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _issueTime 证书签发时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIssueTime(const std::string& _issueTime);
@@ -278,10 +242,8 @@ namespace TencentCloud
                     /**
                      * 获取证书来源：native(kong自定义证书)
                     ssl(ssl平台证书)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertSource 证书来源：native(kong自定义证书)
                     ssl(ssl平台证书)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCertSource() const;
@@ -289,10 +251,8 @@ namespace TencentCloud
                     /**
                      * 设置证书来源：native(kong自定义证书)
                     ssl(ssl平台证书)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _certSource 证书来源：native(kong自定义证书)
                     ssl(ssl平台证书)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCertSource(const std::string& _certSource);
@@ -306,18 +266,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ssl平台证书Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertId ssl平台证书Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCertId() const;
 
                     /**
                      * 设置ssl平台证书Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _certId ssl平台证书Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCertId(const std::string& _certId);
@@ -333,21 +289,18 @@ namespace TencentCloud
 
                     /**
                      * 证书名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 绑定的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_bindDomains;
                     bool m_bindDomainsHasBeenSet;
@@ -355,42 +308,36 @@ namespace TencentCloud
                     /**
                      * 证书状态：expired(已过期)
                    active(生效中)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 证书pem格式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_crt;
                     bool m_crtHasBeenSet;
 
                     /**
                      * 证书私钥
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
                      * 证书过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
                      * 证书上传时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 证书签发时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_issueTime;
                     bool m_issueTimeHasBeenSet;
@@ -398,14 +345,12 @@ namespace TencentCloud
                     /**
                      * 证书来源：native(kong自定义证书)
                     ssl(ssl平台证书)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_certSource;
                     bool m_certSourceHasBeenSet;
 
                     /**
                      * ssl平台证书Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_certId;
                     bool m_certIdHasBeenSet;

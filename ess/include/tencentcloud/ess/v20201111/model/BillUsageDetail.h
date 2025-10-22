@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -151,7 +151,7 @@ namespace TencentCloud
 <li>**7**: 还没有预发起</li>
 <li>**8**: 等待填写</li>
 <li>**9**: 部分填写 </li>
-<li>**10**: 拒填</li>
+<li>**10**: 拒签</li>
 <li>**11**: 已解除</li>
 </ul>
                      * @return Status 当前合同状态,如下是状态码对应的状态。
@@ -166,7 +166,7 @@ namespace TencentCloud
 <li>**7**: 还没有预发起</li>
 <li>**8**: 等待填写</li>
 <li>**9**: 部分填写 </li>
-<li>**10**: 拒填</li>
+<li>**10**: 拒签</li>
 <li>**11**: 已解除</li>
 </ul>
                      * 
@@ -186,7 +186,7 @@ namespace TencentCloud
 <li>**7**: 还没有预发起</li>
 <li>**8**: 等待填写</li>
 <li>**9**: 部分填写 </li>
-<li>**10**: 拒填</li>
+<li>**10**: 拒签</li>
 <li>**11**: 已解除</li>
 </ul>
                      * @param _status 当前合同状态,如下是状态码对应的状态。
@@ -201,7 +201,7 @@ namespace TencentCloud
 <li>**7**: 还没有预发起</li>
 <li>**8**: 等待填写</li>
 <li>**9**: 部分填写 </li>
-<li>**10**: 拒填</li>
+<li>**10**: 拒签</li>
 <li>**11**: 已解除</li>
 </ul>
                      * 
@@ -462,7 +462,7 @@ namespace TencentCloud
 <li>**7**: 还没有预发起</li>
 <li>**8**: 等待填写</li>
 <li>**9**: 部分填写 </li>
-<li>**10**: 拒填</li>
+<li>**10**: 拒签</li>
 <li>**11**: 已解除</li>
 </ul>
                      */

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -119,18 +119,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Topic的TopicId【出参】
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicId Topic的TopicId【出参】
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置Topic的TopicId【出参】
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicId Topic的TopicId【出参】
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -144,18 +140,14 @@ namespace TencentCloud
 
                     /**
                      * 获取写入Topic时是否进行压缩，不开启填"none"，开启的话，可选择"gzip", "snappy", "lz4"中的一个进行填写。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompressionType 写入Topic时是否进行压缩，不开启填"none"，开启的话，可选择"gzip", "snappy", "lz4"中的一个进行填写。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCompressionType() const;
 
                     /**
                      * 设置写入Topic时是否进行压缩，不开启填"none"，开启的话，可选择"gzip", "snappy", "lz4"中的一个进行填写。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _compressionType 写入Topic时是否进行压缩，不开启填"none"，开启的话，可选择"gzip", "snappy", "lz4"中的一个进行填写。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCompressionType(const std::string& _compressionType);
@@ -169,18 +161,14 @@ namespace TencentCloud
 
                     /**
                      * 获取使用的Topic是否需要自动创建（目前只支持SOURCE流入任务）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UseAutoCreateTopic 使用的Topic是否需要自动创建（目前只支持SOURCE流入任务）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetUseAutoCreateTopic() const;
 
                     /**
                      * 设置使用的Topic是否需要自动创建（目前只支持SOURCE流入任务）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _useAutoCreateTopic 使用的Topic是否需要自动创建（目前只支持SOURCE流入任务）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUseAutoCreateTopic(const bool& _useAutoCreateTopic);
@@ -194,18 +182,14 @@ namespace TencentCloud
 
                     /**
                      * 获取源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MsgMultiple 源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMsgMultiple() const;
 
                     /**
                      * 设置源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _msgMultiple 源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMsgMultiple(const int64_t& _msgMultiple);
@@ -241,28 +225,24 @@ namespace TencentCloud
 
                     /**
                      * Topic的TopicId【出参】
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
                      * 写入Topic时是否进行压缩，不开启填"none"，开启的话，可选择"gzip", "snappy", "lz4"中的一个进行填写。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_compressionType;
                     bool m_compressionTypeHasBeenSet;
 
                     /**
                      * 使用的Topic是否需要自动创建（目前只支持SOURCE流入任务）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_useAutoCreateTopic;
                     bool m_useAutoCreateTopicHasBeenSet;
 
                     /**
                      * 源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_msgMultiple;
                     bool m_msgMultipleHasBeenSet;

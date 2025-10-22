@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取VPC实例ID.
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId VPC实例ID.
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置VPC实例ID.
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId VPC实例ID.
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -484,18 +480,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CAM服务提供商Name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpName CAM服务提供商Name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSpName() const;
 
                     /**
                      * 设置CAM服务提供商Name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _spName CAM服务提供商Name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSpName(const std::string& _spName);
@@ -511,7 +503,6 @@ namespace TencentCloud
 
                     /**
                      * VPC实例ID.
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
@@ -634,7 +625,6 @@ namespace TencentCloud
 
                     /**
                      * CAM服务提供商Name
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_spName;
                     bool m_spNameHasBeenSet;

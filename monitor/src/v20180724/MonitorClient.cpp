@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -298,6 +298,49 @@ MonitorClient::CreateAlarmPolicyOutcomeCallable MonitorClient::CreateAlarmPolicy
     return task->get_future();
 }
 
+MonitorClient::CreateAlarmShieldOutcome MonitorClient::CreateAlarmShield(const CreateAlarmShieldRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAlarmShield");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAlarmShieldResponse rsp = CreateAlarmShieldResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAlarmShieldOutcome(rsp);
+        else
+            return CreateAlarmShieldOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAlarmShieldOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::CreateAlarmShieldAsync(const CreateAlarmShieldRequest& request, const CreateAlarmShieldAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAlarmShield(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::CreateAlarmShieldOutcomeCallable MonitorClient::CreateAlarmShieldCallable(const CreateAlarmShieldRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAlarmShieldOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAlarmShield(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::CreateAlertRuleOutcome MonitorClient::CreateAlertRule(const CreateAlertRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAlertRule");
@@ -341,6 +384,49 @@ MonitorClient::CreateAlertRuleOutcomeCallable MonitorClient::CreateAlertRuleCall
     return task->get_future();
 }
 
+MonitorClient::CreateConditionsTemplateOutcome MonitorClient::CreateConditionsTemplate(const CreateConditionsTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateConditionsTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateConditionsTemplateResponse rsp = CreateConditionsTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateConditionsTemplateOutcome(rsp);
+        else
+            return CreateConditionsTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateConditionsTemplateOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::CreateConditionsTemplateAsync(const CreateConditionsTemplateRequest& request, const CreateConditionsTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateConditionsTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::CreateConditionsTemplateOutcomeCallable MonitorClient::CreateConditionsTemplateCallable(const CreateConditionsTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateConditionsTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateConditionsTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::CreateExporterIntegrationOutcome MonitorClient::CreateExporterIntegration(const CreateExporterIntegrationRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateExporterIntegration");
@@ -377,6 +463,49 @@ MonitorClient::CreateExporterIntegrationOutcomeCallable MonitorClient::CreateExp
         [this, request]()
         {
             return this->CreateExporterIntegration(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::CreateExternalClusterOutcome MonitorClient::CreateExternalCluster(const CreateExternalClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateExternalCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateExternalClusterResponse rsp = CreateExternalClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateExternalClusterOutcome(rsp);
+        else
+            return CreateExternalClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateExternalClusterOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::CreateExternalClusterAsync(const CreateExternalClusterRequest& request, const CreateExternalClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateExternalCluster(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::CreateExternalClusterOutcomeCallable MonitorClient::CreateExternalClusterCallable(const CreateExternalClusterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateExternalClusterOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateExternalCluster(request);
         }
     );
 
@@ -1194,6 +1323,49 @@ MonitorClient::DeleteAlarmPolicyOutcomeCallable MonitorClient::DeleteAlarmPolicy
         [this, request]()
         {
             return this->DeleteAlarmPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::DeleteAlarmShieldsOutcome MonitorClient::DeleteAlarmShields(const DeleteAlarmShieldsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAlarmShields");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAlarmShieldsResponse rsp = DeleteAlarmShieldsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAlarmShieldsOutcome(rsp);
+        else
+            return DeleteAlarmShieldsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAlarmShieldsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DeleteAlarmShieldsAsync(const DeleteAlarmShieldsRequest& request, const DeleteAlarmShieldsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAlarmShields(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DeleteAlarmShieldsOutcomeCallable MonitorClient::DeleteAlarmShieldsCallable(const DeleteAlarmShieldsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAlarmShieldsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAlarmShields(request);
         }
     );
 
@@ -2749,6 +2921,92 @@ MonitorClient::DescribeExporterIntegrationsOutcomeCallable MonitorClient::Descri
     return task->get_future();
 }
 
+MonitorClient::DescribeExternalClusterRegisterCommandOutcome MonitorClient::DescribeExternalClusterRegisterCommand(const DescribeExternalClusterRegisterCommandRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExternalClusterRegisterCommand");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExternalClusterRegisterCommandResponse rsp = DescribeExternalClusterRegisterCommandResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExternalClusterRegisterCommandOutcome(rsp);
+        else
+            return DescribeExternalClusterRegisterCommandOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExternalClusterRegisterCommandOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeExternalClusterRegisterCommandAsync(const DescribeExternalClusterRegisterCommandRequest& request, const DescribeExternalClusterRegisterCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeExternalClusterRegisterCommand(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribeExternalClusterRegisterCommandOutcomeCallable MonitorClient::DescribeExternalClusterRegisterCommandCallable(const DescribeExternalClusterRegisterCommandRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeExternalClusterRegisterCommandOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeExternalClusterRegisterCommand(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::DescribeExternalClusterUninstallCommandOutcome MonitorClient::DescribeExternalClusterUninstallCommand(const DescribeExternalClusterUninstallCommandRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExternalClusterUninstallCommand");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExternalClusterUninstallCommandResponse rsp = DescribeExternalClusterUninstallCommandResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExternalClusterUninstallCommandOutcome(rsp);
+        else
+            return DescribeExternalClusterUninstallCommandOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExternalClusterUninstallCommandOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeExternalClusterUninstallCommandAsync(const DescribeExternalClusterUninstallCommandRequest& request, const DescribeExternalClusterUninstallCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeExternalClusterUninstallCommand(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribeExternalClusterUninstallCommandOutcomeCallable MonitorClient::DescribeExternalClusterUninstallCommandCallable(const DescribeExternalClusterUninstallCommandRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeExternalClusterUninstallCommandOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeExternalClusterUninstallCommand(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::DescribeGrafanaChannelsOutcome MonitorClient::DescribeGrafanaChannels(const DescribeGrafanaChannelsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeGrafanaChannels");
@@ -3387,6 +3645,49 @@ MonitorClient::DescribePolicyGroupListOutcomeCallable MonitorClient::DescribePol
         [this, request]()
         {
             return this->DescribePolicyGroupList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::DescribePolicyObjectCountOutcome MonitorClient::DescribePolicyObjectCount(const DescribePolicyObjectCountRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePolicyObjectCount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePolicyObjectCountResponse rsp = DescribePolicyObjectCountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePolicyObjectCountOutcome(rsp);
+        else
+            return DescribePolicyObjectCountOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePolicyObjectCountOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribePolicyObjectCountAsync(const DescribePolicyObjectCountRequest& request, const DescribePolicyObjectCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePolicyObjectCount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribePolicyObjectCountOutcomeCallable MonitorClient::DescribePolicyObjectCountCallable(const DescribePolicyObjectCountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePolicyObjectCountOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePolicyObjectCount(request);
         }
     );
 
@@ -4039,6 +4340,49 @@ MonitorClient::DescribePrometheusInstancesOverviewOutcomeCallable MonitorClient:
     return task->get_future();
 }
 
+MonitorClient::DescribePrometheusIntegrationMetricsOutcome MonitorClient::DescribePrometheusIntegrationMetrics(const DescribePrometheusIntegrationMetricsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePrometheusIntegrationMetrics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePrometheusIntegrationMetricsResponse rsp = DescribePrometheusIntegrationMetricsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePrometheusIntegrationMetricsOutcome(rsp);
+        else
+            return DescribePrometheusIntegrationMetricsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePrometheusIntegrationMetricsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribePrometheusIntegrationMetricsAsync(const DescribePrometheusIntegrationMetricsRequest& request, const DescribePrometheusIntegrationMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePrometheusIntegrationMetrics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribePrometheusIntegrationMetricsOutcomeCallable MonitorClient::DescribePrometheusIntegrationMetricsCallable(const DescribePrometheusIntegrationMetricsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePrometheusIntegrationMetricsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePrometheusIntegrationMetrics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::DescribePrometheusRecordRulesOutcome MonitorClient::DescribePrometheusRecordRules(const DescribePrometheusRecordRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePrometheusRecordRules");
@@ -4161,6 +4505,49 @@ MonitorClient::DescribePrometheusScrapeJobsOutcomeCallable MonitorClient::Descri
         [this, request]()
         {
             return this->DescribePrometheusScrapeJobs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::DescribePrometheusScrapeStatisticsOutcome MonitorClient::DescribePrometheusScrapeStatistics(const DescribePrometheusScrapeStatisticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePrometheusScrapeStatistics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePrometheusScrapeStatisticsResponse rsp = DescribePrometheusScrapeStatisticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePrometheusScrapeStatisticsOutcome(rsp);
+        else
+            return DescribePrometheusScrapeStatisticsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePrometheusScrapeStatisticsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribePrometheusScrapeStatisticsAsync(const DescribePrometheusScrapeStatisticsRequest& request, const DescribePrometheusScrapeStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePrometheusScrapeStatistics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribePrometheusScrapeStatisticsOutcomeCallable MonitorClient::DescribePrometheusScrapeStatisticsCallable(const DescribePrometheusScrapeStatisticsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePrometheusScrapeStatisticsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePrometheusScrapeStatistics(request);
         }
     );
 
@@ -4376,6 +4763,92 @@ MonitorClient::DescribeRecordingRulesOutcomeCallable MonitorClient::DescribeReco
         [this, request]()
         {
             return this->DescribeRecordingRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::DescribeRemoteURLsOutcome MonitorClient::DescribeRemoteURLs(const DescribeRemoteURLsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRemoteURLs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRemoteURLsResponse rsp = DescribeRemoteURLsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRemoteURLsOutcome(rsp);
+        else
+            return DescribeRemoteURLsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRemoteURLsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeRemoteURLsAsync(const DescribeRemoteURLsRequest& request, const DescribeRemoteURLsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRemoteURLs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribeRemoteURLsOutcomeCallable MonitorClient::DescribeRemoteURLsCallable(const DescribeRemoteURLsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRemoteURLsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRemoteURLs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::DescribeRemoteWritesOutcome MonitorClient::DescribeRemoteWrites(const DescribeRemoteWritesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRemoteWrites");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRemoteWritesResponse rsp = DescribeRemoteWritesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRemoteWritesOutcome(rsp);
+        else
+            return DescribeRemoteWritesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRemoteWritesOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeRemoteWritesAsync(const DescribeRemoteWritesRequest& request, const DescribeRemoteWritesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRemoteWrites(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribeRemoteWritesOutcomeCallable MonitorClient::DescribeRemoteWritesCallable(const DescribeRemoteWritesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRemoteWritesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRemoteWrites(request);
         }
     );
 
@@ -4684,6 +5157,49 @@ MonitorClient::EnableSSOCamCheckOutcomeCallable MonitorClient::EnableSSOCamCheck
     return task->get_future();
 }
 
+MonitorClient::ExportPrometheusReadOnlyDynamicAPIOutcome MonitorClient::ExportPrometheusReadOnlyDynamicAPI(const ExportPrometheusReadOnlyDynamicAPIRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportPrometheusReadOnlyDynamicAPI");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportPrometheusReadOnlyDynamicAPIResponse rsp = ExportPrometheusReadOnlyDynamicAPIResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportPrometheusReadOnlyDynamicAPIOutcome(rsp);
+        else
+            return ExportPrometheusReadOnlyDynamicAPIOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportPrometheusReadOnlyDynamicAPIOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::ExportPrometheusReadOnlyDynamicAPIAsync(const ExportPrometheusReadOnlyDynamicAPIRequest& request, const ExportPrometheusReadOnlyDynamicAPIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExportPrometheusReadOnlyDynamicAPI(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::ExportPrometheusReadOnlyDynamicAPIOutcomeCallable MonitorClient::ExportPrometheusReadOnlyDynamicAPICallable(const ExportPrometheusReadOnlyDynamicAPIRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExportPrometheusReadOnlyDynamicAPIOutcome()>>(
+        [this, request]()
+        {
+            return this->ExportPrometheusReadOnlyDynamicAPI(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::GetMonitorDataOutcome MonitorClient::GetMonitorData(const GetMonitorDataRequest &request)
 {
     auto outcome = MakeRequest(request, "GetMonitorData");
@@ -4763,6 +5279,49 @@ MonitorClient::GetPrometheusAgentManagementCommandOutcomeCallable MonitorClient:
         [this, request]()
         {
             return this->GetPrometheusAgentManagementCommand(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::GetTopNMonitorDataOutcome MonitorClient::GetTopNMonitorData(const GetTopNMonitorDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetTopNMonitorData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetTopNMonitorDataResponse rsp = GetTopNMonitorDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetTopNMonitorDataOutcome(rsp);
+        else
+            return GetTopNMonitorDataOutcome(o.GetError());
+    }
+    else
+    {
+        return GetTopNMonitorDataOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::GetTopNMonitorDataAsync(const GetTopNMonitorDataRequest& request, const GetTopNMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetTopNMonitorData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::GetTopNMonitorDataOutcomeCallable MonitorClient::GetTopNMonitorDataCallable(const GetTopNMonitorDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetTopNMonitorDataOutcome()>>(
+        [this, request]()
+        {
+            return this->GetTopNMonitorData(request);
         }
     );
 
@@ -5494,6 +6053,49 @@ MonitorClient::ModifyPrometheusTempOutcomeCallable MonitorClient::ModifyPromethe
         [this, request]()
         {
             return this->ModifyPrometheusTemp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::ModifyRemoteURLsOutcome MonitorClient::ModifyRemoteURLs(const ModifyRemoteURLsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRemoteURLs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRemoteURLsResponse rsp = ModifyRemoteURLsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRemoteURLsOutcome(rsp);
+        else
+            return ModifyRemoteURLsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRemoteURLsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::ModifyRemoteURLsAsync(const ModifyRemoteURLsRequest& request, const ModifyRemoteURLsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyRemoteURLs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::ModifyRemoteURLsOutcomeCallable MonitorClient::ModifyRemoteURLsCallable(const ModifyRemoteURLsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyRemoteURLsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyRemoteURLs(request);
         }
     );
 

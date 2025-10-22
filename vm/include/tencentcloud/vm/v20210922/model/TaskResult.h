@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取请求时传入的DataId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataId 请求时传入的DataId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataId() const;
 
                     /**
                      * 设置请求时传入的DataId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataId 请求时传入的DataId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataId(const std::string& _dataId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取TaskId，任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId TaskId，任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置TaskId，任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskId TaskId，任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取错误码。如果code为OK，则表示创建成功，其他则参考公共错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Code 错误码。如果code为OK，则表示创建成功，其他则参考公共错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置错误码。如果code为OK，则表示创建成功，其他则参考公共错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _code 错误码。如果code为OK，则表示创建成功，其他则参考公共错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCode(const std::string& _code);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取如果错误，该字段表示错误详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 如果错误，该字段表示错误详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置如果错误，该字段表示错误详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _message 如果错误，该字段表示错误详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 请求时传入的DataId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataId;
                     bool m_dataIdHasBeenSet;
 
                     /**
                      * TaskId，任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
                      * 错误码。如果code为OK，则表示创建成功，其他则参考公共错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_code;
                     bool m_codeHasBeenSet;
 
                     /**
                      * 如果错误，该字段表示错误详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;

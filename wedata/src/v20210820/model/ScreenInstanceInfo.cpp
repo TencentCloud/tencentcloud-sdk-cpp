@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,8 @@ ScreenInstanceInfo::ScreenInstanceInfo() :
     m_waitEventNumHasBeenSet(false),
     m_stoppingNumHasBeenSet(false),
     m_succeedNumHasBeenSet(false),
-    m_failedNumHasBeenSet(false)
+    m_failedNumHasBeenSet(false),
+    m_skipRunningNumHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome ScreenInstanceInfo::Deserialize(const rapidjson::Value &valu
         m_failedNumHasBeenSet = true;
     }
 
+    if (value.HasMember("SkipRunningNum") && !value["SkipRunningNum"].IsNull())
+    {
+        if (!value["SkipRunningNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScreenInstanceInfo.SkipRunningNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_skipRunningNum = value["SkipRunningNum"].GetInt64();
+        m_skipRunningNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void ScreenInstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "FailedNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_failedNum, allocator);
+    }
+
+    if (m_skipRunningNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SkipRunningNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_skipRunningNum, allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void ScreenInstanceInfo::SetFailedNum(const uint64_t& _failedNum)
 bool ScreenInstanceInfo::FailedNumHasBeenSet() const
 {
     return m_failedNumHasBeenSet;
+}
+
+int64_t ScreenInstanceInfo::GetSkipRunningNum() const
+{
+    return m_skipRunningNum;
+}
+
+void ScreenInstanceInfo::SetSkipRunningNum(const int64_t& _skipRunningNum)
+{
+    m_skipRunningNum = _skipRunningNum;
+    m_skipRunningNumHasBeenSet = true;
+}
+
+bool ScreenInstanceInfo::SkipRunningNumHasBeenSet() const
+{
+    return m_skipRunningNumHasBeenSet;
 }
 

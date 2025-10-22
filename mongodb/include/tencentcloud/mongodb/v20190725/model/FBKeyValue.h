@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 按key回档，用于筛选数据的键值对
+                * 按 Key 闪回键值对
                 */
                 class FBKeyValue : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用于按key回档过滤的key
-                     * @return Key 用于按key回档过滤的key
+                     * 获取指定按 Key 闪回的目标 Key （键） 。
+                     * @return Key 指定按 Key 闪回的目标 Key （键） 。
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置用于按key回档过滤的key
-                     * @param _key 用于按key回档过滤的key
+                     * 设置指定按 Key 闪回的目标 Key （键） 。
+                     * @param _key 指定按 Key 闪回的目标 Key （键） 。
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取用于按key回档过滤的value
-                     * @return Value 用于按key回档过滤的value
+                     * 获取指定按 Key 闪回的目标 Key 所对应的 Value（值）。
+                     * @return Value 指定按 Key 闪回的目标 Key 所对应的 Value（值）。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置用于按key回档过滤的value
-                     * @param _value 用于按key回档过滤的value
+                     * 设置指定按 Key 闪回的目标 Key 所对应的 Value（值）。
+                     * @param _value 指定按 Key 闪回的目标 Key 所对应的 Value（值）。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用于按key回档过滤的key
+                     * 指定按 Key 闪回的目标 Key （键） 。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
-                     * 用于按key回档过滤的value
+                     * 指定按 Key 闪回的目标 Key 所对应的 Value（值）。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

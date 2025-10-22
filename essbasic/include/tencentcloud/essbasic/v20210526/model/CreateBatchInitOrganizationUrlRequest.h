@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,22 +66,34 @@ namespace TencentCloud
 
                     /**
                      * 获取初始化操作类型
-<ul><li>CREATE_SEAL : 创建印章</li>
-<li>OPEN_AUTO_SIGN :开通企业自动签署</li></ul>
+<ul>
+<li>CREATE_SEAL : 创建印章</li>
+<li>OPEN_AUTO_SIGN :开通企业自动签署</li>
+<li>PARTNER_AUTO_SIGN_AUTH :合作方企业或应用平台方授权自动签</li>
+</ul>
                      * @return OperateTypes 初始化操作类型
-<ul><li>CREATE_SEAL : 创建印章</li>
-<li>OPEN_AUTO_SIGN :开通企业自动签署</li></ul>
+<ul>
+<li>CREATE_SEAL : 创建印章</li>
+<li>OPEN_AUTO_SIGN :开通企业自动签署</li>
+<li>PARTNER_AUTO_SIGN_AUTH :合作方企业或应用平台方授权自动签</li>
+</ul>
                      * 
                      */
                     std::vector<std::string> GetOperateTypes() const;
 
                     /**
                      * 设置初始化操作类型
-<ul><li>CREATE_SEAL : 创建印章</li>
-<li>OPEN_AUTO_SIGN :开通企业自动签署</li></ul>
+<ul>
+<li>CREATE_SEAL : 创建印章</li>
+<li>OPEN_AUTO_SIGN :开通企业自动签署</li>
+<li>PARTNER_AUTO_SIGN_AUTH :合作方企业或应用平台方授权自动签</li>
+</ul>
                      * @param _operateTypes 初始化操作类型
-<ul><li>CREATE_SEAL : 创建印章</li>
-<li>OPEN_AUTO_SIGN :开通企业自动签署</li></ul>
+<ul>
+<li>CREATE_SEAL : 创建印章</li>
+<li>OPEN_AUTO_SIGN :开通企业自动签署</li>
+<li>PARTNER_AUTO_SIGN_AUTH :合作方企业或应用平台方授权自动签</li>
+</ul>
                      * 
                      */
                     void SetOperateTypes(const std::vector<std::string>& _operateTypes);
@@ -114,6 +126,64 @@ namespace TencentCloud
                      */
                     bool ProxyOrganizationOpenIdsHasBeenSet() const;
 
+                    /**
+                     * 获取当操作类型包含 PARTNER_AUTO_SIGN_AUTH 且是给应用平台方授权自动签时传true。
+![image](https://qcloudimg.tencent-cloud.cn/raw/f9aba7c999a6d79ada20b4384520e120.png)
+                     * @return IsAuthorizePlatformApplication 当操作类型包含 PARTNER_AUTO_SIGN_AUTH 且是给应用平台方授权自动签时传true。
+![image](https://qcloudimg.tencent-cloud.cn/raw/f9aba7c999a6d79ada20b4384520e120.png)
+                     * 
+                     */
+                    bool GetIsAuthorizePlatformApplication() const;
+
+                    /**
+                     * 设置当操作类型包含 PARTNER_AUTO_SIGN_AUTH 且是给应用平台方授权自动签时传true。
+![image](https://qcloudimg.tencent-cloud.cn/raw/f9aba7c999a6d79ada20b4384520e120.png)
+                     * @param _isAuthorizePlatformApplication 当操作类型包含 PARTNER_AUTO_SIGN_AUTH 且是给应用平台方授权自动签时传true。
+![image](https://qcloudimg.tencent-cloud.cn/raw/f9aba7c999a6d79ada20b4384520e120.png)
+                     * 
+                     */
+                    void SetIsAuthorizePlatformApplication(const bool& _isAuthorizePlatformApplication);
+
+                    /**
+                     * 判断参数 IsAuthorizePlatformApplication 是否已赋值
+                     * @return IsAuthorizePlatformApplication 是否已赋值
+                     * 
+                     */
+                    bool IsAuthorizePlatformApplicationHasBeenSet() const;
+
+                    /**
+                     * 获取被授权的合作方企业在第三方平台子客企业标识，即ProxyOrganizationOpenId，当操作类型包含 PARTNER_AUTO_SIGN_AUTH 且要进行合作方企业授权自动签时必传。
+
+
+
+                     * @return AuthorizedProxyOrganizationOpenId 被授权的合作方企业在第三方平台子客企业标识，即ProxyOrganizationOpenId，当操作类型包含 PARTNER_AUTO_SIGN_AUTH 且要进行合作方企业授权自动签时必传。
+
+
+
+                     * 
+                     */
+                    std::string GetAuthorizedProxyOrganizationOpenId() const;
+
+                    /**
+                     * 设置被授权的合作方企业在第三方平台子客企业标识，即ProxyOrganizationOpenId，当操作类型包含 PARTNER_AUTO_SIGN_AUTH 且要进行合作方企业授权自动签时必传。
+
+
+
+                     * @param _authorizedProxyOrganizationOpenId 被授权的合作方企业在第三方平台子客企业标识，即ProxyOrganizationOpenId，当操作类型包含 PARTNER_AUTO_SIGN_AUTH 且要进行合作方企业授权自动签时必传。
+
+
+
+                     * 
+                     */
+                    void SetAuthorizedProxyOrganizationOpenId(const std::string& _authorizedProxyOrganizationOpenId);
+
+                    /**
+                     * 判断参数 AuthorizedProxyOrganizationOpenId 是否已赋值
+                     * @return AuthorizedProxyOrganizationOpenId 是否已赋值
+                     * 
+                     */
+                    bool AuthorizedProxyOrganizationOpenIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,8 +194,11 @@ namespace TencentCloud
 
                     /**
                      * 初始化操作类型
-<ul><li>CREATE_SEAL : 创建印章</li>
-<li>OPEN_AUTO_SIGN :开通企业自动签署</li></ul>
+<ul>
+<li>CREATE_SEAL : 创建印章</li>
+<li>OPEN_AUTO_SIGN :开通企业自动签署</li>
+<li>PARTNER_AUTO_SIGN_AUTH :合作方企业或应用平台方授权自动签</li>
+</ul>
                      */
                     std::vector<std::string> m_operateTypes;
                     bool m_operateTypesHasBeenSet;
@@ -135,6 +208,22 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_proxyOrganizationOpenIds;
                     bool m_proxyOrganizationOpenIdsHasBeenSet;
+
+                    /**
+                     * 当操作类型包含 PARTNER_AUTO_SIGN_AUTH 且是给应用平台方授权自动签时传true。
+![image](https://qcloudimg.tencent-cloud.cn/raw/f9aba7c999a6d79ada20b4384520e120.png)
+                     */
+                    bool m_isAuthorizePlatformApplication;
+                    bool m_isAuthorizePlatformApplicationHasBeenSet;
+
+                    /**
+                     * 被授权的合作方企业在第三方平台子客企业标识，即ProxyOrganizationOpenId，当操作类型包含 PARTNER_AUTO_SIGN_AUTH 且要进行合作方企业授权自动签时必传。
+
+
+
+                     */
+                    std::string m_authorizedProxyOrganizationOpenId;
+                    bool m_authorizedProxyOrganizationOpenIdHasBeenSet;
 
                 };
             }

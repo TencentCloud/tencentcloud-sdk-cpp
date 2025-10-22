@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -220,18 +220,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否允许微信接收通知
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WechatFlag 是否允许微信接收通知
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetWechatFlag() const;
 
                     /**
                      * 设置是否允许微信接收通知
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _wechatFlag 是否允许微信接收通知
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWechatFlag(const int64_t& _wechatFlag);
@@ -245,18 +241,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账号uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 账号uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUin() const;
 
                     /**
                      * 设置账号uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uin 账号uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUin(const int64_t& _uin);
@@ -267,6 +259,27 @@ namespace TencentCloud
                      * 
                      */
                     bool UinHasBeenSet() const;
+
+                    /**
+                     * 获取国家代码
+                     * @return CountryCode 国家代码
+                     * 
+                     */
+                    std::string GetCountryCode() const;
+
+                    /**
+                     * 设置国家代码
+                     * @param _countryCode 国家代码
+                     * 
+                     */
+                    void SetCountryCode(const std::string& _countryCode);
+
+                    /**
+                     * 判断参数 CountryCode 是否已赋值
+                     * @return CountryCode 是否已赋值
+                     * 
+                     */
+                    bool CountryCodeHasBeenSet() const;
 
                 private:
 
@@ -321,17 +334,21 @@ namespace TencentCloud
 
                     /**
                      * 是否允许微信接收通知
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_wechatFlag;
                     bool m_wechatFlagHasBeenSet;
 
                     /**
                      * 账号uin
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_uin;
                     bool m_uinHasBeenSet;
+
+                    /**
+                     * 国家代码
+                     */
+                    std::string m_countryCode;
+                    bool m_countryCodeHasBeenSet;
 
                 };
             }

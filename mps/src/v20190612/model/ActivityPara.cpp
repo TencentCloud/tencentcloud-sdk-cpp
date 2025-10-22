@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,10 @@ ActivityPara::ActivityPara() :
     m_aiContentReviewTaskHasBeenSet(false),
     m_aiAnalysisTaskHasBeenSet(false),
     m_aiRecognitionTaskHasBeenSet(false),
-    m_qualityControlTaskHasBeenSet(false)
+    m_qualityControlTaskHasBeenSet(false),
+    m_execRulesTaskHasBeenSet(false),
+    m_smartSubtitlesTaskHasBeenSet(false),
+    m_smartEraseTaskHasBeenSet(false)
 {
 }
 
@@ -209,6 +212,57 @@ CoreInternalOutcome ActivityPara::Deserialize(const rapidjson::Value &value)
         m_qualityControlTaskHasBeenSet = true;
     }
 
+    if (value.HasMember("ExecRulesTask") && !value["ExecRulesTask"].IsNull())
+    {
+        if (!value["ExecRulesTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ActivityPara.ExecRulesTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_execRulesTask.Deserialize(value["ExecRulesTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_execRulesTaskHasBeenSet = true;
+    }
+
+    if (value.HasMember("SmartSubtitlesTask") && !value["SmartSubtitlesTask"].IsNull())
+    {
+        if (!value["SmartSubtitlesTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ActivityPara.SmartSubtitlesTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_smartSubtitlesTask.Deserialize(value["SmartSubtitlesTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_smartSubtitlesTaskHasBeenSet = true;
+    }
+
+    if (value.HasMember("SmartEraseTask") && !value["SmartEraseTask"].IsNull())
+    {
+        if (!value["SmartEraseTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ActivityPara.SmartEraseTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_smartEraseTask.Deserialize(value["SmartEraseTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_smartEraseTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -304,6 +358,33 @@ void ActivityPara::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_qualityControlTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_execRulesTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecRulesTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_execRulesTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_smartSubtitlesTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SmartSubtitlesTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_smartSubtitlesTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_smartEraseTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SmartEraseTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_smartEraseTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -467,5 +548,53 @@ void ActivityPara::SetQualityControlTask(const AiQualityControlTaskInput& _quali
 bool ActivityPara::QualityControlTaskHasBeenSet() const
 {
     return m_qualityControlTaskHasBeenSet;
+}
+
+ExecRulesTask ActivityPara::GetExecRulesTask() const
+{
+    return m_execRulesTask;
+}
+
+void ActivityPara::SetExecRulesTask(const ExecRulesTask& _execRulesTask)
+{
+    m_execRulesTask = _execRulesTask;
+    m_execRulesTaskHasBeenSet = true;
+}
+
+bool ActivityPara::ExecRulesTaskHasBeenSet() const
+{
+    return m_execRulesTaskHasBeenSet;
+}
+
+SmartSubtitlesTaskInput ActivityPara::GetSmartSubtitlesTask() const
+{
+    return m_smartSubtitlesTask;
+}
+
+void ActivityPara::SetSmartSubtitlesTask(const SmartSubtitlesTaskInput& _smartSubtitlesTask)
+{
+    m_smartSubtitlesTask = _smartSubtitlesTask;
+    m_smartSubtitlesTaskHasBeenSet = true;
+}
+
+bool ActivityPara::SmartSubtitlesTaskHasBeenSet() const
+{
+    return m_smartSubtitlesTaskHasBeenSet;
+}
+
+SmartEraseTaskInput ActivityPara::GetSmartEraseTask() const
+{
+    return m_smartEraseTask;
+}
+
+void ActivityPara::SetSmartEraseTask(const SmartEraseTaskInput& _smartEraseTask)
+{
+    m_smartEraseTask = _smartEraseTask;
+    m_smartEraseTaskHasBeenSet = true;
+}
+
+bool ActivityPara::SmartEraseTaskHasBeenSet() const
+{
+    return m_smartEraseTaskHasBeenSet;
 }
 

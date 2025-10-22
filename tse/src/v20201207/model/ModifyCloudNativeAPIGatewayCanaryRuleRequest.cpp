@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ ModifyCloudNativeAPIGatewayCanaryRuleRequest::ModifyCloudNativeAPIGatewayCanaryR
     m_gatewayIdHasBeenSet(false),
     m_serviceIdHasBeenSet(false),
     m_priorityHasBeenSet(false),
-    m_canaryRuleHasBeenSet(false)
+    m_canaryRuleHasBeenSet(false),
+    m_canaryRuleListHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,21 @@ string ModifyCloudNativeAPIGatewayCanaryRuleRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_canaryRule.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_canaryRuleListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CanaryRuleList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_canaryRuleList.begin(); itr != m_canaryRuleList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -140,6 +156,22 @@ void ModifyCloudNativeAPIGatewayCanaryRuleRequest::SetCanaryRule(const CloudNati
 bool ModifyCloudNativeAPIGatewayCanaryRuleRequest::CanaryRuleHasBeenSet() const
 {
     return m_canaryRuleHasBeenSet;
+}
+
+vector<CanaryPriorityRule> ModifyCloudNativeAPIGatewayCanaryRuleRequest::GetCanaryRuleList() const
+{
+    return m_canaryRuleList;
+}
+
+void ModifyCloudNativeAPIGatewayCanaryRuleRequest::SetCanaryRuleList(const vector<CanaryPriorityRule>& _canaryRuleList)
+{
+    m_canaryRuleList = _canaryRuleList;
+    m_canaryRuleListHasBeenSet = true;
+}
+
+bool ModifyCloudNativeAPIGatewayCanaryRuleRequest::CanaryRuleListHasBeenSet() const
+{
+    return m_canaryRuleListHasBeenSet;
 }
 
 

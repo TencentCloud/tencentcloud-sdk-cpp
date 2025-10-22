@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备份的目标地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CrossRegion 备份的目标地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCrossRegion() const;
 
                     /**
                      * 设置备份的目标地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _crossRegion 备份的目标地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCrossRegion(const std::string& _crossRegion);
@@ -73,21 +69,17 @@ namespace TencentCloud
 
                     /**
                      * 获取目标地域的备份任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupId 目标地域的备份任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::string GetBackupId() const;
+                    int64_t GetBackupId() const;
 
                     /**
                      * 设置目标地域的备份任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _backupId 目标地域的备份任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetBackupId(const std::string& _backupId);
+                    void SetBackupId(const int64_t& _backupId);
 
                     /**
                      * 判断参数 BackupId 是否已赋值
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取目标地域的备份状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupStatus 目标地域的备份状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBackupStatus() const;
 
                     /**
                      * 设置目标地域的备份状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _backupStatus 目标地域的备份状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBackupStatus(const std::string& _backupStatus);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 备份的目标地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_crossRegion;
                     bool m_crossRegionHasBeenSet;
 
                     /**
                      * 目标地域的备份任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_backupId;
+                    int64_t m_backupId;
                     bool m_backupIdHasBeenSet;
 
                     /**
                      * 目标地域的备份状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_backupStatus;
                     bool m_backupStatusHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,19 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云盘是否与挂载的实例一起销毁。<br><li>true:销毁实例时会同时销毁云盘，只支持按小时后付费云盘。<br><li>false：销毁实例时不销毁云盘。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DeleteWithInstance 云盘是否与挂载的实例一起销毁。<br><li>true:销毁实例时会同时销毁云盘，只支持按小时后付费云盘。<br><li>false：销毁实例时不销毁云盘。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取云盘是否与挂载的实例一起销毁。<br><li>true:销毁实例时会同时销毁云盘，只支持按小时后付费云盘。</li><li>false：销毁实例时不销毁云盘。</li>
+                     * @return DeleteWithInstance 云盘是否与挂载的实例一起销毁。<br><li>true:销毁实例时会同时销毁云盘，只支持按小时后付费云盘。</li><li>false：销毁实例时不销毁云盘。</li>
                      * 
                      */
                     bool GetDeleteWithInstance() const;
 
                     /**
-                     * 设置云盘是否与挂载的实例一起销毁。<br><li>true:销毁实例时会同时销毁云盘，只支持按小时后付费云盘。<br><li>false：销毁实例时不销毁云盘。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _deleteWithInstance 云盘是否与挂载的实例一起销毁。<br><li>true:销毁实例时会同时销毁云盘，只支持按小时后付费云盘。<br><li>false：销毁实例时不销毁云盘。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置云盘是否与挂载的实例一起销毁。<br><li>true:销毁实例时会同时销毁云盘，只支持按小时后付费云盘。</li><li>false：销毁实例时不销毁云盘。</li>
+                     * @param _deleteWithInstance 云盘是否与挂载的实例一起销毁。<br><li>true:销毁实例时会同时销毁云盘，只支持按小时后付费云盘。</li><li>false：销毁实例时不销毁云盘。</li>
                      * 
                      */
                     void SetDeleteWithInstance(const bool& _deleteWithInstance);
@@ -74,19 +70,15 @@ namespace TencentCloud
                     bool DeleteWithInstanceHasBeenSet() const;
 
                     /**
-                     * 获取自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RenewFlag 自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费</li><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费。</li>
+                     * @return RenewFlag 自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费</li><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费。</li>
                      * 
                      */
                     std::string GetRenewFlag() const;
 
                     /**
-                     * 设置自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _renewFlag 自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费</li><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费。</li>
+                     * @param _renewFlag 自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费</li><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费。</li>
                      * 
                      */
                     void SetRenewFlag(const std::string& _renewFlag);
@@ -99,15 +91,15 @@ namespace TencentCloud
                     bool RenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_BSSD：表示通用型SSD云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘<br><li>CLOUD_TSSD：表示极速型SSD云硬盘。
-                     * @return DiskType 硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_BSSD：表示通用型SSD云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘<br><li>CLOUD_TSSD：表示极速型SSD云硬盘。
+                     * 获取硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘</li><li>CLOUD_PREMIUM：表示高性能云硬盘</li><li>CLOUD_BSSD：表示通用型SSD云硬盘</li><li>CLOUD_SSD：表示SSD云硬盘</li><li>CLOUD_HSSD：表示增强型SSD云硬盘</li><li>CLOUD_TSSD：表示极速型SSD云硬盘。</li>
+                     * @return DiskType 硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘</li><li>CLOUD_PREMIUM：表示高性能云硬盘</li><li>CLOUD_BSSD：表示通用型SSD云硬盘</li><li>CLOUD_SSD：表示SSD云硬盘</li><li>CLOUD_HSSD：表示增强型SSD云硬盘</li><li>CLOUD_TSSD：表示极速型SSD云硬盘。</li>
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_BSSD：表示通用型SSD云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘<br><li>CLOUD_TSSD：表示极速型SSD云硬盘。
-                     * @param _diskType 硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_BSSD：表示通用型SSD云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘<br><li>CLOUD_TSSD：表示极速型SSD云硬盘。
+                     * 设置硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘</li><li>CLOUD_PREMIUM：表示高性能云硬盘</li><li>CLOUD_BSSD：表示通用型SSD云硬盘</li><li>CLOUD_SSD：表示SSD云硬盘</li><li>CLOUD_HSSD：表示增强型SSD云硬盘</li><li>CLOUD_TSSD：表示极速型SSD云硬盘。</li>
+                     * @param _diskType 硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘</li><li>CLOUD_PREMIUM：表示高性能云硬盘</li><li>CLOUD_BSSD：表示通用型SSD云硬盘</li><li>CLOUD_SSD：表示SSD云硬盘</li><li>CLOUD_HSSD：表示增强型SSD云硬盘</li><li>CLOUD_TSSD：表示极速型SSD云硬盘。</li>
                      * 
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -120,15 +112,15 @@ namespace TencentCloud
                     bool DiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取云盘状态。取值范围：<br><li>UNATTACHED：未挂载<br><li>ATTACHING：挂载中<br><li>ATTACHED：已挂载<br><li>DETACHING：解挂中<br><li>EXPANDING：扩容中<br><li>ROLLBACKING：回滚中<br><li>TORECYCLE：待回收<br><li>DUMPING：拷贝硬盘中。
-                     * @return DiskState 云盘状态。取值范围：<br><li>UNATTACHED：未挂载<br><li>ATTACHING：挂载中<br><li>ATTACHED：已挂载<br><li>DETACHING：解挂中<br><li>EXPANDING：扩容中<br><li>ROLLBACKING：回滚中<br><li>TORECYCLE：待回收<br><li>DUMPING：拷贝硬盘中。
+                     * 获取云盘状态。取值范围：<br><li>UNATTACHED：未挂载</li><li>ATTACHING：挂载中</li><li>ATTACHED：已挂载</li><li>DETACHING：解挂中</li><li>EXPANDING：扩容中</li><li>ROLLBACKING：回滚中</li><li>TORECYCLE：待回收</li><li>DUMPING：拷贝硬盘中。</li>
+                     * @return DiskState 云盘状态。取值范围：<br><li>UNATTACHED：未挂载</li><li>ATTACHING：挂载中</li><li>ATTACHED：已挂载</li><li>DETACHING：解挂中</li><li>EXPANDING：扩容中</li><li>ROLLBACKING：回滚中</li><li>TORECYCLE：待回收</li><li>DUMPING：拷贝硬盘中。</li>
                      * 
                      */
                     std::string GetDiskState() const;
 
                     /**
-                     * 设置云盘状态。取值范围：<br><li>UNATTACHED：未挂载<br><li>ATTACHING：挂载中<br><li>ATTACHED：已挂载<br><li>DETACHING：解挂中<br><li>EXPANDING：扩容中<br><li>ROLLBACKING：回滚中<br><li>TORECYCLE：待回收<br><li>DUMPING：拷贝硬盘中。
-                     * @param _diskState 云盘状态。取值范围：<br><li>UNATTACHED：未挂载<br><li>ATTACHING：挂载中<br><li>ATTACHED：已挂载<br><li>DETACHING：解挂中<br><li>EXPANDING：扩容中<br><li>ROLLBACKING：回滚中<br><li>TORECYCLE：待回收<br><li>DUMPING：拷贝硬盘中。
+                     * 设置云盘状态。取值范围：<br><li>UNATTACHED：未挂载</li><li>ATTACHING：挂载中</li><li>ATTACHED：已挂载</li><li>DETACHING：解挂中</li><li>EXPANDING：扩容中</li><li>ROLLBACKING：回滚中</li><li>TORECYCLE：待回收</li><li>DUMPING：拷贝硬盘中。</li>
+                     * @param _diskState 云盘状态。取值范围：<br><li>UNATTACHED：未挂载</li><li>ATTACHING：挂载中</li><li>ATTACHED：已挂载</li><li>DETACHING：解挂中</li><li>EXPANDING：扩容中</li><li>ROLLBACKING：回滚中</li><li>TORECYCLE：待回收</li><li>DUMPING：拷贝硬盘中。</li>
                      * 
                      */
                     void SetDiskState(const std::string& _diskState);
@@ -162,19 +154,15 @@ namespace TencentCloud
                     bool SnapshotCountHasBeenSet() const;
 
                     /**
-                     * 获取云盘已挂载到子机，且子机与云盘都是包年包月。<br><li>true：子机设置了自动续费标识，但云盘未设置<br><li>false：云盘自动续费标识正常。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AutoRenewFlagError 云盘已挂载到子机，且子机与云盘都是包年包月。<br><li>true：子机设置了自动续费标识，但云盘未设置<br><li>false：云盘自动续费标识正常。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取云盘已挂载到子机，且子机与云盘都是包年包月。<br><li>true：子机设置了自动续费标识，但云盘未设置</li><li>false：云盘自动续费标识正常。</li>
+                     * @return AutoRenewFlagError 云盘已挂载到子机，且子机与云盘都是包年包月。<br><li>true：子机设置了自动续费标识，但云盘未设置</li><li>false：云盘自动续费标识正常。</li>
                      * 
                      */
                     bool GetAutoRenewFlagError() const;
 
                     /**
-                     * 设置云盘已挂载到子机，且子机与云盘都是包年包月。<br><li>true：子机设置了自动续费标识，但云盘未设置<br><li>false：云盘自动续费标识正常。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _autoRenewFlagError 云盘已挂载到子机，且子机与云盘都是包年包月。<br><li>true：子机设置了自动续费标识，但云盘未设置<br><li>false：云盘自动续费标识正常。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置云盘已挂载到子机，且子机与云盘都是包年包月。<br><li>true：子机设置了自动续费标识，但云盘未设置</li><li>false：云盘自动续费标识正常。</li>
+                     * @param _autoRenewFlagError 云盘已挂载到子机，且子机与云盘都是包年包月。<br><li>true：子机设置了自动续费标识，但云盘未设置</li><li>false：云盘自动续费标识正常。</li>
                      * 
                      */
                     void SetAutoRenewFlagError(const bool& _autoRenewFlagError);
@@ -187,15 +175,15 @@ namespace TencentCloud
                     bool AutoRenewFlagErrorHasBeenSet() const;
 
                     /**
-                     * 获取云盘是否处于快照回滚状态。取值范围：<br><li>false:表示不处于快照回滚状态<br><li>true:表示处于快照回滚状态。
-                     * @return Rollbacking 云盘是否处于快照回滚状态。取值范围：<br><li>false:表示不处于快照回滚状态<br><li>true:表示处于快照回滚状态。
+                     * 获取云盘是否处于快照回滚状态。取值范围：<br><li>false:表示不处于快照回滚状态</li><li>true:表示处于快照回滚状态。</li>
+                     * @return Rollbacking 云盘是否处于快照回滚状态。取值范围：<br><li>false:表示不处于快照回滚状态</li><li>true:表示处于快照回滚状态。</li>
                      * 
                      */
                     bool GetRollbacking() const;
 
                     /**
-                     * 设置云盘是否处于快照回滚状态。取值范围：<br><li>false:表示不处于快照回滚状态<br><li>true:表示处于快照回滚状态。
-                     * @param _rollbacking 云盘是否处于快照回滚状态。取值范围：<br><li>false:表示不处于快照回滚状态<br><li>true:表示处于快照回滚状态。
+                     * 设置云盘是否处于快照回滚状态。取值范围：<br><li>false:表示不处于快照回滚状态</li><li>true:表示处于快照回滚状态。</li>
+                     * @param _rollbacking 云盘是否处于快照回滚状态。取值范围：<br><li>false:表示不处于快照回滚状态</li><li>true:表示处于快照回滚状态。</li>
                      * 
                      */
                     void SetRollbacking(const bool& _rollbacking);
@@ -229,15 +217,15 @@ namespace TencentCloud
                     bool InstanceIdListHasBeenSet() const;
 
                     /**
-                     * 获取云盘是否为加密盘。取值范围：<br><li>false:表示非加密盘<br><li>true:表示加密盘。
-                     * @return Encrypt 云盘是否为加密盘。取值范围：<br><li>false:表示非加密盘<br><li>true:表示加密盘。
+                     * 获取云盘是否为加密盘。取值范围：<br><li>false:表示非加密盘</li><li>true:表示加密盘。</li>
+                     * @return Encrypt 云盘是否为加密盘。取值范围：<br><li>false:表示非加密盘</li><li>true:表示加密盘。</li>
                      * 
                      */
                     bool GetEncrypt() const;
 
                     /**
-                     * 设置云盘是否为加密盘。取值范围：<br><li>false:表示非加密盘<br><li>true:表示加密盘。
-                     * @param _encrypt 云盘是否为加密盘。取值范围：<br><li>false:表示非加密盘<br><li>true:表示加密盘。
+                     * 设置云盘是否为加密盘。取值范围：<br><li>false:表示非加密盘</li><li>true:表示加密盘。</li>
+                     * @param _encrypt 云盘是否为加密盘。取值范围：<br><li>false:表示非加密盘</li><li>true:表示加密盘。</li>
                      * 
                      */
                     void SetEncrypt(const bool& _encrypt);
@@ -293,18 +281,14 @@ namespace TencentCloud
 
                     /**
                      * 获取与云盘绑定的标签，云盘未绑定标签则取值为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 与云盘绑定的标签，云盘未绑定标签则取值为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置与云盘绑定的标签，云盘未绑定标签则取值为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 与云盘绑定的标签，云盘未绑定标签则取值为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -338,19 +322,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取云盘的挂载类型。取值范围：<br><li>PF: PF挂载<br><li>VF: VF挂载
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AttachMode 云盘的挂载类型。取值范围：<br><li>PF: PF挂载<br><li>VF: VF挂载
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取云盘的挂载类型。取值范围：<br><li>PF: PF挂载</li><li>VF: VF挂载</li>
+                     * @return AttachMode 云盘的挂载类型。取值范围：<br><li>PF: PF挂载</li><li>VF: VF挂载</li>
                      * 
                      */
                     std::string GetAttachMode() const;
 
                     /**
-                     * 设置云盘的挂载类型。取值范围：<br><li>PF: PF挂载<br><li>VF: VF挂载
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _attachMode 云盘的挂载类型。取值范围：<br><li>PF: PF挂载<br><li>VF: VF挂载
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置云盘的挂载类型。取值范围：<br><li>PF: PF挂载</li><li>VF: VF挂载</li>
+                     * @param _attachMode 云盘的挂载类型。取值范围：<br><li>PF: PF挂载</li><li>VF: VF挂载</li>
                      * 
                      */
                     void SetAttachMode(const std::string& _attachMode);
@@ -363,18 +343,18 @@ namespace TencentCloud
                     bool AttachModeHasBeenSet() const;
 
                     /**
-                     * 获取云盘关联的定期快照ID。只有在调用DescribeDisks接口时，入参ReturnBindAutoSnapshotPolicy取值为TRUE才会返回该参数。
+                     * 获取云盘关联的定期快照ID。只有在调用[DescribeDisks](/document/product/362/16315)接口时，入参ReturnBindAutoSnapshotPolicy取值为TRUE才会返回该参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AutoSnapshotPolicyIds 云盘关联的定期快照ID。只有在调用DescribeDisks接口时，入参ReturnBindAutoSnapshotPolicy取值为TRUE才会返回该参数。
+                     * @return AutoSnapshotPolicyIds 云盘关联的定期快照ID。只有在调用[DescribeDisks](/document/product/362/16315)接口时，入参ReturnBindAutoSnapshotPolicy取值为TRUE才会返回该参数。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAutoSnapshotPolicyIds() const;
 
                     /**
-                     * 设置云盘关联的定期快照ID。只有在调用DescribeDisks接口时，入参ReturnBindAutoSnapshotPolicy取值为TRUE才会返回该参数。
+                     * 设置云盘关联的定期快照ID。只有在调用[DescribeDisks](/document/product/362/16315)接口时，入参ReturnBindAutoSnapshotPolicy取值为TRUE才会返回该参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _autoSnapshotPolicyIds 云盘关联的定期快照ID。只有在调用DescribeDisks接口时，入参ReturnBindAutoSnapshotPolicy取值为TRUE才会返回该参数。
+                     * @param _autoSnapshotPolicyIds 云盘关联的定期快照ID。只有在调用[DescribeDisks](/document/product/362/16315)接口时，入参ReturnBindAutoSnapshotPolicy取值为TRUE才会返回该参数。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -388,19 +368,15 @@ namespace TencentCloud
                     bool AutoSnapshotPolicyIdsHasBeenSet() const;
 
                     /**
-                     * 获取云硬盘额外性能值，单位MB/s。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ThroughputPerformance 云硬盘额外性能值，单位MB/s。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取云硬盘额外性能值，单位MiB/s。
+                     * @return ThroughputPerformance 云硬盘额外性能值，单位MiB/s。
                      * 
                      */
                     uint64_t GetThroughputPerformance() const;
 
                     /**
-                     * 设置云硬盘额外性能值，单位MB/s。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _throughputPerformance 云硬盘额外性能值，单位MB/s。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置云硬盘额外性能值，单位MiB/s。
+                     * @param _throughputPerformance 云硬盘额外性能值，单位MiB/s。
                      * 
                      */
                     void SetThroughputPerformance(const uint64_t& _throughputPerformance);
@@ -413,19 +389,15 @@ namespace TencentCloud
                     bool ThroughputPerformanceHasBeenSet() const;
 
                     /**
-                     * 获取云盘是否处于类型变更中。取值范围：<br><li>false:表示云盘不处于类型变更中<br><li>true:表示云盘已发起类型变更，正处于迁移中。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Migrating 云盘是否处于类型变更中。取值范围：<br><li>false:表示云盘不处于类型变更中<br><li>true:表示云盘已发起类型变更，正处于迁移中。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取云盘是否处于类型变更中。取值范围：<br><li>false:表示云盘不处于类型变更中</li><li>true:表示云盘已发起类型变更，正处于迁移中。</li>
+                     * @return Migrating 云盘是否处于类型变更中。取值范围：<br><li>false:表示云盘不处于类型变更中</li><li>true:表示云盘已发起类型变更，正处于迁移中。</li>
                      * 
                      */
                     bool GetMigrating() const;
 
                     /**
-                     * 设置云盘是否处于类型变更中。取值范围：<br><li>false:表示云盘不处于类型变更中<br><li>true:表示云盘已发起类型变更，正处于迁移中。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _migrating 云盘是否处于类型变更中。取值范围：<br><li>false:表示云盘不处于类型变更中<br><li>true:表示云盘已发起类型变更，正处于迁移中。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置云盘是否处于类型变更中。取值范围：<br><li>false:表示云盘不处于类型变更中</li><li>true:表示云盘已发起类型变更，正处于迁移中。</li>
+                     * @param _migrating 云盘是否处于类型变更中。取值范围：<br><li>false:表示云盘不处于类型变更中</li><li>true:表示云盘已发起类型变更，正处于迁移中。</li>
                      * 
                      */
                     void SetMigrating(const bool& _migrating);
@@ -459,15 +431,15 @@ namespace TencentCloud
                     bool DiskIdHasBeenSet() const;
 
                     /**
-                     * 获取云盘拥有的快照总容量，单位为MB。
-                     * @return SnapshotSize 云盘拥有的快照总容量，单位为MB。
+                     * 获取云盘拥有的快照总容量，单位为MiB。
+                     * @return SnapshotSize 云盘拥有的快照总容量，单位为MiB。
                      * 
                      */
                     uint64_t GetSnapshotSize() const;
 
                     /**
-                     * 设置云盘拥有的快照总容量，单位为MB。
-                     * @param _snapshotSize 云盘拥有的快照总容量，单位为MB。
+                     * 设置云盘拥有的快照总容量，单位为MiB。
+                     * @param _snapshotSize 云盘拥有的快照总容量，单位为MiB。
                      * 
                      */
                     void SetSnapshotSize(const uint64_t& _snapshotSize);
@@ -501,18 +473,18 @@ namespace TencentCloud
                     bool PlacementHasBeenSet() const;
 
                     /**
-                     * 获取判断预付费的云盘是否支持主动退还。<br><li>true:支持主动退还<br><li>false:不支持主动退还。
+                     * 获取判断预付费的云盘是否支持主动退还。<br><li>true:支持主动退还</li><li>false:不支持主动退还。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsReturnable 判断预付费的云盘是否支持主动退还。<br><li>true:支持主动退还<br><li>false:不支持主动退还。
+                     * @return IsReturnable 判断预付费的云盘是否支持主动退还。<br><li>true:支持主动退还</li><li>false:不支持主动退还。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsReturnable() const;
 
                     /**
-                     * 设置判断预付费的云盘是否支持主动退还。<br><li>true:支持主动退还<br><li>false:不支持主动退还。
+                     * 设置判断预付费的云盘是否支持主动退还。<br><li>true:支持主动退还</li><li>false:不支持主动退还。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isReturnable 判断预付费的云盘是否支持主动退还。<br><li>true:支持主动退还<br><li>false:不支持主动退还。
+                     * @param _isReturnable 判断预付费的云盘是否支持主动退还。<br><li>true:支持主动退还</li><li>false:不支持主动退还。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -547,15 +519,15 @@ namespace TencentCloud
                     bool DeadlineTimeHasBeenSet() const;
 
                     /**
-                     * 获取云盘是否挂载到云主机上。取值范围：<br><li>false:表示未挂载<br><li>true:表示已挂载。
-                     * @return Attached 云盘是否挂载到云主机上。取值范围：<br><li>false:表示未挂载<br><li>true:表示已挂载。
+                     * 获取云盘是否挂载到云主机上。取值范围：<br><li>false:表示未挂载</li><li>true:表示已挂载。</li>
+                     * @return Attached 云盘是否挂载到云主机上。取值范围：<br><li>false:表示未挂载</li><li>true:表示已挂载。</li>
                      * 
                      */
                     bool GetAttached() const;
 
                     /**
-                     * 设置云盘是否挂载到云主机上。取值范围：<br><li>false:表示未挂载<br><li>true:表示已挂载。
-                     * @param _attached 云盘是否挂载到云主机上。取值范围：<br><li>false:表示未挂载<br><li>true:表示已挂载。
+                     * 设置云盘是否挂载到云主机上。取值范围：<br><li>false:表示未挂载</li><li>true:表示已挂载。</li>
+                     * @param _attached 云盘是否挂载到云主机上。取值范围：<br><li>false:表示未挂载</li><li>true:表示已挂载。</li>
                      * 
                      */
                     void SetAttached(const bool& _attached);
@@ -568,15 +540,15 @@ namespace TencentCloud
                     bool AttachedHasBeenSet() const;
 
                     /**
-                     * 获取云硬盘大小，单位GB。
-                     * @return DiskSize 云硬盘大小，单位GB。
+                     * 获取云硬盘大小，单位GiB。
+                     * @return DiskSize 云硬盘大小，单位GiB。
                      * 
                      */
                     uint64_t GetDiskSize() const;
 
                     /**
-                     * 设置云硬盘大小，单位GB。
-                     * @param _diskSize 云硬盘大小，单位GB。
+                     * 设置云硬盘大小，单位GiB。
+                     * @param _diskSize 云硬盘大小，单位GiB。
                      * 
                      */
                     void SetDiskSize(const uint64_t& _diskSize);
@@ -590,18 +562,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云盘类型变更的迁移进度，取值0到100。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MigratePercent 云盘类型变更的迁移进度，取值0到100。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMigratePercent() const;
 
                     /**
                      * 设置云盘类型变更的迁移进度，取值0到100。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _migratePercent 云盘类型变更的迁移进度，取值0到100。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMigratePercent(const uint64_t& _migratePercent);
@@ -614,15 +582,15 @@ namespace TencentCloud
                     bool MigratePercentHasBeenSet() const;
 
                     /**
-                     * 获取云硬盘类型。取值范围：<br><li>SYSTEM_DISK：系统盘<br><li>DATA_DISK：数据盘。
-                     * @return DiskUsage 云硬盘类型。取值范围：<br><li>SYSTEM_DISK：系统盘<br><li>DATA_DISK：数据盘。
+                     * 获取云硬盘类型。取值范围：<br><li>SYSTEM_DISK：系统盘</li><li>DATA_DISK：数据盘。</li>
+                     * @return DiskUsage 云硬盘类型。取值范围：<br><li>SYSTEM_DISK：系统盘</li><li>DATA_DISK：数据盘。</li>
                      * 
                      */
                     std::string GetDiskUsage() const;
 
                     /**
-                     * 设置云硬盘类型。取值范围：<br><li>SYSTEM_DISK：系统盘<br><li>DATA_DISK：数据盘。
-                     * @param _diskUsage 云硬盘类型。取值范围：<br><li>SYSTEM_DISK：系统盘<br><li>DATA_DISK：数据盘。
+                     * 设置云硬盘类型。取值范围：<br><li>SYSTEM_DISK：系统盘</li><li>DATA_DISK：数据盘。</li>
+                     * @param _diskUsage 云硬盘类型。取值范围：<br><li>SYSTEM_DISK：系统盘</li><li>DATA_DISK：数据盘。</li>
                      * 
                      */
                     void SetDiskUsage(const std::string& _diskUsage);
@@ -635,15 +603,15 @@ namespace TencentCloud
                     bool DiskUsageHasBeenSet() const;
 
                     /**
-                     * 获取付费模式。取值范围：<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：后付费，即按量计费。
-                     * @return DiskChargeType 付费模式。取值范围：<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：后付费，即按量计费。
+                     * 获取付费模式。取值范围：<br><li>PREPAID：预付费，即包年包月</li><li>POSTPAID_BY_HOUR：后付费，即按量计费。</li>
+                     * @return DiskChargeType 付费模式。取值范围：<br><li>PREPAID：预付费，即包年包月</li><li>POSTPAID_BY_HOUR：后付费，即按量计费。</li>
                      * 
                      */
                     std::string GetDiskChargeType() const;
 
                     /**
-                     * 设置付费模式。取值范围：<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：后付费，即按量计费。
-                     * @param _diskChargeType 付费模式。取值范围：<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：后付费，即按量计费。
+                     * 设置付费模式。取值范围：<br><li>PREPAID：预付费，即包年包月</li><li>POSTPAID_BY_HOUR：后付费，即按量计费。</li>
+                     * @param _diskChargeType 付费模式。取值范围：<br><li>PREPAID：预付费，即包年包月</li><li>POSTPAID_BY_HOUR：后付费，即按量计费。</li>
                      * 
                      */
                     void SetDiskChargeType(const std::string& _diskChargeType);
@@ -677,15 +645,15 @@ namespace TencentCloud
                     bool PortableHasBeenSet() const;
 
                     /**
-                     * 获取云盘是否具备创建快照的能力。取值范围：<br><li>false表示不具备<br><li>true表示具备。
-                     * @return SnapshotAbility 云盘是否具备创建快照的能力。取值范围：<br><li>false表示不具备<br><li>true表示具备。
+                     * 获取云盘是否具备创建快照的能力。取值范围：<br><li>false表示不具备</li><li>true表示具备。</li>
+                     * @return SnapshotAbility 云盘是否具备创建快照的能力。取值范围：<br><li>false表示不具备</li><li>true表示具备。</li>
                      * 
                      */
                     bool GetSnapshotAbility() const;
 
                     /**
-                     * 设置云盘是否具备创建快照的能力。取值范围：<br><li>false表示不具备<br><li>true表示具备。
-                     * @param _snapshotAbility 云盘是否具备创建快照的能力。取值范围：<br><li>false表示不具备<br><li>true表示具备。
+                     * 设置云盘是否具备创建快照的能力。取值范围：<br><li>false表示不具备</li><li>true表示具备。</li>
+                     * @param _snapshotAbility 云盘是否具备创建快照的能力。取值范围：<br><li>false表示不具备</li><li>true表示具备。</li>
                      * 
                      */
                     void SetSnapshotAbility(const bool& _snapshotAbility);
@@ -698,19 +666,15 @@ namespace TencentCloud
                     bool SnapshotAbilityHasBeenSet() const;
 
                     /**
-                     * 获取在云盘已挂载到实例，且实例与云盘都是包年包月的条件下，此字段才有意义。<br><li>true:云盘到期时间早于实例。<br><li>false：云盘到期时间晚于实例。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DeadlineError 在云盘已挂载到实例，且实例与云盘都是包年包月的条件下，此字段才有意义。<br><li>true:云盘到期时间早于实例。<br><li>false：云盘到期时间晚于实例。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取在云盘已挂载到实例，且实例与云盘都是包年包月的条件下，此字段才有意义。<br><li>true:云盘到期时间早于实例。</li><li>false：云盘到期时间晚于实例。</li>
+                     * @return DeadlineError 在云盘已挂载到实例，且实例与云盘都是包年包月的条件下，此字段才有意义。<br><li>true:云盘到期时间早于实例。</li><li>false：云盘到期时间晚于实例。</li>
                      * 
                      */
                     bool GetDeadlineError() const;
 
                     /**
-                     * 设置在云盘已挂载到实例，且实例与云盘都是包年包月的条件下，此字段才有意义。<br><li>true:云盘到期时间早于实例。<br><li>false：云盘到期时间晚于实例。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _deadlineError 在云盘已挂载到实例，且实例与云盘都是包年包月的条件下，此字段才有意义。<br><li>true:云盘到期时间早于实例。<br><li>false：云盘到期时间晚于实例。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置在云盘已挂载到实例，且实例与云盘都是包年包月的条件下，此字段才有意义。<br><li>true:云盘到期时间早于实例。</li><li>false：云盘到期时间晚于实例。</li>
+                     * @param _deadlineError 在云盘已挂载到实例，且实例与云盘都是包年包月的条件下，此字段才有意义。<br><li>true:云盘到期时间早于实例。</li><li>false：云盘到期时间晚于实例。</li>
                      * 
                      */
                     void SetDeadlineError(const bool& _deadlineError);
@@ -744,18 +708,18 @@ namespace TencentCloud
                     bool RollbackPercentHasBeenSet() const;
 
                     /**
-                     * 获取当前时间距离盘到期的天数（仅对预付费盘有意义）。
+                     * 获取当前时间距离云硬盘到期的天数（仅对预付费云硬盘有意义）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DifferDaysOfDeadline 当前时间距离盘到期的天数（仅对预付费盘有意义）。
+                     * @return DifferDaysOfDeadline 当前时间距离云硬盘到期的天数（仅对预付费云硬盘有意义）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDifferDaysOfDeadline() const;
 
                     /**
-                     * 设置当前时间距离盘到期的天数（仅对预付费盘有意义）。
+                     * 设置当前时间距离云硬盘到期的天数（仅对预付费云硬盘有意义）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _differDaysOfDeadline 当前时间距离盘到期的天数（仅对预付费盘有意义）。
+                     * @param _differDaysOfDeadline 当前时间距离云硬盘到期的天数（仅对预付费云硬盘有意义）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -769,19 +733,15 @@ namespace TencentCloud
                     bool DifferDaysOfDeadlineHasBeenSet() const;
 
                     /**
-                     * 获取预付费云盘在不支持主动退还的情况下，该参数表明不支持主动退还的具体原因。取值范围：<br><li>1：云硬盘已经退还<br><li>2：云硬盘已过期<br><li>3：云盘不支持退还<br><li>8：超过可退还数量的限制。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReturnFailCode 预付费云盘在不支持主动退还的情况下，该参数表明不支持主动退还的具体原因。取值范围：<br><li>1：云硬盘已经退还<br><li>2：云硬盘已过期<br><li>3：云盘不支持退还<br><li>8：超过可退还数量的限制。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取预付费云盘在不支持主动退还的情况下，该参数表明不支持主动退还的具体原因。取值范围：<br><li>1：云硬盘已经退还</li><li>2：云硬盘已过期</li><li>3：云盘不支持退还</li><li>8：超过可退还数量的限制。</li><li>10：非弹性云硬盘、系统盘、后付费云硬盘等不支持退还</li>
+                     * @return ReturnFailCode 预付费云盘在不支持主动退还的情况下，该参数表明不支持主动退还的具体原因。取值范围：<br><li>1：云硬盘已经退还</li><li>2：云硬盘已过期</li><li>3：云盘不支持退还</li><li>8：超过可退还数量的限制。</li><li>10：非弹性云硬盘、系统盘、后付费云硬盘等不支持退还</li>
                      * 
                      */
                     int64_t GetReturnFailCode() const;
 
                     /**
-                     * 设置预付费云盘在不支持主动退还的情况下，该参数表明不支持主动退还的具体原因。取值范围：<br><li>1：云硬盘已经退还<br><li>2：云硬盘已过期<br><li>3：云盘不支持退还<br><li>8：超过可退还数量的限制。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _returnFailCode 预付费云盘在不支持主动退还的情况下，该参数表明不支持主动退还的具体原因。取值范围：<br><li>1：云硬盘已经退还<br><li>2：云硬盘已过期<br><li>3：云盘不支持退还<br><li>8：超过可退还数量的限制。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置预付费云盘在不支持主动退还的情况下，该参数表明不支持主动退还的具体原因。取值范围：<br><li>1：云硬盘已经退还</li><li>2：云硬盘已过期</li><li>3：云盘不支持退还</li><li>8：超过可退还数量的限制。</li><li>10：非弹性云硬盘、系统盘、后付费云硬盘等不支持退还</li>
+                     * @param _returnFailCode 预付费云盘在不支持主动退还的情况下，该参数表明不支持主动退还的具体原因。取值范围：<br><li>1：云硬盘已经退还</li><li>2：云硬盘已过期</li><li>3：云盘不支持退还</li><li>8：超过可退还数量的限制。</li><li>10：非弹性云硬盘、系统盘、后付费云硬盘等不支持退还</li>
                      * 
                      */
                     void SetReturnFailCode(const int64_t& _returnFailCode);
@@ -836,15 +796,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取销毁云盘时删除关联的非永久保留快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁，默认取0。快照是否永久保留可以通过DescribeSnapshots接口返回的快照详情的IsPermanent字段来判断，true表示永久快照，false表示非永久快照。
-                     * @return DeleteSnapshot 销毁云盘时删除关联的非永久保留快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁，默认取0。快照是否永久保留可以通过DescribeSnapshots接口返回的快照详情的IsPermanent字段来判断，true表示永久快照，false表示非永久快照。
+                     * 获取销毁云盘时删除关联的非永久保留快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁，默认取0。快照是否永久保留可以通过[DescribeSnapshots](https://cloud.tencent.com/document/product/362/15647)接口返回的快照详情的IsPermanent字段来判断，true表示永久快照，false表示非永久快照。
+                     * @return DeleteSnapshot 销毁云盘时删除关联的非永久保留快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁，默认取0。快照是否永久保留可以通过[DescribeSnapshots](https://cloud.tencent.com/document/product/362/15647)接口返回的快照详情的IsPermanent字段来判断，true表示永久快照，false表示非永久快照。
                      * 
                      */
                     int64_t GetDeleteSnapshot() const;
 
                     /**
-                     * 设置销毁云盘时删除关联的非永久保留快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁，默认取0。快照是否永久保留可以通过DescribeSnapshots接口返回的快照详情的IsPermanent字段来判断，true表示永久快照，false表示非永久快照。
-                     * @param _deleteSnapshot 销毁云盘时删除关联的非永久保留快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁，默认取0。快照是否永久保留可以通过DescribeSnapshots接口返回的快照详情的IsPermanent字段来判断，true表示永久快照，false表示非永久快照。
+                     * 设置销毁云盘时删除关联的非永久保留快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁，默认取0。快照是否永久保留可以通过[DescribeSnapshots](https://cloud.tencent.com/document/product/362/15647)接口返回的快照详情的IsPermanent字段来判断，true表示永久快照，false表示非永久快照。
+                     * @param _deleteSnapshot 销毁云盘时删除关联的非永久保留快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁，默认取0。快照是否永久保留可以通过[DescribeSnapshots](https://cloud.tencent.com/document/product/362/15647)接口返回的快照详情的IsPermanent字段来判断，true表示永久快照，false表示非永久快照。
                      * 
                      */
                     void SetDeleteSnapshot(const int64_t& _deleteSnapshot);
@@ -899,15 +859,15 @@ namespace TencentCloud
                     bool DiskBackupCountHasBeenSet() const;
 
                     /**
-                     * 获取云硬盘挂载实例的类型。取值范围：<br><li>CVM<br><li>EKS
-                     * @return InstanceType 云硬盘挂载实例的类型。取值范围：<br><li>CVM<br><li>EKS
+                     * 获取云硬盘挂载实例的类型。取值范围：<br><li>CVM</li><li>EKS</li>
+                     * @return InstanceType 云硬盘挂载实例的类型。取值范围：<br><li>CVM</li><li>EKS</li>
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置云硬盘挂载实例的类型。取值范围：<br><li>CVM<br><li>EKS
-                     * @param _instanceType 云硬盘挂载实例的类型。取值范围：<br><li>CVM<br><li>EKS
+                     * 设置云硬盘挂载实例的类型。取值范围：<br><li>CVM</li><li>EKS</li>
+                     * @param _instanceType 云硬盘挂载实例的类型。取值范围：<br><li>CVM</li><li>EKS</li>
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -946,18 +906,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云硬盘最后一次操作错误提示
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorPrompt 云硬盘最后一次操作错误提示
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrorPrompt() const;
 
                     /**
                      * 设置云硬盘最后一次操作错误提示
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errorPrompt 云硬盘最后一次操作错误提示
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrorPrompt(const std::string& _errorPrompt);
@@ -971,18 +927,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云盘是否开启性能突发
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BurstPerformance 云盘是否开启性能突发
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetBurstPerformance() const;
 
                     /**
                      * 设置云盘是否开启性能突发
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _burstPerformance 云盘是否开启性能突发
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBurstPerformance(const bool& _burstPerformance);
@@ -994,30 +946,70 @@ namespace TencentCloud
                      */
                     bool BurstPerformanceHasBeenSet() const;
 
+                    /**
+                     * 获取云硬盘加密类型，值为ENCRYPT_V1和ENCRYPT_V2，分别表示第一代和第二代加密技术，两种加密技术互不兼容
+                     * @return EncryptType 云硬盘加密类型，值为ENCRYPT_V1和ENCRYPT_V2，分别表示第一代和第二代加密技术，两种加密技术互不兼容
+                     * 
+                     */
+                    std::string GetEncryptType() const;
+
+                    /**
+                     * 设置云硬盘加密类型，值为ENCRYPT_V1和ENCRYPT_V2，分别表示第一代和第二代加密技术，两种加密技术互不兼容
+                     * @param _encryptType 云硬盘加密类型，值为ENCRYPT_V1和ENCRYPT_V2，分别表示第一代和第二代加密技术，两种加密技术互不兼容
+                     * 
+                     */
+                    void SetEncryptType(const std::string& _encryptType);
+
+                    /**
+                     * 判断参数 EncryptType 是否已赋值
+                     * @return EncryptType 是否已赋值
+                     * 
+                     */
+                    bool EncryptTypeHasBeenSet() const;
+
+                    /**
+                     * 获取加密盘密钥ID
+                     * @return KmsKeyId 加密盘密钥ID
+                     * 
+                     */
+                    std::string GetKmsKeyId() const;
+
+                    /**
+                     * 设置加密盘密钥ID
+                     * @param _kmsKeyId 加密盘密钥ID
+                     * 
+                     */
+                    void SetKmsKeyId(const std::string& _kmsKeyId);
+
+                    /**
+                     * 判断参数 KmsKeyId 是否已赋值
+                     * @return KmsKeyId 是否已赋值
+                     * 
+                     */
+                    bool KmsKeyIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 云盘是否与挂载的实例一起销毁。<br><li>true:销毁实例时会同时销毁云盘，只支持按小时后付费云盘。<br><li>false：销毁实例时不销毁云盘。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 云盘是否与挂载的实例一起销毁。<br><li>true:销毁实例时会同时销毁云盘，只支持按小时后付费云盘。</li><li>false：销毁实例时不销毁云盘。</li>
                      */
                     bool m_deleteWithInstance;
                     bool m_deleteWithInstanceHasBeenSet;
 
                     /**
-                     * 自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费</li><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费。</li>
                      */
                     std::string m_renewFlag;
                     bool m_renewFlagHasBeenSet;
 
                     /**
-                     * 硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_BSSD：表示通用型SSD云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘<br><li>CLOUD_TSSD：表示极速型SSD云硬盘。
+                     * 硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘</li><li>CLOUD_PREMIUM：表示高性能云硬盘</li><li>CLOUD_BSSD：表示通用型SSD云硬盘</li><li>CLOUD_SSD：表示SSD云硬盘</li><li>CLOUD_HSSD：表示增强型SSD云硬盘</li><li>CLOUD_TSSD：表示极速型SSD云硬盘。</li>
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
 
                     /**
-                     * 云盘状态。取值范围：<br><li>UNATTACHED：未挂载<br><li>ATTACHING：挂载中<br><li>ATTACHED：已挂载<br><li>DETACHING：解挂中<br><li>EXPANDING：扩容中<br><li>ROLLBACKING：回滚中<br><li>TORECYCLE：待回收<br><li>DUMPING：拷贝硬盘中。
+                     * 云盘状态。取值范围：<br><li>UNATTACHED：未挂载</li><li>ATTACHING：挂载中</li><li>ATTACHED：已挂载</li><li>DETACHING：解挂中</li><li>EXPANDING：扩容中</li><li>ROLLBACKING：回滚中</li><li>TORECYCLE：待回收</li><li>DUMPING：拷贝硬盘中。</li>
                      */
                     std::string m_diskState;
                     bool m_diskStateHasBeenSet;
@@ -1029,14 +1021,13 @@ namespace TencentCloud
                     bool m_snapshotCountHasBeenSet;
 
                     /**
-                     * 云盘已挂载到子机，且子机与云盘都是包年包月。<br><li>true：子机设置了自动续费标识，但云盘未设置<br><li>false：云盘自动续费标识正常。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 云盘已挂载到子机，且子机与云盘都是包年包月。<br><li>true：子机设置了自动续费标识，但云盘未设置</li><li>false：云盘自动续费标识正常。</li>
                      */
                     bool m_autoRenewFlagError;
                     bool m_autoRenewFlagErrorHasBeenSet;
 
                     /**
-                     * 云盘是否处于快照回滚状态。取值范围：<br><li>false:表示不处于快照回滚状态<br><li>true:表示处于快照回滚状态。
+                     * 云盘是否处于快照回滚状态。取值范围：<br><li>false:表示不处于快照回滚状态</li><li>true:表示处于快照回滚状态。</li>
                      */
                     bool m_rollbacking;
                     bool m_rollbackingHasBeenSet;
@@ -1048,7 +1039,7 @@ namespace TencentCloud
                     bool m_instanceIdListHasBeenSet;
 
                     /**
-                     * 云盘是否为加密盘。取值范围：<br><li>false:表示非加密盘<br><li>true:表示加密盘。
+                     * 云盘是否为加密盘。取值范围：<br><li>false:表示非加密盘</li><li>true:表示加密盘。</li>
                      */
                     bool m_encrypt;
                     bool m_encryptHasBeenSet;
@@ -1067,7 +1058,6 @@ namespace TencentCloud
 
                     /**
                      * 与云盘绑定的标签，云盘未绑定标签则取值为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
@@ -1079,29 +1069,26 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 云盘的挂载类型。取值范围：<br><li>PF: PF挂载<br><li>VF: VF挂载
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 云盘的挂载类型。取值范围：<br><li>PF: PF挂载</li><li>VF: VF挂载</li>
                      */
                     std::string m_attachMode;
                     bool m_attachModeHasBeenSet;
 
                     /**
-                     * 云盘关联的定期快照ID。只有在调用DescribeDisks接口时，入参ReturnBindAutoSnapshotPolicy取值为TRUE才会返回该参数。
+                     * 云盘关联的定期快照ID。只有在调用[DescribeDisks](/document/product/362/16315)接口时，入参ReturnBindAutoSnapshotPolicy取值为TRUE才会返回该参数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_autoSnapshotPolicyIds;
                     bool m_autoSnapshotPolicyIdsHasBeenSet;
 
                     /**
-                     * 云硬盘额外性能值，单位MB/s。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 云硬盘额外性能值，单位MiB/s。
                      */
                     uint64_t m_throughputPerformance;
                     bool m_throughputPerformanceHasBeenSet;
 
                     /**
-                     * 云盘是否处于类型变更中。取值范围：<br><li>false:表示云盘不处于类型变更中<br><li>true:表示云盘已发起类型变更，正处于迁移中。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 云盘是否处于类型变更中。取值范围：<br><li>false:表示云盘不处于类型变更中</li><li>true:表示云盘已发起类型变更，正处于迁移中。</li>
                      */
                     bool m_migrating;
                     bool m_migratingHasBeenSet;
@@ -1113,7 +1100,7 @@ namespace TencentCloud
                     bool m_diskIdHasBeenSet;
 
                     /**
-                     * 云盘拥有的快照总容量，单位为MB。
+                     * 云盘拥有的快照总容量，单位为MiB。
                      */
                     uint64_t m_snapshotSize;
                     bool m_snapshotSizeHasBeenSet;
@@ -1125,7 +1112,7 @@ namespace TencentCloud
                     bool m_placementHasBeenSet;
 
                     /**
-                     * 判断预付费的云盘是否支持主动退还。<br><li>true:支持主动退还<br><li>false:不支持主动退还。
+                     * 判断预付费的云盘是否支持主动退还。<br><li>true:支持主动退还</li><li>false:不支持主动退还。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isReturnable;
@@ -1138,32 +1125,31 @@ namespace TencentCloud
                     bool m_deadlineTimeHasBeenSet;
 
                     /**
-                     * 云盘是否挂载到云主机上。取值范围：<br><li>false:表示未挂载<br><li>true:表示已挂载。
+                     * 云盘是否挂载到云主机上。取值范围：<br><li>false:表示未挂载</li><li>true:表示已挂载。</li>
                      */
                     bool m_attached;
                     bool m_attachedHasBeenSet;
 
                     /**
-                     * 云硬盘大小，单位GB。
+                     * 云硬盘大小，单位GiB。
                      */
                     uint64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
 
                     /**
                      * 云盘类型变更的迁移进度，取值0到100。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_migratePercent;
                     bool m_migratePercentHasBeenSet;
 
                     /**
-                     * 云硬盘类型。取值范围：<br><li>SYSTEM_DISK：系统盘<br><li>DATA_DISK：数据盘。
+                     * 云硬盘类型。取值范围：<br><li>SYSTEM_DISK：系统盘</li><li>DATA_DISK：数据盘。</li>
                      */
                     std::string m_diskUsage;
                     bool m_diskUsageHasBeenSet;
 
                     /**
-                     * 付费模式。取值范围：<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：后付费，即按量计费。
+                     * 付费模式。取值范围：<br><li>PREPAID：预付费，即包年包月</li><li>POSTPAID_BY_HOUR：后付费，即按量计费。</li>
                      */
                     std::string m_diskChargeType;
                     bool m_diskChargeTypeHasBeenSet;
@@ -1175,14 +1161,13 @@ namespace TencentCloud
                     bool m_portableHasBeenSet;
 
                     /**
-                     * 云盘是否具备创建快照的能力。取值范围：<br><li>false表示不具备<br><li>true表示具备。
+                     * 云盘是否具备创建快照的能力。取值范围：<br><li>false表示不具备</li><li>true表示具备。</li>
                      */
                     bool m_snapshotAbility;
                     bool m_snapshotAbilityHasBeenSet;
 
                     /**
-                     * 在云盘已挂载到实例，且实例与云盘都是包年包月的条件下，此字段才有意义。<br><li>true:云盘到期时间早于实例。<br><li>false：云盘到期时间晚于实例。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 在云盘已挂载到实例，且实例与云盘都是包年包月的条件下，此字段才有意义。<br><li>true:云盘到期时间早于实例。</li><li>false：云盘到期时间晚于实例。</li>
                      */
                     bool m_deadlineError;
                     bool m_deadlineErrorHasBeenSet;
@@ -1194,15 +1179,14 @@ namespace TencentCloud
                     bool m_rollbackPercentHasBeenSet;
 
                     /**
-                     * 当前时间距离盘到期的天数（仅对预付费盘有意义）。
+                     * 当前时间距离云硬盘到期的天数（仅对预付费云硬盘有意义）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_differDaysOfDeadline;
                     bool m_differDaysOfDeadlineHasBeenSet;
 
                     /**
-                     * 预付费云盘在不支持主动退还的情况下，该参数表明不支持主动退还的具体原因。取值范围：<br><li>1：云硬盘已经退还<br><li>2：云硬盘已过期<br><li>3：云盘不支持退还<br><li>8：超过可退还数量的限制。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 预付费云盘在不支持主动退还的情况下，该参数表明不支持主动退还的具体原因。取值范围：<br><li>1：云硬盘已经退还</li><li>2：云硬盘已过期</li><li>3：云盘不支持退还</li><li>8：超过可退还数量的限制。</li><li>10：非弹性云硬盘、系统盘、后付费云硬盘等不支持退还</li>
                      */
                     int64_t m_returnFailCode;
                     bool m_returnFailCodeHasBeenSet;
@@ -1220,7 +1204,7 @@ namespace TencentCloud
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 销毁云盘时删除关联的非永久保留快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁，默认取0。快照是否永久保留可以通过DescribeSnapshots接口返回的快照详情的IsPermanent字段来判断，true表示永久快照，false表示非永久快照。
+                     * 销毁云盘时删除关联的非永久保留快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁，默认取0。快照是否永久保留可以通过[DescribeSnapshots](https://cloud.tencent.com/document/product/362/15647)接口返回的快照详情的IsPermanent字段来判断，true表示永久快照，false表示非永久快照。
                      */
                     int64_t m_deleteSnapshot;
                     bool m_deleteSnapshotHasBeenSet;
@@ -1238,7 +1222,7 @@ namespace TencentCloud
                     bool m_diskBackupCountHasBeenSet;
 
                     /**
-                     * 云硬盘挂载实例的类型。取值范围：<br><li>CVM<br><li>EKS
+                     * 云硬盘挂载实例的类型。取值范围：<br><li>CVM</li><li>EKS</li>
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
@@ -1252,17 +1236,27 @@ namespace TencentCloud
 
                     /**
                      * 云硬盘最后一次操作错误提示
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorPrompt;
                     bool m_errorPromptHasBeenSet;
 
                     /**
                      * 云盘是否开启性能突发
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_burstPerformance;
                     bool m_burstPerformanceHasBeenSet;
+
+                    /**
+                     * 云硬盘加密类型，值为ENCRYPT_V1和ENCRYPT_V2，分别表示第一代和第二代加密技术，两种加密技术互不兼容
+                     */
+                    std::string m_encryptType;
+                    bool m_encryptTypeHasBeenSet;
+
+                    /**
+                     * 加密盘密钥ID
+                     */
+                    std::string m_kmsKeyId;
+                    bool m_kmsKeyIdHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,11 @@ VatElectronicItemInfo::VatElectronicItemInfo() :
     m_placeOfBuildingServiceHasBeenSet(false),
     m_buildingNameHasBeenSet(false),
     m_estateNumberHasBeenSet(false),
-    m_areaUnitHasBeenSet(false)
+    m_areaUnitHasBeenSet(false),
+    m_travelerHasBeenSet(false),
+    m_travelerIDHasBeenSet(false),
+    m_travelDateHasBeenSet(false),
+    m_travelLevelHasBeenSet(false)
 {
 }
 
@@ -216,6 +220,46 @@ CoreInternalOutcome VatElectronicItemInfo::Deserialize(const rapidjson::Value &v
         m_areaUnitHasBeenSet = true;
     }
 
+    if (value.HasMember("Traveler") && !value["Traveler"].IsNull())
+    {
+        if (!value["Traveler"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatElectronicItemInfo.Traveler` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_traveler = string(value["Traveler"].GetString());
+        m_travelerHasBeenSet = true;
+    }
+
+    if (value.HasMember("TravelerID") && !value["TravelerID"].IsNull())
+    {
+        if (!value["TravelerID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatElectronicItemInfo.TravelerID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_travelerID = string(value["TravelerID"].GetString());
+        m_travelerIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("TravelDate") && !value["TravelDate"].IsNull())
+    {
+        if (!value["TravelDate"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatElectronicItemInfo.TravelDate` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_travelDate = string(value["TravelDate"].GetString());
+        m_travelDateHasBeenSet = true;
+    }
+
+    if (value.HasMember("TravelLevel") && !value["TravelLevel"].IsNull())
+    {
+        if (!value["TravelLevel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatElectronicItemInfo.TravelLevel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_travelLevel = string(value["TravelLevel"].GetString());
+        m_travelLevelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -357,6 +401,38 @@ void VatElectronicItemInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "AreaUnit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_areaUnit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_travelerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Traveler";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_traveler.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_travelerIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TravelerID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_travelerID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_travelDateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TravelDate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_travelDate.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_travelLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TravelLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_travelLevel.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -632,5 +708,69 @@ void VatElectronicItemInfo::SetAreaUnit(const string& _areaUnit)
 bool VatElectronicItemInfo::AreaUnitHasBeenSet() const
 {
     return m_areaUnitHasBeenSet;
+}
+
+string VatElectronicItemInfo::GetTraveler() const
+{
+    return m_traveler;
+}
+
+void VatElectronicItemInfo::SetTraveler(const string& _traveler)
+{
+    m_traveler = _traveler;
+    m_travelerHasBeenSet = true;
+}
+
+bool VatElectronicItemInfo::TravelerHasBeenSet() const
+{
+    return m_travelerHasBeenSet;
+}
+
+string VatElectronicItemInfo::GetTravelerID() const
+{
+    return m_travelerID;
+}
+
+void VatElectronicItemInfo::SetTravelerID(const string& _travelerID)
+{
+    m_travelerID = _travelerID;
+    m_travelerIDHasBeenSet = true;
+}
+
+bool VatElectronicItemInfo::TravelerIDHasBeenSet() const
+{
+    return m_travelerIDHasBeenSet;
+}
+
+string VatElectronicItemInfo::GetTravelDate() const
+{
+    return m_travelDate;
+}
+
+void VatElectronicItemInfo::SetTravelDate(const string& _travelDate)
+{
+    m_travelDate = _travelDate;
+    m_travelDateHasBeenSet = true;
+}
+
+bool VatElectronicItemInfo::TravelDateHasBeenSet() const
+{
+    return m_travelDateHasBeenSet;
+}
+
+string VatElectronicItemInfo::GetTravelLevel() const
+{
+    return m_travelLevel;
+}
+
+void VatElectronicItemInfo::SetTravelLevel(const string& _travelLevel)
+{
+    m_travelLevel = _travelLevel;
+    m_travelLevelHasBeenSet = true;
+}
+
+bool VatElectronicItemInfo::TravelLevelHasBeenSet() const
+{
+    return m_travelLevelHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取诊断结果的健康水平
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HealthyLevel 诊断结果的健康水平
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHealthyLevel() const;
 
                     /**
                      * 设置诊断结果的健康水平
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _healthyLevel 诊断结果的健康水平
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHealthyLevel(const std::string& _healthyLevel);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取诊断结果的统计
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 诊断结果的统计
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置诊断结果的统计
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _count 诊断结果的统计
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCount(const int64_t& _count);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 诊断结果的健康水平
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_healthyLevel;
                     bool m_healthyLevelHasBeenSet;
 
                     /**
                      * 诊断结果的统计
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_count;
                     bool m_countHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -296,15 +296,15 @@ namespace TencentCloud
                     bool QueryConnectorHasBeenSet() const;
 
                     /**
-                     * 获取查询数据源黑名单机制，比如不想要系统数据源["system"]
-                     * @return NotQuerySubTypeList 查询数据源黑名单机制，比如不想要系统数据源["system"]
+                     * 获取废弃中
+                     * @return NotQuerySubTypeList 废弃中
                      * 
                      */
                     std::vector<std::string> GetNotQuerySubTypeList() const;
 
                     /**
-                     * 设置查询数据源黑名单机制，比如不想要系统数据源["system"]
-                     * @param _notQuerySubTypeList 查询数据源黑名单机制，比如不想要系统数据源["system"]
+                     * 设置废弃中
+                     * @param _notQuerySubTypeList 废弃中
                      * 
                      */
                     void SetNotQuerySubTypeList(const std::vector<std::string>& _notQuerySubTypeList);
@@ -315,6 +315,111 @@ namespace TencentCloud
                      * 
                      */
                     bool NotQuerySubTypeListHasBeenSet() const;
+
+                    /**
+                     * 获取查询channelList
+                     * @return ChannelList 查询channelList
+                     * 
+                     */
+                    std::vector<std::string> GetChannelList() const;
+
+                    /**
+                     * 设置查询channelList
+                     * @param _channelList 查询channelList
+                     * 
+                     */
+                    void SetChannelList(const std::vector<std::string>& _channelList);
+
+                    /**
+                     * 判断参数 ChannelList 是否已赋值
+                     * @return ChannelList 是否已赋值
+                     * 
+                     */
+                    bool ChannelListHasBeenSet() const;
+
+                    /**
+                     * 获取是否查询数据源关联关系
+                     * @return QueryDataSourceRelationList 是否查询数据源关联关系
+                     * 
+                     */
+                    bool GetQueryDataSourceRelationList() const;
+
+                    /**
+                     * 设置是否查询数据源关联关系
+                     * @param _queryDataSourceRelationList 是否查询数据源关联关系
+                     * 
+                     */
+                    void SetQueryDataSourceRelationList(const bool& _queryDataSourceRelationList);
+
+                    /**
+                     * 判断参数 QueryDataSourceRelationList 是否已赋值
+                     * @return QueryDataSourceRelationList 是否已赋值
+                     * 
+                     */
+                    bool QueryDataSourceRelationListHasBeenSet() const;
+
+                    /**
+                     * 获取db实例类型
+                     * @return DbInstanceType db实例类型
+                     * 
+                     */
+                    std::string GetDbInstanceType() const;
+
+                    /**
+                     * 设置db实例类型
+                     * @param _dbInstanceType db实例类型
+                     * 
+                     */
+                    void SetDbInstanceType(const std::string& _dbInstanceType);
+
+                    /**
+                     * 判断参数 DbInstanceType 是否已赋值
+                     * @return DbInstanceType 是否已赋值
+                     * 
+                     */
+                    bool DbInstanceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取数据库表名列表
+                     * @return DatabaseTableNames 数据库表名列表
+                     * 
+                     */
+                    std::vector<std::string> GetDatabaseTableNames() const;
+
+                    /**
+                     * 设置数据库表名列表
+                     * @param _databaseTableNames 数据库表名列表
+                     * 
+                     */
+                    void SetDatabaseTableNames(const std::vector<std::string>& _databaseTableNames);
+
+                    /**
+                     * 判断参数 DatabaseTableNames 是否已赋值
+                     * @return DatabaseTableNames 是否已赋值
+                     * 
+                     */
+                    bool DatabaseTableNamesHasBeenSet() const;
+
+                    /**
+                     * 获取是否查询系统模型，默认为true，需要显示设置为False才能过滤系统模型
+                     * @return QuerySystemModel 是否查询系统模型，默认为true，需要显示设置为False才能过滤系统模型
+                     * 
+                     */
+                    bool GetQuerySystemModel() const;
+
+                    /**
+                     * 设置是否查询系统模型，默认为true，需要显示设置为False才能过滤系统模型
+                     * @param _querySystemModel 是否查询系统模型，默认为true，需要显示设置为False才能过滤系统模型
+                     * 
+                     */
+                    void SetQuerySystemModel(const bool& _querySystemModel);
+
+                    /**
+                     * 判断参数 QuerySystemModel 是否已赋值
+                     * @return QuerySystemModel 是否已赋值
+                     * 
+                     */
+                    bool QuerySystemModelHasBeenSet() const;
 
                 private:
 
@@ -391,10 +496,40 @@ namespace TencentCloud
                     bool m_queryConnectorHasBeenSet;
 
                     /**
-                     * 查询数据源黑名单机制，比如不想要系统数据源["system"]
+                     * 废弃中
                      */
                     std::vector<std::string> m_notQuerySubTypeList;
                     bool m_notQuerySubTypeListHasBeenSet;
+
+                    /**
+                     * 查询channelList
+                     */
+                    std::vector<std::string> m_channelList;
+                    bool m_channelListHasBeenSet;
+
+                    /**
+                     * 是否查询数据源关联关系
+                     */
+                    bool m_queryDataSourceRelationList;
+                    bool m_queryDataSourceRelationListHasBeenSet;
+
+                    /**
+                     * db实例类型
+                     */
+                    std::string m_dbInstanceType;
+                    bool m_dbInstanceTypeHasBeenSet;
+
+                    /**
+                     * 数据库表名列表
+                     */
+                    std::vector<std::string> m_databaseTableNames;
+                    bool m_databaseTableNamesHasBeenSet;
+
+                    /**
+                     * 是否查询系统模型，默认为true，需要显示设置为False才能过滤系统模型
+                     */
+                    bool m_querySystemModel;
+                    bool m_querySystemModelHasBeenSet;
 
                 };
             }

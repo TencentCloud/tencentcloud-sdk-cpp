@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -105,13 +105,13 @@ EndTime 需要大于等于 StartTime
 url：访问 URL 排序（无参数的URL），支持的 Filter 为 flux、request
 district：省份、国家/地区排序，支持的 Filter 为 flux、request
 isp：运营商排序，支持的 Filter 为 flux、request
-host：域名访问数据排序，支持的 Filter 为：flux、request、bandwidth、fluxHitRate、2XX、3XX、4XX、5XX、statusCode
+host：域名访问数据排序，支持的Filter 为：flux、request、bandwidth、fluxHitRate、2XX、3XX、4XX、5XX、statusCode   
 originHost：域名回源数据排序，支持的 Filter 为 flux、request、bandwidth、origin_2XX、origin_3XX、origin_4XX、origin_5XX、OriginStatusCode
                      * @return Metric 排序对象，支持以下几种形式：
 url：访问 URL 排序（无参数的URL），支持的 Filter 为 flux、request
 district：省份、国家/地区排序，支持的 Filter 为 flux、request
 isp：运营商排序，支持的 Filter 为 flux、request
-host：域名访问数据排序，支持的 Filter 为：flux、request、bandwidth、fluxHitRate、2XX、3XX、4XX、5XX、statusCode
+host：域名访问数据排序，支持的Filter 为：flux、request、bandwidth、fluxHitRate、2XX、3XX、4XX、5XX、statusCode   
 originHost：域名回源数据排序，支持的 Filter 为 flux、request、bandwidth、origin_2XX、origin_3XX、origin_4XX、origin_5XX、OriginStatusCode
                      * 
                      */
@@ -122,13 +122,13 @@ originHost：域名回源数据排序，支持的 Filter 为 flux、request、ba
 url：访问 URL 排序（无参数的URL），支持的 Filter 为 flux、request
 district：省份、国家/地区排序，支持的 Filter 为 flux、request
 isp：运营商排序，支持的 Filter 为 flux、request
-host：域名访问数据排序，支持的 Filter 为：flux、request、bandwidth、fluxHitRate、2XX、3XX、4XX、5XX、statusCode
+host：域名访问数据排序，支持的Filter 为：flux、request、bandwidth、fluxHitRate、2XX、3XX、4XX、5XX、statusCode   
 originHost：域名回源数据排序，支持的 Filter 为 flux、request、bandwidth、origin_2XX、origin_3XX、origin_4XX、origin_5XX、OriginStatusCode
                      * @param _metric 排序对象，支持以下几种形式：
 url：访问 URL 排序（无参数的URL），支持的 Filter 为 flux、request
 district：省份、国家/地区排序，支持的 Filter 为 flux、request
 isp：运营商排序，支持的 Filter 为 flux、request
-host：域名访问数据排序，支持的 Filter 为：flux、request、bandwidth、fluxHitRate、2XX、3XX、4XX、5XX、statusCode
+host：域名访问数据排序，支持的Filter 为：flux、request、bandwidth、fluxHitRate、2XX、3XX、4XX、5XX、statusCode   
 originHost：域名回源数据排序，支持的 Filter 为 flux、request、bandwidth、origin_2XX、origin_3XX、origin_4XX、origin_5XX、OriginStatusCode
                      * 
                      */
@@ -433,7 +433,7 @@ EndTime 需要大于等于 StartTime
 url：访问 URL 排序（无参数的URL），支持的 Filter 为 flux、request
 district：省份、国家/地区排序，支持的 Filter 为 flux、request
 isp：运营商排序，支持的 Filter 为 flux、request
-host：域名访问数据排序，支持的 Filter 为：flux、request、bandwidth、fluxHitRate、2XX、3XX、4XX、5XX、statusCode
+host：域名访问数据排序，支持的Filter 为：flux、request、bandwidth、fluxHitRate、2XX、3XX、4XX、5XX、statusCode   
 originHost：域名回源数据排序，支持的 Filter 为 flux、request、bandwidth、origin_2XX、origin_3XX、origin_4XX、origin_5XX、OriginStatusCode
                      */
                     std::string m_metric;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取命令类型。
-                     * @return CommandType 命令类型。
+                     * 获取命令类型。取值为 SHELL、POWERSHELL、BAT 之一。
+                     * @return CommandType 命令类型。取值为 SHELL、POWERSHELL、BAT 之一。
                      * 
                      */
                     std::string GetCommandType() const;
 
                     /**
-                     * 设置命令类型。
-                     * @param _commandType 命令类型。
+                     * 设置命令类型。取值为 SHELL、POWERSHELL、BAT 之一。
+                     * @param _commandType 命令类型。取值为 SHELL、POWERSHELL、BAT 之一。
                      * 
                      */
                     void SetCommandType(const std::string& _commandType);
@@ -196,15 +196,15 @@ namespace TencentCloud
                     bool TimeoutHasBeenSet() const;
 
                     /**
-                     * 获取命令创建时间。
-                     * @return CreatedTime 命令创建时间。
+                     * 获取命令创建时间。格式为：YYYY-MM-DDThh:mm:ssZ
+                     * @return CreatedTime 命令创建时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置命令创建时间。
-                     * @param _createdTime 命令创建时间。
+                     * 设置命令创建时间。格式为：YYYY-MM-DDThh:mm:ssZ
+                     * @param _createdTime 命令创建时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -217,15 +217,15 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取命令更新时间。
-                     * @return UpdatedTime 命令更新时间。
+                     * 获取命令更新时间。格式为：YYYY-MM-DDThh:mm:ssZ
+                     * @return UpdatedTime 命令更新时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      * 
                      */
                     std::string GetUpdatedTime() const;
 
                     /**
-                     * 设置命令更新时间。
-                     * @param _updatedTime 命令更新时间。
+                     * 设置命令更新时间。格式为：YYYY-MM-DDThh:mm:ssZ
+                     * @param _updatedTime 命令更新时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      * 
                      */
                     void SetUpdatedTime(const std::string& _updatedTime);
@@ -474,7 +474,7 @@ namespace TencentCloud
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 命令类型。
+                     * 命令类型。取值为 SHELL、POWERSHELL、BAT 之一。
                      */
                     std::string m_commandType;
                     bool m_commandTypeHasBeenSet;
@@ -492,13 +492,13 @@ namespace TencentCloud
                     bool m_timeoutHasBeenSet;
 
                     /**
-                     * 命令创建时间。
+                     * 命令创建时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 命令更新时间。
+                     * 命令更新时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      */
                     std::string m_updatedTime;
                     bool m_updatedTimeHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -88,14 +88,14 @@ namespace TencentCloud
                     /**
                      * 获取交换机类型容灾组内实例的配额数。
                      * @return CvmInSwGroupQuota 交换机类型容灾组内实例的配额数。
-                     * 
+                     * @deprecated
                      */
                     int64_t GetCvmInSwGroupQuota() const;
 
                     /**
                      * 判断参数 CvmInSwGroupQuota 是否已赋值
                      * @return CvmInSwGroupQuota 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool CvmInSwGroupQuotaHasBeenSet() const;
 
@@ -112,6 +112,20 @@ namespace TencentCloud
                      * 
                      */
                     bool CvmInRackGroupQuotaHasBeenSet() const;
+
+                    /**
+                     * 获取交换机类型容灾组内实例的配额数。
+                     * @return CvmInSwitchGroupQuota 交换机类型容灾组内实例的配额数。
+                     * 
+                     */
+                    int64_t GetCvmInSwitchGroupQuota() const;
+
+                    /**
+                     * 判断参数 CvmInSwitchGroupQuota 是否已赋值
+                     * @return CvmInSwitchGroupQuota 是否已赋值
+                     * 
+                     */
+                    bool CvmInSwitchGroupQuotaHasBeenSet() const;
 
                 private:
 
@@ -144,6 +158,12 @@ namespace TencentCloud
                      */
                     int64_t m_cvmInRackGroupQuota;
                     bool m_cvmInRackGroupQuotaHasBeenSet;
+
+                    /**
+                     * 交换机类型容灾组内实例的配额数。
+                     */
+                    int64_t m_cvmInSwitchGroupQuota;
+                    bool m_cvmInSwitchGroupQuotaHasBeenSet;
 
                 };
             }

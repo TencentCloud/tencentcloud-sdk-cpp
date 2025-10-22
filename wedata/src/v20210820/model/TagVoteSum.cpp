@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ TagVoteSum::TagVoteSum() :
     m_tagIdHasBeenSet(false),
     m_voteSumHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_tagNameHasBeenSet(false)
+    m_tagNameHasBeenSet(false),
+    m_tagDescHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome TagVoteSum::Deserialize(const rapidjson::Value &value)
         m_tagNameHasBeenSet = true;
     }
 
+    if (value.HasMember("TagDesc") && !value["TagDesc"].IsNull())
+    {
+        if (!value["TagDesc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TagVoteSum.TagDesc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tagDesc = string(value["TagDesc"].GetString());
+        m_tagDescHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void TagVoteSum::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "TagName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_tagName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagDescHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagDesc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tagDesc.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void TagVoteSum::SetTagName(const string& _tagName)
 bool TagVoteSum::TagNameHasBeenSet() const
 {
     return m_tagNameHasBeenSet;
+}
+
+string TagVoteSum::GetTagDesc() const
+{
+    return m_tagDesc;
+}
+
+void TagVoteSum::SetTagDesc(const string& _tagDesc)
+{
+    m_tagDesc = _tagDesc;
+    m_tagDescHasBeenSet = true;
+}
+
+bool TagVoteSum::TagDescHasBeenSet() const
+{
+    return m_tagDescHasBeenSet;
 }
 

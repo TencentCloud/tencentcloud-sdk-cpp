@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -94,10 +94,10 @@ namespace TencentCloud
 
                     /**
                      * 获取负载均衡实例的网络类型：
-OPEN：公网属性，INTERNAL：内网属性。
+Public：公网属性，Private：内网属性；对于内网属性的负载均衡，可通过绑定EIP出公网，具体可参考EIP文档。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoadBalancerType 负载均衡实例的网络类型：
-OPEN：公网属性，INTERNAL：内网属性。
+Public：公网属性，Private：内网属性；对于内网属性的负载均衡，可通过绑定EIP出公网，具体可参考EIP文档。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -105,10 +105,10 @@ OPEN：公网属性，INTERNAL：内网属性。
 
                     /**
                      * 设置负载均衡实例的网络类型：
-OPEN：公网属性，INTERNAL：内网属性。
+Public：公网属性，Private：内网属性；对于内网属性的负载均衡，可通过绑定EIP出公网，具体可参考EIP文档。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _loadBalancerType 负载均衡实例的网络类型：
-OPEN：公网属性，INTERNAL：内网属性。
+Public：公网属性，Private：内网属性；对于内网属性的负载均衡，可通过绑定EIP出公网，具体可参考EIP文档。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -977,18 +977,14 @@ OPEN：公网属性，INTERNAL：内网属性。
 
                     /**
                      * 获取负载均衡实例的域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoadBalancerDomain 负载均衡实例的域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLoadBalancerDomain() const;
 
                     /**
                      * 设置负载均衡实例的域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _loadBalancerDomain 负载均衡实例的域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLoadBalancerDomain(const std::string& _loadBalancerDomain);
@@ -1002,18 +998,14 @@ OPEN：公网属性，INTERNAL：内网属性。
 
                     /**
                      * 获取网络出口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Egress 网络出口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEgress() const;
 
                     /**
                      * 设置网络出口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _egress 网络出口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEgress(const std::string& _egress);
@@ -1120,7 +1112,7 @@ OPEN：公网属性，INTERNAL：内网属性。
 
                     /**
                      * 负载均衡实例的网络类型：
-OPEN：公网属性，INTERNAL：内网属性。
+Public：公网属性，Private：内网属性；对于内网属性的负载均衡，可通过绑定EIP出公网，具体可参考EIP文档。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_loadBalancerType;
@@ -1367,14 +1359,12 @@ OPEN：公网属性，INTERNAL：内网属性。
 
                     /**
                      * 负载均衡实例的域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_loadBalancerDomain;
                     bool m_loadBalancerDomainHasBeenSet;
 
                     /**
                      * 网络出口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_egress;
                     bool m_egressHasBeenSet;

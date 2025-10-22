@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/lke/v20231130/model/AttributeLabelRefByWorkflow.h>
 
 
 namespace TencentCloud
@@ -57,6 +58,22 @@ namespace TencentCloud
                      */
                     bool IsReferHasBeenSet() const;
 
+                    /**
+                     * 获取引用的工作流详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return List 引用的工作流详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<AttributeLabelRefByWorkflow> GetList() const;
+
+                    /**
+                     * 判断参数 List 是否已赋值
+                     * @return List 是否已赋值
+                     * 
+                     */
+                    bool ListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -64,6 +81,13 @@ namespace TencentCloud
                      */
                     bool m_isRefer;
                     bool m_isReferHasBeenSet;
+
+                    /**
+                     * 引用的工作流详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AttributeLabelRefByWorkflow> m_list;
+                    bool m_listHasBeenSet;
 
                 };
             }

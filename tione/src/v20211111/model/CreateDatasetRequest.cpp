@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,10 @@ CreateDatasetRequest::CreateDatasetRequest() :
     m_annotationFormatHasBeenSet(false),
     m_schemaInfosHasBeenSet(false),
     m_isSchemaExistedHasBeenSet(false),
-    m_contentTypeHasBeenSet(false)
+    m_contentTypeHasBeenSet(false),
+    m_datasetSceneHasBeenSet(false),
+    m_sceneTagsHasBeenSet(false),
+    m_cFSConfigHasBeenSet(false)
 {
 }
 
@@ -146,6 +149,36 @@ string CreateDatasetRequest::ToJsonString() const
         string key = "ContentType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_contentType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_datasetSceneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasetScene";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_datasetScene.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sceneTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SceneTags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_sceneTags.begin(); itr != m_sceneTags.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_cFSConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CFSConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_cFSConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -330,6 +363,54 @@ void CreateDatasetRequest::SetContentType(const string& _contentType)
 bool CreateDatasetRequest::ContentTypeHasBeenSet() const
 {
     return m_contentTypeHasBeenSet;
+}
+
+string CreateDatasetRequest::GetDatasetScene() const
+{
+    return m_datasetScene;
+}
+
+void CreateDatasetRequest::SetDatasetScene(const string& _datasetScene)
+{
+    m_datasetScene = _datasetScene;
+    m_datasetSceneHasBeenSet = true;
+}
+
+bool CreateDatasetRequest::DatasetSceneHasBeenSet() const
+{
+    return m_datasetSceneHasBeenSet;
+}
+
+vector<string> CreateDatasetRequest::GetSceneTags() const
+{
+    return m_sceneTags;
+}
+
+void CreateDatasetRequest::SetSceneTags(const vector<string>& _sceneTags)
+{
+    m_sceneTags = _sceneTags;
+    m_sceneTagsHasBeenSet = true;
+}
+
+bool CreateDatasetRequest::SceneTagsHasBeenSet() const
+{
+    return m_sceneTagsHasBeenSet;
+}
+
+CFSConfig CreateDatasetRequest::GetCFSConfig() const
+{
+    return m_cFSConfig;
+}
+
+void CreateDatasetRequest::SetCFSConfig(const CFSConfig& _cFSConfig)
+{
+    m_cFSConfig = _cFSConfig;
+    m_cFSConfigHasBeenSet = true;
+}
+
+bool CreateDatasetRequest::CFSConfigHasBeenSet() const
+{
+    return m_cFSConfigHasBeenSet;
 }
 
 

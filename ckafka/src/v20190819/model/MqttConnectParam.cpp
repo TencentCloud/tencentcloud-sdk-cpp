@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,13 +21,16 @@ using namespace TencentCloud::Ckafka::V20190819::Model;
 using namespace std;
 
 MqttConnectParam::MqttConnectParam() :
+    m_portHasBeenSet(false),
     m_userNameHasBeenSet(false),
     m_passwordHasBeenSet(false),
     m_resourceHasBeenSet(false),
+    m_serviceVipHasBeenSet(false),
     m_uniqVpcIdHasBeenSet(false),
     m_selfBuiltHasBeenSet(false),
     m_isUpdateHasBeenSet(false),
-    m_regionHasBeenSet(false)
+    m_regionHasBeenSet(false),
+    m_ipHasBeenSet(false)
 {
 }
 
@@ -35,6 +38,16 @@ CoreInternalOutcome MqttConnectParam::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("Port") && !value["Port"].IsNull())
+    {
+        if (!value["Port"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MqttConnectParam.Port` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_port = value["Port"].GetInt64();
+        m_portHasBeenSet = true;
+    }
 
     if (value.HasMember("UserName") && !value["UserName"].IsNull())
     {
@@ -64,6 +77,16 @@ CoreInternalOutcome MqttConnectParam::Deserialize(const rapidjson::Value &value)
         }
         m_resource = string(value["Resource"].GetString());
         m_resourceHasBeenSet = true;
+    }
+
+    if (value.HasMember("ServiceVip") && !value["ServiceVip"].IsNull())
+    {
+        if (!value["ServiceVip"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MqttConnectParam.ServiceVip` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serviceVip = string(value["ServiceVip"].GetString());
+        m_serviceVipHasBeenSet = true;
     }
 
     if (value.HasMember("UniqVpcId") && !value["UniqVpcId"].IsNull())
@@ -106,12 +129,30 @@ CoreInternalOutcome MqttConnectParam::Deserialize(const rapidjson::Value &value)
         m_regionHasBeenSet = true;
     }
 
+    if (value.HasMember("Ip") && !value["Ip"].IsNull())
+    {
+        if (!value["Ip"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MqttConnectParam.Ip` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ip = string(value["Ip"].GetString());
+        m_ipHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void MqttConnectParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
+
+    if (m_portHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Port";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_port, allocator);
+    }
 
     if (m_userNameHasBeenSet)
     {
@@ -135,6 +176,14 @@ void MqttConnectParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "Resource";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceVipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceVip";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serviceVip.c_str(), allocator).Move(), allocator);
     }
 
     if (m_uniqVpcIdHasBeenSet)
@@ -169,8 +218,32 @@ void MqttConnectParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_ipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ip";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ip.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
+
+int64_t MqttConnectParam::GetPort() const
+{
+    return m_port;
+}
+
+void MqttConnectParam::SetPort(const int64_t& _port)
+{
+    m_port = _port;
+    m_portHasBeenSet = true;
+}
+
+bool MqttConnectParam::PortHasBeenSet() const
+{
+    return m_portHasBeenSet;
+}
 
 string MqttConnectParam::GetUserName() const
 {
@@ -218,6 +291,22 @@ void MqttConnectParam::SetResource(const string& _resource)
 bool MqttConnectParam::ResourceHasBeenSet() const
 {
     return m_resourceHasBeenSet;
+}
+
+string MqttConnectParam::GetServiceVip() const
+{
+    return m_serviceVip;
+}
+
+void MqttConnectParam::SetServiceVip(const string& _serviceVip)
+{
+    m_serviceVip = _serviceVip;
+    m_serviceVipHasBeenSet = true;
+}
+
+bool MqttConnectParam::ServiceVipHasBeenSet() const
+{
+    return m_serviceVipHasBeenSet;
 }
 
 string MqttConnectParam::GetUniqVpcId() const
@@ -282,5 +371,21 @@ void MqttConnectParam::SetRegion(const string& _region)
 bool MqttConnectParam::RegionHasBeenSet() const
 {
     return m_regionHasBeenSet;
+}
+
+string MqttConnectParam::GetIp() const
+{
+    return m_ip;
+}
+
+void MqttConnectParam::SetIp(const string& _ip)
+{
+    m_ip = _ip;
+    m_ipHasBeenSet = true;
+}
+
+bool MqttConnectParam::IpHasBeenSet() const
+{
+    return m_ipHasBeenSet;
 }
 

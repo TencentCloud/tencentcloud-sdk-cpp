@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -398,6 +398,31 @@ namespace TencentCloud
                      */
                     bool OwnerIdHasBeenSet() const;
 
+                    /**
+                     * 获取工作流类型，周期cycle，手动manual
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WorkflowType 工作流类型，周期cycle，手动manual
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetWorkflowType() const;
+
+                    /**
+                     * 设置工作流类型，周期cycle，手动manual
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _workflowType 工作流类型，周期cycle，手动manual
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWorkflowType(const std::string& _workflowType);
+
+                    /**
+                     * 判断参数 WorkflowType 是否已赋值
+                     * @return WorkflowType 是否已赋值
+                     * 
+                     */
+                    bool WorkflowTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -497,6 +522,13 @@ namespace TencentCloud
                      */
                     std::string m_ownerId;
                     bool m_ownerIdHasBeenSet;
+
+                    /**
+                     * 工作流类型，周期cycle，手动manual
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_workflowType;
+                    bool m_workflowTypeHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -196,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecretId 证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSecretId() const;
 
                     /**
                      * 设置证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _secretId 证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecretId(const std::string& _secretId);
@@ -305,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取源IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceIPAddress 源IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSourceIPAddress() const;
 
                     /**
                      * 设置源IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sourceIPAddress 源IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSourceIPAddress(const std::string& _sourceIPAddress);
@@ -458,7 +450,6 @@ namespace TencentCloud
 
                     /**
                      * 证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_secretId;
                     bool m_secretIdHasBeenSet;
@@ -489,7 +480,6 @@ namespace TencentCloud
 
                     /**
                      * 源IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sourceIPAddress;
                     bool m_sourceIPAddressHasBeenSet;

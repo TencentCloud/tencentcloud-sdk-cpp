@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,14 +44,18 @@ namespace TencentCloud
 
                     /**
                      * 获取转入的域名名称数组。
+一次提交不大于4000个
                      * @return Domains 转入的域名名称数组。
+一次提交不大于4000个
                      * 
                      */
                     std::vector<std::string> GetDomains() const;
 
                     /**
                      * 设置转入的域名名称数组。
+一次提交不大于4000个
                      * @param _domains 转入的域名名称数组。
+一次提交不大于4000个
                      * 
                      */
                     void SetDomains(const std::vector<std::string>& _domains);
@@ -85,15 +89,19 @@ namespace TencentCloud
                     bool PassWordsHasBeenSet() const;
 
                     /**
-                     * 获取模板ID。
-                     * @return TemplateId 模板ID。
+                     * 获取模板ID。 
+可通过[DescribeTemplateList](https://cloud.tencent.com/document/api/242/48940)接口获取
+                     * @return TemplateId 模板ID。 
+可通过[DescribeTemplateList](https://cloud.tencent.com/document/api/242/48940)接口获取
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置模板ID。
-                     * @param _templateId 模板ID。
+                     * 设置模板ID。 
+可通过[DescribeTemplateList](https://cloud.tencent.com/document/api/242/48940)接口获取
+                     * @param _templateId 模板ID。 
+可通过[DescribeTemplateList](https://cloud.tencent.com/document/api/242/48940)接口获取
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -293,6 +301,7 @@ false：关闭60天内禁止转移注册商锁定
 
                     /**
                      * 转入的域名名称数组。
+一次提交不大于4000个
                      */
                     std::vector<std::string> m_domains;
                     bool m_domainsHasBeenSet;
@@ -304,7 +313,8 @@ false：关闭60天内禁止转移注册商锁定
                     bool m_passWordsHasBeenSet;
 
                     /**
-                     * 模板ID。
+                     * 模板ID。 
+可通过[DescribeTemplateList](https://cloud.tencent.com/document/api/242/48940)接口获取
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;

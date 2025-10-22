@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vpc/v20170312/model/Tag.h>
 
 
 namespace TencentCloud
@@ -43,15 +44,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要开通公网访问能力的IPV6地址
-                     * @return Ip6Addresses 需要开通公网访问能力的IPV6地址
+                     * 获取需要开通公网访问能力的IPv6地址，可以使用[DescribeIp6Addresses](https://cloud.tencent.com/document/product/215/40089)接口查询Ip6Addresses。
+
+                     * @return Ip6Addresses 需要开通公网访问能力的IPv6地址，可以使用[DescribeIp6Addresses](https://cloud.tencent.com/document/product/215/40089)接口查询Ip6Addresses。
+
                      * 
                      */
                     std::vector<std::string> GetIp6Addresses() const;
 
                     /**
-                     * 设置需要开通公网访问能力的IPV6地址
-                     * @param _ip6Addresses 需要开通公网访问能力的IPV6地址
+                     * 设置需要开通公网访问能力的IPv6地址，可以使用[DescribeIp6Addresses](https://cloud.tencent.com/document/product/215/40089)接口查询Ip6Addresses。
+
+                     * @param _ip6Addresses 需要开通公网访问能力的IPv6地址，可以使用[DescribeIp6Addresses](https://cloud.tencent.com/document/product/215/40089)接口查询Ip6Addresses。
+
                      * 
                      */
                     void SetIp6Addresses(const std::vector<std::string>& _ip6Addresses);
@@ -64,15 +69,19 @@ namespace TencentCloud
                     bool Ip6AddressesHasBeenSet() const;
 
                     /**
-                     * 获取带宽，单位Mbps。默认是1Mbps
-                     * @return InternetMaxBandwidthOut 带宽，单位Mbps。默认是1Mbps
+                     * 获取带宽上限，单位Mbps。可调整的带宽上限值参考产品文档中[IPv6 计费限制说明](https://cloud.tencent.com/document/product/1142/38369#IPv6)。
+默认值：1Mbps
+                     * @return InternetMaxBandwidthOut 带宽上限，单位Mbps。可调整的带宽上限值参考产品文档中[IPv6 计费限制说明](https://cloud.tencent.com/document/product/1142/38369#IPv6)。
+默认值：1Mbps
                      * 
                      */
                     int64_t GetInternetMaxBandwidthOut() const;
 
                     /**
-                     * 设置带宽，单位Mbps。默认是1Mbps
-                     * @param _internetMaxBandwidthOut 带宽，单位Mbps。默认是1Mbps
+                     * 设置带宽上限，单位Mbps。可调整的带宽上限值参考产品文档中[IPv6 计费限制说明](https://cloud.tencent.com/document/product/1142/38369#IPv6)。
+默认值：1Mbps
+                     * @param _internetMaxBandwidthOut 带宽上限，单位Mbps。可调整的带宽上限值参考产品文档中[IPv6 计费限制说明](https://cloud.tencent.com/document/product/1142/38369#IPv6)。
+默认值：1Mbps
                      * 
                      */
                     void SetInternetMaxBandwidthOut(const int64_t& _internetMaxBandwidthOut);
@@ -85,15 +94,19 @@ namespace TencentCloud
                     bool InternetMaxBandwidthOutHasBeenSet() const;
 
                     /**
-                     * 获取网络计费模式。IPV6当前支持"TRAFFIC_POSTPAID_BY_HOUR"，"BANDWIDTH_PACKAGE"。默认网络计费模式是"TRAFFIC_POSTPAID_BY_HOUR"。
-                     * @return InternetChargeType 网络计费模式。IPV6当前支持"TRAFFIC_POSTPAID_BY_HOUR"，"BANDWIDTH_PACKAGE"。默认网络计费模式是"TRAFFIC_POSTPAID_BY_HOUR"。
+                     * 获取网络计费模式。IPv6当前支持：<li>TRAFFIC_POSTPAID_BY_HOUR：流量按小时后付费</li><li>BANDWIDTH_PACKAGE：共享带宽包付费</li>
+默认值：TRAFFIC_POSTPAID_BY_HOUR
+                     * @return InternetChargeType 网络计费模式。IPv6当前支持：<li>TRAFFIC_POSTPAID_BY_HOUR：流量按小时后付费</li><li>BANDWIDTH_PACKAGE：共享带宽包付费</li>
+默认值：TRAFFIC_POSTPAID_BY_HOUR
                      * 
                      */
                     std::string GetInternetChargeType() const;
 
                     /**
-                     * 设置网络计费模式。IPV6当前支持"TRAFFIC_POSTPAID_BY_HOUR"，"BANDWIDTH_PACKAGE"。默认网络计费模式是"TRAFFIC_POSTPAID_BY_HOUR"。
-                     * @param _internetChargeType 网络计费模式。IPV6当前支持"TRAFFIC_POSTPAID_BY_HOUR"，"BANDWIDTH_PACKAGE"。默认网络计费模式是"TRAFFIC_POSTPAID_BY_HOUR"。
+                     * 设置网络计费模式。IPv6当前支持：<li>TRAFFIC_POSTPAID_BY_HOUR：流量按小时后付费</li><li>BANDWIDTH_PACKAGE：共享带宽包付费</li>
+默认值：TRAFFIC_POSTPAID_BY_HOUR
+                     * @param _internetChargeType 网络计费模式。IPv6当前支持：<li>TRAFFIC_POSTPAID_BY_HOUR：流量按小时后付费</li><li>BANDWIDTH_PACKAGE：共享带宽包付费</li>
+默认值：TRAFFIC_POSTPAID_BY_HOUR
                      * 
                      */
                     void SetInternetChargeType(const std::string& _internetChargeType);
@@ -106,15 +119,15 @@ namespace TencentCloud
                     bool InternetChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取带宽包id，上移账号，申请带宽包计费模式的ipv6地址需要传入.
-                     * @return BandwidthPackageId 带宽包id，上移账号，申请带宽包计费模式的ipv6地址需要传入.
+                     * 获取带宽包id，设定该参数且InternetChargeType为BANDWIDTH_PACKAGE，则表示创建的IPv6加入该带宽包并采用带宽包计费。可以使用[DescribeBandwidthPackages](https://cloud.tencent.com/document/product/215/19209)接口查询BandwidthPackageId。
+                     * @return BandwidthPackageId 带宽包id，设定该参数且InternetChargeType为BANDWIDTH_PACKAGE，则表示创建的IPv6加入该带宽包并采用带宽包计费。可以使用[DescribeBandwidthPackages](https://cloud.tencent.com/document/product/215/19209)接口查询BandwidthPackageId。
                      * 
                      */
                     std::string GetBandwidthPackageId() const;
 
                     /**
-                     * 设置带宽包id，上移账号，申请带宽包计费模式的ipv6地址需要传入.
-                     * @param _bandwidthPackageId 带宽包id，上移账号，申请带宽包计费模式的ipv6地址需要传入.
+                     * 设置带宽包id，设定该参数且InternetChargeType为BANDWIDTH_PACKAGE，则表示创建的IPv6加入该带宽包并采用带宽包计费。可以使用[DescribeBandwidthPackages](https://cloud.tencent.com/document/product/215/19209)接口查询BandwidthPackageId。
+                     * @param _bandwidthPackageId 带宽包id，设定该参数且InternetChargeType为BANDWIDTH_PACKAGE，则表示创建的IPv6加入该带宽包并采用带宽包计费。可以使用[DescribeBandwidthPackages](https://cloud.tencent.com/document/product/215/19209)接口查询BandwidthPackageId。
                      * 
                      */
                     void SetBandwidthPackageId(const std::string& _bandwidthPackageId);
@@ -126,31 +139,61 @@ namespace TencentCloud
                      */
                     bool BandwidthPackageIdHasBeenSet() const;
 
+                    /**
+                     * 获取需要关联的标签列表。	
+                     * @return Tags 需要关联的标签列表。	
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置需要关联的标签列表。	
+                     * @param _tags 需要关联的标签列表。	
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 需要开通公网访问能力的IPV6地址
+                     * 需要开通公网访问能力的IPv6地址，可以使用[DescribeIp6Addresses](https://cloud.tencent.com/document/product/215/40089)接口查询Ip6Addresses。
+
                      */
                     std::vector<std::string> m_ip6Addresses;
                     bool m_ip6AddressesHasBeenSet;
 
                     /**
-                     * 带宽，单位Mbps。默认是1Mbps
+                     * 带宽上限，单位Mbps。可调整的带宽上限值参考产品文档中[IPv6 计费限制说明](https://cloud.tencent.com/document/product/1142/38369#IPv6)。
+默认值：1Mbps
                      */
                     int64_t m_internetMaxBandwidthOut;
                     bool m_internetMaxBandwidthOutHasBeenSet;
 
                     /**
-                     * 网络计费模式。IPV6当前支持"TRAFFIC_POSTPAID_BY_HOUR"，"BANDWIDTH_PACKAGE"。默认网络计费模式是"TRAFFIC_POSTPAID_BY_HOUR"。
+                     * 网络计费模式。IPv6当前支持：<li>TRAFFIC_POSTPAID_BY_HOUR：流量按小时后付费</li><li>BANDWIDTH_PACKAGE：共享带宽包付费</li>
+默认值：TRAFFIC_POSTPAID_BY_HOUR
                      */
                     std::string m_internetChargeType;
                     bool m_internetChargeTypeHasBeenSet;
 
                     /**
-                     * 带宽包id，上移账号，申请带宽包计费模式的ipv6地址需要传入.
+                     * 带宽包id，设定该参数且InternetChargeType为BANDWIDTH_PACKAGE，则表示创建的IPv6加入该带宽包并采用带宽包计费。可以使用[DescribeBandwidthPackages](https://cloud.tencent.com/document/product/215/19209)接口查询BandwidthPackageId。
                      */
                     std::string m_bandwidthPackageId;
                     bool m_bandwidthPackageIdHasBeenSet;
+
+                    /**
+                     * 需要关联的标签列表。	
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,9 +90,7 @@ namespace TencentCloud
 
                     /**
                      * 获取控制台公网访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConsoleInternetAddress 控制台公网访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConsoleInternetAddress() const;
@@ -106,9 +104,7 @@ namespace TencentCloud
 
                     /**
                      * 获取控制台内网访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConsoleIntranetAddress 控制台内网访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConsoleIntranetAddress() const;
@@ -122,9 +118,7 @@ namespace TencentCloud
 
                     /**
                      * 获取客户端公网带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InternetBandWidth 客户端公网带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInternetBandWidth() const;
@@ -138,9 +132,7 @@ namespace TencentCloud
 
                     /**
                      * 获取控制台公网带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConsoleInternetBandWidth 控制台公网带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetConsoleInternetBandWidth() const;
@@ -170,9 +162,7 @@ namespace TencentCloud
 
                     /**
                      * 获取InternetAddress 的公网 CLB 多可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CLBMultiRegion InternetAddress 的公网 CLB 多可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CLBMultiRegion GetCLBMultiRegion() const;
@@ -206,28 +196,24 @@ namespace TencentCloud
 
                     /**
                      * 控制台公网访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_consoleInternetAddress;
                     bool m_consoleInternetAddressHasBeenSet;
 
                     /**
                      * 控制台内网访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_consoleIntranetAddress;
                     bool m_consoleIntranetAddressHasBeenSet;
 
                     /**
                      * 客户端公网带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_internetBandWidth;
                     bool m_internetBandWidthHasBeenSet;
 
                     /**
                      * 控制台公网带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_consoleInternetBandWidth;
                     bool m_consoleInternetBandWidthHasBeenSet;
@@ -241,7 +227,6 @@ namespace TencentCloud
 
                     /**
                      * InternetAddress 的公网 CLB 多可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CLBMultiRegion m_cLBMultiRegion;
                     bool m_cLBMultiRegionHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,10 @@ ProcedureDebugging::ProcedureDebugging() :
     m_systemHasBeenSet(false),
     m_historiesHasBeenSet(false),
     m_knowledgeHasBeenSet(false),
-    m_taskFlowHasBeenSet(false)
+    m_taskFlowHasBeenSet(false),
+    m_workFlowHasBeenSet(false),
+    m_agentHasBeenSet(false),
+    m_customVariablesHasBeenSet(false)
 {
 }
 
@@ -111,6 +114,53 @@ CoreInternalOutcome ProcedureDebugging::Deserialize(const rapidjson::Value &valu
         m_taskFlowHasBeenSet = true;
     }
 
+    if (value.HasMember("WorkFlow") && !value["WorkFlow"].IsNull())
+    {
+        if (!value["WorkFlow"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProcedureDebugging.WorkFlow` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_workFlow.Deserialize(value["WorkFlow"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_workFlowHasBeenSet = true;
+    }
+
+    if (value.HasMember("Agent") && !value["Agent"].IsNull())
+    {
+        if (!value["Agent"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProcedureDebugging.Agent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_agent.Deserialize(value["Agent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_agentHasBeenSet = true;
+    }
+
+    if (value.HasMember("CustomVariables") && !value["CustomVariables"].IsNull())
+    {
+        if (!value["CustomVariables"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ProcedureDebugging.CustomVariables` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CustomVariables"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_customVariables.push_back((*itr).GetString());
+        }
+        m_customVariablesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -171,6 +221,37 @@ void ProcedureDebugging::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_taskFlow.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_workFlowHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkFlow";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_workFlow.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_agentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Agent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agent.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_customVariablesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomVariables";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_customVariables.begin(); itr != m_customVariables.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -254,5 +335,53 @@ void ProcedureDebugging::SetTaskFlow(const TaskFlowSummary& _taskFlow)
 bool ProcedureDebugging::TaskFlowHasBeenSet() const
 {
     return m_taskFlowHasBeenSet;
+}
+
+WorkFlowSummary ProcedureDebugging::GetWorkFlow() const
+{
+    return m_workFlow;
+}
+
+void ProcedureDebugging::SetWorkFlow(const WorkFlowSummary& _workFlow)
+{
+    m_workFlow = _workFlow;
+    m_workFlowHasBeenSet = true;
+}
+
+bool ProcedureDebugging::WorkFlowHasBeenSet() const
+{
+    return m_workFlowHasBeenSet;
+}
+
+AgentDebugInfo ProcedureDebugging::GetAgent() const
+{
+    return m_agent;
+}
+
+void ProcedureDebugging::SetAgent(const AgentDebugInfo& _agent)
+{
+    m_agent = _agent;
+    m_agentHasBeenSet = true;
+}
+
+bool ProcedureDebugging::AgentHasBeenSet() const
+{
+    return m_agentHasBeenSet;
+}
+
+vector<string> ProcedureDebugging::GetCustomVariables() const
+{
+    return m_customVariables;
+}
+
+void ProcedureDebugging::SetCustomVariables(const vector<string>& _customVariables)
+{
+    m_customVariables = _customVariables;
+    m_customVariablesHasBeenSet = true;
+}
+
+bool ProcedureDebugging::CustomVariablesHasBeenSet() const
+{
+    return m_customVariablesHasBeenSet;
 }
 

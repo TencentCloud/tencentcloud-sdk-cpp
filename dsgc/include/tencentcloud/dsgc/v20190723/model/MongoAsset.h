@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取DB总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbNums DB总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDbNums() const;
 
                     /**
                      * 设置DB总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dbNums DB总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDbNums(const int64_t& _dbNums);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感DB数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SensitiveDbNums 敏感DB数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSensitiveDbNums() const;
 
                     /**
                      * 设置敏感DB数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sensitiveDbNums 敏感DB数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSensitiveDbNums(const int64_t& _sensitiveDbNums);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集合数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ColNums 集合数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetColNums() const;
 
                     /**
                      * 设置集合数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _colNums 集合数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetColNums(const int64_t& _colNums);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感集合的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SensitiveColNums 敏感集合的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSensitiveColNums() const;
 
                     /**
                      * 设置敏感集合的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sensitiveColNums 敏感集合的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSensitiveColNums(const int64_t& _sensitiveColNums);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取字段数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FieldNums 字段数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFieldNums() const;
 
                     /**
                      * 设置字段数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fieldNums 字段数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFieldNums(const int64_t& _fieldNums);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感的字段数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SensitiveFieldNums 敏感的字段数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSensitiveFieldNums() const;
 
                     /**
                      * 设置敏感的字段数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sensitiveFieldNums 敏感的字段数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSensitiveFieldNums(const int64_t& _sensitiveFieldNums);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * DB总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_dbNums;
                     bool m_dbNumsHasBeenSet;
 
                     /**
                      * 敏感DB数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sensitiveDbNums;
                     bool m_sensitiveDbNumsHasBeenSet;
 
                     /**
                      * 集合数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_colNums;
                     bool m_colNumsHasBeenSet;
 
                     /**
                      * 敏感集合的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sensitiveColNums;
                     bool m_sensitiveColNumsHasBeenSet;
 
                     /**
                      * 字段数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_fieldNums;
                     bool m_fieldNumsHasBeenSet;
 
                     /**
                      * 敏感的字段数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sensitiveFieldNums;
                     bool m_sensitiveFieldNumsHasBeenSet;

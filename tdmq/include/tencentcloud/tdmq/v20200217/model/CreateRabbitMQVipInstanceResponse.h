@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,10 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取订单号Id
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TranId 订单号Id
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取订单号 ID
+                     * @return TranId 订单号 ID
                      * 
                      */
                     std::string GetTranId() const;
@@ -60,10 +58,8 @@ namespace TencentCloud
                     bool TranIdHasBeenSet() const;
 
                     /**
-                     * 获取实例Id
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceId 实例Id
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取实例 ID
+                     * @return InstanceId 实例 ID
                      * 
                      */
                     std::string GetInstanceId() const;
@@ -78,15 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 订单号Id
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 订单号 ID
                      */
                     std::string m_tranId;
                     bool m_tranIdHasBeenSet;
 
                     /**
-                     * 实例Id
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 实例 ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

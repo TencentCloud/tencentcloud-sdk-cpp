@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,10 @@ GovernanceService::GovernanceService() :
     m_removeUserIdsHasBeenSet(false),
     m_removeGroupIdsHasBeenSet(false),
     m_exportToHasBeenSet(false),
-    m_revisionHasBeenSet(false)
+    m_revisionHasBeenSet(false),
+    m_syncToGlobalRegistryHasBeenSet(false),
+    m_isolateInstanceCountHasBeenSet(false),
+    m_serviceStatusHasBeenSet(false)
 {
 }
 
@@ -252,6 +255,36 @@ CoreInternalOutcome GovernanceService::Deserialize(const rapidjson::Value &value
         m_revisionHasBeenSet = true;
     }
 
+    if (value.HasMember("SyncToGlobalRegistry") && !value["SyncToGlobalRegistry"].IsNull())
+    {
+        if (!value["SyncToGlobalRegistry"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `GovernanceService.SyncToGlobalRegistry` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_syncToGlobalRegistry = value["SyncToGlobalRegistry"].GetBool();
+        m_syncToGlobalRegistryHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsolateInstanceCount") && !value["IsolateInstanceCount"].IsNull())
+    {
+        if (!value["IsolateInstanceCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `GovernanceService.IsolateInstanceCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isolateInstanceCount = value["IsolateInstanceCount"].GetUint64();
+        m_isolateInstanceCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("ServiceStatus") && !value["ServiceStatus"].IsNull())
+    {
+        if (!value["ServiceStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `GovernanceService.ServiceStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_serviceStatus = value["ServiceStatus"].GetInt64();
+        m_serviceStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -433,6 +466,30 @@ void GovernanceService::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Revision";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_revision.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_syncToGlobalRegistryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncToGlobalRegistry";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_syncToGlobalRegistry, allocator);
+    }
+
+    if (m_isolateInstanceCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsolateInstanceCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isolateInstanceCount, allocator);
+    }
+
+    if (m_serviceStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_serviceStatus, allocator);
     }
 
 }
@@ -724,5 +781,53 @@ void GovernanceService::SetRevision(const string& _revision)
 bool GovernanceService::RevisionHasBeenSet() const
 {
     return m_revisionHasBeenSet;
+}
+
+bool GovernanceService::GetSyncToGlobalRegistry() const
+{
+    return m_syncToGlobalRegistry;
+}
+
+void GovernanceService::SetSyncToGlobalRegistry(const bool& _syncToGlobalRegistry)
+{
+    m_syncToGlobalRegistry = _syncToGlobalRegistry;
+    m_syncToGlobalRegistryHasBeenSet = true;
+}
+
+bool GovernanceService::SyncToGlobalRegistryHasBeenSet() const
+{
+    return m_syncToGlobalRegistryHasBeenSet;
+}
+
+uint64_t GovernanceService::GetIsolateInstanceCount() const
+{
+    return m_isolateInstanceCount;
+}
+
+void GovernanceService::SetIsolateInstanceCount(const uint64_t& _isolateInstanceCount)
+{
+    m_isolateInstanceCount = _isolateInstanceCount;
+    m_isolateInstanceCountHasBeenSet = true;
+}
+
+bool GovernanceService::IsolateInstanceCountHasBeenSet() const
+{
+    return m_isolateInstanceCountHasBeenSet;
+}
+
+int64_t GovernanceService::GetServiceStatus() const
+{
+    return m_serviceStatus;
+}
+
+void GovernanceService::SetServiceStatus(const int64_t& _serviceStatus)
+{
+    m_serviceStatus = _serviceStatus;
+    m_serviceStatusHasBeenSet = true;
+}
+
+bool GovernanceService::ServiceStatusHasBeenSet() const
+{
+    return m_serviceStatusHasBeenSet;
 }
 

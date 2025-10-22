@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -23,8 +23,10 @@ set(vrs_public_header_model
   include/tencentcloud/vrs/v20200824/model/DescribeVRSTaskStatusResponse.h
   include/tencentcloud/vrs/v20200824/model/GetTrainingTextRequest.h
   include/tencentcloud/vrs/v20200824/model/DownloadVRSModelRequest.h
+  include/tencentcloud/vrs/v20200824/model/GetVRSVoiceTypeInfoResponse.h
   include/tencentcloud/vrs/v20200824/model/DownloadVRSModelResponse.h
   include/tencentcloud/vrs/v20200824/model/GetVRSVoiceTypesResponse.h
+  include/tencentcloud/vrs/v20200824/model/GetVRSVoiceTypeInfoRequest.h
   include/tencentcloud/vrs/v20200824/model/CancelVRSTaskResponse.h
   include/tencentcloud/vrs/v20200824/model/CreateVRSTaskResponse.h
   include/tencentcloud/vrs/v20200824/model/GetVRSVoiceTypesRequest.h
@@ -51,8 +53,10 @@ set(vrs_src
   src/v20200824/model/DescribeVRSTaskStatusResponse.cpp
   src/v20200824/model/GetTrainingTextRequest.cpp
   src/v20200824/model/DownloadVRSModelRequest.cpp
+  src/v20200824/model/GetVRSVoiceTypeInfoResponse.cpp
   src/v20200824/model/DownloadVRSModelResponse.cpp
   src/v20200824/model/GetVRSVoiceTypesResponse.cpp
+  src/v20200824/model/GetVRSVoiceTypeInfoRequest.cpp
   src/v20200824/model/CancelVRSTaskResponse.cpp
   src/v20200824/model/CreateVRSTaskResponse.cpp
   src/v20200824/model/GetVRSVoiceTypesRequest.cpp

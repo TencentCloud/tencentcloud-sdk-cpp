@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该次任务执行的具体完整时间，格式为"2020-07-13 00:00:00"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExecuteAt 该次任务执行的具体完整时间，格式为"2020-07-13 00:00:00"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExecuteAt() const;
 
                     /**
                      * 设置该次任务执行的具体完整时间，格式为"2020-07-13 00:00:00"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _executeAt 该次任务执行的具体完整时间，格式为"2020-07-13 00:00:00"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExecuteAt(const std::string& _executeAt);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * 该次任务执行的具体完整时间，格式为"2020-07-13 00:00:00"
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_executeAt;
                     bool m_executeAtHasBeenSet;

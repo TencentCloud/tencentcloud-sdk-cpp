@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -110,19 +110,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取Encryptid
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Encrypt Encryptid
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取Encrypted
+                     * @return Encrypt Encrypted
                      * 
                      */
                     int64_t GetEncrypt() const;
 
                     /**
-                     * 设置Encryptid
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _encrypt Encryptid
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置Encrypted
+                     * @param _encrypt Encrypted
                      * 
                      */
                     void SetEncrypt(const int64_t& _encrypt);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否为主力园区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Main 是否为主力园区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetMain() const;
 
                     /**
                      * 设置是否为主力园区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _main 是否为主力园区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMain(const bool& _main);
@@ -158,6 +150,27 @@ namespace TencentCloud
                      * 
                      */
                     bool MainHasBeenSet() const;
+
+                    /**
+                     * 获取0表示未开通容器化，1表示已开通容器化
+                     * @return ContainerEnabled 0表示未开通容器化，1表示已开通容器化
+                     * 
+                     */
+                    int64_t GetContainerEnabled() const;
+
+                    /**
+                     * 设置0表示未开通容器化，1表示已开通容器化
+                     * @param _containerEnabled 0表示未开通容器化，1表示已开通容器化
+                     * 
+                     */
+                    void SetContainerEnabled(const int64_t& _containerEnabled);
+
+                    /**
+                     * 判断参数 ContainerEnabled 是否已赋值
+                     * @return ContainerEnabled 是否已赋值
+                     * 
+                     */
+                    bool ContainerEnabledHasBeenSet() const;
 
                 private:
 
@@ -180,18 +193,22 @@ namespace TencentCloud
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * Encryptid
-注意：此字段可能返回 null，表示取不到有效值。
+                     * Encrypted
                      */
                     int64_t m_encrypt;
                     bool m_encryptHasBeenSet;
 
                     /**
                      * 是否为主力园区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_main;
                     bool m_mainHasBeenSet;
+
+                    /**
+                     * 0表示未开通容器化，1表示已开通容器化
+                     */
+                    int64_t m_containerEnabled;
+                    bool m_containerEnabledHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -79,11 +79,9 @@ namespace TencentCloud
                      * 获取CacheKey使用QueryString的方式，取值有：
 <li>includeCustom：使用部分url参数；</li>
 <li>excludeCustom：排除部分url参数。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Action CacheKey使用QueryString的方式，取值有：
 <li>includeCustom：使用部分url参数；</li>
 <li>excludeCustom：排除部分url参数。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAction() const;
@@ -92,11 +90,9 @@ namespace TencentCloud
                      * 设置CacheKey使用QueryString的方式，取值有：
 <li>includeCustom：使用部分url参数；</li>
 <li>excludeCustom：排除部分url参数。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _action CacheKey使用QueryString的方式，取值有：
 <li>includeCustom：使用部分url参数；</li>
 <li>excludeCustom：排除部分url参数。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAction(const std::string& _action);
@@ -110,18 +106,14 @@ namespace TencentCloud
 
                     /**
                      * 获取使用/排除的url参数数组。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 使用/排除的url参数数组。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetValue() const;
 
                     /**
                      * 设置使用/排除的url参数数组。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 使用/排除的url参数数组。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::vector<std::string>& _value);
@@ -147,14 +139,12 @@ namespace TencentCloud
                      * CacheKey使用QueryString的方式，取值有：
 <li>includeCustom：使用部分url参数；</li>
 <li>excludeCustom：排除部分url参数。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_action;
                     bool m_actionHasBeenSet;
 
                     /**
                      * 使用/排除的url参数数组。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_value;
                     bool m_valueHasBeenSet;

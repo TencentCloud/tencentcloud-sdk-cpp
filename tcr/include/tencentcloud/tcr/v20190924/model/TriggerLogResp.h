@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,18 +51,14 @@ namespace TencentCloud
 
                     /**
                      * 获取仓库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RepoName 仓库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRepoName() const;
 
                     /**
                      * 设置仓库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _repoName 仓库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRepoName(const std::string& _repoName);
@@ -76,18 +72,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Tag名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagName Tag名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTagName() const;
 
                     /**
                      * 设置Tag名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tagName Tag名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTagName(const std::string& _tagName);
@@ -101,18 +93,14 @@ namespace TencentCloud
 
                     /**
                      * 获取触发器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TriggerName 触发器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTriggerName() const;
 
                     /**
                      * 设置触发器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _triggerName 触发器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTriggerName(const std::string& _triggerName);
@@ -126,18 +114,14 @@ namespace TencentCloud
 
                     /**
                      * 获取触发方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InvokeSource 触发方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInvokeSource() const;
 
                     /**
                      * 设置触发方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _invokeSource 触发方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInvokeSource(const std::string& _invokeSource);
@@ -151,18 +135,14 @@ namespace TencentCloud
 
                     /**
                      * 获取触发动作
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InvokeAction 触发动作
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInvokeAction() const;
 
                     /**
                      * 设置触发动作
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _invokeAction 触发动作
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInvokeAction(const std::string& _invokeAction);
@@ -176,18 +156,14 @@ namespace TencentCloud
 
                     /**
                      * 获取触发时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InvokeTime 触发时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInvokeTime() const;
 
                     /**
                      * 设置触发时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _invokeTime 触发时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInvokeTime(const std::string& _invokeTime);
@@ -201,18 +177,14 @@ namespace TencentCloud
 
                     /**
                      * 获取触发条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InvokeCondition 触发条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TriggerInvokeCondition GetInvokeCondition() const;
 
                     /**
                      * 设置触发条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _invokeCondition 触发条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInvokeCondition(const TriggerInvokeCondition& _invokeCondition);
@@ -226,18 +198,14 @@ namespace TencentCloud
 
                     /**
                      * 获取触发参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InvokePara 触发参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TriggerInvokePara GetInvokePara() const;
 
                     /**
                      * 设置触发参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _invokePara 触发参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInvokePara(const TriggerInvokePara& _invokePara);
@@ -251,18 +219,14 @@ namespace TencentCloud
 
                     /**
                      * 获取触发结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InvokeResult 触发结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TriggerInvokeResult GetInvokeResult() const;
 
                     /**
                      * 设置触发结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _invokeResult 触发结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInvokeResult(const TriggerInvokeResult& _invokeResult);
@@ -278,63 +242,54 @@ namespace TencentCloud
 
                     /**
                      * 仓库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_repoName;
                     bool m_repoNameHasBeenSet;
 
                     /**
                      * Tag名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tagName;
                     bool m_tagNameHasBeenSet;
 
                     /**
                      * 触发器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_triggerName;
                     bool m_triggerNameHasBeenSet;
 
                     /**
                      * 触发方式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_invokeSource;
                     bool m_invokeSourceHasBeenSet;
 
                     /**
                      * 触发动作
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_invokeAction;
                     bool m_invokeActionHasBeenSet;
 
                     /**
                      * 触发时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_invokeTime;
                     bool m_invokeTimeHasBeenSet;
 
                     /**
                      * 触发条件
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TriggerInvokeCondition m_invokeCondition;
                     bool m_invokeConditionHasBeenSet;
 
                     /**
                      * 触发参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TriggerInvokePara m_invokePara;
                     bool m_invokeParaHasBeenSet;
 
                     /**
                      * 触发结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TriggerInvokeResult m_invokeResult;
                     bool m_invokeResultHasBeenSet;

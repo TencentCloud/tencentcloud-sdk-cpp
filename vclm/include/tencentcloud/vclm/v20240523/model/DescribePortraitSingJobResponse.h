@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -94,8 +94,8 @@ namespace TencentCloud
                     bool StatusMsgHasBeenSet() const;
 
                     /**
-                     * 获取错误码
-                     * @return ErrorCode 错误码
+                     * 获取任务执行错误码。当任务状态不为FAIL时，该值为""。
+                     * @return ErrorCode 任务执行错误码。当任务状态不为FAIL时，该值为""。
                      * 
                      */
                     std::string GetErrorCode() const;
@@ -108,8 +108,8 @@ namespace TencentCloud
                     bool ErrorCodeHasBeenSet() const;
 
                     /**
-                     * 获取错误信息
-                     * @return ErrorMessage 错误信息
+                     * 获取任务执行错误信息。当任务状态不为FAIL时，该值为""。
+                     * @return ErrorMessage 任务执行错误信息。当任务状态不为FAIL时，该值为""。
                      * 
                      */
                     std::string GetErrorMessage() const;
@@ -122,10 +122,8 @@ namespace TencentCloud
                     bool ErrorMessageHasBeenSet() const;
 
                     /**
-                     * 获取生成视频的URL地址
-有效期24小时
-                     * @return ResultVideoUrl 生成视频的URL地址
-有效期24小时
+                     * 获取生成视频的URL地址。有效期24小时。
+                     * @return ResultVideoUrl 生成视频的URL地址。有效期24小时。
                      * 
                      */
                     std::string GetResultVideoUrl() const;
@@ -162,20 +160,19 @@ namespace TencentCloud
                     bool m_statusMsgHasBeenSet;
 
                     /**
-                     * 错误码
+                     * 任务执行错误码。当任务状态不为FAIL时，该值为""。
                      */
                     std::string m_errorCode;
                     bool m_errorCodeHasBeenSet;
 
                     /**
-                     * 错误信息
+                     * 任务执行错误信息。当任务状态不为FAIL时，该值为""。
                      */
                     std::string m_errorMessage;
                     bool m_errorMessageHasBeenSet;
 
                     /**
-                     * 生成视频的URL地址
-有效期24小时
+                     * 生成视频的URL地址。有效期24小时。
                      */
                     std::string m_resultVideoUrl;
                     bool m_resultVideoUrlHasBeenSet;

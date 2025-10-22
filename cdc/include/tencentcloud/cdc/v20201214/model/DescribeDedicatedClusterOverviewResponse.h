@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,9 +76,7 @@ namespace TencentCloud
 
                     /**
                      * 获取vpn通道状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpnConnectionState vpn通道状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpnConnectionState() const;
@@ -92,9 +90,7 @@ namespace TencentCloud
 
                     /**
                      * 获取vpn网关监控数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpngwBandwidthData vpn网关监控数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     VpngwBandwidthData GetVpngwBandwidthData() const;
@@ -108,9 +104,7 @@ namespace TencentCloud
 
                     /**
                      * 获取本地网关信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LocalNetInfo 本地网关信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     LocalNetInfo GetLocalNetInfo() const;
@@ -124,9 +118,7 @@ namespace TencentCloud
 
                     /**
                      * 获取vpn网关通道监控数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpnConnectionBandwidthData vpn网关通道监控数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VpngwBandwidthData> GetVpnConnectionBandwidthData() const;
@@ -140,9 +132,7 @@ namespace TencentCloud
 
                     /**
                      * 获取宿主机资源概览信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostDetailInfo 宿主机资源概览信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<HostDetailInfo> GetHostDetailInfo() const;
@@ -156,9 +146,7 @@ namespace TencentCloud
 
                     /**
                      * 获取热备宿主机数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostStandbyCount 热备宿主机数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetHostStandbyCount() const;
@@ -172,9 +160,7 @@ namespace TencentCloud
 
                     /**
                      * 获取普通宿主机数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostNormalCount 普通宿主机数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetHostNormalCount() const;
@@ -202,49 +188,42 @@ namespace TencentCloud
 
                     /**
                      * vpn通道状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpnConnectionState;
                     bool m_vpnConnectionStateHasBeenSet;
 
                     /**
                      * vpn网关监控数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     VpngwBandwidthData m_vpngwBandwidthData;
                     bool m_vpngwBandwidthDataHasBeenSet;
 
                     /**
                      * 本地网关信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     LocalNetInfo m_localNetInfo;
                     bool m_localNetInfoHasBeenSet;
 
                     /**
                      * vpn网关通道监控数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VpngwBandwidthData> m_vpnConnectionBandwidthData;
                     bool m_vpnConnectionBandwidthDataHasBeenSet;
 
                     /**
                      * 宿主机资源概览信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<HostDetailInfo> m_hostDetailInfo;
                     bool m_hostDetailInfoHasBeenSet;
 
                     /**
                      * 热备宿主机数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_hostStandbyCount;
                     bool m_hostStandbyCountHasBeenSet;
 
                     /**
                      * 普通宿主机数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_hostNormalCount;
                     bool m_hostNormalCountHasBeenSet;

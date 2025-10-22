@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,8 +71,10 @@ namespace TencentCloud
                     /**
                      * 获取对新背景的文本描述。
 最多支持256个 utf-8 字符，支持中、英文。
+如果 Prompt = "BackgroundTemplate" 代表启用背景模板，需要在参数 BackgroundTemplate 中指定一个背景名称。
                      * @return Prompt 对新背景的文本描述。
 最多支持256个 utf-8 字符，支持中、英文。
+如果 Prompt = "BackgroundTemplate" 代表启用背景模板，需要在参数 BackgroundTemplate 中指定一个背景名称。
                      * 
                      */
                     std::string GetPrompt() const;
@@ -80,8 +82,10 @@ namespace TencentCloud
                     /**
                      * 设置对新背景的文本描述。
 最多支持256个 utf-8 字符，支持中、英文。
+如果 Prompt = "BackgroundTemplate" 代表启用背景模板，需要在参数 BackgroundTemplate 中指定一个背景名称。
                      * @param _prompt 对新背景的文本描述。
 最多支持256个 utf-8 字符，支持中、英文。
+如果 Prompt = "BackgroundTemplate" 代表启用背景模板，需要在参数 BackgroundTemplate 中指定一个背景名称。
                      * 
                      */
                     void SetPrompt(const std::string& _prompt);
@@ -94,9 +98,36 @@ namespace TencentCloud
                     bool PromptHasBeenSet() const;
 
                     /**
+                     * 获取反向提示词。
+最多支持256个 utf-8 字符，支持中、英文。
+                     * @return NegativePrompt 反向提示词。
+最多支持256个 utf-8 字符，支持中、英文。
+                     * 
+                     */
+                    std::string GetNegativePrompt() const;
+
+                    /**
+                     * 设置反向提示词。
+最多支持256个 utf-8 字符，支持中、英文。
+                     * @param _negativePrompt 反向提示词。
+最多支持256个 utf-8 字符，支持中、英文。
+                     * 
+                     */
+                    void SetNegativePrompt(const std::string& _negativePrompt);
+
+                    /**
+                     * 判断参数 NegativePrompt 是否已赋值
+                     * @return NegativePrompt 是否已赋值
+                     * 
+                     */
+                    bool NegativePromptHasBeenSet() const;
+
+                    /**
                      * 获取商品图中的商品主体名称。
+最多支持50个 utf-8 字符，支持中、英文。
 建议说明商品主体，否则影响生成效果。
                      * @return Product 商品图中的商品主体名称。
+最多支持50个 utf-8 字符，支持中、英文。
 建议说明商品主体，否则影响生成效果。
                      * 
                      */
@@ -104,8 +135,10 @@ namespace TencentCloud
 
                     /**
                      * 设置商品图中的商品主体名称。
+最多支持50个 utf-8 字符，支持中、英文。
 建议说明商品主体，否则影响生成效果。
                      * @param _product 商品图中的商品主体名称。
+最多支持50个 utf-8 字符，支持中、英文。
 建议说明商品主体，否则影响生成效果。
                      * 
                      */
@@ -117,6 +150,31 @@ namespace TencentCloud
                      * 
                      */
                     bool ProductHasBeenSet() const;
+
+                    /**
+                     * 获取背景模板。
+仅当 Prompt = "BackgroundTemplate" 时生效，可支持的模板详见 [商品背景模板列表](https://cloud.tencent.com/document/product/1668/115391) ，请传入字段“背景名称”中的值。
+                     * @return BackgroundTemplate 背景模板。
+仅当 Prompt = "BackgroundTemplate" 时生效，可支持的模板详见 [商品背景模板列表](https://cloud.tencent.com/document/product/1668/115391) ，请传入字段“背景名称”中的值。
+                     * 
+                     */
+                    std::string GetBackgroundTemplate() const;
+
+                    /**
+                     * 设置背景模板。
+仅当 Prompt = "BackgroundTemplate" 时生效，可支持的模板详见 [商品背景模板列表](https://cloud.tencent.com/document/product/1668/115391) ，请传入字段“背景名称”中的值。
+                     * @param _backgroundTemplate 背景模板。
+仅当 Prompt = "BackgroundTemplate" 时生效，可支持的模板详见 [商品背景模板列表](https://cloud.tencent.com/document/product/1668/115391) ，请传入字段“背景名称”中的值。
+                     * 
+                     */
+                    void SetBackgroundTemplate(const std::string& _backgroundTemplate);
+
+                    /**
+                     * 判断参数 BackgroundTemplate 是否已赋值
+                     * @return BackgroundTemplate 是否已赋值
+                     * 
+                     */
+                    bool BackgroundTemplateHasBeenSet() const;
 
                     /**
                      * 获取商品 Mask 图 Url，要求背景透明，保留商品主体。
@@ -279,16 +337,32 @@ namespace TencentCloud
                     /**
                      * 对新背景的文本描述。
 最多支持256个 utf-8 字符，支持中、英文。
+如果 Prompt = "BackgroundTemplate" 代表启用背景模板，需要在参数 BackgroundTemplate 中指定一个背景名称。
                      */
                     std::string m_prompt;
                     bool m_promptHasBeenSet;
 
                     /**
+                     * 反向提示词。
+最多支持256个 utf-8 字符，支持中、英文。
+                     */
+                    std::string m_negativePrompt;
+                    bool m_negativePromptHasBeenSet;
+
+                    /**
                      * 商品图中的商品主体名称。
+最多支持50个 utf-8 字符，支持中、英文。
 建议说明商品主体，否则影响生成效果。
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;
+
+                    /**
+                     * 背景模板。
+仅当 Prompt = "BackgroundTemplate" 时生效，可支持的模板详见 [商品背景模板列表](https://cloud.tencent.com/document/product/1668/115391) ，请传入字段“背景名称”中的值。
+                     */
+                    std::string m_backgroundTemplate;
+                    bool m_backgroundTemplateHasBeenSet;
 
                     /**
                      * 商品 Mask 图 Url，要求背景透明，保留商品主体。

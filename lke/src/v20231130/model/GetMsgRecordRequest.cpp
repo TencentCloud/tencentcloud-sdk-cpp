@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,10 @@ GetMsgRecordRequest::GetMsgRecordRequest() :
     m_typeHasBeenSet(false),
     m_countHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
-    m_lastRecordIdHasBeenSet(false),
     m_botAppKeyHasBeenSet(false),
-    m_sceneHasBeenSet(false)
+    m_sceneHasBeenSet(false),
+    m_lastRecordIdHasBeenSet(false),
+    m_midRecordIdHasBeenSet(false)
 {
 }
 
@@ -63,14 +64,6 @@ string GetMsgRecordRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_lastRecordIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "LastRecordId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_lastRecordId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_botAppKeyHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -85,6 +78,22 @@ string GetMsgRecordRequest::ToJsonString() const
         string key = "Scene";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_scene, allocator);
+    }
+
+    if (m_lastRecordIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastRecordId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_lastRecordId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_midRecordIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MidRecordId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_midRecordId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -143,22 +152,6 @@ bool GetMsgRecordRequest::SessionIdHasBeenSet() const
     return m_sessionIdHasBeenSet;
 }
 
-string GetMsgRecordRequest::GetLastRecordId() const
-{
-    return m_lastRecordId;
-}
-
-void GetMsgRecordRequest::SetLastRecordId(const string& _lastRecordId)
-{
-    m_lastRecordId = _lastRecordId;
-    m_lastRecordIdHasBeenSet = true;
-}
-
-bool GetMsgRecordRequest::LastRecordIdHasBeenSet() const
-{
-    return m_lastRecordIdHasBeenSet;
-}
-
 string GetMsgRecordRequest::GetBotAppKey() const
 {
     return m_botAppKey;
@@ -189,6 +182,38 @@ void GetMsgRecordRequest::SetScene(const uint64_t& _scene)
 bool GetMsgRecordRequest::SceneHasBeenSet() const
 {
     return m_sceneHasBeenSet;
+}
+
+string GetMsgRecordRequest::GetLastRecordId() const
+{
+    return m_lastRecordId;
+}
+
+void GetMsgRecordRequest::SetLastRecordId(const string& _lastRecordId)
+{
+    m_lastRecordId = _lastRecordId;
+    m_lastRecordIdHasBeenSet = true;
+}
+
+bool GetMsgRecordRequest::LastRecordIdHasBeenSet() const
+{
+    return m_lastRecordIdHasBeenSet;
+}
+
+string GetMsgRecordRequest::GetMidRecordId() const
+{
+    return m_midRecordId;
+}
+
+void GetMsgRecordRequest::SetMidRecordId(const string& _midRecordId)
+{
+    m_midRecordId = _midRecordId;
+    m_midRecordIdHasBeenSet = true;
+}
+
+bool GetMsgRecordRequest::MidRecordIdHasBeenSet() const
+{
+    return m_midRecordIdHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -151,42 +151,42 @@ namespace TencentCloud
                     /**
                      * 获取实例状态(1=创建中，2=运行中，3=异常，4=重启中，5=停止中，6=已停止，7=销毁中，8=已销毁), 该参数已废弃，请在Filters内注明
                      * @return InstanceStatuses 实例状态(1=创建中，2=运行中，3=异常，4=重启中，5=停止中，6=已停止，7=销毁中，8=已销毁), 该参数已废弃，请在Filters内注明
-                     * 
+                     * @deprecated
                      */
                     std::vector<int64_t> GetInstanceStatuses() const;
 
                     /**
                      * 设置实例状态(1=创建中，2=运行中，3=异常，4=重启中，5=停止中，6=已停止，7=销毁中，8=已销毁), 该参数已废弃，请在Filters内注明
                      * @param _instanceStatuses 实例状态(1=创建中，2=运行中，3=异常，4=重启中，5=停止中，6=已停止，7=销毁中，8=已销毁), 该参数已废弃，请在Filters内注明
-                     * 
+                     * @deprecated
                      */
                     void SetInstanceStatuses(const std::vector<int64_t>& _instanceStatuses);
 
                     /**
                      * 判断参数 InstanceStatuses 是否已赋值
                      * @return InstanceStatuses 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool InstanceStatusesHasBeenSet() const;
 
                     /**
                      * 获取实例Id, 该参数已废弃，请在Filters内注明
                      * @return InstanceIds 实例Id, 该参数已废弃，请在Filters内注明
-                     * 
+                     * @deprecated
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置实例Id, 该参数已废弃，请在Filters内注明
                      * @param _instanceIds 实例Id, 该参数已废弃，请在Filters内注明
-                     * 
+                     * @deprecated
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool InstanceIdsHasBeenSet() const;
 
@@ -214,21 +214,21 @@ namespace TencentCloud
                     /**
                      * 获取该参数已废弃，demo模式请在Filters内注明
                      * @return IsDemo 该参数已废弃，demo模式请在Filters内注明
-                     * 
+                     * @deprecated
                      */
                     int64_t GetIsDemo() const;
 
                     /**
                      * 设置该参数已废弃，demo模式请在Filters内注明
                      * @param _isDemo 该参数已废弃，demo模式请在Filters内注明
-                     * 
+                     * @deprecated
                      */
                     void SetIsDemo(const int64_t& _isDemo);
 
                     /**
                      * 判断参数 IsDemo 是否已赋值
                      * @return IsDemo 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool IsDemoHasBeenSet() const;
 

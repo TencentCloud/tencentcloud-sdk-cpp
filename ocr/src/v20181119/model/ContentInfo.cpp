@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,9 @@ ContentInfo::ContentInfo() :
     m_contentHasBeenSet(false),
     m_confidenceHasBeenSet(false),
     m_isInCompleteHasBeenSet(false),
-    m_isReflectHasBeenSet(false)
+    m_isReflectHasBeenSet(false),
+    m_isKeyInCompleteHasBeenSet(false),
+    m_isKeyReflectHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome ContentInfo::Deserialize(const rapidjson::Value &value)
         m_isReflectHasBeenSet = true;
     }
 
+    if (value.HasMember("IsKeyInComplete") && !value["IsKeyInComplete"].IsNull())
+    {
+        if (!value["IsKeyInComplete"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ContentInfo.IsKeyInComplete` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isKeyInComplete = value["IsKeyInComplete"].GetInt64();
+        m_isKeyInCompleteHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsKeyReflect") && !value["IsKeyReflect"].IsNull())
+    {
+        if (!value["IsKeyReflect"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ContentInfo.IsKeyReflect` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isKeyReflect = value["IsKeyReflect"].GetInt64();
+        m_isKeyReflectHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +132,22 @@ void ContentInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "IsReflect";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isReflect, allocator);
+    }
+
+    if (m_isKeyInCompleteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsKeyInComplete";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isKeyInComplete, allocator);
+    }
+
+    if (m_isKeyReflectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsKeyReflect";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isKeyReflect, allocator);
     }
 
 }
@@ -177,5 +215,37 @@ void ContentInfo::SetIsReflect(const int64_t& _isReflect)
 bool ContentInfo::IsReflectHasBeenSet() const
 {
     return m_isReflectHasBeenSet;
+}
+
+int64_t ContentInfo::GetIsKeyInComplete() const
+{
+    return m_isKeyInComplete;
+}
+
+void ContentInfo::SetIsKeyInComplete(const int64_t& _isKeyInComplete)
+{
+    m_isKeyInComplete = _isKeyInComplete;
+    m_isKeyInCompleteHasBeenSet = true;
+}
+
+bool ContentInfo::IsKeyInCompleteHasBeenSet() const
+{
+    return m_isKeyInCompleteHasBeenSet;
+}
+
+int64_t ContentInfo::GetIsKeyReflect() const
+{
+    return m_isKeyReflect;
+}
+
+void ContentInfo::SetIsKeyReflect(const int64_t& _isKeyReflect)
+{
+    m_isKeyReflect = _isKeyReflect;
+    m_isKeyReflectHasBeenSet = true;
+}
+
+bool ContentInfo::IsKeyReflectHasBeenSet() const
+{
+    return m_isKeyReflectHasBeenSet;
 }
 

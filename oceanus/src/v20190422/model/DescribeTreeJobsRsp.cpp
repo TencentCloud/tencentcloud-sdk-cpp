@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,9 @@ DescribeTreeJobsRsp::DescribeTreeJobsRsp() :
     m_nameHasBeenSet(false),
     m_jobSetHasBeenSet(false),
     m_childrenHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+    m_requestIdHasBeenSet(false),
+    m_pageAttachHasBeenSet(false),
+    m_hasMoreHasBeenSet(false)
 {
 }
 
@@ -115,6 +117,26 @@ CoreInternalOutcome DescribeTreeJobsRsp::Deserialize(const rapidjson::Value &val
         m_requestIdHasBeenSet = true;
     }
 
+    if (value.HasMember("PageAttach") && !value["PageAttach"].IsNull())
+    {
+        if (!value["PageAttach"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeTreeJobsRsp.PageAttach` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pageAttach = string(value["PageAttach"].GetString());
+        m_pageAttachHasBeenSet = true;
+    }
+
+    if (value.HasMember("HasMore") && !value["HasMore"].IsNull())
+    {
+        if (!value["HasMore"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeTreeJobsRsp.HasMore` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_hasMore = value["HasMore"].GetBool();
+        m_hasMoreHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -182,6 +204,22 @@ void DescribeTreeJobsRsp::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "RequestId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_requestId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pageAttachHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageAttach";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pageAttach.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hasMoreHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HasMore";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hasMore, allocator);
     }
 
 }
@@ -281,5 +319,37 @@ void DescribeTreeJobsRsp::SetRequestId(const string& _requestId)
 bool DescribeTreeJobsRsp::RequestIdHasBeenSet() const
 {
     return m_requestIdHasBeenSet;
+}
+
+string DescribeTreeJobsRsp::GetPageAttach() const
+{
+    return m_pageAttach;
+}
+
+void DescribeTreeJobsRsp::SetPageAttach(const string& _pageAttach)
+{
+    m_pageAttach = _pageAttach;
+    m_pageAttachHasBeenSet = true;
+}
+
+bool DescribeTreeJobsRsp::PageAttachHasBeenSet() const
+{
+    return m_pageAttachHasBeenSet;
+}
+
+bool DescribeTreeJobsRsp::GetHasMore() const
+{
+    return m_hasMore;
+}
+
+void DescribeTreeJobsRsp::SetHasMore(const bool& _hasMore)
+{
+    m_hasMore = _hasMore;
+    m_hasMoreHasBeenSet = true;
+}
+
+bool DescribeTreeJobsRsp::HasMoreHasBeenSet() const
+{
+    return m_hasMoreHasBeenSet;
 }
 

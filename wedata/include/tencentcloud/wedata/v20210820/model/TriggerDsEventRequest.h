@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -107,6 +107,27 @@ namespace TencentCloud
                      */
                     bool EventBatchCaseListHasBeenSet() const;
 
+                    /**
+                     * 获取触发时区
+                     * @return ScheduleTimeZone 触发时区
+                     * 
+                     */
+                    std::string GetScheduleTimeZone() const;
+
+                    /**
+                     * 设置触发时区
+                     * @param _scheduleTimeZone 触发时区
+                     * 
+                     */
+                    void SetScheduleTimeZone(const std::string& _scheduleTimeZone);
+
+                    /**
+                     * 判断参数 ScheduleTimeZone 是否已赋值
+                     * @return ScheduleTimeZone 是否已赋值
+                     * 
+                     */
+                    bool ScheduleTimeZoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -126,6 +147,12 @@ namespace TencentCloud
                      */
                     std::vector<EventBatchCaseDTO> m_eventBatchCaseList;
                     bool m_eventBatchCaseListHasBeenSet;
+
+                    /**
+                     * 触发时区
+                     */
+                    std::string m_scheduleTimeZone;
+                    bool m_scheduleTimeZoneHasBeenSet;
 
                 };
             }

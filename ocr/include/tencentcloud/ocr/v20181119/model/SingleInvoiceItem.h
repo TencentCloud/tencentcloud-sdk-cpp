@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +42,14 @@
 #include <tencentcloud/ocr/v20181119/model/MedicalInvoice.h>
 #include <tencentcloud/ocr/v20181119/model/ElectronicTrainTicketFull.h>
 #include <tencentcloud/ocr/v20181119/model/ElectronicFlightTicketFull.h>
+#include <tencentcloud/ocr/v20181119/model/TaxPayment.h>
+#include <tencentcloud/ocr/v20181119/model/CustomsPaymentReceipt.h>
+#include <tencentcloud/ocr/v20181119/model/BankSlip.h>
+#include <tencentcloud/ocr/v20181119/model/OnlineTaxiItinerary.h>
+#include <tencentcloud/ocr/v20181119/model/CustomsDeclaration.h>
+#include <tencentcloud/ocr/v20181119/model/OverseasInvoice.h>
+#include <tencentcloud/ocr/v20181119/model/ShoppingReceipt.h>
+#include <tencentcloud/ocr/v20181119/model/SaleInventory.h>
 
 
 namespace TencentCloud
@@ -739,6 +747,256 @@ namespace TencentCloud
                      */
                     bool ElectronicFlightTicketFullHasBeenSet() const;
 
+                    /**
+                     * 获取完税凭证
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaxPayment 完税凭证
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    TaxPayment GetTaxPayment() const;
+
+                    /**
+                     * 设置完税凭证
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _taxPayment 完税凭证
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTaxPayment(const TaxPayment& _taxPayment);
+
+                    /**
+                     * 判断参数 TaxPayment 是否已赋值
+                     * @return TaxPayment 是否已赋值
+                     * 
+                     */
+                    bool TaxPaymentHasBeenSet() const;
+
+                    /**
+                     * 获取海关缴款
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CustomsPaymentReceipt 海关缴款
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    CustomsPaymentReceipt GetCustomsPaymentReceipt() const;
+
+                    /**
+                     * 设置海关缴款
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _customsPaymentReceipt 海关缴款
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCustomsPaymentReceipt(const CustomsPaymentReceipt& _customsPaymentReceipt);
+
+                    /**
+                     * 判断参数 CustomsPaymentReceipt 是否已赋值
+                     * @return CustomsPaymentReceipt 是否已赋值
+                     * 
+                     */
+                    bool CustomsPaymentReceiptHasBeenSet() const;
+
+                    /**
+                     * 获取银行回单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BankSlip 银行回单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    BankSlip GetBankSlip() const;
+
+                    /**
+                     * 设置银行回单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _bankSlip 银行回单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBankSlip(const BankSlip& _bankSlip);
+
+                    /**
+                     * 判断参数 BankSlip 是否已赋值
+                     * @return BankSlip 是否已赋值
+                     * 
+                     */
+                    bool BankSlipHasBeenSet() const;
+
+                    /**
+                     * 获取网约车行程单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OnlineTaxiItinerary 网约车行程单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    OnlineTaxiItinerary GetOnlineTaxiItinerary() const;
+
+                    /**
+                     * 设置网约车行程单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _onlineTaxiItinerary 网约车行程单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOnlineTaxiItinerary(const OnlineTaxiItinerary& _onlineTaxiItinerary);
+
+                    /**
+                     * 判断参数 OnlineTaxiItinerary 是否已赋值
+                     * @return OnlineTaxiItinerary 是否已赋值
+                     * 
+                     */
+                    bool OnlineTaxiItineraryHasBeenSet() const;
+
+                    /**
+                     * 获取海关进/出口货物报关单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CustomsDeclaration 海关进/出口货物报关单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    CustomsDeclaration GetCustomsDeclaration() const;
+
+                    /**
+                     * 设置海关进/出口货物报关单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _customsDeclaration 海关进/出口货物报关单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCustomsDeclaration(const CustomsDeclaration& _customsDeclaration);
+
+                    /**
+                     * 判断参数 CustomsDeclaration 是否已赋值
+                     * @return CustomsDeclaration 是否已赋值
+                     * 
+                     */
+                    bool CustomsDeclarationHasBeenSet() const;
+
+                    /**
+                     * 获取海外发票
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OverseasInvoice 海外发票
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    OverseasInvoice GetOverseasInvoice() const;
+
+                    /**
+                     * 设置海外发票
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _overseasInvoice 海外发票
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOverseasInvoice(const OverseasInvoice& _overseasInvoice);
+
+                    /**
+                     * 判断参数 OverseasInvoice 是否已赋值
+                     * @return OverseasInvoice 是否已赋值
+                     * 
+                     */
+                    bool OverseasInvoiceHasBeenSet() const;
+
+                    /**
+                     * 获取购物小票
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ShoppingReceipt 购物小票
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ShoppingReceipt GetShoppingReceipt() const;
+
+                    /**
+                     * 设置购物小票
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _shoppingReceipt 购物小票
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetShoppingReceipt(const ShoppingReceipt& _shoppingReceipt);
+
+                    /**
+                     * 判断参数 ShoppingReceipt 是否已赋值
+                     * @return ShoppingReceipt 是否已赋值
+                     * 
+                     */
+                    bool ShoppingReceiptHasBeenSet() const;
+
+                    /**
+                     * 获取销货清单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SaleInventory 销货清单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    SaleInventory GetSaleInventory() const;
+
+                    /**
+                     * 设置销货清单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _saleInventory 销货清单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSaleInventory(const SaleInventory& _saleInventory);
+
+                    /**
+                     * 判断参数 SaleInventory 是否已赋值
+                     * @return SaleInventory 是否已赋值
+                     * 
+                     */
+                    bool SaleInventoryHasBeenSet() const;
+
+                    /**
+                     * 获取机动车销售统一发票（电子）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MotorVehicleSaleInvoiceElectronic 机动车销售统一发票（电子）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    MotorVehicleSaleInvoice GetMotorVehicleSaleInvoiceElectronic() const;
+
+                    /**
+                     * 设置机动车销售统一发票（电子）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _motorVehicleSaleInvoiceElectronic 机动车销售统一发票（电子）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMotorVehicleSaleInvoiceElectronic(const MotorVehicleSaleInvoice& _motorVehicleSaleInvoiceElectronic);
+
+                    /**
+                     * 判断参数 MotorVehicleSaleInvoiceElectronic 是否已赋值
+                     * @return MotorVehicleSaleInvoiceElectronic 是否已赋值
+                     * 
+                     */
+                    bool MotorVehicleSaleInvoiceElectronicHasBeenSet() const;
+
+                    /**
+                     * 获取二手车销售统一发票（电子）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UsedCarPurchaseInvoiceElectronic 二手车销售统一发票（电子）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    UsedCarPurchaseInvoice GetUsedCarPurchaseInvoiceElectronic() const;
+
+                    /**
+                     * 设置二手车销售统一发票（电子）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _usedCarPurchaseInvoiceElectronic 二手车销售统一发票（电子）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUsedCarPurchaseInvoiceElectronic(const UsedCarPurchaseInvoice& _usedCarPurchaseInvoiceElectronic);
+
+                    /**
+                     * 判断参数 UsedCarPurchaseInvoiceElectronic 是否已赋值
+                     * @return UsedCarPurchaseInvoiceElectronic 是否已赋值
+                     * 
+                     */
+                    bool UsedCarPurchaseInvoiceElectronicHasBeenSet() const;
+
                 private:
 
                     /**
@@ -929,6 +1187,76 @@ namespace TencentCloud
                      */
                     ElectronicFlightTicketFull m_electronicFlightTicketFull;
                     bool m_electronicFlightTicketFullHasBeenSet;
+
+                    /**
+                     * 完税凭证
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TaxPayment m_taxPayment;
+                    bool m_taxPaymentHasBeenSet;
+
+                    /**
+                     * 海关缴款
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CustomsPaymentReceipt m_customsPaymentReceipt;
+                    bool m_customsPaymentReceiptHasBeenSet;
+
+                    /**
+                     * 银行回单
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BankSlip m_bankSlip;
+                    bool m_bankSlipHasBeenSet;
+
+                    /**
+                     * 网约车行程单
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OnlineTaxiItinerary m_onlineTaxiItinerary;
+                    bool m_onlineTaxiItineraryHasBeenSet;
+
+                    /**
+                     * 海关进/出口货物报关单
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CustomsDeclaration m_customsDeclaration;
+                    bool m_customsDeclarationHasBeenSet;
+
+                    /**
+                     * 海外发票
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OverseasInvoice m_overseasInvoice;
+                    bool m_overseasInvoiceHasBeenSet;
+
+                    /**
+                     * 购物小票
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ShoppingReceipt m_shoppingReceipt;
+                    bool m_shoppingReceiptHasBeenSet;
+
+                    /**
+                     * 销货清单
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SaleInventory m_saleInventory;
+                    bool m_saleInventoryHasBeenSet;
+
+                    /**
+                     * 机动车销售统一发票（电子）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MotorVehicleSaleInvoice m_motorVehicleSaleInvoiceElectronic;
+                    bool m_motorVehicleSaleInvoiceElectronicHasBeenSet;
+
+                    /**
+                     * 二手车销售统一发票（电子）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    UsedCarPurchaseInvoice m_usedCarPurchaseInvoiceElectronic;
+                    bool m_usedCarPurchaseInvoiceElectronicHasBeenSet;
 
                 };
             }

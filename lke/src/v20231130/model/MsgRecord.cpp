@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,7 +43,10 @@ MsgRecord::MsgRecord() :
     m_optionCardsHasBeenSet(false),
     m_taskFlowHasBeenSet(false),
     m_fileInfosHasBeenSet(false),
-    m_quoteInfosHasBeenSet(false)
+    m_quoteInfosHasBeenSet(false),
+    m_agentThoughtHasBeenSet(false),
+    m_extraInfoHasBeenSet(false),
+    m_workFlowHasBeenSet(false)
 {
 }
 
@@ -335,6 +338,57 @@ CoreInternalOutcome MsgRecord::Deserialize(const rapidjson::Value &value)
         m_quoteInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("AgentThought") && !value["AgentThought"].IsNull())
+    {
+        if (!value["AgentThought"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MsgRecord.AgentThought` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_agentThought.Deserialize(value["AgentThought"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_agentThoughtHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExtraInfo") && !value["ExtraInfo"].IsNull())
+    {
+        if (!value["ExtraInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MsgRecord.ExtraInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_extraInfo.Deserialize(value["ExtraInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_extraInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("WorkFlow") && !value["WorkFlow"].IsNull())
+    {
+        if (!value["WorkFlow"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MsgRecord.WorkFlow` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_workFlow.Deserialize(value["WorkFlow"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_workFlowHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -562,6 +616,33 @@ void MsgRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_agentThoughtHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentThought";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agentThought.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_extraInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtraInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_extraInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_workFlowHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkFlow";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_workFlow.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -933,5 +1014,53 @@ void MsgRecord::SetQuoteInfos(const vector<QuoteInfo>& _quoteInfos)
 bool MsgRecord::QuoteInfosHasBeenSet() const
 {
     return m_quoteInfosHasBeenSet;
+}
+
+AgentThought MsgRecord::GetAgentThought() const
+{
+    return m_agentThought;
+}
+
+void MsgRecord::SetAgentThought(const AgentThought& _agentThought)
+{
+    m_agentThought = _agentThought;
+    m_agentThoughtHasBeenSet = true;
+}
+
+bool MsgRecord::AgentThoughtHasBeenSet() const
+{
+    return m_agentThoughtHasBeenSet;
+}
+
+ExtraInfo MsgRecord::GetExtraInfo() const
+{
+    return m_extraInfo;
+}
+
+void MsgRecord::SetExtraInfo(const ExtraInfo& _extraInfo)
+{
+    m_extraInfo = _extraInfo;
+    m_extraInfoHasBeenSet = true;
+}
+
+bool MsgRecord::ExtraInfoHasBeenSet() const
+{
+    return m_extraInfoHasBeenSet;
+}
+
+WorkflowInfo MsgRecord::GetWorkFlow() const
+{
+    return m_workFlow;
+}
+
+void MsgRecord::SetWorkFlow(const WorkflowInfo& _workFlow)
+{
+    m_workFlow = _workFlow;
+    m_workFlowHasBeenSet = true;
+}
+
+bool MsgRecord::WorkFlowHasBeenSet() const
+{
+    return m_workFlowHasBeenSet;
 }
 

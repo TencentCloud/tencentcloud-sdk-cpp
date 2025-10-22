@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务状态。0-无任务；1-审计开启中，2-审计关闭中。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuditTask 任务状态。0-无任务；1-审计开启中，2-审计关闭中。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAuditTask() const;
 
                     /**
                      * 设置任务状态。0-无任务；1-审计开启中，2-审计关闭中。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _auditTask 任务状态。0-无任务；1-审计开启中，2-审计关闭中。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuditTask(const uint64_t& _auditTask);
@@ -115,19 +111,43 @@ namespace TencentCloud
                     bool AuditTaskHasBeenSet() const;
 
                     /**
-                     * 获取日志保留时长。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LogExpireDay 日志保留时长。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取日志保留时长。支持值包括：
+7 - 一周；
+30 - 一个月；
+90 - 三个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年。
+                     * @return LogExpireDay 日志保留时长。支持值包括：
+7 - 一周；
+30 - 一个月；
+90 - 三个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年。
                      * 
                      */
                     uint64_t GetLogExpireDay() const;
 
                     /**
-                     * 设置日志保留时长。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _logExpireDay 日志保留时长。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置日志保留时长。支持值包括：
+7 - 一周；
+30 - 一个月；
+90 - 三个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年。
+                     * @param _logExpireDay 日志保留时长。支持值包括：
+7 - 一周；
+30 - 一个月；
+90 - 三个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年。
                      * 
                      */
                     void SetLogExpireDay(const uint64_t& _logExpireDay);
@@ -140,19 +160,47 @@ namespace TencentCloud
                     bool LogExpireDayHasBeenSet() const;
 
                     /**
-                     * 获取高频存储时长。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HighLogExpireDay 高频存储时长。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取高频存储时长。支持值包括：
+3 - 3天；
+7 - 一周；
+30 - 一个月；
+90 - 三个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年。
+                     * @return HighLogExpireDay 高频存储时长。支持值包括：
+3 - 3天；
+7 - 一周；
+30 - 一个月；
+90 - 三个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年。
                      * 
                      */
                     uint64_t GetHighLogExpireDay() const;
 
                     /**
-                     * 设置高频存储时长。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _highLogExpireDay 高频存储时长。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置高频存储时长。支持值包括：
+3 - 3天；
+7 - 一周；
+30 - 一个月；
+90 - 三个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年。
+                     * @param _highLogExpireDay 高频存储时长。支持值包括：
+3 - 3天；
+7 - 一周；
+30 - 一个月；
+90 - 三个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年。
                      * 
                      */
                     void SetHighLogExpireDay(const uint64_t& _highLogExpireDay);
@@ -165,19 +213,15 @@ namespace TencentCloud
                     bool HighLogExpireDayHasBeenSet() const;
 
                     /**
-                     * 获取低频存储时长。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LowLogExpireDay 低频存储时长。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取低频存储时长。单位：天，等于日志保存时长减去高频存储时长。
+                     * @return LowLogExpireDay 低频存储时长。单位：天，等于日志保存时长减去高频存储时长。
                      * 
                      */
                     uint64_t GetLowLogExpireDay() const;
 
                     /**
-                     * 设置低频存储时长。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _lowLogExpireDay 低频存储时长。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置低频存储时长。单位：天，等于日志保存时长减去高频存储时长。
+                     * @param _lowLogExpireDay 低频存储时长。单位：天，等于日志保存时长减去高频存储时长。
                      * 
                      */
                     void SetLowLogExpireDay(const uint64_t& _lowLogExpireDay);
@@ -190,19 +234,15 @@ namespace TencentCloud
                     bool LowLogExpireDayHasBeenSet() const;
 
                     /**
-                     * 获取日志存储量。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BillingAmount 日志存储量。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取日志存储量(单位：GB)。
+                     * @return BillingAmount 日志存储量(单位：GB)。
                      * 
                      */
                     double GetBillingAmount() const;
 
                     /**
-                     * 设置日志存储量。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _billingAmount 日志存储量。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置日志存储量(单位：GB)。
+                     * @param _billingAmount 日志存储量(单位：GB)。
                      * 
                      */
                     void SetBillingAmount(const double& _billingAmount);
@@ -215,19 +255,15 @@ namespace TencentCloud
                     bool BillingAmountHasBeenSet() const;
 
                     /**
-                     * 获取高频存储量。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HighRealStorage 高频存储量。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取高频存储量(单位：GB)。
+                     * @return HighRealStorage 高频存储量(单位：GB)。
                      * 
                      */
                     double GetHighRealStorage() const;
 
                     /**
-                     * 设置高频存储量。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _highRealStorage 高频存储量。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置高频存储量(单位：GB)。
+                     * @param _highRealStorage 高频存储量(单位：GB)。
                      * 
                      */
                     void SetHighRealStorage(const double& _highRealStorage);
@@ -240,19 +276,15 @@ namespace TencentCloud
                     bool HighRealStorageHasBeenSet() const;
 
                     /**
-                     * 获取低频存储量。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LowRealStorage 低频存储量。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取低频存储量(单位：GB)。
+                     * @return LowRealStorage 低频存储量(单位：GB)。
                      * 
                      */
                     double GetLowRealStorage() const;
 
                     /**
-                     * 设置低频存储量。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _lowRealStorage 低频存储量。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置低频存储量(单位：GB)。
+                     * @param _lowRealStorage 低频存储量(单位：GB)。
                      * 
                      */
                     void SetLowRealStorage(const double& _lowRealStorage);
@@ -266,18 +298,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否为全审计。true-表示全审计。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuditAll 是否为全审计。true-表示全审计。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetAuditAll() const;
 
                     /**
                      * 设置是否为全审计。true-表示全审计。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _auditAll 是否为全审计。true-表示全审计。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuditAll(const bool& _auditAll);
@@ -291,18 +319,14 @@ namespace TencentCloud
 
                     /**
                      * 获取审计开通时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateAt 审计开通时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateAt() const;
 
                     /**
                      * 设置审计开通时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createAt 审计开通时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateAt(const std::string& _createAt);
@@ -316,18 +340,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例相关信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceInfo 实例相关信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AuditInstanceInfo GetInstanceInfo() const;
 
                     /**
                      * 设置实例相关信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceInfo 实例相关信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceInfo(const AuditInstanceInfo& _instanceInfo);
@@ -340,19 +360,15 @@ namespace TencentCloud
                     bool InstanceInfoHasBeenSet() const;
 
                     /**
-                     * 获取总存储量。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RealStorage 总存储量。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取总存储量(单位：GB)。
+                     * @return RealStorage 总存储量(单位：GB)。
                      * 
                      */
                     double GetRealStorage() const;
 
                     /**
-                     * 设置总存储量。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _realStorage 总存储量。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置总存储量(单位：GB)。
+                     * @param _realStorage 总存储量(单位：GB)。
                      * 
                      */
                     void SetRealStorage(const double& _realStorage);
@@ -366,18 +382,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否包含审计策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OldRule 是否包含审计策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetOldRule() const;
 
                     /**
                      * 设置是否包含审计策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _oldRule 是否包含审计策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOldRule(const bool& _oldRule);
@@ -391,18 +403,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例所应用的规则模板。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleTemplateIds 实例所应用的规则模板。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetRuleTemplateIds() const;
 
                     /**
                      * 设置实例所应用的规则模板。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleTemplateIds 实例所应用的规则模板。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleTemplateIds(const std::vector<std::string>& _ruleTemplateIds);
@@ -413,6 +421,111 @@ namespace TencentCloud
                      * 
                      */
                     bool RuleTemplateIdsHasBeenSet() const;
+
+                    /**
+                     * 获取限免状态
+                     * @return TrialStatus 限免状态
+                     * 
+                     */
+                    std::string GetTrialStatus() const;
+
+                    /**
+                     * 设置限免状态
+                     * @param _trialStatus 限免状态
+                     * 
+                     */
+                    void SetTrialStatus(const std::string& _trialStatus);
+
+                    /**
+                     * 判断参数 TrialStatus 是否已赋值
+                     * @return TrialStatus 是否已赋值
+                     * 
+                     */
+                    bool TrialStatusHasBeenSet() const;
+
+                    /**
+                     * 获取限免开启时间
+                     * @return TrialStartTime 限免开启时间
+                     * 
+                     */
+                    int64_t GetTrialStartTime() const;
+
+                    /**
+                     * 设置限免开启时间
+                     * @param _trialStartTime 限免开启时间
+                     * 
+                     */
+                    void SetTrialStartTime(const int64_t& _trialStartTime);
+
+                    /**
+                     * 判断参数 TrialStartTime 是否已赋值
+                     * @return TrialStartTime 是否已赋值
+                     * 
+                     */
+                    bool TrialStartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取限免持续时间
+                     * @return TrialDuration 限免持续时间
+                     * 
+                     */
+                    int64_t GetTrialDuration() const;
+
+                    /**
+                     * 设置限免持续时间
+                     * @param _trialDuration 限免持续时间
+                     * 
+                     */
+                    void SetTrialDuration(const int64_t& _trialDuration);
+
+                    /**
+                     * 判断参数 TrialDuration 是否已赋值
+                     * @return TrialDuration 是否已赋值
+                     * 
+                     */
+                    bool TrialDurationHasBeenSet() const;
+
+                    /**
+                     * 获取限免关闭时间
+                     * @return TrialCloseTime 限免关闭时间
+                     * 
+                     */
+                    int64_t GetTrialCloseTime() const;
+
+                    /**
+                     * 设置限免关闭时间
+                     * @param _trialCloseTime 限免关闭时间
+                     * 
+                     */
+                    void SetTrialCloseTime(const int64_t& _trialCloseTime);
+
+                    /**
+                     * 判断参数 TrialCloseTime 是否已赋值
+                     * @return TrialCloseTime 是否已赋值
+                     * 
+                     */
+                    bool TrialCloseTimeHasBeenSet() const;
+
+                    /**
+                     * 获取限免期查询日志时长
+                     * @return TrialDescribeLogHours 限免期查询日志时长
+                     * 
+                     */
+                    int64_t GetTrialDescribeLogHours() const;
+
+                    /**
+                     * 设置限免期查询日志时长
+                     * @param _trialDescribeLogHours 限免期查询日志时长
+                     * 
+                     */
+                    void SetTrialDescribeLogHours(const int64_t& _trialDescribeLogHours);
+
+                    /**
+                     * 判断参数 TrialDescribeLogHours 是否已赋值
+                     * @return TrialDescribeLogHours 是否已赋值
+                     * 
+                     */
+                    bool TrialDescribeLogHoursHasBeenSet() const;
 
                 private:
 
@@ -430,94 +543,126 @@ namespace TencentCloud
 
                     /**
                      * 任务状态。0-无任务；1-审计开启中，2-审计关闭中。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_auditTask;
                     bool m_auditTaskHasBeenSet;
 
                     /**
-                     * 日志保留时长。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 日志保留时长。支持值包括：
+7 - 一周；
+30 - 一个月；
+90 - 三个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年。
                      */
                     uint64_t m_logExpireDay;
                     bool m_logExpireDayHasBeenSet;
 
                     /**
-                     * 高频存储时长。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 高频存储时长。支持值包括：
+3 - 3天；
+7 - 一周；
+30 - 一个月；
+90 - 三个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年。
                      */
                     uint64_t m_highLogExpireDay;
                     bool m_highLogExpireDayHasBeenSet;
 
                     /**
-                     * 低频存储时长。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 低频存储时长。单位：天，等于日志保存时长减去高频存储时长。
                      */
                     uint64_t m_lowLogExpireDay;
                     bool m_lowLogExpireDayHasBeenSet;
 
                     /**
-                     * 日志存储量。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 日志存储量(单位：GB)。
                      */
                     double m_billingAmount;
                     bool m_billingAmountHasBeenSet;
 
                     /**
-                     * 高频存储量。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 高频存储量(单位：GB)。
                      */
                     double m_highRealStorage;
                     bool m_highRealStorageHasBeenSet;
 
                     /**
-                     * 低频存储量。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 低频存储量(单位：GB)。
                      */
                     double m_lowRealStorage;
                     bool m_lowRealStorageHasBeenSet;
 
                     /**
                      * 是否为全审计。true-表示全审计。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_auditAll;
                     bool m_auditAllHasBeenSet;
 
                     /**
                      * 审计开通时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createAt;
                     bool m_createAtHasBeenSet;
 
                     /**
                      * 实例相关信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AuditInstanceInfo m_instanceInfo;
                     bool m_instanceInfoHasBeenSet;
 
                     /**
-                     * 总存储量。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 总存储量(单位：GB)。
                      */
                     double m_realStorage;
                     bool m_realStorageHasBeenSet;
 
                     /**
                      * 是否包含审计策略
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_oldRule;
                     bool m_oldRuleHasBeenSet;
 
                     /**
                      * 实例所应用的规则模板。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_ruleTemplateIds;
                     bool m_ruleTemplateIdsHasBeenSet;
+
+                    /**
+                     * 限免状态
+                     */
+                    std::string m_trialStatus;
+                    bool m_trialStatusHasBeenSet;
+
+                    /**
+                     * 限免开启时间
+                     */
+                    int64_t m_trialStartTime;
+                    bool m_trialStartTimeHasBeenSet;
+
+                    /**
+                     * 限免持续时间
+                     */
+                    int64_t m_trialDuration;
+                    bool m_trialDurationHasBeenSet;
+
+                    /**
+                     * 限免关闭时间
+                     */
+                    int64_t m_trialCloseTime;
+                    bool m_trialCloseTimeHasBeenSet;
+
+                    /**
+                     * 限免期查询日志时长
+                     */
+                    int64_t m_trialDescribeLogHours;
+                    bool m_trialDescribeLogHoursHasBeenSet;
 
                 };
             }

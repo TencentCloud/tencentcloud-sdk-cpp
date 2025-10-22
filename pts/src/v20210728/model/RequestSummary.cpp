@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,8 @@ RequestSummary::RequestSummary() :
     m_errorPercentageHasBeenSet(false),
     m_p99HasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_resultHasBeenSet(false)
+    m_resultHasBeenSet(false),
+    m_rPSHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,16 @@ CoreInternalOutcome RequestSummary::Deserialize(const rapidjson::Value &value)
         m_resultHasBeenSet = true;
     }
 
+    if (value.HasMember("RPS") && !value["RPS"].IsNull())
+    {
+        if (!value["RPS"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `RequestSummary.RPS` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_rPS = value["RPS"].GetDouble();
+        m_rPSHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +273,14 @@ void RequestSummary::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Result";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_result.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rPSHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RPS";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rPS, allocator);
     }
 
 }
@@ -457,5 +476,21 @@ void RequestSummary::SetResult(const string& _result)
 bool RequestSummary::ResultHasBeenSet() const
 {
     return m_resultHasBeenSet;
+}
+
+double RequestSummary::GetRPS() const
+{
+    return m_rPS;
+}
+
+void RequestSummary::SetRPS(const double& _rPS)
+{
+    m_rPS = _rPS;
+    m_rPSHasBeenSet = true;
+}
+
+bool RequestSummary::RPSHasBeenSet() const
+{
+    return m_rPSHasBeenSet;
 }
 

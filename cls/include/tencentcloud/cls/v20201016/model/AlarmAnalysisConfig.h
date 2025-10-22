@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,7 +54,6 @@ CustomQuery：检索语句。 QueryIndex为-1时有效且必填，value示例：
 Fields：字段。value支持 __SOURCE__；__FILENAME__；__HOSTNAME__；__TIMESTAMP__；__INDEX_STATUS__；__PKG_LOGID__；__TOPIC__。
 Format：显示形式。value支持 1：每条日志一行；2：每条日志每个字段一行。
 Limit：最大日志条数。 value示例： 5。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Key 键。支持以下key：
 SyntaxRule：语法规则，value支持 0：Lucene语法；1： CQL语法。
 QueryIndex：执行语句序号。value支持  -1：自定义； 1：执行语句1； 2：执行语句2。
@@ -62,7 +61,6 @@ CustomQuery：检索语句。 QueryIndex为-1时有效且必填，value示例：
 Fields：字段。value支持 __SOURCE__；__FILENAME__；__HOSTNAME__；__TIMESTAMP__；__INDEX_STATUS__；__PKG_LOGID__；__TOPIC__。
 Format：显示形式。value支持 1：每条日志一行；2：每条日志每个字段一行。
 Limit：最大日志条数。 value示例： 5。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKey() const;
@@ -75,7 +73,6 @@ CustomQuery：检索语句。 QueryIndex为-1时有效且必填，value示例：
 Fields：字段。value支持 __SOURCE__；__FILENAME__；__HOSTNAME__；__TIMESTAMP__；__INDEX_STATUS__；__PKG_LOGID__；__TOPIC__。
 Format：显示形式。value支持 1：每条日志一行；2：每条日志每个字段一行。
 Limit：最大日志条数。 value示例： 5。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _key 键。支持以下key：
 SyntaxRule：语法规则，value支持 0：Lucene语法；1： CQL语法。
 QueryIndex：执行语句序号。value支持  -1：自定义； 1：执行语句1； 2：执行语句2。
@@ -83,7 +80,6 @@ CustomQuery：检索语句。 QueryIndex为-1时有效且必填，value示例：
 Fields：字段。value支持 __SOURCE__；__FILENAME__；__HOSTNAME__；__TIMESTAMP__；__INDEX_STATUS__；__PKG_LOGID__；__TOPIC__。
 Format：显示形式。value支持 1：每条日志一行；2：每条日志每个字段一行。
 Limit：最大日志条数。 value示例： 5。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -104,7 +100,6 @@ CustomQuery：检索语句。 QueryIndex为-1时有效且必填，value示例：
 Fields：字段。value支持 __SOURCE__；__FILENAME__；__HOSTNAME__；__TIMESTAMP__；__INDEX_STATUS__；__PKG_LOGID__；__TOPIC__。
 Format：显示形式。value支持 1：每条日志一行；2：每条日志每个字段一行。
 Limit：最大日志条数。 value示例： 5。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 值。
 键对应值如下：
 SyntaxRule：语法规则，value支持 0：Lucene语法；1： CQL语法。
@@ -113,7 +108,6 @@ CustomQuery：检索语句。 QueryIndex为-1时有效且必填，value示例：
 Fields：字段。value支持 __SOURCE__；__FILENAME__；__HOSTNAME__；__TIMESTAMP__；__INDEX_STATUS__；__PKG_LOGID__；__TOPIC__。
 Format：显示形式。value支持 1：每条日志一行；2：每条日志每个字段一行。
 Limit：最大日志条数。 value示例： 5。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
@@ -127,7 +121,6 @@ CustomQuery：检索语句。 QueryIndex为-1时有效且必填，value示例：
 Fields：字段。value支持 __SOURCE__；__FILENAME__；__HOSTNAME__；__TIMESTAMP__；__INDEX_STATUS__；__PKG_LOGID__；__TOPIC__。
 Format：显示形式。value支持 1：每条日志一行；2：每条日志每个字段一行。
 Limit：最大日志条数。 value示例： 5。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 值。
 键对应值如下：
 SyntaxRule：语法规则，value支持 0：Lucene语法；1： CQL语法。
@@ -136,7 +129,6 @@ CustomQuery：检索语句。 QueryIndex为-1时有效且必填，value示例：
 Fields：字段。value支持 __SOURCE__；__FILENAME__；__HOSTNAME__；__TIMESTAMP__；__INDEX_STATUS__；__PKG_LOGID__；__TOPIC__。
 Format：显示形式。value支持 1：每条日志一行；2：每条日志每个字段一行。
 Limit：最大日志条数。 value示例： 5。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -158,7 +150,6 @@ CustomQuery：检索语句。 QueryIndex为-1时有效且必填，value示例：
 Fields：字段。value支持 __SOURCE__；__FILENAME__；__HOSTNAME__；__TIMESTAMP__；__INDEX_STATUS__；__PKG_LOGID__；__TOPIC__。
 Format：显示形式。value支持 1：每条日志一行；2：每条日志每个字段一行。
 Limit：最大日志条数。 value示例： 5。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
@@ -172,7 +163,6 @@ CustomQuery：检索语句。 QueryIndex为-1时有效且必填，value示例：
 Fields：字段。value支持 __SOURCE__；__FILENAME__；__HOSTNAME__；__TIMESTAMP__；__INDEX_STATUS__；__PKG_LOGID__；__TOPIC__。
 Format：显示形式。value支持 1：每条日志一行；2：每条日志每个字段一行。
 Limit：最大日志条数。 value示例： 5。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

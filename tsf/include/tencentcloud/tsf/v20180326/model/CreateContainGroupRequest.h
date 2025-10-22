@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分组所属应用ID
-                     * @return ApplicationId 分组所属应用ID
+                     * 获取分组所属【应用ID】，可通过调用[DescribeApplications](https://cloud.tencent.com/document/product/649/36090)查询已创建的应用列表或登录[控制台](https://console.cloud.tencent.com/tsf/app?rid=1)进行查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/product/649/36094)创建新的应用。
+                     * @return ApplicationId 分组所属【应用ID】，可通过调用[DescribeApplications](https://cloud.tencent.com/document/product/649/36090)查询已创建的应用列表或登录[控制台](https://console.cloud.tencent.com/tsf/app?rid=1)进行查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/product/649/36094)创建新的应用。
                      * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
-                     * 设置分组所属应用ID
-                     * @param _applicationId 分组所属应用ID
+                     * 设置分组所属【应用ID】，可通过调用[DescribeApplications](https://cloud.tencent.com/document/product/649/36090)查询已创建的应用列表或登录[控制台](https://console.cloud.tencent.com/tsf/app?rid=1)进行查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/product/649/36094)创建新的应用。
+                     * @param _applicationId 分组所属【应用ID】，可通过调用[DescribeApplications](https://cloud.tencent.com/document/product/649/36090)查询已创建的应用列表或登录[控制台](https://console.cloud.tencent.com/tsf/app?rid=1)进行查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/product/649/36094)创建新的应用。
                      * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
-                     * 获取分组所属命名空间ID
-                     * @return NamespaceId 分组所属命名空间ID
+                     * 获取分组所属【命名空间ID】，可通过调用[DescribeSimpleNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已创建的命名空间列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=namespace)进行查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新的命名空间。
+                     * @return NamespaceId 分组所属【命名空间ID】，可通过调用[DescribeSimpleNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已创建的命名空间列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=namespace)进行查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新的命名空间。
                      * 
                      */
                     std::string GetNamespaceId() const;
 
                     /**
-                     * 设置分组所属命名空间ID
-                     * @param _namespaceId 分组所属命名空间ID
+                     * 设置分组所属【命名空间ID】，可通过调用[DescribeSimpleNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已创建的命名空间列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=namespace)进行查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新的命名空间。
+                     * @param _namespaceId 分组所属【命名空间ID】，可通过调用[DescribeSimpleNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已创建的命名空间列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=namespace)进行查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新的命名空间。
                      * 
                      */
                     void SetNamespaceId(const std::string& _namespaceId);
@@ -338,15 +338,15 @@ namespace TencentCloud
                     bool MemRequestHasBeenSet() const;
 
                     /**
-                     * 获取部署组资源类型
-                     * @return GroupResourceType 部署组资源类型
+                     * 获取部署组资源类型；DEF 表示默认资源类型
+                     * @return GroupResourceType 部署组资源类型；DEF 表示默认资源类型
                      * 
                      */
                     std::string GetGroupResourceType() const;
 
                     /**
-                     * 设置部署组资源类型
-                     * @param _groupResourceType 部署组资源类型
+                     * 设置部署组资源类型；DEF 表示默认资源类型
+                     * @param _groupResourceType 部署组资源类型；DEF 表示默认资源类型
                      * 
                      */
                     void SetGroupResourceType(const std::string& _groupResourceType);
@@ -359,15 +359,15 @@ namespace TencentCloud
                     bool GroupResourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取子网ID
-                     * @return SubnetId 子网ID
+                     * 获取分组所属【子网ID】，可前往私有网络[控制台](https://console.cloud.tencent.com/vpc/subnet?rid=1&unVpcId=vpc-6bs8ytjd)进行获取
+                     * @return SubnetId 分组所属【子网ID】，可前往私有网络[控制台](https://console.cloud.tencent.com/vpc/subnet?rid=1&unVpcId=vpc-6bs8ytjd)进行获取
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网ID
-                     * @param _subnetId 子网ID
+                     * 设置分组所属【子网ID】，可前往私有网络[控制台](https://console.cloud.tencent.com/vpc/subnet?rid=1&unVpcId=vpc-6bs8ytjd)进行获取
+                     * @param _subnetId 分组所属【子网ID】，可前往私有网络[控制台](https://console.cloud.tencent.com/vpc/subnet?rid=1&unVpcId=vpc-6bs8ytjd)进行获取
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -550,13 +550,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 分组所属应用ID
+                     * 分组所属【应用ID】，可通过调用[DescribeApplications](https://cloud.tencent.com/document/product/649/36090)查询已创建的应用列表或登录[控制台](https://console.cloud.tencent.com/tsf/app?rid=1)进行查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/product/649/36094)创建新的应用。
                      */
                     std::string m_applicationId;
                     bool m_applicationIdHasBeenSet;
 
                     /**
-                     * 分组所属命名空间ID
+                     * 分组所属【命名空间ID】，可通过调用[DescribeSimpleNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已创建的命名空间列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=namespace)进行查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新的命名空间。
                      */
                     std::string m_namespaceId;
                     bool m_namespaceIdHasBeenSet;
@@ -634,13 +634,13 @@ namespace TencentCloud
                     bool m_memRequestHasBeenSet;
 
                     /**
-                     * 部署组资源类型
+                     * 部署组资源类型；DEF 表示默认资源类型
                      */
                     std::string m_groupResourceType;
                     bool m_groupResourceTypeHasBeenSet;
 
                     /**
-                     * 子网ID
+                     * 分组所属【子网ID】，可前往私有网络[控制台](https://console.cloud.tencent.com/vpc/subnet?rid=1&unVpcId=vpc-6bs8ytjd)进行获取
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;

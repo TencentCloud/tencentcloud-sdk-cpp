@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点池ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodePoolId 节点池ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNodePoolId() const;
 
                     /**
                      * 设置节点池ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodePoolId 节点池ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodePoolId(const std::string& _nodePoolId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取运行时类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuntimeType 运行时类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuntimeType() const;
 
                     /**
                      * 设置运行时类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _runtimeType 运行时类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuntimeType(const std::string& _runtimeType);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取运行时版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuntimeVersion 运行时版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuntimeVersion() const;
 
                     /**
                      * 设置运行时版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _runtimeVersion 运行时版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuntimeVersion(const std::string& _runtimeVersion);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点池名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodePoolName 节点池名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNodePoolName() const;
 
                     /**
                      * 设置节点池名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodePoolName 节点池名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodePoolName(const std::string& _nodePoolName);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 节点池ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nodePoolId;
                     bool m_nodePoolIdHasBeenSet;
 
                     /**
                      * 运行时类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_runtimeType;
                     bool m_runtimeTypeHasBeenSet;
 
                     /**
                      * 运行时版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_runtimeVersion;
                     bool m_runtimeVersionHasBeenSet;
 
                     /**
                      * 节点池名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nodePoolName;
                     bool m_nodePoolNameHasBeenSet;

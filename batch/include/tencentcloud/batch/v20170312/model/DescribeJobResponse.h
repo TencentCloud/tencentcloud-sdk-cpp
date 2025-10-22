@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -119,8 +119,8 @@ namespace TencentCloud
                     bool JobStateHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取创建时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。
+                     * @return CreateTime 创建时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。
                      * 
                      */
                     std::string GetCreateTime() const;
@@ -133,8 +133,8 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取结束时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。
+                     * @return EndTime 结束时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。
                      * 
                      */
                     std::string GetEndTime() const;
@@ -234,9 +234,7 @@ namespace TencentCloud
 
                     /**
                      * 获取下一步动作
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NextAction 下一步动作
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNextAction() const;
@@ -281,13 +279,13 @@ namespace TencentCloud
                     bool m_jobStateHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * 创建时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * 结束时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -331,7 +329,6 @@ namespace TencentCloud
 
                     /**
                      * 下一步动作
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nextAction;
                     bool m_nextActionHasBeenSet;

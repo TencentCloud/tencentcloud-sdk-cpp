@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -123,15 +123,15 @@ RECENT：最近操作过的域名
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取根据域名分组 id 获取域名，可通过 DescribeDomain 或 DescribeDomainList 接口 GroupId 字段获取。
-                     * @return GroupId 根据域名分组 id 获取域名，可通过 DescribeDomain 或 DescribeDomainList 接口 GroupId 字段获取。
+                     * 获取根据域名分组 id 获取域名
+                     * @return GroupId 根据域名分组 id 获取域名
                      * 
                      */
                     std::vector<int64_t> GetGroupId() const;
 
                     /**
-                     * 设置根据域名分组 id 获取域名，可通过 DescribeDomain 或 DescribeDomainList 接口 GroupId 字段获取。
-                     * @param _groupId 根据域名分组 id 获取域名，可通过 DescribeDomain 或 DescribeDomainList 接口 GroupId 字段获取。
+                     * 设置根据域名分组 id 获取域名
+                     * @param _groupId 根据域名分组 id 获取域名
                      * 
                      */
                     void SetGroupId(const std::vector<int64_t>& _groupId);
@@ -456,7 +456,7 @@ RECENT：最近操作过的域名
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 根据域名分组 id 获取域名，可通过 DescribeDomain 或 DescribeDomainList 接口 GroupId 字段获取。
+                     * 根据域名分组 id 获取域名
                      */
                     std::vector<int64_t> m_groupId;
                     bool m_groupIdHasBeenSet;

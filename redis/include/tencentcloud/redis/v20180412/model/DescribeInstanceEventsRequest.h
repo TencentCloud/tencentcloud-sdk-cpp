@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,15 +106,23 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取输出每页显示事件的数量，默认：10，最大100。
-                     * @return PageSize 输出每页显示事件的数量，默认：10，最大100。
+                     * 获取输出每页显示事件的数量。
+- 默认值：10。
+- 取值范围：[1,100]。
+                     * @return PageSize 输出每页显示事件的数量。
+- 默认值：10。
+- 取值范围：[1,100]。
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置输出每页显示事件的数量，默认：10，最大100。
-                     * @param _pageSize 输出每页显示事件的数量，默认：10，最大100。
+                     * 设置输出每页显示事件的数量。
+- 默认值：10。
+- 取值范围：[1,100]。
+                     * @param _pageSize 输出每页显示事件的数量。
+- 默认值：10。
+- 取值范围：[1,100]。
                      * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -127,15 +135,23 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取配置查询事件的输出页码，即支持根据PageNo（页码）与 PageSize （每页输出数量）查询某一页的事件。默认：1。
-                     * @return PageNo 配置查询事件的输出页码，即支持根据PageNo（页码）与 PageSize （每页输出数量）查询某一页的事件。默认：1。
+                     * 获取配置查询事件的输出页码，即支持根据PageNo（页码）与 PageSize （每页输出数量）查询某一页的事件。
+- 默认值：1。
+- 取值范围：大于0 的正整数。
+                     * @return PageNo 配置查询事件的输出页码，即支持根据PageNo（页码）与 PageSize （每页输出数量）查询某一页的事件。
+- 默认值：1。
+- 取值范围：大于0 的正整数。
                      * 
                      */
                     int64_t GetPageNo() const;
 
                     /**
-                     * 设置配置查询事件的输出页码，即支持根据PageNo（页码）与 PageSize （每页输出数量）查询某一页的事件。默认：1。
-                     * @param _pageNo 配置查询事件的输出页码，即支持根据PageNo（页码）与 PageSize （每页输出数量）查询某一页的事件。默认：1。
+                     * 设置配置查询事件的输出页码，即支持根据PageNo（页码）与 PageSize （每页输出数量）查询某一页的事件。
+- 默认值：1。
+- 取值范围：大于0 的正整数。
+                     * @param _pageNo 配置查询事件的输出页码，即支持根据PageNo（页码）与 PageSize （每页输出数量）查询某一页的事件。
+- 默认值：1。
+- 取值范围：大于0 的正整数。
                      * 
                      */
                     void SetPageNo(const int64_t& _pageNo);
@@ -263,13 +279,17 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 输出每页显示事件的数量，默认：10，最大100。
+                     * 输出每页显示事件的数量。
+- 默认值：10。
+- 取值范围：[1,100]。
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 配置查询事件的输出页码，即支持根据PageNo（页码）与 PageSize （每页输出数量）查询某一页的事件。默认：1。
+                     * 配置查询事件的输出页码，即支持根据PageNo（页码）与 PageSize （每页输出数量）查询某一页的事件。
+- 默认值：1。
+- 取值范围：大于0 的正整数。
                      */
                     int64_t m_pageNo;
                     bool m_pageNoHasBeenSet;

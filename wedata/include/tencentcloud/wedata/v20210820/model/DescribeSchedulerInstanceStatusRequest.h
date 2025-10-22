@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -210,6 +210,27 @@ namespace TencentCloud
                      */
                     bool WorkflowIdHasBeenSet() const;
 
+                    /**
+                     * 获取任务ID列表
+                     * @return ProjectIds 任务ID列表
+                     * 
+                     */
+                    std::vector<std::string> GetProjectIds() const;
+
+                    /**
+                     * 设置任务ID列表
+                     * @param _projectIds 任务ID列表
+                     * 
+                     */
+                    void SetProjectIds(const std::vector<std::string>& _projectIds);
+
+                    /**
+                     * 判断参数 ProjectIds 是否已赋值
+                     * @return ProjectIds 是否已赋值
+                     * 
+                     */
+                    bool ProjectIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +280,12 @@ namespace TencentCloud
                      */
                     std::string m_workflowId;
                     bool m_workflowIdHasBeenSet;
+
+                    /**
+                     * 任务ID列表
+                     */
+                    std::vector<std::string> m_projectIds;
+                    bool m_projectIdsHasBeenSet;
 
                 };
             }

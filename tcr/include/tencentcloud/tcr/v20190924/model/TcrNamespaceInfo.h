@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -135,18 +135,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例云标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagSpecification 实例云标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TagSpecification GetTagSpecification() const;
 
                     /**
                      * 设置实例云标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tagSpecification 实例云标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTagSpecification(const TagSpecification& _tagSpecification);
@@ -160,18 +156,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命名空间元数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Metadata 命名空间元数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<KeyValueString> GetMetadata() const;
 
                     /**
                      * 设置命名空间元数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _metadata 命名空间元数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMetadata(const std::vector<KeyValueString>& _metadata);
@@ -295,14 +287,12 @@ namespace TencentCloud
 
                     /**
                      * 实例云标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TagSpecification m_tagSpecification;
                     bool m_tagSpecificationHasBeenSet;
 
                     /**
                      * 命名空间元数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<KeyValueString> m_metadata;
                     bool m_metadataHasBeenSet;

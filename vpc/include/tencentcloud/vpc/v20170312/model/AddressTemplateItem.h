@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ipm-xxxxxxxx
-                     * @return AddressTemplateId ipm-xxxxxxxx
+                     * 获取IP地址模板ID
+                     * @return AddressTemplateId IP地址模板ID
                      * 
                      */
                     std::string GetAddressTemplateId() const;
 
                     /**
-                     * 设置ipm-xxxxxxxx
-                     * @param _addressTemplateId ipm-xxxxxxxx
+                     * 设置IP地址模板ID
+                     * @param _addressTemplateId IP地址模板ID
                      * 
                      */
                     void SetAddressTemplateId(const std::string& _addressTemplateId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool AddressTemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取IP模板名称
-                     * @return AddressTemplateName IP模板名称
+                     * 获取IP模板名称，废弃字段。
+                     * @return AddressTemplateName IP模板名称，废弃字段。
                      * 
                      */
                     std::string GetAddressTemplateName() const;
 
                     /**
-                     * 设置IP模板名称
-                     * @param _addressTemplateName IP模板名称
+                     * 设置IP模板名称，废弃字段。
+                     * @param _addressTemplateName IP模板名称，废弃字段。
                      * 
                      */
                     void SetAddressTemplateName(const std::string& _addressTemplateName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool AddressTemplateNameHasBeenSet() const;
 
                     /**
-                     * 获取废弃字段
-                     * @return From 废弃字段
+                     * 获取废弃字段。
+                     * @return From 废弃字段。
                      * 
                      */
                     std::string GetFrom() const;
 
                     /**
-                     * 设置废弃字段
-                     * @param _from 废弃字段
+                     * 设置废弃字段。
+                     * @param _from 废弃字段。
                      * 
                      */
                     void SetFrom(const std::string& _from);
@@ -130,22 +130,64 @@ namespace TencentCloud
                      */
                     bool ToHasBeenSet() const;
 
+                    /**
+                     * 获取备注。
+                     * @return Description 备注。
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置备注。
+                     * @param _description 备注。
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
+                    /**
+                     * 获取最后更新时间。
+                     * @return UpdatedTime 最后更新时间。
+                     * 
+                     */
+                    std::string GetUpdatedTime() const;
+
+                    /**
+                     * 设置最后更新时间。
+                     * @param _updatedTime 最后更新时间。
+                     * 
+                     */
+                    void SetUpdatedTime(const std::string& _updatedTime);
+
+                    /**
+                     * 判断参数 UpdatedTime 是否已赋值
+                     * @return UpdatedTime 是否已赋值
+                     * 
+                     */
+                    bool UpdatedTimeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * ipm-xxxxxxxx
+                     * IP地址模板ID
                      */
                     std::string m_addressTemplateId;
                     bool m_addressTemplateIdHasBeenSet;
 
                     /**
-                     * IP模板名称
+                     * IP模板名称，废弃字段。
                      */
                     std::string m_addressTemplateName;
                     bool m_addressTemplateNameHasBeenSet;
 
                     /**
-                     * 废弃字段
+                     * 废弃字段。
                      */
                     std::string m_from;
                     bool m_fromHasBeenSet;
@@ -155,6 +197,18 @@ namespace TencentCloud
                      */
                     std::string m_to;
                     bool m_toHasBeenSet;
+
+                    /**
+                     * 备注。
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 最后更新时间。
+                     */
+                    std::string m_updatedTime;
+                    bool m_updatedTimeHasBeenSet;
 
                 };
             }

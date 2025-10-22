@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool SearchWordHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return DisableProgramAuthCheck 无
+                     * 获取是否关闭鉴权
+                     * @return DisableProgramAuthCheck 是否关闭鉴权
                      * 
                      */
                     bool GetDisableProgramAuthCheck() const;
 
                     /**
-                     * 设置无
-                     * @param _disableProgramAuthCheck 无
+                     * 设置是否关闭鉴权
+                     * @param _disableProgramAuthCheck 是否关闭鉴权
                      * 
                      */
                     void SetDisableProgramAuthCheck(const bool& _disableProgramAuthCheck);
@@ -201,7 +201,7 @@ namespace TencentCloud
                     bool m_searchWordHasBeenSet;
 
                     /**
-                     * 无
+                     * 是否关闭鉴权
                      */
                     bool m_disableProgramAuthCheck;
                     bool m_disableProgramAuthCheckHasBeenSet;

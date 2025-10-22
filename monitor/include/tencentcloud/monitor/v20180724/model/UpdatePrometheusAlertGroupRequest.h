@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -141,15 +141,15 @@ namespace TencentCloud
                     bool GroupStateHasBeenSet() const;
 
                     /**
-                     * 获取云监控告警通知模板ID列表，形如Consumer-xxxx或notice-xxxx
-                     * @return AMPReceivers 云监控告警通知模板ID列表，形如Consumer-xxxx或notice-xxxx
+                     * 获取腾讯云可观测平台告警通知模板ID列表，形如Consumer-xxxx或notice-xxxx
+                     * @return AMPReceivers 腾讯云可观测平台告警通知模板ID列表，形如Consumer-xxxx或notice-xxxx
                      * 
                      */
                     std::vector<std::string> GetAMPReceivers() const;
 
                     /**
-                     * 设置云监控告警通知模板ID列表，形如Consumer-xxxx或notice-xxxx
-                     * @param _aMPReceivers 云监控告警通知模板ID列表，形如Consumer-xxxx或notice-xxxx
+                     * 设置腾讯云可观测平台告警通知模板ID列表，形如Consumer-xxxx或notice-xxxx
+                     * @param _aMPReceivers 腾讯云可观测平台告警通知模板ID列表，形如Consumer-xxxx或notice-xxxx
                      * 
                      */
                     void SetAMPReceivers(const std::vector<std::string>& _aMPReceivers);
@@ -254,7 +254,7 @@ namespace TencentCloud
                     bool m_groupStateHasBeenSet;
 
                     /**
-                     * 云监控告警通知模板ID列表，形如Consumer-xxxx或notice-xxxx
+                     * 腾讯云可观测平台告警通知模板ID列表，形如Consumer-xxxx或notice-xxxx
                      */
                     std::vector<std::string> m_aMPReceivers;
                     bool m_aMPReceiversHasBeenSet;

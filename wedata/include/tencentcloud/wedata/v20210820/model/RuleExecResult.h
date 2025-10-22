@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -598,6 +598,281 @@ namespace TencentCloud
                      */
                     bool TriggerConditionHasBeenSet() const;
 
+                    /**
+                     * 获取任务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleGroupName 任务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRuleGroupName() const;
+
+                    /**
+                     * 设置任务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ruleGroupName 任务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRuleGroupName(const std::string& _ruleGroupName);
+
+                    /**
+                     * 判断参数 RuleGroupName 是否已赋值
+                     * @return RuleGroupName 是否已赋值
+                     * 
+                     */
+                    bool RuleGroupNameHasBeenSet() const;
+
+                    /**
+                     * 获取数据源ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DatasourceId 数据源ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDatasourceId() const;
+
+                    /**
+                     * 设置数据源ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _datasourceId 数据源ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDatasourceId(const std::string& _datasourceId);
+
+                    /**
+                     * 判断参数 DatasourceId 是否已赋值
+                     * @return DatasourceId 是否已赋值
+                     * 
+                     */
+                    bool DatasourceIdHasBeenSet() const;
+
+                    /**
+                     * 获取数据源名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DatasourceName 数据源名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDatasourceName() const;
+
+                    /**
+                     * 设置数据源名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _datasourceName 数据源名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDatasourceName(const std::string& _datasourceName);
+
+                    /**
+                     * 判断参数 DatasourceName 是否已赋值
+                     * @return DatasourceName 是否已赋值
+                     * 
+                     */
+                    bool DatasourceNameHasBeenSet() const;
+
+                    /**
+                     * 获取数据库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DatabaseName 数据库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDatabaseName() const;
+
+                    /**
+                     * 设置数据库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _databaseName 数据库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDatabaseName(const std::string& _databaseName);
+
+                    /**
+                     * 判断参数 DatabaseName 是否已赋值
+                     * @return DatabaseName 是否已赋值
+                     * 
+                     */
+                    bool DatabaseNameHasBeenSet() const;
+
+                    /**
+                     * 获取模式名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SchemaName 模式名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSchemaName() const;
+
+                    /**
+                     * 设置模式名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _schemaName 模式名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSchemaName(const std::string& _schemaName);
+
+                    /**
+                     * 判断参数 SchemaName 是否已赋值
+                     * @return SchemaName 是否已赋值
+                     * 
+                     */
+                    bool SchemaNameHasBeenSet() const;
+
+                    /**
+                     * 获取表名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TableName 表名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTableName() const;
+
+                    /**
+                     * 设置表名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tableName 表名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTableName(const std::string& _tableName);
+
+                    /**
+                     * 判断参数 TableName 是否已赋值
+                     * @return TableName 是否已赋值
+                     * 
+                     */
+                    bool TableNameHasBeenSet() const;
+
+                    /**
+                     * 获取判断是否屏蔽监控 0.屏蔽 1.不屏蔽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleGroupExist 判断是否屏蔽监控 0.屏蔽 1.不屏蔽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetRuleGroupExist() const;
+
+                    /**
+                     * 设置判断是否屏蔽监控 0.屏蔽 1.不屏蔽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ruleGroupExist 判断是否屏蔽监控 0.屏蔽 1.不屏蔽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRuleGroupExist(const int64_t& _ruleGroupExist);
+
+                    /**
+                     * 判断参数 RuleGroupExist 是否已赋值
+                     * @return RuleGroupExist 是否已赋值
+                     * 
+                     */
+                    bool RuleGroupExistHasBeenSet() const;
+
+                    /**
+                     * 获取数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DatasourceType 数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetDatasourceType() const;
+
+                    /**
+                     * 设置数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _datasourceType 数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDatasourceType(const int64_t& _datasourceType);
+
+                    /**
+                     * 判断参数 DatasourceType 是否已赋值
+                     * @return DatasourceType 是否已赋值
+                     * 
+                     */
+                    bool DatasourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取数据表id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleGroupTableId 数据表id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetRuleGroupTableId() const;
+
+                    /**
+                     * 设置数据表id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ruleGroupTableId 数据表id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRuleGroupTableId(const uint64_t& _ruleGroupTableId);
+
+                    /**
+                     * 判断参数 RuleGroupTableId 是否已赋值
+                     * @return RuleGroupTableId 是否已赋值
+                     * 
+                     */
+                    bool RuleGroupTableIdHasBeenSet() const;
+
+                    /**
+                     * 获取监控方式 1.未配置, 2.关联生产调度, 3.离线周期检测
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MonitorType 监控方式 1.未配置, 2.关联生产调度, 3.离线周期检测
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetMonitorType() const;
+
+                    /**
+                     * 设置监控方式 1.未配置, 2.关联生产调度, 3.离线周期检测
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _monitorType 监控方式 1.未配置, 2.关联生产调度, 3.离线周期检测
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMonitorType(const int64_t& _monitorType);
+
+                    /**
+                     * 判断参数 MonitorType 是否已赋值
+                     * @return MonitorType 是否已赋值
+                     * 
+                     */
+                    bool MonitorTypeHasBeenSet() const;
+
+                    /**
+                     * 获取执行结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FinishTime 执行结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetFinishTime() const;
+
+                    /**
+                     * 设置执行结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _finishTime 执行结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFinishTime(const std::string& _finishTime);
+
+                    /**
+                     * 判断参数 FinishTime 是否已赋值
+                     * @return FinishTime 是否已赋值
+                     * 
+                     */
+                    bool FinishTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -753,6 +1028,83 @@ namespace TencentCloud
                      */
                     std::string m_triggerCondition;
                     bool m_triggerConditionHasBeenSet;
+
+                    /**
+                     * 任务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ruleGroupName;
+                    bool m_ruleGroupNameHasBeenSet;
+
+                    /**
+                     * 数据源ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_datasourceId;
+                    bool m_datasourceIdHasBeenSet;
+
+                    /**
+                     * 数据源名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_datasourceName;
+                    bool m_datasourceNameHasBeenSet;
+
+                    /**
+                     * 数据库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_databaseName;
+                    bool m_databaseNameHasBeenSet;
+
+                    /**
+                     * 模式名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_schemaName;
+                    bool m_schemaNameHasBeenSet;
+
+                    /**
+                     * 表名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_tableName;
+                    bool m_tableNameHasBeenSet;
+
+                    /**
+                     * 判断是否屏蔽监控 0.屏蔽 1.不屏蔽
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_ruleGroupExist;
+                    bool m_ruleGroupExistHasBeenSet;
+
+                    /**
+                     * 数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_datasourceType;
+                    bool m_datasourceTypeHasBeenSet;
+
+                    /**
+                     * 数据表id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_ruleGroupTableId;
+                    bool m_ruleGroupTableIdHasBeenSet;
+
+                    /**
+                     * 监控方式 1.未配置, 2.关联生产调度, 3.离线周期检测
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_monitorType;
+                    bool m_monitorTypeHasBeenSet;
+
+                    /**
+                     * 执行结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_finishTime;
+                    bool m_finishTimeHasBeenSet;
 
                 };
             }

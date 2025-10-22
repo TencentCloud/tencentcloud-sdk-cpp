@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,10 @@ ListQARequest::ListQARequest() :
     m_docBizIdHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_queryAnswerHasBeenSet(false),
-    m_qaBizIdsHasBeenSet(false)
+    m_cateBizIdHasBeenSet(false),
+    m_qaBizIdsHasBeenSet(false),
+    m_queryTypeHasBeenSet(false),
+    m_showCurrCateHasBeenSet(false)
 {
 }
 
@@ -125,6 +128,14 @@ string ListQARequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_queryAnswer.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_cateBizIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CateBizId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cateBizId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_qaBizIdsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -136,6 +147,22 @@ string ListQARequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_queryTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueryType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_queryType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_showCurrCateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShowCurrCate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_showCurrCate, allocator);
     }
 
 
@@ -290,6 +317,22 @@ bool ListQARequest::QueryAnswerHasBeenSet() const
     return m_queryAnswerHasBeenSet;
 }
 
+string ListQARequest::GetCateBizId() const
+{
+    return m_cateBizId;
+}
+
+void ListQARequest::SetCateBizId(const string& _cateBizId)
+{
+    m_cateBizId = _cateBizId;
+    m_cateBizIdHasBeenSet = true;
+}
+
+bool ListQARequest::CateBizIdHasBeenSet() const
+{
+    return m_cateBizIdHasBeenSet;
+}
+
 vector<string> ListQARequest::GetQaBizIds() const
 {
     return m_qaBizIds;
@@ -304,6 +347,38 @@ void ListQARequest::SetQaBizIds(const vector<string>& _qaBizIds)
 bool ListQARequest::QaBizIdsHasBeenSet() const
 {
     return m_qaBizIdsHasBeenSet;
+}
+
+string ListQARequest::GetQueryType() const
+{
+    return m_queryType;
+}
+
+void ListQARequest::SetQueryType(const string& _queryType)
+{
+    m_queryType = _queryType;
+    m_queryTypeHasBeenSet = true;
+}
+
+bool ListQARequest::QueryTypeHasBeenSet() const
+{
+    return m_queryTypeHasBeenSet;
+}
+
+uint64_t ListQARequest::GetShowCurrCate() const
+{
+    return m_showCurrCate;
+}
+
+void ListQARequest::SetShowCurrCate(const uint64_t& _showCurrCate)
+{
+    m_showCurrCate = _showCurrCate;
+    m_showCurrCateHasBeenSet = true;
+}
+
+bool ListQARequest::ShowCurrCateHasBeenSet() const
+{
+    return m_showCurrCateHasBeenSet;
 }
 
 

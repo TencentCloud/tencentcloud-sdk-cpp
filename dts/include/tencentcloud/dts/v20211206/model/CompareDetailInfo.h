@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,18 +53,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据不一致的表详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Difference 数据不一致的表详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DifferenceDetail GetDifference() const;
 
                     /**
                      * 设置数据不一致的表详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _difference 数据不一致的表详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDifference(const DifferenceDetail& _difference);
@@ -78,18 +74,14 @@ namespace TencentCloud
 
                     /**
                      * 获取跳过校验的表详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Skipped 跳过校验的表详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SkippedDetail GetSkipped() const;
 
                     /**
                      * 设置跳过校验的表详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _skipped 跳过校验的表详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSkipped(const SkippedDetail& _skipped);
@@ -103,18 +95,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库不一致的详情，mongodb业务用到
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DifferenceAdvancedObjects 数据库不一致的详情，mongodb业务用到
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DifferenceAdvancedObjectsDetail GetDifferenceAdvancedObjects() const;
 
                     /**
                      * 设置数据库不一致的详情，mongodb业务用到
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _differenceAdvancedObjects 数据库不一致的详情，mongodb业务用到
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDifferenceAdvancedObjects(const DifferenceAdvancedObjectsDetail& _differenceAdvancedObjects);
@@ -128,18 +116,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据不一致的详情，mongodb业务用到
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DifferenceData 数据不一致的详情，mongodb业务用到
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DifferenceDataDetail GetDifferenceData() const;
 
                     /**
                      * 设置数据不一致的详情，mongodb业务用到
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _differenceData 数据不一致的详情，mongodb业务用到
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDifferenceData(const DifferenceDataDetail& _differenceData);
@@ -153,18 +137,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据行不一致的详情，mongodb业务用到
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DifferenceRow 数据行不一致的详情，mongodb业务用到
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DifferenceRowDetail GetDifferenceRow() const;
 
                     /**
                      * 设置数据行不一致的详情，mongodb业务用到
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _differenceRow 数据行不一致的详情，mongodb业务用到
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDifferenceRow(const DifferenceRowDetail& _differenceRow);
@@ -180,35 +160,30 @@ namespace TencentCloud
 
                     /**
                      * 数据不一致的表详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DifferenceDetail m_difference;
                     bool m_differenceHasBeenSet;
 
                     /**
                      * 跳过校验的表详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SkippedDetail m_skipped;
                     bool m_skippedHasBeenSet;
 
                     /**
                      * 数据库不一致的详情，mongodb业务用到
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DifferenceAdvancedObjectsDetail m_differenceAdvancedObjects;
                     bool m_differenceAdvancedObjectsHasBeenSet;
 
                     /**
                      * 数据不一致的详情，mongodb业务用到
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DifferenceDataDetail m_differenceData;
                     bool m_differenceDataHasBeenSet;
 
                     /**
                      * 数据行不一致的详情，mongodb业务用到
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DifferenceRowDetail m_differenceRow;
                     bool m_differenceRowHasBeenSet;

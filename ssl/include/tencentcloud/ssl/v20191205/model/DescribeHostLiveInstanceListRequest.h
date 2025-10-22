@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,27 +65,6 @@ namespace TencentCloud
                     bool CertificateIdHasBeenSet() const;
 
                     /**
-                     * 获取部署资源类型
-                     * @return ResourceType 部署资源类型
-                     * 
-                     */
-                    std::string GetResourceType() const;
-
-                    /**
-                     * 设置部署资源类型
-                     * @param _resourceType 部署资源类型
-                     * 
-                     */
-                    void SetResourceType(const std::string& _resourceType);
-
-                    /**
-                     * 判断参数 ResourceType 是否已赋值
-                     * @return ResourceType 是否已赋值
-                     * 
-                     */
-                    bool ResourceTypeHasBeenSet() const;
-
-                    /**
                      * 获取是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时
                      * @return IsCache 是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时
                      * 
@@ -128,6 +107,27 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
+                     * 获取部署资源类型
+                     * @return ResourceType 部署资源类型
+                     * @deprecated
+                     */
+                    std::string GetResourceType() const;
+
+                    /**
+                     * 设置部署资源类型
+                     * @param _resourceType 部署资源类型
+                     * @deprecated
+                     */
+                    void SetResourceType(const std::string& _resourceType);
+
+                    /**
+                     * 判断参数 ResourceType 是否已赋值
+                     * @return ResourceType 是否已赋值
+                     * @deprecated
+                     */
+                    bool ResourceTypeHasBeenSet() const;
+
+                    /**
                      * 获取已部署的证书ID
                      * @return OldCertificateId 已部署的证书ID
                      * 
@@ -157,12 +157,6 @@ namespace TencentCloud
                     bool m_certificateIdHasBeenSet;
 
                     /**
-                     * 部署资源类型
-                     */
-                    std::string m_resourceType;
-                    bool m_resourceTypeHasBeenSet;
-
-                    /**
                      * 是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时
                      */
                     uint64_t m_isCache;
@@ -173,6 +167,12 @@ namespace TencentCloud
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * 部署资源类型
+                     */
+                    std::string m_resourceType;
+                    bool m_resourceTypeHasBeenSet;
 
                     /**
                      * 已部署的证书ID

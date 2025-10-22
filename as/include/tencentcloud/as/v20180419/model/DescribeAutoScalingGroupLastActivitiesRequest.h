@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取伸缩组ID列表
-                     * @return AutoScalingGroupIds 伸缩组ID列表
+                     * 获取伸缩组ID列表。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 或调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。
+                     * @return AutoScalingGroupIds 伸缩组ID列表。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 或调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。
                      * 
                      */
                     std::vector<std::string> GetAutoScalingGroupIds() const;
 
                     /**
-                     * 设置伸缩组ID列表
-                     * @param _autoScalingGroupIds 伸缩组ID列表
+                     * 设置伸缩组ID列表。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 或调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。
+                     * @param _autoScalingGroupIds 伸缩组ID列表。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 或调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。
                      * 
                      */
                     void SetAutoScalingGroupIds(const std::vector<std::string>& _autoScalingGroupIds);
@@ -63,13 +63,40 @@ namespace TencentCloud
                      */
                     bool AutoScalingGroupIdsHasBeenSet() const;
 
+                    /**
+                     * 获取查询时排除取消类型活动。默认值为 false，表示不排除取消类型活动。
+                     * @return ExcludeCancelledActivity 查询时排除取消类型活动。默认值为 false，表示不排除取消类型活动。
+                     * 
+                     */
+                    bool GetExcludeCancelledActivity() const;
+
+                    /**
+                     * 设置查询时排除取消类型活动。默认值为 false，表示不排除取消类型活动。
+                     * @param _excludeCancelledActivity 查询时排除取消类型活动。默认值为 false，表示不排除取消类型活动。
+                     * 
+                     */
+                    void SetExcludeCancelledActivity(const bool& _excludeCancelledActivity);
+
+                    /**
+                     * 判断参数 ExcludeCancelledActivity 是否已赋值
+                     * @return ExcludeCancelledActivity 是否已赋值
+                     * 
+                     */
+                    bool ExcludeCancelledActivityHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 伸缩组ID列表
+                     * 伸缩组ID列表。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 或调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。
                      */
                     std::vector<std::string> m_autoScalingGroupIds;
                     bool m_autoScalingGroupIdsHasBeenSet;
+
+                    /**
+                     * 查询时排除取消类型活动。默认值为 false，表示不排除取消类型活动。
+                     */
+                    bool m_excludeCancelledActivity;
+                    bool m_excludeCancelledActivityHasBeenSet;
 
                 };
             }

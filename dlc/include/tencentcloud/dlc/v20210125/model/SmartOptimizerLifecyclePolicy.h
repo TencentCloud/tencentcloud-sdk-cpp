@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取生命周期启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LifecycleEnable 生命周期启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLifecycleEnable() const;
 
                     /**
                      * 设置生命周期启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lifecycleEnable 生命周期启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLifecycleEnable(const std::string& _lifecycleEnable);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Expiration 过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetExpiration() const;
 
                     /**
                      * 设置过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expiration 过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpiration(const int64_t& _expiration);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否删表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DropTable 是否删表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetDropTable() const;
 
                     /**
                      * 设置是否删表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dropTable 是否删表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDropTable(const bool& _dropTable);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取过期字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpiredField 过期字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpiredField() const;
 
                     /**
                      * 设置过期字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expiredField 过期字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpiredField(const std::string& _expiredField);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取过期字段格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpiredFieldFormat 过期字段格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpiredFieldFormat() const;
 
                     /**
                      * 设置过期字段格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expiredFieldFormat 过期字段格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpiredFieldFormat(const std::string& _expiredFieldFormat);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 生命周期启用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lifecycleEnable;
                     bool m_lifecycleEnableHasBeenSet;
 
                     /**
                      * 过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_expiration;
                     bool m_expirationHasBeenSet;
 
                     /**
                      * 是否删表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_dropTable;
                     bool m_dropTableHasBeenSet;
 
                     /**
                      * 过期字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expiredField;
                     bool m_expiredFieldHasBeenSet;
 
                     /**
                      * 过期字段格式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expiredFieldFormat;
                     bool m_expiredFieldFormatHasBeenSet;

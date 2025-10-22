@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取有加密需求的用户，接入传入kms的CiphertextBlob，关于数据加密可查阅[敏感数据加密指引](https://cloud.tencent.com/document/product/866/106048)文档。
+                     * 获取有加密需求的用户，接入传入kms的CiphertextBlob（Base64编码），关于数据加密可查阅[敏感数据加密指引](https://cloud.tencent.com/document/product/866/106048)文档。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CiphertextBlob 有加密需求的用户，接入传入kms的CiphertextBlob，关于数据加密可查阅[敏感数据加密指引](https://cloud.tencent.com/document/product/866/106048)文档。
+                     * @return CiphertextBlob 有加密需求的用户，接入传入kms的CiphertextBlob（Base64编码），关于数据加密可查阅[敏感数据加密指引](https://cloud.tencent.com/document/product/866/106048)文档。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCiphertextBlob() const;
 
                     /**
-                     * 设置有加密需求的用户，接入传入kms的CiphertextBlob，关于数据加密可查阅[敏感数据加密指引](https://cloud.tencent.com/document/product/866/106048)文档。
+                     * 设置有加密需求的用户，接入传入kms的CiphertextBlob（Base64编码），关于数据加密可查阅[敏感数据加密指引](https://cloud.tencent.com/document/product/866/106048)文档。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ciphertextBlob 有加密需求的用户，接入传入kms的CiphertextBlob，关于数据加密可查阅[敏感数据加密指引](https://cloud.tencent.com/document/product/866/106048)文档。
+                     * @param _ciphertextBlob 有加密需求的用户，接入传入kms的CiphertextBlob（Base64编码），关于数据加密可查阅[敏感数据加密指引](https://cloud.tencent.com/document/product/866/106048)文档。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool CiphertextBlobHasBeenSet() const;
 
                     /**
-                     * 获取有加密需求的用户，传入CBC加密的初始向量（客户自定义字符串，长度16字符）。
+                     * 获取有加密需求的用户，传入CBC加密的初始向量（客户自定义字符串，长度16字符，Base64编码）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Iv 有加密需求的用户，传入CBC加密的初始向量（客户自定义字符串，长度16字符）。
+                     * @return Iv 有加密需求的用户，传入CBC加密的初始向量（客户自定义字符串，长度16字符，Base64编码）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIv() const;
 
                     /**
-                     * 设置有加密需求的用户，传入CBC加密的初始向量（客户自定义字符串，长度16字符）。
+                     * 设置有加密需求的用户，传入CBC加密的初始向量（客户自定义字符串，长度16字符，Base64编码）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _iv 有加密需求的用户，传入CBC加密的初始向量（客户自定义字符串，长度16字符）。
+                     * @param _iv 有加密需求的用户，传入CBC加密的初始向量（客户自定义字符串，长度16字符，Base64编码）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -174,14 +174,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 有加密需求的用户，接入传入kms的CiphertextBlob，关于数据加密可查阅[敏感数据加密指引](https://cloud.tencent.com/document/product/866/106048)文档。
+                     * 有加密需求的用户，接入传入kms的CiphertextBlob（Base64编码），关于数据加密可查阅[敏感数据加密指引](https://cloud.tencent.com/document/product/866/106048)文档。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ciphertextBlob;
                     bool m_ciphertextBlobHasBeenSet;
 
                     /**
-                     * 有加密需求的用户，传入CBC加密的初始向量（客户自定义字符串，长度16字符）。
+                     * 有加密需求的用户，传入CBC加密的初始向量（客户自定义字符串，长度16字符，Base64编码）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_iv;

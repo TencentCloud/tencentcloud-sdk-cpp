@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _text 文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetText(const std::string& _text);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取企业名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 企业名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置企业名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 企业名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取生产地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Address 生产地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAddress() const;
 
                     /**
                      * 设置生产地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _address 生产地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddress(const std::string& _address);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取邮政编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PostalCode 邮政编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPostalCode() const;
 
                     /**
                      * 设置邮政编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _postalCode 邮政编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPostalCode(const std::string& _postalCode);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取电话，包含区号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Phone 电话，包含区号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPhone() const;
 
                     /**
                      * 设置电话，包含区号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _phone 电话，包含区号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPhone(const std::string& _phone);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取传真，包含区号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Fax 传真，包含区号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFax() const;
 
                     /**
                      * 设置传真，包含区号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fax 传真，包含区号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFax(const std::string& _fax);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网址，如无则不填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Website 网址，如无则不填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWebsite() const;
 
                     /**
                      * 设置网址，如无则不填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _website 网址，如无则不填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWebsite(const std::string& _website);
@@ -225,49 +197,42 @@ namespace TencentCloud
 
                     /**
                      * 文本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;
 
                     /**
                      * 企业名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 生产地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_address;
                     bool m_addressHasBeenSet;
 
                     /**
                      * 邮政编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_postalCode;
                     bool m_postalCodeHasBeenSet;
 
                     /**
                      * 电话，包含区号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_phone;
                     bool m_phoneHasBeenSet;
 
                     /**
                      * 传真，包含区号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fax;
                     bool m_faxHasBeenSet;
 
                     /**
                      * 网址，如无则不填写
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_website;
                     bool m_websiteHasBeenSet;

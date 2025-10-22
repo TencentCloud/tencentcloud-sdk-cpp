@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool LogsetNameHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取创建时间。格式 `YYYY-MM-DD HH:MM:SS`
+                     * @return CreateTime 创建时间。格式 `YYYY-MM-DD HH:MM:SS`
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置创建时间。格式 `YYYY-MM-DD HH:MM:SS`
+                     * @param _createTime 创建时间。格式 `YYYY-MM-DD HH:MM:SS`
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -112,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云产品标识，日志集由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssumerName 云产品标识，日志集由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAssumerName() const;
 
                     /**
                      * 设置云产品标识，日志集由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _assumerName 云产品标识，日志集由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAssumerName(const std::string& _assumerName);
@@ -137,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志集绑定的标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 日志集绑定的标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置日志集绑定的标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 日志集绑定的标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -217,21 +209,19 @@ namespace TencentCloud
                     bool m_logsetNameHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * 创建时间。格式 `YYYY-MM-DD HH:MM:SS`
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 云产品标识，日志集由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_assumerName;
                     bool m_assumerNameHasBeenSet;
 
                     /**
                      * 日志集绑定的标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;

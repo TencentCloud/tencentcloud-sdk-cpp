@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ ModifyDBInstanceNetworkRequest::ModifyDBInstanceNetworkRequest() :
     m_newSubnetIdHasBeenSet(false),
     m_oldIpRetainTimeHasBeenSet(false),
     m_vipHasBeenSet(false),
-    m_dRNetworkHasBeenSet(false)
+    m_dRNetworkHasBeenSet(false),
+    m_drInstanceIdHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string ModifyDBInstanceNetworkRequest::ToJsonString() const
         string key = "DRNetwork";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_dRNetwork, allocator);
+    }
+
+    if (m_drInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DrInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_drInstanceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +198,22 @@ void ModifyDBInstanceNetworkRequest::SetDRNetwork(const uint64_t& _dRNetwork)
 bool ModifyDBInstanceNetworkRequest::DRNetworkHasBeenSet() const
 {
     return m_dRNetworkHasBeenSet;
+}
+
+string ModifyDBInstanceNetworkRequest::GetDrInstanceId() const
+{
+    return m_drInstanceId;
+}
+
+void ModifyDBInstanceNetworkRequest::SetDrInstanceId(const string& _drInstanceId)
+{
+    m_drInstanceId = _drInstanceId;
+    m_drInstanceIdHasBeenSet = true;
+}
+
+bool ModifyDBInstanceNetworkRequest::DrInstanceIdHasBeenSet() const
+{
+    return m_drInstanceIdHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,10 @@ ScanTaskResult::ScanTaskResult() :
     m_idHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_resultHasBeenSet(false)
+    m_resultHasBeenSet(false),
+    m_resultDescriptionHasBeenSet(false),
+    m_suggestionHasBeenSet(false),
+    m_progressHasBeenSet(false)
 {
 }
 
@@ -73,6 +76,36 @@ CoreInternalOutcome ScanTaskResult::Deserialize(const rapidjson::Value &value)
         m_resultHasBeenSet = true;
     }
 
+    if (value.HasMember("ResultDescription") && !value["ResultDescription"].IsNull())
+    {
+        if (!value["ResultDescription"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScanTaskResult.ResultDescription` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resultDescription = string(value["ResultDescription"].GetString());
+        m_resultDescriptionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Suggestion") && !value["Suggestion"].IsNull())
+    {
+        if (!value["Suggestion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScanTaskResult.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_suggestion = string(value["Suggestion"].GetString());
+        m_suggestionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Progress") && !value["Progress"].IsNull())
+    {
+        if (!value["Progress"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScanTaskResult.Progress` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_progress = value["Progress"].GetDouble();
+        m_progressHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +143,30 @@ void ScanTaskResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Result";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_result.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resultDescriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResultDescription";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resultDescription.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_suggestionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Suggestion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_suggestion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_progressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Progress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_progress, allocator);
     }
 
 }
@@ -177,5 +234,53 @@ void ScanTaskResult::SetResult(const string& _result)
 bool ScanTaskResult::ResultHasBeenSet() const
 {
     return m_resultHasBeenSet;
+}
+
+string ScanTaskResult::GetResultDescription() const
+{
+    return m_resultDescription;
+}
+
+void ScanTaskResult::SetResultDescription(const string& _resultDescription)
+{
+    m_resultDescription = _resultDescription;
+    m_resultDescriptionHasBeenSet = true;
+}
+
+bool ScanTaskResult::ResultDescriptionHasBeenSet() const
+{
+    return m_resultDescriptionHasBeenSet;
+}
+
+string ScanTaskResult::GetSuggestion() const
+{
+    return m_suggestion;
+}
+
+void ScanTaskResult::SetSuggestion(const string& _suggestion)
+{
+    m_suggestion = _suggestion;
+    m_suggestionHasBeenSet = true;
+}
+
+bool ScanTaskResult::SuggestionHasBeenSet() const
+{
+    return m_suggestionHasBeenSet;
+}
+
+double ScanTaskResult::GetProgress() const
+{
+    return m_progress;
+}
+
+void ScanTaskResult::SetProgress(const double& _progress)
+{
+    m_progress = _progress;
+    m_progressHasBeenSet = true;
+}
+
+bool ScanTaskResult::ProgressHasBeenSet() const
+{
+    return m_progressHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -350,6 +350,69 @@ namespace TencentCloud
                      */
                     bool FuelTypeHasBeenSet() const;
 
+                    /**
+                     * 获取住址
+                     * @return AddressElectronic 住址
+                     * 
+                     */
+                    std::string GetAddressElectronic() const;
+
+                    /**
+                     * 设置住址
+                     * @param _addressElectronic 住址
+                     * 
+                     */
+                    void SetAddressElectronic(const std::string& _addressElectronic);
+
+                    /**
+                     * 判断参数 AddressElectronic 是否已赋值
+                     * @return AddressElectronic 是否已赋值
+                     * 
+                     */
+                    bool AddressElectronicHasBeenSet() const;
+
+                    /**
+                     * 获取发证机关
+                     * @return IssueAuthorityElectronic 发证机关
+                     * 
+                     */
+                    std::string GetIssueAuthorityElectronic() const;
+
+                    /**
+                     * 设置发证机关
+                     * @param _issueAuthorityElectronic 发证机关
+                     * 
+                     */
+                    void SetIssueAuthorityElectronic(const std::string& _issueAuthorityElectronic);
+
+                    /**
+                     * 判断参数 IssueAuthorityElectronic 是否已赋值
+                     * @return IssueAuthorityElectronic 是否已赋值
+                     * 
+                     */
+                    bool IssueAuthorityElectronicHasBeenSet() const;
+
+                    /**
+                     * 获取车身颜色
+                     * @return CarBodyColor 车身颜色
+                     * 
+                     */
+                    std::string GetCarBodyColor() const;
+
+                    /**
+                     * 设置车身颜色
+                     * @param _carBodyColor 车身颜色
+                     * 
+                     */
+                    void SetCarBodyColor(const std::string& _carBodyColor);
+
+                    /**
+                     * 判断参数 CarBodyColor 是否已赋值
+                     * @return CarBodyColor 是否已赋值
+                     * 
+                     */
+                    bool CarBodyColorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -436,6 +499,24 @@ namespace TencentCloud
                      */
                     std::string m_fuelType;
                     bool m_fuelTypeHasBeenSet;
+
+                    /**
+                     * 住址
+                     */
+                    std::string m_addressElectronic;
+                    bool m_addressElectronicHasBeenSet;
+
+                    /**
+                     * 发证机关
+                     */
+                    std::string m_issueAuthorityElectronic;
+                    bool m_issueAuthorityElectronicHasBeenSet;
+
+                    /**
+                     * 车身颜色
+                     */
+                    std::string m_carBodyColor;
+                    bool m_carBodyColorHasBeenSet;
 
                 };
             }

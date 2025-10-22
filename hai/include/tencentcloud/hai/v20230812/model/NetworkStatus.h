@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取HAI 的实例 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId HAI 的实例 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置HAI 的实例 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId HAI 的实例 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -123,18 +119,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流量包总量，单位GB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalTrafficAmount 流量包总量，单位GB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetTotalTrafficAmount() const;
 
                     /**
                      * 设置流量包总量，单位GB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalTrafficAmount 流量包总量，单位GB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalTrafficAmount(const double& _totalTrafficAmount);
@@ -148,18 +140,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流量包剩余量，单位GB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemainingTrafficAmount 流量包剩余量，单位GB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetRemainingTrafficAmount() const;
 
                     /**
                      * 设置流量包剩余量，单位GB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remainingTrafficAmount 流量包剩余量，单位GB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemainingTrafficAmount(const double& _remainingTrafficAmount);
@@ -175,7 +163,6 @@ namespace TencentCloud
 
                     /**
                      * HAI 的实例 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -196,14 +183,12 @@ namespace TencentCloud
 
                     /**
                      * 流量包总量，单位GB
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_totalTrafficAmount;
                     bool m_totalTrafficAmountHasBeenSet;
 
                     /**
                      * 流量包剩余量，单位GB
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_remainingTrafficAmount;
                     bool m_remainingTrafficAmountHasBeenSet;

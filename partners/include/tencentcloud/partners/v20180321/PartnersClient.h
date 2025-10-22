@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@
 #include <tencentcloud/partners/v20180321/model/DescribeAgentClientsResponse.h>
 #include <tencentcloud/partners/v20180321/model/DescribeAgentDealsByCacheRequest.h>
 #include <tencentcloud/partners/v20180321/model/DescribeAgentDealsByCacheResponse.h>
+#include <tencentcloud/partners/v20180321/model/DescribeAgentDealsPriceDetailByDealNameRequest.h>
+#include <tencentcloud/partners/v20180321/model/DescribeAgentDealsPriceDetailByDealNameResponse.h>
 #include <tencentcloud/partners/v20180321/model/DescribeAgentPayDealsV2Request.h>
 #include <tencentcloud/partners/v20180321/model/DescribeAgentPayDealsV2Response.h>
 #include <tencentcloud/partners/v20180321/model/DescribeAgentRelateBigDealIdsRequest.h>
@@ -51,6 +53,10 @@
 #include <tencentcloud/partners/v20180321/model/DescribeAgentSelfPayDealsV2Response.h>
 #include <tencentcloud/partners/v20180321/model/DescribeClientBalanceNewRequest.h>
 #include <tencentcloud/partners/v20180321/model/DescribeClientBalanceNewResponse.h>
+#include <tencentcloud/partners/v20180321/model/DescribeClientJoinIncreaseListRequest.h>
+#include <tencentcloud/partners/v20180321/model/DescribeClientJoinIncreaseListResponse.h>
+#include <tencentcloud/partners/v20180321/model/DescribeClientSwitchTraTaskInfoRequest.h>
+#include <tencentcloud/partners/v20180321/model/DescribeClientSwitchTraTaskInfoResponse.h>
 #include <tencentcloud/partners/v20180321/model/DescribeRebateInfosRequest.h>
 #include <tencentcloud/partners/v20180321/model/DescribeRebateInfosResponse.h>
 #include <tencentcloud/partners/v20180321/model/DescribeRebateInfosNewRequest.h>
@@ -107,6 +113,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAgentDealsByCacheResponse> DescribeAgentDealsByCacheOutcome;
                 typedef std::future<DescribeAgentDealsByCacheOutcome> DescribeAgentDealsByCacheOutcomeCallable;
                 typedef std::function<void(const PartnersClient*, const Model::DescribeAgentDealsByCacheRequest&, DescribeAgentDealsByCacheOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgentDealsByCacheAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAgentDealsPriceDetailByDealNameResponse> DescribeAgentDealsPriceDetailByDealNameOutcome;
+                typedef std::future<DescribeAgentDealsPriceDetailByDealNameOutcome> DescribeAgentDealsPriceDetailByDealNameOutcomeCallable;
+                typedef std::function<void(const PartnersClient*, const Model::DescribeAgentDealsPriceDetailByDealNameRequest&, DescribeAgentDealsPriceDetailByDealNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgentDealsPriceDetailByDealNameAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAgentPayDealsV2Response> DescribeAgentPayDealsV2Outcome;
                 typedef std::future<DescribeAgentPayDealsV2Outcome> DescribeAgentPayDealsV2OutcomeCallable;
                 typedef std::function<void(const PartnersClient*, const Model::DescribeAgentPayDealsV2Request&, DescribeAgentPayDealsV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgentPayDealsV2AsyncHandler;
@@ -119,6 +128,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClientBalanceNewResponse> DescribeClientBalanceNewOutcome;
                 typedef std::future<DescribeClientBalanceNewOutcome> DescribeClientBalanceNewOutcomeCallable;
                 typedef std::function<void(const PartnersClient*, const Model::DescribeClientBalanceNewRequest&, DescribeClientBalanceNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClientBalanceNewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClientJoinIncreaseListResponse> DescribeClientJoinIncreaseListOutcome;
+                typedef std::future<DescribeClientJoinIncreaseListOutcome> DescribeClientJoinIncreaseListOutcomeCallable;
+                typedef std::function<void(const PartnersClient*, const Model::DescribeClientJoinIncreaseListRequest&, DescribeClientJoinIncreaseListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClientJoinIncreaseListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClientSwitchTraTaskInfoResponse> DescribeClientSwitchTraTaskInfoOutcome;
+                typedef std::future<DescribeClientSwitchTraTaskInfoOutcome> DescribeClientSwitchTraTaskInfoOutcomeCallable;
+                typedef std::function<void(const PartnersClient*, const Model::DescribeClientSwitchTraTaskInfoRequest&, DescribeClientSwitchTraTaskInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClientSwitchTraTaskInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRebateInfosResponse> DescribeRebateInfosOutcome;
                 typedef std::future<DescribeRebateInfosOutcome> DescribeRebateInfosOutcomeCallable;
                 typedef std::function<void(const PartnersClient*, const Model::DescribeRebateInfosRequest&, DescribeRebateInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRebateInfosAsyncHandler;
@@ -225,7 +240,8 @@ namespace TencentCloud
                 DescribeAgentClientsOutcomeCallable DescribeAgentClientsCallable(const Model::DescribeAgentClientsRequest& request);
 
                 /**
-                 *供代理商拉取缓存的全量预付费客户订单
+                 *供代理商拉取全量预付费普通客户订单
+（对应控制台：客户订单-预付费-普通订单）
                  * @param req DescribeAgentDealsByCacheRequest
                  * @return DescribeAgentDealsByCacheOutcome
                  */
@@ -234,7 +250,16 @@ namespace TencentCloud
                 DescribeAgentDealsByCacheOutcomeCallable DescribeAgentDealsByCacheCallable(const Model::DescribeAgentDealsByCacheRequest& request);
 
                 /**
-                 *可以查询代理商代付的预付费订单
+                 *供代理商使用名下有效普通代客的预付费子订单号查询订单费用详情
+                 * @param req DescribeAgentDealsPriceDetailByDealNameRequest
+                 * @return DescribeAgentDealsPriceDetailByDealNameOutcome
+                 */
+                DescribeAgentDealsPriceDetailByDealNameOutcome DescribeAgentDealsPriceDetailByDealName(const Model::DescribeAgentDealsPriceDetailByDealNameRequest &request);
+                void DescribeAgentDealsPriceDetailByDealNameAsync(const Model::DescribeAgentDealsPriceDetailByDealNameRequest& request, const DescribeAgentDealsPriceDetailByDealNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAgentDealsPriceDetailByDealNameOutcomeCallable DescribeAgentDealsPriceDetailByDealNameCallable(const Model::DescribeAgentDealsPriceDetailByDealNameRequest& request);
+
+                /**
+                 *查询最近15天内的代理商代付订单
                  * @param req DescribeAgentPayDealsV2Request
                  * @return DescribeAgentPayDealsV2Outcome
                  */
@@ -252,7 +277,7 @@ namespace TencentCloud
                 DescribeAgentRelateBigDealIdsOutcomeCallable DescribeAgentRelateBigDealIdsCallable(const Model::DescribeAgentRelateBigDealIdsRequest& request);
 
                 /**
-                 *查询代理商名下指定代客的自付订单（预付费）
+                 *查询代理商名下指定代客最近15天内的自付订单（预付费）
                  * @param req DescribeAgentSelfPayDealsV2Request
                  * @return DescribeAgentSelfPayDealsV2Outcome
                  */
@@ -268,6 +293,24 @@ namespace TencentCloud
                 DescribeClientBalanceNewOutcome DescribeClientBalanceNew(const Model::DescribeClientBalanceNewRequest &request);
                 void DescribeClientBalanceNewAsync(const Model::DescribeClientBalanceNewRequest& request, const DescribeClientBalanceNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClientBalanceNewOutcomeCallable DescribeClientBalanceNewCallable(const Model::DescribeClientBalanceNewRequest& request);
+
+                /**
+                 *查询合作伙伴名下客户的参与增量激励考核信息列表
+                 * @param req DescribeClientJoinIncreaseListRequest
+                 * @return DescribeClientJoinIncreaseListOutcome
+                 */
+                DescribeClientJoinIncreaseListOutcome DescribeClientJoinIncreaseList(const Model::DescribeClientJoinIncreaseListRequest &request);
+                void DescribeClientJoinIncreaseListAsync(const Model::DescribeClientJoinIncreaseListRequest& request, const DescribeClientJoinIncreaseListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClientJoinIncreaseListOutcomeCallable DescribeClientJoinIncreaseListCallable(const Model::DescribeClientJoinIncreaseListRequest& request);
+
+                /**
+                 *查询客户的交易类型切换任务的信息，查询成功则获取当前用户的切换链接，查询失败则返回失败的原因
+                 * @param req DescribeClientSwitchTraTaskInfoRequest
+                 * @return DescribeClientSwitchTraTaskInfoOutcome
+                 */
+                DescribeClientSwitchTraTaskInfoOutcome DescribeClientSwitchTraTaskInfo(const Model::DescribeClientSwitchTraTaskInfoRequest &request);
+                void DescribeClientSwitchTraTaskInfoAsync(const Model::DescribeClientSwitchTraTaskInfoRequest& request, const DescribeClientSwitchTraTaskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClientSwitchTraTaskInfoOutcomeCallable DescribeClientSwitchTraTaskInfoCallable(const Model::DescribeClientSwitchTraTaskInfoRequest& request);
 
                 /**
                  *【该接口已下线，请切换使用升级版本DescribeRebateInfosNew】代理商可查询自己名下全部返佣信息

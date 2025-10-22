@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CmqRegionName 地域描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCmqRegionName() const;
 
                     /**
                      * 设置地域描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cmqRegionName 地域描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCmqRegionName(const std::string& _cmqRegionName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cmq地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CmqRegion cmq地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCmqRegion() const;
 
                     /**
                      * 设置cmq地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cmqRegion cmq地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCmqRegion(const std::string& _cmqRegion);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 地域描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cmqRegionName;
                     bool m_cmqRegionNameHasBeenSet;
 
                     /**
                      * cmq地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cmqRegion;
                     bool m_cmqRegionHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,10 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取DDOS实例列表
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceList DDOS实例列表
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取DDOS实例列表,取不到值返回空数组
+                     * @return InstanceList DDOS实例列表,取不到值返回空数组
                      * 
                      */
                     std::vector<DdosInstanceDetail> GetInstanceList() const;
@@ -60,14 +58,33 @@ namespace TencentCloud
                      */
                     bool InstanceListHasBeenSet() const;
 
+                    /**
+                     * 获取总数
+                     * @return TotalCount 总数
+                     * 
+                     */
+                    uint64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     * 
+                     */
+                    bool TotalCountHasBeenSet() const;
+
                 private:
 
                     /**
-                     * DDOS实例列表
-注意：此字段可能返回 null，表示取不到有效值。
+                     * DDOS实例列表,取不到值返回空数组
                      */
                     std::vector<DdosInstanceDetail> m_instanceList;
                     bool m_instanceListHasBeenSet;
+
+                    /**
+                     * 总数
+                     */
+                    uint64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
 
                 };
             }

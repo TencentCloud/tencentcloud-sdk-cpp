@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,7 +46,34 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
+                    /**
+                     * 获取主机路径
+                     * @return Path 主机路径
+                     * 
+                     */
+                    std::string GetPath() const;
+
+                    /**
+                     * 设置主机路径
+                     * @param _path 主机路径
+                     * 
+                     */
+                    void SetPath(const std::string& _path);
+
+                    /**
+                     * 判断参数 Path 是否已赋值
+                     * @return Path 是否已赋值
+                     * 
+                     */
+                    bool PathHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 主机路径
+                     */
+                    std::string m_path;
+                    bool m_pathHasBeenSet;
 
                 };
             }

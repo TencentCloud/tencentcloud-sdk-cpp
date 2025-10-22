@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,18 +52,14 @@ namespace TencentCloud
 
                     /**
                      * 获取请求匹配条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Filters 请求匹配条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RuleFilter> GetFilters() const;
 
                     /**
                      * 设置请求匹配条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _filters 请求匹配条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFilters(const std::vector<RuleFilter>& _filters);
@@ -77,18 +73,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数限流依据组合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LimitBy 参数限流依据组合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<KeyValue> GetLimitBy() const;
 
                     /**
                      * 设置参数限流依据组合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _limitBy 参数限流依据组合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLimitBy(const std::vector<KeyValue>& _limitBy);
@@ -102,18 +94,14 @@ namespace TencentCloud
 
                     /**
                      * 获取限流阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QpsThresholds 限流阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<QpsThreshold> GetQpsThresholds() const;
 
                     /**
                      * 设置限流阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _qpsThresholds 限流阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQpsThresholds(const std::vector<QpsThreshold>& _qpsThresholds);
@@ -127,18 +115,14 @@ namespace TencentCloud
 
                     /**
                      * 获取精确限流阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccurateQpsThresholds 精确限流阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AccurateQpsThreshold> GetAccurateQpsThresholds() const;
 
                     /**
                      * 设置精确限流阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accurateQpsThresholds 精确限流阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccurateQpsThresholds(const std::vector<AccurateQpsThreshold>& _accurateQpsThresholds);
@@ -154,28 +138,24 @@ namespace TencentCloud
 
                     /**
                      * 请求匹配条件
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RuleFilter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
                      * 参数限流依据组合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<KeyValue> m_limitBy;
                     bool m_limitByHasBeenSet;
 
                     /**
                      * 限流阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<QpsThreshold> m_qpsThresholds;
                     bool m_qpsThresholdsHasBeenSet;
 
                     /**
                      * 精确限流阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AccurateQpsThreshold> m_accurateQpsThresholds;
                     bool m_accurateQpsThresholdsHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取总楼栋数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BuildingCount 总楼栋数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetBuildingCount() const;
 
                     /**
                      * 设置总楼栋数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _buildingCount 总楼栋数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBuildingCount(const uint64_t& _buildingCount);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取总建筑面积
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BuildingArea 总建筑面积
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetBuildingArea() const;
 
                     /**
                      * 设置总建筑面积
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _buildingArea 总建筑面积
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBuildingArea(const double& _buildingArea);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 总楼栋数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_buildingCount;
                     bool m_buildingCountHasBeenSet;
 
                     /**
                      * 总建筑面积
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_buildingArea;
                     bool m_buildingAreaHasBeenSet;

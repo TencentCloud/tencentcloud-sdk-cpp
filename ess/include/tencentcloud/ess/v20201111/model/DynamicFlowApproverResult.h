@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,14 +53,12 @@ namespace TencentCloud
 
 在进行新增签署方操作时，建议记录下该签署方的角色编号。后续可以拉取流程信息，用来判断该签署方的当前状态。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecipientId 签署方角色编号，签署方角色编号是用于区分同一个流程中不同签署方的唯一标识。不同的流程会出现同样的签署方角色编号。
 
 填写控件和签署控件都与特定的角色编号关联。
 
 在进行新增签署方操作时，建议记录下该签署方的角色编号。后续可以拉取流程信息，用来判断该签署方的当前状态。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRecipientId() const;
@@ -72,14 +70,12 @@ namespace TencentCloud
 
 在进行新增签署方操作时，建议记录下该签署方的角色编号。后续可以拉取流程信息，用来判断该签署方的当前状态。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recipientId 签署方角色编号，签署方角色编号是用于区分同一个流程中不同签署方的唯一标识。不同的流程会出现同样的签署方角色编号。
 
 填写控件和签署控件都与特定的角色编号关联。
 
 在进行新增签署方操作时，建议记录下该签署方的角色编号。后续可以拉取流程信息，用来判断该签署方的当前状态。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecipientId(const std::string& _recipientId);
@@ -95,11 +91,9 @@ namespace TencentCloud
                      * 获取签署方唯一编号，一个全局唯一的标识符，不同的流程不会出现冲突。
 
 可以使用签署方的唯一编号来生成签署链接（也可以通过RecipientId来生成签署链接）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SignId 签署方唯一编号，一个全局唯一的标识符，不同的流程不会出现冲突。
 
 可以使用签署方的唯一编号来生成签署链接（也可以通过RecipientId来生成签署链接）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSignId() const;
@@ -108,11 +102,9 @@ namespace TencentCloud
                      * 设置签署方唯一编号，一个全局唯一的标识符，不同的流程不会出现冲突。
 
 可以使用签署方的唯一编号来生成签署链接（也可以通过RecipientId来生成签署链接）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _signId 签署方唯一编号，一个全局唯一的标识符，不同的流程不会出现冲突。
 
 可以使用签署方的唯一编号来生成签署链接（也可以通过RecipientId来生成签署链接）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSignId(const std::string& _signId);
@@ -137,7 +129,6 @@ namespace TencentCloud
 10：填写完成
 15：已解除
 19：转他人处理
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApproverStatus 签署方当前状态，会出现下面的状态
 
 2：待签署
@@ -150,7 +141,6 @@ namespace TencentCloud
 10：填写完成
 15：已解除
 19：转他人处理
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetApproverStatus() const;
@@ -168,7 +158,6 @@ namespace TencentCloud
 10：填写完成
 15：已解除
 19：转他人处理
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _approverStatus 签署方当前状态，会出现下面的状态
 
 2：待签署
@@ -181,7 +170,6 @@ namespace TencentCloud
 10：填写完成
 15：已解除
 19：转他人处理
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApproverStatus(const int64_t& _approverStatus);
@@ -202,7 +190,6 @@ namespace TencentCloud
 
 在进行新增签署方操作时，建议记录下该签署方的角色编号。后续可以拉取流程信息，用来判断该签署方的当前状态。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_recipientId;
                     bool m_recipientIdHasBeenSet;
@@ -211,7 +198,6 @@ namespace TencentCloud
                      * 签署方唯一编号，一个全局唯一的标识符，不同的流程不会出现冲突。
 
 可以使用签署方的唯一编号来生成签署链接（也可以通过RecipientId来生成签署链接）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_signId;
                     bool m_signIdHasBeenSet;
@@ -229,7 +215,6 @@ namespace TencentCloud
 10：填写完成
 15：已解除
 19：转他人处理
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_approverStatus;
                     bool m_approverStatusHasBeenSet;

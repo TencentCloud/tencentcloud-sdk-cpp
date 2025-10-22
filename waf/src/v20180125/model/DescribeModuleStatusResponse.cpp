@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,8 @@ DescribeModuleStatusResponse::DescribeModuleStatusResponse() :
     m_antiTamperHasBeenSet(false),
     m_antiLeakageHasBeenSet(false),
     m_apiProtectionHasBeenSet(false),
-    m_rateLimitHasBeenSet(false)
+    m_rateLimitHasBeenSet(false),
+    m_gzipAnalysisHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,16 @@ CoreInternalOutcome DescribeModuleStatusResponse::Deserialize(const string &payl
         m_rateLimitHasBeenSet = true;
     }
 
+    if (rsp.HasMember("GzipAnalysis") && !rsp["GzipAnalysis"].IsNull())
+    {
+        if (!rsp["GzipAnalysis"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `GzipAnalysis` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_gzipAnalysis = rsp["GzipAnalysis"].GetUint64();
+        m_gzipAnalysisHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -204,11 +215,19 @@ string DescribeModuleStatusResponse::ToJsonString() const
         value.AddMember(iKey, m_rateLimit, allocator);
     }
 
+    if (m_gzipAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GzipAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_gzipAnalysis, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -284,6 +303,16 @@ uint64_t DescribeModuleStatusResponse::GetRateLimit() const
 bool DescribeModuleStatusResponse::RateLimitHasBeenSet() const
 {
     return m_rateLimitHasBeenSet;
+}
+
+uint64_t DescribeModuleStatusResponse::GetGzipAnalysis() const
+{
+    return m_gzipAnalysis;
+}
+
+bool DescribeModuleStatusResponse::GzipAnalysisHasBeenSet() const
+{
+    return m_gzipAnalysisHasBeenSet;
 }
 
 

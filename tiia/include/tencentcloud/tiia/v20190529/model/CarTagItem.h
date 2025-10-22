@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -222,18 +222,14 @@ namespace TencentCloud
 
                     /**
                      * 获取车牌信息置信度，0-100，仅车辆识别（增强版）支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PlateConfidence 车牌信息置信度，0-100，仅车辆识别（增强版）支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPlateConfidence() const;
 
                     /**
                      * 设置车牌信息置信度，0-100，仅车辆识别（增强版）支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _plateConfidence 车牌信息置信度，0-100，仅车辆识别（增强版）支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPlateConfidence(const int64_t& _plateConfidence);
@@ -247,18 +243,14 @@ namespace TencentCloud
 
                     /**
                      * 获取车辆类型置信度，0-100，仅车辆识别（增强版）支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TypeConfidence 车辆类型置信度，0-100，仅车辆识别（增强版）支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTypeConfidence() const;
 
                     /**
                      * 设置车辆类型置信度，0-100，仅车辆识别（增强版）支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _typeConfidence 车辆类型置信度，0-100，仅车辆识别（增强版）支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTypeConfidence(const int64_t& _typeConfidence);
@@ -272,18 +264,14 @@ namespace TencentCloud
 
                     /**
                      * 获取车辆颜色置信度，0-100，仅车辆识别（增强版）支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ColorConfidence 车辆颜色置信度，0-100，仅车辆识别（增强版）支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetColorConfidence() const;
 
                     /**
                      * 设置车辆颜色置信度，0-100，仅车辆识别（增强版）支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _colorConfidence 车辆颜色置信度，0-100，仅车辆识别（增强版）支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetColorConfidence(const int64_t& _colorConfidence);
@@ -297,18 +285,14 @@ namespace TencentCloud
 
                     /**
                      * 获取车辆朝向，仅车辆识别（增强版）支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Orientation 车辆朝向，仅车辆识别（增强版）支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOrientation() const;
 
                     /**
                      * 设置车辆朝向，仅车辆识别（增强版）支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _orientation 车辆朝向，仅车辆识别（增强版）支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOrientation(const std::string& _orientation);
@@ -322,18 +306,14 @@ namespace TencentCloud
 
                     /**
                      * 获取车辆朝向置信度，0-100，仅车辆识别（增强版）支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrientationConfidence 车辆朝向置信度，0-100，仅车辆识别（增强版）支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOrientationConfidence() const;
 
                     /**
                      * 设置车辆朝向置信度，0-100，仅车辆识别（增强版）支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _orientationConfidence 车辆朝向置信度，0-100，仅车辆识别（增强版）支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOrientationConfidence(const int64_t& _orientationConfidence);
@@ -398,35 +378,30 @@ namespace TencentCloud
 
                     /**
                      * 车牌信息置信度，0-100，仅车辆识别（增强版）支持
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_plateConfidence;
                     bool m_plateConfidenceHasBeenSet;
 
                     /**
                      * 车辆类型置信度，0-100，仅车辆识别（增强版）支持
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_typeConfidence;
                     bool m_typeConfidenceHasBeenSet;
 
                     /**
                      * 车辆颜色置信度，0-100，仅车辆识别（增强版）支持
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_colorConfidence;
                     bool m_colorConfidenceHasBeenSet;
 
                     /**
                      * 车辆朝向，仅车辆识别（增强版）支持
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_orientation;
                     bool m_orientationHasBeenSet;
 
                     /**
                      * 车辆朝向置信度，0-100，仅车辆识别（增强版）支持
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_orientationConfidence;
                     bool m_orientationConfidenceHasBeenSet;

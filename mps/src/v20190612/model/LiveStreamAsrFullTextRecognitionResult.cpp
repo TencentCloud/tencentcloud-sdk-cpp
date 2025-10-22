@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,8 @@ LiveStreamAsrFullTextRecognitionResult::LiveStreamAsrFullTextRecognitionResult()
     m_confidenceHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_steadyStateHasBeenSet(false)
+    m_steadyStateHasBeenSet(false),
+    m_userIdHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome LiveStreamAsrFullTextRecognitionResult::Deserialize(const ra
         m_steadyStateHasBeenSet = true;
     }
 
+    if (value.HasMember("UserId") && !value["UserId"].IsNull())
+    {
+        if (!value["UserId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAsrFullTextRecognitionResult.UserId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userId = string(value["UserId"].GetString());
+        m_userIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void LiveStreamAsrFullTextRecognitionResult::ToJsonObject(rapidjson::Value &valu
         string key = "SteadyState";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_steadyState, allocator);
+    }
+
+    if (m_userIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void LiveStreamAsrFullTextRecognitionResult::SetSteadyState(const bool& _steadyS
 bool LiveStreamAsrFullTextRecognitionResult::SteadyStateHasBeenSet() const
 {
     return m_steadyStateHasBeenSet;
+}
+
+string LiveStreamAsrFullTextRecognitionResult::GetUserId() const
+{
+    return m_userId;
+}
+
+void LiveStreamAsrFullTextRecognitionResult::SetUserId(const string& _userId)
+{
+    m_userId = _userId;
+    m_userIdHasBeenSet = true;
+}
+
+bool LiveStreamAsrFullTextRecognitionResult::UserIdHasBeenSet() const
+{
+    return m_userIdHasBeenSet;
 }
 

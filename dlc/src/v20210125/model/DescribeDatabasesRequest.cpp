@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ DescribeDatabasesRequest::DescribeDatabasesRequest() :
     m_keyWordHasBeenSet(false),
     m_datasourceConnectionNameHasBeenSet(false),
     m_sortHasBeenSet(false),
-    m_ascHasBeenSet(false)
+    m_ascHasBeenSet(false),
+    m_describeTypeHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string DescribeDatabasesRequest::ToJsonString() const
         string key = "Asc";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_asc, allocator);
+    }
+
+    if (m_describeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DescribeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_describeType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +198,22 @@ void DescribeDatabasesRequest::SetAsc(const bool& _asc)
 bool DescribeDatabasesRequest::AscHasBeenSet() const
 {
     return m_ascHasBeenSet;
+}
+
+string DescribeDatabasesRequest::GetDescribeType() const
+{
+    return m_describeType;
+}
+
+void DescribeDatabasesRequest::SetDescribeType(const string& _describeType)
+{
+    m_describeType = _describeType;
+    m_describeTypeHasBeenSet = true;
+}
+
+bool DescribeDatabasesRequest::DescribeTypeHasBeenSet() const
+{
+    return m_describeTypeHasBeenSet;
 }
 
 

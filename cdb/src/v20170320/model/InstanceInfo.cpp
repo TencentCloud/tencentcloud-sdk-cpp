@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,7 +68,10 @@ InstanceInfo::InstanceInfo() :
     m_maxDelayTimeHasBeenSet(false),
     m_diskTypeHasBeenSet(false),
     m_expandCpuHasBeenSet(false),
-    m_clusterInfoHasBeenSet(false)
+    m_clusterInfoHasBeenSet(false),
+    m_analysisNodeInfosHasBeenSet(false),
+    m_deviceBandwidthHasBeenSet(false),
+    m_destroyProtectHasBeenSet(false)
 {
 }
 
@@ -618,6 +621,46 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_clusterInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("AnalysisNodeInfos") && !value["AnalysisNodeInfos"].IsNull())
+    {
+        if (!value["AnalysisNodeInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.AnalysisNodeInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AnalysisNodeInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AnalysisNodeInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_analysisNodeInfos.push_back(item);
+        }
+        m_analysisNodeInfosHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeviceBandwidth") && !value["DeviceBandwidth"].IsNull())
+    {
+        if (!value["DeviceBandwidth"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.DeviceBandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deviceBandwidth = value["DeviceBandwidth"].GetUint64();
+        m_deviceBandwidthHasBeenSet = true;
+    }
+
+    if (value.HasMember("DestroyProtect") && !value["DestroyProtect"].IsNull())
+    {
+        if (!value["DestroyProtect"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.DestroyProtect` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_destroyProtect = string(value["DestroyProtect"].GetString());
+        m_destroyProtectHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1038,6 +1081,37 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_analysisNodeInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AnalysisNodeInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_analysisNodeInfos.begin(); itr != m_analysisNodeInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_deviceBandwidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceBandwidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deviceBandwidth, allocator);
+    }
+
+    if (m_destroyProtectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DestroyProtect";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_destroyProtect.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1809,5 +1883,53 @@ void InstanceInfo::SetClusterInfo(const vector<ClusterInfo>& _clusterInfo)
 bool InstanceInfo::ClusterInfoHasBeenSet() const
 {
     return m_clusterInfoHasBeenSet;
+}
+
+vector<AnalysisNodeInfo> InstanceInfo::GetAnalysisNodeInfos() const
+{
+    return m_analysisNodeInfos;
+}
+
+void InstanceInfo::SetAnalysisNodeInfos(const vector<AnalysisNodeInfo>& _analysisNodeInfos)
+{
+    m_analysisNodeInfos = _analysisNodeInfos;
+    m_analysisNodeInfosHasBeenSet = true;
+}
+
+bool InstanceInfo::AnalysisNodeInfosHasBeenSet() const
+{
+    return m_analysisNodeInfosHasBeenSet;
+}
+
+uint64_t InstanceInfo::GetDeviceBandwidth() const
+{
+    return m_deviceBandwidth;
+}
+
+void InstanceInfo::SetDeviceBandwidth(const uint64_t& _deviceBandwidth)
+{
+    m_deviceBandwidth = _deviceBandwidth;
+    m_deviceBandwidthHasBeenSet = true;
+}
+
+bool InstanceInfo::DeviceBandwidthHasBeenSet() const
+{
+    return m_deviceBandwidthHasBeenSet;
+}
+
+string InstanceInfo::GetDestroyProtect() const
+{
+    return m_destroyProtect;
+}
+
+void InstanceInfo::SetDestroyProtect(const string& _destroyProtect)
+{
+    m_destroyProtect = _destroyProtect;
+    m_destroyProtectHasBeenSet = true;
+}
+
+bool InstanceInfo::DestroyProtectHasBeenSet() const
+{
+    return m_destroyProtectHasBeenSet;
 }
 

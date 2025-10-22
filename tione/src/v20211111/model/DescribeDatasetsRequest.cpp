@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,9 @@ DescribeDatasetsRequest::DescribeDatasetsRequest() :
     m_orderHasBeenSet(false),
     m_orderFieldHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_cFSCheckingHasBeenSet(false),
+    m_cFSDetailHasBeenSet(false)
 {
 }
 
@@ -113,6 +115,22 @@ string DescribeDatasetsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_cFSCheckingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CFSChecking";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cFSChecking, allocator);
+    }
+
+    if (m_cFSDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CFSDetail";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cFSDetail, allocator);
     }
 
 
@@ -233,6 +251,38 @@ void DescribeDatasetsRequest::SetLimit(const uint64_t& _limit)
 bool DescribeDatasetsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+bool DescribeDatasetsRequest::GetCFSChecking() const
+{
+    return m_cFSChecking;
+}
+
+void DescribeDatasetsRequest::SetCFSChecking(const bool& _cFSChecking)
+{
+    m_cFSChecking = _cFSChecking;
+    m_cFSCheckingHasBeenSet = true;
+}
+
+bool DescribeDatasetsRequest::CFSCheckingHasBeenSet() const
+{
+    return m_cFSCheckingHasBeenSet;
+}
+
+bool DescribeDatasetsRequest::GetCFSDetail() const
+{
+    return m_cFSDetail;
+}
+
+void DescribeDatasetsRequest::SetCFSDetail(const bool& _cFSDetail)
+{
+    m_cFSDetail = _cFSDetail;
+    m_cFSDetailHasBeenSet = true;
+}
+
+bool DescribeDatasetsRequest::CFSDetailHasBeenSet() const
+{
+    return m_cFSDetailHasBeenSet;
 }
 
 

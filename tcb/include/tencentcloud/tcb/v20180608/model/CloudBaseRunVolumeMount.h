@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 资源名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置资源名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 资源名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取挂载路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MountPath 挂载路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMountPath() const;
 
                     /**
                      * 设置挂载路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mountPath 挂载路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMountPath(const std::string& _mountPath);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否只读
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReadOnly 是否只读
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetReadOnly() const;
 
                     /**
                      * 设置是否只读
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _readOnly 是否只读
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReadOnly(const bool& _readOnly);
@@ -149,18 +137,14 @@ namespace TencentCloud
 
                     /**
                      * 获取挂载配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MountPropagation 挂载配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMountPropagation() const;
 
                     /**
                      * 设置挂载配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mountPropagation 挂载配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMountPropagation(const std::string& _mountPropagation);
@@ -176,21 +160,18 @@ namespace TencentCloud
 
                     /**
                      * 资源名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 挂载路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mountPath;
                     bool m_mountPathHasBeenSet;
 
                     /**
                      * 是否只读
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_readOnly;
                     bool m_readOnlyHasBeenSet;
@@ -204,7 +185,6 @@ namespace TencentCloud
 
                     /**
                      * 挂载配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mountPropagation;
                     bool m_mountPropagationHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取固化生成的媒体 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileId 固化生成的媒体 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileId() const;
 
                     /**
                      * 设置固化生成的媒体 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileId 固化生成的媒体 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileId(const std::string& _fileId);
@@ -76,12 +72,10 @@ namespace TencentCloud
 <li>SimpleHlsClip：来自简单 HLS 剪辑；</li>
 <li>FastEditMedia：来自快速媒体编辑；</li>
 <li>LiveRealTimeClip:来自直播即时剪辑。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PersistenceSource 剪辑固化的来源，有以下三种。
 <li>SimpleHlsClip：来自简单 HLS 剪辑；</li>
 <li>FastEditMedia：来自快速媒体编辑；</li>
 <li>LiveRealTimeClip:来自直播即时剪辑。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPersistenceSource() const;
@@ -91,12 +85,10 @@ namespace TencentCloud
 <li>SimpleHlsClip：来自简单 HLS 剪辑；</li>
 <li>FastEditMedia：来自快速媒体编辑；</li>
 <li>LiveRealTimeClip:来自直播即时剪辑。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _persistenceSource 剪辑固化的来源，有以下三种。
 <li>SimpleHlsClip：来自简单 HLS 剪辑；</li>
 <li>FastEditMedia：来自快速媒体编辑；</li>
 <li>LiveRealTimeClip:来自直播即时剪辑。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPersistenceSource(const std::string& _persistenceSource);
@@ -112,7 +104,6 @@ namespace TencentCloud
 
                     /**
                      * 固化生成的媒体 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
@@ -122,7 +113,6 @@ namespace TencentCloud
 <li>SimpleHlsClip：来自简单 HLS 剪辑；</li>
 <li>FastEditMedia：来自快速媒体编辑；</li>
 <li>LiveRealTimeClip:来自直播即时剪辑。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_persistenceSource;
                     bool m_persistenceSourceHasBeenSet;

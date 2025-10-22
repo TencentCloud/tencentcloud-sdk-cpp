@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,9 @@ using namespace std;
 ReplaceBackgroundRequest::ReplaceBackgroundRequest() :
     m_productUrlHasBeenSet(false),
     m_promptHasBeenSet(false),
+    m_negativePromptHasBeenSet(false),
     m_productHasBeenSet(false),
+    m_backgroundTemplateHasBeenSet(false),
     m_maskUrlHasBeenSet(false),
     m_resolutionHasBeenSet(false),
     m_logoAddHasBeenSet(false),
@@ -57,12 +59,28 @@ string ReplaceBackgroundRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_prompt.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_negativePromptHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NegativePrompt";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_negativePrompt.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_productHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Product";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_product.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backgroundTemplateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackgroundTemplate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_backgroundTemplate.c_str(), allocator).Move(), allocator);
     }
 
     if (m_maskUrlHasBeenSet)
@@ -146,6 +164,22 @@ bool ReplaceBackgroundRequest::PromptHasBeenSet() const
     return m_promptHasBeenSet;
 }
 
+string ReplaceBackgroundRequest::GetNegativePrompt() const
+{
+    return m_negativePrompt;
+}
+
+void ReplaceBackgroundRequest::SetNegativePrompt(const string& _negativePrompt)
+{
+    m_negativePrompt = _negativePrompt;
+    m_negativePromptHasBeenSet = true;
+}
+
+bool ReplaceBackgroundRequest::NegativePromptHasBeenSet() const
+{
+    return m_negativePromptHasBeenSet;
+}
+
 string ReplaceBackgroundRequest::GetProduct() const
 {
     return m_product;
@@ -160,6 +194,22 @@ void ReplaceBackgroundRequest::SetProduct(const string& _product)
 bool ReplaceBackgroundRequest::ProductHasBeenSet() const
 {
     return m_productHasBeenSet;
+}
+
+string ReplaceBackgroundRequest::GetBackgroundTemplate() const
+{
+    return m_backgroundTemplate;
+}
+
+void ReplaceBackgroundRequest::SetBackgroundTemplate(const string& _backgroundTemplate)
+{
+    m_backgroundTemplate = _backgroundTemplate;
+    m_backgroundTemplateHasBeenSet = true;
+}
+
+bool ReplaceBackgroundRequest::BackgroundTemplateHasBeenSet() const
+{
+    return m_backgroundTemplateHasBeenSet;
 }
 
 string ReplaceBackgroundRequest::GetMaskUrl() const

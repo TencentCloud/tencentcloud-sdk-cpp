@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 #include <tencentcloud/wedata/v20210820/model/InstanceOpsDto.h>
 #include <tencentcloud/wedata/v20210820/model/InstanceApiOpsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/ProjectBaseInfoOpsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/StrToStrMap.h>
 
 
 namespace TencentCloud
@@ -46,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例列表
-                     * @return Instances 实例列表
+                     * 获取必填，实例列表，每项必填TaskId ，CurRunDate
+                     * @return Instances 必填，实例列表，每项必填TaskId ，CurRunDate
                      * 
                      */
                     std::vector<InstanceOpsDto> GetInstances() const;
 
                     /**
-                     * 设置实例列表
-                     * @param _instances 实例列表
+                     * 设置必填，实例列表，每项必填TaskId ，CurRunDate
+                     * @param _instances 必填，实例列表，每项必填TaskId ，CurRunDate
                      * 
                      */
                     void SetInstances(const std::vector<InstanceOpsDto>& _instances);
@@ -67,15 +68,15 @@ namespace TencentCloud
                     bool InstancesHasBeenSet() const;
 
                     /**
-                     * 获取检查父任务类型, true: 检查父任务; false: 不检查父任务 
-                     * @return CheckFather 检查父任务类型, true: 检查父任务; false: 不检查父任务 
+                     * 获取必填，检查父任务类型, true: 检查父任务; false: 不检查父任务 
+                     * @return CheckFather 必填，检查父任务类型, true: 检查父任务; false: 不检查父任务 
                      * 
                      */
                     bool GetCheckFather() const;
 
                     /**
-                     * 设置检查父任务类型, true: 检查父任务; false: 不检查父任务 
-                     * @param _checkFather 检查父任务类型, true: 检查父任务; false: 不检查父任务 
+                     * 设置必填，检查父任务类型, true: 检查父任务; false: 不检查父任务 
+                     * @param _checkFather 必填，检查父任务类型, true: 检查父任务; false: 不检查父任务 
                      * 
                      */
                     void SetCheckFather(const bool& _checkFather);
@@ -88,15 +89,15 @@ namespace TencentCloud
                     bool CheckFatherHasBeenSet() const;
 
                     /**
-                     * 获取重跑类型, 1: 自身; 3: 孩子; 2: 自身以及孩子 
-                     * @return RerunType 重跑类型, 1: 自身; 3: 孩子; 2: 自身以及孩子 
+                     * 获取必填，重跑类型, 1: 自身; 3: 孩子; 2: 自身以及孩子 
+                     * @return RerunType 必填，重跑类型, 1: 自身; 3: 孩子; 2: 自身以及孩子 
                      * 
                      */
                     std::string GetRerunType() const;
 
                     /**
-                     * 设置重跑类型, 1: 自身; 3: 孩子; 2: 自身以及孩子 
-                     * @param _rerunType 重跑类型, 1: 自身; 3: 孩子; 2: 自身以及孩子 
+                     * 设置必填，重跑类型, 1: 自身; 3: 孩子; 2: 自身以及孩子 
+                     * @param _rerunType 必填，重跑类型, 1: 自身; 3: 孩子; 2: 自身以及孩子 
                      * 
                      */
                     void SetRerunType(const std::string& _rerunType);
@@ -130,15 +131,15 @@ namespace TencentCloud
                     bool DependentWayHasBeenSet() const;
 
                     /**
-                     * 获取重跑忽略事件监听与否 
-                     * @return SkipEventListening 重跑忽略事件监听与否 
+                     * 获取必填，重跑忽略事件监听与否 
+                     * @return SkipEventListening 必填，重跑忽略事件监听与否 
                      * 
                      */
                     bool GetSkipEventListening() const;
 
                     /**
-                     * 设置重跑忽略事件监听与否 
-                     * @param _skipEventListening 重跑忽略事件监听与否 
+                     * 设置必填，重跑忽略事件监听与否 
+                     * @param _skipEventListening 必填，重跑忽略事件监听与否 
                      * 
                      */
                     void SetSkipEventListening(const bool& _skipEventListening);
@@ -256,15 +257,15 @@ namespace TencentCloud
                     bool OperatorIdHasBeenSet() const;
 
                     /**
-                     * 获取项目id
-                     * @return ProjectId 项目id
+                     * 获取必填，项目id
+                     * @return ProjectId 必填，项目id
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目id
-                     * @param _projectId 项目id
+                     * 设置必填，项目id
+                     * @param _projectId 必填，项目id
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -423,22 +424,232 @@ namespace TencentCloud
                      */
                     bool IsCountHasBeenSet() const;
 
+                    /**
+                     * 获取必填，是否异步模式
+                     * @return AsyncMode 必填，是否异步模式
+                     * 
+                     */
+                    bool GetAsyncMode() const;
+
+                    /**
+                     * 设置必填，是否异步模式
+                     * @param _asyncMode 必填，是否异步模式
+                     * 
+                     */
+                    void SetAsyncMode(const bool& _asyncMode);
+
+                    /**
+                     * 判断参数 AsyncMode 是否已赋值
+                     * @return AsyncMode 是否已赋值
+                     * 
+                     */
+                    bool AsyncModeHasBeenSet() const;
+
+                    /**
+                     * 获取是否检查上游任务： ALL（全部）、 MAKE_SCOPE（选中）、NONE （全部不检查）
+                     * @return CheckParentType 是否检查上游任务： ALL（全部）、 MAKE_SCOPE（选中）、NONE （全部不检查）
+                     * 
+                     */
+                    std::string GetCheckParentType() const;
+
+                    /**
+                     * 设置是否检查上游任务： ALL（全部）、 MAKE_SCOPE（选中）、NONE （全部不检查）
+                     * @param _checkParentType 是否检查上游任务： ALL（全部）、 MAKE_SCOPE（选中）、NONE （全部不检查）
+                     * 
+                     */
+                    void SetCheckParentType(const std::string& _checkParentType);
+
+                    /**
+                     * 判断参数 CheckParentType 是否已赋值
+                     * @return CheckParentType 是否已赋值
+                     * 
+                     */
+                    bool CheckParentTypeHasBeenSet() const;
+
+                    /**
+                     * 获取任务原有自依赖配置 true（是）、false（否）
+                     * @return SameSelfDependType 任务原有自依赖配置 true（是）、false（否）
+                     * 
+                     */
+                    bool GetSameSelfDependType() const;
+
+                    /**
+                     * 设置任务原有自依赖配置 true（是）、false（否）
+                     * @param _sameSelfDependType 任务原有自依赖配置 true（是）、false（否）
+                     * 
+                     */
+                    void SetSameSelfDependType(const bool& _sameSelfDependType);
+
+                    /**
+                     * 判断参数 SameSelfDependType 是否已赋值
+                     * @return SameSelfDependType 是否已赋值
+                     * 
+                     */
+                    bool SameSelfDependTypeHasBeenSet() const;
+
+                    /**
+                     * 获取实例运行并发度
+                     * @return ParallelNum 实例运行并发度
+                     * 
+                     */
+                    int64_t GetParallelNum() const;
+
+                    /**
+                     * 设置实例运行并发度
+                     * @param _parallelNum 实例运行并发度
+                     * 
+                     */
+                    void SetParallelNum(const int64_t& _parallelNum);
+
+                    /**
+                     * 判断参数 ParallelNum 是否已赋值
+                     * @return ParallelNum 是否已赋值
+                     * 
+                     */
+                    bool ParallelNumHasBeenSet() const;
+
+                    /**
+                     * 获取任务原有自依赖配置 true（是）、false（否）
+                     * @return SameSelfWorkflowDependType 任务原有自依赖配置 true（是）、false（否）
+                     * 
+                     */
+                    bool GetSameSelfWorkflowDependType() const;
+
+                    /**
+                     * 设置任务原有自依赖配置 true（是）、false（否）
+                     * @param _sameSelfWorkflowDependType 任务原有自依赖配置 true（是）、false（否）
+                     * 
+                     */
+                    void SetSameSelfWorkflowDependType(const bool& _sameSelfWorkflowDependType);
+
+                    /**
+                     * 判断参数 SameSelfWorkflowDependType 是否已赋值
+                     * @return SameSelfWorkflowDependType 是否已赋值
+                     * 
+                     */
+                    bool SameSelfWorkflowDependTypeHasBeenSet() const;
+
+                    /**
+                     * 获取代表重新指定 的  是 或者 否  yes、 no
+                     * @return SelfWorkflowDependency 代表重新指定 的  是 或者 否  yes、 no
+                     * 
+                     */
+                    std::string GetSelfWorkflowDependency() const;
+
+                    /**
+                     * 设置代表重新指定 的  是 或者 否  yes、 no
+                     * @param _selfWorkflowDependency 代表重新指定 的  是 或者 否  yes、 no
+                     * 
+                     */
+                    void SetSelfWorkflowDependency(const std::string& _selfWorkflowDependency);
+
+                    /**
+                     * 判断参数 SelfWorkflowDependency 是否已赋值
+                     * @return SelfWorkflowDependency 是否已赋值
+                     * 
+                     */
+                    bool SelfWorkflowDependencyHasBeenSet() const;
+
+                    /**
+                     * 获取运行实例数据时间排序 0---正常  1--正序  2 – 逆序
+                     * @return DataTimeOrder 运行实例数据时间排序 0---正常  1--正序  2 – 逆序
+                     * 
+                     */
+                    int64_t GetDataTimeOrder() const;
+
+                    /**
+                     * 设置运行实例数据时间排序 0---正常  1--正序  2 – 逆序
+                     * @param _dataTimeOrder 运行实例数据时间排序 0---正常  1--正序  2 – 逆序
+                     * 
+                     */
+                    void SetDataTimeOrder(const int64_t& _dataTimeOrder);
+
+                    /**
+                     * 判断参数 DataTimeOrder 是否已赋值
+                     * @return DataTimeOrder 是否已赋值
+                     * 
+                     */
+                    bool DataTimeOrderHasBeenSet() const;
+
+                    /**
+                     * 获取重跑参数
+                     * @return ReDoParams 重跑参数
+                     * 
+                     */
+                    std::string GetReDoParams() const;
+
+                    /**
+                     * 设置重跑参数
+                     * @param _reDoParams 重跑参数
+                     * 
+                     */
+                    void SetReDoParams(const std::string& _reDoParams);
+
+                    /**
+                     * 判断参数 ReDoParams 是否已赋值
+                     * @return ReDoParams 是否已赋值
+                     * 
+                     */
+                    bool ReDoParamsHasBeenSet() const;
+
+                    /**
+                     * 获取重跑实例自定义参数
+                     * @return MapParamList 重跑实例自定义参数
+                     * 
+                     */
+                    std::vector<StrToStrMap> GetMapParamList() const;
+
+                    /**
+                     * 设置重跑实例自定义参数
+                     * @param _mapParamList 重跑实例自定义参数
+                     * 
+                     */
+                    void SetMapParamList(const std::vector<StrToStrMap>& _mapParamList);
+
+                    /**
+                     * 判断参数 MapParamList 是否已赋值
+                     * @return MapParamList 是否已赋值
+                     * 
+                     */
+                    bool MapParamListHasBeenSet() const;
+
+                    /**
+                     * 获取引擎应用执行参数
+                     * @return AppParam 引擎应用执行参数
+                     * 
+                     */
+                    std::string GetAppParam() const;
+
+                    /**
+                     * 设置引擎应用执行参数
+                     * @param _appParam 引擎应用执行参数
+                     * 
+                     */
+                    void SetAppParam(const std::string& _appParam);
+
+                    /**
+                     * 判断参数 AppParam 是否已赋值
+                     * @return AppParam 是否已赋值
+                     * 
+                     */
+                    bool AppParamHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例列表
+                     * 必填，实例列表，每项必填TaskId ，CurRunDate
                      */
                     std::vector<InstanceOpsDto> m_instances;
                     bool m_instancesHasBeenSet;
 
                     /**
-                     * 检查父任务类型, true: 检查父任务; false: 不检查父任务 
+                     * 必填，检查父任务类型, true: 检查父任务; false: 不检查父任务 
                      */
                     bool m_checkFather;
                     bool m_checkFatherHasBeenSet;
 
                     /**
-                     * 重跑类型, 1: 自身; 3: 孩子; 2: 自身以及孩子 
+                     * 必填，重跑类型, 1: 自身; 3: 孩子; 2: 自身以及孩子 
                      */
                     std::string m_rerunType;
                     bool m_rerunTypeHasBeenSet;
@@ -450,7 +661,7 @@ namespace TencentCloud
                     bool m_dependentWayHasBeenSet;
 
                     /**
-                     * 重跑忽略事件监听与否 
+                     * 必填，重跑忽略事件监听与否 
                      */
                     bool m_skipEventListening;
                     bool m_skipEventListeningHasBeenSet;
@@ -486,7 +697,7 @@ namespace TencentCloud
                     bool m_operatorIdHasBeenSet;
 
                     /**
-                     * 项目id
+                     * 必填，项目id
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
@@ -532,6 +743,66 @@ namespace TencentCloud
                      */
                     bool m_isCount;
                     bool m_isCountHasBeenSet;
+
+                    /**
+                     * 必填，是否异步模式
+                     */
+                    bool m_asyncMode;
+                    bool m_asyncModeHasBeenSet;
+
+                    /**
+                     * 是否检查上游任务： ALL（全部）、 MAKE_SCOPE（选中）、NONE （全部不检查）
+                     */
+                    std::string m_checkParentType;
+                    bool m_checkParentTypeHasBeenSet;
+
+                    /**
+                     * 任务原有自依赖配置 true（是）、false（否）
+                     */
+                    bool m_sameSelfDependType;
+                    bool m_sameSelfDependTypeHasBeenSet;
+
+                    /**
+                     * 实例运行并发度
+                     */
+                    int64_t m_parallelNum;
+                    bool m_parallelNumHasBeenSet;
+
+                    /**
+                     * 任务原有自依赖配置 true（是）、false（否）
+                     */
+                    bool m_sameSelfWorkflowDependType;
+                    bool m_sameSelfWorkflowDependTypeHasBeenSet;
+
+                    /**
+                     * 代表重新指定 的  是 或者 否  yes、 no
+                     */
+                    std::string m_selfWorkflowDependency;
+                    bool m_selfWorkflowDependencyHasBeenSet;
+
+                    /**
+                     * 运行实例数据时间排序 0---正常  1--正序  2 – 逆序
+                     */
+                    int64_t m_dataTimeOrder;
+                    bool m_dataTimeOrderHasBeenSet;
+
+                    /**
+                     * 重跑参数
+                     */
+                    std::string m_reDoParams;
+                    bool m_reDoParamsHasBeenSet;
+
+                    /**
+                     * 重跑实例自定义参数
+                     */
+                    std::vector<StrToStrMap> m_mapParamList;
+                    bool m_mapParamListHasBeenSet;
+
+                    /**
+                     * 引擎应用执行参数
+                     */
+                    std::string m_appParam;
+                    bool m_appParamHasBeenSet;
 
                 };
             }

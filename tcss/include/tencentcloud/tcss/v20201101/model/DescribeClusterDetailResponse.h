@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -407,6 +407,34 @@ namespace TencentCloud
                      */
                     bool MasterIpsHasBeenSet() const;
 
+                    /**
+                     * 获取所有者名称
+                     * @return OwnerName 所有者名称
+                     * 
+                     */
+                    std::string GetOwnerName() const;
+
+                    /**
+                     * 判断参数 OwnerName 是否已赋值
+                     * @return OwnerName 是否已赋值
+                     * 
+                     */
+                    bool OwnerNameHasBeenSet() const;
+
+                    /**
+                     * 获取检查失败原因
+                     * @return CheckFailReason 检查失败原因
+                     * 
+                     */
+                    std::string GetCheckFailReason() const;
+
+                    /**
+                     * 判断参数 CheckFailReason 是否已赋值
+                     * @return CheckFailReason 是否已赋值
+                     * 
+                     */
+                    bool CheckFailReasonHasBeenSet() const;
+
                 private:
 
                     /**
@@ -564,6 +592,18 @@ namespace TencentCloud
                      */
                     std::string m_masterIps;
                     bool m_masterIpsHasBeenSet;
+
+                    /**
+                     * 所有者名称
+                     */
+                    std::string m_ownerName;
+                    bool m_ownerNameHasBeenSet;
+
+                    /**
+                     * 检查失败原因
+                     */
+                    std::string m_checkFailReason;
+                    bool m_checkFailReasonHasBeenSet;
 
                 };
             }

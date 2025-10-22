@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,7 +43,11 @@ Topic::Topic() :
     m_producerLimitHasBeenSet(false),
     m_consumerLimitHasBeenSet(false),
     m_pulsarTopicTypeHasBeenSet(false),
-    m_msgTTLHasBeenSet(false)
+    m_msgTTLHasBeenSet(false),
+    m_clusterIdHasBeenSet(false),
+    m_tenantHasBeenSet(false),
+    m_isolateConsumerEnableHasBeenSet(false),
+    m_ackTimeOutHasBeenSet(false)
 {
 }
 
@@ -292,6 +296,46 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
         m_msgTTLHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterId") && !value["ClusterId"].IsNull())
+    {
+        if (!value["ClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Topic.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterId = string(value["ClusterId"].GetString());
+        m_clusterIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Tenant") && !value["Tenant"].IsNull())
+    {
+        if (!value["Tenant"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Topic.Tenant` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tenant = string(value["Tenant"].GetString());
+        m_tenantHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsolateConsumerEnable") && !value["IsolateConsumerEnable"].IsNull())
+    {
+        if (!value["IsolateConsumerEnable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Topic.IsolateConsumerEnable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isolateConsumerEnable = value["IsolateConsumerEnable"].GetBool();
+        m_isolateConsumerEnableHasBeenSet = true;
+    }
+
+    if (value.HasMember("AckTimeOut") && !value["AckTimeOut"].IsNull())
+    {
+        if (!value["AckTimeOut"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Topic.AckTimeOut` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ackTimeOut = value["AckTimeOut"].GetInt64();
+        m_ackTimeOutHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -488,6 +532,38 @@ void Topic::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "MsgTTL";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_msgTTL, allocator);
+    }
+
+    if (m_clusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tenantHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tenant";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tenant.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isolateConsumerEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsolateConsumerEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isolateConsumerEnable, allocator);
+    }
+
+    if (m_ackTimeOutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AckTimeOut";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ackTimeOut, allocator);
     }
 
 }
@@ -859,5 +935,69 @@ void Topic::SetMsgTTL(const uint64_t& _msgTTL)
 bool Topic::MsgTTLHasBeenSet() const
 {
     return m_msgTTLHasBeenSet;
+}
+
+string Topic::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void Topic::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool Topic::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
+}
+
+string Topic::GetTenant() const
+{
+    return m_tenant;
+}
+
+void Topic::SetTenant(const string& _tenant)
+{
+    m_tenant = _tenant;
+    m_tenantHasBeenSet = true;
+}
+
+bool Topic::TenantHasBeenSet() const
+{
+    return m_tenantHasBeenSet;
+}
+
+bool Topic::GetIsolateConsumerEnable() const
+{
+    return m_isolateConsumerEnable;
+}
+
+void Topic::SetIsolateConsumerEnable(const bool& _isolateConsumerEnable)
+{
+    m_isolateConsumerEnable = _isolateConsumerEnable;
+    m_isolateConsumerEnableHasBeenSet = true;
+}
+
+bool Topic::IsolateConsumerEnableHasBeenSet() const
+{
+    return m_isolateConsumerEnableHasBeenSet;
+}
+
+int64_t Topic::GetAckTimeOut() const
+{
+    return m_ackTimeOut;
+}
+
+void Topic::SetAckTimeOut(const int64_t& _ackTimeOut)
+{
+    m_ackTimeOut = _ackTimeOut;
+    m_ackTimeOutHasBeenSet = true;
+}
+
+bool Topic::AckTimeOutHasBeenSet() const
+{
+    return m_ackTimeOutHasBeenSet;
 }
 

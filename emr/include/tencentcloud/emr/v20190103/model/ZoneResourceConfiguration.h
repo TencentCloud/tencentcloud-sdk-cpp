@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -129,12 +129,10 @@ namespace TencentCloud
   <li>master</li>
   <li>standby</li>
   <li>third-party</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneTag 如果是单可用区，ZoneTag可以不用填， 如果是双AZ部署，第一个可用区ZoneTag选择master，第二个可用区ZoneTag选择standby，如果是三AZ部署，第一个可用区ZoneTag选择master，第二个可用区ZoneTag选择standby，第三个可用区ZoneTag选择third-party，取值范围：
   <li>master</li>
   <li>standby</li>
   <li>third-party</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZoneTag() const;
@@ -144,12 +142,10 @@ namespace TencentCloud
   <li>master</li>
   <li>standby</li>
   <li>third-party</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zoneTag 如果是单可用区，ZoneTag可以不用填， 如果是双AZ部署，第一个可用区ZoneTag选择master，第二个可用区ZoneTag选择standby，如果是三AZ部署，第一个可用区ZoneTag选择master，第二个可用区ZoneTag选择standby，第三个可用区ZoneTag选择third-party，取值范围：
   <li>master</li>
   <li>standby</li>
   <li>third-party</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZoneTag(const std::string& _zoneTag);
@@ -189,7 +185,6 @@ namespace TencentCloud
   <li>master</li>
   <li>standby</li>
   <li>third-party</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zoneTag;
                     bool m_zoneTagHasBeenSet;

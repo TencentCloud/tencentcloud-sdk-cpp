@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取RO 组的 ID。
-                     * @return RoGroupId RO 组的 ID。
+                     * 获取RO 组的 ID。可通过 [DescribeRoGroups](https://cloud.tencent.com/document/api/236/40939) 接口获取。
+                     * @return RoGroupId RO 组的 ID。可通过 [DescribeRoGroups](https://cloud.tencent.com/document/api/236/40939) 接口获取。
                      * 
                      */
                     std::string GetRoGroupId() const;
 
                     /**
-                     * 设置RO 组的 ID。
-                     * @param _roGroupId RO 组的 ID。
+                     * 设置RO 组的 ID。可通过 [DescribeRoGroups](https://cloud.tencent.com/document/api/236/40939) 接口获取。
+                     * @param _roGroupId RO 组的 ID。可通过 [DescribeRoGroups](https://cloud.tencent.com/document/api/236/40939) 接口获取。
                      * 
                      */
                     void SetRoGroupId(const std::string& _roGroupId);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool RoGroupInfoHasBeenSet() const;
 
                     /**
-                     * 获取RO 组内实例的权重。若修改 RO 组的权重模式为用户自定义模式（custom），则必须设置该参数，且需要设置每个 RO 实例的权重值。
-                     * @return RoWeightValues RO 组内实例的权重。若修改 RO 组的权重模式为用户自定义模式（custom），则必须设置该参数，且需要设置每个 RO 实例的权重值。
+                     * 获取RO 组内实例的权重。若修改 RO 组的权重模式为用户自定义模式（custom），则必须设置该参数，且需要设置每个 RO 实例的权重值。RO 实例 ID 可通过 [DescribeRoGroups](https://cloud.tencent.com/document/api/236/40939) 接口获取。
+                     * @return RoWeightValues RO 组内实例的权重。若修改 RO 组的权重模式为用户自定义模式（custom），则必须设置该参数，且需要设置每个 RO 实例的权重值。RO 实例 ID 可通过 [DescribeRoGroups](https://cloud.tencent.com/document/api/236/40939) 接口获取。
                      * 
                      */
                     std::vector<RoWeightValue> GetRoWeightValues() const;
 
                     /**
-                     * 设置RO 组内实例的权重。若修改 RO 组的权重模式为用户自定义模式（custom），则必须设置该参数，且需要设置每个 RO 实例的权重值。
-                     * @param _roWeightValues RO 组内实例的权重。若修改 RO 组的权重模式为用户自定义模式（custom），则必须设置该参数，且需要设置每个 RO 实例的权重值。
+                     * 设置RO 组内实例的权重。若修改 RO 组的权重模式为用户自定义模式（custom），则必须设置该参数，且需要设置每个 RO 实例的权重值。RO 实例 ID 可通过 [DescribeRoGroups](https://cloud.tencent.com/document/api/236/40939) 接口获取。
+                     * @param _roWeightValues RO 组内实例的权重。若修改 RO 组的权重模式为用户自定义模式（custom），则必须设置该参数，且需要设置每个 RO 实例的权重值。RO 实例 ID 可通过 [DescribeRoGroups](https://cloud.tencent.com/document/api/236/40939) 接口获取。
                      * 
                      */
                     void SetRoWeightValues(const std::vector<RoWeightValue>& _roWeightValues);
@@ -131,28 +131,28 @@ namespace TencentCloud
                     /**
                      * 获取废弃参数，无意义。
                      * @return ReplicationDelayTime 废弃参数，无意义。
-                     * 
+                     * @deprecated
                      */
                     int64_t GetReplicationDelayTime() const;
 
                     /**
                      * 设置废弃参数，无意义。
                      * @param _replicationDelayTime 废弃参数，无意义。
-                     * 
+                     * @deprecated
                      */
                     void SetReplicationDelayTime(const int64_t& _replicationDelayTime);
 
                     /**
                      * 判断参数 ReplicationDelayTime 是否已赋值
                      * @return ReplicationDelayTime 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ReplicationDelayTimeHasBeenSet() const;
 
                 private:
 
                     /**
-                     * RO 组的 ID。
+                     * RO 组的 ID。可通过 [DescribeRoGroups](https://cloud.tencent.com/document/api/236/40939) 接口获取。
                      */
                     std::string m_roGroupId;
                     bool m_roGroupIdHasBeenSet;
@@ -164,7 +164,7 @@ namespace TencentCloud
                     bool m_roGroupInfoHasBeenSet;
 
                     /**
-                     * RO 组内实例的权重。若修改 RO 组的权重模式为用户自定义模式（custom），则必须设置该参数，且需要设置每个 RO 实例的权重值。
+                     * RO 组内实例的权重。若修改 RO 组的权重模式为用户自定义模式（custom），则必须设置该参数，且需要设置每个 RO 实例的权重值。RO 实例 ID 可通过 [DescribeRoGroups](https://cloud.tencent.com/document/api/236/40939) 接口获取。
                      */
                     std::vector<RoWeightValue> m_roWeightValues;
                     bool m_roWeightValuesHasBeenSet;

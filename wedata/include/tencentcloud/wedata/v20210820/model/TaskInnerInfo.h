@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -205,6 +205,106 @@ namespace TencentCloud
                      */
                     bool RealWorkflowIdHasBeenSet() const;
 
+                    /**
+                     * 获取步长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CycleStep 步长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetCycleStep() const;
+
+                    /**
+                     * 设置步长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cycleStep 步长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCycleStep(const int64_t& _cycleStep);
+
+                    /**
+                     * 判断参数 CycleStep 是否已赋值
+                     * @return CycleStep 是否已赋值
+                     * 
+                     */
+                    bool CycleStepHasBeenSet() const;
+
+                    /**
+                     * 获取调度配置-弹性周期配置，小时/周/月/年调度才有，小时任务指定每天的0点3点4点跑，则为 0,3,4。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskAction 调度配置-弹性周期配置，小时/周/月/年调度才有，小时任务指定每天的0点3点4点跑，则为 0,3,4。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTaskAction() const;
+
+                    /**
+                     * 设置调度配置-弹性周期配置，小时/周/月/年调度才有，小时任务指定每天的0点3点4点跑，则为 0,3,4。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _taskAction 调度配置-弹性周期配置，小时/周/月/年调度才有，小时任务指定每天的0点3点4点跑，则为 0,3,4。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTaskAction(const std::string& _taskAction);
+
+                    /**
+                     * 判断参数 TaskAction 是否已赋值
+                     * @return TaskAction 是否已赋值
+                     * 
+                     */
+                    bool TaskActionHasBeenSet() const;
+
+                    /**
+                     * 获取分支，依赖关系，and/or, 默认and
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DependencyRel 分支，依赖关系，and/or, 默认and
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDependencyRel() const;
+
+                    /**
+                     * 设置分支，依赖关系，and/or, 默认and
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dependencyRel 分支，依赖关系，and/or, 默认and
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDependencyRel(const std::string& _dependencyRel);
+
+                    /**
+                     * 判断参数 DependencyRel 是否已赋值
+                     * @return DependencyRel 是否已赋值
+                     * 
+                     */
+                    bool DependencyRelHasBeenSet() const;
+
+                    /**
+                     * 获取是否支持工作流依赖 yes / no 默认 no
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DependencyWorkflow 是否支持工作流依赖 yes / no 默认 no
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDependencyWorkflow() const;
+
+                    /**
+                     * 设置是否支持工作流依赖 yes / no 默认 no
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dependencyWorkflow 是否支持工作流依赖 yes / no 默认 no
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDependencyWorkflow(const std::string& _dependencyWorkflow);
+
+                    /**
+                     * 判断参数 DependencyWorkflow 是否已赋值
+                     * @return DependencyWorkflow 是否已赋值
+                     * 
+                     */
+                    bool DependencyWorkflowHasBeenSet() const;
+
                 private:
 
                     /**
@@ -251,6 +351,34 @@ namespace TencentCloud
                      */
                     std::string m_realWorkflowId;
                     bool m_realWorkflowIdHasBeenSet;
+
+                    /**
+                     * 步长
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_cycleStep;
+                    bool m_cycleStepHasBeenSet;
+
+                    /**
+                     * 调度配置-弹性周期配置，小时/周/月/年调度才有，小时任务指定每天的0点3点4点跑，则为 0,3,4。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_taskAction;
+                    bool m_taskActionHasBeenSet;
+
+                    /**
+                     * 分支，依赖关系，and/or, 默认and
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dependencyRel;
+                    bool m_dependencyRelHasBeenSet;
+
+                    /**
+                     * 是否支持工作流依赖 yes / no 默认 no
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dependencyWorkflow;
+                    bool m_dependencyWorkflowHasBeenSet;
 
                 };
             }

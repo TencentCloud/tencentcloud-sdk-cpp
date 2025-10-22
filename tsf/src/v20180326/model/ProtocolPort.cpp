@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ ProtocolPort::ProtocolPort() :
     m_protocolHasBeenSet(false),
     m_portHasBeenSet(false),
     m_targetPortHasBeenSet(false),
-    m_nodePortHasBeenSet(false)
+    m_nodePortHasBeenSet(false),
+    m_nameHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome ProtocolPort::Deserialize(const rapidjson::Value &value)
         m_nodePortHasBeenSet = true;
     }
 
+    if (value.HasMember("Name") && !value["Name"].IsNull())
+    {
+        if (!value["Name"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProtocolPort.Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void ProtocolPort::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "NodePort";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_nodePort, allocator);
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void ProtocolPort::SetNodePort(const int64_t& _nodePort)
 bool ProtocolPort::NodePortHasBeenSet() const
 {
     return m_nodePortHasBeenSet;
+}
+
+string ProtocolPort::GetName() const
+{
+    return m_name;
+}
+
+void ProtocolPort::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool ProtocolPort::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
 }
 

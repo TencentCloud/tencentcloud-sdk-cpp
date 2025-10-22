@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 组件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置组件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 组件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组件版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 组件版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetVersion() const;
 
                     /**
                      * 设置组件版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _version 组件版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersion(const std::vector<std::string>& _version);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组件修复版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FixedVersion 组件修复版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetFixedVersion() const;
 
                     /**
                      * 设置组件修复版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fixedVersion 组件修复版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFixedVersion(const std::vector<std::string>& _fixedVersion);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 组件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 组件版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_version;
                     bool m_versionHasBeenSet;
 
                     /**
                      * 组件修复版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_fixedVersion;
                     bool m_fixedVersionHasBeenSet;

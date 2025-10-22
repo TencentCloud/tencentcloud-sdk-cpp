@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@
 #include <tencentcloud/tione/v20211111/model/DataConfig.h>
 #include <tencentcloud/tione/v20211111/model/LogConfig.h>
 #include <tencentcloud/tione/v20211111/model/ImageInfo.h>
+#include <tencentcloud/tione/v20211111/model/CodeRepoConfig.h>
 
 
 namespace TencentCloud
@@ -136,6 +137,31 @@ namespace TencentCloud
                      * 
                      */
                     bool SubUinHasBeenSet() const;
+
+                    /**
+                     * 获取创建者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubUinName 创建者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSubUinName() const;
+
+                    /**
+                     * 设置创建者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subUinName 创建者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubUinName(const std::string& _subUinName);
+
+                    /**
+                     * 判断参数 SubUinName 是否已赋值
+                     * @return SubUinName 是否已赋值
+                     * 
+                     */
+                    bool SubUinNameHasBeenSet() const;
 
                     /**
                      * 获取地域
@@ -968,6 +994,27 @@ namespace TencentCloud
                      */
                     bool CallbackUrlHasBeenSet() const;
 
+                    /**
+                     * 获取任务关联的代码仓库配置
+                     * @return CodeRepos 任务关联的代码仓库配置
+                     * 
+                     */
+                    std::vector<CodeRepoConfig> GetCodeRepos() const;
+
+                    /**
+                     * 设置任务关联的代码仓库配置
+                     * @param _codeRepos 任务关联的代码仓库配置
+                     * 
+                     */
+                    void SetCodeRepos(const std::vector<CodeRepoConfig>& _codeRepos);
+
+                    /**
+                     * 判断参数 CodeRepos 是否已赋值
+                     * @return CodeRepos 是否已赋值
+                     * 
+                     */
+                    bool CodeReposHasBeenSet() const;
+
                 private:
 
                     /**
@@ -993,6 +1040,13 @@ namespace TencentCloud
                      */
                     std::string m_subUin;
                     bool m_subUinHasBeenSet;
+
+                    /**
+                     * 创建者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subUinName;
+                    bool m_subUinNameHasBeenSet;
 
                     /**
                      * 地域
@@ -1227,6 +1281,12 @@ namespace TencentCloud
                      */
                     std::string m_callbackUrl;
                     bool m_callbackUrlHasBeenSet;
+
+                    /**
+                     * 任务关联的代码仓库配置
+                     */
+                    std::vector<CodeRepoConfig> m_codeRepos;
+                    bool m_codeReposHasBeenSet;
 
                 };
             }

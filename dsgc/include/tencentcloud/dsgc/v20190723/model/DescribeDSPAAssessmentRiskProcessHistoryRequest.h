@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DspaIdHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return RiskId xxx
+                     * 获取风险id
+                     * @return RiskId 风险id
                      * 
                      */
                     int64_t GetRiskId() const;
 
                     /**
-                     * 设置xxx
-                     * @param _riskId xxx
+                     * 设置风险id
+                     * @param _riskId 风险id
                      * 
                      */
                     void SetRiskId(const int64_t& _riskId);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_dspaIdHasBeenSet;
 
                     /**
-                     * xxx
+                     * 风险id
                      */
                     int64_t m_riskId;
                     bool m_riskIdHasBeenSet;

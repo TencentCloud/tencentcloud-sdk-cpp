@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,27 +48,39 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取接入点类型，枚举值如下
-VPC: VPC;
-PUBLIC: 公网;
-INTERNAL: 支撑网;
-                     * @return Type 接入点类型，枚举值如下
-VPC: VPC;
-PUBLIC: 公网;
-INTERNAL: 支撑网;
+                     * 获取接入点类型，枚举值如下：
+
+- VPC：VPC 网络
+
+- PUBLIC：公网
+
+- INTERNAL：支撑网
+                     * @return Type 接入点类型，枚举值如下：
+
+- VPC：VPC 网络
+
+- PUBLIC：公网
+
+- INTERNAL：支撑网
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置接入点类型，枚举值如下
-VPC: VPC;
-PUBLIC: 公网;
-INTERNAL: 支撑网;
-                     * @param _type 接入点类型，枚举值如下
-VPC: VPC;
-PUBLIC: 公网;
-INTERNAL: 支撑网;
+                     * 设置接入点类型，枚举值如下：
+
+- VPC：VPC 网络
+
+- PUBLIC：公网
+
+- INTERNAL：支撑网
+                     * @param _type 接入点类型，枚举值如下：
+
+- VPC：VPC 网络
+
+- PUBLIC：公网
+
+- INTERNAL：支撑网
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -299,10 +311,13 @@ POSTPAID 按量付费
                 private:
 
                     /**
-                     * 接入点类型，枚举值如下
-VPC: VPC;
-PUBLIC: 公网;
-INTERNAL: 支撑网;
+                     * 接入点类型，枚举值如下：
+
+- VPC：VPC 网络
+
+- PUBLIC：公网
+
+- INTERNAL：支撑网
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

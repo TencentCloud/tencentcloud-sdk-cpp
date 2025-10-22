@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -226,6 +226,20 @@ namespace TencentCloud
                     bool AddressHasBeenSet() const;
 
                     /**
+                     * 获取背面号码
+                     * @return LaserID 背面号码
+                     * 
+                     */
+                    std::string GetLaserID() const;
+
+                    /**
+                     * 判断参数 LaserID 是否已赋值
+                     * @return LaserID 是否已赋值
+                     * 
+                     */
+                    bool LaserIDHasBeenSet() const;
+
+                    /**
                      * 获取证件人像照片抠取
                      * @return PortraitImage 证件人像照片抠取
                      * 
@@ -264,6 +278,34 @@ namespace TencentCloud
                      * 
                      */
                     bool WarnCardInfosHasBeenSet() const;
+
+                    /**
+                     * 获取该字段已废弃， 将固定返回"1"，不建议使用。 
+                     * @return AdvancedInfo 该字段已废弃， 将固定返回"1"，不建议使用。 
+                     * @deprecated
+                     */
+                    std::string GetAdvancedInfo() const;
+
+                    /**
+                     * 判断参数 AdvancedInfo 是否已赋值
+                     * @return AdvancedInfo 是否已赋值
+                     * @deprecated
+                     */
+                    bool AdvancedInfoHasBeenSet() const;
+
+                    /**
+                     * 获取卡证正面图片中，证件主体的数量（仅请求曼谷地域[ap-bangkok]返回）
+                     * @return CardCount 卡证正面图片中，证件主体的数量（仅请求曼谷地域[ap-bangkok]返回）
+                     * 
+                     */
+                    int64_t GetCardCount() const;
+
+                    /**
+                     * 判断参数 CardCount 是否已赋值
+                     * @return CardCount 是否已赋值
+                     * 
+                     */
+                    bool CardCountHasBeenSet() const;
 
                 private:
 
@@ -346,6 +388,12 @@ namespace TencentCloud
                     bool m_addressHasBeenSet;
 
                     /**
+                     * 背面号码
+                     */
+                    std::string m_laserID;
+                    bool m_laserIDHasBeenSet;
+
+                    /**
                      * 证件人像照片抠取
                      */
                     std::string m_portraitImage;
@@ -362,6 +410,18 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_warnCardInfos;
                     bool m_warnCardInfosHasBeenSet;
+
+                    /**
+                     * 该字段已废弃， 将固定返回"1"，不建议使用。 
+                     */
+                    std::string m_advancedInfo;
+                    bool m_advancedInfoHasBeenSet;
+
+                    /**
+                     * 卡证正面图片中，证件主体的数量（仅请求曼谷地域[ap-bangkok]返回）
+                     */
+                    int64_t m_cardCount;
+                    bool m_cardCountHasBeenSet;
 
                 };
             }

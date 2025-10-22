@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -321,15 +321,15 @@ namespace TencentCloud
                     bool VulDefenceStatusHasBeenSet() const;
 
                     /**
-                     * 获取机器付费版本，0 基础版，1专业版，2旗舰版，3普惠版
-                     * @return PayVersion 机器付费版本，0 基础版，1专业版，2旗舰版，3普惠版
+                     * 获取机器付费版本，0 基础版，1专业版，2旗舰版，3轻量版
+                     * @return PayVersion 机器付费版本，0 基础版，1专业版，2旗舰版，3轻量版
                      * 
                      */
                     uint64_t GetPayVersion() const;
 
                     /**
-                     * 设置机器付费版本，0 基础版，1专业版，2旗舰版，3普惠版
-                     * @param _payVersion 机器付费版本，0 基础版，1专业版，2旗舰版，3普惠版
+                     * 设置机器付费版本，0 基础版，1专业版，2旗舰版，3轻量版
+                     * @param _payVersion 机器付费版本，0 基础版，1专业版，2旗舰版，3轻量版
                      * 
                      */
                     void SetPayVersion(const uint64_t& _payVersion);
@@ -485,7 +485,7 @@ namespace TencentCloud
                     bool m_vulDefenceStatusHasBeenSet;
 
                     /**
-                     * 机器付费版本，0 基础版，1专业版，2旗舰版，3普惠版
+                     * 机器付费版本，0 基础版，1专业版，2旗舰版，3轻量版
                      */
                     uint64_t m_payVersion;
                     bool m_payVersionHasBeenSet;

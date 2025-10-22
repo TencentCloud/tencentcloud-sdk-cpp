@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -210,6 +210,27 @@ namespace TencentCloud
                      */
                     bool QueryDlqMsgHasBeenSet() const;
 
+                    /**
+                     * 获取生产时间
+                     * @return ProduceTime 生产时间
+                     * 
+                     */
+                    std::string GetProduceTime() const;
+
+                    /**
+                     * 设置生产时间
+                     * @param _produceTime 生产时间
+                     * 
+                     */
+                    void SetProduceTime(const std::string& _produceTime);
+
+                    /**
+                     * 判断参数 ProduceTime 是否已赋值
+                     * @return ProduceTime 是否已赋值
+                     * 
+                     */
+                    bool ProduceTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +280,12 @@ namespace TencentCloud
                      */
                     bool m_queryDlqMsg;
                     bool m_queryDlqMsgHasBeenSet;
+
+                    /**
+                     * 生产时间
+                     */
+                    std::string m_produceTime;
+                    bool m_produceTimeHasBeenSet;
 
                 };
             }

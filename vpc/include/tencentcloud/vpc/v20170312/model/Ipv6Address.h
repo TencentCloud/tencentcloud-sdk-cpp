@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool PrimaryHasBeenSet() const;
 
                     /**
-                     * 获取`EIP`实例`ID`，形如：`eip-hxlqja90`。
-                     * @return AddressId `EIP`实例`ID`，形如：`eip-hxlqja90`。
+                     * 获取`EIP`实例`ID`，形如：`eip-hxlqja90`。作为入参数时，可通过[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取。
+                     * @return AddressId `EIP`实例`ID`，形如：`eip-hxlqja90`。作为入参数时，可通过[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取。
                      * 
                      */
                     std::string GetAddressId() const;
 
                     /**
-                     * 设置`EIP`实例`ID`，形如：`eip-hxlqja90`。
-                     * @param _addressId `EIP`实例`ID`，形如：`eip-hxlqja90`。
+                     * 设置`EIP`实例`ID`，形如：`eip-hxlqja90`。作为入参数时，可通过[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取。
+                     * @param _addressId `EIP`实例`ID`，形如：`eip-hxlqja90`。作为入参数时，可通过[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取。
                      * 
                      */
                     void SetAddressId(const std::string& _addressId);
@@ -190,18 +190,14 @@ namespace TencentCloud
 
                     /**
                      * 获取如果 IPv6地址是 ULA 类型，绑定的公网IP地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicIpAddress 如果 IPv6地址是 ULA 类型，绑定的公网IP地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublicIpAddress() const;
 
                     /**
                      * 设置如果 IPv6地址是 ULA 类型，绑定的公网IP地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publicIpAddress 如果 IPv6地址是 ULA 类型，绑定的公网IP地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublicIpAddress(const std::string& _publicIpAddress);
@@ -214,19 +210,15 @@ namespace TencentCloud
                     bool PublicIpAddressHasBeenSet() const;
 
                     /**
-                     * 获取`IPv6`地址的类型: `GUA`, `OTHER`, `ULA`
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AddressType `IPv6`地址的类型: `GUA`, `OTHER`, `ULA`
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取`IPv6`地址的类型: `GUA`(全球单播地址), `ULA`(唯一本地地址)
+                     * @return AddressType `IPv6`地址的类型: `GUA`(全球单播地址), `ULA`(唯一本地地址)
                      * 
                      */
                     std::string GetAddressType() const;
 
                     /**
-                     * 设置`IPv6`地址的类型: `GUA`, `OTHER`, `ULA`
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _addressType `IPv6`地址的类型: `GUA`, `OTHER`, `ULA`
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置`IPv6`地址的类型: `GUA`(全球单播地址), `ULA`(唯一本地地址)
+                     * @param _addressType `IPv6`地址的类型: `GUA`(全球单播地址), `ULA`(唯一本地地址)
                      * 
                      */
                     void SetAddressType(const std::string& _addressType);
@@ -253,7 +245,7 @@ namespace TencentCloud
                     bool m_primaryHasBeenSet;
 
                     /**
-                     * `EIP`实例`ID`，形如：`eip-hxlqja90`。
+                     * `EIP`实例`ID`，形如：`eip-hxlqja90`。作为入参数时，可通过[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取。
                      */
                     std::string m_addressId;
                     bool m_addressIdHasBeenSet;
@@ -282,14 +274,12 @@ namespace TencentCloud
 
                     /**
                      * 如果 IPv6地址是 ULA 类型，绑定的公网IP地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publicIpAddress;
                     bool m_publicIpAddressHasBeenSet;
 
                     /**
-                     * `IPv6`地址的类型: `GUA`, `OTHER`, `ULA`
-注意：此字段可能返回 null，表示取不到有效值。
+                     * `IPv6`地址的类型: `GUA`(全球单播地址), `ULA`(唯一本地地址)
                      */
                     std::string m_addressType;
                     bool m_addressTypeHasBeenSet;

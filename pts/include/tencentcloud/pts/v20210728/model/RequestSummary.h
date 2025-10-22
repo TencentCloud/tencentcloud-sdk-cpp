@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -298,6 +298,27 @@ namespace TencentCloud
                      */
                     bool ResultHasBeenSet() const;
 
+                    /**
+                     * 获取平均rps, 单位req/s
+                     * @return RPS 平均rps, 单位req/s
+                     * 
+                     */
+                    double GetRPS() const;
+
+                    /**
+                     * 设置平均rps, 单位req/s
+                     * @param _rPS 平均rps, 单位req/s
+                     * 
+                     */
+                    void SetRPS(const double& _rPS);
+
+                    /**
+                     * 判断参数 RPS 是否已赋值
+                     * @return RPS 是否已赋值
+                     * 
+                     */
+                    bool RPSHasBeenSet() const;
+
                 private:
 
                     /**
@@ -371,6 +392,12 @@ namespace TencentCloud
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;
+
+                    /**
+                     * 平均rps, 单位req/s
+                     */
+                    double m_rPS;
+                    bool m_rPSHasBeenSet;
 
                 };
             }

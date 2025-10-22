@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ using namespace std;
 DescribeEngineUsageInfoResponse::DescribeEngineUsageInfoResponse() :
     m_totalHasBeenSet(false),
     m_usedHasBeenSet(false),
-    m_availableHasBeenSet(false)
+    m_availableHasBeenSet(false),
+    m_availPercentHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome DescribeEngineUsageInfoResponse::Deserialize(const string &p
         m_availableHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AvailPercent") && !rsp["AvailPercent"].IsNull())
+    {
+        if (!rsp["AvailPercent"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AvailPercent` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_availPercent = rsp["AvailPercent"].GetInt64();
+        m_availPercentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -128,11 +139,19 @@ string DescribeEngineUsageInfoResponse::ToJsonString() const
         value.AddMember(iKey, m_available, allocator);
     }
 
+    if (m_availPercentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvailPercent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_availPercent, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -168,6 +187,16 @@ int64_t DescribeEngineUsageInfoResponse::GetAvailable() const
 bool DescribeEngineUsageInfoResponse::AvailableHasBeenSet() const
 {
     return m_availableHasBeenSet;
+}
+
+int64_t DescribeEngineUsageInfoResponse::GetAvailPercent() const
+{
+    return m_availPercent;
+}
+
+bool DescribeEngineUsageInfoResponse::AvailPercentHasBeenSet() const
+{
+    return m_availPercentHasBeenSet;
 }
 
 

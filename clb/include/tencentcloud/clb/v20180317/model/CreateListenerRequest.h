@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取负载均衡实例 ID。
-                     * @return LoadBalancerId 负载均衡实例 ID。
+                     * 获取负载均衡实例 ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/214/30685) 接口获取。
+                     * @return LoadBalancerId 负载均衡实例 ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/214/30685) 接口获取。
                      * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
-                     * 设置负载均衡实例 ID。
-                     * @param _loadBalancerId 负载均衡实例 ID。
+                     * 设置负载均衡实例 ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/214/30685) 接口获取。
+                     * @param _loadBalancerId 负载均衡实例 ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/214/30685) 接口获取。
                      * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
@@ -68,14 +68,18 @@ namespace TencentCloud
 
                     /**
                      * 获取要将监听器创建到哪些端口，每个端口对应一个新的监听器。
+端口范围：1~65535
                      * @return Ports 要将监听器创建到哪些端口，每个端口对应一个新的监听器。
+端口范围：1~65535
                      * 
                      */
                     std::vector<int64_t> GetPorts() const;
 
                     /**
                      * 设置要将监听器创建到哪些端口，每个端口对应一个新的监听器。
+端口范围：1~65535
                      * @param _ports 要将监听器创建到哪些端口，每个端口对应一个新的监听器。
+端口范围：1~65535
                      * 
                      */
                     void SetPorts(const std::vector<int64_t>& _ports);
@@ -151,15 +155,23 @@ namespace TencentCloud
                     bool HealthCheckHasBeenSet() const;
 
                     /**
-                     * 获取证书相关信息，此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。此参数和MultiCertInfo不能同时传入。
-                     * @return Certificate 证书相关信息，此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。此参数和MultiCertInfo不能同时传入。
+                     * 获取证书相关信息。参数限制如下：
+<li>此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。</li>
+<li>创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数MultiCertInfo至少需要传一个， 但不能同时传入。</li>
+                     * @return Certificate 证书相关信息。参数限制如下：
+<li>此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。</li>
+<li>创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数MultiCertInfo至少需要传一个， 但不能同时传入。</li>
                      * 
                      */
                     CertificateInput GetCertificate() const;
 
                     /**
-                     * 设置证书相关信息，此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。此参数和MultiCertInfo不能同时传入。
-                     * @param _certificate 证书相关信息，此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。此参数和MultiCertInfo不能同时传入。
+                     * 设置证书相关信息。参数限制如下：
+<li>此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。</li>
+<li>创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数MultiCertInfo至少需要传一个， 但不能同时传入。</li>
+                     * @param _certificate 证书相关信息。参数限制如下：
+<li>此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。</li>
+<li>创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数MultiCertInfo至少需要传一个， 但不能同时传入。</li>
                      * 
                      */
                     void SetCertificate(const CertificateInput& _certificate);
@@ -172,15 +184,15 @@ namespace TencentCloud
                     bool CertificateHasBeenSet() const;
 
                     /**
-                     * 获取会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。此参数仅适用于TCP/UDP监听器。
-                     * @return SessionExpireTime 会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。此参数仅适用于TCP/UDP监听器。
+                     * 获取会话保持时间，单位：秒。可选值：30~3600，默认为0，默认不开启。此参数仅适用于TCP/UDP监听器。
+                     * @return SessionExpireTime 会话保持时间，单位：秒。可选值：30~3600，默认为0，默认不开启。此参数仅适用于TCP/UDP监听器。
                      * 
                      */
                     int64_t GetSessionExpireTime() const;
 
                     /**
-                     * 设置会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。此参数仅适用于TCP/UDP监听器。
-                     * @param _sessionExpireTime 会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。此参数仅适用于TCP/UDP监听器。
+                     * 设置会话保持时间，单位：秒。可选值：30~3600，默认为0，默认不开启。此参数仅适用于TCP/UDP监听器。
+                     * @param _sessionExpireTime 会话保持时间，单位：秒。可选值：30~3600，默认为0，默认不开启。此参数仅适用于TCP/UDP监听器。
                      * 
                      */
                     void SetSessionExpireTime(const int64_t& _sessionExpireTime);
@@ -193,19 +205,19 @@ namespace TencentCloud
                     bool SessionExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取监听器转发的方式。可选值：WRR、LEAST_CONN
-分别表示按权重轮询、最小连接数， 默认为 WRR。此参数仅适用于TCP/UDP/TCP_SSL/QUIC监听器。
-                     * @return Scheduler 监听器转发的方式。可选值：WRR、LEAST_CONN
-分别表示按权重轮询、最小连接数， 默认为 WRR。此参数仅适用于TCP/UDP/TCP_SSL/QUIC监听器。
+                     * 获取监听器转发的方式。可选值：WRR（按权重轮询）、LEAST_CONN（按最小连接数）
+默认为 WRR。此参数仅适用于TCP/UDP/TCP_SSL/QUIC监听器。
+                     * @return Scheduler 监听器转发的方式。可选值：WRR（按权重轮询）、LEAST_CONN（按最小连接数）
+默认为 WRR。此参数仅适用于TCP/UDP/TCP_SSL/QUIC监听器。
                      * 
                      */
                     std::string GetScheduler() const;
 
                     /**
-                     * 设置监听器转发的方式。可选值：WRR、LEAST_CONN
-分别表示按权重轮询、最小连接数， 默认为 WRR。此参数仅适用于TCP/UDP/TCP_SSL/QUIC监听器。
-                     * @param _scheduler 监听器转发的方式。可选值：WRR、LEAST_CONN
-分别表示按权重轮询、最小连接数， 默认为 WRR。此参数仅适用于TCP/UDP/TCP_SSL/QUIC监听器。
+                     * 设置监听器转发的方式。可选值：WRR（按权重轮询）、LEAST_CONN（按最小连接数）
+默认为 WRR。此参数仅适用于TCP/UDP/TCP_SSL/QUIC监听器。
+                     * @param _scheduler 监听器转发的方式。可选值：WRR（按权重轮询）、LEAST_CONN（按最小连接数）
+默认为 WRR。此参数仅适用于TCP/UDP/TCP_SSL/QUIC监听器。
                      * 
                      */
                     void SetScheduler(const std::string& _scheduler);
@@ -282,14 +294,18 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启长连接，此参数仅适用于HTTP/HTTPS监听器，0:关闭；1:开启， 默认关闭。
+若后端服务对连接数上限有限制，则建议谨慎开启。此功能目前处于内测中，如需使用，请提交 [内测申请](https://cloud.tencent.com/apply/p/tsodp6qm21)。
                      * @return KeepaliveEnable 是否开启长连接，此参数仅适用于HTTP/HTTPS监听器，0:关闭；1:开启， 默认关闭。
+若后端服务对连接数上限有限制，则建议谨慎开启。此功能目前处于内测中，如需使用，请提交 [内测申请](https://cloud.tencent.com/apply/p/tsodp6qm21)。
                      * 
                      */
                     int64_t GetKeepaliveEnable() const;
 
                     /**
                      * 设置是否开启长连接，此参数仅适用于HTTP/HTTPS监听器，0:关闭；1:开启， 默认关闭。
+若后端服务对连接数上限有限制，则建议谨慎开启。此功能目前处于内测中，如需使用，请提交 [内测申请](https://cloud.tencent.com/apply/p/tsodp6qm21)。
                      * @param _keepaliveEnable 是否开启长连接，此参数仅适用于HTTP/HTTPS监听器，0:关闭；1:开启， 默认关闭。
+若后端服务对连接数上限有限制，则建议谨慎开启。此功能目前处于内测中，如需使用，请提交 [内测申请](https://cloud.tencent.com/apply/p/tsodp6qm21)。
                      * 
                      */
                     void SetKeepaliveEnable(const int64_t& _keepaliveEnable);
@@ -323,15 +339,15 @@ namespace TencentCloud
                     bool EndPortHasBeenSet() const;
 
                     /**
-                     * 获取解绑后端目标时，是否发RST给客户端，此参数仅适用于TCP监听器。
-                     * @return DeregisterTargetRst 解绑后端目标时，是否发RST给客户端，此参数仅适用于TCP监听器。
+                     * 获取解绑后端目标时，是否发RST给两端（客户端和服务器），此参数仅适用于TCP监听器。
+                     * @return DeregisterTargetRst 解绑后端目标时，是否发RST给两端（客户端和服务器），此参数仅适用于TCP监听器。
                      * 
                      */
                     bool GetDeregisterTargetRst() const;
 
                     /**
-                     * 设置解绑后端目标时，是否发RST给客户端，此参数仅适用于TCP监听器。
-                     * @param _deregisterTargetRst 解绑后端目标时，是否发RST给客户端，此参数仅适用于TCP监听器。
+                     * 设置解绑后端目标时，是否发RST给两端（客户端和服务器），此参数仅适用于TCP监听器。
+                     * @param _deregisterTargetRst 解绑后端目标时，是否发RST给两端（客户端和服务器），此参数仅适用于TCP监听器。
                      * 
                      */
                     void SetDeregisterTargetRst(const bool& _deregisterTargetRst);
@@ -344,15 +360,23 @@ namespace TencentCloud
                     bool DeregisterTargetRstHasBeenSet() const;
 
                     /**
-                     * 获取证书信息，支持同时传入不同算法类型的多本服务端证书；此参数仅适用于未开启SNI特性的HTTPS监听器。此参数和Certificate不能同时传入。
-                     * @return MultiCertInfo 证书信息，支持同时传入不同算法类型的多本服务端证书；此参数仅适用于未开启SNI特性的HTTPS监听器。此参数和Certificate不能同时传入。
+                     * 获取证书信息，支持同时传入不同算法类型的多本服务端证书，参数限制如下：
+<li>此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。</li>
+<li>创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数Certificate至少需要传一个， 但不能同时传入。</li>
+                     * @return MultiCertInfo 证书信息，支持同时传入不同算法类型的多本服务端证书，参数限制如下：
+<li>此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。</li>
+<li>创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数Certificate至少需要传一个， 但不能同时传入。</li>
                      * 
                      */
                     MultiCertInfo GetMultiCertInfo() const;
 
                     /**
-                     * 设置证书信息，支持同时传入不同算法类型的多本服务端证书；此参数仅适用于未开启SNI特性的HTTPS监听器。此参数和Certificate不能同时传入。
-                     * @param _multiCertInfo 证书信息，支持同时传入不同算法类型的多本服务端证书；此参数仅适用于未开启SNI特性的HTTPS监听器。此参数和Certificate不能同时传入。
+                     * 设置证书信息，支持同时传入不同算法类型的多本服务端证书，参数限制如下：
+<li>此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。</li>
+<li>创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数Certificate至少需要传一个， 但不能同时传入。</li>
+                     * @param _multiCertInfo 证书信息，支持同时传入不同算法类型的多本服务端证书，参数限制如下：
+<li>此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。</li>
+<li>创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数Certificate至少需要传一个， 但不能同时传入。</li>
                      * 
                      */
                     void SetMultiCertInfo(const MultiCertInfo& _multiCertInfo);
@@ -407,15 +431,15 @@ namespace TencentCloud
                     bool MaxCpsHasBeenSet() const;
 
                     /**
-                     * 获取空闲连接超时时间，此参数仅适用于TCP监听器，单位：秒。取值范围：共享型实例和独占型实例支持：300-900，性能容量型实例支持：300-2000。如需设置请通过 [工单申请](https://console.cloud.tencent.com/workorder/category)。
-                     * @return IdleConnectTimeout 空闲连接超时时间，此参数仅适用于TCP监听器，单位：秒。取值范围：共享型实例和独占型实例支持：300-900，性能容量型实例支持：300-2000。如需设置请通过 [工单申请](https://console.cloud.tencent.com/workorder/category)。
+                     * 获取空闲连接超时时间，此参数仅适用于TCP/UDP监听器，单位：秒。默认值：TCP监听器默认值为900s，UDP监听器默认值为300s。取值范围：共享型实例和独占型实例支持：10-900，性能容量型实例支持：10-1980。如需设置超过取值范围的值请通过 [工单申请](https://console.cloud.tencent.com/workorder/category)。
+                     * @return IdleConnectTimeout 空闲连接超时时间，此参数仅适用于TCP/UDP监听器，单位：秒。默认值：TCP监听器默认值为900s，UDP监听器默认值为300s。取值范围：共享型实例和独占型实例支持：10-900，性能容量型实例支持：10-1980。如需设置超过取值范围的值请通过 [工单申请](https://console.cloud.tencent.com/workorder/category)。
                      * 
                      */
                     int64_t GetIdleConnectTimeout() const;
 
                     /**
-                     * 设置空闲连接超时时间，此参数仅适用于TCP监听器，单位：秒。取值范围：共享型实例和独占型实例支持：300-900，性能容量型实例支持：300-2000。如需设置请通过 [工单申请](https://console.cloud.tencent.com/workorder/category)。
-                     * @param _idleConnectTimeout 空闲连接超时时间，此参数仅适用于TCP监听器，单位：秒。取值范围：共享型实例和独占型实例支持：300-900，性能容量型实例支持：300-2000。如需设置请通过 [工单申请](https://console.cloud.tencent.com/workorder/category)。
+                     * 设置空闲连接超时时间，此参数仅适用于TCP/UDP监听器，单位：秒。默认值：TCP监听器默认值为900s，UDP监听器默认值为300s。取值范围：共享型实例和独占型实例支持：10-900，性能容量型实例支持：10-1980。如需设置超过取值范围的值请通过 [工单申请](https://console.cloud.tencent.com/workorder/category)。
+                     * @param _idleConnectTimeout 空闲连接超时时间，此参数仅适用于TCP/UDP监听器，单位：秒。默认值：TCP监听器默认值为900s，UDP监听器默认值为300s。取值范围：共享型实例和独占型实例支持：10-900，性能容量型实例支持：10-1980。如需设置超过取值范围的值请通过 [工单申请](https://console.cloud.tencent.com/workorder/category)。
                      * 
                      */
                     void SetIdleConnectTimeout(const int64_t& _idleConnectTimeout);
@@ -428,15 +452,40 @@ namespace TencentCloud
                     bool IdleConnectTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取是否开启SNAT。
-                     * @return SnatEnable 是否开启SNAT。
+                     * 获取TCP_SSL和QUIC是否支持PP
+                     * @return ProxyProtocol TCP_SSL和QUIC是否支持PP
+                     * 
+                     */
+                    bool GetProxyProtocol() const;
+
+                    /**
+                     * 设置TCP_SSL和QUIC是否支持PP
+                     * @param _proxyProtocol TCP_SSL和QUIC是否支持PP
+                     * 
+                     */
+                    void SetProxyProtocol(const bool& _proxyProtocol);
+
+                    /**
+                     * 判断参数 ProxyProtocol 是否已赋值
+                     * @return ProxyProtocol 是否已赋值
+                     * 
+                     */
+                    bool ProxyProtocolHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启SNAT，True（开启）、False（关闭）。
+默认为关闭。
+                     * @return SnatEnable 是否开启SNAT，True（开启）、False（关闭）。
+默认为关闭。
                      * 
                      */
                     bool GetSnatEnable() const;
 
                     /**
-                     * 设置是否开启SNAT。
-                     * @param _snatEnable 是否开启SNAT。
+                     * 设置是否开启SNAT，True（开启）、False（关闭）。
+默认为关闭。
+                     * @param _snatEnable 是否开启SNAT，True（开启）、False（关闭）。
+默认为关闭。
                      * 
                      */
                     void SetSnatEnable(const bool& _snatEnable);
@@ -449,15 +498,15 @@ namespace TencentCloud
                     bool SnatEnableHasBeenSet() const;
 
                     /**
-                     * 获取全端口段监听器的结束端口
-                     * @return FullEndPorts 全端口段监听器的结束端口
+                     * 获取全端口段监听器的结束端口，端口范围：2 - 65535
+                     * @return FullEndPorts 全端口段监听器的结束端口，端口范围：2 - 65535
                      * 
                      */
                     std::vector<int64_t> GetFullEndPorts() const;
 
                     /**
-                     * 设置全端口段监听器的结束端口
-                     * @param _fullEndPorts 全端口段监听器的结束端口
+                     * 设置全端口段监听器的结束端口，端口范围：2 - 65535
+                     * @param _fullEndPorts 全端口段监听器的结束端口，端口范围：2 - 65535
                      * 
                      */
                     void SetFullEndPorts(const std::vector<int64_t>& _fullEndPorts);
@@ -470,15 +519,19 @@ namespace TencentCloud
                     bool FullEndPortsHasBeenSet() const;
 
                     /**
-                     * 获取内网http监听器开启h2c开关
-                     * @return H2cSwitch 内网http监听器开启h2c开关
+                     * 获取内网http监听器开启h2c开关，True（开启）、False（关闭）。
+默认为关闭。
+                     * @return H2cSwitch 内网http监听器开启h2c开关，True（开启）、False（关闭）。
+默认为关闭。
                      * 
                      */
                     bool GetH2cSwitch() const;
 
                     /**
-                     * 设置内网http监听器开启h2c开关
-                     * @param _h2cSwitch 内网http监听器开启h2c开关
+                     * 设置内网http监听器开启h2c开关，True（开启）、False（关闭）。
+默认为关闭。
+                     * @param _h2cSwitch 内网http监听器开启h2c开关，True（开启）、False（关闭）。
+默认为关闭。
                      * 
                      */
                     void SetH2cSwitch(const bool& _h2cSwitch);
@@ -491,15 +544,19 @@ namespace TencentCloud
                     bool H2cSwitchHasBeenSet() const;
 
                     /**
-                     * 获取TCP_SSL监听器支持关闭SSL后仍然支持混绑，此参数为关闭开关
-                     * @return SslCloseSwitch TCP_SSL监听器支持关闭SSL后仍然支持混绑，此参数为关闭开关
+                     * 获取TCP_SSL监听器支持关闭SSL后仍然支持混绑，此参数为关闭开关。True（关闭）、False（开启）.
+默认为关闭。
+                     * @return SslCloseSwitch TCP_SSL监听器支持关闭SSL后仍然支持混绑，此参数为关闭开关。True（关闭）、False（开启）.
+默认为关闭。
                      * 
                      */
                     bool GetSslCloseSwitch() const;
 
                     /**
-                     * 设置TCP_SSL监听器支持关闭SSL后仍然支持混绑，此参数为关闭开关
-                     * @param _sslCloseSwitch TCP_SSL监听器支持关闭SSL后仍然支持混绑，此参数为关闭开关
+                     * 设置TCP_SSL监听器支持关闭SSL后仍然支持混绑，此参数为关闭开关。True（关闭）、False（开启）.
+默认为关闭。
+                     * @param _sslCloseSwitch TCP_SSL监听器支持关闭SSL后仍然支持混绑，此参数为关闭开关。True（关闭）、False（开启）.
+默认为关闭。
                      * 
                      */
                     void SetSslCloseSwitch(const bool& _sslCloseSwitch);
@@ -511,16 +568,38 @@ namespace TencentCloud
                      */
                     bool SslCloseSwitchHasBeenSet() const;
 
+                    /**
+                     * 获取数据压缩模式。可选值：transparent（透传模式）、compatibility（兼容模式）
+                     * @return DataCompressMode 数据压缩模式。可选值：transparent（透传模式）、compatibility（兼容模式）
+                     * 
+                     */
+                    std::string GetDataCompressMode() const;
+
+                    /**
+                     * 设置数据压缩模式。可选值：transparent（透传模式）、compatibility（兼容模式）
+                     * @param _dataCompressMode 数据压缩模式。可选值：transparent（透传模式）、compatibility（兼容模式）
+                     * 
+                     */
+                    void SetDataCompressMode(const std::string& _dataCompressMode);
+
+                    /**
+                     * 判断参数 DataCompressMode 是否已赋值
+                     * @return DataCompressMode 是否已赋值
+                     * 
+                     */
+                    bool DataCompressModeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 负载均衡实例 ID。
+                     * 负载均衡实例 ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/214/30685) 接口获取。
                      */
                     std::string m_loadBalancerId;
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
                      * 要将监听器创建到哪些端口，每个端口对应一个新的监听器。
+端口范围：1~65535
                      */
                     std::vector<int64_t> m_ports;
                     bool m_portsHasBeenSet;
@@ -544,20 +623,22 @@ namespace TencentCloud
                     bool m_healthCheckHasBeenSet;
 
                     /**
-                     * 证书相关信息，此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。此参数和MultiCertInfo不能同时传入。
+                     * 证书相关信息。参数限制如下：
+<li>此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。</li>
+<li>创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数MultiCertInfo至少需要传一个， 但不能同时传入。</li>
                      */
                     CertificateInput m_certificate;
                     bool m_certificateHasBeenSet;
 
                     /**
-                     * 会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。此参数仅适用于TCP/UDP监听器。
+                     * 会话保持时间，单位：秒。可选值：30~3600，默认为0，默认不开启。此参数仅适用于TCP/UDP监听器。
                      */
                     int64_t m_sessionExpireTime;
                     bool m_sessionExpireTimeHasBeenSet;
 
                     /**
-                     * 监听器转发的方式。可选值：WRR、LEAST_CONN
-分别表示按权重轮询、最小连接数， 默认为 WRR。此参数仅适用于TCP/UDP/TCP_SSL/QUIC监听器。
+                     * 监听器转发的方式。可选值：WRR（按权重轮询）、LEAST_CONN（按最小连接数）
+默认为 WRR。此参数仅适用于TCP/UDP/TCP_SSL/QUIC监听器。
                      */
                     std::string m_scheduler;
                     bool m_schedulerHasBeenSet;
@@ -582,6 +663,7 @@ namespace TencentCloud
 
                     /**
                      * 是否开启长连接，此参数仅适用于HTTP/HTTPS监听器，0:关闭；1:开启， 默认关闭。
+若后端服务对连接数上限有限制，则建议谨慎开启。此功能目前处于内测中，如需使用，请提交 [内测申请](https://cloud.tencent.com/apply/p/tsodp6qm21)。
                      */
                     int64_t m_keepaliveEnable;
                     bool m_keepaliveEnableHasBeenSet;
@@ -593,13 +675,15 @@ namespace TencentCloud
                     bool m_endPortHasBeenSet;
 
                     /**
-                     * 解绑后端目标时，是否发RST给客户端，此参数仅适用于TCP监听器。
+                     * 解绑后端目标时，是否发RST给两端（客户端和服务器），此参数仅适用于TCP监听器。
                      */
                     bool m_deregisterTargetRst;
                     bool m_deregisterTargetRstHasBeenSet;
 
                     /**
-                     * 证书信息，支持同时传入不同算法类型的多本服务端证书；此参数仅适用于未开启SNI特性的HTTPS监听器。此参数和Certificate不能同时传入。
+                     * 证书信息，支持同时传入不同算法类型的多本服务端证书，参数限制如下：
+<li>此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。</li>
+<li>创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数Certificate至少需要传一个， 但不能同时传入。</li>
                      */
                     MultiCertInfo m_multiCertInfo;
                     bool m_multiCertInfoHasBeenSet;
@@ -617,34 +701,49 @@ namespace TencentCloud
                     bool m_maxCpsHasBeenSet;
 
                     /**
-                     * 空闲连接超时时间，此参数仅适用于TCP监听器，单位：秒。取值范围：共享型实例和独占型实例支持：300-900，性能容量型实例支持：300-2000。如需设置请通过 [工单申请](https://console.cloud.tencent.com/workorder/category)。
+                     * 空闲连接超时时间，此参数仅适用于TCP/UDP监听器，单位：秒。默认值：TCP监听器默认值为900s，UDP监听器默认值为300s。取值范围：共享型实例和独占型实例支持：10-900，性能容量型实例支持：10-1980。如需设置超过取值范围的值请通过 [工单申请](https://console.cloud.tencent.com/workorder/category)。
                      */
                     int64_t m_idleConnectTimeout;
                     bool m_idleConnectTimeoutHasBeenSet;
 
                     /**
-                     * 是否开启SNAT。
+                     * TCP_SSL和QUIC是否支持PP
+                     */
+                    bool m_proxyProtocol;
+                    bool m_proxyProtocolHasBeenSet;
+
+                    /**
+                     * 是否开启SNAT，True（开启）、False（关闭）。
+默认为关闭。
                      */
                     bool m_snatEnable;
                     bool m_snatEnableHasBeenSet;
 
                     /**
-                     * 全端口段监听器的结束端口
+                     * 全端口段监听器的结束端口，端口范围：2 - 65535
                      */
                     std::vector<int64_t> m_fullEndPorts;
                     bool m_fullEndPortsHasBeenSet;
 
                     /**
-                     * 内网http监听器开启h2c开关
+                     * 内网http监听器开启h2c开关，True（开启）、False（关闭）。
+默认为关闭。
                      */
                     bool m_h2cSwitch;
                     bool m_h2cSwitchHasBeenSet;
 
                     /**
-                     * TCP_SSL监听器支持关闭SSL后仍然支持混绑，此参数为关闭开关
+                     * TCP_SSL监听器支持关闭SSL后仍然支持混绑，此参数为关闭开关。True（关闭）、False（开启）.
+默认为关闭。
                      */
                     bool m_sslCloseSwitch;
                     bool m_sslCloseSwitchHasBeenSet;
+
+                    /**
+                     * 数据压缩模式。可选值：transparent（透传模式）、compatibility（兼容模式）
+                     */
+                    std::string m_dataCompressMode;
+                    bool m_dataCompressModeHasBeenSet;
 
                 };
             }

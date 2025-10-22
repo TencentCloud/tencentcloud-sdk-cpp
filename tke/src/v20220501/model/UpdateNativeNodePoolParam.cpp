@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,8 @@ UpdateNativeNodePoolParam::UpdateNativeNodePoolParam() :
     m_instanceTypesHasBeenSet(false),
     m_replicasHasBeenSet(false),
     m_dataDisksHasBeenSet(false),
-    m_keyIdsHasBeenSet(false)
+    m_keyIdsHasBeenSet(false),
+    m_gPUConfigsHasBeenSet(false)
 {
 }
 
@@ -305,6 +306,26 @@ CoreInternalOutcome UpdateNativeNodePoolParam::Deserialize(const rapidjson::Valu
         m_keyIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("GPUConfigs") && !value["GPUConfigs"].IsNull())
+    {
+        if (!value["GPUConfigs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `UpdateNativeNodePoolParam.GPUConfigs` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["GPUConfigs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            GPUConfig item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_gPUConfigs.push_back(item);
+        }
+        m_gPUConfigsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -499,6 +520,21 @@ void UpdateNativeNodePoolParam::ToJsonObject(rapidjson::Value &value, rapidjson:
         for (auto itr = m_keyIds.begin(); itr != m_keyIds.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_gPUConfigsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GPUConfigs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_gPUConfigs.begin(); itr != m_gPUConfigs.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -807,5 +843,21 @@ void UpdateNativeNodePoolParam::SetKeyIds(const vector<string>& _keyIds)
 bool UpdateNativeNodePoolParam::KeyIdsHasBeenSet() const
 {
     return m_keyIdsHasBeenSet;
+}
+
+vector<GPUConfig> UpdateNativeNodePoolParam::GetGPUConfigs() const
+{
+    return m_gPUConfigs;
+}
+
+void UpdateNativeNodePoolParam::SetGPUConfigs(const vector<GPUConfig>& _gPUConfigs)
+{
+    m_gPUConfigs = _gPUConfigs;
+    m_gPUConfigsHasBeenSet = true;
+}
+
+bool UpdateNativeNodePoolParam::GPUConfigsHasBeenSet() const
+{
+    return m_gPUConfigsHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool DeadlineHasBeenSet() const;
 
                     /**
-                     * 获取云硬盘备份点ID。传入此参数时，将通过备份点创建快照。
-                     * @return DiskBackupId 云硬盘备份点ID。传入此参数时，将通过备份点创建快照。
+                     * 获取云硬盘备份点ID。传入此参数时，将通过备份点创建快照。备份点 ID 可以通过[DescribeDiskBackups](/document/product/362/80278)接口查询。
+                     * @return DiskBackupId 云硬盘备份点ID。传入此参数时，将通过备份点创建快照。备份点 ID 可以通过[DescribeDiskBackups](/document/product/362/80278)接口查询。
                      * 
                      */
                     std::string GetDiskBackupId() const;
 
                     /**
-                     * 设置云硬盘备份点ID。传入此参数时，将通过备份点创建快照。
-                     * @param _diskBackupId 云硬盘备份点ID。传入此参数时，将通过备份点创建快照。
+                     * 设置云硬盘备份点ID。传入此参数时，将通过备份点创建快照。备份点 ID 可以通过[DescribeDiskBackups](/document/product/362/80278)接口查询。
+                     * @param _diskBackupId 云硬盘备份点ID。传入此参数时，将通过备份点创建快照。备份点 ID 可以通过[DescribeDiskBackups](/document/product/362/80278)接口查询。
                      * 
                      */
                     void SetDiskBackupId(const std::string& _diskBackupId);
@@ -148,6 +148,27 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取快照关联云硬盘类型, SYSTEM_DISK: 系统盘, DATA_DISK: 数据盘,非必填参数，不填时快照类型与云盘类型保持一致， 该参数基于某些场景用户需要将系统盘创建出数据盘快照共享使用。
+                     * @return DiskUsage 快照关联云硬盘类型, SYSTEM_DISK: 系统盘, DATA_DISK: 数据盘,非必填参数，不填时快照类型与云盘类型保持一致， 该参数基于某些场景用户需要将系统盘创建出数据盘快照共享使用。
+                     * 
+                     */
+                    std::string GetDiskUsage() const;
+
+                    /**
+                     * 设置快照关联云硬盘类型, SYSTEM_DISK: 系统盘, DATA_DISK: 数据盘,非必填参数，不填时快照类型与云盘类型保持一致， 该参数基于某些场景用户需要将系统盘创建出数据盘快照共享使用。
+                     * @param _diskUsage 快照关联云硬盘类型, SYSTEM_DISK: 系统盘, DATA_DISK: 数据盘,非必填参数，不填时快照类型与云盘类型保持一致， 该参数基于某些场景用户需要将系统盘创建出数据盘快照共享使用。
+                     * 
+                     */
+                    void SetDiskUsage(const std::string& _diskUsage);
+
+                    /**
+                     * 判断参数 DiskUsage 是否已赋值
+                     * @return DiskUsage 是否已赋值
+                     * 
+                     */
+                    bool DiskUsageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -169,7 +190,7 @@ namespace TencentCloud
                     bool m_deadlineHasBeenSet;
 
                     /**
-                     * 云硬盘备份点ID。传入此参数时，将通过备份点创建快照。
+                     * 云硬盘备份点ID。传入此参数时，将通过备份点创建快照。备份点 ID 可以通过[DescribeDiskBackups](/document/product/362/80278)接口查询。
                      */
                     std::string m_diskBackupId;
                     bool m_diskBackupIdHasBeenSet;
@@ -179,6 +200,12 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 快照关联云硬盘类型, SYSTEM_DISK: 系统盘, DATA_DISK: 数据盘,非必填参数，不填时快照类型与云盘类型保持一致， 该参数基于某些场景用户需要将系统盘创建出数据盘快照共享使用。
+                     */
+                    std::string m_diskUsage;
+                    bool m_diskUsageHasBeenSet;
 
                 };
             }

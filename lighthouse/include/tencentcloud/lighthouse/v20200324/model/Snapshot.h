@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/lighthouse/v20200324/model/Tag.h>
 
 
 namespace TencentCloud
@@ -208,10 +209,8 @@ namespace TencentCloud
                     /**
                      * 获取快照的最新操作，只有创建、回滚快照时记录。
 取值如 CreateInstanceSnapshot，RollbackInstanceSnapshot。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LatestOperation 快照的最新操作，只有创建、回滚快照时记录。
 取值如 CreateInstanceSnapshot，RollbackInstanceSnapshot。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLatestOperation() const;
@@ -219,10 +218,8 @@ namespace TencentCloud
                     /**
                      * 设置快照的最新操作，只有创建、回滚快照时记录。
 取值如 CreateInstanceSnapshot，RollbackInstanceSnapshot。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _latestOperation 快照的最新操作，只有创建、回滚快照时记录。
 取值如 CreateInstanceSnapshot，RollbackInstanceSnapshot。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLatestOperation(const std::string& _latestOperation);
@@ -240,13 +237,11 @@ namespace TencentCloud
 <li>SUCCESS：表示操作成功</li>
 <li>OPERATING：表示操作执行中</li>
 <li>FAILED：表示操作失败</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LatestOperationState 快照的最新操作状态，只有创建、回滚快照时记录。
 取值范围：
 <li>SUCCESS：表示操作成功</li>
 <li>OPERATING：表示操作执行中</li>
 <li>FAILED：表示操作失败</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLatestOperationState() const;
@@ -257,13 +252,11 @@ namespace TencentCloud
 <li>SUCCESS：表示操作成功</li>
 <li>OPERATING：表示操作执行中</li>
 <li>FAILED：表示操作失败</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _latestOperationState 快照的最新操作状态，只有创建、回滚快照时记录。
 取值范围：
 <li>SUCCESS：表示操作成功</li>
 <li>OPERATING：表示操作执行中</li>
 <li>FAILED：表示操作失败</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLatestOperationState(const std::string& _latestOperationState);
@@ -277,18 +270,14 @@ namespace TencentCloud
 
                     /**
                      * 获取快照最新操作的唯一请求 ID，只有创建、回滚快照时记录。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LatestOperationRequestId 快照最新操作的唯一请求 ID，只有创建、回滚快照时记录。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLatestOperationRequestId() const;
 
                     /**
                      * 设置快照最新操作的唯一请求 ID，只有创建、回滚快照时记录。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _latestOperationRequestId 快照最新操作的唯一请求 ID，只有创建、回滚快照时记录。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLatestOperationRequestId(const std::string& _latestOperationRequestId);
@@ -302,18 +291,14 @@ namespace TencentCloud
 
                     /**
                      * 获取快照的创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedTime 快照的创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置快照的创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdTime 快照的创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -324,6 +309,27 @@ namespace TencentCloud
                      * 
                      */
                     bool CreatedTimeHasBeenSet() const;
+
+                    /**
+                     * 获取快照绑定的标签列表。
+                     * @return Tags 快照绑定的标签列表。
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置快照绑定的标签列表。
+                     * @param _tags 快照绑定的标签列表。
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
 
                 private:
 
@@ -375,7 +381,6 @@ namespace TencentCloud
                     /**
                      * 快照的最新操作，只有创建、回滚快照时记录。
 取值如 CreateInstanceSnapshot，RollbackInstanceSnapshot。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_latestOperation;
                     bool m_latestOperationHasBeenSet;
@@ -386,24 +391,27 @@ namespace TencentCloud
 <li>SUCCESS：表示操作成功</li>
 <li>OPERATING：表示操作执行中</li>
 <li>FAILED：表示操作失败</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_latestOperationState;
                     bool m_latestOperationStateHasBeenSet;
 
                     /**
                      * 快照最新操作的唯一请求 ID，只有创建、回滚快照时记录。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_latestOperationRequestId;
                     bool m_latestOperationRequestIdHasBeenSet;
 
                     /**
                      * 快照的创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
+
+                    /**
+                     * 快照绑定的标签列表。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -216,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取保留字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Metric 保留字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMetric() const;
 
                     /**
                      * 设置保留字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _metric 保留字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMetric(const std::string& _metric);
@@ -259,6 +255,90 @@ namespace TencentCloud
                      * 
                      */
                     bool RegionHasBeenSet() const;
+
+                    /**
+                     * 获取集群ID。
+                     * @return ClusterId 集群ID。
+                     * 
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 设置集群ID。
+                     * @param _clusterId 集群ID。
+                     * 
+                     */
+                    void SetClusterId(const std::string& _clusterId);
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     * 
+                     */
+                    bool ClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取集群名称。
+                     * @return ClusterName 集群名称。
+                     * 
+                     */
+                    std::string GetClusterName() const;
+
+                    /**
+                     * 设置集群名称。
+                     * @param _clusterName 集群名称。
+                     * 
+                     */
+                    void SetClusterName(const std::string& _clusterName);
+
+                    /**
+                     * 判断参数 ClusterName 是否已赋值
+                     * @return ClusterName 是否已赋值
+                     * 
+                     */
+                    bool ClusterNameHasBeenSet() const;
+
+                    /**
+                     * 获取vip地址。
+                     * @return Vip vip地址。
+                     * 
+                     */
+                    std::string GetVip() const;
+
+                    /**
+                     * 设置vip地址。
+                     * @param _vip vip地址。
+                     * 
+                     */
+                    void SetVip(const std::string& _vip);
+
+                    /**
+                     * 判断参数 Vip 是否已赋值
+                     * @return Vip 是否已赋值
+                     * 
+                     */
+                    bool VipHasBeenSet() const;
+
+                    /**
+                     * 获取vip端口。
+                     * @return Vport vip端口。
+                     * 
+                     */
+                    int64_t GetVport() const;
+
+                    /**
+                     * 设置vip端口。
+                     * @param _vport vip端口。
+                     * 
+                     */
+                    void SetVport(const int64_t& _vport);
+
+                    /**
+                     * 判断参数 Vport 是否已赋值
+                     * @return Vport 是否已赋值
+                     * 
+                     */
+                    bool VportHasBeenSet() const;
 
                 private:
 
@@ -312,7 +392,6 @@ namespace TencentCloud
 
                     /**
                      * 保留字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_metric;
                     bool m_metricHasBeenSet;
@@ -322,6 +401,30 @@ namespace TencentCloud
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
+
+                    /**
+                     * 集群ID。
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * 集群名称。
+                     */
+                    std::string m_clusterName;
+                    bool m_clusterNameHasBeenSet;
+
+                    /**
+                     * vip地址。
+                     */
+                    std::string m_vip;
+                    bool m_vipHasBeenSet;
+
+                    /**
+                     * vip端口。
+                     */
+                    int64_t m_vport;
+                    bool m_vportHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,12 @@ namespace TencentCloud
 - 按照【日志集名称】进行过滤。
 - 类型：String
 - 必选：否
-
+- 通过 [获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集名称。
 logsetId
 - 按照【日志集ID】进行过滤。
 - 类型：String
 - 必选：否
+- 通过 [获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集Id。
 
 tagKey
 - 按照【标签键】进行过滤。
@@ -69,11 +70,12 @@ tag:tagKey
 - 按照【日志集名称】进行过滤。
 - 类型：String
 - 必选：否
-
+- 通过 [获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集名称。
 logsetId
 - 按照【日志集ID】进行过滤。
 - 类型：String
 - 必选：否
+- 通过 [获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集Id。
 
 tagKey
 - 按照【标签键】进行过滤。
@@ -95,11 +97,12 @@ tag:tagKey
 - 按照【日志集名称】进行过滤。
 - 类型：String
 - 必选：否
-
+- 通过 [获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集名称。
 logsetId
 - 按照【日志集ID】进行过滤。
 - 类型：String
 - 必选：否
+- 通过 [获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集Id。
 
 tagKey
 - 按照【标签键】进行过滤。
@@ -116,11 +119,12 @@ tag:tagKey
 - 按照【日志集名称】进行过滤。
 - 类型：String
 - 必选：否
-
+- 通过 [获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集名称。
 logsetId
 - 按照【日志集ID】进行过滤。
 - 类型：String
 - 必选：否
+- 通过 [获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集Id。
 
 tagKey
 - 按照【标签键】进行过滤。
@@ -193,11 +197,12 @@ tag:tagKey
 - 按照【日志集名称】进行过滤。
 - 类型：String
 - 必选：否
-
+- 通过 [获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集名称。
 logsetId
 - 按照【日志集ID】进行过滤。
 - 类型：String
 - 必选：否
+- 通过 [获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集Id。
 
 tagKey
 - 按照【标签键】进行过滤。

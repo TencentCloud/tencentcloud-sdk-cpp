@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要检索分析的日志的起始时间，Unix时间戳（毫秒）
-                     * @return From 要检索分析的日志的起始时间，Unix时间戳（毫秒）
+                     * 获取要检索分析的日志的起始时间，**Unix时间戳（毫秒）**
+                     * @return From 要检索分析的日志的起始时间，**Unix时间戳（毫秒）**
                      * 
                      */
                     int64_t GetFrom() const;
 
                     /**
-                     * 设置要检索分析的日志的起始时间，Unix时间戳（毫秒）
-                     * @param _from 要检索分析的日志的起始时间，Unix时间戳（毫秒）
+                     * 设置要检索分析的日志的起始时间，**Unix时间戳（毫秒）**
+                     * @param _from 要检索分析的日志的起始时间，**Unix时间戳（毫秒）**
                      * 
                      */
                     void SetFrom(const int64_t& _from);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool FromHasBeenSet() const;
 
                     /**
-                     * 获取要检索分析的日志的结束时间，Unix时间戳（毫秒）
-                     * @return To 要检索分析的日志的结束时间，Unix时间戳（毫秒）
+                     * 获取要检索分析的日志的结束时间，**Unix时间戳（毫秒）**
+                     * @return To 要检索分析的日志的结束时间，**Unix时间戳（毫秒）**
                      * 
                      */
                     int64_t GetTo() const;
 
                     /**
-                     * 设置要检索分析的日志的结束时间，Unix时间戳（毫秒）
-                     * @param _to 要检索分析的日志的结束时间，Unix时间戳（毫秒）
+                     * 设置要检索分析的日志的结束时间，**Unix时间戳（毫秒）**
+                     * @param _to 要检索分析的日志的结束时间，**Unix时间戳（毫秒）**
                      * 
                      */
                     void SetTo(const int64_t& _to);
@@ -115,23 +115,39 @@ namespace TencentCloud
                     bool QueryHasBeenSet() const;
 
                     /**
-                     * 获取检索语法规则，默认值为0，推荐使用1 (CQL语法)。
-0：Lucene语法，1：CQL语法。
-详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>
-                     * @return SyntaxRule 检索语法规则，默认值为0，推荐使用1 (CQL语法)。
-0：Lucene语法，1：CQL语法。
-详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>
+                     * 获取检索语法规则，默认值为0，推荐使用1 。
+- 0：Lucene语法
+- 1：CQL语法（CLS Query Language，日志服务专用检索语法）
+
+ ⚠️⚠️ **注意**
+ **该参数值建议设置为 1，使用 CQL 语法规则，控制台日志检索及仪表盘默认均使用该语法规则。**
+ 该参数值未指定或者为 0 时，将使用 Lucene 语法，语法容易报错且查询结果与控制台默认语法规则不一致。详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>。
+                     * @return SyntaxRule 检索语法规则，默认值为0，推荐使用1 。
+- 0：Lucene语法
+- 1：CQL语法（CLS Query Language，日志服务专用检索语法）
+
+ ⚠️⚠️ **注意**
+ **该参数值建议设置为 1，使用 CQL 语法规则，控制台日志检索及仪表盘默认均使用该语法规则。**
+ 该参数值未指定或者为 0 时，将使用 Lucene 语法，语法容易报错且查询结果与控制台默认语法规则不一致。详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>。
                      * 
                      */
                     uint64_t GetSyntaxRule() const;
 
                     /**
-                     * 设置检索语法规则，默认值为0，推荐使用1 (CQL语法)。
-0：Lucene语法，1：CQL语法。
-详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>
-                     * @param _syntaxRule 检索语法规则，默认值为0，推荐使用1 (CQL语法)。
-0：Lucene语法，1：CQL语法。
-详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>
+                     * 设置检索语法规则，默认值为0，推荐使用1 。
+- 0：Lucene语法
+- 1：CQL语法（CLS Query Language，日志服务专用检索语法）
+
+ ⚠️⚠️ **注意**
+ **该参数值建议设置为 1，使用 CQL 语法规则，控制台日志检索及仪表盘默认均使用该语法规则。**
+ 该参数值未指定或者为 0 时，将使用 Lucene 语法，语法容易报错且查询结果与控制台默认语法规则不一致。详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>。
+                     * @param _syntaxRule 检索语法规则，默认值为0，推荐使用1 。
+- 0：Lucene语法
+- 1：CQL语法（CLS Query Language，日志服务专用检索语法）
+
+ ⚠️⚠️ **注意**
+ **该参数值建议设置为 1，使用 CQL 语法规则，控制台日志检索及仪表盘默认均使用该语法规则。**
+ 该参数值未指定或者为 0 时，将使用 Lucene 语法，语法容易报错且查询结果与控制台默认语法规则不一致。详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>。
                      * 
                      */
                     void SetSyntaxRule(const uint64_t& _syntaxRule);
@@ -173,10 +189,10 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取- 要检索分析的日志主题列表，最大支持20个日志主题。
+                     * 获取- 要检索分析的日志主题列表，最大支持50个日志主题。
 - 检索单个日志主题时请使用TopicId。
 - TopicId 和 Topics 不能同时使用，在一次请求中有且只能选择一个。
-                     * @return Topics - 要检索分析的日志主题列表，最大支持20个日志主题。
+                     * @return Topics - 要检索分析的日志主题列表，最大支持50个日志主题。
 - 检索单个日志主题时请使用TopicId。
 - TopicId 和 Topics 不能同时使用，在一次请求中有且只能选择一个。
                      * 
@@ -184,10 +200,10 @@ namespace TencentCloud
                     std::vector<MultiTopicSearchInformation> GetTopics() const;
 
                     /**
-                     * 设置- 要检索分析的日志主题列表，最大支持20个日志主题。
+                     * 设置- 要检索分析的日志主题列表，最大支持50个日志主题。
 - 检索单个日志主题时请使用TopicId。
 - TopicId 和 Topics 不能同时使用，在一次请求中有且只能选择一个。
-                     * @param _topics - 要检索分析的日志主题列表，最大支持20个日志主题。
+                     * @param _topics - 要检索分析的日志主题列表，最大支持50个日志主题。
 - 检索单个日志主题时请使用TopicId。
 - TopicId 和 Topics 不能同时使用，在一次请求中有且只能选择一个。
                      * 
@@ -423,16 +439,37 @@ namespace TencentCloud
                      */
                     bool UseNewAnalysisHasBeenSet() const;
 
+                    /**
+                     * 获取是否高亮符合检索条件的关键词，一般用于高亮显示。仅支持键值检索，不支持全文检索
+                     * @return HighLight 是否高亮符合检索条件的关键词，一般用于高亮显示。仅支持键值检索，不支持全文检索
+                     * 
+                     */
+                    bool GetHighLight() const;
+
+                    /**
+                     * 设置是否高亮符合检索条件的关键词，一般用于高亮显示。仅支持键值检索，不支持全文检索
+                     * @param _highLight 是否高亮符合检索条件的关键词，一般用于高亮显示。仅支持键值检索，不支持全文检索
+                     * 
+                     */
+                    void SetHighLight(const bool& _highLight);
+
+                    /**
+                     * 判断参数 HighLight 是否已赋值
+                     * @return HighLight 是否已赋值
+                     * 
+                     */
+                    bool HighLightHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 要检索分析的日志的起始时间，Unix时间戳（毫秒）
+                     * 要检索分析的日志的起始时间，**Unix时间戳（毫秒）**
                      */
                     int64_t m_from;
                     bool m_fromHasBeenSet;
 
                     /**
-                     * 要检索分析的日志的结束时间，Unix时间戳（毫秒）
+                     * 要检索分析的日志的结束时间，**Unix时间戳（毫秒）**
                      */
                     int64_t m_to;
                     bool m_toHasBeenSet;
@@ -446,9 +483,13 @@ namespace TencentCloud
                     bool m_queryHasBeenSet;
 
                     /**
-                     * 检索语法规则，默认值为0，推荐使用1 (CQL语法)。
-0：Lucene语法，1：CQL语法。
-详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>
+                     * 检索语法规则，默认值为0，推荐使用1 。
+- 0：Lucene语法
+- 1：CQL语法（CLS Query Language，日志服务专用检索语法）
+
+ ⚠️⚠️ **注意**
+ **该参数值建议设置为 1，使用 CQL 语法规则，控制台日志检索及仪表盘默认均使用该语法规则。**
+ 该参数值未指定或者为 0 时，将使用 Lucene 语法，语法容易报错且查询结果与控制台默认语法规则不一致。详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>。
                      */
                     uint64_t m_syntaxRule;
                     bool m_syntaxRuleHasBeenSet;
@@ -462,7 +503,7 @@ namespace TencentCloud
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * - 要检索分析的日志主题列表，最大支持20个日志主题。
+                     * - 要检索分析的日志主题列表，最大支持50个日志主题。
 - 检索单个日志主题时请使用TopicId。
 - TopicId 和 Topics 不能同时使用，在一次请求中有且只能选择一个。
                      */
@@ -528,6 +569,12 @@ namespace TencentCloud
                      */
                     bool m_useNewAnalysis;
                     bool m_useNewAnalysisHasBeenSet;
+
+                    /**
+                     * 是否高亮符合检索条件的关键词，一般用于高亮显示。仅支持键值检索，不支持全文检索
+                     */
+                    bool m_highLight;
+                    bool m_highLightHasBeenSet;
 
                 };
             }

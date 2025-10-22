@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -154,15 +154,15 @@ namespace TencentCloud
                     bool ServiceVipHasBeenSet() const;
 
                     /**
-                     * 获取后端服务的ID，比如lb-xxx。
-                     * @return ServiceInstanceId 后端服务的ID，比如lb-xxx。
+                     * 获取后端服务的ID，比如lb-lip4e6bp。
+                     * @return ServiceInstanceId 后端服务的ID，比如lb-lip4e6bp。
                      * 
                      */
                     std::string GetServiceInstanceId() const;
 
                     /**
-                     * 设置后端服务的ID，比如lb-xxx。
-                     * @param _serviceInstanceId 后端服务的ID，比如lb-xxx。
+                     * 设置后端服务的ID，比如lb-lip4e6bp。
+                     * @param _serviceInstanceId 后端服务的ID，比如lb-lip4e6bp。
                      * 
                      */
                     void SetServiceInstanceId(const std::string& _serviceInstanceId);
@@ -197,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联的终端节点个数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndPointCount 关联的终端节点个数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetEndPointCount() const;
 
                     /**
                      * 设置关联的终端节点个数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endPointCount 关联的终端节点个数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndPointCount(const uint64_t& _endPointCount);
@@ -222,18 +218,14 @@ namespace TencentCloud
 
                     /**
                      * 获取终端节点对象数组。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndPointSet 终端节点对象数组。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<EndPoint> GetEndPointSet() const;
 
                     /**
                      * 设置终端节点对象数组。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endPointSet 终端节点对象数组。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndPointSet(const std::vector<EndPoint>& _endPointSet);
@@ -246,15 +238,15 @@ namespace TencentCloud
                     bool EndPointSetHasBeenSet() const;
 
                     /**
-                     * 获取创建时间。
-                     * @return CreateTime 创建时间。
+                     * 获取创建时间。格式为YYYY-MM-DD HH:MM:SS字符串。
+                     * @return CreateTime 创建时间。格式为YYYY-MM-DD HH:MM:SS字符串。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间。
-                     * @param _createTime 创建时间。
+                     * 设置创建时间。格式为YYYY-MM-DD HH:MM:SS字符串。
+                     * @param _createTime 创建时间。格式为YYYY-MM-DD HH:MM:SS字符串。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -267,15 +259,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取挂载的PAAS服务类型，CLB,CDB,CRS
-                     * @return ServiceType 挂载的PAAS服务类型，CLB,CDB,CRS
+                     * 获取挂载的PAAS服务类型，CLB（负载均衡），CDB（云数据库 MySQL），CRS（云数据库 Redis），GWLB（网关负载均衡）。
+                     * @return ServiceType 挂载的PAAS服务类型，CLB（负载均衡），CDB（云数据库 MySQL），CRS（云数据库 Redis），GWLB（网关负载均衡）。
                      * 
                      */
                     std::string GetServiceType() const;
 
                     /**
-                     * 设置挂载的PAAS服务类型，CLB,CDB,CRS
-                     * @param _serviceType 挂载的PAAS服务类型，CLB,CDB,CRS
+                     * 设置挂载的PAAS服务类型，CLB（负载均衡），CDB（云数据库 MySQL），CRS（云数据库 Redis），GWLB（网关负载均衡）。
+                     * @param _serviceType 挂载的PAAS服务类型，CLB（负载均衡），CDB（云数据库 MySQL），CRS（云数据库 Redis），GWLB（网关负载均衡）。
                      * 
                      */
                     void SetServiceType(const std::string& _serviceType);
@@ -289,18 +281,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CDC 集群唯一 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CdcId CDC 集群唯一 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCdcId() const;
 
                     /**
                      * 设置CDC 集群唯一 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cdcId CDC 集群唯一 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCdcId(const std::string& _cdcId);
@@ -313,19 +301,15 @@ namespace TencentCloud
                     bool CdcIdHasBeenSet() const;
 
                     /**
-                     * 获取Uin
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ServiceUin Uin
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取终端节点服务Uin。
+                     * @return ServiceUin 终端节点服务Uin。
                      * 
                      */
                     std::string GetServiceUin() const;
 
                     /**
-                     * 设置Uin
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _serviceUin Uin
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置终端节点服务Uin。
+                     * @param _serviceUin 终端节点服务Uin。
                      * 
                      */
                     void SetServiceUin(const std::string& _serviceUin);
@@ -339,18 +323,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务IP类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BusinessIpType 服务IP类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBusinessIpType() const;
 
                     /**
                      * 设置服务IP类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _businessIpType 服务IP类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBusinessIpType(const int64_t& _businessIpType);
@@ -364,18 +344,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签键值对。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagSet 标签键值对。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTagSet() const;
 
                     /**
                      * 设置标签键值对。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tagSet 标签键值对。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTagSet(const std::vector<Tag>& _tagSet);
@@ -420,7 +396,7 @@ namespace TencentCloud
                     bool m_serviceVipHasBeenSet;
 
                     /**
-                     * 后端服务的ID，比如lb-xxx。
+                     * 后端服务的ID，比如lb-lip4e6bp。
                      */
                     std::string m_serviceInstanceId;
                     bool m_serviceInstanceIdHasBeenSet;
@@ -433,54 +409,48 @@ namespace TencentCloud
 
                     /**
                      * 关联的终端节点个数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_endPointCount;
                     bool m_endPointCountHasBeenSet;
 
                     /**
                      * 终端节点对象数组。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<EndPoint> m_endPointSet;
                     bool m_endPointSetHasBeenSet;
 
                     /**
-                     * 创建时间。
+                     * 创建时间。格式为YYYY-MM-DD HH:MM:SS字符串。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 挂载的PAAS服务类型，CLB,CDB,CRS
+                     * 挂载的PAAS服务类型，CLB（负载均衡），CDB（云数据库 MySQL），CRS（云数据库 Redis），GWLB（网关负载均衡）。
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;
 
                     /**
                      * CDC 集群唯一 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cdcId;
                     bool m_cdcIdHasBeenSet;
 
                     /**
-                     * Uin
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 终端节点服务Uin。
                      */
                     std::string m_serviceUin;
                     bool m_serviceUinHasBeenSet;
 
                     /**
                      * 服务IP类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_businessIpType;
                     bool m_businessIpTypeHasBeenSet;
 
                     /**
                      * 标签键值对。	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tagSet;
                     bool m_tagSetHasBeenSet;

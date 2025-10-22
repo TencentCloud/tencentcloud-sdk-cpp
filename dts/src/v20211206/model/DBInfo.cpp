@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,7 @@ DBInfo::DBInfo() :
     m_tmpSecretIdHasBeenSet(false),
     m_tmpSecretKeyHasBeenSet(false),
     m_tmpTokenHasBeenSet(false),
+    m_encryptConnHasBeenSet(false),
     m_setIdHasBeenSet(false)
 {
 }
@@ -250,6 +251,16 @@ CoreInternalOutcome DBInfo::Deserialize(const rapidjson::Value &value)
         m_tmpTokenHasBeenSet = true;
     }
 
+    if (value.HasMember("EncryptConn") && !value["EncryptConn"].IsNull())
+    {
+        if (!value["EncryptConn"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBInfo.EncryptConn` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_encryptConn = string(value["EncryptConn"].GetString());
+        m_encryptConnHasBeenSet = true;
+    }
+
     if (value.HasMember("SetId") && !value["SetId"].IsNull())
     {
         if (!value["SetId"].IsString())
@@ -425,6 +436,14 @@ void DBInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "TmpToken";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_tmpToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptConnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptConn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_encryptConn.c_str(), allocator).Move(), allocator);
     }
 
     if (m_setIdHasBeenSet)
@@ -756,6 +775,22 @@ void DBInfo::SetTmpToken(const string& _tmpToken)
 bool DBInfo::TmpTokenHasBeenSet() const
 {
     return m_tmpTokenHasBeenSet;
+}
+
+string DBInfo::GetEncryptConn() const
+{
+    return m_encryptConn;
+}
+
+void DBInfo::SetEncryptConn(const string& _encryptConn)
+{
+    m_encryptConn = _encryptConn;
+    m_encryptConnHasBeenSet = true;
+}
+
+bool DBInfo::EncryptConnHasBeenSet() const
+{
+    return m_encryptConnHasBeenSet;
 }
 
 string DBInfo::GetSetId() const

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例id信息
-                     * @return InstanceId 实例id信息
+                     * 获取实例id信息，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
+                     * @return InstanceId 实例id信息，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例id信息
-                     * @param _instanceId 实例id信息
+                     * 设置实例id信息，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
+                     * @param _instanceId 实例id信息，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取acl规则名称
-                     * @return RuleName acl规则名称
+                     * 获取acl规则名称，可通过DescribeAclRule接口获取。
+                     * @return RuleName acl规则名称，可通过DescribeAclRule接口获取。
                      * 
                      */
                     std::string GetRuleName() const;
 
                     /**
-                     * 设置acl规则名称
-                     * @param _ruleName acl规则名称
+                     * 设置acl规则名称，可通过DescribeAclRule接口获取。
+                     * @param _ruleName acl规则名称，可通过DescribeAclRule接口获取。
                      * 
                      */
                     void SetRuleName(const std::string& _ruleName);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例id信息
+                     * 实例id信息，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * acl规则名称
+                     * acl规则名称，可通过DescribeAclRule接口获取。
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;

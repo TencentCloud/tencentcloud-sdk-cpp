@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,9 @@ using namespace std;
 InquiryPriceResizeInstanceDisksRequest::InquiryPriceResizeInstanceDisksRequest() :
     m_instanceIdHasBeenSet(false),
     m_dataDisksHasBeenSet(false),
-    m_forceStopHasBeenSet(false)
+    m_forceStopHasBeenSet(false),
+    m_systemDiskHasBeenSet(false),
+    m_resizeOnlineHasBeenSet(false)
 {
 }
 
@@ -65,6 +67,23 @@ string InquiryPriceResizeInstanceDisksRequest::ToJsonString() const
         string key = "ForceStop";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_forceStop, allocator);
+    }
+
+    if (m_systemDiskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SystemDisk";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_systemDisk.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_resizeOnlineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResizeOnline";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_resizeOnline, allocator);
     }
 
 
@@ -121,6 +140,38 @@ void InquiryPriceResizeInstanceDisksRequest::SetForceStop(const bool& _forceStop
 bool InquiryPriceResizeInstanceDisksRequest::ForceStopHasBeenSet() const
 {
     return m_forceStopHasBeenSet;
+}
+
+SystemDisk InquiryPriceResizeInstanceDisksRequest::GetSystemDisk() const
+{
+    return m_systemDisk;
+}
+
+void InquiryPriceResizeInstanceDisksRequest::SetSystemDisk(const SystemDisk& _systemDisk)
+{
+    m_systemDisk = _systemDisk;
+    m_systemDiskHasBeenSet = true;
+}
+
+bool InquiryPriceResizeInstanceDisksRequest::SystemDiskHasBeenSet() const
+{
+    return m_systemDiskHasBeenSet;
+}
+
+bool InquiryPriceResizeInstanceDisksRequest::GetResizeOnline() const
+{
+    return m_resizeOnline;
+}
+
+void InquiryPriceResizeInstanceDisksRequest::SetResizeOnline(const bool& _resizeOnline)
+{
+    m_resizeOnline = _resizeOnline;
+    m_resizeOnlineHasBeenSet = true;
+}
+
+bool InquiryPriceResizeInstanceDisksRequest::ResizeOnlineHasBeenSet() const
+{
+    return m_resizeOnlineHasBeenSet;
 }
 
 

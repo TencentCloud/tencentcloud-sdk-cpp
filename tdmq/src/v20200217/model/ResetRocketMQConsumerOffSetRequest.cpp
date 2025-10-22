@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,10 @@ ResetRocketMQConsumerOffSetRequest::ResetRocketMQConsumerOffSetRequest() :
     m_clusterIdHasBeenSet(false),
     m_namespaceIdHasBeenSet(false),
     m_groupIdHasBeenSet(false),
-    m_topicHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_resetTimestampHasBeenSet(false)
+    m_topicHasBeenSet(false),
+    m_resetTimestampHasBeenSet(false),
+    m_retryFlagHasBeenSet(false)
 {
 }
 
@@ -63,14 +64,6 @@ string ResetRocketMQConsumerOffSetRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_topicHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Topic";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_topic.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_typeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -79,12 +72,28 @@ string ResetRocketMQConsumerOffSetRequest::ToJsonString() const
         d.AddMember(iKey, m_type, allocator);
     }
 
+    if (m_topicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Topic";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_topic.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_resetTimestampHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResetTimestamp";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_resetTimestamp, allocator);
+    }
+
+    if (m_retryFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetryFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_retryFlag, allocator);
     }
 
 
@@ -143,22 +152,6 @@ bool ResetRocketMQConsumerOffSetRequest::GroupIdHasBeenSet() const
     return m_groupIdHasBeenSet;
 }
 
-string ResetRocketMQConsumerOffSetRequest::GetTopic() const
-{
-    return m_topic;
-}
-
-void ResetRocketMQConsumerOffSetRequest::SetTopic(const string& _topic)
-{
-    m_topic = _topic;
-    m_topicHasBeenSet = true;
-}
-
-bool ResetRocketMQConsumerOffSetRequest::TopicHasBeenSet() const
-{
-    return m_topicHasBeenSet;
-}
-
 uint64_t ResetRocketMQConsumerOffSetRequest::GetType() const
 {
     return m_type;
@@ -175,6 +168,22 @@ bool ResetRocketMQConsumerOffSetRequest::TypeHasBeenSet() const
     return m_typeHasBeenSet;
 }
 
+string ResetRocketMQConsumerOffSetRequest::GetTopic() const
+{
+    return m_topic;
+}
+
+void ResetRocketMQConsumerOffSetRequest::SetTopic(const string& _topic)
+{
+    m_topic = _topic;
+    m_topicHasBeenSet = true;
+}
+
+bool ResetRocketMQConsumerOffSetRequest::TopicHasBeenSet() const
+{
+    return m_topicHasBeenSet;
+}
+
 uint64_t ResetRocketMQConsumerOffSetRequest::GetResetTimestamp() const
 {
     return m_resetTimestamp;
@@ -189,6 +198,22 @@ void ResetRocketMQConsumerOffSetRequest::SetResetTimestamp(const uint64_t& _rese
 bool ResetRocketMQConsumerOffSetRequest::ResetTimestampHasBeenSet() const
 {
     return m_resetTimestampHasBeenSet;
+}
+
+bool ResetRocketMQConsumerOffSetRequest::GetRetryFlag() const
+{
+    return m_retryFlag;
+}
+
+void ResetRocketMQConsumerOffSetRequest::SetRetryFlag(const bool& _retryFlag)
+{
+    m_retryFlag = _retryFlag;
+    m_retryFlagHasBeenSet = true;
+}
+
+bool ResetRocketMQConsumerOffSetRequest::RetryFlagHasBeenSet() const
+{
+    return m_retryFlagHasBeenSet;
 }
 
 

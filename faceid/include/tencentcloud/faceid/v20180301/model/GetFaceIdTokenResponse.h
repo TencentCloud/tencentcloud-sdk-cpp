@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取有效期 10分钟。只能完成1次核身。
-                     * @return FaceIdToken 有效期 10分钟。只能完成1次核身。
+                     * 获取token值。- 有效期 10分钟。- 只能完成1次核身。
+                     * @return FaceIdToken token值。- 有效期 10分钟。- 只能完成1次核身。
                      * 
                      */
                     std::string GetFaceIdToken() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 有效期 10分钟。只能完成1次核身。
+                     * token值。- 有效期 10分钟。- 只能完成1次核身。
                      */
                     std::string m_faceIdToken;
                     bool m_faceIdTokenHasBeenSet;

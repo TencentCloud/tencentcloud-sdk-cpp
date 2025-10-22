@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取删除的结果代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResultCode 删除的结果代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResultCode() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取删除的结果信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResultMessage 删除的结果信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResultMessage() const;
@@ -79,14 +75,12 @@ namespace TencentCloud
 
                     /**
                      * 删除的结果代码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resultCode;
                     bool m_resultCodeHasBeenSet;
 
                     /**
                      * 删除的结果信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resultMessage;
                     bool m_resultMessageHasBeenSet;

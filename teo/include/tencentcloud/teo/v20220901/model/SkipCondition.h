@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -171,18 +171,14 @@ namespace TencentCloud
 
                     /**
                      * 获取匹配Key的值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MatchFrom 匹配Key的值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetMatchFrom() const;
 
                     /**
                      * 设置匹配Key的值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _matchFrom 匹配Key的值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMatchFrom(const std::vector<std::string>& _matchFrom);
@@ -225,18 +221,14 @@ namespace TencentCloud
 
                     /**
                      * 获取匹配Value的值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MatchContent 匹配Value的值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetMatchContent() const;
 
                     /**
                      * 设置匹配Value的值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _matchContent 匹配Value的值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMatchContent(const std::vector<std::string>& _matchContent);
@@ -285,7 +277,6 @@ namespace TencentCloud
 
                     /**
                      * 匹配Key的值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_matchFrom;
                     bool m_matchFromHasBeenSet;
@@ -300,7 +291,6 @@ namespace TencentCloud
 
                     /**
                      * 匹配Value的值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_matchContent;
                     bool m_matchContentHasBeenSet;

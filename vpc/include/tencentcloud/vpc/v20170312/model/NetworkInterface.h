@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -260,6 +260,51 @@ namespace TencentCloud
                     bool StateHasBeenSet() const;
 
                     /**
+                     * 获取弹性网卡状态：
+<li>`PENDING`：创建中</li>
+<li>`AVAILABLE`：可用的</li>
+<li>`ATTACHING`：绑定中</li>
+<li>`DETACHING`：解绑中</li>
+<li>`DELETING`：删除中</li>
+<li>`INUSE`：已绑定</li>
+                     * @return NetworkInterfaceState 弹性网卡状态：
+<li>`PENDING`：创建中</li>
+<li>`AVAILABLE`：可用的</li>
+<li>`ATTACHING`：绑定中</li>
+<li>`DETACHING`：解绑中</li>
+<li>`DELETING`：删除中</li>
+<li>`INUSE`：已绑定</li>
+                     * 
+                     */
+                    std::string GetNetworkInterfaceState() const;
+
+                    /**
+                     * 设置弹性网卡状态：
+<li>`PENDING`：创建中</li>
+<li>`AVAILABLE`：可用的</li>
+<li>`ATTACHING`：绑定中</li>
+<li>`DETACHING`：解绑中</li>
+<li>`DELETING`：删除中</li>
+<li>`INUSE`：已绑定</li>
+                     * @param _networkInterfaceState 弹性网卡状态：
+<li>`PENDING`：创建中</li>
+<li>`AVAILABLE`：可用的</li>
+<li>`ATTACHING`：绑定中</li>
+<li>`DETACHING`：解绑中</li>
+<li>`DELETING`：删除中</li>
+<li>`INUSE`：已绑定</li>
+                     * 
+                     */
+                    void SetNetworkInterfaceState(const std::string& _networkInterfaceState);
+
+                    /**
+                     * 判断参数 NetworkInterfaceState 是否已赋值
+                     * @return NetworkInterfaceState 是否已赋值
+                     * 
+                     */
+                    bool NetworkInterfaceStateHasBeenSet() const;
+
+                    /**
                      * 获取内网IP信息。
                      * @return PrivateIpAddressSet 内网IP信息。
                      * 
@@ -327,15 +372,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取创建时间。
-                     * @return CreatedTime 创建时间。
+                     * 获取创建时间。格式：YYYY-MM-DD hh:mm:ss。示例值：2020-10-28 08:23:59
+                     * @return CreatedTime 创建时间。格式：YYYY-MM-DD hh:mm:ss。示例值：2020-10-28 08:23:59
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置创建时间。
-                     * @param _createdTime 创建时间。
+                     * 设置创建时间。格式：YYYY-MM-DD hh:mm:ss。示例值：2020-10-28 08:23:59
+                     * @param _createdTime 创建时间。格式：YYYY-MM-DD hh:mm:ss。示例值：2020-10-28 08:23:59
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -390,15 +435,15 @@ namespace TencentCloud
                     bool TagSetHasBeenSet() const;
 
                     /**
-                     * 获取网卡类型。0 - 弹性网卡；1 - evm弹性网卡。
-                     * @return EniType 网卡类型。0 - 弹性网卡；1 - evm弹性网卡。
+                     * 获取网卡类型。“0”-辅助网卡，“1”-主网卡，“2”：中继网卡
+                     * @return EniType 网卡类型。“0”-辅助网卡，“1”-主网卡，“2”：中继网卡
                      * 
                      */
                     uint64_t GetEniType() const;
 
                     /**
-                     * 设置网卡类型。0 - 弹性网卡；1 - evm弹性网卡。
-                     * @param _eniType 网卡类型。0 - 弹性网卡；1 - evm弹性网卡。
+                     * 设置网卡类型。“0”-辅助网卡，“1”-主网卡，“2”：中继网卡
+                     * @param _eniType 网卡类型。“0”-辅助网卡，“1”-主网卡，“2”：中继网卡
                      * 
                      */
                     void SetEniType(const uint64_t& _eniType);
@@ -411,19 +456,15 @@ namespace TencentCloud
                     bool EniTypeHasBeenSet() const;
 
                     /**
-                     * 获取网卡绑定的子机类型：cvm，eks。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Business 网卡绑定的子机类型：cvm，eks。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取网卡绑定的子机类型：cvm（普通CVM子机），eks（弹性容器服务Elastic Kubernetes Service）， hai（高性能应用服务Hyper Application Inventor）。
+                     * @return Business 网卡绑定的子机类型：cvm（普通CVM子机），eks（弹性容器服务Elastic Kubernetes Service）， hai（高性能应用服务Hyper Application Inventor）。
                      * 
                      */
                     std::string GetBusiness() const;
 
                     /**
-                     * 设置网卡绑定的子机类型：cvm，eks。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _business 网卡绑定的子机类型：cvm，eks。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置网卡绑定的子机类型：cvm（普通CVM子机），eks（弹性容器服务Elastic Kubernetes Service）， hai（高性能应用服务Hyper Application Inventor）。
+                     * @param _business 网卡绑定的子机类型：cvm（普通CVM子机），eks（弹性容器服务Elastic Kubernetes Service）， hai（高性能应用服务Hyper Application Inventor）。
                      * 
                      */
                     void SetBusiness(const std::string& _business);
@@ -437,18 +478,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网卡所关联的CDC实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CdcId 网卡所关联的CDC实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCdcId() const;
 
                     /**
                      * 设置网卡所关联的CDC实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cdcId 网卡所关联的CDC实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCdcId(const std::string& _cdcId);
@@ -462,18 +499,14 @@ namespace TencentCloud
 
                     /**
                      * 获取弹性网卡类型：0:标准型/1:扩展型。默认值为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttachType 弹性网卡类型：0:标准型/1:扩展型。默认值为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAttachType() const;
 
                     /**
                      * 设置弹性网卡类型：0:标准型/1:扩展型。默认值为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _attachType 弹性网卡类型：0:标准型/1:扩展型。默认值为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAttachType(const uint64_t& _attachType);
@@ -487,18 +520,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用于保留网卡主IP的资源ID用于保留网卡主IP的资源ID。用于删除网卡时作为入参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceId 用于保留网卡主IP的资源ID用于保留网卡主IP的资源ID。用于删除网卡时作为入参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置用于保留网卡主IP的资源ID用于保留网卡主IP的资源ID。用于删除网卡时作为入参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceId 用于保留网卡主IP的资源ID用于保留网卡主IP的资源ID。用于删除网卡时作为入参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -512,34 +541,30 @@ namespace TencentCloud
 
                     /**
                      * 获取服务质量级别：
-<li>`DEFAULT`：默认</li>
-<li>`PT`：云金</li>
-<li>`AU`：云银</li>
-<li>`AG`：云铜</li>
-注意：此字段可能返回 null，表示取不到有效值。
+PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
+
+可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
+
                      * @return QosLevel 服务质量级别：
-<li>`DEFAULT`：默认</li>
-<li>`PT`：云金</li>
-<li>`AU`：云银</li>
-<li>`AG`：云铜</li>
-注意：此字段可能返回 null，表示取不到有效值。
+PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
+
+可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
+
                      * 
                      */
                     std::string GetQosLevel() const;
 
                     /**
                      * 设置服务质量级别：
-<li>`DEFAULT`：默认</li>
-<li>`PT`：云金</li>
-<li>`AU`：云银</li>
-<li>`AG`：云铜</li>
-注意：此字段可能返回 null，表示取不到有效值。
+PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
+
+可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
+
                      * @param _qosLevel 服务质量级别：
-<li>`DEFAULT`：默认</li>
-<li>`PT`：云金</li>
-<li>`AU`：云银</li>
-<li>`AG`：云铜</li>
-注意：此字段可能返回 null，表示取不到有效值。
+PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
+
+可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
+
                      * 
                      */
                     void SetQosLevel(const std::string& _qosLevel);
@@ -613,6 +638,18 @@ namespace TencentCloud
                     bool m_stateHasBeenSet;
 
                     /**
+                     * 弹性网卡状态：
+<li>`PENDING`：创建中</li>
+<li>`AVAILABLE`：可用的</li>
+<li>`ATTACHING`：绑定中</li>
+<li>`DETACHING`：解绑中</li>
+<li>`DELETING`：删除中</li>
+<li>`INUSE`：已绑定</li>
+                     */
+                    std::string m_networkInterfaceState;
+                    bool m_networkInterfaceStateHasBeenSet;
+
+                    /**
                      * 内网IP信息。
                      */
                     std::vector<PrivateIpAddressSpecification> m_privateIpAddressSet;
@@ -632,7 +669,7 @@ namespace TencentCloud
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 创建时间。
+                     * 创建时间。格式：YYYY-MM-DD hh:mm:ss。示例值：2020-10-28 08:23:59
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
@@ -650,46 +687,41 @@ namespace TencentCloud
                     bool m_tagSetHasBeenSet;
 
                     /**
-                     * 网卡类型。0 - 弹性网卡；1 - evm弹性网卡。
+                     * 网卡类型。“0”-辅助网卡，“1”-主网卡，“2”：中继网卡
                      */
                     uint64_t m_eniType;
                     bool m_eniTypeHasBeenSet;
 
                     /**
-                     * 网卡绑定的子机类型：cvm，eks。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 网卡绑定的子机类型：cvm（普通CVM子机），eks（弹性容器服务Elastic Kubernetes Service）， hai（高性能应用服务Hyper Application Inventor）。
                      */
                     std::string m_business;
                     bool m_businessHasBeenSet;
 
                     /**
                      * 网卡所关联的CDC实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cdcId;
                     bool m_cdcIdHasBeenSet;
 
                     /**
                      * 弹性网卡类型：0:标准型/1:扩展型。默认值为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_attachType;
                     bool m_attachTypeHasBeenSet;
 
                     /**
                      * 用于保留网卡主IP的资源ID用于保留网卡主IP的资源ID。用于删除网卡时作为入参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
                      * 服务质量级别：
-<li>`DEFAULT`：默认</li>
-<li>`PT`：云金</li>
-<li>`AU`：云银</li>
-<li>`AG`：云铜</li>
-注意：此字段可能返回 null，表示取不到有效值。
+PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
+
+可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
+
                      */
                     std::string m_qosLevel;
                     bool m_qosLevelHasBeenSet;

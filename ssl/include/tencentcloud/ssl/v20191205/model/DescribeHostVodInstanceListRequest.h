@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待部署的证书ID
-                     * @return CertificateId 待部署的证书ID
+                     * 获取待部署的证书ID,必填选项
+                     * @return CertificateId 待部署的证书ID,必填选项
                      * 
                      */
                     std::string GetCertificateId() const;
 
                     /**
-                     * 设置待部署的证书ID
-                     * @param _certificateId 待部署的证书ID
+                     * 设置待部署的证书ID,必填选项
+                     * @param _certificateId 待部署的证书ID,必填选项
                      * 
                      */
                     void SetCertificateId(const std::string& _certificateId);
@@ -63,27 +63,6 @@ namespace TencentCloud
                      * 
                      */
                     bool CertificateIdHasBeenSet() const;
-
-                    /**
-                     * 获取部署资源类型 vod
-                     * @return ResourceType 部署资源类型 vod
-                     * 
-                     */
-                    std::string GetResourceType() const;
-
-                    /**
-                     * 设置部署资源类型 vod
-                     * @param _resourceType 部署资源类型 vod
-                     * 
-                     */
-                    void SetResourceType(const std::string& _resourceType);
-
-                    /**
-                     * 判断参数 ResourceType 是否已赋值
-                     * @return ResourceType 是否已赋值
-                     * 
-                     */
-                    bool ResourceTypeHasBeenSet() const;
 
                     /**
                      * 获取是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时
@@ -107,15 +86,15 @@ namespace TencentCloud
                     bool IsCacheHasBeenSet() const;
 
                     /**
-                     * 获取过滤参数列表
-                     * @return Filters 过滤参数列表
+                     * 获取过滤参数列表； FilterKey：domainMatch（查询域名是否匹配的实例列表） FilterValue：1，表示查询匹配； 0，表示查询不匹配； 默认查询匹配
+                     * @return Filters 过滤参数列表； FilterKey：domainMatch（查询域名是否匹配的实例列表） FilterValue：1，表示查询匹配； 0，表示查询不匹配； 默认查询匹配
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤参数列表
-                     * @param _filters 过滤参数列表
+                     * 设置过滤参数列表； FilterKey：domainMatch（查询域名是否匹配的实例列表） FilterValue：1，表示查询匹配； 0，表示查询不匹配； 默认查询匹配
+                     * @param _filters 过滤参数列表； FilterKey：domainMatch（查询域名是否匹配的实例列表） FilterValue：1，表示查询匹配； 0，表示查询不匹配； 默认查询匹配
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -126,6 +105,27 @@ namespace TencentCloud
                      * 
                      */
                     bool FiltersHasBeenSet() const;
+
+                    /**
+                     * 获取部署资源类型 vod
+                     * @return ResourceType 部署资源类型 vod
+                     * @deprecated
+                     */
+                    std::string GetResourceType() const;
+
+                    /**
+                     * 设置部署资源类型 vod
+                     * @param _resourceType 部署资源类型 vod
+                     * @deprecated
+                     */
+                    void SetResourceType(const std::string& _resourceType);
+
+                    /**
+                     * 判断参数 ResourceType 是否已赋值
+                     * @return ResourceType 是否已赋值
+                     * @deprecated
+                     */
+                    bool ResourceTypeHasBeenSet() const;
 
                     /**
                      * 获取已部署的证书ID
@@ -151,16 +151,10 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 待部署的证书ID
+                     * 待部署的证书ID,必填选项
                      */
                     std::string m_certificateId;
                     bool m_certificateIdHasBeenSet;
-
-                    /**
-                     * 部署资源类型 vod
-                     */
-                    std::string m_resourceType;
-                    bool m_resourceTypeHasBeenSet;
 
                     /**
                      * 是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时
@@ -169,10 +163,16 @@ namespace TencentCloud
                     bool m_isCacheHasBeenSet;
 
                     /**
-                     * 过滤参数列表
+                     * 过滤参数列表； FilterKey：domainMatch（查询域名是否匹配的实例列表） FilterValue：1，表示查询匹配； 0，表示查询不匹配； 默认查询匹配
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * 部署资源类型 vod
+                     */
+                    std::string m_resourceType;
+                    bool m_resourceTypeHasBeenSet;
 
                     /**
                      * 已部署的证书ID

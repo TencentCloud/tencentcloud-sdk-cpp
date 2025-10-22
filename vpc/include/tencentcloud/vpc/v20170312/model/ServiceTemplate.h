@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -133,6 +133,27 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
+                     * 获取最后更新时间。
+                     * @return UpdatedTime 最后更新时间。
+                     * 
+                     */
+                    std::string GetUpdatedTime() const;
+
+                    /**
+                     * 设置最后更新时间。
+                     * @param _updatedTime 最后更新时间。
+                     * 
+                     */
+                    void SetUpdatedTime(const std::string& _updatedTime);
+
+                    /**
+                     * 判断参数 UpdatedTime 是否已赋值
+                     * @return UpdatedTime 是否已赋值
+                     * 
+                     */
+                    bool UpdatedTimeHasBeenSet() const;
+
+                    /**
                      * 获取带备注的协议端口信息。
                      * @return ServiceExtraSet 带备注的协议端口信息。
                      * 
@@ -155,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签键值对。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagSet 标签键值对。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTagSet() const;
 
                     /**
                      * 设置标签键值对。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tagSet 标签键值对。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTagSet(const std::vector<Tag>& _tagSet);
@@ -205,6 +222,12 @@ namespace TencentCloud
                     bool m_createdTimeHasBeenSet;
 
                     /**
+                     * 最后更新时间。
+                     */
+                    std::string m_updatedTime;
+                    bool m_updatedTimeHasBeenSet;
+
+                    /**
                      * 带备注的协议端口信息。
                      */
                     std::vector<ServicesInfo> m_serviceExtraSet;
@@ -212,7 +235,6 @@ namespace TencentCloud
 
                     /**
                      * 标签键值对。	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tagSet;
                     bool m_tagSetHasBeenSet;

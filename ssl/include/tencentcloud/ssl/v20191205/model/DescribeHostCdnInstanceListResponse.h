@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,10 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取CDN实例列表
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceList CDN实例列表
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取CDN实例列表，如取不到值返回空数组
+                     * @return InstanceList CDN实例列表，如取不到值返回空数组
                      * 
                      */
                     std::vector<CdnInstanceDetail> GetInstanceList() const;
@@ -61,10 +59,8 @@ namespace TencentCloud
                     bool InstanceListHasBeenSet() const;
 
                     /**
-                     * 获取CDN域名总数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalCount CDN域名总数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取CDN域名总数，如取不到值返回0
+                     * @return TotalCount CDN域名总数，如取不到值返回0
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -77,10 +73,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取异步刷新总数	
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AsyncTotalNum 异步刷新总数	
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取异步刷新总数，如取不到值返回0
+                     * @return AsyncTotalNum 异步刷新总数，如取不到值返回0
                      * 
                      */
                     int64_t GetAsyncTotalNum() const;
@@ -93,10 +87,8 @@ namespace TencentCloud
                     bool AsyncTotalNumHasBeenSet() const;
 
                     /**
-                     * 获取异步刷新当前执行数	
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AsyncOffset 异步刷新当前执行数	
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取异步刷新当前执行数，如取不到值返回0
+                     * @return AsyncOffset 异步刷新当前执行数，如取不到值返回0
                      * 
                      */
                     int64_t GetAsyncOffset() const;
@@ -110,9 +102,7 @@ namespace TencentCloud
 
                     /**
                      * 获取当前缓存读取时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AsyncCacheTime 当前缓存读取时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAsyncCacheTime() const;
@@ -127,36 +117,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * CDN实例列表
-注意：此字段可能返回 null，表示取不到有效值。
+                     * CDN实例列表，如取不到值返回空数组
                      */
                     std::vector<CdnInstanceDetail> m_instanceList;
                     bool m_instanceListHasBeenSet;
 
                     /**
-                     * CDN域名总数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * CDN域名总数，如取不到值返回0
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 异步刷新总数	
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 异步刷新总数，如取不到值返回0
                      */
                     int64_t m_asyncTotalNum;
                     bool m_asyncTotalNumHasBeenSet;
 
                     /**
-                     * 异步刷新当前执行数	
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 异步刷新当前执行数，如取不到值返回0
                      */
                     int64_t m_asyncOffset;
                     bool m_asyncOffsetHasBeenSet;
 
                     /**
                      * 当前缓存读取时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_asyncCacheTime;
                     bool m_asyncCacheTimeHasBeenSet;

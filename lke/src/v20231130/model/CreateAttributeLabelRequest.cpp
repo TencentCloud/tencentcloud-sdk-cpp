@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ using namespace std;
 
 CreateAttributeLabelRequest::CreateAttributeLabelRequest() :
     m_botBizIdHasBeenSet(false),
-    m_attrKeyHasBeenSet(false),
     m_attrNameHasBeenSet(false),
     m_labelsHasBeenSet(false),
+    m_attrKeyHasBeenSet(false),
     m_loginUinHasBeenSet(false),
     m_loginSubAccountUinHasBeenSet(false)
 {
@@ -45,14 +45,6 @@ string CreateAttributeLabelRequest::ToJsonString() const
         string key = "BotBizId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_botBizId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_attrKeyHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AttrKey";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_attrKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_attrNameHasBeenSet)
@@ -76,6 +68,14 @@ string CreateAttributeLabelRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_attrKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AttrKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_attrKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_loginUinHasBeenSet)
@@ -118,22 +118,6 @@ bool CreateAttributeLabelRequest::BotBizIdHasBeenSet() const
     return m_botBizIdHasBeenSet;
 }
 
-string CreateAttributeLabelRequest::GetAttrKey() const
-{
-    return m_attrKey;
-}
-
-void CreateAttributeLabelRequest::SetAttrKey(const string& _attrKey)
-{
-    m_attrKey = _attrKey;
-    m_attrKeyHasBeenSet = true;
-}
-
-bool CreateAttributeLabelRequest::AttrKeyHasBeenSet() const
-{
-    return m_attrKeyHasBeenSet;
-}
-
 string CreateAttributeLabelRequest::GetAttrName() const
 {
     return m_attrName;
@@ -164,6 +148,22 @@ void CreateAttributeLabelRequest::SetLabels(const vector<AttributeLabel>& _label
 bool CreateAttributeLabelRequest::LabelsHasBeenSet() const
 {
     return m_labelsHasBeenSet;
+}
+
+string CreateAttributeLabelRequest::GetAttrKey() const
+{
+    return m_attrKey;
+}
+
+void CreateAttributeLabelRequest::SetAttrKey(const string& _attrKey)
+{
+    m_attrKey = _attrKey;
+    m_attrKeyHasBeenSet = true;
+}
+
+bool CreateAttributeLabelRequest::AttrKeyHasBeenSet() const
+{
+    return m_attrKeyHasBeenSet;
 }
 
 string CreateAttributeLabelRequest::GetLoginUin() const

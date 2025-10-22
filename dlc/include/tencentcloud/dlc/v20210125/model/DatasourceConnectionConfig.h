@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@
 #include <tencentcloud/dlc/v20210125/model/DataSourceInfo.h>
 #include <tencentcloud/dlc/v20210125/model/ElasticsearchInfo.h>
 #include <tencentcloud/dlc/v20210125/model/TCHouseD.h>
+#include <tencentcloud/dlc/v20210125/model/TccHive.h>
 
 
 namespace TencentCloud
@@ -303,6 +304,27 @@ namespace TencentCloud
                      */
                     bool TCHouseDHasBeenSet() const;
 
+                    /**
+                     * 获取TccHive数据目录连接信息
+                     * @return TccHive TccHive数据目录连接信息
+                     * 
+                     */
+                    TccHive GetTccHive() const;
+
+                    /**
+                     * 设置TccHive数据目录连接信息
+                     * @param _tccHive TccHive数据目录连接信息
+                     * 
+                     */
+                    void SetTccHive(const TccHive& _tccHive);
+
+                    /**
+                     * 判断参数 TccHive 是否已赋值
+                     * @return TccHive 是否已赋值
+                     * 
+                     */
+                    bool TccHiveHasBeenSet() const;
+
                 private:
 
                     /**
@@ -374,6 +396,12 @@ namespace TencentCloud
                      */
                     TCHouseD m_tCHouseD;
                     bool m_tCHouseDHasBeenSet;
+
+                    /**
+                     * TccHive数据目录连接信息
+                     */
+                    TccHive m_tccHive;
+                    bool m_tccHiveHasBeenSet;
 
                 };
             }

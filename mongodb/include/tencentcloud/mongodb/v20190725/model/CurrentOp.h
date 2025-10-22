@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取操作序号
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OpId 操作序号
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取操作序号。
+                     * @return OpId 操作序号。
                      * 
                      */
                     int64_t GetOpId() const;
 
                     /**
-                     * 设置操作序号
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _opId 操作序号
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置操作序号。
+                     * @param _opId 操作序号。
                      * 
                      */
                     void SetOpId(const int64_t& _opId);
@@ -72,19 +68,15 @@ namespace TencentCloud
                     bool OpIdHasBeenSet() const;
 
                     /**
-                     * 获取操作所在的命名空间，形式如db.collection
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Ns 操作所在的命名空间，形式如db.collection
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取操作所在的命名空间，形式如db.collection。
+                     * @return Ns 操作所在的命名空间，形式如db.collection。
                      * 
                      */
                     std::string GetNs() const;
 
                     /**
-                     * 设置操作所在的命名空间，形式如db.collection
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ns 操作所在的命名空间，形式如db.collection
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置操作所在的命名空间，形式如db.collection。
+                     * @param _ns 操作所在的命名空间，形式如db.collection。
                      * 
                      */
                     void SetNs(const std::string& _ns);
@@ -97,19 +89,15 @@ namespace TencentCloud
                     bool NsHasBeenSet() const;
 
                     /**
-                     * 获取操作执行语句
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Query 操作执行语句
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取操作执行语句。
+                     * @return Query 操作执行语句。
                      * 
                      */
                     std::string GetQuery() const;
 
                     /**
-                     * 设置操作执行语句
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _query 操作执行语句
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置操作执行语句。
+                     * @param _query 操作执行语句。
                      * 
                      */
                     void SetQuery(const std::string& _query);
@@ -122,19 +110,47 @@ namespace TencentCloud
                     bool QueryHasBeenSet() const;
 
                     /**
-                     * 获取操作类型，可能的取值：aggregate、count、delete、distinct、find、findAndModify、getMore、insert、mapReduce、update和command
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Op 操作类型，可能的取值：aggregate、count、delete、distinct、find、findAndModify、getMore、insert、mapReduce、update和command
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取操作类型。
+- none：特殊状态，空闲连接或内部任务等。
+- update：更新数据。
+- insert：插入操作。
+- query：查询操作。
+- command：命令操作。
+- getmore：获取更多数据。
+- remove：删除操作。
+- killcursors：释放查询游标的操作。
+                     * @return Op 操作类型。
+- none：特殊状态，空闲连接或内部任务等。
+- update：更新数据。
+- insert：插入操作。
+- query：查询操作。
+- command：命令操作。
+- getmore：获取更多数据。
+- remove：删除操作。
+- killcursors：释放查询游标的操作。
                      * 
                      */
                     std::string GetOp() const;
 
                     /**
-                     * 设置操作类型，可能的取值：aggregate、count、delete、distinct、find、findAndModify、getMore、insert、mapReduce、update和command
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _op 操作类型，可能的取值：aggregate、count、delete、distinct、find、findAndModify、getMore、insert、mapReduce、update和command
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置操作类型。
+- none：特殊状态，空闲连接或内部任务等。
+- update：更新数据。
+- insert：插入操作。
+- query：查询操作。
+- command：命令操作。
+- getmore：获取更多数据。
+- remove：删除操作。
+- killcursors：释放查询游标的操作。
+                     * @param _op 操作类型。
+- none：特殊状态，空闲连接或内部任务等。
+- update：更新数据。
+- insert：插入操作。
+- query：查询操作。
+- command：命令操作。
+- getmore：获取更多数据。
+- remove：删除操作。
+- killcursors：释放查询游标的操作。
                      * 
                      */
                     void SetOp(const std::string& _op);
@@ -147,15 +163,15 @@ namespace TencentCloud
                     bool OpHasBeenSet() const;
 
                     /**
-                     * 获取操作所在的分片名称
-                     * @return ReplicaSetName 操作所在的分片名称
+                     * 获取操作所在的分片名称。
+                     * @return ReplicaSetName 操作所在的分片名称。
                      * 
                      */
                     std::string GetReplicaSetName() const;
 
                     /**
-                     * 设置操作所在的分片名称
-                     * @param _replicaSetName 操作所在的分片名称
+                     * 设置操作所在的分片名称。
+                     * @param _replicaSetName 操作所在的分片名称。
                      * 
                      */
                     void SetReplicaSetName(const std::string& _replicaSetName);
@@ -168,65 +184,15 @@ namespace TencentCloud
                     bool ReplicaSetNameHasBeenSet() const;
 
                     /**
-                     * 获取筛选条件，节点状态，可能的取值为：Primary、Secondary
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return State 筛选条件，节点状态，可能的取值为：Primary、Secondary
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetState() const;
-
-                    /**
-                     * 设置筛选条件，节点状态，可能的取值为：Primary、Secondary
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _state 筛选条件，节点状态，可能的取值为：Primary、Secondary
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetState(const std::string& _state);
-
-                    /**
-                     * 判断参数 State 是否已赋值
-                     * @return State 是否已赋值
-                     * 
-                     */
-                    bool StateHasBeenSet() const;
-
-                    /**
-                     * 获取操作详细信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Operation 操作详细信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetOperation() const;
-
-                    /**
-                     * 设置操作详细信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _operation 操作详细信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetOperation(const std::string& _operation);
-
-                    /**
-                     * 判断参数 Operation 是否已赋值
-                     * @return Operation 是否已赋值
-                     * 
-                     */
-                    bool OperationHasBeenSet() const;
-
-                    /**
-                     * 获取操作所在的节点名称
-                     * @return NodeName 操作所在的节点名称
+                     * 获取操作所在的节点名称。
+                     * @return NodeName 操作所在的节点名称。
                      * 
                      */
                     std::string GetNodeName() const;
 
                     /**
-                     * 设置操作所在的节点名称
-                     * @param _nodeName 操作所在的节点名称
+                     * 设置操作所在的节点名称。
+                     * @param _nodeName 操作所在的节点名称。
                      * 
                      */
                     void SetNodeName(const std::string& _nodeName);
@@ -239,19 +205,65 @@ namespace TencentCloud
                     bool NodeNameHasBeenSet() const;
 
                     /**
-                     * 获取操作已执行时间（ms）
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MicrosecsRunning 操作已执行时间（ms）
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取操作详细信息。
+                     * @return Operation 操作详细信息。
+                     * 
+                     */
+                    std::string GetOperation() const;
+
+                    /**
+                     * 设置操作详细信息。
+                     * @param _operation 操作详细信息。
+                     * 
+                     */
+                    void SetOperation(const std::string& _operation);
+
+                    /**
+                     * 判断参数 Operation 是否已赋值
+                     * @return Operation 是否已赋值
+                     * 
+                     */
+                    bool OperationHasBeenSet() const;
+
+                    /**
+                     * 获取节点角色。
+- primary：主节点。
+- secondary：从节点。
+                     * @return State 节点角色。
+- primary：主节点。
+- secondary：从节点。
+                     * 
+                     */
+                    std::string GetState() const;
+
+                    /**
+                     * 设置节点角色。
+- primary：主节点。
+- secondary：从节点。
+                     * @param _state 节点角色。
+- primary：主节点。
+- secondary：从节点。
+                     * 
+                     */
+                    void SetState(const std::string& _state);
+
+                    /**
+                     * 判断参数 State 是否已赋值
+                     * @return State 是否已赋值
+                     * 
+                     */
+                    bool StateHasBeenSet() const;
+
+                    /**
+                     * 获取操作已执行时间（ms）。
+                     * @return MicrosecsRunning 操作已执行时间（ms）。
                      * 
                      */
                     uint64_t GetMicrosecsRunning() const;
 
                     /**
-                     * 设置操作已执行时间（ms）
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _microsecsRunning 操作已执行时间（ms）
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置操作已执行时间（ms）。
+                     * @param _microsecsRunning 操作已执行时间（ms）。
                      * 
                      */
                     void SetMicrosecsRunning(const uint64_t& _microsecsRunning);
@@ -263,68 +275,98 @@ namespace TencentCloud
                      */
                     bool MicrosecsRunningHasBeenSet() const;
 
+                    /**
+                     * 获取当前操作所在节点信息。
+                     * @return ExecNode 当前操作所在节点信息。
+                     * 
+                     */
+                    std::string GetExecNode() const;
+
+                    /**
+                     * 设置当前操作所在节点信息。
+                     * @param _execNode 当前操作所在节点信息。
+                     * 
+                     */
+                    void SetExecNode(const std::string& _execNode);
+
+                    /**
+                     * 判断参数 ExecNode 是否已赋值
+                     * @return ExecNode 是否已赋值
+                     * 
+                     */
+                    bool ExecNodeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 操作序号
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 操作序号。
                      */
                     int64_t m_opId;
                     bool m_opIdHasBeenSet;
 
                     /**
-                     * 操作所在的命名空间，形式如db.collection
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 操作所在的命名空间，形式如db.collection。
                      */
                     std::string m_ns;
                     bool m_nsHasBeenSet;
 
                     /**
-                     * 操作执行语句
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 操作执行语句。
                      */
                     std::string m_query;
                     bool m_queryHasBeenSet;
 
                     /**
-                     * 操作类型，可能的取值：aggregate、count、delete、distinct、find、findAndModify、getMore、insert、mapReduce、update和command
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 操作类型。
+- none：特殊状态，空闲连接或内部任务等。
+- update：更新数据。
+- insert：插入操作。
+- query：查询操作。
+- command：命令操作。
+- getmore：获取更多数据。
+- remove：删除操作。
+- killcursors：释放查询游标的操作。
                      */
                     std::string m_op;
                     bool m_opHasBeenSet;
 
                     /**
-                     * 操作所在的分片名称
+                     * 操作所在的分片名称。
                      */
                     std::string m_replicaSetName;
                     bool m_replicaSetNameHasBeenSet;
 
                     /**
-                     * 筛选条件，节点状态，可能的取值为：Primary、Secondary
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_state;
-                    bool m_stateHasBeenSet;
-
-                    /**
-                     * 操作详细信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_operation;
-                    bool m_operationHasBeenSet;
-
-                    /**
-                     * 操作所在的节点名称
+                     * 操作所在的节点名称。
                      */
                     std::string m_nodeName;
                     bool m_nodeNameHasBeenSet;
 
                     /**
-                     * 操作已执行时间（ms）
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 操作详细信息。
+                     */
+                    std::string m_operation;
+                    bool m_operationHasBeenSet;
+
+                    /**
+                     * 节点角色。
+- primary：主节点。
+- secondary：从节点。
+                     */
+                    std::string m_state;
+                    bool m_stateHasBeenSet;
+
+                    /**
+                     * 操作已执行时间（ms）。
                      */
                     uint64_t m_microsecsRunning;
                     bool m_microsecsRunningHasBeenSet;
+
+                    /**
+                     * 当前操作所在节点信息。
+                     */
+                    std::string m_execNode;
+                    bool m_execNodeHasBeenSet;
 
                 };
             }

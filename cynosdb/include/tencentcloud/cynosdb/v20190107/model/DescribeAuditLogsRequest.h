@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取实例 ID。
+                     * @return InstanceId 实例 ID。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置实例 ID。
+                     * @param _instanceId 实例 ID。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -164,21 +164,21 @@ namespace TencentCloud
                     /**
                      * 获取已废弃。
                      * @return Filter 已废弃。
-                     * 
+                     * @deprecated
                      */
                     AuditLogFilter GetFilter() const;
 
                     /**
                      * 设置已废弃。
                      * @param _filter 已废弃。
-                     * 
+                     * @deprecated
                      */
                     void SetFilter(const AuditLogFilter& _filter);
 
                     /**
                      * 判断参数 Filter 是否已赋值
                      * @return Filter 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool FilterHasBeenSet() const;
 
@@ -205,14 +205,18 @@ namespace TencentCloud
 
                     /**
                      * 获取分页偏移量。
+说明：Limit 和 Offset 的取值之和需小于等于65536。
                      * @return Offset 分页偏移量。
+说明：Limit 和 Offset 的取值之和需小于等于65536。
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页偏移量。
+说明：Limit 和 Offset 的取值之和需小于等于65536。
                      * @param _offset 分页偏移量。
+说明：Limit 和 Offset 的取值之和需小于等于65536。
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -248,7 +252,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * 实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -294,6 +298,7 @@ namespace TencentCloud
 
                     /**
                      * 分页偏移量。
+说明：Limit 和 Offset 的取值之和需小于等于65536。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

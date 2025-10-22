@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -132,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扫描分区数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanPartitionNum 扫描分区数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScanPartitionNum() const;
 
                     /**
                      * 设置扫描分区数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scanPartitionNum 扫描分区数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScanPartitionNum(const int64_t& _scanPartitionNum);
@@ -157,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扫描总行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanRowNum 扫描总行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScanRowNum() const;
 
                     /**
                      * 设置扫描总行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scanRowNum 扫描总行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScanRowNum(const int64_t& _scanRowNum);
@@ -182,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扫描总文件数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanFileNum 扫描总文件数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScanFileNum() const;
 
                     /**
                      * 设置扫描总文件数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scanFileNum 扫描总文件数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScanFileNum(const int64_t& _scanFileNum);
@@ -207,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取查询扫描总数据量(单位B)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanTotalData 查询扫描总数据量(单位B)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScanTotalData() const;
 
                     /**
                      * 设置查询扫描总数据量(单位B)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scanTotalData 查询扫描总数据量(单位B)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScanTotalData(const int64_t& _scanTotalData);
@@ -257,18 +241,14 @@ namespace TencentCloud
 
                     /**
                      * 获取输出总行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutputRowNum 输出总行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOutputRowNum() const;
 
                     /**
                      * 设置输出总行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _outputRowNum 输出总行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutputRowNum(const int64_t& _outputRowNum);
@@ -282,18 +262,14 @@ namespace TencentCloud
 
                     /**
                      * 获取输出总文件数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutputFileNum 输出总文件数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOutputFileNum() const;
 
                     /**
                      * 设置输出总文件数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _outputFileNum 输出总文件数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutputFileNum(const int64_t& _outputFileNum);
@@ -307,18 +283,14 @@ namespace TencentCloud
 
                     /**
                      * 获取输出分区数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutputPartitionNum 输出分区数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOutputPartitionNum() const;
 
                     /**
                      * 设置输出分区数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _outputPartitionNum 输出分区数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutputPartitionNum(const int64_t& _outputPartitionNum);
@@ -332,18 +304,14 @@ namespace TencentCloud
 
                     /**
                      * 获取输出总数据量（单位B）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutputTotalData 输出总数据量（单位B）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOutputTotalData() const;
 
                     /**
                      * 设置输出总数据量（单位B）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _outputTotalData 输出总数据量（单位B）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutputTotalData(const int64_t& _outputTotalData);
@@ -357,18 +325,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BeginTime 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBeginTime() const;
 
                     /**
                      * 设置开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _beginTime 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBeginTime(const int64_t& _beginTime);
@@ -382,18 +346,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -433,28 +393,24 @@ namespace TencentCloud
 
                     /**
                      * 扫描分区数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_scanPartitionNum;
                     bool m_scanPartitionNumHasBeenSet;
 
                     /**
                      * 扫描总行数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_scanRowNum;
                     bool m_scanRowNumHasBeenSet;
 
                     /**
                      * 扫描总文件数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_scanFileNum;
                     bool m_scanFileNumHasBeenSet;
 
                     /**
                      * 查询扫描总数据量(单位B)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_scanTotalData;
                     bool m_scanTotalDataHasBeenSet;
@@ -468,42 +424,36 @@ namespace TencentCloud
 
                     /**
                      * 输出总行数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_outputRowNum;
                     bool m_outputRowNumHasBeenSet;
 
                     /**
                      * 输出总文件数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_outputFileNum;
                     bool m_outputFileNumHasBeenSet;
 
                     /**
                      * 输出分区数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_outputPartitionNum;
                     bool m_outputPartitionNumHasBeenSet;
 
                     /**
                      * 输出总数据量（单位B）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_outputTotalData;
                     bool m_outputTotalDataHasBeenSet;
 
                     /**
                      * 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
                      * 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;

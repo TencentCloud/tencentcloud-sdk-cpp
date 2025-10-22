@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/lighthouse/v20200324/model/Tag.h>
 
 
 namespace TencentCloud
@@ -35,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 磁盘信息
+                * 云硬盘信息。
                 */
                 class Disk : public AbstractModel
                 {
@@ -47,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取磁盘ID
-                     * @return DiskId 磁盘ID
+                     * 获取云硬盘ID。
+                     * @return DiskId 云硬盘ID。
                      * 
                      */
                     std::string GetDiskId() const;
 
                     /**
-                     * 设置磁盘ID
-                     * @param _diskId 磁盘ID
+                     * 设置云硬盘ID。
+                     * @param _diskId 云硬盘ID。
                      * 
                      */
                     void SetDiskId(const std::string& _diskId);
@@ -68,15 +69,15 @@ namespace TencentCloud
                     bool DiskIdHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取实例ID。
+                     * @return InstanceId 实例ID。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置实例ID。
+                     * @param _instanceId 实例ID。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -89,15 +90,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取可用区
-                     * @return Zone 可用区
+                     * 获取可用区。
+                     * @return Zone 可用区。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置可用区
-                     * @param _zone 可用区
+                     * 设置可用区。
+                     * @param _zone 可用区。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -110,15 +111,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取磁盘名称
-                     * @return DiskName 磁盘名称
+                     * 获取云硬盘名称。
+                     * @return DiskName 云硬盘名称。
                      * 
                      */
                     std::string GetDiskName() const;
 
                     /**
-                     * 设置磁盘名称
-                     * @param _diskName 磁盘名称
+                     * 设置云硬盘名称。
+                     * @param _diskName 云硬盘名称。
                      * 
                      */
                     void SetDiskName(const std::string& _diskName);
@@ -131,15 +132,31 @@ namespace TencentCloud
                     bool DiskNameHasBeenSet() const;
 
                     /**
-                     * 获取磁盘类型
-                     * @return DiskUsage 磁盘类型
+                     * 获取云硬盘类型。
+枚举值：
+<li> SYSTEM_DISK: 系统盘 </li>
+<li> DATA_DISK: 数据盘 </li>
+
+                     * @return DiskUsage 云硬盘类型。
+枚举值：
+<li> SYSTEM_DISK: 系统盘 </li>
+<li> DATA_DISK: 数据盘 </li>
+
                      * 
                      */
                     std::string GetDiskUsage() const;
 
                     /**
-                     * 设置磁盘类型
-                     * @param _diskUsage 磁盘类型
+                     * 设置云硬盘类型。
+枚举值：
+<li> SYSTEM_DISK: 系统盘 </li>
+<li> DATA_DISK: 数据盘 </li>
+
+                     * @param _diskUsage 云硬盘类型。
+枚举值：
+<li> SYSTEM_DISK: 系统盘 </li>
+<li> DATA_DISK: 数据盘 </li>
+
                      * 
                      */
                     void SetDiskUsage(const std::string& _diskUsage);
@@ -152,15 +169,31 @@ namespace TencentCloud
                     bool DiskUsageHasBeenSet() const;
 
                     /**
-                     * 获取磁盘介质类型
-                     * @return DiskType 磁盘介质类型
+                     * 获取云硬盘介质类型。
+枚举值:
+<li> CLOUD_BASIC: 普通云硬盘 </li>
+<li> CLOUD_PREMIUM: 高性能云硬盘 </li>
+<li> CLOUD_SSD: SSD云硬盘 </li>
+                     * @return DiskType 云硬盘介质类型。
+枚举值:
+<li> CLOUD_BASIC: 普通云硬盘 </li>
+<li> CLOUD_PREMIUM: 高性能云硬盘 </li>
+<li> CLOUD_SSD: SSD云硬盘 </li>
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置磁盘介质类型
-                     * @param _diskType 磁盘介质类型
+                     * 设置云硬盘介质类型。
+枚举值:
+<li> CLOUD_BASIC: 普通云硬盘 </li>
+<li> CLOUD_PREMIUM: 高性能云硬盘 </li>
+<li> CLOUD_SSD: SSD云硬盘 </li>
+                     * @param _diskType 云硬盘介质类型。
+枚举值:
+<li> CLOUD_BASIC: 普通云硬盘 </li>
+<li> CLOUD_PREMIUM: 高性能云硬盘 </li>
+<li> CLOUD_SSD: SSD云硬盘 </li>
                      * 
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -173,15 +206,23 @@ namespace TencentCloud
                     bool DiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取磁盘付费类型
-                     * @return DiskChargeType 磁盘付费类型
+                     * 获取云硬盘付费类型。
+<li> PREPAID: 预付费 </li>
+<li> POSTPAID_BY_HOUR: 按小时后付费 </li>
+                     * @return DiskChargeType 云硬盘付费类型。
+<li> PREPAID: 预付费 </li>
+<li> POSTPAID_BY_HOUR: 按小时后付费 </li>
                      * 
                      */
                     std::string GetDiskChargeType() const;
 
                     /**
-                     * 设置磁盘付费类型
-                     * @param _diskChargeType 磁盘付费类型
+                     * 设置云硬盘付费类型。
+<li> PREPAID: 预付费 </li>
+<li> POSTPAID_BY_HOUR: 按小时后付费 </li>
+                     * @param _diskChargeType 云硬盘付费类型。
+<li> PREPAID: 预付费 </li>
+<li> POSTPAID_BY_HOUR: 按小时后付费 </li>
                      * 
                      */
                     void SetDiskChargeType(const std::string& _diskChargeType);
@@ -194,15 +235,15 @@ namespace TencentCloud
                     bool DiskChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取磁盘大小
-                     * @return DiskSize 磁盘大小
+                     * 获取云硬盘大小, 单位GB。
+                     * @return DiskSize 云硬盘大小, 单位GB。
                      * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
-                     * 设置磁盘大小
-                     * @param _diskSize 磁盘大小
+                     * 设置云硬盘大小, 单位GB。
+                     * @param _diskSize 云硬盘大小, 单位GB。
                      * 
                      */
                     void SetDiskSize(const int64_t& _diskSize);
@@ -215,15 +256,15 @@ namespace TencentCloud
                     bool DiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取续费标识
-                     * @return RenewFlag 续费标识
+                     * 获取续费标识。
+                     * @return RenewFlag 续费标识。
                      * 
                      */
                     std::string GetRenewFlag() const;
 
                     /**
-                     * 设置续费标识
-                     * @param _renewFlag 续费标识
+                     * 设置续费标识。
+                     * @param _renewFlag 续费标识。
                      * 
                      */
                     void SetRenewFlag(const std::string& _renewFlag);
@@ -236,9 +277,9 @@ namespace TencentCloud
                     bool RenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取磁盘状态，取值范围：
+                     * 获取云硬盘状态，取值范围：
 <li>PENDING：创建中。 </li>
-<li>UNATTACHED：未挂载。</li>
+<li>UNATTACHED：待挂载。</li>
 <li>ATTACHING：挂载中。</li>
 <li>ATTACHED：已挂载。</li>
 <li>DETACHING：卸载中。 </li>
@@ -247,9 +288,9 @@ namespace TencentCloud
 <li>TERMINATING：销毁中。</li>
 <li> DELETING：删除中。</li>
 <li> FREEZING：冻结中。</li>
-                     * @return DiskState 磁盘状态，取值范围：
+                     * @return DiskState 云硬盘状态，取值范围：
 <li>PENDING：创建中。 </li>
-<li>UNATTACHED：未挂载。</li>
+<li>UNATTACHED：待挂载。</li>
 <li>ATTACHING：挂载中。</li>
 <li>ATTACHED：已挂载。</li>
 <li>DETACHING：卸载中。 </li>
@@ -263,9 +304,9 @@ namespace TencentCloud
                     std::string GetDiskState() const;
 
                     /**
-                     * 设置磁盘状态，取值范围：
+                     * 设置云硬盘状态，取值范围：
 <li>PENDING：创建中。 </li>
-<li>UNATTACHED：未挂载。</li>
+<li>UNATTACHED：待挂载。</li>
 <li>ATTACHING：挂载中。</li>
 <li>ATTACHED：已挂载。</li>
 <li>DETACHING：卸载中。 </li>
@@ -274,9 +315,9 @@ namespace TencentCloud
 <li>TERMINATING：销毁中。</li>
 <li> DELETING：删除中。</li>
 <li> FREEZING：冻结中。</li>
-                     * @param _diskState 磁盘状态，取值范围：
+                     * @param _diskState 云硬盘状态，取值范围：
 <li>PENDING：创建中。 </li>
-<li>UNATTACHED：未挂载。</li>
+<li>UNATTACHED：待挂载。</li>
 <li>ATTACHING：挂载中。</li>
 <li>ATTACHED：已挂载。</li>
 <li>DETACHING：卸载中。 </li>
@@ -297,15 +338,15 @@ namespace TencentCloud
                     bool DiskStateHasBeenSet() const;
 
                     /**
-                     * 获取磁盘挂载状态
-                     * @return Attached 磁盘挂载状态
+                     * 获取云硬盘挂载状态。
+                     * @return Attached 云硬盘挂载状态。
                      * 
                      */
                     bool GetAttached() const;
 
                     /**
-                     * 设置磁盘挂载状态
-                     * @param _attached 磁盘挂载状态
+                     * 设置云硬盘挂载状态。
+                     * @param _attached 云硬盘挂载状态。
                      * 
                      */
                     void SetAttached(const bool& _attached);
@@ -318,15 +359,15 @@ namespace TencentCloud
                     bool AttachedHasBeenSet() const;
 
                     /**
-                     * 获取是否随实例释放
-                     * @return DeleteWithInstance 是否随实例释放
+                     * 获取是否随实例释放。
+                     * @return DeleteWithInstance 是否随实例释放。
                      * 
                      */
                     bool GetDeleteWithInstance() const;
 
                     /**
-                     * 设置是否随实例释放
-                     * @param _deleteWithInstance 是否随实例释放
+                     * 设置是否随实例释放。
+                     * @param _deleteWithInstance 是否随实例释放。
                      * 
                      */
                     void SetDeleteWithInstance(const bool& _deleteWithInstance);
@@ -339,15 +380,15 @@ namespace TencentCloud
                     bool DeleteWithInstanceHasBeenSet() const;
 
                     /**
-                     * 获取上一次操作
-                     * @return LatestOperation 上一次操作
+                     * 获取上一次操作。
+                     * @return LatestOperation 上一次操作。
                      * 
                      */
                     std::string GetLatestOperation() const;
 
                     /**
-                     * 设置上一次操作
-                     * @param _latestOperation 上一次操作
+                     * 设置上一次操作。
+                     * @param _latestOperation 上一次操作。
                      * 
                      */
                     void SetLatestOperation(const std::string& _latestOperation);
@@ -360,15 +401,15 @@ namespace TencentCloud
                     bool LatestOperationHasBeenSet() const;
 
                     /**
-                     * 获取上一次操作状态
-                     * @return LatestOperationState 上一次操作状态
+                     * 获取上一次操作状态。
+                     * @return LatestOperationState 上一次操作状态。
                      * 
                      */
                     std::string GetLatestOperationState() const;
 
                     /**
-                     * 设置上一次操作状态
-                     * @param _latestOperationState 上一次操作状态
+                     * 设置上一次操作状态。
+                     * @param _latestOperationState 上一次操作状态。
                      * 
                      */
                     void SetLatestOperationState(const std::string& _latestOperationState);
@@ -381,15 +422,15 @@ namespace TencentCloud
                     bool LatestOperationStateHasBeenSet() const;
 
                     /**
-                     * 获取上一次请求ID
-                     * @return LatestOperationRequestId 上一次请求ID
+                     * 获取上一次请求ID。
+                     * @return LatestOperationRequestId 上一次请求ID。
                      * 
                      */
                     std::string GetLatestOperationRequestId() const;
 
                     /**
-                     * 设置上一次请求ID
-                     * @param _latestOperationRequestId 上一次请求ID
+                     * 设置上一次请求ID。
+                     * @param _latestOperationRequestId 上一次请求ID。
                      * 
                      */
                     void SetLatestOperationRequestId(const std::string& _latestOperationRequestId);
@@ -530,66 +571,97 @@ namespace TencentCloud
                      */
                     bool DiskBackupQuotaHasBeenSet() const;
 
+                    /**
+                     * 获取云硬盘绑定的标签列表。
+                     * @return Tags 云硬盘绑定的标签列表。
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置云硬盘绑定的标签列表。
+                     * @param _tags 云硬盘绑定的标签列表。
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 磁盘ID
+                     * 云硬盘ID。
                      */
                     std::string m_diskId;
                     bool m_diskIdHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * 实例ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 可用区
+                     * 可用区。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 磁盘名称
+                     * 云硬盘名称。
                      */
                     std::string m_diskName;
                     bool m_diskNameHasBeenSet;
 
                     /**
-                     * 磁盘类型
+                     * 云硬盘类型。
+枚举值：
+<li> SYSTEM_DISK: 系统盘 </li>
+<li> DATA_DISK: 数据盘 </li>
+
                      */
                     std::string m_diskUsage;
                     bool m_diskUsageHasBeenSet;
 
                     /**
-                     * 磁盘介质类型
+                     * 云硬盘介质类型。
+枚举值:
+<li> CLOUD_BASIC: 普通云硬盘 </li>
+<li> CLOUD_PREMIUM: 高性能云硬盘 </li>
+<li> CLOUD_SSD: SSD云硬盘 </li>
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
 
                     /**
-                     * 磁盘付费类型
+                     * 云硬盘付费类型。
+<li> PREPAID: 预付费 </li>
+<li> POSTPAID_BY_HOUR: 按小时后付费 </li>
                      */
                     std::string m_diskChargeType;
                     bool m_diskChargeTypeHasBeenSet;
 
                     /**
-                     * 磁盘大小
+                     * 云硬盘大小, 单位GB。
                      */
                     int64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
 
                     /**
-                     * 续费标识
+                     * 续费标识。
                      */
                     std::string m_renewFlag;
                     bool m_renewFlagHasBeenSet;
 
                     /**
-                     * 磁盘状态，取值范围：
+                     * 云硬盘状态，取值范围：
 <li>PENDING：创建中。 </li>
-<li>UNATTACHED：未挂载。</li>
+<li>UNATTACHED：待挂载。</li>
 <li>ATTACHING：挂载中。</li>
 <li>ATTACHED：已挂载。</li>
 <li>DETACHING：卸载中。 </li>
@@ -603,31 +675,31 @@ namespace TencentCloud
                     bool m_diskStateHasBeenSet;
 
                     /**
-                     * 磁盘挂载状态
+                     * 云硬盘挂载状态。
                      */
                     bool m_attached;
                     bool m_attachedHasBeenSet;
 
                     /**
-                     * 是否随实例释放
+                     * 是否随实例释放。
                      */
                     bool m_deleteWithInstance;
                     bool m_deleteWithInstanceHasBeenSet;
 
                     /**
-                     * 上一次操作
+                     * 上一次操作。
                      */
                     std::string m_latestOperation;
                     bool m_latestOperationHasBeenSet;
 
                     /**
-                     * 上一次操作状态
+                     * 上一次操作状态。
                      */
                     std::string m_latestOperationState;
                     bool m_latestOperationStateHasBeenSet;
 
                     /**
-                     * 上一次请求ID
+                     * 上一次请求ID。
                      */
                     std::string m_latestOperationRequestId;
                     bool m_latestOperationRequestIdHasBeenSet;
@@ -667,6 +739,12 @@ namespace TencentCloud
                      */
                     int64_t m_diskBackupQuota;
                     bool m_diskBackupQuotaHasBeenSet;
+
+                    /**
+                     * 云硬盘绑定的标签列表。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

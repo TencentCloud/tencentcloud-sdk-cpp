@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,18 +73,14 @@ namespace TencentCloud
 
                     /**
                      * 获取多伸缩组情况下扩容选择算法(random 随机选择，most-pods 最多类型的Pod least-waste 最少的资源浪费，默认为random)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Expander 多伸缩组情况下扩容选择算法(random 随机选择，most-pods 最多类型的Pod least-waste 最少的资源浪费，默认为random)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpander() const;
 
                     /**
                      * 设置多伸缩组情况下扩容选择算法(random 随机选择，most-pods 最多类型的Pod least-waste 最少的资源浪费，默认为random)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expander 多伸缩组情况下扩容选择算法(random 随机选择，most-pods 最多类型的Pod least-waste 最少的资源浪费，默认为random)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpander(const std::string& _expander);
@@ -382,7 +378,6 @@ namespace TencentCloud
 
                     /**
                      * 多伸缩组情况下扩容选择算法(random 随机选择，most-pods 最多类型的Pod least-waste 最少的资源浪费，默认为random)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expander;
                     bool m_expanderHasBeenSet;

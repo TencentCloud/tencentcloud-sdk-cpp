@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,9 @@ ModifyCustomRuleRequest::ModifyCustomRuleRequest() :
     m_jobDateTimeHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_pageIdHasBeenSet(false)
+    m_pageIdHasBeenSet(false),
+    m_logicalOpHasBeenSet(false),
+    m_actionRatioHasBeenSet(false)
 {
 }
 
@@ -174,6 +176,22 @@ string ModifyCustomRuleRequest::ToJsonString() const
         string key = "PageId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_pageId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logicalOpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogicalOp";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_logicalOp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_actionRatioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ActionRatio";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_actionRatio, allocator);
     }
 
 
@@ -422,6 +440,38 @@ void ModifyCustomRuleRequest::SetPageId(const string& _pageId)
 bool ModifyCustomRuleRequest::PageIdHasBeenSet() const
 {
     return m_pageIdHasBeenSet;
+}
+
+string ModifyCustomRuleRequest::GetLogicalOp() const
+{
+    return m_logicalOp;
+}
+
+void ModifyCustomRuleRequest::SetLogicalOp(const string& _logicalOp)
+{
+    m_logicalOp = _logicalOp;
+    m_logicalOpHasBeenSet = true;
+}
+
+bool ModifyCustomRuleRequest::LogicalOpHasBeenSet() const
+{
+    return m_logicalOpHasBeenSet;
+}
+
+uint64_t ModifyCustomRuleRequest::GetActionRatio() const
+{
+    return m_actionRatio;
+}
+
+void ModifyCustomRuleRequest::SetActionRatio(const uint64_t& _actionRatio)
+{
+    m_actionRatio = _actionRatio;
+    m_actionRatioHasBeenSet = true;
+}
+
+bool ModifyCustomRuleRequest::ActionRatioHasBeenSet() const
+{
+    return m_actionRatioHasBeenSet;
 }
 
 

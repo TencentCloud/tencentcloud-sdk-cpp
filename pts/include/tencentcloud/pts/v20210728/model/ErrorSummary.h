@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结果码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 结果码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 设置结果码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _result 结果码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResult(const std::string& _result);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取错误出现次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 错误出现次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置错误出现次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _count 错误出现次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCount(const int64_t& _count);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取错误率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rate 错误率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetRate() const;
 
                     /**
                      * 设置错误率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rate 错误率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRate(const double& _rate);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _message 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取请求协议类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Proto 请求协议类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProto() const;
 
                     /**
                      * 设置请求协议类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _proto 请求协议类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProto(const std::string& _proto);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * 状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 结果码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;
 
                     /**
                      * 错误出现次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_count;
                     bool m_countHasBeenSet;
 
                     /**
                      * 错误率
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_rate;
                     bool m_rateHasBeenSet;
 
                     /**
                      * 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
                      * 请求协议类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_proto;
                     bool m_protoHasBeenSet;

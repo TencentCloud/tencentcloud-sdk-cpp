@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,18 +55,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该字段用于返回审核内容是否命中审核模型；取值：0（**未命中**）、1（**命中**）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HitFlag 该字段用于返回审核内容是否命中审核模型；取值：0（**未命中**）、1（**命中**）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHitFlag() const;
 
                     /**
                      * 设置该字段用于返回审核内容是否命中审核模型；取值：0（**未命中**）、1（**命中**）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hitFlag 该字段用于返回审核内容是否命中审核模型；取值：0（**未命中**）、1（**命中**）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHitFlag(const int64_t& _hitFlag);
@@ -80,18 +76,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label 该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _label 该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabel(const std::string& _label);
@@ -106,10 +98,8 @@ namespace TencentCloud
                     /**
                      * 获取该字段用于返回后续操作建议。当您获取到判定结果后，返回值表示具体的后续建议操作。<br>
 返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Suggestion 该字段用于返回后续操作建议。当您获取到判定结果后，返回值表示具体的后续建议操作。<br>
 返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSuggestion() const;
@@ -117,10 +107,8 @@ namespace TencentCloud
                     /**
                      * 设置该字段用于返回后续操作建议。当您获取到判定结果后，返回值表示具体的后续建议操作。<br>
 返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _suggestion 该字段用于返回后续操作建议。当您获取到判定结果后，返回值表示具体的后续建议操作。<br>
 返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
@@ -134,18 +122,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该字段用于返回当前标签下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高** ），越高代表文本越有可能属于当前返回的标签；如：*色情 99*，则表明该文本非常有可能属于色情内容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Score 该字段用于返回当前标签下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高** ），越高代表文本越有可能属于当前返回的标签；如：*色情 99*，则表明该文本非常有可能属于色情内容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScore() const;
 
                     /**
                      * 设置该字段用于返回当前标签下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高** ），越高代表文本越有可能属于当前返回的标签；如：*色情 99*，则表明该文本非常有可能属于色情内容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _score 该字段用于返回当前标签下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高** ），越高代表文本越有可能属于当前返回的标签；如：*色情 99*，则表明该文本非常有可能属于色情内容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScore(const int64_t& _score);
@@ -159,18 +143,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该字段用于返回音频文件经ASR识别后的文本信息。最长可识别**5小时**的音频文件，若超出时长限制，接口将会报错。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 该字段用于返回音频文件经ASR识别后的文本信息。最长可识别**5小时**的音频文件，若超出时长限制，接口将会报错。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置该字段用于返回音频文件经ASR识别后的文本信息。最长可识别**5小时**的音频文件，若超出时长限制，接口将会报错。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _text 该字段用于返回音频文件经ASR识别后的文本信息。最长可识别**5小时**的音频文件，若超出时长限制，接口将会报错。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetText(const std::string& _text);
@@ -184,18 +164,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该字段用于返回审核结果的访问链接（URL）。<br>备注：链接默认有效期为12小时。如果您需要更长时效的链接，请使用[COS预签名](https://cloud.tencent.com/document/product/1265/104001)功能更新签名时效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url 该字段用于返回审核结果的访问链接（URL）。<br>备注：链接默认有效期为12小时。如果您需要更长时效的链接，请使用[COS预签名](https://cloud.tencent.com/document/product/1265/104001)功能更新签名时效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置该字段用于返回审核结果的访问链接（URL）。<br>备注：链接默认有效期为12小时。如果您需要更长时效的链接，请使用[COS预签名](https://cloud.tencent.com/document/product/1265/104001)功能更新签名时效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _url 该字段用于返回审核结果的访问链接（URL）。<br>备注：链接默认有效期为12小时。如果您需要更长时效的链接，请使用[COS预签名](https://cloud.tencent.com/document/product/1265/104001)功能更新签名时效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -314,18 +290,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该字段用于返回当前标签（Lable）下的二级标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubLabel 该字段用于返回当前标签（Lable）下的二级标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubLabel() const;
 
                     /**
                      * 设置该字段用于返回当前标签（Lable）下的二级标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subLabel 该字段用于返回当前标签（Lable）下的二级标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubLabel(const std::string& _subLabel);
@@ -339,18 +311,14 @@ namespace TencentCloud
 
                     /**
                      * 获取识别类标签结果信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecognitionResults 识别类标签结果信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RecognitionResult> GetRecognitionResults() const;
 
                     /**
                      * 设置识别类标签结果信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recognitionResults 识别类标签结果信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecognitionResults(const std::vector<RecognitionResult>& _recognitionResults);
@@ -425,18 +393,79 @@ namespace TencentCloud
                      */
                     bool TravelResultsHasBeenSet() const;
 
+                    /**
+                     * 获取三级标签
+                     * @return SubTag 三级标签
+                     * 
+                     */
+                    std::string GetSubTag() const;
+
+                    /**
+                     * 设置三级标签
+                     * @param _subTag 三级标签
+                     * 
+                     */
+                    void SetSubTag(const std::string& _subTag);
+
+                    /**
+                     * 判断参数 SubTag 是否已赋值
+                     * @return SubTag 是否已赋值
+                     * 
+                     */
+                    bool SubTagHasBeenSet() const;
+
+                    /**
+                     * 获取三级标签码
+                     * @return SubTagCode 三级标签码
+                     * 
+                     */
+                    std::string GetSubTagCode() const;
+
+                    /**
+                     * 设置三级标签码
+                     * @param _subTagCode 三级标签码
+                     * 
+                     */
+                    void SetSubTagCode(const std::string& _subTagCode);
+
+                    /**
+                     * 判断参数 SubTagCode 是否已赋值
+                     * @return SubTagCode 是否已赋值
+                     * 
+                     */
+                    bool SubTagCodeHasBeenSet() const;
+
+                    /**
+                     * 获取审核检测类型
+                     * @return HitType 审核检测类型
+                     * 
+                     */
+                    std::string GetHitType() const;
+
+                    /**
+                     * 设置审核检测类型
+                     * @param _hitType 审核检测类型
+                     * 
+                     */
+                    void SetHitType(const std::string& _hitType);
+
+                    /**
+                     * 判断参数 HitType 是否已赋值
+                     * @return HitType 是否已赋值
+                     * 
+                     */
+                    bool HitTypeHasBeenSet() const;
+
                 private:
 
                     /**
                      * 该字段用于返回审核内容是否命中审核模型；取值：0（**未命中**）、1（**命中**）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_hitFlag;
                     bool m_hitFlagHasBeenSet;
 
                     /**
                      * 该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
@@ -444,28 +473,24 @@ namespace TencentCloud
                     /**
                      * 该字段用于返回后续操作建议。当您获取到判定结果后，返回值表示具体的后续建议操作。<br>
 返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_suggestion;
                     bool m_suggestionHasBeenSet;
 
                     /**
                      * 该字段用于返回当前标签下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高** ），越高代表文本越有可能属于当前返回的标签；如：*色情 99*，则表明该文本非常有可能属于色情内容。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_score;
                     bool m_scoreHasBeenSet;
 
                     /**
                      * 该字段用于返回音频文件经ASR识别后的文本信息。最长可识别**5小时**的音频文件，若超出时长限制，接口将会报错。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;
 
                     /**
                      * 该字段用于返回审核结果的访问链接（URL）。<br>备注：链接默认有效期为12小时。如果您需要更长时效的链接，请使用[COS预签名](https://cloud.tencent.com/document/product/1265/104001)功能更新签名时效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
@@ -502,14 +527,12 @@ namespace TencentCloud
 
                     /**
                      * 该字段用于返回当前标签（Lable）下的二级标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subLabel;
                     bool m_subLabelHasBeenSet;
 
                     /**
                      * 识别类标签结果信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RecognitionResult> m_recognitionResults;
                     bool m_recognitionResultsHasBeenSet;
@@ -531,6 +554,24 @@ namespace TencentCloud
                      */
                     std::vector<TravelResults> m_travelResults;
                     bool m_travelResultsHasBeenSet;
+
+                    /**
+                     * 三级标签
+                     */
+                    std::string m_subTag;
+                    bool m_subTagHasBeenSet;
+
+                    /**
+                     * 三级标签码
+                     */
+                    std::string m_subTagCode;
+                    bool m_subTagCodeHasBeenSet;
+
+                    /**
+                     * 审核检测类型
+                     */
+                    std::string m_hitType;
+                    bool m_hitTypeHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,12 @@ ListDocRequest::ListDocRequest() :
     m_pageNumberHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
     m_queryHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_queryTypeHasBeenSet(false),
+    m_cateBizIdHasBeenSet(false),
+    m_fileTypesHasBeenSet(false),
+    m_filterFlagHasBeenSet(false),
+    m_showCurrCateHasBeenSet(false)
 {
 }
 
@@ -81,6 +86,58 @@ string ListDocRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_queryTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueryType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_queryType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cateBizIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CateBizId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cateBizId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_fileTypes.begin(); itr != m_fileTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_filterFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filterFlag.begin(); itr != m_filterFlag.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_showCurrCateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShowCurrCate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_showCurrCate, allocator);
     }
 
 
@@ -169,6 +226,86 @@ void ListDocRequest::SetStatus(const vector<int64_t>& _status)
 bool ListDocRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string ListDocRequest::GetQueryType() const
+{
+    return m_queryType;
+}
+
+void ListDocRequest::SetQueryType(const string& _queryType)
+{
+    m_queryType = _queryType;
+    m_queryTypeHasBeenSet = true;
+}
+
+bool ListDocRequest::QueryTypeHasBeenSet() const
+{
+    return m_queryTypeHasBeenSet;
+}
+
+string ListDocRequest::GetCateBizId() const
+{
+    return m_cateBizId;
+}
+
+void ListDocRequest::SetCateBizId(const string& _cateBizId)
+{
+    m_cateBizId = _cateBizId;
+    m_cateBizIdHasBeenSet = true;
+}
+
+bool ListDocRequest::CateBizIdHasBeenSet() const
+{
+    return m_cateBizIdHasBeenSet;
+}
+
+vector<string> ListDocRequest::GetFileTypes() const
+{
+    return m_fileTypes;
+}
+
+void ListDocRequest::SetFileTypes(const vector<string>& _fileTypes)
+{
+    m_fileTypes = _fileTypes;
+    m_fileTypesHasBeenSet = true;
+}
+
+bool ListDocRequest::FileTypesHasBeenSet() const
+{
+    return m_fileTypesHasBeenSet;
+}
+
+vector<DocFilterFlag> ListDocRequest::GetFilterFlag() const
+{
+    return m_filterFlag;
+}
+
+void ListDocRequest::SetFilterFlag(const vector<DocFilterFlag>& _filterFlag)
+{
+    m_filterFlag = _filterFlag;
+    m_filterFlagHasBeenSet = true;
+}
+
+bool ListDocRequest::FilterFlagHasBeenSet() const
+{
+    return m_filterFlagHasBeenSet;
+}
+
+uint64_t ListDocRequest::GetShowCurrCate() const
+{
+    return m_showCurrCate;
+}
+
+void ListDocRequest::SetShowCurrCate(const uint64_t& _showCurrCate)
+{
+    m_showCurrCate = _showCurrCate;
+    m_showCurrCateHasBeenSet = true;
+}
+
+bool ListDocRequest::ShowCurrCateHasBeenSet() const
+{
+    return m_showCurrCateHasBeenSet;
 }
 
 

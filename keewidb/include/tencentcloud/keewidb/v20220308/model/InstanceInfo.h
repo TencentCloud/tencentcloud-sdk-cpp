@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -701,18 +701,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例关联的标签信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceTags 实例关联的标签信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<InstanceTagInfo> GetInstanceTags() const;
 
                     /**
                      * 设置实例关联的标签信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceTags 实例关联的标签信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceTags(const std::vector<InstanceTagInfo>& _instanceTags);
@@ -726,18 +722,14 @@ namespace TencentCloud
 
                     /**
                      * 获取项目名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectName 项目名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectName() const;
 
                     /**
                      * 设置项目名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _projectName 项目名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProjectName(const std::string& _projectName);
@@ -751,18 +743,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否为免密实例；<ul><li>true：免密实例。</li><li>false：非免密实例。</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NoAuth 是否为免密实例；<ul><li>true：免密实例。</li><li>false：非免密实例。</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetNoAuth() const;
 
                     /**
                      * 设置是否为免密实例；<ul><li>true：免密实例。</li><li>false：非免密实例。</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _noAuth 是否为免密实例；<ul><li>true：免密实例。</li><li>false：非免密实例。</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNoAuth(const bool& _noAuth);
@@ -776,18 +764,14 @@ namespace TencentCloud
 
                     /**
                      * 获取客户端连接数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientLimit 客户端连接数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetClientLimit() const;
 
                     /**
                      * 设置客户端连接数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clientLimit 客户端连接数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClientLimit(const int64_t& _clientLimit);
@@ -801,18 +785,14 @@ namespace TencentCloud
 
                     /**
                      * 获取DTS状态（内部参数，用户可忽略）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DtsStatus DTS状态（内部参数，用户可忽略）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDtsStatus() const;
 
                     /**
                      * 设置DTS状态（内部参数，用户可忽略）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dtsStatus DTS状态（内部参数，用户可忽略）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDtsStatus(const int64_t& _dtsStatus);
@@ -826,18 +806,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分片带宽上限，单位 MB。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetLimit 分片带宽上限，单位 MB。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNetLimit() const;
 
                     /**
                      * 设置分片带宽上限，单位 MB。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _netLimit 分片带宽上限，单位 MB。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNetLimit(const int64_t& _netLimit);
@@ -851,18 +827,14 @@ namespace TencentCloud
 
                     /**
                      * 获取免密实例标识（内部参数，用户可忽略）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PasswordFree 免密实例标识（内部参数，用户可忽略）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPasswordFree() const;
 
                     /**
                      * 设置免密实例标识（内部参数，用户可忽略）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _passwordFree 免密实例标识（内部参数，用户可忽略）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPasswordFree(const int64_t& _passwordFree);
@@ -876,18 +848,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例只读标识（内部参数，用户可忽略）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReadOnly 实例只读标识（内部参数，用户可忽略）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetReadOnly() const;
 
                     /**
                      * 设置实例只读标识（内部参数，用户可忽略）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _readOnly 实例只读标识（内部参数，用户可忽略）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReadOnly(const int64_t& _readOnly);
@@ -901,18 +869,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内部参数，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vip6 内部参数，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVip6() const;
 
                     /**
                      * 设置内部参数，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vip6 内部参数，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVip6(const std::string& _vip6);
@@ -926,18 +890,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内部参数，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemainBandwidthDuration 内部参数，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemainBandwidthDuration() const;
 
                     /**
                      * 设置内部参数，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remainBandwidthDuration 内部参数，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemainBandwidthDuration(const std::string& _remainBandwidthDuration);
@@ -951,18 +911,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例的磁盘容量大小。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskSize 实例的磁盘容量大小。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
                      * 设置实例的磁盘容量大小。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diskSize 实例的磁盘容量大小。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiskSize(const int64_t& _diskSize);
@@ -976,18 +932,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监控版本。<ul><li>1m：分钟粒度监控。</li><li>5s：5秒粒度监控。</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MonitorVersion 监控版本。<ul><li>1m：分钟粒度监控。</li><li>5s：5秒粒度监控。</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMonitorVersion() const;
 
                     /**
                      * 设置监控版本。<ul><li>1m：分钟粒度监控。</li><li>5s：5秒粒度监控。</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _monitorVersion 监控版本。<ul><li>1m：分钟粒度监控。</li><li>5s：5秒粒度监控。</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMonitorVersion(const std::string& _monitorVersion);
@@ -1001,18 +953,14 @@ namespace TencentCloud
 
                     /**
                      * 获取客户端最大连接数可设置的最小值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientLimitMin 客户端最大连接数可设置的最小值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetClientLimitMin() const;
 
                     /**
                      * 设置客户端最大连接数可设置的最小值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clientLimitMin 客户端最大连接数可设置的最小值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClientLimitMin(const int64_t& _clientLimitMin);
@@ -1026,18 +974,14 @@ namespace TencentCloud
 
                     /**
                      * 获取客户端最大连接数可设置的最大值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientLimitMax 客户端最大连接数可设置的最大值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetClientLimitMax() const;
 
                     /**
                      * 设置客户端最大连接数可设置的最大值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clientLimitMax 客户端最大连接数可设置的最大值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClientLimitMax(const int64_t& _clientLimitMax);
@@ -1051,18 +995,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例的节点详细信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeSet 实例的节点详细信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<NodeInfo> GetNodeSet() const;
 
                     /**
                      * 设置实例的节点详细信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodeSet 实例的节点详细信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodeSet(const std::vector<NodeInfo>& _nodeSet);
@@ -1076,18 +1016,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例所在的地域信息，比如ap-guangzhou。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 实例所在的地域信息，比如ap-guangzhou。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置实例所在的地域信息，比如ap-guangzhou。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 实例所在的地域信息，比如ap-guangzhou。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -1101,18 +1037,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例内存容量，单位：GB。KeeWiDB 内存容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineMemory 实例内存容量，单位：GB。KeeWiDB 内存容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMachineMemory() const;
 
                     /**
                      * 设置实例内存容量，单位：GB。KeeWiDB 内存容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _machineMemory 实例内存容量，单位：GB。KeeWiDB 内存容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMachineMemory(const int64_t& _machineMemory);
@@ -1186,6 +1118,27 @@ namespace TencentCloud
                      * 
                      */
                     bool DiskReplicasNumHasBeenSet() const;
+
+                    /**
+                     * 获取数据压缩开关。<ul><li>ON：开启。</li><li>OFF：关闭。</li></ul>
+                     * @return Compression 数据压缩开关。<ul><li>ON：开启。</li><li>OFF：关闭。</li></ul>
+                     * 
+                     */
+                    std::string GetCompression() const;
+
+                    /**
+                     * 设置数据压缩开关。<ul><li>ON：开启。</li><li>OFF：关闭。</li></ul>
+                     * @param _compression 数据压缩开关。<ul><li>ON：开启。</li><li>OFF：关闭。</li></ul>
+                     * 
+                     */
+                    void SetCompression(const std::string& _compression);
+
+                    /**
+                     * 判断参数 Compression 是否已赋值
+                     * @return Compression 是否已赋值
+                     * 
+                     */
+                    bool CompressionHasBeenSet() const;
 
                 private:
 
@@ -1377,119 +1330,102 @@ namespace TencentCloud
 
                     /**
                      * 实例关联的标签信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<InstanceTagInfo> m_instanceTags;
                     bool m_instanceTagsHasBeenSet;
 
                     /**
                      * 项目名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectName;
                     bool m_projectNameHasBeenSet;
 
                     /**
                      * 是否为免密实例；<ul><li>true：免密实例。</li><li>false：非免密实例。</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_noAuth;
                     bool m_noAuthHasBeenSet;
 
                     /**
                      * 客户端连接数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_clientLimit;
                     bool m_clientLimitHasBeenSet;
 
                     /**
                      * DTS状态（内部参数，用户可忽略）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_dtsStatus;
                     bool m_dtsStatusHasBeenSet;
 
                     /**
                      * 分片带宽上限，单位 MB。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_netLimit;
                     bool m_netLimitHasBeenSet;
 
                     /**
                      * 免密实例标识（内部参数，用户可忽略）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_passwordFree;
                     bool m_passwordFreeHasBeenSet;
 
                     /**
                      * 实例只读标识（内部参数，用户可忽略）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_readOnly;
                     bool m_readOnlyHasBeenSet;
 
                     /**
                      * 内部参数，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vip6;
                     bool m_vip6HasBeenSet;
 
                     /**
                      * 内部参数，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remainBandwidthDuration;
                     bool m_remainBandwidthDurationHasBeenSet;
 
                     /**
                      * 实例的磁盘容量大小。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
 
                     /**
                      * 监控版本。<ul><li>1m：分钟粒度监控。</li><li>5s：5秒粒度监控。</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_monitorVersion;
                     bool m_monitorVersionHasBeenSet;
 
                     /**
                      * 客户端最大连接数可设置的最小值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_clientLimitMin;
                     bool m_clientLimitMinHasBeenSet;
 
                     /**
                      * 客户端最大连接数可设置的最大值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_clientLimitMax;
                     bool m_clientLimitMaxHasBeenSet;
 
                     /**
                      * 实例的节点详细信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NodeInfo> m_nodeSet;
                     bool m_nodeSetHasBeenSet;
 
                     /**
                      * 实例所在的地域信息，比如ap-guangzhou。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * 实例内存容量，单位：GB。KeeWiDB 内存容量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_machineMemory;
                     bool m_machineMemoryHasBeenSet;
@@ -1511,6 +1447,12 @@ namespace TencentCloud
                      */
                     int64_t m_diskReplicasNum;
                     bool m_diskReplicasNumHasBeenSet;
+
+                    /**
+                     * 数据压缩开关。<ul><li>ON：开启。</li><li>OFF：关闭。</li></ul>
+                     */
+                    std::string m_compression;
+                    bool m_compressionHasBeenSet;
 
                 };
             }

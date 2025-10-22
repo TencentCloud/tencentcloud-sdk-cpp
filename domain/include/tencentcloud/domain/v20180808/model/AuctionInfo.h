@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取竞拍人
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bidder 竞拍人
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBidder() const;
 
                     /**
                      * 设置竞拍人
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bidder 竞拍人
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBidder(const std::string& _bidder);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取竞拍时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuctionTime 竞拍时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAuctionTime() const;
 
                     /**
                      * 设置竞拍时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _auctionTime 竞拍时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuctionTime(const std::string& _auctionTime);
@@ -97,19 +89,15 @@ namespace TencentCloud
                     bool AuctionTimeHasBeenSet() const;
 
                     /**
-                     * 获取竞拍价格
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AuctionPrice 竞拍价格
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取竞拍价格 单位元
+                     * @return AuctionPrice 竞拍价格 单位元
                      * 
                      */
                     double GetAuctionPrice() const;
 
                     /**
-                     * 设置竞拍价格
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _auctionPrice 竞拍价格
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置竞拍价格 单位元
+                     * @param _auctionPrice 竞拍价格 单位元
                      * 
                      */
                     void SetAuctionPrice(const double& _auctionPrice);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态 up: 领先 down: 落后
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态 up: 领先 down: 落后
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态 up: 领先 down: 落后
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 状态 up: 领先 down: 落后
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 竞拍人
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bidder;
                     bool m_bidderHasBeenSet;
 
                     /**
                      * 竞拍时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_auctionTime;
                     bool m_auctionTimeHasBeenSet;
 
                     /**
-                     * 竞拍价格
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 竞拍价格 单位元
                      */
                     double m_auctionPrice;
                     bool m_auctionPriceHasBeenSet;
 
                     /**
                      * 状态 up: 领先 down: 落后
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

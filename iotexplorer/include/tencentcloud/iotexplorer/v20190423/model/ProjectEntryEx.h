@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -216,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -241,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationCount 应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetApplicationCount() const;
 
                     /**
                      * 设置应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationCount 应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationCount(const uint64_t& _applicationCount);
@@ -266,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备注册总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceCount 设备注册总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDeviceCount() const;
 
                     /**
                      * 设置设备注册总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceCount 设备注册总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceCount(const uint64_t& _deviceCount);
@@ -291,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开通物联使能
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableOpenState 是否开通物联使能
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetEnableOpenState() const;
 
                     /**
                      * 设置是否开通物联使能
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableOpenState 是否开通物联使能
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableOpenState(const uint64_t& _enableOpenState);
@@ -366,28 +350,24 @@ namespace TencentCloud
 
                     /**
                      * 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_applicationCount;
                     bool m_applicationCountHasBeenSet;
 
                     /**
                      * 设备注册总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_deviceCount;
                     bool m_deviceCountHasBeenSet;
 
                     /**
                      * 是否开通物联使能
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_enableOpenState;
                     bool m_enableOpenStateHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ using namespace std;
 
 CreateOfflineTaskResponse::CreateOfflineTaskResponse() :
     m_taskIdHasBeenSet(false),
+    m_arrangeSpaceTaskIdHasBeenSet(false),
     m_dataHasBeenSet(false)
 {
 }
@@ -73,6 +74,16 @@ CoreInternalOutcome CreateOfflineTaskResponse::Deserialize(const string &payload
         m_taskIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ArrangeSpaceTaskId") && !rsp["ArrangeSpaceTaskId"].IsNull())
+    {
+        if (!rsp["ArrangeSpaceTaskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ArrangeSpaceTaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_arrangeSpaceTaskId = string(rsp["ArrangeSpaceTaskId"].GetString());
+        m_arrangeSpaceTaskIdHasBeenSet = true;
+    }
+
     if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
         if (!rsp["Data"].IsString())
@@ -101,6 +112,14 @@ string CreateOfflineTaskResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_arrangeSpaceTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ArrangeSpaceTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_arrangeSpaceTaskId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -113,7 +132,7 @@ string CreateOfflineTaskResponse::ToJsonString() const
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -129,6 +148,16 @@ string CreateOfflineTaskResponse::GetTaskId() const
 bool CreateOfflineTaskResponse::TaskIdHasBeenSet() const
 {
     return m_taskIdHasBeenSet;
+}
+
+string CreateOfflineTaskResponse::GetArrangeSpaceTaskId() const
+{
+    return m_arrangeSpaceTaskId;
+}
+
+bool CreateOfflineTaskResponse::ArrangeSpaceTaskIdHasBeenSet() const
+{
+    return m_arrangeSpaceTaskIdHasBeenSet;
 }
 
 string CreateOfflineTaskResponse::GetData() const

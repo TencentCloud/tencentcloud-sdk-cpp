@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,8 @@ PeerConnection::PeerConnection() :
     m_destinationUinHasBeenSet(false),
     m_tagSetHasBeenSet(false),
     m_qosLevelHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_destinationVpcIdHasBeenSet(false)
 {
 }
 
@@ -237,6 +238,16 @@ CoreInternalOutcome PeerConnection::Deserialize(const rapidjson::Value &value)
         m_typeHasBeenSet = true;
     }
 
+    if (value.HasMember("DestinationVpcId") && !value["DestinationVpcId"].IsNull())
+    {
+        if (!value["DestinationVpcId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PeerConnection.DestinationVpcId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_destinationVpcId = string(value["DestinationVpcId"].GetString());
+        m_destinationVpcIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -393,6 +404,14 @@ void PeerConnection::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_destinationVpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DestinationVpcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_destinationVpcId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -684,5 +703,21 @@ void PeerConnection::SetType(const string& _type)
 bool PeerConnection::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+string PeerConnection::GetDestinationVpcId() const
+{
+    return m_destinationVpcId;
+}
+
+void PeerConnection::SetDestinationVpcId(const string& _destinationVpcId)
+{
+    m_destinationVpcId = _destinationVpcId;
+    m_destinationVpcIdHasBeenSet = true;
+}
+
+bool PeerConnection::DestinationVpcIdHasBeenSet() const
+{
+    return m_destinationVpcIdHasBeenSet;
 }
 

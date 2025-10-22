@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取失败或者报错提示，成功则提示success。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 失败或者报错提示，成功则提示success。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMessage() const;
@@ -75,8 +73,8 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取任务运行状态，可能值为 running,failed,success
-                     * @return Status 任务运行状态，可能值为 running,failed,success
+                     * 获取任务运行状态，可能值为 running(运行中),failed(失败),success(成功),unknown(未知状态)。
+                     * @return Status 任务运行状态，可能值为 running(运行中),failed(失败),success(成功),unknown(未知状态)。
                      * 
                      */
                     std::string GetStatus() const;
@@ -132,9 +130,7 @@ namespace TencentCloud
 
                     /**
                      * 获取各个步骤运行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Steps 各个步骤运行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SubscribeCheckStepInfo> GetSteps() const;
@@ -156,13 +152,12 @@ namespace TencentCloud
 
                     /**
                      * 失败或者报错提示，成功则提示success。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
-                     * 任务运行状态，可能值为 running,failed,success
+                     * 任务运行状态，可能值为 running(运行中),failed(失败),success(成功),unknown(未知状态)。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
@@ -187,7 +182,6 @@ namespace TencentCloud
 
                     /**
                      * 各个步骤运行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SubscribeCheckStepInfo> m_steps;
                     bool m_stepsHasBeenSet;

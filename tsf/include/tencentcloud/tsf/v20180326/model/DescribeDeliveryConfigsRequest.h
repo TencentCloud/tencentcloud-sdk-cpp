@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取关键字
-                     * @return SearchWord 关键字
+                     * 获取搜索关键字，可搜索日志投递配置项ID或日志投递配置项名称
+                     * @return SearchWord 搜索关键字，可搜索日志投递配置项ID或日志投递配置项名称
                      * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
-                     * 设置关键字
-                     * @param _searchWord 关键字
+                     * 设置搜索关键字，可搜索日志投递配置项ID或日志投递配置项名称
+                     * @param _searchWord 搜索关键字，可搜索日志投递配置项ID或日志投递配置项名称
                      * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SearchWordHasBeenSet() const;
 
                     /**
-                     * 获取偏移
-                     * @return Offset 偏移
+                     * 获取偏移量，取值范围大于等于0，默认值为0
+                     * @return Offset 偏移量，取值范围大于等于0，默认值为0
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移
-                     * @param _offset 偏移
+                     * 设置偏移量，取值范围大于等于0，默认值为0
+                     * @param _offset 偏移量，取值范围大于等于0，默认值为0
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取搜索条数
-                     * @return Limit 搜索条数
+                     * 获取单页请求配置数量，取值范围[1, 50]，默认值为10
+                     * @return Limit 单页请求配置数量，取值范围[1, 50]，默认值为10
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置搜索条数
-                     * @param _limit 搜索条数
+                     * 设置单页请求配置数量，取值范围[1, 50]，默认值为10
+                     * @param _limit 单页请求配置数量，取值范围[1, 50]，默认值为10
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -106,15 +106,19 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取数据集idList
-                     * @return ProgramIdList 数据集idList
+                     * 获取数据集ID列表
+可通过调用[DescribePrograms](https://cloud.tencent.com/document/product/649/73477)查询已创建的数据集列表或登录[控制台](https://console.cloud.tencent.com/tsf/privilege?rid=1&tab=program&roleId=role-a22gwdwa)进行查看
+                     * @return ProgramIdList 数据集ID列表
+可通过调用[DescribePrograms](https://cloud.tencent.com/document/product/649/73477)查询已创建的数据集列表或登录[控制台](https://console.cloud.tencent.com/tsf/privilege?rid=1&tab=program&roleId=role-a22gwdwa)进行查看
                      * 
                      */
                     std::vector<std::string> GetProgramIdList() const;
 
                     /**
-                     * 设置数据集idList
-                     * @param _programIdList 数据集idList
+                     * 设置数据集ID列表
+可通过调用[DescribePrograms](https://cloud.tencent.com/document/product/649/73477)查询已创建的数据集列表或登录[控制台](https://console.cloud.tencent.com/tsf/privilege?rid=1&tab=program&roleId=role-a22gwdwa)进行查看
+                     * @param _programIdList 数据集ID列表
+可通过调用[DescribePrograms](https://cloud.tencent.com/document/product/649/73477)查询已创建的数据集列表或登录[控制台](https://console.cloud.tencent.com/tsf/privilege?rid=1&tab=program&roleId=role-a22gwdwa)进行查看
                      * 
                      */
                     void SetProgramIdList(const std::vector<std::string>& _programIdList);
@@ -127,15 +131,19 @@ namespace TencentCloud
                     bool ProgramIdListHasBeenSet() const;
 
                     /**
-                     * 获取ConfigIdList
-                     * @return ConfigIdList ConfigIdList
+                     * 获取日志配置项ID列表
+可通过调用[DescribeBusinessLogConfigs](https://cloud.tencent.com/document/product/649/75777)查询已创建的日志配置项列表或登录[控制台](https://console.cloud.tencent.com/tsf/observable/log?rid=1)进行查看
+                     * @return ConfigIdList 日志配置项ID列表
+可通过调用[DescribeBusinessLogConfigs](https://cloud.tencent.com/document/product/649/75777)查询已创建的日志配置项列表或登录[控制台](https://console.cloud.tencent.com/tsf/observable/log?rid=1)进行查看
                      * 
                      */
                     std::vector<std::string> GetConfigIdList() const;
 
                     /**
-                     * 设置ConfigIdList
-                     * @param _configIdList ConfigIdList
+                     * 设置日志配置项ID列表
+可通过调用[DescribeBusinessLogConfigs](https://cloud.tencent.com/document/product/649/75777)查询已创建的日志配置项列表或登录[控制台](https://console.cloud.tencent.com/tsf/observable/log?rid=1)进行查看
+                     * @param _configIdList 日志配置项ID列表
+可通过调用[DescribeBusinessLogConfigs](https://cloud.tencent.com/document/product/649/75777)查询已创建的日志配置项列表或登录[控制台](https://console.cloud.tencent.com/tsf/observable/log?rid=1)进行查看
                      * 
                      */
                     void SetConfigIdList(const std::vector<std::string>& _configIdList);
@@ -150,31 +158,33 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 关键字
+                     * 搜索关键字，可搜索日志投递配置项ID或日志投递配置项名称
                      */
                     std::string m_searchWord;
                     bool m_searchWordHasBeenSet;
 
                     /**
-                     * 偏移
+                     * 偏移量，取值范围大于等于0，默认值为0
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 搜索条数
+                     * 单页请求配置数量，取值范围[1, 50]，默认值为10
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 数据集idList
+                     * 数据集ID列表
+可通过调用[DescribePrograms](https://cloud.tencent.com/document/product/649/73477)查询已创建的数据集列表或登录[控制台](https://console.cloud.tencent.com/tsf/privilege?rid=1&tab=program&roleId=role-a22gwdwa)进行查看
                      */
                     std::vector<std::string> m_programIdList;
                     bool m_programIdListHasBeenSet;
 
                     /**
-                     * ConfigIdList
+                     * 日志配置项ID列表
+可通过调用[DescribeBusinessLogConfigs](https://cloud.tencent.com/document/product/649/75777)查询已创建的日志配置项列表或登录[控制台](https://console.cloud.tencent.com/tsf/observable/log?rid=1)进行查看
                      */
                     std::vector<std::string> m_configIdList;
                     bool m_configIdListHasBeenSet;

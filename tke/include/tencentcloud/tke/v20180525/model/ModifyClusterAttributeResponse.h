@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,9 +47,7 @@ namespace TencentCloud
 
                     /**
                      * 获取集群所属项目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectId 集群所属项目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetProjectId() const;
@@ -63,9 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 获取集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterName 集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterName() const;
@@ -79,9 +75,7 @@ namespace TencentCloud
 
                     /**
                      * 获取集群描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterDesc 集群描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterDesc() const;
@@ -95,9 +89,7 @@ namespace TencentCloud
 
                     /**
                      * 获取集群等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterLevel 集群等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterLevel() const;
@@ -111,9 +103,7 @@ namespace TencentCloud
 
                     /**
                      * 获取自动变配集群等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoUpgradeClusterLevel 自动变配集群等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AutoUpgradeClusterLevel GetAutoUpgradeClusterLevel() const;
@@ -127,9 +117,7 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启QGPU共享
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QGPUShareEnable 是否开启QGPU共享
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetQGPUShareEnable() const;
@@ -143,9 +131,7 @@ namespace TencentCloud
 
                     /**
                      * 获取集群属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterProperty 集群属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ClusterProperty GetClusterProperty() const;
@@ -161,49 +147,42 @@ namespace TencentCloud
 
                     /**
                      * 集群所属项目
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
                      * 集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
 
                     /**
                      * 集群描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterDesc;
                     bool m_clusterDescHasBeenSet;
 
                     /**
                      * 集群等级
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterLevel;
                     bool m_clusterLevelHasBeenSet;
 
                     /**
                      * 自动变配集群等级
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AutoUpgradeClusterLevel m_autoUpgradeClusterLevel;
                     bool m_autoUpgradeClusterLevelHasBeenSet;
 
                     /**
                      * 是否开启QGPU共享
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_qGPUShareEnable;
                     bool m_qGPUShareEnableHasBeenSet;
 
                     /**
                      * 集群属性
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ClusterProperty m_clusterProperty;
                     bool m_clusterPropertyHasBeenSet;

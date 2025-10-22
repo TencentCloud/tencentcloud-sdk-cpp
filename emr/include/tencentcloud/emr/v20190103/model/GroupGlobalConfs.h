@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,18 +74,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前伸缩组扩容出来的节点数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurrentNodes 当前伸缩组扩容出来的节点数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCurrentNodes() const;
 
                     /**
                      * 设置当前伸缩组扩容出来的节点数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _currentNodes 当前伸缩组扩容出来的节点数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCurrentNodes(const int64_t& _currentNodes);
@@ -99,18 +95,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前伸缩组扩容出来的后付费节点数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurrentPostPaidNodes 当前伸缩组扩容出来的后付费节点数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCurrentPostPaidNodes() const;
 
                     /**
                      * 设置当前伸缩组扩容出来的后付费节点数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _currentPostPaidNodes 当前伸缩组扩容出来的后付费节点数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCurrentPostPaidNodes(const int64_t& _currentPostPaidNodes);
@@ -124,18 +116,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前伸缩组扩容出来的竞价实例节点数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurrentSpotPaidNodes 当前伸缩组扩容出来的竞价实例节点数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCurrentSpotPaidNodes() const;
 
                     /**
                      * 设置当前伸缩组扩容出来的竞价实例节点数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _currentSpotPaidNodes 当前伸缩组扩容出来的竞价实例节点数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCurrentSpotPaidNodes(const int64_t& _currentSpotPaidNodes);
@@ -158,21 +146,18 @@ namespace TencentCloud
 
                     /**
                      * 当前伸缩组扩容出来的节点数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_currentNodes;
                     bool m_currentNodesHasBeenSet;
 
                     /**
                      * 当前伸缩组扩容出来的后付费节点数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_currentPostPaidNodes;
                     bool m_currentPostPaidNodesHasBeenSet;
 
                     /**
                      * 当前伸缩组扩容出来的竞价实例节点数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_currentSpotPaidNodes;
                     bool m_currentSpotPaidNodesHasBeenSet;

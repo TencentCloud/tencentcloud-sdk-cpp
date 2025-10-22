@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@
 #include <tencentcloud/tione/v20211111/model/Tag.h>
 #include <tencentcloud/tione/v20211111/model/CosPathInfo.h>
 #include <tencentcloud/tione/v20211111/model/DatasetInfo.h>
+#include <tencentcloud/tione/v20211111/model/CFSConfig.h>
 
 
 namespace TencentCloud
@@ -699,6 +700,206 @@ namespace TencentCloud
                      */
                     bool ContentTypeHasBeenSet() const;
 
+                    /**
+                     * 获取数据集建模类别。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DatasetScene 数据集建模类别。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDatasetScene() const;
+
+                    /**
+                     * 设置数据集建模类别。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _datasetScene 数据集建模类别。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDatasetScene(const std::string& _datasetScene);
+
+                    /**
+                     * 判断参数 DatasetScene 是否已赋值
+                     * @return DatasetScene 是否已赋值
+                     * 
+                     */
+                    bool DatasetSceneHasBeenSet() const;
+
+                    /**
+                     * 获取CFS配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CFSConfig CFS配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    CFSConfig GetCFSConfig() const;
+
+                    /**
+                     * 设置CFS配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cFSConfig CFS配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCFSConfig(const CFSConfig& _cFSConfig);
+
+                    /**
+                     * 判断参数 CFSConfig 是否已赋值
+                     * @return CFSConfig 是否已赋值
+                     * 
+                     */
+                    bool CFSConfigHasBeenSet() const;
+
+                    /**
+                     * 获取数据集标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SceneTags 数据集标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetSceneTags() const;
+
+                    /**
+                     * 设置数据集标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sceneTags 数据集标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSceneTags(const std::vector<std::string>& _sceneTags);
+
+                    /**
+                     * 判断参数 SceneTags 是否已赋值
+                     * @return SceneTags 是否已赋值
+                     * 
+                     */
+                    bool SceneTagsHasBeenSet() const;
+
+                    /**
+                     * 获取已标注数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NumAnnotated 已标注数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetNumAnnotated() const;
+
+                    /**
+                     * 设置已标注数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _numAnnotated 已标注数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNumAnnotated(const uint64_t& _numAnnotated);
+
+                    /**
+                     * 判断参数 NumAnnotated 是否已赋值
+                     * @return NumAnnotated 是否已赋值
+                     * 
+                     */
+                    bool NumAnnotatedHasBeenSet() const;
+
+                    /**
+                     * 获取标注规范
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AnnotationSpecification 标注规范
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAnnotationSpecification() const;
+
+                    /**
+                     * 设置标注规范
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _annotationSpecification 标注规范
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAnnotationSpecification(const std::string& _annotationSpecification);
+
+                    /**
+                     * 判断参数 AnnotationSpecification 是否已赋值
+                     * @return AnnotationSpecification 是否已赋值
+                     * 
+                     */
+                    bool AnnotationSpecificationHasBeenSet() const;
+
+                    /**
+                     * 获取标注Schema是否配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AnnotationSchemaConfigured 标注Schema是否配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetAnnotationSchemaConfigured() const;
+
+                    /**
+                     * 设置标注Schema是否配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _annotationSchemaConfigured 标注Schema是否配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAnnotationSchemaConfigured(const bool& _annotationSchemaConfigured);
+
+                    /**
+                     * 判断参数 AnnotationSchemaConfigured 是否已赋值
+                     * @return AnnotationSchemaConfigured 是否已赋值
+                     * 
+                     */
+                    bool AnnotationSchemaConfiguredHasBeenSet() const;
+
+                    /**
+                     * 获取创建者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreatorNickname 创建者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCreatorNickname() const;
+
+                    /**
+                     * 设置创建者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _creatorNickname 创建者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCreatorNickname(const std::string& _creatorNickname);
+
+                    /**
+                     * 判断参数 CreatorNickname 是否已赋值
+                     * @return CreatorNickname 是否已赋值
+                     * 
+                     */
+                    bool CreatorNicknameHasBeenSet() const;
+
+                    /**
+                     * 获取cfs路径是否有修改
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsCfsUpdated cfs路径是否有修改
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIsCfsUpdated() const;
+
+                    /**
+                     * 设置cfs路径是否有修改
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isCfsUpdated cfs路径是否有修改
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsCfsUpdated(const bool& _isCfsUpdated);
+
+                    /**
+                     * 判断参数 IsCfsUpdated 是否已赋值
+                     * @return IsCfsUpdated 是否已赋值
+                     * 
+                     */
+                    bool IsCfsUpdatedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -882,6 +1083,62 @@ namespace TencentCloud
                      */
                     std::string m_contentType;
                     bool m_contentTypeHasBeenSet;
+
+                    /**
+                     * 数据集建模类别。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_datasetScene;
+                    bool m_datasetSceneHasBeenSet;
+
+                    /**
+                     * CFS配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CFSConfig m_cFSConfig;
+                    bool m_cFSConfigHasBeenSet;
+
+                    /**
+                     * 数据集标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_sceneTags;
+                    bool m_sceneTagsHasBeenSet;
+
+                    /**
+                     * 已标注数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_numAnnotated;
+                    bool m_numAnnotatedHasBeenSet;
+
+                    /**
+                     * 标注规范
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_annotationSpecification;
+                    bool m_annotationSpecificationHasBeenSet;
+
+                    /**
+                     * 标注Schema是否配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_annotationSchemaConfigured;
+                    bool m_annotationSchemaConfiguredHasBeenSet;
+
+                    /**
+                     * 创建者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_creatorNickname;
+                    bool m_creatorNicknameHasBeenSet;
+
+                    /**
+                     * cfs路径是否有修改
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isCfsUpdated;
+                    bool m_isCfsUpdatedHasBeenSet;
 
                 };
             }

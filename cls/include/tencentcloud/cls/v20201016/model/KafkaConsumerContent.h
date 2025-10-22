@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -131,7 +131,6 @@ TAG信息：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
 平铺示例：
 TAG信息：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
 平铺：`{"__TAG__.fieldA":200,"__TAG__.fieldB":"text"}`
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagTransaction tag数据处理方式：1:不平铺（默认值）；2:平铺。
 
 不平铺示例：
@@ -141,7 +140,6 @@ TAG信息：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
 平铺示例：
 TAG信息：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
 平铺：`{"__TAG__.fieldA":200,"__TAG__.fieldB":"text"}`
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTagTransaction() const;
@@ -156,7 +154,6 @@ TAG信息：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
 平铺示例：
 TAG信息：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
 平铺：`{"__TAG__.fieldA":200,"__TAG__.fieldB":"text"}`
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tagTransaction tag数据处理方式：1:不平铺（默认值）；2:平铺。
 
 不平铺示例：
@@ -166,7 +163,6 @@ TAG信息：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
 平铺示例：
 TAG信息：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
 平铺：`{"__TAG__.fieldA":200,"__TAG__.fieldB":"text"}`
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTagTransaction(const int64_t& _tagTransaction);
@@ -276,7 +272,6 @@ TAG信息：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
 平铺示例：
 TAG信息：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
 平铺：`{"__TAG__.fieldA":200,"__TAG__.fieldB":"text"}`
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_tagTransaction;
                     bool m_tagTransactionHasBeenSet;

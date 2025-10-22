@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取左眼
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Left 左眼
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EyeChildItem GetLeft() const;
 
                     /**
                      * 设置左眼
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _left 左眼
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLeft(const EyeChildItem& _left);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取右眼
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Right 右眼
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EyeChildItem GetRight() const;
 
                     /**
                      * 设置右眼
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _right 右眼
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRight(const EyeChildItem& _right);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取瞳距
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Pd 瞳距
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BaseItem2 GetPd() const;
 
                     /**
                      * 设置瞳距
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pd 瞳距
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPd(const BaseItem2& _pd);
@@ -127,21 +115,18 @@ namespace TencentCloud
 
                     /**
                      * 左眼
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EyeChildItem m_left;
                     bool m_leftHasBeenSet;
 
                     /**
                      * 右眼
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EyeChildItem m_right;
                     bool m_rightHasBeenSet;
 
                     /**
                      * 瞳距
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BaseItem2 m_pd;
                     bool m_pdHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,23 +48,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取单命名空间TPS上线
-                     * @return MaxTpsPerNamespace 单命名空间TPS上线
-                     * 
+                     * 获取单命名空间TPS上限
+                     * @return MaxTpsPerNamespace 单命名空间TPS上限
+                     * @deprecated
                      */
                     uint64_t GetMaxTpsPerNamespace() const;
 
                     /**
-                     * 设置单命名空间TPS上线
-                     * @param _maxTpsPerNamespace 单命名空间TPS上线
-                     * 
+                     * 设置单命名空间TPS上限
+                     * @param _maxTpsPerNamespace 单命名空间TPS上限
+                     * @deprecated
                      */
                     void SetMaxTpsPerNamespace(const uint64_t& _maxTpsPerNamespace);
 
                     /**
                      * 判断参数 MaxTpsPerNamespace 是否已赋值
                      * @return MaxTpsPerNamespace 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool MaxTpsPerNamespaceHasBeenSet() const;
 
@@ -286,10 +286,52 @@ namespace TencentCloud
                      */
                     bool TopicDistributionHasBeenSet() const;
 
+                    /**
+                     * 获取最大角色数量
+                     * @return MaxRoleNum 最大角色数量
+                     * 
+                     */
+                    int64_t GetMaxRoleNum() const;
+
+                    /**
+                     * 设置最大角色数量
+                     * @param _maxRoleNum 最大角色数量
+                     * 
+                     */
+                    void SetMaxRoleNum(const int64_t& _maxRoleNum);
+
+                    /**
+                     * 判断参数 MaxRoleNum 是否已赋值
+                     * @return MaxRoleNum 是否已赋值
+                     * 
+                     */
+                    bool MaxRoleNumHasBeenSet() const;
+
+                    /**
+                     * 获取TPS限额
+                     * @return MaxTpsLimit TPS限额
+                     * 
+                     */
+                    int64_t GetMaxTpsLimit() const;
+
+                    /**
+                     * 设置TPS限额
+                     * @param _maxTpsLimit TPS限额
+                     * 
+                     */
+                    void SetMaxTpsLimit(const int64_t& _maxTpsLimit);
+
+                    /**
+                     * 判断参数 MaxTpsLimit 是否已赋值
+                     * @return MaxTpsLimit 是否已赋值
+                     * 
+                     */
+                    bool MaxTpsLimitHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 单命名空间TPS上线
+                     * 单命名空间TPS上限
                      */
                     uint64_t m_maxTpsPerNamespace;
                     bool m_maxTpsPerNamespaceHasBeenSet;
@@ -355,6 +397,18 @@ namespace TencentCloud
                      */
                     std::vector<RocketMQTopicDistribution> m_topicDistribution;
                     bool m_topicDistributionHasBeenSet;
+
+                    /**
+                     * 最大角色数量
+                     */
+                    int64_t m_maxRoleNum;
+                    bool m_maxRoleNumHasBeenSet;
+
+                    /**
+                     * TPS限额
+                     */
+                    int64_t m_maxTpsLimit;
+                    bool m_maxTpsLimitHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,10 @@ LiveStreamMonitorInputInfo::LiveStreamMonitorInputInfo() :
     m_inputDomainHasBeenSet(false),
     m_inputAppHasBeenSet(false),
     m_inputUrlHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_casterInputIndexHasBeenSet(false),
+    m_needMonitorHasBeenSet(false),
+    m_cdnStreamIdHasBeenSet(false)
 {
 }
 
@@ -84,6 +87,36 @@ CoreInternalOutcome LiveStreamMonitorInputInfo::Deserialize(const rapidjson::Val
         m_descriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("CasterInputIndex") && !value["CasterInputIndex"].IsNull())
+    {
+        if (!value["CasterInputIndex"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LiveStreamMonitorInputInfo.CasterInputIndex` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_casterInputIndex = value["CasterInputIndex"].GetUint64();
+        m_casterInputIndexHasBeenSet = true;
+    }
+
+    if (value.HasMember("NeedMonitor") && !value["NeedMonitor"].IsNull())
+    {
+        if (!value["NeedMonitor"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `LiveStreamMonitorInputInfo.NeedMonitor` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_needMonitor = value["NeedMonitor"].GetBool();
+        m_needMonitorHasBeenSet = true;
+    }
+
+    if (value.HasMember("CdnStreamId") && !value["CdnStreamId"].IsNull())
+    {
+        if (!value["CdnStreamId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LiveStreamMonitorInputInfo.CdnStreamId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cdnStreamId = string(value["CdnStreamId"].GetString());
+        m_cdnStreamIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +162,30 @@ void LiveStreamMonitorInputInfo::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_casterInputIndexHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CasterInputIndex";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_casterInputIndex, allocator);
+    }
+
+    if (m_needMonitorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedMonitor";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_needMonitor, allocator);
+    }
+
+    if (m_cdnStreamIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CdnStreamId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cdnStreamId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +269,53 @@ void LiveStreamMonitorInputInfo::SetDescription(const string& _description)
 bool LiveStreamMonitorInputInfo::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+uint64_t LiveStreamMonitorInputInfo::GetCasterInputIndex() const
+{
+    return m_casterInputIndex;
+}
+
+void LiveStreamMonitorInputInfo::SetCasterInputIndex(const uint64_t& _casterInputIndex)
+{
+    m_casterInputIndex = _casterInputIndex;
+    m_casterInputIndexHasBeenSet = true;
+}
+
+bool LiveStreamMonitorInputInfo::CasterInputIndexHasBeenSet() const
+{
+    return m_casterInputIndexHasBeenSet;
+}
+
+bool LiveStreamMonitorInputInfo::GetNeedMonitor() const
+{
+    return m_needMonitor;
+}
+
+void LiveStreamMonitorInputInfo::SetNeedMonitor(const bool& _needMonitor)
+{
+    m_needMonitor = _needMonitor;
+    m_needMonitorHasBeenSet = true;
+}
+
+bool LiveStreamMonitorInputInfo::NeedMonitorHasBeenSet() const
+{
+    return m_needMonitorHasBeenSet;
+}
+
+string LiveStreamMonitorInputInfo::GetCdnStreamId() const
+{
+    return m_cdnStreamId;
+}
+
+void LiveStreamMonitorInputInfo::SetCdnStreamId(const string& _cdnStreamId)
+{
+    m_cdnStreamId = _cdnStreamId;
+    m_cdnStreamIdHasBeenSet = true;
+}
+
+bool LiveStreamMonitorInputInfo::CdnStreamIdHasBeenSet() const
+{
+    return m_cdnStreamIdHasBeenSet;
 }
 

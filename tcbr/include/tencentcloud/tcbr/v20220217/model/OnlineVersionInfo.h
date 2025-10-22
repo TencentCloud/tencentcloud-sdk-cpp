@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取版本名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VersionName 版本名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersionName() const;
 
                     /**
                      * 设置版本名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _versionName 版本名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersionName(const std::string& _versionName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageUrl 镜像url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetImageUrl() const;
 
                     /**
                      * 设置镜像url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _imageUrl 镜像url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImageUrl(const std::string& _imageUrl);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowRatio 流量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlowRatio() const;
 
                     /**
                      * 设置流量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _flowRatio 流量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFlowRatio(const std::string& _flowRatio);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 版本名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_versionName;
                     bool m_versionNameHasBeenSet;
 
                     /**
                      * 镜像url
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_imageUrl;
                     bool m_imageUrlHasBeenSet;
 
                     /**
                      * 流量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowRatio;
                     bool m_flowRatioHasBeenSet;

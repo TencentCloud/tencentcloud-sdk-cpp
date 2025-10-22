@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取程序包ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PkgId 程序包ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPkgId() const;
 
                     /**
                      * 设置程序包ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pkgId 程序包ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPkgId(const std::string& _pkgId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取桶
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bucket 桶
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBucket() const;
 
                     /**
                      * 设置桶
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bucket 桶
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBucket(const std::string& _bucket);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取目标地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 目标地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置目标地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 目标地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取存储路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Path 存储路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置存储路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _path 存储路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPath(const std::string& _path);
@@ -172,28 +156,24 @@ namespace TencentCloud
 
                     /**
                      * 程序包ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pkgId;
                     bool m_pkgIdHasBeenSet;
 
                     /**
                      * 桶
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bucket;
                     bool m_bucketHasBeenSet;
 
                     /**
                      * 目标地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * 存储路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;

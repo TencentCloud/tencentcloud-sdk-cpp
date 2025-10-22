@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取合同类型ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserFlowTypeId 合同类型ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserFlowTypeId() const;
 
                     /**
                      * 设置合同类型ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userFlowTypeId 合同类型ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserFlowTypeId(const std::string& _userFlowTypeId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取合同类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 合同类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置合同类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 合同类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取合同类型说明
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 合同类型说明
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置合同类型说明
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 合同类型说明
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 合同类型ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userFlowTypeId;
                     bool m_userFlowTypeIdHasBeenSet;
 
                     /**
                      * 合同类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 合同类型说明
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,8 @@ ImageResultResult::ImageResultResult() :
     m_scoreHasBeenSet(false),
     m_namesHasBeenSet(false),
     m_textHasBeenSet(false),
-    m_detailsHasBeenSet(false)
+    m_detailsHasBeenSet(false),
+    m_hitTypeHasBeenSet(false)
 {
 }
 
@@ -141,6 +142,16 @@ CoreInternalOutcome ImageResultResult::Deserialize(const rapidjson::Value &value
         m_detailsHasBeenSet = true;
     }
 
+    if (value.HasMember("HitType") && !value["HitType"].IsNull())
+    {
+        if (!value["HitType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageResultResult.HitType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hitType = string(value["HitType"].GetString());
+        m_hitTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -230,6 +241,14 @@ void ImageResultResult::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_hitTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HitType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hitType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -377,5 +396,21 @@ void ImageResultResult::SetDetails(const vector<ImageResultsResultDetail>& _deta
 bool ImageResultResult::DetailsHasBeenSet() const
 {
     return m_detailsHasBeenSet;
+}
+
+string ImageResultResult::GetHitType() const
+{
+    return m_hitType;
+}
+
+void ImageResultResult::SetHitType(const string& _hitType)
+{
+    m_hitType = _hitType;
+    m_hitTypeHasBeenSet = true;
+}
+
+bool ImageResultResult::HitTypeHasBeenSet() const
+{
+    return m_hitTypeHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,9 +22,11 @@ set(tds_public_header_model
   include/tencentcloud/tds/v20220801/model/DescribeTrustedIDResponse.h
   include/tencentcloud/tds/v20220801/model/DescribeFraudUltimateRequest.h
   include/tencentcloud/tds/v20220801/model/DescribeFraudPremiumResponse.h
+  include/tencentcloud/tds/v20220801/model/DescribeFinanceFraudUltimateRequest.h
   include/tencentcloud/tds/v20220801/model/DescribeFraudBaseRequest.h
   include/tencentcloud/tds/v20220801/model/DescribeFraudBaseResponse.h
   include/tencentcloud/tds/v20220801/model/DataAuthorizationInfo.h
+  include/tencentcloud/tds/v20220801/model/DescribeFinanceFraudUltimateResponse.h
   include/tencentcloud/tds/v20220801/model/DescribeTrustedIDRequest.h
   include/tencentcloud/tds/v20220801/model/DescribeFraudPremiumRequest.h
   include/tencentcloud/tds/v20220801/model/DescribeFraudUltimateResponse.h
@@ -36,9 +38,11 @@ set(tds_src
   src/v20220801/model/DescribeTrustedIDResponse.cpp
   src/v20220801/model/DescribeFraudUltimateRequest.cpp
   src/v20220801/model/DescribeFraudPremiumResponse.cpp
+  src/v20220801/model/DescribeFinanceFraudUltimateRequest.cpp
   src/v20220801/model/DescribeFraudBaseRequest.cpp
   src/v20220801/model/DescribeFraudBaseResponse.cpp
   src/v20220801/model/DataAuthorizationInfo.cpp
+  src/v20220801/model/DescribeFinanceFraudUltimateResponse.cpp
   src/v20220801/model/DescribeTrustedIDRequest.cpp
   src/v20220801/model/DescribeFraudPremiumRequest.cpp
   src/v20220801/model/DescribeFraudUltimateResponse.cpp

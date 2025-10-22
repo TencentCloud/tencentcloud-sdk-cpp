@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool EntrypointClassHasBeenSet() const;
 
                     /**
-                     * 获取主类入参
-                     * @return ProgramArgs 主类入参
+                     * 获取主类入参，需要区分下Sql作业配置，Jar作业配置，Python作业配置，具体参考下面的示例值
+                     * @return ProgramArgs 主类入参，需要区分下Sql作业配置，Jar作业配置，Python作业配置，具体参考下面的示例值
                      * 
                      */
                     std::string GetProgramArgs() const;
 
                     /**
-                     * 设置主类入参
-                     * @param _programArgs 主类入参
+                     * 设置主类入参，需要区分下Sql作业配置，Jar作业配置，Python作业配置，具体参考下面的示例值
+                     * @param _programArgs 主类入参，需要区分下Sql作业配置，Jar作业配置，Python作业配置，具体参考下面的示例值
                      * 
                      */
                     void SetProgramArgs(const std::string& _programArgs);
@@ -657,6 +657,174 @@ namespace TencentCloud
                      */
                     bool FlinkVersionHasBeenSet() const;
 
+                    /**
+                     * 获取JobManager cpu
+                     * @return JobManagerCpu JobManager cpu
+                     * 
+                     */
+                    double GetJobManagerCpu() const;
+
+                    /**
+                     * 设置JobManager cpu
+                     * @param _jobManagerCpu JobManager cpu
+                     * 
+                     */
+                    void SetJobManagerCpu(const double& _jobManagerCpu);
+
+                    /**
+                     * 判断参数 JobManagerCpu 是否已赋值
+                     * @return JobManagerCpu 是否已赋值
+                     * 
+                     */
+                    bool JobManagerCpuHasBeenSet() const;
+
+                    /**
+                     * 获取JobManager 内存
+                     * @return JobManagerMem JobManager 内存
+                     * 
+                     */
+                    double GetJobManagerMem() const;
+
+                    /**
+                     * 设置JobManager 内存
+                     * @param _jobManagerMem JobManager 内存
+                     * 
+                     */
+                    void SetJobManagerMem(const double& _jobManagerMem);
+
+                    /**
+                     * 判断参数 JobManagerMem 是否已赋值
+                     * @return JobManagerMem 是否已赋值
+                     * 
+                     */
+                    bool JobManagerMemHasBeenSet() const;
+
+                    /**
+                     * 获取TaskManager cpu
+                     * @return TaskManagerCpu TaskManager cpu
+                     * 
+                     */
+                    double GetTaskManagerCpu() const;
+
+                    /**
+                     * 设置TaskManager cpu
+                     * @param _taskManagerCpu TaskManager cpu
+                     * 
+                     */
+                    void SetTaskManagerCpu(const double& _taskManagerCpu);
+
+                    /**
+                     * 判断参数 TaskManagerCpu 是否已赋值
+                     * @return TaskManagerCpu 是否已赋值
+                     * 
+                     */
+                    bool TaskManagerCpuHasBeenSet() const;
+
+                    /**
+                     * 获取TaskManager 内存
+                     * @return TaskManagerMem TaskManager 内存
+                     * 
+                     */
+                    double GetTaskManagerMem() const;
+
+                    /**
+                     * 设置TaskManager 内存
+                     * @param _taskManagerMem TaskManager 内存
+                     * 
+                     */
+                    void SetTaskManagerMem(const double& _taskManagerMem);
+
+                    /**
+                     * 判断参数 TaskManagerMem 是否已赋值
+                     * @return TaskManagerMem 是否已赋值
+                     * 
+                     */
+                    bool TaskManagerMemHasBeenSet() const;
+
+                    /**
+                     * 获取0=默认使用老的 1=使用新的
+                     * @return UseOldSystemConnector 0=默认使用老的 1=使用新的
+                     * 
+                     */
+                    int64_t GetUseOldSystemConnector() const;
+
+                    /**
+                     * 设置0=默认使用老的 1=使用新的
+                     * @param _useOldSystemConnector 0=默认使用老的 1=使用新的
+                     * 
+                     */
+                    void SetUseOldSystemConnector(const int64_t& _useOldSystemConnector);
+
+                    /**
+                     * 判断参数 UseOldSystemConnector 是否已赋值
+                     * @return UseOldSystemConnector 是否已赋值
+                     * 
+                     */
+                    bool UseOldSystemConnectorHasBeenSet() const;
+
+                    /**
+                     * 获取压缩参数
+                     * @return ProgramArgsAfterGzip 压缩参数
+                     * 
+                     */
+                    std::string GetProgramArgsAfterGzip() const;
+
+                    /**
+                     * 设置压缩参数
+                     * @param _programArgsAfterGzip 压缩参数
+                     * 
+                     */
+                    void SetProgramArgsAfterGzip(const std::string& _programArgsAfterGzip);
+
+                    /**
+                     * 判断参数 ProgramArgsAfterGzip 是否已赋值
+                     * @return ProgramArgsAfterGzip 是否已赋值
+                     * 
+                     */
+                    bool ProgramArgsAfterGzipHasBeenSet() const;
+
+                    /**
+                     * 获取checkpoint 超时时间
+                     * @return CheckpointTimeoutSecond checkpoint 超时时间
+                     * 
+                     */
+                    int64_t GetCheckpointTimeoutSecond() const;
+
+                    /**
+                     * 设置checkpoint 超时时间
+                     * @param _checkpointTimeoutSecond checkpoint 超时时间
+                     * 
+                     */
+                    void SetCheckpointTimeoutSecond(const int64_t& _checkpointTimeoutSecond);
+
+                    /**
+                     * 判断参数 CheckpointTimeoutSecond 是否已赋值
+                     * @return CheckpointTimeoutSecond 是否已赋值
+                     * 
+                     */
+                    bool CheckpointTimeoutSecondHasBeenSet() const;
+
+                    /**
+                     * 获取checkpoint 间隔时间
+                     * @return CheckpointIntervalSecond checkpoint 间隔时间
+                     * 
+                     */
+                    int64_t GetCheckpointIntervalSecond() const;
+
+                    /**
+                     * 设置checkpoint 间隔时间
+                     * @param _checkpointIntervalSecond checkpoint 间隔时间
+                     * 
+                     */
+                    void SetCheckpointIntervalSecond(const int64_t& _checkpointIntervalSecond);
+
+                    /**
+                     * 判断参数 CheckpointIntervalSecond 是否已赋值
+                     * @return CheckpointIntervalSecond 是否已赋值
+                     * 
+                     */
+                    bool CheckpointIntervalSecondHasBeenSet() const;
+
                 private:
 
                     /**
@@ -672,7 +840,7 @@ namespace TencentCloud
                     bool m_entrypointClassHasBeenSet;
 
                     /**
-                     * 主类入参
+                     * 主类入参，需要区分下Sql作业配置，Jar作业配置，Python作业配置，具体参考下面的示例值
                      */
                     std::string m_programArgs;
                     bool m_programArgsHasBeenSet;
@@ -832,6 +1000,54 @@ namespace TencentCloud
                      */
                     std::string m_flinkVersion;
                     bool m_flinkVersionHasBeenSet;
+
+                    /**
+                     * JobManager cpu
+                     */
+                    double m_jobManagerCpu;
+                    bool m_jobManagerCpuHasBeenSet;
+
+                    /**
+                     * JobManager 内存
+                     */
+                    double m_jobManagerMem;
+                    bool m_jobManagerMemHasBeenSet;
+
+                    /**
+                     * TaskManager cpu
+                     */
+                    double m_taskManagerCpu;
+                    bool m_taskManagerCpuHasBeenSet;
+
+                    /**
+                     * TaskManager 内存
+                     */
+                    double m_taskManagerMem;
+                    bool m_taskManagerMemHasBeenSet;
+
+                    /**
+                     * 0=默认使用老的 1=使用新的
+                     */
+                    int64_t m_useOldSystemConnector;
+                    bool m_useOldSystemConnectorHasBeenSet;
+
+                    /**
+                     * 压缩参数
+                     */
+                    std::string m_programArgsAfterGzip;
+                    bool m_programArgsAfterGzipHasBeenSet;
+
+                    /**
+                     * checkpoint 超时时间
+                     */
+                    int64_t m_checkpointTimeoutSecond;
+                    bool m_checkpointTimeoutSecondHasBeenSet;
+
+                    /**
+                     * checkpoint 间隔时间
+                     */
+                    int64_t m_checkpointIntervalSecond;
+                    bool m_checkpointIntervalSecondHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -196,6 +196,27 @@ namespace TencentCloud
                     bool ProgressHasBeenSet() const;
 
                     /**
+                     * 获取回滚标记， 0未回滚 ，1回滚中，2已回滚
+                     * @return RollbackTag 回滚标记， 0未回滚 ，1回滚中，2已回滚
+                     * 
+                     */
+                    int64_t GetRollbackTag() const;
+
+                    /**
+                     * 设置回滚标记， 0未回滚 ，1回滚中，2已回滚
+                     * @param _rollbackTag 回滚标记， 0未回滚 ，1回滚中，2已回滚
+                     * 
+                     */
+                    void SetRollbackTag(const int64_t& _rollbackTag);
+
+                    /**
+                     * 判断参数 RollbackTag 是否已赋值
+                     * @return RollbackTag 是否已赋值
+                     * 
+                     */
+                    bool RollbackTagHasBeenSet() const;
+
+                    /**
                      * 获取操作者Uin
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubAccountUin 操作者Uin
@@ -219,6 +240,27 @@ namespace TencentCloud
                      * 
                      */
                     bool SubAccountUinHasBeenSet() const;
+
+                    /**
+                     * 获取自动扩容标识：0-非自动，1-自动
+                     * @return AutoScaleTag 自动扩容标识：0-非自动，1-自动
+                     * 
+                     */
+                    uint64_t GetAutoScaleTag() const;
+
+                    /**
+                     * 设置自动扩容标识：0-非自动，1-自动
+                     * @param _autoScaleTag 自动扩容标识：0-非自动，1-自动
+                     * 
+                     */
+                    void SetAutoScaleTag(const uint64_t& _autoScaleTag);
+
+                    /**
+                     * 判断参数 AutoScaleTag 是否已赋值
+                     * @return AutoScaleTag 是否已赋值
+                     * 
+                     */
+                    bool AutoScaleTagHasBeenSet() const;
 
                 private:
 
@@ -265,11 +307,23 @@ namespace TencentCloud
                     bool m_progressHasBeenSet;
 
                     /**
+                     * 回滚标记， 0未回滚 ，1回滚中，2已回滚
+                     */
+                    int64_t m_rollbackTag;
+                    bool m_rollbackTagHasBeenSet;
+
+                    /**
                      * 操作者Uin
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subAccountUin;
                     bool m_subAccountUinHasBeenSet;
+
+                    /**
+                     * 自动扩容标识：0-非自动，1-自动
+                     */
+                    uint64_t m_autoScaleTag;
+                    bool m_autoScaleTagHasBeenSet;
 
                 };
             }

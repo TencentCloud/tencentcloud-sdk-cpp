@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取生命体征总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 生命体征总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ValueUnitItem GetText() const;
 
                     /**
                      * 设置生命体征总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _text 生命体征总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetText(const ValueUnitItem& _text);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取体温
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BodyTemperature 体温
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ValueUnitItem GetBodyTemperature() const;
 
                     /**
                      * 设置体温
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bodyTemperature 体温
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBodyTemperature(const ValueUnitItem& _bodyTemperature);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取脉率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Pulse 脉率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ValueUnitItem GetPulse() const;
 
                     /**
                      * 设置脉率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pulse 脉率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPulse(const ValueUnitItem& _pulse);
@@ -125,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取心率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HeartRate 心率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ValueUnitItem GetHeartRate() const;
 
                     /**
                      * 设置心率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _heartRate 心率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHeartRate(const ValueUnitItem& _heartRate);
@@ -150,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取呼吸频率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BreathingRate 呼吸频率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ValueUnitItem GetBreathingRate() const;
 
                     /**
                      * 设置呼吸频率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _breathingRate 呼吸频率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBreathingRate(const ValueUnitItem& _breathingRate);
@@ -175,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取身高
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BodyHeight 身高
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ValueUnitItem GetBodyHeight() const;
 
                     /**
                      * 设置身高
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bodyHeight 身高
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBodyHeight(const ValueUnitItem& _bodyHeight);
@@ -200,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取体重
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BodyWeight 体重
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ValueUnitItem GetBodyWeight() const;
 
                     /**
                      * 设置体重
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bodyWeight 体重
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBodyWeight(const ValueUnitItem& _bodyWeight);
@@ -225,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取体质指数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BodyMassIndex 体质指数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ValueUnitItem GetBodyMassIndex() const;
 
                     /**
                      * 设置体质指数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bodyMassIndex 体质指数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBodyMassIndex(const ValueUnitItem& _bodyMassIndex);
@@ -250,18 +218,14 @@ namespace TencentCloud
 
                     /**
                      * 获取腰围
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Waistline 腰围
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ValueUnitItem GetWaistline() const;
 
                     /**
                      * 设置腰围
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _waistline 腰围
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWaistline(const ValueUnitItem& _waistline);
@@ -275,18 +239,14 @@ namespace TencentCloud
 
                     /**
                      * 获取血压
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BloodPressure 血压
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     GeneralExaminationVitalSignBloodPressure GetBloodPressure() const;
 
                     /**
                      * 设置血压
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bloodPressure 血压
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBloodPressure(const GeneralExaminationVitalSignBloodPressure& _bloodPressure);
@@ -302,70 +262,60 @@ namespace TencentCloud
 
                     /**
                      * 生命体征总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ValueUnitItem m_text;
                     bool m_textHasBeenSet;
 
                     /**
                      * 体温
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ValueUnitItem m_bodyTemperature;
                     bool m_bodyTemperatureHasBeenSet;
 
                     /**
                      * 脉率
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ValueUnitItem m_pulse;
                     bool m_pulseHasBeenSet;
 
                     /**
                      * 心率
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ValueUnitItem m_heartRate;
                     bool m_heartRateHasBeenSet;
 
                     /**
                      * 呼吸频率
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ValueUnitItem m_breathingRate;
                     bool m_breathingRateHasBeenSet;
 
                     /**
                      * 身高
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ValueUnitItem m_bodyHeight;
                     bool m_bodyHeightHasBeenSet;
 
                     /**
                      * 体重
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ValueUnitItem m_bodyWeight;
                     bool m_bodyWeightHasBeenSet;
 
                     /**
                      * 体质指数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ValueUnitItem m_bodyMassIndex;
                     bool m_bodyMassIndexHasBeenSet;
 
                     /**
                      * 腰围
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ValueUnitItem m_waistline;
                     bool m_waistlineHasBeenSet;
 
                     /**
                      * 血压
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     GeneralExaminationVitalSignBloodPressure m_bloodPressure;
                     bool m_bloodPressureHasBeenSet;

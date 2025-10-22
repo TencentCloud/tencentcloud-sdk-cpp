@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取该参数表示任务列表每页展示的任务条数，**默认值为10**（每页展示10条任务）。
-                     * @return Limit 该参数表示任务列表每页展示的任务条数，**默认值为10**（每页展示10条任务）。
+                     * 获取该参数表示任务列表每页展示的任务条数，**默认值为10，最大值为100**（每页展示10条任务）。
+                     * @return Limit 该参数表示任务列表每页展示的任务条数，**默认值为10，最大值为100**（每页展示10条任务）。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置该参数表示任务列表每页展示的任务条数，**默认值为10**（每页展示10条任务）。
-                     * @param _limit 该参数表示任务列表每页展示的任务条数，**默认值为10**（每页展示10条任务）。
+                     * 设置该参数表示任务列表每页展示的任务条数，**默认值为10，最大值为100**（每页展示10条任务）。
+                     * @param _limit 该参数表示任务列表每页展示的任务条数，**默认值为10，最大值为100**（每页展示10条任务）。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -151,7 +151,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 该参数表示任务列表每页展示的任务条数，**默认值为10**（每页展示10条任务）。
+                     * 该参数表示任务列表每页展示的任务条数，**默认值为10，最大值为100**（每页展示10条任务）。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

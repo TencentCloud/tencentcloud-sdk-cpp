@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,16 @@ ApplicationForPage::ApplicationForPage() :
     m_apigatewayServiceIdHasBeenSet(false),
     m_applicationRemarkNameHasBeenSet(false),
     m_serviceConfigListHasBeenSet(false),
-    m_ignoreCreateImageRepositoryHasBeenSet(false)
+    m_ignoreCreateImageRepositoryHasBeenSet(false),
+    m_apmInstanceIdHasBeenSet(false),
+    m_apmInstanceNameHasBeenSet(false),
+    m_syncDeleteImageRepositoryHasBeenSet(false),
+    m_microserviceSubTypeHasBeenSet(false),
+    m_programLanguageHasBeenSet(false),
+    m_frameworkTypeHasBeenSet(false),
+    m_serviceGovernanceConfigHasBeenSet(false),
+    m_microserviceTypeListHasBeenSet(false),
+    m_createSameNameImageRepositoryHasBeenSet(false)
 {
 }
 
@@ -193,6 +202,106 @@ CoreInternalOutcome ApplicationForPage::Deserialize(const rapidjson::Value &valu
         m_ignoreCreateImageRepositoryHasBeenSet = true;
     }
 
+    if (value.HasMember("ApmInstanceId") && !value["ApmInstanceId"].IsNull())
+    {
+        if (!value["ApmInstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApplicationForPage.ApmInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_apmInstanceId = string(value["ApmInstanceId"].GetString());
+        m_apmInstanceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApmInstanceName") && !value["ApmInstanceName"].IsNull())
+    {
+        if (!value["ApmInstanceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApplicationForPage.ApmInstanceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_apmInstanceName = string(value["ApmInstanceName"].GetString());
+        m_apmInstanceNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("SyncDeleteImageRepository") && !value["SyncDeleteImageRepository"].IsNull())
+    {
+        if (!value["SyncDeleteImageRepository"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApplicationForPage.SyncDeleteImageRepository` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_syncDeleteImageRepository = value["SyncDeleteImageRepository"].GetBool();
+        m_syncDeleteImageRepositoryHasBeenSet = true;
+    }
+
+    if (value.HasMember("MicroserviceSubType") && !value["MicroserviceSubType"].IsNull())
+    {
+        if (!value["MicroserviceSubType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApplicationForPage.MicroserviceSubType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_microserviceSubType = string(value["MicroserviceSubType"].GetString());
+        m_microserviceSubTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProgramLanguage") && !value["ProgramLanguage"].IsNull())
+    {
+        if (!value["ProgramLanguage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApplicationForPage.ProgramLanguage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_programLanguage = string(value["ProgramLanguage"].GetString());
+        m_programLanguageHasBeenSet = true;
+    }
+
+    if (value.HasMember("FrameworkType") && !value["FrameworkType"].IsNull())
+    {
+        if (!value["FrameworkType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApplicationForPage.FrameworkType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_frameworkType = string(value["FrameworkType"].GetString());
+        m_frameworkTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ServiceGovernanceConfig") && !value["ServiceGovernanceConfig"].IsNull())
+    {
+        if (!value["ServiceGovernanceConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApplicationForPage.ServiceGovernanceConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_serviceGovernanceConfig.Deserialize(value["ServiceGovernanceConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_serviceGovernanceConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("MicroserviceTypeList") && !value["MicroserviceTypeList"].IsNull())
+    {
+        if (!value["MicroserviceTypeList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ApplicationForPage.MicroserviceTypeList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["MicroserviceTypeList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_microserviceTypeList.push_back((*itr).GetString());
+        }
+        m_microserviceTypeListHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateSameNameImageRepository") && !value["CreateSameNameImageRepository"].IsNull())
+    {
+        if (!value["CreateSameNameImageRepository"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApplicationForPage.CreateSameNameImageRepository` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_createSameNameImageRepository = value["CreateSameNameImageRepository"].GetBool();
+        m_createSameNameImageRepositoryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -317,6 +426,84 @@ void ApplicationForPage::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "IgnoreCreateImageRepository";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ignoreCreateImageRepository, allocator);
+    }
+
+    if (m_apmInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApmInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_apmInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_apmInstanceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApmInstanceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_apmInstanceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_syncDeleteImageRepositoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncDeleteImageRepository";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_syncDeleteImageRepository, allocator);
+    }
+
+    if (m_microserviceSubTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MicroserviceSubType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_microserviceSubType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_programLanguageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProgramLanguage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_programLanguage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_frameworkTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FrameworkType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_frameworkType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceGovernanceConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceGovernanceConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_serviceGovernanceConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_microserviceTypeListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MicroserviceTypeList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_microserviceTypeList.begin(); itr != m_microserviceTypeList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_createSameNameImageRepositoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateSameNameImageRepository";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_createSameNameImageRepository, allocator);
     }
 
 }
@@ -544,5 +731,149 @@ void ApplicationForPage::SetIgnoreCreateImageRepository(const bool& _ignoreCreat
 bool ApplicationForPage::IgnoreCreateImageRepositoryHasBeenSet() const
 {
     return m_ignoreCreateImageRepositoryHasBeenSet;
+}
+
+string ApplicationForPage::GetApmInstanceId() const
+{
+    return m_apmInstanceId;
+}
+
+void ApplicationForPage::SetApmInstanceId(const string& _apmInstanceId)
+{
+    m_apmInstanceId = _apmInstanceId;
+    m_apmInstanceIdHasBeenSet = true;
+}
+
+bool ApplicationForPage::ApmInstanceIdHasBeenSet() const
+{
+    return m_apmInstanceIdHasBeenSet;
+}
+
+string ApplicationForPage::GetApmInstanceName() const
+{
+    return m_apmInstanceName;
+}
+
+void ApplicationForPage::SetApmInstanceName(const string& _apmInstanceName)
+{
+    m_apmInstanceName = _apmInstanceName;
+    m_apmInstanceNameHasBeenSet = true;
+}
+
+bool ApplicationForPage::ApmInstanceNameHasBeenSet() const
+{
+    return m_apmInstanceNameHasBeenSet;
+}
+
+bool ApplicationForPage::GetSyncDeleteImageRepository() const
+{
+    return m_syncDeleteImageRepository;
+}
+
+void ApplicationForPage::SetSyncDeleteImageRepository(const bool& _syncDeleteImageRepository)
+{
+    m_syncDeleteImageRepository = _syncDeleteImageRepository;
+    m_syncDeleteImageRepositoryHasBeenSet = true;
+}
+
+bool ApplicationForPage::SyncDeleteImageRepositoryHasBeenSet() const
+{
+    return m_syncDeleteImageRepositoryHasBeenSet;
+}
+
+string ApplicationForPage::GetMicroserviceSubType() const
+{
+    return m_microserviceSubType;
+}
+
+void ApplicationForPage::SetMicroserviceSubType(const string& _microserviceSubType)
+{
+    m_microserviceSubType = _microserviceSubType;
+    m_microserviceSubTypeHasBeenSet = true;
+}
+
+bool ApplicationForPage::MicroserviceSubTypeHasBeenSet() const
+{
+    return m_microserviceSubTypeHasBeenSet;
+}
+
+string ApplicationForPage::GetProgramLanguage() const
+{
+    return m_programLanguage;
+}
+
+void ApplicationForPage::SetProgramLanguage(const string& _programLanguage)
+{
+    m_programLanguage = _programLanguage;
+    m_programLanguageHasBeenSet = true;
+}
+
+bool ApplicationForPage::ProgramLanguageHasBeenSet() const
+{
+    return m_programLanguageHasBeenSet;
+}
+
+string ApplicationForPage::GetFrameworkType() const
+{
+    return m_frameworkType;
+}
+
+void ApplicationForPage::SetFrameworkType(const string& _frameworkType)
+{
+    m_frameworkType = _frameworkType;
+    m_frameworkTypeHasBeenSet = true;
+}
+
+bool ApplicationForPage::FrameworkTypeHasBeenSet() const
+{
+    return m_frameworkTypeHasBeenSet;
+}
+
+ServiceGovernanceConfig ApplicationForPage::GetServiceGovernanceConfig() const
+{
+    return m_serviceGovernanceConfig;
+}
+
+void ApplicationForPage::SetServiceGovernanceConfig(const ServiceGovernanceConfig& _serviceGovernanceConfig)
+{
+    m_serviceGovernanceConfig = _serviceGovernanceConfig;
+    m_serviceGovernanceConfigHasBeenSet = true;
+}
+
+bool ApplicationForPage::ServiceGovernanceConfigHasBeenSet() const
+{
+    return m_serviceGovernanceConfigHasBeenSet;
+}
+
+vector<string> ApplicationForPage::GetMicroserviceTypeList() const
+{
+    return m_microserviceTypeList;
+}
+
+void ApplicationForPage::SetMicroserviceTypeList(const vector<string>& _microserviceTypeList)
+{
+    m_microserviceTypeList = _microserviceTypeList;
+    m_microserviceTypeListHasBeenSet = true;
+}
+
+bool ApplicationForPage::MicroserviceTypeListHasBeenSet() const
+{
+    return m_microserviceTypeListHasBeenSet;
+}
+
+bool ApplicationForPage::GetCreateSameNameImageRepository() const
+{
+    return m_createSameNameImageRepository;
+}
+
+void ApplicationForPage::SetCreateSameNameImageRepository(const bool& _createSameNameImageRepository)
+{
+    m_createSameNameImageRepository = _createSameNameImageRepository;
+    m_createSameNameImageRepositoryHasBeenSet = true;
+}
+
+bool ApplicationForPage::CreateSameNameImageRepositoryHasBeenSet() const
+{
+    return m_createSameNameImageRepositoryHasBeenSet;
 }
 

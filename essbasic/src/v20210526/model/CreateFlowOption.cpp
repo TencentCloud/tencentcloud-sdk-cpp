@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,12 @@ CreateFlowOption::CreateFlowOption() :
     m_hideShowFlowTypeHasBeenSet(false),
     m_hideShowDeadlineHasBeenSet(false),
     m_canSkipAddApproverHasBeenSet(false),
+    m_forbidEditApproverHasBeenSet(false),
     m_customCreateFlowDescriptionHasBeenSet(false),
     m_forbidEditFillComponentHasBeenSet(false),
-    m_skipUploadFileHasBeenSet(false)
+    m_skipUploadFileHasBeenSet(false),
+    m_signComponentConfigHasBeenSet(false),
+    m_forbidEditWatermarkHasBeenSet(false)
 {
 }
 
@@ -87,6 +90,16 @@ CoreInternalOutcome CreateFlowOption::Deserialize(const rapidjson::Value &value)
         m_canSkipAddApproverHasBeenSet = true;
     }
 
+    if (value.HasMember("ForbidEditApprover") && !value["ForbidEditApprover"].IsNull())
+    {
+        if (!value["ForbidEditApprover"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateFlowOption.ForbidEditApprover` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_forbidEditApprover = value["ForbidEditApprover"].GetBool();
+        m_forbidEditApproverHasBeenSet = true;
+    }
+
     if (value.HasMember("CustomCreateFlowDescription") && !value["CustomCreateFlowDescription"].IsNull())
     {
         if (!value["CustomCreateFlowDescription"].IsString())
@@ -115,6 +128,33 @@ CoreInternalOutcome CreateFlowOption::Deserialize(const rapidjson::Value &value)
         }
         m_skipUploadFile = value["SkipUploadFile"].GetBool();
         m_skipUploadFileHasBeenSet = true;
+    }
+
+    if (value.HasMember("SignComponentConfig") && !value["SignComponentConfig"].IsNull())
+    {
+        if (!value["SignComponentConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateFlowOption.SignComponentConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_signComponentConfig.Deserialize(value["SignComponentConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_signComponentConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("ForbidEditWatermark") && !value["ForbidEditWatermark"].IsNull())
+    {
+        if (!value["ForbidEditWatermark"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateFlowOption.ForbidEditWatermark` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_forbidEditWatermark = value["ForbidEditWatermark"].GetBool();
+        m_forbidEditWatermarkHasBeenSet = true;
     }
 
 
@@ -164,6 +204,14 @@ void CreateFlowOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         value.AddMember(iKey, m_canSkipAddApprover, allocator);
     }
 
+    if (m_forbidEditApproverHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForbidEditApprover";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_forbidEditApprover, allocator);
+    }
+
     if (m_customCreateFlowDescriptionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -186,6 +234,23 @@ void CreateFlowOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "SkipUploadFile";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_skipUploadFile, allocator);
+    }
+
+    if (m_signComponentConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignComponentConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_signComponentConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_forbidEditWatermarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForbidEditWatermark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_forbidEditWatermark, allocator);
     }
 
 }
@@ -271,6 +336,22 @@ bool CreateFlowOption::CanSkipAddApproverHasBeenSet() const
     return m_canSkipAddApproverHasBeenSet;
 }
 
+bool CreateFlowOption::GetForbidEditApprover() const
+{
+    return m_forbidEditApprover;
+}
+
+void CreateFlowOption::SetForbidEditApprover(const bool& _forbidEditApprover)
+{
+    m_forbidEditApprover = _forbidEditApprover;
+    m_forbidEditApproverHasBeenSet = true;
+}
+
+bool CreateFlowOption::ForbidEditApproverHasBeenSet() const
+{
+    return m_forbidEditApproverHasBeenSet;
+}
+
 string CreateFlowOption::GetCustomCreateFlowDescription() const
 {
     return m_customCreateFlowDescription;
@@ -317,5 +398,37 @@ void CreateFlowOption::SetSkipUploadFile(const bool& _skipUploadFile)
 bool CreateFlowOption::SkipUploadFileHasBeenSet() const
 {
     return m_skipUploadFileHasBeenSet;
+}
+
+SignComponentConfig CreateFlowOption::GetSignComponentConfig() const
+{
+    return m_signComponentConfig;
+}
+
+void CreateFlowOption::SetSignComponentConfig(const SignComponentConfig& _signComponentConfig)
+{
+    m_signComponentConfig = _signComponentConfig;
+    m_signComponentConfigHasBeenSet = true;
+}
+
+bool CreateFlowOption::SignComponentConfigHasBeenSet() const
+{
+    return m_signComponentConfigHasBeenSet;
+}
+
+bool CreateFlowOption::GetForbidEditWatermark() const
+{
+    return m_forbidEditWatermark;
+}
+
+void CreateFlowOption::SetForbidEditWatermark(const bool& _forbidEditWatermark)
+{
+    m_forbidEditWatermark = _forbidEditWatermark;
+    m_forbidEditWatermarkHasBeenSet = true;
+}
+
+bool CreateFlowOption::ForbidEditWatermarkHasBeenSet() const
+{
+    return m_forbidEditWatermarkHasBeenSet;
 }
 

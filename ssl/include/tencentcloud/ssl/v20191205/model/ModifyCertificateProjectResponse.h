@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取修改所属项目成功的证书集合。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuccessCertificates 修改所属项目成功的证书集合。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSuccessCertificates() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取修改所属项目失败的证书集合。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailCertificates 修改所属项目失败的证书集合。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetFailCertificates() const;
@@ -79,14 +75,12 @@ namespace TencentCloud
 
                     /**
                      * 修改所属项目成功的证书集合。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_successCertificates;
                     bool m_successCertificatesHasBeenSet;
 
                     /**
                      * 修改所属项目失败的证书集合。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_failCertificates;
                     bool m_failCertificatesHasBeenSet;

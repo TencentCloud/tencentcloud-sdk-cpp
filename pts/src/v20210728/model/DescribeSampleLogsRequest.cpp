@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ DescribeSampleLogsRequest::DescribeSampleLogsRequest() :
     m_instanceRegionHasBeenSet(false),
     m_instanceHasBeenSet(false),
     m_logTypeHasBeenSet(false),
+    m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_reactionTimeRangeHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -127,6 +128,14 @@ string DescribeSampleLogsRequest::ToJsonString() const
         string key = "LogType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_logType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
     }
 
     if (m_limitHasBeenSet)
@@ -344,6 +353,22 @@ void DescribeSampleLogsRequest::SetLogType(const string& _logType)
 bool DescribeSampleLogsRequest::LogTypeHasBeenSet() const
 {
     return m_logTypeHasBeenSet;
+}
+
+int64_t DescribeSampleLogsRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeSampleLogsRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeSampleLogsRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
 }
 
 int64_t DescribeSampleLogsRequest::GetLimit() const

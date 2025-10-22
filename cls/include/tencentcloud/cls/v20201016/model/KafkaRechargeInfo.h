@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Kafka数据订阅配置的ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id Kafka数据订阅配置的ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置Kafka数据订阅配置的ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id Kafka数据订阅配置的ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicId 日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicId 日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Kafka导入任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name Kafka导入任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置Kafka导入任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name Kafka导入任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -125,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KafkaType 导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetKafkaType() const;
 
                     /**
                      * 设置导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _kafkaType 导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKafkaType(const uint64_t& _kafkaType);
@@ -150,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取腾讯云CKafka实例ID，KafkaType为0时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KafkaInstance 腾讯云CKafka实例ID，KafkaType为0时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKafkaInstance() const;
 
                     /**
                      * 设置腾讯云CKafka实例ID，KafkaType为0时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _kafkaInstance 腾讯云CKafka实例ID，KafkaType为0时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKafkaInstance(const std::string& _kafkaInstance);
@@ -175,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServerAddr 服务地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServerAddr() const;
 
                     /**
                      * 设置服务地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serverAddr 服务地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServerAddr(const std::string& _serverAddr);
@@ -200,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ServerAddr是否为加密连接	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsEncryptionAddr ServerAddr是否为加密连接	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsEncryptionAddr() const;
 
                     /**
                      * 设置ServerAddr是否为加密连接	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isEncryptionAddr ServerAddr是否为加密连接	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsEncryptionAddr(const bool& _isEncryptionAddr);
@@ -246,18 +218,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserKafkaTopics 用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserKafkaTopics() const;
 
                     /**
                      * 设置用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userKafkaTopics 用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserKafkaTopics(const std::string& _userKafkaTopics);
@@ -271,18 +239,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户Kafka消费组名称	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConsumerGroupName 用户Kafka消费组名称	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConsumerGroupName() const;
 
                     /**
                      * 设置用户Kafka消费组名称	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _consumerGroupName 用户Kafka消费组名称	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConsumerGroupName(const std::string& _consumerGroupName);
@@ -296,18 +260,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态 ，1：运行中；2：暂停。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态 ，1：运行中；2：暂停。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置状态 ，1：运行中；2：暂停。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 状态 ，1：运行中；2：暂停。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -321,18 +281,14 @@ namespace TencentCloud
 
                     /**
                      * 获取导入数据位置，-2:最早（默认），-1：最晚
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Offset 导入数据位置，-2:最早（默认），-1：最晚
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置导入数据位置，-2:最早（默认），-1：最晚
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _offset 导入数据位置，-2:最早（默认），-1：最晚
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -345,19 +301,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取创建时间。格式`YYYY-MM-DD HH:MM:SS`
+                     * @return CreateTime 创建时间。格式`YYYY-MM-DD HH:MM:SS`
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置创建时间。格式`YYYY-MM-DD HH:MM:SS`
+                     * @param _createTime 创建时间。格式`YYYY-MM-DD HH:MM:SS`
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -370,19 +322,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdateTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取更新时间。格式`YYYY-MM-DD HH:MM:SS`
+                     * @return UpdateTime 更新时间。格式`YYYY-MM-DD HH:MM:SS`
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _updateTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置更新时间。格式`YYYY-MM-DD HH:MM:SS`
+                     * @param _updateTime 更新时间。格式`YYYY-MM-DD HH:MM:SS`
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -396,18 +344,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志导入规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogRechargeRule 日志导入规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     LogRechargeRuleInfo GetLogRechargeRule() const;
 
                     /**
                      * 设置日志导入规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logRechargeRule 日志导入规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogRechargeRule(const LogRechargeRuleInfo& _logRechargeRule);
@@ -423,49 +367,42 @@ namespace TencentCloud
 
                     /**
                      * Kafka数据订阅配置的ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
                      * Kafka导入任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_kafkaType;
                     bool m_kafkaTypeHasBeenSet;
 
                     /**
                      * 腾讯云CKafka实例ID，KafkaType为0时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_kafkaInstance;
                     bool m_kafkaInstanceHasBeenSet;
 
                     /**
                      * 服务地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serverAddr;
                     bool m_serverAddrHasBeenSet;
 
                     /**
                      * ServerAddr是否为加密连接	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isEncryptionAddr;
                     bool m_isEncryptionAddrHasBeenSet;
@@ -478,49 +415,42 @@ namespace TencentCloud
 
                     /**
                      * 用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userKafkaTopics;
                     bool m_userKafkaTopicsHasBeenSet;
 
                     /**
                      * 用户Kafka消费组名称	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_consumerGroupName;
                     bool m_consumerGroupNameHasBeenSet;
 
                     /**
                      * 状态 ，1：运行中；2：暂停。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 导入数据位置，-2:最早（默认），-1：最晚
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 创建时间。格式`YYYY-MM-DD HH:MM:SS`
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 更新时间。格式`YYYY-MM-DD HH:MM:SS`
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
                      * 日志导入规则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     LogRechargeRuleInfo m_logRechargeRule;
                     bool m_logRechargeRuleHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,10 +67,20 @@ namespace TencentCloud
                     /**
                      * 获取过滤条件。<br>
 
-<li> invocation-id - String - 是否必填：否 -（过滤条件）按照执行活动ID过滤。</li> <li> invocation-task-id - String - 是否必填：否 -（过滤条件）按照执行任务ID过滤。</li> <li> instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。</li> <li> command-id - String - 是否必填：否 -（过滤条件）按照命令ID过滤。</li> <br>每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `InvocationTaskIds` 和 `Filters` 。
+- invocation-task-id - String - 是否必填：否 -（过滤条件）按照执行任务ID过滤。
+- invocation-id - String - 是否必填：否 -（过滤条件）按照执行活动ID过滤。可通过 [DescribeInvocations(查询执行活动)](https://cloud.tencent.com/document/api/1340/52679) 接口获取。
+- instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。可通过对应云产品的查询实例接口获取实例 ID。目前支持实例类型： CVM、Lighthouse、TAT 托管实例
+- command-id - String - 是否必填：否 -（过滤条件）按照命令ID过滤。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取。
+
+每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `InvocationTaskIds` 和 `Filters` 。
                      * @return Filters 过滤条件。<br>
 
-<li> invocation-id - String - 是否必填：否 -（过滤条件）按照执行活动ID过滤。</li> <li> invocation-task-id - String - 是否必填：否 -（过滤条件）按照执行任务ID过滤。</li> <li> instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。</li> <li> command-id - String - 是否必填：否 -（过滤条件）按照命令ID过滤。</li> <br>每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `InvocationTaskIds` 和 `Filters` 。
+- invocation-task-id - String - 是否必填：否 -（过滤条件）按照执行任务ID过滤。
+- invocation-id - String - 是否必填：否 -（过滤条件）按照执行活动ID过滤。可通过 [DescribeInvocations(查询执行活动)](https://cloud.tencent.com/document/api/1340/52679) 接口获取。
+- instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。可通过对应云产品的查询实例接口获取实例 ID。目前支持实例类型： CVM、Lighthouse、TAT 托管实例
+- command-id - String - 是否必填：否 -（过滤条件）按照命令ID过滤。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取。
+
+每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `InvocationTaskIds` 和 `Filters` 。
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
@@ -78,10 +88,20 @@ namespace TencentCloud
                     /**
                      * 设置过滤条件。<br>
 
-<li> invocation-id - String - 是否必填：否 -（过滤条件）按照执行活动ID过滤。</li> <li> invocation-task-id - String - 是否必填：否 -（过滤条件）按照执行任务ID过滤。</li> <li> instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。</li> <li> command-id - String - 是否必填：否 -（过滤条件）按照命令ID过滤。</li> <br>每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `InvocationTaskIds` 和 `Filters` 。
+- invocation-task-id - String - 是否必填：否 -（过滤条件）按照执行任务ID过滤。
+- invocation-id - String - 是否必填：否 -（过滤条件）按照执行活动ID过滤。可通过 [DescribeInvocations(查询执行活动)](https://cloud.tencent.com/document/api/1340/52679) 接口获取。
+- instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。可通过对应云产品的查询实例接口获取实例 ID。目前支持实例类型： CVM、Lighthouse、TAT 托管实例
+- command-id - String - 是否必填：否 -（过滤条件）按照命令ID过滤。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取。
+
+每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `InvocationTaskIds` 和 `Filters` 。
                      * @param _filters 过滤条件。<br>
 
-<li> invocation-id - String - 是否必填：否 -（过滤条件）按照执行活动ID过滤。</li> <li> invocation-task-id - String - 是否必填：否 -（过滤条件）按照执行任务ID过滤。</li> <li> instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。</li> <li> command-id - String - 是否必填：否 -（过滤条件）按照命令ID过滤。</li> <br>每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `InvocationTaskIds` 和 `Filters` 。
+- invocation-task-id - String - 是否必填：否 -（过滤条件）按照执行任务ID过滤。
+- invocation-id - String - 是否必填：否 -（过滤条件）按照执行活动ID过滤。可通过 [DescribeInvocations(查询执行活动)](https://cloud.tencent.com/document/api/1340/52679) 接口获取。
+- instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。可通过对应云产品的查询实例接口获取实例 ID。目前支持实例类型： CVM、Lighthouse、TAT 托管实例
+- command-id - String - 是否必填：否 -（过滤条件）按照命令ID过滤。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取。
+
+每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `InvocationTaskIds` 和 `Filters` 。
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -136,23 +156,35 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取是否隐藏输出，取值范围：
+                     * 获取是否隐藏命令输出结果，取值范围：
 
-<ul> <li>true：隐藏输出</li> <li>false：不隐藏</li> </ul> 默认为 true。
-                     * @return HideOutput 是否隐藏输出，取值范围：
+- true：隐藏输出
+- false：不隐藏
+ 
+默认为 true。
+                     * @return HideOutput 是否隐藏命令输出结果，取值范围：
 
-<ul> <li>true：隐藏输出</li> <li>false：不隐藏</li> </ul> 默认为 true。
+- true：隐藏输出
+- false：不隐藏
+ 
+默认为 true。
                      * 
                      */
                     bool GetHideOutput() const;
 
                     /**
-                     * 设置是否隐藏输出，取值范围：
+                     * 设置是否隐藏命令输出结果，取值范围：
 
-<ul> <li>true：隐藏输出</li> <li>false：不隐藏</li> </ul> 默认为 true。
-                     * @param _hideOutput 是否隐藏输出，取值范围：
+- true：隐藏输出
+- false：不隐藏
+ 
+默认为 true。
+                     * @param _hideOutput 是否隐藏命令输出结果，取值范围：
 
-<ul> <li>true：隐藏输出</li> <li>false：不隐藏</li> </ul> 默认为 true。
+- true：隐藏输出
+- false：不隐藏
+ 
+默认为 true。
                      * 
                      */
                     void SetHideOutput(const bool& _hideOutput);
@@ -175,7 +207,12 @@ namespace TencentCloud
                     /**
                      * 过滤条件。<br>
 
-<li> invocation-id - String - 是否必填：否 -（过滤条件）按照执行活动ID过滤。</li> <li> invocation-task-id - String - 是否必填：否 -（过滤条件）按照执行任务ID过滤。</li> <li> instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。</li> <li> command-id - String - 是否必填：否 -（过滤条件）按照命令ID过滤。</li> <br>每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `InvocationTaskIds` 和 `Filters` 。
+- invocation-task-id - String - 是否必填：否 -（过滤条件）按照执行任务ID过滤。
+- invocation-id - String - 是否必填：否 -（过滤条件）按照执行活动ID过滤。可通过 [DescribeInvocations(查询执行活动)](https://cloud.tencent.com/document/api/1340/52679) 接口获取。
+- instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。可通过对应云产品的查询实例接口获取实例 ID。目前支持实例类型： CVM、Lighthouse、TAT 托管实例
+- command-id - String - 是否必填：否 -（过滤条件）按照命令ID过滤。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取。
+
+每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `InvocationTaskIds` 和 `Filters` 。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
@@ -193,9 +230,12 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 是否隐藏输出，取值范围：
+                     * 是否隐藏命令输出结果，取值范围：
 
-<ul> <li>true：隐藏输出</li> <li>false：不隐藏</li> </ul> 默认为 true。
+- true：隐藏输出
+- false：不隐藏
+ 
+默认为 true。
                      */
                     bool m_hideOutput;
                     bool m_hideOutputHasBeenSet;

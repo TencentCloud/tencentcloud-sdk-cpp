@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,9 @@ ProdSchedulerTask::ProdSchedulerTask() :
     m_workflowIdHasBeenSet(false),
     m_taskIdHasBeenSet(false),
     m_taskNameHasBeenSet(false),
-    m_cycleTypeHasBeenSet(false)
+    m_cycleTypeHasBeenSet(false),
+    m_taskTypeHasBeenSet(false),
+    m_scheduleTimeZoneHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome ProdSchedulerTask::Deserialize(const rapidjson::Value &value
         m_cycleTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskType") && !value["TaskType"].IsNull())
+    {
+        if (!value["TaskType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProdSchedulerTask.TaskType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskType = string(value["TaskType"].GetString());
+        m_taskTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ScheduleTimeZone") && !value["ScheduleTimeZone"].IsNull())
+    {
+        if (!value["ScheduleTimeZone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProdSchedulerTask.ScheduleTimeZone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scheduleTimeZone = string(value["ScheduleTimeZone"].GetString());
+        m_scheduleTimeZoneHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +132,22 @@ void ProdSchedulerTask::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "CycleType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cycleType, allocator);
+    }
+
+    if (m_taskTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scheduleTimeZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleTimeZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scheduleTimeZone.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +215,37 @@ void ProdSchedulerTask::SetCycleType(const int64_t& _cycleType)
 bool ProdSchedulerTask::CycleTypeHasBeenSet() const
 {
     return m_cycleTypeHasBeenSet;
+}
+
+string ProdSchedulerTask::GetTaskType() const
+{
+    return m_taskType;
+}
+
+void ProdSchedulerTask::SetTaskType(const string& _taskType)
+{
+    m_taskType = _taskType;
+    m_taskTypeHasBeenSet = true;
+}
+
+bool ProdSchedulerTask::TaskTypeHasBeenSet() const
+{
+    return m_taskTypeHasBeenSet;
+}
+
+string ProdSchedulerTask::GetScheduleTimeZone() const
+{
+    return m_scheduleTimeZone;
+}
+
+void ProdSchedulerTask::SetScheduleTimeZone(const string& _scheduleTimeZone)
+{
+    m_scheduleTimeZone = _scheduleTimeZone;
+    m_scheduleTimeZoneHasBeenSet = true;
+}
+
+bool ProdSchedulerTask::ScheduleTimeZoneHasBeenSet() const
+{
+    return m_scheduleTimeZoneHasBeenSet;
 }
 

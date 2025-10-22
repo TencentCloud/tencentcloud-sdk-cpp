@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,8 @@ KafkaParam::KafkaParam() :
     m_compressionTypeHasBeenSet(false),
     m_msgMultipleHasBeenSet(false),
     m_connectorSyncTypeHasBeenSet(false),
-    m_keepPartitionHasBeenSet(false)
+    m_keepPartitionHasBeenSet(false),
+    m_topicRegularExpressionHasBeenSet(false)
 {
 }
 
@@ -237,6 +238,16 @@ CoreInternalOutcome KafkaParam::Deserialize(const rapidjson::Value &value)
         m_keepPartitionHasBeenSet = true;
     }
 
+    if (value.HasMember("TopicRegularExpression") && !value["TopicRegularExpression"].IsNull())
+    {
+        if (!value["TopicRegularExpression"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KafkaParam.TopicRegularExpression` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_topicRegularExpression = string(value["TopicRegularExpression"].GetString());
+        m_topicRegularExpressionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -393,6 +404,14 @@ void KafkaParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "KeepPartition";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_keepPartition, allocator);
+    }
+
+    if (m_topicRegularExpressionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopicRegularExpression";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_topicRegularExpression.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -684,5 +703,21 @@ void KafkaParam::SetKeepPartition(const bool& _keepPartition)
 bool KafkaParam::KeepPartitionHasBeenSet() const
 {
     return m_keepPartitionHasBeenSet;
+}
+
+string KafkaParam::GetTopicRegularExpression() const
+{
+    return m_topicRegularExpression;
+}
+
+void KafkaParam::SetTopicRegularExpression(const string& _topicRegularExpression)
+{
+    m_topicRegularExpression = _topicRegularExpression;
+    m_topicRegularExpressionHasBeenSet = true;
+}
+
+bool KafkaParam::TopicRegularExpressionHasBeenSet() const
+{
+    return m_topicRegularExpressionHasBeenSet;
 }
 

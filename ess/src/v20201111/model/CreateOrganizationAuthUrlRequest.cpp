@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,12 @@ CreateOrganizationAuthUrlRequest::CreateOrganizationAuthUrlRequest() :
     m_adminMobileSameHasBeenSet(false),
     m_organizationNameSameHasBeenSet(false),
     m_businessLicenseHasBeenSet(false),
-    m_endpointHasBeenSet(false)
+    m_endpointHasBeenSet(false),
+    m_initializationHasBeenSet(false),
+    m_powerOfAttorneysHasBeenSet(false),
+    m_userDataHasBeenSet(false),
+    m_bankAccountNumberHasBeenSet(false),
+    m_bankAccountNumberSameHasBeenSet(false)
 {
 }
 
@@ -208,6 +213,56 @@ string CreateOrganizationAuthUrlRequest::ToJsonString() const
         string key = "Endpoint";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_endpoint.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_initializationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Initialization";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_initialization.begin(); itr != m_initialization.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
+    if (m_powerOfAttorneysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PowerOfAttorneys";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_powerOfAttorneys.begin(); itr != m_powerOfAttorneys.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_userDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bankAccountNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BankAccountNumber";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_bankAccountNumber.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bankAccountNumberSameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BankAccountNumberSame";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_bankAccountNumberSame, allocator);
     }
 
 
@@ -520,6 +575,86 @@ void CreateOrganizationAuthUrlRequest::SetEndpoint(const string& _endpoint)
 bool CreateOrganizationAuthUrlRequest::EndpointHasBeenSet() const
 {
     return m_endpointHasBeenSet;
+}
+
+vector<uint64_t> CreateOrganizationAuthUrlRequest::GetInitialization() const
+{
+    return m_initialization;
+}
+
+void CreateOrganizationAuthUrlRequest::SetInitialization(const vector<uint64_t>& _initialization)
+{
+    m_initialization = _initialization;
+    m_initializationHasBeenSet = true;
+}
+
+bool CreateOrganizationAuthUrlRequest::InitializationHasBeenSet() const
+{
+    return m_initializationHasBeenSet;
+}
+
+vector<string> CreateOrganizationAuthUrlRequest::GetPowerOfAttorneys() const
+{
+    return m_powerOfAttorneys;
+}
+
+void CreateOrganizationAuthUrlRequest::SetPowerOfAttorneys(const vector<string>& _powerOfAttorneys)
+{
+    m_powerOfAttorneys = _powerOfAttorneys;
+    m_powerOfAttorneysHasBeenSet = true;
+}
+
+bool CreateOrganizationAuthUrlRequest::PowerOfAttorneysHasBeenSet() const
+{
+    return m_powerOfAttorneysHasBeenSet;
+}
+
+string CreateOrganizationAuthUrlRequest::GetUserData() const
+{
+    return m_userData;
+}
+
+void CreateOrganizationAuthUrlRequest::SetUserData(const string& _userData)
+{
+    m_userData = _userData;
+    m_userDataHasBeenSet = true;
+}
+
+bool CreateOrganizationAuthUrlRequest::UserDataHasBeenSet() const
+{
+    return m_userDataHasBeenSet;
+}
+
+string CreateOrganizationAuthUrlRequest::GetBankAccountNumber() const
+{
+    return m_bankAccountNumber;
+}
+
+void CreateOrganizationAuthUrlRequest::SetBankAccountNumber(const string& _bankAccountNumber)
+{
+    m_bankAccountNumber = _bankAccountNumber;
+    m_bankAccountNumberHasBeenSet = true;
+}
+
+bool CreateOrganizationAuthUrlRequest::BankAccountNumberHasBeenSet() const
+{
+    return m_bankAccountNumberHasBeenSet;
+}
+
+bool CreateOrganizationAuthUrlRequest::GetBankAccountNumberSame() const
+{
+    return m_bankAccountNumberSame;
+}
+
+void CreateOrganizationAuthUrlRequest::SetBankAccountNumberSame(const bool& _bankAccountNumberSame)
+{
+    m_bankAccountNumberSame = _bankAccountNumberSame;
+    m_bankAccountNumberSameHasBeenSet = true;
+}
+
+bool CreateOrganizationAuthUrlRequest::BankAccountNumberSameHasBeenSet() const
+{
+    return m_bankAccountNumberSameHasBeenSet;
 }
 
 

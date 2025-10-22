@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool EventStatusHasBeenSet() const;
 
                     /**
-                     * 获取备份状态：0备份中，1正常，2、3失败，4快照已过期，9快照已删除
-                     * @return BackupStatus 备份状态：0备份中，1正常，2、3失败，4快照已过期，9快照已删除
+                     * 获取备份状态：0备份中，1正常，2、3失败，4快照已过期，5快照数量超出限制，9快照已删除
+                     * @return BackupStatus 备份状态：0备份中，1正常，2、3失败，4快照已过期，5快照数量超出限制，9快照已删除
                      * 
                      */
                     uint64_t GetBackupStatus() const;
 
                     /**
-                     * 设置备份状态：0备份中，1正常，2、3失败，4快照已过期，9快照已删除
-                     * @param _backupStatus 备份状态：0备份中，1正常，2、3失败，4快照已过期，9快照已删除
+                     * 设置备份状态：0备份中，1正常，2、3失败，4快照已过期，5快照数量超出限制，9快照已删除
+                     * @param _backupStatus 备份状态：0备份中，1正常，2、3失败，4快照已过期，5快照数量超出限制，9快照已删除
                      * 
                      */
                     void SetBackupStatus(const uint64_t& _backupStatus);
@@ -250,7 +250,7 @@ namespace TencentCloud
                     bool m_eventStatusHasBeenSet;
 
                     /**
-                     * 备份状态：0备份中，1正常，2、3失败，4快照已过期，9快照已删除
+                     * 备份状态：0备份中，1正常，2、3失败，4快照已过期，5快照数量超出限制，9快照已删除
                      */
                     uint64_t m_backupStatus;
                     bool m_backupStatusHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vpc/v20170312/model/Tag.h>
 
 
 namespace TencentCloud
@@ -126,6 +127,27 @@ namespace TencentCloud
                      */
                     bool SecondaryPrivateIpAddressCountHasBeenSet() const;
 
+                    /**
+                     * 获取指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     * @return Tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     * @param _tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +173,12 @@ namespace TencentCloud
                      */
                     uint64_t m_secondaryPrivateIpAddressCount;
                     bool m_secondaryPrivateIpAddressCountHasBeenSet;
+
+                    /**
+                     * 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Error 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetError() const;
 
                     /**
                      * 设置错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _error 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetError(const std::string& _error);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前结果缓存时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CacheTime 当前结果缓存时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCacheTime() const;
 
                     /**
                      * 设置当前结果缓存时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cacheTime 当前结果缓存时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCacheTime(const std::string& _cacheTime);
@@ -161,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取包含的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domains 包含的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetDomains() const;
 
                     /**
                      * 设置包含的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domains 包含的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomains(const std::vector<std::string>& _domains);
@@ -206,21 +194,18 @@ namespace TencentCloud
 
                     /**
                      * 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_error;
                     bool m_errorHasBeenSet;
 
                     /**
                      * 当前结果缓存时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cacheTime;
                     bool m_cacheTimeHasBeenSet;
 
                     /**
                      * 包含的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_domains;
                     bool m_domainsHasBeenSet;

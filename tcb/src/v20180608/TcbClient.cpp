@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -807,49 +807,6 @@ TcbClient::DeleteWxGatewayRouteOutcomeCallable TcbClient::DeleteWxGatewayRouteCa
         [this, request]()
         {
             return this->DeleteWxGatewayRoute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TcbClient::DescribeActivityInfoOutcome TcbClient::DescribeActivityInfo(const DescribeActivityInfoRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeActivityInfo");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeActivityInfoResponse rsp = DescribeActivityInfoResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeActivityInfoOutcome(rsp);
-        else
-            return DescribeActivityInfoOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeActivityInfoOutcome(outcome.GetError());
-    }
-}
-
-void TcbClient::DescribeActivityInfoAsync(const DescribeActivityInfoRequest& request, const DescribeActivityInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeActivityInfo(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TcbClient::DescribeActivityInfoOutcomeCallable TcbClient::DescribeActivityInfoCallable(const DescribeActivityInfoRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeActivityInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeActivityInfo(request);
         }
     );
 
@@ -3129,6 +3086,49 @@ TcbClient::DestroyStaticStoreOutcomeCallable TcbClient::DestroyStaticStoreCallab
         [this, request]()
         {
             return this->DestroyStaticStore(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbClient::EditAuthConfigOutcome TcbClient::EditAuthConfig(const EditAuthConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "EditAuthConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EditAuthConfigResponse rsp = EditAuthConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EditAuthConfigOutcome(rsp);
+        else
+            return EditAuthConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return EditAuthConfigOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::EditAuthConfigAsync(const EditAuthConfigRequest& request, const EditAuthConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EditAuthConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::EditAuthConfigOutcomeCallable TcbClient::EditAuthConfigCallable(const EditAuthConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EditAuthConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->EditAuthConfig(request);
         }
     );
 

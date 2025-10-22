@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -127,6 +127,27 @@ namespace TencentCloud
                      */
                     bool QueriesHasBeenSet() const;
 
+                    /**
+                     * 获取最多返回的数据点个数
+                     * @return MaxPoint 最多返回的数据点个数
+                     * 
+                     */
+                    int64_t GetMaxPoint() const;
+
+                    /**
+                     * 设置最多返回的数据点个数
+                     * @param _maxPoint 最多返回的数据点个数
+                     * 
+                     */
+                    void SetMaxPoint(const int64_t& _maxPoint);
+
+                    /**
+                     * 判断参数 MaxPoint 是否已赋值
+                     * @return MaxPoint 是否已赋值
+                     * 
+                     */
+                    bool MaxPointHasBeenSet() const;
+
                 private:
 
                     /**
@@ -152,6 +173,12 @@ namespace TencentCloud
                      */
                     std::vector<InternalMetricQuery> m_queries;
                     bool m_queriesHasBeenSet;
+
+                    /**
+                     * 最多返回的数据点个数
+                     */
+                    int64_t m_maxPoint;
+                    bool m_maxPointHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -253,18 +253,14 @@ CHECK_FAILED, 检测失败
 
                     /**
                      * 获取上次检测的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastCheckTime 上次检测的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastCheckTime() const;
 
                     /**
                      * 设置上次检测的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastCheckTime 上次检测的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastCheckTime(const std::string& _lastCheckTime);
@@ -280,11 +276,9 @@ CHECK_FAILED, 检测失败
                      * 获取检测结果：
 RESULT_FAILED: 未通过。
 RESULT_PASSED: 通过。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckResult 检测结果：
 RESULT_FAILED: 未通过。
 RESULT_PASSED: 通过。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCheckResult() const;
@@ -293,11 +287,9 @@ RESULT_PASSED: 通过。
                      * 设置检测结果：
 RESULT_FAILED: 未通过。
 RESULT_PASSED: 通过。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _checkResult 检测结果：
 RESULT_FAILED: 未通过。
 RESULT_PASSED: 通过。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCheckResult(const std::string& _checkResult);
@@ -429,7 +421,6 @@ CHECK_FAILED, 检测失败
 
                     /**
                      * 上次检测的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastCheckTime;
                     bool m_lastCheckTimeHasBeenSet;
@@ -438,7 +429,6 @@ CHECK_FAILED, 检测失败
                      * 检测结果：
 RESULT_FAILED: 未通过。
 RESULT_PASSED: 通过。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_checkResult;
                     bool m_checkResultHasBeenSet;

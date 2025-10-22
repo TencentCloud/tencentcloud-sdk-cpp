@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,7 +44,16 @@ DatasetInfo::DatasetInfo() :
     m_annotationFormatHasBeenSet(false),
     m_datasetScopeHasBeenSet(false),
     m_ocrSceneHasBeenSet(false),
-    m_annotationKeyStatusHasBeenSet(false)
+    m_annotationKeyStatusHasBeenSet(false),
+    m_contentTypeHasBeenSet(false),
+    m_datasetSceneHasBeenSet(false),
+    m_cFSConfigHasBeenSet(false),
+    m_sceneTagsHasBeenSet(false),
+    m_numAnnotatedHasBeenSet(false),
+    m_annotationSpecificationHasBeenSet(false),
+    m_annotationSchemaConfiguredHasBeenSet(false),
+    m_creatorNicknameHasBeenSet(false),
+    m_isCfsUpdatedHasBeenSet(false)
 {
 }
 
@@ -317,6 +326,106 @@ CoreInternalOutcome DatasetInfo::Deserialize(const rapidjson::Value &value)
         m_annotationKeyStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("ContentType") && !value["ContentType"].IsNull())
+    {
+        if (!value["ContentType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatasetInfo.ContentType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_contentType = string(value["ContentType"].GetString());
+        m_contentTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DatasetScene") && !value["DatasetScene"].IsNull())
+    {
+        if (!value["DatasetScene"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatasetInfo.DatasetScene` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_datasetScene = string(value["DatasetScene"].GetString());
+        m_datasetSceneHasBeenSet = true;
+    }
+
+    if (value.HasMember("CFSConfig") && !value["CFSConfig"].IsNull())
+    {
+        if (!value["CFSConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatasetInfo.CFSConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_cFSConfig.Deserialize(value["CFSConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_cFSConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("SceneTags") && !value["SceneTags"].IsNull())
+    {
+        if (!value["SceneTags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DatasetInfo.SceneTags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SceneTags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_sceneTags.push_back((*itr).GetString());
+        }
+        m_sceneTagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("NumAnnotated") && !value["NumAnnotated"].IsNull())
+    {
+        if (!value["NumAnnotated"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatasetInfo.NumAnnotated` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_numAnnotated = value["NumAnnotated"].GetUint64();
+        m_numAnnotatedHasBeenSet = true;
+    }
+
+    if (value.HasMember("AnnotationSpecification") && !value["AnnotationSpecification"].IsNull())
+    {
+        if (!value["AnnotationSpecification"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatasetInfo.AnnotationSpecification` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_annotationSpecification = string(value["AnnotationSpecification"].GetString());
+        m_annotationSpecificationHasBeenSet = true;
+    }
+
+    if (value.HasMember("AnnotationSchemaConfigured") && !value["AnnotationSchemaConfigured"].IsNull())
+    {
+        if (!value["AnnotationSchemaConfigured"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatasetInfo.AnnotationSchemaConfigured` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_annotationSchemaConfigured = value["AnnotationSchemaConfigured"].GetBool();
+        m_annotationSchemaConfiguredHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreatorNickname") && !value["CreatorNickname"].IsNull())
+    {
+        if (!value["CreatorNickname"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatasetInfo.CreatorNickname` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_creatorNickname = string(value["CreatorNickname"].GetString());
+        m_creatorNicknameHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsCfsUpdated") && !value["IsCfsUpdated"].IsNull())
+    {
+        if (!value["IsCfsUpdated"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatasetInfo.IsCfsUpdated` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isCfsUpdated = value["IsCfsUpdated"].GetBool();
+        m_isCfsUpdatedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -523,6 +632,84 @@ void DatasetInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "AnnotationKeyStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_annotationKeyStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_contentTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContentType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_contentType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_datasetSceneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasetScene";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_datasetScene.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cFSConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CFSConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_cFSConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_sceneTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SceneTags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_sceneTags.begin(); itr != m_sceneTags.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_numAnnotatedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NumAnnotated";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_numAnnotated, allocator);
+    }
+
+    if (m_annotationSpecificationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AnnotationSpecification";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_annotationSpecification.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_annotationSchemaConfiguredHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AnnotationSchemaConfigured";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_annotationSchemaConfigured, allocator);
+    }
+
+    if (m_creatorNicknameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreatorNickname";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_creatorNickname.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isCfsUpdatedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCfsUpdated";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isCfsUpdated, allocator);
     }
 
 }
@@ -910,5 +1097,149 @@ void DatasetInfo::SetAnnotationKeyStatus(const string& _annotationKeyStatus)
 bool DatasetInfo::AnnotationKeyStatusHasBeenSet() const
 {
     return m_annotationKeyStatusHasBeenSet;
+}
+
+string DatasetInfo::GetContentType() const
+{
+    return m_contentType;
+}
+
+void DatasetInfo::SetContentType(const string& _contentType)
+{
+    m_contentType = _contentType;
+    m_contentTypeHasBeenSet = true;
+}
+
+bool DatasetInfo::ContentTypeHasBeenSet() const
+{
+    return m_contentTypeHasBeenSet;
+}
+
+string DatasetInfo::GetDatasetScene() const
+{
+    return m_datasetScene;
+}
+
+void DatasetInfo::SetDatasetScene(const string& _datasetScene)
+{
+    m_datasetScene = _datasetScene;
+    m_datasetSceneHasBeenSet = true;
+}
+
+bool DatasetInfo::DatasetSceneHasBeenSet() const
+{
+    return m_datasetSceneHasBeenSet;
+}
+
+CFSConfig DatasetInfo::GetCFSConfig() const
+{
+    return m_cFSConfig;
+}
+
+void DatasetInfo::SetCFSConfig(const CFSConfig& _cFSConfig)
+{
+    m_cFSConfig = _cFSConfig;
+    m_cFSConfigHasBeenSet = true;
+}
+
+bool DatasetInfo::CFSConfigHasBeenSet() const
+{
+    return m_cFSConfigHasBeenSet;
+}
+
+vector<string> DatasetInfo::GetSceneTags() const
+{
+    return m_sceneTags;
+}
+
+void DatasetInfo::SetSceneTags(const vector<string>& _sceneTags)
+{
+    m_sceneTags = _sceneTags;
+    m_sceneTagsHasBeenSet = true;
+}
+
+bool DatasetInfo::SceneTagsHasBeenSet() const
+{
+    return m_sceneTagsHasBeenSet;
+}
+
+uint64_t DatasetInfo::GetNumAnnotated() const
+{
+    return m_numAnnotated;
+}
+
+void DatasetInfo::SetNumAnnotated(const uint64_t& _numAnnotated)
+{
+    m_numAnnotated = _numAnnotated;
+    m_numAnnotatedHasBeenSet = true;
+}
+
+bool DatasetInfo::NumAnnotatedHasBeenSet() const
+{
+    return m_numAnnotatedHasBeenSet;
+}
+
+string DatasetInfo::GetAnnotationSpecification() const
+{
+    return m_annotationSpecification;
+}
+
+void DatasetInfo::SetAnnotationSpecification(const string& _annotationSpecification)
+{
+    m_annotationSpecification = _annotationSpecification;
+    m_annotationSpecificationHasBeenSet = true;
+}
+
+bool DatasetInfo::AnnotationSpecificationHasBeenSet() const
+{
+    return m_annotationSpecificationHasBeenSet;
+}
+
+bool DatasetInfo::GetAnnotationSchemaConfigured() const
+{
+    return m_annotationSchemaConfigured;
+}
+
+void DatasetInfo::SetAnnotationSchemaConfigured(const bool& _annotationSchemaConfigured)
+{
+    m_annotationSchemaConfigured = _annotationSchemaConfigured;
+    m_annotationSchemaConfiguredHasBeenSet = true;
+}
+
+bool DatasetInfo::AnnotationSchemaConfiguredHasBeenSet() const
+{
+    return m_annotationSchemaConfiguredHasBeenSet;
+}
+
+string DatasetInfo::GetCreatorNickname() const
+{
+    return m_creatorNickname;
+}
+
+void DatasetInfo::SetCreatorNickname(const string& _creatorNickname)
+{
+    m_creatorNickname = _creatorNickname;
+    m_creatorNicknameHasBeenSet = true;
+}
+
+bool DatasetInfo::CreatorNicknameHasBeenSet() const
+{
+    return m_creatorNicknameHasBeenSet;
+}
+
+bool DatasetInfo::GetIsCfsUpdated() const
+{
+    return m_isCfsUpdated;
+}
+
+void DatasetInfo::SetIsCfsUpdated(const bool& _isCfsUpdated)
+{
+    m_isCfsUpdated = _isCfsUpdated;
+    m_isCfsUpdatedHasBeenSet = true;
+}
+
+bool DatasetInfo::IsCfsUpdatedHasBeenSet() const
+{
+    return m_isCfsUpdatedHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,10 @@ Volume::Volume() :
     m_bandwidthLimitHasBeenSet(false),
     m_defaultMountPathHasBeenSet(false),
     m_isDefaultHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_autoScaleUpRuleHasBeenSet(false),
+    m_metaTypeHasBeenSet(false),
+    m_zoneHasBeenSet(false)
 {
 }
 
@@ -161,6 +164,43 @@ CoreInternalOutcome Volume::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoScaleUpRule") && !value["AutoScaleUpRule"].IsNull())
+    {
+        if (!value["AutoScaleUpRule"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Volume.AutoScaleUpRule` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_autoScaleUpRule.Deserialize(value["AutoScaleUpRule"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_autoScaleUpRuleHasBeenSet = true;
+    }
+
+    if (value.HasMember("MetaType") && !value["MetaType"].IsNull())
+    {
+        if (!value["MetaType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Volume.MetaType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_metaType = string(value["MetaType"].GetString());
+        m_metaTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Zone") && !value["Zone"].IsNull())
+    {
+        if (!value["Zone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Volume.Zone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zone = string(value["Zone"].GetString());
+        m_zoneHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +302,31 @@ void Volume::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoScaleUpRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoScaleUpRule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_autoScaleUpRule.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_metaTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetaType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_metaType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -457,5 +522,53 @@ void Volume::SetStatus(const string& _status)
 bool Volume::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+VolumeAutoScaleUpRule Volume::GetAutoScaleUpRule() const
+{
+    return m_autoScaleUpRule;
+}
+
+void Volume::SetAutoScaleUpRule(const VolumeAutoScaleUpRule& _autoScaleUpRule)
+{
+    m_autoScaleUpRule = _autoScaleUpRule;
+    m_autoScaleUpRuleHasBeenSet = true;
+}
+
+bool Volume::AutoScaleUpRuleHasBeenSet() const
+{
+    return m_autoScaleUpRuleHasBeenSet;
+}
+
+string Volume::GetMetaType() const
+{
+    return m_metaType;
+}
+
+void Volume::SetMetaType(const string& _metaType)
+{
+    m_metaType = _metaType;
+    m_metaTypeHasBeenSet = true;
+}
+
+bool Volume::MetaTypeHasBeenSet() const
+{
+    return m_metaTypeHasBeenSet;
+}
+
+string Volume::GetZone() const
+{
+    return m_zone;
+}
+
+void Volume::SetZone(const string& _zone)
+{
+    m_zone = _zone;
+    m_zoneHasBeenSet = true;
+}
+
+bool Volume::ZoneHasBeenSet() const
+{
+    return m_zoneHasBeenSet;
 }
 

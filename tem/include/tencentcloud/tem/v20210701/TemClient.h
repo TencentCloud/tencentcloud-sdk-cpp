@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -107,6 +107,8 @@
 #include <tencentcloud/tem/v20210701/model/ModifyConfigDataResponse.h>
 #include <tencentcloud/tem/v20210701/model/ModifyEnvironmentRequest.h>
 #include <tencentcloud/tem/v20210701/model/ModifyEnvironmentResponse.h>
+#include <tencentcloud/tem/v20210701/model/ModifyGatewayIngressRequest.h>
+#include <tencentcloud/tem/v20210701/model/ModifyGatewayIngressResponse.h>
 #include <tencentcloud/tem/v20210701/model/ModifyIngressRequest.h>
 #include <tencentcloud/tem/v20210701/model/ModifyIngressResponse.h>
 #include <tencentcloud/tem/v20210701/model/ModifyLogConfigRequest.h>
@@ -263,6 +265,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyEnvironmentResponse> ModifyEnvironmentOutcome;
                 typedef std::future<ModifyEnvironmentOutcome> ModifyEnvironmentOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::ModifyEnvironmentRequest&, ModifyEnvironmentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEnvironmentAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyGatewayIngressResponse> ModifyGatewayIngressOutcome;
+                typedef std::future<ModifyGatewayIngressOutcome> ModifyGatewayIngressOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::ModifyGatewayIngressRequest&, ModifyGatewayIngressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGatewayIngressAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyIngressResponse> ModifyIngressOutcome;
                 typedef std::future<ModifyIngressOutcome> ModifyIngressOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::ModifyIngressRequest&, ModifyIngressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIngressAsyncHandler;
@@ -672,7 +677,18 @@ namespace TencentCloud
                 ModifyEnvironmentOutcomeCallable ModifyEnvironmentCallable(const Model::ModifyEnvironmentRequest& request);
 
                 /**
-                 *创建或者更新 Ingress 规则
+                 *修改网关的转发配置
+                 * @param req ModifyGatewayIngressRequest
+                 * @return ModifyGatewayIngressOutcome
+                 */
+                ModifyGatewayIngressOutcome ModifyGatewayIngress(const Model::ModifyGatewayIngressRequest &request);
+                void ModifyGatewayIngressAsync(const Model::ModifyGatewayIngressRequest& request, const ModifyGatewayIngressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyGatewayIngressOutcomeCallable ModifyGatewayIngressCallable(const Model::ModifyGatewayIngressRequest& request);
+
+                /**
+                 *此接口没有被使用了
+
+创建或者更新 Ingress 规则
                  * @param req ModifyIngressRequest
                  * @return ModifyIngressOutcome
                  */

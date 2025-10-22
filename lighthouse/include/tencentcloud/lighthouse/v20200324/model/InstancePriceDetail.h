@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取询价信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstancePrice 询价信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     InstancePrice GetInstancePrice() const;
 
                     /**
                      * 设置询价信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instancePrice 询价信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstancePrice(const InstancePrice& _instancePrice);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取折扣梯度详情，每个梯度包含的信息有：时长，折扣数，总价，折扣价，折扣详情（用户折扣、官网折扣、最终折扣）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiscountDetail 折扣梯度详情，每个梯度包含的信息有：时长，折扣数，总价，折扣价，折扣详情（用户折扣、官网折扣、最终折扣）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DiscountDetail> GetDiscountDetail() const;
 
                     /**
                      * 设置折扣梯度详情，每个梯度包含的信息有：时长，折扣数，总价，折扣价，折扣详情（用户折扣、官网折扣、最终折扣）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _discountDetail 折扣梯度详情，每个梯度包含的信息有：时长，折扣数，总价，折扣价，折扣详情（用户折扣、官网折扣、最终折扣）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiscountDetail(const std::vector<DiscountDetail>& _discountDetail);
@@ -127,21 +115,18 @@ namespace TencentCloud
 
                     /**
                      * 实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 询价信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InstancePrice m_instancePrice;
                     bool m_instancePriceHasBeenSet;
 
                     /**
                      * 折扣梯度详情，每个梯度包含的信息有：时长，折扣数，总价，折扣价，折扣详情（用户折扣、官网折扣、最终折扣）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DiscountDetail> m_discountDetail;
                     bool m_discountDetailHasBeenSet;

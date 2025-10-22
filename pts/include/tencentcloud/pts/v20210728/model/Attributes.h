@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取采用请求返回码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 采用请求返回码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置采用请求返回码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 采用请求返回码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取采样请求结果码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 采样请求结果码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 设置采样请求结果码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _result 采样请求结果码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResult(const std::string& _result);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取采样请求API
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Service 采样请求API
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetService() const;
 
                     /**
                      * 设置采样请求API
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _service 采样请求API
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetService(const std::string& _service);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取采样请求调用方法
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Method 采样请求调用方法
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMethod() const;
 
                     /**
                      * 设置采样请求调用方法
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _method 采样请求调用方法
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMethod(const std::string& _method);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取采样请求延时时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Duration 采样请求延时时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDuration() const;
 
                     /**
                      * 设置采样请求延时时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _duration 采样请求延时时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDuration(const std::string& _duration);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 采用请求返回码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 采样请求结果码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;
 
                     /**
                      * 采样请求API
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_service;
                     bool m_serviceHasBeenSet;
 
                     /**
                      * 采样请求调用方法
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_method;
                     bool m_methodHasBeenSet;
 
                     /**
                      * 采样请求延时时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_duration;
                     bool m_durationHasBeenSet;

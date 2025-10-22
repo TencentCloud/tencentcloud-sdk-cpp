@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取执行器名称。
-                     * @return Name 执行器名称。
+                     * 获取执行器名称。长度不超过 120 字符。
+                     * @return Name 执行器名称。长度不超过 120 字符。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置执行器名称。
-                     * @param _name 执行器名称。
+                     * 设置执行器名称。长度不超过 120 字符。
+                     * @param _name 执行器名称。长度不超过 120 字符。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -65,15 +65,31 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取执行器类型，当前仅支持周期类型执行器，取值：`SCHEDULE` 。
-                     * @return Type 执行器类型，当前仅支持周期类型执行器，取值：`SCHEDULE` 。
+                     * 获取执行器类型。
+
+可选取值（当前仅支持一种）：
+
+- `SCHEDULE`：周期类型执行器。
+                     * @return Type 执行器类型。
+
+可选取值（当前仅支持一种）：
+
+- `SCHEDULE`：周期类型执行器。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置执行器类型，当前仅支持周期类型执行器，取值：`SCHEDULE` 。
-                     * @param _type 执行器类型，当前仅支持周期类型执行器，取值：`SCHEDULE` 。
+                     * 设置执行器类型。
+
+可选取值（当前仅支持一种）：
+
+- `SCHEDULE`：周期类型执行器。
+                     * @param _type 执行器类型。
+
+可选取值（当前仅支持一种）：
+
+- `SCHEDULE`：周期类型执行器。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -87,14 +103,22 @@ namespace TencentCloud
 
                     /**
                      * 获取远程命令ID。
+
+可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取。
                      * @return CommandId 远程命令ID。
+
+可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取。
                      * 
                      */
                     std::string GetCommandId() const;
 
                     /**
                      * 设置远程命令ID。
+
+可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取。
                      * @param _commandId 远程命令ID。
+
+可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取。
                      * 
                      */
                     void SetCommandId(const std::string& _commandId);
@@ -108,14 +132,30 @@ namespace TencentCloud
 
                     /**
                      * 获取触发器关联的实例ID。列表上限 100。
+
+可通过对应云产品的查询实例接口获取实例 ID。目前支持实例类型：CVM、Lighthouse、TAT 托管实例。
+
+实例需要安装 TAT 客户端, 且客户端为 Online 状态。可通过 [DescribeAutomationAgentStatus(查询客户端状态)](https://cloud.tencent.com/document/api/1340/52682) 接口查询客户端状态。
                      * @return InstanceIds 触发器关联的实例ID。列表上限 100。
+
+可通过对应云产品的查询实例接口获取实例 ID。目前支持实例类型：CVM、Lighthouse、TAT 托管实例。
+
+实例需要安装 TAT 客户端, 且客户端为 Online 状态。可通过 [DescribeAutomationAgentStatus(查询客户端状态)](https://cloud.tencent.com/document/api/1340/52682) 接口查询客户端状态。
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置触发器关联的实例ID。列表上限 100。
+
+可通过对应云产品的查询实例接口获取实例 ID。目前支持实例类型：CVM、Lighthouse、TAT 托管实例。
+
+实例需要安装 TAT 客户端, 且客户端为 Online 状态。可通过 [DescribeAutomationAgentStatus(查询客户端状态)](https://cloud.tencent.com/document/api/1340/52682) 接口查询客户端状态。
                      * @param _instanceIds 触发器关联的实例ID。列表上限 100。
+
+可通过对应云产品的查询实例接口获取实例 ID。目前支持实例类型：CVM、Lighthouse、TAT 托管实例。
+
+实例需要安装 TAT 客户端, 且客户端为 Online 状态。可通过 [DescribeAutomationAgentStatus(查询客户端状态)](https://cloud.tencent.com/document/api/1340/52682) 接口查询客户端状态。
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -128,15 +168,15 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取命令执行用户。
-                     * @return Username 命令执行用户。
+                     * 获取命令执行用户。长度不超过 256 字符。
+                     * @return Username 命令执行用户。长度不超过 256 字符。
                      * 
                      */
                     std::string GetUsername() const;
 
                     /**
-                     * 设置命令执行用户。
-                     * @param _username 命令执行用户。
+                     * 设置命令执行用户。长度不超过 256 字符。
+                     * @param _username 命令执行用户。长度不超过 256 字符。
                      * 
                      */
                     void SetUsername(const std::string& _username);
@@ -149,15 +189,23 @@ namespace TencentCloud
                     bool UsernameHasBeenSet() const;
 
                     /**
-                     * 获取命令自定义参数。
-                     * @return Parameters 命令自定义参数。
+                     * 获取命令自定义参数。字段类型为 JSON encode string。
+
+仅在 CommandId 所指命令的 EnableParameter 为 true 时，才允许设置此参数。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取命令的 EnableParameter 设置。
+                     * @return Parameters 命令自定义参数。字段类型为 JSON encode string。
+
+仅在 CommandId 所指命令的 EnableParameter 为 true 时，才允许设置此参数。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取命令的 EnableParameter 设置。
                      * 
                      */
                     std::string GetParameters() const;
 
                     /**
-                     * 设置命令自定义参数。
-                     * @param _parameters 命令自定义参数。
+                     * 设置命令自定义参数。字段类型为 JSON encode string。
+
+仅在 CommandId 所指命令的 EnableParameter 为 true 时，才允许设置此参数。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取命令的 EnableParameter 设置。
+                     * @param _parameters 命令自定义参数。字段类型为 JSON encode string。
+
+仅在 CommandId 所指命令的 EnableParameter 为 true 时，才允许设置此参数。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取命令的 EnableParameter 设置。
                      * 
                      */
                     void SetParameters(const std::string& _parameters);
@@ -170,15 +218,23 @@ namespace TencentCloud
                     bool ParametersHasBeenSet() const;
 
                     /**
-                     * 获取周期执行器设置，当创建周期执行器时，必须指定此参数。
-                     * @return ScheduleSettings 周期执行器设置，当创建周期执行器时，必须指定此参数。
+                     * 获取周期执行器设置。
+
+当执行器类型为 `SCHEDULE` 时，必须指定此参数。
+                     * @return ScheduleSettings 周期执行器设置。
+
+当执行器类型为 `SCHEDULE` 时，必须指定此参数。
                      * 
                      */
                     ScheduleSettings GetScheduleSettings() const;
 
                     /**
-                     * 设置周期执行器设置，当创建周期执行器时，必须指定此参数。
-                     * @param _scheduleSettings 周期执行器设置，当创建周期执行器时，必须指定此参数。
+                     * 设置周期执行器设置。
+
+当执行器类型为 `SCHEDULE` 时，必须指定此参数。
+                     * @param _scheduleSettings 周期执行器设置。
+
+当执行器类型为 `SCHEDULE` 时，必须指定此参数。
                      * 
                      */
                     void SetScheduleSettings(const ScheduleSettings& _scheduleSettings);
@@ -193,43 +249,57 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 执行器名称。
+                     * 执行器名称。长度不超过 120 字符。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 执行器类型，当前仅支持周期类型执行器，取值：`SCHEDULE` 。
+                     * 执行器类型。
+
+可选取值（当前仅支持一种）：
+
+- `SCHEDULE`：周期类型执行器。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 远程命令ID。
+
+可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取。
                      */
                     std::string m_commandId;
                     bool m_commandIdHasBeenSet;
 
                     /**
                      * 触发器关联的实例ID。列表上限 100。
+
+可通过对应云产品的查询实例接口获取实例 ID。目前支持实例类型：CVM、Lighthouse、TAT 托管实例。
+
+实例需要安装 TAT 客户端, 且客户端为 Online 状态。可通过 [DescribeAutomationAgentStatus(查询客户端状态)](https://cloud.tencent.com/document/api/1340/52682) 接口查询客户端状态。
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 命令执行用户。
+                     * 命令执行用户。长度不超过 256 字符。
                      */
                     std::string m_username;
                     bool m_usernameHasBeenSet;
 
                     /**
-                     * 命令自定义参数。
+                     * 命令自定义参数。字段类型为 JSON encode string。
+
+仅在 CommandId 所指命令的 EnableParameter 为 true 时，才允许设置此参数。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取命令的 EnableParameter 设置。
                      */
                     std::string m_parameters;
                     bool m_parametersHasBeenSet;
 
                     /**
-                     * 周期执行器设置，当创建周期执行器时，必须指定此参数。
+                     * 周期执行器设置。
+
+当执行器类型为 `SCHEDULE` 时，必须指定此参数。
                      */
                     ScheduleSettings m_scheduleSettings;
                     bool m_scheduleSettingsHasBeenSet;

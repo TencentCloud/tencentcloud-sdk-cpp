@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取版本名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VersionName 版本名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersionName() const;
 
                     /**
                      * 设置版本名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _versionName 版本名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersionName(const std::string& _versionName);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流量占比
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowRatio 流量占比
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFlowRatio() const;
 
                     /**
                      * 设置流量占比
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _flowRatio 流量占比
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFlowRatio(const int64_t& _flowRatio);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流量参数键值对（URL参数/HEADERS参数）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UrlParam 流量参数键值对（URL参数/HEADERS参数）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ObjectKV GetUrlParam() const;
 
                     /**
                      * 设置流量参数键值对（URL参数/HEADERS参数）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _urlParam 流量参数键值对（URL参数/HEADERS参数）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUrlParam(const ObjectKV& _urlParam);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取优先级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Priority 优先级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPriority() const;
 
                     /**
                      * 设置优先级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _priority 优先级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPriority(const int64_t& _priority);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否是默认兜底版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsDefaultPriority 是否是默认兜底版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsDefaultPriority() const;
 
                     /**
                      * 设置是否是默认兜底版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isDefaultPriority 是否是默认兜底版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsDefaultPriority(const bool& _isDefaultPriority);
@@ -176,35 +156,30 @@ namespace TencentCloud
 
                     /**
                      * 版本名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_versionName;
                     bool m_versionNameHasBeenSet;
 
                     /**
                      * 流量占比
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_flowRatio;
                     bool m_flowRatioHasBeenSet;
 
                     /**
                      * 流量参数键值对（URL参数/HEADERS参数）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ObjectKV m_urlParam;
                     bool m_urlParamHasBeenSet;
 
                     /**
                      * 优先级
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_priority;
                     bool m_priorityHasBeenSet;
 
                     /**
                      * 是否是默认兜底版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isDefaultPriority;
                     bool m_isDefaultPriorityHasBeenSet;

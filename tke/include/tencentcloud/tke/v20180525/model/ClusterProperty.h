@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点hostname命名模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeNameType 节点hostname命名模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNodeNameType() const;
 
                     /**
                      * 设置节点hostname命名模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodeNameType 节点hostname命名模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodeNameType(const std::string& _nodeNameType);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * 节点hostname命名模式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nodeNameType;
                     bool m_nodeNameTypeHasBeenSet;

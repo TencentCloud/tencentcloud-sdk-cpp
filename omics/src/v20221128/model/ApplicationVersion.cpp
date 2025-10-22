@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,8 @@ ApplicationVersion::ApplicationVersion() :
     m_creatorNameHasBeenSet(false),
     m_creatorIdHasBeenSet(false),
     m_gitInfoHasBeenSet(false),
-    m_gitSourceHasBeenSet(false)
+    m_gitSourceHasBeenSet(false),
+    m_cosSourceHasBeenSet(false)
 {
 }
 
@@ -146,6 +147,23 @@ CoreInternalOutcome ApplicationVersion::Deserialize(const rapidjson::Value &valu
         m_gitSourceHasBeenSet = true;
     }
 
+    if (value.HasMember("CosSource") && !value["CosSource"].IsNull())
+    {
+        if (!value["CosSource"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApplicationVersion.CosSource` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_cosSource.Deserialize(value["CosSource"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_cosSourceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -232,6 +250,15 @@ void ApplicationVersion::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_gitSource.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_cosSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CosSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_cosSource.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -395,5 +422,21 @@ void ApplicationVersion::SetGitSource(const GitInfo& _gitSource)
 bool ApplicationVersion::GitSourceHasBeenSet() const
 {
     return m_gitSourceHasBeenSet;
+}
+
+CosFileInfo ApplicationVersion::GetCosSource() const
+{
+    return m_cosSource;
+}
+
+void ApplicationVersion::SetCosSource(const CosFileInfo& _cosSource)
+{
+    m_cosSource = _cosSource;
+    m_cosSourceHasBeenSet = true;
+}
+
+bool ApplicationVersion::CosSourceHasBeenSet() const
+{
+    return m_cosSourceHasBeenSet;
 }
 

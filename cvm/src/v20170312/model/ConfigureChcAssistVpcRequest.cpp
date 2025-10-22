@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,8 @@ ConfigureChcAssistVpcRequest::ConfigureChcAssistVpcRequest() :
     m_bmcVirtualPrivateCloudHasBeenSet(false),
     m_bmcSecurityGroupIdsHasBeenSet(false),
     m_deployVirtualPrivateCloudHasBeenSet(false),
-    m_deploySecurityGroupIdsHasBeenSet(false)
+    m_deploySecurityGroupIdsHasBeenSet(false),
+    m_chcDeployExtraConfigHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,15 @@ string ConfigureChcAssistVpcRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_chcDeployExtraConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChcDeployExtraConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_chcDeployExtraConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -181,6 +191,22 @@ void ConfigureChcAssistVpcRequest::SetDeploySecurityGroupIds(const vector<string
 bool ConfigureChcAssistVpcRequest::DeploySecurityGroupIdsHasBeenSet() const
 {
     return m_deploySecurityGroupIdsHasBeenSet;
+}
+
+ChcDeployExtraConfig ConfigureChcAssistVpcRequest::GetChcDeployExtraConfig() const
+{
+    return m_chcDeployExtraConfig;
+}
+
+void ConfigureChcAssistVpcRequest::SetChcDeployExtraConfig(const ChcDeployExtraConfig& _chcDeployExtraConfig)
+{
+    m_chcDeployExtraConfig = _chcDeployExtraConfig;
+    m_chcDeployExtraConfigHasBeenSet = true;
+}
+
+bool ConfigureChcAssistVpcRequest::ChcDeployExtraConfigHasBeenSet() const
+{
+    return m_chcDeployExtraConfigHasBeenSet;
 }
 
 

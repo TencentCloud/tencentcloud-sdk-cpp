@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取分组
-                     * @return GroupBy 分组
+                     * 获取分组；取值范围参见 DescribeMetricLabelWithValues 接口返回的指标及其支持的标签名
+                     * @return GroupBy 分组；取值范围参见 DescribeMetricLabelWithValues 接口返回的指标及其支持的标签名
                      * 
                      */
                     std::vector<std::string> GetGroupBy() const;
 
                     /**
-                     * 设置分组
-                     * @param _groupBy 分组
+                     * 设置分组；取值范围参见 DescribeMetricLabelWithValues 接口返回的指标及其支持的标签名
+                     * @param _groupBy 分组；取值范围参见 DescribeMetricLabelWithValues 接口返回的指标及其支持的标签名
                      * 
                      */
                     void SetGroupBy(const std::vector<std::string>& _groupBy);
@@ -189,6 +189,27 @@ namespace TencentCloud
                      * 
                      */
                     bool GroupByHasBeenSet() const;
+
+                    /**
+                     * 获取返回的最大数据点个数
+                     * @return MaxPoint 返回的最大数据点个数
+                     * 
+                     */
+                    int64_t GetMaxPoint() const;
+
+                    /**
+                     * 设置返回的最大数据点个数
+                     * @param _maxPoint 返回的最大数据点个数
+                     * 
+                     */
+                    void SetMaxPoint(const int64_t& _maxPoint);
+
+                    /**
+                     * 判断参数 MaxPoint 是否已赋值
+                     * @return MaxPoint 是否已赋值
+                     * 
+                     */
+                    bool MaxPointHasBeenSet() const;
 
                 private:
 
@@ -229,10 +250,16 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 分组
+                     * 分组；取值范围参见 DescribeMetricLabelWithValues 接口返回的指标及其支持的标签名
                      */
                     std::vector<std::string> m_groupBy;
                     bool m_groupByHasBeenSet;
+
+                    /**
+                     * 返回的最大数据点个数
+                     */
+                    int64_t m_maxPoint;
+                    bool m_maxPointHasBeenSet;
 
                 };
             }

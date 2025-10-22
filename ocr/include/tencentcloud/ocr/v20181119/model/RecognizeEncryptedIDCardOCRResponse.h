@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -222,8 +222,8 @@ WarnInfos，告警信息，Code 告警码列表和释义：
                     bool ReflectDetailInfosHasBeenSet() const;
 
                     /**
-                     * 获取加密后的数据
-                     * @return EncryptedBody 加密后的数据
+                     * 获取加密后的数据（Base64编码）
+                     * @return EncryptedBody 加密后的数据（Base64编码）
                      * 
                      */
                     std::string GetEncryptedBody() const;
@@ -330,7 +330,7 @@ WarnInfos，告警信息，Code 告警码列表和释义：
                     bool m_reflectDetailInfosHasBeenSet;
 
                     /**
-                     * 加密后的数据
+                     * 加密后的数据（Base64编码）
                      */
                     std::string m_encryptedBody;
                     bool m_encryptedBodyHasBeenSet;

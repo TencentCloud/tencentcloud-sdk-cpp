@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -148,6 +148,27 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
+                     * 获取数据库类型
+                     * @return Type 数据库类型
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置数据库类型
+                     * @param _type 数据库类型
+                     * 
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
                      * 获取责任人
                      * @return Incharge 责任人
                      * 
@@ -167,6 +188,90 @@ namespace TencentCloud
                      * 
                      */
                     bool InchargeHasBeenSet() const;
+
+                    /**
+                     * 获取数据优化引擎
+                     * @return DataOptimizationResource 数据优化引擎
+                     * 
+                     */
+                    std::string GetDataOptimizationResource() const;
+
+                    /**
+                     * 设置数据优化引擎
+                     * @param _dataOptimizationResource 数据优化引擎
+                     * 
+                     */
+                    void SetDataOptimizationResource(const std::string& _dataOptimizationResource);
+
+                    /**
+                     * 判断参数 DataOptimizationResource 是否已赋值
+                     * @return DataOptimizationResource 是否已赋值
+                     * 
+                     */
+                    bool DataOptimizationResourceHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启数据优化
+                     * @return SmartOptimizerWritten 是否开启数据优化
+                     * 
+                     */
+                    std::string GetSmartOptimizerWritten() const;
+
+                    /**
+                     * 设置是否开启数据优化
+                     * @param _smartOptimizerWritten 是否开启数据优化
+                     * 
+                     */
+                    void SetSmartOptimizerWritten(const std::string& _smartOptimizerWritten);
+
+                    /**
+                     * 判断参数 SmartOptimizerWritten 是否已赋值
+                     * @return SmartOptimizerWritten 是否已赋值
+                     * 
+                     */
+                    bool SmartOptimizerWrittenHasBeenSet() const;
+
+                    /**
+                     * 获取数据优化针对的表
+                     * @return TableName 数据优化针对的表
+                     * 
+                     */
+                    std::string GetTableName() const;
+
+                    /**
+                     * 设置数据优化针对的表
+                     * @param _tableName 数据优化针对的表
+                     * 
+                     */
+                    void SetTableName(const std::string& _tableName);
+
+                    /**
+                     * 判断参数 TableName 是否已赋值
+                     * @return TableName 是否已赋值
+                     * 
+                     */
+                    bool TableNameHasBeenSet() const;
+
+                    /**
+                     * 获取数据优化资源组
+                     * @return ResourceGroupName 数据优化资源组
+                     * 
+                     */
+                    std::string GetResourceGroupName() const;
+
+                    /**
+                     * 设置数据优化资源组
+                     * @param _resourceGroupName 数据优化资源组
+                     * 
+                     */
+                    void SetResourceGroupName(const std::string& _resourceGroupName);
+
+                    /**
+                     * 判断参数 ResourceGroupName 是否已赋值
+                     * @return ResourceGroupName 是否已赋值
+                     * 
+                     */
+                    bool ResourceGroupNameHasBeenSet() const;
 
                 private:
 
@@ -201,10 +306,40 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
+                     * 数据库类型
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
+
+                    /**
                      * 责任人
                      */
                     std::string m_incharge;
                     bool m_inchargeHasBeenSet;
+
+                    /**
+                     * 数据优化引擎
+                     */
+                    std::string m_dataOptimizationResource;
+                    bool m_dataOptimizationResourceHasBeenSet;
+
+                    /**
+                     * 是否开启数据优化
+                     */
+                    std::string m_smartOptimizerWritten;
+                    bool m_smartOptimizerWrittenHasBeenSet;
+
+                    /**
+                     * 数据优化针对的表
+                     */
+                    std::string m_tableName;
+                    bool m_tableNameHasBeenSet;
+
+                    /**
+                     * 数据优化资源组
+                     */
+                    std::string m_resourceGroupName;
+                    bool m_resourceGroupNameHasBeenSet;
 
                 };
             }

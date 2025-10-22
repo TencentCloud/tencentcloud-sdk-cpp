@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ ConfigFileReleaseDeletion::ConfigFileReleaseDeletion() :
     m_namespaceHasBeenSet(false),
     m_groupHasBeenSet(false),
     m_fileNameHasBeenSet(false),
-    m_releaseVersionHasBeenSet(false)
+    m_releaseVersionHasBeenSet(false),
+    m_idHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome ConfigFileReleaseDeletion::Deserialize(const rapidjson::Valu
         m_releaseVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("Id") && !value["Id"].IsNull())
+    {
+        if (!value["Id"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConfigFileReleaseDeletion.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = value["Id"].GetUint64();
+        m_idHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void ConfigFileReleaseDeletion::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "ReleaseVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_releaseVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_id, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void ConfigFileReleaseDeletion::SetReleaseVersion(const string& _releaseVersion)
 bool ConfigFileReleaseDeletion::ReleaseVersionHasBeenSet() const
 {
     return m_releaseVersionHasBeenSet;
+}
+
+uint64_t ConfigFileReleaseDeletion::GetId() const
+{
+    return m_id;
+}
+
+void ConfigFileReleaseDeletion::SetId(const uint64_t& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool ConfigFileReleaseDeletion::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
 }
 

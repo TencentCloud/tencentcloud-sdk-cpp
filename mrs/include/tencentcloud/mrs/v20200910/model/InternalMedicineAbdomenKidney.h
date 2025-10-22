@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取肾脏总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Src 肾脏总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KeyValueItem GetSrc() const;
 
                     /**
                      * 设置肾脏总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _src 肾脏总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrc(const KeyValueItem& _src);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取肾脏大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Size 肾脏大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KeyValueItem GetSize() const;
 
                     /**
                      * 设置肾脏大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _size 肾脏大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSize(const KeyValueItem& _size);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取肾脏触诊
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Palpation 肾脏触诊
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KeyValueItem GetPalpation() const;
 
                     /**
                      * 设置肾脏触诊
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _palpation 肾脏触诊
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPalpation(const KeyValueItem& _palpation);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取肾脏叩诊
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Percussion 肾脏叩诊
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KeyValueItem GetPercussion() const;
 
                     /**
                      * 设置肾脏叩诊
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _percussion 肾脏叩诊
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPercussion(const KeyValueItem& _percussion);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取肾脏压痛
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tenderness 肾脏压痛
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KeyValueItem GetTenderness() const;
 
                     /**
                      * 设置肾脏压痛
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tenderness 肾脏压痛
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTenderness(const KeyValueItem& _tenderness);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取肾脏质地
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Consistency 肾脏质地
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KeyValueItem GetConsistency() const;
 
                     /**
                      * 设置肾脏质地
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _consistency 肾脏质地
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConsistency(const KeyValueItem& _consistency);
@@ -201,42 +177,36 @@ namespace TencentCloud
 
                     /**
                      * 肾脏总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KeyValueItem m_src;
                     bool m_srcHasBeenSet;
 
                     /**
                      * 肾脏大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KeyValueItem m_size;
                     bool m_sizeHasBeenSet;
 
                     /**
                      * 肾脏触诊
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KeyValueItem m_palpation;
                     bool m_palpationHasBeenSet;
 
                     /**
                      * 肾脏叩诊
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KeyValueItem m_percussion;
                     bool m_percussionHasBeenSet;
 
                     /**
                      * 肾脏压痛
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KeyValueItem m_tenderness;
                     bool m_tendernessHasBeenSet;
 
                     /**
                      * 肾脏质地
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KeyValueItem m_consistency;
                     bool m_consistencyHasBeenSet;

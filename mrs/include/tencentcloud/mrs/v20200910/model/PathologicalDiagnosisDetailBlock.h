@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Part 部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPart() const;
 
                     /**
                      * 设置部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _part 部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPart(const std::string& _part);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HistologicalType 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHistologicalType() const;
 
                     /**
                      * 设置类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _histologicalType 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHistologicalType(const std::string& _histologicalType);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HistologicalGrade 等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHistologicalGrade() const;
 
                     /**
                      * 设置等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _histologicalGrade 等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHistologicalGrade(const std::string& _histologicalGrade);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 部位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_part;
                     bool m_partHasBeenSet;
 
                     /**
                      * 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_histologicalType;
                     bool m_histologicalTypeHasBeenSet;
 
                     /**
                      * 等级
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_histologicalGrade;
                     bool m_histologicalGradeHasBeenSet;

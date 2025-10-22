@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取支付结束时间
-注意：此字段可能返回 null，表示取不到有效值。
+格式:YYYY-MM-DD HH:mm:ss
                      * @return PayEndTime 支付结束时间
-注意：此字段可能返回 null，表示取不到有效值。
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     std::string GetPayEndTime() const;
 
                     /**
                      * 设置支付结束时间
-注意：此字段可能返回 null，表示取不到有效值。
+格式:YYYY-MM-DD HH:mm:ss
                      * @param _payEndTime 支付结束时间
-注意：此字段可能返回 null，表示取不到有效值。
+格式:YYYY-MM-DD HH:mm:ss
                      * 
                      */
                     void SetPayEndTime(const std::string& _payEndTime);
@@ -75,7 +75,7 @@ namespace TencentCloud
 
                     /**
                      * 支付结束时间
-注意：此字段可能返回 null，表示取不到有效值。
+格式:YYYY-MM-DD HH:mm:ss
                      */
                     std::string m_payEndTime;
                     bool m_payEndTimeHasBeenSet;

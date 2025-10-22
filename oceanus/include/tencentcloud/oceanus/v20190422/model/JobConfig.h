@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@
 #include <tencentcloud/oceanus/v20190422/model/ExpertModeConfiguration.h>
 #include <tencentcloud/oceanus/v20190422/model/TraceModeConfiguration.h>
 #include <tencentcloud/oceanus/v20190422/model/JobGraph.h>
+#include <tencentcloud/oceanus/v20190422/model/JobConfig.h>
 
 
 namespace TencentCloud
@@ -865,6 +866,173 @@ namespace TencentCloud
                      */
                     bool FlinkVersionHasBeenSet() const;
 
+                    /**
+                     * 获取jm使用cpu数目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return JobManagerCpu jm使用cpu数目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetJobManagerCpu() const;
+
+                    /**
+                     * 设置jm使用cpu数目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _jobManagerCpu jm使用cpu数目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetJobManagerCpu(const double& _jobManagerCpu);
+
+                    /**
+                     * 判断参数 JobManagerCpu 是否已赋值
+                     * @return JobManagerCpu 是否已赋值
+                     * 
+                     */
+                    bool JobManagerCpuHasBeenSet() const;
+
+                    /**
+                     * 获取jm使用内存数目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return JobManagerMem jm使用内存数目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetJobManagerMem() const;
+
+                    /**
+                     * 设置jm使用内存数目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _jobManagerMem jm使用内存数目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetJobManagerMem(const double& _jobManagerMem);
+
+                    /**
+                     * 判断参数 JobManagerMem 是否已赋值
+                     * @return JobManagerMem 是否已赋值
+                     * 
+                     */
+                    bool JobManagerMemHasBeenSet() const;
+
+                    /**
+                     * 获取tm使用cpu数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskManagerCpu tm使用cpu数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetTaskManagerCpu() const;
+
+                    /**
+                     * 设置tm使用cpu数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _taskManagerCpu tm使用cpu数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTaskManagerCpu(const double& _taskManagerCpu);
+
+                    /**
+                     * 判断参数 TaskManagerCpu 是否已赋值
+                     * @return TaskManagerCpu 是否已赋值
+                     * 
+                     */
+                    bool TaskManagerCpuHasBeenSet() const;
+
+                    /**
+                     * 获取tm使用mem数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskManagerMem tm使用mem数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetTaskManagerMem() const;
+
+                    /**
+                     * 设置tm使用mem数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _taskManagerMem tm使用mem数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTaskManagerMem(const double& _taskManagerMem);
+
+                    /**
+                     * 判断参数 TaskManagerMem 是否已赋值
+                     * @return TaskManagerMem 是否已赋值
+                     * 
+                     */
+                    bool TaskManagerMemHasBeenSet() const;
+
+                    /**
+                     * 获取运行中配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return JobConfigItem 运行中配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    JobConfig GetJobConfigItem() const;
+
+                    /**
+                     * 设置运行中配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _jobConfigItem 运行中配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetJobConfigItem(const JobConfig& _jobConfigItem);
+
+                    /**
+                     * 判断参数 JobConfigItem 是否已赋值
+                     * @return JobConfigItem 是否已赋值
+                     * 
+                     */
+                    bool JobConfigItemHasBeenSet() const;
+
+                    /**
+                     * 获取checkpoint 超时时间
+                     * @return CheckpointTimeoutSecond checkpoint 超时时间
+                     * 
+                     */
+                    int64_t GetCheckpointTimeoutSecond() const;
+
+                    /**
+                     * 设置checkpoint 超时时间
+                     * @param _checkpointTimeoutSecond checkpoint 超时时间
+                     * 
+                     */
+                    void SetCheckpointTimeoutSecond(const int64_t& _checkpointTimeoutSecond);
+
+                    /**
+                     * 判断参数 CheckpointTimeoutSecond 是否已赋值
+                     * @return CheckpointTimeoutSecond 是否已赋值
+                     * 
+                     */
+                    bool CheckpointTimeoutSecondHasBeenSet() const;
+
+                    /**
+                     * 获取checkpoint 间隔时间
+                     * @return CheckpointIntervalSecond checkpoint 间隔时间
+                     * 
+                     */
+                    int64_t GetCheckpointIntervalSecond() const;
+
+                    /**
+                     * 设置checkpoint 间隔时间
+                     * @param _checkpointIntervalSecond checkpoint 间隔时间
+                     * 
+                     */
+                    void SetCheckpointIntervalSecond(const int64_t& _checkpointIntervalSecond);
+
+                    /**
+                     * 判断参数 CheckpointIntervalSecond 是否已赋值
+                     * @return CheckpointIntervalSecond 是否已赋值
+                     * 
+                     */
+                    bool CheckpointIntervalSecondHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1094,6 +1262,53 @@ namespace TencentCloud
                      */
                     std::string m_flinkVersion;
                     bool m_flinkVersionHasBeenSet;
+
+                    /**
+                     * jm使用cpu数目
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_jobManagerCpu;
+                    bool m_jobManagerCpuHasBeenSet;
+
+                    /**
+                     * jm使用内存数目
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_jobManagerMem;
+                    bool m_jobManagerMemHasBeenSet;
+
+                    /**
+                     * tm使用cpu数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_taskManagerCpu;
+                    bool m_taskManagerCpuHasBeenSet;
+
+                    /**
+                     * tm使用mem数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_taskManagerMem;
+                    bool m_taskManagerMemHasBeenSet;
+
+                    /**
+                     * 运行中配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    JobConfig m_jobConfigItem;
+                    bool m_jobConfigItemHasBeenSet;
+
+                    /**
+                     * checkpoint 超时时间
+                     */
+                    int64_t m_checkpointTimeoutSecond;
+                    bool m_checkpointTimeoutSecondHasBeenSet;
+
+                    /**
+                     * checkpoint 间隔时间
+                     */
+                    int64_t m_checkpointIntervalSecond;
+                    bool m_checkpointIntervalSecondHasBeenSet;
 
                 };
             }

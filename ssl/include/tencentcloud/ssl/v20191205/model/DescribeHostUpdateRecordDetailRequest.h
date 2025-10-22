@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取一键更新记录ID
-                     * @return DeployRecordId 一键更新记录ID
+                     * 获取部署记录ID，通过调用UpdateCertificateInstance接口返回的记录ID， 或者通过UpdateCertificateRecordRollback回滚接口返回的记录ID
+                     * @return DeployRecordId 部署记录ID，通过调用UpdateCertificateInstance接口返回的记录ID， 或者通过UpdateCertificateRecordRollback回滚接口返回的记录ID
                      * 
                      */
                     std::string GetDeployRecordId() const;
 
                     /**
-                     * 设置一键更新记录ID
-                     * @param _deployRecordId 一键更新记录ID
+                     * 设置部署记录ID，通过调用UpdateCertificateInstance接口返回的记录ID， 或者通过UpdateCertificateRecordRollback回滚接口返回的记录ID
+                     * @param _deployRecordId 部署记录ID，通过调用UpdateCertificateInstance接口返回的记录ID， 或者通过UpdateCertificateRecordRollback回滚接口返回的记录ID
                      * 
                      */
                     void SetDeployRecordId(const std::string& _deployRecordId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DeployRecordIdHasBeenSet() const;
 
                     /**
-                     * 获取每页数量，默认10。
-                     * @return Limit 每页数量，默认10。
+                     * 获取每页数量，默认10。最大值为200
+                     * @return Limit 每页数量，默认10。最大值为200
                      * 
                      */
                     std::string GetLimit() const;
 
                     /**
-                     * 设置每页数量，默认10。
-                     * @param _limit 每页数量，默认10。
+                     * 设置每页数量，默认10。最大值为200
+                     * @param _limit 每页数量，默认10。最大值为200
                      * 
                      */
                     void SetLimit(const std::string& _limit);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页偏移量，从0开始。
-                     * @return Offset 分页偏移量，从0开始。
+                     * 获取分页偏移量，从0开始。默认为0
+                     * @return Offset 分页偏移量，从0开始。默认为0
                      * 
                      */
                     std::string GetOffset() const;
 
                     /**
-                     * 设置分页偏移量，从0开始。
-                     * @param _offset 分页偏移量，从0开始。
+                     * 设置分页偏移量，从0开始。默认为0
+                     * @param _offset 分页偏移量，从0开始。默认为0
                      * 
                      */
                     void SetOffset(const std::string& _offset);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 一键更新记录ID
+                     * 部署记录ID，通过调用UpdateCertificateInstance接口返回的记录ID， 或者通过UpdateCertificateRecordRollback回滚接口返回的记录ID
                      */
                     std::string m_deployRecordId;
                     bool m_deployRecordIdHasBeenSet;
 
                     /**
-                     * 每页数量，默认10。
+                     * 每页数量，默认10。最大值为200
                      */
                     std::string m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页偏移量，从0开始。
+                     * 分页偏移量，从0开始。默认为0
                      */
                     std::string m_offset;
                     bool m_offsetHasBeenSet;

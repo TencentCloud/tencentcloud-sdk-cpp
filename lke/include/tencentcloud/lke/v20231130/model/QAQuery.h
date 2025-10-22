@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -321,6 +321,27 @@ namespace TencentCloud
                      */
                     bool QueryAnswerHasBeenSet() const;
 
+                    /**
+                     * 获取查询类型 filename 名称、 attribute 标签
+                     * @return QueryType 查询类型 filename 名称、 attribute 标签
+                     * 
+                     */
+                    std::string GetQueryType() const;
+
+                    /**
+                     * 设置查询类型 filename 名称、 attribute 标签
+                     * @param _queryType 查询类型 filename 名称、 attribute 标签
+                     * 
+                     */
+                    void SetQueryType(const std::string& _queryType);
+
+                    /**
+                     * 判断参数 QueryType 是否已赋值
+                     * @return QueryType 是否已赋值
+                     * 
+                     */
+                    bool QueryTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -399,6 +420,12 @@ namespace TencentCloud
                      */
                     std::string m_queryAnswer;
                     bool m_queryAnswerHasBeenSet;
+
+                    /**
+                     * 查询类型 filename 名称、 attribute 标签
+                     */
+                    std::string m_queryType;
+                    bool m_queryTypeHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取分页查找时返回采集规则总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 分页查找时返回采集规则总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotal() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取指定采集规则名称查找，部分失败时返回失败采集规则名称及最后一个失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 指定采集规则名称查找，部分失败时返回失败采集规则名称及最后一个失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMessage() const;
@@ -77,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取采集规则查询结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogConfigs 采集规则查询结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogConfigs() const;
@@ -95,21 +89,18 @@ namespace TencentCloud
 
                     /**
                      * 分页查找时返回采集规则总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
                      * 指定采集规则名称查找，部分失败时返回失败采集规则名称及最后一个失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
                      * 采集规则查询结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logConfigs;
                     bool m_logConfigsHasBeenSet;

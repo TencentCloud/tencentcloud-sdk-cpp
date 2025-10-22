@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取群组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId 群组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置群组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupId 群组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取群组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupName 群组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置群组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupName 群组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取群组主讲人ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TeacherId 群组主讲人ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTeacherId() const;
 
                     /**
                      * 设置群组主讲人ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _teacherId 群组主讲人ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTeacherId(const std::string& _teacherId);
@@ -125,11 +113,9 @@ namespace TencentCloud
                      * 获取群组类型 
 0-基础群组 
 1-组合群组，若为1时会返回子群组ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupType 群组类型 
 0-基础群组 
 1-组合群组，若为1时会返回子群组ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetGroupType() const;
@@ -138,11 +124,9 @@ namespace TencentCloud
                      * 设置群组类型 
 0-基础群组 
 1-组合群组，若为1时会返回子群组ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupType 群组类型 
 0-基础群组 
 1-组合群组，若为1时会返回子群组ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupType(const uint64_t& _groupType);
@@ -183,21 +167,18 @@ namespace TencentCloud
 
                     /**
                      * 群组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
                      * 群组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
                      * 群组主讲人ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_teacherId;
                     bool m_teacherIdHasBeenSet;
@@ -206,7 +187,6 @@ namespace TencentCloud
                      * 群组类型 
 0-基础群组 
 1-组合群组，若为1时会返回子群组ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_groupType;
                     bool m_groupTypeHasBeenSet;

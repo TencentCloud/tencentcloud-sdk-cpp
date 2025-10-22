@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -134,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监听器绑定的证书数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Certificate 监听器绑定的证书数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Certificate GetCertificate() const;
 
                     /**
                      * 设置监听器绑定的证书数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _certificate 监听器绑定的证书数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCertificate(const Certificate& _certificate);
@@ -159,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监听器规则列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rules 监听器规则列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ClbListenerRule> GetRules() const;
 
                     /**
                      * 设置监听器规则列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rules 监听器规则列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRules(const std::vector<ClbListenerRule>& _rules);
@@ -184,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取不匹配域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NoMatchDomains 不匹配域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetNoMatchDomains() const;
 
                     /**
                      * 设置不匹配域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _noMatchDomains 不匹配域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNoMatchDomains(const std::vector<std::string>& _noMatchDomains);
@@ -235,21 +223,18 @@ namespace TencentCloud
 
                     /**
                      * 监听器绑定的证书数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Certificate m_certificate;
                     bool m_certificateHasBeenSet;
 
                     /**
                      * 监听器规则列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ClbListenerRule> m_rules;
                     bool m_rulesHasBeenSet;
 
                     /**
                      * 不匹配域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_noMatchDomains;
                     bool m_noMatchDomainsHasBeenSet;

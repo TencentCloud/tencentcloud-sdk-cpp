@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取正向分数，取值范围0到100
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Positive 正向分数，取值范围0到100
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPositive() const;
 
                     /**
                      * 设置正向分数，取值范围0到100
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _positive 正向分数，取值范围0到100
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPositive(const int64_t& _positive);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取负向分数，取值范围0到100
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Negative 负向分数，取值范围0到100
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNegative() const;
 
                     /**
                      * 设置负向分数，取值范围0到100
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _negative 负向分数，取值范围0到100
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNegative(const int64_t& _negative);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 正向分数，取值范围0到100
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_positive;
                     bool m_positiveHasBeenSet;
 
                     /**
                      * 负向分数，取值范围0到100
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_negative;
                     bool m_negativeHasBeenSet;

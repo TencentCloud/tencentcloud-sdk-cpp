@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -30,7 +30,6 @@ set(tiia_public_header_model
   include/tencentcloud/tiia/v20190529/model/DeleteImagesResponse.h
   include/tencentcloud/tiia/v20190529/model/CropImageRequest.h
   include/tencentcloud/tiia/v20190529/model/DetectProductRequest.h
-  include/tencentcloud/tiia/v20190529/model/DetectLabelBetaRequest.h
   include/tencentcloud/tiia/v20190529/model/DetectLabelResponse.h
   include/tencentcloud/tiia/v20190529/model/DescribeGroupsRequest.h
   include/tencentcloud/tiia/v20190529/model/DetectMisbehaviorResponse.h
@@ -69,11 +68,10 @@ set(tiia_public_header_model
   include/tencentcloud/tiia/v20190529/model/UpdateImageResponse.h
   include/tencentcloud/tiia/v20190529/model/CarPlateContent.h
   include/tencentcloud/tiia/v20190529/model/DetectLabelProRequest.h
-  include/tencentcloud/tiia/v20190529/model/DetectLabelBetaResponse.h
+  include/tencentcloud/tiia/v20190529/model/ImageInfo.h
   include/tencentcloud/tiia/v20190529/model/DetectEnvelopeResponse.h
   include/tencentcloud/tiia/v20190529/model/ImageTag.h
   include/tencentcloud/tiia/v20190529/model/Attribute.h
-  include/tencentcloud/tiia/v20190529/model/ImageInfo.h
   include/tencentcloud/tiia/v20190529/model/RecognizeCarProResponse.h
   include/tencentcloud/tiia/v20190529/model/DescribeGroupsResponse.h
   include/tencentcloud/tiia/v20190529/model/CarTagItem.h
@@ -95,7 +93,6 @@ set(tiia_src
   src/v20190529/model/DeleteImagesResponse.cpp
   src/v20190529/model/CropImageRequest.cpp
   src/v20190529/model/DetectProductRequest.cpp
-  src/v20190529/model/DetectLabelBetaRequest.cpp
   src/v20190529/model/DetectLabelResponse.cpp
   src/v20190529/model/DescribeGroupsRequest.cpp
   src/v20190529/model/DetectMisbehaviorResponse.cpp
@@ -134,11 +131,10 @@ set(tiia_src
   src/v20190529/model/UpdateImageResponse.cpp
   src/v20190529/model/CarPlateContent.cpp
   src/v20190529/model/DetectLabelProRequest.cpp
-  src/v20190529/model/DetectLabelBetaResponse.cpp
+  src/v20190529/model/ImageInfo.cpp
   src/v20190529/model/DetectEnvelopeResponse.cpp
   src/v20190529/model/ImageTag.cpp
   src/v20190529/model/Attribute.cpp
-  src/v20190529/model/ImageInfo.cpp
   src/v20190529/model/RecognizeCarProResponse.cpp
   src/v20190529/model/DescribeGroupsResponse.cpp
   src/v20190529/model/CarTagItem.cpp

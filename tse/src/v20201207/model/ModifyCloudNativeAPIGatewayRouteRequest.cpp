@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,10 @@ ModifyCloudNativeAPIGatewayRouteRequest::ModifyCloudNativeAPIGatewayRouteRequest
     m_stripPathHasBeenSet(false),
     m_forceHttpsHasBeenSet(false),
     m_destinationPortsHasBeenSet(false),
-    m_headersHasBeenSet(false)
+    m_headersHasBeenSet(false),
+    m_requestBufferingHasBeenSet(false),
+    m_responseBufferingHasBeenSet(false),
+    m_regexPriorityHasBeenSet(false)
 {
 }
 
@@ -189,6 +192,30 @@ string ModifyCloudNativeAPIGatewayRouteRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_requestBufferingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RequestBuffering";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_requestBuffering, allocator);
+    }
+
+    if (m_responseBufferingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResponseBuffering";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_responseBuffering, allocator);
+    }
+
+    if (m_regexPriorityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegexPriority";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_regexPriority, allocator);
     }
 
 
@@ -421,6 +448,54 @@ void ModifyCloudNativeAPIGatewayRouteRequest::SetHeaders(const vector<KVMapping>
 bool ModifyCloudNativeAPIGatewayRouteRequest::HeadersHasBeenSet() const
 {
     return m_headersHasBeenSet;
+}
+
+bool ModifyCloudNativeAPIGatewayRouteRequest::GetRequestBuffering() const
+{
+    return m_requestBuffering;
+}
+
+void ModifyCloudNativeAPIGatewayRouteRequest::SetRequestBuffering(const bool& _requestBuffering)
+{
+    m_requestBuffering = _requestBuffering;
+    m_requestBufferingHasBeenSet = true;
+}
+
+bool ModifyCloudNativeAPIGatewayRouteRequest::RequestBufferingHasBeenSet() const
+{
+    return m_requestBufferingHasBeenSet;
+}
+
+bool ModifyCloudNativeAPIGatewayRouteRequest::GetResponseBuffering() const
+{
+    return m_responseBuffering;
+}
+
+void ModifyCloudNativeAPIGatewayRouteRequest::SetResponseBuffering(const bool& _responseBuffering)
+{
+    m_responseBuffering = _responseBuffering;
+    m_responseBufferingHasBeenSet = true;
+}
+
+bool ModifyCloudNativeAPIGatewayRouteRequest::ResponseBufferingHasBeenSet() const
+{
+    return m_responseBufferingHasBeenSet;
+}
+
+int64_t ModifyCloudNativeAPIGatewayRouteRequest::GetRegexPriority() const
+{
+    return m_regexPriority;
+}
+
+void ModifyCloudNativeAPIGatewayRouteRequest::SetRegexPriority(const int64_t& _regexPriority)
+{
+    m_regexPriority = _regexPriority;
+    m_regexPriorityHasBeenSet = true;
+}
+
+bool ModifyCloudNativeAPIGatewayRouteRequest::RegexPriorityHasBeenSet() const
+{
+    return m_regexPriorityHasBeenSet;
 }
 
 

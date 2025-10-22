@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,9 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/trtc/v20190722/model/AmbientSound.h>
+#include <tencentcloud/trtc/v20190722/model/VoicePrint.h>
+#include <tencentcloud/trtc/v20190722/model/TurnDetection.h>
 
 
 namespace TencentCloud
@@ -193,6 +196,239 @@ namespace TencentCloud
                      */
                     bool InterruptSpeechDurationHasBeenSet() const;
 
+                    /**
+                     * 获取控制新一轮对话的触发方式，默认为0。
+- 0表示当服务端语音识别检测出的完整一句话后，自动触发一轮新的对话。
+- 1表示客户端在收到字幕消息后，自行决定是否手动发送聊天信令触发一轮新的对话。
+                     * @return TurnDetectionMode 控制新一轮对话的触发方式，默认为0。
+- 0表示当服务端语音识别检测出的完整一句话后，自动触发一轮新的对话。
+- 1表示客户端在收到字幕消息后，自行决定是否手动发送聊天信令触发一轮新的对话。
+                     * 
+                     */
+                    uint64_t GetTurnDetectionMode() const;
+
+                    /**
+                     * 设置控制新一轮对话的触发方式，默认为0。
+- 0表示当服务端语音识别检测出的完整一句话后，自动触发一轮新的对话。
+- 1表示客户端在收到字幕消息后，自行决定是否手动发送聊天信令触发一轮新的对话。
+                     * @param _turnDetectionMode 控制新一轮对话的触发方式，默认为0。
+- 0表示当服务端语音识别检测出的完整一句话后，自动触发一轮新的对话。
+- 1表示客户端在收到字幕消息后，自行决定是否手动发送聊天信令触发一轮新的对话。
+                     * 
+                     */
+                    void SetTurnDetectionMode(const uint64_t& _turnDetectionMode);
+
+                    /**
+                     * 判断参数 TurnDetectionMode 是否已赋值
+                     * @return TurnDetectionMode 是否已赋值
+                     * 
+                     */
+                    bool TurnDetectionModeHasBeenSet() const;
+
+                    /**
+                     * 获取是否过滤掉用户只说了一个字的句子，true表示过滤，false表示不过滤，默认值为true
+                     * @return FilterOneWord 是否过滤掉用户只说了一个字的句子，true表示过滤，false表示不过滤，默认值为true
+                     * 
+                     */
+                    bool GetFilterOneWord() const;
+
+                    /**
+                     * 设置是否过滤掉用户只说了一个字的句子，true表示过滤，false表示不过滤，默认值为true
+                     * @param _filterOneWord 是否过滤掉用户只说了一个字的句子，true表示过滤，false表示不过滤，默认值为true
+                     * 
+                     */
+                    void SetFilterOneWord(const bool& _filterOneWord);
+
+                    /**
+                     * 判断参数 FilterOneWord 是否已赋值
+                     * @return FilterOneWord 是否已赋值
+                     * 
+                     */
+                    bool FilterOneWordHasBeenSet() const;
+
+                    /**
+                     * 获取欢迎消息优先级，0默认，1高优，高优不能被打断。
+                     * @return WelcomeMessagePriority 欢迎消息优先级，0默认，1高优，高优不能被打断。
+                     * 
+                     */
+                    uint64_t GetWelcomeMessagePriority() const;
+
+                    /**
+                     * 设置欢迎消息优先级，0默认，1高优，高优不能被打断。
+                     * @param _welcomeMessagePriority 欢迎消息优先级，0默认，1高优，高优不能被打断。
+                     * 
+                     */
+                    void SetWelcomeMessagePriority(const uint64_t& _welcomeMessagePriority);
+
+                    /**
+                     * 判断参数 WelcomeMessagePriority 是否已赋值
+                     * @return WelcomeMessagePriority 是否已赋值
+                     * 
+                     */
+                    bool WelcomeMessagePriorityHasBeenSet() const;
+
+                    /**
+                     * 获取用于过滤LLM返回内容，不播放括号中的内容。
+1：中文括号（）
+2：英文括号()
+3：中文方括号【】
+4：英文方括号[]
+5：英文花括号{}
+默认值为空，表示不进行过滤。
+                     * @return FilterBracketsContent 用于过滤LLM返回内容，不播放括号中的内容。
+1：中文括号（）
+2：英文括号()
+3：中文方括号【】
+4：英文方括号[]
+5：英文花括号{}
+默认值为空，表示不进行过滤。
+                     * 
+                     */
+                    uint64_t GetFilterBracketsContent() const;
+
+                    /**
+                     * 设置用于过滤LLM返回内容，不播放括号中的内容。
+1：中文括号（）
+2：英文括号()
+3：中文方括号【】
+4：英文方括号[]
+5：英文花括号{}
+默认值为空，表示不进行过滤。
+                     * @param _filterBracketsContent 用于过滤LLM返回内容，不播放括号中的内容。
+1：中文括号（）
+2：英文括号()
+3：中文方括号【】
+4：英文方括号[]
+5：英文花括号{}
+默认值为空，表示不进行过滤。
+                     * 
+                     */
+                    void SetFilterBracketsContent(const uint64_t& _filterBracketsContent);
+
+                    /**
+                     * 判断参数 FilterBracketsContent 是否已赋值
+                     * @return FilterBracketsContent 是否已赋值
+                     * 
+                     */
+                    bool FilterBracketsContentHasBeenSet() const;
+
+                    /**
+                     * 获取环境音设置
+                     * @return AmbientSound 环境音设置
+                     * 
+                     */
+                    AmbientSound GetAmbientSound() const;
+
+                    /**
+                     * 设置环境音设置
+                     * @param _ambientSound 环境音设置
+                     * 
+                     */
+                    void SetAmbientSound(const AmbientSound& _ambientSound);
+
+                    /**
+                     * 判断参数 AmbientSound 是否已赋值
+                     * @return AmbientSound 是否已赋值
+                     * 
+                     */
+                    bool AmbientSoundHasBeenSet() const;
+
+                    /**
+                     * 获取声纹配置
+                     * @return VoicePrint 声纹配置
+                     * 
+                     */
+                    VoicePrint GetVoicePrint() const;
+
+                    /**
+                     * 设置声纹配置
+                     * @param _voicePrint 声纹配置
+                     * 
+                     */
+                    void SetVoicePrint(const VoicePrint& _voicePrint);
+
+                    /**
+                     * 判断参数 VoicePrint 是否已赋值
+                     * @return VoicePrint 是否已赋值
+                     * 
+                     */
+                    bool VoicePrintHasBeenSet() const;
+
+                    /**
+                     * 获取语义断句检测
+                     * @return TurnDetection 语义断句检测
+                     * 
+                     */
+                    TurnDetection GetTurnDetection() const;
+
+                    /**
+                     * 设置语义断句检测
+                     * @param _turnDetection 语义断句检测
+                     * 
+                     */
+                    void SetTurnDetection(const TurnDetection& _turnDetection);
+
+                    /**
+                     * 判断参数 TurnDetection 是否已赋值
+                     * @return TurnDetection 是否已赋值
+                     * 
+                     */
+                    bool TurnDetectionHasBeenSet() const;
+
+                    /**
+                     * 获取机器人字幕显示模式。
+- 0表示尽快显示，不会和音频播放进行同步。此时字幕全量下发，后面的字幕会包含前面的字幕。
+- 1表示句子级别的实时显示，会和音频播放进行同步，只有当前句子对应的音频播放完后，下一条字幕才会下发。此时字幕增量下发，端上需要把前后的字幕进行拼接才是完整字幕。
+                     * @return SubtitleMode 机器人字幕显示模式。
+- 0表示尽快显示，不会和音频播放进行同步。此时字幕全量下发，后面的字幕会包含前面的字幕。
+- 1表示句子级别的实时显示，会和音频播放进行同步，只有当前句子对应的音频播放完后，下一条字幕才会下发。此时字幕增量下发，端上需要把前后的字幕进行拼接才是完整字幕。
+                     * 
+                     */
+                    uint64_t GetSubtitleMode() const;
+
+                    /**
+                     * 设置机器人字幕显示模式。
+- 0表示尽快显示，不会和音频播放进行同步。此时字幕全量下发，后面的字幕会包含前面的字幕。
+- 1表示句子级别的实时显示，会和音频播放进行同步，只有当前句子对应的音频播放完后，下一条字幕才会下发。此时字幕增量下发，端上需要把前后的字幕进行拼接才是完整字幕。
+                     * @param _subtitleMode 机器人字幕显示模式。
+- 0表示尽快显示，不会和音频播放进行同步。此时字幕全量下发，后面的字幕会包含前面的字幕。
+- 1表示句子级别的实时显示，会和音频播放进行同步，只有当前句子对应的音频播放完后，下一条字幕才会下发。此时字幕增量下发，端上需要把前后的字幕进行拼接才是完整字幕。
+                     * 
+                     */
+                    void SetSubtitleMode(const uint64_t& _subtitleMode);
+
+                    /**
+                     * 判断参数 SubtitleMode 是否已赋值
+                     * @return SubtitleMode 是否已赋值
+                     * 
+                     */
+                    bool SubtitleModeHasBeenSet() const;
+
+                    /**
+                     * 获取打断词列表，在AI说话期间，只有说出列表中的打断词才会打断AI说话。
+注意：打断词不会触发AI回复。
+                     * @return InterruptWordList 打断词列表，在AI说话期间，只有说出列表中的打断词才会打断AI说话。
+注意：打断词不会触发AI回复。
+                     * 
+                     */
+                    std::vector<std::string> GetInterruptWordList() const;
+
+                    /**
+                     * 设置打断词列表，在AI说话期间，只有说出列表中的打断词才会打断AI说话。
+注意：打断词不会触发AI回复。
+                     * @param _interruptWordList 打断词列表，在AI说话期间，只有说出列表中的打断词才会打断AI说话。
+注意：打断词不会触发AI回复。
+                     * 
+                     */
+                    void SetInterruptWordList(const std::vector<std::string>& _interruptWordList);
+
+                    /**
+                     * 判断参数 InterruptWordList 是否已赋值
+                     * @return InterruptWordList 是否已赋值
+                     * 
+                     */
+                    bool InterruptWordListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +472,71 @@ namespace TencentCloud
                      */
                     uint64_t m_interruptSpeechDuration;
                     bool m_interruptSpeechDurationHasBeenSet;
+
+                    /**
+                     * 控制新一轮对话的触发方式，默认为0。
+- 0表示当服务端语音识别检测出的完整一句话后，自动触发一轮新的对话。
+- 1表示客户端在收到字幕消息后，自行决定是否手动发送聊天信令触发一轮新的对话。
+                     */
+                    uint64_t m_turnDetectionMode;
+                    bool m_turnDetectionModeHasBeenSet;
+
+                    /**
+                     * 是否过滤掉用户只说了一个字的句子，true表示过滤，false表示不过滤，默认值为true
+                     */
+                    bool m_filterOneWord;
+                    bool m_filterOneWordHasBeenSet;
+
+                    /**
+                     * 欢迎消息优先级，0默认，1高优，高优不能被打断。
+                     */
+                    uint64_t m_welcomeMessagePriority;
+                    bool m_welcomeMessagePriorityHasBeenSet;
+
+                    /**
+                     * 用于过滤LLM返回内容，不播放括号中的内容。
+1：中文括号（）
+2：英文括号()
+3：中文方括号【】
+4：英文方括号[]
+5：英文花括号{}
+默认值为空，表示不进行过滤。
+                     */
+                    uint64_t m_filterBracketsContent;
+                    bool m_filterBracketsContentHasBeenSet;
+
+                    /**
+                     * 环境音设置
+                     */
+                    AmbientSound m_ambientSound;
+                    bool m_ambientSoundHasBeenSet;
+
+                    /**
+                     * 声纹配置
+                     */
+                    VoicePrint m_voicePrint;
+                    bool m_voicePrintHasBeenSet;
+
+                    /**
+                     * 语义断句检测
+                     */
+                    TurnDetection m_turnDetection;
+                    bool m_turnDetectionHasBeenSet;
+
+                    /**
+                     * 机器人字幕显示模式。
+- 0表示尽快显示，不会和音频播放进行同步。此时字幕全量下发，后面的字幕会包含前面的字幕。
+- 1表示句子级别的实时显示，会和音频播放进行同步，只有当前句子对应的音频播放完后，下一条字幕才会下发。此时字幕增量下发，端上需要把前后的字幕进行拼接才是完整字幕。
+                     */
+                    uint64_t m_subtitleMode;
+                    bool m_subtitleModeHasBeenSet;
+
+                    /**
+                     * 打断词列表，在AI说话期间，只有说出列表中的打断词才会打断AI说话。
+注意：打断词不会触发AI回复。
+                     */
+                    std::vector<std::string> m_interruptWordList;
+                    bool m_interruptWordListHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则类型。非mongo产品的枚举值为: table-按表名分区，pk-按表名+主键分区，cols-按列名分区。mongo的枚举值为：collection-按集合名分区、collectionAndObjectId-按集合+主键分区。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleType 规则类型。非mongo产品的枚举值为: table-按表名分区，pk-按表名+主键分区，cols-按列名分区。mongo的枚举值为：collection-按集合名分区、collectionAndObjectId-按集合+主键分区。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleType() const;
 
                     /**
                      * 设置规则类型。非mongo产品的枚举值为: table-按表名分区，pk-按表名+主键分区，cols-按列名分区。mongo的枚举值为：collection-按集合名分区、collectionAndObjectId-按集合+主键分区。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleType 规则类型。非mongo产品的枚举值为: table-按表名分区，pk-按表名+主键分区，cols-按列名分区。mongo的枚举值为：collection-按集合名分区、collectionAndObjectId-按集合+主键分区。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleType(const std::string& _ruleType);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取库名匹配规则，请填写正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbPattern 库名匹配规则，请填写正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDbPattern() const;
 
                     /**
                      * 设置库名匹配规则，请填写正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dbPattern 库名匹配规则，请填写正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDbPattern(const std::string& _dbPattern);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表名匹配规则，如果 DatabaseType 为 mongodb，则匹配集合名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TablePattern 表名匹配规则，如果 DatabaseType 为 mongodb，则匹配集合名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTablePattern() const;
 
                     /**
                      * 设置表名匹配规则，如果 DatabaseType 为 mongodb，则匹配集合名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tablePattern 表名匹配规则，如果 DatabaseType 为 mongodb，则匹配集合名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTablePattern(const std::string& _tablePattern);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取列名。如果 RuleType 为 cols，此项必填。订阅任务会用该列的值计算分区。mongo没有按列分区，因此也不用传这个字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Columns 列名。如果 RuleType 为 cols，此项必填。订阅任务会用该列的值计算分区。mongo没有按列分区，因此也不用传这个字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetColumns() const;
 
                     /**
                      * 设置列名。如果 RuleType 为 cols，此项必填。订阅任务会用该列的值计算分区。mongo没有按列分区，因此也不用传这个字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _columns 列名。如果 RuleType 为 cols，此项必填。订阅任务会用该列的值计算分区。mongo没有按列分区，因此也不用传这个字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetColumns(const std::vector<std::string>& _columns);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 规则类型。非mongo产品的枚举值为: table-按表名分区，pk-按表名+主键分区，cols-按列名分区。mongo的枚举值为：collection-按集合名分区、collectionAndObjectId-按集合+主键分区。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleType;
                     bool m_ruleTypeHasBeenSet;
 
                     /**
                      * 库名匹配规则，请填写正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dbPattern;
                     bool m_dbPatternHasBeenSet;
 
                     /**
                      * 表名匹配规则，如果 DatabaseType 为 mongodb，则匹配集合名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tablePattern;
                     bool m_tablePatternHasBeenSet;
 
                     /**
                      * 列名。如果 RuleType 为 cols，此项必填。订阅任务会用该列的值计算分区。mongo没有按列分区，因此也不用传这个字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_columns;
                     bool m_columnsHasBeenSet;

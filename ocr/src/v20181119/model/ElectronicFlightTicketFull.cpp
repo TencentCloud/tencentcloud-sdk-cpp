@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,7 +43,8 @@ ElectronicFlightTicketFull::ElectronicFlightTicketFull() :
     m_buyerHasBeenSet(false),
     m_sellerHasBeenSet(false),
     m_buyerTaxIDHasBeenSet(false),
-    m_flightItemsHasBeenSet(false)
+    m_flightItemsHasBeenSet(false),
+    m_invoiceStatusHasBeenSet(false)
 {
 }
 
@@ -292,6 +293,16 @@ CoreInternalOutcome ElectronicFlightTicketFull::Deserialize(const rapidjson::Val
         m_flightItemsHasBeenSet = true;
     }
 
+    if (value.HasMember("InvoiceStatus") && !value["InvoiceStatus"].IsNull())
+    {
+        if (!value["InvoiceStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ElectronicFlightTicketFull.InvoiceStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_invoiceStatus = string(value["InvoiceStatus"].GetString());
+        m_invoiceStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -488,6 +499,14 @@ void ElectronicFlightTicketFull::ToJsonObject(rapidjson::Value &value, rapidjson
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_invoiceStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InvoiceStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_invoiceStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -859,5 +878,21 @@ void ElectronicFlightTicketFull::SetFlightItems(const vector<FlightItemInfo>& _f
 bool ElectronicFlightTicketFull::FlightItemsHasBeenSet() const
 {
     return m_flightItemsHasBeenSet;
+}
+
+string ElectronicFlightTicketFull::GetInvoiceStatus() const
+{
+    return m_invoiceStatus;
+}
+
+void ElectronicFlightTicketFull::SetInvoiceStatus(const string& _invoiceStatus)
+{
+    m_invoiceStatus = _invoiceStatus;
+    m_invoiceStatusHasBeenSet = true;
+}
+
+bool ElectronicFlightTicketFull::InvoiceStatusHasBeenSet() const
+{
+    return m_invoiceStatusHasBeenSet;
 }
 

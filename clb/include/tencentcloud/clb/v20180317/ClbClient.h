@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,10 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/clb/v20180317/model/AddCustomizedConfigRequest.h>
+#include <tencentcloud/clb/v20180317/model/AddCustomizedConfigResponse.h>
+#include <tencentcloud/clb/v20180317/model/AssociateCustomizedConfigRequest.h>
+#include <tencentcloud/clb/v20180317/model/AssociateCustomizedConfigResponse.h>
 #include <tencentcloud/clb/v20180317/model/AssociateTargetGroupsRequest.h>
 #include <tencentcloud/clb/v20180317/model/AssociateTargetGroupsResponse.h>
 #include <tencentcloud/clb/v20180317/model/AutoRewriteRequest.h>
@@ -51,6 +55,8 @@
 #include <tencentcloud/clb/v20180317/model/CreateTargetGroupResponse.h>
 #include <tencentcloud/clb/v20180317/model/CreateTopicRequest.h>
 #include <tencentcloud/clb/v20180317/model/CreateTopicResponse.h>
+#include <tencentcloud/clb/v20180317/model/DeleteCustomizedConfigRequest.h>
+#include <tencentcloud/clb/v20180317/model/DeleteCustomizedConfigResponse.h>
 #include <tencentcloud/clb/v20180317/model/DeleteListenerRequest.h>
 #include <tencentcloud/clb/v20180317/model/DeleteListenerResponse.h>
 #include <tencentcloud/clb/v20180317/model/DeleteLoadBalancerRequest.h>
@@ -101,6 +107,8 @@
 #include <tencentcloud/clb/v20180317/model/DescribeIdleLoadBalancersResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeLBListenersRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeLBListenersResponse.h>
+#include <tencentcloud/clb/v20180317/model/DescribeLBOperateProtectRequest.h>
+#include <tencentcloud/clb/v20180317/model/DescribeLBOperateProtectResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeListenersRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeListenersResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeLoadBalancerListByCertIdRequest.h>
@@ -131,6 +139,8 @@
 #include <tencentcloud/clb/v20180317/model/DescribeTargetsResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeTaskStatusRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeTaskStatusResponse.h>
+#include <tencentcloud/clb/v20180317/model/DisassociateCustomizedConfigRequest.h>
+#include <tencentcloud/clb/v20180317/model/DisassociateCustomizedConfigResponse.h>
 #include <tencentcloud/clb/v20180317/model/DisassociateTargetGroupsRequest.h>
 #include <tencentcloud/clb/v20180317/model/DisassociateTargetGroupsResponse.h>
 #include <tencentcloud/clb/v20180317/model/InquiryPriceCreateLoadBalancerRequest.h>
@@ -147,6 +157,8 @@
 #include <tencentcloud/clb/v20180317/model/MigrateClassicalLoadBalancersResponse.h>
 #include <tencentcloud/clb/v20180317/model/ModifyBlockIPListRequest.h>
 #include <tencentcloud/clb/v20180317/model/ModifyBlockIPListResponse.h>
+#include <tencentcloud/clb/v20180317/model/ModifyCustomizedConfigRequest.h>
+#include <tencentcloud/clb/v20180317/model/ModifyCustomizedConfigResponse.h>
 #include <tencentcloud/clb/v20180317/model/ModifyDomainRequest.h>
 #include <tencentcloud/clb/v20180317/model/ModifyDomainResponse.h>
 #include <tencentcloud/clb/v20180317/model/ModifyDomainAttributesRequest.h>
@@ -209,6 +221,12 @@ namespace TencentCloud
                 ClbClient(const Credential &credential, const std::string &region);
                 ClbClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::AddCustomizedConfigResponse> AddCustomizedConfigOutcome;
+                typedef std::future<AddCustomizedConfigOutcome> AddCustomizedConfigOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::AddCustomizedConfigRequest&, AddCustomizedConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddCustomizedConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::AssociateCustomizedConfigResponse> AssociateCustomizedConfigOutcome;
+                typedef std::future<AssociateCustomizedConfigOutcome> AssociateCustomizedConfigOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::AssociateCustomizedConfigRequest&, AssociateCustomizedConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateCustomizedConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::AssociateTargetGroupsResponse> AssociateTargetGroupsOutcome;
                 typedef std::future<AssociateTargetGroupsOutcome> AssociateTargetGroupsOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::AssociateTargetGroupsRequest&, AssociateTargetGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateTargetGroupsAsyncHandler;
@@ -251,6 +269,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateTopicResponse> CreateTopicOutcome;
                 typedef std::future<CreateTopicOutcome> CreateTopicOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::CreateTopicRequest&, CreateTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTopicAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCustomizedConfigResponse> DeleteCustomizedConfigOutcome;
+                typedef std::future<DeleteCustomizedConfigOutcome> DeleteCustomizedConfigOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DeleteCustomizedConfigRequest&, DeleteCustomizedConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomizedConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteListenerResponse> DeleteListenerOutcome;
                 typedef std::future<DeleteListenerOutcome> DeleteListenerOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DeleteListenerRequest&, DeleteListenerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteListenerAsyncHandler;
@@ -326,6 +347,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLBListenersResponse> DescribeLBListenersOutcome;
                 typedef std::future<DescribeLBListenersOutcome> DescribeLBListenersOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeLBListenersRequest&, DescribeLBListenersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLBListenersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLBOperateProtectResponse> DescribeLBOperateProtectOutcome;
+                typedef std::future<DescribeLBOperateProtectOutcome> DescribeLBOperateProtectOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DescribeLBOperateProtectRequest&, DescribeLBOperateProtectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLBOperateProtectAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeListenersResponse> DescribeListenersOutcome;
                 typedef std::future<DescribeListenersOutcome> DescribeListenersOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeListenersRequest&, DescribeListenersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeListenersAsyncHandler;
@@ -371,6 +395,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTaskStatusResponse> DescribeTaskStatusOutcome;
                 typedef std::future<DescribeTaskStatusOutcome> DescribeTaskStatusOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeTaskStatusRequest&, DescribeTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DisassociateCustomizedConfigResponse> DisassociateCustomizedConfigOutcome;
+                typedef std::future<DisassociateCustomizedConfigOutcome> DisassociateCustomizedConfigOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DisassociateCustomizedConfigRequest&, DisassociateCustomizedConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateCustomizedConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DisassociateTargetGroupsResponse> DisassociateTargetGroupsOutcome;
                 typedef std::future<DisassociateTargetGroupsOutcome> DisassociateTargetGroupsOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DisassociateTargetGroupsRequest&, DisassociateTargetGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateTargetGroupsAsyncHandler;
@@ -395,6 +422,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyBlockIPListResponse> ModifyBlockIPListOutcome;
                 typedef std::future<ModifyBlockIPListOutcome> ModifyBlockIPListOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::ModifyBlockIPListRequest&, ModifyBlockIPListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBlockIPListAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCustomizedConfigResponse> ModifyCustomizedConfigOutcome;
+                typedef std::future<ModifyCustomizedConfigOutcome> ModifyCustomizedConfigOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::ModifyCustomizedConfigRequest&, ModifyCustomizedConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCustomizedConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDomainResponse> ModifyDomainOutcome;
                 typedef std::future<ModifyDomainOutcome> ModifyDomainOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::ModifyDomainRequest&, ModifyDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainAsyncHandler;
@@ -471,8 +501,30 @@ namespace TencentCloud
 
 
                 /**
+                 *新增个性化配置，准备下线，请使用SetCustomizedConfigForLoadBalancer。
+                 * @param req AddCustomizedConfigRequest
+                 * @return AddCustomizedConfigOutcome
+                 */
+                AddCustomizedConfigOutcome AddCustomizedConfig(const Model::AddCustomizedConfigRequest &request);
+                void AddCustomizedConfigAsync(const Model::AddCustomizedConfigRequest& request, const AddCustomizedConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddCustomizedConfigOutcomeCallable AddCustomizedConfigCallable(const Model::AddCustomizedConfigRequest& request);
+
+                /**
+                 *关联配置到server或location，根据配置类型关联到server或location。准备下线，请使用SetCustomizedConfigForLoadBalancer。
+                 * @param req AssociateCustomizedConfigRequest
+                 * @return AssociateCustomizedConfigOutcome
+                 */
+                AssociateCustomizedConfigOutcome AssociateCustomizedConfig(const Model::AssociateCustomizedConfigRequest &request);
+                void AssociateCustomizedConfigAsync(const Model::AssociateCustomizedConfigRequest& request, const AssociateCustomizedConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AssociateCustomizedConfigOutcomeCallable AssociateCustomizedConfigCallable(const Model::AssociateCustomizedConfigRequest& request);
+
+                /**
                  *本接口(AssociateTargetGroups)用来将目标组绑定到负载均衡的监听器（四层协议）或转发规则（七层协议）上。
-本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。
+本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用  [DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683)  接口查询本次任务是否成功。
+限制说明：
+- 四层监听器绑定旧版目标组需要监听器开启后端目标组。
+- 七层绑定目标组，数据结构 TargetGroupAssociation 中 LocationId 为必填项。
+- 负载均衡的 VPC 需要和目标组的 VPC 一致。
                  * @param req AssociateTargetGroupsRequest
                  * @return AssociateTargetGroupsOutcome
                  */
@@ -510,7 +562,6 @@ namespace TencentCloud
 
                 /**
                  *BatchModifyTargetWeight 接口用于批量修改负载均衡监听器绑定的后端机器的转发权重。批量修改的资源数量上限为500。本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。<br/>负载均衡的4层和7层监听器支持此接口，传统型负载均衡不支持。
-
                  * @param req BatchModifyTargetWeightRequest
                  * @return BatchModifyTargetWeightOutcome
                  */
@@ -534,8 +585,8 @@ namespace TencentCloud
 
 限制说明
 实例属性维度限制：
-- 支持克隆网络计费模式为按量计费与包年包月的实例，包年包月实例克隆后的新实例网络计费模式会转换为按小时带宽计费，其带宽、规格与原实例设置保持一致。
-- 不支持克隆未关联实例计费项的 CLB。
+- 支持克隆实例计费模式为按量计费与包年包月的实例，包年包月实例克隆后的新实例网络计费模式会转换为按小时带宽计费，其带宽、规格与原实例设置保持一致。
+- 不支持克隆未关联实例计费项的 CLB（历史免费活动创建）。
 - 不支持克隆传统型负载均衡实例和高防 CLB。
 - 不支持克隆基础网络类型的实例。
 - 不支持克隆 Anycast 类型的实例。
@@ -549,7 +600,6 @@ namespace TencentCloud
 通过接口调用：
 BGP带宽包必须传带宽包id
 独占集群克隆必须传对应的参数，否则按共享型创建
-功能内测中，请提交 [内测申请](https://cloud.tencent.com/apply/p/1akuvsmyn0g)。
                  * @param req CloneLoadBalancerRequest
                  * @return CloneLoadBalancerOutcome
                  */
@@ -568,7 +618,7 @@ BGP带宽包必须传带宽包id
 
                 /**
                  *在一个负载均衡实例下创建监听器。
-本接口为异步接口，接口返回成功后，需以返回的 RequestId 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。
+本接口为异步接口，接口返回成功后，需以返回的 RequestId 为入参，调用 [DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683) 接口查询本次任务是否成功。
                  * @param req CreateListenerRequest
                  * @return CreateListenerOutcome
                  */
@@ -577,9 +627,9 @@ BGP带宽包必须传带宽包id
                 CreateListenerOutcomeCallable CreateListenerCallable(const Model::CreateListenerRequest& request);
 
                 /**
-                 *本接口(CreateLoadBalancer)用来创建负载均衡实例（本接口只支持购买按量计费的负载均衡，包年包月的负载均衡请通过控制台购买）。为了使用负载均衡服务，您必须购买一个或多个负载均衡实例。成功调用该接口后，会返回负载均衡实例的唯一 ID。负载均衡实例的类型分为：公网、内网。详情可参考产品说明中的产品类型。
-注意：(1)指定可用区申请负载均衡、跨zone容灾(仅香港支持)【如果您需要体验该功能，请通过 [工单申请](https://console.cloud.tencent.com/workorder/category)】；(2)目前只有北京、上海、广州支持IPv6；(3)一个账号在每个地域的默认购买配额为：公网100个，内网100个。
-本接口为异步接口，接口成功返回后，可使用 DescribeLoadBalancers 接口查询负载均衡实例的状态（如创建中、正常），以确定是否创建成功。
+                 *本接口(CreateLoadBalancer)用来创建负载均衡实例。为了使用负载均衡服务，您必须购买一个或多个负载均衡实例。成功调用该接口后，会返回负载均衡实例的唯一 ID。负载均衡实例的类型分为：公网、内网。详情可参考产品说明中的产品类型。
+注意：(1)可通过 [DescribeResources](https://cloud.tencent.com/document/api/214/70213) 接口查询一个地域是否支持创建IPv6实例；(2)一个账号在每个地域的默认购买配额为：公网100个，内网100个。
+本接口为异步接口，接口成功返回后，可使用 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口查询负载均衡实例的状态（如创建中、正常），以确定是否创建成功。
                  * @param req CreateLoadBalancerRequest
                  * @return CreateLoadBalancerOutcome
                  */
@@ -589,7 +639,7 @@ BGP带宽包必须传带宽包id
 
                 /**
                  *针对SnatPro负载均衡，这个接口用于添加SnatIp，如果负载均衡没有开启SnatPro，添加SnatIp后会自动开启。
-本接口为异步接口，接口返回成功后，需以得到的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。
+本接口为异步接口，接口返回成功后，需以得到的 RequestID 为入参，调用  [DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683)  接口查询本次任务是否成功。
                  * @param req CreateLoadBalancerSnatIpsRequest
                  * @return CreateLoadBalancerSnatIpsOutcome
                  */
@@ -599,7 +649,7 @@ BGP带宽包必须传带宽包id
 
                 /**
                  *CreateRule 接口用于在一个已存在的负载均衡七层监听器下创建转发规则，七层监听器中，后端服务必须绑定到规则上而非监听器上。
-本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。
+本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用 [DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683) 接口查询本次任务是否成功。
                  * @param req CreateRuleRequest
                  * @return CreateRuleOutcome
                  */
@@ -626,8 +676,17 @@ BGP带宽包必须传带宽包id
                 CreateTopicOutcomeCallable CreateTopicCallable(const Model::CreateTopicRequest& request);
 
                 /**
+                 *删除个性化配置，准备下线，请使用SetCustomizedConfigForLoadBalancer。
+                 * @param req DeleteCustomizedConfigRequest
+                 * @return DeleteCustomizedConfigOutcome
+                 */
+                DeleteCustomizedConfigOutcome DeleteCustomizedConfig(const Model::DeleteCustomizedConfigRequest &request);
+                void DeleteCustomizedConfigAsync(const Model::DeleteCustomizedConfigRequest& request, const DeleteCustomizedConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCustomizedConfigOutcomeCallable DeleteCustomizedConfigCallable(const Model::DeleteCustomizedConfigRequest& request);
+
+                /**
                  *本接口用来删除负载均衡实例下的监听器（四层和七层）。
-本接口为异步接口，接口返回成功后，需以得到的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。
+本接口为异步接口，接口返回成功后，需以得到的 RequestID 为入参，调用  [DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683)  接口查询本次任务是否成功。
                  * @param req DeleteListenerRequest
                  * @return DeleteListenerOutcome
                  */
@@ -637,7 +696,7 @@ BGP带宽包必须传带宽包id
 
                 /**
                  *DeleteLoadBalancer 接口用以删除指定的一个或多个负载均衡实例。成功删除后，会把负载均衡实例下的监听器、转发规则一起删除，并把后端服务解绑。
-本接口为异步接口，接口返回成功后，需以返回的 RequestId 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。
+本接口为异步接口，接口返回成功后，需以返回的 RequestId 为入参，调用 [DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683) 接口查询本次任务是否成功。
                  * @param req DeleteLoadBalancerRequest
                  * @return DeleteLoadBalancerOutcome
                  */
@@ -647,7 +706,7 @@ BGP带宽包必须传带宽包id
 
                 /**
                  *该接口支持删除负载均衡的多个监听器。
-本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。
+本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用  [DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683)  接口查询本次任务是否成功。
                  * @param req DeleteLoadBalancerListenersRequest
                  * @return DeleteLoadBalancerListenersOutcome
                  */
@@ -657,7 +716,7 @@ BGP带宽包必须传带宽包id
 
                 /**
                  *这个接口用于删除SnatPro的负载均衡的SnatIp。
-本接口为异步接口，接口返回成功后，需以得到的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。
+本接口为异步接口，接口返回成功后，需以得到的 RequestID 为入参，调用  [DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683)  接口查询本次任务是否成功。
                  * @param req DeleteLoadBalancerSnatIpsRequest
                  * @return DeleteLoadBalancerSnatIpsOutcome
                  */
@@ -677,7 +736,7 @@ BGP带宽包必须传带宽包id
 
                 /**
                  *DeleteRule 接口用来删除负载均衡实例七层监听器下的转发规则。
-本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。
+本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用  [DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683)  接口查询本次任务是否成功。
                  * @param req DeleteRuleRequest
                  * @return DeleteRuleOutcome
                  */
@@ -686,7 +745,7 @@ BGP带宽包必须传带宽包id
                 DeleteRuleOutcomeCallable DeleteRuleCallable(const Model::DeleteRuleRequest& request);
 
                 /**
-                 *删除目标组
+                 *删除目标组，支持批量删除目标组，单次最多批量删除 20 个目标组。
                  * @param req DeleteTargetGroupsRequest
                  * @return DeleteTargetGroupsOutcome
                  */
@@ -699,7 +758,7 @@ BGP带宽包必须传带宽包id
 本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 [DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683) 接口查询本次任务是否成功。
 <br/>限制说明：
 
-- 仅广州、深圳金融、上海、上海金融、北京、成都、中国香港、新加坡、孟买、东京、硅谷地域支持绑定 SCF。
+- 仅广州、深圳金融、上海、上海金融、北京、成都、中国香港、新加坡、东京、硅谷地域支持绑定 SCF。
 - 仅标准账户类型支持绑定 SCF，传统账户类型不支持。建议升级为标准账户类型，详情可参见 [账户类型升级说明](https://cloud.tencent.com/document/product/1199/49090)。
 - 传统型负载均衡不支持绑定 SCF。
 - 基础网络类型不支持绑定 SCF。
@@ -716,7 +775,7 @@ BGP带宽包必须传带宽包id
 
                 /**
                  *从目标组中解绑服务器。
-本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。
+本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用  [DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683)  接口查询本次任务是否成功。
                  * @param req DeregisterTargetGroupInstancesRequest
                  * @return DeregisterTargetGroupInstancesOutcome
                  */
@@ -870,6 +929,15 @@ BGP带宽包必须传带宽包id
                 DescribeLBListenersOutcomeCallable DescribeLBListenersCallable(const Model::DescribeLBListenersRequest& request);
 
                 /**
+                 *查询负载均衡的操作保护信息。
+                 * @param req DescribeLBOperateProtectRequest
+                 * @return DescribeLBOperateProtectOutcome
+                 */
+                DescribeLBOperateProtectOutcome DescribeLBOperateProtect(const Model::DescribeLBOperateProtectRequest &request);
+                void DescribeLBOperateProtectAsync(const Model::DescribeLBOperateProtectRequest& request, const DescribeLBOperateProtectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLBOperateProtectOutcomeCallable DescribeLBOperateProtectCallable(const Model::DescribeLBOperateProtectRequest& request);
+
+                /**
                  *DescribeListeners 接口可根据负载均衡器 ID、监听器的协议或端口作为过滤条件获取监听器列表。如果不指定任何过滤条件，则返回该负载均衡实例下的所有监听器。
                  * @param req DescribeListenersRequest
                  * @return DescribeListenersOutcome
@@ -1005,8 +1073,18 @@ BGP带宽包必须传带宽包id
                 DescribeTaskStatusOutcomeCallable DescribeTaskStatusCallable(const Model::DescribeTaskStatusRequest& request);
 
                 /**
+                 *去关联个性化配置，准备下线，请使用SetCustomizedConfigForLoadBalancer。
+                 * @param req DisassociateCustomizedConfigRequest
+                 * @return DisassociateCustomizedConfigOutcome
+                 */
+                DisassociateCustomizedConfigOutcome DisassociateCustomizedConfig(const Model::DisassociateCustomizedConfigRequest &request);
+                void DisassociateCustomizedConfigAsync(const Model::DisassociateCustomizedConfigRequest& request, const DisassociateCustomizedConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisassociateCustomizedConfigOutcomeCallable DisassociateCustomizedConfigCallable(const Model::DisassociateCustomizedConfigRequest& request);
+
+                /**
                  *解除规则的目标组关联关系。
 本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。
+当解绑七层转发规则时，LocationId 为必填项。
                  * @param req DisassociateTargetGroupsRequest
                  * @return DisassociateTargetGroupsOutcome
                  */
@@ -1033,7 +1111,7 @@ BGP带宽包必须传带宽包id
                 InquiryPriceModifyLoadBalancerOutcomeCallable InquiryPriceModifyLoadBalancerCallable(const Model::InquiryPriceModifyLoadBalancerRequest& request);
 
                 /**
-                 *InquiryPriceRefundLoadBalancer接口查询负载均衡退费价格。
+                 *InquiryPriceRefundLoadBalancer接口查询负载均衡退费价格，只支持预付费类型的负载均衡实例。
                  * @param req InquiryPriceRefundLoadBalancerRequest
                  * @return InquiryPriceRefundLoadBalancerOutcome
                  */
@@ -1081,8 +1159,17 @@ BGP带宽包必须传带宽包id
                 ModifyBlockIPListOutcomeCallable ModifyBlockIPListCallable(const Model::ModifyBlockIPListRequest& request);
 
                 /**
+                 *修改个性化配置。如果配置已经绑定clb、server或location，同时更新。准备下线，请使用SetCustomizedConfigForLoadBalancer。
+                 * @param req ModifyCustomizedConfigRequest
+                 * @return ModifyCustomizedConfigOutcome
+                 */
+                ModifyCustomizedConfigOutcome ModifyCustomizedConfig(const Model::ModifyCustomizedConfigRequest &request);
+                void ModifyCustomizedConfigAsync(const Model::ModifyCustomizedConfigRequest& request, const ModifyCustomizedConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCustomizedConfigOutcomeCallable ModifyCustomizedConfigCallable(const Model::ModifyCustomizedConfigRequest& request);
+
+                /**
                  *ModifyDomain接口用来修改负载均衡七层监听器下的域名。
-本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。
+本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用 [DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683) 接口查询本次任务是否成功。
                  * @param req ModifyDomainRequest
                  * @return ModifyDomainOutcome
                  */
@@ -1091,8 +1178,8 @@ BGP带宽包必须传带宽包id
                 ModifyDomainOutcomeCallable ModifyDomainCallable(const Model::ModifyDomainRequest& request);
 
                 /**
-                 *ModifyDomainAttributes接口用于修改负载均衡7层监听器转发规则的域名级别属性，如修改域名、修改DefaultServer、开启/关闭Http2、修改证书。
-本接口为异步接口，本接口返回成功后，需以返回的RequestId为入参，调用DescribeTaskStatus接口查询本次任务是否成功。
+                 *ModifyDomainAttributes接口用于修改负载均衡7层监听器转发规则的域名级别属性，如修改域名、修改DefaultServer、开启/关闭Http2、修改证书
+本接口为异步接口，本接口返回成功后，需以返回的RequestId为入参，调用 [DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683) 接口查询本次任务是否成功。
                  * @param req ModifyDomainAttributesRequest
                  * @return ModifyDomainAttributesOutcome
                  */
@@ -1102,6 +1189,8 @@ BGP带宽包必须传带宽包id
 
                 /**
                  *修改负载均衡转发规则上所绑定的云函数。
+限制说明：
+- 仅支持绑定“Event 函数”类型的云函数。
                  * @param req ModifyFunctionTargetsRequest
                  * @return ModifyFunctionTargetsOutcome
                  */
@@ -1111,7 +1200,7 @@ BGP带宽包必须传带宽包id
 
                 /**
                  *ModifyListener接口用来修改负载均衡监听器的属性，包括监听器名称、健康检查参数、证书信息、转发策略等。本接口不支持传统型负载均衡。
-本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。
+本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用 [DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683) 接口查询本次任务是否成功。
                  * @param req ModifyListenerRequest
                  * @return ModifyListenerOutcome
                  */
@@ -1121,8 +1210,8 @@ BGP带宽包必须传带宽包id
 
                 /**
                  *修改负载均衡实例的属性。支持修改负载均衡实例的名称、设置负载均衡的跨域属性。
-注意：非带宽上移用户的 CLB 实例必须加入带宽包才可以设置跨域属性。
-本接口为异步接口，接口返回成功后，需以得到的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。
+注意：非带宽上移用户的 CLB 实例必须加入带宽包才可以设置跨域属性。修改网络计费模式请到控制台操作。
+本接口为异步接口，接口返回成功后，需以得到的 RequestID 为入参，调用 [DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683) 接口查询本次任务是否成功。
                  * @param req ModifyLoadBalancerAttributesRequest
                  * @return ModifyLoadBalancerAttributesOutcome
                  */
@@ -1140,10 +1229,10 @@ BGP带宽包必须传带宽包id
                 ModifyLoadBalancerMixIpTargetOutcomeCallable ModifyLoadBalancerMixIpTargetCallable(const Model::ModifyLoadBalancerMixIpTargetRequest& request);
 
                 /**
-                 *本接口（ModifyLoadBalancerSla）用于将按量计费模式的共享型实例升级为性能容量型实例。<br/>
+                 *本接口（ModifyLoadBalancerSla）用于调整按量计费模式实例的性能容量型规格，如共享型升级性能容量型，性能容量型实例规格调整。<br/>
 限制条件：
-- 本接口只支持升级按量计费的CLB实例，包年包月的CLB实例升级请通过控制台进行升级。
-- 升级为性能容量型实例后，不支持再回退到共享型实例。
+- 本接口只支持调整按量计费的CLB实例，包年包月的CLB实例升级请通过控制台进行调整。
+- 共享型升级为性能容量型实例后，不支持再回退到共享型实例。
 - 传统型负载均衡实例不支持升级为性能容量型实例。
                  * @param req ModifyLoadBalancerSlaRequest
                  * @return ModifyLoadBalancerSlaOutcome
@@ -1163,7 +1252,7 @@ BGP带宽包必须传带宽包id
 
                 /**
                  *ModifyRule 接口用来修改负载均衡七层监听器下的转发规则的各项属性，包括转发路径、健康检查属性、转发策略等。
-本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。
+本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用 [DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683) 接口查询本次任务是否成功。
                  * @param req ModifyRuleRequest
                  * @return ModifyRuleOutcome
                  */
@@ -1212,7 +1301,7 @@ BGP带宽包必须传带宽包id
 
                 /**
                  *ModifyTargetWeight 接口用于修改负载均衡绑定的后端服务的转发权重。
-本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。
+本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用 [DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683) 接口查询本次任务是否成功。
                  * @param req ModifyTargetWeightRequest
                  * @return ModifyTargetWeightOutcome
                  */
@@ -1224,7 +1313,7 @@ BGP带宽包必须传带宽包id
                  *RegisterFunctionTargets 接口用来将一个云函数绑定到负载均衡的7层转发规则，在此之前您需要先行创建相关的7层监听器（HTTP、HTTPS）和转发规则。
 本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。<br/>
 限制说明：
-- 仅广州、深圳金融、上海、上海金融、北京、成都、中国香港、新加坡、孟买、东京、硅谷地域支持绑定 SCF。
+- 仅广州、深圳金融、上海、上海金融、北京、成都、中国香港、新加坡、东京、硅谷地域支持绑定 SCF。
 - 仅标准账户类型支持绑定 SCF，传统账户类型不支持。建议升级为标准账户类型，详情可参见 [账户类型升级说明](https://cloud.tencent.com/document/product/1199/49090)。 
 - 传统型负载均衡不支持绑定 SCF。
 - 基础网络类型不支持绑定 SCF。
@@ -1232,6 +1321,7 @@ BGP带宽包必须传带宽包id
 - 目前仅 IPv4、IPv6 NAT64 版本的负载均衡支持绑定 SCF，IPv6 版本的暂不支持。
 - 仅七层（HTTP、HTTPS）监听器支持绑定 SCF，四层（TCP、UDP、TCP SSL）监听器和七层 QUIC 监听器不支持。
 - CLB 绑定 SCF 仅支持绑定“Event 函数”类型的云函数。
+- 一个转发规则只支持绑定一个云函数。
                  * @param req RegisterFunctionTargetsRequest
                  * @return RegisterFunctionTargetsOutcome
                  */
@@ -1251,7 +1341,7 @@ BGP带宽包必须传带宽包id
 
                 /**
                  *RegisterTargets 接口用来将一台或多台后端服务绑定到负载均衡的监听器（或7层转发规则），在此之前您需要先行创建相关的4层监听器或7层转发规则。对于四层监听器（TCP、UDP），只需指定监听器ID即可，对于七层监听器（HTTP、HTTPS），还需通过LocationId或者Domain+Url指定转发规则。
-本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。
+本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用  [DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683)  接口查询本次任务是否成功。
                  * @param req RegisterTargetsRequest
                  * @return RegisterTargetsOutcome
                  */
@@ -1299,7 +1389,7 @@ BGP带宽包必须传带宽包id
                 SetLoadBalancerClsLogOutcomeCallable SetLoadBalancerClsLogCallable(const Model::SetLoadBalancerClsLogRequest& request);
 
                 /**
-                 *SetLoadBalancerSecurityGroups 接口支持对一个公网负载均衡实例执行设置（绑定、解绑）安全组操作。查询一个负载均衡实例目前已绑定的安全组，可使用 DescribeLoadBalancers 接口。本接口是set语义，
+                 *SetLoadBalancerSecurityGroups 接口支持对一个公网负载均衡实例执行设置（绑定、解绑）安全组操作。查询一个负载均衡实例目前已绑定的安全组，可使用 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口。本接口是set语义，
 绑定操作时，入参需要传入负载均衡实例要绑定的所有安全组（已绑定的+新增绑定的）。
 解绑操作时，入参需要传入负载均衡实例执行解绑后所绑定的所有安全组；如果要解绑所有安全组，可不传此参数，或传入空数组。注意：内网 CLB 绑定 EIP 后，CLB 上的安全组对来自 EIP 的流量不生效，对来自内网 CLB 的流量生效。
                  * @param req SetLoadBalancerSecurityGroupsRequest
@@ -1311,7 +1401,7 @@ BGP带宽包必须传带宽包id
 
                 /**
                  *启停负载均衡实例或者监听器。
-本接口为异步接口，接口返回成功后，需以得到的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。
+本接口为异步接口，接口返回成功后，需以得到的 RequestID 为入参，调用  [DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683)  接口查询本次任务是否成功。
 该功能正在内测中，如需使用，请通过[工单申请](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB&step=1)。
                  * @param req SetLoadBalancerStartStatusRequest
                  * @return SetLoadBalancerStartStatusOutcome
@@ -1321,7 +1411,7 @@ BGP带宽包必须传带宽包id
                 SetLoadBalancerStartStatusOutcomeCallable SetLoadBalancerStartStatusCallable(const Model::SetLoadBalancerStartStatusRequest& request);
 
                 /**
-                 *绑定或解绑一个安全组到多个公网负载均衡实例。注意：内网负载均衡不支持绑定安全组。
+                 *绑定或解绑一个安全组到多个公网负载均衡实例。
                  * @param req SetSecurityGroupForLoadbalancersRequest
                  * @return SetSecurityGroupForLoadbalancersOutcome
                  */

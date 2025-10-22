@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取播放地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VideoURL 播放地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVideoURL() const;
 
                     /**
                      * 设置播放地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _videoURL 播放地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVideoURL(const std::string& _videoURL);
@@ -103,7 +99,6 @@ namespace TencentCloud
 
                     /**
                      * 播放地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_videoURL;
                     bool m_videoURLHasBeenSet;

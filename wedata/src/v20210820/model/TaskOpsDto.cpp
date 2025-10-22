@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -109,7 +109,10 @@ TaskOpsDto::TaskOpsDto() :
     m_dLCResourceConfigHasBeenSet(false),
     m_parentTaskInfosHasBeenSet(false),
     m_extResourceFlagHasBeenSet(false),
-    m_newParentTaskInfosHasBeenSet(false)
+    m_newParentTaskInfosHasBeenSet(false),
+    m_selfWorkFlowDependTypeHasBeenSet(false),
+    m_allowRedoTypeHasBeenSet(false),
+    m_ownerIdHasBeenSet(false)
 {
 }
 
@@ -1070,6 +1073,36 @@ CoreInternalOutcome TaskOpsDto::Deserialize(const rapidjson::Value &value)
         m_newParentTaskInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("SelfWorkFlowDependType") && !value["SelfWorkFlowDependType"].IsNull())
+    {
+        if (!value["SelfWorkFlowDependType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskOpsDto.SelfWorkFlowDependType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_selfWorkFlowDependType = string(value["SelfWorkFlowDependType"].GetString());
+        m_selfWorkFlowDependTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AllowRedoType") && !value["AllowRedoType"].IsNull())
+    {
+        if (!value["AllowRedoType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskOpsDto.AllowRedoType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_allowRedoType = string(value["AllowRedoType"].GetString());
+        m_allowRedoTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("OwnerId") && !value["OwnerId"].IsNull())
+    {
+        if (!value["OwnerId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskOpsDto.OwnerId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ownerId = string(value["OwnerId"].GetString());
+        m_ownerIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1807,6 +1840,30 @@ void TaskOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_selfWorkFlowDependTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SelfWorkFlowDependType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_selfWorkFlowDependType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_allowRedoTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllowRedoType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_allowRedoType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ownerIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OwnerId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ownerId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -3234,5 +3291,53 @@ void TaskOpsDto::SetNewParentTaskInfos(const vector<AiopsSimpleTaskDto>& _newPar
 bool TaskOpsDto::NewParentTaskInfosHasBeenSet() const
 {
     return m_newParentTaskInfosHasBeenSet;
+}
+
+string TaskOpsDto::GetSelfWorkFlowDependType() const
+{
+    return m_selfWorkFlowDependType;
+}
+
+void TaskOpsDto::SetSelfWorkFlowDependType(const string& _selfWorkFlowDependType)
+{
+    m_selfWorkFlowDependType = _selfWorkFlowDependType;
+    m_selfWorkFlowDependTypeHasBeenSet = true;
+}
+
+bool TaskOpsDto::SelfWorkFlowDependTypeHasBeenSet() const
+{
+    return m_selfWorkFlowDependTypeHasBeenSet;
+}
+
+string TaskOpsDto::GetAllowRedoType() const
+{
+    return m_allowRedoType;
+}
+
+void TaskOpsDto::SetAllowRedoType(const string& _allowRedoType)
+{
+    m_allowRedoType = _allowRedoType;
+    m_allowRedoTypeHasBeenSet = true;
+}
+
+bool TaskOpsDto::AllowRedoTypeHasBeenSet() const
+{
+    return m_allowRedoTypeHasBeenSet;
+}
+
+string TaskOpsDto::GetOwnerId() const
+{
+    return m_ownerId;
+}
+
+void TaskOpsDto::SetOwnerId(const string& _ownerId)
+{
+    m_ownerId = _ownerId;
+    m_ownerIdHasBeenSet = true;
+}
+
+bool TaskOpsDto::OwnerIdHasBeenSet() const
+{
+    return m_ownerIdHasBeenSet;
 }
 

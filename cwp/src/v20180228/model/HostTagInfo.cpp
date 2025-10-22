@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,10 @@ HostTagInfo::HostTagInfo() :
     m_protectTypeHasBeenSet(false),
     m_vulNumHasBeenSet(false),
     m_cloudTagsHasBeenSet(false),
-    m_instanceIDHasBeenSet(false)
+    m_instanceIDHasBeenSet(false),
+    m_machineTypeHasBeenSet(false),
+    m_regionNameHasBeenSet(false),
+    m_regionIdHasBeenSet(false)
 {
 }
 
@@ -174,6 +177,36 @@ CoreInternalOutcome HostTagInfo::Deserialize(const rapidjson::Value &value)
         m_instanceIDHasBeenSet = true;
     }
 
+    if (value.HasMember("MachineType") && !value["MachineType"].IsNull())
+    {
+        if (!value["MachineType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostTagInfo.MachineType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_machineType = string(value["MachineType"].GetString());
+        m_machineTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RegionName") && !value["RegionName"].IsNull())
+    {
+        if (!value["RegionName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostTagInfo.RegionName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_regionName = string(value["RegionName"].GetString());
+        m_regionNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("RegionId") && !value["RegionId"].IsNull())
+    {
+        if (!value["RegionId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostTagInfo.RegionId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_regionId = value["RegionId"].GetUint64();
+        m_regionIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -287,6 +320,30 @@ void HostTagInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "InstanceID";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_machineTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_regionId, allocator);
     }
 
 }
@@ -482,5 +539,53 @@ void HostTagInfo::SetInstanceID(const string& _instanceID)
 bool HostTagInfo::InstanceIDHasBeenSet() const
 {
     return m_instanceIDHasBeenSet;
+}
+
+string HostTagInfo::GetMachineType() const
+{
+    return m_machineType;
+}
+
+void HostTagInfo::SetMachineType(const string& _machineType)
+{
+    m_machineType = _machineType;
+    m_machineTypeHasBeenSet = true;
+}
+
+bool HostTagInfo::MachineTypeHasBeenSet() const
+{
+    return m_machineTypeHasBeenSet;
+}
+
+string HostTagInfo::GetRegionName() const
+{
+    return m_regionName;
+}
+
+void HostTagInfo::SetRegionName(const string& _regionName)
+{
+    m_regionName = _regionName;
+    m_regionNameHasBeenSet = true;
+}
+
+bool HostTagInfo::RegionNameHasBeenSet() const
+{
+    return m_regionNameHasBeenSet;
+}
+
+uint64_t HostTagInfo::GetRegionId() const
+{
+    return m_regionId;
+}
+
+void HostTagInfo::SetRegionId(const uint64_t& _regionId)
+{
+    m_regionId = _regionId;
+    m_regionIdHasBeenSet = true;
+}
+
+bool HostTagInfo::RegionIdHasBeenSet() const
+{
+    return m_regionIdHasBeenSet;
 }
 

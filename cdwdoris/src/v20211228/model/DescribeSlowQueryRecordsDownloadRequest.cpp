@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,11 @@ DescribeSlowQueryRecordsDownloadRequest::DescribeSlowQueryRecordsDownloadRequest
     m_memoryUsageHasBeenSet(false),
     m_isQueryHasBeenSet(false),
     m_dbNameHasBeenSet(false),
-    m_catalogNameHasBeenSet(false)
+    m_catalogNameHasBeenSet(false),
+    m_sortFieldHasBeenSet(false),
+    m_sortOrderHasBeenSet(false),
+    m_userNameHasBeenSet(false),
+    m_computeGroupsHasBeenSet(false)
 {
 }
 
@@ -146,6 +150,43 @@ string DescribeSlowQueryRecordsDownloadRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_catalogName.begin(); itr != m_catalogName.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_sortFieldHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SortField";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sortField.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sortOrderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SortOrder";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sortOrder.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_computeGroupsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComputeGroups";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_computeGroups.begin(); itr != m_computeGroups.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -349,6 +390,70 @@ void DescribeSlowQueryRecordsDownloadRequest::SetCatalogName(const vector<string
 bool DescribeSlowQueryRecordsDownloadRequest::CatalogNameHasBeenSet() const
 {
     return m_catalogNameHasBeenSet;
+}
+
+string DescribeSlowQueryRecordsDownloadRequest::GetSortField() const
+{
+    return m_sortField;
+}
+
+void DescribeSlowQueryRecordsDownloadRequest::SetSortField(const string& _sortField)
+{
+    m_sortField = _sortField;
+    m_sortFieldHasBeenSet = true;
+}
+
+bool DescribeSlowQueryRecordsDownloadRequest::SortFieldHasBeenSet() const
+{
+    return m_sortFieldHasBeenSet;
+}
+
+string DescribeSlowQueryRecordsDownloadRequest::GetSortOrder() const
+{
+    return m_sortOrder;
+}
+
+void DescribeSlowQueryRecordsDownloadRequest::SetSortOrder(const string& _sortOrder)
+{
+    m_sortOrder = _sortOrder;
+    m_sortOrderHasBeenSet = true;
+}
+
+bool DescribeSlowQueryRecordsDownloadRequest::SortOrderHasBeenSet() const
+{
+    return m_sortOrderHasBeenSet;
+}
+
+string DescribeSlowQueryRecordsDownloadRequest::GetUserName() const
+{
+    return m_userName;
+}
+
+void DescribeSlowQueryRecordsDownloadRequest::SetUserName(const string& _userName)
+{
+    m_userName = _userName;
+    m_userNameHasBeenSet = true;
+}
+
+bool DescribeSlowQueryRecordsDownloadRequest::UserNameHasBeenSet() const
+{
+    return m_userNameHasBeenSet;
+}
+
+vector<string> DescribeSlowQueryRecordsDownloadRequest::GetComputeGroups() const
+{
+    return m_computeGroups;
+}
+
+void DescribeSlowQueryRecordsDownloadRequest::SetComputeGroups(const vector<string>& _computeGroups)
+{
+    m_computeGroups = _computeGroups;
+    m_computeGroupsHasBeenSet = true;
+}
+
+bool DescribeSlowQueryRecordsDownloadRequest::ComputeGroupsHasBeenSet() const
+{
+    return m_computeGroupsHasBeenSet;
 }
 
 

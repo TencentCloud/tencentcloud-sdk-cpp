@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 参数名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置参数名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 参数名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数信息所属内核版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DBKernelVersion 参数信息所属内核版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDBKernelVersion() const;
 
                     /**
                      * 设置参数信息所属内核版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dBKernelVersion 参数信息所属内核版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDBKernelVersion(const std::string& _dBKernelVersion);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数在该版本该规格下的默认值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 参数在该版本该规格下的默认值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置参数在该版本该规格下的默认值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 参数在该版本该规格下的默认值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数值单位。参数没有单位时，该字段返回空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Unit 参数值单位。参数没有单位时，该字段返回空
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUnit() const;
 
                     /**
                      * 设置参数值单位。参数没有单位时，该字段返回空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _unit 参数值单位。参数没有单位时，该字段返回空
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUnit(const std::string& _unit);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数值类型（integer、real）参数，取值上界
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Max 数值类型（integer、real）参数，取值上界
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetMax() const;
 
                     /**
                      * 设置数值类型（integer、real）参数，取值上界
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _max 数值类型（integer、real）参数，取值上界
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMax(const double& _max);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数值类型（integer、real）参数，取值下界
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Min 数值类型（integer、real）参数，取值下界
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetMin() const;
 
                     /**
                      * 设置数值类型（integer、real）参数，取值下界
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _min 数值类型（integer、real）参数，取值下界
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMin(const double& _min);
@@ -225,42 +201,36 @@ namespace TencentCloud
 
                     /**
                      * 参数名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 参数信息所属内核版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dBKernelVersion;
                     bool m_dBKernelVersionHasBeenSet;
 
                     /**
                      * 参数在该版本该规格下的默认值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
 
                     /**
                      * 参数值单位。参数没有单位时，该字段返回空
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_unit;
                     bool m_unitHasBeenSet;
 
                     /**
                      * 数值类型（integer、real）参数，取值上界
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_max;
                     bool m_maxHasBeenSet;
 
                     /**
                      * 数值类型（integer、real）参数，取值下界
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_min;
                     bool m_minHasBeenSet;

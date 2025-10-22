@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -112,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据序列
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataSerial 数据序列
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<double> GetDataSerial() const;
 
                     /**
                      * 设置数据序列
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataSerial 数据序列
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataSerial(const std::vector<double>& _dataSerial);
@@ -137,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取维度列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 维度列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ApmTag> GetTags() const;
 
                     /**
                      * 设置维度列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 维度列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<ApmTag>& _tags);
@@ -159,6 +151,27 @@ namespace TencentCloud
                      * 
                      */
                     bool TagsHasBeenSet() const;
+
+                    /**
+                     * 获取指标数据单位
+                     * @return MetricUnit 指标数据单位
+                     * 
+                     */
+                    std::string GetMetricUnit() const;
+
+                    /**
+                     * 设置指标数据单位
+                     * @param _metricUnit 指标数据单位
+                     * 
+                     */
+                    void SetMetricUnit(const std::string& _metricUnit);
+
+                    /**
+                     * 判断参数 MetricUnit 是否已赋值
+                     * @return MetricUnit 是否已赋值
+                     * 
+                     */
+                    bool MetricUnitHasBeenSet() const;
 
                 private:
 
@@ -182,17 +195,21 @@ namespace TencentCloud
 
                     /**
                      * 数据序列
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<double> m_dataSerial;
                     bool m_dataSerialHasBeenSet;
 
                     /**
                      * 维度列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ApmTag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 指标数据单位
+                     */
+                    std::string m_metricUnit;
+                    bool m_metricUnitHasBeenSet;
 
                 };
             }

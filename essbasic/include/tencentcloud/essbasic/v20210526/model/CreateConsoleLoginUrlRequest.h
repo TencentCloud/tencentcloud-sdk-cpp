@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/essbasic/v20210526/model/Agent.h>
+#include <tencentcloud/essbasic/v20210526/model/OrganizationAuthorizationOptions.h>
 #include <tencentcloud/essbasic/v20210526/model/UserInfo.h>
 
 
@@ -48,7 +49,7 @@ namespace TencentCloud
                      * 获取关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容
 此接口下面信息必填。
 <ul>
-<li>渠道应用标识:  Agent.AppId</li>
+<li>渠道应用标识:  <a href="https://qcloudimg.tencent-cloud.cn/raw/a71872de3d540d55451e3e73a2ad1a6e.png" target="_blank">Agent.AppId</a></li>
 <li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>
 <li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId</li>
 </ul>注:
@@ -58,7 +59,7 @@ namespace TencentCloud
                      * @return Agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容
 此接口下面信息必填。
 <ul>
-<li>渠道应用标识:  Agent.AppId</li>
+<li>渠道应用标识:  <a href="https://qcloudimg.tencent-cloud.cn/raw/a71872de3d540d55451e3e73a2ad1a6e.png" target="_blank">Agent.AppId</a></li>
 <li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>
 <li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId</li>
 </ul>注:
@@ -73,7 +74,7 @@ namespace TencentCloud
                      * 设置关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容
 此接口下面信息必填。
 <ul>
-<li>渠道应用标识:  Agent.AppId</li>
+<li>渠道应用标识:  <a href="https://qcloudimg.tencent-cloud.cn/raw/a71872de3d540d55451e3e73a2ad1a6e.png" target="_blank">Agent.AppId</a></li>
 <li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>
 <li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId</li>
 </ul>注:
@@ -83,7 +84,7 @@ namespace TencentCloud
                      * @param _agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容
 此接口下面信息必填。
 <ul>
-<li>渠道应用标识:  Agent.AppId</li>
+<li>渠道应用标识:  <a href="https://qcloudimg.tencent-cloud.cn/raw/a71872de3d540d55451e3e73a2ad1a6e.png" target="_blank">Agent.AppId</a></li>
 <li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>
 <li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId</li>
 </ul>注:
@@ -436,22 +437,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可选的此企业允许的授权方式, 可以设置的方式有:
-<ul><li>1：上传授权书</li>
+<ul>
 <li>2：转法定代表人授权</li>
-<li>4：企业实名认证（信任第三方认证源）（此项有排他性, 选择后不能增添其他的方式）</li></ul>
-注:<ul>
-<li>未选择信任第三方认证源时，如果是法人进行企业激活，仅支持法人扫脸直接授权，该配置不对此法人生效`</li>
-<li>选择信任第三方认证源时，请先通过<a href="https://qian.tencent.com/developers/partnerApis/accounts/SyncProxyOrganization" target="_blank">同步企业信息</a>接口同步信息。</li>
-<li>该参数仅在企业未激活时生效</li>
+<li>5：授权书+对公打款</li>
 </ul>
                      * @return AuthorizationTypes 可选的此企业允许的授权方式, 可以设置的方式有:
-<ul><li>1：上传授权书</li>
+<ul>
 <li>2：转法定代表人授权</li>
-<li>4：企业实名认证（信任第三方认证源）（此项有排他性, 选择后不能增添其他的方式）</li></ul>
-注:<ul>
-<li>未选择信任第三方认证源时，如果是法人进行企业激活，仅支持法人扫脸直接授权，该配置不对此法人生效`</li>
-<li>选择信任第三方认证源时，请先通过<a href="https://qian.tencent.com/developers/partnerApis/accounts/SyncProxyOrganization" target="_blank">同步企业信息</a>接口同步信息。</li>
-<li>该参数仅在企业未激活时生效</li>
+<li>5：授权书+对公打款</li>
 </ul>
                      * 
                      */
@@ -459,22 +452,14 @@ namespace TencentCloud
 
                     /**
                      * 设置可选的此企业允许的授权方式, 可以设置的方式有:
-<ul><li>1：上传授权书</li>
+<ul>
 <li>2：转法定代表人授权</li>
-<li>4：企业实名认证（信任第三方认证源）（此项有排他性, 选择后不能增添其他的方式）</li></ul>
-注:<ul>
-<li>未选择信任第三方认证源时，如果是法人进行企业激活，仅支持法人扫脸直接授权，该配置不对此法人生效`</li>
-<li>选择信任第三方认证源时，请先通过<a href="https://qian.tencent.com/developers/partnerApis/accounts/SyncProxyOrganization" target="_blank">同步企业信息</a>接口同步信息。</li>
-<li>该参数仅在企业未激活时生效</li>
+<li>5：授权书+对公打款</li>
 </ul>
                      * @param _authorizationTypes 可选的此企业允许的授权方式, 可以设置的方式有:
-<ul><li>1：上传授权书</li>
+<ul>
 <li>2：转法定代表人授权</li>
-<li>4：企业实名认证（信任第三方认证源）（此项有排他性, 选择后不能增添其他的方式）</li></ul>
-注:<ul>
-<li>未选择信任第三方认证源时，如果是法人进行企业激活，仅支持法人扫脸直接授权，该配置不对此法人生效`</li>
-<li>选择信任第三方认证源时，请先通过<a href="https://qian.tencent.com/developers/partnerApis/accounts/SyncProxyOrganization" target="_blank">同步企业信息</a>接口同步信息。</li>
-<li>该参数仅在企业未激活时生效</li>
+<li>5：授权书+对公打款</li>
 </ul>
                      * 
                      */
@@ -488,40 +473,19 @@ namespace TencentCloud
                     bool AuthorizationTypesHasBeenSet() const;
 
                     /**
-                     * 获取暂未开放
-                     * @return Operator 暂未开放
-                     * @deprecated
-                     */
-                    UserInfo GetOperator() const;
-
-                    /**
-                     * 设置暂未开放
-                     * @param _operator 暂未开放
-                     * @deprecated
-                     */
-                    void SetOperator(const UserInfo& _operator);
-
-                    /**
-                     * 判断参数 Operator 是否已赋值
-                     * @return Operator 是否已赋值
-                     * @deprecated
-                     */
-                    bool OperatorHasBeenSet() const;
-
-                    /**
                      * 获取子客经办人身份证
-注意：`如果已同步，这里非空会更新同步的经办人身份证号，暂时只支持居民身份证类型`。
+注意：`如果已同步，这里非空会更新同步的经办人身份证号，暂时只支持中国大陆居民身份证类型`。
                      * @return ProxyOperatorIdCardNumber 子客经办人身份证
-注意：`如果已同步，这里非空会更新同步的经办人身份证号，暂时只支持居民身份证类型`。
+注意：`如果已同步，这里非空会更新同步的经办人身份证号，暂时只支持中国大陆居民身份证类型`。
                      * 
                      */
                     std::string GetProxyOperatorIdCardNumber() const;
 
                     /**
                      * 设置子客经办人身份证
-注意：`如果已同步，这里非空会更新同步的经办人身份证号，暂时只支持居民身份证类型`。
+注意：`如果已同步，这里非空会更新同步的经办人身份证号，暂时只支持中国大陆居民身份证类型`。
                      * @param _proxyOperatorIdCardNumber 子客经办人身份证
-注意：`如果已同步，这里非空会更新同步的经办人身份证号，暂时只支持居民身份证类型`。
+注意：`如果已同步，这里非空会更新同步的经办人身份证号，暂时只支持中国大陆居民身份证类型`。
                      * 
                      */
                     void SetProxyOperatorIdCardNumber(const std::string& _proxyOperatorIdCardNumber);
@@ -636,13 +600,184 @@ namespace TencentCloud
                      */
                     bool AutoActiveHasBeenSet() const;
 
+                    /**
+                     * 获取营业执照正面照（支持PNG或JPG格式）需以base64格式提供，且文件大小不得超过5MB。
+                     * @return BusinessLicense 营业执照正面照（支持PNG或JPG格式）需以base64格式提供，且文件大小不得超过5MB。
+                     * 
+                     */
+                    std::string GetBusinessLicense() const;
+
+                    /**
+                     * 设置营业执照正面照（支持PNG或JPG格式）需以base64格式提供，且文件大小不得超过5MB。
+                     * @param _businessLicense 营业执照正面照（支持PNG或JPG格式）需以base64格式提供，且文件大小不得超过5MB。
+                     * 
+                     */
+                    void SetBusinessLicense(const std::string& _businessLicense);
+
+                    /**
+                     * 判断参数 BusinessLicense 是否已赋值
+                     * @return BusinessLicense 是否已赋值
+                     * 
+                     */
+                    bool BusinessLicenseHasBeenSet() const;
+
+                    /**
+                     * 获取组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。	
+                     * @return ProxyAddress 组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。	
+                     * 
+                     */
+                    std::string GetProxyAddress() const;
+
+                    /**
+                     * 设置组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。	
+                     * @param _proxyAddress 组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。	
+                     * 
+                     */
+                    void SetProxyAddress(const std::string& _proxyAddress);
+
+                    /**
+                     * 判断参数 ProxyAddress 是否已赋值
+                     * @return ProxyAddress 是否已赋值
+                     * 
+                     */
+                    bool ProxyAddressHasBeenSet() const;
+
+                    /**
+                     * 获取组织机构法人的姓名。 请确认该企业统一社会信用代码与企业营业执照中注册的法人姓名一致。	
+                     * @return ProxyLegalName 组织机构法人的姓名。 请确认该企业统一社会信用代码与企业营业执照中注册的法人姓名一致。	
+                     * 
+                     */
+                    std::string GetProxyLegalName() const;
+
+                    /**
+                     * 设置组织机构法人的姓名。 请确认该企业统一社会信用代码与企业营业执照中注册的法人姓名一致。	
+                     * @param _proxyLegalName 组织机构法人的姓名。 请确认该企业统一社会信用代码与企业营业执照中注册的法人姓名一致。	
+                     * 
+                     */
+                    void SetProxyLegalName(const std::string& _proxyLegalName);
+
+                    /**
+                     * 判断参数 ProxyLegalName 是否已赋值
+                     * @return ProxyLegalName 是否已赋值
+                     * 
+                     */
+                    bool ProxyLegalNameHasBeenSet() const;
+
+                    /**
+                     * 获取授权书(PNG或JPG或PDF) base64格式, 大小不超过8M 。
+ p.s. 如果上传授权书 ，需遵循以下条件 
+1. 超管的信息（超管姓名，超管手机号）必须为必填参数。 
+2. 认证方式AuthorizationTypes必须只能是上传授权书方式	
+                     * @return PowerOfAttorneys 授权书(PNG或JPG或PDF) base64格式, 大小不超过8M 。
+ p.s. 如果上传授权书 ，需遵循以下条件 
+1. 超管的信息（超管姓名，超管手机号）必须为必填参数。 
+2. 认证方式AuthorizationTypes必须只能是上传授权书方式	
+                     * 
+                     */
+                    std::vector<std::string> GetPowerOfAttorneys() const;
+
+                    /**
+                     * 设置授权书(PNG或JPG或PDF) base64格式, 大小不超过8M 。
+ p.s. 如果上传授权书 ，需遵循以下条件 
+1. 超管的信息（超管姓名，超管手机号）必须为必填参数。 
+2. 认证方式AuthorizationTypes必须只能是上传授权书方式	
+                     * @param _powerOfAttorneys 授权书(PNG或JPG或PDF) base64格式, 大小不超过8M 。
+ p.s. 如果上传授权书 ，需遵循以下条件 
+1. 超管的信息（超管姓名，超管手机号）必须为必填参数。 
+2. 认证方式AuthorizationTypes必须只能是上传授权书方式	
+                     * 
+                     */
+                    void SetPowerOfAttorneys(const std::vector<std::string>& _powerOfAttorneys);
+
+                    /**
+                     * 判断参数 PowerOfAttorneys 是否已赋值
+                     * @return PowerOfAttorneys 是否已赋值
+                     * 
+                     */
+                    bool PowerOfAttorneysHasBeenSet() const;
+
+                    /**
+                     * 获取企业认证时个性化能力信息
+                     * @return OrganizationAuthorizationOptions 企业认证时个性化能力信息
+                     * 
+                     */
+                    OrganizationAuthorizationOptions GetOrganizationAuthorizationOptions() const;
+
+                    /**
+                     * 设置企业认证时个性化能力信息
+                     * @param _organizationAuthorizationOptions 企业认证时个性化能力信息
+                     * 
+                     */
+                    void SetOrganizationAuthorizationOptions(const OrganizationAuthorizationOptions& _organizationAuthorizationOptions);
+
+                    /**
+                     * 判断参数 OrganizationAuthorizationOptions 是否已赋值
+                     * @return OrganizationAuthorizationOptions 是否已赋值
+                     * 
+                     */
+                    bool OrganizationAuthorizationOptionsHasBeenSet() const;
+
+                    /**
+                     * 获取组织机构对公打款 账号，账户名跟企业名称一致。
+
+p.s.
+只有认证方式是授权书+对公打款时才生效。
+                     * @return BankAccountNumber 组织机构对公打款 账号，账户名跟企业名称一致。
+
+p.s.
+只有认证方式是授权书+对公打款时才生效。
+                     * 
+                     */
+                    std::string GetBankAccountNumber() const;
+
+                    /**
+                     * 设置组织机构对公打款 账号，账户名跟企业名称一致。
+
+p.s.
+只有认证方式是授权书+对公打款时才生效。
+                     * @param _bankAccountNumber 组织机构对公打款 账号，账户名跟企业名称一致。
+
+p.s.
+只有认证方式是授权书+对公打款时才生效。
+                     * 
+                     */
+                    void SetBankAccountNumber(const std::string& _bankAccountNumber);
+
+                    /**
+                     * 判断参数 BankAccountNumber 是否已赋值
+                     * @return BankAccountNumber 是否已赋值
+                     * 
+                     */
+                    bool BankAccountNumberHasBeenSet() const;
+
+                    /**
+                     * 获取无
+                     * @return Operator 无
+                     * @deprecated
+                     */
+                    UserInfo GetOperator() const;
+
+                    /**
+                     * 设置无
+                     * @param _operator 无
+                     * @deprecated
+                     */
+                    void SetOperator(const UserInfo& _operator);
+
+                    /**
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
+                     * @deprecated
+                     */
+                    bool OperatorHasBeenSet() const;
+
                 private:
 
                     /**
                      * 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容
 此接口下面信息必填。
 <ul>
-<li>渠道应用标识:  Agent.AppId</li>
+<li>渠道应用标识:  <a href="https://qcloudimg.tencent-cloud.cn/raw/a71872de3d540d55451e3e73a2ad1a6e.png" target="_blank">Agent.AppId</a></li>
 <li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>
 <li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId</li>
 </ul>注:
@@ -745,27 +880,17 @@ namespace TencentCloud
 
                     /**
                      * 可选的此企业允许的授权方式, 可以设置的方式有:
-<ul><li>1：上传授权书</li>
+<ul>
 <li>2：转法定代表人授权</li>
-<li>4：企业实名认证（信任第三方认证源）（此项有排他性, 选择后不能增添其他的方式）</li></ul>
-注:<ul>
-<li>未选择信任第三方认证源时，如果是法人进行企业激活，仅支持法人扫脸直接授权，该配置不对此法人生效`</li>
-<li>选择信任第三方认证源时，请先通过<a href="https://qian.tencent.com/developers/partnerApis/accounts/SyncProxyOrganization" target="_blank">同步企业信息</a>接口同步信息。</li>
-<li>该参数仅在企业未激活时生效</li>
+<li>5：授权书+对公打款</li>
 </ul>
                      */
                     std::vector<int64_t> m_authorizationTypes;
                     bool m_authorizationTypesHasBeenSet;
 
                     /**
-                     * 暂未开放
-                     */
-                    UserInfo m_operator;
-                    bool m_operatorHasBeenSet;
-
-                    /**
                      * 子客经办人身份证
-注意：`如果已同步，这里非空会更新同步的经办人身份证号，暂时只支持居民身份证类型`。
+注意：`如果已同步，这里非空会更新同步的经办人身份证号，暂时只支持中国大陆居民身份证类型`。
                      */
                     std::string m_proxyOperatorIdCardNumber;
                     bool m_proxyOperatorIdCardNumberHasBeenSet;
@@ -797,6 +922,54 @@ namespace TencentCloud
                      */
                     bool m_autoActive;
                     bool m_autoActiveHasBeenSet;
+
+                    /**
+                     * 营业执照正面照（支持PNG或JPG格式）需以base64格式提供，且文件大小不得超过5MB。
+                     */
+                    std::string m_businessLicense;
+                    bool m_businessLicenseHasBeenSet;
+
+                    /**
+                     * 组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。	
+                     */
+                    std::string m_proxyAddress;
+                    bool m_proxyAddressHasBeenSet;
+
+                    /**
+                     * 组织机构法人的姓名。 请确认该企业统一社会信用代码与企业营业执照中注册的法人姓名一致。	
+                     */
+                    std::string m_proxyLegalName;
+                    bool m_proxyLegalNameHasBeenSet;
+
+                    /**
+                     * 授权书(PNG或JPG或PDF) base64格式, 大小不超过8M 。
+ p.s. 如果上传授权书 ，需遵循以下条件 
+1. 超管的信息（超管姓名，超管手机号）必须为必填参数。 
+2. 认证方式AuthorizationTypes必须只能是上传授权书方式	
+                     */
+                    std::vector<std::string> m_powerOfAttorneys;
+                    bool m_powerOfAttorneysHasBeenSet;
+
+                    /**
+                     * 企业认证时个性化能力信息
+                     */
+                    OrganizationAuthorizationOptions m_organizationAuthorizationOptions;
+                    bool m_organizationAuthorizationOptionsHasBeenSet;
+
+                    /**
+                     * 组织机构对公打款 账号，账户名跟企业名称一致。
+
+p.s.
+只有认证方式是授权书+对公打款时才生效。
+                     */
+                    std::string m_bankAccountNumber;
+                    bool m_bankAccountNumberHasBeenSet;
+
+                    /**
+                     * 无
+                     */
+                    UserInfo m_operator;
+                    bool m_operatorHasBeenSet;
 
                 };
             }

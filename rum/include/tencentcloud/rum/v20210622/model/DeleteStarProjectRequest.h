@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID：taw-123
-                     * @return InstanceID 实例ID：taw-123
+                     * 获取实例ID：****-1792
+                     * @return InstanceID 实例ID：****-1792
                      * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
-                     * 设置实例ID：taw-123
-                     * @param _instanceID 实例ID：taw-123
+                     * 设置实例ID：****-1792
+                     * @param _instanceID 实例ID：****-1792
                      * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
@@ -87,7 +87,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID：taw-123
+                     * 实例ID：****-1792
                      */
                     std::string m_instanceID;
                     bool m_instanceIDHasBeenSet;

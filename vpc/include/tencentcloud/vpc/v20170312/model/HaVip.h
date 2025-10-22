@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -289,18 +289,14 @@ namespace TencentCloud
 
                     /**
                      * 获取`HAVIP`的飘移范围。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HaVipAssociationSet `HAVIP`的飘移范围。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<HaVipAssociation> GetHaVipAssociationSet() const;
 
                     /**
                      * 设置`HAVIP`的飘移范围。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _haVipAssociationSet `HAVIP`的飘移范围。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHaVipAssociationSet(const std::vector<HaVipAssociation>& _haVipAssociationSet);
@@ -314,18 +310,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启`HAVIP`的飘移范围校验。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckAssociate 是否开启`HAVIP`的飘移范围校验。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetCheckAssociate() const;
 
                     /**
                      * 设置是否开启`HAVIP`的飘移范围校验。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _checkAssociate 是否开启`HAVIP`的飘移范围校验。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCheckAssociate(const bool& _checkAssociate);
@@ -339,18 +331,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CDC实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CdcId CDC实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCdcId() const;
 
                     /**
                      * 设置CDC实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cdcId CDC实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCdcId(const std::string& _cdcId);
@@ -364,18 +352,14 @@ namespace TencentCloud
 
                     /**
                      * 获取HAVIP 刷新时间。该参数只作为出参数。以下场景会触发 FlushTime 被刷新：1）子机发出免费 ARP 触发 HAVIP 漂移；2）手动HAVIP解绑网卡; 没有更新时默认值：0000-00-00 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlushedTime HAVIP 刷新时间。该参数只作为出参数。以下场景会触发 FlushTime 被刷新：1）子机发出免费 ARP 触发 HAVIP 漂移；2）手动HAVIP解绑网卡; 没有更新时默认值：0000-00-00 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlushedTime() const;
 
                     /**
                      * 设置HAVIP 刷新时间。该参数只作为出参数。以下场景会触发 FlushTime 被刷新：1）子机发出免费 ARP 触发 HAVIP 漂移；2）手动HAVIP解绑网卡; 没有更新时默认值：0000-00-00 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _flushedTime HAVIP 刷新时间。该参数只作为出参数。以下场景会触发 FlushTime 被刷新：1）子机发出免费 ARP 触发 HAVIP 漂移；2）手动HAVIP解绑网卡; 没有更新时默认值：0000-00-00 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFlushedTime(const std::string& _flushedTime);
@@ -389,18 +373,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签键值对。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagSet 标签键值对。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTagSet() const;
 
                     /**
                      * 设置标签键值对。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tagSet 标签键值对。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTagSet(const std::vector<Tag>& _tagSet);
@@ -484,35 +464,30 @@ namespace TencentCloud
 
                     /**
                      * `HAVIP`的飘移范围。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<HaVipAssociation> m_haVipAssociationSet;
                     bool m_haVipAssociationSetHasBeenSet;
 
                     /**
                      * 是否开启`HAVIP`的飘移范围校验。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_checkAssociate;
                     bool m_checkAssociateHasBeenSet;
 
                     /**
                      * CDC实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cdcId;
                     bool m_cdcIdHasBeenSet;
 
                     /**
                      * HAVIP 刷新时间。该参数只作为出参数。以下场景会触发 FlushTime 被刷新：1）子机发出免费 ARP 触发 HAVIP 漂移；2）手动HAVIP解绑网卡; 没有更新时默认值：0000-00-00 00:00:00
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flushedTime;
                     bool m_flushedTimeHasBeenSet;
 
                     /**
                      * 标签键值对。	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tagSet;
                     bool m_tagSetHasBeenSet;

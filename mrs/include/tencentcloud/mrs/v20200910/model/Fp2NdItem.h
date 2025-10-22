@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取手术编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Code 手术编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BaseItem GetCode() const;
 
                     /**
                      * 设置手术编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _code 手术编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCode(const BaseItem& _code);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取手术名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 手术名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BaseItem GetName() const;
 
                     /**
                      * 设置手术名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 手术名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const BaseItem& _name);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取手术开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 手术开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BaseItem GetStartTime() const;
 
                     /**
                      * 设置手术开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTime 手术开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTime(const BaseItem& _startTime);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取手术结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 手术结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BaseItem GetEndTime() const;
 
                     /**
                      * 设置手术结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 手术结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const BaseItem& _endTime);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取手术等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 手术等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BaseItem GetLevel() const;
 
                     /**
                      * 设置手术等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _level 手术等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevel(const BaseItem& _level);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取手术类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 手术类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BaseItem GetType() const;
 
                     /**
                      * 设置手术类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 手术类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const BaseItem& _type);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取醉愈合方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IncisionHealingGrade 醉愈合方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BaseItem GetIncisionHealingGrade() const;
 
                     /**
                      * 设置醉愈合方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _incisionHealingGrade 醉愈合方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIncisionHealingGrade(const BaseItem& _incisionHealingGrade);
@@ -224,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取麻醉方法
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AnesthesiaMethod 麻醉方法
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BaseItem GetAnesthesiaMethod() const;
 
                     /**
                      * 设置麻醉方法
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _anesthesiaMethod 麻醉方法
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAnesthesiaMethod(const BaseItem& _anesthesiaMethod);
@@ -251,56 +219,48 @@ namespace TencentCloud
 
                     /**
                      * 手术编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BaseItem m_code;
                     bool m_codeHasBeenSet;
 
                     /**
                      * 手术名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BaseItem m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 手术开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BaseItem m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 手术结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BaseItem m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
                      * 手术等级
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BaseItem m_level;
                     bool m_levelHasBeenSet;
 
                     /**
                      * 手术类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BaseItem m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 醉愈合方式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BaseItem m_incisionHealingGrade;
                     bool m_incisionHealingGradeHasBeenSet;
 
                     /**
                      * 麻醉方法
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BaseItem m_anesthesiaMethod;
                     bool m_anesthesiaMethodHasBeenSet;

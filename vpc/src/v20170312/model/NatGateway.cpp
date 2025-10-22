@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,7 +42,8 @@ NatGateway::NatGateway() :
     m_restrictStateHasBeenSet(false),
     m_natProductVersionHasBeenSet(false),
     m_smartScheduleModeHasBeenSet(false),
-    m_dedicatedClusterIdHasBeenSet(false)
+    m_dedicatedClusterIdHasBeenSet(false),
+    m_deletionProtectionEnabledHasBeenSet(false)
 {
 }
 
@@ -317,6 +318,16 @@ CoreInternalOutcome NatGateway::Deserialize(const rapidjson::Value &value)
         m_dedicatedClusterIdHasBeenSet = true;
     }
 
+    if (value.HasMember("DeletionProtectionEnabled") && !value["DeletionProtectionEnabled"].IsNull())
+    {
+        if (!value["DeletionProtectionEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `NatGateway.DeletionProtectionEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_deletionProtectionEnabled = value["DeletionProtectionEnabled"].GetBool();
+        m_deletionProtectionEnabledHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -536,6 +547,14 @@ void NatGateway::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "DedicatedClusterId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dedicatedClusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deletionProtectionEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeletionProtectionEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deletionProtectionEnabled, allocator);
     }
 
 }
@@ -891,5 +910,21 @@ void NatGateway::SetDedicatedClusterId(const string& _dedicatedClusterId)
 bool NatGateway::DedicatedClusterIdHasBeenSet() const
 {
     return m_dedicatedClusterIdHasBeenSet;
+}
+
+bool NatGateway::GetDeletionProtectionEnabled() const
+{
+    return m_deletionProtectionEnabled;
+}
+
+void NatGateway::SetDeletionProtectionEnabled(const bool& _deletionProtectionEnabled)
+{
+    m_deletionProtectionEnabled = _deletionProtectionEnabled;
+    m_deletionProtectionEnabledHasBeenSet = true;
+}
+
+bool NatGateway::DeletionProtectionEnabledHasBeenSet() const
+{
+    return m_deletionProtectionEnabledHasBeenSet;
 }
 

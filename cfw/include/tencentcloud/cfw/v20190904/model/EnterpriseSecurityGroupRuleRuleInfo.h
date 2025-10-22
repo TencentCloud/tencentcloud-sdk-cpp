@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cfw/v20190904/model/EnterpriseSecurityGroupRuleBetaInfo.h>
+#include <tencentcloud/cfw/v20190904/model/SgDnsParseCount.h>
 
 
 namespace TencentCloud
@@ -135,26 +136,26 @@ namespace TencentCloud
                      * 获取源规则类型 
 取值范围 0/1/2/3/4/5/6/7/8/9/100
 0表示ip(net),
-1表示VPC实例(intance)
-2表示子网实例(intance)
-3表示CVM实例(intance)
-4表示CLB实例(intance)
-5表示ENI实例(intance)
-6表示数据库实例(intance)
-7表示模版(template)
+1表示VPC实例(instance)
+2表示子网实例(instance)
+3表示CVM实例(instance)
+4表示CLB实例(instance)
+5表示ENI实例(instance)
+6表示数据库实例(instance)
+7表示模板(template)
 8表示标签(tag)
 9表示地域(region)
 100表示资产分组(resourcegroup)
                      * @return SourceType 源规则类型 
 取值范围 0/1/2/3/4/5/6/7/8/9/100
 0表示ip(net),
-1表示VPC实例(intance)
-2表示子网实例(intance)
-3表示CVM实例(intance)
-4表示CLB实例(intance)
-5表示ENI实例(intance)
-6表示数据库实例(intance)
-7表示模版(template)
+1表示VPC实例(instance)
+2表示子网实例(instance)
+3表示CVM实例(instance)
+4表示CLB实例(instance)
+5表示ENI实例(instance)
+6表示数据库实例(instance)
+7表示模板(template)
 8表示标签(tag)
 9表示地域(region)
 100表示资产分组(resourcegroup)
@@ -166,26 +167,26 @@ namespace TencentCloud
                      * 设置源规则类型 
 取值范围 0/1/2/3/4/5/6/7/8/9/100
 0表示ip(net),
-1表示VPC实例(intance)
-2表示子网实例(intance)
-3表示CVM实例(intance)
-4表示CLB实例(intance)
-5表示ENI实例(intance)
-6表示数据库实例(intance)
-7表示模版(template)
+1表示VPC实例(instance)
+2表示子网实例(instance)
+3表示CVM实例(instance)
+4表示CLB实例(instance)
+5表示ENI实例(instance)
+6表示数据库实例(instance)
+7表示模板(template)
 8表示标签(tag)
 9表示地域(region)
 100表示资产分组(resourcegroup)
                      * @param _sourceType 源规则类型 
 取值范围 0/1/2/3/4/5/6/7/8/9/100
 0表示ip(net),
-1表示VPC实例(intance)
-2表示子网实例(intance)
-3表示CVM实例(intance)
-4表示CLB实例(intance)
-5表示ENI实例(intance)
-6表示数据库实例(intance)
-7表示模版(template)
+1表示VPC实例(instance)
+2表示子网实例(instance)
+3表示CVM实例(instance)
+4表示CLB实例(instance)
+5表示ENI实例(instance)
+6表示数据库实例(instance)
+7表示模板(template)
 8表示标签(tag)
 9表示地域(region)
 100表示资产分组(resourcegroup)
@@ -225,26 +226,26 @@ namespace TencentCloud
                      * 获取目的规则类型 
 取值范围 0/1/2/3/4/5/6/7/8/9/100
 0表示ip(net),
-1表示VPC实例(intance)
-2表示子网实例(intance)
-3表示CVM实例(intance)
-4表示CLB实例(intance)
-5表示ENI实例(intance)
-6表示数据库实例(intance)
-7表示模版(template)
+1表示VPC实例(instance)
+2表示子网实例(instance)
+3表示CVM实例(instance)
+4表示CLB实例(instance)
+5表示ENI实例(instance)
+6表示数据库实例(instance)
+7表示模板(template)
 8表示标签(tag)
 9表示地域(region)
 100表示资产分组(resourcegroup)
                      * @return TargetType 目的规则类型 
 取值范围 0/1/2/3/4/5/6/7/8/9/100
 0表示ip(net),
-1表示VPC实例(intance)
-2表示子网实例(intance)
-3表示CVM实例(intance)
-4表示CLB实例(intance)
-5表示ENI实例(intance)
-6表示数据库实例(intance)
-7表示模版(template)
+1表示VPC实例(instance)
+2表示子网实例(instance)
+3表示CVM实例(instance)
+4表示CLB实例(instance)
+5表示ENI实例(instance)
+6表示数据库实例(instance)
+7表示模板(template)
 8表示标签(tag)
 9表示地域(region)
 100表示资产分组(resourcegroup)
@@ -256,26 +257,26 @@ namespace TencentCloud
                      * 设置目的规则类型 
 取值范围 0/1/2/3/4/5/6/7/8/9/100
 0表示ip(net),
-1表示VPC实例(intance)
-2表示子网实例(intance)
-3表示CVM实例(intance)
-4表示CLB实例(intance)
-5表示ENI实例(intance)
-6表示数据库实例(intance)
-7表示模版(template)
+1表示VPC实例(instance)
+2表示子网实例(instance)
+3表示CVM实例(instance)
+4表示CLB实例(instance)
+5表示ENI实例(instance)
+6表示数据库实例(instance)
+7表示模板(template)
 8表示标签(tag)
 9表示地域(region)
 100表示资产分组(resourcegroup)
                      * @param _targetType 目的规则类型 
 取值范围 0/1/2/3/4/5/6/7/8/9/100
 0表示ip(net),
-1表示VPC实例(intance)
-2表示子网实例(intance)
-3表示CVM实例(intance)
-4表示CLB实例(intance)
-5表示ENI实例(intance)
-6表示数据库实例(intance)
-7表示模版(template)
+1表示VPC实例(instance)
+2表示子网实例(instance)
+3表示CVM实例(instance)
+4表示CLB实例(instance)
+5表示ENI实例(instance)
+6表示数据库实例(instance)
+7表示模板(template)
 8表示标签(tag)
 9表示地域(region)
 100表示资产分组(resourcegroup)
@@ -829,6 +830,69 @@ ANY:表示所有
                      */
                     bool IdHasBeenSet() const;
 
+                    /**
+                     * 获取域名解析的IP统计
+                     * @return DnsParseCount 域名解析的IP统计
+                     * 
+                     */
+                    SgDnsParseCount GetDnsParseCount() const;
+
+                    /**
+                     * 设置域名解析的IP统计
+                     * @param _dnsParseCount 域名解析的IP统计
+                     * 
+                     */
+                    void SetDnsParseCount(const SgDnsParseCount& _dnsParseCount);
+
+                    /**
+                     * 判断参数 DnsParseCount 是否已赋值
+                     * @return DnsParseCount 是否已赋值
+                     * 
+                     */
+                    bool DnsParseCountHasBeenSet() const;
+
+                    /**
+                     * 获取规则创建时间
+                     * @return CreateTime 规则创建时间
+                     * 
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置规则创建时间
+                     * @param _createTime 规则创建时间
+                     * 
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取规则最近更新时间
+                     * @return UpdateTime 规则最近更新时间
+                     * 
+                     */
+                    std::string GetUpdateTime() const;
+
+                    /**
+                     * 设置规则最近更新时间
+                     * @param _updateTime 规则最近更新时间
+                     * 
+                     */
+                    void SetUpdateTime(const std::string& _updateTime);
+
+                    /**
+                     * 判断参数 UpdateTime 是否已赋值
+                     * @return UpdateTime 是否已赋值
+                     * 
+                     */
+                    bool UpdateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -859,13 +923,13 @@ ANY:表示所有
                      * 源规则类型 
 取值范围 0/1/2/3/4/5/6/7/8/9/100
 0表示ip(net),
-1表示VPC实例(intance)
-2表示子网实例(intance)
-3表示CVM实例(intance)
-4表示CLB实例(intance)
-5表示ENI实例(intance)
-6表示数据库实例(intance)
-7表示模版(template)
+1表示VPC实例(instance)
+2表示子网实例(instance)
+3表示CVM实例(instance)
+4表示CLB实例(instance)
+5表示ENI实例(instance)
+6表示数据库实例(instance)
+7表示模板(template)
 8表示标签(tag)
 9表示地域(region)
 100表示资产分组(resourcegroup)
@@ -883,13 +947,13 @@ ANY:表示所有
                      * 目的规则类型 
 取值范围 0/1/2/3/4/5/6/7/8/9/100
 0表示ip(net),
-1表示VPC实例(intance)
-2表示子网实例(intance)
-3表示CVM实例(intance)
-4表示CLB实例(intance)
-5表示ENI实例(intance)
-6表示数据库实例(intance)
-7表示模版(template)
+1表示VPC实例(instance)
+2表示子网实例(instance)
+3表示CVM实例(instance)
+4表示CLB实例(instance)
+5表示ENI实例(instance)
+6表示数据库实例(instance)
+7表示模板(template)
 8表示标签(tag)
 9表示地域(region)
 100表示资产分组(resourcegroup)
@@ -1048,6 +1112,24 @@ ANY:表示所有
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
+
+                    /**
+                     * 域名解析的IP统计
+                     */
+                    SgDnsParseCount m_dnsParseCount;
+                    bool m_dnsParseCountHasBeenSet;
+
+                    /**
+                     * 规则创建时间
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 规则最近更新时间
+                     */
+                    std::string m_updateTime;
+                    bool m_updateTimeHasBeenSet;
 
                 };
             }

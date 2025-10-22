@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,7 +43,9 @@ ApproverInfo::ApproverInfo() :
     m_addSignComponentsLimitsHasBeenSet(false),
     m_signInstructionContentHasBeenSet(false),
     m_deadlineHasBeenSet(false),
-    m_componentsHasBeenSet(false)
+    m_componentsHasBeenSet(false),
+    m_signEndpointsHasBeenSet(false),
+    m_registerInfoHasBeenSet(false)
 {
 }
 
@@ -328,6 +330,36 @@ CoreInternalOutcome ApproverInfo::Deserialize(const rapidjson::Value &value)
         m_componentsHasBeenSet = true;
     }
 
+    if (value.HasMember("SignEndpoints") && !value["SignEndpoints"].IsNull())
+    {
+        if (!value["SignEndpoints"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ApproverInfo.SignEndpoints` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SignEndpoints"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_signEndpoints.push_back((*itr).GetString());
+        }
+        m_signEndpointsHasBeenSet = true;
+    }
+
+    if (value.HasMember("RegisterInfo") && !value["RegisterInfo"].IsNull())
+    {
+        if (!value["RegisterInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApproverInfo.RegisterInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_registerInfo.Deserialize(value["RegisterInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_registerInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -554,6 +586,28 @@ void ApproverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_signEndpointsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignEndpoints";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_signEndpoints.begin(); itr != m_signEndpoints.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_registerInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegisterInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_registerInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -925,5 +979,37 @@ void ApproverInfo::SetComponents(const vector<Component>& _components)
 bool ApproverInfo::ComponentsHasBeenSet() const
 {
     return m_componentsHasBeenSet;
+}
+
+vector<string> ApproverInfo::GetSignEndpoints() const
+{
+    return m_signEndpoints;
+}
+
+void ApproverInfo::SetSignEndpoints(const vector<string>& _signEndpoints)
+{
+    m_signEndpoints = _signEndpoints;
+    m_signEndpointsHasBeenSet = true;
+}
+
+bool ApproverInfo::SignEndpointsHasBeenSet() const
+{
+    return m_signEndpointsHasBeenSet;
+}
+
+RegisterInfo ApproverInfo::GetRegisterInfo() const
+{
+    return m_registerInfo;
+}
+
+void ApproverInfo::SetRegisterInfo(const RegisterInfo& _registerInfo)
+{
+    m_registerInfo = _registerInfo;
+    m_registerInfoHasBeenSet = true;
+}
+
+bool ApproverInfo::RegisterInfoHasBeenSet() const
+{
+    return m_registerInfoHasBeenSet;
 }
 

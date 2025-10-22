@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,6 +76,49 @@ MpsClient::BatchDeleteStreamLinkFlowOutcomeCallable MpsClient::BatchDeleteStream
         [this, request]()
         {
             return this->BatchDeleteStreamLinkFlow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::BatchProcessMediaOutcome MpsClient::BatchProcessMedia(const BatchProcessMediaRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchProcessMedia");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchProcessMediaResponse rsp = BatchProcessMediaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchProcessMediaOutcome(rsp);
+        else
+            return BatchProcessMediaOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchProcessMediaOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::BatchProcessMediaAsync(const BatchProcessMediaRequest& request, const BatchProcessMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BatchProcessMedia(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::BatchProcessMediaOutcomeCallable MpsClient::BatchProcessMediaCallable(const BatchProcessMediaRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BatchProcessMediaOutcome()>>(
+        [this, request]()
+        {
+            return this->BatchProcessMedia(request);
         }
     );
 
@@ -341,6 +384,49 @@ MpsClient::CreateAnimatedGraphicsTemplateOutcomeCallable MpsClient::CreateAnimat
     return task->get_future();
 }
 
+MpsClient::CreateAsrHotwordsOutcome MpsClient::CreateAsrHotwords(const CreateAsrHotwordsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAsrHotwords");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAsrHotwordsResponse rsp = CreateAsrHotwordsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAsrHotwordsOutcome(rsp);
+        else
+            return CreateAsrHotwordsOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAsrHotwordsOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::CreateAsrHotwordsAsync(const CreateAsrHotwordsRequest& request, const CreateAsrHotwordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAsrHotwords(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::CreateAsrHotwordsOutcomeCallable MpsClient::CreateAsrHotwordsCallable(const CreateAsrHotwordsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAsrHotwordsOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAsrHotwords(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::CreateContentReviewTemplateOutcome MpsClient::CreateContentReviewTemplate(const CreateContentReviewTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateContentReviewTemplate");
@@ -420,6 +506,92 @@ MpsClient::CreateImageSpriteTemplateOutcomeCallable MpsClient::CreateImageSprite
         [this, request]()
         {
             return this->CreateImageSpriteTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::CreateLiveRecordTemplateOutcome MpsClient::CreateLiveRecordTemplate(const CreateLiveRecordTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateLiveRecordTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateLiveRecordTemplateResponse rsp = CreateLiveRecordTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateLiveRecordTemplateOutcome(rsp);
+        else
+            return CreateLiveRecordTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateLiveRecordTemplateOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::CreateLiveRecordTemplateAsync(const CreateLiveRecordTemplateRequest& request, const CreateLiveRecordTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateLiveRecordTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::CreateLiveRecordTemplateOutcomeCallable MpsClient::CreateLiveRecordTemplateCallable(const CreateLiveRecordTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateLiveRecordTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateLiveRecordTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::CreateMediaEvaluationOutcome MpsClient::CreateMediaEvaluation(const CreateMediaEvaluationRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMediaEvaluation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMediaEvaluationResponse rsp = CreateMediaEvaluationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMediaEvaluationOutcome(rsp);
+        else
+            return CreateMediaEvaluationOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMediaEvaluationOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::CreateMediaEvaluationAsync(const CreateMediaEvaluationRequest& request, const CreateMediaEvaluationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateMediaEvaluation(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::CreateMediaEvaluationOutcomeCallable MpsClient::CreateMediaEvaluationCallable(const CreateMediaEvaluationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateMediaEvaluationOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateMediaEvaluation(request);
         }
     );
 
@@ -592,6 +764,92 @@ MpsClient::CreateScheduleOutcomeCallable MpsClient::CreateScheduleCallable(const
         [this, request]()
         {
             return this->CreateSchedule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::CreateSmartEraseTemplateOutcome MpsClient::CreateSmartEraseTemplate(const CreateSmartEraseTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSmartEraseTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSmartEraseTemplateResponse rsp = CreateSmartEraseTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSmartEraseTemplateOutcome(rsp);
+        else
+            return CreateSmartEraseTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSmartEraseTemplateOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::CreateSmartEraseTemplateAsync(const CreateSmartEraseTemplateRequest& request, const CreateSmartEraseTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSmartEraseTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::CreateSmartEraseTemplateOutcomeCallable MpsClient::CreateSmartEraseTemplateCallable(const CreateSmartEraseTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSmartEraseTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSmartEraseTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::CreateSmartSubtitleTemplateOutcome MpsClient::CreateSmartSubtitleTemplate(const CreateSmartSubtitleTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSmartSubtitleTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSmartSubtitleTemplateResponse rsp = CreateSmartSubtitleTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSmartSubtitleTemplateOutcome(rsp);
+        else
+            return CreateSmartSubtitleTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSmartSubtitleTemplateOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::CreateSmartSubtitleTemplateAsync(const CreateSmartSubtitleTemplateRequest& request, const CreateSmartSubtitleTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSmartSubtitleTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::CreateSmartSubtitleTemplateOutcomeCallable MpsClient::CreateSmartSubtitleTemplateCallable(const CreateSmartSubtitleTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSmartSubtitleTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSmartSubtitleTemplate(request);
         }
     );
 
@@ -807,6 +1065,49 @@ MpsClient::CreateStreamLinkOutputInfoOutcomeCallable MpsClient::CreateStreamLink
         [this, request]()
         {
             return this->CreateStreamLinkOutputInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::CreateStreamLinkSecurityGroupOutcome MpsClient::CreateStreamLinkSecurityGroup(const CreateStreamLinkSecurityGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateStreamLinkSecurityGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateStreamLinkSecurityGroupResponse rsp = CreateStreamLinkSecurityGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateStreamLinkSecurityGroupOutcome(rsp);
+        else
+            return CreateStreamLinkSecurityGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateStreamLinkSecurityGroupOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::CreateStreamLinkSecurityGroupAsync(const CreateStreamLinkSecurityGroupRequest& request, const CreateStreamLinkSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateStreamLinkSecurityGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::CreateStreamLinkSecurityGroupOutcomeCallable MpsClient::CreateStreamLinkSecurityGroupCallable(const CreateStreamLinkSecurityGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateStreamLinkSecurityGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateStreamLinkSecurityGroup(request);
         }
     );
 
@@ -1244,6 +1545,49 @@ MpsClient::DeleteAnimatedGraphicsTemplateOutcomeCallable MpsClient::DeleteAnimat
     return task->get_future();
 }
 
+MpsClient::DeleteAsrHotwordsOutcome MpsClient::DeleteAsrHotwords(const DeleteAsrHotwordsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAsrHotwords");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAsrHotwordsResponse rsp = DeleteAsrHotwordsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAsrHotwordsOutcome(rsp);
+        else
+            return DeleteAsrHotwordsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAsrHotwordsOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DeleteAsrHotwordsAsync(const DeleteAsrHotwordsRequest& request, const DeleteAsrHotwordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAsrHotwords(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DeleteAsrHotwordsOutcomeCallable MpsClient::DeleteAsrHotwordsCallable(const DeleteAsrHotwordsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAsrHotwordsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAsrHotwords(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::DeleteContentReviewTemplateOutcome MpsClient::DeleteContentReviewTemplate(const DeleteContentReviewTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteContentReviewTemplate");
@@ -1323,6 +1667,49 @@ MpsClient::DeleteImageSpriteTemplateOutcomeCallable MpsClient::DeleteImageSprite
         [this, request]()
         {
             return this->DeleteImageSpriteTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::DeleteLiveRecordTemplateOutcome MpsClient::DeleteLiveRecordTemplate(const DeleteLiveRecordTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLiveRecordTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLiveRecordTemplateResponse rsp = DeleteLiveRecordTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLiveRecordTemplateOutcome(rsp);
+        else
+            return DeleteLiveRecordTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLiveRecordTemplateOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DeleteLiveRecordTemplateAsync(const DeleteLiveRecordTemplateRequest& request, const DeleteLiveRecordTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteLiveRecordTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DeleteLiveRecordTemplateOutcomeCallable MpsClient::DeleteLiveRecordTemplateCallable(const DeleteLiveRecordTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteLiveRecordTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteLiveRecordTemplate(request);
         }
     );
 
@@ -1502,6 +1889,92 @@ MpsClient::DeleteScheduleOutcomeCallable MpsClient::DeleteScheduleCallable(const
     return task->get_future();
 }
 
+MpsClient::DeleteSmartEraseTemplateOutcome MpsClient::DeleteSmartEraseTemplate(const DeleteSmartEraseTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSmartEraseTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSmartEraseTemplateResponse rsp = DeleteSmartEraseTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSmartEraseTemplateOutcome(rsp);
+        else
+            return DeleteSmartEraseTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSmartEraseTemplateOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DeleteSmartEraseTemplateAsync(const DeleteSmartEraseTemplateRequest& request, const DeleteSmartEraseTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteSmartEraseTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DeleteSmartEraseTemplateOutcomeCallable MpsClient::DeleteSmartEraseTemplateCallable(const DeleteSmartEraseTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteSmartEraseTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteSmartEraseTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::DeleteSmartSubtitleTemplateOutcome MpsClient::DeleteSmartSubtitleTemplate(const DeleteSmartSubtitleTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSmartSubtitleTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSmartSubtitleTemplateResponse rsp = DeleteSmartSubtitleTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSmartSubtitleTemplateOutcome(rsp);
+        else
+            return DeleteSmartSubtitleTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSmartSubtitleTemplateOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DeleteSmartSubtitleTemplateAsync(const DeleteSmartSubtitleTemplateRequest& request, const DeleteSmartSubtitleTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteSmartSubtitleTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DeleteSmartSubtitleTemplateOutcomeCallable MpsClient::DeleteSmartSubtitleTemplateCallable(const DeleteSmartSubtitleTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteSmartSubtitleTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteSmartSubtitleTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::DeleteSnapshotByTimeOffsetTemplateOutcome MpsClient::DeleteSnapshotByTimeOffsetTemplate(const DeleteSnapshotByTimeOffsetTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteSnapshotByTimeOffsetTemplate");
@@ -1667,6 +2140,49 @@ MpsClient::DeleteStreamLinkOutputOutcomeCallable MpsClient::DeleteStreamLinkOutp
         [this, request]()
         {
             return this->DeleteStreamLinkOutput(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::DeleteStreamLinkSecurityGroupOutcome MpsClient::DeleteStreamLinkSecurityGroup(const DeleteStreamLinkSecurityGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteStreamLinkSecurityGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteStreamLinkSecurityGroupResponse rsp = DeleteStreamLinkSecurityGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteStreamLinkSecurityGroupOutcome(rsp);
+        else
+            return DeleteStreamLinkSecurityGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteStreamLinkSecurityGroupOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DeleteStreamLinkSecurityGroupAsync(const DeleteStreamLinkSecurityGroupRequest& request, const DeleteStreamLinkSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteStreamLinkSecurityGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DeleteStreamLinkSecurityGroupOutcomeCallable MpsClient::DeleteStreamLinkSecurityGroupCallable(const DeleteStreamLinkSecurityGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteStreamLinkSecurityGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteStreamLinkSecurityGroup(request);
         }
     );
 
@@ -2018,6 +2534,135 @@ MpsClient::DescribeAnimatedGraphicsTemplatesOutcomeCallable MpsClient::DescribeA
     return task->get_future();
 }
 
+MpsClient::DescribeAsrHotwordsOutcome MpsClient::DescribeAsrHotwords(const DescribeAsrHotwordsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAsrHotwords");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAsrHotwordsResponse rsp = DescribeAsrHotwordsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAsrHotwordsOutcome(rsp);
+        else
+            return DescribeAsrHotwordsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAsrHotwordsOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeAsrHotwordsAsync(const DescribeAsrHotwordsRequest& request, const DescribeAsrHotwordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAsrHotwords(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DescribeAsrHotwordsOutcomeCallable MpsClient::DescribeAsrHotwordsCallable(const DescribeAsrHotwordsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAsrHotwordsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAsrHotwords(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::DescribeAsrHotwordsListOutcome MpsClient::DescribeAsrHotwordsList(const DescribeAsrHotwordsListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAsrHotwordsList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAsrHotwordsListResponse rsp = DescribeAsrHotwordsListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAsrHotwordsListOutcome(rsp);
+        else
+            return DescribeAsrHotwordsListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAsrHotwordsListOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeAsrHotwordsListAsync(const DescribeAsrHotwordsListRequest& request, const DescribeAsrHotwordsListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAsrHotwordsList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DescribeAsrHotwordsListOutcomeCallable MpsClient::DescribeAsrHotwordsListCallable(const DescribeAsrHotwordsListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAsrHotwordsListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAsrHotwordsList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::DescribeBatchTaskDetailOutcome MpsClient::DescribeBatchTaskDetail(const DescribeBatchTaskDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBatchTaskDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBatchTaskDetailResponse rsp = DescribeBatchTaskDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBatchTaskDetailOutcome(rsp);
+        else
+            return DescribeBatchTaskDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBatchTaskDetailOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeBatchTaskDetailAsync(const DescribeBatchTaskDetailRequest& request, const DescribeBatchTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBatchTaskDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DescribeBatchTaskDetailOutcomeCallable MpsClient::DescribeBatchTaskDetailCallable(const DescribeBatchTaskDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBatchTaskDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBatchTaskDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::DescribeContentReviewTemplatesOutcome MpsClient::DescribeContentReviewTemplates(const DescribeContentReviewTemplatesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeContentReviewTemplates");
@@ -2061,6 +2706,49 @@ MpsClient::DescribeContentReviewTemplatesOutcomeCallable MpsClient::DescribeCont
     return task->get_future();
 }
 
+MpsClient::DescribeGroupAttachFlowsByIdOutcome MpsClient::DescribeGroupAttachFlowsById(const DescribeGroupAttachFlowsByIdRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGroupAttachFlowsById");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGroupAttachFlowsByIdResponse rsp = DescribeGroupAttachFlowsByIdResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGroupAttachFlowsByIdOutcome(rsp);
+        else
+            return DescribeGroupAttachFlowsByIdOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGroupAttachFlowsByIdOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeGroupAttachFlowsByIdAsync(const DescribeGroupAttachFlowsByIdRequest& request, const DescribeGroupAttachFlowsByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGroupAttachFlowsById(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DescribeGroupAttachFlowsByIdOutcomeCallable MpsClient::DescribeGroupAttachFlowsByIdCallable(const DescribeGroupAttachFlowsByIdRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGroupAttachFlowsByIdOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGroupAttachFlowsById(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::DescribeImageSpriteTemplatesOutcome MpsClient::DescribeImageSpriteTemplates(const DescribeImageSpriteTemplatesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeImageSpriteTemplates");
@@ -2097,6 +2785,92 @@ MpsClient::DescribeImageSpriteTemplatesOutcomeCallable MpsClient::DescribeImageS
         [this, request]()
         {
             return this->DescribeImageSpriteTemplates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::DescribeImageTaskDetailOutcome MpsClient::DescribeImageTaskDetail(const DescribeImageTaskDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageTaskDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageTaskDetailResponse rsp = DescribeImageTaskDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageTaskDetailOutcome(rsp);
+        else
+            return DescribeImageTaskDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageTaskDetailOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeImageTaskDetailAsync(const DescribeImageTaskDetailRequest& request, const DescribeImageTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeImageTaskDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DescribeImageTaskDetailOutcomeCallable MpsClient::DescribeImageTaskDetailCallable(const DescribeImageTaskDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeImageTaskDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeImageTaskDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::DescribeLiveRecordTemplatesOutcome MpsClient::DescribeLiveRecordTemplates(const DescribeLiveRecordTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLiveRecordTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLiveRecordTemplatesResponse rsp = DescribeLiveRecordTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLiveRecordTemplatesOutcome(rsp);
+        else
+            return DescribeLiveRecordTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLiveRecordTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeLiveRecordTemplatesAsync(const DescribeLiveRecordTemplatesRequest& request, const DescribeLiveRecordTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLiveRecordTemplates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DescribeLiveRecordTemplatesOutcomeCallable MpsClient::DescribeLiveRecordTemplatesCallable(const DescribeLiveRecordTemplatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLiveRecordTemplatesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLiveRecordTemplates(request);
         }
     );
 
@@ -2312,6 +3086,92 @@ MpsClient::DescribeSchedulesOutcomeCallable MpsClient::DescribeSchedulesCallable
         [this, request]()
         {
             return this->DescribeSchedules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::DescribeSmartEraseTemplatesOutcome MpsClient::DescribeSmartEraseTemplates(const DescribeSmartEraseTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSmartEraseTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSmartEraseTemplatesResponse rsp = DescribeSmartEraseTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSmartEraseTemplatesOutcome(rsp);
+        else
+            return DescribeSmartEraseTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSmartEraseTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeSmartEraseTemplatesAsync(const DescribeSmartEraseTemplatesRequest& request, const DescribeSmartEraseTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSmartEraseTemplates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DescribeSmartEraseTemplatesOutcomeCallable MpsClient::DescribeSmartEraseTemplatesCallable(const DescribeSmartEraseTemplatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSmartEraseTemplatesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSmartEraseTemplates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::DescribeSmartSubtitleTemplatesOutcome MpsClient::DescribeSmartSubtitleTemplates(const DescribeSmartSubtitleTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSmartSubtitleTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSmartSubtitleTemplatesResponse rsp = DescribeSmartSubtitleTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSmartSubtitleTemplatesOutcome(rsp);
+        else
+            return DescribeSmartSubtitleTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSmartSubtitleTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeSmartSubtitleTemplatesAsync(const DescribeSmartSubtitleTemplatesRequest& request, const DescribeSmartSubtitleTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSmartSubtitleTemplates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DescribeSmartSubtitleTemplatesOutcomeCallable MpsClient::DescribeSmartSubtitleTemplatesCallable(const DescribeSmartSubtitleTemplatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSmartSubtitleTemplatesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSmartSubtitleTemplates(request);
         }
     );
 
@@ -2878,6 +3738,49 @@ MpsClient::DescribeStreamLinkRegionsOutcomeCallable MpsClient::DescribeStreamLin
     return task->get_future();
 }
 
+MpsClient::DescribeStreamLinkSecurityGroupsOutcome MpsClient::DescribeStreamLinkSecurityGroups(const DescribeStreamLinkSecurityGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeStreamLinkSecurityGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeStreamLinkSecurityGroupsResponse rsp = DescribeStreamLinkSecurityGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeStreamLinkSecurityGroupsOutcome(rsp);
+        else
+            return DescribeStreamLinkSecurityGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeStreamLinkSecurityGroupsOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeStreamLinkSecurityGroupsAsync(const DescribeStreamLinkSecurityGroupsRequest& request, const DescribeStreamLinkSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeStreamLinkSecurityGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DescribeStreamLinkSecurityGroupsOutcomeCallable MpsClient::DescribeStreamLinkSecurityGroupsCallable(const DescribeStreamLinkSecurityGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeStreamLinkSecurityGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeStreamLinkSecurityGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::DescribeTaskDetailOutcome MpsClient::DescribeTaskDetail(const DescribeTaskDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTaskDetail");
@@ -3308,6 +4211,49 @@ MpsClient::DisableWorkflowOutcomeCallable MpsClient::DisableWorkflowCallable(con
     return task->get_future();
 }
 
+MpsClient::DisassociateSecurityGroupOutcome MpsClient::DisassociateSecurityGroup(const DisassociateSecurityGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisassociateSecurityGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisassociateSecurityGroupResponse rsp = DisassociateSecurityGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisassociateSecurityGroupOutcome(rsp);
+        else
+            return DisassociateSecurityGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DisassociateSecurityGroupOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DisassociateSecurityGroupAsync(const DisassociateSecurityGroupRequest& request, const DisassociateSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisassociateSecurityGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DisassociateSecurityGroupOutcomeCallable MpsClient::DisassociateSecurityGroupCallable(const DisassociateSecurityGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisassociateSecurityGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DisassociateSecurityGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::EditMediaOutcome MpsClient::EditMedia(const EditMediaRequest &request)
 {
     auto outcome = MakeRequest(request, "EditMedia");
@@ -3695,6 +4641,49 @@ MpsClient::ModifyAnimatedGraphicsTemplateOutcomeCallable MpsClient::ModifyAnimat
     return task->get_future();
 }
 
+MpsClient::ModifyAsrHotwordsOutcome MpsClient::ModifyAsrHotwords(const ModifyAsrHotwordsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAsrHotwords");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAsrHotwordsResponse rsp = ModifyAsrHotwordsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAsrHotwordsOutcome(rsp);
+        else
+            return ModifyAsrHotwordsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAsrHotwordsOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::ModifyAsrHotwordsAsync(const ModifyAsrHotwordsRequest& request, const ModifyAsrHotwordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAsrHotwords(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::ModifyAsrHotwordsOutcomeCallable MpsClient::ModifyAsrHotwordsCallable(const ModifyAsrHotwordsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAsrHotwordsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAsrHotwords(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::ModifyContentReviewTemplateOutcome MpsClient::ModifyContentReviewTemplate(const ModifyContentReviewTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyContentReviewTemplate");
@@ -3774,6 +4763,49 @@ MpsClient::ModifyImageSpriteTemplateOutcomeCallable MpsClient::ModifyImageSprite
         [this, request]()
         {
             return this->ModifyImageSpriteTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::ModifyLiveRecordTemplateOutcome MpsClient::ModifyLiveRecordTemplate(const ModifyLiveRecordTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLiveRecordTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLiveRecordTemplateResponse rsp = ModifyLiveRecordTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLiveRecordTemplateOutcome(rsp);
+        else
+            return ModifyLiveRecordTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLiveRecordTemplateOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::ModifyLiveRecordTemplateAsync(const ModifyLiveRecordTemplateRequest& request, const ModifyLiveRecordTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyLiveRecordTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::ModifyLiveRecordTemplateOutcomeCallable MpsClient::ModifyLiveRecordTemplateCallable(const ModifyLiveRecordTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyLiveRecordTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyLiveRecordTemplate(request);
         }
     );
 
@@ -3946,6 +4978,92 @@ MpsClient::ModifyScheduleOutcomeCallable MpsClient::ModifyScheduleCallable(const
         [this, request]()
         {
             return this->ModifySchedule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::ModifySmartEraseTemplateOutcome MpsClient::ModifySmartEraseTemplate(const ModifySmartEraseTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySmartEraseTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySmartEraseTemplateResponse rsp = ModifySmartEraseTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySmartEraseTemplateOutcome(rsp);
+        else
+            return ModifySmartEraseTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySmartEraseTemplateOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::ModifySmartEraseTemplateAsync(const ModifySmartEraseTemplateRequest& request, const ModifySmartEraseTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySmartEraseTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::ModifySmartEraseTemplateOutcomeCallable MpsClient::ModifySmartEraseTemplateCallable(const ModifySmartEraseTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySmartEraseTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySmartEraseTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::ModifySmartSubtitleTemplateOutcome MpsClient::ModifySmartSubtitleTemplate(const ModifySmartSubtitleTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySmartSubtitleTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySmartSubtitleTemplateResponse rsp = ModifySmartSubtitleTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySmartSubtitleTemplateOutcome(rsp);
+        else
+            return ModifySmartSubtitleTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySmartSubtitleTemplateOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::ModifySmartSubtitleTemplateAsync(const ModifySmartSubtitleTemplateRequest& request, const ModifySmartSubtitleTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySmartSubtitleTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::ModifySmartSubtitleTemplateOutcomeCallable MpsClient::ModifySmartSubtitleTemplateCallable(const ModifySmartSubtitleTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySmartSubtitleTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySmartSubtitleTemplate(request);
         }
     );
 
@@ -4168,6 +5286,49 @@ MpsClient::ModifyStreamLinkOutputInfoOutcomeCallable MpsClient::ModifyStreamLink
     return task->get_future();
 }
 
+MpsClient::ModifyStreamLinkSecurityGroupOutcome MpsClient::ModifyStreamLinkSecurityGroup(const ModifyStreamLinkSecurityGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyStreamLinkSecurityGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyStreamLinkSecurityGroupResponse rsp = ModifyStreamLinkSecurityGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyStreamLinkSecurityGroupOutcome(rsp);
+        else
+            return ModifyStreamLinkSecurityGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyStreamLinkSecurityGroupOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::ModifyStreamLinkSecurityGroupAsync(const ModifyStreamLinkSecurityGroupRequest& request, const ModifyStreamLinkSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyStreamLinkSecurityGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::ModifyStreamLinkSecurityGroupOutcomeCallable MpsClient::ModifyStreamLinkSecurityGroupCallable(const ModifyStreamLinkSecurityGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyStreamLinkSecurityGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyStreamLinkSecurityGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::ModifyTranscodeTemplateOutcome MpsClient::ModifyTranscodeTemplate(const ModifyTranscodeTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyTranscodeTemplate");
@@ -4376,6 +5537,49 @@ MpsClient::ParseNotificationOutcomeCallable MpsClient::ParseNotificationCallable
         [this, request]()
         {
             return this->ParseNotification(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::ProcessImageOutcome MpsClient::ProcessImage(const ProcessImageRequest &request)
+{
+    auto outcome = MakeRequest(request, "ProcessImage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ProcessImageResponse rsp = ProcessImageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ProcessImageOutcome(rsp);
+        else
+            return ProcessImageOutcome(o.GetError());
+    }
+    else
+    {
+        return ProcessImageOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::ProcessImageAsync(const ProcessImageRequest& request, const ProcessImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ProcessImage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::ProcessImageOutcomeCallable MpsClient::ProcessImageCallable(const ProcessImageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ProcessImageOutcome()>>(
+        [this, request]()
+        {
+            return this->ProcessImage(request);
         }
     );
 

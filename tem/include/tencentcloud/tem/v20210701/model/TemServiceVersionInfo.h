@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -531,18 +531,14 @@ namespace TencentCloud
 
                     /**
                      * 获取挂载配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StorageMountConfs 挂载配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<StorageMountConf> GetStorageMountConfs() const;
 
                     /**
                      * 设置挂载配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _storageMountConfs 挂载配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStorageMountConfs(const std::vector<StorageMountConf>& _storageMountConfs);
@@ -556,18 +552,14 @@ namespace TencentCloud
 
                     /**
                      * 获取版本名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VersionName 版本名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersionName() const;
 
                     /**
                      * 设置版本名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _versionName 版本名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersionName(const std::string& _versionName);
@@ -606,18 +598,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationName 服务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplicationName() const;
 
                     /**
                      * 设置服务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationName 服务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationName(const std::string& _applicationName);
@@ -631,18 +619,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationDescription 服务描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplicationDescription() const;
 
                     /**
                      * 设置服务描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationDescription 服务描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationDescription(const std::string& _applicationDescription);
@@ -656,18 +640,14 @@ namespace TencentCloud
 
                     /**
                      * 获取环境名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnvironmentName 环境名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEnvironmentName() const;
 
                     /**
                      * 设置环境名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _environmentName 环境名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnvironmentName(const std::string& _environmentName);
@@ -681,18 +661,14 @@ namespace TencentCloud
 
                     /**
                      * 获取环境ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnvironmentId 环境ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEnvironmentId() const;
 
                     /**
                      * 设置环境ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _environmentId 环境ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnvironmentId(const std::string& _environmentId);
@@ -706,18 +682,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公网地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicDomain 公网地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublicDomain() const;
 
                     /**
                      * 设置公网地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publicDomain 公网地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublicDomain(const std::string& _publicDomain);
@@ -756,18 +728,14 @@ namespace TencentCloud
 
                     /**
                      * 获取现有的实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurrentInstances 现有的实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCurrentInstances() const;
 
                     /**
                      * 设置现有的实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _currentInstances 现有的实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCurrentInstances(const int64_t& _currentInstances);
@@ -806,18 +774,14 @@ namespace TencentCloud
 
                     /**
                      * 获取编程语言
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CodingLanguage 编程语言
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCodingLanguage() const;
 
                     /**
                      * 设置编程语言
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _codingLanguage 编程语言
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCodingLanguage(const std::string& _codingLanguage);
@@ -831,18 +795,14 @@ namespace TencentCloud
 
                     /**
                      * 获取程序包名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PkgName 程序包名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPkgName() const;
 
                     /**
                      * 设置程序包名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pkgName 程序包名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPkgName(const std::string& _pkgName);
@@ -906,18 +866,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像tag
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageTag 镜像tag
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetImageTag() const;
 
                     /**
                      * 设置镜像tag
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _imageTag 镜像tag
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImageTag(const std::string& _imageTag);
@@ -956,18 +912,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最小实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MinAliveInstances 最小实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMinAliveInstances() const;
 
                     /**
                      * 设置最小实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _minAliveInstances 最小实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMinAliveInstances(const std::string& _minAliveInstances);
@@ -981,18 +933,14 @@ namespace TencentCloud
 
                     /**
                      * 获取安全组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecurityGroupIds 安全组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
                      * 设置安全组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _securityGroupIds 安全组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
@@ -1006,18 +954,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像命令
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageCommand 镜像命令
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetImageCommand() const;
 
                     /**
                      * 设置镜像命令
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _imageCommand 镜像命令
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImageCommand(const std::string& _imageCommand);
@@ -1056,18 +1000,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否使用默认注册中心配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UseRegistryDefaultConfig 是否使用默认注册中心配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetUseRegistryDefaultConfig() const;
 
                     /**
                      * 设置是否使用默认注册中心配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _useRegistryDefaultConfig 是否使用默认注册中心配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUseRegistryDefaultConfig(const bool& _useRegistryDefaultConfig);
@@ -1081,18 +1021,14 @@ namespace TencentCloud
 
                     /**
                      * 获取eks 访问设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Service eks 访问设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EksService GetService() const;
 
                     /**
                      * 设置eks 访问设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _service eks 访问设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetService(const EksService& _service);
@@ -1106,18 +1042,14 @@ namespace TencentCloud
 
                     /**
                      * 获取挂载配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SettingConfs 挂载配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<MountedSettingConf> GetSettingConfs() const;
 
                     /**
                      * 设置挂载配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _settingConfs 挂载配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSettingConfs(const std::vector<MountedSettingConf>& _settingConfs);
@@ -1131,18 +1063,14 @@ namespace TencentCloud
 
                     /**
                      * 获取log path数组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogConfs log path数组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetLogConfs() const;
 
                     /**
                      * 设置log path数组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logConfs log path数组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogConfs(const std::vector<std::string>& _logConfs);
@@ -1156,18 +1084,14 @@ namespace TencentCloud
 
                     /**
                      * 获取启动后立即执行的脚本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PostStart 启动后立即执行的脚本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPostStart() const;
 
                     /**
                      * 设置启动后立即执行的脚本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _postStart 启动后立即执行的脚本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPostStart(const std::string& _postStart);
@@ -1181,18 +1105,14 @@ namespace TencentCloud
 
                     /**
                      * 获取停止前执行的脚本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PreStop 停止前执行的脚本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPreStop() const;
 
                     /**
                      * 设置停止前执行的脚本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _preStop 停止前执行的脚本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPreStop(const std::string& _preStop);
@@ -1256,18 +1176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取弹性策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HorizontalAutoscaler 弹性策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<HorizontalAutoscaler> GetHorizontalAutoscaler() const;
 
                     /**
                      * 设置弹性策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _horizontalAutoscaler 弹性策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHorizontalAutoscaler(const std::vector<HorizontalAutoscaler>& _horizontalAutoscaler);
@@ -1281,18 +1197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取定时弹性策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CronHorizontalAutoscaler 定时弹性策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CronHorizontalAutoscaler> GetCronHorizontalAutoscaler() const;
 
                     /**
                      * 设置定时弹性策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cronHorizontalAutoscaler 定时弹性策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCronHorizontalAutoscaler(const std::vector<CronHorizontalAutoscaler>& _cronHorizontalAutoscaler);
@@ -1306,18 +1218,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用实际可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zones 应用实际可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetZones() const;
 
                     /**
                      * 设置应用实际可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zones 应用实际可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZones(const std::vector<std::string>& _zones);
@@ -1331,18 +1239,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最新部署时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastDeployDate 最新部署时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastDeployDate() const;
 
                     /**
                      * 设置最新部署时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastDeployDate 最新部署时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastDeployDate(const std::string& _lastDeployDate);
@@ -1356,18 +1260,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最新部署成功时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastDeploySuccessDate 最新部署成功时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastDeploySuccessDate() const;
 
                     /**
                      * 设置最新部署成功时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastDeploySuccessDate 最新部署成功时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastDeploySuccessDate(const std::string& _lastDeploySuccessDate);
@@ -1381,18 +1281,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用所在node信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeInfos 应用所在node信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<NodeInfo> GetNodeInfos() const;
 
                     /**
                      * 设置应用所在node信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodeInfos 应用所在node信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodeInfos(const std::vector<NodeInfo>& _nodeInfos);
@@ -1406,18 +1302,14 @@ namespace TencentCloud
 
                     /**
                      * 获取image类型 -0 为demo -1为正常image
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageType image类型 -0 为demo -1为正常image
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetImageType() const;
 
                     /**
                      * 设置image类型 -0 为demo -1为正常image
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _imageType image类型 -0 为demo -1为正常image
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImageType(const int64_t& _imageType);
@@ -1431,18 +1323,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否启用调用链组件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableTracing 是否启用调用链组件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetEnableTracing() const;
 
                     /**
                      * 设置是否启用调用链组件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableTracing 是否启用调用链组件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableTracing(const uint64_t& _enableTracing);
@@ -1456,18 +1344,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启调用链上报，只有 EnableTracing=1 时生效（参数已弃用）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableTracingReport 是否开启调用链上报，只有 EnableTracing=1 时生效（参数已弃用）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetEnableTracingReport() const;
 
                     /**
                      * 设置是否开启调用链上报，只有 EnableTracing=1 时生效（参数已弃用）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableTracingReport 是否开启调用链上报，只有 EnableTracing=1 时生效（参数已弃用）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableTracingReport(const uint64_t& _enableTracingReport);
@@ -1481,18 +1365,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像类型：0-个人镜像、1-企业镜像、2-公有镜像
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RepoType 镜像类型：0-个人镜像、1-企业镜像、2-公有镜像
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRepoType() const;
 
                     /**
                      * 设置镜像类型：0-个人镜像、1-企业镜像、2-公有镜像
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _repoType 镜像类型：0-个人镜像、1-企业镜像、2-公有镜像
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRepoType(const uint64_t& _repoType);
@@ -1506,18 +1386,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分批发布子状态：batch_updating、batch_updating_waiting_confirm
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BatchDeployStatus 分批发布子状态：batch_updating、batch_updating_waiting_confirm
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBatchDeployStatus() const;
 
                     /**
                      * 设置分批发布子状态：batch_updating、batch_updating_waiting_confirm
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _batchDeployStatus 分批发布子状态：batch_updating、batch_updating_waiting_confirm
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBatchDeployStatus(const std::string& _batchDeployStatus);
@@ -1531,18 +1407,14 @@ namespace TencentCloud
 
                     /**
                      * 获取APM 资源 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApmInstanceId APM 资源 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApmInstanceId() const;
 
                     /**
                      * 设置APM 资源 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _apmInstanceId APM 资源 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApmInstanceId(const std::string& _apmInstanceId);
@@ -1556,18 +1428,14 @@ namespace TencentCloud
 
                     /**
                      * 获取工作负载信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WorkloadInfo 工作负载信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     WorkloadInfo GetWorkloadInfo() const;
 
                     /**
                      * 设置工作负载信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _workloadInfo 工作负载信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWorkloadInfo(const WorkloadInfo& _workloadInfo);
@@ -1581,18 +1449,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否启用应用加速
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpeedUp 是否启用应用加速
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSpeedUp() const;
 
                     /**
                      * 设置是否启用应用加速
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _speedUp 是否启用应用加速
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSpeedUp(const bool& _speedUp);
@@ -1633,11 +1497,9 @@ namespace TencentCloud
                      * 获取操作系统版本，可选参数：
 - ALPINE
 - CENTOS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OsFlavour 操作系统版本，可选参数：
 - ALPINE
 - CENTOS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOsFlavour() const;
@@ -1646,11 +1508,9 @@ namespace TencentCloud
                      * 设置操作系统版本，可选参数：
 - ALPINE
 - CENTOS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _osFlavour 操作系统版本，可选参数：
 - ALPINE
 - CENTOS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOsFlavour(const std::string& _osFlavour);
@@ -1664,18 +1524,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像仓库server
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RepoServer 镜像仓库server
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRepoServer() const;
 
                     /**
                      * 设置镜像仓库server
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _repoServer 镜像仓库server
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRepoServer(const std::string& _repoServer);
@@ -1689,18 +1545,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否正在发布中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnderDeploying 是否正在发布中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetUnderDeploying() const;
 
                     /**
                      * 设置是否正在发布中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _underDeploying 是否正在发布中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUnderDeploying(const bool& _underDeploying);
@@ -1739,18 +1591,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否为手动停止
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StoppedManually 是否为手动停止
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetStoppedManually() const;
 
                     /**
                      * 设置是否为手动停止
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stoppedManually 是否为手动停止
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStoppedManually(const bool& _stoppedManually);
@@ -1764,18 +1612,14 @@ namespace TencentCloud
 
                     /**
                      * 获取tcr实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TcrInstanceId tcr实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTcrInstanceId() const;
 
                     /**
                      * 设置tcr实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tcrInstanceId tcr实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTcrInstanceId(const std::string& _tcrInstanceId);
@@ -1790,10 +1634,8 @@ namespace TencentCloud
                     /**
                      * 获取1：开始自动metrics采集（open-telemetry）；
 0：关闭metrics采集；
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableMetrics 1：开始自动metrics采集（open-telemetry）；
 0：关闭metrics采集；
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEnableMetrics() const;
@@ -1801,10 +1643,8 @@ namespace TencentCloud
                     /**
                      * 设置1：开始自动metrics采集（open-telemetry）；
 0：关闭metrics采集；
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableMetrics 1：开始自动metrics采集（open-telemetry）；
 0：关闭metrics采集；
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableMetrics(const int64_t& _enableMetrics);
@@ -1818,18 +1658,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId 用户AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppId() const;
 
                     /**
                      * 设置用户AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appId 用户AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppId(const std::string& _appId);
@@ -1843,18 +1679,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户SubAccountUin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubAccountUin 用户SubAccountUin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubAccountUin() const;
 
                     /**
                      * 设置用户SubAccountUin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subAccountUin 用户SubAccountUin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubAccountUin(const std::string& _subAccountUin);
@@ -1868,18 +1700,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 用户Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置用户Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uin 用户Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -1893,18 +1721,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -1918,18 +1742,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId 应用分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置应用分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupId 应用分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -1943,18 +1763,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否启用注册中心
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableRegistry 是否启用注册中心
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEnableRegistry() const;
 
                     /**
                      * 设置是否启用注册中心
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableRegistry 是否启用注册中心
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableRegistry(const int64_t& _enableRegistry);
@@ -1968,18 +1784,14 @@ namespace TencentCloud
 
                     /**
                      * 获取弹性伸缩数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoscalerList 弹性伸缩数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Autoscaler> GetAutoscalerList() const;
 
                     /**
                      * 设置弹性伸缩数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _autoscalerList 弹性伸缩数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAutoscalerList(const std::vector<Autoscaler>& _autoscalerList);
@@ -1993,18 +1805,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修改人
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Modifier 修改人
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifier() const;
 
                     /**
                      * 设置修改人
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifier 修改人
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifier(const std::string& _modifier);
@@ -2018,18 +1826,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建人
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Creator 创建人
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreator() const;
 
                     /**
                      * 设置创建人
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _creator 创建人
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreator(const std::string& _creator);
@@ -2068,18 +1872,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PodList 实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DescribeRunPodPage GetPodList() const;
 
                     /**
                      * 设置实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _podList 实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPodList(const DescribeRunPodPage& _podList);
@@ -2118,18 +1918,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -2143,18 +1939,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PreStopEncoded 是否编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPreStopEncoded() const;
 
                     /**
                      * 设置是否编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _preStopEncoded 是否编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPreStopEncoded(const std::string& _preStopEncoded);
@@ -2168,18 +1960,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PostStartEncoded 是否编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPostStartEncoded() const;
 
                     /**
                      * 设置是否编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _postStartEncoded 是否编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPostStartEncoded(const std::string& _postStartEncoded);
@@ -2328,14 +2116,12 @@ namespace TencentCloud
 
                     /**
                      * 挂载配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<StorageMountConf> m_storageMountConfs;
                     bool m_storageMountConfsHasBeenSet;
 
                     /**
                      * 版本名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_versionName;
                     bool m_versionNameHasBeenSet;
@@ -2349,35 +2135,30 @@ namespace TencentCloud
 
                     /**
                      * 服务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applicationName;
                     bool m_applicationNameHasBeenSet;
 
                     /**
                      * 服务描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applicationDescription;
                     bool m_applicationDescriptionHasBeenSet;
 
                     /**
                      * 环境名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_environmentName;
                     bool m_environmentNameHasBeenSet;
 
                     /**
                      * 环境ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_environmentId;
                     bool m_environmentIdHasBeenSet;
 
                     /**
                      * 公网地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publicDomain;
                     bool m_publicDomainHasBeenSet;
@@ -2391,7 +2172,6 @@ namespace TencentCloud
 
                     /**
                      * 现有的实例
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_currentInstances;
                     bool m_currentInstancesHasBeenSet;
@@ -2405,14 +2185,12 @@ namespace TencentCloud
 
                     /**
                      * 编程语言
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_codingLanguage;
                     bool m_codingLanguageHasBeenSet;
 
                     /**
                      * 程序包名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pkgName;
                     bool m_pkgNameHasBeenSet;
@@ -2433,7 +2211,6 @@ namespace TencentCloud
 
                     /**
                      * 镜像tag
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_imageTag;
                     bool m_imageTagHasBeenSet;
@@ -2447,21 +2224,18 @@ namespace TencentCloud
 
                     /**
                      * 最小实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_minAliveInstances;
                     bool m_minAliveInstancesHasBeenSet;
 
                     /**
                      * 安全组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;
 
                     /**
                      * 镜像命令
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_imageCommand;
                     bool m_imageCommandHasBeenSet;
@@ -2475,42 +2249,36 @@ namespace TencentCloud
 
                     /**
                      * 是否使用默认注册中心配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_useRegistryDefaultConfig;
                     bool m_useRegistryDefaultConfigHasBeenSet;
 
                     /**
                      * eks 访问设置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EksService m_service;
                     bool m_serviceHasBeenSet;
 
                     /**
                      * 挂载配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MountedSettingConf> m_settingConfs;
                     bool m_settingConfsHasBeenSet;
 
                     /**
                      * log path数组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_logConfs;
                     bool m_logConfsHasBeenSet;
 
                     /**
                      * 启动后立即执行的脚本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_postStart;
                     bool m_postStartHasBeenSet;
 
                     /**
                      * 停止前执行的脚本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_preStop;
                     bool m_preStopHasBeenSet;
@@ -2531,98 +2299,84 @@ namespace TencentCloud
 
                     /**
                      * 弹性策略
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<HorizontalAutoscaler> m_horizontalAutoscaler;
                     bool m_horizontalAutoscalerHasBeenSet;
 
                     /**
                      * 定时弹性策略
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CronHorizontalAutoscaler> m_cronHorizontalAutoscaler;
                     bool m_cronHorizontalAutoscalerHasBeenSet;
 
                     /**
                      * 应用实际可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_zones;
                     bool m_zonesHasBeenSet;
 
                     /**
                      * 最新部署时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastDeployDate;
                     bool m_lastDeployDateHasBeenSet;
 
                     /**
                      * 最新部署成功时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastDeploySuccessDate;
                     bool m_lastDeploySuccessDateHasBeenSet;
 
                     /**
                      * 应用所在node信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NodeInfo> m_nodeInfos;
                     bool m_nodeInfosHasBeenSet;
 
                     /**
                      * image类型 -0 为demo -1为正常image
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_imageType;
                     bool m_imageTypeHasBeenSet;
 
                     /**
                      * 是否启用调用链组件
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_enableTracing;
                     bool m_enableTracingHasBeenSet;
 
                     /**
                      * 是否开启调用链上报，只有 EnableTracing=1 时生效（参数已弃用）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_enableTracingReport;
                     bool m_enableTracingReportHasBeenSet;
 
                     /**
                      * 镜像类型：0-个人镜像、1-企业镜像、2-公有镜像
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_repoType;
                     bool m_repoTypeHasBeenSet;
 
                     /**
                      * 分批发布子状态：batch_updating、batch_updating_waiting_confirm
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_batchDeployStatus;
                     bool m_batchDeployStatusHasBeenSet;
 
                     /**
                      * APM 资源 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_apmInstanceId;
                     bool m_apmInstanceIdHasBeenSet;
 
                     /**
                      * 工作负载信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     WorkloadInfo m_workloadInfo;
                     bool m_workloadInfoHasBeenSet;
 
                     /**
                      * 是否启用应用加速
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_speedUp;
                     bool m_speedUpHasBeenSet;
@@ -2638,21 +2392,18 @@ namespace TencentCloud
                      * 操作系统版本，可选参数：
 - ALPINE
 - CENTOS
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_osFlavour;
                     bool m_osFlavourHasBeenSet;
 
                     /**
                      * 镜像仓库server
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_repoServer;
                     bool m_repoServerHasBeenSet;
 
                     /**
                      * 是否正在发布中
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_underDeploying;
                     bool m_underDeployingHasBeenSet;
@@ -2666,14 +2417,12 @@ namespace TencentCloud
 
                     /**
                      * 是否为手动停止
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_stoppedManually;
                     bool m_stoppedManuallyHasBeenSet;
 
                     /**
                      * tcr实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tcrInstanceId;
                     bool m_tcrInstanceIdHasBeenSet;
@@ -2681,70 +2430,60 @@ namespace TencentCloud
                     /**
                      * 1：开始自动metrics采集（open-telemetry）；
 0：关闭metrics采集；
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_enableMetrics;
                     bool m_enableMetricsHasBeenSet;
 
                     /**
                      * 用户AppId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
                      * 用户SubAccountUin
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subAccountUin;
                     bool m_subAccountUinHasBeenSet;
 
                     /**
                      * 用户Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
                      * 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * 应用分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
                      * 是否启用注册中心
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_enableRegistry;
                     bool m_enableRegistryHasBeenSet;
 
                     /**
                      * 弹性伸缩数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Autoscaler> m_autoscalerList;
                     bool m_autoscalerListHasBeenSet;
 
                     /**
                      * 修改人
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifier;
                     bool m_modifierHasBeenSet;
 
                     /**
                      * 创建人
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_creator;
                     bool m_creatorHasBeenSet;
@@ -2758,7 +2497,6 @@ namespace TencentCloud
 
                     /**
                      * 实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribeRunPodPage m_podList;
                     bool m_podListHasBeenSet;
@@ -2772,21 +2510,18 @@ namespace TencentCloud
 
                     /**
                      * 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
                      * 是否编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_preStopEncoded;
                     bool m_preStopEncodedHasBeenSet;
 
                     /**
                      * 是否编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_postStartEncoded;
                     bool m_postStartEncodedHasBeenSet;

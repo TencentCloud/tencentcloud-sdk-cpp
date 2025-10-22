@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,6 +63,8 @@
 #include <tencentcloud/vod/v20180717/model/CreateImageSpriteTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateJustInTimeTranscodeTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateJustInTimeTranscodeTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateMPSTemplateRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateMPSTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreatePersonSampleRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreatePersonSampleResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateProcedureTemplateRequest.h>
@@ -117,6 +119,8 @@
 #include <tencentcloud/vod/v20180717/model/DeleteImageSpriteTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteJustInTimeTranscodeTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/DeleteJustInTimeTranscodeTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/DeleteMPSTemplateRequest.h>
+#include <tencentcloud/vod/v20180717/model/DeleteMPSTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteMediaRequest.h>
 #include <tencentcloud/vod/v20180717/model/DeleteMediaResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeletePersonSampleRequest.h>
@@ -205,6 +209,8 @@
 #include <tencentcloud/vod/v20180717/model/DescribeJustInTimeTranscodeTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeLicenseUsageDataRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeLicenseUsageDataResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeMPSTemplatesRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeMPSTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeMediaInfosRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeMediaInfosResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeMediaPlayStatDetailsRequest.h>
@@ -303,6 +309,8 @@
 #include <tencentcloud/vod/v20180717/model/ModifyImageSpriteTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyJustInTimeTranscodeTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/ModifyJustInTimeTranscodeTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/ModifyMPSTemplateRequest.h>
+#include <tencentcloud/vod/v20180717/model/ModifyMPSTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyMediaInfoRequest.h>
 #include <tencentcloud/vod/v20180717/model/ModifyMediaInfoResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyMediaStorageClassRequest.h>
@@ -343,6 +351,8 @@
 #include <tencentcloud/vod/v20180717/model/ProcessImageResponse.h>
 #include <tencentcloud/vod/v20180717/model/ProcessMediaRequest.h>
 #include <tencentcloud/vod/v20180717/model/ProcessMediaResponse.h>
+#include <tencentcloud/vod/v20180717/model/ProcessMediaByMPSRequest.h>
+#include <tencentcloud/vod/v20180717/model/ProcessMediaByMPSResponse.h>
 #include <tencentcloud/vod/v20180717/model/ProcessMediaByProcedureRequest.h>
 #include <tencentcloud/vod/v20180717/model/ProcessMediaByProcedureResponse.h>
 #include <tencentcloud/vod/v20180717/model/ProcessMediaByUrlRequest.h>
@@ -459,6 +469,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateJustInTimeTranscodeTemplateResponse> CreateJustInTimeTranscodeTemplateOutcome;
                 typedef std::future<CreateJustInTimeTranscodeTemplateOutcome> CreateJustInTimeTranscodeTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateJustInTimeTranscodeTemplateRequest&, CreateJustInTimeTranscodeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateJustInTimeTranscodeTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateMPSTemplateResponse> CreateMPSTemplateOutcome;
+                typedef std::future<CreateMPSTemplateOutcome> CreateMPSTemplateOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateMPSTemplateRequest&, CreateMPSTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMPSTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePersonSampleResponse> CreatePersonSampleOutcome;
                 typedef std::future<CreatePersonSampleOutcome> CreatePersonSampleOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreatePersonSampleRequest&, CreatePersonSampleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePersonSampleAsyncHandler;
@@ -540,6 +553,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteJustInTimeTranscodeTemplateResponse> DeleteJustInTimeTranscodeTemplateOutcome;
                 typedef std::future<DeleteJustInTimeTranscodeTemplateOutcome> DeleteJustInTimeTranscodeTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DeleteJustInTimeTranscodeTemplateRequest&, DeleteJustInTimeTranscodeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteJustInTimeTranscodeTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteMPSTemplateResponse> DeleteMPSTemplateOutcome;
+                typedef std::future<DeleteMPSTemplateOutcome> DeleteMPSTemplateOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DeleteMPSTemplateRequest&, DeleteMPSTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMPSTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteMediaResponse> DeleteMediaOutcome;
                 typedef std::future<DeleteMediaOutcome> DeleteMediaOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DeleteMediaRequest&, DeleteMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMediaAsyncHandler;
@@ -672,6 +688,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLicenseUsageDataResponse> DescribeLicenseUsageDataOutcome;
                 typedef std::future<DescribeLicenseUsageDataOutcome> DescribeLicenseUsageDataOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeLicenseUsageDataRequest&, DescribeLicenseUsageDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLicenseUsageDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMPSTemplatesResponse> DescribeMPSTemplatesOutcome;
+                typedef std::future<DescribeMPSTemplatesOutcome> DescribeMPSTemplatesOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeMPSTemplatesRequest&, DescribeMPSTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMPSTemplatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMediaInfosResponse> DescribeMediaInfosOutcome;
                 typedef std::future<DescribeMediaInfosOutcome> DescribeMediaInfosOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeMediaInfosRequest&, DescribeMediaInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMediaInfosAsyncHandler;
@@ -819,6 +838,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyJustInTimeTranscodeTemplateResponse> ModifyJustInTimeTranscodeTemplateOutcome;
                 typedef std::future<ModifyJustInTimeTranscodeTemplateOutcome> ModifyJustInTimeTranscodeTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ModifyJustInTimeTranscodeTemplateRequest&, ModifyJustInTimeTranscodeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyJustInTimeTranscodeTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyMPSTemplateResponse> ModifyMPSTemplateOutcome;
+                typedef std::future<ModifyMPSTemplateOutcome> ModifyMPSTemplateOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::ModifyMPSTemplateRequest&, ModifyMPSTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMPSTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyMediaInfoResponse> ModifyMediaInfoOutcome;
                 typedef std::future<ModifyMediaInfoOutcome> ModifyMediaInfoOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ModifyMediaInfoRequest&, ModifyMediaInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMediaInfoAsyncHandler;
@@ -879,6 +901,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ProcessMediaResponse> ProcessMediaOutcome;
                 typedef std::future<ProcessMediaOutcome> ProcessMediaOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ProcessMediaRequest&, ProcessMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ProcessMediaAsyncHandler;
+                typedef Outcome<Core::Error, Model::ProcessMediaByMPSResponse> ProcessMediaByMPSOutcome;
+                typedef std::future<ProcessMediaByMPSOutcome> ProcessMediaByMPSOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::ProcessMediaByMPSRequest&, ProcessMediaByMPSOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ProcessMediaByMPSAsyncHandler;
                 typedef Outcome<Core::Error, Model::ProcessMediaByProcedureResponse> ProcessMediaByProcedureOutcome;
                 typedef std::future<ProcessMediaByProcedureOutcome> ProcessMediaByProcedureOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ProcessMediaByProcedureRequest&, ProcessMediaByProcedureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ProcessMediaByProcedureAsyncHandler;
@@ -1006,7 +1031,7 @@ namespace TencentCloud
                 ConfirmEventsOutcomeCallable ConfirmEventsCallable(const Model::ConfirmEventsRequest& request);
 
                 /**
-                 *创建用户自定义音视频内容分析模板，数量上限：50。
+                 *创建用户自定义音视频内容分析模板，数量上限：50。暂时不支持 HLS 格式。
                  * @param req CreateAIAnalysisTemplateRequest
                  * @return CreateAIAnalysisTemplateOutcome
                  */
@@ -1073,7 +1098,7 @@ namespace TencentCloud
 
                 /**
                  *发起复杂自适应码流处理任务，功能包括：
-1. 按指定的自适应码流模版输出 HLS、DASH 自适应码流；
+1. 按指定的自适应码流模板输出 HLS、DASH 自适应码流；
 2. 自适应码流的内容保护方案可选择无加密、Widevine 或 FairPlay；
 3. 支持添加片头片尾；
 4. 输出的自适应码流可包含多语言音频流，每种语言分别来自不同的媒体文件；
@@ -1156,6 +1181,22 @@ namespace TencentCloud
                 CreateJustInTimeTranscodeTemplateOutcome CreateJustInTimeTranscodeTemplate(const Model::CreateJustInTimeTranscodeTemplateRequest &request);
                 void CreateJustInTimeTranscodeTemplateAsync(const Model::CreateJustInTimeTranscodeTemplateRequest& request, const CreateJustInTimeTranscodeTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateJustInTimeTranscodeTemplateOutcomeCallable CreateJustInTimeTranscodeTemplateCallable(const Model::CreateJustInTimeTranscodeTemplateRequest& request);
+
+                /**
+                 *该接口用于创建自定义模板，模板用于 ProcessMediaByMPS 接口的部分功能。
+创建模板时，需要将 MPS 相关参数以 JSON 格式填入 MPSCreateTemplateParams 参数中。关于具体的任务参数配置方法，请参考 MPS 任务模板相关文档说明。
+当前支持创建自定义模板的 MPS 功能：
+1. [音视频增强](https://cloud.tencent.com/document/product/862/118703)。
+
+> 以该种方式创建的任务模板：
+> 1. 模板的管理仍在点播平台中完成。
+> 2. 该功能目前仍在内测中，如需测试体验，您可以联系我们获得支持。
+                 * @param req CreateMPSTemplateRequest
+                 * @return CreateMPSTemplateOutcome
+                 */
+                CreateMPSTemplateOutcome CreateMPSTemplate(const Model::CreateMPSTemplateRequest &request);
+                void CreateMPSTemplateAsync(const Model::CreateMPSTemplateRequest& request, const CreateMPSTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateMPSTemplateOutcomeCallable CreateMPSTemplateCallable(const Model::CreateMPSTemplateRequest& request);
 
                 /**
                  *该接口用于创建素材样本，用于通过五官定位等技术，进行内容识别、不适宜视频识别等视频处理。
@@ -1414,6 +1455,15 @@ namespace TencentCloud
                 DeleteJustInTimeTranscodeTemplateOutcomeCallable DeleteJustInTimeTranscodeTemplateCallable(const Model::DeleteJustInTimeTranscodeTemplateRequest& request);
 
                 /**
+                 *删除用户自定义 MPS 任务模板。
+                 * @param req DeleteMPSTemplateRequest
+                 * @return DeleteMPSTemplateOutcome
+                 */
+                DeleteMPSTemplateOutcome DeleteMPSTemplate(const Model::DeleteMPSTemplateRequest &request);
+                void DeleteMPSTemplateAsync(const Model::DeleteMPSTemplateRequest& request, const DeleteMPSTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteMPSTemplateOutcomeCallable DeleteMPSTemplateCallable(const Model::DeleteMPSTemplateRequest& request);
+
+                /**
                  ** 删除媒体及其对应的视频处理文件（原始文件、如转码视频、雪碧图、截图、微信发布视频等）；
 * 可单独删除指定 ID 的视频文件下的原文件、转码视频、微信发布视频等；
 * 注意：原文件删除后，无法发起转码、微信发布等任何视频处理操作。
@@ -1596,6 +1646,7 @@ namespace TencentCloud
 * 查询的起始时间和结束时间跨度不超过90天。
 * 可以查询不同服务区域的数据。
 * 中国境内的数据支持查询指定地区、运营商的统计数据。
+* 播放统计仅针对 VOD 域名（即 EdgeOne 域名的分发不计入播放统计）。
                  * @param req DescribeCDNStatDetailsRequest
                  * @return DescribeCDNStatDetailsOutcome
                  */
@@ -1606,9 +1657,10 @@ namespace TencentCloud
                 /**
                  *该接口用于查询点播 CDN 的流量、带宽等统计数据。
    1. 可以查询最近365天内的 CDN 用量数据。
-   2.  查询时间跨度不超过90天。
+   2. 查询时间跨度不超过90天。
    3. 可以指定用量数据的时间粒度，支持5分钟、1小时、1天的时间粒度。
-   4.  流量为查询时间粒度内的总流量，带宽为查询时间粒度内的峰值带宽。
+   4. 流量为查询时间粒度内的总流量，带宽为查询时间粒度内的峰值带宽。
+   5. 播放统计仅针对 VOD 域名（即 EdgeOne 域名的分发不计入播放统计）。
                  * @param req DescribeCDNUsageDataRequest
                  * @return DescribeCDNUsageDataOutcome
                  */
@@ -1644,7 +1696,7 @@ namespace TencentCloud
                 DescribeCLSTopicsOutcomeCallable DescribeCLSTopicsCallable(const Model::DescribeCLSTopicsRequest& request);
 
                 /**
-                 *查询点播域名的 CDN 访问日志的下载链接。
+                 *查询点播域名的 CDN （不含 EdgeOne 回源到 VOD 域名）访问日志的下载链接。
     1. 可以查询最近30天内的 CDN 日志下载链接。
     2. 默认情况下 CDN 每小时生成一个日志文件，如果某一个小时没有 CDN 访问，不会生成日志文件。    
     3. CDN 日志下载链接的有效期为24小时。
@@ -1690,6 +1742,7 @@ namespace TencentCloud
                  *该接口用于查询指定日期范围内每天的播放统计数据。
 * 可以查询最近一年的播放统计数据。
 * 结束日期和起始日期的时间跨度最大为90天。
+* 播放统计仅针对 VOD 域名（即 EdgeOne 域名的分发不计入播放统计）。
                  * @param req DescribeDailyMediaPlayStatRequest
                  * @return DescribeDailyMediaPlayStatOutcome
                  */
@@ -1704,6 +1757,7 @@ namespace TencentCloud
 * 播放次数统计说明：
     1. HLS 文件：访问 M3U8 文件时统计播放次数；访问 TS 文件不统计播放次数。
     2. 其它文件（如 MP4 文件）：播放请求带有 range 参数且 range 的 start 参数不等于0时不统计播放次数，其它情况统计播放次数。
+* 播放统计仅针对 VOD 域名（即 EdgeOne 域名的分发不计入播放统计）。
                  * @param req DescribeDailyMostPlayedStatRequest
                  * @return DescribeDailyMostPlayedStatOutcome
                  */
@@ -1720,6 +1774,7 @@ namespace TencentCloud
     1. HLS 文件：访问M3U8 文件时统计播放次数；访问TS 文件不统计播放次数。
     2. 其它文件（如 MP4 文件）：播放请求带有 range 参数且 range 的 start 参数不等于0时不统计播放次数，其它情况统计播放次数。
 * 播放设备的统计：播放请求带了 UserAgent 参数，并且 UserAgent 包含 Android 或者 iPhone 等标识，会统计为移动端播放次数，否则统计为 PC 端播放次数。
+* 播放统计仅针对 VOD 域名（即 EdgeOne 域名的分发不计入播放统计）。
                  * @param req DescribeDailyPlayStatFileListRequest
                  * @return DescribeDailyPlayStatFileListOutcome
                  */
@@ -1862,6 +1917,16 @@ namespace TencentCloud
                 DescribeLicenseUsageDataOutcomeCallable DescribeLicenseUsageDataCallable(const Model::DescribeLicenseUsageDataRequest& request);
 
                 /**
+                 *获取用户自定义媒体处理服务（MPS）任务模板。
+查询模板列表时，需要将 MPS 相关参数以 JSON 格式填入 MPSDescribeTemplateParams 参数中。关于具体的任务参数配置方法，请参考 MPS 任务模板相关文档说明。
+                 * @param req DescribeMPSTemplatesRequest
+                 * @return DescribeMPSTemplatesOutcome
+                 */
+                DescribeMPSTemplatesOutcome DescribeMPSTemplates(const Model::DescribeMPSTemplatesRequest &request);
+                void DescribeMPSTemplatesAsync(const Model::DescribeMPSTemplatesRequest& request, const DescribeMPSTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMPSTemplatesOutcomeCallable DescribeMPSTemplatesCallable(const Model::DescribeMPSTemplatesRequest& request);
+
+                /**
                  *1. 该接口可以获取多个媒体文件的多种信息，包括：
     1. 基础信息（basicInfo）：包括媒体名称、分类、播放地址、封面图片等。
     2. 元信息（metaData）：包括大小、时长、视频流信息、音频流信息等。
@@ -1886,6 +1951,7 @@ namespace TencentCloud
 * 可以查询最近一年的播放统计数据。
 * 时间粒度为小时，结束时间和起始时间的跨度最大为7天。
 * 时间粒度为天，结束时间和起始时间的跨度最大为90天。
+* 播放统计仅针对 VOD 域名（即 EdgeOne 域名的分发不计入播放统计）。
                  * @param req DescribeMediaPlayStatDetailsRequest
                  * @return DescribeMediaPlayStatDetailsOutcome
                  */
@@ -2163,7 +2229,7 @@ namespace TencentCloud
                 ExecuteFunctionOutcomeCallable ExecuteFunctionCallable(const Model::ExecuteFunctionRequest& request);
 
                 /**
-                 *该 API 已经<font color='red'>不再维护</font>。如果有盗录溯源需求，请参考 [幽灵水印](https://cloud.tencent.com/document/product/266/94228)。
+                 *如果有盗录溯源需求，请参考 [幽灵水印](https://cloud.tencent.com/document/product/266/94228)。
                  * @param req ExtractCopyRightWatermarkRequest
                  * @return ExtractCopyRightWatermarkOutcome
                  */
@@ -2172,7 +2238,7 @@ namespace TencentCloud
                 ExtractCopyRightWatermarkOutcomeCallable ExtractCopyRightWatermarkCallable(const Model::ExtractCopyRightWatermarkRequest& request);
 
                 /**
-                 *该 API 已经<font color='red'>不再维护</font>。如果有盗录溯源需求，请参考 [幽灵水印](https://cloud.tencent.com/document/product/266/94228)。
+                 *如果有盗录溯源需求，推荐使用 [幽灵水印](https://cloud.tencent.com/document/product/266/94228)。
                  * @param req ExtractTraceWatermarkRequest
                  * @return ExtractTraceWatermarkOutcome
                  */
@@ -2185,7 +2251,7 @@ namespace TencentCloud
 
 快速拼接或剪辑生成的视频，将产生新的 FileId 并进行固化，固化成功后新视频的文件独立于原始输入视频存在，不受原始视频删除等影响。
 
-<font color='red'>注意：</font>通过 ModifyEventConfig 接口启用接收剪辑固化事件通知，固化成功后将会收到一个 PersitenceComplete 类型的事件通知。在收到这个事件通知之前，不应该对原始输入的视频进行删除、降冷等操作，否则拼接剪辑生成的视频播放可能出现异常。
+<font color='red'>注意：</font>通过 ModifyEventConfig 接口启用接收剪辑固化事件通知，固化成功后将会收到一个 PersistenceComplete 类型的事件通知。在收到这个事件通知之前，不应该对原始输入的视频进行删除、降冷等操作，否则拼接剪辑生成的视频播放可能出现异常。
                  * @param req FastEditMediaRequest
                  * @return FastEditMediaOutcome
                  */
@@ -2241,7 +2307,7 @@ namespace TencentCloud
 
 剪辑固化的优势在于其生命周期与原始录制视频相互独立，可以独立管理、长久保存。
 
-<font color='red'>注意：</font>如果剪辑时指定进行固化，通过 ModifyEventConfig 接口启用接收剪辑固化事件通知，固化成功后将会收到一个 PersitenceComplete 类型的事件通知。在收到这个事件通知之前，不应该对直播录制视频进行删除、降冷等操作，否则剪辑生成的视频播放可能出现异常。
+<font color='red'>注意：</font>如果剪辑时指定进行固化，通过 ModifyEventConfig 接口启用接收剪辑固化事件通知，固化成功后将会收到一个 PersistenceComplete 类型的事件通知。在收到这个事件通知之前，不应该对直播录制视频进行删除、降冷等操作，否则剪辑生成的视频播放可能出现异常。
 
 ### 剪辑不固化
 所谓剪辑不固化，是指剪辑所得到的结果（m3u8 文件）与直播录制视频共享相同的 ts 分片，新生成的视频不是一个独立完整的视频（没有独立 FileId，只有播放 URL），其有效期与直播录制的完整视频有效期是一致的。一旦直播录制出来的视频被删除，也会导致该片段无法播放。
@@ -2393,6 +2459,16 @@ namespace TencentCloud
                 ModifyJustInTimeTranscodeTemplateOutcome ModifyJustInTimeTranscodeTemplate(const Model::ModifyJustInTimeTranscodeTemplateRequest &request);
                 void ModifyJustInTimeTranscodeTemplateAsync(const Model::ModifyJustInTimeTranscodeTemplateRequest& request, const ModifyJustInTimeTranscodeTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyJustInTimeTranscodeTemplateOutcomeCallable ModifyJustInTimeTranscodeTemplateCallable(const Model::ModifyJustInTimeTranscodeTemplateRequest& request);
+
+                /**
+                 *修改用户自定义 MPS 任务模板。
+修改模板时，需要将 MPS 相关参数以 JSON 格式填入 MPSModifyTemplateParams 参数中。关于具体的任务参数配置方法，请参考 MPS 任务模板相关文档说明。
+                 * @param req ModifyMPSTemplateRequest
+                 * @return ModifyMPSTemplateOutcome
+                 */
+                ModifyMPSTemplateOutcome ModifyMPSTemplate(const Model::ModifyMPSTemplateRequest &request);
+                void ModifyMPSTemplateAsync(const Model::ModifyMPSTemplateRequest& request, const ModifyMPSTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyMPSTemplateOutcomeCallable ModifyMPSTemplateCallable(const Model::ModifyMPSTemplateRequest& request);
 
                 /**
                  *修改媒体文件的属性，包括分类、名称、描述、标签、过期时间、打点信息、视频封面、字幕信息等。
@@ -2601,7 +2677,7 @@ namespace TencentCloud
 6. 对视频截取一张图做封面；
 7. 对视频转自适应码流（并加密）；
 8. 内容审核（令人反感的信息、不安全的信息、不适宜的信息），<font color=red>不建议</font> 使用该接口发起，推荐使用 [音视频审核(ReviewAudioVideo)](https://cloud.tencent.com/document/api/266/80283) 或 [图片审核(ReviewImage)](https://cloud.tencent.com/document/api/266/73217)；
-9. 内容分析（标签、分类、封面、按帧标签）；
+9. 内容分析（标签、分类、封面、按帧标签），暂时不支持 HLS 格式；
 10. 内容识别（视频片头片尾、人脸、文本全文、文本关键词、语音全文、语音关键词、物体）。
 
 如使用事件通知，事件通知的类型为 [任务流状态变更](https://cloud.tencent.com/document/product/266/9636)。
@@ -2611,6 +2687,23 @@ namespace TencentCloud
                 ProcessMediaOutcome ProcessMedia(const Model::ProcessMediaRequest &request);
                 void ProcessMediaAsync(const Model::ProcessMediaRequest& request, const ProcessMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ProcessMediaOutcomeCallable ProcessMediaCallable(const Model::ProcessMediaRequest& request);
+
+                /**
+                 *使用媒体处理服务（MPS）的媒体处理能力，对点播中的视频发起媒体处理，任务发起时需将 MPS 相关参数以 JSON 格式填入 MPSProcessMediaParams 参数中。具体任务参数配置请参考[媒体处理 ProcessMedia 接口](https://cloud.tencent.com/document/api/862/37578)。 
+当前支持的 MPS 功能：
+1. [智能擦除](https://cloud.tencent.com/document/product/862/101530)：能够对视频画面中的 Logo、字幕、人脸和车牌等元素进行模糊、马赛克或无痕化处理，从而便于内容的传播和分享。该任务产生的新视频将生成新的 FileId 存储在点播平台的子应用中。
+2. [音视频增强](https://cloud.tencent.com/document/product/862/118703)：该功能支持分布式实时画质增强，包含视频去毛刺、降噪、色彩增强、细节增强、人脸增强、SDR2HDR、大模型增强等功能，可大幅提升音视频质量，广泛应用于 OTT、电商、赛事等场景，有效实现 QoE 与 QoS 双维度提升，创造显著业务价值。
+
+> 以该种方式发起的视频处理任务：
+> 1. 任务状态及结果的查询仍在点播平台中完成，使用 [DescribeTaskDetail](https://cloud.tencent.com/document/product/266/33431) 或 [DescribeTasks](https://cloud.tencent.com/document/product/266/33430) 查询任务。
+> 2. 相关功能的用量及账单将在 MPS 平台给出，因此在使用该功能前，首先需要开通 MPS 服务。
+> 3. 该功能目前仍在内测中，如需测试体验，您可以联系我们获得支持。
+                 * @param req ProcessMediaByMPSRequest
+                 * @return ProcessMediaByMPSOutcome
+                 */
+                ProcessMediaByMPSOutcome ProcessMediaByMPS(const Model::ProcessMediaByMPSRequest &request);
+                void ProcessMediaByMPSAsync(const Model::ProcessMediaByMPSRequest& request, const ProcessMediaByMPSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ProcessMediaByMPSOutcomeCallable ProcessMediaByMPSCallable(const Model::ProcessMediaByMPSRequest& request);
 
                 /**
                  *使用任务流模板，对点播中的视频发起处理任务。
@@ -2786,6 +2879,7 @@ namespace TencentCloud
 - 允许对结果根据创建时间进行排序并分页返回，通过 Offset 和 Limit （见输入参数）来控制分页。
 
 <div id="maxResultsDesc">接口返回结果数限制：</div>
+
 - <b><a href="#p_offset">Offset</a> 和 <a href="#p_limit">Limit</a> 两个参数影响单次分页查询结果数。特别注意：当这2个值都缺省时，本接口最多只返回10条查询结果。</b>
 - <b>最大支持返回5000条搜索结果，超出部分不再支持查询。如果搜索结果量太大，建议使用更精细的筛选条件来减少搜索结果。</b>
 
@@ -2836,9 +2930,7 @@ namespace TencentCloud
 - 剪辑固化：将剪辑出来的视频保存成独立的视频，拥有独立 FileId；适用于将精彩片段长久保存的场景；
 - 剪辑不固化：剪辑得到的视频附属于输入文件，没有独立 FileId；适用于将精彩片段临时分享的场景。
 
-裁剪精度支持粗略裁剪和精确裁剪：
-- 粗略剪辑：基于输入 m3u8 文件进行裁剪，其最小剪辑精度为一个 ts 切片，无法实现秒级或者更为精确的剪辑精度。
-- 精确剪辑：按照 StartTimeOffset 和 EndTimeOffset 参数进行精确裁剪。使用精确裁剪需要开通[即时转码](/document/product/266/102174)的功能。
+该接口基于输入 m3u8 文件进行裁剪，其最小剪辑精度为一个 ts 切片，无法实现秒级或者更为精确的剪辑精度。
 
 ### 剪辑固化
 所谓剪辑固化，是指将剪辑出来的视频保存成一个独立的视频（拥有独立的 FileId）。其生命周期不受原始输入视频影响（即使原始输入视频被删除，剪辑结果也不会受到任何影响）；也可以对其进行转码、微信发布等二次处理。
@@ -2847,7 +2939,7 @@ namespace TencentCloud
 
 剪辑固化的优势在于其生命周期与原始输入视频相互独立，可以独立管理、长久保存。
 
-<font color='red'>注意：</font>如果剪辑时指定进行固化，通过 ModifyEventConfig 接口启用接收剪辑固化事件通知，固化成功后将会收到一个 PersitenceComplete 类型的事件通知。在收到这个事件通知之前，不应该对原始输入的视频进行删除、降冷等操作，否则剪辑生成的视频播放可能出现异常。
+<font color='red'>注意：</font>如果剪辑时指定进行固化，通过 ModifyEventConfig 接口启用接收剪辑固化事件通知，固化成功后将会收到一个 PersistenceComplete 类型的事件通知。在收到这个事件通知之前，不应该对原始输入的视频进行删除、降冷等操作，否则剪辑生成的视频播放可能出现异常。
 
 ### 剪辑不固化
 所谓剪辑不固化，是指剪辑所得到的结果（m3u8 文件）与原始输入视频共享相同的 ts 分片，新生成的视频不是一个独立完整的视频（没有独立 FileId，只有播放 URL），其有效期与原始输入的完整视频有效期是一致的。一旦原始输入的视频被删除，也会导致该片段无法播放。

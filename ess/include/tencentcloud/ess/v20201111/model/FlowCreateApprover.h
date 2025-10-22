@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -170,11 +170,11 @@ namespace TencentCloud
                     bool ApproverNameHasBeenSet() const;
 
                     /**
-                     * 获取签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。 此手机号用于通知和用户的实名认证等环境，请确认手机号所有方为此合同签署方。
+                     * 获取签署方经办人手机号码， 支持中国大陆手机号11位数字(无需加+86前缀或其他字符)。 此手机号用于通知和用户的实名认证等环境，请确认手机号所有方为此合同签署方。
 
 注：`在未指定签署人电子签UserId情况下，为必填参数`
 
-                     * @return ApproverMobile 签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。 此手机号用于通知和用户的实名认证等环境，请确认手机号所有方为此合同签署方。
+                     * @return ApproverMobile 签署方经办人手机号码， 支持中国大陆手机号11位数字(无需加+86前缀或其他字符)。 此手机号用于通知和用户的实名认证等环境，请确认手机号所有方为此合同签署方。
 
 注：`在未指定签署人电子签UserId情况下，为必填参数`
 
@@ -183,11 +183,11 @@ namespace TencentCloud
                     std::string GetApproverMobile() const;
 
                     /**
-                     * 设置签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。 此手机号用于通知和用户的实名认证等环境，请确认手机号所有方为此合同签署方。
+                     * 设置签署方经办人手机号码， 支持中国大陆手机号11位数字(无需加+86前缀或其他字符)。 此手机号用于通知和用户的实名认证等环境，请确认手机号所有方为此合同签署方。
 
 注：`在未指定签署人电子签UserId情况下，为必填参数`
 
-                     * @param _approverMobile 签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。 此手机号用于通知和用户的实名认证等环境，请确认手机号所有方为此合同签署方。
+                     * @param _approverMobile 签署方经办人手机号码， 支持中国大陆手机号11位数字(无需加+86前缀或其他字符)。 此手机号用于通知和用户的实名认证等环境，请确认手机号所有方为此合同签署方。
 
 注：`在未指定签署人电子签UserId情况下，为必填参数`
 
@@ -237,26 +237,26 @@ namespace TencentCloud
 
                     /**
                      * 获取证件号码，应符合以下规则
-<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
-<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>
-<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>
+<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
                      * @return ApproverIdCardNumber 证件号码，应符合以下规则
-<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
-<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>
-<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>
+<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
                      * 
                      */
                     std::string GetApproverIdCardNumber() const;
 
                     /**
                      * 设置证件号码，应符合以下规则
-<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
-<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>
-<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>
+<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
                      * @param _approverIdCardNumber 证件号码，应符合以下规则
-<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
-<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>
-<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>
+<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
                      * 
                      */
                     void SetApproverIdCardNumber(const std::string& _approverIdCardNumber);
@@ -312,10 +312,10 @@ namespace TencentCloud
                     /**
                      * 获取签署意愿确认渠道，默认为WEIXINAPP:人脸识别
 
-注: <font color="red">将要废弃</font >, `用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置`
+注: <font color="red">不再使用</font >, `用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置`
                      * @return VerifyChannel 签署意愿确认渠道，默认为WEIXINAPP:人脸识别
 
-注: <font color="red">将要废弃</font >, `用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置`
+注: <font color="red">不再使用</font >, `用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置`
                      * 
                      */
                     std::vector<std::string> GetVerifyChannel() const;
@@ -323,10 +323,10 @@ namespace TencentCloud
                     /**
                      * 设置签署意愿确认渠道，默认为WEIXINAPP:人脸识别
 
-注: <font color="red">将要废弃</font >, `用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置`
+注: <font color="red">不再使用</font >, `用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置`
                      * @param _verifyChannel 签署意愿确认渠道，默认为WEIXINAPP:人脸识别
 
-注: <font color="red">将要废弃</font >, `用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置`
+注: <font color="red">不再使用</font >, `用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置`
                      * 
                      */
                     void SetVerifyChannel(const std::vector<std::string>& _verifyChannel);
@@ -479,15 +479,15 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取<font color="red">字段已经废弃</font>，当前只支持true，默认为true
-                     * @return Required <font color="red">字段已经废弃</font>，当前只支持true，默认为true
+                     * 获取<font color="red">字段不再使用</font>，当前只支持true，默认为true
+                     * @return Required <font color="red">字段不再使用</font>，当前只支持true，默认为true
                      * 
                      */
                     bool GetRequired() const;
 
                     /**
-                     * 设置<font color="red">字段已经废弃</font>，当前只支持true，默认为true
-                     * @param _required <font color="red">字段已经废弃</font>，当前只支持true，默认为true
+                     * 设置<font color="red">字段不再使用</font>，当前只支持true，默认为true
+                     * @param _required <font color="red">字段不再使用</font>，当前只支持true，默认为true
                      * 
                      */
                     void SetRequired(const bool& _required);
@@ -554,15 +554,15 @@ namespace TencentCloud
                     bool CustomApproverTagHasBeenSet() const;
 
                     /**
-                     * 获取已经废弃, 快速注册相关信息
-                     * @return RegisterInfo 已经废弃, 快速注册相关信息
+                     * 获取快速注册相关信息
+                     * @return RegisterInfo 快速注册相关信息
                      * 
                      */
                     RegisterInfo GetRegisterInfo() const;
 
                     /**
-                     * 设置已经废弃, 快速注册相关信息
-                     * @param _registerInfo 已经废弃, 快速注册相关信息
+                     * 设置快速注册相关信息
+                     * @param _registerInfo 快速注册相关信息
                      * 
                      */
                     void SetRegisterInfo(const RegisterInfo& _registerInfo);
@@ -658,43 +658,51 @@ namespace TencentCloud
                     bool SignIdHasBeenSet() const;
 
                     /**
-                     * 获取发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：
+                     * 获取此签署人(员工或者个人)签署时，是否需要发起方企业审批，取值如下：
 <ul><li>**false**：（默认）不需要审批，直接签署。</li>
 <li>**true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>
 企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果
 <ul><li>如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>
 <li>如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>
 
-注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`
-                     * @return ApproverNeedSignReview 发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：
+注：`此功能可用于与发起方企业内部的审批流程进行关联，支持手动、静默签署合同`
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/b14d5188ed0229d1401e74a9a49cab6d.png)
+                     * @return ApproverNeedSignReview 此签署人(员工或者个人)签署时，是否需要发起方企业审批，取值如下：
 <ul><li>**false**：（默认）不需要审批，直接签署。</li>
 <li>**true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>
 企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果
 <ul><li>如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>
 <li>如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>
 
-注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`
+注：`此功能可用于与发起方企业内部的审批流程进行关联，支持手动、静默签署合同`
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/b14d5188ed0229d1401e74a9a49cab6d.png)
                      * 
                      */
                     bool GetApproverNeedSignReview() const;
 
                     /**
-                     * 设置发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：
+                     * 设置此签署人(员工或者个人)签署时，是否需要发起方企业审批，取值如下：
 <ul><li>**false**：（默认）不需要审批，直接签署。</li>
 <li>**true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>
 企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果
 <ul><li>如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>
 <li>如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>
 
-注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`
-                     * @param _approverNeedSignReview 发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：
+注：`此功能可用于与发起方企业内部的审批流程进行关联，支持手动、静默签署合同`
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/b14d5188ed0229d1401e74a9a49cab6d.png)
+                     * @param _approverNeedSignReview 此签署人(员工或者个人)签署时，是否需要发起方企业审批，取值如下：
 <ul><li>**false**：（默认）不需要审批，直接签署。</li>
 <li>**true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>
 企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果
 <ul><li>如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>
 <li>如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>
 
-注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`
+注：`此功能可用于与发起方企业内部的审批流程进行关联，支持手动、静默签署合同`
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/b14d5188ed0229d1401e74a9a49cab6d.png)
                      * 
                      */
                     void SetApproverNeedSignReview(const bool& _approverNeedSignReview);
@@ -1130,6 +1138,31 @@ namespace TencentCloud
                      */
                     bool IntentionHasBeenSet() const;
 
+                    /**
+                     * 获取进入签署流程的限制，目前支持以下选项：
+<ul><li> <b>空值（默认）</b> :无限制，可在任何场景进入签署流程。</li><li> <b>link</b> :选择此选项后，将无法通过控制台或电子签小程序列表进入填写或签署操作，仅可预览合同。填写或签署流程只能通过短信或发起方提供的专用链接进行。</li></ul>
+                     * @return SignEndpoints 进入签署流程的限制，目前支持以下选项：
+<ul><li> <b>空值（默认）</b> :无限制，可在任何场景进入签署流程。</li><li> <b>link</b> :选择此选项后，将无法通过控制台或电子签小程序列表进入填写或签署操作，仅可预览合同。填写或签署流程只能通过短信或发起方提供的专用链接进行。</li></ul>
+                     * 
+                     */
+                    std::vector<std::string> GetSignEndpoints() const;
+
+                    /**
+                     * 设置进入签署流程的限制，目前支持以下选项：
+<ul><li> <b>空值（默认）</b> :无限制，可在任何场景进入签署流程。</li><li> <b>link</b> :选择此选项后，将无法通过控制台或电子签小程序列表进入填写或签署操作，仅可预览合同。填写或签署流程只能通过短信或发起方提供的专用链接进行。</li></ul>
+                     * @param _signEndpoints 进入签署流程的限制，目前支持以下选项：
+<ul><li> <b>空值（默认）</b> :无限制，可在任何场景进入签署流程。</li><li> <b>link</b> :选择此选项后，将无法通过控制台或电子签小程序列表进入填写或签署操作，仅可预览合同。填写或签署流程只能通过短信或发起方提供的专用链接进行。</li></ul>
+                     * 
+                     */
+                    void SetSignEndpoints(const std::vector<std::string>& _signEndpoints);
+
+                    /**
+                     * 判断参数 SignEndpoints 是否已赋值
+                     * @return SignEndpoints 是否已赋值
+                     * 
+                     */
+                    bool SignEndpointsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1165,7 +1198,7 @@ namespace TencentCloud
                     bool m_approverNameHasBeenSet;
 
                     /**
-                     * 签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。 此手机号用于通知和用户的实名认证等环境，请确认手机号所有方为此合同签署方。
+                     * 签署方经办人手机号码， 支持中国大陆手机号11位数字(无需加+86前缀或其他字符)。 此手机号用于通知和用户的实名认证等环境，请确认手机号所有方为此合同签署方。
 
 注：`在未指定签署人电子签UserId情况下，为必填参数`
 
@@ -1184,9 +1217,9 @@ namespace TencentCloud
 
                     /**
                      * 证件号码，应符合以下规则
-<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
-<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>
-<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
+<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>
+<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>
+<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>
                      */
                     std::string m_approverIdCardNumber;
                     bool m_approverIdCardNumberHasBeenSet;
@@ -1205,7 +1238,7 @@ namespace TencentCloud
                     /**
                      * 签署意愿确认渠道，默认为WEIXINAPP:人脸识别
 
-注: <font color="red">将要废弃</font >, `用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置`
+注: <font color="red">不再使用</font >, `用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置`
                      */
                     std::vector<std::string> m_verifyChannel;
                     bool m_verifyChannelHasBeenSet;
@@ -1249,7 +1282,7 @@ namespace TencentCloud
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * <font color="red">字段已经废弃</font>，当前只支持true，默认为true
+                     * <font color="red">字段不再使用</font>，当前只支持true，默认为true
                      */
                     bool m_required;
                     bool m_requiredHasBeenSet;
@@ -1270,7 +1303,7 @@ namespace TencentCloud
                     bool m_customApproverTagHasBeenSet;
 
                     /**
-                     * 已经废弃, 快速注册相关信息
+                     * 快速注册相关信息
                      */
                     RegisterInfo m_registerInfo;
                     bool m_registerInfoHasBeenSet;
@@ -1299,14 +1332,16 @@ namespace TencentCloud
                     bool m_signIdHasBeenSet;
 
                     /**
-                     * 发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：
+                     * 此签署人(员工或者个人)签署时，是否需要发起方企业审批，取值如下：
 <ul><li>**false**：（默认）不需要审批，直接签署。</li>
 <li>**true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>
 企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果
 <ul><li>如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>
 <li>如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>
 
-注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`
+注：`此功能可用于与发起方企业内部的审批流程进行关联，支持手动、静默签署合同`
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/b14d5188ed0229d1401e74a9a49cab6d.png)
                      */
                     bool m_approverNeedSignReview;
                     bool m_approverNeedSignReviewHasBeenSet;
@@ -1422,6 +1457,13 @@ namespace TencentCloud
                      */
                     Intention m_intention;
                     bool m_intentionHasBeenSet;
+
+                    /**
+                     * 进入签署流程的限制，目前支持以下选项：
+<ul><li> <b>空值（默认）</b> :无限制，可在任何场景进入签署流程。</li><li> <b>link</b> :选择此选项后，将无法通过控制台或电子签小程序列表进入填写或签署操作，仅可预览合同。填写或签署流程只能通过短信或发起方提供的专用链接进行。</li></ul>
+                     */
+                    std::vector<std::string> m_signEndpoints;
+                    bool m_signEndpointsHasBeenSet;
 
                 };
             }

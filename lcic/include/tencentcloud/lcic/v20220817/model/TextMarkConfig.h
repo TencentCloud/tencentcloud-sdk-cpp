@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文字水印内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 文字水印内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置文字水印内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _text 文字水印内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetText(const std::string& _text);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文字水印颜色
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Color 文字水印颜色
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetColor() const;
 
                     /**
                      * 设置文字水印颜色
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _color 文字水印颜色
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetColor(const std::string& _color);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 文字水印内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;
 
                     /**
                      * 文字水印颜色
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_color;
                     bool m_colorHasBeenSet;

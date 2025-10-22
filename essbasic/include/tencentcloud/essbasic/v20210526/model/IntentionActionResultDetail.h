@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取视频base64编码（其中包含全程提示文本和点头音频，mp4格式）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Video 视频base64编码（其中包含全程提示文本和点头音频，mp4格式）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVideo() const;
 
                     /**
                      * 设置视频base64编码（其中包含全程提示文本和点头音频，mp4格式）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _video 视频base64编码（其中包含全程提示文本和点头音频，mp4格式）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVideo(const std::string& _video);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * 视频base64编码（其中包含全程提示文本和点头音频，mp4格式）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_video;
                     bool m_videoHasBeenSet;

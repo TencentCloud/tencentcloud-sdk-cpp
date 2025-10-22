@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取码url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Code 码url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置码url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _code 码url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCode(const std::string& _code);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取上链数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 上链数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ChainValue> GetData() const;
 
                     /**
                      * 设置上链数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _data 上链数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetData(const std::vector<ChainValue>& _data);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 码url
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_code;
                     bool m_codeHasBeenSet;
 
                     /**
                      * 上链数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ChainValue> m_data;
                     bool m_dataHasBeenSet;

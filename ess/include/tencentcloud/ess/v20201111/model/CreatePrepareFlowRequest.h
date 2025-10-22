@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@
 #include <tencentcloud/ess/v20201111/model/CreateFlowOption.h>
 #include <tencentcloud/ess/v20201111/model/CcInfo.h>
 #include <tencentcloud/ess/v20201111/model/Agent.h>
+#include <tencentcloud/ess/v20201111/model/SignComponentConfig.h>
 
 
 namespace TencentCloud
@@ -347,15 +348,15 @@ namespace TencentCloud
                     bool IntelligentStatusHasBeenSet() const;
 
                     /**
-                     * 获取该字段已废弃，请使用InitiatorComponents
-                     * @return Components 该字段已废弃，请使用InitiatorComponents
+                     * 获取该字段已不再使用，请使用InitiatorComponents
+                     * @return Components 该字段已不再使用，请使用InitiatorComponents
                      * 
                      */
                     Component GetComponents() const;
 
                     /**
-                     * 设置该字段已废弃，请使用InitiatorComponents
-                     * @param _components 该字段已废弃，请使用InitiatorComponents
+                     * 设置该字段已不再使用，请使用InitiatorComponents
+                     * @param _components 该字段已不再使用，请使用InitiatorComponents
                      * 
                      */
                     void SetComponents(const Component& _components);
@@ -514,7 +515,7 @@ namespace TencentCloud
 
                      * 
                      */
-                    CcInfo GetCcInfos() const;
+                    std::vector<CcInfo> GetCcInfos() const;
 
                     /**
                      * 设置合同流程的抄送人列表，最多可支持50个抄送人，抄送人可查看合同内容及签署进度，但无需参与合同签署。
@@ -523,7 +524,7 @@ namespace TencentCloud
 
                      * 
                      */
-                    void SetCcInfos(const CcInfo& _ccInfos);
+                    void SetCcInfos(const std::vector<CcInfo>& _ccInfos);
 
                     /**
                      * 判断参数 CcInfos 是否已赋值
@@ -608,15 +609,15 @@ namespace TencentCloud
                     bool InitiatorComponentsHasBeenSet() const;
 
                     /**
-                     * 获取在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
-                     * @return FlowDisplayType 在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
+                     * 获取在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li><li> <b>3</b> :文书</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
+                     * @return FlowDisplayType 在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li><li> <b>3</b> :文书</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
                      * 
                      */
                     int64_t GetFlowDisplayType() const;
 
                     /**
-                     * 设置在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
-                     * @param _flowDisplayType 在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
+                     * 设置在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li><li> <b>3</b> :文书</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
+                     * @param _flowDisplayType 在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li><li> <b>3</b> :文书</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
                      * 
                      */
                     void SetFlowDisplayType(const int64_t& _flowDisplayType);
@@ -627,6 +628,43 @@ namespace TencentCloud
                      * 
                      */
                     bool FlowDisplayTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<font color="red">此字段已不再使用，请使用 CreateFlowOption 里面的 SignComponentConfig</font>
+签署控件的配置信息，用在嵌入式发起的页面配置，
+包括  
+
+- 签署控件 是否默认展示日期.
+                     * @return SignComponentConfig <font color="red">此字段已不再使用，请使用 CreateFlowOption 里面的 SignComponentConfig</font>
+签署控件的配置信息，用在嵌入式发起的页面配置，
+包括  
+
+- 签署控件 是否默认展示日期.
+                     * @deprecated
+                     */
+                    SignComponentConfig GetSignComponentConfig() const;
+
+                    /**
+                     * 设置<font color="red">此字段已不再使用，请使用 CreateFlowOption 里面的 SignComponentConfig</font>
+签署控件的配置信息，用在嵌入式发起的页面配置，
+包括  
+
+- 签署控件 是否默认展示日期.
+                     * @param _signComponentConfig <font color="red">此字段已不再使用，请使用 CreateFlowOption 里面的 SignComponentConfig</font>
+签署控件的配置信息，用在嵌入式发起的页面配置，
+包括  
+
+- 签署控件 是否默认展示日期.
+                     * @deprecated
+                     */
+                    void SetSignComponentConfig(const SignComponentConfig& _signComponentConfig);
+
+                    /**
+                     * 判断参数 SignComponentConfig 是否已赋值
+                     * @return SignComponentConfig 是否已赋值
+                     * @deprecated
+                     */
+                    bool SignComponentConfigHasBeenSet() const;
 
                 private:
 
@@ -713,7 +751,7 @@ namespace TencentCloud
                     bool m_intelligentStatusHasBeenSet;
 
                     /**
-                     * 该字段已废弃，请使用InitiatorComponents
+                     * 该字段已不再使用，请使用InitiatorComponents
                      */
                     Component m_components;
                     bool m_componentsHasBeenSet;
@@ -760,7 +798,7 @@ namespace TencentCloud
                      * 合同流程的抄送人列表，最多可支持50个抄送人，抄送人可查看合同内容及签署进度，但无需参与合同签署。
 
                      */
-                    CcInfo m_ccInfos;
+                    std::vector<CcInfo> m_ccInfos;
                     bool m_ccInfosHasBeenSet;
 
                     /**
@@ -785,10 +823,20 @@ namespace TencentCloud
                     bool m_initiatorComponentsHasBeenSet;
 
                     /**
-                     * 在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
+                     * 在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li><li> <b>3</b> :文书</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)
                      */
                     int64_t m_flowDisplayType;
                     bool m_flowDisplayTypeHasBeenSet;
+
+                    /**
+                     * <font color="red">此字段已不再使用，请使用 CreateFlowOption 里面的 SignComponentConfig</font>
+签署控件的配置信息，用在嵌入式发起的页面配置，
+包括  
+
+- 签署控件 是否默认展示日期.
+                     */
+                    SignComponentConfig m_signComponentConfig;
+                    bool m_signComponentConfigHasBeenSet;
 
                 };
             }

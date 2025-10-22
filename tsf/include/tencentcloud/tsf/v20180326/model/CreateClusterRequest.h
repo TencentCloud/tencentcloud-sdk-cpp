@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,27 @@ namespace TencentCloud
                     bool ClusterNameHasBeenSet() const;
 
                     /**
-                     * 获取集群类型
-                     * @return ClusterType 集群类型
+                     * 获取指定集群类型，目前支持：
+- `V`：虚拟机集群
+- `C`：容器集群
+- `S`：Serverless 集群
+                     * @return ClusterType 指定集群类型，目前支持：
+- `V`：虚拟机集群
+- `C`：容器集群
+- `S`：Serverless 集群
                      * 
                      */
                     std::string GetClusterType() const;
 
                     /**
-                     * 设置集群类型
-                     * @param _clusterType 集群类型
+                     * 设置指定集群类型，目前支持：
+- `V`：虚拟机集群
+- `C`：容器集群
+- `S`：Serverless 集群
+                     * @param _clusterType 指定集群类型，目前支持：
+- `V`：虚拟机集群
+- `C`：容器集群
+- `S`：Serverless 集群
                      * 
                      */
                     void SetClusterType(const std::string& _clusterType);
@@ -85,15 +97,15 @@ namespace TencentCloud
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
-                     * 获取私有网络ID
-                     * @return VpcId 私有网络ID
+                     * 获取私有网络ID，可通过调用[DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372)查询已创建的私有网络列表或登录控制台进行查看；也可以调用[CreateVpc](https://cloud.tencent.com/document/api/215/1309)创建新的私有网络。
+                     * @return VpcId 私有网络ID，可通过调用[DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372)查询已创建的私有网络列表或登录控制台进行查看；也可以调用[CreateVpc](https://cloud.tencent.com/document/api/215/1309)创建新的私有网络。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私有网络ID
-                     * @param _vpcId 私有网络ID
+                     * 设置私有网络ID，可通过调用[DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372)查询已创建的私有网络列表或登录控制台进行查看；也可以调用[CreateVpc](https://cloud.tencent.com/document/api/215/1309)创建新的私有网络。
+                     * @param _vpcId 私有网络ID，可通过调用[DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372)查询已创建的私有网络列表或登录控制台进行查看；也可以调用[CreateVpc](https://cloud.tencent.com/document/api/215/1309)创建新的私有网络。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -337,15 +349,15 @@ namespace TencentCloud
                     bool KuberneteNativeTypeHasBeenSet() const;
 
                     /**
-                     * 获取native secret
-                     * @return KuberneteNativeSecret native secret
+                     * 获取Kubernetes 原生 Secret 资源对象
+                     * @return KuberneteNativeSecret Kubernetes 原生 Secret 资源对象
                      * 
                      */
                     std::string GetKuberneteNativeSecret() const;
 
                     /**
-                     * 设置native secret
-                     * @param _kuberneteNativeSecret native secret
+                     * 设置Kubernetes 原生 Secret 资源对象
+                     * @param _kuberneteNativeSecret Kubernetes 原生 Secret 资源对象
                      * 
                      */
                     void SetKuberneteNativeSecret(const std::string& _kuberneteNativeSecret);
@@ -358,15 +370,15 @@ namespace TencentCloud
                     bool KuberneteNativeSecretHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return ProgramIdList 无
+                     * 获取需要绑定的数据集ID。该参数可以通过调用 [DescribePrograms](https://cloud.tencent.com/document/product/649/73477) 的返回值中的 ProgramId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/privilege?tab=program&roleId=role-yrle4doy)查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。
+                     * @return ProgramIdList 需要绑定的数据集ID。该参数可以通过调用 [DescribePrograms](https://cloud.tencent.com/document/product/649/73477) 的返回值中的 ProgramId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/privilege?tab=program&roleId=role-yrle4doy)查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。
                      * 
                      */
                     std::vector<std::string> GetProgramIdList() const;
 
                     /**
-                     * 设置无
-                     * @param _programIdList 无
+                     * 设置需要绑定的数据集ID。该参数可以通过调用 [DescribePrograms](https://cloud.tencent.com/document/product/649/73477) 的返回值中的 ProgramId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/privilege?tab=program&roleId=role-yrle4doy)查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。
+                     * @param _programIdList 需要绑定的数据集ID。该参数可以通过调用 [DescribePrograms](https://cloud.tencent.com/document/product/649/73477) 的返回值中的 ProgramId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/privilege?tab=program&roleId=role-yrle4doy)查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。
                      * 
                      */
                     void SetProgramIdList(const std::vector<std::string>& _programIdList);
@@ -408,13 +420,16 @@ namespace TencentCloud
                     bool m_clusterNameHasBeenSet;
 
                     /**
-                     * 集群类型
+                     * 指定集群类型，目前支持：
+- `V`：虚拟机集群
+- `C`：容器集群
+- `S`：Serverless 集群
                      */
                     std::string m_clusterType;
                     bool m_clusterTypeHasBeenSet;
 
                     /**
-                     * 私有网络ID
+                     * 私有网络ID，可通过调用[DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372)查询已创建的私有网络列表或登录控制台进行查看；也可以调用[CreateVpc](https://cloud.tencent.com/document/api/215/1309)创建新的私有网络。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
@@ -486,13 +501,13 @@ namespace TencentCloud
                     bool m_kuberneteNativeTypeHasBeenSet;
 
                     /**
-                     * native secret
+                     * Kubernetes 原生 Secret 资源对象
                      */
                     std::string m_kuberneteNativeSecret;
                     bool m_kuberneteNativeSecretHasBeenSet;
 
                     /**
-                     * 无
+                     * 需要绑定的数据集ID。该参数可以通过调用 [DescribePrograms](https://cloud.tencent.com/document/product/649/73477) 的返回值中的 ProgramId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/privilege?tab=program&roleId=role-yrle4doy)查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。
                      */
                     std::vector<std::string> m_programIdList;
                     bool m_programIdListHasBeenSet;
